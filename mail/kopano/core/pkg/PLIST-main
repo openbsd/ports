@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/01/10 15:46:11 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2018/02/10 17:27:10 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -12,6 +12,7 @@
 @extraunexec rm -rf /var/log/kopano/*.log
 @bin bin/kopano-fsck
 bin/kopano-migration-imap
+@bin bin/kopano-oof
 @bin bin/kopano-passwd
 bin/kopano-set-oof
 @bin bin/kopano-stats
@@ -214,6 +215,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/appointment.py
 lib/python${MODPY_VERSION}/site-packages/kopano/appointment.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/attachment.py
 lib/python${MODPY_VERSION}/site-packages/kopano/attachment.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/attendee.py
+lib/python${MODPY_VERSION}/site-packages/kopano/attendee.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.py
 lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/body.py
@@ -272,6 +275,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/parser.py
 lib/python${MODPY_VERSION}/site-packages/kopano/parser.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/permission.py
 lib/python${MODPY_VERSION}/site-packages/kopano/permission.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/pidlid.py
+lib/python${MODPY_VERSION}/site-packages/kopano/pidlid.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/properties.py
 lib/python${MODPY_VERSION}/site-packages/kopano/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/property_.py
@@ -339,6 +344,24 @@ lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_xapian.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/version.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/xmltotext.xslt
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd/
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd/version.py
+lib/python${MODPY_VERSION}/site-packages/kopano_spamd/version.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/autorespond.py
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/autorespond.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/mr_accept.py
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/mr_accept.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/mr_process.py
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/mr_process.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/version.py
+lib/python${MODPY_VERSION}/site-packages/kopano_utils/version.pyc
 lib/python${MODPY_VERSION}/site-packages/libfreebusy.py
 lib/python${MODPY_VERSION}/site-packages/libfreebusy.pyc
 lib/python${MODPY_VERSION}/site-packages/zarafa/
@@ -354,6 +377,7 @@ lib/systemd/system/kopano-monitor.service
 lib/systemd/system/kopano-presence.service
 lib/systemd/system/kopano-search.service
 lib/systemd/system/kopano-server.service
+lib/systemd/system/kopano-spamd.service
 lib/systemd/system/kopano-spooler.service
 lib/sysusers.d/
 lib/sysusers.d/kopano-sysusers.conf
@@ -362,6 +386,7 @@ lib/tmpfiles.d/kopano-tmpfiles.conf
 libexec/kopano/
 @bin libexec/kopano/mapitime
 @man man/man1/kopano-fsck.1
+@man man/man1/kopano-oof.1
 @man man/man1/kopano-passwd.1
 @man man/man1/kopano-set-oof.1
 @man man/man1/kopano-stats.1
@@ -376,6 +401,7 @@ libexec/kopano/
 @man man/man5/kopano-monitor.cfg.5
 @man man/man5/kopano-search.cfg.5
 @man man/man5/kopano-server.cfg.5
+@man man/man5/kopano-spamd.cfg.5
 @man man/man5/kopano-spooler.cfg.5
 @man man/man5/kopano-unix.cfg.5
 @man man/man7/kopano.7
@@ -398,7 +424,9 @@ libexec/kopano/
 @man man/man8/kopano-mr-process.8
 @man man/man8/kopano-search.8
 @man man/man8/kopano-server.8
+@man man/man8/kopano-spamd.8
 @man man/man8/kopano-spooler.8
+@man man/man8/kopano-storeadm.8
 @bin sbin/kopano-admin
 @bin sbin/kopano-archiver
 sbin/kopano-archiver-aclset
@@ -428,7 +456,9 @@ sbin/kopano-search
 sbin/kopano-search-upgrade-findroots.py
 sbin/kopano-search-xapian-compact.py
 @bin sbin/kopano-server
+sbin/kopano-spamd
 @bin sbin/kopano-spooler
+@bin sbin/kopano-storeadm
 share/doc/kopano/
 share/doc/kopano-gateway/
 @mode 0555
@@ -451,8 +481,6 @@ share/doc/kopano/update-resource-recipients
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bash_completion.d/
 share/examples/bash_completion.d/kopano-bash-completion.sh
-share/examples/cron.daily/
-share/examples/cron.daily/kopano-client-update
 share/examples/kopano/
 @sample ${SYSCONFDIR}/kopano/
 @mode 750
@@ -641,12 +669,10 @@ share/kopano-spooler/python/zunit.pyc
 share/kopano/ldap.active-directory.cfg
 share/kopano/ldap.openldap.cfg
 share/kopano/ldap.propmap.cfg
-share/locale/bg/LC_MESSAGES/kopano.mo
 share/locale/ca/LC_MESSAGES/kopano.mo
 share/locale/cs/LC_MESSAGES/kopano.mo
 share/locale/da/LC_MESSAGES/kopano.mo
 share/locale/de/LC_MESSAGES/kopano.mo
-share/locale/el/LC_MESSAGES/kopano.mo
 share/locale/es/LC_MESSAGES/kopano.mo
 share/locale/et/LC_MESSAGES/kopano.mo
 share/locale/fa/
@@ -657,16 +683,11 @@ share/locale/fr/LC_MESSAGES/kopano.mo
 share/locale/fr_BE/
 share/locale/fr_BE/LC_MESSAGES/
 share/locale/fr_BE/LC_MESSAGES/kopano.mo
-share/locale/gl/LC_MESSAGES/kopano.mo
 share/locale/he/LC_MESSAGES/kopano.mo
 share/locale/hr/LC_MESSAGES/kopano.mo
 share/locale/hu/LC_MESSAGES/kopano.mo
 share/locale/it/LC_MESSAGES/kopano.mo
 share/locale/ja/LC_MESSAGES/kopano.mo
-share/locale/ko/LC_MESSAGES/kopano.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
-share/locale/lt/LC_MESSAGES/kopano.mo
 share/locale/nb/LC_MESSAGES/kopano.mo
 share/locale/nl/LC_MESSAGES/kopano.mo
 share/locale/nl_BE/
@@ -679,7 +700,6 @@ share/locale/ru/LC_MESSAGES/kopano.mo
 share/locale/sl/LC_MESSAGES/kopano.mo
 share/locale/sv/LC_MESSAGES/kopano.mo
 share/locale/tr/LC_MESSAGES/kopano.mo
-share/locale/uk/LC_MESSAGES/kopano.mo
 share/locale/zh_CN/LC_MESSAGES/kopano.mo
 share/locale/zh_TW/LC_MESSAGES/kopano.mo
 @rcscript ${RCDIR}/kopano
