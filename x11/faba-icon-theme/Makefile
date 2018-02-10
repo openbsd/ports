@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/04 13:16:25 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/10 17:39:35 landry Exp $
 
 COMMENT =		sexy and modern icon theme with Tango influences
 
-DISTNAME =		faba-icon-theme-4.0
+GH_ACCOUNT =		snwh
+GH_PROJECT =		faba-icon-theme
+GH_TAGNAME =		v4.1.2
 CATEGORIES =		x11
 
-HOMEPAGE =		http://mokaproject.com/faba-icon-theme/
-MASTER_SITES =		https://github.com/moka-project/faba-icon-theme/raw/master/
+HOMEPAGE =		https://snwh.org/moka#faba-icon-theme
 MASTER_SITES0 =		https://github.com/moka-project/faba-mono-icons/raw/master/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} faba-mono-icons-4.2.tar.gz:0
@@ -27,5 +28,7 @@ do-install:
 	find ${WRKDIST}/../faba* ! -perm 644 -type f -exec chmod 644 {} \;
 	cd ${WRKDIST} ; pax -L -rw Faba ${ICONSDIR}
 	cd ${WRKDIST}/../faba-mono-icons-4.2/ ; pax -rw Faba-* ${ICONSDIR}
+	# broken link
+	rm ${PREFIX}/share/icons/Faba/16x16/places/folder-drag-accept.svg
 
 .include <bsd.port.mk>
