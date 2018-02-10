@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2018/02/02 08:05:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2018/02/10 11:37:24 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -19,6 +19,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2017.7.3
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -73,7 +74,7 @@ TEST_DEPENDS =		databases/py-mysql \
 
 # https://github.com/saltstack/salt/pull/45164
 post-extract:
-	cp ${FILESDIR}/vmctl.py ${WRKSRC}/salt/modules/
+	cp ${FILESDIR}/{pf,vmctl}.py ${WRKSRC}/salt/modules/
 
 pre-configure:
 	sed -i 's,share/man,man,g' ${WRKSRC}/setup.py
