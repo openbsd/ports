@@ -1,1 +1,4 @@
-Multidicts are useful for working with HTTP headers, URL query args etc.
+Multidict is a dict-like structure supporting keys with multiple values that
+preserves insertion ordering.
+
+This is useful when working with HTTP Headers or URL query strings.
