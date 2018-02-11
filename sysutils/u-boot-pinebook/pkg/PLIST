@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/11 00:42:57 phessler Exp $
+share/u-boot/
+share/u-boot/pinebook/
+share/u-boot/pinebook/sunxi-spl.bin
+share/u-boot/pinebook/u-boot
+share/u-boot/pinebook/u-boot-sunxi-with-spl.bin
+share/u-boot/pinebook/u-boot.bin
+share/u-boot/pinebook/u-boot.img
+share/u-boot/pinebook/u-boot.itb
