@@ -1,22 +1,9 @@
-$OpenBSD: patch-meson_build,v 1.4 2017/10/28 13:28:06 ajacoutot Exp $
-
-commit 49da91c786855228158cb8937c972cd741bd4c79
-Author: Martin Dagarin <SloCompTech@users.noreply.github.com>
-Date:   Mon Sep 4 19:10:15 2017
-
-Fixed compile bug
+$OpenBSD: patch-meson_build,v 1.5 2018/02/11 09:05:59 rsadowski Exp $
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -18,13 +18,14 @@ jsoncpp_cdata.set('JSONCPP_VERSION', meson.project_ver
- jsoncpp_cdata.set('JSONCPP_VERSION_MAJOR', jsoncpp_major_version)
- jsoncpp_cdata.set('JSONCPP_VERSION_MINOR', jsoncpp_minor_version)
- jsoncpp_cdata.set('JSONCPP_VERSION_PATCH', jsoncpp_patch_version)
-+jsoncpp_cdata.set('JSONCPP_USE_SECURE_MEMORY',0)
- 
- jsoncpp_gen_sources = configure_file(
-   input : 'src/lib_json/version.h.in',
+@@ -25,7 +25,7 @@ jsoncpp_gen_sources = configure_file(
    output : 'version.h',
    configuration : jsoncpp_cdata,
    install : true,
@@ -25,7 +12,7 @@ Index: meson.build
  )
  
  jsoncpp_headers = [
-@@ -42,8 +43,11 @@ jsoncpp_include_directories = include_directories('inc
+@@ -43,8 +43,11 @@ jsoncpp_include_directories = include_directories('inc
  
  install_headers(
    jsoncpp_headers,
@@ -38,16 +25,15 @@ Index: meson.build
  jsoncpp_lib = library(
    'jsoncpp',
    [ jsoncpp_gen_sources,
-@@ -53,6 +57,8 @@ jsoncpp_lib = library(
-     'src/lib_json/json_value.cpp',
+@@ -55,12 +58,15 @@ jsoncpp_lib = library(
      'src/lib_json/json_writer.cpp'],
-   soversion : 19,
+   soversion : 20,
+   install : true,
 +  dependencies : thread_dep,
 +  link_args : no_asneeded,
-   install : true,
    include_directories : jsoncpp_include_directories)
  
-@@ -60,6 +66,7 @@ import('pkgconfig').generate(
+ import('pkgconfig').generate(
    libraries : jsoncpp_lib,
    version : meson.project_version(),
    name : 'jsoncpp',
@@ -55,7 +41,16 @@ Index: meson.build
    filebase : 'jsoncpp',
    description : 'A C++ library for interacting with JSON')
  
-@@ -80,6 +87,8 @@ jsoncpp_test = executable(
+@@ -68,6 +74,8 @@ import('pkgconfig').generate(
+ jsoncpp_dep = declare_dependency(
+   include_directories : jsoncpp_include_directories,
+   link_with : jsoncpp_lib,
++  dependencies : thread_dep,
++  link_args : no_asneeded,
+   version : meson.project_version(),
+   sources : jsoncpp_gen_sources)
+ 
+@@ -81,6 +89,8 @@ jsoncpp_test = executable(
      'src/test_lib_json/main.cpp'],
    include_directories : jsoncpp_include_directories,
    link_with : jsoncpp_lib,
@@ -64,12 +59,12 @@ Index: meson.build
    install : false)
  test(
    'unittest_jsoncpp_test',
-@@ -90,6 +99,8 @@ jsontestrunner = executable(
+@@ -90,6 +100,8 @@ jsontestrunner = executable(
+   'jsontestrunner',
    'src/jsontestrunner/main.cpp',
    include_directories : jsoncpp_include_directories,
-   link_with : jsoncpp_lib,
 +  dependencies : thread_dep,
 +  link_args : no_asneeded,
+   link_with : jsoncpp_lib,
    install : false)
  test(
-   'unittest_jsontestrunner',
