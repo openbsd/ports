@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/04 09:00:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/11 15:36:20 rpointel Exp $
 
 COMMENT =	tool to test a PDF file
 
-MODPY_EGG_VERSION =	0.2.3
+MODPY_EGG_VERSION =	0.2.4
 DISTNAME =	pdfid_v${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdfid-${MODPY_EGG_VERSION}
 
