@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1697 2018/02/06 19:57:33 jung Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1698 2018/02/11 14:44:10 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1048,6 +1048,7 @@
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-Cmd
+     SUBDIR += p5-Test-Command
      SUBDIR += p5-Test-Command-Simple
      SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
