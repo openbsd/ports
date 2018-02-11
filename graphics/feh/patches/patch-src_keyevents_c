@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_keyevents_c,v 1.15 2017/09/08 08:19:20 dcoppa Exp $
+$OpenBSD: patch-src_keyevents_c,v 1.16 2018/02/11 19:23:49 kn Exp $
 Index: src/keyevents.c
 --- src/keyevents.c.orig
 +++ src/keyevents.c
-@@ -183,7 +183,7 @@ void init_keyevents(void) {
+@@ -225,7 +225,7 @@ void init_keyevents(void) {
  
  	free(confpath);
  
