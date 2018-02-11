@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/14 00:29:47 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2018/02/11 09:49:11 jca Exp $
 
 COMMENT=		JSON implementation in C
 
 DISTNAME=		json-c-0.12
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 
 SHARED_LIBS +=  json-c                    0.0 # 2.1
 
-HOMEPAGE=		http://oss.metaparadigm.com/json-c/
+HOMEPAGE=		https://github.com/json-c/json-c/wiki
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
