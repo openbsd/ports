@@ -1,22 +1,14 @@
-$OpenBSD: patch-doc_ncmpcpp_1,v 1.8 2017/06/09 15:09:51 dcoppa Exp $
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.9 2018/02/11 10:37:51 dcoppa Exp $
 Index: doc/ncmpcpp.1
 --- doc/ncmpcpp.1.orig
 +++ doc/ncmpcpp.1
 @@ -1,4 +1,4 @@
 -.TH "ncmpcpp" "1"
-+.TH "NCMPCPP" "1" "2017-05-21"
++.TH "NCMPCPP" "1" "2017-10-11"
  .SH "NAME"
  ncmpcpp \- An ncurses Music Player Daemon (MPD) client.
  .SH "SYNOPSIS"
-@@ -41,7 +41,6 @@ Display help.
- .TP
- .B \-v, \-\-version
- Display version information.
--.TP
- .SH "CONFIGURATION"
- When ncmpcpp starts, it tries to read user's settings from $HOME/.ncmpcpp/config and $XDG_CONFIG_HOME/ncmpcpp/config files. If no configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be usually found in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
- 
-@@ -296,7 +295,7 @@ Slave screen that has to be displayed at start (nothin
+@@ -298,7 +298,7 @@ Slave screen that has to be displayed at start (nothin
  .TP
  .B startup_slave_screen_focus = yes/no
  If set to yes, slave screen will be the active one after startup. Otherwise master screen will be.
@@ -25,7 +17,7 @@ Index: doc/ncmpcpp.1
  .B locked_screen_width_part = 20-80
  If you want to lock a screen, ncmpcpp asks for % of locked screen's width to be reserved before that and provides a default value, which is the one you can set here.
  .TP
-@@ -413,7 +412,6 @@ Border color of pop-up windows. If set to 'none', no b
+@@ -415,7 +415,6 @@ Border color of pop-up windows. If set to 'none', no b
  .TP
  .B active_window_border = COLOR
  Color of active window's border.
