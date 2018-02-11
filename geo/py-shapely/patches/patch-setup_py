@@ -1,13 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2016/04/13 08:58:04 landry Exp $
+$OpenBSD: patch-setup_py,v 1.2 2018/02/11 10:48:31 landry Exp $
 dont install in a toplevel shapely dir
---- setup.py.orig	Tue Mar 29 18:07:45 2016
-+++ setup.py	Wed Apr 13 09:29:34 2016
-@@ -120,7 +120,7 @@ setup_args = dict(
-         'Programming Language :: Python :: 3',
-         'Topic :: Scientific/Engineering :: GIS',
-     ],
--    data_files         = [('shapely', ['shapely/_geos.pxi'])],
-+    data_files         = [('share/shapely', ['shapely/_geos.pxi'])],
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -220,7 +220,7 @@ setup_args = dict(
      cmdclass           = {},
+     extras_require     = extra_reqs,
+     package_data={
+-        'shapely': ['shapely/_geos.pxi']},
++        'share/shapely': ['shapely/_geos.pxi']},
+     include_package_data=True
  )
  
