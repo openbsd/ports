@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/06/16 15:12:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/11 07:42:54 ajacoutot Exp $
 bin/asciinema
 lib/python${MODPY_VERSION}/site-packages/asciinema/
 lib/python${MODPY_VERSION}/site-packages/asciinema-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,27 +13,37 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}asciicast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}pty_recorder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}recorder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}stdout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}term.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}urllib_http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/api.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/__init__.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}frames.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}raw.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}v1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}v2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/frames.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/raw.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/v1.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/v2.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/__init__.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}cat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}play.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}record.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}upload.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/auth.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/commands/cat.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/command.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/play.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/record.py
@@ -42,8 +52,6 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/config.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/http_adapter.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/player.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/pty_recorder.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/recorder.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/stdout.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/term.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/urllib_http_adapter.py
 @man man/man1/asciinema.1
