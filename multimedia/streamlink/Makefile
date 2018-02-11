@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/16 14:38:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/11 15:46:02 bcallah Exp $
 
 COMMENT =	pipe video streams into a video player
 CATEGORIES =	multimedia net
 
 GH_ACCOUNT =	streamlink
 GH_PROJECT =	streamlink
-GH_TAGNAME =	0.9.0
+GH_TAGNAME =	0.10.0
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -28,9 +28,11 @@ RUN_DEPENDS =	devel/py-iso3166${MODPY_FLAVOR} \
 		security/py-crypto${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
+# One test fails because we don't have www/py-requests-mock
+# To be added to the list and this comment removed once it is imported.
+TEST_DEPENDS =	devel/py-country${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-country${MODPY_FLAVOR} \
+		devel/py-test${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
