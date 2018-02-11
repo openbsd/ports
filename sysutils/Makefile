@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2018/01/23 18:23:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.469 2018/02/11 00:43:49 phessler Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -325,6 +325,7 @@
      SUBDIR += ttyload
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
+     SUBDIR += u-boot-pinebook
      SUBDIR += udfclient
      SUBDIR += upower
      SUBDIR += upobsd
