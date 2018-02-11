@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2018/02/09 20:05:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/02/11 22:51:58 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
+BROKEN-mips64 =	relocation truncated to fit: R_MIPS_CALL16 against XXX
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
