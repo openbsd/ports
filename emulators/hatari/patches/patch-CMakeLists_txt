@@ -1,11 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2016/11/17 09:51:41 fcambus Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2018/02/11 13:25:38 fcambus Exp $
 
 Make PortAudio and CAPSImage detection conditional and disabled by default,
 and disable building the Python GTK+2 user interface.
 
---- CMakeLists.txt.orig	Thu Nov  3 22:25:43 2016
-+++ CMakeLists.txt	Sat Nov 12 17:20:14 2016
-@@ -40,6 +40,12 @@ set(ENABLE_SMALL_MEM 0
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -34,6 +34,12 @@ set(ENABLE_SMALL_MEM 0
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
  set(ENABLE_WINUAE_CPU 1
      CACHE BOOL "Enable WinUAE CPU core")
@@ -18,7 +19,7 @@ and disable building the Python GTK+2 user interface.
  
  # Run-time checks with GCC "mudflap" etc features:
  # - stack protection
-@@ -127,15 +133,19 @@ if (NOT ENABLE_OSX_BUNDLE)
+@@ -121,20 +127,24 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
@@ -33,6 +34,11 @@ and disable building the Python GTK+2 user interface.
 +	endif(PORTAUDIO_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
+ find_package(PortMidi)
+ if(PORTMIDI_FOUND)
+ 	set(HAVE_PORTMIDI 1)
+ endif(PORTMIDI_FOUND)
+ 
 -find_package(CapsImage)
 -if(CAPSIMAGE_FOUND)
 -	set(HAVE_CAPSIMAGE 1)
@@ -46,7 +52,7 @@ and disable building the Python GTK+2 user interface.
  
  find_package(Udev)
  if(UDEV_FOUND)
-@@ -302,10 +312,12 @@ add_subdirectory(src)
+@@ -301,10 +311,12 @@ add_subdirectory(src)
  add_subdirectory(doc)
  add_subdirectory(tools)
  
@@ -63,7 +69,7 @@ and disable building the Python GTK+2 user interface.
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -352,17 +364,20 @@ else()
+@@ -351,11 +363,13 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
@@ -80,6 +86,12 @@ and disable building the Python GTK+2 user interface.
 +  endif(PORTAUDIO_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
+ if(PORTMIDI_FOUND)
+   message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
+@@ -363,11 +377,13 @@ else()
+   message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
+ endif(PORTMIDI_FOUND)
+ 
 -if(CAPSIMAGE_FOUND)
 -  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
 -else()
@@ -87,6 +99,7 @@ and disable building the Python GTK+2 user interface.
 -endif(CAPSIMAGE_FOUND)
 +if(ENABLE_CAPSIMAGE)
 +  if(CAPSIMAGE_FOUND)
++    message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
 +  else()
 +    message( "  - capsimage :\tv${CAPSIMAGE_VERSION} not found, install it to use .IPF, .RAW and .CTR disk images" )
 +  endif(CAPSIMAGE_FOUND)
