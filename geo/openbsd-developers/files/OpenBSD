@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.153 2018/02/11 14:11:53 kn Exp $
+# $OpenBSD: OpenBSD,v 1.154 2018/02/11 21:18:41 bket Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -129,6 +129,7 @@
 51.395466	-0.759525	"nigel"		# Nigel Taylor
 51.46		-0.13		"fgsch"		# Federico G. Schwindt
 51.488		-0.106		"tom"		# Tom Cosgrove
+51.5853		5.0564		"bket"		# Björn Ketelaars
 51.8365		5.00271		"jasper"	# Jasper Lievisse Adriaanse
 51.6		-114.1		"deraadt"	# Theo de Raadt
 51.67938	5.1194		"weerd"		# Paul de Weerd
