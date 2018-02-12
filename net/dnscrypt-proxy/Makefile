@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/02/03 11:03:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2018/02/12 00:34:53 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
@@ -7,7 +7,7 @@ COMMENT-plugins=	example plugins for dnscrypt-proxy
 # using mirrored files for now but port needs updating to the golang-based
 # 2.0 version.
 V=			1.9.5
-REVISION=		2
+REVISION=		3
 DISTNAME=		dnscrypt-proxy-${V}
 PKGNAME-main=		dnscrypt-proxy-${V}
 PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
@@ -21,7 +21,7 @@ CATEGORIES=		net
 
 MASTER_SITES=		https://spacehopper.org/mirrors/
 
-HOMEPAGE=		https://github.com/jedisct1/dnscrypt-proxy/
+HOMEPAGE=		https://dnscrypt.info/
 
 MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
 
