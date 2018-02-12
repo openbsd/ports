@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/12 19:35:36 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
-# 
-VERSION =		5.39.0
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	5.0
+SHARED_LIBS =		KF5KDELibs4Support	6.0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

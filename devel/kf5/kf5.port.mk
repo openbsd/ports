@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.6 2018/01/09 21:10:38 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.7 2018/02/12 19:35:36 rsadowski Exp $
 
-MODKF5_VERSION =	5.41.0
+MODKF5_VERSION =	5.42.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 

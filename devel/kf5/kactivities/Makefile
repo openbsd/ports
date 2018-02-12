@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/12 19:35:36 rsadowski Exp $
 
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	kactivities-${VERSION}
@@ -14,11 +14,11 @@ BUILD_DEPENDS =	devel/boost \
 		devel/gettext-tools
 
 # oversight of upstream, not used
-BUILD_DEPENDS+=	devel/kf5/kwindowsystem
+BUILD_DEPENDS+=	devel/kf5/kwindowsystem \
+		devel/kf5/kio
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kio \
 		x11/qt5/qtdeclarative
 
 .include <bsd.port.mk>

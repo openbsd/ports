@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/12 19:35:36 rsadowski Exp $
 include/KF5/KCrash/
 include/KF5/KCrash/KCrash
 include/KF5/KCrash/kcrash.h
@@ -10,4 +10,6 @@ lib/cmake/KF5Crash/KF5CrashConfigVersion.cmake
 lib/cmake/KF5Crash/KF5CrashTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Crash/KF5CrashTargets.cmake
 @lib lib/libKF5Crash.so.${LIBKF5Crash_VERSION}
+share/examples/xdg/
+share/examples/xdg/kcrash.categories
 share/kf5/mkspecs/qt_KCrash.pri

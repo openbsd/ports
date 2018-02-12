@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:36 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -34,6 +34,7 @@ include/KF5/KHtml/dom/html_misc.h
 include/KF5/KHtml/dom/html_object.h
 include/KF5/KHtml/dom/html_table.h
 include/KF5/KHtml/kencodingdetector.h
+include/KF5/KHtml/khtml_debug.h
 include/KF5/KHtml/khtml_events.h
 include/KF5/KHtml/khtml_export.h
 include/KF5/KHtml/khtml_part.h
@@ -55,6 +56,7 @@ lib/qt5/plugins/kf5/parts/khtmlimagepart.so
 lib/qt5/plugins/kf5/parts/khtmlpart.so
 lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
 lib/qt5/plugins/kf5/parts/kmultipart.so
+share/examples/xdg/khtml.categories
 share/examples/xdg/khtmlrc
 share/kf5/khtml/
 share/kf5/khtml/css/

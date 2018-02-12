@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/09 21:10:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/12 19:35:36 rsadowski Exp $
 @bin bin/kquitapp5
 include/KF5/
 include/KF5/KDBusAddons/
@@ -17,8 +17,10 @@ include/KF5/kdbusaddons_version.h
 lib/cmake/KF5DBusAddons/
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfig.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfigVersion.cmake
+lib/cmake/KF5DBusAddons/KF5DBusAddonsMacros.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5DBusAddons/KF5DBusAddonsTargets.cmake
+lib/cmake/KF5DBusAddons/KF5dbus.service.in
 @lib lib/libKF5DBusAddons.so.${LIBKF5DBusAddons_VERSION}
 share/examples/xdg/
 share/examples/xdg/kdbusaddons.categories

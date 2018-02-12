@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/07/12 00:05:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/12 19:35:36 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -49,6 +49,13 @@ lib/cmake/KF5Declarative/KF5DeclarativeTargets.cmake
 lib/qt5/qml/org/kde/draganddrop/
 lib/qt5/qml/org/kde/draganddrop/libdraganddropplugin.so
 lib/qt5/qml/org/kde/draganddrop/qmldir
+lib/qt5/qml/org/kde/kcm/
+lib/qt5/qml/org/kde/kcm/GridDelegate.qml
+lib/qt5/qml/org/kde/kcm/GridView.qml
+lib/qt5/qml/org/kde/kcm/GridViewKCM.qml
+lib/qt5/qml/org/kde/kcm/SimpleKCM.qml
+lib/qt5/qml/org/kde/kcm/libkcmcontrolsplugin.so
+lib/qt5/qml/org/kde/kcm/qmldir
 lib/qt5/qml/org/kde/kconfig/
 lib/qt5/qml/org/kde/kconfig/libkconfigplugin.so
 lib/qt5/qml/org/kde/kconfig/qmldir

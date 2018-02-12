@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/12 19:35:36 rsadowski Exp $
 
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
@@ -14,7 +14,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kservice \
 		devel/kf5/kwindowsystem \
 		x11/qt5/qtx11extras
 

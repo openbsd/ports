@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/14 13:42:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:37 rsadowski Exp $
+include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
 include/KF5/Kirigami2/PlatformTheme
@@ -12,6 +13,8 @@ lib/cmake/KF5Kirigami2/KF5Kirigami2Macros.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Kirigami2/KF5Kirigami2Targets.cmake
 @lib lib/libKF5Kirigami2.so.${LIBKF5Kirigami2_VERSION}
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/kirigami.2/
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationItem.qml
@@ -24,6 +27,7 @@ lib/qt5/qml/org/kde/kirigami.2/ApplicationItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/BasicListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
+lib/qt5/qml/org/kde/kirigami.2/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/GlobalDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/Heading.qml
 lib/qt5/qml/org/kde/kirigami.2/Icon.qml
@@ -58,13 +62,7 @@ lib/qt5/qml/org/kde/kirigami.2/styles/Material/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Material/Label.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Material/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Material/Theme.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/
-lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/
-lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/
-lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/ApplicationWindow.qml
@@ -76,6 +74,7 @@ lib/qt5/qml/org/kde/kirigami.2/templates/
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/ApplicationHeader.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlayDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlaySheet.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/SwipeListItem.qml
@@ -86,6 +85,8 @@ lib/qt5/qml/org/kde/kirigami.2/templates/private/ForwardButton.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/MenuIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ScrollView.qml
+share/kf5/
+share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Kirigami2.pri
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
@@ -115,7 +116,11 @@ share/locale/ru/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr@ijekavian/
+share/locale/sr@ijekavian/LC_MESSAGES/
 share/locale/sr@ijekavian/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/sr@ijekavianlatin/
+share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sv/LC_MESSAGES/libkirigami2plugin_qt.qm

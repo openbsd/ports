@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:36 rsadowski Exp $
 include/KF5/KAuth/
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
@@ -35,6 +35,8 @@ share/examples/kde/dbus-1/
 share/examples/kde/dbus-1/system.d/
 share/examples/kde/dbus-1/system.d/org.kde.kf5auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kf5auth.conf
+share/examples/xdg/
+share/examples/xdg/kauth.categories
 share/kf5/kauth/
 share/kf5/kauth/dbus_policy.stub
 share/kf5/kauth/dbus_service.stub

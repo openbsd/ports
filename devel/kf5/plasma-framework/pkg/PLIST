@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/01/09 21:10:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/12 19:35:37 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -159,6 +159,14 @@ lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/RoundShadow.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/TextFieldFocus.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/private/Util.js
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/qmldir
+lib/qt5/qml/org/kde/kirigami.2/
+lib/qt5/qml/org/kde/kirigami.2/styles/
+lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/
+lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
+lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
+lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
+lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/
+lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/accessdenied/
 lib/qt5/qml/org/kde/plasma/accessdenied/qmldir

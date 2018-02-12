@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/01/09 21:10:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/02/12 19:35:36 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -43,6 +43,7 @@ share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
+share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
