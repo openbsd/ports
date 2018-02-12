@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/14 15:43:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/12 14:36:36 sthen Exp $
 
 COMMENT =	web-based config deployment tool for Icinga 2
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2-module-director
-GH_TAGNAME =	v1.4.2
+GH_TAGNAME =	v1.4.3
 PKGNAME =	${DISTNAME:S/icingaweb2/icinga-web2/}
 
 MODULES=	lang/php
