@@ -1,0 +1,14 @@
+# https://github.com/rakshasa/libtorrent/pull/99/files
+
+Index: src/protocol/handshake.cc
+--- src/protocol/handshake.cc.orig	2015-08-08 17:01:49.000000000 +0200
++++ src/protocol/handshake.cc	2017-12-02 01:46:38.523093000 +0100
+@@ -738,7 +738,7 @@
+         break;
+ 
+       if (m_readBuffer.remaining() > m_encryption.length_ia())
+-        throw internal_error("Read past initial payload after incoming encrypted handshake.");
++        throw handshake_error(ConnectionManager::handshake_failed, e_handshake_invalid_value);
+ 
+       if (m_encryption.crypto() != HandshakeEncryption::crypto_rc4)
+         m_encryption.info()->set_obfuscated();

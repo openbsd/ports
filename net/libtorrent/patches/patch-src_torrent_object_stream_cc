@@ -1,0 +1,15 @@
+# https://github.com/rakshasa/libtorrent/pull/99/files
+
+Index: src/torrent/object_stream.cc
+--- src/torrent/object_stream.cc.orig	2015-08-08 17:01:32.000000000 +0200
++++ src/torrent/object_stream.cc	2017-12-02 01:46:38.523350000 +0100
+@@ -104,7 +104,8 @@
+   while (first != last && *first >= '0' && *first <= '9')
+     length = length * 10 + (*first++ - '0');
+ 
+-  if (length + 1 > (unsigned int)std::distance(first, last) || *first++ != ':')
++  if (length + 1 > (unsigned int)std::distance(first, last) || *first++ != ':'
++		  || length + 1 == 0)
+     throw torrent::bencode_error("Invalid bencode data.");
+   
+   return raw_string(first, length);

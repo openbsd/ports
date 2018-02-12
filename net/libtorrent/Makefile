@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.54 2018/02/12 17:31:35 tj Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
 
