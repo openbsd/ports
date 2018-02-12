@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/11 10:48:31 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/12 10:17:45 landry Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
@@ -15,6 +15,7 @@ HOMEPAGE =	https://github.com/Toblerity/Shapely
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+MODPY_SETUPTOOLS =	Yes
 MODULES =	lang/python
 # cython and numpy needed to build _vectorized.so
 BUILD_DEPENDS +=${RUN_DEPENDS} \

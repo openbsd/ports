@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/13 08:58:04 landry Exp $
-lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.2 2018/02/12 10:17:45 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/shapely/
 lib/python${MODPY_VERSION}/site-packages/shapely/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/_buildcfg.py
 lib/python${MODPY_VERSION}/site-packages/shapely/_buildcfg.pyc
+lib/python${MODPY_VERSION}/site-packages/shapely/_geos.pxi
 lib/python${MODPY_VERSION}/site-packages/shapely/affinity.py
 lib/python${MODPY_VERSION}/site-packages/shapely/affinity.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/
@@ -12,10 +18,14 @@ lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/cga.py
 lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/cga.pyc
+lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/polylabel.py
+lib/python${MODPY_VERSION}/site-packages/shapely/algorithms/polylabel.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/coords.py
 lib/python${MODPY_VERSION}/site-packages/shapely/coords.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/ctypes_declarations.py
 lib/python${MODPY_VERSION}/site-packages/shapely/ctypes_declarations.pyc
+lib/python${MODPY_VERSION}/site-packages/shapely/errors.py
+lib/python${MODPY_VERSION}/site-packages/shapely/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/examples/
 lib/python${MODPY_VERSION}/site-packages/shapely/examples/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/examples/__init__.pyc
@@ -67,6 +77,8 @@ lib/python${MODPY_VERSION}/site-packages/shapely/prepared.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.c
+lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.pyx
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.so
 lib/python${MODPY_VERSION}/site-packages/shapely/strtree.py
 lib/python${MODPY_VERSION}/site-packages/shapely/strtree.pyc
@@ -77,10 +89,9 @@ lib/python${MODPY_VERSION}/site-packages/shapely/validation.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/__init__.py
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/_vectorized.pyx
 lib/python${MODPY_VERSION}/site-packages/shapely/vectorized/_vectorized.so
 lib/python${MODPY_VERSION}/site-packages/shapely/wkb.py
 lib/python${MODPY_VERSION}/site-packages/shapely/wkb.pyc
 lib/python${MODPY_VERSION}/site-packages/shapely/wkt.py
 lib/python${MODPY_VERSION}/site-packages/shapely/wkt.pyc
-share/shapely/
-share/shapely/_geos.pxi
