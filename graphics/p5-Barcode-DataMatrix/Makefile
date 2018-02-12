@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/18 17:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/12 15:02:00 sthen Exp $
 
 COMMENT =	generate data for Data Matrix (IEC16022) barcodes
 
-DISTNAME =	Barcode-DataMatrix-0.09
+DISTNAME =	Barcode-DataMatrix-0.10
 
 CATEGORIES =	graphics
 
