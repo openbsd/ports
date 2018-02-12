@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/04 21:26:00 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/12 20:47:35 landry Exp $
 
 COMMENT =	translator library for point cloud formats
 
@@ -6,6 +6,7 @@ GH_TAGNAME =	1.6
 GH_ACCOUNT =	PDAL
 GH_PROJECT =	PDAL
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
+REVISION =	0
 
 SHARED_LIBS =	pdal_base 1.0 # 6.1
 SHARED_LIBS +=  pdal_util 0.1 # 6.1
