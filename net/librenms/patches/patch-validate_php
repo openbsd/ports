@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.14 2017/11/02 12:49:42 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.15 2018/02/12 23:27:18 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -18,3 +18,18 @@ Index: validate.php
  if (!str_contains($syntax_check, 'No syntax errors detected')) {
      print_fail('Syntax error in config.php');
      echo $syntax_check;
+@@ -95,12 +95,12 @@ if (!file_exists('vendor/autoload.php')) {
+     $pre_checks_failed = true;
+ }
+ 
+-if (!str_contains(shell_exec('php scripts/composer_wrapper.php --version'), 'Composer version')) {
++if (!str_contains(shell_exec('%PHP% scripts/composer_wrapper.php --version'), 'Composer version')) {
+     print_fail("No composer available, please install composer", "https://getcomposer.org/");
+     $pre_checks_failed = true;
+ }
+ 
+-$dep_check = shell_exec('php scripts/composer_wrapper.php install --no-dev --dry-run');
++$dep_check = shell_exec('%PHP% scripts/composer_wrapper.php install --no-dev --dry-run');
+ preg_match_all('/Installing ([^ ]+\/[^ ]+) \(/', $dep_check, $dep_missing);
+ if (!empty($dep_missing[0])) {
+     print_fail("Missing dependencies!", "composer install --no-dev");

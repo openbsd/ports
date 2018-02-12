@@ -1,0 +1,25 @@
+$OpenBSD: patch-scripts_composer_wrapper_php,v 1.1 2018/02/12 23:27:18 sthen Exp $
+
+Index: scripts/composer_wrapper.php
+--- scripts/composer_wrapper.php.orig
++++ scripts/composer_wrapper.php
+@@ -40,7 +40,7 @@ $path_exec = shell_exec("which composer 2> /dev/null")
+ if (!empty($path_exec)) {
+     $exec = trim($path_exec);
+ } elseif (is_file($install_dir . '/composer.phar')) {
+-    $exec = 'php ' . $install_dir . '/composer.phar';
++    $exec = '%PHP% ' . $install_dir . '/composer.phar';
+ } else {
+     if ($proxy) {
+         $stream_default_opts = array(
+@@ -60,8 +60,8 @@ if (!empty($path_exec)) {
+     @copy('http://getcomposer.org/installer', 'composer-setup.php');
+     if (!empty($good_sha) && @hash_file('SHA384', 'composer-setup.php') === $good_sha) {
+         // Installer verified
+-        shell_exec('php composer-setup.php');
+-        $exec = 'php ' . $install_dir . '/composer.phar';
++        shell_exec('%PHP% composer-setup.php');
++        $exec = '%PHP% ' . $install_dir . '/composer.phar';
+     } else {
+         echo "Corrupted download.\n";
+     }

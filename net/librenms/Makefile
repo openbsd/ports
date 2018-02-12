@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2018/01/05 14:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2018/02/12 23:27:18 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.35
+GH_TAGNAME =	1.36.01
 EPOCH =		0
 
 CATEGORIES =	net www
@@ -51,6 +51,12 @@ R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;
 R +=	s,/usr/local,${LOCALBASE},g
 
 post-extract:
+	perl -pi \
+	    -e "s,'/usr/bin/snmp,'/usr/local/bin/snmp,;" \
+	    -e "s,'/bin/ping,'/sbin/ping,;" \
+	    -e "s,'/usr/bin/(mtr|nmap|ipmitool|virsh|dot|sfdp)','/usr/local/bin/\1',;" \
+	    -e "s,'/usr/lib/nagios/plugins,'/usr/local/libexec/nagios/plugins,;" \
+	    ${WRKSRC}/includes/defaults.inc.php
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
 	sed -i 's, librenms , _librenms ,' ${WRKSRC}/librenms.nonroot.cron
 
@@ -60,7 +66,7 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
-	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php; \
+	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer-wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -r ${INSTDIR}/tests

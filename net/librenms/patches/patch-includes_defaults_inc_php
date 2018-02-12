@@ -1,11 +1,12 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.30 2018/01/05 14:51:42 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.31 2018/02/12 23:27:18 sthen Exp $
 
-N.B. snmpgetnext was not in upstream file at time of adding here
+Some substitutions are done in the ports Makefile to reduce patch conflicts
+during updates.
 
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
 +++ includes/defaults.inc.php
-@@ -42,25 +42,26 @@ $config['db_socket']             = null;
+@@ -42,14 +42,15 @@ $config['db_socket']             = null;
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
@@ -13,39 +14,16 @@ Index: includes/defaults.inc.php
 -//$config['fping6']                   = '/usr/sbin/fping6';
 +$config['fping']                    = '/usr/local/sbin/fping';
 +$config['fping6']                   = '/usr/local/sbin/fping6';
- $config['fping_options']['retries'] = 3;
+ // https://docs.librenms.org/Support/Configuration/#fping
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
- $config['fping_options']['millisec'] = 200;
--$config['snmpwalk']                  = '/usr/bin/snmpwalk';
--$config['snmpget']                   = '/usr/bin/snmpget';
--$config['snmpbulkwalk']              = '/usr/bin/snmpbulkwalk';
--$config['snmptranslate']             = '/usr/bin/snmptranslate';
-+$config['snmpwalk']                  = '/usr/local/bin/snmpwalk';
-+$config['snmpget']                   = '/usr/local/bin/snmpget';
+ $config['fping_options']['interval'] = 500;
+ $config['snmpwalk']                  = '/usr/local/bin/snmpwalk';
+ $config['snmpget']                   = '/usr/local/bin/snmpget';
 +$config['snmpgetnext']               = '/usr/local/bin/snmpgetnext';
-+$config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
-+$config['snmptranslate']             = '/usr/local/bin/snmptranslate';
+ $config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
+ $config['snmptranslate']             = '/usr/local/bin/snmptranslate';
  $config['whois']          = '/usr/bin/whois';
--$config['ping']           = '/bin/ping';
--$config['mtr']            = '/usr/bin/mtr';
--$config['nmap']           = '/usr/bin/nmap';
--$config['nagios_plugins'] = '/usr/lib/nagios/plugins';
--$config['ipmitool']       = '/usr/bin/ipmitool';
--$config['virsh']          = '/usr/bin/virsh';
--$config['dot']            = '/usr/bin/dot';
--$config['sfdp']           = '/usr/bin/sfdp';
-+$config['ping']           = '/sbin/ping';
-+$config['mtr']            = '/usr/local/sbin/mtr';
-+$config['nmap']           = '/usr/local/bin/nmap';
-+$config['nagios_plugins'] = '/usr/local/libexec/nagios/plugins';
-+$config['ipmitool']       = '/usr/local/bin/ipmitool';
-+$config['virsh']          = '/usr/local/bin/virsh';
-+$config['dot']            = '/usr/local/bin/dot';
-+$config['sfdp']           = '/usr/local/bin/sfdp';
- 
- $config['slow_statistics'] = true;
- // THIS WILL CHANGE TO FALSE IN FUTURE
 @@ -495,11 +496,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)

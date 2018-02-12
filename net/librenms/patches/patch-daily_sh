@@ -1,9 +1,14 @@
-$OpenBSD: patch-daily_sh,v 1.22 2018/01/05 14:51:42 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.23 2018/02/12 23:27:18 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -25,10 +25,10 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
+@@ -23,14 +23,14 @@
+ # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
+ DAILY_SCRIPT=$(readlink -f "$0")
+ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
+-COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
++COMPOSER="%PHP% ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
  
  # set log_file, using librenms $config['log_dir'], if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -15,8 +20,8 @@ Index: daily.sh
 +LIBRENMS_USER=$(%PHP% -r "@include '${LIBRENMS_DIR}/config.php'; echo isset(\$config['user']) ? \$config['user'] : 'root';")
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
- 
-@@ -70,7 +70,7 @@ status_run() {
+ #######################################
+@@ -71,7 +71,7 @@ status_run() {
      else
          printf " \033[0;31mFAIL\033[0m\n";
          if [[ "${arg_option}" == "update" ]]; then
@@ -25,7 +30,7 @@ Index: daily.sh
          fi
          if [[ ! -z "${tmp}" ]]; then
              # print output in case of failure
-@@ -95,7 +95,7 @@ call_daily_php() {
+@@ -96,7 +96,7 @@ call_daily_php() {
      local args=( "$@" );
  
      for arg in "${args[@]}"; do
@@ -34,7 +39,7 @@ Index: daily.sh
      done
  }
  
-@@ -115,7 +115,7 @@ set_notifiable_result() {
+@@ -116,7 +116,7 @@ set_notifiable_result() {
      local arg_type=$1;
      local arg_result=$2;
  
@@ -43,19 +48,25 @@ Index: daily.sh
  }
  
  #######################################
-@@ -146,9 +146,9 @@ main () {
+@@ -126,7 +126,7 @@ set_notifiable_result() {
+ #######################################
+ check_php_ver() {
+     local branch=$(git rev-parse --abbrev-ref HEAD)
+-    local ver_res=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
++    local ver_res=$(%PHP% -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
+     if [[ "$branch" == "php53" ]] && [[ "$ver_res" == "0" ]]; then
+         status_run "Supported PHP version, switched back to master branch." 'git checkout master'
+         branch="master"
+@@ -178,7 +178,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
--        status_run 'Checking PHP version' "php ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
-+        status_run 'Checking PHP version' "%PHP% ${LIBRENMS_DIR}/daily.php -f check_php_ver" 'check_php_ver'
- 
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(%PHP% daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -189,12 +189,12 @@ main () {
+@@ -217,7 +217,7 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.
@@ -64,6 +75,9 @@ Index: daily.sh
                  status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
              ;;
              post-pull)
+@@ -231,7 +231,7 @@ main () {
+                 fi
+ 
                  # List all tasks to do after pull in the order of execution
 -                status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
 +                status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
