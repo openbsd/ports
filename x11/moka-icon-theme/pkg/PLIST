@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/10 17:40:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/12 12:24:20 landry Exp $
 @unexec-delete rm -f %D/share/icons/Moka/icon-theme.cache
 share/icons/Moka/
 share/icons/Moka/16x16/
@@ -1319,7 +1319,7 @@ share/icons/Moka/16x16/apps/transmission-gtk.png
 share/icons/Moka/16x16/apps/transmission.png
 share/icons/Moka/16x16/apps/trillian.png
 share/icons/Moka/16x16/apps/truecrypt.png
-share/icons/Moka/16x16/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/16x16/apps/ts3client_linux_amd64.png
 share/icons/Moka/16x16/apps/turpial.png
 share/icons/Moka/16x16/apps/tuxguitar.png
 share/icons/Moka/16x16/apps/tuxpaint.png
@@ -3456,7 +3456,7 @@ share/icons/Moka/16x16@2x/apps/transmission-gtk.png
 share/icons/Moka/16x16@2x/apps/transmission.png
 share/icons/Moka/16x16@2x/apps/trillian.png
 share/icons/Moka/16x16@2x/apps/truecrypt.png
-share/icons/Moka/16x16@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/16x16@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/16x16@2x/apps/turpial.png
 share/icons/Moka/16x16@2x/apps/tuxguitar.png
 share/icons/Moka/16x16@2x/apps/tuxpaint.png
@@ -5505,7 +5505,7 @@ share/icons/Moka/22x22/apps/transmission-gtk.png
 share/icons/Moka/22x22/apps/transmission.png
 share/icons/Moka/22x22/apps/trillian.png
 share/icons/Moka/22x22/apps/truecrypt.png
-share/icons/Moka/22x22/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/22x22/apps/ts3client_linux_amd64.png
 share/icons/Moka/22x22/apps/turpial.png
 share/icons/Moka/22x22/apps/tuxguitar.png
 share/icons/Moka/22x22/apps/tuxpaint.png
@@ -7642,7 +7642,7 @@ share/icons/Moka/22x22@2x/apps/transmission-gtk.png
 share/icons/Moka/22x22@2x/apps/transmission.png
 share/icons/Moka/22x22@2x/apps/trillian.png
 share/icons/Moka/22x22@2x/apps/truecrypt.png
-share/icons/Moka/22x22@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/22x22@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/22x22@2x/apps/turpial.png
 share/icons/Moka/22x22@2x/apps/tuxguitar.png
 share/icons/Moka/22x22@2x/apps/tuxpaint.png
@@ -9691,7 +9691,7 @@ share/icons/Moka/24x24/apps/transmission-gtk.png
 share/icons/Moka/24x24/apps/transmission.png
 share/icons/Moka/24x24/apps/trillian.png
 share/icons/Moka/24x24/apps/truecrypt.png
-share/icons/Moka/24x24/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/24x24/apps/ts3client_linux_amd64.png
 share/icons/Moka/24x24/apps/turpial.png
 share/icons/Moka/24x24/apps/tuxguitar.png
 share/icons/Moka/24x24/apps/tuxpaint.png
@@ -11828,7 +11828,7 @@ share/icons/Moka/24x24@2x/apps/transmission-gtk.png
 share/icons/Moka/24x24@2x/apps/transmission.png
 share/icons/Moka/24x24@2x/apps/trillian.png
 share/icons/Moka/24x24@2x/apps/truecrypt.png
-share/icons/Moka/24x24@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/24x24@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/24x24@2x/apps/turpial.png
 share/icons/Moka/24x24@2x/apps/tuxguitar.png
 share/icons/Moka/24x24@2x/apps/tuxpaint.png
@@ -13877,7 +13877,7 @@ share/icons/Moka/256x256/apps/transmission-gtk.png
 share/icons/Moka/256x256/apps/transmission.png
 share/icons/Moka/256x256/apps/trillian.png
 share/icons/Moka/256x256/apps/truecrypt.png
-share/icons/Moka/256x256/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/256x256/apps/ts3client_linux_amd64.png
 share/icons/Moka/256x256/apps/turpial.png
 share/icons/Moka/256x256/apps/tuxguitar.png
 share/icons/Moka/256x256/apps/tuxpaint.png
@@ -16014,7 +16014,7 @@ share/icons/Moka/256x256@2x/apps/transmission-gtk.png
 share/icons/Moka/256x256@2x/apps/transmission.png
 share/icons/Moka/256x256@2x/apps/trillian.png
 share/icons/Moka/256x256@2x/apps/truecrypt.png
-share/icons/Moka/256x256@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/256x256@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/256x256@2x/apps/turpial.png
 share/icons/Moka/256x256@2x/apps/tuxguitar.png
 share/icons/Moka/256x256@2x/apps/tuxpaint.png
@@ -18063,7 +18063,7 @@ share/icons/Moka/32x32/apps/transmission-gtk.png
 share/icons/Moka/32x32/apps/transmission.png
 share/icons/Moka/32x32/apps/trillian.png
 share/icons/Moka/32x32/apps/truecrypt.png
-share/icons/Moka/32x32/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/32x32/apps/ts3client_linux_amd64.png
 share/icons/Moka/32x32/apps/turpial.png
 share/icons/Moka/32x32/apps/tuxguitar.png
 share/icons/Moka/32x32/apps/tuxpaint.png
@@ -20200,7 +20200,7 @@ share/icons/Moka/32x32@2x/apps/transmission-gtk.png
 share/icons/Moka/32x32@2x/apps/transmission.png
 share/icons/Moka/32x32@2x/apps/trillian.png
 share/icons/Moka/32x32@2x/apps/truecrypt.png
-share/icons/Moka/32x32@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/32x32@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/32x32@2x/apps/turpial.png
 share/icons/Moka/32x32@2x/apps/tuxguitar.png
 share/icons/Moka/32x32@2x/apps/tuxpaint.png
@@ -22249,7 +22249,7 @@ share/icons/Moka/48x48/apps/transmission-gtk.png
 share/icons/Moka/48x48/apps/transmission.png
 share/icons/Moka/48x48/apps/trillian.png
 share/icons/Moka/48x48/apps/truecrypt.png
-share/icons/Moka/48x48/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/48x48/apps/ts3client_linux_amd64.png
 share/icons/Moka/48x48/apps/turpial.png
 share/icons/Moka/48x48/apps/tuxguitar.png
 share/icons/Moka/48x48/apps/tuxpaint.png
@@ -24386,7 +24386,7 @@ share/icons/Moka/48x48@2x/apps/transmission-gtk.png
 share/icons/Moka/48x48@2x/apps/transmission.png
 share/icons/Moka/48x48@2x/apps/trillian.png
 share/icons/Moka/48x48@2x/apps/truecrypt.png
-share/icons/Moka/48x48@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/48x48@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/48x48@2x/apps/turpial.png
 share/icons/Moka/48x48@2x/apps/tuxguitar.png
 share/icons/Moka/48x48@2x/apps/tuxpaint.png
@@ -26435,7 +26435,7 @@ share/icons/Moka/64x64/apps/transmission-gtk.png
 share/icons/Moka/64x64/apps/transmission.png
 share/icons/Moka/64x64/apps/trillian.png
 share/icons/Moka/64x64/apps/truecrypt.png
-share/icons/Moka/64x64/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/64x64/apps/ts3client_linux_amd64.png
 share/icons/Moka/64x64/apps/turpial.png
 share/icons/Moka/64x64/apps/tuxguitar.png
 share/icons/Moka/64x64/apps/tuxpaint.png
@@ -28572,7 +28572,7 @@ share/icons/Moka/64x64@2x/apps/transmission-gtk.png
 share/icons/Moka/64x64@2x/apps/transmission.png
 share/icons/Moka/64x64@2x/apps/trillian.png
 share/icons/Moka/64x64@2x/apps/truecrypt.png
-share/icons/Moka/64x64@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/64x64@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/64x64@2x/apps/turpial.png
 share/icons/Moka/64x64@2x/apps/tuxguitar.png
 share/icons/Moka/64x64@2x/apps/tuxpaint.png
@@ -30651,7 +30651,7 @@ share/icons/Moka/96x96/apps/transmission-gtk.png
 share/icons/Moka/96x96/apps/transmission.png
 share/icons/Moka/96x96/apps/trillian.png
 share/icons/Moka/96x96/apps/truecrypt.png
-share/icons/Moka/96x96/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/96x96/apps/ts3client_linux_amd64.png
 share/icons/Moka/96x96/apps/turpial.png
 share/icons/Moka/96x96/apps/tuxguitar.png
 share/icons/Moka/96x96/apps/tuxpaint.png
@@ -32788,7 +32788,7 @@ share/icons/Moka/96x96@2x/apps/transmission-gtk.png
 share/icons/Moka/96x96@2x/apps/transmission.png
 share/icons/Moka/96x96@2x/apps/trillian.png
 share/icons/Moka/96x96@2x/apps/truecrypt.png
-share/icons/Moka/96x96@2x/apps/ts3client_linux_${MACHINE_ARCH}.png
+share/icons/Moka/96x96@2x/apps/ts3client_linux_amd64.png
 share/icons/Moka/96x96@2x/apps/turpial.png
 share/icons/Moka/96x96@2x/apps/tuxguitar.png
 share/icons/Moka/96x96@2x/apps/tuxpaint.png
