@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/02/01 16:22:30 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/12 08:15:46 bcallah Exp $
 bin/drawpile
-@bin bin/drawpile-2.0.7
+@bin bin/drawpile-2.0.8
 @bin bin/drawpile-srv
 @man man/man1/drawpile-srv.1
 share/appdata/
@@ -85,6 +85,7 @@ share/drawpile/drawpile/theme/dark/format-text-underline.svg
 share/drawpile/drawpile/theme/dark/go-jump.svg
 share/drawpile/drawpile/theme/dark/im-ban-user.svg
 share/drawpile/drawpile/theme/dark/im-kick-user.svg
+share/drawpile/drawpile/theme/dark/im-user.svg
 share/drawpile/drawpile/theme/dark/irc-operator.svg
 share/drawpile/drawpile/theme/dark/irc-unvoice.svg
 share/drawpile/drawpile/theme/dark/layer-visible-off.svg
@@ -153,6 +154,7 @@ share/drawpile/drawpile/theme/light/format-text-underline.svg
 share/drawpile/drawpile/theme/light/go-jump.svg
 share/drawpile/drawpile/theme/light/im-ban-user.svg
 share/drawpile/drawpile/theme/light/im-kick-user.svg
+share/drawpile/drawpile/theme/light/im-user.svg
 share/drawpile/drawpile/theme/light/irc-operator.svg
 share/drawpile/drawpile/theme/light/irc-unvoice.svg
 share/drawpile/drawpile/theme/light/layer-visible-off.svg
