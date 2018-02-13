@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/13 09:45:40 landry Exp $
+bin/dbfdump
+bin/indexdump
+${P5SITE}/DBD/
+${P5SITE}/DBD/XBase.pm
+${P5SITE}/XBase/
+${P5SITE}/XBase.pm
+${P5SITE}/XBase/Base.pm
+${P5SITE}/XBase/FAQ.pod
+${P5SITE}/XBase/Index.pm
+${P5SITE}/XBase/Memo.pm
+${P5SITE}/XBase/SDBM.pm
+${P5SITE}/XBase/SQL.pm
+@man man/man1/dbfdump.1
+@man man/man1/indexdump.1
+@man man/man3p/DBD::XBase.3p
+@man man/man3p/XBase.3p
+@man man/man3p/XBase::Base.3p
+@man man/man3p/XBase::FAQ.3p
+@man man/man3p/XBase::Index.3p
+@man man/man3p/XBase::Memo.3p
+@man man/man3p/XBase::SDBM.3p

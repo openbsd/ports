@@ -1,0 +1,5 @@
+Module XBase provides access to XBase (dBase, Fox*) dbf files.
+It also handles memo files (dbt, fpt) and to certain extend
+index files (ndx, ntx, mdx, idx and cdx). The DBD::XBase is
+a database driver for DBI and provides simple SQL interface for
+reading and writing the database files.
