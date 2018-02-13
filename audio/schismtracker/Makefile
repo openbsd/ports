@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/10/19 07:21:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/13 22:33:13 fcambus Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20170910
+GH_TAGNAME =	20180209
 
 CATEGORIES =	audio x11
 
@@ -20,6 +20,8 @@ WANTLIB +=	SDL X11 Xext Xv c m pthread
 MODULES =	lang/python
 
 MODPY_RUNDEP =	No
+
+RUN_DEPENDS =	devel/desktop-file-utils
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
