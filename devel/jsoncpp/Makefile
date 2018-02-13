@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/02/11 09:05:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2018/02/13 05:41:48 rsadowski Exp $
 
 COMMENT =		JSON parsing C++ API
 
@@ -19,6 +19,8 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson
 
