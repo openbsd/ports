@@ -1,4 +1,9 @@
-$OpenBSD: patch-testsuite_mk_test_mk,v 1.8 2018/01/22 00:42:30 kili Exp $
+$OpenBSD: patch-testsuite_mk_test_mk,v 1.9 2018/02/13 21:17:51 kili Exp $
+
+Fix detection of available library ways in case the library-dirs:
+field of ghc-prim contains more than one entry (only checks file
+in the first entry, which is buggy, the whole detection mechanism
+looks buggy).
 
 Disable LLVM tests for now (until I unslack and debug why all LLVM
 tests are failing).
@@ -6,6 +11,15 @@ tests are failing).
 Index: testsuite/mk/test.mk
 --- testsuite/mk/test.mk.orig
 +++ testsuite/mk/test.mk
+@@ -83,7 +83,7 @@ else
+ RUNTEST_OPTS += -e ghc_with_native_codegen=0
+ endif
+ 
+-GHC_PRIM_LIBDIR := $(subst library-dirs: ,,$(shell "$(GHC_PKG)" field ghc-prim library-dirs --simple-output))
++GHC_PRIM_LIBDIR := $(subst library-dirs: ,,$(shell "$(GHC_PKG)" field ghc-prim library-dirs --simple-output | sed -e 's/[[:space:]].*//'))
+ HAVE_VANILLA := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.hi ]; then echo YES; else echo NO; fi)
+ HAVE_DYNAMIC := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.dyn_hi ]; then echo YES; else echo NO; fi)
+ HAVE_PROFILING := $(shell if [ -f $(subst \,/,$(GHC_PRIM_LIBDIR))/GHC/PrimopWrappers.p_hi ]; then echo YES; else echo NO; fi)
 @@ -154,16 +154,7 @@ else
  RUNTEST_OPTS += -e ghc_with_smp=0
  endif
