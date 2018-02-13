@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2018/02/06 15:28:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2018/02/13 21:45:25 sthen Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
 V=		17.12
+REVISION=	0
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -72,6 +73,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-contrib-plugins=all
 CONFIGURE_ARGS += --enable-debug
+CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 
 MAKE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
