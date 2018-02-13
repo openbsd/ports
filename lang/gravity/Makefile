@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 16:01:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/13 15:16:04 bcallah Exp $
 
-V =		0.3.8
 COMMENT =	small, high performance language with a modern syntax
-DISTNAME =	gravity-${V}
 CATEGORIES =	lang
 
 GH_ACCOUNT =	marcobambini
 GH_PROJECT =	gravity
-GH_TAGNAME =	${V}
+GH_TAGNAME =	0.4.0
 
 HOMEPAGE =	http://creolabs.com/gravity
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -20,7 +18,8 @@ WANTLIB += c m
 USE_GMAKE =	Yes
 
 pre-configure:
-	sed -i 's,-O2,${CFLAGS},g' ${WRKSRC}/Makefile ${WRKSRC}/api/Makefile
+	sed -i -e 's,-O2,${CFLAGS},g' -e '/^CC.*/d' ${WRKSRC}/Makefile \
+		${WRKSRC}/api/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gravity ${PREFIX}/bin
