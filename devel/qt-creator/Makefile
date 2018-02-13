@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/01/25 15:02:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2018/02/13 16:50:24 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.5.0
+V =			4.5.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -68,7 +68,6 @@ RUN_DEPENDS =	devel/gdb \
 		x11/qt5/qtscript
 
 LIB_DEPENDS =	x11/qt5/qtdeclarative \
-		x11/qt5/qtscript \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \
 		security/botan \
