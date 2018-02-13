@@ -1,13 +1,17 @@
-$OpenBSD: patch-execute_c,v 1.5 2016/08/30 16:58:45 sthen Exp $
---- execute.c.orig	Sat Aug 27 15:57:18 2016
-+++ execute.c	Tue Aug 30 17:56:47 2016
-@@ -15,6 +15,9 @@
+$OpenBSD: patch-src_util_c,v 1.1 2018/02/13 16:08:06 sthen Exp $
+
+Index: src/util.c
+--- src/util.c.orig
++++ src/util.c
+@@ -15,6 +15,11 @@
  // this program; if not, write to the Free Software Foundation, Inc., 51
  // Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  
 +#include <sys/types.h>
 +#include <sys/stat.h>
++#include <stdio.h>
++#include <string.h>
 +
  #include "ccache.h"
  
- extern struct conf *conf;
+ #include <zlib.h>

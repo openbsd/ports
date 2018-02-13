@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2018/01/14 14:30:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2018/02/13 16:08:06 sthen Exp $
 
 COMMENT =	compiler cache
 
-DISTNAME =	ccache-3.3.5
+DISTNAME =	ccache-3.4.1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://ccache.samba.org/
@@ -20,5 +20,11 @@ CONFIGURE_STYLE =	gnu
 
 # This port should not have dependencies.
 NO_CCACHE =		Yes
+
+TEST_DEPENDS =		shells/bash \
+			sysutils/coreutils
+
+pre-test:
+	ln -s ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 .include <bsd.port.mk>
