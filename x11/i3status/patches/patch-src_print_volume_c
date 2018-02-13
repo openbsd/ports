@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_print_volume_c,v 1.9 2018/02/11 19:21:53 jasper Exp $
+$OpenBSD: patch-src_print_volume_c,v 1.10 2018/02/13 07:25:07 jasper Exp $
 
-Fix volume display on ac97(4) hardware by selecting the right mute device 
-and specifying the current channel count.
+From 5b416d4ac00caf6028416999d3cef3b997d33f3b Mon Sep 17 00:00:00 2001
+From: Carlin Bingham <cb@viennan.net>
+Date: Tue, 13 Feb 2018 02:12:04 +1300
+Subject: [PATCH] OpenBSD: fix volume display on some hardware
 
 Index: src/print_volume.c
 --- src/print_volume.c.orig
