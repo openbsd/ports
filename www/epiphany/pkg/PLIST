@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2017/11/04 16:44:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/02/13 19:55:00 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -10,7 +10,6 @@ libexec/epiphany/
 @bin libexec/epiphany-search-provider
 @bin libexec/epiphany/ephy-profile-migrator
 @man man/man1/epiphany.1
-share/appdata/
 share/appdata/org.gnome.Epiphany.appdata.xml
 share/applications/org.gnome.Epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.SearchProvider.service
