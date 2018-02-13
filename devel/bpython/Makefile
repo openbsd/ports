@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/17 19:48:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2018/02/13 05:13:25 bcallah Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.17
+MODPY_EGG_VERSION=0.17.1
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
