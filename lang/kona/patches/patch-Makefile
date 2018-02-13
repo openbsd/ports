@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2017/09/11 23:47:48 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2018/02/13 05:40:09 bcallah Exp $
 
 Remove PREFIX and hardcoded optimization flags.
 
@@ -10,8 +10,8 @@ Index: Makefile
 -CFLAGS=-g
 -PRODFLAGS = -O3 #-pg -g3
  LIB=libkona.a
--DEVFLAGS = -O0 -g3 -DDEBUG -Wunused -Wreturn-type -Wimplicit-int #-Wall
-+DEVFLAGS = -g3 -DDEBUG -Wunused -Wreturn-type -Wimplicit-int #-Wall
+-DEVFLAGS = -O0 -g3 -DDEBUG -Wall
++DEVFLAGS = -g3 -DDEBUG -Wall
  
  OS := $(shell uname -s | tr "[:upper:]" "[:lower:]")
  
