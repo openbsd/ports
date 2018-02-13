@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2018/01/16 01:42:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.353 2018/02/13 09:46:17 landry Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -77,6 +77,7 @@
      SUBDIR += p5-DBD-SQLite
      SUBDIR += p5-DBD-SQLite2
      SUBDIR += p5-DBD-Sybase
+     SUBDIR += p5-DBD-XBase
      SUBDIR += p5-DBD-mysql
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
