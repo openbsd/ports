@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/09/08 14:19:05 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/13 16:01:10 bcallah Exp $
 @bin bin/uget-gtk
 @bin bin/uget-gtk-1to2
 share/applications/uget-gtk.desktop
@@ -57,6 +57,7 @@ share/locale/or_IN/LC_MESSAGES/
 share/locale/or_IN/LC_MESSAGES/uget.mo
 share/locale/pl/LC_MESSAGES/uget.mo
 share/locale/pt_BR/LC_MESSAGES/uget.mo
+share/locale/ro/LC_MESSAGES/uget.mo
 share/locale/ru/LC_MESSAGES/uget.mo
 share/locale/sk_SK/
 share/locale/sk_SK/LC_MESSAGES/
