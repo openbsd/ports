@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2016/02/02 01:29:05 sthen Exp $
+$OpenBSD: README,v 1.3 2018/02/14 09:19:16 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,13 +29,15 @@ from being used with PHP's "include" function.
 servers, create a symlink:
 
    # mkdir -p /var/www/var
-   # ln -s .. /var/www/var/www 
-   # ls -l /var/www/var/www 
+   # ln -s .. /var/www/var/www
+   # ls -l /var/www/var/www
    lrwxr-xr-x  1 root  daemon  2 Feb  2 01:01 /var/www/var/www -> ..
 
 (Icinga-web2 has CLI scripts which are run outside the chroot jail,
 and PHP webpages which are run inside the jail; this allows paths like
 "/var/www/icinga-web2" to work in both cases).
+
+- If using PostgreSQL, install php-pgsql and php-pdo_pgsql.
 
 - If using php-fpm, configure it to run scripts as the _icingaweb2
 user, and set the /tmp directory. You may add this to ${SYSCONFDIR}/php-fpm.conf:
