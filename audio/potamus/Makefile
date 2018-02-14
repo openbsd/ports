@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 19:52:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/14 09:54:15 bket Exp $
 
 COMMENT =	lightweight audio player with a simple interface
-DISTNAME =	potamus-16
+DISTNAME =	potamus-17
 CATEGORIES =	audio x11
-REVISION =	2
 
 HOMEPAGE =	http://offog.org/code/potamus/
 
