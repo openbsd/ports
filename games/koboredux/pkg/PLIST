@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/14 08:59:17 bentley Exp $
 @bin bin/kobord
 share/applications/net.olofson.koboredux.desktop
 share/doc/koboredux/
@@ -7,6 +7,10 @@ share/doc/koboredux/README.md
 share/doc/koboredux/copyright
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/koboredux/
+share/koboredux/demos/
+share/koboredux/demos/demo_0.dat
+share/koboredux/demos/demo_1.dat
+share/koboredux/demos/demo_2.dat
 share/koboredux/gfx/
 share/koboredux/gfx/loader/
 share/koboredux/gfx/loader/DO64-0.24.gpl
@@ -19,12 +23,16 @@ share/koboredux/gfx/mono/
 share/koboredux/gfx/mono/HW-ZX-Spectrum.gpl
 share/koboredux/gfx/mono/dashboard/
 share/koboredux/gfx/mono/dashboard/barleds2.png
-share/koboredux/gfx/mono/dashboard/chargeleds2.png
+share/koboredux/gfx/mono/dashboard/bottomleds.png
+share/koboredux/gfx/mono/dashboard/chargeleds3.png
 share/koboredux/gfx/mono/dashboard/crosshair.png
-share/koboredux/gfx/mono/dashboard/dashboard-v2.png
-share/koboredux/gfx/mono/dashboard/hleds.png
+share/koboredux/gfx/mono/dashboard/dashboard-v3.png
+share/koboredux/gfx/mono/dashboard/leftleds.png
 share/koboredux/gfx/mono/dashboard/logo.png
-share/koboredux/gfx/mono/dashboard/vleds.png
+share/koboredux/gfx/mono/dashboard/rightleds.png
+share/koboredux/gfx/mono/dashboard/topleds.png
+share/koboredux/gfx/mono/dashboard/weapons.png
+share/koboredux/gfx/mono/dashboard/weaponslots.png
 share/koboredux/gfx/mono/fonts/
 share/koboredux/gfx/mono/fonts/bigfont.png
 share/koboredux/gfx/mono/fonts/counterfont.png
@@ -57,7 +65,6 @@ share/koboredux/gfx/mono/sprites/bmr3.png
 share/koboredux/gfx/mono/sprites/bolt.png
 share/koboredux/gfx/mono/sprites/bomb.png
 share/koboredux/gfx/mono/sprites/bombdeto.png
-share/koboredux/gfx/mono/sprites/explo.png
 share/koboredux/gfx/mono/sprites/fighter.png
 share/koboredux/gfx/mono/sprites/greenbullet.png
 share/koboredux/gfx/mono/sprites/greenbulletexpl.png

@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/02/14 08:59:17 bentley Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -46,9 +46,6 @@ endif(DEMO_BUILD)
- set(VERSION_STRING "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+@@ -55,9 +55,6 @@ else(VERSION_BUILD)
+ endif(VERSION_BUILD)
  set(PACKAGE "${KOBO_PACKAGE_NAME}-${VERSION_STRING}")
  
 -# Release build: full optimization, no debug features, no debug info
