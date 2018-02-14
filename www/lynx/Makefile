@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2017/10/20 19:00:04 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2018/02/14 15:38:27 jsing Exp $
 
 V =		2.8.9
+REVISION =	0
 PL =		16
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
