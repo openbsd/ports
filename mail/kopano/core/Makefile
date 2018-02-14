@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2018/02/10 17:27:10 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2018/02/14 18:15:49 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -48,7 +50,7 @@ WANTLIB-main += curl nghttp2 ical icalss
 WANTLIB-main += mysqlclient curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal ldap_r
+WANTLIB-main += icalvcal ldap_r popt jsoncpp
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
@@ -60,8 +62,10 @@ LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
 		devel/gettext \
 		devel/gsoap>=2.8.50 \
+		devel/jsoncpp \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.4 \
+		devel/popt \
 		net/curl \
 		textproc/icu4c \
 		textproc/libical \
