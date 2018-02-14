@@ -1,7 +1,8 @@
-$OpenBSD: patch-sslsplit_1,v 1.5 2016/03/28 21:37:25 sthen Exp $
---- sslsplit.1.orig	Sun Mar 27 14:46:35 2016
-+++ sslsplit.1	Mon Mar 28 22:31:36 2016
-@@ -299,7 +299,7 @@ Drop privileges after opening sockets and files by set
+$OpenBSD: patch-sslsplit_1,v 1.6 2018/02/14 18:06:29 sthen Exp $
+Index: sslsplit.1
+--- sslsplit.1.orig
++++ sslsplit.1
+@@ -318,7 +318,7 @@ Drop privileges after opening sockets and files by set
  effective and stored user IDs to \fIuser\fP and loading the appropriate
  primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
  privileges to the stored UID if EUID != UID (setuid bit scenario), or to
@@ -10,7 +11,7 @@ $OpenBSD: patch-sslsplit_1,v 1.5 2016/03/28 21:37:25 sthen Exp $
  Due to an Apple bug, \fB-u\fP cannot be used with \fBpf\fP proxyspecs on
  Mac OS X.
  .TP
-@@ -512,6 +512,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
+@@ -530,6 +530,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
  \fBipfw add fwd       ::1,10443 tcp from 2001:db8::/64 to any 443\fP
  \fBipfw add fwd 127.0.0.1,10080 tcp from 192.0.2.0/24  to any  80\fP
  \fBipfw add fwd 127.0.0.1,10443 tcp from 192.0.2.0/24  to any 443\fP
