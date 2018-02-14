@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.198 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.199 2018/02/14 15:43:30 jsing Exp $
 
 VERSION=	3.2.4
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=official/}
 
