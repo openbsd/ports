@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/06 21:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/14 09:13:01 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -9,6 +9,7 @@ CPAN_AUTHOR =	ZNMSTR
 V =		2.0.6
 DISTNAME =	Zonemaster-Engine-v$V
 PKGNAME =	p5-Zonemaster-engine-$V
+REVISION =	0
 CATEGORIES =	net
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
@@ -20,7 +21,7 @@ WANTLIB =	perl
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		converters/p5-JSON>=2.53 \
-			converters/p5-JSON-XS \
+			converters/p5-JSON-XS>=2.32 \
 			devel/p5-File-ShareDir>=1.00 \
 			devel/p5-File-Slurp \
 			devel/p5-Hash-Merge \
@@ -32,11 +33,10 @@ RUN_DEPENDS =		converters/p5-JSON>=2.53 \
 			mail/p5-Mail-RFC822-Address \
 			net/p5-IO-Socket-INET6>=2.69 \
 			net/p5-Net-IP \
-			net/p5-Zonemaster/ldns
-
-TEST_DEPENDS =		converters/p5-JSON-XS>=2.32 \
-			devel/p5-Pod-Coverage \
-			devel/p5-Test-Fatal \
+			net/p5-Zonemaster/ldns \
 			textproc/p5-Text-CSV
+
+TEST_DEPENDS =		devel/p5-Pod-Coverage \
+			devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
