@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/06 21:55:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/14 08:57:38 bentley Exp $
 @bin bin/a2play
 include/Audiality2/
 include/Audiality2/a2_drivers.h
 include/Audiality2/a2_dsp.h
 include/Audiality2/a2_interface.h
+include/Audiality2/a2_log.h
 include/Audiality2/a2_pitch.h
 include/Audiality2/a2_properties.h
 include/Audiality2/a2_stream.h
