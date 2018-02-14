@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/02/12 23:27:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/02/14 14:04:34 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -66,7 +66,7 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
-	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer-wrapper.php; \
+	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -r ${INSTDIR}/tests
