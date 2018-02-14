@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/12/22 22:49:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/02/14 05:59:05 rsadowski Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -111,7 +111,7 @@ intellij/lib/coverage-instrumenter.jar
 intellij/lib/coverage-util.jar
 intellij/lib/cucumber-core-1.2.4.jar
 intellij/lib/cucumber-groovy-1.2.4.jar
-intellij/lib/ecj-4.6.2.jar
+intellij/lib/ecj-4.7.2.jar
 intellij/lib/emma.jar
 intellij/lib/extensions.jar
 intellij/lib/external-system-rt.jar
@@ -145,7 +145,7 @@ intellij/lib/jayatana-1.2.4.jar
 intellij/lib/jcip-annotations.jar
 intellij/lib/jdkAnnotations.jar
 intellij/lib/jdom.jar
-intellij/lib/jediterm-pty-2.5.jar
+intellij/lib/jediterm-pty-2.6.jar
 intellij/lib/jgoodies-common-1.2.1.jar
 intellij/lib/jgoodies-forms.jar
 intellij/lib/jgoodies-looks-2.4.2.jar
