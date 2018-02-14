@@ -1,7 +1,3 @@
-cs is a program for concurrently executing ssh(1) or scp(1) on a number of
-hosts.  It is intended to automate running remote commands or copying files
-between hosts on a network. Public key authentication is used for establishing
-passwordless connection.
-
-Note that the utility has been renamed from cs to go-cs to prevent a conflict
-with the www/clearsilver port.
+cs is a program for concurrently executing local or remote commands on
+multiple hosts.  It is using OpenSSH for running remote commands. Its
+main purpose is to help automate and manage large network of hosts.
