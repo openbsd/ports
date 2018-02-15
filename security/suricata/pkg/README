@@ -1,0 +1,42 @@
+$OpenBSD: README,v 1.1.1.1 2018/02/15 08:30:08 gonzalo Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+For normal use, you need to set first your interface and enable the
+daemon:
+
+# rcctl enable suricata
+# rcctl set suricata flags -i em0
+
+And you need the rules, these rules are expected to be present in the
+${SYSCONFDIR}/suricata/rules directory as defined in
+${SYSCONFDIR}/suricata/suricata.yaml.
+
+Rule Management with Oinkmaster:
+
+It is possible to download and install rules manually, but there is a
+much easier and quicker way to do so. There are special programs which
+you can use for downloading and installing rules. There is for example
+Pulled Pork and Oinkmaster. In this documentation the use of Oinkmaster
+will be described.
+
+# pkg_add -vi oinkmaster
+
+There are several rulesets. There is for example Emerging Threats (ET)
+Emerging Threats Pro and VRT. In this example we are using Emerging
+Threats.
+
+Oinkmaster has to know where the rules an be found. These rules can be
+found at:
+
+http://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
+
+And you can download as follow:
+
+# cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf -o ${SYSCONFDIR}/suricata/rules
+
+Finally you can start Suricata:
+
+# rcctl start suricata

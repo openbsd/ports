@@ -1,0 +1,16 @@
+#!/bin/ksh
+#
+# $OpenBSD: suricata.rc,v 1.1.1.1 2018/02/15 08:30:08 gonzalo Exp $
+
+daemon="${TRUEPREFIX}/bin/suricata"
+daemon_flags=""
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon} -D ${daemon_flags}"
+
+rc_start() {
+	${rcexec} "${daemon} -D ${daemon_flags} >/dev/null"
+}
+
+rc_cmd $1
