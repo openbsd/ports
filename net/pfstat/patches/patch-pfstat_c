@@ -1,0 +1,13 @@
+$OpenBSD: patch-pfstat_c,v 1.1 2018/02/15 08:45:48 tb Exp $
+
+Index: pfstat.c
+--- pfstat.c.orig
++++ pfstat.c
+@@ -44,6 +44,7 @@ static const char rcsid[] = "$Id: pfstat.c,v 1.2 2010/
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <time.h>
+ #include <unistd.h>
+ 
+ #include "data.h"
