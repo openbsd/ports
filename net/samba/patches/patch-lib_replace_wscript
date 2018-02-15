@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_replace_wscript,v 1.8 2017/11/22 16:15:44 jca Exp $
+$OpenBSD: patch-lib_replace_wscript,v 1.9 2018/02/15 09:59:44 jca Exp $
 
 Index: lib/replace/wscript
 --- lib/replace/wscript.orig
 +++ lib/replace/wscript
-@@ -167,6 +167,8 @@ def configure(conf):
+@@ -198,6 +198,8 @@ def configure(conf):
                          msg='Checking for IPV6_V6ONLY in linux/in6.h',
                          local_include=False)
  

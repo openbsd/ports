@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.249 2018/01/16 17:35:05 jca Exp $
+# $OpenBSD: Makefile,v 1.250 2018/02/15 09:59:44 jca Exp $
 
-VERSION =		4.6.12
+VERSION =		4.7.5
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -17,18 +17,17 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.29
+LDB_V =			1.2.3
 TEVENT_V =		0.9.34
 
-REVISION-ldb =		0
-REVISION-tevent =	0
+REVISION-tevent =	1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
 			dcerpc-binding		1.1 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		3.0 \
+			dcerpc-server		4.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -37,30 +36,30 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.1 \
-			ldb			0.4 \
-			ndr			0.2 \
+			ldb			0.5 \
+			ndr			0.3 \
 			ndr-krb5pac		0.1 \
 			ndr-nbt			0.1 \
-			ndr-standard		2.0 \
+			ndr-standard		3.0 \
 			netapi			2.0 \
-			pyldb-util		0.1 \
+			pyldb-util		0.2 \
 			roken-samba4		0.0 \
-			samba-credentials	0.1 \
-			samba-errors		0.0 \
-			samba-hostconfig	2.1 \
-			samba-passdb		1.0 \
+			samba-credentials	0.2 \
+			samba-errors		1.0 \
+			samba-hostconfig	3.0 \
+			samba-passdb		2.0 \
 			samba-policy		0.0 \
-			samba-util		2.0 \
-			samdb			0.0 \
+			samba-util		3.0 \
+			samdb			0.1 \
 			smbclient		4.1 \
-			smbconf			2.0 \
-			smbldap			0.0 \
+			smbconf			3.0 \
+			smbldap			0.1 \
 			tevent			0.3 \
 			tevent-util		0.1 \
-			wbclient		3.1 \
+			wbclient		3.2 \
 			wind-samba4		0.0 \
-			replace			2.0 \
-			util-setid		2.0
+			replace			3.0 \
+			util-setid		3.0
 
 CATEGORIES =		net sysutils security
 
@@ -117,10 +116,10 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
 			converters/libiconv \
 			databases/openldap \
-			databases/tdb>=1.3.8 \
+			databases/tdb>=1.3.14 \
 			devel/gettext \
 			devel/libexecinfo \
-			devel/libtalloc>=2.1.6 \
+			devel/libtalloc>=2.1.9 \
 			net/avahi \
 			print/cups,-libs \
 			security/gnutls \
@@ -128,10 +127,10 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			sysutils/gamin
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
-			devel/libtalloc>=2.1.6 \
+			devel/libtalloc>=2.1.9 \
 			devel/popt
 
-LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.6
+LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.9
 
 LIB_DEPENDS-docs =
 
