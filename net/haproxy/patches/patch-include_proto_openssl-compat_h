@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_proto_openssl-compat_h,v 1.1 2018/02/15 13:45:49 sthen Exp $
+$OpenBSD: patch-include_proto_openssl-compat_h,v 1.2 2018/02/15 13:58:25 sthen Exp $
 
 Index: include/proto/openssl-compat.h
 --- include/proto/openssl-compat.h.orig
@@ -7,7 +7,7 @@ Index: include/proto/openssl-compat.h
  }
  #endif
  
-+#if LIBRESSL_VERSION_NUMBER < 0x2070000fL
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
  static inline const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *x)
  {
  	return x->data;
