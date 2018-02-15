@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/14 17:12:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/15 20:39:57 landry Exp $
 @conflict py-buildbot-<0.9
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
@@ -651,6 +651,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_compositestepmixin.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_integration_secrets.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_integration_secrets.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_interruptcommand.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_interruptcommand.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_setpropertyfromcommand.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_setpropertyfromcommand.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/interop/test_transfer.py
@@ -1207,6 +1209,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_base.
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_base.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucket.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucket.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucketcloud.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucketcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucketserver.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_bitbucketserver.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_www_hooks_github.py
@@ -1413,6 +1417,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/base.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucket.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucket.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucketcloud.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucketcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucketserver.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/bitbucketserver.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/github.py
