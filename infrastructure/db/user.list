@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.301 2018/01/10 16:20:58 claudio Exp $
+$OpenBSD: user.list,v 1.302 2018/02/15 08:33:38 gonzalo Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -308,3 +308,4 @@ id  user		group		port options
 797 _influx		_influx		databases/influxdb
 798 _grafana		_grafana	sysutils/grafana
 799 _prometheus		_prometheus	sysutils/prometheus
+800 _suricata		_suricata	security/suricata
