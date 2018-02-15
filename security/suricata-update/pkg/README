@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2018/02/15 18:36:37 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+suricata-update is the recommended way to install and update rules for
+suricata. By default it will download the new rules into ${VARBASE}/suricata/rules/ .
+
+Modify ${SYSCONFDIR}/suricata/suricata.yaml like this:
+
+    default-rule-path: ${VARBASE}/suricata/rules/
+    rule-files:
+      - suricata.rules
+
+And restart suricata:
+
+# rcctl restart suricata
