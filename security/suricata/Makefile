@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/15 08:30:08 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/15 16:19:41 ajacoutot Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 DISTNAME =	suricata-4.0.4
+REVISION =	0
 CATEGORIES =	security
 SHARED_LIBS +=  htp                       0.0 # 1.0
 
@@ -21,6 +22,8 @@ WANTLIB += pcre plc4 plds4 pthread smime3 ssl3 yaml-0 z
 
 MODULES =	lang/python
 
+BUILD_DEPENDS =	textproc/py-sphinx
+
 LIB_DEPENDS =	converters/libiconv \
 		devel/jansson \
 		devel/nspr \
@@ -30,10 +33,10 @@ LIB_DEPENDS =	converters/libiconv \
 		net/libnet/1.1 \
 		security/nss
 
-CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ENV = ac_cv_path_HAVE_PDFLATEX= \
+		ac_cv_path_HAVE_GIT_CMD=
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules
@@ -41,8 +44,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/suricata.yaml ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${PREFIX}/share/examples/suricata/rules
 	rm ${PREFIX}/share/doc/suricata/{*.txt,GITGUIDE,INSTALL*}
-.for i in AUTHORS NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/suricata
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/{AUTHORS,NEWS,README,TODO} \
+		${PREFIX}/share/doc/suricata
 
 .include <bsd.port.mk>

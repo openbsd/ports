@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/15 08:30:08 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/15 16:19:41 ajacoutot Exp $
 @newgroup _suricata:800
 @newuser _suricata:800:_suricata:daemon:Suricata Account:/nonexistent:/sbin/nologin
 @bin bin/suricata
@@ -78,4 +78,6 @@ share/examples/suricata/threshold.config
 @sample /var/suricata/
 @sample /var/suricata/log/
 @sample /var/log/suricata/
+@owner
+@group
 @rcscript ${RCDIR}/suricata
