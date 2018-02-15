@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.485 2018/02/15 08:32:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.486 2018/02/15 18:37:47 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -358,6 +358,7 @@
      SUBDIR += sudo,gettext
      SUBDIR += sudo,gettext,ldap
      SUBDIR += suricata
+     SUBDIR += suricata-update
      SUBDIR += swatch
      SUBDIR += tclgpg
      SUBDIR += tcltls
