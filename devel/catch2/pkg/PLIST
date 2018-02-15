@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/10 11:21:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/15 11:59:15 rsadowski Exp $
 include/catch/
 include/catch/catch.hpp
 include/catch/catch_reporter_automake.hpp
 include/catch/catch_reporter_tap.hpp
 include/catch/catch_reporter_teamcity.hpp
+lib/cmake/
+lib/cmake/Catch2/
+lib/cmake/Catch2/Catch2Config.cmake
+lib/cmake/Catch2/Catch2ConfigVersion.cmake
 share/doc/Catch2/
 share/doc/Catch2/Readme.md
 share/doc/Catch2/assertions.md
