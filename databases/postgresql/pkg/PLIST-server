@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.33 2017/11/30 16:13:12 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.34 2018/02/15 13:00:36 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -314,8 +314,8 @@ include/postgresql/server/lib/
 include/postgresql/server/lib/binaryheap.h
 include/postgresql/server/lib/bipartite_match.h
 include/postgresql/server/lib/hyperloglog.h
-include/postgresql/server/lib/knapsack.h
 include/postgresql/server/lib/ilist.h
+include/postgresql/server/lib/knapsack.h
 include/postgresql/server/lib/pairingheap.h
 include/postgresql/server/lib/rbtree.h
 include/postgresql/server/lib/simplehash.h
@@ -332,8 +332,8 @@ include/postgresql/server/libpq/libpq.h
 include/postgresql/server/libpq/pqcomm.h
 include/postgresql/server/libpq/pqformat.h
 include/postgresql/server/libpq/pqmq.h
-include/postgresql/server/libpq/scram.h
 include/postgresql/server/libpq/pqsignal.h
+include/postgresql/server/libpq/scram.h
 include/postgresql/server/mb/
 include/postgresql/server/mb/pg_wchar.h
 include/postgresql/server/miscadmin.h
@@ -658,6 +658,7 @@ include/postgresql/server/utils/freepage.h
 include/postgresql/server/utils/geo_decls.h
 include/postgresql/server/utils/guc.h
 include/postgresql/server/utils/guc_tables.h
+include/postgresql/server/utils/hashutils.h
 include/postgresql/server/utils/help_config.h
 include/postgresql/server/utils/hsearch.h
 include/postgresql/server/utils/index_selfuncs.h
