@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.34 2018/02/15 13:45:49 sthen Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
 GH_TAGNAME =		v0.26.0
+REVISION =		0
 
 SHARED_LIBS +=  git2                      10.0 # 0.25
 
