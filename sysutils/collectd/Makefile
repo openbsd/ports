@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/01/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2018/02/15 11:17:05 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -26,7 +26,7 @@ PKGNAME-riemann =	collectd-riemann-$V
 CATEGORIES =		sysutils
 
 REVISION =		1
-REVISION-main =		2
+REVISION-main =		3
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/15 11:17:05 sthen Exp $
 
 COMMENT=		daemon implementing NAT-PMP protocol for pf(4)
 
 DISTNAME=		natpmpd-1.4
-REVISION=		4
+REVISION=		5
 CATEGORIES=		net
 
 HOMEPAGE=		http://bodgitandscarper.co.uk/natpmpd/

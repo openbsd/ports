@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2017/04/24 01:46:06 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2018/02/15 11:17:05 sthen Exp $
 
 # XXX should be fixed to use the new queuing subsystem
 
 COMMENT=	curses-based real time state and rule display for pf
 
 DISTNAME=	pftop-0.7
-REVISION=	16
+REVISION=	17
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/
