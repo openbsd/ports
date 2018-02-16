@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/01/12 12:14:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/02/16 15:29:52 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/paramiko/__init__.py
@@ -23,8 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}compress.${MOD
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}dsskey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ecdsakey.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ed25519key.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}hostkeys.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_ecdh_nist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_gex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}kex_group14.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,7 +37,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}pkey.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}primes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}rsakey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}sftp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -64,8 +64,10 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/compress.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/config.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/dsskey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ecdsakey.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/ed25519key.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/file.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/hostkeys.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/kex_ecdh_nist.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_gex.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group1.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/kex_group14.py
@@ -77,7 +79,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/pkey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/primes.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/proxy.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/py3compat.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/resource.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/rsakey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/server.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/sftp.py
