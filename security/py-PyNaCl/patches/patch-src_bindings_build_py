@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_bindings_build_py,v 1.1.1.1 2018/02/16 15:28:42 jasper Exp $
+Index: src/bindings/build.py
+--- src/bindings/build.py.orig
++++ src/bindings/build.py
+@@ -52,4 +52,4 @@ else:
+     libraries = ["sodium"]
+ 
+ # Set our source so that we can actually build our bindings to sodium.
+-ffi.set_source("_sodium", "\n".join(source), libraries=libraries)
++ffi.set_source("_sodium", "\n".join(source), libraries=libraries, include_dirs=["${LOCALBASE}/include"])
