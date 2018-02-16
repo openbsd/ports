@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.46 2018/02/16 14:37:43 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	1.6.5
-REVISION=	0
+GH_TAGNAME=	1.6.6
 
 CATEGORIES=	mail
 
