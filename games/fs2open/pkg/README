@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Game Files
+==========
+
+In order to play FreeSpace 2, you need to purchase the original game
+and move its files to ~/.local/share/fs2open.
+
+First, locate the folder with the FreeSpace2.exe executable. For the
+gog.com version, this would be the 'app' subfolder which contains
+several files, including the FreeSpace2.exe, Root_fs2.vp, and data
+subfolder(s). (note that port innoextract can unpack gog.com Windows
+installers.) Then copy or move all files and folders to
+~/.local/share/fs2open
+
+Cutscenes
+=========
+
+In order to get cutscenes to work (ten .mve or .MVE files), they need
+to be in the data/movies directory. With the gog.com version, you can
+find these files somewhere in the data2 and data3 directories. You may
+need to create the data/movies directory yourself if it doesn't exist.
+
+(fs2open does not support AVI versions of the cutscenes.)
+
+Mods
+====
+
+In order to run mods, create a folder for each mod in
+~/.local/share/fs2open and call fs2open like this:
+
+fs2open -mod <modfolder>

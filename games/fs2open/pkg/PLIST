@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+bin/fs2open
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/fs2open/
+@bin share/fs2open/fs2open

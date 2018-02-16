@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_toolchain-clang_cmake,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+
+remove hardcoded -O2
+
+Index: cmake/toolchain-clang.cmake
+--- cmake/toolchain-clang.cmake.orig
++++ cmake/toolchain-clang.cmake
+@@ -80,7 +80,7 @@ if(SUPPORTS_SHIFT_NEGATIVE_VALUE)
+ 	set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-shift-negative-value")
+ endif()
+ 
+-set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable")
++set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable")
+ 
+ set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
+ 

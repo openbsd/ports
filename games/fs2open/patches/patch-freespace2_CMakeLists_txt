@@ -1,0 +1,16 @@
+$OpenBSD: patch-freespace2_CMakeLists_txt,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+
+change target binary name (remove platform name)
+
+Index: freespace2/CMakeLists.txt
+--- freespace2/CMakeLists.txt.orig
++++ freespace2/CMakeLists.txt
+@@ -23,7 +23,7 @@ ADD_EXECUTABLE(Freespace2 ${EXE_GUI_TYPE} ${FREESPACE_
+ 
+ include(resources.cmake)
+ 
+-SET_TARGET_PROPERTIES(Freespace2 PROPERTIES OUTPUT_NAME "fs2_open_${FSO_BINARY_SUFFIX}")
++SET_TARGET_PROPERTIES(Freespace2 PROPERTIES OUTPUT_NAME "fs2open")
+ 
+ TARGET_LINK_LIBRARIES(Freespace2 code)
+ TARGET_LINK_LIBRARIES(Freespace2 platform)

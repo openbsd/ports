@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# change directory to ~/.local/share/fs2open and run bin from there
+
+cd ~/.local/share/fs2open
+if [[ $? -ne 0 ]]
+then
+	print 'could not find directory ~/.local/share/fs2open'
+	exit 1
+fi
+exec ${TRUEPREFIX}/share/fs2open/fs2open $*
