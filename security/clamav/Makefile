@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.115 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.116 2018/02/16 21:32:45 sthen Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.99.2
-REVISION=	6
+DISTNAME=	clamav-0.99.3
 
 CATEGORIES=	security
 
@@ -17,14 +16,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += bz2 c crypto curl iconv ltdl lzma m milter ncurses
+WANTLIB += bz2 c crypto curl curses iconv ltdl lzma m milter
 WANTLIB += nghttp2 pcre2-8 pthread ssl xml2 z
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
 
 LIB_DEPENDS=		archivers/bzip2 \
-			devel/gettext \
 			devel/libtool,-ltdl \
 			devel/pcre2 \
 			mail/sendmail,-libmilter \

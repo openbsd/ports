@@ -1,7 +1,8 @@
-$OpenBSD: patch-libclamav_Makefile_in,v 1.27 2016/05/04 07:12:55 sthen Exp $
---- libclamav/Makefile.in.orig	Fri Apr 22 17:19:53 2016
-+++ libclamav/Makefile.in	Wed May  4 00:09:31 2016
-@@ -3743,6 +3743,9 @@ version.h: version.h.tmp
+$OpenBSD: patch-libclamav_Makefile_in,v 1.28 2018/02/16 21:32:45 sthen Exp $
+Index: libclamav/Makefile.in
+--- libclamav/Makefile.in.orig
++++ libclamav/Makefile.in
+@@ -3707,6 +3707,9 @@ version.h: version.h.tmp
  	fi
  
  version.h.tmp:
