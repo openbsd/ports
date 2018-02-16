@@ -1,14 +1,15 @@
-$OpenBSD: patch-spice-common_common_ssl_verify_c,v 1.1 2017/12/02 18:10:18 ajacoutot Exp $
+$OpenBSD: patch-spice-common_common_ssl_verify_c,v 1.2 2018/02/16 12:13:04 sthen Exp $
 
 Index: spice-common/common/ssl_verify.c
 --- spice-common/common/ssl_verify.c.orig
 +++ spice-common/common/ssl_verify.c
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,8 @@
  #include <string.h>
  #include <gio/gio.h>
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000
-+#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000 || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  static const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *asn1)
  {
      return M_ASN1_STRING_data(asn1);
