@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/16 21:11:27 jung Exp $
 
 COMMENT =		Gopher protocol daemon
 
-DISTNAME =		geomyidae-0.26.3
-REVISION =		1
+DISTNAME =		geomyidae-0.31
 
 CATEGORIES =		net
 
-HOMEPAGE =		http://www.r-36.net/src/geomyidae/
+HOMEPAGE =		http://git.r-36.net/geomyidae/
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES =		${HOMEPAGE}/snapshot/
 
 MAKE_FLAGS =		CC="${CC}"
 MAKE_ENV =		LDFLAGS="${LDFLAGS}"
