@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2018/01/28 16:08:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.372 2018/02/16 11:42:24 kirby Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -106,6 +106,7 @@
      SUBDIR += fretsonfire
      SUBDIR += frotz
      SUBDIR += frozen-bubble
+     SUBDIR += fs2open
      SUBDIR += galois
      SUBDIR += gamine
      SUBDIR += garden
