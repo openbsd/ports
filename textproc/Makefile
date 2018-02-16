@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2018/02/07 09:08:32 danj Exp $
+# $OpenBSD: Makefile,v 1.563 2018/02/16 14:35:00 danj Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -429,6 +429,8 @@
      SUBDIR += py-sphinx_rtd_theme,python3
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
+     SUBDIR += py-toml
+     SUBDIR += py-toml,python3
      SUBDIR += py-unicodecsv
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode
