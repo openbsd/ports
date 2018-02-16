@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/10/29 06:03:08 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/16 19:36:55 steven Exp $
 bin/zaproxy
 share/zaproxy/
 share/zaproxy/README
@@ -22,6 +22,7 @@ share/zaproxy/lang/Messages_es_ES.properties
 share/zaproxy/lang/Messages_fa_IR.properties
 share/zaproxy/lang/Messages_fil_PH.properties
 share/zaproxy/lang/Messages_fr_FR.properties
+share/zaproxy/lang/Messages_he_IL.properties
 share/zaproxy/lang/Messages_hi_IN.properties
 share/zaproxy/lang/Messages_hr_HR.properties
 share/zaproxy/lang/Messages_hu_HU.properties
@@ -60,6 +61,7 @@ share/zaproxy/lang/vulnerabilities_es_ES.xml
 share/zaproxy/lang/vulnerabilities_fa_IR.xml
 share/zaproxy/lang/vulnerabilities_fil_PH.xml
 share/zaproxy/lang/vulnerabilities_fr_FR.xml
+share/zaproxy/lang/vulnerabilities_he_IL.xml
 share/zaproxy/lang/vulnerabilities_hi_IN.xml
 share/zaproxy/lang/vulnerabilities_hr_HR.xml
 share/zaproxy/lang/vulnerabilities_hu_HU.xml
@@ -126,6 +128,7 @@ share/zaproxy/lib/xom-1.2.10.jar
 share/zaproxy/license/
 share/zaproxy/license/ApacheLicense-2.0.txt
 share/zaproxy/license/COPYING
+share/zaproxy/license/OFL.txt
 share/zaproxy/license/RSyntaxTextArea.License.txt
 share/zaproxy/license/TheClarifiedArtisticLicense.htm
 share/zaproxy/license/TheClarifiedArtisticLicense.rtf
@@ -135,32 +138,32 @@ share/zaproxy/license/hypersonic_lic.txt
 share/zaproxy/license/lgpl-3.0.txt
 share/zaproxy/plugin/
 share/zaproxy/plugin/Readme.txt
-share/zaproxy/plugin/alertFilters-beta-4.zap
-share/zaproxy/plugin/ascanrules-release-26.zap
-share/zaproxy/plugin/bruteforce-beta-6.zap
-share/zaproxy/plugin/coreLang-release-11.zap
-share/zaproxy/plugin/diff-beta-7.zap
+share/zaproxy/plugin/alertFilters-beta-6.zap
+share/zaproxy/plugin/ascanrules-release-28.zap
+share/zaproxy/plugin/bruteforce-beta-7.zap
+share/zaproxy/plugin/coreLang-release-12.zap
+share/zaproxy/plugin/diff-beta-8.zap
 share/zaproxy/plugin/directorylistv1-release-3.zap
-share/zaproxy/plugin/fuzz-beta-8.zap
-share/zaproxy/plugin/gettingStarted-release-6.zap
-share/zaproxy/plugin/help-release-7.zap
-share/zaproxy/plugin/invoke-beta-6.zap
-share/zaproxy/plugin/jxbrowser-alpha-2.zap
-share/zaproxy/plugin/jxbrowserlinux32-alpha-1.zap
-share/zaproxy/plugin/jxbrowserlinux64-alpha-1.zap
-share/zaproxy/plugin/onlineMenu-release-5.zap
-share/zaproxy/plugin/pscanrules-release-19.zap
-share/zaproxy/plugin/quickstart-release-19.zap
-share/zaproxy/plugin/replacer-beta-2.zap
+share/zaproxy/plugin/fuzz-beta-10.zap
+share/zaproxy/plugin/gettingStarted-release-8.zap
+share/zaproxy/plugin/help-release-8.zap
+share/zaproxy/plugin/importurls-beta-5.zap
+share/zaproxy/plugin/invoke-beta-8.zap
+share/zaproxy/plugin/jxbrowser-alpha-7.zap
+share/zaproxy/plugin/jxbrowserlinux64-alpha-5.zap
+share/zaproxy/plugin/onlineMenu-release-6.zap
+share/zaproxy/plugin/pscanrules-release-21.zap
+share/zaproxy/plugin/quickstart-release-22.zap
+share/zaproxy/plugin/replacer-beta-4.zap
 share/zaproxy/plugin/reveal-release-2.zap
-share/zaproxy/plugin/saverawmessage-release-3.zap
-share/zaproxy/plugin/scripts-beta-18.zap
-share/zaproxy/plugin/selenium-release-10.zap
-share/zaproxy/plugin/spiderAjax-release-17.zap
+share/zaproxy/plugin/saverawmessage-release-4.zap
+share/zaproxy/plugin/scripts-beta-22.zap
+share/zaproxy/plugin/selenium-release-13.zap
+share/zaproxy/plugin/spiderAjax-release-20.zap
 share/zaproxy/plugin/tips-beta-6.zap
-share/zaproxy/plugin/webdriverlinux-beta-2.zap
-share/zaproxy/plugin/websocket-release-12.zap
-share/zaproxy/plugin/zest-beta-23.zap
+share/zaproxy/plugin/webdriverlinux-beta-4.zap
+share/zaproxy/plugin/websocket-release-14.zap
+share/zaproxy/plugin/zest-beta-26.zap
 share/zaproxy/scripts/
 share/zaproxy/scripts/templates/
 share/zaproxy/scripts/templates/active/
@@ -185,7 +188,6 @@ share/zaproxy/scripts/templates/targeted/Find HTML comments.js
 share/zaproxy/scripts/templates/targeted/Targeted default template.js
 share/zaproxy/scripts/templates/variant/
 share/zaproxy/scripts/templates/variant/Input Vector default template.js
-share/zaproxy/scripts/templates/variant/Input Vector sharp query separator.js
 share/zaproxy/xml/
 share/zaproxy/xml/alert.dtd
 share/zaproxy/xml/alert.xml
