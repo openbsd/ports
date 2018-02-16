@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.57 2018/02/16 21:20:05 gsoares Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-1.2.2
-REVISION=	1
+DISTNAME=	quagga-1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 
@@ -16,7 +15,7 @@ HOMEPAGE=	http://www.quagga.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c curses m readline termcap
+WANTLIB += c curses m readline
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/quagga
 
