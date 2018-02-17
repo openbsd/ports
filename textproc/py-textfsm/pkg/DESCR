@@ -1,0 +1,4 @@
+TextFSM is a Python module which implements a template based state
+machine for parsing semi-formatted text. Originally developed to allow
+programmatic access to information returned from the command line
+interface (CLI) of networking devices.
