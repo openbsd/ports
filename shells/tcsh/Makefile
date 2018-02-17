@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.55 2016/05/31 12:11:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2018/02/17 08:42:08 rsadowski Exp $
 
 COMMENT=	extended C-shell with many useful features
 
-DISTNAME=	tcsh-6.19.00
-REVISION=	0
+DISTNAME=	tcsh-6.20.00
 CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
-		ftp://ftp.astron.com/pub/tcsh/old/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
-WANTLIB=	c termlib
+WANTLIB=	c curses
 
 FLAVORS=	static
 FLAVOR?=
