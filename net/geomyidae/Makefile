@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/16 21:11:27 jung Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/17 23:07:10 ajacoutot Exp $
 
 COMMENT =		Gopher protocol daemon
 
@@ -17,9 +17,8 @@ WANTLIB =		c
 
 MASTER_SITES =		${HOMEPAGE}/snapshot/
 
-MAKE_FLAGS =		CC="${CC}"
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS} -Wall"
 MAKE_ENV =		LDFLAGS="${LDFLAGS}"
-FAKE_FLAGS =		DESTDIR=""
 
 NO_TEST =		Yes
 
