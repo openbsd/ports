@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/15 18:36:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/17 08:48:11 jasper Exp $
 
 COMMENT =		Suricata update tool
 
 MODPY_EGG_VERSION =	1.0.0b1
 DISTNAME =		suricata-update-${MODPY_EGG_VERSION}
+REVISION =		0
 CATEGORIES =		security
 
-MAINTAINER =		Jasper Lievisse Adriaanse
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE =		https://github.com/OISF/suricata-update
 
