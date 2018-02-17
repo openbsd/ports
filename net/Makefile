@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1051 2018/02/17 12:07:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.1052 2018/02/17 14:10:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -263,6 +263,7 @@
      SUBDIR += nagios
      SUBDIR += nam
      SUBDIR += nanomsg
+     SUBDIR += napalm
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
