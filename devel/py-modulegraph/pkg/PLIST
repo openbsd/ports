@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/30 19:17:31 jasper Exp $
-bin/modulegraph
+@comment $OpenBSD: PLIST,v 1.3 2018/02/17 09:36:55 jasper Exp $
+bin/modulegraph${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/modulegraph/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,16 +10,15 @@ lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/modulegraph/__init__.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/modulegraph/__main__.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/__main__.pyc
-lib/python${MODPY_VERSION}/site-packages/modulegraph/_compat.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/_compat.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}find_modules.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}modulegraph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/${MODPY_PYCACHE}zipio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/modulegraph/find_modules.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/find_modules.pyc
 lib/python${MODPY_VERSION}/site-packages/modulegraph/modulegraph.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/modulegraph.pyc
 lib/python${MODPY_VERSION}/site-packages/modulegraph/util.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/util.pyc
 lib/python${MODPY_VERSION}/site-packages/modulegraph/zipio.py
-lib/python${MODPY_VERSION}/site-packages/modulegraph/zipio.pyc
