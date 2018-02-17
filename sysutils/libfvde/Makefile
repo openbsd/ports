@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/17 19:45:37 naddy Exp $
 
 COMMENT =	library and tools to access FileVault Drive Encryption
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS +=	--enable-python
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio
 
