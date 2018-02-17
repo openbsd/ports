@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/02/01 21:47:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/02/17 11:20:55 sthen Exp $
 
 BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
 
@@ -6,7 +6,7 @@ COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 
-V=			4.1.0
+V=			4.1.1
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -20,7 +20,7 @@ HOMEPAGE=		http://www.powerdns.com/
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
-# GPLv2
+# GPLv2 only, OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX}
