@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1050 2018/02/09 09:52:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.1051 2018/02/17 12:07:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -565,6 +565,8 @@
      SUBDIR += py-netaddr,python3
      SUBDIR += py-netifaces
      SUBDIR += py-netifaces,python3
+     SUBDIR += py-netmiko
+     SUBDIR += py-netmiko,python3
      SUBDIR += py-nmap
      SUBDIR += py-oauth2
      SUBDIR += py-paho-mqtt
