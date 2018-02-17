@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2018/02/17 09:28:09 jasper Exp $
 
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.6
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
-HOMEPAGE=	http://thp.io/2008/urlwatch/
+HOMEPAGE=	https://thp.io/2008/urlwatch/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
-
 MODULES=	lang/python
 
+MODPY_PI =	Yes
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=       Yes
 
