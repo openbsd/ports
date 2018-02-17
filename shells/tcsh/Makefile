@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/02/17 08:42:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2018/02/17 14:23:38 rsadowski Exp $
 
 COMMENT=	extended C-shell with many useful features
 
@@ -9,7 +9,8 @@ HOMEPAGE=	http://www.tcsh.org/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
+		ftp://ftp.astron.com/pub/tcsh/old/
 
 WANTLIB=	c curses
 
