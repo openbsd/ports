@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/25 16:00:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/02/17 09:36:36 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/altgraph/
 lib/python${MODPY_VERSION}/site-packages/altgraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/altgraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,16 +7,17 @@ lib/python${MODPY_VERSION}/site-packages/altgraph-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/altgraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/altgraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/altgraph/Dot.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/Dot.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/Graph.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/Graph.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/GraphAlgo.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/GraphAlgo.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/GraphStat.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/GraphStat.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/GraphUtil.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/GraphUtil.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/ObjectGraph.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/ObjectGraph.pyc
 lib/python${MODPY_VERSION}/site-packages/altgraph/__init__.py
-lib/python${MODPY_VERSION}/site-packages/altgraph/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}Dot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}Graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}GraphAlgo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}GraphStat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}GraphUtil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}ObjectGraph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/altgraph/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
