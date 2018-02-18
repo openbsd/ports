@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2018/02/18 10:24:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/18 10:26:47 rsadowski Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata
 DISTNAME =	kfilemetadata-${VERSION}
 PKGNAME-main =	kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =kf5-kfilemetadata-l10n-${VERSION}
+REVISION-main =	0
 
 SHARED_LIBS =	KF5FileMetaData		4.0 # 5.20
 
