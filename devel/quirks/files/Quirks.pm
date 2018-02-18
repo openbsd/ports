@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.576 2018/02/06 22:09:28 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.577 2018/02/18 11:08:30 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -498,6 +498,7 @@ my $stem_extensions = {
 	'arm' => 'nyx',
 	'luabitop' => 'lua-bitop',
 	'livestreamer' => 'streamlink',
+	'newsbeuter' => 'newsboat',
 };
 
 my $obsolete_reason = {
