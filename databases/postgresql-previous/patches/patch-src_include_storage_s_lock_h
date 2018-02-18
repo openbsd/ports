@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_include_storage_s_lock_h,v 1.1.1.1 2016/12/18 18:13:25 jeremy Exp $
---- src/include/storage/s_lock.h.orig	Mon Feb  8 21:15:19 2016
-+++ src/include/storage/s_lock.h	Fri Feb 12 17:18:09 2016
-@@ -749,6 +749,29 @@ typedef unsigned char slock_t;
+$OpenBSD: patch-src_include_storage_s_lock_h,v 1.2 2018/02/18 17:36:01 sthen Exp $
+Index: src/include/storage/s_lock.h
+--- src/include/storage/s_lock.h.orig
++++ src/include/storage/s_lock.h
+@@ -693,6 +693,29 @@ typedef unsigned char slock_t;
+ 	do { __asm__ __volatile__("" : : : "memory");  *(lock) = 0; } while (0)
  #endif
- 
  
 +#if defined(__m88k__)		/* Motorola 88k */
 +#define HAS_TEST_AND_SET
