@@ -1,0 +1,32 @@
+$OpenBSD: patch-include_json_config_h,v 1.4 2018/02/18 20:50:25 jca Exp $
+
+"explicit" on non-constructors are a C++11 feature
+https://github.com/open-source-parsers/jsoncpp/commit/04abe38148d99b2a5270521935115d769a714adc
+
+Index: include/json/config.h
+--- include/json/config.h.orig
++++ include/json/config.h
+@@ -84,15 +84,23 @@
+ #if __cplusplus >= 201103L
+ # define JSONCPP_OVERRIDE override
+ # define JSONCPP_NOEXCEPT noexcept
++# define JSONCPP_OP_EXPLICIT explicit
+ #elif defined(_MSC_VER) && _MSC_VER > 1600 && _MSC_VER < 1900
+ # define JSONCPP_OVERRIDE override
+ # define JSONCPP_NOEXCEPT throw()
++# if _MSC_VER >= 1800 // MSVC 2013
++#  define JSONCPP_OP_EXPLICIT explicit
++# else
++#  define JSONCPP_OP_EXPLICIT
++# endif
+ #elif defined(_MSC_VER) && _MSC_VER >= 1900
+ # define JSONCPP_OVERRIDE override
+ # define JSONCPP_NOEXCEPT noexcept
++# define JSONCPP_OP_EXPLICIT explicit
+ #else
+ # define JSONCPP_OVERRIDE
+ # define JSONCPP_NOEXCEPT throw()
++# define JSONCPP_OP_EXPLICIT
+ #endif
+ 
+ #ifndef JSON_HAS_RVALUE_REFERENCES
