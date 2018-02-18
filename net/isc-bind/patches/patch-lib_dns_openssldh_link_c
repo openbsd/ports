@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.3 2018/02/18 11:52:03 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.4 2018/02/18 14:09:40 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
@@ -27,11 +27,11 @@ Index: lib/dns/openssldh_link.c
  static void
  DH_get0_pqg(const DH *dh,
  	    const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
-@@ -106,6 +109,7 @@ DH_get0_pqg(const DH *dh,
- 	if (g != NULL)
- 		*g = dh->g;
+@@ -125,6 +128,7 @@ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
+ 
+ 	return(1);
  }
 +#endif
  
- static int
- DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
+ #define DH_clear_flags(d, f) (d)->flags &= ~(f)
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.4 2018/02/18 11:52:03 sthen Exp $
+$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.5 2018/02/18 14:09:40 sthen Exp $
 
 Index: lib/dns/opensslrsa_link.c
 --- lib/dns/opensslrsa_link.c.orig
@@ -11,27 +11,17 @@ Index: lib/dns/opensslrsa_link.c
  static int
  RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) {
  
-@@ -148,6 +149,7 @@ RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) 
- 
- 	return 1;
+@@ -229,12 +230,12 @@ RSA_get0_crt_params(const RSA *r, const BIGNUM **dmp1,
+ 	if (iqmp != NULL)
+ 		*iqmp = r->iqmp;
  }
 +#endif
  
  static int
- RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q) {
-@@ -198,6 +200,7 @@ RSA_set0_crt_params(RSA *r, BIGNUM *dmp1, BIGNUM *dmq1
- 	return 1;
+ RSA_test_flags(const RSA *r, int flags) {
+ 	return (r->flags & flags);
  }
+-
+ #endif
  
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
- static void
- RSA_get0_key(const RSA *r,
- 	     const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
-@@ -209,6 +212,7 @@ RSA_get0_key(const RSA *r,
- 	if (d != NULL)
- 		*d = r->d;
- }
-+#endif
- 
- static void
- RSA_get0_factors(const RSA *r, const BIGNUM **p, const BIGNUM **q) {
+ static isc_result_t opensslrsa_todns(const dst_key_t *key, isc_buffer_t *data);
