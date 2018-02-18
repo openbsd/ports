@@ -1,0 +1,5 @@
+UEFITool is a cross-platform open source application written in C++/Qt, that
+parses UEFI-compatible firmware image into a tree structure, verifies image's
+integrity and provides a GUI to manipulate image's elements.  Project
+development started in the middle of 2013 because of the lack of cross-platform
+open source utilities for tinkering with UEFI images.
