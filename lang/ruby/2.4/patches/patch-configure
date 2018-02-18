@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.5 2017/09/16 22:42:37 jeremy Exp $
+$OpenBSD: patch-configure,v 1.6 2018/02/18 17:53:45 sthen Exp $
 
 Fix so name, checking for DOT and DOXYGEN.
 
@@ -21,7 +21,7 @@ Index: configure
  	if test "$FOLD"; then :
  
  	    echo "$2" | fold -s -w50 |
-@@ -19573,12 +19573,12 @@ fi
+@@ -19575,12 +19575,12 @@ fi
      colorize_result "$rb_cv_page_size_log" ; }
    if test $rb_cv_page_size_log != no; then
      cat >>confdefs.h <<_ACEOF
@@ -36,7 +36,7 @@ Index: configure
  _ACEOF
  
    fi
-@@ -25645,7 +25645,7 @@ esac
+@@ -25647,7 +25647,7 @@ esac
    openbsd*|mirbsd*) :
  
  	SOLIBS='$(LIBS)'
@@ -45,7 +45,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -27004,7 +27004,7 @@ _ACEOF
+@@ -27006,7 +27006,7 @@ _ACEOF
  _ACEOF
  
  else
