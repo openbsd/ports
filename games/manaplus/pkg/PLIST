@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/12/11 22:31:40 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/02/18 15:29:01 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -317,6 +317,10 @@ share/manaplus/data/test/dir2/file1.txt
 share/manaplus/data/test/dir2/file2.txt
 share/manaplus/data/test/dye.png
 share/manaplus/data/test/equipmentwindow.xml
+share/manaplus/data/test/hairstyle01.png
+share/manaplus/data/test/hairstyle01.xml
+share/manaplus/data/test/hairstyle02.png
+share/manaplus/data/test/hairstyle02.xml
 share/manaplus/data/test/hide.png
 share/manaplus/data/test/items.xml
 share/manaplus/data/test/palette.gpl
@@ -812,6 +816,7 @@ share/manaplus/data/themes/wood/window.xml
 share/manaplus/data/themes/wood/world.xml
 share/manaplus/data/translations/
 share/manaplus/data/translations/help/
+share/manaplus/data/translations/help/ca.po
 share/manaplus/data/translations/help/cs.po
 share/manaplus/data/translations/help/de.po
 share/manaplus/data/translations/help/es.po
