@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/02/18 19:55:05 bket Exp $
 include/json-c/
 include/json-c/arraylist.h
 include/json-c/bits.h
@@ -9,12 +9,12 @@ include/json-c/json_config.h
 include/json-c/json_inttypes.h
 include/json-c/json_object.h
 include/json-c/json_object_iterator.h
-include/json-c/json_object_private.h
+include/json-c/json_pointer.h
 include/json-c/json_tokener.h
 include/json-c/json_util.h
+include/json-c/json_visit.h
 include/json-c/linkhash.h
 include/json-c/printbuf.h
-include/json-c/random_seed.h
 lib/libjson-c.a
 lib/libjson-c.la
 @lib lib/libjson-c.so.${LIBjson-c_VERSION}

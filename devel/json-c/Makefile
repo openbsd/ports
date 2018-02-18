@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/02/11 09:49:11 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2018/02/18 19:55:05 bket Exp $
 
 COMMENT=		JSON implementation in C
 
-DISTNAME=		json-c-0.12
-REVISION=		3
+DISTNAME=		json-c-0.13
 CATEGORIES=		devel
 
-SHARED_LIBS +=  json-c                    0.0 # 2.1
+SHARED_LIBS=		json-c	1.0	# 3.1
 
 HOMEPAGE=		https://github.com/json-c/json-c/wiki
 
@@ -22,9 +21,5 @@ AUTOCONF_VERSION=	2.69
 # don't use it if it's later enabled, we patch to use arc4random instead.
 # (the cpuid code will probably break with PIE on i386 too).
 CONFIGURE_ARGS=		--disable-rdrand
-
-# wrong mtime in 0.12
-post-extract:
-	touch ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
