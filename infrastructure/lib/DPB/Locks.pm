@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.39 2017/12/29 15:49:21 espie Exp $
+# $OpenBSD: Locks.pm,v 1.40 2018/02/18 16:44:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -211,6 +211,8 @@ sub find_dependencies
 		#next if -d $fullname;
 		my $fullname = $self->{lockdir}."/".$name;
 		my $f = $self->open('<', $fullname);
+		# in case we remove the lockfile at the wrong time.
+		next if !defined $f;
 		my $nojunk = 0;
 		my $host;
 		my $path;
