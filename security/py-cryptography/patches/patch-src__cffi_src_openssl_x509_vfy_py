@@ -1,4 +1,4 @@
-$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.5 2018/02/11 00:11:51 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.6 2018/02/18 13:44:41 sthen Exp $
 
 Index: src/_cffi_src/openssl/x509_vfy.py
 --- src/_cffi_src/openssl/x509_vfy.py.orig
@@ -7,7 +7,7 @@ Index: src/_cffi_src/openssl/x509_vfy.py
  static const long Cryptography_HAS_102_VERIFICATION_PARAMS = 1;
  #else
  static const long Cryptography_HAS_102_VERIFICATION_ERROR_CODES = 0;
-+#if LIBRESSL_VERSION_NUMBER >= 0x2070000fL    /* XXX verification functions added 2018/02/09, this should be one higher version */
++#if LIBRESSL_VERSION_NUMBER >= 0x2070000fL
 +static const long Cryptography_HAS_102_VERIFICATION_PARAMS = 1;
 +#else
  static const long Cryptography_HAS_102_VERIFICATION_PARAMS = 0;
