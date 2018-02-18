@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_h,v 1.1 2018/02/18 16:07:39 awolk Exp $
+
+Index: utils.h
+--- utils.h.orig
++++ utils.h
+@@ -8,7 +8,7 @@
+ #define QSTAT_UTILS_H
+ 
+ // BSD has strnstr
+-#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__) || defined(__MidnightBSD__)
+ #ifndef HAVE_STRNSTR
+ #define HAVE_STRNSTR 1
+ #endif /* HAVE_STRNSTR */
