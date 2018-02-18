@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.3 2018/02/18 11:52:03 sthen Exp $
+
+Index: lib/dns/openssldh_link.c
+--- lib/dns/openssldh_link.c.orig
++++ lib/dns/openssldh_link.c
+@@ -69,6 +69,7 @@ static isc_result_t openssldh_todns(const dst_key_t *k
+ static BIGNUM *bn2, *bn768, *bn1024, *bn1536;
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ /*
+  * DH_get0_key, DH_set0_key, DH_get0_pqg and DH_set0_pqg
+  * are from OpenSSL 1.1.0.
+@@ -80,6 +81,7 @@ DH_get0_key(const DH *dh, const BIGNUM **pub_key, cons
+ 	if (priv_key != NULL)
+ 		*priv_key = dh->priv_key;
+ }
++#endif
+ 
+ static int
+ DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key) {
+@@ -95,6 +97,7 @@ DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key)
+ 	return 1;
+ }
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static void
+ DH_get0_pqg(const DH *dh,
+ 	    const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
+@@ -106,6 +109,7 @@ DH_get0_pqg(const DH *dh,
+ 	if (g != NULL)
+ 		*g = dh->g;
+ }
++#endif
+ 
+ static int
+ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {

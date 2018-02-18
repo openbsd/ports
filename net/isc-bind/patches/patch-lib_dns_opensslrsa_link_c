@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.4 2018/02/18 11:52:03 sthen Exp $
+
+Index: lib/dns/opensslrsa_link.c
+--- lib/dns/opensslrsa_link.c.orig
++++ lib/dns/opensslrsa_link.c
+@@ -122,6 +122,7 @@
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ /* From OpenSSL 1.1.0 */
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static int
+ RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) {
+ 
+@@ -148,6 +149,7 @@ RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) 
+ 
+ 	return 1;
+ }
++#endif
+ 
+ static int
+ RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q) {
+@@ -198,6 +200,7 @@ RSA_set0_crt_params(RSA *r, BIGNUM *dmp1, BIGNUM *dmq1
+ 	return 1;
+ }
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static void
+ RSA_get0_key(const RSA *r,
+ 	     const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
+@@ -209,6 +212,7 @@ RSA_get0_key(const RSA *r,
+ 	if (d != NULL)
+ 		*d = r->d;
+ }
++#endif
+ 
+ static void
+ RSA_get0_factors(const RSA *r, const BIGNUM **p, const BIGNUM **q) {
