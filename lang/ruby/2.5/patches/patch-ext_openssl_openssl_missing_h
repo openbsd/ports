@@ -1,0 +1,26 @@
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1 2018/02/18 18:01:02 sthen Exp $
+
+Index: ext/openssl/openssl_missing.h
+--- ext/openssl/openssl_missing.h.orig
++++ ext/openssl/openssl_missing.h
+@@ -145,6 +145,7 @@ void ossl_X509_REQ_get0_signature(const X509_REQ *, co
+ #endif
+ 
+ #if !defined(HAVE_OPAQUE_OPENSSL)
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ #define IMPL_PKEY_GETTER(_type, _name) \
+ static inline _type *EVP_PKEY_get0_##_type(EVP_PKEY *pkey) { \
+ 	return pkey->pkey._name; }
+@@ -196,7 +197,12 @@ IMPL_PKEY_GETTER(EC_KEY, ec)
+ #undef IMPL_PKEY_GETTER
+ #undef IMPL_KEY_ACCESSOR2
+ #undef IMPL_KEY_ACCESSOR3
++#endif
+ #endif /* HAVE_OPAQUE_OPENSSL */
++
++#if defined(LIBRESSL_VERSION_NUMBER)
++static inline ENGINE *DH_get0_engine(DH *dh) { return dh->engine; }
++#endif
+ 
+ #if !defined(EVP_CTRL_AEAD_GET_TAG)
+ #  define EVP_CTRL_AEAD_GET_TAG EVP_CTRL_GCM_GET_TAG
