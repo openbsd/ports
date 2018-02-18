@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/28 08:27:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2018/02/18 11:35:48 bket Exp $
 
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	2.11
+MODPY_EGG_VERSION=	3.0
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	git-cola
@@ -11,7 +11,7 @@ GH_TAGNAME =	v${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel x11
 
-HOMEPAGE =	http://cola.tuxfamily.org/
+HOMEPAGE =	https://git-cola.github.io/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,14 +28,18 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/xxdiff \
 		x11/py-qt4
 
+TEST_DEPENDS =	devel/py-mock \
+		devel/py-nose
+
 MODPY_ADJ_FILES= share/git-cola/bin/git-xbase
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cola/app.py
 
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/git-cola/lib
+
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	# needs an X server
-	rm -f ${WRKSRC}/test/qtutils_test.py
 
 .include <bsd.port.mk>

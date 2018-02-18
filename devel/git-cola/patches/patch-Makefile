@@ -1,10 +1,34 @@
-$OpenBSD: patch-Makefile,v 1.2 2015/11/08 19:33:06 jca Exp $
+$OpenBSD: patch-Makefile,v 1.3 2018/02/18 11:35:48 bket Exp $
 
 Avoid dep on gnu make
 
---- Makefile.orig	Mon Oct 12 21:03:45 2015
-+++ Makefile	Sun Nov  8 20:17:51 2015
-@@ -44,11 +44,7 @@ setup_args += --force
+Avoid use of nosetest --with-doctest as this causes a regression test to fail
+with "ImportError (Could not load inotify functions from libc)". Failure is
+caused by the doctest module testing a piece of code that is linux-only. This
+code is not used when running git-cola on OpenBSD.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -26,9 +26,6 @@ TAR = tar
+ # Flags
+ FLAKE8_FLAGS = --max-line-length=80 --statistics --doctests --format=pylint
+ PYLINT_FLAGS = --rcfile=.pylintrc
+-ifdef color
+-    PYLINT_FLAGS += --output-format=colorized
+-endif
+ 
+ # These values can be overridden on the command-line or via config.mak
+ prefix = $(HOME)
+@@ -44,7 +41,6 @@ cola_app = $(CURDIR)/$(cola_app_base)
+ cola_version = $(shell $(PYTHON) bin/git-cola version --brief)
+ cola_dist := $(cola_base)-$(cola_version)
+ 
+-NOSE_FLAGS = --with-doctest
+ NOSE_FLAGS += --with-id
+ NOSE_FLAGS += --exclude=sphinxtogithub
+ NOSE_FLAGS += --exclude=extras
+@@ -59,16 +55,7 @@ setup_args += --force
  setup_args += --install-scripts=$(bindir)
  setup_args += --record=build/MANIFEST
  setup_args += --install-lib=$(coladir)
@@ -13,7 +37,12 @@ Avoid dep on gnu make
 -    export DESTDIR
 -endif
 -export prefix
+-
+-# If NO_VENDOR_LIBS is specified on the command line then pass it to setup.py
+-ifdef NO_VENDOR_LIBS
+-    setup_args += --no-vendor-libs
+-endif
 +setup_args += --root=$(DESTDIR)
  
- PYTHON_DIRS = test
- PYTHON_DIRS += cola
+ PYTHON_DIRS = cola
+ PYTHON_DIRS += test
