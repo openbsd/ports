@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/04 14:50:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2018/02/18 14:36:30 bket Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -14,7 +14,7 @@ PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
-REVISION-main =		3
+REVISION-main =		4
 REVISION-mysql =	1
 REVISION-pgsql =	1
 
