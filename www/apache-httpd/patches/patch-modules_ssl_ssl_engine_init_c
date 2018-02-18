@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.11 2018/02/18 21:02:45 sthen Exp $
+
+Index: modules/ssl/ssl_engine_init.c
+--- modules/ssl/ssl_engine_init.c.orig
++++ modules/ssl/ssl_engine_init.c
+@@ -47,7 +47,8 @@ APR_IMPLEMENT_OPTIONAL_HOOK_RUN_ALL(ssl, SSL, int, ini
+ #define KEYTYPES "RSA or DSA"
+ #endif
+ 
+-#if MODSSL_USE_OPENSSL_PRE_1_1_API
++#if MODSSL_USE_OPENSSL_PRE_1_1_API && \
++    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ /* OpenSSL Pre-1.1.0 compatibility */
+ /* Taken from OpenSSL 1.1.0 snapshot 20160410 */
+ static int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
