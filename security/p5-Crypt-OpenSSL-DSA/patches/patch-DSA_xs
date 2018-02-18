@@ -1,12 +1,14 @@
-$OpenBSD: patch-DSA_xs,v 1.4 2017/03/28 11:02:47 benoit Exp $
---- DSA.xs.orig	Fri Jan 13 09:14:53 2017
-+++ DSA.xs	Tue Mar 28 12:56:46 2017
-@@ -19,7 +19,7 @@ extern "C" {
+$OpenBSD: patch-DSA_xs,v 1.5 2018/02/18 14:02:43 sthen Exp $
+Index: DSA.xs
+--- DSA.xs.orig
++++ DSA.xs
+@@ -65,7 +65,9 @@ static void DSA_get0_key(const DSA *d,
+     if (priv_key != NULL)
+         *priv_key = d->priv_key;
  }
- #endif
++#endif
  
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- static void DSA_get0_pqg(const DSA *d,
-                   const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
+ static int DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key)
  {
+     /* If the field pub_key in d is NULL, the corresponding input
