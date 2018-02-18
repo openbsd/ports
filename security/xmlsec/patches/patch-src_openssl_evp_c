@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_openssl_evp_c,v 1.1 2018/02/18 21:57:01 sthen Exp $
+
+Index: src/openssl/evp.c
+--- src/openssl/evp.c.orig
++++ src/openssl/evp.c
+@@ -34,6 +34,12 @@
+ 
+ #ifndef XMLSEC_NO_RSA
+ 
++static inline int RSA_test_flags(const RSA *r, int flags) {
++    xmlSecAssert2(r != NULL, 0);
++    return(r->flags & flags);
++}
++
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static inline void RSA_get0_key(const RSA *r, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d) {
+     xmlSecAssert(r != NULL);
+ 
+@@ -48,11 +54,6 @@ static inline void RSA_get0_key(const RSA *r, const BI
+     }
+ }
+ 
+-static inline int RSA_test_flags(const RSA *r, int flags) {
+-    xmlSecAssert2(r != NULL, 0);
+-    return(r->flags & flags);
+-}
+-
+ static inline int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) {
+     xmlSecAssert2(r != NULL, 0);
+ 
+@@ -73,11 +74,18 @@ static inline int RSA_set0_key(RSA *r, BIGNUM *n, BIGN
+     }
+     return(1);
+ }
++#endif
+ #endif /* XMLSEC_NO_RSA */
+ 
+ 
+ #ifndef XMLSEC_NO_DSA
+ 
++static inline ENGINE *DSA_get0_engine(DSA *d) {
++    xmlSecAssert2(d != NULL, NULL);
++    return(d->engine);
++}
++
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static inline void DSA_get0_pqg(const DSA *d, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g) {
+     xmlSecAssert(d != NULL);
+ 
+@@ -103,11 +111,6 @@ static inline void DSA_get0_key(const DSA *d, const BI
+     }
+ }
+ 
+-static inline ENGINE *DSA_get0_engine(DSA *d) {
+-    xmlSecAssert2(d != NULL, NULL);
+-    return(d->engine);
+-}
+-
+ static inline int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
+     xmlSecAssert2(d != NULL, 0);
+ 
+@@ -147,6 +150,7 @@ static inline int DSA_set0_key(DSA *d, BIGNUM *pub_key
+     }
+     return(1);
+ }
++#endif
+ #endif /* XMLSEC_NO_DSA */
+ 
+ #endif /* !defined(XMLSEC_OPENSSL_API_110) */
