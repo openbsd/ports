@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.850 2018/02/18 11:10:39 bket Exp $
+# $OpenBSD: Makefile,v 1.851 2018/02/18 21:17:37 jung Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -462,6 +462,7 @@
      SUBDIR += py-wtforms,python3
      SUBDIR += py-wtools
      SUBDIR += py-wtools,python3
+     SUBDIR += py-yarl
      SUBDIR += qutebrowser
      SUBDIR += racktables
      SUBDIR += ratproxy
