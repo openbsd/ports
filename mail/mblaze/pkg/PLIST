@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/16 03:43:32 sunil Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/19 05:22:45 bentley Exp $
 @bin bin/maddr
 @bin bin/magrep
+bin/mbnc
 bin/mcolor
 bin/mcom
 @bin bin/mdate
@@ -8,6 +9,7 @@ bin/mcom
 @bin bin/mdirs
 @bin bin/mexport
 @bin bin/mflag
+@bin bin/mflow
 bin/mfwd
 @bin bin/mgenmid
 @bin bin/mhdr
@@ -30,11 +32,13 @@ bin/mrep
 bin/museragent
 @man man/man1/maddr.1
 @man man/man1/magrep.1
+@man man/man1/mbnc.1
 @man man/man1/mcom.1
 @man man/man1/mdeliver.1
 @man man/man1/mdirs.1
 @man man/man1/mexport.1
 @man man/man1/mflag.1
+@man man/man1/mflow.1
 @man man/man1/mfwd.1
 @man man/man1/mgenmid.1
 @man man/man1/mhdr.1
