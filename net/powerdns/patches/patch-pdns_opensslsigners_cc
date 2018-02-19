@@ -1,0 +1,21 @@
+$OpenBSD: patch-pdns_opensslsigners_cc,v 1.3 2018/02/19 18:27:44 sthen Exp $
+
+Index: pdns/opensslsigners.cc
+--- pdns/opensslsigners.cc.orig
++++ pdns/opensslsigners.cc
+@@ -76,6 +76,7 @@ void openssl_thread_cleanup()
+   OPENSSL_free(openssllocks);
+ }
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ /* compat helpers. These DO NOT do any of the checking that the libssl 1.1 functions do. */
+ static inline void RSA_get0_key(const RSA* rsakey, const BIGNUM** n, const BIGNUM** e, const BIGNUM** d) {
+   *n = rsakey->n;
+@@ -127,6 +128,7 @@ static inline int RSA_set0_crt_params(RSA* rsakey, BIG
+   rsakey->iqmp = iqmp;
+   return 1;
+ }
++#endif
+ 
+ #ifdef HAVE_LIBCRYPTO_ECDSA
+ static inline void ECDSA_SIG_get0(const ECDSA_SIG* signature, const BIGNUM** pr, const BIGNUM** ps) {
