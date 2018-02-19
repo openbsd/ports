@@ -1,14 +1,17 @@
-$OpenBSD: patch-include_proto_openssl-compat_h,v 1.2 2018/02/15 13:58:25 sthen Exp $
+$OpenBSD: patch-include_proto_openssl-compat_h,v 1.3 2018/02/19 10:26:10 sthen Exp $
 
 Index: include/proto/openssl-compat.h
 --- include/proto/openssl-compat.h.orig
 +++ include/proto/openssl-compat.h
-@@ -132,10 +132,12 @@ static inline int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNU
+@@ -122,6 +122,7 @@ static inline void *SSL_CTX_get_default_passwd_cb_user
+ 	return ctx->default_passwd_callback_userdata;
  }
- #endif
  
 +#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
- static inline const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *x)
+ #ifndef OPENSSL_NO_DH
+ static inline int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
+ {
+@@ -136,6 +137,7 @@ static inline const unsigned char *ASN1_STRING_get0_da
  {
  	return x->data;
  }
