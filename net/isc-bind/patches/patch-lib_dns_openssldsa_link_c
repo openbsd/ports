@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.4 2018/02/18 14:09:40 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.5 2018/02/19 18:19:28 sthen Exp $
 
 Index: lib/dns/openssldsa_link.c
 --- lib/dns/openssldsa_link.c.orig
@@ -11,11 +11,11 @@ Index: lib/dns/openssldsa_link.c
  static void
  DSA_get0_pqg(const DSA *d, const BIGNUM **p, const BIGNUM **q,
  	     const BIGNUM **g)
-@@ -82,6 +83,7 @@ DSA_get0_key(const DSA *d, const BIGNUM **pub_key, con
- 	if (priv_key != NULL)
- 		*priv_key = d->priv_key;
+@@ -96,6 +97,7 @@ DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key
+ 
+ 	return 1;
  }
 +#endif
  
- static int
- DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key) {
+ static void
+ DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr, const BIGNUM **ps) {

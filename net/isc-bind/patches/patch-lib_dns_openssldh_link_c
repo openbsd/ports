@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.4 2018/02/18 14:09:40 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.5 2018/02/19 18:19:28 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
@@ -11,23 +11,7 @@ Index: lib/dns/openssldh_link.c
  /*
   * DH_get0_key, DH_set0_key, DH_get0_pqg and DH_set0_pqg
   * are from OpenSSL 1.1.0.
-@@ -80,6 +81,7 @@ DH_get0_key(const DH *dh, const BIGNUM **pub_key, cons
- 	if (priv_key != NULL)
- 		*priv_key = dh->priv_key;
- }
-+#endif
- 
- static int
- DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key) {
-@@ -95,6 +97,7 @@ DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key)
- 	return 1;
- }
- 
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
- static void
- DH_get0_pqg(const DH *dh,
- 	    const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
-@@ -125,6 +128,7 @@ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
+@@ -125,6 +126,7 @@ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
  
  	return(1);
  }
