@@ -1,9 +1,19 @@
-$OpenBSD: patch-src_crypto_tls_openssl_c,v 1.4 2016/10/07 14:44:03 dcoppa Exp $
+$OpenBSD: patch-src_crypto_tls_openssl_c,v 1.5 2018/02/19 18:24:21 sthen Exp $
 
 Compatibility fixes for LibreSSL
 
---- src/crypto/tls_openssl.c.orig	Sun Sep 27 21:02:05 2015
-+++ src/crypto/tls_openssl.c	Mon Sep 28 13:43:46 2015
+Index: src/crypto/tls_openssl.c
+--- src/crypto/tls_openssl.c.orig
++++ src/crypto/tls_openssl.c
+@@ -59,7 +59,7 @@ typedef int stack_index_t;
+ #endif /* SSL_set_tlsext_status_type */
+ 
+ #if (OPENSSL_VERSION_NUMBER < 0x10100000L || \
+-     defined(LIBRESSL_VERSION_NUMBER)) &&    \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)) && \
+     !defined(BORINGSSL_API_VERSION)
+ /*
+  * SSL_get_client_random() and SSL_get_server_random() were added in OpenSSL
 @@ -919,7 +919,7 @@ void * tls_init(const struct tls_config *conf)
  		}
  #endif /* OPENSSL_FIPS */
@@ -31,3 +41,21 @@ Compatibility fixes for LibreSSL
  	if (params->flags & TLS_CONN_EAP_FAST) {
  		wpa_printf(MSG_DEBUG,
  			   "OpenSSL: Use TLSv1_method() for EAP-FAST");
+@@ -4159,7 +4159,7 @@ static int tls_sess_sec_cb(SSL *s, void *secret, int *
+ 	struct tls_connection *conn = arg;
+ 	int ret;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	if (conn == NULL || conn->session_ticket_cb == NULL)
+ 		return 0;
+ 
+@@ -4254,7 +4254,7 @@ int tls_connection_set_session_ticket_cb(void *tls_ctx
+ 
+ int tls_get_library_version(char *buf, size_t buf_len)
+ {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 	return os_snprintf(buf, buf_len, "OpenSSL build=%s run=%s",
+ 			   OPENSSL_VERSION_TEXT,
+ 			   OpenSSL_version(OPENSSL_VERSION));
