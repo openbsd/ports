@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.608 2018/02/14 20:28:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.609 2018/02/19 19:31:16 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -278,7 +278,6 @@
      SUBDIR += tangerine-icon-theme
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
-     SUBDIR += tellico-kde4
      SUBDIR += terminator
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
