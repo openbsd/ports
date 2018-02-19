@@ -1,37 +1,37 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/02/19 17:14:08 rsadowski Exp $
+
+COMMENT =	KTorrent engine
+
+DISTNAME =	libktorrent-2.1
 
 CATEGORIES =	net
-COMMENT =	KTorrent engine
-V =		1.3.1
-DISTNAME =	libktorrent-$V
-HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	11
 
-EXTRACT_SUFX =	.tar.bz2
-
-SHARED_LIBS =	ktorrent	0.0
+SHARED_LIBS +=  KF5Torrent                0.0 # 6.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  iconv intl m pthread ${COMPILER_LIBCXX}
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += lib/qt4/QtNetwork
-WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
-WANTLIB += gcrypt gmp qca
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
+WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5Xml gcrypt
+WANTLIB += gmp m qca-qt5
 
-MASTER_SITES =	${HOMEPAGE}downloads/${V:C/^./4/}/
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/5.1/}
 
-MODULES =		x11/kde4
-MODKDE4_USE =		libs
-MODKDE4_LIB_LINKS =	Yes
+MODULES =		devel/kf5
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext-tools
 
 LIB_DEPENDS =	devel/gmp \
 		security/libgcrypt \
-		security/qca
+		security/qca-qt5 \
+		devel/kf5/karchive \
+		devel/kf5/kcrash \
+		devel/kf5/ki18n \
+		devel/kf5/kio \
+		devel/kf5/solid
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
 
