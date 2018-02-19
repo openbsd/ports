@@ -1,14 +1,23 @@
-$OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2018/02/16 12:37:23 sthen Exp $
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.2 2018/02/19 20:05:17 sthen Exp $
 
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
-@@ -653,32 +653,33 @@ int DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv
- 	return 1;
- }
+@@ -542,10 +542,12 @@ ZEND_GET_MODULE(openssl)
  
+ /* {{{ OpenSSL compatibility functions and macros */
+ #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined (LIBRESSL_VERSION_NUMBER)
++#define EVP_PKEY_get0_EC_KEY(_pkey) _pkey->pkey.ec
++
 +#if !defined (LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2070000fL
- static const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *asn1)
+ #define EVP_PKEY_get0_RSA(_pkey) _pkey->pkey.rsa
+ #define EVP_PKEY_get0_DH(_pkey) _pkey->pkey.dh
+ #define EVP_PKEY_get0_DSA(_pkey) _pkey->pkey.dsa
+-#define EVP_PKEY_get0_EC_KEY(_pkey) _pkey->pkey.ec
+ 
+ static int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d)
+ {
+@@ -657,28 +659,28 @@ static const unsigned char *ASN1_STRING_get0_data(cons
  {
  	return M_ASN1_STRING_data(asn1);
  }
