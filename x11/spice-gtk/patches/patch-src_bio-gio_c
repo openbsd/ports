@@ -1,14 +1,25 @@
-$OpenBSD: patch-src_bio-gio_c,v 1.1 2017/12/02 18:10:18 ajacoutot Exp $
+$OpenBSD: patch-src_bio-gio_c,v 1.2 2018/02/19 18:41:49 sthen Exp $
 
 Index: src/bio-gio.c
 --- src/bio-gio.c.orig
 +++ src/bio-gio.c
-@@ -23,7 +23,7 @@
- #include "spice-util.h"
- #include "bio-gio.h"
+@@ -53,7 +53,9 @@ static int BIO_meth_set_ctrl(BIO_METHOD *biom,
+     biom->ctrl = ctrl;
+     return 1;
+ }
++#endif
  
--#if OPENSSL_VERSION_NUMBER < 0x10100000
 +#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(LIBRESSL_VERSION_NUMBER)
- static BIO_METHOD one_static_bio;
+ #define BIO_TYPE_START 128
  
- static int BIO_meth_set_read(BIO_METHOD *biom,
+ static int BIO_get_new_index(void)
+@@ -61,7 +63,9 @@ static int BIO_get_new_index(void)
+     static int bio_index = BIO_TYPE_START;
+     return bio_index++;
+ }
++#endif
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ static void BIO_set_init(BIO *a, int init)
+ {
+ 	a->init = init;
