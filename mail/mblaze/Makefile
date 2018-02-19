@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/19 05:22:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/19 05:25:09 bentley Exp $
 
 COMMENT =	set of Maildir utilities
 
@@ -19,8 +19,7 @@ LIB_DEPENDS =	converters/libiconv
 
 USE_GMAKE =	Yes
 MAKE_FILE =	GNUmakefile
-MAKE_FLAGS =	PORTS_CFLAGS="${CFLAGS}" \
-		LOCALBASE="${LOCALBASE}" \
+MAKE_FLAGS =	LOCALBASE="${LOCALBASE}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 		LDLIBS="-L${LOCALBASE}/lib -liconv -pthread"
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
