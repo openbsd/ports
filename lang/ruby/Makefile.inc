@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2017/11/02 10:16:38 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2018/02/19 02:18:13 jeremy Exp $
 
 COMMENT-main ?=		object oriented script language with threads
 COMMENT-gdbm ?=		gdbm interface for ruby
@@ -26,7 +26,8 @@ PERMIT_PACKAGE_CDROM ?= Yes
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
 
-MASTER_SITES ?=	http://cache.ruby-lang.org/pub/ruby/${VERSION:R}/
+MASTER_SITES ?=		http://cache.ruby-lang.org/pub/ruby/${VERSION:R}/
+MASTER_SITES0 ?=	https://bugs.ruby-lang.org/attachments/download/
 
 CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	--enable-shared \
