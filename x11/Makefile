@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.609 2018/02/19 19:31:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.610 2018/02/19 19:34:20 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -294,6 +294,7 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
+     SUBDIR += tellico
      SUBDIR += unclutter
      SUBDIR += uwm
      SUBDIR += vdesk
