@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_openssl_signatures_c,v 1.1 2018/02/20 20:41:53 sthen Exp $
+
+Index: src/openssl/signatures.c
+--- src/openssl/signatures.c.orig
++++ src/openssl/signatures.c
+@@ -59,6 +59,7 @@ static inline int ECDSA_SIG_set0(ECDSA_SIG *sig, BIGNU
+ 
+ #ifndef XMLSEC_NO_DSA
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static inline void DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr, const BIGNUM **ps) {
+     xmlSecAssert(sig != NULL);
+ 
+@@ -83,6 +84,7 @@ static inline int DSA_SIG_set0(DSA_SIG *sig, BIGNUM *r
+     sig->s = s;
+     return(1);
+ }
++#endif
+ 
+ #endif /* XMLSEC_NO_DSA */
+ 
