@@ -1,17 +1,8 @@
-$OpenBSD: patch-x2goclient_pro,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
---- x2goclient.pro.orig	Wed Feb 22 05:11:35 2017
-+++ x2goclient.pro	Wed Feb 22 22:18:23 2017
-@@ -130,7 +130,8 @@ SOURCES += src/sharewidget.cpp \
-            src/compat.cpp \
-            src/pulsemanager.cpp
- 
--LIBS += -lssh
-+LIBS += -lssh -lldap -lcups -lX11 -lXpm
-+
- win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
- 
- plugin {
-@@ -172,7 +173,7 @@ else:message("No translation files in project")
+$OpenBSD: patch-x2goclient_pro,v 1.2 2018/02/20 13:32:43 rsadowski Exp $
+Index: x2goclient.pro
+--- x2goclient.pro.orig
++++ x2goclient.pro
+@@ -174,7 +174,7 @@ else:message("No translation files in project")
  
  TEMPLATE = app
  DEPENDPATH += .
@@ -20,3 +11,15 @@ $OpenBSD: patch-x2goclient_pro,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
  RESOURCES += res/resources.qrc
  
  exists(res/txt/git-info) {
+@@ -193,6 +193,11 @@ linux-g++ {
+   DEFINES += __linux__
+ }
+ linux-g++-64 {
++  message("building $$TARGET with ldap and cups")
++  LIBS += -lldap -lcups -lX11 -lXpm
++  DEFINES += __linux__
++}
++openbsd-* {
+   message("building $$TARGET with ldap and cups")
+   LIBS += -lldap -lcups -lX11 -lXpm
+   DEFINES += __linux__
