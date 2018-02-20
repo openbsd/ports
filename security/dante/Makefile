@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.48 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.49 2018/02/20 16:41:59 bket Exp $
 
 COMMENT=	SOCKS client and server
 
-DISTNAME=	dante-1.4.1
-REVISION=	1
+DISTNAME=	dante-1.4.2
 
 CATEGORIES=	security
 
-SHARED_LIBS=	dsocks	1.2 \
-		socks	1.2
+SHARED_LIBS=	dsocks	1.3 \
+		socks	1.3
 MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
 		socks		''
 
-HOMEPAGE=	http://www.inet.no/dante/
+HOMEPAGE=	https://www.inet.no/dante/
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
