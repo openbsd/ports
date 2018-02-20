@@ -1,27 +1,15 @@
-$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.5 2018/02/18 14:09:40 sthen Exp $
+$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.6 2018/02/20 21:02:13 sthen Exp $
 
 Index: lib/dns/opensslrsa_link.c
 --- lib/dns/opensslrsa_link.c.orig
 +++ lib/dns/opensslrsa_link.c
-@@ -122,6 +122,7 @@
+@@ -120,7 +120,8 @@
+ #endif
+ #define DST_RET(a) {ret = a; goto err;}
  
- #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  /* From OpenSSL 1.1.0 */
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
  static int
  RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d) {
- 
-@@ -229,12 +230,12 @@ RSA_get0_crt_params(const RSA *r, const BIGNUM **dmp1,
- 	if (iqmp != NULL)
- 		*iqmp = r->iqmp;
- }
-+#endif
- 
- static int
- RSA_test_flags(const RSA *r, int flags) {
- 	return (r->flags & flags);
- }
--
- #endif
- 
- static isc_result_t opensslrsa_todns(const dst_key_t *key, isc_buffer_t *data);

@@ -1,21 +1,15 @@
-$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.5 2018/02/19 18:19:28 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.6 2018/02/20 21:02:13 sthen Exp $
 
 Index: lib/dns/openssldsa_link.c
 --- lib/dns/openssldsa_link.c.orig
 +++ lib/dns/openssldsa_link.c
-@@ -49,6 +49,7 @@
+@@ -48,7 +48,8 @@
+ 
  static isc_result_t openssldsa_todns(const dst_key_t *key, isc_buffer_t *data);
  
- #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  static void
  DSA_get0_pqg(const DSA *d, const BIGNUM **p, const BIGNUM **q,
  	     const BIGNUM **g)
-@@ -96,6 +97,7 @@ DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key
- 
- 	return 1;
- }
-+#endif
- 
- static void
- DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr, const BIGNUM **ps) {

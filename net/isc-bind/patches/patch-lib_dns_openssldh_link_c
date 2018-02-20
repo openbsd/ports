@@ -1,21 +1,15 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.5 2018/02/19 18:19:28 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.6 2018/02/20 21:02:13 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
 +++ lib/dns/openssldh_link.c
-@@ -69,6 +69,7 @@ static isc_result_t openssldh_todns(const dst_key_t *k
+@@ -68,7 +68,8 @@ static isc_result_t openssldh_todns(const dst_key_t *k
+ 
  static BIGNUM *bn2, *bn768, *bn1024, *bn1536;
  
- #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L && \
++   (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  /*
   * DH_get0_key, DH_set0_key, DH_get0_pqg and DH_set0_pqg
   * are from OpenSSL 1.1.0.
-@@ -125,6 +126,7 @@ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g) {
- 
- 	return(1);
- }
-+#endif
- 
- #define DH_clear_flags(d, f) (d)->flags &= ~(f)
- 
