@@ -1,0 +1,13 @@
+$OpenBSD: patch-btrie_c,v 1.1 2018/02/20 10:25:09 giovanni Exp $
+
+Index: btrie.c
+--- btrie.c.orig
++++ btrie.c
+@@ -301,6 +301,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <setjmp.h>
++#include <sys/socket.h>
+ #if defined(TEST) && defined(NDEBUG)
+ # warning undefining NDEBUG for TEST build
+ # undef NDEBUG

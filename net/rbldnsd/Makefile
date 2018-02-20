@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2018/02/20 10:25:09 giovanni Exp $
 
 COMMENT=	small daemon for DNSBLs
 
-DISTNAME=	rbldnsd-0.997a
+DISTNAME=	rbldnsd-0.998.20171115
+GH_ACCOUNT=	spamhaus
+GH_PROJECT=	rbldnsd
+GH_COMMIT=	6111aba2a76423a0a05030c1bb8ca697a24877bb
+
 CATEGORIES=	net
-REVISION=	3
 
 HOMEPAGE=	http://www.corpit.ru/mjt/rbldnsd.html
 
@@ -12,15 +15,18 @@ HOMEPAGE=	http://www.corpit.ru/mjt/rbldnsd.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c z
-
-MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/
+MODULES=		lang/python
+MODPY_RUNDEP=		no
 
 CONFIGURE_STYLE=simple
-WRKDIST=	${WRKDIR}/${DISTNAME:S/rbldnsd_/rbldnsd-/}
 RBLDNSD_BASE=	${VARBASE}/rbldnsd
 SUBST_VARS=	VARBASE RBLDNSD_BASE
 
-NO_TEST=	Yes
+TEST_TARGET=	check
+TEST_DEPENDS=	net/py-dns
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rbldnsd ${PREFIX}/sbin

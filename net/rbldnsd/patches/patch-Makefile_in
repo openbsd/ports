@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2018/02/20 10:25:09 giovanni Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -11,7 +11,7 @@ AR = @AR@
+ ARFLAGS = @ARFLAGS@
+ RANLIB = @RANLIB@
+ AWK = @AWK@
+-PYTHON = python
++PYTHON = ${MODPY_BIN}
+ GNUTAR = tar
+ 
+ # Disable statistic counters

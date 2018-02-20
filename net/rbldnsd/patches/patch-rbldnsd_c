@@ -1,7 +1,8 @@
-$OpenBSD: patch-rbldnsd_c,v 1.4 2013/10/15 01:18:01 william Exp $
---- rbldnsd.c.orig	Sat Apr  6 12:28:53 2013
-+++ rbldnsd.c	Mon Oct  7 16:47:34 2013
-@@ -530,7 +530,7 @@ break;
+$OpenBSD: patch-rbldnsd_c,v 1.5 2018/02/20 10:25:09 giovanni Exp $
+Index: rbldnsd.c
+--- rbldnsd.c.orig
++++ rbldnsd.c
+@@ -661,7 +661,7 @@ break;
  #endif
  
    if (!user && !(uid = getuid()))
