@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2018/01/23 10:43:42 mpi Exp $
+# $OpenBSD: Makefile,v 1.270 2018/02/20 16:59:19 mpi Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -9,7 +9,7 @@ COMMENT=		general-purpose utility library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.54.3
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
