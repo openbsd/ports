@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2018/02/15 09:59:44 jca Exp $
+# $OpenBSD: Makefile,v 1.251 2018/02/20 08:37:50 sthen Exp $
 
 VERSION =		4.7.5
 DISTNAME =		samba-${VERSION}
@@ -20,6 +20,7 @@ PKG_ARCH-docs =		*
 LDB_V =			1.2.3
 TEVENT_V =		0.9.34
 
+REVISION-main =		0
 REVISION-tevent =	1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -81,7 +82,7 @@ WANTLIB-common =	c pthread
 WANTLIB-main =		${WANTLIB-common} ${MODPY_WANTLIB}
 WANTLIB-main +=		z
 WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
-WANTLIB-main +=		iconv intl lber ldap pam popt gnutls
+WANTLIB-main +=		iconv intl jansson lber ldap pam popt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
@@ -118,6 +119,7 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			databases/openldap \
 			databases/tdb>=1.3.14 \
 			devel/gettext \
+			devel/jansson \
 			devel/libexecinfo \
 			devel/libtalloc>=2.1.9 \
 			net/avahi \
