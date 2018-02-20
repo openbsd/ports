@@ -1,13 +1,12 @@
-$OpenBSD: patch-utils_kamctl_kamctl,v 1.6 2018/02/19 22:18:37 sthen Exp $
-Index: utils/kamctl/kamctl
---- utils/kamctl/kamctl.orig
-+++ utils/kamctl/kamctl
+$OpenBSD: patch-utils_kamctl_kamctl,v 1.7 2018/02/20 08:30:06 sthen Exp $
+--- utils/kamctl/kamctl.orig	Wed Apr  5 16:32:39 2017
++++ utils/kamctl/kamctl	Mon May 15 21:48:56 2017
 @@ -75,7 +75,7 @@ fi
  if [ -f "$MYLIBDIR/kamctl.base" ]; then
  	. "$MYLIBDIR/kamctl.base"
  else
 -	echo -e "Cannot load core functions '$MYLIBDIR/kamctl.base' - exiting ...\n"
 +	printf "Cannot load core functions '$MYLIBDIR/kamctl.base' - exiting ...\n"
- 	exit 255
+ 	exit -1
  fi
  
