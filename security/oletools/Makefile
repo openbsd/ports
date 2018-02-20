@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/18 07:57:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/20 14:00:30 rpointel Exp $
 
 COMMENT =	python tools to analyze OLE files
 
-MODPY_EGG_VERSION = 0.51
+MODPY_EGG_VERSION = 0.52
 DISTNAME =	oletools-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -24,7 +24,7 @@ RUN_DEPENDS +=	${MODPY_TKINTER_DEPENDS}
 MODPY_ADJ_FILES = oletools/*.py
 
 post-install:
-.for i in ezhexviewer mraptor olebrowse oledir oleid olemap olemeta oleobj oletimes olevba pyxswf rtfobj
+.for i in ezhexviewer mraptor msodde olebrowse oledir oleid olemap olemeta oleobj oletimes olevba pyxswf rtfobj
 	chmod +x ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/oletools/${i}.py
 .endfor
 

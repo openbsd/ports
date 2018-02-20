@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/18 07:57:05 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/20 14:00:30 rpointel Exp $
 bin/ezhexviewer
 bin/mraptor
+@comment bin/mraptor3
+bin/msodde
 bin/olebrowse
 bin/oledir
 bin/oleid
@@ -9,6 +11,7 @@ bin/olemeta
 bin/oleobj
 bin/oletimes
 bin/olevba
+@comment bin/olevba3
 bin/pyxswf
 bin/rtfobj
 lib/python${MODPY_VERSION}/site-packages/oletools/
@@ -36,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/oletools/doc/License.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/mraptor.html
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/mraptor.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/mraptor1.png
+lib/python${MODPY_VERSION}/site-packages/oletools/doc/msodde.html
+lib/python${MODPY_VERSION}/site-packages/oletools/doc/msodde.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/olebrowse.html
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/olebrowse.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/olebrowse1_menu.png
@@ -72,10 +77,14 @@ lib/python${MODPY_VERSION}/site-packages/oletools/mraptor3.py
 lib/python${MODPY_VERSION}/site-packages/oletools/mraptor3.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/mraptor_milter.py
 lib/python${MODPY_VERSION}/site-packages/oletools/mraptor_milter.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/msodde.py
+lib/python${MODPY_VERSION}/site-packages/oletools/msodde.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/olebrowse.py
 lib/python${MODPY_VERSION}/site-packages/oletools/olebrowse.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/oledir.py
 lib/python${MODPY_VERSION}/site-packages/oletools/oledir.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/oleform.py
+lib/python${MODPY_VERSION}/site-packages/oletools/oleform.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/oleid.py
 lib/python${MODPY_VERSION}/site-packages/oletools/oleid.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/olemap.py
@@ -90,10 +99,16 @@ lib/python${MODPY_VERSION}/site-packages/oletools/olevba.py
 lib/python${MODPY_VERSION}/site-packages/oletools/olevba.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/olevba3.py
 lib/python${MODPY_VERSION}/site-packages/oletools/olevba3.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/ooxml.py
+lib/python${MODPY_VERSION}/site-packages/oletools/ooxml.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/ppt_parser.py
 lib/python${MODPY_VERSION}/site-packages/oletools/ppt_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/ppt_record_parser.py
+lib/python${MODPY_VERSION}/site-packages/oletools/ppt_record_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/pyxswf.py
 lib/python${MODPY_VERSION}/site-packages/oletools/pyxswf.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/record_base.py
+lib/python${MODPY_VERSION}/site-packages/oletools/record_base.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/rtfobj.py
 lib/python${MODPY_VERSION}/site-packages/oletools/rtfobj.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/
@@ -175,3 +190,5 @@ lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/zipfile27/
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/zipfile27/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/zipfile27/__init__.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/zipfile27/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/xls_parser.py
+lib/python${MODPY_VERSION}/site-packages/oletools/xls_parser.pyc
