@@ -1,18 +1,19 @@
-$OpenBSD: patch-tools_kwbimage_c,v 1.3 2018/02/19 21:46:28 tb Exp $
+$OpenBSD: patch-tools_kwbimage_c,v 1.4 2018/02/20 03:27:22 sthen Exp $
 
 Index: tools/kwbimage.c
 --- tools/kwbimage.c.orig
 +++ tools/kwbimage.c
-@@ -24,7 +24,7 @@
+@@ -24,7 +24,8 @@
  #include <openssl/err.h>
  #include <openssl/evp.h>
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  static void RSA_get0_key(const RSA *r,
                   const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
  {
-@@ -36,7 +36,7 @@ static void RSA_get0_key(const RSA *r,
+@@ -36,7 +37,7 @@ static void RSA_get0_key(const RSA *r,
         *d = r->d;
  }
  
