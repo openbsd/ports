@@ -1,37 +1,16 @@
-$OpenBSD: patch-src_openssl_stream_h,v 1.6 2018/02/18 19:37:56 sthen Exp $
+$OpenBSD: patch-src_openssl_stream_h,v 1.7 2018/02/20 20:50:07 sthen Exp $
 
 Index: src/openssl_stream.h
 --- src/openssl_stream.h.orig
 +++ src/openssl_stream.h
-@@ -29,6 +29,7 @@ extern int git_openssl_stream_new(git_stream **out, co
+@@ -27,8 +27,9 @@ extern int git_openssl_stream_new(git_stream **out, co
  
- # if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
  
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ 
+-# if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++# if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ 
  GIT_INLINE(BIO_METHOD*) BIO_meth_new(int type, const char *name)
  {
  	BIO_METHOD *meth = git__calloc(1, sizeof(BIO_METHOD));
-@@ -89,6 +90,7 @@ GIT_INLINE(int) BIO_meth_set_destroy(BIO_METHOD *biom,
- 	biom->destroy = destroy;
- 	return 1;
- }
-+#endif
- 
- GIT_INLINE(int) BIO_get_new_index(void)
- {
-@@ -96,6 +98,7 @@ GIT_INLINE(int) BIO_get_new_index(void)
- 	return 0;
- }
- 
-+#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
- GIT_INLINE(void) BIO_set_init(BIO *b, int init)
- {
- 	b->init = init;
-@@ -115,6 +118,7 @@ GIT_INLINE(const unsigned char *) ASN1_STRING_get0_dat
- {
- 	return ASN1_STRING_data((ASN1_STRING *)x);
- }
-+#endif
- 
- # endif // OpenSSL < 1.1
- #endif // GIT_OPENSSL
