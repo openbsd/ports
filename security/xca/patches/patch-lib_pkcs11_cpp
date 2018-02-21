@@ -1,0 +1,60 @@
+$OpenBSD: patch-lib_pkcs11_cpp,v 1.1 2018/02/21 11:48:35 sthen Exp $
+
+Index: lib/pkcs11.cpp
+--- lib/pkcs11.cpp.orig
++++ lib/pkcs11.cpp
+@@ -719,7 +719,8 @@ out:
+ 	return NULL;
+ }
+ 
+-#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L && \
++    !defined(LIBRESSL_VERSION_NUMBER)
+ //	OpenSSL < 1.0.0 have no EC_KEY_METHOD.
+ 
+ static void ec_privdata_free(EC_KEY *ec)
+@@ -818,13 +819,14 @@ static EC_KEY_METHOD *setup_ec_key_meth()
+ 
+ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJECT_HANDLE obj)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	static RSA_METHOD rsa_meth_buf;
+ 	static DSA_METHOD dsa_meth_buf;
+ #endif
+ 	static RSA_METHOD *rsa_meth = NULL;
+ 	static DSA_METHOD *dsa_meth = NULL;
+-#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L && \
++    !defined(LIBRESSL_VERSION_NUMBER)
+ 	static EC_KEY_METHOD *ec_key_meth = NULL;
+ 	EC_KEY *ec;
+ #endif
+@@ -843,7 +845,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
+ 		rsa = RSAPublicKey_dup(rsa);
+ 		openssl_error();
+ 		if (!rsa_meth) {
+-#if OPENSSL_VERSION_NUMBER >= 0x1010000L
++#if OPENSSL_VERSION_NUMBER >= 0x1010000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 			rsa_meth = RSA_meth_dup(RSA_get_default_method());
+ 			RSA_meth_set_priv_enc(rsa_meth, rsa_encrypt);
+ 			RSA_meth_set_priv_dec(rsa_meth, rsa_decrypt);
+@@ -868,7 +870,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
+ 		dsa = DSAparams_dup(dsa);
+ 		openssl_error();
+ 		if (!dsa_meth) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 			dsa_meth = DSA_meth_dup(DSA_get_default_method());
+ 			DSA_meth_set_sign(dsa_meth, dsa_sign);
+ 			DSA_meth_set_finish(dsa_meth, dsa_privdata_free);
+@@ -886,7 +888,8 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
+ 		openssl_error();
+ 		EVP_PKEY_assign_DSA(evp, dsa);
+ 		break;
+-#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if !defined(OPENSSL_NO_EC) && OPENSSL_VERSION_NUMBER >= 0x10100000L && \
++    !defined(LIBRESSL_VERSION_NUMBER)
+ 	case EVP_PKEY_EC:
+ 		ec = EVP_PKEY_get0_EC_KEY(pub);
+ 		ec = EC_KEY_dup(ec);
