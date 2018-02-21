@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.97 2018/01/30 20:35:34 edd Exp $
+# $OpenBSD: Makefile,v 1.98 2018/02/21 21:00:27 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
+REVISION =		0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -45,11 +46,18 @@ LIB_DEPENDS =		converters/libiconv \
 
 MODULES =		textproc/intltool perl
 
+# c++-11 required for some subprojects
+COMPILER =		base-clang ports-gcc
+
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include
+
+# Not yet. Some parts (like luatex) will need patches to build with
+# this:
+# CXXFLAGS +=	-std=c++11
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
