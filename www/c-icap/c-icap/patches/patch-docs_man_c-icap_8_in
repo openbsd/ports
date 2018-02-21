@@ -1,6 +1,7 @@
-$OpenBSD: patch-docs_man_c-icap_8_in,v 1.4 2017/07/04 11:06:27 sthen Exp $
---- docs/man/c-icap.8.in.orig	Mon Mar 13 11:05:51 2017
-+++ docs/man/c-icap.8.in	Sun Mar 26 18:31:48 2017
+$OpenBSD: patch-docs_man_c-icap_8_in,v 1.5 2018/02/21 09:54:01 sthen Exp $
+Index: docs/man/c-icap.8.in
+--- docs/man/c-icap.8.in.orig
++++ docs/man/c-icap.8.in
 @@ -46,11 +46,11 @@ The main configuration file
  .RS
   In this file defined the types of files and the groups of file types.
@@ -27,4 +28,4 @@ $OpenBSD: patch-docs_man_c-icap_8_in,v 1.4 2017/07/04 11:06:27 sthen Exp $
 +      echo \-n "relog" > /var/run/c-icap/c-icap.ctl
  .RE
  .SS Lookup tables
- Lookup tables are simple read-only databases. 
+ Lookup tables are simple read-only databases.

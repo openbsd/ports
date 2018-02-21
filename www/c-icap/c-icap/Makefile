@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2018/02/17 12:29:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/02/21 09:54:00 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.2
+V=		0.5.3
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
-REVISION-main=	1
 
 SHARED_LIBS +=	icapapi                   2.0 # 5.2
 
@@ -25,6 +24,7 @@ CONFIGURE_ARGS=	--disable-ipv6 \
 		--without-memcached \
 		--with-pcre
 
+USE_GMAKE=	Yes
 FAKE_FLAGS=	CONFIGDIR=${PREFIX}/share/examples/c-icap
 
 .for i in ${MULTI_PACKAGES:N-main}
