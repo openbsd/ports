@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/02/22 08:49:54 kirby Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =  bz2 c iconv intl popt z
 
 HOMEPAGE =	http://www.rpm.org/
-MASTER_SITES =	http://rpm.org/releases/historical/rpm-3.0.x/
+MASTER_SITES =	http://ftp.rpm.org/releases/historical/rpm-3.0.x/
 
 BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS +=	archivers/bzip2 \
