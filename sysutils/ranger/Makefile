@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/11 09:02:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/22 16:51:50 kn Exp $
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION = 1.7.2
+MODPY_EGG_VERSION =	1.9.1
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils misc
 
-HOMEPAGE =	http://www.nongnu.org/ranger/
+HOMEPAGE =	https://ranger.github.io/
+
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	 Yes
@@ -16,18 +17,29 @@ PERMIT_PACKAGE_CDROM =	 Yes
 MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	lang/python
-# libarchive (bsdtar) used as an alternative to atool; see scope.sh patch
-RUN_DEPENDS =	archivers/libarchive \
-		textproc/py-chardet
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-TEST_DEPENDS =	devel/gmake \
-		sysutils/ggrep
+# libarchive (bsdtar) used as an alternative to atool
+RUN_DEPENDS =	archivers/libarchive \
+		shells/bash \
+		textproc/py-chardet${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/flake8 \
+		devel/pylint${MODPY_FLAVOR} \
+		devel/py-test${MODPY_FLAVOR}
+
+TEST_ENV =	PYTHON=${MODPY_BIN}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/ranger.1 \
-		${WRKSRC}/ranger/ext/img_display.py
+	${SUBST_CMD} ${WRKSRC}/{doc/ranger.1,ranger/ext/img_display.py}
 
-do-test:
-	cd ${WRKSRC}; PYTHON=${MODPY_BIN} gmake test
+pre-test:
+.for _p in py.test pylint
+	ln -sf ${LOCALBASE}/bin/${_p}${MODPY_BIN_SUFFIX} \
+	    ${WRKDIR}/bin/${_p}
+.endfor
+
+post-install:
+	mv ${PREFIX}/{share/man/man1,man}
+	mv ${PREFIX}/share/{doc/ranger/examples,examples/ranger}
 
 .include <bsd.port.mk>
