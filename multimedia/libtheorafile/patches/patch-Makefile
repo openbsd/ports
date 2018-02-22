@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/02/22 07:54:51 bentley Exp $
+
+fix library suffix
+add ${LOCALBASE}/lib to linker path
+remove Darwin part which doesn't have correct syntax for OpenBSD's make
+add local include path
+add -o to create binary 'theorafile-test' rather than 'a.out'
+add CFLAGS and LDFLAGS
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,26 +1,15 @@
+ # Makefile for Theorafile
+ # Written by Ethan "flibitijibibo" Lee
+ 
+-# System information
+-UNAME = $(shell uname)
+-
+-# Compiler
+-ifeq ($(UNAME), Darwin)
+-	CC += -arch i386 -arch x86_64 -mmacosx-version-min=10.6
+-	TARGET = dylib
+-else
+-	TARGET = so
+-endif
+-
+ # Dependencies
+ DEPS = -logg -lvorbis -ltheoradec
+ 
+ # Targets
+ all: clean
+-	$(CC) -O2 -fpic -fPIC -shared -o libtheorafile.$(TARGET) theorafile.c $(DEPS) -Wall -pedantic
++	$(CC) ${CFLAGS} ${LDFLAGS} -fpic -fPIC -shared -I${LOCALBASE}/include -o libtheorafile.$(TARGET) theorafile.c -L${LOCALBASE}/lib $(DEPS) -Wall -pedantic
+ 
+ clean:
+ 	rm -f libtheorafile.$(TARGET)
+ 
+ test:
+-	$(CC) -g sdl2test/sdl2test.c theorafile.c -I. `sdl2-config --cflags --libs` $(DEPS) -Wall
++	$(CC) ${CFLAGS} ${LDFLAGS} -g -o theorafile-test sdl2test/sdl2test.c theorafile.c -I. -I${LOCALBASE}/include `sdl2-config --cflags --libs` -L${LOCALBASE}/lib $(DEPS) -Wall

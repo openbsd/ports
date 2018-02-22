@@ -1,0 +1,4 @@
+This is Theorafile, a library for quickly and easily decoding Ogg Theora videos.
+Theorafile is released under the zlib license. See LICENSE for details.
+Theorafile was written to be used for FNA's VideoPlayer. This library is
+accessed via Theorafile#.
