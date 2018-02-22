@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2017/11/16 16:04:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.102 2018/02/22 07:57:04 bentley Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -33,6 +33,8 @@
      SUBDIR += libmp4v2
      SUBDIR += libquicktime
      SUBDIR += libtheora
+     SUBDIR += libtheorafile
+     SUBDIR += libtheoraplay
      SUBDIR += libv4l
      SUBDIR += libvpx
      SUBDIR += lives
