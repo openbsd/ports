@@ -1,0 +1,33 @@
+$OpenBSD: patch-Modules__ssl_c,v 1.1 2018/02/22 23:03:12 sthen Exp $
+
+Index: Modules/_ssl.c
+--- Modules/_ssl.c.orig
++++ Modules/_ssl.c
+@@ -139,9 +139,11 @@ struct py_ssl_library_code {
+ #define HAVE_OPENSSL_CRYPTO_LOCK
+ #endif
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER)
+ #define TLS_method SSLv23_method
+ #define TLS_client_method SSLv23_client_method
+ #define TLS_server_method SSLv23_server_method
++#endif
+ 
+ static int X509_NAME_ENTRY_set(const X509_NAME_ENTRY *ne)
+ {
+@@ -172,6 +174,7 @@ static int X509_OBJECT_get_type(X509_OBJECT *x)
+     return x->type;
+ }
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static X509 *X509_OBJECT_get0_X509(X509_OBJECT *x)
+ {
+     return x->data.x509;
+@@ -186,6 +189,7 @@ static int BIO_up_ref(BIO *b)
+ static STACK_OF(X509_OBJECT) *X509_STORE_get0_objects(X509_STORE *store) {
+     return store->objs;
+ }
++#endif
+ 
+ static X509_VERIFY_PARAM *X509_STORE_get0_param(X509_STORE *store)
+ {
