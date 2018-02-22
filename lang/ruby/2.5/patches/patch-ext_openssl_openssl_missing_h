@@ -1,8 +1,17 @@
-$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.2 2018/02/22 19:36:04 sthen Exp $
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.3 2018/02/22 21:35:11 sthen Exp $
 
 Index: ext/openssl/openssl_missing.h
 --- ext/openssl/openssl_missing.h.orig
 +++ ext/openssl/openssl_missing.h
+@@ -69,7 +69,7 @@ void ossl_HMAC_CTX_free(HMAC_CTX *);
+ 	CRYPTO_get_ex_data(&(x)->ex_data, (idx))
+ #endif
+ 
+-#if !defined(HAVE_X509_STORE_SET_EX_DATA)
++#if !defined(HAVE_X509_STORE_SET_EX_DATA) || defined(LIBRESSL_VERSION_NUMBER)
+ #  define X509_STORE_set_ex_data(x, idx, data) \
+ 	CRYPTO_set_ex_data(&(x)->ex_data, (idx), (data))
+ #  define X509_STORE_get_ex_new_index(l, p, newf, dupf, freef) \
 @@ -145,6 +145,7 @@ void ossl_X509_REQ_get0_signature(const X509_REQ *, co
  #endif
  
