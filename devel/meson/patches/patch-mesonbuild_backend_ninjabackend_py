@@ -1,11 +1,11 @@
-$OpenBSD: patch-mesonbuild_backend_ninjabackend_py,v 1.3 2017/12/11 19:50:42 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_backend_ninjabackend_py,v 1.4 2018/02/22 13:57:47 ajacoutot Exp $
 
 Do not install compressed manpages
 
 Index: mesonbuild/backend/ninjabackend.py
 --- mesonbuild/backend/ninjabackend.py.orig
 +++ mesonbuild/backend/ninjabackend.py
-@@ -819,7 +819,7 @@ int dummy;
+@@ -824,7 +824,7 @@ int dummy;
                  if subdir is None:
                      subdir = os.path.join(manroot, 'man' + num)
                  srcabs = f.absolute_path(self.environment.get_source_dir(), self.environment.get_build_dir())
