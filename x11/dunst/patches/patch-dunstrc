@@ -1,0 +1,27 @@
+$OpenBSD: patch-dunstrc,v 1.1 2018/02/23 22:34:18 kn Exp $
+
+Index: dunstrc
+--- dunstrc.orig
++++ dunstrc
+@@ -165,7 +165,7 @@
+     max_icon_size = 32
+ 
+     # Paths to default icons.
+-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
++    icon_path = ${LOCALBASE}/share/icons/gnome/16x16/status/:${LOCALBASE}/share/icons/gnome/16x16/devices/
+ 
+     ### History ###
+ 
+@@ -179,10 +179,10 @@
+     ### Misc/Advanced ###
+ 
+     # dmenu path.
+-    dmenu = /usr/bin/dmenu -p dunst:
++    dmenu = ${PREFIX}/bin/dmenu -p dunst:
+ 
+     # Browser for opening urls in context menu.
+-    browser = /usr/bin/firefox -new-tab
++    browser = ${PREFIX}/bin/firefox -new-tab
+ 
+     # Always run rule-defined scripts, even if the notification is suppressed
+     always_run_script = true

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_menu_c,v 1.1 2017/08/31 20:57:00 sthen Exp $
+$OpenBSD: patch-src_menu_c,v 1.2 2018/02/23 22:34:18 kn Exp $
 
 Index: src/menu.c
 --- src/menu.c.orig
@@ -11,7 +11,7 @@ Index: src/menu.c
 -            "\\b(https?://|ftps?://|news://|mailto:|file://|www\\.)"
 -            "[-[:alnum:]_\\@;/?:&=%$.+!*\x27,~#]*"
 -            "(\\([-[:alnum:]_\\@;/?:&=%$.+!*\x27,~#]*\\)|[-[:alnum:]_\\@;/?:&=%$+*~])+";
-+	char *regex = "[[:<:]](https?://|ftps?://|news://|mailto:|file://|www\\.)[0-9a-zA-Z_/.@]+[a-zA-Z/]";
++        char *regex = "[[:<:]](https?://|ftps?://|news://|mailto:|file://|www\\.)[0-9a-zA-Z_/.@]+[a-zA-Z/]";
          int ret = regcomp(&cregex, regex, REG_EXTENDED | REG_ICASE);
          if (ret != 0) {
                  fputs("failed to compile regex", stderr);
