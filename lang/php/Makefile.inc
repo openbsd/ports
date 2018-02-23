@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.100 2017/11/23 18:57:13 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.101 2018/02/23 18:51:44 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
-COMMENT-fastcgi=	stand-alone FastCGI version of PHP
+COMMENT-cgi=		cgi sapi for php
 
 PKGNAME-main?=		php-${V}
-PKGNAME-fastcgi?=	php-fastcgi-${V}
+PKGNAME-cgi?=		php-cgi-${V}
 
 DISTFILES+=		php-${V}.tar.bz2
 
@@ -97,6 +97,7 @@ CONFIGURE_ARGS+= 	--with-openssl \
 			--enable-sysvshm \
 			--enable-mbstring \
 			--enable-exif \
+			--enable-cgi \
 			--enable-fpm \
 			--with-fpm-user=www \
 			--with-fpm-group=www
@@ -104,7 +105,7 @@ CONFIGURE_ARGS+= 	--with-openssl \
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
 
-MULTI_PACKAGES+=	-main -fastcgi
+MULTI_PACKAGES+=	-main -cgi
 
 #
 # Loadable php extensions by name that are included in all versions
@@ -304,12 +305,12 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
 WANTLIB-main+=		ncurses readline ${COMPILER_LIBCXX}
 
-WANTLIB-fastcgi=	${WANTLIB-main}
+WANTLIB-cgi=		${WANTLIB-main}
 LIB_DEPENDS-main=	devel/gettext \
 			textproc/libxml
 RUN_DEPENDS-main=	mail/femail,-chroot
-LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
-RUN_DEPENDS-fastcgi=
+LIB_DEPENDS-cgi=	${LIB_DEPENDS-main}
+RUN_DEPENDS-cgi=	php-${V}:lang/php/${PV}
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
@@ -324,7 +325,7 @@ pre-configure:
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
-.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
+.for i in ${MULTI_PACKAGES:N-main:N-cgi:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
@@ -337,7 +338,7 @@ RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
-DESCR-fastcgi=		${.CURDIR}/../files/DESCR-fastcgi
+DESCR-cgi=		${.CURDIR}/../files/DESCR-cgi
 
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
@@ -347,7 +348,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/conf/php-${PV}.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi-${PV}
+	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-cgi-${PV}
+# Make sure that php-cgi.1 still just sources php.1 when importing a new major version.
+	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/fpm/php-fpm ${PREFIX}/sbin/php-fpm-${PV}
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
@@ -362,7 +365,7 @@ post-install:
 	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g;s,!!MV!!,${PV:R},g" \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 
-.for m in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
+.for m in ${MULTI_PACKAGES:N-main:N-cgi:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
 	echo "extension=${m}.so" > \
