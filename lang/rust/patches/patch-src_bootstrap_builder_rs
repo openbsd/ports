@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.1 2017/12/04 17:31:49 landry Exp $
-Disable Bootstrap test as it requires network access.
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.2 2018/02/23 16:38:16 landry Exp $
+disable Bootstrap test as it requires network access.
+pass RUSTC_ERROR_METADATA_DST as absolute path (8c9bf663d4a8074e4955d1ad3f85a3b82e946297).
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
@@ -12,3 +13,13 @@ Index: src/bootstrap/builder.rs
                  check::HostCompiletest, check::Crate, check::CrateLibrustc, check::Rustdoc,
                  check::Linkcheck, check::Cargotest, check::Cargo, check::Rls, check::Docs,
                  check::ErrorIndex, check::Distcheck, check::Rustfmt, check::Miri, check::Clippy),
+@@ -484,7 +484,8 @@ impl<'a> Builder<'a> {
+              } else {
+                  PathBuf::from("/path/to/nowhere/rustdoc/not/required")
+              })
+-             .env("TEST_MIRI", self.config.test_miri.to_string());
++             .env("TEST_MIRI", self.config.test_miri.to_string())
++             .env("RUSTC_ERROR_METADATA_DST", self.extended_error_dir());
+ 
+         if let Some(n) = self.config.rust_codegen_units {
+             cargo.env("RUSTC_CODEGEN_UNITS", n.to_string());

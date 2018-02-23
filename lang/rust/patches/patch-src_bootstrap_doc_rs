@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_bootstrap_doc_rs,v 1.1 2018/02/23 16:38:16 landry Exp $
+pass RUSTC_ERROR_METADATA_DST as absolute path (8c9bf663d4a8074e4955d1ad3f85a3b82e946297).
+Index: src/bootstrap/doc.rs
+--- src/bootstrap/doc.rs.orig
++++ src/bootstrap/doc.rs
+@@ -671,7 +671,8 @@ impl Step for ErrorIndex {
+         index.arg(out.join("error-index.html"));
+ 
+         // FIXME: shouldn't have to pass this env var
+-        index.env("CFG_BUILD", &build.build);
++        index.env("CFG_BUILD", &build.build)
++             .env("RUSTC_ERROR_METADATA_DST", build.extended_error_dir());
+ 
+         build.run(&mut index);
+     }

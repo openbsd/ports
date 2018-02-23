@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/01/29 18:45:39 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2018/02/23 16:38:16 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -12,13 +12,13 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.23.0
-CARGO_V =		0.24.0
+V =			1.24.0
+CARGO_V =		0.25.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-amd64 =		1.23.0-20180124
-BV-i386 =		1.23.0-20180125
+BV-amd64 =		1.24.0-20180213
+BV-i386 =		1.24.0-20180213
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -87,7 +87,8 @@ USE_GMAKE =		Yes
 USE_LIBTOOL =		gnu
 
 TEST_DEPENDS +=		${FULLPKGNAME-main}:${BUILD_PKGPATH} \
-			devel/git
+			devel/git \
+			sysutils/ggrep
 
 # - disable vendor checksum checks
 # - SUBSTR cargo testsuite
@@ -137,7 +138,6 @@ do-configure:
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
 		>>${WRKBUILD}/config.toml
 .endif
-
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py

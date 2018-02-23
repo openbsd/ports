@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.9 2018/01/27 09:22:00 landry Exp $
-Let us compilation choice to be honored.
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.10 2018/02/23 16:38:16 landry Exp $
+let us compilation choice to be honored.
+define extended_error as absolute path (8c9bf663d4a8074e4955d1ad3f85a3b82e946297).
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -636,7 +636,6 @@ impl Build {
+@@ -632,7 +632,6 @@ impl Build {
          // cc-rs because the build scripts will determine that for themselves.
          let mut base = self.cc[&target].args().iter()
                             .map(|s| s.to_string_lossy().into_owned())
@@ -11,3 +12,15 @@ Index: src/bootstrap/lib.rs
                             .collect::<Vec<_>>();
  
          // If we're compiling on macOS then we add a few unconditional flags
+@@ -719,6 +718,11 @@ impl Build {
+     /// Path to the python interpreter to use
+     fn python(&self) -> &Path {
+         self.config.python.as_ref().unwrap()
++    }
++
++    /// Temporary directory that extended error information is emitted to.
++    fn extended_error_dir(&self) -> PathBuf {
++        self.out.join("tmp/extended-error-metadata")
+     }
+ 
+     /// Tests whether the `compiler` compiling for `target` should be forced to

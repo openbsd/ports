@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_libsyntax_diagnostics_metadata_rs,v 1.1 2018/02/23 16:38:16 landry Exp $
+return metadata_dir as absolute path (8c9bf663d4a8074e4955d1ad3f85a3b82e946297).
+Index: src/libsyntax/diagnostics/metadata.rs
+--- src/libsyntax/diagnostics/metadata.rs.orig
++++ src/libsyntax/diagnostics/metadata.rs
+@@ -15,6 +15,7 @@
+ 
+ use std::collections::BTreeMap;
+ use std::path::PathBuf;
++use std::env;
+ use std::fs::{remove_file, create_dir_all, File};
+ use std::io::Write;
+ use std::error::Error;
+@@ -24,9 +25,6 @@ use syntax_pos::{Span, FileName};
+ use ext::base::ExtCtxt;
+ use diagnostics::plugin::{ErrorMap, ErrorInfo};
+ 
+-// Default metadata directory to use for extended error JSON.
+-const ERROR_METADATA_PREFIX: &'static str = "tmp/extended-errors";
+-
+ /// JSON encodable/decodable version of `ErrorInfo`.
+ #[derive(PartialEq, RustcDecodable, RustcEncodable)]
+ pub struct ErrorMetadata {
+@@ -59,7 +57,10 @@ impl ErrorLocation {
+ ///
+ /// See `output_metadata`.
+ pub fn get_metadata_dir(prefix: &str) -> PathBuf {
+-    PathBuf::from(ERROR_METADATA_PREFIX).join(prefix)
++    env::var_os("RUSTC_ERROR_METADATA_DST")
++         .map(PathBuf::from)
++         .expect("env var `RUSTC_ERROR_METADATA_DST` isn't set")
++         .join(prefix)
+ }
+ 
+ /// Map `name` to a path in the given directory: <directory>/<name>.json
