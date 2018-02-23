@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_proto_openssl-compat_h,v 1.3 2018/02/19 10:26:10 sthen Exp $
+$OpenBSD: patch-include_proto_openssl-compat_h,v 1.4 2018/02/23 10:25:17 sthen Exp $
 
 Index: include/proto/openssl-compat.h
 --- include/proto/openssl-compat.h.orig
@@ -11,11 +11,11 @@ Index: include/proto/openssl-compat.h
  #ifndef OPENSSL_NO_DH
  static inline int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
  {
-@@ -136,6 +137,7 @@ static inline const unsigned char *ASN1_STRING_get0_da
+@@ -141,6 +142,7 @@ static inline X509_ALGOR *X509_get0_tbs_sigalg(const X
  {
- 	return x->data;
+ 	return x->cert_info->signature;
  }
 +#endif
  
- static inline X509_ALGOR *X509_get0_tbs_sigalg(const X509 *x)
- {
+ #endif
+ 
