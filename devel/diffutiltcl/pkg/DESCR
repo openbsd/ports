@@ -1,0 +1,10 @@
+A Tcl extension providing utilities for comparisons of strings, lists and files.
+
+The base comparison is a Longest Common Substring algorithm based on
+J. W. Hunt and M. D. McIlroy, "An algorithm for differential file comparison,"
+Comp. Sci. Tech. Rep. #41, Bell Telephone Laboratories (1976).
+Available on the Web at the second author's personal site:
+http://www.cs.dartmouth.edu/~doug/
+
+It is basically an LCS diff algorithm implemented in C on top of Tcl's API,
+thus giving full Unicode and VFS support.
