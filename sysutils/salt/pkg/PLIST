@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2018/02/10 11:37:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/02/23 10:35:29 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -2777,6 +2777,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/smb.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/smb.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/smtp.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/smtp.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/ssh.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/ssh.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/stormpath.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/stormpath.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/stringio.py
