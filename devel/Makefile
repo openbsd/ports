@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1702 2018/02/23 21:30:06 stu Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1703 2018/02/23 22:00:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1318,6 +1318,7 @@
      SUBDIR += py-editdist
      SUBDIR += py-efilter
      SUBDIR += py-elftools
+     SUBDIR += py-elftools,python3
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
