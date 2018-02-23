@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.3 2018/02/23 16:39:39 giovanni Exp $
+$OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.4 2018/02/23 17:07:35 giovanni Exp $
 Index: lib/Mail/SpamAssassin/Util.pm
 --- lib/Mail/SpamAssassin/Util.pm.orig
 +++ lib/Mail/SpamAssassin/Util.pm
@@ -12,7 +12,35 @@ Index: lib/Mail/SpamAssassin/Util.pm
  }
  
  use Mail::SpamAssassin;
-@@ -1505,13 +1506,43 @@ sub receive_date {
+@@ -108,7 +109,7 @@ BEGIN {
+     if ( !$displayed_path++ ) {
+       dbg("util: current PATH is: ".join($Config{'path_sep'},File::Spec->path()));
+     }
+-    foreach my $path (File::Spec->path()) {
++    foreach my $path (File::Spec->path(), qw(${LOCALBASE}/bin ${LOCALBASE}/sbin)) {
+       my $fname = File::Spec->catfile ($path, $filename);
+       if ( -f $fname ) {
+         if (-x $fname) {
+@@ -988,6 +989,18 @@ sub parse_content_type {
+   my($charset) = $ct =~ /\bcharset\s*=\s*["']?(.*?)["']?(?:;|$)/i;
+   my($name) = $ct =~ /\b(?:file)?name\s*=\s*["']?(.*?)["']?(?:;|$)/i;
+ 
++  # RFC 2231 section 3: Parameter Value Continuations
++  # support continuations for name values
++  #
++  if (!$name && $ct =~ /\b(?:file)?name\*0\s*=/i) {
++
++    my @name;
++    $name[$1] = $2
++      while ($ct =~ /\b(?:file)?name\*(\d+)\s*=\s*["']?(.*?)["']?(?:;|$)/ig);
++
++    $name = join "", grep defined, @name;
++  }
++
+   # Get the actual MIME type out ...
+   # Note: the header content may not be whitespace unfolded, so make sure the
+   # REs do /s when appropriate.
+@@ -1493,13 +1506,43 @@ sub receive_date {
  }
  
  ###########################################################################
@@ -57,7 +85,7 @@ Index: lib/Mail/SpamAssassin/Util.pm
    if ($< != $touid) {
      dbg("util: changing real uid from $< to match effective uid $touid");
      # bug 3586: kludges needed to work around platform dependent behavior assigning to $<
-@@ -1586,7 +1617,7 @@ sub helper_app_pipe_open_unix {
+@@ -1574,7 +1617,7 @@ sub helper_app_pipe_open_unix {
    eval {
      # go setuid...
      setuid_to_euid();

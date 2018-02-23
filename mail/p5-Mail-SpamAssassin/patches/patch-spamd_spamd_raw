@@ -1,4 +1,4 @@
-$OpenBSD: patch-spamd_spamd_raw,v 1.8 2018/02/23 16:39:39 giovanni Exp $
+$OpenBSD: patch-spamd_spamd_raw,v 1.9 2018/02/23 17:07:35 giovanni Exp $
 Index: spamd/spamd.raw
 --- spamd/spamd.raw.orig
 +++ spamd/spamd.raw
@@ -12,6 +12,24 @@ Index: spamd/spamd.raw
  use Mail::SpamAssassin::Timeout;
  
  use Getopt::Long;
+@@ -1071,7 +1072,6 @@ sub server_sock_setup_inet {
+     $sockopt{V6Only} = 1  if $io_socket_module_name eq 'IO::Socket::IP'
+                              && IO::Socket::IP->VERSION >= 0.09;
+     %sockopt = (%sockopt, (
+-      SSL_version     => $sslversion,
+       SSL_verify_mode => 0x00,
+       SSL_key_file    => $opt{'server-key'},
+       SSL_cert_file   => $opt{'server-cert'},
+@@ -1092,7 +1092,8 @@ sub server_sock_setup_inet {
+     if (!$server_inet) {
+       $diag = sprintf("could not create %s socket on [%s]:%s: %s",
+                       $ssl ? 'IO::Socket::SSL' : $io_socket_module_name,
+-                      $adr, $port, $!);
++                      $adr, $port, $ssl && $IO::Socket::SSL::SSL_ERROR ?
++                      "$!,$IO::Socket::SSL::SSL_ERROR" : $!);
+       push(@diag_fail, $diag);
+     } else {
+       $diag = sprintf("created %s socket on [%s]:%s",
 @@ -1369,10 +1370,20 @@ sub spawn {
        # bug 5518: assignments to $) and $( don't always work on all platforms
        # bug 3900: assignments to $> and $< problems with BSD perl bug
@@ -33,6 +51,15 @@ Index: spamd/spamd.raw
        # keep the sanity check to catch problems like bug 3900 just in case
        if ( $> != $uuid and $> != ( $uuid - 2**32 ) ) {
          die "spamd: setuid to uid $uuid failed (> = $>, < = $<)\n";
+@@ -1521,7 +1532,7 @@ sub accept_from_any_server_socket {
+     } # end multiple sockets case
+ 
+     if ($selected_socket_info) {
+-      my $socket = $selected_socket_info->{socket};
++      $socket = $selected_socket_info->{socket};
+       $socket or die "no socket???, impossible";
+       dbg("spamd: accept() on fd %d", $selected_socket_info->{fd});
+       $client = $socket->accept;
 @@ -1726,7 +1737,7 @@ sub handle_setuid_to_user {
      my ($name, $pwd, $uid, $gid, $quota, $comment, $gcos, $dir, $etc) =
          getpwnam('nobody');
