@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/04/22 20:37:39 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/02/23 16:57:22 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -407,7 +407,6 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/CST6CDT
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/Atlantic
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/Central
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/East-Saskatchewan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/Eastern
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/Mountain
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Canada/Newfoundland
@@ -627,7 +626,6 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Indiana-Starke
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Michigan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Mountain
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Pacific
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Pacific-New
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/US/Samoa
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/UTC
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Universal
@@ -635,7 +633,8 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/W-SU
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/WET
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Zulu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/iso3166.tab
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/localtime
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/leapseconds
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/posixrules
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/tzdata.zi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone.tab
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone1970.tab
