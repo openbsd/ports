@@ -1,9 +1,9 @@
-$OpenBSD: patch-auto_def,v 1.1 2017/12/15 20:51:22 sthen Exp $
+$OpenBSD: patch-auto_def,v 1.2 2018/02/23 20:02:48 sthen Exp $
 
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -361,12 +361,14 @@ if {[get-define want-smime]} {
+@@ -373,12 +373,14 @@ if {[get-define want-smime]} {
  # SASL
  if {[get-define want-sasl]} {
    foreach sasl_lib {sasl2 sasl} {
