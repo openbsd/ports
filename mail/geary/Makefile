@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2017/10/28 21:27:02 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2018/02/23 09:58:09 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
-GNOME_VERSION =	0.12.0
+GNOME_VERSION =	0.12.1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -28,6 +28,7 @@ CONFIGURE_ARGS =-DGSETTINGS_COMPILE=OFF \
 RUN_DEPENDS =	devel/iso-codes
 BUILD_DEPENDS =	devel/iso-codes
 LIB_DEPENDS =	mail/gmime \
+		databases/sqlite3 \
 		www/webkitgtk4 \
 		audio/libcanberra \
 		devel/libnotify \
