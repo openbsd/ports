@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/02/21 09:54:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/02/23 19:14:45 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
@@ -6,6 +6,7 @@ COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
 V=		0.5.3
+REVISION=	0
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -13,7 +14,7 @@ PKGNAME-ldap=	c-icap-ldap-$V
 
 SHARED_LIBS +=	icapapi                   2.0 # 5.2
 
-WANTLIB += bz2 crypto pcre pthread ssl z
+WANTLIB += brotlicommon brotlidec brotlienc bz2 pcre pthread z
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -31,9 +32,10 @@ FAKE_FLAGS=	CONFIGDIR=${PREFIX}/share/examples/c-icap
 RUN_DEPENDS$i = ${BASE_PKGPATH}
 .endfor
 
-LIB_DEPENDS=	devel/pcre
+LIB_DEPENDS=	archivers/brotli \
+		devel/pcre
 
-WANTLIB-main=	${WANTLIB} c
+WANTLIB-main=	${WANTLIB} c m
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/bzip2
 
