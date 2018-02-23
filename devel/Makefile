@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1700 2018/02/17 09:38:38 jasper Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1701 2018/02/23 16:36:35 stu Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -110,6 +110,7 @@
      SUBDIR += dex2jar
      SUBDIR += dfu-programmer
      SUBDIR += dlib
+     SUBDIR += diffutiltcl
      SUBDIR += dissy
      SUBDIR += distcc
      SUBDIR += doc++
