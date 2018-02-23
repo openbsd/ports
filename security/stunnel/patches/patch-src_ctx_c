@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ctx_c,v 1.6 2017/12/01 00:08:44 gsoares Exp $
+$OpenBSD: patch-src_ctx_c,v 1.7 2018/02/23 10:26:56 sthen Exp $
 Index: src/ctx.c
 --- src/ctx.c.orig
 +++ src/ctx.c
@@ -11,16 +11,17 @@ Index: src/ctx.c
      const
  #endif
      unsigned char *, int, int *);
-@@ -295,7 +295,7 @@ NOEXPORT int matches_wildcard(char *servername, char *
+@@ -295,7 +295,8 @@ NOEXPORT int matches_wildcard(char *servername, char *
  
  #ifndef OPENSSL_NO_DH
  
 -#if OPENSSL_VERSION_NUMBER<0x10100000L
-+#if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER) 
++#if OPENSSL_VERSION_NUMBER<0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  NOEXPORT STACK_OF(SSL_CIPHER) *SSL_CTX_get_ciphers(const SSL_CTX *ctx) {
      return ctx->cipher_list;
  }
-@@ -398,7 +398,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
+@@ -398,7 +399,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
  /**************************************** initialize OpenSSL CONF */
  
  NOEXPORT int conf_init(SERVICE_OPTIONS *section) {
@@ -29,7 +30,7 @@ Index: src/ctx.c
      SSL_CONF_CTX *cctx;
      NAME_LIST *curr;
      char *cmd, *param;
-@@ -907,7 +907,7 @@ NOEXPORT int sess_new_cb(SSL *ssl, SSL_SESSION *sess) 
+@@ -907,7 +908,7 @@ NOEXPORT int sess_new_cb(SSL *ssl, SSL_SESSION *sess) 
  }
  
  NOEXPORT SSL_SESSION *sess_get_cb(SSL *ssl,
