@@ -1,14 +1,15 @@
-$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1 2018/02/22 21:35:11 sthen Exp $
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.2 2018/02/23 09:54:25 sthen Exp $
 
 Index: ext/openssl/openssl_missing.h
 --- ext/openssl/openssl_missing.h.orig
 +++ ext/openssl/openssl_missing.h
-@@ -137,7 +137,7 @@ int EVP_CIPHER_CTX_copy(EVP_CIPHER_CTX *out, EVP_CIPHE
- 	CRYPTO_get_ex_data(&(x)->ex_data, (idx))
- #endif
- 
--#if !defined(HAVE_X509_STORE_SET_EX_DATA)
-+#if !defined(HAVE_X509_STORE_SET_EX_DATA) || defined(LIBRESSL_VERSION_NUMBER)
+@@ -140,6 +140,9 @@ int EVP_CIPHER_CTX_copy(EVP_CIPHER_CTX *out, EVP_CIPHE
+ #if !defined(HAVE_X509_STORE_SET_EX_DATA)
  #  define X509_STORE_set_ex_data(x, idx, data) \
  	CRYPTO_set_ex_data(&(x)->ex_data, (idx), (data))
++#endif
++
++#if !defined(HAVE_X509_STORE_GET_EX_NEW_INDEX)
  #  define X509_STORE_get_ex_new_index(l, p, newf, dupf, freef) \
+ 	CRYPTO_get_ex_new_index(CRYPTO_EX_INDEX_X509_STORE, (l), (p), \
+ 				(newf), (dupf), (freef))

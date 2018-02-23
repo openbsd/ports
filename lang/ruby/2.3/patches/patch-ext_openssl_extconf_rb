@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_openssl_extconf_rb,v 1.1 2018/02/23 09:54:25 sthen Exp $
+
+Index: ext/openssl/extconf.rb
+--- ext/openssl/extconf.rb.orig
++++ ext/openssl/extconf.rb
+@@ -93,6 +93,7 @@ have_func("X509_CRL_sort")
+ have_func("X509_NAME_hash_old")
+ have_func("X509_STORE_get_ex_data")
+ have_func("X509_STORE_set_ex_data")
++have_func("X509_STORE_get_ex_new_index")
+ have_func("OBJ_NAME_do_all_sorted")
+ have_func("SSL_SESSION_get_id")
+ have_func("SSL_SESSION_cmp")
