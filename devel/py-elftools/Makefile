@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/23 21:36:30 sthen Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.23
+MODPY_EGG_VERSION =	0.24
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -13,18 +13,18 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # Public domain
 PERMIT_PACKAGE_CDROM =	Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
 MODPY_PI =		Yes
 MODULES =		lang/python
 
-EXAMPLEDIR =	${PREFIX}/share/examples/py-elftools
+EXAMPLEDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}elftools
+
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	cd ${WRKSRC}/examples &&  \
-	for i in *.py; do \
-		echo ${EXAMPLEDIR}; \
-		echo ${WRKSRC}/examples/$$i; \
-		${INSTALL_SCRIPT} $$i ${EXAMPLEDIR}; \
-	done
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLEDIR}/
+	mv ${PREFIX}/bin/readelf.py{,${MODPY_BIN_SUFFIX}}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} test/run_all_unittests.py
