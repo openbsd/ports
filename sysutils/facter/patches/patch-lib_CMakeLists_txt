@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.20 2017/10/12 06:35:03 sebastia Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.21 2018/02/23 10:58:11 sebastia Exp $
 
 - Override library version
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -311,6 +311,7 @@ set_target_properties(libfactersrc PROPERTIES POSITION
+@@ -312,6 +312,7 @@ set_target_properties(libfactersrc PROPERTIES POSITION
  add_library(libfacter $<TARGET_OBJECTS:libfactersrc>)
  if (BUILD_SHARED_LIBS)
      set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${PROJECT_VERSION})
