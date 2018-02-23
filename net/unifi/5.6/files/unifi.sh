@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: unifi.sh,v 1.3 2014/11/29 01:42:02 sthen Exp $
+# $OpenBSD: unifi.sh,v 1.1 2018/02/23 10:10:06 sthen Exp $
 
 # Optionally symlink to things like unifi-discover
 cmd=${0##*unifi-}

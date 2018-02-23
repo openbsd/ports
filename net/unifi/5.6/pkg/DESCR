@@ -1,0 +1,7 @@
+This package contains controller software for Ubiquiti UniFi access points,
+switches, gateways and phones.
+
+This is version 5.6, a long-term support release which maintains support for
+the Broadcom-based first generation of 802.11ac access points. Other earlier 
+11n access points (Atheros-based) are still supported in the normal versions
+of the controller.

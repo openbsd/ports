@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2015/12/12 13:15:34 sthen Exp $
+$OpenBSD: README,v 1.1 2018/02/23 10:10:06 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
