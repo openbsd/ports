@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dunst_c,v 1.1 2017/08/31 20:57:00 sthen Exp $
+$OpenBSD: patch-src_dunst_c,v 1.2 2018/02/23 22:16:07 kn Exp $
 
 Index: src/dunst.c
 --- src/dunst.c.orig
@@ -13,13 +13,15 @@ Index: src/dunst.c
  #include "dbus.h"
  #include "menu.h"
  #include "notification.h"
-@@ -325,6 +328,9 @@ int dunst_main(int argc, char *argv[])
+@@ -325,6 +328,11 @@ int dunst_main(int argc, char *argv[])
          int owner_id = initdbus();
  
          x_setup();
-+	
-+        if (pledge("stdio rpath proc exec", NULL) == -1)
-+                err(1, "pledge");
++
++        if (settings.icon_position == icons_off) {
++                if (pledge("stdio rpath proc exec", NULL) == -1)
++                        err(1, "pledge");
++        }
  
          if (settings.startup_notification) {
                  notification *n = notification_create();
