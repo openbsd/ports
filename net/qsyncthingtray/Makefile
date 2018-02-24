@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/30 14:54:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/02/24 10:14:55 bket Exp $
 
 COMMENT =	system tray app for Syncthing
 
 GH_ACCOUNT =	sieren
 GH_PROJECT =	QSyncthingTray
-GH_TAGNAME =	0.5.5rc1
+GH_TAGNAME =	0.5.8
 PKGNAME =	qsyncthingtray-${GH_TAGNAME}
-REVISION =	2
 
 CATEGORIES =	net x11
 HOMEPAGE =	https://github.com/sieren/QSyncthingTray
