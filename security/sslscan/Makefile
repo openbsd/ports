@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/01 14:35:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/02/24 13:30:11 sthen Exp $
 
 COMMENT=	SSL port scanner
 
@@ -44,7 +44,7 @@ WANTLIB +=	z
 
 post-extract:
 	ln -s ${WRKDIR}/security/openssl/openssl-* ${WRKSRC}/openssl
-	mkdir -p ${WRKSRC}/openssl/.git
+	-mkdir -p ${WRKSRC}/openssl/.git
 	rm -f ${WRKSRC}/openssl/Makefile
 .else
 WANTLIB +=	crypto ssl
