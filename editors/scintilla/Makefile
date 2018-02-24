@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2017/12/14 06:44:23 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2018/02/24 10:54:50 bket Exp $
 
 COMMENT=	source code editing component for GTK+
 
-VERSION=	4.0.2
+VERSION=	4.0.3
 DISTNAME=	scintilla${VERSION:S/.//g}
 PKGNAME=	scintilla-${VERSION}
 CATEGORIES=	editors x11
 
-SHARED_LIBS=	scintilla		10.0 \
-		scintilla_lexers	10.0
+SHARED_LIBS=	scintilla		11.0 \
+		scintilla_lexers	11.0
 
 HOMEPAGE=	http://www.scintilla.org/
 
@@ -30,7 +30,7 @@ MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
 
 WANTLIB=	m ${COMPILER_LIBCXX}
 
-# -std=gnu++14
+# -std=gnu++17
 COMPILER=	base-clang ports-clang ports-gcc
 
 # Not LIB_DEPENDS as it's only shared libraries that don't link directly
