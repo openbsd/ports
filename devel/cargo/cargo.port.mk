@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.6 2017/07/31 13:16:08 danj Exp $
+# $OpenBSD: cargo.port.mk,v 1.7 2018/02/24 18:40:28 kn Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -12,6 +12,9 @@ MODCARGO_FEATURES ?=
 # List of crates to update (no version).
 # Used to override a dependency with newer version.
 MODCARGO_CRATES_UPDATE ?=
+
+# RUSTFLAGS variable to pass to cargo.
+MODCARGO_RUSTFLAGS ?=
 
 # Name of the local directory for vendoring crates.
 MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
@@ -126,7 +129,7 @@ MODCARGO_ENV += \
 	CARGO_TARGET_DIR=${MODCARGO_TARGET_DIR} \
 	RUSTC=${LOCALBASE}/bin/rustc \
 	RUSTDOC=${LOCALBASE}/bin/rustdoc \
-	RUSTFLAGS="${RUSTFLAGS}"
+	RUSTFLAGS="${MODCARGO_RUSTFLAGS}"
 
 # Helper to shorten cargo calls.
 MODCARGO_CARGO_RUN = \
@@ -210,10 +213,10 @@ modcargo-gen-crates: extract
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
 modcargo-gen-crates-licenses: configure
-	@find ${WRKSRC}/modcargo-crates -name 'Cargo.toml' -maxdepth 2 \
-		-exec grep -H '^license' {} \; \
+	@cd ${MODCARGO_VENDOR_DIR} && find . -maxdepth 2 -name Cargo.toml \
+		-exec grep -H '^[ 	]*license' {} + \
 		| sed \
-		-e 's|^${WRKSRC}/modcargo-crates/|MODCARGO_CRATES +=	|' \
+		-e 's|^\./|MODCARGO_CRATES +=	|' \
 		-e 's|/Cargo.toml:license.*= *"|	# |' \
 		-e 's|"$$||g'
 
