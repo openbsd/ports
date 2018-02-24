@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.851 2018/02/18 21:17:37 jung Exp $
+# $OpenBSD: Makefile,v 1.852 2018/02/24 21:16:53 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -433,6 +433,8 @@
      SUBDIR += py-requests,python3
      SUBDIR += py-requests-futures
      SUBDIR += py-requests-futures,python3
+     SUBDIR += py-requests-mock
+     SUBDIR += py-requests-mock,python3
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
      SUBDIR += py-routes
