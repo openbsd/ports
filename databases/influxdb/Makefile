@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/24 20:49:14 sthen Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
@@ -33,7 +33,7 @@ WRKDIST =	${WRKSRC}
 USE_GMAKE =	Yes
 SUBST_VARS =	VARBASE
 
-post-extract:
+pre-patch:
 	cp -r ${LOCALBASE}/${MODGO_SOURCES}/golang.org/x/{crypto,text,sys} \
 		${MODGO_WORKSPACE}/src/golang.org/x/
 
