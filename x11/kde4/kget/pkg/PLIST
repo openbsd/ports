@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:07:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/24 14:07:30 rsadowski Exp $
 @conflict kdenetwork-<4.11
 @bin bin/kget
-lib/kde4/kcm_kget_bittorrentfactory.so
 lib/kde4/kcm_kget_checksumsearchfactory.so
 lib/kde4/kcm_kget_metalinkfactory.so
 lib/kde4/kcm_kget_mirrorsearchfactory.so
 lib/kde4/kcm_kget_mmsfactory.so
 lib/kde4/kcm_kget_multisegkiofactory.so
-lib/kde4/kget_bittorrentfactory.so
 lib/kde4/kget_browser_integration.so
 lib/kde4/kget_checksumsearchfactory.so
 lib/kde4/kget_kiofactory.so
@@ -85,8 +83,6 @@ share/icons/hicolor/48x48/apps/kget.png
 share/icons/hicolor/64x64/apps/kget.png
 share/icons/hicolor/scalable/apps/kget.svgz
 share/kde4/services/ServiceMenus/kget_download.desktop
-share/kde4/services/kget_bittorrentfactory.desktop
-share/kde4/services/kget_bittorrentfactory_config.desktop
 share/kde4/services/kget_checksumsearchfactory.desktop
 share/kde4/services/kget_checksumsearchfactory_config.desktop
 share/kde4/services/kget_kiofactory.desktop
