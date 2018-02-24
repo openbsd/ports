@@ -1,7 +1,4 @@
-$OpenBSD
-
-Drop `-pedantic'
-/usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
+$OpenBSD: patch-gtk_makefile,v 1.11 2018/02/24 10:55:25 bket Exp $
 
 Index: gtk/makefile
 --- gtk/makefile.orig
@@ -57,8 +54,7 @@ Index: gtk/makefile
  ifdef CHECK_DEPRECATED
  DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
  endif
--CXXBASEFLAGS=-W -Wall -pedantic -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
-+CXXBASEFLAGS=-W -Wall -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
+ CXXBASEFLAGS=-W -Wall -pedantic -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
  
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
@@ -84,7 +80,7 @@ Index: gtk/makefile
  
  .c.o:
  	$(CC) $(INCLUDEDIRS) $(MISLEADING) -DLUA_USE_POSIX $(CXXTFLAGS) $(CFLAGS) -c $< -o $@
-@@ -111,19 +104,16 @@ deps: deps.mak
+@@ -111,9 +104,6 @@ deps: deps.mak
  deps.mak:
  	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) $(srcdir)/*.cxx $(srcdir)/../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >$@
  
@@ -94,18 +90,12 @@ Index: gtk/makefile
  # To almost make lua.vers (needs header and footer added) which is only needed after updating Lua:
  # nm -g ../bin/SciTE | grep lua | awk '{print "\t\t" $3 ";"}' >lua2.vers
  
- $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
--FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
--ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
--MatchMarker.o StringHelpers.o \
--PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
-+ FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
-+ ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
-+ MatchMarker.o StringHelpers.o \
-+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
+@@ -123,7 +113,7 @@ ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o Expor
+ MatchMarker.o StringHelpers.o \
+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
  	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
-+	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) $(LDLIBS) -lm -lstdc++
++	$(CXX) `$(CONFIGTHREADS)` $(LIBS) -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) $(LDLIBS) -lm -lstdc++
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
@@ -129,7 +119,7 @@ Index: gtk/makefile
 -
  ifdef gnomeprefix
  	$(INSTALL) -m 755 -d $(DESTDIR)$(datadir)/applications $(DESTDIR)$(pixmapdir)
- 	$(INSTALL) -m 755 $(srcdir)/SciTE.desktop $(DESTDIR)$(datadir)/applications/SciTE.desktop
+ 	$(INSTALL) -m 644 $(srcdir)/SciTE.desktop $(DESTDIR)$(datadir)/applications/SciTE.desktop
 -	$(INSTALL) -m 644 $(srcdir)/Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
 +	$(INSTALL) -m 444 $(srcdir)/Sci48M.png $(DESTDIR)$(pixmapdir)/Sci48M.png
  endif
