@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2018/02/23 16:38:16 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2018/02/24 18:04:08 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
+BROKEN-i386 =		hits memory limits
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
