@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/02/24 13:13:40 bket Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
-DISTNAME =	focuswriter-1.5.5-src
-PKGNAME =	${DISTNAME:S/-src//}
+DISTNAME =	focuswriter-1.6.10
 CATEGORIES =	editors
-EXTRACT_SUFX =	.tar.bz2
-WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
-REVISION =	2
-HOMEPAGE =	http://gottcode.org/focuswriter/
+EXTRACT_SUFX =	-src.tar.bz2
+
+HOMEPAGE =	https://gottcode.org/focuswriter/
 
 MASTER_SITES =	${HOMEPAGE}
 
@@ -16,13 +14,15 @@ MASTER_SITES =	${HOMEPAGE}
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES +=	devel/qmake \
-		x11/qt4
+		x11/qt5
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS +=	textproc/hunspell
-WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB +=	QtNetwork z QtGui c m pthread ${COMPILER_LIBCXX} hunspell-1.6
-WANTLIB +=	iconv intl
+LIB_DEPENDS +=	textproc/hunspell \
+		x11/qt5/qtmultimedia
+
+WANTLIB +=	${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Gui
+WANTLIB +=	Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB +=	c hunspell-1.6 m z
 
 NO_TEST =	Yes
 
