@@ -10,7 +10,7 @@ per-client passwords, as well as fine-grained authorization control.
 This package contains the NSCA-ng server, which is written in C and
 uses an event-driven architecture. Disk I/O is avoided unless the data
 cannot be submitted in one go due to its size (on Linux, the threshold
-is 4 kB). In this case, the data is handed over to Nagios via
+is 4 kB). In this case, the data is handed over to Nagios via
 asynchronously written files.
 
 NSCA clients cannot talk to NSCA-ng servers (nor vice versa), but NSCA
