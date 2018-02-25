@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/12 20:49:50 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/25 17:28:09 rpointel Exp $
 bin/yamllint${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/yamllint/
 lib/python${MODPY_VERSION}/site-packages/yamllint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -46,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}key_orde
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}line_length.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}new_line_at_end_of_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}new_lines.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}octal_values.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}trailing_spaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}truthy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/braces.py
@@ -66,5 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/key_ordering.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/line_length.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/new_line_at_end_of_file.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/new_lines.py
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/octal_values.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/trailing_spaces.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/truthy.py
