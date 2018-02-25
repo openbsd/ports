@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2017/12/03 13:59:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2018/02/25 19:22:59 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -11,7 +11,8 @@ lib/liblink-grammar.la
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.9.2
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.9.3
+@man man/man1/link-parser.1
 share/link-grammar/
 share/link-grammar/ady/
 share/link-grammar/ady/4.0.affix
@@ -32,6 +33,7 @@ share/link-grammar/any/4.0.dict
 share/link-grammar/any/4.0.knowledge
 share/link-grammar/any/4.0.regex
 share/link-grammar/any/README.md
+share/link-grammar/any/affix-punc
 share/link-grammar/ar/
 share/link-grammar/ar/4.0.affix
 share/link-grammar/ar/4.0.constituent-knowledge
@@ -102,6 +104,7 @@ share/link-grammar/en/words/units.4
 share/link-grammar/en/words/units.4.dot
 share/link-grammar/en/words/units.5
 share/link-grammar/en/words/units.6
+share/link-grammar/en/words/units.a
 share/link-grammar/en/words/words-medical.adv.1
 share/link-grammar/en/words/words-medical.prep.1
 share/link-grammar/en/words/words-medical.v.4.1
