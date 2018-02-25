@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.63 2017/06/02 16:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/02/25 22:59:45 awolk Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.92
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE=	http://www.bitwizard.nl/mtr/
+HOMEPAGE=	https://www.bitwizard.nl/mtr/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	yes
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_CDROM=	yes
 # diff for pledge(), not yet enabled
 WANTLIB += c m ncurses
 
-MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
+MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
+		ftp://ftp.bitwizard.nl/mtr/
 
 FLAVORS=	gtk
 FLAVOR?=
