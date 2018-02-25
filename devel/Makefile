@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1703 2018/02/23 22:00:00 sthen Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1704 2018/02/25 13:40:31 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1273,6 +1273,8 @@
      SUBDIR += py-click,python3
      SUBDIR += py-click-log
      SUBDIR += py-click-log,python3
+     SUBDIR += py-click-plugins
+     SUBDIR += py-click-plugins,python3
      SUBDIR += py-click-threading
      SUBDIR += py-click-threading,python3
      SUBDIR += py-clint
@@ -1417,6 +1419,8 @@
      SUBDIR += py-monotonic,python3
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
+     SUBDIR += py-munch
+     SUBDIR += py-munch,python3
      SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert
      SUBDIR += py-nbconvert,python3
