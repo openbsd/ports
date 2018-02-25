@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/02/19 13:19:21 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2018/02/25 08:45:08 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -18,6 +18,7 @@ USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
 
+BUILD_DEPENDS =	textproc/libxslt
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
