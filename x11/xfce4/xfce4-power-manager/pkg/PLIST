@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/04/26 13:17:57 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/25 13:28:08 landry Exp $
 @bin bin/xfce4-power-manager
 @bin bin/xfce4-power-manager-settings
 lib/xfce4/panel/plugins/libxfce4powermanager.so
@@ -124,6 +124,7 @@ share/locale/is/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/it/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/ja/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/kk/LC_MESSAGES/xfce4-power-manager.mo
+share/locale/kn/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/ko/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/lt/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/ms/LC_MESSAGES/xfce4-power-manager.mo
