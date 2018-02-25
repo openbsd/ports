@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/06/26 07:44:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/02/25 13:26:34 landry Exp $
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
@@ -29,9 +29,34 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
+include/exo-2/
+include/exo-2/exo/
+include/exo-2/exo/exo-binding.h
+include/exo-2/exo/exo-cell-renderer-icon.h
+include/exo-2/exo/exo-config.h
+include/exo-2/exo/exo-enum-types.h
+include/exo-2/exo/exo-execute.h
+include/exo-2/exo/exo-gdk-pixbuf-extensions.h
+include/exo-2/exo/exo-gobject-extensions.h
+include/exo-2/exo/exo-gtk-extensions.h
+include/exo-2/exo/exo-icon-chooser-dialog.h
+include/exo-2/exo/exo-icon-chooser-model.h
+include/exo-2/exo/exo-icon-view.h
+include/exo-2/exo/exo-job.h
+include/exo-2/exo/exo-simple-job.h
+include/exo-2/exo/exo-string.h
+include/exo-2/exo/exo-thumbnail-preview.h
+include/exo-2/exo/exo-thumbnail.h
+include/exo-2/exo/exo-toolbars-model.h
+include/exo-2/exo/exo-tree-view.h
+include/exo-2/exo/exo-utils.h
+include/exo-2/exo/exo.h
 lib/libexo-1.la
 @lib lib/libexo-1.so.${LIBexo-1_VERSION}
+lib/libexo-2.la
+@lib lib/libexo-2.so.${LIBexo-2_VERSION}
 lib/pkgconfig/exo-1.pc
+lib/pkgconfig/exo-2.pc
 lib/xfce4/exo-1/
 lib/xfce4/exo-1/exo-compose-mail-1
 @bin lib/xfce4/exo-1/exo-helper-1
@@ -63,6 +88,7 @@ share/gtk-doc/html/exo-1/ExoTreeView.html
 share/gtk-doc/html/exo-1/ExoWrapTable.html
 share/gtk-doc/html/exo-1/ExoXsessionClient.html
 share/gtk-doc/html/exo-1/ch01.html
+share/gtk-doc/html/exo-1/ch02.html
 share/gtk-doc/html/exo-1/exo-1.devhelp2
 share/gtk-doc/html/exo-1/exo-Binding-Properties-Functions.html
 share/gtk-doc/html/exo-1/exo-Executing-Applications.html
@@ -89,8 +115,7 @@ share/gtk-doc/html/exo-1/exo-widgets.html
 share/gtk-doc/html/exo-1/exo-wrap-table.png
 share/gtk-doc/html/exo-1/home.png
 share/gtk-doc/html/exo-1/index.html
-share/gtk-doc/html/exo-1/index.sgml
-share/gtk-doc/html/exo-1/ix01.html
+share/gtk-doc/html/exo-1/ix14.html
 share/gtk-doc/html/exo-1/left-insensitive.png
 share/gtk-doc/html/exo-1/left.png
 share/gtk-doc/html/exo-1/right-insensitive.png
@@ -100,8 +125,7 @@ share/gtk-doc/html/exo-1/up-insensitive.png
 share/gtk-doc/html/exo-1/up.png
 share/icons/hicolor/24x24/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
-share/icons/hicolor/48x48/categories/applications-internet.png
-share/icons/hicolor/48x48/categories/applications-other.png
+share/locale/am/LC_MESSAGES/exo-1.mo
 share/locale/ar/LC_MESSAGES/exo-1.mo
 share/locale/ast/LC_MESSAGES/exo-1.mo
 share/locale/be/LC_MESSAGES/exo-1.mo
@@ -128,6 +152,7 @@ share/locale/is/LC_MESSAGES/exo-1.mo
 share/locale/it/LC_MESSAGES/exo-1.mo
 share/locale/ja/LC_MESSAGES/exo-1.mo
 share/locale/kk/LC_MESSAGES/exo-1.mo
+share/locale/kn/LC_MESSAGES/exo-1.mo
 share/locale/ko/LC_MESSAGES/exo-1.mo
 share/locale/lt/LC_MESSAGES/exo-1.mo
 share/locale/lv/LC_MESSAGES/exo-1.mo
@@ -167,6 +192,7 @@ share/xfce4/helpers/
 share/xfce4/helpers/Thunar.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
+share/xfce4/helpers/brave.desktop
 share/xfce4/helpers/caja.desktop
 share/xfce4/helpers/chromium.desktop
 share/xfce4/helpers/debian-sensible-browser.desktop
@@ -178,7 +204,9 @@ share/xfce4/helpers/eterm.desktop
 share/xfce4/helpers/evolution.desktop
 share/xfce4/helpers/firefox.desktop
 share/xfce4/helpers/galeon.desktop
+share/xfce4/helpers/geary.desktop
 share/xfce4/helpers/gnome-terminal.desktop
+share/xfce4/helpers/google-chrome.desktop
 share/xfce4/helpers/icecat.desktop
 share/xfce4/helpers/icedove.desktop
 share/xfce4/helpers/iceweasel.desktop
@@ -195,7 +223,6 @@ share/xfce4/helpers/nautilus.desktop
 share/xfce4/helpers/netscape-navigator.desktop
 share/xfce4/helpers/nxterm.desktop
 share/xfce4/helpers/opera-browser.desktop
-share/xfce4/helpers/opera-mailer.desktop
 share/xfce4/helpers/pcmanfm.desktop
 share/xfce4/helpers/qterminal.desktop
 share/xfce4/helpers/qtfm.desktop
@@ -206,6 +233,7 @@ share/xfce4/helpers/sakura.desktop
 share/xfce4/helpers/surf.desktop
 share/xfce4/helpers/sylpheed-claws.desktop
 share/xfce4/helpers/sylpheed.desktop
+share/xfce4/helpers/terminator.desktop
 share/xfce4/helpers/thunderbird.desktop
 share/xfce4/helpers/urxvt.desktop
 share/xfce4/helpers/vimprobable2.desktop
