@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/30 12:07:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2018/02/26 10:10:37 fcambus Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
 GH_ACCOUNT =	milkytracker
 GH_PROJECT =	MilkyTracker
-GH_TAGNAME =	v1.01.00
+GH_TAGNAME =	v1.02.00
 
 PKGNAME =	${DISTNAME:L}
 
