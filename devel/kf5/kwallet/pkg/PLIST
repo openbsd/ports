@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/09 21:10:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/26 20:33:07 rsadowski Exp $
 @bin bin/kwallet-query
 @bin bin/kwalletd5
 include/KF5/KWallet/
@@ -70,6 +70,7 @@ share/locale/hsb/LC_MESSAGES/kwalletd5.mo
 share/locale/hu/LC_MESSAGES/kwalletd5.mo
 share/locale/ia/LC_MESSAGES/kwallet-query.mo
 share/locale/ia/LC_MESSAGES/kwalletd5.mo
+share/locale/id/LC_MESSAGES/kwallet-query.mo
 share/locale/id/LC_MESSAGES/kwalletd5.mo
 share/locale/is/LC_MESSAGES/kwalletd5.mo
 share/locale/it/LC_MESSAGES/kwallet-query.mo

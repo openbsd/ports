@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/12 19:35:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/26 20:33:07 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -291,6 +291,7 @@ lib/qt5/plugins/kf5/urifilters/kshorturifilter.so
 lib/qt5/plugins/kf5/urifilters/kuriikwsfilter.so
 lib/qt5/plugins/kf5/urifilters/kurisearchfilter.so
 lib/qt5/plugins/kf5/urifilters/localdomainurifilter.so
+@bin libexec/kauth/file_helper
 @bin libexec/kf5/kio_http_cache_cleaner
 @bin libexec/kf5/kiod5
 @bin libexec/kf5/kioexec
@@ -308,6 +309,7 @@ share/dbus-1/services/org.kde.kiod5.service
 share/dbus-1/services/org.kde.kioexecd.service
 share/dbus-1/services/org.kde.kpasswdserver.service
 share/dbus-1/services/org.kde.kssld5.service
+share/dbus-1/system-services/org.kde.kio.file.service
 share/doc/HTML/ca/kcontrol5/
 share/doc/HTML/ca/kcontrol5/cache/
 share/doc/HTML/ca/kcontrol5/cache/index.cache.bz2
@@ -989,6 +991,7 @@ share/doc/HTML/uk/kioslave5/telnet/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook
+share/examples/kde/dbus-1/system.d/org.kde.kio.file.conf
 share/examples/xdg/accept-languages.codes
 share/examples/xdg/kshorturifilterrc
 share/kf5/kcookiejar/
@@ -1281,3 +1284,4 @@ share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/polkit-1/actions/org.kde.kio.file.policy

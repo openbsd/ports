@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/21 13:14:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/26 20:33:07 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
 lib/qt5/plugins/kf5/kirigami/
 lib/qt5/plugins/kf5/kirigami/org.kde.desktop.so
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/BusyIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Button.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/CheckBox.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/CheckDelegate.qml

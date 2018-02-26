@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/12 19:35:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/02/26 20:33:06 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -25,6 +25,7 @@ share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSasl2.cmake
+share/ECM/find-modules/FindSeccomp.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake

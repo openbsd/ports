@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/26 07:53:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/26 20:33:07 rsadowski Exp $
 include/KF5/KPeople/
 include/KF5/KPeople/KPeople/
 include/KF5/KPeople/KPeople/Global
@@ -75,6 +75,7 @@ share/locale/gl/LC_MESSAGES/kpeople5.mo
 share/locale/he/LC_MESSAGES/kpeople5.mo
 share/locale/hu/LC_MESSAGES/kpeople5.mo
 share/locale/ia/LC_MESSAGES/kpeople5.mo
+share/locale/id/LC_MESSAGES/kpeople5.mo
 share/locale/it/LC_MESSAGES/kpeople5.mo
 share/locale/ja/LC_MESSAGES/kpeople5.mo
 share/locale/ko/LC_MESSAGES/kpeople5.mo

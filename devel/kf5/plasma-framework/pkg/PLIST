@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/02/12 19:35:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/02/26 20:33:07 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -124,6 +124,7 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/qmldir
 lib/qt5/qml/QtQuick/Controls/Styles/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/ApplicationWindowStyle.qml

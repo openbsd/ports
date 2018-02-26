@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/26 20:33:07 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -85,6 +85,7 @@ lib/qt5/qml/org/kde/kirigami.2/templates/private/ForwardButton.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/MenuIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ScrollView.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Kirigami2.pri
@@ -104,6 +105,7 @@ share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ia/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/id/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/it/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ja/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ko/LC_MESSAGES/libkirigami2plugin_qt.qm

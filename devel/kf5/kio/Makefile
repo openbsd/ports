@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2018/02/12 19:35:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/02/26 20:33:07 rsadowski Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS =	KF5KIOCore		5.0 # 5.20
-SHARED_LIBS +=	KF5KIOGui		5.0 # 5.20
-SHARED_LIBS +=	KF5KIOFileWidgets	5.0 # 5.20
-SHARED_LIBS +=	KF5KIONTLM		5.0 # 5.20
-SHARED_LIBS +=	KF5KIOWidgets		5.0 # 5.20
+SHARED_LIBS =	KF5KIOCore		5.1 # 5.20
+SHARED_LIBS +=	KF5KIOGui		5.1 # 5.20
+SHARED_LIBS +=	KF5KIOFileWidgets	5.1 # 5.20
+SHARED_LIBS +=	KF5KIONTLM		5.1 # 5.20
+SHARED_LIBS +=	KF5KIOWidgets		5.1 # 5.20
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

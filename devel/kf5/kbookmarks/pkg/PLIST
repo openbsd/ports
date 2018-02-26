@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/02/26 20:33:06 rsadowski Exp $
 include/KF5/KBookmarks/
 include/KF5/KBookmarks/KBookmark
 include/KF5/KBookmarks/KBookmarkAction
@@ -35,6 +35,7 @@ lib/cmake/KF5Bookmarks/KF5BookmarksConfigVersion.cmake
 lib/cmake/KF5Bookmarks/KF5BookmarksTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Bookmarks/KF5BookmarksTargets.cmake
 @lib lib/libKF5Bookmarks.so.${LIBKF5Bookmarks_VERSION}
+share/examples/xdg/kbookmarks.categories
 share/kf5/mkspecs/qt_KBookmarks.pri
 share/locale/af/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ar/LC_MESSAGES/kbookmarks5_qt.qm
@@ -72,6 +73,7 @@ share/locale/hr/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/hsb/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/hu/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ia/LC_MESSAGES/kbookmarks5_qt.qm
+share/locale/id/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/is/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/it/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ja/LC_MESSAGES/kbookmarks5_qt.qm
