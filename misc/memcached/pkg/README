@@ -1,16 +1,23 @@
-$OpenBSD: README,v 1.2 2017/07/17 08:35:08 landry Exp $
+$OpenBSD: README,v 1.3 2018/02/26 19:49:02 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Memcached relies on SASL as authentication mechanisms, if you could not
-use it, it should be firewalled accordingly. You may wish
-to add a rule such as the following to /etc/pf.conf:
+From the upstream documentation, "Memcached does not spend much, if any,
+effort in ensuring its defensibility from random internet connections.
+So you must not expose memcached directly to the internet, or otherwise
+any untrusted users. Using SASL authentication here helps, but should
+not be totally trusted."
 
-  block on $ext_if proto tcp to ($ext_if) port 11211
+The default setting in this package is now to listen on localhost only.
+
+To change to listening on all IP addresses (upstream's default), assuming
+you have already firewalled appropriately:
+
+# rcctl set memcached flags '-u _memcached'
 
 An alternative is to listen on a unix socket in /var/run/memcached/sock,
 granting write permissions to users in group _memcached.
 
-#rcctl set memcached flags '-u _memcached -s /var/run/memcached/sock -a 0660'
+# rcctl set memcached flags '-u _memcached -s /var/run/memcached/sock -a 0660'
