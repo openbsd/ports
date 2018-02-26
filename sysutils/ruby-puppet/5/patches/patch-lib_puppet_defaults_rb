@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.2 2018/02/26 08:52:42 sebastia Exp $
 Index: lib/puppet/defaults.rb
 --- lib/puppet/defaults.rb.orig
 +++ lib/puppet/defaults.rb
-@@ -1126,11 +1126,11 @@ EOT
+@@ -1189,11 +1189,11 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -16,7 +16,7 @@ Index: lib/puppet/defaults.rb
        :desc       => "The group puppet master should run as.",
      },
      :default_manifest => {
-@@ -1223,7 +1223,7 @@ EOT
+@@ -1286,7 +1286,7 @@ EOT
        :desc       => "File that provides mapping between custom SSL oids and user-friendly names"
      },
      :basemodulepath => {

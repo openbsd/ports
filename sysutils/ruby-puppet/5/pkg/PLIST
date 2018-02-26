@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/12/01 10:02:30 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/26 08:52:42 sebastia Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -45,15 +45,14 @@ ${MODRUBY_SITEDIR}/puppet/application/parser.rb
 ${MODRUBY_SITEDIR}/puppet/application/plugin.rb
 ${MODRUBY_SITEDIR}/puppet/application/report.rb
 ${MODRUBY_SITEDIR}/puppet/application/resource.rb
+${MODRUBY_SITEDIR}/puppet/application/script.rb
 ${MODRUBY_SITEDIR}/puppet/application/status.rb
 ${MODRUBY_SITEDIR}/puppet/application_support.rb
-${MODRUBY_SITEDIR}/puppet/bindings.rb
 ${MODRUBY_SITEDIR}/puppet/coercion.rb
 ${MODRUBY_SITEDIR}/puppet/compilable_resource_type.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/
 ${MODRUBY_SITEDIR}/puppet/configurer.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/downloader.rb
-${MODRUBY_SITEDIR}/puppet/configurer/downloader_factory.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/fact_handler.rb
 ${MODRUBY_SITEDIR}/puppet/configurer/plugin_handler.rb
 ${MODRUBY_SITEDIR}/puppet/confine/
@@ -71,6 +70,11 @@ ${MODRUBY_SITEDIR}/puppet/context.rb
 ${MODRUBY_SITEDIR}/puppet/context/trusted_information.rb
 ${MODRUBY_SITEDIR}/puppet/daemon.rb
 ${MODRUBY_SITEDIR}/puppet/data_binding.rb
+${MODRUBY_SITEDIR}/puppet/datatypes/
+${MODRUBY_SITEDIR}/puppet/datatypes.rb
+${MODRUBY_SITEDIR}/puppet/datatypes/error.rb
+${MODRUBY_SITEDIR}/puppet/datatypes/impl/
+${MODRUBY_SITEDIR}/puppet/datatypes/impl/error.rb
 ${MODRUBY_SITEDIR}/puppet/defaults.rb
 ${MODRUBY_SITEDIR}/puppet/environments.rb
 ${MODRUBY_SITEDIR}/puppet/error.rb
@@ -131,6 +135,7 @@ ${MODRUBY_SITEDIR}/puppet/face/resource.rb
 ${MODRUBY_SITEDIR}/puppet/face/status.rb
 ${MODRUBY_SITEDIR}/puppet/feature/
 ${MODRUBY_SITEDIR}/puppet/feature/base.rb
+${MODRUBY_SITEDIR}/puppet/feature/bolt.rb
 ${MODRUBY_SITEDIR}/puppet/feature/cfpropertylist.rb
 ${MODRUBY_SITEDIR}/puppet/feature/eventlog.rb
 ${MODRUBY_SITEDIR}/puppet/feature/hiera_eyaml.rb
@@ -160,6 +165,7 @@ ${MODRUBY_SITEDIR}/puppet/file_serving/metadata.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/file.rb
+${MODRUBY_SITEDIR}/puppet/file_serving/mount/locales.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/modules.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/pluginfacts.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/plugins.rb
@@ -191,6 +197,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/binary_file.rb
 ${MODRUBY_SITEDIR}/puppet/functions/break.rb
 ${MODRUBY_SITEDIR}/puppet/functions/call.rb
 ${MODRUBY_SITEDIR}/puppet/functions/contain.rb
+${MODRUBY_SITEDIR}/puppet/functions/convert_to.rb
 ${MODRUBY_SITEDIR}/puppet/functions/crit.rb
 ${MODRUBY_SITEDIR}/puppet/functions/debug.rb
 ${MODRUBY_SITEDIR}/puppet/functions/defined.rb
@@ -216,6 +223,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/lest.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lookup.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
 ${MODRUBY_SITEDIR}/puppet/functions/match.rb
+${MODRUBY_SITEDIR}/puppet/functions/module_directory.rb
 ${MODRUBY_SITEDIR}/puppet/functions/new.rb
 ${MODRUBY_SITEDIR}/puppet/functions/next.rb
 ${MODRUBY_SITEDIR}/puppet/functions/notice.rb
@@ -249,6 +257,7 @@ ${MODRUBY_SITEDIR}/puppet/generate/templates/type/pcore.erb
 ${MODRUBY_SITEDIR}/puppet/generate/type.rb
 ${MODRUBY_SITEDIR}/puppet/gettext/
 ${MODRUBY_SITEDIR}/puppet/gettext/config.rb
+${MODRUBY_SITEDIR}/puppet/gettext/module_translations.rb
 ${MODRUBY_SITEDIR}/puppet/gettext/stubs.rb
 ${MODRUBY_SITEDIR}/puppet/graph/
 ${MODRUBY_SITEDIR}/puppet/graph.rb
@@ -383,6 +392,8 @@ ${MODRUBY_SITEDIR}/puppet/interface/option_manager.rb
 ${MODRUBY_SITEDIR}/puppet/loaders.rb
 ${MODRUBY_SITEDIR}/puppet/locales/
 ${MODRUBY_SITEDIR}/puppet/locales/config.yaml
+${MODRUBY_SITEDIR}/puppet/locales/en/
+${MODRUBY_SITEDIR}/puppet/locales/en/puppet.po
 ${MODRUBY_SITEDIR}/puppet/locales/ja/
 ${MODRUBY_SITEDIR}/puppet/locales/ja/puppet.po
 ${MODRUBY_SITEDIR}/puppet/locales/puppet.pot
@@ -502,6 +513,7 @@ ${MODRUBY_SITEDIR}/puppet/parameter/value.rb
 ${MODRUBY_SITEDIR}/puppet/parameter/value_collection.rb
 ${MODRUBY_SITEDIR}/puppet/parser/
 ${MODRUBY_SITEDIR}/puppet/parser.rb
+${MODRUBY_SITEDIR}/puppet/parser/abstract_compiler.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/
 ${MODRUBY_SITEDIR}/puppet/parser/ast.rb
 ${MODRUBY_SITEDIR}/puppet/parser/ast/block_expression.rb
@@ -564,6 +576,7 @@ ${MODRUBY_SITEDIR}/puppet/parser/functions/return.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/reverse_each.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/scanf.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/sha1.rb
+${MODRUBY_SITEDIR}/puppet/parser/functions/sha256.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/shellquote.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/slice.rb
 ${MODRUBY_SITEDIR}/puppet/parser/functions/split.rb
@@ -583,6 +596,7 @@ ${MODRUBY_SITEDIR}/puppet/parser/resource/
 ${MODRUBY_SITEDIR}/puppet/parser/resource.rb
 ${MODRUBY_SITEDIR}/puppet/parser/resource/param.rb
 ${MODRUBY_SITEDIR}/puppet/parser/scope.rb
+${MODRUBY_SITEDIR}/puppet/parser/script_compiler.rb
 ${MODRUBY_SITEDIR}/puppet/parser/templatewrapper.rb
 ${MODRUBY_SITEDIR}/puppet/parser/type_loader.rb
 ${MODRUBY_SITEDIR}/puppet/plugins/
@@ -631,11 +645,14 @@ ${MODRUBY_SITEDIR}/puppet/pops/loader/module_loaders.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/null_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/predefined_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_function_instantiator.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_plan_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/puppet_resource_type_impl_instantiator.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/ruby_data_type_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/ruby_function_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/runtime3_type_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/simple_environment_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/static_loader.rb
+${MODRUBY_SITEDIR}/puppet/pops/loader/task_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/type_definition_instantiator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/typed_name.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/uri_helper.rb
@@ -724,6 +741,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/types/p_binary_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_init_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_meta_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_object_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_object_type_extension.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_runtime_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_range_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_sem_ver_type.rb
@@ -731,6 +749,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/types/p_sensitive_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_timespan_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_timestamp_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/p_type_set_type.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/p_uri_type.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/puppet_object.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/recursion_guard.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/ruby_generator.rb
@@ -747,11 +766,13 @@ ${MODRUBY_SITEDIR}/puppet/pops/types/type_formatter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_mismatch_describer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_parser.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/type_set_reference.rb
+${MODRUBY_SITEDIR}/puppet/pops/types/type_with_members.rb
 ${MODRUBY_SITEDIR}/puppet/pops/types/types.rb
 ${MODRUBY_SITEDIR}/puppet/pops/utils.rb
 ${MODRUBY_SITEDIR}/puppet/pops/validation/
 ${MODRUBY_SITEDIR}/puppet/pops/validation.rb
 ${MODRUBY_SITEDIR}/puppet/pops/validation/checker4_0.rb
+${MODRUBY_SITEDIR}/puppet/pops/validation/tasks_checker.rb
 ${MODRUBY_SITEDIR}/puppet/pops/validation/validator_factory_4_0.rb
 ${MODRUBY_SITEDIR}/puppet/pops/visitable.rb
 ${MODRUBY_SITEDIR}/puppet/pops/visitor.rb
@@ -1254,6 +1275,7 @@ ${MODRUBY_SITEDIR}/puppet/vendor/semantic_puppet/lib/semantic_puppet/version_ran
 ${MODRUBY_SITEDIR}/puppet/vendor/semantic_puppet/locales/
 ${MODRUBY_SITEDIR}/puppet/vendor/semantic_puppet/locales/config.yaml
 ${MODRUBY_SITEDIR}/puppet/version.rb
+${MODRUBY_SITEDIR}/puppet_pal.rb
 ${MODRUBY_SITEDIR}/puppet_x.rb
 @man man/man5/puppet.conf.5
 @man man/man8/puppet-agent.8
