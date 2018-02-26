@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/19 00:52:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/02/26 17:31:35 sthen Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -25,8 +25,10 @@ LIB_DEPENDS =		converters/libiconv
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
+# gettext-tools needed for aclocal/extern-inline.m4
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/gettext-tools \
 		devel/libtool
 
 CONFIGURE_STYLE =	gnu
