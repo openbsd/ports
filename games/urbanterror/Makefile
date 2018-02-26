@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/08 12:55:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/02/26 08:54:59 bentley Exp $
 
-USE_WXNEEDED =	Yes
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT = 	fast-paced hollywood-tactical shooter: "fun over realism"
-DISTNAME =	urbanterror-4.3.2
+DISTNAME =	urbanterror-4.3.2pl1
 
 GH_ACCOUNT =	Barbatos
 GH_PROJECT =	ioq3-for-UrbanTerror-4
-GH_TAGNAME =	release-4.3.2
+GH_TAGNAME =	release-4.3.2-hotfix
 
 CATEGORIES =	games x11
 
