@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/06/30 08:31:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/26 08:42:14 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/generate_metadata_pot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gettext-setup/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gettext-setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gettext-setup/gettext_setup.rb
@@ -28,6 +29,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/locales/de/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/locales/de/sinatra-i18n.po
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/locales/sinatra-i18n.pot
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/merge_locales/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/merge_locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/spec_locales/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/spec_locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/spec_locales/sinatra-i18n.pot
