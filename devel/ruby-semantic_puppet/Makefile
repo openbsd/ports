@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/09 10:44:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/26 08:45:19 sebastia Exp $
 
 COMMENT =		compare semantic versioning
 
-DISTNAME =		semantic_puppet-0.1.4
+DISTNAME =		semantic_puppet-1.0.1
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/puppetlabs/semantic_puppet-gem	
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
