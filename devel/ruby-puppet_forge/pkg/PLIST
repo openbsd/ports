@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/06/29 07:27:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/02/26 08:44:46 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -23,6 +23,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar/mini.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/unpacker.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/base/
@@ -100,6 +101,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar/mini_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/unpacker_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/util_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/v3/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/v3/base/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/v3/base/paginated_collection_spec.rb

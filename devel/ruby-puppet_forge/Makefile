@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/29 07:27:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2018/02/26 08:44:46 sebastia Exp $
 
 COMMENT =	tools to access the Puppet Forge API
 
-DISTNAME =	puppet_forge-2.2.6
+DISTNAME =	puppet_forge-2.2.9
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/puppetlabs/forge-ruby
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -14,9 +14,9 @@ MODULES =		lang/ruby
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=	archivers/ruby-minitar,${MODRUBY_FLAVOR} \
 		devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.11,<1 \
-		devel/ruby-semantic_puppet,${MODRUBY_FLAVOR}>=0.1.0,<0.2 \
-		www/ruby-faraday,${MODRUBY_FLAVOR}>=0.9.0,<0.10 \
-		www/ruby-faraday_middleware,${MODRUBY_FLAVOR}>=0.9.0,<0.11
+		devel/ruby-semantic_puppet,${MODRUBY_FLAVOR}>=1.0,<2.0 \
+		www/ruby-faraday,${MODRUBY_FLAVOR}>=0.9.0,<0.14 \
+		www/ruby-faraday_middleware,${MODRUBY_FLAVOR}>=0.9.0,<0.13
 
 CONFIGURE_STYLE =	ruby gem
 
