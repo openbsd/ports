@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/06 09:26:48 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2018/02/27 14:05:06 sthen Exp $
 
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-GH_ACCOUNT =	semarie
-GH_PROJECT =	sysclean
-GH_TAGNAME =	2.6
+V =		2.6
+DISTNAME =	sysclean-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/sysclean/
 
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
+
+MASTER_SITES =	https://github.com/semarie/sysclean/releases/download/${V}/
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

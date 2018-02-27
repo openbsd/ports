@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/06 16:32:30 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/27 14:05:06 sthen Exp $
 #
 
 COMMENT =	help to find programs that need restarting after upgrade
 
-GH_ACCOUNT =	semarie
-GH_PROJECT =	checkrestart
-GH_TAGNAME =	1.0
+V =		1.0
+DISTNAME =	checkrestart-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/checkrestart
@@ -14,6 +14,8 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	https://github.com/semarie/checkrestart/releases/download/${V}/
 
 # use pledge()
 WANTLIB =		c kvm>=16.2
