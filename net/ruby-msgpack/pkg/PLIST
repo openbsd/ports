@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/03/04 18:34:14 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/02/27 09:13:08 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -34,6 +34,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/packer.rb
