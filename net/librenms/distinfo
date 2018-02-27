@@ -1,2 +1,4 @@
-SHA256 (librenms-1.36.01.tar.gz) = 6jdmk+duBEUE3OLMCclZboKBl2FnNZcb4MO7lAc3Zh8=
-SIZE (librenms-1.36.01.tar.gz) = 63281861
+SHA256 (librenms-1.37.tar.gz) = htvLKHXHu0344ELZ/Ajncctg9ttVulklmhTGqLbqooE=
+SHA256 (librenms-vendor-1.37.tar.xz) = ZLrLdsCoJ/2WMEC1n1jgZ3cpMrpCYxCm8YaGzvDhLiY=
+SIZE (librenms-1.37.tar.gz) = 29901316
+SIZE (librenms-vendor-1.37.tar.xz) = 24600168

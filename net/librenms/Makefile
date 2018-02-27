@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2018/02/14 14:04:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2018/02/27 15:17:39 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.36.01
+GH_TAGNAME =	1.37
+DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
 CATEGORIES =	net www
@@ -15,6 +16,8 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 MODULES =	lang/php \
 		lang/python
@@ -51,6 +54,7 @@ R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;
 R +=	s,/usr/local,${LOCALBASE},g
 
 post-extract:
+	mv ${WRKDIR}/vendor ${WRKSRC}/
 	perl -pi \
 	    -e "s,'/usr/bin/snmp,'/usr/local/bin/snmp,;" \
 	    -e "s,'/bin/ping,'/sbin/ping,;" \
@@ -69,6 +73,18 @@ do-install:
 	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
-	rm -r ${INSTDIR}/tests
+	rm -r ${INSTDIR}/tests ${INSTDIR}/librenms/vendor/xjtuwangke/passwordhash/.git
+
+# maintainer convenience target
+dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
+	t=`mktemp -d /tmp/librenms.XXXXXXXXXX`; \
+	f=$$t/librenms-vendor-${GH_TAGNAME}.tar.xz; \
+	cd $$t; \
+	tar xzf ${FULLDISTDIR}/${DISTNAME}.tar.gz; \
+	cd librenms-${GH_TAGNAME}; \
+	composer install --no-dev; \
+	tar cf - vendor | xz -T 0 > $$f; \
+	scp $$f naiad:mirrors/; \
+	cd -; rm -rf $$t
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.15 2018/02/12 23:27:18 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.16 2018/02/27 15:17:39 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -32,4 +32,4 @@ Index: validate.php
 +$dep_check = shell_exec('%PHP% scripts/composer_wrapper.php install --no-dev --dry-run');
  preg_match_all('/Installing ([^ ]+\/[^ ]+) \(/', $dep_check, $dep_missing);
  if (!empty($dep_missing[0])) {
-     print_fail("Missing dependencies!", "composer install --no-dev");
+     print_fail("Missing dependencies!", "./scripts/composer_wrapper.php install --no-dev");

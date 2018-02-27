@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.23 2018/02/12 23:27:18 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.24 2018/02/27 15:17:39 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -66,7 +66,7 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -217,7 +217,7 @@ main () {
+@@ -223,7 +223,7 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.
@@ -75,7 +75,7 @@ Index: daily.sh
                  status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
              ;;
              post-pull)
-@@ -231,7 +231,7 @@ main () {
+@@ -245,7 +245,7 @@ main () {
                  fi
  
                  # List all tasks to do after pull in the order of execution

@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.31 2018/02/12 23:27:18 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.32 2018/02/27 15:17:39 sthen Exp $
 
 Some substitutions are done in the ports Makefile to reduce patch conflicts
 during updates.
@@ -6,7 +6,7 @@ during updates.
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
 +++ includes/defaults.inc.php
-@@ -42,14 +42,15 @@ $config['db_socket']             = null;
+@@ -41,14 +41,15 @@ $config['db_socket']             = null;
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
@@ -24,7 +24,7 @@ Index: includes/defaults.inc.php
  $config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
  $config['snmptranslate']             = '/usr/local/bin/snmptranslate';
  $config['whois']          = '/usr/bin/whois';
-@@ -495,11 +496,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -499,11 +500,11 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -39,7 +39,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -507,7 +508,7 @@ $config['smokeping']['pings']             = 20;
+@@ -511,7 +512,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
@@ -48,7 +48,7 @@ Index: includes/defaults.inc.php
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -853,7 +854,7 @@ $config['api_demo'] = 0;
+@@ -857,7 +858,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;
