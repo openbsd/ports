@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/14 18:52:47 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/27 23:36:31 kn Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_EGG_VERSION =	1.2.0
-GH_ACCOUNT =		keithgg
-GH_PROJECT =		puddletag
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
+DISTNAME =		puddletag-${MODPY_EGG_VERSION}
+REVISION =		0
+
 CATEGORIES =		audio
 
 HOMEPAGE =		http://puddletag.net
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =		https://github.com/keithgg/puddletag/releases/download/v${MODPY_EGG_VERSION}/
+# kn: Remove with next update
+DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
@@ -24,8 +28,6 @@ RUN_DEPENDS =		audio/py-mutagen>=1.14 \
 			x11/py-qt4>=4.5
 
 NO_TEST =		Yes
-
-WRKSRC =		${WRKDIST}/source
 
 post-install:
 	mv ${PREFIX}/share/man/man1/puddletag.1 ${PREFIX}/man/man1/

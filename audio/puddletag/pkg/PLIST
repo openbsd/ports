@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/01/14 18:52:47 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/02/27 23:36:31 kn Exp $
 bin/puddletag
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/__init__.py
@@ -30,8 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/util.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/util.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/vorbis.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/vorbis.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/wma.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/audioinfo/wma.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/confirmations.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/confirmations.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/constants.py
@@ -51,14 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/helperwin.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/__init__.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/amarok.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/amarok.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/prokyon.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/prokyon.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/quodlibetlib.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/quodlibetlib.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/rhythmbox.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/libraries/rhythmbox.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/loadshortcuts.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/loadshortcuts.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/m3u.py
@@ -88,8 +80,6 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/tagpanel.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/tagpanel.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/tagtools.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/tagtools.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/teststuff.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/mainwin/teststuff.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/__init__.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/masstag/__init__.pyc
@@ -129,14 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/acoust_id.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/acoust_id.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/amazon.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/amazon.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/amg.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/amg.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/discogs.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/discogs.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/example.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/example.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/exampletags.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/exampletags.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/freedb.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/freedb.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/
@@ -144,8 +128,6 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/__init__.
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/funcs.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/funcs.pyc
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/parse_debug.py
-lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/mp3tag/parse_debug.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/musicbrainz.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/musicbrainz.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/tagsources/parse_html.py
