@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/03 08:02:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2018/02/27 16:12:04 landry Exp $
 
 COMMENT =	Qt-based MPD client
 
-GH_ACCOUNT=	CDrummond
-GH_PROJECT=	cantata
-GH_TAGNAME=	v2.2.0
+V =			2.2.0
+DISTNAME =	cantata-${V}
+REVISION =	0
+HOMEPAGE =	https://github.com/CDrummond/cantata
+
+MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	audio
 
