@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/02/27 09:28:07 ajacoutot Exp $
 
 COMMENT =		library to generate, and check strenght of passwords
 
-DISTNAME =		libpwquality-1.3.0
-EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+V =			1.4.0
+SUBST_VARS =		V
+GH_PROJECT =		libpwquality
+GH_ACCOUNT =		libpwquality
+GH_TAGNAME =		libpwquality-${V}
+DISTNAME =		libpwquality-${V}
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
@@ -18,12 +21,15 @@ HOMEPAGE =		https://fedorahosted.org/libpwquality/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += c crack iconv intl pthread z
 
-MASTER_SITES =		https://fedorahosted.org/releases/l/i/libpwquality/
-
 MODULES =		lang/python
+
+USE_GMAKE =		Yes
+
+BUILD_DEPENDS =		devel/gettext-tools \
+			shells/bash
 
 LIB_DEPENDS =		security/cracklib
 
@@ -35,5 +41,16 @@ CONFIGURE_ARGS =	--with-python-binary=python${MODPY_VERSION} \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		secureconfdir=${PREFIX}/share/examples/libpwquality/
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+pre-configure:
+	cd ${WRKSRC} && env -i \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>

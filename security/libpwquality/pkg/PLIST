@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/24 06:18:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/02/27 09:28:07 ajacoutot Exp $
 @bin bin/pwmake
 @bin bin/pwscore
 include/pwquality.h
@@ -6,7 +6,7 @@ lib/libpwquality.a
 lib/libpwquality.la
 @lib lib/libpwquality.so.${LIBpwquality_VERSION}
 lib/pkgconfig/pwquality.pc
-lib/python${MODPY_VERSION}/site-packages/pwquality-1.3.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pwquality-${V}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pwquality.so
 @man man/man1/pwmake.1
 @man man/man1/pwscore.1
@@ -45,9 +45,6 @@ share/locale/kn/LC_MESSAGES/libpwquality.mo
 share/locale/ko/LC_MESSAGES/libpwquality.mo
 share/locale/ml/LC_MESSAGES/libpwquality.mo
 share/locale/mr/LC_MESSAGES/libpwquality.mo
-share/locale/mr_IN/
-share/locale/mr_IN/LC_MESSAGES/
-share/locale/mr_IN/LC_MESSAGES/libpwquality.mo
 share/locale/nb/LC_MESSAGES/libpwquality.mo
 share/locale/nl/LC_MESSAGES/libpwquality.mo
 share/locale/or/LC_MESSAGES/libpwquality.mo
@@ -60,6 +57,9 @@ share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/libpwquality.mo
 share/locale/sk/LC_MESSAGES/libpwquality.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/libpwquality.mo
 share/locale/sr/LC_MESSAGES/libpwquality.mo
 share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
@@ -69,6 +69,9 @@ share/locale/ta/LC_MESSAGES/libpwquality.mo
 share/locale/te/LC_MESSAGES/libpwquality.mo
 share/locale/tr/LC_MESSAGES/libpwquality.mo
 share/locale/uk/LC_MESSAGES/libpwquality.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/libpwquality.mo
 share/locale/vi/LC_MESSAGES/libpwquality.mo
 share/locale/zh_CN/LC_MESSAGES/libpwquality.mo
 share/locale/zh_TW/LC_MESSAGES/libpwquality.mo
