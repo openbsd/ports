@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/09 19:48:06 jung Exp $
+# $OpenBSD: Makefile,v 1.13 2018/02/27 08:53:22 bentley Exp $
 
 COMMENT=		XMPP plugin for irssi
 
 DISTNAME=		irssi-xmpp-0.54
+REVISION=		0
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://cybione.org/~irssi-xmpp/
+HOMEPAGE=		https://cybione.org/~irssi-xmpp/
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
