@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/26 20:18:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/02/27 21:47:38 espie Exp $
 
 COMMENT =		built-package format for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.30.0a0
 DISTNAME =		wheel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

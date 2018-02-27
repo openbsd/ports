@@ -2,7 +2,7 @@ PuDB is a console-based python debugger which features:
 
 - Syntax-highlighted source, the stack, breakpoints and variables are
   all visible at once and continuously updated. This helps you be more
-  aware of what’s going on in your program. Variable displays can be
+  aware of what's going on in your program. Variable displays can be
   expanded, collapsed and have various customization options.
 
 - Simple, keyboard-based navigation using single keystrokes makes
@@ -23,7 +23,7 @@ PuDB is a console-based python debugger which features:
 
 - PuDB places special emphasis on exception handling.
 
-- A post-mortem mode makes it easy to retrace a crashing program’s
+- A post-mortem mode makes it easy to retrace a crashing program's
   last steps.
 
 - IPython integration (see wiki[1])

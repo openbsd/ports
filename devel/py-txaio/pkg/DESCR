@@ -8,4 +8,4 @@ asyncio or Twisted as a dependency.
 
 Note that, with this approach, user code runs under the native event
 loop of either Twisted or asyncio. This is different from attaching
-either one’s event loop to the other using some event loop adapter.
+either one's event loop to the other using some event loop adapter.

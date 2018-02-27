@@ -5,7 +5,7 @@ Rofi is a graphical menu. Its features include:
     - Case insensitive
 * UTF-8 enabled.
     - UTF-8 aware string collating.
-    - intl. keyboard support (`e -> è)
+    - intl. keyboard support (`e -> egrave)
 * Pango font rendering.
 * RTL language support.
 * Window Switcher.

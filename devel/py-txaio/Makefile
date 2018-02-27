@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/17 17:58:52 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/27 21:47:38 espie Exp $
 
 COMMENT =	compatibility API between asyncio/Twisted/Trollius
 
 MODPY_EGG_VERSION =	2.8.2
 DISTNAME =	txaio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
