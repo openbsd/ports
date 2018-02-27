@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/27 12:02:17 sthen Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
 V=		0.3.0
-GH_ACCOUNT=	rdoeffinger
-GH_PROJECT=	iec16022
-GH_TAGNAME=	v$V
-REVISION=	0
+DISTNAME=	iec16022-$V
+EXTRACT_SUFX=	.tar.xz
+REVISION=	1
 
 SHARED_LIBS +=  iec16022                  3.0 # unknown
 
@@ -20,6 +19,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  c iconv intl popt z
+
+MASTER_SITES=	https://github.com/rdoeffinger/iec16022/releases/download/v$V/
 
 LIB_DEPENDS=	devel/popt
 
