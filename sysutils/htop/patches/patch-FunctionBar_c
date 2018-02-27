@@ -1,7 +1,8 @@
-$OpenBSD: patch-FunctionBar_c,v 1.1.1.1 2016/11/16 19:48:19 juanfra Exp $
---- FunctionBar.c.orig	Tue Nov 15 16:48:23 2016
-+++ FunctionBar.c	Tue Nov 15 16:48:45 2016
-@@ -72,14 +72,8 @@ FunctionBar* FunctionBar_new(const char** functions, c
+$OpenBSD: patch-FunctionBar_c,v 1.2 2018/02/27 17:40:13 ians Exp $
+Index: FunctionBar.c
+--- FunctionBar.c.orig
++++ FunctionBar.c
+@@ -72,14 +72,8 @@ FunctionBar* FunctionBar_new(const char* const* functi
  }
  
  void FunctionBar_delete(FunctionBar* this) {

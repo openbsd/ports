@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/16 19:48:19 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2018/02/27 17:40:13 ians Exp $
 
 COMMENT =	interactive process viewer
-DISTNAME =	htop-2.0.2
+V =		2.1.0
+DISTNAME =	htop-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://hisham.hm/htop/index.php
 MAINTAINER =	Ian Sutton <ian@ce.gl>
@@ -9,9 +10,9 @@ MAINTAINER =	Ian Sutton <ian@ce.gl>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c kvm m ncursesw
+WANTLIB =	c curses kvm m
 MODULES =	lang/python
-MASTER_SITES =	https://hisham.hm/htop/releases/2.0.2/
+MASTER_SITES =	https://hisham.hm/htop/releases/${V}/
 RUN_DEPENDS =	devel/desktop-file-utils
 
 NO_TEST =	Yes
@@ -27,6 +28,7 @@ MODPY_ADJ_FILES =	scripts/MakeHeader.py
 
 # htop has some bugs which takes hours or days to reach.
 # Keep the symbols to give a chance to the user to get an useful coredump.
-INSTALL_STRIP=
+# Turning this off for now, I believe the previous crashes are fixed
+#INSTALL_STRIP=
 
 .include <bsd.port.mk>
