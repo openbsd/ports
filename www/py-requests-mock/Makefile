@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/27 13:16:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/27 13:16:58 sthen Exp $
 
 MODPY_EGG_VERSION =	1.4.0
 COMMENT =	mock out responses from py-requests
 DISTNAME =	requests-mock-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-BROKEN =	goes straight to download during build, insecure
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -19,6 +18,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
+BUILD_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
