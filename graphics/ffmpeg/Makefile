@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.167 2018/02/20 05:57:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2018/02/27 08:00:40 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20180219
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -61,13 +62,6 @@ LIBpostproc_EXTRALIBS=
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
 
-.if ${MACHINE_ARCH:Marm}
-# uses ARM EABI
-FFMPEG_ARCH=	generic
-.else
-FFMPEG_ARCH=	${MACHINE_ARCH}
-.endif
-
 OPTFLAGS=	${CFLAGS}
 
 # until the system headers are fixed properly.
@@ -76,12 +70,9 @@ OPTFLAGS+=	-Wno-redundant-decls
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= --enable-shared \
-		--arch=${FFMPEG_ARCH} \
+		--arch=${MACHINE_ARCH} \
 		--cc=${CC} \
 		--disable-altivec \
-		--disable-armv5te \
-		--disable-armv6 \
-		--disable-armv6t2 \
 		--disable-debug \
 		--disable-iconv \
 		--disable-indev=jack \
