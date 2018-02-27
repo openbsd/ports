@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/02/27 23:55:31 kn Exp $
 
 COMMENT=		automatic color temperature adjustment
 
-GH_PROJECT=		redshift
-GH_ACCOUNT=		jonls
-GH_TAGNAME=		v1.11
-REVISION=		2
+V=			1.11
+DISTNAME=		redshift-$V
+REVISION=		3
 
 CATEGORIES=		misc graphics
 
@@ -16,7 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  X11 Xau Xdmcp Xext Xxf86vm c drm ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pcre pthread xcb
-WANTLIB += xcb-randr xcb-render z
+WANTLIB += xcb-randr z
+
+MASTER_SITES=		https://github.com/jonls/redshift/releases/download/v$V/
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		lang/python \
 			textproc/intltool
@@ -35,22 +37,11 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-gui \
 			--disable-geoclue
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.14
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		./bootstrap
 
 .include <bsd.port.mk>
