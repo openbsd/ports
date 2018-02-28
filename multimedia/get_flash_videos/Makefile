@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.33 2017/09/24 14:54:17 nigel Exp $
+# $OpenBSD: Makefile,v 1.34 2018/02/28 14:08:36 nigel Exp $
 
 COMMENT=	download flash video files from various sites
 
-GH_ACCOUNT=	monsieurvideo
-GH_PROJECT=	get-flash-videos
-GH_TAGNAME=	1.25.94
-DISTNAME=	get_flash_videos-${GH_TAGNAME}
+V=	1.25.99
+DISTNAME=	get_flash_videos-${V}
 
 CATEGORIES=	multimedia perl5
+
+HOMEPAGE =	https://github.com/monsieurvideo/get-flash-videos
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES =	https://github.com/monsieurvideo/get-flash-videos/releases/download/${V}/
 
 MODULES=	perl
 CONFIGURE_STYLE=perl
@@ -35,6 +37,8 @@ RUN_DEPENDS+=	multimedia/p5-Data-AMF \
 		security/p5-Crypt-Rijndael \
 		security/p5-Digest-HMAC \
 		textproc/p5-XML-Simple
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/g}
 
 pre-configure:
 	cd ${WRKSRC}; sed -i \

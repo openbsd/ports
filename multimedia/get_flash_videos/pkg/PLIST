@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/07/24 21:20:20 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/02/28 14:08:36 nigel Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
+${P5SITE}/FlashVideo/DASHDownloader.pm
 ${P5SITE}/FlashVideo/Downloader.pm
 ${P5SITE}/FlashVideo/Generic.pm
 ${P5SITE}/FlashVideo/HLSDownloader.pm
+${P5SITE}/FlashVideo/HLSXDownloader.pm
 ${P5SITE}/FlashVideo/JSON.pm
 ${P5SITE}/FlashVideo/Mechanize.pm
 ${P5SITE}/FlashVideo/RTMPDownloader.pm
