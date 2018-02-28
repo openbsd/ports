@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/02/27 15:17:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/02/28 15:01:08 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -73,7 +73,7 @@ do-install:
 	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
-	rm -r ${INSTDIR}/tests ${INSTDIR}/librenms/vendor/xjtuwangke/passwordhash/.git
+	rm -rf ${INSTDIR}/tests ${INSTDIR}/vendor/xjtuwangke/passwordhash/.git
 
 # maintainer convenience target
 dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
