@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2017/06/21 21:24:09 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2018/02/28 11:07:16 fcambus Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
-GH_ACCOUNT =	fcambus
-GH_PROJECT =	ansiweather
-GH_TAGNAME =	1.11
+V =		1.11
+DISTNAME =	ansiweather-$V
+REVISION =	0
 
 CATEGORIES =	astro
+
+HOMEPAGE =	https://github.com/fcambus/ansiweather
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	https://github.com/fcambus/ansiweather/releases/download/$V/
 
 RUN_DEPENDS =	textproc/jq
 
