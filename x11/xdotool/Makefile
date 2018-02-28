@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/02/28 12:48:01 rsadowski Exp $
 
 COMMENT=	fake keyboard and mouse input
 
-GH_TAGNAME=	v3.20150503.1
-GH_PROJECT=	xdotool
-GH_ACCOUNT=	jordansissel
+V =		3.20150503.1
+DISTNAME =	xdotool-${V}
+REVISION =	1
 EPOCH=		0
 
 SHARED_LIBS=	xdo 0.1	# 1.1
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 USE_GMAKE=	Yes
 
 WANTLIB += X11 Xinerama Xtst c m xkbcommon
+
+MASTER_SITES =	https://github.com/jordansissel/xdotool/releases/download/v${V}/
 
 LIB_DEPENDS=	x11/xkbcommon
 
