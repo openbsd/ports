@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/28 12:48:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/28 13:43:30 rsadowski Exp $
 
 COMMENT =	wallpaper setting utility for X
 
@@ -38,6 +38,6 @@ AUTOMAKE_VERSION =	1.11
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf --install
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -fiv
 
 .include <bsd.port.mk>
