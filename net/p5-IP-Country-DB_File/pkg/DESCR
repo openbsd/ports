@@ -1,0 +1,8 @@
+IP::Country::DB_File is a light-weight module for fast IP address
+to country translation based on DB_File. The country code database
+is stored in a Berkeley DB file. You have to build the database
+using build_ipcc.pl or IP::Country::DB_File::Builder before you can
+lookup country codes.
+
+This module tries to be API compatible with the other IP::Country
+modules.
