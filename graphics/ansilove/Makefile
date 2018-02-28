@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/20 14:39:45 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2018/02/28 12:34:00 fcambus Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
-GH_ACCOUNT =	ansilove
-GH_PROJECT =	ansilove
-GH_TAGNAME =	3.0.8
+V =		3.0.8
+DISTNAME =	ansilove-$V
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
 WANTLIB =	c m gd
+
+MASTER_SITES =	https://github.com/ansilove/ansilove/releases/download/$V/
 
 LIB_DEPENDS =	graphics/gd
 
