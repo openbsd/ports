@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2018/02/28 19:23:56 sthen Exp $
 
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.2.1
 DISTNAME =	octave-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		8.0
