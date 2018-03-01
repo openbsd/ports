@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2018/01/06 04:44:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.45 2018/03/01 08:46:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
      SUBDIR += adobe-fonts
      SUBDIR += amigafonts
      SUBDIR += andika
+     SUBDIR += annapurna
      SUBDIR += anonymous-pro
      SUBDIR += apl-fonts
      SUBDIR += arabeyes-ttf
@@ -63,6 +64,7 @@
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
+     SUBDIR += scheherazade
      SUBDIR += sgi-fonts
      SUBDIR += spranq-ecofont-ttf
      SUBDIR += sunscreen
