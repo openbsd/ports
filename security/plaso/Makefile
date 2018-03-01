@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2018/02/01 13:25:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2018/03/01 09:24:17 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20180127
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
+REVISION =		0
+
+DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 CATEGORIES =		security
 
@@ -14,9 +17,9 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE_CDROM =	Yes
 
-GH_ACCOUNT =   log2timeline
-GH_PROJECT =   plaso
-GH_TAGNAME =   ${MODPY_EGG_VERSION}
+DISTNAME =	plaso-${MODPY_EGG_VERSION}
+
+MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS = Yes
