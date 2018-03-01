@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/14 06:52:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/01 09:25:30 rpointel Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
 MODPY_EGG_VERSION = 20170706
-DISTNAME =	py-dfwinreg-${MODPY_EGG_VERSION}
-
-GH_ACCOUNT =	log2timeline
-GH_PROJECT =	dfwinreg
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/dfwinreg/wiki
+
+MASTER_SITES =	https://github.com/log2timeline/dfwinreg/releases/download/${MODPY_EGG_VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
@@ -29,6 +29,7 @@ TEST_DEPENDS =		devel/py-test \
 			${RUN_DEPENDS}
 
 do-test:
+	touch ${WRKSRC}/utils/__init__.py
 	cd ${WRKSRC} && ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
