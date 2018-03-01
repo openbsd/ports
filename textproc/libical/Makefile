@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/03/01 10:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2018/03/01 19:45:04 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
@@ -37,7 +37,8 @@ MULTI_PACKAGES=		-main -glib
 MODULES=		devel/cmake
 
 BUILD_DEPENDS=		devel/gobject-introspection \
-			lang/vala
+			lang/vala \
+			textproc/libxml
 
 LIB_DEPENDS-main=	databases/db/v4 \
 			textproc/icu4c
