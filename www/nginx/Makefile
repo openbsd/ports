@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.120 2018/03/01 15:58:19 rpointel Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -14,10 +14,7 @@ COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
-VERSION=	1.12.1
-REVISION=	1
-REVISION-main=	3
-REVISION-lua=	2
+VERSION=	1.12.2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -42,9 +39,9 @@ MASTER_SITES4=	https://github.com/openresty/headers-more-nginx-module/archive/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ngx_devel_kit-v0.3.0.tar.gz{v0.3.0.tar.gz}:0 \
-		naxsi-0.55.1.tar.gz{0.55.1.tar.gz}:1 \
+		naxsi-0.55.3.tar.gz{0.55.3.tar.gz}:1 \
 		lua-nginx-module-v0.10.11.tar.gz{v0.10.11.tar.gz}:2 \
-		headers-more-nginx-module-v0.32.tar.gz{v0.32.tar.gz}:4
+		headers-more-nginx-module-v0.33.tar.gz{v0.33.tar.gz}:4
 
 HOMEPAGE=	http://nginx.org/
 
