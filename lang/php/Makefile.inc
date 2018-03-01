@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.101 2018/02/23 18:51:44 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.102 2018/03/01 10:15:02 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -284,7 +284,7 @@ MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		XSL functions for php
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt pthread lzma
+WANTLIB-xsl=		m xml2 xslt>=3 exslt pthread
 
 # zip
 MULTI_PACKAGES+=	-zip
@@ -303,7 +303,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
 WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
-WANTLIB-main+=		ncurses readline ${COMPILER_LIBCXX}
+WANTLIB-main+=		curses readline ${COMPILER_LIBCXX}
 
 WANTLIB-cgi=		${WANTLIB-main}
 LIB_DEPENDS-main=	devel/gettext \
