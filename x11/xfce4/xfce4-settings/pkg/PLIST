@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 20:32:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/03/01 07:16:48 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
 @bin bin/xfce4-accessibility-settings
 @bin bin/xfce4-appearance-settings
 @bin bin/xfce4-display-settings
+@bin bin/xfce4-find-cursor
 @bin bin/xfce4-keyboard-settings
 @bin bin/xfce4-mime-settings
 @bin bin/xfce4-mouse-settings
