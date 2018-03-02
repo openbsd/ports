@@ -1,28 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/16 11:39:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/02 06:48:12 kirby Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
 V =		3.8.0
 DISTNAME =	fs2_open_${V:S/./_/g}-source-Unix
 PKGNAME =	fs2open-${V}
-
-GH_ACCOUNT =	scp-fs2open
-GH_PROJECT =	fs2open.github.com
-GH_TAGNAME =	release_${V:S/./_/g}
-
-# Upstream pulls in cmake modules from the asarium's fork
-RPAVLIK_MODS =	ad436ee7be33ca291a59866a173b777b0e2d81ce
-COTIRE =	cotire-1.7.10
-
-# asarium/cmake-modules is a mirror of rpavlik/cmake-modules
-MASTER_SITES0 =	https://github.com/rpavlik/cmake-modules/archive/
-MASTER_SITES1 =	https://github.com/sakra/cotire/archive/
-
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		fs2open-rpavlik-${V}{${RPAVLIK_MODS}}.tar.gz:0 \
-		${COTIRE}.tar.gz:1
+REVISION =	0
 
 CATEGORIES =	games
+
+HOMEPAGE =	https://github.com/scp-fs2open/fs2open.github.com
 
 MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 
@@ -35,6 +22,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m z
 WANTLIB += SDL2 ${MODLUA_WANTLIB} openal
 WANTLIB += avcodec avformat avutil jpeg swresample swscale
 WANTLIB += jansson png
+
+MASTER_SITES =	https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_${V:S/./_/g}/
 
 MODULES =		devel/cmake \
 			lang/lua
@@ -49,14 +38,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/fs2open.github.com-release_${V:S/./_/g}
-
-post-extract:
-	rmdir	${WRKSRC}/cmake/external/rpavlik-cmake-modules \
-		${WRKSRC}/cmake/external/cotire
-	ln -s	${WRKDIR}/cmake-modules-${RPAVLIK_MODS} \
-		${WRKSRC}/cmake/external/rpavlik-cmake-modules
-	ln -s	${WRKDIR}/cotire-${COTIRE} ${WRKSRC}/cmake/external/cotire
+WRKDIST =		${WRKDIR}/fs2open.github.com
 
 post-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/fs2open ${PREFIX}/bin/fs2open
