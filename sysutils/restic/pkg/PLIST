@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/02 22:27:53 abieber Exp $
+@bin bin/restic
+@man man/man1/restic-backup.1
+@man man/man1/restic-cat.1
+@man man/man1/restic-check.1
+@man man/man1/restic-diff.1
+@man man/man1/restic-dump.1
+@man man/man1/restic-find.1
+@man man/man1/restic-forget.1
+@man man/man1/restic-generate.1
+@man man/man1/restic-init.1
+@man man/man1/restic-key.1
+@man man/man1/restic-list.1
+@man man/man1/restic-ls.1
+@man man/man1/restic-migrate.1
+@man man/man1/restic-mount.1
+@man man/man1/restic-prune.1
+@man man/man1/restic-rebuild-index.1
+@man man/man1/restic-restore.1
+@man man/man1/restic-snapshots.1
+@man man/man1/restic-tag.1
+@man man/man1/restic-unlock.1
+@man man/man1/restic-version.1
+@man man/man1/restic.1

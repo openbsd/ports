@@ -1,0 +1,17 @@
+Restic is a program that does backups right and was designed with the following
+principles in mind:
+  - Easy
+  - Fast
+  - Verifiable
+  - Secure
+  - Efficient
+
+It supports the following backends:
+  - Local directory
+  - sftp server (via SSH)
+  - HTTP REST server (protocol rest-server)
+  - AWS S3 (either from Amazon or using the Minio server)
+  - OpenStack Swift
+  - BackBlaze B2
+  - Microsoft Azure Blob Storage
+  - Google Cloud Storage
