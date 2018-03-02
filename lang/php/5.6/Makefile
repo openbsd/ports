@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2018/03/01 10:15:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/03/02 22:11:04 sthen Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
 PV=		5.6
-V=		${PV}.33
+V=		${PV}.34
 
 MASTER_SITES0=	https://download.suhosin.org/
 
