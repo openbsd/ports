@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1055 2018/02/28 15:11:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.1056 2018/03/02 11:04:19 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -650,7 +650,6 @@
      SUBDIR += sing
      SUBDIR += sipcalc
      SUBDIR += sipsak
-     SUBDIR += sirc
      SUBDIR += slurm
      SUBDIR += smokeping
      SUBDIR += snmptt
