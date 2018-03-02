@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/02 06:48:12 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/02 06:59:06 kirby Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
@@ -24,6 +24,9 @@ WANTLIB += avcodec avformat avutil jpeg swresample swscale
 WANTLIB += jansson png
 
 MASTER_SITES =	https://github.com/scp-fs2open/fs2open.github.com/releases/download/release_${V:S/./_/g}/
+
+# Remove on next update
+DISTFILES = ${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 MODULES =		devel/cmake \
 			lang/lua
