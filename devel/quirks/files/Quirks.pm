@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.578 2018/02/23 18:51:44 martijn Exp $
+# $OpenBSD: Quirks.pm,v 1.579 2018/03/02 11:05:56 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1235,6 +1235,7 @@ my $obsolete_reason = {
 	'arora' => 3,
 	'powerdns-ldap' => 6,
 	'p5-Net-LDNS' => 6,
+	'sirc' => 0,
 };
 
 # reasons for obsolete packages
