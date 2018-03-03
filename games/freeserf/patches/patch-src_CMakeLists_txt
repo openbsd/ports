@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/01/05 23:50:19 bcallah Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2018/03/03 02:10:52 bcallah Exp $
 
 Install to the correct location.
 Don't do the cpplint stuff.
@@ -6,15 +6,23 @@ Don't do the cpplint stuff.
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -162,7 +162,6 @@ endif()
+@@ -128,7 +128,6 @@ if(WIN32)
+ endif()
+ 
+ add_library(game STATIC ${GAME_SOURCES} ${GAME_HEADERS})
+-target_check_style(game)
+ 
+ if(SDL2_FOUND)
+   include_directories(${INCLUDE_DIRECTORIES} ${SDL2_INCLUDE_DIR})
+@@ -163,7 +162,6 @@ endif()
  set(FREESERF_SOURCES freeserf.cc ${OTHER_SOURCES})
  set(FREESERF_HEADERS freeserf.h ${OTHER_HEADERS})
  add_executable(FreeSerf MACOSX_BUNDLE WIN32 ${FREESERF_SOURCES} ${FREESERF_HEADERS})
 -target_check_style(FreeSerf)
+ 
  target_link_libraries(FreeSerf game)
  if(SDL2_FOUND)
-   target_link_libraries(FreeSerf ${SDL2_LIBRARY})
-@@ -177,7 +176,7 @@ endif()
+@@ -179,7 +177,7 @@ endif()
  if(XMP_FOUND)
    target_link_libraries(FreeSerf ${XMP_LIBRARY})
  endif()
@@ -23,3 +31,9 @@ Index: src/CMakeLists.txt
  
  if(WIN32)
    get_filename_component(SDL2_DIR ${SDL2_LIBRARY} DIRECTORY)
+@@ -228,5 +226,4 @@ set(PROFILER_HEADERS profiler.h
+                      command_line.h)
+ 
+ add_executable(profiler ${PROFILER_SOURCES} ${PROFILER_HEADERS})
+-target_check_style(profiler)
+ target_link_libraries(profiler game)
