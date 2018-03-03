@@ -1,0 +1,18 @@
+$OpenBSD: patch-common_inotify_syscalls_c,v 1.1 2018/03/03 12:34:00 phessler Exp $
+
+Add aarch64 defines, from upstream PR#142
+
+Index: common/inotify_syscalls.c
+--- common/inotify_syscalls.c.orig
++++ common/inotify_syscalls.c
+@@ -60,6 +60,10 @@
+ #  define __NR_inotify_init		316
+ #  define __NR_inotify_add_watch	317
+ #  define __NR_inotify_rm_watch		318
++# elif defined (__aarch64__)
++#  define __NR_inotify_init		26
++#  define __NR_inotify_add_watch	27
++#  define __NR_inotify_rm_watch		28
+ # elif defined (__sh__)
+ #  define __NR_inotify_init		290
+ #  define __NR_inotify_add_watch	291
