@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/28 12:11:43 feinerer Exp $
+# $OpenBSD: Makefile,v 1.14 2018/03/03 07:26:27 feinerer Exp $
 
 COMMENT =		libv4l userspace library
 
-VERSION =		1.14.1
+VERSION =		1.14.2
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=	v4lconvert	0.0 # 0.0
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://git.linuxtv.org/v4l-utils.git
+HOMEPAGE =		https://git.linuxtv.org/v4l-utils.git
 
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c execinfo jpeg m pthread
 
-MASTER_SITES =		http://linuxtv.org/downloads/v4l-utils/
+MASTER_SITES =		https://linuxtv.org/downloads/v4l-utils/
 
 EXTRACT_SUFX =		.tar.bz2
 
