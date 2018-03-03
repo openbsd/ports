@@ -1,9 +1,9 @@
-$OpenBSD: patch-memcached_c,v 1.15 2017/12/21 14:56:43 giovanni Exp $
+$OpenBSD: patch-memcached_c,v 1.16 2018/03/03 13:39:18 sthen Exp $
 
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
-@@ -6927,6 +6927,9 @@ int main (int argc, char **argv) {
+@@ -7746,6 +7746,9 @@ int main (int argc, char **argv) {
      /* Drop privileges no longer needed */
      if (settings.drop_privileges) {
          drop_privileges();

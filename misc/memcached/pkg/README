@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/02/27 10:50:02 sthen Exp $
+$OpenBSD: README,v 1.5 2018/03/03 13:39:18 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,17 +10,11 @@ So you must not expose memcached directly to the internet, or otherwise
 any untrusted users. Using SASL authentication here helps, but should
 not be totally trusted."
 
-In particular, if listening on UDP (upstream's current default),
-memcached can act as a bandwidth amplification vector.  
-
 The default setting in this package is now to listen on localhost only.
-If listening on the network, memcached should be firewalled and UDP should
-be disabled unless absolutely necessary.
+If you need it to listen on the network, change the flags, and make sure
+that the memcached port (default 11211) is firewalled.
 
-To change to listening on all IP addresses (upstream's default), but leaving
-UDP disabled:
-
-# rcctl set memcached flags '-u _memcached -U 0'
+# rcctl set memcached flags '-u _memcached'
 
 To change to listening on a unix socket (local machine only) and allowing
 access only from members of group _memcached:

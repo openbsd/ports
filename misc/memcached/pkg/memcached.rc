@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: memcached.rc,v 1.6 2018/02/27 10:50:02 sthen Exp $
+# $OpenBSD: memcached.rc,v 1.7 2018/03/03 13:39:18 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/memcached -d"
-daemon_flags="-u _memcached -U 0 -l 127.0.0.1"
+daemon_flags="-u _memcached -l 127.0.0.1 -l ::1"
 
 . /etc/rc.d/rc.subr
 
