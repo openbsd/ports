@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.6 2018/02/20 21:02:13 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.7 2018/03/04 21:12:03 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
@@ -8,7 +8,7 @@ Index: lib/dns/openssldh_link.c
  static BIGNUM *bn2, *bn768, *bn1024, *bn1536;
  
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L && \
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
 +   (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  /*
   * DH_get0_key, DH_set0_key, DH_get0_pqg and DH_set0_pqg
