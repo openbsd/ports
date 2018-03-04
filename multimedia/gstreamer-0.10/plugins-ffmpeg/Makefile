@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2017/10/16 08:15:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2018/03/04 10:09:47 ajacoutot Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
 V=			0.10.13
 DISTNAME=		gst-ffmpeg-${V}
 PKGNAME=		gstreamer-ffmpeg-${V}
-REVISION=		14
+REVISION=		15
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -24,23 +24,14 @@ LIB_DEPENDS=		${P}/plugins-base
 BUILD_DEPENDS +=	devel/yasm
 .endif
 
-.if ${MACHINE_ARCH:Marm}
-# uses ARM EABI
-GST_LIBAV_ARCH=		generic
-.else
-GST_LIBAV_ARCH=		${MACHINE_ARCH}
-.endif
-
-ffmpeg_CONFIGURE_ARGS=	--arch=${GST_LIBAV_ARCH} \
+ffmpeg_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--cc=${CC} \
 			--enable-gpl \
 			--disable-altivec \
-			--disable-armv5te \
-			--disable-armv6 \
-			--disable-armv6t2 \
 			--disable-armvfp \
 			--disable-debug \
-			--disable-iwmmxt
+			--disable-iwmmxt \
+			--disable-neon
 
 CONFIGURE_ARGS=		--with-ffmpeg-extra-configure="${ffmpeg_CONFIGURE_ARGS}"
 

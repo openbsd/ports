@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2016/11/02 22:21:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2018/03/04 10:09:47 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
+REVISION=		0
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -22,23 +23,14 @@ LIB_DEPENDS=		${P}/plugins-base=${V}
 BUILD_DEPENDS +=	devel/yasm
 .endif
 
-.if ${MACHINE_ARCH:Marm}
-# uses ARM EABI
-GST_LIBAV_ARCH=		generic
-.else
-GST_LIBAV_ARCH=		${MACHINE_ARCH}
-.endif
-
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/gst-libs/ext/libav
 
-libav_CONFIGURE_ARGS=	--arch=${GST_LIBAV_ARCH} \
+libav_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--cc=${CC} \
 			--enable-gpl \
 			--enable-runtime-cpudetect \
 			--disable-altivec \
-			--disable-armv5te \
-			--disable-armv6 \
-			--disable-armv6t2 \
+			--disable-neon \
 			--disable-sdl \
 			--disable-vfp \
 			--disable-debug
