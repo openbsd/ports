@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2018/03/04 08:50:39 jasper Exp $
 
 BROKEN-macppc =			fontforge doesnt validate fonts
 BROKEN-sparc64 =		fontforge doesnt validate fonts
 
 COMMENT =			programming font designed with functionality in mind
 
-GH_ACCOUNT =			belluzj
-GH_PROJECT =			fantasque-sans
-GH_TAGNAME =			v1.7.1
+V =				1.7.1
+DISTNAME =			fanstasque-sans-$V
+DISTFILES =			${DISTNAME}{FantasqueSansMono}.tar.gz
 
 CATEGORIES =			fonts
 
 MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
+HOMEPAGE =			https://fontlibrary.org/en/font/fantasque-sans-mono
+
 # SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =		Yes
 
-BUILD_DEPENDS =			graphics/ttfautohint \
-				print/fontforge \
-				shells/bash
+MASTER_SITES =			https://github.com/belluzj/fantasque-sans/releases/download/v$V/
 
-USE_GMAKE =			Yes
+NO_BUILD =			Yes
 NO_TEST =			Yes
 
 FONTDIR =			${PREFIX}/share/fonts/fantasque-sans
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTDIR}
 
 .include <bsd.port.mk>
