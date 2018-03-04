@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2018/02/18 09:43:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2018/03/04 08:36:08 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.20.3
+GNOME_VERSION=	3.20.4
 GNOME_PROJECT= 	glade
 
 CATEGORIES=	devel
