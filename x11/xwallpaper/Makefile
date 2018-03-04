@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/03/04 12:29:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/03/04 14:03:52 rsadowski Exp $
 
 COMMENT =	wallpaper setting utility for X
 
 V =		0.3.0
 DISTNAME =	xwallpaper-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	x11 graphics
 
@@ -20,6 +20,8 @@ WANTLIB += X11 Xpm c jpeg pixman-1 png xcb xcb-image
 WANTLIB += xcb-randr xcb-shm xcb-util z
 
 MASTER_SITES =	https://github.com/stoeckmann/xwallpaper/releases/download/v${V}/
+
+DISTFILES =	${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 LIB_DEPENDS +=	graphics/jpeg \
 		graphics/png
