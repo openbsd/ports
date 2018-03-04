@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2018/02/28 22:52:53 awolk Exp $
+# $OpenBSD: Makefile,v 1.10 2018/03/04 14:00:36 awolk Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
 
 COMMENT =	simple offline API documentation browser
 
-GH_ACCOUNT =	zealdocs
-GH_PROJECT =	zeal
-GH_TAGNAME =	v0.6.0
+V =	0.6.0
+DISTNAME = zeal-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -23,9 +23,9 @@ WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras SM X11 Xext
 WANTLIB += archive c m sqlite3 xcb xcb-keysyms
 WANTLIB += ${COMPILER_LIBCXX}
 
-WANTLIB += ICE Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras SM X11 Xext
-WANTLIB += archive c m sqlite3 xcb xcb-keysyms
+MASTER_SITES =	https://github.com/zealdocs/zeal/releases/download/v${V}/
+
+EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake x11/qt5
 BUILD_DEPENDS =	devel/kf5/extra-cmake-modules
