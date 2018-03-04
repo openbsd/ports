@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.15 2017/06/21 12:51:09 jca Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.16 2018/03/04 19:03:00 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
 
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
 +++ src/openvpn/tun.c
-@@ -1200,7 +1200,7 @@ do_ifconfig(struct tuntap *tt,
+@@ -1202,7 +1202,7 @@ do_ifconfig(struct tuntap *tt,
          if (tun)
          {
              argv_printf(&argv,
@@ -14,7 +14,7 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
-@@ -1212,7 +1212,7 @@ do_ifconfig(struct tuntap *tt,
+@@ -1214,7 +1214,7 @@ do_ifconfig(struct tuntap *tt,
          {
              remote_end = create_arbitrary_remote( tt );
              argv_printf(&argv,
@@ -23,7 +23,7 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
-@@ -1223,8 +1223,13 @@ do_ifconfig(struct tuntap *tt,
+@@ -1225,8 +1225,13 @@ do_ifconfig(struct tuntap *tt,
          }
          else
          {
