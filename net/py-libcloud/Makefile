@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/08 16:14:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2018/03/04 09:51:53 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	2.2.1
+MODPY_EGG_VERSION=	2.3.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
@@ -39,6 +39,7 @@ TEST_IS_INTERACTIVE=	Yes
 
 post-install:
 	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libcloud/test/
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libcloud/.DS_Store
 
 pre-test:
 	cp ${WRKSRC}/libcloud/test/secrets.py-dist \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/09/25 17:12:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/03/04 09:51:53 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -102,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/softlayer.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/softlayer.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/types.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/upcloud.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/upcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/vultr.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/vultr.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/worldwidedns.py
@@ -218,6 +220,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/skalicloud.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/skalicloud.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/softlayer.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/softlayer.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/upcloud.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/upcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vcl.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vcl.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vcloud.py
@@ -393,6 +397,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/backblaze_b2.p
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/backblaze_b2.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/cloudfiles.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/cloudfiles.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/digitalocean_spaces.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/digitalocean_spaces.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/dummy.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/dummy.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/google_storage.py
