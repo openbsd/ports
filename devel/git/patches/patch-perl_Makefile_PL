@@ -1,3 +1,4 @@
+$OpenBSD: patch-perl_Makefile_PL,v 1.6 2018/03/04 10:31:58 benoit Exp $
 --- perl/Makefile.PL.orig	Sun Oct 21 23:32:15 2012
 +++ perl/Makefile.PL	Fri Nov 23 23:48:58 2012
 @@ -12,6 +12,7 @@ Getopt::Long::Configure qw/ pass_through /;
