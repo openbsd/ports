@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2016/11/08 14:23:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/03/04 09:33:07 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-DISTNAME=		foomatic-db-engine-4.0.12
+DISTNAME=		foomatic-db-engine-4.0.13
 CATEGORIES=		print
-REVISION=		1
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -13,7 +12,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv m pthread lzma xml2 z
+WANTLIB += c iconv m lzma xml2 z
 
 MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 
@@ -71,6 +70,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 			CUPS_LPOPTIONS="${LOCALBASE}/bin/lpoptions" \
 			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo" \
 			CUPS_PCONF="${SYSCONFDIR}/cups/printers.conf" \
+			PERLPREFIX="${LOCALBASE}" \
 			PRINTCAP="/etc/printcap"
 
 pre-configure:
