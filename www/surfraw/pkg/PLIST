@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/12/12 14:59:05 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/03/04 10:34:01 benoit Exp $
 @conflict p5-WWW-Wikipedia-*
 bin/opensearch-discover
 bin/opensearch-genquery
@@ -23,13 +23,13 @@ lib/surfraw/bing
 lib/surfraw/bookfinder
 lib/surfraw/bugmenot
 lib/surfraw/bugzilla
-lib/surfraw/cablesearch
 lib/surfraw/cia
 lib/surfraw/cisco
 lib/surfraw/cite
 lib/surfraw/cliki
 lib/surfraw/cnn
 lib/surfraw/comlaw
+lib/surfraw/commandlinefu
 lib/surfraw/ctan
 lib/surfraw/currency
 lib/surfraw/cve
@@ -45,9 +45,7 @@ lib/surfraw/debsec
 lib/surfraw/debvcsbrowse
 lib/surfraw/debwiki
 lib/surfraw/deja
-lib/surfraw/deli
 lib/surfraw/discogs
-lib/surfraw/dmoz
 lib/surfraw/duckduckgo
 lib/surfraw/ebay
 lib/surfraw/etym
@@ -82,12 +80,10 @@ lib/surfraw/mininova
 lib/surfraw/musicbrainz
 lib/surfraw/mysqldoc
 lib/surfraw/netbsd
+lib/surfraw/nlab
 lib/surfraw/ntrs
 lib/surfraw/openbsd
-lib/surfraw/openports
-lib/surfraw/opensearch
 lib/surfraw/oraclesearch
-lib/surfraw/pasearch
 lib/surfraw/pgdoc
 lib/surfraw/pgpkeys
 lib/surfraw/phpdoc
@@ -97,12 +93,9 @@ lib/surfraw/priberam
 lib/surfraw/pubmed
 lib/surfraw/rae
 lib/surfraw/rfc
-lib/surfraw/rhyme
-lib/surfraw/rpmsearch
 lib/surfraw/scholar
-lib/surfraw/scicom
-lib/surfraw/scirus
 lib/surfraw/scpan
+lib/surfraw/searx
 lib/surfraw/slashdot
 lib/surfraw/slinuxdoc
 lib/surfraw/sourceforge
@@ -118,16 +111,14 @@ lib/surfraw/w3link
 lib/surfraw/w3rdf
 lib/surfraw/wayback
 lib/surfraw/webster
-lib/surfraw/wetandwild
 lib/surfraw/wikipedia
+lib/surfraw/wiktionary
 lib/surfraw/woffle
 lib/surfraw/wolfram
 lib/surfraw/worldwidescience
-lib/surfraw/yacy
 lib/surfraw/yahoo
 lib/surfraw/yandex
 lib/surfraw/youtube
-lib/surfraw/yubnub
 @man man/man1/elvi.1
 man/man1/elvi.1sr
 @man man/man1/opensearch-discover.1

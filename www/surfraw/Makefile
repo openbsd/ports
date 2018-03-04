@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/03/04 10:34:01 benoit Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
-DISTNAME =	surfraw-2.2.9
+DISTNAME =	surfraw-2.3.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://surfraw.alioth.debian.org/
@@ -30,8 +30,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
 		${PREFIX}/share/doc/surfraw
 
-TEST_DEPENDS =	www/p5-libwww \
+TEST_DEPENDS =		www/p5-libwww \
+			www/p5-LWP-Protocol-https \
 			www/surfraw
-TEST_TARGET =	test
+TEST_TARGET =		test
 
 .include <bsd.port.mk>
