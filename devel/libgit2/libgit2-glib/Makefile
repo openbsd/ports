@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2017/11/30 20:09:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2018/03/04 08:24:21 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.26.2
+V=			0.26.4
 DISTNAME=		libgit2-glib-$V
 
 SHARED_LIBS +=	git2-glib-1.0        4.0      # 0.0
@@ -11,7 +11,8 @@ SUBDIR=			sources/libgit2-glib/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
 EXTRACT_SUFX=		.tar.xz
 
-MODULES=		lang/python \
+MODULES=		devel/meson \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
@@ -28,7 +29,5 @@ USE_GMAKE=		Yes
 WANTLIB += crypto curl ffi gio-2.0 git2 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl nghttp2 pcre pthread
 WANTLIB += ssh2 ssl z
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
