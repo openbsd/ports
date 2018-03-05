@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1704 2018/02/25 13:40:31 landry Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1705 2018/03/05 10:32:06 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -289,6 +289,8 @@
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3
+     SUBDIR += kproperty
+     SUBDIR += kreport
      SUBDIR += keystone
      SUBDIR += kf5
      SUBDIR += kyua-cli
