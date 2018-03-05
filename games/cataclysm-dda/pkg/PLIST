@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/12/27 22:00:17 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/03/05 09:44:06 sthen Exp $
 %%no_x11%%
 !%%no_x11%%
 share/cataclysm-dda/
@@ -345,6 +345,8 @@ share/cataclysm-dda/json/mapgen/hardware3.json
 share/cataclysm-dda/json/mapgen/hardware4.json
 share/cataclysm-dda/json/mapgen/homeimprovement.json
 share/cataclysm-dda/json/mapgen/homeimprovement_superstore.json
+share/cataclysm-dda/json/mapgen/hospital/
+share/cataclysm-dda/json/mapgen/hospital/hospital.json
 share/cataclysm-dda/json/mapgen/hotel_tower.json
 share/cataclysm-dda/json/mapgen/house/
 share/cataclysm-dda/json/mapgen/house/house04.json
@@ -458,8 +460,19 @@ share/cataclysm-dda/json/mapgen/s_liquor.json
 share/cataclysm-dda/json/mapgen/sai.json
 share/cataclysm-dda/json/mapgen/school_1.json
 share/cataclysm-dda/json/mapgen/shelter.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/
+share/cataclysm-dda/json/mapgen/small_town_buildings/bakery.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/candy_shop.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/construction_site.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/icecream_shop.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/lumberyard_0_0.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/lumberyard_0_1.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/lumberyard_1_0.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/lumberyard_1_1.json
+share/cataclysm-dda/json/mapgen/small_town_buildings/post_office.json
 share/cataclysm-dda/json/mapgen/standing_stones.json
 share/cataclysm-dda/json/mapgen/sub_station.json
+share/cataclysm-dda/json/mapgen/subway_tunnels.json
 share/cataclysm-dda/json/mapgen/sugar_house.json
 share/cataclysm-dda/json/mapgen/swamp_shack.json
 share/cataclysm-dda/json/mapgen/teashop.json
@@ -469,9 +482,12 @@ share/cataclysm-dda/json/mapgen/warehouse.json
 share/cataclysm-dda/json/mapgen_palettes/
 share/cataclysm-dda/json/mapgen_palettes/basement.json
 share/cataclysm-dda/json/mapgen_palettes/church.json
+share/cataclysm-dda/json/mapgen_palettes/hospital.json
 share/cataclysm-dda/json/mapgen_palettes/houses_multistory.json
+share/cataclysm-dda/json/mapgen_palettes/lumberyard.json
 share/cataclysm-dda/json/mapgen_palettes/mansion.json
 share/cataclysm-dda/json/mapgen_palettes/office_doctor.json
+share/cataclysm-dda/json/mapgen_palettes/subway.json
 share/cataclysm-dda/json/martialarts.json
 share/cataclysm-dda/json/materials.json
 share/cataclysm-dda/json/monster_attacks.json
@@ -1628,6 +1644,7 @@ share/cataclysm-dda/mods/More_Survival_Tools/ammo.json
 share/cataclysm-dda/mods/More_Survival_Tools/ammo_types.json
 share/cataclysm-dda/mods/More_Survival_Tools/armor.json
 share/cataclysm-dda/mods/More_Survival_Tools/construction.json
+share/cataclysm-dda/mods/More_Survival_Tools/effects.json
 share/cataclysm-dda/mods/More_Survival_Tools/furniture.json
 share/cataclysm-dda/mods/More_Survival_Tools/item_groups.json
 share/cataclysm-dda/mods/More_Survival_Tools/items.json
@@ -1641,6 +1658,13 @@ share/cataclysm-dda/mods/More_Survival_Tools/terrain.json
 share/cataclysm-dda/mods/More_Survival_Tools/traps.json
 share/cataclysm-dda/mods/Mundane_Zombies/
 share/cataclysm-dda/mods/Mundane_Zombies/modinfo.json
+share/cataclysm-dda/mods/Mutant_NPCs/
+share/cataclysm-dda/mods/Mutant_NPCs/modinfo.json
+share/cataclysm-dda/mods/Mutant_NPCs/npc_classes_mutant.json
+share/cataclysm-dda/mods/NPC_Traits/
+share/cataclysm-dda/mods/NPC_Traits/modinfo.json
+share/cataclysm-dda/mods/NPC_Traits/npc_classes.json
+share/cataclysm-dda/mods/NPC_Traits/trait_groups.json
 share/cataclysm-dda/mods/NW_Pack/
 share/cataclysm-dda/mods/NW_Pack/modinfo.json
 share/cataclysm-dda/mods/NW_Pack/nw_archery.json

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2017/10/29 17:27:19 bcallah Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2018/03/05 09:44:06 sthen Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/cataclysm-dda/gfx/
@@ -56,6 +56,13 @@ share/cataclysm-dda/gfx/MShock32TilesetModded/fallback.png
 share/cataclysm-dda/gfx/MShock32TilesetModded/tile_config.json
 share/cataclysm-dda/gfx/MShock32TilesetModded/tiles.png
 share/cataclysm-dda/gfx/MShock32TilesetModded/tileset.txt
+share/cataclysm-dda/gfx/MshockXotto+/
+share/cataclysm-dda/gfx/MshockXotto+/expan.png
+share/cataclysm-dda/gfx/MshockXotto+/fallback.png
+share/cataclysm-dda/gfx/MshockXotto+/tile_config.json
+share/cataclysm-dda/gfx/MshockXotto+/tiles.png
+share/cataclysm-dda/gfx/MshockXotto+/tileset.txt
+share/cataclysm-dda/gfx/MshockXotto+/tree.png
 share/cataclysm-dda/gfx/RetroASCIITileset/
 share/cataclysm-dda/gfx/RetroASCIITileset/retroasciitiles.png
 share/cataclysm-dda/gfx/RetroASCIITileset/tile_config.json

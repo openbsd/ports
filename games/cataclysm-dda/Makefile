@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/27 22:00:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/05 09:44:06 sthen Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-2017.12.14
+DISTNAME=		cataclysm-dda-2018.02.01
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_COMMIT=		a2cff93463812d7d318c23db864cad7dfef992bd
+GH_COMMIT=		cf64a8836391ba742ce1eca500e1e0409a654d83
 
 HOMEPAGE=		http://en.cataclysmdda.com
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
