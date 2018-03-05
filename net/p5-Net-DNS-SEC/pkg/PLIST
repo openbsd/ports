@@ -1,13 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/09/13 12:34:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/03/05 16:14:03 bluhm Exp $
 @conflict p5-Net-DNS-<1.01
-${P5SITE}/Net/DNS/SEC/
-${P5SITE}/Net/DNS/SEC.pm
-${P5SITE}/Net/DNS/SEC/DSA.pm
-${P5SITE}/Net/DNS/SEC/ECCGOST.pm
-${P5SITE}/Net/DNS/SEC/ECDSA.pm
-${P5SITE}/Net/DNS/SEC/Keyset.pm
-${P5SITE}/Net/DNS/SEC/Private.pm
-${P5SITE}/Net/DNS/SEC/RSA.pm
+${P5ARCH}/Net/
+${P5ARCH}/Net/DNS/
+${P5ARCH}/Net/DNS/SEC/
+${P5ARCH}/Net/DNS/SEC.pm
+${P5ARCH}/Net/DNS/SEC/DSA.pm
+${P5ARCH}/Net/DNS/SEC/ECCGOST.pm
+${P5ARCH}/Net/DNS/SEC/ECDSA.pm
+${P5ARCH}/Net/DNS/SEC/Keyset.pm
+${P5ARCH}/Net/DNS/SEC/Private.pm
+${P5ARCH}/Net/DNS/SEC/RSA.pm
+${P5ARCH}/Net/DNS/SEC/libcrypto.pod
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/DNS/
+${P5ARCH}/auto/Net/DNS/SEC/
+${P5ARCH}/auto/Net/DNS/SEC/SEC.so
 @man man/man3p/Net::DNS::SEC.3p
 @man man/man3p/Net::DNS::SEC::DSA.3p
 @man man/man3p/Net::DNS::SEC::ECCGOST.3p
@@ -15,6 +22,7 @@ ${P5SITE}/Net/DNS/SEC/RSA.pm
 @man man/man3p/Net::DNS::SEC::Keyset.3p
 @man man/man3p/Net::DNS::SEC::Private.3p
 @man man/man3p/Net::DNS::SEC::RSA.3p
+@man man/man3p/Net::DNS::SEC::libcrypto.3p
 share/examples/p5-Net-DNS-SEC/
 share/examples/p5-Net-DNS-SEC/getkeyset.pl
 share/examples/p5-Net-DNS-SEC/key2ds
