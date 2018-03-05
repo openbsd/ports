@@ -1,4 +1,6 @@
-$OpenBSD: patch-lib_IO_Socket_SSL_pm,v 1.1 2018/02/03 18:23:19 bluhm Exp $
+$OpenBSD: patch-lib_IO_Socket_SSL_pm,v 1.2 2018/03/05 22:45:47 bluhm Exp $
+
+Net::SSLeay 1.83 has been fixed and does not export the NPN symbols.
 
 Index: lib/IO/Socket/SSL.pm
 --- lib/IO/Socket/SSL.pm.orig
