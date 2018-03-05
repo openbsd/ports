@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/10/25 20:03:55 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/03/05 00:56:56 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -66,6 +66,7 @@ lib/seed7/lib/comp/fil_act.s7i
 lib/seed7/lib/comp/flt_act.s7i
 lib/seed7/lib/comp/gkb_act.s7i
 lib/seed7/lib/comp/hsh_act.s7i
+lib/seed7/lib/comp/inline.s7i
 lib/seed7/lib/comp/int_act.s7i
 lib/seed7/lib/comp/itf_act.s7i
 lib/seed7/lib/comp/kbd_act.s7i
