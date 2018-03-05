@@ -1,0 +1,5 @@
+Kexi is a visual database applications creator. It can be used for creating
+database schemas, inserting data, performing queries, and processing data.
+Forms can be created to provide a custom interface to your data. All database
+objects - tables, queries and forms - are stored in the database, making it
+easy to share data and design.
