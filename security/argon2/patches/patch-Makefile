@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/03/05 09:23:43 rsadowski Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -30,7 +30,7 @@ SRC_BENCH = src/bench.c
+ SRC_GENKAT = src/genkat.c
+ OBJ = $(SRC:.c=.o)
+ 
+-CFLAGS += -std=c89 -O3 -Wall -g -Iinclude -Isrc
++CFLAGS += -std=c89 -Wall -g -Iinclude -Isrc
+ 
+ ifeq ($(NO_THREADS), 1)
+ CFLAGS += -DARGON2_NO_THREADS
+@@ -65,7 +65,7 @@ ifeq ($(KERNEL_NAME), Linux)
+ 	LINKED_LIB_EXT := so
+ endif
+ ifeq ($(KERNEL_NAME), $(filter $(KERNEL_NAME),FreeBSD NetBSD OpenBSD))
+-	LIB_EXT := so
++	LIB_EXT := so.$(ABI_VERSION)
+ 	LIB_CFLAGS := -shared -fPIC
+ endif
+ ifeq ($(KERNEL_NAME), Darwin)
