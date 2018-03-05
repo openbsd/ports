@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/26 19:51:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/03/05 05:46:18 rpointel Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
-VERSION =		20170703
+VERSION =		20171104
 DISTNAME =		libewf-experimental-${VERSION}
 PKGNAME =		libewf-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=		ewf                       1.0 # 3.0
 
