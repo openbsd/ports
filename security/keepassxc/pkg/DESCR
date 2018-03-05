@@ -7,3 +7,20 @@ The complete database is always encrypted with the industry-standard AES (alias
 Rijndael) encryption algorithm using a 256 bit key. KeePassXC uses a database
 format that is compatible with KeePass Password Safe. Your wallet works offline
 and requires no Internet connection.
+
+Main Features:
+
+- Secure storage of passwords and other private data with AES, Twofish or
+  ChaCha20 encryption
+- File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many
+  others (KDBX 3.1 and 4.0)
+- SSH Agent integration
+- Auto-Type on all supported platforms for automagically filling in login forms
+- Key file and YubiKey challenge-response support for additional security
+- TOTP generation (including Steam Guard)
+- CSV import from other password managers (e.g., LastPass)
+- Command line interface
+- Stand-alone password and passphrase generator
+- Password strength meter
+- Database merge functionality
+- Automatic reload when the database was changed externally
