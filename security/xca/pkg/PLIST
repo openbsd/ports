@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/21 11:48:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/03/05 14:33:24 sthen Exp $
 @bin bin/xca
 @bin bin/xca_db_stat
 @man man/man1/xca.1
@@ -28,11 +28,9 @@ share/xca/
 share/xca/CA.xca
 share/xca/HTTPS_client.xca
 share/xca/HTTPS_server.xca
-share/xca/aia.txt
 share/xca/dn.txt
 share/xca/eku.txt
 share/xca/oids.txt
-share/xca/release.txt
 share/xca/xca_de.qm
 share/xca/xca_es.qm
 share/xca/xca_fr.qm
