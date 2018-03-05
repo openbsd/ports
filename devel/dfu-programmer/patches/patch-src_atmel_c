@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_atmel_c,v 1.1 2018/03/05 14:39:53 sthen Exp $
+
+Index: src/atmel.c
+--- src/atmel.c.orig
++++ src/atmel.c
+@@ -21,6 +21,7 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <stdint.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <stddef.h>
+ #include <errno.h>
