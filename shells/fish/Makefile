@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/28 19:57:22 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/05 13:50:39 abieber Exp $
 
 COMMENT =		friendly interactive shell
 
-V =			2.7.0
+V =			2.7.1
 DISTNAME =		fish-$V
 
 CATEGORIES =		shells
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
-MASTER_SITES =		https://fishshell.com/files/$V/
+MASTER_SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
 
 # C++11
 COMPILER =		base-clang ports-gcc ports-clang
