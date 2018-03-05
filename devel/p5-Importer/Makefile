@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/30 22:25:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/05 22:00:30 bluhm Exp $
 
 COMMENT =	alternative but compatible interface to modules that export
 
-DISTNAME =	Importer-0.024
+DISTNAME =	Importer-0.025
 
 CATEGORIES =	devel
 
