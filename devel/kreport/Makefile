@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/05 10:29:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/06 15:04:13 rsadowski Exp $
 
 COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.0.2
 DISTNAME =	kreport-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -29,6 +30,7 @@ BUILD_DEPENDS =		shells/bash \
 			devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/kcoreaddons \
+			devel/kf5/kguiaddons \
 			devel/kproperty
 
 CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
