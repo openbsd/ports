@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/06 13:49:03 abieber Exp $
+@newgroup _restic:802
+@newuser _restic:802:_restic:daemon:Restic user:${VARBASE}/restic:/sbin/nologin
+@bin bin/restic-rest-server
+@owner _restic
+@group _restic
+@sample ${VARBASE}/restic/
+@extraunexec rm -rf ${VARBASE}/restic/{.,}*
+@owner
+@group
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/restic_rest_server
