@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2017/11/02 15:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2018/03/06 18:48:54 jasper Exp $
 
 TRACKER_API=		2.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.26.2
+GNOME_VERSION=		3.28.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,6 +35,7 @@ WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		databases/evolution-data-server \
@@ -47,7 +48,11 @@ RUN_DEPENDS +=		devel/xdg-utils
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS +=	--disable-Werror
+# XXX
+# Generate this file upfront as it may not be created in time
+# due to ninja's randomization.
+pre-build:
+	exec ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/libbiji/biji-marshalers.h
 
 .include <bsd.port.mk>

@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/11/02 15:29:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/03/06 18:48:54 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
-share/appdata/
-share/appdata/org.gnome.bijiben.appdata.xml
 share/applications/org.gnome.bijiben.desktop
 share/bijiben/
 share/bijiben/Default.css
@@ -22,6 +20,7 @@ share/bijiben/icons/hicolor/scalable/
 share/bijiben/icons/hicolor/scalable/actions/
 share/bijiben/icons/hicolor/scalable/actions/link.svg
 share/dbus-1/services/org.gnome.bijiben.SearchProvider.service
+share/glib-2.0/schemas/org.gnome.bijiben.enums.xml
 share/glib-2.0/schemas/org.gnome.bijiben.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
