@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/09 22:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2018/03/06 11:13:04 ajacoutot Exp $
 
 COMMENT=		GObject API that wraps around libxml2
 
-GNOME_VERSION=		0.16.2
+GNOME_VERSION=		0.16.3
 GNOME_PROJECT=		gxml
 
 SHARED_LIBS +=  gxml-0.16                 0.0 # 1.0
@@ -22,10 +22,11 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
+BUILD_DEPENDS=		lang/vala,-valadoc
+
 LIB_DEPENDS=		devel/libgee \
 			textproc/libxml
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-docs # valadoc(1)
 
 .include <bsd.port.mk>
