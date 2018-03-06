@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.471 2018/03/02 22:29:12 abieber Exp $
+# $OpenBSD: Makefile,v 1.472 2018/03/06 13:51:30 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -247,6 +247,7 @@
      SUBDIR += remotebox
      SUBDIR += resmon
      SUBDIR += restic
+     SUBDIR += restic-rest-server
      SUBDIR += riemann
      SUBDIR += riemann-c-client
      SUBDIR += rofi
