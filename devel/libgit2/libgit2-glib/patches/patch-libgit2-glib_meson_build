@@ -1,0 +1,20 @@
+$OpenBSD: patch-libgit2-glib_meson_build,v 1.1 2018/03/06 07:29:33 jasper Exp $
+
+/usr/bin/ld: unrecognized option '-Bsymbolic-
+
+Index: libgit2-glib/meson.build
+--- libgit2-glib/meson.build.orig
++++ libgit2-glib/meson.build
+@@ -197,11 +197,7 @@ platform_deps = [
+   libgit2_dep
+ ]
+ 
+-if cc.get_id() == 'msvc'
+-  libgit2_glib_link_args = []
+-else
+-  libgit2_glib_link_args = [ '-Wl,-Bsymbolic-functions' ]
+-endif
++libgit2_glib_link_args = []
+ 
+ libgit2_glib = shared_library('git2-glib-@0@'.format(libgit2_glib_api_version),
+   include_directories: core_inc,
