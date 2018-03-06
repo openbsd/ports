@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/09/05 23:49:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.30 2018/03/06 22:46:53 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -42,7 +42,7 @@ NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
 SUPDISTFILES+=	openjdk8-bootjdk-i386-20161216.tar.gz:1  \
-		openjdk8-bootjdk-amd64-20161216.tar.gz:1 \
+		openjdk8-bootjdk-amd64-20180306.tar.gz:1 \
 		${APACHE_ANT}:2
 
 .include <bsd.port.arch.mk>
