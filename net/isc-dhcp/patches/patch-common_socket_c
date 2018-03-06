@@ -1,8 +1,8 @@
-$OpenBSD: patch-common_socket_c,v 1.6 2017/09/04 17:24:44 sthen Exp $
+$OpenBSD: patch-common_socket_c,v 1.7 2018/03/06 08:37:39 sthen Exp $
 Index: common/socket.c
 --- common/socket.c.orig
 +++ common/socket.c
-@@ -797,8 +797,7 @@ ssize_t send_packet6(struct interface_info *interface,
+@@ -877,8 +877,7 @@ ssize_t send_packet6(struct interface_info *interface,
  	m.msg_name = &dst;
  	m.msg_namelen = sizeof(dst);
  	ifindex = if_nametoindex(interface->name);

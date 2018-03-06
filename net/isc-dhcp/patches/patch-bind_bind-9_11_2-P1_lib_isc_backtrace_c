@@ -1,12 +1,12 @@
-$OpenBSD: patch-bind_bind-9_9_11_lib_isc_backtrace_c,v 1.1 2017/09/04 17:24:44 sthen Exp $
+$OpenBSD: patch-bind_bind-9_11_2-P1_lib_isc_backtrace_c,v 1.1 2018/03/06 08:37:39 sthen Exp $
 
 Disable backtrace support, only used on amd64 and broken with base clang
 (which doesn't provide _Unwind_* yet?).
 
-Index: bind/bind-9.9.11/lib/isc/backtrace.c
---- bind/bind-9.9.11/lib/isc/backtrace.c.orig
-+++ bind/bind-9.9.11/lib/isc/backtrace.c
-@@ -49,7 +49,7 @@
+Index: bind/bind-9.11.2-P1/lib/isc/backtrace.c
+--- bind/bind-9.11.2-P1/lib/isc/backtrace.c.orig
++++ bind/bind-9.11.2-P1/lib/isc/backtrace.c
+@@ -41,7 +41,7 @@
   */
  #ifdef HAVE_LIBCTRACE
  #define BACKTRACE_LIBC

@@ -1,13 +1,14 @@
-$OpenBSD: patch-client_Makefile_in,v 1.8 2016/04/09 12:59:41 sthen Exp $
---- client/Makefile.in.orig	Tue Mar 22 09:16:51 2016
-+++ client/Makefile.in	Fri Apr  8 23:46:24 2016
-@@ -358,7 +358,8 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-client_Makefile_in,v 1.9 2018/03/06 08:37:39 sthen Exp $
+Index: client/Makefile.in
+--- client/Makefile.in.orig
++++ client/Makefile.in
+@@ -368,7 +368,8 @@ top_srcdir = @top_srcdir@
+ # production code. Sadly, we are not there yet.
  SUBDIRS = . tests
- BINDLIBDIR = @BINDDIR@/lib
  AM_CPPFLAGS = -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
--	      -DLOCALSTATEDIR='"$(localstatedir)"'
-+	      -DLOCALSTATEDIR='"$(localstatedir)"' \
-+	      -D_PATH_DHCLIENT_SCRIPT='"$(sbindir)/dhclient-script"'
- 
+-	-DLOCALSTATEDIR='"$(localstatedir)"'
++	-DLOCALSTATEDIR='"$(localstatedir)"' \
++	-D_PATH_DHCLIENT_SCRIPT='"$(sbindir)/dhclient-script"'
  dist_sysconf_DATA = dhclient.conf.example
- dhclient_SOURCES = clparse.c dhclient.c dhc6.c \
+ dhclient_SOURCES = client_tables.c clparse.c dhclient.c dhc6.c \
+ 		   scripts/bsdos scripts/freebsd scripts/linux scripts/macos \
