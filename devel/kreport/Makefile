@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/06 15:04:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/06 20:41:25 rsadowski Exp $
 
 COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.0.2
 DISTNAME =	kreport-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -17,9 +17,10 @@ SHARED_LIBS +=  KReport3                  0.0 # 3.0
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KPropertyCore3 KPropertyWidgets3
-WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
+WANTLIB += KF5WidgetsAddons KPropertyCore3 KPropertyWidgets3 Qt5Core
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml c m
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kreport/src/}}
 EXTRACT_SUFX =	.tar.xz
@@ -31,7 +32,10 @@ BUILD_DEPENDS =		shells/bash \
 
 LIB_DEPENDS =		devel/kf5/kcoreaddons \
 			devel/kf5/kguiaddons \
-			devel/kproperty
+			devel/kf5/kconfig \
+			devel/kf5/kwidgetsaddons \
+			devel/kproperty \
+			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
 			-DBUILD_EXAMPLES:Bool=Yes
