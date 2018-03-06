@@ -1,0 +1,22 @@
+#!/bin/ksh
+#
+# $OpenBSD: solr.rc,v 1.1.1.1 2018/03/06 11:06:22 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/solr"
+daemon_user="_solr"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c solr) .*-Dsolr.solr.home=${LOCALSTATEDIR}/db/solr.*jar start.jar.*"
+
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "SOLR_INCLUDE=${SYSCONFDIR}/solr.in.sh ${daemon} start"
+}
+
+rc_stop() {
+	SOLR_INCLUDE=${SYSCONFDIR}/solr.in.sh ${daemon} stop
+}
+
+rc_cmd $1

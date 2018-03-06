@@ -1,0 +1,44 @@
+$OpenBSD: patch-bin_solr,v 1.1.1.1 2018/03/06 11:06:21 sthen Exp $
+
+Index: bin/solr
+--- bin/solr.orig
++++ bin/solr
+@@ -117,7 +117,7 @@ elif [ -n "$JAVA_HOME" ]; then
+     exit 1
+   fi
+ else
+-  JAVA=java
++  JAVA=$(${LOCALBASE}/bin/javaPathHelper -c solr)
+ fi
+ 
+ if [ -z "$SOLR_STOP_WAIT" ]; then
+@@ -2026,14 +2026,12 @@ function launch_solr() {
+ 	echo "RNG might not work properly. To check for the amount of available entropy, use 'cat /proc/sys/kernel/random/entropy_avail'."
+ 	echo ""
+     fi
+-    # no lsof on cygwin though
+-    if hash lsof 2>/dev/null ; then  # hash returns true if lsof is on the path
+       echo -n "Waiting up to $SOLR_STOP_WAIT seconds to see Solr running on port $SOLR_PORT"
+       # Launch in a subshell to show the spinner
+       (loops=0
+       while true
+       do
+-        running=`lsof -PniTCP:$SOLR_PORT -sTCP:LISTEN`
++        running=`fstat|awk "/internet stream tcp.*:$SOLR_PORT\$/ { print $3 }"`
+         if [ -z "$running" ]; then
+ 	  slept=$((loops * 2))
+           if [ $slept -lt $SOLR_STOP_WAIT ]; then
+@@ -2051,13 +2049,6 @@ function launch_solr() {
+         fi
+       done) &
+       spinner $!
+-    else
+-      echo -e "NOTE: Please install lsof as this script needs it to determine if Solr is listening on port $SOLR_PORT."
+-      sleep 10
+-      SOLR_PID=`ps auxww | grep start\.jar | grep -w "\-Djetty\.port=$SOLR_PORT" | grep -v grep | awk '{print $2}' | sort -r`
+-      echo -e "\nStarted Solr server on port $SOLR_PORT (pid=$SOLR_PID). Happy searching!\n"
+-      return;
+-    fi
+   fi
+ }
+ 
