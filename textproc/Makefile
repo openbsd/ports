@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2018/02/17 12:04:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.565 2018/03/06 11:06:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -498,6 +498,7 @@
      SUBDIR += rxp
      SUBDIR += sablotron
      SUBDIR += sim
+     SUBDIR += solr
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += sphinx
