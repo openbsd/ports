@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.98 2017/12/30 09:21:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2018/03/07 15:15:14 sthen Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
 COMMENT=		simple GTK desktop news aggregator
 
-GH_ACCOUNT=		lwindolf
-GH_PROJECT=		liferea
-GH_TAGNAME=		v1.12.1
+V=			1.12.1
+DISTNAME=		liferea-${V}
+REVISION=		0
 
 CATEGORIES=		www news x11
 
@@ -31,6 +31,10 @@ WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0 webp
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z
+
+MASTER_SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -57,18 +61,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		NOCONFIGURE=1 ./autogen.sh
 
 post-install:
 	rm ${PREFIX}/lib/liferea/web-extension/*.{a,la}
