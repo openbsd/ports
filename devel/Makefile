@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1705 2018/03/05 10:32:06 rsadowski Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1706 2018/03/07 15:12:45 juanfra Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -185,7 +185,6 @@
      SUBDIR += harfbuzz
      SUBDIR += hasktags
      SUBDIR += help2man
-     SUBDIR += hgview
      SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
