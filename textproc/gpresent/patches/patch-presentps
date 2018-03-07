@@ -1,8 +1,9 @@
-$OpenBSD: patch-presentps,v 1.1.1.1 2014/08/31 17:28:35 schwarze Exp $
-Prevent document corruption when including EPS files.
---- presentps.orig	Thu Feb 26 10:35:49 2004
-+++ presentps	Fri Aug 29 20:26:23 2014
-@@ -393,8 +393,17 @@ foreach (@pre){
+$OpenBSD: patch-presentps,v 1.2 2018/03/07 12:03:37 schwarze Exp $
+Prevent document corruption when including nested EPS files.
+Index: presentps
+--- presentps.orig
++++ presentps
+@@ -453,8 +453,18 @@ foreach (@pre){
  while (<>) {
      $pageln = $nextln;
      @page = ();
@@ -10,6 +11,7 @@ Prevent document corruption when including EPS files.
      while (<>) {
 -	if (/^EEND /) {
 +	if (/^%%BeginDocument:/) {
++	    # prevent processing of included document
 +	    $embedded++;
 +	    push @page, $_;
 +	} elsif ($embedded) {
@@ -21,3 +23,19 @@ Prevent document corruption when including EPS files.
  	    push @page, "EEND\n";
  	    s/^EEND //;
  	    redo;
+@@ -476,15 +486,6 @@ while (<>) {
+ 	    s/ EP$//;
+ 	    push @page, $_;
+ 	    push @page, "EP\n";
+-	} elsif (/^%%BeginDocument:/) {
+-	    # prevent processing of included document
+-	    push @page, $_;
+-	    while (<>) {
+-		push @page, $_;
+-		if (/^%%EndDocument$/) {
+-		    last;
+-		}
+-	    }
+ 	} elsif (/^%%Trailer$/) {
+ 	    $lastpage = 1;
+ 	    $nextln = $_;
