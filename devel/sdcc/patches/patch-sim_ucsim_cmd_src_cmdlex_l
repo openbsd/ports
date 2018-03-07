@@ -1,0 +1,16 @@
+$OpenBSD: patch-sim_ucsim_cmd_src_cmdlex_l,v 1.1 2018/03/07 21:34:43 bcallah Exp $
+
+Allow use of in-base yacc.
+
+Index: sim/ucsim/cmd.src/cmdlex.l
+--- sim/ucsim/cmd.src/cmdlex.l.orig
++++ sim/ucsim/cmd.src/cmdlex.l
+@@ -2,7 +2,7 @@
+ #include <stdio.h>
+ //#include <stdint.h>
+ #include "cmdlexcl.h"
+-#include "cmdpars.hh"
++#include "cmdpars.h"
+ 
+ static int uc_yy_check_id(char *token);
+ static int uc_yy_input(char *buf, int max_size);

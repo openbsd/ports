@@ -1,0 +1,32 @@
+$OpenBSD: patch-sim_ucsim_cmd_src_Makefile_in,v 1.1 2018/03/07 21:34:43 bcallah Exp $
+
+Allow use of in-base yacc.
+
+Index: sim/ucsim/cmd.src/Makefile.in
+--- sim/ucsim/cmd.src/Makefile.in.orig
++++ sim/ucsim/cmd.src/Makefile.in
+@@ -96,13 +96,13 @@ installdirs:
+ # ---------------------
+ dep: Makefile.dep
+ 
+-Makefile.dep: $(SOURCES) $(LOCAL_SOURCES) $(srcdir)/*.h cmdpars.hh cmdpars.cc
++Makefile.dep: $(SOURCES) $(LOCAL_SOURCES) $(srcdir)/*.h cmdpars.h cmdpars.cc
+ 	$(MAKEDEP) $(CPPFLAGS) $(SOURCES) $(LOCAL_SOURCES) >Makefile.dep
+ 
+ -include Makefile.dep
+ include $(srcdir)/clean.mk
+ 
+-cmdlex.cc: cmdlex.l cmdpars.hh
++cmdlex.cc: cmdlex.l cmdpars.h
+ 
+ # My rules
+ # --------
+@@ -116,7 +116,7 @@ $(top_builddir)/libcmd.a: $(OBJECTS) $(LOCAL_OBJECTS)
+ .cc.o:
+ 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c $< -o $@
+ 
+-cmdpars.hh: cmdpars.cc
++cmdpars.h: cmdpars.cc
+ 
+ cmdpars.cc: cmdpars.y
+ 	$(YACC) -d -o $@ $<
