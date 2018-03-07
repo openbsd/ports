@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.20 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2018/03/07 01:59:50 jsg Exp $
 
 NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.3.1
+DISTNAME =		pciutils-3.5.6
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
+HOMEPAGE =		https://mj.ucw.cz/sw/pciutils/
 
-MAINTAINER =		Matthieu Herrb <matthieu@openbsd.org>
+MAINTAINER =		Jonathan Gray <jsg@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c z
 
-MASTER_SITES =		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
-			ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
-			ftp://metalab.unc.edu/pub/Linux/hardware/
+MASTER_SITES =		https://www.kernel.org/pub/software/utils/pciutils/ \
+			ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
 
 USE_GMAKE =		Yes
 
