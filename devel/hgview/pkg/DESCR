@@ -1,4 +1,0 @@
-hgview is a simple tool aiming at visually navigate in a Mercurial
-repository history. It is written in Python with quick and efficient
-key-based navigation in mind, trying to be fast enough to be usable for
-very large repositories.
