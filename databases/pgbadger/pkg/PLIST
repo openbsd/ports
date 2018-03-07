@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 16:07:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/07 09:59:29 sthen Exp $
 bin/pgbadger
-@man man/man1/pgbadger.1
+@man man/man1/pgbadger.1p

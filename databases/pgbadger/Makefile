@@ -1,16 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/10 16:07:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/07 09:59:29 sthen Exp $
 
 COMMENT =	advanced PostgreSQL log analyzer
 
-DISTNAME =	pgbadger-3.5
+GH_ACCOUNT =	dalibo
+GH_PROJECT =	pgbadger
+GH_TAGNAME =	v9.2
+
 CATEGORIES =	databases
 
-HOMEPAGE =	http://dalibo.github.io/pgbadger/
+HOMEPAGE =	https://dalibo.github.io/pgbadger/
 
-# GPLv2
+# PostgreSQL license
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pgbadger/}
 CONFIGURE_STYLE =	perl
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
