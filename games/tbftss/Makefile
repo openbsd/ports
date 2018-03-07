@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/16 09:07:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/07 03:49:47 bentley Exp $
 
 COMMENT =		2D mission-based space shooter
 
 V =			1.3
 DISTNAME =		tbftss-$V-1555.src
 PKGNAME =		tbftss-$V
+REVISION =		0
 
 CATEGORIES =		games
 
