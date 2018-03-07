@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/03/06 22:56:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2018/03/07 11:04:24 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -15,6 +15,7 @@ EPOCH=		0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u144b01-bsd-port-20170828
+BOOTJDK_DATE=	20180306
 EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -41,8 +42,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
-SUPDISTFILES+=	openjdk8-bootjdk-i386-20161216.tar.gz:1  \
-		openjdk8-bootjdk-amd64-20180306.tar.gz:1 \
+SUPDISTFILES+=	openjdk8-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
+		openjdk8-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
 		${APACHE_ANT}:2
 
 .include <bsd.port.arch.mk>
@@ -56,10 +57,9 @@ BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8 \
 		devel/apache-ant>=1.8.2
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 .else
-.  if (${ARCH}==amd64)
-DISTFILES+=	openjdk8-bootjdk-${ARCH}-20180306.tar.gz:1
-.  elif (${ARCH}==i386)
-DISTFILES+=	openjdk8-bootjdk-${ARCH}-20161216.tar.gz:1
+BOOT_JDK_DIST=	openjdk8-bootjdk-${ARCH}-${BOOTJDK_DATE}.tar.gz
+.  if (${ARCH}==amd64) || (${ARCH}==i386)
+DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
 DISTFILES+=	${APACHE_ANT}:2
 MAKE_ENV+=	ANT_HOME=${WRKDIR}/apache-ant-1.9.3 \
