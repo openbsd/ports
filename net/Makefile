@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1056 2018/03/02 11:04:19 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1057 2018/03/07 23:02:28 kn Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -325,7 +325,6 @@
      SUBDIR += p5-Bot-BasicBot
      SUBDIR += p5-Business-PayPal
      SUBDIR += p5-Business-PayPal-API
-     SUBDIR += p5-Business-PayPal-IPN
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-DNS-ZoneParse
      SUBDIR += p5-Danga-Socket
