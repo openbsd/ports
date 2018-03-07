@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/05 10:18:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/07 09:03:56 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.0.2
 DISTNAME =	kexi-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kexicore                  0.0 # 15.0
 SHARED_LIBS +=  kexidatatable             0.0 # 15.0
@@ -49,11 +50,14 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/karchive \
-			devel/kf5/breeze-icons
+			devel/kf5/breeze-icons \
+			databases/postgresql,-server \
+			x11/qt5/qtwebkit
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kservice \
-			devel/kf5/breeze-icons
+			devel/kf5/breeze-icons \
+			x11/qt5/qtwebkit
 
 LIB_DEPENDS =		devel/kf5/kcodecs \
 			devel/kf5/kcompletion \
@@ -72,7 +76,6 @@ LIB_DEPENDS =		devel/kf5/kcodecs \
 			devel/kreport \
 			devel/kproperty \
 			databases/kdb \
-			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
 			-DBUILD_EXAMPLES:Bool=Yes \
