@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2017/11/27 12:53:51 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2018/03/07 13:34:38 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -92,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/state.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/state.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/watchmanclient.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fsmonitor/watchmanclient.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/githelp.py
+lib/python${MODPY_VERSION}/site-packages/hgext/githelp.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.py
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.py
@@ -132,6 +134,15 @@ lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/uisetup.py
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/uisetup.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/wirestore.py
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/wirestore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/__init__.py
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/blobstore.py
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/blobstore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/pointer.py
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/pointer.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/wrapper.py
+lib/python${MODPY_VERSION}/site-packages/hgext/lfs/wrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/logtoprocess.py
 lib/python${MODPY_VERSION}/site-packages/hgext/logtoprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/mq.py
@@ -162,6 +173,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/show.py
 lib/python${MODPY_VERSION}/site-packages/hgext/show.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/sparse.py
 lib/python${MODPY_VERSION}/site-packages/hgext/sparse.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/split.py
+lib/python${MODPY_VERSION}/site-packages/hgext/split.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/strip.py
 lib/python${MODPY_VERSION}/site-packages/hgext/strip.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/transplant.py
@@ -202,6 +215,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/bundlerepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/bundlerepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/byterange.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/byterange.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/cacheutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/cacheutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/cext/
 lib/python${MODPY_VERSION}/site-packages/mercurial/cext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/cext/__init__.pyc
@@ -305,6 +320,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/help/diffs.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/environment.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/extensions.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/filesets.txt
+lib/python${MODPY_VERSION}/site-packages/mercurial/help/flags.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/glossary.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/hg-ssh.8.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/hg.1.txt
@@ -408,6 +424,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/localrepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/localrepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lock.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/lock.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/logexchange.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/logexchange.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprof.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprof.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprofcalltree.py
@@ -424,6 +442,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/merge.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/merge.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/mergeutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/mergeutil.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/minifileset.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/minifileset.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/minirst.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/minirst.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/namespaces.py
@@ -491,14 +511,14 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/revset.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revset.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revsetlang.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revsetlang.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/rewriteutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/rewriteutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmposix.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmposix.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmwindows.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/scmwindows.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/selectors2.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/selectors2.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/server.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/server.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/setdiscovery.py
@@ -568,6 +588,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/filelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/filerevision.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/graph.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/graphentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/help.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/helptopics.tmpl
@@ -581,6 +602,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/summary.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/tags.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/json/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/json/changelist.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/json/graph.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/json/map
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.bisect
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.changelog
@@ -604,6 +626,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/filelog.tm
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/filerevision.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/graph.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/graphentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/help.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/helptopics.tmpl
@@ -629,6 +652,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/filelogentry.
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/filerevision.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/graph.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/graphentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/help.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/helptopics.tmpl
@@ -682,6 +706,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/filelogentr
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/filerevision.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/footer.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/graph.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/graphentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/index.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/spartan/manifest.tmpl
@@ -695,7 +720,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/background.png
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/coal-file.png
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/coal-folder.png
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/excanvas.js
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/feed-icon-14x14.png
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/followlines.js
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/hgicon.png
@@ -728,6 +752,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/filters.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/filters.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/validators.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/selectors2.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/selectors2.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/transaction.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/transaction.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/treediscovery.py
