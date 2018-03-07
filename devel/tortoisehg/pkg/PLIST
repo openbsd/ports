@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/11/27 12:55:37 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/03/07 13:37:10 juanfra Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -223,6 +223,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/colormap.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/colormap.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/config.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/config.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/configitems.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/configitems.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/editor.py
@@ -410,6 +412,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-qguard.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush-all.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush-move.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-rebase.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-recover.svg
