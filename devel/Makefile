@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1706 2018/03/07 15:12:45 juanfra Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1707 2018/03/08 09:11:48 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1517,6 +1517,8 @@
      SUBDIR += py-stdnum,python3
      SUBDIR += py-suds
      SUBDIR += py-symboltype
+     SUBDIR += py-tabulate
+     SUBDIR += py-tabulate,python3
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-benchmark
