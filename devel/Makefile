@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1707 2018/03/08 09:11:48 rpointel Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1708 2018/03/08 09:18:31 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1456,6 +1456,8 @@
      SUBDIR += py-pip,python3
      SUBDIR += py-pluggy
      SUBDIR += py-pluggy,python3
+     SUBDIR += py-plugnplay
+     SUBDIR += py-plugnplay,python3
      SUBDIR += py-ply
      SUBDIR += py-ply,python3
      SUBDIR += py-pretend
