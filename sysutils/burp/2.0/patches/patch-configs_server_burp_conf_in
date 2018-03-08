@@ -1,0 +1,17 @@
+$OpenBSD: patch-configs_server_burp_conf_in,v 1.1 2018/03/08 14:41:02 sthen Exp $
+
+Index: configs/server/burp.conf.in
+--- configs/server/burp.conf.in.orig
++++ configs/server/burp.conf.in
+@@ -68,8 +68,9 @@ keep = 7
+ # keep = 6
+ 
+ # Run as different user/group.
+-# user=graham
+-# group=nogroup
++user=_burp
++group=_burp
++dedup_group=_burp
+ 
+ # CA options.
+ # If you want your server to be a certificate authority and generate its own

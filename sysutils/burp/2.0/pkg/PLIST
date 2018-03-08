@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.1 2018/03/08 14:41:02 sthen Exp $
+@pkgpath sysutils/burp
+@option is-branch
+@conflict burp-*
 @newgroup _burp:794
 @newuser _burp:794:794:daemon:BackUp and Recovery Daemon:/var/empty:/sbin/nologin
 @bin bin/vss_strip
@@ -42,29 +45,33 @@ share/doc/burp/status-monitor.txt
 share/doc/burp/tests.txt
 share/doc/burp/timer_script.txt
 share/doc/burp/working_dir.txt
-@mode 770
+share/examples/burp/
+share/examples/burp/CA-client/
+@mode 750
 @owner _burp
 @group _burp
-share/examples/burp/
-@sample ${SYSCONFDIR}/burp/
-share/examples/burp/CA-client/
-@sample ${SYSCONFDIR}/burp/CA-client/
+@sample ${SYSCONFDIR}/
+@sample ${LOCALSTATEDIR}/spool/burp/
+@sample ${SYSCONFDIR}/CA-client/
+@sample ${SYSCONFDIR}/clientconfdir/
+@sample ${SYSCONFDIR}/clientconfdir/incexc/
+@mode 
 share/examples/burp/CA.cnf
-@sample ${SYSCONFDIR}/burp/CA.cnf
+@sample ${SYSCONFDIR}/CA.cnf
 share/examples/burp/burp-server.conf
-@sample ${SYSCONFDIR}/burp/burp-server.conf
+@sample ${SYSCONFDIR}/burp-server.conf
 share/examples/burp/burp.conf
-@sample ${SYSCONFDIR}/burp/burp.conf
+@sample ${SYSCONFDIR}/burp.conf
+@owner
+@group
 share/examples/burp/clientconfdir/
-@sample ${SYSCONFDIR}/burp/clientconfdir/
 share/examples/burp/clientconfdir/incexc/
-@sample ${SYSCONFDIR}/burp/clientconfdir/incexc/
 share/examples/burp/clientconfdir/incexc/example
-@sample ${SYSCONFDIR}/burp/clientconfdir/incexc/example
+@owner _burp
+@group _burp
+@sample ${SYSCONFDIR}/clientconfdir/incexc/example
 share/examples/burp/clientconfdir/testclient
-@sample ${SYSCONFDIR}/burp/clientconfdir/testclient
-@sample /var/spool/burp/
-@mode
+@sample ${SYSCONFDIR}/clientconfdir/testclient
 @owner
 @group
 @rcscript ${RCDIR}/burp

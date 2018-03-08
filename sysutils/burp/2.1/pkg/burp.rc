@@ -1,0 +1,15 @@
+#!/bin/ksh
+#
+# $OpenBSD: burp.rc,v 1.1 2018/03/08 14:41:02 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/burp"
+daemon_flags="-c ${SYSCONFDIR}/burp-server.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	chown _burp ${SYSCONFDIR}/ssl_cert_ca.pem
+	install -d -o _burp -g _burp ${LOCALSTATEDIR}/run/burp
+}
+
+rc_cmd $1

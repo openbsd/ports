@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_server_timer_script,v 1.1.1.1 2017/11/03 11:31:01 landry Exp $
+$OpenBSD: patch-configs_server_timer_script,v 1.1 2018/03/08 14:41:02 sthen Exp $
 
 https://github.com/grke/burp/issues/627
 
