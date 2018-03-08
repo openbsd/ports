@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.34 2018/02/15 13:00:36 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.35 2018/03/08 13:24:25 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -297,6 +297,7 @@ include/postgresql/server/executor/tqueue.h
 include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
 include/postgresql/server/fe_utils/
+include/postgresql/server/fe_utils/connect.h
 include/postgresql/server/fe_utils/mbprint.h
 include/postgresql/server/fe_utils/print.h
 include/postgresql/server/fe_utils/psqlscan.h
