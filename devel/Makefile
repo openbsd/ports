@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1709 2018/03/08 15:08:50 sthen Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1710 2018/03/08 20:49:10 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1742,6 +1742,7 @@
      SUBDIR += sdlmm
      SUBDIR += sfio
      SUBDIR += shapelib
+     SUBDIR += shellcheck
      SUBDIR += shtool
      SUBDIR += shunit2
      SUBDIR += silc-toolkit
