@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/18 10:10:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/03/08 20:20:34 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/netmiko/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}base_connection
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}cisco_base_connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}netmiko_globals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}py23_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}scp_functions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}scp_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}snmp_autodetect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/${MODPY_PYCACHE}ssh_autodetect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -237,6 +238,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/${MODPY_PYCACHE}ruckus_fastiron.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/ruckus/ruckus_fastiron.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/scp_functions.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/scp_handler.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/snmp_autodetect.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ssh_autodetect.py
