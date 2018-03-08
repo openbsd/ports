@@ -1,0 +1,5 @@
+PlugnPLay (PnP) is a generic plug-in system inspired by Trac's internal
+component management. With PnP you can turn any program into a pluggable
+software very easily. You just have to define the Interfaces and let others
+implement them. When your code is running you can dynamically retrieve who are
+the classes that implement a certain Interface, and call the specific methods.
