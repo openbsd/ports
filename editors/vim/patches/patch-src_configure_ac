@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_configure_ac,v 1.3 2017/11/02 22:07:13 sthen Exp $
+$OpenBSD: patch-src_configure_ac,v 1.4 2018/03/08 16:04:30 sthen Exp $
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac
-@@ -570,10 +570,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -571,10 +571,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
  	AC_MSG_RESULT(no)
@@ -16,7 +16,7 @@ Index: src/configure.ac
  	else
  	  AC_MSG_RESULT(no)
  	  vi_cv_path_lua_pfx=
-@@ -598,9 +598,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -599,9 +599,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
      else
        if test "X$LUA_INC" != "X"; then
  	dnl Test alternate location using version

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2017/10/16 17:30:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2018/03/08 16:04:30 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -29,6 +29,8 @@ share/vim/${P}/autoload/context.vim
 share/vim/${P}/autoload/contextcomplete.vim
 share/vim/${P}/autoload/csscomplete.vim
 share/vim/${P}/autoload/decada.vim
+share/vim/${P}/autoload/dist/
+share/vim/${P}/autoload/dist/ft.vim
 share/vim/${P}/autoload/getscript.vim
 share/vim/${P}/autoload/gnat.vim
 share/vim/${P}/autoload/gzip.vim
@@ -297,8 +299,8 @@ share/vim/${P}/doc/workshop.txt
 share/vim/${P}/evim.vim
 share/vim/${P}/filetype.vim
 share/vim/${P}/ftoff.vim
-share/vim/${P}/ftplugin/
 share/vim/${P}/ftplugin.vim
+share/vim/${P}/ftplugin/
 share/vim/${P}/ftplugin/README.txt
 share/vim/${P}/ftplugin/a2ps.vim
 share/vim/${P}/ftplugin/aap.vim
@@ -321,7 +323,9 @@ share/vim/${P}/ftplugin/calendar.vim
 share/vim/${P}/ftplugin/cdrdaoconf.vim
 share/vim/${P}/ftplugin/ch.vim
 share/vim/${P}/ftplugin/changelog.vim
+share/vim/${P}/ftplugin/chicken.vim
 share/vim/${P}/ftplugin/clojure.vim
+share/vim/${P}/ftplugin/cmake.vim
 share/vim/${P}/ftplugin/cobol.vim
 share/vim/${P}/ftplugin/conf.vim
 share/vim/${P}/ftplugin/config.vim
@@ -358,6 +362,7 @@ share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/fortran.vim
 share/vim/${P}/ftplugin/framescript.vim
 share/vim/${P}/ftplugin/fvwm.vim
+share/vim/${P}/ftplugin/gdb.vim
 share/vim/${P}/ftplugin/git.vim
 share/vim/${P}/ftplugin/gitcommit.vim
 share/vim/${P}/ftplugin/gitconfig.vim
@@ -421,6 +426,7 @@ share/vim/${P}/ftplugin/mrxvtrc.vim
 share/vim/${P}/ftplugin/msmessages.vim
 share/vim/${P}/ftplugin/muttrc.vim
 share/vim/${P}/ftplugin/nanorc.vim
+share/vim/${P}/ftplugin/neomuttrc.vim
 share/vim/${P}/ftplugin/netrc.vim
 share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
@@ -511,8 +517,8 @@ share/vim/${P}/ftplugin/zimbu.vim
 share/vim/${P}/ftplugin/zsh.vim
 share/vim/${P}/ftplugof.vim
 share/vim/${P}/gvimrc_example.vim
-share/vim/${P}/indent/
 share/vim/${P}/indent.vim
+share/vim/${P}/indent/
 share/vim/${P}/indent/README.txt
 share/vim/${P}/indent/aap.vim
 share/vim/${P}/indent/ada.vim
@@ -579,6 +585,7 @@ share/vim/${P}/indent/matlab.vim
 share/vim/${P}/indent/mf.vim
 share/vim/${P}/indent/mma.vim
 share/vim/${P}/indent/mp.vim
+share/vim/${P}/indent/nsis.vim
 share/vim/${P}/indent/objc.vim
 share/vim/${P}/indent/ocaml.vim
 share/vim/${P}/indent/occam.vim
@@ -674,6 +681,8 @@ share/vim/${P}/keymap/kazakh-jcuken.vim
 share/vim/${P}/keymap/lithuanian-baltic.vim
 share/vim/${P}/keymap/magyar_utf-8.vim
 share/vim/${P}/keymap/mongolian_utf-8.vim
+share/vim/${P}/keymap/oldturkic-orkhon_utf-8.vim
+share/vim/${P}/keymap/oldturkic-yenisei_utf-8.vim
 share/vim/${P}/keymap/persian-iranian_utf-8.vim
 share/vim/${P}/keymap/persian.vim
 share/vim/${P}/keymap/pinyin.vim
@@ -877,6 +886,7 @@ share/vim/${P}/syntax/aspvbs.vim
 share/vim/${P}/syntax/asterisk.vim
 share/vim/${P}/syntax/asteriskvm.vim
 share/vim/${P}/syntax/atlas.vim
+share/vim/${P}/syntax/autodoc.vim
 share/vim/${P}/syntax/autohotkey.vim
 share/vim/${P}/syntax/autoit.vim
 share/vim/${P}/syntax/automake.vim
@@ -911,6 +921,7 @@ share/vim/${P}/syntax/change.vim
 share/vim/${P}/syntax/changelog.vim
 share/vim/${P}/syntax/chaskell.vim
 share/vim/${P}/syntax/cheetah.vim
+share/vim/${P}/syntax/chicken.vim
 share/vim/${P}/syntax/chill.vim
 share/vim/${P}/syntax/chordpro.vim
 share/vim/${P}/syntax/cl.vim
@@ -918,6 +929,7 @@ share/vim/${P}/syntax/clean.vim
 share/vim/${P}/syntax/clipper.vim
 share/vim/${P}/syntax/clojure.vim
 share/vim/${P}/syntax/cmake.vim
+share/vim/${P}/syntax/cmod.vim
 share/vim/${P}/syntax/cmusrc.vim
 share/vim/${P}/syntax/cobol.vim
 share/vim/${P}/syntax/coco.vim
@@ -1175,6 +1187,7 @@ share/vim/${P}/syntax/nasm.vim
 share/vim/${P}/syntax/nastran.vim
 share/vim/${P}/syntax/natural.vim
 share/vim/${P}/syntax/ncf.vim
+share/vim/${P}/syntax/neomuttrc.vim
 share/vim/${P}/syntax/netrc.vim
 share/vim/${P}/syntax/netrw.vim
 share/vim/${P}/syntax/ninja.vim

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.13 2017/10/16 17:30:43 jasper Exp $
+@comment $OpenBSD: PLIST-lang,v 1.14 2018/03/08 16:04:30 sthen Exp $
 @conflict vim-<7.4
 man/fr/
 man/fr.ISO8859-1/
@@ -423,6 +423,9 @@ share/vim/${P}/lang/sk.cp1250/LC_MESSAGES/
 share/vim/${P}/lang/sk.cp1250/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/sk/LC_MESSAGES/
 share/vim/${P}/lang/sk/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/sr/
+share/vim/${P}/lang/sr/LC_MESSAGES/
+share/vim/${P}/lang/sr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/sv/
 share/vim/${P}/lang/sv/LC_MESSAGES/
 share/vim/${P}/lang/sv/LC_MESSAGES/vim.mo

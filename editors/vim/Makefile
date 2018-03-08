@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.166 2017/12/15 01:44:21 jca Exp $
+# $OpenBSD: Makefile,v 1.167 2018/03/08 16:04:30 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating major version, sync editors/vim-spell
-V=		8.0.1255
+V=		8.0.1589
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
 PKGNAME-main=	vim-$V
-REVISION-main=	0
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 
-HOMEPAGE=	http://www.vim.org/
+HOMEPAGE=	https://www.vim.org/
 
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
