@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/02/24 18:04:08 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2018/03/08 20:39:29 sthen Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -44,9 +44,16 @@ MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
 MASTER_SITES0 =		http://kapouay.odns.fr/pub/rust/
 
+FLAVOR ?=
+PSEUDO_FLAVORS =	native_bootstrap
+
 DIST_SUBDIR =		rust
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${BOOTSTRAP}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+.if ${FLAVOR} == native_bootstrap
+BUILD_DEPENDS+=		lang/rust
+.else
+DISTFILES +=		${BOOTSTRAP}
+.endif
 
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
@@ -108,10 +115,15 @@ pre-configure:
 # - generate config.toml file
 do-configure:
 	echo '[build]' >${WRKBUILD}/config.toml
+.if ${FLAVOR} == native_bootstrap
+	echo 'rustc = "${LOCALBASE}/bin/rustc"' >>${WRKBUILD}/config.toml
+	echo 'cargo = "${LOCALBASE}/bin/cargo"' >>${WRKBUILD}/config.toml
+.else
 	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc"' \
 		>>${WRKBUILD}/config.toml
 	echo 'cargo = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/cargo"' \
 		>>${WRKBUILD}/config.toml
+.endif
 	echo 'python = "${MODPY_BIN}"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
