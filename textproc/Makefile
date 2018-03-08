@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.565 2018/03/06 11:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.566 2018/03/08 20:42:46 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -68,6 +68,7 @@
      SUBDIR += hs-attoparsec
      SUBDIR += hs-bytestring-lexing
      SUBDIR += hs-bytestring-show
+     SUBDIR += hs-json
      SUBDIR += hs-libxml-sax
      SUBDIR += hs-polyparse
      SUBDIR += hs-scanner
