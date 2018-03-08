@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/06/22 09:51:34 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/03/08 13:42:31 pirofti Exp $
 @bin bin/ntfs-3g
 @bin bin/ntfs-3g.probe
-@bin bin/ntfs-3g.secaudit
-@bin bin/ntfs-3g.usermap
 @bin bin/ntfscat
 @bin bin/ntfscluster
 @bin bin/ntfscmp
@@ -10,7 +8,9 @@
 @bin bin/ntfsinfo
 @bin bin/ntfsls
 @bin bin/ntfsrecover
+@bin bin/ntfssecaudit
 @bin bin/ntfstruncate
+@bin bin/ntfsusermap
 @bin bin/ntfswipe
 include/ntfs-3g/
 include/ntfs-3g/acls.h
@@ -42,6 +42,7 @@ include/ntfs-3g/mst.h
 include/ntfs-3g/ntfstime.h
 include/ntfs-3g/object_id.h
 include/ntfs-3g/param.h
+include/ntfs-3g/plugin.h
 include/ntfs-3g/realpath.h
 include/ntfs-3g/reparse.h
 include/ntfs-3g/runlist.h
@@ -61,8 +62,6 @@ lib/pkgconfig/libntfs-3g.pc
 @man man/man8/mount.ntfs-3g.8
 @man man/man8/ntfs-3g.8
 @man man/man8/ntfs-3g.probe.8
-@man man/man8/ntfs-3g.secaudit.8
-@man man/man8/ntfs-3g.usermap.8
 @man man/man8/ntfscat.8
 @man man/man8/ntfsclone.8
 @man man/man8/ntfscluster.8
@@ -77,8 +76,10 @@ lib/pkgconfig/libntfs-3g.pc
 @man man/man8/ntfsprogs.8
 @man man/man8/ntfsrecover.8
 @man man/man8/ntfsresize.8
+@man man/man8/ntfssecaudit.8
 @man man/man8/ntfstruncate.8
 @man man/man8/ntfsundelete.8
+@man man/man8/ntfsusermap.8
 @man man/man8/ntfswipe.8
 sbin/mkfs.ntfs
 @bin sbin/mkntfs

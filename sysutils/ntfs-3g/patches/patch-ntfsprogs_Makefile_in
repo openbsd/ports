@@ -1,7 +1,8 @@
-$OpenBSD: patch-ntfsprogs_Makefile_in,v 1.4 2016/06/22 09:51:34 dcoppa Exp $
---- ntfsprogs/Makefile.in.orig	Wed Jun  1 08:08:45 2016
-+++ ntfsprogs/Makefile.in	Wed Jun  1 08:09:57 2016
-@@ -1377,7 +1377,7 @@ uninstall-man: uninstall-man8
+$OpenBSD: patch-ntfsprogs_Makefile_in,v 1.5 2018/03/08 13:42:31 pirofti Exp $
+Index: ntfsprogs/Makefile.in
+--- ntfsprogs/Makefile.in.orig
++++ ntfsprogs/Makefile.in
+@@ -1425,7 +1425,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@install-exec-hook:
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)/sbin
