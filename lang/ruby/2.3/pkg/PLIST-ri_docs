@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST-ri_docs,v 1.8 2018/03/08 15:00:27 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
