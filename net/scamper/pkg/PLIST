@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/12/05 15:21:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/03/08 20:35:00 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
@@ -12,7 +12,9 @@
 @bin bin/sc_remoted
 @bin bin/sc_speedtrap
 @bin bin/sc_tbitblind
+@bin bin/sc_tbitpmtud
 @bin bin/sc_tracediff
+@bin bin/sc_ttlexp
 @bin bin/sc_warts2csv
 @bin bin/sc_warts2json
 @bin bin/sc_warts2pcap
@@ -55,12 +57,16 @@ lib/libscamperfile.la
 @man man/man1/sc_remoted.1
 @man man/man1/sc_speedtrap.1
 @man man/man1/sc_tbitblind.1
+@man man/man1/sc_tbitpmtud.1
 @man man/man1/sc_tracediff.1
+@man man/man1/sc_ttlexp.1
+@man man/man1/sc_warts2csv.1
 @man man/man1/sc_warts2json.1
 @man man/man1/sc_warts2pcap.1
 @man man/man1/sc_warts2text.1
 @man man/man1/sc_wartscat.1
 @man man/man1/sc_wartsdump.1
+@man man/man1/sc_wartsfix.1
 @man man/man1/scamper.1
 @man man/man3/libscamperfile.3
 @man man/man5/warts.5
