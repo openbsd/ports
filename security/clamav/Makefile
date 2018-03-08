@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/03/02 15:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2018/03/08 19:52:03 juanfra Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.99.4
@@ -28,6 +28,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 			mail/sendmail,-libmilter \
 			net/curl \
 			textproc/libxml
+TEST_DEPENDS=		security/clamav
 
 MASTER_SITES=		http://www.clamav.net/downloads/production/
 
