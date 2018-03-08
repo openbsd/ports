@@ -1,0 +1,207 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Conf_Parser_pm,v 1.1 2018/03/08 07:30:00 giovanni Exp $
+
+Index: lib/Mail/SpamAssassin/Conf/Parser.pm
+--- lib/Mail/SpamAssassin/Conf/Parser.pm.orig
++++ lib/Mail/SpamAssassin/Conf/Parser.pm
+@@ -142,15 +142,11 @@ use Mail::SpamAssassin::NetSet;
+ 
+ use strict;
+ use warnings;
+-use bytes;
++# use bytes;
+ use re 'taint';
+ 
+-use vars qw{
+-  @ISA
+-};
++our @ISA = qw();
+ 
+-@ISA = qw();
+-
+ ###########################################################################
+ 
+ sub new {
+@@ -263,6 +259,7 @@ sub parse {
+   while (defined ($line = shift @conf_lines)) {
+     local ($1);         # bug 3838: prevent random taint flagging of $1
+ 
++   if (index($line,'#') > -1) {
+     # bug 5545: used to support testing rules in the ruleqa system
+     if ($keepmetadata && $line =~ /^\#testrules/) {
+       $self->{file_scoped_attrs}->{testrules}++;
+@@ -278,8 +275,12 @@ sub parse {
+ 
+     $line =~ s/(?<!\\)#.*$//; # remove comments
+     $line =~ s/\\#/#/g; # hash chars are escaped, so unescape them
++   }
++
++   if ($line =~ tr{ \t\r\n\f}{}) {
+     $line =~ s/^\s+//;  # remove leading whitespace
+     $line =~ s/\s+$//;  # remove tailing whitespace
++  }
+     next unless($line); # skip empty lines
+ 
+     # handle i18n
+@@ -288,7 +289,7 @@ sub parse {
+     my($key, $value) = split(/\s+/, $line, 2);
+     $key = lc $key;
+     # convert all dashes in setting name to underscores.
+-    $key =~ s/-/_/g;
++    $key =~ tr/-/_/;
+     $value = '' unless defined($value);
+ 
+ #   # Do a better job untainting this info ...
+@@ -338,26 +339,26 @@ sub parse {
+     }
+ 
+     # now handle the commands.
+-    if ($key eq 'include') {
++    elsif ($key eq 'include') {
+       $value = $self->fix_path_relative_to_current_file($value);
+       my $text = $conf->{main}->read_cf($value, 'included file');
+       unshift (@conf_lines, split (/\n/, $text));
+       next;
+     }
+ 
+-    if ($key eq 'ifplugin') {
++    elsif ($key eq 'ifplugin') {
+       $self->handle_conditional ($key, "plugin ($value)",
+                         \@if_stack, \$skip_parsing);
+       next;
+     }
+ 
+-    if ($key eq 'if') {
++    elsif ($key eq 'if') {
+       $self->handle_conditional ($key, $value,
+                         \@if_stack, \$skip_parsing);
+       next;
+     }
+ 
+-    if ($key eq 'else') {
++    elsif ($key eq 'else') {
+       # TODO: if/else/else won't get flagged here :(
+       if (!@if_stack) {
+         $parse_error = "config: found else without matching conditional";
+@@ -369,7 +370,7 @@ sub parse {
+     }
+ 
+     # and the endif statement:
+-    if ($key eq 'endif') {
++    elsif ($key eq 'endif') {
+       my $lastcond = pop @if_stack;
+       if (!defined $lastcond) {
+         $parse_error = "config: found endif without matching conditional";
+@@ -508,7 +509,7 @@ sub handle_conditional {
+   my $conf = $self->{conf};
+ 
+   my $lexer = ARITH_EXPRESSION_LEXER;
+-  my @tokens = ($value =~ m/($lexer)/g);
++  my @tokens = ($value =~ m/($lexer)/og);
+ 
+   my $eval = '';
+   my $bad = 0;
+@@ -591,7 +592,7 @@ sub cond_clause_can_or_has {
+   } elsif ($method =~ /^(.*)::([^:]+)$/) {
+     no strict "refs";
+     my($module, $meth) = ($1, $2);
+-    return 1  if UNIVERSAL::can($module,$meth) &&
++    return 1  if $module->can($meth) &&
+                  ( $fn_name eq 'has' || &{$method}() );
+   } else {
+     $self->lint_warn("bad 'if' line, cannot find '::' in $fn_name($method), ".
+@@ -984,14 +985,14 @@ sub _meta_deps_recurse {
+ 
+   # Lex the rule into tokens using a rather simple RE method ...
+   my $lexer = ARITH_EXPRESSION_LEXER;
+-  my @tokens = ($rule =~ m/$lexer/g);
++  my @tokens = ($rule =~ m/$lexer/og);
+ 
+   # Go through each token in the meta rule
+   my $conf_tests = $conf->{tests};
+   foreach my $token (@tokens) {
+     # has to be an alpha+numeric token
+-  # next if $token =~ /^(?:\W+|[+-]?\d+(?:\.\d+)?)$/;
+-    next if $token !~ /^[A-Za-z_][A-Za-z0-9_]*\z/s;  # faster
++    next if $token =~ tr{A-Za-z0-9_}{}c || substr($token,0,1) =~ tr{A-Za-z_}{}c; # even faster
++
+     # and has to be a rule name
+     next unless exists $conf_tests->{$token};
+ 
+@@ -1178,25 +1179,25 @@ sub add_test {
+   my $conf = $self->{conf};
+ 
+   # Don't allow invalid names ...
+-  if ($name !~ /^\D\w*$/) {
++  if ($name !~ /^[_[:alpha:]]\w*$/) {
+     $self->lint_warn("config: error: rule '$name' has invalid characters ".
+ 	   "(not Alphanumeric + Underscore + starting with a non-digit)\n", $name);
+     return;
+   }
+ 
+-  # Also set a hard limit for ALL rules (rule names longer than 242
++  # Also set a hard limit for ALL rules (rule names longer than 40
+   # characters throw warnings).  Check this separately from the above
+   # pattern to avoid vague error messages.
+-  if (length $name > 200) {
+-    $self->lint_warn("config: error: rule '$name' is way too long ".
++  if (length $name > 100) {
++    $self->lint_warn("config: error: rule '$name' is too long ".
+ 	   "(recommended maximum length is 22 characters)\n", $name);
+     return;
+   }
+ 
+   # Warn about, but use, long rule names during --lint
+   if ($conf->{lint_rules}) {
+-    if (length($name) > 50 && $name !~ /^__/ && $name !~ /^T_/) {
+-      $self->lint_warn("config: warning: rule name '$name' is over 50 chars ".
++    if (length($name) > 40 && $name !~ /^__/ && $name !~ /^T_/) {
++      $self->lint_warn("config: warning: rule name '$name' is over 40 chars ".
+ 	     "(recommended maximum length is 22 characters)\n", $name);
+     }
+   }
+@@ -1286,12 +1287,18 @@ sub add_regression_test {
+ sub is_meta_valid {
+   my ($self, $name, $rule) = @_;
+ 
++  # $meta is a degenerate translation of the rule, replacing all variables (i.e. rule names) with 0. 
+   my $meta = '';
+   $rule = untaint_var($rule);  # must be careful below
++  # Bug #7557 code injection
++  if ( $rule =~ /\S(::|->)\S/ )  {
++    warn("is_meta_valid: Bogus rule $name: $rule") ;
++    return 0;
++  }
+ 
+   # Lex the rule into tokens using a rather simple RE method ...
+   my $lexer = ARITH_EXPRESSION_LEXER;
+-  my @tokens = ($rule =~ m/$lexer/g);
++  my @tokens = ($rule =~ m/$lexer/og);
+   if (length($name) == 1) {
+     for (@tokens) {
+       print "$name $_\n "  or die "Error writing token: $!";
+@@ -1299,16 +1306,20 @@ sub is_meta_valid {
+   }
+   # Go through each token in the meta rule
+   foreach my $token (@tokens) {
+-    # Numbers can't be rule names
+-    if ($token !~ /^[A-Za-z_][A-Za-z0-9_]*\z/s) {
++    # If the token is a syntactically legal rule name, make it zero
++    if ($token =~ /^[_[:alpha:]]\w+\z/s) {
++      $meta .= "0 ";
++    }
++    # if it is a number or a string of 1 or 2 punctuation characters (i.e. operators) tack it onto the degenerate rule
++    elsif ( $token =~ /^(\d+|[[:punct:]]{1,2})\z/s ) {
+       $meta .= "$token ";
+     }
+-    # Zero will probably cause more errors
++    # WTF is it? Just warn, for now. Bug #7557
+     else {
+-      $meta .= "0 ";
++      $self->lint_warn("config: Strange rule token: $token", $name);
++      $meta .= "$token ";
+     }
+   }
+-
+   my $evalstr = 'my $x = ' . $meta . '; 1;';
+   if (eval $evalstr) {
+     return 1;
