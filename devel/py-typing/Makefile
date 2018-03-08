@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/19 21:45:21 jung Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/08 15:08:50 sthen Exp $
 
 COMMENT =		type hints for python
 
@@ -15,7 +15,13 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
+# python3 tests require py-flake8-* ports
+.if ! ${FLAVOR:Mpython3}
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover python2
+.endif
 
 .include <bsd.port.mk>
