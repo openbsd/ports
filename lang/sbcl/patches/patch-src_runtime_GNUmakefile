@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_runtime_GNUmakefile,v 1.7 2017/02/06 08:18:53 jca Exp $
---- src/runtime/GNUmakefile.orig	Mon Feb  6 08:42:09 2017
-+++ src/runtime/GNUmakefile	Mon Feb  6 08:42:22 2017
-@@ -24,7 +24,7 @@ GREP = grep
+$OpenBSD: patch-src_runtime_GNUmakefile,v 1.8 2018/03/08 15:17:39 sthen Exp $
+Index: src/runtime/GNUmakefile
+--- src/runtime/GNUmakefile.orig
++++ src/runtime/GNUmakefile
+@@ -30,7 +30,7 @@ __LDFLAGS__ =
  
  include ../../output/prefix.def
  
--CFLAGS = -g -Wall -Wsign-compare -O3
-+CFLAGS = -Wall -Wsign-compare ${PORTS_CFLAGS}
- ASFLAGS = $(CFLAGS)
- CPPFLAGS = -I. -DSBCL_PREFIX=\"$(SBCL_PREFIX)\"
+-CFLAGS += -g -Wall -Wundef -Wsign-compare -Wpointer-arith -O3
++CFLAGS += -Wall -Wundef -Wsign-compare -Wpointer-arith
+ ASFLAGS += $(CFLAGS)
+ CPPFLAGS += -I. -DSBCL_PREFIX=\"$(SBCL_PREFIX)\"
  

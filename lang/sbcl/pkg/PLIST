@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/11/02 13:26:07 jca Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/03/08 15:17:39 sthen Exp $
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
@@ -41,6 +41,7 @@ lib/sbcl/contrib/sb-sprof.asd
 lib/sbcl/contrib/sb-sprof.fasl
 lib/sbcl/contrib/uiop.fasl
 lib/sbcl/sbcl.core
+lib/sbcl/sbcl.mk
 @man man/man1/sbcl.1
 share/doc/sbcl/
 share/doc/sbcl/BUGS

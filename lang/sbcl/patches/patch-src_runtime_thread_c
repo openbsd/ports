@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_runtime_thread_c,v 1.1 2018/03/08 15:17:39 sthen Exp $
+
+Index: src/runtime/thread.c
+--- src/runtime/thread.c.orig
++++ src/runtime/thread.c
+@@ -653,9 +653,16 @@ create_thread_struct(lispobj initial_function) {
+      * on the alignment passed from os_validate, since that might
+      * assume the current (e.g. 4k) pagesize, while we calculate with
+      * the biggest (e.g. 64k) pagesize allowed by the ABI. */
++#if defined(LISP_FEATURE_OPENBSD) && defined(MAP_STACK)
++    spaces = mmap(0, THREAD_STRUCT_SIZE, PROT_READ|PROT_WRITE,
++	MAP_PRIVATE|MAP_ANON|MAP_STACK, -1, 0);
++    if(spaces == MAP_FAILED)
++        return NULL;
++#else
+     spaces = os_allocate(THREAD_STRUCT_SIZE);
+     if(!spaces)
+         return NULL;
++#endif
+     /* Aligning up is safe as THREAD_STRUCT_SIZE has
+      * THREAD_ALIGNMENT_BYTES padding. */
+     aligned_spaces = PTR_ALIGN_UP(spaces, THREAD_ALIGNMENT_BYTES);

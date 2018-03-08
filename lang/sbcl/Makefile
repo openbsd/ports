@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/12/25 07:04:45 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2018/03/08 15:17:39 sthen Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -6,8 +6,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.3.10
-REVISION=		2
+V =			1.4.5
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -55,8 +54,7 @@ TEST_DEPENDS =		devel/gmp
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
-			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
-			PORTS_CFLAGS="${CFLAGS}"
+			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
 
 # Upstream asks that packagers append something like this to the
 # version to distinguish official tarballs from third-party packages.
@@ -86,8 +84,6 @@ post-install:
 	chown -R 0:0 ${PREFIX}/lib/sbcl
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DONT_CLEAN_SBCL_CONTRIB=1 \
-	    /bin/sh make-target-contrib.sh
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} /bin/sh run-tests.sh
 
 .include <bsd.port.mk>
