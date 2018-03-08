@@ -1,0 +1,2 @@
+This library provides a parser and pretty printer for converting
+between Haskell values and JSON.
