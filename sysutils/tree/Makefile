@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/29 19:49:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2018/03/08 15:13:20 sthen Exp $
 
 COMMENT=	print ascii formatted tree of a directory structure
 
-GH_ACCOUNT=	pyr
-GH_PROJECT=	tree
-GH_TAGNAME=	0.62
+V=		0.62
+DISTNAME=	tree-$V
+HOMEPAGE=	https://github.com/pyr/tree
 
 CATEGORIES=	sysutils
 
@@ -12,6 +12,9 @@ CATEGORIES=	sysutils
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
+
+MASTER_SITES=	https://github.com/pyr/tree/releases/download/$V/
+EXTRACT_SUFX=	.tgz
 
 NO_TEST=	Yes
 
