@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/28 10:52:43 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/09 22:45:18 fcambus Exp $
 
 ONLY_FOR_ARCHS = amd64
 
@@ -7,12 +7,9 @@ USE_WXNEEDED =	Yes
 COMMENT =	Multiple Arcade Machine Emulator
 
 V =		195
-
-GH_ACCOUNT =	mamedev
-GH_PROJECT =	mame
-GH_TAGNAME =	mame0${V}
-
-DISTNAME =	mame-0.${V}
+DISTNAME =	mame0${V}s
+PKGNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -27,6 +24,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xinerama
 WANTLIB += c expat fontconfig freetype jpeg lua5.3 m sqlite3 util z
+
+MASTER_SITES =	https://github.com/mamedev/mame/releases/download/mame0${V}/
+
+EXTRACT_SUFX =	.zip
 
 MODULES =	lang/lua \
 		lang/python
@@ -69,12 +70,16 @@ MAKE_FILE =	makefile
 NO_TEST =	Yes
 
 post-extract:
+	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 	@mv ${WRKSRC}/3rdparty/genie/build/gmake.freebsd \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
 	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
 	@mv ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
 	@sed -i 's|"png.h"|"localpng.h"|' ${WRKSRC}/src/emu/*.cpp \
 		${WRKSRC}/src/lib/util/*.cpp ${WRKSRC}/src/tools/*.cpp
+	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
+		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
+		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
