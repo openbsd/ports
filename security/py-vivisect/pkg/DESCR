@@ -1,0 +1,2 @@
+Fairly un-documented static analysis / emulation / symbolic analysis framework
+for PE/Elf/Mach-O/Blob binary formats on various architectures.
