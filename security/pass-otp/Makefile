@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/09 15:29:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/09 22:10:05 kili Exp $
 
 COMMENT =	OTP extension for password-store
 
 V =		1.1.0
 DISTNAME =	pass-otp-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -16,8 +17,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://github.com/tadfisher/pass-otp/releases/download/v${V}/
 
+BUILD_DEPENDS =	shells/bash
 RUN_DEPENDS =	security/password-store \
 		security/oath-toolkit \
+		shells/bash \
 		graphics/libqrencode
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
