@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2018/03/09 23:36:42 kn Exp $
+bin/onionshare-gui
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/__init__.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}alert.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}downloads.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}file_selection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}onionshare_gui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}server_status.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}settings_dialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}tor_connection_dialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}update_checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/alert.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/downloads.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/file_selection.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/onionshare_gui.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/server_status.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/settings_dialog.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/tor_connection_dialog.py
+lib/python${MODPY_VERSION}/site-packages/onionshare_gui/update_checker.py
+share/appdata/
+share/appdata/onionshare.appdata.xml
+share/applications/onionshare.desktop
+share/pixmaps/
+share/pixmaps/onionshare80.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
