@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/03/09 15:29:27 abieber Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -14,9 +14,9 @@ all:
+ 	@echo "     password store"
+
+ install:
+-	@install -v -d "$(DESTDIR)$(MANDIR)/man1" && install -m 0644 -v pass-$(PROG).1 "$(DESTDIR)$(MANDIR)/man1/pass-$(PROG).1"
+-	@install -v -d "$(DESTDIR)$(SYSTEM_EXTENSION_DIR)/"
+-	@install -v -m0755 $(PROG).bash "$(DESTDIR)$(SYSTEM_EXTENSION_DIR)/$(PROG).bash"
++	@install -d "$(DESTDIR)$(MANDIR)/man1" && install -m 0644 pass-$(PROG).1 "$(DESTDIR)$(MANDIR)/man1/pass-$(PROG).1"
++	@install -d "$(DESTDIR)$(SYSTEM_EXTENSION_DIR)/"
++	@install -m0755 $(PROG).bash "$(DESTDIR)$(SYSTEM_EXTENSION_DIR)/$(PROG).bash"
+ 	@echo
+ 	@echo "pass-$(PROG) is installed succesfully"
+ 	@echo
