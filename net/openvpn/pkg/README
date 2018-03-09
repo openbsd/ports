@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/03/06 12:44:29 jca Exp $
+$OpenBSD: README,v 1.5 2018/03/09 12:37:12 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,6 +12,14 @@ used for both layer-3 (routed) connections, and also for layer-2
 layer-2 (bridged) connections should now use the tap(4) interface
 instead as on other OS. Consult the upgrade guide for 5.9 for more
 information.
+
+Using the openvpn rc script
+---------------------------
+
+# rcctl enable openvpn
+# rcctl set openvpn flags '--config /etc/openvpn/server.conf'
+
+To handle multiple openvpn instances see EXAMPLES in rcctl(8).
 
 Using an /etc/hostname.* file without persist-tun
 -------------------------------------------------
