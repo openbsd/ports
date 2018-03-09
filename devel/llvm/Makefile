@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2018/02/02 13:33:11 jca Exp $
+# $OpenBSD: Makefile,v 1.173 2018/03/09 03:01:22 jsg Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -18,7 +18,7 @@ DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	1
+REVISION-main =	2
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -57,8 +57,10 @@ LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
-			-DLLVM_REQUIRES_RTTI:Bool=True \
+			-DLLVM_ENABLE_RTTI:Bool=True \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
+			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
+			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
 			-DBacktrace_LIBRARY=''
 

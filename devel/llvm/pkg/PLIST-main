@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/09/08 05:58:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2018/03/09 03:01:22 jsg Exp $
 @pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
@@ -1939,6 +1939,9 @@ lib/cmake/llvm/LLVMInstallSymlink.cmake
 lib/cmake/llvm/LLVMProcessSources.cmake
 lib/cmake/llvm/TableGen.cmake
 lib/cmake/llvm/VersionFromVCS.cmake
+lib/libLLVM-${LLVM_V}.so
+lib/libLLVM-5.0.so
+lib/libLLVM.so
 lib/libLLVMAArch64AsmParser.a
 lib/libLLVMAArch64AsmPrinter.a
 lib/libLLVMAArch64CodeGen.a
