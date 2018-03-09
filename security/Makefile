@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.490 2018/03/09 15:30:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.491 2018/03/09 16:58:04 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -306,6 +306,7 @@
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
+     SUBDIR += py-vivisect
      SUBDIR += qca
      SUBDIR += qca-qt5
      SUBDIR += qoauth
