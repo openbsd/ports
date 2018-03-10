@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2018/03/10 23:00:33 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
-GH_ACCOUNT =	jorisvink
-GH_PROJECT =	kore
-GH_TAGNAME =	2.0.0-release
-REVISION =	0
-
+V =		2.0.0-release
+DISTNAME =	kore-${V}
 PKGNAME =	${DISTNAME:S/-release//}
+REVISION =	1
 
 CATEGORIES =	www
 
@@ -19,6 +17,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c crypto pthread ssl
+
+MASTER_SITES =	https://github.com/jorisvink/kore/releases/download/$V/
 
 FLAVORS =	debug pgsql
 FLAVOR ?=
@@ -32,6 +32,8 @@ MAKE_ENV +=	PGSQL=1
 WANTLIB +=	pq
 LIB_DEPENDS +=	databases/postgresql,-main
 .endif
+
+WRKDIST =	${WRKDIR}/kore
 
 USE_GMAKE =	Yes
 
