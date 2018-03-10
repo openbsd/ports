@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.264 2018/03/10 21:54:30 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -6,7 +6,7 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.33.2
+V_DOVECOT=	2.2.34
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -17,7 +17,6 @@ PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
-REVISION-server=0
 
 SHARED_LIBS=	dovecot-compression 0.0 \
 		dovecot-dsync	0.0 \
@@ -37,9 +36,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sqlite3 ssl z
-WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl lib/dovecot/dovecot
-WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl ${COMPILER_LIBCXX} z
-WANTLIB-postgresql= crypto pq>=4 ssl
+WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
+WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl z
+WANTLIB-postgresql= pq
 
 LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/lz4 \
@@ -54,6 +53,9 @@ LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}
 
 CONFIGURE_STYLE= gnu
+# XXX linking test-ssl-iostream fails with base libtool; problem is probably
+#     in Dovecot's Makefile as it does still warn with GNU libtool.
+USE_LIBTOOL=	gnu
 CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \

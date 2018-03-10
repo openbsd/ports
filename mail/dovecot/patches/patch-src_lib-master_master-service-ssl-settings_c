@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lib-master_master-service-ssl-settings_c,v 1.1 2018/03/10 21:54:30 sthen Exp $
+
+Index: src/lib-master/master-service-ssl-settings.c
+--- src/lib-master/master-service-ssl-settings.c.orig
++++ src/lib-master/master-service-ssl-settings.c
+@@ -52,7 +52,7 @@ static const struct master_service_ssl_settings master
+ 	.ssl_alt_key = "",
+ 	.ssl_key_password = "",
+ 	.ssl_cipher_list = "ALL:!LOW:!SSLv2:!EXP:!aNULL",
+-#ifdef SSL_TXT_SSLV2
++#ifdef SSL_TXT_SSLV2 && !defined(LIBRESSL_VERSION_NUMBER)
+ 	.ssl_protocols = "!SSLv2 !SSLv3",
+ #else
+ 	.ssl_protocols = "!SSLv3",

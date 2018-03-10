@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.63 2017/10/13 10:08:46 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.64 2018/03/10 21:54:30 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -68,6 +68,7 @@ include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
 include/dovecot/buffer.h
 include/dovecot/byteorder.h
+include/dovecot/charset-utf8-private.h
 include/dovecot/charset-utf8.h
 include/dovecot/child-wait.h
 include/dovecot/client-common.h
@@ -302,6 +303,7 @@ include/dovecot/istream-seekable.h
 include/dovecot/istream-sized.h
 include/dovecot/istream-tee.h
 include/dovecot/istream-timeout.h
+include/dovecot/istream-try.h
 include/dovecot/istream-unix.h
 include/dovecot/istream-zlib.h
 include/dovecot/istream.h
@@ -599,6 +601,7 @@ lib/dovecot/lib11_imap_quota_plugin.so
 lib/dovecot/lib11_trash_plugin.so
 lib/dovecot/lib15_notify_plugin.so
 lib/dovecot/lib20_autocreate_plugin.so
+lib/dovecot/lib20_charset_alias_plugin.so
 lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_listescape_plugin.so
@@ -735,6 +738,7 @@ share/doc/dovecot/wiki/AuthDatabase.LDAP.AuthBinds.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.PasswordLookups.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.Userdb.txt
 share/doc/dovecot/wiki/AuthDatabase.LDAP.txt
+share/doc/dovecot/wiki/AuthDatabase.Lua.txt
 share/doc/dovecot/wiki/AuthDatabase.Passwd.txt
 share/doc/dovecot/wiki/AuthDatabase.PasswdFile.txt
 share/doc/dovecot/wiki/AuthDatabase.SQL.txt
@@ -772,12 +776,14 @@ share/doc/dovecot/wiki/Design.Dcrypt.txt
 share/doc/dovecot/wiki/Design.DoveadmProtocol.HTTP.txt
 share/doc/dovecot/wiki/Design.DoveadmProtocol.txt
 share/doc/dovecot/wiki/Design.Dsync.txt
+share/doc/dovecot/wiki/Design.Events.txt
 share/doc/dovecot/wiki/Design.Indexes.Cache.txt
 share/doc/dovecot/wiki/Design.Indexes.MailIndexApi.txt
 share/doc/dovecot/wiki/Design.Indexes.MainIndex.txt
 share/doc/dovecot/wiki/Design.Indexes.TransactionLog.txt
 share/doc/dovecot/wiki/Design.Indexes.txt
 share/doc/dovecot/wiki/Design.InputStreams.txt
+share/doc/dovecot/wiki/Design.Lua.txt
 share/doc/dovecot/wiki/Design.MailProcess.txt
 share/doc/dovecot/wiki/Design.Memory.txt
 share/doc/dovecot/wiki/Design.OutputStreams.txt
@@ -910,6 +916,7 @@ share/doc/dovecot/wiki/Pigeonhole.Sieve.txt
 share/doc/dovecot/wiki/Pigeonhole.txt
 share/doc/dovecot/wiki/Plugins.Apparmor.txt
 share/doc/dovecot/wiki/Plugins.Autocreate.txt
+share/doc/dovecot/wiki/Plugins.CharsetAlias.txt
 share/doc/dovecot/wiki/Plugins.Compress.txt
 share/doc/dovecot/wiki/Plugins.Expire.txt
 share/doc/dovecot/wiki/Plugins.FTS.Lucene.txt
@@ -962,6 +969,7 @@ share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
 share/doc/dovecot/wiki/SharedMailboxes.Symlinks.txt
 share/doc/dovecot/wiki/SharedMailboxes.txt
 share/doc/dovecot/wiki/SocketUnavailable.txt
+share/doc/dovecot/wiki/Statistics.Old.txt
 share/doc/dovecot/wiki/Statistics.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
