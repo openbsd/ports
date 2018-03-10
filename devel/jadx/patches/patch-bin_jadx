@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_jadx,v 1.1.1.1 2018/03/10 14:45:43 rpointel Exp $
+
+Index: bin/jadx
+--- bin/jadx.orig
++++ bin/jadx
+@@ -62,6 +62,8 @@ cd "$SAVED" >&-
+ 
+ CLASSPATH=$APP_HOME/lib/jadx-cli-0.6.1.jar:$APP_HOME/lib/android-5.1.jar:$APP_HOME/lib/dx-1.10.jar:$APP_HOME/lib/slf4j-api-1.7.10.jar:$APP_HOME/lib/jadx-core-0.6.1.jar:$APP_HOME/lib/jcommander-1.47.jar:$APP_HOME/lib/logback-classic-1.1.2.jar:$APP_HOME/lib/commons-io-2.4.jar:$APP_HOME/lib/asm-5.0.3.jar:$APP_HOME/lib/annotations-12.0.jar:$APP_HOME/lib/cloning-1.9.2.jar:$APP_HOME/lib/logback-core-1.1.2.jar:$APP_HOME/lib/objenesis-2.1.jar
+ 
++JAVA_HOME=$(javaPathHelper -h dajx)
++
+ # Determine the Java command to use to start the JVM.
+ if [ -n "$JAVA_HOME" ] ; then
+     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
