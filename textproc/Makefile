@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.566 2018/03/08 20:42:46 kili Exp $
+# $OpenBSD: Makefile,v 1.567 2018/03/10 12:48:11 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -530,7 +530,6 @@
      SUBDIR += wdiff
      SUBDIR += wkhtmltopdf
      SUBDIR += xalan-j
-     SUBDIR += xerces
      SUBDIR += xerces-c
      SUBDIR += xlsx2csv
      SUBDIR += xml2rfc
