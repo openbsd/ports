@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/03 21:41:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/11 22:53:43 sthen Exp $
 libexec/nagios/
 libexec/nagios/check_snmp_boostedge.pl
 libexec/nagios/check_snmp_cpfw.pl
@@ -15,16 +15,10 @@ libexec/nagios/check_snmp_storage.pl
 libexec/nagios/check_snmp_vrrp.pl
 libexec/nagios/check_snmp_win.pl
 share/doc/manubulon-snmp/
-share/doc/manubulon-snmp/faq.html
-share/doc/manubulon-snmp/index.html
-share/doc/manubulon-snmp/index_commands.html
-share/doc/manubulon-snmp/snmp_cpfw.html
-share/doc/manubulon-snmp/snmp_css.html
-share/doc/manubulon-snmp/snmp_env.html
-share/doc/manubulon-snmp/snmp_int.html
-share/doc/manubulon-snmp/snmp_load.html
-share/doc/manubulon-snmp/snmp_mem.html
-share/doc/manubulon-snmp/snmp_process.html
-share/doc/manubulon-snmp/snmp_storage.html
-share/doc/manubulon-snmp/snmp_vrrp.html
-share/doc/manubulon-snmp/snmp_windows.html
+share/doc/manubulon-snmp/01-About.md
+share/doc/manubulon-snmp/02-Installation.md
+share/doc/manubulon-snmp/03-Configuration.md
+share/doc/manubulon-snmp/04-Plugins.md
+share/doc/manubulon-snmp/CHANGELOG.md
+share/doc/manubulon-snmp/LICENSE
+share/doc/manubulon-snmp/README.md
