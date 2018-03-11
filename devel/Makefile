@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1712 2018/03/11 05:29:59 rpointel Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1713 2018/03/11 22:39:44 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1201,6 +1201,7 @@
      SUBDIR += pear-Validate
      SUBDIR += perltidy
      SUBDIR += physfs
+     SUBDIR += pkgconf
      SUBDIR += pkgconfig
      SUBDIR += plib
      SUBDIR += poedit
