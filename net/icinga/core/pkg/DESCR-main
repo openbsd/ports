@@ -1,5 +1,9 @@
 Icinga monitors network resources such as servers, routers, switches,
 applications and services and notifies administrators or responsible
-persons. It's a fork of Nagios and supports its extensive pool of
-monitoring plug-ins. Current status information, historical logs
-and reports can all be accessed via a web browser.
+persons. Current status information, historical logs and reports can
+all be accessed via a web browser.
+
+This package provides Icinga 1.x, the legacy version, which is a fork
+of Nagios. New installations should use Icinga 2 (a different codebase).
+Both versions support the extensive collection of standard monitoring
+plug-ins that also work with Nagios and other similar software.
