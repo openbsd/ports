@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.1 2018/01/07 22:56:46 awolk Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.2 2018/03/11 22:40:20 sthen Exp $
 
-enable GameController API the Linux way (by posing as Xbox360 controller)
+enable GameController API the Linux fallback way (by posing as Xbox360
+controller)
 also disable checking string "Xbox 360 Wireless Receiver", so for now
 everything will be Xbox360 controller (works with generic joysticks)
-- note: the actual Xbox360 controller has buttons and axes messed up on
-         openbsd with these mappings
+map to SDL_GAMECONTROLLERCONFIG envvar if available
 
 Index: src/joystick/SDL_gamecontroller.c
 --- src/joystick/SDL_gamecontroller.c.orig
 +++ src/joystick/SDL_gamecontroller.c
-@@ -884,15 +884,15 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
+@@ -884,15 +884,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
  #else
      (void) s_pEmscriptenMapping;  /* pacify ARMCC */
  #endif
@@ -20,10 +20,17 @@ Index: src/joystick/SDL_gamecontroller.c
 +        //if (SDL_strstr(name, "Xbox 360 Wireless Receiver")) {
              /* The Linux driver xpad.c maps the wireless dpad to buttons */
              SDL_bool existing;
-             mapping = SDL_PrivateAddMappingForGUID(guid,
+-            mapping = SDL_PrivateAddMappingForGUID(guid,
++	    char guid_str[1024];
++            SDL_JoystickGetGUIDString(guid, guid_str, sizeof(guid_str));
++	    if (SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG) == NULL) {
++		    mapping = SDL_PrivateAddMappingForGUID(guid,
  "none,X360 Wireless Controller,a:b0,b:b1,back:b6,dpdown:b14,dpleft:b11,dpright:b12,dpup:b13,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,",
                            &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
 -        }
++	    } else {
++		    mapping = SDL_PrivateAddMappingForGUID(guid, SDL_GetHint(SDL_HINT_GAMECONTROLLERCONFIG), &existing, SDL_CONTROLLER_MAPPING_PRIORITY_DEFAULT);
++	    }
 +        //}
      }
  #endif /* __LINUX__ */

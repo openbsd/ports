@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/07 22:56:46 awolk Exp $
-@bin bin/sdl2-config
+@comment $OpenBSD: PLIST,v 1.5 2018/03/11 22:40:20 sthen Exp $
+bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
 include/SDL2/SDL_assert.h
@@ -85,3 +85,4 @@ lib/libSDL2main.a
 lib/libSDL2main.la
 lib/pkgconfig/sdl2.pc
 share/aclocal/sdl2.m4
+share/doc/pkg-readmes/${FULLPKGNAME}

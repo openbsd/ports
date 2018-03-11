@@ -1,6 +1,5 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2018/01/07 22:56:46 awolk Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2018/03/11 22:40:20 sthen Exp $
 
-Should make sure only libSDL2, not libSDL2-2.0 are installed
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
