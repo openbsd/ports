@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/12 19:32:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2018/03/11 22:42:00 sthen Exp $
 
-V =		2.0.1
+V =		2.0.3
 COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
 CATEGORIES =	devel graphics
-REVISION =	0
 
-SHARED_LIBS +=	SDL2_image		0.0 # 0.0
+SHARED_LIBS +=	SDL2_image		0.1 # 0.3
 
 HOMEPAGE =	https://www.libsdl.org/projects/SDL_image/
+
+MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
 
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_image/release/
 
-WANTLIB += SDL2 jpeg m png pthread sndio tiff usbhid webp z
+WANTLIB += SDL2 jpeg m png pthread sndio tiff usbhid webp z samplerate
 
-LIB_DEPENDS =	devel/sdl2 \
+LIB_DEPENDS =	devel/sdl2>=2.0.8 \
 		graphics/jpeg \
 		graphics/libwebp \
 		graphics/png \
