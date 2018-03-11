@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.74 2017/11/28 10:31:50 espie Exp $
+# $OpenBSD: Config.pm,v 1.75 2018/03/11 12:38:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -112,7 +112,9 @@ sub parse_command_line
 	if ($state->{base_user}{uid} == 0) {
 		$state->{noportsprivsep} = 1;
 	} else {
-		$state->errsay("Running dpb as root with a build_user is the preferred setup");
+		$state->errsay("Warning: dpb started as #1", 
+		    $state->{base_user}->user);
+		$state->errsay("Warning: running dpb as root with a build_user is the preferred setup");
 	}
 	$class->setup_users($state);
 
@@ -196,7 +198,9 @@ sub parse_command_line
 	$state->say("Build user: #1", $state->{build_user}->user);
 	$state->say("Fetch user: #1", $state->{fetch_user}->user);
 	$state->say("Log user: #1", $state->{log_user}->user);
-	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
+	$state->say("Unpriv user#1: #2", 
+	    $state->{base_user}{uid} == 0 ? "" : "(unused)",
+	    $state->{unpriv_user}->user);
 
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
