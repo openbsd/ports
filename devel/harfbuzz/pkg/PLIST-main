@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/12/05 10:38:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/03/11 08:12:58 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
+@bin bin/hb-subset
 @bin bin/hb-view
 include/harfbuzz/
 include/harfbuzz/hb-blob.h
@@ -26,18 +27,29 @@ include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
+include/harfbuzz/hb-subset-glyf.hh
+include/harfbuzz/hb-subset-plan.hh
+include/harfbuzz/hb-subset-private.hh
+include/harfbuzz/hb-subset.h
 include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-version.h
 include/harfbuzz/hb.h
+lib/cmake/
+lib/cmake/harfbuzz/
+lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/
 lib/girepository-1.0/HarfBuzz-0.0.typelib
 lib/libharfbuzz-gobject.a
 lib/libharfbuzz-gobject.la
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
+lib/libharfbuzz-subset.a
+lib/libharfbuzz-subset.la
+@lib lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}
 lib/libharfbuzz.a
 lib/libharfbuzz.la
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
 lib/pkgconfig/harfbuzz-gobject.pc
+lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz.pc
 share/gir-1.0/
 share/gir-1.0/HarfBuzz-0.0.gir
