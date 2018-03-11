@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/04/09 12:16:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/03/11 12:17:19 jasper Exp $
 include/clutter-gst-${API_VERSION}/
 include/clutter-gst-${API_VERSION}/clutter-gst/
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-aspectratio.h
@@ -16,7 +16,7 @@ include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-version.h
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-video-sink.h
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst.h
 lib/girepository-1.0/ClutterGst-${API_VERSION}.typelib
-lib/gstreamer-1.0/libgstclutter-${API_VERSION}.so
+lib/gstreamer-1.0/libcluttergst3.so
 lib/libclutter-gst-${API_VERSION}.a
 lib/libclutter-gst-${API_VERSION}.la
 @lib lib/libclutter-gst-${API_VERSION}.so.${LIBclutter-gst-3.0_VERSION}
@@ -51,7 +51,6 @@ share/gtk-doc/html/clutter-gst-${API_VERSION}/index.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/clutter-gst-${API_VERSION}/left.png
 share/gtk-doc/html/clutter-gst-${API_VERSION}/license.html
-share/gtk-doc/html/clutter-gst-${API_VERSION}/profile.txt
 share/gtk-doc/html/clutter-gst-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/clutter-gst-${API_VERSION}/right.png
 share/gtk-doc/html/clutter-gst-${API_VERSION}/style.css
