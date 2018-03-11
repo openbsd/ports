@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/30 17:24:36 feinerer Exp $
+# $OpenBSD: Makefile,v 1.20 2018/03/11 18:48:59 feinerer Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.6
+V =			0.5.8
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
 
 WANTLIB-main += SDL2 X11 Xext avahi-client avahi-common avcodec avdevice
-WANTLIB-main += avformat avutil c gsm m mpg123 opus png pthread re
-WANTLIB-main += rem sndfile sndio spandsp speex speexdsp swscale twolame
-WANTLIB-main += v4l2 vpx x264 x265
+WANTLIB-main += avformat avutil c gsm m mosquitto mpg123 opus png pthread
+WANTLIB-main += re rem sndfile sndio spandsp speex speexdsp swscale
+WANTLIB-main += twolame v4l2 vpx x264 x265
 
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
@@ -33,11 +33,12 @@ LIB_DEPENDS-main =	audio/gsm \
 			multimedia/libv4l \
 			multimedia/libvpx>=1.3.0 \
 			net/avahi \
-			telephony/baresip/re>=0.5.4 \
-			telephony/baresip/rem>=0.5.0 \
+			net/mosquitto \
+			telephony/baresip/re>=0.5.7 \
+			telephony/baresip/rem>=0.5.2 \
 			telephony/spandsp
 LIB_DEPENDS-gtk2 =	multimedia/gstreamer1/plugins-base \
-			telephony/baresip/re>=0.5.4 \
+			telephony/baresip/re>=0.5.7 \
 			x11/gtk+2,-main
 RUN_DEPENDS-gtk2 =	telephony/baresip/baresip,-main>=$V \
 
@@ -46,6 +47,7 @@ MAKE_ENV +=		LIBRE_INC=${LOCALBASE}/include/re \
 
 MAKE_FLAGS +=		MOD_AUTODETECT= \
 			EXTRA_MODULES="echo snapshot sndio swscale" \
+			HAVE_LIBMQTT=yes \
 			HAVE_LIBV4L2=yes \
 			HAVE_SPEEXDSP=yes \
 			USE_AMR=yes \
