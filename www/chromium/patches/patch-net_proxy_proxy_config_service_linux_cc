@@ -1,26 +1,27 @@
-$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.12 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.13 2018/03/12 13:48:34 robert Exp $
+
 Index: net/proxy/proxy_config_service_linux.cc
 --- net/proxy/proxy_config_service_linux.cc.orig
 +++ net/proxy/proxy_config_service_linux.cc
-@@ -11,7 +11,9 @@
+@@ -6,7 +6,9 @@
+ 
+ #include <errno.h>
  #include <limits.h>
- #include <stdio.h>
- #include <stdlib.h>
 +#if !defined(OS_BSD)
  #include <sys/inotify.h>
 +#endif
  #include <unistd.h>
  
  #include <map>
-@@ -865,6 +867,7 @@ int StringToIntOrDefault(base::StringPiece value, int 
+@@ -483,6 +485,7 @@ int StringToIntOrDefault(base::StringPiece value, int 
    return default_value;
  }
  
 +#if !defined(OS_BSD)
- // This is the KDE version that reads kioslaverc and simulates gconf.
+ // This is the KDE version that reads kioslaverc and simulates gsettings.
  // Doing this allows the main Delegate code, as well as the unit tests
  // for it, to stay the same - and the settings map fairly well besides.
-@@ -1358,6 +1361,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -976,6 +979,7 @@ class SettingGetterImplKDE : public ProxyConfigService
  
    DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
  };
@@ -28,7 +29,7 @@ Index: net/proxy/proxy_config_service_linux.cc
  
  }  // namespace
  
-@@ -1560,8 +1564,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1173,8 +1177,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

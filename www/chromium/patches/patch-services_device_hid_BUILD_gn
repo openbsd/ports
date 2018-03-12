@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.1 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.2 2018/03/12 13:48:34 robert Exp $
 
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -42,6 +42,13 @@ source_set("hid") {
+@@ -41,6 +41,13 @@ source_set("hid") {
      "//services/device/public/interfaces",
    ]
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-base_threading_platform_thread_h,v 1.4 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_h,v 1.5 2018/03/12 13:48:34 robert Exp $
 Index: base/threading/platform_thread.h
 --- base/threading/platform_thread.h.orig
 +++ base/threading/platform_thread.h
-@@ -221,7 +221,7 @@ class BASE_EXPORT PlatformThread {
+@@ -217,7 +217,7 @@ class BASE_EXPORT PlatformThread {
  
    static ThreadPriority GetCurrentThreadPriority();
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.5 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.6 2018/03/12 13:48:34 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -84,7 +84,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
+@@ -89,7 +89,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

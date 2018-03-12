@@ -1,4 +1,4 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.23 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.24 2018/03/12 13:48:34 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3235,7 +3235,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -3243,7 +3243,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -57,7 +57,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3716,7 +3716,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3724,7 +3724,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

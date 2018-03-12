@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.75 2018/01/30 07:57:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.76 2018/03/12 13:48:34 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -203,8 +203,6 @@ chrome/resources/inspector/animation/
 chrome/resources/inspector/animation/animation_module.js
 chrome/resources/inspector/application_test_runner/
 chrome/resources/inspector/application_test_runner/application_test_runner_module.js
-chrome/resources/inspector/audits/
-chrome/resources/inspector/audits/audits_module.js
 chrome/resources/inspector/audits2/
 chrome/resources/inspector/audits2/audits2_module.js
 chrome/resources/inspector/audits2_test_runner/
@@ -212,8 +210,6 @@ chrome/resources/inspector/audits2_test_runner/audits2_test_runner_module.js
 chrome/resources/inspector/audits2_worker/
 chrome/resources/inspector/audits2_worker.js
 chrome/resources/inspector/audits2_worker/audits2_worker_module.js
-chrome/resources/inspector/audits_test_runner/
-chrome/resources/inspector/audits_test_runner/audits_test_runner_module.js
 chrome/resources/inspector/bindings_test_runner/
 chrome/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
 chrome/resources/inspector/changes/

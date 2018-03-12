@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.12 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.13 2018/03/12 13:48:34 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
 +++ base/process/process_metrics.h
-@@ -103,7 +103,7 @@ struct CommittedKBytes {
+@@ -110,7 +110,7 @@ struct CommittedKBytes {
    size_t image;
  };
  
@@ -12,25 +12,25 @@ Index: base/process/process_metrics.h
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -245,7 +245,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -252,7 +252,7 @@ class BASE_EXPORT ProcessMetrics {
    // otherwise.
    bool GetIOCounters(IoCounters* io_counters) const;
  
--#if defined(OS_LINUX) || defined(OS_AIX)
-+#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_AIX) || defined(OS_ANDROID) || defined(OS_BSD)
    // Returns the number of file descriptors currently open by the process, or
    // -1 on error.
    int GetOpenFdCount() const;
-@@ -255,7 +255,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -262,7 +262,7 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
- #endif  // defined(OS_LINUX) || defined(OS_AIX)
+ #endif  // defined(OS_LINUX) || defined(OS_AIX) || defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
  
-@@ -282,7 +282,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -289,7 +289,7 @@ class BASE_EXPORT ProcessMetrics {
    bool GetWorkingSetKBytesTotmaps(WorkingSetKBytes *ws_usage) const;
  #endif
  
@@ -39,7 +39,7 @@ Index: base/process/process_metrics.h
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
  #if defined(OS_MACOSX)
-@@ -303,7 +303,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -310,7 +310,7 @@ class BASE_EXPORT ProcessMetrics {
    TimeTicks last_cpu_time_;
    int64_t last_system_time_;
  
@@ -48,7 +48,7 @@ Index: base/process/process_metrics.h
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -351,7 +351,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+@@ -358,7 +358,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
  #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -57,7 +57,7 @@ Index: base/process/process_metrics.h
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -384,7 +384,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -391,7 +391,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int avail_phys = 0;
  #endif
  
@@ -66,7 +66,7 @@ Index: base/process/process_metrics.h
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -399,7 +399,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -406,7 +406,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \
@@ -75,7 +75,7 @@ Index: base/process/process_metrics.h
    int buffers = 0;
    int cached = 0;
    int active_anon = 0;
-@@ -437,7 +437,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
+@@ -444,7 +444,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
          // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
  

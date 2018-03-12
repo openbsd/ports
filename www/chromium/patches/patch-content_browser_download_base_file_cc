@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_download_base_file_cc,v 1.15 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.16 2018/03/12 13:48:34 robert Exp $
 Index: content/browser/download/base_file.cc
 --- content/browser/download/base_file.cc.orig
 +++ content/browser/download/base_file.cc
-@@ -437,7 +437,7 @@ DownloadInterruptReason BaseFile::LogInterruptReason(
+@@ -438,7 +438,7 @@ DownloadInterruptReason BaseFile::LogInterruptReason(
    return reason;
  }
  

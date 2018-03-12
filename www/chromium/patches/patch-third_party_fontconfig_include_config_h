@@ -1,0 +1,85 @@
+$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.1 2018/03/12 13:48:34 robert Exp $
+
+Index: third_party/fontconfig/include/config.h
+--- third_party/fontconfig/include/config.h.orig
++++ third_party/fontconfig/include/config.h
+@@ -14,13 +14,13 @@
+ #define ENABLE_LIBXML2 1
+ 
+ /* Additional font directories */
+-#define FC_ADD_FONTS "yes"
++#define FC_ADD_FONTS "/usr/local/share/fonts"     
+ 
+ /* Architecture prefix to use for cache file names */
+ /* #undef FC_ARCHITECTURE */
+ 
+ /* System font directory */
+-#define FC_DEFAULT_FONTS "/usr/share/fonts"
++#define FC_DEFAULT_FONTS "/usr/X11R6/lib/X11/fonts"
+ 
+ /* The type of len parameter of the gperf hash/lookup function */
+ #define FC_GPERF_SIZE_T unsigned int
+@@ -87,7 +87,7 @@
+ #define HAVE_GETPAGESIZE 1
+ 
+ /* Define to 1 if you have the `getprogname' function. */
+-/* #undef HAVE_GETPROGNAME */
++#define HAVE_GETPROGNAME 1
+ 
+ /* Have Intel __sync_* atomic primitives */
+ #define HAVE_INTEL_ATOMIC_PRIMITIVES 1
+@@ -123,7 +123,7 @@
+ /* #undef HAVE_NDIR_H */
+ 
+ /* Define to 1 if you have the 'posix_fadvise' function. */
+-#define HAVE_POSIX_FADVISE 1
++#define HAVE_POSIX_FADVISE 0
+ 
+ /* Have POSIX threads */
+ #define HAVE_PTHREAD 1
+@@ -138,7 +138,7 @@
+ #define HAVE_RANDOM 1
+ 
+ /* Define to 1 if you have the `random_r' function. */
+-#define HAVE_RANDOM_R 1
++/* #undef HAVE_RANDOM_R */
+ 
+ /* Define to 1 if you have the `rand_r' function. */
+ #define HAVE_RAND_R 1
+@@ -174,7 +174,7 @@
+ #define HAVE_STRUCT_STATFS_F_FLAGS 1
+ 
+ /* Define to 1 if `f_fstypename' is a member of `struct statfs'. */
+-/* #undef HAVE_STRUCT_STATFS_F_FSTYPENAME */
++#define HAVE_STRUCT_STATFS_F_FSTYPENAME 1
+ 
+ /* Define to 1 if `f_basetype' is a member of `struct statvfs'. */
+ /* #undef HAVE_STRUCT_STATVFS_F_BASETYPE */
+@@ -200,7 +200,7 @@
+ #define HAVE_SYS_PARAM_H 1
+ 
+ /* Define to 1 if you have the <sys/statfs.h> header file. */
+-#define HAVE_SYS_STATFS_H 1
++/* #undef HAVE_SYS_STATFS_H */
+ 
+ /* Define to 1 if you have the <sys/statvfs.h> header file. */
+ #define HAVE_SYS_STATVFS_H 1
+@@ -212,7 +212,7 @@
+ #define HAVE_SYS_TYPES_H 1
+ 
+ /* Define to 1 if you have the <sys/vfs.h> header file. */
+-#define HAVE_SYS_VFS_H 1
++/* #undef HAVE_SYS_VFS_H */
+ 
+ /* Define to 1 if `usLowerOpticalPointSize' is a member of `TT_OS2'. */
+ #define HAVE_TT_OS2_USLOWEROPTICALPOINTSIZE 1
+@@ -238,7 +238,8 @@
+ /* Define to 1 if you have the `_mktemp_s' function. */
+ /* #undef HAVE__MKTEMP_S */
+ 
+-/* Define to the sub-directory where libtool stores uninstalled libraries. */
++/* Define to the sub-directory in which libtool stores uninstalled libraries.
++   */
+ #define LT_OBJDIR ".libs/"
+ 
+ /* Name of package */

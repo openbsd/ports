@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Surface_cpp,v 1.2 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Surface_cpp,v 1.3 2018/03/12 13:48:34 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig
@@ -12,7 +12,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
  #include "Main/libX11.hpp"
  #elif defined(_WIN32)
  #include <tchar.h>
-@@ -286,7 +286,7 @@ bool WindowSurface::checkForResize()
+@@ -284,7 +284,7 @@ bool WindowSurface::checkForResize()
  	#elif defined(__ANDROID__)
  		int windowWidth;  window->query(window, NATIVE_WINDOW_WIDTH, &windowWidth);
  		int windowHeight; window->query(window, NATIVE_WINDOW_HEIGHT, &windowHeight);

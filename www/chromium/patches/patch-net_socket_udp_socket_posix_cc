@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.9 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.10 2018/03/12 13:48:34 robert Exp $
 
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
@@ -12,7 +12,7 @@ Index: net/socket/udp_socket_posix.cc
  
  // When enabling multicast using setsockopt(IP_MULTICAST_IF) MacOS and Fuchsia
  // require passing IPv4 address instead of interface index. This function
-@@ -647,13 +647,16 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
+@@ -654,13 +654,16 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;
@@ -30,7 +30,7 @@ Index: net/socket/udp_socket_posix.cc
    rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
    if (rv != 0)
      return MapSystemError(errno);
-@@ -860,7 +863,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -867,7 +870,7 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -39,7 +39,7 @@ Index: net/socket/udp_socket_posix.cc
          ip_mreq mreq;
          int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                              &mreq.imr_interface.s_addr);
-@@ -872,7 +875,12 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -879,7 +882,12 @@ int UDPSocketPosix::SetMulticastOptions() {
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
  #endif  //  !defined(OS_MACOSX) && !defined(OS_FUCHSIA)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
@@ -52,7 +52,7 @@ Index: net/socket/udp_socket_posix.cc
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -934,7 +942,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -941,7 +949,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

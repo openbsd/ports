@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.8 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.9 2018/03/12 13:48:34 robert Exp $
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
 +++ sandbox/linux/BUILD.gn
@@ -18,7 +18,7 @@ Index: sandbox/linux/BUILD.gn
  }
  
  if (is_nacl_nonsfi) {
-@@ -392,7 +392,7 @@ component("sandbox_services") {
+@@ -393,7 +393,7 @@ component("sandbox_services") {
      public_deps += [ ":sandbox_services_headers" ]
    }
  
@@ -27,7 +27,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
  
      sources -= [
-@@ -400,6 +400,8 @@ component("sandbox_services") {
+@@ -401,6 +401,8 @@ component("sandbox_services") {
        "services/init_process_reaper.h",
        "services/scoped_process.cc",
        "services/scoped_process.h",

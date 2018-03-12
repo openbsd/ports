@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.5 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.6 2018/03/12 13:48:34 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -50,7 +50,7 @@ extern const base::Feature kAsyncDns;
+@@ -51,7 +51,7 @@ extern const base::Feature kAsyncDns;
  extern const base::Feature kAutomaticTabDiscarding;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

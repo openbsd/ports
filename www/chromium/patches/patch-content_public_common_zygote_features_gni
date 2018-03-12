@@ -1,0 +1,11 @@
+$OpenBSD: patch-content_public_common_zygote_features_gni,v 1.1 2018/03/12 13:48:34 robert Exp $
+
+Index: content/public/common/zygote_features.gni
+--- content/public/common/zygote_features.gni.orig
++++ content/public/common/zygote_features.gni
+@@ -2,4 +2,4 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-use_zygote_handle = is_posix && !is_android && !is_mac && !is_fuchsia
++use_zygote_handle = is_posix && !is_android && !is_mac && !is_fuchsia && !is_openbsd

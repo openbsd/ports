@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.8 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.9 2018/03/12 13:48:34 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc
-@@ -79,7 +79,7 @@ void CollectGraphicsInfo(GPUInfo* gpu_info) {
+@@ -84,7 +84,7 @@ void CollectGraphicsInfo(GPUInfo* gpu_info) {
  }
  #endif  // defined(OS_MACOSX)
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -183,7 +183,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -179,7 +179,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    sandbox_helper_->PreSandboxStartup();
  
    bool attempted_startsandbox = false;

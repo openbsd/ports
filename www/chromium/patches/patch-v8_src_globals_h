@@ -1,16 +1,17 @@
-$OpenBSD: patch-v8_src_globals_h,v 1.21 2018/02/02 05:44:34 robert Exp $
+$OpenBSD: patch-v8_src_globals_h,v 1.22 2018/03/12 13:48:34 robert Exp $
+
 Index: v8/src/globals.h
 --- v8/src/globals.h.orig
 +++ v8/src/globals.h
-@@ -194,7 +194,11 @@ const size_t kCodeRangeAreaAlignment = 256 * MB;
- const size_t kMaximalCodeRangeSize = 512 * MB;
- const size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
+@@ -195,7 +195,11 @@ constexpr size_t kCodeRangeAreaAlignment = 256 * MB;
+ constexpr size_t kMaximalCodeRangeSize = 512 * MB;
+ constexpr size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
  #else
 +#if defined(__OpenBSD__)
- const size_t kMaximalCodeRangeSize = 512 * MB;
+ constexpr size_t kMaximalCodeRangeSize = 512 * MB;
 +#else
-+const size_t kMaximalCodeRangeSize = 512 * MB;
++constexpr size_t kMaximalCodeRangeSize = 512 * MB;
 +#endif
- const size_t kCodeRangeAreaAlignment = 4 * KB;  // OS page.
+ constexpr size_t kCodeRangeAreaAlignment = 4 * KB;  // OS page.
  #endif
  #if V8_OS_WIN

@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.25 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.26 2018/03/12 13:48:34 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
 @@ -76,7 +76,7 @@
- #include "ui/gfx/x/x11_switches.h"  // nogncheck
+ #include "ui/gfx/x/x11_switches.h"    // nogncheck
  #endif
  
 -#if defined(OS_LINUX)
@@ -12,17 +12,17 @@ Index: content/gpu/gpu_main.cc
  #include "content/common/font_config_ipc_linux.h"
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/common_sandbox_support_linux.h"
-@@ -94,6 +94,10 @@
- #include "ui/ozone/public/ozone_platform.h"
+@@ -85,6 +85,10 @@
+ #include "third_party/skia/include/ports/SkFontConfigInterface.h"
  #endif
  
 +#if defined(OS_BSD)
 +#include "content/common/sandbox_init_openbsd.h"
 +#endif
 +
- #if BUILDFLAG(USE_VAAPI)
- #include "media/gpu/vaapi_wrapper.h"
- #endif
+ #if defined(OS_MACOSX)
+ #include "base/message_loop/message_pump_mac.h"
+ #include "services/service_manager/sandbox/mac/sandbox_mac.h"
 @@ -102,7 +106,7 @@ namespace content {
  
  namespace {
@@ -41,7 +41,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -321,7 +325,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -323,7 +327,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
    if (command_line.HasSwitch(switches::kEnableOOPRasterization)) {
      SkGraphics::Init();
@@ -50,7 +50,7 @@ Index: content/gpu/gpu_main.cc
      // Set up the font IPC so that the GPU process can create typefaces.
      SkFontConfigInterface::SetGlobal(new FontConfigIPC(GetSandboxFD()))
          ->unref();
-@@ -340,12 +344,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -342,12 +346,13 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -65,29 +65,23 @@ Index: content/gpu/gpu_main.cc
    if (watchdog_thread) {
      // SandboxLinux needs to be able to ensure that the thread
      // has really been stopped.
-@@ -364,18 +369,24 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
-   sandbox_options.vaapi_accelerated_video_encode_enabled =
-       !gpu_prefs.disable_vaapi_accelerated_video_encode;
- #endif
+@@ -363,7 +368,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+       !gpu_prefs.disable_accelerated_video_decode;
+   sandbox_options.accelerated_video_encode_enabled =
+       !gpu_prefs.disable_accelerated_video_encode;
 +#endif
  
 +#if !defined(OS_BSD)
    bool res = service_manager::SandboxLinux::GetInstance()->InitializeSandbox(
        service_manager::SandboxTypeFromCommandLine(
            *base::CommandLine::ForCurrentProcess()),
-       base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
-+#endif
- 
-+#if !defined(OS_BSD)
-   if (watchdog_thread) {
-     base::Thread::Options thread_options;
+@@ -374,6 +381,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
      thread_options.timer_slack = base::TIMER_SLACK_MAXIMUM;
      watchdog_thread->StartWithOptions(thread_options);
    }
--
 +#else
 +  bool res = InitializeSandbox();
 +#endif
+ 
    return res;
  }
- #endif  // defined(OS_LINUX)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.27 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.28 2018/03/12 13:48:34 robert Exp $
 
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -83,7 +83,7 @@
+@@ -76,7 +76,7 @@
  #include "ui/base/clipboard/clipboard_types.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -216,7 +216,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -209,7 +209,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -425,7 +425,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -410,7 +410,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -853,7 +853,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -829,7 +829,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

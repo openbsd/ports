@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.23 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.24 2018/03/12 13:48:34 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -174,7 +174,7 @@
+@@ -171,7 +171,7 @@
  #include "chrome/browser/media/webrtc/webrtc_log_uploader.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/browser_process_impl.cc
  #include "chrome/browser/resource_coordinator/tab_manager.h"
  #endif
  
-@@ -818,7 +818,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
+@@ -807,7 +807,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
  
  resource_coordinator::TabManager* BrowserProcessImpl::GetTabManager() {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);

@@ -1,18 +1,26 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.2 2018/03/12 13:48:34 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.cc
 --- ui/gfx/native_pixmap_handle.cc.orig
 +++ ui/gfx/native_pixmap_handle.cc
-@@ -4,7 +4,7 @@
+@@ -4,14 +4,14 @@
  
  #include "ui/gfx/native_pixmap_handle.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <drm_fourcc.h>
  #include "base/posix/eintr_wrapper.h"
  #endif
  
-@@ -29,7 +29,7 @@ NativePixmapHandle::NativePixmapHandle(const NativePix
+ namespace gfx {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ static_assert(NativePixmapPlane::kNoModifier == DRM_FORMAT_MOD_INVALID,
+               "gfx::NativePixmapPlane::kNoModifier should be an alias for"
+               "DRM_FORMAT_MOD_INVALID");
+@@ -36,7 +36,7 @@ NativePixmapHandle::NativePixmapHandle(const NativePix
  
  NativePixmapHandle::~NativePixmapHandle() {}
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_message_center_views_toast_contents_view_cc,v 1.5 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-ui_message_center_views_toast_contents_view_cc,v 1.6 2018/03/12 13:48:34 robert Exp $
 Index: ui/message_center/views/toast_contents_view.cc
 --- ui/message_center/views/toast_contents_view.cc.orig
 +++ ui/message_center/views/toast_contents_view.cc
-@@ -377,7 +377,7 @@ void ToastContentsView::CreateWidget(
+@@ -342,7 +342,7 @@ void ToastContentsView::CreateWidget(
      PopupAlignmentDelegate* alignment_delegate) {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.keep_on_top = true;

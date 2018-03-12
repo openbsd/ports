@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.14 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.15 2018/03/12 13:48:34 robert Exp $
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -351,7 +351,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -356,7 +356,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
    std::unique_ptr<ChromeDeviceClient> device_client_;
  

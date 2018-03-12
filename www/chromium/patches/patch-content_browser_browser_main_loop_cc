@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.50 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.51 2018/03/12 13:48:34 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -206,7 +206,7 @@
+@@ -212,7 +212,7 @@
  #include "base/fuchsia/default_job.h"
  #endif  // defined(OS_FUCHSIA)
  
@@ -12,7 +12,7 @@ Index: content/browser/browser_main_loop.cc
  #include "content/browser/sandbox_host_linux.h"
  #include "content/browser/zygote_host/zygote_host_impl_linux.h"
  
-@@ -244,6 +244,11 @@
+@@ -254,6 +254,11 @@
  #include "services/ui/common/image_cursors_set.h"
  #endif
  
@@ -24,16 +24,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -253,7 +258,7 @@ namespace content {
- namespace {
- 
- #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
--    !defined(OS_FUCHSIA)
-+    !defined(OS_FUCHSIA) && !defined(OS_BSD)
- void SetupSandbox(const base::CommandLine& parsed_command_line) {
-   TRACE_EVENT0("startup", "SetupSandbox");
-   // SandboxHostLinux needs to be initialized even if the sandbox and
-@@ -619,10 +624,15 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -655,10 +660,15 @@ int BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.6 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.7 2018/03/12 13:48:34 robert Exp $
 Index: content/zygote/zygote_main_linux.cc
 --- content/zygote/zygote_main_linux.cc.orig
 +++ content/zygote/zygote_main_linux.cc
@@ -12,7 +12,7 @@ Index: content/zygote/zygote_main_linux.cc
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -139,7 +141,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
+@@ -140,7 +142,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
    } else {
      base::AutoLock lock(g_timezones_lock.Get());
      auto ret_pair = g_timezones.Get().insert(timezone);

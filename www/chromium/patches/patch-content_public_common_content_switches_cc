@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.26 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.27 2018/03/12 13:48:34 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -1004,7 +1004,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
-     "disable-vaapi-accelerated-video-encode";
+@@ -991,7 +991,7 @@ const char kDisableAudioSupportForDesktopShare[] =
+ const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_httpcommon_cc,v 1.1 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_httpcommon_cc,v 1.2 2018/03/12 13:48:34 robert Exp $
 
 Index: third_party/webrtc/rtc_base/httpcommon.cc
 --- third_party/webrtc/rtc_base/httpcommon.cc.orig
 +++ third_party/webrtc/rtc_base/httpcommon.cc
-@@ -384,7 +384,7 @@ bool HttpDateToSeconds(const std::string& date, time_t
+@@ -357,7 +357,7 @@ bool HttpDateToSeconds(const std::string& date, time_t
      gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
    }
    // TODO: Android should support timezone, see b/2441195

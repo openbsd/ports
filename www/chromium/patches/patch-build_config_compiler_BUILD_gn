@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.15 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.16 2018/03/12 13:48:34 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -12,16 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -223,7 +223,7 @@ config("compiler") {
-     # Linker warnings.
-     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
-         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
--        current_os != "aix") {
-+        current_os != "aix" && !is_openbsd) {
-       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
-       # crbug.com/485542
-@@ -278,7 +278,7 @@ config("compiler") {
+@@ -314,7 +314,7 @@ config("compiler") {
        }
      }
  
@@ -30,7 +21,7 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -322,13 +322,12 @@ config("compiler") {
+@@ -360,13 +360,12 @@ config("compiler") {
      cflags += [ "-pipe" ]
  
      ldflags += [
@@ -45,7 +36,7 @@ Index: build/config/compiler/BUILD.gn
        # Functions interposed by the sanitizers can make ld think
        # that some libraries aren't needed when they actually are,
        # http://crbug.com/234010. As workaround, disable --as-needed.
-@@ -425,7 +424,7 @@ config("compiler") {
+@@ -469,7 +468,7 @@ config("compiler") {
    # TODO(hans): Remove this once Clang generates better optimized debug info by
    # default. https://crbug.com/765793
    if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
@@ -54,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        "-Xclang",
        "-mllvm",
-@@ -1280,27 +1279,8 @@ config("default_warnings") {
+@@ -1317,27 +1316,8 @@ config("default_warnings") {
          # TODO(hans): https://crbug.com/637306
          "-Wno-address-of-packed-member",
  
@@ -82,7 +73,7 @@ Index: build/config/compiler/BUILD.gn
        ]
      } else if (use_xcode_clang) {
        cflags += [
-@@ -1920,7 +1900,7 @@ config("symbols") {
+@@ -1952,7 +1932,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
@@ -91,3 +82,12 @@ Index: build/config/compiler/BUILD.gn
      }
      if (use_debug_fission && !is_nacl) {
        cflags += [ "-gsplit-dwarf" ]
+@@ -2052,7 +2032,7 @@ config("default_fatal_linker_warnings") {
+   if (!is_win && fatal_linker_warnings &&
+       !(is_chromeos && current_cpu == "arm") &&
+       !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-      current_os != "aix") {
++      current_os != "aix" && !is_openbsd) {
+     # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+     # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+     # crbug.com/485542

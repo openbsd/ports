@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.24 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.25 2018/03/12 13:48:34 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -223,12 +223,21 @@
+@@ -215,12 +215,21 @@
  #include "content/common/external_ipc_dumper.h"
  #endif
  
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -972,7 +981,7 @@ void RenderThreadImpl::Init(
+@@ -968,7 +977,7 @@ void RenderThreadImpl::Init(
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
@@ -34,7 +34,7 @@ Index: content/renderer/render_thread_impl.cc
    render_message_filter()->SetThreadPriority(
        ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
    render_message_filter()->SetThreadPriority(
-@@ -1183,7 +1192,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
+@@ -1181,7 +1190,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
        FROM_HERE,
        base::BindOnce(base::IgnoreResult(&ThreadRestrictions::SetIOAllowed),
                       false));
@@ -43,8 +43,8 @@ Index: content/renderer/render_thread_impl.cc
    render_message_filter()->SetThreadPriority(compositor_thread_->ThreadId(),
                                               base::ThreadPriority::DISPLAY);
  #endif
-@@ -1498,7 +1507,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
-       !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode);
+@@ -1491,7 +1500,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+        gpu::kGpuFeatureStatusEnabled);
    const bool enable_gpu_memory_buffer_video_frames =
        !is_gpu_compositing_disabled_ &&
 -#if defined(OS_MACOSX) || defined(OS_LINUX)
