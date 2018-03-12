@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: logfmon.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: logfmon.rc,v 1.3 2018/03/12 21:51:22 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/logfmon"
+daemon="${TRUEPREFIX}/bin/logfmon"
 
 . /etc/rc.d/rc.subr
 
