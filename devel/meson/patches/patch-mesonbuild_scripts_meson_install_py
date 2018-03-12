@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_scripts_meson_install_py,v 1.2 2017/10/09 07:40:25 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_scripts_meson_install_py,v 1.3 2018/03/12 07:44:14 ajacoutot Exp $
 
 Do not install compressed manpages
 
@@ -14,8 +14,8 @@ Index: mesonbuild/scripts/meson_install.py
  import shlex
  from glob import glob
  from . import depfixer
-@@ -224,16 +224,7 @@ def install_man(d):
-         outdir = os.path.split(outfilename)[0]
+@@ -242,16 +242,7 @@ def install_man(d):
+         outdir = os.path.dirname(outfilename)
          d.dirmaker.makedirs(outdir, exist_ok=True)
          print('Installing %s to %s' % (full_source_filename, outdir))
 -        if outfilename.endswith('.gz') and not full_source_filename.endswith('.gz'):

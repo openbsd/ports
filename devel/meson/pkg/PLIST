@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/12/11 19:50:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/03/12 07:44:14 ajacoutot Exp $
 bin/meson
 bin/mesonconf
 bin/mesonintrospect
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}linkers.${MO
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mesonlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mesonmain.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}minit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mintro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mlog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mparser.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,11 +78,13 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}boost.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}dev.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/base.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/boost.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/dev.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/misc.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/platform.py
@@ -93,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/linkers.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mconf.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mesonlib.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mesonmain.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/minit.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mintro.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mlog.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/
@@ -108,6 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt.$
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}rpm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_icestorm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}unstable_simd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/gnome.py
@@ -119,6 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt4.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt5.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/rpm.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_icestorm.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_simd.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/windows.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mparser.py
