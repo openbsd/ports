@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/09/01 10:37:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/03/12 22:49:54 sthen Exp $
 @pkgpath x11/tint
 @bin bin/tint2
 @bin bin/tint2conf
@@ -19,28 +19,14 @@ share/doc/tint2/html/manual.html
 share/doc/tint2/html/readme.html
 share/doc/tint2/tint2.md
 share/examples/tint2/
-@sample ${SYSCONFDIR}/xdg
+@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/tint2/
 share/examples/tint2/horizontal-dark-opaque.tint2rc
 share/examples/tint2/horizontal-dark-transparent.tint2rc
+share/examples/tint2/horizontal-icon-only.tint2rc
 share/examples/tint2/horizontal-light-opaque.tint2rc
 share/examples/tint2/horizontal-light-transparent.tint2rc
-share/examples/tint2/icon_and_text_1.tint2rc
-share/examples/tint2/icon_and_text_2.tint2rc
-share/examples/tint2/icon_and_text_3.tint2rc
-share/examples/tint2/icon_and_text_4.tint2rc
-share/examples/tint2/icon_only_1.tint2rc
-share/examples/tint2/icon_only_2.tint2rc
-share/examples/tint2/icon_only_3.tint2rc
-share/examples/tint2/icon_only_4.tint2rc
-share/examples/tint2/icon_only_6.tint2rc
-share/examples/tint2/icon_only_7.tint2rc
-share/examples/tint2/text_only_1.tint2rc
-share/examples/tint2/text_only_2.tint2rc
-share/examples/tint2/text_only_3.tint2rc
-share/examples/tint2/text_only_4.tint2rc
-share/examples/tint2/text_only_5.tint2rc
-share/examples/tint2/text_only_6.tint2rc
+share/examples/tint2/horizontal-text-only.tint2rc
 share/examples/tint2/tint2rc
 @sample ${SYSCONFDIR}/xdg/tint2/tint2rc
 share/examples/tint2/vertical-dark-opaque.tint2rc
@@ -51,6 +37,7 @@ share/examples/tint2/vertical-neutral-icons.tint2rc
 share/icons/hicolor/scalable/apps/tint2.svg
 share/icons/hicolor/scalable/apps/tint2conf.svg
 share/locale/bs/LC_MESSAGES/tint2conf.mo
+share/locale/es/LC_MESSAGES/tint2conf.mo
 share/locale/fr/LC_MESSAGES/tint2conf.mo
 share/locale/hr/LC_MESSAGES/tint2conf.mo
 share/locale/pl/LC_MESSAGES/tint2conf.mo

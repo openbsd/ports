@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/01 10:37:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/03/12 22:49:54 sthen Exp $
 
 COMMENT=	freedesktop-compliant panel
 
-V=		0.14.6
+V=		16.2
 CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
-WRKDIST=	${WRKDIR}/tint2-v$V-8046600a552774253939b8a83bdd3fc0e60dacec
+WRKDIST=	${WRKDIR}/tint2-v$V-b810bad93ff65854137fbd2f344ad2f99338008f
 
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
 
@@ -38,9 +38,5 @@ MODGNOME_TOOLS+= desktop-file-utils \
 		shared-mime-info
 
 NO_TEST=	Yes
-
-post-install:
-	sed -i 's,/usr/share,${LOCALBASE}/share,g' \
-	    ${PREFIX}/share/examples/tint2/*tint2rc
 
 .include <bsd.port.mk>
