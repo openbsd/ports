@@ -1,47 +1,58 @@
-# $OpenBSD: Makefile,v 1.39 2018/02/18 14:36:30 bket Exp $
+# $OpenBSD: Makefile,v 1.40 2018/03/12 17:42:08 remi Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
+COMMENT-normalize =	liblognorm plugin for rsyslog
 COMMENT-pgsql =		PostgreSQL plugin for rsyslog
+COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
-MULTI_PACKAGES =	-main -mysql -pgsql
+MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.16.0
+V =			8.33.1
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
+PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
+PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
-REVISION-main =		4
-REVISION-mysql =	1
-REVISION-pgsql =	1
 
 HOMEPAGE =		http://www.rsyslog.com/
+
+MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main +=		c estr ffi gcrypt gmp gnutls gpg-error hogweed iconv
-WANTLIB-main +=		idn2 intl json-c nettle p11-kit pthread relp tasn1
-WANTLIB-main +=		unistring uuid z
+WANTLIB-main += 	c crypto curl estr fastjson ffi gcrypt gmp gnutls
+WANTLIB-main +=		gpg-error hogweed iconv idn2 intl nettle nghttp2
+WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
 
 WANTLIB-mysql +=	crypto m mysqlclient pthread ssl ${COMPILER_LIBCXX} z
 
-WANTLIB-pgsql +=	crypto pq ssl
+WANTLIB-normalize +=	estr fastjson lognorm pthread
 
-LIB_DEPENDS-main =	devel/json-c \
-			devel/libestr>=0.1.2 \
+WANTLIB-pgsql +=	crypto pq pthread ssl
+
+WANTLIB-elasticsearch +=	crypto curl m nghttp2 pthread ssl z
+
+LIB_DEPENDS-main =	devel/libfastjson \
+			devel/libestr \
+			net/curl \
 			security/libgcrypt \
 			security/gnutls \
-			sysutils/librelp>=1.2.9
+			sysutils/librelp>=1.2.14
 # XXX should port to using libc UUID functions
 LIB_DEPENDS-main +=	sysutils/e2fsprogs
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	${PKGNAME-main}:${PKGPATH},-main
+LIB_DEPENDS-normalize =	devel/liblognorm
+RUN_DEPENDS-normalize = ${PKGNAME-main}:${PKGPATH},-main
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
+RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 
 MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 			http://download.rsyslog.com/rsyslog/
@@ -51,8 +62,10 @@ LIBTOOL_FLAGS = 	--tag=disable-static
 CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mysql \
 			--enable-mail \
+			--enable-mmnormalize \
 			--enable-gnutls \
 			--enable-relp \
+			--enable-elasticsearch \
 			--disable-liblogging-stdlog
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
@@ -65,10 +78,5 @@ post-install:
 	    ${PREFIX}/share/examples/rsyslog/createDB_mysql.sql
 	${INSTALL_DATA} ${WRKSRC}/plugins/ompgsql/createDB.sql \
 	    ${PREFIX}/share/examples/rsyslog/createDB_pgsql.sql
-
-.if ${MACHINE_ARCH:Mi386}
-# 64-bit atomics
-CFLAGS += -march=i686
-.endif
 
 .include <bsd.port.mk>

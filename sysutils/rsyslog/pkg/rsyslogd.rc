@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: rsyslogd.rc,v 1.1 2018/03/12 17:42:08 remi Exp $
+
+daemon="${TRUEPREFIX}/sbin/rsyslogd"
+
+rc_reload=NO
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
