@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.92 2017/09/09 21:47:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2018/03/12 21:17:27 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.8.7
+DISTNAME=	nano-2.9.4
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	https://www.nano-editor.org/dist/v2.8/ \
+MASTER_SITES=	https://www.nano-editor.org/dist/v2.9/ \
 		${MASTER_SITE_GNU:=nano/}
+PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 LIB_DEPENDS=	devel/gettext
-WANTLIB=	c iconv intl ncursesw
+WANTLIB=	c curses iconv intl
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-libmagic
