@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/03/12 17:42:08 remi Exp $
+# $OpenBSD: Makefile,v 1.41 2018/03/13 06:05:34 remi Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -18,6 +18,7 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
+REVISION-main =		0
 
 HOMEPAGE =		http://www.rsyslog.com/
 

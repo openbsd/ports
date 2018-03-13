@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: rsyslogd.rc,v 1.1 2018/03/12 17:42:08 remi Exp $
+# $OpenBSD: rsyslogd.rc,v 1.2 2018/03/13 06:05:34 remi Exp $
 
 daemon="${TRUEPREFIX}/sbin/rsyslogd"
 
