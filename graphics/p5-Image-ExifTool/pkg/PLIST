@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/05/20 07:43:10 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/03/13 15:27:45 giovanni Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -31,6 +31,8 @@ ${P5SITE}/Image/ExifTool/Charset.pm
 ${P5SITE}/Image/ExifTool/Charset/Arabic.pm
 ${P5SITE}/Image/ExifTool/Charset/Baltic.pm
 ${P5SITE}/Image/ExifTool/Charset/Cyrillic.pm
+${P5SITE}/Image/ExifTool/Charset/DOSLatin1.pm
+${P5SITE}/Image/ExifTool/Charset/DOSLatinUS.pm
 ${P5SITE}/Image/ExifTool/Charset/Greek.pm
 ${P5SITE}/Image/ExifTool/Charset/Hebrew.pm
 ${P5SITE}/Image/ExifTool/Charset/JIS.pm
@@ -82,6 +84,7 @@ ${P5SITE}/Image/ExifTool/GIMP.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
 ${P5SITE}/Image/ExifTool/GeoTiff.pm
 ${P5SITE}/Image/ExifTool/Geotag.pm
+${P5SITE}/Image/ExifTool/GoPro.pm
 ${P5SITE}/Image/ExifTool/H264.pm
 ${P5SITE}/Image/ExifTool/HP.pm
 ${P5SITE}/Image/ExifTool/HTML.pm
@@ -168,6 +171,7 @@ ${P5SITE}/Image/ExifTool/PostScript.pm
 ${P5SITE}/Image/ExifTool/PrintIM.pm
 ${P5SITE}/Image/ExifTool/Qualcomm.pm
 ${P5SITE}/Image/ExifTool/QuickTime.pm
+${P5SITE}/Image/ExifTool/QuickTimeStream.pl
 ${P5SITE}/Image/ExifTool/README
 ${P5SITE}/Image/ExifTool/RIFF.pm
 ${P5SITE}/Image/ExifTool/RSRC.pm
@@ -176,6 +180,7 @@ ${P5SITE}/Image/ExifTool/Radiance.pm
 ${P5SITE}/Image/ExifTool/Rawzor.pm
 ${P5SITE}/Image/ExifTool/Real.pm
 ${P5SITE}/Image/ExifTool/Reconyx.pm
+${P5SITE}/Image/ExifTool/Red.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
 ${P5SITE}/Image/ExifTool/Samsung.pm
 ${P5SITE}/Image/ExifTool/Sanyo.pm
@@ -258,6 +263,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::GPS.3p
 @man man/man3p/Image::ExifTool::GeoTiff.3p
 @man man/man3p/Image::ExifTool::Geotag.3p
+@man man/man3p/Image::ExifTool::GoPro.3p
 @man man/man3p/Image::ExifTool::H264.3p
 @man man/man3p/Image::ExifTool::HP.3p
 @man man/man3p/Image::ExifTool::HTML.3p
@@ -343,6 +349,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::PrintIM.3p
 @man man/man3p/Image::ExifTool::Qualcomm.3p
 @man man/man3p/Image::ExifTool::QuickTime.3p
+@man man/man3p/Image::ExifTool::QuickTimeStream.3p
 @man man/man3p/Image::ExifTool::RIFF.3p
 @man man/man3p/Image::ExifTool::RSRC.3p
 @man man/man3p/Image::ExifTool::RTF.3p
@@ -350,6 +357,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Rawzor.3p
 @man man/man3p/Image::ExifTool::Real.3p
 @man man/man3p/Image::ExifTool::Reconyx.3p
+@man man/man3p/Image::ExifTool::Red.3p
 @man man/man3p/Image::ExifTool::Ricoh.3p
 @man man/man3p/Image::ExifTool::Samsung.3p
 @man man/man3p/Image::ExifTool::Sanyo.3p
