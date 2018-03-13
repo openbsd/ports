@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.113 2018/03/13 19:20:07 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.114 2018/03/13 21:18:53 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -34,7 +34,7 @@ MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/rel
 DISTNAME =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}{${MOZILLA_COMMIT}${EXTRACT_SUFX}}
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}-${MOZILLA_COMMIT}
-MASTER_SITES =	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
+MASTER_SITES ?=	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
 EXTRACT_SUFX =	.tar.bz2
 MODMOZILLA_pre-configure+= \
 	cp ${WRKSRC}/${CONFIGURE_SCRIPT}.in ${WRKSRC}/${CONFIGURE_SCRIPT}; \
