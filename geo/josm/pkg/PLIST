@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/21 20:17:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/03/13 21:22:39 landry Exp $
 bin/josm
 @man man/man1/josm.1
 share/applications/josm.desktop
 share/josm/
 share/josm/josm-latest.jar
-share/josm/osm_logo.png
+share/josm/osm_logo.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
