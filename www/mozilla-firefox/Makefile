@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.344 2018/02/08 15:45:30 landry Exp $
+# $OpenBSD: Makefile,v 1.345 2018/03/13 19:29:35 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	58.0.2
+MOZILLA_VERSION =	59.0
+MOZILLA_COMMIT =	c61f5f5ead48c78a80c80db5c489bdc7cfaf8175
+MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
+MASTER_SITES =	https://distfiles.bsdfrog.org/mozilla/
 HOMEPAGE =	https://www.mozilla.org/firefox/
 SO_VERSION =	76.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -34,13 +37,15 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_GTK3 = Yes
 # 56 requires 59.1
 MOZILLA_USE_BUNDLED_ICU =	Yes
+# 59 is broken with system cairo and the option is being dropped
+MOZILLA_USE_BUNDLED_CAIRO = Yes
 
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 
-WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -65,8 +70,9 @@ DPB_PROPERTIES =	lonesome
 #CONFIGURE_ARGS +=	--enable-linker=lld
 
 SUBST_VARS +=	LOCALBASE X11BASE
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/layout/style/bindgen.toml.in
+
+show-commit:
+	@curl -s https://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/SOURCE| awk -F / '/^https:\/\/hg/ {print $$7 }'
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
@@ -74,23 +80,23 @@ post-install:
 	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
 	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
 	# install prefs
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
+		${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js
 	# install distribution.ini file
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution
 	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/distribution.ini
+		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/mozicon128.png \
+	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default128.png \
 		${PREFIX}/share/pixmaps/firefox.png
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
-	ln ${PREFIX}/lib/firefox-${MOZILLA_VER}/browser/chrome/icons/default/default{48,}.png
+	ln ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
 .include <bsd.port.mk>
