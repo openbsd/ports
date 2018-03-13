@@ -1,43 +1,41 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/03/13 21:13:48 jasper Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
-V=		1.01
-DISTNAME=	enigma-${V}-64bit
-PKGNAME=	enigma-${V}
-REVISION =	7
+V=		1.21
+DISTNAME=	enigma-${V}
 
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://www.nongnu.org/enigma/
+HOMEPAGE=	https://www.nongnu.org/enigma/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL c m enet pthread ${COMPILER_LIBCXX} z SDL_image>=1 \
-		SDL_mixer>=2 SDL_ttf>=7 iconv intl png>=8 zipios>=1 \
-		xerces-c
+WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer SDL_ttf
+WANTLIB += c curl enet intl m png xerces-c z zipios
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enigma-game/}
 
 WRKDIST=	${WRKDIR}/enigma-${V}
 
+BUILD_DEPENDS =	graphics/ImageMagick
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	devel/sdl-image \
+LIB_DEPENDS=	archivers/zipios \
+		devel/sdl-image \
 		devel/sdl-mixer \
 		devel/sdl-ttf \
-		net/enet>=1.3.3 \
 		graphics/png \
-		archivers/zipios \
-		textproc/xerces-c
+		net/curl \
+		net/enet>=1.3.3 \
+		textproc/xerces-c>=3.2.1
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-cxxlua=no
+CONFIGURE_ARGS=	--with-system-enet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		LIBS="-lm -lz -lenet -pthread"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
