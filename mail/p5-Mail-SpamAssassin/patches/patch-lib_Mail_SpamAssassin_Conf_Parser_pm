@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Mail_SpamAssassin_Conf_Parser_pm,v 1.1 2018/03/08 07:30:00 giovanni Exp $
+$OpenBSD: patch-lib_Mail_SpamAssassin_Conf_Parser_pm,v 1.2 2018/03/13 07:51:59 giovanni Exp $
 
 Index: lib/Mail/SpamAssassin/Conf/Parser.pm
 --- lib/Mail/SpamAssassin/Conf/Parser.pm.orig
@@ -100,7 +100,18 @@ Index: lib/Mail/SpamAssassin/Conf/Parser.pm
  
    my $eval = '';
    my $bad = 0;
-@@ -591,7 +592,7 @@ sub cond_clause_can_or_has {
+@@ -573,6 +574,10 @@ sub cond_clause_plugin_loaded {
+ 
+ sub cond_clause_can {
+   my ($self, $method) = @_;
++  if ($self->{currentfile} =~ q!/user_prefs$! ) {
++    warn "config: 'if can $method' not available in user_prefs";
++    return 0
++  }
+   $self->cond_clause_can_or_has('can', $method);
+ }
+ 
+@@ -591,7 +596,7 @@ sub cond_clause_can_or_has {
    } elsif ($method =~ /^(.*)::([^:]+)$/) {
      no strict "refs";
      my($module, $meth) = ($1, $2);
@@ -109,7 +120,7 @@ Index: lib/Mail/SpamAssassin/Conf/Parser.pm
                   ( $fn_name eq 'has' || &{$method}() );
    } else {
      $self->lint_warn("bad 'if' line, cannot find '::' in $fn_name($method), ".
-@@ -984,14 +985,14 @@ sub _meta_deps_recurse {
+@@ -984,14 +989,14 @@ sub _meta_deps_recurse {
  
    # Lex the rule into tokens using a rather simple RE method ...
    my $lexer = ARITH_EXPRESSION_LEXER;
@@ -127,7 +138,7 @@ Index: lib/Mail/SpamAssassin/Conf/Parser.pm
      # and has to be a rule name
      next unless exists $conf_tests->{$token};
  
-@@ -1178,25 +1179,25 @@ sub add_test {
+@@ -1178,25 +1183,25 @@ sub add_test {
    my $conf = $self->{conf};
  
    # Don't allow invalid names ...
@@ -159,7 +170,7 @@ Index: lib/Mail/SpamAssassin/Conf/Parser.pm
  	     "(recommended maximum length is 22 characters)\n", $name);
      }
    }
-@@ -1286,12 +1287,18 @@ sub add_regression_test {
+@@ -1286,12 +1291,18 @@ sub add_regression_test {
  sub is_meta_valid {
    my ($self, $name, $rule) = @_;
  
@@ -179,7 +190,7 @@ Index: lib/Mail/SpamAssassin/Conf/Parser.pm
    if (length($name) == 1) {
      for (@tokens) {
        print "$name $_\n "  or die "Error writing token: $!";
-@@ -1299,16 +1306,20 @@ sub is_meta_valid {
+@@ -1299,16 +1310,20 @@ sub is_meta_valid {
    }
    # Go through each token in the meta rule
    foreach my $token (@tokens) {
