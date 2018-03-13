@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/03/13 03:50:48 bket Exp $
 
 COMMENT=	small SSH server and client
 
-DISTNAME=	dropbear-2017.75
+DISTNAME=	dropbear-2018.76
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
@@ -22,6 +22,6 @@ CONFIGURE_STYLE=	gnu
 #NO_TEST=	Yes
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/options.h
+	${SUBST_CMD} ${WRKSRC}/default_options.h
 
 .include <bsd.port.mk>

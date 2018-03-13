@@ -1,0 +1,58 @@
+$OpenBSD: patch-default_options_h,v 1.1 2018/03/13 03:50:48 bket Exp $
+
+Index: default_options.h
+--- default_options.h.orig
++++ default_options.h
+@@ -19,9 +19,9 @@ IMPORTANT: Some options will require "make clean" afte
+ #define DROPBEAR_DEFADDRESS ""
+ 
+ /* Default hostkey paths - these can be specified on the command line */
+-#define DSS_PRIV_FILENAME "/etc/dropbear/dropbear_dss_host_key"
+-#define RSA_PRIV_FILENAME "/etc/dropbear/dropbear_rsa_host_key"
+-#define ECDSA_PRIV_FILENAME "/etc/dropbear/dropbear_ecdsa_host_key"
++#define DSS_PRIV_FILENAME "${SYSCONFDIR}/dropbear/dropbear_dss_host_key"
++#define RSA_PRIV_FILENAME "${SYSCONFDIR}/dropbear/dropbear_rsa_host_key"
++#define ECDSA_PRIV_FILENAME "${SYSCONFDIR}/dropbear/dropbear_ecdsa_host_key"
+ 
+ /* Set NON_INETD_MODE if you require daemon functionality (ie Dropbear listens
+  * on chosen ports and keeps accepting connections. This is the default.
+@@ -44,7 +44,7 @@ IMPORTANT: Some options will require "make clean" afte
+  * several kB in binary size however will make the symmetrical ciphers and hashes
+  * slower, perhaps by 50%. Recommended for small systems that aren't doing
+  * much traffic. */
+-#define DROPBEAR_SMALL_CODE 1
++#define DROPBEAR_SMALL_CODE 0
+ 
+ /* Enable X11 Forwarding - server only */
+ #define DROPBEAR_X11FWD 1
+@@ -239,11 +239,11 @@ Homedir is prepended unless path begins with / */
+ 
+ /* The default file to store the daemon's process ID, for shutdown
+    scripts etc. This can be overridden with the -P flag */
+-#define DROPBEAR_PIDFILE "/var/run/dropbear.pid"
++#define DROPBEAR_PIDFILE "${LOCALSTATEDIR}/run/dropbear.pid"
+ 
+ /* The command to invoke for xauth when using X11 forwarding.
+  * "-q" for quiet */
+-#define XAUTH_COMMAND "/usr/bin/xauth -q"
++#define XAUTH_COMMAND "${X11BASE}/bin/xauth -q"
+ 
+ 
+ /* if you want to enable running an sftp server (such as the one included with
+@@ -254,7 +254,7 @@ Homedir is prepended unless path begins with / */
+ 
+ /* This is used by the scp binary when used as a client binary. If you're
+  * not using the Dropbear client, you'll need to change it */
+-#define DROPBEAR_PATH_SSH_PROGRAM "/usr/bin/dbclient"
++#define DROPBEAR_PATH_SSH_PROGRAM "${TRUEPREFIX}/bin/dbclient"
+ 
+ /* Whether to log commands executed by a client. This only logs the 
+  * (single) command sent to the server, not what a user did in a 
+@@ -290,6 +290,6 @@ be overridden at runtime with -I. 0 disables idle time
+ #define DEFAULT_IDLE_TIMEOUT 0
+ 
+ /* The default path. This will often get replaced by the shell */
+-#define DEFAULT_PATH "/usr/bin:/bin"
++#define DEFAULT_PATH "/usr/bin:/bin:/usr/sbin:/sbin:${X11BASE}/bin:${TRUEPREFIX}/bin:${TRUEPREFIX}/sbin"
+ 
+ #endif /* DROPBEAR_DEFAULT_OPTIONS_H_ */

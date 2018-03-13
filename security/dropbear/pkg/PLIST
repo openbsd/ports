@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/06 22:03:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/13 03:50:48 bket Exp $
 @extra ${SYSCONFDIR}/dropbear/dropbear_dss_host_key
 @extra ${SYSCONFDIR}/dropbear/dropbear_rsa_host_key
 @extra ${SYSCONFDIR}/dropbear/dropbear_ecdsa_host_key
@@ -11,3 +11,4 @@
 @man man/man8/dropbear.8
 @bin sbin/dropbear
 @sample ${SYSCONFDIR}/dropbear/
+@rcscript ${RCDIR}/dropbear
