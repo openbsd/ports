@@ -1,6 +1,7 @@
-$OpenBSD: patch-colorls_1,v 1.17 2016/08/05 19:52:19 naddy Exp $
---- colorls.1.orig	Fri Aug  5 21:41:30 2016
-+++ colorls.1	Fri Aug  5 21:41:30 2016
+$OpenBSD: patch-colorls_1,v 1.18 2018/03/14 21:50:56 naddy Exp $
+Index: colorls.1
+--- colorls.1.orig
++++ colorls.1
 @@ -37,11 +37,11 @@
  .Dt COLORLS 1
  .Os
@@ -79,10 +80,10 @@ $OpenBSD: patch-colorls_1,v 1.17 2016/08/05 19:52:19 naddy Exp $
  .It Ev COLUMNS
  If set to a positive integer,
  output is formatted to the given width in columns.
-@@ -447,6 +487,99 @@ If set to a string ending in
- .Nm
- respects character display widths when columnating output.
- Otherwise, non-ASCII bytes are replaced by question marks.
+@@ -450,6 +490,99 @@ If unset or set to
+ .Qq C ,
+ .Qq POSIX ,
+ or an unsupported value, non-ASCII bytes are replaced by question marks.
 +.It Ev LSCOLORS
 +The value of this variable describes what color to use for which
 +attribute when colors are enabled with
@@ -179,7 +180,7 @@ $OpenBSD: patch-colorls_1,v 1.17 2016/08/05 19:52:19 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -454,33 +587,34 @@ See
+@@ -457,33 +590,34 @@ See
  for more information.
  .El
  .Sh EXIT STATUS
@@ -219,7 +220,7 @@ $OpenBSD: patch-colorls_1,v 1.17 2016/08/05 19:52:19 naddy Exp $
  utility is compliant with the
  .St -p1003.1-2008
  specification,
-@@ -489,10 +623,10 @@ except behaviour for the
+@@ -492,10 +626,10 @@ except behaviour for the
  flag differs.
  .Pp
  The flags
@@ -232,11 +233,11 @@ $OpenBSD: patch-colorls_1,v 1.17 2016/08/05 19:52:19 naddy Exp $
  are extensions to that specification.
  .Pp
  The flags
-@@ -512,6 +646,6 @@ flag has been changed in order to be compatible with t
+@@ -515,6 +649,6 @@ flag has been changed in order to be compatible with t
  specification.
  .Sh HISTORY
  An
 -.Nm
 +.Nm ls
  utility appeared in
- .At v3 .
+ .At v1 .

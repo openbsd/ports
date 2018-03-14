@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.13 2016/04/06 18:53:16 naddy Exp $
---- Makefile.orig	Tue Dec  1 19:36:13 2015
-+++ Makefile	Wed Apr  6 19:05:04 2016
-@@ -1,8 +1,12 @@
- #	$OpenBSD: patch-Makefile,v 1.13 2016/04/06 18:53:16 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.14 2018/03/14 21:50:56 naddy Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,11 @@
  
 -PROG=	ls
 +PROG=	colorls
