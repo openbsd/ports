@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.27 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindQt4.cmake	Fri Nov 25 22:31:45 2016
-@@ -514,7 +514,12 @@ endfunction()
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.28 2018/03/14 12:24:54 rsadowski Exp $
+Index: Modules/FindQt4.cmake
+--- Modules/FindQt4.cmake.orig
++++ Modules/FindQt4.cmake
+@@ -516,7 +516,12 @@ endfunction()
  
  set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
  
@@ -15,7 +16,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.27 2016/11/28 09:15:13 dcoppa Exp $
  _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
  
  if (QT_QMAKE_EXECUTABLE AND
-@@ -694,6 +699,8 @@ if (QT_QMAKE_EXECUTABLE AND
+@@ -696,6 +701,8 @@ if (QT_QMAKE_EXECUTABLE AND
  
    # Set QT_INCLUDES
    set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
@@ -24,7 +25,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.27 2016/11/28 09:15:13 dcoppa Exp $
  
  
    # ask qmake for the documentation directory
-@@ -1137,17 +1144,17 @@ if (QT_QMAKE_EXECUTABLE AND
+@@ -1139,17 +1146,17 @@ if (QT_QMAKE_EXECUTABLE AND
      endif()
    endmacro()
  

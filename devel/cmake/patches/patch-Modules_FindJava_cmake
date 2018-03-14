@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.21 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.22 2018/03/14 12:24:54 rsadowski Exp $
 Index: Modules/FindJava.cmake
 --- Modules/FindJava.cmake.orig
 +++ Modules/FindJava.cmake
@@ -47,21 +47,3 @@ Index: Modules/FindJava.cmake
  find_program(Java_JAVA_EXECUTABLE
    NAMES java
    HINTS ${_JAVA_HINTS}
-@@ -139,7 +144,7 @@ if(Java_JAVA_EXECUTABLE)
-       # 2. OpenJDK 1.6
-       # 3. GCJ 1.5
-       # 4. Kaffe 1.4.2
--      # 5. OpenJDK 1.7.x on OpenBSD
-+      # 5. OpenJDK 1.8.x on OpenBSD
-       if(var MATCHES "java version \"([0-9]+\\.[0-9]+\\.[0-9_.]+.*)\"")
-         # This is most likely Sun / OpenJDK, or maybe GCJ-java compat layer
-         set(Java_VERSION_STRING "${CMAKE_MATCH_1}")
-@@ -150,7 +155,7 @@ if(Java_JAVA_EXECUTABLE)
-         # Kaffe style
-         set(Java_VERSION_STRING "${CMAKE_MATCH_1}")
-       elseif(var MATCHES "openjdk version \"([0-9]+\\.[0-9]+\\.[0-9_]+.*)\"")
--        # OpenJDK ver 1.7.x on OpenBSD
-+        # OpenJDK ver 1.8.x on OpenBSD
-         set(Java_VERSION_STRING "${CMAKE_MATCH_1}")
-       else()
-         if(NOT Java_FIND_QUIETLY)

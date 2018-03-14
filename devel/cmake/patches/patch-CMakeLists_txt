@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.23 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.24 2018/03/14 12:24:54 rsadowski Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -305,6 +305,15 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -317,6 +317,15 @@ macro (CMAKE_BUILD_UTILITIES)
      CMAKE_SET_TARGET_FOLDER(${KWSYS_NAMESPACE}TestSharedForward "${kwsys_folder}")
    endif()
  
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
    #---------------------------------------------------------------------
    # Setup third-party libraries.
    # Everything in the tree should be able to include files from the
-@@ -342,7 +351,8 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -350,7 +359,8 @@ macro (CMAKE_BUILD_UTILITIES)
        message(FATAL_ERROR
          "CMAKE_USE_SYSTEM_LIBRHASH is ON but LibRHash is not found!")
      endif()
@@ -28,7 +28,7 @@ Index: CMakeLists.txt
    else()
      set(CMAKE_LIBRHASH_LIBRARIES cmlibrhash)
      add_subdirectory(Utilities/cmlibrhash)
-@@ -512,7 +522,8 @@ macro (CMAKE_BUILD_UTILITIES)
+@@ -516,7 +526,8 @@ macro (CMAKE_BUILD_UTILITIES)
        message(FATAL_ERROR
          "CMAKE_USE_SYSTEM_JSONCPP is ON but a JsonCpp is not found!")
      endif()
@@ -38,22 +38,13 @@ Index: CMakeLists.txt
    else()
      set(CMAKE_JSONCPP_LIBRARIES cmjsoncpp)
      add_subdirectory(Utilities/cmjsoncpp)
-@@ -522,7 +533,7 @@ macro (CMAKE_BUILD_UTILITIES)
-   #---------------------------------------------------------------------
-   # Build libuv library.
-   if(NOT DEFINED CMAKE_USE_LIBUV)
--    set(CMAKE_USE_LIBUV 1)
-+    set(CMAKE_USE_LIBUV 0)
-     if(APPLE)
-       include(CheckCSourceCompiles)
-       check_c_source_compiles("
-@@ -552,7 +563,8 @@ int main(void) { return 0; }
-         message(FATAL_ERROR
-           "CMAKE_USE_SYSTEM_LIBUV is ON but a libuv is not found!")
-       endif()
--      set(CMAKE_LIBUV_LIBRARIES LibUV::LibUV)
-+      set(CMAKE_LIBUV_INCLUDES ${LibUV_INCLUDE_DIRS})
-+      set(CMAKE_LIBUV_LIBRARIES ${LibUV_LIBRARIES})
-     else()
-       set(CMAKE_LIBUV_LIBRARIES cmlibuv)
-       add_subdirectory(Utilities/cmlibuv)
+@@ -531,7 +542,8 @@ macro (CMAKE_BUILD_UTILITIES)
+       message(FATAL_ERROR
+         "CMAKE_USE_SYSTEM_LIBUV is ON but a libuv is not found!")
+     endif()
+-    set(CMAKE_LIBUV_LIBRARIES LibUV::LibUV)
++    set(CMAKE_LIBUV_INCLUDES ${LibUV_INCLUDE_DIRS})
++    set(CMAKE_LIBUV_LIBRARIES ${LibUV_LIBRARIES})
+   else()
+     set(CMAKE_LIBUV_LIBRARIES cmlibuv)
+     add_subdirectory(Utilities/cmlibuv)

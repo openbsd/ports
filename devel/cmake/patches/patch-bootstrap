@@ -1,4 +1,4 @@
-$OpenBSD: patch-bootstrap,v 1.15 2017/09/22 13:42:54 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.16 2018/03/14 12:24:54 rsadowski Exp $
 
 Use Ninja to build CMake
 XXX: broken on m88k
@@ -6,15 +6,6 @@ XXX: broken on m88k
 Index: bootstrap
 --- bootstrap.orig
 +++ bootstrap
-@@ -10,7 +10,7 @@ die() {
- cmake_extract_standard_flags()
- {
-   cd "${cmake_source_dir}/Modules/Compiler/"
--  for file in ${1:-*}-${2}.cmake; do
-+  for file in {Clang,GNU}-${2}.cmake; do
-     cat "${file}" \
-       | sed -n "s/ *set *( *CMAKE_${2}${3}_EXTENSION_COMPILE_OPTION *\"\{0,1\}\([^\")]*\).*/\1/p" \
-       | tr ';' ' '
 @@ -165,7 +165,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
@@ -57,7 +48,7 @@ Index: bootstrap
    cmGlobalUnixMakefileGenerator3 \
    cmHexFileConverter \
    cmIfCommand \
-@@ -349,10 +355,12 @@ CMAKE_CXX_SOURCES="\
+@@ -350,10 +356,12 @@ CMAKE_CXX_SOURCES="\
    cmInstalledFile \
    cmLinkDirectoriesCommand \
    cmLinkLineComputer \
@@ -70,7 +61,7 @@ Index: bootstrap
    cmLocalUnixMakefileGenerator3 \
    cmMSVC60LinkLineComputer \
    cmMacroCommand \
-@@ -367,6 +375,10 @@ CMAKE_CXX_SOURCES="\
+@@ -368,6 +376,10 @@ CMAKE_CXX_SOURCES="\
    cmMessageCommand \
    cmMessenger \
    cmNewLineStyle \
@@ -81,7 +72,7 @@ Index: bootstrap
    cmOSXBundleGenerator \
    cmOptionCommand \
    cmOrderDirectories \
-@@ -429,6 +441,8 @@ LexerParser_CXX_SOURCES="\
+@@ -436,6 +448,8 @@ LexerParser_CXX_SOURCES="\
    cmCommandArgumentParser \
    cmExprLexer \
    cmExprParser \
@@ -90,11 +81,11 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -1387,7 +1401,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -1385,7 +1399,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
    -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"
--echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
+-echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} ${libs} -o cmake" >> "${cmake_bootstrap_dir}/Makefile"
 +echo "	${cmake_cxx_compiler} ${cmake_ld_flags} ${cmake_cxx_flags} ${objs} -o cmake -L${cmake_prefix_dir}/lib -ljsoncpp" >> "${cmake_bootstrap_dir}/Makefile"
  for a in ${CMAKE_CXX_SOURCES}; do
    src=`cmake_escape "${cmake_source_dir}/Source/${a}.cxx"`

@@ -1,13 +1,13 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.31 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.32 2018/03/14 12:24:54 rsadowski Exp $
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -230,7 +230,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
-     this->SetPropertyDefault("BUILD_RPATH", CM_NULLPTR);
-     this->SetPropertyDefault("INSTALL_NAME_DIR", CM_NULLPTR);
+@@ -227,7 +227,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+     this->SetPropertyDefault("BUILD_RPATH", nullptr);
+     this->SetPropertyDefault("INSTALL_NAME_DIR", nullptr);
      this->SetPropertyDefault("INSTALL_RPATH", "");
 -    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
 +    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "ON");
-     this->SetPropertyDefault("INTERPROCEDURAL_OPTIMIZATION", CM_NULLPTR);
+     this->SetPropertyDefault("INTERPROCEDURAL_OPTIMIZATION", nullptr);
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");

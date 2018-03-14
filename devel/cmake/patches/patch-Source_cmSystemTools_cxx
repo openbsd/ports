@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.9 2017/09/08 06:32:29 dcoppa Exp $
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.10 2018/03/14 12:24:54 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -37,7 +37,7 @@ Index: Source/cmSystemTools.cxx
  #include "cm_libarchive.h"
  #ifndef __LA_INT64_T
  #define __LA_INT64_T la_int64_t
-@@ -1625,8 +1624,6 @@ long copy_data(struct archive* ar, struct archive* aw)
+@@ -1671,8 +1670,6 @@ long copy_data(struct archive* ar, struct archive* aw)
  
  bool extract_tar(const char* outFileName, bool verbose, bool extract)
  {
