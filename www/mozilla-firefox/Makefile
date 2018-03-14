@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2018/03/13 19:29:35 landry Exp $
+# $OpenBSD: Makefile,v 1.346 2018/03/14 06:07:11 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
@@ -13,6 +13,7 @@ MOZILLA_CODENAME =	browser
 
 MASTER_SITES =	https://distfiles.bsdfrog.org/mozilla/
 HOMEPAGE =	https://www.mozilla.org/firefox/
+DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}
 SO_VERSION =	76.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
