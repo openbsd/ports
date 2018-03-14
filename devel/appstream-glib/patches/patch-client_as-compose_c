@@ -1,9 +1,9 @@
-$OpenBSD: patch-client_as-compose_c,v 1.1 2017/08/22 08:14:55 ajacoutot Exp $
+$OpenBSD: patch-client_as-compose_c,v 1.2 2018/03/14 10:03:33 ajacoutot Exp $
 
 Index: client/as-compose.c
 --- client/as-compose.c.orig
 +++ client/as-compose.c
-@@ -373,7 +373,7 @@ main (int argc, char **argv)
+@@ -375,7 +375,7 @@ main (int argc, char **argv)
  
  	/* set defaults */
  	if (prefix == NULL)
