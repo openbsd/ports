@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/08 17:10:43 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2018/03/14 14:15:40 jsing Exp $
 
 COMMENT =	Go text processing support
-DISTNAME =	go-text-20170824
+DISTNAME =	go-text-20180216
 GH_ACCOUNT =	golang
 GH_PROJECT =	text
-GH_COMMIT =	e56139fd9c5bc7244c76116c68e500765bb6db6b
+GH_COMMIT =	4e4a3210bb54bb31f6ab2cdca2edcc0b50c420c1
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/text
@@ -20,12 +20,16 @@ MODULES =	lang/go
 
 MODGO_TYPE =	bin lib
 
+# message/pipeline depends on go-tools, which creates an import loop...
+# we also do not package go-tools as a go module.
+
 _MAIN =		golang.org/x/text
 _SUBPKGS =	cases \
 		collate \
 		collate/build \
 		collate/tools/colcmp \
 		currency \
+		date \
 		encoding \
 		encoding/charmap \
 		encoding/htmlindex \
@@ -42,6 +46,7 @@ _SUBPKGS =	cases \
 		feature/plural \
 		internal \
 		internal/catmsg \
+		internal/cldrtree \
 		internal/colltab \
 		internal/export/idna \
 		internal/format \
@@ -57,6 +62,7 @@ _SUBPKGS =	cases \
 		language/display \
 		message \
 		message/catalog \
+		number \
 		runes \
 		search \
 		secure \
