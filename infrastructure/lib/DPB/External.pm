@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.12 2017/11/30 14:54:00 espie Exp $
+# $OpenBSD: External.pm,v 1.13 2018/03/14 23:22:37 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -134,7 +134,7 @@ sub receive_commands
 			} else {
 				my $line = $fh->getline;
 				chomp $line;
-				if ($line =~ m/^bye$/) {
+				if (!defined $line || $line =~ m/^bye$/) {
 					$fh->close;
 					$self->{select}->remove($fh);
 				} else {
