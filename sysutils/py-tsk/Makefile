@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/09 20:42:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2018/03/14 12:36:40 rpointel Exp $
 
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
-MODPY_EGG_VERSION = 20171108
+MODPY_EGG_VERSION = 20180225
 DISTNAME =	pytsk3-${MODPY_EGG_VERSION}
 PKGNAME =	py-tsk-${MODPY_EGG_VERSION}
 
@@ -30,7 +30,7 @@ pre-configure:
 
 LIB_DEPENDS =	sysutils/sleuthkit \
 		devel/libtalloc
-TEST_DEPENDS =	sysutils/py-tsk=${MODPY_EGG_VERSION}
+TEST_DEPENDS =	sysutils/py-tsk${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
 
 # it needs test_data/* in the Github repository
 do-test:
