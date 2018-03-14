@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/12/10 12:27:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/03/14 20:33:13 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -165,6 +165,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/gdb-log.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/genie.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/glsl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/go.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/groovy.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gtk-doc.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gtkrc.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/haddock.lang
@@ -240,8 +241,10 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/swift.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/systemverilog.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/t2t.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/tcl.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/tera.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/texinfo.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/thrift.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/toml.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/vala.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/vbnet.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/verilog.lang
