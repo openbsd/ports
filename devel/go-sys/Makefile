@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/08 16:40:36 jsing Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/14 14:17:59 jsing Exp $
 
 COMMENT =	Go package for low-level operating system interaction
-DISTNAME =	go-sys-20170824
+DISTNAME =	go-sys-20180216
 GH_ACCOUNT =	golang
 GH_PROJECT =	sys
-GH_COMMIT =	07c182904dbd53199946ba614a412c61d3c548f5
+GH_COMMIT =	37707fdb30a5b38865cfb95e5aab41707daec7fd
 CATEGORIES =	devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/sys
