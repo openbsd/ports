@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1 2017/05/13 20:28:37 espie Exp $
+$OpenBSD: patch-Makefile,v 1.2 2018/03/14 04:37:59 benoit Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -142,7 +142,7 @@ CXX_UPDATE_DEP_FLAG = -Wp,-MMD,"$(*D)/$(DEPDIR)/$(*F).
+@@ -147,7 +147,7 @@ CXX_UPDATE_DEP_FLAG = -Wp,-MMD,"$(*D)/$(DEPDIR)/$(*F).
  
  .c.o:
  	$(MKDIR) $(*D)/$(DEPDIR)
@@ -12,7 +12,7 @@ Index: Makefile
  	$(ECHO) "$(*D)/" > $(*D)/$(DEPDIR)/$(*F).d
  	$(CAT) "$(*D)/$(DEPDIR)/$(*F).d2" >> "$(*D)/$(DEPDIR)/$(*F).d"
  	$(RM) "$(*D)/$(DEPDIR)/$(*F).d2"
-@@ -157,7 +157,7 @@ else
+@@ -162,7 +162,7 @@ else
  
  .c.o:
  	$(MKDIR) $(*D)/$(DEPDIR)
