@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2017/11/28 16:27:21 jsing Exp $
+# $OpenBSD: Makefile,v 1.49 2018/03/14 14:14:36 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.9.2
+VERSION =		1.10
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -66,7 +66,7 @@ do-build:
 do-test:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
-		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
+		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} GOCACHE=off ./run.bash
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}
@@ -84,7 +84,7 @@ do-install:
 			-exec ${INSTALL_DATA} -p {} \
 			${GOROOT} \;
 
-.	for dir in api doc lib misc src pkg/include pkg/obj pkg/${GOCFG} test
+.	for dir in api doc lib misc src pkg/include pkg/${GOCFG} test
 		@cd ${WRKDIST} && \
 			find ${dir} -type d \
 				-exec ${INSTALL_DATA_DIR} \

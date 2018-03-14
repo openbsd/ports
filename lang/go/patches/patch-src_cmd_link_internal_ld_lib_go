@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.6 2017/09/03 15:42:25 jsing Exp $
+$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.7 2018/03/14 14:14:36 jsing Exp $
 Index: src/cmd/link/internal/ld/lib.go
 --- src/cmd/link/internal/ld/lib.go.orig
 +++ src/cmd/link/internal/ld/lib.go
-@@ -580,7 +580,13 @@ func (ctxt *Link) loadlib() {
+@@ -516,7 +516,13 @@ func (ctxt *Link) loadlib() {
  		}
  		if any {
  			if *flagLibGCC == "" {
