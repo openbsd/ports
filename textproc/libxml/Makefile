@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.172 2017/11/08 06:51:35 steven Exp $
+# $OpenBSD: Makefile,v 1.173 2018/03/14 08:20:49 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-VERSION=		2.9.7
+VERSION=		2.9.8
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py-libxml-${VERSION}
-SHARED_LIBS +=	xml2                 16.0     # 11.4
+SHARED_LIBS +=	xml2                 16.1     # 11.8
 CATEGORIES=		textproc
 MASTER_SITES=		http://gd.tuwien.ac.at/pub/libxml/ \
 			ftp://xmlsoft.org/libxml/
