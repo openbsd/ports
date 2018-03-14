@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/14 01:49:50 abieber Exp $
+@bin bin/kwebapp
+@bin bin/kwebapp-audit
+@bin bin/kwebapp-audit-gv
+@bin bin/kwebapp-audit-json
+@bin bin/kwebapp-c-header
+@bin bin/kwebapp-c-source
+@bin bin/kwebapp-javascript
+@bin bin/kwebapp-sql
+@bin bin/kwebapp-sqldiff
+@man man/man1/kwebapp-audit-gv.1
+@man man/man1/kwebapp-audit-json.1
+@man man/man1/kwebapp-audit.1
+@man man/man1/kwebapp-c-header.1
+@man man/man1/kwebapp-c-source.1
+@man man/man1/kwebapp-javascript.1
+@man man/man1/kwebapp-sql.1
+@man man/man1/kwebapp-sqldiff.1
+@man man/man1/kwebapp.1
+@man man/man5/kwebapp.5
+share/kwebapp/
+share/kwebapp/audit.css
+share/kwebapp/audit.html
+share/kwebapp/audit.js
