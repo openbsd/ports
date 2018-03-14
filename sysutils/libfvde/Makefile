@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/17 19:45:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2018/03/14 12:34:13 rpointel Exp $
 
 COMMENT =	library and tools to access FileVault Drive Encryption
 
-VERSION = 	20170930
+VERSION = 	20180108
 DISTNAME =	libfvde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	0
 
 SHARED_LIBS +=  fvde                       0.1 # 1.0
 
