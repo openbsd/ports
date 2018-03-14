@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/03/05 09:33:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/03/14 17:50:59 giovanni Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
+@bin bin/keepassxc-proxy
 lib/keepassxc/
 lib/keepassxc/libkeepassx-autotype-xcb.so
 @man man/man1/keepassxc-cli.1

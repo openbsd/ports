@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/03/05 09:33:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2018/03/14 17:50:59 giovanni Exp $
 
 COMMENT =	management tool for password and sensitive data
 
-V =		2.3.0
+V =		2.3.1
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" \
 
 TEST_IS_INTERACTIVE =	X11
 
-FLAVORS =	yubikey
+FLAVORS =	browser yubikey
 FLAVOR ?=
 
 .if ${FLAVOR:Myubikey}
@@ -49,8 +49,18 @@ CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
 WANTLIB += yubikey ykpers-1
 .endif
 
+.if ${FLAVOR:Mbrowser}
+LIB_DEPENDS +=		net/curl \
+			security/libsodium
+CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
+			-DWITH_XC_HTTP=ON \
+			-DWITH_XC_NETWORKING=ON
+WANTLIB	+=		curl sodium z
+.endif
+
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
+		browser/HostInstaller.cpp \
 		core/ScreenLockListenerPrivate.cpp \
 		gui/MainWindow.cpp \
 		main.cpp
