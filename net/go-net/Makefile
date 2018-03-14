@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/09 07:02:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2018/03/14 14:20:40 jsing Exp $
 
 COMMENT =	Go supplementary network libraries
-DISTNAME =	go-net-20170824
+DISTNAME =	go-net-20180216
 GH_ACCOUNT =	golang
 GH_PROJECT =	net
-GH_COMMIT =	57efc9c3d9f91fb3277f8da1cff370539c4d3dc5
+GH_COMMIT =	2e7f24ace30034db6c258ddb329e5236a68c27fa
 CATEGORIES =	net www devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/net/
@@ -18,11 +18,14 @@ WANTLIB =	c pthread
 
 MODULES =	lang/go
 
-BUILD_DEPENDS =	devel/go-sys \
-		security/go-crypto \
+BUILD_DEPENDS =	security/go-crypto \
 		textproc/go-text
 
+# Avoid external network dependencies for tests...
+MODGO_TEST_FLAGS = -test.short
+
 MODGO_TYPE =	lib
+
 _MAIN =		golang.org/x/net
 _SUBPKGS =	bpf \
 		context \
@@ -32,6 +35,7 @@ _SUBPKGS =	bpf \
 		html \
 		html/atom \
 		html/charset \
+		http/httpproxy \
 		http2 \
 		http2/h2i \
 		http2/hpack \
@@ -54,6 +58,7 @@ _SUBPKGS =	bpf \
 		webdav/internal/xml \
 		websocket \
 		xsrftoken
+
 ALL_TARGET =	${_SUBPKGS:%=${_MAIN}/%}
 WRKSRC =	${MODGO_WORKSPACE}/src/${_MAIN}
 
