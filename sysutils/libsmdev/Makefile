@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/14 12:35:20 rpointel Exp $
 
 COMMENT =	library to access to storage media devices
 
-VERSION = 	20170225
+VERSION = 	20171112
 DISTNAME =	libsmdev-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	0
 
 SHARED_LIBS +=  smdev                      0.0 # 1.0
 
