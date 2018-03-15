@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2018/03/12 13:48:34 robert Exp $
+# $OpenBSD: Makefile,v 1.364 2018/03/15 09:31:23 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			65.0.3325.146
+V=			65.0.3325.162
 
 DISTNAME=		chromium-${V}
 
