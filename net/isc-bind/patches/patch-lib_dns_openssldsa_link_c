@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.6 2018/02/20 21:02:13 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.7 2018/03/15 00:59:18 sthen Exp $
 
 Index: lib/dns/openssldsa_link.c
 --- lib/dns/openssldsa_link.c.orig
 +++ lib/dns/openssldsa_link.c
-@@ -48,7 +48,8 @@
+@@ -49,7 +49,8 @@
  
  static isc_result_t openssldsa_todns(const dst_key_t *key, isc_buffer_t *data);
  

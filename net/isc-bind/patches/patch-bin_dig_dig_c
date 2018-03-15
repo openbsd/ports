@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.4 2018/01/12 17:08:01 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.5 2018/03/15 00:59:18 sthen Exp $
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
 +++ bin/dig/dig.c
-@@ -2183,6 +2183,11 @@ main(int argc, char **argv) {
+@@ -2182,6 +2182,11 @@ void dig_setup(int argc, char **argv)
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -11,13 +11,13 @@ Index: bin/dig/dig.c
 +		exit(1);
 +	}
 +
- 	debug("main()");
- 	progname = argv[0];
- 	preparse_args(argc, argv);
-@@ -2191,6 +2196,13 @@ main(int argc, char **argv) {
- 	setup_libs();
- 	setup_system(ipv4only, ipv6only);
- 	parse_args(ISC_FALSE, ISC_FALSE, argc, argv);
+ 	debug("dig_setup()");
+ 
+ 	/* setup dighost callbacks */
+@@ -2209,6 +2214,13 @@ void dig_query_setup(isc_boolean_t is_batchfile, isc_b
+ 	debug("dig_query_setup");
+ 
+ 	parse_args(is_batchfile, config_only, argc, argv);
 +
 +	/* inet for network connections, dns for resolv.conf */
 +	if (pledge("stdio inet dns", NULL) == -1) {

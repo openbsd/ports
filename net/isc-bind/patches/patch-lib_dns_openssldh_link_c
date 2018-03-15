@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.7 2018/03/04 21:12:03 sthen Exp $
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.8 2018/03/15 00:59:18 sthen Exp $
 
 Index: lib/dns/openssldh_link.c
 --- lib/dns/openssldh_link.c.orig
 +++ lib/dns/openssldh_link.c
-@@ -68,7 +68,8 @@ static isc_result_t openssldh_todns(const dst_key_t *k
+@@ -69,7 +69,8 @@ static isc_result_t openssldh_todns(const dst_key_t *k
  
  static BIGNUM *bn2, *bn768, *bn1024, *bn1536;
  
