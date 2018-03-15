@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.213 2018/03/13 19:21:08 landry Exp $
+# $OpenBSD: Makefile,v 1.214 2018/03/15 05:38:07 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
 
-MOZILLA_VERSION =	2.49.1
+MOZILLA_VERSION =	2.49.2
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.4
+PKGNAME-lightning =	lightning-seamonkey-5.4.1
 EPOCH-lightning =	0
-REVISION-main =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -20,7 +19,7 @@ SO_VERSION =	47.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozgtk mozavcodec mozavutil prldap60 suite xul lgpllibs
+MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil prldap60 suite xul lgpllibs
 
 CATEGORIES=	www mail net news
 
@@ -36,7 +35,8 @@ MODCLANG_ARCHS =	amd64 i386
 # gecko >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # gecko >= 46 defaults to gtk+3
-MOZILLA_USE_GTK3 = Yes
+#MOZILLA_USE_GTK3 = Yes
+CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk2
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple
