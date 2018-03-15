@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.67 2017/12/25 22:59:24 kili Exp $
+# $OpenBSD: Makefile,v 1.68 2018/03/15 15:59:19 rsadowski Exp $
 
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-0.92.2
+DISTNAME =	inkscape-0.92.3
 CATEGORIES =	graphics
-REVISION =	0
 
 MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 HOMEPAGE =	https://www.inkscape.org/
 EXTRACT_SUFX =	.tar.bz2
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,9 +24,9 @@ WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gsl gslcblas
 WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell harfbuzz
 WANTLIB += iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
-WANTLIB += png poppler poppler-glib popt potrace
-WANTLIB += raw_r sigc-2.0 tiff webp xcb xcb-render xcb-shm xml2
-WANTLIB += xslt z
+WANTLIB += png poppler poppler-glib popt potrace raw_r sigc-2.0
+WANTLIB += tiff webp webpmux xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z
 
 MODULES=	textproc/intltool \
 		lang/python \
@@ -59,6 +58,7 @@ LIB_DEPENDS =	devel/boehm-gc \
 		graphics/libexif \
 		graphics/png \
 		graphics/potrace \
+		graphics/libwebp \
 		print/poppler \
 		textproc/aspell/core \
 		textproc/gtkspell \
@@ -85,9 +85,6 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			-I${LOCALBASE}/include -I${X11BASE}/include \
 			-DPOPPLER_NEW_OBJECT_API" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-# XXX todo
-NO_TEST =	Yes
 
 # As discussed on the ports mailing list, remove internationalised manual
 # pages, as our mandoc implementation does not yet deal with them properly.

@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_libnrtype_FontFactory_cpp,v 1.1 2017/02/24 08:05:34 landry Exp $
+$OpenBSD: patch-src_libnrtype_FontFactory_cpp,v 1.2 2018/03/15 15:59:19 rsadowski Exp $
 
 fix compile with pango >= 1.40.3
 
---- src/libnrtype/FontFactory.cpp.orig	Wed Jan 25 08:07:37 2017
-+++ src/libnrtype/FontFactory.cpp	Wed Jan 25 08:07:03 2017
-@@ -696,7 +696,7 @@ font_instance *font_factory::Face(PangoFontDescription
+Index: src/libnrtype/FontFactory.cpp
+--- src/libnrtype/FontFactory.cpp.orig
++++ src/libnrtype/FontFactory.cpp
+@@ -705,7 +705,7 @@ font_instance *font_factory::Face(PangoFontDescription
              if( pango_ot_info_find_script( info, PANGO_OT_TABLE_GSUB, scripts[i], &script_index )) {
  
                  PangoOTTag* languages =
