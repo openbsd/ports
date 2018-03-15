@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/02/28 19:23:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2018/03/15 01:16:42 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
@@ -8,9 +8,9 @@ REVISION = 8
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 89.2
-ADASTRAP_LIBM-amd64 = 10.0
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP_LIBC-amd64 = 92.3
+ADASTRAP_LIBM-amd64 = 10.1
+ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
@@ -68,7 +68,7 @@ DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.9.jar
 ECJ =		ecj-4.5.jar
-SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
+SUPDISTFILES =	${ADASTRAP-amd64}:2 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
 		${ADASTRAP-i386}:0 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
 		${ADASTRAP-sparc64}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
@@ -90,6 +90,7 @@ MASTER_SITES0 =	https://distfiles.stumpf.co/ \
 		http://distfiles.tmux.org/adastrap/ \
 		https://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
+MASTER_SITES2 =	https://spacehopper.org/mirrors/
 
 LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-java}
@@ -100,7 +101,11 @@ CONFIGURE_ARGS +=	--enable-libgcj --without-jar
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
+.if ${MACHINE_ARCH} == amd64
+DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:2
+.else
 DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
+.endif
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
