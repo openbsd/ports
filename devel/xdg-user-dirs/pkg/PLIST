@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/08/23 07:07:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/03/15 09:57:34 ajacoutot Exp $
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
 @man man/man1/xdg-user-dir.1
@@ -60,6 +60,9 @@ share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fi/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fr/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ga/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gd/
 share/locale/gd/LC_MESSAGES/
