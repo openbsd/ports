@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.72 2018/02/21 22:37:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.73 2018/03/15 23:00:19 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -602,8 +602,6 @@ share/doc/asterisk/UPGRADE-10.txt
 share/doc/asterisk/UPGRADE-11.txt
 share/doc/asterisk/UPGRADE-12.txt
 share/doc/asterisk/UPGRADE.txt
-share/doc/asterisk/api-1.6.0-changes.odt
-share/doc/asterisk/api-1.6.2-changes.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/asterisk/
 @mode 750
@@ -639,6 +637,7 @@ share/examples/asterisk/default/ast_debug_tools.conf
 share/examples/asterisk/default/asterisk.adsi
 share/examples/asterisk/default/asterisk.conf
 @sample ${SYSCONFDIR}/asterisk/asterisk.conf
+share/examples/asterisk/default/asterisk.conf.old
 share/examples/asterisk/default/calendar.conf
 share/examples/asterisk/default/ccss.conf
 share/examples/asterisk/default/cdr.conf

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.276 2018/02/21 22:37:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.277 2018/03/15 23:00:19 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.19.2
+VER=		13.20.0
 PJ_V=		2.7.1
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
@@ -25,10 +25,10 @@ PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
-WANTLIB-main += c crypto curl curses execinfo gsm iconv iksemel jansson
-WANTLIB-main += lzma m nghttp2 ogg portaudio pthread spandsp sqlite3 ssl
-WANTLIB-main += tiff uriparser uuid vorbis vorbisenc vorbisfile
-WANTLIB-main += xml2 xslt z
+WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
+WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread spandsp
+WANTLIB-main += sqlite3 ssl tiff uriparser uuid vorbis vorbisenc
+WANTLIB-main += vorbisfile xml2 xslt z
 
 # XXX Requires either nested functions (gcc only), or -fblocks (clang).
 #
@@ -279,7 +279,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
 		${WRKSRC}/{ChangeLog,LICENSE,README*,UPGRADE*.txt} \
 		${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} ${WRKSRC}/doc/*.{pdf,txt,odt} \
+	${INSTALL_DATA} ${WRKSRC}/doc/*.{pdf,txt} \
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/basic-pbx
 	${INSTALL_DATA} ${WRKSRC}/configs/basic-pbx/* ${EXAMPLEDIR}/basic-pbx

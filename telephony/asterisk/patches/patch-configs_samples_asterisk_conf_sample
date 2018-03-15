@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.4 2018/01/14 13:11:48 sthen Exp $
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.5 2018/03/15 23:00:19 sthen Exp $
 Index: configs/samples/asterisk.conf.sample
 --- configs/samples/asterisk.conf.sample.orig
 +++ configs/samples/asterisk.conf.sample
@@ -12,7 +12,7 @@ Index: configs/samples/asterisk.conf.sample
 +rungroup = _asterisk		; The group to run as.
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
- ;forceblackbackground = yes     ; Force the background of the terminal to be 
+ ;forceblackbackground = yes     ; Force the background of the terminal to be
 @@ -91,7 +91,8 @@ documentation_language = en_US	; Set the language you 
  				; gosub - Invoke the stdexten using a gosub as
  				;         documented in extensions.conf.sample.

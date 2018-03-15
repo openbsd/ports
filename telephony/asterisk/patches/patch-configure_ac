@@ -1,29 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.49 2018/01/14 13:11:48 sthen Exp $
-
-c-client requires both kerbV libs *and* (separately) libssl.
-
+$OpenBSD: patch-configure_ac,v 1.50 2018/03/15 23:00:19 sthen Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -59,7 +59,7 @@ AC_SUBST([astvarrundir],      ['${localstatedir}/run/a
- 
- case "${host_os}" in
-      *bsd*)
--     if test ${prefix} = 'NONE'; then
-+     if test ${prefix} != 'NONE'; then
-         astvarlibdir='${prefix}/share/asterisk'
-         astdbdir='${localstatedir}/db/asterisk'
-      fi
-@@ -1958,7 +1958,7 @@ if test "${USE_IMAP_TK}" != "no"; then
- 			)
- 		else #looking in imap directory didn't work, try c-client
- 			imap_ldflags=""
--			imap_libs="-lc-client"
-+			imap_libs="-lcrypto -lssl -lc-client"
- 			imap_include="-DUSE_SYSTEM_CCLIENT"
- 			CPPFLAGS="${saved_cppflags}"
- 			LIBS="${saved_libs}"
-@@ -2144,7 +2144,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp-config], , [--
+@@ -2136,7 +2136,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp-config], , [--
  
  AST_EXT_LIB_CHECK([NEWT], [newt], [newtBell], [newt.h])
  
