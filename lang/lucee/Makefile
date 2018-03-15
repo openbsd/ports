@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/13 11:20:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/03/15 08:08:51 sthen Exp $
 
 COMMENT=		JVM-based scripting language for web apps (open-source CFML)
 
@@ -16,7 +16,7 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		http://cdn.lucee.org/rest/update/provider/war/
+MASTER_SITES =		http://release.lucee.org/rest/update/provider/war/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # wasting time on arch where it's unavailable
