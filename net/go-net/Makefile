@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/03/14 14:20:40 jsing Exp $
+# $OpenBSD: Makefile,v 1.8 2018/03/15 16:19:32 jsing Exp $
 
 COMMENT =	Go supplementary network libraries
 DISTNAME =	go-net-20180216
@@ -18,7 +18,8 @@ WANTLIB =	c pthread
 
 MODULES =	lang/go
 
-BUILD_DEPENDS =	security/go-crypto \
+BUILD_DEPENDS =	devel/go-sys \
+		security/go-crypto \
 		textproc/go-text
 
 # Avoid external network dependencies for tests...
