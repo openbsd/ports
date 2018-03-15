@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.491 2018/03/09 16:58:04 rpointel Exp $
+# $OpenBSD: Makefile,v 1.492 2018/03/15 07:17:22 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -90,6 +90,8 @@
      SUBDIR += keepassx
      SUBDIR += keepassxc
      SUBDIR += keepassxc,yubikey
+     SUBDIR += keepassxc,browser
+     SUBDIR += keepassxc,browser,yubikey
      SUBDIR += keybase
      SUBDIR += keychain
      SUBDIR += klaxon
