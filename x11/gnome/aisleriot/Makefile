@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/03/15 23:23:35 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.4
+GNOME_VERSION =		3.22.5
 
 CATEGORIES =		games
 
@@ -18,8 +18,7 @@ WANTLIB += gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-3 guile-2.2
 WANTLIB += harfbuzz iconv intl ltdl lzma m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread rsvg-2 unistring
-WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xcb-xkb xkbcommon
-WANTLIB += xkbcommon-x11 xml2 z
+WANTLIB += vorbis vorbisfile xcb-render xcb-shm xcb xml2 z
 
 MODULES =		devel/dconf \
 			devel/gconf2 \
@@ -39,8 +38,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
-			lang/guile2 \
-			x11/xkbcommon
+			lang/guile2
 
 BUILD_DEPENDS =		shells/bash
 
