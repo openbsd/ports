@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/02/16 10:14:51 pea Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/03/15 15:41:21 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -7,6 +7,7 @@ share/application-registry/homebank.applications
 share/applications/homebank.desktop
 share/homebank/
 share/homebank/datas/
+share/homebank/datas/ChangeLog
 share/homebank/datas/example.xhb
 share/homebank/datas/hb-categories-de.csv
 share/homebank/datas/hb-categories-en.csv
@@ -64,6 +65,8 @@ share/homebank/help/images/7.png
 share/homebank/help/images/8.png
 share/homebank/help/images/9.png
 share/homebank/help/images/arrow.png
+share/homebank/help/images/d-info.png
+share/homebank/help/images/d-warn.png
 share/homebank/help/images/dlg-account1.png
 share/homebank/help/images/dlg-account2.png
 share/homebank/help/images/dlg-assign1.png
@@ -135,7 +138,6 @@ share/homebank/help/images/use-scheduled2.png
 share/homebank/help/images/use-vehiclecost1.png
 share/homebank/help/images/use-vehiclecost2.png
 share/homebank/help/images/use-vehiclecost3.png
-share/homebank/help/images/warn.png
 share/homebank/help/images/web_title.png
 share/homebank/help/images/win-account1.png
 share/homebank/help/images/win-balance1.png

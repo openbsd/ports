@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/13 18:33:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2018/03/15 15:41:21 rsadowski Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.1.6
+DISTNAME =	homebank-5.1.7
 
 CATEGORIES =	productivity x11
 
@@ -32,8 +32,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 USE_GMAKE =	Yes
 
-CONFIGURE_STYLE = 	gnu
-CONFIGURE_ENV = 	LDFLAGS="-L${LOCALBASE}/lib" \
+NO_TEST =	Yes
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 post-extract:
