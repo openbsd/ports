@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.6 2017/08/29 07:14:50 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.7 2018/03/15 02:25:58 jsg Exp $
 share/u-boot/
 share/u-boot/a64-olinuxino/
 share/u-boot/a64-olinuxino/sunxi-spl.bin
@@ -62,6 +62,9 @@ share/u-boot/pine64_plus/u-boot-sunxi-with-spl.bin
 share/u-boot/pine64_plus/u-boot.bin
 share/u-boot/pine64_plus/u-boot.img
 share/u-boot/pine64_plus/u-boot.itb
+share/u-boot/qemu_arm64/
+share/u-boot/qemu_arm64/u-boot
+share/u-boot/qemu_arm64/u-boot.bin
 share/u-boot/rpi_3/
 share/u-boot/rpi_3/u-boot
 share/u-boot/rpi_3/u-boot.bin
