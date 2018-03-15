@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.17 2018/03/15 22:20:54 sthen Exp $
+
+https://www.dovecot.org/pipermail/dovecot/2018-March/111260.html
+
+If this function is found, ssl_protocols_to_min_protocol is used to
+convert ssl_protocols strings to min/max values, however that function
+can't cope with strings containing "!SSLv2". Until fixed, just revert to
+the traditional method which actually works.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -22982,7 +22982,7 @@ fi
+ $as_echo "$i_cv_have_ssl_ctx_set_min_proto_version" >&6; }
+     if test $i_cv_have_ssl_ctx_set_min_proto_version = yes; then
+ 
+-$as_echo "#define HAVE_SSL_CTX_SET_MIN_PROTO_VERSION /**/" >>confdefs.h
++$as_echo "/* #define HAVE_SSL_CTX_SET_MIN_PROTO_VERSION */" >>confdefs.h
+ 
+     fi
+ 
