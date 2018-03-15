@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2018/02/10 16:49:57 robert Exp $
+# $OpenBSD: Makefile,v 1.183 2018/03/15 15:15:07 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.0
-VERSION=	${BV}.1.1
+VERSION=	${BV}.2.1
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -94,7 +94,6 @@ DISTFILES += libcdr-0.1.4.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
 DISTFILES += libcmis-0.5.1.tar.gz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
-DISTFILES += libepoxy-1.3.1.tar.bz2:0
 DISTFILES += libepubgen-0.1.0.tar.bz2:0
 DISTFILES += libetonyek-0.1.7.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0
@@ -311,6 +310,7 @@ CONFIGURE_ARGS+=\
 		--with-system-cairo \
 		--with-system-curl \
 		--with-system-expat \
+		--with-system-epoxy \
 		--with-system-graphite \
 		--with-system-glm \
 		--with-system-hunspell \

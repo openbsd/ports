@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2018/02/05 17:15:05 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2018/03/15 15:15:07 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -116,7 +116,6 @@ lib/libreoffice/program/libeditenglo.so
 lib/libreoffice/program/libembobj.so
 lib/libreoffice/program/libemboleobj.so
 lib/libreoffice/program/libemfiolo.so
-lib/libreoffice/program/libepoxy.so
 @bin lib/libreoffice/program/libetonyek-0.1-lo.so.1
 lib/libreoffice/program/libevtattlo.so
 lib/libreoffice/program/libexpwraplo.so
@@ -4148,6 +4147,7 @@ lib/libreoffice/share/wizards/resources_en_US.properties
 lib/libreoffice/share/wordbook/
 lib/libreoffice/share/wordbook/en-GB.dic
 lib/libreoffice/share/wordbook/en-US.dic
+lib/libreoffice/share/wordbook/hu_AkH11.dic
 @comment lib/libreoffice/share/wordbook/sl.dic
 lib/libreoffice/share/wordbook/technical.dic
 lib/libreoffice/share/xdg/

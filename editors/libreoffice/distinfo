@@ -43,7 +43,6 @@ SHA256 (libreoffice/libcdr-0.1.3.tar.bz2) = UWC7v+/lK9SICED60rB6USgT43v6+MysBi/K
 SHA256 (libreoffice/libcdr-0.1.4.tar.xz) = 56fosAo99XmBEAJNcGH+nRwzMCd9Lk+pITKU+Wakpm0=
 SHA256 (libreoffice/libcmis-0.5.1.tar.gz) = asvfIuzbq6N3KHKbdb/Ahe5aS0mmAkdXz7hszT2iew4=
 SHA256 (libreoffice/libe-book-0.1.3.tar.xz) = fo2P808ngxrKO8b5zFMsL5DSBXx3iWO4hP89HjTf4fk=
-SHA256 (libreoffice/libepoxy-1.3.1.tar.bz2) = HYZosKJZxwmJnhxLq2LXVtkALVRs5PWclmXi/F8AGmQ=
 SHA256 (libreoffice/libepubgen-0.1.0.tar.bz2) = cwvRy+7hZjNPqtvAbJU6Z7FFw8R1SjtQNIIGba5M1jM=
 SHA256 (libreoffice/libetonyek-0.1.7.tar.xz) = advhDUQm1S8JBg1In465Dfod9ZLoLrBpjZ2684zHNKw=
 SHA256 (libreoffice/libexttextcat-3.4.5.tar.xz) = E/28nUxImk0FGeUZM6GqIf4/uet9oZG4f3pj6CeX2sg=
@@ -57,10 +56,10 @@ SHA256 (libreoffice/liborcus-0.13.1.tar.gz) = 1wQe9FW7eNtmtLp4dq8bPQ+jd7lETj73LO
 SHA256 (libreoffice/libpagemaker-0.0.4.tar.xz) = Zq2s1wWn0ZiV4I6sRtHoUTMq3y5zbFZr7xFk56RCUZ0=
 SHA256 (libreoffice/libqxp-0.0.1.tar.xz) = jCV/YYT/lK76fJ+hz66CCD1VpJJHJmkFxxxT4BP5XHM=
 SHA256 (libreoffice/libre-hebrew-1.0.tar.gz) = 9ZYlfB23Bs41eVsY1/ZqTbmdQncl8g6ThJFLU0FCV5o=
-SHA256 (libreoffice/libreoffice-6.0.1.1.tar.xz) = j4AqnG7WRSGKB7NFMBE/NXtpTyZT1zT+ipADBotWcKk=
-SHA256 (libreoffice/libreoffice-dictionaries-6.0.1.1.tar.xz) = DAXjm40kKtodCt4HRfuwMIPLCUkmAXzzboBnBW7bqWo=
-SHA256 (libreoffice/libreoffice-help-6.0.1.1.tar.xz) = RGb/wBT13TvHsmdsGOJWh8lbAPA3m2HI25iAkaSl1kc=
-SHA256 (libreoffice/libreoffice-translations-6.0.1.1.tar.xz) = UqLOk9h/DCSNCGhfnrN/0RyOAZb4eV/lFt0Vbs3SEEc=
+SHA256 (libreoffice/libreoffice-6.0.2.1.tar.xz) = TbuuvoiM1NOKrHm+Lv9/pCBWojHzs9GfcDIBCGkA6mE=
+SHA256 (libreoffice/libreoffice-dictionaries-6.0.2.1.tar.xz) = 7ul+ep8beauDV6ZhM+XLt6LNJcr6ZlgFShUpmD4dcZU=
+SHA256 (libreoffice/libreoffice-help-6.0.2.1.tar.xz) = Co09ysbr0RXWpjHUcpE8A+z1eIZ/EVUPLe0iRSis8H4=
+SHA256 (libreoffice/libreoffice-translations-6.0.2.1.tar.xz) = lM/Vj8aMxjymPCvx8g8w9824uMIot4/WOVfdG9zsqbs=
 SHA256 (libreoffice/librevenge-0.0.4.tar.bz2) = xRYBzQgyC3VwKBLGSq4GU0CRZNp4Jf0PRRrCxdvnfL8=
 SHA256 (libreoffice/libstaroffice-0.0.5.tar.xz) = MVUHrdWAaKptXEN+fCpv0avmhFFZFRUsbPM4/FiNqYI=
 SHA256 (libreoffice/libvisio-0.1.6.tar.xz) = /hAC02cdU8Cbxl5H7JSOx7Z+b7ES7RzRCWbiEai7UPk=
@@ -119,7 +118,6 @@ SIZE (libreoffice/libcdr-0.1.3.tar.bz2) = 731755
 SIZE (libreoffice/libcdr-0.1.4.tar.xz) = 609592
 SIZE (libreoffice/libcmis-0.5.1.tar.gz) = 767701
 SIZE (libreoffice/libe-book-0.1.3.tar.xz) = 416268
-SIZE (libreoffice/libepoxy-1.3.1.tar.bz2) = 820119
 SIZE (libreoffice/libepubgen-0.1.0.tar.bz2) = 398811
 SIZE (libreoffice/libetonyek-0.1.7.tar.xz) = 1256232
 SIZE (libreoffice/libexttextcat-3.4.5.tar.xz) = 1041268
@@ -133,10 +131,10 @@ SIZE (libreoffice/liborcus-0.13.1.tar.gz) = 2323107
 SIZE (libreoffice/libpagemaker-0.0.4.tar.xz) = 306496
 SIZE (libreoffice/libqxp-0.0.1.tar.xz) = 340184
 SIZE (libreoffice/libre-hebrew-1.0.tar.gz) = 531276
-SIZE (libreoffice/libreoffice-6.0.1.1.tar.xz) = 203420780
-SIZE (libreoffice/libreoffice-dictionaries-6.0.1.1.tar.xz) = 41640700
-SIZE (libreoffice/libreoffice-help-6.0.1.1.tar.xz) = 2972872
-SIZE (libreoffice/libreoffice-translations-6.0.1.1.tar.xz) = 139061168
+SIZE (libreoffice/libreoffice-6.0.2.1.tar.xz) = 203783632
+SIZE (libreoffice/libreoffice-dictionaries-6.0.2.1.tar.xz) = 43167504
+SIZE (libreoffice/libreoffice-help-6.0.2.1.tar.xz) = 2994936
+SIZE (libreoffice/libreoffice-translations-6.0.2.1.tar.xz) = 138826608
 SIZE (libreoffice/librevenge-0.0.4.tar.bz2) = 529833
 SIZE (libreoffice/libstaroffice-0.0.5.tar.xz) = 682380
 SIZE (libreoffice/libvisio-0.1.6.tar.xz) = 676396
