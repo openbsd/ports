@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/03/14 17:50:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2018/03/16 07:47:59 giovanni Exp $
 
 COMMENT =	management tool for password and sensitive data
 
 V =		2.3.1
 DISTNAME =	keepassxc-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xi Xtst argon2
-WANTLIB += c gcrypt gpg-error m
+WANTLIB += c gcrypt gpg-error m z
 
 MASTER_SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
@@ -55,7 +56,7 @@ LIB_DEPENDS +=		net/curl \
 CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 			-DWITH_XC_HTTP=ON \
 			-DWITH_XC_NETWORKING=ON
-WANTLIB	+=		curl sodium z
+WANTLIB	+=		curl sodium
 .endif
 
 post-patch:

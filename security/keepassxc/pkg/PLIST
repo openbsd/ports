@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/03/14 17:50:59 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/03/16 07:47:59 giovanni Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
-@bin bin/keepassxc-proxy
+%%browser%%
 lib/keepassxc/
 lib/keepassxc/libkeepassx-autotype-xcb.so
 @man man/man1/keepassxc-cli.1
@@ -98,19 +98,25 @@ share/keepassxc/icons/application/16x16/mimetypes/
 share/keepassxc/icons/application/16x16/mimetypes/application-x-keepassxc.png
 share/keepassxc/icons/application/22x22/
 share/keepassxc/icons/application/22x22/actions/
+share/keepassxc/icons/application/22x22/actions/auto-type.png
 share/keepassxc/icons/application/22x22/actions/chronometer.png
+share/keepassxc/icons/application/22x22/actions/database-change-key.png
 share/keepassxc/icons/application/22x22/actions/dialog-close.png
 share/keepassxc/icons/application/22x22/actions/dialog-ok.png
 share/keepassxc/icons/application/22x22/actions/document-encrypt.png
 share/keepassxc/icons/application/22x22/actions/document-new.png
 share/keepassxc/icons/application/22x22/actions/document-open.png
 share/keepassxc/icons/application/22x22/actions/document-save.png
+share/keepassxc/icons/application/22x22/actions/entry-clone.png
 share/keepassxc/icons/application/22x22/actions/entry-delete.png
 share/keepassxc/icons/application/22x22/actions/entry-edit.png
 share/keepassxc/icons/application/22x22/actions/entry-new.png
+share/keepassxc/icons/application/22x22/actions/group-empty-trash.png
+share/keepassxc/icons/application/22x22/actions/help-about.png
 share/keepassxc/icons/application/22x22/actions/message-close.png
 share/keepassxc/icons/application/22x22/actions/paperclip.png
 share/keepassxc/icons/application/22x22/actions/password-copy.png
+share/keepassxc/icons/application/22x22/actions/password-generate.png
 share/keepassxc/icons/application/22x22/actions/password-generator.png
 share/keepassxc/icons/application/22x22/actions/system-search.png
 share/keepassxc/icons/application/22x22/actions/url-copy.png
@@ -135,11 +141,38 @@ share/keepassxc/icons/application/256x256/apps/keepassxc-unlocked.png
 share/keepassxc/icons/application/256x256/apps/keepassxc.png
 share/keepassxc/icons/application/32x32/
 share/keepassxc/icons/application/32x32/actions/
+share/keepassxc/icons/application/32x32/actions/application-exit.png
+share/keepassxc/icons/application/32x32/actions/auto-type.png
+share/keepassxc/icons/application/32x32/actions/chronometer.png
+share/keepassxc/icons/application/32x32/actions/configure.png
+share/keepassxc/icons/application/32x32/actions/database-change-key.png
+share/keepassxc/icons/application/32x32/actions/dialog-close.png
+share/keepassxc/icons/application/32x32/actions/dialog-ok.png
+share/keepassxc/icons/application/32x32/actions/document-close.png
 share/keepassxc/icons/application/32x32/actions/document-edit.png
 share/keepassxc/icons/application/32x32/actions/document-encrypt.png
+share/keepassxc/icons/application/32x32/actions/document-new.png
+share/keepassxc/icons/application/32x32/actions/document-open.png
 share/keepassxc/icons/application/32x32/actions/document-properties.png
+share/keepassxc/icons/application/32x32/actions/document-save.png
+share/keepassxc/icons/application/32x32/actions/edit-clear-locationbar-ltr.png
+share/keepassxc/icons/application/32x32/actions/edit-clear-locationbar-rtl.png
+share/keepassxc/icons/application/32x32/actions/entry-clone.png
+share/keepassxc/icons/application/32x32/actions/entry-delete.png
+share/keepassxc/icons/application/32x32/actions/entry-edit.png
+share/keepassxc/icons/application/32x32/actions/entry-new.png
+share/keepassxc/icons/application/32x32/actions/group-empty-trash.png
+share/keepassxc/icons/application/32x32/actions/help-about.png
 share/keepassxc/icons/application/32x32/actions/key-enter.png
 share/keepassxc/icons/application/32x32/actions/paperclip.png
+share/keepassxc/icons/application/32x32/actions/password-copy.png
+share/keepassxc/icons/application/32x32/actions/password-generate.png
+share/keepassxc/icons/application/32x32/actions/password-generator.png
+share/keepassxc/icons/application/32x32/actions/password-show-off.png
+share/keepassxc/icons/application/32x32/actions/password-show-on.png
+share/keepassxc/icons/application/32x32/actions/system-search.png
+share/keepassxc/icons/application/32x32/actions/url-copy.png
+share/keepassxc/icons/application/32x32/actions/username-copy.png
 share/keepassxc/icons/application/32x32/actions/view-history.png
 share/keepassxc/icons/application/32x32/apps/
 share/keepassxc/icons/application/32x32/apps/internet-web-browser.png
@@ -266,6 +299,7 @@ share/keepassxc/translations/keepassx_ja.qm
 share/keepassxc/translations/keepassx_kk.qm
 share/keepassxc/translations/keepassx_ko.qm
 share/keepassxc/translations/keepassx_lt.qm
+share/keepassxc/translations/keepassx_nb.qm
 share/keepassxc/translations/keepassx_nl_NL.qm
 share/keepassxc/translations/keepassx_pl.qm
 share/keepassxc/translations/keepassx_pt_BR.qm
