@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libavoid_connector_cpp,v 1.2 2018/03/15 15:59:19 rsadowski Exp $
+$OpenBSD: patch-src_libavoid_connector_cpp,v 1.3 2018/03/16 13:11:22 rsadowski Exp $
 
 Index: src/libavoid/connector.cpp
 --- src/libavoid/connector.cpp.orig
@@ -14,3 +14,12 @@ Index: src/libavoid/connector.cpp
  
  bool ConnRef::generatePath(void)
  {
+@@ -885,7 +889,7 @@ bool ConnRef::generatePath(void)
+             {
+                 // Check for consecutive points on opposite 
+                 // corners of two touching shapes.
+-                COLA_ASSERT(abs((long)i->pathNext->id.objID - i->id.objID) != 2);
++                COLA_ASSERT(absdiff(i->pathNext->id.objID, i->id.objID) != 2);
+             }
+         }
+     }
