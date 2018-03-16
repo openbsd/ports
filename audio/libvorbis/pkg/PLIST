@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/03/14 20:56:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/03/16 21:44:10 naddy Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
@@ -15,7 +15,6 @@ lib/libvorbisfile.la
 lib/pkgconfig/vorbis.pc
 lib/pkgconfig/vorbisenc.pc
 lib/pkgconfig/vorbisfile.pc
-share/aclocal/
 share/aclocal/vorbis.m4
 share/doc/libvorbis/
 share/doc/libvorbis/doxygen-build.stamp

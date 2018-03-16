@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2016/03/11 20:11:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2018/03/16 21:44:10 naddy Exp $
 
 COMMENT=	audio compression codec library
 
-DISTNAME=	libvorbis-1.3.5
+DISTNAME=	libvorbis-1.3.6
 CATEGORIES=    	audio
 HOMEPAGE=	https://www.xiph.org/vorbis/
 SHARED_LIBS +=  vorbis               9.0      # 4.8
@@ -15,6 +15,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
+EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	m ogg
 LIB_DEPENDS=	audio/libogg

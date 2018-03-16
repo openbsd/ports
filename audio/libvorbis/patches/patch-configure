@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.16 2015/03/14 20:56:14 naddy Exp $
---- configure.orig	Thu Feb 26 23:09:49 2015
-+++ configure	Thu Mar  5 16:51:32 2015
-@@ -12672,7 +12672,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.17 2018/03/16 21:44:10 naddy Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -12721,7 +12721,7 @@ if test -z "$GCC"; then
  		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
  	*)
  		DEBUG="-g"
@@ -10,7 +11,7 @@ $OpenBSD: patch-configure,v 1.16 2015/03/14 20:56:14 naddy Exp $
  		PROFILE="-g -p" ;;
          esac
  else
-@@ -12816,9 +12816,9 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -12865,9 +12865,9 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  		CFLAGS="-O3 -Wall -W -ffast-math -D_REENTRANT -fsigned-char"
  		PROFILE="-pg -g -O3 -ffast-math -D_REENTRANT -fsigned-char";;
   	*)
