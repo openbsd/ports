@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.89 2017/11/09 18:47:00 landry Exp $
+# $OpenBSD: Makefile,v 1.90 2018/03/16 18:05:38 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3210000
-PKGNAME=	sqlite3-3.21.0
+DISTNAME =	sqlite-autoconf-3220000
+PKGNAME=	sqlite3-3.22.0
 
-SHARED_LIBS +=  sqlite3                   37.1 # 8.6
+SHARED_LIBS +=  sqlite3                   37.2 # 8.6
 
 CATEGORIES=	databases
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread readline termcap
 
-MASTER_SITES =	${HOMEPAGE}2017/
+MASTER_SITES =	${HOMEPAGE}2018/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-editline \
