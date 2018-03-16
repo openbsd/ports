@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/14 13:55:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2018/03/16 14:33:59 fcambus Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
-V =		1.07
+V =		2.0.0
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
@@ -15,7 +15,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB =	c m jansson GeoIP
+WANTLIB +=	c jansson m maxminddb
 
 MASTER_SITES =	https://github.com/fcambus/logswan/releases/download/$V/
 
@@ -23,9 +23,9 @@ MODULES =	devel/cmake
 NO_TEST =	Yes
 
 LIB_DEPENDS =	devel/jansson \
-		net/GeoIP
+		net/libmaxminddb
 
-CONFIGURE_ARGS = -DGEOIPDIR=${LOCALSTATEDIR}/db/GeoIP
+CONFIGURE_ARGS = -DGEOIP2DIR=${LOCALSTATEDIR}/db/GeoIP
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/logswan
