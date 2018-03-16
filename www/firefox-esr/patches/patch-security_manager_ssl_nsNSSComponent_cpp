@@ -1,0 +1,32 @@
+$OpenBSD: patch-security_manager_ssl_nsNSSComponent_cpp,v 1.1 2018/03/16 18:32:34 landry Exp $
+
+Fix nss 3.35 regression: PSM should depend on mozStorage, as a workaround for a sqlite3_config race, r=keeler
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=225364
+https://bugzilla.mozilla.org/show_bug.cgi?id=1380706
+
+Index: security/manager/ssl/nsNSSComponent.cpp
+--- security/manager/ssl/nsNSSComponent.cpp.orig
++++ security/manager/ssl/nsNSSComponent.cpp
+@@ -12,6 +12,7 @@
+ #include "SharedSSLState.h"
+ #include "cert.h"
+ #include "certdb.h"
++#include "mozStorageCID.h"
+ #include "mozilla/ArrayUtils.h"
+ #include "mozilla/Casting.h"
+ #include "mozilla/Preferences.h"
+@@ -2029,6 +2030,14 @@ nsNSSComponent::Init()
+   }
+ 
+   nsresult rv = NS_OK;
++
++  // To avoid a sqlite3_config race in NSS init, as a workaround for
++  // bug 730495, we require the storage service to get initialized first.
++  nsCOMPtr<nsISupports> storageService =
++    do_GetService(MOZ_STORAGE_SERVICE_CONTRACTID);
++  if (!storageService) {
++    return NS_ERROR_NOT_AVAILABLE;
++  }
+ 
+   MOZ_LOG(gPIPNSSLog, LogLevel::Debug, ("Beginning NSS initialization\n"));
+ 
