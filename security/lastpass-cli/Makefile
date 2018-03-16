@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/11 13:30:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/03/16 17:15:46 bket Exp $
 
 COMMENT =	LastPass command line interface tool
 
-GH_ACCOUNT =	lastpass
-GH_PROJECT =	lastpass-cli
-GH_TAGNAME =	v1.2.2
+V =		1.3.0
+DISTNAME =	lastpass-cli-${V}
+
 CATEGORIES =	security
+
+HOMEPAGE =	https://github.com/lastpass/lastpass-cli
 
 MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c curl crypto kvm ssl xml2
+WANTLIB =	c crypto curl kvm ssl xml2
+
+MASTER_SITES =	https://github.com/lastpass/lastpass-cli/releases/download/v${V}/
 
 MODULES =	devel/cmake
-
-BUILD_DEPENDS=	textproc/asciidoc
+BUILD_DEPENDS =	textproc/asciidoc
 LIB_DEPENDS =	net/curl \
 		textproc/libxml
-TEST_DEPENDS=	${BUILD_DEPENDS} \
+TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
 
-ALL_TARGET =	all doc-man
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/lpass ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/lpass.1 ${PREFIX}/man/man1
+INSTALL_TARGET =	install install-doc
 
 do-test:
 	cd ${WRKSRC}/test && sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' *

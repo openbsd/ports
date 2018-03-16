@@ -1,0 +1,10 @@
+$OpenBSD: patch-cmake_extras_install_doc_cmake,v 1.1 2018/03/16 17:15:46 bket Exp $
+
+Index: cmake_extras/install_doc.cmake
+--- cmake_extras/install_doc.cmake.orig
++++ cmake_extras/install_doc.cmake
+@@ -1,2 +1,2 @@
+-execute_process(COMMAND install -v -d $ENV{DESTDIR}${MANDIR}/man1)
+-execute_process(COMMAND install -m 0644 -v ${CMAKE_BINARY_DIR}/lpass.1 $ENV{DESTDIR}${MANDIR}/man1/lpass.1)
++execute_process(COMMAND install -d $ENV{DESTDIR}${MANDIR}/man1)
++execute_process(COMMAND install -m 0644 ${CMAKE_BINARY_DIR}/lpass.1 $ENV{DESTDIR}${MANDIR}/man1/lpass.1)
