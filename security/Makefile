@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2018/03/15 07:17:22 giovanni Exp $
+# $OpenBSD: Makefile,v 1.493 2018/03/16 19:43:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -281,6 +281,8 @@
      SUBDIR += py-ecdsa,python3
      SUBDIR += py-gnupg
      SUBDIR += py-gnupg,python3
+     SUBDIR += py-josepy
+     SUBDIR += py-josepy,python3
      SUBDIR += py-keyczar
      SUBDIR += py-keyring
      SUBDIR += py-keyring,python3
