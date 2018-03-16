@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/21 02:48:23 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/03/16 04:42:25 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -94,6 +94,7 @@ share/raspberrypi-firmware/boot/overlays/pi3-act-led.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-bt.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-wifi.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-miniuart-bt.dtbo
+share/raspberrypi-firmware/boot/overlays/pibell.dtbo
 share/raspberrypi-firmware/boot/overlays/piscreen.dtbo
 share/raspberrypi-firmware/boot/overlays/piscreen2r.dtbo
 share/raspberrypi-firmware/boot/overlays/pisound.dtbo
@@ -106,7 +107,6 @@ share/raspberrypi-firmware/boot/overlays/pwm-2chan.dtbo
 share/raspberrypi-firmware/boot/overlays/pwm-ir-tx.dtbo
 share/raspberrypi-firmware/boot/overlays/pwm.dtbo
 share/raspberrypi-firmware/boot/overlays/qca7000.dtbo
-share/raspberrypi-firmware/boot/overlays/raspidac3.dtbo
 share/raspberrypi-firmware/boot/overlays/rotary-encoder.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-backlight.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-cirrus-wm5102.dtbo
@@ -118,6 +118,7 @@ share/raspberrypi-firmware/boot/overlays/rpi-sense.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-tv.dtbo
 share/raspberrypi-firmware/boot/overlays/rra-digidac1-wm8741-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/sc16is750-i2c.dtbo
+share/raspberrypi-firmware/boot/overlays/sc16is752-i2c.dtbo
 share/raspberrypi-firmware/boot/overlays/sc16is752-spi1.dtbo
 share/raspberrypi-firmware/boot/overlays/sdhost.dtbo
 share/raspberrypi-firmware/boot/overlays/sdio-1bit.dtbo
@@ -140,6 +141,8 @@ share/raspberrypi-firmware/boot/overlays/superaudioboard.dtbo
 share/raspberrypi-firmware/boot/overlays/tinylcd35.dtbo
 share/raspberrypi-firmware/boot/overlays/uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/uart1.dtbo
+share/raspberrypi-firmware/boot/overlays/upstream-aux-interrupt.dtbo
+share/raspberrypi-firmware/boot/overlays/upstream.dtbo
 share/raspberrypi-firmware/boot/overlays/vc4-fkms-v3d.dtbo
 share/raspberrypi-firmware/boot/overlays/vc4-kms-v3d.dtbo
 share/raspberrypi-firmware/boot/overlays/vga666.dtbo
