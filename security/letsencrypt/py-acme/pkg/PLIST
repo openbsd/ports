@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/08/22 10:23:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/03/16 19:48:46 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
-bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/acme/__init__.py
@@ -41,42 +39,6 @@ lib/python${MODPY_VERSION}/site-packages/acme/errors.py
 lib/python${MODPY_VERSION}/site-packages/acme/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/fields.py
 lib/python${MODPY_VERSION}/site-packages/acme/fields_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/
-lib/python${MODPY_VERSION}/site-packages/acme/jose/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}b64.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}b64_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}errors_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}interfaces_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}json_util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}json_util_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jwa.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jwa_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jwk.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jwk_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jws.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}jws_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/${MODPY_PYCACHE}util_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/acme/jose/b64.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/b64_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/errors.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/errors_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/interfaces.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/interfaces_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/json_util.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/json_util_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jwa.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jwa_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jwk.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jwk_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jws.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/jws_test.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/util.py
-lib/python${MODPY_VERSION}/site-packages/acme/jose/util_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/jws.py
 lib/python${MODPY_VERSION}/site-packages/acme/jws_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/messages.py
@@ -88,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/testdata/
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/README
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-100sans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-idnsans.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-nocn.der
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-san.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.der
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.pem

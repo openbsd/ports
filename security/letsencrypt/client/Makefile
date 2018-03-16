@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/05 13:38:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/03/16 19:48:46 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
@@ -10,6 +10,7 @@ RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-parsedatetime \
 		devel/py-zopecomponent \
 		devel/py-zopeinterface \
+		security/py-josepy \
 		security/letsencrypt/py-acme=${MODPY_EGG_VERSION}
 TEST_DEPENDS=	${RUN_DEPENDS}
 

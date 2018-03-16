@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/05 13:38:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/03/16 19:48:46 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -28,8 +28,5 @@ TEST_IS_INTERACTIVE=	Yes
 TEST_DEPENDS=	devel/py-funcsigs${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/jws ${PREFIX}/bin/jws${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
