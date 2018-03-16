@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2018/03/15 23:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.278 2018/03/16 20:57:09 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -43,7 +43,8 @@ WANTLIB-main += vorbisfile xml2 xslt z
 # undefined symbols from the BlocksRuntime lib.
 #
 # keep telephony/asterisk-g729 in sync with this
-COMPILER =		base-gcc ports-gcc
+COMPILER=		base-gcc ports-gcc
+COMPILER_LANGS=		c
 
 SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
