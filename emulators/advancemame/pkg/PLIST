@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/01 14:30:11 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/16 21:59:06 fcambus Exp $
+@conflict advancemess-*
+@pkgpath emulators/advancemess
 @bin bin/advmame
+@bin bin/advmess
 @man man/man1/advmame.1
+@man man/man1/advmess.1
 share/doc/advancemame/
 share/doc/advancemame/advmame.txt

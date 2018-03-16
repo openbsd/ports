@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/11 16:40:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2018/03/16 21:59:06 fcambus Exp $
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
-V =		3.6
+V =		3.7
 DISTNAME =	advancemame-$V
 
 CATEGORIES =	emulators games
@@ -36,7 +36,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj/mame/generic/blend/advmame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/obj/mess/generic/blend/advmess ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/advmame.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/advmame.1 ${PREFIX}/man/man1/advmess.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/advancemame
 	${INSTALL_DATA} ${WRKSRC}/doc/advmame.txt ${PREFIX}/share/doc/advancemame
 
