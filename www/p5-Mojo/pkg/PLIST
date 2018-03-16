@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/13 07:21:26 remi Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/03/16 17:42:23 sthen Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
@@ -52,6 +52,7 @@ ${P5SITE}/Mojo/Message/Request.pm
 ${P5SITE}/Mojo/Message/Response.pm
 ${P5SITE}/Mojo/Parameters.pm
 ${P5SITE}/Mojo/Path.pm
+${P5SITE}/Mojo/Promise.pm
 ${P5SITE}/Mojo/Reactor/
 ${P5SITE}/Mojo/Reactor.pm
 ${P5SITE}/Mojo/Reactor/EV.pm
@@ -149,7 +150,9 @@ ${P5SITE}/Mojolicious/resources/public/mojo/failraptor.png
 ${P5SITE}/Mojolicious/resources/public/mojo/jquery/
 ${P5SITE}/Mojolicious/resources/public/mojo/jquery/jquery.js
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-black.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo-black-2x.png
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-white.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo-white-2x.png
 ${P5SITE}/Mojolicious/resources/public/mojo/noraptor.png
 ${P5SITE}/Mojolicious/resources/public/mojo/notfound.png
 ${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-dark.png
@@ -158,7 +161,6 @@ ${P5SITE}/Mojolicious/resources/public/mojo/prettify/
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-light.css
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/run_prettify.js
-${P5SITE}/Mojolicious/resources/public/mojo/stripes.png
 ${P5SITE}/Mojolicious/resources/templates/
 ${P5SITE}/Mojolicious/resources/templates/mojo/
 ${P5SITE}/Mojolicious/resources/templates/mojo/debug.html.ep
