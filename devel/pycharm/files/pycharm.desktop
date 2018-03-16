@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=PyCharm
+GenericName=PyCharm
+Comment=PyCharm Integrated Development Environment
+Icon=${TRUEPREFIX}/pycharm/pycharm.png
+Exec=${TRUEPREFIX}/bin/pycharm
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

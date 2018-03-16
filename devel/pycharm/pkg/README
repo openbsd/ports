@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1.1.1 2018/03/16 14:07:12 danj Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Windowing Problems
+==================
+If the splash-screen displays but you then only see a grey main screen,
+install the wmname package and run 'wmname LG3D'. This is a problem that
+has been seen with some Java-based applications used with a non-reparenting
+window manager (e.g. cwm).
