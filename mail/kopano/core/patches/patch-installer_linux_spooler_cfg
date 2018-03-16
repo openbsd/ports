@@ -1,10 +1,10 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
 
 Index: installer/linux/spooler.cfg
 --- installer/linux/spooler.cfg.orig
 +++ installer/linux/spooler.cfg
-@@ -11,16 +11,16 @@ smtp_port = 25
- #server_socket = file:///var/run/kopano/server.sock
+@@ -11,16 +11,16 @@
+ #server_socket = default:
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
@@ -24,20 +24,21 @@ Index: installer/linux/spooler.cfg
  
  # create memory coredumps upon crash [no, systemdefault, yes]
  #coredump_enabled = systemdefault
-@@ -149,7 +149,7 @@ archive_on_send = no
- plugin_enabled = yes
+@@ -153,13 +153,13 @@
+ #plugin_enabled = yes
  
  # Path to the spooler plugin manager
--plugin_manager_path = /usr/share/kopano-spooler/python
+-#plugin_manager_path = /usr/share/kopano-spooler/python
 +plugin_manager_path = /usr/local/share/kopano-spooler/python
  
  # Path to the activated spooler plugins.
  #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are
-@@ -157,5 +157,5 @@ plugin_manager_path = /usr/share/kopano-spooler/python
+-#   installed in '/usr/share/kopano-spooler/python/plugins/'. To activate a plugin create a symbolic
++#   installed in '/usr/local/share/kopano-spooler/python/plugins/'. To activate a plugin create a symbolic
  #   link in the 'plugin_path' directory.
  #
  # Example:
 -#  $ ln -s /usr/share/kopano-spooler/python/plugins/disclaimer.py /var/lib/kopano/spooler/plugins/disclaimer.py
--plugin_path = /var/lib/kopano/spooler/plugins
+-#plugin_path = /var/lib/kopano/spooler/plugins
 +#  $ ln -s /usr/local/share/kopano-spooler/python/plugins/disclaimer.py /var/db/kopano/spooler/plugins/disclaimer.py
 +plugin_path = /var/db/kopano/spooler/plugins

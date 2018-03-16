@@ -1,0 +1,23 @@
+$OpenBSD: patch-common_SSLUtil_cpp,v 1.1 2018/03/16 15:35:02 robert Exp $
+
+Index: common/SSLUtil.cpp
+--- common/SSLUtil.cpp.orig
++++ common/SSLUtil.cpp
+@@ -29,7 +29,7 @@ namespace KC {
+ 
+ static std::recursive_mutex *ssl_locks;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
+ static void ssl_lock(int mode, int n, const char *file, int line)
+ {
+ 	if (mode & CRYPTO_LOCK)
+@@ -78,7 +78,7 @@ void SSL_library_cleanup()
+ 	#endif
+ 
+ 	ERR_free_strings();
+-	#if OPENSSL_VERSION_NUMBER < 0x10100000L
++	#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 		ERR_remove_state(0);
+ 	#endif
+ 	EVP_cleanup();

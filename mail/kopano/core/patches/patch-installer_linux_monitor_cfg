@@ -1,10 +1,10 @@
-$OpenBSD: patch-installer_linux_monitor_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_monitor_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
 
 Index: installer/linux/monitor.cfg
 --- installer/linux/monitor.cfg.orig
 +++ installer/linux/monitor.cfg
 @@ -8,16 +8,16 @@
- servers =
+ #servers =
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano

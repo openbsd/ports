@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_search_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
 
 Index: installer/linux/search.cfg
 --- installer/linux/search.cfg.orig
@@ -7,8 +7,8 @@ Index: installer/linux/search.cfg
  # INDEXED SEARCH SERVICE SETTINGS
  
  # Location of the index files
--index_path          =   /var/lib/kopano/search/
-+index_path          =   /var/db/kopano/search/
+-#index_path = /var/lib/kopano/search/
++#index_path = /var/db/kopano/search/
  
  # run as specific user
 -#run_as_user         = kopano
@@ -27,4 +27,4 @@ Index: installer/linux/search.cfg
 +running_path = /var/empty
  
  # Limit the number of results returned (0 = don't limit)
- limit_results		=	1000
+ # Default: 0

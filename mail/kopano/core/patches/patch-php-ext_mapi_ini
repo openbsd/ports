@@ -1,0 +1,11 @@
+$OpenBSD: patch-php-ext_mapi_ini,v 1.1 2018/03/16 15:35:02 robert Exp $
+
+Index: php-ext/mapi.ini
+--- php-ext/mapi.ini.orig
++++ php-ext/mapi.ini
+@@ -1,4 +1,4 @@
+ ; Enable MAPI extension module
+ extension=mapi.so
+ ; Adding path with php mapi classes to include dir
+-include_path="${include_path}:/usr/share/kopano/php"
++include_path="${include_path}:/usr/local/share/kopano/php"

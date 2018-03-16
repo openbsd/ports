@@ -1,0 +1,14 @@
+$OpenBSD: patch-ECtools_utils_kopano_utils_autorespond_py,v 1.1 2018/03/16 15:35:02 robert Exp $
+
+Index: ECtools/utils/kopano_utils/autorespond.py
+--- ECtools/utils/kopano_utils/autorespond.py.orig
++++ ECtools/utils/kopano_utils/autorespond.py
+@@ -17,7 +17,7 @@ CONFIG = {
+     "autorespond_bcc": kopano.Config.boolean(default=False),
+     "autorespond_norecip": kopano.Config.boolean(default=False),
+     "timelimit": kopano.Config.integer(default=24 * 3600),
+-    "senddb": kopano.Config.string(default="/var/lib/kopano/autorespond.db"),
++    "senddb": kopano.Config.string(default="/var/db/kopano/autorespond.db"),
+     "copy_to_sentmail": kopano.Config.boolean(default=True)
+ }
+ 

@@ -1,26 +1,26 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.2 2017/09/27 08:36:53 robert Exp $
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.3 2018/03/16 15:35:02 robert Exp $
 
 Index: installer/linux/dagent.cfg
 --- installer/linux/dagent.cfg.orig
 +++ installer/linux/dagent.cfg
-@@ -114,16 +114,16 @@ archive_on_delivery = no
- plugin_enabled = yes
+@@ -115,16 +115,16 @@
+ #plugin_enabled = yes
  
  # Path to the dagent plugin manager
--plugin_manager_path = /usr/share/kopano-dagent/python
-+plugin_manager_path = /usr/local/share/kopano-dagent/python
+-#plugin_manager_path = /usr/share/kopano-dagent/python
++#plugin_manager_path = /usr/local/share/kopano-dagent/python
  
  # Path to the activated dagent plugins.
  #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are
 -#   installed in '/usr/share/kopano-dagent/python/plugins/'. To activate a plugin create a symbolic
-+#   installed in '/usr/local/kopano-dagent/python/plugins/'. To activate a plugin create a symbolic
++#   installed in '/usr/local/share/kopano-dagent/python/plugins/'. To activate a plugin create a symbolic
  #   link in the 'plugin_path' directory.
  #
  # Example:
 -#  $ ln -s /usr/share/kopano-dagent/python/plugins/BMP2PNG.py /var/lib/kopano/dagent/plugins/BMP2PNG.py
--plugin_path = /var/lib/kopano/dagent/plugins
-+#  $ ln -s /usr/local/kopano-dagent/python/plugins/BMP2PNG.py /var/db/kopano/dagent/plugins/BMP2PNG.py
-+plugin_path = /var/db/kopano/dagent/plugins
+-#plugin_path = /var/lib/kopano/dagent/plugins
++#  $ ln -s /usr/local/share/kopano-dagent/python/plugins/BMP2PNG.py /var/db/kopano/dagent/plugins/BMP2PNG.py
++#plugin_path = /var/db/kopano/dagent/plugins
  
  ##############################################################
  # DAGENT RULE SETTINGS

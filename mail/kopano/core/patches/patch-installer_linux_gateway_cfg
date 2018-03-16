@@ -1,10 +1,10 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
 
 Index: installer/linux/gateway.cfg
 --- installer/linux/gateway.cfg.orig
 +++ installer/linux/gateway.cfg
-@@ -14,16 +14,16 @@ server_hostname = 
- server_hostname_greeting = no
+@@ -14,16 +14,16 @@
+ #server_hostname_greeting = no
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
