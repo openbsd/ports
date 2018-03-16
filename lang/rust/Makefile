@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/03/13 08:08:03 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2018/03/16 07:36:40 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -20,7 +20,7 @@ REVISION =		0
 
 # rustc bootstrap version
 BV-amd64 =		1.24.0-20180308
-BV-i386 =		1.24.0-20180213
+BV-i386 =		1.24.0-20180316
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
