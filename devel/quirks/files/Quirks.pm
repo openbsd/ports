@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.581 2018/03/10 12:50:18 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.582 2018/03/16 22:06:26 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -500,6 +500,7 @@ my $stem_extensions = {
 	'livestreamer' => 'streamlink',
 	'newsbeuter' => 'newsboat',
 	'php-fastcgi' => 'php-cgi',
+	'advancemess' => 'advancemame',
 };
 
 my $obsolete_reason = {
