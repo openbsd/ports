@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/16 13:08:35 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/intervaltree/
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/intervaltree/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/intervaltree/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/intervaltree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/intervaltree/${MODPY_PYCACHE}interval.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/intervaltree/${MODPY_PYCACHE}intervaltree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/intervaltree/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/intervaltree/interval.py
+lib/python${MODPY_VERSION}/site-packages/intervaltree/intervaltree.py
+lib/python${MODPY_VERSION}/site-packages/intervaltree/node.py
