@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.68 2016/09/22 19:58:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2018/03/17 16:14:34 sthen Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.4.2
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=	sox 4.0 # 3.0
 
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
-# code is GPLv2+, however as opencore is under Apache License we must use
-# sox under the terms of GPLv3 to avoid license conflict.
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m z sndio
 WANTLIB += FLAC gsm mad id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
-WANTLIB += opencore-amrnb opencore-amrwb
 WANTLIB += opus opusfile twolame wavpack
 WANTLIB += iconv png
 
@@ -35,7 +33,6 @@ LIB_DEPENDS=			\
 	audio/libogg		\
 	audio/libsndfile	\
 	audio/libvorbis		\
-	audio/opencore-amr	\
 	audio/opus		\
 	audio/opusfile		\
 	audio/twolame		\
@@ -75,8 +72,8 @@ CONFIGURE_ARGS+=		\
 	--with-oggvorbis	\
 	--with-opus		\
 	--with-flac		\
-	--with-amrwb		\
-	--with-amrnb		\
+	--without-amrwb		\
+	--without-amrnb		\
 	--with-wavpack		\
 	--with-sndfile		\
 	--with-mp3		\
