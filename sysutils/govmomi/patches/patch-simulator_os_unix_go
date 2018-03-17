@@ -1,9 +1,9 @@
-$OpenBSD: patch-simulator_os_unix_go,v 1.1.1.1 2017/11/28 08:42:19 ajacoutot Exp $
+$OpenBSD: patch-simulator_os_unix_go,v 1.2 2018/03/17 11:41:45 ajacoutot Exp $
 
 Index: simulator/os_unix.go
 --- simulator/os_unix.go.orig
 +++ simulator/os_unix.go
-@@ -27,12 +27,12 @@ func (ds *Datastore) stat() error {
+@@ -29,12 +29,12 @@ func (ds *Datastore) stat() error {
  		return err
  	}
  

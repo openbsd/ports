@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/28 08:42:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/17 11:41:45 ajacoutot Exp $
 
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
-GH_TAGNAME=		v0.16.0
+GH_TAGNAME=		v0.17.0
 GH_ACCOUNT=		vmware
 GH_PROJECT=		govmomi
 
@@ -19,13 +19,23 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c pthread
 
+MASTER_SITES=		https://github.com/vmware/govmomi/archive/v${V}/
+
 MODULES=		lang/go
 
 MULTI_PACKAGES=		-main -vcsim
 
-post-build:
+pre-patch:
+	cp ${MODGO_SUBDIR}/toolbox/hgfs/hgfs_{darwin,openbsd}.go
+	cp ${MODGO_SUBDIR}/toolbox/toolbox_{darwin,openbsd}.go
+
+post-configure:
+	mkdir -p ${MODGO_WORKSPACE}/src/github.com/vmware
+	mv ${WRKSRC} ${MODGO_WORKSPACE}/src/github.com/vmware/
+
+do-build:
 .for _d in govc vcsim
-	cd ${WRKSRC}/$${_d} && ${MODGO_BUILD_CMD} ${ALL_TARGET}/${_d}
+	cd ${WRKSRC}/${_d} && ${MODGO_BUILD_CMD}
 .endfor
 
 .include <bsd.port.mk>
