@@ -1,0 +1,19 @@
+#!/bin/ksh
+#
+# $OpenBSD: mattermost.rc,v 1.1.1.1 2018/03/17 13:00:59 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/mattermost"
+daemon_user="_mattermost"
+daemon_flags="--config=${SYSCONFDIR}/mattermost/default.json"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "cd ${TRUEPREFIX}/share/mattermost && \
+		${daemon} ${daemon_flags}"
+}
+
+rc_cmd $1

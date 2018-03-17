@@ -1,0 +1,79 @@
+$OpenBSD: patch-config_default_json,v 1.1.1.1 2018/03/17 13:00:59 robert Exp $
+
+Index: config/default.json
+--- config/default.json.orig
++++ config/default.json
+@@ -102,7 +102,7 @@
+     },
+     "SqlSettings": {
+         "DriverName": "mysql",
+-        "DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s",
++        "DataSource": "mmuser:mostest@tcp(localhost:3306)/mattermost_test?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
+         "DataSourceReplicas": [],
+         "DataSourceSearchReplicas": [],
+         "MaxIdleConns": 20,
+@@ -112,12 +112,12 @@
+         "QueryTimeout": 30
+     },
+     "LogSettings": {
+-        "EnableConsole": true,
+-        "ConsoleLevel": "DEBUG",
++        "EnableConsole": false,
++        "ConsoleLevel": "INFO",
+         "EnableFile": true,
+         "FileLevel": "INFO",
+         "FileFormat": "",
+-        "FileLocation": "",
++        "FileLocation": "${LOCALSTATEDIR}/log/mattermost",
+         "EnableWebhookDebugging": true,
+         "EnableDiagnostics": true
+     },
+@@ -134,7 +134,7 @@
+         "EnableMobileDownload": true,
+         "MaxFileSize": 52428800,
+         "DriverName": "local",
+-        "Directory": "./data/",
++        "Directory": "${LOCALSTATEDIR}/mattermost/data/",
+         "EnablePublicLink": false,
+         "PublicLinkSalt": "",
+         "InitialFont": "luximbi.ttf",
+@@ -161,8 +161,8 @@
+         "EnableSMTPAuth": false,
+         "SMTPUsername": "",
+         "SMTPPassword": "",
+-        "SMTPServer": "dockerhost",
+-        "SMTPPort": "2500",
++        "SMTPServer": "localhost",
++        "SMTPPort": "25",
+         "ConnectionSecurity": "",
+         "InviteSalt": "",
+         "SendPushNotifications": false,
+@@ -266,7 +266,7 @@
+     },
+     "ComplianceSettings": {
+         "Enable": false,
+-        "Directory": "./data/",
++        "Directory": "${LOCALSTATEDIR}/mattermost/data/",
+         "EnableDaily": false
+     },
+     "LocalizationSettings": {
+@@ -331,7 +331,7 @@
+         "TurnSharedKey": ""
+     },
+     "ElasticsearchSettings": {
+-        "ConnectionUrl": "http://dockerhost:9200",
++        "ConnectionUrl": "http://localhost:9200",
+         "Username": "elastic",
+         "Password": "changeme",
+         "EnableIndexing": false,
+@@ -367,8 +367,8 @@
+     "PluginSettings": {
+         "Enable": true,
+         "EnableUploads": false,
+-        "Directory": "./plugins",
+-        "ClientDirectory": "./client/plugins",
++        "Directory": "${LOCALSTATEDIR}/mattermost/plugins",
++        "ClientDirectory": "${LOCALSTATEDIR}/mattermost/client/plugins",
+         "Plugins": {},
+         "PluginStates": {}
+     }
