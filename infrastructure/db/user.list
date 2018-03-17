@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.305 2018/03/12 17:43:54 remi Exp $
+$OpenBSD: user.list,v 1.306 2018/03/17 12:59:02 robert Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -312,3 +312,4 @@ id  user		group		port options
 801 _solr		_solr		textproc/solr
 802 _restic		_restic		susytils/restic-rest-server
 803 _rsyslogd		_rsyslogd	sysutils/rsyslog
+804 _masttermost	_mattermost	net/mattermost-server
