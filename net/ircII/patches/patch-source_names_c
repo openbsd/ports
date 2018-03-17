@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_names_c,v 1.1 2018/03/17 20:41:01 otto Exp $
+
+Index: source/names.c
+--- source/names.c.orig
++++ source/names.c
+@@ -200,6 +200,7 @@ add_channel(u_char *channel, u_char *key, int server, 
+ 		malloc_strcpy(&new->channel, channel);
+ 		new->mode = 0;
+ 		new->limit = 0;
++		new->window = NULL;
+ 		do_add = 1;
+ 		full_list = server_get_chan_list(server);
+ 		add_to_list((List **)(void *)&full_list, (List *) new);
