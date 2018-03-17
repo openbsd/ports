@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/23 07:45:07 patrick Exp $
+# $OpenBSD: Makefile,v 1.5 2018/03/17 11:38:06 jsg Exp $
 
 FW_DRIVER=	intel
 
-FW_VER=		20171117
+FW_VER=		20180312
 EPOCH=		0
-REVISION=	1
-MASTER_SITES=	https://downloadmirror.intel.com/27337/eng/
+MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/
 
 DISTNAME=	microcode-${FW_VER}
 
