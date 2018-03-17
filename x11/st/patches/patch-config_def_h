@@ -1,15 +1,7 @@
-$OpenBSD: patch-config_def_h,v 1.8 2016/10/09 18:47:49 czarkoff Exp $
---- config.def.h.orig	Sat Oct  8 21:48:13 2016
-+++ config.def.h	Sat Oct  8 21:48:37 2016
-@@ -5,7 +5,7 @@
-  *
-  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
-  */
--static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char font[] = "DejaVu Sans Mono:pixelsize=12:antialias=true:autohint=false";
- static int borderpx = 2;
- 
- /*
+$OpenBSD: patch-config_def_h,v 1.9 2018/03/17 13:28:39 kn Exp $
+Index: config.def.h
+--- config.def.h.orig
++++ config.def.h
 @@ -92,7 +92,7 @@ static const char *colorname[] = {
  	"blue2",
  	"magenta3",

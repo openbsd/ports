@@ -1,16 +1,14 @@
-$OpenBSD: patch-st_c,v 1.4 2017/09/26 23:03:53 mestre Exp $
+$OpenBSD: patch-st_c,v 1.5 2018/03/17 13:28:39 kn Exp $
 Index: st.c
 --- st.c.orig
 +++ st.c
-@@ -1454,9 +1454,15 @@ ttynew(void)
+@@ -806,9 +806,13 @@ ttynew(char *line, char *cmd, char *out, char **args)
  			die("ioctl TIOCSCTTY failed: %s\n", strerror(errno));
  		close(s);
  		close(m);
-+
 +		if (pledge("stdio getpw proc exec", NULL) == -1)
 +			die("pledge\n");
-+
- 		execsh();
+ 		execsh(cmd, args);
  		break;
  	default:
 +		if (pledge("stdio rpath tty proc", NULL) == -1)
