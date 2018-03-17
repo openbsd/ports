@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/17 11:41:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/17 21:57:08 sthen Exp $
 
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
@@ -18,8 +18,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c pthread
-
-MASTER_SITES=		https://github.com/vmware/govmomi/archive/v${V}/
 
 MODULES=		lang/go
 
