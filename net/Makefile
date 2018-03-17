@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1058 2018/03/09 23:40:58 kn Exp $
+# $OpenBSD: Makefile,v 1.1059 2018/03/17 13:01:37 robert Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -233,6 +233,7 @@
      SUBDIR += manubulon-snmp
      SUBDIR += maradns
      SUBDIR += maradns-deadwood
+     SUBDIR += mattermost-server
      SUBDIR += mbrowse
      SUBDIR += mcabber
      SUBDIR += mcast-proxy
