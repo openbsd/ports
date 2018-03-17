@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/10 13:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/03/17 11:04:36 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.13
-DISTNAME =		nfdump-$V
+V =			1.6.16
+GH_ACCOUNT =		phaag
+GH_PROJECT =		nfdump
+GH_TAGNAME =		v$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
-REVISION-main =		0
-REVISION-nfprofile =	0
+
+SHARED_LIBS +=	nfdump                    0.0 # 0.0
 
 CATEGORIES =		net
-HOMEPAGE =		http://nfdump.sourceforge.net/
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c z
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nfdump/}
+WANTLIB =		bz2 c z
 
 CONFIGURE_STYLE =	gnu
 
@@ -35,11 +34,19 @@ CONFIGURE_ARGS +=	--enable-compat15 \
 
 MULTI_PACKAGES =	-main -nfprofile
 
-LIB_DEPENDS-main =	net/flow-tools>=0.68.5
+LIB_DEPENDS-main =	archivers/bzip2 \
+			net/flow-tools>=0.68.5
 WANTLIB-main =		${WANTLIB} ft
-LIB_DEPENDS-nfprofile =	net/rrdtool
-WANTLIB-nfprofile =	${WANTLIB} pthread rrd
+
+LIB_DEPENDS-nfprofile =	net/rrdtool \
+			net/nfdump,-main
 RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
+WANTLIB-nfprofile =  ${WANTLIB} 
+WANTLIB-nfprofile += X11 Xext Xrender cairo expat ffi fontconfig freetype
+WANTLIB-nfprofile += glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
+WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0
+WANTLIB-nfprofile += pangoft2-1.0 pcre pixman-1 png pthread rrd xcb
+WANTLIB-nfprofile += xcb-render xcb-shm xml2
 
 REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
 
