@@ -1,23 +1,12 @@
-$OpenBSD: patch-source_test_checkasm-a_asm,v 1.2 2015/11/09 06:44:09 ajacoutot Exp $
---- source/test/checkasm-a.asm.orig	Fri Oct 16 02:10:22 2015
-+++ source/test/checkasm-a.asm	Fri Oct 16 02:22:07 2015
-@@ -156,7 +156,11 @@ cglobal checkasm_call, 2,15,16,max_args*8+8
-     mov  r9, rax
-     mov r10, rdx
-     lea  r0, [error_message]
-+%ifdef PIC
-+    call puts wrt ..plt
-+%else
-     call puts
-+%endif
-     mov  r1, [rsp+max_args*8]
-     mov  dword [r1], 0
-     mov  rdx, r10
-@@ -198,7 +202,11 @@ cglobal checkasm_call, 1,7
+$OpenBSD: patch-source_test_checkasm-a_asm,v 1.3 2018/03/17 08:34:14 ajacoutot Exp $
+Index: source/test/checkasm-a.asm
+--- source/test/checkasm-a.asm.orig
++++ source/test/checkasm-a.asm
+@@ -202,7 +202,11 @@ cglobal checkasm_call, 1,7
      mov  r4, edx
      lea  r1, [error_message]
      push r1
-+%ifdef PIC
++%if FORMAT_ELF
 +    call puts wrt ..plt
 +%else
      call puts
