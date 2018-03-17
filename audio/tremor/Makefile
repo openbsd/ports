@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/03/17 18:27:11 naddy Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
-DISTNAME=	tremor-20120410
-REVISION=	1
+DISTNAME=	tremor-20180316
 CATEGORIES=	audio
-MASTER_SITES=	http://comstyle.com/source/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	http://shell.uugrn.org/~naddy/
+EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	vorbisidec	3.0
+SHARED_LIBS=	vorbisidec	3.0	# 1.3
 
-HOMEPAGE=	http://www.xiph.org/vorbis/
+HOMEPAGE=	https://www.xiph.org/vorbis/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,12 +23,12 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.10
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 
 CONFIGURE_STYLE= gnu
 
-WRKDIST=	${WRKDIR}/Tremor
+WRKDIST=	${WRKDIR}/tremor
 
 post-patch:
 	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
