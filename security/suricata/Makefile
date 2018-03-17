@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/15 16:19:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/17 09:57:20 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 DISTNAME =	suricata-4.0.4
-REVISION =	0
+REVISION =	1
 CATEGORIES =	security
 SHARED_LIBS +=  htp                       0.0 # 1.0
 
