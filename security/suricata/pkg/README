@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/03/17 09:57:21 jasper Exp $
+$OpenBSD: README,v 1.3 2018/03/17 13:03:14 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,14 +20,39 @@ ${SYSCONFDIR}/suricata/suricata.yaml.
 Rule management
 ===============
 
+It is possible to download and install rules manually, but there is a
+much easier and quicker way to do so. There are special programs which
+you can use for downloading and installing rules.
+
+After installing the new rulesets described below, restart suricata to
+pick up the new rules:
+
+# rcctl restart suricata
+
+Note that the installed rules have to be updated regularly by the program
+used to fetch them initially. For example use cron to update the rules
+every 24h.
+
+suricata-update
+---------------
+
+The recommended new way of updating rules is with suricata-update which
+is installed with:
+
+# pkg_add suricata-update
+
+Run `suricata-update` to download and install the new rules into
+${VARBASE}/suricata/rules/ . Next update the suricata configuration
+in ${SYSCONFIDR}/suricata/suricata.yaml to use these rules instead:
+
+default-rule-path: ${VARBASE}/suricata/rules/
+rule-files:
+    - suricata.rules
+
 Oinkmaster
 ----------
 
-It is possible to download and install rules manually, but there is a
-much easier and quicker way to do so. There are special programs which
-you can use for downloading and installing rules. There is for example
-Pulled Pork and Oinkmaster. In this documentation the use of Oinkmaster
-will be described.
+The other common method is with Oinkmaster which can be installed with:
 
 # pkg_add oinkmaster
 
@@ -38,12 +63,8 @@ Threats.
 Oinkmaster has to know where the rules an be found. These rules can be
 found at:
 
-http://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
+https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
 
 And you can download as follow:
 
 # cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf -o ${SYSCONFDIR}/suricata/rules
-
-Finally you can restart Suricata to pick up the new rules:
-
-# rcctl restart suricata
