@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/03/16 04:42:25 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/03/18 09:19:41 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -8,6 +8,7 @@ share/raspberrypi-firmware/boot/bcm2708-rpi-b-plus.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-b.dtb
 share/raspberrypi-firmware/boot/bcm2708-rpi-cm.dtb
 share/raspberrypi-firmware/boot/bcm2709-rpi-2-b.dtb
+share/raspberrypi-firmware/boot/bcm2710-rpi-3-b-plus.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-3-b.dtb
 share/raspberrypi-firmware/boot/bcm2710-rpi-cm3.dtb
 share/raspberrypi-firmware/boot/bootcode.bin

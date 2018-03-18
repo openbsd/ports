@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.8 2018/03/16 04:42:25 jsg Exp $
+#	$OpenBSD: Makefile,v 1.9 2018/03/18 09:19:41 jsg Exp $
 
 COMMENT=	Raspberry Pi firmware
 GH_ACCOUNT=	raspberrypi
 GH_PROJECT=	firmware
-V=		1.20180306
-GH_COMMIT=	aa755336fc3f0430fb9175c9fe5f0e1d27f7dd54
+V=		1.20180317
+GH_COMMIT=	25cf637ccc90d7d2fa37277c807ab33b655bd0f4
 #DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${V}
 
