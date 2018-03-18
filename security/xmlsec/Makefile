@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2018/01/13 01:11:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2018/03/18 13:22:57 sthen Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
 VERSION=	1.2.25
+REVISION-main=	0
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
