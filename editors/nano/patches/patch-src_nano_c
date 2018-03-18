@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_nano_c,v 1.1 2018/03/18 20:38:39 naddy Exp $
+
+https://git.savannah.gnu.org/cgit/nano.git/commit/?id=95989e7dfe9da043d6ccd7f16372ccc36d872e9b
+
+Index: src/nano.c
+--- src/nano.c.orig
++++ src/nano.c
+@@ -1621,6 +1621,20 @@ int do_mouse(void)
+ }
+ #endif /* ENABLE_MOUSE */
+ 
++/* Return TRUE when the given function is a cursor-moving command. */
++bool wanted_to_move(void *func)
++{
++	return func == do_left || func == do_right ||
++			func == do_up_void || func == do_down_void ||
++			func == do_home || func == do_end ||
++			func == do_prev_word_void || func == do_next_word_void ||
++			func == do_para_begin_void || func == do_para_end_void ||
++			func == do_prev_block || func == do_next_block ||
++			func == do_page_up || func == do_page_down ||
++			func == do_scroll_up || func == do_scroll_down ||
++			func == to_first_line || func == to_last_line;
++}
++
+ /* Read in a keystroke.  Act on the keystroke if it is a shortcut or a toggle;
+  * otherwise, insert it into the edit buffer.  If allow_funcs is FALSE, don't
+  * do anything with the keystroke -- just return it. */
+@@ -1770,8 +1784,7 @@ int do_input(bool allow_funcs)
+ 				if (!shift_held && openfile->kind_of_mark == SOFTMARK &&
+ 									(openfile->current != was_current ||
+ 									openfile->current_x != was_x ||
+-									(shortcut->func >= to_first_line &&
+-									shortcut->func <= do_right))) {
++									wanted_to_move(shortcut->func))) {
+ 					openfile->mark = NULL;
+ 					refresh_needed = TRUE;
+ 				} else if (openfile->current != was_current)
