@@ -1,17 +1,31 @@
-$OpenBSD: patch-include_proto_openssl-compat_h,v 1.4 2018/02/23 10:25:17 sthen Exp $
+$OpenBSD: patch-include_proto_openssl-compat_h,v 1.5 2018/03/18 12:24:43 sthen Exp $
 
 Index: include/proto/openssl-compat.h
 --- include/proto/openssl-compat.h.orig
 +++ include/proto/openssl-compat.h
-@@ -122,6 +122,7 @@ static inline void *SSL_CTX_get_default_passwd_cb_user
- 	return ctx->default_passwd_callback_userdata;
+@@ -94,11 +94,13 @@ static inline int SSL_SESSION_set1_id_context(SSL_SESS
+  * Functions introduced in OpenSSL 1.1.0 and not yet present in LibreSSL
+  */
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static inline const unsigned char *SSL_SESSION_get0_id_context(const SSL_SESSION *sess, unsigned int *sid_ctx_length)
+ {
+ 	*sid_ctx_length = sess->sid_ctx_length;
+ 	return sess->sid_ctx;
+ }
++#endif
+ 
+ static inline int SSL_SESSION_set1_id(SSL_SESSION *s, const unsigned char *sid, unsigned int sid_len)
+ {
+@@ -107,6 +109,7 @@ static inline int SSL_SESSION_set1_id(SSL_SESSION *s, 
+ 	return 1;
  }
  
 +#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
- #ifndef OPENSSL_NO_DH
- static inline int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
+ static inline const OCSP_CERTID *OCSP_SINGLERESP_get0_id(const OCSP_SINGLERESP *single)
  {
-@@ -141,6 +142,7 @@ static inline X509_ALGOR *X509_get0_tbs_sigalg(const X
+ 	return single->certId;
+@@ -141,6 +144,7 @@ static inline X509_ALGOR *X509_get0_tbs_sigalg(const X
  {
  	return x->cert_info->signature;
  }
