@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/03/16 15:35:02 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/03/18 11:30:55 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -573,6 +573,8 @@ share/examples/kopano/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/kopano/quotamail/userwarning.mail
 share/examples/kopano/search.cfg
 @sample ${SYSCONFDIR}/kopano/search.cfg
+share/examples/kopano/spamd.cfg
+@sample ${SYSCONFDIR}/kopano/spamd.cfg
 share/examples/kopano/searchscripts/
 @sample ${SYSCONFDIR}/kopano/searchscripts/
 share/examples/kopano/searchscripts/attachments_parser
@@ -746,4 +748,5 @@ share/locale/zh_TW/LC_MESSAGES/kopano.mo
 @rcscript ${RCDIR}/kopano_monitor
 @rcscript ${RCDIR}/kopano_search
 @rcscript ${RCDIR}/kopano_server
+@rcscript ${RCDIR}/kopano_spamd
 @rcscript ${RCDIR}/kopano_spooler

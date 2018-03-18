@@ -1,4 +1,4 @@
-$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.1 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.2 2018/03/18 11:30:55 robert Exp $
 
 Index: ECtools/spamd/kopano_spamd/__init__.py
 --- ECtools/spamd/kopano_spamd/__init__.py.orig
@@ -14,7 +14,7 @@ Index: ECtools/spamd/kopano_spamd/__init__.py
 +    'spam_dir': Config.string(default="/var/db/kopano/spamd/spam"),
 +    'ham_dir': Config.string(default="/var/db/kopano/spamd/ham"),
 +    'spam_db': Config.string(default="/var/db/kopano/spamd/spam.db"),
-+    'sa_group': Config.string(default="_vscan"),
++    'sa_group': Config.string(default="_spamdaemon"),
      'learn_ham': Config.boolean(default=True)
  }
  

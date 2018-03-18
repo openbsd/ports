@@ -1,0 +1,49 @@
+$OpenBSD: patch-installer_linux_spamd_cfg,v 1.1 2018/03/18 11:30:55 robert Exp $
+
+Index: installer/linux/spamd.cfg
+--- installer/linux/spamd.cfg.orig
++++ installer/linux/spamd.cfg
+@@ -2,16 +2,16 @@
+ # SPAMD SERVICE SETTINGS
+ 
+ # run as specific user
+-#run_as_user         = kopano
++run_as_user         = _kopano
+ 
+ # run as specific group
+-#run_as_group        = kopano
++run_as_group        = _kopano
+ 
+ # control pid file
+-#pid_file            =   /var/run/kopano/spamd.pid
++pid_file            =   /var/run/kopano/spamd.pid
+ 
+ # run server in this path (when not using the -F switch)
+-#running_path = /var/lib/kopano
++running_path = /var/empty
+ 
+ ##############################################################
+ # LOG SETTINGS
+@@ -33,10 +33,10 @@
+ 
+ # The dir where spam mails are written to which are later picked up
+ # by the sa-learn program
+-#spam_dir = /var/lib/kopano/spamd/spam
++#spam_dir = /var/db/kopano/spamd/spam
+ 
+ # Location for the database containing metadata on learned spam
+-#spam_db = /var/lib/kopano/spamd/spam.db
++#spam_db = /var/db/kopano/spamd/spam.db
+ 
+ # Learn ham, when the user moves emails from junk to inbox,
+ # enabled by default.
+@@ -44,7 +44,7 @@
+ 
+ # The dir where ham mails are written to which are later picked up
+ # by the sa-learn program
+-#ham_dir = /var/lib/kopano/spamd/ham
++#ham_dir = /var/db/kopano/spamd/ham
+ 
+ # Spamassassin group
+-#sa_group = amavis
++#sa_group = _spamdaemon

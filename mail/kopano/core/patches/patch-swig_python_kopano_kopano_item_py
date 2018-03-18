@@ -1,0 +1,13 @@
+$OpenBSD: patch-swig_python_kopano_kopano_item_py,v 1.1 2018/03/18 11:30:55 robert Exp $
+
+Index: swig/python/kopano/kopano/item.py
+--- swig/python/kopano/kopano/item.py.orig
++++ swig/python/kopano/kopano/item.py
+@@ -15,6 +15,7 @@ import struct
+ import time
+ import traceback
+ import warnings
++from MAPI.Defs import bin2hex
+ 
+ try:
+     import cPickle as pickle
