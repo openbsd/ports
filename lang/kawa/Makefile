@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2017/09/19 19:23:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2018/03/18 13:26:46 sthen Exp $
+
+BROKEN-i386=		doesn't build reliably#'
 
 COMMENT=		Scheme and language framework for the Java platform
 
