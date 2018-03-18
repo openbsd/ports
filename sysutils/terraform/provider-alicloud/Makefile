@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/03/17 10:53:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2018/03/18 12:23:16 ajacoutot Exp $
 
 PROVIDER=		alicloud
-GH_TAGNAME=		V1.8.0
+GH_TAGNAME=		v1.8.0
+REVISION=		0
 
 PORTROACH=		skipv:${GH_TAGNAME}
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:L:C/^v//}
