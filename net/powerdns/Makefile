@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/02/17 11:20:55 sthen Exp $
-
-BROKEN-hppa =		undefined reference to '__sync_fetch_and_add_4'
+# $OpenBSD: Makefile,v 1.62 2018/03/18 22:56:21 sthen Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS

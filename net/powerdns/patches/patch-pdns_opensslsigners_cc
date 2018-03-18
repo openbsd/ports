@@ -1,4 +1,9 @@
-$OpenBSD: patch-pdns_opensslsigners_cc,v 1.3 2018/02/19 18:27:44 sthen Exp $
+$OpenBSD: patch-pdns_opensslsigners_cc,v 1.4 2018/03/18 22:56:21 sthen Exp $
+
+XXX auto-init may mean that thread locking can be avoided; if so, the whole
+"OPENSSL_VERSION_NUMBER < 0x1010000fL || defined LIBRESSL_VERSION_NUMBER)"
+block can be disabled
+
 
 Index: pdns/opensslsigners.cc
 --- pdns/opensslsigners.cc.orig
@@ -11,11 +16,11 @@ Index: pdns/opensslsigners.cc
  /* compat helpers. These DO NOT do any of the checking that the libssl 1.1 functions do. */
  static inline void RSA_get0_key(const RSA* rsakey, const BIGNUM** n, const BIGNUM** e, const BIGNUM** d) {
    *n = rsakey->n;
-@@ -127,6 +128,7 @@ static inline int RSA_set0_crt_params(RSA* rsakey, BIG
-   rsakey->iqmp = iqmp;
+@@ -142,6 +143,7 @@ static inline int ECDSA_SIG_set0(ECDSA_SIG* signature,
    return 1;
  }
+ #endif /* HAVE_LIBCRYPTO_ECDSA */
 +#endif
  
- #ifdef HAVE_LIBCRYPTO_ECDSA
- static inline void ECDSA_SIG_get0(const ECDSA_SIG* signature, const BIGNUM** pr, const BIGNUM** ps) {
+ #else
+ void openssl_thread_setup() {}
