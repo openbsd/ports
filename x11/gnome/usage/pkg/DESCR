@@ -1,0 +1,7 @@
+gnome-usage gives nice way to view information about use of system resources,
+like memory and disk space.
+
+Notable Features:
+Monitor processor, memory, disk and network usage.
+Finding what application is using all your CPU.
+Allow the user to forcefully close applications.
