@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/16 14:07:12 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/18 20:46:43 danj Exp $
 bin/pycharm
 pycharm/
 pycharm/Install-Linux-tar.txt
@@ -958,9 +958,9 @@ pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_34_32.pyd
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_34_64.pyd
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_35_32.cp35-win32.pyd
-pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_35_64.cp35-win_${MACHINE_ARCH}.pyd
+pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_35_64.cp35-win_amd64.pyd
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_36_32.cp36-win32.pyd
-pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_36_64.cp36-win_${MACHINE_ARCH}.pyd
+pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_36_64.cp36-win_amd64.pyd
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_cython_wrapper.py
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_dont_trace.py
 pycharm/helpers/pydev/_pydevd_bundle/pydevd_dont_trace_files.py
@@ -999,7 +999,7 @@ pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator.pxd
 pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator.pyx
 pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so
 pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_win32_36_32.cp36-win32.pyd
-pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_win32_36_64.cp36-win_${MACHINE_ARCH}.pyd
+pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_win32_36_64.cp36-win_amd64.pyd
 pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_frame_tracing.py
 pycharm/helpers/pydev/_pydevd_frame_eval/pydevd_modify_bytecode.py
 pycharm/helpers/pydev/build_tools/
@@ -1049,8 +1049,8 @@ pycharm/helpers/pydev/pydevd_attach_to_process/_check.py
 pycharm/helpers/pydev/pydevd_attach_to_process/_test_attach_to_process.py
 pycharm/helpers/pydev/pydevd_attach_to_process/_test_attach_to_process_linux.py
 pycharm/helpers/pydev/pydevd_attach_to_process/add_code_to_python_process.py
-pycharm/helpers/pydev/pydevd_attach_to_process/attach_${MACHINE_ARCH}.dll
-pycharm/helpers/pydev/pydevd_attach_to_process/attach_linux_${MACHINE_ARCH}.so
+pycharm/helpers/pydev/pydevd_attach_to_process/attach_amd64.dll
+pycharm/helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so
 pycharm/helpers/pydev/pydevd_attach_to_process/attach_linux_x86.so
 pycharm/helpers/pydev/pydevd_attach_to_process/attach_pydevd.py
 pycharm/helpers/pydev/pydevd_attach_to_process/attach_script.py
@@ -1102,7 +1102,7 @@ pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/util.py
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/__init__.py
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/advapi32.py
-pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/context_${MACHINE_ARCH}.py
+pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/context_amd64.py
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/context_i386.py
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/dbghelp.py
 pycharm/helpers/pydev/pydevd_attach_to_process/winappdbg/win32/defines.py
