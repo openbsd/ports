@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.68 2018/02/03 17:37:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.69 2018/03/18 16:47:58 bluhm Exp $
 
-COMMENT =		perl module for using OpenSSL
+COMMENT =	perl module for using OpenSSL
 
-DISTNAME =		Net-SSLeay-1.84
+DISTNAME =	Net-SSLeay-1.85
 
-CATEGORIES =		security
+CATEGORIES =	security
 
-HOMEPAGE =		http://alioth.debian.org/projects/net-ssleay
+HOMEPAGE =	http://alioth.debian.org/projects/net-ssleay
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
