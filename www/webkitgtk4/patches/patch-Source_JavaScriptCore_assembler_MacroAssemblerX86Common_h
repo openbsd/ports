@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.3 2017/09/15 07:43:42 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.4 2018/03/19 08:13:15 ajacoutot Exp $
 
 XXX error: macro "swap32" passed 2 arguments, but takes just 1
 XXX error: macro "swap64" passed 2 arguments, but takes just 1
@@ -18,4 +18,4 @@ Index: Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
 +
  namespace JSC {
  
- class MacroAssemblerX86Common : public AbstractMacroAssembler<X86Assembler> {
+ using Assembler = TARGET_ASSEMBLER;

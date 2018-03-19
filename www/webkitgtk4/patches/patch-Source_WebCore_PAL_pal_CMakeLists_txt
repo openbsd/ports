@@ -1,13 +1,13 @@
-$OpenBSD: patch-Source_WebCore_PAL_pal_CMakeLists_txt,v 1.2 2017/09/15 07:43:42 ajacoutot Exp $
+$OpenBSD: patch-Source_WebCore_PAL_pal_CMakeLists_txt,v 1.3 2018/03/19 08:13:15 ajacoutot Exp $
 
 Index: Source/WebCore/PAL/pal/CMakeLists.txt
 --- Source/WebCore/PAL/pal/CMakeLists.txt.orig
 +++ Source/WebCore/PAL/pal/CMakeLists.txt
-@@ -10,6 +10,7 @@ set(PAL_PRIVATE_INCLUDE_DIRECTORIES
+@@ -16,6 +16,7 @@ set(PAL_PRIVATE_INCLUDE_DIRECTORIES
      "${PAL_DIR}/pal/crypto"
      "${PAL_DIR}/pal/system"
      "${PAL_DIR}/pal/text"
 +    ${LIBGCRYPT_INCLUDE_DIRS}
  )
  
- set(PAL_LIBRARIES
+ set(PAL_SYSTEM_INCLUDE_DIRECTORIES

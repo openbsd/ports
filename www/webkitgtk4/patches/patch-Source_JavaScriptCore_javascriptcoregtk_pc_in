@@ -1,4 +1,5 @@
-$OpenBSD: patch-Source_JavaScriptCore_javascriptcoregtk_pc_in,v 1.1 2016/08/18 14:21:39 czarkoff Exp $
+$OpenBSD: patch-Source_JavaScriptCore_javascriptcoregtk_pc_in,v 1.2 2018/03/19 08:13:15 ajacoutot Exp $
+
 --- Source/JavaScriptCore/javascriptcoregtk.pc.in.orig	Tue Aug  9 01:03:49 2016
 +++ Source/JavaScriptCore/javascriptcoregtk.pc.in	Tue Aug  9 01:03:57 2016
 @@ -7,5 +7,5 @@ Name: JavaScriptCoreGTK+

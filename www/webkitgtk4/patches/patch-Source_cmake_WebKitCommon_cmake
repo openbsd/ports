@@ -1,8 +1,9 @@
-$OpenBSD: patch-Source_cmake_WebKitCommon_cmake,v 1.3 2017/09/15 07:43:42 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_WebKitCommon_cmake,v 1.4 2018/03/19 08:13:15 ajacoutot Exp $
+
 Index: Source/cmake/WebKitCommon.cmake
 --- Source/cmake/WebKitCommon.cmake.orig
 +++ Source/cmake/WebKitCommon.cmake
-@@ -27,9 +27,9 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -28,9 +28,9 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      # We cannot check for RUBY_FOUND because it is set only when the full package is installed and
      # the only thing we need is the interpreter. Unlike Python, cmake does not provide a macro
      # for finding only the Ruby interpreter.
@@ -15,7 +16,7 @@ Index: Source/cmake/WebKitCommon.cmake
      endif ()
  
      # -----------------------------------------------------------------------------
-@@ -41,7 +41,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -42,7 +42,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      include(CheckCXXCompilerFlag)
      include(CheckCXXSourceCompiles)
      include(CheckFunctionExists)
