@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2018/01/16 16:12:54 robert Exp $
+# $OpenBSD: Makefile,v 1.116 2018/03/19 15:12:20 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -6,7 +6,7 @@ BROKEN=		unreliable build, frequently segfaults in dpb (TLS?)
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		5.8.0.88
+V=		5.10.0.160
 DISTNAME=	mono-${V}
 
 CATEGORIES=	lang devel
@@ -14,7 +14,6 @@ CATEGORIES=	lang devel
 SHARED_LIBS +=  mono-2.0		0.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .0.0
 SHARED_LIBS +=  monosgen-2.0            0.0	# .1.0
-SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0

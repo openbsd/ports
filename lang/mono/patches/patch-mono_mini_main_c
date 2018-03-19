@@ -1,8 +1,8 @@
-$OpenBSD: patch-mono_mini_main_c,v 1.5 2018/01/02 13:19:10 robert Exp $
+$OpenBSD: patch-mono_mini_main_c,v 1.6 2018/03/19 15:12:20 robert Exp $
 Index: mono/mini/main.c
 --- mono/mini/main.c.orig
 +++ mono/mini/main.c
-@@ -329,10 +329,14 @@ main (void)
+@@ -330,10 +330,14 @@ main (void)
  }
  
  #else
