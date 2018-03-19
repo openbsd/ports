@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_openssl_stream_h,v 1.7 2018/02/20 20:50:07 sthen Exp $
+$OpenBSD: patch-src_openssl_stream_h,v 1.8 2018/03/19 18:28:12 jasper Exp $
 
 Index: src/openssl_stream.h
 --- src/openssl_stream.h.orig
 +++ src/openssl_stream.h
-@@ -27,8 +27,9 @@ extern int git_openssl_stream_new(git_stream **out, co
+@@ -27,7 +27,8 @@ extern int git_openssl_stream_new(git_stream **out, co
  
  
  
@@ -13,4 +13,3 @@ Index: src/openssl_stream.h
  
  GIT_INLINE(BIO_METHOD*) BIO_meth_new(int type, const char *name)
  {
- 	BIO_METHOD *meth = git__calloc(1, sizeof(BIO_METHOD));
