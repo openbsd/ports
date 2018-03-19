@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2017/12/09 21:28:58 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2018/03/19 20:57:20 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -78,7 +78,13 @@ gen-versions: extract
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/make/install_bin \
+		     ${WRKSRC}/Makefile.in \
+		     ${WRKSRC}/erts/etc/common/ct_run.c \
+		     ${WRKSRC}/erts/etc/common/dialyzer.c \
+		     ${WRKSRC}/erts/etc/common/erlc.c \
 		     ${WRKSRC}/erts/etc/common/escript.c \
+		     ${WRKSRC}/erts/etc/common/typer.c \
+		     ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl \
 		     ${WRKSRC}/lib/wx/configure.in
 
 post-install:
