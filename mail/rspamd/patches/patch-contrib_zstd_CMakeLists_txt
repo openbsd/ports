@@ -1,9 +1,9 @@
-$OpenBSD: patch-contrib_zstd_CMakeLists_txt,v 1.4 2017/11/09 21:51:05 sthen Exp $
+$OpenBSD: patch-contrib_zstd_CMakeLists_txt,v 1.5 2018/03/19 15:36:13 sthen Exp $
 Index: contrib/zstd/CMakeLists.txt
---- contrib/zstd/CMakeLists.txt.orig	Sun Oct 22 12:16:54 2017
-+++ contrib/zstd/CMakeLists.txt	Tue Nov  7 21:02:29 2017
-@@ -17,7 +17,4 @@ SET(ZSTDSRC
- ADD_LIBRARY(rspamd-zstd STATIC ${ZSTDSRC})
+--- contrib/zstd/CMakeLists.txt.orig
++++ contrib/zstd/CMakeLists.txt
+@@ -24,7 +24,4 @@ ADD_LIBRARY(rspamd-zstd STATIC ${ZSTDSRC})
+ ADD_DEFINITIONS(-DZSTD_STATIC_LINKING_ONLY)
  
  IF(ENABLE_FULL_DEBUG MATCHES "OFF")
 -if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")

@@ -1,7 +1,8 @@
-$OpenBSD: patch-contrib_libottery_CMakeLists_txt,v 1.2 2017/03/08 17:02:13 sthen Exp $
---- contrib/libottery/CMakeLists.txt.orig	Sun Mar  5 15:23:13 2017
-+++ contrib/libottery/CMakeLists.txt	Sun Mar  5 15:27:57 2017
-@@ -7,8 +7,5 @@ ADD_LIBRARY(ottery STATIC ${OTTERYSRC})
+$OpenBSD: patch-contrib_libottery_CMakeLists_txt,v 1.3 2018/03/19 15:36:13 sthen Exp $
+Index: contrib/libottery/CMakeLists.txt
+--- contrib/libottery/CMakeLists.txt.orig
++++ contrib/libottery/CMakeLists.txt
+@@ -9,8 +9,5 @@ ADD_LIBRARY(ottery STATIC ${OTTERYSRC})
  
  SET(OTTERY_CFLAGS "-DBUILD_RSPAMD")
  IF(ENABLE_FULL_DEBUG MATCHES "OFF")

@@ -1,0 +1,14 @@
+$OpenBSD: patch-contrib_torch_torch7_lib_TH_THGeneral_c,v 1.1 2018/03/19 15:36:13 sthen Exp $
+
+Index: contrib/torch/torch7/lib/TH/THGeneral.c
+--- contrib/torch/torch7/lib/TH/THGeneral.c.orig
++++ contrib/torch/torch7/lib/TH/THGeneral.c
+@@ -15,7 +15,7 @@
+   #if defined(__FreeBSD__)
+     #include <malloc_np.h>
+   #else
+-    #include <malloc.h>
++    #include <stdlib.h>
+   #endif
+ #elif defined(__APPLE__)
+ #include <malloc/malloc.h>
