@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2018/01/23 14:15:32 landry Exp $
+# $OpenBSD: Makefile,v 1.82 2018/03/19 13:40:34 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.18.16
+DISTNAME =	qgis-2.18.17
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -38,6 +38,8 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		www/py-requests \
+		www/py-jinja2 \
+		textproc/py-pygments \
 		security/qca,-ossl \
 		geo/gdal,-python \
 		databases/py-psycopg2 \
