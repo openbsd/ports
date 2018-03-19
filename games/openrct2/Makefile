@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/14 07:08:15 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2018/03/19 02:59:49 bcallah Exp $
 
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.1.1
+V =		0.1.2
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTNAME =	openrct2-${V}
-REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://openrct2.org/
@@ -15,9 +14,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL2 c crypto curl fontconfig freetype iconv jansson
-WANTLIB += m png pthread speexdsp ssl z zip
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 bz2 c crypto curl fontconfig
+WANTLIB += freetype iconv jansson m png speexdsp ssl z zip
 
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887
@@ -48,9 +46,9 @@ CONFIGURE_ARGS =	-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 NO_TEST =	Yes
 
 pre-configure:
-	sed -i 's,-Werror,,g' ${WRKSRC}/src/openrct2/CMakeLists.txt
+	sed -i 's,-Werror,,g' ${WRKSRC}/CMakeLists.txt
 	sed -i 's,/usr/local,${TRUEPREFIX},g' \
-		${WRKSRC}/src/openrct2/platform/linux.c
+		${WRKSRC}/src/openrct2/platform/Platform.Linux.cpp
 
 # Upstream does not make proper source releases.
 post-install:
