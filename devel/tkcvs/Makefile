@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.33 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2018/03/20 08:29:13 landry Exp $
 
 COMMENT=	graphical frontend to CVS
-DISTNAME=	tkcvs-6.0
-REVISION =	5
+DISTNAME=	tkcvs-8.2.3
 CATEGORIES=	devel
 
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
+HOMEPAGE=	https://www.twobarleycorns.net/tkcvs.html
 
+MAINTAINER=	Currell Berry <currellberry@gmail.com>
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-7.6/apps/tkcvs-6.0/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkcvs/} \
+		https://www.twobarleycorns.net/
 
 MODULES=	x11/tk
-RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
+		devel/tkdiff
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-pre-configure:
-	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tkcvs/cvscheck.blank
-	@${SUBST_CMD} ${WRKSRC}/tkcvs/doinstall
-
 do-install:
-	cd $(WRKSRC)/tkcvs; ./doinstall
+	cd ${WRKSRC} && $(MODTCL_BIN) ./doinstall.tcl -nox ${PREFIX}
+	rm ${PREFIX}/bin/tkdiff
+	cd ${PREFIX}/bin && ${MODTCL_WISH_ADJ} tkcvs
 
 .include <bsd.port.mk>
