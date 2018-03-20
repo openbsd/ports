@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2018/03/16 19:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/03/20 14:47:54 sthen Exp $
 
-COMMENT=	client for Let's Encrypt CA#'
+COMMENT=	client for certificate authorities using ACME protocols
 
 DISTNAME=	certbot-${MODPY_EGG_VERSION}
 
