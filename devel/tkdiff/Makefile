@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2018/03/20 08:29:45 landry Exp $
 
 COMMENT=	graphical front-end to the diff program
 
 DISTNAME=	tkdiff-4.2
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel sysutils
 
 HOMEPAGE=	http://tkdiff.sourceforge.net/
