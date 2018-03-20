@@ -1,0 +1,31 @@
+$OpenBSD: patch-utils_kamctl_kamdbctl_db_berkeley,v 1.1 2018/03/20 22:03:35 sthen Exp $
+
+Index: utils/kamctl/kamdbctl.db_berkeley
+--- utils/kamctl/kamdbctl.db_berkeley.orig
++++ utils/kamctl/kamdbctl.db_berkeley
+@@ -35,6 +35,12 @@ if [ $ret -eq 0 ] ; then
+ 	DUMP_CMD="db_dump"
+ fi ;
+ 
++which db4_dump > /dev/null
++ret=$?
++if [ $ret -eq 0 ] ; then
++	DUMP_CMD="db4_dump"
++fi ;
++
+ which db4.4_dump > /dev/null
+ ret=$?
+ if [ $ret -eq 0 ] ; then
+@@ -74,6 +80,12 @@ which db_load > /dev/null
+ ret=$?
+ if [ $ret -eq 0 ] ; then
+ 	LOAD_CMD="db_load"
++fi ;
++
++which db4_load > /dev/null
++ret=$?
++if [ $ret -eq 0 ] ; then
++	LOAD_CMD="db4_load"
+ fi ;
+ 
+ which db4.4_load > /dev/null

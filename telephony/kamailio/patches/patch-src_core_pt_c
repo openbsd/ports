@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_core_pt_c,v 1.2 2017/09/21 09:34:32 sthen Exp $
+$OpenBSD: patch-src_core_pt_c,v 1.3 2018/03/20 22:03:35 sthen Exp $
 Index: src/core/pt.c
 --- src/core/pt.c.orig
 +++ src/core/pt.c
-@@ -249,8 +249,10 @@ int fork_process(int child_id, char *desc, int make_so
+@@ -255,8 +255,10 @@ int fork_process(int child_id, char *desc, int make_so
  {
  	int pid, child_process_no;
  	int ret;
@@ -13,7 +13,7 @@ Index: src/core/pt.c
  #ifdef USE_TCP
  	int sockfd[2];
  #endif
-@@ -289,8 +291,10 @@ int fork_process(int child_id, char *desc, int make_so
+@@ -295,8 +297,10 @@ int fork_process(int child_id, char *desc, int make_so
  	}
  
  	child_process_no = *process_count;
@@ -24,7 +24,7 @@ Index: src/core/pt.c
  	pid = fork();
  	if (pid<0) {
  		lock_release(process_lock);
-@@ -305,9 +309,11 @@ int fork_process(int child_id, char *desc, int make_so
+@@ -311,9 +315,11 @@ int fork_process(int child_id, char *desc, int make_so
  #ifdef USE_TCP
  		close_extra_socks(child_id, process_no);
  #endif /* USE_TCP */
@@ -36,7 +36,7 @@ Index: src/core/pt.c
  		shm_malloc_on_fork();
  #ifdef PROFILING
  		monstartup((u_long) &_start, (u_long) &etext);
-@@ -384,8 +390,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+@@ -390,8 +396,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
  	int reader_fd[2]; /* for comm. with the tcp children read  */
  	int ret;
  	int i;
@@ -47,7 +47,7 @@ Index: src/core/pt.c
  
  	/* init */
  	sockfd[0]=sockfd[1]=-1;
-@@ -423,8 +431,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+@@ -429,8 +437,10 @@ int fork_tcp_process(int child_id, char *desc, int r, 
  	}
  
  	child_process_no = *process_count;
@@ -58,7 +58,7 @@ Index: src/core/pt.c
  	pid = fork();
  	if (pid<0) {
  		lock_release(process_lock);
-@@ -446,9 +456,11 @@ int fork_tcp_process(int child_id, char *desc, int r, 
+@@ -452,9 +462,11 @@ int fork_tcp_process(int child_id, char *desc, int r, 
  			}
  		}
  		daemon_status_on_fork_cleanup();

@@ -1,0 +1,15 @@
+$OpenBSD: patch-utils_kamctl_kamctl_rpcfifo,v 1.1 2018/03/20 22:03:35 sthen Exp $
+
+Index: utils/kamctl/kamctl.rpcfifo
+--- utils/kamctl/kamctl.rpcfifo.orig
++++ utils/kamctl/kamctl.rpcfifo
+@@ -105,8 +105,8 @@ rpc_cmd()
+ 		rpcparamval "${1}"
+ 		CMD="${CMD}, \"params\": [${RPCVAL}"
+ 		RPCPARAMS="yes"
++		shift
+ 	fi
+-	shift
+ 	while [ -n "$1" ] ; do
+ 		rpcparamval "${1}"
+ 		CMD="${CMD}, ${RPCVAL}"

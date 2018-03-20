@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.44 2018/03/20 22:03:35 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
-VERSION =		5.0.3
+VERSION =		5.0.6
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -17,7 +17,6 @@ PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
-REVISION-main =		0
 
 CATEGORIES =		telephony
 MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
@@ -40,7 +39,7 @@ MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 WANTLIB-main =		c crypto curl expat event_core event_extra iconv m \
-			pcre pthread ssl lzma xml2 ncurses readline unistring z
+			pcre pthread ssl lzma xml2 curses readline unistring z
 
 LIB_DEPENDS-main =	converters/libiconv \
 			converters/libunistring \
