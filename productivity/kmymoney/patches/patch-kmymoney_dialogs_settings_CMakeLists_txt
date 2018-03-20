@@ -1,0 +1,14 @@
+$OpenBSD: patch-kmymoney_dialogs_settings_CMakeLists_txt,v 1.3 2018/03/20 12:52:26 rsadowski Exp $
+
+Index: kmymoney/dialogs/settings/CMakeLists.txt
+--- kmymoney/dialogs/settings/CMakeLists.txt.orig
++++ kmymoney/dialogs/settings/CMakeLists.txt
+@@ -4,6 +4,8 @@ add_custom_command(
+   COMMAND ${KDE4_KCFGC_EXECUTABLE} -d ${CMAKE_CURRENT_BINARY_DIR}/ ${CMAKE_SOURCE_DIR}/kmymoney/kmymoney.kcfg ${CMAKE_SOURCE_DIR}/kmymoney/kmymoneysettings.kcfgc
+   )
+ 
++include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} )
++
+ set (libsettings_a_SOURCES
+   ${CMAKE_CURRENT_BINARY_DIR}/kmymoneysettings.cpp
+   ksettingscolors.cpp

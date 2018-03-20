@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2018/03/16 08:18:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2018/03/20 12:52:26 rsadowski Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.8.1.1
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS += kmm_kdchart                      1.1 # 0.0
 SHARED_LIBS += kmm_mymoney                      1.1 # 0.0
@@ -67,8 +67,6 @@ CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 			-DUSE_DEVELOPER_DOC:Bool=Yes \
 			-DUSE_QT_DESIGNER:Bool=No \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0071=NEW
 
 TEST_IS_INTERACTIVE =	X11
 
