@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/02/02 10:39:54 phessler Exp $
+# $OpenBSD: Makefile,v 1.30 2018/03/21 20:02:16 phessler Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/${DB_DIR}" \
 			LDFLAGS="-L${LOCALBASE}/lib/${DB_DIR}"
 
 .if ${FLAVOR} == "db4"
+BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
 DB_DIR =		db4
 LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
