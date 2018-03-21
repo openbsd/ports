@@ -1,0 +1,41 @@
+$OpenBSD: patch-nss_lib_freebl_blinit_c,v 1.1 2018/03/21 20:01:00 phessler Exp $
+
+Index: nss/lib/freebl/blinit.c
+--- nss/lib/freebl/blinit.c.orig
++++ nss/lib/freebl/blinit.c
+@@ -91,7 +91,7 @@ CheckX86CPUSupport()
+ }
+ #endif /* NSS_X86_OR_X64 */
+ 
+-#if (defined(__aarch64__) || defined(__arm__)) && !defined(__ANDROID__)
++#if (defined(__aarch64__) || defined(__arm__)) && !(defined(__ANDROID__) || defined(__OpenBSD__))
+ #if defined(__GNUC__) && __GNUC__ >= 2 && defined(__ELF__)
+ #include <sys/auxv.h>
+ extern unsigned long getauxval(unsigned long type) __attribute__((weak));
+@@ -102,7 +102,7 @@ static unsigned long (*getauxval)(unsigned long) = NUL
+ #endif /* defined(__GNUC__) && __GNUC__ >= 2 && defined(__ELF__)*/
+ #endif /* (defined(__aarch64__) || defined(__arm__)) && !defined(__ANDROID__) */
+ 
+-#if defined(__aarch64__) && !defined(__ANDROID__)
++#if defined(__aarch64__) && !(defined(__ANDROID__) || defined(__OpenBSD__))
+ // Defines from hwcap.h in Linux kernel - ARM64
+ #define HWCAP_AES (1 << 3)
+ #define HWCAP_PMULL (1 << 4)
+@@ -126,7 +126,7 @@ CheckARMSupport()
+ }
+ #endif /* defined(__aarch64__) && !defined(__ANDROID__) */
+ 
+-#if defined(__arm__) && !defined(__ANDROID__)
++#if defined(__arm__) && !(defined(__ANDROID__) || defined(__OpenBSD__))
+ // Defines from hwcap.h in Linux kernel - ARM
+ /*
+  * HWCAP flags - for elf_hwcap (in kernel) and AT_HWCAP
+@@ -238,7 +238,7 @@ FreeblInit(void)
+ {
+ #ifdef NSS_X86_OR_X64
+     CheckX86CPUSupport();
+-#elif (defined(__aarch64__) || defined(__arm__)) && !defined(__ANDROID__)
++#elif (defined(__aarch64__) || defined(__arm__)) && !(defined(__ANDROID__) || defined(__OpenBSD__))
+     CheckARMSupport();
+ #endif
+     return PR_SUCCESS;
