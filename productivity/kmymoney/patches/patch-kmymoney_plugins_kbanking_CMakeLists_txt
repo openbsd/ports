@@ -1,7 +1,8 @@
-$OpenBSD: patch-kmymoney_plugins_kbanking_CMakeLists_txt,v 1.1 2017/01/20 09:14:12 zhuk Exp $
+$OpenBSD: patch-kmymoney_plugins_kbanking_CMakeLists_txt,v 1.2 2018/03/21 19:21:33 rsadowski Exp $
 Unbreak KBanking plugin (at runtime, since we don't use --no-undefined for ld).
---- kmymoney/plugins/kbanking/CMakeLists.txt.orig	Thu Jan 19 15:52:34 2017
-+++ kmymoney/plugins/kbanking/CMakeLists.txt	Thu Jan 19 16:02:29 2017
+Index: kmymoney/plugins/kbanking/CMakeLists.txt
+--- kmymoney/plugins/kbanking/CMakeLists.txt.orig
++++ kmymoney/plugins/kbanking/CMakeLists.txt
 @@ -6,10 +6,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
                      ${CMAKE_CURRENT_BINARY_DIR}/dialogs
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets
@@ -15,7 +16,7 @@ Unbreak KBanking plugin (at runtime, since we don't use --no-undefined for ld).
  )
  
  add_subdirectory( dialogs )
-@@ -53,13 +52,12 @@ target_link_libraries(kmm_kbanking
+@@ -53,14 +52,14 @@ target_link_libraries(kmm_kbanking
                        kmm_plugin
                        payeeidentifier_iban_bic
                        payeeidentifier_nationalAccount
@@ -30,5 +31,7 @@ Unbreak KBanking plugin (at runtime, since we don't use --no-undefined for ld).
 +                      ${GWENHYWFAR_LIBRARIES}
 +                      ${GWENGUI_QT4_LIBRARIES}
  )
++add_dependencies(kmm_kbanking generate_kmymoneysettings)
  
  
+ ########### install files ###############

@@ -1,4 +1,4 @@
-$OpenBSD: patch-kmymoney_plugins_ofximport_CMakeLists_txt,v 1.1 2018/03/20 12:52:26 rsadowski Exp $
+$OpenBSD: patch-kmymoney_plugins_ofximport_CMakeLists_txt,v 1.2 2018/03/21 19:21:33 rsadowski Exp $
 
 Index: kmymoney/plugins/ofximport/CMakeLists.txt
 --- kmymoney/plugins/ofximport/CMakeLists.txt.orig
@@ -12,3 +12,12 @@ Index: kmymoney/plugins/ofximport/CMakeLists.txt
                      ${LIBOFX_INCLUDE_DIR})
  
  if(${LIBOFX_HAVE_CLIENTUID})
+@@ -27,6 +29,8 @@ target_link_libraries(kmm_ofximport
+                       ${KDE4_KIO_LIBS}
+                       ${LIBALKIMIA_LIBRARIES}
+                       ${LIBOFX_LIBRARIES})
++
++add_dependencies(kmm_ofximport generate_kmymoneysettings)
+ 
+ ########### install files ###############
+ 
