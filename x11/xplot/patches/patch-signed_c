@@ -1,0 +1,34 @@
+$OpenBSD: patch-signed_c,v 1.1 2018/03/21 15:18:31 bluhm Exp $
+
+Index: signed.c
+--- signed.c.orig
++++ signed.c
+@@ -32,12 +32,13 @@ to preserve same.
+ */
+ #include "xplot.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ char *signed_unparse(coord c)
+ {
+   char *r;
+   char buf[50];
+-  (void) sprintf(buf,"%d",c.i);
++  (void) sprintf(buf,"%ld",c.i);
+   r = malloc((unsigned) strlen(buf)+1);
+   if (r == 0)
+     fatalerror("malloc returned 0");
+@@ -48,9 +49,11 @@ char *signed_unparse(coord c)
+ coord signed_parse(char *s)
+ {
+   coord r;
+-  extern int atoi();
++  const char *errstr;
+ 
+-  r.i = atoi(s);
++  r.i = strtonum(s, LONG_MIN, LONG_MAX, &errstr);
++  if (errstr != NULL)
++    fprintf(stderr, "warning: signed_parse value is %s: %s\n", errstr, s);
+   return r;
+ }
+ 

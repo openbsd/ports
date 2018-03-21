@@ -1,0 +1,16 @@
+$OpenBSD: patch-xplot_h,v 1.1 2018/03/21 15:18:31 bluhm Exp $
+
+Index: xplot.h
+--- xplot.h.orig
++++ xplot.h
+@@ -59,8 +59,8 @@ double rint();     /* YMUL! some versions of ultrix om
+ 
+ /* Coordinate type definitions */
+ typedef union coord_u {
+-  int i;
+-  unsigned int u;
++  long i;
++  unsigned long u;
+   struct timeval t;
+   double d;
+ } coord;

@@ -1,0 +1,51 @@
+$OpenBSD: patch-unsigned_c,v 1.1 2018/03/21 15:18:31 bluhm Exp $
+
+Index: unsigned.c
+--- unsigned.c.orig
++++ unsigned.c
+@@ -32,6 +32,7 @@ to preserve same.
+ */
+ #include "xplot.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #ifdef ultrix
+ #define LIBC_ATOI_IS_BROKEN
+@@ -57,7 +58,7 @@ char *unsigned_unparse(coord c)
+ 
+   char *r;
+   char buf[50];
+-  (void) sprintf(buf,"%u",c.u);
++  (void) sprintf(buf,"%lu",c.u);
+   r = malloc((unsigned) strlen(buf)+1);
+   if (r == 0)
+     fatalerror("malloc returned 0");
+@@ -68,24 +69,11 @@ char *unsigned_unparse(coord c)
+ coord unsigned_parse(char *s)
+ {
+   coord r;
+-#ifndef LIBC_ATOI_IS_BROKEN
+-  extern int atoi();
++  const char *errstr;
+ 
+-  r.u = atoi(s);
+-#else
+-  char *p;
+-  r.u = 0;
+-  p = s;
+-
+-  while (isdigit(*p)) {
+-    r.u *= 10;
+-    r.u += (*p - '0');
+-    p++;
+-  }
+-  if (*p != '\0')
+-    fprintf(stderr,"warning: unsigned_parse format error in string: %s\n", s);
+-#endif  
+-
++  r.u = strtonum(s, 0, ULONG_MAX, &errstr);
++  if (errstr != NULL)
++    fprintf(stderr, "warning: unsigned_parse value is %s: %s\n", errstr, s);
+   return r;
+ }
+ 
