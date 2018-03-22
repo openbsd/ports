@@ -1,17 +1,24 @@
-$OpenBSD: patch-data_Init_in,v 1.8 2017/04/16 12:43:20 ajacoutot Exp $
---- data/Init.in.orig	Thu Apr  2 15:52:42 2015
-+++ data/Init.in	Wed Apr 15 16:43:30 2015
-@@ -6,6 +6,9 @@
+$OpenBSD: patch-data_Init_in,v 1.9 2018/03/22 16:51:08 ajacoutot Exp $
+Index: data/Init.in
+--- data/Init.in.orig
++++ data/Init.in
+@@ -6,6 +6,15 @@
  PATH="@X_PATH@:$PATH"
  OLD_IFS=$IFS
  
 +# enhance fade in look
 +xsetroot -solid black
 +
++# wait for ttys to be initialized
++while ! pgrep -qf "^/usr/libexec/getty "; do
++	sleep 1
++	[ $((i++)) -ge 10 ] && break
++done
++
  gdmwhich () {
    COMMAND="$1"
    OUTPUT=
-@@ -85,5 +88,12 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+@@ -85,5 +94,12 @@ if [ "x$SETXKBMAP" != "x" ] ; then
      fi
    fi
  fi
