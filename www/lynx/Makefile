@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.38 2018/02/14 15:38:27 jsing Exp $
+# $OpenBSD: Makefile,v 1.39 2018/03/29 22:38:53 fcambus Exp $
 
 V =		2.8.9
-REVISION =	0
-PL =		16
+PL =		17
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
@@ -17,7 +16,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB +=	c crypto ncurses ssl z
+WANTLIB +=	c crypto curses ssl z
 
 MASTER_SITES =	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
