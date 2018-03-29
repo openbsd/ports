@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2018/02/22 07:57:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.103 2018/03/29 23:36:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -50,7 +50,6 @@
      SUBDIR += mlbviewer
      SUBDIR += mlt
      SUBDIR += motion
-     SUBDIR += motion,bktr
      SUBDIR += motion,mysql
      SUBDIR += motion,pgsql
      SUBDIR += mpgtx
