@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:43:55 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/29 19:40:17 robert Exp $
 @bin bin/csrcc
 @bin bin/uics
 include/qyoto/
@@ -17,14 +17,12 @@ include/qyoto/smokeqyoto.h
 include/qyoto/virtualmethodcall.h
 include/qyoto/virtualmethodreturnvalue.h
 @lib ${KDE4LIB}/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
-@lib ${KDE4LIB}/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
 @lib ${KDE4LIB}/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
 @lib ${KDE4LIB}/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
 @lib ${KDE4LIB}/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
 @lib ${KDE4LIB}/libqtwebkit-sharp.so.${LIBqtwebkit-sharp_VERSION}
 @lib ${KDE4LIB}/libqyoto.so.${LIBqyoto_VERSION}
 @lib lib/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
-@lib lib/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
 @lib lib/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
 @lib lib/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
 @lib lib/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
@@ -33,9 +31,6 @@ include/qyoto/virtualmethodreturnvalue.h
 lib/mono/gac/phonon/
 lib/mono/gac/phonon/4.4.0.0__194a23ba31c08164/
 lib/mono/gac/phonon/4.4.0.0__194a23ba31c08164/phonon.dll
-lib/mono/gac/qscintilla/
-lib/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164/
-lib/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164/qscintilla.dll
 lib/mono/gac/qt-dotnet/
 lib/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/
 lib/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/qt-dotnet.dll
@@ -54,7 +49,6 @@ lib/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164/
 lib/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164/qtwebkit.dll
 lib/mono/qyoto/
 lib/mono/qyoto/phonon.dll
-lib/mono/qyoto/qscintilla.dll
 lib/mono/qyoto/qt-dotnet.dll
 lib/mono/qyoto/qtscript.dll
 lib/mono/qyoto/qttest.dll
