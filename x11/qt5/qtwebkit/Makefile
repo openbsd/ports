@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/26 09:18:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2018/03/29 20:04:42 rsadowski Exp $
 
 QT5NAME =		QtWebkit
-REVISION =		4
+REVISION =		5
 COMMENT =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
@@ -21,7 +21,7 @@ WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0
 WANTLIB += icudata icui18n icuuc intl jpeg m png sqlite3 webp
 WANTLIB += xml2 xslt z
 
-MASTER_SITES =		http://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
+MASTER_SITES =		https://download.qt.io/community_releases/${DIST_VERSION:R}/${DIST_VERSION}-final/
 
 MODULES =		perl lang/python lang/ruby
 MODPY_RUNDEP =		No
@@ -37,8 +37,7 @@ RUN_DEPENDS =		geo/geoclue \
 			x11/dbus
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
-LIB_DEPENDS =		archivers/xz \
-			databases/sqlite3 \
+LIB_DEPENDS =		databases/sqlite3 \
 			graphics/libwebp \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
