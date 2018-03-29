@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2018/03/29 19:31:00 sthen Exp $
 
+V=		4.1.1
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
-GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
-V=		3.4.1
-REVISION=	5
+GH_TAGNAME=	release-$V
 DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
@@ -18,10 +17,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPL (according to source files, v2 only. website says v2+).
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale
+WANTLIB += avcodec avdevice avformat avutil c jpeg m pthread sqlite3 swscale
 
 FLAVOR?=
-FLAVORS=		bktr mysql pgsql
+FLAVORS=		mysql pgsql
+
+FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=		FLAVOR_COMMA
 
 LIB_DEPENDS=		databases/sqlite3 \
 			graphics/jpeg \
@@ -40,10 +42,6 @@ CONFIGURE_ARGS=		--without-optimizecpu \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-.if ${FLAVOR:L:Mbktr}
-CONFIGURE_ARGS+=	--without-v4l
-.endif
-
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS+=		databases/mariadb
 WANTLIB+=		lib/mysql/mysqlclient z
@@ -61,9 +59,6 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 NO_TEST=		Yes
 
-post-extract:
-	printf '#!/bin/sh\necho -n "$V-Git-${GH_COMMIT:C/[0-9a-f]{33}$//}"\n' > ${WRKSRC}/version.sh
-
 post-patch:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fiv
@@ -71,6 +66,10 @@ post-patch:
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
 		${WRKSRC}/motion-dist.conf.in
+
+post-install:
+	cd ${PREFIX}/share/examples/motion; \
+	    rm -f motion.init-{Fedora,Debian,FreeBSD.sh} motion.service
 
 .include <bsd.port.arch.mk>
 
