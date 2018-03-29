@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.494 2018/03/29 19:41:45 rpointel Exp $
+# $OpenBSD: Makefile,v 1.495 2018/03/29 19:46:11 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -49,6 +49,7 @@
      SUBDIR += fcrackzip
      SUBDIR += fierce
      SUBDIR += flasm
+     SUBDIR += floss
      SUBDIR += foremost
      SUBDIR += fragroute
      SUBDIR += fragrouter
