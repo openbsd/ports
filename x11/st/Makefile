@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2018/03/17 13:28:39 kn Exp $
+# $OpenBSD: Makefile,v 1.17 2018/03/29 21:09:09 kn Exp $
 
 COMMENT=		simple X terminal
 
-V=			0.8
+V=			0.8.1
 DISTNAME=		st-${V}
 
 CATEGORIES=		x11
@@ -15,7 +15,7 @@ MAINTAINER=		Joerg Jung <jung@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB=		c m util X11 Xft fontconfig freetype z
+WANTLIB=		X11 Xft c fontconfig freetype m util z
 
 MASTER_SITES=		https://dl.suckless.org/st/
 
@@ -26,7 +26,7 @@ MAKE_ENV=		LDFLAGS="${LDFLAGS}" \
 NO_TEST=		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/st ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/st ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/st.1 ${PREFIX}/man/man1/
 	sed -i s/VERSION/${V}/g ${PREFIX}/man/man1/st.1
 	tic -s -x -o ${PREFIX}/share/terminfo ${WRKSRC}/st.info
