@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/03/29 19:45:16 rpointel Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -11,10 +11,8 @@ except ImportError:
+ 
+ 
+ requirements = [
+-    "q",
+     "pyyaml",
+     "tabulate",
+-    "vivisect",
+     "plugnplay",
+     "viv-utils",
+     "enum34"
