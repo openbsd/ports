@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.38 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/03/29 19:39:43 robert Exp $
 
 COMMENT=		.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=		gnome-sharp
-GNOME_VERSION=		2.24.2
+GNOME_VERSION=		2.24.5
 PKGNAME=		mono-gnome-${VERSION}
-REVISION=		9
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://mono-project.com/GtkSharp
+MASTER_SITES=		https://download.mono-project.com/sources/gnome-sharp2/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB += ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread ssl util
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.gz
 
 MODULES=		lang/mono \
 			x11/gnome
