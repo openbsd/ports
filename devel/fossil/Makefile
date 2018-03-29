@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/02/09 19:42:45 jturner Exp $
+# $OpenBSD: Makefile,v 1.63 2018/03/29 20:58:04 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 FLAVORS=		static
 FLAVOR?=
 
+# uses pledge()
 WANTLIB =		c crypto fuse m ssl z
 
 MODULES =		lang/tcl
