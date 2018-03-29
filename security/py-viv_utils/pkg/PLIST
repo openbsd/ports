@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/29 19:40:55 rpointel Exp $
+bin/get_function_args
+bin/trace_function_emulation
+lib/python${MODPY_VERSION}/site-packages/viv_utils/
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/viv_utils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/viv_utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/viv_utils/emulator_drivers.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/emulator_drivers.pyc
+lib/python${MODPY_VERSION}/site-packages/viv_utils/idaloader.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/idaloader.pyc
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/__init__.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/get_function_args.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/get_function_args.pyc
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/trace_function_emulation.py
+lib/python${MODPY_VERSION}/site-packages/viv_utils/scripts/trace_function_emulation.pyc

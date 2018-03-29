@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/03/29 19:40:55 rpointel Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -7,9 +7,7 @@ import setuptools
+ 
+ requirements = [
+     "funcy",
+-    "argparse",
+     "pefile",
+-    "vivisect",
+     "intervaltree",
+ ]
+ 
