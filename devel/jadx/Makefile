@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/10 14:45:43 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/29 19:50:46 rpointel Exp $
 
 COMMENT =	dex to java decompiler
 
 VERSION =	0.6.1
 DISTNAME =	jadx-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel security
 
@@ -22,7 +23,8 @@ MODULES =	java
 MODJAVA_VER =	1.7+
 MODJAVA_JRERUN =Yes
 
-RUN_DEPENDS =	java/javaPathHelper
+RUN_DEPENDS =	java/javaPathHelper \
+		shells/bash
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
