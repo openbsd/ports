@@ -1,10 +1,11 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
+$OpenBSD: patch-etc_config_keycodes,v 1.2 2018/03/29 21:05:32 kn Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
 
---- etc/config.keycodes.orig	Sun Mar 29 19:07:08 2015
-+++ etc/config.keycodes		Mon Mar 30 14:13:25 2015
+Index: etc/config.keycodes
+--- etc/config.keycodes.orig
++++ etc/config.keycodes
 @@ -29,13 +29,13 @@ font pango:monospace 8
  floating_modifier $mod
  
@@ -51,7 +52,7 @@ different between Linux and OpenBSD.
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -136,10 +136,10 @@ mode "resize" {
+@@ -149,10 +149,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys
@@ -64,5 +65,5 @@ different between Linux and OpenBSD.
 +        bindcode 98 resize shrink height 10 px or 10 ppt
 +        bindcode 102 resize grow width 10 px or 10 ppt
  
-         # back to normal: Enter or Escape
+         # back to normal: Enter or Escape or $mod+r
          bindcode 36 mode "default"

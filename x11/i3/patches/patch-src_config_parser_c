@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_config_parser_c,v 1.10 2016/11/13 20:46:23 dcoppa Exp $
---- src/config_parser.c.orig	Tue Nov  8 19:54:01 2016
-+++ src/config_parser.c	Thu Nov 10 18:04:35 2016
-@@ -789,8 +789,8 @@ static char *migrate_config(char *input, off_t size) {
+$OpenBSD: patch-src_config_parser_c,v 1.11 2018/03/29 21:05:32 kn Exp $
+Index: src/config_parser.c
+--- src/config_parser.c.orig
++++ src/config_parser.c
+@@ -791,8 +791,8 @@ static char *migrate_config(char *input, off_t size) {
   */
  void start_config_error_nagbar(const char *configpath, bool has_errors) {
      char *editaction, *pageraction;
