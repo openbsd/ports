@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/03 12:01:27 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/29 19:39:02 robert Exp $
 
 COMMENT=	GLib main loop integration for dbus-sharp
 
-DISTNAME=	dbus-sharp-glib-0.5.0
+V=		0.6.0
+DISTNAME=	dbus-sharp-glib-${V}
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/mono/dbus-sharp-glib
-MASTER_SITES=	https://github.com/downloads/mono/dbus-sharp/
+MASTER_SITES=	${HOMEPAGE}/releases/download/v0.6/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
