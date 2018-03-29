@@ -1,24 +1,35 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/10 22:06:33 jung Exp $
+# $OpenBSD: Makefile,v 1.23 2018/03/29 21:27:48 kn Exp $
 
 COMMENT=		dynamic menu for X11
-DISTNAME=		dmenu-4.7
+
+V=			4.8
+DISTNAME=		dmenu-${V}
 
 CATEGORIES=		x11
-HOMEPAGE=		http://tools.suckless.org/dmenu
 
-MAINTAINER=		Jim Razmus II <jim@openbsd.org>
+HOMEPAGE=		https://tools.suckless.org/dmenu
+
+MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xinerama c Xft fontconfig
+WANTLIB=		X11 Xft Xinerama c fontconfig
 
-MASTER_SITES=		http://dl.suckless.org/tools/
+MASTER_SITES=		https://dl.suckless.org/tools/
 
 RUN_DEPENDS=		fonts/terminus-font
 
-FAKE_FLAGS=		DESTDIR=""
+MAKE_ENV=		LDFLAGS="${LDFLAGS}" \
+			X11INC=${X11BASE}/include \
+			X11LIB=${X11BASE}/lib
 
 NO_TEST=		Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/{dmenu,stest} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKBUILD}/dmenu_{run,path} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/{dmenu,stest}.1 ${PREFIX}/man/man1/
+	sed -i s/VERSION/${V}/g ${PREFIX}/man/man1/{dmenu,stest}.1
 
 .include <bsd.port.mk>
