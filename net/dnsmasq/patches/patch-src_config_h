@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_config_h,v 1.19 2017/06/12 07:37:37 ajacoutot Exp $
+$OpenBSD: patch-src_config_h,v 1.20 2018/03/29 19:42:51 ajacoutot Exp $
 Index: src/config.h
 --- src/config.h.orig
 +++ src/config.h
-@@ -42,8 +42,8 @@
+@@ -43,8 +43,8 @@
  #define HOSTSFILE "/etc/hosts"
  #define ETHERSFILE "/etc/ethers"
  #define DEFLEASE 3600 /* default lease time, 1 hour */
@@ -13,7 +13,7 @@ Index: src/config.h
  #define TFTP_MAX_CONNECTIONS 50 /* max simultaneous connections */
  #define LOG_MAX 5 /* log-queue length */
  #define RANDFILE "/dev/urandom"
-@@ -200,7 +200,7 @@ RESOLVFILE
+@@ -198,7 +198,7 @@ RESOLVFILE
  #   if defined(__FreeBSD__)
  #      define CONFFILE "/usr/local/etc/dnsmasq.conf"
  #   else

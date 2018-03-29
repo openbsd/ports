@@ -1,4 +1,4 @@
-$OpenBSD: patch-man_dnsmasq_8,v 1.23 2017/06/12 07:37:37 ajacoutot Exp $
+$OpenBSD: patch-man_dnsmasq_8,v 1.24 2018/03/29 19:42:51 ajacoutot Exp $
 Index: man/dnsmasq.8
 --- man/dnsmasq.8.orig
 +++ man/dnsmasq.8
@@ -18,7 +18,7 @@ Index: man/dnsmasq.8
  .TP
  .B \-v, --version
  Print the version number.
-@@ -1902,7 +1901,7 @@ in the configuration file included. Secondly, the file
+@@ -1914,7 +1913,7 @@ in the configuration file included. Secondly, the file
  therein is updated when dnsmasq receives SIGHUP.
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -27,7 +27,7 @@ Index: man/dnsmasq.8
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -2355,7 +2354,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -2367,7 +2366,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
