@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/05/08 10:46:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/03/29 21:09:10 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.12.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -327,6 +327,17 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/gstreamer-tag.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/gstreamer-video.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/home.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/index.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix03.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix04.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix05.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix06.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix07.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix08.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix09.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix10.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix11.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix12.html
+share/gtk-doc/html/gst-plugins-base-libs-${API}/ix13.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/left.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/right-insensitive.png

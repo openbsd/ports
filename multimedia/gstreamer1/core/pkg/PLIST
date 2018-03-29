@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/12/17 10:53:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/03/29 21:09:10 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -321,6 +321,8 @@ share/gtk-doc/html/gstreamer-libs-${API}/ix05.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix06.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix07.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix08.html
+share/gtk-doc/html/gstreamer-libs-${API}/ix09.html
+share/gtk-doc/html/gstreamer-libs-${API}/ix10.html
 share/gtk-doc/html/gstreamer-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/left.png
 share/gtk-doc/html/gstreamer-libs-${API}/right-insensitive.png

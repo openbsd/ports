@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/05/08 10:47:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/03/29 21:09:10 ajacoutot Exp $
 include/gstreamer-${API}/gst/allocators/badallocators.h
 include/gstreamer-${API}/gst/allocators/gstphysmemory.h
 include/gstreamer-${API}/gst/audio/gstaudioaggregator.h
@@ -456,7 +456,9 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gaudieffects.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-geometrictransform.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gsm.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gtk.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-jpegformat.html
+share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-legacyrawparse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-mms.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-modplug.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-mpeg2enc.html
@@ -469,7 +471,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-opencv.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-opengl.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-pcapparse.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rawparse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rfbsrc.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rtmp.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-sdpelem.html
