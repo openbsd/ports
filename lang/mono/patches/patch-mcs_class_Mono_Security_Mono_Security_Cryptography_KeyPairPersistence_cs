@@ -1,0 +1,14 @@
+$OpenBSD: patch-mcs_class_Mono_Security_Mono_Security_Cryptography_KeyPairPersistence_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
+
+Index: mcs/class/Mono.Security/Mono.Security.Cryptography/KeyPairPersistence.cs
+--- mcs/class/Mono.Security/Mono.Security.Cryptography/KeyPairPersistence.cs.orig
++++ mcs/class/Mono.Security/Mono.Security.Cryptography/KeyPairPersistence.cs
+@@ -244,7 +244,7 @@ namespace Mono.Security.Cryptography {
+ 					if ((_machinePath == null) || (!_machinePathExists)) {
+ 						_machinePath = Path.Combine (
+ 							Environment.GetFolderPath (Environment.SpecialFolder.CommonApplicationData),
+-							".mono");
++							"mono");
+ 						_machinePath = Path.Combine (_machinePath, "keypairs");
+ 
+ 						_machinePathExists = Directory.Exists (_machinePath);

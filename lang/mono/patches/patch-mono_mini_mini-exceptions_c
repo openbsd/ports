@@ -1,0 +1,19 @@
+$OpenBSD: patch-mono_mini_mini-exceptions_c,v 1.1 2018/03/29 19:33:18 robert Exp $
+
+mono_get_lmf (); sometimes returns a pointer to invalid memory,
+so lets live with this hack until this gets resolved upstream:
+
+https://github.com/mono/mono/issues/6359
+
+Index: mono/mini/mini-exceptions.c
+--- mono/mini/mini-exceptions.c.orig
++++ mono/mini/mini-exceptions.c
+@@ -3124,7 +3124,7 @@ mono_thread_state_init (MonoThreadUnwindState *ctx)
+ #endif
+ 
+ 	ctx->unwind_data [MONO_UNWIND_DATA_DOMAIN] = mono_domain_get ();
+-	ctx->unwind_data [MONO_UNWIND_DATA_LMF] = mono_get_lmf ();
++	ctx->unwind_data [MONO_UNWIND_DATA_LMF] = NULL;
+ 	ctx->unwind_data [MONO_UNWIND_DATA_JIT_TLS] = thread ? thread->jit_data : NULL;
+ 	ctx->valid = TRUE;
+ }

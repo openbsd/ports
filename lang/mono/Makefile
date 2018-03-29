@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.116 2018/03/19 15:12:20 robert Exp $
+# $OpenBSD: Makefile,v 1.117 2018/03/29 19:33:18 robert Exp $
 
 USE_WXNEEDED=	Yes
-
-BROKEN=		unreliable build, frequently segfaults in dpb (TLS?)
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -51,7 +49,10 @@ LIB_DEPENDS=	converters/libiconv
 
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.15
+
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_header_execinfo_h=no \
@@ -64,7 +65,6 @@ CONFIGURE_ENV+=	CFLAGS="-march=i586"
 CONFIGURE_ARGS=	--with-gc=included \
 		--with-tls=pthread \
 		--enable-btls \
-		--with-csc=mcs \
 		--disable-quiet-build \
 		--disable-shared-handles \
 		--without-sigaltstack

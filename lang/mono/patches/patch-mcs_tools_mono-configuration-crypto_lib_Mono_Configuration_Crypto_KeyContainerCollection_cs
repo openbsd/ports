@@ -1,0 +1,14 @@
+$OpenBSD: patch-mcs_tools_mono-configuration-crypto_lib_Mono_Configuration_Crypto_KeyContainerCollection_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
+
+Index: mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs
+--- mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs.orig
++++ mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs
+@@ -32,7 +32,7 @@ namespace Mono.Configuration.Crypto
+ 			string topPath;
+ 
+ 			if (machineStore)
+-				topPath = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.CommonApplicationData), ".mono");
++				topPath = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.CommonApplicationData), "mono");
+ 			else
+ 				topPath = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData), ".mono");
+ 			topPath = Path.Combine (topPath, "keypairs");

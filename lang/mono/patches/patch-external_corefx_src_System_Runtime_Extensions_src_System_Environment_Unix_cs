@@ -1,0 +1,16 @@
+$OpenBSD: patch-external_corefx_src_System_Runtime_Extensions_src_System_Environment_Unix_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
+
+Index: external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs
+--- external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs.orig
++++ external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs
+@@ -98,8 +98,8 @@ namespace System
+             // https://www.freedesktop.org/software/systemd/man/file-hierarchy.html
+             switch (folder)
+             {
+-                case SpecialFolder.CommonApplicationData: return "/usr/share";
+-                case SpecialFolder.CommonTemplates: return "/usr/share/templates";
++                case SpecialFolder.CommonApplicationData: return "/usr/local/share";
++                case SpecialFolder.CommonTemplates: return "/usr/local/share/templates";
+             }
+             if (IsMac)
+             {
