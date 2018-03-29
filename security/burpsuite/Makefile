@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2018/03/02 19:34:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2018/03/29 19:50:03 rpointel Exp $
 
 COMMENT =		tool for testing security of web applications
 
-VERSION =		1.7.32
+VERSION =		1.7.33
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
 
