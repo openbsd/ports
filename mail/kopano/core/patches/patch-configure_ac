@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.5 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2018/03/29 19:41:46 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -25,6 +25,15 @@ Index: configure.ac
  	-I\${top_srcdir}/m4lcommon/include \
  	-I\${top_srcdir}/mapi4linux/include \
  	-I\${top_srcdir}/provider/common/include \
+@@ -93,7 +96,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
+ 
+ AC_MSG_CHECKING([available C++ standard])
+ cxxmode=""
+-for i in "c++17" "c++14" "c++11" "c++0x"; do
++for i in "c++14" "c++11" "c++0x"; do
+ 	CXXFLAGS="$CXXFLAGS_system -std=$i"
+ 	AC_COMPILE_IFELSE([AC_LANG_SOURCE([])], [cxxmode="$i"])
+ 	AS_IF([test -n "$cxxmode"], [break])
 @@ -233,7 +236,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
  		[
  			dnl just pick the lowest common denominator

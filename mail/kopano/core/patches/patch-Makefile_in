@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2018/03/29 19:41:46 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -4813,7 +4813,7 @@ default.sym provider/plugin.sym provider/provider.sym:
+@@ -4802,7 +4802,7 @@ default.sym provider/plugin.sym provider/provider.sym:
  
  .PHONY: source-moved-check
  source-moved-check:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/03/18 11:30:55 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/03/29 19:41:46 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -77,7 +77,6 @@ include/kopano/director_util.h
 include/kopano/ecversion.h
 include/kopano/hl.hpp
 include/kopano/kcodes.h
-include/kopano/lockhelper.hpp
 include/kopano/mapi_ptr.h
 include/kopano/mapiext.h
 include/kopano/mapiguidext.h
@@ -195,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/version.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/version.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPICore.py
 lib/python${MODPY_VERSION}/site-packages/MAPICore.pyc
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.a
@@ -341,6 +342,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.py
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.py
 lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/pst.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/version.py
+lib/python${MODPY_VERSION}/site-packages/kopano_migration_pst/version.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/
 lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.6.80-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kopano_presence-8.6.80-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -353,6 +356,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/version.py
+lib/python${MODPY_VERSION}/site-packages/kopano_presence/version.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-8.6.80-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-8.6.80-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -573,8 +578,6 @@ share/examples/kopano/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/kopano/quotamail/userwarning.mail
 share/examples/kopano/search.cfg
 @sample ${SYSCONFDIR}/kopano/search.cfg
-share/examples/kopano/spamd.cfg
-@sample ${SYSCONFDIR}/kopano/spamd.cfg
 share/examples/kopano/searchscripts/
 @sample ${SYSCONFDIR}/kopano/searchscripts/
 share/examples/kopano/searchscripts/attachments_parser
@@ -595,6 +598,8 @@ share/examples/kopano/server.cfg
 @sample ${SYSCONFDIR}/kopano/server.cfg
 @mode
 @group
+share/examples/kopano/spamd.cfg
+@sample ${SYSCONFDIR}/kopano/spamd.cfg
 share/examples/kopano/spooler.cfg
 @sample ${SYSCONFDIR}/kopano/spooler.cfg
 share/examples/kopano/unix.cfg

@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_SSLUtil_cpp,v 1.1 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-common_SSLUtil_cpp,v 1.2 2018/03/29 19:41:46 robert Exp $
 
 Index: common/SSLUtil.cpp
 --- common/SSLUtil.cpp.orig
 +++ common/SSLUtil.cpp
-@@ -29,7 +29,7 @@ namespace KC {
+@@ -28,7 +28,7 @@ namespace KC {
  
  static std::recursive_mutex *ssl_locks;
  
@@ -12,7 +12,7 @@ Index: common/SSLUtil.cpp
  static void ssl_lock(int mode, int n, const char *file, int line)
  {
  	if (mode & CRYPTO_LOCK)
-@@ -78,7 +78,7 @@ void SSL_library_cleanup()
+@@ -77,7 +77,7 @@ void SSL_library_cleanup()
  	#endif
  
  	ERR_free_strings();
