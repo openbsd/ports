@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/03/08 15:46:59 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/03/29 20:56:13 jturner Exp $
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
@@ -40,4 +40,5 @@ share/kcgi/
 share/kcgi/sample-cgi.c
 share/kcgi/sample-fcgi.c
 share/kcgi/sample.c
+share/kcgi/samplepp.cc
 share/kcgi/template.xml
