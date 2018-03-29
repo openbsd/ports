@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/03/29 19:43:23 ajacoutot Exp $
 
 COMMENT=		library for tracking application startup
 
-DISTNAME=		startup-notification-0.12
-CATEGORIES=		devel x11
-REVISION=		5
+GNOME_PROJECT=		startup-notification
+GNOME_VERSION=		0.12
+REVISION=		6
+
+CATEGORIES=		devel
 
 SHARED_LIBS +=  startup-notification-1 2.0      # .0.0
 
@@ -15,11 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 X11-xcb Xau Xdmcp xcb xcb-util
 
-MASTER_SITES=		http://www.freedesktop.org/software/startup-notification/releases/
+MODULES=		x11/gnome
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 # XXX libexecinfo is only needed for regression tests. We do not want to
 # add -lexecinfo to LDFLAGS because the main startup-notification
