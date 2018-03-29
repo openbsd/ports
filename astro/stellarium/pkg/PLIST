@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/12/22 14:36:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/03/29 20:16:09 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -357,14 +357,24 @@ share/stellarium/nebulae/default/
 share/stellarium/nebulae/default/barnard142-vasey.png
 share/stellarium/nebulae/default/barnard173-vasey.png
 share/stellarium/nebulae/default/barnard22-vasey.png
+share/stellarium/nebulae/default/barnard_loop-1.png
+share/stellarium/nebulae/default/barnard_loop-2.png
+share/stellarium/nebulae/default/barnard_loop-3.png
+share/stellarium/nebulae/default/barnard_loop-4.png
 share/stellarium/nebulae/default/cas.png
 share/stellarium/nebulae/default/catalog.dat
+share/stellarium/nebulae/default/coma_cluster.png
 share/stellarium/nebulae/default/etaCarinae_gzotti.png
+share/stellarium/nebulae/default/fornax_cluster.png
+share/stellarium/nebulae/default/ic10.png
+share/stellarium/nebulae/default/ic1396.png
 share/stellarium/nebulae/default/ic1805.png
 share/stellarium/nebulae/default/ic1848.png
 share/stellarium/nebulae/default/ic2118.png
+share/stellarium/nebulae/default/ic2177.png
 share/stellarium/nebulae/default/ic2944-virgo.png
 share/stellarium/nebulae/default/ic2948-trev.png
+share/stellarium/nebulae/default/ic342.png
 share/stellarium/nebulae/default/ic405-vasey.png
 share/stellarium/nebulae/default/ic410.png
 share/stellarium/nebulae/default/ic434-marc.png
@@ -459,7 +469,7 @@ share/stellarium/nebulae/default/m73.png
 share/stellarium/nebulae/default/m74-vasey.png
 share/stellarium/nebulae/default/m75.png
 share/stellarium/nebulae/default/m76.png
-share/stellarium/nebulae/default/m77-dss.png
+share/stellarium/nebulae/default/m77.png
 share/stellarium/nebulae/default/m78-vasey.png
 share/stellarium/nebulae/default/m79.png
 share/stellarium/nebulae/default/m80.png
@@ -485,6 +495,7 @@ share/stellarium/nebulae/default/m97dumont.png
 share/stellarium/nebulae/default/m98.png
 share/stellarium/nebulae/default/m99.png
 share/stellarium/nebulae/default/n104.png
+share/stellarium/nebulae/default/n1316.png
 share/stellarium/nebulae/default/n1333oleg.png
 share/stellarium/nebulae/default/n1365.png
 share/stellarium/nebulae/default/n1499bousquet.png
@@ -506,15 +517,18 @@ share/stellarium/nebulae/default/n300.png
 share/stellarium/nebulae/default/n3190oleg.png
 share/stellarium/nebulae/default/n3310-vasey.png
 share/stellarium/nebulae/default/n3324-n3293-trev.png
+share/stellarium/nebulae/default/n3603.png
 share/stellarium/nebulae/default/n3628.png
 share/stellarium/nebulae/default/n3690h.png
 share/stellarium/nebulae/default/n3718oleg.png
 share/stellarium/nebulae/default/n3938-vasey.png
 share/stellarium/nebulae/default/n40.png
 share/stellarium/nebulae/default/n4038-9-dss.png
+share/stellarium/nebulae/default/n4244.png
 share/stellarium/nebulae/default/n4438-mtod.png
 share/stellarium/nebulae/default/n4490oleg.png
 share/stellarium/nebulae/default/n4559-vasey.png
+share/stellarium/nebulae/default/n4565.png
 share/stellarium/nebulae/default/n4631-4627.png
 share/stellarium/nebulae/default/n4656-4657.png
 share/stellarium/nebulae/default/n4945.png
@@ -524,6 +538,8 @@ share/stellarium/nebulae/default/n5257h.png
 share/stellarium/nebulae/default/n55.png
 share/stellarium/nebulae/default/n5982oleg.png
 share/stellarium/nebulae/default/n6050h.png
+share/stellarium/nebulae/default/n6334.png
+share/stellarium/nebulae/default/n6357.png
 share/stellarium/nebulae/default/n6543kepler.png
 share/stellarium/nebulae/default/n6726.png
 share/stellarium/nebulae/default/n6744.png
@@ -532,6 +548,7 @@ share/stellarium/nebulae/default/n6822.png
 share/stellarium/nebulae/default/n6888_dn.png
 share/stellarium/nebulae/default/n6946dumont.png
 share/stellarium/nebulae/default/n6960kepler.png
+share/stellarium/nebulae/default/n7000.png
 share/stellarium/nebulae/default/n7008-vasey.png
 share/stellarium/nebulae/default/n7023kepler.png
 share/stellarium/nebulae/default/n7129oleg.png
@@ -554,6 +571,9 @@ share/stellarium/nebulae/default/rho-a10.png
 share/stellarium/nebulae/default/rho-a11.png
 share/stellarium/nebulae/default/sadr.png
 share/stellarium/nebulae/default/sh2-101-vasey.png
+share/stellarium/nebulae/default/sh2-155.png
+share/stellarium/nebulae/default/sh2-264.png
+share/stellarium/nebulae/default/sh2-308.png
 share/stellarium/nebulae/default/smc29-1.png
 share/stellarium/nebulae/default/smc29-2.png
 share/stellarium/nebulae/default/smc29-3.png
@@ -944,13 +964,9 @@ share/stellarium/skycultures/hawaiian_starlines/star_names.fab
 share/stellarium/skycultures/hawaiian_starlines/waa.png
 share/stellarium/skycultures/hawaiian_starlines/waa2.png
 share/stellarium/skycultures/indian/
-share/stellarium/skycultures/indian/aquarius.png
-share/stellarium/skycultures/indian/aries.png
-share/stellarium/skycultures/indian/cancer.png
-share/stellarium/skycultures/indian/canis-major.png
-share/stellarium/skycultures/indian/capricornus.png
+share/stellarium/skycultures/indian/asterism_lines.fab
+share/stellarium/skycultures/indian/asterism_names.eng.fab
 share/stellarium/skycultures/indian/constellation_names.eng.fab
-share/stellarium/skycultures/indian/constellationsart.fab
 share/stellarium/skycultures/indian/constellationship.fab
 share/stellarium/skycultures/indian/description.ar.utf8
 share/stellarium/skycultures/indian/description.be.utf8
@@ -962,18 +978,9 @@ share/stellarium/skycultures/indian/description.fr.utf8
 share/stellarium/skycultures/indian/description.pt_BR.utf8
 share/stellarium/skycultures/indian/description.ru.utf8
 share/stellarium/skycultures/indian/description.uk.utf8
-share/stellarium/skycultures/indian/gemini.png
 share/stellarium/skycultures/indian/info.ini
-share/stellarium/skycultures/indian/leo.png
-share/stellarium/skycultures/indian/libra.png
-share/stellarium/skycultures/indian/orion.png
-share/stellarium/skycultures/indian/pisces.png
 share/stellarium/skycultures/indian/planet_names.fab
-share/stellarium/skycultures/indian/sagittarius.png
-share/stellarium/skycultures/indian/scorpius.png
 share/stellarium/skycultures/indian/star_names.fab
-share/stellarium/skycultures/indian/taurus.png
-share/stellarium/skycultures/indian/virgo.png
 share/stellarium/skycultures/inuit/
 share/stellarium/skycultures/inuit/blubber-container.png
 share/stellarium/skycultures/inuit/breastbone.png
@@ -1448,6 +1455,13 @@ share/stellarium/skycultures/western/ursa-minor.png
 share/stellarium/skycultures/western/virgo.png
 share/stellarium/skycultures/western/volans.png
 share/stellarium/skycultures/western/vulpecula.png
+share/stellarium/skycultures/western_hlad/
+share/stellarium/skycultures/western_hlad/constellation_names.eng.fab
+share/stellarium/skycultures/western_hlad/constellationship.fab
+share/stellarium/skycultures/western_hlad/description.en.utf8
+share/stellarium/skycultures/western_hlad/hvezdna_obloha_2000.png
+share/stellarium/skycultures/western_hlad/info.ini
+share/stellarium/skycultures/western_hlad/obloha_na_dlani.png
 share/stellarium/skycultures/western_rey/
 share/stellarium/skycultures/western_rey/Rey_cover.png
 share/stellarium/skycultures/western_rey/constellation_names.eng.fab
@@ -1474,6 +1488,7 @@ share/stellarium/stars/default/stars_hip_cids_0v0_0.cat
 share/stellarium/stars/default/stars_hip_sp_0v0_3.cat
 share/stellarium/stars/default/wds_hip_part.dat
 share/stellarium/textures/
+share/stellarium/textures/2007OR10.png
 share/stellarium/textures/TestSquare.png
 share/stellarium/textures/amalthea.png
 share/stellarium/textures/ariel.png
@@ -1490,6 +1505,7 @@ share/stellarium/textures/deimos.png
 share/stellarium/textures/dione.png
 share/stellarium/textures/earth-clouds.png
 share/stellarium/textures/earth-shadow-new.png
+share/stellarium/textures/earth-shadow.png
 share/stellarium/textures/earth_cmap.png
 share/stellarium/textures/earthmap.png
 share/stellarium/textures/enceladus.png
@@ -1504,6 +1520,7 @@ share/stellarium/textures/gray10.png
 share/stellarium/textures/gray25.png
 share/stellarium/textures/halo.png
 share/stellarium/textures/haloLune.png
+share/stellarium/textures/haumea.png
 share/stellarium/textures/hyperion.png
 share/stellarium/textures/iapetus.png
 share/stellarium/textures/ida.png
@@ -1542,6 +1559,7 @@ share/stellarium/textures/proteus.png
 share/stellarium/textures/rhea.png
 share/stellarium/textures/saturn.png
 share/stellarium/textures/saturn_rings_radial.png
+share/stellarium/textures/sedna.png
 share/stellarium/textures/star16x16.png
 share/stellarium/textures/sun.png
 share/stellarium/textures/telescope.png
