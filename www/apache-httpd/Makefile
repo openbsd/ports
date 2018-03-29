@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2018/02/14 16:06:54 jsing Exp $
+# $OpenBSD: Makefile,v 1.89 2018/03/29 19:30:53 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		/var/www files for Apache HTTPd
 
-V=			2.4.29
-REVISION-main=		0
+V=			2.4.33
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -19,8 +18,9 @@ HOMEPAGE=		https://httpd.apache.org/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main += apr-1 aprutil-1 c crypto db expat iconv
-WANTLIB-main += lzma m nghttp2 pcre pthread ssl xml2 z
+WANTLIB-main += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
+WANTLIB-main += db expat iconv jansson lzma m nghttp2 pcre pthread ssl
+WANTLIB-main += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
@@ -30,8 +30,11 @@ MULTI_PACKAGES=		-main -common
 
 RUN_DEPENDS-main=	www/apache-httpd,-common
 
-LIB_DEPENDS-main=	archivers/xz \
+LIB_DEPENDS-main=	archivers/brotli \
+			archivers/xz \
+			devel/jansson \
 			devel/pcre \
+			net/curl \
 			textproc/libxml \
 			www/nghttp2
 

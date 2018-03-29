@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2018/01/12 22:11:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2018/03/29 19:30:53 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @pkgpath www/apache-httpd-openbsd
 @bin bin/ab
@@ -96,6 +96,7 @@ lib/apache2/mod_authz_host.so
 lib/apache2/mod_authz_owner.so
 lib/apache2/mod_authz_user.so
 lib/apache2/mod_autoindex.so
+lib/apache2/mod_brotli.so
 lib/apache2/mod_buffer.so
 lib/apache2/mod_cache.so
 lib/apache2/mod_cache_disk.so
@@ -133,6 +134,7 @@ lib/apache2/mod_log_debug.so
 lib/apache2/mod_log_forensic.so
 lib/apache2/mod_logio.so
 lib/apache2/mod_macro.so
+lib/apache2/mod_md.so
 lib/apache2/mod_mime.so
 lib/apache2/mod_mime_magic.so
 lib/apache2/mod_mpm_event.so
@@ -151,6 +153,7 @@ lib/apache2/mod_proxy_hcheck.so
 lib/apache2/mod_proxy_html.so
 lib/apache2/mod_proxy_http.so
 lib/apache2/mod_proxy_scgi.so
+lib/apache2/mod_proxy_uwsgi.so
 lib/apache2/mod_proxy_wstunnel.so
 lib/apache2/mod_ratelimit.so
 lib/apache2/mod_reflector.so
@@ -807,6 +810,8 @@ share/doc/apache2/mod/mod_lua.html.fr
 share/doc/apache2/mod/mod_macro.html
 share/doc/apache2/mod/mod_macro.html.en
 share/doc/apache2/mod/mod_macro.html.fr
+share/doc/apache2/mod/mod_md.html
+share/doc/apache2/mod/mod_md.html.en
 share/doc/apache2/mod/mod_mime.html
 share/doc/apache2/mod/mod_mime.html.en
 share/doc/apache2/mod/mod_mime.html.fr
@@ -865,6 +870,8 @@ share/doc/apache2/mod/mod_proxy_http2.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html
 share/doc/apache2/mod/mod_proxy_scgi.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html.fr
+share/doc/apache2/mod/mod_proxy_uwsgi.html
+share/doc/apache2/mod/mod_proxy_uwsgi.html.en
 share/doc/apache2/mod/mod_proxy_wstunnel.html
 share/doc/apache2/mod/mod_proxy_wstunnel.html.en
 share/doc/apache2/mod/mod_ratelimit.html

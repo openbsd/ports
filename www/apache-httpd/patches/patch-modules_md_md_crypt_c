@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_md_md_crypt_c,v 1.1 2018/03/29 19:30:53 sthen Exp $
+
+Index: modules/md/md_crypt.c
+--- modules/md/md_crypt.c.orig
++++ modules/md/md_crypt.c
+@@ -471,7 +471,8 @@ apr_status_t md_pkey_gen(md_pkey_t **ppkey, apr_pool_t
+     }
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ 
+ #ifndef NID_tlsfeature
+ #define NID_tlsfeature          1020

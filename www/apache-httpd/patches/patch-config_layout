@@ -1,7 +1,8 @@
-$OpenBSD: patch-config_layout,v 1.8 2015/07/18 00:33:53 ajacoutot Exp $
---- config.layout.orig	Tue Apr 17 16:01:41 2012
-+++ config.layout	Sat Jul 18 02:20:52 2015
-@@ -229,25 +229,25 @@
+$OpenBSD: patch-config_layout,v 1.9 2018/03/29 19:30:53 sthen Exp $
+Index: config.layout
+--- config.layout.orig
++++ config.layout
+@@ -253,25 +253,25 @@
  #   OpenBSD Layout
  <Layout OpenBSD>
      prefix:        /var/www
