@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/18 07:52:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/03/29 19:47:12 landry Exp $
+@bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
+@bin bin/gie
 bin/invgeod
 bin/invproj
 @bin bin/nad2bin
@@ -8,28 +10,36 @@ bin/invproj
 include/geodesic.h
 include/org_proj4_PJ.h
 include/org_proj4_Projections.h
+include/proj.h
 include/proj_api.h
 include/projects.h
 lib/libproj.a
 lib/libproj.la
 @lib lib/libproj.so.${LIBproj_VERSION}
 lib/pkgconfig/proj.pc
+@man man/man1/cct.1
 @man man/man1/cs2cs.1
 @man man/man1/geod.1
+@man man/man1/gie.1
 @man man/man1/proj.1
 @man man/man3/geodesic.3
 @man man/man3/pj_init.3
 share/proj/
+share/proj/BETA2007.gsb
 share/proj/CH
 share/proj/FL
 share/proj/GL27
 share/proj/IGNF
+share/proj/ITRF2000
+share/proj/ITRF2008
+share/proj/ITRF2014
 share/proj/MD
 share/proj/TN
 share/proj/WI
 share/proj/WO
 share/proj/alaska
 share/proj/conus
+share/proj/egm96_15.gtx
 share/proj/epsg
 share/proj/esri
 share/proj/esri.extra

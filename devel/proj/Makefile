@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2017/02/08 08:18:07 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2018/03/29 19:47:12 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-4.9.3
+DISTNAME=	proj-5.0.0
 CATEGORIES=	devel geo
-SHARED_LIBS=	proj 7.2 # 12.0
-REVISION=	0
+SHARED_LIBS=	proj 8.0 # 12.0
 
-DATUMGRID=	proj-datumgrid-1.6RC1.zip
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-DISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DATUMGRID}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		proj-datumgrid-1.7${EXTRACT_SUFX}
 
 HOMEPAGE=	http://proj4.org
 
@@ -26,10 +22,15 @@ CONFIGURE_STYLE=	gnu
 WANTLIB=		c m pthread
 CONFIGURE_ENV=		LDFLAGS='-pthread'
 
+# needed for tests only..
+USE_GMAKE =	Yes
 
-BUILD_DEPENDS=		archivers/unzip
+GRIDS = BETA2007.gsb nzgd2kgrid0005.gsb ntv1_can.dat ntf_r93.gsb egm96_15.gtx \
+	stpaul stlrnc stgeorge prvi null hawaii conus alaska WO WI TN MD FL
 
 post-extract:
-	${UNZIP} -oq ${FULLDISTDIR}/${DATUMGRID} -d ${WRKDIR}/${DISTNAME}/nad
+.for f in ${GRIDS}
+	@mv ${WRKDIR}/${f} ${WRKSRC}/nad
+.endfor
 
 .include <bsd.port.mk>
