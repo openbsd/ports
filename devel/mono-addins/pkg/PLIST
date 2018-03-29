@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/09 13:46:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/03/29 19:36:13 robert Exp $
 bin/mautil
 lib/mono/gac/Mono.Addins/
 lib/mono/gac/Mono.Addins.CecilReflector/
 lib/mono/gac/Mono.Addins.CecilReflector/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Addins.CecilReflector/1.0.0.0__0738eb9f132ed756/Mono.Addins.CecilReflector.dll
-lib/mono/gac/Mono.Addins.CecilReflector/1.0.0.0__0738eb9f132ed756/Mono.Addins.CecilReflector.dll.mdb
+lib/mono/gac/Mono.Addins.CecilReflector/1.0.0.0__0738eb9f132ed756/Mono.Addins.CecilReflector.pdb
 lib/mono/gac/Mono.Addins.Gui/
 lib/mono/gac/Mono.Addins.Gui/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Addins.Gui/1.0.0.0__0738eb9f132ed756/Mono.Addins.Gui.dll
-lib/mono/gac/Mono.Addins.Gui/1.0.0.0__0738eb9f132ed756/Mono.Addins.Gui.dll.mdb
+lib/mono/gac/Mono.Addins.Gui/1.0.0.0__0738eb9f132ed756/Mono.Addins.Gui.pdb
 lib/mono/gac/Mono.Addins.MSBuild/
 lib/mono/gac/Mono.Addins.MSBuild/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Addins.MSBuild/1.0.0.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll
-lib/mono/gac/Mono.Addins.MSBuild/1.0.0.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll.mdb
+lib/mono/gac/Mono.Addins.MSBuild/1.0.0.0__0738eb9f132ed756/Mono.Addins.MSBuild.pdb
 lib/mono/gac/Mono.Addins.Setup/
 lib/mono/gac/Mono.Addins.Setup/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Addins.Setup/1.0.0.0__0738eb9f132ed756/Mono.Addins.Setup.dll
-lib/mono/gac/Mono.Addins.Setup/1.0.0.0__0738eb9f132ed756/Mono.Addins.Setup.dll.mdb
+lib/mono/gac/Mono.Addins.Setup/1.0.0.0__0738eb9f132ed756/Mono.Addins.Setup.pdb
 lib/mono/gac/Mono.Addins/1.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Addins/1.0.0.0__0738eb9f132ed756/Mono.Addins.dll
-lib/mono/gac/Mono.Addins/1.0.0.0__0738eb9f132ed756/Mono.Addins.dll.mdb
+lib/mono/gac/Mono.Addins/1.0.0.0__0738eb9f132ed756/Mono.Addins.pdb
 lib/mono/gac/policy.0.2.Mono.Addins/
 lib/mono/gac/policy.0.2.Mono.Addins.CecilReflector/
 lib/mono/gac/policy.0.2.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/

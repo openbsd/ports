@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/03/29 19:36:13 robert Exp $
 
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
@@ -6,9 +6,11 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		framework for creating extensible applications
 
+DISTNAME=		mono-addins-1.3.3
+
 GH_ACCOUNT=		mono
 GH_PROJECT=		mono-addins
-GH_TAGNAME=		${GH_PROJECT}-1.3
+GH_TAGNAME=		${DISTNAME}	
 
 CATEGORIES=		devel lang
 
