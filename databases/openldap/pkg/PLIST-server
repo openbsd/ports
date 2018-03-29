@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2017/08/26 12:10:55 sthen Exp $
-@extraunexec rm -Rf %SYSCONFDIR%/openldap/slapd.d/*
-@extraunexec rm -Rf /var/openldap-data/*
+@comment $OpenBSD: PLIST-server,v 1.23 2018/03/29 19:32:12 sthen Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
 @ask-update openldap-server-<2.4 Make sure your existing database is backed up
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
+@extraunexec rm -Rf %SYSCONFDIR%/openldap/slapd.d/*
+@extraunexec rm -Rf /var/openldap-data/*
 @bin libexec/slapd
 @man man/man5/slapd-bdb.5
 @man man/man5/slapd-config.5
 @man man/man5/slapd-dnssrv.5
 @man man/man5/slapd-hdb.5
 @man man/man5/slapd-ldap.5
-@man man/man5/slapd-ldbm.5
 @man man/man5/slapd-ldif.5
 @man man/man5/slapd-mdb.5
 @man man/man5/slapd-meta.5
