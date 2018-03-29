@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.49 2018/03/29 20:52:15 ajacoutot Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.83
+DISTNAME=	mimedefang-2.84
 CATEGORIES=	mail
-REVISION=	0
 
 HOMEPAGE=	http://www.mimedefang.org/
 MASTER_SITES=	${HOMEPAGE}static/
