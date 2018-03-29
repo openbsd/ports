@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.17 2018/03/15 22:20:54 sthen Exp $
+$OpenBSD: patch-configure,v 1.18 2018/03/29 23:50:28 sthen Exp $
 
 https://www.dovecot.org/pipermail/dovecot/2018-March/111260.html
 
@@ -10,7 +10,7 @@ the traditional method which actually works.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -22982,7 +22982,7 @@ fi
+@@ -22335,7 +22335,7 @@ fi
  $as_echo "$i_cv_have_ssl_ctx_set_min_proto_version" >&6; }
      if test $i_cv_have_ssl_ctx_set_min_proto_version = yes; then
  
