@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1717 2018/03/30 04:48:36 bentley Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1718 2018/03/30 13:54:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1224,6 +1224,8 @@
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
+     SUBDIR += py-anytree
+     SUBDIR += py-anytree,python3
      SUBDIR += py-apipkg
      SUBDIR += py-apipkg,python3
      SUBDIR += py-appdirs
