@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2017/12/09 07:08:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2018/03/30 14:06:15 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.27
+GNOME_VERSION=		1.28
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES= 	   	textproc devel
@@ -16,6 +16,7 @@ MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook yelp
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-highlight=source-highlight
@@ -29,8 +30,10 @@ PKG_ARCH=		*
 BUILD_DEPENDS=		devel/glib2 \
 			textproc/source-highlight
 
-RUN_DEPENDS=		devel/py-six \
+RUN_DEPENDS=		devel/py-anytree${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
 			textproc/docbook-xsl \
+			textproc/py-lxml${MODPY_FLAVOR} \
 			textproc/source-highlight
 
 .include <bsd.port.mk>

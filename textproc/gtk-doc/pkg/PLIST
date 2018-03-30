@@ -1,20 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/08/17 08:32:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/03/30 14:06:15 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
+bin/gtkdoc-mkhtml2
 bin/gtkdoc-mkman
 bin/gtkdoc-mkpdf
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdocize
+lib/cmake/
 lib/cmake/GtkDoc/
 lib/cmake/GtkDoc/GtkDocConfig.cmake
 lib/cmake/GtkDoc/GtkDocConfigVersion.cmake
 lib/cmake/GtkDoc/GtkDocScanGObjWrapper.cmake
+share/aclocal/
 share/aclocal/gtk-doc.m4
+share/gtk-doc/
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp2.xsd
 share/gtk-doc/data/devhelp2.xsl
@@ -40,6 +44,7 @@ share/gtk-doc/python/gtkdoc/fixxref.py
 share/gtk-doc/python/gtkdoc/md_to_db.py
 share/gtk-doc/python/gtkdoc/mkdb.py
 share/gtk-doc/python/gtkdoc/mkhtml.py
+share/gtk-doc/python/gtkdoc/mkhtml2.py
 share/gtk-doc/python/gtkdoc/mkman.py
 share/gtk-doc/python/gtkdoc/mkpdf.py
 share/gtk-doc/python/gtkdoc/rebase.py
