@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2016/11/17 21:56:59 sthen Exp $
+$OpenBSD: README,v 1.9 2018/03/30 10:50:14 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -67,6 +67,7 @@ server {
     add_header Strict-Transport-Security max-age=15552000;
     include ssl_params;
 
+    rewrite "^/[a-zA-Z0-9]{16}/(.*)" /$1; # allow use of 'use_secure_urls'
     location /.well-known/acme-challenge { root /var/www/letsencrypt/; }
     location ~* \.php$ { 
         try_files       $uri =404;

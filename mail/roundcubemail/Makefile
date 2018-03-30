@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.126 2018/03/17 22:03:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2018/03/30 10:50:14 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
 V=		1.3.5
+REVISION=	0
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
 PORTROACH=	skipv:$V
