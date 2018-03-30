@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/27 15:07:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/30 21:00:59 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
-GH_ACCOUNT =	newsboat
-GH_PROJECT =	newsboat
-GH_TAGNAME =	r2.10.2
-
-PKGNAME =	${DISTNAME:S/-r/-/}
+V =		2.11.1
+DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
 
@@ -19,6 +16,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c crypto curl curses iconv intl
 WANTLIB +=	json-c m sqlite3 stfl xml2
+
+MASTER_SITES =	https://www.newsboat.org/releases/$V/
+
+EXTRACT_SUFX =	.tar.xz
 
 COMPILER =	base-clang ports-gcc
 
