@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/10/05 12:12:06 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/03/30 07:52:01 kirby Exp $
 @bin bin/rawtherapee
 @bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
@@ -57,9 +57,11 @@ share/rawtherapee/dcpprofiles/Fujifilm X-E2.dcp
 share/rawtherapee/dcpprofiles/Fujifilm X-T10.dcp
 share/rawtherapee/dcpprofiles/LG Mobile LG-H815.dcp
 share/rawtherapee/dcpprofiles/Leaf Aptus 75.dcp
+share/rawtherapee/dcpprofiles/MINOLTA DYNAX 7D.dcp
 share/rawtherapee/dcpprofiles/NIKON D300.dcp
 share/rawtherapee/dcpprofiles/NIKON D5600.dcp
 share/rawtherapee/dcpprofiles/NIKON D600.dcp
+share/rawtherapee/dcpprofiles/NIKON D700.dcp
 share/rawtherapee/dcpprofiles/NIKON D7200.dcp
 share/rawtherapee/dcpprofiles/NIKON D750.dcp
 share/rawtherapee/dcpprofiles/NIKON D80.dcp
@@ -70,7 +72,6 @@ share/rawtherapee/dcpprofiles/Nikon D3100.dcp
 share/rawtherapee/dcpprofiles/Nikon D3S.dcp
 share/rawtherapee/dcpprofiles/Nikon D50.dcp
 share/rawtherapee/dcpprofiles/Nikon D5100.dcp
-share/rawtherapee/dcpprofiles/Nikon D700.dcp
 share/rawtherapee/dcpprofiles/Nikon D7000.dcp
 share/rawtherapee/dcpprofiles/Nikon D800.dcp
 share/rawtherapee/dcpprofiles/OLYMPUS E-M10.dcp
@@ -101,8 +102,10 @@ share/rawtherapee/dcpprofiles/Pentax K-r.dcp
 share/rawtherapee/dcpprofiles/Pentax K200D.dcp
 share/rawtherapee/dcpprofiles/RICOH PENTAX K-1.dcp
 share/rawtherapee/dcpprofiles/RICOH PENTAX K-3.dcp
+share/rawtherapee/dcpprofiles/SONY DSLR-A580.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-6000.dcp
 share/rawtherapee/dcpprofiles/SONY ILCE-7M2.dcp
+share/rawtherapee/dcpprofiles/SONY ILCE-7RM3.dcp
 share/rawtherapee/dcpprofiles/SONY SLT-A99V.dcp
 share/rawtherapee/dcpprofiles/Sony DSLR-A700.dcp
 share/rawtherapee/dcpprofiles/Sony DSLR-A900.dcp
@@ -184,7 +187,11 @@ share/rawtherapee/images/Dark/actions/
 share/rawtherapee/images/Dark/actions/Chanmixer-Bgamma.png
 share/rawtherapee/images/Dark/actions/Chanmixer-Ggamma.png
 share/rawtherapee/images/Dark/actions/Chanmixer-Rgamma.png
+share/rawtherapee/images/Dark/actions/HDR-thumbnail.png
 share/rawtherapee/images/Dark/actions/PanelEnding.png
+share/rawtherapee/images/Dark/actions/PixelShift-thumbnail.png
+share/rawtherapee/images/Dark/actions/adj-black.png
+share/rawtherapee/images/Dark/actions/adj-white.png
 share/rawtherapee/images/Dark/actions/ajd-ca-blue1.png
 share/rawtherapee/images/Dark/actions/ajd-ca-blue2.png
 share/rawtherapee/images/Dark/actions/ajd-ca-red1.png
@@ -203,6 +210,7 @@ share/rawtherapee/images/Dark/actions/arrow-right-small.png
 share/rawtherapee/images/Dark/actions/arrow-right.png
 share/rawtherapee/images/Dark/actions/arrow-up-small.png
 share/rawtherapee/images/Dark/actions/arrow-up.png
+share/rawtherapee/images/Dark/actions/atom.png
 share/rawtherapee/images/Dark/actions/beforeafter.png
 share/rawtherapee/images/Dark/actions/cglabel0.png
 share/rawtherapee/images/Dark/actions/cglabel1.png
@@ -246,6 +254,8 @@ share/rawtherapee/images/Dark/actions/editedg-small.png
 share/rawtherapee/images/Dark/actions/editednot-small.png
 share/rawtherapee/images/Dark/actions/editednotg-small.png
 share/rawtherapee/images/Dark/actions/editmodehand.png
+share/rawtherapee/images/Dark/actions/equalizer-narrow.png
+share/rawtherapee/images/Dark/actions/equalizer-wide.png
 share/rawtherapee/images/Dark/actions/expanderClosed.png
 share/rawtherapee/images/Dark/actions/expanderDisabled.png
 share/rawtherapee/images/Dark/actions/expanderEnabled.png
@@ -258,6 +268,9 @@ share/rawtherapee/images/Dark/actions/filter.png
 share/rawtherapee/images/Dark/actions/filterclear.png
 share/rawtherapee/images/Dark/actions/fullscreen-exit.png
 share/rawtherapee/images/Dark/actions/fullscreen.png
+share/rawtherapee/images/Dark/actions/gamut-hist.png
+share/rawtherapee/images/Dark/actions/gamut-softproof.png
+share/rawtherapee/images/Dark/actions/gamut-warning.png
 share/rawtherapee/images/Dark/actions/grayrated.png
 share/rawtherapee/images/Dark/actions/gtk-add.png
 share/rawtherapee/images/Dark/actions/gtk-apply.png
@@ -439,7 +452,11 @@ share/rawtherapee/images/Light/actions/
 share/rawtherapee/images/Light/actions/Chanmixer-Bgamma.png
 share/rawtherapee/images/Light/actions/Chanmixer-Ggamma.png
 share/rawtherapee/images/Light/actions/Chanmixer-Rgamma.png
+share/rawtherapee/images/Light/actions/HDR-thumbnail.png
 share/rawtherapee/images/Light/actions/PanelEnding.png
+share/rawtherapee/images/Light/actions/PixelShift-thumbnail.png
+share/rawtherapee/images/Light/actions/adj-black.png
+share/rawtherapee/images/Light/actions/adj-white.png
 share/rawtherapee/images/Light/actions/ajd-ca-blue1.png
 share/rawtherapee/images/Light/actions/ajd-ca-blue2.png
 share/rawtherapee/images/Light/actions/ajd-ca-red1.png
@@ -458,6 +475,7 @@ share/rawtherapee/images/Light/actions/arrow-right-small.png
 share/rawtherapee/images/Light/actions/arrow-right.png
 share/rawtherapee/images/Light/actions/arrow-up-small.png
 share/rawtherapee/images/Light/actions/arrow-up.png
+share/rawtherapee/images/Light/actions/atom.png
 share/rawtherapee/images/Light/actions/beforeafter.png
 share/rawtherapee/images/Light/actions/cglabel0.png
 share/rawtherapee/images/Light/actions/cglabel1.png
@@ -501,6 +519,8 @@ share/rawtherapee/images/Light/actions/editedg-small.png
 share/rawtherapee/images/Light/actions/editednot-small.png
 share/rawtherapee/images/Light/actions/editednotg-small.png
 share/rawtherapee/images/Light/actions/editmodehand.png
+share/rawtherapee/images/Light/actions/equalizer-narrow.png
+share/rawtherapee/images/Light/actions/equalizer-wide.png
 share/rawtherapee/images/Light/actions/expanderClosed.png
 share/rawtherapee/images/Light/actions/expanderDisabled.png
 share/rawtherapee/images/Light/actions/expanderEnabled.png
@@ -513,6 +533,9 @@ share/rawtherapee/images/Light/actions/filter.png
 share/rawtherapee/images/Light/actions/filterclear.png
 share/rawtherapee/images/Light/actions/fullscreen-exit.png
 share/rawtherapee/images/Light/actions/fullscreen.png
+share/rawtherapee/images/Light/actions/gamut-hist.png
+share/rawtherapee/images/Light/actions/gamut-softproof.png
+share/rawtherapee/images/Light/actions/gamut-warning.png
 share/rawtherapee/images/Light/actions/grayrated.png
 share/rawtherapee/images/Light/actions/gtk-add.png
 share/rawtherapee/images/Light/actions/gtk-apply.png
@@ -851,14 +874,14 @@ share/rawtherapee/languages/Turkish
 share/rawtherapee/languages/default
 share/rawtherapee/options
 share/rawtherapee/profiles/
+share/rawtherapee/profiles/Auto-Matched Curve - ISO High.pp3
+share/rawtherapee/profiles/Auto-Matched Curve - ISO Low.pp3
+share/rawtherapee/profiles/Auto-Matched Curve - ISO Medium.pp3
 share/rawtherapee/profiles/Black-and-White/
 share/rawtherapee/profiles/Black-and-White/Black-and-White 1.pp3
 share/rawtherapee/profiles/Black-and-White/Black-and-White 2.pp3
 share/rawtherapee/profiles/Black-and-White/Black-and-White 3.pp3
 share/rawtherapee/profiles/Black-and-White/Black-and-White 4.pp3
-share/rawtherapee/profiles/Default ISO High.pp3
-share/rawtherapee/profiles/Default ISO Medium.pp3
-share/rawtherapee/profiles/Default.pp3
 share/rawtherapee/profiles/Faded/
 share/rawtherapee/profiles/Faded/Faded Amber 1 TM Bright.pp3
 share/rawtherapee/profiles/Faded/Faded Amber 1 TM.pp3
@@ -902,11 +925,11 @@ share/rawtherapee/profiles/Generic/Punchy 1.pp3
 share/rawtherapee/profiles/Generic/Punchy 2.pp3
 share/rawtherapee/profiles/Non-raw/
 share/rawtherapee/profiles/Non-raw/Brighten.pp3
-share/rawtherapee/profiles/Pentax Pixel Shift/
-share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO High.pp3
-share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO Low.pp3
-share/rawtherapee/profiles/Pentax Pixel Shift/PS ISO Medium.pp3
-share/rawtherapee/profiles/Pentax Pixel Shift/PS No Motion.pp3
+share/rawtherapee/profiles/Pixel Shift/
+share/rawtherapee/profiles/Pixel Shift/PS ISO High.pp3
+share/rawtherapee/profiles/Pixel Shift/PS ISO Low.pp3
+share/rawtherapee/profiles/Pixel Shift/PS ISO Medium.pp3
+share/rawtherapee/profiles/Pixel Shift/PS No Motion.pp3
 share/rawtherapee/profiles/Pop/
 share/rawtherapee/profiles/Pop/Pop 1.pp3
 share/rawtherapee/profiles/Pop/Pop 2 L.pp3
@@ -927,6 +950,9 @@ share/rawtherapee/profiles/Skintones/Skintones - Studio TM.pp3
 share/rawtherapee/profiles/Skintones/Skintones - Studio.pp3
 share/rawtherapee/profiles/Skintones/Skintones - StudioBase 1 TM.pp3
 share/rawtherapee/profiles/Skintones/Skintones - StudioBase 1.pp3
+share/rawtherapee/profiles/Standard Film Curve - ISO High.pp3
+share/rawtherapee/profiles/Standard Film Curve - ISO Low.pp3
+share/rawtherapee/profiles/Standard Film Curve - ISO Medium.pp3
 share/rawtherapee/sounds/
 share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav
