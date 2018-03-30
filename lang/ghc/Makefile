@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2018/03/30 18:18:27 kili Exp $
+# $OpenBSD: Makefile,v 1.159 2018/03/30 23:16:59 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,12 +12,12 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.0.1.20171204
+BIN_VER =		8.2.2.20180330
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
