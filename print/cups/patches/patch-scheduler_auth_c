@@ -1,15 +1,25 @@
-$OpenBSD: patch-scheduler_auth_c,v 1.9 2017/11/10 16:08:34 ajacoutot Exp $
+$OpenBSD: patch-scheduler_auth_c,v 1.10 2018/03/30 09:00:50 ajacoutot Exp $
 
-2nd+ chunks:
-From 363746937a07afe7ee6f9373200e4cdd04659c48 Mon Sep 17 00:00:00 2001
-From: Michael R Sweet <michaelrsweet@gmail.com>
-Date: Fri, 10 Nov 2017 10:20:54 -0500
-Subject: [PATCH] Workaround getgrouplist group data overwrite bug on OpenBSD (Issue #5166)
+1st and 3rd+ chunks:
+From 3cd7b5e053f8100da1ca8d8daf93976cca3516ef Mon Sep 17 00:00:00 2001
+From: Michael R Sweet <michael.r.sweet@gmail.com>
+Date: Fri, 23 Feb 2018 13:21:56 -0500
+Subject: [PATCH] Fix builds without PAM (Issue #5253)
 
 Index: scheduler/auth.c
 --- scheduler/auth.c.orig
 +++ scheduler/auth.c
-@@ -649,7 +649,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+@@ -71,9 +71,6 @@ static int		check_authref(cupsd_client_t *con, const c
+ static int		compare_locations(cupsd_location_t *a,
+ 			                  cupsd_location_t *b);
+ static cupsd_authmask_t	*copy_authmask(cupsd_authmask_t *am, void *data);
+-#if !HAVE_LIBPAM
+-static char		*cups_crypt(const char *pw, const char *salt);
+-#endif /* !HAVE_LIBPAM */
+ static void		free_authmask(cupsd_authmask_t *am, void *data);
+ #if HAVE_LIBPAM
+ static int		pam_func(int, const struct pam_message **,
+@@ -649,7 +646,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  #  endif /* HAVE_SHADOW_H */
  
  
@@ -18,69 +28,150 @@ Index: scheduler/auth.c
  	    endpwent();			/* Close the password file */
  
  	    if (!pw)
-@@ -1146,7 +1146,8 @@ cupsdCheckGroup(
-     const char    *groupname)		/* I - Group name */
- {
-   int		i;			/* Looping var */
--  struct group	*group;			/* System group info */
-+  struct group	*group;			/* Group info */
-+  gid_t		groupid;		/* ID of named group */
- #ifdef HAVE_MBR_UID_TO_UUID
-   uuid_t	useruuid,		/* UUID for username */
- 		groupuuid;		/* UUID for groupname */
-@@ -1176,6 +1177,8 @@ cupsdCheckGroup(
-     * Group exists, check it...
-     */
+@@ -694,14 +691,14 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+ 	    * client...
+ 	    */
  
-+    groupid = group->gr_gid;
-+
- #ifdef HAVE_GETGROUPLIST
-     if (user)
-     {
-@@ -1194,22 +1197,27 @@ cupsdCheckGroup(
- #endif /* __APPLE__ */
+-	    pass = cups_crypt(password, pw->pw_passwd);
++	    pass = crypt(password, pw->pw_passwd);
  
-       for (i = 0; i < ngroups; i ++)
--        if ((int)group->gr_gid == (int)groups[i])
-+        if ((int)groupid == (int)groups[i])
- 	  return (1);
-     }
--#endif /* HAVE_GETGROUPLIST */
+ 	    if (!pass || strcmp(pw->pw_passwd, pass))
+ 	    {
+ #  ifdef HAVE_SHADOW_H
+ 	      if (spw)
+ 	      {
+-		pass = cups_crypt(password, spw->sp_pwdp);
++		pass = crypt(password, spw->sp_pwdp);
  
-+#else
-     for (i = 0; group->gr_mem[i]; i ++)
-+    {
-       if (!_cups_strcasecmp(username, group->gr_mem[i]))
- 	return (1);
-+    }
-+#endif /* HAVE_GETGROUPLIST */
-   }
-+  else
-+    groupid = (gid_t)-1;
+ 		if (pass == NULL || strcmp(spw->sp_pwdp, pass))
+ 		{
+@@ -1993,129 +1990,6 @@ copy_authmask(cupsd_authmask_t *mask,	/* I - Existing 
  
-  /*
-   * Group doesn't exist or user not in group list, check the group ID
-   * against the user's group ID...
-   */
+   return (temp);
+ }
+-
+-
+-#if !HAVE_LIBPAM
+-/*
+- * 'cups_crypt()' - Encrypt the password using the DES or MD5 algorithms,
+- *                  as needed.
+- */
+-
+-static char *				/* O - Encrypted password */
+-cups_crypt(const char *pw,		/* I - Password string */
+-           const char *salt)		/* I - Salt (key) string */
+-{
+-  if (!strncmp(salt, "$1$", 3))
+-  {
+-   /*
+-    * Use MD5 passwords without the benefit of PAM; this is for
+-    * Slackware Linux, and the algorithm was taken from the
+-    * old shadow-19990827/lib/md5crypt.c source code... :(
+-    */
+-
+-    int			i;		/* Looping var */
+-    unsigned long	n;		/* Output number */
+-    int			pwlen;		/* Length of password string */
+-    const char		*salt_end;	/* End of "salt" data for MD5 */
+-    char		*ptr;		/* Pointer into result string */
+-    _cups_md5_state_t	state;		/* Primary MD5 state info */
+-    _cups_md5_state_t	state2;		/* Secondary MD5 state info */
+-    unsigned char	digest[16];	/* MD5 digest result */
+-    static char		result[120];	/* Final password string */
+-
+-
+-   /*
+-    * Get the salt data between dollar signs, e.g. $1$saltdata$md5.
+-    * Get a maximum of 8 characters of salt data after $1$...
+-    */
+-
+-    for (salt_end = salt + 3; *salt_end && (salt_end - salt) < 11; salt_end ++)
+-      if (*salt_end == '$')
+-        break;
+-
+-   /*
+-    * Compute the MD5 sum we need...
+-    */
+-
+-    pwlen = strlen(pw);
+-
+-    _cupsMD5Init(&state);
+-    _cupsMD5Append(&state, (unsigned char *)pw, pwlen);
+-    _cupsMD5Append(&state, (unsigned char *)salt, salt_end - salt);
+-
+-    _cupsMD5Init(&state2);
+-    _cupsMD5Append(&state2, (unsigned char *)pw, pwlen);
+-    _cupsMD5Append(&state2, (unsigned char *)salt + 3, salt_end - salt - 3);
+-    _cupsMD5Append(&state2, (unsigned char *)pw, pwlen);
+-    _cupsMD5Finish(&state2, digest);
+-
+-    for (i = pwlen; i > 0; i -= 16)
+-      _cupsMD5Append(&state, digest, i > 16 ? 16 : i);
+-
+-    for (i = pwlen; i > 0; i >>= 1)
+-      _cupsMD5Append(&state, (unsigned char *)((i & 1) ? "" : pw), 1);
+-
+-    _cupsMD5Finish(&state, digest);
+-
+-    for (i = 0; i < 1000; i ++)
+-    {
+-      _cupsMD5Init(&state);
+-
+-      if (i & 1)
+-        _cupsMD5Append(&state, (unsigned char *)pw, pwlen);
+-      else
+-        _cupsMD5Append(&state, digest, 16);
+-
+-      if (i % 3)
+-        _cupsMD5Append(&state, (unsigned char *)salt + 3, salt_end - salt - 3);
+-
+-      if (i % 7)
+-        _cupsMD5Append(&state, (unsigned char *)pw, pwlen);
+-
+-      if (i & 1)
+-        _cupsMD5Append(&state, digest, 16);
+-      else
+-        _cupsMD5Append(&state, (unsigned char *)pw, pwlen);
+-
+-      _cupsMD5Finish(&state, digest);
+-    }
+-
+-   /*
+-    * Copy the final sum to the result string and return...
+-    */
+-
+-    memcpy(result, salt, (size_t)(salt_end - salt));
+-    ptr = result + (salt_end - salt);
+-    *ptr++ = '$';
+-
+-    for (i = 0; i < 5; i ++, ptr += 4)
+-    {
+-      n = ((((unsigned)digest[i] << 8) | (unsigned)digest[i + 6]) << 8);
+-
+-      if (i < 4)
+-        n |= (unsigned)digest[i + 12];
+-      else
+-        n |= (unsigned)digest[5];
+-
+-      to64(ptr, n, 4);
+-    }
+-
+-    to64(ptr, (unsigned)digest[11], 2);
+-    ptr += 2;
+-    *ptr = '\0';
+-
+-    return (result);
+-  }
+-  else
+-  {
+-   /*
+-    * Use the standard crypt() function...
+-    */
+-
+-    return (crypt(pw, salt));
+-  }
+-}
+-#endif /* !HAVE_LIBPAM */
  
--  if (user && group && group->gr_gid == user->pw_gid)
-+  if (user && groupid == user->pw_gid)
-     return (1);
  
- #ifdef HAVE_MBR_UID_TO_UUID
-@@ -1219,13 +1227,13 @@ cupsdCheckGroup(
- 
-   if (user && !mbr_uid_to_uuid(user->pw_uid, useruuid))
-   {
--    if (group)
-+    if (groupid != (gid_t)-1)
-     {
-      /*
-       * Map group name to UUID and check membership...
-       */
- 
--      if (!mbr_gid_to_uuid(group->gr_gid, groupuuid))
-+      if (!mbr_gid_to_uuid(groupid, groupuuid))
-         if (!mbr_check_membership(useruuid, groupuuid, &is_member))
- 	  if (is_member)
- 	    return (1);
+ /*
