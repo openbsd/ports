@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1716 2018/03/29 23:06:50 jeremy Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1717 2018/03/30 04:48:36 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1621,6 +1621,7 @@
      SUBDIR += qbs
      SUBDIR += qgit
      SUBDIR += qjson
+     SUBDIR += qp
      SUBDIR += qt-creator
      SUBDIR += quilt
      SUBDIR += quirks
