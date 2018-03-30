@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/06 04:43:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/30 05:12:03 bentley Exp $
 share/doc/ibm-plex/
-share/doc/ibm-plex/LICENSE.md
+share/doc/ibm-plex/LICENSE.txt
 share/fonts/
 share/fonts/ibm-plex/
 share/fonts/ibm-plex/IBMPlexMono-Bold.otf
@@ -67,6 +67,38 @@ share/fonts/ibm-plex/IBMPlexSans-Thin.otf
 share/fonts/ibm-plex/IBMPlexSans-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSans-ThinItalic.otf
 share/fonts/ibm-plex/IBMPlexSans-ThinItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Bold.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Bold.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-BoldItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-BoldItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ExtraLightItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ExtraLightItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Italic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Italic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Light.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Light.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-LightItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-LightItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Medium.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Medium.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-MediumItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-MediumItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Regular.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Regular.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-SemiBoldItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-SemiBoldItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Text.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Text.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-TextItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-TextItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Thin.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-Thin.ttf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ThinItalic.otf
+share/fonts/ibm-plex/IBMPlexSansCondensed-ThinItalic.ttf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.otf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.ttf
 share/fonts/ibm-plex/IBMPlexSerif-BoldItalic.otf
