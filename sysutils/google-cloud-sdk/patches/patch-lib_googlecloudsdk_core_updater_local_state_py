@@ -1,21 +1,25 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_updater_local_state_py,v 1.7 2017/03/16 16:21:04 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_updater_local_state_py,v 1.8 2018/03/30 10:37:56 ajacoutot Exp $
 
 Text from lib/googlecloudsdk/core/updater/update_manager.py.
 
---- lib/googlecloudsdk/core/updater/local_state.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/updater/local_state.py	Thu Mar 16 17:05:43 2017
-@@ -46,10 +46,10 @@ class InvalidSDKRootError(Error):
+Index: lib/googlecloudsdk/core/updater/local_state.py
+--- lib/googlecloudsdk/core/updater/local_state.py.orig
++++ lib/googlecloudsdk/core/updater/local_state.py
+@@ -53,10 +53,13 @@ class InvalidSDKRootError(Error):
  
    def __init__(self):
      super(InvalidSDKRootError, self).__init__(
 -        'The components management action could not be performed because the '
 -        'installation root of the Cloud SDK could not be located. '
 -        'If you previously used the Cloud SDK installer, '
--        'you could re-install the the SDK and retry again.')
-+        'You cannot perform this action because this Cloud SDK installation '
-+        'is managed by an external package manager.  If you would like to get'
-+        'the latest version, please see our main download page at:\n  '
-+        + config.INSTALLATION_CONFIG.documentation_url)
+-        'you could re-install the SDK and retry again.')
++        'You cannot perform this action because this Cloud SDK '
++        'installation is managed by an external package manager.\n'
++        'Please consider using a separate installation of the Cloud '
++        'SDK created through the default mechanism described at: '
++        '{doc_url}\n'.format(
++            doc_url=config.INSTALLATION_CONFIG.documentation_url))
++
  
  
  class InvalidDownloadError(Error):

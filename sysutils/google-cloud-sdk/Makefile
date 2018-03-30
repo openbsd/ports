@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2017/07/21 09:12:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2018/03/30 10:37:56 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 
-V=			163.0.0
+V=			195.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -31,8 +31,6 @@ pre-configure:
 # wildcard, cannot use MODPY_ADJ_FILES
 	find ${WRKSRC}/bin{,/bootstrapping}/* -type f -exec \
 		${MODPY_BIN_ADJ} '{}' \+
-	${SUBST_CMD} ${WRKSRC}/lib/googlecloudsdk/core/config.py \
-		${WRKSRC}/bin/{bq,docker-credential-gcloud,gcloud,git-credential-gcloud.sh,gsutil}
 
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
@@ -40,7 +38,6 @@ do-install:
 		${PREFIX}/share/zsh/vendor-completions \
 		${PREFIX}/share/bash-completion/completions
 
-	mv ${PREFIX}/google-cloud-sdk/help/man/man1/* ${PREFIX}/man/man1/
 	mv ${PREFIX}/google-cloud-sdk/{LICENSE,README,RELEASE_NOTES} \
 		${PREFIX}/share/doc/google-cloud-sdk
 	mv ${PREFIX}/google-cloud-sdk/completion.bash.inc \
@@ -48,13 +45,14 @@ do-install:
 	mv ${PREFIX}/google-cloud-sdk/completion.zsh.inc \
 		${PREFIX}/share/zsh/vendor-completions/_google-cloud-sdk
 
-	rm -rf ${PREFIX}/google-cloud-sdk/{.install,install.{sh,bat},help}
-	rm -rf ${PREFIX}/google-cloud-sdk/path.{bash,zsh}.inc
+	rm -r ${PREFIX}/google-cloud-sdk/.install \
+		${PREFIX}/google-cloud-sdk/path.{bash,zsh}.inc \
+		${PREFIX}/google-cloud-sdk/{deb,rpm}
 
-	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) \
+	find ${PREFIX} -type f \( -name '*.bat' -or -name '*.orig' \) \
 		-exec rm '{}' \+
-
 	find ${PREFIX} -type d -name python3 -exec rm -rf '{}' \+
+
 # XXX ||true: ignore python >=3.5 syntax in unused examples
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/google-cloud-sdk/{lib,platform} || true
@@ -62,5 +60,10 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/google-cloud-sdk
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/google-cloud-sdk/bin
 	chown -R ${MANOWN}:${MANGRP} ${PREFIX}/man1
+
+.for _bin in bq gcloud git-credential-gcloud.sh gsutil
+	ln -s ${TRUEPREFIX}/google-cloud-sdk/bin/${_bin} \
+		${PREFIX}/bin/${_bin}
+.endfor
 
 .include <bsd.port.mk>

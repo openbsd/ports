@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.7 2017/04/04 21:45:55 ajacoutot Exp $
---- lib/googlecloudsdk/core/util/platforms.py.orig	Tue Jan  1 09:00:00 1980
-+++ lib/googlecloudsdk/core/util/platforms.py	Tue Apr  4 23:36:02 2017
-@@ -66,7 +66,8 @@ class OperatingSystem(object):
+$OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.8 2018/03/30 10:37:56 ajacoutot Exp $
+
+Index: lib/googlecloudsdk/core/util/platforms.py
+--- lib/googlecloudsdk/core/util/platforms.py.orig
++++ lib/googlecloudsdk/core/util/platforms.py
+@@ -72,7 +72,8 @@ class OperatingSystem(object):
    LINUX = _OS('LINUX', 'Linux', 'linux')
    CYGWIN = _OS('CYGWIN', 'Cygwin', 'cygwin')
    MSYS = _OS('MSYS', 'Msys', 'msys')
@@ -11,7 +13,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.7 2017/04/04 21:45
  
    @staticmethod
    def AllValues():
-@@ -119,6 +120,8 @@ class OperatingSystem(object):
+@@ -125,6 +126,8 @@ class OperatingSystem(object):
        return OperatingSystem.MACOSX
      elif 'cygwin' in sys.platform:
        return OperatingSystem.CYGWIN
@@ -20,7 +22,7 @@ $OpenBSD: patch-lib_googlecloudsdk_core_util_platforms_py,v 1.7 2017/04/04 21:45
      return None
  
    @staticmethod
-@@ -261,6 +264,9 @@ class Platform(object):
+@@ -273,6 +276,9 @@ class Platform(object):
                       if self.architecture == Architecture.ppc else 'Intel')
        return format_string.format(
            name=arch_string, version=platform.release())
