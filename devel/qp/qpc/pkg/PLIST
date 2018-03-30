@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/30 04:47:59 bentley Exp $
+include/qpc/
+include/qpc/au-ds.lnt
+include/qpc/au-misra2.lnt
+include/qpc/qassert.h
+include/qpc/qep.h
+include/qpc/qep_port.h
+include/qpc/qequeue.h
+include/qpc/qf.h
+include/qpc/qf_port.h
+include/qpc/qk.h
+include/qpc/qmpool.h
+include/qpc/qp_port.h
+include/qpc/qpc.h
+include/qpc/qpc.lnt
+include/qpc/qpset.h
+include/qpc/qs.h
+include/qpc/qs_dummy.h
+include/qpc/qs_port.h
+include/qpc/qstamp.c
+include/qpc/qv.h
+include/qpc/qxk.h
+include/qpc/qxthread.h
+include/qpc/std.lnt
+include/qpc/stdint_c.h
+lib/qpc/
+lib/qpc/libqp.a
