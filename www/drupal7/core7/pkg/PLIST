@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/06/30 12:05:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/30 12:45:01 espie Exp $
 @option no-default-conflict
 @option is-branch
-@pkgpath www/drupal7/core
 @conflict drupal->=7,<8
+@pkgpath www/drupal7/core
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/
@@ -80,6 +80,7 @@ ${DRUPAL_ROOT}/includes/pager.inc
 ${DRUPAL_ROOT}/includes/password.inc
 ${DRUPAL_ROOT}/includes/path.inc
 ${DRUPAL_ROOT}/includes/registry.inc
+${DRUPAL_ROOT}/includes/request-sanitizer.inc
 ${DRUPAL_ROOT}/includes/session.inc
 ${DRUPAL_ROOT}/includes/stream_wrappers.inc
 ${DRUPAL_ROOT}/includes/tablesort.inc
@@ -161,6 +162,8 @@ ${DRUPAL_ROOT}/misc/tabledrag.js
 ${DRUPAL_ROOT}/misc/tableheader.js
 ${DRUPAL_ROOT}/misc/tableselect.js
 ${DRUPAL_ROOT}/misc/textarea.js
+${DRUPAL_ROOT}/misc/throbber-active.gif
+${DRUPAL_ROOT}/misc/throbber-inactive.png
 ${DRUPAL_ROOT}/misc/throbber.gif
 ${DRUPAL_ROOT}/misc/timezone.js
 ${DRUPAL_ROOT}/misc/tree-bottom.png
@@ -643,6 +646,8 @@ ${DRUPAL_ROOT}/modules/search/tests/search_embedded_form.info
 ${DRUPAL_ROOT}/modules/search/tests/search_embedded_form.module
 ${DRUPAL_ROOT}/modules/search/tests/search_extra_type.info
 ${DRUPAL_ROOT}/modules/search/tests/search_extra_type.module
+${DRUPAL_ROOT}/modules/search/tests/search_node_tags.info
+${DRUPAL_ROOT}/modules/search/tests/search_node_tags.module
 ${DRUPAL_ROOT}/modules/shortcut/
 ${DRUPAL_ROOT}/modules/shortcut/shortcut-rtl.css
 ${DRUPAL_ROOT}/modules/shortcut/shortcut.admin.css
@@ -679,6 +684,8 @@ ${DRUPAL_ROOT}/modules/simpletest/files/html-1.txt
 ${DRUPAL_ROOT}/modules/simpletest/files/html-2.html
 ${DRUPAL_ROOT}/modules/simpletest/files/image-1.png
 ${DRUPAL_ROOT}/modules/simpletest/files/image-2.jpg
+${DRUPAL_ROOT}/modules/simpletest/files/image-test-no-transparency.gif
+${DRUPAL_ROOT}/modules/simpletest/files/image-test-transparent-out-of-range.gif
 ${DRUPAL_ROOT}/modules/simpletest/files/image-test.gif
 ${DRUPAL_ROOT}/modules/simpletest/files/image-test.jpg
 ${DRUPAL_ROOT}/modules/simpletest/files/image-test.png
@@ -701,6 +708,9 @@ ${DRUPAL_ROOT}/modules/simpletest/simpletest.js
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.module
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.pages.inc
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.test
+${DRUPAL_ROOT}/modules/simpletest/src/
+${DRUPAL_ROOT}/modules/simpletest/src/Tests/
+${DRUPAL_ROOT}/modules/simpletest/src/Tests/PSR4WebTest.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/
 ${DRUPAL_ROOT}/modules/simpletest/tests/actions.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/actions_loop_test.info
@@ -715,6 +725,11 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/batch.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/batch_test.callbacks.inc
 ${DRUPAL_ROOT}/modules/simpletest/tests/batch_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/batch_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/boot.test
+${DRUPAL_ROOT}/modules/simpletest/tests/boot_test_1.info
+${DRUPAL_ROOT}/modules/simpletest/tests/boot_test_1.module
+${DRUPAL_ROOT}/modules/simpletest/tests/boot_test_2.info
+${DRUPAL_ROOT}/modules/simpletest/tests/boot_test_2.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/bootstrap.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/cache.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/common.test
@@ -729,6 +744,12 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/database_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/database_test.install
 ${DRUPAL_ROOT}/modules/simpletest/tests/database_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/database_test.test
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_class.inc
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_interface.inc
+${DRUPAL_ROOT}/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_trait.sh
 ${DRUPAL_ROOT}/modules/simpletest/tests/drupal_system_listing_compatible_test/
 ${DRUPAL_ROOT}/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
@@ -772,6 +793,7 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/menu_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/menu_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/module.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.file.inc
+${DRUPAL_ROOT}/modules/simpletest/tests/module_test.implementations.inc
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.install
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.module
@@ -790,6 +812,14 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/N
 ${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/Nested/NestedExampleTest.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/psr_0_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/psr_0_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/psr_4_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/psr_4_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/src/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/src/Tests/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/src/Tests/ExampleTest.php
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/src/Tests/Nested/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_4_test/src/Tests/Nested/NestedExampleTest.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/registry.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.install
@@ -811,7 +841,10 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/system_incompatible_module_version_depen
 ${DRUPAL_ROOT}/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/system_incompatible_module_version_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/system_incompatible_module_version_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/system_project_namespace_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/system_project_namespace_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/system_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/system_test.install
 ${DRUPAL_ROOT}/modules/simpletest/tests/system_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/tablesort.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/taxonomy_test.info
@@ -823,13 +856,22 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.template_test.tpl.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/engines/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/engines/nyan_cat/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/engines/nyan_cat/nyan_cat.engine
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_basetheme/
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_basetheme/test_basetheme.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_subtheme/
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_subtheme/test_subtheme.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme/
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme/template.php
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme/templates/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme/templates/node--1.tpl.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme/test_theme.info
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme_nyan_cat/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme_nyan_cat/templates/
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme_nyan_cat/templates/theme_test_template_test.nyan-cat.html
+${DRUPAL_ROOT}/modules/simpletest/tests/themes/test_theme_nyan_cat/test_theme_nyan_cat.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/unicode.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/update.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/update_script_test.info
@@ -939,6 +981,8 @@ ${DRUPAL_ROOT}/modules/system/system.updater.inc
 ${DRUPAL_ROOT}/modules/system/tests/
 ${DRUPAL_ROOT}/modules/system/tests/cron_queue_test.info
 ${DRUPAL_ROOT}/modules/system/tests/cron_queue_test.module
+${DRUPAL_ROOT}/modules/system/tests/system_cron_test.info
+${DRUPAL_ROOT}/modules/system/tests/system_cron_test.module
 ${DRUPAL_ROOT}/modules/system/theme.api.php
 ${DRUPAL_ROOT}/modules/taxonomy/
 ${DRUPAL_ROOT}/modules/taxonomy/taxonomy-term.tpl.php
@@ -1003,6 +1047,8 @@ ${DRUPAL_ROOT}/modules/update/tests/drupal.1.xml
 ${DRUPAL_ROOT}/modules/update/tests/drupal.2-sec.xml
 ${DRUPAL_ROOT}/modules/update/tests/drupal.dev.xml
 ${DRUPAL_ROOT}/modules/update/tests/themes/
+${DRUPAL_ROOT}/modules/update/tests/themes/update_test_admintheme/
+${DRUPAL_ROOT}/modules/update/tests/themes/update_test_admintheme/update_test_admintheme.info
 ${DRUPAL_ROOT}/modules/update/tests/themes/update_test_basetheme/
 ${DRUPAL_ROOT}/modules/update/tests/themes/update_test_basetheme/update_test_basetheme.info
 ${DRUPAL_ROOT}/modules/update/tests/themes/update_test_subtheme/
@@ -1045,6 +1091,7 @@ ${DRUPAL_ROOT}/modules/user/user.permissions.js
 ${DRUPAL_ROOT}/modules/user/user.test
 ${DRUPAL_ROOT}/modules/user/user.tokens.inc
 ${DRUPAL_ROOT}/profiles/
+${DRUPAL_ROOT}/profiles/README.txt
 ${DRUPAL_ROOT}/profiles/minimal/
 ${DRUPAL_ROOT}/profiles/minimal/minimal.info
 ${DRUPAL_ROOT}/profiles/minimal/minimal.install
@@ -1085,6 +1132,8 @@ ${DRUPAL_ROOT}/scripts/test.script
 ${DRUPAL_ROOT}/sites/
 ${DRUPAL_ROOT}/sites/README.txt
 ${DRUPAL_ROOT}/sites/all/
+${DRUPAL_ROOT}/sites/all/libraries/
+${DRUPAL_ROOT}/sites/all/libraries/README.txt
 ${DRUPAL_MODS}/
 ${DRUPAL_MODS}README.txt
 ${DRUPAL_THEMES}/

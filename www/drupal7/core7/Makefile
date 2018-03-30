@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2018/03/30 12:45:01 espie Exp $
 
 COMMENT =	powerful content management system
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME =	drupal-7.32
-PKGNAME =	drupal-7.32
+DISTNAME =	drupal-7.58
+PKGNAME =	drupal-7.58
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-REVISION =	4
 
 MODULES =	lang/php
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
-SUBST_VARS +=	DRUPAL
 do-install:
 		mkdir -p ${PREFIX}/${DRUPAL_ROOT}
 		# copy base distrib
@@ -27,3 +24,4 @@ do-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/${DRUPAL_THEMES}
 
 .include <bsd.port.mk>
+SUBST_VARS +=	DRUPAL
