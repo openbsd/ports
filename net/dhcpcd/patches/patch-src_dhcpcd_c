@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_dhcpcd_c,v 1.3 2018/03/30 11:50:06 sthen Exp $
+
+From fc7b79180448deedf5550d3c03a8ef0e66ad293d Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Tue, 27 Mar 2018 23:06:30 +0100
+Subject: BSD: fix segfault when on carrier when IPv6 addresses are present
+
+Index: src/dhcpcd.c
+--- src/dhcpcd.c.orig
++++ src/dhcpcd.c
+@@ -995,6 +995,7 @@ dhcpcd_handleinterface(void *arg, int action, const ch
+ 	}
+ 	/* Check if we already have the interface */
+ 	iff = if_find(ctx->ifaces, ifp->name);
++
+ 	if (iff != NULL) {
+ 		if (iff->active)
+ 			logdebugx("%s: interface updated", iff->name);
+@@ -1013,9 +1014,12 @@ dhcpcd_handleinterface(void *arg, int action, const ch
+ 		}
+ 		iff = ifp;
+ 	}
+-	if_learnaddrs(ctx, ifs, &ifaddrs);
+-	if (action > 0 && iff->active)
+-		dhcpcd_prestartinterface(iff);
++
++	if (action > 0) {
++		if_learnaddrs(ctx, ifs, &ifaddrs);
++		if (iff->active)
++			dhcpcd_prestartinterface(iff);
++	}
+ 
+ 	/* Free our discovered list */
+ 	while ((ifp = TAILQ_FIRST(ifs))) {
