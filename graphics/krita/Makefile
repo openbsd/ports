@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/14 10:05:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/03/30 17:29:48 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	3.3.2.1
+VERSION =	4.0.0
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
@@ -19,6 +19,11 @@ SHARED_LIBS +=  kritavectorimage          1.0 # 16.0
 SHARED_LIBS +=  kritaversion              0.0 # 16.0
 SHARED_LIBS +=  kritawidgets              0.0 # 16.0
 SHARED_LIBS +=  kritawidgetutils          2.0 # 16.0
+SHARED_LIBS +=  kritacommand              0.0 # 16.0
+SHARED_LIBS +=  kritaimpex                0.0 # 16.0
+SHARED_LIBS +=  kritalibkis               0.0 # 16.0
+SHARED_LIBS +=  kritalibkra               0.0 # 16.0
+SHARED_LIBS +=  kritaqml                  0.0 # 16.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  1.0 # 14.0
 SHARED_LIBS +=  kritacolor                1.0 # 14.0
@@ -43,13 +48,14 @@ WANTLIB += KF5Archive KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5ItemViews
 WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5WindowSystem
 WANTLIB += OpenColorIO Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
-WANTLIB += gsl gslcblas jpeg lcms2 m png poppler-qt5 raw tiff
-WANTLIB += xcb xcb-util z
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
+WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas jpeg
+WANTLIB += lcms2 m png poppler poppler-qt5 raw tiff xcb xcb-util
+WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION:S/.1//}/}
-EXTRACT_SUFX =	.tar.xz
+EXTRACT_SUFX =	.tar.gz
 
 MODULES =	devel/kf5
 
@@ -61,6 +67,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 LIB_DEPENDS +=		graphics/jpeg \
 			graphics/png \
 			graphics/tiff \
+			graphics/giflib \
 			graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/opencolorio \
@@ -90,6 +97,9 @@ BUILD_DEPENDS +=	math/eigen3 \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
 			devel/gettext-tools
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP:Bool=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:Bool=Yes
 
 TEST_IS_INTERACTIVE =	X11
 
