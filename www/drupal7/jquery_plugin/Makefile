@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/31 14:46:36 espie Exp $
 
 COMMENT=	provide misc. jQuery plugins
 
-DISTNAME=	jquery_plugin-7.x-1.0
-PKGNAME=	drupal7-jquery_plugin-1.0
-REVISION =	1
+MODDRUPAL_PROJECT = jquery_plugin
+MODDRUPAL_VERSION = 1.0
+REVISION =	2
 
 .include <bsd.port.mk>
