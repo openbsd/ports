@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/30 13:04:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/03/31 11:38:29 espie Exp $
 
 COMMENT =	CKeditor for drupal
 
-DISTNAME = 	ckeditor-7.x-1.18
-PKGNAME =	drupal7-ckeditor-1.18
+MODDRUPAL_PROJECT = ckeditor
+MODDRUPAL_VERSION = 1.18
+REVISION = 0
 V =		4.9.1
 ED =		ckeditor_$V_standard.tar.gz
 DISTFILES =	${DISTNAME}.tar.gz \
