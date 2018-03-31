@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/31 14:44:01 espie Exp $
 
 COMMENT =	generate passwords on account creation
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	genpass-7.x-1.0
-PKGNAME =	drupal7-gen-password-1.0
-REVISION =	0
+MODDRUPAL_PROJECT = genpass
+MODDRUPAL_VERSION = 1.0
+MODDRUPAL_PKGNAME = gen-password
+REVISION =	1
 
 .include <bsd.port.mk>
