@@ -1,38 +1,37 @@
-# $OpenBSD: Makefile,v 1.16 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/03/31 16:36:14 espie Exp $
 
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 DRUPAL_LANG =		fr
 EXTRACT_ONLY =
 
-DISTNAME =	drupal7-${DRUPAL_LANG}-7.26
-#REVISION =	0
-DISTFILES =	drupal/drupal-7.26.${DRUPAL_LANG}.po
-LANGFILES +=	abt 1.5
+DISTNAME =	drupal7-${DRUPAL_LANG}-7.58
+DISTFILES =	drupal/drupal-7.58.${DRUPAL_LANG}.po
+LANGFILES +=	abt 1.6
 LANGFILES += 	auto_nodetitle 1.0
-LANGFILES +=	backup_migrate 2.8
+LANGFILES +=	backup_migrate 3.5
 LANGFILES +=	colorbox 1.3
 LANGFILES += 	compact_forms 1.0
 LANGFILES += 	content_access 1.2-beta2
-LANGFILES +=	ctools 1.3
-LANGFILES +=	date 2.7
-LANGFILES +=	devel 1.4
-LANGFILES +=	entity 1.3
+LANGFILES +=	ctools 1.14
+LANGFILES +=	ckeditor 1.18
+LANGFILES +=	date 2.10
+LANGFILES +=	devel 1.5
+LANGFILES +=	entity 1.9
 LANGFILES +=	google_analytics 1.2
 LANGFILES +=	globalredirect 1.4
 LANGFILES +=	jquery_plugin 1.0
-LANGFILES +=	masquerade 1.0-rc5
+LANGFILES +=	masquerade 1.0-rc7
 LANGFILES +=	nodeaccess_userreference 3.9
 LANGFILES +=	pathauto 1.2
-LANGFILES +=	references 2.1
-LANGFILES +=	rules 2.6
-LANGFILES += 	securelogin 1.2
-LANGFILES +=	scheduler 1.2
-LANGFILES +=	schema 1.0-rc1
-LANGFILES += 	token 1.5
+LANGFILES +=	print 1.3
+LANGFILES +=	references 2.2
+LANGFILES +=	rules 2.10
+LANGFILES += 	securelogin 1.7
+LANGFILES +=	scheduler 1.5
+LANGFILES +=	schema 1.3
+LANGFILES += 	token 1.7
 LANGFILES +=	ubercart 3.1
-LANGFILES +=	user_readonly 1.4
-LANGFILES += 	views 3.7
-LANGFILES +=	webform 3.19
-REVISION =	0
+LANGFILES +=	user_readonly 1.5
+LANGFILES += 	views 3.18
+LANGFILES +=	webform 4.16
 
 .include <bsd.port.mk>
