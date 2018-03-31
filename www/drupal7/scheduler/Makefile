@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/31 16:01:42 espie Exp $
 
 COMMENT =	publish/unpublish nodes on schedule
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	scheduler-7.x-1.2
-PKGNAME =	drupal7-scheduler-1.2
-REVISION =	0
+MODDRUPAL_PROJECT = scheduler
+MODDRUPAL_VERSION = 1.5
 
 .include <bsd.port.mk>

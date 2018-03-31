@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/02/08 19:37:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/03/31 16:01:42 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}scheduler/
@@ -7,8 +7,10 @@ ${DRUPAL_MODS}scheduler/README.txt
 ${DRUPAL_MODS}scheduler/plugins/
 ${DRUPAL_MODS}scheduler/plugins/content_types/
 ${DRUPAL_MODS}scheduler/plugins/content_types/scheduler_form_pane.inc
+${DRUPAL_MODS}scheduler/scheduler.admin.inc
 ${DRUPAL_MODS}scheduler/scheduler.api.php
-${DRUPAL_MODS}scheduler/scheduler.css
+${DRUPAL_MODS}scheduler/scheduler.cron.inc
+${DRUPAL_MODS}scheduler/scheduler.edit.inc
 ${DRUPAL_MODS}scheduler/scheduler.info
 ${DRUPAL_MODS}scheduler/scheduler.install
 ${DRUPAL_MODS}scheduler/scheduler.module
