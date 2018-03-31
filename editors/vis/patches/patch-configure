@@ -1,11 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2017/12/23 12:31:27 landry Exp $
-
-Do not hardcode optimization flags.
+$OpenBSD: patch-configure,v 1.2 2018/03/31 11:06:39 kn Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -234,7 +234,6 @@ esac
+@@ -235,7 +235,6 @@ esac
  tryflag CFLAGS -pipe
  
  # Try flags to optimize binary size

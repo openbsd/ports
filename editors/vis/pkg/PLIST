@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/23 12:31:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/03/31 11:06:39 kn Exp $
 bin/vis-clipboard
 bin/vis-complete
 @bin bin/vis-digraph
@@ -36,6 +36,7 @@ share/vis/lexers/bibtex.lua
 share/vis/lexers/boo.lua
 share/vis/lexers/caml.lua
 share/vis/lexers/chuck.lua
+share/vis/lexers/clojure.lua
 share/vis/lexers/cmake.lua
 share/vis/lexers/coffeescript.lua
 share/vis/lexers/container.lua
@@ -108,6 +109,7 @@ share/vis/lexers/php.lua
 share/vis/lexers/pico8.lua
 share/vis/lexers/pike.lua
 share/vis/lexers/pkgbuild.lua
+share/vis/lexers/pony.lua
 share/vis/lexers/powershell.lua
 share/vis/lexers/prolog.lua
 share/vis/lexers/props.lua
@@ -117,6 +119,7 @@ share/vis/lexers/pure.lua
 share/vis/lexers/python.lua
 share/vis/lexers/rails.lua
 share/vis/lexers/rc.lua
+share/vis/lexers/reason.lua
 share/vis/lexers/rebol.lua
 share/vis/lexers/rest.lua
 share/vis/lexers/rexx.lua
@@ -148,6 +151,7 @@ share/vis/lexers/verilog.lua
 share/vis/lexers/vhdl.lua
 share/vis/lexers/wsf.lua
 share/vis/lexers/xml.lua
+share/vis/lexers/xs.lua
 share/vis/lexers/xtend.lua
 share/vis/lexers/yaml.lua
 share/vis/plugins/
@@ -163,6 +167,7 @@ share/vis/themes/default-16.lua
 share/vis/themes/default-256.lua
 share/vis/themes/light-16.lua
 share/vis/themes/solarized.lua
+share/vis/themes/zenburn.lua
 share/vis/vis-std.lua
 share/vis/vis.lua
 share/vis/visrc.lua

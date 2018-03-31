@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/23 12:31:27 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/03/31 11:06:39 kn Exp $
 
 COMMENT =		vi-like editor with sam-style structural regex support
+
+V =			0.5
+DISTNAME =		vis-v${V}
+PKGNAME =		vis-${V}
+
+TEST_V =		0.3
+SUPDISTNAME =		vis-test-${TEST_V}
+
 CATEGORIES =		editors
 
-GH_ACCOUNT =		martanne
-GH_PROJECT =		vis
-GH_TAGNAME =		v0.4
+HOMEPAGE =		https://github.com/martanne/vis
 
-# For test framework
-TEST_VERSION =		0.2
-
-MAINTAINER =		Klemens Nanni <kl3@posteo.org>, \
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>, \
 			Carolyn Saunders <gigavinyl@gmail.com>
 
 # ISC
@@ -18,14 +21,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
 
-MASTER_SITES0 =		${HOMEPAGE}-test/archive/v${TEST_VERSION}/
+MASTER_SITES =		${HOMEPAGE}/releases/download/v${V}/
+MASTER_SITES0 =		${HOMEPAGE}-test/releases/download/v${TEST_V}/
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
-
-SUPDISTNAME =		vis-test-${TEST_VERSION}
 SUPDISTFILES =		${SUPDISTNAME}.tar.gz:0
-DISTFILES +=		${SUPDISTFILES}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3
@@ -49,7 +50,7 @@ USE_GMAKE =		Yes
 
 post-extract:
 	${TAR} -xzf ${FULLDISTDIR}/${SUPDISTNAME}.tar.gz \
-	    -C ${WRKSRC} -s /${SUPDISTNAME}/${TEST_TARGET}/
+	    -C ${WRKSRC} -s /${SUPDISTNAME}/test/
 
 post-install:
 	cd ${PREFIX} && \
