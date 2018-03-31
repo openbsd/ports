@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/02/19 19:33:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/03/31 10:09:59 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -225,8 +225,10 @@ share/tellico/crossref2tellico.xsl
 share/tellico/data-sources/
 share/tellico/data-sources/dark_horse_comics.py
 share/tellico/data-sources/dark_horse_comics.py.spec
+share/tellico/data-sources/dark_horse_comics.pyc
 share/tellico/data-sources/fr.allocine.py
 share/tellico/data-sources/fr.allocine.py.spec
+share/tellico/data-sources/fr.allocine.pyc
 share/tellico/dbc2tellico.xsl
 share/tellico/dblp2tellico.xsl
 share/tellico/delicious2tellico.xsl
@@ -243,7 +245,6 @@ share/tellico/giantbomb2tellico.xsl
 share/tellico/goodreads2tellico.xsl
 share/tellico/griffith2tellico.xsl
 share/tellico/hddvd-logo.png
-share/tellico/isbndb2tellico.xsl
 share/tellico/mods2tellico.xsl
 share/tellico/musicbrainz2tellico.xsl
 share/tellico/pics/
@@ -330,7 +331,6 @@ share/tellico/vhs-logo.png
 share/tellico/vinoxml2tellico.xsl
 share/tellico/welcome.html
 share/tellico/xmp2tellico.xsl
-share/tellico/yahoo2tellico.xsl
 share/tellico/z3950-servers.cfg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
