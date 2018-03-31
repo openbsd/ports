@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/03/31 12:38:46 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}views/
@@ -29,6 +29,7 @@ ${DRUPAL_MODS}views/drush/
 ${DRUPAL_MODS}views/drush/views.drush.inc
 ${DRUPAL_MODS}views/handlers/
 ${DRUPAL_MODS}views/handlers/views_handler_area.inc
+${DRUPAL_MODS}views/handlers/views_handler_area_messages.inc
 ${DRUPAL_MODS}views/handlers/views_handler_area_result.inc
 ${DRUPAL_MODS}views/handlers/views_handler_area_text.inc
 ${DRUPAL_MODS}views/handlers/views_handler_area_text_custom.inc
@@ -45,9 +46,11 @@ ${DRUPAL_MODS}views/handlers/views_handler_field.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_boolean.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_contextual_links.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_counter.inc
+${DRUPAL_MODS}views/handlers/views_handler_field_ctools_dropdown.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_custom.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_date.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_entity.inc
+${DRUPAL_MODS}views/handlers/views_handler_field_links.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_machine_name.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_markup.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_math.inc
@@ -63,6 +66,7 @@ ${DRUPAL_MODS}views/handlers/views_handler_filter_combine.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_date.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_entity_bundle.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_equality.inc
+${DRUPAL_MODS}views/handlers/views_handler_filter_fields_compare.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_group_by_numeric.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_in_operator.inc
 ${DRUPAL_MODS}views/handlers/views_handler_filter_many_to_one.inc
@@ -267,6 +271,7 @@ ${DRUPAL_MODS}views/modules/field/views_handler_argument_field_list.inc
 ${DRUPAL_MODS}views/modules/field/views_handler_argument_field_list_string.inc
 ${DRUPAL_MODS}views/modules/field/views_handler_field_field.inc
 ${DRUPAL_MODS}views/modules/field/views_handler_filter_field_list.inc
+${DRUPAL_MODS}views/modules/field/views_handler_filter_field_list_boolean.inc
 ${DRUPAL_MODS}views/modules/field/views_handler_relationship_entity_reverse.inc
 ${DRUPAL_MODS}views/modules/file.views.inc
 ${DRUPAL_MODS}views/modules/filter/
@@ -285,6 +290,7 @@ ${DRUPAL_MODS}views/modules/locale/views_handler_filter_locale_group.inc
 ${DRUPAL_MODS}views/modules/locale/views_handler_filter_locale_language.inc
 ${DRUPAL_MODS}views/modules/locale/views_handler_filter_locale_version.inc
 ${DRUPAL_MODS}views/modules/locale/views_handler_filter_node_language.inc
+${DRUPAL_MODS}views/modules/locale/views_handler_sort_node_language.inc
 ${DRUPAL_MODS}views/modules/node/
 ${DRUPAL_MODS}views/modules/node.views.inc
 ${DRUPAL_MODS}views/modules/node.views_default.inc
@@ -306,11 +312,14 @@ ${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision_link.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision_link_delete.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision_link_revert.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_type.inc
+${DRUPAL_MODS}views/modules/node/views_handler_field_node_version_count.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_filter_history_user_timestamp.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_filter_node_access.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_filter_node_status.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_filter_node_type.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_filter_node_uid_revision.inc
+${DRUPAL_MODS}views/modules/node/views_handler_filter_node_version_count.inc
+${DRUPAL_MODS}views/modules/node/views_handler_sort_node_version_count.inc
 ${DRUPAL_MODS}views/modules/node/views_plugin_argument_default_node.inc
 ${DRUPAL_MODS}views/modules/node/views_plugin_argument_validate_node.inc
 ${DRUPAL_MODS}views/modules/node/views_plugin_row_node_rss.inc
@@ -333,6 +342,8 @@ ${DRUPAL_MODS}views/modules/statistics/
 ${DRUPAL_MODS}views/modules/statistics.views.inc
 ${DRUPAL_MODS}views/modules/statistics.views_default.inc
 ${DRUPAL_MODS}views/modules/statistics/views_handler_field_accesslog_path.inc
+${DRUPAL_MODS}views/modules/statistics/views_handler_field_node_counter_timestamp.inc
+${DRUPAL_MODS}views/modules/statistics/views_handler_field_statistics_numeric.inc
 ${DRUPAL_MODS}views/modules/system/
 ${DRUPAL_MODS}views/modules/system.views.inc
 ${DRUPAL_MODS}views/modules/system/views_handler_argument_file_fid.inc
@@ -349,6 +360,7 @@ ${DRUPAL_MODS}views/modules/taxonomy.views_default.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_taxonomy.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_term_node_tid_depth.inc
+${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_term_node_tid_depth_join.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_term_node_tid_depth_modifier.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_vocabulary_machine_name.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_argument_vocabulary_vid.inc
@@ -357,6 +369,7 @@ ${DRUPAL_MODS}views/modules/taxonomy/views_handler_field_term_link_edit.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_field_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid_depth.inc
+${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid_depth_join.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_vocabulary_machine_name.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_vocabulary_vid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_relationship_node_term_data.inc
@@ -465,6 +478,9 @@ ${DRUPAL_MODS}views/plugins/views_wizard/views_ui_node_revision_views_wizard.cla
 ${DRUPAL_MODS}views/plugins/views_wizard/views_ui_node_views_wizard.class.php
 ${DRUPAL_MODS}views/plugins/views_wizard/views_ui_taxonomy_term_views_wizard.class.php
 ${DRUPAL_MODS}views/plugins/views_wizard/views_ui_users_views_wizard.class.php
+${DRUPAL_MODS}views/test_templates/
+${DRUPAL_MODS}views/test_templates/README.txt
+${DRUPAL_MODS}views/test_templates/views-view--frontpage.tpl.php
 ${DRUPAL_MODS}views/tests/
 ${DRUPAL_MODS}views/tests/comment/
 ${DRUPAL_MODS}views/tests/comment/views_handler_argument_comment_user_uid.test
@@ -480,6 +496,7 @@ ${DRUPAL_MODS}views/tests/handlers/views_handler_field_boolean.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_counter.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_custom.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_date.test
+${DRUPAL_MODS}views/tests/handlers/views_handler_field_file_extension.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_file_size.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_math.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_field_url.test
@@ -493,6 +510,7 @@ ${DRUPAL_MODS}views/tests/handlers/views_handler_filter_string.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort_date.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort_random.test
+${DRUPAL_MODS}views/tests/handlers/views_handlers.test
 ${DRUPAL_MODS}views/tests/node/
 ${DRUPAL_MODS}views/tests/node/views_node_revision_relations.test
 ${DRUPAL_MODS}views/tests/plugins/
@@ -505,8 +523,8 @@ ${DRUPAL_MODS}views/tests/styles/views_plugin_style_mapping.test
 ${DRUPAL_MODS}views/tests/styles/views_plugin_style_unformatted.test
 ${DRUPAL_MODS}views/tests/taxonomy/
 ${DRUPAL_MODS}views/tests/taxonomy/views_handler_relationship_node_term_data.test
-${DRUPAL_MODS}views/tests/templates/
-${DRUPAL_MODS}views/tests/templates/views-view--frontpage.tpl.php
+${DRUPAL_MODS}views/tests/test_handlers/
+${DRUPAL_MODS}views/tests/test_handlers/views_test_area_access.inc
 ${DRUPAL_MODS}views/tests/test_plugins/
 ${DRUPAL_MODS}views/tests/test_plugins/views_test_plugin_access_test_dynamic.inc
 ${DRUPAL_MODS}views/tests/test_plugins/views_test_plugin_access_test_static.inc
@@ -517,6 +535,7 @@ ${DRUPAL_MODS}views/tests/user/views_user.test
 ${DRUPAL_MODS}views/tests/user/views_user_argument_default.test
 ${DRUPAL_MODS}views/tests/user/views_user_argument_validate.test
 ${DRUPAL_MODS}views/tests/views_access.test
+${DRUPAL_MODS}views/tests/views_ajax.test
 ${DRUPAL_MODS}views/tests/views_analyze.test
 ${DRUPAL_MODS}views/tests/views_argument_default.test
 ${DRUPAL_MODS}views/tests/views_argument_validator.test
@@ -546,7 +565,6 @@ ${DRUPAL_MODS}views/theme/views-exposed-form.tpl.php
 ${DRUPAL_MODS}views/theme/views-more.tpl.php
 ${DRUPAL_MODS}views/theme/views-ui-display-tab-bucket.tpl.php
 ${DRUPAL_MODS}views/theme/views-ui-display-tab-setting.tpl.php
-${DRUPAL_MODS}views/theme/views-ui-edit-item.tpl.php
 ${DRUPAL_MODS}views/theme/views-ui-edit-view.tpl.php
 ${DRUPAL_MODS}views/theme/views-view-field.tpl.php
 ${DRUPAL_MODS}views/theme/views-view-fields.tpl.php
