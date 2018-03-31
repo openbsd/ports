@@ -1,4 +1,4 @@
-# $OpenBSD: drupal7.port.mk,v 1.4 2018/03/31 11:37:15 espie Exp $
+# $OpenBSD: drupal7.port.mk,v 1.5 2018/03/31 16:35:10 espie Exp $
 
 
 # three types of things we can install, by default plugin
@@ -19,7 +19,8 @@ SUBDIR = translations/7.x
 COMMENT = drupal ${DRUPAL_LANG} translation
 EXTRACT_SUFX ?=
 HOMEPAGE ?= http://localize.drupal.org/translate/languages/${DRUPAL_LANG}/
-MASTER_SITES ?=	ftp://ftp.drupal.org/pub/drupal/files/${SUBDIR}/
+MASTER_SITES ?=	http://ftp.drupal.org/files/${SUBDIR}/ \
+	ftp://ftp.drupal.org/pub/drupal/files/${SUBDIR}/
 .  for p v in ${LANGFILES}
 DISTFILES += $p/$p-7.x-$v.${DRUPAL_LANG}.po
 .  endfor
