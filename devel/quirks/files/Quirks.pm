@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.583 2018/03/30 12:46:36 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.584 2018/03/31 15:36:32 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1352,6 +1352,7 @@ my $cve = {
 	'www/drupal6/views' => 'drupal6-views-<2.18',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/drupal7/core' => 'drupal->=7.0,<7.58',
+	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
 };
 
 # ->check_security($path)
