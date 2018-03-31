@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/31 14:51:19 espie Exp $
 
 COMMENT =	test site as another user
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 CATEGORIES =	devel
 
-DISTNAME =	masquerade-7.x-1.0-rc5
-PKGNAME =	drupal7-masquerade-1.0rc5
-REVISION =	0
+MODDRUPAL_PROJECT = masquerade
+MODDRUPAL_VERSION = 1.0-rc7
+PKGNAME =	drupal7-masquerade-1.0rc7
 
 .include <bsd.port.mk>
