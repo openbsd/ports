@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/03/31 14:42:43 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}entity/
@@ -7,6 +7,8 @@ ${DRUPAL_MODS}entity/README.txt
 ${DRUPAL_MODS}entity/ctools/
 ${DRUPAL_MODS}entity/ctools/content_types/
 ${DRUPAL_MODS}entity/ctools/content_types/entity_view.inc
+${DRUPAL_MODS}entity/ctools/relationships/
+${DRUPAL_MODS}entity/ctools/relationships/entity_property.inc
 ${DRUPAL_MODS}entity/entity.api.php
 ${DRUPAL_MODS}entity/entity.features.inc
 ${DRUPAL_MODS}entity/entity.i18n.inc

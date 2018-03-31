@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/03/31 14:42:43 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}rules/
@@ -34,6 +34,7 @@ ${DRUPAL_MODS}rules/modules/taxonomy.rules.inc
 ${DRUPAL_MODS}rules/modules/user.eval.inc
 ${DRUPAL_MODS}rules/modules/user.rules.inc
 ${DRUPAL_MODS}rules/rules.api.php
+${DRUPAL_MODS}rules/rules.drush.inc
 ${DRUPAL_MODS}rules/rules.features.inc
 ${DRUPAL_MODS}rules/rules.info
 ${DRUPAL_MODS}rules/rules.install
@@ -73,6 +74,8 @@ ${DRUPAL_MODS}rules/tests/rules_test.module
 ${DRUPAL_MODS}rules/tests/rules_test.rules.inc
 ${DRUPAL_MODS}rules/tests/rules_test.rules_defaults.inc
 ${DRUPAL_MODS}rules/tests/rules_test.test.inc
+${DRUPAL_MODS}rules/tests/rules_test_invocation.info
+${DRUPAL_MODS}rules/tests/rules_test_invocation.module
 ${DRUPAL_MODS}rules/ui/
 ${DRUPAL_MODS}rules/ui/rules.autocomplete.js
 ${DRUPAL_MODS}rules/ui/rules.debug.js
