@@ -1,4 +1,2 @@
-SHA256 (7028/rubygems-276-for-ruby24.patch) = TYGgDKgsEFw4cNLKqM5gujdvqGXoFwXRz6umv+t0bl4=
-SHA256 (ruby-2.4.3.tar.gz) = /QN1WCySBFqn0xhU5yRHH7Rp4RpLCP8zTTkFLMqqOpg=
-SIZE (7028/rubygems-276-for-ruby24.patch) = 19937
-SIZE (ruby-2.4.3.tar.gz) = 14178729
+SHA256 (ruby-2.4.4.tar.gz) = JU8cGnnkzIFNHnMgvFvdmV3FfghyfTCnZ2ZGGanIrlo=
+SIZE (ruby-2.4.4.tar.gz) = 14225338

@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2018/03/08 15:00:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2018/03/31 21:12:45 jeremy Exp $
 
-VERSION =		2.3.6
+VERSION =		2.3.7
 NEXTVER =		2.4
 SHARED_LIBS =		ruby${BINREV}	2.0
-
-REVISION-main =		0
-REVISION-ri_docs=	0
-PATCHFILES =		7029/rubygems-276-for-ruby23.patch:0
 
 COMMENT-tk =		tk interface for ruby
 PKGNAME-tk =		ruby${BINREV}-tk-${VERSION}

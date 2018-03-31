@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2018/01/15 23:57:44 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2018/03/31 21:12:45 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -1560,6 +1560,7 @@ share/ri/${REV}/system/Exception/new-c.ri
 share/ri/${REV}/system/Exception/set_backtrace-i.ri
 share/ri/${REV}/system/Exception/to_json-i.ri
 share/ri/${REV}/system/Exception/to_s-i.ri
+share/ri/${REV}/system/Exception/to_tty%3f-c.ri
 share/ri/${REV}/system/Exception2MessageMapper/
 share/ri/${REV}/system/Exception2MessageMapper/E2MM/
 share/ri/${REV}/system/Exception2MessageMapper/E2MM/cdesc-E2MM.ri
@@ -2886,6 +2887,7 @@ share/ri/${REV}/system/Gem/Package/TarHeader/from-c.ri
 share/ri/${REV}/system/Gem/Package/TarHeader/header-i.ri
 share/ri/${REV}/system/Gem/Package/TarHeader/new-c.ri
 share/ri/${REV}/system/Gem/Package/TarHeader/oct-i.ri
+share/ri/${REV}/system/Gem/Package/TarHeader/strict_oct-c.ri
 share/ri/${REV}/system/Gem/Package/TarHeader/update_checksum-i.ri
 share/ri/${REV}/system/Gem/Package/TarInvalidError/
 share/ri/${REV}/system/Gem/Package/TarInvalidError/cdesc-TarInvalidError.ri
@@ -2970,8 +2972,10 @@ share/ri/${REV}/system/Gem/Package/extract_files-i.ri
 share/ri/${REV}/system/Gem/Package/files-i.ri
 share/ri/${REV}/system/Gem/Package/gzip_to-i.ri
 share/ri/${REV}/system/Gem/Package/initialize-i.ri
+share/ri/${REV}/system/Gem/Package/mkdir_p_safe-i.ri
 share/ri/${REV}/system/Gem/Package/new-c.ri
 share/ri/${REV}/system/Gem/Package/read_checksums-i.ri
+share/ri/${REV}/system/Gem/Package/realpath-i.ri
 share/ri/${REV}/system/Gem/Package/security_policy-i.ri
 share/ri/${REV}/system/Gem/Package/setup_signer-i.ri
 share/ri/${REV}/system/Gem/Package/spec-i.ri
@@ -13991,8 +13995,11 @@ share/ri/${REV}/system/WEBrick/HTTPResponse/%5b%5d%3d-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/%5b%5d-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/ChunkedWrapper/
 share/ri/${REV}/system/WEBrick/HTTPResponse/ChunkedWrapper/cdesc-ChunkedWrapper.ri
+share/ri/${REV}/system/WEBrick/HTTPResponse/InvalidHeader/
+share/ri/${REV}/system/WEBrick/HTTPResponse/InvalidHeader/cdesc-InvalidHeader.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/body-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/cdesc-HTTPResponse.ri
+share/ri/${REV}/system/WEBrick/HTTPResponse/check_header-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/chunked%3d-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/chunked%3f-i.ri
 share/ri/${REV}/system/WEBrick/HTTPResponse/config-i.ri
