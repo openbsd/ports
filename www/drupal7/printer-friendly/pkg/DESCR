@@ -8,3 +8,6 @@ search boxes, navigation pages, etc.
 
 The print_pdf module requires the use of an external PDF generation
 tool, like tcpdf. Install the tcpdf package to enable that feature.
+
+If your theme includes graphics, tcppdf must be able to access those
+graphics: configure file local access, image caches accordingly.
