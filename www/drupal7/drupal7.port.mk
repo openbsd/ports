@@ -1,4 +1,4 @@
-# $OpenBSD: drupal7.port.mk,v 1.3 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: drupal7.port.mk,v 1.4 2018/03/31 11:37:15 espie Exp $
 
 
 # three types of things we can install, by default plugin
@@ -25,7 +25,16 @@ DISTFILES += $p/$p-7.x-$v.${DRUPAL_LANG}.po
 .  endfor
 .else
 SUBDIR = projects
+.  if defined(MODDRUPAL_PROJECT)
+HOMEPAGE ?=	http;//drupal.org/project/${MODDRUPAL_PROJECT}/
+.    if defined(MODDRUPAL_VERSION)
+DISTNAME ?=	${MODDRUPAL_PROJECT}-7.x-${MODDRUPAL_VERSION}
+MODDRUPAL_PKGNAME ?= ${MODDRUPAL_PROJECT}
+PKGNAME ?= drupal7-${MODDRUPAL_PKGNAME}-${MODDRUPAL_VERSION}
+.    endif
+.  else
 HOMEPAGE ?=	http://drupal.org/
+.  endif
 MASTER_SITES ?=	http://www.drupal.org/files/${SUBDIR}/ \
 		ftp://ftp.drupal.org/pub/drupal/files/${SUBDIR}/
 .endif
