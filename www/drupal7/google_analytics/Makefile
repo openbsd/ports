@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/03/31 14:45:49 espie Exp $
 
 COMMENT =	add the Google Analytics web statistics to your site
 
-DISTNAME = 	google_analytics-7.x-1.2
-PKGNAME =	drupal7-google_analytics-1.2
-REVISION =	1
+MODDRUPAL_PROJECT = google_analytics
+MODDRUPAL_VERSION = 1.2
+REVISION =	2
 
 .include <bsd.port.mk>
