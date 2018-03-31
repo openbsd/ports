@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/07 15:00:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/03/31 09:22:04 steven Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
 DISTNAME =	qrupdate-1.1.2
 SHARED_LIBS +=  qrupdate	0.0	# .1.1
 CATEGORIES =	math
-REVISION =	0
+REVISION =	1
 FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE =	http://qrupdate.sourceforge.net/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qrupdate/}
 
 MODULES =		fortran
-MODFORTRAN_COMPILER =	g77
+MODFORTRAN_COMPILER =	gfortran
 
 WANTLIB =		m ${MODFORTRAN_WANTLIB}
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS =		${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS =		${MODFORTRAN_LIB_DEPENDS}
 
 ALL_TARGET =		lib solib
-MAKE_FLAGS =		FC="${FC}" FFLAGS="${FFLAGS}" \
+MAKE_FLAGS =		FC="${MODFORTRAN_COMPILER}" FFLAGS="${FFLAGS}" \
 			VERSION=${LIBqrupdate_VERSION} \
 			MAJOR=${LIBqrupdate_VERSION:R} \
 			BLAS= LAPACK=
