@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.69 2017/12/05 17:46:43 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.70 2018/03/31 13:32:23 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -132,6 +132,8 @@ _PMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${_PBUILD} ${MAKE}
 _PREDIR = |${_PBUILD} tee >/dev/null
 # Some operations will need sudo in privsep mode
 _PSUDO = ${SUDO}
+_UPDATE_PLIST_SETUP=FAKE_TREE_OWNER=${BUILD_USER} \
+	PORTS_TREE_OWNER=$$(id -un) ${SUDO}
 _pkgmode = ${BUILD_USER}:$$(id -g ${BUILD_USER})
 _usermode = -o $$(id -u) -g $$(id -g)
 .else
@@ -143,6 +145,7 @@ _PMAKE = ${_MAKE}
 _MK_READABLE = :
 _pkgmode = $$(id -u):$$(id -g)
 _usermode =
+_UPDATE_PLIST_SETUP=${_FAKESUDO}
 .endif
 
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
