@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:37:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/03/31 14:21:57 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
+${DRUPAL_MODS}date/.gitignore
 ${DRUPAL_MODS}date/CHANGELOG.txt
 ${DRUPAL_MODS}date/INSTALL.txt
 ${DRUPAL_MODS}date/LICENSE.txt
@@ -93,6 +94,7 @@ ${DRUPAL_MODS}date/date_views/
 ${DRUPAL_MODS}date/date_views/css/
 ${DRUPAL_MODS}date/date_views/css/date_views.css
 ${DRUPAL_MODS}date/date_views/date_views.info
+${DRUPAL_MODS}date/date_views/date_views.install
 ${DRUPAL_MODS}date/date_views/date_views.module
 ${DRUPAL_MODS}date/date_views/includes/
 ${DRUPAL_MODS}date/date_views/includes/date_plugin_display_attachment.inc
@@ -114,7 +116,13 @@ ${DRUPAL_MODS}date/tests/Yahoo.csv
 ${DRUPAL_MODS}date/tests/date.test
 ${DRUPAL_MODS}date/tests/date_api.test
 ${DRUPAL_MODS}date/tests/date_field.test
+${DRUPAL_MODS}date/tests/date_form.test
 ${DRUPAL_MODS}date/tests/date_migrate.test
+${DRUPAL_MODS}date/tests/date_test/
+${DRUPAL_MODS}date/tests/date_test/date_test.info
+${DRUPAL_MODS}date/tests/date_test/date_test.module
 ${DRUPAL_MODS}date/tests/date_timezone.test
 ${DRUPAL_MODS}date/tests/date_validation.test
+${DRUPAL_MODS}date/tests/date_views_pager.test
+${DRUPAL_MODS}date/tests/date_views_popup.test
 ${DRUPAL_MODS}date/tests/rrule.ics
