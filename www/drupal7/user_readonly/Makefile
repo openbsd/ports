@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/30 11:51:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/03/31 15:44:27 espie Exp $
 
 COMMENT =	forbid users from changing some drupal profile fields
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	user_readonly-7.x-1.4
-PKGNAME =	drupal7-user-readonly-1.4
-REVISION =	0
+MODDRUPAL_PROJECT = user_readonly
+MODDRUPAL_VERSION = 1.5
+MODDRUPAL_PKGNAME = user-readonly
 
 .include <bsd.port.mk>
