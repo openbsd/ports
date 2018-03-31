@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/31 12:09:51 espie Exp $
 
 COMMENT =	automatic node titles for drupal
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	auto_nodetitle-7.x-1.0
-PKGNAME =	drupal7-automatic-nodetitle-1.0
-REVISION =	0
+MODDRUPAL_PROJECT = auto_nodetitle
+MODDRUPAL_VERSION = 1.0
+MODDRUPAL_PKGNAME = automatic-nodetitle
+
+REVISION =	1
 
 .include <bsd.port.mk>
