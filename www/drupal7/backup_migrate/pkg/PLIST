@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/02/08 19:37:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/03/31 12:13:46 espie Exp $
 @group ${DRUPAL_GROUP}
 @owner ${DRUPAL_OWNER}
 ${DRUPAL_ROOT}/files/
@@ -30,5 +30,14 @@ ${DRUPAL_MODS}backup_migrate/includes/filters.encryption.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.statusnotify.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.utils.inc
+${DRUPAL_MODS}backup_migrate/includes/locations.inc
 ${DRUPAL_MODS}backup_migrate/includes/profiles.inc
 ${DRUPAL_MODS}backup_migrate/includes/schedules.inc
+${DRUPAL_MODS}backup_migrate/includes/sources.archivesource.inc
+${DRUPAL_MODS}backup_migrate/includes/sources.db.inc
+${DRUPAL_MODS}backup_migrate/includes/sources.db.mysql.inc
+${DRUPAL_MODS}backup_migrate/includes/sources.filesource.inc
+${DRUPAL_MODS}backup_migrate/includes/sources.inc
+${DRUPAL_MODS}backup_migrate/tests/
+${DRUPAL_MODS}backup_migrate/tests/BackupMigrateBasicsTest.test
+${DRUPAL_MODS}backup_migrate/tests/BackupMigrateHelper.test
