@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/30 11:51:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/03/31 12:24:26 espie Exp $
 
 COMMENT =	fancy forms fields
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	compact_forms-7.x-1.0
-PKGNAME =	drupal7-compact-forms-1.0
-REVISION =	0
+MODDRUPAL_PROJECT = compact_forms
+MODDRUPAL_VERSION = 1.0
+MODDRUPAL_PKGNAME = compact-forms
+REVISION =	1
 
 .include <bsd.port.mk>
