@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/03 02:23:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/01 22:31:11 bcallah Exp $
 
 COMMENT =	open source implementation of the K programming language
-DISTNAME =	kona-3.2.0.20180302
+DISTNAME =	kona-3.2.0.20180329
 CATEGORIES =	lang
 
 # No real releases... use GH_COMMIT.
 GH_ACCOUNT =	kevinlawler
 GH_PROJECT =	kona
-GH_COMMIT =	a22528cadb7274b58c49ab4a31cf626396ce048e
+GH_COMMIT =	033fd124492448445fa0804edd0806ad5962b9f9
 
 HOMEPAGE =	https://kona.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
