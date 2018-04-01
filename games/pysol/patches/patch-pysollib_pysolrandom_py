@@ -1,0 +1,33 @@
+$OpenBSD: patch-pysollib_pysolrandom_py,v 1.1 2018/04/01 09:34:06 landry Exp $
+
+Revert https://github.com/shlomif/PySolFC/commit/0515a01a025be3fa3ecfc3e0e72803f5e7370728
+Needs random2 from pip for python3 ?
+
+Index: pysollib/pysolrandom.py
+--- pysollib/pysolrandom.py.orig
++++ pysollib/pysolrandom.py
+@@ -26,7 +26,7 @@
+ import sys
+ import re
+ import time
+-import random2
++import random
+ from pysollib.mfxutil import SubclassResponsibility
+ 
+ 
+@@ -96,13 +96,13 @@ class BasicRandom:
+ # * uses the standard python module `random'
+ # ************************************************************************
+ 
+-class MTRandom(BasicRandom, random2.Random):
++class MTRandom(BasicRandom, random.Random):
+ 
+     def __init__(self, seed=None):
+         if seed is None:
+             seed = self._getRandomSeed()
+         BasicRandom.__init__(self)
+-        random2.Random.__init__(self, seed)
++        random.Random.__init__(self, seed)
+         self.initial_seed = seed
+         self.initial_state = self.getstate()
+         self.origin = self.ORIGIN_UNKNOWN

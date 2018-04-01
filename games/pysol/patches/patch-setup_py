@@ -1,6 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2015/05/25 07:10:45 czarkoff Exp $
---- setup.py.orig	Fri Jun  6 08:58:55 2008
-+++ setup.py	Sun May 24 23:44:32 2015
+$OpenBSD: patch-setup_py,v 1.2 2018/04/01 09:34:06 landry Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
 @@ -40,8 +40,7 @@ for d in ddirs:
              data_files.append((os.path.join(data_dir, root[5:]), files))
  
@@ -9,5 +10,5 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2015/05/25 07:10:45 czarkoff Exp $
 -    data_files.append(('share/icons',
 +    data_files.append(('share/pixmaps',
                         ['data/images/misc/pysol01.png',
-                         'data/images/misc/pysol02.png',]))
+                         'data/images/misc/pysol02.png', ]))
      for l in ('ru', 'ru_RU'):
