@@ -1,0 +1,59 @@
+$OpenBSD: patch-plugins_node_d_openbsd_if_packets__in,v 1.1 2018/04/01 08:21:01 kirby Exp $
+
+Index: plugins/node.d.openbsd/if_packets_.in
+--- plugins/node.d.openbsd/if_packets_.in.orig
++++ plugins/node.d.openbsd/if_packets_.in
+@@ -37,7 +37,7 @@ if [ "$1" = "suggest" ]; then
+ 		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
+ 		exit 0
+ 	elif [ -x /usr/bin/netstat ]; then
+-		netstat -i -b -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link#[0-9]*>/s/\** .*//p'
++		netstat -i -b -n | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pf(log|sync)/d' -e '/<Link>/s/\** .*//p'
+ 		exit 0
+ 	else
+ 		exit 1
+@@ -69,9 +69,9 @@ fi
+ if [ "$INTERFACE" = "aggregated" ]; then
+ 	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
+ BEGIN { rsum = 0; osum = 0; }
+-/<Link#[0-9]*>/ {
+-	if (NF == 10) { 
+-		rsum += $4; osum += $7;
++/<Link*>/ {
++	if (NF == 5) { 
++		rsum += $4; osum += $5;
+ 	} else if (NF == 11) {
+ 		if ($4 ~ /:/) {
+ 			rsum += $5; osum += $8;
+@@ -79,7 +79,7 @@ BEGIN { rsum = 0; osum = 0; }
+ 			rsum += $4; osum += $8;
+ 		}
+ 	} else { # NF == 12
+-		rsum += $6; osum += $9;
++		rsum += $5; osum += $6;
+ 	}
+ }
+ END {
+@@ -89,10 +89,10 @@ END {
+ 
+ else
+ 	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '
+-/<Link#[0-9]*>/ {
+-	if (NF == 10) {
++/<Link*>/ {
++	if (NF == 5) {
+ 		print "rpackets.value", $4;
+-		print "opackets.value", $7;
++		print "opackets.value", $5;
+ 	} else if (NF == 11) {
+ 		if ($4 ~ /:/) {
+ 			print "rpackets.value", $5;
+@@ -103,7 +103,7 @@ else
+ 		}
+ 	} else { # NF == 12
+ 		print "rpackets.value", $5;
+-		print "opackets.value", $9;
++		print "opackets.value", $6;
+ 	}
+ }'
+ fi

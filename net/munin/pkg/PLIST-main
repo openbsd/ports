@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/05/16 08:48:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/04/01 08:21:01 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -124,6 +124,7 @@ libexec/munin/plugins/hp2000_
 libexec/munin/plugins/http_loadtime
 libexec/munin/plugins/if_
 libexec/munin/plugins/if_errcoll_
+libexec/munin/plugins/if_packets_
 libexec/munin/plugins/if_pps_
 libexec/munin/plugins/ifx_concurrent_sessions_
 libexec/munin/plugins/intr
