@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1718 2018/03/30 13:54:18 ajacoutot Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1719 2018/04/01 09:32:58 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1615,6 +1615,7 @@
      SUBDIR += pyflakes
      SUBDIR += pyflakes,python3
      SUBDIR += pygame
+     SUBDIR += pygame,python3
      SUBDIR += pylint
      SUBDIR += pylint,python3
      SUBDIR += pyrex
