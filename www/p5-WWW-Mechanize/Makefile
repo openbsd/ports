@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2018/03/05 23:06:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/01 23:46:37 bluhm Exp $
 
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-1.87
+DISTNAME =	WWW-Mechanize-1.88
 
 CATEGORIES =	www
 
