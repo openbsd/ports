@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/02 19:38:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/01 09:29:31 landry Exp $
 
 COMMENT=		Python-based presentation tool
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		bruce-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		productivity
 

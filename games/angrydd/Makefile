@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/01 09:29:31 landry Exp $
 
 COMMENT=	falling blocks puzzle game
 
 DISTNAME=	angrydd-1.0.1
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.sacredchao.net/~piman/angrydd/
