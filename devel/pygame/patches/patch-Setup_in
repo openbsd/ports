@@ -1,7 +1,8 @@
-$OpenBSD: patch-Setup_in,v 1.3 2015/07/07 22:29:14 bcallah Exp $
---- Setup.in.orig	Thu Jul  2 00:41:56 2009
-+++ Setup.in	Mon Jul  6 22:27:18 2015
-@@ -51,6 +51,7 @@ cdrom src/cdrom.c $(SDL) $(DEBUG)
+$OpenBSD: patch-Setup_in,v 1.4 2018/04/01 09:27:43 landry Exp $
+Index: Setup.in
+--- Setup.in.orig
++++ Setup.in
+@@ -48,6 +48,7 @@ cdrom src/cdrom.c $(SDL) $(DEBUG)
  color src/color.c $(SDL) $(DEBUG)
  constants src/constants.c $(SDL) $(DEBUG)
  display src/display.c $(SDL) $(DEBUG)

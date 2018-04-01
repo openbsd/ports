@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/01 09:27:43 landry Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
-DISTNAME=	pygame-1.9.1release
-PKGNAME=	${DISTNAME:S/release//}
+MODPY_EGG_VERSION =	1.9.3
+DISTNAME=	pygame-${MODPY_EGG_VERSION}
+PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
 
 HOMEPAGE=	http://www.pygame.org/
@@ -12,11 +13,16 @@ HOMEPAGE=	http://www.pygame.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
-WANTLIB += smpeg ${MODPY_WANTLIB}
-
-MASTER_SITES=	${HOMEPAGE}ftp/
+WANTLIB += freetype z ${MODPY_WANTLIB}
 
 MODULES=	lang/python
+#MODPY_PI =	Yes
+# 1.9.3 was pulled out of the main pypi
+MASTER_SITES =	https://files.pythonhosted.org/packages/61/06/3c25051549c252cc6fde01c8aeae90b96831370884504fe428a623316def/
+MODPY_SETUPTOOLS =	Yes
+SUBST_VARS +=	MODPY_LIB_SUFFIX
+FLAVORS =		python3
+FLAVOR ?=
 
 BUILD_DEPENDS+=	math/py-Numeric
 
@@ -24,21 +30,16 @@ LIB_DEPENDS=	devel/sdl-ttf \
 		devel/sdl-image \
 		devel/sdl-mixer
 
+TEST_DEPENDS =	${BUILD_PKGPATH}
 
 MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl-config"
 
-EXAMPLESDIR=	${PREFIX}/share/examples/pygame
-DOCDIR=		${PREFIX}/share/doc/pygame
-DOCSUBDIRS=	ref tut tut/chimp tut/surfarray \
-		tut/tom
+EXAMPLESDIR=	${PREFIX}/share/examples/pygame${MODPY_BIN_SUFFIX}
+DOCDIR=		${PREFIX}/share/doc/pygame${MODPY_BIN_SUFFIX}
 
 TEST_IS_INTERACTIVE=	x11
-
-# fix perms
-post-extract:
-	find ${WRKSRC} -type d | xargs chmod 755
-	find ${WRKSRC} -type f | xargs chmod 644
+TEST_ENV =	PYTHONPATH=${WRKSRC}
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/Setup.in
@@ -51,19 +52,14 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/data
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/* ${EXAMPLESDIR}/data
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.rst ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.{gif,html} ${DOCDIR}
-.for i in ${DOCSUBDIRS}
+.for i in ref tut
 	${INSTALL_DATA_DIR} ${DOCDIR}/$i
-	${INSTALL_DATA} `find ${WRKSRC}/docs/$i -maxdepth 1 -type f` \
+	${INSTALL_DATA} `find ${WRKSRC}/docs/reST/$i -maxdepth 1 -type f` \
 		${DOCDIR}/$i
 .endfor
 	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
-		${PREFIX}/share/examples/pygame/*.py
-
-do-test: fake
-	@cd ${WRKSRC} && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-			${MODPY_BIN} ./run_tests.py
+		${EXAMPLESDIR}/*.py
 
 .include <bsd.port.mk>

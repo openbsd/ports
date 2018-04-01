@@ -1,17 +1,19 @@
-$OpenBSD: patch-config_unix_py,v 1.5 2015/07/07 22:29:14 bcallah Exp $
---- config_unix.py.orig	Tue May 26 17:15:24 2009
-+++ config_unix.py	Mon Jul  6 22:33:12 2015
-@@ -172,15 +172,6 @@ def main():
+$OpenBSD: patch-config_unix_py,v 1.6 2018/04/01 09:27:43 landry Exp $
+
+Index: config_unix.py
+--- config_unix.py.orig
++++ config_unix.py
+@@ -206,15 +206,6 @@ def main():
      for d in DEPS:
          d.configure(incdirs, libdirs)
  
 -    for d in DEPS[1:]:
 -        if not d.found:
--            if not confirm("""
+-            if "-auto" not in sys.argv and not confirm("""
 -Warning, some of the pygame dependencies were not found. Pygame can still
 -compile and install, but games that depend on those missing dependencies
 -will not run. Would you like to continue the configuration?"""):
--                raise SystemExit
+-                raise SystemExit("Missing dependencies")
 -            break
 -
      return DEPS
