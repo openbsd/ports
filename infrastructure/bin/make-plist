@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.13 2018/03/31 13:32:23 espie Exp $
+# $OpenBSD: make-plist,v 1.14 2018/04/01 19:05:40 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -25,17 +25,26 @@ my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+	# if we're root
+	return if $< != 0;
 	# switch id right away
-	if ($< == 0) {
-		die unless defined $ENV{FAKE_TREE_OWNER};
-		die unless defined $ENV{PORTS_TREE_OWNER};
-		($fake_uid, $fake_gid) = (getpwnam $ENV{FAKE_TREE_OWNER})[2,3];
-		($ports_uid, $ports_gid) = (getpwnam $ENV{PORTS_TREE_OWNER})[2,3];
-		die unless defined $fake_uid;
-		die unless defined $ports_uid;
-		$) = $fake_gid;
-		$> = $fake_uid;
+	my $fake = $ENV{FAKE_TREE_OWNER};
+	my $tree = $ENV{PORTS_TREE_OWNER};
+	# XXX we can only end there if we're very naughty and building
+	# everything as root, but not behind PORTS_PRIVSEP
+	if (!defined $fake && !defined $tree) {
+		print STDERR "DON'T BUILD PORTS AS ROOT!!!!!\n";
+		return;
 	}
+	die "FAKE_TREE_OWNER not defined" unless defined $fake;
+	die "PORTS_TREE_OWNER not defined" unless defined $tree;
+
+	($fake_uid, $fake_gid) = (getpwnam $fake)[2,3];
+	($ports_uid, $ports_gid) = (getpwnam $tree)[2,3];
+	die "User $fake not found" unless defined $fake_uid;
+	die "User $tree not found" unless defined $ports_uid;
+	$) = $fake_gid;
+	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
 use OpenBSD::PackingList;
