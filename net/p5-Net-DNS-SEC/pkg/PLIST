@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/03/05 16:14:03 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/04/01 23:23:07 bluhm Exp $
 @conflict p5-Net-DNS-<1.01
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
@@ -7,6 +7,7 @@ ${P5ARCH}/Net/DNS/SEC.pm
 ${P5ARCH}/Net/DNS/SEC/DSA.pm
 ${P5ARCH}/Net/DNS/SEC/ECCGOST.pm
 ${P5ARCH}/Net/DNS/SEC/ECDSA.pm
+${P5ARCH}/Net/DNS/SEC/EdDSA.pm
 ${P5ARCH}/Net/DNS/SEC/Keyset.pm
 ${P5ARCH}/Net/DNS/SEC/Private.pm
 ${P5ARCH}/Net/DNS/SEC/RSA.pm
@@ -19,6 +20,7 @@ ${P5ARCH}/auto/Net/DNS/SEC/SEC.so
 @man man/man3p/Net::DNS::SEC::DSA.3p
 @man man/man3p/Net::DNS::SEC::ECCGOST.3p
 @man man/man3p/Net::DNS::SEC::ECDSA.3p
+@man man/man3p/Net::DNS::SEC::EdDSA.3p
 @man man/man3p/Net::DNS::SEC::Keyset.3p
 @man man/man3p/Net::DNS::SEC::Private.3p
 @man man/man3p/Net::DNS::SEC::RSA.3p
