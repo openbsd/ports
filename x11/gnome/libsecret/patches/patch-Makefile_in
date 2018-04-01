@@ -1,6 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/03/30 07:21:36 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2018/04/01 08:37:33 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=734630
+From a7f2efc4502e9eee3328502c9f7be0a3d87beb46 Mon Sep 17 00:00:00 2001
+From: Daiki Ueno <dueno@src.gnome.org>
+Date: Fri, 30 Mar 2018 16:30:48 +0200
+Subject: build: Make DBus code generation more portable
 
 Index: Makefile.in
 --- Makefile.in.orig
