@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/08/16 17:24:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/04/02 13:34:25 jasper Exp $
 @conflict jakarta-ant-*
 ant/
 ant/bin/
@@ -362,6 +362,7 @@ share/doc/java/ant/api/org/apache/tools/ant/filters/package-frame.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/package-summary.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/package-tree.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/util/
+share/doc/java/ant/api/org/apache/tools/ant/filters/util/ChainReaderHelper.ChainReader.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/util/ChainReaderHelper.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/util/JavaClassHelper.html
 share/doc/java/ant/api/org/apache/tools/ant/filters/util/package-frame.html
@@ -693,6 +694,7 @@ share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/IsReference.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/IsSet.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/IsSigned.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/IsTrue.html
+share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/JavaVersion.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/Matches.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/Not.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/condition/Or.html
@@ -850,6 +852,7 @@ share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbcTas
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/InnerClassFilenameFilter.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/JbossDeploymentTool.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/JonasDeploymentTool.html
+share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/OrionDeploymentTool.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicTOPLinkDeploymentTool.html
 share/doc/java/ant/api/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.html
