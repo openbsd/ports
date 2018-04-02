@@ -1,6 +1,20 @@
-$OpenBSD: patch-src_unshar_c,v 1.2 2015/09/07 17:57:07 jasper Exp $
---- src/unshar.c.orig	Wed Jan  7 03:14:10 2015
-+++ src/unshar.c	Mon Sep  7 19:32:27 2015
+$OpenBSD: patch-src_unshar_c,v 1.3 2018/04/02 08:41:50 jasper Exp $
+
+Security fix for CVE-2018-1000097 sharutils: heap-buffer-overflow in find_archive in unshar.c
+https://bugzilla.redhat.com/show_bug.cgi?id=1548018
+
+Index: src/unshar.c
+--- src/unshar.c.orig
++++ src/unshar.c
+@@ -240,7 +240,7 @@ find_archive (char const * name, FILE * file, off_t st
+       off_t position = ftello (file);
+ 
+       /* Read next line, fail if no more and no previous process.  */
+-      if (!fgets (rw_buffer, BUFSIZ, file))
++      if (!fgets (rw_buffer, rw_base_size, file))
+ 	{
+ 	  if (!start)
+ 	    error (0, 0, _("Found no shell commands in %s"), name);
 @@ -311,7 +311,7 @@ get_env_tmpdir(void)
  static FILE *
  load_file (char const ** tmp_fname, FILE * infp)
