@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/16 14:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/02 08:43:05 jasper Exp $
 
 COMMENT=	fast and high quality sample-rate conversion (SoX Resampler)
 
-DISTNAME=	soxr-0.1.2-Source
+DISTNAME=	soxr-0.1.3-Source
 PKGNAME=	lib${DISTNAME:S/-Source//}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	soxr 1.2 soxr-lsr 3.4
+SHARED_LIBS=	soxr 1.2 \
+		soxr-lsr 3.4
 
 CATEGORIES=	audio
 
