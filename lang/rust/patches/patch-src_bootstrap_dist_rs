@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_bootstrap_dist_rs,v 1.3 2018/02/23 16:38:16 landry Exp $
+$OpenBSD: patch-src_bootstrap_dist_rs,v 1.4 2018/04/02 07:21:50 landry Exp $
 Stop in the middle of "Extended" step: we have generated tarballs for rustc,
 rust-std and cargo: it is enough and generating a combined tarball in memory
 requires too much RAM for i386
 Index: src/bootstrap/dist.rs
 --- src/bootstrap/dist.rs.orig
 +++ src/bootstrap/dist.rs
-@@ -1292,6 +1292,10 @@ impl Step for Extended {
+@@ -1285,6 +1285,10 @@ impl Step for Extended {
              target,
          });
  

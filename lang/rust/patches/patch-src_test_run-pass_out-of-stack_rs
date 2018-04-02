@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_test_run-pass_out-of-stack_rs,v 1.1 2018/04/02 07:21:50 landry Exp $
+
+Index: src/test/run-pass/out-of-stack.rs
+--- src/test/run-pass/out-of-stack.rs.orig
++++ src/test/run-pass/out-of-stack.rs
+@@ -12,6 +12,7 @@
+ // ignore-musl
+ // ignore-cloudabi no processes
+ // ignore-emscripten no processes
++// ignore-openbsd
+ 
+ #![feature(asm)]
+ #![feature(libc)]

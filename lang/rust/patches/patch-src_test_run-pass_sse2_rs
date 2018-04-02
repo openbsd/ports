@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_test_run-pass_sse2_rs,v 1.1 2017/12/04 17:31:49 landry Exp $
+$OpenBSD: patch-src_test_run-pass_sse2_rs,v 1.2 2018/04/02 07:21:50 landry Exp $
 Disable SSE2 tests for i386.
 Index: src/test/run-pass/sse2.rs
 --- src/test/run-pass/sse2.rs.orig
 +++ src/test/run-pass/sse2.rs
-@@ -17,7 +17,7 @@ fn main() {
+@@ -19,7 +19,7 @@ fn main() {
      match env::var("TARGET") {
          Ok(s) => {
              // Skip this tests on i586-unknown-linux-gnu where sse2 is disabled

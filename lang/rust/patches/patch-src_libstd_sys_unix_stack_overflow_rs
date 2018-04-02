@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libstd_sys_unix_stack_overflow_rs,v 1.1 2018/03/13 08:08:03 landry Exp $
+$OpenBSD: patch-src_libstd_sys_unix_stack_overflow_rs,v 1.2 2018/04/02 07:21:50 landry Exp $
 Use MAP_STACK for stack allocation.
 Index: src/libstd/sys/unix/stack_overflow.rs
 --- src/libstd/sys/unix/stack_overflow.rs.orig
 +++ src/libstd/sys/unix/stack_overflow.rs
-@@ -144,7 +144,7 @@ mod imp {
+@@ -139,7 +139,7 @@ mod imp {
          let stackp = mmap(ptr::null_mut(),
                            SIGSTKSZ,
                            PROT_READ | PROT_WRITE,

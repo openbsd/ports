@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/03/16 07:36:40 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2018/04/02 07:21:50 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -13,14 +13,13 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.24.0
-CARGO_V =		0.25.0
+V =			1.25.0
+CARGO_V =		0.26.0
 DISTNAME =		rustc-${V}-src
-REVISION =		0
 
 # rustc bootstrap version
-BV-amd64 =		1.24.0-20180308
-BV-i386 =		1.24.0-20180316
+BV-amd64 =		1.25.0-20180326
+BV-i386 =		1.25.0-20180330
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -86,6 +85,7 @@ LIB_DEPENDS +=		devel/libgit2/libgit2 \
 
 MAKE_ENV =	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		RUST_BACKTRACE=1
+TEST_ENV =	RUST_BACKTRACE=0
 
 # build/configuration variables
 PATCHORIG =		.openbsd.orig
@@ -95,8 +95,7 @@ USE_GMAKE =		Yes
 # need for libbacktrace
 USE_LIBTOOL =		gnu
 
-TEST_DEPENDS +=		${FULLPKGNAME-main}:${BUILD_PKGPATH} \
-			devel/git \
+TEST_DEPENDS +=		devel/git \
 			sysutils/ggrep
 
 # - disable vendor checksum checks
@@ -155,6 +154,8 @@ do-configure:
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py
+TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
+	    ${MODPY_BIN} ${WRKSRC}/x.py
 
 do-build:
 	${BUILD_BIN} dist --jobs=${MAKE_JOBS}
@@ -195,7 +196,7 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 
 do-test:
-	${BUILD_BIN} test --jobs=${MAKE_JOBS}
+	${TEST_BIN} test --jobs=${MAKE_JOBS}
 
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new

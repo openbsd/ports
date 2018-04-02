@@ -1,25 +1,18 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.2 2018/02/23 16:38:16 landry Exp $
-disable Bootstrap test as it requires network access.
-pass RUSTC_ERROR_METADATA_DST as absolute path (8c9bf663d4a8074e4955d1ad3f85a3b82e946297).
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.3 2018/04/02 07:21:50 landry Exp $
+- disable test::Bootstrap (require network)
+- disable test::Debuginfo (require recent gdb, and some are failing with egdb)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -251,7 +251,7 @@ impl<'a> Builder<'a> {
-                 tool::Compiletest, tool::RemoteTestServer, tool::RemoteTestClient,
+@@ -318,9 +318,9 @@ impl<'a> Builder<'a> {
                  tool::RustInstaller, tool::Cargo, tool::Rls, tool::Rustdoc, tool::Clippy,
                  native::Llvm, tool::Rustfmt, tool::Miri),
--            Kind::Test => describe!(check::Tidy, check::Bootstrap, check::DefaultCompiletest,
-+            Kind::Test => describe!(check::Tidy, /*check::Bootstrap,*/ check::DefaultCompiletest,
-                 check::HostCompiletest, check::Crate, check::CrateLibrustc, check::Rustdoc,
-                 check::Linkcheck, check::Cargotest, check::Cargo, check::Rls, check::Docs,
-                 check::ErrorIndex, check::Distcheck, check::Rustfmt, check::Miri, check::Clippy),
-@@ -484,7 +484,8 @@ impl<'a> Builder<'a> {
-              } else {
-                  PathBuf::from("/path/to/nowhere/rustdoc/not/required")
-              })
--             .env("TEST_MIRI", self.config.test_miri.to_string());
-+             .env("TEST_MIRI", self.config.test_miri.to_string())
-+             .env("RUSTC_ERROR_METADATA_DST", self.extended_error_dir());
- 
-         if let Some(n) = self.config.rust_codegen_units {
-             cargo.env("RUSTC_CODEGEN_UNITS", n.to_string());
+             Kind::Check => describe!(check::Std, check::Test, check::Rustc),
+-            Kind::Test => describe!(test::Tidy, test::Bootstrap, test::Ui, test::RunPass,
++            Kind::Test => describe!(test::Tidy, test::Ui, test::RunPass,
+                 test::CompileFail, test::ParseFail, test::RunFail, test::RunPassValgrind,
+-                test::MirOpt, test::Codegen, test::CodegenUnits, test::Incremental, test::Debuginfo,
++                test::MirOpt, test::Codegen, test::CodegenUnits, test::Incremental,
+                 test::UiFullDeps, test::RunPassFullDeps, test::RunFailFullDeps,
+                 test::CompileFailFullDeps, test::IncrementalFullDeps, test::Rustdoc, test::Pretty,
+                 test::RunPassPretty, test::RunFailPretty, test::RunPassValgrindPretty,
