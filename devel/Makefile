@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1719 2018/04/01 09:32:58 landry Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1720 2018/04/03 05:33:41 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1638,6 +1638,7 @@
      SUBDIR += rebar
      SUBDIR += remake
      SUBDIR += reposurgeon
+     SUBDIR += rgbds
      SUBDIR += rlog
      SUBDIR += ruby-abstract
      SUBDIR += ruby-arrayfields
