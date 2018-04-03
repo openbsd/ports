@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/29 19:50:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/03 20:22:12 rpointel Exp $
 
 COMMENT =	dex to java decompiler
 
-VERSION =	0.6.1
+VERSION =	0.7.1
 DISTNAME =	jadx-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel security
 
@@ -20,7 +19,7 @@ MASTER_SITES =	https://github.com/skylot/jadx/releases/download/v${VERSION}/
 EXTRACT_SUFX =	.zip
 
 MODULES =	java
-MODJAVA_VER =	1.7+
+MODJAVA_VER =	1.8+
 MODJAVA_JRERUN =Yes
 
 RUN_DEPENDS =	java/javaPathHelper \
