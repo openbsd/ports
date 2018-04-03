@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/16 19:36:54 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2018/04/03 17:49:30 bket Exp $
 
      SUBDIR =
      SUBDIR += aub
      SUBDIR += leafnode
      SUBDIR += multimail
      SUBDIR += nn
+     SUBDIR += nzbget
      SUBDIR += p5-Gateway
      SUBDIR += p5-News-Article
      SUBDIR += p5-News-Newsrc
