@@ -1,0 +1,13 @@
+$OpenBSD: patch-dnsdist-lua_cc,v 1.1 2018/04/03 11:18:34 jca Exp $
+--- dnsdist-lua.cc
++++ dnsdist-lua.cc
+@@ -22,9 +22,9 @@
+
+ #include <dirent.h>
+ #include <fstream>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <sys/types.h>
+-#include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <thread>

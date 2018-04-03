@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/03 11:18:34 jca Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.2.0
+DISTNAME=		dnsdist-1.3.0
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
 CATEGORIES=		net
 
@@ -15,7 +14,8 @@ MAINTAINER=		Peter van Dijk <peter.van.dijk@powerdns.com>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} c curses edit m protobuf pthread z ${COMPILER_LIBCXX}
+WANTLIB += 		${MODLUA_WANTLIB} c curses edit m protobuf pthread \
+			z crypto ssl sodium ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 
@@ -25,7 +25,9 @@ USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-hardening \
 			--with-lua \
-			--without-net-snmp
+			--without-net-snmp \
+			--enable-dns-over-tls \
+			--enable-dnscrypt
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
@@ -39,6 +41,7 @@ MODLUA_VERSION=		5.3
 
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
+			security/libsodium \
 			devel/protobuf
 
 .if ${MACHINE_ARCH:Mi386}

@@ -1,11 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: dnsdist.rc,v 1.2 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: dnsdist.rc,v 1.3 2018/04/03 11:18:34 jca Exp $
 
-daemon="${TRUEPREFIX}/bin/dnsdist -d -u _dnsdist"
+daemon="${TRUEPREFIX}/bin/dnsdist --supervised -u _dnsdist"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1
