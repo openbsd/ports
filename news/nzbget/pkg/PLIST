@@ -1,0 +1,60 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/03 17:45:43 bket Exp $
+@newgroup _nzbget:805
+@newuser _nzbget:805:805:daemon:NZBGet Account:${LOCALSTATEDIR}/nzbget:/sbin/nologin
+@bin bin/nzbget
+share/doc/nzbget/
+share/doc/nzbget/COPYING
+share/doc/nzbget/ChangeLog
+share/doc/nzbget/README
+share/examples/nzbget/
+share/examples/nzbget/nzbget.conf
+@mode 640
+@owner _nzbget
+@sample ${SYSCONFDIR}/nzbget.conf
+@mode
+@owner
+share/examples/nzbget/scripts/
+share/examples/nzbget/scripts/EMail.py
+share/examples/nzbget/scripts/Logger.py
+share/nzbget/
+share/nzbget/webui/
+share/nzbget/webui/config.js
+share/nzbget/webui/downloads.js
+share/nzbget/webui/edit.js
+share/nzbget/webui/fasttable.js
+share/nzbget/webui/feed.js
+share/nzbget/webui/history.js
+share/nzbget/webui/img/
+share/nzbget/webui/img/download-anim-green-2x.png
+share/nzbget/webui/img/download-anim-orange-2x.png
+share/nzbget/webui/img/favicon.ico
+share/nzbget/webui/img/icons-2x.png
+share/nzbget/webui/img/icons.png
+share/nzbget/webui/img/transmit-file.gif
+share/nzbget/webui/img/transmit-reload-2x.gif
+share/nzbget/webui/img/transmit.gif
+share/nzbget/webui/index.html
+share/nzbget/webui/index.js
+share/nzbget/webui/lib/
+share/nzbget/webui/lib/bootstrap.css
+share/nzbget/webui/lib/bootstrap.js
+share/nzbget/webui/lib/bootstrap.min.js
+share/nzbget/webui/lib/elycharts.js
+share/nzbget/webui/lib/elycharts.min.js
+share/nzbget/webui/lib/jquery.js
+share/nzbget/webui/lib/jquery.min.js
+share/nzbget/webui/lib/raphael.js
+share/nzbget/webui/lib/raphael.min.js
+share/nzbget/webui/messages.js
+share/nzbget/webui/status.js
+share/nzbget/webui/style.css
+share/nzbget/webui/upload.js
+share/nzbget/webui/util.js
+@rcscript ${RCDIR}/nzbget
+@mode 750
+@owner _nzbget
+@group _nzbget
+@sample ${LOCALSTATEDIR}/nzbget/
+@sample ${LOCALSTATEDIR}/nzbget/nzb/
+@sample ${LOCALSTATEDIR}/nzbget/tmp/
+@sample ${LOCALSTATEDIR}/nzbget/queue/

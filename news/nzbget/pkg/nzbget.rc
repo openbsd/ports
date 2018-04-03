@@ -1,0 +1,15 @@
+#!/bin/ksh
+#
+# $OpenBSD: nzbget.rc,v 1.1.1.1 2018/04/03 17:45:43 bket Exp $
+
+daemon="${TRUEPREFIX}/bin/nzbget -D"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_stop() {
+	${TRUEPREFIX}/bin/nzbget -Q
+}
+
+rc_cmd $1
