@@ -1,0 +1,27 @@
+opmsg is a replacement for gpg which can encrypt/sign/verify your mails or
+create/verify detached signatures of local files. Even though the opmsg output
+looks similar, the concept is entirely different.
+
+Features:
+
+- Perfect Forward Secrecy (PFS) by means of ECDH or DH Kex
+- native EC or RSA fallback if no (EC)DH keys left
+- fully compliant to existing SMTP/IMAP/POP etc. standards; no need to touch
+  any mail daemon/client/agent code
+- signing messages is mandatory
+- OTR-like deniable signatures if demanded
+- easy creation and throw-away of ids
+- support for 1:1 key bindings to auto-select source key per destination
+- adds the possibility to (re-)route messages different from mail address to
+  defeat meta data collection
+- configurable, well-established hash and crypto algorithms and key lengths
+  (RSA, DH, ECC, AES, Chacha)
+- straight forward and open key storage, basically also managable via cat,
+  shred -u and ls on the cmdline
+- seamless mutt integration
+- Key format suitable for easy use with QR-codes
+- optional cross-domain ECDH Kex
+
+opmsg builds fine with any of the OpenSSL, LibreSSL and BoringSSL libcrypto
+libraries. Building against BoringSSL is not recommended due to missing
+blowfish and ripemd algorithms.
