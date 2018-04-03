@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.4 2017/12/20 19:47:30 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.5 2018/04/03 17:53:48 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.6,<3.7
@@ -330,6 +330,9 @@ lib/python3.6/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_percolator.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_percolator.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_percolator.cpython-36.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_pyparse.cpython-36.opt-1.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_pyparse.cpython-36.opt-2.pyc
+lib/python3.6/idlelib/idle_test/__pycache__/test_pyparse.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_query.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_query.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_query.cpython-36.pyc
@@ -399,6 +402,7 @@ lib/python3.6/idlelib/idle_test/test_paragraph.py
 lib/python3.6/idlelib/idle_test/test_parenmatch.py
 lib/python3.6/idlelib/idle_test/test_pathbrowser.py
 lib/python3.6/idlelib/idle_test/test_percolator.py
+lib/python3.6/idlelib/idle_test/test_pyparse.py
 lib/python3.6/idlelib/idle_test/test_query.py
 lib/python3.6/idlelib/idle_test/test_redirector.py
 lib/python3.6/idlelib/idle_test/test_replace.py
