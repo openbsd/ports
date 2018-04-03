@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/28 10:26:44 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/03 05:02:06 feinerer Exp $
 
 COMMENT =		ZRTP library
 
-DISTNAME =		libzrtp-0.20170619
+DISTNAME =		libzrtp-0.20170926
 CATEGORIES =		telephony security
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		juha-h
 GH_PROJECT =		libzrtp
-GH_COMMIT =		0be89abc3adb3d62794205e06acda10103730e17
+GH_COMMIT =		953059e8e6dfb41d283bd1f98eb4caa3d90b1b91
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
