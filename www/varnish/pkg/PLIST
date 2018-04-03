@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/09/18 14:09:53 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/04/03 09:40:27 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
@@ -14,10 +14,9 @@ include/varnish/cache/cache.h
 include/varnish/cache/cache_backend.h
 include/varnish/cache/cache_director.h
 include/varnish/cache/cache_filter.h
+include/varnish/cache/cache_varnishd.h
 include/varnish/common/
-include/varnish/common/com_params.h
-include/varnish/common/common.h
-include/varnish/common/common_vsm.h
+include/varnish/common/common_param.h
 include/varnish/miniobj.h
 include/varnish/tbl/
 include/varnish/tbl/acct_fields_bereq.h
@@ -63,7 +62,6 @@ include/varnish/vapi/
 include/varnish/vapi/vapi_options.h
 include/varnish/vapi/voptget.h
 include/varnish/vapi/vsc.h
-include/varnish/vapi/vsc_int.h
 include/varnish/vapi/vsl.h
 include/varnish/vapi/vsl_int.h
 include/varnish/vapi/vsm.h
@@ -97,8 +95,10 @@ lib/varnish/
 lib/varnish/vmods/
 lib/varnish/vmods/libvmod_blob.so
 lib/varnish/vmods/libvmod_directors.so
+lib/varnish/vmods/libvmod_proxy.so
 lib/varnish/vmods/libvmod_purge.so
 lib/varnish/vmods/libvmod_std.so
+lib/varnish/vmods/libvmod_unix.so
 lib/varnish/vmods/libvmod_vtc.so
 @man man/man1/varnishadm.1
 @man man/man1/varnishd.1
@@ -110,8 +110,10 @@ lib/varnish/vmods/libvmod_vtc.so
 @man man/man1/varnishtop.1
 @man man/man3/vmod_blob.3
 @man man/man3/vmod_directors.3
+@man man/man3/vmod_proxy.3
 @man man/man3/vmod_purge.3
 @man man/man3/vmod_std.3
+@man man/man3/vmod_unix.3
 @man man/man3/vmod_vtc.3
 @man man/man7/varnish-cli.7
 @man man/man7/varnish-counters.7

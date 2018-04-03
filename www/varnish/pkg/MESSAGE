@@ -1,8 +1,8 @@
 Varnish has a default configuration built in, however see vcl(7)
 or the following link for more information:
 
-        http://www.varnish-cache.org/wiki/VCLExamples
+	${HOMEPAGE}wiki/VCLExamples
 
 and for further information:
 
-	https://www.varnish-cache.org/docs/5.0/
+	${HOMEPAGE}docs/6.0/
