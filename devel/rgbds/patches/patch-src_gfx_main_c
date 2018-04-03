@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_gfx_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+
+Index: src/gfx/main.c
+--- src/gfx/main.c.orig
++++ src/gfx/main.c
+@@ -15,6 +15,8 @@
+ 
+ #include "version.h"
+ 
++int pledge(const char *, const char *);
++
+ static void print_usage(void)
+ {
+ 	printf(
+@@ -33,6 +35,9 @@ int main(int argc, char *argv[])
+ 	struct Tilemap tilemap = {0};
+ 	char *ext;
+ 	const char *errmsg = "Warning: The PNG's %s setting is not the same as the setting defined on the command line.";
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
++		errx(1, "pledge");
+ 
+ 	if (argc == 1)
+ 		print_usage();

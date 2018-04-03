@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_asm_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+
+Index: src/asm/main.c
+--- src/asm/main.c.orig
++++ src/asm/main.c
+@@ -25,6 +25,8 @@
+ 
+ #include "version.h"
+ 
++int pledge(const char *, const char *);
++
+ extern int yyparse(void);
+ 
+ size_t cldefines_index;
+@@ -304,6 +306,9 @@ int main(int argc, char *argv[])
+ 	cldefines = malloc(cldefines_bufsize);
+ 	if (!cldefines)
+ 		fatalerror("No memory for command line defines");
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
++		fatalerror("pledge");
+ 
+ 	if (argc == 1)
+ 		print_usage();

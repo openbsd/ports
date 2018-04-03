@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_link_main_c,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+
+Index: src/link/main.c
+--- src/link/main.c.orig
++++ src/link/main.c
+@@ -36,6 +36,8 @@ int32_t options;
+ int32_t fillchar;
+ char *smartlinkstartsymbol;
+ 
++int pledge(const char *, const char *);
++
+ /*
+  * Print the usagescreen
+  */
+@@ -56,6 +58,9 @@ int main(int argc, char *argv[])
+ {
+ 	int ch;
+ 	char *ep;
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
++		errx(1, "pledge");
+ 
+ 	if (argc == 1)
+ 		print_usage();
