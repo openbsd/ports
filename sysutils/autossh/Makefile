@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/20 14:09:01 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/03 11:46:17 gonzalo Exp $
 
 COMMENT=		SSH monitoring
 
-DISTNAME=		autossh-1.4e
+DISTNAME=		autossh-1.4f
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${HOMEPAGE}
@@ -20,6 +20,6 @@ EXTRACT_SUFX=		.tgz
 
 NO_TEST=		Yes
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
