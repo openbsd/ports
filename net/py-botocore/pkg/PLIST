@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.80 2018/02/23 10:28:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.81 2018/04/04 13:03:50 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -177,6 +177,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-03-25/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/examples-1.json
@@ -254,6 +259,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/config/2014-11-12/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connect/2017-08-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/examples-1.json
