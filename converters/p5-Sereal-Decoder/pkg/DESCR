@@ -1,0 +1,4 @@
+This library implements a deserializer for an efficient, compact-output,
+and feature-rich binary protocol called Sereal.
+
+Its sister module p5-Sereal-Encoder implements an encoder for this format.
