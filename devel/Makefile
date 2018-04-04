@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1720 2018/04/03 05:33:41 bentley Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1721 2018/04/04 19:01:50 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1340,6 +1340,8 @@
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
      SUBDIR += py-faulthandler
+     SUBDIR += py-filebytes
+     SUBDIR += py-filebytes,python3
      SUBDIR += py-flexmock
      SUBDIR += py-flexmock,python3
      SUBDIR += py-fpconst
