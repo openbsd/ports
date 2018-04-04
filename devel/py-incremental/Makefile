@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 09:46:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/04 08:12:23 pvk Exp $
 
 COMMENT =		versioning library for Python projects
 
-MODPY_EGG_VERSION =	16.10.1
+MODPY_EGG_VERSION =	17.5.0
 
 DISTNAME =		incremental-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
