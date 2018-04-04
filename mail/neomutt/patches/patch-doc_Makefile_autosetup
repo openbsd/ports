@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_Makefile_autosetup,v 1.1 2017/12/15 20:14:24 sthen Exp $
+$OpenBSD: patch-doc_Makefile_autosetup,v 1.2 2018/04/04 22:35:58 sthen Exp $
 
 Index: doc/Makefile.autosetup
 --- doc/Makefile.autosetup.orig
 +++ doc/Makefile.autosetup
-@@ -48,11 +48,8 @@ doc/manual.html:	doc/manual.xml \
+@@ -49,11 +49,8 @@ doc/manual.html:	doc/manual.xml \
  	xsltproc --nonet -o $@ $(SRCDIR)/doc/html.xsl doc/manual.xml
  
  doc/manual.txt: doc/manual.html
