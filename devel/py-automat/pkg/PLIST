@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/06 09:54:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/04 08:23:14 pvk Exp $
 bin/automat-visualize${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Automat-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Automat-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -27,9 +27,11 @@ lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_discover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_methodical.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_trace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/_test/${MODPY_PYCACHE}test_visualize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/automat/_test/test_core.py
 lib/python${MODPY_VERSION}/site-packages/automat/_test/test_discover.py
 lib/python${MODPY_VERSION}/site-packages/automat/_test/test_methodical.py
+lib/python${MODPY_VERSION}/site-packages/automat/_test/test_trace.py
 lib/python${MODPY_VERSION}/site-packages/automat/_test/test_visualize.py
 lib/python${MODPY_VERSION}/site-packages/automat/_visualize.py
