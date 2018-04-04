@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.70 2018/03/30 10:37:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.71 2018/04/04 13:06:02 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -162,10 +162,14 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/billing/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/annotations.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/annotations.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/assets.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/assets.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/store.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/store.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/taxonomies.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/taxonomies.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/category_manager/utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/cloudbuild/
@@ -1063,13 +1067,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/machine_types/__init__.p
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/machine_types/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/machine_types/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/machine_types/flags.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/flags.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/flags.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/util.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/maintenance_policies/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/managed_instance_groups/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/managed_instance_groups/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/compute/managed_instance_groups/__init__.pyc
@@ -3464,10 +3461,14 @@ google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/create.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/delete.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/describe.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/list.yaml
+google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/update.py
+google-cloud-sdk/lib/surface/category_manager/taxonomies/annotations/update.pyc
 google-cloud-sdk/lib/surface/category_manager/taxonomies/create.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/delete.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/describe.yaml
 google-cloud-sdk/lib/surface/category_manager/taxonomies/list.yaml
+google-cloud-sdk/lib/surface/category_manager/taxonomies/update.py
+google-cloud-sdk/lib/surface/category_manager/taxonomies/update.pyc
 google-cloud-sdk/lib/surface/cloud_shell/
 google-cloud-sdk/lib/surface/cloud_shell/__init__.py
 google-cloud-sdk/lib/surface/cloud_shell/__init__.pyc
@@ -3884,8 +3885,6 @@ google-cloud-sdk/lib/surface/compute/instances/add_iam_policy_binding.py
 google-cloud-sdk/lib/surface/compute/instances/add_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/compute/instances/add_labels.py
 google-cloud-sdk/lib/surface/compute/instances/add_labels.pyc
-google-cloud-sdk/lib/surface/compute/instances/add_maintenance_policies.py
-google-cloud-sdk/lib/surface/compute/instances/add_maintenance_policies.pyc
 google-cloud-sdk/lib/surface/compute/instances/add_metadata.py
 google-cloud-sdk/lib/surface/compute/instances/add_metadata.pyc
 google-cloud-sdk/lib/surface/compute/instances/add_tags.py
@@ -3921,8 +3920,6 @@ google-cloud-sdk/lib/surface/compute/instances/remove_iam_policy_binding.py
 google-cloud-sdk/lib/surface/compute/instances/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/compute/instances/remove_labels.py
 google-cloud-sdk/lib/surface/compute/instances/remove_labels.pyc
-google-cloud-sdk/lib/surface/compute/instances/remove_maintenance_policies.py
-google-cloud-sdk/lib/surface/compute/instances/remove_maintenance_policies.pyc
 google-cloud-sdk/lib/surface/compute/instances/remove_metadata.py
 google-cloud-sdk/lib/surface/compute/instances/remove_metadata.pyc
 google-cloud-sdk/lib/surface/compute/instances/remove_tags.py
@@ -4020,17 +4017,6 @@ google-cloud-sdk/lib/surface/compute/machine_types/describe.py
 google-cloud-sdk/lib/surface/compute/machine_types/describe.pyc
 google-cloud-sdk/lib/surface/compute/machine_types/list.py
 google-cloud-sdk/lib/surface/compute/machine_types/list.pyc
-google-cloud-sdk/lib/surface/compute/maintenance_policies/
-google-cloud-sdk/lib/surface/compute/maintenance_policies/__init__.py
-google-cloud-sdk/lib/surface/compute/maintenance_policies/__init__.pyc
-google-cloud-sdk/lib/surface/compute/maintenance_policies/create.py
-google-cloud-sdk/lib/surface/compute/maintenance_policies/create.pyc
-google-cloud-sdk/lib/surface/compute/maintenance_policies/delete.py
-google-cloud-sdk/lib/surface/compute/maintenance_policies/delete.pyc
-google-cloud-sdk/lib/surface/compute/maintenance_policies/describe.py
-google-cloud-sdk/lib/surface/compute/maintenance_policies/describe.pyc
-google-cloud-sdk/lib/surface/compute/maintenance_policies/list.py
-google-cloud-sdk/lib/surface/compute/maintenance_policies/list.pyc
 google-cloud-sdk/lib/surface/compute/networks/
 google-cloud-sdk/lib/surface/compute/networks/__init__.py
 google-cloud-sdk/lib/surface/compute/networks/__init__.pyc
@@ -5930,6 +5916,7 @@ google-cloud-sdk/lib/surface/pubsub/topics/remove_iam_policy_binding.py
 google-cloud-sdk/lib/surface/pubsub/topics/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/pubsub/topics/set_iam_policy.py
 google-cloud-sdk/lib/surface/pubsub/topics/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/pubsub/topics/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/pubsub/topics/update.py
 google-cloud-sdk/lib/surface/pubsub/topics/update.pyc
 google-cloud-sdk/lib/surface/resource_manager/
@@ -8937,6 +8924,8 @@ google-cloud-sdk/platform/bq/third_party/rsa/pem.py
 google-cloud-sdk/platform/bq/third_party/rsa/pem.pyc
 google-cloud-sdk/platform/bq/third_party/rsa/pkcs1.py
 google-cloud-sdk/platform/bq/third_party/rsa/pkcs1.pyc
+google-cloud-sdk/platform/bq/third_party/rsa/randnum.py
+google-cloud-sdk/platform/bq/third_party/rsa/randnum.pyc
 google-cloud-sdk/platform/bq/third_party/rsa/transform.py
 google-cloud-sdk/platform/bq/third_party/rsa/transform.pyc
 google-cloud-sdk/platform/bq/third_party/rsa/varblock.py
@@ -9155,12 +9144,12 @@ google-cloud-sdk/platform/gsutil/gslib/addlhelp/crc32c.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/crc32c.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/creds.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/creds.pyc
-google-cloud-sdk/platform/gsutil/gslib/addlhelp/csek.py
-google-cloud-sdk/platform/gsutil/gslib/addlhelp/csek.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/dev.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/dev.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/encoding.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/encoding.pyc
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/encryption.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/encryption.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/metadata.py
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/metadata.pyc
 google-cloud-sdk/platform/gsutil/gslib/addlhelp/naming.py
@@ -9230,6 +9219,8 @@ google-cloud-sdk/platform/gsutil/gslib/commands/help.py
 google-cloud-sdk/platform/gsutil/gslib/commands/help.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/iam.py
 google-cloud-sdk/platform/gsutil/gslib/commands/iam.pyc
+google-cloud-sdk/platform/gsutil/gslib/commands/kms.py
+google-cloud-sdk/platform/gsutil/gslib/commands/kms.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/label.py
 google-cloud-sdk/platform/gsutil/gslib/commands/label.pyc
 google-cloud-sdk/platform/gsutil/gslib/commands/lifecycle.py
@@ -9302,6 +9293,8 @@ google-cloud-sdk/platform/gsutil/gslib/help_provider.py
 google-cloud-sdk/platform/gsutil/gslib/help_provider.pyc
 google-cloud-sdk/platform/gsutil/gslib/iamhelpers.py
 google-cloud-sdk/platform/gsutil/gslib/iamhelpers.pyc
+google-cloud-sdk/platform/gsutil/gslib/kms_api.py
+google-cloud-sdk/platform/gsutil/gslib/kms_api.pyc
 google-cloud-sdk/platform/gsutil/gslib/ls_helper.py
 google-cloud-sdk/platform/gsutil/gslib/ls_helper.pyc
 google-cloud-sdk/platform/gsutil/gslib/metrics.py
@@ -9403,6 +9396,8 @@ google-cloud-sdk/platform/gsutil/gslib/tests/test_help.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_help.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_iam.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_iam.pyc
+google-cloud-sdk/platform/gsutil/gslib/tests/test_kms.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_kms.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_label.py
 google-cloud-sdk/platform/gsutil/gslib/tests/test_label.pyc
 google-cloud-sdk/platform/gsutil/gslib/tests/test_lifecycle.py
@@ -9487,6 +9482,15 @@ google-cloud-sdk/platform/gsutil/gslib/tests/util.pyc
 google-cloud-sdk/platform/gsutil/gslib/third_party/
 google-cloud-sdk/platform/gsutil/gslib/third_party/__init__.py
 google-cloud-sdk/platform/gsutil/gslib/third_party/__init__.pyc
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/__init__.pyc
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/cloudkms_v1_client.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/cloudkms_v1_client.pyc
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/cloudkms_v1_messages.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/cloudkms_v1_messages.pyc
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/resources.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/kms_apitools/resources.pyc
 google-cloud-sdk/platform/gsutil/gslib/third_party/pubsub_apitools/
 google-cloud-sdk/platform/gsutil/gslib/third_party/pubsub_apitools/__init__.py
 google-cloud-sdk/platform/gsutil/gslib/third_party/pubsub_apitools/__init__.pyc
