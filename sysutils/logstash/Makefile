@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/04 17:18:18 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
@@ -6,13 +6,13 @@ V=			2.4.0
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
 EPOCH=			0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://www.elastic.co/products/logstash
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Pavel Korovin <pvk@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
