@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.8 2018/01/04 14:47:20 sthen Exp $
+$OpenBSD: patch-tests_playTests_sh,v 1.9 2018/04/04 16:10:02 bket Exp $
 Index: tests/playTests.sh
 --- tests/playTests.sh.orig
 +++ tests/playTests.sh
@@ -10,7 +10,7 @@ Index: tests/playTests.sh
    *) MD5SUM="md5sum" ;;
  esac
  
-@@ -237,7 +238,7 @@ rm ./*.tmp ./*.zstd
+@@ -258,7 +259,7 @@ rm ./*.tmp ./*.zstd
  $ECHO "frame concatenation tests completed"
  
  
