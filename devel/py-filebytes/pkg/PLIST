@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/04 19:00:45 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/filebytes/
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/filebytes/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}ctypes_helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}mach_o.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}oat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}pe.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/filebytes/binary.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/ctypes_helper.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/elf.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/enum.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/mach_o.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/oat.py
+lib/python${MODPY_VERSION}/site-packages/filebytes/pe.py
