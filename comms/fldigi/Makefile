@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/30 22:02:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/04/04 13:42:54 sthen Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
 # skip alpha-test versions (x.x.x.x format version numbers)
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
-DISTNAME=	fldigi-4.0.13
+DISTNAME=	fldigi-4.0.16
 
 CATEGORIES=	comms hamradio
 
