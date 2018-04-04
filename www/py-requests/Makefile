@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/21 23:20:10 jung Exp $
+# $OpenBSD: Makefile,v 1.27 2018/04/04 18:59:59 danj Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
 MODPY_EGG_VERSION=	2.18.4
-PKGNAME=		py-requests-${MODPY_EGG_VERSION}
+DISTNAME=		requests-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
-GH_ACCOUNT=		kennethreitz
-GH_PROJECT=		requests
-GH_TAGNAME=		v${MODPY_EGG_VERSION}
+# XXX remove during next update
+DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -35,6 +36,7 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 FLAVORS=		python3
 FLAVOR?=
 
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 WRKDIST=		${WRKDIR}/requests-${MODPY_EGG_VERSION}
