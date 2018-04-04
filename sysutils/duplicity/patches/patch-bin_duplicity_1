@@ -1,9 +1,10 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.6 2017/01/14 01:59:05 danj Exp $
+$OpenBSD: patch-bin_duplicity_1,v 1.7 2018/04/04 20:29:49 danj Exp $
 Document the ssh backend change from paramiko to pexpect.
---- bin/duplicity.1.orig	Sat Dec 31 11:33:12 2016
-+++ bin/duplicity.1	Mon Jan  2 19:46:22 2017
-@@ -446,7 +446,7 @@ should be given relative to the root of the directory 
- 
+Index: bin/duplicity.1
+--- bin/duplicity.1.orig
++++ bin/duplicity.1
+@@ -437,7 +437,7 @@ See the
+ argument for more information.
  
  .TP
 -.BI "--file-prefix, --file-prefix-manifest, --file-prefix-archive, --file-prefix-signature
@@ -11,7 +12,7 @@ Document the ssh backend change from paramiko to pexpect.
  Adds a prefix to all files, manifest files, archive files, and/or signature files.
  
  The same set of prefixes must be passed in on backup and restore.
-@@ -864,7 +864,6 @@ currently supports only the
+@@ -855,7 +855,6 @@ currently supports only the
  or
  .B -oIdentityFile
  setting. If needed provide more host specific options via ssh_config file.
