@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_runtime_malloc_h,v 1.1 2018/04/05 17:47:30 jsing Exp $
+
+Index: src/runtime/malloc.h
+--- src/runtime/malloc.h.orig
++++ src/runtime/malloc.h
+@@ -197,6 +197,7 @@ struct MLink
+ // if accessed.  Used only for debugging the runtime.
+ 
+ void*	runtime·sysAlloc(uintptr nbytes, uint64 *stat);
++void	runtime·sysMarkStack(void *v, uintptr nbytes);
+ void	runtime·SysFree(void *v, uintptr nbytes, uint64 *stat);
+ void	runtime·SysUnused(void *v, uintptr nbytes);
+ void	runtime·SysUsed(void *v, uintptr nbytes);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_runtime_defs_openbsd_386_h,v 1.1 2018/04/05 17:47:30 jsing Exp $
+
+Index: src/runtime/defs_openbsd_386.h
+--- src/runtime/defs_openbsd_386.h.orig
++++ src/runtime/defs_openbsd_386.h
+@@ -14,6 +14,7 @@ enum {
+ 	MAP_ANON	= 0x1000,
+ 	MAP_PRIVATE	= 0x2,
+ 	MAP_FIXED	= 0x10,
++	MAP_STACK	= 0x4000,
+ 
+ 	MADV_FREE	= 0x6,
+ 
