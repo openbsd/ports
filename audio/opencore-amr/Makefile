@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/05 11:41:25 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/05 11:53:44 jca Exp $
 
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
-DISTNAME=	opencore-amr-0.1.3
-REVISION=	1
+DISTNAME=	opencore-amr-0.1.5
 
 SHARED_LIBS +=  opencore-amrnb       0.0      # .0.3
 SHARED_LIBS +=  opencore-amrwb       0.0      # .0.3
