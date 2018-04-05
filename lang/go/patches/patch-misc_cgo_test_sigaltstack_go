@@ -1,0 +1,30 @@
+$OpenBSD: patch-misc_cgo_test_sigaltstack_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: misc/cgo/test/sigaltstack.go
+--- misc/cgo/test/sigaltstack.go.orig
++++ misc/cgo/test/sigaltstack.go
+@@ -13,6 +13,7 @@ package cgotest
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/mman.h>
+ 
+ static stack_t oss;
+ static char signalStack[SIGSTKSZ];
+@@ -20,7 +21,16 @@ static char signalStack[SIGSTKSZ];
+ static void changeSignalStack(void) {
+ 	stack_t ss;
+ 	memset(&ss, 0, sizeof ss);
++#if defined(__OpenBSD__)
++	// OpenBSD requires stacks be allocated with MAP_STACK.
++	if ((ss.ss_sp = mmap(0, SIGSTKSZ, PROT_READ|PROT_WRITE,
++	    MAP_ANON|MAP_PRIVATE|MAP_STACK, -1, 0)) == MAP_FAILED) {
++		perror("mmap");
++		abort();
++	}
++#else
+ 	ss.ss_sp = signalStack;
++#endif
+ 	ss.ss_flags = 0;
+ 	ss.ss_size = SIGSTKSZ;
+ 	if (sigaltstack(&ss, &oss) < 0) {

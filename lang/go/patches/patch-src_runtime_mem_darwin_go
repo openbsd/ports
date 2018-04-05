@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_runtime_mem_darwin_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: src/runtime/mem_darwin.go
+--- src/runtime/mem_darwin.go.orig
++++ src/runtime/mem_darwin.go
+@@ -18,6 +18,18 @@ func sysAlloc(n uintptr, sysStat *uint64) unsafe.Point
+ 	return v
+ }
+ 
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysMarkStack(v unsafe.Pointer, n uintptr) {
++}
++
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysUnmarkStack(v unsafe.Pointer, n uintptr) {
++}
++
+ func sysUnused(v unsafe.Pointer, n uintptr) {
+ 	// Linux's MADV_DONTNEED is like BSD's MADV_FREE.
+ 	madvise(v, n, _MADV_FREE)

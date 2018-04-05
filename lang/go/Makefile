@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/03/14 14:14:36 jsing Exp $
+# $OpenBSD: Makefile,v 1.50 2018/04/05 18:38:38 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -10,6 +10,7 @@ DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
 PKGSPEC =		go-=${VERSION}
 CATEGORIES =		lang
+REVISION =		0
 
 HOMEPAGE =		https://golang.org/
 

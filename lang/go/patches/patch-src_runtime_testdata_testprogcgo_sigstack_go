@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_runtime_testdata_testprogcgo_sigstack_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: src/runtime/testdata/testprogcgo/sigstack.go
+--- src/runtime/testdata/testprogcgo/sigstack.go.orig
++++ src/runtime/testdata/testprogcgo/sigstack.go
+@@ -21,7 +21,13 @@ extern void SigStackCallback();
+ 
+ static void* WithSigStack(void* arg __attribute__((unused))) {
+ 	// Set up an alternate system stack.
+-	void* base = mmap(0, SIGSTKSZ, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANON, -1, 0);
++	void* base;
++	int flags = MAP_PRIVATE|MAP_ANON;
++
++#if defined(__OpenBSD__)
++	flags |= MAP_STACK;
++#endif
++	base = mmap(0, SIGSTKSZ, PROT_READ|PROT_WRITE, flags, -1, 0);
+ 	if (base == MAP_FAILED) {
+ 		perror("mmap failed");
+ 		abort();

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_runtime_mem_linux_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: src/runtime/mem_linux.go
+--- src/runtime/mem_linux.go.orig
++++ src/runtime/mem_linux.go
+@@ -74,6 +74,18 @@ func sysAlloc(n uintptr, sysStat *uint64) unsafe.Point
+ 	return p
+ }
+ 
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysMarkStack(v unsafe.Pointer, n uintptr) {
++}
++
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysUnmarkStack(v unsafe.Pointer, n uintptr) {
++}
++
+ func sysUnused(v unsafe.Pointer, n uintptr) {
+ 	// By default, Linux's "transparent huge page" support will
+ 	// merge pages into a huge page if there's even a single

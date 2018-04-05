@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_runtime_defs_openbsd_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: src/runtime/defs_openbsd.go
+--- src/runtime/defs_openbsd.go.orig
++++ src/runtime/defs_openbsd.go
+@@ -37,6 +37,7 @@ const (
+ 	MAP_ANON    = C.MAP_ANON
+ 	MAP_PRIVATE = C.MAP_PRIVATE
+ 	MAP_FIXED   = C.MAP_FIXED
++	MAP_STACK   = C.MAP_STACK
+ 
+ 	MADV_FREE = C.MADV_FREE
+ 

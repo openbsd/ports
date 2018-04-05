@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_runtime_mem_windows_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+
+Index: src/runtime/mem_windows.go
+--- src/runtime/mem_windows.go.orig
++++ src/runtime/mem_windows.go
+@@ -29,6 +29,18 @@ func sysAlloc(n uintptr, sysStat *uint64) unsafe.Point
+ 	return unsafe.Pointer(stdcall4(_VirtualAlloc, 0, n, _MEM_COMMIT|_MEM_RESERVE, _PAGE_READWRITE))
+ }
+ 
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysMarkStack(v unsafe.Pointer, n uintptr) {
++}
++
++// Don't split the stack as this method may be invoked without a valid G, which
++// prevents us from allocating more stack.
++//go:nosplit
++func sysUnmarkStack(v unsafe.Pointer, n uintptr) {
++}
++
+ func sysUnused(v unsafe.Pointer, n uintptr) {
+ 	r := stdcall3(_VirtualFree, uintptr(v), n, _MEM_DECOMMIT)
+ 	if r != 0 {
