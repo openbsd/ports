@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.20 2017/12/16 18:10:49 zhuk Exp $
+# $OpenBSD: portbump,v 1.21 2018/04/05 13:23:28 sthen Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -77,6 +77,9 @@ my @_REV_NEIGHBORS = qw(
 	GNOME_PROJECT
 	PKGNAME
 	QT5NAME
+	XFCE_VERSION
+	MOZILLA_VERSION
+	MODPY_EGG_VERSION
 	REVISION
 	V
 	VERSION
