@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1387 2018/04/05 11:50:51 jca Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1388 2018/04/05 11:53:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -857,7 +857,7 @@ TEST_ENV ?=
 ALL_TEST_FLAGS = ${MAKE_FLAGS} ${TEST_FLAGS}
 ALL_TEST_ENV = ${MAKE_ENV} ${TEST_ENV}
 TEST_LOGFILE ?= ${WRKDIR}/test.log
-TEST_LOG ?= | ${_PBUILD} tee ${TEST_LOGFILE}
+TEST_LOG = | ${_PBUILD} tee ${TEST_LOGFILE}
 IS_INTERACTIVE ?= No
 TEST_IS_INTERACTIVE ?= No
 
