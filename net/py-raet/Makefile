@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/22 07:36:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/05 11:52:06 ajacoutot Exp $
 
 COMMENT=		Reliable Asynchronous Event Transport protocol
 
 MODPY_EGG_VERSION=	0.6.8
 DISTNAME=		raet-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net
 
 HOMEPAGE=		https://github.com/saltstack/raet
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes

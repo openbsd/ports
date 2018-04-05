@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2018/02/26 20:18:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/05 11:52:06 ajacoutot Exp $
 
 COMMENT=		python bindings for libsodium/tweetnacl based on ctypes
 
 MODPY_EGG_VERSION=	1.6.1
 DISTNAME=		libnacl-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
 HOMEPAGE=		https://libnacl.readthedocs.org/en/latest/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
