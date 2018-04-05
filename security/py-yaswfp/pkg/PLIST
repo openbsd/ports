@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/05 08:15:11 rpointel Exp $
+bin/swfparser
+lib/python${MODPY_VERSION}/site-packages/yaswfp/
+lib/python${MODPY_VERSION}/site-packages/yaswfp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/yaswfp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/yaswfp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yaswfp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yaswfp/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yaswfp/${MODPY_PYCACHE}swfparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yaswfp/helpers.py
+lib/python${MODPY_VERSION}/site-packages/yaswfp/swfparser.py
