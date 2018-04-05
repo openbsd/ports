@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/01/14 20:40:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/04/05 20:12:58 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -151,7 +151,7 @@ include/botan-2/botan/mem_ops.h
 include/botan-2/botan/mgf1.h
 include/botan-2/botan/misty1.h
 include/botan-2/botan/mode_pad.h
-include/botan-2/botan/mp_types.h
+include/botan-2/botan/monty.h
 include/botan-2/botan/mul128.h
 include/botan-2/botan/mutex.h
 include/botan-2/botan/name_constraint.h
@@ -247,8 +247,10 @@ include/botan-2/botan/sym_algo.h
 include/botan-2/botan/symkey.h
 include/botan-2/botan/system_rng.h
 include/botan-2/botan/threefish.h
+include/botan-2/botan/threefish_512.h
 include/botan-2/botan/tiger.h
 include/botan-2/botan/tls_alert.h
+include/botan-2/botan/tls_algos.h
 include/botan-2/botan/tls_blocking.h
 include/botan-2/botan/tls_callbacks.h
 include/botan-2/botan/tls_channel.h
@@ -323,11 +325,14 @@ share/botan-2/data/asn1_print/input2.der
 share/botan-2/data/asn1_print/input3.der
 share/botan-2/data/asn1_print/input4.der
 share/botan-2/data/asn1_print/input5.der
+share/botan-2/data/asn1_print/input6.der
+share/botan-2/data/asn1_print/input6.pem
 share/botan-2/data/asn1_print/output1.txt
 share/botan-2/data/asn1_print/output2.txt
 share/botan-2/data/asn1_print/output3.txt
 share/botan-2/data/asn1_print/output4.txt
 share/botan-2/data/asn1_print/output5.txt
+share/botan-2/data/asn1_print/output6.txt
 share/botan-2/data/base64.vec
 share/botan-2/data/block/
 share/botan-2/data/block/aes.vec
@@ -362,6 +367,7 @@ share/botan-2/data/bn/lshift.vec
 share/botan-2/data/bn/mod.vec
 share/botan-2/data/bn/mul.vec
 share/botan-2/data/bn/powmod.vec
+share/botan-2/data/bn/random.vec
 share/botan-2/data/bn/ressol.vec
 share/botan-2/data/bn/rshift.vec
 share/botan-2/data/bn/sqr.vec
@@ -447,22 +453,26 @@ share/botan-2/data/pubkey/dh_invalid.vec
 share/botan-2/data/pubkey/dlies.vec
 share/botan-2/data/pubkey/dsa_prob.vec
 share/botan-2/data/pubkey/dsa_rfc6979.vec
+share/botan-2/data/pubkey/dsa_verify.vec
 share/botan-2/data/pubkey/ecc.vec
 share/botan-2/data/pubkey/ecc_invalid.vec
 share/botan-2/data/pubkey/ecdh.vec
 share/botan-2/data/pubkey/ecdsa_invalid.vec
 share/botan-2/data/pubkey/ecdsa_prob.vec
 share/botan-2/data/pubkey/ecdsa_rfc6979.vec
+share/botan-2/data/pubkey/ecdsa_verify.vec
 share/botan-2/data/pubkey/ecgdsa.vec
 share/botan-2/data/pubkey/ecies-18033.vec
 share/botan-2/data/pubkey/ecies.vec
 share/botan-2/data/pubkey/eckcdsa.vec
 share/botan-2/data/pubkey/ed25519.vec
+share/botan-2/data/pubkey/ed25519_verify.vec
 share/botan-2/data/pubkey/elgamal.vec
 share/botan-2/data/pubkey/gost_3410_sign.vec
 share/botan-2/data/pubkey/gost_3410_verify.vec
 share/botan-2/data/pubkey/mce.vec
 share/botan-2/data/pubkey/newhope.vec
+share/botan-2/data/pubkey/rsa_decrypt.vec
 share/botan-2/data/pubkey/rsa_invalid.vec
 share/botan-2/data/pubkey/rsa_kem.vec
 share/botan-2/data/pubkey/rsa_pss.vec
@@ -489,11 +499,13 @@ share/botan-2/data/stream/salsa20.vec
 share/botan-2/data/stream/shake128.vec
 share/botan-2/data/timing/
 share/botan-2/data/timing/bleichenbacher.vec
+share/botan-2/data/timing/ecc_mul.vec
 share/botan-2/data/timing/ecdsa.vec
+share/botan-2/data/timing/inverse_mod.vec
 share/botan-2/data/timing/lucky13sec3.vec
 share/botan-2/data/timing/lucky13sec4sha1.vec
 share/botan-2/data/timing/lucky13sec4sha256.vec
-share/botan-2/data/timing/lucky13sha384.vec
+share/botan-2/data/timing/lucky13sec4sha384.vec
 share/botan-2/data/timing/manger.vec
 share/botan-2/data/tls/
 share/botan-2/data/tls-policy/
@@ -1022,6 +1034,7 @@ share/botan-2/data/x509/ecc/link_SHA256.cer
 share/botan-2/data/x509/ecc/nodompar_private.pkcs8.pem
 share/botan-2/data/x509/ecc/root2_SHA256.cer
 share/botan-2/data/x509/ecc/root_SHA1.163.crt
+share/botan-2/data/x509/ecc/secp384r1_seed.pem
 share/botan-2/data/x509/ecc/withdompar_private.pkcs8.pem
 share/botan-2/data/x509/extended/
 share/botan-2/data/x509/extended/01/
@@ -1039,6 +1052,8 @@ share/botan-2/data/x509/extended/03/int1.crt
 share/botan-2/data/x509/extended/03/root.crt
 share/botan-2/data/x509/extended/expected.txt
 share/botan-2/data/x509/misc/
+share/botan-2/data/x509/misc/bundledcertdir/
+share/botan-2/data/x509/misc/bundledcertdir/ValidCert.pem
 share/botan-2/data/x509/misc/cert_seq.der
 share/botan-2/data/x509/misc/contains_authority_info_access.pem
 share/botan-2/data/x509/misc/contains_authority_info_access_with_two_ca_issuers.pem
