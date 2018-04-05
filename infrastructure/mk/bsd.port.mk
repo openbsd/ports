@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1386 2018/03/31 13:32:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1387 2018/04/05 11:50:51 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -857,7 +857,7 @@ TEST_ENV ?=
 ALL_TEST_FLAGS = ${MAKE_FLAGS} ${TEST_FLAGS}
 ALL_TEST_ENV = ${MAKE_ENV} ${TEST_ENV}
 TEST_LOGFILE ?= ${WRKDIR}/test.log
-TEST_LOG ?= | tee ${TEST_LOGFILE}
+TEST_LOG ?= | ${_PBUILD} tee ${TEST_LOGFILE}
 IS_INTERACTIVE ?= No
 TEST_IS_INTERACTIVE ?= No
 
@@ -2765,7 +2765,7 @@ ${_TEST_COOKIE}: ${_BUILD_COOKIE}
 .  endif
 .  if target(do-test)
 	@cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
-		(exec; set +e; PKGPATH=${PKGPATH} ${MAKE} do-test; \
+		(exec; set +e; PKGPATH=${PKGPATH} ${_PBUILD} ${MAKE} do-test; \
 		echo $$? >&4) 2>&1 ${TEST_LOG}`
 .  else
 # What TEST normally does:
