@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2018/03/15 15:15:07 robert Exp $
+# $OpenBSD: Makefile,v 1.184 2018/04/05 21:49:33 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.0
-VERSION=	${BV}.2.1
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -103,7 +103,7 @@ DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.3.tar.xz:0
 DISTFILES += libmwaw-0.3.13.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.13.1.tar.gz:0
+DISTFILES += liborcus-0.13.3.tar.gz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
@@ -153,6 +153,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/gtar \
 		databases/db/v4 \
 		devel/bison \
+		devel/cppunit \
 		devel/gettext-tools \
 		devel/gpatch \
 		devel/gperf \
