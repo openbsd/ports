@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/07 21:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/05 18:01:42 pvk Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=0.12.22
 DISTNAME=	SOAPpy-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/^/py-/}
 CATEGORIES=    	devel www
-REVISION=	1
+REVISION=	2
 
 MODULES=	lang/python
 
@@ -21,7 +21,6 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=	devel/py-fpconst
 RUN_DEPENDS=	devel/py-fpconst \
 		textproc/py-defusedxml \
-		textproc/py-xml \
 		www/py-wtools
 TEST_DEPENDS=${RUN_DEPENDS}
 
