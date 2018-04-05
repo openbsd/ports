@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.2 2018/03/18 11:30:55 robert Exp $
+$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.3 2018/04/05 19:51:35 robert Exp $
 
 Index: ECtools/spamd/kopano_spamd/__init__.py
 --- ECtools/spamd/kopano_spamd/__init__.py.orig
 +++ ECtools/spamd/kopano_spamd/__init__.py
-@@ -19,10 +19,10 @@ kopano-spamd - ICS driven spam learning daemon for Kop
+@@ -19,12 +19,12 @@ kopano-spamd - ICS driven spam learning daemon for Kop
  """
  
  CONFIG = {
@@ -11,10 +11,14 @@ Index: ECtools/spamd/kopano_spamd/__init__.py
 -    'ham_dir': Config.string(default="/var/lib/kopano/spamd/ham"),
 -    'spam_db': Config.string(default="/var/lib/kopano/spamd/spam.db"),
 -    'sa_group': Config.string(default="amavis"),
+-    'run_as_user': Config.string(default="kopano"),
+-    'run_as_group': Config.string(default="kopano"),
 +    'spam_dir': Config.string(default="/var/db/kopano/spamd/spam"),
 +    'ham_dir': Config.string(default="/var/db/kopano/spamd/ham"),
 +    'spam_db': Config.string(default="/var/db/kopano/spamd/spam.db"),
 +    'sa_group': Config.string(default="_spamdaemon"),
++    'run_as_user': Config.string(default="_kopano"),
++    'run_as_group': Config.string(default="_kopano"),
      'learn_ham': Config.boolean(default=True)
  }
  

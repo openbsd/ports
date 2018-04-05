@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2018/03/29 19:41:46 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2018/04/05 19:51:35 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -284,6 +284,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/parser.py
 lib/python${MODPY_VERSION}/site-packages/kopano/parser.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/permission.py
 lib/python${MODPY_VERSION}/site-packages/kopano/permission.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/picture.py
+lib/python${MODPY_VERSION}/site-packages/kopano/picture.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/pidlid.py
 lib/python${MODPY_VERSION}/site-packages/kopano/pidlid.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/properties.py
@@ -533,6 +535,8 @@ share/examples/kopano/
 @group
 @sample ${SYSCONFDIR}/kopano/sslkeys/
 share/examples/kopano/apparmor.d/
+share/examples/kopano/apparmor.d/kopano-client.aa
+share/examples/kopano/apparmor.d/kopano-coredump.aa
 share/examples/kopano/apparmor.d/usr.sbin.kopano-dagent
 share/examples/kopano/apparmor.d/usr.sbin.kopano-search
 share/examples/kopano/apparmor.d/usr.sbin.kopano-server

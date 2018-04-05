@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.3 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.4 2018/04/05 19:51:35 robert Exp $
 
 Index: spooler/DAgent.cpp
 --- spooler/DAgent.cpp.orig
 +++ spooler/DAgent.cpp
-@@ -71,6 +71,11 @@
+@@ -72,6 +72,11 @@
  #include <pwd.h>
  #include "TmpPath.h"
  
@@ -15,7 +15,7 @@ Index: spooler/DAgent.cpp
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3356,8 +3361,8 @@ int main(int argc, char *argv[]) {
+@@ -3375,8 +3380,8 @@ int main(int argc, char *argv[]) {
  	static const configsetting_t lpDefaults[] = {
  		{ "server_bind", "" },
  		{ "server_bind_intf", "" },
@@ -26,8 +26,8 @@ Index: spooler/DAgent.cpp
  		{ "pid_file", "/var/run/kopano/dagent.pid" },
  		{"coredump_enabled", "systemdefault"},
  		{"lmtp_port", "2003", CONFIGSETTING_NONEMPTY},
-@@ -3376,12 +3381,12 @@ int main(int argc, char *argv[]) {
- 		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
+@@ -3395,12 +3400,12 @@ int main(int argc, char *argv[]) {
+ 		{ "log_raw_message", "error", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
 -		{ "mr_autoaccepter", "/usr/sbin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
