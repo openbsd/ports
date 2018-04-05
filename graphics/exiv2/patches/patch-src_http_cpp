@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_http_cpp,v 1.1 2015/11/21 15:34:46 jca Exp $
---- src/http.cpp.orig	Thu Nov 19 22:17:01 2015
-+++ src/http.cpp	Thu Nov 19 22:18:16 2015
-@@ -35,6 +35,7 @@
+$OpenBSD: patch-src_http_cpp,v 1.2 2018/04/05 21:21:52 rsadowski Exp $
+Index: src/http.cpp
+--- src/http.cpp.orig
++++ src/http.cpp
+@@ -41,6 +41,7 @@
  #include <time.h>
  #include <sys/stat.h>
  #include <string.h>

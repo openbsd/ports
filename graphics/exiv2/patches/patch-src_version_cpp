@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_version_cpp,v 1.4 2015/11/21 15:33:56 jca Exp $
---- src/version.cpp.orig	Sat May  9 00:26:36 2015
-+++ src/version.cpp	Thu Nov 19 19:30:30 2015
-@@ -81,6 +81,7 @@ namespace Exiv2 {
+$OpenBSD: patch-src_version_cpp,v 1.5 2018/04/05 21:21:52 rsadowski Exp $
+Index: src/version.cpp
+--- src/version.cpp.orig
++++ src/version.cpp
+@@ -126,6 +126,7 @@ namespace Exiv2 {
          return os.str();
      }
  

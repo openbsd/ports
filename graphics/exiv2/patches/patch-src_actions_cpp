@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_actions_cpp,v 1.1 2018/04/05 21:21:52 rsadowski Exp $
+
+XXX
+
+"By default pthread mutexes aren't recursive, this would be a problem if exiv2
+actually wants recursive mutexes.  With no static initializer for this type of
+mutex, I'll admit that it's a bit cumbersome to use." -- jca@
+
+Index: src/actions.cpp
+--- src/actions.cpp.orig
++++ src/actions.cpp
+@@ -2049,7 +2049,7 @@ namespace {
+   /* This is the critical section object (statically allocated). */
+   static pthread_mutex_t cs =  PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+  #else
+-  static pthread_mutex_t cs =  PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
++  static pthread_mutex_t cs =  PTHREAD_MUTEX_INITIALIZER;
+  #endif
+ #endif
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/11/21 15:33:56 jca Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/04/05 21:21:52 rsadowski Exp $
 @bin bin/exiv2
 include/exiv2/
 include/exiv2/basicio.hpp
@@ -19,6 +19,7 @@ include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
 include/exiv2/http.hpp
 include/exiv2/image.hpp
+include/exiv2/ini.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
@@ -32,12 +33,14 @@ include/exiv2/properties.hpp
 include/exiv2/psdimage.hpp
 include/exiv2/rafimage.hpp
 include/exiv2/rw2image.hpp
+include/exiv2/rwlock.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
 include/exiv2/tiffimage.hpp
 include/exiv2/types.hpp
 include/exiv2/value.hpp
 include/exiv2/version.hpp
+include/exiv2/webpimage.hpp
 include/exiv2/xmp.hpp
 include/exiv2/xmpsidecar.hpp
 lib/libexiv2.a
@@ -45,6 +48,7 @@ lib/libexiv2.la
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
+@man man/man1/exiv2samples.1
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/exiv2.mo
