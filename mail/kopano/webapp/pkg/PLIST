@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/03/16 15:33:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/04/05 19:52:13 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -382,7 +382,7 @@ kopano-webapp/client/resources/images/buttons/triangle_right_stop_outline.png
 kopano-webapp/client/resources/images/default_contact_profile.png
 kopano-webapp/client/resources/images/favicon.ico
 kopano-webapp/client/resources/images/icons/
-kopano-webapp/client/resources/images/icons-s0c1b9a781d.png
+kopano-webapp/client/resources/images/icons-s4d78048d22.png
 kopano-webapp/client/resources/images/icons/arrow_down_l.png
 kopano-webapp/client/resources/images/icons/arrow_down_l_white.png
 kopano-webapp/client/resources/images/icons/arrow_down_s.png
