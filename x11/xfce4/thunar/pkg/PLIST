@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/11/26 08:02:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/04/06 07:33:43 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -32,6 +32,7 @@ lib/xfce4/panel/plugins/libthunar-tpa.so
 share/Thunar/
 share/Thunar/sendto/
 share/Thunar/sendto/thunar-sendto-email.desktop
+share/appdata/
 share/appdata/thunar.appdata.xml
 share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
