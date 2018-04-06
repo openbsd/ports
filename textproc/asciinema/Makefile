@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/11 07:42:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/06 07:41:56 ajacoutot Exp $
 
 COMMENT=		terminal session recorder
 
-MODPY_EGG_VERSION=	2.0.0
+MODPY_EGG_VERSION=	2.0.1
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema
