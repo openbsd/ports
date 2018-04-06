@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1722 2018/04/04 22:06:27 bcallah Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1723 2018/04/06 19:35:32 pvk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1569,6 +1569,7 @@
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
+     SUBDIR += py-twisted,python3
      SUBDIR += py-txaio
      SUBDIR += py-typing
      SUBDIR += py-typing,python3
