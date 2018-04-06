@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2018/02/02 03:55:42 millert Exp $
+# $OpenBSD: Makefile,v 1.44 2018/04/06 11:37:28 pascal Exp $
 
 COMMENT=		new MH mail handling program
 
-DISTNAME=		nmh-1.7
+DISTNAME=		nmh-1.7.1
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
-HOMEPAGE=		http://www.nongnu.org/nmh/
+HOMEPAGE=		https://www.nongnu.org/nmh/
+
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,6 +33,7 @@ FLAVOR?=
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+SEPARATE_BUILD=		Yes
 USE_GROFF =		Yes
 
 .if ${FLAVOR:Msasl}
