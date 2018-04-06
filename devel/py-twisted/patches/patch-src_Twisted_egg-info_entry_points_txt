@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Twisted_egg-info_entry_points_txt,v 1.1 2018/04/06 19:14:00 pvk Exp $
+
+Index: src/Twisted.egg-info/entry_points.txt
+--- src/Twisted.egg-info/entry_points.txt.orig
++++ src/Twisted.egg-info/entry_points.txt
+@@ -1,11 +1,11 @@
+ [console_scripts]
+-cftp = twisted.conch.scripts.cftp:run
+-ckeygen = twisted.conch.scripts.ckeygen:run
+-conch = twisted.conch.scripts.conch:run
+-mailmail = twisted.mail.scripts.mailmail:run
+-pyhtmlizer = twisted.scripts.htmlizer:run
+-tkconch = twisted.conch.scripts.tkconch:run
+-trial = twisted.scripts.trial:run
+-twist = twisted.application.twist._twist:Twist.main
+-twistd = twisted.scripts.twistd:run
++cftp${MODPY_BIN_SUFFIX} = twisted.conch.scripts.cftp:run
++ckeygen${MODPY_BIN_SUFFIX} = twisted.conch.scripts.ckeygen:run
++conch${MODPY_BIN_SUFFIX} = twisted.conch.scripts.conch:run
++mailmail${MODPY_BIN_SUFFIX} = twisted.mail.scripts.mailmail:run
++pyhtmlizer${MODPY_BIN_SUFFIX} = twisted.scripts.htmlizer:run
++tkconch${MODPY_BIN_SUFFIX} = twisted.conch.scripts.tkconch:run
++trial${MODPY_BIN_SUFFIX} = twisted.scripts.trial:run
++twist${MODPY_BIN_SUFFIX} = twisted.application.twist._twist:Twist.main
++twistd${MODPY_BIN_SUFFIX} = twisted.scripts.twistd:run
+ 
