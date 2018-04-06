@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/03/14 14:14:36 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/04/06 05:56:44 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -5358,6 +5358,7 @@ go/src/runtime/mcentral.go
 go/src/runtime/mem_bsd.go
 go/src/runtime/mem_darwin.go
 go/src/runtime/mem_linux.go
+go/src/runtime/mem_openbsd.go
 go/src/runtime/mem_plan9.go
 go/src/runtime/mem_windows.go
 go/src/runtime/memclr_386.s
