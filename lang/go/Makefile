@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.51 2018/04/06 05:56:44 jsing Exp $
+# $OpenBSD: Makefile,v 1.52 2018/04/06 13:01:39 kn Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.10
+VERSION =		1.10.1
 EXTRACT_SUFX =		.src.tar.gz
-DISTNAME = 		go${VERSION}
-PKGNAME = 		go-${VERSION}
+DISTNAME =		go${VERSION}
+PKGNAME =		go-${VERSION}
 PKGSPEC =		go-=${VERSION}
+
 CATEGORIES =		lang
-REVISION =		1
 
 HOMEPAGE =		https://golang.org/
 
-MAINTAINER = 		Joel Sing <jsing@openbsd.org>
+MAINTAINER =		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_stack_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+$OpenBSD: patch-src_runtime_stack_go,v 1.2 2018/04/06 13:01:39 kn Exp $
 
 Index: src/runtime/stack.go
 --- src/runtime/stack.go.orig
@@ -35,7 +35,7 @@ Index: src/runtime/stack.go
  			mheap_.freeManual(s, &memstats.stacks_inuse)
  		} else {
  			// If the GC is running, we can't return a
-@@ -1161,6 +1165,7 @@ func freeStackSpans() {
+@@ -1162,6 +1166,7 @@ func freeStackSpans() {
  			if s.allocCount == 0 {
  				list.remove(s)
  				s.manualFreeList = 0
@@ -43,7 +43,7 @@ Index: src/runtime/stack.go
  				mheap_.freeManual(s, &memstats.stacks_inuse)
  			}
  			s = next
-@@ -1175,6 +1180,7 @@ func freeStackSpans() {
+@@ -1176,6 +1181,7 @@ func freeStackSpans() {
  		for s := stackLarge.free[i].first; s != nil; {
  			next := s.next
  			stackLarge.free[i].remove(s)

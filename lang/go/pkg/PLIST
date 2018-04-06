@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/04/06 05:56:44 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/04/06 13:01:39 kn Exp $
 bin/go
 bin/gofmt
 go/
@@ -504,6 +504,9 @@ go/misc/cgo/testplugin/src/issue22175/plugin2.go
 go/misc/cgo/testplugin/src/issue22295.pkg/
 go/misc/cgo/testplugin/src/issue22295.pkg/main.go
 go/misc/cgo/testplugin/src/issue22295.pkg/plugin.go
+go/misc/cgo/testplugin/src/issue24351/
+go/misc/cgo/testplugin/src/issue24351/main.go
+go/misc/cgo/testplugin/src/issue24351/plugin.go
 go/misc/cgo/testplugin/src/plugin1/
 go/misc/cgo/testplugin/src/plugin1/plugin1.go
 go/misc/cgo/testplugin/src/plugin2/
@@ -2264,6 +2267,7 @@ go/src/cmd/internal/objabi/autotype.go
 go/src/cmd/internal/objabi/doc.go
 go/src/cmd/internal/objabi/flag.go
 go/src/cmd/internal/objabi/funcdata.go
+go/src/cmd/internal/objabi/funcid.go
 go/src/cmd/internal/objabi/head.go
 go/src/cmd/internal/objabi/line.go
 go/src/cmd/internal/objabi/path.go
@@ -3672,6 +3676,10 @@ go/src/go/internal/srcimporter/srcimporter_test.go
 go/src/go/internal/srcimporter/testdata/
 go/src/go/internal/srcimporter/testdata/issue20855/
 go/src/go/internal/srcimporter/testdata/issue20855/issue20855.go
+go/src/go/internal/srcimporter/testdata/issue23092/
+go/src/go/internal/srcimporter/testdata/issue23092/issue23092.go
+go/src/go/internal/srcimporter/testdata/issue24392/
+go/src/go/internal/srcimporter/testdata/issue24392/issue24392.go
 go/src/go/parser/
 go/src/go/parser/error_test.go
 go/src/go/parser/example_test.go
@@ -4625,6 +4633,7 @@ go/src/net/http/method.go
 go/src/net/http/npn_test.go
 go/src/net/http/pprof/
 go/src/net/http/pprof/pprof.go
+go/src/net/http/pprof/pprof_test.go
 go/src/net/http/proxy_test.go
 go/src/net/http/race.go
 go/src/net/http/range_test.go
@@ -7709,6 +7718,7 @@ go/test/fixedbugs/issue23522.go
 go/test/fixedbugs/issue23545.go
 go/test/fixedbugs/issue23719.go
 go/test/fixedbugs/issue23812.go
+go/test/fixedbugs/issue24449.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
