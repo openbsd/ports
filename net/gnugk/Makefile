@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.75 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.76 2018/04/07 07:41:42 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-DISTNAME=		gnugk-4.7.20171013
+V=			4.9
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
-GH_COMMIT=		240e0cc08d1cfe42a30a9b6f77e193e834dcd15b
-REVISION=		0
+GH_TAGNAME=		v${V:S/./_/}
+PKGNAME=		gnugk-${V}
 
 CATEGORIES=		net telephony
 
@@ -19,24 +19,24 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GeoIP SDL c crypto expat h323 kvm lber ldap ldap_r
-WANTLIB += lua${MODLUA_VERSION} m netsnmp netsnmpagent netsnmpmibs pt pthread
-WANTLIB += sasl2 ssh ssl ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} SDL c crypto curl expat h323 kvm
+WANTLIB += lber ldap ldap_r lua5.2 m maxminddb netsnmp netsnmpagent
+WANTLIB += netsnmpmibs nghttp2 pt sasl2 ssh ssl z
 
 MODULES=		lang/lua
 
 # uses luaL_newlib, lua_setglobal
 MODLUA_VERSION=5.2
 
-#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openh323gk/}
-
 BUILD_DEPENDS=		databases/mariadb \
 			databases/postgresql
 
-LIB_DEPENDS=		net/GeoIP \
-			net/h323plus>=1.26.8 \
+LIB_DEPENDS=		net/curl \
+			net/h323plus \
+			net/libmaxminddb \
 			net/net-snmp \
-			security/libssh
+			security/libssh \
+			www/nghttp2
 
 ALL_TARGET=		optshared
 USE_GMAKE=		Yes
