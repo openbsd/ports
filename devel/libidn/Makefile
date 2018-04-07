@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/20 11:37:32 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/07 11:42:36 ajacoutot Exp $
 
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.33
-REVISION=		0
+DISTNAME=		libidn-1.34
 
-SHARED_LIBS +=  idn                  17.2     # 17.16
+SHARED_LIBS +=  idn                  17.2     # 17.18
 
 CATEGORIES=		devel
 
@@ -27,12 +26,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-csharp \
 			--disable-java \
 			--disable-valgrind-tests
-
-post-extract:
-	rm ${WRKSRC}/contrib/doxygen/*.orig
-
-# hack to avoid regenerating docs
-post-patch:
-	touch -r ${WRKSRC}/lib/punycode.c${PATCHORIG} ${WRKSRC}/lib/punycode.c
 
 .include <bsd.port.mk>

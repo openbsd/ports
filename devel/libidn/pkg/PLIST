@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/08/04 07:27:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/04/07 11:42:36 ajacoutot Exp $
 @bin bin/idn
 include/idn-free.h
 include/idn-int.h
@@ -83,6 +83,7 @@ share/locale/pl/LC_MESSAGES/libidn.mo
 share/locale/pt_BR/LC_MESSAGES/libidn.mo
 share/locale/ro/LC_MESSAGES/libidn.mo
 share/locale/sr/LC_MESSAGES/libidn.mo
+share/locale/sv/LC_MESSAGES/libidn.mo
 share/locale/uk/LC_MESSAGES/libidn.mo
 share/locale/vi/LC_MESSAGES/libidn.mo
 share/locale/zh_CN/LC_MESSAGES/libidn.mo
