@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/04/06 07:15:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2018/04/07 14:56:24 ajacoutot Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	amd64 i386
@@ -15,6 +15,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.25.0
 CARGO_V =		0.26.0
 DISTNAME =		rustc-${V}-src
+REVISION = 0
 
 # rustc bootstrap version
 BV-amd64 =		1.25.0-20180326
@@ -75,7 +76,7 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/cmake
 BUILD_DEPENDS +=	shells/bash
-BUILD_DEPENDS +=	devel/llvm
+BUILD_DEPENDS +=	devel/llvm>=6.0,<6.1
 BUILD_DEPENDS +=	devel/ninja
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
@@ -146,10 +147,8 @@ do-configure:
 	echo 'ninja = true' >>${WRKBUILD}/config.toml
 
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
-.if ${BUILD_DEPENDS:Mdevel/llvm}
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
 		>>${WRKBUILD}/config.toml
-.endif
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py

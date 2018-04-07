@@ -1,0 +1,29 @@
+$OpenBSD: patch-iwyu_ast_util_cc,v 1.3 2018/04/07 14:56:24 ajacoutot Exp $
+
+The utility methods for printing template argument lists moved from
+static member functions to free functions in Clang r319178.
+
+Index: iwyu_ast_util.cc
+--- iwyu_ast_util.cc.orig
++++ iwyu_ast_util.cc
+@@ -452,16 +452,16 @@ string PrintableTemplateName(const TemplateName& tpl_n
+ string PrintableTemplateArgument(const TemplateArgument& arg) {
+   std::string buffer;
+   raw_string_ostream ostream(buffer);
+-  TemplateSpecializationType::PrintTemplateArgumentList(
+-      ostream, ArrayRef<TemplateArgument>(arg), DefaultPrintPolicy());
++  printTemplateArgumentList(ostream, ArrayRef<TemplateArgument>(arg),
++                            DefaultPrintPolicy());
+   return ostream.str();
+ }
+ 
+ string PrintableTemplateArgumentLoc(const TemplateArgumentLoc& arg) {
+   std::string buffer;
+   raw_string_ostream ostream(buffer);
+-  TemplateSpecializationType::PrintTemplateArgumentList(
+-      ostream, ArrayRef<TemplateArgumentLoc>(arg), DefaultPrintPolicy());
++  printTemplateArgumentList(ostream, ArrayRef<TemplateArgumentLoc>(arg),
++                            DefaultPrintPolicy());
+   return ostream.str();
+ }
+ 
