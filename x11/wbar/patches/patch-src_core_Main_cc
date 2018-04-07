@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_Main_cc,v 1.1 2018/04/07 13:13:50 rsadowski Exp $
+
+Index: src/core/Main.cc
+--- src/core/Main.cc.orig
++++ src/core/Main.cc
+@@ -81,7 +81,7 @@ int main(int argc, char **argv)
+ 
+         if (command.empty())
+         {
+-            command = PACKAGE_NAME" "DEFAULT_ARGV;
++            command = PACKAGE_NAME " " DEFAULT_ARGV;
+         }
+ 
+         if (argc <= 1 || tmpoptparser.isSet( OptParser::CONFIG ))
