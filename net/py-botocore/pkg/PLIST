@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.81 2018/04/04 13:03:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.82 2018/04/07 07:24:15 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.$
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}eventstream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,6 +50,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/credentials.py
 lib/python${MODPY_VERSION}/site-packages/botocore/data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/_retry.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
@@ -418,6 +423,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/fms/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/fms/2018-01-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/fms/2018-01-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/fms/2018-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/examples-1.json
@@ -668,6 +677,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/2017-10-17/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/2017-10-17/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/2017-10-17/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/2017-09-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/serverlessrepo/2017-09-08/paginators-1.json
@@ -819,6 +832,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/docs/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/waiter.py
 lib/python${MODPY_VERSION}/site-packages/botocore/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/botocore/errorfactory.py
+lib/python${MODPY_VERSION}/site-packages/botocore/eventstream.py
 lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/handlers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/history.py
