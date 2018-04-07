@@ -1,26 +1,15 @@
-$OpenBSD: patch-tools_llvm-shlib_CMakeLists_txt,v 1.1 2018/03/09 03:01:22 jsg Exp $
+$OpenBSD: patch-tools_llvm-shlib_CMakeLists_txt,v 1.2 2018/04/07 14:55:42 ajacoutot Exp $
 
-fix symbols not getting added to shared library
+Fix symbols not being added to the shared library.
 
 Index: tools/llvm-shlib/CMakeLists.txt
 --- tools/llvm-shlib/CMakeLists.txt.orig
 +++ tools/llvm-shlib/CMakeLists.txt
-@@ -37,15 +37,15 @@ endif()
- add_llvm_library(LLVM SHARED DISABLE_LLVM_LINK_LLVM_DYLIB SONAME ${SOURCES})
- 
+@@ -39,6 +39,7 @@ add_llvm_library(LLVM SHARED DISABLE_LLVM_LINK_LLVM_DY
  list(REMOVE_DUPLICATES LIB_NAMES)
--if(("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") OR (MINGW) OR (HAIKU) OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD") OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "DragonFly")) # FIXME: It should be "GNU ld for elf"
-+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
-+  set(LIB_NAMES -Wl,-all_load ${LIB_NAMES})
-+else()
+ if(("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") OR (MINGW) OR (HAIKU)
+    OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD")
++   OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD")
+    OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "DragonFly")
+    OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "SunOS")) # FIXME: It should be "GNU ld for elf"
    configure_file(
-   ${CMAKE_CURRENT_SOURCE_DIR}/simple_version_script.map.in
-   ${LLVM_LIBRARY_DIR}/tools/llvm-shlib/simple_version_script.map)
- 
-   # GNU ld doesn't resolve symbols in the version script.
-   set(LIB_NAMES -Wl,--version-script,${LLVM_LIBRARY_DIR}/tools/llvm-shlib/simple_version_script.map -Wl,--whole-archive ${LIB_NAMES} -Wl,--no-whole-archive)
--elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
--  set(LIB_NAMES -Wl,-all_load ${LIB_NAMES})
- endif()
- 
- target_link_libraries(LLVM PRIVATE ${LIB_NAMES})

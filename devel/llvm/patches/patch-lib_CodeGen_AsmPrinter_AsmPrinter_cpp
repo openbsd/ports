@@ -1,20 +1,20 @@
-$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.4 2017/09/01 06:40:28 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.5 2018/04/07 14:55:42 ajacoutot Exp $
 
 Use int3 trap padding between functions instead of trapsleds with a leading jump.
 
 Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
 +++ lib/CodeGen/AsmPrinter/AsmPrinter.cpp
-@@ -644,7 +644,7 @@ void AsmPrinter::EmitFunctionHeader() {
+@@ -637,7 +637,7 @@ void AsmPrinter::EmitFunctionHeader() {
  
-   EmitLinkage(F, CurrentFnSym);
+   EmitLinkage(&F, CurrentFnSym);
    if (MAI->hasFunctionAlignment())
--    EmitAlignment(MF->getAlignment(), F);
-+    EmitTrapAlignment(MF->getAlignment(), F);
+-    EmitAlignment(MF->getAlignment(), &F);
++    EmitTrapAlignment(MF->getAlignment(), &F);
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->EmitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -1880,6 +1880,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
+@@ -1908,6 +1908,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
      OutStreamer->EmitCodeAlignment(1u << NumBits);
    else
      OutStreamer->EmitValueToAlignment(1u << NumBits);

@@ -1,17 +1,5 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.6 2017/12/20 08:06:46 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.7 2018/04/07 14:55:42 ajacoutot Exp $
 
-- Make the behavior of the -v option more closer to GNU linkers.
-
-  Previously, lld exited with an error status if the only option given to
-  the command was -v. GNU linkers gracefully exit in that case. This patch
-  makes lld behave like GNU.
-
-  Note that even with this patch, lld's -v and --version options behave
-  slightly differently than GNU linkers' counterparts. For example,
-  if you run `ld.bfd -v -v`, the version string is printed out twice.
-  But that is an edge case that I don't think we need to take care of.
-
-  Fixes https://bugs.llvm.org/show_bug.cgi?id=31582
 - ELF: Add /usr/lib as default search path.
 
   GNU ld and gold have this path as default search path.
@@ -21,48 +9,35 @@ $OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.6 2017/12/20 08:06:46 ajacoutot Exp
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -345,9 +345,10 @@ void LinkerDriver::main(ArrayRef<const char *> ArgsArr
-   if (Args.hasArg(OPT_v) || Args.hasArg(OPT_version))
-     message(getLLDVersion() + " (compatible with GNU linkers)");
- 
--  // ld.bfd always exits after printing out the version string.
--  // ld.gold proceeds if a given option is -v. Because gold's behavior
--  // is more permissive than ld.bfd, we chose what gold does here.
-+  // The behavior of -v or --version is a bit strange, but this is
-+  // needed for compatibility with GNU linkers.
-+  if (Args.hasArg(OPT_v) && !Args.hasArg(OPT_INPUT))
-+    return;
-   if (Args.hasArg(OPT_version))
-     return;
- 
-@@ -410,6 +411,15 @@ static std::vector<StringRef> getArgs(opt::InputArgLis
-   return V;
+@@ -394,6 +394,15 @@ void LinkerDriver::main(ArrayRef<const char *> ArgsArr
+   }
  }
  
 +static std::vector<StringRef> getSearchPaths(opt::InputArgList &Args) {
 +  std::vector<StringRef> V;
 +  if (!Args.hasArg(OPT_nostdlib))
 +    V.push_back("=/usr/lib");
-+  for (auto *Arg : Args.filtered(OPT_L))
++  for (auto *Arg : Args.filtered(OPT_library_path))
 +    V.push_back(Arg->getValue());
 +  return V;
 +}
 +
  static std::string getRpath(opt::InputArgList &Args) {
-   std::vector<StringRef> V = getArgs(Args, OPT_rpath);
+   std::vector<StringRef> V = args::getStrings(Args, OPT_rpath);
    return llvm::join(V.begin(), V.end(), ":");
-@@ -654,12 +664,13 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
-   Config->OptRemarksWithHotness = Args.hasArg(OPT_opt_remarks_with_hotness);
-   Config->Optimize = getInteger(Args, OPT_O, 1);
+@@ -638,13 +647,14 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+   Config->Optimize = args::getInteger(Args, OPT_O, 1);
+   Config->OrphanHandling = getOrphanHandling(Args);
    Config->OutputFile = Args.getLastArgValue(OPT_o);
--  Config->Pie = getArg(Args, OPT_pie, OPT_nopie, false);
-+  Config->Pie = getArg(Args, OPT_pie, OPT_nopie,
+-  Config->Pie = Args.hasFlag(OPT_pie, OPT_nopie, false);
++  Config->Pie = Args.hasFlag(OPT_pie, OPT_nopie,
 +      !Args.hasArg(OPT_shared) && !Args.hasArg(OPT_relocatable));
-   Config->PrintGcSections = Args.hasArg(OPT_print_gc_sections);
+   Config->PrintGcSections =
+       Args.hasFlag(OPT_print_gc_sections, OPT_no_print_gc_sections, false);
    Config->Rpath = getRpath(Args);
    Config->Relocatable = Args.hasArg(OPT_relocatable);
    Config->SaveTemps = Args.hasArg(OPT_save_temps);
--  Config->SearchPaths = getArgs(Args, OPT_L);
+-  Config->SearchPaths = args::getStrings(Args, OPT_library_path);
 +  Config->SearchPaths = getSearchPaths(Args);
    Config->SectionStartMap = getSectionStartMap(Args);
    Config->Shared = Args.hasArg(OPT_shared);

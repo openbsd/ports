@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.2 2018/02/02 13:33:11 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.3 2018/04/07 14:55:42 ajacoutot Exp $
 
 Use the integrated assembler by default on Mips64.
 
 Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
 --- tools/clang/lib/Driver/ToolChains/Gnu.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Gnu.cpp
-@@ -2342,7 +2342,8 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+@@ -2250,7 +2250,8 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
      // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
      // Other targets are unable to distinguish N32 from N64.
      if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||

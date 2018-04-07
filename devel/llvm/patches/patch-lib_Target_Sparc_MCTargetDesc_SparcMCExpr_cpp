@@ -1,0 +1,44 @@
+$OpenBSD: patch-lib_Target_Sparc_MCTargetDesc_SparcMCExpr_cpp,v 1.1 2018/04/07 14:55:42 ajacoutot Exp $
+
+[Sparc] Include __tls_get_addr in symbol table for TLS calls to it
+
+Global Dynamic and Local Dynamic call relocations only implicitly
+reference __tls_get_addr; there is no connection in the ELF file between
+the relocations and the symbol other than the specification for the
+relocations' semantics. However, it still needs to be in the symbol
+table despite the lack of explicit references to the symbol table entry,
+since it needs to be bound at link time for these relocations, otherwise
+any objects will fail to link.
+
+Index: lib/Target/Sparc/MCTargetDesc/SparcMCExpr.cpp
+--- lib/Target/Sparc/MCTargetDesc/SparcMCExpr.cpp.orig
++++ lib/Target/Sparc/MCTargetDesc/SparcMCExpr.cpp
+@@ -193,14 +193,26 @@ static void fixELFSymbolsInTLSFixupsImpl(const MCExpr 
+ void SparcMCExpr::fixELFSymbolsInTLSFixups(MCAssembler &Asm) const {
+   switch(getKind()) {
+   default: return;
++  case VK_Sparc_TLS_GD_CALL:
++  case VK_Sparc_TLS_LDM_CALL: {
++    // The corresponding relocations reference __tls_get_addr, as they call it,
++    // but this is only implicit; we must explicitly add it to our symbol table
++    // to bind it for these uses.
++    MCSymbol *Symbol = Asm.getContext().getOrCreateSymbol("__tls_get_addr");
++    Asm.registerSymbol(*Symbol);
++    auto ELFSymbol = cast<MCSymbolELF>(Symbol);
++    if (!ELFSymbol->isBindingSet()) {
++      ELFSymbol->setBinding(ELF::STB_GLOBAL);
++      ELFSymbol->setExternal(true);
++    }
++    LLVM_FALLTHROUGH;
++  }
+   case VK_Sparc_TLS_GD_HI22:
+   case VK_Sparc_TLS_GD_LO10:
+   case VK_Sparc_TLS_GD_ADD:
+-  case VK_Sparc_TLS_GD_CALL:
+   case VK_Sparc_TLS_LDM_HI22:
+   case VK_Sparc_TLS_LDM_LO10:
+   case VK_Sparc_TLS_LDM_ADD:
+-  case VK_Sparc_TLS_LDM_CALL:
+   case VK_Sparc_TLS_LDO_HIX22:
+   case VK_Sparc_TLS_LDO_LOX10:
+   case VK_Sparc_TLS_LDO_ADD:

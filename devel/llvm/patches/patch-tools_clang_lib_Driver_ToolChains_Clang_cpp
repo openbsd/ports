@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.3 2017/12/03 10:19:37 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.4 2018/04/07 14:55:42 ajacoutot Exp $
 
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
@@ -12,7 +12,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.3 2017/12/03 10:
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -342,7 +342,7 @@ static void getTargetFeatures(const ToolChain &TC, con
+@@ -332,7 +332,7 @@ static void getTargetFeatures(const ToolChain &TC, con
      break;
    case llvm::Triple::aarch64:
    case llvm::Triple::aarch64_be:
@@ -21,12 +21,12 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      break;
    case llvm::Triple::x86:
    case llvm::Triple::x86_64:
-@@ -2308,9 +2308,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3362,9 +3362,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
--  bool TBAAOnByDefault = !getToolChain().getDriver().IsCLMode();
-+  bool StrictAliasingDefault = !getToolChain().getDriver().IsCLMode();
+-  bool TBAAOnByDefault = !D.IsCLMode();
++  bool StrictAliasingDefault = !D.IsCLMode();
 +  // We also turn off strict aliasing on OpenBSD.
 +  if (getToolChain().getTriple().isOSOpenBSD())
 +    StrictAliasingDefault = false;
@@ -36,7 +36,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -3296,7 +3299,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3950,7 +3953,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -46,14 +46,15 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4232,6 +4236,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
-       CmdArgs.push_back("-fno-builtin-strcpy");
-   }
- #endif
+@@ -4427,6 +4431,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+       llvm::sys::path::replace_extension(F, "opt.yaml");
+       CmdArgs.push_back(Args.MakeArgString(F));
+     }
++  }
 +
 +  // Disable some builtins on OpenBSD because they are just not
 +  // right...
-+  if (getToolChain().getTriple().isOSOpenBSD()) { 
++  if (getToolChain().getTriple().isOSOpenBSD()) {
 +    CmdArgs.push_back("-fno-builtin-malloc");
 +    CmdArgs.push_back("-fno-builtin-calloc");
 +    CmdArgs.push_back("-fno-builtin-realloc");
@@ -61,7 +62,6 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +    CmdArgs.push_back("-fno-builtin-free");
 +    CmdArgs.push_back("-fno-builtin-strdup");
 +    CmdArgs.push_back("-fno-builtin-strndup");
-+  }
+   }
  
    bool RewriteImports = Args.hasFlag(options::OPT_frewrite_imports,
-                                      options::OPT_fno_rewrite_imports, false);

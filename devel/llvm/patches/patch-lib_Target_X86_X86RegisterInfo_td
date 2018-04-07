@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86RegisterInfo_td,v 1.1 2017/12/01 08:00:20 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_X86_X86RegisterInfo_td,v 1.2 2018/04/07 14:55:42 ajacoutot Exp $
 
 The compiler is generally free to allocate general purpose registers in
 whatever order it chooses. Reasons for choosing one register before another
@@ -23,7 +23,7 @@ possible.
 Index: lib/Target/X86/X86RegisterInfo.td
 --- lib/Target/X86/X86RegisterInfo.td.orig
 +++ lib/Target/X86/X86RegisterInfo.td
-@@ -339,8 +339,8 @@ def GR16 : RegisterClass<"X86", [i16], 16,
+@@ -342,8 +342,8 @@ def GR16 : RegisterClass<"X86", [i16], 16,
                                R8W, R9W, R10W, R11W, R14W, R15W, R12W, R13W)>;
  
  def GR32 : RegisterClass<"X86", [i32], 32,
@@ -34,7 +34,7 @@ Index: lib/Target/X86/X86RegisterInfo.td
  
  // GR64 - 64-bit GPRs. This oddly includes RIP, which isn't accurate, since
  // RIP isn't really a register and it can't be used anywhere except in an
-@@ -349,7 +349,7 @@ def GR32 : RegisterClass<"X86", [i32], 32,
+@@ -352,7 +352,7 @@ def GR32 : RegisterClass<"X86", [i32], 32,
  // tests because of the inclusion of RIP in this register class.
  def GR64 : RegisterClass<"X86", [i64], 64,
                           (add RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11,
