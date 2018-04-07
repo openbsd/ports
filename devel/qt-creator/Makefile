@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2018/03/15 20:04:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2018/04/07 07:49:40 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.5.2
+V =			4.6.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -40,8 +40,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5DesignerComponents Qt5Gui Qt5Help Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml botan-1.10 c m qbscore qbsqtprofilesetup
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg
+WANTLIB += Qt5Widgets Qt5Xml botan-1.10 c clang m
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
@@ -50,28 +50,30 @@ MODULES =	x11/qt5 \
 
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 
-MODQMAKE_ARGS =		USE_SYSTEM_BOTAN=1
+MODQMAKE_ARGS =		USE_SYSTEM_BOTAN=1 \
+			CONFIG+=qbs_enable_project_file_updates
 
 # qtcreator.sh is created with custom LINK?= in Makefile
 MODQT5_USE_CXX11 =	No
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
-		x11/qt5/qtscript
+		devel/qbs
 
 RUN_DEPENDS =	devel/gdb \
+		devel/qbs \
 		devel/gmake \
 		${MODGCC4_CPPDEP} \
 		x11/gtk+3,-guic \
 		x11/qt5/qtwebkit \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtscript
+		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \
 		security/botan \
-		devel/qbs
+		x11/qt5/qtscript \
+		devel/llvm
 
 PORTHOME =		${WRKDIR}
 
@@ -81,7 +83,7 @@ NO_TEST =		Yes
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
-CONFIGURE_ENV =	QBS_INSTALL_DIR=${LOCALBASE}
+CONFIGURE_ENV =		QBS_INSTALL_DIR=${LOCALBASE}
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \
@@ -92,6 +94,8 @@ GDB_ADJ_FILES = \
 
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
+	# use system qbs (qtcreator.pro)
+	rm -rf ${WRKSRC}/src/shared/qbs
 
 post-install:
 .for _l _v in ${SHARED_LIBS}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/01/14 10:07:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/04/07 07:49:40 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -43,6 +43,9 @@ lib/qtcreator/plugins/libBinEditor.so
 lib/qtcreator/plugins/libBookmarks.so
 lib/qtcreator/plugins/libCMakeProjectManager.so
 lib/qtcreator/plugins/libCVS.so
+lib/qtcreator/plugins/libClangCodeModel.so
+lib/qtcreator/plugins/libClangPchManager.so
+lib/qtcreator/plugins/libClangRefactoring.so
 lib/qtcreator/plugins/libClangStaticAnalyzer.so
 lib/qtcreator/plugins/libClassView.so
 lib/qtcreator/plugins/libClearCase.so
@@ -97,6 +100,9 @@ lib/qtcreator/plugins/qmldesigner/libcomponentsplugin.so
 lib/qtcreator/plugins/qmldesigner/libqtquickplugin.so
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
+@bin libexec/qtcreator/clangbackend
+@bin libexec/qtcreator/clangpchmanagerbackend
+@bin libexec/qtcreator/clangrefactoringbackend
 @bin libexec/qtcreator/cpaster
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtcreator_process_stub
@@ -172,6 +178,7 @@ share/qtcreator/modeleditor/standard.def
 share/qtcreator/qml/
 share/qtcreator/qml-type-descriptions/
 share/qtcreator/qml-type-descriptions/builtins.qmltypes
+share/qtcreator/qml-type-descriptions/qbs-base.qmltypes
 share/qtcreator/qml-type-descriptions/qbs-bundle.json
 share/qtcreator/qml-type-descriptions/qbs.qmltypes
 share/qtcreator/qml-type-descriptions/qmlproject-bundle.json
@@ -181,8 +188,6 @@ share/qtcreator/qml-type-descriptions/qmltypes-bundle.json
 share/qtcreator/qml-type-descriptions/qt-labs-folderlistmodel.qmltypes
 share/qtcreator/qml-type-descriptions/qt-labs-gestures.qmltypes
 share/qtcreator/qml-type-descriptions/qt-labs-particles.qmltypes
-share/qtcreator/qml-type-descriptions/qt4QtQuick1-bundle.json
-share/qtcreator/qml-type-descriptions/qt5QtQuick1-bundle.json
 share/qtcreator/qml-type-descriptions/qt5QtQuick2-bundle.json
 share/qtcreator/qml-type-descriptions/qtmobility-connectivity.qmltypes
 share/qtcreator/qml-type-descriptions/qtmobility-contacts.qmltypes
@@ -591,6 +596,7 @@ share/qtcreator/templates/wizards/autotest/files/tst.pro
 share/qtcreator/templates/wizards/autotest/files/tst.qbs
 share/qtcreator/templates/wizards/autotest/files/tst.txt
 share/qtcreator/templates/wizards/autotest/files/tst_main.cpp
+share/qtcreator/templates/wizards/autotest/files/tst_qml.tmpl
 share/qtcreator/templates/wizards/autotest/files/tst_src.cpp
 share/qtcreator/templates/wizards/autotest/files/tst_src.h
 share/qtcreator/templates/wizards/autotest/wizard.json
@@ -650,8 +656,12 @@ share/qtcreator/templates/wizards/files/js/
 share/qtcreator/templates/wizards/files/js/file.js
 share/qtcreator/templates/wizards/files/js/wizard.json
 share/qtcreator/templates/wizards/files/modeling/
-share/qtcreator/templates/wizards/files/modeling/file.qmodel
-share/qtcreator/templates/wizards/files/modeling/wizard.json
+share/qtcreator/templates/wizards/files/modeling/model/
+share/qtcreator/templates/wizards/files/modeling/model/file.qmodel
+share/qtcreator/templates/wizards/files/modeling/model/wizard.json
+share/qtcreator/templates/wizards/files/modeling/scratch/
+share/qtcreator/templates/wizards/files/modeling/scratch/file.qmodel
+share/qtcreator/templates/wizards/files/modeling/scratch/wizard.json
 share/qtcreator/templates/wizards/files/nim/
 share/qtcreator/templates/wizards/files/nim/file.nim
 share/qtcreator/templates/wizards/files/nim/wizard.json
