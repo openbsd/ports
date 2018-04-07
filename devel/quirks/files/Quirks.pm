@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.584 2018/03/31 15:36:32 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.585 2018/04/07 10:58:33 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1239,6 +1239,8 @@ my $obsolete_reason = {
 	'sirc' => 0,
 	'hgview' => 6,
 	'xerces' => 5,
+# 6.4
+	'mozjs17' => 2,
 };
 
 # reasons for obsolete packages
