@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2018/03/29 20:34:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.51 2018/04/07 07:24:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -311,6 +311,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3endpoint.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3errormsg.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3events.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3events.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3uploader.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sagemaker.py
@@ -350,6 +352,23 @@ lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.py
 lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/create-certificate-authority-audit-report.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/create-certificate-authority.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/delete-certificate-authority.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/describe-certificate-authority-audit-report.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/describe-certificate-authority.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/get-certificate-authority-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/get-certificate-authority-csr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/get-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/import-certificate-authority-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/issue-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/list-certificate-authorities.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/list-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/revoke-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/tag-certificate-authority.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/untag-certificate-authority.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm-pca/update-certificate-authority.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/add-tags-to-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/delete-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/describe-certificate.rst
