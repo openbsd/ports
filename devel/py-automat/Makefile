@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/04 08:23:14 pvk Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/07 12:51:35 pvk Exp $
 
 COMMENT =		finite-state machines in Python
 
@@ -24,17 +24,15 @@ BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 
-#TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-#			devel/py-twisted${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
 
-#.if ${FLAVOR:Mpython3}
-#TEST_DEPENDS +=		devel/py-six${MODPY_FLAVOR}
-#.endif
-## N.B. enable test after devel/py-twisted upgrade
-NO_TEST =		Yes
+.if ${FLAVOR:Mpython3}
+TEST_DEPENDS +=		devel/py-six${MODPY_FLAVOR}
+.endif
 
 post-install:
 	mv ${PREFIX}/bin/automat-visualize{,${MODPY_BIN_SUFFIX}}
