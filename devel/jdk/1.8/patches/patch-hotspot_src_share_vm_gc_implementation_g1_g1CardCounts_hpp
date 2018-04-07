@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_g1_g1CardCounts_hpp,v 1.1 2018/04/07 12:08:18 sthen Exp $
+
+Index: hotspot/src/share/vm/gc_implementation/g1/g1CardCounts.hpp
+--- hotspot/src/share/vm/gc_implementation/g1/g1CardCounts.hpp.orig
++++ hotspot/src/share/vm/gc_implementation/g1/g1CardCounts.hpp
+@@ -91,7 +91,7 @@ class G1CardCounts: public CHeapObj<mtGC> {
+ 
+   jbyte* card_num_2_ptr(size_t card_num) {
+     assert(card_num >= 0 && card_num < _reserved_max_card_num,
+-           err_msg("card num out of range: "SIZE_FORMAT, card_num));
++           err_msg("card num out of range: " SIZE_FORMAT, card_num));
+     return (jbyte*) (_ct_bot + card_num);
+   }
+ 

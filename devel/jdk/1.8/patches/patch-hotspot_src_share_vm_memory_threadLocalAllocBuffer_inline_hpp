@@ -1,0 +1,20 @@
+$OpenBSD: patch-hotspot_src_share_vm_memory_threadLocalAllocBuffer_inline_hpp,v 1.1 2018/04/07 12:08:18 sthen Exp $
+
+Index: hotspot/src/share/vm/memory/threadLocalAllocBuffer.inline.hpp
+--- hotspot/src/share/vm/memory/threadLocalAllocBuffer.inline.hpp.orig
++++ hotspot/src/share/vm/memory/threadLocalAllocBuffer.inline.hpp
+@@ -94,10 +94,10 @@ void ThreadLocalAllocBuffer::record_slow_allocation(si
+ 
+   if (PrintTLAB && Verbose) {
+     Thread* thrd = myThread();
+-    gclog_or_tty->print("TLAB: %s thread: "INTPTR_FORMAT" [id: %2d]"
+-                        " obj: "SIZE_FORMAT
+-                        " free: "SIZE_FORMAT
+-                        " waste: "SIZE_FORMAT"\n",
++    gclog_or_tty->print("TLAB: %s thread: " INTPTR_FORMAT " [id: %2d]"
++                        " obj: " SIZE_FORMAT
++                        " free: " SIZE_FORMAT
++                        " waste: " SIZE_FORMAT "\n",
+                         "slow", p2i(thrd), thrd->osthread()->thread_id(),
+                         obj_size, free(), refill_waste_limit());
+   }

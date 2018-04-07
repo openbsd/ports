@@ -1,0 +1,17 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_g1_heapRegionManager_inline_hpp,v 1.1 2018/04/07 12:08:18 sthen Exp $
+
+Index: hotspot/src/share/vm/gc_implementation/g1/heapRegionManager.inline.hpp
+--- hotspot/src/share/vm/gc_implementation/g1/heapRegionManager.inline.hpp.orig
++++ hotspot/src/share/vm/gc_implementation/g1/heapRegionManager.inline.hpp
+@@ -31,9 +31,9 @@
+ 
+ inline HeapRegion* HeapRegionManager::addr_to_region(HeapWord* addr) const {
+   assert(addr < heap_end(),
+-        err_msg("addr: "PTR_FORMAT" end: "PTR_FORMAT, p2i(addr), p2i(heap_end())));
++        err_msg("addr: " PTR_FORMAT " end: " PTR_FORMAT, p2i(addr), p2i(heap_end())));
+   assert(addr >= heap_bottom(),
+-        err_msg("addr: "PTR_FORMAT" bottom: "PTR_FORMAT, p2i(addr), p2i(heap_bottom())));
++        err_msg("addr: " PTR_FORMAT " bottom: " PTR_FORMAT, p2i(addr), p2i(heap_bottom())));
+ 
+   HeapRegion* hr = _regions.get_by_address(addr);
+   return hr;

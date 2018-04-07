@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_classfile_dictionary_hpp,v 1.1 2018/04/07 12:08:18 sthen Exp $
+
+Index: hotspot/src/share/vm/classfile/dictionary.hpp
+--- hotspot/src/share/vm/classfile/dictionary.hpp.orig
++++ hotspot/src/share/vm/classfile/dictionary.hpp
+@@ -373,7 +373,7 @@ class SymbolPropertyEntry : public HashtableEntry<Symb
+ 
+   void print_on(outputStream* st) const {
+     symbol()->print_value_on(st);
+-    st->print("/mode="INTX_FORMAT, symbol_mode());
++    st->print("/mode=" INTX_FORMAT, symbol_mode());
+     st->print(" -> ");
+     bool printed = false;
+     if (method() != NULL) {
