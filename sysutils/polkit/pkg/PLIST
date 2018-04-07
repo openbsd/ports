@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/09/22 18:35:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/04/07 10:55:22 ajacoutot Exp $
 @comment Error switching to user _polkitd: Error changing to home directory /nonexistent
 @newgroup _polkitd:701
 @newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
@@ -84,11 +84,25 @@ share/examples/polkit/polkit-1/rules.d/
 @owner
 share/examples/polkit/polkit-1/rules.d/50-default.rules
 @sample ${SYSCONFDIR}/polkit-1/rules.d/50-default.rules
+share/gettext/its/polkit.its
+share/gettext/its/polkit.loc
 share/gir-1.0/
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
 share/locale/cs/LC_MESSAGES/polkit-1.mo
 share/locale/da/LC_MESSAGES/polkit-1.mo
+share/locale/de/LC_MESSAGES/polkit-1.mo
+share/locale/hr/LC_MESSAGES/polkit-1.mo
+share/locale/hu/LC_MESSAGES/polkit-1.mo
+share/locale/id/LC_MESSAGES/polkit-1.mo
+share/locale/pl/LC_MESSAGES/polkit-1.mo
+share/locale/pt_BR/LC_MESSAGES/polkit-1.mo
+share/locale/sk/LC_MESSAGES/polkit-1.mo
+share/locale/sv/LC_MESSAGES/polkit-1.mo
+share/locale/tr/LC_MESSAGES/polkit-1.mo
+share/locale/uk/LC_MESSAGES/polkit-1.mo
+share/locale/zh_CN/LC_MESSAGES/polkit-1.mo
+share/locale/zh_TW/LC_MESSAGES/polkit-1.mo
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy

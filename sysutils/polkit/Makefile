@@ -1,71 +1,55 @@
-# $OpenBSD: Makefile,v 1.68 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2018/04/07 10:55:22 ajacoutot Exp $
 
-COMMENT=	framework for granting privileged operations to users
+COMMENT=		framework for granting privileged operations to users
 
-DISTNAME=	polkit-0.113
-REVISION=	5
+DISTNAME=		polkit-0.114
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
 
-CATEGORIES=	sysutils security
+CATEGORIES=		sysutils security
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/polkit
+HOMEPAGE=		http://www.freedesktop.org/wiki/Software/polkit
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  c expat gio-2.0 glib-2.0 gobject-2.0 iconv intl mozjs-17.0
-WANTLIB += pthread
+WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl mozjs-52
 
-MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
+MASTER_SITES=		http://www.freedesktop.org/software/polkit/releases/
 
-MODULES=	lang/python \
-		textproc/intltool
+MODULES=		lang/python \
+			textproc/intltool
 
 # man pages
-BUILD_DEPENDS+=	textproc/docbook-xsl
+BUILD_DEPENDS+=		textproc/docbook-xsl
 
-LIB_DEPENDS=	devel/glib2 \
-		devel/mozjs17
+LIB_DEPENDS=		devel/glib2 \
+			devel/spidermonkey52
 
 # /usr/local/share/dbus-1/system-services/
-RUN_DEPENDS +=	x11/dbus,-suid
+RUN_DEPENDS +=		x11/dbus,-suid
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-libsystemd-login \
-		--mandir=${PREFIX}/man \
-		--enable-introspection \
-		--enable-man-pages \
-		--enable-examples \
-		--with-os-type=openbsd \
-		--with-authfw=bsdauth \
-		--with-polkitd-user=_polkitd
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		--disable-libelogind \
+			--disable-libsystemd-login \
+			--with-os-type=openbsd \
+			--with-authfw=bsdauth \
+			--with-polkitd-user=_polkitd
 
 # fgetgrent, fgetpwent
-CONFIGURE_ARGS += --disable-test
+CONFIGURE_ARGS +=	--disable-test
 
-MODPY_BUILDDEP=	No
-MODPY_RUNDEP=	No
-USE_GMAKE=	Yes
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+USE_GMAKE=		Yes
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
-
-### Remove when updating to a newer release with integrated bsd_auth(3) support.
-AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.11
-BUILD_DEPENDS +=${MODGNU_AUTOMAKE_DEPENDS} \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		devel/gettext \
-		devel/gobject-introspection
-# AUTOCONF needs AM_PROG_LIBTOOL
-BUILD_DEPENDS+=	devel/libtool
-###
-
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/polkit
 
 pre-configure:
 	perl -pi \
@@ -83,10 +67,5 @@ pre-configure:
 		${WRKSRC}/docs/man/polkit.xml \
 		${WRKSRC}/docs/extensiondir.xml \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
-
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		${LOCALBASE}/bin/autoreconf
 
 .include <bsd.port.mk>
