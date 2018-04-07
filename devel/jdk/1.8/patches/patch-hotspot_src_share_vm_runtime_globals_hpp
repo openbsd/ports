@@ -1,7 +1,9 @@
-$OpenBSD: patch-hotspot_src_share_vm_runtime_globals_hpp,v 1.2 2016/12/31 19:58:56 kurt Exp $
---- hotspot/src/share/vm/runtime/globals.hpp.orig	Sat Dec 10 14:09:22 2016
-+++ hotspot/src/share/vm/runtime/globals.hpp	Mon Dec 19 13:48:31 2016
-@@ -3207,7 +3207,7 @@ class CommandLineFlags {
+$OpenBSD: patch-hotspot_src_share_vm_runtime_globals_hpp,v 1.3 2018/04/07 11:05:13 sthen Exp $
+
+Index: hotspot/src/share/vm/runtime/globals.hpp
+--- hotspot/src/share/vm/runtime/globals.hpp.orig
++++ hotspot/src/share/vm/runtime/globals.hpp
+@@ -3211,7 +3211,7 @@ class CommandLineFlags {
    product(uintx, MaxMetaspaceSize, max_uintx,                               \
            "Maximum size of Metaspaces (in bytes)")                          \
                                                                              \
