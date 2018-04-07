@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/07 09:27:14 rsadowski Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -24,7 +24,7 @@ WANTLIB += leatherman_locale leatherman_util
 
 COMPILER =		base-clang ports-gcc
 
-CXXFLAGS +=		-pthread
+CXXFLAGS +=		-pthread -Wno-delete-non-virtual-dtor
 
 LIB_DEPENDS =		devel/boost \
 			devel/leatherman
