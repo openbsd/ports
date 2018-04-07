@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1723 2018/04/06 19:35:32 pvk Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1724 2018/04/07 10:58:23 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -458,7 +458,6 @@
      SUBDIR += mono-notify
      SUBDIR += monotone
      SUBDIR += mowgli
-     SUBDIR += mozjs17
      SUBDIR += mpfr
      SUBDIR += msgpack
      SUBDIR += msp430
