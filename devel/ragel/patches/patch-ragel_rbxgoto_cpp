@@ -1,0 +1,14 @@
+$OpenBSD: patch-ragel_rbxgoto_cpp,v 1.1 2018/04/07 09:32:20 espie Exp $
+
+Index: ragel/rbxgoto.cpp
+--- ragel/rbxgoto.cpp.orig
++++ ragel/rbxgoto.cpp
+@@ -658,7 +658,7 @@ void RbxGotoCodeGen::BREAK( ostream &ret, int targStat
+ 	out <<
+ 		"	begin\n"
+ 		"		" << P() << " += 1\n"
+-		"		" << rbxGoto(ret, "_out") << "\n" 
++		"		" ; rbxGoto(ret, "_out") << "\n" 
+ 		"	end\n";
+ }
+ 
