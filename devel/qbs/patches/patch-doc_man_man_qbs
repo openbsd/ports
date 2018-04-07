@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_man_man_qbs,v 1.1 2017/12/28 07:12:21 rsadowski Exp $
+$OpenBSD: patch-doc_man_man_qbs,v 1.2 2018/04/07 07:48:12 rsadowski Exp $
 
 Index: doc/man/man.qbs
 --- doc/man/man.qbs.orig
 +++ doc/man/man.qbs
-@@ -18,7 +18,7 @@ Product {
+@@ -19,7 +19,7 @@ Product {
          name: "man page"
          files: ["qbs.1"]
          qbs.install: qbsbuildconfig.installManPage

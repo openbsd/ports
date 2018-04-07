@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/14 06:59:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/07 07:48:12 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
 @bin bin/qbs-config-ui
 @bin bin/qbs-create-project
-@bin bin/qbs-qmltypes
 @bin bin/qbs-setup-android
 @bin bin/qbs-setup-qt
 @bin bin/qbs-setup-toolchains
@@ -18,6 +17,9 @@ include/qbs/api/rulecommand.h
 include/qbs/api/runenvironment.h
 include/qbs/buildgraph/
 include/qbs/buildgraph/forward_decls.h
+include/qbs/generators/
+include/qbs/generators/generator.h
+include/qbs/generators/generatordata.h
 include/qbs/language/
 include/qbs/language/forward_decls.h
 include/qbs/logging/
@@ -27,24 +29,60 @@ include/qbs/qbs_version.pri
 include/qbs/qtenvironment.h
 include/qbs/qtprofilesetup.h
 include/qbs/tools/
+include/qbs/tools/applecodesignutils.h
 include/qbs/tools/architectures.h
+include/qbs/tools/buildgraphlocker.h
 include/qbs/tools/buildoptions.h
 include/qbs/tools/cleanoptions.h
 include/qbs/tools/codelocation.h
 include/qbs/tools/commandechomode.h
+include/qbs/tools/dynamictypecheck.h
 include/qbs/tools/error.h
+include/qbs/tools/executablefinder.h
+include/qbs/tools/fileinfo.h
+include/qbs/tools/filesaver.h
+include/qbs/tools/filetime.h
 include/qbs/tools/generateoptions.h
+include/qbs/tools/hostosinfo.h
+include/qbs/tools/id.h
 include/qbs/tools/installoptions.h
+include/qbs/tools/iosutils.h
+include/qbs/tools/jsliterals.h
+include/qbs/tools/launcherinterface.h
+include/qbs/tools/launcherpackets.h
+include/qbs/tools/launchersocket.h
+include/qbs/tools/msvcinfo.h
+include/qbs/tools/pathutils.h
+include/qbs/tools/persistence.h
 include/qbs/tools/preferences.h
 include/qbs/tools/processresult.h
+include/qbs/tools/processresult_p.h
+include/qbs/tools/processutils.h
 include/qbs/tools/profile.h
+include/qbs/tools/profiling.h
+include/qbs/tools/progressobserver.h
+include/qbs/tools/projectgeneratormanager.h
 include/qbs/tools/qbs_export.h
+include/qbs/tools/qbsassert.h
 include/qbs/tools/qbspluginmanager.h
+include/qbs/tools/qbsprocess.h
+include/qbs/tools/qttools.h
+include/qbs/tools/scannerpluginmanager.h
+include/qbs/tools/scripttools.h
+include/qbs/tools/set.h
 include/qbs/tools/settings.h
+include/qbs/tools/settingscreator.h
 include/qbs/tools/settingsmodel.h
 include/qbs/tools/setupprojectparameters.h
+include/qbs/tools/shellutils.h
+include/qbs/tools/stlutils.h
+include/qbs/tools/stringconstants.h
+include/qbs/tools/stringutils.h
 include/qbs/tools/toolchains.h
 include/qbs/tools/version.h
+include/qbs/tools/visualstudioversioninfo.h
+include/qbs/tools/vsenvironmentdetector.h
+include/qbs/tools/weakpointer.h
 include/qbs/use_installed_corelib.pri
 include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.prl
@@ -207,8 +245,10 @@ share/qbs/imports/qbs/Probes/AndroidNdkProbe.qbs
 share/qbs/imports/qbs/Probes/AndroidSdkProbe.qbs
 share/qbs/imports/qbs/Probes/BinaryProbe.qbs
 share/qbs/imports/qbs/Probes/FrameworkProbe.qbs
+share/qbs/imports/qbs/Probes/GccBinaryProbe.qbs
 share/qbs/imports/qbs/Probes/GccProbe.qbs
 share/qbs/imports/qbs/Probes/GccVersionProbe.qbs
+share/qbs/imports/qbs/Probes/IcoUtilsVersionProbe.qbs
 share/qbs/imports/qbs/Probes/IncludeProbe.qbs
 share/qbs/imports/qbs/Probes/InnoSetupProbe.qbs
 share/qbs/imports/qbs/Probes/JdkProbe.qbs
@@ -237,7 +277,6 @@ share/qbs/imports/qbs/base/CppApplication.qbs
 share/qbs/imports/qbs/base/DynamicLibrary.qbs
 share/qbs/imports/qbs/base/InnoSetup.qbs
 share/qbs/imports/qbs/base/InstallPackage.qbs
-share/qbs/imports/qbs/base/Installer.qbs
 share/qbs/imports/qbs/base/JavaClassCollection.qbs
 share/qbs/imports/qbs/base/JavaJarFile.qbs
 share/qbs/imports/qbs/base/Library.qbs
@@ -287,6 +326,7 @@ share/qbs/modules/cpp/ios-gcc.qbs
 share/qbs/modules/cpp/macos-gcc.qbs
 share/qbs/modules/cpp/msvc.js
 share/qbs/modules/cpp/qnx-qcc.qbs
+share/qbs/modules/cpp/setuprunenv.js
 share/qbs/modules/cpp/tvos-gcc.qbs
 share/qbs/modules/cpp/watchos-gcc.qbs
 share/qbs/modules/cpp/windows-mingw.qbs
@@ -299,6 +339,9 @@ share/qbs/modules/dmg/dmg.js
 share/qbs/modules/ib/
 share/qbs/modules/ib/IBModule.qbs
 share/qbs/modules/ib/ib.js
+share/qbs/modules/ico/
+share/qbs/modules/ico/IcoModule.qbs
+share/qbs/modules/ico/ico.js
 share/qbs/modules/innosetup/
 share/qbs/modules/innosetup/InnoSetupModule.qbs
 share/qbs/modules/java/
