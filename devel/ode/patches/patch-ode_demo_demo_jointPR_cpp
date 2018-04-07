@@ -1,0 +1,14 @@
+$OpenBSD: patch-ode_demo_demo_jointPR_cpp,v 1.1 2018/04/07 07:55:14 espie Exp $
+
+Index: ode/demo/demo_jointPR.cpp
+--- ode/demo/demo_jointPR.cpp.orig
++++ ode/demo/demo_jointPR.cpp
+@@ -329,7 +329,7 @@ int main (int argc, char **argv)
+             {
+                 int j = i+1;
+                 if ( j+1 > argc      ||  // Check if we have enough arguments
+-                        argv[j] == '\0' ||  // We should have a path here
++                        argv[j] == NULL ||  // We should have a path here
+                         argv[j][0] == '-' ) // We should have a path not a command line
+                     Help(argv);
+                 else
