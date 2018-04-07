@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_stub-cache_cc,v 1.1 2018/04/07 14:41:48 rsadowski Exp $
+
+Index: src/stub-cache.cc
+--- src/stub-cache.cc.orig
++++ src/stub-cache.cc
+@@ -1376,7 +1376,7 @@ Handle<Code> StubCompiler::GetCodeWithFlags(Code::Flag
+                                             Handle<String> name) {
+   return (FLAG_print_code_stubs && !name.is_null())
+       ? GetCodeWithFlags(flags, *name->ToCString())
+-      : GetCodeWithFlags(flags, reinterpret_cast<char*>(NULL));
++      : GetCodeWithFlags(flags, static_cast<char*>(NULL));
+ }
+ 
+ 
