@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/26 16:17:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/07 07:26:58 rsadowski Exp $
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.9
+DISTNAME =		dlib-19.10
 
-SHARED_LIBS +=  dlib                      1.0 # 19.7
+SHARED_LIBS +=  dlib                      2.0 # 19.7
 
 CATEGORIES =		devel
 
@@ -34,7 +34,8 @@ LIB_DEPENDS =		graphics/jpeg \
 # Check after math/blas update or OpenBLAS import
 CONFIGURE_ARGS =	-DDLIB_USE_BLAS:Bool=OFF \
 			-DDLIB_USE_LAPACK:Bool=OFF \
-			-DDLIB_USE_MKL_FFT:Bool=OFF
+			-DDLIB_USE_MKL_FFT:Bool=OFF \
+			-DBUILD_SHARED_LIBS:Bool=ON
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
