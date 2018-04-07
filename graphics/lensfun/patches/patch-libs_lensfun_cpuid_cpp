@@ -1,0 +1,19 @@
+$OpenBSD: patch-libs_lensfun_cpuid_cpp,v 1.1 2018/04/07 08:13:48 rsadowski Exp $
+
+fix invalid suffix on literal with clang6
+
+Index: libs/lensfun/cpuid.cpp
+--- libs/lensfun/cpuid.cpp.orig
++++ libs/lensfun/cpuid.cpp
+@@ -92,9 +92,9 @@ guint _lf_detect_cpu_features ()
+ {
+ #define cpuid(cmd) \
+     __asm volatile ( \
+-        "push %%"R_BX"\n" \
++        "push %%" R_BX"\n" \
+         "cpuid\n" \
+-        "pop %%"R_BX"\n" \
++        "pop %%" R_BX"\n" \
+        : "=a" (ax), "=c" (cx),  "=d" (dx) \
+        : "0" (cmd))
+ 
