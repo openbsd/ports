@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/13 02:46:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/07 14:58:18 ajacoutot Exp $
+
+BROKEN =	needs work for LLVM 6.0
 
 # If you are updating to a new version
 # (e.g. 5.0->5.1 or 6.0), you need to sync

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2018/03/13 02:46:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/07 14:58:18 ajacoutot Exp $
+
+BROKEN =	needs an update
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-5.0.1.20180308
