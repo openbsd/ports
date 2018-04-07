@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_devices_bus_pci_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/bus_pci.cc
+--- src/devices/bus_pci.cc.orig
++++ src/devices/bus_pci.cc
+@@ -1095,7 +1095,7 @@ printf("reg = 0x%x\n", reg);
+ 	case PCI_COMMAND_STATUS_REG:
+ 		if (value & PCI_COMMAND_IO_ENABLE)
+ 			enabled = 1;
+-printf("  value = 0x%"PRIx32"\n", value);
++printf("  value = 0x%" PRIx32"\n", value);
+ 		if (wdc0 != NULL)
+ 			wdc_set_io_enabled((struct wdc_data *) wdc0, enabled);
+ 		if (wdc1 != NULL)

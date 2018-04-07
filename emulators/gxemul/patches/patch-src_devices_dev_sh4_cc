@@ -1,0 +1,98 @@
+$OpenBSD: patch-src_devices_dev_sh4_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/dev_sh4.cc
+--- src/devices/dev_sh4.cc.orig
++++ src/devices/dev_sh4.cc
+@@ -844,7 +844,7 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != 0xac000000) {
+ 			fatal("sh4_pcic: SH4_PCICONF5 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+@@ -853,7 +853,7 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != 0x8c000000) {
+ 			fatal("sh4_pcic: SH4_PCICONF6 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+@@ -862,7 +862,7 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != ((64 - 1) << 20)) {
+ 			fatal("sh4_pcic: SH4_PCILSR0 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+@@ -871,7 +871,7 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != 0xac000000) {
+ 			fatal("sh4_pcic: SH4_PCILAR0 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+@@ -880,7 +880,7 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != ((64 - 1) << 20)) {
+ 			fatal("sh4_pcic: SH4_PCILSR1 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+@@ -889,15 +889,15 @@ DEVICE_ACCESS(sh4_pcic)
+ 		/*  Hardcoded to what OpenBSD/landisk uses:  */
+ 		if (writeflag == MEM_WRITE && idata != 0xac000000) {
+ 			fatal("sh4_pcic: SH4_PCILAR1 unknown value"
+-			    " 0x%"PRIx32"\n", (uint32_t) idata);
++			    " 0x%" PRIx32"\n", (uint32_t) idata);
+ 			exit(1);
+ 		}
+ 		break;
+ 
+ 	case SH4_PCIMBR:
+ 		if (writeflag == MEM_WRITE && idata != SH4_PCIC_MEM) {
+-			fatal("sh4_pcic: PCIMBR set to 0x%"PRIx32", not"
+-			    " 0x%"PRIx32"? TODO\n", (uint32_t) idata,
++			fatal("sh4_pcic: PCIMBR set to 0x%" PRIx32", not"
++			    " 0x%" PRIx32"? TODO\n", (uint32_t) idata,
+ 			    (uint32_t) SH4_PCIC_MEM);
+ 			exit(1);
+ 		}
+@@ -905,8 +905,8 @@ DEVICE_ACCESS(sh4_pcic)
+ 
+ 	case SH4_PCIIOBR:
+ 		if (writeflag == MEM_WRITE && idata != SH4_PCIC_IO) {
+-			fatal("sh4_pcic: PCIIOBR set to 0x%"PRIx32", not"
+-			    " 0x%"PRIx32"? TODO\n", (uint32_t) idata,
++			fatal("sh4_pcic: PCIIOBR set to 0x%" PRIx32", not"
++			    " 0x%" PRIx32"? TODO\n", (uint32_t) idata,
+ 			    (uint32_t) SH4_PCIC_IO);
+ 			exit(1);
+ 		}
+@@ -982,7 +982,7 @@ DEVICE_ACCESS(sh4)
+ 			d->sdmr3 = v;
+ 		else
+ 			d->sdmr2 = v;
+-		debug("[ sh4: sdmr%i set to 0x%04"PRIx16" ]\n",
++		debug("[ sh4: sdmr%i set to 0x%04" PRIx16" ]\n",
+ 		    relative_addr & 0x00040000? 3 : 2, v);
+ 		return 1;
+ 	}
+@@ -1235,7 +1235,7 @@ DEVICE_ACCESS(sh4)
+ 			if (idata & (TCR_ICPF | TCR_ICPE1 | TCR_ICPE0 |
+ 			    TCR_CKEG1 | TCR_CKEG0 | TCR_TPSC2)) {
+ 				fatal("Unimplemented SH4 timer control"
+-				    " bits: 0x%08"PRIx32". Aborting.\n",
++				    " bits: 0x%08" PRIx32". Aborting.\n",
+ 				    (int) idata);
+ 				exit(1);
+ 			}

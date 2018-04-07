@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cpus_cpu_m88k_instr_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/cpu_m88k_instr.cc
+--- src/cpus/cpu_m88k_instr.cc.orig
++++ src/cpus/cpu_m88k_instr.cc
+@@ -1522,7 +1522,7 @@ X(rte)
+ 	return;
+ 
+ abort_dump:
+-	fatal("RTE failed. NIP=0x%08"PRIx32", FIP=0x%08"PRIx32"\n",
++	fatal("RTE failed. NIP=0x%08" PRIx32", FIP=0x%08" PRIx32"\n",
+ 	    cpu->cd.m88k.cr[M88K_CR_SNIP], cpu->cd.m88k.cr[M88K_CR_SFIP]);
+ 
+ 	ABORT_EXECUTION;
+@@ -2699,7 +2699,7 @@ X(to_be_translated)
+ 				if (iword == 0xf400fc00)
+ 					ic->f = instr(rte);
+ 				else {
+-					fatal("unimplemented rte variant: 0x%08"PRIx32"\n", iword);
++					fatal("unimplemented rte variant: 0x%08" PRIx32"\n", iword);
+ 					goto bad;
+ 				}
+ 				break;

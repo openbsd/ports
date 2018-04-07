@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_machines_machine_pmax_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/machines/machine_pmax.cc
+--- src/machines/machine_pmax.cc.orig
++++ src/machines/machine_pmax.cc
+@@ -660,7 +660,7 @@ abort();
+ 
+ 		/*  KN230 mainbus / interrupt controller:  */
+ 		snprintf(tmpstr, sizeof(tmpstr),
+-		    "kn230 addr=0x%"PRIx64, (uint64_t) KN230_SYS_ICSR);
++		    "kn230 addr=0x%" PRIx64, (uint64_t) KN230_SYS_ICSR);
+ 		device_add(machine, tmpstr);
+ 
+ 		/*
+@@ -885,7 +885,7 @@ abort();
+ 	 */
+ 	{
+ 		char tmps[300];
+-		snprintf(tmps, sizeof(tmps), "cca=%"PRIx32,
++		snprintf(tmps, sizeof(tmps), "cca=%" PRIx32,
+ 		    (uint32_t) (DEC_DECCCA_BASEADDR + 0xa0000000ULL));
+ 		add_environment_string(cpu, tmps, &addr);
+ 	}
+@@ -898,14 +898,14 @@ abort();
+ 		tmps[sizeof(tmps)-1] = '\0';
+ 		add_environment_string(cpu, tmps, &addr);
+ 
+-		snprintf(tmps, sizeof(tmps), "bitmap=0x%"PRIx32, (uint32_t)
++		snprintf(tmps, sizeof(tmps), "bitmap=0x%" PRIx32, (uint32_t)
+ 		    ( (DEC_MEMMAP_ADDR + sizeof(uint32_t) /* skip the
+ 			page size and point to the memmap */
+ 		    ) & 0xffffffffULL) );
+ 		tmps[sizeof(tmps)-1] = '\0';
+ 		add_environment_string(cpu, tmps, &addr);
+ 
+-		snprintf(tmps, sizeof(tmps), "bitmaplen=0x%"PRIx32, (uint32_t)
++		snprintf(tmps, sizeof(tmps), "bitmaplen=0x%" PRIx32, (uint32_t)
+ 		    ( machine->physical_ram_in_mb * 1048576 / 4096 / 8) );
+ 		tmps[sizeof(tmps)-1] = '\0';
+ 		add_environment_string(cpu, tmps, &addr);

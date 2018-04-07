@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cpus_memory_ppc_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/memory_ppc.cc
+--- src/cpus/memory_ppc.cc.orig
++++ src/cpus/memory_ppc.cc
+@@ -270,7 +270,7 @@ int ppc_translate_v2p(struct cpu *cpu, uint64_t vaddr,
+ 		return 0;
+ 
+ 	if (!quiet_mode)
+-		fatal("[ memory_ppc: exception! vaddr=0x%"PRIx64" pc=0x%"PRIx64
++		fatal("[ memory_ppc: exception! vaddr=0x%" PRIx64" pc=0x%" PRIx64
+ 		    " instr=%i user=%i wf=%i ]\n", (uint64_t) vaddr,
+ 		    (uint64_t) cpu->pc, instr, user, writeflag);
+ 

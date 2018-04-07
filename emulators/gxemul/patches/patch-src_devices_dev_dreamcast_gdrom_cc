@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_devices_dev_dreamcast_gdrom_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/dev_dreamcast_gdrom.cc
+--- src/devices/dev_dreamcast_gdrom.cc.orig
++++ src/devices/dev_dreamcast_gdrom.cc
+@@ -474,7 +474,7 @@ DEVICE_ACCESS(dreamcast_gdrom_dma)
+ 				// GDROM DMA transfer.
+ 				uint32_t dst = d->dma_reg[0x04 / sizeof(uint32_t)];
+ 				int length = d->dma_reg[0x08 / sizeof(uint32_t)];
+-				fatal("[ dreamcast_gdrom_dma: Transfering %i bytes to 0x%08"PRIx32" ]\n", length, dst);
++				fatal("[ dreamcast_gdrom_dma: Transfering %i bytes to 0x%08" PRIx32" ]\n", length, dst);
+ 
+ 				if (d->data == NULL) {
+ 					fatal("dreamcast_gdrom_dma: DMA transfer but d->data is NULL. TODO\n");

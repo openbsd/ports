@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cpus_cpu_mips_instr_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/cpu_mips_instr.cc
+--- src/cpus/cpu_mips_instr.cc.orig
++++ src/cpus/cpu_mips_instr.cc
+@@ -3983,7 +3983,7 @@ X(to_be_translated)
+ 		if (cpu->delay_slot) {
+ 			if (!cpu->translation_readahead)
+ 				fatal("TODO: branch in delay slot (=%i)? (3);"
+-				    " addr=%016"PRIx64" iword=%08"PRIx32"\n",
++				    " addr=%016" PRIx64" iword=%08" PRIx32"\n",
+ 				    cpu->delay_slot, (uint64_t)addr, iword);
+ 			goto bad;
+ 		}
+@@ -4753,7 +4753,7 @@ X(to_be_translated)
+ 		if (!has_warned && !cpu->translation_readahead) {
+ 			fatal("[ WARNING/NOTE: attempt to execute a 64-bit"
+ 			    " instruction on an emulated 32-bit processor; "
+-			    "pc=0x%08"PRIx32" ]\n", (uint32_t)cpu->pc);
++			    "pc=0x%08" PRIx32" ]\n", (uint32_t)cpu->pc);
+ 			has_warned = 1;
+ 		}
+ 		if (cpu->translation_readahead)

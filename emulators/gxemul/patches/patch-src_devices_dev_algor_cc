@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_devices_dev_algor_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/dev_algor.cc
+--- src/devices/dev_algor.cc.orig
++++ src/devices/dev_algor.cc
+@@ -175,17 +175,17 @@ DEVICE_ACCESS(algor)
+ 			fatal("[ algor: read from 0x%x ]\n",
+ 			    (int)relative_addr);
+ 		} else {
+-			fatal("[ algor: write to 0x%x: 0x%"PRIx64" ]\n",
++			fatal("[ algor: write to 0x%x: 0x%" PRIx64" ]\n",
+ 			    (int) relative_addr, (uint64_t) idata);
+ 		}
+ 	}
+ 
+ 	if (n != NULL) {
+ 		if (writeflag == MEM_READ) {
+-			debug("[ algor: read from %s: 0x%"PRIx64" ]\n",
++			debug("[ algor: read from %s: 0x%" PRIx64" ]\n",
+ 			    n, (uint64_t) odata);
+ 		} else {
+-			debug("[ algor: write to %s: 0x%"PRIx64" ]\n",
++			debug("[ algor: write to %s: 0x%" PRIx64" ]\n",
+ 			    n, (uint64_t) idata);
+ 		}
+ 	}

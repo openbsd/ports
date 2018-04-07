@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_symbol_symbol_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/symbol/symbol.cc
+--- src/symbol/symbol.cc.orig
++++ src/symbol/symbol.cc
+@@ -133,7 +133,7 @@ char *get_symbol_name_and_n_args(struct symbol_context
+ 					    "%s", s->name);
+ 				else
+ 					snprintf(symbol_buf, SYMBOLBUF_MAX,
+-					    "%s+0x%"PRIx64, s->name, (uint64_t)
++					    "%s+0x%" PRIx64, s->name, (uint64_t)
+ 					    (addr - s->addr));
+ 				if (offset != NULL)
+ 					*offset = addr - s->addr;
+@@ -157,7 +157,7 @@ char *get_symbol_name_and_n_args(struct symbol_context
+ 					    "%s", s->name);
+ 				else
+ 					snprintf(symbol_buf, SYMBOLBUF_MAX,
+-					    "%s+0x%"PRIx64, s->name, (uint64_t)
++					    "%s+0x%" PRIx64, s->name, (uint64_t)
+ 					    (addr - s->addr));
+ 
+ 				if (offset != NULL)

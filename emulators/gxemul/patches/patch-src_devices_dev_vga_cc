@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_devices_dev_vga_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/dev_vga.cc
+--- src/devices/dev_vga.cc.orig
++++ src/devices/dev_vga.cc
+@@ -516,7 +516,7 @@ DEVICE_TICK(vga)
+ 		int base = ((d->crtc_reg[VGA_CRTC_START_ADDR_HIGH] << 8)
+ 		    + d->crtc_reg[VGA_CRTC_START_ADDR_LOW]) * 2;
+ 		int new_u_y1, new_u_y2;
+-		debug("[ dev_vga_tick: dyntrans access, %"PRIx64" .. %"
++		debug("[ dev_vga_tick: dyntrans access, %" PRIx64" .. %"
+ 		    PRIx64" ]\n", (uint64_t) low, (uint64_t) high);
+ 		low -= base;
+ 		high -= base;

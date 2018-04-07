@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cpus_memory_mips_v2p_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/memory_mips_v2p.cc
+--- src/cpus/memory_mips_v2p.cc.orig
++++ src/cpus/memory_mips_v2p.cc
+@@ -294,7 +294,7 @@ int TRANSLATE_ADDRESS(struct cpu *cpu, uint64_t vaddr,
+ 				case 0x07fffff:	pageshift = 22; break;
+ 				case 0x1ffffff:	pageshift = 24; break;
+ 				case 0x7ffffff:	pageshift = 26; break;
+-				default:fatal("pmask=%08"PRIx32"\n", pmask);
++				default:fatal("pmask=%08" PRIx32"\n", pmask);
+ 					exit(1);
+ 				}
+ 

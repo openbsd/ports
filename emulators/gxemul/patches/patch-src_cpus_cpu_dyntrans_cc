@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_cpus_cpu_dyntrans_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/cpu_dyntrans.cc
+--- src/cpus/cpu_dyntrans.cc.orig
++++ src/cpus/cpu_dyntrans.cc
+@@ -79,10 +79,10 @@ static void gather_statistics(struct cpu *cpu)
+ 			a += low_pc << DYNTRANS_INSTR_ALIGNMENT_SHIFT;
+ 			if (cpu->is_32bit)
+ 				snprintf(buf + strlen(buf), sizeof(buf),
+-				    "0x%08"PRIx32, (uint32_t)a);
++				    "0x%08" PRIx32, (uint32_t)a);
+ 			else
+ 				snprintf(buf + strlen(buf), sizeof(buf),
+-				    "0x%016"PRIx64, (uint64_t)a);
++				    "0x%016" PRIx64, (uint64_t)a);
+ 			break;
+ 		case 'v':
+ 			/*  Virtual program counter address:  */
+@@ -92,10 +92,10 @@ static void gather_statistics(struct cpu *cpu)
+ 			a += low_pc << DYNTRANS_INSTR_ALIGNMENT_SHIFT;
+ 			if (cpu->is_32bit)
+ 				snprintf(buf + strlen(buf), sizeof(buf),
+-				    "0x%08"PRIx32, (uint32_t)a);
++				    "0x%08" PRIx32, (uint32_t)a);
+ 			else
+ 				snprintf(buf + strlen(buf), sizeof(buf),
+-				    "0x%016"PRIx64, (uint64_t)a);
++				    "0x%016" PRIx64, (uint64_t)a);
+ 			break;
+ 		}
+ 		i++;
+@@ -533,9 +533,9 @@ void DYNTRANS_FUNCTION_TRACE_DEF(struct cpu *cpu, int 
+ 			fatal("&%s", symbol);
+ 		else {
+ 			if (cpu->is_32bit)
+-				fatal("0x%"PRIx32, (uint32_t)d);
++				fatal("0x%" PRIx32, (uint32_t)d);
+ 			else
+-				fatal("0x%"PRIx64, (uint64_t)d);
++				fatal("0x%" PRIx64, (uint64_t)d);
+ 		}
+ 
+ 		if (x < n_args_to_print - 1)
+@@ -1439,8 +1439,8 @@ void DYNTRANS_UPDATE_TRANSLATION_TABLE(struct cpu *cpu
+ 	vaddr_page &= 0xffffffffULL;
+ 
+ 	if (paddr_page > 0xffffffffULL) {
+-		fatal("update_translation_table(): v=0x%016"PRIx64", h=%p w=%i"
+-		    " p=0x%016"PRIx64"\n", vaddr_page, host_page, writeflag,
++		fatal("update_translation_table(): v=0x%016" PRIx64", h=%p w=%i"
++		    " p=0x%016" PRIx64"\n", vaddr_page, host_page, writeflag,
+ 		    paddr_page);
+ 		exit(1);
+ 	}
+@@ -1730,11 +1730,11 @@ cpu->cd.DYNTRANS_ARCH.vph_tlb_entry[r].valid);
+ 					quiet_mode = tmp_old_quiet_mode;
+ 				}
+ #ifdef MODE32
+-				fatal("BREAKPOINT: pc = 0x%"PRIx32"\n(The "
++				fatal("BREAKPOINT: pc = 0x%" PRIx32"\n(The "
+ 				    "instruction has not yet executed.)\n",
+ 				    (uint32_t)cpu->pc);
+ #else
+-				fatal("BREAKPOINT: pc = 0x%"PRIx64"\n(The "
++				fatal("BREAKPOINT: pc = 0x%" PRIx64"\n(The "
+ 				    "instruction has not yet executed.)\n",
+ 				    (uint64_t)cpu->pc);
+ #endif
+@@ -1894,9 +1894,9 @@ bad:	/*
+ 
+ 	if (cpu->machine->instruction_trace) {
+ 		if (cpu->is_32bit)
+-			fatal(" at 0x%"PRIx32"\n", (uint32_t)cpu->pc);
++			fatal(" at 0x%" PRIx32"\n", (uint32_t)cpu->pc);
+ 		else
+-			fatal(" at 0x%"PRIx64"\n", (uint64_t)cpu->pc);
++			fatal(" at 0x%" PRIx64"\n", (uint64_t)cpu->pc);
+ 	} else {
+ 		fatal(":\n");
+ 		DISASSEMBLE(cpu, ib, 1, 0);

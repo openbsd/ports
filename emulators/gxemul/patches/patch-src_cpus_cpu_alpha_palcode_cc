@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cpus_cpu_alpha_palcode_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/cpus/cpu_alpha_palcode.cc
+--- src/cpus/cpu_alpha_palcode.cc.orig
++++ src/cpus/cpu_alpha_palcode.cc
+@@ -90,7 +90,7 @@ void alpha_palcode_name(uint32_t palcode, char *buf, s
+ 	case 0xaa: snprintf(buf, buflen, "PAL_gentrap"); break;
+ 	case 0xae: snprintf(buf, buflen, "PAL_clrfen"); break;
+ 	case 0x3fffffe: snprintf(buf, buflen, "GXemul_PROM"); break;
+-	default:snprintf(buf, buflen, "UNKNOWN 0x%"PRIx32, palcode);
++	default:snprintf(buf, buflen, "UNKNOWN 0x%" PRIx32, palcode);
+ 	}
+ }
+ 
+@@ -144,7 +144,7 @@ void alpha_prom_call(struct cpu *cpu)
+ 		store_buf(cpu, a2, s, len);
+ 		break;
+ 
+-	default:fatal("[ Alpha PALcode: GXemul PROM call, a0=0x%"PRIx64" ]\n",
++	default:fatal("[ Alpha PALcode: GXemul PROM call, a0=0x%" PRIx64" ]\n",
+ 		    (uint64_t) cpu->cd.alpha.r[ALPHA_A0]);
+ 		cpu->running = 0;
+ 	}

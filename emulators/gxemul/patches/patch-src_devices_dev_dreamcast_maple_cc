@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_devices_dev_dreamcast_maple_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+
+Index: src/devices/dev_dreamcast_maple.cc
+--- src/devices/dev_dreamcast_maple.cc.orig
++++ src/devices/dev_dreamcast_maple.cc
+@@ -394,7 +394,7 @@ void maple_do_dma_xfer(struct cpu *cpu, struct dreamca
+ 	 *   Comstedt's Maple demo program.
+ 	 */
+ 	if (addr & 0x1f) {
+-		fatal("[ dreamcast_maple: dmaaddr 0x%08"PRIx32" is NOT"
++		fatal("[ dreamcast_maple: dmaaddr 0x%08" PRIx32" is NOT"
+ 		    " 32-byte aligned; aborting ]\n", addr);
+ 		return;
+ 	}
+@@ -432,7 +432,7 @@ void maple_do_dma_xfer(struct cpu *cpu, struct dreamca
+ 
+ 		if (receive_addr & 0xe000001f)
+ 			fatal("[ dreamcast_maple: WARNING! receive address 0x"
+-			    "%08"PRIx32" isn't valid! ]\n", receive_addr);
++			    "%08" PRIx32" isn't valid! ]\n", receive_addr);
+ 
+ 		/*  Read the command word for this message:  */
+ 		cpu->memory_rw(cpu, cpu->mem, addr, (unsigned char *) (void *) &buf, 4, MEM_READ,
+@@ -515,7 +515,7 @@ void maple_do_dma_xfer(struct cpu *cpu, struct dreamca
+ 				    d, cpu, port, receive_addr);
+ 			} else {
+ 				fatal("[ dreamcast_maple: WARNING: GETCOND: "
+-				    "UNIMPLEMENTED 0x%08"PRIx32" ]\n", cond);
++				    "UNIMPLEMENTED 0x%08" PRIx32" ]\n", cond);
+ 				exit(1);
+ 			}
+ 			break;
