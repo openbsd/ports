@@ -1,0 +1,17 @@
+$OpenBSD: patch-modules_filter_tex_cpp,v 1.1 2018/04/07 22:50:15 naddy Exp $
+
+Fix compilation with clang 6.
+https://git.savannah.gnu.org/cgit/aspell.git/patch/?id=8089fa02122fed0a6394eba14bbedcb1d18e2384
+
+Index: modules/filter/tex.cpp
+--- modules/filter/tex.cpp.orig
++++ modules/filter/tex.cpp
+@@ -174,7 +174,7 @@ namespace {
+ 
+     if (c == '{') {
+ 
+-      if (top.in_what == Parm || top.in_what == Opt || top.do_check == '\0')
++      if (top.in_what == Parm || top.in_what == Opt || *top.do_check == '\0')
+ 	push_command(Parm);
+ 
+       top.in_what = Parm;

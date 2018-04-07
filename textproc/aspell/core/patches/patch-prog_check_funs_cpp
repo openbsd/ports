@@ -1,0 +1,17 @@
+$OpenBSD: patch-prog_check_funs_cpp,v 1.1 2018/04/07 22:50:15 naddy Exp $
+
+Fix compilation with clang 6.
+https://git.savannah.gnu.org/cgit/aspell.git/patch/?id=8089fa02122fed0a6394eba14bbedcb1d18e2384
+
+Index: prog/check_funs.cpp
+--- prog/check_funs.cpp.orig
++++ prog/check_funs.cpp
+@@ -647,7 +647,7 @@ static void print_truncate(FILE * out, const char * wo
+     }
+   }
+   if (i == width-1) {
+-    if (word == '\0')
++    if (*word == '\0')
+       put(out,' ');
+     else if (word[len] == '\0')
+       put(out, word, len);
