@@ -1,0 +1,16 @@
+$OpenBSD: patch-widgets_NewKey_cpp,v 1.1 2018/04/07 20:05:50 jasper Exp $
+
+Allow for generating 8k keys.
+
+Index: widgets/NewKey.cpp
+--- widgets/NewKey.cpp.orig
++++ widgets/NewKey.cpp
+@@ -123,7 +123,7 @@ Q_DECLARE_METATYPE(keyListItem);
+ NewKey::NewKey(QWidget *parent, QString name)
+ 	:QDialog(parent)
+ {
+-	static const char* const sizeList[] = { "1024", "2048", "4096" };
++	static const char* const sizeList[] = { "1024", "2048", "4096", "8192" };
+ 	size_t i;
+ 	slotidList p11_slots;
+ 	QList<keyListItem> keytypes;
