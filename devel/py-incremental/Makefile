@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/04 08:12:23 pvk Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/07 12:50:58 pvk Exp $
 
 COMMENT =		versioning library for Python projects
 
@@ -16,16 +16,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-#TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
-#			devel/py-test${MODPY_FLAVOR} \
-#			devel/py-twisted${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
 
 TEST_ENV =		LC_CTYPE=en_US.UTF-8
-## N.B. enable test after devel/py-twisted upgrade
-NO_TEST =		Yes
 
 do-test:
 	cd ${WRKSRC}/src/incremental && ${SETENV} ${TEST_ENV} ${MODPY_BIN} -m pytest
