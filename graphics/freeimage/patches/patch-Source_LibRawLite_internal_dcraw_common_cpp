@@ -1,0 +1,43 @@
+$OpenBSD: patch-Source_LibRawLite_internal_dcraw_common_cpp,v 1.1 2018/04/07 09:07:59 rsadowski Exp $
+
+fix clang 6.0 build
+
+Index: Source/LibRawLite/internal/dcraw_common.cpp
+--- Source/LibRawLite/internal/dcraw_common.cpp.orig
++++ Source/LibRawLite/internal/dcraw_common.cpp
+@@ -3917,7 +3917,7 @@ void CLASS lin_interpolate()
+  */
+ void CLASS vng_interpolate()
+ {
+-  static const signed char *cp, terms[] = {
++  static const int *cp, terms[] = {
+     -2,-2,+0,-1,0,0x01, -2,-2,+0,+0,1,0x01, -2,-1,-1,+0,0,0x01,
+     -2,-1,+0,-1,0,0x02, -2,-1,+0,+0,0,0x03, -2,-1,+0,+1,1,0x01,
+     -2,+0,+0,-1,0,0x06, -2,+0,+0,+0,1,0x02, -2,+0,+0,+1,0,0x03,
+@@ -6470,7 +6470,7 @@ void CLASS adobe_coeff (const char *p_make, const char
+ {
+   static const struct {
+     const char *prefix;
+-    short t_black, t_maximum, trans[12];
++    int t_black, t_maximum, trans[12];
+   } table[] = {
+     { "AGFAPHOTO DC-833m", 0, 0,	/* DJC */
+ 	{ 11438,-3762,-1115,-2409,9914,2497,-1227,2295,5300 } },
+@@ -7452,7 +7452,7 @@ void CLASS identify()
+     parse_fuji (get4());
+     if (thumb_offset > 120) {
+       fseek (ifp, 120, SEEK_SET);
+-      is_raw += (i = get4()) && 1;
++      is_raw += static_cast<bool>(i = get4()) && 1;
+       if (is_raw == 2 && shot_select)
+ 	parse_fuji (i);
+     }
+@@ -9155,7 +9155,7 @@ void CLASS tiff_head (struct tiff_hdr *th, int full)
+   strncpy (th->t_desc, desc, 512);
+   strncpy (th->t_make, make, 64);
+   strncpy (th->t_model, model, 64);
+-  strcpy (th->soft, "dcraw v"DCRAW_VERSION);
++  strcpy (th->soft, "dcraw v" DCRAW_VERSION);
+   t = localtime (&timestamp);
+   sprintf (th->date, "%04d:%02d:%02d %02d:%02d:%02d",
+       t->tm_year+1900,t->tm_mon+1,t->tm_mday,t->tm_hour,t->tm_min,t->tm_sec);
