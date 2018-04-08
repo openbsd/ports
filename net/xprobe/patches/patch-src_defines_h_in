@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_defines_h_in,v 1.1 2018/04/08 19:14:26 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: src/defines.h.in
+--- src/defines.h.in.orig
++++ src/defines.h.in
+@@ -24,7 +24,7 @@
+ 
+ #define VERSION "@VERSION@"
+ #define BANNER \
+-"\nXprobe2 v."VERSION\
++"\nXprobe2 v." VERSION\
+ " Copyright (c) 2002-2005 fyodor@o0o.nu, ofir@sys-security.com, meder@o0o.nu"\
+ "\n"
+ 
