@@ -1,0 +1,16 @@
+$OpenBSD: patch-network_cc,v 1.3 2018/04/08 13:56:41 jasper Exp $
+
+error: invalid operands to binary expression ('__bind<int &, sockaddr *, unsigned long>' and 'int')
+
+Index: network.cc
+--- network.cc.orig
++++ network.cc
+@@ -463,7 +463,7 @@ int IncomingConnection::createSocket() {
+   sin.sin_addr.s_addr = INADDR_ANY;
+   sin.sin_port = htons(Port);
+     
+-  if (bind(netsocket,(struct sockaddr *) &sin,sizeof(sin))==-1) {
++  if (::bind(netsocket,(struct sockaddr *) &sin,sizeof(sin))==-1) {
+     snprintf(errorMessage,128,_("Unable to bind on port %d."),Port);
+     return(-1);
+   }
