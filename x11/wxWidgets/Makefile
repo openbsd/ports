@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/04/08 20:19:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2018/04/08 20:23:44 rsadowski Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -7,8 +7,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	15
-REVISION-media =10
+REVISION-main =	16
+REVISION-media =11
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
@@ -34,7 +34,7 @@ SHARED_LIBS =	wx_base			3.0	\
 		wx_gtk2_svg		3.0	\
 		wx_gtk2_xrc		3.0
 
-HOMEPAGE =	http://www.wxwidgets.org/
+HOMEPAGE =	https://www.wxwidgets.org/
 
 # wxWindows (modified LGPL)
 # http://www.wxwidgets.org/about/licence/
@@ -48,10 +48,11 @@ LIB_DEPENDS =	devel/gettext \
 		x11/gtk+2
 TEST_DEPENDS = ${BUILD_PKGPATH}>=${V}
 
-LIB_DEPENDS-main = ${LIB_DEPENDS} \
-		   archivers/libmspack \
-		   databases/iodbc \
-		   devel/sdl
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			archivers/libmspack \
+			databases/iodbc \
+			devel/sdl
+
 WANTLIB-main += GL GLU SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-main += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c expat
 WANTLIB-main += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
@@ -59,11 +60,12 @@ WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv
 WANTLIB-main += intl iodbc jpeg m mspack pango-1.0 pangoft2-1.0 png
 WANTLIB-main += pthread ${COMPILER_LIBCXX} tiff z
 
-LIB_DEPENDS-media = ${LIB_DEPENDS} \
-		    devel/gconf2 \
-		    multimedia/gstreamer-0.10/core \
-		    multimedia/gstreamer-0.10/plugins-base \
-		    ${BASE_PKGPATH},-main>=${V}
+LIB_DEPENDS-media =	${LIB_DEPENDS} \
+			devel/gconf2 \
+			multimedia/gstreamer-0.10/core \
+			multimedia/gstreamer-0.10/plugins-base \
+			${BASE_PKGPATH},-main>=${V}
+
 WANTLIB-media += SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-media += Xrandr Xrender Xxf86vm atk-1.0 fontconfig freetype
 WANTLIB-media += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
