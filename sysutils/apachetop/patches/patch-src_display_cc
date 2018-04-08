@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_display_cc,v 1.1 2018/04/08 10:30:32 sthen Exp $
+
+Index: src/display.cc
+--- src/display.cc.orig
++++ src/display.cc
+@@ -1145,7 +1145,7 @@ void display_histogram()
+ 	 * characters high to draw the barchart
+ 	*/
+ 	float bar_height[hist_width];
+-	char line[hist_width];
++	char line[hist_width + 1];
+ 	for(i = 0 ; i < hist_width ; i++)
+ 		bar_height[i] = 0;
+ 
+@@ -1191,7 +1191,7 @@ void display_histogram()
+ 
+ 		/* compose a row of hashes */
+ 		memset(line, ' ', hist_width);
+-		line[hist_width] = (char)NULL;
++		line[hist_width] = '\0';
+ 		for(j = 0 ; j < hist_width ; ++j)
+ 		{
+ 			if (bar_height[j] > y_scale)
+@@ -1203,7 +1203,7 @@ void display_histogram()
+ 	}
+ 
+ 	memset(horiz_line, '-', hist_width);
+-	horiz_line[hist_width] = (char)NULL;
++	horiz_line[hist_width] = '\0';
+ 	mvprintw(HISTOGRAM_START + hist_height, 2, "0+%*s",
+ 	    hist_width, horiz_line);
+ 	

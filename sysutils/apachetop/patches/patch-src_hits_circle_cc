@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_hits_circle_cc,v 1.1 2018/04/08 10:30:32 sthen Exp $
+
+Index: src/hits_circle.cc
+--- src/hits_circle.cc.orig
++++ src/hits_circle.cc
+@@ -24,7 +24,7 @@ int Hits_Circle::create(unsigned int passed_size)
+ 	}
+ 
+ 	reqcount = bytecount = 0;
+-	memset(rc_summary, (char) NULL, sizeof(rc_summary));
++	memset(rc_summary, 0, sizeof(rc_summary));
+ 
+ 	return 0;
+ }
