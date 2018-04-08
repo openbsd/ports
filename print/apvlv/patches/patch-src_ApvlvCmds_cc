@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ApvlvCmds_cc,v 1.1 2018/04/08 13:02:26 jasper Exp $
+
+From 9da539016cb6c317388020f4ebce1793077aa126 Mon Sep 17 00:00:00 2001
+From: Ryan Reno <ryan.reno@outlook.com>
+Date: Fri, 23 Jun 2017 21:56:22 -0700
+Subject: [PATCH] Changed comparions to remove compiler errors. In one case
+ changed to compare against a NULL pointer and another, the pointer was
+  dereferenced to compare against a char
+
+Index: src/ApvlvCmds.cc
+--- src/ApvlvCmds.cc.orig
++++ src/ApvlvCmds.cc
+@@ -192,7 +192,7 @@ namespace apvlv
+   const char *ApvlvCmd::append (const char *s)
+   {
+     size_t len;
+-    char *e;
++    char *e = strchr((char *)s, '>');
+ 
+     len = strlen (s);
+ 
+@@ -200,7 +200,7 @@ namespace apvlv
+ 
+     if (len >= 4
+ 	&& *s == '<'
+-	&& (e = strchr ((char *) s, '>')) != '\0' && *(s + 2) != '-')
++	&& (*e != '\0' && *(s + 2) != '-'))
+       {
+ 	e++;
+ 	StringKeyMap::iterator it;

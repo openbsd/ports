@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ApvlvCore_cc,v 1.1 2018/04/08 13:02:26 jasper Exp $
+
+From 9da539016cb6c317388020f4ebce1793077aa126 Mon Sep 17 00:00:00 2001
+From: Ryan Reno <ryan.reno@outlook.com>
+Date: Fri, 23 Jun 2017 21:56:22 -0700
+Subject: [PATCH] Changed comparions to remove compiler errors. In one case
+ changed to compare against a NULL pointer and another, the pointer was
+  dereferenced to compare against a char
+
+Index: src/ApvlvCore.cc
+--- src/ApvlvCore.cc.orig
++++ src/ApvlvCore.cc
+@@ -90,7 +90,7 @@ namespace apvlv
+   {
+     mInuse = use;
+ 
+-    if (mInuse == false && gView->hasloaded (filename (), type ()) == false)
++    if (mInuse == false && gView->hasloaded (filename (), type ()) == NULL)
+       {
+ 	debug ("core :%p is not needed, delete it\n", this);
+ 	delete this;
