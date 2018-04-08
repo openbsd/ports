@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+$OpenBSD: patch-makefile,v 1.2 2018/04/08 19:15:41 bcallah Exp $
 
 Don't hardcode optimization flags.
 Proper includes.
@@ -58,7 +58,7 @@ Index: makefile
  endif
  
  ifeq ($(strip $(steamworks)),true)
-@@ -339,8 +330,7 @@ debugon:
+@@ -339,14 +330,13 @@ debugon:
  	$(eval CFLAGS += -DDEBUG -D_DEBUG -O0 -g)
  
  debugoff:
@@ -68,3 +68,10 @@ Index: makefile
  
  $(BINDIR)/%.o: $(SRCDIR)/%.s
  	$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
+ 
+ $(BINDIR)/%.o: $(SRCDIR)/%.cpp
+-	$(CXX) -c -o $@ $< $(CFLAGS)
++	$(CXX) -c -o $@ $< $(CFLAGS) -std=c++03
+ 
+ $(BINDIR)/%.o: $(SRCDIR)/%.c
+ 	$(CC) -c -o $@ $< $(CFLAGS)
