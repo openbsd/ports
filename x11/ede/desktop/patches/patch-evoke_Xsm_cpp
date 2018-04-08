@@ -1,0 +1,16 @@
+$OpenBSD: patch-evoke_Xsm_cpp,v 1.1 2018/04/08 19:30:34 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: evoke/Xsm.cpp
+--- evoke/Xsm.cpp.orig
++++ evoke/Xsm.cpp
+@@ -650,7 +650,7 @@ bool Xsm::save_serialized(void) {
+ 	String file = SETTINGS_FILENAME".conf";
+ #else
+ 	String file = user_config_dir();
+-	file += "/ede/"SETTINGS_FILENAME".conf";
++	file += "/ede/" SETTINGS_FILENAME ".conf";
+ #endif
+ 
+ 	FILE* setting_file = fopen(file.c_str(), "w");
