@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_slowhttptestmain_cc,v 1.1 2018/04/08 19:35:24 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: src/slowhttptestmain.cc
+--- src/slowhttptestmain.cc.orig
++++ src/slowhttptestmain.cc
+@@ -44,10 +44,10 @@ static void info() {
+ }
+ static void usage() {
+   printf(
+-      "\n"PACKAGE", a tool to test for slow HTTP "
++      "\n" PACKAGE ", a tool to test for slow HTTP "
+       "DoS vulnerabilities - version " VERSION "\n"
+       "Usage: "
+-      PACKAGE" [options ...]"
++      PACKAGE " [options ...]"
+       "\n"
+       "Test modes:\n"
+       "  -H               slow headers a.k.a. Slowloris (default)\n"
