@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/04/07 10:55:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2018/04/08 09:40:40 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -23,6 +23,8 @@ MASTER_SITES=		http://www.freedesktop.org/software/polkit/releases/
 
 MODULES=		lang/python \
 			textproc/intltool
+
+BUILD_DEPENDS=		devel/gobject-introspection
 
 # man pages
 BUILD_DEPENDS+=		textproc/docbook-xsl
