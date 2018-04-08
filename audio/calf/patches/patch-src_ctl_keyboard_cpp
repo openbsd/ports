@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_ctl_keyboard_cpp,v 1.1 2014/11/18 10:17:17 brad Exp $
+$OpenBSD: patch-src_ctl_keyboard_cpp,v 1.2 2018/04/08 14:00:03 jasper Exp $
 
-Replace the malloc.h header with stdlib.h
+- Replace the malloc.h header with stdlib.h
+- error: non-constant-expression cannot be narrowed from type 'int' to 'double' in initializer list
 
---- src/ctl_keyboard.cpp.orig	Mon Nov  3 22:44:21 2014
-+++ src/ctl_keyboard.cpp	Mon Nov  3 22:45:31 2014
+Index: src/ctl_keyboard.cpp
+--- src/ctl_keyboard.cpp.orig
++++ src/ctl_keyboard.cpp
 @@ -22,7 +22,7 @@
   */
  #include <calf/ctl_keyboard.h>
@@ -13,3 +15,21 @@ Replace the malloc.h header with stdlib.h
  
  static const int semitones_b[] = { 1, 3, -1, 6, 8, 10, -1 };
  static const int semitones_w[] = { 0, 2, 4, 5, 7, 9, 11 };
+@@ -52,7 +52,7 @@ calf_keyboard_expose (GtkWidget *widget, GdkEventExpos
+     
+     for (int i = 0; i < self->nkeys; i++)
+     {
+-        CalfKeyboard::KeyInfo ki = { 0.5 + 12 * i, 0.5, 12, sy, 12 * (i / 7) + semitones_w[i % 7], false };
++        CalfKeyboard::KeyInfo ki = { 0.5 + 12 * i, 0.5, 12, (double)sy, 12 * (i / 7) + semitones_w[i % 7], false };
+         cairo_new_path(c);
+         gdk_cairo_set_source_color(c, &scWhiteKey);
+         if (!self->sink->pre_draw(c, ki))
+@@ -72,7 +72,7 @@ calf_keyboard_expose (GtkWidget *widget, GdkEventExpos
+     {
+         if ((1 << (i % 7)) & 59)
+         {
+-            CalfKeyboard::KeyInfo ki = { 8.5 + 12 * i, 0.5, 8, sy * 3 / 5, 12 * (i / 7) + semitones_b[i % 7], true };
++            CalfKeyboard::KeyInfo ki = { 8.5 + 12 * i, 0.5, 8, (double)sy * 3 / 5, 12 * (i / 7) + semitones_b[i % 7], true };
+             cairo_new_path(c);
+             cairo_rectangle(c, ki.x, ki.y, ki.width, ki.height);
+             gdk_cairo_set_source_color(c, &scBlackKey);
