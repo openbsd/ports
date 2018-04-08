@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/08 19:17:14 bcallah Exp $
 
 COMMENT =	puzzle game collecting diamonds and avoiding obstacles
 DISTNAME =	xye-0.12.2
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://xye.sourceforge.net/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,5 +21,7 @@ LIB_DEPENDS =	devel/sdl-image \
 RUN_DEPENDS =	devel/desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
+
+CXXFLAGS +=	-std=c++03
 
 .include <bsd.port.mk>
