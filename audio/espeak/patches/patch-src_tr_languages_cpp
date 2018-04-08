@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tr_languages_cpp,v 1.1 2018/04/08 19:43:44 jasper Exp $
+
+error: constant expression evaluates to 194 which cannot be narrowed to type 'char'
+
+Index: src/tr_languages.cpp
+--- src/tr_languages.cpp.orig
++++ src/tr_languages.cpp
+@@ -198,7 +198,7 @@ static const unsigned short chars_ignore_zwnj_hyphen[]
+ 	0x200d,  1, // zero width joiner
+ 	0, 0 };
+ 
+-const char string_ordinal[] = {0xc2,0xba,0};  // masculine ordinal character, UTF-8
++const char string_ordinal[] = {static_cast<char>(0xc2), static_cast<char>(0xba),0};  // masculine ordinal character, UTF-8
+ 
+ 
+ static Translator* NewTranslator(void)
