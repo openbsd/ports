@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/08 08:29:22 stsp Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/08 08:30:37 stsp Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
@@ -25,8 +25,10 @@ USE_GMAKE = 		Yes
 CONFIGURE_ARGS =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} HTDOCSPREFIX=${WRKINST}/${VARBASE}/www/htdocs/kcaldav
-FAKE_FLAGS +=	CGIPREFIX=${WRKINST}/${VARBASE}/www/cgi-bin CALPREFIX=${WRKINST}/${VARBASE}/www/caldav
+FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} \
+			HTDOCSPREFIX=${WRKINST}/${VARBASE}/www/htdocs/kcaldav \
+			CGIPREFIX=${WRKINST}/${VARBASE}/www/cgi-bin \
+			CALPREFIX=${WRKINST}/${VARBASE}/www/caldav
 
 # no doc on how to run tests
 NO_TEST =		Yes
