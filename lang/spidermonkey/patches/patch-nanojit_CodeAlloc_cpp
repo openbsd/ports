@@ -1,6 +1,8 @@
-$OpenBSD: patch-nanojit_CodeAlloc_cpp,v 1.1 2017/01/01 09:29:09 jca Exp $
---- js/src/nanojit/CodeAlloc.cpp.orig	Tue Mar  6 15:45:30 2012
-+++ js/src/nanojit/CodeAlloc.cpp	Fri Dec 30 02:57:57 2016
+$OpenBSD: patch-nanojit_CodeAlloc_cpp,v 1.2 2018/04/08 10:38:26 landry Exp $
+
+Index: nanojit/CodeAlloc.cpp
+--- nanojit/CodeAlloc.cpp.orig
++++ nanojit/CodeAlloc.cpp
 @@ -242,9 +242,13 @@ namespace nanojit
      }
  
@@ -15,16 +17,16 @@ $OpenBSD: patch-nanojit_CodeAlloc_cpp,v 1.1 2017/01/01 09:29:09 jca Exp $
  
  #ifdef AVMPLUS_SPARC
  #ifdef __linux__
-@@ -318,6 +322,12 @@ extern  "C" void sync_instruction_memory(caddr_t v, u_
+@@ -316,6 +320,12 @@ extern  "C" void sync_instruction_memory(caddr_t v, u_
+     void CodeAlloc::flushICache(CodeList* &blocks) {
+         for (CodeList *b = blocks; b != 0; b = b->next) {
  			cacheflush((int)b->start(), (int)b->start()+b->size(), 0);
-         }
-     }
++        }
++    }
 +	#elif defined(NANOJIT_ARM) && defined(__OpenBSD__)
 +    void CodeAlloc::flushICache(CodeList* &blocks) {
 +        for (CodeList *b = blocks; b != 0; b = b->next) {
 +			arm_sync_icache((u_int)b->start(), (int)b->size());
-+        }
-+    }
+         }
+     }
  	#else
-     // fixme: __clear_cache is a libgcc feature, test for libgcc or gcc
-     void CodeAlloc::flushICache(CodeList* &blocks) {

@@ -1,6 +1,8 @@
-$OpenBSD: patch-js_src_configure_in,v 1.2 2017/04/28 01:54:09 espie Exp $
---- js/src/configure.in.orig	Tue Mar 16 10:55:20 2010
-+++ js/src/configure.in	Sat Mar 27 01:54:27 2010
+$OpenBSD: patch-configure_in,v 1.1 2018/04/08 10:38:26 landry Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
 @@ -874,7 +874,7 @@ HOST_AR='$(AR)'
  HOST_AR_FLAGS='$(AR_FLAGS)'
  
@@ -68,7 +70,7 @@ $OpenBSD: patch-js_src_configure_in,v 1.2 2017/04/28 01:54:09 espie Exp $
      AC_DEFINE(AVMPLUS_UNIX)
      ;;
  *cygwin*|*mingw*|*mks*|*msvc*|*wince)
-@@ -3414,17 +3421,9 @@
+@@ -3414,17 +3421,9 @@ if test "$GNU_CXX"; then
  
    dnl They changed -f[no-]handle-exceptions to -f[no-]exceptions in g++ 2.8
    AC_CACHE_VAL(ac_cv_cxx_exceptions_flags,

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2018/04/08 10:38:26 landry Exp $
 
 # old version that does not get updates; should be rm'd at some point
 PORTROACH=	ignore:1
@@ -34,8 +34,6 @@ HOMEPAGE =	https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonke
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 EXTRACT_SUFX =	.tar.bz2
-
-PATCH_STRIP =	-p2
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No

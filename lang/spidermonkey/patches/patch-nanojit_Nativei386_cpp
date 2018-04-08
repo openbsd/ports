@@ -1,0 +1,13 @@
+$OpenBSD: patch-nanojit_Nativei386_cpp,v 1.1 2018/04/08 10:38:26 landry Exp $
+
+Index: nanojit/Nativei386.cpp
+--- nanojit/Nativei386.cpp.orig
++++ nanojit/Nativei386.cpp
+@@ -46,6 +46,7 @@
+ #endif
+ 
+ #if defined AVMPLUS_UNIX || defined AVMPLUS_MAC
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <errno.h>
+ #include <stdlib.h>

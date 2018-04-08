@@ -1,9 +1,8 @@
-$OpenBSD: patch-js_src_nanojit_Assembler_cpp,v 1.2 2015/07/19 02:06:30 ajacoutot Exp $
+$OpenBSD: patch-nanojit_Assembler_cpp,v 1.1 2018/04/08 10:38:26 landry Exp $
 
-Allows debug build on !i386.
-
---- js/src/nanojit/Assembler.cpp.orig	Tue Oct 26 23:36:11 2010
-+++ js/src/nanojit/Assembler.cpp	Tue Oct 26 23:37:38 2010
+Index: nanojit/Assembler.cpp
+--- nanojit/Assembler.cpp.orig
++++ nanojit/Assembler.cpp
 @@ -1223,10 +1223,12 @@ namespace nanojit
                      countlir_label();
                      LabelState *label = _labels.get(ins);
