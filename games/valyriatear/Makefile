@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/04/08 19:16:43 bcallah Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
 GH_TAGNAME =	1.0.0
 
 HOMEPAGE =	https://valyriatear.blogspot.com/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Main game is GPLv2+
 # Art/music a variety of CC and GPL.
@@ -37,7 +38,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 # PCH (Precompiled Headers) are known to be broken so disable
 # the use of PCH.
-CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off
+CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off \
+		 -DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++03"
 
 WRKDIST =	${WRKDIR}/ValyriaTear-${GH_TAGNAME}
 
