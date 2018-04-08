@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/17 21:05:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/08 11:08:58 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
 @bin sbin/gitea
@@ -10,14 +10,12 @@ share/gitea/conf/
 @sample ${SYSCONFDIR}/gitea/conf/
 @owner
 @group
-share/gitea/conf/app.ini
+share/gitea/conf/app.ini.sample
 @owner _gitea
 @group _gitea
 @sample ${SYSCONFDIR}/gitea/conf/app.ini
 @owner
 @group
-@comment share/gitea/conf/app.ini.beforesubst
-@comment share/gitea/conf/app.ini.orig
 share/gitea/options/
 share/gitea/options/gitignore/
 share/gitea/options/gitignore/Actionscript
@@ -529,6 +527,7 @@ share/gitea/options/locale/locale_es-ES.ini
 share/gitea/options/locale/locale_fi-FI.ini
 share/gitea/options/locale/locale_fr-FR.ini
 share/gitea/options/locale/locale_hu-HU.ini
+share/gitea/options/locale/locale_id-ID.ini
 share/gitea/options/locale/locale_it-IT.ini
 share/gitea/options/locale/locale_ja-JP.ini
 share/gitea/options/locale/locale_ko-KR.ini
@@ -541,9 +540,11 @@ share/gitea/options/locale/locale_no-NO.ini
 share/gitea/options/locale/locale_pl-PL.ini
 share/gitea/options/locale/locale_pt-BR.ini
 share/gitea/options/locale/locale_ru-RU.ini
+share/gitea/options/locale/locale_ru-UA.ini
 share/gitea/options/locale/locale_sr-SP.ini
 share/gitea/options/locale/locale_sv-SE.ini
 share/gitea/options/locale/locale_tr-TR.ini
+share/gitea/options/locale/locale_uk-UA.ini
 share/gitea/options/locale/locale_zh-CN.ini
 share/gitea/options/locale/locale_zh-HK.ini
 share/gitea/options/locale/locale_zh-TW.ini
@@ -566,6 +567,7 @@ share/gitea/public/img/auth/openid_connect.png
 share/gitea/public/img/auth/twitter.png
 share/gitea/public/img/avatar_default.png
 share/gitea/public/img/checkmark.png
+share/gitea/public/img/dingtalk.ico
 share/gitea/public/img/discord.png
 share/gitea/public/img/favicon.ico
 share/gitea/public/img/favicon.png
@@ -2098,6 +2100,9 @@ share/gitea/public/vendor/plugins/simplemde/
 share/gitea/public/vendor/plugins/simplemde/LICENSE
 share/gitea/public/vendor/plugins/simplemde/simplemde.min.css
 share/gitea/public/vendor/plugins/simplemde/simplemde.min.js
+share/gitea/public/vendor/plugins/tribute/
+share/gitea/public/vendor/plugins/tribute/tribute.css
+share/gitea/public/vendor/plugins/tribute/tribute.min.js
 share/gitea/public/vendor/plugins/vue/
 share/gitea/public/vendor/plugins/vue/LICENSE
 share/gitea/public/vendor/plugins/vue/vue.min.js
@@ -2133,6 +2138,15 @@ share/gitea/templates/base/delete_modal_actions.tmpl
 share/gitea/templates/base/footer.tmpl
 share/gitea/templates/base/head.tmpl
 share/gitea/templates/base/paginate.tmpl
+share/gitea/templates/custom/
+share/gitea/templates/custom/body_inner_post.tmpl
+share/gitea/templates/custom/body_inner_pre.tmpl
+share/gitea/templates/custom/body_outer_post.tmpl
+share/gitea/templates/custom/body_outer_pre.tmpl
+share/gitea/templates/custom/extra_links.tmpl
+share/gitea/templates/custom/extra_tabs.tmpl
+share/gitea/templates/custom/footer.tmpl
+share/gitea/templates/custom/header.tmpl
 share/gitea/templates/explore/
 share/gitea/templates/explore/navbar.tmpl
 share/gitea/templates/explore/organizations.tmpl
@@ -2210,8 +2224,10 @@ share/gitea/templates/repo/issue/search.tmpl
 share/gitea/templates/repo/issue/view.tmpl
 share/gitea/templates/repo/issue/view_content/
 share/gitea/templates/repo/issue/view_content.tmpl
+share/gitea/templates/repo/issue/view_content/add_reaction.tmpl
 share/gitea/templates/repo/issue/view_content/comments.tmpl
 share/gitea/templates/repo/issue/view_content/pull.tmpl
+share/gitea/templates/repo/issue/view_content/reactions.tmpl
 share/gitea/templates/repo/issue/view_content/sidebar.tmpl
 share/gitea/templates/repo/issue/view_title.tmpl
 share/gitea/templates/repo/migrate.tmpl
@@ -2232,6 +2248,7 @@ share/gitea/templates/repo/settings/deploy_keys.tmpl
 share/gitea/templates/repo/settings/githook_edit.tmpl
 share/gitea/templates/repo/settings/githooks.tmpl
 share/gitea/templates/repo/settings/hook_delete_modal.tmpl
+share/gitea/templates/repo/settings/hook_dingtalk.tmpl
 share/gitea/templates/repo/settings/hook_discord.tmpl
 share/gitea/templates/repo/settings/hook_gitea.tmpl
 share/gitea/templates/repo/settings/hook_gogs.tmpl

@@ -1,8 +1,9 @@
-$OpenBSD: patch-conf_app_ini,v 1.3 2018/01/17 21:05:38 landry Exp $
-Index: conf/app.ini
---- conf/app.ini.orig
-+++ conf/app.ini
-@@ -1,12 +1,12 @@
+$OpenBSD: patch-custom_conf_app_ini_sample,v 1.1 2018/04/08 11:08:58 pvk Exp $
+
+Index: custom/conf/app.ini.sample
+--- custom/conf/app.ini.sample.orig
++++ custom/conf/app.ini.sample
+@@ -5,12 +5,12 @@
  ; App name that shows on every page title
  APP_NAME = Gitea: Git with a cup of tea
  ; Change it if you run locally
@@ -18,7 +19,7 @@ Index: conf/app.ini
  SCRIPT_TYPE = bash
  ; Default ANSI charset
  ANSI_CHARSET =
-@@ -42,7 +42,7 @@ LOCAL_COPY_PATH = tmp/local-repo
+@@ -50,7 +50,7 @@ LOCAL_WIKI_PATH = tmp/local-wiki
  ; Whether repository file uploads are enabled. Defaults to `true`
  ENABLED = true
  ; Path for uploads. Defaults to `data/tmp/uploads` (tmp gets deleted on gitea restart)
@@ -27,7 +28,7 @@ Index: conf/app.ini
  ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
  ALLOWED_TYPES =
  ; Max size of each file in MB. Defaults to 3MB
-@@ -120,7 +120,7 @@ SSH_DOMAIN = %(DOMAIN)s
+@@ -134,7 +134,7 @@ SSH_DOMAIN = %(DOMAIN)s
  ; Network interface builtin SSH server listens on
  SSH_LISTEN_HOST =
  ; Port number to be exposed in clone URL
@@ -36,7 +37,7 @@ Index: conf/app.ini
  ; Port number builtin SSH server listens on
  SSH_LISTEN_PORT = %(SSH_PORT)s
  ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
-@@ -155,13 +155,13 @@ DISABLE_ROUTER_LOG = false
+@@ -169,13 +169,13 @@ DISABLE_ROUTER_LOG = false
  ; not forget to export the private key):
  ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
  ; $ openssl pkcs12 -in cert.pfx -out key.pem -nocerts -nodes
@@ -52,8 +53,8 @@ Index: conf/app.ini
 +APP_DATA_PATH = ${LOCALSTATEDIR}/gitea/data
  ; Application level GZIP support
  ENABLE_GZIP = false
- ; Landing page for non-logged users, can be "home" or "explore"
-@@ -182,7 +182,7 @@ DSA     = 1024
+ ; Landing page, can be "home", "explore", or "organizations"
+@@ -196,7 +196,7 @@ DSA = 1024
  
  [database]
  ; Either "mysql", "postgres", "mssql" or "sqlite3", it's your choice
@@ -62,7 +63,7 @@ Index: conf/app.ini
  HOST = 127.0.0.1:3306
  NAME = gitea
  USER = root
-@@ -190,14 +190,14 @@ PASSWD =
+@@ -205,14 +205,14 @@ PASSWD =
  ; For "postgres" only, either "disable", "require" or "verify-full"
  SSL_MODE = disable
  ; For "sqlite3" and "tidb", use absolute path when you start as service
@@ -79,7 +80,7 @@ Index: conf/app.ini
  ; repo indexer by default disabled, since it uses a lot of disk space
  REPO_INDEXER_ENABLED = false
  REPO_INDEXER_PATH = indexers/repos.bleve
-@@ -324,8 +324,8 @@ HELO_HOSTNAME =
+@@ -339,8 +339,8 @@ HELO_HOSTNAME =
  SKIP_VERIFY =
  ; Use client certificate
  USE_CERTIFICATE = false
@@ -90,7 +91,7 @@ Index: conf/app.ini
  ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
  FROM =
  ; Mailer user name and password
-@@ -355,13 +355,13 @@ ITEM_TTL = 16h
+@@ -371,13 +371,13 @@ ITEM_TTL = 16h
  
  [session]
  ; Either "memory", "file", or "redis", default is "memory"
@@ -106,7 +107,7 @@ Index: conf/app.ini
  ; Session cookie name
  COOKIE_NAME = i_like_gitea
  ; If you use session in https only, default is false
-@@ -374,7 +374,7 @@ GC_INTERVAL_TIME = 86400
+@@ -390,7 +390,7 @@ GC_INTERVAL_TIME = 86400
  SESSION_LIFE_TIME = 86400
  
  [picture]
@@ -115,7 +116,7 @@ Index: conf/app.ini
  ; Chinese users can choose "duoshuo"
  ; or a custom avatar source, like: http://cn.gravatar.com/avatar/
  GRAVATAR_SOURCE = gravatar
-@@ -389,7 +389,7 @@ ENABLE_FEDERATED_AVATAR = false
+@@ -405,7 +405,7 @@ ENABLE_FEDERATED_AVATAR = false
  ; Whether attachments are enabled. Defaults to `true`
  ENABLE = true
  ; Path for attachments. Defaults to `data/attachments`
@@ -124,7 +125,7 @@ Index: conf/app.ini
  ; One or more allowed types, e.g. image/jpeg|image/png
  ALLOWED_TYPES = image/jpeg|image/png|application/zip|application/gzip
  ; Max size of each file. Defaults to 32MB
-@@ -404,14 +404,14 @@ MAX_FILES = 5
+@@ -420,14 +420,14 @@ MAX_FILES = 5
  FORMAT =
  
  [log]

@@ -1,4 +1,4 @@
-$OpenBSD: patch-main_go,v 1.1 2018/01/17 21:05:38 landry Exp $
+$OpenBSD: patch-main_go,v 1.2 2018/04/08 11:08:58 pvk Exp $
 
 Gets shown in the footer.
 
@@ -9,7 +9,7 @@ Index: main.go
  )
  
  // Version holds the current Gitea version
--var Version = "1.3.0-dev"
+-var Version = "1.4.0-dev"
 +var Version = "${VERSION}"
  
  // Tags holds the build tags used

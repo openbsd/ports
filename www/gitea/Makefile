@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/17 21:05:38 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/08 11:08:58 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.3.2
+VERSION =		1.4.0
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
@@ -32,13 +32,17 @@ WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 SUBST_VARS +=		VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/{conf/app.ini,main.go}
+	${SUBST_CMD} ${WRKDIST}/{custom/conf/app.ini.sample,main.go}
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gitea ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gitea
-.for _d in conf options public templates
+.for _d in custom/conf options public templates
 	cp -Rp ${WRKSRC}/${_d} ${PREFIX}/share/gitea
 .endfor
+
+post-install:
+	@find ${WRKINST} -type f -name '*.beforesubst' -exec rm {} \;
+	@find ${WRKINST} -type f -name '*.orig' -exec rm {} \;
 
 .include <bsd.port.mk>
