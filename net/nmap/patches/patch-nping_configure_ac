@@ -1,9 +1,9 @@
-$OpenBSD: patch-nping_configure_ac,v 1.1 2017/09/27 09:50:00 dcoppa Exp $
+$OpenBSD: patch-nping_configure_ac,v 1.2 2018/04/08 21:02:45 jca Exp $
 
 Index: nping/configure.ac
 --- nping/configure.ac.orig
 +++ nping/configure.ac
-@@ -442,16 +442,13 @@ AC_CACHE_CHECK(if function signal is accessible, ac_cv
+@@ -444,16 +444,13 @@ AC_CACHE_CHECK(if function signal is accessible, ac_cv
          AC_TRY_COMPILE(
                  [
                      #include <signal.h>
