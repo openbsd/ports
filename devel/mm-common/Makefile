@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/25 14:23:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/08 16:32:02 ajacoutot Exp $
 
 PKG_PARCH=		*
 
 COMMENT=		common build utilities for GNOME C++ binding libraries
 
 GNOME_PROJECT=		mm-common
-GNOME_VERSION=		0.9.11
+GNOME_VERSION=		0.9.12
 
 CATEGORIES=		devel
 
