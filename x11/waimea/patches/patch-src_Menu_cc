@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Menu_cc,v 1.1 2018/04/08 18:33:57 jasper Exp $
+
+error: assigning to 'XftDraw *' (aka '_XftDraw *') from incompatible type 'Drawable' (aka 'unsigned long')
+
+Index: src/Menu.cc
+--- src/Menu.cc.orig
++++ src/Menu.cc
+@@ -837,7 +837,7 @@ WaMenuItem::WaMenuItem(char *s) : WindowObject(0, 0) {
+     e_sub = e_sub1 = e_sub2 = NULL;
+     
+ #ifdef XFT
+-    xftdraw = (Drawable) 0;
++    xftdraw = (XftDraw *) 0;
+ #endif // XFT
+ 
+ #ifdef RENDER
