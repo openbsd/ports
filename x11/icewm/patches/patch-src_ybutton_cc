@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_ybutton_cc,v 1.1 2018/04/08 19:10:10 jasper Exp $
+
+Index: src/ybutton.cc
+--- src/ybutton.cc.orig
++++ src/ybutton.cc
+@@ -158,10 +158,10 @@ void YButton::paintFocus(Graphics &g, const YRect &/*r
+         g.setPenStyle(false);
+     } else {
+         XRectangle focus[] = {
+-            { dp, dp, width() - ds, 1 },
+-            { dp, dp + 1, 1, height() - ds - 2 },
+-            { dp + width() - ds - 1, dp + 1, 1, height() - ds - 2 },
+-            { dp, dp + height() - ds - 1, width() - ds, 1 }
++            { static_cast<short>(dp), static_cast<short>(dp), static_cast<unsigned short>(width() - ds), 1 },
++            { static_cast<short>(dp), static_cast<short>(dp + 1), 1, static_cast<unsigned short>(height() - ds - 2) },
++            { static_cast<short>(dp + width() - ds - 1), static_cast<short>(dp + 1), 1, static_cast<unsigned short>(height() - ds - 2) },
++            { static_cast<short>(dp), static_cast<short>(dp + height() - ds - 1), static_cast<unsigned short>(width() - ds), 1 }
+         };
+ 
+         g.setClipRectangles(focus, 4);

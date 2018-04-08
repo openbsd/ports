@@ -1,6 +1,19 @@
-$OpenBSD: patch-src_wmapp_cc,v 1.9 2014/01/04 09:05:24 ajacoutot Exp $
---- src/wmapp.cc.orig	Sun Nov 17 17:54:39 2013
-+++ src/wmapp.cc	Sat Jan  4 09:34:02 2014
+$OpenBSD: patch-src_wmapp_cc,v 1.10 2018/04/08 19:10:10 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: src/wmapp.cc
+--- src/wmapp.cc.orig
++++ src/wmapp.cc
+@@ -221,7 +221,7 @@ static void registerProtocols2(Window xid) {
+ #endif
+ 
+     long pid = getpid();
+-    const char wmname[] = "IceWM "VERSION" ("HOSTOS"/"HOSTCPU")";
++    const char wmname[] = "IceWM " VERSION " (" HOSTOS "/" HOSTCPU ")";
+ 
+ #ifdef GNOME1_HINTS
+     XChangeProperty(xapp->display(), xid, 
 @@ -338,7 +338,7 @@ static void initFontPath(IApp *app) {
              char ** fontPath(XGetFontPath(xapp->display(), &ndirs));
  
