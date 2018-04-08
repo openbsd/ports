@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_adplay_cc,v 1.1 2018/04/08 16:14:13 fcambus Exp $
+
+Cast -1 to unsigned int to prevent compiler error.
+Upstream commit 48dcaa87ff91369eb41998abd72e226fe138b528.
+
+Index: src/adplay.cc
+--- src/adplay.cc.orig
++++ src/adplay.cc
+@@ -89,7 +89,7 @@ static struct {
+   1, 16, 0,  // Else default to mono (until stereo w/ single OPL is fixed)
+ #endif
+   MSG_NOTE,
+-  -1,
++  (unsigned int)-1,
+   NULL,
+   NULL,
+   true, false, false, false,
