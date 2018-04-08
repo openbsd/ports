@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2017/05/06 19:08:52 jung Exp $
+$OpenBSD: README,v 1.4 2018/04/08 08:29:22 stsp Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,7 +6,12 @@ $OpenBSD: README,v 1.3 2017/05/06 19:08:52 jung Exp $
 
 Administrator Quick Start
 =========================
-  Create users by running "kcaldav.passwd -C -u <user>".
+  Create users by running:
+
+    doas kcaldav.passwd -C -u <user> -e email -f /var/www/caldav
+    doas chown www:www /var/www/caldav/kcaldav.db
+    doas chmod 640 /var/www/caldav/kcaldav.db
+
   Read kcaldav.passwd(1) for more details about creating
   new calenders for users, changing email address and other
   options.
@@ -34,7 +39,7 @@ User Quick Start
 ================
   Users can manage their account settings, create calendars
   and find the URL for use with their calendar application
-  by browsing to: http://localhost/kcaldav/home.html
+  by browsing to: https://localhost/kcaldav/home.html
 
 Porting Notes: Write Ahead Logging
 ==================================

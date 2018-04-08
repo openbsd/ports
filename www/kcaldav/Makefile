@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/25 14:04:18 jturner Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/08 08:29:22 stsp Exp $
 
-BROKEN =		no longer works with recent kcgi
 COMMENT =		a simple, safe, and minimal CalDAV server
 
-DISTNAME =		kcaldav-0.1.4
-REVISION =		6
+DISTNAME =		kcaldav-0.1.6
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
@@ -14,7 +12,7 @@ MAINTAINER =		Aaron Poffenberger <akp@hypernote.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # "make port-lib-depends-check" can help
-WANTLIB +=		c expat m sqlite3
+WANTLIB +=		c expat m sqlite3 pthread
 
 MASTER_SITES =		https://kristaps.bsd.lv/kcaldav/snapshots/
 EXTRACT_SUFX =		.tgz
@@ -22,7 +20,13 @@ EXTRACT_SUFX =		.tgz
 BUILD_DEPENDS =		www/kcgi
 LIB_DEPENDS =		databases/sqlite3
 
-FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} WWWPREFIX=${WRKINST}/${VARBASE}/www
+CONFIGURE_STYLE =	simple
+USE_GMAKE = 		Yes
+CONFIGURE_ARGS =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} HTDOCSPREFIX=${WRKINST}/${VARBASE}/www/htdocs/kcaldav
+FAKE_FLAGS +=	CGIPREFIX=${WRKINST}/${VARBASE}/www/cgi-bin CALPREFIX=${WRKINST}/${VARBASE}/www/caldav
 
 # no doc on how to run tests
 NO_TEST =		Yes

@@ -1,0 +1,15 @@
+$OpenBSD: patch-kcaldav_c,v 1.1 2018/04/08 08:29:22 stsp Exp $
+
+Index: kcaldav.c
+--- kcaldav.c.orig
++++ kcaldav.c
+@@ -313,7 +313,9 @@ main(void)
+ 	char		*np;
+ 	size_t		 i, sz;
+ 
++#if defined LOGFILE && defined DEBUG && DEBUG > 0
+ 	kutil_openlog(LOGFILE);
++#endif
+ 
+ 	st = NULL;
+ #if defined DEBUG && DEBUG > 1

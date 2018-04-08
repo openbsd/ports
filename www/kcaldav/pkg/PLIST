@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/20 15:06:08 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/08 08:29:22 stsp Exp $
 @bin bin/kcaldav.passwd
 include/libkcaldav.h
 lib/libkcaldav.a
@@ -7,7 +7,13 @@ lib/libkcaldav.a
 @man man/man8/kcaldav.8
 share/doc/pkg-readmes/${FULLPKGNAME}
 @cwd /var/www
-caldav/
+@owner www
+@group www
+@mode 775
+@dir caldav/
+@owner
+@group
+@mode
 @bin cgi-bin/kcaldav
 @bin cgi-bin/kcaldav.cgi
 htdocs/kcaldav/
