@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_interface_cpp,v 1.1 2018/04/08 12:58:30 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: src/interface.cpp
+--- src/interface.cpp.orig
++++ src/interface.cpp
+@@ -2187,7 +2187,7 @@ void CreateInterface(sParamRender *default_settings)
+ 
+ 	Interface.label_NavigatorEstimatedDistance = gtk_label_new("Estimated distance to the surface:");
+ 
+-	Interface.label_about = gtk_label_new("Mandelbulber "MANDELBULBER_VERSION_STR"\n"
++	Interface.label_about = gtk_label_new("Mandelbulber " MANDELBULBER_VERSION_STR "\n"
+ 		"author: Krzysztof Marczak\n"
+ 		"Licence: GNU GPL v3\n"
+ 		"www: www.mandelbulber.com\n"

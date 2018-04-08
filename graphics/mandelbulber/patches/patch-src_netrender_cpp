@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_netrender_cpp,v 1.1 2018/04/08 12:58:30 jasper Exp $
+
+Correctly qualify bind
+
+Index: src/netrender.cpp
+--- src/netrender.cpp.orig
++++ src/netrender.cpp
+@@ -92,7 +92,7 @@ bool CNetRender::SetServer(char *portNo, char *statusO
+               sizeof(timeout)) < 0)
+   	std::cout << "socket options error " << strerror(errno);
+ 
+-  status = bind(socketfd, host_info_list->ai_addr, host_info_list->ai_addrlen);
++  status = ::bind(socketfd, host_info_list->ai_addr, host_info_list->ai_addrlen);
+   if (status == -1)
+   {
+   	std::cout << "bind error" << std::endl ;
