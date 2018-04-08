@@ -1,0 +1,16 @@
+$OpenBSD: patch-qmake_generators_win32_msvc_vcproj_cpp,v 1.1 2018/04/08 08:36:31 espie Exp $
+
+Index: qmake/generators/win32/msvc_vcproj.cpp
+--- qmake/generators/win32/msvc_vcproj.cpp.orig
++++ qmake/generators/win32/msvc_vcproj.cpp
+@@ -1094,8 +1094,8 @@ void VcprojGenerator::initOld()
+ 	project->variables()["QMAKESPEC"].append( getenv("QMAKESPEC") );
+ 
+     bool is_qt =
+-	( project->first("TARGET") == "qt"QTDLL_POSTFIX ||
+-	  project->first("TARGET") == "qt-mt"QTDLL_POSTFIX );
++	( project->first("TARGET") == "qt" QTDLL_POSTFIX ||
++	  project->first("TARGET") == "qt-mt" QTDLL_POSTFIX );
+ 
+    QStringList &configs = project->variables()["CONFIG"];
+ 

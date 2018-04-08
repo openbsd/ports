@@ -1,0 +1,14 @@
+$OpenBSD: patch-qmake_generators_win32_msvc_nmake_cpp,v 1.1 2018/04/08 08:36:31 espie Exp $
+
+Index: qmake/generators/win32/msvc_nmake.cpp
+--- qmake/generators/win32/msvc_nmake.cpp.orig
++++ qmake/generators/win32/msvc_nmake.cpp
+@@ -479,7 +479,7 @@ NmakeMakefileGenerator::init()
+     if(project->isEmpty("QMAKE_INSTALL_DIR"))
+ 	project->variables()["QMAKE_INSTALL_DIR"].append("$(COPY_DIR)");
+ 
+-    bool is_qt = (project->first("TARGET") == "qt"QTDLL_POSTFIX || project->first("TARGET") == "qt-mt"QTDLL_POSTFIX);
++    bool is_qt = (project->first("TARGET") == "qt" QTDLL_POSTFIX || project->first("TARGET") == "qt-mt" QTDLL_POSTFIX);
+     project->variables()["QMAKE_ORIG_TARGET"] = project->variables()["TARGET"];
+ 
+     QString targetfilename = project->variables()["TARGET"].first();

@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_kernel_qdragobject_cpp,v 1.3 2007/03/31 22:49:46 espie Exp $
---- src/kernel/qdragobject.cpp.orig	Thu Oct 19 16:25:12 2006
-+++ src/kernel/qdragobject.cpp	Sat Mar 31 14:51:24 2007
+$OpenBSD: patch-src_kernel_qdragobject_cpp,v 1.4 2018/04/08 08:36:31 espie Exp $
+using shorts for colors is obviously me... (the <<8 is ill-defined)
+just do it correctly with ushort.
+Index: src/kernel/qdragobject.cpp
+--- src/kernel/qdragobject.cpp.orig
++++ src/kernel/qdragobject.cpp
 @@ -893,6 +893,16 @@ bool QTextDrag::decode( const QMimeSource* e, QString&
  {
      if(!e)
@@ -18,3 +21,16 @@ $OpenBSD: patch-src_kernel_qdragobject_cpp,v 1.3 2007/03/31 22:49:46 espie Exp $
  
      if ( e->cacheType == QMimeSource::Text ) {
  	str = *e->cache.txt.str;
+@@ -1739,9 +1749,9 @@ QColorDrag::QColorDrag( QWidget *dragsource, const cha
+ 
+ void QColorDrag::setColor( const QColor &col )
+ {
+-    short r = (col.red()   << 8) | col.red();
+-    short g = (col.green() << 8) | col.green();
+-    short b = (col.blue()  << 8) | col.blue();
++    ushort r = (col.red()   << 8) | col.red();
++    ushort g = (col.green() << 8) | col.green();
++    ushort b = (col.blue()  << 8) | col.blue();
+ 
+     // make sure we transmit data in network order
+     r = htons(r);
