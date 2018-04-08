@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_EWMH_cc,v 1.1 2018/04/08 18:43:26 jasper Exp $
+
+error: non-constant-expression cannot be narrowed from type 'long' to 'unsigned long' in initializer list
+
+Index: lib/EWMH.cc
+--- lib/EWMH.cc.orig
++++ lib/EWMH.cc
+@@ -247,7 +247,7 @@ bool bt::EWMH::readDesktopGeometry(Window target,
+ 
+ void bt::EWMH::setDesktopViewport(Window target, int x, int y) const {
+   const unsigned long viewport[] =
+-    { static_cast<long>(x), static_cast<long>(y) };
++    { static_cast<unsigned long>(x), static_cast<unsigned long>(y) };
+   setProperty(target, XA_CARDINAL, net_desktop_viewport,
+               reinterpret_cast<const unsigned char *>(viewport), 2);
+ }
