@@ -1,0 +1,16 @@
+$OpenBSD: patch-kcdbext_h,v 1.1 2018/04/08 13:10:25 jasper Exp $
+
+error: cannot initialize return object of type 'char *' with an rvalue of type 'bool'
+
+Index: kcdbext.h
+--- kcdbext.h.orig
++++ kcdbext.h
+@@ -1278,7 +1278,7 @@ class IndexDB {
+     if (omode_ == 0) {
+       set_error(_KCCODELINE_, BasicDB::Error::INVALID, "not opened");
+       *sp = 0;
+-      return false;
++      return NULL;
+     }
+     if (!cache_) return db_.get(kbuf, ksiz, sp);
+     size_t dvsiz = 0;
