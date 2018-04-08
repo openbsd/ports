@@ -1,0 +1,147 @@
+$OpenBSD: patch-src_socket_cpp,v 1.1 2018/04/08 13:29:08 jasper Exp $
+
+- warning: switch condition has boolean value
+- properly namespace bind
+
+Index: src/socket.cpp
+--- src/socket.cpp.orig
++++ src/socket.cpp
+@@ -880,16 +880,12 @@ void Socket::setCompletion(bool immediate)
+ #else
+ 	int fflags = fcntl(so, F_GETFL);
+ 
+-	switch( immediate ) {
+-	case false:
+-		fflags |= O_NONBLOCK;
+-		fcntl(so, F_SETFL, fflags);
+-		break;
+-	case true:
++	if ( immediate )	
+ 		fflags &=~ O_NONBLOCK;
+-		fcntl(so, F_SETFL, fflags);
+-		break;
+-	}
++	else
++		fflags |= O_NONBLOCK;
++
++	fcntl(so, F_SETFL, fflags);
+ #endif
+ }
+ 
+@@ -1283,7 +1279,7 @@ Socket(fam, SOCK_DGRAM, IPPROTO_UDP)
+ 	first = list;
+ 
+ 	while(list) {
+-		if(!bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
++		if(!::bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
+ 			state = BOUND;
+ 			break;
+ 		}
+@@ -1375,7 +1371,7 @@ Socket(fam, SOCK_DGRAM, IPPROTO_UDP)
+ 		(socklen_t)sizeof(opt));
+ #endif
+ 
+-	if(!bind(so, addr, alen))
++	if(!::bind(so, addr, alen))
+ 		state = BOUND;
+ 
+ 	if(state != BOUND) {
+@@ -1415,7 +1411,7 @@ Socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&peer.ipv4, sizeof(peer.ipv4))) {
++	if(::bind(so, (struct sockaddr *)&peer.ipv4, sizeof(peer.ipv4))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -1436,7 +1432,7 @@ Socket(AF_INET6, SOCK_DGRAM, IPPROTO_UDP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&peer.ipv6, sizeof(peer.ipv6))) {
++	if(::bind(so, (struct sockaddr *)&peer.ipv6, sizeof(peer.ipv6))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -1921,7 +1917,7 @@ Socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+ 
+ 	first = list;
+ 	while(list) {
+-		if(!bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
++		if(!::bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
+ 			state = BOUND;
+ 			break;
+ 		}
+@@ -2023,7 +2019,7 @@ Socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
++	if(::bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -2102,7 +2098,7 @@ Socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)
+ 
+ 	first = list;
+ 	while(list) {
+-		if(!bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
++		if(!::bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
+ 			state = BOUND;
+ 			break;
+ 		}
+@@ -2171,7 +2167,7 @@ Socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)
+ 		(socklen_t)sizeof(opt));
+ #endif
+ 
+-	if(bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
++	if(::bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -2204,7 +2200,7 @@ Socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
++	if(::bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -2328,7 +2324,7 @@ Socket(fam, SOCK_DCCP, IPPROTO_DCCP)
+ 
+ 	first = list;
+ 	while(list) {
+-		if(!bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
++		if(!::bind(so, list->ai_addr, (socklen_t)list->ai_addrlen)) {
+ 			state = BOUND;
+ 			break;
+ 		}
+@@ -2417,7 +2413,7 @@ Socket(fam, SOCK_DCCP, IPPROTO_DCCP)
+     alen = sizeof(addr);
+ 	}
+ 
+-	if(bind(so, (struct sockaddr *)ap, alen)) {
++	if(::bind(so, (struct sockaddr *)ap, alen)) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -2451,7 +2447,7 @@ Socket(AF_INET, SOCK_DCCP, IPPROTO_DCCP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
++	if(::bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;
+@@ -2484,7 +2480,7 @@ Socket(AF_INET6, SOCK_DCCP, IPPROTO_DCCP)
+ 	int opt = 1;
+ 	setsockopt(so, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, (socklen_t)sizeof(opt));
+ #endif
+-	if(bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
++	if(::bind(so, (struct sockaddr *)&addr, sizeof(addr))) {
+ 		endSocket();
+ 		error(errBindingFailed,(char *)"Could not bind socket",socket_errno);
+ 		return;

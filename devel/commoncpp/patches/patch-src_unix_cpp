@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_unix_cpp,v 1.1 2018/04/08 13:29:08 jasper Exp $
+
+properly namespace bind
+
+Index: src/unix.cpp
+--- src/unix.cpp.orig
++++ src/unix.cpp
+@@ -86,7 +86,7 @@ UnixSocket::UnixSocket(const char* pathname, int backl
+ 	len = strlen(addr.sun_path) + sizeof(addr.sun_family) + 1;
+ #endif
+ 	remove(pathname);
+- 	if(bind(so, (struct sockaddr *)&addr, len)) {
++ 	if(::bind(so, (struct sockaddr *)&addr, len)) {
+  		endSocket();
+  		error(errBindingFailed);
+  		return;
