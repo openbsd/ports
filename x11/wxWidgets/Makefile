@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/04/08 20:19:32 rsadowski Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -7,8 +7,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	14
-REVISION-media =9
+REVISION-main =	15
+REVISION-media =10
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
@@ -100,6 +100,11 @@ CONFIGURE_ENV += wx_cv_version_script=no
 .ifdef DEBUG
 CONFIGURE_ARGS += --enable-debug
 .endif
+
+# fix clang6 build
+post-extract:
+	find ${WRKSRC}/src/ -type f -name '*.xbm' -exec sed -i \
+	's/char/unsigned char/g' {} +
 
 do-test:
 	@cd ${WRKSRC}/tests && \
