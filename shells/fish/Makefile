@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/05 13:50:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/08 22:49:23 abieber Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			2.7.1
 DISTNAME =		fish-$V
+REVISION =		0
 
 CATEGORIES =		shells
 
 HOMEPAGE =		https://fishshell.com/
+
+MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,7 +24,13 @@ COMPILER =		base-clang ports-gcc ports-clang
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/gettext-tools
+# https://github.com/fish-shell/fish-shell/pull/4685
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+BUILD_DEPENDS =		devel/gettext-tools \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext
@@ -47,6 +56,8 @@ NO_TEST =		yes
 
 pre-configure:
 	sed -i 's/getopt/gnugetopt/' ${WRKSRC}/share/functions/*.fish
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

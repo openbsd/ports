@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_common_h,v 1.1 2018/04/08 22:49:23 abieber Exp $
+
+https://github.com/fish-shell/fish-shell/pull/4685
+
+Index: src/common.h
+--- src/common.h.orig
++++ src/common.h
+@@ -658,7 +658,7 @@ wcstring vformat_string(const wchar_t *format, va_list
+ void append_format(wcstring &str, const wchar_t *format, ...);
+ void append_formatv(wcstring &str, const wchar_t *format, va_list ap);
+ 
+-#ifdef __cpp_lib_make_unique
++#ifdef HAVE_STD__MAKE_UNIQUE
+ using std::make_unique;
+ #else
+ /// make_unique implementation
