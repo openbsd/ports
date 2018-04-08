@@ -1,9 +1,11 @@
-$OpenBSD: patch-Loop_cpp,v 1.1 2012/01/03 16:35:28 sebastia Exp $
+$OpenBSD: patch-Loop_cpp,v 1.2 2018/04/08 19:13:19 jasper Exp $
 
-fix bounds length warnings
+- fix bounds length warnings
+- fix bind namespacing
 
---- Loop.cpp.orig	Tue Mar 30 15:38:11 2010
-+++ Loop.cpp	Mon Jan  2 09:57:26 2012
+Index: Loop.cpp
+--- Loop.cpp.orig
++++ Loop.cpp
 @@ -3770,7 +3770,7 @@ int SetupAuthInstance()
  
          launchdAddrUnix.sun_family = AF_UNIX;
@@ -13,6 +15,15 @@ fix bounds length warnings
  
          int success = -1;
  
+@@ -3961,7 +3961,7 @@ int SetupTcpSocket()
+   tcpAddr.sin_port = htons(proxyPortTCP);
+   tcpAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+ 
+-  if (bind(tcpFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
++  if (::bind(tcpFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
+   {
+     #ifdef PANIC
+     *logofs << "Loop: PANIC! Call to bind failed for TCP port "
 @@ -4037,7 +4037,7 @@ int SetupUnixSocket()
    snprintf(unixSocketName,  DEFAULT_STRING_LENGTH - 1, "%s/X%d",
                 dirName, proxyPort);
@@ -22,3 +33,30 @@ fix bounds length warnings
  
    #ifdef TEST
    *logofs << "Loop: Assuming Unix socket with name '"
+@@ -4047,7 +4047,7 @@ int SetupUnixSocket()
+ 
+   *(unixAddr.sun_path + 107) = '\0';
+ 
+-  if (bind(unixFD, (sockaddr *) &unixAddr, sizeof(unixAddr)) == -1)
++  if (::bind(unixFD, (sockaddr *) &unixAddr, sizeof(unixAddr)) == -1)
+   {
+     #ifdef PANIC
+     *logofs << "Loop: PANIC! Call to bind failed for UNIX domain socket "
+@@ -4514,7 +4514,7 @@ int ListenConnection(int port, const char *label)
+   tcpAddr.sin_port = htons(portTCP);
+   tcpAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+ 
+-  if (bind(newFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
++  if (::bind(newFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
+   {
+     #ifdef PANIC
+     *logofs << "Loop: PANIC! Call to bind failed for " << label
+@@ -6703,7 +6703,7 @@ int WaitForRemote(int portNum)
+ 
+   #endif
+ 
+-  if (bind(proxyFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
++  if (::bind(proxyFD, (sockaddr *) &tcpAddr, sizeof(tcpAddr)) == -1)
+   {
+     #ifdef PANIC
+     *logofs << "Loop: PANIC! Call to bind failed for TCP port "
