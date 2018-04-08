@@ -1,0 +1,23 @@
+$OpenBSD: patch-jsinterp_cpp,v 1.1 2018/04/08 10:53:10 landry Exp $
+
+Index: jsinterp.cpp
+--- jsinterp.cpp.orig
++++ jsinterp.cpp
+@@ -1280,7 +1280,7 @@ have_fun:
+     frame.thisp = (JSObject *)vp[1];
+     frame.varobj = NULL;
+     frame.callobj = NULL;
+-    frame.argsobj = NULL;
++    frame.argsobj = 0;
+     frame.script = script;
+     frame.fun = fun;
+     frame.argc = argc;
+@@ -1523,7 +1523,7 @@ js_Execute(JSContext *cx, JSObject *chain, JSScript *s
+         JS_ASSERT(script->nfixed == 0);
+     } else {
+         frame.callobj = NULL;
+-        frame.argsobj = NULL;
++        frame.argsobj = 0;
+         obj = chain;
+         if (cx->options & JSOPTION_VAROBJFIX) {
+             while ((tmp = OBJ_GET_PARENT(cx, obj)) != NULL)

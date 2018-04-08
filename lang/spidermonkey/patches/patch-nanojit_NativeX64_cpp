@@ -1,8 +1,18 @@
-$OpenBSD: patch-nanojit_NativeX64_cpp,v 1.1 2018/04/08 10:38:26 landry Exp $
+$OpenBSD: patch-nanojit_NativeX64_cpp,v 1.2 2018/04/08 10:53:10 landry Exp $
 
+chunk 1 from FreeBSD's lang/spidermonkey185/files/patch-c++11
 Index: nanojit/NativeX64.cpp
 --- nanojit/NativeX64.cpp.orig
 +++ nanojit/NativeX64.cpp
+@@ -1184,7 +1184,7 @@ namespace nanojit
+         NanoAssert(allow & rmask(rr));
+     }
+ 
+-    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {0x8000000000000000LL,0};
++    static const AVMPLUS_ALIGN16(int64_t) negateMask[] = {(int64_t)0x8000000000000000LL,0};
+ 
+     void Assembler::asm_fneg(LIns *ins) {
+         Register rr, ra;
 @@ -1388,9 +1388,9 @@ namespace nanojit
                  // really do need a page break
                  verbose_only(if (_logc->lcbits & LC_Assembly) outputf("newpage %p:", pc);)

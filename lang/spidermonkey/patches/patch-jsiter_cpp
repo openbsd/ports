@@ -1,0 +1,14 @@
+$OpenBSD: patch-jsiter_cpp,v 1.1 2018/04/08 10:53:10 landry Exp $
+
+Index: jsiter.cpp
+--- jsiter.cpp.orig
++++ jsiter.cpp
+@@ -746,7 +746,7 @@ js_NewGenerator(JSContext *cx, JSStackFrame *fp)
+     gen->frame.argsobj = fp->argsobj;
+     if (fp->argsobj) {
+         JSVAL_TO_OBJECT(fp->argsobj)->setPrivate(&gen->frame);
+-        fp->argsobj = NULL;
++        fp->argsobj = 0;
+     }
+ 
+     /* These two references can be shared with fp until it goes away. */

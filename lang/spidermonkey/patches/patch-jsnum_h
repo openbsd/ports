@@ -1,4 +1,4 @@
-$OpenBSD: patch-jsnum_h,v 1.1 2018/04/08 10:38:26 landry Exp $
+$OpenBSD: patch-jsnum_h,v 1.2 2018/04/08 10:53:10 landry Exp $
 
 Index: jsnum.h
 --- jsnum.h.orig

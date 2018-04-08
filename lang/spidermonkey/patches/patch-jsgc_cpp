@@ -1,4 +1,4 @@
-$OpenBSD: patch-jsgc_cpp,v 1.1 2018/04/08 10:38:26 landry Exp $
+$OpenBSD: patch-jsgc_cpp,v 1.2 2018/04/08 10:53:10 landry Exp $
 
 Index: jsgc.cpp
 --- jsgc.cpp.orig
