@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libmultiple_drawStars_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
+
+error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
+
+Index: src/libmultiple/drawStars.cpp
+--- src/libmultiple/drawStars.cpp.orig
++++ src/libmultiple/drawStars.cpp
+@@ -41,7 +41,7 @@ drawStars(DisplayBase *display, View *view)
+     ifstream inFile(starMap.c_str());
+ 
+     char line[MAX_LINE_LENGTH];
+-    while (inFile.getline(line, MAX_LINE_LENGTH, '\n') != NULL)
++    while (inFile.getline(line, MAX_LINE_LENGTH, '\n'))
+     {
+         if (line[0] == '#') continue;
+ 

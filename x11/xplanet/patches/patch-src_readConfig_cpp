@@ -1,0 +1,80 @@
+$OpenBSD: patch-src_readConfig_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
+
+- error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
+- error: non-constant-expression cannot be narrowed from type 'int' to 'unsigned char' in initializer list
+
+Index: src/readConfig.cpp
+--- src/readConfig.cpp.orig
++++ src/readConfig.cpp
+@@ -20,6 +20,8 @@ using namespace std;
+ static PlanetProperties *defaultProperties;
+ static PlanetProperties *currentProperties;
+ 
++static inline unsigned char i2b( int x ) { return static_cast<unsigned int>(x) & 0xffU; }
++
+ static void
+ readConfig(const char *line, PlanetProperties *planetProperties[])
+ {
+@@ -49,7 +51,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->ArcColor(color);
+             }
+             else
+@@ -179,7 +181,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->Color(color);
+             }
+             else
+@@ -244,7 +246,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->GridColor(color);
+             }
+             else
+@@ -296,7 +298,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->MarkerColor(color);
+             }
+             else
+@@ -403,7 +405,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->OrbitColor(color);
+             }
+             else
+@@ -473,7 +475,7 @@ readConfig(const char *line, PlanetProperties *planetP
+             int r, g, b;
+             if (sscanf(returnString, "%d,%d,%d", &r, &g, &b) == 3)
+             {
+-                unsigned char color[3] = { r & 0xff, g & 0xff, b & 0xff };
++                unsigned char color[3] = { i2b(r), i2b(g), i2b(b) };
+                 currentProperties->TextColor(color);
+             }
+             else
+@@ -550,7 +552,7 @@ readConfigFile(string configFile, PlanetProperties *pl
+ 
+         ifstream inFile(configFile.c_str());
+         char *line = new char[256];
+-        while (inFile.getline(line, 256, '\n') != NULL)
++        while (inFile.getline(line, 256, '\n'))
+             readConfig(line, planetProperties);
+         
+         // This condition will only be true if [default] is the only

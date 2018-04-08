@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_libannotate_addSatellites_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
+
+error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
+
+Index: src/libannotate/addSatellites.cpp
+--- src/libannotate/addSatellites.cpp.orig
++++ src/libannotate/addSatellites.cpp
+@@ -488,10 +488,10 @@ loadSatelliteVector(PlanetProperties *planetProperties
+         {
+             ifstream inFile(tleFile.c_str());
+             char lines[3][80];
+-            while (inFile.getline(lines[0], 80) != NULL)
++            while (inFile.getline(lines[0], 80))
+             {
+-                if ((inFile.getline(lines[1], 80) == NULL) 
+-                    || (inFile.getline(lines[2], 80) == NULL))
++                if ((!inFile.getline(lines[1], 80))
++                    || (!inFile.getline(lines[2], 80)))
+                 {
+                     ostringstream errStr;
+                     errStr << "Malformed TLE file (" << tleFile << ")?\n";
+@@ -542,7 +542,7 @@ addSatellites(PlanetProperties *planetProperties, Plan
+         {
+             ifstream inFile(satFile.c_str());
+             char *line = new char[MAX_LINE_LENGTH];
+-            while (inFile.getline (line, MAX_LINE_LENGTH, '\n') != NULL)
++            while (inFile.getline (line, MAX_LINE_LENGTH, '\n'))
+                 readSatelliteFile(line, planet, view, projection,
+                                   planetProperties, annotationMap);
+             

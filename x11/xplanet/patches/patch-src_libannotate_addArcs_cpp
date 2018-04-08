@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libannotate_addArcs_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
+
+error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
+
+Index: src/libannotate/addArcs.cpp
+--- src/libannotate/addArcs.cpp.orig
++++ src/libannotate/addArcs.cpp
+@@ -258,7 +258,7 @@ addArcs(PlanetProperties *planetProperties, Planet *pl
+         {
+             ifstream inFile(arcFile.c_str());
+             char *line = new char[MAX_LINE_LENGTH];
+-            while (inFile.getline (line, MAX_LINE_LENGTH, '\n') != NULL)
++            while (inFile.getline (line, MAX_LINE_LENGTH, '\n'))
+                 readArcFile(line, planet, view, projection,
+                             planetProperties, annotationMap);
+             
+@@ -292,7 +292,7 @@ addArcs(View *view, multimap<double, Annotation *> &an
+         {
+             ifstream inFile(arcFile.c_str());
+             char *line = new char[256];
+-            while (inFile.getline (line, 256, '\n') != NULL)
++            while (inFile.getline (line, 256, '\n'))
+                 readArcFile(line, NULL, view, NULL, NULL, annotationMap);
+ 
+             inFile.close();

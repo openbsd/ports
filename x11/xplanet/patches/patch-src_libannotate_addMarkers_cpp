@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libannotate_addMarkers_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
+
+error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
+
+Index: src/libannotate/addMarkers.cpp
+--- src/libannotate/addMarkers.cpp.orig
++++ src/libannotate/addMarkers.cpp
+@@ -423,7 +423,7 @@ addMarkers(PlanetProperties *planetProperties, Planet 
+         {
+             ifstream inFile(markerFile.c_str());
+             char *line = new char[MAX_LINE_LENGTH];
+-            while (inFile.getline (line, MAX_LINE_LENGTH, '\n') != NULL)
++            while (inFile.getline (line, MAX_LINE_LENGTH, '\n'))
+             {
+                 unsigned char color[3];
+                 memcpy(color, planetProperties->MarkerColor(), 3);
+@@ -469,7 +469,7 @@ addMarkers(View *view, const int width, const int heig
+         {
+             ifstream inFile(markerFile.c_str());
+             char *line = new char[MAX_LINE_LENGTH];
+-            while (inFile.getline (line, MAX_LINE_LENGTH, '\n') != NULL)
++            while (inFile.getline (line, MAX_LINE_LENGTH, '\n'))
+             {
+                 unsigned char color[3];
+                 memcpy(color, options->Color(), 3);
