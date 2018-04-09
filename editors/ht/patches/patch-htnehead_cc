@@ -1,0 +1,30 @@
+$OpenBSD: patch-htnehead_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htnehead.cc
+--- htnehead.cc.orig
++++ htnehead.cc
+@@ -32,12 +32,12 @@ static ht_mask_ptable neheader[]=
+ 	{"offset of entry table",			STATICTAG_EDIT_WORD_LE("00000004")},
+ 	{"size of entry table",				STATICTAG_EDIT_WORD_LE("00000006")},
+ 	{"crc",							STATICTAG_EDIT_DWORD_LE("00000008")},
+-	{"flags",							STATICTAG_EDIT_WORD_LE("0000000c")" "STATICTAG_FLAGS("0000000c", ATOM_NE_FLAGS_STR)},
++	{"flags",							STATICTAG_EDIT_WORD_LE("0000000c") " " STATICTAG_FLAGS("0000000c", ATOM_NE_FLAGS_STR)},
+ 	{"autodata",						STATICTAG_EDIT_WORD_LE("0000000e")},
+ 	{"heap min",						STATICTAG_EDIT_WORD_LE("00000010")},
+ 	{"stack min",						STATICTAG_EDIT_WORD_LE("00000012")},
+-	{"CS:IP",							STATICTAG_EDIT_WORD_LE("00000016")":"STATICTAG_EDIT_WORD_LE("00000014")},
+-	{"SS:SP",							STATICTAG_EDIT_WORD_LE("0000001a")":"STATICTAG_EDIT_WORD_LE("00000018")},
++	{"CS:IP",							STATICTAG_EDIT_WORD_LE("00000016") ":" STATICTAG_EDIT_WORD_LE("00000014")},
++	{"SS:SP",							STATICTAG_EDIT_WORD_LE("0000001a") ":" STATICTAG_EDIT_WORD_LE("00000018")},
+ 	{"number of segments",				STATICTAG_EDIT_WORD_LE("0000001c")},
+ 	{"number of module references",		STATICTAG_EDIT_WORD_LE("0000001e")},
+ 	{"size of non-resident name table",	STATICTAG_EDIT_WORD_LE("00000020")},
+@@ -50,7 +50,7 @@ static ht_mask_ptable neheader[]=
+ 	{"number of movable entries",			STATICTAG_EDIT_WORD_LE("00000030")},
+ 	{"segment alignment shift count",		STATICTAG_EDIT_WORD_LE("00000032")},
+ 	{"number of resource segments",		STATICTAG_EDIT_WORD_LE("00000034")},
+-	{"target os",						STATICTAG_EDIT_BYTE("00000036")" "STATICTAG_DESC_BYTE("00000036", ATOM_NE_OS_STR)},
++	{"target os",						STATICTAG_EDIT_BYTE("00000036") " " STATICTAG_DESC_BYTE("00000036", ATOM_NE_OS_STR)},
+ 	{"additional flags",				STATICTAG_EDIT_BYTE("00000037")},
+ 	{"offset of return thunks",			STATICTAG_EDIT_WORD_LE("00000038")},
+ 	{"offset of segment reference bytes",	STATICTAG_EDIT_WORD_LE("0000003a")},

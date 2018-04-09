@@ -1,0 +1,55 @@
+$OpenBSD: patch-htcoffhd_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htcoffhd.cc
+--- htcoffhd.cc.orig
++++ htcoffhd.cc
+@@ -132,18 +132,18 @@ ht_tag_flags_s coff_section_characteristics[] =
+ 
+ ht_mask_ptable coffheader[]=
+ {
+-	{"machine",			STATICTAG_EDIT_WORD_VE("00000000")" "STATICTAG_DESC_WORD_VE("00000000", ATOM_COFF_MACHINES_STR)},
++	{"machine",			STATICTAG_EDIT_WORD_VE("00000000") " " STATICTAG_DESC_WORD_VE("00000000", ATOM_COFF_MACHINES_STR)},
+ 	{"number of sections",		STATICTAG_EDIT_WORD_VE("00000002")},
+ 	{"time-date stamp",		STATICTAG_EDIT_TIME_VE("00000004")},
+ 	{"pointer to symbol table",	STATICTAG_EDIT_DWORD_VE("00000008")},
+ 	{"number of symbols",		STATICTAG_EDIT_DWORD_VE("0000000c")},
+-	{"size of optional header",	STATICTAG_EDIT_WORD_VE("00000010")" "STATICTAG_DESC_WORD_VE("00000010", ATOM_COFF_OPTIONAL_SIZES_STR)},
+-	{"characteristics",		STATICTAG_EDIT_WORD_VE("00000012")" "STATICTAG_FLAGS("00000012", ATOM_COFF_CHARACTERISTICS_STR)},
++	{"size of optional header",	STATICTAG_EDIT_WORD_VE("00000010") " " STATICTAG_DESC_WORD_VE("00000010", ATOM_COFF_OPTIONAL_SIZES_STR)},
++	{"characteristics",		STATICTAG_EDIT_WORD_VE("00000012") " " STATICTAG_FLAGS("00000012", ATOM_COFF_CHARACTERISTICS_STR)},
+ 	{0, 0}
+ };
+ 
+ ht_mask_ptable coff32header[] = {
+-	{"optional magic",		STATICTAG_EDIT_WORD_VE("00000014")" "STATICTAG_DESC_WORD_VE("00000014", ATOM_COFF_OPTIONAL_MAGICS_STR)},
++	{"optional magic",		STATICTAG_EDIT_WORD_VE("00000014") " " STATICTAG_DESC_WORD_VE("00000014", ATOM_COFF_OPTIONAL_MAGICS_STR)},
+ 	{"major linker version",	STATICTAG_EDIT_BYTE("00000016")},
+ 	{"minor linker version",	STATICTAG_EDIT_BYTE("00000017")},
+ 	{"size of code",		STATICTAG_EDIT_DWORD_VE("00000018")},
+@@ -156,7 +156,7 @@ ht_mask_ptable coff32header[] = {
+ };
+ 
+ ht_mask_ptable xcoff32header[] = {
+-	{"optional magic",		STATICTAG_EDIT_WORD_VE("00000014")" "STATICTAG_DESC_WORD_VE("00000014", ATOM_COFF_OPTIONAL_MAGICS_STR)},
++	{"optional magic",		STATICTAG_EDIT_WORD_VE("00000014") " " STATICTAG_DESC_WORD_VE("00000014", ATOM_COFF_OPTIONAL_MAGICS_STR)},
+ 	{"major linker version",	STATICTAG_EDIT_BYTE("00000016")},
+ 	{"minor linker version",	STATICTAG_EDIT_BYTE("00000017")},
+ 	{"size of code",		STATICTAG_EDIT_DWORD_VE("00000018")},
+@@ -195,7 +195,7 @@ ht_mask_ptable coff_section[] = {
+ 	{"line number table offset",	STATICTAG_EDIT_DWORD_VE("0000001c")},
+ 	{"relocation count",		STATICTAG_EDIT_WORD_VE("00000020")},
+ 	{"line number count",		STATICTAG_EDIT_WORD_VE("00000022")},
+-	{"characteristics",		STATICTAG_EDIT_DWORD_VE("00000024")" "STATICTAG_FLAGS("00000024", ATOM_COFF_SECTION_CHARACTERISTICS_STR)},
++	{"characteristics",		STATICTAG_EDIT_DWORD_VE("00000024") " " STATICTAG_FLAGS("00000024", ATOM_COFF_SECTION_CHARACTERISTICS_STR)},
+ 	{0, 0}
+ };
+ 
+@@ -240,7 +240,7 @@ static ht_view *htcoffheader_init(Bounds *b, File *fil
+ 				}
+ 				break;
+ 			default: {
+-				m->add_staticmask("optional magic                                   "STATICTAG_EDIT_WORD_VE("00000018")" "STATICTAG_DESC_WORD_VE("00000018", ATOM_COFF_OPTIONAL_MAGICS_STR), h+20, coff_bigendian);
++				m->add_staticmask("optional magic                                   " STATICTAG_EDIT_WORD_VE("00000018") " " STATICTAG_DESC_WORD_VE("00000018", ATOM_COFF_OPTIONAL_MAGICS_STR), h+20, coff_bigendian);
+ 				m->add_mask("-------------------------------------------------------------------------");
+ 				m->add_mask("Unsupported optional magic! If you get this message in an original");
+ 				m->add_mask("(unmodified) file, please contact us (see help).");

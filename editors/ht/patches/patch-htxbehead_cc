@@ -1,0 +1,57 @@
+$OpenBSD: patch-htxbehead_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htxbehead.cc
+--- htxbehead.cc.orig
++++ htxbehead.cc
+@@ -38,7 +38,7 @@
+ #include <string.h>
+ 
+ static ht_mask_ptable xbemagic[] = {
+-	{"magic",						STATICTAG_EDIT_CHAR("00000000")STATICTAG_EDIT_CHAR("00000001")STATICTAG_EDIT_CHAR("00000002")STATICTAG_EDIT_CHAR("00000003")},
++	{"magic",						STATICTAG_EDIT_CHAR("00000000") STATICTAG_EDIT_CHAR("00000001") STATICTAG_EDIT_CHAR("00000002") STATICTAG_EDIT_CHAR("00000003")},
+ 	{0, 0}
+ };
+ 
+@@ -61,7 +61,7 @@ static ht_mask_ptable xbeimageheader[] = {
+ 	{"certificate address",				STATICTAG_EDIT_DWORD_LE("00000118")},
+ 	{"number of sections",				STATICTAG_EDIT_DWORD_LE("0000011c")},
+ 	{"section header address",					STATICTAG_EDIT_DWORD_LE("00000120")},
+-	{"initialisation flags",			STATICTAG_EDIT_DWORD_LE("00000124")" "STATICTAG_FLAGS("00000124", ATOM_XBE_INIT_FLAGS_STR)},
++	{"initialisation flags",			STATICTAG_EDIT_DWORD_LE("00000124") " " STATICTAG_FLAGS("00000124", ATOM_XBE_INIT_FLAGS_STR)},
+ 	{"entry point",					STATICTAG_EDIT_DWORD_LE("00000128")},
+ 	{"TLS address",					STATICTAG_EDIT_DWORD_LE("0000012c")},
+ 	{"PE stack commit",					STATICTAG_EDIT_DWORD_LE("00000130")},
+@@ -124,8 +124,8 @@ static ht_mask_ptable xbecertificate[] = {
+ 	{"",				STATICTAG_EDIT_DWORD_LE("00000080") "  " STATICTAG_EDIT_DWORD_LE("00000084") "  " STATICTAG_EDIT_DWORD_LE("00000088")},
+ 	{"",				STATICTAG_EDIT_DWORD_LE("0000008c") "  " STATICTAG_EDIT_DWORD_LE("00000090") "  " STATICTAG_EDIT_DWORD_LE("00000094")},
+ 	{"",				STATICTAG_EDIT_DWORD_LE("00000098")},
+-	{"allowed media",			STATICTAG_EDIT_DWORD_LE("0000009c")" ("STATICTAG_FLAGS("0000009c", ATOM_XBE_MEDIA_FLAGS_STR)")"},
+-	{"game region",				STATICTAG_EDIT_DWORD_LE("000000a0")" ("STATICTAG_FLAGS("000000a0", ATOM_XBE_REGION_STR)")"},
++	{"allowed media",			STATICTAG_EDIT_DWORD_LE("0000009c") " (" STATICTAG_FLAGS("0000009c", ATOM_XBE_MEDIA_FLAGS_STR) ")"},
++	{"game region",				STATICTAG_EDIT_DWORD_LE("000000a0") " (" STATICTAG_FLAGS("000000a0", ATOM_XBE_REGION_STR) ")"},
+ 	{"game ratings",				STATICTAG_EDIT_DWORD_LE("000000a4")},
+ 	{"disk number",				STATICTAG_EDIT_DWORD_LE("000000a8")},
+ 	{"version",				STATICTAG_EDIT_DWORD_LE("000000ac")},
+@@ -164,7 +164,7 @@ static ht_tag_flags_s xbe_section_flags[] =
+ };
+ 
+ static ht_mask_ptable xbesectionheader[] = {
+-	{"section flags",				STATICTAG_EDIT_DWORD_LE("00000000")" "STATICTAG_FLAGS("00000000", ATOM_XBE_SECTION_FLAGS_STR)},
++	{"section flags",				STATICTAG_EDIT_DWORD_LE("00000000") " " STATICTAG_FLAGS("00000000", ATOM_XBE_SECTION_FLAGS_STR)},
+ 	{"virtual address",			STATICTAG_EDIT_DWORD_LE("00000004")},
+ 	{"virtual size",			STATICTAG_EDIT_DWORD_LE("00000008")},
+ 	{"raw address",			STATICTAG_EDIT_DWORD_LE("0000000c")},
+@@ -185,11 +185,11 @@ static ht_tag_flags_s xbe_library_flags[] =
+ 
+ 
+ static ht_mask_ptable xbelibraryversion[] = {
+-	{"library name",			STATICTAG_EDIT_CHAR("00000000")STATICTAG_EDIT_CHAR("00000001")STATICTAG_EDIT_CHAR("00000002")STATICTAG_EDIT_CHAR("00000003")STATICTAG_EDIT_CHAR("00000004")STATICTAG_EDIT_CHAR("00000005")STATICTAG_EDIT_CHAR("00000006")STATICTAG_EDIT_CHAR("00000007")},
++	{"library name",			STATICTAG_EDIT_CHAR("00000000") STATICTAG_EDIT_CHAR("00000001") STATICTAG_EDIT_CHAR("00000002") STATICTAG_EDIT_CHAR("00000003") STATICTAG_EDIT_CHAR("00000004")STATICTAG_EDIT_CHAR("00000005")STATICTAG_EDIT_CHAR("00000006")STATICTAG_EDIT_CHAR("00000007")},
+ 	{"major version",			STATICTAG_EDIT_WORD_LE("00000008")},
+ 	{"minor version",			STATICTAG_EDIT_WORD_LE("0000000a")},
+ 	{"build version",			STATICTAG_EDIT_WORD_LE("0000000c")},
+-	{"library flags",			STATICTAG_EDIT_WORD_LE("0000000e")" "STATICTAG_FLAGS("0000000a", ATOM_XBE_LIBRARY_FLAGS_STR)},
++	{"library flags",			STATICTAG_EDIT_WORD_LE("0000000e") " " STATICTAG_FLAGS("0000000a", ATOM_XBE_LIBRARY_FLAGS_STR)},
+ 	{0, 0}
+ };
+ 

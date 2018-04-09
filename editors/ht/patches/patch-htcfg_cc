@@ -1,0 +1,17 @@
+$OpenBSD: patch-htcfg_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htcfg.cc
+--- htcfg.cc.orig
++++ htcfg.cc
+@@ -290,9 +290,9 @@ bool init_cfg()
+ 	if (!d || !ht_cfg_use_homedir) d = sys_dirname(appname);
+ 	if (!d) d = ht_strdup("");
+ #if !defined(WIN32) && !defined(__WIN32__) && !defined(DJGPP) && !defined(MSDOS)
+-	const char *b = "/"SYSTEM_CONFIG_FILE_NAME;
++	const char *b = "/" SYSTEM_CONFIG_FILE_NAME;
+ #else
+-	const char *b = "\\"SYSTEM_CONFIG_FILE_NAME;
++	const char *b = "\\" SYSTEM_CONFIG_FILE_NAME;
+ #endif
+ 	systemconfig_file = ht_malloc(strlen(d)+strlen(b)+1);
+ 	strcpy(systemconfig_file, d);

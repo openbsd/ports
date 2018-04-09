@@ -1,0 +1,31 @@
+$OpenBSD: patch-htleent_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htleent.cc
+--- htleent.cc.orig
++++ htleent.cc
+@@ -41,7 +41,7 @@ static ht_tag_flags_s le_entry_bundle_flags[] =
+ static ht_mask_ptable le_entry_bundle_header[]=
+ {
+ 	{"number of entries",	STATICTAG_EDIT_BYTE("00000000")},
+-	{"bundle flags",		STATICTAG_EDIT_BYTE("00000001")" "STATICTAG_FLAGS("00000001", ATOM_LE_ENTRY_BUNDLE_FLAGS_STR)},
++	{"bundle flags",		STATICTAG_EDIT_BYTE("00000001") " " STATICTAG_FLAGS("00000001", ATOM_LE_ENTRY_BUNDLE_FLAGS_STR)},
+ 	{"object index",		STATICTAG_EDIT_WORD_LE("00000002")},
+ 	{0,0}
+ };
+@@ -58,14 +58,14 @@ static ht_tag_flags_s le_entry_flags[] =
+ 
+ static ht_mask_ptable le_entry16[]=
+ {
+-	{"flags",		STATICTAG_EDIT_BYTE("00000000")" "STATICTAG_FLAGS("00000000", ATOM_LE_ENTRY_FLAGS_STR)},
++	{"flags",		STATICTAG_EDIT_BYTE("00000000") " " STATICTAG_FLAGS("00000000", ATOM_LE_ENTRY_FLAGS_STR)},
+ 	{"offset",	STATICTAG_EDIT_WORD_LE("00000001")},
+ 	{0, 0}
+ };
+ 
+ static ht_mask_ptable le_entry32[]=
+ {
+-	{"flags",		STATICTAG_EDIT_BYTE("00000000")" "STATICTAG_FLAGS("00000000", ATOM_LE_ENTRY_FLAGS_STR)},
++	{"flags",		STATICTAG_EDIT_BYTE("00000000") " " STATICTAG_FLAGS("00000000", ATOM_LE_ENTRY_FLAGS_STR)},
+ 	{"offset",	STATICTAG_EDIT_DWORD_LE("00000001")},
+ 	{0, 0}
+ };

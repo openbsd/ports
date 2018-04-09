@@ -1,0 +1,27 @@
+$OpenBSD: patch-htelfshs_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htelfshs.cc
+--- htelfshs.cc.orig
++++ htelfshs.cc
+@@ -30,8 +30,8 @@
+ static ht_mask_ptable elfsectionheader32[]=
+ {
+ 	{"name string index",	STATICTAG_EDIT_DWORD_VE("00000000")},
+-	{"type",				STATICTAG_EDIT_DWORD_VE("00000004")" ("STATICTAG_DESC_DWORD_VE("00000004", ATOM_ELF_SH_TYPE_STR)")"},
+-	{"flags",				STATICTAG_EDIT_DWORD_VE("00000008")" "STATICTAG_FLAGS("00000008", ATOM_ELF_SH_FLAGS_STR)},
++	{"type",				STATICTAG_EDIT_DWORD_VE("00000004") " (" STATICTAG_DESC_DWORD_VE("00000004", ATOM_ELF_SH_TYPE_STR) ")"},
++	{"flags",				STATICTAG_EDIT_DWORD_VE("00000008") " " STATICTAG_FLAGS("00000008", ATOM_ELF_SH_FLAGS_STR)},
+ 	{"address",			STATICTAG_EDIT_DWORD_VE("0000000c")},
+ 	{"offset",			STATICTAG_EDIT_DWORD_VE("00000010")},
+ 	{"size",				STATICTAG_EDIT_DWORD_VE("00000014")},
+@@ -45,8 +45,8 @@ static ht_mask_ptable elfsectionheader32[]=
+ static ht_mask_ptable elfsectionheader64[]=
+ {
+ 	{"name string index",	STATICTAG_EDIT_DWORD_VE("00000000")},
+-	{"type",				STATICTAG_EDIT_DWORD_VE("00000004")" ("STATICTAG_DESC_DWORD_VE("00000004", ATOM_ELF_SH_TYPE_STR)")"},
+-	{"flags",				STATICTAG_EDIT_QWORD_VE("00000008")" "STATICTAG_FLAGS("00000008", ATOM_ELF_SH_FLAGS_STR)},
++	{"type",				STATICTAG_EDIT_DWORD_VE("00000004") " (" STATICTAG_DESC_DWORD_VE("00000004", ATOM_ELF_SH_TYPE_STR)")"},
++	{"flags",				STATICTAG_EDIT_QWORD_VE("00000008") " " STATICTAG_FLAGS("00000008", ATOM_ELF_SH_FLAGS_STR)},
+ 	{"address",			STATICTAG_EDIT_QWORD_VE("00000010")},
+ 	{"offset",			STATICTAG_EDIT_QWORD_VE("00000018")},
+ 	{"size",				STATICTAG_EDIT_QWORD_VE("00000020")},

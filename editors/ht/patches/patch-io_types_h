@@ -1,0 +1,16 @@
+$OpenBSD: patch-io_types_h,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: io/types.h
+--- io/types.h.orig
++++ io/types.h
+@@ -87,8 +87,8 @@ union htmsg_param {
+ };
+ 
+ struct htmsg {
+-	int msg;
+-	int type;
++	unsigned int msg;
++	unsigned int type;
+ 	htmsg_param data1;
+ 	htmsg_param data2;
+ };

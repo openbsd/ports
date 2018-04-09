@@ -1,0 +1,41 @@
+$OpenBSD: patch-classview_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: classview.cc
+--- classview.cc.orig
++++ classview.cc
+@@ -76,7 +76,7 @@ ht_mask_ptable cls_class1_hdr[] = 
+ ht_mask_ptable cls_class2_hdr[] = 
+ {
+ 	{"access flags",               STATICTAG_EDIT_WORD_BE ("00000000")
+-                                       " "STATICTAG_FLAGS("00000000", ATOM_CLS_ACCESS_STR)},
++                                       " " STATICTAG_FLAGS("00000000", ATOM_CLS_ACCESS_STR)},
+ 	{"this class",                 STATICTAG_EDIT_WORD_BE ("00000002")},
+ 	{"super class",                STATICTAG_EDIT_WORD_BE ("00000004")},
+ 	{"interfaces count",           STATICTAG_EDIT_WORD_BE ("00000006")},
+@@ -123,7 +123,7 @@ ht_mask_ptable cpool_utf8[] = 
+ ht_mask_ptable cpool_hdr[] = 
+ { 
+ 	{"tag",                        STATICTAG_EDIT_BYTE("00000000")
+-" "STATICTAG_DESC_BYTE("00000000", ATOM_CLS_CPOOL_STR)},
++" " STATICTAG_DESC_BYTE("00000000", ATOM_CLS_CPOOL_STR)},
+ 	{0, 0}
+ };
+ ht_mask_ptable iface_hdr[] = 
+@@ -144,7 +144,7 @@ ht_mask_ptable method_hdr[] = 
+ ht_mask_ptable mf_hdr[] = 
+ {
+ 	{"access flags",               STATICTAG_EDIT_WORD_BE ("00000000")
+-" "STATICTAG_FLAGS("00000000", ATOM_CLS_ACCESS_STR)},
++" " STATICTAG_FLAGS("00000000", ATOM_CLS_ACCESS_STR)},
+ 	{"name index",                 STATICTAG_EDIT_WORD_BE ("00000002")},
+ 	{"descriptor index",           STATICTAG_EDIT_WORD_BE ("00000004")},
+ 	{"attributes count",           STATICTAG_EDIT_WORD_BE ("00000006")},
+@@ -174,7 +174,7 @@ ht_mask_ptable ainn_info[] = 
+ 	{"outer class info index",     STATICTAG_EDIT_WORD_BE("00000002")},
+ 	{"inner name index",           STATICTAG_EDIT_WORD_BE("00000004")},
+ 	{"inner class access flags",   STATICTAG_EDIT_WORD_BE("00000006")
+-                                       " "STATICTAG_FLAGS("00000006", ATOM_CLS_ACCESS_STR)},
++                                       " " STATICTAG_FLAGS("00000006", ATOM_CLS_ACCESS_STR)},
+ 	{0, 0}
+ };
+ ht_mask_ptable aline_info[] = 

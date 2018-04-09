@@ -1,0 +1,16 @@
+$OpenBSD: patch-htpefhd_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htpefhd.cc
+--- htpefhd.cc.orig
++++ htpefhd.cc
+@@ -69,8 +69,8 @@ static ht_mask_ptable pef_sectionheader[]=
+ 	{"unpacked size",	STATICTAG_EDIT_DWORD_BE("0000000c")},
+ 	{"packed size",		STATICTAG_EDIT_DWORD_BE("00000010")},
+ 	{"container offset",	STATICTAG_EDIT_DWORD_BE("00000014")},
+-	{"section kind",	STATICTAG_EDIT_BYTE("00000018")" "STATICTAG_DESC_BYTE("00000018", ATOM_PEF_SECTION_KIND_STR)},
+-	{"share kind",		STATICTAG_EDIT_BYTE("00000019")" "STATICTAG_DESC_BYTE("00000019", ATOM_PEF_SHARE_KIND_STR)},
++	{"section kind",	STATICTAG_EDIT_BYTE("00000018") " " STATICTAG_DESC_BYTE("00000018", ATOM_PEF_SECTION_KIND_STR)},
++	{"share kind",		STATICTAG_EDIT_BYTE("00000019") " " STATICTAG_DESC_BYTE("00000019", ATOM_PEF_SHARE_KIND_STR)},
+ 	{"alignment",		STATICTAG_EDIT_BYTE("0000001a")},
+ 	{"reserved",		STATICTAG_EDIT_BYTE("0000001b")},
+ 	{0, 0}

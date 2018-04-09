@@ -1,0 +1,14 @@
+$OpenBSD: patch-htmacho_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htmacho.cc
+--- htmacho.cc.orig
++++ htmacho.cc
+@@ -146,7 +146,7 @@ void ht_macho::init(Bounds *b, File *f, format_viewer_
+ 				break;
+ 			case MACHO_CPU_TYPE_I386:
+ 				switch (c->flavor) {
+-				case -1:
++				default: //??
+ 					createHostStruct(&c->state, MACHO_I386_THREAD_STATE_struct, image_endianess);
+ 					break;
+ 				}

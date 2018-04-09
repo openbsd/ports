@@ -1,0 +1,86 @@
+$OpenBSD: patch-htpehead_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htpehead.cc
+--- htpehead.cc.orig
++++ htpehead.cc
+@@ -68,7 +68,7 @@ static ht_mask_ptable pemagic[] = {
+ };
+ 
+ static ht_mask_ptable pe32header[] = {
+-	{"optional magic",			STATICTAG_EDIT_WORD_LE("00000014")" "STATICTAG_DESC_WORD_LE("00000014", ATOM_PE_OPTIONAL_MAGICS_STR)},
++	{"optional magic",			STATICTAG_EDIT_WORD_LE("00000014") " " STATICTAG_DESC_WORD_LE("00000014", ATOM_PE_OPTIONAL_MAGICS_STR)},
+ 	{"major linker version",		STATICTAG_EDIT_BYTE("00000016")},
+ 	{"minor linker version",		STATICTAG_EDIT_BYTE("00000017")},
+ 	{"size of code",			STATICTAG_EDIT_DWORD_LE("00000018")},
+@@ -106,9 +106,9 @@ static ht_mask_ptable pe32header_nt[] = {
+ 	{"Win32 version",			STATICTAG_EDIT_DWORD_LE("00000048")},
+ 	{"size of image",			STATICTAG_EDIT_DWORD_LE("0000004c")},
+ 	{"size of headers",			STATICTAG_EDIT_DWORD_LE("00000050")},
+-	{"checksum",				STATICTAG_EDIT_DWORD_LE("00000054")" "STATICTAG_REF("0000000500000054", "04", "calc")},
+-	{"subsystem",				STATICTAG_EDIT_WORD_LE("00000058")" "STATICTAG_DESC_WORD_LE("00000058", ATOM_PE_SUBSYSTEMS_STR)},
+-	{"dll characteristics",			STATICTAG_EDIT_WORD_LE("0000005a")" "STATICTAG_FLAGS("0000005a", ATOM_PE_DLL_CHARACTERISTICS_STR)},
++	{"checksum",				STATICTAG_EDIT_DWORD_LE("00000054") " " STATICTAG_REF("0000000500000054", "04", "calc")},
++	{"subsystem",				STATICTAG_EDIT_WORD_LE("00000058") " " STATICTAG_DESC_WORD_LE("00000058", ATOM_PE_SUBSYSTEMS_STR)},
++	{"dll characteristics",			STATICTAG_EDIT_WORD_LE("0000005a") " " STATICTAG_FLAGS("0000005a", ATOM_PE_DLL_CHARACTERISTICS_STR)},
+ 	{"stack reserve",			STATICTAG_EDIT_DWORD_LE("0000005c")},
+ 	{"stack commit",			STATICTAG_EDIT_DWORD_LE("00000060")},
+ 	{"heap reserve",			STATICTAG_EDIT_DWORD_LE("00000064")},
+@@ -131,8 +131,8 @@ static ht_mask_ptable pe64header_nt[] = {
+ 	{"Win32 version",		STATICTAG_EDIT_DWORD_LE("00000048")},
+ 	{"size of image",		STATICTAG_EDIT_DWORD_LE("0000004c")},
+ 	{"size of headers",		STATICTAG_EDIT_DWORD_LE("00000050")},
+-	{"checksum",			STATICTAG_EDIT_DWORD_LE("00000054")" "STATICTAG_REF("0000000500000054", "04", "calc")},
+-	{"subsystem",			STATICTAG_EDIT_WORD_LE("00000058")" "STATICTAG_DESC_WORD_LE("00000058", ATOM_PE_SUBSYSTEMS_STR)},
++	{"checksum",			STATICTAG_EDIT_DWORD_LE("00000054") " " STATICTAG_REF("0000000500000054", "04", "calc")},
++	{"subsystem",			STATICTAG_EDIT_WORD_LE("00000058") " " STATICTAG_DESC_WORD_LE("00000058", ATOM_PE_SUBSYSTEMS_STR)},
+ 	{"dll characteristics",		STATICTAG_EDIT_WORD_LE("0000005a")},
+ 	{"stack reserve",		STATICTAG_EDIT_QWORD_LE("0000005c")},
+ 	{"stack commit",		STATICTAG_EDIT_QWORD_LE("00000064")},
+@@ -144,22 +144,22 @@ static ht_mask_ptable pe64header_nt[] = {
+ };
+ 
+ static ht_mask_ptable pe32header_nt_dirs[] = {
+-	{"export directory             (rva/size)", STATICTAG_EDIT_DWORD_LE("00000000")" "STATICTAG_EDIT_DWORD_LE("00000004")" "STATICTAG_REF("0000000000000000", "03", "raw")" "STATICTAG_REF("0000000100000000", "04", "cook")},
+-	{"import directory             (rva/size)", STATICTAG_EDIT_DWORD_LE("00000008")" "STATICTAG_EDIT_DWORD_LE("0000000c")" "STATICTAG_REF("0000000000000001", "03", "raw")" "STATICTAG_REF("0000000200000000", "04", "cook")},
+-	{"resource directory           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000010")" "STATICTAG_EDIT_DWORD_LE("00000014")" "STATICTAG_REF("0000000000000002", "03", "raw")" "STATICTAG_REF("0000000300000000", "04", "cook")},
+-	{"exception directory          (rva/size)", STATICTAG_EDIT_DWORD_LE("00000018")" "STATICTAG_EDIT_DWORD_LE("0000001c")" "STATICTAG_REF("0000000000000003", "03", "raw")},
+-	{"security directory           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000020")" "STATICTAG_EDIT_DWORD_LE("00000024")" "STATICTAG_REF("0000000000000004", "03", "raw")},
+-	{"base relocation table        (rva/size)", STATICTAG_EDIT_DWORD_LE("00000028")" "STATICTAG_EDIT_DWORD_LE("0000002c")" "STATICTAG_REF("0000000000000005", "03", "raw")},
+-	{"debug directory              (rva/size)", STATICTAG_EDIT_DWORD_LE("00000030")" "STATICTAG_EDIT_DWORD_LE("00000034")" "STATICTAG_REF("0000000000000006", "03", "raw")},
+-	{"description string           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000038")" "STATICTAG_EDIT_DWORD_LE("0000003c")" "STATICTAG_REF("0000000000000007", "03", "raw")},
+-	{"machine value (GP)           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000040")" "STATICTAG_EDIT_DWORD_LE("00000044")" "STATICTAG_REF("0000000000000008", "03", "raw")},
+-	{"thread local storage (TLS)   (rva/size)", STATICTAG_EDIT_DWORD_LE("00000048")" "STATICTAG_EDIT_DWORD_LE("0000004c")" "STATICTAG_REF("0000000000000009", "03", "raw")},
+-	{"load configuration directory (rva/size)", STATICTAG_EDIT_DWORD_LE("00000050")" "STATICTAG_EDIT_DWORD_LE("00000054")" "STATICTAG_REF("000000000000000a", "03", "raw")},
+-	{"bound import directory       (ofs/size)", STATICTAG_EDIT_DWORD_LE("00000058")" "STATICTAG_EDIT_DWORD_LE("0000005c")" "STATICTAG_REF("000000040000000b", "03", "raw")},
+-	{"import address table (IAT)   (rva/size)", STATICTAG_EDIT_DWORD_LE("00000060")" "STATICTAG_EDIT_DWORD_LE("00000064")" "STATICTAG_REF("000000000000000c", "03", "raw")},
+-	{"delay import descriptor      (rva/size)", STATICTAG_EDIT_DWORD_LE("00000068")" "STATICTAG_EDIT_DWORD_LE("0000006c")" "STATICTAG_REF("000000000000000d", "03", "raw")},
+-	{"COM+ runtime header          (rva/size)", STATICTAG_EDIT_DWORD_LE("00000070")" "STATICTAG_EDIT_DWORD_LE("00000074")" "STATICTAG_REF("000000000000000e", "03", "raw")" "STATICTAG_REF("0000000f00000000", "04", "cook")},
+-	{"reserved (15)                (rva/size)", STATICTAG_EDIT_DWORD_LE("00000078")" "STATICTAG_EDIT_DWORD_LE("0000007c")" "STATICTAG_REF("000000000000000f", "03", "raw")},
++	{"export directory             (rva/size)", STATICTAG_EDIT_DWORD_LE("00000000") " " STATICTAG_EDIT_DWORD_LE("00000004") " " STATICTAG_REF("0000000000000000", "03", "raw") " " STATICTAG_REF("0000000100000000", "04", "cook")},
++	{"import directory             (rva/size)", STATICTAG_EDIT_DWORD_LE("00000008") " " STATICTAG_EDIT_DWORD_LE("0000000c") " " STATICTAG_REF("0000000000000001", "03", "raw") " " STATICTAG_REF("0000000200000000", "04", "cook")},
++	{"resource directory           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000010") " " STATICTAG_EDIT_DWORD_LE("00000014") " " STATICTAG_REF("0000000000000002", "03", "raw") " " STATICTAG_REF("0000000300000000", "04", "cook")},
++	{"exception directory          (rva/size)", STATICTAG_EDIT_DWORD_LE("00000018") " " STATICTAG_EDIT_DWORD_LE("0000001c") " " STATICTAG_REF("0000000000000003", "03", "raw")},
++	{"security directory           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000020") " " STATICTAG_EDIT_DWORD_LE("00000024") " " STATICTAG_REF("0000000000000004", "03", "raw")},
++	{"base relocation table        (rva/size)", STATICTAG_EDIT_DWORD_LE("00000028") " " STATICTAG_EDIT_DWORD_LE("0000002c") " " STATICTAG_REF("0000000000000005", "03", "raw")},
++	{"debug directory              (rva/size)", STATICTAG_EDIT_DWORD_LE("00000030") " " STATICTAG_EDIT_DWORD_LE("00000034") " " STATICTAG_REF("0000000000000006", "03", "raw")},
++	{"description string           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000038") " " STATICTAG_EDIT_DWORD_LE("0000003c") " " STATICTAG_REF("0000000000000007", "03", "raw")},
++	{"machine value (GP)           (rva/size)", STATICTAG_EDIT_DWORD_LE("00000040") " " STATICTAG_EDIT_DWORD_LE("00000044") " " STATICTAG_REF("0000000000000008", "03", "raw")},
++	{"thread local storage (TLS)   (rva/size)", STATICTAG_EDIT_DWORD_LE("00000048") " " STATICTAG_EDIT_DWORD_LE("0000004c") " " STATICTAG_REF("0000000000000009", "03", "raw")},
++	{"load configuration directory (rva/size)", STATICTAG_EDIT_DWORD_LE("00000050") " " STATICTAG_EDIT_DWORD_LE("00000054") " " STATICTAG_REF("000000000000000a", "03", "raw")},
++	{"bound import directory       (ofs/size)", STATICTAG_EDIT_DWORD_LE("00000058") " " STATICTAG_EDIT_DWORD_LE("0000005c") " " STATICTAG_REF("000000040000000b", "03", "raw")},
++	{"import address table (IAT)   (rva/size)", STATICTAG_EDIT_DWORD_LE("00000060") " " STATICTAG_EDIT_DWORD_LE("00000064") " " STATICTAG_REF("000000000000000c", "03", "raw")},
++	{"delay import descriptor      (rva/size)", STATICTAG_EDIT_DWORD_LE("00000068") " " STATICTAG_EDIT_DWORD_LE("0000006c") " " STATICTAG_REF("000000000000000d", "03", "raw")},
++	{"COM+ runtime header          (rva/size)", STATICTAG_EDIT_DWORD_LE("00000070") " " STATICTAG_EDIT_DWORD_LE("00000074") " " STATICTAG_REF("000000000000000e", "03", "raw") " " STATICTAG_REF("0000000f00000000", "04", "cook")},
++	{"reserved (15)                (rva/size)", STATICTAG_EDIT_DWORD_LE("00000078") " " STATICTAG_EDIT_DWORD_LE("0000007c") " " STATICTAG_REF("000000000000000f", "03", "raw")},
+ 	{0, 0}
+ };
+ 
+@@ -232,7 +232,7 @@ static ht_view *htpeheader_init(Bounds *b, File *file,
+ 			break;
+ 		}
+ 		default: {
+-			s->add_staticmask("optional magic                                   "STATICTAG_EDIT_WORD_LE("00000014")" "STATICTAG_DESC_WORD_LE("00000014", ATOM_PE_OPTIONAL_MAGICS_STR), h+4, pe_bigendian);
++			s->add_staticmask("optional magic                                   " STATICTAG_EDIT_WORD_LE("00000014") " " STATICTAG_DESC_WORD_LE("00000014", ATOM_PE_OPTIONAL_MAGICS_STR), h+4, pe_bigendian);
+ 			s->add_mask("-------------------------------------------------------------------------");
+ 			s->add_mask("Unsupported optional magic ! If you get this message in an original");
+ 			s->add_mask("(unmodified) file, please contact us (see help).");

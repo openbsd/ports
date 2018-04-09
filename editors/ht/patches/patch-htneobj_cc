@@ -1,0 +1,14 @@
+$OpenBSD: patch-htneobj_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htneobj.cc
+--- htneobj.cc.orig
++++ htneobj.cc
+@@ -37,7 +37,7 @@ static ht_mask_ptable neobj[]=
+ {
+ 	{"offset",	STATICTAG_EDIT_WORD_LE("00000000")},
+ 	{"size",	STATICTAG_EDIT_WORD_LE("00000002")},
+-	{"flags",	STATICTAG_EDIT_WORD_LE("00000004")" "STATICTAG_FLAGS("00000004", ATOM_NE_SEGFLAGS_STR)},
++	{"flags",	STATICTAG_EDIT_WORD_LE("00000004") " " STATICTAG_FLAGS("00000004", ATOM_NE_SEGFLAGS_STR)},
+ 	{"minalloc",	STATICTAG_EDIT_WORD_LE("00000006")},
+ 	{0, 0}
+ };

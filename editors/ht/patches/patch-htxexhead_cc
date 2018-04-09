@@ -1,0 +1,138 @@
+$OpenBSD: patch-htxexhead_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htxexhead.cc
+--- htxexhead.cc.orig
++++ htxexhead.cc
+@@ -52,7 +52,7 @@ static ht_mask_ptable xeximageheader[] = {
+ 	{"version",			STATICTAG_EDIT_DWORD_BE("00000004")},
+ 	{"size of header",		STATICTAG_EDIT_DWORD_BE("00000008")},
+ 	{"res",				STATICTAG_EDIT_DWORD_BE("0000000c")},
+-	{"offset of file header",	STATICTAG_EDIT_DWORD_BE("00000010")" "STATICTAG_REF("0000000100000000", "03", "raw")},
++	{"offset of file header",	STATICTAG_EDIT_DWORD_BE("00000010") " " STATICTAG_REF("0000000100000000", "03", "raw")},
+ 	{"info table entries",		STATICTAG_EDIT_DWORD_BE("00000014")},
+ 	{0, 0}
+ };
+@@ -137,11 +137,11 @@ static ht_sub *add_resmap(File *file, const char *desc
+ 	char b2[200];
+ 	ht_snprintf(b2, sizeof b2, STATICTAG_REF("00000000%08x", "08", "show raw"), i);
+ 	ht_snprintf(b, sizeof b, 
+-                "type               "STATICTAG_EDIT_BYTE("00000000")STATICTAG_EDIT_BYTE("00000001")STATICTAG_EDIT_BYTE("00000002")STATICTAG_EDIT_BYTE("00000003")
++                "type               " STATICTAG_EDIT_BYTE("00000000")STATICTAG_EDIT_BYTE("00000001")STATICTAG_EDIT_BYTE("00000002")STATICTAG_EDIT_BYTE("00000003")
+ 		"                             %s", xex_shared.info_table_cooked[i].start ? b2 : "");
+ 	
+ 	s->add_staticmask(b, ofs, true);
+-	s->add_staticmask("value              "STATICTAG_EDIT_DWORD_BE("00000004")" ", ofs, true);
++	s->add_staticmask("value              " STATICTAG_EDIT_DWORD_BE("00000004") " ", ofs, true);
+ 	
+ 	return cs;
+ }
+@@ -155,23 +155,23 @@ static ht_sub *add_loaderinfo(File *file, const char *
+ 	ofs = xex_shared.info_table_cooked[i].start;
+ 
+ 	if (xex_shared.info_table_cooked[i].size >= 4) {
+-		s->add_staticmask("crypted?           "STATICTAG_EDIT_WORD_BE("00000000"), ofs, true);
+-		s->add_staticmask("type of loader     "STATICTAG_EDIT_WORD_BE("00000002"), ofs, true);
++		s->add_staticmask("crypted?           " STATICTAG_EDIT_WORD_BE("00000000"), ofs, true);
++		s->add_staticmask("type of loader     " STATICTAG_EDIT_WORD_BE("00000002"), ofs, true);
+ 		s->add_staticmask(" ---", ofs, true);
+ 		switch (xex_shared.loader_info.type) {
+ 		case XEX_LOADER_RAW: {
+ 			int entries = (xex_shared.info_table_cooked[i].size-4)/8;
+ 			ofs += 4;
+ 			for (int i = 0; i < entries; i++) {
+-				s->add_staticmask("raw bytes          "STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
+-				s->add_staticmask("pad                "STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
++				s->add_staticmask("raw bytes          " STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
++				s->add_staticmask("pad                " STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
+ 				ofs += 8;
+ 			}
+ 			break;
+ 		}
+ 		case XEX_LOADER_COMPRESSED: {
+-			s->add_staticmask("compression window "STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
+-			s->add_staticmask("size of loader     "STATICTAG_EDIT_DWORD_BE("00000008"), ofs, true);
++			s->add_staticmask("compression window " STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
++			s->add_staticmask("size of loader     " STATICTAG_EDIT_DWORD_BE("00000008"), ofs, true);
+ 			if (xex_shared.info_table_cooked[i].size >= 32) {
+ 				String str("SHA1 hash loader   ");
+ 				for (int j=0; j < 20; j++) {
+@@ -210,8 +210,8 @@ static ht_sub *add_ids(File *file, const char *desc, h
+ 	ht_mask_sub *s = prep_sub(file, desc, xex_shared.info_table_cooked[i].type, i, &cs);
+ 	
+ 	ofs = xex_shared.info_table_cooked[i].start;
+-	s->add_staticmask("image checksum     "STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
+-	s->add_staticmask("timestamp          "STATICTAG_EDIT_TIME_BE("00000004"), ofs, true);
++	s->add_staticmask("image checksum     " STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
++	s->add_staticmask("timestamp          " STATICTAG_EDIT_TIME_BE("00000004"), ofs, true);
+ 	return cs;
+ }
+ 
+@@ -221,15 +221,15 @@ static ht_sub *add_fileinfo(File *file, const char *de
+ 	ht_mask_sub *s = prep_sub(file, desc, xex_shared.info_table_cooked[i].type, i, &cs);
+ 	
+ 	ofs = xex_shared.info_table_cooked[i].start;
+-	s->add_staticmask("media ID           "STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
+-	s->add_staticmask("xbox min version   "STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
+-	s->add_staticmask("xbox max? version  "STATICTAG_EDIT_DWORD_BE("00000008"), ofs, true);
+-	s->add_staticmask("title ID           "STATICTAG_EDIT_DWORD_BE("0000000c"), ofs, true);
+-	s->add_staticmask("platform           "STATICTAG_EDIT_BYTE("00000010"), ofs, true);
+-	s->add_staticmask("executable type    "STATICTAG_EDIT_BYTE("00000011"), ofs, true);
+-	s->add_staticmask("disk number        "STATICTAG_EDIT_BYTE("00000012"), ofs, true);
+-	s->add_staticmask("disks total        "STATICTAG_EDIT_BYTE("00000013"), ofs, true);
+-	s->add_staticmask("save game ID       "STATICTAG_EDIT_DWORD_BE("00000014"), ofs, true);
++	s->add_staticmask("media ID           " STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
++	s->add_staticmask("xbox min version   " STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);
++	s->add_staticmask("xbox max? version  " STATICTAG_EDIT_DWORD_BE("00000008"), ofs, true);
++	s->add_staticmask("title ID           " STATICTAG_EDIT_DWORD_BE("0000000c"), ofs, true);
++	s->add_staticmask("platform           " STATICTAG_EDIT_BYTE("00000010"), ofs, true);
++	s->add_staticmask("executable type    " STATICTAG_EDIT_BYTE("00000011"), ofs, true);
++	s->add_staticmask("disk number        " STATICTAG_EDIT_BYTE("00000012"), ofs, true);
++	s->add_staticmask("disks total        " STATICTAG_EDIT_BYTE("00000013"), ofs, true);
++	s->add_staticmask("save game ID       " STATICTAG_EDIT_DWORD_BE("00000014"), ofs, true);
+ 	return cs;
+ }
+ 
+@@ -258,23 +258,23 @@ static ht_sub *add_fileheader(File *file, const char *
+ 	FileOfs ofs = xex_shared.header.file_header_offset;
+ 
+ 	String str;
+-	s->add_staticmask("file header size     "STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
+-	s->add_staticmask("image size           "STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);	
+-	s->add_staticmask("key                  "STATICTAG_REF("0000000100000001", "08", "show raw"), ofs, true);
+-	s->add_staticmask("length?              "STATICTAG_EDIT_DWORD_BE("00000108"), ofs, true);
+-	s->add_staticmask("image flags          "STATICTAG_EDIT_DWORD_BE("0000010c"), ofs, true);
+-	s->add_staticmask("load address         "STATICTAG_EDIT_DWORD_BE("00000110"), ofs, true);
++	s->add_staticmask("file header size     " STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
++	s->add_staticmask("image size           " STATICTAG_EDIT_DWORD_BE("00000004"), ofs, true);	
++	s->add_staticmask("key                  " STATICTAG_REF("0000000100000001", "08", "show raw"), ofs, true);
++	s->add_staticmask("length?              " STATICTAG_EDIT_DWORD_BE("00000108"), ofs, true);
++	s->add_staticmask("image flags          " STATICTAG_EDIT_DWORD_BE("0000010c"), ofs, true);
++	s->add_staticmask("load address         " STATICTAG_EDIT_DWORD_BE("00000110"), ofs, true);
+ 	s->add_staticmask(mkkey(str, "hash?                ", 0x114, 20) , ofs, true);
+-	s->add_staticmask("unknown              "STATICTAG_EDIT_DWORD_BE("00000128"), ofs, true);
++	s->add_staticmask("unknown              " STATICTAG_EDIT_DWORD_BE("00000128"), ofs, true);
+ 	s->add_staticmask(mkkey(str, "hash?                ", 0x12c, 20), ofs, true);
+ 	s->add_staticmask(mkkey(str, "unknown              ", 0x140, 16), ofs, true);
+ 	s->add_staticmask(mkkey(str, "crypted loader key   ", 0x150, 16), ofs, true);
+-	s->add_staticmask("unknown              "STATICTAG_EDIT_DWORD_BE("00000160"), ofs, true);
++	s->add_staticmask("unknown              " STATICTAG_EDIT_DWORD_BE("00000160"), ofs, true);
+ 	s->add_staticmask(mkkey(str, "hash?                ", 0x164, 20) , ofs, true);
+-	s->add_staticmask("game region          "STATICTAG_EDIT_DWORD_BE("00000178"), ofs, true);
+-	s->add_staticmask("media type mask      "STATICTAG_EDIT_DWORD_BE("0000017c")"   "STATICTAG_FLAGS("0000017c", ATOM_XEX_MEDIA_FLAGS_STR), ofs, true);
++	s->add_staticmask("game region          " STATICTAG_EDIT_DWORD_BE("00000178"), ofs, true);
++	s->add_staticmask("media type mask      " STATICTAG_EDIT_DWORD_BE("0000017c") "   " STATICTAG_FLAGS("0000017c", ATOM_XEX_MEDIA_FLAGS_STR), ofs, true);
+ 	s->add_staticmask("", ofs, true);
+-	s->add_staticmask("page table entries   "STATICTAG_EDIT_DWORD_BE("00000180"), ofs, true);
++	s->add_staticmask("page table entries   " STATICTAG_EDIT_DWORD_BE("00000180"), ofs, true);
+ 
+ 	s = new ht_mask_sub();
+ 	ht_collapsable_sub *cs2 = new ht_collapsable_sub();
+@@ -284,7 +284,7 @@ static ht_sub *add_fileheader(File *file, const char *
+ 
+ 	ofs += 0x184;
+ 	for (int i=0; i < xex_shared.file_header.pages; i++) {
+-		s->add_staticmask("flags?               "STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
++		s->add_staticmask("flags?               " STATICTAG_EDIT_DWORD_BE("00000000"), ofs, true);
+ 		s->add_staticmask(mkkey(str, "hash?                ", 0x4, 20) , ofs, true);
+ 		ofs += 24;
+ 	}

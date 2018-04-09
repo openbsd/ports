@@ -1,0 +1,18 @@
+$OpenBSD: patch-htinfo_h,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htinfo.h
+--- htinfo.h.orig
++++ htinfo.h
+@@ -27,10 +27,10 @@
+ #define ht_version "2.1.0"
+ 
+ #define ht_author1 "Stefan Weyergraf"
+-#define ht_copyright1 "(c) 1999-2004 "ht_author1
++#define ht_copyright1 "(c) 1999-2004 " ht_author1
+ 
+ #define ht_author2 "Sebastian Biallas"
+ #define ht_mail2 "sb@biallas.net"
+-#define ht_copyright2 "(c) 1999-2014 "ht_author2" <"ht_mail2">"
++#define ht_copyright2 "(c) 1999-2015 " ht_author2 " <" ht_mail2 ">"
+ 
+ #endif /* !__HTINFO_H__ */

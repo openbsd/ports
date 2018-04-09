@@ -1,0 +1,57 @@
+$OpenBSD: patch-htfinfo_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htfinfo.cc
+--- htfinfo.cc.orig
++++ htfinfo.cc
+@@ -62,7 +62,7 @@ int print_time(char *f, int max_len, const char *prefi
+ {
+ 	tm tt;
+ 	memcpy(&tt, localtime(&time), sizeof tt);
+-	return ht_snprintf(f, max_len, "%-"FINFO_IDENTIFIER_WIDTH_STR"s%s", prefix, asctime(&tt));
++	return ht_snprintf(f, max_len, "%-" FINFO_IDENTIFIER_WIDTH_STR "s%s", prefix, asctime(&tt));
+ }
+ 
+ int ht_finfo_text::gettext(char *text, int max_len)
+@@ -76,18 +76,18 @@ int ht_finfo_text::gettext(char *text, int max_len)
+ 	if (s.caps & pstat_ctime) t += print_time(t, max_len-(t-text), "time of creation", s.ctime);
+ 	if (s.caps & pstat_mtime) t += print_time(t, max_len-(t-text), "time of modification", s.mtime);
+ 	if (s.caps & pstat_atime) t += print_time(t, max_len-(t-text), "time of last access", s.atime);
+-	if (s.caps & pstat_uid) t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%d\n", "user id", s.uid);
+-	if (s.caps & pstat_gid) t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%d\n", "group id", s.gid);
++	if (s.caps & pstat_uid) t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%d\n", "user id", s.uid);
++	if (s.caps & pstat_gid) t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%d\n", "group id", s.gid);
+ 
+ 	if (s.caps & pstat_size) {
+-		t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%qd (%.2f KiB, %.2f MiB)"
++		t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%qd (%.2f KiB, %.2f MiB)"
+ 		" / 0x%08qx\n", "size", s.size, ((float)s.size)/1024,
+ 		((float)s.size)/1024/1024, s.size);
+ 	}	    
+ 
+-	if (s.caps & pstat_inode) t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%d\n", "inode", s.fsid);
+-	else if (s.caps & pstat_cluster) t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%d\n", "cluster (?)", s.fsid);
+-	else if (s.caps & pstat_fsid) t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s%d\n", "fsid", s.fsid);
++	if (s.caps & pstat_inode) t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%d\n", "inode", s.fsid);
++	else if (s.caps & pstat_cluster) t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%d\n", "cluster (?)", s.fsid);
++	else if (s.caps & pstat_fsid) t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s%d\n", "fsid", s.fsid);
+ 	
+ 	if (s.caps & pstat_mode_all) {
+ 		uint32 am[3][3]={
+@@ -105,7 +105,7 @@ int ht_finfo_text::gettext(char *text, int max_len)
+ 		if (max_len-(t-text) > 1) *t++ = '\n';
+ 
+ 		int cols=0;	
+-		t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s", "");
++		t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s", "");
+ 		for (int u=0; u<3; u++) {
+ 			if (s.caps & ulm[u]) {
+ 				t += ht_snprintf(t, max_len-(t-text), " %-8s", uls[u]);
+@@ -121,7 +121,7 @@ int ht_finfo_text::gettext(char *text, int max_len)
+ 				
+ 		for (int a=0; a<3; a++) {
+ 			if (s.caps & alm[a]) {
+-				t += ht_snprintf(t, max_len-(t-text), "%-"FINFO_IDENTIFIER_WIDTH_STR"s", als[a]);
++				t += ht_snprintf(t, max_len-(t-text), "%-" FINFO_IDENTIFIER_WIDTH_STR "s", als[a]);
+ 				for (int u=0; u<3; u++) {
+ 					if (s.caps & ulm[u]) {
+ 						t += ht_snprintf(t, max_len-(t-text), " %-8s", (s.mode & am[u][a]) ? "[x]" : "[ ]");

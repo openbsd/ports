@@ -1,0 +1,18 @@
+$OpenBSD: patch-htleobj_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htleobj.cc
+--- htleobj.cc.orig
++++ htleobj.cc
+@@ -36,10 +36,10 @@ static ht_mask_ptable leobj[]=
+ {
+ 	{"virtual size",			STATICTAG_EDIT_DWORD_LE("00000000")},
+ 	{"relocation base address",	STATICTAG_EDIT_DWORD_LE("00000004")},
+-	{"flags",					STATICTAG_EDIT_DWORD_LE("00000008")" "STATICTAG_FLAGS("00000008", ATOM_LE_OBJFLAGS_STR)},
++	{"flags",					STATICTAG_EDIT_DWORD_LE("00000008") " " STATICTAG_FLAGS("00000008", ATOM_LE_OBJFLAGS_STR)},
+ 	{"page map index",			STATICTAG_EDIT_DWORD_LE("0000000c")},
+ 	{"page map count",			STATICTAG_EDIT_DWORD_LE("00000010")},
+-	{"name",					STATICTAG_EDIT_CHAR("00000014")""STATICTAG_EDIT_CHAR("00000015")""STATICTAG_EDIT_CHAR("00000016")""STATICTAG_EDIT_CHAR("00000017")},
++	{"name",					STATICTAG_EDIT_CHAR("00000014") "" STATICTAG_EDIT_CHAR("00000015") "" STATICTAG_EDIT_CHAR("00000016") "" STATICTAG_EDIT_CHAR("00000017")},
+ 	{0, 0}
+ };
+ 

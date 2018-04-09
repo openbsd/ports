@@ -1,0 +1,32 @@
+$OpenBSD: patch-htlehead_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
+
+Index: htlehead.cc
+--- htlehead.cc.orig
++++ htlehead.cc
+@@ -79,10 +79,10 @@ static ht_mask_ptable leheader[]=
+ 	{"byte order",						STATICTAG_EDIT_BYTE("00000002")},
+ 	{"word order",						STATICTAG_EDIT_BYTE("00000003")},
+ 	{"level",							STATICTAG_EDIT_DWORD_LE("00000004")},
+-	{"cpu type",						STATICTAG_EDIT_WORD_LE("00000008")" "STATICTAG_DESC_WORD_LE("00000008", ATOM_LE_MACHINE_STR)},
+-	{"os type",						STATICTAG_EDIT_WORD_LE("0000000a")" "STATICTAG_DESC_WORD_LE("0000000a", ATOM_LE_OS_STR)},
++	{"cpu type",						STATICTAG_EDIT_WORD_LE("00000008") " " STATICTAG_DESC_WORD_LE("00000008", ATOM_LE_MACHINE_STR)},
++	{"os type",						STATICTAG_EDIT_WORD_LE("0000000a") " " STATICTAG_DESC_WORD_LE("0000000a", ATOM_LE_OS_STR)},
+ 	{"module version",					STATICTAG_EDIT_DWORD_LE("0000000c")},
+-	{"module flags",					STATICTAG_EDIT_DWORD_LE("00000010")" "STATICTAG_FLAGS("00000010", ATOM_LE_FLAGS_STR)},
++	{"module flags",					STATICTAG_EDIT_DWORD_LE("00000010") " " STATICTAG_FLAGS("00000010", ATOM_LE_FLAGS_STR)},
+ 	{"number of pages",					STATICTAG_EDIT_DWORD_LE("00000014")},
+ 	{"logical cs",						STATICTAG_EDIT_DWORD_LE("00000018")},
+ 	{"eip",							STATICTAG_EDIT_DWORD_LE("0000001c")},
+@@ -121,9 +121,9 @@ static ht_mask_ptable leheader[]=
+ 	{"pages in preload section", 			STATICTAG_EDIT_DWORD_LE("000000a0")},
+ 	{"pages in demand load section", 		STATICTAG_EDIT_DWORD_LE("000000a4")},
+ 	{"size of heap (16-bit)", 			STATICTAG_EDIT_DWORD_LE("000000a8")},
+-	{"reserved (12 bytes)", 				STATICTAG_EDIT_BYTE("000000ac")" "STATICTAG_EDIT_BYTE("000000ad")" "STATICTAG_EDIT_BYTE("000000ae")" "STATICTAG_EDIT_BYTE("000000af")},
+-	{0, 								STATICTAG_EDIT_BYTE("000000b0")" "STATICTAG_EDIT_BYTE("000000b1")" "STATICTAG_EDIT_BYTE("000000b2")" "STATICTAG_EDIT_BYTE("000000b3")},
+-	{0, 								STATICTAG_EDIT_BYTE("000000b4")" "STATICTAG_EDIT_BYTE("000000b5")" "STATICTAG_EDIT_BYTE("000000b6")" "STATICTAG_EDIT_BYTE("000000b7")},
++	{"reserved (12 bytes)", 				STATICTAG_EDIT_BYTE("000000ac") " " STATICTAG_EDIT_BYTE("000000ad") " " STATICTAG_EDIT_BYTE("000000ae") " " STATICTAG_EDIT_BYTE("000000af")},
++	{0, 								STATICTAG_EDIT_BYTE("000000b0") " " STATICTAG_EDIT_BYTE("000000b1") " " STATICTAG_EDIT_BYTE("000000b2") " " STATICTAG_EDIT_BYTE("000000b3")},
++	{0, 								STATICTAG_EDIT_BYTE("000000b4") " " STATICTAG_EDIT_BYTE("000000b5") " " STATICTAG_EDIT_BYTE("000000b6") " " STATICTAG_EDIT_BYTE("000000b7")},
+ 	{"--- VxD only ---", 0},
+ 	{"offset of win-resource data",		STATICTAG_EDIT_DWORD_LE("000000b8")},
+ 	{"size of win-resource data",			STATICTAG_EDIT_DWORD_LE("000000bc")},
