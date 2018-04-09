@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/08/23 07:40:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/09 09:20:39 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-7.0.b1
-PKGNAME=	qpdf-7.0beta1
+DISTNAME=	qpdf-8.0.2
 
-SHARED_LIBS +=  qpdf                 4.0      # 18.0
+SHARED_LIBS +=  qpdf                 5.0      # 21.2
 
 CATEGORIES=	print graphics
 
@@ -32,8 +31,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_FOP= \
 		ac_cv_prog_XSLTPROC= \
 		ac_cv_prog_XMLLINT=
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
