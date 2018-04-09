@@ -1,6 +1,7 @@
-$OpenBSD: patch-load_h,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
---- load.h.orig	Sat Jul 21 13:46:17 2001
-+++ load.h	Tue Jun  3 19:05:51 2008
+$OpenBSD: patch-load_h,v 1.2 2018/04/09 16:35:38 jasper Exp $
+Index: load.h
+--- load.h.orig
++++ load.h
 @@ -21,7 +21,7 @@ static inline char *strdup(const char *str)
  	return(newstr);
  }
@@ -19,3 +20,12 @@ $OpenBSD: patch-load_h,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
  #define DIR_SEP	"/"
  #define CUR_DIR	"."
  #elif defined(WIN32)
+@@ -106,7 +106,7 @@ class LibPath { (public)
+ 		if ( strcmp(directory, DIR_SEP) == 0 ) {
+ 			sprintf(path, DIR_SEP"%s", filename);
+ 		} else {
+-			sprintf(path, "%s"DIR_SEP"%s", directory, filename);
++			sprintf(path, "%s" DIR_SEP "%s", directory, filename);
+ 		}
+ 		return(path);
+ 	}

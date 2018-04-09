@@ -1,0 +1,14 @@
+$OpenBSD: patch-controls_cpp,v 1.1 2018/04/09 16:35:38 jasper Exp $
+
+Index: controls.cpp
+--- controls.cpp.orig
++++ controls.cpp
+@@ -83,7 +83,7 @@ static FILE *OpenData(char *mode, char **fname)
+ 	if ( fname ) {
+ 		*fname = datafile;
+ 	}
+-	sprintf(datafile,  "%s"DIR_SEP"%s", home, MAELSTROM_DATA);
++	sprintf(datafile,  "%s" DIR_SEP "%s", home, MAELSTROM_DATA);
+ 	if ( (data=fopen(datafile, mode)) == NULL )
+ 		return(NULL);
+ 	return(data);
