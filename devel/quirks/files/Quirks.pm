@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.586 2018/04/08 20:20:15 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.587 2018/04/09 09:36:37 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1242,6 +1242,7 @@ my $obsolete_reason = {
 # 6.4
 	'mozjs17' => 2,
 	'qvwm' => 3,
+	'prepop' => 3,
 };
 
 # reasons for obsolete packages

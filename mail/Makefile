@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2018/04/07 08:32:41 anton Exp $
+# $OpenBSD: Makefile,v 1.363 2018/04/09 09:36:37 jca Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -182,7 +182,6 @@
      SUBDIR += postfix
      SUBDIR += postfwd
      SUBDIR += postgrey
-     SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += py-authres
      SUBDIR += py-milter
