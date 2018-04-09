@@ -1,0 +1,18 @@
+$OpenBSD: patch-Font_cpp,v 1.1 2018/04/09 16:41:36 jasper Exp $
+
+Index: Font.cpp
+--- Font.cpp.orig
++++ Font.cpp
+@@ -48,7 +48,11 @@ Vec2 Font::metrics( const std::string& text ) const
+ void Font::drawLeft( Canvas* canvas, Vec2 pt,
+ 		     const std::string& text, int colour ) const
+ {
+-  SDL_Color fg = { colour>>16, colour>>8, colour };
++  SDL_Color fg = {
++    static_cast<Uint8>(colour>>16),
++    static_cast<Uint8>(colour>>8),
++    static_cast<Uint8>(colour)
++  };
+   FontCanvas temp( TTF_RenderText_Blended( FONT(this),
+ 					   text.c_str(),
+ 					   fg ) );

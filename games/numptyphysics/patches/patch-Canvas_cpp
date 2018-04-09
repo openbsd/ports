@@ -1,7 +1,66 @@
-$OpenBSD: patch-Canvas_cpp,v 1.2 2012/12/12 14:58:00 dcoppa Exp $
---- Canvas.cpp.orig	Wed Dec  5 17:24:18 2012
-+++ Canvas.cpp	Wed Dec  5 17:28:19 2012
-@@ -801,12 +801,8 @@ void Window::setSubName( const char *sub )
+$OpenBSD: patch-Canvas_cpp,v 1.3 2018/04/09 16:41:36 jasper Exp $
+Index: Canvas.cpp
+--- Canvas.cpp.orig
++++ Canvas.cpp
+@@ -454,7 +454,12 @@ void Canvas::scale( int w, int h )
+ void Canvas::clear( const Rect& r )
+ {
+   if ( m_bgImage ) {
+-    SDL_Rect srcRect = { r.tl.x, r.tl.y, r.br.x-r.tl.x+1, r.br.y-r.tl.y+1 };
++    SDL_Rect srcRect = {
++	static_cast<Sint16>(r.tl.x),
++	static_cast<Sint16>(r.tl.y),
++	static_cast<Uint16>(r.br.x-r.tl.x+1),
++	static_cast<Uint16>(r.br.y-r.tl.y+1)
++    };
+     SDL_BlitSurface( SURFACE(m_bgImage), &srcRect, SURFACE(this), &srcRect );
+   } else {
+     drawRect( r, m_bgColour );
+@@ -471,8 +476,18 @@ void Canvas::drawImage( Canvas *canvas, int x, int y )
+ // 	    dest.tl.x, dest.tl.y, dest.br.x, dest.br.y);
+ //   }
+ 
+-  SDL_Rect sdlsrc = { dest.tl.x-x, dest.tl.y-y, dest.width(), dest.height() };
+-  SDL_Rect sdldst = { dest.tl.x, dest.tl.y, 0, 0 };
++  SDL_Rect sdlsrc = {
++    static_cast<Sint16>(dest.tl.x-x),
++    static_cast<Sint16>(dest.tl.y-y),
++    static_cast<Uint16>(dest.width()),
++    static_cast<Uint16>(dest.height())
++  };
++  SDL_Rect sdldst = {
++    static_cast<Sint16>(dest.tl.x),
++    static_cast<Sint16>(dest.tl.y),
++    0,
++    0
++  };
+   SDL_BlitSurface( SURFACE(canvas), &sdlsrc, SURFACE(this), &sdldst );
+ }
+ 
+@@ -606,10 +621,20 @@ void Canvas::drawRect( int x, int y, int w, int h, int
+   if ( fill ) {
+     Rect dest(x,y,x+w,y+h);
+     dest.clipTo(m_clip);
+-    SDL_Rect r = { dest.tl.x, dest.tl.y, dest.width(), dest.height() };
++    SDL_Rect r = {
++ 	static_cast<Sint16>(dest.tl.x),
++	static_cast<Sint16>(dest.tl.y),
++	static_cast<Uint16>(dest.width()),
++	static_cast<Uint16>(dest.height())
++    };
+     SDL_FillRect( SURFACE(this), &r, c );
+   } else {
+-    SDL_Rect f = { x, y, w, h };
++    SDL_Rect f = {
++        static_cast<Sint16>(x),
++        static_cast<Sint16>(y),
++        static_cast<Uint16>(w),
++        static_cast<Uint16>(h)
++    };
+     SDL_Rect r;
+     r=f; r.h=1; SDL_FillRect( SURFACE(this), &r, c );
+     r.y+=f.h-1; SDL_FillRect( SURFACE(this), &r, c );
+@@ -801,12 +826,8 @@ void Window::setSubName( const char *sub )
  Image::Image( const char* file, bool alpha )
  {
    //alpha = false;
@@ -15,7 +74,17 @@ $OpenBSD: patch-Canvas_cpp,v 1.2 2012/12/12 14:58:00 dcoppa Exp $
    if ( img ) {
      printf("loaded image %s\n",(f+file).c_str());
      if ( alpha ) {
-@@ -873,15 +869,24 @@ int Canvas::writeBMP( const char* filename ) const
+@@ -865,23 +886,32 @@ int Canvas::writeBMP( const char* filename ) const
+     
+   int w = width();
+   int h = height();
+-  BMPHEADER     head = { 'B'|('M'<<8), 14+40+w*h*3, 0, 0, 14+40 };
+-  BMPINFOHEADER info = { 40, w, h, 1, 24, 0, w*h*3, 100, 100, 0, 0 };
++  BMPHEADER     head = { 'B'|('M'<<8), static_cast<unsigned int>(14+40+w*h*3), 0, 0, 14+40 };
++  BMPINFOHEADER info = { 40, w, h, 1, 24, 0, static_cast<unsigned int>(w*h*3), 100, 100, 0, 0 };
+ 
+   FILE *f = fopen( filename, "wb" );
+   if ( f ) {
      Uint32 bpp;
      bpp = SURFACE(this)->format->BytesPerPixel;
  
