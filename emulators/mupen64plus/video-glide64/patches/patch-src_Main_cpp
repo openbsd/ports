@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Main_cpp,v 1.2 2015/05/01 14:17:37 ajacoutot Exp $
---- src/Main.cpp.orig	Sun Jul  7 20:07:53 2013
-+++ src/Main.cpp	Sun Jul  7 20:08:12 2013
+$OpenBSD: patch-src_Main_cpp,v 1.3 2018/04/09 05:25:45 bentley Exp $
+Index: src/Main.cpp
+--- src/Main.cpp.orig
++++ src/Main.cpp
 @@ -54,6 +54,8 @@
  #include <sys/time.h>
  #endif
@@ -23,3 +24,30 @@ $OpenBSD: patch-src_Main_cpp,v 1.2 2015/05/01 14:17:37 ajacoutot Exp $
  
      for (b=0x80000000; b!=0; b>>=1)
      {
+@@ -714,7 +712,7 @@ BOOL InitGfx (BOOL evoodoo_using_window)
+       WriteLog(M64MSG_INFO, "fb_hires\n");
+     GRWINOPENEXT grSstWinOpenExt = (GRWINOPENEXT)grGetProcAddress("grSstWinOpenExt");
+     if (grSstWinOpenExt)
+-      gfx_context = grSstWinOpenExt ((FxU32)NULL,
++      gfx_context = grSstWinOpenExt ((uintptr_t)NULL,
+       settings.res_data,
+       GR_REFRESH_60Hz,
+       GR_COLORFORMAT_RGBA,
+@@ -724,7 +722,7 @@ BOOL InitGfx (BOOL evoodoo_using_window)
+       1);   // 1 auxillary buffer
+   }
+   if (!gfx_context)
+-    gfx_context = grSstWinOpen ((FxU32)NULL,
++    gfx_context = grSstWinOpen ((uintptr_t)NULL,
+     settings.res_data,
+     GR_REFRESH_60Hz,
+     GR_COLORFORMAT_RGBA,
+@@ -1204,7 +1202,7 @@ EXPORT void CALL GetDllInfo ( PLUGIN_INFO * PluginInfo
+ {
+   PluginInfo->Version = 0x0103;     // Set to 0x0103
+   PluginInfo->Type  = PLUGIN_TYPE_GFX;  // Set to PLUGIN_TYPE_GFX
+-  sprintf (PluginInfo->Name, "Glide64 "G64_VERSION);  // Name of the DLL
++  sprintf (PluginInfo->Name, "Glide64 " G64_VERSION);  // Name of the DLL
+ 
+   // If DLL supports memory these memory options then set them to TRUE or FALSE
+   //  if it does not support it
