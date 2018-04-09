@@ -1,0 +1,14 @@
+$OpenBSD: patch-dao_CdrDriver_h,v 1.1 2018/04/09 18:07:24 jasper Exp $
+
+Index: dao/CdrDriver.h
+--- dao/CdrDriver.h.orig
++++ dao/CdrDriver.h
+@@ -440,7 +440,7 @@ class CdrDriver { (protected)
+   int fullBurn_;
+ 
+   static unsigned char syncPattern[12];
+-  static char REMOTE_MSG_SYNC_[4];
++  static unsigned char REMOTE_MSG_SYNC_[4];
+ 
+   static int speed2Mult(int);
+   static int mult2Speed(int);
