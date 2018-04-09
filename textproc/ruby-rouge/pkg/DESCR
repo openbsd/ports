@@ -1,0 +1,4 @@
+Rouge is a pure-ruby syntax highlighter. It can highlight 100 different
+languages, and output HTML or ANSI 256-color text.
+
+Its HTML output is compatible with stylesheets designed for pygments.
