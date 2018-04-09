@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_scim_pointer_h,v 1.1 2018/04/09 08:53:23 jca Exp $
+
+Index: src/scim_pointer.h
+--- src/scim_pointer.h.orig
++++ src/scim_pointer.h
+@@ -84,7 +84,7 @@ class Pointer (public)
+     //!<
+     //!< <BR>Initialize a new Pointer with any dumb pointer.
+ 
+-    Pointer(Pointer& src) : t(0)
++    Pointer(const Pointer& src) : t(0)
+     {
+         set(src.get());
+     }

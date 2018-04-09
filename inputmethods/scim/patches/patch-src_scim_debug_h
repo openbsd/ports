@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_scim_debug_h,v 1.1 2018/04/09 08:53:23 jca Exp $
+
+Index: src/scim_debug.h
+--- src/scim_debug.h.orig
++++ src/scim_debug.h
+@@ -41,7 +41,7 @@ namespace scim {
+  * @name The mask for debug messages filtering.
+  * @{
+  */
+-#define SCIM_DEBUG_AllMask          (~0) /**< Show all messages. */
++#define SCIM_DEBUG_AllMask          ((uint32)~0) /**< Show all messages. */
+ #define SCIM_DEBUG_MainMask         1    /**< Show messages of main application. */
+ #define SCIM_DEBUG_ConfigMask       2    /**< Show messages of Config objects */
+ #define SCIM_DEBUG_IMEngineMask     4    /**< Show messages of IMEngine objects */
