@@ -1,0 +1,14 @@
+$OpenBSD: patch-prefs_cpp,v 1.1 2018/04/09 16:43:50 jasper Exp $
+
+Index: prefs.cpp
+--- prefs.cpp.orig
++++ prefs.cpp
+@@ -30,7 +30,7 @@
+ void prefs_t::init()
+ {
+ 	comment("--------------------------------------------");
+-	comment(" Kobo Deluxe "VERSION" Configuration File");
++	comment(" Kobo Deluxe " VERSION " Configuration File");
+ 	comment("--------------------------------------------");
+ 	comment(" Switches - [no]<switch>");
+ 	comment(" Values - <key> [<value>|\"<string>\"]");
