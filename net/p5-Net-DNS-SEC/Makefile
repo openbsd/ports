@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2018/04/01 23:23:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.29 2018/04/09 19:03:43 bluhm Exp $
 
 COMMENT =	extends the Net::DNS module with DNSSEC functionality
 
-DISTNAME =	Net-DNS-SEC-1.06
+DISTNAME =	Net-DNS-SEC-1.07
 SUPDISTFILES =  ${DISTFILES}.asc
 
 CATEGORIES =	net security
