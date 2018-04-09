@@ -1,0 +1,14 @@
+$OpenBSD: patch-soundserver_gslplayobject_impl_cc,v 1.1 2018/04/09 04:42:14 espie Exp $
+
+Index: soundserver/gslplayobject_impl.cc
+--- soundserver/gslplayobject_impl.cc.orig
++++ soundserver/gslplayobject_impl.cc
+@@ -134,7 +134,7 @@ class GSLPlayObject_impl : public GSLPlayObject_skel, 
+ 	 */
+ 	std::string description()
+ 	{
+-		return "no description available (see "__FILE__")";
++		return "no description available (see " __FILE__ ")";
+ 	}
+ 
+ 	poTime currentTime()
