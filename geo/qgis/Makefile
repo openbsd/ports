@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.82 2018/03/19 13:40:34 landry Exp $
+# $OpenBSD: Makefile,v 1.83 2018/04/09 12:40:34 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-2.18.17
+DISTNAME =	qgis-3.0.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	20.0 \
-		qgis_app	6.1 \
-		qgis_gui	18.0 \
-		qgis_analysis	8.0 \
-		qgis_server	5.2 \
-		qgispython	5.0 \
-		qgis_networkanalysis 2.0
+SHARED_LIBS =	qgis_core	21.0 \
+		qgis_app	7.0 \
+		qgis_gui	19.0 \
+		qgis_analysis	9.0 \
+		qgis_server	6.0 \
+		qgispython	6.0 \
+		qgis_3d		0.0 \
+		qgis_native	0.0
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -24,66 +25,111 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	devel/cmake \
+		x11/qt5 \
 		lang/python
-
 
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
-		security/qca,-ossl \
-		editors/py-qscintilla \
-		devel/bison>=2.4 \
-		geo/gdal,-python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+		geo/gdal,-python${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR} \
+		editors/py-qscintilla,qt5 \
+		devel/bison>=2.4
 
 
-RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
-		www/py-requests \
-		www/py-jinja2 \
-		textproc/py-pygments \
-		security/qca,-ossl \
-		geo/gdal,-python \
-		databases/py-psycopg2 \
-		editors/py-qscintilla \
-		devel/desktop-file-utils
+RUN_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+		geo/gdal,-python${MODPY_FLAVOR} \
+		geo/py-owslib${MODPY_FLAVOR} \
+		databases/py-psycopg2${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
+		textproc/py-pygments${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
+		editors/py-qscintilla,qt5 \
+		devel/desktop-file-utils \
+		x11/gtk+3,-guic \
+		misc/shared-mime-info
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
+		archivers/libzip \
 		databases/sqlite3 \
 		devel/proj \
-		x11/qt4>=4.7.2 \
-		qwt-*-!qt5:x11/qwt \
+		editors/qscintilla,qt5 \
+		security/qtkeychain,qt5 \
+		security/qca-qt5 \
 		www/fcgi \
-		editors/qscintilla \
+		x11/qt5/qtwebkit \
+		x11/qt5/qt3d \
+		qwt-*-qt5:x11/qwt,qt5 \
 		geo/gdal \
 		geo/geos \
 		geo/spatialite/libspatialite \
 		geo/spatialindex \
 		devel/gsl \
-		devel/qjson \
-		security/qca \
 		databases/postgresql
 
-WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
-		fontconfig freetype glib-2.0 gobject-2.0 gthread-2.0 \
-		iconv intl lcms m mng png pthread util z proj \
-		QtGui QtNetwork QtXml QtSql QtCore QtScript QtSvg \
-		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi qca \
-		QtTest spatialindex spatialite sqlite3 qscintilla2_qt4 qjson
-WANTLIB += ${MODPY_WANTLIB} jpeg tiff
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
+WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += c expat fcgi gdal geos_c gsl gslcblas m pq proj ${MODPY_WANTLIB}
+WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt spatialindex
+WANTLIB += spatialite sqlite3 util zip
+WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
+WANTLIB += Qt53DRender Qt5Gamepad Qt5OpenGL
 
 CONFIGURE_ENV+=	VERBOSE=1
-CONFIGURE_ARGS =	-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_PYSPATIALITE=TRUE
+CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
+		-DPYUIC_PROGRAM=${LOCALBASE}/bin/pyuic5-3 \
+		-DPYRCC_PROGRAM=${LOCALBASE}/bin/pyrcc5-3 \
+		-DWITH_3D=TRUE \
+		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
+
+#CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=RelWithDebInfo
+
+# https://issues.qgis.org/issues/17696
+#.ifdef  "${BUILD_OSG}"
+#LIB_DEPENDS += geo/osgearth
+#CONFIGURE_ARGS += -DWITH_GLOBE=TRUE
+#WANTLIB += OpenThreads osgEarthAnnotation osgEarthFeatures osgEarthQt5 osgEarthSymbology
+#WANTLIB += osgEarthUtil osgGA osgQt osgUtil osgViewer osg osgDB osgEarth
+#.endif
 
 pre-configure:
 		# otherwise takes precedence over systemwide file
 		rm -f ${WRKSRC}/cmake/FindIconv.cmake
-		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
 
 post-install:
-		${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}
-		ln -f ${PREFIX}/share/{qgis/images/icons,pixmaps}/qgis-icon.png
-		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-			-c ${WRKSRC}/debian/qgis.desktop \
-			${PREFIX}/share/applications/qgis.desktop
+	# shoplifted from debian/rules
+	# Install menu pixmap
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications,mime/packages}
+	${INSTALL_DATA} ${WRKSRC}/images/icons/qgis_icon.svg ${PREFIX}/share/pixmaps/qgis.svg
+	ln -f ${PREFIX}/share/{qgis/images/icons/qgis-icon-512x512,pixmaps/qgis}.png
+	ln -f ${PREFIX}/share/{qgis/images/icons/qgis-mime-icon,pixmaps/qgis-mime}.png
+
+.for size in 8x8 16x16 22x22 24x24 32x32 36x36 42x42 48x48 64x64 72x72 80x80 96x96 128x128 192x192 256x256 512x512
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${size}/{mimetypes,apps}
+	# Install application icon
+	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-icon${size}.png \
+		${PREFIX}/share/icons/hicolor/${size}/apps/qgis.png
+	# Install QGIS file formats icons
+.for ftype in qgs qlr qml qpt
+	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-${ftype}${size}.png \
+		${PREFIX}/share/icons/hicolor/${size}/apps/qgis-${ftype}.png
+.endfor
+.endfor
+
+	# Install MIME type icon
+.for size in 8x8 16x16 22x22 24x24 32x32 36x36 42x42 48x48 64x64 72x72 80x80 96x96 128x128
+	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-mime-icon${size}.png \
+		${PREFIX}/share/icons/hicolor/${size}/mimetypes/qgis-mime.png
+.endfor
+
+	${INSTALL_DATA} ${WRKSRC}/debian/qgis.desktop \
+		${PREFIX}/share/applications/qgis.desktop
+
+	${INSTALL_DATA} ${WRKSRC}/debian/qgis.xml \
+		${PREFIX}/share/mime/packages/qgis.xml
 
 .include <bsd.port.mk>
