@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_prefs_cpp,v 1.1 2018/04/09 05:56:50 bentley Exp $
+
+Index: src/prefs.cpp
+--- src/prefs.cpp.orig
++++ src/prefs.cpp
+@@ -31,7 +31,7 @@
+ void prefs_t::init()
+ {
+ 	comment("------------------------------------------------");
+-	comment(" Kobo Redux "KOBO_VERSION_STRING" Configuration File");
++	comment(" Kobo Redux " KOBO_VERSION_STRING " Configuration File");
+ 	comment("------------------------------------------------");
+ 	comment(" Switches - [no]<switch> or <switch> [<value>]");
+ 	comment(" Values - <key> [<value>|\"<string>\"]");
