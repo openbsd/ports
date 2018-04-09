@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_weapons_AccessoryStore_cpp,v 1.1 2018/04/09 16:34:05 jasper Exp $
+
+Index: src/common/weapons/AccessoryStore.cpp
+--- src/common/weapons/AccessoryStore.cpp.orig
++++ src/common/weapons/AccessoryStore.cpp
+@@ -156,7 +156,7 @@ AccessoryPart *AccessoryStore::createAccessoryPart(
+ 	Accessory *parent, XMLNode *currentNode)
+ {
+ 	XMLNode *typeNode = 0;
+-	if (!currentNode->getNamedParameter("type", typeNode)) return false;
++	if (!currentNode->getNamedParameter("type", typeNode)) return 0;
+ 
+ 	AccessoryPart *accessoryPart = 
+ 		AccessoryMetaRegistration::getNewAccessory(typeNode->getContent(), this);
