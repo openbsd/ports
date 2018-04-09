@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_liblinux_cc,v 1.1 2018/04/09 16:45:05 jasper Exp $
+
+Index: source/liblinux.cc
+--- source/liblinux.cc.orig
++++ source/liblinux.cc
+@@ -487,7 +487,7 @@ int itoa(int value, char *strptr, int radix)
+         if (!startflag)         /* Special case if value == 0 */
+             sprintf((strptr + ctr++), "0");
+ 
+-        strptr[ctr] = (char) NULL;
++        strptr[ctr] = (char) 0;
+     }
+     return (OK);                /* Me? Fail? Nah. */
+ }

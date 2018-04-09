@@ -1,0 +1,14 @@
+$OpenBSD: patch-source_itemname_cc,v 1.1 2018/04/09 16:45:05 jasper Exp $
+
+Index: source/itemname.cc
+--- source/itemname.cc.orig
++++ source/itemname.cc
+@@ -2785,7 +2785,7 @@ unsigned char check_item_knowledge(void)
+                 yps = wherey();
+ 
+                 // item_name now requires a "real" item, so we'll create a tmp
+-                item_def tmp = { ft, j, 0, 0, 0, 1, 0, 0, 0, 0, 0 };
++                item_def tmp = { static_cast<unsigned char>(ft), static_cast<unsigned char>(j), 0, 0, 0, 1, 0, 0, 0, 0, 0 };
+                 item_name( tmp, DESC_PLAIN, st_pass );
+ 
+                 cprintf(st_pass);

@@ -1,6 +1,7 @@
-$OpenBSD: patch-source_newgame_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
---- source/newgame.cc.orig	Sat Oct 22 16:05:21 2005
-+++ source/newgame.cc	Sat Oct 22 16:06:32 2005
+$OpenBSD: patch-source_newgame_cc,v 1.2 2018/04/09 16:45:05 jasper Exp $
+Index: source/newgame.cc
+--- source/newgame.cc.orig
++++ source/newgame.cc
 @@ -253,8 +253,13 @@ static bool check_saved_game(void)
      }
  
@@ -14,4 +15,13 @@ $OpenBSD: patch-source_newgame_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
 +# endif
      strcat(char_fil, ".sav");
  #endif
+ 
+@@ -1911,7 +1916,7 @@ void enterPlayerName(bool blankOK)
+         {
+             textcolor( CYAN );
+             if (blankOK && first_time)
+-                cprintf(EOL "Press <Enter> to answer this after race and class are chosen."EOL);
++                cprintf(EOL "Press <Enter> to answer this after race and class are chosen." EOL);
+ 
+             first_time = false;
  
