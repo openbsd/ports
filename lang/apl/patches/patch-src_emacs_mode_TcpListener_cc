@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_emacs_mode_TcpListener_cc,v 1.1 2018/04/09 17:26:54 jasper Exp $
+
+Index: src/emacs_mode/TcpListener.cc
+--- src/emacs_mode/TcpListener.cc.orig
++++ src/emacs_mode/TcpListener.cc
+@@ -77,7 +77,7 @@ std::string TcpListener::start( void )
+         DOMAIN_ERROR;        
+     }
+ 
+-    if( bind( server_socket, addr->ai_addr, addr->ai_addrlen ) == -1 ) {
++    if( ::bind( server_socket, addr->ai_addr, addr->ai_addrlen ) == -1 ) {
+         stringstream errmsg;
+         errmsg << "Unable to bind to port " << port << ": " << strerror( errno );
+         close( server_socket );

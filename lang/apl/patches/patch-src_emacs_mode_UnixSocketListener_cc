@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_emacs_mode_UnixSocketListener_cc,v 1.1 2018/04/09 17:26:54 jasper Exp $
+
+Index: src/emacs_mode/UnixSocketListener.cc
+--- src/emacs_mode/UnixSocketListener.cc.orig
++++ src/emacs_mode/UnixSocketListener.cc
+@@ -58,7 +58,7 @@ std::string UnixSocketListener::start( void )
+     struct sockaddr_un addr;
+     addr.sun_family = AF_UNIX;
+     strncpy( addr.sun_path, filename.c_str(), sizeof( addr.sun_path ) );
+-    if( bind( server_socket, (struct sockaddr *)&addr, sizeof( addr ) ) == -1 ) {
++    if( ::bind( server_socket, (struct sockaddr *)&addr, sizeof( addr ) ) == -1 ) {
+         stringstream errmsg;
+         errmsg << "Error binding unix domain socket: " << strerror( errno ) << endl;
+         close( server_socket );
