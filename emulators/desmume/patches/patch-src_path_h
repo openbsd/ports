@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_path_h,v 1.1 2018/04/09 05:46:42 bentley Exp $
+From upstream 8454c93fa37ce9f3c8becc7004a2edddba22f3a1.
+
+Index: src/path.h
+--- src/path.h.orig
++++ src/path.h
+@@ -375,7 +375,7 @@ class PathInfo (public)
+ 				else if (strchr(strftimeArgs, *p))
+ 				{
+ 					char tmp[MAX_PATH];
+-					char format[] = { '%', *p, NULL };
++					char format[] = { '%', *p, '\0' };
+ 					strftime(tmp, MAX_PATH, format, time_struct);
+ 					file.append(tmp);
+ 		}
