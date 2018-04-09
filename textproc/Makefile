@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.568 2018/03/29 23:06:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.569 2018/04/09 12:13:30 fcambus Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -484,6 +484,7 @@
      SUBDIR += ruby-redcloth,ruby25
      SUBDIR += ruby-rexical
      SUBDIR += ruby-ronn
+     SUBDIR += ruby-rouge
      SUBDIR += ruby-syntax
      SUBDIR += ruby-text
      SUBDIR += ruby-treetop
