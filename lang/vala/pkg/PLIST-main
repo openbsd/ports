@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/01/26 19:41:54 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2018/04/10 17:09:43 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -216,6 +216,8 @@ share/vala-${API_V}/vapi/gstreamer-video-0.10.deps
 share/vala-${API_V}/vapi/gstreamer-video-0.10.vapi
 share/vala-${API_V}/vapi/gstreamer-video-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-video-1.0.vapi
+share/vala-${API_V}/vapi/gstreamer-webrtc-1.0.deps
+share/vala-${API_V}/vapi/gstreamer-webrtc-1.0.vapi
 share/vala-${API_V}/vapi/gtk+-2.0.deps
 share/vala-${API_V}/vapi/gtk+-2.0.vapi
 share/vala-${API_V}/vapi/gtk+-3.0.deps
@@ -262,6 +264,7 @@ share/vala-${API_V}/vapi/libgdata.vapi
 share/vala-${API_V}/vapi/libglade-2.0.deps
 share/vala-${API_V}/vapi/libglade-2.0.vapi
 share/vala-${API_V}/vapi/libgnome-2.0.vapi
+share/vala-${API_V}/vapi/libgnome-menu-3.0.deps
 share/vala-${API_V}/vapi/libgnome-menu-3.0.vapi
 share/vala-${API_V}/vapi/libgnome-menu.vapi
 share/vala-${API_V}/vapi/libgnomeui-2.0.deps
