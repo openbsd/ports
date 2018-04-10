@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_x11_xwellengine_cxx,v 1.1 2018/04/10 19:58:55 naddy Exp $
+
+Index: src/x11/xwellengine.cxx
+--- src/x11/xwellengine.cxx.orig
++++ src/x11/xwellengine.cxx
+@@ -167,7 +167,7 @@ XWellEngine::~XWellEngine()
+ /// tags XWellEngine
+ void XWellEngine::init_mainwindow(int argc,char **argv)
+ {
+-  char *winname="X Welltris "VERSION;
++  char *winname="X Welltris " VERSION;
+   XSetWindowAttributes xswa;
+   XWindowAttributes xwinattr;
+   XGCValues         gcv;
