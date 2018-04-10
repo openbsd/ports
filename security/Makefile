@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.498 2018/04/05 08:16:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.499 2018/04/10 12:09:31 landry Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -157,6 +157,7 @@
      SUBDIR += p0f
      SUBDIR += p0f3
      SUBDIR += p11-kit
+     SUBDIR += p5-Auth-Yubikey_Decrypter
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-NTLM
      SUBDIR += p5-Authen-Radius
