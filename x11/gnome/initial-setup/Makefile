@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2017/11/09 15:11:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/04/10 13:45:45 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.26.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +17,7 @@ WANTLIB += dbus-1 drm enchant epoxy expat ffi fontconfig freetype
 WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gdm geoclue-2 geocode-glib
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0
+WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gweather-3
 WANTLIB += harfbuzz harfbuzz-icu hyphen ibus-1.0 iconv icudata

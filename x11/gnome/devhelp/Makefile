@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2018/02/22 12:53:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2018/04/10 13:45:45 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -7,6 +7,7 @@ COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.26.1
+REVISION=		0
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -22,7 +23,7 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 drm enchant epoxy
 WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gstallocators-1.0 gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbadallocators-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg

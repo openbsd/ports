@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.126 2017/10/31 14:32:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2018/04/10 13:45:45 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.26.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -18,7 +18,7 @@ WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 drm enchant
 WANTLIB += epoxy expat exslt ffi fontconfig freetype gbm gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gstallocators-1.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg

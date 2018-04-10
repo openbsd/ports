@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/03/07 15:15:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2018/04/10 13:45:45 ajacoutot Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -6,7 +6,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.1
 DISTNAME=		liferea-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www news x11
 
@@ -22,7 +22,7 @@ WANTLIB += atspi c cairo cairo-gobject dbus-1 drm enchant epoxy
 WANTLIB += expat ffi fontconfig freetype gbm gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gstallocators-1.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
 WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg

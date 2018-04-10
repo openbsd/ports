@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2017/11/12 12:25:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/04/10 13:45:45 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		16
+REVISION=		17
 
 CATEGORIES=		mail
 
@@ -27,7 +27,7 @@ WANTLIB += epoxy expat ffi fontconfig freetype gailutil-3 gbm
 WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gnome-autoar-0 gnome-autoar-gtk-0
 WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstallocators-1.0
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtkspell3-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen ical icalss icalvcal iconv icudata

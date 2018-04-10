@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2018/01/06 12:45:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2018/04/10 13:45:45 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -6,7 +6,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.11.4
-REVISION=		8
+REVISION=		9
 
 # MODULE_VERSION in config.h
 API_V=			43
@@ -29,7 +29,7 @@ WANTLIB += edata-book-1.2 edataserver-1.2 enchant epoxy expat
 WANTLIB += ffi fontconfig freetype gbm gck-1 gcr-base-3 gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstallocators-1.0
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0 gstbase-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz harfbuzz-icu
 WANTLIB += hyphen iconv icudata icui18n icuuc intl javascriptcoregtk-4.0
