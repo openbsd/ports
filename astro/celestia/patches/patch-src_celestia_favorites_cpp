@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_celestia_favorites_cpp,v 1.1 2018/04/10 06:32:41 jasper Exp $
+
+Index: src/celestia/favorites.cpp
+--- src/celestia/favorites.cpp.orig
++++ src/celestia/favorites.cpp
+@@ -80,7 +80,7 @@ FavoritesList* ReadFavoritesList(istream& in)
+ 
+         // Get fov
+         if (!favParams->getNumber("fov", fav->fov))
+-            fav->fov = NULL;
++            fav->fov = 0;
+ 
+         // Get time
+         fav->jd = 0.0;
+@@ -137,7 +137,7 @@ void WriteFavoritesList(FavoritesList& favorites, ostr
+             out << "\tangle  " << angle << '\n';
+             out << setprecision(16);
+             out << "\ttime   " << fav->jd << '\n';
+-            if (fav->fov != NULL)
++            if (fav->fov != 0)
+                 out << "\tfov   " << fav->fov << '\n';
+             out << "\tselection \"" << fav->selectionName << "\"\n";
+             out << "\tcoordsys \"";
