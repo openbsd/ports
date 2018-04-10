@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/03/29 21:09:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/04/10 11:37:51 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -6,8 +6,10 @@
 include/gstreamer-${API}/
 include/gstreamer-${API}/gst/
 include/gstreamer-${API}/gst/base/
+include/gstreamer-${API}/gst/base/base-prelude.h
 include/gstreamer-${API}/gst/base/base.h
 include/gstreamer-${API}/gst/base/gstadapter.h
+include/gstreamer-${API}/gst/base/gstaggregator.h
 include/gstreamer-${API}/gst/base/gstbaseparse.h
 include/gstreamer-${API}/gst/base/gstbasesink.h
 include/gstreamer-${API}/gst/base/gstbasesrc.h
@@ -22,6 +24,7 @@ include/gstreamer-${API}/gst/base/gstpushsrc.h
 include/gstreamer-${API}/gst/base/gstqueuearray.h
 include/gstreamer-${API}/gst/base/gsttypefindhelper.h
 include/gstreamer-${API}/gst/check/
+include/gstreamer-${API}/gst/check/check-prelude.h
 include/gstreamer-${API}/gst/check/check.h
 include/gstreamer-${API}/gst/check/gstbufferstraw.h
 include/gstreamer-${API}/gst/check/gstcheck.h
@@ -31,6 +34,7 @@ include/gstreamer-${API}/gst/check/gsttestclock.h
 include/gstreamer-${API}/gst/check/internal-check.h
 include/gstreamer-${API}/gst/controller/
 include/gstreamer-${API}/gst/controller/controller-enumtypes.h
+include/gstreamer-${API}/gst/controller/controller-prelude.h
 include/gstreamer-${API}/gst/controller/controller.h
 include/gstreamer-${API}/gst/controller/gstargbcontrolbinding.h
 include/gstreamer-${API}/gst/controller/gstdirectcontrolbinding.h
@@ -89,6 +93,7 @@ include/gstreamer-${API}/gst/gstplugin.h
 include/gstreamer-${API}/gst/gstpluginfeature.h
 include/gstreamer-${API}/gst/gstpoll.h
 include/gstreamer-${API}/gst/gstpreset.h
+include/gstreamer-${API}/gst/gstpromise.h
 include/gstreamer-${API}/gst/gstprotection.h
 include/gstreamer-${API}/gst/gstquery.h
 include/gstreamer-${API}/gst/gstregistry.h
@@ -122,6 +127,7 @@ include/gstreamer-${API}/gst/net/gstnetcontrolmessagemeta.h
 include/gstreamer-${API}/gst/net/gstnettimepacket.h
 include/gstreamer-${API}/gst/net/gstnettimeprovider.h
 include/gstreamer-${API}/gst/net/gstptpclock.h
+include/gstreamer-${API}/gst/net/net-prelude.h
 include/gstreamer-${API}/gst/net/net.h
 lib/girepository-${API}/
 lib/girepository-${API}/Gst-${API}.typelib
@@ -201,6 +207,7 @@ share/gtk-doc/html/gstreamer-${API}/GstPipeline.html
 share/gtk-doc/html/gstreamer-${API}/GstPlugin.html
 share/gtk-doc/html/gstreamer-${API}/GstPluginFeature.html
 share/gtk-doc/html/gstreamer-${API}/GstPreset.html
+share/gtk-doc/html/gstreamer-${API}/GstPromise.html
 share/gtk-doc/html/gstreamer-${API}/GstQuery.html
 share/gtk-doc/html/gstreamer-${API}/GstRegistry.html
 share/gtk-doc/html/gstreamer-${API}/GstSample.html
@@ -261,6 +268,8 @@ share/gtk-doc/html/gstreamer-${API}/ix07.html
 share/gtk-doc/html/gstreamer-${API}/ix08.html
 share/gtk-doc/html/gstreamer-${API}/ix09.html
 share/gtk-doc/html/gstreamer-${API}/ix10.html
+share/gtk-doc/html/gstreamer-${API}/ix11.html
+share/gtk-doc/html/gstreamer-${API}/ix12.html
 share/gtk-doc/html/gstreamer-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-${API}/left.png
 share/gtk-doc/html/gstreamer-${API}/libgstreamer.html
@@ -272,6 +281,8 @@ share/gtk-doc/html/gstreamer-${API}/up.png
 share/gtk-doc/html/gstreamer-libs-${API}/
 share/gtk-doc/html/gstreamer-libs-${API}/GstARGBControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstAdapter.html
+share/gtk-doc/html/gstreamer-libs-${API}/GstAggregator.html
+share/gtk-doc/html/gstreamer-libs-${API}/GstAggregatorPad.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseParse.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseSink.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseSrc.html
@@ -323,6 +334,7 @@ share/gtk-doc/html/gstreamer-libs-${API}/ix07.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix08.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix09.html
 share/gtk-doc/html/gstreamer-libs-${API}/ix10.html
+share/gtk-doc/html/gstreamer-libs-${API}/ix11.html
 share/gtk-doc/html/gstreamer-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/left.png
 share/gtk-doc/html/gstreamer-libs-${API}/right-insensitive.png
@@ -333,6 +345,7 @@ share/gtk-doc/html/gstreamer-libs-${API}/up.png
 share/gtk-doc/html/gstreamer-plugins-${API}/
 share/gtk-doc/html/gstreamer-plugins-${API}/ch01.html
 share/gtk-doc/html/gstreamer-plugins-${API}/ch02.html
+share/gtk-doc/html/gstreamer-plugins-${API}/ch03.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-${API}.devhelp2
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-capsfilter.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-concat.html
@@ -347,11 +360,17 @@ share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-filesrc.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-funnel.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-identity.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-input-selector.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-latencytracer.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-leakstracer.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-logtracer.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-multiqueue.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-output-selector.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-plugin-coreelements.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-plugin-coretracers.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-queue.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-queue2.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-rusagetracer.html
+share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-statstracer.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-streamiddemux.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-tee.html
 share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-typefind.html

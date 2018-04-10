@@ -1,38 +1,35 @@
-# $OpenBSD: Makefile,v 1.67 2018/03/29 21:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2018/04/10 11:37:51 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   3.3      # 1205.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1205.0
-SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1205.0
-SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1205.0
-SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1205.0
-SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1205.0
-SHARED_LIBS +=  gstbadbase-1.0       2.3      # 1205.0
-SHARED_LIBS +=  gstplayer-1.0        0.3      # 1205.0
-SHARED_LIBS +=  gstbadallocators-1.0 0.1      # 1205.0
-SHARED_LIBS +=  gstgl-1.0            2.3      # 1205.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1205.0
-SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1205.0
-SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1205.0
+SHARED_LIBS +=  gstphotography-1.0   3.3      # 1400.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1400.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1400.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1400.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1400.0
+SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1400.0
+SHARED_LIBS +=  gstplayer-1.0        0.3      # 1400.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1400.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1400.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1400.0
+SHARED_LIBS +=  gstisoff-1.0         0.0      # 1400.0
+SHARED_LIBS +=  gstwebrtc-1.0        0.0      # 1400.0
 
-WANTLIB += EGL GL GLESv2 Xtst SoundTouch X11 X11-xcb Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm ass atk-1.0 atk-bridge-2.0 atspi bs2b bz2 cairo
-WANTLIB += cairo-gobject croco-0.6 dbus-1 drm epoxy expat ffi
-WANTLIB += fontconfig freetype fribidi gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstnet-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz crypto
-WANTLIB += jpeg lzma m mms opus orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ssl
-WANTLIB += rsvg-2 ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 z gstallocators-1.0 iconv intl
-WANTLIB += Xau Xdmcp gstcontroller-1.0
+WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 SoundTouch X11 X11-xcb
+WANTLIB += Xdamage Xext Xfixes Xrender Xxf86vm ass bs2b bz2 cairo
+WANTLIB += croco-0.6 crypto drm expat ffi fontconfig freetype
+WANTLIB += fribidi gbm gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstcontroller-1.0 gstfft-1.0
+WANTLIB += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0
+WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz
+WANTLIB += iconv intl lcms2 lzma m mms opus orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png rsvg-2
+WANTLIB += ssl xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xml2 z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
@@ -45,6 +42,7 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			audio/libbs2b \
 			audio/opus \
 			audio/soundtouch \
+			graphics/lcms2 \
 			multimedia/libass \
 			multimedia/libmms
 
@@ -101,7 +99,6 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-openni2 \
 			--disable-opensles \
 			--disable-pvr \
-			--disable-qt \
 			--disable-resindvd \
 			--disable-rtmp \
 			--disable-sbc \
@@ -134,9 +131,6 @@ CONFIGURE_ARGS +=	--disable-acm \
 # sndio(7) support has been patched into plugins-base:
 # we do not want to depends on plugins-bad for audio
 CONFIGURE_ARGS +=	--disable-sndio
-
-# this add some build dependencies (e.g. gtk+2, gtk+3) for no real use
-CONFIGURE_ARGS +=	--disable-examples
 
 # XXX needed by g-ir-scanner(1)
 CFLAGS +=		-I${X11BASE}/include

@@ -1,31 +1,34 @@
-# $OpenBSD: Makefile,v 1.61 2018/03/29 21:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2018/04/10 11:37:51 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS +=  gsttag-1.0           3.3      # 1205.0
-SHARED_LIBS +=  gstaudio-1.0         3.3      # 1205.0
-SHARED_LIBS +=  gstfft-1.0           3.3      # 1205.0
-SHARED_LIBS +=  gstvideo-1.0         3.3      # 1205.0
-SHARED_LIBS +=  gstapp-1.0           3.3      # 1205.0
-SHARED_LIBS +=  gstrtp-1.0           3.3      # 1205.0
-SHARED_LIBS +=  gstsdp-1.0           3.3      # 1205.0
-SHARED_LIBS +=  gstrtsp-1.0          3.3      # 1205.0
-SHARED_LIBS +=  gstpbutils-1.0       3.3      # 1205.0
-SHARED_LIBS +=  gstriff-1.0          3.3      # 1205.0
-SHARED_LIBS +=  gstallocators-1.0    2.3      # 1205.0
+SHARED_LIBS +=  gsttag-1.0           4.0      # 1400.0
+SHARED_LIBS +=  gstaudio-1.0         4.0      # 1400.0
+SHARED_LIBS +=  gstfft-1.0           4.0      # 1400.0
+SHARED_LIBS +=  gstvideo-1.0         4.0      # 1400.0
+SHARED_LIBS +=  gstapp-1.0           4.0      # 1400.0
+SHARED_LIBS +=  gstrtp-1.0           4.0      # 1400.0
+SHARED_LIBS +=  gstsdp-1.0           4.0      # 1400.0
+SHARED_LIBS +=  gstrtsp-1.0          4.0      # 1400.0
+SHARED_LIBS +=  gstpbutils-1.0       4.0      # 1400.0
+SHARED_LIBS +=  gstriff-1.0          4.0      # 1400.0
+SHARED_LIBS +=  gstallocators-1.0    3.0      # 1400.0
+SHARED_LIBS +=  gstgl-1.0            3.0      # 1400.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
-WANTLIB += X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
-WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gstbase-1.0 gstnet-1.0 gstreamer-1.0
-WANTLIB += gthread-2.0 harfbuzz iconv intl m ogg opus orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread sndio theoradec theoraenc
-WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-render xcb-shm
+WANTLIB += EGL GL GLESv2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xrender Xv Xxf86vm c cairo cdda_interface cdda_paranoia
+WANTLIB += drm expat ffi fontconfig freetype gbm gio-2.0 glapi
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gstbase-1.0
+WANTLIB += gstcontroller-1.0 gstnet-1.0 gstreamer-1.0 gthread-2.0
+WANTLIB += harfbuzz iconv intl jpeg m ogg opus orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += sndio theoradec theoraenc vorbis vorbisenc vorbisidec
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += z
 
 BUILD_DEPENDS=		devel/iso-codes \

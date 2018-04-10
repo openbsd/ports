@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2018/03/29 21:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2018/04/10 11:37:51 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,7 +17,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.12.5
+V ?=			1.14.0
 API=			1.0
 SUBST_VARS +=		API
 
@@ -72,6 +72,9 @@ CONFIGURE_ARGS +=	--with-package-name="OpenBSD ${DISTNAME} package" \
 			--enable-introspection \
 			--disable-valgrind
 
+# BDEP on gtk+2|gtk+3
+CONFIGURE_ARGS +=	--disable-examples
+
 CPPFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib \
@@ -79,5 +82,5 @@ LDFLAGS +=		-L${LOCALBASE}/lib \
 
 .if !target(post-install)
 post-install:
-	rm ${PREFIX}/lib/gstreamer-${API}/*.la
+	rm ${PREFIX}/lib/gstreamer-${API}/*.{a,la}
 .endif

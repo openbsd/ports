@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/12/08 14:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2018/04/10 11:37:51 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -19,13 +19,17 @@ WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl execinfo
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += FLAC Xdamage Xfixes bz2 xml2
-WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 gstcontroller-1.0 lzma
-WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-render
-WANTLIB-main += gstallocators-1.0 gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4
-WANTLIB-main += speex sqlite3 ${COMPILER_LIBCXX} tag theora vorbis vpx>=5 wavpack xcb-shm
-WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
-WANTLIB-main += v4l2 v4lconvert
+WANTLIB-main += EGL FLAC GL GLESv2 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm atk-1.0
+WANTLIB-main += atk-bridge-2.0 atspi bz2 cairo cairo-gobject dbus-1
+WANTLIB-main += drm epoxy expat fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glapi graphite2 gstallocators-1.0 gstcontroller-1.0
+WANTLIB-main += gstfft-1.0 gstgl-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0
+WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gthread-2.0 gtk-3 harfbuzz jpeg
+WANTLIB-main += lzma mpg123 ogg ossaudio pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += pixman-1 png shout soup-2.4 speex sqlite3 tag theora
+WANTLIB-main += twolame v4l2 v4lconvert vorbis vpx wavpack xcb-dri2
+WANTLIB-main += xcb-glx xcb-render xcb-shm xcb-xfixes xml2
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
@@ -44,14 +48,16 @@ LIB_DEPENDS=		${P}/plugins-base=${V}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			audio/flac \
+			audio/mpg123 \
 			audio/speex \
 			audio/taglib \
+			audio/twolame \
 			audio/wavpack \
 			devel/libsoup \
-			graphics/gdk-pixbuf2 \
 			multimedia/libv4l \
 			multimedia/libvpx \
-			net/libshout
+			net/libshout \
+			x11/gtk+3
 
 LIB_DEPENDS-pulse=	${LIB_DEPENDS} \
 			audio/pulseaudio
@@ -59,9 +65,11 @@ RUN_DEPENDS-pulse=	${BASE_PKGPATH},-main=${V}
 
 CONFIGURE_ARGS=		--disable-aalib \
 			--disable-jack \
+			--disable-lame \
 			--disable-libcaca \
 			--disable-libdv \
 			--disable-oss4 \
+			--disable-qt \
 			--disable-sunaudio \
 			--disable-waveform \
 			--disable-dv1394

@@ -1,12 +1,77 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.14 2017/06/20 11:48:53 ajacoutot Exp $
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.15 2018/04/10 11:37:51 ajacoutot Exp $
+
+Remove -fobjc-arc, only makes sense for objc code and not understood by
+base-gcc and ports-gcc.
+
 Index: gst-libs/ext/libav/configure
 --- gst-libs/ext/libav/configure.orig
 +++ gst-libs/ext/libav/configure
-@@ -5180,7 +5180,7 @@ EOF
+@@ -4143,7 +4143,7 @@ probe_cc(){
+         gcc_extra_ver=$(expr "$($_cc --version 2>/dev/null | head -n1)" : '.*\((.*)\)')
+         _ident="llvm-gcc $($_cc -dumpversion 2>/dev/null) $gcc_extra_ver"
+         _depflags='-MMD -MF $(@:.o=.d) -MT $@'
+-        _cflags_speed='-O3'
++        _cflags_speed=''
+         _cflags_size='-Os'
+     elif $_cc -v 2>&1 | grep -qi ^gcc; then
+         _type=gcc
+@@ -4163,13 +4163,13 @@ probe_cc(){
+                 warn "gcc 4.2 is outdated and may miscompile FFmpeg. Please use a newer compiler." ;;
+             esac
+         fi
+-        _cflags_speed='-O3'
++        _cflags_speed=''
+         _cflags_size='-Os'
+     elif $_cc --version 2>/dev/null | grep -q ^icc; then
+         _type=icc
+         _ident=$($_cc --version | head -n1)
+         _depflags='-MMD'
+-        _cflags_speed='-O3'
++        _cflags_speed=''
+         _cflags_size='-Os'
+         _cflags_noopt='-O1'
+         _flags_filter=icc_flags
+@@ -4199,7 +4199,7 @@ probe_cc(){
+         _flags="--arm_linux_config_file=$armcc_conf --translate_gcc"
+         as_default="${cross_prefix}gcc"
+         _depflags='-MMD'
+-        _cflags_speed='-O3'
++        _cflags_speed=''
+         _cflags_size='-Os'
+     elif $_cc -version 2>/dev/null | grep -Eq 'TMS470|TI ARM'; then
+         _type=tms470
+@@ -4208,14 +4208,14 @@ probe_cc(){
+         _cc_e='-ppl -fe=$@'
+         _cc_o='-fe=$@'
+         _depflags='-ppa -ppd=$(@:.o=.d)'
+-        _cflags_speed='-O3 -mf=5'
+-        _cflags_size='-O3 -mf=2'
++        _cflags_speed=' -mf=5'
++        _cflags_size=' -mf=2'
+         _flags_filter=tms470_flags
+     elif $_cc -v 2>&1 | grep -q clang; then
+         _type=clang
+         _ident=$($_cc --version 2>/dev/null | head -n1)
+         _depflags='-MMD -MF $(@:.o=.d) -MT $@'
+-        _cflags_speed='-O3'
++        _cflags_speed=''
+         _cflags_size='-Oz'
+     elif $_cc -V 2>&1 | grep -q Sun; then
+         _type=suncc
+@@ -4244,7 +4244,7 @@ probe_cc(){
+         _type=pgi
+         _ident="PGI $($_cc -V 2>&1 | awk '/^pgcc/ { print $2; exit }')"
+         opt_common='-alias=ansi -Mdse -Mlre -Mpre'
+-        _cflags_speed="-O3 -Mautoinline -Munroll=c:4 $opt_common"
++        _cflags_speed=" -Mautoinline -Munroll=c:4 $opt_common"
+         _cflags_size="-O2 -Munroll=c:1 $opt_common"
+         _cflags_noopt="-O"
+         _flags_filter=pgi_flags
+@@ -5315,7 +5315,7 @@ EOF
      exit 1
  fi
  
--disabled optimizations || check_cflags -fomit-frame-pointer
+-disabled optimizations || enabled ossfuzz || check_cflags -fomit-frame-pointer
 +enabled x86_32 && check_cflags -fomit-frame-pointer
  
  enable_weak_pic() {

@@ -1,16 +1,16 @@
-$OpenBSD: patch-ext_libav_Makefile_in,v 1.4 2018/03/29 21:09:10 ajacoutot Exp $
+$OpenBSD: patch-ext_libav_Makefile_in,v 1.5 2018/04/10 11:37:51 ajacoutot Exp $
 
 ../../gst-libs/ext/libav/libavutil/libavutil.a(log2_tab.o):(.rodata+0x0): multiple definition of `ff_log2_tab'
 
 Index: ext/libav/Makefile.in
 --- ext/libav/Makefile.in.orig
 +++ ext/libav/Makefile.in
-@@ -482,7 +482,7 @@ libgstlibav_la_LIBADD = $(LIBAV_LIBS) $(GST_PLUGINS_BA
+@@ -479,7 +479,7 @@ libgstlibav_la_LIBADD = $(GST_PLUGINS_BASE_LIBS) \
  	-lgstpbutils-$(GST_API_VERSION) $(GST_BASE_LIBS) \
- 	$(LIBM) $(WIN32_LIBS) -lz $(BZ2_LIBS) $(LZMA_LIBS)
+ 	 $(LIBAV_LIBS) $(WIN32_LIBS) -lz $(BZ2_LIBS) $(LZMA_LIBS)
  
 -libgstlibav_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) $(DARWIN_LDFLAGS)
 +libgstlibav_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) $(DARWIN_LDFLAGS) -Wl,-z,muldefs
- libgstlibav_la_LIBTOOLFLAGS = $(GST_PLUGIN_LIBTOOLFLAGS)
  @HAVE_LIBAV_UNINSTALLED_TRUE@libgstlibav_la_DEPENDENCIES = $(LIBAV_DEPS)
  noinst_HEADERS = \
+ 	gstav.h \

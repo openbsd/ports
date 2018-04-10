@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/31 03:34:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/10 11:37:51 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		${P}/core>=${V} \
 			${MODPY_LIB_DEPENDS}
 
 post-install:
-	rm ${PREFIX}/lib/gstreamer-${API}/*.la
+	rm ${PREFIX}/lib/gstreamer-${API}/*.{a,la}
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/overrides/_gi_gst.{a,la}
 
 .include <bsd.port.mk>
