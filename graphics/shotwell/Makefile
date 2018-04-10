@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2018/03/29 21:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2018/04/10 14:03:55 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.28.1
+GNOME_VERSION =		0.28.2
 GNOME_PROJECT =		shotwell
 
 CATEGORIES =		graphics
@@ -23,7 +23,7 @@ WANTLIB += enchant epoxy exif exiv2 expat ffi fontconfig freetype
 WANTLIB += gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee-0.8 gexiv2 gio-2.0 glapi glib-2.0 gmodule-2.0 goa-1.0
 WANTLIB += gobject-2.0 gpg-error gphoto2 gphoto2_port graphite2
-WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbadallocators-1.0
+WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc intl
