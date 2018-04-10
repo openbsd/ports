@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2018/02/21 21:00:27 kili Exp $
+# $OpenBSD: Makefile,v 1.99 2018/04/10 20:43:51 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -54,10 +54,6 @@ CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include
-
-# Not yet. Some parts (like luatex) will need patches to build with
-# this:
-# CXXFLAGS +=	-std=c++11
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
