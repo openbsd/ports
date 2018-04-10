@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/11/02 13:06:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2018/04/10 14:06:30 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.26.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -31,7 +32,7 @@ WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += sasl2 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ${COMPILER_LIBCXX} tasn1 upower-glib
 WANTLIB += vorbis vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2
-WANTLIB += EGL GL GLESv2 gstallocators-1.0 gstbadallocators-1.0
+WANTLIB += EGL GL GLESv2 gstallocators-1.0 webp
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 z
 WANTLIB += heimdal/lib/heimsqlite
 
