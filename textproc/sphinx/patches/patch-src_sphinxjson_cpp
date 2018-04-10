@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_sphinxjson_cpp,v 1.1 2018/04/10 22:04:52 sthen Exp $
+
+Index: src/sphinxjson.cpp
+--- src/sphinxjson.cpp.orig
++++ src/sphinxjson.cpp
+@@ -414,7 +414,7 @@ class JsonParser_c : ISphNoncopyable (public)
+ 		switch ( eType )
+ 		{
+ 		case JSON_INT32: printf ( "JSON_INT32 %d\n", sphJsonLoadInt ( &p ) ); break;
+-		case JSON_INT64: printf ( "JSON_INT64 "INT64_FMT"\n", sphJsonLoadBigint ( &p ) ); break;
++		case JSON_INT64: printf ( "JSON_INT64 " INT64_FMT "\n", sphJsonLoadBigint ( &p ) ); break;
+ 		case JSON_DOUBLE: printf ( "JSON_DOUBLE %lf\n", sphQW2D ( sphJsonLoadBigint ( &p ) ) ); break;
+ 		case JSON_STRING:
+ 			{

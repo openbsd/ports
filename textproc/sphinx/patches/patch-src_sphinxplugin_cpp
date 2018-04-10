@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_sphinxplugin_cpp,v 1.1 2018/04/10 22:04:52 sthen Exp $
+
+Index: src/sphinxplugin.cpp
+--- src/sphinxplugin.cpp.orig
++++ src/sphinxplugin.cpp
+@@ -188,7 +188,7 @@ bool sphPluginParseSpec ( const CSphString & sParams, 
+ 
+ struct SymbolDesc_t
+ {
+-	int				m_iOffsetOf;	///< pointer member location in the descriptor structure
++	long			m_iOffsetOf;	///< pointer member location in the descriptor structure
+ 	const char *	m_sPostfix;		///< symbol name postfix
+ 	bool			m_bRequired;	///< whether this symbol must be present
+ };
