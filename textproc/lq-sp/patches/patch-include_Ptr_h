@@ -1,0 +1,18 @@
+$OpenBSD: patch-include_Ptr_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
+
+error: ISO C++11 does not allow access declarations; use using declarations instead
+
+Index: include/Ptr.h
+--- include/Ptr.h.orig
++++ include/Ptr.h
+@@ -69,8 +69,8 @@ class ConstPtr : private Ptr<T> { (public)
+   const T *operator->() const { return Ptr<T>::pointer(); }
+   const T &operator*() const { return *Ptr<T>::pointer(); }
+   void swap(ConstPtr<T> &p) { Ptr<T>::swap(p); }
+-  Ptr<T>::isNull;
+-  Ptr<T>::clear;
++  using Ptr<T>::isNull;
++  using Ptr<T>::clear;
+   Boolean operator==(const Ptr<T> &p) const { return Ptr<T>::operator==(p); }
+   Boolean operator!=(const Ptr<T> &p) const { return Ptr<T>::operator!=(p); }
+   Boolean operator==(const ConstPtr<T> &p) const {

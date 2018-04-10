@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_IList_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
+
+Index: include/IList.h
+--- include/IList.h.orig
++++ include/IList.h
+@@ -26,8 +26,8 @@ class IList : private IListBase { (public)
+   void swap(IList<T> &list) { IListBase::swap(list); }
+   T *head() const { return (T *)IListBase::head(); }
+   T *get() { return (T *)IListBase::get(); }
+-  IListBase::clear;
+-  IListBase::empty;
++  using IListBase::clear;
++  using IListBase::empty;
+ friend class IListIter<T>;
+ private:
+   IList(const IList<T> &);	// undefined
