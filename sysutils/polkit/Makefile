@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/04/08 09:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2018/04/10 23:42:49 jca Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -20,6 +20,9 @@ WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += intl mozjs-52
 
 MASTER_SITES=		http://www.freedesktop.org/software/polkit/releases/
+
+# C++11
+COMPILER=		base-clang ports-gcc
 
 MODULES=		lang/python \
 			textproc/intltool
