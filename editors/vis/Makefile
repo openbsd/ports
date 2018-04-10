@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/31 11:06:39 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/10 22:51:28 kn Exp $
 
 COMMENT =		vi-like editor with sam-style structural regex support
 
 V =			0.5
 DISTNAME =		vis-v${V}
 PKGNAME =		vis-${V}
+REVISION =		0
 
 TEST_V =		0.3
 SUPDISTNAME =		vis-test-${TEST_V}
