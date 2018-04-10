@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/10 08:17:38 rpointel Exp $
 
 COMMENT =	z3 theorem prover
 
-VERSION =	4.5.0
+VERSION =	4.6.0
 DISTNAME =	z3-${VERSION}
-REVISION =	0
 
 GH_ACCOUNT =	Z3Prover
 GH_PROJECT =	z3
@@ -25,10 +24,11 @@ MODULES =	lang/python
 
 WRKDIST =	${WRKDIR}/z3-${DISTNAME}
 
-NO_TEST =	Yes
-
 do-build:
 	cd ${WRKSRC}/build && make
+
+do-test:
+	cd ${WRKSRC}/build && make test
 
 do-install:
 	cd ${WRKSRC}/build && make install DESTDIR=""
