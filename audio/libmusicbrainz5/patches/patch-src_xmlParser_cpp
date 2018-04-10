@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xmlParser_cpp,v 1.1 2018/04/10 16:45:41 jasper Exp $
+
+Index: src/xmlParser.cpp
+--- src/xmlParser.cpp.orig
++++ src/xmlParser.cpp
+@@ -673,7 +673,7 @@ XMLSTR stringDup(XMLCSTR lpszData, int cbData)
+     if (lpszNew)
+     {
+         memcpy(lpszNew, lpszData, (cbData) * sizeof(XMLCHAR));
+-        lpszNew[cbData] = (XMLCHAR)NULL;
++        lpszNew[cbData] = '\0';
+     }
+     return lpszNew;
+ }
