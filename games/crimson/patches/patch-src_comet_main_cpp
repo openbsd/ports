@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_comet_main_cpp,v 1.1 2018/04/10 15:58:27 sthen Exp $
+
+Index: src/comet/main.cpp
+--- src/comet/main.cpp.orig
++++ src/comet/main.cpp
+@@ -118,7 +118,7 @@ void parse_options( int argc, char **argv, EdOptions &
+       else opts.sound = false;
+     } else {
+       if (strcmp(argv[argc], "--version") == 0)
+-        fprintf( stdout, PROGRAMNAME" "VERSION"\n" );
++        fprintf( stdout, PROGRAMNAME " " VERSION "\n" );
+       else print_usage( argv[0] );
+       exit ( 0 );
+     }
