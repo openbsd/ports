@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Communicator_cxx,v 1.1 2018/04/10 06:59:58 jsg Exp $
+
+Fix build with clang 6.0.  From FreeBSD ports.
+
+Index: src/Communicator.cxx
+--- src/Communicator.cxx.orig
++++ src/Communicator.cxx
+@@ -136,7 +136,7 @@ void Communicator::initialize ( int mode, int port, ch
+     address.sin_addr.s_addr = htonl(INADDR_ANY);
+     address.sin_port = htons(port);
+ 
+-    if (bind(connection_socket, (sockaddr *) &address, sizeof(address)) < 0) {
++    if (::bind(connection_socket, (sockaddr *) &address, sizeof(address)) < 0) {
+       cerr << "Port " << port << " is busy." << endl;
+       exit(1);
+     }
