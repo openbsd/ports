@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/10 20:30:58 jasper Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
@@ -24,5 +24,10 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/boost
 
 CONFIGURE_ARGS=	-DBUILD_CONTRIBS_LIB:BOOL=ON
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=	-std=c++03
+.endif
 
 .include <bsd.port.mk>
