@@ -1,0 +1,52 @@
+$OpenBSD: patch-oflog_include_dcmtk_oflog_thread_syncpub_h,v 1.1 2018/04/10 19:07:40 jasper Exp $
+
+https://forum.dcmtk.org/viewtopic.php?f=3&t=4584
+
+Index: oflog/include/dcmtk/oflog/thread/syncpub.h
+--- oflog/include/dcmtk/oflog/thread/syncpub.h.orig
++++ oflog/include/dcmtk/oflog/thread/syncpub.h
+@@ -63,7 +63,7 @@ MutexImplBase::~MutexImplBase ()
+ 
+ DCMTK_LOG4CPLUS_INLINE_EXPORT
+ Mutex::Mutex (Mutex::Type t)
+-    : mtx (DCMTK_LOG4CPLUS_THREADED (new impl::Mutex (t)) + 0)
++    : mtx (DCMTK_LOG4CPLUS_THREADED (new impl::Mutex (t)))
+ { }
+ 
+ 
+@@ -106,7 +106,7 @@ SemaphoreImplBase::~SemaphoreImplBase ()
+ DCMTK_LOG4CPLUS_INLINE_EXPORT
+ Semaphore::Semaphore (unsigned DCMTK_LOG4CPLUS_THREADED (max),
+     unsigned DCMTK_LOG4CPLUS_THREADED (initial))
+-    : sem (DCMTK_LOG4CPLUS_THREADED (new impl::Semaphore (max, initial)) + 0)
++    : sem (DCMTK_LOG4CPLUS_THREADED (new impl::Semaphore (max, initial)))
+ { }
+ 
+ 
+@@ -148,7 +148,7 @@ FairMutexImplBase::~FairMutexImplBase ()
+ 
+ DCMTK_LOG4CPLUS_INLINE_EXPORT
+ FairMutex::FairMutex ()
+-    : mtx (DCMTK_LOG4CPLUS_THREADED (new impl::FairMutex) + 0)
++    : mtx (DCMTK_LOG4CPLUS_THREADED (new impl::FairMutex))
+ { }
+ 
+ 
+@@ -190,7 +190,7 @@ ManualResetEventImplBase::~ManualResetEventImplBase ()
+ 
+ DCMTK_LOG4CPLUS_INLINE_EXPORT
+ ManualResetEvent::ManualResetEvent (bool DCMTK_LOG4CPLUS_THREADED (sig))
+-    : ev (DCMTK_LOG4CPLUS_THREADED (new impl::ManualResetEvent (sig)) + 0)
++    : ev (DCMTK_LOG4CPLUS_THREADED (new impl::ManualResetEvent (sig)))
+ { }
+ 
+ 
+@@ -252,7 +252,7 @@ SharedMutexImplBase::~SharedMutexImplBase ()
+ 
+ DCMTK_LOG4CPLUS_INLINE_EXPORT
+ SharedMutex::SharedMutex ()
+-    : sm (DCMTK_LOG4CPLUS_THREADED (new impl::SharedMutex) + 0)
++    : sm (DCMTK_LOG4CPLUS_THREADED (new impl::SharedMutex))
+ { }
+ 
+ 

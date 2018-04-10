@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/07/29 12:56:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/04/10 19:07:40 jasper Exp $
 @bin bin/dcm2json
 @bin bin/dcm2pdf
 @bin bin/dcm2pnm
@@ -181,10 +181,10 @@ include/dcmtk/dcmfg/fgfact.h
 include/dcmtk/dcmfg/fgfracon.h
 include/dcmtk/dcmfg/fgframeanatomy.h
 include/dcmtk/dcmfg/fgframevoilut.h
-include/dcmtk/dcmfg/fgidentpixeltransform.h
 include/dcmtk/dcmfg/fgimagedatatype.h
 include/dcmtk/dcmfg/fginterface.h
 include/dcmtk/dcmfg/fgparametricmapframetype.h
+include/dcmtk/dcmfg/fgpixeltransform.h
 include/dcmtk/dcmfg/fgpixmsr.h
 include/dcmtk/dcmfg/fgplanor.h
 include/dcmtk/dcmfg/fgplanorvol.h
@@ -524,6 +524,7 @@ include/dcmtk/dcmrt/seq/drtcs.h
 include/dcmtk/dcmrt/seq/drtcsas.h
 include/dcmtk/dcmrt/seq/drtcshs.h
 include/dcmtk/dcmrt/seq/drtcsis.h
+include/dcmtk/dcmrt/seq/drtcsrs.h
 include/dcmtk/dcmrt/seq/drtcss.h
 include/dcmtk/dcmrt/seq/drtdcs.h
 include/dcmtk/dcmrt/seq/drtdddps.h
@@ -761,8 +762,12 @@ include/dcmtk/dcmsr/cmr/srnumvlu.h
 include/dcmtk/dcmsr/cmr/tid1001.h
 include/dcmtk/dcmsr/cmr/tid1204.h
 include/dcmtk/dcmsr/cmr/tid1411.h
+include/dcmtk/dcmsr/cmr/tid1419m.h
 include/dcmtk/dcmsr/cmr/tid1500.h
+include/dcmtk/dcmsr/cmr/tid1501.h
+include/dcmtk/dcmsr/cmr/tid15def.h
 include/dcmtk/dcmsr/cmr/tid1600.h
+include/dcmtk/dcmsr/cmr/tid300.h
 include/dcmtk/dcmsr/codes/
 include/dcmtk/dcmsr/codes/dcm.h
 include/dcmtk/dcmsr/codes/ncit.h
@@ -787,6 +792,7 @@ include/dcmtk/dcmsr/dsrctpl.h
 include/dcmtk/dcmsr/dsrctxgr.h
 include/dcmtk/dcmsr/dsrdattn.h
 include/dcmtk/dcmsr/dsrdncsr.h
+include/dcmtk/dcmsr/dsrdnflt.h
 include/dcmtk/dcmsr/dsrdoc.h
 include/dcmtk/dcmsr/dsrdocst.h
 include/dcmtk/dcmsr/dsrdoctn.h
@@ -799,6 +805,7 @@ include/dcmtk/dcmsr/dsrimgtn.h
 include/dcmtk/dcmsr/dsrimgvl.h
 include/dcmtk/dcmsr/dsrimpcc.h
 include/dcmtk/dcmsr/dsriodcc.h
+include/dcmtk/dcmsr/dsritcsr.h
 include/dcmtk/dcmsr/dsrkeycc.h
 include/dcmtk/dcmsr/dsrmaccc.h
 include/dcmtk/dcmsr/dsrmamcc.h
@@ -806,6 +813,7 @@ include/dcmtk/dcmsr/dsrnumtn.h
 include/dcmtk/dcmsr/dsrnumvl.h
 include/dcmtk/dcmsr/dsrpnmtn.h
 include/dcmtk/dcmsr/dsrposcn.h
+include/dcmtk/dcmsr/dsrprdcc.h
 include/dcmtk/dcmsr/dsrprocc.h
 include/dcmtk/dcmsr/dsrrefin.h
 include/dcmtk/dcmsr/dsrreftn.h
@@ -843,8 +851,10 @@ include/dcmtk/dcmsr/dsrxmlc.h
 include/dcmtk/dcmsr/dsrxmld.h
 include/dcmtk/dcmsr/dsrxrdcc.h
 include/dcmtk/dcmtls/
+include/dcmtk/dcmtls/tlscond.h
 include/dcmtk/dcmtls/tlsdefin.h
 include/dcmtk/dcmtls/tlslayer.h
+include/dcmtk/dcmtls/tlsopt.h
 include/dcmtk/dcmtls/tlsscu.h
 include/dcmtk/dcmtls/tlstrans.h
 include/dcmtk/dcmtract/
@@ -979,12 +989,12 @@ include/dcmtk/ofstd/oflist.h
 include/dcmtk/ofstd/ofmap.h
 include/dcmtk/ofstd/ofmath.h
 include/dcmtk/ofstd/ofmem.h
-include/dcmtk/ofstd/ofnetdb.h
 include/dcmtk/ofstd/ofoption.h
 include/dcmtk/ofstd/ofoset.h
 include/dcmtk/ofstd/ofpwd.h
 include/dcmtk/ofstd/ofset.h
 include/dcmtk/ofstd/ofsetit.h
+include/dcmtk/ofstd/ofsockad.h
 include/dcmtk/ofstd/ofstack.h
 include/dcmtk/ofstd/ofstd.h
 include/dcmtk/ofstd/ofstdinc.h
@@ -1165,12 +1175,14 @@ share/doc/dcmtk/CHANGES.353
 share/doc/dcmtk/CHANGES.354
 share/doc/dcmtk/CHANGES.360
 share/doc/dcmtk/CHANGES.362
+share/doc/dcmtk/CHANGES.363
 share/doc/dcmtk/COPYRIGHT
 share/doc/dcmtk/CREDITS
 share/doc/dcmtk/FAQ
 share/doc/dcmtk/HISTORY
 share/doc/dcmtk/VERSION
 share/doc/dcmtk/asconfig.txt
+share/doc/dcmtk/certstor.txt
 share/doc/dcmtk/ciphers.txt
 share/doc/dcmtk/config.txt
 share/doc/dcmtk/datadict.txt

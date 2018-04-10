@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/29 12:56:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2018/04/10 19:07:40 jasper Exp $
 
 COMMENT=		DICOM toolkit
 
-DISTNAME=		dcmtk-3.6.2
+V =			3.6.3
+DISTNAME=		dcmtk-$V
 SHARED_LIBS +=  charls                    0.0 # 3.6
 SHARED_LIBS +=  cmr                       0.0 # 3.6
 SHARED_LIBS +=  dcmdata                   0.0 # 3.6
@@ -34,10 +35,10 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.dcmtk.org/dcmtk.php.en
 
-MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk362/
+MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk${V:S/.//g}/
 
 # Several ISC and BSDish
-# ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk362/COPYRIGHT
+# ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk363/COPYRIGHT
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto jpeg m png pthread ssl ${COMPILER_LIBCXX} tiff
@@ -58,7 +59,8 @@ CONFIGURE_ARGS +=	-DDCMTK_WITH_ICU=OFF \
 			-DDCMTK_WITH_THREADS=OFF \
 			-DBUILD_SHARED_LIBS=On \
 			-DDCMTK_INSTALL_MANDIR=man \
-			-DDCMTK_INSTALL_ETCDIR=share/examples/dcmtk
+			-DCMAKE_INSTALL_SYSCONFDIR=share/examples \
+			-DDCMTK_ENABLE_CXX11:BOOL=ON
 
 NO_TEST=		Yes
 
