@@ -1,4 +1,4 @@
-$OpenBSD: patch-mininet_nodelib_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_nodelib_py,v 1.2 2018/04/10 07:55:10 akoshibe Exp $
 
 Index: mininet/nodelib.py
 --- mininet/nodelib.py.orig
@@ -130,7 +130,7 @@ Index: mininet/nodelib.py
 +    def dpctl( self, *args ):
 +        "Run brctl command"
 +        # actually ifconfig
-+        return quietRun( 'ifconfig', self.bname, *args )
++        return self.cmd( 'ifconfig', self.bname, *args )
 +
 +
 +class IptablesNAT( Node ):

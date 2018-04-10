@@ -1,4 +1,4 @@
-$OpenBSD: patch-mininet_node_py,v 1.4 2017/12/07 06:33:40 akoshibe Exp $
+$OpenBSD: patch-mininet_node_py,v 1.5 2018/04/10 07:55:10 akoshibe Exp $
 Original Node functions are now in BaseNode, subclassed by OS-
 specific Node objects.  
 Index: mininet/node.py
@@ -804,7 +804,7 @@ Index: mininet/node.py
          super( OVSSwitch, self ).stop( deleteIntfs )
  
      @classmethod
-@@ -1259,9 +800,88 @@ class OVSSwitch( Switch ):
+@@ -1259,9 +800,84 @@ class OVSSwitch( Switch ):
          return switches
  
  
@@ -827,13 +827,14 @@ Index: mininet/node.py
 +
 +    def connected( self ):
 +        "Are we forwarding yet?"
-+        return self.bname in self.cmd( 'switchctl show switches' )
++        return self.bname in self.cmd( 'ifconfig switch' )
 +
 +    def start( self, controllers ):
 +        "Start bridge. Retain the bridge's name to save on ifconfig calls"
 +        rdarg = 'rdomain %d' % self.rdid if self.inNamespace else ''
-+        quietRun( 'ifconfig %s create %s description "%s" up' %
-+                  ( self.bname, rdarg, self.name ) )
++        dparg = 'datapath 0x%s' % self.dpid
++        quietRun( 'ifconfig %s create %s %s description "%s" up' %
++                  ( self.bname, dparg, rdarg, self.name ) )
 +        addcmd, stpcmd = '', ''
 +        for i in self.intfList():
 +            if i.realname and 'pair' in i.realname:
@@ -843,10 +844,15 @@ Index: mininet/node.py
 +        quietRun( 'ifconfig ' + self.bname + addcmd )
 +
 +        # Connect to controller using switchctl(8) using /dev/switch*
++        if not os.path.exists( self.cdev ):
++            # try to make character device, check and try to connect again
++            self.cmd( 'cd /dev/ && ./MAKEDEV ' + self.bname )
++            self.newcdev = True
++
 +        if os.path.exists( self.cdev ):
 +            args = 'switchctl connect ' + self.cdev
 +            ctl = controllers[ 0 ] if controllers else None
-+            if not isinstance( ctl, Switchd ):
++            if ctl and isinstance( ctl, RemoteController ):
 +                args += ' forward-to %s:%d' % ( ctl.IP(), ctl.port )
 +                # start local Switchd instance and have it forward
 +                if not IfSwitch.local:
@@ -854,26 +860,18 @@ Index: mininet/node.py
 +                    IfSwitch.local.start()
 +            quietRun( args )
 +        else:
-+            # try to make character device, check and try to connect again
-+            quietRun( '/dev/MAKEDEV ' + self.bname )
-+            quietRun( 'mv %s /dev/' % self.bname )
-+            self.newcdev = True
-+            if os.path.exists( self.cdev ):
-+                # TODO : need to forward-to for RemoteController
-+                quietRun( 'switchctl connect %s' % self.cdev )
-+            else:
-+                error( "Can't connect to controller: %s doesn't exist" %
-+                       self.cdev )
-+                exit( 1 )
++            error( "Can't connect to controller: %s doesn't exist" %
++                   self.cdev )
++            exit( 1 )
 +
 +    def stop( self, deleteIntfs=True ):
 +        """Stop bridge
 +           deleteIntfs: delete interfaces? (True)"""
 +        quietRun( 'ifconfig %s destroy' % self.bname )
 +        # hack: the last switch destroys the local controller
-+        last = 'switch%d' % ( IfSwitch.unitNo - 1 )
-+        if self.bname == last:
-+            quietRun( 'pkill switchd' )
++        if IfSwitch.local:
++            IfSwitch.local.stop()
++            IfSwitch.local = None
 +        if self.newcdev:
 +            quietRun( 'rm ' + self.cdev )
 +        super( IfSwitch, self ).stop( deleteIntfs )
@@ -881,29 +879,29 @@ Index: mininet/node.py
 +    def dpctl( self, *args ):
 +        "Run brctl command"
 +        # actually switchctl
-+        return self.cmd( 'switchctl', *args )
++        # choose the first switch to run switchctl(8) from
++        if self.bname == 'switch0':
++            return self.cmd( 'switchctl', *args )
 +
 +
-+# technically there are only userspace OF switches for FreeBSD.
-+if plat == 'Linux' or plat == 'FreeBSD':
-+    KernelSwitch = OVSSwitch
-+else:
-+    KernelSwitch = IfSwitch # OpenBSD
++KernelSwitch = IfSwitch # OpenBSD
 +
 +
  class OVSBridge( OVSSwitch ):
      "OVSBridge is an OVSSwitch in standalone/bridge mode"
  
-@@ -1386,7 +1006,7 @@ class Controller( Node ):
+@@ -1386,8 +1002,8 @@ class Controller( Node ):
          listening = self.cmd( "echo A | telnet -e A %s %d" %
                                ( self.ip, self.port ) )
          if 'Connected' in listening:
 -            servers = self.cmd( 'netstat -natp' ).split( '\n' )
-+            servers = self.cmd( 'netstat -nap tcp' ).split( '\n' )
-             pstr = ':%d ' % self.port
+-            pstr = ':%d ' % self.port
++            servers = self.cmd( 'netstat -nlp tcp' ).split( '\n' )
++            pstr = '.%d ' % self.port
              clist = servers[ 0:1 ] + [ s for s in servers if pstr in s ]
              raise Exception( "Please shut down the controller which is"
-@@ -1405,7 +1025,10 @@ class Controller( Node ):
+                              " running on port %d:\n" % self.port +
+@@ -1405,7 +1021,10 @@ class Controller( Node ):
          self.execed = False
  
      def stop( self, *args, **kwargs ):
@@ -915,7 +913,7 @@ Index: mininet/node.py
          self.cmd( 'kill %' + self.command )
          self.cmd( 'wait %' + self.command )
          super( Controller, self ).stop( *args, **kwargs )
-@@ -1470,12 +1093,19 @@ class NOX( Controller ):
+@@ -1470,12 +1089,19 @@ class NOX( Controller ):
  
  class Ryu( Controller ):
      "Controller to run Ryu application"
@@ -937,7 +935,7 @@ Index: mininet/node.py
          if not ryuArgs:
              warn( 'warning: no Ryu modules specified; '
                    'running simple_switch only\n' )
-@@ -1538,7 +1168,50 @@ class RemoteController( Controller ):
+@@ -1538,7 +1164,53 @@ class RemoteController( Controller ):
          else:
              return True
  
@@ -965,14 +963,17 @@ Index: mininet/node.py
 +                             cargs=cmd, **kwargs )
 +
 +    def start( self ):
-+        """Start <controller> <args> on controller. Log to /tmp/cN.log"""
++        """Start <controller> <args> on controller."""
 +        pathCheck( self.command )
-+        cout = '/tmp/' + self.name + '.log'
 +        if self.cdir is not None:
 +            self.cmd( 'cd ' + self.cdir )
-+        self.cmd( self.command + ' ' + self.cargs +
-+                  ' 1>' + cout + ' 2>' + cout )
++        self.cmd( self.command + ' ' + self.cargs )
++        self.ctlpid = quietRun( 'pgrep -n switchd' )
 +        self.execed = False
++
++    def stop( self, *args, **kwargs ):
++        self.cmd( 'kill ' + self.ctlpid )
++        super( Node, self ).stop()
 +
 +
 +# TODO: push these uname-ey things elsewhere

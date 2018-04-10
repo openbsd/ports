@@ -1,9 +1,9 @@
-$OpenBSD: patch-mininet_openbsd_util_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_openbsd_util_py,v 1.2 2018/04/10 07:55:10 akoshibe Exp $
 
 Index: mininet/openbsd/util.py
 --- mininet/openbsd/util.py.orig
 +++ mininet/openbsd/util.py
-@@ -0,0 +1,180 @@
+@@ -0,0 +1,201 @@
 +"""
 +OS-specific utility functions for OpenBSD, counterpart to util.py.
 +"""
@@ -184,3 +184,24 @@ Index: mininet/openbsd/util.py
 +    """Attempt to load a specified module.
 +       mod: module string"""
 +    pass
++
++def waitListening( client, server, port=80, timeout=None ):
++    """Wait until server is listening on port.
++       returns True if server is listening"""
++    # pylint: disable=maybe-no-member
++    serverIP = server.IP().replace('.', '\.')
++    rdid = 0 if not server.rdid else server.rdid
++    cmd = ( 'netstat -nlp tcp -T %d | grep -e %s\.%s -e \*\.%s' \
++	    % ( server.rdid, serverIP, port, port ) )
++    time = 0
++    result = server.cmd( cmd )
++    while 'LISTEN' not in result:
++        if timeout and time >= timeout:
++            error( 'could not connect to %s on port %d\n' % ( server, port ) )
++            return False
++        debug( 'waiting for', server, 'to listen on port', port, '\n' )
++        info( '.' )
++        sleep( .5 )
++        time += .5
++        result = server.cmd( cmd )
++    return True

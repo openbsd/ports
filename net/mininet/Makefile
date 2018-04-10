@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/07 06:33:40 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/10 07:55:10 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 DISTNAME =	mininet-0.0.20170813
-REVISION =	3
+REVISION =	4
 GH_ACCOUNT =	mininet
 GH_PROJECT =	mininet
 GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a
@@ -27,7 +27,8 @@ RUN_DEPENDS =		net/socat \
 do-build:
 	$(CC) ${WRKSRC}/mnexec.c -o ${WRKBUILD}/mnexec
 	help2man -N -n "create a Mininet network."  --no-discard-stderr \
-		"${MODPY_BIN} -B ${WRKBUILD}/bin/mn" -o ${WRKBUILD}/mn.1
+		"PYTHONPATH=${WRKBUILD} ${MODPY_BIN} -B ${WRKBUILD}/bin/mn" \
+		-o ${WRKBUILD}/mn.1
 	help2man -N -n "execution utility for Mininet."  -h "-h" -v "-v" \
 		--no-discard-stderr ${WRKBUILD}/mnexec -o ${WRKBUILD}/mnexec.1
 

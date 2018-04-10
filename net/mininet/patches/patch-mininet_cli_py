@@ -1,9 +1,26 @@
-$OpenBSD: patch-mininet_cli_py,v 1.1.1.1 2017/08/21 18:47:12 akoshibe Exp $
+$OpenBSD: patch-mininet_cli_py,v 1.2 2018/04/10 07:55:10 akoshibe Exp $
 split() automatically splits on whitespace.
 Index: mininet/cli.py
 --- mininet/cli.py.orig
 +++ mininet/cli.py
-@@ -411,7 +411,7 @@ class CLI( Cmd ):
+@@ -356,12 +356,11 @@ class CLI( Cmd ):
+         """Run dpctl (or ovs-ofctl) command on all switches.
+            Usage: dpctl command [arg1] [arg2] ..."""
+         args = line.split()
+-        if len(args) < 1:
+-            error( 'usage: dpctl command [arg1] [arg2] ...\n' )
+-            return
+         for sw in self.mn.switches:
+-            output( '*** ' + sw.name + ' ' + ('-' * 72) + '\n' )
+-            output( sw.dpctl( *args ) )
++            res = sw.dpctl( *args )
++            if res:
++                output( '*** ' + sw.name + ' ' + ('-' * 72) + '\n' )
++                output( res )
+ 
+     def do_time( self, line ):
+         "Measure time taken for any command in Mininet."
+@@ -411,7 +410,7 @@ class CLI( Cmd ):
                         % first )
                  return
              node = self.mn[ first ]
