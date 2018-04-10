@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_webservice_cpp,v 1.1 2018/04/10 06:34:12 jasper Exp $
+
+Index: src/webservice.cpp
+--- src/webservice.cpp.orig
++++ src/webservice.cpp
+@@ -184,7 +184,7 @@ WebService::get(const std::string &entity,
+ 	if (!sess) 
+ 		throw WebServiceError("ne_session_create() failed.");
+ 	ne_set_server_auth(sess, httpAuth, this);
+-	ne_set_useragent(sess, PACKAGE"/"VERSION);
++	ne_set_useragent(sess, PACKAGE "/" VERSION);
+ 	
+ 	// Use proxy server
+ 	if (!d->proxyHost.empty()) {
+@@ -269,7 +269,7 @@ WebService::post(const std::string &entity,
+ 	if (!sess) 
+ 		throw WebServiceError("ne_session_create() failed.");
+ 	ne_set_server_auth(sess, httpAuth, this);
+-	ne_set_useragent(sess, PACKAGE"/"VERSION);
++	ne_set_useragent(sess, PACKAGE "/" VERSION);
+ 
+ 	// Use proxy server
+ 	if (!d->proxyHost.empty()) {
