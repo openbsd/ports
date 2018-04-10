@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/10 21:15:33 naddy Exp $
 
 COMMENT=	LIVE555 streaming media library
 
 DISTNAME=	live.2012.02.04
 PKGNAME=	liveMedia-20120204
-REVISION =	2
+REVISION =	3
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
