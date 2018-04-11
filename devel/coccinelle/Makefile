@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/11/01 22:02:59 krw Exp $
+# $OpenBSD: Makefile,v 1.35 2018/04/11 13:40:54 edd Exp $
 
 COMMENT =	program matching and transformation engine
 
@@ -6,7 +6,7 @@ COMMENT =	program matching and transformation engine
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.4
 EXTRACT_SUFX =	.tgz
-REVISION = 1
+REVISION = 2
 
 CATEGORIES =	devel
 
@@ -25,7 +25,6 @@ MODULES =		lang/ocaml \
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			lang/ocaml-camlp4 \
 			print/texlive/base \
-			print/texlive/texmf,-full \
 			textproc/hevea \
 			textproc/latexmk
 RUN_DEPENDS =		devel/ocaml-parmap \

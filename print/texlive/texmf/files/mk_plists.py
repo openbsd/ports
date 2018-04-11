@@ -293,9 +293,12 @@ buildset_pkgs = [
     # www/yaws
     "times", "courier",
     # coccinelle
-    "comment", "xcolor",
+    "comment", "xcolor", "helvetic", "ifsym", "boxedminipage", "endnotes",
+    "moreverb", "wrapfig", "xypic",
     # math/R
     "inconsolata",
+    # books/tex-by-topic
+    "svn-multi", "avantgar", "ncntrsbk", "fontname",
     ]
 
 print(">>> texlive_texmf-buildset")
@@ -305,8 +308,8 @@ buildset_top_matter = [
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
-    "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    "@conflict texlive_texmf-full-<%s" % YEAR,
+    "@conflict texlive_texmf-minimal-<%sp0" % YEAR,
+    "@conflict texlive_texmf-full-<%sp0" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
@@ -411,7 +414,7 @@ minimal_top_matter = [
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
     "@conflict texlive_texmf-full-<%s" % YEAR,
-    "@conflict texlive_texmf-buildset-<%s" % YEAR,
+    "@conflict texlive_texmf-buildset-<%sp0" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/teTeX/texmf",
 ]
@@ -442,7 +445,7 @@ full_top_matter = [
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    "@conflict texlive_texmf-buildset-<%s" % YEAR,
+    "@conflict texlive_texmf-buildset-<%sp0" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-full",
     "@pkgpath print/teTeX/texmf",

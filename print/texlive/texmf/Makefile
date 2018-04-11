@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/01/30 20:35:49 edd Exp $
+# $OpenBSD: Makefile,v 1.49 2018/04/11 13:40:29 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -23,6 +23,10 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
+REVISION-main =		0
+REVISION-full =		0
+REVISION-buildset =	0
+
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -39,8 +43,8 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
 RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
-RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+			texlive_texmf-buildset-${V}p0:print/texlive/texmf,-buildset
+RUN_DEPENDS-full =	texlive_texmf-minimal-${V}p0:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
