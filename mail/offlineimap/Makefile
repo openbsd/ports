@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.49 2018/01/14 15:16:15 remi Exp $
+# $OpenBSD: Makefile,v 1.50 2018/04/11 06:33:53 remi Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION = 7.1.5
-GH_ACCOUNT =	OfflineIMAP
-GH_PROJECT =	offlineimap
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
-DISTNAME=	offlineimap-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION = 7.2.0
+DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
+PKGNAME =	offlineimap-${MODPY_EGG_VERSION}
+
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.offlineimap.org/
 
-MAINTAINER=	Remi Locherer <remi.locherer@relo.ch>
+MAINTAINER=	Remi Locherer <remi@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +23,8 @@ BUILD_DEPENDS=	textproc/asciidoc \
 		devel/py-six
 
 RUN_DEPENDS=	devel/py-six
+
+MASTER_SITES=	http://www.offlineimap.org/uploads/
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 
