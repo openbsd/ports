@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/11 12:21:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/11 12:30:41 sthen Exp $
 
 COMMENT =	open source remake of old DOS game Sherlock
 
 DISTNAME =	einstein-2.0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-utils_cpp,v 1.2 2018/04/11 12:21:47 sthen Exp $
+$OpenBSD: patch-utils_cpp,v 1.3 2018/04/11 12:30:41 sthen Exp $
 Index: utils.cpp
 --- utils.cpp.orig
 +++ utils.cpp
@@ -13,3 +13,21 @@ Index: utils.cpp
      for (int y = 0; y < screen.getHeight(); y += tile->h)
          for (int x = 0; x < screen.getWidth(); x += tile->w) {
              dst.x = x;
+@@ -275,7 +275,16 @@ std::wstring secToStr(int time)
+ #ifdef WIN32
+     swprintf(buf, L"%02i:%02i:%02i", hours, minutes, seconds);
+ #else
+-    swprintf(buf, 50, L"%02i:%02i:%02i", hours, minutes, seconds);
++    int  c, i;
++    char buf2 [50];
++
++    c = snprintf (buf2, sizeof (buf2), "%02i:%02i:%02i", hours, minutes,
++        seconds);
++
++    for (i = 0; i < c; ++i) {
++        buf [i] = (wchar_t) buf2 [i];
++    }
++    buf [i] = L'\0';
+ #endif
+ 
+     return buf;
