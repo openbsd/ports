@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.58 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.59 2018/04/11 14:47:16 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
-DISTNAME=	conserver-8.2.1
-REVISION=	5
+V=		8.2.1
+DISTNAME=	conserver-$V
+REVISION=	6
 CATEGORIES=	comms
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE=	http://www.conserver.com/
+HOMEPAGE=	https://www.conserver.com/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +19,7 @@ WANTLIB += c util
 FLAVORS=	ipmi net
 FLAVOR?=
 
-MASTER_SITES=	${HOMEPAGE} \
-		ftp://ftp.conserver.com/conserver/
+MASTER_SITES=	https://github.com/conserver/conserver/releases/download/v$V/
 
 AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf
