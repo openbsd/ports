@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_AddressResolution_cpp,v 1.1 2018/04/11 14:43:21 sthen Exp $
+
+From 3603f3b6c85b9fa884101ba6e4a1b351787b12f9 Mon Sep 17 00:00:00 2001
+From: emanuele-f <black.silver@hotmail.it>
+Date: Tue, 6 Jun 2017 10:16:44 +0200
+Subject: [PATCH] Fix comparison between pointer and integer error
+
+src/AddressResolution.cpp:55:35: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+   if((at = strchr(query, '@')) != '\0') at[0] = '\0';
+
+Index: src/AddressResolution.cpp
+--- src/AddressResolution.cpp.orig
++++ src/AddressResolution.cpp
+@@ -52,7 +52,7 @@ void AddressResolution::resolveHostName(char *_numeric
+   u_int numeric_ip_len;
+ 
+   snprintf(query, sizeof(query), "%s", _numeric_ip);
+-  if((at = strchr(query, '@')) != '\0') at[0] = '\0';
++  if((at = strchr(query, '@')) != NULL) at[0] = '\0';
+   numeric_ip = query;
+   numeric_ip_len = strlen(numeric_ip)-1;
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_DivertInterface_cpp,v 1.3 2018/04/11 14:43:21 sthen Exp $
+
+Adapted from
+
+From f0877a0475d94de4d496acfd8f1617873801858f Mon Sep 17 00:00:00 2001
+From: Guido Falsi <mad@madpilot.net>
+Date: Fri, 26 Jan 2018 12:38:40 +0100
+Subject: [PATCH] Modify files to allow compiling using llvm/clang 6.0.0 as
+ recently imported in FreeBSD 12-CURRENT. (#1634)
+
+Index: src/DivertInterface.cpp
+--- src/DivertInterface.cpp.orig
++++ src/DivertInterface.cpp
+@@ -99,7 +99,7 @@ DivertInterface::DivertInterface(const char *name) : N
+   sin.sin_family = AF_INET, sin.sin_port = htons(port);
+   sin_len = sizeof(struct sockaddr_in);
+ 
+-  if(bind(sock, (struct sockaddr *) &sin, sin_len) == -1) {
++  if(::bind(sock, (struct sockaddr *) &sin, sin_len) == -1) {
+     ntop->getTrace()->traceEvent(TRACE_ERROR, "Unable to bind divert socket to port %d", port);
+     throw 1;
+   }
