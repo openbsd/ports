@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/04/11 08:42:51 edd Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -9,7 +9,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -17,7 +17,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2, LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 iconv intl m
+WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 intl m
 WANTLIB += openal png pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
@@ -31,6 +31,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 USE_GMAKE =		Yes
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS =		-std=c++03
+.endif
 
 MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
 MAKE_FLAGS +=		CFLAGS="${CFLAGS}" CXX="${CXX}"
