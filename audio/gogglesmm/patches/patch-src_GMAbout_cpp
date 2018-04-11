@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_GMAbout_cpp,v 1.1 2018/04/11 16:43:50 naddy Exp $
+
+Index: src/GMAbout.cpp
+--- src/GMAbout.cpp.orig
++++ src/GMAbout.cpp
+@@ -89,7 +89,7 @@ void GMAboutDialog::setup(){
+                  "either version 3 of the License, or (at your\n"
+                  "option) any later version.";
+ 
+-  label = new FXLabel(this,"v"APPLICATION_VERSION_STRING,NULL,LAYOUT_CENTER_X|LAYOUT_FILL_X,0,0,0,0,5,5,0,5);
++  label = new FXLabel(this,"v" APPLICATION_VERSION_STRING,NULL,LAYOUT_CENTER_X|LAYOUT_FILL_X,0,0,0,0,5,5,0,5);
+   label->setBackColor(FXRGB(255,255,255));
+   label->setTextColor(FXRGB(0,0,0));
+ 
