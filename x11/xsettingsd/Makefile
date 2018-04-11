@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/10/23 17:11:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/11 13:25:31 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
 GH_ACCOUNT=	derat
 GH_PROJECT=	xsettingsd
-GH_COMMIT=	e98f8fde334843230ff6b96d7f237a7193d78143
-DISTNAME=	xsettingsd-0.20170402
-REVISION =	2
-
+GH_TAGNAME=	v1.0.0
 
 CATEGORIES=	x11
 
