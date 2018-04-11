@@ -1,0 +1,16 @@
+$OpenBSD: patch-tclcl_h,v 1.1 2018/04/11 18:07:39 jasper Exp $
+
+error: invalid suffix on literal; C++11 requires a space between literal and identifier
+
+Index: tclcl.h
+--- tclcl.h.orig
++++ tclcl.h
+@@ -190,7 +190,7 @@ class TclObject {
+ 	/* give an error message and exit if the old variable 
+ 	   name is used either for read or write */
+ #define _RENAMED(oldname, newname) \
+-	bind_error(oldname, "variable "oldname" is renamed to "newname)
++	bind_error(oldname, "variable " oldname " is renamed to " newname)
+ 
+ 
+ 	virtual int init(int /*argc*/, const char*const* /*argv*/) {
