@@ -1,6 +1,16 @@
-$OpenBSD: patch-src_GameInit_cpp,v 1.1 2012/04/15 08:49:05 kirby Exp $
---- src/GameInit.cpp.orig	Sat Sep 24 20:25:51 2011
-+++ src/GameInit.cpp	Sun Oct 30 11:57:07 2011
+$OpenBSD: patch-src_GameInit_cpp,v 1.2 2018/04/11 18:15:59 jasper Exp $
+Index: src/GameInit.cpp
+--- src/GameInit.cpp.orig
++++ src/GameInit.cpp
+@@ -248,7 +248,7 @@ void GameApp::run_load(int nNumArgs, char** ppcArgs) {
+   Logger::setActiv(XMSession::instance()->noLog() == false); /* apply log activ mode */
+ 
+   LogInfo(std::string("X-Moto " + XMBuild::getVersionString(true)).c_str());
+-  LogInfo("compiled at "__DATE__" "__TIME__);
++  LogInfo("compiled at " __DATE__ " " __TIME__);
+   if(SwapEndian::bigendien) {
+     LogInfo("Systeme is bigendien");
+   } else {
 @@ -269,7 +269,7 @@ void GameApp::run_load(int nNumArgs, char** ppcArgs) {
      struct sigaction v_act;
  
