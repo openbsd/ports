@@ -1,14 +1,31 @@
-$OpenBSD: patch-dimbuilder_CMakeLists_txt,v 1.2 2017/10/28 18:36:19 landry Exp $
+$OpenBSD: patch-dimbuilder_CMakeLists_txt,v 1.3 2018/04/11 07:47:09 landry Exp $
 
 no libdl on OpenBSD
+we dont want to link with execinfo
 
 Index: dimbuilder/CMakeLists.txt
 --- dimbuilder/CMakeLists.txt.orig
 +++ dimbuilder/CMakeLists.txt
-@@ -30,6 +30,3 @@ PDAL_TARGET_COMPILE_SETTINGS(dimbuilder)
+@@ -13,8 +13,6 @@ endif()
+ 
+ include(${ROOT_DIR}/cmake/common.cmake NO_POLICY_SCOPE)
+ 
+-include(${PDAL_CMAKE_DIR}/execinfo.cmake)
+-
+ #
+ # We include Utils.cpp here rather than linking in the Utils library because
+ # some people building linux packages disable rpath, which means that
+@@ -29,13 +27,7 @@ target_include_directories(dimbuilder PRIVATE
+     ${PDAL_INCLUDE_DIR}
+     ${PDAL_JSONCPP_INCLUDE_DIR})
+ PDAL_TARGET_COMPILE_SETTINGS(dimbuilder)
+-target_link_libraries(dimbuilder
+-    PRIVATE
+-        ${EXECINFO_LIBRARY})
  if (PDAL_HAVE_JSONCPP)
-     target_link_libraries(dimbuilder PRIVATE ${PDAL_JSONCPP_LIB_NAME})
- endif()
--if (UNIX AND NOT APPLE)
--    target_link_libraries(dimbuilder PRIVATE dl)
+     target_link_libraries(dimbuilder ${JSON_CPP_LINK_TYPE}
+         ${PDAL_JSONCPP_LIB_NAME})
 -endif()
+-if (UNIX AND NOT APPLE)
+-    target_link_libraries(dimbuilder PRIVATE  ${CMAKE_DL_LIBS})
+ endif()

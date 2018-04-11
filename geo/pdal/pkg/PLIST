@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/10/28 18:36:19 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/04/11 07:47:09 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
-include/pdal/Compression.hpp
+include/pdal/Artifact.hpp
+include/pdal/ArtifactManager.hpp
 include/pdal/DbReader.hpp
 include/pdal/DbWriter.hpp
 include/pdal/DimDetail.hpp
@@ -26,6 +27,9 @@ include/pdal/PipelineExecutor.hpp
 include/pdal/PipelineManager.hpp
 include/pdal/PipelineReaderJSON.hpp
 include/pdal/PipelineWriter.hpp
+include/pdal/PluginDirectory.hpp
+include/pdal/PluginHelper.hpp
+include/pdal/PluginInfo.hpp
 include/pdal/PluginManager.hpp
 include/pdal/PointContainer.hpp
 include/pdal/PointLayout.hpp
@@ -34,7 +38,6 @@ include/pdal/PointTable.hpp
 include/pdal/PointView.hpp
 include/pdal/PointViewIter.hpp
 include/pdal/Polygon.hpp
-include/pdal/PyArray.hpp
 include/pdal/QuadIndex.hpp
 include/pdal/QuickInfo.hpp
 include/pdal/Reader.hpp
@@ -42,10 +45,19 @@ include/pdal/Scaling.hpp
 include/pdal/Segmentation.hpp
 include/pdal/SpatialReference.hpp
 include/pdal/Stage.hpp
+include/pdal/StageExtensions.hpp
 include/pdal/StageFactory.hpp
 include/pdal/StageWrapper.hpp
+include/pdal/Streamable.hpp
 include/pdal/Writer.hpp
 include/pdal/XMLSchema.hpp
+include/pdal/compression/
+include/pdal/compression/Compression.hpp
+include/pdal/compression/DeflateCompression.hpp
+include/pdal/compression/LazPerfCompression.hpp
+include/pdal/compression/LazPerfVlrCompression.hpp
+include/pdal/compression/LzmaCompression.hpp
+include/pdal/compression/ZstdCompression.hpp
 include/pdal/filters/
 include/pdal/filters/ApproximateCoplanarFilter.hpp
 include/pdal/filters/AssignFilter.hpp
@@ -54,7 +66,6 @@ include/pdal/filters/ClusterFilter.hpp
 include/pdal/filters/ColorInterpRamps.hpp
 include/pdal/filters/ColorinterpFilter.hpp
 include/pdal/filters/ColorizationFilter.hpp
-include/pdal/filters/ComputeRangeFilter.hpp
 include/pdal/filters/CropFilter.hpp
 include/pdal/filters/DecimationFilter.hpp
 include/pdal/filters/DividerFilter.hpp
@@ -74,6 +85,7 @@ include/pdal/filters/MADFilter.hpp
 include/pdal/filters/MergeFilter.hpp
 include/pdal/filters/MongusFilter.hpp
 include/pdal/filters/MortonOrderFilter.hpp
+include/pdal/filters/NeighborClassifierFilter.hpp
 include/pdal/filters/NormalFilter.hpp
 include/pdal/filters/OutlierFilter.hpp
 include/pdal/filters/OverlayFilter.hpp
@@ -83,6 +95,7 @@ include/pdal/filters/RadialDensityFilter.hpp
 include/pdal/filters/RandomizeFilter.hpp
 include/pdal/filters/RangeFilter.hpp
 include/pdal/filters/ReprojectionFilter.hpp
+include/pdal/filters/ReturnsFilter.hpp
 include/pdal/filters/SMRFilter.hpp
 include/pdal/filters/SampleFilter.hpp
 include/pdal/filters/SortFilter.hpp
@@ -116,6 +129,7 @@ include/pdal/io/LasUtils.hpp
 include/pdal/io/LasVLR.hpp
 include/pdal/io/LasWriter.hpp
 include/pdal/io/NullWriter.hpp
+include/pdal/io/NumpyReader.hpp
 include/pdal/io/OGRWriter.hpp
 include/pdal/io/OptechCommon.hpp
 include/pdal/io/OptechReader.hpp
@@ -146,13 +160,11 @@ include/pdal/kernels/TIndexKernel.hpp
 include/pdal/kernels/TranslateKernel.hpp
 include/pdal/pdal.hpp
 include/pdal/pdal_config.hpp
-include/pdal/pdal_defines.h
 include/pdal/pdal_export.hpp
+include/pdal/pdal_features.hpp
 include/pdal/pdal_internal.hpp
-include/pdal/pdal_macros.hpp
 include/pdal/pdal_test_main.hpp
 include/pdal/pdal_types.hpp
-include/pdal/plugin.hpp
 include/pdal/util/
 include/pdal/util/Algorithm.hpp
 include/pdal/util/Bounds.hpp
@@ -185,5 +197,6 @@ lib/pkgconfig/pdal.pc
 share/pdal/
 share/pdal/plugins/
 share/pdal/plugins/libpdal_plugin_filter_python.so
+share/pdal/plugins/libpdal_plugin_reader_numpy.so
 share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
 share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so

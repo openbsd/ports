@@ -1,0 +1,14 @@
+$OpenBSD: patch-pdal_PluginDirectory_cpp,v 1.1 2018/04/11 07:47:09 landry Exp $
+
+Index: pdal/PluginDirectory.cpp
+--- pdal/PluginDirectory.cpp.orig
++++ pdal/PluginDirectory.cpp
+@@ -45,7 +45,7 @@ namespace
+ #if defined(__APPLE__) && defined(__MACH__)
+     static const std::string dynamicLibraryExtension("dylib");
+     static const char pathSeparator(':');
+-#elif defined(__linux__) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__) || defined(__GNU__)
++#elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__) || defined(__GNU__)
+     static const std::string dynamicLibraryExtension("so");
+     static const char pathSeparator(':');
+ #elif defined _WIN32

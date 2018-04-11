@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_unix_compiler_options_cmake,v 1.1 2018/04/11 07:47:09 landry Exp $
+
+https://github.com/PDAL/PDAL/issues/1915
+
+Index: cmake/unix_compiler_options.cmake
+--- cmake/unix_compiler_options.cmake.orig
++++ cmake/unix_compiler_options.cmake
+@@ -24,7 +24,6 @@ function(PDAL_TARGET_COMPILE_SETTINGS target)
+         ${PDAL_CXX_STANDARD}
+         -Wextra
+         -Wpedantic
+-        -Werror
+         -Wall
+         -Wno-unused-parameter
+         -Wno-unused-variable

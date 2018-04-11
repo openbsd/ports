@@ -1,21 +1,36 @@
-$OpenBSD: patch-pdal_util_CMakeLists_txt,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+$OpenBSD: patch-pdal_util_CMakeLists_txt,v 1.2 2018/04/11 07:47:09 landry Exp $
 
 no libdl on OpenBSD
+we dont want to link with execinfo
 
 Index: pdal/util/CMakeLists.txt
 --- pdal/util/CMakeLists.txt.orig
 +++ pdal/util/CMakeLists.txt
-@@ -22,13 +22,6 @@ target_link_libraries(${PDAL_UTIL_LIB_NAME}
+@@ -6,8 +6,6 @@ if(EXISTS)
+     return()
+ endif()
+ 
+-include(${PDAL_CMAKE_DIR}/execinfo.cmake)
+-
+ set(PDAL_UTIL_SOURCES
+     "${PDAL_UTIL_DIR}/Bounds.cpp"
+     "${PDAL_UTIL_DIR}/Charbuf.cpp"
+@@ -19,18 +17,10 @@ set(PDAL_UTIL_SOURCES
+ PDAL_ADD_FREE_LIBRARY(${PDAL_UTIL_LIB_NAME} SHARED ${PDAL_UTIL_SOURCES})
+ target_link_libraries(${PDAL_UTIL_LIB_NAME}
+     PRIVATE
+-        ${EXECINFO_LIBRARY}
+         ${PDAL_BOOST_LIB_NAME}
+ )
  target_include_directories(${PDAL_UTIL_LIB_NAME} PRIVATE
      ${PDAL_VENDOR_DIR}/pdalboost)
- 
+-
 -if (UNIX AND NOT APPLE)
 -    target_link_libraries(${PDAL_UTIL_LIB_NAME}
 -        PRIVATE
 -            dl
 -    )
 -endif()
--
+ 
  set_target_properties(${PDAL_UTIL_LIB_NAME} PROPERTIES
      VERSION "${PDAL_BUILD_VERSION}"
-     SOVERSION "${PDAL_API_VERSION}"
