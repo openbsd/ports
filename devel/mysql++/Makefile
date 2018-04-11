@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.46 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2018/04/11 18:47:26 jasper Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =		C++ API for MySQL
 
-DISTNAME =		mysql++-3.1.0
-REVISION =		7
+DISTNAME =		mysql++-3.2.3
 
-SHARED_LIBS += mysqlpp	4.0	# 3
+SHARED_LIBS += mysqlpp	5.0	# 3
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://tangentsoft.net/mysql++/
+HOMEPAGE =		https://tangentsoft.net/mysql++/
 
 # LPGLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m mysqlclient ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${HOMEPAGE}releases/
+MASTER_SITES =		https://tangentsoft.com/mysqlpp/releases/
 
 LIB_DEPENDS =		databases/mariadb
 
