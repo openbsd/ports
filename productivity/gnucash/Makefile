@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.96 2017/12/17 11:00:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2018/04/11 10:49:59 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.19
+GNOME_VERSION =		2.6.21
 EXTRACT_SUFX =		.tar.bz2
 
+# XXX
+GNOME_VERSION_DOCS =	2.6.20
+
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			gnucash-docs-${GNOME_VERSION}.tar.gz
+			gnucash-docs-${GNOME_VERSION_DOCS}.tar.gz
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
@@ -79,7 +82,7 @@ CONFIGURE_ARGS =	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/
-DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
+DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION_DOCS}
 
 # XXX prefer guile1: guile2 segfaults during build when using dpb(1)
 # XXX make sure guile2 headers are picked up first (over guile1);

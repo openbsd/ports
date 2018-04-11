@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2017/12/17 11:00:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2018/04/11 10:49:59 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -386,6 +386,7 @@ share/glib-2.0/schemas/org.gnucash.dialogs.import.qif.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.reconcile.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.sxs.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.totd.gschema.xml
+share/glib-2.0/schemas/org.gnucash.general.finance-quote.gschema.xml
 share/glib-2.0/schemas/org.gnucash.gschema.xml
 share/glib-2.0/schemas/org.gnucash.history.gschema.xml
 share/glib-2.0/schemas/org.gnucash.warnings.gschema.xml
@@ -1653,6 +1654,7 @@ share/gnome/help/gnucash-help/C/figures/Help_Pref_DateTime.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_General.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_OnlineBanking.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Printing.png
+share/gnome/help/gnucash-help/C/figures/Help_Pref_Quotes.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Register.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_RegisterDefaults.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Reports.png
@@ -1860,6 +1862,8 @@ share/gnucash/accounts/en_GB/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/en_GB/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/en_GB/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/en_GB/uk-vat.gnucash-xea
+share/gnucash/accounts/en_IN/
+share/gnucash/accounts/en_IN/acctchrt_gstindia.gnucash-xea
 share/gnucash/accounts/es_ES/
 share/gnucash/accounts/es_ES/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/es_ES/acctchrt_carloan.gnucash-xea
@@ -2101,9 +2105,13 @@ share/gnucash/accounts/pt_PT/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/ru/
+share/gnucash/accounts/ru/acctchrt_auto.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_autoloan.gnucash-xea
 share/gnucash/accounts/ru/acctchrt_common.gnucash-xea
 share/gnucash/accounts/ru/acctchrt_homeloan.gnucash-xea
 share/gnucash/accounts/ru/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_kids.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_otherloan.gnucash-xea
 share/gnucash/accounts/ru/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/sk/
 share/gnucash/accounts/sk/acctchrt_brokerage.gnucash-xea
