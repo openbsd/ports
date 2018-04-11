@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/17 08:17:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/04/11 07:41:51 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
@@ -243,6 +243,8 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_127.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_128.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_129.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_130.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_131.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_15.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_16.xml

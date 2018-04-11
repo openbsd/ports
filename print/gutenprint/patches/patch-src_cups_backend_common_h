@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_cups_backend_common_h,v 1.1 2017/01/14 17:15:51 ajacoutot Exp $
---- src/cups/backend_common.h.orig	Sat Jan 14 18:07:29 2017
-+++ src/cups/backend_common.h	Sat Jan 14 18:07:44 2017
-@@ -38,6 +38,16 @@
+$OpenBSD: patch-src_cups_backend_common_h,v 1.2 2018/04/11 07:41:51 ajacoutot Exp $
+
+Index: src/cups/backend_common.h
+--- src/cups/backend_common.h.orig
++++ src/cups/backend_common.h
+@@ -39,6 +39,16 @@
  #include <libusb.h>
  #include <arpa/inet.h>
  
