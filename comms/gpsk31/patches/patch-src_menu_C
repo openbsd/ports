@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_menu_C,v 1.1 2018/04/11 18:01:24 jasper Exp $
+
+Index: src/menu.C
+--- src/menu.C.orig
++++ src/menu.C
+@@ -140,7 +140,7 @@ void about_dialog()
+    gtk_window_set_title (GTK_WINDOW (window),
+                         "About GPSK31");
+    label = gtk_label_new ("\nGPSK31 - Linux GTK+ PSK31 Terminal\n" \
+-		          "Version "VERSION" - "DATE"\n\n" \
++		          "Version " VERSION " - " DATE "\n\n" \
+ 			  "DSP Routines by Hansi Reiser, DL9RDZ\n" \
+ 			  "GTK+ GUI by Luc Langehegermann, LX2GT\n" \
+ 			  "GTK+-2.0 porting by Joop Stakenborg, PG4I\n");
