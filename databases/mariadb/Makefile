@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/02/05 10:40:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2018/04/11 19:34:40 naddy Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -67,6 +67,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DWITH_PCRE=bundled \
 		-DWITH_SSL=system \
+		-DCONNECT_WITH_JDBC=Off \
 		-DCONNECT_WITH_LIBXML2=Off
 
 # The Mroonga and TokuDB storage engines do not build at the
