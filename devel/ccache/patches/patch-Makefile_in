@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2018/04/11 13:31:53 sthen Exp $
+
+fix gmake'ism - this port needs to have no dependencies (for USE_CCACHE)
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -98,7 +98,7 @@ ccache$(EXEEXT): $(ccache_objs) $(extra_libs)
+ 	$(CC) $(all_cflags) -o $@ $(ccache_objs) $(LDFLAGS) $(extra_libs) $(LIBS)
+ 
+ ccache.1: doc/ccache.1
+-	cp $< $@
++	cp doc/ccache.1 ccache.1
+ 
+ .PHONY: install
+ install: ccache$(EXEEXT) ccache.1
