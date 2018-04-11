@@ -1,0 +1,19 @@
+$OpenBSD: patch-game_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
+
+Index: game.cpp
+--- game.cpp.orig
++++ game.cpp
+@@ -139,7 +139,12 @@ void Watch::draw()
+     int y = 24;
+     int w, h;
+     font->getSize(s, w, h);
+-    SDL_Rect rect = { x-2, y-2, w+4, h+4 };
++    SDL_Rect rect = {
++        static_cast<Sint16>(x-2),
++        static_cast<Sint16>(y-2),
++        static_cast<Uint16>(w+4),
++        static_cast<Uint16>(h+4)
++    };
+     SDL_FillRect(screen.getSurface(), &rect, 
+             SDL_MapRGB(screen.getSurface()->format, 0, 0, 255));
+     font->draw(x, y, 255,255,255, true, s);

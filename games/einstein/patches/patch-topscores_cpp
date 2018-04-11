@@ -1,0 +1,14 @@
+$OpenBSD: patch-topscores_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
+
+Index: topscores.cpp
+--- topscores.cpp.orig
++++ topscores.cpp
+@@ -122,7 +122,7 @@ ScoresWindow::ScoresWindow(int x, int y, TopScores *sc
+         int w = entryFont.getWidth(s);
+         int c = ((no - 1) == highlight) ? 0 : 255;
+         entryFont.draw(background, 30 - w, pos, 255,255,c, true, s);
+-        SDL_Rect rect = { 40, pos-20, 180, 40 };
++        SDL_Rect rect = { 40, static_cast<Sint16>(pos-20), 180, 40 };
+         SDL_SetClipRect(background, &rect);
+         entryFont.draw(background, 40, pos, 255,255,c, true, e.name);
+         SDL_SetClipRect(background, NULL);

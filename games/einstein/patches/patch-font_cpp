@@ -1,0 +1,26 @@
+$OpenBSD: patch-font_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
+
+Index: font.cpp
+--- font.cpp.orig
++++ font.cpp
+@@ -67,15 +67,15 @@ void Font::draw(SDL_Surface *s, int x, int y, int r, i
+     if (shadow) {
+         SDL_Color color = { 1, 1, 1, 1 };
+         SDL_Surface *surface = TTF_RenderUNICODE_Blended(font, str, color);
+-        SDL_Rect src = { 0, 0, surface->w, surface->h };
+-        SDL_Rect dst = { x+1, y+1, surface->w, surface->h };
++        SDL_Rect src = { 0, 0, static_cast<Uint16>(surface->w), static_cast<Uint16>(surface->h) };
++        SDL_Rect dst = { static_cast<Sint16>(x+1), static_cast<Sint16>(y+1), static_cast<Uint16>(surface->w), static_cast<Uint16>(surface->h) };
+         SDL_BlitSurface(surface, &src, s, &dst);
+         SDL_FreeSurface(surface);
+     }
+-    SDL_Color color = { r, g, b, 0 };
++    SDL_Color color = { static_cast<Uint8>(r), static_cast<Uint8>(g), static_cast<Uint8>(b), 0 };
+     SDL_Surface *surface = TTF_RenderUNICODE_Blended(font, str, color);
+-    SDL_Rect src = { 0, 0, surface->w, surface->h };
+-    SDL_Rect dst = { x, y, surface->w, surface->h };
++    SDL_Rect src = { 0, 0, static_cast<Uint16>(surface->w), static_cast<Uint16>(surface->h) };
++    SDL_Rect dst = { static_cast<Sint16>(x), static_cast<Sint16>(y), static_cast<Uint16>(surface->w), static_cast<Uint16>(surface->h) };
+     SDL_BlitSurface(surface, &src, s, &dst);
+     SDL_FreeSurface(surface);
+ }

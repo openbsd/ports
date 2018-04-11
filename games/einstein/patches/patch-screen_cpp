@@ -1,0 +1,78 @@
+$OpenBSD: patch-screen_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
+
+Index: screen.cpp
+--- screen.cpp.orig
++++ screen.cpp
+@@ -116,8 +116,13 @@ void Screen::hideMouse()
+     }
+ 
+     if (mouseSave) {
+-        SDL_Rect src = { 0, 0, mouseSave->w, mouseSave->h };
+-        SDL_Rect dst = { saveX, saveY, mouseSave->w, mouseSave->h };
++        SDL_Rect src = { 0, 0, static_cast<Uint16>(mouseSave->w), static_cast<Uint16>(mouseSave->h) };
++        SDL_Rect dst = {
++            static_cast<Sint16>(saveX),
++	    static_cast<Sint16>(saveY),
++	    static_cast<Uint16>(mouseSave->w),
++	    static_cast<Uint16>(mouseSave->h)
++        };
+         if (src.w > 0) {
+             SDL_BlitSurface(mouseSave, &src, screen, &dst);
+             addRegionToUpdate(dst.x, dst.y, dst.w, dst.h);
+@@ -141,8 +146,13 @@ void Screen::showMouse()
+         SDL_GetMouseState(&x, &y);
+         saveX = x;
+         saveY = y;
+-        SDL_Rect src = { 0, 0, mouseSave->w, mouseSave->h };
+-        SDL_Rect dst = { x, y, mouseImage->w, mouseImage->h };
++        SDL_Rect src = { 0, 0, static_cast<Uint16>(mouseSave->w), static_cast<Uint16>(mouseSave->h) };
++        SDL_Rect dst = {
++            static_cast<Sint16>(x),
++	    static_cast<Sint16>(y),
++	    static_cast<Uint16>(mouseImage->w),
++	    static_cast<Uint16>(mouseImage->h)
++        };
+         if (src.w > 0) {
+             SDL_BlitSurface(screen, &dst, mouseSave, &src);
+             SDL_BlitSurface(mouseImage, &src, screen, &dst);
+@@ -211,7 +221,7 @@ void Screen::addRegionToUpdate(int x, int y, int w, in
+         h = h + y;
+         y = 0;
+     }
+-    SDL_Rect r = { x, y, w, h };
++    SDL_Rect r = { static_cast<Sint16>(x), static_cast<Sint16>(y), static_cast<Uint16>(w), static_cast<Uint16>(h) };
+     regions.push_back(r);
+ }
+ 
+@@ -255,8 +265,13 @@ void Screen::setPixel(int x, int y, int r, int g, int 
+ 
+ void Screen::draw(int x, int y, SDL_Surface *tile)
+ {
+-    SDL_Rect src = { 0, 0, tile->w, tile->h };
+-    SDL_Rect dst = { x, y, tile->w, tile->h };
++    SDL_Rect src = { 0, 0, static_cast<Uint16>(tile->w), static_cast<Uint16>(tile->h) };
++    SDL_Rect dst = {
++        static_cast<Sint16>(x),
++        static_cast<Sint16>(y),
++        static_cast<Uint16>(tile->w),
++        static_cast<Uint16>(tile->h)
++    };
+     SDL_BlitSurface(tile, &src, screen, &dst);
+ }
+ 
+@@ -301,8 +316,13 @@ SDL_Surface* Screen::createSubimage(int x, int y, int 
+             screen->format->Bmask, screen->format->Amask);
+     if (! s)
+         throw Exception(L"Error creating buffer surface");
+-    SDL_Rect src = { x, y, width, height };
+-    SDL_Rect dst = { 0, 0, width, height };
++    SDL_Rect src = {
++        static_cast<Sint16>(x),
++        static_cast<Sint16>(y),
++        static_cast<Uint16>(width),
++        static_cast<Uint16>(height)
++    };
++    SDL_Rect dst = {0, 0, static_cast<Uint16>(width), static_cast<Uint16>(height) };
+     SDL_BlitSurface(screen, &src, s, &dst);
+     return s;
+ }
