@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/03/07 11:04:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/11 12:26:56 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -12,6 +12,7 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u144b01-bsd-port-20170828

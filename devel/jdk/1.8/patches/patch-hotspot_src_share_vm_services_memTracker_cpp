@@ -1,0 +1,24 @@
+$OpenBSD: patch-hotspot_src_share_vm_services_memTracker_cpp,v 1.1 2018/04/11 12:26:56 sthen Exp $
+
+From https://svnweb.freebsd.org/ports?view=revision&revision=459368
+
+Fix a run-time crash with Clang 6.0.
+Note this problem was introduced with fixes for JDK-8055007.
+
+https://bugs.java.com/view_bug.do?bug_id=8055007
+http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/changeset/c6211b707068
+
+Index: hotspot/src/share/vm/services/memTracker.cpp
+--- hotspot/src/share/vm/services/memTracker.cpp.orig
++++ hotspot/src/share/vm/services/memTracker.cpp
+@@ -67,10 +67,6 @@ NMT_TrackingLevel MemTracker::init_tracking_level() {
+     os::unsetenv(buf);
+   }
+ 
+-  // Construct NativeCallStack::EMPTY_STACK. It may get constructed twice,
+-  // but it is benign, the results are the same.
+-  ::new ((void*)&NativeCallStack::EMPTY_STACK) NativeCallStack(0, false);
+-
+   if (!MallocTracker::initialize(level) ||
+       !VirtualMemoryTracker::initialize(level)) {
+     level = NMT_off;
