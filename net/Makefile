@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1061 2018/04/04 18:58:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1062 2018/04/11 09:54:18 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -38,7 +38,6 @@
      SUBDIR += cadaver
      SUBDIR += cagibi
      SUBDIR += castget
-     SUBDIR += centerim
      SUBDIR += cftp
      SUBDIR += cgo
      SUBDIR += cgterm
