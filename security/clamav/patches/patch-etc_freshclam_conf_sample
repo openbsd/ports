@@ -1,6 +1,7 @@
-$OpenBSD: patch-etc_freshclam_conf_sample,v 1.1 2013/09/20 15:23:01 sthen Exp $
---- etc/freshclam.conf.sample.orig	Mon Sep 16 20:28:14 2013
-+++ etc/freshclam.conf.sample	Fri Sep 20 15:27:54 2013
+$OpenBSD: patch-etc_freshclam_conf_sample,v 1.2 2018/04/11 21:35:58 sthen Exp $
+Index: etc/freshclam.conf.sample
+--- etc/freshclam.conf.sample.orig
++++ etc/freshclam.conf.sample
 @@ -10,7 +10,7 @@ Example
  # Path to the database directory.
  # WARNING: It must match clamd.conf's directive!
@@ -19,5 +20,5 @@ $OpenBSD: patch-etc_freshclam_conf_sample,v 1.1 2013/09/20 15:23:01 sthen Exp $
 +# Default: _clamav (may depend on installation options)
 +#DatabaseOwner _clamav
  
- # Initialize supplementary group access (freshclam must be started by root).
- # Default: no
+ # Use DNS to verify virus database version. Freshclam uses DNS TXT records
+ # to verify database and software versions. With this directive you can change
