@@ -1,0 +1,23 @@
+$OpenBSD: patch-hotspot_src_cpu_x86_vm_vtableStubs_x86_32_cpp,v 1.1 2018/04/11 17:03:12 sthen Exp $
+
+Index: hotspot/src/cpu/x86/vm/vtableStubs_x86_32.cpp
+--- hotspot/src/cpu/x86/vm/vtableStubs_x86_32.cpp.orig
++++ hotspot/src/cpu/x86/vm/vtableStubs_x86_32.cpp
+@@ -117,7 +117,7 @@ VtableStub* VtableStubs::create_vtable_stub(int vtable
+   masm->flush();
+ 
+   if (PrintMiscellaneous && (WizardMode || Verbose)) {
+-    tty->print_cr("vtable #%d at "PTR_FORMAT"[%d] left over: %d",
++    tty->print_cr("vtable #%d at " PTR_FORMAT "[%d] left over: %d",
+                   vtable_index, p2i(s->entry_point()),
+                   (int)(s->code_end() - s->entry_point()),
+                   (int)(s->code_end() - __ pc()));
+@@ -198,7 +198,7 @@ VtableStub* VtableStubs::create_itable_stub(int itable
+   masm->flush();
+ 
+   if (PrintMiscellaneous && (WizardMode || Verbose)) {
+-    tty->print_cr("itable #%d at "PTR_FORMAT"[%d] left over: %d",
++    tty->print_cr("itable #%d at " PTR_FORMAT "[%d] left over: %d",
+                   itable_index, p2i(s->entry_point()),
+                   (int)(s->code_end() - s->entry_point()),
+                   (int)(s->code_end() - __ pc()));
