@@ -1,4 +1,4 @@
 SHA256 (LLDP-MIB-200505060000Z.txt) = 9vbR8AYyv8zeSvq8b9fZT7R/opZl2d8XXO1gtQnndpU=
-SHA256 (lldpd-0.9.9.tar.gz) = Xp4I9QDSE3ZjHLyfjhmksWfNOOstj9nmYLjoBQf4Ats=
+SHA256 (lldpd-1.0.1.tar.gz) = RQtiKqx64XWPHvgvO3uU7Efy/zOr+w5qyCVVue5V8VE=
 SIZE (LLDP-MIB-200505060000Z.txt) = 77317
-SIZE (lldpd-0.9.9.tar.gz) = 1615627
+SIZE (lldpd-1.0.1.tar.gz) = 1590903

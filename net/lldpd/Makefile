@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.35 2018/04/11 13:39:45 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
-DISTNAME=	lldpd-0.9.9
+DISTNAME=	lldpd-1.0.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		LLDP-MIB-200505060000Z.txt:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-REVISION=	0
 
 SHARED_LIBS +=	lldpctl                   2.2 # 11.0
 
@@ -53,7 +52,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-snmp
 LIB_DEPENDS+=		net/net-snmp
 WANTLIB += netsnmp netsnmpagent netsnmpmibs
-WANTLIB += crypto kvm m perl util
+WANTLIB += crypto kvm m perl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs/
