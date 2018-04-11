@@ -1,0 +1,14 @@
+$OpenBSD: patch-jruby-launcher_argparser_cpp,v 1.1 2018/04/11 15:26:18 naddy Exp $
+
+Index: jruby-launcher/argparser.cpp
+--- jruby-launcher/argparser.cpp.orig
++++ jruby-launcher/argparser.cpp
+@@ -132,7 +132,7 @@ bool ArgParser::initPlatformDir() {
+ 
+     if (getenv("JRUBY_HOME") != NULL) {
+         logMsg("initPlatformDir: using JRUBY_HOME environment variable");
+-        char sep[2] = { FILE_SEP, NULL };
++        char sep[2] = { FILE_SEP, 0 };
+         strncpy(path, getenv("JRUBY_HOME"), PATH_MAX - 11);
+         strncpy(path + strlen(path), sep, 1);
+         strncpy(path + strlen(path), "bin", 3);
