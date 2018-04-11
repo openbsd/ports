@@ -1,0 +1,19 @@
+$OpenBSD: patch-stream_stream_h,v 1.1 2018/04/11 12:01:23 naddy Exp $
+
+Index: stream/stream.h
+--- stream/stream.h.orig
++++ stream/stream.h
+@@ -318,11 +318,11 @@ static inline int64_t stream_tell(stream_t *s)
+ static inline int stream_seek(stream_t *s, int64_t pos)
+ {
+ 
+-  mp_dbg(MSGT_DEMUX, MSGL_DBG3, "seek to 0x%"PRIX64"\n", pos);
++  mp_dbg(MSGT_DEMUX, MSGL_DBG3, "seek to 0x%" PRIX64 "\n", pos);
+ 
+   if (pos < 0) {
+     mp_msg(MSGT_DEMUX, MSGL_ERR,
+-           "Invalid seek to negative position %"PRIx64"!\n", pos);
++           "Invalid seek to negative position %" PRIx64 "!\n", pos);
+     pos = 0;
+   }
+   if (s->buf_len == 0 && s->pos == pos)
