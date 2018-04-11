@@ -1,0 +1,16 @@
+$OpenBSD: patch-hotspot_src_share_vm_memory_tenuredGeneration_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/memory/tenuredGeneration.cpp
+--- hotspot/src/share/vm/memory/tenuredGeneration.cpp.orig
++++ hotspot/src/share/vm/memory/tenuredGeneration.cpp
+@@ -294,8 +294,8 @@ bool TenuredGeneration::promotion_attempt_is_safe(size
+   bool   res = (available >= av_promo) || (available >= max_promotion_in_bytes);
+   if (PrintGC && Verbose) {
+     gclog_or_tty->print_cr(
+-      "Tenured: promo attempt is%s safe: available("SIZE_FORMAT") %s av_promo("SIZE_FORMAT"),"
+-      "max_promo("SIZE_FORMAT")",
++      "Tenured: promo attempt is%s safe: available(" SIZE_FORMAT ") %s av_promo(" SIZE_FORMAT "),"
++      "max_promo(" SIZE_FORMAT ")",
+       res? "":" not", available, res? ">=":"<",
+       av_promo, max_promotion_in_bytes);
+   }

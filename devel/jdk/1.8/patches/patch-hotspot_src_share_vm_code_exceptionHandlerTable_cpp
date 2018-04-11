@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_code_exceptionHandlerTable_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/code/exceptionHandlerTable.cpp
+--- hotspot/src/share/vm/code/exceptionHandlerTable.cpp.orig
++++ hotspot/src/share/vm/code/exceptionHandlerTable.cpp
+@@ -186,7 +186,7 @@ uint ImplicitExceptionTable::at( uint exec_off ) const
+ void ImplicitExceptionTable::print(address base) const {
+   tty->print("{");
+   for( uint i=0; i<len(); i++ )
+-    tty->print("< "INTPTR_FORMAT", "INTPTR_FORMAT" > ",base + *adr(i), base + *(adr(i)+1));
++    tty->print("< " INTPTR_FORMAT ", " INTPTR_FORMAT " > ",base + *adr(i), base + *(adr(i)+1));
+   tty->print_cr("}");
+ }
+ 

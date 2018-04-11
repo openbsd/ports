@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_compiler_disassembler_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/compiler/disassembler.cpp
+--- hotspot/src/share/vm/compiler/disassembler.cpp.orig
++++ hotspot/src/share/vm/compiler/disassembler.cpp
+@@ -60,7 +60,7 @@ bool        Disassembler::_tried_to_load_library = fal
+ Disassembler::decode_func_virtual Disassembler::_decode_instructions_virtual = NULL;
+ Disassembler::decode_func Disassembler::_decode_instructions = NULL;
+ 
+-static const char hsdis_library_name[] = "hsdis-"HOTSPOT_LIB_ARCH;
++static const char hsdis_library_name[] = "hsdis-" HOTSPOT_LIB_ARCH;
+ static const char decode_instructions_virtual_name[] = "decode_instructions_virtual";
+ static const char decode_instructions_name[] = "decode_instructions";
+ static bool use_new_version = true;

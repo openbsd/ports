@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_memory_referenceProcessor_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/memory/referenceProcessor.cpp
+--- hotspot/src/share/vm/memory/referenceProcessor.cpp.orig
++++ hotspot/src/share/vm/memory/referenceProcessor.cpp
+@@ -161,7 +161,7 @@ void ReferenceProcessor::update_soft_ref_master_clock(
+ 
+   NOT_PRODUCT(
+   if (now < _soft_ref_timestamp_clock) {
+-    warning("time warp: "INT64_FORMAT" to "INT64_FORMAT,
++    warning("time warp: " INT64_FORMAT " to " INT64_FORMAT,
+             _soft_ref_timestamp_clock, now);
+   }
+   )

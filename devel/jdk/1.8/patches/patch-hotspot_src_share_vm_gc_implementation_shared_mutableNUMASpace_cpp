@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_gc_implementation_shared_mutableNUMASpace_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
+--- hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp.orig
++++ hotspot/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
+@@ -86,7 +86,7 @@ void MutableNUMASpace::ensure_parsability() {
+         while (words_left_to_fill > 0) {
+           size_t words_to_fill = MIN2(words_left_to_fill, CollectedHeap::filler_array_max_size());
+           assert(words_to_fill >= CollectedHeap::min_fill_size(),
+-            err_msg("Remaining size ("SIZE_FORMAT ") is too small to fill (based on " SIZE_FORMAT " and " SIZE_FORMAT ")",
++            err_msg("Remaining size (" SIZE_FORMAT ") is too small to fill (based on " SIZE_FORMAT " and " SIZE_FORMAT ")",
+             words_to_fill, words_left_to_fill, CollectedHeap::filler_array_max_size()));
+           CollectedHeap::fill_with_object((HeapWord*)cur_top, words_to_fill);
+           if (!os::numa_has_static_binding()) {

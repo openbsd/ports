@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_code_compiledIC_cpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/code/compiledIC.cpp
+--- hotspot/src/share/vm/code/compiledIC.cpp.orig
++++ hotspot/src/share/vm/code/compiledIC.cpp
+@@ -222,7 +222,7 @@ bool CompiledIC::set_to_megamorphic(CallInfo* call_inf
+     assert(bytecode == Bytecodes::_invokeinterface, "");
+     int itable_index = call_info->itable_index();
+     entry = VtableStubs::find_itable_stub(itable_index);
+-    if (entry == false) {
++    if (entry == NULL) {
+       return false;
+     }
+ #ifdef ASSERT

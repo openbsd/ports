@@ -1,0 +1,14 @@
+$OpenBSD: patch-hotspot_src_share_vm_utilities_vmError_hpp,v 1.1 2018/04/11 12:25:59 sthen Exp $
+
+Index: hotspot/src/share/vm/utilities/vmError.hpp
+--- hotspot/src/share/vm/utilities/vmError.hpp.orig
++++ hotspot/src/share/vm/utilities/vmError.hpp
+@@ -34,7 +34,7 @@ class VMError : public StackObj {
+   friend class VM_ReportJavaOutOfMemory;
+   friend class Decoder;
+ 
+-  int          _id;          // Solaris/Linux signals: 0 - SIGRTMAX
++  unsigned int          _id; // Solaris/Linux signals: 0 - SIGRTMAX
+                              // Windows exceptions: 0xCxxxxxxx system errors
+                              //                     0x8xxxxxxx system warnings
+ 
