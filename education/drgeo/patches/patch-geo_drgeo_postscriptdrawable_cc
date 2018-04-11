@@ -1,0 +1,14 @@
+$OpenBSD: patch-geo_drgeo_postscriptdrawable_cc,v 1.1 2018/04/11 20:30:32 naddy Exp $
+
+Index: geo/drgeo_postscriptdrawable.cc
+--- geo/drgeo_postscriptdrawable.cc.orig
++++ geo/drgeo_postscriptdrawable.cc
+@@ -109,7 +109,7 @@ drgeoPostScriptDrawable (const gchar * name, drgeoFigu
+ 
+   /* insert encoding definition */
+   if (!(fileEncode = fopen (DRGEO_ENCODEDIR "/latin1.ps", "r")))
+-    g_printerr ("Can't open encode file "DRGEO_ENCODEDIR "/latin1.ps\n");
++    g_printerr ("Can't open encode file " DRGEO_ENCODEDIR "/latin1.ps\n");
+  else
+    {
+      while (fgets (line, 500, fileEncode))
