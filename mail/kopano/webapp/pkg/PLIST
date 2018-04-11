@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/05 19:52:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/11 10:49:57 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -3224,6 +3224,8 @@ kopano-webapp/server/includes/core/class.webappsession.php
 kopano-webapp/server/includes/core/constants.php
 kopano-webapp/server/includes/core/htmlfilter.php
 kopano-webapp/server/includes/download_attachment.php
+kopano-webapp/server/includes/download_base.php
+kopano-webapp/server/includes/download_contact.php
 kopano-webapp/server/includes/download_message.php
 kopano-webapp/server/includes/exceptions/
 kopano-webapp/server/includes/exceptions/class.BusException.php
