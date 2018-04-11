@@ -1,29 +1,33 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/11 12:59:00 sthen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-VERSION=		1.7.4
+VERSION=		1.7.6
 DISTNAME=		synergy-${VERSION}
 CATEGORIES=		net x11
 
-GH_ACCOUNT=		synergy
-GH_PROJECT=		synergy
+GH_ACCOUNT=		symless
+GH_PROJECT=		synergy-core
 GH_TAGNAME=		v${VERSION}-stable
-REVISION=		0
 
 HOMEPAGE=		http://synergy-foss.org/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
-			c curl m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xi Xinerama Xrandr
+WANTLIB += Xtst c curl m
 
 LIB_DEPENDS=		net/curl
 
 MODULES=		devel/cmake
 
 NO_TEST=		Yes
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=		-std=c++03
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cds] ${PREFIX}/bin/
