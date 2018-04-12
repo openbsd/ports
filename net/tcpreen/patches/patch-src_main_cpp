@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_cpp,v 1.1 2018/04/12 08:00:55 sthen Exp $
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -108,8 +108,8 @@ version (void)
+ # define VERSION "unknown version"
+ #endif
+ 	puts (
+-"TCP re-engineering tool "VERSION" ("PACKAGE_HOST")\n"
+-" built "__DATE__" on "PACKAGE_BUILD_HOSTNAME" ("PACKAGE_BUILD")\n"
++"TCP re-engineering tool " VERSION " (" PACKAGE_HOST ")\n"
++" built " __DATE__ " on " PACKAGE_BUILD_HOSTNAME " (" PACKAGE_BUILD ")\n"
+ "Copyright (C) 2002-2004 Remi Denis-Courmont");
+ 	puts (_(
+ "This is free software; see the source for copying conditions.\n"
