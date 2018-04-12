@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1724 2018/04/07 10:58:23 ajacoutot Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1725 2018/04/12 07:54:09 pvk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1430,6 +1430,8 @@
      SUBDIR += py-monotonic
      SUBDIR += py-monotonic,python3
      SUBDIR += py-monthdelta
+     SUBDIR += py-more-itertools
+     SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox
      SUBDIR += py-munch
      SUBDIR += py-munch,python3
