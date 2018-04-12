@@ -1,0 +1,14 @@
+$OpenBSD: patch-dronesource_cc,v 1.1 2018/04/12 17:55:08 jasper Exp $
+
+Index: dronesource.cc
+--- dronesource.cc.orig
++++ dronesource.cc
+@@ -58,7 +58,7 @@ int DroneSource::OpenSource() {
+     local_sock.sin_addr.s_addr = htonl(INADDR_ANY);
+     local_sock.sin_port = htons(0);
+ 
+-    if (bind(drone_fd, (struct sockaddr *) &local_sock, sizeof(local_sock)) < 0) {
++    if (::bind(drone_fd, (struct sockaddr *) &local_sock, sizeof(local_sock)) < 0) {
+         snprintf(errstr, 1024, "bind() failed %d (%s)\n", errno, strerror(errno));
+         return (-3);
+     }

@@ -1,0 +1,23 @@
+$OpenBSD: patch-tcpclient_cc,v 1.3 2018/04/12 17:55:08 jasper Exp $
+
+Index: tcpclient.cc
+--- tcpclient.cc.orig
++++ tcpclient.cc
+@@ -129,7 +129,7 @@ int TcpClient::Connect(short int in_port, char *in_hos
+     local_sock.sin_addr.s_addr = htonl(INADDR_ANY);
+     local_sock.sin_port = htons(0);
+ 
+-    if (bind(client_fd, (struct sockaddr *) &local_sock, sizeof(local_sock)) < 0) {
++    if (::bind(client_fd, (struct sockaddr *) &local_sock, sizeof(local_sock)) < 0) {
+         snprintf(errstr, 1024, "FATAL: TcpClient bind() failed %d (%s)\n",
+                  errno, strerror(errno));
+         return (-3);
+@@ -408,7 +408,7 @@ int TcpClient::ParseData(char *in_data) {
+ 						 "%d %d %d %d %d %d %d %d %d %hd.%hd.%hd.%hd "
+ 						 "%d %f %f %f %f %f %f %f %f %d %d %d %f %d %d %d %d %d %d %d %d"
+ 						 "%f %f %f %lf %lf %lf %ld %ld"
+-						 "%d %d %d %d %d %d %d %d %"PRId64"",
++						 "%d %d %d %d %d %d %d %d %" PRId64 "",
+ 						 &tmptype, ssid, beaconstr,
+ 						 &llc_packets, &data_packets, &crypt_packets, 
+ 						 &interesting_packets, &channel, &crypt_set, 

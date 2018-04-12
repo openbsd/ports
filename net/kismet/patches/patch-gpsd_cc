@@ -1,0 +1,14 @@
+$OpenBSD: patch-gpsd_cc,v 1.1 2018/04/12 17:55:08 jasper Exp $
+
+Index: gpsd.cc
+--- gpsd.cc.orig
++++ gpsd.cc
+@@ -93,7 +93,7 @@ int GPSD::OpenGPSD() {
+     localaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+     localaddr.sin_port = htons(0);
+ 
+-    if (bind(sock, (struct sockaddr *) &localaddr, sizeof(localaddr)) < 0) {
++    if (::bind(sock, (struct sockaddr *) &localaddr, sizeof(localaddr)) < 0) {
+         snprintf(errstr, 1024, "GPSD cannot bind port: %s", strerror(errno));
+ 		CloseGPSD();
+         return -1;

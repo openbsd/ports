@@ -1,8 +1,17 @@
-$OpenBSD: patch-tcpserver_cc,v 1.3 2017/05/17 16:03:32 espie Exp $
+$OpenBSD: patch-tcpserver_cc,v 1.4 2018/04/12 17:55:08 jasper Exp $
 
 Index: tcpserver.cc
 --- tcpserver.cc.orig
 +++ tcpserver.cc
+@@ -86,7 +86,7 @@ int TcpServer::Setup(unsigned int in_max_clients, stri
+ 
+     // Bind the named socket
+     // Debug("Server::Setup calling bind()");
+-    if (bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
++    if (::bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
+         snprintf(errstr, 1024, "TcpServer bind() failed: %s", strerror(errno));
+         return (-5);
+     }
 @@ -567,7 +567,7 @@ int TcpServer::SendMainProtocols(int in_fd, int in_ref
      return SendToClient(in_fd, in_ref, (void *) &protocol_map);
  }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_protocols_cc,v 1.1 2017/05/17 16:03:32 espie Exp $
+$OpenBSD: patch-server_protocols_cc,v 1.2 2018/04/12 17:55:08 jasper Exp $
 
 Index: server_protocols.cc
 --- server_protocols.cc.orig
@@ -130,3 +130,12 @@ Index: server_protocols.cc
      "interface", "type", "username", "channel", "id", "packets", "hopping",
      NULL
  };
+@@ -523,7 +523,7 @@ void Protocol_Network2Data(const wireless_network *net
+     snprintf(tmpstr, 128, "%d", net->dupeiv_packets);
+     data->ndvec.push_back(tmpstr);
+ 
+-    snprintf(tmpstr, 128, "%"PRId64"", net->bss_timestamp);
++    snprintf(tmpstr, 128, "%" PRId64 "", net->bss_timestamp);
+     data->ndvec.push_back(tmpstr);
+ 
+ }
