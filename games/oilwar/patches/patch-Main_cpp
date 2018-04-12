@@ -1,6 +1,7 @@
-$OpenBSD: patch-Main_cpp,v 1.1 2003/04/15 13:17:59 wilfried Exp $
---- Main.cpp.orig	Wed Apr  2 10:57:33 2003
-+++ Main.cpp	Mon Apr 14 11:54:54 2003
+$OpenBSD: patch-Main_cpp,v 1.2 2018/04/12 08:12:05 sthen Exp $
+Index: Main.cpp
+--- Main.cpp.orig
++++ Main.cpp
 @@ -60,6 +60,8 @@ int GunChannel = 1;
  Mix_Chunk *pRicochetSound = NULL;
  Mix_Chunk *pExplosionSound = NULL;
@@ -165,3 +166,48 @@ $OpenBSD: patch-Main_cpp,v 1.1 2003/04/15 13:17:59 wilfried Exp $
  			#endif
  		}
  	}
+@@ -919,7 +955,7 @@ void RenderCrosshair (void)
+ 	// Get cursor position
+ 	SDL_GetMouseState (&x, &y);
+ 	
+-	SDL_Rect dstRect = {x - 10, y - 10, 0, 0};
++	SDL_Rect dstRect = {static_cast<Sint16>(x - 10), static_cast<Sint16>(y - 10), 0, 0};
+ 	
+ 	if ( InGrenadeRange (x, y) && GrenadeAmmo > 0 )
+ 		SDL_BlitSurface (pBitmaps, &Crosshair2Rect, pScreen, &dstRect);
+@@ -933,7 +969,7 @@ void RenderCrosshair (void)
+ //------------------------------------------------------------------------------
+ void BloodDecal (Uint16 x, Uint16 y)
+ {
+-	SDL_Rect dstRect = {x, y + 5, 0, 0};
++	SDL_Rect dstRect = {static_cast<Sint16>(x), static_cast<Sint16>(y + 5), 0, 0};
+ 	SDL_BlitSurface (pBitmaps, &BloodDecalRect, pBackground, &dstRect);
+ }
+ //==============================================================================
+@@ -943,7 +979,7 @@ void BloodDecal (Uint16 x, Uint16 y)
+ //------------------------------------------------------------------------------
+ void ExplosionDecal (Uint16 x, Uint16 y)
+ {
+-	SDL_Rect dstRect = {x + 5, y + 10, 0, 0};
++	SDL_Rect dstRect = {static_cast<Sint16>(x + 5), static_cast<Sint16>(y + 10), 0, 0};
+ 	SDL_BlitSurface (pBitmaps, &ExplosionDecalRect, pBackground, &dstRect);
+ }
+ //==============================================================================
+@@ -953,7 +989,7 @@ void ExplosionDecal (Uint16 x, Uint16 y)
+ //------------------------------------------------------------------------------
+ void GrenadeDecal (Uint16 x, Uint16 y)
+ {
+-	SDL_Rect dstRect = {x - 6, y - 5, 0, 0};
++	SDL_Rect dstRect = {static_cast<Sint16>(x - 6), static_cast<Sint16>(y - 5), 0, 0};
+ 	SDL_BlitSurface (pBitmaps, &GrenadeDecalRect, pBackground, &dstRect);
+ }
+ //==============================================================================
+@@ -963,7 +999,7 @@ void GrenadeDecal (Uint16 x, Uint16 y)
+ //------------------------------------------------------------------------------
+ void SandDecal (Uint16 x, Uint16 y)
+ {
+-	SDL_Rect dstRect = {x - 2, y - 4, 0, 0};
++	SDL_Rect dstRect = {static_cast<Sint16>(x - 2), static_cast<Sint16>(y - 4), 0, 0};
+ 	SDL_BlitSurface (pBitmaps, &SandDecalRect, pBackground, &dstRect);
+ }
+ //==============================================================================
