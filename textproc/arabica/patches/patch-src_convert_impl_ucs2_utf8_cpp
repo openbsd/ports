@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_convert_impl_ucs2_utf8_cpp,v 1.1 2018/04/12 18:10:38 jasper Exp $
+
+error: constant expression evaluates to -16 which cannot be narrowed to type 'unsigned char'
+
+Index: src/convert/impl/ucs2_utf8.cpp
+--- src/convert/impl/ucs2_utf8.cpp.orig
++++ src/convert/impl/ucs2_utf8.cpp
+@@ -20,9 +20,9 @@ namespace {
+ 
+   static const Tab tab[] =
+   {
+-    { char(0x80),  char(0x00),   0*6,    0x7F,   },   // 1 byte sequence
+-    { char(0xE0),  char(0xC0),   1*6,    0x7FF,  },   // 2 byte sequence
+-    { char(0xF0),  char(0xE0),   2*6,    0xFFFF, },   // 3 byte sequence
++    { static_cast<unsigned char>(0x80),  static_cast<unsigned char>(0x00),   0*6,    0x7F,   },   // 1 byte sequence
++    { static_cast<unsigned char>(0xE0),  static_cast<unsigned char>(0xC0),   1*6,    0x7FF,  },   // 2 byte sequence
++    { static_cast<unsigned char>(0xF0),  static_cast<unsigned char>(0xE0),   2*6,    0xFFFF, },   // 3 byte sequence
+     { 0,           0,            0,      0,      }    // end of table
+   };
+ } // namespace 
