@@ -1,0 +1,26 @@
+$OpenBSD: patch-main_C,v 1.1 2018/04/12 17:52:47 jasper Exp $
+
+error: case value evaluates to -1, which cannot be narrowed to type 'size_t' (aka 'unsigned long')
+
+Index: main.C
+--- main.C.orig
++++ main.C
+@@ -1052,10 +1052,6 @@ DaemonInit(unsigned int displayNum)
+       CERR << "Found empty pidfile " << lockfilename
+ 	<< ".  Overriding." << ENDL;
+       break;
+-    case -1:
+-      CERR << "Error reading from old pidfile " << lockfilename
+-	<< ".  Overriding." << ENDL;
+-      break;
+     default:
+       // Do a sanity check on the returned data
+       if (!isdigit((int) ((unsigned char) oldpid[0])))
+@@ -1125,7 +1121,6 @@ KillDaemon(unsigned int displayNum)
+     switch (fread(pid, 1, sizeof(pid), pidfile))
+     {
+     case 0:
+-    case -1:
+       CERR << "Error reading pid from " << lockfilename << ENDL
+ 	<< "You will have to manually kill the daemon." << ENDL;
+ 
