@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_hex_puzzzle_cpp,v 1.1 2018/04/12 08:37:09 sthen Exp $
+
+Index: src/hex_puzzzle.cpp
+--- src/hex_puzzzle.cpp.orig
++++ src/hex_puzzzle.cpp
+@@ -340,7 +340,7 @@ void MakeTileInfo()
+ {
+ 	for (int i=0; i<140; i++)
+ 	{
+-		SDL_Rect r = {(i%10)*GFX_SIZE, ((i/10)%7)*GFX_SIZE, GFX_SIZE, GFX_SIZE};
++		SDL_Rect r = {static_cast<Sint16>((i%10)*GFX_SIZE), static_cast<Sint16>(((i/10)%7)*GFX_SIZE), GFX_SIZE, GFX_SIZE};
+ 		short * outOffset = tileOffset[i/70][i%70];
+ 		SDL_Surface * im = (i/70) ? tileGraphicsR : tileGraphics;
+ 
+@@ -684,7 +684,7 @@ class WorldRenderer (public)
+ void RenderTile(bool reflect, int t, int x, int y, int cliplift)
+ {
+ 	SDL_Rect src = tile[reflect][t];
+-	SDL_Rect dst = {x-scrollX-GFX_SIZE/2, y-scrollY-GFX_SIZE+TILE_H1, 0, 0};
++	SDL_Rect dst = {static_cast<Sint16>(x-scrollX-GFX_SIZE/2), static_cast<Sint16>(y-scrollY-GFX_SIZE+TILE_H1), 0, 0};
+ 	dst.x += tileOffset[reflect][t][0];
+ 	dst.y += tileOffset[reflect][t][1];
+ 	if (reflect)
+@@ -722,8 +722,8 @@ void RenderGirl(bool reflect, int r, int frame, int x,
+ 		y += TILE_H_REFLECT_OFFSET+20+h, sy += 80;
+ 	else
+ 		y -= h;
+-	SDL_Rect src = {sx, sy, 64, 80};
+-	SDL_Rect dst = {x-scrollX-32, y-scrollY-65, 0, 0};
++	SDL_Rect src = {static_cast<Sint16>(sx), static_cast<Sint16>(sy), 64, 80};
++	SDL_Rect dst = {static_cast<Sint16>(x-scrollX-32), static_cast<Sint16>(y-scrollY-65), 0, 0};
+ 	SDL_BlitSurface(girlGraphics, &src, screen, &dst);
+ }
+ 
+@@ -2492,8 +2492,8 @@ struct HexPuzzle : public State
+ 	{
+ 		if (!activeMenu || activeMenu->renderBG)
+ 		{
+-			SDL_Rect src  = {0,0,screen->w,screen->h};
+-			SDL_Rect dst  = {0,0,screen->w,screen->h};
++			SDL_Rect src  = {static_cast<Sint16>(0),static_cast<Sint16>(0),static_cast<Uint16>(screen->w),static_cast<Uint16>(screen->h)};
++			SDL_Rect dst  = {static_cast<Sint16>(0),static_cast<Sint16>(0),static_cast<Uint16>(screen->w),static_cast<Uint16>(screen->h)};
+ 			if (isRenderMap)
+ 			{
+ 				int boundW = mapBG->w;
+@@ -2633,7 +2633,7 @@ struct HexPuzzle : public State
+ 					p = mousep;
+ 				int pad = SCREEN_W/80;
+ 	//			SDL_Rect src = {0, 0, uiGraphics->w, uiGraphics->h};
+-				SDL_Rect dst = {pad, SCREEN_H-TILE_H2-pad, 0, 0};
++				SDL_Rect dst = {static_cast<Sint16>(pad), static_cast<Sint16>(SCREEN_H-TILE_H2-pad), 0, 0};
+ 		//		dst.x = p.getScreenX() + TILE_W3/2 - scrollX;
+ 		//		dst.y = p.getScreenY() - src.h/2 - scrollY;
+ 				dst.x = p.getScreenX() - scrollX;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_text_cpp,v 1.1 2018/04/12 08:37:09 sthen Exp $
+
+Index: src/text.cpp
+--- src/text.cpp.orig
++++ src/text.cpp
+@@ -95,7 +95,7 @@ static void TextPrintUTF8(int x, int y, const char* st
+ {
+ 	SDL_Color fg = { 255, 255, 255, 255 };
+ 	SDL_Surface* surface = TTF_RenderUTF8_Blended (font, str, fg);
+-	SDL_Rect dst = {x, y, 1, 1};
++	SDL_Rect dst = {static_cast<Sint16>(x), static_cast<Sint16>(y), 1, 1};
+ 	SDL_BlitSurface(surface, NULL, screen, &dst);
+ 	SDL_FreeSurface(surface);
+ }
+@@ -107,7 +107,7 @@ static void TextPrintRAW(int x, int y, const char* str
+ 	ConvertToUTF8(str, tmp, 5000);
+ 	SDL_Color fg = { 255, 255, 255, 255 };
+ 	SDL_Surface* surface = TTF_RenderUTF8_Blended (font, tmp, fg);
+-	SDL_Rect dst = {x, y, 1, 1};
++	SDL_Rect dst = {static_cast<Sint16>(x), static_cast<Sint16>(y), 1, 1};
+ 	SDL_BlitSurface(surface, NULL, screen, &dst);
+ 	SDL_FreeSurface(surface);
+ }
