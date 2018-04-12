@@ -1,0 +1,16 @@
+$OpenBSD: patch-pan_general_string-view_h,v 1.1 2018/04/12 18:10:27 jasper Exp $
+
+https://svnweb.freebsd.org/ports/head/news/pan/files/patch-c%2B%2B11?revision=458276&view=markup
+
+Index: pan/general/string-view.h
+--- pan/general/string-view.h.orig
++++ pan/general/string-view.h
+@@ -95,7 +95,7 @@ namespace pan
+          std::string to_string () const {return empty()
+                                          ? std::string()
+                                          : std::string(str,str+len); }
+-         operator const std::string () const { return to_string(); }
++         operator std::string () const { return to_string(); }
+ 
+          StringView substr (const char * start, const char * end) const;
+          void substr (const char * start, const char * end, StringView& setme) const;
