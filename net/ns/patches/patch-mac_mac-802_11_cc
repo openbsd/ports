@@ -1,0 +1,23 @@
+$OpenBSD: patch-mac_mac-802_11_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: mac/mac-802_11.cc
+--- mac/mac-802_11.cc.orig
++++ mac/mac-802_11.cc
+@@ -327,7 +327,7 @@ void Mac802_11::trace_event(char *eventtype, Packet *p
+         //struct hdr_cmn *ch = HDR_CMN(p);
+ 	
+ 	if(wrk != 0) {
+-		sprintf(wrk, "E -t "TIME_FORMAT" %s %2x ",
++		sprintf(wrk, "E -t " TIME_FORMAT " %s %2x ",
+ 			et_->round(Scheduler::instance().clock()),
+                         eventtype,
+                         //ETHER_ADDR(dh->dh_sa)
+@@ -335,7 +335,7 @@ void Mac802_11::trace_event(char *eventtype, Packet *p
+                         );
+         }
+         if(nwrk != 0) {
+-                sprintf(nwrk, "E -t "TIME_FORMAT" %s %2x ",
++                sprintf(nwrk, "E -t " TIME_FORMAT " %s %2x ",
+                         et_->round(Scheduler::instance().clock()),
+                         eventtype,
+                         //ETHER_ADDR(dh->dh_sa)

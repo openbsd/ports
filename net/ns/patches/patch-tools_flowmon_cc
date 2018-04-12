@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_flowmon_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: tools/flowmon.cc
+--- tools/flowmon.cc.orig
++++ tools/flowmon.cc
+@@ -166,8 +166,8 @@ Tagger::fformat(Flow* f)
+ {
+         double now = Scheduler::instance().clock();
+         sprintf(wrk_, "%8.3f %d %d %d %d %d %d "
+-		STRTOI64_FMTSTR" "STRTOI64_FMTSTR" %d %d "
+-		STRTOI64_FMTSTR" "STRTOI64_FMTSTR" %d %d %d %d %d %d %d",
++		STRTOI64_FMTSTR " " STRTOI64_FMTSTR " %d %d "
++		STRTOI64_FMTSTR " " STRTOI64_FMTSTR " %d %d %d %d %d %d %d",
+                 now,            // 1: time
+                 f->flowid(),    // 2: flowid
+                 0,              // 3: category

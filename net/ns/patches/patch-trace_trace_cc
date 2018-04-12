@@ -1,0 +1,107 @@
+$OpenBSD: patch-trace_trace_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: trace/trace.cc
+--- trace/trace.cc.orig
++++ trace/trace.cc
+@@ -163,17 +163,17 @@ void Trace::annotate(const char* s)
+ {
+ 	if (pt_->tagged()) {
+ 		sprintf(pt_->buffer(),
+-			"v "TIME_FORMAT" -e {sim_annotation %g %s}",
++			"v " TIME_FORMAT " -e {sim_annotation %g %s}",
+ 			Scheduler::instance().clock(), 
+ 			Scheduler::instance().clock(), s);
+ 	} else {
+ 		sprintf(pt_->buffer(),
+-			"v "TIME_FORMAT" eval {set sim_annotation {%s}}", 
++			"v " TIME_FORMAT " eval {set sim_annotation {%s}}", 
+ 			pt_->round(Scheduler::instance().clock()), s);
+ 	}
+ 	pt_->dump();
+ 	callback();
+-	sprintf(pt_->nbuffer(), "v -t "TIME_FORMAT" -e sim_annotation %g %s", 
++	sprintf(pt_->nbuffer(), "v -t " TIME_FORMAT " -e sim_annotation %g %s", 
+ 		Scheduler::instance().clock(), 
+ 		Scheduler::instance().clock(), s);
+ 	pt_->namdump();
+@@ -272,7 +272,7 @@ void Trace::format(int tt, int s, int d, Packet* p)
+ 
+ 	if (pt_->tagged()) {
+ 		sprintf(pt_->buffer(), 
+-			"%c "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
++			"%c " TIME_FORMAT " -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+ 			tt,
+ 			Scheduler::instance().clock(),
+ 			s,
+@@ -328,7 +328,7 @@ void Trace::format(int tt, int s, int d, Packet* p)
+ 				assert (false);
+ 			}
+ 			sprintf(pt_->buffer(),
+-				"%c "TIME_FORMAT" %d %d %s %d %s %d %s.%s %s.%s %d %d %d %d %d",
++				"%c " TIME_FORMAT " %d %d %s %d %s %d %s.%s %s.%s %d %d %d %d %d",
+ 				tt,
+ 				pt_->round(timestamp),
+ 				s,
+@@ -356,7 +356,7 @@ void Trace::format(int tt, int s, int d, Packet* p)
+ 				pt_->dump();
+ 		}
+ 	} else if (!show_tcphdr_) {
+-		sprintf(pt_->buffer(), "%c "TIME_FORMAT" %d %d %s %d %s %d %s.%s %s.%s %d %d",
++		sprintf(pt_->buffer(), "%c " TIME_FORMAT " %d %d %s %d %s %d %s.%s %s.%s %d %d",
+ 			tt,
+ 			pt_->round(Scheduler::instance().clock()),
+ 			s,
+@@ -377,7 +377,7 @@ void Trace::format(int tt, int s, int d, Packet* p)
+ 			th->uid() /* was p->uid_ */);
+ 	} else {
+ 		sprintf(pt_->buffer(), 
+-			"%c "TIME_FORMAT" %d %d %s %d %s %d %s.%s %s.%s %d %d %d 0x%x %d %d",
++			"%c " TIME_FORMAT " %d %d %s %d %s %d %s.%s %s.%s %d %d %d 0x%x %d %d",
+ 			tt,
+ 			pt_->round(Scheduler::instance().clock()),
+ 			s,
+@@ -403,7 +403,7 @@ void Trace::format(int tt, int s, int d, Packet* p)
+ 	}
+ 	if (pt_->namchannel() != 0)
+ 		sprintf(pt_->nbuffer(), 
+-			"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
++			"%c -t " TIME_FORMAT " -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+ 			tt,
+ 			Scheduler::instance().clock(),
+ 			s,
+@@ -454,7 +454,7 @@ void Trace::trace(TracedVar* var)
+ 		return;
+ 
+ 	if (pt_->tagged()) {
+-		sprintf(pt_->buffer(), "%c "TIME_FORMAT" -a %s -n %s -v %s",
++		sprintf(pt_->buffer(), "%c " TIME_FORMAT " -a %s -n %s -v %s",
+ 			type_,
+ 			pt_->round(s.clock()),
+ 			var->owner()->name(),
+@@ -462,7 +462,7 @@ void Trace::trace(TracedVar* var)
+ 			var->value(tmp, 256));
+ 	} else {
+ 		// format: use Mark's nam feature code without the '-' prefix
+-		sprintf(pt_->buffer(), "%c t"TIME_FORMAT" a%s n%s v%s",
++		sprintf(pt_->buffer(), "%c t" TIME_FORMAT " a%s n%s v%s",
+ 			type_,
+ 			pt_->round(s.clock()),
+ 			var->owner()->name(),
+@@ -555,7 +555,7 @@ DequeTrace::recv(Packet* p, Handler* h)
+ 		
+ 		if (pt_->nbuffer() != 0) {
+ 			sprintf(pt_->nbuffer(), 
+-				"%c -t "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
++				"%c -t " TIME_FORMAT " -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+ 				'h',
+ 				Scheduler::instance().clock(),
+ 				src_,
+@@ -574,7 +574,7 @@ DequeTrace::recv(Packet* p, Handler* h)
+ 		}
+ 		if (pt_->tagged() && pt_->buffer() != 0) {
+ 			sprintf(pt_->buffer(), 
+-				"%c "TIME_FORMAT" -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
++				"%c " TIME_FORMAT " -s %d -d %d -p %s -e %d -c %d -i %d -a %d -x {%s.%s %s.%s %d %s %s}",
+ 				'h',
+ 				Scheduler::instance().clock(),
+ 				src_,

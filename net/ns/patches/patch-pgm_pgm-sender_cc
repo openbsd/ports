@@ -1,0 +1,23 @@
+$OpenBSD: patch-pgm_pgm-sender_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: pgm/pgm-sender.cc
+--- pgm/pgm-sender.cc.orig
++++ pgm/pgm-sender.cc
+@@ -339,7 +339,7 @@ void PgmSender::trace_event(char *evType, nsaddr_t dad
+   char *nwrk = et_->nbuffer();
+ 
+   if (wrk != NULL) {
+-    sprintf(wrk, "E "TIME_FORMAT" %d %d PGM %s "TIME_FORMAT, 
++    sprintf(wrk, "E " TIME_FORMAT " %d %d PGM %s " TIME_FORMAT, 
+             et_->round(Scheduler::instance().clock()),   
+             addr(),                    
+             daddr,                   
+@@ -347,7 +347,7 @@ void PgmSender::trace_event(char *evType, nsaddr_t dad
+ 			evTime);	
+   if (nwrk != 0)
+     sprintf(nwrk,
+-			"E -t "TIME_FORMAT" -o PGM -e %s -s %d.%d -d %d.%d",
++			"E -t " TIME_FORMAT " -o PGM -e %s -s %d.%d -d %d.%d",
+ 			et_->round(Scheduler::instance().clock()),   // time
+ 			evType,                    // event type
+ 			addr(),                       // owner (src) node id

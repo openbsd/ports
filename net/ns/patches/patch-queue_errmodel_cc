@@ -1,4 +1,4 @@
-$OpenBSD: patch-queue_errmodel_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+$OpenBSD: patch-queue_errmodel_cc,v 1.2 2018/04/12 15:07:38 naddy Exp $
 
 Index: queue/errmodel.cc
 --- queue/errmodel.cc.orig
@@ -12,6 +12,24 @@ Index: queue/errmodel.cc
  
  inline double comb(int n, int k) {
  	int i;
+@@ -356,7 +356,7 @@ void ErrorModel::trace_event(char *eventtype)
+ 	char *nwrk = et_->nbuffer();
+ 	if (wrk != 0)
+ 		sprintf(wrk,
+-			"E "TIME_FORMAT" ErrModelTimer %p %s",
++			"E " TIME_FORMAT " ErrModelTimer %p %s",
+ 			et_->round(Scheduler::instance().clock()),   // time
+ 			this,
+ 			eventtype                    // event type
+@@ -364,7 +364,7 @@ void ErrorModel::trace_event(char *eventtype)
+ 	
+ 	if (nwrk != 0)
+ 		sprintf(nwrk,
+-			"E -t "TIME_FORMAT" ErrModelTimer %p %s",
++			"E -t " TIME_FORMAT " ErrModelTimer %p %s",
+ 			et_->round(Scheduler::instance().clock()),   // time
+ 			this,
+ 			eventtype                    // event type
 @@ -551,7 +551,7 @@ int ComplexTwoStateErrorModel::corruptPkt(Packet*)
  
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tcp_tcp_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+$OpenBSD: patch-tcp_tcp_cc,v 1.2 2018/04/12 15:07:38 naddy Exp $
 
 Index: tcp/tcp.cc
 --- tcp/tcp.cc.orig
@@ -12,3 +12,21 @@ Index: tcp/tcp.cc
  {
  	if (et_ == NULL) return;
  	int seqno = t_seqno_;
+@@ -2182,7 +2182,7 @@ void TcpAgent::trace_event(char *eventtype)
+ 	char *nwrk = et_->nbuffer();
+ 	if (wrk != 0)
+ 		sprintf(wrk,
+-			"E "TIME_FORMAT" %d %d TCP %s %d %d %d",
++			"E " TIME_FORMAT " %d %d TCP %s %d %d %d",
+ 			et_->round(Scheduler::instance().clock()),   // time
+ 			addr(),                       // owner (src) node id
+ 			daddr(),                      // dst node id
+@@ -2194,7 +2194,7 @@ void TcpAgent::trace_event(char *eventtype)
+ 	
+ 	if (nwrk != 0)
+ 		sprintf(nwrk,
+-			"E -t "TIME_FORMAT" -o TCP -e %s -s %d.%d -d %d.%d",
++			"E -t " TIME_FORMAT " -o TCP -e %s -s %d.%d -d %d.%d",
+ 			et_->round(Scheduler::instance().clock()),   // time
+ 			eventtype,                    // event type
+ 			addr(),                       // owner (src) node id

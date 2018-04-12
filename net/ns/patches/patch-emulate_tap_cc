@@ -1,0 +1,14 @@
+$OpenBSD: patch-emulate_tap_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: emulate/tap.cc
+--- emulate/tap.cc.orig
++++ emulate/tap.cc
+@@ -183,7 +183,7 @@ TapAgent::recvpkt()
+ 	double when = tstamp - now();
+ 
+ 	if (when > 0.0) {
+-		TDEBUG5("%f: Tap(%s): DEFERRED PACKET %f secs, uid: "UID_PRINTF_FORMAT"\n",
++		TDEBUG5("%f: Tap(%s): DEFERRED PACKET %f secs, uid: " UID_PRINTF_FORMAT "\n",
+ 			now(), name(), when, p->uid_);
+ 		ch->timestamp() = when;
+ 		Scheduler::instance().schedule(target_, p, when);

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_queue-monitor_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: tools/queue-monitor.cc
+--- tools/queue-monitor.cc.orig
++++ tools/queue-monitor.cc
+@@ -211,7 +211,7 @@ QueueMonitor::printStats() {
+ 	char wrk[500];
+ 	int n;
+ 	double now = Scheduler::instance().clock();
+-	sprintf(wrk, "q -t "TIME_FORMAT" -s %d -d %d -l %d -p %d", now, srcId_, dstId_, size_, pkts_);
++	sprintf(wrk, "q -t " TIME_FORMAT " -s %d -d %d -l %d -p %d", now, srcId_, dstId_, size_, pkts_);
+ 	n = strlen(wrk);
+ 	wrk[n] = '\n';
+ 	wrk[n+1] = 0;

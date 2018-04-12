@@ -1,0 +1,14 @@
+$OpenBSD: patch-trace_cmu-trace_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
+
+Index: trace/cmu-trace.cc
+--- trace/cmu-trace.cc.orig
++++ trace/cmu-trace.cc
+@@ -207,7 +207,7 @@ CMUTrace::format_mac_common(Packet *p, const char *why
+ 		if (op == FWRD) op = 'h';
+ 
+ 		sprintf(pt_->buffer() + offset,
+-			"%c "TIME_FORMAT" -s %d -d %d -p %s -k %3s -i %d "
++			"%c " TIME_FORMAT " -s %d -d %d -p %s -k %3s -i %d "
+ 			"-N:loc {%.2f %.2f %.2f} -N:en %f ",
+ 			
+ 			op,				// event type
