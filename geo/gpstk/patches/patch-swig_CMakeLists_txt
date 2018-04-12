@@ -1,0 +1,14 @@
+$OpenBSD: patch-swig_CMakeLists_txt,v 1.1 2018/04/12 21:12:56 sthen Exp $
+
+Index: swig/CMakeLists.txt
+--- swig/CMakeLists.txt.orig
++++ swig/CMakeLists.txt
+@@ -30,6 +30,8 @@ if( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" )
+     set( CMAKE_CXX_FLAGS "-std=c++11" )
+ elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
+     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w -std=c++11" )
++elseif( ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++    set( CMAKE_CXX_FLAGS "-std=c++11" )
+ elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
+     set( CMAKE_CXX_FLAGS "-std=c++11" )
+ elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Windows" )

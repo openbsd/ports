@@ -1,0 +1,596 @@
+@comment $OpenBSD: PLIST,v 1.1 2018/04/12 21:12:56 sthen Exp $
+@conflict gpstk-devel-*
+@pkgpath geo/gpstk,-main
+@pkgpath geo/gpstk,-devel
+@bin bin/DDBase
+@bin bin/DiscFix
+@bin bin/ORDPhaseParser
+@bin bin/PRSolve
+@bin bin/RinDump
+@bin bin/RinEdit
+@bin bin/RinNav
+@bin bin/RinSum
+@bin bin/SVNumXRefDUMP
+@bin bin/TIAPhaseParser
+bin/allanplot
+bin/allanplot.py
+@bin bin/bc2sp3
+@bin bin/calgps
+@bin bin/calgps_svg
+@bin bin/codeDump
+@bin bin/convertSSEph
+@bin bin/dallandev
+@bin bin/df_diff
+@bin bin/ffp
+@bin bin/glodump
+@bin bin/lsfilt
+@bin bin/mallandev
+@bin bin/mergeRinMet
+@bin bin/mergeRinNav
+@bin bin/mergeRinObs
+@bin bin/mergeSRI
+@bin bin/mpsolve
+@bin bin/nallandev
+@bin bin/oallandev
+@bin bin/ohadamarddev
+@bin bin/pff
+@bin bin/posInterp
+@bin bin/poscvt
+@bin bin/rfw
+@bin bin/rinexthin
+@bin bin/rinheaddiff
+@bin bin/rmoutlier
+@bin bin/rmwcheck
+@bin bin/rmwdiff
+@bin bin/rnwcheck
+@bin bin/rnwdiff
+@bin bin/rowcheck
+@bin bin/rowdiff
+@bin bin/rstats
+@bin bin/scale
+@bin bin/scanBrdcFile
+@bin bin/sp3version
+@bin bin/tallandev
+@bin bin/testSSEph
+@bin bin/test_EO_SOFA
+@bin bin/test_tides
+@bin bin/timeconvert
+@bin bin/timediff
+@bin bin/tkalm
+@bin bin/trunc
+@bin bin/vecsol
+include/gpstk/
+include/gpstk/ANSITime.hpp
+include/gpstk/ASConstant.hpp
+include/gpstk/Adler32.hpp
+include/gpstk/AllanDeviation.hpp
+include/gpstk/AlmOrbit.hpp
+include/gpstk/Antenna.hpp
+include/gpstk/AntennaStore.hpp
+include/gpstk/AntexBase.hpp
+include/gpstk/AntexData.hpp
+include/gpstk/AntexHeader.hpp
+include/gpstk/AntexReader.hpp
+include/gpstk/AntexStream.hpp
+include/gpstk/AshtechALB.hpp
+include/gpstk/AshtechData.hpp
+include/gpstk/AshtechEPB.hpp
+include/gpstk/AshtechMBEN.hpp
+include/gpstk/AshtechPBEN.hpp
+include/gpstk/AshtechStream.hpp
+include/gpstk/AstronomicalFunctions.hpp
+include/gpstk/AtmosphericDrag.hpp
+include/gpstk/Axis.hpp
+include/gpstk/AxisStyle.hpp
+include/gpstk/BDSEphemeris.hpp
+include/gpstk/BDSEphemerisStore.hpp
+include/gpstk/BDSWeekSecond.hpp
+include/gpstk/BLQDataReader.hpp
+include/gpstk/Bancroft.hpp
+include/gpstk/Base64Encoder.hpp
+include/gpstk/BaseDistribution.hpp
+include/gpstk/BasicFramework.hpp
+include/gpstk/BasicModel.hpp
+include/gpstk/BasicShape.hpp
+include/gpstk/BinUtils.hpp
+include/gpstk/BinexData.hpp
+include/gpstk/BinexFilterOperators.hpp
+include/gpstk/BinexStream.hpp
+include/gpstk/Bitmap.hpp
+include/gpstk/BivarStats.hpp
+include/gpstk/BorderLayout.hpp
+include/gpstk/BrcClockCorrection.hpp
+include/gpstk/BrcKeplerOrbit.hpp
+include/gpstk/CGCS2000Ellipsoid.hpp
+include/gpstk/CNAV2EphClk.hpp
+include/gpstk/CNAVClock.hpp
+include/gpstk/CNAVEphemeris.hpp
+include/gpstk/CNavCookFilter.hpp
+include/gpstk/CNavCrossSourceFilter.hpp
+include/gpstk/CNavDataElement.hpp
+include/gpstk/CNavDataElementStore.hpp
+include/gpstk/CNavEOP.hpp
+include/gpstk/CNavEmptyFilter.hpp
+include/gpstk/CNavFilterData.hpp
+include/gpstk/CNavGGTO.hpp
+include/gpstk/CNavISC.hpp
+include/gpstk/CNavParityFilter.hpp
+include/gpstk/CNavTOWFilter.hpp
+include/gpstk/CNavText.hpp
+include/gpstk/CNavUTC.hpp
+include/gpstk/CRC32.hpp
+include/gpstk/Canvas.hpp
+include/gpstk/CheckPRData.hpp
+include/gpstk/Chi2Distribution.hpp
+include/gpstk/CiraExponentialDrag.hpp
+include/gpstk/Circle.hpp
+include/gpstk/CivilTime.hpp
+include/gpstk/ClockModel.hpp
+include/gpstk/ClockSatStore.hpp
+include/gpstk/CodeBuffer.hpp
+include/gpstk/CodeKalmanSolver.hpp
+include/gpstk/CodeSmoother.hpp
+include/gpstk/Color.hpp
+include/gpstk/ColorMap.hpp
+include/gpstk/Combinations.hpp
+include/gpstk/CommandLine.hpp
+include/gpstk/CommandOption.hpp
+include/gpstk/CommandOptionParser.hpp
+include/gpstk/CommandOptionWithCommonTimeArg.hpp
+include/gpstk/CommandOptionWithPositionArg.hpp
+include/gpstk/CommandOptionWithTimeArg.hpp
+include/gpstk/Comment.hpp
+include/gpstk/CommonTime.hpp
+include/gpstk/ComputeCombination.hpp
+include/gpstk/ComputeDOP.hpp
+include/gpstk/ComputeIURAWeights.hpp
+include/gpstk/ComputeIonoModel.hpp
+include/gpstk/ComputeLC.hpp
+include/gpstk/ComputeLI.hpp
+include/gpstk/ComputeLdelta.hpp
+include/gpstk/ComputeLinear.hpp
+include/gpstk/ComputeMOPSWeights.hpp
+include/gpstk/ComputeMelbourneWubbena.hpp
+include/gpstk/ComputePC.hpp
+include/gpstk/ComputePI.hpp
+include/gpstk/ComputePdelta.hpp
+include/gpstk/ComputeSatPCenter.hpp
+include/gpstk/ComputeSimpleWeights.hpp
+include/gpstk/ComputeTropModel.hpp
+include/gpstk/ComputeWindUp.hpp
+include/gpstk/ConfData.hpp
+include/gpstk/ConfDataItem.hpp
+include/gpstk/ConfDataReader.hpp
+include/gpstk/ConfDataSection.hpp
+include/gpstk/ConfDataStructures.hpp
+include/gpstk/ConfDataWriter.hpp
+include/gpstk/ConstraintSystem.hpp
+include/gpstk/ConvertC1ToP1.hpp
+include/gpstk/CorrectCodeBiases.hpp
+include/gpstk/CorrectObservables.hpp
+include/gpstk/CubicSpline.hpp
+include/gpstk/DCBDataReader.hpp
+include/gpstk/DataHeaders.hpp
+include/gpstk/DataStatus.hpp
+include/gpstk/DataStructures.hpp
+include/gpstk/Decimate.hpp
+include/gpstk/DeltaOp.hpp
+include/gpstk/Differentiator.hpp
+include/gpstk/DiscCorr.hpp
+include/gpstk/DoubleOp.hpp
+include/gpstk/Dumper.hpp
+include/gpstk/EGM96GravityModel.hpp
+include/gpstk/ENUUtil.hpp
+include/gpstk/EOPDataStore.hpp
+include/gpstk/EOPPrediction.hpp
+include/gpstk/EOPStore.hpp
+include/gpstk/EPSImage.hpp
+include/gpstk/EarthBody.hpp
+include/gpstk/EarthOceanTide.hpp
+include/gpstk/EarthOrientation.hpp
+include/gpstk/EarthPoleTide.hpp
+include/gpstk/EarthSolidTide.hpp
+include/gpstk/EclipsedSatFilter.hpp
+include/gpstk/EllipsoidModel.hpp
+include/gpstk/EngAlmanac.hpp
+include/gpstk/EngEphemeris.hpp
+include/gpstk/EngNav.hpp
+include/gpstk/EphTime.hpp
+include/gpstk/EphemerisRange.hpp
+include/gpstk/Epoch.hpp
+include/gpstk/EpochClockModel.hpp
+include/gpstk/EpochDataStore.hpp
+include/gpstk/Equation.hpp
+include/gpstk/EquationOfMotion.hpp
+include/gpstk/EquationSystem.hpp
+include/gpstk/Exception.hpp
+include/gpstk/Expression.hpp
+include/gpstk/ExtractCombinationData.hpp
+include/gpstk/ExtractData.hpp
+include/gpstk/ExtractLC.hpp
+include/gpstk/ExtractPC.hpp
+include/gpstk/FFBinaryStream.hpp
+include/gpstk/FFData.hpp
+include/gpstk/FFStream.hpp
+include/gpstk/FFStreamError.hpp
+include/gpstk/FFTextStream.hpp
+include/gpstk/FIRDifferentiator5thOrder.hpp
+include/gpstk/FileFilter.hpp
+include/gpstk/FileFilterFrame.hpp
+include/gpstk/FileFilterFrameWithHeader.hpp
+include/gpstk/FileHunter.hpp
+include/gpstk/FileSpec.hpp
+include/gpstk/FileStore.hpp
+include/gpstk/FileUtils.hpp
+include/gpstk/Fillable.hpp
+include/gpstk/FilterBase.hpp
+include/gpstk/ForceModel.hpp
+include/gpstk/ForceModelList.hpp
+include/gpstk/Frame.hpp
+include/gpstk/GALWeekSecond.hpp
+include/gpstk/GCATTropModel.hpp
+include/gpstk/GDSUtils.hpp
+include/gpstk/GGHeightTropModel.hpp
+include/gpstk/GGTropModel.hpp
+include/gpstk/GNSSconstants.hpp
+include/gpstk/GPSAlmanacStore.hpp
+include/gpstk/GPSEllipsoid.hpp
+include/gpstk/GPSEphemeris.hpp
+include/gpstk/GPSEphemerisStore.hpp
+include/gpstk/GPSOrbElemStore.hpp
+include/gpstk/GPSWeek.hpp
+include/gpstk/GPSWeekSecond.hpp
+include/gpstk/GPSWeekZcount.hpp
+include/gpstk/GPSZcount.hpp
+include/gpstk/GPS_URA.hpp
+include/gpstk/GSatID.hpp
+include/gpstk/GalEphemeris.hpp
+include/gpstk/GalEphemerisStore.hpp
+include/gpstk/GaussianDistribution.hpp
+include/gpstk/GenXSequence.hpp
+include/gpstk/GeneralConstraint.hpp
+include/gpstk/GeneralEquations.hpp
+include/gpstk/GloEphemeris.hpp
+include/gpstk/GloEphemerisStore.hpp
+include/gpstk/GlobalTropModel.hpp
+include/gpstk/GraphicsConstants.hpp
+include/gpstk/GravitationalDelay.hpp
+include/gpstk/GridLayout.hpp
+include/gpstk/HLayout.hpp
+include/gpstk/HarrisPriesterDrag.hpp
+include/gpstk/HelmertTransform.hpp
+include/gpstk/Helper.hpp
+include/gpstk/HexDumpDataConfig.hpp
+include/gpstk/IERS.hpp
+include/gpstk/IERS1996NutationData.hpp
+include/gpstk/IERS1996UT1mUTCData.hpp
+include/gpstk/IERS2003NutationData.hpp
+include/gpstk/IERS2010CIOSeriesData.hpp
+include/gpstk/IERSConvention.hpp
+include/gpstk/IERSConventions.hpp
+include/gpstk/IRNWeekSecond.hpp
+include/gpstk/InOutFramework.hpp
+include/gpstk/Integrator.hpp
+include/gpstk/InterpolatedColorMap.hpp
+include/gpstk/IonexBase.hpp
+include/gpstk/IonexData.hpp
+include/gpstk/IonexHeader.hpp
+include/gpstk/IonexModel.hpp
+include/gpstk/IonexStore.hpp
+include/gpstk/IonexStream.hpp
+include/gpstk/IonoModel.hpp
+include/gpstk/IonoModelStore.hpp
+include/gpstk/JGM3GravityModel.hpp
+include/gpstk/JulianDate.hpp
+include/gpstk/KalmanFilter.hpp
+include/gpstk/Keeper.hpp
+include/gpstk/KeplerOrbit.hpp
+include/gpstk/LICSDetector.hpp
+include/gpstk/LICSDetector2.hpp
+include/gpstk/LNavAlmValFilter.hpp
+include/gpstk/LNavCookFilter.hpp
+include/gpstk/LNavCrossSourceFilter.hpp
+include/gpstk/LNavEmptyFilter.hpp
+include/gpstk/LNavEphMaker.hpp
+include/gpstk/LNavFilterData.hpp
+include/gpstk/LNavParityFilter.hpp
+include/gpstk/LNavTLMHOWFilter.hpp
+include/gpstk/Layout.hpp
+include/gpstk/Line.hpp
+include/gpstk/LinePlot.hpp
+include/gpstk/LinearClockModel.hpp
+include/gpstk/LinearCombinations.hpp
+include/gpstk/LoopedFramework.hpp
+include/gpstk/MJD.hpp
+include/gpstk/MOPSTropModel.hpp
+include/gpstk/MOPSWeight.hpp
+include/gpstk/MWCSDetector.hpp
+include/gpstk/MainAdapter.hpp
+include/gpstk/Markable.hpp
+include/gpstk/Marker.hpp
+include/gpstk/MathBase.hpp
+include/gpstk/Matrix.hpp
+include/gpstk/MatrixBase.hpp
+include/gpstk/MatrixBaseOperators.hpp
+include/gpstk/MatrixFunctors.hpp
+include/gpstk/MatrixImplementation.hpp
+include/gpstk/MatrixOperators.hpp
+include/gpstk/MemoryUtils.hpp
+include/gpstk/MetReader.hpp
+include/gpstk/MiscMath.hpp
+include/gpstk/ModelObs.hpp
+include/gpstk/ModelObsFixedStation.hpp
+include/gpstk/ModeledPR.hpp
+include/gpstk/ModeledPseudorangeBase.hpp
+include/gpstk/ModeledReferencePR.hpp
+include/gpstk/MoonForce.hpp
+include/gpstk/MoonPosition.hpp
+include/gpstk/Msise00Drag.hpp
+include/gpstk/NBTropModel.hpp
+include/gpstk/NEDUtil.hpp
+include/gpstk/NMCTMeta.hpp
+include/gpstk/NablaOp.hpp
+include/gpstk/Namelist.hpp
+include/gpstk/NavFilter.hpp
+include/gpstk/NavFilterKey.hpp
+include/gpstk/NavFilterMgr.hpp
+include/gpstk/NavID.hpp
+include/gpstk/NeillTropModel.hpp
+include/gpstk/NetworkObsStreams.hpp
+include/gpstk/ORDEpoch.hpp
+include/gpstk/ObsClockModel.hpp
+include/gpstk/ObsEpochMap.hpp
+include/gpstk/ObsID.hpp
+include/gpstk/ObsIDInitializer.hpp
+include/gpstk/ObsRngDev.hpp
+include/gpstk/OceanLoadTides.hpp
+include/gpstk/OceanLoading.hpp
+include/gpstk/OneFreqCSDetector.hpp
+include/gpstk/OrbAlm.hpp
+include/gpstk/OrbAlmFactory.hpp
+include/gpstk/OrbAlmGen.hpp
+include/gpstk/OrbAlmStore.hpp
+include/gpstk/OrbData.hpp
+include/gpstk/OrbDataSys.hpp
+include/gpstk/OrbDataSysFactory.hpp
+include/gpstk/OrbElem.hpp
+include/gpstk/OrbElemBase.hpp
+include/gpstk/OrbElemRinex.hpp
+include/gpstk/OrbElemStore.hpp
+include/gpstk/OrbSysGpsC.hpp
+include/gpstk/OrbSysGpsC_30.hpp
+include/gpstk/OrbSysGpsC_32.hpp
+include/gpstk/OrbSysGpsC_33.hpp
+include/gpstk/OrbSysGpsL.hpp
+include/gpstk/OrbSysGpsL_51.hpp
+include/gpstk/OrbSysGpsL_52.hpp
+include/gpstk/OrbSysGpsL_55.hpp
+include/gpstk/OrbSysGpsL_56.hpp
+include/gpstk/OrbSysGpsL_63.hpp
+include/gpstk/OrbSysGpsL_Reserved.hpp
+include/gpstk/OrbSysStore.hpp
+include/gpstk/OrbitEph.hpp
+include/gpstk/OrbitEphStore.hpp
+include/gpstk/PCSmoother.hpp
+include/gpstk/PCodeConst.hpp
+include/gpstk/PNG.hpp
+include/gpstk/PRSolution.hpp
+include/gpstk/PRSolution2.hpp
+include/gpstk/PSImage.hpp
+include/gpstk/PSImageBase.hpp
+include/gpstk/PZ90Ellipsoid.hpp
+include/gpstk/PackedNavBits.hpp
+include/gpstk/Palette.hpp
+include/gpstk/Path.hpp
+include/gpstk/PhaseCodeAlignment.hpp
+include/gpstk/PlanetEphemeris.hpp
+include/gpstk/Plot.hpp
+include/gpstk/PoleTides.hpp
+include/gpstk/PolyFit.hpp
+include/gpstk/Polygon.hpp
+include/gpstk/Position.hpp
+include/gpstk/PositionSatStore.hpp
+include/gpstk/PosixTime.hpp
+include/gpstk/PowerSum.hpp
+include/gpstk/PreciseRange.hpp
+include/gpstk/ProblemSatFilter.hpp
+include/gpstk/ProcessingClass.hpp
+include/gpstk/ProcessingList.hpp
+include/gpstk/ProcessingVector.hpp
+include/gpstk/Pruner.hpp
+include/gpstk/PvtStore.hpp
+include/gpstk/QZSEphemeris.hpp
+include/gpstk/QZSEphemerisStore.hpp
+include/gpstk/QZSWeekSecond.hpp
+include/gpstk/RACRotation.hpp
+include/gpstk/RTFileFrame.hpp
+include/gpstk/RationalizeRinexNav.hpp
+include/gpstk/Rectangle.hpp
+include/gpstk/ReferenceFrame.hpp
+include/gpstk/ReferenceFrames.hpp
+include/gpstk/RelativityEffect.hpp
+include/gpstk/RequireObservables.hpp
+include/gpstk/Rinex3ClockBase.hpp
+include/gpstk/Rinex3ClockData.hpp
+include/gpstk/Rinex3ClockHeader.hpp
+include/gpstk/Rinex3ClockStream.hpp
+include/gpstk/Rinex3EphemerisStore.hpp
+include/gpstk/Rinex3NavBase.hpp
+include/gpstk/Rinex3NavData.hpp
+include/gpstk/Rinex3NavFilterOperators.hpp
+include/gpstk/Rinex3NavHeader.hpp
+include/gpstk/Rinex3NavStream.hpp
+include/gpstk/Rinex3ObsBase.hpp
+include/gpstk/Rinex3ObsData.hpp
+include/gpstk/Rinex3ObsFilterOperators.hpp
+include/gpstk/Rinex3ObsHeader.hpp
+include/gpstk/Rinex3ObsStream.hpp
+include/gpstk/RinexClockBase.hpp
+include/gpstk/RinexClockData.hpp
+include/gpstk/RinexClockHeader.hpp
+include/gpstk/RinexClockStore.hpp
+include/gpstk/RinexClockStream.hpp
+include/gpstk/RinexDatum.hpp
+include/gpstk/RinexEphemerisStore.hpp
+include/gpstk/RinexMetBase.hpp
+include/gpstk/RinexMetData.hpp
+include/gpstk/RinexMetFilterOperators.hpp
+include/gpstk/RinexMetHeader.hpp
+include/gpstk/RinexMetStream.hpp
+include/gpstk/RinexNavBase.hpp
+include/gpstk/RinexNavData.hpp
+include/gpstk/RinexNavFilterOperators.hpp
+include/gpstk/RinexNavHeader.hpp
+include/gpstk/RinexNavStream.hpp
+include/gpstk/RinexObsBase.hpp
+include/gpstk/RinexObsData.hpp
+include/gpstk/RinexObsFilterOperators.hpp
+include/gpstk/RinexObsHeader.hpp
+include/gpstk/RinexObsID.hpp
+include/gpstk/RinexObsStream.hpp
+include/gpstk/RinexSatID.hpp
+include/gpstk/RinexUtilities.hpp
+include/gpstk/RobustStats.hpp
+include/gpstk/RungeKutta4.hpp
+include/gpstk/RungeKuttaFehlberg.hpp
+include/gpstk/SEMAlmanacStore.hpp
+include/gpstk/SEMBase.hpp
+include/gpstk/SEMData.hpp
+include/gpstk/SEMHeader.hpp
+include/gpstk/SEMStream.hpp
+include/gpstk/SP3Base.hpp
+include/gpstk/SP3Data.hpp
+include/gpstk/SP3EphemerisStore.hpp
+include/gpstk/SP3Header.hpp
+include/gpstk/SP3SatID.hpp
+include/gpstk/SP3Stream.hpp
+include/gpstk/SRI.hpp
+include/gpstk/SRIFilter.hpp
+include/gpstk/SRIMatrix.hpp
+include/gpstk/SRIleastSquares.hpp
+include/gpstk/SVExclusionList.hpp
+include/gpstk/SVGImage.hpp
+include/gpstk/SVNumXRef.hpp
+include/gpstk/SVPCodeGen.hpp
+include/gpstk/SaasTropModel.hpp
+include/gpstk/SatArcMarker.hpp
+include/gpstk/SatDataReader.hpp
+include/gpstk/SatID.hpp
+include/gpstk/SatOrbit.hpp
+include/gpstk/SatOrbitPropagator.hpp
+include/gpstk/SatPass.hpp
+include/gpstk/SatPassIterator.hpp
+include/gpstk/SatPassUtilities.hpp
+include/gpstk/ScatterPlot.hpp
+include/gpstk/SeriesList.hpp
+include/gpstk/SimpleFilter.hpp
+include/gpstk/SimpleIURAWeight.hpp
+include/gpstk/SimpleKalmanFilter.hpp
+include/gpstk/SimpleTropModel.hpp
+include/gpstk/SinexBase.hpp
+include/gpstk/SinexBlock.hpp
+include/gpstk/SinexData.hpp
+include/gpstk/SinexHeader.hpp
+include/gpstk/SinexStream.hpp
+include/gpstk/SinexTypes.hpp
+include/gpstk/SolarPosition.hpp
+include/gpstk/SolarRadiationPressure.hpp
+include/gpstk/SolarSystem.hpp
+include/gpstk/SolarSystemEphemeris.hpp
+include/gpstk/SolidEarthTides.hpp
+include/gpstk/SolidTides.hpp
+include/gpstk/SolverBase.hpp
+include/gpstk/SolverGeneral.hpp
+include/gpstk/SolverLMS.hpp
+include/gpstk/SolverPPP.hpp
+include/gpstk/SolverPPPFB.hpp
+include/gpstk/SolverWMS.hpp
+include/gpstk/SourceID.hpp
+include/gpstk/Spacecraft.hpp
+include/gpstk/SparseMatrix.hpp
+include/gpstk/SparseVector.hpp
+include/gpstk/SpecialFuncs.hpp
+include/gpstk/SpecialFunctions.hpp
+include/gpstk/SphericalHarmonicGravity.hpp
+include/gpstk/Splitter.hpp
+include/gpstk/Stats.hpp
+include/gpstk/StatsFilter.hpp
+include/gpstk/StochasticModel.hpp
+include/gpstk/StreamBuf.hpp
+include/gpstk/StringUtils.hpp
+include/gpstk/StrokeStyle.hpp
+include/gpstk/StudentDistribution.hpp
+include/gpstk/SunEarthSatGeometry.hpp
+include/gpstk/SunForce.hpp
+include/gpstk/SunPosition.hpp
+include/gpstk/SurfacePlot.hpp
+include/gpstk/Synchronize.hpp
+include/gpstk/SystemTime.hpp
+include/gpstk/TabularSatStore.hpp
+include/gpstk/TestUtil.hpp
+include/gpstk/Text.hpp
+include/gpstk/TextStyle.hpp
+include/gpstk/TimeConstants.hpp
+include/gpstk/TimeConverters.hpp
+include/gpstk/TimeNamedFileStream.hpp
+include/gpstk/TimeRange.hpp
+include/gpstk/TimeString.hpp
+include/gpstk/TimeSystem.hpp
+include/gpstk/TimeSystemCorr.hpp
+include/gpstk/TimeTag.hpp
+include/gpstk/Triple.hpp
+include/gpstk/TropModel.hpp
+include/gpstk/TypeID.hpp
+include/gpstk/UTCTime.hpp
+include/gpstk/UnixTime.hpp
+include/gpstk/VDrawException.hpp
+include/gpstk/VGImage.hpp
+include/gpstk/VGState.hpp
+include/gpstk/VLayout.hpp
+include/gpstk/ValidType.hpp
+include/gpstk/Variable.hpp
+include/gpstk/Vector.hpp
+include/gpstk/VectorBase.hpp
+include/gpstk/VectorBaseOperators.hpp
+include/gpstk/VectorOperators.hpp
+include/gpstk/ViewerManager.hpp
+include/gpstk/WGS84Ellipsoid.hpp
+include/gpstk/Week.hpp
+include/gpstk/WeekSecond.hpp
+include/gpstk/WeightBase.hpp
+include/gpstk/WxObsMap.hpp
+include/gpstk/X1Sequence.hpp
+include/gpstk/X2Sequence.hpp
+include/gpstk/XYZ2NED.hpp
+include/gpstk/XYZ2NEU.hpp
+include/gpstk/Xv.hpp
+include/gpstk/Xvt.hpp
+include/gpstk/XvtStore.hpp
+include/gpstk/YDSTime.hpp
+include/gpstk/YumaAlmanacStore.hpp
+include/gpstk/YumaBase.hpp
+include/gpstk/YumaData.hpp
+include/gpstk/YumaHeader.hpp
+include/gpstk/YumaStream.hpp
+include/gpstk/build_config.h
+include/gpstk/compass_constants.hpp
+include/gpstk/convhelp.hpp
+include/gpstk/expandtilde.hpp
+include/gpstk/format.hpp
+include/gpstk/geometry.hpp
+include/gpstk/gps_constants.hpp
+include/gpstk/gpstkplatform.h
+include/gpstk/logstream.hpp
+include/gpstk/mergePCodeWords.h
+include/gpstk/msecHandler.hpp
+include/gpstk/plottypes.hpp
+include/gpstk/random.hpp
+include/gpstk/singleton.hpp
+include/gpstk/stl_helpers.hpp
+@lib lib/libgpstk.so.${LIBgpstk_VERSION}
+share/cmake/
+share/cmake/GPSTK/
+share/cmake/GPSTK/GPSTKConfig.cmake
+share/cmake/GPSTK/GPSTKConfigVersion.cmake
+share/cmake/GPSTK/GPSTKTargets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/GPSTK/GPSTKTargets.cmake

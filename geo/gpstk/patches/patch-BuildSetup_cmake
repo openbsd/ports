@@ -1,0 +1,14 @@
+$OpenBSD: patch-BuildSetup_cmake,v 1.1 2018/04/12 21:12:56 sthen Exp $
+
+Index: BuildSetup.cmake
+--- BuildSetup.cmake.orig
++++ BuildSetup.cmake
+@@ -40,6 +40,8 @@ elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
+     set( CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS} -O2" )
+     set( CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS} -O2" )
+     set( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -shared" )
++elseif( ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++    set( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -shared" )
+ elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Windows" )
+ else()
+     message( ERROR "CMAKE_SYSTEM_NAME = ${CMAKE_SYSTEM_NAME}, not supported. Currently supported: Linux, Darwin, SunOS, Windows" )

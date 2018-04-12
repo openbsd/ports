@@ -1,62 +1,34 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/12 21:12:56 sthen Exp $
 
-COMMENT-main=		GPS processing toolkit
-COMMENT-devel=		GPStk development libraries and headers
+COMMENT=		GPS processing toolkit
 
-V=			1.5
-DISTNAME=		gpstk${V}
-PKGNAME-main=		gpstk-${V}
-REVISION-main=		7
-PKGNAME-devel=		gpstk-devel-${V}
-REVISION-devel=		9
+V=			2.10
+GH_ACCOUNT=		SGL-UT
+GH_PROJECT=		GPSTk
+GH_TAGNAME=		v$V
+PKGNAME=		gpstk-$V
+
 CATEGORIES=		geo devel
-SHARED_LIBS=		base 15.0 \
-			geomatics 15.0 \
-			gpstk 15.0 \
-			mdplib 15.0 \
-			procframe 15.0 \
-			rlib 15.0 \
-			rxio 15.0 \
-			simlib 15.0 \
-			toolslib 15.0 \
-			vplot 15.0
+
+SHARED_LIBS=		gpstk 16.0
 
 HOMEPAGE=		http://www.gpstk.org/
 
-# LGPL
+# LGPLv3.0+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gpstk/}
-DISTFILES=		${DISTNAME}.src.tar.gz
+WANTLIB=		${COMPILER_LIBCXX} c m
 
-AUTOCONF_VERSION=	2.60
-AUTOMAKE_VERSION=	1.9
-CONFIGURE_STYLE=	gnu
+MODULES=		devel/cmake
 
 NO_TEST=		Yes
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-# way faster than -O0, a bit slower than -O2, but doesn't need 800M to compile
-CFLAGS+=		-O1 -g
-CXXFLAGS+=		-O1 -g
-.else
-# ...but -O1 is still too much for most build machines, so just use it on the
-# fastest ones.
-CFLAGS+=		-O0 -g
-CXXFLAGS+=		-O0 -g
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "aarch64"
+# ...higher opt levels are too much for smaller/slower build machines
+CFLAGS+=               -O0
+CXXFLAGS+=             -O0
 .endif
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			devel/libtool \
-			${MODGNU_AUTOMAKE_DEPENDS}
-MULTI_PACKAGES=		-main -devel
-WANTLIB-main=		m c ${COMPILER_LIBCXX} curses
-WANTLIB-devel=
-RUN_DEPENDS-devel=	${PKGNAME-main}:geo/gpstk
-
-pre-configure:
-	cd ${WRKDIST} && sh autogen.sh
-
-post-install:
-	@mv ${PREFIX}/bin/tracker ${PREFIX}/bin/gpstracker
+COMPILER=		base-clang ports-gcc
+CONFIGURE_ARGS=		-DBUILD_EXT=on
 
 .include <bsd.port.mk>
