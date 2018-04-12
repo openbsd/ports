@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/05 20:12:58 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/12 09:53:54 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -524,6 +524,7 @@ share/botan-2/data/tls/hello_verify.vec
 share/botan-2/data/tls/new_session_ticket.vec
 share/botan-2/data/tls/server_hello.vec
 share/botan-2/data/tls_cbc.vec
+share/botan-2/data/tls_cbc_padding.vec
 share/botan-2/data/util.vec
 share/botan-2/data/x509/
 share/botan-2/data/x509/bsi/
