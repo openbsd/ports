@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/04/10 11:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2018/04/12 11:42:33 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -52,6 +52,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
+			--disable-alsa \
 			--disable-libvisual #XXX libvisual needs to be ported
 
 ### SNDIO ###

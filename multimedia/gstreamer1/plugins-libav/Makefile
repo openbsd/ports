@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/03/29 21:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2018/04/12 11:42:33 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -30,7 +30,7 @@ libav_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--enable-runtime-cpudetect \
 			--disable-altivec \
 			--disable-neon \
-			--disable-sdl \
+			--disable-sdl2 \
 			--disable-vfp \
 			--disable-debug
 

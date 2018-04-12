@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/04/10 11:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2018/04/12 11:42:33 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -53,12 +53,11 @@ CONFIGURE_ARGS=		--with-gtk=3.0 \
 # gtksink is needed by the corebird package
 CONFIGURE_ARGS +=	--disable-acm \
 			--disable-android_media \
-			--disable-apexsink \
+			--disable-aom \
 			--disable-apple_media \
 			--disable-avc \
 			--disable-bluez \
 			--disable-chromaprint \
-			--disable-cocoa \
 			--disable-curl \
 			--disable-daala \
 			--disable-dc1394 \
@@ -72,23 +71,23 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-faac \
 			--disable-faad \
 			--disable-fbdev \
+			--disable-fdk_aac \
 			--disable-flite \
 			--disable-fluidsynth \
 			--disable-gme \
 			--disable-gsm \
+			--disable-iqa \
 			--disable-kate \
 			--disable-ladspa \
 			--disable-libde265 \
-			--disable-libvisual \
-			--disable-linsys \
 			--disable-lv2 \
-			--disable-mimic \
 			--disable-modplug \
 			--disable-mpeg2enc \
 			--disable-mplex \
+			--disable-msdk \
 			--disable-musepack \
-			--disable-nas \
 			--disable-neon \
+			--disable-nvdec \
 			--disable-nvenc \
 			--disable-ofa \
 			--disable-openal \
@@ -96,20 +95,18 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-openexr \
 			--disable-openh264 \
 			--disable-openjpeg \
+			--disable-openmpt \
 			--disable-openni2 \
 			--disable-opensles \
-			--disable-pvr \
 			--disable-resindvd \
 			--disable-rtmp \
 			--disable-sbc \
-			--disable-schro \
-			--disable-sdl \
 			--disable-sndfile \
 			--disable-spandsp \
 			--disable-spc \
+			--disable-srt \
 			--disable-srtp \
 			--disable-teletextdec \
-			--disable-timidity \
 			--disable-tinyalsa \
 			--disable-uvch264 \
 			--disable-vcd \
@@ -120,17 +117,13 @@ CONFIGURE_ARGS +=	--disable-acm \
 			--disable-wasapi \
 			--disable-wayland \
 			--disable-webp \
+			--disable-webrtc \
+			--disable-webrtcdsp \
 			--disable-wildmidi \
-			--disable-wininet \
 			--disable-winks \
 			--disable-winscreencap \
 			--disable-x265 \
-			--disable-xvid \
 			--disable-zbar
-
-# sndio(7) support has been patched into plugins-base:
-# we do not want to depends on plugins-bad for audio
-CONFIGURE_ARGS +=	--disable-sndio
 
 # XXX needed by g-ir-scanner(1)
 CFLAGS +=		-I${X11BASE}/include

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/04/10 11:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2018/04/12 11:42:33 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -64,13 +64,15 @@ LIB_DEPENDS-pulse=	${LIB_DEPENDS} \
 RUN_DEPENDS-pulse=	${BASE_PKGPATH},-main=${V}
 
 CONFIGURE_ARGS=		--disable-aalib \
+			--disable-directsound \
 			--disable-jack \
 			--disable-lame \
 			--disable-libcaca \
 			--disable-libdv \
 			--disable-oss4 \
+			--disable-osx_audio \
+			--disable-osx_video \
 			--disable-qt \
-			--disable-sunaudio \
 			--disable-waveform \
 			--disable-dv1394
 
