@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/08 06:30:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/12 04:40:41 bentley Exp $
 include/libtorrent/
 include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
@@ -22,6 +22,7 @@ include/libtorrent/aux_/file_progress.hpp
 include/libtorrent/aux_/merkle.hpp
 include/libtorrent/aux_/openssl.hpp
 include/libtorrent/aux_/proxy_settings.hpp
+include/libtorrent/aux_/route.h
 include/libtorrent/aux_/session_call.hpp
 include/libtorrent/aux_/session_impl.hpp
 include/libtorrent/aux_/session_interface.hpp
