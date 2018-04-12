@@ -1,33 +1,40 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/12 18:26:24 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://goaccess.io/
+HOMEPAGE =		https://goaccess.io/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GeoIP bz2 c ncursesw pthread tokyocabinet z
+WANTLIB += GeoIP c curses pthread
 
-MASTER_SITES =		http://tar.goaccess.io/
+MASTER_SITES =		https://tar.goaccess.io/
 
-LIB_DEPENDS =		databases/tokyocabinet \
-			net/GeoIP
+LIB_DEPENDS =		net/GeoIP
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-geoip=legacy \
-			--enable-utf8 \
-			--enable-tcb=btree
+			--enable-utf8
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FLAVORS = 		tokyocabinet
+FLAVOR ?=
+
+.if ${FLAVOR:Mtokyocabinet}
+WANTLIB += 		bz2 tokyocabinet z
+LIB_DEPENDS += 		databases/tokyocabinet
+CONFIGURE_ARGS += 	--enable-tcb=btree
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/goaccess ${PREFIX}/bin/

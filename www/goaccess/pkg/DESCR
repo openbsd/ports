@@ -2,3 +2,12 @@ GoAccess is an open source real-time web log analyzer and interactive
 viewer that runs in a terminal in *nix systems. It provides fast and
 valuable HTTP statistics for system administrators that require a visual
 server report on the fly.
+
+Packages can be built with additional FLAVORs:
+
+   tokyocabinet : Use this storage method for large datasets where it is not
+              possible to fit everything in memory. The B+ tree database is
+              slower than any of the hash databases since data has to be
+              committed to disk. However, using an SSD greatly increases the
+              performance. You may also use this storage method if you need
+              data persistence to quickly load statistics at a later date.
