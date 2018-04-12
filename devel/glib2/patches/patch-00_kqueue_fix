@@ -1,37 +1,34 @@
-commit 9124365c9be17db24738b916d35c31980870c837
+commit aa39a0557c679fc345b0ba72a87c33152eb8ebcd
 Author: Martin Pieuchot <mpi@openbsd.org>
-Date:   Sat Jan 13 15:25:30 2018 +0100
+Date:   Tue Feb 20 16:57:00 2018 +0000
 
-    kqueue: Multiple fixes and simplifications.
+    kqueue: Multiple fixes and simplifications
     
-    - Stop using a custom thread for listening to kqueue(2) events.  Instead
-    call kevent(2) in non blocking mode in a monitor callback.  Under the
-    hood poll(2) is used to figure out if new events are available.
+     - Stop using a custom thread for listening to kqueue(2) events.  Instead
+       call kevent(2) in non blocking mode in a monitor callback.  Under the
+       hood poll(2) is used to figure out if new events are available.
     
-    - Do not use a socketpair with a custom protocol requiring 2 supplementary
-    context switches per event to commicate between multiple threads.  Calling
-    kevent(2), in non blocking mode, to add/remove events is fine from any
-    context.
+     - Do not use a socketpair with a custom protocol requiring 2 supplementary
+       context switches per event to commicate between multiple threads.  Calling
+       kevent(2), in non blocking mode, to add/remove events is fine from any
+       context.
     
-    - Add kqueue(2) events without the EV_ONESHOT flag.  This removes a race
-    were some notifications were lost because events had to be re-added for
-    every new notification.
+     - Add kqueue(2) events without the EV_ONESHOT flag.  This removes a race
+       where some notifications were lost because events had to be re-added for
+       every new notification.
     
-    - Get rid of the global hash table and its associated lock and races.  Use
-    the 'cookie' argument of kevent(2) to pass the associated descriptor when
-    registering an event.
+     - Get rid of the global hash table and its associated lock and races.  Use
+       the 'cookie' argument of kevent(2) to pass the associated descriptor when
+       registering an event.
     
-    - Fix _kh_file_appeared_cb() by properly passing a monitor instead of a
-    source to g_file_monitor_emit_event().
+     - Fix _kh_file_appeared_cb() by properly passing a monitor instead of a
+       source to g_file_monitor_emit_event().
     
-    - Porperly refcount sources.
+     - Properly refcount sources.
     
-    - Remove a lot of abstraction making it harder to fix the remaining issues.
+     - Remove a lot of abstraction making it harder to fix the remaining issues.
     
-    This diff does not improve the correctness of the generate events, a lot
-    can still be done.
-    
-    Fix https://bugzilla.gnome.org/show_bug.cgi?id=739424
+    https://bugzilla.gnome.org/show_bug.cgi?id=739424
 
 diff --git gio/kqueue/Makefile.am gio/kqueue/Makefile.am
 index d5657d7e4..24e9724e5 100644
@@ -2043,7 +2040,7 @@ index 4e37f4a99..000000000
 -
 -#endif /* __KQUEUE_UTILS_H */
 diff --git gio/kqueue/meson.build gio/kqueue/meson.build
-index 8f5b97aa2..74ae8d8c6 100644
+index 51c5e788f..1b39f19e7 100644
 --- gio/kqueue/meson.build
 +++ gio/kqueue/meson.build
 @@ -1,14 +1,8 @@

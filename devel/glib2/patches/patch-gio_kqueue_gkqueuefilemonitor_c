@@ -1,0 +1,59 @@
+commit 11247321515f912bad3abc5c0dbbb0a6409c7f05
+Author: Martin Pieuchot <mpi@openbsd.org>
+Date:   Wed Apr 11 17:58:07 2018 +0200
+
+    Reorder operations in _kqsub_cancel() to prevent races.
+    
+    Removing the event and closing the related file descriptor must be
+    done first to make sure the kqueue subsystem delete pending events.
+    
+    The timeout must be disarmed before freeing the directory dependency
+    list otherwise it might populate it again.
+
+diff --git gio/kqueue/gkqueuefilemonitor.c gio/kqueue/gkqueuefilemonitor.c
+index deed8b1e1..d6fea41cf 100644
+--- gio/kqueue/gkqueuefilemonitor.c
++++ gio/kqueue/gkqueuefilemonitor.c
+@@ -373,28 +373,28 @@ _kqsub_cancel (kqueue_sub *sub)
+ {
+   struct kevent ev;
+ 
+-  if (sub->deps)
++  /* Remove the event and close the file descriptor to automatically
++   * delete pending events. */
++  if (sub->fd != -1)
+     {
+-      dl_free (sub->deps);
+-      sub->deps = NULL;
++      EV_SET (&ev, sub->fd, EVFILT_VNODE, EV_DELETE, NOTE_ALL, 0, sub);
++      if (kevent (kq_queue, &ev, 1, NULL, 0, NULL) == -1)
++        {
++          g_warning ("Unable to remove event for %s: %s", sub->filename, g_strerror (errno));
++          return FALSE;
++        }
++      close (sub->fd);
++      sub->fd = -1;
+     }
+ 
+   _km_remove (sub);
+ 
+-  /* Only in the missing list?  We're done! */
+-  if (sub->fd == -1)
+-    return TRUE;
+-
+-  EV_SET (&ev, sub->fd, EVFILT_VNODE, EV_DELETE, NOTE_ALL, 0, sub);
+-  if (kevent (kq_queue, &ev, 1, NULL, 0, NULL) == -1)
++  if (sub->deps)
+     {
+-      g_warning ("Unable to remove event for %s: %s", sub->filename, g_strerror (errno));
+-      return FALSE;
++      dl_free (sub->deps);
++      sub->deps = NULL;
+     }
+ 
+-  close (sub->fd);
+-  sub->fd = -1;
+-
+   return TRUE;
+ }
+ 
