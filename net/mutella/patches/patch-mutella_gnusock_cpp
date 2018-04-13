@@ -1,0 +1,14 @@
+$OpenBSD: patch-mutella_gnusock_cpp,v 1.1 2018/04/13 15:19:29 jasper Exp $
+
+Index: mutella/gnusock.cpp
+--- mutella/gnusock.cpp.orig
++++ mutella/gnusock.cpp
+@@ -93,7 +93,7 @@ void MGnuSock::OnReceive(int nErrorCode) 
+ 	ASSERT(pBuf);
+ 	
+ 	//printf("sock on receive\n");
+-	DWORD dwReceived = Receive(pBuf, nBufferRequired);
++	long dwReceived = Receive(pBuf, nBufferRequired);
+ 	
+ 	switch (dwReceived)
+ 	{

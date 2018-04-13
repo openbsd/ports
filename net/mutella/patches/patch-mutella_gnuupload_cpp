@@ -1,0 +1,14 @@
+$OpenBSD: patch-mutella_gnuupload_cpp,v 1.1 2018/04/13 15:19:29 jasper Exp $
+
+Index: mutella/gnuupload.cpp
+--- mutella/gnuupload.cpp.orig
++++ mutella/gnuupload.cpp
+@@ -317,7 +317,7 @@ void MGnuUpload::OnReceive(int nErrorCode)
+ 	
+ 	BYTE* pBuff = new BYTE[4096];
+ 	ASSERT(pBuff);
+-	DWORD dwBuffLength = Receive(pBuff, 4096);
++	long dwBuffLength = Receive(pBuff, 4096);
+ 	
+ 	switch (dwBuffLength)
+ 	{
