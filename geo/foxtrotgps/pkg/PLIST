@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/30 21:39:12 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/04/13 06:27:16 kirby Exp $
 @pkgpath geo/tangogps
 bin/convert2gpx
 bin/convert2osm
@@ -11,6 +11,9 @@ bin/poi2osm
 @man man/man1/convert2gpx.1
 @man man/man1/convert2osm.1
 @man man/man1/foxtrotgps.1
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/org.foxtrotgps.convert
 share/applications/foxtrotgps.desktop
 share/doc/foxtrotgps/
 share/doc/foxtrotgps/AUTHORS
@@ -35,6 +38,7 @@ share/doc/foxtrotgps/screenshots/route-planning.png
 share/doc/foxtrotgps/screenshots/tracking.png
 share/foxtrotgps/
 share/foxtrotgps/foxtrotgps.glade
+share/glib-2.0/schemas/org.foxtrotgps.gschema.xml
 share/locale/bg/LC_MESSAGES/foxtrotgps.mo
 share/locale/cs/LC_MESSAGES/foxtrotgps.mo
 share/locale/de/LC_MESSAGES/foxtrotgps.mo
@@ -57,9 +61,7 @@ share/pixmaps/foxtrotgps-photo.png
 share/pixmaps/foxtrotgps-poi.png
 share/pixmaps/foxtrotgps-wp.png
 share/pixmaps/foxtrotgps.png
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/apps_foxtrotgps.schemas
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
