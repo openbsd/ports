@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/19 15:37:34 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/13 14:36:09 bket Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_store_8
 
 COMMENT =		fuse-based cryptographic filesystem
 
-V =			1.9.2
+V =			1.9.4
 DISTNAME =		encfs-$V
 
 CATEGORIES =		security
@@ -28,11 +28,6 @@ LIB_DEPENDS =		devel/gettext \
 CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML:Bool=Off
 CONFIGURE_ENV =		CXXFLAGS="-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE"
 
-# fixup, but those tests don't pass anyway
-post-extract:
-	sed -i 's,\./build/,${WRKBUILD}/,g' ${WRKSRC}/tests/*.pl
-
-do-test:
-	${SETENV} ${MAKE_ENV} ${WRKBUILD}/checkops
+TEST_TARGET =		unittests test
 
 .include <bsd.port.mk>

@@ -1,0 +1,26 @@
+$OpenBSD: patch-vendor_github_com_muflihun_easyloggingpp_src_easylogging++_h,v 1.1 2018/04/13 14:36:09 bket Exp $
+
+Index: vendor/github.com/muflihun/easyloggingpp/src/easylogging++.h
+--- vendor/github.com/muflihun/easyloggingpp/src/easylogging++.h.orig
++++ vendor/github.com/muflihun/easyloggingpp/src/easylogging++.h
+@@ -98,6 +98,11 @@
+ #else
+ #  define ELPP_OS_FREEBSD 0
+ #endif
++#if (defined(__OpenBSD__))
++#  define ELPP_OS_OPENBSD 1
++#else
++#  define ELPP_OS_OPENBSD 0
++#endif
+ #if (defined(__sun))
+ #  define ELPP_OS_SOLARIS 1
+ #else
+@@ -109,7 +114,7 @@
+ #  define ELPP_OS_NETBSD 0
+ #endif
+ // Unix
+-#if ((ELPP_OS_LINUX || ELPP_OS_MAC || ELPP_OS_FREEBSD || ELPP_OS_NETBSD || ELPP_OS_SOLARIS) && (!ELPP_OS_WINDOWS))
++#if ((ELPP_OS_LINUX || ELPP_OS_MAC || ELPP_OS_FREEBSD || ELPP_OS_OPENBSD || ELPP_OS_NETBSD || ELPP_OS_SOLARIS) && (!ELPP_OS_WINDOWS))
+ #  define ELPP_OS_UNIX 1
+ #else
+ #  define ELPP_OS_UNIX 0
