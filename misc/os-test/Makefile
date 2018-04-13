@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/13 15:38:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/13 15:46:47 ajacoutot Exp $
 
 COMMENT =	test suites for POSIX operating systems
 
 GL_COMMIT =	0a1066eac2aeba09c52eb4ff30dcbbada4c5f685
 GL_ACCOUNT =	sortix
 GL_PROJECT =	os-test
+REVISION =	0
 
 DISTNAME =	${GL_PROJECT}-${GL_COMMIT}
 # upstream has no version, count git commits instead

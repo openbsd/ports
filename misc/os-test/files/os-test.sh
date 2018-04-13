@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-libexec_dir=${LOCALBASE}/libexec/os-test
-libdata_dir=${LOCALBASE}/libdata/os-test
+libexec_dir=${TRUEPREFIX}/libexec/os-test
+libdata_dir=${TRUEPREFIX}/libdata/os-test
 
 uname -srm > uname.out
 
@@ -25,5 +25,5 @@ for suite in `cat $libdata_dir/suite.list`; do
 	echo >&2
 done
 
-${LOCALBASE}/bin/os-test-html --enable-legend --enable-suites-overview \
+${TRUEPREFIX}/bin/os-test-html --enable-legend --enable-suites-overview \
     --suite-list "`cat $libdata_dir/suite.list`" > os-test.html
