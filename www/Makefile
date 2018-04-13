@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.856 2018/04/04 07:38:06 pvk Exp $
+# $OpenBSD: Makefile,v 1.857 2018/04/13 06:15:35 kirby Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -46,6 +46,7 @@
      SUBDIR += gcap
      SUBDIR += gitea
      SUBDIR += goaccess
+     SUBDIR += goaccess,tokyocabinet
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
      SUBDIR += haserl,no_lua,static
