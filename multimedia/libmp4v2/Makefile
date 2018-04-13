@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/26 10:59:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/13 15:31:12 jasper Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -24,5 +24,10 @@ BUILD_DEPENDS =		devel/help2man
 USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile
 CONFIGURE_STYLE =	gnu
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=		-std=c++03
+.endif
 
 .include <bsd.port.mk>

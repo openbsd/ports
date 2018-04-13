@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.81 2018/04/13 15:31:12 jasper Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
@@ -47,6 +47,11 @@ CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 
 .if ${FLAVOR:Ma4}
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
+.endif
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS +=		-std=c++03
 .endif
 
 FAKE_FLAGS=	ROOT=${WRKINST} SPOOL=${PREFIX}/libdata/hylafax
