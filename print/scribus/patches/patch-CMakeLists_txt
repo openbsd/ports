@@ -1,16 +1,19 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2016/01/05 11:24:05 landry Exp $
---- CMakeLists.txt.orig	Mon Jan  5 22:53:23 2015
-+++ CMakeLists.txt	Mon Jan  4 17:08:50 2016
-@@ -274,7 +274,7 @@ ENDIF (APPLEBUNDLE)
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2018/04/13 20:51:12 sthen Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -275,7 +275,9 @@ ENDIF (APPLEBUNDLE)
  #Setp all the directories we will use
  #MAN
  CMAKE_POLICY(SET CMP0005 OLD)
--SET(MANDIR "share/man/")
-+SET(MANDIR "man/")
+-SET(MANDIR "${CMAKE_INSTALL_DATAROOTDIR}/man/")
++IF(!MANDIR)
++    SET(MANDIR "${CMAKE_INSTALL_DATAROOTDIR}/man/")
++ENDIF(MANDIR)
  IF(WANT_VERSIONING)
-     SET(SHAREDIR "share/${MAIN_DIR_NAME}${TAG_VERSION}/")
+     SET(SHAREDIR "${CMAKE_INSTALL_DATAROOTDIR}/${MAIN_DIR_NAME}${TAG_VERSION}/")
  ELSE(WANT_VERSIONING)
-@@ -345,7 +345,7 @@ IF(WANT_LIB64)
+@@ -374,7 +376,7 @@ IF(WANT_LIB64)
    ENDIF(NOT ARCH_X86_64)
    SET(LIB_SUFFIX "64" CACHE TYPE STRING)
  ENDIF(WANT_LIB64)

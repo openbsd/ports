@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/01/05 11:24:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/04/13 20:51:12 sthen Exp $
 @bin bin/scribus
 include/scribus/
 include/scribus/KarbonCurveFit.h
@@ -748,6 +748,7 @@ share/doc/scribus/de/color10.html
 share/doc/scribus/de/color2.html
 share/doc/scribus/de/color3.html
 share/doc/scribus/de/color4.html
+share/doc/scribus/de/color4a.html
 share/doc/scribus/de/color5.html
 share/doc/scribus/de/color6.html
 share/doc/scribus/de/color7.html
@@ -943,6 +944,7 @@ share/doc/scribus/de/images/eps-imp4.png
 share/doc/scribus/de/images/eps-imp5.png
 share/doc/scribus/de/images/externallink.png
 share/doc/scribus/de/images/externalweblink.png
+share/doc/scribus/de/images/faecher_hlc-lab.png
 share/doc/scribus/de/images/file-error1.png
 share/doc/scribus/de/images/file-error2.png
 share/doc/scribus/de/images/file-error3.png
@@ -1289,6 +1291,7 @@ share/doc/scribus/en/color10.html
 share/doc/scribus/en/color2.html
 share/doc/scribus/en/color3.html
 share/doc/scribus/en/color4.html
+share/doc/scribus/en/color4a.html
 share/doc/scribus/en/color5.html
 share/doc/scribus/en/color6.html
 share/doc/scribus/en/color7.html
@@ -1481,6 +1484,7 @@ share/doc/scribus/en/images/eps-imp4.png
 share/doc/scribus/en/images/eps-imp5.png
 share/doc/scribus/en/images/externallink.png
 share/doc/scribus/en/images/externalweblink.png
+share/doc/scribus/en/images/faecher_hlc-lab.png
 share/doc/scribus/en/images/file-error1.png
 share/doc/scribus/en/images/file-error2.png
 share/doc/scribus/en/images/file-error3.png
@@ -2996,6 +3000,10 @@ share/scribus/swatches/Baumann System Prase_zd01_4.eps
 share/scribus/swatches/Bundesregierung_CMYK.xml
 share/scribus/swatches/Bundesregierung_CMYK_TZ.xml
 share/scribus/swatches/Bundesregierung_HKS.xml
+share/scribus/swatches/CIE-HLC_CMYK.xml
+share/scribus/swatches/CIE-HLC_RGB.xml
+share/scribus/swatches/CIE-LAB_CMYK.xml
+share/scribus/swatches/CIE-LAB_RGB.xml
 share/scribus/swatches/COPYING_RESENE.txt
 share/scribus/swatches/Classic_Kit.xml
 share/scribus/swatches/ColorBrewer.xml

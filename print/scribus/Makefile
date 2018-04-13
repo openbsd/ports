@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.61 2018/01/04 06:00:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.62 2018/04/13 20:51:12 sthen Exp $
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.4.5
+DISTNAME=	scribus-1.4.6
 CATEGORIES=	print
-REVISION=	1
 
 HOMEPAGE=	https://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	QtGui QtNetwork QtXml c cairo cups execinfo
-WANTLIB +=	fontconfig freetype hyphen jpeg lcms2 m podofo pthread
-WANTLIB +=	${COMPILER_LIBCXX} tiff util xml2 z ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += QtGui QtNetwork QtXml c cairo cups fontconfig freetype
+WANTLIB += hyphen jpeg lcms2 m podofo tiff xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	x11/qt4 \
 		devel/cmake \
@@ -31,8 +30,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/antiword \
 		misc/shared-mime-info \
 		${MODPY_TKINTER_DEPENDS}
-LIB_DEPENDS= 	devel/libexecinfo \
-		graphics/lcms2 \
+LIB_DEPENDS=	graphics/lcms2 \
 		graphics/tiff \
 		print/cups,-libs \
 		textproc/hyphen \
@@ -46,7 +44,8 @@ FLAVOR?=
 
 CONFIGURE_ARGS +=	-DCMAKE_SKIP_RPATH:BOOL=1 \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DCMAKE_C_FLAGS="${CFLAGS}"
+			-DCMAKE_C_FLAGS="${CFLAGS}" \
+			-DMANDIR="${LOCALBASE}/man/"
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=-DWANT_DEBUG=1

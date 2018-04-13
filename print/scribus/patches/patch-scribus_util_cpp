@@ -1,0 +1,15 @@
+$OpenBSD: patch-scribus_util_cpp,v 1.1 2018/04/13 20:51:12 sthen Exp $
+
+Index: scribus/util.cpp
+--- scribus/util.cpp.orig
++++ scribus/util.cpp
+@@ -38,7 +38,9 @@ for which a new license (GPL+exception) is in place.
+ #include <signal.h>
+ 
+ #if !defined(_WIN32) && !defined(Q_OS_MAC) && !defined(Q_OS_HAIKU) 
++#ifndef __OpenBSD__
+ #include <execinfo.h>
++#endif
+ #include <cxxabi.h>
+ #endif
+ #if defined(_WIN32)
