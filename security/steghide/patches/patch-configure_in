@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_in,v 1.1 2018/04/13 11:13:31 jca Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -15,6 +15,9 @@ AC_CHECK_FUNCS(strchr)
+ AM_GNU_GETTEXT
+ AM_CONDITIONAL(USE_INTLDIR, test "$nls_cv_use_gnu_gettext" = yes)
+ 
++dnl compiler warnings
++CXXFLAGS="-Wall $CXXFLAGS"
++
+ dnl check if debugging support is requested
+ AC_MSG_CHECKING([wether to enable debugging])
+ AC_ARG_ENABLE(debug,[  --enable-debug          enable debugging],
+@@ -22,14 +25,12 @@ AC_ARG_ENABLE(debug,[  --enable-debug          enable 
+ 	then
+ 		AC_MSG_RESULT([yes])
+ 		AC_DEFINE(DEBUG,1,[enable code used only for debugging])
+-		CXXFLAGS="-O2 -Wall -g"
++		CXXFLAGS="-g $CXXFLAGS"
+ 	else
+ 		AC_MSG_RESULT([no])
+-		CXXFLAGS="-O2 -Wall"
+ 	fi
+ 	,
+ 	AC_MSG_RESULT([no])
+-	CXXFLAGS="-O2 -Wall"
+ )
+ 
+ dnl check if randomness should be disabled
