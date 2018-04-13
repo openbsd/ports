@@ -1,0 +1,863 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/13 15:38:15 bluhm Exp $
+bin/os-test
+bin/os-test-html
+libdata/os-test/
+libdata/os-test/io/
+libdata/os-test/io-test.list
+libdata/os-test/io.expect/
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.1
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.2
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.3
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.4
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.5
+libdata/os-test/io.expect/open-mkstemp-rdonly-trunc.6
+libdata/os-test/io.expect/open-mkstemp-rdonly.posix
+libdata/os-test/io.expect/open-tmpdir-rdonly-append.posix
+libdata/os-test/io.expect/open-tmpdir-rdonly-creat.posix
+libdata/os-test/io.expect/open-tmpdir-rdonly-trunc.1
+libdata/os-test/io.expect/open-tmpdir-rdonly-trunc.2
+libdata/os-test/io.expect/open-tmpdir-rdonly-trunc.3
+libdata/os-test/io.expect/open-tmpdir-rdonly-trunc.4
+libdata/os-test/io.expect/open-tmpdir-rdonly-trunc.5
+libdata/os-test/io.expect/open-tmpdir-rdonly.posix
+libdata/os-test/io.expect/open-tmpdir-rdwr-creat.posix
+libdata/os-test/io.expect/open-tmpdir-rdwr-trunc.posix
+libdata/os-test/io.expect/open-tmpdir-rdwr.posix
+libdata/os-test/io.expect/open-tmpdir-wronly-append.posix
+libdata/os-test/io.expect/open-tmpdir-wronly-creat.posix
+libdata/os-test/io.expect/open-tmpdir-wronly-trunc.posix
+libdata/os-test/io.expect/open-tmpdir-wronly.posix
+libdata/os-test/io/README
+libdata/os-test/io/open-mkstemp-rdonly-trunc.c
+libdata/os-test/io/open-mkstemp-rdonly.c
+libdata/os-test/io/open-tmpdir-rdonly-append.c
+libdata/os-test/io/open-tmpdir-rdonly-creat.c
+libdata/os-test/io/open-tmpdir-rdonly-trunc.c
+libdata/os-test/io/open-tmpdir-rdonly.c
+libdata/os-test/io/open-tmpdir-rdwr-creat.c
+libdata/os-test/io/open-tmpdir-rdwr-trunc.c
+libdata/os-test/io/open-tmpdir-rdwr.c
+libdata/os-test/io/open-tmpdir-wronly-append.c
+libdata/os-test/io/open-tmpdir-wronly-creat.c
+libdata/os-test/io/open-tmpdir-wronly-trunc.c
+libdata/os-test/io/open-tmpdir-wronly.c
+libdata/os-test/suite.list
+libdata/os-test/udp/
+libdata/os-test/udp-test.list
+libdata/os-test/udp.expect/
+libdata/os-test/udp.expect/accept-nonblock.posix
+libdata/os-test/udp.expect/accept.posix
+libdata/os-test/udp.expect/bind-any-0-getpeername.posix
+libdata/os-test/udp.expect/bind-any-0-getsockname.posix
+libdata/os-test/udp.expect/bind-any-0-unbind.posix.1
+libdata/os-test/udp.expect/bind-any-0-unbind.posix.2
+libdata/os-test/udp.expect/bind-any-0.posix
+libdata/os-test/udp.expect/bind-broadcast-0-getpeername.unknown.1
+libdata/os-test/udp.expect/bind-broadcast-0-getpeername.unknown.2
+libdata/os-test/udp.expect/bind-broadcast-0-getsockname.unknown.1
+libdata/os-test/udp.expect/bind-broadcast-0-getsockname.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-any-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-any-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-any-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-any-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-any.posix
+libdata/os-test/udp.expect/bind-conflict-any-broadcast-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-broadcast-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-broadcast-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-broadcast-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-broadcast-so-reuseaddr.unknown.3
+libdata/os-test/udp.expect/bind-conflict-any-broadcast.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-broadcast.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-loopback-so-reuseaddr-both.1
+libdata/os-test/udp.expect/bind-conflict-any-loopback-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-any-loopback-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-any-loopback.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-any-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-any-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-any-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-any-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-any-so-reuseaddr.unknown.3
+libdata/os-test/udp.expect/bind-conflict-broadcast-any.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-any.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr-both.unknown.3
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast-so-reuseaddr.unknown.3
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-broadcast.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback.unknown.1
+libdata/os-test/udp.expect/bind-conflict-broadcast-loopback.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-any-so-reuseaddr-both.1
+libdata/os-test/udp.expect/bind-conflict-loopback-any-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-any-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-any.1
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-broadcast.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-loopback-so-reuseaddr-both.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-loopback-so-reuseaddr-both.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-loopback-so-reuseaddr.unknown.1
+libdata/os-test/udp.expect/bind-conflict-loopback-loopback-so-reuseaddr.unknown.2
+libdata/os-test/udp.expect/bind-conflict-loopback-loopback.posix.1
+libdata/os-test/udp.expect/bind-connect-self-send-poll.posix
+libdata/os-test/udp.expect/bind-connect-self-send-recv.posix
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-poll.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-poll.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-recv-recv.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-recv-recv.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-recv-recv.unknown.3
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-poll.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-poll.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-poll.unknown.4
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-recv-recv.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-recv-recv.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-recv-recv.unknown.3
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-send-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-send.posix
+libdata/os-test/udp.expect/bind-connect-self-shutdown-r-send-poll.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-shutdown-r-send-poll.unknown.2
+libdata/os-test/udp.expect/bind-connect-self-shutdown-r-send-recv.unknown.1
+libdata/os-test/udp.expect/bind-connect-self-shutdown-r-send-recv.unknown.2
+libdata/os-test/udp.expect/bind-connect-self.posix
+libdata/os-test/udp.expect/bind-lan-subnet-broadcast.1
+libdata/os-test/udp.expect/bind-lan-subnet-first.unknown.1
+libdata/os-test/udp.expect/bind-lan-subnet-first.unknown.2
+libdata/os-test/udp.expect/bind-lan-subnet-wrong.1
+libdata/os-test/udp.expect/bind-loopback-0-getpeername.posix
+libdata/os-test/udp.expect/bind-loopback-0-getsockname.1
+libdata/os-test/udp.expect/bind-loopback-broadcast.unknown.1
+libdata/os-test/udp.expect/bind-loopback-broadcast.unknown.2
+libdata/os-test/udp.expect/bind-loopback-other.unknown.1
+libdata/os-test/udp.expect/bind-loopback-other.unknown.2
+libdata/os-test/udp.expect/bind-rebind.posix
+libdata/os-test/udp.expect/bind-sendto-self-recv.posix
+libdata/os-test/udp.expect/bind-sendto-self.posix
+libdata/os-test/udp.expect/bind-socket-sendto-first-poll.posix
+libdata/os-test/udp.expect/bind-socket-sendto-first-recv.posix
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-r-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-r-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-r-recv.unknown.3
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-poll.unknown.3
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-rw-recv.unknown.3
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-w-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-w-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-w-poll.unknown.3
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-w-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-sendto-first-shutdown-w-recv.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-poll.unknown.3
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-recv.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-r-sendto-first-recv.unknown.3
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-poll.unknown.3
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-poll.unknown.4
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-recv.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-rw-sendto-first-recv.unknown.3
+libdata/os-test/udp.expect/bind-socket-shutdown-w-sendto-first-poll.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-w-sendto-first-poll.unknown.2
+libdata/os-test/udp.expect/bind-socket-shutdown-w-sendto-first-poll.unknown.3
+libdata/os-test/udp.expect/bind-socket-shutdown-w-sendto-first-recv.unknown.1
+libdata/os-test/udp.expect/bind-socket-shutdown-w-sendto-first-recv.unknown.2
+libdata/os-test/udp.expect/connect-any-0-getpeername.unknown.1
+libdata/os-test/udp.expect/connect-any-0-getpeername.unknown.2
+libdata/os-test/udp.expect/connect-any-0-getpeername.unknown.3
+libdata/os-test/udp.expect/connect-any-0-getpeername.unknown.4
+libdata/os-test/udp.expect/connect-any-0-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-any-0-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-any-0-getsockname.unknown.3
+libdata/os-test/udp.expect/connect-any-0-getsockname.unknown.4
+libdata/os-test/udp.expect/connect-any-getpeername.1
+libdata/os-test/udp.expect/connect-any-getpeername.unknown.1
+libdata/os-test/udp.expect/connect-any-getpeername.unknown.2
+libdata/os-test/udp.expect/connect-any-getpeername.unknown.3
+libdata/os-test/udp.expect/connect-any-getpeername.unknown.4
+libdata/os-test/udp.expect/connect-any-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-any-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-any-getsockname.unknown.3
+libdata/os-test/udp.expect/connect-any-getsockname.unknown.4
+libdata/os-test/udp.expect/connect-broadcast-getpeername-so-broadcast.1
+libdata/os-test/udp.expect/connect-broadcast-getpeername.1
+libdata/os-test/udp.expect/connect-broadcast-getpeername.2
+libdata/os-test/udp.expect/connect-broadcast-getsockname-so-broadcast.1
+libdata/os-test/udp.expect/connect-broadcast-getsockname.1
+libdata/os-test/udp.expect/connect-broadcast-getsockname.2
+libdata/os-test/udp.expect/connect-getpeername.posix
+libdata/os-test/udp.expect/connect-loopback-0-getpeername.unknown.1
+libdata/os-test/udp.expect/connect-loopback-0-getpeername.unknown.2
+libdata/os-test/udp.expect/connect-loopback-0-getpeername.unknown.3
+libdata/os-test/udp.expect/connect-loopback-0-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-loopback-0-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-loopback-0-getsockname.unknown.3
+libdata/os-test/udp.expect/connect-loopback-get-so-bindtodevice.1
+libdata/os-test/udp.expect/connect-loopback-get-so-bindtodevice.2
+libdata/os-test/udp.expect/connect-loopback-get-so-bindtodevice.3
+libdata/os-test/udp.expect/connect-loopback-getpeername.posix
+libdata/os-test/udp.expect/connect-loopback-getsockname.posix
+libdata/os-test/udp.expect/connect-loopback-reconnect-loopback-getsockname.posix
+libdata/os-test/udp.expect/connect-loopback-reconnect-wan-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-loopback-reconnect-wan-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-loopback-reconnect-wan-getsockname.unknown.3
+libdata/os-test/udp.expect/connect-loopback-unconnect-rebind-any-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-loopback-unconnect-rebind-any-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-loopback-unconnect-rebind-loopback-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-loopback-unconnect-rebind-loopback-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-poll.posix
+libdata/os-test/udp.expect/connect-reconnect-any-getpeername.unknown.1
+libdata/os-test/udp.expect/connect-reconnect-any-getpeername.unknown.2
+libdata/os-test/udp.expect/connect-reconnect-any-getpeername.unknown.3
+libdata/os-test/udp.expect/connect-reconnect-any-getpeername.unknown.4
+libdata/os-test/udp.expect/connect-reconnect-getpeername.posix
+libdata/os-test/udp.expect/connect-reconnect-same.posix
+libdata/os-test/udp.expect/connect-reconnect.posix
+libdata/os-test/udp.expect/connect-recv.posix
+libdata/os-test/udp.expect/connect-send-error-accept.posix
+libdata/os-test/udp.expect/connect-send-error-getpeername.posix
+libdata/os-test/udp.expect/connect-send-error-getsockname.posix
+libdata/os-test/udp.expect/connect-send-error-listen.posix
+libdata/os-test/udp.expect/connect-send-error-poll-poll.unknown.1
+libdata/os-test/udp.expect/connect-send-error-poll-poll.unknown.2
+libdata/os-test/udp.expect/connect-send-error-poll-poll.unknown.3
+libdata/os-test/udp.expect/connect-send-error-poll-poll.unknown.4
+libdata/os-test/udp.expect/connect-send-error-poll-poll.unknown.5
+libdata/os-test/udp.expect/connect-send-error-poll-so-error-poll.unknown.1
+libdata/os-test/udp.expect/connect-send-error-poll-so-error-poll.unknown.2
+libdata/os-test/udp.expect/connect-send-error-poll-so-error-poll.unknown.3
+libdata/os-test/udp.expect/connect-send-error-poll-so-error-poll.unknown.4
+libdata/os-test/udp.expect/connect-send-error-poll-so-error-poll.unknown.5
+libdata/os-test/udp.expect/connect-send-error-poll.unknown.1
+libdata/os-test/udp.expect/connect-send-error-poll.unknown.2
+libdata/os-test/udp.expect/connect-send-error-poll.unknown.3
+libdata/os-test/udp.expect/connect-send-error-poll.unknown.4
+libdata/os-test/udp.expect/connect-send-error-poll.unknown.5
+libdata/os-test/udp.expect/connect-send-error-reconnect.unknown.1
+libdata/os-test/udp.expect/connect-send-error-reconnect.unknown.2
+libdata/os-test/udp.expect/connect-send-error-recv.1
+libdata/os-test/udp.expect/connect-send-error-send-send.1
+libdata/os-test/udp.expect/connect-send-error-send.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/connect-send-error-shutdown-r-send.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-send.unknown.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-send.unknown.2
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-send.unknown.3
+libdata/os-test/udp.expect/connect-send-error-shutdown-rw-so-error.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-w-recv.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-w-send.unknown.1
+libdata/os-test/udp.expect/connect-send-error-shutdown-w-send.unknown.2
+libdata/os-test/udp.expect/connect-send-error-shutdown-w-send.unknown.3
+libdata/os-test/udp.expect/connect-send-error-so-error-send-send.1
+libdata/os-test/udp.expect/connect-sendto-null.posix
+libdata/os-test/udp.expect/connect-sendto-other.posix.1
+libdata/os-test/udp.expect/connect-sendto-other.posix.2
+libdata/os-test/udp.expect/connect-sendto-same.posix.1
+libdata/os-test/udp.expect/connect-sendto-same.posix.2
+libdata/os-test/udp.expect/connect-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-r-send.posix
+libdata/os-test/udp.expect/connect-shutdown-r-unconnect-recv.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-r-unconnect-recv.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-r-unconnect-send.1
+libdata/os-test/udp.expect/connect-shutdown-reconnect.posix
+libdata/os-test/udp.expect/connect-shutdown-rw-reconnect-send.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-rw-reconnect-send.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-rw-send.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-rw-send.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-rw-unconnect-recv.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-rw-unconnect-recv.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-rw-unconnect-send.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-rw-unconnect-send.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-w-recv.posix
+libdata/os-test/udp.expect/connect-shutdown-w-send.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-w-send.unknown.2
+libdata/os-test/udp.expect/connect-shutdown-w-unconnect-recv.posix
+libdata/os-test/udp.expect/connect-shutdown-w-unconnect-send.unknown.1
+libdata/os-test/udp.expect/connect-shutdown-w-unconnect-send.unknown.2
+libdata/os-test/udp.expect/connect-shutdown.1
+libdata/os-test/udp.expect/connect-unconnect-getpeername.posix
+libdata/os-test/udp.expect/connect-unconnect-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-getsockname.unknown.3
+libdata/os-test/udp.expect/connect-unconnect-sa-family.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-sa-family.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-r-send.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-r-send.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-rw-send.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-rw-send.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-rw-send.unknown.3
+libdata/os-test/udp.expect/connect-unconnect-shutdown-w-recv.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-w-recv.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-w-send.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-shutdown-w-send.unknown.2
+libdata/os-test/udp.expect/connect-unconnect-shutdown-w-send.unknown.3
+libdata/os-test/udp.expect/connect-unconnect-sockaddr-in.posix
+libdata/os-test/udp.expect/connect-unconnect-sockaddr-storage.posix
+libdata/os-test/udp.expect/connect-unconnect-sockaddr.unknown.1
+libdata/os-test/udp.expect/connect-unconnect-unconnect.posix
+libdata/os-test/udp.expect/connect-unconnect.posix
+libdata/os-test/udp.expect/connect-wan-get-so-bindtodevice.1
+libdata/os-test/udp.expect/connect-wan-get-so-bindtodevice.2
+libdata/os-test/udp.expect/connect-wan-get-so-bindtodevice.3
+libdata/os-test/udp.expect/connect-wan-getsockname.posix
+libdata/os-test/udp.expect/connect-wan-send-reconnect-loopback-send.unknown.1
+libdata/os-test/udp.expect/connect-wan-send-reconnect-loopback-send.unknown.2
+libdata/os-test/udp.expect/connect-wan-send-reconnect-loopback-send.unknown.3
+libdata/os-test/udp.expect/connect-wan-unconnect-rebind-any-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-wan-unconnect-rebind-any-getsockname.unknown.2
+libdata/os-test/udp.expect/connect-wan-unconnect-rebind-same-getsockname.unknown.1
+libdata/os-test/udp.expect/connect-wan-unconnect-rebind-same-getsockname.unknown.2
+libdata/os-test/udp.expect/cross-netif-lan-send-loopback-recv.1
+libdata/os-test/udp.expect/cross-netif-loopback-send-lan-recv.1
+libdata/os-test/udp.expect/get-so-bindtodevice.1
+libdata/os-test/udp.expect/get-so-bindtodevice.2
+libdata/os-test/udp.expect/get-so-bindtodevice.3
+libdata/os-test/udp.expect/getpeername.posix
+libdata/os-test/udp.expect/getsockname.posix
+libdata/os-test/udp.expect/listen.posix
+libdata/os-test/udp.expect/pair-poll.posix
+libdata/os-test/udp.expect/pair-send-poll.posix
+libdata/os-test/udp.expect/pair-send-recv.posix
+libdata/os-test/udp.expect/pair-send-shutdown-r-poll.unknown.1
+libdata/os-test/udp.expect/pair-send-shutdown-r-poll.unknown.2
+libdata/os-test/udp.expect/pair-send-shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/pair-send-shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/pair-send-shutdown-r-recv.unknown.3
+libdata/os-test/udp.expect/pair-send-shutdown-rw-poll.unknown.1
+libdata/os-test/udp.expect/pair-send-shutdown-rw-poll.unknown.2
+libdata/os-test/udp.expect/pair-send-shutdown-rw-poll.unknown.4
+libdata/os-test/udp.expect/pair-send-shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/pair-send-shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/pair-send-shutdown-rw-recv.unknown.3
+libdata/os-test/udp.expect/pair-send-shutdown-w-poll.unknown.1
+libdata/os-test/udp.expect/pair-send-shutdown-w-poll.unknown.2
+libdata/os-test/udp.expect/pair-send-shutdown-w-poll.unknown.3
+libdata/os-test/udp.expect/pair-send-shutdown-w-recv.posix
+libdata/os-test/udp.expect/pair-shutdown-r-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-r-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-r-send-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-r-send-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-r-send-recv.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-r-send-recv.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-rw-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-rw-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-rw-poll.unknown.3
+libdata/os-test/udp.expect/pair-shutdown-rw-send-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-rw-send-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-rw-send-poll.unknown.4
+libdata/os-test/udp.expect/pair-shutdown-rw-send-poll.unknown.5
+libdata/os-test/udp.expect/pair-shutdown-rw-send-recv.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-rw-send-recv.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-w-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-w-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-w-poll.unknown.3
+libdata/os-test/udp.expect/pair-shutdown-w-send-poll.unknown.1
+libdata/os-test/udp.expect/pair-shutdown-w-send-poll.unknown.2
+libdata/os-test/udp.expect/pair-shutdown-w-send-poll.unknown.3
+libdata/os-test/udp.expect/pair-shutdown-w-send-recv.posix
+libdata/os-test/udp.expect/poll.unknown.1
+libdata/os-test/udp.expect/recvfrom-getsockname.1
+libdata/os-test/udp.expect/recvfrom-getsockname.unknown.1
+libdata/os-test/udp.expect/send.posix
+libdata/os-test/udp.expect/sendto-any-so-error.unknown.1
+libdata/os-test/udp.expect/sendto-any-so-error.unknown.2
+libdata/os-test/udp.expect/sendto-any-so-error.unknown.3
+libdata/os-test/udp.expect/sendto-any-so-error.unknown.4
+libdata/os-test/udp.expect/sendto-getsockname.posix
+libdata/os-test/udp.expect/sendto-loopback-0-so-error.unknown.1
+libdata/os-test/udp.expect/sendto-loopback-0-so-error.unknown.2
+libdata/os-test/udp.expect/sendto-null.posix
+libdata/os-test/udp.expect/shutdown-r-recv.unknown.1
+libdata/os-test/udp.expect/shutdown-r-recv.unknown.2
+libdata/os-test/udp.expect/shutdown-r-send.unknown.1
+libdata/os-test/udp.expect/shutdown-r-send.unknown.2
+libdata/os-test/udp.expect/shutdown-rw-recv.unknown.1
+libdata/os-test/udp.expect/shutdown-rw-recv.unknown.2
+libdata/os-test/udp.expect/shutdown-rw-send.unknown.1
+libdata/os-test/udp.expect/shutdown-rw-send.unknown.2
+libdata/os-test/udp.expect/shutdown-rw-send.unknown.3
+libdata/os-test/udp.expect/shutdown-w-recv.unknown.1
+libdata/os-test/udp.expect/shutdown-w-recv.unknown.2
+libdata/os-test/udp.expect/shutdown-w-send.unknown.1
+libdata/os-test/udp.expect/shutdown-w-send.unknown.2
+libdata/os-test/udp.expect/shutdown-w-send.unknown.3
+libdata/os-test/udp.expect/shutdown.unknown.1
+libdata/os-test/udp.expect/shutdown.unknown.2
+libdata/os-test/udp.expect/so-error.posix
+libdata/os-test/udp.expect/trio-connect-send-right-x-poll.posix
+libdata/os-test/udp.expect/trio-connect-send-right-x-recv.posix
+libdata/os-test/udp.expect/trio-connect-send-wrong-y-poll.posix
+libdata/os-test/udp.expect/trio-connect-send-wrong-y-recv.posix
+libdata/os-test/udp.expect/trio-connect-send-wrong-y-send-right-x-poll.posix
+libdata/os-test/udp.expect/trio-connect-send-wrong-y-send-right-x-recv.posix
+libdata/os-test/udp.expect/trio-send-right-x-poll.posix
+libdata/os-test/udp.expect/trio-send-right-x-recv.posix
+libdata/os-test/udp.expect/trio-send-right-x-send-wrong-y-poll.posix
+libdata/os-test/udp.expect/trio-send-right-x-send-wrong-y-recv.posix
+libdata/os-test/udp.expect/trio-send-wrong-y-connect-poll.posix
+libdata/os-test/udp.expect/trio-send-wrong-y-connect-recv.posix
+libdata/os-test/udp.expect/trio-send-wrong-y-connect-send-right-x-poll.posix
+libdata/os-test/udp.expect/trio-send-wrong-y-connect-send-right-x-recv.posix
+libdata/os-test/udp.expect/unconnect-getpeername.1
+libdata/os-test/udp.expect/unconnect-getsockname.unknown.1
+libdata/os-test/udp.expect/unconnect-getsockname.unknown.2
+libdata/os-test/udp.expect/unconnect.posix
+libdata/os-test/udp/README
+libdata/os-test/udp/accept-nonblock.c
+libdata/os-test/udp/accept.c
+libdata/os-test/udp/bind-any-0-getpeername.c
+libdata/os-test/udp/bind-any-0-getsockname.c
+libdata/os-test/udp/bind-any-0-unbind.c
+libdata/os-test/udp/bind-any-0.c
+libdata/os-test/udp/bind-broadcast-0-getpeername.c
+libdata/os-test/udp/bind-broadcast-0-getsockname.c
+libdata/os-test/udp/bind-conflict-any-any-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-any-any-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-any-any.c
+libdata/os-test/udp/bind-conflict-any-broadcast-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-any-broadcast-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-any-broadcast.c
+libdata/os-test/udp/bind-conflict-any-loopback-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-any-loopback-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-any-loopback.c
+libdata/os-test/udp/bind-conflict-broadcast-any-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-broadcast-any-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-broadcast-any.c
+libdata/os-test/udp/bind-conflict-broadcast-broadcast-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-broadcast-broadcast-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-broadcast-broadcast.c
+libdata/os-test/udp/bind-conflict-broadcast-loopback-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-broadcast-loopback-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-broadcast-loopback.c
+libdata/os-test/udp/bind-conflict-loopback-any-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-loopback-any-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-loopback-any.c
+libdata/os-test/udp/bind-conflict-loopback-broadcast-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-loopback-broadcast-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-loopback-broadcast.c
+libdata/os-test/udp/bind-conflict-loopback-loopback-so-reuseaddr-both.c
+libdata/os-test/udp/bind-conflict-loopback-loopback-so-reuseaddr.c
+libdata/os-test/udp/bind-conflict-loopback-loopback.c
+libdata/os-test/udp/bind-connect-self-send-poll.c
+libdata/os-test/udp/bind-connect-self-send-recv.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-r-poll.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-r-recv-recv.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-r-recv.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-rw-poll.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-rw-recv-recv.c
+libdata/os-test/udp/bind-connect-self-send-shutdown-rw-recv.c
+libdata/os-test/udp/bind-connect-self-send.c
+libdata/os-test/udp/bind-connect-self-shutdown-r-send-poll.c
+libdata/os-test/udp/bind-connect-self-shutdown-r-send-recv.c
+libdata/os-test/udp/bind-connect-self.c
+libdata/os-test/udp/bind-lan-subnet-broadcast.c
+libdata/os-test/udp/bind-lan-subnet-first.c
+libdata/os-test/udp/bind-lan-subnet-wrong.c
+libdata/os-test/udp/bind-loopback-0-getpeername.c
+libdata/os-test/udp/bind-loopback-0-getsockname.c
+libdata/os-test/udp/bind-loopback-broadcast.c
+libdata/os-test/udp/bind-loopback-other.c
+libdata/os-test/udp/bind-rebind.c
+libdata/os-test/udp/bind-sendto-self-recv.c
+libdata/os-test/udp/bind-sendto-self.c
+libdata/os-test/udp/bind-socket-sendto-first-poll.c
+libdata/os-test/udp/bind-socket-sendto-first-recv.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-r-poll.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-r-recv.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-rw-poll.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-rw-recv.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-w-poll.c
+libdata/os-test/udp/bind-socket-sendto-first-shutdown-w-recv.c
+libdata/os-test/udp/bind-socket-shutdown-r-sendto-first-poll.c
+libdata/os-test/udp/bind-socket-shutdown-r-sendto-first-recv.c
+libdata/os-test/udp/bind-socket-shutdown-rw-sendto-first-poll.c
+libdata/os-test/udp/bind-socket-shutdown-rw-sendto-first-recv.c
+libdata/os-test/udp/bind-socket-shutdown-w-sendto-first-poll.c
+libdata/os-test/udp/bind-socket-shutdown-w-sendto-first-recv.c
+libdata/os-test/udp/connect-any-0-getpeername.c
+libdata/os-test/udp/connect-any-0-getsockname.c
+libdata/os-test/udp/connect-any-getpeername.c
+libdata/os-test/udp/connect-any-getsockname.c
+libdata/os-test/udp/connect-broadcast-getpeername-so-broadcast.c
+libdata/os-test/udp/connect-broadcast-getpeername.c
+libdata/os-test/udp/connect-broadcast-getsockname-so-broadcast.c
+libdata/os-test/udp/connect-broadcast-getsockname.c
+libdata/os-test/udp/connect-getpeername.c
+libdata/os-test/udp/connect-loopback-0-getpeername.c
+libdata/os-test/udp/connect-loopback-0-getsockname.c
+libdata/os-test/udp/connect-loopback-get-so-bindtodevice.c
+libdata/os-test/udp/connect-loopback-getpeername.c
+libdata/os-test/udp/connect-loopback-getsockname.c
+libdata/os-test/udp/connect-loopback-reconnect-loopback-getsockname.c
+libdata/os-test/udp/connect-loopback-reconnect-wan-getsockname.c
+libdata/os-test/udp/connect-loopback-unconnect-rebind-any-getsockname.c
+libdata/os-test/udp/connect-loopback-unconnect-rebind-loopback-getsockname.c
+libdata/os-test/udp/connect-poll.c
+libdata/os-test/udp/connect-reconnect-any-getpeername.c
+libdata/os-test/udp/connect-reconnect-getpeername.c
+libdata/os-test/udp/connect-reconnect-same.c
+libdata/os-test/udp/connect-reconnect.c
+libdata/os-test/udp/connect-recv.c
+libdata/os-test/udp/connect-send-error-accept.c
+libdata/os-test/udp/connect-send-error-getpeername.c
+libdata/os-test/udp/connect-send-error-getsockname.c
+libdata/os-test/udp/connect-send-error-listen.c
+libdata/os-test/udp/connect-send-error-poll-poll.c
+libdata/os-test/udp/connect-send-error-poll-so-error-poll.c
+libdata/os-test/udp/connect-send-error-poll.c
+libdata/os-test/udp/connect-send-error-reconnect.c
+libdata/os-test/udp/connect-send-error-recv.c
+libdata/os-test/udp/connect-send-error-send-send.c
+libdata/os-test/udp/connect-send-error-send.c
+libdata/os-test/udp/connect-send-error-shutdown-r-recv.c
+libdata/os-test/udp/connect-send-error-shutdown-r-send.c
+libdata/os-test/udp/connect-send-error-shutdown-rw-recv.c
+libdata/os-test/udp/connect-send-error-shutdown-rw-send.c
+libdata/os-test/udp/connect-send-error-shutdown-rw-so-error.c
+libdata/os-test/udp/connect-send-error-shutdown-w-recv.c
+libdata/os-test/udp/connect-send-error-shutdown-w-send.c
+libdata/os-test/udp/connect-send-error-so-error-send-send.c
+libdata/os-test/udp/connect-sendto-null.c
+libdata/os-test/udp/connect-sendto-other.c
+libdata/os-test/udp/connect-sendto-same.c
+libdata/os-test/udp/connect-shutdown-r-recv.c
+libdata/os-test/udp/connect-shutdown-r-send.c
+libdata/os-test/udp/connect-shutdown-r-unconnect-recv.c
+libdata/os-test/udp/connect-shutdown-r-unconnect-send.c
+libdata/os-test/udp/connect-shutdown-reconnect.c
+libdata/os-test/udp/connect-shutdown-rw-reconnect-send.c
+libdata/os-test/udp/connect-shutdown-rw-recv.c
+libdata/os-test/udp/connect-shutdown-rw-send.c
+libdata/os-test/udp/connect-shutdown-rw-unconnect-recv.c
+libdata/os-test/udp/connect-shutdown-rw-unconnect-send.c
+libdata/os-test/udp/connect-shutdown-w-recv.c
+libdata/os-test/udp/connect-shutdown-w-send.c
+libdata/os-test/udp/connect-shutdown-w-unconnect-recv.c
+libdata/os-test/udp/connect-shutdown-w-unconnect-send.c
+libdata/os-test/udp/connect-shutdown.c
+libdata/os-test/udp/connect-unconnect-getpeername.c
+libdata/os-test/udp/connect-unconnect-getsockname.c
+libdata/os-test/udp/connect-unconnect-sa-family.c
+libdata/os-test/udp/connect-unconnect-shutdown-r-recv.c
+libdata/os-test/udp/connect-unconnect-shutdown-r-send.c
+libdata/os-test/udp/connect-unconnect-shutdown-rw-recv.c
+libdata/os-test/udp/connect-unconnect-shutdown-rw-send.c
+libdata/os-test/udp/connect-unconnect-shutdown-w-recv.c
+libdata/os-test/udp/connect-unconnect-shutdown-w-send.c
+libdata/os-test/udp/connect-unconnect-sockaddr-in.c
+libdata/os-test/udp/connect-unconnect-sockaddr-storage.c
+libdata/os-test/udp/connect-unconnect-sockaddr.c
+libdata/os-test/udp/connect-unconnect-unconnect.c
+libdata/os-test/udp/connect-unconnect.c
+libdata/os-test/udp/connect-wan-get-so-bindtodevice.c
+libdata/os-test/udp/connect-wan-getsockname.c
+libdata/os-test/udp/connect-wan-send-reconnect-loopback-send.c
+libdata/os-test/udp/connect-wan-unconnect-rebind-any-getsockname.c
+libdata/os-test/udp/connect-wan-unconnect-rebind-same-getsockname.c
+libdata/os-test/udp/cross-netif-lan-send-loopback-recv.c
+libdata/os-test/udp/cross-netif-loopback-send-lan-recv.c
+libdata/os-test/udp/get-so-bindtodevice.c
+libdata/os-test/udp/getpeername.c
+libdata/os-test/udp/getsockname.c
+libdata/os-test/udp/listen.c
+libdata/os-test/udp/pair-poll.c
+libdata/os-test/udp/pair-send-poll.c
+libdata/os-test/udp/pair-send-recv.c
+libdata/os-test/udp/pair-send-shutdown-r-poll.c
+libdata/os-test/udp/pair-send-shutdown-r-recv.c
+libdata/os-test/udp/pair-send-shutdown-rw-poll.c
+libdata/os-test/udp/pair-send-shutdown-rw-recv.c
+libdata/os-test/udp/pair-send-shutdown-w-poll.c
+libdata/os-test/udp/pair-send-shutdown-w-recv.c
+libdata/os-test/udp/pair-shutdown-r-poll.c
+libdata/os-test/udp/pair-shutdown-r-send-poll.c
+libdata/os-test/udp/pair-shutdown-r-send-recv.c
+libdata/os-test/udp/pair-shutdown-rw-poll.c
+libdata/os-test/udp/pair-shutdown-rw-send-poll.c
+libdata/os-test/udp/pair-shutdown-rw-send-recv.c
+libdata/os-test/udp/pair-shutdown-w-poll.c
+libdata/os-test/udp/pair-shutdown-w-send-poll.c
+libdata/os-test/udp/pair-shutdown-w-send-recv.c
+libdata/os-test/udp/poll.c
+libdata/os-test/udp/recvfrom-getsockname.c
+libdata/os-test/udp/send.c
+libdata/os-test/udp/sendto-any-so-error.c
+libdata/os-test/udp/sendto-getsockname.c
+libdata/os-test/udp/sendto-loopback-0-so-error.c
+libdata/os-test/udp/sendto-null.c
+libdata/os-test/udp/shutdown-r-recv.c
+libdata/os-test/udp/shutdown-r-send.c
+libdata/os-test/udp/shutdown-rw-recv.c
+libdata/os-test/udp/shutdown-rw-send.c
+libdata/os-test/udp/shutdown-w-recv.c
+libdata/os-test/udp/shutdown-w-send.c
+libdata/os-test/udp/shutdown.c
+libdata/os-test/udp/so-error.c
+libdata/os-test/udp/trio-connect-send-right-x-poll.c
+libdata/os-test/udp/trio-connect-send-right-x-recv.c
+libdata/os-test/udp/trio-connect-send-wrong-y-poll.c
+libdata/os-test/udp/trio-connect-send-wrong-y-recv.c
+libdata/os-test/udp/trio-connect-send-wrong-y-send-right-x-poll.c
+libdata/os-test/udp/trio-connect-send-wrong-y-send-right-x-recv.c
+libdata/os-test/udp/trio-send-right-x-poll.c
+libdata/os-test/udp/trio-send-right-x-recv.c
+libdata/os-test/udp/trio-send-right-x-send-wrong-y-poll.c
+libdata/os-test/udp/trio-send-right-x-send-wrong-y-recv.c
+libdata/os-test/udp/trio-send-wrong-y-connect-poll.c
+libdata/os-test/udp/trio-send-wrong-y-connect-recv.c
+libdata/os-test/udp/trio-send-wrong-y-connect-send-right-x-poll.c
+libdata/os-test/udp/trio-send-wrong-y-connect-send-right-x-recv.c
+libdata/os-test/udp/unconnect-getpeername.c
+libdata/os-test/udp/unconnect-getsockname.c
+libdata/os-test/udp/unconnect.c
+libexec/os-test/
+libexec/os-test/io/
+@bin libexec/os-test/io/open-mkstemp-rdonly
+@bin libexec/os-test/io/open-mkstemp-rdonly-trunc
+@bin libexec/os-test/io/open-tmpdir-rdonly
+@bin libexec/os-test/io/open-tmpdir-rdonly-append
+@bin libexec/os-test/io/open-tmpdir-rdonly-creat
+@bin libexec/os-test/io/open-tmpdir-rdonly-trunc
+@bin libexec/os-test/io/open-tmpdir-rdwr
+@bin libexec/os-test/io/open-tmpdir-rdwr-creat
+@bin libexec/os-test/io/open-tmpdir-rdwr-trunc
+@bin libexec/os-test/io/open-tmpdir-wronly
+@bin libexec/os-test/io/open-tmpdir-wronly-append
+@bin libexec/os-test/io/open-tmpdir-wronly-creat
+@bin libexec/os-test/io/open-tmpdir-wronly-trunc
+libexec/os-test/udp/
+@bin libexec/os-test/udp/accept
+@bin libexec/os-test/udp/accept-nonblock
+@bin libexec/os-test/udp/bind-any-0
+@bin libexec/os-test/udp/bind-any-0-getpeername
+@bin libexec/os-test/udp/bind-any-0-getsockname
+@bin libexec/os-test/udp/bind-any-0-unbind
+@bin libexec/os-test/udp/bind-broadcast-0-getpeername
+@bin libexec/os-test/udp/bind-broadcast-0-getsockname
+@bin libexec/os-test/udp/bind-conflict-any-any
+@bin libexec/os-test/udp/bind-conflict-any-any-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-any-any-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-any-broadcast
+@bin libexec/os-test/udp/bind-conflict-any-broadcast-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-any-broadcast-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-any-loopback
+@bin libexec/os-test/udp/bind-conflict-any-loopback-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-any-loopback-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-broadcast-any
+@bin libexec/os-test/udp/bind-conflict-broadcast-any-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-broadcast-any-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-broadcast-broadcast
+@bin libexec/os-test/udp/bind-conflict-broadcast-broadcast-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-broadcast-broadcast-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-broadcast-loopback
+@bin libexec/os-test/udp/bind-conflict-broadcast-loopback-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-broadcast-loopback-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-loopback-any
+@bin libexec/os-test/udp/bind-conflict-loopback-any-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-loopback-any-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-loopback-broadcast
+@bin libexec/os-test/udp/bind-conflict-loopback-broadcast-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-loopback-broadcast-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-conflict-loopback-loopback
+@bin libexec/os-test/udp/bind-conflict-loopback-loopback-so-reuseaddr
+@bin libexec/os-test/udp/bind-conflict-loopback-loopback-so-reuseaddr-both
+@bin libexec/os-test/udp/bind-connect-self
+@bin libexec/os-test/udp/bind-connect-self-send
+@bin libexec/os-test/udp/bind-connect-self-send-poll
+@bin libexec/os-test/udp/bind-connect-self-send-recv
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-r-poll
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-r-recv
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-r-recv-recv
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-rw-poll
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-rw-recv
+@bin libexec/os-test/udp/bind-connect-self-send-shutdown-rw-recv-recv
+@bin libexec/os-test/udp/bind-connect-self-shutdown-r-send-poll
+@bin libexec/os-test/udp/bind-connect-self-shutdown-r-send-recv
+@bin libexec/os-test/udp/bind-lan-subnet-broadcast
+@bin libexec/os-test/udp/bind-lan-subnet-first
+@bin libexec/os-test/udp/bind-lan-subnet-wrong
+@bin libexec/os-test/udp/bind-loopback-0-getpeername
+@bin libexec/os-test/udp/bind-loopback-0-getsockname
+@bin libexec/os-test/udp/bind-loopback-broadcast
+@bin libexec/os-test/udp/bind-loopback-other
+@bin libexec/os-test/udp/bind-rebind
+@bin libexec/os-test/udp/bind-sendto-self
+@bin libexec/os-test/udp/bind-sendto-self-recv
+@bin libexec/os-test/udp/bind-socket-sendto-first-poll
+@bin libexec/os-test/udp/bind-socket-sendto-first-recv
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-r-poll
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-r-recv
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-rw-poll
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-rw-recv
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-w-poll
+@bin libexec/os-test/udp/bind-socket-sendto-first-shutdown-w-recv
+@bin libexec/os-test/udp/bind-socket-shutdown-r-sendto-first-poll
+@bin libexec/os-test/udp/bind-socket-shutdown-r-sendto-first-recv
+@bin libexec/os-test/udp/bind-socket-shutdown-rw-sendto-first-poll
+@bin libexec/os-test/udp/bind-socket-shutdown-rw-sendto-first-recv
+@bin libexec/os-test/udp/bind-socket-shutdown-w-sendto-first-poll
+@bin libexec/os-test/udp/bind-socket-shutdown-w-sendto-first-recv
+@bin libexec/os-test/udp/connect-any-0-getpeername
+@bin libexec/os-test/udp/connect-any-0-getsockname
+@bin libexec/os-test/udp/connect-any-getpeername
+@bin libexec/os-test/udp/connect-any-getsockname
+@bin libexec/os-test/udp/connect-broadcast-getpeername
+@bin libexec/os-test/udp/connect-broadcast-getpeername-so-broadcast
+@bin libexec/os-test/udp/connect-broadcast-getsockname
+@bin libexec/os-test/udp/connect-broadcast-getsockname-so-broadcast
+@bin libexec/os-test/udp/connect-getpeername
+@bin libexec/os-test/udp/connect-loopback-0-getpeername
+@bin libexec/os-test/udp/connect-loopback-0-getsockname
+@bin libexec/os-test/udp/connect-loopback-get-so-bindtodevice
+@bin libexec/os-test/udp/connect-loopback-getpeername
+@bin libexec/os-test/udp/connect-loopback-getsockname
+@bin libexec/os-test/udp/connect-loopback-reconnect-loopback-getsockname
+@bin libexec/os-test/udp/connect-loopback-reconnect-wan-getsockname
+@bin libexec/os-test/udp/connect-loopback-unconnect-rebind-any-getsockname
+@bin libexec/os-test/udp/connect-loopback-unconnect-rebind-loopback-getsockname
+@bin libexec/os-test/udp/connect-poll
+@bin libexec/os-test/udp/connect-reconnect
+@bin libexec/os-test/udp/connect-reconnect-any-getpeername
+@bin libexec/os-test/udp/connect-reconnect-getpeername
+@bin libexec/os-test/udp/connect-reconnect-same
+@bin libexec/os-test/udp/connect-recv
+@bin libexec/os-test/udp/connect-send-error-accept
+@bin libexec/os-test/udp/connect-send-error-getpeername
+@bin libexec/os-test/udp/connect-send-error-getsockname
+@bin libexec/os-test/udp/connect-send-error-listen
+@bin libexec/os-test/udp/connect-send-error-poll
+@bin libexec/os-test/udp/connect-send-error-poll-poll
+@bin libexec/os-test/udp/connect-send-error-poll-so-error-poll
+@bin libexec/os-test/udp/connect-send-error-reconnect
+@bin libexec/os-test/udp/connect-send-error-recv
+@bin libexec/os-test/udp/connect-send-error-send
+@bin libexec/os-test/udp/connect-send-error-send-send
+@bin libexec/os-test/udp/connect-send-error-shutdown-r-recv
+@bin libexec/os-test/udp/connect-send-error-shutdown-r-send
+@bin libexec/os-test/udp/connect-send-error-shutdown-rw-recv
+@bin libexec/os-test/udp/connect-send-error-shutdown-rw-send
+@bin libexec/os-test/udp/connect-send-error-shutdown-rw-so-error
+@bin libexec/os-test/udp/connect-send-error-shutdown-w-recv
+@bin libexec/os-test/udp/connect-send-error-shutdown-w-send
+@bin libexec/os-test/udp/connect-send-error-so-error-send-send
+@bin libexec/os-test/udp/connect-sendto-null
+@bin libexec/os-test/udp/connect-sendto-other
+@bin libexec/os-test/udp/connect-sendto-same
+@bin libexec/os-test/udp/connect-shutdown
+@bin libexec/os-test/udp/connect-shutdown-r-recv
+@bin libexec/os-test/udp/connect-shutdown-r-send
+@bin libexec/os-test/udp/connect-shutdown-r-unconnect-recv
+@bin libexec/os-test/udp/connect-shutdown-r-unconnect-send
+@bin libexec/os-test/udp/connect-shutdown-reconnect
+@bin libexec/os-test/udp/connect-shutdown-rw-reconnect-send
+@bin libexec/os-test/udp/connect-shutdown-rw-recv
+@bin libexec/os-test/udp/connect-shutdown-rw-send
+@bin libexec/os-test/udp/connect-shutdown-rw-unconnect-recv
+@bin libexec/os-test/udp/connect-shutdown-rw-unconnect-send
+@bin libexec/os-test/udp/connect-shutdown-w-recv
+@bin libexec/os-test/udp/connect-shutdown-w-send
+@bin libexec/os-test/udp/connect-shutdown-w-unconnect-recv
+@bin libexec/os-test/udp/connect-shutdown-w-unconnect-send
+@bin libexec/os-test/udp/connect-unconnect
+@bin libexec/os-test/udp/connect-unconnect-getpeername
+@bin libexec/os-test/udp/connect-unconnect-getsockname
+@bin libexec/os-test/udp/connect-unconnect-sa-family
+@bin libexec/os-test/udp/connect-unconnect-shutdown-r-recv
+@bin libexec/os-test/udp/connect-unconnect-shutdown-r-send
+@bin libexec/os-test/udp/connect-unconnect-shutdown-rw-recv
+@bin libexec/os-test/udp/connect-unconnect-shutdown-rw-send
+@bin libexec/os-test/udp/connect-unconnect-shutdown-w-recv
+@bin libexec/os-test/udp/connect-unconnect-shutdown-w-send
+@bin libexec/os-test/udp/connect-unconnect-sockaddr
+@bin libexec/os-test/udp/connect-unconnect-sockaddr-in
+@bin libexec/os-test/udp/connect-unconnect-sockaddr-storage
+@bin libexec/os-test/udp/connect-unconnect-unconnect
+@bin libexec/os-test/udp/connect-wan-get-so-bindtodevice
+@bin libexec/os-test/udp/connect-wan-getsockname
+@bin libexec/os-test/udp/connect-wan-send-reconnect-loopback-send
+@bin libexec/os-test/udp/connect-wan-unconnect-rebind-any-getsockname
+@bin libexec/os-test/udp/connect-wan-unconnect-rebind-same-getsockname
+@bin libexec/os-test/udp/cross-netif-lan-send-loopback-recv
+@bin libexec/os-test/udp/cross-netif-loopback-send-lan-recv
+@bin libexec/os-test/udp/get-so-bindtodevice
+@bin libexec/os-test/udp/getpeername
+@bin libexec/os-test/udp/getsockname
+@bin libexec/os-test/udp/listen
+@bin libexec/os-test/udp/pair-poll
+@bin libexec/os-test/udp/pair-send-poll
+@bin libexec/os-test/udp/pair-send-recv
+@bin libexec/os-test/udp/pair-send-shutdown-r-poll
+@bin libexec/os-test/udp/pair-send-shutdown-r-recv
+@bin libexec/os-test/udp/pair-send-shutdown-rw-poll
+@bin libexec/os-test/udp/pair-send-shutdown-rw-recv
+@bin libexec/os-test/udp/pair-send-shutdown-w-poll
+@bin libexec/os-test/udp/pair-send-shutdown-w-recv
+@bin libexec/os-test/udp/pair-shutdown-r-poll
+@bin libexec/os-test/udp/pair-shutdown-r-send-poll
+@bin libexec/os-test/udp/pair-shutdown-r-send-recv
+@bin libexec/os-test/udp/pair-shutdown-rw-poll
+@bin libexec/os-test/udp/pair-shutdown-rw-send-poll
+@bin libexec/os-test/udp/pair-shutdown-rw-send-recv
+@bin libexec/os-test/udp/pair-shutdown-w-poll
+@bin libexec/os-test/udp/pair-shutdown-w-send-poll
+@bin libexec/os-test/udp/pair-shutdown-w-send-recv
+@bin libexec/os-test/udp/poll
+@bin libexec/os-test/udp/recvfrom-getsockname
+@bin libexec/os-test/udp/send
+@bin libexec/os-test/udp/sendto-any-so-error
+@bin libexec/os-test/udp/sendto-getsockname
+@bin libexec/os-test/udp/sendto-loopback-0-so-error
+@bin libexec/os-test/udp/sendto-null
+@bin libexec/os-test/udp/shutdown
+@bin libexec/os-test/udp/shutdown-r-recv
+@bin libexec/os-test/udp/shutdown-r-send
+@bin libexec/os-test/udp/shutdown-rw-recv
+@bin libexec/os-test/udp/shutdown-rw-send
+@bin libexec/os-test/udp/shutdown-w-recv
+@bin libexec/os-test/udp/shutdown-w-send
+@bin libexec/os-test/udp/so-error
+@bin libexec/os-test/udp/trio-connect-send-right-x-poll
+@bin libexec/os-test/udp/trio-connect-send-right-x-recv
+@bin libexec/os-test/udp/trio-connect-send-wrong-y-poll
+@bin libexec/os-test/udp/trio-connect-send-wrong-y-recv
+@bin libexec/os-test/udp/trio-connect-send-wrong-y-send-right-x-poll
+@bin libexec/os-test/udp/trio-connect-send-wrong-y-send-right-x-recv
+@bin libexec/os-test/udp/trio-send-right-x-poll
+@bin libexec/os-test/udp/trio-send-right-x-recv
+@bin libexec/os-test/udp/trio-send-right-x-send-wrong-y-poll
+@bin libexec/os-test/udp/trio-send-right-x-send-wrong-y-recv
+@bin libexec/os-test/udp/trio-send-wrong-y-connect-poll
+@bin libexec/os-test/udp/trio-send-wrong-y-connect-recv
+@bin libexec/os-test/udp/trio-send-wrong-y-connect-send-right-x-poll
+@bin libexec/os-test/udp/trio-send-wrong-y-connect-send-right-x-recv
+@bin libexec/os-test/udp/unconnect
+@bin libexec/os-test/udp/unconnect-getpeername
+@bin libexec/os-test/udp/unconnect-getsockname
