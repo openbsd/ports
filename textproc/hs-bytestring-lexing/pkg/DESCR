@@ -1,2 +1,0 @@
-bytestring-lexing is a Haskell library for parsing and producing
-literals efficiently from strict or lazy bytestrings.
