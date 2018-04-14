@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/14 10:14:05 rsadowski Exp $
 
 COMMENT=	Perl interface to gpgme
 
 DISTNAME=	Crypt-GpgME-0.09
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel security
 
 # Perl

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/03 20:26:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/14 10:14:05 rsadowski Exp $
 
 COMMENT=	Debian package repository producer
 
 V=		5.1.1
-REVISION=	0
+REVISION=	1
 PKGNAME=	reprepro-${V}
 DISTNAME=	reprepro_${V}.orig
 WRKDIST=	${WRKDIR}/reprepro-${V}

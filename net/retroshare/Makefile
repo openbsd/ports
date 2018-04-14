@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/14 10:14:05 rsadowski Exp $
 
 COMMENT =		secure decentralised communication platform
 V = 			0.5.5c
@@ -6,7 +6,7 @@ DISTNAME =		retroshare_0.5.5-0.7068
 PKGNAME =		retroshare-${V}
 CATEGORIES =		net security
 HOMEPAGE =		http://retroshare.sourceforge.net
-REVISION =		2
+REVISION =		3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.59 2018/04/14 10:14:04 rsadowski Exp $
 
 PORTROACH=		limit:^2\.6
 
@@ -6,7 +6,7 @@ COMMENT=		MIME messages creation and parsing library
 
 GNOME_PROJECT=		gmime
 GNOME_VERSION=		2.6.23
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gmime-2.6            0.2      # 623.0
 
