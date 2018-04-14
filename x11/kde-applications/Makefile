@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/11 17:47:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/14 10:22:07 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -20,7 +20,6 @@
      #SUBDIR += eventviews
      #SUBDIR += ffmpegthumbs
      #SUBDIR += filelight
-     SUBDIR += gpgmepp
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
      #SUBDIR += gwenview
