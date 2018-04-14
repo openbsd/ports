@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1725 2018/04/12 07:54:09 pvk Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1726 2018/04/14 21:27:20 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -188,16 +188,13 @@
      SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
-     SUBDIR += hs-List
      SUBDIR += hs-MissingH
-     SUBDIR += hs-OneTuple
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-async
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
-     SUBDIR += hs-blaze-builder
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
      SUBDIR += hs-conduit
@@ -255,13 +252,10 @@
      SUBDIR += hs-tf-random
      SUBDIR += hs-transformers-base
      SUBDIR += hs-transformers-compat
-     SUBDIR += hs-unbounded-delays
      SUBDIR += hs-unix-compat
-     SUBDIR += hs-unordered-containers
      SUBDIR += hs-utf8-string
      SUBDIR += hs-vector
      SUBDIR += hs-void
-     SUBDIR += hscolour
      SUBDIR += hub
      SUBDIR += hyena
      SUBDIR += id-utils
