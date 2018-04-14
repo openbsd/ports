@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.589 2018/04/14 10:26:36 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.590 2018/04/14 21:31:21 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1245,6 +1245,16 @@ my $obsolete_reason = {
 	'prepop' => 3,
 	'centerim' => 3,
 	'gpgmepp' => 3,
+	'hs-resource-pool' => 6,
+	'hs-List' => 6,
+	'hs-OneTuple' => 6,
+	'hs-blaze-builder' => 6,
+	'hs-unbounded-delays' => 6,
+	'hs-unordered-containers' => 6,
+	'hscolour' => 6,
+	'hs-multipart' => 6,
+	'hs-bytestring-lexing' => 6,
+	'hs-scanner' => 6,
 };
 
 # reasons for obsolete packages
