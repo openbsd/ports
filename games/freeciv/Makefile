@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2018/02/07 11:39:47 kirby Exp $
+# $OpenBSD: Makefile,v 1.116 2018/04/14 11:17:04 kirby Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.5.10
+VERSION=	2.5.11
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
@@ -23,9 +23,9 @@ EXTRACT_SUFX=	.tar.bz2
 cWANTLIB += bz2 c crypto curl iconv intl lzma m nghttp2 pthread ssl z
 cWANTLIB += ${MODLUA_WANTLIB}
 
-WANTLIB-main += ncurses readline ${cWANTLIB}
+WANTLIB-main += curses readline ${cWANTLIB}
 
-WANTLIB-client += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xtst
 WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-client += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB-client += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
