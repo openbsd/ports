@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.26 2018/04/14 10:00:05 rsadowski Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -17,11 +17,9 @@ EXTRACT_SUFX =		.tar.xz
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c m pthread z KF5Gpgmepp-pthread KF5QGpgme
-WANTLIB +=		Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5WebKit
-WANTLIB +=		Qt5WebKitWidgets Qt5Widgets qt5keychain gpg-error
-WANTLIB +=		gpgme mimetic assuan
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets c gpgmepp
+WANTLIB += m mimetic qt5keychain z
 
 MODULES =		devel/cmake x11/qt5
 
@@ -33,14 +31,25 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		mail/mimetic \
 			security/qtkeychain,qt5 \
-			x11/kde-applications/gpgmepp \
+			security/gpgme,,-qt \
 			x11/qt5/qtwebkit
 
 CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
-CONFIGURE_ARGS +=	-DWITH_RAGEL=OFF \
-			-DGIT_EXECUTABLE=""
+CONFIGURE_ARGS +=	-DGIT_EXECUTABLE="" \
+			-DWITH_CLEARTEXT_PLUGIN:Bool=ON \
+			-DWITH_DBUS:Bool=ON \
+			-DWITH_DESKTOP:Bool=ON \
+			-DWITH_QTKEYCHAIN_PLUGIN:Bool=ON \
+			-DWITH_RAGEL:Bool=OFF \
+			-DWITH_SHARED_PLUGINS:Bool=ON \
+			-DWITH_TESTS:Bool=ON \
+			-DWITH_ZLIB:Bool=ON \
+			-DWITH_QT5:Bool=ON
 
 TEST_IS_INTERACTIVE =	X11
+
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/CMakeLists.txt
 
 post-configure:
 	ln -sf ${MODQT_LIBDIR}/bin/lconvert ${WRKDIR}/bin

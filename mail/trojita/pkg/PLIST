@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/09/04 14:03:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/04/14 10:00:05 rsadowski Exp $
 @bin bin/be.contacts
 @bin bin/trojita
 @lib lib/libtrojita_plugins.so.${LIBtrojita_plugins_VERSION}
 lib/trojita/
+lib/trojita/trojita_plugin_ClearTextPasswordPlugin.so
 lib/trojita/trojita_plugin_QtKeychainPasswordPlugin.so
 share/appdata/
 share/appdata/trojita.appdata.xml
