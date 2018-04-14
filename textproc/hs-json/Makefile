@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/08 20:30:48 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/14 19:47:43 kili Exp $
 
 COMMENT =		JSON library
 
-DISTNAME =		json-0.9.1
+DISTNAME =		json-0.9.2
 CATEGORIES =		textproc
 
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
@@ -14,7 +14,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LsxwzMHf4pS7O5VCo6vFnl
+MODGHC_PACKAGE_KEY =	7rB8qNGKE8tQN0WTAH0G5
 
 RUN_DEPENDS +=		devel/hs-mtl \
 			devel/hs-parsec \
