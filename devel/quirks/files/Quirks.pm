@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.588 2018/04/11 10:14:43 gonzalo Exp $
+# $OpenBSD: Quirks.pm,v 1.589 2018/04/14 10:26:36 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1244,6 +1244,7 @@ my $obsolete_reason = {
 	'qvwm' => 3,
 	'prepop' => 3,
 	'centerim' => 3,
+	'gpgmepp' => 3,
 };
 
 # reasons for obsolete packages

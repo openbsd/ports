@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2018/04/11 10:14:43 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.576 2018/04/14 10:26:36 rsadowski Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -8,6 +8,7 @@ DISTFILES =
 PKGNAME =	quirks-2.420
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
