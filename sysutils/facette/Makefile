@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/14 23:01:01 sthen Exp $
 
 COMMENT =	time series data visualization and graphing software
 
@@ -7,7 +7,7 @@ DISTNAME =	facette-0.3.1pre0
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
 GH_COMMIT =	62f4bd9058f26e7f8ee800b925e4c76731b5b955
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils
 

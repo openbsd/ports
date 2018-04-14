@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2018/03/29 20:38:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2018/04/14 23:01:01 sthen Exp $
 
 COMMENT=		AWS SSM agent
 
 GH_TAGNAME=		2.2.392.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -49,6 +50,5 @@ do-install:
 		${PREFIX}/share/examples/amazon-ssm-agent/amazon/ssm
 	${INSTALL_DATA} ${WRKSRC}/Tools/src/LICENSE \
 		${PREFIX}/share/doc/amazon-ssm-agent
-	
 
 .include <bsd.port.mk>

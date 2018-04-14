@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/08 20:26:08 benno Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/14 23:01:01 sthen Exp $
 
 COMMENT =		count lines of codes in many languages
 
 V =			1.2
+REVISION =		0
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
 
