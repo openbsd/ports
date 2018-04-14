@@ -1,6 +1,0 @@
-GpgME++ is a C++ wrapper (or C++ bindings) for the GnuPG project's gpgme (GnuPG
-Made Easy) library, version 0.4.4 and later.
-
-It is fairly complete, with some minor things still missing (in particular, the
-key edit interface). It is mostly tested using external event loops, for which
-its design is optimised.
