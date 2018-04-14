@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.35 2018/04/14 10:01:43 rsadowski Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	5
+REVISION =	6
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
@@ -33,7 +33,6 @@ SHARED_LIBS +=  eventviews                54.0 # 4.7
 SHARED_LIBS +=  incidenceeditorsng        54.0 # 4.7
 SHARED_LIBS +=  incidenceeditorsngmobile  54.0 # 4.7
 SHARED_LIBS +=  kdepimdbusinterfaces      54.0 # 4.7
-#SHARED_LIBS +=  kdepimmobileui            51.0 # 4.7
 SHARED_LIBS +=  kdgantt2                  54.0 # 0.1
 SHARED_LIBS +=  kleopatraclientcore       54.0 # 0.3
 SHARED_LIBS +=  kleopatraclientgui        54.0 # 0.3
@@ -47,8 +46,6 @@ SHARED_LIBS +=  templateparser            54.0 # 4.7
 SHARED_LIBS +=	pimcommon                 54.0 # 4.10
 
 SHARED_LIBS +=  composereditorng          3.0 # 4.11
-#SHARED_LIBS +=  grammar                   0.0 # 4.11
-#SHARED_LIBS +=  pimactivity               0.0 # 4.11
 SHARED_LIBS +=  sendlater                 3.0 # 4.11
 
 SHARED_LIBS +=  grantleetheme             2.0 # 4.13
@@ -97,8 +94,8 @@ WANTLIB += ${KDE4LIB}/baloopim ${KDE4LIB}/kemoticons ${KDE4LIB}/kgapi2
 WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/balooqueryparser ${KDE4LIB}/kfile
 WANTLIB += akonadiprotocolinternals prison soprano
-WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme
-WANTLIB += grantlee_core grantlee_gui iconv intl qjson qgpgme sasl2
+WANTLIB += assuan gpg-error gpgme gpgme4++ gpgme4++-pthread qgpgme4
+WANTLIB += grantlee_core grantlee_gui iconv intl qjson sasl2
 
 MODULES =	multimedia/phonon
 

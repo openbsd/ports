@@ -1,7 +1,8 @@
-$OpenBSD: patch-kabc_tests_CMakeLists_txt,v 1.1 2014/07/09 20:03:30 zhuk Exp $
+$OpenBSD: patch-kabc_tests_CMakeLists_txt,v 1.2 2018/04/14 10:01:43 rsadowski Exp $
 Fix linking.
---- kabc/tests/CMakeLists.txt.orig	Sun May 18 20:54:31 2014
-+++ kabc/tests/CMakeLists.txt	Sun May 18 20:57:19 2014
+Index: kabc/tests/CMakeLists.txt
+--- kabc/tests/CMakeLists.txt.orig
++++ kabc/tests/CMakeLists.txt
 @@ -8,7 +8,7 @@ set(addresstest_SRCS addresstest.cpp)
  
  kde4_add_unit_test(addresstest TESTNAME kabc-addresstest ${addresstest_SRCS})
@@ -164,9 +165,12 @@ Fix linking.
  
  ########### next target ###############
  
-@@ -184,4 +184,4 @@ set(vcarddragtest_SRCS vcarddragtest.cpp)
+@@ -184,7 +184,7 @@ set(vcarddragtest_SRCS vcarddragtest.cpp)
  
  kde4_add_unit_test(vcarddragtest TESTNAME kabc-vcarddragtest ${vcarddragtest_SRCS})
  
 -target_link_libraries(vcarddragtest ${KDE4_KDECORE_LIBS} kabc ${QT_QTTEST_LIBRARY})
 +target_link_libraries(vcarddragtest kabc ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
+ 
+ 
+ ########### next target ###############

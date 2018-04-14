@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/02/24 14:07:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/14 10:01:43 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget
@@ -17,7 +17,8 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knotifyconfig
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kworkspace ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/nepomukwidgets ${KDE4LIB}/plasma ${KDE4LIB}/solid
-WANTLIB += assuan gpg-error gpgme++-pthread gpgme mms qca qgpgme soprano
+WANTLIB += assuan gpg-error gpgme gpgme4++-pthread mms qca qgpgme4
+WANTLIB += soprano
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	pim workspace

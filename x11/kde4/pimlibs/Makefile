@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2017/12/02 12:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.45 2018/04/14 10:01:43 rsadowski Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-4.14.10
-REVISION =	3
+REVISION =	5
 
 DPB_PROPERTIES =	parallel
 
@@ -18,14 +18,11 @@ SHARED_LIBS +=	kresources           54.0      # .4.0
 SHARED_LIBS +=	ktnef                54.0      # .4.0
 SHARED_LIBS +=	kxmlrpcclient        54.0      # .4.0
 SHARED_LIBS +=	syndication          54.0      # .1.0
-SHARED_LIBS +=	gpgme++              51.0      # .1.0
-SHARED_LIBS +=	gpgme++-pthread      51.0      # .1.0
 SHARED_LIBS +=	kblog                54.0      # .4.0
 SHARED_LIBS +=	kimap                54.0      # .4.0
 SHARED_LIBS +=	kpimidentities       54.0      # .4.0
 SHARED_LIBS +=	kpimutils            54.0      # .4.0
 SHARED_LIBS +=	mailtransport        54.0      # .4.0
-SHARED_LIBS +=	qgpgme               54.0      # .1.0
 SHARED_LIBS +=	akonadi-contact	     54.0      # .4.4
 SHARED_LIBS +=	akonadi-kabc	     54.0      # .4.4
 SHARED_LIBS +=	akonadi-kcal	     54.0      # .4.4
@@ -45,6 +42,10 @@ SHARED_LIBS +=  kmbox			54.0 # 4.7
 SHARED_LIBS +=  akonadi-socialutils	54.0 # 4.10
 
 SHARED_LIBS +=	akonadi-xml		2.0  # 4.13
+
+SHARED_LIBS +=  qgpgme4                   0.0 # 1.0
+SHARED_LIBS +=  gpgme4++-pthread          0.0 # 2.8
+SHARED_LIBS +=  gpgme4++                  0.0 # 2.8
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

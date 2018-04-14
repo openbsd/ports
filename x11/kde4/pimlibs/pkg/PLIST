@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/05/05 12:35:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/04/14 10:01:43 rsadowski Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
 @bin bin/akonaditest
@@ -1184,8 +1184,8 @@ lib/kde4/kio_smtp.so
 @lib ${KDE4LIB}/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
 @lib ${KDE4LIB}/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
 @lib ${KDE4LIB}/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
-@lib ${KDE4LIB}/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
-@lib ${KDE4LIB}/libgpgme++.so.${LIBgpgme++_VERSION}
+@lib ${KDE4LIB}/libgpgme4++-pthread.so.${LIBgpgme4++-pthread_VERSION}
+@lib ${KDE4LIB}/libgpgme4++.so.${LIBgpgme4++_VERSION}
 @lib ${KDE4LIB}/libkabc.so.${LIBkabc_VERSION}
 @lib ${KDE4LIB}/libkabc_file_core.so.${LIBkabc_file_core_VERSION}
 @lib ${KDE4LIB}/libkalarmcal.so.${LIBkalarmcal_VERSION}
@@ -1207,7 +1207,7 @@ lib/kde4/kio_smtp.so
 @lib ${KDE4LIB}/libkxmlrpcclient.so.${LIBkxmlrpcclient_VERSION}
 @lib ${KDE4LIB}/libmailtransport.so.${LIBmailtransport_VERSION}
 @lib ${KDE4LIB}/libmicroblog.so.${LIBmicroblog_VERSION}
-@lib ${KDE4LIB}/libqgpgme.so.${LIBqgpgme_VERSION}
+@lib ${KDE4LIB}/libqgpgme4.so.${LIBqgpgme4_VERSION}
 @lib ${KDE4LIB}/libsyndication.so.${LIBsyndication_VERSION}
 lib/kde4/plugins/designer/akonadiwidgets.so
 lib/kde4/plugins/designer/kholidayswidgets.so
@@ -1220,8 +1220,8 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
 @lib lib/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
 @lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
-@lib lib/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
-@lib lib/libgpgme++.so.${LIBgpgme++_VERSION}
+@lib lib/libgpgme4++-pthread.so.${LIBgpgme4++-pthread_VERSION}
+@lib lib/libgpgme4++.so.${LIBgpgme4++_VERSION}
 @lib lib/libkabc.so.${LIBkabc_VERSION}
 @lib lib/libkabc_file_core.so.${LIBkabc_file_core_VERSION}
 @lib lib/libkalarmcal.so.${LIBkalarmcal_VERSION}
@@ -1243,7 +1243,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkxmlrpcclient.so.${LIBkxmlrpcclient_VERSION}
 @lib lib/libmailtransport.so.${LIBmailtransport_VERSION}
 @lib lib/libmicroblog.so.${LIBmicroblog_VERSION}
-@lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
+@lib lib/libqgpgme4.so.${LIBqgpgme4_VERSION}
 @lib lib/libsyndication.so.${LIBsyndication_VERSION}
 share/akonadi/
 share/akonadi/agents/
