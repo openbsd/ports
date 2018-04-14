@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.91 2018/04/14 09:05:14 tb Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-5.44
 CATEGORIES=	security
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-ssl=/usr \
 			--disable-libwrap
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
-NO_TEST=		Yes
+
 USE_GMAKE=		Yes
 
 pre-configure:
