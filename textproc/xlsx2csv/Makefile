@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/22 12:19:27 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/14 22:53:55 sthen Exp $
 
 COMMENT =		convert XLSX files to CSV
 DISTNAME =		xlsx2csv-20150318
 CATEGORIES =		textproc converters
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

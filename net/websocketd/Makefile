@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/03 09:34:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:54 sthen Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v0.2.12
-REVISION=		0
+REVISION=		1
 
 CATEGORIES =		net www
 

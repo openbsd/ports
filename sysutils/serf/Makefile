@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:54 sthen Exp $
 
 COMMENT=		decentralized service discovery and orchestration
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		hashicorp
 GH_PROJECT=		serf
 PKGNAME=		${GH_ACCOUNT}-${DISTNAME}
 DIST_SUBDIR=		${GH_PROJECT}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils net
 

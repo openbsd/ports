@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/07 12:48:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/14 22:53:55 sthen Exp $
 
 PROVIDER=		oneandone
 GH_TAGNAME=		v0.1.0
-REVISION=		0
+REVISION=		1
 
 .include <bsd.port.mk>

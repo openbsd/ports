@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/27 09:36:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/14 22:53:55 sthen Exp $
 
 PROVIDER=		icinga2
 GH_TAGNAME=		v0.1.1
+REVISION=		0
 
 .include <bsd.port.mk>

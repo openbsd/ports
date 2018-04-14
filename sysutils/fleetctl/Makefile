@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/05 07:52:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/14 22:53:54 sthen Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
 GH_PROJECT =		fleet
 GH_ACCOUNT =		coreos
 GH_TAGNAME =		v1.0.0
+REVISION =		0
 
 CATEGORIES =		sysutils
 

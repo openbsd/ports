@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/17 13:00:59 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -10,6 +10,7 @@ GH_TAGNAME =	v${V}
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
 DISTNAME =	mattermost-server-${V}
+REVISION =	0
 
 DISTFILES += 	${DISTNAME}${EXTRACT_SUFX} \
 		mattermost-${V}-linux-amd64${EXTRACT_SUFX}:0

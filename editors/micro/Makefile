@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/12/10 16:48:07 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
 
 COMMENT =	modern and intuitive terminal-based text editor
 
 V =		1.1.3
 DISTNAME =	micro-${V}-src
 PKGNAME =	micro-${V}
+REVISION =	0
 
 CATEGORIES =	editors
 HOMEPAGE =	https://micro-editor.github.io/
