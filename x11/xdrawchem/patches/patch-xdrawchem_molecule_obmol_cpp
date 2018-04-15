@@ -1,4 +1,4 @@
-$OpenBSD: patch-xdrawchem_molecule_obmol_cpp,v 1.1 2017/05/22 18:28:05 espie Exp $
+$OpenBSD: patch-xdrawchem_molecule_obmol_cpp,v 1.2 2018/04/15 19:27:49 naddy Exp $
 
 Index: xdrawchem/molecule_obmol.cpp
 --- xdrawchem/molecule_obmol.cpp.orig
@@ -12,3 +12,21 @@ Index: xdrawchem/molecule_obmol.cpp
  
  };
  
+@@ -198,7 +198,7 @@ OBMol * Molecule::convertToOBMol() {
+     atom.SetType( type );
+ 
+     if (!obmol->AddAtom(atom))
+-      return(false);
++      return NULL;
+     atom.Clear();
+   }
+ 
+@@ -212,7 +212,7 @@ OBMol * Molecule::convertToOBMol() {
+     bst = tmp_bond->Stereo();
+     if (bst == STEREO_UP) flag |= OB_WEDGE_BOND;
+     if (bst == STEREO_DOWN) flag |= OB_HASH_BOND;
+-    if (!obmol->AddBond(start,end,order,flag)) return(false);
++    if (!obmol->AddBond(start,end,order,flag)) return NULL;
+   }
+ 
+   obmol->EndModify();
