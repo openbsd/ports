@@ -1,14 +1,24 @@
-$OpenBSD: patch-gcc_defaults_h,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
---- gcc/defaults.h.orig	Thu Jan  2 23:23:26 2014
-+++ gcc/defaults.h	Fri Feb 14 20:24:54 2014
-@@ -1388,6 +1388,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
- #define SWITCHABLE_TARGET 0
- #endif
+$OpenBSD: patch-gcc_defaults_h,v 1.2 2018/04/15 23:39:26 jca Exp $
+Index: gcc/defaults.h
+--- gcc/defaults.h.orig
++++ gcc/defaults.h
+@@ -123,7 +123,7 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+     {									\
+       fprintf ((FILE), "\t%s\t", TLS_COMMON_ASM_OP);			\
+       assemble_name ((FILE), (NAME));					\
+-      fprintf ((FILE), ","HOST_WIDE_INT_PRINT_UNSIGNED",%u\n",		\
++      fprintf ((FILE), "," HOST_WIDE_INT_PRINT_UNSIGNED ",%u\n",	\
+ 	       (SIZE), DECL_ALIGN (DECL) / BITS_PER_UNIT);		\
+     }									\
+   while (0)
+@@ -1386,6 +1386,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
  
-+#ifndef PIE_DEFAULT
-+#define PIE_DEFAULT 0
+ #ifndef SWITCHABLE_TARGET
+ #define SWITCHABLE_TARGET 0
 +#endif
 +
- #endif /* GCC_INSN_FLAGS_H  */
++#ifndef PIE_DEFAULT
++#define PIE_DEFAULT 0
+ #endif
  
- #endif  /* ! GCC_DEFAULTS_H */
+ #endif /* GCC_INSN_FLAGS_H  */
