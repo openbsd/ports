@@ -1,6 +1,7 @@
-$OpenBSD: patch-troff_node_cc,v 1.1 2010/05/09 21:26:54 robert Exp $
---- troff/node.cc.orig	Sun May  9 23:21:17 2010
-+++ troff/node.cc	Sun May  9 23:22:54 2010
+$OpenBSD: patch-troff_node_cc,v 1.2 2018/04/15 20:22:21 bcallah Exp $
+Index: troff/node.cc
+--- troff/node.cc.orig
++++ troff/node.cc
 @@ -171,6 +171,7 @@ class tfont : public tfont_spec { (public)
    hunits get_subscript_correction(charinfo *);
    friend tfont *make_tfont(tfont_spec &);
@@ -18,3 +19,12 @@ $OpenBSD: patch-troff_node_cc,v 1.1 2010/05/09 21:26:54 robert Exp $
  }
  
  glyph_node::glyph_node(charinfo *c, tfont *t, node *x)
+@@ -4943,7 +4944,7 @@ int is_boldfont(int fontno)
+ {
+   if (fontno >= 0 && fontno < font_table_size && font_table[fontno] != NULL) {
+     const char *name = font_table[fontno]->external_name.contents();
+-    if (name == '\0')
++    if (name == NULL)
+       return fontno == 3 ? 1 : 0;
+     for (char **p = boldfont_list; *p; p++) {
+       if (strcmp(name, *p) == 0)
