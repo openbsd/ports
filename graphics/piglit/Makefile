@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/16 08:16:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/15 07:27:58 landry Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
+ONLY_FOR_ARCHS =	amd64 i386
 
 DISTNAME =	piglit-20180108
 
