@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_wifi_cpp,v 1.1 2018/04/15 20:17:34 naddy Exp $
+
+Index: src/wifi.cpp
+--- src/wifi.cpp.orig
++++ src/wifi.cpp
+@@ -314,9 +314,9 @@ WifiComInterface* wifiCom;
+ 
+ #if (WIFI_LOGGING_LEVEL >= 1)
+ 	#if WIFI_LOG_USE_LOGC
+-		#define WIFI_LOG(level, ...) if(level <= WIFI_LOGGING_LEVEL) LOGC(8, "WIFI: "__VA_ARGS__);
++		#define WIFI_LOG(level, ...) if(level <= WIFI_LOGGING_LEVEL) LOGC(8, "WIFI: " __VA_ARGS__);
+ 	#else
+-		#define WIFI_LOG(level, ...) if(level <= WIFI_LOGGING_LEVEL) printf("WIFI: "__VA_ARGS__);
++		#define WIFI_LOG(level, ...) if(level <= WIFI_LOGGING_LEVEL) printf("WIFI: " __VA_ARGS__);
+ 	#endif
+ #else
+ #define WIFI_LOG(level, ...) {}
