@@ -1,0 +1,14 @@
+$OpenBSD: patch-libqalculate_MathStructure_cc,v 1.1 2018/04/15 20:37:55 lteo Exp $
+
+Index: libqalculate/MathStructure.cc
+--- libqalculate/MathStructure.cc.orig
++++ libqalculate/MathStructure.cc
+@@ -7163,7 +7163,7 @@ bool sr_gcd(const MathStructure &m1, const MathStructu
+ 	c.polynomialContent(xvar, cont_c, eo);
+ 	d.polynomialContent(xvar, cont_d, eo);
+ 	MathStructure gamma;
+-	MathStructure::gcd(cont_c, cont_d, gamma, eo, false);
++	MathStructure::gcd(cont_c, cont_d, gamma, eo, NULL, NULL, false);
+ 	if(ddeg.isZero()) {
+ 		mgcd = gamma;
+ 		return true;
