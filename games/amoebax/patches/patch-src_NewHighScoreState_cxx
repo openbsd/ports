@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_NewHighScoreState_cxx,v 1.1 2018/04/15 21:56:25 bcallah Exp $
+
+clang6 fix
+
+Index: src/NewHighScoreState.cxx
+--- src/NewHighScoreState.cxx.orig
++++ src/NewHighScoreState.cxx
+@@ -396,7 +396,7 @@ NewHighScoreState::unicodeCharacterPressed (uint16_t c
+     // FIXME: We are only interessted with ASCII values.
+     if ( 0 == (code & 0xff80) )
+     {
+-        char character[2] = {toupper (static_cast<char>(code & 0x7f)), '\0'};
++        char character[2] = {static_cast<char>(toupper (code & 0x7f)), '\0'};
+         std::string::size_type characterPos =
+             m_CursorValues.find (std::string (character));
+         if ( std::string::npos != characterPos )
