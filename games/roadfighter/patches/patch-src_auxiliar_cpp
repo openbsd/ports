@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_auxiliar_cpp,v 1.1 2018/04/15 21:24:41 bcallah Exp $
+
+clang6 fix
+
+Index: src/auxiliar.cpp
+--- src/auxiliar.cpp.orig
++++ src/auxiliar.cpp
+@@ -84,7 +84,7 @@ SDL_Surface *load_maskedimage(char *imagefile,char *ma
+ 	mask=IMG_Load(name);
+ 
+     if (tmp==0 ||
+-		mask==0) return false;
++		mask==0) return 0;
+ 
+ 	res=SDL_DisplayFormatAlpha(tmp);
+ 
