@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/04/15 21:29:32 bluhm Exp $
 
 COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src
 PKGNAME=	frodo-4.1b
-REVISION=	8
+REVISION=	9
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
