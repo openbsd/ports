@@ -1,6 +1,7 @@
-$OpenBSD: patch-dsp_v4f_IIR2_h,v 1.1 2015/05/09 08:00:55 robert Exp $
---- dsp/v4f_IIR2.h.orig	Tue Apr 28 08:36:38 2015
-+++ dsp/v4f_IIR2.h	Tue Apr 28 08:37:03 2015
+$OpenBSD: patch-dsp_v4f_IIR2_h,v 1.2 2018/04/15 14:30:15 naddy Exp $
+Index: dsp/v4f_IIR2.h
+--- dsp/v4f_IIR2.h.orig
++++ dsp/v4f_IIR2.h
 @@ -32,7 +32,7 @@
  
  namespace DSP {
@@ -10,3 +11,26 @@ $OpenBSD: patch-dsp_v4f_IIR2_h,v 1.1 2015/05/09 08:00:55 robert Exp $
  inline float pow10f(float f) {return pow(10,f);}
  #endif
  
+@@ -45,8 +45,8 @@ class RBJv4
+ 			{
+ 				v4f_t w = v4f_2pi * f;
+ 
+-				sin = v4f_map<__builtin_sinf> (w);
+-				cos = v4f_map<__builtin_cosf> (w);
++				sin = v4f_map<sinf> (w);
++				cos = v4f_map<cosf> (w);
+ 
+ 				alpha = sin / (v4f_2 * Q);
+ 			}
+@@ -549,9 +549,9 @@ class Resonator4fBank
+ 			{
+ 				v4f_t * a = state + i*Item;
+ 				f *= v4f_2pi;
+-				a[0] = v4f_map<__builtin_sinf> (f);
++				a[0] = v4f_map<sinf> (f);
+ 				a[0] *= gain;
+-				a[5] = v4f_map<__builtin_cosf> (f);
++				a[5] = v4f_map<cosf> (f);
+ 				set_r (i, r);
+ 			}
+ 		void set_r (int i, v4f_t r)
