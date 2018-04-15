@@ -1,0 +1,14 @@
+$OpenBSD: patch-sources_auxiliar_cpp,v 1.1 2018/04/15 21:14:40 naddy Exp $
+
+Index: sources/auxiliar.cpp
+--- sources/auxiliar.cpp.orig
++++ sources/auxiliar.cpp
+@@ -93,7 +93,7 @@ SDL_Surface *load_maskedimage(char *imagefile, char *m
+ 
+ 	if (tmp == 0 ||
+ 	        mask == 0)
+-		return false;
++		return NULL;
+ 
+ 	res = SDL_DisplayFormatAlpha(tmp);
+ 
