@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/09/23 11:30:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/15 20:57:16 bcallah Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
@@ -42,7 +42,7 @@ MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS} `sdl2-config --cflags` \
 				`pkg-config --cflags gtk+-3.0`" \
 			CXXFLAGS="${CFLAGS} `sdl2-config --cflags` \
-				`pkg-config --cflags gtk+-3.0`"
+				`pkg-config --cflags gtk+-3.0` -Wno-narrowing"
 FAKE_FLAGS =		PREFIX="${WRKINST}/${TRUEPREFIX}"
 
 USE_GMAKE =		Yes
