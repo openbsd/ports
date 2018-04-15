@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/05/17 09:58:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/04/15 11:00:10 ajacoutot Exp $
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
 include/babl-${API_VERSION}/babl/babl-introspect.h
@@ -7,14 +7,13 @@ include/babl-${API_VERSION}/babl/babl-types.h
 include/babl-${API_VERSION}/babl/babl-version.h
 include/babl-${API_VERSION}/babl/babl.h
 lib/babl-${API_VERSION}/
-lib/babl-${API_VERSION}/16bit.so
 lib/babl-${API_VERSION}/CIE.so
 lib/babl-${API_VERSION}/HCY.so
 lib/babl-${API_VERSION}/HSL.so
 lib/babl-${API_VERSION}/HSV.so
 lib/babl-${API_VERSION}/cairo.so
+lib/babl-${API_VERSION}/double.so
 lib/babl-${API_VERSION}/fast-float.so
-lib/babl-${API_VERSION}/float-half.so
 lib/babl-${API_VERSION}/float.so
 lib/babl-${API_VERSION}/gegl-fixups.so
 lib/babl-${API_VERSION}/gggl-lies.so
@@ -23,6 +22,7 @@ lib/babl-${API_VERSION}/gggl-table.so
 lib/babl-${API_VERSION}/gggl.so
 lib/babl-${API_VERSION}/gimp-8bit.so
 lib/babl-${API_VERSION}/grey.so
+lib/babl-${API_VERSION}/half.so
 lib/babl-${API_VERSION}/naive-CMYK.so
 lib/babl-${API_VERSION}/simple.so
 lib/babl-${API_VERSION}/sse-half.so
@@ -31,6 +31,8 @@ lib/babl-${API_VERSION}/sse2-int16.so
 lib/babl-${API_VERSION}/sse2-int8.so
 lib/babl-${API_VERSION}/sse4-int8.so
 lib/babl-${API_VERSION}/two-table.so
+lib/babl-${API_VERSION}/u16.so
+lib/babl-${API_VERSION}/u32.so
 lib/babl-${API_VERSION}/ycbcr.so
 lib/libbabl-${API_VERSION}.a
 lib/libbabl-${API_VERSION}.la
