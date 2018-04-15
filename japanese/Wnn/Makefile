@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2017/05/14 19:49:29 schwarze Exp $
+# $OpenBSD: Makefile,v 1.81 2018/04/15 19:48:38 schwarze Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -16,19 +16,19 @@ CATEGORIES =	japanese
 MULTI_PACKAGES =	-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
 PKGNAME-main =		ja-Wnn-4.2
-REVISION-main =		14
+REVISION-main =		15
 PKGNAME-dict =		ja-Wnndict-4.2
 REVISION-dict =		0
 PKGNAME-zh =		zh-Wnn-4.2
-REVISION-zh =		8
+REVISION-zh =		9
 PKGNAME-zhdict =	zh-Wnndict-4.2
 REVISION-zhdict =	0
 PKGNAME-ko =		ko-Wnn-4.2
-REVISION-ko =		8
+REVISION-ko =		9
 PKGNAME-kodict =	ko-Wnndict-4.2
 REVISION-kodict =	0
 PKGNAME-xwnmo =		Wnn-xwnmo-4.2
-REVISION-xwnmo =	9
+REVISION-xwnmo =	10
 PKGNAME-data =		Wnn-data-4.2
 
 WNNDICBASE =	/var
@@ -75,11 +75,8 @@ JDOC_FROM =	${WRKSRC}/Wnn
 PORT_CDOCDIR =	${PREFIX}/share/doc/zh-cWnn
 CDOC_FROM =	${WRKSRC}/cWnn
 
-# Will turn into a RUN_DEPENDS when we install non-formatted manpages
 BUILD_DEPENDS =	devel/imake \
-		japanese/groff
-# Run depends ensure this does not turn into infinite recursion, since
-# this is not needed before package build time.
+		japanese/nkf
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz

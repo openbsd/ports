@@ -1,0 +1,18 @@
+$OpenBSD: patch-Wnn_man_2_env_wnn_Imakefile,v 1.1 2018/04/15 19:48:38 schwarze Exp $
+
+Index: Wnn/man/2.env/wnn/Imakefile
+--- Wnn/man/2.env/wnn/Imakefile.orig
++++ Wnn/man/2.env/wnn/Imakefile
+@@ -3,6 +3,12 @@ XCOMM $Id: Imakefile,v 1.4 1994/08/17 05:53:13 kuwa Ex
+ XCOMM
+ MANSUFFIX = 4
+ 
++MANDIR = $(MANPATH)/ja/man$(MANSUFFIX)
++#undef InstallManPage
++#define InstallManPage InstallJManPage
++#undef InstallManPageLong
++#define InstallManPageLong InstallJManPageLong
++
+ all::
+ 
+ depend::

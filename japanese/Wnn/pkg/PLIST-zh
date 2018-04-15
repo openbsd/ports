@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST-zh,v 1.10 2004/09/15 00:53:48 espie Exp $
-bin/catod
-bin/catof
-bin/cdtoa
-bin/cserver
+@comment $OpenBSD: PLIST-zh,v 1.11 2018/04/15 19:48:38 schwarze Exp $
+@bin bin/catod
+@bin bin/catof
+@bin bin/cdtoa
+@bin bin/cserver
 @mode u+s
 @owner root
-bin/cuum
+@bin bin/cuum
 @mode
 @owner
-bin/cwddel
-bin/cwdreg
-bin/cwnnkill
-bin/cwnnstat
-bin/cwnntouch
-bin/tserver
+@bin bin/cwddel
+@bin bin/cwdreg
+@bin bin/cwnnkill
+@bin bin/cwnnstat
+@bin bin/cwnntouch
+@bin bin/tserver
 include/cwnn/
 include/cwnn/commonhd.h
 include/cwnn/cplib.h
@@ -118,20 +118,20 @@ lib/wnn/zh_TW/uumrc_z
 lib/wnn/zh_TW/wnnenvrc
 lib/wnn/zh_TW/wnnenvrc_R
 lib/wnn/zh_TW/wnnstat.msg
-@man man/ja_JP.EUC/cat1/catod.0
-@man man/ja_JP.EUC/cat1/catof.0
-@man man/ja_JP.EUC/cat1/cdicsort.0
-@man man/ja_JP.EUC/cat1/cdtoa.0
-@man man/ja_JP.EUC/cat1/cserver.0
-@man man/ja_JP.EUC/cat1/cuum.0
-@man man/ja_JP.EUC/cat1/cwddel.0
-@man man/ja_JP.EUC/cat1/cwdreg.0
-@man man/ja_JP.EUC/cat1/cwnnkill.0
-@man man/ja_JP.EUC/cat1/cwnnstat.0
-@man man/ja_JP.EUC/cat4/cenv.0
-@man man/ja_JP.EUC/cat4/ckey.0
-@man man/ja_JP.EUC/cat4/cst_end.0
-@man man/ja_JP.EUC/cat4/cwnn.0
+@man man/man1/catod.1
+@man man/man1/catof.1
+@man man/man1/cdicsort.1
+@man man/man1/cdtoa.1
+@man man/man1/cserver.1
+@man man/man1/cuum.1
+@man man/man1/cwddel.1
+@man man/man1/cwdreg.1
+@man man/man1/cwnnkill.1
+@man man/man1/cwnnstat.1
+@man man/man4/cenv.4
+@man man/man4/ckey.4
+@man man/man4/cst_end.4
+@man man/man4/cwnn.4
 share/doc/zh-cWnn/
 share/doc/zh-cWnn/manual/
 share/doc/zh-cWnn/manual.en/

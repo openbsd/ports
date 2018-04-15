@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST-ko,v 1.10 2004/09/15 00:53:48 espie Exp $
-bin/katod
-bin/katof
-bin/kdtoa
-bin/kserver
+@comment $OpenBSD: PLIST-ko,v 1.11 2018/04/15 19:48:38 schwarze Exp $
+@bin bin/katod
+@bin bin/katof
+@bin bin/kdtoa
+@bin bin/kserver
 @mode u+s
 @owner root
-bin/kuum
+@bin bin/kuum
 @mode
 @owner
-bin/kwddel
-bin/kwdreg
-bin/kwnnkill
-bin/kwnnstat
-bin/kwnntouch
+@bin bin/kwddel
+@bin bin/kwdreg
+@bin bin/kwnnkill
+@bin bin/kwnnstat
+@bin bin/kwnntouch
 include/kwnn/
 include/kwnn/commonhd.h
 include/kwnn/cplib.h
