@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_formats_xml_xml_cpp,v 1.1 2018/04/15 11:51:48 jasper Exp $
+
+Index: src/formats/xml/xml.cpp
+--- src/formats/xml/xml.cpp.orig
++++ src/formats/xml/xml.cpp
+@@ -143,7 +143,7 @@ namespace OpenBabel
+             pxmlConv->pInFormat = pConv->GetInFormat();
+ 
+             if(xmlReaderNewIO( pxmlConv->_reader, ReadStream, NULL, pxmlConv, "", NULL, 0)==-1)
+-              return false;
++              return NULL;
+           }
+       }
+     else

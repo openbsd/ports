@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_formats_chemkinformat_cpp,v 1.1 2018/04/15 11:51:48 jasper Exp $
+
+Index: src/formats/chemkinformat.cpp
+--- src/formats/chemkinformat.cpp.orig
++++ src/formats/chemkinformat.cpp
+@@ -634,7 +634,7 @@ bool ChemKinFormat::ReadReactionQualifierLines(istream
+       }
+     }
+   }
+-  return ifs!=NULL;
++  return (bool)ifs;
+ }
+ 
+ ///////////////////////////////////////////////////////////////
