@@ -1,0 +1,16 @@
+$OpenBSD: patch-fonthandler_cpp,v 1.1 2018/04/15 20:32:47 bcallah Exp $
+
+clang6 fix
+
+Index: fonthandler.cpp
+--- fonthandler.cpp.orig
++++ fonthandler.cpp
+@@ -130,7 +130,7 @@ void renderFontHandlerText(Sint32 x, Sint32 y, const c
+ 		y = (SCR_HEIGHT - textsurface->h) / 2;
+ 	}
+ 
+-	SDL_Rect textLocation = { x, y, 0, 0 };
++	SDL_Rect textLocation = { static_cast<Sint16>(x), static_cast<Sint16>(y), 0, 0 };
+ 
+ 	// BlitSurface neeeds an UNLOCKED screen!!
+ 	SDL_BlitSurface(textsurface, NULL, gScreen, &textLocation);

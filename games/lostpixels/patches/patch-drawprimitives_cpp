@@ -1,0 +1,16 @@
+$OpenBSD: patch-drawprimitives_cpp,v 1.1 2018/04/15 20:32:47 bcallah Exp $
+
+clang6 fix
+
+Index: drawprimitives.cpp
+--- drawprimitives.cpp.orig
++++ drawprimitives.cpp
+@@ -35,7 +35,7 @@ void drawcircle(const Sint32 x, const Sint32 y, const 
+ // Draw a rectangle - this is just a convinience wrapper around SDL_FillRect
+ void drawrect(const Sint32 x, const Sint32 y, const Sint32 width, const Sint32 height, const Uint32 color)
+ {
+-	SDL_Rect rectLocation = { x, y, width, height };
++	SDL_Rect rectLocation = { static_cast<Sint16>(x), static_cast<Sint16>(y), static_cast<Uint16>(width), static_cast<Uint16>(height) };
+ 	SDL_FillRect(gScreen, &rectLocation, color);
+ }
+ 
