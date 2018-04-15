@@ -1,6 +1,7 @@
-$OpenBSD: patch-types_hh,v 1.4 2015/06/17 19:06:58 jasper Exp $
---- types.hh.orig	Fri Oct 13 08:52:50 2006
-+++ types.hh	Wed Jun 17 21:03:25 2015
+$OpenBSD: patch-types_hh,v 1.5 2018/04/15 10:39:32 jasper Exp $
+Index: types.hh
+--- types.hh.orig
++++ types.hh
 @@ -2,10 +2,10 @@
  #define TYPES_HH
  
@@ -13,3 +14,17 @@ $OpenBSD: patch-types_hh,v 1.4 2015/06/17 19:06:58 jasper Exp $
  #include <string>
  #include <vector>
  #include <stddef.h>
+@@ -141,10 +141,10 @@ struct vbm_operand { 
+ int_type_range const ranges[] = { 
+   //   min         max
+   {0x00000000, 0x00000001}, // tp_bool
+-    {0xffffff80, 0x0000007f}, // tp_byte 
++    {-0x00000080, 0x0000007f}, // tp_byte 
+       {0x00000000, 0x0000ffff}, // tp_char
+-        {0xffff8000, 0x00007fff}, // tp_short
+-          {0x80000000, 0x7fffffff}  // tp_int
++        {-0x00008000, 0x00007fff}, // tp_short
++          {static_cast<int>(-0x80000000), 0x7fffffff}  // tp_int
+ };
+ 
+ int const array_type[] = { 

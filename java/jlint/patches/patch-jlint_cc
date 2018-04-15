@@ -1,6 +1,7 @@
-$OpenBSD: patch-jlint_cc,v 1.5 2017/04/14 00:44:21 ian Exp $
---- jlint.cc.orig	Mon Jan 10 21:42:33 2011
-+++ jlint.cc	Wed Apr 12 14:39:37 2017
+$OpenBSD: patch-jlint_cc,v 1.6 2018/04/15 10:39:32 jasper Exp $
+Index: jlint.cc
+--- jlint.cc.orig
++++ jlint.cc
 @@ -41,7 +41,7 @@ bool  source_path_redefined = false;
  int   reported_message_mask = cat_all;
  FILE* history;
@@ -33,7 +34,7 @@ $OpenBSD: patch-jlint_cc,v 1.5 2017/04/14 00:44:21 ian Exp $
              break;
            case 'd': // integer
 -            dst += sprintf(dst, "%d", (int)(long)parameter[index]);  
-+            dst += sprintf(dst, "%d", (long)parameter[index]);  
++            dst += sprintf(dst, "%ld", (long)parameter[index]);
              break;
            default:
              assert(false/*bad message parameter format*/);
@@ -66,3 +67,21 @@ $OpenBSD: patch-jlint_cc,v 1.5 2017/04/14 00:44:21 ian Exp $
  
    monitor_stack::const_iterator it;
    for (it = this_class->usedLocks.begin();
+@@ -662,7 +662,7 @@ inline int stricmp(const char* p, const char* q) 
+   return 0;
+ }
+ 
+-void proceed_file(char* file_name, bool recursive = false)
++void proceed_file(char* file_name, int recursive = 0)
+ {
+ #ifdef _WIN32
+   HANDLE dir;
+@@ -1041,7 +1041,7 @@ int main(int argc, char* argv[])
+         if (verbose) { 
+           fprintf(stderr, 
+                   "Jlint - program correctness verifier for Java, "
+-                  "version %s ("__DATE__").\n", VERSION);
++                  "version %s (" __DATE__ ").\n", VERSION);
+         }
+         continue;
+       }
