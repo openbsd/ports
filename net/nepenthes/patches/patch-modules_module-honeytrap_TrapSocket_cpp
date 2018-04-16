@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_module-honeytrap_TrapSocket_cpp,v 1.1 2018/04/16 23:05:32 jca Exp $
+
+Index: modules/module-honeytrap/TrapSocket.cpp
+--- modules/module-honeytrap/TrapSocket.cpp.orig
++++ modules/module-honeytrap/TrapSocket.cpp
+@@ -533,7 +533,7 @@ int32_t TrapSocket::doRecv_PCAP()
+ 			* otherwise it's PPP without framing, and the packet begins with the PPP header.
+ 			*/              
+ 			offset = 4;
+-			static char hldc_frame[] = { 0xff, 0x03 };
++			static unsigned char hldc_frame[] = { 0xff, 0x03 };
+ 			if (memcmp(pkt_data,hldc_frame,2) == 0)
+ 				offset += 2;
+ 			break;

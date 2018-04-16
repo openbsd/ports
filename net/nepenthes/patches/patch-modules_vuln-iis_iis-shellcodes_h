@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_vuln-iis_iis-shellcodes_h,v 1.1 2018/04/16 23:05:32 jca Exp $
+
+Index: modules/vuln-iis/iis-shellcodes.h
+--- modules/vuln-iis/iis-shellcodes.h.orig
++++ modules/vuln-iis/iis-shellcodes.h
+@@ -1,6 +1,6 @@
+ 
+ 
+-char thc_sslshit[] = {
++unsigned char thc_sslshit[] = {
+ 0x80,0x62,0x01,0x02,0xbd,0x00,0x01,0x00,0x01,0x00,0x16,0x8f,0x82,0x01,0x00,0x00,0x00
+ };
+ 

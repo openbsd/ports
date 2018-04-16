@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_vuln-dcom_DCOMDialogue_cpp,v 1.1 2018/04/16 23:05:32 jca Exp $
+
+Index: modules/vuln-dcom/DCOMDialogue.cpp
+--- modules/vuln-dcom/DCOMDialogue.cpp.orig
++++ modules/vuln-dcom/DCOMDialogue.cpp
+@@ -182,7 +182,7 @@ ConsumeLevel DCOMDialogue::incomingData(Message *msg)
+ 				
+ 				logSpam("Got DCOM Bindstr followup with %i %i bytes \n",sizeof(dcom_unknown_req2),m_Buffer->getSize());
+ 				m_Buffer->clear();
+-				msg->getResponder()->doRespond(dcom_unknown_rep2,sizeof(dcom_unknown_rep2));
++				msg->getResponder()->doRespond((char *)dcom_unknown_rep2,sizeof(dcom_unknown_rep2));
+ 			}
+ 
+ 
