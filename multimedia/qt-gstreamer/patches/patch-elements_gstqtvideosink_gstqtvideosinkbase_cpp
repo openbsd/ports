@@ -1,0 +1,14 @@
+$OpenBSD: patch-elements_gstqtvideosink_gstqtvideosinkbase_cpp,v 1.1 2018/04/16 15:31:00 naddy Exp $
+
+Index: elements/gstqtvideosink/gstqtvideosinkbase.cpp
+--- elements/gstqtvideosink/gstqtvideosinkbase.cpp.orig
++++ elements/gstqtvideosink/gstqtvideosinkbase.cpp
+@@ -207,7 +207,7 @@ GstFlowReturn GstQtVideoSinkBase::show_frame(GstVideoS
+ {
+     GstQtVideoSinkBase *sink = GST_QT_VIDEO_SINK_BASE(video_sink);
+ 
+-    GST_TRACE_OBJECT(sink, "Posting new buffer (%"GST_PTR_FORMAT") for rendering.", buffer);
++    GST_TRACE_OBJECT(sink, "Posting new buffer (%" GST_PTR_FORMAT ") for rendering.", buffer);
+ 
+     QCoreApplication::postEvent(sink->delegate, new BaseDelegate::BufferEvent(buffer));
+ 

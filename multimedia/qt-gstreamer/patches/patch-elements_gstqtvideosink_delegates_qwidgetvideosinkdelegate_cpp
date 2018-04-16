@@ -1,0 +1,14 @@
+$OpenBSD: patch-elements_gstqtvideosink_delegates_qwidgetvideosinkdelegate_cpp,v 1.1 2018/04/16 15:31:00 naddy Exp $
+
+Index: elements/gstqtvideosink/delegates/qwidgetvideosinkdelegate.cpp
+--- elements/gstqtvideosink/delegates/qwidgetvideosinkdelegate.cpp.orig
++++ elements/gstqtvideosink/delegates/qwidgetvideosinkdelegate.cpp
+@@ -36,7 +36,7 @@ QWidget *QWidgetVideoSinkDelegate::widget() const
+ 
+ void QWidgetVideoSinkDelegate::setWidget(QWidget *widget)
+ {
+-    GST_LOG_OBJECT(m_sink, "Setting \"widget\" property to %"GST_PTR_FORMAT, widget);
++    GST_LOG_OBJECT(m_sink, "Setting \"widget\" property to %" GST_PTR_FORMAT, widget);
+ 
+     if (m_widget) {
+         m_widget.data()->removeEventFilter(this);
