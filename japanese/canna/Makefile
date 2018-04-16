@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/05/14 19:53:58 schwarze Exp $
+# $OpenBSD: Makefile,v 1.40 2018/04/16 09:53:28 bentley Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -10,9 +10,9 @@ PKGNAME-main=	cannalib-3.5b2
 PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2
 
-REVISION-main =	5
-REVISION-dict =	0
-REVISION-server = 7
+REVISION-main =	6
+REVISION-dict =	1
+REVISION-server = 8
 
 SHARED_LIBS=	RKC	1.0 \
 		RKC16	1.0 \
@@ -30,15 +30,14 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-BUILD_DEPENDS=	japanese/groff \
-		textproc/groff
-
 HOMEPAGE =	http://www.nec.co.jp/canna/
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No Fee
 
 MULTI_PACKAGES=-main -dict -server
+
+BUILD_DEPENDS=		japanese/nkf
 
 PREFIX-dict=		${VARBASE}/dict
 LIB_DEPENDS-server=	japanese/canna

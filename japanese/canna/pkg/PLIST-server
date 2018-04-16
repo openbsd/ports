@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2015/03/19 20:25:26 naddy Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2018/04/16 09:53:28 bentley Exp $
 bin/addwords
 @bin bin/canlisp
 @bin bin/cannacheck
@@ -6,7 +6,7 @@ bin/cannakill
 @mode u+s,g+s
 @owner daemon
 @group daemon
-bin/cannaserver
+@bin bin/cannaserver
 @mode
 @owner
 @group
@@ -36,48 +36,49 @@ bin/rmdic
 @bin bin/splitword
 bin/syncdic
 @bin bin/wtoc
-@man man/cat1/addwords.0
-@man man/cat1/cannacheck.0
-@man man/cat1/cannakill.0
-@man man/cat1/cannaserver.0
-@man man/cat1/cannastat.0
-@man man/cat1/catdic.0
-@man man/cat1/cpdic.0
-@man man/cat1/cshost.0
-@man man/cat1/ctow.0
-@man man/cat1/delwords.0
-@man man/cat1/dicar.0
-@man man/cat1/dpbindic.0
-@man man/cat1/dpromdic.0
-@man man/cat1/lsdic.0
-@man man/cat1/mkbindic.0
-@man man/cat1/mkdic.0
-@man man/cat1/mkromdic.0
-@man man/cat1/mvdic.0
-@man man/cat1/rmdic.0
-@man man/cat1/splitword.0
-@man man/cat1/wtoc.0
-@man man/ja_JP.EUC/cat1/addwords.0
-@man man/ja_JP.EUC/cat1/cannacheck.0
-@man man/ja_JP.EUC/cat1/cannakill.0
-@man man/ja_JP.EUC/cat1/cannaserver.0
-@man man/ja_JP.EUC/cat1/cannastat.0
-@man man/ja_JP.EUC/cat1/catdic.0
-@man man/ja_JP.EUC/cat1/cpdic.0
-@man man/ja_JP.EUC/cat1/cshost.0
-@man man/ja_JP.EUC/cat1/ctow.0
-@man man/ja_JP.EUC/cat1/delwords.0
-@man man/ja_JP.EUC/cat1/dicar.0
-@man man/ja_JP.EUC/cat1/dpbindic.0
-@man man/ja_JP.EUC/cat1/dpromdic.0
-@man man/ja_JP.EUC/cat1/lsdic.0
-@man man/ja_JP.EUC/cat1/mkbindic.0
-@man man/ja_JP.EUC/cat1/mkdic.0
-@man man/ja_JP.EUC/cat1/mkromdic.0
-@man man/ja_JP.EUC/cat1/mvdic.0
-@man man/ja_JP.EUC/cat1/rmdic.0
-@man man/ja_JP.EUC/cat1/splitword.0
-@man man/ja_JP.EUC/cat1/wtoc.0
+man/ja/man1/
+@man man/ja/man1/addwords.1
+@man man/ja/man1/cannacheck.1
+@man man/ja/man1/cannakill.1
+@man man/ja/man1/cannaserver.1
+@man man/ja/man1/cannastat.1
+@man man/ja/man1/catdic.1
+@man man/ja/man1/cpdic.1
+@man man/ja/man1/cshost.1
+@man man/ja/man1/ctow.1
+@man man/ja/man1/delwords.1
+@man man/ja/man1/dicar.1
+@man man/ja/man1/dpbindic.1
+@man man/ja/man1/dpromdic.1
+@man man/ja/man1/lsdic.1
+@man man/ja/man1/mkbindic.1
+@man man/ja/man1/mkdic.1
+@man man/ja/man1/mkromdic.1
+@man man/ja/man1/mvdic.1
+@man man/ja/man1/rmdic.1
+@man man/ja/man1/splitword.1
+@man man/ja/man1/wtoc.1
+@man man/man1/addwords.1
+@man man/man1/cannacheck.1
+@man man/man1/cannakill.1
+@man man/man1/cannaserver.1
+@man man/man1/cannastat.1
+@man man/man1/catdic.1
+@man man/man1/cpdic.1
+@man man/man1/cshost.1
+@man man/man1/ctow.1
+@man man/man1/delwords.1
+@man man/man1/dicar.1
+@man man/man1/dpbindic.1
+@man man/man1/dpromdic.1
+@man man/man1/lsdic.1
+@man man/man1/mkbindic.1
+@man man/man1/mkdic.1
+@man man/man1/mkromdic.1
+@man man/man1/mvdic.1
+@man man/man1/rmdic.1
+@man man/man1/splitword.1
+@man man/man1/wtoc.1
 @mode 0775
 @owner daemon
 @group daemon

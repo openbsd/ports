@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-dict,v 1.4 2004/09/15 00:54:51 espie Exp $
+@comment $OpenBSD: PLIST-dict,v 1.5 2018/04/16 09:53:28 bentley Exp $
 @mode 0755
 @owner daemon
 @group daemon
@@ -34,6 +34,4 @@ canna/canna/necgaiji.ctd
 canna/canna/number.ctd
 canna/canna/software.ctd
 canna/canna/suffix.ctd
-canna/group/
-canna/user/
 @unexec echo "Remove /var/spool/canna manually"

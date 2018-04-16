@@ -1,6 +1,7 @@
-$OpenBSD: patch-Canna_conf,v 1.4 2008/08/29 15:01:29 espie Exp $
---- Canna.conf.orig	Thu Nov 28 11:27:01 1996
-+++ Canna.conf	Fri Aug 29 16:52:05 2008
+$OpenBSD: patch-Canna_conf,v 1.5 2018/04/16 09:53:28 bentley Exp $
+Index: Canna.conf
+--- Canna.conf.orig
++++ Canna.conf
 @@ -129,19 +129,19 @@
   */
  
@@ -78,71 +79,47 @@ $OpenBSD: patch-Canna_conf,v 1.4 2008/08/29 15:01:29 espie Exp $
 +    DEPCANNALIB16 = $(CANNASRC)/libcanna16.so.$(LIBcanna16_VERSION)
  # else
      DEPCANNALIB16 = $(CANNASRC)/libcanna16.a
-@@ -323,15 +328,34 @@ clean::									@@\
- #endif
- 
-+#define JNeqnCmd		jneqn -Tnippon
-+#define JNroffCmd		jnroff -Tnippon
-+#define JEqnCmd			jeqn -Tnippon -Tps
-+#define JTroffCmd		jgroff -Tnippon -Tps
-+#define JColCmd			cat 
-+#define JTblCmd			jtbl -Tnippon
-+
-+           JTROFF = JTroffCmd
-+           JNROFF = JNroffCmd
-+             JTBL = JTblCmd
-+             JEQN = JEqnCmd
-+            JNEQN = JNeqnCmd
-+             JCOL = JColCmd
-+
- #ifdef InstallManPageLong
- #undef InstallManPageLong
+@@ -327,11 +332,15 @@ clean::									@@\
  #endif
  #define	InstallManPageLong(file,destdir,dest)				@@\
 -ConvertPathName(file.tmp,file.$(MANSRCSUFF))				@@\
 -install.man:: file.tmp							@@\
--	MakeDir($(DESTDIR)destdir/man$(MANSUFFIX))			@@\
--	$(INSTALL) -c $(INSTMANFLAGS) file.tmp $(DESTDIR)destdir/man$(MANSUFFIX)/dest.$(MANSUFFIX)	@@\
--	$(RM) file.tmp							@@\
 +ConvertPathName(file.jtmp,file.jmn)				        @@\
 +ConvertPathName(file.tmp,file.man)				        @@\
 +install.man:: file.tmp file.jtmp					@@\
-+	MakeDir($(DESTDIR)destdir/ja_JP.EUC/cat$(MANSUFFIX))		@@\
-+	MakeDir($(DESTDIR)destdir/cat$(MANSUFFIX))			@@\
-+	cat file.tmp | $(NEQN) | $(TBL) | $(NROFF) $(MANMACROS) | $(COL) > file.0; \	@@\
-+	$(INSTALL) -c $(INSTMANFLAGS) file.0 $(DESTDIR)destdir/cat$(MANSUFFIX)/dest.0	@@\
-+	cat file.jtmp | $(JNEQN) | $(JTBL) | $(JNROFF) $(MANMACROS) | $(JCOL) > file.j0; \	@@\
-+	$(INSTALL) -c $(INSTMANFLAGS) file.j0 $(DESTDIR)destdir/ja_JP.EUC/cat$(MANSUFFIX)/dest.0	@@\
-+	$(RM) file.tmp file.jtmp file.0 file.j0				@@\
++	MakeDir($(DESTDIR)destdir/ja/man$(MANSUFFIX))		@@\
+ 	MakeDir($(DESTDIR)destdir/man$(MANSUFFIX))			@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.tmp $(DESTDIR)destdir/man$(MANSUFFIX)/dest.$(MANSUFFIX)	@@\
+-	$(RM) file.tmp							@@\
++	nkf -w file.jtmp > file.j$(MANSUFFIX); \	@@\
++	$(INSTALL) -c $(INSTMANFLAGS) file.j$(MANSUFFIX) $(DESTDIR)destdir/ja/man$(MANSUFFIX)/dest.$(MANSUFFIX)	@@\
++	$(RM) file.tmp file.jtmp file.j$(MANSUFFIX)				@@\
  clean::									@@\
 -	$(RM) file.tmp
-+	$(RM) file.tmp file.jtmp file.0 file.j0			
++	$(RM) file.tmp file.jtmp file.j$(MANSUFFIX)			
  
  #ifdef InstallManPage
-@@ -345,11 +369,16 @@ InstallManPageLong(file,destdir,file)
+@@ -345,11 +354,15 @@ InstallManPageLong(file,destdir,file)
  #endif
  #define	InstallLibManPageLong(file,destdir,dest)			@@\
 -ConvertPathName(file.tmp,file.$(MANSRCSUFF))				@@\
 -install.man:: file.tmp							@@\
--	MakeDir($(DESTDIR)destdir/man$(LIBMANSUFFIX))			@@\
--	$(INSTALL) -c $(INSTMANFLAGS) file.tmp $(DESTDIR)destdir/man$(LIBMANSUFFIX)/dest.$(LIBMANSUFFIX)	@@\
--	$(RM) file.tmp							@@\
 +ConvertPathName(file.jtmp,file.jmn)					@@\
 +ConvertPathName(file.tmp,file.man)					@@\
 +install.man:: file.tmp file.jtmp					@@\
-+	MakeDir($(DESTDIR)destdir/ja_JP.EUC/cat$(LIBMANSUFFIX))		@@\
-+	MakeDir($(DESTDIR)destdir/cat$(LIBMANSUFFIX))			@@\
-+	cat file.tmp | $(NEQN) | $(TBL) | $(NROFF) $(MANMACROS) | $(COL) > file.0; \	@@\
-+	$(INSTALL) -c $(INSTMANFLAGS) file.0 $(DESTDIR)destdir/cat$(LIBMANSUFFIX)/dest.0	@@\
-+	cat file.jtmp | $(JNEQN) | $(JTBL) | $(JNROFF) $(MANMACROS) | $(JCOL) > file.j0; \	@@\
-+	$(INSTALL) -c $(INSTMANFLAGS) file.j0 $(DESTDIR)destdir/ja_JP.EUC/cat$(LIBMANSUFFIX)/dest.0	@@\
-+	$(RM) file.tmp file.jtmp file.0 file.j0				@@\
++	MakeDir($(DESTDIR)destdir/ja/man$(LIBMANSUFFIX))		@@\
+ 	MakeDir($(DESTDIR)destdir/man$(LIBMANSUFFIX))			@@\
+ 	$(INSTALL) -c $(INSTMANFLAGS) file.tmp $(DESTDIR)destdir/man$(LIBMANSUFFIX)/dest.$(LIBMANSUFFIX)	@@\
+-	$(RM) file.tmp							@@\
++	nkf -w file.jtmp > file.j$(LIBMANSUFFIX); \	@@\
++	$(INSTALL) -c $(INSTMANFLAGS) file.j$(LIBMANSUFFIX) $(DESTDIR)destdir/ja/man$(LIBMANSUFFIX)/dest.$(LIBMANSUFFIX)	@@\
++	$(RM) file.tmp file.jtmp file.j$(LIBMANSUFFIX)				@@\
  clean::									@@\
 -	$(RM) file.tmp
-+	$(RM) file.tmp file.jtmp file.0 file.j0			
++	$(RM) file.tmp file.jtmp file.j$(LIBMANSUFFIX)			
  
  #ifdef InstallLibManPage
-@@ -364,11 +393,14 @@ InstallLibManPageLong(file,destdir,file)
+@@ -364,11 +377,14 @@ InstallLibManPageLong(file,destdir,file)
  #define InstallLibManPageAliases(file,destdir,aliases)			@@\
  install.man::								@@\
 -	@(TMP=/tmp/tmp.$$$$; \						@@\
@@ -152,19 +129,19 @@ $OpenBSD: patch-Canna_conf,v 1.4 2008/08/29 15:01:29 espie Exp $
 -	$(INSTALL) -c $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/man$(LIBMANSUFFIX)/$$i.$(LIBMANSUFFIX)); \ @@\
 -	done; \								@@\
 -	$(RM) $${TMP})
-+	cd $(DESTDIR)/destdir/cat$(LIBMANSUFFIX); \			@@\
++	cd $(DESTDIR)/destdir/man$(LIBMANSUFFIX); \			@@\
 +	for i in aliases; do \						@@\
-+	$(RM) $$i.0; \							@@\
-+	$(LN) file.0 $$i.0; \						@@\
++	$(RM) $$i.$(LIBMANSUFFIX); \					@@\
++	$(LN) file.$(LIBMANSUFFIX) $$i.$(LIBMANSUFFIX); \		@@\
 +	done; \ 							@@\
-+	cd $(DESTDIR)/destdir/ja_JP.EUC/cat$(LIBMANSUFFIX); \		@@\
++	cd $(DESTDIR)/destdir/ja/man$(LIBMANSUFFIX); \			@@\
 +	for i in aliases; do \						@@\
-+	$(RM) $$i.0; \							@@\
-+	$(LN) file.0 $$i.0; \						@@\
++	$(RM) $$i.$(LIBMANSUFFIX); \					@@\
++	$(LN) file.$(LIBMANSUFFIX) $$i.$(LIBMANSUFFIX); \		@@\
 +	done
  #ifndef MakeDirectoriesLong
  #define MakeDirectoriesLong(step,dirs,owner,group)			@@\
-@@ -456,2 +488,11 @@ dst:: Canna.conf							@@\
+@@ -456,2 +472,11 @@ dst:: Canna.conf							@@\
  	 echo "#endif") > $@
  #endif
 +
