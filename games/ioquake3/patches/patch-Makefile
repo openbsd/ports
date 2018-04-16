@@ -1,9 +1,29 @@
-$OpenBSD: patch-Makefile,v 1.1 2017/05/26 10:36:44 mestre Exp $
+$OpenBSD: patch-Makefile,v 1.2 2018/04/16 13:12:22 abieber Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1474,7 +1474,6 @@ Q3CPPOBJ = \
+@@ -743,16 +743,16 @@ ifeq ($(PLATFORM),openbsd)
+     -pipe -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
+   CLIENT_CFLAGS += $(SDL_CFLAGS)
+ 
+-  OPTIMIZEVM = -O3
++  OPTIMIZEVM = 
+   OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+ 
+   ifeq ($(ARCH),x86_64)
+-    OPTIMIZEVM = -O3
++    OPTIMIZEVM = 
+     OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+     HAVE_VM_COMPILED = true
+   else
+   ifeq ($(ARCH),x86)
+-    OPTIMIZEVM = -O3 -march=i586
++    OPTIMIZEVM = -march=i586
+     OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+     HAVE_VM_COMPILED=true
+   else
+@@ -1525,7 +1525,6 @@ Q3CPPOBJ = \
    $(B)/tools/cpp/eval.o \
    $(B)/tools/cpp/include.o \
    $(B)/tools/cpp/hideset.o \
