@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2018/04/14 11:17:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.117 2018/04/16 08:38:27 kirby Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -9,6 +9,7 @@ DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
+REVISION-main=	0
 
 CATEGORIES=	games
 
@@ -39,9 +40,11 @@ MODULES=	lang/lua
 MODLUA_VERSION = 5.2
 
 BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	archivers/xz \
-		net/curl \
-		x11/gtk+3
+LIB_DEPENDS-main=	archivers/xz \
+			net/curl
+LIB_DEPENDS-client=	archivers/xz \
+			net/curl \
+			x11/gtk+3
 
 LIB_DEPENDS-share=
 
