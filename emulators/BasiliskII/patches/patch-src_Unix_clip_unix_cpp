@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Unix_clip_unix_cpp,v 1.1 2018/04/16 21:01:30 fcambus Exp $
+
+Fix for Clang 6.
+Upstream commit 71852dae82445b5a43803e42897ccd0989d135ab.
+
+Index: src/Unix/clip_unix.cpp
+--- src/Unix/clip_unix.cpp.orig
++++ src/Unix/clip_unix.cpp
+@@ -496,7 +496,7 @@ static void do_getscrap(void **handle, uint32 type, in
+ 			0x2f, 0x3c, 0, 0, 0, 0,		// move.l	#outbuf,-(sp)
+ 			0xa9, 0xfe,					// PutScrap()
+ 			0x58, 0x8f,					// addq.l	#4,sp
+-			M68K_RTS >> 8, M68K_RTS
++			M68K_RTS >> 8, M68K_RTS & 0xff
+ 		};
+ 		r.d[0] = sizeof(proc);
+ 		Execute68kTrap(0xa71e, &r);		// NewPtrSysClear()

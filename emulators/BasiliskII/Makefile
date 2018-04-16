@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2018/04/16 21:01:30 fcambus Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		8
+REVISION=		9
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
