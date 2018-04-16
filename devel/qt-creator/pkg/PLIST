@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/07 07:49:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/16 18:27:53 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -44,8 +44,6 @@ lib/qtcreator/plugins/libBookmarks.so
 lib/qtcreator/plugins/libCMakeProjectManager.so
 lib/qtcreator/plugins/libCVS.so
 lib/qtcreator/plugins/libClangCodeModel.so
-lib/qtcreator/plugins/libClangPchManager.so
-lib/qtcreator/plugins/libClangRefactoring.so
 lib/qtcreator/plugins/libClangStaticAnalyzer.so
 lib/qtcreator/plugins/libClassView.so
 lib/qtcreator/plugins/libClearCase.so
@@ -101,8 +99,6 @@ lib/qtcreator/plugins/qmldesigner/libqtquickplugin.so
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/clangbackend
-@bin libexec/qtcreator/clangpchmanagerbackend
-@bin libexec/qtcreator/clangrefactoringbackend
 @bin libexec/qtcreator/cpaster
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtcreator_process_stub
