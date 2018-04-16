@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/16 21:12:47 bcallah Exp $
 
 COMMENT =	puzzle/platform game
 
@@ -27,6 +27,8 @@ WANTLIB += curl m pthread ssl ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -Wno-narrowing"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
