@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/08/24 09:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/16 12:00:40 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -14,7 +14,7 @@ REVISION =		3
 QT_COMMIT =		8dae19a82231e87366d81c683bafcb025aea9c1d
 MASTER_SITES0 =		https://github.com/wkhtmltopdf/qt/archive/
 DISTFILES =		${DISTNAME}.tar.gz \
-			wkhtmltopdf-qt-${QT_COMMIT}{${QT_COMMIT}}.tar.gz:0
+			wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz:0
 
 SHARED_LIBS =		wkhtmltox 0.0 # 0.12
 
