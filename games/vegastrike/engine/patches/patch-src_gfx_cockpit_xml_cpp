@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gfx_cockpit_xml_cpp,v 1.1 2018/04/16 11:15:49 bentley Exp $
+
+Index: src/gfx/cockpit_xml.cpp
+--- src/gfx/cockpit_xml.cpp.orig
++++ src/gfx/cockpit_xml.cpp
+@@ -315,7 +315,7 @@ void GameCockpit::beginElement( const string &name, co
+         for (counter = 0; counter < 4; ++counter)
+             if (!replaced[counter]) {
+                 delete Pit[counter];
+-                Pit[counter] = false;
++                Pit[counter] = NULL;
+             }
+         break;
+     case UnitImages< void >::SHIELD4:

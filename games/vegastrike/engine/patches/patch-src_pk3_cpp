@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_pk3_cpp,v 1.1 2018/04/16 11:15:49 bentley Exp $
+
+Index: src/pk3.cpp
+--- src/pk3.cpp.orig
++++ src/pk3.cpp
+@@ -356,7 +356,7 @@ char* CPK3::ExtractFile( const char *lpname, int *file
+     }
+     //if the file isn't in the archive
+     if (index == -1)
+-        return false;
++        return NULL;
+     int flength = GetFileLen( index );
+ 
+     buffer = new char[flength];

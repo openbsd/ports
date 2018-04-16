@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_src_include_central_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
+$OpenBSD: patch-setup_src_include_central_cpp,v 1.2 2018/04/16 11:15:49 bentley Exp $
 
 Index: setup/src/include/central.cpp
 --- setup/src/include/central.cpp.orig
@@ -30,15 +30,17 @@ Index: setup/src/include/central.cpp
  	return catagory;
  }
  
-@@ -64,7 +64,7 @@ char *GetSetting(char *group) {
+@@ -64,8 +64,8 @@ char *GetSetting(char *group) {
  	do {
  		if (CUR->name == NULL) { continue; }
  		if (strcmp(CUR->name, group) == 0) { return CUR->setting; }
 -	} while ((CUR = CUR->next) > 0);
+-	return '\0';
 +	} while ((CUR = CUR->next) != 0);
- 	return '\0';
++	return NULL;
  }
  
+ struct catagory *GetCatStruct(char *name) {
 @@ -74,7 +74,7 @@ struct catagory *GetCatStruct(char *name) {
  	do {
  		if (CUR->name == NULL) { continue; }

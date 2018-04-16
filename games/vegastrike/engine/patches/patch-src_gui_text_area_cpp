@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_text_area_cpp,v 1.1 2018/04/16 11:15:49 bentley Exp $
+
+Index: src/gui/text_area.cpp
+--- src/gui/text_area.cpp.orig
++++ src/gui/text_area.cpp
+@@ -316,7 +316,7 @@ char* TextArea::GetSelectedItem( int type )
+ {
+     TextAreaItem *search;
+     search = ItemList->FindCount( cur_selected, 0 );
+-    if (search == 0) return '\0';
++    if (search == 0) return NULL;
+     if (type == 1) return search->name;
+ 
+     else return search->description;
