@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_inc_facter_facts_external_resolver_hpp,v 1.1 2018/04/16 11:24:47 bluhm Exp $
+
+Index: lib/inc/facter/facts/external/resolver.hpp
+--- lib/inc/facter/facts/external/resolver.hpp.orig
++++ lib/inc/facter/facts/external/resolver.hpp
+@@ -44,6 +44,11 @@ namespace facter { namespace facts { namespace externa
+          * @param facts The fact collection to populate the external facts into.
+          */
+         virtual void resolve(std::string const& path, collection& facts) const = 0;
++
++        /**
++         * Destructor for external resolver.
++         */
++        virtual ~resolver() {}
+     };
+ 
+ }}}  // namespace facter::facts::external

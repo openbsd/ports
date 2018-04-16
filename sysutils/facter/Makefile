@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/02/23 10:58:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.55 2018/04/16 11:24:47 bluhm Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 COMMENT =		collect and display system facts
 
 VERSION =		3.10.0
+REVISION =		0
 DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.2 # 3.2
 PKGSPEC =		facter->=3.0,<4.0

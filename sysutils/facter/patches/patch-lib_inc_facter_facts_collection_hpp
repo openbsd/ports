@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_inc_facter_facts_collection_hpp,v 1.1 2018/04/16 11:24:47 bluhm Exp $
+
+Index: lib/inc/facter/facts/collection.hpp
+--- lib/inc/facter/facts/collection.hpp.orig
++++ lib/inc/facter/facts/collection.hpp
+@@ -101,7 +101,7 @@ namespace facter { namespace facts {
+         /**
+          * Destructor for fact collection.
+          */
+-        ~collection();
++        virtual ~collection();
+ 
+         /**
+          * Prevents the fact collection from being copied.
