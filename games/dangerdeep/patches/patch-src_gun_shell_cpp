@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_gun_shell_cpp,v 1.1 2018/04/16 07:35:27 jasper Exp $
+
+Index: src/gun_shell.cpp
+--- src/gun_shell.cpp.orig
++++ src/gun_shell.cpp
+@@ -292,9 +292,9 @@ void gun_shell::display() const
+ 	vector3 up = vector3(0, 0, 1);
+ 	vector3 side = vn.orthogonal(up);
+ 	up = side.orthogonal(vn);
+-	float m[16] = { side.x, side.y, side.z, 0,
+-			vn.x, vn.y, vn.z, 0,
+-			up.x, up.y, up.z, 0,
++	float m[16] = { static_cast<float>(side.x), static_cast<float>(side.y), static_cast<float>(side.z), 0,
++			static_cast<float>(vn.x), static_cast<float>(vn.y), static_cast<float>(vn.z), 0,
++			static_cast<float>(up.x), static_cast<float>(up.y), static_cast<float>(up.z), 0,
+ 			0, 0, 0, 1 };
+ 	glPushMatrix();
+ 	glMultMatrixf(m);

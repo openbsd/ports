@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_freeview_display_cpp,v 1.1 2018/04/16 07:35:27 jasper Exp $
+
+Index: src/freeview_display.cpp
+--- src/freeview_display.cpp.orig
++++ src/freeview_display.cpp
+@@ -386,7 +386,7 @@ void freeview_display::draw_view(game& gm, const vecto
+ 
+ 	// compute light source position and brightness (must be set AFTER modelview matrix)
+ 	vector3 sundir = gm.compute_sun_pos(viewpos).normal();
+-	GLfloat lposition[4] = { sundir.x, sundir.y, sundir.z, 0.0f };
++	GLfloat lposition[4] = { static_cast<GLfloat>(sundir.x), static_cast<GLfloat>(sundir.y), static_cast<GLfloat>(sundir.z), 0.0f };
+ 
+ 	// get light color, previously all channels were uniform, so we'll make a
+ 	// function of elevation to have some variation

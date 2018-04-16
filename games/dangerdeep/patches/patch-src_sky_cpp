@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_sky_cpp,v 1.1 2018/04/16 07:35:27 jasper Exp $
+
+Index: src/sky.cpp
+--- src/sky.cpp.orig
++++ src/sky.cpp
+@@ -349,12 +349,12 @@ void sky::display(const colorf& lightcolor, const vect
+ 	// set gl light position.
+ 	if (sundir.z > 0.0) {
+ 		vector3 sunpos = sundir * max_view_dist;
+-		GLfloat lightpos[4] = { sunpos.x, sunpos.y, sunpos.z, 0.0f };
++		GLfloat lightpos[4] = { static_cast<GLfloat>(sunpos.x), static_cast<GLfloat>(sunpos.y), static_cast<GLfloat>(sunpos.z), 0.0f };
+ 		glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+ 	} else {
+ 		// fixme: what is when moon is also below horizon?!
+ 		vector3 moonpos = moondir * max_view_dist;
+-		GLfloat lightpos[4] = { moonpos.x, moonpos.y, moonpos.z, 0.0f };
++		GLfloat lightpos[4] = { static_cast<GLfloat>(moonpos.x), static_cast<GLfloat>(moonpos.y), static_cast<GLfloat>(moonpos.z), 0.0f };
+ 		glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+ 	}
+ 
