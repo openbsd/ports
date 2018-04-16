@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_map_tile_h,v 1.1 2018/04/16 00:06:19 bluhm Exp $
+
+Index: src/map/tile.h
+--- src/map/tile.h.orig
++++ src/map/tile.h
+@@ -38,7 +38,8 @@ class Tile : public Rectanglei
+ public:
+   typedef struct
+   {
+-    uint16_t index, new_crc;
++    uint32_t index;
++    uint16_t new_crc;
+   } SynchTileInfo;
+   typedef std::vector<SynchTileInfo> SynchTileList;
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interface_weapon_menu_cpp,v 1.1 2018/04/16 00:06:19 bluhm Exp $
+
+Index: src/interface/weapon_menu.cpp
+--- src/interface/weapon_menu.cpp.orig
++++ src/interface/weapon_menu.cpp
+@@ -391,7 +391,7 @@ void WeaponsMenu::Draw()
+ Weapon * WeaponsMenu::UpdateCurrentOverflyItem(const Polygon * poly)
+ {
+   if (!show)
+-    return false;
++    return NULL;
+   const std::vector<PolygonItem *>& items = poly->GetItem();
+   WeaponMenuItem * tmp;
+   Interface::GetInstance()->SetCurrentOverflyWeapon(NULL);
