@@ -1,0 +1,124 @@
+$OpenBSD: patch-main_cc,v 1.4 2018/04/16 23:16:52 schwarze Exp $
+
+clang6 fix: cannot store 0xff etc. in a char
+
+Index: main.cc
+--- main.cc.orig
++++ main.cc
+@@ -106,6 +106,7 @@ const char* namearg(int argc, const char*const* argv, 
+ 	return (appname);
+ }
+ 
++#define char unsigned char
+ #include "bitmap/play.xbm"
+ #include "bitmap/back.xbm"
+ #include "bitmap/stop.xbm"
+@@ -136,75 +137,79 @@ const char* namearg(int argc, const char*const* argv, 
+ #include "bitmap/delete.xbm"
+ #include "bitmap/netedit.xbm"
+ #include "bitmap/netview.xbm"
++#undef char
+ 
++#define CHARCAST(bits) reinterpret_cast<char *>(bits)
++
+ void loadbitmaps(Tcl_Interp* tcl)
+ {
+ //  	Tk_DefineBitmap(tcl, Tk_GetUid("edit"),
+ //  			edit_bits, edit_width, edit_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("netedit"),
+-			netedit_bits, netedit_width, netedit_height);
++		CHARCAST(netedit_bits), netedit_width, netedit_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("netview"),
+-			netview_bits, netview_width, netview_height);
++		CHARCAST(netview_bits), netview_width, netview_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("nodeup"),
+-			nodeup_bits, nodeup_width, nodeup_height);
++		CHARCAST(nodeup_bits), nodeup_width, nodeup_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("nodedown"),
+-			nodedown_bits, nodedown_width, nodedown_height);
++		CHARCAST(nodedown_bits), nodedown_width, nodedown_height);
+ 
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("play"),
+-			play_bits, play_width, play_height);
++		CHARCAST(play_bits), play_width, play_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("back"),
+-			back_bits, back_width, back_height);
++		CHARCAST(back_bits), back_width, back_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("stop"),
+-			stop_bits, stop_width, stop_height);
++		CHARCAST(stop_bits), stop_width, stop_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("eject"),
+-			eject_bits, eject_width, eject_height);
++		CHARCAST(eject_bits), eject_width, eject_height);
+ 
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("rew"),
+-			rew_bits, rew_width, rew_height);
++		CHARCAST(rew_bits), rew_width, rew_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("ff"),
+-			ff_bits, ff_width, ff_height);
++		CHARCAST(ff_bits), ff_width, ff_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("monitors"),
+-			monitors_bits, monitors_width, monitors_height);
++		CHARCAST(monitors_bits), monitors_width, monitors_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("time"),
+-			time_bits, time_width, time_height);
++		CHARCAST(time_bits), time_width, time_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("zoomin"),
+-			zoomin_bits, zoomin_width, zoomin_height);
++		CHARCAST(zoomin_bits), zoomin_width, zoomin_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("zoomout"),
+-			zoomout_bits, zoomout_width, zoomout_height);
++		CHARCAST(zoomout_bits), zoomout_width, zoomout_height);
+ 	Tk_DefineBitmap(tcl, Tk_GetUid("pullright"),
+-			pullright_bits, pullright_width, pullright_height);
++		CHARCAST(pullright_bits), pullright_width, pullright_height);
+ 
+   // Used in nam editor toolbar
+   Tk_DefineBitmap(tcl, Tk_GetUid("select"),
+-                  select_bits, select_width, select_height);
++	CHARCAST(select_bits), select_width, select_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("addnode"),
+-                  addnode_bits, addnode_width, addnode_height);
++	CHARCAST(addnode_bits), addnode_width, addnode_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("addlink"),
+-                  addlink_bits, addlink_width, addlink_height);
++	CHARCAST(addlink_bits), addlink_width, addlink_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("cut"),
+-                  cut_bits, cut_width, cut_height);
++	CHARCAST(cut_bits), cut_width, cut_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("delete"),
+-                  delete_bits, delete_width, delete_height);
++	CHARCAST(delete_bits), delete_width, delete_height);
+ 
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark1"),
+-                  mark1_bits, mark1_width, mark1_height);
++	CHARCAST(mark1_bits), mark1_width, mark1_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark2"),
+-                  mark2_bits, mark2_width, mark2_height);
++	CHARCAST(mark2_bits), mark2_width, mark2_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark3"),
+-                  mark3_bits, mark3_width, mark3_height);
++	CHARCAST(mark3_bits), mark3_width, mark3_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark4"),
+-                  mark4_bits, mark4_width, mark4_height);
++	CHARCAST(mark4_bits), mark4_width, mark4_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark5"),
+-                  mark5_bits, mark5_width, mark5_height);
++	CHARCAST(mark5_bits), mark5_width, mark5_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark6"),
+-                  mark6_bits, mark6_width, mark6_height);
++	CHARCAST(mark6_bits), mark6_width, mark6_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark7"),
+-                  mark7_bits, mark7_width, mark7_height);
++	CHARCAST(mark7_bits), mark7_width, mark7_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("mark8"),
+-                  mark8_bits, mark8_width, mark8_height);
++	CHARCAST(mark8_bits), mark8_width, mark8_height);
+   Tk_DefineBitmap(tcl, Tk_GetUid("updir"),
+-                  updir_bits, updir_width, updir_height);
++	CHARCAST(updir_bits), updir_width, updir_height);
+ }
++#undef CHARCAST
+ 
+ void adios()
+ {
