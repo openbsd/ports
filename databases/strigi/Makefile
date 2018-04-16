@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/04/16 21:25:42 sthen Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -46,5 +46,10 @@ CONFIGURE_ARGS =	-DENABLE_LOG4CXX:Bool=No
 
 # Depends on Java
 CONFIGURE_ARGS +=	-DENABLE_REGENERATEXSD:Bool=No
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS += --std=c++03
+.endif
 
 .include <bsd.port.mk>
