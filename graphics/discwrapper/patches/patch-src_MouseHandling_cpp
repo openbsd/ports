@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_MouseHandling_cpp,v 1.1 2018/04/16 15:49:30 naddy Exp $
+
+Index: src/MouseHandling.cpp
+--- src/MouseHandling.cpp.orig
++++ src/MouseHandling.cpp
+@@ -88,7 +88,7 @@ void DiscWrapperFrame::OnLeftDown(wxMouseEvent& event)
+             dc.SetFont(Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont());           // Apply Font and Color then draw text with the chosen coordinates and angle
+             dc.SetTextForeground(Database->Page[Cpage].labels[SelectedItem].Colour.GetColour());
+             wxFont Xfont = Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont();
+-            wxCoord wi, he, xc = NULL;
++            wxCoord wi, he, xc = 0;
+             dc.GetMultiLineTextExtent(Database->Page[Cpage].labels[SelectedItem].L, & wi, & he, &xc, &Xfont);
+             if ( wi == 0 )
+                 wi = he = 100;
+@@ -423,7 +423,7 @@ void DiscWrapperFrame::OnLeftDown(wxMouseEvent& event)
+             dc.SetFont(Database->Page[Cpage].labels[i].Font.GetChosenFont());           // Apply Font and Color then draw text with the chosen coordinates and angle
+             dc.SetTextForeground(Database->Page[Cpage].labels[i].Colour.GetColour());
+             wxFont Xfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-            wxCoord w, h, xc = NULL;
++            wxCoord w, h, xc = 0;
+             dc.GetMultiLineTextExtent(Database->Page[Cpage].labels[i].L, & w, & h, &xc, &Xfont);
+             if ( w == 0 )
+                 w = h = 100 ;
+@@ -652,7 +652,7 @@ void DiscWrapperFrame::OnDragging(wxMouseEvent& event)
+             dc.SetFont(Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont());           // Apply Font and Color then draw text with the chosen coordinates and angle
+             dc.SetTextForeground(Database->Page[Cpage].labels[SelectedItem].Colour.GetColour());
+             wxFont Xfont = Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont();
+-            wxCoord wi, he, xc = NULL;
++            wxCoord wi, he, xc = 0;
+             dc.GetMultiLineTextExtent(Database->Page[Cpage].labels[SelectedItem].L, & wi, & he, &xc, &Xfont);
+             if ( wi == 0 )
+                 wi = he = 100;
+@@ -1664,7 +1664,7 @@ void DiscWrapperFrame::OnLeftDouble(wxMouseEvent& even
+         dc.SetFont(Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont());           // Apply Font and Color then draw text with the chosen coordinates and angle
+         dc.SetTextForeground(Database->Page[Cpage].labels[SelectedItem].Colour.GetColour());
+         wxFont Xfont = Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont();
+-        wxCoord wi, he, xc = NULL;
++        wxCoord wi, he, xc = 0;
+         dc.GetMultiLineTextExtent(Database->Page[Cpage].labels[SelectedItem].L, & wi, & he, &xc, &Xfont);
+         if ( wi == 0 )
+             wi = he = 100;

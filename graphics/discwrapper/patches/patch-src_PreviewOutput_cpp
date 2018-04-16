@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_PreviewOutput_cpp,v 1.1 2018/04/16 15:49:30 naddy Exp $
+
+Index: src/PreviewOutput.cpp
+--- src/PreviewOutput.cpp.orig
++++ src/PreviewOutput.cpp
+@@ -324,7 +324,7 @@ void DiscWrapperFrame::DrawDC()    // The Drawing stuf
+         pdc.SetFont(Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont());           // Apply Font && Color then draw text with the chosen coordinates && angle
+         pdc.SetTextForeground(Database->Page[Cpage].labels[SelectedItem].Colour.GetColour());
+         wxFont Xfont = Database->Page[Cpage].labels[SelectedItem].Font.GetChosenFont();
+-        wxCoord wi, he, xc = NULL;
++        wxCoord wi, he, xc = 0;
+         pdc.GetMultiLineTextExtent(Database->Page[Cpage].labels[SelectedItem].L, & wi, & he, &xc, &Xfont);
+         if ( wi == 0 )
+             wi = he = 100 ;
+@@ -894,7 +894,7 @@ void DiscWrapperFrame::DrawLabels(wxDC &dc, int Cpage,
+         dc.SetFont(Database->Page[Cpage].labels[i].Font.GetChosenFont());           // Apply Font && Color then draw text with the chosen coordinates && angle
+         dc.SetTextForeground(Database->Page[Cpage].labels[i].Colour.GetColour());
+         wxFont Xfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-        wxCoord w, oh, h, xc = NULL;
++        wxCoord w, oh, h, xc = 0;
+         dc.GetMultiLineTextExtent(Database->Page[Cpage].labels[i].L, & w, & oh, &xc, &Xfont);
+ 
+         if ( ( (Database->Page[Cpage].labels[i].L == _("<Title>")) || (Database->Page[Cpage].labels[i].L == _("<Date>")) ) && !preview )
+@@ -919,7 +919,7 @@ void DiscWrapperFrame::DrawLabels(wxDC &dc, int Cpage,
+                     ih = ig+1;
+ 
+                     wxFont Xfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-                    xc = NULL;
++                    xc = 0;
+                     dc.GetMultiLineTextExtent(DrawL, & w, & oh, &xc, &Xfont);
+ 
+                     if ( Database->Page[Cpage].labels[i].Align == 0 )
+@@ -949,7 +949,7 @@ void DiscWrapperFrame::DrawLabels(wxDC &dc, int Cpage,
+                 ih = ig+1;
+ 
+                 wxFont Xfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-                xc = NULL;
++                xc = 0;
+                 dc.GetMultiLineTextExtent(DrawL, & w, & oh, &xc, &Xfont);
+ 
+                 if ( DrawY <= 416 )
+@@ -964,7 +964,7 @@ void DiscWrapperFrame::DrawLabels(wxDC &dc, int Cpage,
+                     double Radius = 0;
+ 
+                     wxFont Tfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-                    wxCoord cw, ch, cxc = NULL;
++                    wxCoord cw, ch, cxc = 0;
+ 
+                     for ( j = 0 ; j < DrawL.Len() ; j++ )
+                     {
+@@ -996,7 +996,7 @@ void DiscWrapperFrame::DrawLabels(wxDC &dc, int Cpage,
+                     double Radius = 0;
+ 
+                     wxFont Tfont = Database->Page[Cpage].labels[i].Font.GetChosenFont();
+-                    wxCoord cw, ch, cxc = NULL;
++                    wxCoord cw, ch, cxc = 0;
+ 
+                     for ( j = 0 ; j < DrawL.Len() ; j++ )
+                     {
+@@ -1090,7 +1090,7 @@ void DiscWrapperFrame::DrawLists(wxDC &dc, int Cpage, 
+                     TempString = _("<Empty>");
+ 
+                 wxFont Xfont = Database->Page[Cpage].lists[i].Font.GetChosenFont();
+-                wxCoord w, h, xc = NULL;
++                wxCoord w, h, xc = 0;
+                 dc.GetMultiLineTextExtent(TempString, & w, & h, &xc, &Xfont);
+                 if ( align == 'l' )
+                     dc.DrawText( TempString, Database->Page[Cpage].lists[i].X+ColWidth, Database->Page[Cpage].lists[i].Y+((j-1)*Database->Page[Cpage].lists[i].Font.GetChosenFont().GetPointSize()*1.5));
