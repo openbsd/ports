@@ -1,6 +1,7 @@
-$OpenBSD: patch-qt_mkspecs_openbsd-g++_qmake_conf,v 1.1 2017/03/02 10:12:02 sthen Exp $
---- qt/mkspecs/openbsd-g++/qmake.conf.orig	Tue May 10 09:19:52 2016
-+++ qt/mkspecs/openbsd-g++/qmake.conf	Wed Mar  1 12:07:44 2017
+$OpenBSD: patch-qt_mkspecs_openbsd-g++_qmake_conf,v 1.2 2018/04/16 22:21:40 sthen Exp $
+Index: qt/mkspecs/openbsd-g++/qmake.conf
+--- qt/mkspecs/openbsd-g++/qmake.conf.orig
++++ qt/mkspecs/openbsd-g++/qmake.conf
 @@ -8,7 +8,7 @@ TEMPLATE		= app
  CONFIG			+= qt warn_on release link_prl gdb_dwarf_index
  QT			+= core gui
@@ -10,15 +11,22 @@ $OpenBSD: patch-qt_mkspecs_openbsd-g++_qmake_conf,v 1.1 2017/03/02 10:12:02 sthe
  QMAKE_LEX		= flex
  QMAKE_LEXFLAGS		=
  QMAKE_YACC		= yacc
-@@ -24,7 +24,7 @@ QMAKE_CFLAGS_STATIC_LIB	= $$QMAKE_CFLAGS_SHLIB
+@@ -24,12 +24,12 @@ QMAKE_CFLAGS_STATIC_LIB	= $$QMAKE_CFLAGS_SHLIB
  QMAKE_CFLAGS_YACC	= -Wno-unused -Wno-parentheses
  QMAKE_CFLAGS_THREAD	= -pthread
  
 -QMAKE_CXX		= g++
+-QMAKE_CXXFLAGS		= $$QMAKE_CFLAGS
 +QMAKE_CXX		= ${PORTS_CXX}
- QMAKE_CXXFLAGS		= $$QMAKE_CFLAGS
++QMAKE_CXXFLAGS		= $$QMAKE_CFLAGS --std=gnu++98
  QMAKE_CXXFLAGS_DEPS	= $$QMAKE_CFLAGS_DEPS
  QMAKE_CXXFLAGS_WARN_ON	= $$QMAKE_CFLAGS_WARN_ON
+ QMAKE_CXXFLAGS_WARN_OFF	= $$QMAKE_CFLAGS_WARN_OFF
+-QMAKE_CXXFLAGS_RELEASE	= $$QMAKE_CFLAGS_RELEASE
++QMAKE_CXXFLAGS_RELEASE	= $$QMAKE_CFLAGS_RELEASE --std=gnu++98
+ QMAKE_CXXFLAGS_DEBUG	= $$QMAKE_CFLAGS_DEBUG
+ QMAKE_CXXFLAGS_SHLIB	= $$QMAKE_CFLAGS_SHLIB
+ QMAKE_CXXFLAGS_STATIC_LIB = $$QMAKE_CFLAGS_STATIC_LIB
 @@ -45,10 +45,10 @@ QMAKE_LIBDIR_QT		= $$[QT_INSTALL_LIBS]
  QMAKE_INCDIR_OPENGL	= /usr/X11R6/include
  QMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
