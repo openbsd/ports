@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2015/09/16 07:13:02 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2018/04/16 08:07:35 pvk Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 @pkgpath x11/qt4,-sqlite
@@ -3621,6 +3621,11 @@ lib/qt4/mkspecs/modules/qt_webkit_version.pri
 lib/qt4/mkspecs/netbsd-g++/
 lib/qt4/mkspecs/netbsd-g++/qmake.conf
 lib/qt4/mkspecs/netbsd-g++/qplatformdefs.h
+lib/qt4/mkspecs/openbsd-clang/
+lib/qt4/mkspecs/openbsd-clang/qmake.conf
+@comment lib/qt4/mkspecs/openbsd-clang/qmake.conf.orig
+lib/qt4/mkspecs/openbsd-clang/qplatformdefs.h
+@comment lib/qt4/mkspecs/openbsd-clang/qplatformdefs.h.orig
 lib/qt4/mkspecs/openbsd-g++/
 lib/qt4/mkspecs/openbsd-g++/qmake.conf
 @comment lib/qt4/mkspecs/openbsd-g++/qmake.conf.orig

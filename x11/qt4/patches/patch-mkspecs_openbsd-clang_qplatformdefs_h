@@ -1,0 +1,11 @@
+$OpenBSD: patch-mkspecs_openbsd-clang_qplatformdefs_h,v 1.1 2018/04/16 08:07:35 pvk Exp $
+
+Index: mkspecs/openbsd-clang/qplatformdefs.h
+--- mkspecs/openbsd-clang/qplatformdefs.h.orig
++++ mkspecs/openbsd-clang/qplatformdefs.h
+@@ -108,4 +108,5 @@
+ #define QT_AOUT_UNDERSCORE
+ #endif
+ 
++#define QT_GCC4_ATOMICS
+ #endif // QPLATFORMDEFS_H

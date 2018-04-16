@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.152 2018/04/16 08:07:35 pvk Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,13 +25,13 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		14
-REVISION-mysql =	2
-REVISION-postgresql =	2
-REVISION-sqlite2 =	2
-REVISION-tds =		2
-REVISION-debug =	1
-REVISION-examples =	3
+REVISION-main =		15
+REVISION-mysql =	3
+REVISION-postgresql =	3
+REVISION-sqlite2 =	3
+REVISION-tds =		3
+REVISION-debug =	2
+REVISION-examples =	4
 REVISION-html =		0
 
 # XXX qmake include parser is bogus
@@ -119,7 +119,6 @@ CONFIGURE_ARGS +=	-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 CONFIGURE_ARGS +=	-I${LOCALBASE}/include/postgresql \
 			-I${LOCALBASE}/include/postgresql/server \
 			-plugin-sql-psql
-CONFIGURE_ARGS +=	-platform openbsd-g++4
 
 # XXX make sure those libraries gets written to libQtGui.la
 QMAKE_LIBS_GUI =	freetype SM ICE Xi Xrender Xinerama fontconfig Xext X11
@@ -242,8 +241,16 @@ MAKE_FLAGS +=	LIB$l_VERSION=$v
 
 DESTDIRNAME =	INSTALL_ROOT
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS +=	-platform openbsd-clang
+.else
+CONFIGURE_ARGS +=	-platform openbsd-g++4
+.endif
+
 pre-patch:
 	cd ${WRKDIST} && cp -R mkspecs/openbsd-g++ mkspecs/openbsd-g++4
+	cd ${WRKDIST} && cp -R mkspecs/openbsd-g++ mkspecs/openbsd-clang
 
 post-build:
 .for l v in ${SHARED_LIBS}
