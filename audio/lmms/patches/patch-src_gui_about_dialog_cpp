@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_about_dialog_cpp,v 1.1 2018/04/16 17:51:41 naddy Exp $
+
+Index: src/gui/about_dialog.cpp
+--- src/gui/about_dialog.cpp.orig
++++ src/gui/about_dialog.cpp
+@@ -31,7 +31,7 @@
+ 
+ 
+ #ifdef __GNUC__
+-#define GCC_VERSION "GCC "__VERSION__
++#define GCC_VERSION "GCC " __VERSION__
+ #else
+ #define GCC_VERSION "unknown compiler"
+ #endif
