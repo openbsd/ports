@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/12/26 19:19:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/16 23:40:48 jca Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.8.2
 DISTNAME=	aqsis-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics
 
 SO_VERSION=	1.0 # 1.6
@@ -45,6 +45,10 @@ MODCMAKE_WANTCOLOR=No
 SEPARATE_BUILD=	Yes
 
 CXXFLAGS+=	-pthread -I${X11BASE}/include
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CXXFLAGS+=	-std=gnu++03
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis
