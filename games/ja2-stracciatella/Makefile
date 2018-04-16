@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/16 21:23:41 bcallah Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
@@ -26,8 +26,9 @@ RUN_DEPENDS =	x11/gtk+3,-guic \
 		devel/desktop-file-utils
 
 USE_GMAKE =	Yes
+MAKE_ENV =	CXXFLAGS="${CXXFLAGS} -Wno-narrowing"
 MAKE_FLAGS =	Q= WITH_UNITTESTS=0 WITH_DEBUGINFO=1 \
-		CXX=c++
+		CXX="${CXX}"
 
 NO_TEST =	Yes
 
