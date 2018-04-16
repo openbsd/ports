@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gussound_gopenal_cpp,v 1.1 2018/04/16 07:05:34 jasper Exp $
+
+error: invalid operands to binary expression ('nullptr_t' and 'ALuint' (aka 'unsigned int'))
+
+Index: src/gussound/gopenal.cpp
+--- src/gussound/gopenal.cpp.orig
++++ src/gussound/gopenal.cpp
+@@ -175,7 +175,7 @@ namespace GOpenAl
+ 		}
+ 
+ 		// Delete the sound buffer
+-		if (NULL != buffer_)
++		if (0 != buffer_)
+ 		{
+ 			alDeleteBuffers (1, &buffer_);
+ 		}
