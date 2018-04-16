@@ -1,0 +1,14 @@
+$OpenBSD: patch-pgadmin_frm_frmEditGrid_cpp,v 1.1 2018/04/16 15:07:09 tb Exp $
+
+Index: pgadmin/frm/frmEditGrid.cpp
+--- pgadmin/frm/frmEditGrid.cpp.orig
++++ pgadmin/frm/frmEditGrid.cpp
+@@ -2386,7 +2386,7 @@ sqlTable::sqlTable(pgConn *conn, pgQueryThread *_threa
+ 			columns[i].typlen = colSet->GetLong(wxT("typlen"));
+ 			columns[i].typmod = colSet->GetLong(wxT("typmod"));
+ 
+-			switch (columns[i].type)
++			switch (static_cast<long>(columns[i].type))
+ 			{
+ 				case PGOID_TYPE_BOOL:
+ 					columns[i].numeric = false;

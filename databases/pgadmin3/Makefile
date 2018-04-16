@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2018/04/16 15:07:09 tb Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX} crypto z
 
-MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/ \
-		ftp://ftp.postgresql.org/pub/pgadmin3/release/v$V/src/
+MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin/pgadmin3/v$V/src/
 
 LIB_DEPENDS=	x11/wxWidgets>=2.8.7 \
 		databases/postgresql \
