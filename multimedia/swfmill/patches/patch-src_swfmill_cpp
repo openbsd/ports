@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_swfmill_cpp,v 1.1 2018/04/16 06:47:54 jasper Exp $
+
+Index: src/swfmill.cpp
+--- src/swfmill.cpp.orig
++++ src/swfmill.cpp
+@@ -22,7 +22,7 @@ const char *internal_stylesheet = NULL;
+ 
+ void usage() {
+ 	fprintf( stderr,
+-		"\n"PACKAGE_NAME" "PACKAGE_VERSION"\n"
++		"\n" PACKAGE_NAME " " PACKAGE_VERSION "\n"
+ 		"    XML-based SWF processing tool\n"
+ 		"\n"
+ 		"usage: swfmill [<options>] <command>\n"
+@@ -67,7 +67,7 @@ void usage() {
+ }
+ 
+ void printVersion() {
+-	fprintf(stderr, PACKAGE_NAME" "PACKAGE_VERSION"\n");
++	fprintf(stderr, PACKAGE_NAME " " PACKAGE_VERSION "\n");
+ }
+ 
+ // helper func

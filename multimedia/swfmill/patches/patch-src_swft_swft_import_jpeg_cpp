@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_swft_swft_import_jpeg_cpp,v 1.1 2018/04/16 06:47:54 jasper Exp $
+
+https://github.com/djcsdy/swfmill/commit/f8feea99c19e922097c765034d9a6da9974860f0
+
+Index: src/swft/swft_import_jpeg.cpp
+--- src/swft/swft_import_jpeg.cpp.orig
++++ src/swft/swft_import_jpeg.cpp
+@@ -10,7 +10,7 @@
+ #include <zlib.h>
+ 
+ #define TMP_STRLEN 0xff
+-const char jpeg_header[] = { 0xff, 0xd9, 0xff, 0xd8, 0 };
++const char jpeg_header[] = { (char)0xff, (char)0xd9, (char)0xff, (char)0xd8, 0 };
+ 
+ // defined in swft_import_png
+ bool compress( unsigned char *inputBuffer, int inLength, unsigned char *outputBuffer, int *outLength );
