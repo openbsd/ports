@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 16:06:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/16 15:40:01 sthen Exp $
 @bin bin/rawstudio
 share/applications/rawstudio.desktop
-share/icons/
 share/icons/rawstudio.png
 share/locale/ca/LC_MESSAGES/rawstudio.mo
 share/locale/cs/LC_MESSAGES/rawstudio.mo
