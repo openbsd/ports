@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_RenderManagerSDL_cpp,v 1.1 2018/04/16 10:59:17 jasper Exp $
+
+Index: src/RenderManagerSDL.cpp
+--- src/RenderManagerSDL.cpp.orig
++++ src/RenderManagerSDL.cpp
+@@ -112,7 +112,7 @@ void RenderManagerSDL::init(int xResolution, int yReso
+ 		mScreen->w, mScreen->h, mScreen->format->BitsPerPixel,
+ 		mScreen->format->Rmask, mScreen->format->Gmask,
+ 		mScreen->format->Bmask, mScreen->format->Amask);
+-	SDL_Rect screenRect = {0, 0, (short)xResolution, (short)yResolution};
++	SDL_Rect screenRect = {0, 0, (Uint16)xResolution, (Uint16)yResolution};
+ 	SDL_FillRect(mOverlaySurface, &screenRect, SDL_MapRGB(mScreen->format, 0, 0, 0));
+ 
+ 
+@@ -578,8 +578,8 @@ void RenderManagerSDL::drawImage(const std::string& fi
+ 	SDL_Rect blitRect = {
+ 		(short)lround(position.x - float(imageBuffer->sdlImage->w) / 2.0),
+ 		(short)lround(position.y - float(imageBuffer->sdlImage->h) / 2.0),
+-		(short)lround(position.x + float(imageBuffer->sdlImage->w) / 2.0),
+-		(short)lround(position.y + float(imageBuffer->sdlImage->h) / 2.0),
++		static_cast<Uint16>(lround(position.x + float(imageBuffer->sdlImage->w) / 2.0)),
++		static_cast<Uint16>(lround(position.y + float(imageBuffer->sdlImage->h) / 2.0)),
+ 	};
+ 
+ 	SDL_BlitSurface(imageBuffer->sdlImage, 0, mScreen, &blitRect);
+@@ -641,8 +641,8 @@ void RenderManagerSDL::drawParticle(const Vector2& pos
+ 	SDL_Rect blitRect = {
+ 		(short)lround(pos.x - float(9) / 2.0),
+ 		(short)lround(pos.y - float(9) / 2.0),
+-		(short)lround(pos.x + float(9) / 2.0),
+-		(short)lround(pos.y + float(9) / 2.0),
++		static_cast<Uint16>(lround(pos.x + float(9) / 2.0)),
++		static_cast<Uint16>(lround(pos.y + float(9) / 2.0)),
+ 	};
+ 	
+ 	SDL_Surface* blood = player == LEFT_PLAYER ? mLeftBlobBlood : mRightBlobBlood;

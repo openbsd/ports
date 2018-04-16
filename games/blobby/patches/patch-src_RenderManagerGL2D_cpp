@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_RenderManagerGL2D_cpp,v 1.1 2018/04/16 10:59:17 jasper Exp $
+
+Index: src/RenderManagerGL2D.cpp
+--- src/RenderManagerGL2D.cpp.orig
++++ src/RenderManagerGL2D.cpp
+@@ -286,7 +286,7 @@ void RenderManagerGL2D::init(int xResolution, int yRes
+ 		fontSurface = loadSurface(filename);
+ 		fontSurface2 = loadSurface(filename2);
+ 		
+-		SDL_Rect r = {(short)x, 0, (short)fontSurface->w, (short)fontSurface->h};
++		SDL_Rect r = {(Sint16)x, 0, (Uint16)fontSurface->w, (Uint16)fontSurface->h};
+ 		SDL_BlitSurface(fontSurface, 0, textbase, &r);
+ 		SDL_BlitSurface(highlight, 0, hltextbase, &r);
+ 		r.x = sx;
