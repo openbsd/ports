@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Value_cc,v 1.1 2018/04/16 14:10:02 naddy Exp $
+
+Index: src/Value.cc
+--- src/Value.cc.orig
++++ src/Value.cc
+@@ -149,7 +149,7 @@ namespace enigma {
+                 val.dval[0] = false;
+                 break;
+             case OBJECT :
+-                val.dval[0] = (double) NULL;
++                val.dval[0] = 0;
+                 break;
+             case NAMEDOBJECT:
+                 ASSERT(false, XLevelRuntime, "Value: illegal type usage");

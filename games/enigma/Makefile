@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/03/13 21:13:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2018/04/16 14:10:02 naddy Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.21
 DISTNAME=	enigma-${V}
+REVISION=	0
 
 CATEGORIES=	games x11
 
