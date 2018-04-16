@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/03/07 21:34:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/16 21:09:25 bcallah Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -7,6 +7,7 @@ BROKEN-aarch64=	*** BFD does not support target aarch64-unknown-openbsd6.2.
 
 DISTNAME=	sdcc-src-3.7.0
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
 
@@ -19,7 +20,12 @@ WANTLIB=		c curses m ${COMPILER_LIBCXX} readline z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 
+# clang6 makes sdcc regenerate its configure scripts at *BUILD* time
+# so we need to add the autoconf/automake depends. We don't know
+# why this is.
 BUILD_DEPENDS=		${RUN_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/boost
 RUN_DEPENDS=		devel/gputils
 
@@ -31,6 +37,11 @@ CONFIGURE_ENV+=		sdcc_cv_CCggdb=no \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 USE_GMAKE=		Yes
+MAKE_ENV=		AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
+			AUTOMAKE_VERSION="${AUTOMAKE_VERSION}"
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.11
 
 WRKDIST=		${WRKDIR}/sdcc
 
