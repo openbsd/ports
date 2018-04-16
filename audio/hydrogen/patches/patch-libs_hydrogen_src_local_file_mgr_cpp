@@ -1,0 +1,26 @@
+$OpenBSD: patch-libs_hydrogen_src_local_file_mgr_cpp,v 1.1 2018/04/16 20:19:15 naddy Exp $
+
+Index: libs/hydrogen/src/local_file_mgr.cpp
+--- libs/hydrogen/src/local_file_mgr.cpp.orig
++++ libs/hydrogen/src/local_file_mgr.cpp
+@@ -922,9 +922,9 @@ int LocalFileMng::loadPlayList( const std::string& pat
+ 	
+ 	std::string playlistInfoFile = patternname;
+ 	std::ifstream verify( playlistInfoFile.c_str() , std::ios::in | std::ios::binary );
+-	if ( verify == NULL ) {
++	if ( !verify ) {
+ 		//ERRORLOG( "Load Playlist: Data file " + playlistInfoFile + " not found." );
+-		return NULL;
++		return 1;
+ 	}
+ 
+ 	TiXmlDocument doc( playlistInfoFile.c_str() );
+@@ -935,7 +935,7 @@ int LocalFileMng::loadPlayList( const std::string& pat
+ 	TiXmlNode* rootNode;	// root element
+ 		if ( !( rootNode = doc.FirstChild( "playlist" ) ) ) {
+ 		ERRORLOG( "Error reading playlist: playlist node not found" );
+-		return NULL;
++		return 1;
+ 	}
+ 	
+ 	TiXmlNode* playlistNode = rootNode->FirstChild( "Songs" );
