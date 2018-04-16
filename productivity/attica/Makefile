@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/16 12:30:49 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
@@ -21,6 +21,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		x11/kde4
 MODKDE4_USE =
+
+# clang 6 problem
+CXXFLAGS +=		--std=gnu++98
 
 CONFIGURE_ARGS =	-DATTICA_ENABLE_TESTS:Bool=Yes \
 			-DQT4_BUILD=Yes
