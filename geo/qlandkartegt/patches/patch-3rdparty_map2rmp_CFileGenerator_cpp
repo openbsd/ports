@@ -1,0 +1,14 @@
+$OpenBSD: patch-3rdparty_map2rmp_CFileGenerator_cpp,v 1.1 2018/04/16 18:16:45 landry Exp $
+
+Index: 3rdparty/map2rmp/CFileGenerator.cpp
+--- 3rdparty/map2rmp/CFileGenerator.cpp.orig
++++ 3rdparty/map2rmp/CFileGenerator.cpp
+@@ -27,7 +27,7 @@
+ #define _MKSTR(x)           _MKSTR_1(x)
+ #endif
+ 
+-#define VER_STR             _MKSTR(VER_MAJOR)"."_MKSTR(VER_MINOR)"."_MKSTR(VER_STEP)
++#define VER_STR             _MKSTR(VER_MAJOR) "." _MKSTR(VER_MINOR) "." _MKSTR(VER_STEP)
+ 
+ 
+ extern "C"
