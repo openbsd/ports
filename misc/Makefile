@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2018/04/13 15:40:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.181 2018/04/16 00:32:24 bcallah Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -119,7 +119,6 @@
      SUBDIR += xgas
      SUBDIR += xkcd-viewer
      SUBDIR += xless
-     SUBDIR += xnc
      SUBDIR += xtar
      SUBDIR += xtimer
      SUBDIR += ytree
