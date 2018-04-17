@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1063 2018/04/14 21:27:20 kili Exp $
+# $OpenBSD: Makefile,v 1.1064 2018/04/17 11:29:06 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -269,7 +269,6 @@
      SUBDIR += nedi
      SUBDIR += nemesis
      SUBDIR += neon
-     SUBDIR += nepenthes
      SUBDIR += nepim
      SUBDIR += net-snmp
      SUBDIR += netatalk
