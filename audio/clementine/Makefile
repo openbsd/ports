@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2018/04/17 14:06:03 naddy Exp $
 
 COMMENT =	Qt4-based featureful music player
 
 V =		1.2.3
 DISTNAME =	clementine-${V}
 CATEGORIES =	audio x11
-REVISION =	9
+REVISION =	10
 
 HOMEPAGE =	http://clementine-player.org/
 
