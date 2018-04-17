@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/30 13:55:11 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/17 17:37:07 jasper Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
@@ -46,5 +46,7 @@ LIB_DEPENDS =	editors/qscintilla \
 		x11/qwt
 
 NO_TEST =	Yes
+
+CXXFLAGS +=	-std=c++03
 
 .include <bsd.port.mk>
