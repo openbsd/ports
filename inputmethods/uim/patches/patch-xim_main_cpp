@@ -1,0 +1,14 @@
+$OpenBSD: patch-xim_main_cpp,v 1.1 2018/04/17 17:41:58 jasper Exp $
+
+Index: xim/main.cpp
+--- xim/main.cpp.orig
++++ xim/main.cpp
+@@ -65,7 +65,7 @@ int g_option_mask;
+ int scr_width, scr_height;
+ int host_byte_order;
+ 
+-#define VERSION_NAME "uim-xim under the way! Version "PACKAGE_VERSION"\n"
++#define VERSION_NAME "uim-xim under the way! Version " PACKAGE_VERSION "\n"
+ const char *version_name=VERSION_NAME;
+ const char *usage=
+ "--help , --version :Show usage or version\n"
