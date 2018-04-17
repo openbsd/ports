@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2018/04/17 03:44:52 bcallah Exp $
 
 COMMENT=	Motif minesweeper game
 
@@ -19,6 +19,8 @@ ALL_TARGET=	xminehunter
 FAKE_FLAGS=	INSTALL_BIN_PATH=${WRKINST}${PREFIX}/bin \
 	INSTALL_SCORE_PATH=${WRKINST}${PREFIX}/lib/X11/xminehunter
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+MAKE_FLAGS=	CFLAGS="${CXXFLAGS} -std=gnu++98 \
+		-DMINE_SCORE_PATH=\\\"${LOCALBASE}/lib/X11/xminehunter\\\""
 
 NO_TEST=	Yes
 
