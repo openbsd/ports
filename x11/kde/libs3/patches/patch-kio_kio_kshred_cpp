@@ -1,0 +1,18 @@
+$OpenBSD: patch-kio_kio_kshred_cpp,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: kio/kio/kshred.cpp
+--- kio/kio/kshred.cpp.orig
++++ kio/kio/kshred.cpp
+@@ -206,9 +206,9 @@ KShred::flush()
+ bool
+ KShred::shred()
+ {
+-  unsigned char p[6][3] = {{'\222', '\111', '\044'}, {'\111', '\044', '\222'},
+-                           {'\044', '\222', '\111'}, {'\155', '\266', '\333'},
+-                           {'\266', '\333', '\155'}, {'\333', '\155', '\266'}};
++  unsigned char p[6][3] = {{  0x92, '\111', '\044'}, {'\111', '\044', 0x92},
++                           {'\044',   0x92, '\111'}, {'\155',  0xb6,  0xdb},
++                           {  0xb6,   0xdb, '\155'}, {  0xdb, '\155', 0xb6}};
+   QString msg = i18n("Shredding:  pass %1 of 35");
+ 
+   emit processedSize(0);

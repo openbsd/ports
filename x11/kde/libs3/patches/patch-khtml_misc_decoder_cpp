@@ -1,0 +1,14 @@
+$OpenBSD: patch-khtml_misc_decoder_cpp,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: khtml/misc/decoder.cpp
+--- khtml/misc/decoder.cpp.orig
++++ khtml/misc/decoder.cpp
+@@ -265,7 +265,7 @@ QString Decoder::decode(const char *data, int len)
+                 if (m_codec->mibEnum() == 1000 && c2 == 0x00)
+                 {
+                   // utf16LE, we need to put the decoder in LE mode
+-                  char reverseUtf16[3] = {0xFF, 0xFE, 0x00};
++                  char reverseUtf16[3] = {'\377', '\376', '\0'};
+                   m_decoder->toUnicode(reverseUtf16, 2);
+                 }
+             }

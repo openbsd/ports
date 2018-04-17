@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdecore_network_kresolverworkerbase_h,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: kdecore/network/kresolverworkerbase.h
+--- kdecore/network/kresolverworkerbase.h.orig
++++ kdecore/network/kresolverworkerbase.h
+@@ -290,6 +290,7 @@ class KResolverWorkerFactoryBase
+ {
+ public:
+   virtual KResolverWorkerBase* create() const = 0;
++  virtual ~KResolverWorkerFactoryBase() { }
+ 
+   /**
+    * Wrapper call to register workers

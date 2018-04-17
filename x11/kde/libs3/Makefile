@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2017/11/04 15:48:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.158 2018/04/17 14:47:49 schwarze Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		45
+REVISION-main =		46
 REVISION-langlist =	2
 
 MODKDE_VERSION =	3.5.8
@@ -22,10 +22,10 @@ SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
 SHARED_LIBS +=	kdecore              7.0      # .6.0
 SHARED_LIBS +=	kunittest            2.0      # .1.0
-SHARED_LIBS +=	kdeui                8.0      # .6.0
+SHARED_LIBS +=	kdeui                9.0      # .6.0
 SHARED_LIBS +=	kspell               7.0      # .6.0
 SHARED_LIBS +=	kdesu                7.0      # .6.0
-SHARED_LIBS +=	kjs                  5.0      # .3.0
+SHARED_LIBS +=	kjs                  6.0      # .3.0
 SHARED_LIBS +=	kwalletclient        2.0      # .1.1
 SHARED_LIBS +=	kwalletbackend       2.0      # .1.0
 SHARED_LIBS +=	kio                  7.0      # .6.0
@@ -50,7 +50,7 @@ SHARED_LIBS +=	kspell2              2.0      # .1.0
 SHARED_LIBS +=	kmdi2                2.0      # .1.0
 SHARED_LIBS +=	kmdi                 2.0      # .1.0
 SHARED_LIBS +=	kjava                2.0      # .1.0
-SHARED_LIBS +=	khtml                7.0      # .6.0
+SHARED_LIBS +=	khtml                8.0      # .6.0
 SHARED_LIBS +=	ktexteditor          1.0      # .0.0
 SHARED_LIBS +=	kscript              1.0      # .0.0
 SHARED_LIBS +=	kmediaplayer         1.0      # .0.0

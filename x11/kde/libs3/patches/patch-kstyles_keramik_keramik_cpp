@@ -1,0 +1,37 @@
+$OpenBSD: patch-kstyles_keramik_keramik_cpp,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: kstyles/keramik/keramik.cpp
+--- kstyles/keramik/keramik.cpp.orig
++++ kstyles/keramik/keramik.cpp
+@@ -2790,18 +2790,24 @@ bool KeramikStyle::eventFilter( QObject* object, QEven
+ 			//Combo dropdowns are shaped	
+ 			case QEvent::Resize:
+ 			{
++				int w, h;
++
+ 				QListBox* listbox = static_cast<QListBox*>(object);
+ 				QResizeEvent* resize = static_cast<QResizeEvent*>(event);
+-				if (resize->size().height() < 6)
++				w = resize->size().width();
++				h = resize->size().height();
++
++				if (h < 6 || h > SHRT_MAX ||
++				    w < 7 || w > SHRT_MAX)
+ 					return false;
+-		
++
+ 				//CHECKME: Not sure the rects are perfect..
+ 				XRectangle rects[5] = {
+-					{0, 0, resize->size().width()-2, resize->size().height()-6},
+-					{0, resize->size().height()-6, resize->size().width()-2, 1},
+-					{1, resize->size().height()-5, resize->size().width()-3, 1},
+-					{2, resize->size().height()-4, resize->size().width()-5, 1},
+-					{3, resize->size().height()-3, resize->size().width()-7, 1}
++					{0, 0, (unsigned short)(w-2), (unsigned short)(h-6)},
++					{0, (short)(h-6), (unsigned short)(w-2), 1},
++					{1, (short)(h-5), (unsigned short)(w-3), 1},
++					{2, (short)(h-4), (unsigned short)(w-5), 1},
++					{3, (short)(h-3), (unsigned short)(w-7), 1}
+ 				};
+ 		
+ 				XShapeCombineRectangles(qt_xdisplay(), listbox->handle(), ShapeBounding, 0, 0,

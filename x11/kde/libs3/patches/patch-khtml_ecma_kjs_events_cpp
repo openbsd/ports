@@ -1,0 +1,14 @@
+$OpenBSD: patch-khtml_ecma_kjs_events_cpp,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: khtml/ecma/kjs_events.cpp
+--- khtml/ecma/kjs_events.cpp.orig
++++ khtml/ecma/kjs_events.cpp
+@@ -405,7 +405,7 @@ DOM::Event toEvent(const Value& val)
+   FOCUS         4096                DontDelete|ReadOnly
+   BLUR          8192                DontDelete|ReadOnly
+   SELECT        16384               DontDelete|ReadOnly
+-  CHANGE        32768               DontDelete|ReadOnly
++  CHANGE        -1                  DontDelete|ReadOnly
+ @end
+ */
+ DEFINE_CONSTANT_TABLE(EventConstants)

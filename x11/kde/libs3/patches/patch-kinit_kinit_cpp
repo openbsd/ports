@@ -1,0 +1,23 @@
+$OpenBSD: patch-kinit_kinit_cpp,v 1.1 2018/04/17 14:47:49 schwarze Exp $
+
+Index: kinit/kinit.cpp
+--- kinit/kinit.cpp.orig
++++ kinit/kinit.cpp
+@@ -321,7 +321,7 @@ const char* get_env_var( const char* var, int envc, co
+ static void init_startup_info( KStartupInfoId& id, const char* bin,
+     int envc, const char* envs )
+ {
+-    const char* dpy = get_env_var( DISPLAY"=", envc, envs );
++    const char* dpy = get_env_var( DISPLAY "=", envc, envs );
+     // this may be called in a child, so it can't use display open using X11display
+     // also needed for multihead
+     X11_startup_notify_display = XOpenDisplay( dpy );
+@@ -1513,7 +1513,7 @@ static void kdeinit_library_path()
+    QCString display = getenv(DISPLAY);
+    if (display.isEmpty())
+    {
+-     fprintf(stderr, "kdeinit: Aborting. $"DISPLAY" is not set.\n");
++     fprintf(stderr, "kdeinit: Aborting. $" DISPLAY " is not set.\n");
+      exit(255);
+    }
+    int i;
