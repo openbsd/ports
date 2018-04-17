@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/04 12:39:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2018/04/17 05:58:30 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -15,6 +15,8 @@ GH_TAGNAME = 		${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
+REVISION-java =		0
+REVISION-main =		0
 
 .for i in opencv_calib3d opencv_contrib opencv_core opencv_features2d \
   opencv_flann opencv_gpu opencv_highgui opencv_imgproc opencv_legacy \

@@ -1,5 +1,6 @@
-$OpenBSD: patch-modules_core_src_system_cpp,v 1.3 2017/05/06 19:42:55 espie Exp $
+$OpenBSD: patch-modules_core_src_system_cpp,v 1.4 2018/04/17 05:58:30 rsadowski Exp $
 Fix build on i386.
+Index: modules/core/src/system.cpp
 --- modules/core/src/system.cpp.orig
 +++ modules/core/src/system.cpp
 @@ -157,7 +157,7 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
@@ -11,7 +12,7 @@ Fix build on i386.
  #include <unistd.h>
  #include <stdio.h>
  #include <sys/types.h>
-@@ -253,6 +253,7 @@ struct HWFeatures
+@@ -251,6 +251,7 @@ struct HWFeatures
              f.have[CV_CPU_AVX]    = (((cpuid_data[2] & (1<<28)) != 0)&&((cpuid_data[2] & (1<<27)) != 0));//OS uses XSAVE_XRSTORE and CPU support AVX
          }
  
@@ -19,7 +20,7 @@ Fix build on i386.
      #if defined _MSC_VER && (defined _M_IX86 || defined _M_X64)
          __cpuidex(cpuid_data, 7, 0);
      #elif defined __GNUC__ && (defined __i386__ || defined __x86_64__)
-@@ -288,6 +289,7 @@ struct HWFeatures
+@@ -286,6 +287,7 @@ struct HWFeatures
          {
              f.have[CV_CPU_AVX2] = (cpuid_data[1] & (1<<5)) != 0;
          }
