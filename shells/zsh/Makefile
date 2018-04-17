@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.86 2017/12/05 23:28:56 jca Exp $
+# $OpenBSD: Makefile,v 1.87 2018/04/17 13:39:00 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.4.2
+V=		5.5
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -21,7 +21,7 @@ WANTLIB=	c curses iconv m pcre
 LIB_DEPENDS=	converters/libiconv \
 		devel/pcre
 
-AUTOCONF_VERSION=2.68
+AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
