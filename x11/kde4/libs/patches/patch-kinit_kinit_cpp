@@ -1,9 +1,10 @@
-$OpenBSD: patch-kinit_kinit_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
+$OpenBSD: patch-kinit_kinit_cpp,v 1.2 2018/04/17 13:50:35 sthen Exp $
 Additional search path for libexec items.
 Probably should be fixed to use actual libexec path
 instead of trying popular ones.
---- kinit/kinit.cpp.orig	Wed Nov 14 19:58:29 2012
-+++ kinit/kinit.cpp	Sun Dec 16 14:02:48 2012
+Index: kinit/kinit.cpp
+--- kinit/kinit.cpp.orig
++++ kinit/kinit.cpp
 @@ -500,6 +500,9 @@ static pid_t launch(int argc, const char *_name, const
              if( lib.contains( QLatin1String( "/lib" KDELIBSUFF "/kde4/libexec/" ))) {
                  libpath = QString( lib ).replace( QLatin1String( "/lib" KDELIBSUFF "/kde4/libexec/" ),
@@ -14,3 +15,12 @@ instead of trying popular ones.
              } else if( lib.contains( QLatin1String( "/bin/" ))) {
                  libpath = QString( lib ).replace( QLatin1String( "/bin/" ),
                      QLatin1String("/lib" KDELIBSUFF "/libkdeinit4_")) + QLatin1String(".so");
+@@ -1478,7 +1481,7 @@ static void kdeinit_library_path()
+    if (display.isEmpty())
+    {
+ #if defined(Q_WS_X11) || defined(Q_WS_QWS)
+-     fprintf(stderr, "kdeinit4: Aborting. $"DISPLAY" is not set.\n");
++     fprintf(stderr, "kdeinit4: Aborting. $" DISPLAY " is not set.\n");
+      exit(255);
+ #endif
+    }
