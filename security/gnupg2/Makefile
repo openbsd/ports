@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2018/01/23 13:57:02 pea Exp $
+# $OpenBSD: Makefile,v 1.57 2018/04/17 13:36:14 pea Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.4
+DISTNAME =	gnupg-2.2.6
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
