@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/18 09:19:23 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/18 10:16:22 kn Exp $
 
 COMMENT =		Virtual Private Network (VPN) daemon
-DISTNAME =		tinc-1.1pre15
+DISTNAME =		tinc-1.0.33
 CATEGORIES =		net security
+REVISION =		0
 
 HOMEPAGE =		https://www.tinc-vpn.org/
 
@@ -26,9 +27,7 @@ USE_GMAKE =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tinc
-	${TAR} -xzf ${WRKSRC}/doc/sample-config.tar.gz \
-	    -C ${PREFIX}/share/examples/
-	cd ${PREFIX}/share/examples/ && mv sample-config tinc
+	cp -r ${WRKSRC}/doc/sample-config/* ${PREFIX}/share/examples/tinc/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/tinc/
 	chmod -R u=rwX,go=rX ${PREFIX}/share/examples/tinc/*
 
