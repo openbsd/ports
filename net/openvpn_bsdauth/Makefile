@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/18 17:10:53 jasper Exp $
 
 COMMENT =	BSD Auth helper program for OpenVPN
 
 DISTNAME =	openvpn_bsdauth-7
-REVISION=	0
+REVISION=	1
 CATEGORIES =	net
 HOMEPAGE =	http://www.wormhole.hu/~ice/openvpn_bsdauth/
 
-MAINTAINER =	Felix Kronlage <fkr@openbsd.org>
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =	c
 
 MASTER_SITES =	${HOMEPAGE}
@@ -21,7 +22,9 @@ RUN_DEPENDS =	net/openvpn
 
 FAKE_FLAGS =	BINDIR=${PREFIX}/libexec MANDIR=${PREFIX}/man/man
 
+NO_TEST =	Yes
+
 pre-configure:
-	@perl -pi -e 's#!!PREFIX!!#${PREFIX}#g' ${WRKSRC}/openvpn_bsdauth.8
+	sed -i 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/openvpn_bsdauth.8 
 
 .include <bsd.port.mk>

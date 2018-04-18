@@ -1,0 +1,25 @@
+$OpenBSD: patch-openvpn_bsdauth_c,v 1.1 2018/04/18 17:10:53 jasper Exp $
+Index: openvpn_bsdauth.c
+--- openvpn_bsdauth.c.orig
++++ openvpn_bsdauth.c
+@@ -50,6 +50,11 @@ int main(int argc, char **argv) {
+ 	memset(username, 0, OPENVPN_USER_PASS_MAXLEN);
+ 	memset(password, 0, OPENVPN_USER_PASS_MAXLEN);
+ 
++	if (pledge("stdio rpath getpw proc exec", NULL) == -1) {
++		fprintf(stderr, "pledge\n");
++		exit(1);	
++	}
++
+ 	uenv = getenv("username");
+ 	penv = getenv("password");
+ 
+@@ -161,7 +166,7 @@ void logx(int exitval, int prio, const char *fmt, ...)
+ 	va_end(va);
+ 
+ 	memset(username, 0, OPENVPN_USER_PASS_MAXLEN);
+-	memset(password, 0, OPENVPN_USER_PASS_MAXLEN);
++	explicit_bzero(password, OPENVPN_USER_PASS_MAXLEN);
+ 
+ 	exit(exitval);
+ 
