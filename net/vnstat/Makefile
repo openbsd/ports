@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/18 09:19:24 kn Exp $
+# $OpenBSD: Makefile,v 1.30 2018/04/18 10:25:06 kn Exp $
 
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
-V = 			1.18
+V = 			1.14
+REVISION-main = 	5
+REVISION-vnstati = 	1
 DISTNAME =		vnstat-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-vnstati = 	vnstati-${V}
 
 CATEGORIES =	net sysutils
 
-HOMEPAGE =	https://humdi.net/vnstat/
+HOMEPAGE =	http://humdi.net/vnstat/
 
 MASTER_SITES =	${HOMEPAGE}
 
@@ -26,22 +28,17 @@ MULTI_PACKAGES = -main -vnstati
 
 LIB_DEPENDS-vnstati = graphics/gd
 RUN_DEPENDS-vnstati = net/vnstat
-TEST_DEPENDS =	devel/check
 
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			--prefix=${PREFIX} \
-			--mandir=${PREFIX}/man \
-			--srcdir=${WRKSRC} \
-			--enable-image-output
+USE_GMAKE =	Yes
 
-MAKE_FLAGS =	
+NO_TEST =	Yes
+
+INSTALL_TARGET = bsdinstall
+
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vnstat/
-	${INSTALL_DATA} ${WRKSRC}/examples/vnstat.cgi \
-		${PREFIX}/share/examples/vnstat/
+	${INSTALL_DATA} ${WRKSRC}/examples/vnstat.cgi ${PREFIX}/share/examples/vnstat/
 
 .include <bsd.port.mk>
