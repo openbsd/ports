@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2018/04/18 10:25:06 kn Exp $
+# $OpenBSD: Makefile,v 1.31 2018/04/18 10:47:38 sthen Exp $
 
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
 V = 			1.14
-REVISION-main = 	5
-REVISION-vnstati = 	1
+EPOCH =			0
 DISTNAME =		vnstat-${V}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-vnstati = 	vnstati-${V}
