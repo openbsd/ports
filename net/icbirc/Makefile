@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2016/07/30 18:08:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2018/04/18 09:19:23 kn Exp $
 
 COMMENT=	proxy IRC client with ICB server
 
 DISTNAME=	icbirc-2.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.benzedrine.ch/
+MASTER_SITES=	https://www.benzedrine.ch/
 
-HOMEPAGE=	http://www.benzedrine.ch/icbirc.html
+HOMEPAGE=	https://www.benzedrine.ch/icbirc.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB=		c
+WANTLIB=	c
 
 NO_TEST=	Yes
 
