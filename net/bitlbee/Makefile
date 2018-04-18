@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2018/04/18 10:01:26 kn Exp $
+# $OpenBSD: Makefile,v 1.68 2018/04/18 10:50:34 sthen Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
 V=			3.5.1
 DISTNAME=		bitlbee-$V
 PKGSPEC=		bitlbee-=$V
-REVISION=		3
+REVISION=		5
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org/
