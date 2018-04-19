@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/19 16:31:40 rpointel Exp $
 
 COMMENT =		fuzzy hashing program and library
 
-DISTNAME =		ssdeep-2.13
-REVISION =		1
+VERSION =		2.14.1
+DISTNAME =		ssdeep-${VERSION}
 
 CATEGORIES =		security
 
 SHARED_LIBS =		fuzzy	0.0 # 3.0
 
-HOMEPAGE =		http://ssdeep.sourceforge.net/
+HOMEPAGE =		https://ssdeep-project.github.io/ssdeep/
 
 MAINTAINER =		Lawrence Teo <lteo@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ssdeep/}
+MASTER_SITES =		https://github.com/ssdeep-project/ssdeep/releases/download/release-${VERSION}/
 
 CONFIGURE_STYLE =	gnu
 
