@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.119 2018/02/10 22:28:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2018/04/19 20:52:43 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.90.1
+VERSION =		4.91
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -11,17 +11,19 @@ FULLPKGPATH-eximon =	${PKGPATH},-eximon
 
 CATEGORIES =		mail
 
-HOMEPAGE =		http://www.exim.org/
+HOMEPAGE =		https://www.exim.org/
+
+MAINTAINER =		Renaud Allard <renaud@allard.it>
 
 # GPLv2+, with OpenSSL exemption
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 cWANTLIB =		c m
 WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre ssl
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
 
-MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
-			http://ftp.exim.org/pub/exim/exim4/old/ \
+MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
+			https://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \
 			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
 
@@ -91,11 +93,12 @@ EXIM_MAKECAT +=		"INCLUDE=-I${LOCALBASE}/include\n"
 
 NO_TEST =		Yes
 
+post-extract:
+	@cd ${WRKSRC}; cp src/EDITME Local/Makefile; \
+	    cp exim_monitor/EDITME Local/eximon.conf
+
 do-configure:
-	@mkdir -p ${WRKSRC}/Local
-	@cp ${FILESDIR}/Makefile ${WRKSRC}/Local
 	@echo -n ${EXIM_MAKECAT} >> ${WRKSRC}/Local/Makefile
-	@cp ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${WRKINST}${SYSCONFDIR}/mail

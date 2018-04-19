@@ -1,0 +1,182 @@
+$OpenBSD: patch-Local_Makefile,v 1.1 2018/04/19 20:52:43 sthen Exp $
+
+Index: Local/Makefile
+--- Local/Makefile.orig
++++ Local/Makefile
+@@ -98,7 +98,7 @@
+ # /usr/local/sbin. The installation script will try to create this directory,
+ # and any superior directories, if they do not exist.
+ 
+-BIN_DIRECTORY=/usr/exim/bin
++#BIN_DIRECTORY=/usr/exim/bin
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -114,7 +114,7 @@ BIN_DIRECTORY=/usr/exim/bin
+ # don't exist. It will also install a default runtime configuration if this
+ # file does not exist.
+ 
+-CONFIGURE_FILE=/usr/exim/configure
++#CONFIGURE_FILE=/usr/exim/configure
+ 
+ # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
+ # In this case, Exim will use the first of them that exists when it is run.
+@@ -131,7 +131,7 @@ CONFIGURE_FILE=/usr/exim/configure
+ # deliveries. (Local deliveries run as various non-root users, typically as the
+ # owner of a local mailbox.) Specifying these values as root is not supported.
+ 
+-EXIM_USER=
++EXIM_USER=ref:_exim
+ 
+ # If you specify EXIM_USER as a name, this is looked up at build time, and the
+ # uid number is built into the binary. However, you can specify that this
+@@ -237,7 +237,7 @@ TRANSPORT_SMTP=yes
+ # This one is special-purpose, and commonly not required, so it is not
+ # included by default.
+ 
+-# TRANSPORT_LMTP=yes
++TRANSPORT_LMTP=yes
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -246,9 +246,9 @@ TRANSPORT_SMTP=yes
+ # MBX, is included only when requested. If you do not know what this is about,
+ # leave these settings commented out.
+ 
+-# SUPPORT_MAILDIR=yes
+-# SUPPORT_MAILSTORE=yes
+-# SUPPORT_MBX=yes
++SUPPORT_MAILDIR=yes
++SUPPORT_MAILSTORE=yes
++SUPPORT_MBX=yes
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -306,16 +306,16 @@ LOOKUP_DBM=yes
+ LOOKUP_LSEARCH=yes
+ LOOKUP_DNSDB=yes
+ 
+-# LOOKUP_CDB=yes
+-# LOOKUP_DSEARCH=yes
++LOOKUP_CDB=yes
++LOOKUP_DSEARCH=yes
+ # LOOKUP_IBASE=yes
+ # LOOKUP_LDAP=yes
+ # LOOKUP_MYSQL=yes
+ # LOOKUP_MYSQL_PC=mariadb
+-# LOOKUP_NIS=yes
++LOOKUP_NIS=yes
+ # LOOKUP_NISPLUS=yes
+ # LOOKUP_ORACLE=yes
+-# LOOKUP_PASSWD=yes
++LOOKUP_PASSWD=yes
+ # LOOKUP_PGSQL=yes
+ # LOOKUP_REDIS=yes
+ # LOOKUP_SQLITE=yes
+@@ -392,7 +392,7 @@ PCRE_CONFIG=yes
+ # files are defaulted in the OS/Makefile-Default file, but can be overridden in
+ # local OS-specific make files.
+ 
+-EXIM_MONITOR=eximon.bin
++# EXIM_MONITOR=eximon.bin
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -402,7 +402,7 @@ EXIM_MONITOR=eximon.bin
+ # and the MIME ACL. Please read the documentation to learn more about these
+ # features.
+ 
+-# WITH_CONTENT_SCAN=yes
++WITH_CONTENT_SCAN=yes
+ 
+ # If you have content scanning you may wish to only include some of the scanner
+ # interfaces.  Uncomment any of these lines to remove that code.
+@@ -635,16 +635,16 @@ FIXED_NEVER_USERS=root
+ # included in the Exim binary. You will then need to set up the run time
+ # configuration to make use of the mechanism(s) selected.
+ 
+-# AUTH_CRAM_MD5=yes
++AUTH_CRAM_MD5=yes
+ # AUTH_CYRUS_SASL=yes
+-# AUTH_DOVECOT=yes
++AUTH_DOVECOT=yes
+ # AUTH_GSASL=yes
+ # AUTH_GSASL_PC=libgsasl
+ # AUTH_HEIMDAL_GSSAPI=yes
+ # AUTH_HEIMDAL_GSSAPI_PC=heimdal-gssapi
+ # AUTH_HEIMDAL_GSSAPI_PC=heimdal-gssapi heimdal-krb5
+-# AUTH_PLAINTEXT=yes
+-# AUTH_SPA=yes
++AUTH_PLAINTEXT=yes
++AUTH_SPA=yes
+ # AUTH_TLS=yes
+ 
+ # Heimdal through 1.5 required pkg-config 'heimdal-gssapi'; Heimdal 7.1
+@@ -689,7 +689,7 @@ HEADERS_CHARSET="ISO-8859-1"
+ # the Sieve filter support. For those OS where iconv() is known to be installed
+ # as standard, the file in OS/Makefile-xxxx contains
+ #
+-# HAVE_ICONV=yes
++HAVE_ICONV=yes
+ #
+ # If you are not using one of those systems, but have installed iconv(), you
+ # need to uncomment that line above. In some cases, you may find that iconv()
+@@ -758,11 +758,11 @@ HEADERS_CHARSET="ISO-8859-1"
+ # leave these settings commented out.
+ 
+ # This setting is required for any TLS support (either OpenSSL or GnuTLS)
+-# SUPPORT_TLS=yes
++SUPPORT_TLS=yes
+ 
+ # Uncomment one of these settings if you are using OpenSSL; pkg-config vs not
+ # USE_OPENSSL_PC=openssl
+-# TLS_LIBS=-lssl -lcrypto
++TLS_LIBS=-lssl -lcrypto
+ 
+ # Uncomment the first and either the second or the third of these if you
+ # are using GnuTLS.  If you have pkg-config, then the second, else the third.
+@@ -847,7 +847,7 @@ HEADERS_CHARSET="ISO-8859-1"
+ # %s. This will be replaced by one of the strings "main", "panic", or "reject"
+ # to form the final file names. Some installations may want something like this:
+ 
+-# LOG_FILE_PATH=/var/log/exim_%slog
++LOG_FILE_PATH=/var/spool/exim/logs/%s.log
+ 
+ # which results in files with names /var/log/exim_mainlog, etc. The directory
+ # in which the log files are placed must exist; Exim does not try to create
+@@ -919,7 +919,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+ # (version 5.004 or later) installed, set EXIM_PERL to perl.o. Using embedded
+ # Perl costs quite a lot of resources. Only do this if you really need it.
+ 
+-# EXIM_PERL=perl.o
++EXIM_PERL=perl.o
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -1047,7 +1047,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+ # group. Once you have installed saslauthd, you should arrange for it to be
+ # started by root at boot time.
+ 
+-# CYRUS_SASLAUTHD_SOCKET=/var/state/saslauthd/mux
++CYRUS_SASLAUTHD_SOCKET=/var/sasl2/mux
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -1095,7 +1095,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+ # aliases). The following setting can be changed to specify a different
+ # location for the system alias file.
+ 
+-SYSTEM_ALIASES_FILE=/etc/aliases
++SYSTEM_ALIASES_FILE=/etc/mail/aliases
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -1360,7 +1360,7 @@ EXIM_TMPDIR="/tmp"
+ # (process id) to a file so that it can easily be identified. The path of the
+ # file can be specified here. Some installations may want something like this:
+ 
+-# PID_FILE_PATH=/var/lock/exim.pid
++PID_FILE_PATH=/var/run/exim.pid
+ 
+ # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
+ # using the name "exim-daemon.pid".
