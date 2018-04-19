@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_WinMgr_h,v 1.1 2018/04/19 22:30:36 naddy Exp $
+
+Index: src/WinMgr.h
+--- src/WinMgr.h.orig
++++ src/WinMgr.h
+@@ -189,7 +189,7 @@
+  */
+  
+ #define WinLayerCount          16
+-#define WinLayerInvalid        0xFFFFFFFFL
++#define WinLayerInvalid        -1L
+ 
+ #define WinLayerDesktop        0L
+ #define WinLayerBelow          2L
+@@ -228,7 +228,7 @@
+  */
+ 
+ #define WinTrayOptionCount      3
+-#define WinTrayInvalid          0xFFFFFFFFL
++#define WinTrayInvalid          -1L
+ 
+ #define WinTrayIgnore           0L
+ #define WinTrayMinimized        1L
