@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_client_h,v 1.1 2018/04/19 21:42:57 naddy Exp $
+
+Index: src/client.h
+--- src/client.h.orig
++++ src/client.h
+@@ -43,7 +43,7 @@
+ #define DF_TILE             (1L<<28)
+ #define DF_AUTORESIZE       (1L<<29)
+ #define DF_TASKBARBUTTONS   (1L<<30)
+-#define DF_GRABKEYBOARD     (1L<<31)
++#define DF_GRABKEYBOARD     (1UL<<31)
+ 
+ #define DEFAULTFLAGS (CF_HASTBENTRY | CF_HASTITLE | CF_GRABALTCLICK | CF_PASSFIRSTCLICK | \
+                       CF_SNAP | CF_TITLEBARBUTTONS | CF_FOCUSONENTER | DF_TASKBARBUTTONS)
