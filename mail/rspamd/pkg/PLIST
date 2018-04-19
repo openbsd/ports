@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/03/20 14:51:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/04/19 20:49:37 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -616,7 +616,7 @@ share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/domReady.js
 share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/humanize.min.js
-share/rspamd/www/js/lib/jquery-3.2.1.min.js
+share/rspamd/www/js/lib/jquery-3.3.1.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
 share/rspamd/www/js/require.js
