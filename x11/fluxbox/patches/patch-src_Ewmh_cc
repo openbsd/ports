@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Ewmh_cc,v 1.7 2018/04/19 22:50:55 naddy Exp $
+
+Index: src/Ewmh.cc
+--- src/Ewmh.cc.orig
++++ src/Ewmh.cc
+@@ -914,7 +914,7 @@ void Ewmh::updateGeometry(BScreen &screen) {
+      * Window Manager.
+      *
+      */
+-    long value[2] = {screen.width(), screen.height()};
++    long value[2] = {static_cast<long>(screen.width()), static_cast<long>(screen.height())};
+     screen.rootWindow().changeProperty(m_net->desktop_geometry,
+                                        XA_CARDINAL, 32,
+                                        PropModeReplace,
