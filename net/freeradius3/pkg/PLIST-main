@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/01/16 13:47:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/04/19 20:48:31 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -814,6 +814,7 @@ share/freeradius/dictionary.meru
 share/freeradius/dictionary.microsemi
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
+share/freeradius/dictionary.mimosa
 share/freeradius/dictionary.motorola
 share/freeradius/dictionary.motorola.illegal
 share/freeradius/dictionary.motorola.wimax
@@ -882,6 +883,7 @@ share/freeradius/dictionary.shiva
 share/freeradius/dictionary.siemens
 share/freeradius/dictionary.slipstream
 share/freeradius/dictionary.sofaware
+share/freeradius/dictionary.softbank
 share/freeradius/dictionary.sonicwall
 share/freeradius/dictionary.springtide
 share/freeradius/dictionary.starent

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_tls_c,v 1.4 2018/01/16 13:47:46 sthen Exp $
+$OpenBSD: patch-src_main_tls_c,v 1.5 2018/04/19 20:48:31 sthen Exp $
 
 Index: src/main/tls.c
 --- src/main/tls.c.orig
 +++ src/main/tls.c
-@@ -3021,7 +3021,7 @@ post_ca:
+@@ -3015,7 +3015,7 @@ post_ca:
  			return NULL;
  		}
  
@@ -12,7 +12,7 @@ Index: src/main/tls.c
  		if (!SSL_CTX_set_max_proto_version(ctx, max_version)) {
  			ERROR("Failed setting TLS maximum version");
  			return NULL;
-@@ -3041,7 +3041,7 @@ post_ca:
+@@ -3035,7 +3035,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1
  	if (conf->disable_tlsv1) {
  		ctx_options |= SSL_OP_NO_TLSv1;
@@ -21,7 +21,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1");
  #endif
  	}
-@@ -3051,7 +3051,7 @@ post_ca:
+@@ -3045,7 +3045,7 @@ post_ca:
  #ifdef SSL_OP_NO_TLSv1_1
  	if (conf->disable_tlsv1_1) {
  		ctx_options |= SSL_OP_NO_TLSv1_1;
@@ -30,7 +30,7 @@ Index: src/main/tls.c
  		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
  #endif
  	}
-@@ -3062,7 +3062,7 @@ post_ca:
+@@ -3056,7 +3056,7 @@ post_ca:
  
  	if (conf->disable_tlsv1_2) {
  		ctx_options |= SSL_OP_NO_TLSv1_2;
