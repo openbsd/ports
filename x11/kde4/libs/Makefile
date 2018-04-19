@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2017/11/14 20:09:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.83 2018/04/19 18:21:00 schwarze Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -12,7 +12,7 @@ PKGNAME-langlist =	kde4-langlist-$V
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
-REVISION-main =		11
+REVISION-main =		12
 REVISION-en_US =	0
 REVISION-langlist =	0
 
@@ -25,8 +25,8 @@ SHARED_LIBS +=	kdecore              50.2      # .5.0
 SHARED_LIBS +=	kdefakes             50.2      # .5.0
 SHARED_LIBS +=	kdesu                50.2      # .5.0
 SHARED_LIBS +=	kdeui                50.2      # .5.0
-SHARED_LIBS +=	kdnssd               50.2      # .2.0
-SHARED_LIBS +=	khtml                50.2      # .5.0
+SHARED_LIBS +=	kdnssd               51.0      # .2.0
+SHARED_LIBS +=	khtml                51.0      # .5.0
 SHARED_LIBS +=	kimproxy             50.2      # .4.0
 SHARED_LIBS +=	kio                  50.3      # .5.0
 SHARED_LIBS +=	kjs                  50.2      # .2.0
