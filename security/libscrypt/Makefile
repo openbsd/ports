@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/19 21:25:03 sthen Exp $
 
 COMMENT =	shared library that implements scrypt() functionality
 
-V =		1.19
+V =		1.21
 GH_ACCOUNT =	technion
 GH_PROJECT =	libscrypt
 GH_TAGNAME =	v$V
