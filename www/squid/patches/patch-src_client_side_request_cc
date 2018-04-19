@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_client_side_request_cc,v 1.1 2018/01/23 15:00:02 sthen Exp $
+$OpenBSD: patch-src_client_side_request_cc,v 1.2 2018/04/19 21:49:35 sthen Exp $
 
+#1   http://www.squid-cache.org/Advisories/SQUID-2018_2.txt
 http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2018_2.patch
-http://www.squid-cache.org/Advisories/SQUID-2018_2.txt
 
  Due to incorrect pointer handling Squid is vulnerable to denial
  of service attack when processing ESI responses or downloading
@@ -11,6 +11,18 @@ http://www.squid-cache.org/Advisories/SQUID-2018_2.txt
  requests in conjunction with certain trusted server responses to
  trigger a denial of service for all clients accessing the Squid
  service.
+
+#2   http://www.squid-cache.org/Advisories/SQUID-2018_3.txt
+http://www.squid-cache.org/Versions/v3/3.5/changesets/SQUID-2018_3.patch
+
+ Due to incorrect pointer handling Squid is vulnerable to denial
+ of service attack when processing ESI responses.
+
+ This problem allows a remote server delivering ESI responses
+ to trigger a denial of service for all clients accessing the
+ Squid service.
+
+ This problem is limited to Squid operating as reverse proxy.
 
 Index: src/client_side_request.cc
 --- src/client_side_request.cc.orig
@@ -28,3 +40,15 @@ Index: src/client_side_request.cc
      }
      request->x_forwarded_for_iterator.clean();
      request->flags.done_follow_x_forwarded_for = true;
+@@ -1419,6 +1419,11 @@ ClientRequestContext::checkNoCacheDone(const allow_t &
+ bool
+ ClientRequestContext::sslBumpAccessCheck()
+ {
++    if (!http->getConn()) {
++        http->al->ssl.bumpMode = Ssl::bumpEnd; // SslBump does not apply; log -
++        return false;
++    }
++
+     // If SSL connection tunneling or bumping decision has been made, obey it.
+     const Ssl::BumpMode bumpMode = http->getConn()->sslBumpMode;
+     if (bumpMode != Ssl::bumpEnd) {
