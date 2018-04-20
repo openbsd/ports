@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/21 09:48:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/04/20 10:23:07 sthen Exp $
+@ask-update kc-<2.4 Make sure all your existing kc databases are safely *dumped* ('dump' command) then read the Changelog in ${PREFIX}/share/doc/kc after installation
 @bin bin/kc
 @man man/man1/kc.1
+share/doc/kc/
+share/doc/kc/Changelog
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/kc/
 share/kc/pwsafe_to_kc.pl
