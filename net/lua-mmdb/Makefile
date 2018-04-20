@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/30 09:15:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/20 14:40:40 fcambus Exp $
 
 COMMENT =	Lua library for MaxMind GeoIP2/GeoLite2 databases
 
-V =		0.1
+V =		0.2
 PKGNAME =	lua-mmdb-${V}
 
 GH_ACCOUNT =	daurnimator
@@ -25,7 +25,8 @@ FLAVOR ?=
 RUN_DEPENDS =	devel/lua-compat53,${MODLUA_FLAVOR}
 .endif
 
-TEST_DEPENDS =	net/libmaxminddb
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		net/libmaxminddb
 
 NO_BUILD =	Yes
 
