@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/19 05:58:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2018/04/20 20:40:39 bentley Exp $
 
      SUBDIR =
      SUBDIR += Wnn
      SUBDIR += canna
-     SUBDIR += groff
      SUBDIR += gwaei
      SUBDIR += kakasi
      SUBDIR += kanatest
