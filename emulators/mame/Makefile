@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2018/03/29 21:51:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/20 15:06:22 fcambus Exp $
 
-ONLY_FOR_ARCHS = amd64
+ONLY_FOR_ARCHS = amd64 i386
 
 USE_WXNEEDED =	Yes
 
@@ -81,7 +81,11 @@ post-extract:
 		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
 
 do-install:
+.if ${MACHINE_ARCH} == "amd64"
 	${INSTALL_PROGRAM} ${WRKSRC}/mame64 ${PREFIX}/bin/mame
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/mame
+.endif
 	${INSTALL_DATA} ${WRKSRC}/docs/man/mame.6 ${PREFIX}/man/man6
 .for f in castool chdman floptool imgtool jedutil ldresample ldverify romcmp
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
