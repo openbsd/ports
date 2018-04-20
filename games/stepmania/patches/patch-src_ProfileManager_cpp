@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ProfileManager_cpp,v 1.1 2018/04/20 12:40:09 fcambus Exp $
+
+Fix for Clang 6.
+Handpicked from upstream commit 8660d49aae9e4e357d750ffd1dbb7ef850b2b76d.
+
+Index: src/ProfileManager.cpp
+--- src/ProfileManager.cpp.orig
++++ src/ProfileManager.cpp
+@@ -207,7 +207,7 @@ bool ProfileManager::LoadLocalProfileFromMachine( Play
+ void ProfileManager::GetMemoryCardProfileDirectoriesToTry( vector<RString> &asDirsToTry )
+ {
+ 	/* Try to load the preferred profile. */
+-	asDirsToTry.push_back( PREFSMAN->m_sMemoryCardProfileSubdir );
++	asDirsToTry.push_back( PREFSMAN->m_sMemoryCardProfileSubdir.ToString() );
+ 
+ 	/* If that failed, try loading from all fallback directories. */
+ 	split( g_sMemoryCardProfileImportSubdirs, ";", asDirsToTry, true );

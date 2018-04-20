@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_PrefsManager_cpp,v 1.1 2018/04/20 12:40:09 fcambus Exp $
+
+Fix for Clang 6.
+Handpicked from upstream commit 8660d49aae9e4e357d750ffd1dbb7ef850b2b76d.
+
+Index: src/PrefsManager.cpp
+--- src/PrefsManager.cpp.orig
++++ src/PrefsManager.cpp
+@@ -355,7 +355,7 @@ void PrefsManager::StoreGamePrefs()
+ 	ASSERT( !m_sCurrentGame.Get().empty() );
+ 
+ 	// save off old values
+-	GamePrefs &gp = m_mapGameNameToGamePrefs[m_sCurrentGame];
++	GamePrefs &gp = m_mapGameNameToGamePrefs[m_sCurrentGame.ToString()];
+ 	gp.m_sAnnouncer = m_sAnnouncer;
+ 	gp.m_sTheme = m_sTheme;
+ 	gp.m_sDefaultModifiers = m_sDefaultModifiers;

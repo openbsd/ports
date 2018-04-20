@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/04/20 12:40:08 fcambus Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -7,7 +7,7 @@ CATEGORIES = 	games emulators
 
 DISTNAME = 	stepmania-5.0b2a
 PKGNAME =	stepmania-5.0beta2a
-REVISION =	8
+REVISION =	9
 EXTRACT_SUFX = 	-src.tar.bz2
 HOMEPAGE =	http://www.stepmania.com
 MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=stepmania/}
@@ -47,6 +47,8 @@ D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 
 SUBST_VARS = DATADIR
 
+post-extract:
+	@perl -pi -e 's/\r//g' ${WRKSRC}/src/ProfileManager.cpp
 
 # just so we can start the game directly to test.
 post-build:
