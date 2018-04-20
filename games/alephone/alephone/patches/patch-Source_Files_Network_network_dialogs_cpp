@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_Files_Network_network_dialogs_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+
+Index: Source_Files/Network/network_dialogs.cpp
+--- Source_Files/Network/network_dialogs.cpp.orig
++++ Source_Files/Network/network_dialogs.cpp
+@@ -2559,7 +2559,7 @@ class SdlGatherDialog : public GatherDialog (public)
+ 	
+ 		// m_dialog.add(new w_static_text("Players on Network"));
+ 
+-		w_joining_players_in_room* foundplayers_w = new w_joining_players_in_room(NULL, 320, 3);
++		w_joining_players_in_room* foundplayers_w = new w_joining_players_in_room(0, 320, 3);
+ 		placer->dual_add(foundplayers_w, m_dialog);
+ 	
+ 		horizontal_placer *autogather_placer = new horizontal_placer(get_theme_space(ITEM_WIDGET), true);

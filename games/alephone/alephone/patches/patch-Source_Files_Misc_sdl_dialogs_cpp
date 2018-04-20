@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_Files_Misc_sdl_dialogs_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+
+Index: Source_Files/Misc/sdl_dialogs.cpp
+--- Source_Files/Misc/sdl_dialogs.cpp.orig
++++ Source_Files/Misc/sdl_dialogs.cpp
+@@ -2018,7 +2018,7 @@ void tab_placer::visible(bool visible)
+ 
+ dialog::dialog() : active_widget(NULL), mouse_widget(0), active_widget_num(UNONE), done(false),
+             cursor_was_visible(false), parent_dialog(NULL),
+-		   processing_function(NULL), placer(0), last_redraw(0)
++		   processing_function(0), placer(0), last_redraw(0)
+ {
+ }
+ 

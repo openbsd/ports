@@ -1,0 +1,32 @@
+$OpenBSD: patch-Source_Files_Misc_sdl_widgets_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+
+Index: Source_Files/Misc/sdl_widgets.cpp
+--- Source_Files/Misc/sdl_widgets.cpp.orig
++++ Source_Files/Misc/sdl_widgets.cpp
+@@ -719,7 +719,7 @@ void w_select_button::place(const SDL_Rect &r, placeme
+ 
+ static const char* sNoValidOptionsString = "(no valid options)"; // XXX should be moved outside compiled code e.g. to MML
+ 
+-w_select::w_select(size_t s, const char **l) : widget(LABEL_WIDGET), labels(l), we_own_labels(false), selection(s), selection_changed_callback(NULL), utf8(false)
++w_select::w_select(size_t s, const char **l) : widget(LABEL_WIDGET), labels(l), we_own_labels(false), selection(s), selection_changed_callback(0), utf8(false)
+ {
+ 	num_labels = 0;
+         if(labels) {
+@@ -1113,7 +1113,7 @@ void w_color_picker::draw(SDL_Surface *s) const
+  */
+ 
+ w_text_entry::w_text_entry(size_t max_c, const char *initial_text)
+-	: widget(TEXT_ENTRY_WIDGET), enter_pressed_callback(NULL), value_changed_callback(NULL), max_chars(max_c), enable_mac_roman(false)
++	: widget(TEXT_ENTRY_WIDGET), enter_pressed_callback(0), value_changed_callback(0), max_chars(max_c), enable_mac_roman(false)
+ {
+ 	// Initialize buffer
+ 	buf = new char[max_chars + 1];
+@@ -2115,7 +2115,7 @@ void w_select_popup::gotSelected ()
+ static const char* const sFileChooserInvalidFileString = "(no valid selection)";
+ 
+ w_file_chooser::w_file_chooser(const char* inDialogPrompt, Typecode inTypecode)
+-	: w_select_button("", NULL, NULL, true), typecode(inTypecode)
++	: w_select_button("", 0, NULL, true), typecode(inTypecode)
+ {
+ 	strncpy(dialog_prompt, inDialogPrompt, sizeof(dialog_prompt));
+ 	set_selection(sFileChooserInvalidFileString);

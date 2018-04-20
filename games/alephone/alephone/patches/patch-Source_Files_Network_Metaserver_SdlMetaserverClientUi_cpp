@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_Files_Network_Metaserver_SdlMetaserverClientUi_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
+
+Index: Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp
+--- Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp.orig
++++ Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp
+@@ -64,7 +64,7 @@ class SdlMetaserverClientUi : public MetaserverClientU
+ 		placer->add(new w_spacer(), true);
+ 
+ 		table_placer *players_games_placer = new table_placer(2, get_theme_space(SPACER_WIDGET));
+-		w_players_in_room* players_in_room_w = new w_players_in_room(NULL, 216, get_theme_space(METASERVER_PLAYERS));
++		w_players_in_room* players_in_room_w = new w_players_in_room(0, 216, get_theme_space(METASERVER_PLAYERS));
+ 		
+ 		players_games_placer->col_flags(1, placeable::kFill);
+ 		players_games_placer->dual_add(players_in_room_w, d);
+@@ -119,7 +119,7 @@ class SdlMetaserverClientUi : public MetaserverClientU
+ 		entry_cancel_placer->dual_add(chatentry_w, d);
+ 		entry_cancel_placer->add_flags();
+ 		
+-		w_tiny_button* cancel_w = new w_tiny_button("CANCEL", NULL, &d);
++		w_tiny_button* cancel_w = new w_tiny_button("CANCEL", 0, &d);
+ 		entry_cancel_placer->dual_add(cancel_w, d);
+ 
+ 		placer->add_flags(placeable::kFill);
