@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2018/04/17 13:39:00 pea Exp $
+@comment $OpenBSD: PLIST,v 1.49 2018/04/21 09:24:06 jasper Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 @bin bin/zsh-${V}
@@ -192,6 +192,7 @@ share/zsh/${V}/functions/_chmod
 share/zsh/${V}/functions/_chown
 share/zsh/${V}/functions/_chrt
 share/zsh/${V}/functions/_chsh
+share/zsh/${V}/functions/_cksum
 share/zsh/${V}/functions/_clay
 share/zsh/${V}/functions/_cmdambivalent
 share/zsh/${V}/functions/_cmdstring
