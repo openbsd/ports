@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_decklink_consumer_decklink_cpp,v 1.1 2018/04/21 15:53:48 naddy Exp $
+
+Index: src/modules/decklink/consumer_decklink.cpp
+--- src/modules/decklink/consumer_decklink.cpp.orig
++++ src/modules/decklink/consumer_decklink.cpp
+@@ -554,7 +554,7 @@ class DeckLinkConsumer (public)
+ 		{
+ 			mlt_log_debug( getConsumer(),
+ 				"ScheduledFrameCompleted: GetBufferedAudioSampleFrameCount %u -> " DECKLINK_UNSIGNED_FORMAT
+-				", m_count=%"PRIu64"\n", m_acnt, cnt, m_count );
++				", m_count=%" PRIu64 "\n", m_acnt, cnt, m_count );
+ 			m_acnt = cnt;
+ 		}
+ 
