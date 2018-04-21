@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/12/03 19:11:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/21 11:54:55 bket Exp $
 bin/borg
 bin/borgfs
 lib/python${MODPY_VERSION}/site-packages/borg/
@@ -140,4 +140,36 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+@man man/man1/borg-benchmark-crud.1
+@man man/man1/borg-benchmark.1
+@man man/man1/borg-break-lock.1
+@man man/man1/borg-change-passphrase.1
+@man man/man1/borg-check.1
+@man man/man1/borg-common.1
+@man man/man1/borg-compression.1
+@man man/man1/borg-config.1
+@man man/man1/borg-create.1
+@man man/man1/borg-delete.1
+@man man/man1/borg-diff.1
+@man man/man1/borg-export-tar.1
+@man man/man1/borg-extract.1
+@man man/man1/borg-info.1
+@man man/man1/borg-init.1
+@man man/man1/borg-key-change-passphrase.1
+@man man/man1/borg-key-export.1
+@man man/man1/borg-key-import.1
+@man man/man1/borg-key-migrate-to-repokey.1
+@man man/man1/borg-key.1
+@man man/man1/borg-list.1
+@man man/man1/borg-mount.1
+@man man/man1/borg-patterns.1
+@man man/man1/borg-placeholders.1
+@man man/man1/borg-prune.1
+@man man/man1/borg-recreate.1
+@man man/man1/borg-rename.1
+@man man/man1/borg-serve.1
+@man man/man1/borg-umount.1
+@man man/man1/borg-upgrade.1
+@man man/man1/borg-with-lock.1
 @man man/man1/borg.1
+@man man/man1/borgfs.1
