@@ -1,0 +1,14 @@
+$OpenBSD: patch-kshisen_board_cpp,v 1.1 2018/04/21 20:15:49 nigel Exp $
+
+Index: kshisen/board.cpp
+--- kshisen/board.cpp.orig
++++ kshisen/board.cpp
+@@ -730,7 +730,7 @@ void Board::undrawConnection()
+ 	// game is over?
+ 	if(!getHint_I(dummyPath))
+ 	{
+-		time_for_game = (int)difftime( time((time_t)0), starttime);
++		time_for_game = (int)difftime( time((time_t *)0), starttime);
+ 		emit endOfGame();
+ 	}
+ }
