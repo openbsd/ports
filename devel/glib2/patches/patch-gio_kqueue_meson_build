@@ -1,0 +1,22 @@
+$OpenBSD: patch-gio_kqueue_meson_build,v 1.1 2018/04/22 13:27:25 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/glib/commit/aa39a0557c679fc345b0ba72a87c33152eb8ebcd
+
+Index: gio/kqueue/meson.build
+--- gio/kqueue/meson.build.orig
++++ gio/kqueue/meson.build
+@@ -1,14 +1,8 @@
+ kqueue_sources = [
+   'gkqueuefilemonitor.c',
+   'kqueue-helper.c',
+-  'kqueue-thread.c',
+-  'kqueue-sub.c',
+   'kqueue-missing.c',
+-  'kqueue-utils.c',
+-  'kqueue-exclusions.c',
+   'dep-list.c',
+-  # gkqueuefilemonitor.h includes gio.h which includes this
+-  gioenumtypes_h,
+ ]
+ 
+ kqueue_lib = static_library('kqueue',
