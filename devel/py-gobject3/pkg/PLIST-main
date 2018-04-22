@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2017/10/26 08:50:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/04/22 13:30:42 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
 %%python3%%
@@ -14,6 +14,8 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_ossighelper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_ossighelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -33,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/_error.py
 lib/python${MODPY_VERSION}/site-packages/gi/_gi.so
 lib/python${MODPY_VERSION}/site-packages/gi/_gi_cairo.so
 lib/python${MODPY_VERSION}/site-packages/gi/_option.py
+lib/python${MODPY_VERSION}/site-packages/gi/_ossighelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_propertyhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_signalhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/docstring.py
@@ -74,6 +77,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/repository/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/gi/repository/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gi/repository/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/types.py
+lib/python${MODPY_VERSION}/site-packages/pygobject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}/
