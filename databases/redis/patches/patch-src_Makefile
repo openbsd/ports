@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.27 2017/08/09 09:16:09 dcoppa Exp $
+$OpenBSD: patch-src_Makefile,v 1.28 2018/04/22 14:30:29 jca Exp $
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
@@ -21,6 +21,15 @@ Index: src/Makefile
  INSTALL=install
  
  # Default allocator defaults to Jemalloc if it's not an ARM
+@@ -40,7 +41,7 @@ endif
+ 
+ # To get ARM stack traces if Redis crashes we need a special C flag.
+ ifneq (,$(findstring armv,$(uname_M)))
+-        CFLAGS+=-funwind-tables
++#        CFLAGS+=-funwind-tables
+ endif
+ 
+ # Backwards compatibility for selecting an allocator
 @@ -66,7 +67,7 @@ endif
  FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
  FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
