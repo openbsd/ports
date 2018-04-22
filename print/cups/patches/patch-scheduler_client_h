@@ -1,0 +1,18 @@
+$OpenBSD: patch-scheduler_client_h,v 1.1 2018/04/22 12:26:12 ajacoutot Exp $
+
+From bb10adda6f2f41448d809c3fe86175b5b69cba7b Mon Sep 17 00:00:00 2001
+From: Michael R Sweet <michael.r.sweet@gmail.com>
+Date: Mon, 16 Apr 2018 19:19:13 -0400
+Subject: [PATCH] Try again to mirror fix (Issue #5289)
+
+Index: scheduler/client.h
+--- scheduler/client.h.orig
++++ scheduler/client.h
+@@ -30,6 +30,7 @@ struct cupsd_client_s
+   struct timeval	start;		/* Request start time */
+   http_state_t		operation;	/* Request operation */
+   off_t			bytes;		/* Bytes transferred for this request */
++  int			is_browser;	/* Is the client a web browser? */
+   int			type;		/* AuthType for username */
+   char			username[HTTP_MAX_VALUE],
+ 					/* Username from Authorization: line */
