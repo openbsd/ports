@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/10/06 15:09:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/04/22 13:29:19 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -26,6 +26,10 @@ share/dbus-1/services/ca.desrt.dconf.service
 share/gtk-doc/html/dconf/
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/annotation-glossary.html
+share/gtk-doc/html/dconf/api-index-0.16.html
+share/gtk-doc/html/dconf/api-index-0.18.html
+share/gtk-doc/html/dconf/api-index-0.20.html
+share/gtk-doc/html/dconf/api-index-0.26.html
 share/gtk-doc/html/dconf/api-index-full.html
 share/gtk-doc/html/dconf/ch01.html
 share/gtk-doc/html/dconf/dconf-DConfChangeset.html
