@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2017/01/26 01:42:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2018/04/22 08:54:02 ajacoutot Exp $
 
 COMMENT=		fast and lightweight file manager
 
-DISTNAME=		pcmanfm-1.2.5
+DISTNAME=		pcmanfm-1.3.0
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		x11
@@ -18,7 +18,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fm fm-gtk fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z fribidi
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
 
