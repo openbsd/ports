@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_promemul_dreamcast_cc,v 1.1 2018/04/07 10:55:54 espie Exp $
+$OpenBSD: patch-src_promemul_dreamcast_cc,v 1.2 2018/04/22 18:41:21 naddy Exp $
 
 Index: src/promemul/dreamcast.cc
 --- src/promemul/dreamcast.cc.orig
@@ -8,7 +8,7 @@ Index: src/promemul/dreamcast.cc
  	// what we are after is the indirect vector that was used to fetch
  	// that address.
 -	int vectorAddr = ((cpu->pc & 0x00ffffff) - 0x100 + 0xb0) | 0x8c000000;
-+	long vectorAddr = ((cpu->pc & 0x00ffffff) - 0x100 + 0xb0) | 0x8c000000;
++	unsigned int vectorAddr = ((cpu->pc & 0x00ffffff) - 0x100 + 0xb0) | 0x8c000000;
  
  	int r1 = cpu->cd.sh.r[1];
  	int r6 = cpu->cd.sh.r[6];
