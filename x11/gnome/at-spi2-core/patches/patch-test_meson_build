@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_meson_build,v 1.1 2018/04/22 13:28:13 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=795438
+
+Index: test/meson.build
+--- test/meson.build.orig
++++ test/meson.build
+@@ -1,4 +1,4 @@
+ test('memory',
+      executable('memory', 'memory.c',
+                 include_directories: root_inc,
+-                dependencies: [ atspi_dep ]))
++                dependencies: [ atspi_dep, x11_deps ]))
