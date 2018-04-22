@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/30 09:48:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/22 11:23:28 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-DISTNAME =	atari800-3.1.0
-REVISION =	0
+DISTNAME =	atari800-4.0.0
 
 CATEGORIES =	emulators
 
@@ -14,7 +13,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL c m pthread readline termcap z
+WANTLIB +=	SDL c curses m pthread readline z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=atari800/}
 
