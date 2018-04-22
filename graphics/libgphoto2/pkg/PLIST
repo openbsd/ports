@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/10/07 14:48:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/04/22 08:27:22 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -111,7 +111,7 @@ share/doc/libgphoto2/AUTHORS
 share/doc/libgphoto2/COPYING
 share/doc/libgphoto2/ChangeLog
 share/doc/libgphoto2/NEWS
-share/doc/libgphoto2/README
+share/doc/libgphoto2/README.md
 share/doc/libgphoto2/README.packaging
 share/doc/libgphoto2/camlibs/
 share/doc/libgphoto2/camlibs/ChangeLog
