@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.66 2018/04/07 09:40:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2018/04/22 09:00:23 ajacoutot Exp $
 
 # XXX newer versions hard depend on gusb and udev...
-PORTROACH=	skipv:1.4.0,1.4.1,1.4.2
+PORTROACH=	skipv:1.4.0,1.4.1,1.4.2,1.4.3
 
 COMMENT=	device color profile management daemon
 
