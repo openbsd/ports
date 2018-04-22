@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/16 23:40:48 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2018/04/22 09:06:06 rsadowski Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.8.2
 DISTNAME=	aqsis-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	graphics
 
 SO_VERSION=	1.0 # 1.6
@@ -47,7 +47,7 @@ SEPARATE_BUILD=	Yes
 CXXFLAGS+=	-pthread -I${X11BASE}/include
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
-CXXFLAGS+=	-std=gnu++03
+CXXFLAGS+=	-std=gnu++11
 .endif
 
 post-install:

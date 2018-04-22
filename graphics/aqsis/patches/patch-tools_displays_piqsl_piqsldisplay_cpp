@@ -1,8 +1,17 @@
-$OpenBSD: patch-tools_displays_piqsl_piqsldisplay_cpp,v 1.1 2017/12/26 19:19:15 rsadowski Exp $
+$OpenBSD: patch-tools_displays_piqsl_piqsldisplay_cpp,v 1.2 2018/04/22 09:06:06 rsadowski Exp $
 It was a hack for broken old compilers
 Index: tools/displays/piqsl/piqsldisplay.cpp
 --- tools/displays/piqsl/piqsldisplay.cpp.orig
 +++ tools/displays/piqsl/piqsldisplay.cpp
+@@ -397,7 +397,7 @@ extern "C" PtDspyError DspyImageOpen(PtDspyImageHandle
+ 					TqInt typeID = g_mapNameToType[typeName];
+ 					char* name = new char[strlen(formatName)+1];
+ 					strcpy(name, formatName);
+-					PtDspyDevFormat fmt = {name, typeID};
++                    PtDspyDevFormat fmt = {name, static_cast<unsigned>(typeID)};
+ 					outFormat.push_back(fmt);
+ 					formatNode = formatNode->NextSiblingElement("Format");
+ 					iformat++;
 @@ -450,8 +450,8 @@ extern "C" PtDspyError DspyImageData(PtDspyImageHandle
  
  	TiXmlElement* bucketDataXML = new TiXmlElement("BucketData");
