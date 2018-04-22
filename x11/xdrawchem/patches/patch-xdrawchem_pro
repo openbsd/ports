@@ -1,0 +1,14 @@
+$OpenBSD: patch-xdrawchem_pro,v 1.1 2018/04/22 05:08:17 bket Exp $
+
+Index: xdrawchem.pro
+--- xdrawchem.pro.orig
++++ xdrawchem.pro
+@@ -46,7 +46,7 @@ ringdir.files = ring/*
+ doc.path = $${PREFIX}/share/xdrawchem/doc
+ doc.files = doc/*
+ INSTALLS += ringdir doc
+-QMAKE_CXXFLAGS_DEBUG += -O0 -g3
++QMAKE_CXXFLAGS_DEBUG +=
+ 
+ CONFIG += debug
+ QT += xml network core widgets printsupport network gui

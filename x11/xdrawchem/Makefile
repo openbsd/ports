@@ -1,33 +1,29 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/04/22 05:08:17 bket Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
-DISTNAME=	xdrawchem-1.9.9
-REVISION=	9
+DISTNAME=	xdrawchem-1.10.2
 CATEGORIES=	x11 biology
 
-HOMEPAGE=	http://xdrawchem.sourceforge.net/
+HOMEPAGE=	https://www.woodsidelabs.com/chemistry/xdrawchem.php
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
-WANTLIB += fontconfig freetype glapi jpeg lcms m mng openbabel>=4 png
-WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx z
+WANTLIB+=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB+=	Qt5Widgets Qt5Xml c m openbabel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xdrawchem/}
 
-MODULES=	x11/qt3
+EXTRACT_SUFX=	-1.rpmsrc.tar.gz
 
-LIB_DEPENDS =	misc/openbabel>=2.2.0
+MODULES=	devel/qmake \
+		x11/qt5
+LIB_DEPENDS=	misc/openbabel>=2.2.3
 
-USE_GMAKE=	Yes
-
-MAKE_FLAGS=	LDFLAGS+="-lqt-mt -pthread -L${X11BASE}/lib"
-
-CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-qtincdir=${MODQT_INCDIR} \
 		--with-qtlibdir=${MODQT_LIBDIR}
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
