@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/11/05 17:02:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/04/22 07:16:31 ajacoutot Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}index.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}journal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
@@ -87,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/images/rednotebook-icon/rn-
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/rednotebook-icon/rn-64.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/table.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/title.png
+lib/python${MODPY_VERSION}/site-packages/rednotebook/index.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/info.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/journal.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/storage.py
