@@ -1,0 +1,23 @@
+$OpenBSD: patch-libk3b_tools_k3bwavefilewriter_cpp,v 1.1 2018/04/22 10:25:33 rsadowski Exp $
+
+Index: libk3b/tools/k3bwavefilewriter.cpp
+--- libk3b/tools/k3bwavefilewriter.cpp.orig
++++ libk3b/tools/k3bwavefilewriter.cpp
+@@ -109,7 +109,7 @@ void K3b::WaveFileWriter::write( const char* data, int
+ 
+ void K3b::WaveFileWriter::writeEmptyHeader()
+ {
+-    static const char riffHeader[] =
++    static const unsigned char riffHeader[] =
+         {
+             0x52, 0x49, 0x46, 0x46, // 0  "RIFF"
+             0x00, 0x00, 0x00, 0x00, // 4  wavSize
+@@ -124,7 +124,7 @@ void K3b::WaveFileWriter::writeEmptyHeader()
+             0x00, 0x00, 0x00, 0x00  // 40 byteCount
+         };
+ 
+-    m_outputStream.writeRawData( riffHeader, 44 );
++    m_outputStream.writeRawData( (const char*) riffHeader, 44 );
+ }
+ 
+ 

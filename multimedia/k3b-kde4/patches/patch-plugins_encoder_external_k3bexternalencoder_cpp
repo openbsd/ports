@@ -1,0 +1,32 @@
+$OpenBSD: patch-plugins_encoder_external_k3bexternalencoder_cpp,v 1.1 2018/04/22 10:25:33 rsadowski Exp $
+
+Index: plugins/encoder/external/k3bexternalencoder.cpp
+--- plugins/encoder/external/k3bexternalencoder.cpp.orig
++++ plugins/encoder/external/k3bexternalencoder.cpp
+@@ -37,7 +37,7 @@ K3B_EXPORT_PLUGIN(k3bexternalencoder, K3bExternalEncod
+ Q_DECLARE_METATYPE( QProcess::ExitStatus )
+ 
+ 
+-static const char s_riffHeader[] =
++static const unsigned char s_riffHeader[] =
+ {
+     0x52, 0x49, 0x46, 0x46, // 0  "RIFF"
+     0x00, 0x00, 0x00, 0x00, // 4  wavSize
+@@ -222,7 +222,7 @@ bool K3bExternalEncoder::writeWaveHeader()
+     kDebug() << "(K3bExternalEncoder) writing wave header";
+ 
+     // write the RIFF thing
+-    if( d->process->write( s_riffHeader, 4 ) != 4 ) {
++    if( d->process->write( (const char*) s_riffHeader, 4 ) != 4 ) {
+         kDebug() << "(K3bExternalEncoder) failed to write riff header.";
+         return false;
+     }
+@@ -243,7 +243,7 @@ bool K3bExternalEncoder::writeWaveHeader()
+     }
+ 
+     // write static part of the header
+-    if( d->process->write( s_riffHeader + 8, 32 ) != 32 ) {
++    if( d->process->write( (const char*) s_riffHeader + 8, 32 ) != 32 ) {
+         kDebug() << "(K3bExternalEncoder) failed to write wave header.";
+         return false;
+     }
