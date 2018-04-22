@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_docker_client_lib_py,v 1.1 2018/03/30 10:37:56 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_client_lib_py,v 1.2 2018/04/22 08:35:19 ajacoutot Exp $
 
 Index: lib/googlecloudsdk/core/docker/client_lib.py
 --- lib/googlecloudsdk/core/docker/client_lib.py.orig
 +++ lib/googlecloudsdk/core/docker/client_lib.py
-@@ -29,7 +29,7 @@ from googlecloudsdk.core.util import encoding
- from googlecloudsdk.core.util import platforms
+@@ -31,7 +31,7 @@ from googlecloudsdk.core.util import platforms
+ from six.moves import urllib
  
  
 -DOCKER_NOT_FOUND_ERROR = 'Docker is not installed.'
