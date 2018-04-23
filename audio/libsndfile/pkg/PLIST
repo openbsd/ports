@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/12/10 10:00:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/04/23 08:48:54 jca Exp $
 @bin bin/sndfile-cmp
 @bin bin/sndfile-concat
 @bin bin/sndfile-convert
@@ -31,7 +31,6 @@ share/doc/libsndfile/FAQ.html
 share/doc/libsndfile/api.html
 share/doc/libsndfile/bugs.html
 share/doc/libsndfile/command.html
-share/doc/libsndfile/dither.html
 share/doc/libsndfile/embedded_files.html
 share/doc/libsndfile/index.html
 share/doc/libsndfile/libsndfile.css
