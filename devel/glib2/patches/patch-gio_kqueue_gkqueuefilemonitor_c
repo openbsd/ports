@@ -1,8 +1,7 @@
-$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.5 2018/04/22 13:27:25 ajacoutot Exp $
+$OpenBSD: patch-gio_kqueue_gkqueuefilemonitor_c,v 1.6 2018/04/23 19:51:21 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/glib/commit/aa39a0557c679fc345b0ba72a87c33152eb8ebcd
-
-https://bugzilla.gnome.org/show_bug.cgi?id=795193
+https://gitlab.gnome.org/GNOME/glib/commit/ab179184b883ad378a420223f378071821f0c8b9
 
 Index: gio/kqueue/gkqueuefilemonitor.c
 --- gio/kqueue/gkqueuefilemonitor.c.orig
