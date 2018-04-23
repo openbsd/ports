@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_ziptool_c,v 1.3 2018/01/09 23:10:43 bcallah Exp $
+$OpenBSD: patch-src_ziptool_c,v 1.4 2018/04/23 21:48:07 bcallah Exp $
 
 time_t == %lld
 
 Index: src/ziptool.c
 --- src/ziptool.c.orig
 +++ src/ziptool.c
-@@ -500,7 +500,7 @@ set_file_mtime(int argc, char *argv[]) {
+@@ -503,7 +503,7 @@ set_file_mtime(int argc, char *argv[]) {
      idx = strtoull(argv[0], NULL, 10);
      mtime = (time_t)strtoull(argv[1], NULL, 10);
      if (zip_file_set_mtime(za, idx, mtime, 0) < 0) {
@@ -14,7 +14,7 @@ Index: src/ziptool.c
  	return -1;
      }
      return 0;
-@@ -520,7 +520,7 @@ set_file_mtime_all(int argc, char *argv[]) {
+@@ -523,7 +523,7 @@ set_file_mtime_all(int argc, char *argv[]) {
      }
      for (idx = 0; idx < (zip_uint64_t)num_entries; idx++) {
  	if (zip_file_set_mtime(za, idx, mtime, 0) < 0) {

@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_zip_crypto_openssl_c,v 1.1 2018/04/23 21:48:07 bcallah Exp $
+
+Add limits.h for INT_MAX
+
+Index: lib/zip_crypto_openssl.c
+--- lib/zip_crypto_openssl.c.orig
++++ lib/zip_crypto_openssl.c
+@@ -31,6 +31,7 @@
+   IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+ 
++#include <limits.h>
+ #include <stdlib.h>
+ 
+ #include "zipint.h"
