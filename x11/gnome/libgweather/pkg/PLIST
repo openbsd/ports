@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/11/01 14:06:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/04/23 10:36:04 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -12,34 +12,11 @@ include/libgweather-3.0/libgweather/gweather-version.h
 include/libgweather-3.0/libgweather/gweather-weather.h
 include/libgweather-3.0/libgweather/gweather.h
 lib/girepository-1.0/GWeather-3.0.typelib
-lib/libgweather-3.a
-lib/libgweather-3.la
 @lib lib/libgweather-3.so.${LIBgweather-3_VERSION}
 lib/pkgconfig/gweather-3.0.pc
 share/gir-1.0/GWeather-3.0.gir
 share/glib-2.0/schemas/org.gnome.GWeather.enums.xml
 share/glib-2.0/schemas/org.gnome.GWeather.gschema.xml
-share/gtk-doc/html/libgweather-3.0/
-share/gtk-doc/html/libgweather-3.0/GWeatherInfo.html
-share/gtk-doc/html/libgweather-3.0/GWeatherLocation.html
-share/gtk-doc/html/libgweather-3.0/GWeatherLocationEntry.html
-share/gtk-doc/html/libgweather-3.0/GWeatherTimezoneMenu.html
-share/gtk-doc/html/libgweather-3.0/annotation-glossary.html
-share/gtk-doc/html/libgweather-3.0/api-index-full.html
-share/gtk-doc/html/libgweather-3.0/ch01.html
-share/gtk-doc/html/libgweather-3.0/home.png
-share/gtk-doc/html/libgweather-3.0/index.html
-share/gtk-doc/html/libgweather-3.0/left-insensitive.png
-share/gtk-doc/html/libgweather-3.0/left.png
-share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
-share/gtk-doc/html/libgweather-3.0/libgweather-Versioning-information.html
-share/gtk-doc/html/libgweather-3.0/libgweather-gweathertimezone.html
-share/gtk-doc/html/libgweather-3.0/object-tree.html
-share/gtk-doc/html/libgweather-3.0/right-insensitive.png
-share/gtk-doc/html/libgweather-3.0/right.png
-share/gtk-doc/html/libgweather-3.0/style.css
-share/gtk-doc/html/libgweather-3.0/up-insensitive.png
-share/gtk-doc/html/libgweather-3.0/up.png
 share/libgweather/
 share/libgweather/Locations.xml
 share/libgweather/locations.dtd
@@ -216,7 +193,6 @@ share/locale/ms/LC_MESSAGES/libgweather-3.0.mo
 share/locale/ms/LC_MESSAGES/libgweather-locations.mo
 share/locale/nb/LC_MESSAGES/libgweather-3.0.mo
 share/locale/nb/LC_MESSAGES/libgweather-locations.mo
-share/locale/nds/LC_MESSAGES/libgweather-3.0.mo
 share/locale/nds/LC_MESSAGES/libgweather-locations.mo
 share/locale/ne/LC_MESSAGES/libgweather-3.0.mo
 share/locale/ne/LC_MESSAGES/libgweather-locations.mo
@@ -278,6 +254,7 @@ share/locale/zh_HK/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgweather-locations.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-locations.mo
+share/vala/vapi/gweather-3.0.deps
 share/vala/vapi/gweather-3.0.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
