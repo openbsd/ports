@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/28 16:00:42 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/23 11:59:49 sthen Exp $
+
+BROKEN =	has locally modified copied of MuPDF files; some of these have changed API in 1.12.0 causing breakage
 
 COMMENT =	optimizes PDF/DJVU files for mobile e-readers
 
