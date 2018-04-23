@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/23 16:51:16 robert Exp $
 
 COMMENT =	open source Slack-alternative
 
-V =		4.8.0
+V =		4.9.0
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
@@ -10,7 +10,6 @@ GH_TAGNAME =	v${V}
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
 DISTNAME =	mattermost-server-${V}
-REVISION =	0
 
 DISTFILES += 	${DISTNAME}${EXTRACT_SUFX} \
 		mattermost-${V}-linux-amd64${EXTRACT_SUFX}:0
@@ -35,10 +34,10 @@ pre-configure:
 
 do-build:
 	cd ${WRKSRC} && \
-		${MODGO_BUILD_CMD} ./cmd/platform
+		${MODGO_BUILD_CMD}
 
 do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/platform ${PREFIX}/sbin/mattermost
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/mattermost-server ${PREFIX}/sbin/mattermost-server
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mattermost
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mattermost
 	cp ${WRKSRC}/config/default.json ${PREFIX}/share/examples/mattermost

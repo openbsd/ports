@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: mattermost.rc,v 1.1.1.1 2018/03/17 13:00:59 robert Exp $
+# $OpenBSD: mattermost.rc,v 1.2 2018/04/23 16:51:16 robert Exp $
 
-daemon="${TRUEPREFIX}/sbin/mattermost"
+daemon="${TRUEPREFIX}/sbin/mattermost-server"
 daemon_user="_mattermost"
 daemon_flags="--config=${SYSCONFDIR}/mattermost/default.json"
 
