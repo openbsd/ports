@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2018/03/05 13:06:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2018/04/23 12:06:30 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.34.2.1
+GNOME_VERSION=		1.36.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -19,46 +19,26 @@ PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre
-WANTLIB += pthread util z iconv intl
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += archive avahi-client avahi-common avahi-glib bz2 crypto
-WANTLIB-main += dbus-1 expat gck-1 gcr-base-3 gcrypt gpg-error gthread-2.0
-WANTLIB-main += lz4 lzma m p11-kit secret-1 soup-2.4 sqlite3 xml2
+WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-base-3
+WANTLIB-main += gcrypt secret-1 soup-2.4 util xml2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors
-WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn2
-WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
-WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
-WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf
-WANTLIB-smb += ssl talloc tasn1 tdb tevent tevent-util util-setid
-WANTLIB-smb += wbclient gck-1 gcr-base-3 secret-1 unistring jansson
-WANTLIB-smb += lib/samba/asn1-samba4
-WANTLIB-smb += lib/samba/com_err-samba4
-WANTLIB-smb += lib/samba/gssapi-samba4
-WANTLIB-smb += lib/samba/hcrypto-samba4
-WANTLIB-smb += lib/samba/heimbase-samba4
-WANTLIB-smb += lib/samba/hx509-samba4
-WANTLIB-smb += lib/samba/krb5-samba4
-WANTLIB-smb += lib/samba/roken-samba4
-WANTLIB-smb += lib/samba/wind-samba4
+WANTLIB-smb += smbclient
 
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
 WANTLIB-nfs += ${WANTLIB}
-WANTLIB-nfs += gcrypt gpg-error gthread-2.0 iconv intl nfs secret-1
-WANTLIB-nfs += gck-1 gcr-base-3 p11-kit
+WANTLIB-nfs += nfs
 
 WANTLIB-google += ${WANTLIB}
-WANTLIB-google += crypto curl gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error
-WANTLIB-google += gthread-2.0 iconv intl json-glib-1.0 lzma m nghttp2
-WANTLIB-google += nspr4 nss3 oauth p11-kit plc4 plds4 secret-1 smime3
-WANTLIB-google += nssutil3 soup-2.4 sqlite3 ssl ssl3 xml2
+WANTLIB-google += gdata goa-1.0
 
 MODGNOME_TOOLS=		docbook
 
@@ -76,32 +56,34 @@ RUN_DEPENDS-goa=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-goa=	x11/gnome/online-accounts
 
 RUN_DEPENDS-nfs=	${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-nfs=	devel/libnfs \
-			x11/gnome/libsecret
+LIB_DEPENDS-nfs=	devel/libnfs
 
 RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-google=	devel/libgdata \
 			x11/gnome/online-accounts
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		-Ddeprecated_programs=true \
+			-Dman=true
 
-CONFIGURE_ARGS=		--disable-libsystemd-login \
-			--disable-cdda \
-			--disable-bluray \
-			--disable-afc \
-			--disable-gudev \
-			--disable-udev \
-			--disable-gdu
-
-# needs gudev
-CONFIGURE_ARGS +=	--disable-libmtp \
-			--disable-libusb
-
+# most of these need gudev and/or systemd
+CONFIGURE_ARGS +=	-Dafc=false \
+			-Dcdda=false \
+			-Dgdu=false \
+			-Dgphoto2=false \
+			-Dmtp=false \
+			-Dlibusb=false \
+			-Dudisks2=false \
+			-Dbluray=false \
+			-Dgudev=false \
+			-Dlogind=false \
+			-Dsystemduserunitdir=no \
+			-Dtmpfilesdir=no
+			
 # needs libcap
-CONFIGURE_ARGS +=	--disable-admin
+CONFIGURE_ARGS +=	-Dadmin=false
 
 # needs sysctl kern.usermount to be really useful
-CONFIGURE_ARGS +=	--disable-fuse
+CONFIGURE_ARGS +=	-Dfuse=false
 
 MULTI_PACKAGES=		-main -goa -nfs -smb -google
 
@@ -111,28 +93,30 @@ FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-smb}
-CONFIGURE_ARGS +=	--disable-samba
+CONFIGURE_ARGS +=	-Dsmb=false
 .endif
 
 .if !${BUILD_PACKAGES:M-goa}
-CONFIGURE_ARGS +=	--disable-goa
+CONFIGURE_ARGS +=	-Dgoa=false
 .endif
 
 .if !${BUILD_PACKAGES:M-nfs}
-CONFIGURE_ARGS +=	--disable-nfs
+CONFIGURE_ARGS +=	-Dnfs=false
 .endif
 
 .if !${BUILD_PACKAGES:M-google}
-CONFIGURE_ARGS +=	--disable-google
+CONFIGURE_ARGS +=	-Dgoogle=false
 .endif
 
 # test_polkitd.py, gvfs-test
 TEST_DEPENDS=		devel/py-gobject3
 
+# XXX see patches
+pre-build:
+	chmod +x ${WRKSRC}/codegen.py
+
+# -Dadmin=false
 post-install:
-	rm ${PREFIX}/lib/gio/modules/*.{a,la}
-	rm ${PREFIX}/lib/gvfs/*.{a,la}
-# --disable-admin	
 	rm -rf ${PREFIX}/share/polkit-1
 
 .include <bsd.port.mk>

@@ -1,0 +1,39 @@
+$OpenBSD: patch-codegen_py,v 1.1 2018/04/23 12:06:30 ajacoutot Exp $
+
+From 06c28a632d738b0141b619ea1c500d2563a20298 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?I=C3=B1igo=20Mart=C3=ADnez?= <inigomartinez@gmail.com>
+Date: Fri, 23 Mar 2018 21:20:23 +0100
+Subject: build: Apply a workaround for D-Bus code generation
+
+Index: codegen.py
+--- codegen.py.orig
++++ codegen.py
+@@ -0,0 +1,28 @@
++#!/usr/bin/env python3
++
++'''
++FIXME
++
++This script is used only to call gdbus-codegen and simulate the
++generation of the source code and header as different targets.
++
++Both are generated implicitly, so meson is not able to know how
++many files are generated, so it does generate only one opaque
++target that represents the two files.
++
++Please see:
++   https://bugzilla.gnome.org/show_bug.cgi?id=791015
++   https://github.com/mesonbuild/meson/pull/2930
++'''
++
++import subprocess
++import sys
++
++subprocess.call([
++  'gdbus-codegen',
++  '--interface-prefix=' + sys.argv[1],
++  '--generate-c-code=' + sys.argv[2],
++  '--c-namespace=' + sys.argv[3],
++  '--output-directory=' + sys.argv[4],
++  sys.argv[5]
++])

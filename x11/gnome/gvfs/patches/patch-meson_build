@@ -1,0 +1,34 @@
+$OpenBSD: patch-meson_build,v 1.1 2018/04/23 12:06:30 ajacoutot Exp $
+
+XXX First chunck: don't pass --no-undefined
+XXX should be taken care of by the meson MODULE but doesn't work...
+
+From 06c28a632d738b0141b619ea1c500d2563a20298 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?I=C3=B1igo=20Mart=C3=ADnez?= <inigomartinez@gmail.com>
+Date: Fri, 23 Mar 2018 21:20:23 +0100
+Subject: build: Apply a workaround for D-Bus code generation
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -3,7 +3,6 @@ project(
+   version: '1.36.1',
+   license: 'LGPL2+',
+   default_options: [
+-    'b_lundef=true',
+     'buildtype=debugoptimized'
+   ],
+   meson_version: '>= 0.43.0'
+@@ -479,6 +478,12 @@ endif
+ # *** Enable development utils ***
+ enable_devel_utils = get_option('devel_utils')
+ enable_installed_tests = get_option('installed_tests')
++
++# FIXME: Opaque target return from gdbus_codegen
++# Please see:
++#   https://bugzilla.gnome.org/show_bug.cgi?id=791015
++#   https://github.com/mesonbuild/meson/pull/2930
++codegen = join_paths(meson.source_root(), 'codegen.py')
+ 
+ gnome = import('gnome')
+ i18n = import('i18n')

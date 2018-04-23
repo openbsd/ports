@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2017/11/01 16:58:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2018/04/23 12:06:30 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/gvfs-cat
 bin/gvfs-copy
@@ -120,6 +120,7 @@ share/locale/gl/LC_MESSAGES/gvfs.mo
 share/locale/gu/LC_MESSAGES/gvfs.mo
 share/locale/he/LC_MESSAGES/gvfs.mo
 share/locale/hi/LC_MESSAGES/gvfs.mo
+share/locale/hr/LC_MESSAGES/gvfs.mo
 share/locale/hu/LC_MESSAGES/gvfs.mo
 share/locale/id/LC_MESSAGES/gvfs.mo
 share/locale/it/LC_MESSAGES/gvfs.mo
