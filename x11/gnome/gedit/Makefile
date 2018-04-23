@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.152 2017/10/31 18:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2018/04/23 14:08:52 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.22.1
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		editors
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 enchant expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant-2 epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 gtksourceview-3.0
+WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render
-WANTLIB += xcb-shm xml2 z lzma epoxy iconv intl gspell-1
-WANTLIB += Xtst
+WANTLIB += pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -31,7 +30,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/libpeas>=1.8.0 \
-			textproc/enchant \
 			textproc/gspell \
 			x11/gtksourceview3>=3.14.0
 
