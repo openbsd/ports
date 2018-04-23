@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/14 06:29:25 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/23 23:07:24 bcallah Exp $
 @bin bin/assimp
 include/assimp/
 include/assimp/Compiler/
@@ -8,6 +8,7 @@ include/assimp/Compiler/pushpack1.h
 include/assimp/DefaultIOStream.h
 include/assimp/DefaultIOSystem.h
 include/assimp/DefaultLogger.hpp
+include/assimp/Defines.h
 include/assimp/Exporter.hpp
 include/assimp/IOStream.hpp
 include/assimp/IOSystem.hpp
@@ -48,8 +49,10 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-4.0/
-lib/cmake/assimp-4.0/assimp-config-version.cmake
-lib/cmake/assimp-4.0/assimp-config.cmake
+lib/cmake/
+lib/cmake/assimp-4.1/
+lib/cmake/assimp-4.1/assimp-config-version.cmake
+lib/cmake/assimp-4.1/assimp-config.cmake
+lib/libIrrXML.a
 @lib lib/libassimp.so.${LIBassimp_VERSION}
 lib/pkgconfig/assimp.pc

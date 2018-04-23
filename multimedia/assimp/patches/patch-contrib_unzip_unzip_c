@@ -1,0 +1,15 @@
+$OpenBSD: patch-contrib_unzip_unzip_c,v 1.1 2018/04/23 23:07:24 bcallah Exp $
+
+This is missing from our zlib.
+
+Index: contrib/unzip/unzip.c
+--- contrib/unzip/unzip.c.orig
++++ contrib/unzip/unzip.c
+@@ -122,6 +122,7 @@ typedef struct
+     int   raw;
+ } file_in_zip_read_info_s;
+ 
++typedef unsigned long z_crc_t;
+ 
+ /* unz_s contain internal information about the zipfile
+ */

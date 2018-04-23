@@ -1,0 +1,16 @@
+$OpenBSD: patch-contrib_unzip_crypt_h,v 1.1 2018/04/23 23:07:24 bcallah Exp $
+
+This is missing from our zlib.
+
+Index: contrib/unzip/crypt.h
+--- contrib/unzip/crypt.h.orig
++++ contrib/unzip/crypt.h
+@@ -27,6 +27,8 @@
+    Encryption is not supported.
+ */
+ 
++typedef unsigned long z_crc_t;
++
+ #define CRC32(c, b) ((*(pcrc_32_tab+(((int)(c) ^ (b)) & 0xff))) ^ ((c) >> 8))
+ 
+ /***********************************************************************
