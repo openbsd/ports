@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2018/04/23 08:19:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.271 2018/04/23 14:56:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -49,7 +49,7 @@
      SUBDIR += icon-theme-symbolic
      SUBDIR += initial-setup
      SUBDIR += keyring
-     SUBDIR += latexila
+     SUBDIR += latex
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libcryptui
