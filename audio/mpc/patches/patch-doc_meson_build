@@ -1,0 +1,33 @@
+$OpenBSD: patch-doc_meson_build,v 1.1 2018/04/23 16:51:50 landry Exp $
+
+only build manpage, and install it in correct dir
+
+Index: doc/meson.build
+--- doc/meson.build.orig
++++ doc/meson.build
+@@ -1,23 +1,14 @@
+ sphinx = find_program('sphinx-build', required:false)
+ 
+ if sphinx.found()
+-  custom_target(
+-    'HTML documentation',
+-    output: 'html',
+-    input: ['index.rst', 'conf.py'],
+-    command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
+-    build_by_default: true,
+-    install: true,
+-    install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
+-  )
+ 
+   custom_target(
+     'Manpage documentation',
+-    output: 'man',
++    output: 'man1',
+     input: ['index.rst', 'conf.py'],
+     command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
+     build_by_default: true,
+     install: true,
+-    install_dir: join_paths(get_option('datadir'), 'man', 'man1'),
++    install_dir: get_option('mandir')
+   )
+ endif

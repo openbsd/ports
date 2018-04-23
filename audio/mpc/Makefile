@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/23 18:45:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2018/04/23 16:51:50 landry Exp $
 
 COMMENT=		command line client for mpd
 
-VER=			0.28
+VER=			0.29
 DISTNAME=		mpc-${VER}
-REVISION=		0
 CATEGORIES=		audio
+EXTRACT_SUFX=	.tar.xz
 
-HOMEPAGE=		http://www.musicpd.org/clients/mpc/
+HOMEPAGE=		https://www.musicpd.org/clients/mpc/
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
@@ -18,20 +18,10 @@ WANTLIB=		c iconv mpdclient
 LIB_DEPENDS=		audio/libmpdclient>=2.2 \
 			converters/libiconv
 
-MASTER_SITES=		http://www.musicpd.org/download/mpc/${VER:R}/
+BUILD_DEPENDS +=	textproc/py-sphinx
+MASTER_SITES=		https://www.musicpd.org/download/mpc/${VER:R}/
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		ac_cv_func_iconv=yes
+MODULES=		devel/meson
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpc
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/doc/mpd-m3u-handler.sh \
-		${WRKSRC}/doc/mpd-pls-handler.sh \
-		${WRKSRC}/doc/mppledit \
-		${PREFIX}/share/examples/mpc
-	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash \
-		${PREFIX}/share/examples/mpc
 
 .include <bsd.port.mk>

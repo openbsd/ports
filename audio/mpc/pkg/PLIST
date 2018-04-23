@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/04 16:57:19 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/04/23 16:51:50 landry Exp $
 @bin bin/mpc
 @man man/man1/mpc.1
 share/doc/mpc/
 share/doc/mpc/AUTHORS
 share/doc/mpc/COPYING
 share/doc/mpc/NEWS
-share/doc/mpc/README
-share/examples/mpc/
-share/examples/mpc/mpc-completion.bash
-share/examples/mpc/mpd-m3u-handler.sh
-share/examples/mpc/mpd-pls-handler.sh
-share/examples/mpc/mppledit
+share/doc/mpc/README.rst
+share/doc/mpc/contrib/
+share/doc/mpc/contrib/mpc-completion.bash
+share/doc/mpc/contrib/mpd-m3u-handler.sh
+share/doc/mpc/contrib/mpd-pls-handler.sh
