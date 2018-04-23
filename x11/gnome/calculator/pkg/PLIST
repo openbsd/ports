@@ -1,15 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/11/02 10:37:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/04/23 15:53:56 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
 @bin bin/gnome-calculator
-lib/gnome-calculator/
-lib/gnome-calculator/libcalculator.so
 @bin libexec/gnome-calculator-search-provider
 @man man/man1/gcalccmd.1
 @man man/man1/gnome-calculator.1
-share/appdata/
-share/appdata/org.gnome.Calculator.appdata.xml
 share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 share/glib-2.0/schemas/org.gnome.calculator.gschema.xml
@@ -945,6 +941,14 @@ share/help/zh_TW/gnome-calculator/variables.page
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/icons/hicolor/16x16/apps/gnome-calculator.png
+share/icons/hicolor/22x22/apps/gnome-calculator.png
+share/icons/hicolor/24x24/apps/gnome-calculator.png
+share/icons/hicolor/256x256/apps/gnome-calculator.png
+share/icons/hicolor/32x32/apps/gnome-calculator.png
+share/icons/hicolor/48x48/apps/gnome-calculator.png
+share/icons/hicolor/512x512/apps/gnome-calculator.png
+share/icons/hicolor/scalable/apps/gnome-calculator-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-calculator.mo
 share/locale/am/LC_MESSAGES/gnome-calculator.mo
 share/locale/ar/LC_MESSAGES/gnome-calculator.mo
@@ -1037,3 +1041,4 @@ share/locale/xh/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calculator.mo
+share/metainfo/org.gnome.Calculator.appdata.xml

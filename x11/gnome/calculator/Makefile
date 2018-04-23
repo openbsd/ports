@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/02 10:37:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2018/04/23 15:53:56 jasper Exp $
 
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		3.26.0
+GNOME_VERSION=		3.28.1
 
 CATEGORIES=		math
 
@@ -19,8 +19,9 @@ WANTLIB += harfbuzz lzma m mpfr pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-xkb
 WANTLIB += xcb-shm xml2 z iconv intl soup-2.4 sqlite3 mpc
 
-MODULES=		x11/gnome \
-			devel/dconf
+MODULES=		devel/dconf \
+			devel/meson \
+			x11/gnome
 
 LIB_DEPENDS+=		devel/libmpc \
 			devel/mpfr \
@@ -28,10 +29,5 @@ LIB_DEPENDS+=		devel/libmpc \
 			x11/gtksourceview3
 
 MODGNOME_TOOLS=		desktop-file-utils vala yelp
-
-CONFIGURE_STYLE=	gnu
-
-post-install:
-	rm ${PREFIX}/lib/gnome-calculator/*.{a,la}
 
 .include <bsd.port.mk>
