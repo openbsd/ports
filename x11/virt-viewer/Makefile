@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2018/04/23 10:38:34 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
 DISTNAME=	virt-viewer-6.0
 CATEGORIES=	x11
-REVISION=	2
+REVISION=	3
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -19,7 +19,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
 WANTLIB += atspi avahi-client avahi-common c cairo cairo-gobject crypto
 WANTLIB += curl dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
-WANTLIB += gnutls gobject-2.0 gpg-error graphite2 gstapp-1.0
+WANTLIB += gnutls gobject-2.0 gpg-error graphite2 gstapp-1.0 fribidi
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtk-vnc-2.0 gvnc-1.0 harfbuzz
 WANTLIB += hogweed iconv idn2 intl jpeg lz4 lzma m nettle nghttp2 ogg
