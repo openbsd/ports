@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2018/02/01 11:50:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2018/04/23 08:49:53 jasper Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.26.4
+REVISION=		0
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -16,7 +17,7 @@ WANTLIB += atk-1.0 c cairo dazzle-1.0 devhelp-3 enchant fontconfig
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2-glib-1.0
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-3.0
 WANTLIB += intl jsonrpc_glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 template_glib-1.0 vala-0.38 vte-2.91
+WANTLIB += pcre peas-1.0 template_glib-1.0 vala-0.40 vte-2.91
 WANTLIB += webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
