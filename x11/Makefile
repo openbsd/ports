@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.611 2018/04/08 20:18:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.612 2018/04/23 13:39:01 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -114,6 +114,7 @@
      SUBDIR += gtkhotkey
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
+     SUBDIR += gtksourceview4
      SUBDIR += gtksourceviewmm3
      SUBDIR += gxmessage
      SUBDIR += herbstluftwm
