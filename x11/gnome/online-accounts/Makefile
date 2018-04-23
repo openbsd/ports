@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.105 2018/04/10 13:45:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2018/04/23 09:25:13 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.26.2
-REVISION=	0
+GNOME_VERSION=	3.28.0
 
 SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
@@ -26,8 +25,8 @@ WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread rest-0.7 secret-1
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ${COMPILER_LIBCXX} 
 WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z tasn1 Xtst
-WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
+WANTLIB += xcb-shm xcb-xfixes xml2 xslt z tasn1 
+WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0 fribidi
 WANTLIB += brotlicommon brotlidec webpdemux woff2common woff2dec
 
 MODULES=		devel/dconf \
