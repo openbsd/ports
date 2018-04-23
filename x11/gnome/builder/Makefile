@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.73 2018/04/23 08:49:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2018/04/23 13:20:38 ajacoutot Exp $
+
+BROKEN=			needs an update
 
 COMMENT=		IDE for GNOME
 
