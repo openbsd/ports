@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2017/11/01 17:30:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2018/04/23 12:13:51 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -26,6 +26,7 @@ share/gtk-doc/html/gnome-desktop3/GnomeDesktopThumbnailFactory.html
 share/gtk-doc/html/gnome-desktop3/GnomeIdleMonitor.html
 share/gtk-doc/html/gnome-desktop3/GnomeWallClock.html
 share/gtk-doc/html/gnome-desktop3/GnomeXkbInfo.html
+share/gtk-doc/html/gnome-desktop3/annotation-glossary.html
 share/gtk-doc/html/gnome-desktop3/background.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-Language-Utilities.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-bg.html
