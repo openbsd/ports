@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/10/29 10:33:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/04/23 14:06:50 ajacoutot Exp $
 @bin bin/gspell-app1
 include/gspell-1/
 include/gspell-1/gspell/
@@ -64,6 +64,7 @@ share/locale/cs/LC_MESSAGES/gspell-1.mo
 share/locale/da/LC_MESSAGES/gspell-1.mo
 share/locale/de/LC_MESSAGES/gspell-1.mo
 share/locale/el/LC_MESSAGES/gspell-1.mo
+share/locale/en_GB/LC_MESSAGES/gspell-1.mo
 share/locale/eo/LC_MESSAGES/gspell-1.mo
 share/locale/es/LC_MESSAGES/gspell-1.mo
 share/locale/fa/LC_MESSAGES/gspell-1.mo
