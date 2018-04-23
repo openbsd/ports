@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.115 2018/04/19 06:36:40 landry Exp $
+# $OpenBSD: Makefile,v 1.116 2018/04/23 16:58:40 landry Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.20.10
-REVISION =		1
+VER =			0.20.18
 DISTNAME =		mpd-${VER}
 CATEGORIES =		audio
-HOMEPAGE =		http://www.musicpd.org/
+HOMEPAGE =		https://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2+
@@ -20,7 +19,7 @@ WANTLIB =		FLAC audiofile avcodec avformat avutil \
 			shout sndfile sndio speex sqlite3 theora \
 			vorbis vorbisenc yajl z ${COMPILER_LIBCXX}
 
-MASTER_SITES =		http://www.musicpd.org/download/mpd/${VER:R}/
+MASTER_SITES =		https://www.musicpd.org/download/mpd/${VER:R}/
 
 COMPILER =		base-clang ports-gcc
 
