@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/03/06 18:48:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/04/23 16:53:49 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.bijiben.desktop
@@ -297,6 +297,7 @@ share/locale/fur/LC_MESSAGES/bijiben.mo
 share/locale/ga/LC_MESSAGES/bijiben.mo
 share/locale/gl/LC_MESSAGES/bijiben.mo
 share/locale/he/LC_MESSAGES/bijiben.mo
+share/locale/hr/LC_MESSAGES/bijiben.mo
 share/locale/hu/LC_MESSAGES/bijiben.mo
 share/locale/id/LC_MESSAGES/bijiben.mo
 share/locale/is/LC_MESSAGES/bijiben.mo
@@ -331,7 +332,6 @@ share/locale/vi/LC_MESSAGES/bijiben.mo
 share/locale/zh_CN/LC_MESSAGES/bijiben.mo
 share/locale/zh_HK/LC_MESSAGES/bijiben.mo
 share/locale/zh_TW/LC_MESSAGES/bijiben.mo
-share/metainfo/
 share/metainfo/org.gnome.bijiben.appdata.xml
 share/mime/packages/org.gnome.bijiben.xml
 @exec %D/bin/update-desktop-database

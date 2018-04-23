@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2018/04/10 13:45:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/04/23 16:53:49 jasper Exp $
 
 TRACKER_API=		2.0
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.28.0
-REVISION=		0
+GNOME_VERSION=		3.28.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,7 +29,7 @@ WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 ${COMPILER_LIBCXX}
 WANTLIB += uuid webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
-WANTLIB += harfbuzz-icu tasn1 Xtst
+WANTLIB += harfbuzz-icu tasn1 fribidi
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
