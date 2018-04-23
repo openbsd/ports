@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/23 00:35:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/23 13:24:47 fcambus Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -75,7 +75,7 @@ post-extract:
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
 	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
 	@mv ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
-	@grep -rl '"png\.h"' ${WRKSRC}/src | \
+	@grep -Rl '"png\.h"' ${WRKSRC}/src | \
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
