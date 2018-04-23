@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/01 22:04:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/04/23 13:53:37 ajacoutot Exp $
+
+BROKEN=			needs an update
 
 COMMENT=		integrated LaTeX environment for GNOME
 
