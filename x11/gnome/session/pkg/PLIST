@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.48 2016/10/31 10:52:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2018/04/23 20:03:00 ajacoutot Exp $
 bin/gnome-session
+bin/gnome-session-custom-session
 @bin bin/gnome-session-inhibit
 @bin bin/gnome-session-quit
 @bin libexec/gnome-session-binary
@@ -15,9 +16,7 @@ share/doc/gnome-session/
 share/doc/gnome-session/dbus/
 share/doc/gnome-session/dbus/gnome-session.html
 share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
-share/gnome-session/
 share/gnome-session/hardware-compatibility
-share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-dummy.session
 share/gnome-session/sessions/gnome.session
 share/locale/af/LC_MESSAGES/gnome-session-3.0.mo
