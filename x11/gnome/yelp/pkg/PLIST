@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2016/10/29 18:11:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2018/04/23 12:09:38 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -156,6 +156,8 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
+share/metainfo/
+share/metainfo/yelp.appdata.xml
 share/yelp/
 share/yelp-xsl/xslt/common/domains/yelp.xml
 share/yelp/dtd/
