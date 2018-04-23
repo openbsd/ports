@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/21 00:49:16 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/23 22:47:41 ajacoutot Exp $
 bin/renpy
 lib/python${MODPY_VERSION}/site-packages/Ren_Py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/_renpy.so
-lib/python${MODPY_VERSION}/site-packages/_renpybidi.so
 lib/python${MODPY_VERSION}/site-packages/pysdlsound/
 lib/python${MODPY_VERSION}/site-packages/pysdlsound/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pysdlsound/__init__.pyc
