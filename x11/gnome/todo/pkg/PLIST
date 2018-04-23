@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/01 21:19:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/04/23 14:29:11 ajacoutot Exp $
 @bin bin/gnome-todo
 include/gnome-todo/
 include/gnome-todo/gnome-todo.h
@@ -14,6 +14,7 @@ include/gnome-todo/gtd-task-list.h
 include/gnome-todo/gtd-task.h
 include/gnome-todo/gtd-timer.h
 include/gnome-todo/gtd-types.h
+include/gnome-todo/gtd-utils.h
 include/gnome-todo/gtd-window.h
 lib/girepository-1.0/Gtd-1.0.typelib
 lib/gnome-todo/
@@ -43,6 +44,7 @@ share/icons/hicolor/32x32/apps/org.gnome.Todo.png
 share/icons/hicolor/48x48/apps/org.gnome.Todo.png
 share/icons/hicolor/512x512/apps/org.gnome.Todo.png
 share/icons/hicolor/symbolic/apps/org.gnome.Todo-symbolic.svg
+share/locale/af/LC_MESSAGES/gnome-todo.mo
 share/locale/ar/LC_MESSAGES/gnome-todo.mo
 share/locale/be/LC_MESSAGES/gnome-todo.mo
 share/locale/ca/LC_MESSAGES/gnome-todo.mo
@@ -54,6 +56,7 @@ share/locale/el/LC_MESSAGES/gnome-todo.mo
 share/locale/en_GB/LC_MESSAGES/gnome-todo.mo
 share/locale/eo/LC_MESSAGES/gnome-todo.mo
 share/locale/es/LC_MESSAGES/gnome-todo.mo
+share/locale/et/LC_MESSAGES/gnome-todo.mo
 share/locale/eu/LC_MESSAGES/gnome-todo.mo
 share/locale/fa/LC_MESSAGES/gnome-todo.mo
 share/locale/fi/LC_MESSAGES/gnome-todo.mo
@@ -61,6 +64,7 @@ share/locale/fr/LC_MESSAGES/gnome-todo.mo
 share/locale/fur/LC_MESSAGES/gnome-todo.mo
 share/locale/gl/LC_MESSAGES/gnome-todo.mo
 share/locale/he/LC_MESSAGES/gnome-todo.mo
+share/locale/hr/LC_MESSAGES/gnome-todo.mo
 share/locale/hu/LC_MESSAGES/gnome-todo.mo
 share/locale/id/LC_MESSAGES/gnome-todo.mo
 share/locale/is/LC_MESSAGES/gnome-todo.mo
