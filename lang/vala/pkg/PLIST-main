@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2018/04/10 17:09:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2018/04/23 08:49:06 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -6,8 +6,6 @@ bin/vala-gen-introspect
 bin/vala-gen-introspect-${API_V}
 bin/valac
 @bin bin/valac-${API_V}
-bin/vapicheck
-@bin bin/vapicheck-${API_V}
 bin/vapigen
 @bin bin/vapigen-${API_V}
 include/vala-${API_V}/
@@ -15,7 +13,7 @@ include/vala-${API_V}/vala.h
 include/vala-${API_V}/valagee.h
 lib/libvala-${API_V}.a
 lib/libvala-${API_V}.la
-@lib lib/libvala-${API_V}.so.${LIBvala-0.38_VERSION}
+@lib lib/libvala-${API_V}.so.${LIBvala-0.40_VERSION}
 lib/pkgconfig/libvala-${API_V}.pc
 lib/pkgconfig/vapigen-${API_V}.pc
 lib/pkgconfig/vapigen.pc
@@ -116,8 +114,6 @@ share/vala-${API_V}/vapi/gdu.deps
 share/vala-${API_V}/vapi/gdu.vapi
 share/vala-${API_V}/vapi/gedit-2.20.deps
 share/vala-${API_V}/vapi/gedit-2.20.vapi
-share/vala-${API_V}/vapi/gedit.deps
-share/vala-${API_V}/vapi/gedit.vapi
 share/vala-${API_V}/vapi/geocode-glib-1.0.deps
 share/vala-${API_V}/vapi/geocode-glib-1.0.vapi
 share/vala-${API_V}/vapi/gio-2.0.vapi
@@ -131,7 +127,6 @@ share/vala-${API_V}/vapi/gnet-2.0.deps
 share/vala-${API_V}/vapi/gnet-2.0.vapi
 share/vala-${API_V}/vapi/gnome-desktop-2.0.deps
 share/vala-${API_V}/vapi/gnome-desktop-2.0.vapi
-share/vala-${API_V}/vapi/gnome-keyring-1.vapi
 share/vala-${API_V}/vapi/gnome-vfs-2.0.vapi
 share/vala-${API_V}/vapi/gnutls.vapi
 share/vala-${API_V}/vapi/gobject-2.0.vapi
@@ -234,8 +229,6 @@ share/vala-${API_V}/vapi/gtkmozembed.deps
 share/vala-${API_V}/vapi/gtkmozembed.vapi
 share/vala-${API_V}/vapi/gtksourceview-2.0.deps
 share/vala-${API_V}/vapi/gtksourceview-2.0.vapi
-share/vala-${API_V}/vapi/gtksourceview-3.0.deps
-share/vala-${API_V}/vapi/gtksourceview-3.0.vapi
 share/vala-${API_V}/vapi/gudev-1.0.deps
 share/vala-${API_V}/vapi/gudev-1.0.vapi
 share/vala-${API_V}/vapi/hal.deps
@@ -259,8 +252,8 @@ share/vala-${API_V}/vapi/libgda-4.0.deps
 share/vala-${API_V}/vapi/libgda-4.0.vapi
 share/vala-${API_V}/vapi/libgda-report-4.0.deps
 share/vala-${API_V}/vapi/libgda-report-4.0.vapi
-share/vala-${API_V}/vapi/libgdata.deps
-share/vala-${API_V}/vapi/libgdata.vapi
+share/vala-${API_V}/vapi/libgeoclue-2.0.deps
+share/vala-${API_V}/vapi/libgeoclue-2.0.vapi
 share/vala-${API_V}/vapi/libglade-2.0.deps
 share/vala-${API_V}/vapi/libglade-2.0.vapi
 share/vala-${API_V}/vapi/libgnome-2.0.vapi
@@ -291,8 +284,6 @@ share/vala-${API_V}/vapi/libpeas-1.0.vapi
 share/vala-${API_V}/vapi/libpeas-gtk-1.0.deps
 share/vala-${API_V}/vapi/libpeas-gtk-1.0.vapi
 share/vala-${API_V}/vapi/libpq.vapi
-share/vala-${API_V}/vapi/librsvg-2.0.deps
-share/vala-${API_V}/vapi/librsvg-2.0.vapi
 share/vala-${API_V}/vapi/libsexy.deps
 share/vala-${API_V}/vapi/libsexy.vapi
 share/vala-${API_V}/vapi/libsoup-2.2.vapi

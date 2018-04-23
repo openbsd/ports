@@ -1,11 +1,11 @@
-$OpenBSD: no_valadoc-patch-Makefile_in,v 1.1 2017/11/06 09:35:27 ajacoutot Exp $
+$OpenBSD: no_valadoc-patch-Makefile_in,v 1.2 2018/04/23 08:49:06 jasper Exp $
 
 cyclic: lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -396,8 +396,6 @@ SUBDIRS = \
+@@ -397,8 +397,6 @@ SUBDIRS = \
  	doc \
  	gobject-introspection \
  	vapigen \
