@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2017/11/25 22:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2018/04/23 08:41:52 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.54.1
+GNOME_VERSION=		1.56.1
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -39,8 +38,7 @@ TEST_DEPENDS+=		textproc/gsed
 
 YACC=			bison
 
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	rm ${PREFIX}/lib/gobject-introspection/giscanner/*.{a,la}
