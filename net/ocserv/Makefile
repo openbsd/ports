@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2018/03/30 19:51:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2018/04/23 09:01:10 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.11.11
-REVISION=	0
+DISTNAME=	ocserv-0.11.12
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net

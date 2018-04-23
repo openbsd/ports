@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_ocpasswd_ocpasswd_c,v 1.1 2016/03/19 20:03:46 sthen Exp $
+$OpenBSD: patch-src_ocpasswd_ocpasswd_c,v 1.2 2018/04/23 09:01:10 bket Exp $
 
 Generate blowfish crypts, using the simple crypt_newhash API. OpenBSD doesn't
 support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
 
---- src/ocpasswd/ocpasswd.c.orig	Sat Mar 19 14:25:48 2016
-+++ src/ocpasswd/ocpasswd.c	Sat Mar 19 14:25:48 2016
+Index: src/ocpasswd/ocpasswd.c
+--- src/ocpasswd/ocpasswd.c.orig
++++ src/ocpasswd/ocpasswd.c
 @@ -26,6 +26,10 @@
  #ifndef _XOPEN_SOURCE
  # define _XOPEN_SOURCE
@@ -16,7 +17,7 @@ support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
  #include <unistd.h>
  #include <gnutls/gnutls.h>
  #include <gnutls/crypto.h>	/* for random */
-@@ -47,9 +51,8 @@ static void
+@@ -52,9 +56,8 @@ static void
  crypt_int(const char *fpasswd, const char *username, const char *groupname,
  	  const char *passwd)
  {
@@ -28,7 +29,7 @@ support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
  	char *tmp_passwd;
  	unsigned i;
  	unsigned fpasswd_len = strlen(fpasswd);
-@@ -62,36 +65,8 @@ crypt_int(const char *fpasswd, const char *username, c
+@@ -67,36 +70,8 @@ crypt_int(const char *fpasswd, const char *username, c
  	ssize_t len, l;
  	int ret;
  
