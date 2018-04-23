@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.4 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-base_threading_thread_task_runner_handle_cc,v 1.5 2018/04/23 15:00:15 robert Exp $
 Index: base/threading/thread_task_runner_handle.cc
 --- base/threading/thread_task_runner_handle.cc.orig
 +++ base/threading/thread_task_runner_handle.cc
@@ -20,7 +20,7 @@ Index: base/threading/thread_task_runner_handle.cc
      scoped_refptr<SingleThreadTaskRunner> overriding_task_runner,
 @@ -89,6 +91,7 @@ ScopedClosureRunner ThreadTaskRunnerHandle::OverrideFo
        base::Unretained(ttrh->task_runner_.get()),
-       base::Passed(&no_running_during_override)));
+       std::move(no_running_during_override)));
  }
 +#endif
  

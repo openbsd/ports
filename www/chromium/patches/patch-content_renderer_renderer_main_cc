@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.18 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.19 2018/04/23 15:00:16 robert Exp $
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
-@@ -33,6 +33,7 @@
+@@ -35,6 +35,7 @@
  #include "ppapi/features/features.h"
  #include "third_party/WebKit/public/platform/scheduler/renderer/renderer_scheduler.h"
  #include "third_party/skia/include/core/SkGraphics.h"
@@ -10,7 +10,7 @@ Index: content/renderer/renderer_main.cc
  #include "ui/base/ui_base_switches.h"
  
  #if defined(OS_ANDROID)
-@@ -69,6 +70,17 @@
+@@ -71,6 +72,17 @@
  #include "ui/ozone/public/client_native_pixmap_factory_ozone.h"
  #endif
  
@@ -28,7 +28,7 @@ Index: content/renderer/renderer_main.cc
  namespace content {
  namespace {
  // This function provides some ways to test crash and assertion handling
-@@ -189,9 +201,13 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -206,9 +218,13 @@ int RendererMain(const MainFunctionParams& parameters)
    // is OK.
    InitializeWebRtcModule();
  #endif
@@ -43,7 +43,7 @@ Index: content/renderer/renderer_main.cc
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      auto render_process = RenderProcessImpl::Create();
-@@ -201,7 +217,7 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -218,7 +234,7 @@ int RendererMain(const MainFunctionParams& parameters)
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

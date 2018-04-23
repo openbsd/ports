@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.9 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.10 2018/04/23 15:00:16 robert Exp $
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
 +++ sandbox/linux/BUILD.gn
@@ -18,7 +18,7 @@ Index: sandbox/linux/BUILD.gn
  }
  
  if (is_nacl_nonsfi) {
-@@ -393,7 +393,7 @@ component("sandbox_services") {
+@@ -396,7 +396,7 @@ component("sandbox_services") {
      public_deps += [ ":sandbox_services_headers" ]
    }
  
@@ -27,7 +27,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
  
      sources -= [
-@@ -401,6 +401,8 @@ component("sandbox_services") {
+@@ -404,6 +404,8 @@ component("sandbox_services") {
        "services/init_process_reaper.h",
        "services/scoped_process.cc",
        "services/scoped_process.h",
@@ -36,3 +36,14 @@ Index: sandbox/linux/BUILD.gn
        "services/yama.cc",
        "services/yama.h",
        "syscall_broker/broker_channel.cc",
+@@ -420,6 +422,10 @@ component("sandbox_services") {
+       "syscall_broker/broker_permission_list.h",
+       "syscall_broker/broker_process.cc",
+       "syscall_broker/broker_process.h",
++    ]
++    sources += [
++      "services/libc_interceptor.cc",
++      "services/libc_interceptor.h",
+     ]
+   } else if (!is_android) {
+     sources += [

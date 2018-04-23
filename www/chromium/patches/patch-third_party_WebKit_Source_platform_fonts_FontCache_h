@@ -1,23 +1,23 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.11 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_h,v 1.12 2018/04/23 15:00:16 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontCache.h
 --- third_party/WebKit/Source/platform/fonts/FontCache.h.orig
 +++ third_party/WebKit/Source/platform/fonts/FontCache.h
-@@ -162,7 +162,7 @@ class PLATFORM_EXPORT FontCache {
- #else
-   static const AtomicString& LegacySystemFontFamily();
- #endif
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
-   static void SetSystemFontFamily(const AtomicString&);
- #endif
+@@ -213,7 +213,7 @@ class PLATFORM_EXPORT FontCache {
+       const FontDescription&);
+ #endif  // defined(OS_ANDROID)
  
-@@ -281,7 +281,7 @@ class PLATFORM_EXPORT FontCache {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   struct PlatformFallbackFont {
+     String name;
+     CString filename;
+@@ -287,7 +287,7 @@ class PLATFORM_EXPORT FontCache {
                                 const FontFaceCreationParams&,
                                 CString& name);
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,

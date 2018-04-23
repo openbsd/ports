@@ -1,18 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.5 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.6 2018/04/23 15:00:16 robert Exp $
 
 Index: chrome/browser/ui/views/profiles/avatar_button.cc
 --- chrome/browser/ui/views/profiles/avatar_button.cc.orig
 +++ chrome/browser/ui/views/profiles/avatar_button.cc
-@@ -213,7 +213,7 @@ AvatarButton::AvatarButton(views::MenuButtonListener* 
-       label()->font_list().DeriveWithHeightUpperBound(kDisplayFontHeight));
- 
-   bool apply_ink_drop = IsCondensible();
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   DCHECK_EQ(AvatarButtonStyle::THEMED, button_style);
-   apply_ink_drop = true;
- #endif
-@@ -231,7 +231,7 @@ AvatarButton::AvatarButton(views::MenuButtonListener* 
+@@ -233,7 +233,7 @@ AvatarButton::AvatarButton(views::MenuButtonListener* 
    } else if (apply_ink_drop) {
      SetInkDropMode(InkDropMode::ON);
      SetFocusPainter(nullptr);
@@ -21,3 +12,12 @@ Index: chrome/browser/ui/views/profiles/avatar_button.cc
      set_ink_drop_base_color(SK_ColorWHITE);
      SetBorder(std::make_unique<AvatarButtonThemedBorder>());
      generic_avatar_ =
+@@ -510,7 +510,7 @@ bool AvatarButton::IsCondensible() const {
+ #endif
+ }
+ bool AvatarButton::ShouldApplyInkDrop() const {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   DCHECK_EQ(AvatarButtonStyle::THEMED, button_style_);
+   return true;
+ #elif defined(OS_MACOSX)

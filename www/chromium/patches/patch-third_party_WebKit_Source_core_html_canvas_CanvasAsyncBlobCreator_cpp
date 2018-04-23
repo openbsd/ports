@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_html_canvas_CanvasAsyncBlobCreator_cpp,v 1.1 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_core_html_canvas_CanvasAsyncBlobCreator_cpp,v 1.2 2018/04/23 15:00:16 robert Exp $
 
 Index: third_party/WebKit/Source/core/html/canvas/CanvasAsyncBlobCreator.cpp
 --- third_party/WebKit/Source/core/html/canvas/CanvasAsyncBlobCreator.cpp.orig
 +++ third_party/WebKit/Source/core/html/canvas/CanvasAsyncBlobCreator.cpp
-@@ -31,7 +31,7 @@ const double kSlackBeforeDeadline =
+@@ -32,7 +32,7 @@ const double kSlackBeforeDeadline =
      0.001;  // a small slack period between deadline and current time for safety
  
  /* The value is based on user statistics on Nov 2017. */

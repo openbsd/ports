@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_cc,v 1.4 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_cc,v 1.5 2018/04/23 15:00:16 robert Exp $
 
 Index: third_party/webrtc/rtc_base/platform_thread.cc
 --- third_party/webrtc/rtc_base/platform_thread.cc.orig
@@ -7,37 +7,9 @@ Index: third_party/webrtc/rtc_base/platform_thread.cc
  #include "rtc_base/trace_event.h"
  
  #if defined(WEBRTC_LINUX)
-+#if !defined(__OpenBSD__) 
++#if !defined(__OpenBSD__)
  #include <sys/prctl.h>
 +#endif
  #include <sys/syscall.h>
  #endif
- 
-@@ -37,8 +39,10 @@ PlatformThreadId CurrentThreadId() {
-   ret = gettid();
- #elif defined(WEBRTC_FUCHSIA)
-   ret = zx_thread_self();
--#elif defined(WEBRTC_LINUX)
-+#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
-   ret = syscall(__NR_gettid);
-+#elif defined(__OpenBSD__)
-+  ret = reinterpret_cast<uint64_t>(pthread_self());
- #else
-   // Default implementation for nacl and solaris.
-   ret = reinterpret_cast<pid_t>(pthread_self());
-@@ -65,6 +69,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
- }
- 
- void SetCurrentThreadName(const char* name) {
-+#if !defined(__OpenBSD__)
- #if defined(WEBRTC_WIN)
-   struct {
-     DWORD dwType;
-@@ -82,6 +87,7 @@ void SetCurrentThreadName(const char* name) {
-   prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));
- #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
-   pthread_setname_np(name);
-+#endif
- #endif
- }
  

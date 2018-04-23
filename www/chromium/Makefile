@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2018/04/07 18:59:43 robert Exp $
+# $OpenBSD: Makefile,v 1.367 2018/04/23 15:00:15 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,8 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			65.0.3325.181
-REVISION=		0
+V=			66.0.3359.117
 
 DISTNAME=		chromium-${V}
 
@@ -28,8 +27,8 @@ FLAVOR?=
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
-		http://nerd.hu/distfiles/
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/python
 
@@ -40,6 +39,10 @@ MODPY_RUNDEP=	No
 .if ${PROPERTIES:Mclang}    
 PATCH_LIST=	patch-* clang-*                            
 .endif                      
+
+# XXX Missing directory from distfile
+PATCHFILES+=		add-missing-blink-tools.patch:0	
+PATCH_DIST_STRIP=	-p1
 
 PATCHORIG=	.orig.port
 

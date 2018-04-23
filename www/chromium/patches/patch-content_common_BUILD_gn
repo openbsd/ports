@@ -1,16 +1,13 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.13 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_common_BUILD_gn,v 1.14 2018/04/23 15:00:16 robert Exp $
 
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig
 +++ content/common/BUILD.gn
-@@ -431,6 +431,15 @@ source_set("common") {
+@@ -432,6 +432,12 @@ source_set("common") {
      libs += [ "android" ]
    }
  
 +  if (is_openbsd) {
-+    sources -= [
-+      "quarantine/quarantine_linux.cc",
-+    ]
 +    sources += [
 +      "sandbox_init_openbsd.cc"
 +    ]

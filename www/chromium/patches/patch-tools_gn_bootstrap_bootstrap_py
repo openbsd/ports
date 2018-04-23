@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.14 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.15 2018/04/23 15:00:16 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
@@ -13,15 +13,7 @@ Index: tools/gn/bootstrap/bootstrap.py
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -602,7 +603,6 @@ def write_gn_ninja(path, root_gen_dir, options):
-       'base/trace_event/trace_log_constants.cc',
-       'base/trace_event/tracing_agent.cc',
-       'base/unguessable_token.cc',
--      'base/value_iterators.cc',
-       'base/values.cc',
-       'base/vlog.cc',
-   ])
-@@ -659,6 +659,40 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -662,6 +663,39 @@ def write_gn_ninja(path, root_gen_dir, options):
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }
  
@@ -30,7 +22,7 @@ Index: tools/gn/bootstrap/bootstrap.py
 +    include_dirs += ["/usr/local/include"]
 +
 +    static_libraries['xdg_user_dirs'] = {
-+        'sources': [   
++        'sources': [
 +            'base/third_party/xdg_user_dirs/xdg_user_dir_lookup.cc',
 +        ],
 +        'tool': 'cxx',
@@ -50,7 +42,6 @@ Index: tools/gn/bootstrap/bootstrap.py
 +        'base/synchronization/waitable_event_posix.cc',
 +        'base/time/time_exploded_posix.cc',
 +        'base/time/time_now_posix.cc',
-+        'base/value_iterators.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
 +        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'openbsd')
@@ -60,14 +51,15 @@ Index: tools/gn/bootstrap/bootstrap.py
 +    ])
 +
    if is_linux or is_aix:
-     ldflags.extend(['-pthread'])
- 
-@@ -697,17 +731,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+     static_libraries['xdg_user_dirs'] = {
+         'sources': [
+@@ -777,18 +811,6 @@ def write_gn_ninja(path, root_gen_dir, options):
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',
 -      ])
 -    else:
+-      ldflags.extend(['-pthread'])
 -      libs.extend(['-lrt'])
 -      static_libraries['base']['sources'].extend([
 -          'base/process/internal_aix.cc'

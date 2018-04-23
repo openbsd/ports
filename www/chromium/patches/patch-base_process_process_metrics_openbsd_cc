@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.11 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.12 2018/04/23 15:00:15 robert Exp $
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
 +++ base/process/process_metrics_openbsd.cc
@@ -24,7 +24,7 @@ Index: base/process/process_metrics_openbsd.cc
  
  #include "base/macros.h"
  #include "base/memory/ptr_util.h"
-@@ -20,21 +31,33 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -21,21 +32,33 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
    return WrapUnique(new ProcessMetrics(process));
  }
  
@@ -63,7 +63,7 @@ Index: base/process/process_metrics_openbsd.cc
  }
  
  size_t ProcessMetrics::GetPeakPagefileUsage() const {
-@@ -42,20 +65,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+@@ -43,20 +66,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
  }
  
  size_t ProcessMetrics::GetWorkingSetSize() const {
@@ -97,7 +97,7 @@ Index: base/process/process_metrics_openbsd.cc
  }
  
  size_t ProcessMetrics::GetPeakWorkingSetSize() const {
-@@ -95,20 +126,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -96,20 +127,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
  }
  
  static int GetProcessCPU(pid_t pid) {
@@ -129,7 +129,7 @@ Index: base/process/process_metrics_openbsd.cc
  }
  
  double ProcessMetrics::GetPlatformIndependentCPUUsage() {
-@@ -122,7 +160,6 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+@@ -123,7 +161,6 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
    }
  
    int64_t time_delta = (time - last_cpu_time_).InMicroseconds();
@@ -137,7 +137,7 @@ Index: base/process/process_metrics_openbsd.cc
  
    if (time_delta == 0)
      return 0;
-@@ -161,4 +198,67 @@ size_t GetSystemCommitCharge() {
+@@ -162,4 +199,67 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_message_center_views_message_view_factory_cc,v 1.7 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-ui_message_center_views_message_view_factory_cc,v 1.8 2018/04/23 15:00:16 robert Exp $
 Index: ui/message_center/views/message_view_factory.cc
 --- ui/message_center/views/message_view_factory.cc.orig
 +++ ui/message_center/views/message_view_factory.cc
-@@ -56,7 +56,7 @@ MessageView* MessageViewFactory::Create(const Notifica
+@@ -57,7 +57,7 @@ MessageView* MessageViewFactory::Create(const Notifica
        notification_view = new NotificationView(notification);
    }
  

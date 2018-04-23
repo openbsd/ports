@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.30 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.31 2018/04/23 15:00:16 robert Exp $
 
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig
 +++ components/policy/resources/policy_templates.json
-@@ -593,7 +593,7 @@
+@@ -608,7 +608,7 @@
        'name': 'HomepageLocation',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -12,7 +12,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -621,7 +621,7 @@
+@@ -636,7 +636,7 @@
        'name': 'HomepageIsNewTabPage',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -21,7 +21,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -648,7 +648,7 @@
+@@ -663,7 +663,7 @@
        'name': 'NewTabPageLocation',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -30,7 +30,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1339,7 +1339,7 @@
+@@ -1354,7 +1354,7 @@
        'name': 'RemoteAccessHostMatchUsername',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -39,7 +39,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -2567,7 +2567,7 @@
+@@ -2584,7 +2584,7 @@
        'name': 'GSSAPILibraryName',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -48,7 +48,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -2619,7 +2619,7 @@
+@@ -2636,7 +2636,7 @@
        'name': 'NtlmV2Enabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -57,7 +57,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5227,7 +5227,7 @@
+@@ -5355,7 +5355,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -66,7 +66,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -6155,7 +6155,7 @@
+@@ -6371,7 +6371,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -75,7 +75,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -6667,7 +6667,7 @@
+@@ -6886,7 +6886,7 @@
        'name': 'FullscreenAllowed',
        'type': 'main',
        'schema': { 'type': 'boolean' },

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfgas_fontmgr_cpp,v 1.3 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfgas_fontmgr_cpp,v 1.4 2018/04/23 15:00:16 robert Exp $
 
 Index: third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
 --- third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp.orig
 +++ third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
-@@ -257,8 +257,8 @@ namespace {
+@@ -248,8 +248,8 @@ namespace {
  
  constexpr const char* g_FontFolders[] = {
  #if _FX_PLATFORM_ == _FX_PLATFORM_LINUX_

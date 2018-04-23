@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.29 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.30 2018/04/23 15:00:16 robert Exp $
 
 Index: ui/views/controls/textfield/textfield.cc
 --- ui/views/controls/textfield/textfield.cc.orig
 +++ ui/views/controls/textfield/textfield.cc
-@@ -59,7 +59,7 @@
+@@ -61,7 +61,7 @@
  #include "ui/base/win/osk_display_manager.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: ui/views/controls/textfield/textfield.cc
  #include "base/strings/utf_string_conversions.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -158,14 +158,14 @@ ui::TextEditCommand GetCommandForKeyEvent(const ui::Ke
+@@ -160,14 +160,14 @@ ui::TextEditCommand GetCommandForKeyEvent(const ui::Ke
      case ui::VKEY_BACK:
        if (!control)
          return ui::TextEditCommand::DELETE_BACKWARD;
@@ -29,7 +29,7 @@ Index: ui/views/controls/textfield/textfield.cc
        // Only erase by line break on Linux and ChromeOS.
        if (shift && control)
          return ui::TextEditCommand::DELETE_TO_END_OF_LINE;
-@@ -221,7 +221,7 @@ bool IsControlKeyModifier(int flags) {
+@@ -223,7 +223,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -38,7 +38,7 @@ Index: ui/views/controls/textfield/textfield.cc
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -630,7 +630,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -639,7 +639,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
      ShowImeIfNeeded();
    }
  
@@ -47,7 +47,7 @@ Index: ui/views/controls/textfield/textfield.cc
    if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocus();
  #endif
-@@ -674,7 +674,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -683,7 +683,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -56,7 +56,7 @@ Index: ui/views/controls/textfield/textfield.cc
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -821,7 +821,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -830,7 +830,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -65,7 +65,7 @@ Index: ui/views/controls/textfield/textfield.cc
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1942,7 +1942,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -1981,7 +1981,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.6 2016/10/26 06:22:08 robert Exp $
---- chrome/browser/download/download_shelf_context_menu.cc.orig.port	Wed Oct 12 21:02:54 2016
-+++ chrome/browser/download/download_shelf_context_menu.cc	Wed Oct 19 12:55:58 2016
-@@ -127,7 +127,7 @@ base::string16 DownloadShelfContextMenu::GetLabelForCo
+$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.7 2018/04/23 15:00:16 robert Exp $
+Index: chrome/browser/download/download_shelf_context_menu.cc
+--- chrome/browser/download/download_shelf_context_menu.cc.orig
++++ chrome/browser/download/download_shelf_context_menu.cc
+@@ -131,7 +131,7 @@ base::string16 DownloadShelfContextMenu::GetLabelForCo
                     : IDS_DOWNLOAD_MENU_PLATFORM_OPEN_ALWAYS;
            break;
          }

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.39 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.40 2018/04/23 15:00:16 robert Exp $
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -955,7 +955,7 @@ const char kForceSessionSync[] = "settings.history_rec
+@@ -956,7 +956,7 @@ const char kForceSessionSync[] = "settings.history_rec
  // only using an account that belongs to one of the domains from this pref.
  const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
@@ -11,7 +11,7 @@ Index: chrome/common/pref_names.cc
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1043,7 +1043,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1044,7 +1044,7 @@ const char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -20,7 +20,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1406,7 +1406,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1394,7 +1394,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  

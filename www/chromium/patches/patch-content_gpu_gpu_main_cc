@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.26 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.27 2018/04/23 15:00:16 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -76,7 +76,7 @@
+@@ -77,7 +77,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
  #endif
  
@@ -12,7 +12,7 @@ Index: content/gpu/gpu_main.cc
  #include "content/common/font_config_ipc_linux.h"
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/common_sandbox_support_linux.h"
-@@ -85,6 +85,10 @@
+@@ -86,6 +86,10 @@
  #include "third_party/skia/include/ports/SkFontConfigInterface.h"
  #endif
  
@@ -22,8 +22,8 @@ Index: content/gpu/gpu_main.cc
 +
  #if defined(OS_MACOSX)
  #include "base/message_loop/message_pump_mac.h"
- #include "services/service_manager/sandbox/mac/sandbox_mac.h"
-@@ -102,7 +106,7 @@ namespace content {
+ #include "sandbox/mac/seatbelt.h"
+@@ -112,7 +116,7 @@ namespace content {
  
  namespace {
  
@@ -32,7 +32,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -163,7 +167,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -173,7 +177,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -41,7 +41,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -323,7 +327,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -341,7 +345,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
    if (command_line.HasSwitch(switches::kEnableOOPRasterization)) {
      SkGraphics::Init();
@@ -50,7 +50,7 @@ Index: content/gpu/gpu_main.cc
      // Set up the font IPC so that the GPU process can create typefaces.
      SkFontConfigInterface::SetGlobal(new FontConfigIPC(GetSandboxFD()))
          ->unref();
-@@ -342,12 +346,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -360,12 +364,13 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -65,7 +65,7 @@ Index: content/gpu/gpu_main.cc
    if (watchdog_thread) {
      // SandboxLinux needs to be able to ensure that the thread
      // has really been stopped.
-@@ -363,7 +368,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -381,7 +386,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
        !gpu_prefs.disable_accelerated_video_decode;
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
@@ -75,7 +75,7 @@ Index: content/gpu/gpu_main.cc
    bool res = service_manager::SandboxLinux::GetInstance()->InitializeSandbox(
        service_manager::SandboxTypeFromCommandLine(
            *base::CommandLine::ForCurrentProcess()),
-@@ -374,6 +381,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -392,6 +399,9 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
      thread_options.timer_slack = base::TIMER_SLACK_MAXIMUM;
      watchdog_thread->StartWithOptions(thread_options);
    }

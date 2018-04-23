@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.9 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.10 2018/04/23 15:00:16 robert Exp $
 
 Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
 @@ -58,7 +58,7 @@
- #include "chrome/browser/chromeos/extensions/input_method_api.h"
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
+ #include "chrome/browser/extensions/api/screenlock_private/screenlock_private_api.h"
 -#elif defined(OS_LINUX) || defined(OS_WIN)
 +#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"

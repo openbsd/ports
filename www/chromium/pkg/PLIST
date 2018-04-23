@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.76 2018/03/12 13:48:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.77 2018/04/23 15:00:16 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -120,9 +120,6 @@ chrome/locales/zh-CN.pak.info
 chrome/locales/zh-TW.pak
 chrome/locales/zh-TW.pak.info
 chrome/mksnapshot
-chrome/mus_app_resources_100.pak
-chrome/mus_app_resources_200.pak
-chrome/mus_app_resources_strings.pak
 chrome/natives_blob.bin
 chrome/product_logo_48.png
 chrome/protoc
@@ -212,6 +209,10 @@ chrome/resources/inspector/audits2_worker.js
 chrome/resources/inspector/audits2_worker/audits2_worker_module.js
 chrome/resources/inspector/bindings_test_runner/
 chrome/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
+chrome/resources/inspector/browser_console/
+chrome/resources/inspector/browser_console/browser_console_module.js
+chrome/resources/inspector/browser_debugger/
+chrome/resources/inspector/browser_debugger/browser_debugger_module.js
 chrome/resources/inspector/changes/
 chrome/resources/inspector/changes/changes_module.js
 chrome/resources/inspector/cm/
@@ -240,6 +241,8 @@ chrome/resources/inspector/device_mode_test_runner/
 chrome/resources/inspector/device_mode_test_runner/device_mode_test_runner_module.js
 chrome/resources/inspector/devices/
 chrome/resources/inspector/devices/devices_module.js
+chrome/resources/inspector/devtools_app.html
+chrome/resources/inspector/devtools_app.js
 chrome/resources/inspector/devtools_compatibility.js
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/diff/
@@ -302,24 +305,32 @@ chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 chrome/resources/inspector/heap_snapshot_worker/
 chrome/resources/inspector/heap_snapshot_worker.js
 chrome/resources/inspector/heap_snapshot_worker/heap_snapshot_worker_module.js
+chrome/resources/inspector/help/
+chrome/resources/inspector/help/help_module.js
 chrome/resources/inspector/inline_editor/
 chrome/resources/inspector/inline_editor/inline_editor_module.js
 chrome/resources/inspector/inspector.html
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/integration_test_runner.html
 chrome/resources/inspector/integration_test_runner.js
+chrome/resources/inspector/js_app.html
+chrome/resources/inspector/js_app.js
+chrome/resources/inspector/js_profiler/
+chrome/resources/inspector/js_profiler/js_profiler_module.js
 chrome/resources/inspector/layer_viewer/
 chrome/resources/inspector/layer_viewer/layer_viewer_module.js
 chrome/resources/inspector/layers/
 chrome/resources/inspector/layers/layers_module.js
 chrome/resources/inspector/layers_test_runner/
 chrome/resources/inspector/layers_test_runner/layers_test_runner_module.js
+chrome/resources/inspector/ndb_app.html
+chrome/resources/inspector/ndb_app.js
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/network_module.js
-chrome/resources/inspector/network_priorities/
-chrome/resources/inspector/network_priorities/network_priorities_module.js
 chrome/resources/inspector/network_test_runner/
 chrome/resources/inspector/network_test_runner/network_test_runner_module.js
+chrome/resources/inspector/node_app.html
+chrome/resources/inspector/node_app.js
 chrome/resources/inspector/object_ui/
 chrome/resources/inspector/object_ui/object_ui_module.js
 chrome/resources/inspector/perf_ui/
@@ -338,12 +349,15 @@ chrome/resources/inspector/screencast/
 chrome/resources/inspector/screencast/screencast_module.js
 chrome/resources/inspector/sdk_test_runner/
 chrome/resources/inspector/sdk_test_runner/sdk_test_runner_module.js
+chrome/resources/inspector/search/
+chrome/resources/inspector/search/search_module.js
 chrome/resources/inspector/security/
 chrome/resources/inspector/security/security_module.js
 chrome/resources/inspector/security_test_runner/
 chrome/resources/inspector/security_test_runner/security_test_runner_module.js
 chrome/resources/inspector/settings/
 chrome/resources/inspector/settings/settings_module.js
+chrome/resources/inspector/shell.js
 chrome/resources/inspector/snippets/
 chrome/resources/inspector/snippets/snippets_module.js
 chrome/resources/inspector/source_frame/
@@ -362,16 +376,16 @@ chrome/resources/inspector/timeline_model/
 chrome/resources/inspector/timeline_model/timeline_model_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
+chrome/resources/inspector/worker_app.html
+chrome/resources/inspector/worker_app.js
 chrome/resources/inspector/workspace_diff/
 chrome/resources/inspector/workspace_diff/workspace_diff_module.js
 chrome/snapshot_blob.bin
 chrome/swiftshader/
 chrome/swiftshader/libEGL.so
 chrome/swiftshader/libGLESv2.so
-chrome/ui.service
 chrome/v8_context_snapshot.bin
 chrome/views_mus_resources.pak
-chrome/viz.service
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

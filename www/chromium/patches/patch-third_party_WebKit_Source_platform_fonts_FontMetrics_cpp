@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontMetrics_cpp,v 1.1 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontMetrics_cpp,v 1.2 2018/04/23 15:00:16 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
 --- third_party/WebKit/Source/platform/fonts/FontMetrics.cpp.orig
@@ -7,8 +7,8 @@ Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
  
  namespace blink {
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
  // This is the largest VDMX table which we'll try to load and parse.
  static const size_t kMaxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
@@ -16,8 +16,8 @@ Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
    int vdmx_ascent = 0, vdmx_descent = 0;
    bool is_vdmx_valid = false;
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
@@ -25,8 +25,8 @@ Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
        visual_overflow_inflation_for_ascent = 1;
      if (descent < metrics.fDescent) {
        visual_overflow_inflation_for_descent = 1;
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
        // When subpixel positioning is enabled, if the descent is rounded down,
        // the descent part of the glyph may be truncated when displayed in a
        // 'overflow: hidden' container.  To avoid that, borrow 1 unit from the

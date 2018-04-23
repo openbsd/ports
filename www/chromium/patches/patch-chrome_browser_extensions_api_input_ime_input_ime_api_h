@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_extensions_api_input_ime_input_ime_api_h,v 1.3 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_input_ime_input_ime_api_h,v 1.4 2018/04/23 15:00:16 robert Exp $
 Index: chrome/browser/extensions/api/input_ime/input_ime_api.h
 --- chrome/browser/extensions/api/input_ime/input_ime_api.h.orig
 +++ chrome/browser/extensions/api/input_ime/input_ime_api.h
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  
  #if defined(OS_CHROMEOS)
  #include "chrome/browser/extensions/api/input_ime/input_ime_api_chromeos.h"

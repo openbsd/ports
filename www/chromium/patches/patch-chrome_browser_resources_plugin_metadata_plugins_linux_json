@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.21 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.22 2018/04/23 15:00:16 robert Exp $
 
 Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 --- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig
@@ -17,9 +17,9 @@ Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 -    ],
 -    "versions": [
 -      {
--        "version": "28.0.0.161",
+-        "version": "29.0.0.140",
 -        "status": "up_to_date",
--        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb18-03.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb18-08.html"
 -      }
 -    ],
 -    "lang": "en-US",

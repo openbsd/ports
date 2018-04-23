@@ -1,0 +1,25 @@
+$OpenBSD: patch-chrome_browser_media_router_providers_wired_display_wired_display_media_route_provider_cc,v 1.1 2018/04/23 15:00:16 robert Exp $
+
+Index: chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
+--- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig
++++ chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
+@@ -111,6 +111,11 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
+     bool incognito,
+     CreateRouteCallback callback) {
+   DCHECK(!base::ContainsKey(presentations_, presentation_id));
++#if defined(OS_BSD) // XXX
++  std::move(callback).Run(base::nullopt, std::string("Not implemented"),
++                          RouteRequestResult::UNKNOWN_ERROR);
++  return;
++#else
+   base::Optional<Display> display = GetDisplayBySinkId(sink_id);
+   if (!display) {
+     std::move(callback).Run(base::nullopt, std::string("Display not found"),
+@@ -135,6 +140,7 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
+   presentation.receiver()->Start(presentation_id, GURL(media_source));
+   std::move(callback).Run(route, base::nullopt, RouteRequestResult::OK);
+   NotifyRouteObservers();
++#endif
+ }
+ 
+ void WiredDisplayMediaRouteProvider::JoinRoute(

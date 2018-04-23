@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.45 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.46 2018/04/23 15:00:16 robert Exp $
 
 Index: content/app/content_main_runner.cc
 --- content/app/content_main_runner.cc.orig
 +++ content/app/content_main_runner.cc
-@@ -81,10 +81,10 @@
+@@ -82,10 +82,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -14,18 +14,18 @@ Index: content/app/content_main_runner.cc
 -#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  #include "content/zygote/zygote_main.h"
+ #include "sandbox/linux/services/libc_interceptor.h"
  #endif
- 
-@@ -428,7 +428,7 @@ int RunNamedProcessTypeMain(
-   }
- 
- #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && \
--    !defined(OS_FUCHSIA)
-+    !defined(OS_FUCHSIA) && !defined(OS_BSD)
-   // Zygote startup is special -- see RunZygote comments above
-   // for why we don't use ZygoteMain directly.
-   if (process_type == switches::kZygoteProcess)
-@@ -502,7 +502,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -115,7 +115,7 @@
+ namespace content {
+ extern int GpuMain(const content::MainFunctionParams&);
+ #if BUILDFLAG(ENABLE_PLUGINS)
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ extern int PluginMain(const content::MainFunctionParams&);
+ #endif
+ extern int PpapiPluginMain(const MainFunctionParams&);
+@@ -492,7 +492,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
          kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

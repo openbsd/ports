@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_gn_run_binary_py,v 1.3 2018/02/02 05:56:40 robert Exp $
+$OpenBSD: patch-build_gn_run_binary_py,v 1.4 2018/04/23 15:00:15 robert Exp $
 
 Index: build/gn_run_binary.py
 --- build/gn_run_binary.py.orig
@@ -10,5 +10,5 @@ Index: build/gn_run_binary.py
 -ret = subprocess.call(args)
 +ret = subprocess.call(args, env={"CHROME_EXE_PATH":"${WRKSRC}/out/Release/chrome"})
  if ret != 0:
-   print '%s failed with exit code %d' % (sys.argv[1], ret)
- sys.exit(ret)
+   if ret <= -100:
+     # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier to

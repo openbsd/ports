@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.29 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.30 2018/04/23 15:00:16 robert Exp $
 Index: chrome/app/chromium_strings.grd
 --- chrome/app/chromium_strings.grd.orig
 +++ chrome/app/chromium_strings.grd
-@@ -838,7 +838,7 @@ Signing in anyway will merge Chromium information like
+@@ -872,7 +872,7 @@ Signing in anyway will merge Chromium information like
        </message>
  
        <!-- ProcessSingleton -->

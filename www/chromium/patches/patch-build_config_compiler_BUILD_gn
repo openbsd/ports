@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.16 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.17 2018/04/23 15:00:15 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -48,7 +48,7 @@ declare_args() {
+@@ -51,7 +51,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -314,7 +314,7 @@ config("compiler") {
+@@ -293,7 +293,7 @@ config("compiler") {
        }
      }
  
@@ -21,7 +21,7 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -360,13 +360,12 @@ config("compiler") {
+@@ -339,13 +339,12 @@ config("compiler") {
      cflags += [ "-pipe" ]
  
      ldflags += [
@@ -36,7 +36,7 @@ Index: build/config/compiler/BUILD.gn
        # Functions interposed by the sanitizers can make ld think
        # that some libraries aren't needed when they actually are,
        # http://crbug.com/234010. As workaround, disable --as-needed.
-@@ -469,7 +468,7 @@ config("compiler") {
+@@ -436,7 +435,7 @@ config("compiler") {
    # TODO(hans): Remove this once Clang generates better optimized debug info by
    # default. https://crbug.com/765793
    if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
@@ -45,35 +45,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        "-Xclang",
        "-mllvm",
-@@ -1317,27 +1316,8 @@ config("default_warnings") {
-         # TODO(hans): https://crbug.com/637306
-         "-Wno-address-of-packed-member",
- 
--        # TODO(hans): https://crbug.com/681136
--        "-Wno-unused-lambda-capture",
--
-         # TODO(thakis ): https://crbug.com/683349
-         "-Wno-user-defined-warnings",
--
--        # TODO(thakis): https://crbug.com/753973
--        "-Wno-enum-compare-switch",
--
--        # TODO(hans): https://crbug.com/763392
--        "-Wno-tautological-unsigned-zero-compare",
--
--        # TODO(hans): https://crbug.com/766891
--        "-Wno-null-pointer-arithmetic",
--
--        # TODO(hans): https://crbug.com/767059
--        # Disable -Wtautological-constant-compare (and implicitly also
--        # -Wtautological-unsigned-enum-zero-compare), but re-enable
--        # useful sub-diagnostics in that group.
--        "-Wno-tautological-constant-compare",
--        "-Wtautological-constant-out-of-range-compare",
-       ]
-     } else if (use_xcode_clang) {
-       cflags += [
-@@ -1952,7 +1932,7 @@ config("symbols") {
+@@ -2007,7 +2006,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
@@ -82,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
      }
      if (use_debug_fission && !is_nacl) {
        cflags += [ "-gsplit-dwarf" ]
-@@ -2052,7 +2032,7 @@ config("default_fatal_linker_warnings") {
+@@ -2109,7 +2108,7 @@ config("default_fatal_linker_warnings") {
    if (!is_win && fatal_linker_warnings &&
        !(is_chromeos && current_cpu == "arm") &&
        !(is_android && use_order_profiling) && !is_mac && !is_ios &&
