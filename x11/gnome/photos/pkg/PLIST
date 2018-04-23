@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/11/01 22:18:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/04/23 20:49:03 ajacoutot Exp $
 @bin bin/gnome-photos
 @bin libexec/gnome-photos-thumbnailer
-share/appdata/
-share/appdata/org.gnome.Photos.appdata.xml
 share/applications/org.gnome.Photos.desktop
 share/dbus-1/services/org.gnome.Photos.service
 share/doc/gnome-photos/
@@ -275,6 +273,7 @@ share/locale/vi/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-photos.mo
+share/metainfo/org.gnome.Photos.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
