@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.168 2018/02/13 19:55:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.169 2018/04/23 13:18:33 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.26.6
+GNOME_VERSION=	3.28.1.1
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -16,7 +16,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c cairo gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmp gnome-desktop-3 gobject-2.0 gtk-3 hogweed
+WANTLIB += glib-2.0 gmp gobject-2.0 gtk-3 hogweed
 WANTLIB += icuuc intl javascriptcoregtk-4.0 json-glib-1.0 m nettle
 WANTLIB += notify pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
 WANTLIB += xml2 $(LIBECXX)
@@ -29,7 +29,6 @@ RUN_DEPENDS=	devel/iso-codes \
 
 LIB_DEPENDS=	devel/libnotify \
 		www/webkitgtk4 \
-		x11/gnome/desktop \
 		x11/gnome/gcr
 
 # webkit browsing

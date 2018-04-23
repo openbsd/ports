@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/02/13 19:55:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/04/23 13:18:33 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -10,7 +10,6 @@ libexec/epiphany/
 @bin libexec/epiphany-search-provider
 @bin libexec/epiphany/ephy-profile-migrator
 @man man/man1/epiphany.1
-share/appdata/org.gnome.Epiphany.appdata.xml
 share/applications/org.gnome.Epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.SearchProvider.service
 share/epiphany/
@@ -200,6 +199,36 @@ share/help/fr/epiphany/pref-passwords.page
 share/help/fr/epiphany/pref.page
 share/help/fr/epiphany/prob-restore-closed-page.page
 share/help/fr/epiphany/proxy.page
+share/help/gl/epiphany/
+share/help/gl/epiphany/browse-local.page
+share/help/gl/epiphany/browse-private.page
+share/help/gl/epiphany/browse-tab.page
+share/help/gl/epiphany/browse-web.page
+share/help/gl/epiphany/browse-webapps-del.page
+share/help/gl/epiphany/browse-webapps.page
+share/help/gl/epiphany/cert.page
+share/help/gl/epiphany/cookies.xml
+share/help/gl/epiphany/data-cookies.page
+share/help/gl/epiphany/data-passwords.page
+share/help/gl/epiphany/history-delete.page
+share/help/gl/epiphany/history.page
+share/help/gl/epiphany/index.page
+share/help/gl/epiphany/introduction.page
+share/help/gl/epiphany/keyboard-shortcut.page
+share/help/gl/epiphany/legal.xml
+share/help/gl/epiphany/media/
+share/help/gl/epiphany/media/epiphany-3-12.png
+share/help/gl/epiphany/media/private-browsing-3-12.png
+share/help/gl/epiphany/media/web-browser.png
+share/help/gl/epiphany/pref-cookies.page
+share/help/gl/epiphany/pref-css.page
+share/help/gl/epiphany/pref-do-not-track.page
+share/help/gl/epiphany/pref-downloads.page
+share/help/gl/epiphany/pref-font.page
+share/help/gl/epiphany/pref-passwords.page
+share/help/gl/epiphany/pref.page
+share/help/gl/epiphany/prob-restore-closed-page.page
+share/help/gl/epiphany/proxy.page
 share/help/hu/epiphany/
 share/help/hu/epiphany/browse-local.page
 share/help/hu/epiphany/browse-private.page
@@ -491,6 +520,7 @@ share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
+share/metainfo/org.gnome.Epiphany.appdata.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
