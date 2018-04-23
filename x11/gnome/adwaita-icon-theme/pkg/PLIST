@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/28 08:11:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/04/23 08:25:29 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -1155,7 +1155,6 @@ share/icons/Adwaita/24x24/status/weather-snow.png
 share/icons/Adwaita/24x24/status/weather-storm.png
 share/icons/Adwaita/256x256/
 share/icons/Adwaita/256x256/actions/
-share/icons/Adwaita/256x256/actions/address-book-new.png
 share/icons/Adwaita/256x256/actions/appointment-new.png
 share/icons/Adwaita/256x256/actions/document-open-recent.png
 share/icons/Adwaita/256x256/actions/document-print-preview.png
@@ -1181,7 +1180,6 @@ share/icons/Adwaita/256x256/actions/system-search.png
 share/icons/Adwaita/256x256/actions/system-shutdown.png
 share/icons/Adwaita/256x256/actions/view-refresh.png
 share/icons/Adwaita/256x256/apps/
-share/icons/Adwaita/256x256/apps/accessories-calculator.png
 share/icons/Adwaita/256x256/apps/accessories-dictionary.png
 share/icons/Adwaita/256x256/apps/applets-screenshooter.png
 share/icons/Adwaita/256x256/apps/help-browser.png
@@ -2107,9 +2105,11 @@ share/icons/Adwaita/512x512/actions/document-save-as.png
 share/icons/Adwaita/512x512/actions/document-save.png
 share/icons/Adwaita/512x512/actions/edit-select-all.png
 share/icons/Adwaita/512x512/actions/folder-new.png
+share/icons/Adwaita/512x512/actions/mark-location.png
 share/icons/Adwaita/512x512/apps/
 share/icons/Adwaita/512x512/apps/accessories-calculator.png
 share/icons/Adwaita/512x512/apps/accessories-character-map.png
+share/icons/Adwaita/512x512/apps/accessories-dictionary.png
 share/icons/Adwaita/512x512/apps/accessories-text-editor.png
 share/icons/Adwaita/512x512/apps/utilities-system-monitor.png
 share/icons/Adwaita/512x512/apps/utilities-terminal.png
@@ -2311,6 +2311,7 @@ share/icons/Adwaita/scalable/actions/appointment-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/bookmark-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/call-start-symbolic.svg
 share/icons/Adwaita/scalable/actions/call-stop-symbolic.svg
+share/icons/Adwaita/scalable/actions/camera-switch-symbolic.svg
 share/icons/Adwaita/scalable/actions/color-select-symbolic.svg
 share/icons/Adwaita/scalable/actions/contact-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-edit-symbolic.svg
@@ -2509,6 +2510,11 @@ share/icons/Adwaita/scalable/devices/audio-headphones-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-headset-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-input-microphone-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-speakers-symbolic.svg
+share/icons/Adwaita/scalable/devices/audio-volume-high-symbolic.svg
+share/icons/Adwaita/scalable/devices/audio-volume-low-symbolic.svg
+share/icons/Adwaita/scalable/devices/audio-volume-medium-symbolic.svg
+share/icons/Adwaita/scalable/devices/audio-volume-muted-symbolic.svg
+share/icons/Adwaita/scalable/devices/audio-volume-overamplified-symbolic.svg
 share/icons/Adwaita/scalable/devices/battery-symbolic.svg
 share/icons/Adwaita/scalable/devices/camera-photo-symbolic.svg
 share/icons/Adwaita/scalable/devices/camera-video-symbolic.svg
@@ -2639,10 +2645,6 @@ share/icons/Adwaita/scalable/status/airplane-mode-symbolic.svg
 share/icons/Adwaita/scalable/status/alarm-symbolic.svg
 share/icons/Adwaita/scalable/status/appointment-missed-symbolic.svg
 share/icons/Adwaita/scalable/status/appointment-soon-symbolic.svg
-share/icons/Adwaita/scalable/status/audio-volume-high-symbolic.svg
-share/icons/Adwaita/scalable/status/audio-volume-low-symbolic.svg
-share/icons/Adwaita/scalable/status/audio-volume-medium-symbolic.svg
-share/icons/Adwaita/scalable/status/audio-volume-muted-symbolic.svg
 share/icons/Adwaita/scalable/status/avatar-default-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-caution-charging-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-caution-symbolic.svg
@@ -2719,6 +2721,7 @@ share/icons/Adwaita/scalable/status/network-receive-symbolic.svg
 share/icons/Adwaita/scalable/status/network-transmit-receive-symbolic.svg
 share/icons/Adwaita/scalable/status/network-transmit-symbolic.svg
 share/icons/Adwaita/scalable/status/network-vpn-acquiring-symbolic.svg
+share/icons/Adwaita/scalable/status/network-vpn-no-route-symbolic.svg
 share/icons/Adwaita/scalable/status/network-vpn-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wired-acquiring-symbolic.svg
 share/icons/Adwaita/scalable/status/network-wired-disconnected-symbolic.svg
