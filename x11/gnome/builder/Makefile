@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/04/23 13:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/04/23 13:37:43 ajacoutot Exp $
 
 BROKEN=			needs an update
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += atk-1.0 c cairo dazzle-1.0 devhelp-3 enchant fontconfig
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2-glib-1.0
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-3.0
-WANTLIB += intl jsonrpc_glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += intl jsonrpc-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 template_glib-1.0 vala-0.40 vte-2.91
 WANTLIB += webkit2gtk-4.0 xml2
 
