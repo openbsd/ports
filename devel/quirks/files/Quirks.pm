@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.594 2018/04/20 20:43:30 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.595 2018/04/23 08:22:13 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -501,6 +501,8 @@ my $stem_extensions = {
 	'newsbeuter' => 'newsboat',
 	'php-fastcgi' => 'php-cgi',
 	'advancemess' => 'advancemame',
+# 6.4
+	'gnome-tweak-tool' => 'gnome-tweaks',
 };
 
 my $obsolete_reason = {
