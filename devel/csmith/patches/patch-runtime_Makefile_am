@@ -1,7 +1,8 @@
-$OpenBSD: patch-runtime_Makefile_am,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
---- runtime/Makefile.am.orig	Thu Jan 22 00:36:24 2015
-+++ runtime/Makefile.am	Thu Jan 22 00:36:54 2015
-@@ -35,7 +35,7 @@ libcsmith_a_SOURCES = \
+$OpenBSD: patch-runtime_Makefile_am,v 1.2 2018/04/23 19:58:48 bcallah Exp $
+Index: runtime/Makefile.am
+--- runtime/Makefile.am.orig
++++ runtime/Makefile.am
+@@ -37,7 +37,7 @@ libcsmith_a_SOURCES = \
  
  # XXX --- This does not work; the library is still installed to $(libdir).
  # libcsmith_a_libdir = \
@@ -10,7 +11,7 @@ $OpenBSD: patch-runtime_Makefile_am,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
  
  # Build a shared library, too, in case someone wants this.
  lib_LTLIBRARIES = libcsmith.la
-@@ -57,7 +57,7 @@ libcsmith_la_CPPFLAGS = \
+@@ -49,7 +49,7 @@ libcsmith_la_CPPFLAGS = \
  	$(libcsmith_a_CPPFLAGS)
  
  libcsmith_a_includedir = \

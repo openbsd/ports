@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/23 19:58:48 bcallah Exp $
 
 COMMENT=	fuzzer for C compilers
 
-DISTNAME=	csmith-2.2.0
-REVISION =	2
+DISTNAME=	csmith-2.3.0
 
 CATEGORIES=	devel
 
@@ -16,8 +15,8 @@ SHARED_LIBS +=  csmith                    0.0 # 0.0
 
 WANTLIB+=	c m ${COMPILER_LIBCXX}
 
-HOMEPAGE=	http://embed.cs.utah.edu/csmith/
-MASTER_SITES=	http://embed.cs.utah.edu/csmith/
+HOMEPAGE=	https://embed.cs.utah.edu/csmith/
+MASTER_SITES=	https://embed.cs.utah.edu/csmith/
 
 CONFIGURE_STYLE=gnu
 
