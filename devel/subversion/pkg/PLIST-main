@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/11/01 10:16:53 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/04/23 20:06:01 stsp Exp $
 @newgroup _svnserve:777
 @newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
 @pkgpath devel/subversion,no_bindings
@@ -9,12 +9,15 @@
 @comment @bin bin/diff3
 @comment @bin bin/diff4
 @bin bin/fsfs-access-map
+bin/fsfs-stats
 @bin bin/svn
+@bin bin/svn-mergeinfo-normalizer
 @bin bin/svn-populate-node-origins-index
 @bin bin/svnadmin
 @bin bin/svnauthz
 @bin bin/svnauthz-validate
 @bin bin/svnbench
+@bin bin/svnconflict
 @bin bin/svndumpfilter
 @bin bin/svnfsfs
 @bin bin/svnlook
@@ -147,7 +150,6 @@ share/examples/subversion/check-modified.py
 share/examples/subversion/client-side/
 share/examples/subversion/client-side/bash_completion
 share/examples/subversion/client-side/change-svn-wc-format.py
-share/examples/subversion/client-side/detach.py
 share/examples/subversion/client-side/emacs/
 share/examples/subversion/client-side/mergeinfo-sanitizer.py
 share/examples/subversion/client-side/server-version.py

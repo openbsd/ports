@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.165 2018/04/23 20:06:01 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,9 +7,9 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.9.7
-DISTNAME=		subversion-${VERSION}
-PKGNAME-main=		${DISTNAME}
+VERSION=		1.10.0
+DISTNAME=		subversion-${VERSION:S/rc/-rc/}
+PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
@@ -21,18 +21,11 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-REVISION-main=	4
-REVISION-perl=	1
-REVISION-python=0
-REVISION-ruby=	0
-REVISION-ap2=	1
-REVISION-gnome-keyring=	1
-
 MODRUBY_REV ?=	2.4
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
 MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
 
-SO_VERSION=	2.0
+SO_VERSION=	3.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
@@ -68,17 +61,15 @@ FLAVOR += no_perl no_python no_ruby
 
 MODULES=	lang/python
 
-WANTLIB=	expat iconv intl m pthread z
+WANTLIB=	expat iconv intl lz4 m pthread z
 
-# autogen.sh checks for libtoolize
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		devel/gettext-tools \
-		devel/libtool
+BUILD_DEPENDS=	devel/gettext-tools
 
 MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
+		archivers/lz4 \
 		net/serf>=1.3.2 \
 		databases/sqlite3 \
 		devel/apr \
@@ -97,7 +88,7 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 # There's also 'mailer', but we handle it separately, see post-install
 
 TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
-	detach.py mergeinfo-sanitizer.py server-version.py svn-graph.pl \
+	mergeinfo-sanitizer.py server-version.py svn-graph.pl \
 	svn-ssl-fingerprints.sh svn-vendor.py svn-viewspec.py wcfind
 
 WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3 svn_fs_x-1
@@ -137,21 +128,21 @@ WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
 .endfor
 
 WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
-		dbus-1>=7 glib-2.0 gnome-keyring>=6 pcre>=2 sqlite3 \
+		gio-2.0 glib-2.0 secret-1 pcre>=2 sqlite3 \
 		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0
 LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
-		x11/gnome/libgnome-keyring
+		x11/gnome/libsecret
 
 RUN_DEPENDS-gnome-keyring=
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
-AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
 CONFIGURE_ARGS+=--with-sasl=${LOCALBASE} \
 		--without-jikes \
 		--without-jdk \
-		--without-libmagic
+		--without-libmagic \
+		--with-utf8proc=internal
 
 # Maintainer mode shows files and line numbers for every error raised
 # by Subversion. It is useful for debugging problems with Subversion
@@ -198,10 +189,8 @@ pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/configure.ac \
+	@${SUBST_CMD} ${WRKSRC}/Makefile.in \
 		${WRKSRC}/subversion/libsvn_subr/auth.c
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 	mv ${WRKSRC}/subversion/bindings/swig/ruby/libsvn_swig_ruby{,${MODRUBY_BINREV}}
 	sed -i 's/libsvn_swig_ruby/libsvn_swig_ruby${MODRUBY_BINREV}/g' \
 		`fgrep -lr libsvn_swig_ruby ${WRKSRC}`
