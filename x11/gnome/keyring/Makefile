@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.127 2017/11/10 13:12:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2018/04/23 10:53:39 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.27.2
+GNOME_VERSION=		3.28.0.2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
@@ -22,7 +22,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		docbook
 
-LIB_DEPENDS=		x11/gnome/gcr
+LIB_DEPENDS=		x11/gnome/gcr>=3.28.0
 
 # GnuPG2 gnome-keyring agent
 RUN_DEPENDS +=		security/pinentry,-gnome3,
@@ -31,11 +31,6 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=641082
-# (does not support ed25519 keys)
-# see x11/gnome/gdm/patches/patch-data_Xsession_in
-CONFIGURE_ARGS +=	--disable-ssh-agent
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
