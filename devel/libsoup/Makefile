@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.111 2018/01/09 12:12:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2018/04/23 10:55:05 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.60.3
+GNOME_VERSION =		2.62.1
 
-SHARED_LIBS +=  soup-2.4             10.0     # 9.0
+SHARED_LIBS +=  soup-2.4             10.1     # 9.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 9.0
 
 API_VERSION =		2.4
@@ -25,9 +25,9 @@ WANTLIB += intl lzma m pcre pthread sqlite3 xml2 z
 MODULES =		lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection vala
-MODPY_ADJ_FILES =	libsoup/tld-parser.py
+MODGNOME_TOOLS =	gobject-introspection vala
 MODPY_RUNDEP =		No
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		net/glib2-networking
 RUN_DEPENDS =		net/glib2-networking
@@ -36,8 +36,7 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/glib2 \
 			textproc/libxml
 
-AUTOCONF_VERSION =	2.69
-CONFIGURE_STYLE =	autoconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ntlm-auth=${LOCALBASE}/bin/ntlm_auth
 
 PSEUDO_FLAVORS =	tests
