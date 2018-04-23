@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/11/04 16:44:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/04/23 19:54:44 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -62,6 +62,8 @@ include/mutter/clutter${API_SUFFIX}/clutter/clutter-group.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-image.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-input-device-tool.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-input-device.h
+include/mutter/clutter${API_SUFFIX}/clutter/clutter-input-focus.h
+include/mutter/clutter${API_SUFFIX}/clutter/clutter-input-method.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-interval.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-keyframe-transition.h
 include/mutter/clutter${API_SUFFIX}/clutter/clutter-keysyms.h
@@ -276,7 +278,7 @@ include/mutter/meta/window.h
 include/mutter/meta/workspace.h
 lib/libmutter${API_SUFFIX}.a
 lib/libmutter${API_SUFFIX}.la
-@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter-1_VERSION}
+@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter-2_VERSION}
 lib/mutter/
 lib/mutter/Cally${API_SUFFIX}.gir
 lib/mutter/Cally${API_SUFFIX}.typelib
