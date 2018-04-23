@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/11 18:31:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/23 19:47:41 sthen Exp $
 
 COMMENT =	multi-platform library for asynchronous I/O
 
+REVISION =	0
 VER =		1.19.1
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
@@ -17,10 +18,6 @@ MASTER_SITES =	http://dist.libuv.org/dist/v${VER}/
 PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB += pthread
-
-# for atomic builtins
-MODULES =	gcc4
-MODGCC4_ARCHS =	arm
 
 BUILD_DEPENDS =	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
