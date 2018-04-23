@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 11:32:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/23 13:37:13 ajacoutot Exp $
 include/jsonrpc-glib-1.0/
 include/jsonrpc-glib-1.0/jsonrpc-client.h
 include/jsonrpc-glib-1.0/jsonrpc-glib.h
@@ -7,12 +7,11 @@ include/jsonrpc-glib-1.0/jsonrpc-input-stream.h
 include/jsonrpc-glib-1.0/jsonrpc-message.h
 include/jsonrpc-glib-1.0/jsonrpc-output-stream.h
 include/jsonrpc-glib-1.0/jsonrpc-server.h
+include/jsonrpc-glib-1.0/jsonrpc-version-macros.h
 include/jsonrpc-glib-1.0/jsonrpc-version.h
-lib/girepository-1.0/
 lib/girepository-1.0/Jsonrpc-1.0.typelib
-@lib lib/libjsonrpc_glib-1.0.so.${LIBjsonrpc_glib-1.0_VERSION}
+@lib lib/libjsonrpc-glib-1.0.so.${LIBjsonrpc-glib-1.0_VERSION}
 lib/pkgconfig/jsonrpc-glib-1.0.pc
-share/gir-1.0/
 share/gir-1.0/Jsonrpc-1.0.gir
 share/vala/
 share/vala/vapi/
