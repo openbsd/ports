@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2017/11/01 21:18:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/04/23 13:54:58 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -87,6 +87,9 @@ include/evolution-data-server/camel/camel-sasl-login.h
 include/evolution-data-server/camel/camel-sasl-ntlm.h
 include/evolution-data-server/camel/camel-sasl-plain.h
 include/evolution-data-server/camel/camel-sasl-popb4smtp.h
+include/evolution-data-server/camel/camel-sasl-xoauth2-google.h
+include/evolution-data-server/camel/camel-sasl-xoauth2-outlook.h
+include/evolution-data-server/camel/camel-sasl-xoauth2.h
 include/evolution-data-server/camel/camel-sasl.h
 include/evolution-data-server/camel/camel-search-private.h
 include/evolution-data-server/camel/camel-search-sql-sexp.h
@@ -233,6 +236,7 @@ include/evolution-data-server/libedataserver/e-extensible.h
 include/evolution-data-server/libedataserver/e-extension.h
 include/evolution-data-server/libedataserver/e-flag.h
 include/evolution-data-server/libedataserver/e-free-form-exp.h
+include/evolution-data-server/libedataserver/e-gdata-oauth2-authorizer.h
 include/evolution-data-server/libedataserver/e-gdbus-templates.h
 include/evolution-data-server/libedataserver/e-iterator.h
 include/evolution-data-server/libedataserver/e-list-iterator.h
@@ -240,6 +244,11 @@ include/evolution-data-server/libedataserver/e-list.h
 include/evolution-data-server/libedataserver/e-memory.h
 include/evolution-data-server/libedataserver/e-module.h
 include/evolution-data-server/libedataserver/e-network-monitor.h
+include/evolution-data-server/libedataserver/e-oauth2-service-base.h
+include/evolution-data-server/libedataserver/e-oauth2-service-google.h
+include/evolution-data-server/libedataserver/e-oauth2-service-outlook.h
+include/evolution-data-server/libedataserver/e-oauth2-service.h
+include/evolution-data-server/libedataserver/e-oauth2-services.h
 include/evolution-data-server/libedataserver/e-operation-pool.h
 include/evolution-data-server/libedataserver/e-proxy.h
 include/evolution-data-server/libedataserver/e-secret-store.h
@@ -257,7 +266,7 @@ include/evolution-data-server/libedataserver/e-source-calendar.h
 include/evolution-data-server/libedataserver/e-source-camel.h
 include/evolution-data-server/libedataserver/e-source-collection.h
 include/evolution-data-server/libedataserver/e-source-contacts.h
-include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-google.h
+include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-oauth2.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-password.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider.h
@@ -303,7 +312,7 @@ include/evolution-data-server/libedataserver/eds-version.h
 include/evolution-data-server/libedataserver/libedataserver.h
 include/evolution-data-server/libedataserverui/
 include/evolution-data-server/libedataserverui/e-cell-renderer-color.h
-include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-google.h
+include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-oauth2.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-password.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter.h
@@ -343,6 +352,7 @@ lib/evolution-data-server/registry-modules/
 lib/evolution-data-server/registry-modules/module-cache-reaper.so
 lib/evolution-data-server/registry-modules/module-gnome-online-accounts.so
 lib/evolution-data-server/registry-modules/module-google-backend.so
+lib/evolution-data-server/registry-modules/module-oauth2-services.so
 lib/evolution-data-server/registry-modules/module-outlook-backend.so
 lib/evolution-data-server/registry-modules/module-secret-monitor.so
 lib/evolution-data-server/registry-modules/module-trust-prompt.so
