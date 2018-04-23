@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.596 2018/04/23 14:57:08 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.597 2018/04/23 21:56:27 bcallah Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -504,6 +504,7 @@ my $stem_extensions = {
 # 6.4
 	'gnome-tweak-tool' => 'gnome-tweaks',
 	'latexila' => 'gnome-latex',
+	'osh' => 'etsh',
 };
 
 my $obsolete_reason = {
