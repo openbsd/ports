@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.858 2018/04/18 02:11:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.859 2018/04/23 22:02:22 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -75,6 +75,7 @@
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
+     SUBDIR += libsass
      SUBDIR += libwebsockets
      SUBDIR += liferea
      SUBDIR += lightsquid
@@ -519,6 +520,7 @@
      SUBDIR += sarg
      SUBDIR += sarg,ldap
      SUBDIR += sass
+     SUBDIR += sassc
      SUBDIR += sblg
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
