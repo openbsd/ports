@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2017/11/01 17:31:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2018/04/23 08:20:32 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-main=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -85,7 +87,7 @@ RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/system-monitor \
 			x11/gnome/todo \
 			x11/gnome/tracker-miners \
-			x11/gnome/tweak-tool \
+			x11/gnome/tweaks \
 			x11/gnome/weather
 
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
