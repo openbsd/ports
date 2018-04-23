@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/04/23 14:07:03 ajacoutot Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
 V =			1.7.3
 DISTNAME =		corebird-${V}
 MASTER_SITES =		https://github.com/baedert/corebird/releases/download/${V}/
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net
@@ -17,16 +17,16 @@ MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 enchant epoxy expat ffi
-WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gspell-1 gstbase-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv intl
-WANTLIB += json-glib-1.0 lzma m orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += soup-2.4 sqlite3 ${COMPILER_LIBCXX} xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant-2 epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gspell-1 gstbase-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB += gtk-3 harfbuzz iconv intl json-glib-1.0 lzma m orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread soup-2.4 sqlite3 xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES =		devel/dconf \
 			x11/gnome
