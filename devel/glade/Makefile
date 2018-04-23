@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2018/03/04 08:36:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2018/04/23 16:56:26 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.20.4
 GNOME_PROJECT= 	glade
+GNOME_VERSION=	3.22.1
 
 CATEGORIES=	devel
 
@@ -18,20 +18,20 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += util xcb xcb-render xcb-shm xml2 z iconv intl
+WANTLIB += util xcb xcb-render xcb-shm xml2 z iconv intl fribidi
 
 MODULES=	lang/python \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/py-gobject3
 
-LIB_DEPENDS=	x11/gtk+3>=3.5.18 \
+LIB_DEPENDS=	x11/gtk+3 \
 		devel/libffi
 
 RUN_DEPENDS=	x11/gnome/devhelp \
