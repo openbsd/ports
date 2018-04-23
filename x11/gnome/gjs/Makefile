@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2018/02/04 09:08:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2018/04/23 08:51:42 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.50.4
+GNOME_VERSION=		1.52.2
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xext Xrender c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m ncurses ncursesw
+WANTLIB += gobject-2.0 gthread-2.0 m curses
 WANTLIB += nspr4 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += readline xcb xcb-render xcb-shm z Xrandr epoxy
 WANTLIB += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
@@ -43,6 +43,8 @@ LIB_DEPENDS=		devel/gobject-introspection \
 TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ARGS +=	--disable-profiler
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
