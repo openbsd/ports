@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.32 2018/02/27 15:17:39 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.33 2018/04/23 11:00:08 sthen Exp $
 
 Some substitutions are done in the ports Makefile to reduce patch conflicts
 during updates.
@@ -48,7 +48,7 @@ Index: includes/defaults.inc.php
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -857,7 +858,7 @@ $config['api_demo'] = 0;
+@@ -858,7 +859,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

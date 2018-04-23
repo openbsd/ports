@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_functions_php,v 1.17 2018/02/27 15:17:39 sthen Exp $
+$OpenBSD: patch-includes_functions_php,v 1.18 2018/04/23 11:00:08 sthen Exp $
 
 Index: includes/functions.php
 --- includes/functions.php.orig
@@ -18,6 +18,6 @@ Index: includes/functions.php
      if (!str_contains($binary, '/')) {
 -        $output = `whereis -b $binary`;
 +        $output = `whereis $binary`;
-         $target = trim(substr($output, strpos($output, ':') + 1));
+         $list = trim(substr($output, strpos($output, ':') + 1));
+         $targets = explode(' ', $list);
  
-         if (file_exists($target)) {

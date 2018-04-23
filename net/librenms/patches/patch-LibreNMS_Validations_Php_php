@@ -1,9 +1,9 @@
-$OpenBSD: patch-LibreNMS_Validations_Php_php,v 1.2 2018/01/05 14:51:42 sthen Exp $
+$OpenBSD: patch-LibreNMS_Validations_Php_php,v 1.3 2018/04/23 11:00:08 sthen Exp $
 
 Index: LibreNMS/Validations/Php.php
 --- LibreNMS/Validations/Php.php.orig
 +++ LibreNMS/Validations/Php.php
-@@ -89,7 +89,7 @@ class Php implements ValidationGroup
+@@ -88,7 +88,7 @@ class Php extends BaseValidation
          foreach ($required_modules as $extension) {
              if (!extension_loaded($extension)) {
                  $validator->fail("Missing PHP extension: $extension", "Please install $extension");
@@ -12,7 +12,7 @@ Index: LibreNMS/Validations/Php.php
                  $validator->fail("Missing CLI PHP extension: $extension", "Please install $extension");
              }
          }
-@@ -136,7 +136,7 @@ class Php implements ValidationGroup
+@@ -135,7 +135,7 @@ class Php extends BaseValidation
          $ini_tz = ini_get('date.timezone');
          $sh_tz = rtrim(shell_exec('date +%Z'));
          $php_tz = date('T');

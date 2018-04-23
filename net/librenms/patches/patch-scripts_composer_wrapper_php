@@ -1,25 +1,25 @@
-$OpenBSD: patch-scripts_composer_wrapper_php,v 1.1 2018/02/12 23:27:18 sthen Exp $
+$OpenBSD: patch-scripts_composer_wrapper_php,v 1.2 2018/04/23 11:00:08 sthen Exp $
 
 Index: scripts/composer_wrapper.php
 --- scripts/composer_wrapper.php.orig
 +++ scripts/composer_wrapper.php
-@@ -40,7 +40,7 @@ $path_exec = shell_exec("which composer 2> /dev/null")
- if (!empty($path_exec)) {
-     $exec = trim($path_exec);
- } elseif (is_file($install_dir . '/composer.phar')) {
+@@ -55,7 +55,7 @@ if (php_sapi_name() == 'cli' && isset($_SERVER['TERM']
+ }
+ 
+ if (is_file($install_dir . '/composer.phar')) {
 -    $exec = 'php ' . $install_dir . '/composer.phar';
 +    $exec = '%PHP% ' . $install_dir . '/composer.phar';
- } else {
-     if ($proxy) {
-         $stream_default_opts = array(
-@@ -60,8 +60,8 @@ if (!empty($path_exec)) {
-     @copy('http://getcomposer.org/installer', 'composer-setup.php');
-     if (!empty($good_sha) && @hash_file('SHA384', 'composer-setup.php') === $good_sha) {
-         // Installer verified
--        shell_exec('php composer-setup.php');
--        $exec = 'php ' . $install_dir . '/composer.phar';
-+        shell_exec('%PHP% composer-setup.php');
-+        $exec = '%PHP% ' . $install_dir . '/composer.phar';
-     } else {
-         echo "Corrupted download.\n";
-     }
+ 
+     // self-update
+     passthru("$exec self-update -q" . $extra_args);
+@@ -87,8 +87,8 @@ if (is_file($install_dir . '/composer.phar')) {
+             echo "Error: Failed to download $installer_url\n";
+         } elseif (@hash_file('SHA384', $dest) === $good_sha) {
+             // Installer verified
+-            shell_exec("php $dest");
+-            $exec = "php $install_dir/composer.phar";
++            shell_exec("%PHP% $dest");
++            $exec = "%PHP% $install_dir/composer.phar";
+         } else {
+             echo "Error: Corrupted download, signature doesn't match for $installer_url\n";
+         }

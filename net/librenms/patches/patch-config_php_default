@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_php_default,v 1.8 2017/05/30 21:05:44 sthen Exp $
+$OpenBSD: patch-config_php_default,v 1.9 2018/04/23 11:00:08 sthen Exp $
 
 Index: config.php.default
 --- config.php.default.orig
@@ -22,7 +22,7 @@ Index: config.php.default
 +#$config['rrdcached']    = "unix:/var/run/rrd/rrdcached.sock";
  
  ### Default community
- $config['snmp']['community'] = array("public");
+ $config['snmp']['community'] = array('public');
 @@ -32,8 +33,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
  #$config['nets'][] = "172.16.0.0/12";
  #$config['nets'][] = "192.168.0.0/16";

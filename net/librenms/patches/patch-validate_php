@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.16 2018/02/27 15:17:39 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.17 2018/04/23 11:00:08 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -9,7 +9,7 @@ it's safer if they are owned by root; adjust the ownership check so that
 Index: validate.php
 --- validate.php.orig
 +++ validate.php
-@@ -72,7 +72,7 @@ if (!file_exists('config.php')) {
+@@ -76,7 +76,7 @@ if (!file_exists('config.php')) {
  }
  
  $pre_checks_failed = false;
@@ -18,15 +18,9 @@ Index: validate.php
  if (!str_contains($syntax_check, 'No syntax errors detected')) {
      print_fail('Syntax error in config.php');
      echo $syntax_check;
-@@ -95,12 +95,12 @@ if (!file_exists('vendor/autoload.php')) {
-     $pre_checks_failed = true;
- }
+@@ -103,7 +103,7 @@ if (!file_exists('vendor/autoload.php')) {
+ require_once 'vendor/autoload.php';
  
--if (!str_contains(shell_exec('php scripts/composer_wrapper.php --version'), 'Composer version')) {
-+if (!str_contains(shell_exec('%PHP% scripts/composer_wrapper.php --version'), 'Composer version')) {
-     print_fail("No composer available, please install composer", "https://getcomposer.org/");
-     $pre_checks_failed = true;
- }
  
 -$dep_check = shell_exec('php scripts/composer_wrapper.php install --no-dev --dry-run');
 +$dep_check = shell_exec('%PHP% scripts/composer_wrapper.php install --no-dev --dry-run');
