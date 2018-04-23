@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/05/05 14:02:51 sthen Exp $
-@bin bin/mujstest
+@comment $OpenBSD: PLIST,v 1.20 2018/04/23 11:55:54 sthen Exp $
 bin/mupdf
 @bin bin/mupdf-gl
 @bin bin/mupdf-x11
 @bin bin/mupdf-x11-curl
-@bin bin/muraster
 @bin bin/mutool
 include/mupdf/
 include/mupdf/fitz/
@@ -15,7 +13,9 @@ include/mupdf/fitz/band-writer.h
 include/mupdf/fitz/bidi.h
 include/mupdf/fitz/bitmap.h
 include/mupdf/fitz/buffer.h
+include/mupdf/fitz/color-management.h
 include/mupdf/fitz/colorspace.h
+include/mupdf/fitz/compress.h
 include/mupdf/fitz/compressed-buffer.h
 include/mupdf/fitz/config.h
 include/mupdf/fitz/context.h
@@ -25,7 +25,6 @@ include/mupdf/fitz/display-list.h
 include/mupdf/fitz/document.h
 include/mupdf/fitz/filter.h
 include/mupdf/fitz/font.h
-include/mupdf/fitz/function.h
 include/mupdf/fitz/geometry.h
 include/mupdf/fitz/getopt.h
 include/mupdf/fitz/glyph-cache.h
@@ -35,9 +34,11 @@ include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
 include/mupdf/fitz/outline.h
 include/mupdf/fitz/output-pcl.h
+include/mupdf/fitz/output-pclm.h
 include/mupdf/fitz/output-png.h
 include/mupdf/fitz/output-pnm.h
 include/mupdf/fitz/output-ps.h
+include/mupdf/fitz/output-psd.h
 include/mupdf/fitz/output-pwg.h
 include/mupdf/fitz/output-svg.h
 include/mupdf/fitz/output-tga.h
@@ -56,12 +57,10 @@ include/mupdf/fitz/text.h
 include/mupdf/fitz/track-usage.h
 include/mupdf/fitz/transition.h
 include/mupdf/fitz/tree.h
-include/mupdf/fitz/ucdn.h
 include/mupdf/fitz/util.h
 include/mupdf/fitz/version.h
 include/mupdf/fitz/writer.h
 include/mupdf/fitz/xml.h
-include/mupdf/html.h
 include/mupdf/memento.h
 include/mupdf/pdf/
 include/mupdf/pdf-tools.h
@@ -85,7 +84,7 @@ include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
-include/mupdf/svg.h
+include/mupdf/ucdn.h
 @lib lib/libmupdf.so.${LIBmupdf_VERSION}
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
@@ -94,12 +93,38 @@ share/doc/mupdf/
 share/doc/mupdf/CHANGES
 share/doc/mupdf/COPYING
 share/doc/mupdf/README
-share/doc/mupdf/naming.txt
-share/doc/mupdf/overview.txt
-share/doc/mupdf/progressive.txt
-share/doc/mupdf/refcount.txt
-share/doc/mupdf/thirdparty.txt
-share/doc/mupdf/types.txt
+share/doc/mupdf/android-sdk.html
+share/doc/mupdf/artifex-logo.png
+share/doc/mupdf/building.html
+share/doc/mupdf/coding-overview.html
+share/doc/mupdf/coding-progressive.html
+share/doc/mupdf/coding-style.html
+share/doc/mupdf/examples/
+share/doc/mupdf/examples/create-thumbnail.js
+share/doc/mupdf/examples/draw-device.js
+share/doc/mupdf/examples/draw-document.js
+share/doc/mupdf/examples/example.c
+share/doc/mupdf/examples/jpx-to-pdf.js
+share/doc/mupdf/examples/multi-threaded.c
+share/doc/mupdf/examples/pdf-create-lowlevel.js
+share/doc/mupdf/examples/pdf-create.js
+share/doc/mupdf/examples/pdf-merge.js
+share/doc/mupdf/examples/trace-device.js
+share/doc/mupdf/index.html
+share/doc/mupdf/manual-mupdf-gl.html
+share/doc/mupdf/manual-mutool-clean.html
+share/doc/mupdf/manual-mutool-convert.html
+share/doc/mupdf/manual-mutool-create.html
+share/doc/mupdf/manual-mutool-draw.html
+share/doc/mupdf/manual-mutool-extract.html
+share/doc/mupdf/manual-mutool-merge.html
+share/doc/mupdf/manual-mutool-portfolio.html
+share/doc/mupdf/manual-mutool-run.html
+share/doc/mupdf/manual-mutool-show.html
+share/doc/mupdf/manual-mutool-trace.html
+share/doc/mupdf/style.css
+share/doc/mupdf/template.html
+share/doc/mupdf/thirdparty.html
 share/pixmaps/
 share/pixmaps/mupdf.xpm
 @exec %D/bin/update-desktop-database

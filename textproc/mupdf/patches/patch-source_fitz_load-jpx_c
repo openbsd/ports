@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_fitz_load-jpx_c,v 1.5 2017/10/10 12:33:49 sthen Exp $
+$OpenBSD: patch-source_fitz_load-jpx_c,v 1.6 2018/04/23 11:55:54 sthen Exp $
 
 If OPJ_STATIC is defined, load-jpx.c linkage with libopenjp2.so is broken
 ("relocation R_X86_64_PC32 against symbol ... can not be used when making a
@@ -7,15 +7,7 @@ shared object")
 Index: source/fitz/load-jpx.c
 --- source/fitz/load-jpx.c.orig
 +++ source/fitz/load-jpx.c
-@@ -444,7 +444,6 @@ fz_load_jpx_info(fz_context *ctx, unsigned char *data,
- 
- #else /* HAVE_LURATECH */
- 
--#define OPJ_STATIC
- #define OPJ_HAVE_INTTYPES_H
- #if !defined(_WIN32) && !defined(_WIN64)
- #define OPJ_HAVE_STDINT_H
-@@ -554,6 +553,9 @@ void opj_free(void *ptr)
+@@ -548,6 +548,9 @@ void opj_free(void *ptr)
  
  void * opj_aligned_malloc(size_t size)
  {
@@ -25,7 +17,7 @@ Index: source/fitz/load-jpx.c
  	uint8_t *ptr;
  	int off;
  
-@@ -567,10 +569,14 @@ void * opj_aligned_malloc(size_t size)
+@@ -561,10 +564,14 @@ void * opj_aligned_malloc(size_t size)
  	off = 16-(((int)(intptr_t)ptr) & 15);
  	ptr[off-1] = off;
  	return ptr + off;
@@ -40,7 +32,7 @@ Index: source/fitz/load-jpx.c
  	uint8_t *ptr = (uint8_t *)ptr_;
  	uint8_t off;
  	if (ptr == NULL)
-@@ -578,6 +584,7 @@ void opj_aligned_free(void* ptr_)
+@@ -572,6 +579,7 @@ void opj_aligned_free(void* ptr_)
  
  	off = ptr[-1];
  	opj_free((void *)(((unsigned char *)ptr) - off));

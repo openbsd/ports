@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_x11_main_c,v 1.3 2017/05/05 14:02:51 sthen Exp $
+$OpenBSD: patch-platform_x11_x11_main_c,v 1.4 2018/04/23 11:55:54 sthen Exp $
 
 add pledge(2) to mupdf-x11 and mupdf-x11-curl:
   - inet dns : with HAVE_CURL only
@@ -7,7 +7,15 @@ add pledge(2) to mupdf-x11 and mupdf-x11-curl:
 Index: platform/x11/x11_main.c
 --- platform/x11/x11_main.c.orig
 +++ platform/x11/x11_main.c
-@@ -706,7 +706,6 @@ void onselreq(Window requestor, Atom selection, Atom t
+@@ -7,6 +7,7 @@
+ #include <X11/keysym.h>
+ #include <X11/XF86keysym.h>
+ 
++#include <errno.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+@@ -735,7 +736,6 @@ void onselreq(Window requestor, Atom selection, Atom t
  void winreloadpage(pdfapp_t *app)
  {
  	XEvent xev;
@@ -15,7 +23,7 @@ Index: platform/x11/x11_main.c
  
  	xev.xclient.type = ClientMessage;
  	xev.xclient.serial = 0;
-@@ -717,8 +716,7 @@ void winreloadpage(pdfapp_t *app)
+@@ -746,8 +746,7 @@ void winreloadpage(pdfapp_t *app)
  	xev.xclient.data.l[0] = 0;
  	xev.xclient.data.l[1] = 0;
  	xev.xclient.data.l[2] = 0;
@@ -25,7 +33,7 @@ Index: platform/x11/x11_main.c
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -898,6 +896,20 @@ int main(int argc, char **argv)
+@@ -927,6 +926,20 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_gl_gl-main_c,v 1.4 2017/05/05 14:02:51 sthen Exp $
+$OpenBSD: patch-platform_gl_gl-main_c,v 1.5 2018/04/23 11:55:54 sthen Exp $
 
 add pledge(2) to mupdf-gl:
   - drm : opengl stuff
@@ -7,16 +7,24 @@ add pledge(2) to mupdf-gl:
 Index: platform/gl/gl-main.c
 --- platform/gl/gl-main.c.orig
 +++ platform/gl/gl-main.c
-@@ -1486,6 +1486,12 @@ int main(int argc, char **argv)
+@@ -2,6 +2,7 @@
  
- 	glfwMakeContextCurrent(window);
+ #include "mupdf/pdf.h" /* for pdf specifics and forms */
  
++#include <errno.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+@@ -1648,6 +1649,12 @@ int main(int argc, char **argv)
+ 		title = filename;
+ 
+ 	/* Init MuPDF */
++
 +	if (pledge("stdio rpath drm proc exec", NULL) == -1)
 +	{
 +		fprintf(stderr, "pledge: %s\n", strerror(errno));
 +		exit(1);
 +	}
-+
+ 
  	ctx = fz_new_context(NULL, NULL, 0);
  	fz_register_document_handlers(ctx);
- 

@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makerules,v 1.17 2017/05/05 14:02:51 sthen Exp $
+$OpenBSD: patch-Makerules,v 1.18 2018/04/23 11:55:54 sthen Exp $
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
-@@ -26,8 +26,8 @@ ifeq "$(build)" "debug"
+@@ -28,8 +28,8 @@ ifeq "$(build)" "debug"
  CFLAGS += -pipe -g
  LDFLAGS += -g
  else ifeq "$(build)" "release"
@@ -13,8 +13,8 @@ Index: Makerules
  else ifeq "$(build)" "small"
  CFLAGS += -pipe -Os -DNDEBUG -fomit-frame-pointer
  LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
-@@ -110,7 +110,7 @@ LD := xcrun ld
- RANLIB_CMD := xcrun ranlib $@
+@@ -87,7 +87,7 @@ LD = xcrun ld
+ RANLIB_CMD = xcrun ranlib $@
  
  # Linux uses pkg-config for system libraries.
 -else ifeq "$(OS)" "Linux"
@@ -22,7 +22,7 @@ Index: Makerules
  
  HAVE_PTHREAD := yes
  SYS_PTHREAD_CFLAGS :=
-@@ -132,7 +132,7 @@ SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl
+@@ -113,7 +113,7 @@ SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl
  SYS_CURL_DEPS += $(shell pkg-config --libs openssl)
  endif
  endif

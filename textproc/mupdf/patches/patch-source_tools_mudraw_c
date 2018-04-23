@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_mudraw_c,v 1.4 2017/05/05 14:02:51 sthen Exp $
+$OpenBSD: patch-source_tools_mudraw_c,v 1.5 2018/04/23 11:55:54 sthen Exp $
 
 add pledge(2) to "mutool draw":
   - wpath cpath : only if output is specified
@@ -6,10 +6,20 @@ add pledge(2) to "mutool draw":
 Index: source/tools/mudraw.c
 --- source/tools/mudraw.c.orig
 +++ source/tools/mudraw.c
-@@ -1385,6 +1385,23 @@ int mudraw_main(int argc, char **argv)
+@@ -12,6 +12,8 @@
+ #include "mupdf/helpers/mu-threads.h"
+ #endif
+ 
++#include <errno.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+@@ -1555,6 +1557,23 @@ int mudraw_main(int argc, char **argv)
+ 
  	if (fz_optind == argc)
  		usage();
- 
++
 +	if (output && output[0] != '-' && *output != 0)
 +	{
 +		if (pledge("stdio rpath wpath cpath", NULL) == -1)
@@ -26,7 +36,6 @@ Index: source/tools/mudraw.c
 +			exit(1);
 +		}
 +	}
-+
+ 
  	if (num_workers > 0)
  	{
- 		if (uselist == 0)
