@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/30 14:23:35 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/23 13:26:10 ajacoutot Exp $
 
 COMMENT=		templating library for GLib
 
 GNOME_PROJECT=		template-glib
-GNOME_VERSION=		3.26.1
+GNOME_VERSION=		3.28.0
 
-SHARED_LIBS +=  template_glib-1.0         0.0 # 0.0
+SHARED_LIBS += template_glib-1.0         1.0 # 0.2800.0
 
 CATEGORIES=		devel
 
