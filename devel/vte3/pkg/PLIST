@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/04/10 18:57:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/04/23 12:48:47 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -29,6 +29,7 @@ share/gtk-doc/html/vte-${API_V}/api-index-0-44.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-46.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-48.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-50.html
+share/gtk-doc/html/vte-${API_V}/api-index-0-52.html
 share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
 share/gtk-doc/html/vte-${API_V}/api-index-full.html
 share/gtk-doc/html/vte-${API_V}/ch01.html
@@ -50,7 +51,6 @@ share/gtk-doc/html/vte-${API_V}/up.png
 share/gtk-doc/html/vte-${API_V}/vte-${API_V}.devhelp2
 share/gtk-doc/html/vte-${API_V}/vte-Version-Information.html
 share/gtk-doc/html/vte-${API_V}/vte-Vte-PTY.html
-share/locale/af/LC_MESSAGES/vte-${API_V}.mo
 share/locale/am/LC_MESSAGES/vte-${API_V}.mo
 share/locale/an/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ang/LC_MESSAGES/vte-${API_V}.mo
