@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/11/01 16:33:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/04/23 15:58:00 jasper Exp $
 bin/gnome-characters
 lib/org.gnome.Characters/
 lib/org.gnome.Characters/girepository-1.0/
@@ -6,8 +6,6 @@ lib/org.gnome.Characters/girepository-1.0/Gc-1.0.typelib
 lib/org.gnome.Characters/libgc.a
 lib/org.gnome.Characters/libgc.la
 lib/org.gnome.Characters/libgc.so
-share/appdata/
-share/appdata/org.gnome.Characters.appdata.xml
 share/applications/org.gnome.Characters.desktop
 share/dbus-1/services/org.gnome.Characters.BackgroundService.service
 share/dbus-1/services/org.gnome.Characters.service
@@ -21,6 +19,7 @@ share/icons/hicolor/256x256/apps/gnome-characters.png
 share/icons/hicolor/32x32/apps/gnome-characters.png
 share/icons/hicolor/48x48/apps/gnome-characters.png
 share/icons/hicolor/symbolic/apps/gnome-characters-symbolic.svg
+share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Characters.mo
@@ -75,6 +74,8 @@ share/locale/tr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Characters.mo
+share/metainfo/
+share/metainfo/org.gnome.Characters.appdata.xml
 share/org.gnome.Characters/
 share/org.gnome.Characters/gir-1.0/
 share/org.gnome.Characters/gir-1.0/Gc-1.0.gir
