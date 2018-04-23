@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.595 2018/04/23 08:22:13 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.596 2018/04/23 14:57:08 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -503,6 +503,7 @@ my $stem_extensions = {
 	'advancemess' => 'advancemame',
 # 6.4
 	'gnome-tweak-tool' => 'gnome-tweaks',
+	'latexila' => 'gnome-latex',
 };
 
 my $obsolete_reason = {
