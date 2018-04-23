@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.167 2018/03/08 16:04:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.168 2018/04/23 09:39:46 jasper Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating major version, sync editors/vim-spell
-V=		8.0.1589
+V=		8.0.1748
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -135,7 +135,7 @@ CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--with-x
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
 .else
