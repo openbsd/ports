@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2018/04/23 15:37:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.174 2018/04/23 17:04:51 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -65,6 +65,7 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-settings-daemon
-	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/gnome-settings-daemon/
+	mv ${WRKINST}${SYSCONFDIR}/xdg \
+		${PREFIX}/share/examples/gnome-settings-daemon/
 
 .include <bsd.port.mk>
