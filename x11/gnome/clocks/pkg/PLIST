@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/11/01 22:37:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/04/23 20:12:09 ajacoutot Exp $
 @bin bin/gnome-clocks
-share/appdata/
-share/appdata/org.gnome.clocks.appdata.xml
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
 share/glib-2.0/schemas/org.gnome.clocks.gschema.xml
@@ -344,6 +342,7 @@ share/locale/vi/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-clocks.mo
+share/metainfo/org.gnome.clocks.appdata.xml
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
