@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/03/12 07:44:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/23 22:45:40 ajacoutot Exp $
 bin/meson
 bin/mesonconf
 bin/mesonintrospect
@@ -107,6 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}gnom
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}modtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}python3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}qt4.${MODPY_PYC_MAGIC_TAG}pyc
@@ -119,6 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/gnome.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/i18n.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/modtest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/pkgconfig.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/python.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/python3.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/qt4.py

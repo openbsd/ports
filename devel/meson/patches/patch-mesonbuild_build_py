@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.6 2018/03/12 07:44:14 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.7 2018/04/23 22:45:40 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -11,8 +11,8 @@ Index: mesonbuild/build.py
 +from .mesonlib import File, MesonException, listify, extract_as_list, is_openbsd
  from .mesonlib import typeslistify, stringlistify, classify_unity_sources
  from .mesonlib import get_filenames_templates_dict, substitute_values
- from .mesonlib import for_windows, for_darwin, for_cygwin, for_android
-@@ -1452,6 +1452,21 @@ class SharedLibrary(BuildTarget):
+ from .mesonlib import for_windows, for_darwin, for_cygwin, for_android, has_path_sep
+@@ -1497,6 +1497,21 @@ class SharedLibrary(BuildTarget):
                  # We replicate what Autotools does here and take the first
                  # number of the version by default.
                  self.soversion = self.ltversion.split('.')[0]
@@ -34,7 +34,7 @@ Index: mesonbuild/build.py
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
              path = kwargs['vs_module_defs']
-@@ -1519,6 +1534,8 @@ class SharedLibrary(BuildTarget):
+@@ -1561,6 +1576,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library

@@ -1,9 +1,9 @@
-$OpenBSD: patch-mesonbuild_mesonlib_py,v 1.5 2018/03/29 21:12:36 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_mesonlib_py,v 1.6 2018/04/23 22:45:40 ajacoutot Exp $
 
 Index: mesonbuild/mesonlib.py
 --- mesonbuild/mesonlib.py.orig
 +++ mesonbuild/mesonlib.py
-@@ -293,6 +293,9 @@ def is_android():
+@@ -308,6 +308,9 @@ def is_android():
  def is_haiku():
      return platform.system().lower() == 'haiku'
  
