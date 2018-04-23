@@ -1,7 +1,8 @@
-$OpenBSD: patch-bin_mvn,v 1.5 2014/11/11 08:40:38 jasper Exp $
---- bin/mvn.orig	Tue Feb 19 08:54:21 2013
-+++ bin/mvn	Tue Mar  5 23:18:26 2013
-@@ -36,8 +36,8 @@
+$OpenBSD: patch-bin_mvn,v 1.6 2018/04/23 10:41:52 jasper Exp $
+Index: bin/mvn
+--- bin/mvn.orig
++++ bin/mvn
+@@ -29,8 +29,8 @@
  
  if [ -z "$MAVEN_SKIP_RC" ] ; then
  
