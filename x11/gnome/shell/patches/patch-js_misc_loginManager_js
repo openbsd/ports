@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.4 2017/11/04 16:44:50 jasper Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.5 2018/04/23 22:02:30 jasper Exp $
 
 REVERT:
 From ddea54a5398c123a4711243e55811c8ba26f8b85 Mon Sep 17 00:00:00 2001
@@ -75,17 +75,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -113,6 +136,9 @@ var LoginManagerSystemd = new Lang.Class({
-                                   Lang.bind(this, this._prepareForSleep));
-     },
- 
-+    // Having this function is a bit of a hack since the Systemd and ConsoleKit
-+    // session objects have different interfaces - but in both cases there are
-+    // Lock/Unlock signals, and that's all we count upon at the moment.
-     getCurrentSessionProxy: function(callback) {
-         if (this._currentSession) {
-             callback (this._currentSession);
-@@ -189,13 +215,35 @@ var LoginManagerSystemd = new Lang.Class({
+@@ -188,13 +211,37 @@ var LoginManagerSystemd = new Lang.Class({
  });
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
  
@@ -103,7 +93,9 @@ Index: js/misc/loginManager.js
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
 +    // session objects have different interfaces - but in both cases there are
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
-     getCurrentSessionProxy: function(callback) {
++
++
+     getCurrentSessionProxy(callback) {
 -        // we could return a DummySession object that fakes whatever callers
 -        // expect (at the time of writing: connect() and connectSignal()
 -        // methods), but just never calling the callback should be safer
@@ -125,8 +117,8 @@ Index: js/misc/loginManager.js
 +            }));
      },
  
-     canSuspend: function(asyncCallback) {
-@@ -215,4 +263,4 @@ var LoginManagerDummy = new Lang.Class({
+     canSuspend(asyncCallback) {
+@@ -214,4 +261,4 @@ var LoginManagerDummy = new Lang.Class({
          callback(null);
      }
  });

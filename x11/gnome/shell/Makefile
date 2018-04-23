@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.158 2018/04/10 13:45:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2018/04/23 22:02:30 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.26.2
-REVISION=		2
+GNOME_VERSION=		3.28.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,7 +33,7 @@ WANTLIB += xcb-xkb xkbcommon xkbcommon-x11 xkbfile xml2 z
 WANTLIB += GL Xt enchant gstapp-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += hyphen jpeg notify nssutil3 ${COMPILER_LIBCXX} webp xslt
 WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
-WANTLIB += harfbuzz-icu tasn1 mutter-1
+WANTLIB += harfbuzz-icu tasn1 mutter-2 fribidi
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -100,6 +99,9 @@ RUN_DEPENDS +=		x11/gnome/libgnomekbd
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
+
+CONFIGURE_ARGS +=	-Dnetworkmanager=false \
+			-Dsystemd=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 

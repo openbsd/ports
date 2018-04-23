@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/11/04 16:44:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/04/23 22:02:30 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -42,6 +42,7 @@ share/gnome-shell/Gvc-1.0.gir
 share/gnome-shell/Shell-0.1.gir
 share/gnome-shell/ShellMenu-0.1.gir
 share/gnome-shell/St-1.0.gir
+share/gnome-shell/gnome-shell-osk-layouts.gresource
 share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/perf-background.xml
 share/locale/af/LC_MESSAGES/gnome-shell.mo
