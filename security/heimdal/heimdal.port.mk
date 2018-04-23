@@ -1,4 +1,4 @@
-# $OpenBSD: heimdal.port.mk,v 1.4 2016/12/17 14:58:31 ajacoutot Exp $
+# $OpenBSD: heimdal.port.mk,v 1.5 2018/04/23 19:55:06 ajacoutot Exp $
 
 MODHEIMDAL_WANTLIB +=	com_err pthread util
 MODHEIMDAL_WANTLIB +=	heimdal/lib/asn1
@@ -9,6 +9,8 @@ MODHEIMDAL_WANTLIB +=	heimdal/lib/krb5
 MODHEIMDAL_WANTLIB +=	heimdal/lib/roken
 MODHEIMDAL_WANTLIB +=	heimdal/lib/wind
 WANTLIB +=		${MODHEIMDAL_WANTLIB}
+
+CONFIGURE_ENV +=	PKG_CONFIG_PATH=${LOCALBASE}/heimdal/lib/pkgconfig
 
 MODHEIMDAL_LIB_DEPENDS=	security/heimdal,-libs
 LIB_DEPENDS +=		${MODHEIMDAL_LIB_DEPENDS}
