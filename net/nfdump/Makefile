@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2018/03/17 11:04:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/04/23 13:48:49 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.16
+V =			1.6.17
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
@@ -41,7 +41,8 @@ WANTLIB-main =		${WANTLIB} ft
 LIB_DEPENDS-nfprofile =	net/rrdtool \
 			net/nfdump,-main
 RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
-WANTLIB-nfprofile =  ${WANTLIB} 
+
+WANTLIB-nfprofile =  ${WANTLIB}
 WANTLIB-nfprofile += X11 Xext Xrender cairo expat ffi fontconfig freetype
 WANTLIB-nfprofile += glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0
@@ -53,9 +54,19 @@ REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nfdump
-	head -119 ${WRKSRC}/bin/sflow.c > ${PREFIX}/share/doc/nfdump/COPYRIGHT
 
-CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
+			ac_cv_path_DOXYGEN=
 TEST_FLAGS =		TZ=CET
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+BUILD_DEPENDS =		devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+post-patch:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
