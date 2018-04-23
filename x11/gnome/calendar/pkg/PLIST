@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/01/21 19:27:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/04/23 14:39:49 jasper Exp $
 @conflict california-*
 @pkgpath x11/gnome/california
 @bin bin/gnome-calendar
@@ -31,6 +31,7 @@ share/locale/el/LC_MESSAGES/gnome-calendar.mo
 share/locale/en_GB/LC_MESSAGES/gnome-calendar.mo
 share/locale/eo/LC_MESSAGES/gnome-calendar.mo
 share/locale/es/LC_MESSAGES/gnome-calendar.mo
+share/locale/et/LC_MESSAGES/gnome-calendar.mo
 share/locale/eu/LC_MESSAGES/gnome-calendar.mo
 share/locale/fa/LC_MESSAGES/gnome-calendar.mo
 share/locale/fi/LC_MESSAGES/gnome-calendar.mo
