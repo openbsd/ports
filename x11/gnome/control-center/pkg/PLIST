@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/02 13:06:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/04/23 20:17:05 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -6,9 +6,8 @@
 @pkgpath x11/gnome/controlcenter2
 @pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
+@bin libexec/cc-remote-login-helper
 @bin libexec/gnome-control-center-search-provider
-@man man/man1/gnome-control-center.1
-share/appdata/gnome-control-center.appdata.xml
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
@@ -16,7 +15,6 @@ share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-default-apps-panel.desktop
 share/applications/gnome-display-panel.desktop
 share/applications/gnome-info-overview-panel.desktop
-share/applications/gnome-info-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-notifications-panel.desktop
@@ -27,6 +25,7 @@ share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-removable-media-panel.desktop
 share/applications/gnome-search-panel.desktop
+share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
 share/applications/gnome-user-accounts-panel.desktop
@@ -35,6 +34,9 @@ share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
 share/gettext/its/gnome-keybindings.its
 share/gettext/its/gnome-keybindings.loc
+share/gettext/its/sounds.its
+share/gettext/its/sounds.loc
+share/glib-2.0/schemas/org.gnome.ControlCenter.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/icons/
 share/gnome-control-center/icons/hicolor/
@@ -70,24 +72,30 @@ share/gnome-control-center/icons/hicolor/32x32/status/audio-input-microphone-med
 share/gnome-control-center/icons/hicolor/32x32/status/audio-input-microphone-muted.png
 share/gnome-control-center/icons/hicolor/48x48/
 share/gnome-control-center/icons/hicolor/48x48/devices/
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-center-back-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-center-back.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-center-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-center.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left-back-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left-back.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left-side-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left-side.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-left.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right-back-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right-back.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right-side-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right-side.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-speaker-right.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-subwoofer-testing.svg
-share/gnome-control-center/icons/hicolor/48x48/devices/audio-subwoofer.svg
+share/gnome-control-center/icons/hicolor/48x48/devices/audio-headset.svg
+share/gnome-control-center/icons/hicolor/scalable/
+share/gnome-control-center/icons/hicolor/scalable/devices/
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-center-back-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-center-back.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-center-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-center.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left-back-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left-back.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left-side-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left-side.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-left.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-mono-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-mono.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right-back-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right-back.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right-side-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right-side.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-right.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-speaker-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-subwoofer-testing.svg
+share/gnome-control-center/icons/hicolor/scalable/devices/audio-subwoofer.svg
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/00-multimedia.xml
 share/gnome-control-center/keybindings/01-input-sources.xml
@@ -102,6 +110,7 @@ share/gnome-control-center/sounds/gnome-sounds-default.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/gnome-control-center-search-provider.ini
+share/icons/hicolor/16x16/apps/gnome-control-center.png
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.png
@@ -116,6 +125,7 @@ share/icons/hicolor/22x22/apps/multimedia-volume-control.svg
 share/icons/hicolor/22x22/apps/preferences-color.png
 share/icons/hicolor/22x22/apps/preferences-desktop-display.png
 share/icons/hicolor/22x22/apps/preferences-system-time.png
+share/icons/hicolor/24x24/apps/gnome-control-center.png
 share/icons/hicolor/24x24/apps/gnome-power-manager.png
 share/icons/hicolor/24x24/apps/goa-panel.png
 share/icons/hicolor/24x24/apps/multimedia-volume-control.png
@@ -125,6 +135,7 @@ share/icons/hicolor/256x256/apps/gnome-power-manager.png
 share/icons/hicolor/256x256/apps/goa-panel.png
 share/icons/hicolor/256x256/apps/preferences-color.png
 share/icons/hicolor/256x256/apps/preferences-system-time.png
+share/icons/hicolor/32x32/apps/gnome-control-center.png
 share/icons/hicolor/32x32/apps/gnome-power-manager.png
 share/icons/hicolor/32x32/apps/goa-panel.png
 share/icons/hicolor/32x32/apps/multimedia-volume-control.png
@@ -132,13 +143,15 @@ share/icons/hicolor/32x32/apps/multimedia-volume-control.svg
 share/icons/hicolor/32x32/apps/preferences-color.png
 share/icons/hicolor/32x32/apps/preferences-desktop-display.png
 share/icons/hicolor/32x32/apps/preferences-system-time.png
+share/icons/hicolor/48x48/apps/gnome-control-center.png
 share/icons/hicolor/48x48/apps/gnome-power-manager.png
 share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/multimedia-volume-control.png
 share/icons/hicolor/48x48/apps/preferences-color.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
-share/icons/hicolor/48x48/devices/audio-headset.svg
+share/icons/hicolor/512x512/apps/gnome-control-center.png
 share/icons/hicolor/64x64/apps/preferences-color.png
+share/icons/hicolor/scalable/apps/gnome-control-center-symbolic.svg
 share/icons/hicolor/scalable/apps/multimedia-volume-control.svg
 share/icons/hicolor/scalable/apps/preferences-color.svg
 share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
@@ -323,34 +336,76 @@ share/locale/zh_HK/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
+share/metainfo/gnome-control-center.appdata.xml
 share/pixmaps/
 share/pixmaps/faces/
 share/pixmaps/faces/astronaut.jpg
 share/pixmaps/faces/baseball.png
+share/pixmaps/faces/bicycle.jpg
+share/pixmaps/faces/book.jpg
 share/pixmaps/faces/butterfly.png
+share/pixmaps/faces/calculator.jpg
 share/pixmaps/faces/cat-eye.jpg
+share/pixmaps/faces/cat.jpg
 share/pixmaps/faces/chess.jpg
 share/pixmaps/faces/coffee.jpg
+share/pixmaps/faces/coffee2.jpg
 share/pixmaps/faces/dice.jpg
 share/pixmaps/faces/energy-arc.jpg
 share/pixmaps/faces/fish.jpg
 share/pixmaps/faces/flake.jpg
 share/pixmaps/faces/flower.jpg
+share/pixmaps/faces/flower2.jpg
+share/pixmaps/faces/gamepad.jpg
 share/pixmaps/faces/grapes.jpg
 share/pixmaps/faces/guitar.jpg
+share/pixmaps/faces/guitar2.jpg
+share/pixmaps/faces/headphones.jpg
+share/pixmaps/faces/hummingbird.jpg
 share/pixmaps/faces/launch.jpg
 share/pixmaps/faces/leaf.jpg
+share/pixmaps/faces/legacy/
+share/pixmaps/faces/legacy/astronaut.jpg
+share/pixmaps/faces/legacy/baseball.png
+share/pixmaps/faces/legacy/butterfly.png
+share/pixmaps/faces/legacy/cat-eye.jpg
+share/pixmaps/faces/legacy/chess.jpg
+share/pixmaps/faces/legacy/coffee.jpg
+share/pixmaps/faces/legacy/dice.jpg
+share/pixmaps/faces/legacy/energy-arc.jpg
+share/pixmaps/faces/legacy/fish.jpg
+share/pixmaps/faces/legacy/flake.jpg
+share/pixmaps/faces/legacy/flower.jpg
+share/pixmaps/faces/legacy/grapes.jpg
+share/pixmaps/faces/legacy/guitar.jpg
+share/pixmaps/faces/legacy/launch.jpg
+share/pixmaps/faces/legacy/leaf.jpg
+share/pixmaps/faces/legacy/lightning.jpg
+share/pixmaps/faces/legacy/penguin.jpg
+share/pixmaps/faces/legacy/puppy.jpg
+share/pixmaps/faces/legacy/sky.jpg
+share/pixmaps/faces/legacy/soccerball.png
+share/pixmaps/faces/legacy/sunflower.jpg
+share/pixmaps/faces/legacy/sunset.jpg
+share/pixmaps/faces/legacy/tennis-ball.png
+share/pixmaps/faces/legacy/yellow-rose.jpg
 share/pixmaps/faces/lightning.jpg
+share/pixmaps/faces/mountain.jpg
 share/pixmaps/faces/penguin.jpg
+share/pixmaps/faces/plane.jpg
 share/pixmaps/faces/puppy.jpg
 share/pixmaps/faces/sky.jpg
 share/pixmaps/faces/soccerball.png
 share/pixmaps/faces/sunflower.jpg
 share/pixmaps/faces/sunset.jpg
+share/pixmaps/faces/surfer.jpg
 share/pixmaps/faces/tennis-ball.png
+share/pixmaps/faces/tomatoes.jpg
+share/pixmaps/faces/tree.jpg
 share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
+share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
 share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/

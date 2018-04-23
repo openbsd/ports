@@ -1,0 +1,17 @@
+$OpenBSD: patch-panels_user-accounts_um-photo-dialog_c,v 1.1 2018/04/23 20:17:05 ajacoutot Exp $
+
+XXX push upstream
+
+Index: panels/user-accounts/um-photo-dialog.c
+--- panels/user-accounts/um-photo-dialog.c.orig
++++ panels/user-accounts/um-photo-dialog.c
+@@ -564,7 +564,9 @@ um_photo_dialog_class_init (UmPhotoDialogClass *klass)
+         gtk_widget_class_bind_template_child (wclass, UmPhotoDialog, take_picture_button);
+ 
+         gtk_widget_class_bind_template_callback (wclass, um_photo_dialog_select_file);
++#ifdef HAVE_CHEESE
+         gtk_widget_class_bind_template_callback (wclass, webcam_icon_selected);
++#endif
+ 
+         oclass->dispose = um_photo_dialog_dispose;
+ }
