@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_openssl_c,v 1.1 2017/11/22 22:35:25 sthen Exp $
+$OpenBSD: patch-src_lib_openssl_c,v 1.2 2018/04/23 08:34:41 sthen Exp $
 
 Index: src/lib/openssl.c
 --- src/lib/openssl.c.orig
@@ -12,7 +12,7 @@ Index: src/lib/openssl.c
  /* Array of mutexes for use with OpenSSL static locking */
  static pthread_mutex_t *mutexes;
  
-@@ -263,7 +263,7 @@ int init_crypto (void)
+@@ -267,7 +267,7 @@ int init_crypto (void)
  {
     int stat = 0;
  
@@ -21,7 +21,7 @@ Index: src/lib/openssl.c
     if ((stat = openssl_init_threads()) != 0) {
        berrno be;
        Jmsg1(NULL, M_ABORT, 0,
-@@ -310,7 +310,7 @@ int cleanup_crypto (void)
+@@ -314,7 +314,7 @@ int cleanup_crypto (void)
        Jmsg0(NULL, M_ERROR, 0, _("Failed to save OpenSSL PRNG\n"));
     }
  
