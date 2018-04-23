@@ -1,0 +1,17 @@
+The Etsh Project provides two ports of the original /bin/sh from Sixth
+Edition (V6) UNIX (circa 1975).
+
+Etsh(1) is an enhanced, backward-compatible port of the Sixth Edition
+Thompson shell. Tsh(1) is an unenhanced port of the shell, and glob(1)
+is a port of its global command. Together, tsh and glob provide a user
+interface which is backward compatible with that provided by the Sixth
+Edition Thompson shell and global command, but without the obvious
+enhancements found in etsh.
+
+The original Thompson shell was principally written by Ken Thompson of
+Bell Labs.
+
+Additionally, this project includes the following shell utilities:
+* if(1) - conditional command (ported from Sixth Edition UNIX)
+* goto(1) - transfer command (ported from Sixth Edition UNIX)
+* fd2(1) - redirect from/to file descriptor 2

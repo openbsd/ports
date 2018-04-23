@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/23 21:54:48 bcallah Exp $
+@conflict osh-*
+@pkgpath shells/osh
+@shell bin/etsh
+@shell bin/tsh
+libexec/etsh-${V}/
+libexec/etsh-${V}/README
+libexec/etsh-${V}/etsh/
+libexec/etsh-${V}/etsh/README
+libexec/etsh-${V}/etsh/SetP
+libexec/etsh-${V}/etsh/SetTandCTTY
+libexec/etsh-${V}/etsh/SetV
+libexec/etsh-${V}/etsh/etshdir
+libexec/etsh-${V}/etsh/history
+libexec/etsh-${V}/etsh/history.help
+libexec/etsh-${V}/tsh/
+libexec/etsh-${V}/tsh/README
+@bin libexec/etsh-${V}/tsh/fd2
+@bin libexec/etsh-${V}/tsh/glob
+@bin libexec/etsh-${V}/tsh/goto
+@bin libexec/etsh-${V}/tsh/if
+@man man/man1/etsh.1
+@man man/man1/fd2.1
+@man man/man1/glob.1
+@man man/man1/goto.1
+@man man/man1/if.1
+@man man/man1/tsh.1
+share/examples/etsh/
+share/examples/etsh/.etsh.login
+share/examples/etsh/.etsh.logout
+share/examples/etsh/.etsh.prompt
+share/examples/etsh/.etshrc
+share/examples/etsh/etsh.etshrc
+@sample ${SYSCONFDIR}/etsh.etshrc
+share/examples/etsh/etsh.login
+@sample ${SYSCONFDIR}/etsh.login
+share/examples/etsh/etsh.logout
+@sample ${SYSCONFDIR}/etsh.logout
