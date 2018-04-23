@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/08 03:41:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/23 20:26:09 bcallah Exp $
 
 COMMENT =	small, high performance language with a modern syntax
 CATEGORIES =	lang
 
 GH_ACCOUNT =	marcobambini
 GH_PROJECT =	gravity
-GH_TAGNAME =	0.4.2
+GH_TAGNAME =	0.4.5
 
 HOMEPAGE =	http://creolabs.com/gravity
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
