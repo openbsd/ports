@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2017/11/02 10:56:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/04/23 20:14:22 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -7,7 +7,6 @@ lib/nautilus/extensions-3.0/libnautilus-fileroller.so
 libexec/file-roller/
 libexec/file-roller/isoinfo.sh
 @bin libexec/file-roller/rpm2cpio
-share/GConf/gsettings/file-roller.convert
 share/applications/org.gnome.FileRoller.desktop
 share/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
 share/dbus-1/services/org.gnome.FileRoller.service
@@ -528,7 +527,6 @@ share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 share/locale/zh_HK/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 share/locale/zu/LC_MESSAGES/file-roller.mo
-share/metainfo/
 share/metainfo/org.gnome.FileRoller.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
