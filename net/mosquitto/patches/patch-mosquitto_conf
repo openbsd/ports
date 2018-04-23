@@ -1,6 +1,7 @@
-$OpenBSD: patch-mosquitto_conf,v 1.2 2016/08/13 15:18:58 jasper Exp $
---- mosquitto.conf.orig	Thu Jun  2 23:20:22 2016
-+++ mosquitto.conf	Fri Jul 15 20:46:12 2016
+$OpenBSD: patch-mosquitto_conf,v 1.3 2018/04/23 08:41:07 jasper Exp $
+Index: mosquitto.conf
+--- mosquitto.conf.orig
++++ mosquitto.conf
 @@ -32,7 +32,7 @@
  # This should be set to /var/run/mosquitto.pid if mosquitto is
  # being run automatically on boot with an init script and 
@@ -19,6 +20,15 @@ $OpenBSD: patch-mosquitto_conf,v 1.2 2016/08/13 15:18:58 jasper Exp $
  
  # The maximum number of QoS 1 and 2 messages currently inflight per 
  # client.
+@@ -130,7 +130,7 @@
+ # given, the default listener will not be bound to a specific 
+ # address and so will be accessible to all network interfaces.
+ # bind_address ip-address/host name
+-#bind_address
++bind_address 127.0.0.1
+ 
+ # Port to use for the default listener.
+ #port 1883
 @@ -461,7 +461,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
