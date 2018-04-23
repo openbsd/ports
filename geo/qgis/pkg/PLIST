@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2018/04/09 12:40:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.38 2018/04/23 17:00:54 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -568,6 +568,7 @@ include/qgis/qgsmultisurface.h
 include/qgis/qgsnative.h
 include/qgis/qgsnetworkaccessmanager.h
 include/qgis/qgsnetworkcontentfetcher.h
+include/qgis/qgsnetworkcontentfetchertask.h
 include/qgis/qgsnetworkdiskcache.h
 include/qgis/qgsnetworkdistancestrategy.h
 include/qgis/qgsnetworkreplyparser.h
@@ -2562,12 +2563,14 @@ share/qgis/python/plugins/processing/preconfigured/PreconfiguredUtils.py
 share/qgis/python/plugins/processing/preconfigured/__init__.py
 share/qgis/python/plugins/processing/script/
 share/qgis/python/plugins/processing/script/AddScriptFromFileAction.py
+share/qgis/python/plugins/processing/script/AddScriptFromTemplateAction.py
 share/qgis/python/plugins/processing/script/CreateNewScriptAction.py
 share/qgis/python/plugins/processing/script/DeleteScriptAction.py
 share/qgis/python/plugins/processing/script/EditScriptAction.py
 share/qgis/python/plugins/processing/script/ScriptAlgorithmProvider.py
 share/qgis/python/plugins/processing/script/ScriptEdit.py
 share/qgis/python/plugins/processing/script/ScriptEditorDialog.py
+share/qgis/python/plugins/processing/script/ScriptTemplate.py
 share/qgis/python/plugins/processing/script/ScriptUtils.py
 share/qgis/python/plugins/processing/script/__init__.py
 share/qgis/python/plugins/processing/tests/
@@ -2575,6 +2578,7 @@ share/qgis/python/plugins/processing/tests/AlgorithmsTestBase.py
 share/qgis/python/plugins/processing/tests/GdalAlgorithmsTest.py
 share/qgis/python/plugins/processing/tests/Grass7AlgorithmsImageryTest.py
 share/qgis/python/plugins/processing/tests/Grass7AlgorithmsRasterTest.py
+share/qgis/python/plugins/processing/tests/Grass7AlgorithmsVectorTest.py
 share/qgis/python/plugins/processing/tests/GuiTest.py
 share/qgis/python/plugins/processing/tests/ModelerTest.py
 share/qgis/python/plugins/processing/tests/QgisAlgorithmsTest.py
