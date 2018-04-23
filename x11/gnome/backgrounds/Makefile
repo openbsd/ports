@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2017/10/26 13:23:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/04/23 09:11:26 ajacoutot Exp $
 
 COMMENT=		wallpapers for GNOME
 
 GNOME_PROJECT=		gnome-backgrounds
-GNOME_VERSION=		3.26.2
+GNOME_VERSION=		3.28.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		x11/gnome
-
-CONFIGURE_STYLE=	gnu
+MODULES=		devel/meson \
+			x11/gnome
 
 .include <bsd.port.mk>
