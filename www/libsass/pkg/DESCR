@@ -1,0 +1,4 @@
+LibSass is a C++ port of the original Ruby Sass CSS compiler with a C
+API. We coded LibSass with portability and efficiency in mind. You can
+expect LibSass to be a lot faster than Ruby Sass and on par or faster
+than the best alternative CSS compilers around.

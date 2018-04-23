@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/04/23 22:01:11 jasper Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -3,7 +3,7 @@ CC       ?= gcc
+ CXX      ?= g++
+ RM       ?= rm -f
+ CP       ?= cp -a
+-MKDIR    ?= mkdir
++MKDIR    ?= mkdir -p
+ RMDIR    ?= rmdir
+ WINDRES  ?= windres
+ # Solaris/Illumos flavors
+@@ -79,8 +79,8 @@ else
+ 	STATIC_ALL       ?= 0
+ 	STATIC_LIBGCC    ?= 0
+ 	STATIC_LIBSTDCPP ?= 0
+-	CXXFLAGS += -std=c++0x
+-	LDFLAGS  += -std=c++0x
++	CXXFLAGS += -std=c++11
++	LDFLAGS  += -std=c++11
+ endif
+ 
+ ifneq ($(SASS_LIBSASS_PATH),)
+@@ -271,7 +271,7 @@ $(DESTDIR)$(PREFIX)/include/sass: $(DESTDIR)$(PREFIX)/
+ $(DESTDIR)$(PREFIX)/include/%.h: include/%.h \
+                                  $(DESTDIR)$(PREFIX)/include \
+                                  $(DESTDIR)$(PREFIX)/include/sass
+-	$(INSTALL) -v -m0644 "$<" "$@"
++	$(INSTALL) -m0644 "$<" "$@"
+ 
+ install-headers: $(DESTDIR)$(PREFIX)/include/sass.h \
+                  $(DESTDIR)$(PREFIX)/include/sass2scss.h \
+@@ -283,15 +283,15 @@ install-headers: $(DESTDIR)$(PREFIX)/include/sass.h \
+ 
+ $(DESTDIR)$(PREFIX)/lib/%.a: lib/%.a \
+                              $(DESTDIR)$(PREFIX)/lib
+-	@$(INSTALL) -v -m0755 "$<" "$@"
++	@$(INSTALL) -m0755 "$<" "$@"
+ 
+ $(DESTDIR)$(PREFIX)/lib/%.so: lib/%.so \
+                              $(DESTDIR)$(PREFIX)/lib
+-	@$(INSTALL) -v -m0755 "$<" "$@"
++	@$(INSTALL) -m0755 "$<" "$@"
+ 
+ $(DESTDIR)$(PREFIX)/lib/%.dll: lib/%.dll \
+                                $(DESTDIR)$(PREFIX)/lib
+-	@$(INSTALL) -v -m0755 "$<" "$@"
++	@$(INSTALL) -m0755 "$<" "$@"
+ 
+ install-static: $(DESTDIR)$(PREFIX)/lib/libsass.a
+ 
