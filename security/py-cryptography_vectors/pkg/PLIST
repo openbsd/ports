@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/11/05 17:53:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/23 13:06:47 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha3
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/HMAC/rfc-4231-sha512.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/ansx963_2001.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/hkdf-generated.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/nist-800-108-KBKDF-CTR.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-5869-HKDF-SHA1.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/KDF/rfc-5869-HKDF-SHA256.txt
@@ -93,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KA
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_KDFConcat_NOKC_resp.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_NOKC_ZZOnly_init.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_NOKC_ZZOnly_resp.fax
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/brainpool.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/FIPS_186-2/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/FIPS_186-2/KeyPair.rsp
@@ -519,9 +521,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blak
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blake2s.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/ripemd160/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/ripemd160/ripevectors.txt
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/whirlpool/
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/whirlpool/iso-test-vectors.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwp_botan.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvectors/KWP_AD_128.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvectors/KWP_AD_128_inv.txt
