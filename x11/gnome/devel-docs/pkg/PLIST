@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/10/26 13:26:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/04/23 13:12:01 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -8,11 +8,14 @@ share/help/C/accessibility-devel-guide/figures/at-arch.png
 share/help/C/accessibility-devel-guide/figures/badfocus1.png
 share/help/C/accessibility-devel-guide/figures/badfocus2.png
 share/help/C/accessibility-devel-guide/figures/badfocus3.png
+share/help/C/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/C/accessibility-devel-guide/figures/color_only.png
 share/help/C/accessibility-devel-guide/figures/depend1.png
 share/help/C/accessibility-devel-guide/figures/depend1a.png
 share/help/C/accessibility-devel-guide/figures/depend2.png
 share/help/C/accessibility-devel-guide/figures/depend2a.png
 share/help/C/accessibility-devel-guide/figures/depend3.png
+share/help/C/accessibility-devel-guide/figures/gaa.jpg
 share/help/C/accessibility-devel-guide/figures/goodfocus.png
 share/help/C/accessibility-devel-guide/figures/goodfocus2.png
 share/help/C/accessibility-devel-guide/figures/goodfocus3.png
@@ -678,7 +681,6 @@ share/help/C/platform-overview/tech-champlain.page
 share/help/C/platform-overview/tech-clutter.page
 share/help/C/platform-overview/tech-d-bus.page
 share/help/C/platform-overview/tech-eds.page
-share/help/C/platform-overview/tech-enchant.page
 share/help/C/platform-overview/tech-folks.page
 share/help/C/platform-overview/tech-gda.page
 share/help/C/platform-overview/tech-gdk.page
@@ -702,6 +704,7 @@ share/help/C/platform-overview/tech-poppler.page
 share/help/C/platform-overview/tech-pulseaudio.page
 share/help/C/platform-overview/tech-secret.page
 share/help/C/platform-overview/tech-soup.page
+share/help/C/platform-overview/tech-spell-checking.page
 share/help/C/platform-overview/tech-telepathy.page
 share/help/C/platform-overview/tech-tracker.page
 share/help/C/platform-overview/tech-webkit.page
@@ -1266,7 +1269,6 @@ share/help/ca/platform-overview/tech-champlain.page
 share/help/ca/platform-overview/tech-clutter.page
 share/help/ca/platform-overview/tech-d-bus.page
 share/help/ca/platform-overview/tech-eds.page
-share/help/ca/platform-overview/tech-enchant.page
 share/help/ca/platform-overview/tech-folks.page
 share/help/ca/platform-overview/tech-gda.page
 share/help/ca/platform-overview/tech-gdk.page
@@ -1290,6 +1292,7 @@ share/help/ca/platform-overview/tech-poppler.page
 share/help/ca/platform-overview/tech-pulseaudio.page
 share/help/ca/platform-overview/tech-secret.page
 share/help/ca/platform-overview/tech-soup.page
+share/help/ca/platform-overview/tech-spell-checking.page
 share/help/ca/platform-overview/tech-telepathy.page
 share/help/ca/platform-overview/tech-tracker.page
 share/help/ca/platform-overview/tech-webkit.page
@@ -1309,11 +1312,14 @@ share/help/cs/accessibility-devel-guide/figures/at-arch.png
 share/help/cs/accessibility-devel-guide/figures/badfocus1.png
 share/help/cs/accessibility-devel-guide/figures/badfocus2.png
 share/help/cs/accessibility-devel-guide/figures/badfocus3.png
+share/help/cs/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/cs/accessibility-devel-guide/figures/color_only.png
 share/help/cs/accessibility-devel-guide/figures/depend1.png
 share/help/cs/accessibility-devel-guide/figures/depend1a.png
 share/help/cs/accessibility-devel-guide/figures/depend2.png
 share/help/cs/accessibility-devel-guide/figures/depend2a.png
 share/help/cs/accessibility-devel-guide/figures/depend3.png
+share/help/cs/accessibility-devel-guide/figures/gaa.jpg
 share/help/cs/accessibility-devel-guide/figures/goodfocus.png
 share/help/cs/accessibility-devel-guide/figures/goodfocus2.png
 share/help/cs/accessibility-devel-guide/figures/goodfocus3.png
@@ -1976,7 +1982,6 @@ share/help/cs/platform-overview/tech-champlain.page
 share/help/cs/platform-overview/tech-clutter.page
 share/help/cs/platform-overview/tech-d-bus.page
 share/help/cs/platform-overview/tech-eds.page
-share/help/cs/platform-overview/tech-enchant.page
 share/help/cs/platform-overview/tech-folks.page
 share/help/cs/platform-overview/tech-gda.page
 share/help/cs/platform-overview/tech-gdk.page
@@ -2000,6 +2005,7 @@ share/help/cs/platform-overview/tech-poppler.page
 share/help/cs/platform-overview/tech-pulseaudio.page
 share/help/cs/platform-overview/tech-secret.page
 share/help/cs/platform-overview/tech-soup.page
+share/help/cs/platform-overview/tech-spell-checking.page
 share/help/cs/platform-overview/tech-telepathy.page
 share/help/cs/platform-overview/tech-tracker.page
 share/help/cs/platform-overview/tech-webkit.page
@@ -2043,11 +2049,14 @@ share/help/de/accessibility-devel-guide/figures/at-arch.png
 share/help/de/accessibility-devel-guide/figures/badfocus1.png
 share/help/de/accessibility-devel-guide/figures/badfocus2.png
 share/help/de/accessibility-devel-guide/figures/badfocus3.png
+share/help/de/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/de/accessibility-devel-guide/figures/color_only.png
 share/help/de/accessibility-devel-guide/figures/depend1.png
 share/help/de/accessibility-devel-guide/figures/depend1a.png
 share/help/de/accessibility-devel-guide/figures/depend2.png
 share/help/de/accessibility-devel-guide/figures/depend2a.png
 share/help/de/accessibility-devel-guide/figures/depend3.png
+share/help/de/accessibility-devel-guide/figures/gaa.jpg
 share/help/de/accessibility-devel-guide/figures/goodfocus.png
 share/help/de/accessibility-devel-guide/figures/goodfocus2.png
 share/help/de/accessibility-devel-guide/figures/goodfocus3.png
@@ -2710,7 +2719,6 @@ share/help/de/platform-overview/tech-champlain.page
 share/help/de/platform-overview/tech-clutter.page
 share/help/de/platform-overview/tech-d-bus.page
 share/help/de/platform-overview/tech-eds.page
-share/help/de/platform-overview/tech-enchant.page
 share/help/de/platform-overview/tech-folks.page
 share/help/de/platform-overview/tech-gda.page
 share/help/de/platform-overview/tech-gdk.page
@@ -2734,6 +2742,7 @@ share/help/de/platform-overview/tech-poppler.page
 share/help/de/platform-overview/tech-pulseaudio.page
 share/help/de/platform-overview/tech-secret.page
 share/help/de/platform-overview/tech-soup.page
+share/help/de/platform-overview/tech-spell-checking.page
 share/help/de/platform-overview/tech-telepathy.page
 share/help/de/platform-overview/tech-tracker.page
 share/help/de/platform-overview/tech-webkit.page
@@ -2777,11 +2786,14 @@ share/help/el/accessibility-devel-guide/figures/at-arch.png
 share/help/el/accessibility-devel-guide/figures/badfocus1.png
 share/help/el/accessibility-devel-guide/figures/badfocus2.png
 share/help/el/accessibility-devel-guide/figures/badfocus3.png
+share/help/el/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/el/accessibility-devel-guide/figures/color_only.png
 share/help/el/accessibility-devel-guide/figures/depend1.png
 share/help/el/accessibility-devel-guide/figures/depend1a.png
 share/help/el/accessibility-devel-guide/figures/depend2.png
 share/help/el/accessibility-devel-guide/figures/depend2a.png
 share/help/el/accessibility-devel-guide/figures/depend3.png
+share/help/el/accessibility-devel-guide/figures/gaa.jpg
 share/help/el/accessibility-devel-guide/figures/goodfocus.png
 share/help/el/accessibility-devel-guide/figures/goodfocus2.png
 share/help/el/accessibility-devel-guide/figures/goodfocus3.png
@@ -3444,7 +3456,6 @@ share/help/el/platform-overview/tech-champlain.page
 share/help/el/platform-overview/tech-clutter.page
 share/help/el/platform-overview/tech-d-bus.page
 share/help/el/platform-overview/tech-eds.page
-share/help/el/platform-overview/tech-enchant.page
 share/help/el/platform-overview/tech-folks.page
 share/help/el/platform-overview/tech-gda.page
 share/help/el/platform-overview/tech-gdk.page
@@ -3468,6 +3479,7 @@ share/help/el/platform-overview/tech-poppler.page
 share/help/el/platform-overview/tech-pulseaudio.page
 share/help/el/platform-overview/tech-secret.page
 share/help/el/platform-overview/tech-soup.page
+share/help/el/platform-overview/tech-spell-checking.page
 share/help/el/platform-overview/tech-telepathy.page
 share/help/el/platform-overview/tech-tracker.page
 share/help/el/platform-overview/tech-webkit.page
@@ -3511,11 +3523,14 @@ share/help/es/accessibility-devel-guide/figures/at-arch.png
 share/help/es/accessibility-devel-guide/figures/badfocus1.png
 share/help/es/accessibility-devel-guide/figures/badfocus2.png
 share/help/es/accessibility-devel-guide/figures/badfocus3.png
+share/help/es/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/es/accessibility-devel-guide/figures/color_only.png
 share/help/es/accessibility-devel-guide/figures/depend1.png
 share/help/es/accessibility-devel-guide/figures/depend1a.png
 share/help/es/accessibility-devel-guide/figures/depend2.png
 share/help/es/accessibility-devel-guide/figures/depend2a.png
 share/help/es/accessibility-devel-guide/figures/depend3.png
+share/help/es/accessibility-devel-guide/figures/gaa.jpg
 share/help/es/accessibility-devel-guide/figures/goodfocus.png
 share/help/es/accessibility-devel-guide/figures/goodfocus2.png
 share/help/es/accessibility-devel-guide/figures/goodfocus3.png
@@ -4178,7 +4193,6 @@ share/help/es/platform-overview/tech-champlain.page
 share/help/es/platform-overview/tech-clutter.page
 share/help/es/platform-overview/tech-d-bus.page
 share/help/es/platform-overview/tech-eds.page
-share/help/es/platform-overview/tech-enchant.page
 share/help/es/platform-overview/tech-folks.page
 share/help/es/platform-overview/tech-gda.page
 share/help/es/platform-overview/tech-gdk.page
@@ -4202,6 +4216,7 @@ share/help/es/platform-overview/tech-poppler.page
 share/help/es/platform-overview/tech-pulseaudio.page
 share/help/es/platform-overview/tech-secret.page
 share/help/es/platform-overview/tech-soup.page
+share/help/es/platform-overview/tech-spell-checking.page
 share/help/es/platform-overview/tech-telepathy.page
 share/help/es/platform-overview/tech-tracker.page
 share/help/es/platform-overview/tech-webkit.page
@@ -4245,11 +4260,14 @@ share/help/fr/accessibility-devel-guide/figures/at-arch.png
 share/help/fr/accessibility-devel-guide/figures/badfocus1.png
 share/help/fr/accessibility-devel-guide/figures/badfocus2.png
 share/help/fr/accessibility-devel-guide/figures/badfocus3.png
+share/help/fr/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/fr/accessibility-devel-guide/figures/color_only.png
 share/help/fr/accessibility-devel-guide/figures/depend1.png
 share/help/fr/accessibility-devel-guide/figures/depend1a.png
 share/help/fr/accessibility-devel-guide/figures/depend2.png
 share/help/fr/accessibility-devel-guide/figures/depend2a.png
 share/help/fr/accessibility-devel-guide/figures/depend3.png
+share/help/fr/accessibility-devel-guide/figures/gaa.jpg
 share/help/fr/accessibility-devel-guide/figures/goodfocus.png
 share/help/fr/accessibility-devel-guide/figures/goodfocus2.png
 share/help/fr/accessibility-devel-guide/figures/goodfocus3.png
@@ -4793,7 +4811,6 @@ share/help/fr/platform-overview/tech-champlain.page
 share/help/fr/platform-overview/tech-clutter.page
 share/help/fr/platform-overview/tech-d-bus.page
 share/help/fr/platform-overview/tech-eds.page
-share/help/fr/platform-overview/tech-enchant.page
 share/help/fr/platform-overview/tech-folks.page
 share/help/fr/platform-overview/tech-gda.page
 share/help/fr/platform-overview/tech-gdk.page
@@ -4817,6 +4834,7 @@ share/help/fr/platform-overview/tech-poppler.page
 share/help/fr/platform-overview/tech-pulseaudio.page
 share/help/fr/platform-overview/tech-secret.page
 share/help/fr/platform-overview/tech-soup.page
+share/help/fr/platform-overview/tech-spell-checking.page
 share/help/fr/platform-overview/tech-telepathy.page
 share/help/fr/platform-overview/tech-tracker.page
 share/help/fr/platform-overview/tech-webkit.page
@@ -5363,7 +5381,6 @@ share/help/gl/platform-overview/tech-champlain.page
 share/help/gl/platform-overview/tech-clutter.page
 share/help/gl/platform-overview/tech-d-bus.page
 share/help/gl/platform-overview/tech-eds.page
-share/help/gl/platform-overview/tech-enchant.page
 share/help/gl/platform-overview/tech-folks.page
 share/help/gl/platform-overview/tech-gda.page
 share/help/gl/platform-overview/tech-gdk.page
@@ -5387,6 +5404,7 @@ share/help/gl/platform-overview/tech-poppler.page
 share/help/gl/platform-overview/tech-pulseaudio.page
 share/help/gl/platform-overview/tech-secret.page
 share/help/gl/platform-overview/tech-soup.page
+share/help/gl/platform-overview/tech-spell-checking.page
 share/help/gl/platform-overview/tech-telepathy.page
 share/help/gl/platform-overview/tech-tracker.page
 share/help/gl/platform-overview/tech-webkit.page
@@ -5437,7 +5455,6 @@ share/help/it/platform-overview/tech-champlain.page
 share/help/it/platform-overview/tech-clutter.page
 share/help/it/platform-overview/tech-d-bus.page
 share/help/it/platform-overview/tech-eds.page
-share/help/it/platform-overview/tech-enchant.page
 share/help/it/platform-overview/tech-folks.page
 share/help/it/platform-overview/tech-gda.page
 share/help/it/platform-overview/tech-gdk.page
@@ -5461,6 +5478,7 @@ share/help/it/platform-overview/tech-poppler.page
 share/help/it/platform-overview/tech-pulseaudio.page
 share/help/it/platform-overview/tech-secret.page
 share/help/it/platform-overview/tech-soup.page
+share/help/it/platform-overview/tech-spell-checking.page
 share/help/it/platform-overview/tech-telepathy.page
 share/help/it/platform-overview/tech-tracker.page
 share/help/it/platform-overview/tech-webkit.page
@@ -5480,11 +5498,14 @@ share/help/ja/accessibility-devel-guide/figures/at-arch.png
 share/help/ja/accessibility-devel-guide/figures/badfocus1.png
 share/help/ja/accessibility-devel-guide/figures/badfocus2.png
 share/help/ja/accessibility-devel-guide/figures/badfocus3.png
+share/help/ja/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/ja/accessibility-devel-guide/figures/color_only.png
 share/help/ja/accessibility-devel-guide/figures/depend1.png
 share/help/ja/accessibility-devel-guide/figures/depend1a.png
 share/help/ja/accessibility-devel-guide/figures/depend2.png
 share/help/ja/accessibility-devel-guide/figures/depend2a.png
 share/help/ja/accessibility-devel-guide/figures/depend3.png
+share/help/ja/accessibility-devel-guide/figures/gaa.jpg
 share/help/ja/accessibility-devel-guide/figures/goodfocus.png
 share/help/ja/accessibility-devel-guide/figures/goodfocus2.png
 share/help/ja/accessibility-devel-guide/figures/goodfocus3.png
@@ -5532,7 +5553,6 @@ share/help/ja/platform-overview/tech-champlain.page
 share/help/ja/platform-overview/tech-clutter.page
 share/help/ja/platform-overview/tech-d-bus.page
 share/help/ja/platform-overview/tech-eds.page
-share/help/ja/platform-overview/tech-enchant.page
 share/help/ja/platform-overview/tech-folks.page
 share/help/ja/platform-overview/tech-gda.page
 share/help/ja/platform-overview/tech-gdk.page
@@ -5556,6 +5576,7 @@ share/help/ja/platform-overview/tech-poppler.page
 share/help/ja/platform-overview/tech-pulseaudio.page
 share/help/ja/platform-overview/tech-secret.page
 share/help/ja/platform-overview/tech-soup.page
+share/help/ja/platform-overview/tech-spell-checking.page
 share/help/ja/platform-overview/tech-telepathy.page
 share/help/ja/platform-overview/tech-tracker.page
 share/help/ja/platform-overview/tech-webkit.page
@@ -5575,11 +5596,14 @@ share/help/ko/accessibility-devel-guide/figures/at-arch.png
 share/help/ko/accessibility-devel-guide/figures/badfocus1.png
 share/help/ko/accessibility-devel-guide/figures/badfocus2.png
 share/help/ko/accessibility-devel-guide/figures/badfocus3.png
+share/help/ko/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/ko/accessibility-devel-guide/figures/color_only.png
 share/help/ko/accessibility-devel-guide/figures/depend1.png
 share/help/ko/accessibility-devel-guide/figures/depend1a.png
 share/help/ko/accessibility-devel-guide/figures/depend2.png
 share/help/ko/accessibility-devel-guide/figures/depend2a.png
 share/help/ko/accessibility-devel-guide/figures/depend3.png
+share/help/ko/accessibility-devel-guide/figures/gaa.jpg
 share/help/ko/accessibility-devel-guide/figures/goodfocus.png
 share/help/ko/accessibility-devel-guide/figures/goodfocus2.png
 share/help/ko/accessibility-devel-guide/figures/goodfocus3.png
@@ -6123,7 +6147,6 @@ share/help/ko/platform-overview/tech-champlain.page
 share/help/ko/platform-overview/tech-clutter.page
 share/help/ko/platform-overview/tech-d-bus.page
 share/help/ko/platform-overview/tech-eds.page
-share/help/ko/platform-overview/tech-enchant.page
 share/help/ko/platform-overview/tech-folks.page
 share/help/ko/platform-overview/tech-gda.page
 share/help/ko/platform-overview/tech-gdk.page
@@ -6147,6 +6170,7 @@ share/help/ko/platform-overview/tech-poppler.page
 share/help/ko/platform-overview/tech-pulseaudio.page
 share/help/ko/platform-overview/tech-secret.page
 share/help/ko/platform-overview/tech-soup.page
+share/help/ko/platform-overview/tech-spell-checking.page
 share/help/ko/platform-overview/tech-telepathy.page
 share/help/ko/platform-overview/tech-tracker.page
 share/help/ko/platform-overview/tech-webkit.page
@@ -6221,7 +6245,6 @@ share/help/oc/platform-overview/tech-champlain.page
 share/help/oc/platform-overview/tech-clutter.page
 share/help/oc/platform-overview/tech-d-bus.page
 share/help/oc/platform-overview/tech-eds.page
-share/help/oc/platform-overview/tech-enchant.page
 share/help/oc/platform-overview/tech-folks.page
 share/help/oc/platform-overview/tech-gda.page
 share/help/oc/platform-overview/tech-gdk.page
@@ -6245,6 +6268,7 @@ share/help/oc/platform-overview/tech-poppler.page
 share/help/oc/platform-overview/tech-pulseaudio.page
 share/help/oc/platform-overview/tech-secret.page
 share/help/oc/platform-overview/tech-soup.page
+share/help/oc/platform-overview/tech-spell-checking.page
 share/help/oc/platform-overview/tech-telepathy.page
 share/help/oc/platform-overview/tech-tracker.page
 share/help/oc/platform-overview/tech-webkit.page
@@ -6264,11 +6288,14 @@ share/help/pt_BR/accessibility-devel-guide/figures/at-arch.png
 share/help/pt_BR/accessibility-devel-guide/figures/badfocus1.png
 share/help/pt_BR/accessibility-devel-guide/figures/badfocus2.png
 share/help/pt_BR/accessibility-devel-guide/figures/badfocus3.png
+share/help/pt_BR/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/pt_BR/accessibility-devel-guide/figures/color_only.png
 share/help/pt_BR/accessibility-devel-guide/figures/depend1.png
 share/help/pt_BR/accessibility-devel-guide/figures/depend1a.png
 share/help/pt_BR/accessibility-devel-guide/figures/depend2.png
 share/help/pt_BR/accessibility-devel-guide/figures/depend2a.png
 share/help/pt_BR/accessibility-devel-guide/figures/depend3.png
+share/help/pt_BR/accessibility-devel-guide/figures/gaa.jpg
 share/help/pt_BR/accessibility-devel-guide/figures/goodfocus.png
 share/help/pt_BR/accessibility-devel-guide/figures/goodfocus2.png
 share/help/pt_BR/accessibility-devel-guide/figures/goodfocus3.png
@@ -6931,7 +6958,6 @@ share/help/pt_BR/platform-overview/tech-champlain.page
 share/help/pt_BR/platform-overview/tech-clutter.page
 share/help/pt_BR/platform-overview/tech-d-bus.page
 share/help/pt_BR/platform-overview/tech-eds.page
-share/help/pt_BR/platform-overview/tech-enchant.page
 share/help/pt_BR/platform-overview/tech-folks.page
 share/help/pt_BR/platform-overview/tech-gda.page
 share/help/pt_BR/platform-overview/tech-gdk.page
@@ -6955,6 +6981,7 @@ share/help/pt_BR/platform-overview/tech-poppler.page
 share/help/pt_BR/platform-overview/tech-pulseaudio.page
 share/help/pt_BR/platform-overview/tech-secret.page
 share/help/pt_BR/platform-overview/tech-soup.page
+share/help/pt_BR/platform-overview/tech-spell-checking.page
 share/help/pt_BR/platform-overview/tech-telepathy.page
 share/help/pt_BR/platform-overview/tech-tracker.page
 share/help/pt_BR/platform-overview/tech-webkit.page
@@ -7148,7 +7175,6 @@ share/help/ru/platform-overview/tech-champlain.page
 share/help/ru/platform-overview/tech-clutter.page
 share/help/ru/platform-overview/tech-d-bus.page
 share/help/ru/platform-overview/tech-eds.page
-share/help/ru/platform-overview/tech-enchant.page
 share/help/ru/platform-overview/tech-folks.page
 share/help/ru/platform-overview/tech-gda.page
 share/help/ru/platform-overview/tech-gdk.page
@@ -7172,6 +7198,7 @@ share/help/ru/platform-overview/tech-poppler.page
 share/help/ru/platform-overview/tech-pulseaudio.page
 share/help/ru/platform-overview/tech-secret.page
 share/help/ru/platform-overview/tech-soup.page
+share/help/ru/platform-overview/tech-spell-checking.page
 share/help/ru/platform-overview/tech-telepathy.page
 share/help/ru/platform-overview/tech-tracker.page
 share/help/ru/platform-overview/tech-webkit.page
@@ -7191,11 +7218,14 @@ share/help/sl/accessibility-devel-guide/figures/at-arch.png
 share/help/sl/accessibility-devel-guide/figures/badfocus1.png
 share/help/sl/accessibility-devel-guide/figures/badfocus2.png
 share/help/sl/accessibility-devel-guide/figures/badfocus3.png
+share/help/sl/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/sl/accessibility-devel-guide/figures/color_only.png
 share/help/sl/accessibility-devel-guide/figures/depend1.png
 share/help/sl/accessibility-devel-guide/figures/depend1a.png
 share/help/sl/accessibility-devel-guide/figures/depend2.png
 share/help/sl/accessibility-devel-guide/figures/depend2a.png
 share/help/sl/accessibility-devel-guide/figures/depend3.png
+share/help/sl/accessibility-devel-guide/figures/gaa.jpg
 share/help/sl/accessibility-devel-guide/figures/goodfocus.png
 share/help/sl/accessibility-devel-guide/figures/goodfocus2.png
 share/help/sl/accessibility-devel-guide/figures/goodfocus3.png
@@ -7251,7 +7281,6 @@ share/help/sl/platform-overview/tech-champlain.page
 share/help/sl/platform-overview/tech-clutter.page
 share/help/sl/platform-overview/tech-d-bus.page
 share/help/sl/platform-overview/tech-eds.page
-share/help/sl/platform-overview/tech-enchant.page
 share/help/sl/platform-overview/tech-folks.page
 share/help/sl/platform-overview/tech-gda.page
 share/help/sl/platform-overview/tech-gdk.page
@@ -7275,6 +7304,7 @@ share/help/sl/platform-overview/tech-poppler.page
 share/help/sl/platform-overview/tech-pulseaudio.page
 share/help/sl/platform-overview/tech-secret.page
 share/help/sl/platform-overview/tech-soup.page
+share/help/sl/platform-overview/tech-spell-checking.page
 share/help/sl/platform-overview/tech-telepathy.page
 share/help/sl/platform-overview/tech-tracker.page
 share/help/sl/platform-overview/tech-webkit.page
@@ -7333,7 +7363,6 @@ share/help/sv/platform-overview/tech-champlain.page
 share/help/sv/platform-overview/tech-clutter.page
 share/help/sv/platform-overview/tech-d-bus.page
 share/help/sv/platform-overview/tech-eds.page
-share/help/sv/platform-overview/tech-enchant.page
 share/help/sv/platform-overview/tech-folks.page
 share/help/sv/platform-overview/tech-gda.page
 share/help/sv/platform-overview/tech-gdk.page
@@ -7357,6 +7386,7 @@ share/help/sv/platform-overview/tech-poppler.page
 share/help/sv/platform-overview/tech-pulseaudio.page
 share/help/sv/platform-overview/tech-secret.page
 share/help/sv/platform-overview/tech-soup.page
+share/help/sv/platform-overview/tech-spell-checking.page
 share/help/sv/platform-overview/tech-telepathy.page
 share/help/sv/platform-overview/tech-tracker.page
 share/help/sv/platform-overview/tech-webkit.page
@@ -7407,7 +7437,6 @@ share/help/uk/platform-overview/tech-champlain.page
 share/help/uk/platform-overview/tech-clutter.page
 share/help/uk/platform-overview/tech-d-bus.page
 share/help/uk/platform-overview/tech-eds.page
-share/help/uk/platform-overview/tech-enchant.page
 share/help/uk/platform-overview/tech-folks.page
 share/help/uk/platform-overview/tech-gda.page
 share/help/uk/platform-overview/tech-gdk.page
@@ -7431,6 +7460,7 @@ share/help/uk/platform-overview/tech-poppler.page
 share/help/uk/platform-overview/tech-pulseaudio.page
 share/help/uk/platform-overview/tech-secret.page
 share/help/uk/platform-overview/tech-soup.page
+share/help/uk/platform-overview/tech-spell-checking.page
 share/help/uk/platform-overview/tech-telepathy.page
 share/help/uk/platform-overview/tech-tracker.page
 share/help/uk/platform-overview/tech-webkit.page
@@ -7450,11 +7480,14 @@ share/help/zh_CN/accessibility-devel-guide/figures/at-arch.png
 share/help/zh_CN/accessibility-devel-guide/figures/badfocus1.png
 share/help/zh_CN/accessibility-devel-guide/figures/badfocus2.png
 share/help/zh_CN/accessibility-devel-guide/figures/badfocus3.png
+share/help/zh_CN/accessibility-devel-guide/figures/color_and_arrows.png
+share/help/zh_CN/accessibility-devel-guide/figures/color_only.png
 share/help/zh_CN/accessibility-devel-guide/figures/depend1.png
 share/help/zh_CN/accessibility-devel-guide/figures/depend1a.png
 share/help/zh_CN/accessibility-devel-guide/figures/depend2.png
 share/help/zh_CN/accessibility-devel-guide/figures/depend2a.png
 share/help/zh_CN/accessibility-devel-guide/figures/depend3.png
+share/help/zh_CN/accessibility-devel-guide/figures/gaa.jpg
 share/help/zh_CN/accessibility-devel-guide/figures/goodfocus.png
 share/help/zh_CN/accessibility-devel-guide/figures/goodfocus2.png
 share/help/zh_CN/accessibility-devel-guide/figures/goodfocus3.png
@@ -7510,7 +7543,6 @@ share/help/zh_CN/platform-overview/tech-champlain.page
 share/help/zh_CN/platform-overview/tech-clutter.page
 share/help/zh_CN/platform-overview/tech-d-bus.page
 share/help/zh_CN/platform-overview/tech-eds.page
-share/help/zh_CN/platform-overview/tech-enchant.page
 share/help/zh_CN/platform-overview/tech-folks.page
 share/help/zh_CN/platform-overview/tech-gda.page
 share/help/zh_CN/platform-overview/tech-gdk.page
@@ -7534,6 +7566,7 @@ share/help/zh_CN/platform-overview/tech-poppler.page
 share/help/zh_CN/platform-overview/tech-pulseaudio.page
 share/help/zh_CN/platform-overview/tech-secret.page
 share/help/zh_CN/platform-overview/tech-soup.page
+share/help/zh_CN/platform-overview/tech-spell-checking.page
 share/help/zh_CN/platform-overview/tech-telepathy.page
 share/help/zh_CN/platform-overview/tech-tracker.page
 share/help/zh_CN/platform-overview/tech-webkit.page
