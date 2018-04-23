@@ -1,32 +1,23 @@
-# $OpenBSD: Makefile,v 1.172 2017/11/09 19:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.173 2018/04/23 15:37:34 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.26.2
-REVISION=		0
+GNOME_VERSION=		3.28.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
-WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common c cairo
-WANTLIB += cairo-gobject canberra canberra-gtk3 colord colordprivate
-WANTLIB += cups dbus-1 epoxy execinfo expat ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gmp gnome-desktop-3 gnutls gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 gweather-3 harfbuzz hogweed
-WANTLIB += iconv idn2 intl json-glib-1.0 lcms2 ltdl lzma m nettle
-WANTLIB += notify nspr4 nss3 nssutil3 ogg p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png polkit-gobject-1
-WANTLIB += pthread pulse pulse-mainloop-glib smime3 sndfile
-WANTLIB += soup-2.4 sqlite3 ssl3 tasn1 unistring upower-glib vorbis
-WANTLIB += vorbisenc vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xext Xi Xtst c cairo canberra canberra-gtk3 colord
+WANTLIB += colordprivate cups fontconfig gdk-3 gdk_pixbuf-2.0
+WANTLIB += geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 gtk-3 gweather-3 intl lcms2 m notify nspr4
+WANTLIB += nss3 polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
@@ -64,35 +55,16 @@ RUN_DEPENDS +=		inputmethods/ibus
 #RUN_DEPENDS +=		x11/gnome/session
 
 MODGNOME_TOOLS=		docbook
-
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ARGS= 	--disable-gudev \
-			--disable-rfkill \
-			--disable-network-manager
-
-FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
-			sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
-			DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
-
-###
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool # libtoolize
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
-###
+CONFIGURE_ARGS= 	-Dalsa=false \
+			-Dgudev=false \
+			-Dnetwork_manager=false \
+			-Drfkill=false \
+			-Dwayland=false
 
 post-install:
-	rm ${PREFIX}/lib/gnome-settings-daemon-3.0/*.{a,la}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-settings-daemon
+	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/gnome-settings-daemon/
 
 .include <bsd.port.mk>
