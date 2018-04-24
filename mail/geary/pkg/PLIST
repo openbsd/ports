@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/10/28 21:27:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/04/24 08:09:08 landry Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -175,12 +175,12 @@ share/gnome/help/geary/sv/search.page
 share/gnome/help/geary/sv/shortcuts.page
 share/gnome/help/geary/sv/star.page
 share/gnome/help/geary/sv/write.page
-share/icons/hicolor/16x16/apps/geary.png
-share/icons/hicolor/24x24/apps/geary.png
-share/icons/hicolor/256x256/apps/geary.png
-share/icons/hicolor/32x32/apps/geary.png
-share/icons/hicolor/48x48/apps/geary.png
-share/icons/hicolor/512x512/apps/geary.png
+share/icons/hicolor/16x16/apps/org.gnome.Geary.png
+share/icons/hicolor/24x24/apps/org.gnome.Geary.png
+share/icons/hicolor/256x256/apps/org.gnome.Geary.png
+share/icons/hicolor/32x32/apps/org.gnome.Geary.png
+share/icons/hicolor/48x48/apps/org.gnome.Geary.png
+share/icons/hicolor/512x512/apps/org.gnome.Geary.png
 share/icons/hicolor/scalable/actions/close-symbolic.svg
 share/icons/hicolor/scalable/actions/detach-symbolic.svg
 share/icons/hicolor/scalable/actions/edit-symbolic.svg
@@ -202,7 +202,7 @@ share/icons/hicolor/scalable/actions/marker-symbolic.svg
 share/icons/hicolor/scalable/actions/tag-symbolic-rtl.svg
 share/icons/hicolor/scalable/actions/tag-symbolic.svg
 share/icons/hicolor/scalable/actions/text-x-generic-symbolic.svg
-share/icons/hicolor/symbolic/apps/geary-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Geary-symbolic.svg
 share/locale/ar/LC_MESSAGES/geary.mo
 share/locale/bs/LC_MESSAGES/geary.mo
 share/locale/ca/LC_MESSAGES/geary.mo
