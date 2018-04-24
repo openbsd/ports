@@ -1,0 +1,41 @@
+$OpenBSD: patch-lib_gc_c,v 1.1 2018/04/24 20:29:50 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-characters/merge_requests/7/
+
+Index: lib/gc.c
+--- lib/gc.c.orig
++++ lib/gc.c
+@@ -26,21 +26,21 @@ static size_t all_block_count;
+ 
+ #define LATIN_BLOCK_SIZE 4
+ static gsize latin_blocks_initialized;
+-static const uc_block_t latin_blocks[LATIN_BLOCK_SIZE];
++static uc_block_t latin_blocks[LATIN_BLOCK_SIZE];
+ static const ucs4_t latin_block_starters[LATIN_BLOCK_SIZE] =
+   { 0x0000, 0x0080, 0x0100, 0x0180 };
+ static size_t latin_block_count;
+ 
+ #define HIRAGANA_BLOCK_SIZE 1
+ static gsize hiragana_blocks_initialized;
+-static const uc_block_t hiragana_blocks[HIRAGANA_BLOCK_SIZE];
++static uc_block_t hiragana_blocks[HIRAGANA_BLOCK_SIZE];
+ static const ucs4_t hiragana_block_starters[HIRAGANA_BLOCK_SIZE] =
+   { 0x3040 };
+ static size_t hiragana_block_count;
+ 
+ #define KATAKANA_BLOCK_SIZE 2
+ static gsize katakana_blocks_initialized;
+-static const uc_block_t katakana_blocks[KATAKANA_BLOCK_SIZE];
++static uc_block_t katakana_blocks[KATAKANA_BLOCK_SIZE];
+ static const ucs4_t katakana_block_starters[KATAKANA_BLOCK_SIZE] =
+   { 0x30A0, 0x31F0 };
+ static size_t katakana_block_count;
+@@ -915,7 +915,7 @@ populate_related_characters (GcCharacterIter *iter)
+ }
+ 
+ static size_t
+-init_blocks (const uc_block_t *blocks, const ucs4_t *starters, size_t size)
++init_blocks (uc_block_t *blocks, const ucs4_t *starters, size_t size)
+ {
+   size_t i, count;
+ 
