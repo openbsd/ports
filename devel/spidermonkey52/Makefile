@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/03 12:19:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/24 21:29:28 jasper Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -15,12 +15,11 @@ COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
 MOZILLA_VERSION =	52
 SUBST_VARS =		MOZILLA_VERSION
 
-V =			${MOZILLA_VERSION}.4.0
+V =			${MOZILLA_VERSION}.7.3
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
-PKGNAME =		spidermonkey-${MOZILLA_VERSION}.4.0
+PKGNAME =		spidermonkey-${MOZILLA_VERSION}.7.3
 PKGSPEC =		spidermonkey->=52.0,<53.0
-REVISION =		2
 
 SHARED_LIBS =		mozjs-52 0.0
 
@@ -35,7 +34,7 @@ EXTRACT_SUFX =		.tar.xz
 # MPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi icudata icui18n icuuc m ncurses nspr4 plc4 plds4
+WANTLIB += c ffi icudata icui18n icuuc m curses nspr4 plc4 plds4
 WANTLIB += readline z ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
