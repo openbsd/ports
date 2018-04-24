@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/13 15:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/24 16:27:06 bluhm Exp $
 
 COMMENT =	test suites for POSIX operating systems
 
@@ -22,9 +22,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/
-
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GL_COMMIT}}
+#DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GL_COMMIT}}
+#MASTER_SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 
 MAKE_FILE =		BSDmakefile
 
