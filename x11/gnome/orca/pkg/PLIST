@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2017/04/16 16:02:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2018/04/24 08:35:48 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -129,8 +129,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}text_attribute_nam
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}text_attribute_names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}tutorialgenerator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}tutorialgenerator.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_I.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_I.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/acss.py
 lib/python${MODPY_VERSION}/site-packages/orca/backends/
 lib/python${MODPY_VERSION}/site-packages/orca/backends/__init__.py
@@ -364,14 +362,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/${M
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/__init__.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-mud/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-panel/${MODPY_PYCACHE}/
@@ -432,14 +422,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gtk-window-decorator/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gtk-window-decorator/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gtk-window-decorator/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gtk-window-decorator/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/__init__.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/liferea/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/metacity/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/metacity/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/metacity/${MODPY_PYCACHE}/
@@ -481,20 +463,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/pidgin/chat.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/pidgin/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/pidgin/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/pidgin/speech_generator.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/__init__.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}braille_generator.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/braille_generator.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/script.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/planner/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/rhythmbox/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/rhythmbox/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/rhythmbox/${MODPY_PYCACHE}/
@@ -688,7 +656,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/spellcheck.py
 lib/python${MODPY_VERSION}/site-packages/orca/structural_navigation.py
 lib/python${MODPY_VERSION}/site-packages/orca/text_attribute_names.py
 lib/python${MODPY_VERSION}/site-packages/orca/tutorialgenerator.py
-lib/python${MODPY_VERSION}/site-packages/orca/where_am_I.py
 @man man/man1/orca.1
 share/examples/orca/
 share/examples/orca/xdg/
