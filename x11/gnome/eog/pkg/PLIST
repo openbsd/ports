@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2017/11/09 10:26:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.51 2018/04/24 09:22:05 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -38,8 +38,6 @@ lib/eog/plugins/reload.plugin
 lib/eog/plugins/statusbar-date.plugin
 lib/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
-share/appdata/
-share/appdata/eog.appdata.xml
 share/applications/eog.desktop
 share/eog/
 share/eog/gir-1.0/
@@ -71,56 +69,6 @@ share/eog/icons/hicolor/scalable/actions/eog-plugin.svg
 share/eog/icons/hicolor/scalable/actions/slideshow-play.svg
 share/glib-2.0/schemas/org.gnome.eog.enums.xml
 share/glib-2.0/schemas/org.gnome.eog.gschema.xml
-share/gtk-doc/html/eog/
-share/gtk-doc/html/eog/EogClipboardHandler.html
-share/gtk-doc/html/eog/EogFileChooser.html
-share/gtk-doc/html/eog/EogImageSaveInfo.html
-share/gtk-doc/html/eog/EogScrollView.html
-share/gtk-doc/html/eog/EogSidebar.html
-share/gtk-doc/html/eog/EogStatusbar.html
-share/gtk-doc/html/eog/EogWindowActivatable.html
-share/gtk-doc/html/eog/annotation-glossary.html
-share/gtk-doc/html/eog/api-index.html
-share/gtk-doc/html/eog/ch01.html
-share/gtk-doc/html/eog/ch02.html
-share/gtk-doc/html/eog/ch03.html
-share/gtk-doc/html/eog/ch04.html
-share/gtk-doc/html/eog/ch05.html
-share/gtk-doc/html/eog/ch06.html
-share/gtk-doc/html/eog/eog-EogJobScheduler.html
-share/gtk-doc/html/eog/eog-eog-application.html
-share/gtk-doc/html/eog/eog-eog-config-keys.html
-share/gtk-doc/html/eog/eog-eog-debug.html
-share/gtk-doc/html/eog/eog-eog-error-message-area.html
-share/gtk-doc/html/eog/eog-eog-exif-util.html
-share/gtk-doc/html/eog/eog-eog-image.html
-share/gtk-doc/html/eog/eog-eog-jobs.html
-share/gtk-doc/html/eog/eog-eog-list-store.html
-share/gtk-doc/html/eog/eog-eog-pixbuf-util.html
-share/gtk-doc/html/eog/eog-eog-print.html
-share/gtk-doc/html/eog/eog-eog-properties-dialog.html
-share/gtk-doc/html/eog/eog-eog-save-as-dialog-helper.html
-share/gtk-doc/html/eog/eog-eog-session.html
-share/gtk-doc/html/eog/eog-eog-thumb-nav.html
-share/gtk-doc/html/eog/eog-eog-thumb-view.html
-share/gtk-doc/html/eog/eog-eog-thumbnail.html
-share/gtk-doc/html/eog/eog-eog-transform.html
-share/gtk-doc/html/eog/eog-eog-uri-converter.html
-share/gtk-doc/html/eog/eog-eog-util.html
-share/gtk-doc/html/eog/eog-eog-window.html
-share/gtk-doc/html/eog/eog-zoom.html
-share/gtk-doc/html/eog/eog.devhelp2
-share/gtk-doc/html/eog/home.png
-share/gtk-doc/html/eog/index.html
-share/gtk-doc/html/eog/left-insensitive.png
-share/gtk-doc/html/eog/left.png
-share/gtk-doc/html/eog/pt01.html
-share/gtk-doc/html/eog/right-insensitive.png
-share/gtk-doc/html/eog/right.png
-share/gtk-doc/html/eog/rn01.html
-share/gtk-doc/html/eog/style.css
-share/gtk-doc/html/eog/up-insensitive.png
-share/gtk-doc/html/eog/up.png
 share/help/C/eog/
 share/help/C/eog/bug-filing.page
 share/help/C/eog/commandline.page
@@ -1701,6 +1649,7 @@ share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_HK/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
+share/metainfo/eog.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
