@@ -1,6 +1,16 @@
-$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.14 2007/10/24 21:52:16 espie Exp $
---- kioslave/man/man2html.cpp.orig	Mon Oct  8 11:51:22 2007
-+++ kioslave/man/man2html.cpp	Thu Oct 18 14:52:57 2007
+$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.15 2018/04/24 19:21:52 nigel Exp $
+Index: kioslave/man/man2html.cpp
+--- kioslave/man/man2html.cpp.orig
++++ kioslave/man/man2html.cpp
+@@ -656,7 +656,7 @@ static void fill_old_character_definitions( void )
+     for (size_t i = 0; i < sizeof(standardchar)/sizeof(CSTRDEF); i++)
+     {
+         const int nr = standardchar[i].nr;
+-        const char temp[3] = { nr / 256, nr % 256, 0 };
++        const char temp[3] = { (char)(nr / 256), (char)(nr % 256), 0 };
+         QCString name( temp );
+         s_characterDefinitionMap.insert( name, StringDefinition( standardchar[i].slen, standardchar[i].st ) );
+     }
 @@ -2706,6 +2706,7 @@ static const char *section_list[] = {
      "3L", "Lightweight Processes Library",
      "3M", "Mathematical Library",
