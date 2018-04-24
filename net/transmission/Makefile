@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2018/01/30 16:34:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.125 2018/04/24 12:52:12 phessler Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -12,6 +12,7 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +23,6 @@ EXTRACT_SUFX=	.tar.xz
 MULTI_PACKAGES=	-main -gtk -qt
 
 ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS} ${CLANG_ARCHS}
-# keep in sync with lang/gcc/${MODGCC4_VERSION}/Makefile
-MODGCC4_ARCHS=  amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
