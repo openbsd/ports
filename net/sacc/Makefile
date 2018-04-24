@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/23 21:42:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/24 16:25:20 solene Exp $
 
 COMMENT =	simple console gopher client
-DISTNAME =	sacc-0.0.0.20171022
+DISTNAME =	sacc-v1.00
+PKGNAME =	${DISTNAME:S/-v/-/}
+EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
 
 HOMEPAGE =	gopher://bitreich.org/1/scm/sacc
@@ -12,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	https://devio.us/~bcallah/source/
+MASTER_SITES =	ftp://bitreich.org/releases/sacc/
 
 # To open HTML and other links sacc doesn't understand.
 RUN_DEPENDS =	devel/xdg-utils
