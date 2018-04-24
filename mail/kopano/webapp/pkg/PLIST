@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/11 10:49:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/04/24 20:52:03 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -617,16 +617,19 @@ kopano-webapp/client/themes/lime/css/
 kopano-webapp/client/themes/lime/css/themelime.css
 kopano-webapp/client/themes/lime/img/
 kopano-webapp/client/themes/lime/img/background.jpg
+kopano-webapp/client/themes/lime/img/background_lime.svg
 kopano-webapp/client/themes/orange/
 kopano-webapp/client/themes/orange/css/
 kopano-webapp/client/themes/orange/css/themeorange.css
 kopano-webapp/client/themes/orange/img/
 kopano-webapp/client/themes/orange/img/background.jpg
+kopano-webapp/client/themes/orange/img/background_orange.svg
 kopano-webapp/client/themes/purple/
 kopano-webapp/client/themes/purple/css/
 kopano-webapp/client/themes/purple/css/themepurple.css
 kopano-webapp/client/themes/purple/img/
 kopano-webapp/client/themes/purple/img/background.jpg
+kopano-webapp/client/themes/purple/img/background_purple.svg
 kopano-webapp/client/third-party/
 kopano-webapp/client/third-party/ux-thirdparty-debug.js
 kopano-webapp/client/third-party/ux-thirdparty.js
@@ -3121,7 +3124,7 @@ kopano-webapp/plugins/spreedwebrtc/config.php.dist
 kopano-webapp/plugins/spreedwebrtc/js/
 kopano-webapp/plugins/spreedwebrtc/js/AngularPlugin.js
 kopano-webapp/plugins/spreedwebrtc/js/jquery-1.6.2.min.js
-kopano-webapp/plugins/spreedwebrtc/js/kopano-webapp-plugin-meetings-3.0.4.0.js.map
+kopano-webapp/plugins/spreedwebrtc/js/kopano-webapp-plugin-meetings-3.0.4.2.js.map
 kopano-webapp/plugins/spreedwebrtc/js/spreedwebrtc-debug.js
 kopano-webapp/plugins/spreedwebrtc/js/spreedwebrtc.js
 kopano-webapp/plugins/spreedwebrtc/manifest.xml
@@ -3173,6 +3176,7 @@ kopano-webapp/plugins/spreedwebrtc/resources/img/
 kopano-webapp/plugins/spreedwebrtc/resources/img/control_panel_c.jpg
 kopano-webapp/plugins/spreedwebrtc/resources/img/introduction_c.jpg
 kopano-webapp/plugins/spreedwebrtc/resources/img/pop_out_c.jpg
+kopano-webapp/plugins/spreedwebrtc/resources/img/wm_logo.png
 kopano-webapp/plugins/titlecounter/
 kopano-webapp/plugins/titlecounter/LICENSE.txt
 kopano-webapp/plugins/titlecounter/config.php.dist
