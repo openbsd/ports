@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/04/24 12:04:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2018/04/24 13:03:46 jasper Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -33,6 +33,7 @@ LIB_DEPENDS =		devel/gettext \
 			multimedia/sfml
 
 CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \
+			-DENABLE_WX=OFF \
 			-DENABLE_SDL=ON
 # Creates unlinkable files ('data' according to file(1))
 CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
