@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/23 14:55:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/24 11:56:12 ajacoutot Exp $
+@conflict latexila-*
 @pkgpath x11/gnome/latexila
 @bin bin/gnome-latex
 @man man/man1/gnome-latex.1

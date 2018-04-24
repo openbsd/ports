@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/23 08:17:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/24 11:56:12 ajacoutot Exp $
+@conflict gnome-tweak-tool-*
 @pkgpath x11/gnome/tweak-tool
 bin/gnome-tweaks
 lib/python${MODPY_VERSION}/site-packages/gtweak/
