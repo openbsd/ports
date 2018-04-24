@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/24 10:08:11 danj Exp $
+bin/spdx-lookup${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup/
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup/__init__.py
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spdx_lookup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
