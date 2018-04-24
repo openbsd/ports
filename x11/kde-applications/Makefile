@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/14 10:22:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/24 17:39:56 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -47,7 +47,7 @@
      #SUBDIR += kbruch
      #SUBDIR += kcachegrind
      #SUBDIR += kcalc
-     #SUBDIR += kcalcore
+     SUBDIR += kcalcore
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
      #SUBDIR += kcolorchooser
@@ -169,7 +169,7 @@
      #SUBDIR += libkexiv2
      SUBDIR += libkface
      SUBDIR += libkgeomap
-     #SUBDIR += libkipi
+     SUBDIR += libkipi
      #SUBDIR += libkleo
      #SUBDIR += libkmahjongg
      #SUBDIR += libkomparediff2
