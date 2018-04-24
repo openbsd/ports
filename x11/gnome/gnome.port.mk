@@ -1,10 +1,6 @@
-# $OpenBSD: gnome.port.mk,v 1.112 2018/02/22 13:59:09 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.113 2018/04/24 14:15:20 ajacoutot Exp $
 #
 # Module for GNOME related ports
-
-# XXX TODO devel/meson
-# -Ddisable_introspection=true|false
-# -Denable-gtk-doc=true|false + valadoc?
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
