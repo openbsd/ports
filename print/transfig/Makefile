@@ -1,35 +1,37 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/08 09:46:52 schwarze Exp $
+# $OpenBSD: Makefile,v 1.45 2018/04/24 12:07:26 espie Exp $
 
-COMMENT=	tools to convert Xfig's .fig files
+COMMENT=	tools to convert Xfig's .fig files  #'
 
-VERSION=	3.2.5a
-DISTNAME=	transfig.${VERSION}
-PKGNAME=	${DISTNAME:S/./-/}
-REVISION = 	3
+VERSION=	3.2.6
+DISTNAME=	fig2dev-${VERSION}
+EXTRACT_SUFX =	.tar.xz
+PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	http://xfig.org/
 
-LIB_DEPENDS=	graphics/png
+LIB_DEPENDS=	graphics/png converters/libiconv
 RUN_DEPENDS=	print/ghostscript/gnu \
 		graphics/netpbm>=9.19
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xpm c m z png>=2
+WANTLIB=	Xpm c m png>=2 iconv
 
 MAKE_FLAGS=	CC="${CC}"
 
-PATCHORIG=	.pat.orig
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS = --enable-transfig
+CONFIGURE_ENV = LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
-CONFIGURE_STYLE=imake
+MAKE_FLAGS = bitmapsdir=${LOCALBASE}/lib/X11/xfig/bitmaps
 
 FLAVORS=	a4
 FLAVOR?=
 
-.if ${FLAVOR:Ma4}
-PATCH_LIST=	patch-* a4-*
+.if !${FLAVOR:Ma4}
+CONFIGURE_ARGS += --enable-letterpaper
 .endif
 
 NO_TEST=	Yes
