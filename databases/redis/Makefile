@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2018/03/19 18:15:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2018/04/24 14:35:29 kn Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-4.0.8
@@ -17,7 +17,11 @@ MASTER_SITES =		http://download.redis.io/releases/
 MODULES =		lang/lua \
 			lang/tcl
 
-MAKE_FLAGS =		CC=${CC} \
+MAKE_FLAGS =		CC="${CC}" \
+			DEBUG="${DEBUG}" \
+			DEBUG_FLAGS="${DEBUG}" \
+			OPT="" \
+			OPTIMIZATION="" \
 			V=1
 
 FAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}" \
