@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/04/23 20:17:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2018/04/24 20:46:46 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -78,6 +79,7 @@ CONFIGURE_ARGS=		-Dcheese=false \
 			-Dwayland=false
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/panels/printers/pp-host.c
+	${SUBST_CMD} ${WRKSRC}/panels/printers/pp-host.c \
+		${WRKSRC}/shell/meson.build
 
 .include <bsd.port.mk>
