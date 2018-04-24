@@ -1,4 +1,4 @@
-$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.3 2018/04/05 19:51:35 robert Exp $
+$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.4 2018/04/24 20:52:13 robert Exp $
 
 Index: ECtools/spamd/kopano_spamd/__init__.py
 --- ECtools/spamd/kopano_spamd/__init__.py.orig
@@ -19,6 +19,6 @@ Index: ECtools/spamd/kopano_spamd/__init__.py
 +    'sa_group': Config.string(default="_spamdaemon"),
 +    'run_as_user': Config.string(default="_kopano"),
 +    'run_as_group': Config.string(default="_kopano"),
-     'learn_ham': Config.boolean(default=True)
+     'learn_ham': Config.boolean(default=True),
+     'header_tag': Config.string(default="x-spam-flag")
  }
- 

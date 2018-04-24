@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/04/05 19:51:35 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/04/24 20:52:13 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -458,6 +458,7 @@ libexec/kopano/
 @man man/man8/kopano-cfgchecker.8
 @man man/man8/kopano-cli.8
 @man man/man8/kopano-dagent.8
+@man man/man8/kopano-dbadm.8
 @man man/man8/kopano-gateway.8
 @man man/man8/kopano-ical.8
 @man man/man8/kopano-mailbox-permissions.8
@@ -482,6 +483,7 @@ sbin/kopano-backup
 sbin/kopano-cachestat
 sbin/kopano-cli
 @bin sbin/kopano-dagent
+@bin sbin/kopano-dbadm
 sbin/kopano-fix-ipm-subtree
 @bin sbin/kopano-gateway
 @bin sbin/kopano-ical

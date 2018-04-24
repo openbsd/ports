@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.3 2018/04/24 20:52:13 robert Exp $
 
 Index: installer/linux/spooler.cfg
 --- installer/linux/spooler.cfg.orig
@@ -24,7 +24,7 @@ Index: installer/linux/spooler.cfg
  
  # create memory coredumps upon crash [no, systemdefault, yes]
  #coredump_enabled = systemdefault
-@@ -153,13 +153,13 @@
+@@ -152,13 +152,13 @@
  #plugin_enabled = yes
  
  # Path to the spooler plugin manager

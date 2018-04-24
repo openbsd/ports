@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_spamd_cfg,v 1.1 2018/03/18 11:30:55 robert Exp $
+$OpenBSD: patch-installer_linux_spamd_cfg,v 1.2 2018/04/24 20:52:13 robert Exp $
 
 Index: installer/linux/spamd.cfg
 --- installer/linux/spamd.cfg.orig
@@ -37,7 +37,7 @@ Index: installer/linux/spamd.cfg
  
  # Learn ham, when the user moves emails from junk to inbox,
  # enabled by default.
-@@ -44,7 +44,7 @@
+@@ -44,10 +44,10 @@
  
  # The dir where ham mails are written to which are later picked up
  # by the sa-learn program
@@ -47,3 +47,6 @@ Index: installer/linux/spamd.cfg
  # Spamassassin group
 -#sa_group = amavis
 +#sa_group = _spamdaemon
+ 
+ # Header tag for spam emails
+ #header_tag = X-Spam-Flag
