@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_d_text_c,v 1.1 2018/04/24 20:56:00 naddy Exp $
+
+Index: src/d_text.c
+--- src/d_text.c.orig
++++ src/d_text.c
+@@ -2163,7 +2163,7 @@ static void
+ paste_preedit_proc(int x, int y)
+ {
+   FILE *fp;
+-  char ch;
++  int ch;
+   if (!is_preedit_running()) {
+     open_preedit_proc(x, y);
+   } else if ((fp = fopen(preedit_filename, "r")) != NULL) {
