@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/02/22 12:53:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/24 09:02:40 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -6,11 +6,11 @@ USE_WXNEEDED=		Yes
 COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
-GNOME_VERSION=		0.5.3
+GNOME_VERSION=		0.6.0
 
 CATEGORIES=		graphics
 
-SHARED_LIBS += gepub                     1.0 # 0.0.0
+SHARED_LIBS += gepub-0.6                 0.0 # 0.0.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
