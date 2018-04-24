@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/02/17 07:46:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2018/04/24 17:00:33 sthen Exp $
 
 COMMENT =	Python module that implements the SSH2 protocol
 
@@ -25,7 +25,9 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			security/py-bcrypt${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-PyNaCl${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -41,6 +43,6 @@ post-install:
 	  ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paramiko
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} test.py --verbose
+	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
