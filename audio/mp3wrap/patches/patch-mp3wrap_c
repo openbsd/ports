@@ -1,0 +1,16 @@
+$OpenBSD: patch-mp3wrap_c,v 1.1 2018/04/24 19:17:57 naddy Exp $
+
+Index: mp3wrap.c
+--- mp3wrap.c.orig
++++ mp3wrap.c
+@@ -70,8 +70,8 @@ int main (int argc, char *argv[]) {
+ 	FILE *file_output, *file_input;
+ 	unsigned long splitpoints[MAXNUMFILE+1], begin=0, end, len=0, crc, fcrc;
+ 	unsigned char filename[512], *wrapindex, c, ext[512];
+-	char option, *ptr;
+-	int i = 0, j = 0, files, oldfiles = 0, indexsize=0, id3offset=0;
++	char *ptr;
++	int i = 0, j = 0, files, option, oldfiles = 0, indexsize=0, id3offset=0;
+ 	short optoffset = 0, addoption = 0, listoption = 0, verboption = 0, ismp3wrap = 0;
+ 
+ 	printf (NAME" Version "VERSION" "DATE". See README and COPYING for more!\n");
