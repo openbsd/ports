@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2018/04/23 22:02:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.160 2018/04/24 11:46:49 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -47,7 +47,8 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection
 
-BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
+BUILD_DEPENDS +=	devel/gsettings-desktop-schemas \
+			www/sassc
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/pulseaudio \
