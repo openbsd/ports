@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/24 14:54:57 anton Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/24 15:09:47 anton Exp $
 
 COMMENT = 		simple markdown translator
 
 DISTNAME = 		lowdown-0.3.2
+REVISION =		0
+
 CATEGORIES = 		textproc
 
 HOMEPAGE = 		https://kristaps.bsd.lv/lowdown/
@@ -12,7 +14,7 @@ MAINTAINER =		Anton Lindqvist <anton@openbsd.org>
 PERMIT_PACKAGE_CDROM = 	Yes
 
 # uses pledge()
-WANTLIB += 		c
+WANTLIB += 		c m
 
 MASTER_SITES = 		https://kristaps.bsd.lv/lowdown/snapshots/
 
