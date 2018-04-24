@@ -1,7 +1,17 @@
-$OpenBSD: patch-setup_py,v 1.5 2016/10/29 18:24:07 danj Exp $
---- setup.py.orig	Wed Oct 19 17:39:12 2016
-+++ setup.py	Thu Oct 27 18:43:33 2016
-@@ -97,7 +97,7 @@ setup_params = dict(
+$OpenBSD: patch-setup_py,v 1.6 2018/04/24 09:40:26 danj Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -58,7 +58,7 @@ package_data = dict(
+ )
+ 
+ force_windows_specific_files = (
+-    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "1").lower()
++    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "0").lower()
+     not in ("", "0", "false", "no")
+ )
+ 
+@@ -107,7 +107,7 @@ setup_params = dict(
      packages=setuptools.find_packages(exclude=['*.tests']),
      package_data=package_data,
      py_modules=['easy_install'],
