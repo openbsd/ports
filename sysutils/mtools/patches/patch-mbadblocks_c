@@ -1,0 +1,14 @@
+$OpenBSD: patch-mbadblocks_c,v 1.1 2018/04/24 19:44:55 naddy Exp $
+
+Index: mbadblocks.c
+--- mbadblocks.c.orig
++++ mbadblocks.c
+@@ -119,7 +119,7 @@ void mbadblocks(int argc, char **argv, int type UNUSED
+ 	Stream_t *Dir;
+ 	int ret;
+ 	char *filename = NULL;
+-	char c;
++	int c;
+ 	unsigned int badClus;
+ 	int sectorMode=0;
+ 	int writeMode=0;

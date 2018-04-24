@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2013/11/06 15:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/04/24 19:44:55 naddy Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 DISTNAME=	mtools-4.0.18
+REVISION=	0
 
 CATEGORIES=	sysutils
 
