@@ -1,0 +1,23 @@
+$OpenBSD: patch-qtcore_src_util_cpp,v 1.1 2018/04/24 12:17:39 naddy Exp $
+
+Index: qtcore/src/util.cpp
+--- qtcore/src/util.cpp.orig
++++ qtcore/src/util.cpp
+@@ -515,7 +515,7 @@ SV* package_classId( const char *package ) {
+         }
+     }
+     // Found nothing, so
+-    return (Smoke::Index) 0;
++    return 0;
+ }
+ 
+ #ifdef PERLQTDEBUG
+@@ -2251,7 +2251,7 @@ XS(XS_AUTOLOAD) {
+                 methcache.insert(mcid, new Smoke::ModuleIndex(mi));
+         }
+ 
+-        static smokeperl_object nothis = { 0, 0, 0, false };
++        static smokeperl_object nothis = { 0, 0, 0, 0 };
+         smokeperl_object* call_this = 0;
+         if ( SvOK(sv_this) ) {
+             call_this = sv_obj_info( sv_this );
