@@ -1,6 +1,7 @@
-$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.3 2015/04/03 17:53:44 sthen Exp $
---- sapi/fpm/php-fpm.conf.in.orig.port	Wed Jan 21 00:40:37 2015
-+++ sapi/fpm/php-fpm.conf.in	Fri Apr  3 18:51:43 2015
+$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.4 2018/04/24 15:26:58 sthen Exp $
+Index: sapi/fpm/php-fpm.conf.in
+--- sapi/fpm/php-fpm.conf.in.orig
++++ sapi/fpm/php-fpm.conf.in
 @@ -161,7 +161,7 @@ group = @php_fpm_group@
  ;                            (IPv6 and IPv4-mapped) on a specific port;
  ;   '/path/to/unix/socket' - to listen on a unix socket.
@@ -23,7 +24,7 @@ $OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.3 2015/04/03 17:53:44 sthen Exp $
  ; When POSIX Access Control Lists are supported you can set them using
  ; these options, value is a comma separated list of user/group names.
  ; When set, listen.owner and listen.group are ignored
-@@ -471,7 +471,7 @@ pm.max_spare_servers = 3
+@@ -477,7 +477,7 @@ pm.max_spare_servers = 3
  ;       possible. However, all PHP paths will be relative to the chroot
  ;       (error_log, sessions.save_path, ...).
  ; Default Value: not set

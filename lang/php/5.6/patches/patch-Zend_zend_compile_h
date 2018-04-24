@@ -1,0 +1,18 @@
+$OpenBSD: patch-Zend_zend_compile_h,v 1.1 2018/04/24 15:26:58 sthen Exp $
+
+clang6
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=227723
+
+Index: Zend/zend_compile.h
+--- Zend/zend_compile.h.orig
++++ Zend/zend_compile.h
+@@ -414,9 +414,6 @@ struct _zend_execute_data {
+ 
+ #define EX(element) execute_data.element
+ 
+-#define EX_TMP_VAR(ex, n)	   ((temp_variable*)(((char*)(ex)) + ((int)(n))))
+-#define EX_TMP_VAR_NUM(ex, n)  (EX_TMP_VAR(ex, 0) - (1 + (n)))
+-
+ #define EX_CV_NUM(ex, n)       (((zval***)(((char*)(ex))+ZEND_MM_ALIGNED_SIZE(sizeof(zend_execute_data))))+(n))
+ 
+ 
