@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2018/04/24 09:23:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2018/04/24 13:36:29 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -84,6 +84,7 @@ RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/seahorse-nautilus \
 			x11/gnome/seahorse-sharing \
 			x11/gnome/sushi \
+			x11/gnome/themes-extra \
 			x11/gnome/todo \
 			x11/gnome/tracker-miners \
 			x11/gnome/tweaks \
