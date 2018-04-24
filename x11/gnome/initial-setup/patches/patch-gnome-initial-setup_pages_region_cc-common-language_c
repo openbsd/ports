@@ -1,4 +1,5 @@
-$OpenBSD: patch-gnome-initial-setup_pages_region_cc-common-language_c,v 1.1 2014/09/21 13:03:56 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_pages_region_cc-common-language_c,v 1.2 2018/04/24 09:45:03 ajacoutot Exp $
+
 --- gnome-initial-setup/pages/region/cc-common-language.c.orig	Sun Sep 21 14:25:02 2014
 +++ gnome-initial-setup/pages/region/cc-common-language.c	Sun Sep 21 14:25:10 2014
 @@ -277,7 +277,7 @@ static void
