@@ -1,0 +1,8 @@
+This module houses themes and theme-y tidbits that don't really fit in anywhere
+else, or deserve their own module. At the moment this consists of:
+
+* The GTK+ 2 version of Adwaita
+* Adwaita-dark as a separate theme, along with its GTK+ 2 equivalent
+* GTK+ 2 versions of the HighContrast themes
+* The legacy HighContrast icon theme
+* Index files needed for Adwaita to be used outside of GNOME
