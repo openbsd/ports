@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2017/12/23 12:31:59 landry Exp $
+# $OpenBSD: Makefile,v 1.129 2018/04/24 15:36:15 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -10,6 +10,7 @@
      SUBDIR += cooledit
      SUBDIR += cooledit,python
      SUBDIR += dhex
+     SUBDIR += dte
      SUBDIR += ee
      SUBDIR += elvis
      SUBDIR += elvis,no_x11
