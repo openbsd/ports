@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/21 18:21:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/24 15:24:59 bcallah Exp $
 
 COMMENT =	scientific plotting and graphing package
-MODPY_EGG_VERSION =	1.23.1
+MODPY_EGG_VERSION =	2.2.2
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
-REVISION =	2
 
 HOMEPAGE =	https://veusz.github.io/
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += lib/qt4/QtGui lib/qt4/QtXml m pthread ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 
 MASTER_SITES =	https://github.com/veusz/veusz/releases/download/${DISTNAME}/
 
 MODULES =	lang/python \
-		x11/qt4
+		x11/qt5
 
 BUILD_DEPENDS =	math/py-numpy \
-		x11/py-qt4
+		x11/py-qt5
 
 RUN_DEPENDS =	math/py-numpy \
-		x11/py-qt4
+		x11/py-qt5
 TEST_DEPENDS =	${BASE_PKGPATH}
 
 do-test:

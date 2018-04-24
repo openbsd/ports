@@ -1,4 +1,4 @@
-$OpenBSD: patch-veusz_helpers_src_qtloops_isnan_h,v 1.1 2017/05/13 18:45:38 espie Exp $
+$OpenBSD: patch-veusz_helpers_src_qtloops_isnan_h,v 1.2 2018/04/24 15:24:59 bcallah Exp $
 clang is better at encapsulating C files, so we don't have a macro for isfinite
 or isnan, hence the tests fail!
 
@@ -11,7 +11,7 @@ Index: veusz/helpers/src/qtloops/isnan.h
  #elif defined(WIN32) || defined(_isnan) || defined(_MSC_VER)
  # define isNaN(_a) (_isnan(_a)) 	/* Win32 definition */
 -#elif defined(isnan) || defined(__FreeBSD__) || defined(__osf__)
-+#elif defined(isnan) || defined(__FreeBSD__) ||defined(__OpenBSD__) || defined(__osf__)
++#elif defined(isnan) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__osf__)
  # define isNaN(_a) (isnan(_a))		/* GNU definition */
  #else
  # define isNaN(_a) (std::isnan(_a))
@@ -19,8 +19,8 @@ Index: veusz/helpers/src/qtloops/isnan.h
  # define isFinite(_a) (_finite(_a)) 	/* Win32 definition */
  #elif defined(__sgi)
  # define isFinite(_a) (_isfinite(_a))
--#elif defined(isfinite)
-+#elif defined(isfinite) || defined(__OpenBSD__)
+-#elif defined(isfinite) || defined(__FreeBSD__)
++#elif defined(isfinite) || defined(__FreeBSD__) || defined(__OpenBSD__)
  # define isFinite(_a) (isfinite(_a))
  #elif defined(__osf__)
  # define isFinite(_a) (finite(_a) && !isNaN(_a))
