@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2018/03/05 12:54:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2018/04/24 08:41:54 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -155,10 +155,12 @@ include/evolution/e-util/e-charset.h
 include/evolution/e-util/e-client-cache.h
 include/evolution/e-util/e-client-combo-box.h
 include/evolution/e-util/e-client-selector.h
+include/evolution/e-util/e-collection-account-wizard.h
 include/evolution/e-util/e-color-chooser-widget.h
 include/evolution/e-util/e-color-combo.h
 include/evolution/e-util/e-config-lookup-result-simple.h
 include/evolution/e-util/e-config-lookup-result.h
+include/evolution/e-util/e-config-lookup-worker.h
 include/evolution/e-util/e-config-lookup.h
 include/evolution/e-util/e-config.h
 include/evolution/e-util/e-conflict-search-selector.h
@@ -387,8 +389,6 @@ include/evolution/em-format/e-mail-part.h
 include/evolution/em-format/e-mail-stripsig-filter.h
 include/evolution/libemail-engine/
 include/evolution/libemail-engine/camel-null-store.h
-include/evolution/libemail-engine/camel-sasl-oauth2-google.h
-include/evolution/libemail-engine/camel-sasl-xoauth2.h
 include/evolution/libemail-engine/e-mail-engine-enums.h
 include/evolution/libemail-engine/e-mail-engine-enumtypes.h
 include/evolution/libemail-engine/e-mail-folder-utils.h
@@ -623,11 +623,7 @@ libexec/evolution/
 @bin libexec/evolution/evolution-backup
 @bin libexec/evolution/killev
 share/GConf/gsettings/evolution.convert
-share/appdata/evolution-bogofilter.metainfo.xml
-share/appdata/evolution-pst.metainfo.xml
-share/appdata/evolution-spamassassin.metainfo.xml
-share/appdata/evolution.appdata.xml
-share/applications/evolution.desktop
+share/applications/org.gnome.Evolution.desktop
 share/evolution/
 share/evolution/address_formats.dat
 share/evolution/addresstypes.xml
@@ -1044,8 +1040,8 @@ share/examples/evolution/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/evolution/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/evolution/xdg/autostart/evolution-alarm-notify.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/evolution-alarm-notify.desktop
+share/examples/evolution/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 share/glib-2.0/schemas/org.gnome.evolution.addressbook.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.bogofilter.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.calendar.gschema.xml
@@ -1150,6 +1146,7 @@ share/help/C/evolution/import-supported-file-formats.page
 share/help/C/evolution/index.page
 share/help/C/evolution/intro-application.page
 share/help/C/evolution/intro-first-run.page
+share/help/C/evolution/intro-keyboard-shortcuts.page
 share/help/C/evolution/intro-main-window.page
 share/help/C/evolution/legal.xml
 share/help/C/evolution/mail-access-gmail-imap-account.page
@@ -1233,7 +1230,6 @@ share/help/C/evolution/mail-moving-emails.page
 share/help/C/evolution/mail-not-sent.page
 share/help/C/evolution/mail-organizing.page
 share/help/C/evolution/mail-read-receipts.page
-share/help/C/evolution/mail-reading-keyboard-shortcuts.page
 share/help/C/evolution/mail-received-notification.page
 share/help/C/evolution/mail-receiving-options-exchange-ews.page
 share/help/C/evolution/mail-receiving-options-exchange-mapi.page
@@ -1246,7 +1242,6 @@ share/help/C/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/C/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/C/evolution/mail-receiving-options-usenet-news.page
 share/help/C/evolution/mail-receiving-options.page
-share/help/C/evolution/mail-recognized-thread-related-headers.page
 share/help/C/evolution/mail-refresh-folders.page
 share/help/C/evolution/mail-save-as-pdf.page
 share/help/C/evolution/mail-search-folders-add.page
@@ -1380,6 +1375,7 @@ share/help/ca/evolution/import-supported-file-formats.page
 share/help/ca/evolution/index.page
 share/help/ca/evolution/intro-application.page
 share/help/ca/evolution/intro-first-run.page
+share/help/ca/evolution/intro-keyboard-shortcuts.page
 share/help/ca/evolution/intro-main-window.page
 share/help/ca/evolution/legal.xml
 share/help/ca/evolution/mail-access-gmail-imap-account.page
@@ -1463,7 +1459,6 @@ share/help/ca/evolution/mail-moving-emails.page
 share/help/ca/evolution/mail-not-sent.page
 share/help/ca/evolution/mail-organizing.page
 share/help/ca/evolution/mail-read-receipts.page
-share/help/ca/evolution/mail-reading-keyboard-shortcuts.page
 share/help/ca/evolution/mail-received-notification.page
 share/help/ca/evolution/mail-receiving-options-exchange-ews.page
 share/help/ca/evolution/mail-receiving-options-exchange-mapi.page
@@ -1476,7 +1471,6 @@ share/help/ca/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/ca/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/ca/evolution/mail-receiving-options-usenet-news.page
 share/help/ca/evolution/mail-receiving-options.page
-share/help/ca/evolution/mail-recognized-thread-related-headers.page
 share/help/ca/evolution/mail-refresh-folders.page
 share/help/ca/evolution/mail-save-as-pdf.page
 share/help/ca/evolution/mail-search-folders-add.page
@@ -1610,6 +1604,7 @@ share/help/cs/evolution/import-supported-file-formats.page
 share/help/cs/evolution/index.page
 share/help/cs/evolution/intro-application.page
 share/help/cs/evolution/intro-first-run.page
+share/help/cs/evolution/intro-keyboard-shortcuts.page
 share/help/cs/evolution/intro-main-window.page
 share/help/cs/evolution/legal.xml
 share/help/cs/evolution/mail-access-gmail-imap-account.page
@@ -1693,7 +1688,6 @@ share/help/cs/evolution/mail-moving-emails.page
 share/help/cs/evolution/mail-not-sent.page
 share/help/cs/evolution/mail-organizing.page
 share/help/cs/evolution/mail-read-receipts.page
-share/help/cs/evolution/mail-reading-keyboard-shortcuts.page
 share/help/cs/evolution/mail-received-notification.page
 share/help/cs/evolution/mail-receiving-options-exchange-ews.page
 share/help/cs/evolution/mail-receiving-options-exchange-mapi.page
@@ -1706,7 +1700,6 @@ share/help/cs/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/cs/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/cs/evolution/mail-receiving-options-usenet-news.page
 share/help/cs/evolution/mail-receiving-options.page
-share/help/cs/evolution/mail-recognized-thread-related-headers.page
 share/help/cs/evolution/mail-refresh-folders.page
 share/help/cs/evolution/mail-save-as-pdf.page
 share/help/cs/evolution/mail-search-folders-add.page
@@ -1840,6 +1833,7 @@ share/help/de/evolution/import-supported-file-formats.page
 share/help/de/evolution/index.page
 share/help/de/evolution/intro-application.page
 share/help/de/evolution/intro-first-run.page
+share/help/de/evolution/intro-keyboard-shortcuts.page
 share/help/de/evolution/intro-main-window.page
 share/help/de/evolution/legal.xml
 share/help/de/evolution/mail-access-gmail-imap-account.page
@@ -1923,7 +1917,6 @@ share/help/de/evolution/mail-moving-emails.page
 share/help/de/evolution/mail-not-sent.page
 share/help/de/evolution/mail-organizing.page
 share/help/de/evolution/mail-read-receipts.page
-share/help/de/evolution/mail-reading-keyboard-shortcuts.page
 share/help/de/evolution/mail-received-notification.page
 share/help/de/evolution/mail-receiving-options-exchange-ews.page
 share/help/de/evolution/mail-receiving-options-exchange-mapi.page
@@ -1936,7 +1929,6 @@ share/help/de/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/de/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/de/evolution/mail-receiving-options-usenet-news.page
 share/help/de/evolution/mail-receiving-options.page
-share/help/de/evolution/mail-recognized-thread-related-headers.page
 share/help/de/evolution/mail-refresh-folders.page
 share/help/de/evolution/mail-save-as-pdf.page
 share/help/de/evolution/mail-search-folders-add.page
@@ -2070,6 +2062,7 @@ share/help/el/evolution/import-supported-file-formats.page
 share/help/el/evolution/index.page
 share/help/el/evolution/intro-application.page
 share/help/el/evolution/intro-first-run.page
+share/help/el/evolution/intro-keyboard-shortcuts.page
 share/help/el/evolution/intro-main-window.page
 share/help/el/evolution/legal.xml
 share/help/el/evolution/mail-access-gmail-imap-account.page
@@ -2153,7 +2146,6 @@ share/help/el/evolution/mail-moving-emails.page
 share/help/el/evolution/mail-not-sent.page
 share/help/el/evolution/mail-organizing.page
 share/help/el/evolution/mail-read-receipts.page
-share/help/el/evolution/mail-reading-keyboard-shortcuts.page
 share/help/el/evolution/mail-received-notification.page
 share/help/el/evolution/mail-receiving-options-exchange-ews.page
 share/help/el/evolution/mail-receiving-options-exchange-mapi.page
@@ -2166,7 +2158,6 @@ share/help/el/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/el/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/el/evolution/mail-receiving-options-usenet-news.page
 share/help/el/evolution/mail-receiving-options.page
-share/help/el/evolution/mail-recognized-thread-related-headers.page
 share/help/el/evolution/mail-refresh-folders.page
 share/help/el/evolution/mail-save-as-pdf.page
 share/help/el/evolution/mail-search-folders-add.page
@@ -2301,6 +2292,7 @@ share/help/en_GB/evolution/import-supported-file-formats.page
 share/help/en_GB/evolution/index.page
 share/help/en_GB/evolution/intro-application.page
 share/help/en_GB/evolution/intro-first-run.page
+share/help/en_GB/evolution/intro-keyboard-shortcuts.page
 share/help/en_GB/evolution/intro-main-window.page
 share/help/en_GB/evolution/legal.xml
 share/help/en_GB/evolution/mail-access-gmail-imap-account.page
@@ -2384,7 +2376,6 @@ share/help/en_GB/evolution/mail-moving-emails.page
 share/help/en_GB/evolution/mail-not-sent.page
 share/help/en_GB/evolution/mail-organizing.page
 share/help/en_GB/evolution/mail-read-receipts.page
-share/help/en_GB/evolution/mail-reading-keyboard-shortcuts.page
 share/help/en_GB/evolution/mail-received-notification.page
 share/help/en_GB/evolution/mail-receiving-options-exchange-ews.page
 share/help/en_GB/evolution/mail-receiving-options-exchange-mapi.page
@@ -2397,7 +2388,6 @@ share/help/en_GB/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/en_GB/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/en_GB/evolution/mail-receiving-options-usenet-news.page
 share/help/en_GB/evolution/mail-receiving-options.page
-share/help/en_GB/evolution/mail-recognized-thread-related-headers.page
 share/help/en_GB/evolution/mail-refresh-folders.page
 share/help/en_GB/evolution/mail-save-as-pdf.page
 share/help/en_GB/evolution/mail-search-folders-add.page
@@ -2531,6 +2521,7 @@ share/help/es/evolution/import-supported-file-formats.page
 share/help/es/evolution/index.page
 share/help/es/evolution/intro-application.page
 share/help/es/evolution/intro-first-run.page
+share/help/es/evolution/intro-keyboard-shortcuts.page
 share/help/es/evolution/intro-main-window.page
 share/help/es/evolution/legal.xml
 share/help/es/evolution/mail-access-gmail-imap-account.page
@@ -2614,7 +2605,6 @@ share/help/es/evolution/mail-moving-emails.page
 share/help/es/evolution/mail-not-sent.page
 share/help/es/evolution/mail-organizing.page
 share/help/es/evolution/mail-read-receipts.page
-share/help/es/evolution/mail-reading-keyboard-shortcuts.page
 share/help/es/evolution/mail-received-notification.page
 share/help/es/evolution/mail-receiving-options-exchange-ews.page
 share/help/es/evolution/mail-receiving-options-exchange-mapi.page
@@ -2627,7 +2617,6 @@ share/help/es/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/es/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/es/evolution/mail-receiving-options-usenet-news.page
 share/help/es/evolution/mail-receiving-options.page
-share/help/es/evolution/mail-recognized-thread-related-headers.page
 share/help/es/evolution/mail-refresh-folders.page
 share/help/es/evolution/mail-save-as-pdf.page
 share/help/es/evolution/mail-search-folders-add.page
@@ -2761,6 +2750,7 @@ share/help/eu/evolution/import-supported-file-formats.page
 share/help/eu/evolution/index.page
 share/help/eu/evolution/intro-application.page
 share/help/eu/evolution/intro-first-run.page
+share/help/eu/evolution/intro-keyboard-shortcuts.page
 share/help/eu/evolution/intro-main-window.page
 share/help/eu/evolution/legal.xml
 share/help/eu/evolution/mail-access-gmail-imap-account.page
@@ -2844,7 +2834,6 @@ share/help/eu/evolution/mail-moving-emails.page
 share/help/eu/evolution/mail-not-sent.page
 share/help/eu/evolution/mail-organizing.page
 share/help/eu/evolution/mail-read-receipts.page
-share/help/eu/evolution/mail-reading-keyboard-shortcuts.page
 share/help/eu/evolution/mail-received-notification.page
 share/help/eu/evolution/mail-receiving-options-exchange-ews.page
 share/help/eu/evolution/mail-receiving-options-exchange-mapi.page
@@ -2857,7 +2846,6 @@ share/help/eu/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/eu/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/eu/evolution/mail-receiving-options-usenet-news.page
 share/help/eu/evolution/mail-receiving-options.page
-share/help/eu/evolution/mail-recognized-thread-related-headers.page
 share/help/eu/evolution/mail-refresh-folders.page
 share/help/eu/evolution/mail-save-as-pdf.page
 share/help/eu/evolution/mail-search-folders-add.page
@@ -2991,6 +2979,7 @@ share/help/fr/evolution/import-supported-file-formats.page
 share/help/fr/evolution/index.page
 share/help/fr/evolution/intro-application.page
 share/help/fr/evolution/intro-first-run.page
+share/help/fr/evolution/intro-keyboard-shortcuts.page
 share/help/fr/evolution/intro-main-window.page
 share/help/fr/evolution/legal.xml
 share/help/fr/evolution/mail-access-gmail-imap-account.page
@@ -3074,7 +3063,6 @@ share/help/fr/evolution/mail-moving-emails.page
 share/help/fr/evolution/mail-not-sent.page
 share/help/fr/evolution/mail-organizing.page
 share/help/fr/evolution/mail-read-receipts.page
-share/help/fr/evolution/mail-reading-keyboard-shortcuts.page
 share/help/fr/evolution/mail-received-notification.page
 share/help/fr/evolution/mail-receiving-options-exchange-ews.page
 share/help/fr/evolution/mail-receiving-options-exchange-mapi.page
@@ -3087,7 +3075,6 @@ share/help/fr/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/fr/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/fr/evolution/mail-receiving-options-usenet-news.page
 share/help/fr/evolution/mail-receiving-options.page
-share/help/fr/evolution/mail-recognized-thread-related-headers.page
 share/help/fr/evolution/mail-refresh-folders.page
 share/help/fr/evolution/mail-save-as-pdf.page
 share/help/fr/evolution/mail-search-folders-add.page
@@ -3221,6 +3208,7 @@ share/help/gl/evolution/import-supported-file-formats.page
 share/help/gl/evolution/index.page
 share/help/gl/evolution/intro-application.page
 share/help/gl/evolution/intro-first-run.page
+share/help/gl/evolution/intro-keyboard-shortcuts.page
 share/help/gl/evolution/intro-main-window.page
 share/help/gl/evolution/legal.xml
 share/help/gl/evolution/mail-access-gmail-imap-account.page
@@ -3304,7 +3292,6 @@ share/help/gl/evolution/mail-moving-emails.page
 share/help/gl/evolution/mail-not-sent.page
 share/help/gl/evolution/mail-organizing.page
 share/help/gl/evolution/mail-read-receipts.page
-share/help/gl/evolution/mail-reading-keyboard-shortcuts.page
 share/help/gl/evolution/mail-received-notification.page
 share/help/gl/evolution/mail-receiving-options-exchange-ews.page
 share/help/gl/evolution/mail-receiving-options-exchange-mapi.page
@@ -3317,7 +3304,6 @@ share/help/gl/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/gl/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/gl/evolution/mail-receiving-options-usenet-news.page
 share/help/gl/evolution/mail-receiving-options.page
-share/help/gl/evolution/mail-recognized-thread-related-headers.page
 share/help/gl/evolution/mail-refresh-folders.page
 share/help/gl/evolution/mail-save-as-pdf.page
 share/help/gl/evolution/mail-search-folders-add.page
@@ -3451,6 +3437,7 @@ share/help/hu/evolution/import-supported-file-formats.page
 share/help/hu/evolution/index.page
 share/help/hu/evolution/intro-application.page
 share/help/hu/evolution/intro-first-run.page
+share/help/hu/evolution/intro-keyboard-shortcuts.page
 share/help/hu/evolution/intro-main-window.page
 share/help/hu/evolution/legal.xml
 share/help/hu/evolution/mail-access-gmail-imap-account.page
@@ -3534,7 +3521,6 @@ share/help/hu/evolution/mail-moving-emails.page
 share/help/hu/evolution/mail-not-sent.page
 share/help/hu/evolution/mail-organizing.page
 share/help/hu/evolution/mail-read-receipts.page
-share/help/hu/evolution/mail-reading-keyboard-shortcuts.page
 share/help/hu/evolution/mail-received-notification.page
 share/help/hu/evolution/mail-receiving-options-exchange-ews.page
 share/help/hu/evolution/mail-receiving-options-exchange-mapi.page
@@ -3547,7 +3533,6 @@ share/help/hu/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/hu/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/hu/evolution/mail-receiving-options-usenet-news.page
 share/help/hu/evolution/mail-receiving-options.page
-share/help/hu/evolution/mail-recognized-thread-related-headers.page
 share/help/hu/evolution/mail-refresh-folders.page
 share/help/hu/evolution/mail-save-as-pdf.page
 share/help/hu/evolution/mail-search-folders-add.page
@@ -3682,6 +3667,7 @@ share/help/mk/evolution/import-supported-file-formats.page
 share/help/mk/evolution/index.page
 share/help/mk/evolution/intro-application.page
 share/help/mk/evolution/intro-first-run.page
+share/help/mk/evolution/intro-keyboard-shortcuts.page
 share/help/mk/evolution/intro-main-window.page
 share/help/mk/evolution/legal.xml
 share/help/mk/evolution/mail-access-gmail-imap-account.page
@@ -3765,7 +3751,6 @@ share/help/mk/evolution/mail-moving-emails.page
 share/help/mk/evolution/mail-not-sent.page
 share/help/mk/evolution/mail-organizing.page
 share/help/mk/evolution/mail-read-receipts.page
-share/help/mk/evolution/mail-reading-keyboard-shortcuts.page
 share/help/mk/evolution/mail-received-notification.page
 share/help/mk/evolution/mail-receiving-options-exchange-ews.page
 share/help/mk/evolution/mail-receiving-options-exchange-mapi.page
@@ -3778,7 +3763,6 @@ share/help/mk/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/mk/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/mk/evolution/mail-receiving-options-usenet-news.page
 share/help/mk/evolution/mail-receiving-options.page
-share/help/mk/evolution/mail-recognized-thread-related-headers.page
 share/help/mk/evolution/mail-refresh-folders.page
 share/help/mk/evolution/mail-save-as-pdf.page
 share/help/mk/evolution/mail-search-folders-add.page
@@ -3912,6 +3896,7 @@ share/help/oc/evolution/import-supported-file-formats.page
 share/help/oc/evolution/index.page
 share/help/oc/evolution/intro-application.page
 share/help/oc/evolution/intro-first-run.page
+share/help/oc/evolution/intro-keyboard-shortcuts.page
 share/help/oc/evolution/intro-main-window.page
 share/help/oc/evolution/legal.xml
 share/help/oc/evolution/mail-access-gmail-imap-account.page
@@ -3995,7 +3980,6 @@ share/help/oc/evolution/mail-moving-emails.page
 share/help/oc/evolution/mail-not-sent.page
 share/help/oc/evolution/mail-organizing.page
 share/help/oc/evolution/mail-read-receipts.page
-share/help/oc/evolution/mail-reading-keyboard-shortcuts.page
 share/help/oc/evolution/mail-received-notification.page
 share/help/oc/evolution/mail-receiving-options-exchange-ews.page
 share/help/oc/evolution/mail-receiving-options-exchange-mapi.page
@@ -4008,7 +3992,6 @@ share/help/oc/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/oc/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/oc/evolution/mail-receiving-options-usenet-news.page
 share/help/oc/evolution/mail-receiving-options.page
-share/help/oc/evolution/mail-recognized-thread-related-headers.page
 share/help/oc/evolution/mail-refresh-folders.page
 share/help/oc/evolution/mail-save-as-pdf.page
 share/help/oc/evolution/mail-search-folders-add.page
@@ -4143,6 +4126,7 @@ share/help/ru/evolution/import-supported-file-formats.page
 share/help/ru/evolution/index.page
 share/help/ru/evolution/intro-application.page
 share/help/ru/evolution/intro-first-run.page
+share/help/ru/evolution/intro-keyboard-shortcuts.page
 share/help/ru/evolution/intro-main-window.page
 share/help/ru/evolution/legal.xml
 share/help/ru/evolution/mail-access-gmail-imap-account.page
@@ -4226,7 +4210,6 @@ share/help/ru/evolution/mail-moving-emails.page
 share/help/ru/evolution/mail-not-sent.page
 share/help/ru/evolution/mail-organizing.page
 share/help/ru/evolution/mail-read-receipts.page
-share/help/ru/evolution/mail-reading-keyboard-shortcuts.page
 share/help/ru/evolution/mail-received-notification.page
 share/help/ru/evolution/mail-receiving-options-exchange-ews.page
 share/help/ru/evolution/mail-receiving-options-exchange-mapi.page
@@ -4239,7 +4222,6 @@ share/help/ru/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/ru/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/ru/evolution/mail-receiving-options-usenet-news.page
 share/help/ru/evolution/mail-receiving-options.page
-share/help/ru/evolution/mail-recognized-thread-related-headers.page
 share/help/ru/evolution/mail-refresh-folders.page
 share/help/ru/evolution/mail-save-as-pdf.page
 share/help/ru/evolution/mail-search-folders-add.page
@@ -4373,6 +4355,7 @@ share/help/sl/evolution/import-supported-file-formats.page
 share/help/sl/evolution/index.page
 share/help/sl/evolution/intro-application.page
 share/help/sl/evolution/intro-first-run.page
+share/help/sl/evolution/intro-keyboard-shortcuts.page
 share/help/sl/evolution/intro-main-window.page
 share/help/sl/evolution/legal.xml
 share/help/sl/evolution/mail-access-gmail-imap-account.page
@@ -4456,7 +4439,6 @@ share/help/sl/evolution/mail-moving-emails.page
 share/help/sl/evolution/mail-not-sent.page
 share/help/sl/evolution/mail-organizing.page
 share/help/sl/evolution/mail-read-receipts.page
-share/help/sl/evolution/mail-reading-keyboard-shortcuts.page
 share/help/sl/evolution/mail-received-notification.page
 share/help/sl/evolution/mail-receiving-options-exchange-ews.page
 share/help/sl/evolution/mail-receiving-options-exchange-mapi.page
@@ -4469,7 +4451,6 @@ share/help/sl/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/sl/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/sl/evolution/mail-receiving-options-usenet-news.page
 share/help/sl/evolution/mail-receiving-options.page
-share/help/sl/evolution/mail-recognized-thread-related-headers.page
 share/help/sl/evolution/mail-refresh-folders.page
 share/help/sl/evolution/mail-save-as-pdf.page
 share/help/sl/evolution/mail-search-folders-add.page
@@ -4603,6 +4584,7 @@ share/help/sv/evolution/import-supported-file-formats.page
 share/help/sv/evolution/index.page
 share/help/sv/evolution/intro-application.page
 share/help/sv/evolution/intro-first-run.page
+share/help/sv/evolution/intro-keyboard-shortcuts.page
 share/help/sv/evolution/intro-main-window.page
 share/help/sv/evolution/legal.xml
 share/help/sv/evolution/mail-access-gmail-imap-account.page
@@ -4686,7 +4668,6 @@ share/help/sv/evolution/mail-moving-emails.page
 share/help/sv/evolution/mail-not-sent.page
 share/help/sv/evolution/mail-organizing.page
 share/help/sv/evolution/mail-read-receipts.page
-share/help/sv/evolution/mail-reading-keyboard-shortcuts.page
 share/help/sv/evolution/mail-received-notification.page
 share/help/sv/evolution/mail-receiving-options-exchange-ews.page
 share/help/sv/evolution/mail-receiving-options-exchange-mapi.page
@@ -4699,7 +4680,6 @@ share/help/sv/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/sv/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/sv/evolution/mail-receiving-options-usenet-news.page
 share/help/sv/evolution/mail-receiving-options.page
-share/help/sv/evolution/mail-recognized-thread-related-headers.page
 share/help/sv/evolution/mail-refresh-folders.page
 share/help/sv/evolution/mail-save-as-pdf.page
 share/help/sv/evolution/mail-search-folders-add.page
@@ -4834,6 +4814,7 @@ share/help/te/evolution/import-supported-file-formats.page
 share/help/te/evolution/index.page
 share/help/te/evolution/intro-application.page
 share/help/te/evolution/intro-first-run.page
+share/help/te/evolution/intro-keyboard-shortcuts.page
 share/help/te/evolution/intro-main-window.page
 share/help/te/evolution/legal.xml
 share/help/te/evolution/mail-access-gmail-imap-account.page
@@ -4917,7 +4898,6 @@ share/help/te/evolution/mail-moving-emails.page
 share/help/te/evolution/mail-not-sent.page
 share/help/te/evolution/mail-organizing.page
 share/help/te/evolution/mail-read-receipts.page
-share/help/te/evolution/mail-reading-keyboard-shortcuts.page
 share/help/te/evolution/mail-received-notification.page
 share/help/te/evolution/mail-receiving-options-exchange-ews.page
 share/help/te/evolution/mail-receiving-options-exchange-mapi.page
@@ -4930,7 +4910,6 @@ share/help/te/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/te/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/te/evolution/mail-receiving-options-usenet-news.page
 share/help/te/evolution/mail-receiving-options.page
-share/help/te/evolution/mail-recognized-thread-related-headers.page
 share/help/te/evolution/mail-refresh-folders.page
 share/help/te/evolution/mail-save-as-pdf.page
 share/help/te/evolution/mail-search-folders-add.page
@@ -5064,6 +5043,7 @@ share/help/zh_CN/evolution/import-supported-file-formats.page
 share/help/zh_CN/evolution/index.page
 share/help/zh_CN/evolution/intro-application.page
 share/help/zh_CN/evolution/intro-first-run.page
+share/help/zh_CN/evolution/intro-keyboard-shortcuts.page
 share/help/zh_CN/evolution/intro-main-window.page
 share/help/zh_CN/evolution/legal.xml
 share/help/zh_CN/evolution/mail-access-gmail-imap-account.page
@@ -5147,7 +5127,6 @@ share/help/zh_CN/evolution/mail-moving-emails.page
 share/help/zh_CN/evolution/mail-not-sent.page
 share/help/zh_CN/evolution/mail-organizing.page
 share/help/zh_CN/evolution/mail-read-receipts.page
-share/help/zh_CN/evolution/mail-reading-keyboard-shortcuts.page
 share/help/zh_CN/evolution/mail-received-notification.page
 share/help/zh_CN/evolution/mail-receiving-options-exchange-ews.page
 share/help/zh_CN/evolution/mail-receiving-options-exchange-mapi.page
@@ -5160,7 +5139,6 @@ share/help/zh_CN/evolution/mail-receiving-options-unix-mbox-spool-directory.page
 share/help/zh_CN/evolution/mail-receiving-options-unix-mbox-spool-file.page
 share/help/zh_CN/evolution/mail-receiving-options-usenet-news.page
 share/help/zh_CN/evolution/mail-receiving-options.page
-share/help/zh_CN/evolution/mail-recognized-thread-related-headers.page
 share/help/zh_CN/evolution/mail-refresh-folders.page
 share/help/zh_CN/evolution/mail-save-as-pdf.page
 share/help/zh_CN/evolution/mail-search-folders-add.page
@@ -5324,6 +5302,10 @@ share/locale/xh/LC_MESSAGES/evolution.mo
 share/locale/zh_CN/LC_MESSAGES/evolution.mo
 share/locale/zh_HK/LC_MESSAGES/evolution.mo
 share/locale/zh_TW/LC_MESSAGES/evolution.mo
+share/metainfo/org.gnome.Evolution-bogofilter.metainfo.xml
+share/metainfo/org.gnome.Evolution-pst.metainfo.xml
+share/metainfo/org.gnome.Evolution-spamassassin.metainfo.xml
+share/metainfo/org.gnome.Evolution.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
