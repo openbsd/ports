@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:00 naddy Exp $
-
-# XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11 -fpermissive
+# $OpenBSD: Makefile,v 1.23 2018/04/24 12:04:00 jasper Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
-DISTNAME =		vbam-1.8.0.1054-src
-PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		11
+GH_ACCOUNT =		visualboyadvance-m
+GH_PROJECT =		${GH_ACCOUNT}
+GH_TAGNAME =		v2.0.2
+PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
 
@@ -19,16 +17,8 @@ HOMEPAGE =		http://www.vba-m.com
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLU ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0 atkmm-1.6
-WANTLIB += c cairo cairomm-1.0 fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gdkglext-x11-1.0 gdkglextmm-x11-1.2
-WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0 gtkglextmm-x11-1.2
-WANTLIB += gtkmm-2.4 iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangomm-1.4 pangox-1.0 png pthread sigc-2.0 z
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vbam/}
+WANTLIB += GL GLU SDL2 c iconv intl m png sfml-network sfml-system
+WANTLIB += z
 
 MODULES =		devel/cmake
 
@@ -37,21 +27,21 @@ COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/gettext-tools
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
+LIB_DEPENDS =		devel/gettext \
+			devel/sdl2 \
+			graphics/png \
+			multimedia/sfml
 
-LIB_DEPENDS =		devel/sdl \
-			x11/gtkglextmm
+CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \
+			-DENABLE_SDL=ON
+# Creates unlinkable files ('data' according to file(1))
+CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
+
+CXXFLAGS +=		-Wno-c++11-narrowing -I${X11BASE}/include
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
-
-# requires posix_openpt
-CONFIGURE_ARGS +=	-DENABLE_WX=OFF -DENABLE_FFMPEG=OFF
-CXXFLAGS +=		-Wno-c++11-narrowing
-
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vbam
+post-install:
+	mv ${PREFIX}/etc/ ${PREFIX}/share/examples/vbam/
 
 .include <bsd.port.mk>
