@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.154 2018/04/23 12:13:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2018/04/24 13:16:12 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.2      # 14.1
 
@@ -35,7 +36,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 #     org.gnome.desktop.background.gschema.xml
 #     org.gnome.desktop.interface.gschema.xml
 RUN_DEPENDS +=		x11/gnome/backgrounds \
-			x11/gnome/themes-standard
+			x11/gnome/themes-extra
 
 LIB_DEPENDS=		x11/gtk+3
 
