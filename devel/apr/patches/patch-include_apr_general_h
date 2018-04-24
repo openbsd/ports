@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_apr_general_h,v 1.1 2018/04/24 06:24:49 stsp Exp $
+fix build failure on arm:
+implicit declaration of function '_Offsetof' is invalid in C99 
+Index: include/apr_general.h
+--- include/apr_general.h.orig
++++ include/apr_general.h
+@@ -76,7 +76,7 @@ typedef int               apr_signum_t;
+  * @return offset
+  */
+ 
+-#if defined(CRAY) || (defined(__arm) && !(defined(LINUX) || defined(__FreeBSD__)))
++#if defined(CRAY) || (defined(__arm) && !(defined(LINUX) || defined(__FreeBSD__) || defined(__OpenBSD__)))
+ #ifdef __STDC__
+ #define APR_OFFSET(p_type,field) _Offsetof(p_type,field)
+ #else
