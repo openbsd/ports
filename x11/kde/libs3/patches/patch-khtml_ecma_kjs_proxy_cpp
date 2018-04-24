@@ -1,0 +1,16 @@
+$OpenBSD: patch-khtml_ecma_kjs_proxy_cpp,v 1.1 2018/04/24 22:16:04 naddy Exp $
+
+Index: khtml/ecma/kjs_proxy.cpp
+--- khtml/ecma/kjs_proxy.cpp.orig
++++ khtml/ecma/kjs_proxy.cpp
+@@ -388,8 +388,8 @@ void KJSCPUGuard::start(unsigned int ms, unsigned int 
+ 
+   oldAlarmHandler = signal(SIGVTALRM, alarmHandler);
+   itimerval tv = {
+-      { i_ms / 1000, (i_ms % 1000) * 1000 },
+-      { ms / 1000, (ms % 1000) * 1000 }
++      { i_ms / 1000, static_cast<suseconds_t>((i_ms % 1000) * 1000) },
++      { ms / 1000, static_cast<suseconds_t>((ms % 1000) * 1000) }
+   };
+   setitimer(ITIMER_VIRTUAL, &tv, &oldtv);
+ }
