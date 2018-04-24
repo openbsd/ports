@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/24 19:06:01 naddy Exp $
 
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
 DISTNAME=	cuetools-1.3.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio textproc
 
