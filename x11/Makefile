@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.612 2018/04/23 13:39:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.613 2018/04/24 13:22:45 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -110,7 +110,6 @@
      SUBDIR += gtkdatabox
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
-     SUBDIR += gtkglextmm
      SUBDIR += gtkhotkey
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
