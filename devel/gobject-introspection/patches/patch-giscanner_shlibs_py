@@ -1,4 +1,6 @@
-$OpenBSD: patch-giscanner_shlibs_py,v 1.8 2018/04/24 18:18:37 jasper Exp $
+$OpenBSD: patch-giscanner_shlibs_py,v 1.9 2018/04/24 18:45:12 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gobject-introspection/issues/208
 
 Index: giscanner/shlibs.py
 --- giscanner/shlibs.py.orig
