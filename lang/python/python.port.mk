@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.96 2018/01/29 20:49:24 landry Exp $
+# $OpenBSD: python.port.mk,v 1.97 2018/04/24 09:40:51 danj Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -83,7 +83,7 @@ _MODPY_PRE_BUILD_STEPS = :
 .if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}>=28.6.1v0
+MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}>=39.0.1v0
 
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
