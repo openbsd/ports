@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2018/02/24 13:13:40 bket Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/24 15:24:06 bcallah Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
-DISTNAME =	focuswriter-1.6.10
+DISTNAME =	focuswriter-1.6.12
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
 MASTER_SITES =	${HOMEPAGE}
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES +=	devel/qmake \
