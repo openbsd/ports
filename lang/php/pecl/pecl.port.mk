@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.6 2016/03/19 21:18:38 naddy Exp $
+# $OpenBSD: pecl.port.mk,v 1.7 2018/04/24 17:36:51 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -9,7 +9,7 @@ PKGNAME ?=	pecl-${DISTNAME:S/pecl-//:S/_/-/:L}
 _PECLMOD ?=	${DISTNAME:S/pecl-//:C/-[0-9].*//:L}
 
 .if !defined(MASTER_SITES)
-MASTER_SITES ?=	http://pecl.php.net/get/
+MASTER_SITES ?=	https://pecl.php.net/get/
 HOMEPAGE ?=	http://pecl.php.net/package/${_PECLMOD}
 EXTRACT_SUFX ?=	.tgz
 .endif
