@@ -1,0 +1,124 @@
+$OpenBSD: patch-lib_keyringer_functions,v 1.1.1.1 2018/04/24 10:01:24 jca Exp $
+
+- no mount -l/tmpfs in OpenBSD
+- fix mktemp(1) template
+- use rm -P to delete secret files (or gshred if available)
+- cleanup empty directories when wiping
+- use gpg2, upstream seems to rely on gpg being gpg2
+
+Index: lib/keyringer/functions
+--- lib/keyringer/functions.orig
++++ lib/keyringer/functions
+@@ -123,7 +123,7 @@ function keyringer_check_tmp {
+ 
+   # Ramdisk check
+   mount="`df "$path" | sed -n '$p' | awk '{ print $NF }'`"
+-  mount -l -t tmpfs | awk '{ print $3 }' | grep -q -e "^$mount$"
++  mount -t mfs | awk '{ print $3 }' | grep -q -e "^$mount$"
+ }
+ 
+ # Setup a temporary file
+@@ -161,7 +161,7 @@ function keyringer_set_tmpfile {
+   if [ -z "$1" ]; then
+     template="$tmp/keyringer.XXXXXXXXXX"
+   else
+-    template="$tmp/XXXXXXXXXX.$1"
++    template="$tmp/keyringer.$1.XXXXXXXXXX"
+   fi
+ 
+   mkdir -p "$tmp"
+@@ -197,6 +197,10 @@ function keyringer_shred {
+     tool="wipe"
+   elif which shred &> /dev/null; then
+     tool="shred"
++  elif which gshred &> /dev/null; then
++    tool="gshred"
++  elif _F=$(mktemp); rm -P "${_F}" &> /dev/null; then
++    tool="rm -P"
+   else
+     # Worst implementation
+     message="WARNING $message"
+@@ -206,13 +210,14 @@ function keyringer_shred {
+   echo "$message $path using $tool..."
+ 
+   if [ -d "$path" ]; then
+-    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ]; then
++    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ] || [ "$tool" == "rm -P" ]; then
+       $tool -rf $path
+     else
+-      find $path -exec $tool -uf {} \;
++      find $path -type f -exec $tool -uf {} \;
++      find -d $path -type d -exec rmdir {} \;
+     fi
+   else
+-    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ]; then
++    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ] || [ "$tool" == "rm -P" ]; then
+       $tool -f "$path"
+     else
+       $tool -uf "$path"
+@@ -305,9 +310,9 @@ function keyringer_set_env {
+   fi
+ 
+   if [ ! -z "$KEYID" ]; then
+-    GPG="gpg --quiet -u $KEYID"
++    GPG="gpg2 --quiet -u $KEYID"
+   else
+-    GPG="gpg --quiet"
++    GPG="gpg2 --quiet"
+   fi
+ 
+   # Check keyring config version
+@@ -592,7 +597,7 @@ function keyringer_recv_keys {
+   local recipient="$1"
+ 
+   echo "Trying to receive missing key $recipient..."
+-  gpg --batch --recv-keys "$recipient"
++  gpg2 --batch --recv-keys "$recipient"
+ }
+ 
+ # Refresh keys from keyserver
+@@ -602,7 +607,7 @@ function keyringer_refresh_keys {
+   local recipient="$1"
+ 
+   echo "Trying to refresh key $recipient..."
+-  gpg --batch --recv-keys "$recipient"
++  gpg2 --batch --recv-keys "$recipient"
+ }
+ 
+ # Check recipient size
+@@ -689,7 +694,7 @@ function keyringer_check_recipients {
+ function keyringer_check_recipient_key {
+   local recipient="$1"
+ 
+-  gpg --list-key "$recipient" &> /dev/null
++  gpg2 --list-key "$recipient" &> /dev/null
+   if [ "$?" != "0" ]; then
+     if [ "$BASENAME" == "check" ]; then
+       refresh="no"
+@@ -718,7 +723,7 @@ function keyringer_check_expiration {
+   seconds="`date +%s`"
+ 
+   # Check the main key
+-  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
++  expiry="`gpg2 --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
+ 
+   # TODO: Time to expire can be configured via repository options.
+   ahead="$((86400 * 30 + $seconds))"
+@@ -745,7 +750,7 @@ function keyringer_check_expiration {
+ 
+   # Check the subkeys
+   local subkey=""
+-  for subkey in $(gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
++  for subkey in $(gpg2 --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
+     local expiry=$(cut -d : -f 7 <<< "$subkey")
+ 
+     if [[ -z "$expiry" ]]; then
+@@ -842,7 +847,7 @@ function keyringer_create_new_recipients {
+       recipient="`grep -e "^default-key" ~/.gnupg/gpg.conf | cut -d ' ' -f 2`"
+ 
+       if [ ! -z "$recipient" ]; then
+-        key="`gpg --fingerprint --with-colons $recipient 2> /dev/null`"
++        key="`gpg2 --fingerprint --with-colons $recipient 2> /dev/null`"
+ 
+         if [ "$?" == "0" ]; then
+           fpr="`echo "$key" | grep -e '^fpr:' | head -1 | cut -d : -f 10`"

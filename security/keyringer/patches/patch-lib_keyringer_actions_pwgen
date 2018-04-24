@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_keyringer_actions_pwgen,v 1.1.1.1 2018/04/24 10:01:24 jca Exp $
+
+Index: lib/keyringer/actions/pwgen
+--- lib/keyringer/actions/pwgen.orig
++++ lib/keyringer/actions/pwgen
+@@ -18,7 +18,7 @@ function keyringer_pwgen {
+ 
+   # Strip possible newlines if output is wrapped.
+   # Also strip trailing = signs as they add nothing to the password's entropy.
+-  head -c $ENTROPY_BYTES $ENTROPY_SOURCE | base64 | tr -d '\n='
++  dd bs=1 count=$ENTROPY_BYTES if=$ENTROPY_SOURCE | base64 | tr -d '\n='
+   echo
+ }
+ 

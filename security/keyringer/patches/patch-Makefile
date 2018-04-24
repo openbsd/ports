@@ -1,0 +1,50 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/04/24 10:01:24 jca Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -17,6 +17,7 @@
+ PACKAGE  = keyringer
+ VERSION  = $(shell ./keyringer | head -n 1 | cut -d ' ' -f 2)
+ PREFIX  ?= /usr/local
++MANDIR	?=$(PREFIX)/share/man
+ ARCHIVE ?= tarballs
+ INSTALL  = /usr/bin/install
+ 
+@@ -24,25 +25,25 @@ clean:
+ 	find . -name *~ | xargs rm -f # clean local backups
+ 
+ install_lib:
+-	$(INSTALL) -D --mode=0755 lib/keyringer/functions $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/functions
+-	$(INSTALL) -D --mode=0755 -d lib/keyringer/actions $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/actions
+-	$(INSTALL) -D --mode=0755 lib/keyringer/actions/* $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/actions
+-	$(INSTALL) -D --mode=0755 -d share/keyringer/editors $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/editors
+-	$(INSTALL) -D --mode=0644 share/keyringer/editors/* $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/editors
++	$(INSTALL) -D -m 0755 lib/keyringer/functions $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/functions
++	$(INSTALL) -D -m 0755 -d lib/keyringer/actions $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/actions
++	$(INSTALL) -D -m 0755 lib/keyringer/actions/* $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/actions
++	$(INSTALL) -D -m 0755 -d share/keyringer/editors $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/editors
++	$(INSTALL) -D -m 0644 share/keyringer/editors/* $(DESTDIR)/$(PREFIX)/lib/$(PACKAGE)/editors
+ 
+ install_bin:
+-	$(INSTALL) -D --mode=0755 keyringer $(DESTDIR)/$(PREFIX)/bin/keyringer
++	$(INSTALL) -D -m 0755 keyringer $(DESTDIR)/$(PREFIX)/bin/keyringer
+ 
+ install_doc:
+-	$(INSTALL) -D --mode=0644 index.md $(DESTDIR)/$(PREFIX)/share/doc/$(PACKAGE)/README.md
+-	$(INSTALL) -D --mode=0644 LICENSE $(DESTDIR)/$(PREFIX)/share/doc/$(PACKAGE)/LICENSE
++	$(INSTALL) -D -m 0644 index.md $(DESTDIR)/$(PREFIX)/share/doc/$(PACKAGE)/README.md
++	$(INSTALL) -D -m 0644 LICENSE $(DESTDIR)/$(PREFIX)/share/doc/$(PACKAGE)/LICENSE
+ 
+ install_man:
+-	$(INSTALL) -D --mode=0644 share/man/keyringer.1 $(DESTDIR)/$(PREFIX)/share/man/man1/keyringer.1
++	$(INSTALL) -D -m 0644 share/man/keyringer.1 $(DESTDIR)/$(MANDIR)/man1/keyringer.1
+ 
+ install_completion:
+-	$(INSTALL) -D --mode=0644 lib/keyringer/completions/bash/keyringer $(DESTDIR)/$(PREFIX)/share/bash-completion/completions/keyringer
+-	$(INSTALL) -D --mode=0644 lib/keyringer/completions/zsh/_keyringer $(DESTDIR)/$(PREFIX)/share/zsh/vendor-completions/_keyringer
++	$(INSTALL) -D -m 0644 lib/keyringer/completions/bash/keyringer $(DESTDIR)/$(PREFIX)/share/bash-completion/completions/keyringer
++	$(INSTALL) -D -m 0644 lib/keyringer/completions/zsh/_keyringer $(DESTDIR)/$(PREFIX)/share/zsh/vendor-completions/_keyringer
+ 
+ install: clean
+ 	@make install_lib install_bin install_doc install_man install_completion
