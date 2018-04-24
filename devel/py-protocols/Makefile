@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2018/04/24 09:42:42 danj Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
-MODPY_EGG_VERSION =	1.0a0dev_r0
+MODPY_EGG_VERSION =	1.0a0.dev0
 DISTNAME=		PyProtocols-1.0a0dev_r2306
 PKGNAME=		py-protocols-1.0r2306
-REVISION=		4
+REVISION=		5
 EPOCH=			0
 
 WRKSRC =		${WRKDIR}/PyProtocols

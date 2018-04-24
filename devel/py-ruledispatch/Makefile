@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2018/04/24 09:42:42 danj Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
-MODPY_EGG_VERSION =	RuleDispatch-0.5a0.dev_r0
+MODPY_EGG_VERSION =	RuleDispatch-0.5a0.dev0
 DISTNAME=		RuleDispatch-0.5a0.dev-r2306
 PKGNAME=		py-ruledispatch-0.5r2306
-REVISION=		4
+REVISION=		5
 EPOCH=			0
 
 WRKDIST =		${WRKDIR}/RuleDispatch
