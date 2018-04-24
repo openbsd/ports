@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/23 22:01:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/24 12:23:09 jasper Exp $
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
@@ -32,6 +32,7 @@ USE_GMAKE =		Yes
 
 MAKE_ENV =		CC="cc" \
 			CXX="c++" \
+			CXXFLAGS="${CXXFLAGS}" \
 			BUILD="shared"
 
 NO_TEST =		Yes
@@ -42,8 +43,7 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/sass/
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/include/sass/*.h ${PREFIX}/include/sass/
+	cd ${WRKSRC}/include && pax -rw . ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/src/support/libsass.pc ${PREFIX}/lib/pkgconfig/
 	${INSTALL_DATA} ${WRKSRC}/lib/libsass.so \
 		${PREFIX}/lib/libsass.so.${LIBsass_VERSION:R}.${LIBsass_VERSION:E}
