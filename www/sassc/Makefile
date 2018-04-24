@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/23 22:01:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/24 12:27:08 jasper Exp $
 
 COMMENT =		libsass command line driver
 
@@ -35,7 +35,7 @@ post-patch:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
 
-# XXXWTF
+# Bypass the need to have libsass sources present.
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} BUILD=shared
 
