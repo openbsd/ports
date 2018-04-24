@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.98 2018/03/17 05:15:09 feinerer Exp $
+# $OpenBSD: Makefile,v 1.99 2018/04/24 17:13:38 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.4.4
+DISTNAME=	R-3.5.0
 
-SO_VERSION=	33.0
+SO_VERSION=	34.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
 
-CATEGORIES=	math
+CATEGORIES=	math lang
 HOMEPAGE=	https://www.r-project.org/
 
 MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl curses glib-2.0
 WANTLIB += gobject-2.0 iconv icui18n icuuc intl jpeg lzma m
-WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre png readline ssl tiff z
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png readline ssl tiff z
 
 MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \
@@ -50,6 +50,7 @@ LIB_DEPENDS=	${MODTK_LIB_DEPENDS} \
 		archivers/xz \
 		devel/glib2 \
 		devel/pango \
+		devel/pcre2 \
 		graphics/cairo \
 		graphics/jpeg \
 		graphics/png \

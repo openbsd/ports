@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/07/02 05:18:42 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/04/24 17:13:38 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -42,6 +42,7 @@ lib/R/etc/repositories
 lib/R/include/
 lib/R/include/R.h
 lib/R/include/R_ext/
+lib/R/include/R_ext/Altrep.h
 lib/R/include/R_ext/Applic.h
 lib/R/include/R_ext/Arith.h
 lib/R/include/R_ext/BLAS.h
@@ -473,6 +474,7 @@ lib/R/library/cluster/po/ko/LC_MESSAGES/cluster.mo
 lib/R/library/cluster/po/pl/
 lib/R/library/cluster/po/pl/LC_MESSAGES/
 lib/R/library/cluster/po/pl/LC_MESSAGES/R-cluster.mo
+lib/R/library/cluster/test-tools.R
 lib/R/library/codetools/
 lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
