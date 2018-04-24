@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.19 2018/04/24 18:10:55 naddy Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -6,7 +6,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 V =		1.8.0
 JV =		1
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}

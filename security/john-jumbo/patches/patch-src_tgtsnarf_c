@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tgtsnarf_c,v 1.1 2018/04/24 18:10:55 naddy Exp $
+
+Index: src/tgtsnarf.c
+--- src/tgtsnarf.c.orig
++++ src/tgtsnarf.c
+@@ -253,8 +253,8 @@ upcase(char *string)
+ int
+ main(int argc, char *argv[])
+ {
+-  char c, *p, *host, *realm, user[128];
+-  int i;
++  char *p, *host, *realm, user[128];
++  int c, i;
+ 
+   host = realm = NULL;
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cprepair_c,v 1.1 2018/04/24 18:10:55 naddy Exp $
+
+Index: src/cprepair.c
+--- src/cprepair.c.orig
++++ src/cprepair.c
+@@ -274,7 +274,7 @@ static int process_file(char *name)
+ 
+ int main(int argc, char **argv)
+ {
+-	char c;
++	int c;
+ 
+ 	options.verbosity = 3;
+ 

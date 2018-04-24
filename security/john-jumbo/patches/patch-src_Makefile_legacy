@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile_legacy,v 1.1 2015/01/16 15:40:01 sthen Exp $
---- src/Makefile.legacy.orig	Thu Dec 18 07:59:02 2014
-+++ src/Makefile.legacy	Fri Jan 16 15:08:20 2015
+$OpenBSD: patch-src_Makefile_legacy,v 1.2 2018/04/24 18:10:55 naddy Exp $
+Index: src/Makefile.legacy
+--- src/Makefile.legacy.orig
++++ src/Makefile.legacy
 @@ -1073,11 +1073,9 @@ openbsd-alpha:
  openbsd-sparc64:
  	$(LN) sparc64.h arch.h
@@ -15,6 +16,15 @@ $OpenBSD: patch-src_Makefile_legacy,v 1.1 2015/01/16 15:40:01 sthen Exp $
  	@echo "All done"
  
  openbsd-sparc:
+@@ -1922,7 +1920,7 @@ generic: generic.h
+ 	$(RM) arch.h
+ 	ln -s generic.h arch.h
+ 	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
+-	$(MAKE_ORIG) $(PROJ)
++	$(MAKE_ORIG) $(PROJ) $(PROJ_PCAP)
+ 
+ generic.h:
+ 	$(RM) arch.h
 @@ -2307,7 +2305,7 @@ john.com: john.asm
  
  ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
