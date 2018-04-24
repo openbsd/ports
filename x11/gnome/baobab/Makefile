@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/04/23 13:24:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/04/24 07:26:05 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
@@ -18,6 +18,6 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
-MODGNOME_TOOLS += gtk-update-icon-cache
+MODGNOME_TOOLS += gtk-update-icon-cache vala
 
 .include <bsd.port.mk>
