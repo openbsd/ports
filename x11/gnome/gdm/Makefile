@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.268 2018/03/22 16:51:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.269 2018/04/24 08:37:00 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.26.2.1
-REVISION=		4
+GNOME_VERSION=		3.28.1
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -101,7 +100,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
 		${PREFIX}/share/pixmaps/
-	rm -rf ${WRKINST}/var/run/gdm
+	rm -rf ${WRKINST}/var/run/gdm ${PREFIX}/lib/udev
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d

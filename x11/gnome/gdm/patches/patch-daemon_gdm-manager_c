@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.18 2017/11/05 02:17:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.19 2018/04/24 08:37:00 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 21905303afbd508f3bf599ad219c9209413c53a2 Mon Sep 17 00:00:00 2001
@@ -56,7 +56,7 @@ Index: daemon/gdm-manager.c
  typedef struct
  {
          GdmManager *manager;
-@@ -206,9 +217,10 @@ plymouth_quit_without_transition (void)
+@@ -204,9 +215,10 @@ plymouth_quit_without_transition (void)
  }
  #endif
  
@@ -69,7 +69,7 @@ Index: daemon/gdm-manager.c
  {
          char *session, *gsession;
          int ret;
-@@ -233,11 +245,61 @@ get_session_id_for_pid (pid_t    pid,
+@@ -231,11 +243,61 @@ get_session_id_for_pid (pid_t    pid,
                  return NULL;
          }
  }
@@ -134,7 +134,7 @@ Index: daemon/gdm-manager.c
  {
          int ret;
  
-@@ -254,8 +316,62 @@ get_uid_for_session_id (const char  *session_id,
+@@ -252,8 +314,62 @@ get_uid_for_session_id (const char  *session_id,
  
          return TRUE;
  }
@@ -197,7 +197,7 @@ Index: daemon/gdm-manager.c
  lookup_by_session_id (const char *id,
                        GdmDisplay *display,
                        gpointer    user_data)
-@@ -267,11 +383,51 @@ lookup_by_session_id (const char *id,
+@@ -265,11 +381,51 @@ lookup_by_session_id (const char *id,
          return g_strcmp0 (current, looking_for) == 0;
  }
  
@@ -252,7 +252,7 @@ Index: daemon/gdm-manager.c
          char *session_class = NULL;
          int ret;
  
-@@ -295,12 +451,33 @@ is_login_session (GdmManager  *self,
+@@ -293,12 +449,33 @@ is_login_session (GdmManager  *self,
          g_free (session_class);
          return TRUE;
  }
@@ -289,7 +289,7 @@ Index: daemon/gdm-manager.c
          GError *error = NULL;
          GVariant *reply;
  
-@@ -326,16 +503,75 @@ activate_session_id (GdmManager *manager,
+@@ -324,16 +501,75 @@ activate_session_id (GdmManager *manager,
  
          return TRUE;
  }
@@ -368,7 +368,7 @@ Index: daemon/gdm-manager.c
          reply = g_dbus_connection_call_sync (manager->priv->connection,
                                               "org.freedesktop.login1",
                                               "/org/freedesktop/login1",
-@@ -358,7 +594,60 @@ session_unlock (GdmManager *manager,
+@@ -356,7 +592,60 @@ session_unlock (GdmManager *manager,
  
          return TRUE;
  }
@@ -429,7 +429,7 @@ Index: daemon/gdm-manager.c
  static GdmSession *
  find_session_for_user_on_seat (GdmManager *manager,
                                 const char *username,
-@@ -389,11 +678,44 @@ find_session_for_user_on_seat (GdmManager *manager,
+@@ -387,11 +676,44 @@ find_session_for_user_on_seat (GdmManager *manager,
          return NULL;
  }
  
@@ -477,7 +477,7 @@ Index: daemon/gdm-manager.c
          char *seat;
          int ret;
          gboolean is_remote;
-@@ -418,10 +740,31 @@ is_remote_session (GdmManager  *self,
+@@ -416,10 +738,31 @@ is_remote_session (GdmManager  *self,
  
          return is_remote;
  }
@@ -511,7 +511,7 @@ Index: daemon/gdm-manager.c
  {
          int ret;
          char *seat, *out_seat;
-@@ -446,11 +789,62 @@ get_seat_id_for_session_id (const char  *session_id,
+@@ -444,11 +787,62 @@ get_seat_id_for_session_id (const char  *session_id,
  
          return out_seat;
  }
@@ -576,7 +576,7 @@ Index: daemon/gdm-manager.c
          int ret;
          char *tty, *out_tty;
  
-@@ -473,7 +867,21 @@ get_tty_for_session_id (const char  *session_id,
+@@ -471,7 +865,21 @@ get_tty_for_session_id (const char  *session_id,
  
          return out_tty;
  }
@@ -598,7 +598,7 @@ Index: daemon/gdm-manager.c
  static void
  get_display_and_details_for_bus_sender (GdmManager       *self,
                                          GDBusConnection  *connection,
-@@ -516,7 +924,7 @@ get_display_and_details_for_bus_sender (GdmManager    
+@@ -514,7 +922,7 @@ get_display_and_details_for_bus_sender (GdmManager    
                  goto out;
          }
  
@@ -607,7 +607,7 @@ Index: daemon/gdm-manager.c
  
          if (session_id == NULL) {
                  g_debug ("GdmManager: Error while retrieving session id for sender: %s",
-@@ -530,7 +938,7 @@ get_display_and_details_for_bus_sender (GdmManager    
+@@ -528,7 +936,7 @@ get_display_and_details_for_bus_sender (GdmManager    
          }
  
          if (out_is_login_screen != NULL) {
@@ -616,7 +616,7 @@ Index: daemon/gdm-manager.c
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while checking if sender is login screen: %s",
-@@ -540,7 +948,7 @@ get_display_and_details_for_bus_sender (GdmManager    
+@@ -538,7 +946,7 @@ get_display_and_details_for_bus_sender (GdmManager    
                  }
          }
  
@@ -625,7 +625,7 @@ Index: daemon/gdm-manager.c
                  g_debug ("GdmManager: Error while retrieving uid for session: %s",
                           error->message);
                  g_error_free (error);
-@@ -557,7 +965,7 @@ get_display_and_details_for_bus_sender (GdmManager    
+@@ -555,7 +963,7 @@ get_display_and_details_for_bus_sender (GdmManager    
          }
  
          if (out_seat_id != NULL) {
@@ -634,7 +634,7 @@ Index: daemon/gdm-manager.c
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while retrieving seat id for session: %s",
-@@ -567,7 +975,7 @@ get_display_and_details_for_bus_sender (GdmManager    
+@@ -565,7 +973,7 @@ get_display_and_details_for_bus_sender (GdmManager    
          }
  
          if (out_is_remote != NULL) {
@@ -643,7 +643,7 @@ Index: daemon/gdm-manager.c
  
                  if (error != NULL) {
                          g_debug ("GdmManager: Error while retrieving remoteness for session: %s",
-@@ -725,29 +1133,6 @@ out:
+@@ -723,29 +1131,6 @@ out:
          return recorded;
  }
  
@@ -673,7 +673,7 @@ Index: daemon/gdm-manager.c
  static gboolean
  gdm_manager_handle_register_display (GdmDBusManager        *manager,
                                       GDBusMethodInvocation *invocation,
-@@ -787,7 +1172,7 @@ gdm_manager_handle_register_display (GdmDBusManager   
+@@ -785,7 +1170,7 @@ gdm_manager_handle_register_display (GdmDBusManager   
                  }
          }
  
@@ -682,7 +682,7 @@ Index: daemon/gdm-manager.c
  
          if (session != NULL) {
                  GPid pid;
-@@ -961,7 +1346,8 @@ on_reauthentication_client_rejected (GdmSession       
+@@ -959,7 +1344,8 @@ on_reauthentication_client_rejected (GdmSession       
                   * same audit session, ignore it since it doesn't "own" the
                   * reauthentication session
                   */
@@ -692,7 +692,7 @@ Index: daemon/gdm-manager.c
                                                              NULL);
                  session_id = g_object_get_data (G_OBJECT (session), "caller-session-id");
  
-@@ -1173,16 +1559,20 @@ static gboolean
+@@ -1171,16 +1557,20 @@ static gboolean
  display_is_on_seat0 (GdmDisplay *display)
  {
          gboolean is_on_seat0 = TRUE;
@@ -719,7 +719,7 @@ Index: daemon/gdm-manager.c
          return is_on_seat0;
  }
  
-@@ -1320,133 +1710,6 @@ maybe_start_pending_initial_login (GdmManager *manager
+@@ -1318,133 +1708,6 @@ maybe_start_pending_initial_login (GdmManager *manager
          g_free (user_session_seat_id);
  }
  
@@ -853,7 +853,7 @@ Index: daemon/gdm-manager.c
  static const char *
  get_username_for_greeter_display (GdmManager *manager,
                                    GdmDisplay *display)
-@@ -1692,7 +1955,6 @@ on_display_status_changed (GdmDisplay *display,
+@@ -1690,7 +1953,6 @@ on_display_status_changed (GdmDisplay *display,
                                  manager->priv->ran_once = TRUE;
                          }
                          maybe_start_pending_initial_login (manager, display);
@@ -861,7 +861,7 @@ Index: daemon/gdm-manager.c
                          break;
                  default:
                          break;
-@@ -2027,11 +2289,57 @@ on_user_session_died (GdmSession *session,
+@@ -2025,11 +2287,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -921,7 +921,7 @@ Index: daemon/gdm-manager.c
  }
  
  static void
-@@ -2040,25 +2348,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2038,25 +2346,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;

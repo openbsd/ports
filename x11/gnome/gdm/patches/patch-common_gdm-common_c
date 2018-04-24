@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_gdm-common_c,v 1.4 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-common_gdm-common_c,v 1.5 2018/04/24 08:37:00 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -12,9 +12,10 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:28:01 -0400
 Subject: drop consolekit support
 
---- common/gdm-common.c.orig	Sun Oct 18 14:26:27 2015
-+++ common/gdm-common.c	Sun Oct 18 14:24:34 2015
-@@ -39,12 +39,25 @@
+Index: common/gdm-common.c
+--- common/gdm-common.c.orig
++++ common/gdm-common.c
+@@ -40,12 +40,25 @@
  #include "mkdtemp.h"
  #endif
  
@@ -40,7 +41,7 @@ Subject: drop consolekit support
  G_DEFINE_QUARK (gdm-common-error, gdm_common_error);
  
  const char *
-@@ -343,15 +356,306 @@ create_transient_display (GDBusConnection *connection,
+@@ -362,15 +375,306 @@ create_transient_display (GDBusConnection *connection,
          return TRUE;
  }
  
@@ -350,7 +351,7 @@ Subject: drop consolekit support
                                               "org.freedesktop.login1",
                                               "/org/freedesktop/login1",
                                               "org.freedesktop.login1.Manager",
-@@ -373,8 +677,8 @@ activate_session_id (GDBusConnection *connection,
+@@ -392,8 +696,8 @@ activate_session_id (GDBusConnection *connection,
  }
  
  static gboolean
@@ -361,7 +362,7 @@ Subject: drop consolekit support
  {
          gboolean   ret;
          int        res, i;
-@@ -442,8 +746,8 @@ out:
+@@ -461,8 +765,8 @@ out:
  }
  
  static gboolean
@@ -372,7 +373,7 @@ Subject: drop consolekit support
  {
          gboolean        ret;
          int             res;
-@@ -497,9 +801,9 @@ goto_login_session (GDBusConnection  *connection,
+@@ -516,9 +820,9 @@ goto_login_session (GDBusConnection  *connection,
                  return FALSE;
          }
  
@@ -384,7 +385,7 @@ Subject: drop consolekit support
  
                  if (res) {
                          ret = TRUE;
-@@ -518,6 +822,7 @@ goto_login_session (GDBusConnection  *connection,
+@@ -537,6 +841,7 @@ goto_login_session (GDBusConnection  *connection,
  
          return ret;
  }
@@ -392,7 +393,7 @@ Subject: drop consolekit support
  
  gboolean
  gdm_goto_login_session (GError **error)
-@@ -533,7 +838,17 @@ gdm_goto_login_session (GError **error)
+@@ -552,7 +857,17 @@ gdm_goto_login_session (GError **error)
                  return FALSE;
          }
  

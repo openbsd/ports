@@ -1,8 +1,8 @@
-$OpenBSD: patch-data_Makefile_am,v 1.4 2017/11/05 02:17:07 ajacoutot Exp $
+$OpenBSD: patch-data_Makefile_am,v 1.5 2018/04/24 08:37:00 ajacoutot Exp $
 Index: data/Makefile.am
 --- data/Makefile.am.orig
 +++ data/Makefile.am
-@@ -221,6 +221,7 @@ if ENABLE_GDM_XSESSION
+@@ -222,6 +222,7 @@ if ENABLE_GDM_XSESSION
  Xsession: $(srcdir)/Xsession.in
  	sed	-e 's,[@]XSESSION_SHELL[@],$(XSESSION_SHELL),g' \
  		-e 's,[@]libexecdir[@],$(libexecdir),g' \
