@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/10 13:22:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/24 18:06:30 sthen Exp $
 
 ADDON_NAME =		torbutton
-V =			1.9.7.10
+V =			1.9.8.6
 COMMENT =		Tor Browser add-on for configuring Tor Browser settings
 GUID =			torbutton@torproject.org
 PKGNAME =		${TB_NAME}

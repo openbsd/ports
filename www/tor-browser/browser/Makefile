@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/03/13 19:21:08 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2018/04/24 18:06:30 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -9,7 +9,6 @@ ONLY_FOR_ARCHS =	amd64 i386
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
 EXTRACT_SUFX =		.tar.gz
 PATCHORIG =		.pat.orig
@@ -37,7 +36,7 @@ MOZILLA_USE_BUNDLED_NSS =	Yes
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_BUNDLED_SQLITE =	Yes
 
-WANTLIB +=		X11-xcb intl xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB +=		X11-xcb intl pixman-1 xcb xcb-shm ${COMPILER_LIBCXX}
 
 LIB_DEPENDS +=		devel/gettext
 
@@ -58,7 +57,7 @@ CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
 			--with-tor-browser-version=${TB_VERSION}	\
 			--disable-tor-browser-update
 
-RUN_DEPENDS +=		net/tor>=0.3.1.9
+RUN_DEPENDS +=		net/tor>=0.3.2.10
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
