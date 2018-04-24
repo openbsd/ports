@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/04/24 08:38:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2018/04/24 08:50:18 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -32,12 +32,10 @@ COMPILER =		base-clang ports-clang ports-gcc
 
 MULTI_PACKAGES =	-main -qt
 PSEUDO_FLAVORS =	no_qt
-.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mmips64} || ${MACHINE_ARCH:Msh} || ${MACHINE_ARCH:Msparc64}
-# don't depend on Qt5 on arches where it's known to fail
-FLAVOR =		no_qt
-.else
 FLAVOR ?=
-.endif
+
+# don't depend on Qt5 on arches where it's known to fail
+NOT_FOR_ARCHS-qt =	alpha mips64 sh sparc64
 
 CONFIGURE_STYLE =	gnu
 
