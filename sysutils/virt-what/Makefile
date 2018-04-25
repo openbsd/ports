@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/10 12:23:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/25 14:36:40 jasper Exp $
 
 COMMENT =		detect if we are running in a virtual machine
 
 DISTNAME =		virt-what-1.18
+REVISION =		0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://people.redhat.com/~rjones/virt-what/
