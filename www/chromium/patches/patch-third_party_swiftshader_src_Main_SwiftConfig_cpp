@@ -1,0 +1,17 @@
+$OpenBSD: patch-third_party_swiftshader_src_Main_SwiftConfig_cpp,v 1.1 2018/04/25 09:23:38 robert Exp $
+
+Index: third_party/swiftshader/src/Main/SwiftConfig.cpp
+--- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig
++++ third_party/swiftshader/src/Main/SwiftConfig.cpp
+@@ -762,7 +762,11 @@ namespace sw
+ 		struct stat status;
+ 		int lastModified = ini.getInteger("LastModified", "Time", 0);
+ 
++#if !defined(__OpenBSD__)
+ 		bool noConfig = stat("SwiftShader.ini", &status) != 0;
++#else
++		bool noConfig = false;
++#endif
+ 		newConfig = !noConfig && abs((int)status.st_mtime - lastModified) > 1;
+ 
+ 		if(disableServerOverride)
