@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/10/06 20:46:15 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/04/25 09:34:53 juanfra Exp $
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
 bin/cythonize${MODPY_BIN_SUFFIX}
@@ -56,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FlowControl.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FusedNode.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/FusedNode.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Future.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Interpreter.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Lexicon.py
@@ -372,6 +373,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.py
 lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.py
+lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.so
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/${MODPY_PYCACHE}/
