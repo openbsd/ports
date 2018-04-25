@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/25 13:28:08 jasper Exp $
 
 COMMENT=		Python wrapper around the CZMQ zeromq bindings
 
@@ -23,6 +23,8 @@ MODULES=		lang/python
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-cffi \
 			net/czmq
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
+			${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS=	Yes
 
