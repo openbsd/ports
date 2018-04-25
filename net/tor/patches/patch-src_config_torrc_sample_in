@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.19 2018/01/10 14:35:49 pascal Exp $
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.20 2018/04/25 12:41:28 stsp Exp $
 Index: src/config/torrc.sample.in
 --- src/config/torrc.sample.in.orig
 +++ src/config/torrc.sample.in
@@ -37,7 +37,7 @@ Index: src/config/torrc.sample.in
  #HiddenServicePort 80 127.0.0.1:80
  #HiddenServicePort 22 127.0.0.1:22
  
-@@ -198,6 +198,8 @@
+@@ -204,6 +204,8 @@
  ## and any public IPv4 and IPv6 addresses on any interface on the relay.
  ## See the man page entry for ExitPolicyRejectPrivate if you want to allow
  ## "exit enclaving".
