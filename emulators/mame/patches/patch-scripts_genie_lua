@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_genie_lua,v 1.3 2018/03/29 21:51:31 fcambus Exp $
+$OpenBSD: patch-scripts_genie_lua,v 1.4 2018/04/25 10:22:37 fcambus Exp $
 
 - Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
 - Remove broken GCC version detection
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_genie_lua,v 1.3 2018/03/29 21:51:31 fcambus Exp $
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
-@@ -792,17 +792,19 @@ if _OPTIONS["NOWERROR"]==nil then
+@@ -802,17 +802,19 @@ if _OPTIONS["NOWERROR"]==nil then
  	}
  end
  
@@ -31,7 +31,7 @@ Index: scripts/genie.lua
  	if _OPTIONS["LTO"]=="1" then
  		buildoptions {
  -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
-@@ -992,39 +994,6 @@ end
+@@ -1002,39 +1004,6 @@ end
  
  
  
