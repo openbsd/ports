@@ -1,0 +1,8 @@
+A Python library for parsing PGP packets, similar to the pgpdump utility.
+Currently supports:
+
+- Signature packets
+- Public key packets
+- ASCII-armor decoding and CRC check
+- Secret key packets
+- Trust, user ID, and user attribute packets

@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 13:37:26 solene Exp $
+lib/python${MODPY_VERSION}/site-packages/pgpdump/
+lib/python${MODPY_VERSION}/site-packages/pgpdump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pgpdump/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pgpdump/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}packet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgpdump/data.py
+lib/python${MODPY_VERSION}/site-packages/pgpdump/packet.py
+lib/python${MODPY_VERSION}/site-packages/pgpdump/test.py
+lib/python${MODPY_VERSION}/site-packages/pgpdump/utils.py
