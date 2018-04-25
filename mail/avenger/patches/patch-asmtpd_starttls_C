@@ -1,0 +1,23 @@
+$OpenBSD: patch-asmtpd_starttls_C,v 1.1 2018/04/25 07:13:59 tb Exp $
+
+Index: asmtpd/starttls.C
+--- asmtpd/starttls.C.orig
++++ asmtpd/starttls.C
+@@ -264,7 +264,7 @@ smtpd::received_starttls (strbuf r) const
+     return;
+ 
+   r << "    (";
+-  if (char *vers = SSL_get_cipher_version (ssl->get_ssl ()))
++  if (const char *vers = SSL_get_cipher_version (ssl->get_ssl ()))
+     r << vers;
+   else
+     r << "SSL";
+@@ -299,7 +299,7 @@ smtpd::env_starttls (vec<str> *envp) const
+   envp->push_back (strbuf ("SSL_CIPHER_BITS=%d", cipher_bits));
+   envp->push_back (strbuf ("SSL_ALG_BITS=%d", alg_bits));
+ 
+-  if (char *vers = SSL_get_cipher_version (ssl->get_ssl ()))
++  if (const char *vers = SSL_get_cipher_version (ssl->get_ssl ()))
+       envp->push_back (strbuf () << "SSL_VERSION=" << vers);
+ 
+   if (ssl->issuer)
