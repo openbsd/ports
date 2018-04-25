@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/12 16:17:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/25 12:55:16 naddy Exp $
 
 COMMENT =	command-line based markdown presentation tool
 
 GH_ACCOUNT =	visit1985
 GH_PROJECT =	mdp
 GH_TAGNAME =	1.0.10
+REVISION =	0
 
 CATEGORIES =	textproc
 
