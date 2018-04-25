@@ -1,9 +1,18 @@
-$OpenBSD: patch-main_cpp,v 1.1 2017/05/08 01:02:16 espie Exp $
+$OpenBSD: patch-main_cpp,v 1.2 2018/04/25 16:25:34 naddy Exp $
 const char* for ""
 
 Index: main.cpp
 --- main.cpp.orig
 +++ main.cpp
+@@ -66,7 +66,7 @@ int verbose = 0;
+ int main(int argc, char *argv[])
+ try
+ {
+-  char c;
++  int c;
+   int option_index = 0;
+   
+   gfx_int *iface = 0;
 @@ -74,8 +74,8 @@ try
    ostream *ofile = 0;
    

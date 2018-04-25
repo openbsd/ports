@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_dvbinfo_dvbinfo_c,v 1.1 2018/04/25 16:25:34 naddy Exp $
+
+Index: examples/dvbinfo/dvbinfo.c
+--- examples/dvbinfo/dvbinfo.c.orig
++++ examples/dvbinfo/dvbinfo.c
+@@ -468,7 +468,7 @@ int main(int argc, char **pp_argv)
+ {
+     dvbinfo_capture_t capture;
+     params_t *param = NULL;
+-    char c;
++    int c;
+ 
+     printf("dvbinfo: Copyright (C) 2011-2014 M2X BV\n");
+     printf("License: LGPL v2.1\n");
