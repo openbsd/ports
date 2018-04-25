@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.601 2018/04/25 13:49:37 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.602 2018/04/25 17:02:37 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1379,7 +1379,7 @@ my $cve = {
 	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
 	'www/drupal6/views' => 'drupal6-views-<2.18',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
-	'www/drupal7/core' => 'drupal->=7.0,<7.58',
+	'www/drupal7/core' => 'drupal->=7.0,<7.59',
 	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
 };
 
