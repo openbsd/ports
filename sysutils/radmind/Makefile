@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/25 20:13:04 naddy Exp $
 
 COMMENT=	remote administration software
 
 DISTNAME=     	radmind-1.14.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rsug.itd.umich.edu/software/radmind/

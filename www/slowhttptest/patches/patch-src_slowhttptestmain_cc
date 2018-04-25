@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_slowhttptestmain_cc,v 1.1 2018/04/08 19:35:24 jasper Exp $
+$OpenBSD: patch-src_slowhttptestmain_cc,v 1.2 2018/04/25 20:13:04 naddy Exp $
 
 error: invalid suffix on literal; C++11 requires a space between literal and identifier
 
@@ -18,3 +18,12 @@ Index: src/slowhttptestmain.cc
        "\n"
        "Test modes:\n"
        "  -H               slow headers a.k.a. Slowloris (default)\n"
+@@ -158,7 +158,7 @@ int main(int argc, char **argv) {
+   SlowTestType type = slowhttptest::eHeader;
+   ProxyType proxy_type = slowhttptest::eNoProxy;
+   long tmp;
+-  char o;
++  int o;
+   while((o = getopt(argc, argv, ":HBRXgha:b:c:d:e:i:k:l:n:o:p:r:s:t:u:v:w:x:y:z:")) != -1) {
+     switch (o) {
+       case 'a':
