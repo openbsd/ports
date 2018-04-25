@@ -1,0 +1,16 @@
+$OpenBSD: patch-libmscore_CMakeLists_txt,v 1.1 2018/04/25 19:11:03 bcallah Exp $
+
+Allow building with Ninja
+https://github.com/musescore/MuseScore/pull/2772/commits/810586f52e21b1ac1d15ae81af2a1f809f4ea4b2
+
+Index: libmscore/CMakeLists.txt
+--- libmscore/CMakeLists.txt.orig
++++ libmscore/CMakeLists.txt
+@@ -77,5 +77,5 @@ set_target_properties (
+ 
+ xcode_pch(libmscore all)
+ 
+-ADD_DEPENDENCIES(libmscore mops1)
+-ADD_DEPENDENCIES(libmscore mops2)
++#ADD_DEPENDENCIES(libmscore mops1)
++#ADD_DEPENDENCIES(libmscore mops2)

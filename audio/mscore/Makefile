@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/12/30 14:12:20 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/25 19:11:03 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
-V =		2.1
-REVISION =	1
+V =		2.2.1
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
@@ -45,9 +44,13 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_ALSA=OFF \
 		-DBUILD_JACK=OFF \
+		-DBUILD_PORTMIDI=OFF \
 		-DBUILD_PULSEAUDIO=OFF \
 		-DUSE_SYSTEM_FREETYPE=ON
 
 NO_TEST =	Yes
+
+# MuseScore-2.2.1 is a bad zip file...
+WRKDIST =	${WRKDIR}
 
 .include <bsd.port.mk>
