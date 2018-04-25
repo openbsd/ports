@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2018/02/16 11:42:24 kirby Exp $
+# $OpenBSD: Makefile,v 1.373 2018/04/25 16:15:58 espie Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -176,8 +176,6 @@
      SUBDIR += mysticmine
      SUBDIR += naev
      SUBDIR += nethack
-     SUBDIR += nethack,no_x11
-     SUBDIR += nethack,qt
      SUBDIR += netris
      SUBDIR += neverball
      SUBDIR += newvox
