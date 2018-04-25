@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/25 09:51:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/04/25 14:30:36 espie Exp $
 @option no-default-conflict
 @option is-branch
 @pkgpath games/nethack${EXT}
@@ -158,4 +158,6 @@ ${GAMEDIR}/wizard3.lev
 ${GAMEDIR}/wizhelp
 @man man/man6/nethack-${V}.6
 @man man/man6/recover-${V}.6
+share/doc/nethack-${V}/
+share/doc/nethack-${V}/Guidebook.txt
 !%%no_x11%%

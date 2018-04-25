@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/25 14:30:35 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	12
+REVISION =	13
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -53,6 +53,9 @@ post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nethack-$V
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt \
+		${PREFIX}/share/doc/nethack-$V/Guidebook.txt
 	${INSTALL_PROGRAM} ${WRKBUILD}/util/recover ${PREFIX}/bin/recover-$V
 	${INSTALL_MAN} ${WRKSRC}/doc/nethack.6 ${PREFIX}/man/man6/nethack-$V.6
 	${INSTALL_MAN} ${WRKSRC}/doc/recover.6 ${PREFIX}/man/man6/recover-$V.6
