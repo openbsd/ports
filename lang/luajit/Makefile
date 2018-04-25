@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/19 19:49:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.27 2018/04/25 11:43:13 sthen Exp $
 
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
@@ -57,8 +57,11 @@ post-install:
 do-test:
 	${WRKSRC}/src/luajit -e "print('hello world')" | grep "^hello world$$"
 
-.include <bsd.port.mk>
+.include <bsd.port.arch.mk>
+
 .if ${PROPERTIES:Mclang}
 MAKE_FLAGS += TARGET_LDFLAGS='-lc++abi -lpthread'
 WANTLIB +=	c++abi pthread
 .endif
+
+.include <bsd.port.mk>
