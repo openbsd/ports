@@ -1,0 +1,14 @@
+$OpenBSD: patch-libcob_Makefile_in,v 1.1.1.1 2018/04/25 07:39:01 fcambus Exp $
+
+Index: libcob/Makefile.in
+--- libcob/Makefile.in.orig
++++ libcob/Makefile.in
+@@ -774,7 +774,7 @@ info-am:
+ 
+ install-data-am: install-pkgincludeHEADERS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ install-dvi: install-dvi-am
+ 
+ install-dvi-am:

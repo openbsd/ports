@@ -1,0 +1,62 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 07:39:01 fcambus Exp $
+@conflict open-cobol-*
+@pkgpath lang/open-cobol
+bin/cob-config
+@bin bin/cobc
+@bin bin/cobcrun
+include/libcob/
+include/libcob.h
+include/libcob/cobgetopt.h
+include/libcob/common.h
+include/libcob/exception.def
+@info info/gnucobol.info
+lib/gnucobol/
+lib/gnucobol/CBL_OC_DUMP.so
+lib/libcob.a
+lib/libcob.la
+@lib lib/libcob.so.${LIBcob_VERSION}
+@man man/man1/cobc.1
+@man man/man1/cobcrun.1
+share/gnucobol/
+share/gnucobol/config/
+share/gnucobol/config/acu-strict.conf
+share/gnucobol/config/acu.conf
+share/gnucobol/config/acu.words
+share/gnucobol/config/bs2000-strict.conf
+share/gnucobol/config/bs2000.conf
+share/gnucobol/config/bs2000.words
+share/gnucobol/config/cobol2002.conf
+share/gnucobol/config/cobol2002.words
+share/gnucobol/config/cobol2014.conf
+share/gnucobol/config/cobol2014.words
+share/gnucobol/config/cobol85.conf
+share/gnucobol/config/cobol85.words
+share/gnucobol/config/default.conf
+share/gnucobol/config/ibm-strict.conf
+share/gnucobol/config/ibm.conf
+share/gnucobol/config/ibm.words
+share/gnucobol/config/lax.conf-inc
+share/gnucobol/config/mf-strict.conf
+share/gnucobol/config/mf.conf
+share/gnucobol/config/mf.words
+share/gnucobol/config/mvs-strict.conf
+share/gnucobol/config/mvs.conf
+share/gnucobol/config/mvs.words
+share/gnucobol/config/rm-strict.conf
+share/gnucobol/config/rm.conf
+share/gnucobol/config/rm.words
+share/gnucobol/config/runtime.cfg
+share/gnucobol/config/runtime_empty.cfg
+share/gnucobol/config/xopen.conf
+share/gnucobol/copy/
+share/gnucobol/copy/screenio.cpy
+share/gnucobol/copy/sqlca.cpy
+share/gnucobol/copy/sqlda.cpy
+share/locale/de/LC_MESSAGES/gnucobol.mo
+share/locale/en@boldquot/LC_MESSAGES/gnucobol.mo
+share/locale/en@quot/LC_MESSAGES/gnucobol.mo
+share/locale/es/LC_MESSAGES/gnucobol.mo
+share/locale/it/LC_MESSAGES/gnucobol.mo
+share/locale/ja/LC_MESSAGES/gnucobol.mo
+share/locale/nl/LC_MESSAGES/gnucobol.mo
+share/locale/pt/LC_MESSAGES/gnucobol.mo

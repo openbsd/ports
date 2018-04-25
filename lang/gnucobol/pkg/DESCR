@@ -1,0 +1,7 @@
+GnuCOBOL is a free COBOL compiler, formerly known as OpenCOBOL.
+
+It implements a substantial part of the COBOL 85, COBOL 2002 and COBOL 2014
+standards, as well as many extensions included in other COBOL compilers.
+
+GnuCOBOL translates COBOL into C and compiles the translated code using the
+native C compiler.
