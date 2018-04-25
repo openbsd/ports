@@ -1,0 +1,16 @@
+$OpenBSD: patch-salt_returners_zabbix_return_py,v 1.1 2018/04/25 17:16:19 robert Exp $
+
+Index: salt/returners/zabbix_return.py
+--- salt/returners/zabbix_return.py.orig
++++ salt/returners/zabbix_return.py
+@@ -47,8 +47,8 @@ def zbx():
+         zabbix_sender = '/usr/local/zabbix/bin/zabbix_sender'
+         zabbix_config = '/usr/local/zabbix/etc/zabbix_agentd.conf'
+         return {"sender": zabbix_sender, "config": zabbix_config}
+-    elif os.path.exists('/usr/bin/zabbix_sender') and os.path.exists('/etc/zabbix/zabbix_agentd.conf'):
+-        zabbix_sender = "/usr/bin/zabbix_sender"
++    elif os.path.exists('${LOCALBASE}/bin/zabbix_sender') and os.path.exists('/etc/zabbix/zabbix_agentd.conf'):
++        zabbix_sender = "${LOCALBASE}/bin/zabbix_sender"
+         zabbix_config = "/etc/zabbix/zabbix_agentd.conf"
+         return {"sender": zabbix_sender, "config": zabbix_config}
+     else:
