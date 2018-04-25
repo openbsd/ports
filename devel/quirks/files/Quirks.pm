@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.600 2018/04/25 07:45:17 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.601 2018/04/25 13:49:37 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1037,7 +1037,6 @@ my $obsolete_reason = {
 	'claws-mail-htmlviewer' => 2,
 	'postgresql-jdbc' => 6,
 	'postgresql-jdbc-docs' => 6,
-	'vimb' => 2,
 	'plor' => 3,
 	'coherence' => 3,
 	'hugs98' => 3,
