@@ -1,0 +1,14 @@
+$OpenBSD: patch-poink_c,v 1.1 2018/04/25 19:44:04 naddy Exp $
+
+Index: poink.c
+--- poink.c.orig
++++ poink.c
+@@ -91,7 +91,7 @@ int main(int argc,char* argv[]) {
+ 
+   unsigned int n=0,port=DEFAULT_PORT;
+ 
+-  char ch;
++  int ch;
+   unsigned char *iaddr;
+   struct hostent* hp;
+   struct sockaddr_in s;

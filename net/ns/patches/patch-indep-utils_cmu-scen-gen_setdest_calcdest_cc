@@ -1,8 +1,17 @@
-$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc,v 1.2 2018/04/25 19:44:04 naddy Exp $
 
 Index: indep-utils/cmu-scen-gen/setdest/calcdest.cc
 --- indep-utils/cmu-scen-gen/setdest/calcdest.cc.orig
 +++ indep-utils/cmu-scen-gen/setdest/calcdest.cc
+@@ -235,7 +235,7 @@ extern "C" char *optarg;
+ int
+ main(int argc, char **argv)
+ {
+-	char ch;
++	int ch;
+ 	char *in_filename = NULL;
+ 	char *out_filename = NULL;
+ 
 @@ -441,7 +441,7 @@ Node::Update()
  	    } 
  	  else 

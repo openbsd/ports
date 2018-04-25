@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/17 19:52:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/25 19:44:04 naddy Exp $
 
 COMMENT=		IP traffic summarizer
 
 DISTNAME=		ipaudit-0.95
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://ipaudit.sourceforge.net/

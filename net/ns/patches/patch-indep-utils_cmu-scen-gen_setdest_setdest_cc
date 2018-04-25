@@ -1,8 +1,17 @@
-$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_setdest_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
+$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_setdest_cc,v 1.2 2018/04/25 19:44:04 naddy Exp $
 
 Index: indep-utils/cmu-scen-gen/setdest/setdest.cc
 --- indep-utils/cmu-scen-gen/setdest/setdest.cc.orig
 +++ indep-utils/cmu-scen-gen/setdest/setdest.cc
+@@ -272,7 +272,7 @@ extern "C" char *optarg;
+ int
+ main(int argc, char **argv)
+ {
+-	char ch;
++	int ch;
+ 
+ 	while ((ch = getopt(argc, argv, "v:n:s:m:M:t:P:p:x:y:i:o:")) != EOF) {       
+ 
 @@ -664,7 +664,7 @@ Node::Update()
  	position += (speed * (TIME - time_update)) * direction;
  

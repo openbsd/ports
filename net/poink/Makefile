@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/02/15 13:05:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/25 19:44:04 naddy Exp $
 
 COMMENT=	nosuid, secure TCP/IP ping
 
 DISTNAME=	poink
 PKGNAME=	${DISTNAME}-1.6
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://lcamtuf.coredump.cx/
