@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/25 13:23:45 naddy Exp $
 
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
+REVISION =	0
 CATEGORIES =	lang
 
 SHARED_LIBS +=	cim                       0.0 # 3.0

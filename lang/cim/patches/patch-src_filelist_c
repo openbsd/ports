@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_filelist_c,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
+$OpenBSD: patch-src_filelist_c,v 1.2 2018/04/25 13:23:45 naddy Exp $
 
 Needs ctype.h
 
@@ -13,3 +13,16 @@ Index: src/filelist.c
  #include "config.h"
  #include "const.h"
  #include "newstr.h"
+@@ -237,10 +238,10 @@ static FILE *open_and_position_arch_name (char *archna
+ {
+   FILE *f;
+   char *string_table=NULL;
+-  int i,
++  int i, c,
+     sl;
+   long l;
+-  char s1[17], *s2, c;
++  char s1[17], *s2;
+ 
+ #if OPEN_FILE_IN_BINARY_MODE
+   f = fopen (archname, "rb");

@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_dinimage_c,v 1.1 2018/04/25 13:23:45 naddy Exp $
+
+Index: lib/dinimage.c
+--- lib/dinimage.c.orig
++++ lib/dinimage.c
+@@ -26,8 +26,8 @@
+ __dhp __rdinimage (__bs5FILE *p)
+ {
+   char *c,
+-    c1,
+     d;
++  int c1;
+   long i,
+     l;
+   FILE *f;
