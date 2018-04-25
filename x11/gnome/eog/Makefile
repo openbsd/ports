@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2018/04/25 12:28:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.142 2018/04/25 15:08:51 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -33,6 +33,7 @@ MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
 # XXX: ld.so: eog: can't load library 'libeog.so'
+# https://bugzilla.gnome.org/show_bug.cgi?id=795546
 MAKE_ENV +=		LD_LIBRARY_PATH=${WRKBUILD}/src/
 
 .include <bsd.port.mk>
