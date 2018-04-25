@@ -1,0 +1,4 @@
+ncclient is a Python library for NETCONF clients. It aims to offer an
+intuitive API that sensibly maps the XML-encoded nature of NETCONF to
+Python constructs and idioms, and make writing network-management
+scripts easier.
