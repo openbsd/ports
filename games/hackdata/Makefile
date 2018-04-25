@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2018/04/25 14:31:51 espie Exp $
 
 COMMENT =	common data for the nethack/slash ports
-V =		3.4.3
+V =		3.6.0
 DISTNAME =	nethack-$V
 PKGNAME =	hackdata-$V
 CATEGORIES =	games
-REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \
 		ftp://ftp.nethack.org/pub/nethack/nh${V:S/.//g}/src/ \
@@ -24,7 +23,6 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} zxqf ${FULLDISTDIR}/${DISTFILES} \
 	nethack-$V/win/X11/ibm.bdf \
 	nethack-$V/win/X11/nh10.bdf \
-	nethack-$V/doc/Guidebook.txt
 
 do-build:
 	cd ${WRKSRC}/win/X11 && \
@@ -34,9 +32,7 @@ do-build:
 NO_TEST=	Yes
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nethack
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/hack
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
 	${INSTALL_DATA} ${WRKSRC}/win/X11/ibm.pcf.gz ${PREFIX}/share/fonts/hack
 	${INSTALL_DATA} ${WRKSRC}/win/X11/nh10.pcf.gz ${PREFIX}/share/fonts/hack
 
