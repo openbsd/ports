@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/01 11:10:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/04/25 11:25:04 fcambus Exp $
 
      SUBDIR =
      SUBDIR += blogbench
@@ -21,6 +21,7 @@
      SUBDIR += tcpblast
      SUBDIR += tsung
      SUBDIR += ubench
+     SUBDIR += wrk
      SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
