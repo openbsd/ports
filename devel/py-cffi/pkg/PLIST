@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/15 12:59:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/04/25 13:28:16 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
 lib/python${MODPY_VERSION}/site-packages/cffi/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -26,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}setuptools_ext.${M
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_cpy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_gen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}verifier.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/_cffi_errors.h
 lib/python${MODPY_VERSION}/site-packages/cffi/_cffi_include.h
 lib/python${MODPY_VERSION}/site-packages/cffi/_embedding.h
 lib/python${MODPY_VERSION}/site-packages/cffi/api.py
