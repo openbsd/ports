@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 11:24:14 fcambus Exp $
+@bin bin/wrk
+share/doc/wrk/
+share/doc/wrk/README.md
+share/doc/wrk/SCRIPTING
+share/examples/wrk/
+share/examples/wrk/addr.lua
+share/examples/wrk/auth.lua
+share/examples/wrk/counter.lua
+share/examples/wrk/delay.lua
+share/examples/wrk/pipeline.lua
+share/examples/wrk/post.lua
+share/examples/wrk/report.lua
+share/examples/wrk/setup.lua
+share/examples/wrk/stop.lua
