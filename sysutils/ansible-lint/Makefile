@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/22 11:54:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/25 15:31:42 jasper Exp $
 
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	3.4.20
+MODPY_EGG_VERSION =	3.4.21
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
