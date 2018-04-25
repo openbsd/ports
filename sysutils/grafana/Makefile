@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/04/25 15:50:26 landry Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	grafana
-GH_TAGNAME =	v4.6.3
-REVISION =	1
+GH_TAGNAME =	v5.0.4
 
 CATEGORIES =	sysutils
 
@@ -15,7 +14,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${GH_PROJECT}-${GH_TAGNAME:C/^v//}.linux-x64${EXTRACT_SUFX}:0
 MASTER_SITES0 =	https://s3-us-west-2.amazonaws.com/grafana-releases/release/
 
-# Apache 2.0
+# Apache 2.0 (bundles roboto and opensans fonts)
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/go
