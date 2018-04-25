@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/10 12:05:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/25 19:54:59 jasper Exp $
 
 COMMENT=		Git object database
 
-MODPY_EGG_VERSION=	0.6.4
-DISTNAME=		gitdb-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		0
+MODPY_EGG_VERSION=	2.0.3
+DISTNAME=		gitdb2-${MODPY_EGG_VERSION}
+PKGNAME=		py-gitdb-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 # BSD
@@ -13,9 +12,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MODPY_PI =		Yes
-
 MODULES=		lang/python
+
+MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
