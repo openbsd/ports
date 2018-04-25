@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1067 2018/04/25 12:43:06 denis Exp $
+# $OpenBSD: Makefile,v 1.1068 2018/04/25 14:25:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -518,6 +518,8 @@
      SUBDIR += pure-ftpd,virtual_chroot
      SUBDIR += putty
      SUBDIR += py-GeoIP
+     SUBDIR += py-IOSXR
+     SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-adns
@@ -547,6 +549,8 @@
      SUBDIR += py-dnspython
      SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
+     SUBDIR += py-eapi
+     SUBDIR += py-eapi,python3
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
      SUBDIR += py-ftpdlib
@@ -557,12 +561,16 @@
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
      SUBDIR += py-irclib
+     SUBDIR += py-junos-eznc
+     SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp
+     SUBDIR += py-ncclient
+     SUBDIR += py-ncclient,python3
      SUBDIR += py-netaddr
      SUBDIR += py-netaddr,python3
      SUBDIR += py-netifaces
@@ -570,6 +578,8 @@
      SUBDIR += py-netmiko
      SUBDIR += py-netmiko,python3
      SUBDIR += py-nmap
+     SUBDIR += py-nxos
+     SUBDIR += py-nxos,python3
      SUBDIR += py-oauth2
      SUBDIR += py-paho-mqtt
      SUBDIR += py-paho-mqtt,python3
