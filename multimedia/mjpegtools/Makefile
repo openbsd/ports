@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2018/04/25 20:55:22 naddy Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		7
+REVISION=		8
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 

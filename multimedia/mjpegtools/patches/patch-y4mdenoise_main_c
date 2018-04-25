@@ -1,0 +1,14 @@
+$OpenBSD: patch-y4mdenoise_main_c,v 1.1 2018/04/25 20:55:22 naddy Exp $
+
+Index: y4mdenoise/main.c
+--- y4mdenoise/main.c.orig
++++ y4mdenoise/main.c
+@@ -274,7 +274,7 @@ int main(int argc, char *argv[])
+ void
+ process_commandline(int argc, char *argv[])
+ {
+-  char c;
++  int c;
+ 
+   while ((c = getopt (argc, argv, "h?z:Z:t:T:r:R:m:M:f:BI:p:v:")) != -1)
+   {
