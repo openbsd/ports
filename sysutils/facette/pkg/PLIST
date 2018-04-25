@@ -1,79 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/30 17:34:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/25 16:09:56 landry Exp $
 @newgroup _facette:774
 @newuser _facette:774:774:daemon:Facette Daemon:/var/empty:/sbin/nologin
 @bin bin/facette
 @bin bin/facettectl
-share/facette/
-share/facette/examples/
+share/examples/facette/
 @sample ${SYSCONFDIR}/facette/
-share/facette/examples/facette.apache2
-share/facette/examples/facette.json
-@sample ${SYSCONFDIR}/facette/facette.json
-share/facette/examples/facette.nginx
-share/facette/examples/providers/
-@sample ${SYSCONFDIR}/facette/providers/
-share/facette/examples/providers/collectd.json
-@sample ${SYSCONFDIR}/facette/providers/collectd.json
-share/facette/examples/providers/graphite.json
-share/facette/examples/providers/influxdb.json
-share/facette/examples/providers/kairosdb.json
-share/facette/static/
-share/facette/static/canvg.js
-share/facette/static/facette.js
-share/facette/static/favicon.png
-share/facette/static/fonts/
-share/facette/static/fonts/Lato-Bold.ttf
-share/facette/static/fonts/Lato-Light.ttf
-share/facette/static/fonts/Lato-Regular.ttf
-share/facette/static/fonts/fontawesome-webfont.eot
-share/facette/static/fonts/fontawesome-webfont.svg
-share/facette/static/fonts/fontawesome-webfont.ttf
-share/facette/static/fonts/fontawesome-webfont.woff
-share/facette/static/highcharts.exporting.js
-share/facette/static/highcharts.js
-share/facette/static/i18next.js
-share/facette/static/jquery.datepicker.js
-share/facette/static/jquery.js
-share/facette/static/loader.gif
-share/facette/static/logo-text-light.png
-share/facette/static/logo-text.png
-share/facette/static/messages.json
-share/facette/static/moment.js
-share/facette/static/rgbcolor.js
-share/facette/static/sprintf.js
-share/facette/static/style.css
-share/facette/static/style.print.css
-share/facette/template/
-share/facette/template/admin/
-share/facette/template/admin/catalog_list.html
-share/facette/template/admin/collection_edit.html
-share/facette/template/admin/collection_list.html
-share/facette/template/admin/graph_edit.html
-share/facette/template/admin/graph_edit_linked.html
-share/facette/template/admin/graph_list.html
-share/facette/template/admin/group_edit.html
-share/facette/template/admin/group_list.html
-share/facette/template/admin/index.html
-share/facette/template/admin/layout.html
-share/facette/template/admin/scale_edit.html
-share/facette/template/admin/scale_list.html
-share/facette/template/admin/unit_edit.html
-share/facette/template/admin/unit_list.html
-share/facette/template/browse/
-share/facette/template/browse/collection.html
-share/facette/template/browse/graph.html
-share/facette/template/browse/index.html
-share/facette/template/browse/layout.html
-share/facette/template/browse/search.html
-share/facette/template/common/
-share/facette/template/common/element.html
-share/facette/template/common/graph.html
-share/facette/template/error.html
-share/facette/template/layout.html
-share/facette/template/opensearch.xml
-share/facette/template/show/
-share/facette/template/show/graph.html
-share/facette/template/show/layout.html
+share/examples/facette/facette.yaml
+@sample ${SYSCONFDIR}/facette/facette.yaml
+share/facette/
+share/facette/assets/
+share/facette/assets/css/
+share/facette/assets/css/font-awesome-269550530c.min.css
+share/facette/assets/css/style-c5fbcc078d.css
+share/facette/assets/css/style-print-59792da171.css
+share/facette/assets/fonts/
+share/facette/assets/fonts/Roboto-Light-7b5fb88f12.ttf
+share/facette/assets/fonts/Roboto-Medium-fe13e41707.ttf
+share/facette/assets/fonts/Roboto-Regular-ac3f799d5b.ttf
+share/facette/assets/fonts/fontawesome-webfont-674f50d287.eot
+share/facette/assets/fonts/fontawesome-webfont-912ec66d75.svg
+share/facette/assets/fonts/fontawesome-webfont-af7ae505a9.woff2
+share/facette/assets/fonts/fontawesome-webfont-b06871f281.ttf
+share/facette/assets/fonts/fontawesome-webfont-fee66e712a.woff
+share/facette/assets/html/
+share/facette/assets/html/index.html
+share/facette/assets/images/
+share/facette/assets/images/favicon-bec05f9734.png
+share/facette/assets/images/logo-main-e327a302b8.png
+share/facette/assets/images/logo-nav-f5c7f823c6.png
+share/facette/assets/js/
+share/facette/assets/js/facette-d71d72966b.js
+share/facette/assets/js/locales/
+share/facette/assets/js/locales/en.json
+share/facette/assets/js/locales/fr.json
+share/facette/assets/js/vendor-01cb0c030c.js
 @owner _facette
 @group _facette
 @sample /var/facette/

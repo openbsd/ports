@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/14 23:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/25 16:09:56 landry Exp $
 
 COMMENT =	time series data visualization and graphing software
 
-DISTNAME =	facette-0.3.1pre0
-
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
-GH_COMMIT =	62f4bd9058f26e7f8ee800b925e4c76731b5b955
-REVISION =	4
+GH_TAGNAME =	0.4.0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://facette.io
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
-		facette-0.3.1-node_modules${EXTRACT_SUFX}:0
+# selfhosted node_modules deps generated via gmake node_modules
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_TAGNAME}${EXTRACT_SUFX}} \
+		${GH_PROJECT}-${GH_TAGNAME}-node_modules${EXTRACT_SUFX}:0
 MASTER_SITES0 =	https://rhaalovely.net/stuff/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 BUILD_DEPENDS =	lang/go \
-		textproc/gsed \
 		lang/node
 LIB_DEPENDS =	net/rrdtool
 WANTLIB +=	c pthread rrd
@@ -29,10 +26,14 @@ WANTLIB +=	c pthread rrd
 PORTHOME =		${WRKDIR}
 MAKE_ENV =		CGO_LDFLAGS="-Wl,-rpath -Wl,${X11BASE}/lib"
 USE_GMAKE =		Yes
+SUBST_VARS +=	VARBASE
 
 post-patch:
 	ln -s ${WRKDIR}/node_modules ${WRKSRC}/node_modules
-	${SUBST_CMD} ${WRKSRC}/docs/examples/providers/collectd.json \
-			${WRKSRC}/docs/examples/facette.json
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/facette/
+	${SUBST_CMD} -c ${WRKSRC}/docs/examples/facette.yaml \
+		${PREFIX}/share/examples/facette/facette.yaml
 
 .include <bsd.port.mk>
