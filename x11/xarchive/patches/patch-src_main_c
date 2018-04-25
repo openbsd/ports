@@ -1,6 +1,16 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2007/07/16 21:35:42 ajacoutot Exp $
---- src/main.c.orig	Sun Jul 15 11:20:52 2007
-+++ src/main.c	Sun Jul 15 11:21:09 2007
+$OpenBSD: patch-src_main_c,v 1.2 2018/04/25 10:16:44 landry Exp $
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -24,7 +24,7 @@ char *
+ canonicalize_file_name(char *path)
+ {
+   char *name, rzpath[256];
+-  name = realpath(path, rzpath);
++  name = realpath(path, NULL);
+   return name;
+ }
+ #endif
 @@ -63,7 +63,7 @@ setup_exts(WrapperEntry *wrapent)
    GPtrArray *ext_array = NULL;
  

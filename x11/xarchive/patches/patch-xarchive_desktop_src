@@ -1,0 +1,11 @@
+$OpenBSD: patch-xarchive_desktop_src,v 1.1 2018/04/25 10:16:44 landry Exp $
+
+Index: xarchive.desktop.src
+--- xarchive.desktop.src.orig
++++ xarchive.desktop.src
+@@ -19,4 +19,4 @@ StartupNotify=true
+ Terminal=false
+ Type=Application
+ X-MultipleArgs=false
+-MimeType=application/x-bzip;application/x-bzip-compressed-tar;application/x-compress;application/x-compressed-tar;application/x-gtar;application/x-gzip;application/x-rar;application/x-rar-compressed;application/x-tar;application/x-zip;application/x-zip-compressed;application/zip;multipart/x-zip;
++MimeType=application/x-bzip;application/x-bzip-compressed-tar;application/x-compress;application/x-compressed-tar;application/x-gtar;application/x-gzip;application/x-rar;application/x-rar-compressed;application/x-tar;application/x-zip;application/x-zip-compressed;application/zip;
