@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2018/04/25 07:40:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.220 2018/04/25 07:43:55 fcambus Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -75,7 +75,6 @@
      SUBDIR += ocaml
      SUBDIR += ocaml-camlp4
      SUBDIR += ocaml-camlp5
-     SUBDIR += open-cobol
      SUBDIR += otcl
      SUBDIR += p5-Language-Ook
      SUBDIR += parrot
