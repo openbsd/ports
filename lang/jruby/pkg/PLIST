@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2017/09/15 03:06:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/04/25 14:48:22 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -37,9 +37,9 @@ jruby/lib/ruby/gems/1.8/gems/rdoc-4.2.0/bin/ri
 jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
 jruby/lib/ruby/gems/1.8/specifications/default/did_you_mean-1.0.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.3.10.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.3.12.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.21-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.1.1-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.2.2-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-1.8.3-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/minitest-5.4.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/net-telnet-0.1.1.gemspec
@@ -924,7 +924,6 @@ jruby/lib/ruby/stdlib/rubygems/
 jruby/lib/ruby/stdlib/rubygems.rb
 jruby/lib/ruby/stdlib/rubygems/available_set.rb
 jruby/lib/ruby/stdlib/rubygems/basic_specification.rb
-jruby/lib/ruby/stdlib/rubygems/bundler_version_finder.rb
 jruby/lib/ruby/stdlib/rubygems/command.rb
 jruby/lib/ruby/stdlib/rubygems/command_manager.rb
 jruby/lib/ruby/stdlib/rubygems/commands/
@@ -952,8 +951,6 @@ jruby/lib/ruby/stdlib/rubygems/commands/rdoc_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/search_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/server_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/setup_command.rb
-jruby/lib/ruby/stdlib/rubygems/commands/signin_command.rb
-jruby/lib/ruby/stdlib/rubygems/commands/signout_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/sources_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/specification_command.rb
 jruby/lib/ruby/stdlib/rubygems/commands/stale_command.rb
@@ -1083,13 +1080,13 @@ jruby/lib/ruby/stdlib/rubygems/resolver/specification.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/stats.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/vendor_set.rb
 jruby/lib/ruby/stdlib/rubygems/resolver/vendor_specification.rb
+jruby/lib/ruby/stdlib/rubygems/safe_yaml.rb
 jruby/lib/ruby/stdlib/rubygems/security/
 jruby/lib/ruby/stdlib/rubygems/security.rb
 jruby/lib/ruby/stdlib/rubygems/security/policies.rb
 jruby/lib/ruby/stdlib/rubygems/security/policy.rb
 jruby/lib/ruby/stdlib/rubygems/security/signer.rb
 jruby/lib/ruby/stdlib/rubygems/security/trust_dir.rb
-jruby/lib/ruby/stdlib/rubygems/security_option.rb
 jruby/lib/ruby/stdlib/rubygems/server.rb
 jruby/lib/ruby/stdlib/rubygems/source/
 jruby/lib/ruby/stdlib/rubygems/source.rb
@@ -1225,6 +1222,7 @@ jruby/lib/ruby/stdlib/uri/ldaps.rb
 jruby/lib/ruby/stdlib/uri/mailto.rb
 jruby/lib/ruby/stdlib/uri/rfc2396_parser.rb
 jruby/lib/ruby/stdlib/uri/rfc3986_parser.rb
+jruby/lib/ruby/stdlib/weakref.rb
 jruby/lib/ruby/stdlib/webrick/
 jruby/lib/ruby/stdlib/webrick.rb
 jruby/lib/ruby/stdlib/webrick/accesslog.rb
