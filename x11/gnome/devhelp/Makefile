@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2018/04/24 08:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2018/04/25 08:41:12 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -7,6 +7,7 @@ COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -36,7 +37,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache
+			gtk-update-icon-cache yelp
 
 BUILD_DEPENDS=		x11/gnome/doc-utils
 LIB_DEPENDS=		www/webkitgtk4
