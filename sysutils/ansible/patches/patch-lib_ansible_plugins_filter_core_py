@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_ansible_plugins_filter_core_py,v 1.2 2017/11/05 00:01:50 jasper Exp $
+$OpenBSD: patch-lib_ansible_plugins_filter_core_py,v 1.3 2018/04/25 14:15:50 jasper Exp $
 
 - set bcrypt algorith to '2b'
 - unbreak password_hash('blowfish') which used salt buffer of incorrect
@@ -7,7 +7,7 @@ $OpenBSD: patch-lib_ansible_plugins_filter_core_py,v 1.2 2017/11/05 00:01:50 jas
 Index: lib/ansible/plugins/filter/core.py
 --- lib/ansible/plugins/filter/core.py.orig
 +++ lib/ansible/plugins/filter/core.py
-@@ -271,13 +271,17 @@ def get_encrypted_password(password, hashtype='sha512'
+@@ -273,13 +273,17 @@ def get_encrypted_password(password, hashtype='sha512'
      # TODO: find a way to construct dynamically from system
      cryptmethod = {
          'md5': '1',

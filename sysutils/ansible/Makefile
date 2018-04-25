@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2018/02/04 08:13:36 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2018/04/25 14:15:50 jasper Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.4.3.0
+MODPY_EGG_VERSION =	2.5.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
@@ -24,8 +24,7 @@ MASTER_SITES =		https://releases.ansible.com/ansible/
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		archivers/gtar \
-			textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx
 RUN_DEPENDS =		security/py-crypto \
 			security/py-keyczar \
 			security/py-paramiko \
@@ -41,9 +40,6 @@ NO_TEST =		Yes
 DOCDIR =		${PREFIX}/share/doc/ansible
 EXDIR =			${PREFIX}/share/examples/ansible
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
-
-# tar: A hard link to the directory ansible-2.4.2.0/test/integration/targets/copy/files/subdir/subdir1/circles/subdir1/circles/subdir1/circles/subdir1/circles/[..]subdi is not allowed
-TAR =			${LOCALBASE}/bin/gtar
 
 pre-configure:
 	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
@@ -67,7 +63,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${PREFIX}/man/man1
 	cp -R ${WRKBUILD}/docs/docsite/_build/html ${DOCDIR}
 	rm -f ${DOCDIR}/html/.buildinfo
-	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.md} ${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.rst} ${DOCDIR}/
 	find ${PREFIX} \( -name '*.orig' -o -name '.git*' \
 		-o -name '*.beforesubst' \) -type f -exec rm {} +
 
