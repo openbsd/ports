@@ -1,0 +1,17 @@
+$OpenBSD: patch-mpm_slug_cc,v 1.1 2018/04/25 14:03:47 naddy Exp $
+
+Index: mpm/slug.cc
+--- mpm/slug.cc.orig
++++ mpm/slug.cc
+@@ -170,8 +170,10 @@ static char *getutf(FILE *fp)	// get 1 utf-encoded cha
+ {
+ 	static char buf[100];
+ 	char *p = buf;
++	int c;
+ 
+-	for (*p = 0; (*p++ = getc(fp)) != EOF; ) {
++	for (*p = 0; (c = getc(fp)) != EOF; ) {
++		*p++ = c;
+ 		*p = 0;
+ #ifdef	EUC
+ 		if (mblen(buf, sizeof buf) > 0)	// found a valid character
