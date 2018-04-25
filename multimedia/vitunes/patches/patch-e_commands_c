@@ -1,0 +1,32 @@
+$OpenBSD: patch-e_commands_c,v 1.1 2018/04/25 12:44:10 naddy Exp $
+
+Index: e_commands.c
+--- e_commands.c.orig
++++ e_commands.c
+@@ -159,7 +159,7 @@ ecmd_check(int argc, char *argv[])
+    meta_info *mi;
+    bool   show_raw, show_sanitized, show_database;
+    bool   found;
+-   char   ch;
++   int    ch;
+    char   realfile[PATH_MAX];
+    char **files;
+    int    nfiles;
+@@ -325,7 +325,7 @@ ecmd_rmfile(int argc, char *argv[])
+ int
+ ecmd_flush(int argc, char *argv[])
+ {
+-   char ch;
++   int ch;
+    char *time_format = "%Y %m %d %H:%M:%S";
+ 
+    optreset = 1;
+@@ -365,7 +365,7 @@ ecmd_tag(int argc, char *argv[])
+         *comment = NULL;
+    const char *errstr = NULL;
+    unsigned int track = 0, year = 0;
+-   char   ch;
++   int    ch;
+    char **files;
+    int nfiles, f;
+ 

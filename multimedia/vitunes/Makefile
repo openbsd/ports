@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/08 01:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/25 12:44:10 naddy Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
 DISTNAME =		vitunes-2.3
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		multimedia
 
