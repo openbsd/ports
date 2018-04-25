@@ -1,0 +1,48 @@
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+* zap bogus shit that prevents parallelism
+* handle moc location
+
+Index: sys/unix/Makefile.src
+--- sys/unix/Makefile.src.orig
++++ sys/unix/Makefile.src
+@@ -470,25 +470,22 @@ all:	$(GAME)
+ #	Makefile is responsible for keeping up to date
+ #
+ 
+-# special rules, to force update of makedefs, real dependencies should be
+-# below in the 'make depend' output.
+ monst.o:
+ 	$(CC) $(CFLAGS) -c monst.c
+-	@rm -f $(MAKEDEFS)
+ 
+ objects.o:
+ 	$(CC) $(CFLAGS) -c objects.c
+-	@rm -f $(MAKEDEFS)
+ 
++MOC=moc
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \
+@@ -519,9 +516,7 @@ tile.c: ../win/share/tilemap.c $(HACK_H)
+ #	files, we kludge around this by making date.h dependent on hack.h,
+ #	even though it doesn't include this file.
+ #
+-#	hack.h depends on makedefs' output, so we know makedefs will be
+-#	up to date before being executed
+-../include/date.h:	$(VERSOURCES) $(HACK_H)
++../include/date.h:	$(VERSOURCES) $(HACK_H) $(MAKEDEFS)
+ 	../util/makedefs -v
+ 
+ 

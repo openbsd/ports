@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_tcap_h,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: include/tcap.h
+--- include/tcap.h.orig
++++ include/tcap.h
+@@ -44,7 +44,7 @@ extern struct tc_lcl_data { /* defined and set up in t
+ #define nh_UE tc_lcl_data.tc_UE
+ #define ul_hack tc_lcl_data.tc_ul_hack
+ 
+-extern short ospeed; /* set up in termcap.c */
++extern int ospeed; /* set up in termcap.c */
+ 
+ #ifdef TEXTCOLOR
+ #ifdef TOS

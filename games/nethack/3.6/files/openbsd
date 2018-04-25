@@ -1,0 +1,43 @@
+# $OpenBSD: openbsd,v 1.1.1.1 2018/04/25 16:56:31 espie Exp $
+
+#-PRE
+
+CFLAGS += ${COPTS} -I../include -DNOTPARMDECL -DDLB -DSECURE
+CFLAGS += -DHACKDIR=\"$(HACKDIR)\"
+CFLAGS += -DSYSCF -DSYSCF_FILE=\"$(HACKDIR)/sysconf\"
+
+# Wee, let's not do config
+CFLAGS += -DVISION_TABLES -DNOUSER_SOUNDS
+CFLAGS += -DTIMED_DELAY -DNOMAIL
+
+CFLAGS += -DCOMPRESS=\"/usr/bin/gzip\" -DCOMPRESS_EXTENSION=\".gz\"
+
+LINK = ${CC}
+CXX = c++
+
+WINSRC = $(WINTTYSRC)
+WINOBJ = $(WINTTYOBJ)
+WINLIB = $(WINTTYLIB)
+
+POSTINSTALL = install -g $(GAMEGRP) -m $(VARFILEPERM) sys/unix/sysconf ${INSTDIR}/sysconf
+WINTTYLIB=-lcurses
+
+HACKDIR = 	${PREFIX}/$(GAMEDIR)
+REALHACKDIR =	${TRUEPREFIX}/$(GAMEDIR)
+SHELLDIR = 	${PREFIX}/bin
+VARDIR = 	${HACKDIR}
+INSTDIR = 	${HACKDIR}
+REALGAME =	nethack-$V
+
+# in case you install manually, make it so
+CHOWN = 	true
+CHGRP = 	chgrp
+# choose a GAMEGRP !
+
+VARDIRPERM = 	0755
+GAMEPERM = 0755
+VARFILEPERM = 0600
+
+XFILES = x11tiles pet_mark.xbm rip.xpm pilemark.xbm
+
+include ${FILESDIR}/${CONFIG}

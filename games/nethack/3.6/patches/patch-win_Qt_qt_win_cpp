@@ -1,0 +1,17 @@
+$OpenBSD: patch-win_Qt_qt_win_cpp,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: win/Qt/qt_win.cpp
+--- win/Qt/qt_win.cpp.orig
++++ win/Qt/qt_win.cpp
+@@ -102,11 +102,6 @@ extern "C" {
+ #include "qt_xpms.h"
+ 
+ #include <dirent.h>
+-#ifdef Q_WS_MACX
+-#  include <sys/malloc.h>
+-#else
+-#  include <malloc.h>
+-#endif
+ 
+ #ifdef _WS_X11_
+ // For userid control

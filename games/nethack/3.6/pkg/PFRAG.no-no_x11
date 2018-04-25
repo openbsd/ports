@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+!%%qt%%
+${GAMEDIR}/pet_mark.xbm
+${GAMEDIR}/pilemark.xbm
+${GAMEDIR}/rip.xpm
+${GAMEDIR}/x11tiles

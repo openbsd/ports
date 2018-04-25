@@ -1,0 +1,17 @@
+$OpenBSD: patch-sys_share_unixtty_c,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: sys/share/unixtty.c
+--- sys/share/unixtty.c.orig
++++ sys/share/unixtty.c
+@@ -126,9 +126,9 @@ struct tchars inittyb2, curttyb2;
+ #ifndef LINT
+ extern /* it is defined in libtermlib (libtermcap) */
+ #endif
+-    short ospeed; /* terminal baudrate; set by gettty */
++    int ospeed; /* terminal baudrate; set by gettty */
+ #else
+-short ospeed = 0; /* gets around "not defined" error message */
++int ospeed = 0; /* gets around "not defined" error message */
+ #endif
+ 
+ #if defined(POSIX_TYPES) && defined(BSD)

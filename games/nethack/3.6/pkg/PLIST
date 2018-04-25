@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+@option no-default-conflict
+@option is-branch
+@conflict nethack-${V}
+@newgroup ${GAMEGRP}:806
+@comment bin/license
+@comment bin/nethack
+bin/nethack-${V}
+bin/recover-${V}
+@mode 0775
+@group ${GAMEGRP}
+${GAMEDIR}/
+@mode
+${GAMEDIR}/license
+@mode 2555
+@bin ${GAMEDIR}/nethack
+@bin ${GAMEDIR}/recover
+@mode
+${GAMEDIR}/nhdat
+@mode 0664
+@comment no checksum
+${GAMEDIR}/logfile
+${GAMEDIR}/perm
+@comment no checksum
+${GAMEDIR}/record
+@mode 0664
+@comment no checksum
+${GAMEDIR}/xlogfile
+@mode 0774
+${GAMEDIR}/save/
+@mode
+${GAMEDIR}/symbols
+${GAMEDIR}/sysconf
+@man man/man6/nethack-${V}.6
+@man man/man6/recover-${V}.6
+!%%no_x11%%

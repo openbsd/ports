@@ -1,0 +1,48 @@
+$OpenBSD: patch-include_unixconf_h,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: include/unixconf.h
+--- include/unixconf.h.orig
++++ include/unixconf.h
+@@ -6,6 +6,8 @@
+ #ifndef UNIXCONF_H
+ #define UNIXCONF_H
+ 
++#include <sys/param.h>
++
+ /*
+  * Some include files are in a different place under SYSV
+  *      BSD                SYSV
+@@ -296,23 +298,6 @@
+ #include <sys/wait.h>
+ #endif
+ 
+-#if defined(BSD) || defined(ULTRIX)
+-#if !defined(DGUX) && !defined(SUNOS4)
+-#define memcpy(d, s, n) bcopy(s, d, n)
+-#define memcmp(s1, s2, n) bcmp(s2, s1, n)
+-#endif
+-#ifdef SUNOS4
+-#include <memory.h>
+-#endif
+-#else         /* therefore SYSV */
+-#ifndef index /* some systems seem to do this for you */
+-#define index strchr
+-#endif
+-#ifndef rindex
+-#define rindex strrchr
+-#endif
+-#endif
+-
+ /* Use the high quality random number routines. */
+ #if defined(BSD) || defined(LINUX) || defined(ULTRIX) || defined(CYGWIN32) \
+     || defined(RANDOM) || defined(__APPLE__)
+@@ -322,9 +307,7 @@
+ #endif
+ 
+ #ifdef TIMED_DELAY
+-#if defined(SUNOS4) || defined(LINUX) || (defined(BSD) && !defined(ULTRIX))
+ #define msleep(k) usleep((k) *1000)
+-#endif
+ #ifdef ULTRIX
+ #define msleep(k) napms(k)
+ #endif

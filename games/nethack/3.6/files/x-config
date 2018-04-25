@@ -1,0 +1,10 @@
+# $OpenBSD: x-config,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+CFLAGS +=-DX11_GRAPHICS -I$(X11BASE)/include
+LFLAGS += -L$(X11BASE)/lib
+
+WINSRC += $(WINX11SRC)
+WINOBJ += $(WINX11OBJ)
+WINLIB += $(WINX11LIB)
+
+VARDATND = $(XFILES)

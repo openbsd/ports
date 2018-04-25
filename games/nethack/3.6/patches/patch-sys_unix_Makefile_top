@@ -1,0 +1,40 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: sys/unix/Makefile.top
+--- sys/unix/Makefile.top.orig
++++ sys/unix/Makefile.top
+@@ -184,7 +184,7 @@ title.img:
+ check-dlb: options
+ 	@if egrep -s librarian dat/options ; then $(MAKE) dlb ; else true ; fi
+ 
+-dlb:
++dlb: spec_levs $(VARDATD)
+ 	( cd util ; $(MAKE) dlb )
+ 	( cd dat ; ../util/dlb cf nhdat $(DATDLB) )
+ 
+@@ -206,20 +206,20 @@ dofiles:
+ 	cp util/recover $(INSTDIR)
+ 	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
+ 	if test -n '$(SHELLDIR)'; then \
+-		sed -e 's;/usr/games/lib/nethackdir;$(HACKDIR);' \
++		sed -e 's;/usr/games/lib/nethackdir;$(REALHACKDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+-		> $(SHELLDIR)/$(GAME) ; fi
++		> $(SHELLDIR)/$(REALGAME) ; fi
+ # set up their permissions
+ 	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) $(GAME) recover ; \
+ 			$(CHGRP) $(GAMEGRP) $(GAME) recover )
+ 	chmod $(GAMEPERM) $(INSTDIR)/$(GAME)
+ 	chmod $(EXEPERM) $(INSTDIR)/recover
+ 	-if test -n '$(SHELLDIR)'; then \
+-		$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME); fi
++		$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(REALGAME); fi
+ 	if test -n '$(SHELLDIR)'; then \
+-		$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME); \
+-		chmod $(EXEPERM) $(SHELLDIR)/$(GAME); fi
++		$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(REALGAME); \
++		chmod $(EXEPERM) $(SHELLDIR)/$(REALGAME); fi
+ 	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) symbols ; \
+ 			$(CHGRP) $(GAMEGRP) symbols ; \
+ 			chmod $(FILEPERM) symbols )

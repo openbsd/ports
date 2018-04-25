@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_hacklib_c,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: src/hacklib.c
+--- src/hacklib.c.orig
++++ src/hacklib.c
+@@ -861,12 +861,7 @@ time_t date;
+     if (date == 0)
+         lt = getlt();
+     else
+-#if (defined(ULTRIX) && !(defined(ULTRIX_PROTO) || defined(NHSTDC))) \
+-    || defined(BSD)
+-        lt = localtime((long *) (&date));
+-#else
+         lt = localtime(&date);
+-#endif
+     /* just in case somebody's localtime supplies (year % 100)
+        rather than the expected (year - 1900) */
+     if (lt->tm_year < 70)

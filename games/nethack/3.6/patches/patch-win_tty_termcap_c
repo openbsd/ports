@@ -1,0 +1,16 @@
+$OpenBSD: patch-win_tty_termcap_c,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+
+Index: win/tty/termcap.c
+--- win/tty/termcap.c.orig
++++ win/tty/termcap.c
+@@ -851,10 +851,6 @@ cl_eos() /* free after Robert Viduya */
+ 
+ #include <curses.h>
+ 
+-#if !defined(LINUX) && !defined(__FreeBSD__) && !defined(NOTPARMDECL)
+-extern char *tparm();
+-#endif
+-
+ #ifndef COLOR_BLACK /* trust include file */
+ #ifndef _M_UNIX     /* guess BGR */
+ #define COLOR_BLACK 0
