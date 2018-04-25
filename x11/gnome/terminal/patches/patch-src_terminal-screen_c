@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_terminal-screen_c,v 1.13 2017/11/04 16:45:12 jasper Exp $
+$OpenBSD: patch-src_terminal-screen_c,v 1.14 2018/04/25 11:10:38 jasper Exp $
 
 Revert the following commits which break spawning the shell:
 
@@ -15,7 +15,7 @@ Subject: [PATCH] screen: Fix check for foreground process
 Index: src/terminal-screen.c
 --- src/terminal-screen.c.orig
 +++ src/terminal-screen.c
-@@ -63,8 +63,6 @@
+@@ -64,8 +64,6 @@
  
  #define URL_MATCH_CURSOR  (GDK_HAND2)
  
@@ -24,7 +24,7 @@ Index: src/terminal-screen.c
  typedef struct {
    int *fd_list;
    int fd_list_len;
-@@ -1352,50 +1350,6 @@ terminal_screen_child_setup (FDSetupData *data)
+@@ -1360,50 +1358,8 @@ terminal_screen_child_setup (FDSetupData *data)
    }
  }
  
@@ -36,11 +36,11 @@ Index: src/terminal-screen.c
 -{
 -  TerminalScreen *screen;
 -  TerminalScreenPrivate *priv;
--
+ 
 -  /* Terminal was destroyed while the spawn operation was in progress; nothing to do. */
 -  if (terminal == NULL)
 -    return;
--
+ 
 -  screen = TERMINAL_SCREEN (terminal);
 -  priv = screen->priv;
 -
@@ -51,7 +51,7 @@ Index: src/terminal-screen.c
 -
 -    vte_terminal_set_pty (terminal, NULL);
 -    info_bar = terminal_info_bar_new (GTK_MESSAGE_ERROR,
--                                      _("_Profile Preferences"), RESPONSE_EDIT_PROFILE,
+-                                      _("_Preferences"), RESPONSE_EDIT_PREFERENCES,
 -                                      _("_Relaunch"), RESPONSE_RELAUNCH,
 -                                      NULL);
 -    terminal_info_bar_format_text (TERMINAL_INFO_BAR (info_bar),
@@ -75,7 +75,7 @@ Index: src/terminal-screen.c
  static gboolean
  terminal_screen_do_exec (TerminalScreen *screen,
                           FDSetupData    *data /* adopting */,
-@@ -1406,11 +1360,13 @@ terminal_screen_do_exec (TerminalScreen *screen,
+@@ -1414,11 +1370,13 @@ terminal_screen_do_exec (TerminalScreen *screen,
    GSettings *profile;
    char **env, **argv;
    char *shell = NULL;
@@ -90,7 +90,7 @@ Index: src/terminal-screen.c
  
    if (priv->child_pid != -1) {
      g_set_error_literal (error, G_DBUS_ERROR, G_DBUS_ERROR_FAILED,
-@@ -1435,27 +1391,53 @@ terminal_screen_do_exec (TerminalScreen *screen,
+@@ -1443,27 +1401,53 @@ terminal_screen_do_exec (TerminalScreen *screen,
    env = get_child_environment (screen, working_dir, &shell);
  
    argv = NULL;
@@ -123,7 +123,7 @@ Index: src/terminal-screen.c
 -                            cancellable,
 -                            spawn_result_cb, NULL);
 +    info_bar = terminal_info_bar_new (GTK_MESSAGE_ERROR,
-+                                      _("_Profile Preferences"), RESPONSE_EDIT_PROFILE,
++                                      _("_Profile Preferences"), RESPONSE_EDIT_PREFERENCES,
 +                                      _("_Relaunch"), RESPONSE_RELAUNCH,
 +                                      NULL);
 +    terminal_info_bar_format_text (TERMINAL_INFO_BAR (info_bar),
@@ -159,7 +159,7 @@ Index: src/terminal-screen.c
  }
  
  static gboolean
-@@ -2087,9 +2069,6 @@ terminal_screen_has_foreground_process (TerminalScreen
+@@ -2076,9 +2060,6 @@ terminal_screen_has_foreground_process (TerminalScreen
    gsize i;
    gsize len;
    int fgpid;

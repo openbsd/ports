@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_terminal-util_c,v 1.1 2017/11/04 16:45:12 jasper Exp $
+$OpenBSD: patch-src_terminal-util_c,v 1.2 2018/04/25 11:10:38 jasper Exp $
 
 inline a copy strchrnul
 
 Index: src/terminal-util.c
 --- src/terminal-util.c.orig
 +++ src/terminal-util.c
-@@ -1187,6 +1187,50 @@ terminal_util_uri_fixup (const char *uri,
+@@ -1155,6 +1155,50 @@ terminal_util_uri_fixup (const char *uri,
    }
  }
  
