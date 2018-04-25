@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/04/25 16:51:31 naddy Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
@@ -58,5 +58,7 @@ LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
 
 #CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
+
+CXXFLAGS +=	-std=c++03
 
 .include <bsd.port.mk>
