@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2018/04/24 08:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2018/04/25 09:51:10 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -39,6 +40,9 @@ RUN_DEPENDS +=		devel/py-jedi${MODPY_FLAVOR}
 
 # python documentation auto-completion
 RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
+
+# see patch-src_plugins_todo_gbp-todo-model_c
+RUN_DEPENDS +=		sysutils/ggrep
 
 LIB_DEPENDS=		devel/jsonrpc-glib \
 			devel/libgit2/libgit2-glib \
