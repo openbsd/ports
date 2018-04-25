@@ -1,4 +1,4 @@
-$OpenBSD: patch-SWIG__lib_i,v 1.2 2018/02/10 08:40:55 ajacoutot Exp $
+$OpenBSD: patch-SWIG__lib_i,v 1.3 2018/04/25 09:58:03 jasper Exp $
 
 Fix build with LibreSSL
 
@@ -14,7 +14,7 @@ Index: SWIG/_lib.i
  typedef void (*OPENSSL_sk_freefunc)(void *);
  typedef void *(*OPENSSL_sk_copyfunc)(const void *);
  typedef struct stack_st OPENSSL_STACK;
-@@ -494,7 +494,7 @@ int passphrase_callback(char *buf, int num, int v, voi
+@@ -499,7 +499,7 @@ int passphrase_callback(char *buf, int num, int v, voi
  %inline %{
  
  void lib_init() {

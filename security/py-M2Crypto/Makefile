@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/05 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/25 09:58:03 jasper Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
-MODPY_EGG_VERSION =	0.28.2
+MODPY_EGG_VERSION =	0.29.0
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		security
 
