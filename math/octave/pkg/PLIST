@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/11/03 12:28:53 steven Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/04/25 21:27:06 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -940,6 +940,7 @@ share/octave/${VERSION}/etc/tests/fixed/classdef/foo_value_class.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/plist_t1.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/plist_t2.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/plist_t3.m
+share/octave/${VERSION}/etc/tests/fixed/classdef/struct_wrapper.m
 share/octave/${VERSION}/etc/tests/fixed/classes/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Blork/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Blork/Blork.m

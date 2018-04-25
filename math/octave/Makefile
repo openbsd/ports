@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.101 2018/02/28 19:23:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2018/04/25 21:27:06 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.2.1
+VERSION =	4.2.2
 DISTNAME =	octave-${VERSION}
-REVISION =	2
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		8.0
-SHARED_LIBS +=	octgui		2.0
-SHARED_LIBS +=	octinterp	7.0
+SHARED_LIBS +=	octave		9.0
+SHARED_LIBS +=	octgui		3.0
+SHARED_LIBS +=	octinterp	8.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
@@ -27,7 +26,7 @@ WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm amd
 WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
 WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
-WANTLIB += glpk glut gmp hdf5 iconv intl lapack lcms2 ltdl lzma m ncurses
+WANTLIB += glpk glut gmp hdf5 iconv intl lapack lcms2 ltdl lzma m curses
 WANTLIB += nghttp2 ogg pcre png portaudio pthread qhull qrupdate
 WANTLIB += sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
 WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
