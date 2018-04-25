@@ -1,0 +1,6 @@
+The Python library for Arista's eAPI command API implementation provides
+a client API work using eAPI and communicating with EOS nodes. The
+Python library can be used to communicate with EOS either locally
+(on-box) or remotely (off-box). It uses a standard INI-style
+configuration file to specify one or more nodes and connection
+properties.
