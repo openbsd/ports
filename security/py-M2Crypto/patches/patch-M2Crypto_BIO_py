@@ -1,4 +1,4 @@
-$OpenBSD: patch-M2Crypto_BIO_py,v 1.1 2018/04/25 09:58:03 jasper Exp $
+$OpenBSD: patch-M2Crypto_BIO_py,v 1.2 2018/04/25 16:49:20 jasper Exp $
 
 Partially revert https://gitlab.com/m2crypto/m2crypto/commit/738cd0bf3dc2ee619f598290d5bf4c2190987f16:
 
@@ -16,6 +16,8 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/site-packages/M2Crypto/BIO.py", line 239, in __init__
     pyfile.flush()
 IOError: [Errno 9] Bad file descriptor
+
+https://gitlab.com/m2crypto/m2crypto/issues/211
 
 Index: M2Crypto/BIO.py
 --- M2Crypto/BIO.py.orig
