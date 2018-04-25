@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/30 13:48:39 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/25 21:42:09 fcambus Exp $
 
 COMMENT =	AdLib sound player library
 
-DISTNAME =	adplug-2.2.1
-SHARED_LIBS +=	adplug	0.1	# 2.2
-CATEGORIES =	audio
-REVISION =	3
+V =		2.3.1
+DISTNAME =	adplug-${V}
+SHARED_LIBS +=	adplug	1.0
 
-HOMEPAGE =	http://adplug.github.io/
+CATEGORIES =	audio
+
+HOMEPAGE =	https://adplug.github.io/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -16,7 +17,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	binio c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=adplug/}
+MASTER_SITES =	https://github.com/adplug/adplug/releases/download/adplug-${V}/
+
+EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS =	devel/libbinio
 
