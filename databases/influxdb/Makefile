@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/25 15:48:02 landry Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
-V =		1.4.2
+V =		1.5.2
 DISTNAME =	influxdb-${V}
-REVISION =	1
 
 HOMEPAGE =	https://influxdata.com
 # selfhosted because we bundle go deps
@@ -20,8 +19,11 @@ MODULES =	lang/go
 BUILD_DEPENDS =	security/go-crypto \
 		textproc/go-text \
 		devel/go-sys \
+		net/go-net \
 		textproc/xmlto \
 		textproc/asciidoc
+
+WANTLIB +=	c pthread
 
 # our handrolled distfile has the "right" layout already
 # disables MODGO_SETUP_WORKSPACE
@@ -32,10 +34,6 @@ WRKDIST =	${WRKSRC}
 # for man/Makefile
 USE_GMAKE =	Yes
 SUBST_VARS =	VARBASE
-
-pre-patch:
-	cp -r ${LOCALBASE}/${MODGO_SOURCES}/golang.org/x/{crypto,text,sys} \
-		${MODGO_WORKSPACE}/src/golang.org/x/
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_BUILD_CMD} ./...
