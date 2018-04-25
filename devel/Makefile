@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1726 2018/04/14 21:27:20 kili Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1727 2018/04/25 10:13:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1588,6 +1588,7 @@
      SUBDIR += py-voluptuous
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-wbem
+     SUBDIR += py-wbem,python3
      SUBDIR += py-wcwidth
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
