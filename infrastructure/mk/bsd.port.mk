@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1388 2018/04/05 11:53:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1389 2018/04/25 20:43:45 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -72,6 +72,7 @@ USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
 WRKOBJDIR_MFS ?= /tmp/pobj
 FAKEOBJDIR ?=
+NEW_UPDATE_PLIST ?= No
 
 BULK_TARGETS ?=
 BULK_DO ?=
@@ -2376,10 +2377,20 @@ _extra_info += PLIST${_s}='${PLIST${_s}}'
 _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends)"
 .  endfor
 
+_update_plist = ${_cache_fragment}; \
+	${_UPDATE_PLIST_SETUP} ${SUDO} ${_PERLSCRIPT}/update-plist \
+	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs --
+.for i in ${BUILD_PACKAGES}
+_update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
+.endfor
+
 _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
+.if ${NEW_UPDATE_PLIST:L} == "yes"
+	@${_update_plist}
+.else
 	@DESTDIR=${WRKINST} \
 	PREFIX=${TRUEPREFIX} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
@@ -2390,6 +2401,7 @@ _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE} ${WRKINST}/.saved_libs' \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/make-plist \
 	${_extra_info} ${_tmpvars}
+.endif
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
