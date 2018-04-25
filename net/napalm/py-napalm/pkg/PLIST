@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/17 14:09:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/25 14:26:26 jasper Exp $
 bin/cl_napalm_configure
 bin/cl_napalm_test
 bin/cl_napalm_validate
@@ -43,6 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/napalm/base/helpers.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/helpers.pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/mock.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/mock.pyc
+lib/python${MODPY_VERSION}/site-packages/napalm/base/netmiko_helpers.py
+lib/python${MODPY_VERSION}/site-packages/napalm/base/netmiko_helpers.pyc
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/napalm/base/test/__init__.pyc
