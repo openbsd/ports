@@ -1,0 +1,25 @@
+$OpenBSD: patch-sys_unix_Makefile_doc,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
+--- sys/unix/Makefile.doc.orig	Mon Dec  8 00:39:13 2003
++++ sys/unix/Makefile.doc	Tue Aug 10 13:32:07 2004
+@@ -41,15 +41,15 @@ Guidebook.dvi:	Guidebook.tex
+ 
+ 
+ GAME	= nethack
+-MANDIR	= /usr/man/man6
++MANDIR	= ${PREFIX}/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp nethack.6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${INSTALL_MAN} nethack.6
++LEVMANCREATE = ${INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${INSTALL_MAN} recover.6
++DLBMANCREATE = ${INSTALL_MAN} dlb.6
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = nroff -man nethack.6 >
+ # LEVMANCREATE = nroff -man lev_comp.6 >

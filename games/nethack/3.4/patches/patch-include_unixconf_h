@@ -1,0 +1,68 @@
+$OpenBSD: patch-include_unixconf_h,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
+--- include/unixconf.h.orig	Mon Dec  8 00:39:13 2003
++++ include/unixconf.h	Tue Aug 10 13:34:38 2004
+@@ -19,6 +19,10 @@
+  */
+ 
+ /* define exactly one of the following four choices */
++/* procure the real define BSD */
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ /* #define BSD 1 */	/* define for 4.n/Free/Open/Net BSD  */
+ 			/* also for relatives like SunOS 4.x, DG/UX, and */
+ 			/* older versions of Linux */
+@@ -32,7 +36,7 @@
+ 
+ 
+ /* define any of the following that are appropriate */
+-#define SVR4		/* use in addition to SYSV for System V Release 4 */
++/* #define SVR4		/* use in addition to SYSV for System V Release 4 */
+ 			/* including Solaris 2+ */
+ #define NETWORK		/* if running on a networked system */
+ 			/* e.g. Suns sharing a playground through NFS */
+@@ -47,6 +51,7 @@
+ 			 * job control (note that AIX is SYSV otherwise)
+ 			 * Also define this for AIX 3.2 */
+ 
++#define TERMLIB
+ #define TERMINFO	/* uses terminfo rather than termcap */
+ 			/* Should be defined for most SYSV, SVR4 (including
+ 			 * Solaris 2+), HPUX, and Linux systems.  In
+@@ -132,7 +137,7 @@
+  * "extra output" method is used, but not all systems provide access to
+  * a fine-grained timer.
+  */
+-/* #define TIMED_DELAY */	/* usleep() */
++#define TIMED_DELAY 	/* usleep() */
+ #endif
+ 
+ /*
+@@ -143,7 +148,7 @@
+  * A stat system call is done on the mailbox every MAILCKFREQ moves.
+  */
+ 
+-#define MAIL			/* Deliver mail during the game */
++/* #define MAIL			/* Deliver mail during the game */
+ 
+ /* The Andrew Message System does mail a little differently from normal
+  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+@@ -284,7 +289,7 @@
+ #endif
+ 
+ #if defined(BSD) || defined(ULTRIX)
+-# if !defined(DGUX) && !defined(SUNOS4)
++# if !defined(DGUX) && !defined(SUNOS4) && !defined(__STDC__)
+ #define memcpy(d, s, n)		bcopy(s, d, n)
+ #define memcmp(s1, s2, n)	bcmp(s2, s1, n)
+ # endif
+@@ -308,9 +313,7 @@
+ #endif
+ 
+ #ifdef TIMED_DELAY
+-# if defined(SUNOS4) || defined(LINUX) || (defined(BSD) && !defined(ULTRIX))
+ # define msleep(k) usleep((k)*1000)
+-# endif
+ # ifdef ULTRIX
+ # define msleep(k) napms(k)
+ # endif

@@ -1,0 +1,12 @@
+# Not yet:
+# qt flavor needs at least 2.0 to work
+VARDATND = x11tiles pet_mark.xbm rip.xpm
+VARDAT = $(VARDATD) $(VARDATND)
+CFLAGS+=-DQT_GRAPHICS -I$(MODQT_INCDIR) -pthread
+LFLAGS =-pthread -L$(MODQT_LIBDIR) -L$(X11BASE)/lib -L$(LOCALBASE)/lib
+
+WINSRC = $(WINTTYSRC) $(WINQTSRC)
+WINOBJ = $(WINTTYOBJ) $(WINQTOBJ)
+WINLIB = $(WINTTYLIB) -lqt-mt -lSM
+QTDIR  = $(LOCALBASE)
+LINKCMD = c++

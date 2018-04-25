@@ -1,0 +1,56 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
+--- sys/unix/Makefile.top.orig	Mon Dec  8 00:39:13 2003
++++ sys/unix/Makefile.top	Tue Aug 10 13:37:18 2004
+@@ -13,19 +13,19 @@
+ # execute things like 'data' and 'rumors')
+ # MAKE = make
+ 
++include ${NETHACKCONFIG}
++
+ # make NetHack
+-PREFIX	 = /usr
+ GAME     = nethack
+-# GAME     = nethack.prg
+-GAMEUID  = games
+-GAMEGRP  = bin
++GAMEUID  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -35,12 +35,13 @@ DIRPERM  = 0755
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
++REALGAMEDIR  = $(NHDIR)
++GAMEDIR  = $(DESTDIR)${REALGAMEDIR}
+ VARDIR  = $(GAMEDIR)
+-SHELLDIR = $(PREFIX)/games
++SHELLDIR = ${DESTDIR}$(PREFIX)/bin
+ 
+ # per discussion in Install.X11 and Install.Qt
+-VARDATND = 
++# VARDATND = 
+ # VARDATND = x11tiles NetHack.ad pet_mark.xbm
+ # VARDATND = x11tiles NetHack.ad pet_mark.xbm rip.xpm
+ # for Atari/Gem
+@@ -186,7 +187,7 @@ dofiles:
+ 	cp src/$(GAME) $(GAMEDIR)
+ 	cp util/recover $(GAMEDIR)
+ 	-rm -f $(SHELLDIR)/$(GAME)
+-	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
++	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)
