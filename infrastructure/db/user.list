@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.307 2018/04/03 17:41:51 bket Exp $
+$OpenBSD: user.list,v 1.308 2018/04/25 11:48:20 espie Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -314,3 +314,4 @@ id  user		group		port options
 803 _rsyslogd		_rsyslogd	sysutils/rsyslog
 804 _masttermost	_mattermost	net/mattermost-server
 805 _nzbget		_nzbget		news/nzbget
+806 			_nethack36	games/nethack/3.6
