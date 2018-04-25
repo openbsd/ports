@@ -1,0 +1,287 @@
+#! /usr/bin/perl
+# $OpenBSD: update-plist,v 1.1 2018/04/25 19:07:07 espie Exp $
+# Copyright (c) 2018 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+use OpenBSD::PkgCreate;
+use Data::Dumper;
+use File::Find;
+use File::Spec;
+my $ports1;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+use lib "$ports1/infrastructure/lib";
+
+package Forwarder;
+# perfect forwarding
+sub AUTOLOAD
+{
+	our $AUTOLOAD;
+	my $fullsub = $AUTOLOAD;
+	(my $sub = $fullsub) =~ s/.*:://o;
+	return if $sub eq 'DESTROY'; # special case
+	no strict "refs";
+	*$fullsub = sub {
+		my $self = shift;
+		$self->{delegate}->$sub(@_);
+	};
+	goto &$fullsub;
+}
+
+package ReverseSubst;
+our @ISA = qw(Forwarder);
+sub new
+{
+	bless {delegate => OpenBSD::Subst->new, l => []}, shift;
+}
+
+sub add
+{
+	my ($self, $k, $v) = @_;
+	push(@{$self->{l}}, $k);
+	$self->{delegate}->add($k, $v);
+}
+
+package MyFile;
+use File::Basename;
+sub pretty
+{
+	my $self = shift;
+	return basename($self->{name});
+}
+
+package PlistReader;
+our @ISA = qw(OpenBSD::PkgCreate);
+
+sub annotate
+{
+	my ($self, $e, $unsubst, $file) = @_;
+	$e->{unsubst} = $unsubst;
+	$e->{file} = $file;
+	$e->{comesfrom} = $self;
+}
+
+# okay, so that plist doesn't exist, wouhou, I don't care.
+sub cant_read_fragments
+{
+}
+
+sub new
+{
+	my $class = shift;
+	bless { olist => OpenBSD::PackingList->new,
+		nlist => OpenBSD::PackingList->new }, $class;
+}
+
+sub olist
+{
+	my $self = shift;
+	return $self->{olist};
+}
+
+sub nlist
+{
+	my $self = shift;
+	return $self->{nlist};
+}
+
+package PlistReader::State;
+our @ISA = qw(OpenBSD::PkgCreate::State);
+
+sub init
+{
+	my ($self, $realstate) = @_;
+	$self->{subst} = ReverseSubst->new;
+	$self->{progressmeter} = $realstate->{progressmeter};
+	$self->{bad} = 0;
+	$self->{repo} = $realstate->{repo};
+}
+
+package UpdatePlist::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+sub handle_options
+{
+	my $state = shift;
+	$state->{opt} = {
+		'X' => sub {
+			my $path = shift;
+			$state->{ignored}{$path} = 1;
+		    },
+	};
+	$state->SUPER::handle_options('X:', 
+	    '[mnx] [-X path] -- pkg_create_args ...');
+}
+
+package OpenBSD::PackingElement;
+sub known_object
+{
+}
+
+sub known_directory
+{
+}
+
+sub show_unknown
+{
+}
+
+package OpenBSD::PackingElement::Comment;
+sub fullname
+{
+	my $self = shift;
+	if ($self->name =~ m/^\@\S*?\s+(.*)/) {
+		return $self->make_full($1);
+	} else {
+		return $self->name;
+	}
+}
+
+sub known_object
+{
+	&OpenBSD::PackingElement::FileObject::known_object;
+}
+
+sub cwd
+{
+	&OpenBSD::PackingElement::Object::cwd;
+}
+
+package OpenBSD::PackingElement::FileObject;
+use File::Basename;
+
+sub known_object
+{
+	my ($self, $h, $ap) = @_;
+	my $f = $self->fullname;
+	push @{$h->{$f}}, $self;
+	delete $ap->{$f};
+}
+
+sub known_directory
+{
+	my ($self, $h, $plist) = @_;
+	my $d = $self->fullname;
+	while (1) {
+		$d = dirname($d);
+		# don't go up to / if we can avoid it
+		return if $d eq $self->cwd or $d eq '/';
+		return if defined $self->{$d}{$plist};
+		$h->{$d}{$plist} = $self;
+	}
+}
+
+sub show_unknown
+{
+	my $self = shift;
+	if (!$self->{found}) {
+		print "Not found: ", $self->fullname, "(in ", $self->{file}->pretty, ")\n";
+	}
+}
+
+package UpdatePlist;
+use  File::Basename;
+
+# build a list of arguments
+
+my $state = UpdatePlist::State->new('update-plist');
+$state->say("Starting up");
+$state->handle_options;
+
+my @lists;
+my $exact = {};
+my $approximate = {};
+my $dependencies = {};
+
+# we read all plists using the exact same code as pkg_create
+while (@ARGV > 0) {
+	my $r = PlistReader->new;
+
+	my $s = PlistReader::State->new('update-plist', $state);
+	$r->{state} = $s;
+	$s->handle_options;
+	$s->{opt}{q} = 1;
+	push(@lists, $r);
+	my $pkg = shift;
+
+	$r->olist->set_pkgname($pkg);
+	$r->nlist->set_pkgname($pkg);
+	$r->read_all_fragments($s, $r->olist);
+	$r->add_extra_info($r->olist, $s);
+	# for removing directory stuff later on
+	$dependencies->{$r->olist->fullpkgpath} = $r->nlist;
+# except that we also record where each object live, including directory
+# locations.  As a rule, "exact" information will supersede deduced directory
+# names.
+	$r->olist->known_directory($approximate, $r->olist);
+	$r->olist->known_object($exact, $approximate);
+	$state->say("Processed #1 as #2", $pkg, $r->olist->fullpkgpath);
+}
+
+# XXX we assume all subpackage are under the same local base
+my $base = $lists[0]->{state}{base};
+
+# now we ask the file system what exists, and fill file objects according to
+# that.
+require OpenBSD::FS2;
+$state->say("Scanning #1", $base);
+my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
+
+$state->say("Matching objects");
+
+# we will match fs objects to read plists as best as we can
+for my $path (sort keys %$objects) {
+	if ($exact->{$path}) {
+#		print $path, " -> ", $exact->{$path}[0]{file}->pretty, "\n";
+		for my $e (@{$exact->{$path}}) {
+			$e->{found} = 1;
+		}
+	} else {
+#		print $path, " ??? ", ref($path), "\n";
+	}
+}
+
+# once we figured out existing object, we try to preserve @exec and similar
+# info as best as we can.
+
+#for my $s (@$states) {
+#	$s->plist->tie_objects;
+#}
+
+$state->say("Copying objects");
+for my $path (sort keys %$objects) {
+	if ($exact->{$path}) {
+		for my $e (@{$exact->{$path}}) {
+			my $s = $e->{comesfrom};
+			$e->add_object($s->nlist);
+		}
+	}
+}
+use File::Path;
+#make_path("tryout");
+for my $s (@lists) {
+	$s->nlist->write(\*STDOUT);
+}
+#for my $k (sort keys %$approximate) {
+#	for my $e (values %{$approximate->{$k}}) {
+#		print "$k leads to ", $e->{file}->pretty, "\n";
+#	}
+#}
+
+# let's show a quick summary of stuff we couldn't figure out
+for my $s (@lists) {
+	$s->olist->show_unknown($exact);
+}
