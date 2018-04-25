@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.82 2018/04/07 07:24:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.83 2018/04/25 09:56:52 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -483,6 +483,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-archived-media/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-archived-media/2017-09-30/
