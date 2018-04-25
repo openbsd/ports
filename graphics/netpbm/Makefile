@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.80 2017/06/28 13:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2018/04/25 18:45:33 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.76.00
-SHARED_LIBS=	netpbm	3.1
+DISTNAME=	netpbm-10.82.00
+SHARED_LIBS=	netpbm	3.2
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 c jasper jbig jpeg m png tiff xml2 z
+WANTLIB=	X11 c iconv jasper jbig jpeg lzma m png tiff xml2 z
 
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
 EXTRACT_SUFX=	.tar.xz
@@ -36,7 +36,9 @@ FAKE_FLAGS=	pkgdir="${WRKINST}${TRUEPREFIX}"
 do-configure:
 	cp ${FILESDIR}/config.mk ${WRKSRC}
 
-TEST_DEPENDS=	shells/bash sysutils/coreutils
+TEST_DEPENDS=	print/ghostscript/gnu \
+		shells/bash \
+		sysutils/coreutils
 TEST_TARGET=	check
 TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
 		resultdir="${WRKDIR}/tests" \
@@ -48,7 +50,9 @@ pre-test:
 		ln -sf ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
 	done
 	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \
-	    ${WRKSRC}/test/Execute-Tests ${WRKSRC}/test/*.test
+	    ${WRKSRC}/test/Available-Testprog \
+	    ${WRKSRC}/test/Execute-Tests \
+	    ${WRKSRC}/test/*.test
 
 # must run after fake
 test: fake

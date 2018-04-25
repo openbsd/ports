@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/04/26 17:59:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/04/25 18:45:33 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
@@ -91,6 +91,7 @@ bin/pamrgbatopng
 bin/pamstretch-gen
 @bin bin/pamsumm
 @bin bin/pamsummcol
+@bin bin/pamtable
 @bin bin/pamthreshold
 @bin bin/pamtilt
 @bin bin/pamtoavs

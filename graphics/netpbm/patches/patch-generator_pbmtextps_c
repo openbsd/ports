@@ -1,0 +1,13 @@
+$OpenBSD: patch-generator_pbmtextps_c,v 1.1 2018/04/25 18:45:33 naddy Exp $
+
+Index: generator/pbmtextps.c
+--- generator/pbmtextps.c.orig
++++ generator/pbmtextps.c
+@@ -27,6 +27,7 @@
+ 
+ #define _DEFAULT_SOURCE /* New name for SVID & BSD source defines */
+ #define _XOPEN_SOURCE   /* Make sure popen() is in stdio.h */
++#define _XOPEN_SOURCE_EXTENDED 1	/* strcasecmp() */
+ #define _BSD_SOURCE     /* Make sure stdrup() is in string.h */
+ #include <unistd.h>
+ #include <stdio.h>
