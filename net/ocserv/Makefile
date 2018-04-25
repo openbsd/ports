@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.32 2018/04/23 09:01:10 bket Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/25 18:31:29 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.11.12
+DISTNAME=	ocserv-0.12.0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://ocserv.gitlab.io/www/
 
-MAINTAINER=	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
+MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	c curses ev gnutls intl lz4 m nettle oath pam protobuf-c
-WANTLIB +=	radcli readline talloc
+WANTLIB+=	c curses ev gnutls lz4 m nettle oath pam protobuf-c
+WANTLIB+=	radcli readline talloc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
 LIB_DEPENDS=	archivers/lz4 \
-		devel/gettext \
 		devel/libev \
 		devel/libtalloc \
 		devel/protobuf-c \
@@ -32,12 +31,11 @@ TEST_DEPENDS=	net/openconnect \
 		shells/bash \
 		sysutils/coreutils
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--enable-local-libopts \
-			--without-docker-tests \
+CONFIGURE_ARGS=		--without-docker-tests \
 			--without-geoip \
 			--without-http-parser \
+			--without-nuttcp-tests \
 			--without-pcl-lib
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -47,14 +45,18 @@ AUTOCONF_VERSION=	2.69
 
 post-extract:
 	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-	    ${WRKSRC}/tests/test-{iroute,append-routes,user-config}
+	    ${WRKSRC}/tests/test-{iroute,append-routes,user-config} \
+	    ${WRKSRC}/tests/haproxy-connect \
+	    ${WRKSRC}/tests/multiple-routes
 	sed -i 's,/usr/sbin/openconnect,${LOCALBASE}/sbin/openconnect,' \
 	    ${WRKSRC}/tests/common.sh
 	sed -i 's,/etc/ocserv,${SYSCONFDIR}/ocserv,' \
 	    ${WRKSRC}/src/ocpasswd/ocpasswd.c
-	cd ${WRKSRC}; \
-	    sed -i 's,/usr/bin/ocserv-fw,${SYSCONFDIR}/ocserv/ocserv-fw,g' \
-	    src/ocserv-args.def src/main-user.c doc/ocserv.8 doc/sample.config
+	sed -i 's,/usr/bin/ocserv-fw,${SYSCONFDIR}/ocserv/ocserv-fw,g' \
+	    ${WRKSRC}/src/main-user.c \
+	    ${WRKSRC}/doc/sample.config
+	sed -i 's,/usr/bin/ocserv\\-fw,${SYSCONFDIR}/ocserv/ocserv\\-fw,g' \
+	    ${WRKSRC}/doc/ocserv.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocserv
@@ -64,6 +66,7 @@ post-install:
 	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${WRKSRC}/doc/sample.config \
 	    ${PREFIX}/share/examples/ocserv/sample.config
+	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${PREFIX}/man/man8/
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout

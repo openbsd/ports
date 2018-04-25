@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.8 2017/10/10 09:20:48 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2018/04/25 18:31:29 bket Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -162,7 +162,7 @@ if test "$test_for_geoip" = yes;then
+@@ -168,7 +168,7 @@ if test "$test_for_geoip" = yes;then
  fi
  
  have_readline=no

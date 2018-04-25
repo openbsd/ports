@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_multiple-routes,v 1.1 2018/04/25 18:31:29 bket Exp $
+
+Index: tests/multiple-routes
+--- tests/multiple-routes.orig
++++ tests/multiple-routes
+@@ -49,7 +49,7 @@ echo ok
+ 
+ echo -n "Checking number of routes... "
+ 
+-CONTENTS=`cat ${TMPFILE1}|grep X-CSTP-Split-Include|wc -l`
++CONTENTS=`cat ${TMPFILE1}|grep X-CSTP-Split-Include|wc -l|sed 's/^ *//'`
+ if test "$CONTENTS" != "256";then
+ 	cat ${TMPFILE1}|grep X-CSTP-Split-Include
+ 	fail $PID "Temporary file contents are not correct; 256 routes were not found"

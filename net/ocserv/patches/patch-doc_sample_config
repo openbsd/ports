@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_sample_config,v 1.19 2018/01/12 22:28:51 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.20 2018/04/25 18:31:29 bket Exp $
 
 no seccomp, gssapi
 
 Index: doc/sample.config
 --- doc/sample.config.orig
 +++ doc/sample.config
-@@ -34,15 +34,6 @@
+@@ -35,15 +35,6 @@
  # Acct-Interim-Interval, and Session-Timeout values.
  #
  # See doc/README-radius.md for the supported radius configuration atributes.
@@ -21,16 +21,16 @@ Index: doc/sample.config
  
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
-@@ -55,8 +46,6 @@ auth = "plain[passwd=./sample.passwd]"
- # for authentication. That is, if set, any of the methods enabled
- # will be sufficient to login.
+@@ -58,8 +49,6 @@ auth = "plain[passwd=./sample.passwd]"
+ # When multiple options are present, they are OR composed (any of them
+ # succeeding allows login).
  #enable-auth = "certificate"
 -#enable-auth = "gssapi"
 -#enable-auth = "gssapi[keytab=/etc/key.tab,require-local-user-map=true,tgt-freshness-time=900]"
  
  # Accounting methods available:
  # radius: can be combined with any authentication method, it provides
-@@ -99,8 +88,8 @@ udp-port = 443
+@@ -102,8 +91,8 @@ udp-port = 443
  
  # The user the worker processes will be run as. It should be
  # unique (no other services run as this user).
@@ -41,7 +41,7 @@ Index: doc/sample.config
  
  # socket file used for IPC with occtl. You only need to set that,
  # if you use more than a single servers.
-@@ -109,7 +98,7 @@ run-as-group = daemon
+@@ -112,7 +101,7 @@ run-as-group = daemon
  # socket file used for server IPC (worker-main), will be appended with .PID
  # It must be accessible within the chroot environment (if any), so it is best
  # specified relatively to the chroot directory.
@@ -49,8 +49,8 @@ Index: doc/sample.config
 +socket-file = ${LOCALSTATEDIR}/run/ocserv-socket
  
  # The default server directory. Does not require any devices present.
- #chroot-dir = /path/to/chroot
-@@ -163,16 +152,6 @@ ca-cert = ../tests/certs/ca.pem
+ #chroot-dir = /var/lib/ocserv
+@@ -172,16 +161,6 @@ ca-cert = ../tests/certs/ca.pem
  ### failures during the reloading time.
  
  
@@ -67,7 +67,7 @@ Index: doc/sample.config
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -328,9 +307,8 @@ min-reauth-time = 300
+@@ -337,9 +316,8 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
@@ -79,7 +79,7 @@ Index: doc/sample.config
  #
  # Score banning cannot be reliably used when receiving proxied connections
  # locally from an HTTP server (i.e., when listen-clear-file is used).
-@@ -344,7 +322,6 @@ ban-reset-time = 1200
+@@ -353,7 +331,6 @@ ban-reset-time = 1200
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -87,7 +87,7 @@ Index: doc/sample.config
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -411,7 +388,7 @@ rekey-method = ssl
+@@ -420,7 +397,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overridden in the command line.
@@ -96,7 +96,7 @@ Index: doc/sample.config
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -526,6 +503,11 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -535,6 +512,11 @@ no-route = 192.168.5.0/255.255.255.0
  # any other routes. In case of defaultroute, the no-routes are restricted.
  # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
  # --removeall. This option can be set globally or in the per-user configuration.
@@ -108,7 +108,7 @@ Index: doc/sample.config
  #restrict-user-to-routes = true
  
  # This option implies restrict-user-to-routes set to true. If set, the
-@@ -598,23 +580,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -607,23 +589,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/
