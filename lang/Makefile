@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2018/01/31 00:22:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.219 2018/04/25 07:40:05 fcambus Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -39,6 +39,7 @@
      SUBDIR += gcc
      SUBDIR += gforth
      SUBDIR += ghc
+     SUBDIR += gnucobol
      SUBDIR += go
      SUBDIR += go-bootstrap
      SUBDIR += gprolog
