@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/24 17:36:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/25 11:25:40 landry Exp $
 
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kxmlgui \
 			devel/kf5/kservice
 
-BUILD_DEPNENDS =	graphics/png \
+BUILD_DEPENDS =		graphics/png \
 			graphics/jpeg \
 			graphics/tiff
 
