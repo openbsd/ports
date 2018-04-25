@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2018/04/25 10:20:53 ajacoutot Exp $
 
 COMMENT=	collection of educational activities for young children
 
 DISTNAME=	childsplay-2.6.5
 EXTRACT_SUFX=	.tgz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games education
 
 HOMEPAGE=	http://www.childsplay.mobi/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
