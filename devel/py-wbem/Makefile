@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/25 10:10:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/26 09:17:51 jasper Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -19,7 +19,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-pbr${MODPY_FLAVOR} \
+			devel/py-pbr${MODPY_FLAVOR}>=1.10.0 \
 			devel/py-pip${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-ply${MODPY_FLAVOR} \
