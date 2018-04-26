@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/27 12:33:57 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2018/04/26 17:25:40 solene Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS = i386 amd64
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
 
-V =		1.5.5
+V =		1.5.7
 PKGNAME-main =	tome4-${V}
 PKGNAME-data =	tome4-data-${V}
 CATEGORIES =	games x11
@@ -47,6 +47,11 @@ WANTLIB-data =
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
+# c++abi certainly pulled out by luajit when using clang
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+WANTLIB += c++abi
+.endif
 
 NO_TEST =	Yes
 
