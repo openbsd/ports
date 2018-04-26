@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2018/04/26 19:59:04 ajacoutot Exp $
 
-PORTROACH=	limit:.*[^a]$$
+PORTROACH=	skipv:0.8.5
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
