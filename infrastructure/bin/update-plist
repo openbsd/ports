@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.4 2018/04/26 09:18:12 espie Exp $
+# $OpenBSD: update-plist,v 1.5 2018/04/26 11:49:06 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -33,7 +33,7 @@ BEGIN {
 	# everything as root, but not behind PORTS_PRIVSEP
 	if (!defined $fake && !defined $tree) {
 		print STDERR "DON'T BUILD PORTS AS ROOT!!!!!\n";
-		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas)\n";
+		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas to root)\n";
 		return;
 	}
 	die "FAKE_TREE_OWNER not defined" unless defined $fake;
@@ -104,7 +104,7 @@ sub annotate
 
 # okay, so that plist doesn't exist, wouhou, I don't care,
 # since I'm not pkg_create
-sub cant_read_fragments
+sub cant_read_fragment
 {
 }
 
