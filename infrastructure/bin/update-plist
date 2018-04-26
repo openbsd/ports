@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.12 2018/04/26 18:24:14 espie Exp $
+# $OpenBSD: update-plist,v 1.13 2018/04/26 18:28:58 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -239,6 +239,11 @@ sub known_object
 sub cwd
 {
 	&OpenBSD::PackingElement::Object::cwd;
+}
+
+sub copy_annotations
+{
+	# nope these are not normal annotations
 }
 
 package OpenBSD::PackingElement::FileObject;
