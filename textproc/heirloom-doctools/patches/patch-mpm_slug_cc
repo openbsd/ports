@@ -1,4 +1,6 @@
-$OpenBSD: patch-mpm_slug_cc,v 1.1 2018/04/25 14:03:47 naddy Exp $
+$OpenBSD: patch-mpm_slug_cc,v 1.2 2018/04/26 07:45:36 bentley Exp $
+
+Committed upstream in 051a955bee11a43838c1895d401856fc1f286898.
 
 Index: mpm/slug.cc
 --- mpm/slug.cc.orig
