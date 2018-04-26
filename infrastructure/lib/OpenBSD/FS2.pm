@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.2 2018/04/26 08:47:29 espie Exp $
+# $OpenBSD: FS2.pm,v 1.3 2018/04/26 13:25:37 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -72,12 +72,22 @@ sub recognize
 	return 1;
 }
 
+sub element_class
+{
+	'OpenBSD::PackingElement::File';
+}
+
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
 sub recognize
 {
 	my ($class, $filename, $fs) = @_;
 	return -d $fs->destdir($filename) && !-l $fs->destdir($filename);
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::Dir';
 }
 
 package OpenBSD::FS::File::Rc;
@@ -87,6 +97,11 @@ sub recognize
 {
 	my ($class, $filename, $fs) = @_;
 	return $filename =~ m,/rc\.d/,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::RcScript';
 }
 
 package OpenBSD::FS::File::Pre;
@@ -141,6 +156,11 @@ sub recognize
 package OpenBSD::FS::File::Binary;
 our @ISA = qw(OpenBSD::FS::File);
 
+sub element_class
+{
+	'OpenBSD::PackingElement::Binary';
+}
+
 package OpenBSD::FS::File::Info;
 our @ISA = qw(OpenBSD::FS::File);
 
@@ -162,6 +182,10 @@ sub recognize
 	}
 }
 
+sub element_class
+{
+	'OpenBSD::PackingElement::InfoFile';
+}
 
 package OpenBSD::FS::File::Subinfo;
 our @ISA = qw(OpenBSD::FS::File::Info);
@@ -221,6 +245,10 @@ sub recognize
 	return 0;
 }
 
+sub element_class
+{
+	return 'OpenBSD::PackingElement::Manpage';
+}
 
 package OpenBSD::FS::PreSharedObject;
 our @ISA = qw(OpenBSD::FS::File::Pre);
@@ -261,6 +289,11 @@ sub trueclass
 
 package OpenBSD::FS::File::Library;
 our @ISA = qw(OpenBSD::FS::SharedObject);
+
+sub element_class
+{
+	'OpenBSD::PackingElement::Lib';
+}
 
 package OpenBSD::FS::File::PrePlugin;
 our @ISA = qw(OpenBSD::FS::PreSharedObject);
