@@ -1,0 +1,23 @@
+Kate is a multi-document, multi-view text editor by KDE. It features stuff like
+codefolding, syntaxhighlighting, dynamic word wrap, an embedded console, an
+extensive plugin interface and some prelimentary scripting support.
+
+Features:
+- MDI, window splitting, window tabbing
+- Spell checking
+- CR, CRLF, LF newline support
+- Encoding support (utf-8, utf-16, ascii etc.)
+- Encoding conversion
+- Regular expression based find & replace
+- Powerful syntax highlighting and bracket matching
+- Code and text folding
+- Infinite undo/redo support
+- Block selection mode
+- Auto indentation
+- Auto completion support
+- Shell integration
+- Wide protocol support (http, ftp, ssh, webdav etc.) using kioslaves
+- Plugin architecture for the application and editor component
+- Customizable shortcuts
+- Integrated command line
+- Scriptable using JavaScript
