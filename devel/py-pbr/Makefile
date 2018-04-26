@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/26 09:17:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/26 09:49:59 sthen Exp $
 
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	1.10.0
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
