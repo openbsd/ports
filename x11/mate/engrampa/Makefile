@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/10 15:07:16 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/26 08:24:04 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,6 +7,8 @@ COMMENT=		file archiver for the MATE desktop
 CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
+
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +26,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 RUN_DEPENDS=		archivers/gtar \
+			archivers/unrar \
 			archivers/unzip
 
 LIB_DEPENDS=		devel/json-glib \
