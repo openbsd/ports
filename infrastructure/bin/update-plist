@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.11 2018/04/26 18:22:43 espie Exp $
+# $OpenBSD: update-plist,v 1.12 2018/04/26 18:24:14 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -277,7 +277,6 @@ package UpdatePlist;
 use  File::Basename;
 
 my $state = UpdatePlist::State->new('update-plist');
-$state->say("Starting up");
 
 # this handles update-plist options proper, finished with --
 $state->handle_options;
