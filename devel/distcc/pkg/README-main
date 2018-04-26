@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2015/12/28 08:16:44 jasper Exp $
+$OpenBSD: README-main,v 1.3 2018/04/26 16:25:15 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,6 +17,16 @@ distcc will run the jobs as the user invoking distcc.
 
 Then set `$CC` to `distcc` to distribute compilation jobs across the
 configured nodes.
+
+Masquerading
+============
+Since distcc 3.3 it is recommended to use whitelisted compiler binaries.
+This feature is called masquerading and it's enabled by default. See
+the MASQUERADING section in distcc(1) how to set this up.
+If you wish to disable it and fallback to the old behaviour, use the
+`--make-me-a-botnet` parameter for distccd.
+Note, update-distcc-symlinks is not included in the package as it's
+not adjusted yet to handle the different compilers on OpenBSD.
 
 References
 ==========

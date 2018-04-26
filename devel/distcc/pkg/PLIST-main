@@ -1,59 +1,58 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/04/26 16:25:15 jasper Exp $
 @bin bin/distcc
 @bin bin/distccmon-text
 @bin bin/lsdistcc
 bin/pump
 lib/python${MODPY_VERSION}/site-packages/include_server/
-lib/python${MODPY_VERSION}/site-packages/include_server-3.2rc1-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/include_server/__init__.py
-lib/python${MODPY_VERSION}/site-packages/include_server/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server${MODPY_BIN_SUFFIX}.3-py${MODPY_VERSION}.egg-info
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}basics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}basics_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}c_extensions_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}cache_basics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}compiler_defaults.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}compress_files.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_analyzer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_analyzer_memoizing_node.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_analyzer_memoizing_node_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_analyzer_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}include_server_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}macro_eval.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}macro_eval_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}mirror_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}mirror_path_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}parse_command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}parse_command_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}parse_file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}parse_file_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/basics.py
-lib/python${MODPY_VERSION}/site-packages/include_server/basics.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/basics_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/basics_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.py
-lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.py
-lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.py
-lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.so
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/include_server.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_server.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/include_server_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/include_server_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval.py
-lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path.py
-lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/parse_command.py
-lib/python${MODPY_VERSION}/site-packages/include_server/parse_command.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/parse_command_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/parse_command_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/parse_file.py
-lib/python${MODPY_VERSION}/site-packages/include_server/parse_file.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/parse_file_test.py
-lib/python${MODPY_VERSION}/site-packages/include_server/parse_file_test.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/run.py
-lib/python${MODPY_VERSION}/site-packages/include_server/run.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/setup.py
-lib/python${MODPY_VERSION}/site-packages/include_server/setup.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/statistics.py
-lib/python${MODPY_VERSION}/site-packages/include_server/statistics.pyc
 @man man/man1/distcc.1
 @man man/man1/distccmon-text.1
 @man man/man1/include_server.1
