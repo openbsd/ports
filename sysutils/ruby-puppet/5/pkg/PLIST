@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/26 08:52:42 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/04/26 07:04:28 sebastia Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -204,11 +204,13 @@ ${MODRUBY_SITEDIR}/puppet/functions/defined.rb
 ${MODRUBY_SITEDIR}/puppet/functions/dig.rb
 ${MODRUBY_SITEDIR}/puppet/functions/each.rb
 ${MODRUBY_SITEDIR}/puppet/functions/emerg.rb
+${MODRUBY_SITEDIR}/puppet/functions/empty.rb
 ${MODRUBY_SITEDIR}/puppet/functions/epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/err.rb
 ${MODRUBY_SITEDIR}/puppet/functions/eyaml_lookup_key.rb
 ${MODRUBY_SITEDIR}/puppet/functions/filter.rb
 ${MODRUBY_SITEDIR}/puppet/functions/find_file.rb
+${MODRUBY_SITEDIR}/puppet/functions/flatten.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_array.rb
 ${MODRUBY_SITEDIR}/puppet/functions/hiera_hash.rb
@@ -218,7 +220,10 @@ ${MODRUBY_SITEDIR}/puppet/functions/import.rb
 ${MODRUBY_SITEDIR}/puppet/functions/include.rb
 ${MODRUBY_SITEDIR}/puppet/functions/info.rb
 ${MODRUBY_SITEDIR}/puppet/functions/inline_epp.rb
+${MODRUBY_SITEDIR}/puppet/functions/join.rb
 ${MODRUBY_SITEDIR}/puppet/functions/json_data.rb
+${MODRUBY_SITEDIR}/puppet/functions/keys.rb
+${MODRUBY_SITEDIR}/puppet/functions/length.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lest.rb
 ${MODRUBY_SITEDIR}/puppet/functions/lookup.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
@@ -242,6 +247,7 @@ ${MODRUBY_SITEDIR}/puppet/functions/tree_each.rb
 ${MODRUBY_SITEDIR}/puppet/functions/type.rb
 ${MODRUBY_SITEDIR}/puppet/functions/unique.rb
 ${MODRUBY_SITEDIR}/puppet/functions/unwrap.rb
+${MODRUBY_SITEDIR}/puppet/functions/values.rb
 ${MODRUBY_SITEDIR}/puppet/functions/versioncmp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/warning.rb
 ${MODRUBY_SITEDIR}/puppet/functions/with.rb
@@ -311,6 +317,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/facter.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
+${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/store_configs.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_bucket_file/
@@ -688,6 +695,7 @@ ${MODRUBY_SITEDIR}/puppet/pops/model/ast_transformer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/factory.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/model_label_provider.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/model_tree_dumper.rb
+${MODRUBY_SITEDIR}/puppet/pops/model/pn_transformer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/tree_dumper.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/
 ${MODRUBY_SITEDIR}/puppet/pops/parser/code_merger.rb
@@ -703,9 +711,11 @@ ${MODRUBY_SITEDIR}/puppet/pops/parser/lexer_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/locatable.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/locator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/parser_support.rb
+${MODRUBY_SITEDIR}/puppet/pops/parser/pn_parser.rb
 ${MODRUBY_SITEDIR}/puppet/pops/parser/slurp_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/patterns.rb
 ${MODRUBY_SITEDIR}/puppet/pops/pcore.rb
+${MODRUBY_SITEDIR}/puppet/pops/pn.rb
 ${MODRUBY_SITEDIR}/puppet/pops/puppet_stack.rb
 ${MODRUBY_SITEDIR}/puppet/pops/resource/
 ${MODRUBY_SITEDIR}/puppet/pops/resource/param.rb
@@ -1115,6 +1125,7 @@ ${MODRUBY_SITEDIR}/puppet/util/filetype.rb
 ${MODRUBY_SITEDIR}/puppet/util/http_proxy.rb
 ${MODRUBY_SITEDIR}/puppet/util/inifile.rb
 ${MODRUBY_SITEDIR}/puppet/util/instance_loader.rb
+${MODRUBY_SITEDIR}/puppet/util/json.rb
 ${MODRUBY_SITEDIR}/puppet/util/json_lockfile.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/
 ${MODRUBY_SITEDIR}/puppet/util/ldap.rb
@@ -1305,6 +1316,7 @@ ${MODRUBY_SITEDIR}/puppet_x.rb
 @man man/man8/puppet-plugin.8
 @man man/man8/puppet-report.8
 @man man/man8/puppet-resource.8
+@man man/man8/puppet-script.8
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
 share/doc/pkg-readmes/${FULLPKGNAME}
