@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.1 2018/04/25 19:07:07 espie Exp $
+# $OpenBSD: FS2.pm,v 1.2 2018/04/26 08:47:29 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -324,8 +324,9 @@ use File::Spec;
 use File::Basename;
 use OpenBSD::IdCache;
 use Config;
-# existing files are classified according to the following routine
 
+# existing files are classified by the following class
+# we look under a destdir, and we do ignore a hash of files
 sub new
 {
 	my ($class, $destdir, $ignored) = @_;
@@ -352,8 +353,9 @@ sub destdir
 	}
 }
 
-# we are given a filename which lives actually under destdir.
-# but if it's a symlink, we WILL follow through;
+# we are given a filename which actually lives under destdir.
+# but if it's a symlink, we WILL follow through, because the
+# link is meant relative to destdir
 sub resolve_link
 {
 	my ($self, $filename, $level) = @_;
