@@ -1,35 +1,32 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2018/04/26 16:01:45 ajacoutot Exp $
 
-COMMENT=	library for fingerprint reader devices
+COMMENT=		library for fingerprint reader devices
 
-DISTNAME=	libfprint-0.4.0
-REVISION=	12
+DISTNAME=		libfprint-0.6.0
 
-CATEGORIES=    	security
+CATEGORIES=    		security
 
-SHARED_LIBS +=  fprint               1.0      # 0.0
+SHARED_LIBS +=  fprint               1.1      # 0.0
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/fprint/libfprint
-MASTER_SITES=	http://people.freedesktop.org/~hadess/
-EXTRACT_SUFX=	.tar.bz2
+HOMEPAGE=a		http://www.freedesktop.org/wiki/Software/fprint/libfprint
+MASTER_SITES=		http://people.freedesktop.org/~hadess/
+EXTRACT_SUFX=		.tar.xz
 
-MAINTAINER=	Robert Nagy <robert@openbsd.org>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  ICE MagickCore-6.Q16 SM X11 Xext Xt bz2 djvulibre expat fftw3
-WANTLIB += fontconfig freetype glib-2.0 iconv intl jbig jpeg lcms2 lzma
-WANTLIB += m nspr4 nss3 nssutil3 openjp2 pcre plc4 plds4 png pthread
-WANTLIB += smime3 sqlite3 ssl3 tiff usb-1.0 webp xcb xml2 z
+WANTLIB += glib-2.0 iconv intl m nspr4 nss3 nssutil3 pcre pixman-1
+WANTLIB += plc4 plds4 pthread smime3 ssl3 usb-1.0
 
-LIB_DEPENDS=		databases/sqlite3 \
-			graphics/ImageMagick \
-			devel/glib2 \
+CONFIGURE_STYLE=	gnu
+
+LIB_DEPENDS=		devel/glib2 \
 			devel/libusb1 \
 			security/nss
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
+post-install:
+	rm -r ${WRKINST}/rules.d
 
 .include <bsd.port.mk>
