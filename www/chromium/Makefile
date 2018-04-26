@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.368 2018/04/25 09:23:38 robert Exp $
+# $OpenBSD: Makefile,v 1.369 2018/04/26 19:41:38 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			66.0.3359.117
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		chromium-${V}
 
@@ -21,7 +21,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
 
-FLAVORS=		debug
+FLAVORS=		debug component
 FLAVOR?=
 
 # BSD-like
@@ -131,7 +131,6 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
@@ -152,6 +151,14 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 .if ${FLAVOR:Mdebug}
 GN_ARGS+=	remove_webcore_debug_symbols=true
 MAKE_ENV+=	V=1
+.endif
+
+.if ${FLAVOR:Mcomponent}
+GN_ARGS+=	is_official_build=false \
+		is_component_build=true
+.else
+GN_ARGS+=	is_official_build=true \
+		is_component_build=false
 .endif
 
 pre-configure:
@@ -181,7 +188,7 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py
 	
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
@@ -218,6 +225,10 @@ do-install:
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/chrome/swiftshader
 .endfor
+
+.if ${FLAVOR:Mcomponent}
+	cp -Rp ${BUILDDIR}/*.so ${PREFIX}/chrome/
+.endif
 
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
