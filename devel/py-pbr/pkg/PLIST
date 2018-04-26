@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 11:40:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/26 09:17:11 jasper Exp $
 bin/pbr${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pbr/
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -89,6 +89,14 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/a.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/b.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/data_files/c.rst
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/conf.py
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/index.rst
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/installation.rst
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/doc/source/usage.rst
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/extra-file.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/git-extra-file.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/
