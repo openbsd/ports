@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2018/04/26 07:10:51 rpointel Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 0.9.1
+MODPY_EGG_VERSION = 1.0.7
 DISTNAME =	Mako-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-
-REVISION =	3
 
 CATEGORIES =	www
 
