@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/10/13 14:16:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/04/26 06:59:10 sebastia Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -77,6 +77,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/arrow_align
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/hard_tabs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/trailing_whitespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/gemfile_rewrite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/puppet-lint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/release_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/version.rb
