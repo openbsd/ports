@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.571 2018/04/24 10:10:31 danj Exp $
+# $OpenBSD: Makefile,v 1.572 2018/04/26 12:26:05 danj Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -417,6 +417,8 @@
      SUBDIR += py-rtf
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3
+     SUBDIR += py-semver
+     SUBDIR += py-semver,python3
      SUBDIR += py-snowballstemmer
      SUBDIR += py-snowballstemmer,python3
      SUBDIR += py-spdx
