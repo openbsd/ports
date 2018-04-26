@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.9 2017/10/05 11:40:40 kirby Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2018/04/26 09:10:08 kirby Exp $
 
 VERSION = 		0.7.0
 
 CATEGORIES = 		games x11
 
-HOMEPAGE = 		http://www.naev.org/
+HOMEPAGE = 		http://blog.naev.org/
 
 MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
