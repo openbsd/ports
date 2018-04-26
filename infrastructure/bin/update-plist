@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.1 2018/04/25 19:07:07 espie Exp $
+# $OpenBSD: update-plist,v 1.2 2018/04/26 08:58:58 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -67,6 +67,11 @@ sub pretty
 package PlistReader;
 our @ISA = qw(OpenBSD::PkgCreate);
 
+# this is where the magic happens:
+# e is the plist element
+# self is the reader (with pkgname et al)
+# file is the fileclass where this comes from
+# unsubst is the full name before substitution
 sub annotate
 {
 	my ($self, $e, $unsubst, $file) = @_;
@@ -75,7 +80,8 @@ sub annotate
 	$e->{comesfrom} = $self;
 }
 
-# okay, so that plist doesn't exist, wouhou, I don't care.
+# okay, so that plist doesn't exist, wouhou, I don't care,
+# since I'm not pkg_create
 sub cant_read_fragments
 {
 }
@@ -195,10 +201,10 @@ sub show_unknown
 package UpdatePlist;
 use  File::Basename;
 
-# build a list of arguments
-
 my $state = UpdatePlist::State->new('update-plist');
 $state->say("Starting up");
+
+# this handles update-plist options proper, finished with --
 $state->handle_options;
 
 my @lists;
@@ -207,6 +213,8 @@ my $approximate = {};
 my $dependencies = {};
 
 # we read all plists using the exact same code as pkg_create
+# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
+# options1 pkgname1 options2 pkgname2 ...
 while (@ARGV > 0) {
 	my $r = PlistReader->new;
 
