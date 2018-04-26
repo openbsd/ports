@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.3 2018/04/26 09:11:44 espie Exp $
+# $OpenBSD: update-plist,v 1.4 2018/04/26 09:18:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -261,7 +261,7 @@ while (@ARGV > 0) {
 	$state->say("Processed #1 as #2", $pkg, $r->olist->fullpkgpath);
 }
 
-# XXX we assume all subpackage are under the same local base
+# XXX we assume all subpackage are under the same destdir (-B option)
 my $base = $lists[0]->{state}{base};
 
 # now we ask the file system what exists, and fill file objects according to
