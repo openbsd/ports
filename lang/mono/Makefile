@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2018/04/23 17:21:28 robert Exp $
+# $OpenBSD: Makefile,v 1.120 2018/04/26 12:08:07 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -41,10 +41,14 @@ SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
 		devel/gettext-tools \
-		devel/cmake \
 		lang/gawk \
 		shells/bash \
-		${RUN_DEPENDS}
+		x11/libgdiplus
+
+# XXX what is this for?
+BUILD_DEPENDS +=	devel/cmake \
+			devel/ninja
+
 RUN_DEPENDS=	x11/libgdiplus
 
 LIB_DEPENDS=	converters/libiconv
