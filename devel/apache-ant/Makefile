@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2018/04/02 13:34:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2018/04/26 12:57:23 jasper Exp $
 
 COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.10.2
+DISTNAME=	apache-ant-1.10.3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
