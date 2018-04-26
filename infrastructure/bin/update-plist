@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.10 2018/04/26 17:23:17 espie Exp $
+# $OpenBSD: update-plist,v 1.11 2018/04/26 18:22:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -178,6 +178,46 @@ sub show_unknown
 {
 }
 
+sub copy_annotations
+{
+}
+
+package OpenBSD::PackingElement::Meta;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->clone->add_object($plist);
+}
+
+package OpenBSD::PackingElement::CVSTag;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->clone->add_object($plist);
+}
+
+package OpenBSD::PackingElement::NewAuth;
+sub copy_annotations
+{
+	&OpenBSD::PackingElement::Meta::copy_annotations;
+}
+
+# these are not really in the plist on disk!
+package OpenBSD::PackingElement::Name;
+sub copy_annotations
+{
+}
+
+package OpenBSD::PackingElement::SpecialFile;
+sub copy_annotations
+{
+}
+
+package OpenBSD::PackingElement::ExtraInfo;
+sub copy_annotations
+{
+}
+
 package OpenBSD::PackingElement::Comment;
 sub fullname
 {
@@ -321,7 +361,6 @@ for my $path (sort keys %$objects) {
 	# we didn't find it so we must create a new one
 	my $o = $objects->{$path};
 	# go up dir until we find a matching approximate dir
-	print "trying to match ", $path, "\n";
 	my $d = $path;
 	while (1) {
 		$d = dirname($d);
@@ -340,6 +379,11 @@ for my $path (sort keys %$objects) {
 	$o->element_class->add($lists[0]->nlist, 
 	    $lists[0]->strip_prefix($path));
 }
+
+for my $s (@lists) {
+	$s->olist->copy_annotations($s->nlist);
+}
+
 use File::Path;
 #make_path("tryout");
 # switch to ports owner
