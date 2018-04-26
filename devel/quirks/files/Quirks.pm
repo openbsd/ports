@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.603 2018/04/25 19:18:50 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.604 2018/04/26 15:09:19 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -508,6 +508,23 @@ my $stem_extensions = {
 	'gnome-themes-standard' => 'gnome-themes-extra',
 	'open-cobol' => 'gnucobol',
 	'fanstasque-sans' => 'fantasque-sans',
+	'pecl-chroot' => 'pecl56-chroot',
+	'pecl-geoip' => 'pecl56-geoip',
+	'pecl-http' => 'pecl56-pecl_http',
+	'pecl-imagick' => 'pecl56-imagick',
+	'pecl-libsodium' => 'pecl56-libsodium',
+	'pecl-lzf' => 'pecl56-lzf',
+	'pecl-mailparse' => 'pecl56-mailparse',
+	'pecl-memcache' => 'pecl56-memcache',
+	'pecl-memcached' => 'pecl56-memcached',
+	'pecl-proctitle' => 'pecl56-proctitle',
+	'pecl-propro' => 'pecl56-propro',
+	'pecl-raphf' => 'pecl56-raphf',
+	'pecl-rar' => 'pecl56-rar',
+	'pecl-redis' => 'pecl56-redis',
+	'pecl-ssh2' => 'pecl56-ssh2',
+	'pecl-swish' => 'pecl56-swish',
+	'pecl-uploadprogress' => 'pecl56-uploadprogress',
 };
 
 my $obsolete_reason = {
