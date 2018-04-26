@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.102 2018/04/24 14:35:29 kn Exp $
+# $OpenBSD: Makefile,v 1.103 2018/04/26 11:15:46 kn Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-4.0.8
+DISTNAME =		redis-4.0.9
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
@@ -20,6 +20,7 @@ MODULES =		lang/lua \
 MAKE_FLAGS =		CC="${CC}" \
 			DEBUG="${DEBUG}" \
 			DEBUG_FLAGS="${DEBUG}" \
+			USE_JEMALLOC=no \
 			OPT="" \
 			OPTIMIZATION="" \
 			V=1
