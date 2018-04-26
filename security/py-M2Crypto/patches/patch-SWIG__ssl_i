@@ -1,21 +1,12 @@
-$OpenBSD: patch-SWIG__ssl_i,v 1.8 2018/04/25 09:58:03 jasper Exp $
+$OpenBSD: patch-SWIG__ssl_i,v 1.9 2018/04/26 08:25:22 jasper Exp $
 
 Fix build with LibreSSL
 
 Index: SWIG/_ssl.i
 --- SWIG/_ssl.i.orig
 +++ SWIG/_ssl.i
-@@ -266,7 +266,7 @@ void ssl_init(PyObject *ssl_err, PyObject *ssl_timeout
- 
- #ifndef OPENSSL_NO_SSL3
- const SSL_METHOD *sslv3_method(void) {
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-     PyErr_WarnEx(PyExc_DeprecationWarning,
-                  "Function SSLv3_method has been deprecated.", 1);
- #endif
-@@ -275,7 +275,7 @@ const SSL_METHOD *sslv3_method(void) {
- #endif
+@@ -261,7 +261,7 @@ void ssl_init(PyObject *ssl_err, PyObject *ssl_timeout
+ }
  
  const SSL_METHOD *tlsv1_method(void) {
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000L
