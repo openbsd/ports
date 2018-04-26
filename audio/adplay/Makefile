@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/08 16:14:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/26 10:16:46 fcambus Exp $
 
 COMMENT =	console-based OPL2 audio player
 
-DISTNAME =	adplay-1.7
-REVISION =	2
+V =		1.8
+DISTNAME =	adplay-${V}
 
 CATEGORIES =	audio
 
-HOMEPAGE =	http://adplug.github.io/
+HOMEPAGE =	https://adplug.github.io/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -16,16 +16,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	SDL adplug binio c iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=adplug/}
+MASTER_SITES =	https://github.com/adplug/adplay-unix/releases/download/v${V}/
+
+EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS =	audio/adplug \
 		devel/libbinio \
 		devel/sdl
 
+CXXFLAGS +=	-I${LOCALBASE}/include
 CXXFLAGS +=	-I${LOCALBASE}/include/libbinio
 
-CONFIGURE_STYLE = autoconf
-AUTOCONF_VERSION= 2.64
+CONFIGURE_STYLE = gnu
 
 CONFIGURE_ARGS = --disable-output-ao \
 		 --disable-output-esound \
