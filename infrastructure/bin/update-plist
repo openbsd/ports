@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.7 2018/04/26 13:27:06 espie Exp $
+# $OpenBSD: update-plist,v 1.8 2018/04/26 13:40:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -255,6 +255,8 @@ while (@ARGV > 0) {
 	$r->{state} = $s;
 	$s->handle_options;
 	$s->{opt}{q} = 1;
+	die "bad arguments to update-plist" if @{$s->{contents}} != 1;
+	$r->{base_plistname} = $s->{contents}->[0];
 	push(@lists, $r);
 	my $pkg = shift;
 
@@ -317,8 +319,16 @@ for my $path (sort keys %$objects) {
 }
 use File::Path;
 #make_path("tryout");
+# switch to ports owner
+
+$> = 0;
+$) = $ports_gid;
+$> = $ports_uid;
+
 for my $s (@lists) {
-	$s->nlist->write(\*STDOUT);
+	my $name = $s->{base_plistname}.".new";
+	open(my $fh, '>', $name) or die "Can't open $name: $!";
+	$s->nlist->write($fh);
 }
 #for my $k (sort keys %$approximate) {
 #	for my $e (values %{$approximate->{$k}}) {
