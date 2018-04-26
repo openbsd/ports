@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/24 17:39:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/26 16:11:11 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -120,7 +120,7 @@
      #SUBDIR += kpat
      #SUBDIR += kpimtextedit
      #SUBDIR += kppp
-     #SUBDIR += kqtquickcharts
+     SUBDIR += kqtquickcharts
      #SUBDIR += krdc
      #SUBDIR += kremotecontrol
      #SUBDIR += kreversi
