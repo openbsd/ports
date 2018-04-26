@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/02 15:33:32 chris Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/26 10:44:44 jasper Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 DISTNAME =	suricata-4.0.4
-REVISION =	3
+REVISION =	4
 CATEGORIES =	security
 SHARED_LIBS +=  htp                       0.0 # 1.0
 
@@ -38,7 +38,8 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = ac_cv_path_HAVE_PDFLATEX= \
 		ac_cv_path_HAVE_GIT_CMD=
 
-CONFIGURE_ARGS = --disable-gccmarch-native
+CONFIGURE_ARGS = --disable-gccmarch-native \
+		 --enable-ipfw
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules

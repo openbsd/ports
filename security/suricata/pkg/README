@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/03/17 13:03:14 jasper Exp $
+$OpenBSD: README,v 1.4 2018/04/26 10:44:44 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -68,3 +68,33 @@ https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
 And you can download as follow:
 
 # cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf -o ${SYSCONFDIR}/suricata/rules
+
+Inline mode (IPS)
+==================
+
+In order to run suritcata "inline" in Intrusion Prevention mode, the following
+needs to be added to `/etc/pf.conf`:
+
+	pass out quick on egress inet proto tcp to port 80 divert-packet port 700
+
+Adjust this to match what traffic suricata will need to inspect as well as the
+port to divert to.
+
+To enable inline ipfw mode of suricata on port 700:
+
+# rcctl set suricata flags -d 700
+
+Outbound packets don't have a correct checksum yet due to checksum offloading,
+therefore suricata will log "SURICATA TCPv4 invalid checksum" and ignore these
+packets. To workaround this set the following in suricata.yaml:
+
+	stream:
+	  checksum-validation: yes
+
+Also adjust the configuration to drop packets:
+
+	- drop:
+	  enabled: yes
+
+(Re)start suricata for the changes to take effect. Note that ipfw mode is
+mutually exclusive with pcap live mode (-i).
