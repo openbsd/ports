@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1727 2018/04/25 10:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.1728 2018/04/26 14:33:46 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
