@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2017/11/19 01:04:03 kili Exp $
+# $OpenBSD: Makefile,v 1.88 2018/04/26 15:08:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -45,8 +45,10 @@
      SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
-     SUBDIR += pecl-lzf
-     SUBDIR += pecl-rar
+     SUBDIR += pecl-lzf,php56
+     SUBDIR += pecl-lzf,php70
+     SUBDIR += pecl-rar,php56
+     SUBDIR += pecl-rar,php70
      SUBDIR += pigz
      SUBDIR += py-lzo
      SUBDIR += quazip

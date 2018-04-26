@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2018/04/14 21:27:20 kili Exp $
+# $OpenBSD: Makefile,v 1.358 2018/04/26 15:08:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -132,7 +132,8 @@
      SUBDIR += pear-MDB2-mysql
      SUBDIR += pear-MDB2-mysqli
      SUBDIR += pear-MDB2-pgsql
-     SUBDIR += pecl-redis
+     SUBDIR += pecl-redis,php56
+     SUBDIR += pecl-redis,php70
      SUBDIR += percona-toolkit
      SUBDIR += pg-toolbox
      SUBDIR += pg_stats_reporter

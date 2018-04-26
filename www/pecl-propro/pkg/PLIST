@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/01 21:55:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/26 15:08:56 sthen Exp $
+@conflict pecl-propro-*
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_api.h

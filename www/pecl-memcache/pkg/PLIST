@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/02/01 21:55:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/04/26 15:08:56 sthen Exp $
+@conflict pecl-memcache-*
+${MODPECL_56ONLY}@pkgpath www/pecl-memcache
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @comment lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so

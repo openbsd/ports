@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.860 2018/04/24 12:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.861 2018/04/26 15:08:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -338,17 +338,25 @@
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
-     SUBDIR += pecl-chroot
-     SUBDIR += pecl-geoip
-     SUBDIR += pecl-http
-     SUBDIR += pecl-memcache
-     SUBDIR += pecl-memcached
-     SUBDIR += pecl-proctitle
-     SUBDIR += pecl-propro
-     SUBDIR += pecl-raphf
-     SUBDIR += pecl-ssh2
-     SUBDIR += pecl-swish
-     SUBDIR += pecl-uploadprogress
+     SUBDIR += pecl-chroot,php56
+     SUBDIR += pecl-chroot,php70
+     SUBDIR += pecl-geoip,php56
+     SUBDIR += pecl-geoip,php70
+     SUBDIR += pecl-pecl_http,php70
+     SUBDIR += pecl56-pecl_http
+     SUBDIR += pecl-memcache,php56
+     SUBDIR += pecl-memcached,php70
+     SUBDIR += pecl56-memcached
+     SUBDIR += pecl-proctitle,php56
+     SUBDIR += pecl-proctitle,php70
+     SUBDIR += pecl56-propro
+     SUBDIR += pecl-propro,php70
+     SUBDIR += pecl-raphf,php70
+     SUBDIR += pecl56-raphf
+     SUBDIR += pecl-ssh2,php70
+     SUBDIR += pecl56-ssh2
+     SUBDIR += pecl-swish,php56
+     SUBDIR += pecl-uploadprogress,php56
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += phantomjs

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/04/26 15:08:56 sthen Exp $
 
 COMMENT=	PHP interface to memcached
 
 DISTNAME=	memcache-3.0.8
-REVISION=	1
+REVISION=	2
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
@@ -11,6 +11,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
 MODULES=	lang/php/pecl
+# no 7.x-compatible version yet
+MODPECL_V=	5.6
+
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS+=	--with-zlib-dir=/usr
