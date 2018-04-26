@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/12 04:40:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/26 11:30:09 sthen Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.1.7
+REVISION =		0
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
 
 SHARED_LIBS +=  	torrent-rasterbar 1.0	# 9.0.0
@@ -36,7 +37,10 @@ CONFIGURE_ARGS =	--enable-python-binding \
 			--with-libiconv
 CONFIGURE_ENV +=	CPPFLAGS="-Wno-deprecated-declarations \
 				  -Wno-macro-redefined \
-				  -pthread"
+				  -pthread" \
+			PYTHON_CXXFLAGS="${PYTHON_CXXFLAGS} -std=gnu++14"
+MAKE_ENV =		CC="${CC}" CXX="${CXX}"
+CXXFLAGS +=		-std=gnu++14
 
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debug

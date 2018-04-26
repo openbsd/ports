@@ -1,0 +1,18 @@
+$OpenBSD: patch-include_libtorrent_aux__session_interface_hpp,v 1.1 2018/04/26 11:30:09 sthen Exp $
+
+From 21d8e9e26b377137612c323992d216be50a547bb Mon Sep 17 00:00:00 2001
+From: Xiyue Deng <xiyueden@isi.edu>
+Date: Mon, 23 Apr 2018 02:17:47 -0700
+Subject: [PATCH] Add missing header <cstdarg> for va_list.
+
+--- include/libtorrent/aux_/session_interface.hpp.orig
++++ include/libtorrent/aux_/session_interface.hpp
+@@ -52,6 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ #ifndef TORRENT_DISABLE_LOGGING
+ #include <boost/shared_ptr.hpp>
++#include <cstdarg> // for va_list
+ #endif
+ 
+ #ifdef TORRENT_USE_OPENSSL
+
