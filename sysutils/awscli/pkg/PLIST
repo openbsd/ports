@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/04/07 07:24:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/04/26 07:12:14 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1643,6 +1643,22 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-bucket-websit
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-object-acl.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/put-object.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/upload-part.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/cancel-rotate-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/create-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/delete-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/describe-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/get-random-password.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/get-secret-value.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-secret-version-ids.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-secrets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/put-secret-value.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/restore-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/rotate-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret-version-stage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/delete-identity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/get-identity-dkim-attributes.rst
