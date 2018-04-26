@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.15 2018/04/25 14:56:01 espie Exp $
+# $OpenBSD: make-plist,v 1.16 2018/04/26 11:37:42 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -34,7 +34,7 @@ BEGIN {
 	# everything as root, but not behind PORTS_PRIVSEP
 	if (!defined $fake && !defined $tree) {
 		print STDERR "DON'T BUILD PORTS AS ROOT!!!!!\n";
-		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas)\n";
+		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas to root)\n";
 		return;
 	}
 	die "FAKE_TREE_OWNER not defined" unless defined $fake;
@@ -140,6 +140,9 @@ package main;
 
 my $base;
 our $subst = new OpenBSD::ReverseSubst;
+
+die "Env variable destined DESTDIR not defined" unless exists $ENV{'DESTDIR'};
+
 my $destdir = $ENV{'DESTDIR'};
 my %known_libs;
 
