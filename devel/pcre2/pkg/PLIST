@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/28 08:47:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/04/26 13:06:01 jasper Exp $
 bin/pcre2-config
 @bin bin/pcre2grep
 @bin bin/pcre2test
@@ -33,6 +33,10 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_compile_context_create.3
 @man man/man3/pcre2_compile_context_free.3
 @man man/man3/pcre2_config.3
+@man man/man3/pcre2_convert_context_copy.3
+@man man/man3/pcre2_convert_context_create.3
+@man man/man3/pcre2_convert_context_free.3
+@man man/man3/pcre2_converted_pattern_free.3
 @man man/man3/pcre2_dfa_match.3
 @man man/man3/pcre2_general_context_copy.3
 @man man/man3/pcre2_general_context_create.3
@@ -56,6 +60,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_match_data_create.3
 @man man/man3/pcre2_match_data_create_from_pattern.3
 @man man/man3/pcre2_match_data_free.3
+@man man/man3/pcre2_pattern_convert.3
 @man man/man3/pcre2_pattern_info.3
 @man man/man3/pcre2_serialize_decode.3
 @man man/man3/pcre2_serialize_encode.3
@@ -64,7 +69,12 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2_set_bsr.3
 @man man/man3/pcre2_set_callout.3
 @man man/man3/pcre2_set_character_tables.3
+@man man/man3/pcre2_set_compile_extra_options.3
 @man man/man3/pcre2_set_compile_recursion_guard.3
+@man man/man3/pcre2_set_depth_limit.3
+@man man/man3/pcre2_set_glob_escape.3
+@man man/man3/pcre2_set_glob_separator.3
+@man man/man3/pcre2_set_heap_limit.3
 @man man/man3/pcre2_set_match_limit.3
 @man man/man3/pcre2_set_max_pattern_length.3
 @man man/man3/pcre2_set_newline.3
@@ -88,6 +98,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2build.3
 @man man/man3/pcre2callout.3
 @man man/man3/pcre2compat.3
+@man man/man3/pcre2convert.3
 @man man/man3/pcre2demo.3
 @man man/man3/pcre2jit.3
 @man man/man3/pcre2limits.3
@@ -98,7 +109,6 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man3/pcre2posix.3
 @man man/man3/pcre2sample.3
 @man man/man3/pcre2serialize.3
-@man man/man3/pcre2stack.3
 @man man/man3/pcre2syntax.3
 @man man/man3/pcre2unicode.3
 share/doc/pcre2/
@@ -123,6 +133,10 @@ share/doc/pcre2/html/pcre2_compile_context_copy.html
 share/doc/pcre2/html/pcre2_compile_context_create.html
 share/doc/pcre2/html/pcre2_compile_context_free.html
 share/doc/pcre2/html/pcre2_config.html
+share/doc/pcre2/html/pcre2_convert_context_copy.html
+share/doc/pcre2/html/pcre2_convert_context_create.html
+share/doc/pcre2/html/pcre2_convert_context_free.html
+share/doc/pcre2/html/pcre2_converted_pattern_free.html
 share/doc/pcre2/html/pcre2_dfa_match.html
 share/doc/pcre2/html/pcre2_general_context_copy.html
 share/doc/pcre2/html/pcre2_general_context_create.html
@@ -146,6 +160,7 @@ share/doc/pcre2/html/pcre2_match_context_free.html
 share/doc/pcre2/html/pcre2_match_data_create.html
 share/doc/pcre2/html/pcre2_match_data_create_from_pattern.html
 share/doc/pcre2/html/pcre2_match_data_free.html
+share/doc/pcre2/html/pcre2_pattern_convert.html
 share/doc/pcre2/html/pcre2_pattern_info.html
 share/doc/pcre2/html/pcre2_serialize_decode.html
 share/doc/pcre2/html/pcre2_serialize_encode.html
@@ -154,7 +169,12 @@ share/doc/pcre2/html/pcre2_serialize_get_number_of_codes.html
 share/doc/pcre2/html/pcre2_set_bsr.html
 share/doc/pcre2/html/pcre2_set_callout.html
 share/doc/pcre2/html/pcre2_set_character_tables.html
+share/doc/pcre2/html/pcre2_set_compile_extra_options.html
 share/doc/pcre2/html/pcre2_set_compile_recursion_guard.html
+share/doc/pcre2/html/pcre2_set_depth_limit.html
+share/doc/pcre2/html/pcre2_set_glob_escape.html
+share/doc/pcre2/html/pcre2_set_glob_separator.html
+share/doc/pcre2/html/pcre2_set_heap_limit.html
 share/doc/pcre2/html/pcre2_set_match_limit.html
 share/doc/pcre2/html/pcre2_set_max_pattern_length.html
 share/doc/pcre2/html/pcre2_set_newline.html
@@ -178,6 +198,7 @@ share/doc/pcre2/html/pcre2api.html
 share/doc/pcre2/html/pcre2build.html
 share/doc/pcre2/html/pcre2callout.html
 share/doc/pcre2/html/pcre2compat.html
+share/doc/pcre2/html/pcre2convert.html
 share/doc/pcre2/html/pcre2demo.html
 share/doc/pcre2/html/pcre2grep.html
 share/doc/pcre2/html/pcre2jit.html
@@ -189,7 +210,6 @@ share/doc/pcre2/html/pcre2perform.html
 share/doc/pcre2/html/pcre2posix.html
 share/doc/pcre2/html/pcre2sample.html
 share/doc/pcre2/html/pcre2serialize.html
-share/doc/pcre2/html/pcre2stack.html
 share/doc/pcre2/html/pcre2syntax.html
 share/doc/pcre2/html/pcre2test.html
 share/doc/pcre2/html/pcre2unicode.html
