@@ -1,21 +1,28 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/26 20:29:26 danj Exp $
 
 COMMENT=		refactoring library
 
-MODPY_EGG_VERSION=	0.9.4
+MODPY_EGG_VERSION=	0.10.7
 DISTNAME=		rope-${MODPY_EGG_VERSION}
-CATEGORIES=     	devel
-REVISION=		0
+PKGNAME=                py-${DISTNAME}
 
-# GPL
+CATEGORIES=		devel
+
+HOMEPAGE=		https://github.com/python-rope/rope
+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-HOMEPAGE=		http://rope.sf.net/
-
-MODPY_PI =		Yes
-
-MODPY_SETUPTOOLS=	Yes
-
 MODULES=		lang/python
+MODPY_PI =              Yes
+MODPY_SETUPTOOLS=       Yes
+
+FLAVORS=                python3
+FLAVOR?=
+
+TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+
 
 .include <bsd.port.mk>
