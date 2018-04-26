@@ -1,0 +1,160 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/26 17:32:48 solene Exp $
+bin/boar
+share/boar/
+share/boar/blobrepo/
+share/boar/blobrepo/__init__.py
+share/boar/blobrepo/__init__.pyc
+share/boar/blobrepo/blobreader.py
+share/boar/blobrepo/blobreader.pyc
+share/boar/blobrepo/repository.py
+share/boar/blobrepo/repository.pyc
+share/boar/blobrepo/sessions.py
+share/boar/blobrepo/sessions.pyc
+@comment skip test
+@comment hare/boar/blobrepo/tests/
+@comment hare/boar/blobrepo/tests/test_repository.py
+@comment hare/boar/blobrepo/tests/test_repository.pyc
+share/boar/boar
+@comment boar.bat is used on Windows
+@comment share/boar/boar.bat
+share/boar/boar_common.py
+share/boar/boar_common.pyc
+share/boar/boar_exceptions.py
+share/boar/boar_exceptions.pyc
+@comment requires py-fuse which isn't available
+@comment share/boar/boarmount
+share/boar/boarserve.py
+share/boar/boarserve.pyc
+@comment cdedup is experimental we don't use it
+@comment share/boar/cdedup/
+@comment share/boar/cdedup/Makefile
+@comment share/boar/cdedup/blocksdb.c
+@comment share/boar/cdedup/blocksdb.h
+@comment share/boar/cdedup/cdedup.pyx
+@comment share/boar/cdedup/circularbuffer.c
+@comment share/boar/cdedup/circularbuffer.h
+@comment share/boar/cdedup/crc16.h
+@comment share/boar/cdedup/intset.c
+@comment share/boar/cdedup/intset.h
+@comment share/boar/cdedup/rollsum.c
+@comment share/boar/cdedup/rollsum.h
+@comment share/boar/cdedup/setup-cython.py
+@comment share/boar/cdedup/setup-cython.pyc
+@comment share/boar/cdedup/testsum.py
+@comment share/boar/cdedup/testsum.pyc
+share/boar/client.py
+share/boar/client.pyc
+share/boar/common.py
+share/boar/common.pyc
+share/boar/deduplication.py
+share/boar/deduplication.pyc
+share/boar/evt/
+share/boar/evt/extboar.py
+share/boar/evt/extboar.pyc
+share/boar/evt/simple-verify-manifest.sh
+share/boar/evt/test-verify-manifests.sh
+share/boar/evt/verify-manifests.py
+share/boar/evt/verify-manifests.pyc
+share/boar/front.py
+share/boar/front.pyc
+share/boar/innosetup/
+share/boar/innosetup/innosetup.iss
+share/boar/innosetup/modpath.iss
+share/boar/innosetup/post-install-message.txt
+share/boar/jsonrpc.py
+share/boar/jsonrpc.pyc
+@comment tests full of linuxism which doesn't run
+@comment share/boar/macrotests/
+@comment share/boar/macrotests/excercise_repo.sh
+@comment share/boar/macrotests/macrotest.sh
+@comment share/boar/macrotests/mkrandfile.py
+@comment share/boar/macrotests/mkrandfile.pyc
+@comment share/boar/macrotests/performance.sh
+@comment share/boar/macrotests/randtree.py
+@comment share/boar/macrotests/randtree.pyc
+@comment share/boar/macrotests/regression-boar-daily.11-Jul-2011.tar.gz
+@comment share/boar/macrotests/regression-v1.tar.gz
+@comment share/boar/macrotests/regression-v2.tar.gz
+@comment share/boar/macrotests/test_aadvark.sh
+@comment share/boar/macrotests/test_cat.sh
+@comment share/boar/macrotests/test_ci.sh
+@comment share/boar/macrotests/test_cli_basics.sh
+@comment share/boar/macrotests/test_clone.sh
+@comment share/boar/macrotests/test_co.sh
+@comment share/boar/macrotests/test_deduplication.sh
+@comment share/boar/macrotests/test_everything_else.sh
+@comment share/boar/macrotests/test_import.sh
+@comment share/boar/macrotests/test_issue105.sh
+@comment share/boar/macrotests/test_issue12.sh
+@comment share/boar/macrotests/test_issue14.sh
+@comment share/boar/macrotests/test_issue17.sh
+@comment share/boar/macrotests/test_issue21.sh
+@comment share/boar/macrotests/test_issue70.sh
+@comment share/boar/macrotests/test_list.sh
+@comment share/boar/macrotests/test_log.sh
+@comment share/boar/macrotests/test_ls.sh
+@comment share/boar/macrotests/test_manifest.sh
+@comment share/boar/macrotests/test_mksession.sh
+@comment share/boar/macrotests/test_modification_during_send.sh
+@comment share/boar/macrotests/test_nonunicode_filename.sh
+@comment share/boar/macrotests/test_rebalancing.sh
+@comment share/boar/macrotests/test_recipes.sh
+@comment share/boar/macrotests/test_regression_v0.sh
+@comment share/boar/macrotests/test_regression_v1.sh
+@comment share/boar/macrotests/test_regression_v2.sh
+@comment share/boar/macrotests/test_simple_concurrency.sh
+@comment share/boar/macrotests/test_tree.md5
+@comment share/boar/macrotests/test_tree.tar.gz
+@comment share/boar/macrotests/test_tree_addition.md5
+@comment share/boar/macrotests/test_tree_addition.tar.gz
+@comment share/boar/macrotests/test_truncate.sh
+@comment share/boar/macrotests/test_truncate_clone.sh
+@comment share/boar/macrotests/test_truncate_regression_v0.sh
+@comment share/boar/macrotests/test_truncate_resume.sh
+@comment share/boar/macrotests/test_truncate_workdir.sh
+@comment share/boar/macrotests/test_verify.sh
+@comment share/boar/macrotests/treecheck.py
+@comment share/boar/macrotests/treecheck.pyc
+@comment share/boar/macrotests/truncate_regression_v0.tar.gz
+@comment share/boar/macrotests/txtmatch.py
+@comment share/boar/macrotests/txtmatch.pyc
+share/boar/manifest
+share/boar/ordered_dict.py
+share/boar/ordered_dict.pyc
+share/boar/perftests/
+share/boar/perftests/benchmark-blocksdb.py
+share/boar/perftests/benchmark-blocksdb.pyc
+share/boar/perftests/mktree.py
+share/boar/perftests/mktree.pyc
+@comment skip test
+@comment skip useless setup.py 
+@comment share/boar/run_tests.sh
+@comment share/boar/run_tests_nodedup.sh
+@comment share/boar/setup.py
+@comment share/boar/setup.pyc
+share/boar/statemachine.py
+share/boar/statemachine.pyc
+@comment skip test
+@comment share/boar/tests/
+@comment share/boar/tests/test_boar_common.py
+@comment share/boar/tests/test_boar_common.pyc
+@comment share/boar/tests/test_cli.py
+@comment share/boar/tests/test_cli.pyc
+@comment share/boar/tests/test_cli_windows_specific.py
+@comment share/boar/tests/test_cli_windows_specific.pyc
+@comment share/boar/tests/test_common.py
+@comment share/boar/tests/test_common.pyc
+@comment share/boar/tests/test_deduplication.py
+@comment share/boar/tests/test_deduplication.pyc
+@comment share/boar/tests/test_random_tree.py
+@comment share/boar/tests/test_random_tree.pyc
+@comment share/boar/tests/test_workdir.py
+@comment share/boar/tests/test_workdir.pyc
+@comment share/boar/tests/wdtools.py
+@comment share/boar/tests/wdtools.pyc
+share/boar/treecomp.py
+share/boar/treecomp.pyc
+share/boar/workdir.py
+share/boar/workdir.pyc
+share/doc/boar/
+share/doc/boar/README.md

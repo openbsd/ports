@@ -1,0 +1,4 @@
+Boar is a version control system for handling large binary files,
+something that most other VCSs doesn't handle very well. This makes it
+possible to version control your music, images, videos, and other
+valuable binary data.
