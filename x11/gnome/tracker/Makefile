@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2018/02/09 23:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2018/04/26 13:51:37 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -10,7 +10,6 @@ GNOME_VERSION=		2.0.3
 PKGNAME=		meta-tracker-${VERSION}
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
-# x11/gnome/documents
 # x11/gnome/grilo-plugins
 # x11/gnome/nautilus
 # x11/gnome/online-miners
