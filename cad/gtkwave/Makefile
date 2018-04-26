@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/05 17:10:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/26 13:06:57 jasper Exp $
 
 COMMENT=		GTK+-based electronic waveform viewer
 
-DISTNAME=		gtkwave-3.3.86
+DISTNAME=		gtkwave-3.3.89
 CATEGORIES=		cad
 
 HOMEPAGE=		http://gtkwave.sourceforge.net/
@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2 c cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z fribidi
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtkwave/}
 
