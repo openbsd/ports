@@ -1,0 +1,14 @@
+$OpenBSD: patch-uicommon_ml,v 1.1 2018/04/26 21:34:23 bket Exp $
+
+Index: uicommon.ml
+--- uicommon.ml.orig
++++ uicommon.ml
+@@ -494,7 +494,7 @@ let promptForRoots getFirstRoot getSecondRoot =
+ (* ---- *)
+ 
+ let makeTempDir pattern =
+-  let ic = Unix.open_process_in (Printf.sprintf "(mktemp --tmpdir -d %s.XXXXXX || mktemp -d -t %s) 2>/dev/null" pattern pattern) in
++  let ic = Unix.open_process_in (Printf.sprintf "(mktemp --tmpdir -d %s.XXXXXX || mktemp -d -t %s.XXXXXX) 2>/dev/null" pattern pattern) in
+   let path = input_line ic in
+   ignore (Unix.close_process_in ic);
+   path
