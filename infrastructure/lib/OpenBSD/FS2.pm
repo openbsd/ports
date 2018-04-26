@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.4 2018/04/26 16:40:56 espie Exp $
+# $OpenBSD: FS2.pm,v 1.5 2018/04/26 17:13:13 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -63,7 +63,7 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
-		OpenBSD::FS::File::PreLibrary OpenBSD::FS::File::PreBinary
+		OpenBSD::FS::File::Binary OpenBSD::FS::File::Library
 		OpenBSD::FS::File));
 }
 
@@ -75,6 +75,15 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::File';
+}
+
+sub fill_objdump
+{
+	my ($class, $filename, $fs, $data) = @_;
+	return if exists $data->{objdump};
+	my $check = `/usr/bin/objdump -h \Q$filename\E 2>/dev/null`;
+	chomp $check;
+	$data->{objdump} = $check;
 }
 
 package OpenBSD::FS::File::Directory;
@@ -104,61 +113,25 @@ sub element_class
 	'OpenBSD::PackingElement::RcScript';
 }
 
-package OpenBSD::FS::File::Pre;
-our @ISA = qw(OpenBSD::FS::File);
-
-sub may_queue
-{
-	my ($self, $runner) = @_;
-	$runner->queue($self);
-}
-
-sub falseclass
-{
-	return "OpenBSD::FS::File";
-}
-
-sub reclassify
-{
-	my ($self, $check) = @_;
-	if ($self->match($check)) {
-		bless $self, $self->trueclass;
-	} else {
-		bless $self, $self->falseclass;
-	}
-}
-
-package OpenBSD::FS::File::PreBinary;
-our @ISA = qw(OpenBSD::FS::File::Pre);
-sub trueclass
-{
-	return "OpenBSD::FS::File::Binary";
-}
-
-sub match
-{
-	my ($self, $check) = @_;
-	if ($check =~ m/^(setuid |setgid |)ELF (32|64)\-bit (MSB|LSB) (executable|shared object)\,.+ for OpenBSD\,/) {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
-sub recognize
-{
-	my ($class, $filename, $fs) = @_;
-	$filename = $fs->resolve_link($filename);
-	return 0 if -l $filename or ! -x $filename;
-	return 1;
-}
-
 package OpenBSD::FS::File::Binary;
 our @ISA = qw(OpenBSD::FS::File);
 
 sub element_class
 {
 	'OpenBSD::PackingElement::Binary';
+}
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+	$filename = $fs->resolve_link($filename);
+	return 0 if -l $filename or ! -x $filename;
+	$class->fill_objdump($filename, $fs, $data);
+	if ($data->{objdump} =~m/ .note.openbsd.ident /) {
+	    	return 1;
+	} else {
+		return 0;
+	}
 }
 
 package OpenBSD::FS::File::Info;
@@ -269,84 +242,25 @@ sub match
 	}
 }
 
-package OpenBSD::FS::SharedObject;
+package OpenBSD::FS::File::Library;
 our @ISA = qw(OpenBSD::FS::File);
 
-package OpenBSD::FS::File::PreLibrary;
-our @ISA = qw(OpenBSD::FS::PreSharedObject);
 sub recognize
 {
-	my ($class, $filename, $fs) = @_;
+	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m/\/lib[^\/]*\.so\.\d+\.\d+$/;
-	return $class->SUPER::recognize($filename, $fs);
+	$class->fill_objdump($filename, $fs, $data);
+	if ($data->{objdump} =~m/ .note.openbsd.ident / && $data->{objdump} !~m/ .interp /) {
+	    	return 1;
+	} else {
+		return 0;
+	}
 }
-
-sub trueclass
-{
-	return "OpenBSD::FS::File::Library";
-}
-
-package OpenBSD::FS::File::Library;
-our @ISA = qw(OpenBSD::FS::SharedObject);
 
 sub element_class
 {
 	'OpenBSD::PackingElement::Lib';
-}
-
-package OpenBSD::FS::File::PrePlugin;
-our @ISA = qw(OpenBSD::FS::PreSharedObject);
-sub recognize
-{
-	my ($class, $filename, $fs) = @_;
-
-	return 0 unless $filename =~ m/\.so$/;
-	return $class->SUPER::recognize($filename, $fs);
-}
-
-sub trueclass
-{
-	return "OpenBSD::FS::File::Plugin";	
-}
-
-package OpenBSD::FS::File::Plugin;
-our @ISA = qw(OpenBSD::FS::SharedObject);
-
-package FileRunner;
-sub new
-{
-	my ($class, $fs) = @_;
-	bless { fs => $fs, queue => []}, $class;
-}
-
-sub queue
-{
-	my ($self, $e) = @_;
-	push @{$self->{queue}}, $e;
-	if (@{$self->{queue}} > 1000) {
-		$self->run;
-	}
-}
-
-sub run
-{
-	my $self = shift;
-	return if @{$self->{queue}} == 0;
-	my $fs = $self->{fs};
-	my @args = map {$fs->resolve_link($_->path)} @{$self->{queue}};
-	open my $pipe, "-|", '/usr/bin/file', '--', @args;
-	while (<$pipe>) {
-		chomp;
-		last if @{$self->{queue}} == 0;
-		my $file = shift @{$self->{queue}};
-		my $arg = shift @args;
-		if (m/^\Q$arg\E\:\s+(.*)$/) {
-			$file->reclassify($1);
-		} else {
-			print "Mismatch between $_ and $arg\n";
-		}
-	}
 }
 
 package OpenBSD::FS2;
@@ -364,16 +278,6 @@ sub new
 {
 	my ($class, $destdir, $ignored) = @_;
 	bless {destdir => $destdir, ignored => $ignored}, $class;
-}
-
-sub reclassify
-{
-	my ($self, $h) = @_;
-	my $filerunner = FileRunner->new($self);
-	for my $o (values %$h) {
-		$o->may_queue($filerunner);
-	}
-	$filerunner->run;
 }
 
 sub destdir
@@ -441,8 +345,9 @@ sub undest
 sub create
 {
 	my ($self, $filename) = @_;
+	my $data = {};
 	for my $class (OpenBSD::FS::File->classes) {
-		if ($class->recognize($filename, $self)) {
+		if ($class->recognize($filename, $self, $data)) {
 			return $class->create($filename, $self);
 		}
 	}
@@ -518,7 +423,6 @@ sub scan
 			$files->{$path} = $file;
 		}, $self->destdir);
 	$self->zap_dirs($files, '/etc/X11/app-defaults');
-	$self->reclassify($files);
 	return $files;
 }
 
