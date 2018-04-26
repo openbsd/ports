@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_backends_meta-egl_c,v 1.1 2017/11/04 16:44:45 jasper Exp $
+$OpenBSD: patch-src_backends_meta-egl_c,v 1.2 2018/04/26 09:19:27 jasper Exp $
 
 Revert non-portable portion of:
 From b7b5fb293d1de3af9e533f2063749fde7a790945 Mon Sep 17 00:00:00 2001
@@ -18,7 +18,7 @@ Index: src/backends/meta-egl.c
  };
  
  G_DEFINE_TYPE (MetaEgl, meta_egl, G_TYPE_OBJECT)
-@@ -714,51 +712,6 @@ meta_egl_stream_consumer_acquire (MetaEgl     *egl,
+@@ -926,51 +924,6 @@ meta_egl_stream_consumer_acquire (MetaEgl     *egl,
    return TRUE;
  }
  
@@ -70,7 +70,7 @@ Index: src/backends/meta-egl.c
  #define GET_EGL_PROC_ADDR(proc) \
    egl->proc = (void *) eglGetProcAddress (#proc);
  
-@@ -795,8 +748,6 @@ meta_egl_constructed (GObject *object)
+@@ -1007,8 +960,6 @@ meta_egl_constructed (GObject *object)
    GET_EGL_PROC_ADDR (eglStreamConsumerAcquireKHR);
    GET_EGL_PROC_ADDR (eglStreamConsumerAcquireAttribNV);
  
