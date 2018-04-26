@@ -1,9 +1,9 @@
-$OpenBSD: patch-code_client_cl_main_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+$OpenBSD: patch-code_client_cl_main_cpp,v 1.2 2018/04/26 02:15:18 bcallah Exp $
 
 Index: code/client/cl_main.cpp
 --- code/client/cl_main.cpp.orig
 +++ code/client/cl_main.cpp
-@@ -1086,14 +1086,14 @@ void CL_InitRef( void ) {
+@@ -1088,14 +1088,14 @@ void CL_InitRef( void ) {
  	Com_Printf( "----- Initializing Renderer ----\n" );
      cl_renderer = Cvar_Get( "cl_renderer", DEFAULT_RENDER_LIBRARY, CVAR_ARCHIVE|CVAR_LATCH|CVAR_PROTECTED );
  
