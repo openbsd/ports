@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/26 15:02:32 sthen Exp $
+@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/http.ini 
+lib/php-${MODPHP_VERSION}/modules/http.so
+share/examples/php-${MODPHP_VERSION}/pecl_http.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/pecl_http.ini
+share/php-${MODPHP_VERSION}/include/ext/http/
+share/php-${MODPHP_VERSION}/include/ext/http/php_http.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_api.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_buffer.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_client.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_client_request.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_client_response.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_cookie.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_curl.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_encoding.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_env.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_env_request.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_env_response.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_etag.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_exception.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_filter.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_header.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_header_parser.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_info.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_message.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_message_body.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_message_parser.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_misc.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_negotiate.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_object.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_options.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_params.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_querystring.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_response_codes.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_url.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_utf8.h
+share/php-${MODPHP_VERSION}/include/ext/http/php_http_version.h

@@ -1,0 +1,6 @@
+The PECL ssh2 extension provides bindings to the functions of libssh2
+which implements the SSH2 protocol.
+
+Documentation for this extension is available online at:
+
+http://www.php.net/ssh2

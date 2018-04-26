@@ -1,0 +1,6 @@
+pecl-propro is a reusable split-off of pecl_http's property proxy
+API.
+
+Documentation is available online at:
+
+http://php.github.io/pecl-php-propro/
