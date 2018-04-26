@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.2 2018/04/26 08:58:58 espie Exp $
+# $OpenBSD: update-plist,v 1.3 2018/04/26 09:11:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -21,8 +21,30 @@ use Data::Dumper;
 use File::Find;
 use File::Spec;
 my $ports1;
+my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+	# if we're root
+	return if $< != 0;
+	# switch id right away
+	my $fake = $ENV{FAKE_TREE_OWNER};
+	my $tree = $ENV{PORTS_TREE_OWNER};
+	# XXX we can only end there if we're very naughty and building
+	# everything as root, but not behind PORTS_PRIVSEP
+	if (!defined $fake && !defined $tree) {
+		print STDERR "DON'T BUILD PORTS AS ROOT!!!!!\n";
+		print STDERR "(or make sure you pass env variables PORTS_TREE_OWNER and FAKE_TREE_OWNER thru doas)\n";
+		return;
+	}
+	die "FAKE_TREE_OWNER not defined" unless defined $fake;
+	die "PORTS_TREE_OWNER not defined" unless defined $tree;
+
+	($fake_uid, $fake_gid) = (getpwnam $fake)[2,3];
+	($ports_uid, $ports_gid) = (getpwnam $tree)[2,3];
+	die "User $fake not found" unless defined $fake_uid;
+	die "User $tree not found" unless defined $ports_uid;
+	$) = $fake_gid;
+	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
 
