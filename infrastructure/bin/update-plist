@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.5 2018/04/26 11:49:06 espie Exp $
+# $OpenBSD: update-plist,v 1.6 2018/04/26 12:19:19 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -105,6 +105,10 @@ sub annotate
 # okay, so that plist doesn't exist, wouhou, I don't care,
 # since I'm not pkg_create
 sub cant_read_fragment
+{
+}
+
+sub missing_fragments
 {
 }
 
