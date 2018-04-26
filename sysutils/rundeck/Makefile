@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/26 16:25:42 jasper Exp $
 
 COMMENT=		job scheduler and runbook automation
 
 V=			2.6.11
 DISTNAME=		rundeck-launcher-${V}
 PKGNAME=		rundeck-${V}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://rundeck.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
