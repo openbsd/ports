@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2017/12/22 16:11:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.43 2018/04/26 20:13:04 ajacoutot Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -55,6 +55,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/compass
 @bin libexec/xscreensaver/coral
 @bin libexec/xscreensaver/crackberg
+@bin libexec/xscreensaver/crumbler
 @bin libexec/xscreensaver/crystal
 @bin libexec/xscreensaver/cube21
 @bin libexec/xscreensaver/cubenetic
@@ -145,6 +146,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/loop
 @bin libexec/xscreensaver/m6502
 @bin libexec/xscreensaver/maze
+@bin libexec/xscreensaver/maze3d
 @bin libexec/xscreensaver/memscroller
 @bin libexec/xscreensaver/menger
 @bin libexec/xscreensaver/metaballs
@@ -162,6 +164,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/noseguy
 @bin libexec/xscreensaver/pacman
 @bin libexec/xscreensaver/pedal
+@bin libexec/xscreensaver/peepers
 @bin libexec/xscreensaver/penetrate
 @bin libexec/xscreensaver/penrose
 @bin libexec/xscreensaver/petri
@@ -183,6 +186,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/quasicrystal
 @bin libexec/xscreensaver/queens
 @bin libexec/xscreensaver/raverhoop
+@bin libexec/xscreensaver/razzledazzle
 @bin libexec/xscreensaver/rd-bomb
 @bin libexec/xscreensaver/ripples
 @bin libexec/xscreensaver/rocks
@@ -287,6 +291,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/compass.6
 @man man/man6/coral.6
 @man man/man6/crackberg.6
+@man man/man6/crumbler.6
 @man man/man6/crystal.6
 @man man/man6/cube21.6
 @man man/man6/cubenetic.6
@@ -375,6 +380,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/lockward.6
 @man man/man6/loop.6
 @man man/man6/maze.6
+@man man/man6/maze3d.6
 @man man/man6/memscroller.6
 @man man/man6/menger.6
 @man man/man6/metaballs.6
@@ -392,6 +398,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/noseguy.6
 @man man/man6/pacman.6
 @man man/man6/pedal.6
+@man man/man6/peepers.6
 @man man/man6/penetrate.6
 @man man/man6/penrose.6
 @man man/man6/petri.6
@@ -412,6 +419,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/quasicrystal.6
 @man man/man6/queens.6
 @man man/man6/raverhoop.6
+@man man/man6/razzledazzle.6
 @man man/man6/rd-bomb.6
 @man man/man6/ripples.6
 @man man/man6/rocks.6
@@ -540,6 +548,7 @@ share/xscreensaver/config/companioncube.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
 share/xscreensaver/config/crackberg.xml
+share/xscreensaver/config/crumbler.xml
 share/xscreensaver/config/crystal.xml
 share/xscreensaver/config/cube21.xml
 share/xscreensaver/config/cubenetic.xml
@@ -629,6 +638,7 @@ share/xscreensaver/config/lockward.xml
 share/xscreensaver/config/loop.xml
 share/xscreensaver/config/m6502.xml
 share/xscreensaver/config/maze.xml
+share/xscreensaver/config/maze3d.xml
 share/xscreensaver/config/memscroller.xml
 share/xscreensaver/config/menger.xml
 share/xscreensaver/config/metaballs.xml
@@ -646,6 +656,7 @@ share/xscreensaver/config/noof.xml
 share/xscreensaver/config/noseguy.xml
 share/xscreensaver/config/pacman.xml
 share/xscreensaver/config/pedal.xml
+share/xscreensaver/config/peepers.xml
 share/xscreensaver/config/penetrate.xml
 share/xscreensaver/config/penrose.xml
 share/xscreensaver/config/petri.xml
@@ -667,6 +678,7 @@ share/xscreensaver/config/qix.xml
 share/xscreensaver/config/quasicrystal.xml
 share/xscreensaver/config/queens.xml
 share/xscreensaver/config/raverhoop.xml
+share/xscreensaver/config/razzledazzle.xml
 share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
