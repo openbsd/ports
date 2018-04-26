@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/26 16:11:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/26 18:48:19 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -37,7 +37,7 @@
      #SUBDIR += kanagram
      #SUBDIR += kapman
      #SUBDIR += kapptemplate
-     #SUBDIR += kate
+     SUBDIR += kate
      #SUBDIR += katomic
      #SUBDIR += kblackbox
      #SUBDIR += kblocks
