@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/01/23 00:36:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/04/26 20:41:07 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -189,6 +189,7 @@ icinga-web2/application/views/scripts/dashboard/index.phtml
 icinga-web2/application/views/scripts/dashboard/new-dashlet.phtml
 icinga-web2/application/views/scripts/dashboard/remove-dashlet.phtml
 icinga-web2/application/views/scripts/dashboard/remove-pane.phtml
+icinga-web2/application/views/scripts/dashboard/rename-pane.phtml
 icinga-web2/application/views/scripts/dashboard/settings.phtml
 icinga-web2/application/views/scripts/dashboard/update-dashlet.phtml
 icinga-web2/application/views/scripts/error/
@@ -288,6 +289,7 @@ icinga-web2/library/Icinga/Application/Config.php
 icinga-web2/library/Icinga/Application/EmbeddedWeb.php
 icinga-web2/library/Icinga/Application/Hook/
 icinga-web2/library/Icinga/Application/Hook.php
+icinga-web2/library/Icinga/Application/Hook/AuthenticationHook.php
 icinga-web2/library/Icinga/Application/Hook/GrapherHook.php
 icinga-web2/library/Icinga/Application/Hook/Ticket/
 icinga-web2/library/Icinga/Application/Hook/Ticket/TicketPattern.php
@@ -2525,6 +2527,7 @@ icinga-web2/modules/monitoring/test/php/application/
 icinga-web2/modules/monitoring/test/php/application/views/
 icinga-web2/modules/monitoring/test/php/application/views/helpers/
 icinga-web2/modules/monitoring/test/php/application/views/helpers/MonitoringFlagsTest.php
+icinga-web2/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
 icinga-web2/modules/monitoring/test/php/library/
 icinga-web2/modules/monitoring/test/php/library/Monitoring/
 icinga-web2/modules/monitoring/test/php/library/Monitoring/Object/
@@ -2839,6 +2842,7 @@ icinga-web2/public/js/icinga/behavior/autofocus.js
 icinga-web2/public/js/icinga/behavior/detach.js
 icinga-web2/public/js/icinga/behavior/dropdown.js
 icinga-web2/public/js/icinga/behavior/expandable.js
+icinga-web2/public/js/icinga/behavior/filtereditor.js
 icinga-web2/public/js/icinga/behavior/flyover.js
 icinga-web2/public/js/icinga/behavior/form.js
 icinga-web2/public/js/icinga/behavior/navigation.js
@@ -2968,9 +2972,6 @@ icinga-web2/test/php/res/locale/fr_FR/
 icinga-web2/test/php/res/locale/fr_FR/LC_MESSAGES/
 icinga-web2/test/php/res/locale/fr_FR/LC_MESSAGES/icingatest.mo
 icinga-web2/test/php/res/locale/fr_FR/LC_MESSAGES/icingatest.po
-icinga-web2/test/php/res/status/
-icinga-web2/test/php/res/status/icinga.objects.cache
-icinga-web2/test/php/res/status/icinga.status.dat
 icinga-web2/test/setup_vendor.sh
 icinga-web2/test/travis-ldap.ini
 icinga-web2/test/travis_database.sh
