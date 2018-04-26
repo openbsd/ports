@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.9 2018/04/26 14:09:55 espie Exp $
+# $OpenBSD: update-plist,v 1.10 2018/04/26 17:23:17 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -182,11 +182,13 @@ package OpenBSD::PackingElement::Comment;
 sub fullname
 {
 	my $self = shift;
-	if ($self->name =~ m/^\@\S*?\s+(.*)/) {
-		return $self->make_full($1);
-	} else {
-		return $self->name;
+	# let's pretend we're an object!!!
+	my $path = $self->name;
+	if ($path !~ m|^/|o && $self->cwd ne '.') {
+		$path = $self->cwd."/".$path;
+		$path =~ s,^//,/,;
 	}
+	return $path;
 }
 
 sub known_object
