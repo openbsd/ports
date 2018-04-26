@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/01/18 03:49:58 danj Exp $
+# $OpenBSD: Makefile,v 1.36 2018/04/26 16:06:09 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		2.0.1
+V=		2.1
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -18,12 +18,12 @@ PKGNAME-tcl=	weechat-tcl-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.weechat.org/
-MAINTAINER=	Daniel Jakots <obsd@chown.me>
+MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/src/
+MASTER_SITES=	https://www.weechat.org/files/src/
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
@@ -78,16 +78,17 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 		-DMODTCL_LIB=${MODTCL_LIB}
 
+NO_TEST=	Yes
+
 pre-configure:
 	rm -f ${WRKSRC}/cmake/FindLua.cmake \
 		${WRKSRC}/cmake/FindRuby.cmake \
 		${WRKSRC}/cmake/FindTCL.cmake
 
 post-install:
-	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
-	$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_*.en.adoc \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/weechat
+	${INSTALL_DATA} ${WRKSRC}/doc/en/weechat_*.en.adoc \
 	${PREFIX}/share/doc/weechat/
 
-NO_TEST=	Yes
 
 .include <bsd.port.mk>

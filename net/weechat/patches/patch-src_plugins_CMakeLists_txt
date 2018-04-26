@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_plugins_CMakeLists_txt,v 1.5 2017/12/17 02:21:23 danj Exp $
+$OpenBSD: patch-src_plugins_CMakeLists_txt,v 1.6 2018/04/26 16:06:09 rsadowski Exp $
 Index: src/plugins/CMakeLists.txt
 --- src/plugins/CMakeLists.txt.orig
 +++ src/plugins/CMakeLists.txt
-@@ -114,8 +114,8 @@ if(ENABLE_SCRIPTS AND ENABLE_PERL)
+@@ -117,8 +117,8 @@ if(ENABLE_SCRIPTS AND ENABLE_PERL)
  endif()
  
  if(ENABLE_SCRIPTS AND ENABLE_PYTHON)
