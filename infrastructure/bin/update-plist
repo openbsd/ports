@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.6 2018/04/26 12:19:19 espie Exp $
+# $OpenBSD: update-plist,v 1.7 2018/04/26 13:27:06 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -129,6 +129,13 @@ sub nlist
 {
 	my $self = shift;
 	return $self->{nlist};
+}
+
+sub strip_prefix
+{
+	my ($self, $path) = @_;
+	$path =~ s,^\Q$self->{state}{prefix}\E/,,;
+	return $path;
 }
 
 package PlistReader::State;
@@ -302,6 +309,10 @@ for my $path (sort keys %$objects) {
 			my $s = $e->{comesfrom};
 			$e->add_object($s->nlist);
 		}
+	} else {
+		my $o = $objects->{$path};
+		$o->element_class->add($lists[0]->nlist, 
+		    $lists[0]->strip_prefix($path));
 	}
 }
 use File::Path;
