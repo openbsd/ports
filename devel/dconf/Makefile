@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2018/04/22 13:29:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2018/04/26 07:35:11 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -7,6 +7,7 @@ COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
 GNOME_VERSION=		0.28.0
+REVISION=		0
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 
@@ -25,11 +26,11 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		vala
 
-BUILD_DEPENDS=		textproc/gtk-doc
-
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_ARGS=		-Denable-gtk-doc=true
+# XXX the gtk-doc dependency chain includes py-numpy which breaks on arm
+#BUILD_DEPENDS +=	textproc/gtk-doc
+#CONFIGURE_ARGS=	-Denable-gtk-doc=true
 
 # needs a running DBus
 TEST_IS_INTERACTIVE=	Yes
