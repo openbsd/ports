@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/22 21:30:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/26 18:05:59 phessler Exp $
 
 COMMENT =	share your terminal over the web
 
 GH_ACCOUNT =	tsl0922
 GH_PROJECT =	ttyd
-GH_TAGNAME =	1.3.3
-REVISION =	0
+GH_TAGNAME =	1.4.0
 
 CATEGORIES =	www
 
@@ -19,7 +18,5 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		editors/vim,-main
 LIB_DEPENDS =		www/libwebsockets \
 			devel/json-c
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
