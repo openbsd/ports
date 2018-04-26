@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.8 2018/04/26 13:40:27 espie Exp $
+# $OpenBSD: update-plist,v 1.9 2018/04/26 14:09:55 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -307,15 +307,36 @@ for my $path (sort keys %$objects) {
 $state->say("Copying objects");
 for my $path (sort keys %$objects) {
 	if ($exact->{$path}) {
+		# this will be re-added to multiple paths if there are
+		# multiple matching plists
 		for my $e (@{$exact->{$path}}) {
 			my $s = $e->{comesfrom};
 			$e->add_object($s->nlist);
 		}
-	} else {
-		my $o = $objects->{$path};
-		$o->element_class->add($lists[0]->nlist, 
-		    $lists[0]->strip_prefix($path));
+		next;
 	}
+
+	# we didn't find it so we must create a new one
+	my $o = $objects->{$path};
+	# go up dir until we find a matching approximate dir
+	print "trying to match ", $path, "\n";
+	my $d = $path;
+	while (1) {
+		$d = dirname($d);
+		last if $d eq '/';
+		next unless exists $approximate->{$d};
+		my @l = values %{$approximate->{$d}};
+		# if we do, we only write non ambiguous names
+		if (@l == 1) {
+			my $s = $l[0]->{comesfrom};
+			$o->element_class->add($s->nlist, 
+			    $s->strip_prefix($path));
+			last;
+		}
+	}
+	# last resort
+	$o->element_class->add($lists[0]->nlist, 
+	    $lists[0]->strip_prefix($path));
 }
 use File::Path;
 #make_path("tryout");
@@ -328,13 +349,9 @@ $> = $ports_uid;
 for my $s (@lists) {
 	my $name = $s->{base_plistname}.".new";
 	open(my $fh, '>', $name) or die "Can't open $name: $!";
+	delete $s->nlist->{name};
 	$s->nlist->write($fh);
 }
-#for my $k (sort keys %$approximate) {
-#	for my $e (values %{$approximate->{$k}}) {
-#		print "$k leads to ", $e->{file}->pretty, "\n";
-#	}
-#}
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $s (@lists) {
