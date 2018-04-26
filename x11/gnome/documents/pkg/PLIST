@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/11/03 13:51:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/04/26 13:54:28 ajacoutot Exp $
 bin/gnome-books
 bin/gnome-documents
 lib/gnome-documents/
@@ -9,8 +9,6 @@ lib/gnome-documents/libgd.so
 lib/gnome-documents/libgdprivate-1.0.so
 @man man/man1/gnome-books.1
 @man man/man1/gnome-documents.1
-share/appdata/org.gnome.Books.appdata.xml
-share/appdata/org.gnome.Documents.appdata.xml
 share/applications/org.gnome.Books.desktop
 share/applications/org.gnome.Documents.desktop
 share/dbus-1/services/org.gnome.Books.service
@@ -408,7 +406,6 @@ share/help/pa/gnome-documents/search.page
 share/help/pa/gnome-documents/view-add.page
 share/help/pa/gnome-documents/view.page
 share/help/pa/gnome-documents/viewgrid.page
-share/help/pl/
 share/help/pl/gnome-documents/
 share/help/pl/gnome-documents/collections.page
 share/help/pl/gnome-documents/filter.page
@@ -649,6 +646,8 @@ share/locale/ja/LC_MESSAGES/gnome-documents.mo
 share/locale/kk/LC_MESSAGES/gnome-documents.mo
 share/locale/kn/LC_MESSAGES/gnome-documents.mo
 share/locale/ko/LC_MESSAGES/gnome-documents.mo
+share/locale/ln/
+share/locale/ln/LC_MESSAGES/
 share/locale/ln/LC_MESSAGES/gnome-documents.mo
 share/locale/lt/LC_MESSAGES/gnome-documents.mo
 share/locale/lv/LC_MESSAGES/gnome-documents.mo
@@ -683,6 +682,8 @@ share/locale/xh/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-documents.mo
+share/metainfo/org.gnome.Books.appdata.xml
+share/metainfo/org.gnome.Documents.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
