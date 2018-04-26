@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2018/03/20 10:40:23 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/26 14:17:04 landry Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		0.8.1
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
 
 # Unlicense/MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB += c pthread
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
@@ -68,6 +70,7 @@ MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu-0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	wincolor-0.1.6	# Unlicense/MIT
 CONFIGURE_STYLE =	cargo
 
+PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 
 MODCARGO_RUSTFLAGS =	-C debuginfo=0

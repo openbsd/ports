@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_main_rs,v 1.1 2018/04/26 14:17:04 landry Exp $
+Add pledge(2) call:
+- "stdio rpath" for common usage
+- "stdio rpath proc exec" for -z (--search-zip) as it is spawning external commands for decompress files.
+Index: src/main.rs
+--- src/main.rs.orig
++++ src/main.rs
+@@ -28,6 +28,13 @@ use std::sync::atomic::{AtomicUsize, Ordering};
+ use std::sync::mpsc;
+ use std::thread;
+ 
++use std::ffi::CString;
++use std::io;
++use std::ptr;
++extern "C" {
++    fn pledge(promises: *const libc::c_char, execpromises: *const libc::c_char) -> libc::c_int;
++}
++
+ use args::Args;
+ use worker::Work;
+ 
+@@ -65,6 +72,16 @@ fn main() {
+ }
+ 
+ fn run(args: Arc<Args>) -> Result<u64> {
++    let promises = if args.search_zip_files {
++        CString::new("stdio rpath proc exec").unwrap()
++    } else {
++        CString::new("stdio rpath").unwrap()
++    };
++    let execpromises = ptr::null() as *const libc::c_char;
++    if unsafe { pledge(promises.as_ptr(), execpromises) } == -1 {
++        eprintln!("error: pledge: {:?}", io::Error::last_os_error());
++        process::exit(1);
++    }
+     if args.never_match() {
+         return Ok(0);
+     }
