@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/09/14 09:30:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2018/04/26 20:57:51 sthen Exp $
 
 COMMENT =		ebook management application
 
@@ -7,11 +7,9 @@ V =			2.85.1
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://calibre-ebook.com/
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
