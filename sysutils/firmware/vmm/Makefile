@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/27 22:34:14 ccardenas Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/26 12:23:32 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-# XXX errors with with clang
+# XXX errors with clang -
 # ./src/string.c:24:16: error: invalid output constraint '=Qi' in asm
+#
+# ... and ports-gcc -
+# ld: Relocatable linking with relocations from format elf64-x86-64 (out/ccode16.o) to format elf32-i386 (out/code16.o) is not supported
+
 CC =		/usr/bin/gcc
 
 FW_DRIVER=	vmm
-FW_VER=		1.10.2
+FW_VER=		1.11.0
 SB_VER=		20100422
-REVISION=	5
 DISTNAME=	seabios-${FW_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-20100422{23d474943dcd55d0550a3d20b3d30e9040a4f15b}.tar.gz:0

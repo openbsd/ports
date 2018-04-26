@@ -1,4 +1,4 @@
-# $OpenBSD: config,v 1.4 2017/11/27 22:34:14 ccardenas Exp $
+# $OpenBSD: config,v 1.5 2018/04/26 12:23:32 sthen Exp $
 #
 # Automatically generated file; DO NOT EDIT.
 # SeaBIOS Configuration
@@ -39,6 +39,7 @@ CONFIG_VIRTIO_SCSI=y
 # CONFIG_PS2PORT is not set
 # CONFIG_USB is not set
 CONFIG_SERIAL=y
+# CONFIG_SERCON is not set - XXX only enabled if etc/serconf-port is set; can be hardcoded in sercon.c but fails to print useful text
 # CONFIG_LPT is not set
 CONFIG_RTC_TIMER=y
 CONFIG_HARDWARE_IRQ=y

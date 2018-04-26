@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_fw_pciinit_c,v 1.1 2017/03/26 17:06:29 kettenis Exp $
+$OpenBSD: patch-src_fw_pciinit_c,v 1.2 2018/04/26 12:23:32 sthen Exp $
 
 Since we hijacked the OpenBSD PCI vendor ID, this diff should probably
 not be upstreamed.
 
---- src/fw/pciinit.c.orig	Fri Feb 24 15:01:20 2017
-+++ src/fw/pciinit.c	Sat Mar 25 14:19:56 2017
-@@ -141,6 +141,11 @@ static int mch_pci_slot_get_irq(struct pci_device *pci
+Index: src/fw/pciinit.c
+--- src/fw/pciinit.c.orig
++++ src/fw/pciinit.c
+@@ -142,6 +142,11 @@ static int mch_pci_slot_get_irq(struct pci_device *pci
      return pci_irqs[(pin - 1 + pin_addend) & 3];
  }
  
@@ -17,7 +18,7 @@ not be upstreamed.
  /* PIIX3/PIIX4 PCI to ISA bridge */
  static void piix_isa_bridge_setup(struct pci_device *pci, void *arg)
  {
-@@ -506,11 +511,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
+@@ -507,11 +512,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
          pci_io_low_end = acpi_pm_base;
  }
  
