@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/03/31 16:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/27 10:22:08 espie Exp $
 
 DRUPAL_LANG =		fr
 EXTRACT_ONLY =
 
-DISTNAME =	drupal7-${DRUPAL_LANG}-7.58
-DISTFILES =	drupal/drupal-7.58.${DRUPAL_LANG}.po
+DISTNAME =	drupal7-${DRUPAL_LANG}-7.59
+DISTFILES =	drupal/drupal-7.59.${DRUPAL_LANG}.po
 LANGFILES +=	abt 1.6
 LANGFILES += 	auto_nodetitle 1.0
 LANGFILES +=	backup_migrate 3.5

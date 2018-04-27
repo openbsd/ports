@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/03/31 16:36:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/04/27 10:22:08 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/profiles/standard/translations/abt-7.x-1.6.${DRUPAL_LANG}.po
@@ -11,7 +11,7 @@ ${DRUPAL_ROOT}/profiles/standard/translations/content_access-7.x-1.2-beta2.${DRU
 ${DRUPAL_ROOT}/profiles/standard/translations/ctools-7.x-1.14.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/date-7.x-2.10.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/devel-7.x-1.5.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/drupal-7.58.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/drupal-7.59.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/entity-7.x-1.9.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/globalredirect-7.x-1.4.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/google_analytics-7.x-1.2.${DRUPAL_LANG}.po
