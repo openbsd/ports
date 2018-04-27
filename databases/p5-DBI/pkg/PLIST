@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2015/01/19 07:14:29 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.35 2018/04/27 15:03:26 solene Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
@@ -25,6 +25,7 @@ ${P5ARCH}/DBD/Gofer/Transport/corostream.pm
 ${P5ARCH}/DBD/Gofer/Transport/null.pm
 ${P5ARCH}/DBD/Gofer/Transport/pipeone.pm
 ${P5ARCH}/DBD/Gofer/Transport/stream.pm
+${P5ARCH}/DBD/Mem.pm
 ${P5ARCH}/DBD/NullP.pm
 ${P5ARCH}/DBD/Proxy.pm
 ${P5ARCH}/DBD/Sponge.pm
@@ -44,7 +45,6 @@ ${P5ARCH}/DBI/DBD/SqlEngine/
 ${P5ARCH}/DBI/DBD/SqlEngine.pm
 ${P5ARCH}/DBI/DBD/SqlEngine/Developers.pod
 ${P5ARCH}/DBI/DBD/SqlEngine/HowTo.pod
-${P5ARCH}/DBI/FAQ.pm
 ${P5ARCH}/DBI/Gofer/
 ${P5ARCH}/DBI/Gofer/Execute.pm
 ${P5ARCH}/DBI/Gofer/Request.pm
@@ -103,6 +103,7 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBD::Gofer::Transport::null.3p
 @man man/man3p/DBD::Gofer::Transport::pipeone.3p
 @man man/man3p/DBD::Gofer::Transport::stream.3p
+@man man/man3p/DBD::Mem.3p
 @man man/man3p/DBD::Proxy.3p
 @man man/man3p/DBD::Sponge.3p
 @man man/man3p/DBI.3p
@@ -115,7 +116,6 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBI::DBD::SqlEngine.3p
 @man man/man3p/DBI::DBD::SqlEngine::Developers.3p
 @man man/man3p/DBI::DBD::SqlEngine::HowTo.3p
-@man man/man3p/DBI::FAQ.3p
 @man man/man3p/DBI::Gofer::Execute.3p
 @man man/man3p/DBI::Gofer::Request.3p
 @man man/man3p/DBI::Gofer::Response.3p
