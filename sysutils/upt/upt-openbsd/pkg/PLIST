@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 16:33:27 danj Exp $
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/__init__.py
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}upt_openbsd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_openbsd_package.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_python_package.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_ruby_package.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_openbsd_package.py
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_python_package.py
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_ruby_package.py
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/upt_openbsd.py
