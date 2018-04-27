@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.14 2018/04/27 09:37:04 espie Exp $
+# $OpenBSD: update-plist,v 1.15 2018/04/27 10:15:55 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -88,9 +88,7 @@ sub add
 	if ($k eq 'FLAVORS') {
 		$self->{l} = [];
 	}
-	if ($ignore->{$k}) {
-	} elsif ($k =~ m/^LIB\S+_VERSION$/) {
-		push(@{$self->{lib}}, $k);
+	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
 	} else {
 		push(@{$self->{l}}, $k);
 	}
@@ -199,6 +197,10 @@ sub copy_annotations
 {
 }
 
+sub perform_backsubst
+{
+}
+
 package OpenBSD::PackingElement::Meta;
 sub copy_annotations
 {
@@ -292,6 +294,15 @@ sub show_unknown
 	my $self = shift;
 	if (!$self->{found}) {
 		print "Not found: ", $self->fullname, "(in ", $self->{file}->pretty, ")\n";
+	}
+}
+
+package OpenBSD::PackingElement::Lib;
+sub perform_backsubst
+{
+	my ($self, $s) = @_;
+	if ($self->name =~ m,^(.*)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
+		$self->{name} = "$1lib$2.so.\$\{LIB$2_VERSION\}";
 	}
 }
 
@@ -403,6 +414,10 @@ for my $path (sort keys %$objects) {
 for my $p (@lists) {
 	delete $p->nlist->{name};
 	$p->olist->copy_annotations($p->nlist);
+}
+
+for my $p (@lists) {
+	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
 use File::Path;
