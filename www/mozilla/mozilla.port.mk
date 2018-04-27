@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.115 2018/03/14 06:07:11 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.116 2018/04/27 07:28:43 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -134,7 +134,7 @@ FLAVORS +=	debug
 FLAVOR ?=
 
 .if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--enable-debug-symbols=-g \
+CONFIGURE_ARGS +=	--enable-debug-symbols=-ggdb1 \
 			--disable-install-strip
 INSTALL_STRIP =
 .endif
