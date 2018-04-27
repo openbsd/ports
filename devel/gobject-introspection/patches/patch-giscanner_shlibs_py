@@ -1,11 +1,19 @@
-$OpenBSD: patch-giscanner_shlibs_py,v 1.9 2018/04/24 18:45:12 jasper Exp $
+$OpenBSD: patch-giscanner_shlibs_py,v 1.10 2018/04/27 12:15:18 jasper Exp $
 
 https://gitlab.gnome.org/GNOME/gobject-introspection/issues/208
 
 Index: giscanner/shlibs.py
 --- giscanner/shlibs.py.orig
 +++ giscanner/shlibs.py
-@@ -115,8 +115,12 @@ def _resolve_non_libtool(options, binary, libraries):
+@@ -25,6 +25,7 @@ from __future__ import print_function
+ from __future__ import unicode_literals
+ 
+ import os
++import os.path
+ import platform
+ import re
+ import subprocess
+@@ -115,8 +116,12 @@ def _resolve_non_libtool(options, binary, libraries):
              patterns[library] = _ldd_library_pattern(library)
  
          shlibs = []
@@ -18,3 +26,12 @@ Index: giscanner/shlibs.py
              # ldd on *BSD show the argument passed on the first line even if
              # there is only one argument. We have to ignore it because it is
              # possible for the name of the binary to match _ldd_library_pattern.
+@@ -126,7 +131,7 @@ def _resolve_non_libtool(options, binary, libraries):
+                 m = pattern.search(line)
+                 if m:
+                     del patterns[library]
+-                    shlibs.append(m.group(1))
++                    shlibs.append(os.path.basename(m.group(1)))
+                     break
+ 
+         if len(patterns) > 0:
