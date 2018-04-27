@@ -1,0 +1,3 @@
+lua-openbsd is a small shared library that exports OpenBSD specific
+functions (such as pledge(), arc4random() and arc4random_uniform())
+to Lua scripts.
