@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.18 2018/04/27 13:08:46 espie Exp $
+# $OpenBSD: update-plist,v 1.19 2018/04/27 13:53:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -48,6 +48,36 @@ BEGIN {
 	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
+
+# A small package that can switch files when needed
+# used by the writer that writes fragments
+package TrackFile;
+
+sub new
+{
+	my ($class, $default) = @_;
+	my $o = bless {known => {}}, $class;
+	$o->{default} = $o->open($default);
+	return $o;
+}
+
+sub open
+{
+	my ($self, $name) = @_;
+	if (!$self->{known}{$name}) {
+		my $full = $name.".new";
+		open(my $fh, '>', $full) or die "Can't open $full: $!";
+		$self->{known}{$name} = $fh;
+	}
+	return $self->{known}{$name};
+}
+
+sub default
+{
+	my $self = shift;
+	return $self->{default};
+}
+
 
 package Forwarder;
 # perfect forwarding
@@ -235,6 +265,16 @@ sub copy_annotations
 
 sub perform_backsubst
 {
+}
+
+sub write_with_frags
+{
+	my ($o, $t) = @_;
+	if (defined $o->{file}) {
+		$o->write($t->open($o->{file}->name))
+	} else {
+		$o->write($t->default);
+	}
 }
 
 # objects are (mostly) stuff with paths that can get substs...
@@ -440,8 +480,10 @@ for my $path (sort keys %$objects) {
 		# if we do, we only write non ambiguous names
 		if (@l == 1) {
 			my $s = $l[0]->{comesfrom};
-			$o->element_class->add($s->nlist, 
+			my $a =$o->element_class->add($s->nlist, 
 			    $s->strip_prefix($path));
+			# and match the file
+			$a->{file} = $s->{file};
 			last;
 		}
 	}
@@ -467,16 +509,9 @@ $> = 0;
 $) = $ports_gid;
 $> = $ports_uid;
 
-#use Data::Dumper;
-#for my $p (@lists) {
-#	my $s = $p->{state}->{subst};
-#	print Dumper($s), "\n";
-#}
-
 for my $p (@lists) {
-	my $name = $p->{base_plistname}.".new";
-	open(my $fh, '>', $name) or die "Can't open $name: $!";
-	$p->nlist->write($fh);
+	my $t = TrackFile->new($p->{base_plistname});
+	$p->nlist->write_with_frags($t);
 }
 
 # let's show a quick summary of stuff we couldn't figure out
