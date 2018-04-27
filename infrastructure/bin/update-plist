@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.27 2018/04/27 17:23:12 espie Exp $
+# $OpenBSD: update-plist,v 1.28 2018/04/27 17:31:47 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -167,6 +167,12 @@ sub do_backsubst
 			next unless defined $self->{unsubst} &&
 			    $self->{unsubst} =~ m/\$\{\Q$k\E\}/;
 		}
+		# Heuristics: if the variable is already known AND was 
+		# not used already, then we don't try to use it
+		next if defined $self->{unsubst} &&
+		    $subst->{used}{$k} &&
+		    $self->{unsubst} !~ m/\$\{\Q$k\E\}/;
+		    	
 		if ($k =~ m/^\^(.*)$/) {
 			my $k2 = $1;
 			my $v = $subst->value($k2);
