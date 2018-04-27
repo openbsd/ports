@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_test-sendmail_sh,v 1.1.1.1 2018/04/26 20:20:08 solene Exp $
+$OpenBSD: patch-scripts_test-sendmail_sh,v 1.2 2018/04/27 08:31:01 solene Exp $
 
 Index: scripts/test-sendmail.sh
 --- scripts/test-sendmail.sh.orig
 +++ scripts/test-sendmail.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!${LOCALBASE}/bin/bash
++#!/usr/bin/env bash
  OUTPUT="$(dirname $0)/../mailpile/tests/data/tmp/sent.mbx"
  mkdir -p "$(dirname $OUTPUT)"
  touch "$OUTPUT"

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/26 20:20:08 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/27 08:31:01 solene Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
 GH_ACCOUNT =	mailpile
 GH_PROJECT =	Mailpile
 GH_TAGNAME =	1.0.0rc2
+REVISION =	0
+
 CATEGORIES =	mail
 
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
@@ -13,8 +15,6 @@ MAINTAINER =	Solene Rapenne <solene@perso.pw>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-MODPY_ADJ_FILES= mp scripts/mailpile-test.py
 
 RUN_DEPENDS =	devel/py-fasteners \
 		security/py-pgpdump \
@@ -32,16 +32,13 @@ PKG_ARCH =	*
 
 INSTDIR =	${PREFIX}/share/mailpile
 
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/scripts/test-sendmail.sh
-
 do-install:
-	find ${WRKSRC} -name '*.orig' -delete
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	find ${WRKSRC} -exec ${MODPY_BIN} \
 		${MODPY_LIBDIR}/compileall.py {} \;
 	cd ${WRKSRC} && pax -rw * ${INSTDIR}
 	cd ${INSTDIR} && rm -fr mailpile/tests packages
+	find ${INSTDIR} -name '*.orig' -delete
 	@cd ${PREFIX}/bin && \
 		ln -sf ../share/mailpile/mp mp
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/26 20:20:08 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/27 08:31:01 solene Exp $
 bin/mp
 share/mailpile/
 share/mailpile/AGPLv3.txt
@@ -380,7 +380,6 @@ share/mailpile/scripts/python-lint.sh
 share/mailpile/scripts/reset-mac-mailpile.sh
 @comment share/mailpile/scripts/setup-test.sh
 share/mailpile/scripts/test-sendmail.sh
-share/mailpile/scripts/test-sendmail.sh.beforesubst
 share/mailpile/scripts/unsent-mail-finder.py
 share/mailpile/scripts/unsent-mail-finder.pyc
 @comment share/mailpile/scripts/vagrant_bootstrap.sh
