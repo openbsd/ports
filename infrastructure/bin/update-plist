@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.23 2018/04/27 15:04:59 espie Exp $
+# $OpenBSD: update-plist,v 1.24 2018/04/27 16:46:58 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,9 +17,6 @@
 use strict;
 use warnings;
 use OpenBSD::PkgCreate;
-use Data::Dumper;
-use File::Find;
-use File::Spec;
 
 my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
@@ -70,6 +67,14 @@ sub open
 		$self->{known}{$name} = $fh;
 	}
 	return $self->{known}{$name};
+}
+
+sub finish
+{
+	my $self = shift;
+	for my $fh (values %{$self->{known}}) {
+		close($fh);
+	}
 }
 
 sub default
@@ -251,8 +256,9 @@ sub handle_options
 			$state->{ignored}{$path} = 1;
 		    },
 	};
-	$state->SUPER::handle_options('X:', 
+	$state->SUPER::handle_options('X:P:', 
 	    '[mnx] [-X path] -- pkg_create_args ...');
+    	$state->{pkgdir} = $state->opt('P');
 }
 
 package OpenBSD::PackingElement;
@@ -297,7 +303,7 @@ sub perform_backsubst
 }
 
 # dir-like objects HAVE a / added at the end...
-package OpenBSD::PackingElement::Object;
+package OpenBSD::PackingElement::DirBase;
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
@@ -426,8 +432,18 @@ sub perform_backsubst
 
 package UpdatePlist;
 use  File::Basename;
+use File::Compare;
 
 my $state = UpdatePlist::State->new('update-plist');
+
+sub baseplist
+{
+	my $n = shift;
+	if (defined $state->{pkgdir}) {
+		$n =~ s/\Q$state->{pkgdir}\E\///;
+	}
+	return $n;
+}
 
 # this handles update-plist options proper, finished with --
 $state->handle_options;
@@ -530,20 +546,57 @@ for my $p (@lists) {
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
-use File::Path;
-#make_path("tryout");
-# switch to ports owner
-
-$> = 0;
-$) = $ports_gid;
-$> = $ports_uid;
-
-for my $p (@lists) {
-	my $t = TrackFile->new($p->{base_plistname});
-	$p->nlist->write_with_frags($t);
-}
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $p (@lists) {
 	$p->olist->show_unknown($exact);
 }
+
+# switch to ports owner
+$> = 0;
+$) = $ports_gid;
+$> = $ports_uid;
+
+for my $p (@lists) {
+	$p->{tracker} = TrackFile->new($p->{base_plistname});
+	$p->nlist->write_with_frags($p->{tracker});
+	$p->{tracker}->finish;
+}
+
+my @towrite = ();
+my $cantmove = 0;
+
+# let's see if we want to update things
+for my $p (@lists) {
+	for my $k (sort keys %{$p->{tracker}{known}}) {
+		if (-f $k) {
+			if (compare($k, "$k.new") == 0) {
+				unlink("$k.new");
+			} else {
+				print baseplist($k), " changed";
+				push(@towrite, $k);
+				if (-f $k.".orig") {
+					print " but ", baseplist($k), ".orig exists\n";
+					$cantmove = 1;
+				} else {
+					print "\n";
+				}
+			}
+		} else {
+			print baseplist($k), "is new\n";
+			push(@towrite, $k);
+		}
+	}
+}
+
+if (@towrite > 0 && !$cantmove) {
+	for my $k (@towrite) {
+		if (-f $k) {
+			rename($k, "$k.orig") or 
+			    die "can't rename $k to $k.orig: $!";
+		}
+		rename("$k.new", $k) or 
+			    die "can't rename $k.new to $k: $!";
+	}
+}
+
