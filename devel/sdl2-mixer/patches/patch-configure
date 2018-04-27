@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
---- configure.orig	Sat Oct 12 16:49:34 2013
-+++ configure	Sat Oct 12 16:51:23 2013
-@@ -12369,7 +12369,7 @@ if eval \${$as_ac_Lib+:} false; then :
+$OpenBSD: patch-configure,v 1.2 2018/04/27 15:43:20 jasper Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -12357,7 +12357,7 @@ if eval \${$as_ac_Lib+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +11,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -12460,7 +12460,7 @@ fi
+@@ -12447,7 +12447,7 @@ fi
  
      if test x$have_flac_export = xyes; then
          LIBS_SAVED="$LIBS"
@@ -19,7 +20,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libflac so-name version >= $libflac_ver" >&5
  $as_echo_n "checking for libflac so-name version >= $libflac_ver... " >&6; }
          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -12506,7 +12506,7 @@ if ${ac_cv_lib_FLAC_FLAC__stream_decoder_new+:} false;
+@@ -12493,7 +12493,7 @@ if ${ac_cv_lib_FLAC_FLAC__stream_decoder_new+:} false;
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

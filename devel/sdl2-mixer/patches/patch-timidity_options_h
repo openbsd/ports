@@ -1,7 +1,9 @@
-$OpenBSD: patch-timidity_config_h,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
---- timidity/config.h.orig	Sat Oct 12 16:52:43 2013
-+++ timidity/config.h	Sat Oct 12 16:53:26 2013
-@@ -167,10 +167,7 @@ typedef char int8;
+$OpenBSD: patch-timidity_options_h,v 1.1 2018/04/27 15:43:20 jasper Exp $
+
+Index: timidity/options.h
+--- timidity/options.h.orig
++++ timidity/options.h
+@@ -78,10 +78,7 @@
  #if defined(__WIN32__) || defined(__OS2__)
  #define DEFAULT_PATH	"C:\\TIMIDITY"
  #else
