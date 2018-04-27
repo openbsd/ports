@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/04/27 07:27:17 rpointel Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -24,7 +24,7 @@ doc_and_conf_files = [
+         ]
+     ),
+     (
+-        "share/man/man1",
++        "man/man1",
+         [
+             "doc/wapiti.1",
+             "doc/wapiti-getcookie.1"
