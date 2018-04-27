@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/27 14:59:01 ajacoutot Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	Rose-DB-0.777
+DISTNAME=	Rose-DB-0.778
 CATEGORIES=	databases
 FIX_EXTRACT_PERMISSIONS=Yes
 
