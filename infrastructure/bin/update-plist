@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.15 2018/04/27 10:15:55 espie Exp $
+# $OpenBSD: update-plist,v 1.16 2018/04/27 11:00:30 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -293,7 +293,7 @@ sub show_unknown
 {
 	my $self = shift;
 	if (!$self->{found}) {
-		print "Not found: ", $self->fullname, "(in ", $self->{file}->pretty, ")\n";
+		print "Not found: ", $self->fullname, "(in ", $self->{file}->name, ")\n";
 	}
 }
 
@@ -359,17 +359,6 @@ my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
 $state->say("Matching objects");
 
-# we will match fs objects to read plists as best as we can
-for my $path (sort keys %$objects) {
-	if ($exact->{$path}) {
-		for my $e (@{$exact->{$path}}) {
-			$e->{found} = 1;
-		}
-	} else {
-#		print $path, " ??? ", ref($path), "\n";
-	}
-}
-
 # once we figured out existing object, we try to preserve @exec and similar
 # info as best as we can.
 
@@ -383,6 +372,7 @@ for my $path (sort keys %$objects) {
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
 		for my $e (@{$exact->{$path}}) {
+			$e->{found} = 1;
 			my $s = $e->{comesfrom};
 			$e->add_object($s->nlist);
 		}
