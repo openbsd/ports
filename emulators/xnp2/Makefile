@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/04/27 15:43:17 jasper Exp $
 
 COMMENT =		PC-9801 emulator
 
 DISTNAME =		xnp2-0.86
 EPOCH =			0
-REVISION =		2
+REVISION =		3
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://www.nonakap.org/np2/
@@ -15,8 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ICE SDL2 SDL2_mixer SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread usb-1.0 z ${COMPILER_LIBCXX}
+WANTLIB += fribidi
 
 MASTER_SITES =		https://www.nonakap.org/np2/release/
 EXTRACT_SUFX =		.tar.bz2
