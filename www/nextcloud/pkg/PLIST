@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/03/16 08:22:38 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/04/27 06:24:02 gonzalo Exp $
 @unexec-delete rm -f /var/www/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f /var/www/conf/modules/apache-nextcloud.conf
 conf/modules.sample/apache-nextcloud.conf.dist
@@ -5290,6 +5290,8 @@ nextcloud/apps/activity/l10n/mk.js
 nextcloud/apps/activity/l10n/mk.json
 nextcloud/apps/activity/l10n/mn.js
 nextcloud/apps/activity/l10n/mn.json
+nextcloud/apps/activity/l10n/ms_MY.js
+nextcloud/apps/activity/l10n/ms_MY.json
 nextcloud/apps/activity/l10n/nb.js
 nextcloud/apps/activity/l10n/nb.json
 nextcloud/apps/activity/l10n/ne.js
@@ -5795,6 +5797,8 @@ nextcloud/apps/dav/l10n/fr.js
 nextcloud/apps/dav/l10n/fr.json
 nextcloud/apps/dav/l10n/gl.js
 nextcloud/apps/dav/l10n/gl.json
+nextcloud/apps/dav/l10n/he.js
+nextcloud/apps/dav/l10n/he.json
 nextcloud/apps/dav/l10n/hu.js
 nextcloud/apps/dav/l10n/hu.json
 nextcloud/apps/dav/l10n/hu_HU.js
@@ -6740,6 +6744,8 @@ nextcloud/apps/files/l10n/ach.js
 nextcloud/apps/files/l10n/ach.json
 nextcloud/apps/files/l10n/ady.js
 nextcloud/apps/files/l10n/ady.json
+nextcloud/apps/files/l10n/af.js
+nextcloud/apps/files/l10n/af.json
 nextcloud/apps/files/l10n/af_ZA.js
 nextcloud/apps/files/l10n/af_ZA.json
 nextcloud/apps/files/l10n/ak.js
@@ -7069,6 +7075,7 @@ nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/Exception.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/FileInUseException.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ForbiddenException.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/HostDownException.php
+nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidArgumentException.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidHostException.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidParameterException.php
 nextcloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
@@ -7471,6 +7478,7 @@ nextcloud/apps/files_pdfviewer/
 nextcloud/apps/files_pdfviewer/.github/
 nextcloud/apps/files_pdfviewer/.github/contributing.md
 nextcloud/apps/files_pdfviewer/.github/issue_template.md
+nextcloud/apps/files_pdfviewer/Makefile
 nextcloud/apps/files_pdfviewer/appinfo/
 nextcloud/apps/files_pdfviewer/appinfo/app.php
 nextcloud/apps/files_pdfviewer/appinfo/info.xml
@@ -8746,8 +8754,6 @@ nextcloud/apps/files_texteditor/l10n/nb.js
 nextcloud/apps/files_texteditor/l10n/nb.json
 nextcloud/apps/files_texteditor/l10n/nl.js
 nextcloud/apps/files_texteditor/l10n/nl.json
-nextcloud/apps/files_texteditor/l10n/nn_NO.js
-nextcloud/apps/files_texteditor/l10n/nn_NO.json
 nextcloud/apps/files_texteditor/l10n/oc.js
 nextcloud/apps/files_texteditor/l10n/oc.json
 nextcloud/apps/files_texteditor/l10n/pa.php
@@ -9360,8 +9366,6 @@ nextcloud/apps/firstrunwizard/l10n/az.js
 nextcloud/apps/firstrunwizard/l10n/az.json
 nextcloud/apps/firstrunwizard/l10n/bg.js
 nextcloud/apps/firstrunwizard/l10n/bg.json
-nextcloud/apps/firstrunwizard/l10n/bn_BD.js
-nextcloud/apps/firstrunwizard/l10n/bn_BD.json
 nextcloud/apps/firstrunwizard/l10n/bn_IN.php
 nextcloud/apps/firstrunwizard/l10n/ca.js
 nextcloud/apps/firstrunwizard/l10n/ca.json
@@ -9429,8 +9433,6 @@ nextcloud/apps/firstrunwizard/l10n/fr.js
 nextcloud/apps/firstrunwizard/l10n/fr.json
 nextcloud/apps/firstrunwizard/l10n/he.js
 nextcloud/apps/firstrunwizard/l10n/he.json
-nextcloud/apps/firstrunwizard/l10n/hr.js
-nextcloud/apps/firstrunwizard/l10n/hr.json
 nextcloud/apps/firstrunwizard/l10n/hu.js
 nextcloud/apps/firstrunwizard/l10n/hu.json
 nextcloud/apps/firstrunwizard/l10n/ia.js
@@ -10014,6 +10016,8 @@ nextcloud/apps/logreader/l10n/fi.js
 nextcloud/apps/logreader/l10n/fi.json
 nextcloud/apps/logreader/l10n/fr.js
 nextcloud/apps/logreader/l10n/fr.json
+nextcloud/apps/logreader/l10n/he.js
+nextcloud/apps/logreader/l10n/he.json
 nextcloud/apps/logreader/l10n/hu.js
 nextcloud/apps/logreader/l10n/hu.json
 nextcloud/apps/logreader/l10n/is.js
@@ -10344,6 +10348,8 @@ nextcloud/apps/notifications/l10n/fr.js
 nextcloud/apps/notifications/l10n/fr.json
 nextcloud/apps/notifications/l10n/gl.js
 nextcloud/apps/notifications/l10n/gl.json
+nextcloud/apps/notifications/l10n/he.js
+nextcloud/apps/notifications/l10n/he.json
 nextcloud/apps/notifications/l10n/hu.js
 nextcloud/apps/notifications/l10n/hu.json
 nextcloud/apps/notifications/l10n/ia.js
@@ -10499,6 +10505,8 @@ nextcloud/apps/oauth2/l10n/fr.js
 nextcloud/apps/oauth2/l10n/fr.json
 nextcloud/apps/oauth2/l10n/gl.js
 nextcloud/apps/oauth2/l10n/gl.json
+nextcloud/apps/oauth2/l10n/he.js
+nextcloud/apps/oauth2/l10n/he.json
 nextcloud/apps/oauth2/l10n/hu.js
 nextcloud/apps/oauth2/l10n/hu.json
 nextcloud/apps/oauth2/l10n/id.js
@@ -10866,6 +10874,8 @@ nextcloud/apps/serverinfo/l10n/fr.js
 nextcloud/apps/serverinfo/l10n/fr.json
 nextcloud/apps/serverinfo/l10n/gl.js
 nextcloud/apps/serverinfo/l10n/gl.json
+nextcloud/apps/serverinfo/l10n/he.js
+nextcloud/apps/serverinfo/l10n/he.json
 nextcloud/apps/serverinfo/l10n/hu.js
 nextcloud/apps/serverinfo/l10n/hu.json
 nextcloud/apps/serverinfo/l10n/ia.js
@@ -12924,6 +12934,8 @@ nextcloud/core/doc/admin/_sources/installation/deployment_recommendations.txt
 nextcloud/core/doc/admin/_sources/installation/index.txt
 nextcloud/core/doc/admin/_sources/installation/installation_wizard.txt
 nextcloud/core/doc/admin/_sources/installation/nginx.txt
+nextcloud/core/doc/admin/_sources/installation/php_56_installation.txt
+nextcloud/core/doc/admin/_sources/installation/php_70_installation.txt
 nextcloud/core/doc/admin/_sources/installation/selinux_configuration.txt
 nextcloud/core/doc/admin/_sources/installation/source_installation.txt
 nextcloud/core/doc/admin/_sources/installation/system_requirements.txt
@@ -13120,6 +13132,8 @@ nextcloud/core/doc/admin/installation/deployment_recommendations.html
 nextcloud/core/doc/admin/installation/index.html
 nextcloud/core/doc/admin/installation/installation_wizard.html
 nextcloud/core/doc/admin/installation/nginx.html
+nextcloud/core/doc/admin/installation/php_56_installation.html
+nextcloud/core/doc/admin/installation/php_70_installation.html
 nextcloud/core/doc/admin/installation/selinux_configuration.html
 nextcloud/core/doc/admin/installation/source_installation.html
 nextcloud/core/doc/admin/installation/system_requirements.html
@@ -13146,11 +13160,21 @@ nextcloud/core/doc/user/_images/
 nextcloud/core/doc/user/_images/2fa_backupcode_1.png
 nextcloud/core/doc/user/_images/2fa_backupcode_2.png
 nextcloud/core/doc/user/_images/CalDAV_calendar.png
+nextcloud/core/doc/user/_images/KAddressBook.png
+nextcloud/core/doc/user/_images/KOrganizer.png
+nextcloud/core/doc/user/_images/KOrganizer_add_calendar.png
+nextcloud/core/doc/user/_images/KOrganizer_groupware_server.png
+nextcloud/core/doc/user/_images/KOrganizer_pick_resources.png
+nextcloud/core/doc/user/_images/KOrganizer_server_address.png
+nextcloud/core/doc/user/_images/KOrganizer_test1.png
+nextcloud/core/doc/user/_images/KOrganizer_test2.png
 nextcloud/core/doc/user/_images/addressbook_name.png
 nextcloud/core/doc/user/_images/anonym_click_sharing.png
 nextcloud/core/doc/user/_images/anonym_hide_file_listing.png
 nextcloud/core/doc/user/_images/anonym_upload.png
 nextcloud/core/doc/user/_images/anonym_uploaded_files.png
+nextcloud/core/doc/user/_images/app_password_created.png
+nextcloud/core/doc/user/_images/app_password_naming.png
 nextcloud/core/doc/user/_images/apps_menu.png
 nextcloud/core/doc/user/_images/cardbook_icon.png
 nextcloud/core/doc/user/_images/contact_bottombar.png
@@ -13186,6 +13210,8 @@ nextcloud/core/doc/user/_images/files_versioning.png
 nextcloud/core/doc/user/_images/gallery-1.png
 nextcloud/core/doc/user/_images/gallery-2.png
 nextcloud/core/doc/user/_images/hidden_files.png
+nextcloud/core/doc/user/_images/korganizer_credentials.png
+nextcloud/core/doc/user/_images/korganizer_resource_choice.png
 nextcloud/core/doc/user/_images/login_page.png
 nextcloud/core/doc/user/_images/multi_sharing.png
 nextcloud/core/doc/user/_images/new_addressbook.png
@@ -13229,6 +13255,7 @@ nextcloud/core/doc/user/_sources/pim/calendar.txt
 nextcloud/core/doc/user/_sources/pim/contacts.txt
 nextcloud/core/doc/user/_sources/pim/index.txt
 nextcloud/core/doc/user/_sources/pim/sync_ios.txt
+nextcloud/core/doc/user/_sources/pim/sync_kde.txt
 nextcloud/core/doc/user/_sources/pim/sync_osx.txt
 nextcloud/core/doc/user/_sources/pim/sync_thunderbird.txt
 nextcloud/core/doc/user/_sources/pim/troubleshooting.txt
@@ -13358,6 +13385,7 @@ nextcloud/core/doc/user/pim/calendar.html
 nextcloud/core/doc/user/pim/contacts.html
 nextcloud/core/doc/user/pim/index.html
 nextcloud/core/doc/user/pim/sync_ios.html
+nextcloud/core/doc/user/pim/sync_kde.html
 nextcloud/core/doc/user/pim/sync_osx.html
 nextcloud/core/doc/user/pim/sync_thunderbird.html
 nextcloud/core/doc/user/pim/troubleshooting.html
@@ -13653,6 +13681,8 @@ nextcloud/core/js/tests/specs/systemtags/systemtagsinputfieldSpec.js
 nextcloud/core/js/update.js
 nextcloud/core/js/visitortimezone.js
 nextcloud/core/l10n/
+nextcloud/core/l10n/af.js
+nextcloud/core/l10n/af.json
 nextcloud/core/l10n/ar.js
 nextcloud/core/l10n/ar.json
 nextcloud/core/l10n/ast.js
