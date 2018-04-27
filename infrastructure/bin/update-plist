@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.24 2018/04/27 16:46:58 espie Exp $
+# $OpenBSD: update-plist,v 1.25 2018/04/27 16:49:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -257,7 +257,7 @@ sub handle_options
 		    },
 	};
 	$state->SUPER::handle_options('X:P:', 
-	    '[mnx] [-X path] -- pkg_create_args ...');
+	    '[mnx] [-P pkgdir] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 }
 
