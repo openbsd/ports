@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.15 2018/03/12 21:17:27 naddy Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.16 2018/04/27 15:49:56 naddy Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1459,7 +1459,7 @@ nano_SOURCES = browser.c \
+@@ -1461,7 +1461,7 @@ nano_SOURCES = browser.c \
  		utils.c \
  		winio.c
  
@@ -11,7 +11,7 @@ Index: src/Makefile.in
  		$(LIB_CLOCK_GETTIME) $(LIBTHREAD)
  
  all: all-am
-@@ -1794,7 +1794,7 @@ winio.o: revision.h
+@@ -1796,7 +1796,7 @@ winio.o: revision.h
  
  # Always run the commands in this rule.  But update the target
  # only when the revision actually changed.
