@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.21 2018/04/27 14:43:34 espie Exp $
+# $OpenBSD: update-plist,v 1.22 2018/04/27 15:01:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -301,6 +301,16 @@ sub copy_annotations
 {
 	my ($self, $plist) = @_;
 	$self->clone->add_object($plist);
+}
+
+sub perform_backsubst
+{
+	&OpenBSD::PackingElement::Object::perform_backsubst;
+}
+
+package OpenBSD::PackingElement::UniqueOption;
+sub perform_backsubst
+{
 }
 
 package OpenBSD::PackingElement::CVSTag;
