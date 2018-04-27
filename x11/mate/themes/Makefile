@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/10 15:07:17 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/27 12:09:37 robert Exp $
 
 COMMENT=		standard MATE themes
 
 MATE_PROJECT=		mate-themes
-MATE_VERSION=		3.22.15
+MATE_VERSION=		3.22.16
 
 MASTER_SITES=		http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
