@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2017/05/02 15:39:54 espie Exp $
+$OpenBSD: patch-Makefile,v 1.5 2018/04/27 14:59:43 bcallah Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -35,8 +35,8 @@ Index: Makefile
  #
  
  CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
--CPPFLAGS += -O3 -Wall -march=native -Wno-parentheses -std=c++0x
-+CPPFLAGS += -Wall -Wno-parentheses -std=c++0x
+-CPPFLAGS += -O3 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
++CPPFLAGS += -Wall -Wextra -Wno-parentheses -std=c++14
  #CPPFLAGS += -g
  
  # Add this for clang
