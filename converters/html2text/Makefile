@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/27 14:48:42 ajacoutot Exp $
 
-PORTROACH=		limit:.*[^a]$$
+PORTROACH=		skipv:1.3.2
 
 COMMENT=		advanced HTML-to-text converter
 
