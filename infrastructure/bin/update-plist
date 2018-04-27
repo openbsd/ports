@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.29 2018/04/27 18:09:44 espie Exp $
+# $OpenBSD: update-plist,v 1.30 2018/04/27 18:22:33 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -278,6 +278,7 @@ sub handle_options
     	$state->{pkgdir} = $state->opt('P');
 }
 
+# copy_extra: stuff that can't be easily deduced but should be copied
 package OpenBSD::PackingElement;
 sub known_object
 {
@@ -311,6 +312,10 @@ sub write_with_frags
 	} else {
 		$o->write($t->default);
 	}
+}
+
+sub copy_extra
+{
 }
 
 # objects are (mostly) stuff with paths that can get substs...
@@ -459,6 +464,17 @@ sub perform_backsubst
 	}
 }
 
+package OpenBSD::PackingElement::Extra;
+sub copy_extra
+{
+	my ($self, $plist) = @_;
+
+	if ($self->name !~ /^\// && $self->cwd ne $plist->{state}->cwd) {
+	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
+	}
+	$self->clone->add_object($plist);
+}
+
 package UpdatePlist;
 use  File::Basename;
 use File::Compare;
@@ -600,6 +616,8 @@ for my $i (1, 2) {
 for my $p (@lists) {
 	delete $p->nlist->{name};
 	$p->olist->copy_annotations($p->nlist);
+	# that stuff might have cwd, so we copy it late
+	$p->olist->copy_extra($p->nlist);
 }
 
 for my $p (@lists) {
