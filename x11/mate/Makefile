@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/30 21:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/04/27 12:56:37 robert Exp $
 
      SUBDIR =
      SUBDIR += atril
@@ -23,6 +23,7 @@
      SUBDIR += screensaver
      SUBDIR += session-manager
      SUBDIR += settings-daemon
+     SUBDIR += system-monitor
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += utils
