@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.26 2018/04/27 17:14:56 espie Exp $
+# $OpenBSD: update-plist,v 1.27 2018/04/27 17:23:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -512,40 +512,43 @@ $state->say("Matching objects");
 #}
 
 $state->say("Copying objects");
-for my $path (sort keys %$objects) {
-	if ($exact->{$path}) {
-		# this will be re-added to multiple paths if there are
-		# multiple matching plists
-		for my $e (@{$exact->{$path}}) {
-			$e->{found} = 1;
-			my $s = $e->{comesfrom};
-			$e->add_object($s->nlist);
+for my $i (1, 2) {
+	for my $path (sort keys %$objects) {
+		my $o = $objects->{$path};
+		next unless $o->stage == $i;
+		if ($exact->{$path}) {
+			# this will be re-added to multiple paths if there are
+			# multiple matching plists
+			for my $e (@{$exact->{$path}}) {
+				$e->{found} = 1;
+				my $s = $e->{comesfrom};
+				$e->add_object($s->nlist);
+			}
+			next;
 		}
-		next;
-	}
 
-	# we didn't find it so we must create a new one
-	my $o = $objects->{$path};
-	# go up dir until we find a matching approximate dir
-	my $d = $path;
-	while (1) {
-		$d = dirname($d);
-		last if $d eq '/';
-		next unless exists $approximate->{$d};
-		my @l = values %{$approximate->{$d}};
-		# if we do, we only write non ambiguous names
-		if (@l == 1) {
-			my $s = $l[0]->{comesfrom};
-			my $a =$o->element_class->add($s->nlist, 
-			    $s->strip_prefix($path));
-			# and match the file
-			$a->{file} = $s->{file};
-			last;
+		# we didn't find it so we must create a new one
+		# go up dir until we find a matching approximate dir
+		my $d = $path;
+		while (1) {
+			$d = dirname($d);
+			last if $d eq '/';
+			next unless exists $approximate->{$d};
+			my @l = values %{$approximate->{$d}};
+			# if we do, we only write non ambiguous names
+			if (@l == 1) {
+				my $s = $l[0]->{comesfrom};
+				my $a =$o->element_class->add($s->nlist, 
+				    $s->strip_prefix($path));
+				# and match the file
+				$a->{file} = $s->{file};
+				last;
+			}
 		}
+		# last resort
+		$o->element_class->add($lists[0]->nlist, 
+		    $lists[0]->strip_prefix($path));
 	}
-	# last resort
-	$o->element_class->add($lists[0]->nlist, 
-	    $lists[0]->strip_prefix($path));
 }
 
 for my $p (@lists) {
