@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.6 2018/04/27 12:19:24 espie Exp $
+# $OpenBSD: FS2.pm,v 1.7 2018/04/27 17:22:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -86,6 +86,11 @@ sub fill_objdump
 	$data->{objdump} = $check;
 }
 
+sub stage
+{
+	1;
+}	
+
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
 sub recognize
@@ -111,6 +116,11 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::RcScript';
+}
+
+sub stage
+{
+	2;
 }
 
 package OpenBSD::FS::File::Binary;
