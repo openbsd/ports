@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/31 06:32:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/27 18:04:21 solene Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
-
 V =			1.5.0
 DISTNAME =		abcl-src-${V}
+REVISION =		0
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
 
@@ -11,7 +11,7 @@ CATEGORIES =		lang
 
 HOMEPAGE =		http://common-lisp.net/project/armedbear/
 
-MAINTAINER =		Timo Myyra <timo.myyra@wickedbsd.net>
+MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
