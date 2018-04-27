@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.30 2018/04/27 18:22:33 espie Exp $
+# $OpenBSD: update-plist,v 1.31 2018/04/27 18:23:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -472,6 +472,7 @@ sub copy_extra
 	if ($self->name !~ /^\// && $self->cwd ne $plist->{state}->cwd) {
 	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
 	}
+	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
 
