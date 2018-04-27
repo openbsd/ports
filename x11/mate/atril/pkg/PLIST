@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/10 15:07:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/27 11:00:35 robert Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -106,9 +106,6 @@ lib/pkgconfig/atril-view-1.5.0.pc
 share/appdata/atril.appdata.xml
 share/applications/atril.desktop
 share/atril/
-share/atril/atril-previewer-ui.xml
-share/atril/atril-toolbar.xml
-share/atril/atril-ui.xml
 share/atril/hand-open.png
 share/atril/icons/
 share/atril/icons/hicolor/
