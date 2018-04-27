@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2012/08/27 06:19:48 ajacoutot Exp $
---- configure.orig	Thu Apr 26 10:27:12 2012
-+++ configure	Thu Aug 16 18:00:15 2012
-@@ -15761,7 +15761,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2018/04/27 17:22:27 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -16362,7 +16362,7 @@ fi
  	for ac_header in rpc/rpc.h rpc/pmap_prot.h rpcsvc/rquota.h
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
