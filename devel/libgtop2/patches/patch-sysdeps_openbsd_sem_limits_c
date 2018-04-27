@@ -1,15 +1,50 @@
-$OpenBSD: patch-sysdeps_openbsd_sem_limits_c,v 1.1 2017/11/08 15:26:12 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_sem_limits_c,v 1.2 2018/04/27 10:20:03 robert Exp $
 
 Index: sysdeps/openbsd/sem_limits.c
 --- sysdeps/openbsd/sem_limits.c.orig
 +++ sysdeps/openbsd/sem_limits.c
-@@ -56,6 +56,9 @@ static struct nlist nlst [] = {
+@@ -45,27 +45,33 @@ static unsigned long _glibtop_sysdeps_sem_limits =
+  * since `seminfo' is already declared external in <sys/sem.h>. */
+ static struct seminfo _seminfo;
+ 
+-/* nlist structure for kernel access */
+-static struct nlist nlst [] = {
+-	{ "_seminfo" },
+-	{ 0 }
+-};
+-
+ /* Init function. */
+ 
  void
  _glibtop_init_sem_limits_p (glibtop *server)
  {
-+	/* XXXKVM */
-+	return;
+-	if (kvm_nlist (server->machine->kd, nlst) < 0) {
+-		glibtop_warn_io_r (server, "kvm_nlist (sem_limits)");
++	int mib[3];
++	struct sem_sysctl_info *semsi;
 +
- 	if (kvm_nlist (server->machine->kd, nlst) < 0) {
- 		glibtop_warn_io_r (server, "kvm_nlist (sem_limits)");
++	size_t len = sizeof(struct seminfo);
++
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_SYSVIPC_INFO;
++	mib[2] = KERN_SYSVIPC_SEM_INFO;
++
++	if ((semsi = malloc(len)) == NULL) {
++		glibtop_warn_io_r (server, "malloc (shm_limits)");
  		return;
+ 	}
+ 
+-	if (kvm_read (server->machine->kd, nlst [0].n_value,
+-		      &_seminfo, sizeof (_seminfo)) != sizeof (_seminfo)) {
+-		glibtop_warn_io_r (server, "kvm_read (seminfo)");
++	if (sysctl(mib, 3, semsi, &len, NULL, 0) < 0) {
++		glibtop_warn_io_r (server, "sysctl (shm_limits)");
+ 		return;
+ 	}
++
++	_seminfo = semsi->seminfo;
++
++	free (semsi);
+ 
+ 	server->sysdeps.sem_limits = _glibtop_sysdeps_sem_limits;
+ }

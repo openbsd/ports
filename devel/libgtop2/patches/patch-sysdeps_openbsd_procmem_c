@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.10 2017/11/08 15:26:12 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.11 2018/04/27 10:20:03 robert Exp $
 Index: sysdeps/openbsd/procmem.c
 --- sysdeps/openbsd/procmem.c.orig
 +++ sysdeps/openbsd/procmem.c
@@ -10,13 +10,3 @@ Index: sysdeps/openbsd/procmem.c
  #include <uvm/uvm.h>
  
  /* Fixme ... */
-@@ -111,6 +112,9 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
- 
- 	/* It does not work for the swapper task. */
- 	if (pid == 0) return;
-+
-+        /* XXXKVM */
-+        return;
- 
- 	/* Get the process data */
- 	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid,

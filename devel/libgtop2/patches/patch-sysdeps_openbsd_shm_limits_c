@@ -1,15 +1,49 @@
-$OpenBSD: patch-sysdeps_openbsd_shm_limits_c,v 1.1 2017/11/08 15:26:12 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_shm_limits_c,v 1.2 2018/04/27 10:20:03 robert Exp $
 
 Index: sysdeps/openbsd/shm_limits.c
 --- sysdeps/openbsd/shm_limits.c.orig
 +++ sysdeps/openbsd/shm_limits.c
-@@ -50,6 +50,9 @@ static struct nlist nlst [] = {
+@@ -39,27 +39,32 @@ static unsigned long _glibtop_sysdeps_shm_limits =
+  * since `shminfo' is already declared external in <sys/shm.h>. */
+ static struct shminfo _shminfo;
+ 
+-/* nlist structure for kernel access */
+-static struct nlist nlst [] = {
+-	{ "_shminfo" },
+-	{ 0 }
+-};
+-
+ /* Init function. */
+ 
  void
  _glibtop_init_shm_limits_p (glibtop *server)
  {
-+	/* XXXKVM */
-+	return;
+-	if (kvm_nlist (server->machine->kd, nlst) < 0) {
+-		glibtop_warn_io_r (server, "kvm_nlist (shm_limits)");
++	int mib[3];
++	struct shm_sysctl_info *shmsi;
++	size_t len = sizeof(struct shminfo);
 +
- 	if (kvm_nlist (server->machine->kd, nlst) < 0) {
- 		glibtop_warn_io_r (server, "kvm_nlist (shm_limits)");
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_SYSVIPC_INFO;
++	mib[2] = KERN_SYSVIPC_SHM_INFO;
++
++	if ((shmsi = malloc(len)) == NULL) {
++		glibtop_warn_io_r (server, "malloc (shm_limits)");
  		return;
+ 	}
+ 
+-	if (kvm_read (server->machine->kd, nlst [0].n_value,
+-		      &_shminfo, sizeof (_shminfo)) != sizeof (_shminfo)) {
+-		glibtop_warn_io_r (server, "kvm_read (shminfo)");
++	if (sysctl(mib, 3, shmsi, &len, NULL, 0) < 0) {
++		glibtop_warn_io_r (server, "sysctl (shm_limits)");
+ 		return;
+ 	}
++
++	_shminfo = shmsi->shminfo;
++
++	free (shmsi);
+ 
+ 	server->sysdeps.shm_limits = _glibtop_sysdeps_shm_limits;
+ }
