@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.16 2018/04/27 11:00:30 espie Exp $
+# $OpenBSD: update-plist,v 1.17 2018/04/27 13:00:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -90,9 +90,22 @@ sub add
 	}
 	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
 	} else {
-		push(@{$self->{l}}, $k);
+		unshift(@{$self->{l}}, $k);
 	}
 	$self->{delegate}->add($k, $v);
+}
+
+sub value
+{
+	my ($self, $k) = @_;
+	$k =~ s/\^//;
+	return $self->{delegate}->value($k);
+}
+
+sub never_add
+{
+	my ($subst, $k) = @_;
+	return $k eq 'REVISION' || $k eq 'FULLPKGNAME';
 }
 
 # this has to call self's add in order for reverse_subst to work properly
@@ -201,6 +214,39 @@ sub perform_backsubst
 {
 }
 
+sub do_backsubst
+{
+	my ($self, $string, $subst) = @_;
+	for my $k (@{$subst->{l}}) {
+		# don't add subst on THOSE variables
+		if ($subst->never_add($k)) {
+			next unless defined $self->{unsubst} &&
+			    $self->{unsubst} =~ m/\$\{\Q$k\E\}/;
+		}
+		if ($k =~ m/^\^(.*)$/) {
+			my $k2 = $1;
+			my $v = $subst->value($k2);
+			next if $v eq '';
+			$string =~ s/^\Q$v\E/\$\{\Q$k2\E\}/g;
+		} else {
+			my $v = $subst->value($k);
+			next if $v eq '';
+			$string =~ s/\Q$v\E/\$\{\Q$k\E\}/g;
+		}
+	}
+	return $string;
+}
+
+# objects are (mostly) stuff with paths that can get substs...
+package OpenBSD::PackingElement::Object;
+sub perform_backsubst
+{
+	my ($self, $s) = @_;
+
+	$self->{name} = $self->do_backsubst($self->{name}, $s);
+
+}
+
 package OpenBSD::PackingElement::Meta;
 sub copy_annotations
 {
@@ -302,7 +348,10 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 	if ($self->name =~ m,^(.*)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
-		$self->{name} = "$1lib$2.so.\$\{LIB$2_VERSION\}";
+		$self->{name} = $self->do_backsubst("$1lib$2.so.", $s).
+		    "\$\{LIB$2_VERSION\}";
+	} else {
+		$self->SUPER::perform_backsubst($s);
 	}
 }
 
