@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.22 2018/04/27 15:01:53 espie Exp $
+# $OpenBSD: update-plist,v 1.23 2018/04/27 15:04:59 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -294,6 +294,16 @@ sub perform_backsubst
 
 	$self->{name} = $s->do_backsubst($self->{name}, $self);
 
+}
+
+# dir-like objects HAVE a / added at the end...
+package OpenBSD::PackingElement::Object;
+sub perform_backsubst
+{
+	my ($self, $s) = @_;
+
+	$self->{name} = $s->do_backsubst($self->{name}.'/', $self);
+	$self->{name} =~ s/\/$//;
 }
 
 package OpenBSD::PackingElement::Meta;
