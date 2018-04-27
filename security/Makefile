@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2018/04/26 15:08:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.503 2018/04/27 07:27:56 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -385,6 +385,7 @@
      SUBDIR += vault
      SUBDIR += volatility
      SUBDIR += vpnc
+     SUBDIR += wapiti
      SUBDIR += wpa_supplicant
      SUBDIR += xca
      SUBDIR += xmlsec
