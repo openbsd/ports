@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/08 09:14:11 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/27 15:17:15 jasper Exp $
 
 COMMENT =	utility to optimize jpeg files
 
-DISTNAME =	jpegoptim-1.4.4
+DISTNAME =	jpegoptim-1.4.6
 
 CATEGORIES =	graphics
 
