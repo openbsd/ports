@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2018/04/27 08:52:56 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -24,6 +24,8 @@ SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
 
 HOMEPAGE=		http://gegl.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes

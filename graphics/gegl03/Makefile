@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2018/04/22 13:31:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2018/04/27 08:52:56 ajacoutot Exp $
+
+PORTROACH=		limit:^0\.3
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
@@ -15,6 +17,8 @@ SUBST_VARS=		API_VERSION
 CATEGORIES=		graphics devel
 
 HOMEPAGE=		http://gegl.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
