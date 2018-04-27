@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.20 2018/04/27 14:21:42 espie Exp $
+# $OpenBSD: update-plist,v 1.21 2018/04/27 14:43:34 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -107,8 +107,17 @@ my $ignore = {
 	MAINTAINER => 1,
 	PERMIT_PACKAGE_CDROM => 1,
 	PERMIT_PACKAGE_FTP => 1,
-	HOMEPAGE => 1
+	HOMEPAGE => 1,
+	REVISION => 1,
+	EPOCH => 1,
 };
+
+my $special = {
+	FULLPKGNAME => 1,
+	MACHINE_ARCH => 1,
+	ARCH => 1,
+};
+
 
 sub add
 {
@@ -135,7 +144,7 @@ sub value
 sub never_add
 {
 	my ($subst, $k) = @_;
-	return $k eq 'REVISION' || $k eq 'FULLPKGNAME' || $k eq 'EPOCH';
+	return $special->{$k};
 }
 
 # this has to call self's add in order for reverse_subst to work properly
