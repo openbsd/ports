@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.25 2018/04/27 16:49:45 espie Exp $
+# $OpenBSD: update-plist,v 1.26 2018/04/27 17:14:56 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -104,7 +104,7 @@ package ReverseSubst;
 our @ISA = qw(Forwarder);
 sub new
 {
-	bless {delegate => OpenBSD::Subst->new, l => []}, shift;
+	bless {delegate => OpenBSD::Subst->new, used => {}, l => []}, shift;
 }
 
 my $ignore = {
@@ -191,10 +191,21 @@ our @ISA = qw(OpenBSD::PkgCreate);
 # unsubst is the full name before substitution
 sub annotate
 {
-	my ($self, $e, $unsubst, $file) = @_;
-	$e->{unsubst} = $unsubst;
+	my ($self, $e, $s, $file) = @_;
+	$e->{unsubst} = $s;
 	$e->{file} = $file;
 	$e->{comesfrom} = $self;
+
+	# so we redo what subst does, but we mark it!
+
+	return $s unless $s =~ m/\$/o;	# optimization
+	my $subst = $self->{state}{subst};
+	while ( my $k = ($s =~ m/\$\{([A-Za-z_][^\}]*)\}/o)[0] ) {
+		my $v = $subst->value($k);
+		$subst->{used}{$k} = 1;
+		unless ( defined $v ) { $v = "\$\\\{$k\}"; }
+		$s =~ s/\$\{\Q$k\E\}/$v/g;
+	}
 }
 
 # okay, so that plist doesn't exist, wouhou, I don't care,
