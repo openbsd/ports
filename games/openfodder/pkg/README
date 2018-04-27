@@ -1,0 +1,35 @@
+$OpenBSD: README,v 1.1.1.1 2018/04/27 16:51:11 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenFodder
+==========
+OpenFodder requires the original game files from Cannon Fodder to work
+properly.  These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_cannon_fodder_2.0.0.3.exe using the innoextract package. The
+files will be in a directory named app. You must copy the CF_ENG.DAT
+file from the app directory to ~/.local/share/OpenFodder/Data/Dos_CD
+for the game to work. Additionally, you must copy the
+${TRUEPREFIX}/share/OpenFodder/Campaigns directory to the
+~/.local/share/OpenFodder directory. Finally, a Saves directory should
+be created.
+
+The easiest way to do this is to follow these steps:
+$ mkdir -p ~/.local/share/OpenFodder/Data/Dos_CD
+$ innoextract setup_cannon_fodder_2.0.0.3.exe
+$ cp app/CD_ENG.DAT ~/.local/share/OpenFodder/Data/Dos_CD
+$ cp -R ${TRUEPREFIX}/share/OpenFodder/Campaigns ~/.local/share/OpenFodder
+$ mkdir -p ~/.local/share/OpenFodder/Saves
+
+You may then delete everything else extracted from the exe.
+
+If you would like a global installation of the game files, copy the
+CF_ENG.DAT file to ${TRUEPREFIX}/share/OpenFodder/Data/Dos_CD instead.
+
+If you have the Amiga version, please see
+${TRUEPREFIX}/share/doc/openfodder/README.md for instructions on where
+to put the data files.

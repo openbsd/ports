@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 16:51:11 bcallah Exp $
+bin/OpenFodder
+share/OpenFodder/
+share/OpenFodder/Campaigns/
+share/OpenFodder/Campaigns/Amiga Format Christmas Special.ofc
+share/OpenFodder/Campaigns/Cannon Fodder 2.ofc
+share/OpenFodder/Campaigns/Cannon Fodder Plus.ofc
+share/OpenFodder/Campaigns/Cannon Fodder.ofc
+share/OpenFodder/Campaigns/segras/
+share/OpenFodder/Campaigns/segras.ofc
+share/OpenFodder/Campaigns/segras/alessandro.map
+share/OpenFodder/Campaigns/segras/alessandro.spt
+share/OpenFodder/Campaigns/segras/segras first.map
+share/OpenFodder/Campaigns/segras/segras first.spt
+share/OpenFodder/Data/
+share/OpenFodder/Data/Amiga/
+share/OpenFodder/Data/Amiga/_AmigaDataHere
+share/OpenFodder/Data/AmigaFormat_XMAS/
+share/OpenFodder/Data/AmigaFormat_XMAS/_AmigaFormatXMASDataHere
+share/OpenFodder/Data/Amiga_CD/
+share/OpenFodder/Data/Amiga_CD/_AmigaCD32DataHere
+share/OpenFodder/Data/Custom/
+share/OpenFodder/Data/Custom/Maps/
+share/OpenFodder/Data/Custom/Maps/Segras First.map
+share/OpenFodder/Data/Custom/Maps/Segras First.spt
+share/OpenFodder/Data/Custom/Maps/alessandro.map
+share/OpenFodder/Data/Custom/Maps/alessandro.spt
+share/OpenFodder/Data/Dos2_CD/
+share/OpenFodder/Data/Dos2_CD/_Dos2CDDataHere
+share/OpenFodder/Data/Dos_CD/
+share/OpenFodder/Data/Dos_CD/_DosCDDataHere
+share/OpenFodder/Data/Plus/
+share/OpenFodder/Data/Plus/_PlusDataHere
+share/OpenFodder/Data/WAV/
+share/OpenFodder/Data/WAV/_AmigaWAVAudioHere
+@bin share/OpenFodder/OpenFodder
+share/OpenFodder/README.md
+share/OpenFodder/Saves/
+share/OpenFodder/Saves/_SavesHere
+share/doc/openfodder/
+share/doc/openfodder/README.md
+share/doc/pkg-readmes/${FULLPKGNAME}
