@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2018/03/19 18:28:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2018/04/27 15:12:00 jasper Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v0.26.3
+GH_TAGNAME =		v0.27.0
 
-SHARED_LIBS +=  git2                      10.0 # 0.25
+SHARED_LIBS +=  git2                      11.0 # 0.25
 
 MODULES=		devel/cmake \
 			lang/python
