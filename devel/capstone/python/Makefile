@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2017/11/06 08:54:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/27 06:10:49 bentley Exp $
 
 COMMENT =	Python bindings for capstone
+
+REVISION =	0
 
 MODPY_EGG_VERSION = ${VERSION}
 

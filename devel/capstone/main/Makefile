@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2017/11/06 08:54:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/27 06:10:49 bentley Exp $
 
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
