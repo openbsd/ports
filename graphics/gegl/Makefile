@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/04/27 08:52:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2018/04/27 09:08:08 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -17,8 +17,8 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		6
-REVISION-plugins=	9
+REVISION-main=		7
+REVISION-plugins=	10
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
