@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/08 08:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/04/27 11:16:32 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.22.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -32,8 +32,7 @@ WANTLIB += Xtst ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 
-RUN_DEPENDS=	devel/py-gobject3 \
-		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gtk+3
@@ -48,7 +47,8 @@ CONFIGURE_ARGS=	--disable-glade-catalog \
 
 # we need support for both python2 and python3
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
-RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
+RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2} \
+		devel/py-gobject3
 WANTLIB +=	python${MODPY_DEFAULT_VERSION_2}
 
 post-install:
