@@ -1,0 +1,16 @@
+$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
+
+fix libXrandr library name
+
+Index: platform/x11/os_x11.cpp
+--- platform/x11/os_x11.cpp.orig
++++ platform/x11/os_x11.cpp
+@@ -160,7 +160,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+ 	int xrandr_minor = 0;
+ 	int event_base, error_base;
+ 	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
+-	xrandr_handle = dlopen("libXrandr.so.2", RTLD_LAZY);
++	xrandr_handle = dlopen("libXrandr.so", RTLD_LAZY);
+ 	if (!xrandr_handle) {
+ 		err = dlerror();
+ 		fprintf(stderr, "could not load libXrandr.so.2, Error: %s\n", err);

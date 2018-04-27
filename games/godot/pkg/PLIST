@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
+@bin bin/godot
