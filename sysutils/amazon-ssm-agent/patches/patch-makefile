@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.5 2017/09/15 07:20:56 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.6 2018/04/27 08:02:47 ajacoutot Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
@@ -15,7 +15,7 @@ Index: makefile
 -build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386 build-arm
 +build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386 build-arm
  
- prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386 prepack-arm
+ prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
  
 @@ -126,6 +126,22 @@ build-freebsd: checkstyle copy-src pre-build
  			$(BGO_SPACE)/agent/cli-main/cli-main.go

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/14 23:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/04/27 08:02:47 ajacoutot Exp $
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		2.2.392.0
+GH_TAGNAME=		2.2.493.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
-REVISION=		0
 
 CATEGORIES=		sysutils
 
