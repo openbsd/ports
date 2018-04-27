@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/02/18 19:55:05 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2018/04/27 18:36:17 phessler Exp $
 
 COMMENT=		JSON implementation in C
 
-DISTNAME=		json-c-0.13
+DISTNAME=		json-c-0.13.1
 CATEGORIES=		devel
 
-SHARED_LIBS=		json-c	1.0	# 3.1
+SHARED_LIBS=		json-c	1.1	# 4.0
 
 HOMEPAGE=		https://github.com/json-c/json-c/wiki
 
