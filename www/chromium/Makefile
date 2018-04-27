@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2018/04/26 19:41:38 robert Exp $
+# $OpenBSD: Makefile,v 1.370 2018/04/27 14:47:00 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,8 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			66.0.3359.117
-REVISION=		1
+V=			66.0.3359.139
 
 DISTNAME=		chromium-${V}
 
@@ -42,8 +41,8 @@ PATCH_LIST=	patch-* clang-*
 .endif                      
 
 # XXX Missing directory from distfile
-PATCHFILES+=		add-missing-blink-tools.patch:0	
-PATCH_DIST_STRIP=	-p1
+#PATCHFILES+=		add-missing-blink-tools.patch:0	
+#PATCH_DIST_STRIP=	-p1
 
 PATCHORIG=	.orig.port
 

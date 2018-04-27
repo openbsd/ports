@@ -1,4 +1,2 @@
-SHA256 (add-missing-blink-tools.patch) = 2vzft6kPdy9E2F2WOhd3iz7fv3lzwevus6qmZ16gosY=
-SHA256 (chromium-66.0.3359.117.tar.xz) = d8WjNGRP3DA2l7OGTJprcJzuI+44T0E0MI6CCvRWjtY=
-SIZE (add-missing-blink-tools.patch) = 48492
-SIZE (chromium-66.0.3359.117.tar.xz) = 583947452
+SHA256 (chromium-66.0.3359.139.tar.xz) = vnWltfjFeJ01kjjzdKQ79S3tSUJfE+1ouAIcJOLiZLI=
+SIZE (chromium-66.0.3359.139.tar.xz) = 583978636
