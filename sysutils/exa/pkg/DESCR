@@ -1,0 +1,3 @@
+exa is a replacement for ls written in Rust. Its options are similar to the
+regular ls, but it also adds lots of fancy features like tree traversing,
+colors, git support, sorting options..
