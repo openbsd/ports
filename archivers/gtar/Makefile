@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2016/06/03 14:53:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2018/04/27 13:08:28 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.29
+DISTNAME=	tar-1.30
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
@@ -54,6 +54,11 @@ TEST_ENV+=	M4=${LOCALBASE}/bin/gm4
 
 # do not rebuild tar.info
 post-patch:
+	cd ${WRKSRC}/doc && touch -r stamp-vti version.texi *.info*
 	touch -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
+
+# numeric.at needs a working chown
+pre-test:
+	@rm -f ${WRKDIR}/bin/chown
 
 .include <bsd.port.mk>
