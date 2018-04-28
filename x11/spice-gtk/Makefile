@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/04/23 10:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2018/04/28 08:28:53 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -39,7 +39,8 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
 		devel/spice-protocol>=0.12.11 \
-		sysutils/usbutils
+		sysutils/usbutils \
+		textproc/asciidoc
 
 RUN_DEPENDS=	devel/spice-protocol>=0.12.11 \
 		sysutils/usbutils
