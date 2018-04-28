@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.32 2018/04/28 10:19:44 espie Exp $
+# $OpenBSD: update-plist,v 1.33 2018/04/28 14:35:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -104,7 +104,16 @@ package ReverseSubst;
 our @ISA = qw(Forwarder);
 sub new
 {
-	bless {delegate => OpenBSD::Subst->new, used => {}, l => []}, shift;
+	bless {delegate => OpenBSD::Subst->new, 
+	    # count the number of times we see each value. More than once,
+	    # hard to figure out WHICH one to backsubst
+	    count => {}, 
+	    # note that a variable is actually used. Then if we see the
+	    # string and no backsubst, it's probably intentional
+	    used => {}, 
+	    # list of actual variables we care about, e.g., ignored stuff
+	    # and whatnot
+	    l => []}, shift;
 }
 
 my $ignore = {
@@ -131,10 +140,12 @@ sub add
 	# so ignore them
 	if ($k eq 'FLAVORS') {
 		$self->{l} = [];
+		$self->{count} = {};
 	}
 	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
 	} else {
 		unshift(@{$self->{l}}, $k);
+		$self->{count}{$v}++;
 	}
 	$self->{delegate}->add($k, $v);
 }
@@ -148,8 +159,12 @@ sub value
 
 sub never_add
 {
-	my ($subst, $k) = @_;
-	return $special->{$k};
+	my ($self, $k) = @_;
+	if ($self->{count}{$self->value($k)} > 1) {
+		return 1;
+	} else {
+		return $special->{$k};
+	}
 }
 
 # this has to call self's add in order for reverse_subst to work properly
