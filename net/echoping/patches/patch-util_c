@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_c,v 1.1 2018/04/28 20:33:55 tb Exp $
+
+Index: util.c
+--- util.c.orig
++++ util.c
+@@ -13,7 +13,7 @@ random_string (unsigned length)
+ {
+ 
+   char *state = (char *) malloc (sizeof (char) * STATES);
+-  char *result = (char *) malloc (length);
++  char *result = (char *) malloc (length + 1);
+   int i, number;
+   unsigned seed = (unsigned) time ((time_t *) NULL);
+ 
