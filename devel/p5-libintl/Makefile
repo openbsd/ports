@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/02 17:54:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2018/04/28 14:00:04 ajacoutot Exp $
 
 COMMENT=	internationalization library written in Perl
 
-V=		1.27
+V=		1.29
 DISTNAME=	libintl-perl-${V}
 PKGNAME=	p5-libintl-${V}
 CATEGORIES=	devel
