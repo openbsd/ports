@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/12/26 07:36:24 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/04/28 10:41:04 pvk Exp $
 lib/python${MODPY_VERSION}/site-packages/py/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,14 +11,11 @@ lib/python${MODPY_VERSION}/site-packages/py/__metainfo.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}__metainfo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_apipkg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_builtin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_iniconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_std.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_xmlgen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/py/_apipkg.py
 lib/python${MODPY_VERSION}/site-packages/py/_builtin.py
 lib/python${MODPY_VERSION}/site-packages/py/_code/
 lib/python${MODPY_VERSION}/site-packages/py/_code/__init__.py
@@ -37,7 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/py/_code/assertion.py
 lib/python${MODPY_VERSION}/site-packages/py/_code/code.py
 lib/python${MODPY_VERSION}/site-packages/py/_code/source.py
 lib/python${MODPY_VERSION}/site-packages/py/_error.py
-lib/python${MODPY_VERSION}/site-packages/py/_iniconfig.py
 lib/python${MODPY_VERSION}/site-packages/py/_io/
 lib/python${MODPY_VERSION}/site-packages/py/_io/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}/
@@ -81,5 +77,13 @@ lib/python${MODPY_VERSION}/site-packages/py/_process/cmdexec.py
 lib/python${MODPY_VERSION}/site-packages/py/_process/forkedfunc.py
 lib/python${MODPY_VERSION}/site-packages/py/_process/killproc.py
 lib/python${MODPY_VERSION}/site-packages/py/_std.py
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/${MODPY_PYCACHE}apipkg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/${MODPY_PYCACHE}iniconfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/apipkg.py
+lib/python${MODPY_VERSION}/site-packages/py/_vendored_packages/iniconfig.py
 lib/python${MODPY_VERSION}/site-packages/py/_xmlgen.py
 lib/python${MODPY_VERSION}/site-packages/py/test.py
