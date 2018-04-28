@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2018/04/28 20:50:52 jca Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4432,9 +4432,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+ int
+ main ()
+ {
+-pow(a,b)
++return pow(a,b)
+   ;
+-  return 0;
+ }
+ _ACEOF
+ rm -f conftest.$ac_objext conftest$ac_exeext

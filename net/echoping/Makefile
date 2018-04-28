@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/28 20:33:55 tb Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/28 20:50:52 jca Exp $
 
 COMMENT=	test performance of a remote TCP service
 
 VERSION=	5.2.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	echoping-${VERSION}
 CATEGORIES=	net
 
