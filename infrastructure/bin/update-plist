@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.34 2018/04/28 14:39:20 espie Exp $
+# $OpenBSD: update-plist,v 1.35 2018/04/28 15:07:38 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -186,18 +186,38 @@ sub do_backsubst
 			# not used already, then we don't try to use it
 			next if defined $self->{unsubst} &&
 			    $subst->{used}{$k} &&
-			    $self->{unsubst} !~ m/\$\{\Q$k\E\}/;
+			    $self->{unsubst} !~ m/\$\{$k\}/;
 		}
 		    	
 		if ($k =~ m/^\^(.*)$/) {
 			my $k2 = $1;
 			my $v = $subst->value($k2);
-			next if $v eq '';
-			$string =~ s/^\Q$v\E/\$\{\Q$k2\E\}/g;
+			# Empty variable at start of string
+			# if it was already there we do it again
+			if ($v eq '') {
+				if (defined $self->{unsubst} &&
+				    $self->{unsubst} =~ m/^\$\{$k2\}/) {
+				    	$string =~ s/^/\$\{$k2\}/;
+				}
+			} else {
+				$string =~ s/^\Q$v\E/\$\{$k2\}/g;
+			}
 		} else {
 			my $v = $subst->value($k);
-			next if $v eq '';
-			$string =~ s/\Q$v\E/\$\{\Q$k\E\}/g;
+			# Empty variable somewhere in the string
+			# if it was already there, we try to locate
+			# the same prefix and apply it
+			if ($v eq '') {
+				if (defined $self->{unsubst} &&
+				    $self->{unsubst} =~ m/^(.*)\$\{$k\}/) {
+				    	my $prefix = $1;
+					# XXX hack around @keyword
+					$prefix =~ s/^\@\S+\s+//;
+				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k\}/;
+				}
+			} else {
+				$string =~ s/\Q$v\E/\$\{$k\}/g;
+			}
 		}
 	}
 	return $string;
