@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.605 2018/04/26 20:30:23 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.606 2018/04/28 10:13:48 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -526,6 +526,7 @@ my $stem_extensions = {
 	'pecl-swish' => 'pecl56-swish',
 	'pecl-uploadprogress' => 'pecl56-uploadprogress',
 	'rope' => 'py-rope',
+	'py-upt-rubygems' => 'upt-rubygems',
 };
 
 my $obsolete_reason = {

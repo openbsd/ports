@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/27 16:33:27 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/28 10:13:47 danj Exp $
 
 COMMENT =		RubyGems frontend for upt
 
 MODPY_EGG_VERSION =	0.1.1
 DISTNAME =		upt-rubygems-${MODPY_EGG_VERSION}
-PKGNAME =		py-upt-rubygems-${MODPY_EGG_VERSION}
+
+REVISION =		0
 
 HOMEPAGE =		https://framagit.org/upt/upt-rubygems
 
