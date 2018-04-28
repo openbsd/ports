@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.16 2018/04/26 11:37:42 espie Exp $
+# $OpenBSD: make-plist,v 1.17 2018/04/28 14:52:33 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -99,10 +99,10 @@ sub reverse
 		if ($k =~ m/^\^(.*)$/) {
 			my $k2 = $1;
 			my $v = $self->{h}->{$k2};
-			$path =~ s/^\Q$v\E/\$\{\Q$k2\E\}/g;
+			$path =~ s/^\Q$v\E/\$\{$k2\}/g;
 		} else {
 			my $v = $self->{h}->{$k};
-			$path =~ s/\Q$v\E/\$\{\Q$k\E\}/g;
+			$path =~ s/\Q$v\E/\$\{$k\}/g;
 		}
 	}
 	return $path;
