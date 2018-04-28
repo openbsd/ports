@@ -1,49 +1,40 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/19 09:54:42 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/28 14:57:32 landry Exp $
 
-V =			0.3.8
+V =			0.3.9
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
+EXTRACT_SUFX =		.tar.xz
 
 HOMEPAGE =		http://pwmt.org/projects/zathura/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 intl m magic pango-1.0 pangocairo-1.0
-WANTLIB += pthread sqlite3
-
 MASTER_SITES =	http://pwmt.org/projects/zathura/download/
 
+MODULES=	devel/meson
 BUILD_DEPENDS =	textproc/py-docutils \
 		devel/gettext-tools
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 LIB_DEPENDS =	databases/sqlite3 \
-		graphics/gdk-pixbuf2 \
 		devel/libmagic \
-		x11/girara>=0.2.8
+		x11/girara>=0.2.9
 
-MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
-		DESKTOPPREFIX=${PREFIX}/share/applications \
-		TPUT=true \
-		CC="${CC}" \
-		VERBOSE=1 \
-		WITH_SYNCTEX=0
-FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
-
-USE_GMAKE =	Yes
+WANTLIB += c cairo gdk-3 gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gtk-3 intl magic pango-1.0 sqlite3
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
+CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test
 TEST_IS_INTERACTIVE =X11
 
 post-install:
+	# install placeholder for plugins
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/zathura
 
 .include <bsd.port.mk>
-
