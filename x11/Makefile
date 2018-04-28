@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.613 2018/04/24 13:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.614 2018/04/28 14:46:32 landry Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -236,6 +236,8 @@
      SUBDIR += qt3
      SUBDIR += qt4
      SUBDIR += qt5
+     SUBDIR += qt5ct
+     SUBDIR += qt5styleplugins
      SUBDIR += qwt
      SUBDIR += qwt,qt5
      SUBDIR += qdirstat
