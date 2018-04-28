@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/01 19:00:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/04/28 14:24:13 ajacoutot Exp $
 
 COMMENT=	templatized C++ command line parser
 
-DISTNAME=	tclap-1.2.1
-REVISION=	0
+DISTNAME=	tclap-1.2.2
 
 CATEGORIES=	devel
 
