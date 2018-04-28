@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/10 15:41:42 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/04/28 10:45:08 pvk Exp $
+@comment lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}win_py31_compat.${MODPY_PYC_MAGIC_TAG}pyc
+@comment lib/python${MODPY_VERSION}/site-packages/setuptools_scm/win_py31_compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

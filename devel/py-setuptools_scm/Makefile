@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/18 21:05:12 shadchin Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/28 10:45:08 pvk Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
-MODPY_EGG_VERSION =	1.15.6
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -26,6 +26,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 do-test:
+	@rm ${WRKSRC}/testing/test_setuptools_support.py
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
