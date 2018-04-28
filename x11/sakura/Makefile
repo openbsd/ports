@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2017/06/11 15:14:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2018/04/28 18:22:55 bcallah Exp $
 
-V =		3.4.0
+V =		3.5.0
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.pleyades.net/david/projects/sakura/
+MAINTAIMER =	Victor Kukshiev <andrey0bolkonsky@gmail.com>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =		Yes
@@ -25,6 +26,8 @@ LIB_DEPENDS =	devel/gettext \
 		devel/vte3
 
 RUN_DEPENDS =	devel/desktop-file-utils
+
+CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -std=gnu99"
 
 NO_TEST =	Yes
 
