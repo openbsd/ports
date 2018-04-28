@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/07 13:32:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/28 19:22:24 landry Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -7,142 +7,156 @@
 @pkgpath x11/remmina/plugins,-rdp
 @pkgpath x11/remmina/plugins,-telepathy
 @bin bin/remmina
+include/remmina/
+include/remmina/plugin.h
+include/remmina/remmina_trace_calls.h
+include/remmina/types.h
 lib/pkgconfig/remmina.pc
 lib/remmina/
 lib/remmina/plugins/
+lib/remmina/plugins/remmina-plugin-exec.so
 lib/remmina/plugins/remmina-plugin-nx.so
 lib/remmina/plugins/remmina-plugin-rdp.so
 lib/remmina/plugins/remmina-plugin-telepathy.so
 lib/remmina/plugins/remmina-plugin-vnc.so
 lib/remmina/plugins/remmina-plugin-xdmcp.so
-lib/remmina/plugins/remmina-plugins-gnome.so
-share/applications/remmina.desktop
+@man man/man1/remmina.1
+share/applications/org.remmina.Remmina.desktop
+share/applications/remmina-file.desktop
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Remmina.service
+share/icons/hicolor/128x128/apps/remmina.png
+share/icons/hicolor/16x16/actions/remmina-dynres.png
 share/icons/hicolor/16x16/actions/remmina-fit-window.png
 share/icons/hicolor/16x16/actions/remmina-fullscreen.png
 share/icons/hicolor/16x16/actions/remmina-pin-down.png
 share/icons/hicolor/16x16/actions/remmina-pin-up.png
 share/icons/hicolor/16x16/actions/remmina-scale.png
 share/icons/hicolor/16x16/actions/remmina-switch-page.png
+share/icons/hicolor/16x16/apps/remmina-panel-inverted.png
+share/icons/hicolor/16x16/apps/remmina-panel.png
 share/icons/hicolor/16x16/apps/remmina.png
 share/icons/hicolor/16x16/emblems/remmina-nx.png
 share/icons/hicolor/16x16/emblems/remmina-rdp-ssh.png
 share/icons/hicolor/16x16/emblems/remmina-rdp.png
 share/icons/hicolor/16x16/emblems/remmina-sftp.png
+share/icons/hicolor/16x16/emblems/remmina-tool.png
 share/icons/hicolor/16x16/emblems/remmina-vnc-ssh.png
 share/icons/hicolor/16x16/emblems/remmina-vnc.png
 share/icons/hicolor/16x16/emblems/remmina-xdmcp-ssh.png
 share/icons/hicolor/16x16/emblems/remmina-xdmcp.png
+share/icons/hicolor/22x22/actions/remmina-dynres.png
 share/icons/hicolor/22x22/actions/remmina-fit-window.png
 share/icons/hicolor/22x22/actions/remmina-fullscreen.png
 share/icons/hicolor/22x22/actions/remmina-scale.png
 share/icons/hicolor/22x22/actions/remmina-switch-page.png
+share/icons/hicolor/22x22/apps/remmina-panel-inverted.png
+share/icons/hicolor/22x22/apps/remmina-panel.png
 share/icons/hicolor/22x22/apps/remmina.png
 share/icons/hicolor/22x22/emblems/remmina-nx.png
 share/icons/hicolor/22x22/emblems/remmina-rdp-ssh.png
 share/icons/hicolor/22x22/emblems/remmina-rdp.png
 share/icons/hicolor/22x22/emblems/remmina-sftp.png
+share/icons/hicolor/22x22/emblems/remmina-tool.png
 share/icons/hicolor/22x22/emblems/remmina-vnc-ssh.png
 share/icons/hicolor/22x22/emblems/remmina-vnc.png
 share/icons/hicolor/22x22/emblems/remmina-xdmcp-ssh.png
 share/icons/hicolor/22x22/emblems/remmina-xdmcp.png
+share/icons/hicolor/24x24/apps/remmina-panel-inverted.png
+share/icons/hicolor/24x24/apps/remmina-panel.png
 share/icons/hicolor/24x24/apps/remmina.png
 share/icons/hicolor/32x32/apps/remmina.png
 share/icons/hicolor/48x48/apps/remmina.png
+share/icons/hicolor/64x64/apps/remmina.png
+share/icons/hicolor/72x72/apps/remmina.png
+share/icons/hicolor/96x96/apps/remmina.png
 share/icons/hicolor/scalable/apps/remmina.svg
 share/locale/ar/LC_MESSAGES/remmina.mo
 share/locale/ast/LC_MESSAGES/remmina.mo
-share/locale/bg/LC_MESSAGES/remmina-plugins.mo
 share/locale/bg/LC_MESSAGES/remmina.mo
 share/locale/bn/LC_MESSAGES/remmina.mo
 share/locale/bs/LC_MESSAGES/remmina.mo
 share/locale/ca/LC_MESSAGES/remmina.mo
 share/locale/ca@valencia/LC_MESSAGES/remmina.mo
-share/locale/cs/LC_MESSAGES/remmina-plugins.mo
 share/locale/cs/LC_MESSAGES/remmina.mo
-share/locale/da/LC_MESSAGES/remmina-plugins.mo
 share/locale/da/LC_MESSAGES/remmina.mo
-share/locale/de/LC_MESSAGES/remmina-plugins.mo
 share/locale/de/LC_MESSAGES/remmina.mo
-share/locale/el/LC_MESSAGES/remmina-plugins.mo
 share/locale/el/LC_MESSAGES/remmina.mo
 share/locale/en_AU/LC_MESSAGES/remmina.mo
 share/locale/en_GB/LC_MESSAGES/remmina.mo
-share/locale/es/LC_MESSAGES/remmina-plugins.mo
 share/locale/es/LC_MESSAGES/remmina.mo
 share/locale/et/LC_MESSAGES/remmina.mo
-share/locale/eu/LC_MESSAGES/remmina-plugins.mo
 share/locale/eu/LC_MESSAGES/remmina.mo
 share/locale/fi/LC_MESSAGES/remmina.mo
-share/locale/fr/LC_MESSAGES/remmina-plugins.mo
 share/locale/fr/LC_MESSAGES/remmina.mo
 share/locale/gl/LC_MESSAGES/remmina.mo
 share/locale/he/LC_MESSAGES/remmina.mo
 share/locale/hr/LC_MESSAGES/remmina.mo
-share/locale/hu/LC_MESSAGES/remmina-plugins.mo
 share/locale/hu/LC_MESSAGES/remmina.mo
-share/locale/id/LC_MESSAGES/remmina-plugins.mo
 share/locale/id/LC_MESSAGES/remmina.mo
-share/locale/it/LC_MESSAGES/remmina-plugins.mo
 share/locale/it/LC_MESSAGES/remmina.mo
 share/locale/ja/LC_MESSAGES/remmina.mo
-share/locale/kk/LC_MESSAGES/remmina-plugins.mo
 share/locale/kk/LC_MESSAGES/remmina.mo
 share/locale/km/LC_MESSAGES/remmina.mo
 share/locale/kn/LC_MESSAGES/remmina.mo
 share/locale/ko/LC_MESSAGES/remmina.mo
-share/locale/lt/LC_MESSAGES/remmina-plugins.mo
 share/locale/lt/LC_MESSAGES/remmina.mo
 share/locale/lv/LC_MESSAGES/remmina.mo
 share/locale/ms/LC_MESSAGES/remmina.mo
 share/locale/my/LC_MESSAGES/remmina.mo
 share/locale/nb/LC_MESSAGES/remmina.mo
-share/locale/nl/LC_MESSAGES/remmina-plugins.mo
 share/locale/nl/LC_MESSAGES/remmina.mo
 share/locale/oc/LC_MESSAGES/remmina.mo
-share/locale/pl/LC_MESSAGES/remmina-plugins.mo
 share/locale/pl/LC_MESSAGES/remmina.mo
 share/locale/pt/LC_MESSAGES/remmina.mo
-share/locale/pt_BR/LC_MESSAGES/remmina-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/remmina.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/remmina-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/remmina.mo
 share/locale/ro/LC_MESSAGES/remmina.mo
-share/locale/ru/LC_MESSAGES/remmina-plugins.mo
 share/locale/ru/LC_MESSAGES/remmina.mo
 share/locale/shn/
 share/locale/shn/LC_MESSAGES/
 share/locale/shn/LC_MESSAGES/remmina.mo
 share/locale/si/LC_MESSAGES/remmina.mo
-share/locale/sk/LC_MESSAGES/remmina-plugins.mo
 share/locale/sk/LC_MESSAGES/remmina.mo
 share/locale/sl/LC_MESSAGES/remmina.mo
 share/locale/sq/LC_MESSAGES/remmina.mo
 share/locale/sr/LC_MESSAGES/remmina.mo
-share/locale/sv/LC_MESSAGES/remmina-plugins.mo
 share/locale/sv/LC_MESSAGES/remmina.mo
 share/locale/te/LC_MESSAGES/remmina.mo
-share/locale/th/LC_MESSAGES/remmina-plugins.mo
 share/locale/th/LC_MESSAGES/remmina.mo
-share/locale/tr/LC_MESSAGES/remmina-plugins.mo
 share/locale/tr/LC_MESSAGES/remmina.mo
 share/locale/ug/LC_MESSAGES/remmina.mo
-share/locale/uk/LC_MESSAGES/remmina-plugins.mo
 share/locale/uk/LC_MESSAGES/remmina.mo
-share/locale/zh_CN/LC_MESSAGES/remmina-plugins.mo
+share/locale/uz@cyrillic/LC_MESSAGES/remmina.mo
 share/locale/zh_CN/LC_MESSAGES/remmina.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 share/locale/zh_TW/LC_MESSAGES/remmina.mo
+share/metainfo/
+share/metainfo/org.remmina.Remmina.appdata.xml
+share/mime/packages/remmina-mime.xml
 share/remmina/
 share/remmina/external_tools/
+share/remmina/external_tools/functions.sh
 share/remmina/external_tools/launcher.sh
-share/remmina/external_tools/pause.sh
 share/remmina/external_tools/remmina_filezilla_sftp.sh
 share/remmina/external_tools/remmina_filezilla_sftp_pki.sh
 share/remmina/external_tools/remmina_nslookup.sh
 share/remmina/external_tools/remmina_ping.sh
 share/remmina/external_tools/remmina_traceroute.sh
+share/remmina/ui/
+share/remmina/ui/remmina_about.glade
+share/remmina/ui/remmina_key_chooser.glade
+share/remmina/ui/remmina_main.glade
+share/remmina/ui/remmina_mpc.glade
+share/remmina/ui/remmina_preferences.glade
+share/remmina/ui/remmina_spinner.glade
+share/remmina/ui/remmina_string_list.glade
+share/telepathy/
+share/telepathy/clients/
+share/telepathy/clients/Remmina.client
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

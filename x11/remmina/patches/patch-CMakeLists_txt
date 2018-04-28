@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2018/04/28 19:22:24 landry Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -95,7 +95,7 @@ include_directories(remmina/include)
+ 
+ # FreeBSD
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++if((CMAKE_SYSTEM_NAME MATCHES "FreeBSD") OR (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
+         set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
+         include_directories(/usr/local/include /usr/include)
+         link_directories(/usr/local/lib /usr/lib)
