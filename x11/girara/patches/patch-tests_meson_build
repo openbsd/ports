@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_meson_build,v 1.1 2018/04/28 14:55:47 landry Exp $
+
+env -u (for unset) doesnt exist on OpenBSD
+
+Index: tests/meson.build
+--- tests/meson.build.orig
++++ tests/meson.build
+@@ -40,7 +40,7 @@ if check.found()
+     env.set('XDG_TEST_HELPER_PATH', meson.current_build_dir())
+ 
+     test('tests-without-home', env_bin,
+-      args: ['-u', 'HOME', tests],
++      args: ['HOME=', tests],
+       env: env)
+   endif
+ endif
