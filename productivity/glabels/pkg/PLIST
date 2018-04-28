@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/24 07:09:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/04/28 09:11:48 ajacoutot Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/
@@ -121,7 +121,6 @@ share/gtk-doc/html/libglabels-3.0/ch02.html
 share/gtk-doc/html/libglabels-3.0/ch03.html
 share/gtk-doc/html/libglabels-3.0/home.png
 share/gtk-doc/html/libglabels-3.0/index.html
-share/gtk-doc/html/libglabels-3.0/index.sgml
 share/gtk-doc/html/libglabels-3.0/left-insensitive.png
 share/gtk-doc/html/libglabels-3.0/left.png
 share/gtk-doc/html/libglabels-3.0/libglabels-3.0-category.html
@@ -146,7 +145,6 @@ share/gtk-doc/html/libglbarcode-3.0/
 share/gtk-doc/html/libglbarcode-3.0/api.html
 share/gtk-doc/html/libglbarcode-3.0/home.png
 share/gtk-doc/html/libglbarcode-3.0/index.html
-share/gtk-doc/html/libglbarcode-3.0/index.sgml
 share/gtk-doc/html/libglbarcode-3.0/left-insensitive.png
 share/gtk-doc/html/libglbarcode-3.0/left.png
 share/gtk-doc/html/libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html
@@ -673,9 +671,11 @@ share/libglabels-3.0/templates/decadry-iso-templates.xml
 share/libglabels-3.0/templates/desmat-templates.xml
 share/libglabels-3.0/templates/dymo-other-templates.xml
 share/libglabels-3.0/templates/endisch-templates.xml
+share/libglabels-3.0/templates/felga-templates.xml
 share/libglabels-3.0/templates/geha-iso-templates.xml
 share/libglabels-3.0/templates/hama-iso-templates.xml
 share/libglabels-3.0/templates/herma-iso-templates.xml
+share/libglabels-3.0/templates/hisago-templates.xml
 share/libglabels-3.0/templates/igepa-templates.xml
 share/libglabels-3.0/templates/jac-iso-templates.xml
 share/libglabels-3.0/templates/maco-us-templates.xml
@@ -685,6 +685,7 @@ share/libglabels-3.0/templates/microapp-templates.xml
 share/libglabels-3.0/templates/misc-iso-templates.xml
 share/libglabels-3.0/templates/misc-other-templates.xml
 share/libglabels-3.0/templates/misc-us-templates.xml
+share/libglabels-3.0/templates/online-templates.xml
 share/libglabels-3.0/templates/paper-sizes.xml
 share/libglabels-3.0/templates/pearl-iso-templates.xml
 share/libglabels-3.0/templates/rayfilm-templates.xml
@@ -715,6 +716,7 @@ share/locale/ko/LC_MESSAGES/glabels-3.0.mo
 share/locale/lv/LC_MESSAGES/glabels-3.0.mo
 share/locale/nb/LC_MESSAGES/glabels-3.0.mo
 share/locale/nl/LC_MESSAGES/glabels-3.0.mo
+share/locale/oc/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt/LC_MESSAGES/glabels-3.0.mo
 share/locale/pt_BR/LC_MESSAGES/glabels-3.0.mo
 share/locale/ro/LC_MESSAGES/glabels-3.0.mo
