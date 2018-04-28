@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/08 19:17:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/28 18:08:24 bcallah Exp $
 
+V =		4.10.0
 COMMENT =	politics and government game with liberal bias
-DISTNAME =	liberalcrimesquad-4.07.0
+DISTNAME =	liberalcrimesquad-${V}{v${V}}
+PKGNAME =	liberalcrimesquad-${V}
 CATEGORIES =	games
-REVISION =	4
 
 HOMEPAGE =	http://lcs.wikidot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,7 +14,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv m ncurses ${COMPILER_LIBCXX}
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES =	https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
+
+# C++11
+COMPILER =	base-clang ports-gcc ports-clang
 
 LIB_DEPENDS =	converters/libiconv
 
@@ -27,10 +31,10 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-liconv"
 
-MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} -std=c++03"
-
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.12
+AUTOMAKE_VERSION =	1.15
+
+WRKDIST =	${WRKDIR}/Liberal-Crime-Squad-${V}
 
 pre-configure:
 	cd ${WRKSRC} && \

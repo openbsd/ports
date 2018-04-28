@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_compat_cpp,v 1.1 2018/04/28 18:08:24 bcallah Exp $
+
+Index: src/compat.cpp
+--- src/compat.cpp.orig
++++ src/compat.cpp
+@@ -76,7 +76,7 @@ int stricmp(const char *str1,const char *str2)
+ }
+ #endif
+ 
+-#ifdef __linux__ // BSD and SVr4 too
++#if defined(__linux__) || defined(__OpenBSD__) // BSD and SVr4 too
+ 
+ int init_alarm=0; // Flag to indicate if alarmHandler() has been registered.
+ struct itimerval timer_off,timer_on;
