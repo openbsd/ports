@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/28 14:12:15 ajacoutot Exp $
 
 COMMENT =	argument type classification
 
 MODULES =	cpan
-DISTNAME =	Params-Classify-0.013
-REVISION =	2
+DISTNAME =	Params-Classify-0.015
 CATEGORIES =	devel
 
 # same as perl
