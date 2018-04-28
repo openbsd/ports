@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/04/28 14:01:34 ajacoutot Exp $
 
 COMMENT =	runtime module handling
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Module-Runtime-0.014
+DISTNAME =	Module-Runtime-0.016
 CATEGORIES =	devel
 
 # same as perl
