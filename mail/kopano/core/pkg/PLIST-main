@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/04/24 20:52:13 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2018/04/28 13:03:14 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -42,7 +42,6 @@ include/kopano/CommonUtil.h
 include/kopano/ECABEntryID.h
 include/kopano/ECChannel.h
 include/kopano/ECConfig.h
-include/kopano/ECDebug.h
 include/kopano/ECDefs.h
 include/kopano/ECFeatures.hpp
 include/kopano/ECGetText.h
@@ -280,6 +279,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/notification.py
 lib/python${MODPY_VERSION}/site-packages/kopano/notification.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/outofoffice.py
 lib/python${MODPY_VERSION}/site-packages/kopano/outofoffice.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/parse.py
+lib/python${MODPY_VERSION}/site-packages/kopano/parse.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/parser.py
 lib/python${MODPY_VERSION}/site-packages/kopano/parser.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/permission.py
@@ -292,6 +293,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/properties.py
 lib/python${MODPY_VERSION}/site-packages/kopano/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/property_.py
 lib/python${MODPY_VERSION}/site-packages/kopano/property_.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/query.py
+lib/python${MODPY_VERSION}/site-packages/kopano/query.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/quota.py
 lib/python${MODPY_VERSION}/site-packages/kopano/quota.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/recurrence.py
