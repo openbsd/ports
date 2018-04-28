@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/28 13:58:36 ajacoutot Exp $
 
 COMMENT= 	multiplex output to multiple handles
 
 MODULES=	cpan 
 PKG_ARCH=	*
-DISTNAME=	IO-Tee-0.64
-REVISION=	0
+DISTNAME=	IO-Tee-0.65
 CATEGORIES=	devel
 
 # perl
