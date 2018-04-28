@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/04/25 09:51:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2018/04/28 11:01:59 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -31,6 +31,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection vala yelp
 
 BUILD_DEPENDS=		devel/ectags \
+			devel/libexecinfo \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/ectags
