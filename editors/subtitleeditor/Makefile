@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2018/01/21 08:27:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.57 2018/04/28 14:23:04 ajacoutot Exp $
 
 COMMENT=		GTK+ subtitles editor
 
-V=			0.53.0
+V=			0.54.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		4
 
 CATEGORIES=		graphics editors
 
@@ -15,20 +14,20 @@ HOMEPAGE=		http://kitone.github.io/subtitleeditor/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
-WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 enchant
-WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gstallocators-1.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstcheck-1.0 gstcontroller-1.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1
+WANTLIB += enchant epoxy expat ffi fontconfig freetype fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gstallocators-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstcheck-1.0 gstcontroller-1.0
 WANTLIB += gstfft-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gstreamermm-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0
 WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gtkmm-3.0 harfbuzz iconv intl lzma m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
-WANTLIB += png pthread sigc-2.0 ${LIBCXX} xcb xcb-render
-WANTLIB += xcb-shm xml++-2.6 xml2 z
+WANTLIB += png sigc-2.0 xcb xcb-render xcb-shm xml++-2.6 xml2
+WANTLIB += z
 
 MASTER_SITES=		https://github.com/kitone/subtitleeditor/releases/download/${V}/
 

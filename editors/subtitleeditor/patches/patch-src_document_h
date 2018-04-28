@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_document_h,v 1.1 2017/05/11 19:41:33 espie Exp $
+$OpenBSD: patch-src_document_h,v 1.2 2018/04/28 14:23:04 ajacoutot Exp $
+
 clang wants "complete" declarations at class header, in particular
 default ctors
 
@@ -10,7 +11,7 @@ Index: src/document.h
  	 * Constructor by copy
  	 */
 -	Document(Document &copy, bool copy_subtitles );
-+	Document(Document &copy, bool copy_subtitles =true);
++	Document(Document &copy, bool copy_subtitles = true);
  
  	/*
  	 * Destructor
