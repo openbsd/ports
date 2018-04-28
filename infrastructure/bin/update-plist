@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.36 2018/04/28 15:18:46 espie Exp $
+# $OpenBSD: update-plist,v 1.37 2018/04/28 20:20:14 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -299,6 +299,29 @@ sub strip_prefix
 	return $path;
 }
 
+sub figure_out_dependencies
+{
+	my ($self, $cache, $portsdir) = @_;
+	my @solve = ();
+	for my $full (keys %{$self->{state}{dependencies}}) {
+		next unless $full =~ m/^(.*?):/;
+		push(@solve, $1);
+	}
+	while (@solve != 0) {
+		my $pkgpath = pop @solve;
+		if (!defined $cache->{$pkgpath}) {
+			$cache->{$pkgpath} = {};
+			$self->{state}->say("Dependency on #1", $pkgpath);
+			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
+			    $self->{state}, $pkgpath, $portsdir,
+			    \&OpenBSD::PackingList::UpdatePlistOnly,
+			    "print-plist", "wantlib_args=no_wantlib-args");
+			$plist->process_dependency($cache->{$pkgpath});
+		}
+		push(@solve, keys %{$cache->{$pkgpath}{pkgpath}});
+	}
+}
+
 package PlistReader::State;
 our @ISA = qw(OpenBSD::PkgCreate::State);
 
@@ -333,7 +356,7 @@ sub known_object
 {
 }
 
-sub add_to_mtree
+sub process_dependency
 {
 }
 
@@ -377,12 +400,19 @@ sub perform_backsubst
 
 }
 
+package OpenBSD::PackingElement::Dependency;
+sub process_dependency
+{
+	my ($self, $mtree) = @_;
+	$mtree->{pkgpath}{$self->{pkgpath}} = 1;
+}
+
 package OpenBSD::PackingElement::DirlikeObject;
-sub add_to_mtree
+sub process_dependency
 {
 	my ($self, $mtree) = @_;
 
-	$mtree->{$self->fullname} = 1;
+	$mtree->{dir}{$self->fullname} = 1;
 }
 
 # dir-like objects HAVE a / added at the end...
@@ -575,26 +605,13 @@ while (@ARGV > 0) {
 	$state->say("Processed #1 as #2", $pkg, $r->olist->fullpkgpath);
 }
 
-#my $make = $ENV{MAKE};
-my $portsdir = $ENV{PORTSDIR};
-my $cached_tree = {};
 
 # so we read everything, let's figure out common directories
-#for my $p (@lists) {
-#	for my $full (keys %{$p->{state}{dependencies}}) {
-#		next unless $full =~ m/^(.*?):/;
-#		my $pkgpath = $1;
-#		$p->{state}->say("Dependency on #1", $pkgpath);
-#		if (!defined $cached_tree->{$pkgpath}) {
-#			$cached_tree->{$pkgpath} = {};
-#			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
-#			    $p->{state}, $pkgpath, $portsdir,
-#			    \&OpenBSD::PackingList::SharedItemsOnly,
-#			    "print-plist", "wantlib_args=no_wantlib-args");
-#			$plist->add_to_mtree($cached_tree->{$pkgpath});
-#		}
-#	}
-#}
+my $cache = {};
+my $portsdir = $ENV{PORTSDIR};
+for my $p (@lists) {
+#	$p->figure_out_dependencies($cache, $portsdir);
+}
 
 
 # XXX we assume all subpackage are under the same destdir (-B option)
