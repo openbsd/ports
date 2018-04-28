@@ -1,16 +1,17 @@
 #!/bin/sh
+#	$OpenBSD: os-test.sh,v 1.3 2018/04/28 14:36:20 bluhm Exp $
 set -e
 
 libexec_dir=${TRUEPREFIX}/libexec/os-test
 libdata_dir=${TRUEPREFIX}/libdata/os-test
 
-uname -srm > uname.out
+uname -srm >uname.out
 
-for suite in `cat $libdata_dir/suite.list`; do
+while read suite; do
 	rm -rf -- $suite $suite.expect
 	mkdir $suite $suite.expect
 	cp $libdata_dir/$suite/README $suite/
-	for test in `cat $libdata_dir/$suite-test.list`; do
+	while read test; do
 		echo -n . >&2
 		set +e
 		$libexec_dir/$suite/$test > $suite/$test.out 2>&1
@@ -21,9 +22,6 @@ for suite in `cat $libdata_dir/suite.list`; do
 		fi
 		cp $libdata_dir/$suite/$test.c $suite/
 		cp $libdata_dir/$suite.expect/$test* $suite.expect/
-	done
+	done <$libdata_dir/$suite-test.list
 	echo >&2
-done
-
-${TRUEPREFIX}/bin/os-test-html --enable-legend --enable-suites-overview \
-    --suite-list "`cat $libdata_dir/suite.list`" > os-test.html
+done <$libdata_dir/suite.list

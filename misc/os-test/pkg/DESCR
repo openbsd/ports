@@ -2,3 +2,10 @@ os-test is a set of test suites for POSIX operating systems designed
 to make it easy to compare differences between operating systems
 and to find operating system bugs.  It consists of test suites that
 focus on different operating system areas.
+
+To run os-test on a regular basis as a OpenBSD regression test,
+compile the software as a port.  All files needed to run the tests
+are installed as package.  The port specific tool os-test creates
+a run time environment, runs the tests, and stores the results in
+the current directory.  The os-test-html script can be used to
+create a web page containig these results.
