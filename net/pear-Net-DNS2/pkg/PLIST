@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/03/28 09:51:19 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/04/28 14:54:45 ajacoutot Exp $
 @group daemon
 lib/
 lib/php/
@@ -85,6 +85,7 @@ pear/lib/Net/DNS2/RR/TKEY.php
 pear/lib/Net/DNS2/RR/TLSA.php
 pear/lib/Net/DNS2/RR/TSIG.php
 pear/lib/Net/DNS2/RR/TXT.php
+pear/lib/Net/DNS2/RR/TYPE65534.php
 pear/lib/Net/DNS2/RR/URI.php
 pear/lib/Net/DNS2/RR/WKS.php
 pear/lib/Net/DNS2/RR/X25.php
