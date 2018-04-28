@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/28 14:42:50 landry Exp $
+lib/qt5/cmake/Qt5Gui/Qt5Gui_QGtk2ThemePlugin.cmake
+lib/qt5/cmake/Qt5Widgets/Qt5Widgets_QBB10StylePlugin.cmake
+lib/qt5/cmake/Qt5Widgets/Qt5Widgets_QCleanlooksStylePlugin.cmake
+lib/qt5/cmake/Qt5Widgets/Qt5Widgets_QGtk2StylePlugin.cmake
+lib/qt5/cmake/Qt5Widgets/Qt5Widgets_QMotifStylePlugin.cmake
+lib/qt5/cmake/Qt5Widgets/Qt5Widgets_QPlastiqueStylePlugin.cmake
+lib/qt5/plugins/platformthemes/libqgtk2.so
+lib/qt5/plugins/styles/
+lib/qt5/plugins/styles/libbb10styleplugin.so
+lib/qt5/plugins/styles/libqcleanlooksstyle.so
+lib/qt5/plugins/styles/libqgtk2style.so
+lib/qt5/plugins/styles/libqmotifstyle.so
+lib/qt5/plugins/styles/libqplastiquestyle.so
