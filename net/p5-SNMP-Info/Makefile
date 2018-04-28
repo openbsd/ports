@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/28 07:44:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2018/04/28 14:53:46 ajacoutot Exp $
 
 COMMENT =	perl5 interface to network devices and MIBs through SNMP
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	SNMP-Info-3.34
+DISTNAME =	SNMP-Info-3.53
 CATEGORIES =	net
 
 # BSD
@@ -16,6 +16,11 @@ BUILD_DEPENDS =	net/net-snmp
 
 MAKE_ENV =	TEST_POD=1
 
-CONFIGURE_STYLE=perl
+CONFIGURE_STYLE=modbuild
+
+TEST_DEPENDS =	devel/p5-File-Slurper \
+		devel/p5-Path-Class \
+		devel/p5-Test-Distribution \
+		devel/p5-Test-MockObject
 
 .include <bsd.port.mk>
