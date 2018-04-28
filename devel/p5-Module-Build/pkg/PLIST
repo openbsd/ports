@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/12 12:11:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/04/28 14:06:38 ajacoutot Exp $
 bin/config_data
 ${P5SITE}/Module/
 ${P5SITE}/Module/Build/
@@ -26,10 +26,6 @@ ${P5SITE}/Module/Build/Platform/cygwin.pm
 ${P5SITE}/Module/Build/Platform/darwin.pm
 ${P5SITE}/Module/Build/Platform/os2.pm
 ${P5SITE}/Module/Build/PodParser.pm
-${P5SITE}/inc/
-${P5SITE}/inc/latest/
-${P5SITE}/inc/latest.pm
-${P5SITE}/inc/latest/private.pm
 @man man/man1/config_data.1
 @man man/man3p/Module::Build.3p
 @man man/man3p/Module::Build::API.3p
@@ -51,4 +47,3 @@ ${P5SITE}/inc/latest/private.pm
 @man man/man3p/Module::Build::Platform::cygwin.3p
 @man man/man3p/Module::Build::Platform::darwin.3p
 @man man/man3p/Module::Build::Platform::os2.3p
-@man man/man3p/inc::latest.3p
