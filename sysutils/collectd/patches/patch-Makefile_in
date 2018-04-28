@@ -1,13 +1,41 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2017/04/30 17:52:15 landry Exp $
---- Makefile.in.orig	Mon Jan 23 10:54:26 2017
-+++ Makefile.in	Sun Feb 26 20:22:04 2017
-@@ -1003,9 +1003,6 @@ uninstall-am:
+$OpenBSD: patch-Makefile_in,v 1.9 2018/04/28 14:40:26 landry Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -98,7 +98,7 @@ check_PROGRAMS = test_common$(EXEEXT) test_format_grap
+ @BUILD_WITH_LIBSOCKET_TRUE@am__append_4 = -lsocket
+ @BUILD_WITH_LIBKSTAT_TRUE@am__append_5 = -lkstat
+ @BUILD_WITH_LIBDEVINFO_TRUE@am__append_6 = -ldevinfo
+-@BUILD_FEATURE_DAEMON_TRUE@am__append_7 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
++@BUILD_FEATURE_DAEMON_TRUE@am__append_7 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
  
+ # The daemon needs to call sg_init, so we need to link it against libstatgrab,
+ # too. -octo
+@@ -3183,7 +3183,7 @@ AM_CPPFLAGS = \
+ 	-DPREFIX='"${prefix}"' \
+ 	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
+ 	-DLOCALSTATEDIR='"${localstatedir}"' \
+-	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
++	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
+ 	-DPLUGINDIR='"${pkglibdir}"' \
+ 	-DPKGDATADIR='"${pkgdatadir}"'
+ 
+@@ -7720,16 +7720,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @HAVE_GRPC_CPP_TRUE@@HAVE_PROTOC3_TRUE@	$(V_PROTOC)$(PROTOC) -I$(srcdir)/proto --cpp_out=$(builddir) $<
  
  install-exec-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/$(PACKAGE_NAME)
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
- 
- maintainer-clean-local:
- 	-rm -f -r libltdl
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	if test -e $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-	then \
+-		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
+-	else \
+-		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-	fi; \
++	$(mkinstalldirs) ${PREFIX}/share/examples
++	$(INSTALL) -m 0644 $(srcdir)/src/collectd.conf ${PREFIX}/share/examples/collectd.conf;
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL) -m 0644 $(srcdir)/src/types.db $(DESTDIR)$(pkgdatadir)/types.db;
+ 	$(INSTALL) -m 0644 $(srcdir)/src/postgresql_default.conf \

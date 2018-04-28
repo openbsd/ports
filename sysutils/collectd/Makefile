@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/02/15 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2018/04/28 14:40:26 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -8,10 +8,14 @@ COMMENT-snmp =		collectd snmp plugin
 COMMENT-virt =		collectd libvirt plugin
 COMMENT-python =	collectd python plugin
 COMMENT-memcachec =	collectd memcachec plugin
+COMMENT-mqtt =		collectd mqtt plugin
 COMMENT-nut =		collectd nut plugin
 COMMENT-riemann =	collectd riemann plugin
+COMMENT-redis =		collectd redis plugin
+COMMENT-prometheus =	collectd prometheus plugin
+COMMENT-ping =		collectd ping plugin
 
-V =			5.7.2
+V =			5.8.0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -21,12 +25,13 @@ PKGNAME-snmp =		collectd-snmp-$V
 PKGNAME-virt =		collectd-virt-$V
 PKGNAME-python =	collectd-python-$V
 PKGNAME-memcachec =	collectd-memcachec-$V
+PKGNAME-mqtt =		collectd-mqtt-$V
 PKGNAME-nut =		collectd-nut-$V
 PKGNAME-riemann =	collectd-riemann-$V
+PKGNAME-redis =		collectd-redis-$V
+PKGNAME-prometheus =	collectd-prometheus-$V
+PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-
-REVISION =		1
-REVISION-main =		3
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -40,7 +45,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
-MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -nut -riemann
+MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -mqtt -nut -riemann -redis -prometheus -ping
 
 WANTLIB-mysql =		crypto m ssl z mysqlclient_r pthread
 LIB_DEPENDS-mysql =	databases/mariadb
@@ -51,7 +56,7 @@ LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
 WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
-			freetype glib-2.0 gobject-2.0 \
+			freetype fribidi glib-2.0 gobject-2.0 \
 			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 			pixman-1 png pthread rrd xcb \
@@ -59,8 +64,8 @@ WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-snmp =		crypto netsnmp pthread
 LIB_DEPENDS-snmp =	net/net-snmp
+WANTLIB-snmp =		crypto netsnmp pthread c kvm m netsnmpagent perl
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-virt =	sysutils/libvirt
@@ -88,15 +93,31 @@ WANTLIB-riemann =	c gmp gnutls ffi hogweed intl iconv idn2 nettle \
 			unistring z
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
+LIB_DEPENDS-mqtt =	net/mosquitto
+RUN_DEPENDS-mqtt =	collectd-$V:${BASE_PKGPATH},-main
+WANTLIB-mqtt =		mosquitto pthread
+
+LIB_DEPENDS-prometheus =	www/libmicrohttpd \
+				devel/protobuf-c
+RUN_DEPENDS-prometheus =	collectd-$V:${BASE_PKGPATH},-main
+WANTLIB-prometheus =	c ffi gmp gnutls hogweed iconv idn2 intl microhttpd \
+			nettle p11-kit protobuf-c pthread tasn1 unistring z
+
+LIB_DEPENDS-redis =	databases/libhiredis
+RUN_DEPENDS-redis =	collectd-$V:${BASE_PKGPATH},-main
+WANTLIB-redis =		hiredis pthread
+
+LIB_DEPENDS-ping =	net/liboping
+RUN_DEPENDS-ping =	collectd-$V:${BASE_PKGPATH},-main
+WANTLIB-ping =		m oping pthread
+
 LIB_DEPENDS +=	net/curl \
-		net/liboping \
 		textproc/libxml \
 		sysutils/libstatgrab \
 		security/libgcrypt \
-		devel/libtool,-ltdl \
 		devel/libyajl
 
-WANTLIB += c crypto gpg-error kvm curl xml2 ltdl lzma oping nghttp2
+WANTLIB += c crypto gpg-error kvm curl xml2 lzma nghttp2
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt iconv intl
 WANTLIB += yajl
 
@@ -104,13 +125,9 @@ CONFIGURE_STYLE =	gnu
 # uses -export-symbol-regex
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS =	--tag=disable-static
-CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib \
-		--with-librrd=${LOCALBASE} \
+CONFIGURE_ARGS +=--with-librrd=${LOCALBASE} \
 		--with-libstatgrab=${LOCALBASE} \
 		--with-libnetsnmp=${LOCALBASE} \
-		--with-python=${MODPY_BIN} \
-		--with-libprotobuf-c=no \
 		--enable-all-plugins=no
 
 # no, varnishapi.h not in our varnish package
@@ -121,12 +138,12 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			logfile match_empty_counter match_hashed match_regex \
 			match_timediff match_value memcached memory mysql \
 			network nginx ntpd olsrd openvpn ping postgresql powerdns \
-			processes rrdtool rrdcached snmp swap syslog table tail tail_csv \
+			processes redis rrdtool rrdcached snmp snmp_agent swap syslog table tail tail_csv \
 			target_notification target_replace target_scale \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
 			users uuid write_http write_graphite pf python virt memcachec nut \
-			aggregation curl_json log_logstash memcached \
-			threshold write_log write_riemann
+			aggregation curl_json log_logstash memcached mqtt \
+			threshold write_log write_prometheus write_redis write_riemann
 
 .for _plugin in ${ENABLED_PLUGINS}
 CONFIGURE_ARGS += --enable-${_plugin}
@@ -135,5 +152,8 @@ CONFIGURE_ARGS += --enable-${_plugin}
 CONFIGURE_ENV +=	PYTHON_CONFIG='${LOCALBASE}/bin/python${MODPY_VERSION}-config' \
 			CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread'
+
+post-install:
+	rm -f ${PREFIX}/lib/collectd/*.la
 
 .include <bsd.port.mk>

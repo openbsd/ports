@@ -1,11 +1,9 @@
-$OpenBSD: patch-src_processes_c,v 1.10 2017/04/30 17:52:15 landry Exp $
+$OpenBSD: patch-src_processes_c,v 1.11 2018/04/28 14:40:26 landry Exp $
 
-https://github.com/collectd/collectd/issues/2061
-https://github.com/collectd/collectd/pull/2088
-
---- src/processes.c.orig	Mon Jan 23 10:53:57 2017
-+++ src/processes.c	Sun Feb 26 20:22:04 2017
-@@ -155,7 +155,7 @@
+Index: src/processes.c
+--- src/processes.c.orig
++++ src/processes.c
+@@ -157,7 +157,7 @@
  #if defined(ARG_MAX) && (ARG_MAX < 4096)
  #define CMDLINE_BUFFER_SIZE ARG_MAX
  #else
@@ -14,12 +12,3 @@ https://github.com/collectd/collectd/pull/2088
  #endif
  #endif
  
-@@ -1916,7 +1916,7 @@ static int ps_read(void) {
-   ps_list_reset();
- 
-   /* Open the kvm interface, get a descriptor */
--  kd = kvm_open(NULL, NULL, NULL, 0, errbuf);
-+  kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
-   if (kd == NULL) {
-     ERROR("processes plugin: Cannot open kvm interface: %s", errbuf);
-     return (0);
