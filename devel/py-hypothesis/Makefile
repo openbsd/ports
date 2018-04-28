@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/24 07:48:34 shadchin Exp $
+# $OpenBSD: Makefile,v 1.16 2018/04/28 10:42:30 pvk Exp $
 
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	3.11.6
+MODPY_EGG_VERSION =	3.55.1
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -21,6 +21,9 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
