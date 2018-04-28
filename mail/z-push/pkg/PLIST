@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/09/13 10:43:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/04/28 14:05:15 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -10,23 +10,27 @@ z-push/TRADEMARKS
 z-push/autodiscover/
 z-push/autodiscover/INSTALL
 z-push/autodiscover/autodiscover.php
-z-push/autodiscover/config.php
+z-push/autodiscover/config.php.dist
+@sample z-push/autodiscover/config.php
 z-push/autodiscover/response.xml
 z-push/backend/
 z-push/backend/caldav/
 z-push/backend/caldav/AUTHOR
 z-push/backend/caldav/REQUIREMENTS
 z-push/backend/caldav/caldav.php
-z-push/backend/caldav/config.php
+z-push/backend/caldav/config.php.dist
+@sample z-push/backend/caldav/config.php
 z-push/backend/carddav/
 z-push/backend/carddav/README
 z-push/backend/carddav/REQUIREMENTS
 z-push/backend/carddav/THANKS
 z-push/backend/carddav/carddav.php
-z-push/backend/carddav/config.php
+z-push/backend/carddav/config.php.dist
+@sample z-push/backend/carddav/config.php
 z-push/backend/combined/
 z-push/backend/combined/combined.php
-z-push/backend/combined/config.php
+z-push/backend/combined/config.php.dist
+@sample z-push/backend/combined/config.php
 z-push/backend/combined/exporter.php
 z-push/backend/combined/importer.php
 z-push/backend/imap/
@@ -52,21 +56,25 @@ z-push/backend/imap/Net/Socket.php
 z-push/backend/imap/README
 z-push/backend/imap/REQUIREMENTS
 z-push/backend/imap/THANKS
-z-push/backend/imap/config.php
+z-push/backend/imap/config.php.dist
+@sample z-push/backend/imap/config.php
 z-push/backend/imap/imap.php
 z-push/backend/imap/mimePart.php
 z-push/backend/imap/mime_calendar.php
 z-push/backend/imap/mime_encode.php
 z-push/backend/imap/user_identity.php
 z-push/backend/ipcmemcached/
-z-push/backend/ipcmemcached/config.php
+z-push/backend/ipcmemcached/config.php.dist
+@sample z-push/backend/ipcmemcached/config.php
 z-push/backend/ipcmemcached/ipcmemcachedprovider.php
 z-push/backend/ipcsharedmemory/
 z-push/backend/ipcsharedmemory/ipcsharedmemoryprovider.php
+z-push/backend/ipcwincache/
+z-push/backend/ipcwincache/ipcwincache.php
 z-push/backend/kopano/
-z-push/backend/kopano/config.php
+z-push/backend/kopano/config.php.dist
+@sample z-push/backend/kopano/config.php
 z-push/backend/kopano/exporter.php
-z-push/backend/kopano/icalparser.php
 z-push/backend/kopano/importer.php
 z-push/backend/kopano/kopano.php
 z-push/backend/kopano/kopanochangeswrapper.php
@@ -92,22 +100,33 @@ z-push/backend/kopano/mapistreamwrapper.php
 z-push/backend/kopano/mapiutils.php
 z-push/backend/kopano/replybackimexporter.php
 z-push/backend/kopano/replybackstate.php
-z-push/backend/kopano/tnefparser.php
 z-push/backend/ldap/
 z-push/backend/ldap/AUTHOR
-z-push/backend/ldap/config.php
+z-push/backend/ldap/config.php.dist
+@sample z-push/backend/ldap/config.php
 z-push/backend/ldap/ldap.php
 z-push/backend/maildir/
-z-push/backend/maildir/config.php
+z-push/backend/maildir/config.php.dist
+@sample z-push/backend/maildir/config.php
 z-push/backend/maildir/maildir.php
 z-push/backend/searchldap/
-z-push/backend/searchldap/config.php
+z-push/backend/searchldap/config.php.dist
+@sample z-push/backend/searchldap/config.php
 z-push/backend/searchldap/searchldap.php
 z-push/backend/sqlstatemachine/
-z-push/backend/sqlstatemachine/config.php
+z-push/backend/sqlstatemachine/config.php.dist
+@sample z-push/backend/sqlstatemachine/config.php
 z-push/backend/sqlstatemachine/sqlstatemachine.php
+z-push/backend/stickynote/
+z-push/backend/stickynote/AUTHOR
+z-push/backend/stickynote/REQUIREMENTS
+z-push/backend/stickynote/config.php.dist
+@sample z-push/backend/stickynote/config.php
+z-push/backend/stickynote/create-sticky-tables.sql
+z-push/backend/stickynote/stickynote.php
 z-push/backend/vcarddir/
-z-push/backend/vcarddir/config.php
+z-push/backend/vcarddir/config.php.dist
+@sample z-push/backend/vcarddir/config.php
 z-push/backend/vcarddir/vcarddir.php
 z-push/composer.json
 z-push/config.php.dist
@@ -123,6 +142,7 @@ z-push/index.php
 z-push/lib/
 z-push/lib/core/
 z-push/lib/core/asdevice.php
+z-push/lib/core/bodypartpreference.php
 z-push/lib/core/bodypreference.php
 z-push/lib/core/changesmemorywrapper.php
 z-push/lib/core/contentparameters.php
@@ -204,15 +224,18 @@ z-push/lib/request/settings.php
 z-push/lib/request/sync.php
 z-push/lib/request/validatecert.php
 z-push/lib/syncobjects/
+z-push/lib/syncobjects/syncaccount.php
 z-push/lib/syncobjects/syncappointment.php
 z-push/lib/syncobjects/syncappointmentexception.php
 z-push/lib/syncobjects/syncattachment.php
 z-push/lib/syncobjects/syncattendee.php
 z-push/lib/syncobjects/syncbaseattachment.php
 z-push/lib/syncobjects/syncbasebody.php
+z-push/lib/syncobjects/syncbasebodypart.php
 z-push/lib/syncobjects/synccontact.php
 z-push/lib/syncobjects/syncdeviceinformation.php
 z-push/lib/syncobjects/syncdevicepassword.php
+z-push/lib/syncobjects/syncemailaddresses.php
 z-push/lib/syncobjects/syncfolder.php
 z-push/lib/syncobjects/syncitemoperationsattachment.php
 z-push/lib/syncobjects/syncmail.php
@@ -232,6 +255,9 @@ z-push/lib/syncobjects/syncresolverecipientscertificates.php
 z-push/lib/syncobjects/syncresolverecipientsoptions.php
 z-push/lib/syncobjects/syncresolverecipientspicture.php
 z-push/lib/syncobjects/syncresolverecipientsresponse.php
+z-push/lib/syncobjects/syncrightsmanagementlicense.php
+z-push/lib/syncobjects/syncrightsmanagementtemplate.php
+z-push/lib/syncobjects/syncrightsmanagementtemplates.php
 z-push/lib/syncobjects/syncsendmail.php
 z-push/lib/syncobjects/syncsendmailsource.php
 z-push/lib/syncobjects/synctask.php
@@ -255,31 +281,6 @@ z-push/lib/webservice/webservicedevice.php
 z-push/lib/webservice/webserviceinfo.php
 z-push/lib/webservice/webserviceusers.php
 z-push/policies.ini
-z-push/tools/
-z-push/tools/dev/
-z-push/tools/dev/printwbxml.php
-z-push/tools/fix-meetings-2.0.8+2.1.0-ios7.py
-z-push/tools/gab-sync/
-z-push/tools/gab-sync/LICENSE
-z-push/tools/gab-sync/TRADEMARKS
-z-push/tools/gab-sync/config.php
-z-push/tools/gab-sync/gab-sync.php
-z-push/tools/gab-sync/lib/
-z-push/tools/gab-sync/lib/gabentry.php
-z-push/tools/gab-sync/lib/kopano.php
-z-push/tools/gab-sync/lib/syncworker.php
-z-push/tools/gab2contacts/
-z-push/tools/gab2contacts/LICENSE
-z-push/tools/gab2contacts/TRADEMARKS
-z-push/tools/gab2contacts/config.php
-z-push/tools/gab2contacts/gab2contacts.php
-z-push/tools/gab2contacts/lib/
-z-push/tools/gab2contacts/lib/contactworker.php
-z-push/tools/gab2contacts/lib/kopano.php
-z-push/tools/gab2contacts/lib/synccontact.php
-z-push/tools/list-shared-folders.php
-z-push/tools/migrate-2.0.x-2.1.0.php
-z-push/tools/migrate-filestates-to-db.php
 z-push/vendor/
 z-push/vendor/autoload.php
 z-push/vendor/composer/

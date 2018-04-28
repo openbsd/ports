@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.52 2017/12/26 19:20:09 robert Exp $
+# $OpenBSD: Makefile,v 1.53 2018/04/28 14:05:15 robert Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
-V=		2.3.8
+V=		2.4.1
 DISTNAME=	z-push-${V}
 
 CATEGORIES=	mail www
 
-HOMEPAGE=	http://z-push.sourceforge.net/
+HOMEPAGE=	http://z-push.org/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://download.z-push.org/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=	http://nerd.hu/distfiles/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
@@ -30,9 +30,10 @@ RUN_DEPENDS=	mail/kopano/core,-mapi \
 		lang/php/${MODPHP_VERSION},-imap
 
 do-install:
-	cp -Rp ${WRKSRC} ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	cp -Rp ${WRKSRC}/src/* ${INSTDIR}
 	find ${INSTDIR} -type f -name \*.orig -exec rm -f {} \;
-	mv ${INSTDIR}/config.php ${INSTDIR}/config.php.dist
+	find ${INSTDIR} -name config.php -exec mv {} {}.dist \;
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/z-push.conf \
 		${INSTDIR}/z-push.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}

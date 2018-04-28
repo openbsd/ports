@@ -1,7 +1,9 @@
-$OpenBSD: patch-config_php,v 1.9 2016/08/12 08:09:57 robert Exp $
---- config.php.orig	Mon Aug  8 10:30:31 2016
-+++ config.php	Mon Aug  8 10:30:38 2016
-@@ -79,7 +79,7 @@
+$OpenBSD: patch-src_config_php,v 1.1 2018/04/28 14:05:15 robert Exp $
+
+Index: src/config.php
+--- src/config.php.orig
++++ src/config.php
+@@ -65,7 +65,7 @@
   *           State migration script is available, more informations: https://wiki.z-hub.io/x/xIAa
   */
      define('STATE_MACHINE', 'FILE');
