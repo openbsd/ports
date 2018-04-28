@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/09 15:49:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2018/04/28 13:10:26 jasper Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
-DISTNAME=		flawfinder-2.0.4
+DISTNAME=		flawfinder-2.0.6
 CATEGORIES=		devel security
 
 HOMEPAGE=		https://www.dwheeler.com/flawfinder/
+
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
