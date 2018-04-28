@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/08 19:16:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2018/04/28 18:10:04 bcallah Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
@@ -38,8 +38,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 # PCH (Precompiled Headers) are known to be broken so disable
 # the use of PCH.
-CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off \
-		 -DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++03"
+CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off
 
 WRKDIST =	${WRKDIR}/ValyriaTear-${GH_TAGNAME}
 
