@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2017/08/17 17:05:03 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2018/04/28 14:38:07 kn Exp $
 
 COMMENT=	twm, plus support for multiple virtual screens, etc
 
-DISTNAME=	ctwm-3.6
-REVISION=	2
+DISTNAME=	ctwm-4.0.1
 
 CATEGORIES=	x11
 
@@ -12,11 +11,17 @@ HOMEPAGE=	https://www.ctwm.org/
 # BSD-like/badly worded
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c
+WANTLIB=	ICE SM X11 Xext Xmu Xpm Xt c jpeg
 
-MASTER_SITES=	${HOMEPAGE}dist/
+MASTER_SITES=	https://www.ctwm.org/dist/
 
-CONFIGURE_STYLE= imake
+MODULES=	devel/cmake
+
+LIB_DEPENDS=	graphics/jpeg
+
+CONFIGURE_ARGS=	-DETCDIR=${SYSCONFDIR} \
+		-DNOMANCOMPRESS=TRUE \
+		-DFORCE_PREGEN_FILES=TRUE
 
 NO_TEST=	Yes
 
