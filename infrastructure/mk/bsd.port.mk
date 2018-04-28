@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1392 2018/04/28 10:19:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1393 2018/04/28 10:51:49 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2373,7 +2373,7 @@ _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} P
 
 _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
-	${_UPDATE_PLIST_SETUP} ${SUDO} ${_PERLSCRIPT}/update-plist \
+	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-P ${PKGDIR} \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs --
 .for i in ${BUILD_PACKAGES}
