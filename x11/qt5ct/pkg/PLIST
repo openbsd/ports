@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/28 14:45:21 landry Exp $
+@bin bin/qt5ct
+lib/qt5/plugins/platformthemes/libqt5ct.so
+lib/qt5/plugins/styles/
+lib/qt5/plugins/styles/libqt5ct-style.so
+share/applications/qt5ct.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
