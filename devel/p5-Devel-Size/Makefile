@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/28 13:54:20 ajacoutot Exp $
 
 COMMENT=	finding memory usage of perl variables
 
 MODULES=	cpan
-DISTNAME =	Devel-Size-0.80
+DISTNAME =	Devel-Size-0.81
 CATEGORIES=	devel
 
 # perl
