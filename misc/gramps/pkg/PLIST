@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/12/30 14:54:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/04/28 14:37:29 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -949,6 +949,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}stylesheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}tablestyle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}textdoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/${MODPY_PYCACHE}treedoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/basedoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/drawdoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/fontscale.py
@@ -960,6 +961,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/paragraphstyle.p
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/stylesheet.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/tablestyle.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/textdoc.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/docgen/treedoc.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/plug/menu/${MODPY_PYCACHE}/
@@ -1493,23 +1495,27 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_docreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_drawreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_fileentry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_graphreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_graphvizreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_papermenu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_reportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_stylecombobox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_styleeditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_textreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_treereportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/${MODPY_PYCACHE}_webreportdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_bookdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_docreportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_drawreportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_fileentry.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_graphreportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_graphvizreportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_papermenu.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_reportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_stylecombobox.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_styleeditor.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_textreportdialog.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_treereportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/report/_webreportdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/plug/tool.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/pluginmanager.py
@@ -1621,6 +1627,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}plac
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}progressdialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}reorderfam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}selectionwidget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}shadebox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}shortlistcomboentry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}springseparator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/${MODPY_PYCACHE}statusbar.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1654,6 +1661,7 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/placeentry.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/progressdialog.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/reorderfam.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/selectionwidget.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/shadebox.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/shortlistcomboentry.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/springseparator.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gui/widgets/statusbar.py
