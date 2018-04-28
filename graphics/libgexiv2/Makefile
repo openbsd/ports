@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/04/27 11:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/28 09:24:31 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -34,12 +34,14 @@ LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
 
 # import gi
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
 
 # we need support for both python2 and python3
-BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2} \
+			devel/py-gobject3
 RUN_DEPENDS +=		lang/python/${MODPY_DEFAULT_VERSION_2} \
 			devel/py-gobject3
 
