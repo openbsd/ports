@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2017/12/26 17:38:47 jca Exp $
+# $OpenBSD: Makefile,v 1.90 2018/04/28 19:04:41 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -10,6 +10,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		11.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                6.2      # .20.2
 SHARED_LIBS +=  pulse-simple         1.0      # .1.1
@@ -19,8 +20,9 @@ CATEGORIES=		audio
 
 SUBST_VARS+=		VERSION
 
-MAINTAINER=		Robert Nagy <robert@openbsd.org>
 HOMEPAGE=		http://www.pulseaudio.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
