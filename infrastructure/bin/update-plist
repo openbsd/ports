@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.31 2018/04/27 18:23:43 espie Exp $
+# $OpenBSD: update-plist,v 1.32 2018/04/28 10:19:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -213,6 +213,19 @@ sub annotate
 		$s =~ s/\$\{\Q$k\E\}/$v/g;
 	}
 }
+
+# and more magic, we want to record fragments as pseudo-objects
+sub record_fragment
+{
+	my ($self, $plist, $not, $name) = @_;
+	if ($not) {
+		OpenBSD::PackingElement::NoFragment->add($plist, $name);
+		
+	} else {
+		OpenBSD::PackingElement::Fragment->add($plist, $name);
+	}
+}
+
 
 # okay, so that plist doesn't exist, wouhou, I don't care,
 # since I'm not pkg_create
@@ -491,15 +504,6 @@ sub baseplist
 	return $n;
 }
 
-sub augment_mtree
-{
-	my ($mtree, $fh) = @_;
-	my $plist = OpenBSD::PackingList->read($fh, 
-	    \&OpenBSD::PackingList::SharedItemsOnly)
-	    or die "couldn't read packing-list\n";
-	$plist->add_to_mtree($mtree);
-}
-
 # this handles update-plist options proper, finished with --
 $state->handle_options;
 
@@ -535,22 +539,23 @@ while (@ARGV > 0) {
 	$state->say("Processed #1 as #2", $pkg, $r->olist->fullpkgpath);
 }
 
-my $make = $ENV{MAKE};
+#my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
-my $portsdir_path = $ENV{PORTSDIR_PATH};
 my $cached_tree = {};
 
 # so we read everything, let's figure out common directories
 #for my $p (@lists) {
 #	for my $full (keys %{$p->{state}{dependencies}}) {
-#		next unless $full =~ m/^(.*)?:/;
+#		next unless $full =~ m/^(.*?):/;
 #		my $pkgpath = $1;
-#		$state->say("Dependency on #1", $pkgpath);
+#		$p->{state}->say("Dependency on #1", $pkgpath);
 #		if (!defined $cached_tree->{$pkgpath}) {
 #			$cached_tree->{$pkgpath} = {};
-#			open my $fh, "cd $portsdir && env -i PORTSDIR_PATH=$portsdir_path SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
-#			augment_mtree($cached_tree->{$pkgpath}, $fh);
-#			close($fh);
+#			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
+#			    $p->{state}, $pkgpath, $portsdir,
+#			    \&OpenBSD::PackingList::SharedItemsOnly,
+#			    "print-plist", "wantlib_args=no_wantlib-args");
+#			$plist->add_to_mtree($cached_tree->{$pkgpath});
 #		}
 #	}
 #}
