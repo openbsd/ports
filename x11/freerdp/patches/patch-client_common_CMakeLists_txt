@@ -1,0 +1,18 @@
+$OpenBSD: patch-client_common_CMakeLists_txt,v 1.1 2018/04/28 19:20:17 landry Exp $
+Doesn't use ossaudio for OpenBSD
+Index: client/common/CMakeLists.txt
+--- client/common/CMakeLists.txt.orig
++++ client/common/CMakeLists.txt
+@@ -66,11 +66,7 @@ endif()
+ set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} winpr)
+ 
+ target_link_libraries(${MODULE_NAME} ${PRIVATE_KEYWORD} ${FREERDP_CHANNELS_CLIENT_LIBS})
+-if(OPENBSD)
+-	target_link_libraries(${MODULE_NAME} ${PUBLIC_KEYWORD} ${${MODULE_PREFIX}_LIBS} ossaudio)
+-else()
+-	target_link_libraries(${MODULE_NAME} ${PUBLIC_KEYWORD} ${${MODULE_PREFIX}_LIBS})
+-endif()
++target_link_libraries(${MODULE_NAME} ${PUBLIC_KEYWORD} ${${MODULE_PREFIX}_LIBS})
+ 
+ 
+ install(TARGETS ${MODULE_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT libraries EXPORT FreeRDP-ClientTargets)

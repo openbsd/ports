@@ -1,12 +1,14 @@
-$OpenBSD: patch-client_X11_CMakeLists_txt,v 1.2 2015/11/07 05:55:08 ajacoutot Exp $
---- client/X11/CMakeLists.txt.orig	Thu Oct 29 07:05:08 2015
-+++ client/X11/CMakeLists.txt	Thu Oct 29 07:05:18 2015
-@@ -108,7 +108,7 @@ if(WITH_MANPAGES)
- 		add_custom_target(xfreerdp.manpage ALL
- 			DEPENDS xfreerdp.1)
+$OpenBSD: patch-client_X11_CMakeLists_txt,v 1.3 2018/04/28 19:20:17 landry Exp $
+
+Index: client/X11/CMakeLists.txt
+--- client/X11/CMakeLists.txt.orig
++++ client/X11/CMakeLists.txt
+@@ -203,7 +203,7 @@ endif()
+ include_directories(${CMAKE_SOURCE_DIR}/resources)
  
--		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xfreerdp.1 DESTINATION share/man/man1)
-+		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xfreerdp.1 DESTINATION man/man1)
- 	else()
- 		message(WARNING "WITH_MANPAGES was set, but xsltproc was not found. man-pages will not be installed")
- 	endif()
+ set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} freerdp-client freerdp m)
+-if (NOT APPLE)
++if ((NOT APPLE) AND (NOT OPENBSD))
+ 	list(APPEND ${MODULE_PREFIX}_LIBS rt)
+ endif()
+ target_link_libraries(${MODULE_NAME} ${PRIVATE_KEYWORD} ${${MODULE_PREFIX}_LIBS})

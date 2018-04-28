@@ -1,0 +1,12 @@
+$OpenBSD: patch-winpr_winpr_pc_in,v 1.1 2018/04/28 19:20:17 landry Exp $
+
+Index: winpr/winpr.pc.in
+--- winpr/winpr.pc.in.orig
++++ winpr/winpr.pc.in
+@@ -11,5 +11,5 @@ Version: @WINPR_VERSION@
+ Requires:
+ Requires.private: libssl
+ Libs: -L${libdir} ${libs}
+-Libs.private: -ldl -lrt -lm -lpthread
++Libs.private: -lm -lpthread
+ Cflags: -I${includedir}
