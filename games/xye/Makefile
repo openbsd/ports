@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/08 19:17:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/28 18:11:32 bcallah Exp $
 
 COMMENT =	puzzle game collecting diamonds and avoiding obstacles
 DISTNAME =	xye-0.12.2
@@ -21,7 +21,5 @@ LIB_DEPENDS =	devel/sdl-image \
 RUN_DEPENDS =	devel/desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
-
-CXXFLAGS +=	-std=c++03
 
 .include <bsd.port.mk>

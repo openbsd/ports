@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xsb_level_cpp,v 1.1 2018/04/28 18:11:32 bcallah Exp $
+
+clang6 fix
+
+Index: src/xsb_level.cpp
+--- src/xsb_level.cpp.orig
++++ src/xsb_level.cpp
+@@ -784,7 +784,7 @@ return false;
+ 
+ bool FromXyeDFS(int* mem, unsigned char x, unsigned char y)
+ {
+-    static const unsigned char dx[4] = {0,0,-1,1}, dy[4] = {-1,1,0,0};
++    static const unsigned char dx[4] = {0,0,255,1}, dy[4] = {255,1,0,0};
+     int &res =  mem[y*XYE_HORZ+x];
+     if( res==0)
+     {
