@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2018/04/28 15:04:12 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -6565,7 +6565,7 @@ echo "$as_me: error: *** Rawstudio requires libtiff." 
+ fi
+ 
+ 
+-pkg_modules="gtk+-2.0 >= 2.8.0 libxml-2.0 >= 2.4 gconf-2.0 >= 2.0 lcms dbus-1 exiv2"
++pkg_modules="gtk+-2.0 >= 2.8.0 libxml-2.0 >= 2.4 gthread-2.0 gconf-2.0 >= 2.0 lcms dbus-1 exiv2"
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
