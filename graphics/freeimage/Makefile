@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/28 21:18:46 danj Exp $
 
 COMMENT=		c++ library for common image format
 
 DISTNAME=		FreeImage3152
 PKGNAME=		freeimage-3.15.2
-REVISION =		3
+REVISION =		4
 CATEGORIES=		graphics
 
 SHARED_LIBS+=		freeimage	2.0
 
 HOMEPAGE=		http://freeimage.sourceforge.net/
-
-MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
 # GPL / "FreeImage Public Nons^WLicense"
 PERMIT_PACKAGE_CDROM=	Yes
