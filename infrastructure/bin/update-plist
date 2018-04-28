@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.37 2018/04/28 20:20:14 espie Exp $
+# $OpenBSD: update-plist,v 1.38 2018/04/28 22:00:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -311,12 +311,15 @@ sub figure_out_dependencies
 		my $pkgpath = pop @solve;
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
-			$self->{state}->say("Dependency on #1", $pkgpath);
+			$self->{state}->progress->message($pkgpath);
 			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
 			    $self->{state}, $pkgpath, $portsdir,
 			    \&OpenBSD::PackingList::UpdatePlistOnly,
-			    "print-plist", "wantlib_args=no_wantlib-args");
+			    "print-plist-with-depends", "wantlib_args=no-wantlib-args");
 			$plist->process_dependency($cache->{$pkgpath});
+		}
+		for my $dir (keys %{$cache->{$pkgpath}{dir}}) {
+			$self->{stripped}{$dir} = 1;
 		}
 		push(@solve, keys %{$cache->{$pkgpath}{pkgpath}});
 	}
@@ -378,7 +381,9 @@ sub perform_backsubst
 
 sub write_with_frags
 {
-	my ($o, $t) = @_;
+	my ($o, $p) = @_;
+	return if $o->{DONT};
+	my $t = $p->{tracker};
 	if (defined $o->{file}) {
 		$o->write($t->open($o->{file}->name))
 	} else {
@@ -413,6 +418,14 @@ sub process_dependency
 	my ($self, $mtree) = @_;
 
 	$mtree->{dir}{$self->fullname} = 1;
+}
+
+sub write_with_frags
+{
+	my ($o, $p) = @_;
+	if (!$p->{stripped}{$o->fullname}) {
+		$o->SUPER::write_with_frags($p);
+	}
 }
 
 # dir-like objects HAVE a / added at the end...
@@ -595,6 +608,8 @@ while (@ARGV > 0) {
 	$r->olist->set_pkgname($pkg);
 	$r->nlist->set_pkgname($pkg);
 	$r->read_all_fragments($s, $r->olist);
+	# add the cwd to new list as well!!!
+	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
 	$r->add_extra_info($r->olist, $s);
 	# for removing directory stuff later on
 # except that we also record where each object live, including directory
@@ -609,10 +624,10 @@ while (@ARGV > 0) {
 # so we read everything, let's figure out common directories
 my $cache = {};
 my $portsdir = $ENV{PORTSDIR};
+$state->progress->set_header("Handling dependency");
 for my $p (@lists) {
-#	$p->figure_out_dependencies($cache, $portsdir);
+	$p->figure_out_dependencies($cache, $portsdir);
 }
-
 
 # XXX we assume all subpackage are under the same destdir (-B option)
 my $base = $lists[0]->{state}{base};
@@ -675,7 +690,9 @@ for my $i (1, 2) {
 }
 
 for my $p (@lists) {
-	delete $p->nlist->{name};
+	$p->nlist->{name}{DONT} = 1;
+	# CWD that we added manually... this sucks a bit!!!
+	$p->nlist->{items}[0]{DONT} = 1;
 	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
@@ -698,7 +715,7 @@ $> = $ports_uid;
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
-	$p->nlist->write_with_frags($p->{tracker});
+	$p->nlist->write_with_frags($p);
 	$p->{tracker}->finish;
 }
 
