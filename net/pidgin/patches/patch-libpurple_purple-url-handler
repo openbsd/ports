@@ -1,9 +1,10 @@
-$OpenBSD: patch-libpurple_purple-url-handler,v 1.6 2016/01/03 09:06:49 ajacoutot Exp $
---- libpurple/purple-url-handler.orig	Thu Dec 31 18:19:41 2015
-+++ libpurple/purple-url-handler	Sat Jan  2 19:53:30 2016
+$OpenBSD: patch-libpurple_purple-url-handler,v 1.7 2018/04/28 16:58:39 ajacoutot Exp $
+Index: libpurple/purple-url-handler
+--- libpurple/purple-url-handler.orig
++++ libpurple/purple-url-handler
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
- from __future__ import print_function
- import dbus
- import re
+ 
+ from __future__ import absolute_import, division, print_function
+ 

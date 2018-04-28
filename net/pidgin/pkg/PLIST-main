@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2017/09/01 09:53:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2018/04/28 16:58:39 ajacoutot Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -47,6 +47,7 @@ include/pidgin/gtksourceundomanager.h
 include/pidgin/gtksourceview-marshal.h
 include/pidgin/gtkstatus-icon-theme.h
 include/pidgin/gtkstatusbox.h
+include/pidgin/gtkstyle.h
 include/pidgin/gtkthemes.h
 include/pidgin/gtkutils.h
 include/pidgin/gtkwhiteboard.h
@@ -72,6 +73,7 @@ lib/pidgin/themeedit.so
 lib/pidgin/ticker.so
 lib/pidgin/timestamp.so
 lib/pidgin/timestamp_format.so
+lib/pidgin/transparency.so
 lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
 lib/pkgconfig/pidgin.pc

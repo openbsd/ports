@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.138 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.139 2018/04/28 16:58:39 ajacoutot Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.12.0
+VERSION=	2.13.0
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
-REVISION-main=	0
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
 .for i in -finch -libpurple
@@ -24,7 +23,7 @@ SHARED_LIBS=	jabber		0.0 \
 		purple-client	7.0 \
 		gnt		7.0
 
-HOMEPAGE=	http://pidgin.im/
+HOMEPAGE=	https://pidgin.im/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
