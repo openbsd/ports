@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/08 20:50:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/04/28 14:07:55 ajacoutot Exp $
 ${P5SITE}/Module/AutoInstall.pm
 ${P5SITE}/Module/Install/
 ${P5SITE}/Module/Install.pm
@@ -10,6 +10,7 @@ ${P5SITE}/Module/Install/Admin/Bundle.pm
 ${P5SITE}/Module/Install/Admin/Compiler.pm
 ${P5SITE}/Module/Install/Admin/Find.pm
 ${P5SITE}/Module/Install/Admin/Include.pm
+@comment ${P5SITE}/Module/Install/Admin/Include.pm.orig
 ${P5SITE}/Module/Install/Admin/Makefile.pm
 ${P5SITE}/Module/Install/Admin/Manifest.pm
 ${P5SITE}/Module/Install/Admin/Metadata.pm
@@ -38,6 +39,7 @@ ${P5SITE}/Module/Install/Share.pm
 ${P5SITE}/Module/Install/Win32.pm
 ${P5SITE}/Module/Install/With.pm
 ${P5SITE}/Module/Install/WriteAll.pm
+${P5SITE}/inc/
 ${P5SITE}/inc/Module/
 ${P5SITE}/inc/Module/Install/
 ${P5SITE}/inc/Module/Install.pm
