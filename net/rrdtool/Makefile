@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2018/01/12 14:03:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2018/04/28 10:29:00 landry Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -12,7 +12,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=	rrd                  5.2      # 9.0
 
@@ -84,7 +84,7 @@ WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB-main += glib-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-main += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png xcb
-WANTLIB-main += xcb-render xcb-shm xml2 z
+WANTLIB-main += xcb-render xcb-shm xml2 z fribidi
 
 LIB_DEPENDS-main=	devel/glib2 \
 			devel/pango \
