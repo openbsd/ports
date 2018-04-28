@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.35 2018/04/28 15:07:38 espie Exp $
+# $OpenBSD: update-plist,v 1.36 2018/04/28 15:18:46 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -650,8 +650,10 @@ for my $i (1, 2) {
 			}
 		}
 		# last resort
+		eval {
 		$o->element_class->add($lists[0]->nlist, 
 		    $lists[0]->strip_prefix($path));
+		};
 	}
 }
 
@@ -719,4 +721,3 @@ if (@towrite > 0 && !$cantmove) {
 			    die "can't rename $k.new to $k: $!";
 	}
 }
-
