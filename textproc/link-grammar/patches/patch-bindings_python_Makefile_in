@@ -1,11 +1,12 @@
-$OpenBSD: patch-bindings_python_Makefile_in,v 1.5 2017/01/20 09:24:40 ajacoutot Exp $
---- bindings/python/Makefile.in.orig	Thu Jan 19 19:41:02 2017
-+++ bindings/python/Makefile.in	Fri Jan 20 10:17:29 2017
-@@ -444,9 +444,9 @@ _clinkgrammar_la_CPPFLAGS = \
- # On Cygwin, a DLL with version is named name-major.dll with no symlink to
- # it of an unversioned name (at least up and including libtool 2.4.6).
- # This is bad for Python modules, as they must have an identifier name.
--@OS_CYGWIN_TRUE@AVOID_VERSION = -avoid-version
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.6 2018/04/28 15:37:31 ajacoutot Exp $
+Index: bindings/python/Makefile.in
+--- bindings/python/Makefile.in.orig
++++ bindings/python/Makefile.in
+@@ -446,9 +446,9 @@ _clinkgrammar_la_CPPFLAGS = \
+ # symlink to it of an unversioned name (at least up and including libtool
+ # 2.4.6).  This is bad for Python modules, as they must have an identifier
+ # name.
+-@OS_WIN32_TRUE@AVOID_VERSION = -avoid-version
 +AVOID_VERSION = -avoid-version
  _clinkgrammar_la_LDFLAGS = \
 -    -version-info @VERSION_INFO@ $(AVOID_VERSION) \

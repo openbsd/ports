@@ -1,9 +1,9 @@
-$OpenBSD: patch-link-grammar_utilities_h,v 1.4 2018/02/25 19:22:59 ajacoutot Exp $
+$OpenBSD: patch-link-grammar_utilities_h,v 1.5 2018/04/28 15:37:31 ajacoutot Exp $
 
 Index: link-grammar/utilities.h
 --- link-grammar/utilities.h.orig
 +++ link-grammar/utilities.h
-@@ -160,17 +160,21 @@ int strncasecmp(const char *s1, const char *s2, size_t
+@@ -162,16 +162,20 @@ int strncasecmp(const char *s1, const char *s2, size_t
  /* Cygwin < 2.6.0 doesn't have locale_t. */
  #ifdef HAVE_LOCALE_T
  locale_t newlocale_LC_CTYPE(const char *);
@@ -15,8 +15,7 @@ Index: link-grammar/utilities.h
 -typedef int locale_t;
 +typedef void *locale_t;
 +#define freelocale(l)
-+#endif
-+
++#endif /* HAVE_LOCALE_T */
  #define iswupper_l(c, l) iswupper(c)
  #define iswalpha_l(c, l) iswalpha(c)
  #define iswdigit_l(c, l) iswdigit(c)
@@ -25,7 +24,6 @@ Index: link-grammar/utilities.h
  #define towupper_l(c, l) towupper(c)
 -#define freelocale(l)
 -#endif /* HAVE_LOCALE_T */
--
- #define STR(x) #x
- #define STRINGIFY(x) STR(x)
  
+ #if HAVE__ALIGNED_MALLOC
+ #define aligned_alloc(alignment, size) _aligned_malloc (size, alignment)

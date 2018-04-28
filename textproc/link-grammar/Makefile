@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/02/25 19:22:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2018/04/28 15:37:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,7 +7,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.4.3
+VERSION =		5.4.4
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += hunspell-1.6 m sqlite3 ${COMPILER_LIBCXX}
+WANTLIB += hunspell-1.6 m sqlite3 z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c pthread
 
@@ -75,7 +75,8 @@ ADD_CFLAGS =		-I${JAVA_HOME}/include -I${JAVA_HOME}/include/openbsd
 ADD_CFLAGS +=		-I${LOCALBASE}/include
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} ${ADD_CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} ${ADD_CFLAGS}" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+			JAVA_HOME=${JAVA_HOME}
 
 CONFIGURE_ARGS =	--enable-perl-bindings \
 			--enable-python-bindings \
