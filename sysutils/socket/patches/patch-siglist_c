@@ -1,6 +1,7 @@
-$OpenBSD: patch-siglist_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
---- siglist.c.orig	Sun Aug 30 15:50:48 1992
-+++ siglist.c	Fri Jul  8 13:17:27 2011
+$OpenBSD: patch-siglist_c,v 1.2 2018/04/28 16:25:36 jasper Exp $
+Index: siglist.c
+--- siglist.c.orig
++++ siglist.c
 @@ -22,6 +22,7 @@ with Bash; see the file COPYING.  If not, write to the
  Foundation, 675 Mass Ave, Cambridge, MA 02139, USA. */
  
@@ -9,30 +10,11 @@ $OpenBSD: patch-siglist_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
  #include <signal.h>
  
  #if !defined (NSIG)
-@@ -32,12 +33,17 @@ Foundation, 675 Mass Ave, Cambridge, MA 02139, USA. */
- #  endif /* !_NSIG */
- #endif /* !NSIG */
- 
-+#if HAVE_SYS_PARAM_H
-+# include <sys/param.h>
-+#endif
-+
-+#if !(defined(BSD) && (BSD >=199306))
+@@ -39,7 +40,6 @@ Foundation, 675 Mass Ave, Cambridge, MA 02139, USA. */
+ #if !(defined(BSD) && (BSD >=199306))
  char *sys_siglist[NSIG];
-+#endif
- 
+ #endif
 -extern *malloc ();
--
--initialize_siglist ()
-+void initialize_siglist ()
- {
-+#if !(defined(BSD) && (BSD >=199306))
-   register int i;
  
-   for (i = 0; i < NSIG; i++)
-@@ -219,4 +225,5 @@ initialize_siglist ()
- 	  sprintf (sys_siglist[i], "Unknown Signal #%d", i);
- 	}
-     }
-+#endif /* !(defined(BSD) && (BSD >=199306)) */
- }
+ void initialize_siglist ()
+ {

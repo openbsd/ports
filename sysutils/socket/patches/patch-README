@@ -1,9 +1,0 @@
-$OpenBSD: patch-README,v 1.3 2011/07/08 11:19:35 jasper Exp $
---- README.orig	Wed Sep  9 16:45:16 1992
-+++ README	Fri Jul  8 13:17:27 2011
-@@ -166,4 +166,4 @@ Please send any comments, suggestions, bug reports etc
-     1000 Berlin 10
-     Germany
- 
--    <nickel@cs.tu-berlin.de>
-+Juergen Nickelsen <jn@berlin.snafu.de>

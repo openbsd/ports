@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/17 21:07:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/28 16:25:36 jasper Exp $
 
 COMMENT=	create tcp socket and connect to stdin/out
 
-DISTNAME=	socket-1.1
-REVISION=	0
+DISTNAME=	socket-1.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://people.freebsd.org/~wosch/src/
 
