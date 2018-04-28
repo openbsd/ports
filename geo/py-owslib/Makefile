@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/30 14:30:35 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/28 14:29:16 ajacoutot Exp $
 
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_EGG_VERSION =	0.15.0
+MODPY_EGG_VERSION =	0.16.0
 DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
