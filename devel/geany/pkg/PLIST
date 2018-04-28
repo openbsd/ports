@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/02/27 11:18:57 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/04/28 15:31:35 jasper Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
@@ -88,6 +88,7 @@ share/geany/GPL-2
 share/geany/colorschemes/
 share/geany/colorschemes/alt.conf
 share/geany/filedefs/
+share/geany/filedefs/filetypes.Arduino.conf
 share/geany/filedefs/filetypes.CUDA.conf
 share/geany/filedefs/filetypes.Clojure.conf
 share/geany/filedefs/filetypes.Cython.conf
@@ -260,6 +261,7 @@ share/locale/lb/
 share/locale/lb/LC_MESSAGES/
 share/locale/lb/LC_MESSAGES/geany.mo
 share/locale/lt/LC_MESSAGES/geany.mo
+share/locale/lv/LC_MESSAGES/geany.mo
 share/locale/mn/LC_MESSAGES/geany.mo
 share/locale/nl/LC_MESSAGES/geany.mo
 share/locale/nn/LC_MESSAGES/geany.mo
