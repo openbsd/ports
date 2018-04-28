@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/04/28 14:10:09 ajacoutot Exp $
 
 COMMENT =	peek at lexical variables
 
-DISTNAME =	PadWalker-2.2
+DISTNAME =	PadWalker-2.3
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	ROBIN
