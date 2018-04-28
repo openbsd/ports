@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 09:43:59 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/04/28 10:41:38 pvk Exp $
 
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	16.3.0
+MODPY_EGG_VERSION =	17.4.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -19,14 +19,12 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-six${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-zopeinterface${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-zopeinterface${MODPY_FLAVOR}
-.endif
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib
 
