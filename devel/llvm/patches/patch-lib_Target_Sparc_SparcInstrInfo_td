@@ -1,6 +1,10 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.5 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.6 2018/04/28 15:04:29 ajacoutot Exp $
 
-[Sparc] allow tls_add/tls_call syntax in assembler parser
+- [Sparc] allow tls_add/tls_call syntax in assembler parser
+- [Sparc] Use synthetic instruction clr to zero register instead of sethi
+
+  Using `clr reg`/`mov %g0, reg`/`or %g0, %g0, reg` to zero a register
+  looks much better than `sethi 0, reg`.
 
 Index: lib/Target/Sparc/SparcInstrInfo.td
 --- lib/Target/Sparc/SparcInstrInfo.td.orig
@@ -14,3 +18,13 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  def TLS_ADDrr : F3_1<2, 0b000000,
                      (outs IntRegs:$rd),
                      (ins IntRegs:$rs1, IntRegs:$rs2, TLSSym:$sym),
+@@ -1599,6 +1599,9 @@ let Predicates = [HasV9] in {
+ // Non-Instruction Patterns
+ //===----------------------------------------------------------------------===//
+ 
++// Zero immediate.
++def : Pat<(i32 0),
++          (ORrr (i32 G0), (i32 G0))>;
+ // Small immediates.
+ def : Pat<(i32 simm13:$val),
+           (ORri (i32 G0), imm:$val)>;
