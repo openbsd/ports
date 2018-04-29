@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/26 18:48:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/29 06:51:04 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -140,7 +140,7 @@
      #SUBDIR += kteatime
      #SUBDIR += ktimer
      #SUBDIR += ktnef
-     #SUBDIR += ktouch
+     SUBDIR += ktouch
      #SUBDIR += ktp-accounts-kcm
      #SUBDIR += ktp-approver
      #SUBDIR += ktp-auth-handler
