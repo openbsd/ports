@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/04/28 14:07:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2018/04/29 11:52:55 nigel Exp $
 
 COMMENT=	standalone extensible Perl module installer
 
@@ -18,6 +18,8 @@ RUN_DEPENDS+=	devel/p5-Module-ScanDeps \
 
 # special case; this is *not* a CONFIGURE_STYLE=modbuild port
 RUN_DEPENDS+=	devel/p5-Module-Build
+BUILD_DEPENDS=	devel/p5-File-Remove \
+		devel/p5-YAML-Tiny
 
 CONFIGURE_ARGS=	--skipdeps
 
