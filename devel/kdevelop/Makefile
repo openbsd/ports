@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/29 10:07:52 rsadowski Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 KDEV_V =	4.7.1
 KDEVPLAT_V =	1.7.1
-REVISION =	1
+REVISION =	3
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 
@@ -47,7 +47,7 @@ MODKDE4_USE =	workspace
 BUILD_DEPENDS =	devel/gettext-tools \
 		misc/shared-mime-info
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate \
+RUN_DEPENDS =	x11/kde-applications/kate \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic \
