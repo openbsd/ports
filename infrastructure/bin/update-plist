@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.43 2018/04/29 10:42:28 espie Exp $
+# $OpenBSD: update-plist,v 1.44 2018/04/29 13:03:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -432,6 +432,10 @@ sub may_tag_along
 {
 }
 
+sub count_directories
+{
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -455,6 +459,12 @@ sub process_dependency
 	my ($self, $mtree) = @_;
 
 	$mtree->{dir}{$self->fullname} = 1;
+}
+
+sub count_directories
+{
+	my ($self, $count) = @_;
+	$$count++;
 }
 
 sub write_with_frags
@@ -694,13 +704,6 @@ while (@ARGV > 0) {
 }
 
 
-# so we read everything, let's figure out common directories
-my $cache = {};
-my $portsdir = $ENV{PORTSDIR};
-for my $p (@lists) {
-	$p->figure_out_dependencies($cache, $portsdir);
-}
-
 # XXX we assume all subpackage are under the same destdir (-B option)
 my $base = $lists[0]->{state}{base};
 
@@ -773,6 +776,17 @@ for my $i (1, 2) {
 		$o->element_class->add($lists[0]->nlist, 
 		    $lists[0]->strip_prefix($path));
 		};
+	}
+}
+
+# so we read everything, let's figure out common directories
+my $cache = {};
+my $portsdir = $ENV{PORTSDIR};
+for my $p (@lists) {
+	my $count = 0;
+	$p->nlist->count_directories(\$count);
+	if ($count > 0) {
+		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
 
