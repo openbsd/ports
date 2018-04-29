@@ -1,0 +1,19 @@
+PyCryptodome is a self-contained Python package of low-level cryptographic
+primitives. It is an cleaned and simplified fork of PyCrypto, exposing
+almost the same API. Most applications run unmodified, apart from a very
+few compatibility breaks for those parts of the API that represented a
+security hazard or that were too hard to maintain.
+
+PyCryptodome is not a wrapper to a separate C library like OpenSSL.
+To the largest possible extent, algorithms are implemented in pure Python.
+Only the pieces that are extremely critical to performance (e.g. block
+ciphers) are implemented as C extensions.
+
+As well as functionality supported by PyCrypto, this adds support for:
+
+- Authenticated encryption modes (GCM, CCM, EAX, SIV, OCB)
+- Elliptic curves cryptography (NIST P-256 curve only)
+- SHA-3 (including SHAKE XOFs), SHA-512/t and BLAKE2 hash algorithms
+- Salsa20 and ChaCha20 stream ciphers
+- scrypt and HKDF
+- Deterministic (EC)DSA
