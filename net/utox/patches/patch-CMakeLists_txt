@@ -1,0 +1,27 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/04/29 11:15:17 landry Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -184,8 +184,8 @@ add_cflag("-fPIC")
+ # Fix GNU stack
+ if(CMAKE_C_COMPILER_ID MATCHES "GNU")
+     # Have ld strip the symbols from Release and MinSizeRel build types.
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -s")
++    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(LINUX)
+         # enable Link Time Optimization on gcc (linux only currently)
+@@ -220,8 +220,8 @@ elseif(CMAKE_C_COMPILER_ID MATCHES "Clang")
+     endif()
+ 
+     # Have ld strip the symbols from Release and MinSizeRel build types. (-Oz is clang specific)
+-    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Os")
+-    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Oz -s")
++    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} ")
++    set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -s")
+ 
+     if(NOT ENABLE_ASAN)
+         if(NOT APPLE)
