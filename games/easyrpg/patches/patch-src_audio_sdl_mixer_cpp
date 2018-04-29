@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_audio_sdl_mixer_cpp,v 1.1 2018/04/29 09:33:00 jasper Exp $
+
+https://github.com/carstene1ns/easyrpg-player/commit/4206ae21a07a9263df74e217c67b6928a4ef775d
+
+Index: src/audio_sdl_mixer.cpp
+--- src/audio_sdl_mixer.cpp.orig
++++ src/audio_sdl_mixer.cpp
+@@ -242,8 +242,12 @@ void SdlMixerAudio::BGM_OnPlayedOnce() {
+ 
+ 	if (!bgm_stop) {
+ 		played_once = true;
+-		// Play indefinitely without fade-in
++
++// introduced in SDL2_mixer 2.0.2, which deprecated libmad
++#ifndef SDL_MIXER_COMPILEDVERSION
+ 		if (Mix_GetMusicType(bgm.get()) != MUS_MP3_MAD)
++#endif
++			// Play indefinitely without fade-in
+ 			Mix_PlayMusic(bgm.get(), -1);
+ 	}
+ }
