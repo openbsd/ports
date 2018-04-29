@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2018/01/25 08:59:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2018/04/29 13:02:12 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 GH_ACCOUNT=		zdohnal
 GH_PROJECT=		system-config-printer
 GH_TAGNAME=		1.5.11
+REVISION=		0
 
 CATEGORIES=		print sysutils
 
@@ -32,7 +33,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			net/py-curl${MODPY_FLAVOR} \
 			print/cups-pk-helper \
 			print/py-cups${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
+			x11/dbus-python${MODPY_FLAVOR}
 
 # pygobject introspections (not provided by indirect dependencies)
 RUN_DEPENDS +=		devel/libnotify \
