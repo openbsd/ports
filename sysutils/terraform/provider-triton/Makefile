@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/22 14:06:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/29 12:55:26 ajacoutot Exp $
 
 PROVIDER=		triton
-GH_TAGNAME=		v0.5.0
+GH_TAGNAME=		v0.5.1
 
 .include <bsd.port.mk>
