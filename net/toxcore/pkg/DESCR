@@ -1,4 +1,4 @@
-Tox is secure distributed messaging protocol with audio and video chat
+Tox is a secure distributed messaging protocol with audio and video chat
 capabilities.
 
-This package contains client library for the Tox protocol.
+This package contains the client library for the Tox protocol.
