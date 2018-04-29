@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/01/29 15:39:02 jca Exp $
+# $OpenBSD: Makefile,v 1.42 2018/04/29 07:41:41 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -90,7 +90,7 @@ SUBDIR += runtime
 SUBDIR += pim-runtime
 SUBDIR += workspace
 SUBDIR += baseapps
-SUBDIR += kate
+#SUBDIR += kate			x11/kde-applications
 SUBDIR += konsole
 
 # bindings and wrappers
