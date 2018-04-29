@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/28 14:57:32 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2018/04/29 22:24:56 jasper Exp $
 
 V =			0.3.9
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
@@ -15,7 +15,8 @@ MASTER_SITES =	http://pwmt.org/projects/zathura/download/
 
 MODULES=	devel/meson
 BUILD_DEPENDS =	textproc/py-docutils \
-		devel/gettext-tools
+		devel/gettext-tools \
+		textproc/py-sphinx
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS =	databases/sqlite3 \
