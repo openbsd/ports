@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.44 2018/04/29 13:03:45 espie Exp $
+# $OpenBSD: update-plist,v 1.45 2018/04/29 13:08:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -182,8 +182,12 @@ sub do_backsubst
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
 		if ($subst->never_add($k)) {
-			next unless defined $unsubst &&
-			    $unsubst =~ m/\$\{\Q$k\E\}/;
+			unless (defined $unsubst &&
+			    $unsubst =~ m/\$\{\Q$k\E\}/) {
+			    	# add a magical location for FULLPKGNAME
+			    	next unless $k eq 'FULLPKGNAME' &&
+				    $string =~ m,^share/doc/pkg-readmes/,;
+			}
 		} else {
 			# Heuristics: if the variable is already known AND was 
 			# not used already, then we don't try to use it
