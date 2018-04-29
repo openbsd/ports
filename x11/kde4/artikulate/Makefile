@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/04/29 10:24:18 rsadowski Exp $
+
+BROKEN =	Depends on kqtquickcharts-4* which was removed
 
 COMMENT =	language pronunciation improver
 DISTNAME =	artikulate-${MODKDE4_VERSION}
