@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/04/23 17:42:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2018/04/29 09:15:05 jasper Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=		devel/libgtop2>=2.38.0 \
 			x11/gtk3mm
 
 # share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
+BUILD_DEPENDS +=	sysutils/polkit
 RUN_DEPENDS +=		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
