@@ -1,19 +1,10 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2018/04/29 09:28:53 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2018/04/29 18:19:33 bentley Exp $
 Skip test that hangs due to differences in nc(1) behavior between OpenBSD
 and Linux.
-Index: Makefile.am
---- Makefile.am.orig
-+++ Makefile.am
-@@ -31,7 +31,7 @@ EXTRA_DIST = 		$(man_MANS) dtd.hash unent.hash export.
- 
- doc_DATA =		COPYING
- 
--LDADD =			@LIBOBJS@ @LIBCURL@
-+LDADD =			@LIBOBJS@ @LIBCURL@ @LIBICONV@
- AM_CPPFLAGS =		@LIBCURL_CPPFLAGS@
- AM_YFLAGS =		-d
- AM_LFLAGS =		@lex_opt_flags@
-@@ -166,7 +166,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -910,7 +910,7 @@ TESTS = tests/addid1.sh tests/addid1.sh tests/ascxml.s
  	tests/cite4.sh\
  	tests/clean1.sh tests/copy1.sh tests/copy2.sh tests/copy3.sh\
  	tests/copy4.sh tests/copy5.sh tests/copy6.sh\
