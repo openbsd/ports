@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1070 2018/04/27 08:51:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.1071 2018/04/29 11:20:53 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -702,6 +702,8 @@
      SUBDIR += tor
      SUBDIR += torsocks
      SUBDIR += totd
+     SUBDIR += toxcore
+     SUBDIR += toxic
      SUBDIR += trafshow
      SUBDIR += transmission
      SUBDIR += trickle
@@ -717,6 +719,7 @@
      SUBDIR += unison
      SUBDIR += unworkable
      SUBDIR += ushare
+     SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += uucpd
      SUBDIR += validns
