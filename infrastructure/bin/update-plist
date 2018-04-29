@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.40 2018/04/29 10:15:11 espie Exp $
+# $OpenBSD: update-plist,v 1.41 2018/04/29 10:19:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -176,17 +176,18 @@ sub parse_option
 sub do_backsubst
 {
 	my ($subst, $string, $self) = @_;
+	my $unsubst = $self->{unsubst};
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
 		if ($subst->never_add($k)) {
-			next unless defined $self->{unsubst} &&
-			    $self->{unsubst} =~ m/\$\{\Q$k\E\}/;
+			next unless defined $unsubst &&
+			    $unsubst =~ m/\$\{\Q$k\E\}/;
 		} else {
 			# Heuristics: if the variable is already known AND was 
 			# not used already, then we don't try to use it
-			next if defined $self->{unsubst} &&
+			next if defined $unsubst &&
 			    $subst->{used}{$k} &&
-			    $self->{unsubst} !~ m/\$\{$k\}/;
+			    $unsubst !~ m/\$\{$k\}/;
 		}
 		    	
 		if ($k =~ m/^\^(.*)$/) {
@@ -195,8 +196,8 @@ sub do_backsubst
 			# Empty variable at start of string
 			# if it was already there we do it again
 			if ($v eq '') {
-				if (defined $self->{unsubst} &&
-				    $self->{unsubst} =~ m/^\$\{$k2\}/) {
+				if (defined $unsubst &&
+				    $unsubst =~ m/^\$\{$k2\}/) {
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
@@ -208,8 +209,8 @@ sub do_backsubst
 			# if it was already there, we try to locate
 			# the same prefix and apply it
 			if ($v eq '') {
-				if (defined $self->{unsubst} &&
-				    $self->{unsubst} =~ m/^(.*)\$\{$k\}/) {
+				if (defined $unsubst &&
+				    $unsubst =~ m/^(.*)\$\{$k\}/) {
 				    	my $prefix = $1;
 					# XXX hack around @keyword
 					$prefix =~ s/^\@\S+\s+//;
