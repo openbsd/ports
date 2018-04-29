@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2018/04/29 09:07:39 naddy Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -34,5 +34,10 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-browser-dnd
+
+# GNU libiconv provides libiconv_open() which is mapped to iconv_open()
+# by <iconv.h>, so a simple link check fails.  Rather than regenerating
+# configure with iconv.m4, just override the test.
+CONFIGURE_ENV+=	ac_cv_lib_iconv_iconv_open=yes
 
 .include <bsd.port.mk>
