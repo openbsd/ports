@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_FileClasses_music_DirectoryPlayer_cpp,v 1.1 2018/04/29 09:27:32 jasper Exp $
+
+Fix build with sdl_mixer 2.0.2
+https://git.slackbuilds.org/slackbuilds/plain/games/dunelegacy/SDL2.patch
+
+Index: src/FileClasses/music/DirectoryPlayer.cpp
+--- src/FileClasses/music/DirectoryPlayer.cpp.orig
++++ src/FileClasses/music/DirectoryPlayer.cpp
+@@ -61,7 +61,7 @@ DirectoryPlayer::DirectoryPlayer() : MusicPlayer(setti
+ 
+     music = nullptr;
+ 
+-    Mix_Init(MIX_INIT_FLUIDSYNTH | MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG);
++    Mix_Init(MIX_INIT_MID | MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG);
+ }
+ 
+ DirectoryPlayer::~DirectoryPlayer() {
