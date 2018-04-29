@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/04/29 11:16:30 landry Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -62,20 +62,17 @@ OBJ := $(addprefix $(BUILD_DIR)/, $(OBJ))
+ all: $(BUILD_DIR)/toxic
+ 
+ $(BUILD_DIR)/toxic: $(OBJ)
+-	@echo "  LD    $(@:$(BUILD_DIR)/%=%)"
+-	@$(CC) $(CFLAGS) -o $(BUILD_DIR)/toxic $(OBJ) $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $(BUILD_DIR)/toxic $(OBJ) $(LDFLAGS)
+ 
+ $(BUILD_DIR)/osx_video.o: $(SRC_DIR)/$(OSX_VIDEO)
+-	@echo "  CC    $(@:$(BUILD_DIR)/)osx_video.o"
+-	@$(CC) $(CFLAGS) -o $(BUILD_DIR)/osx_video.o -c $(SRC_DIR)/$(OSX_VIDEO)
++	$(CC) $(CFLAGS) -o $(BUILD_DIR)/osx_video.o -c $(SRC_DIR)/$(OSX_VIDEO)
+ 
+ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+ 	@if [ ! -e $(BUILD_DIR) ]; then \
+ 		mkdir -p $(BUILD_DIR) ;\
+ 	fi
+-	@echo "  CC    $(@:$(BUILD_DIR)/%=%)"
+-	@$(CC) $(CFLAGS) -o $(BUILD_DIR)/$*.o -c $(SRC_DIR)/$*.c
+-	@$(CC) -MM $(CFLAGS) $(SRC_DIR)/$*.c > $(BUILD_DIR)/$*.d
++	$(CC) $(CFLAGS) -o $(BUILD_DIR)/$*.o -c $(SRC_DIR)/$*.c
++	$(CC) -MM $(CFLAGS) $(SRC_DIR)/$*.c > $(BUILD_DIR)/$*.d
+ 
+ clean:
+ 	rm -f $(BUILD_DIR)/*.d $(BUILD_DIR)/*.o $(BUILD_DIR)/toxic

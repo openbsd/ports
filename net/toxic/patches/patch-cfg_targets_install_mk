@@ -1,0 +1,13 @@
+$OpenBSD: patch-cfg_targets_install_mk,v 1.1.1.1 2018/04/29 11:16:30 landry Exp $
+
+Index: cfg/targets/install.mk
+--- cfg/targets/install.mk.orig
++++ cfg/targets/install.mk
+@@ -35,7 +35,6 @@ install: $(BUILD_DIR)/toxic
+ 		mv temp_file $$file ;\
+ 		sed -e 's:__DATADIR__:'$(abspath $(DATADIR))':g' $$file > temp_file && \
+ 		mv temp_file $$file ;\
+-		gzip -f -n -9 $$file ;\
+ 	done
+ 
+ .PHONY: install
