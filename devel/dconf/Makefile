@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/04/26 07:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2018/04/29 09:03:43 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -28,7 +28,8 @@ MODGNOME_TOOLS=		vala
 
 LIB_DEPENDS=		devel/glib2
 
-# XXX the gtk-doc dependency chain includes py-numpy which breaks on arm
+# XXX the gtk-doc dependency chain includes py-numpy which breaks on arm as it
+# requires fortran (lang/gcc/4.9,-f95)
 #BUILD_DEPENDS +=	textproc/gtk-doc
 #CONFIGURE_ARGS=	-Denable-gtk-doc=true
 
