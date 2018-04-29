@@ -1,0 +1,22 @@
+$OpenBSD: patch-toxcore_ccompat_h,v 1.1.1.1 2018/04/29 11:14:09 landry Exp $
+
+Index: toxcore/ccompat.h
+--- toxcore/ccompat.h.orig
++++ toxcore/ccompat.h
+@@ -22,13 +22,13 @@
+ // Emulation using alloca.
+ #ifdef _WIN32
+ #include <malloc.h>
+-#elif defined(__FreeBSD__)
++#elif defined(__linux__)
++#include <alloca.h>
++#else
+ #include <stdlib.h>
+ #if !defined(alloca) && defined(__GNUC__)
+ #define alloca __builtin_alloca
+ #endif
+-#else
+-#include <alloca.h>
+ #endif
+ 
+ #define VLA(type, name, size)                           \
