@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.42 2018/04/29 10:21:32 espie Exp $
+# $OpenBSD: update-plist,v 1.43 2018/04/29 10:42:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -314,7 +314,8 @@ sub figure_out_dependencies
 		my $pkgpath = pop @solve;
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
-			$self->{state}->progress->message($pkgpath);
+			$self->{state}->say("Stripping directories from #1",
+			    $pkgpath);
 			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
 			    $self->{state}, $pkgpath, $portsdir,
 			    \&OpenBSD::PackingList::UpdatePlistOnly,
@@ -662,7 +663,6 @@ my @lists;
 my $exact = {};
 my $approximate = {};
 
-$state->progress->set_header("Reading existing plists");
 # we read all plists using the exact same code as pkg_create
 # e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
 # options1 pkgname1 options2 pkgname2 ...
@@ -680,8 +680,7 @@ while (@ARGV > 0) {
 
 	$r->olist->set_pkgname($pkg);
 	$r->nlist->set_pkgname($pkg);
-	$state->progress->set_header("Reading existing plists");
-	$state->progress->message($pkg);
+	$state->say("Reading existing plist for #1", $pkg);
 	$r->read_all_fragments($s, $r->olist);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
@@ -698,7 +697,6 @@ while (@ARGV > 0) {
 # so we read everything, let's figure out common directories
 my $cache = {};
 my $portsdir = $ENV{PORTSDIR};
-$state->progress->set_header("Handling dependency");
 for my $p (@lists) {
 	$p->figure_out_dependencies($cache, $portsdir);
 }
@@ -709,13 +707,13 @@ my $base = $lists[0]->{state}{base};
 # now we ask the file system what exists, and fill file objects according to
 # that.
 require OpenBSD::FS2;
-$state->progress->set_header("Scanning $base");
+$state->say("Scanning #1", $base);
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
 
 # XXX this is different from the old code. First we figure out which objects
 # will get copied.
-$state->progress->set_header("Figuring out tie points");
+$state->say("Figuring out tie points");
 for my $path (keys %$objects) {
 	my $o = $objects->{$path};
 	if ($exact->{$path}) {
@@ -727,12 +725,12 @@ for my $path (keys %$objects) {
 
 # THEN we attach annotations to the closest known object
 # This ought to work better if files vanish
-$state->progress->set_header("Tieing loose objects");
+$state->say("Tieing loose objects");
 for my $p (@lists) {
 	$p->olist->tie_objects($p->olist);
 }
 
-$state->progress->set_header("Copying objects");
+$state->say("Copying objects");
 for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
@@ -778,6 +776,8 @@ for my $i (1, 2) {
 	}
 }
 
+# second pass stripping internal directories should go there
+
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
 	# CWD that we added manually... this sucks a bit!!!
@@ -811,7 +811,6 @@ for my $p (@lists) {
 my @towrite = ();
 my $cantmove = 0;
 
-$state->progress->next;
 # let's see if we want to update things
 for my $p (@lists) {
 	for my $k (sort keys %{$p->{tracker}{known}}) {
