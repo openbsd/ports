@@ -1,0 +1,16 @@
+$OpenBSD: patch-_spe_SPE_py,v 1.1 2018/04/29 10:13:57 jasper Exp $
+
+py-crypto -> py-cryptodome
+
+Index: _spe/SPE.py
+--- _spe/SPE.py.orig
++++ _spe/SPE.py
+@@ -67,7 +67,7 @@ except ImportError:
+     
+ #---Crypto
+ try:
+-    from Crypto.Cipher import DES
++    from Cryptodome.Cipher import DES
+     fCrypto     = True
+     print "Encrypted debugging enabled.\n"
+ except ImportError:
