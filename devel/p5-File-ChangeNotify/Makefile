@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/12 07:26:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/29 13:03:51 ajacoutot Exp $
 
 COMMENT =	watch for changes to files, cross-platform style
 
-DISTNAME =	File-ChangeNotify-0.27
+DISTNAME =	File-ChangeNotify-0.28
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Class-Load \
 			devel/p5-Module-Pluggable \
 			devel/p5-Module-Runtime \
-			devel/p5-Moo>=1.006 \
+			devel/p5-Moo \
 			devel/p5-Type-Tiny \
 			devel/p5-namespace-autoclean
 
