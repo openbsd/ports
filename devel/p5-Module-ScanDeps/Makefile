@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/28 14:11:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/04/29 11:18:13 nigel Exp $
 
 COMMENT=	recursively scan Perl code for dependencies
 
@@ -6,6 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Module-ScanDeps-1.24
 CATEGORIES=	devel
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
