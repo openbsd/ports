@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.39 2018/04/29 09:01:56 espie Exp $
+# $OpenBSD: update-plist,v 1.40 2018/04/29 10:15:11 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -395,6 +395,39 @@ sub copy_extra
 {
 }
 
+sub tag_along
+{
+	my ($self, $n) = @_;
+
+	push(@{$self->{mytags}}, $n);
+}
+
+sub tie_objects
+{
+	my ($self, $plist) = @_;
+	if ($self->{found}) {
+		$self->bookmark($plist);
+	} else {
+		$self->may_tag_along($plist);
+	}
+}
+
+sub attach_to_lastobject
+{
+	my ($self, $plist) = @_;
+	if (defined $plist->{state}{lastobject}) {
+		$plist->{state}{lastobject}->tag_along($self);
+	}
+}
+
+sub bookmark
+{
+}
+
+sub may_tag_along
+{
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -436,6 +469,13 @@ sub perform_backsubst
 
 	$self->{name} = $s->do_backsubst($self->{name}.'/', $self);
 	$self->{name} =~ s/\/$//;
+}
+
+sub bookmark
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
+	$plist->{state}{lastdir} = $self;
 }
 
 package OpenBSD::PackingElement::Meta;
@@ -497,6 +537,12 @@ sub fullname
 	return $path;
 }
 
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
+}
+
 sub known_object
 {
 	&OpenBSD::PackingElement::FileObject::known_object;
@@ -510,6 +556,21 @@ sub cwd
 sub copy_annotations
 {
 	# nope these are not normal annotations
+}
+
+package OpenBSD::PackingElement::Fragment;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
+}
+
+package OpenBSD::PackingElement::Action;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	# for now, we might do something smarter later
+	$self->attach_to_lastobject($plist);
 }
 
 package OpenBSD::PackingElement::FileObject;
@@ -542,6 +603,14 @@ sub show_unknown
 	if (!$self->{found}) {
 		print "Not found: ", $self->fullname, "(in ", $self->{file}->name, ")\n";
 	}
+}
+
+package OpenBSD::PackingElement::FileBase;
+sub bookmark
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
+	$plist->{state}{lastfile} = $self;
 }
 
 package OpenBSD::PackingElement::Lib;
@@ -640,8 +709,10 @@ require OpenBSD::FS2;
 $state->progress->set_header("Scanning $base");
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
-$state->progress->set_header("Figuring out tie points");
 
+# XXX this is different from the old code. First we figure out which objects
+# will get copied.
+$state->progress->set_header("Figuring out tie points");
 for my $path (keys %$objects) {
 	my $o = $objects->{$path};
 	if ($exact->{$path}) {
@@ -651,9 +722,12 @@ for my $path (keys %$objects) {
 	}
 }
 
-#for my $s (@$states) {
-#	$s->plist->tie_objects;
-#}
+# THEN we attach annotations to the closest known object
+# This ought to work better if files vanish
+$state->progress->set_header("Tieing loose objects");
+for my $p (@lists) {
+	$p->olist->tie_objects($p->olist);
+}
 
 $state->progress->set_header("Copying objects");
 for my $i (1, 2) {
@@ -664,9 +738,13 @@ for my $i (1, 2) {
 			# this will be re-added to multiple paths if there are
 			# multiple matching plists
 			for my $e (@{$exact->{$path}}) {
-				$e->{found} = 1;
 				my $s = $e->{comesfrom};
 				$e->add_object($s->nlist);
+				if (defined $e->{mytags}) {
+					for my $tag (@{$e->{mytags}}) {
+						$tag->add_object($s->nlist);
+					}
+				}
 			}
 			next;
 		}
