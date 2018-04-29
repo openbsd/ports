@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.45 2018/04/29 13:08:32 espie Exp $
+# $OpenBSD: update-plist,v 1.46 2018/04/29 19:26:33 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -846,7 +846,7 @@ for my $p (@lists) {
 				}
 			}
 		} else {
-			print baseplist($k), "is new\n";
+			print baseplist($k), " is new\n";
 			push(@towrite, $k);
 		}
 	}
