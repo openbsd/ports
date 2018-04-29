@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/04/29 07:41:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2018/04/29 07:47:20 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -148,7 +148,7 @@ SUBDIR += kiten
 SUBDIR += klettres
 SUBDIR += kmplot
 SUBDIR += kstars
-SUBDIR += ktouch
+#SUBDIR += ktouch		x11/kde-applications
 SUBDIR += kturtle
 SUBDIR += kwordquiz
 SUBDIR += libkdeedu
