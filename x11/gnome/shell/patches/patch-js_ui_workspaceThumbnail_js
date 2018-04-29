@@ -1,0 +1,99 @@
+$OpenBSD: patch-js_ui_workspaceThumbnail_js,v 1.1 2018/04/29 10:43:33 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/4/diffs
+
+Index: js/ui/workspaceThumbnail.js
+--- js/ui/workspaceThumbnail.js.orig
++++ js/ui/workspaceThumbnail.js
+@@ -70,12 +70,7 @@ var WindowClone = new Lang.Class({
+ 
+         this.clone._updateId = this.metaWindow.connect('position-changed',
+                                                        this._onPositionChanged.bind(this));
+-        this.clone._destroyId = this.realWindow.connect('destroy', () => {
+-            // First destroy the clone and then destroy everything
+-            // This will ensure that we never see it in the _disconnectSignals loop
+-            this.clone.destroy();
+-            this.destroy();
+-        });
++        this.clone._destroyId = this.realWindow.connect('destroy', this.destroy.bind(this));
+         this._onPositionChanged();
+ 
+         this.actor.connect('button-release-event',
+@@ -142,6 +137,14 @@ var WindowClone = new Lang.Class({
+     },
+ 
+     destroy() {
++        this.emit('destroy');
++
++        // First destroy the clone and then destroy everything
++        // This will ensure that we never see it in the _disconnectSignals loop
++        this.metaWindow.disconnect(this.clone._updateId);
++        this.realWindow.disconnect(this.clone._destroyId);
++        this.clone.destroy();
++
+         this.actor.destroy();
+     },
+ 
+@@ -285,6 +288,7 @@ var WorkspaceThumbnail = new Lang.Class({
+ 
+         // Create clones for windows that should be visible in the Overview
+         this._windows = [];
++        this._windowsDestroyedIds = [];
+         this._allWindows = [];
+         this._minimizedChangedIds = [];
+         for (let i = 0; i < windows.length; i++) {
+@@ -373,7 +377,7 @@ var WorkspaceThumbnail = new Lang.Class({
+         return this._collapseFraction;
+     },
+ 
+-    _doRemoveWindow(metaWin) {
++    _doRemoveWindow(metaWin, {cloneDestroy}={cloneDestroy: true}) {
+         let win = metaWin.get_compositor_private();
+ 
+         // find the position of the window in our list
+@@ -383,9 +387,13 @@ var WorkspaceThumbnail = new Lang.Class({
+             return;
+ 
+         let clone = this._windows[index];
++        clone.disconnect(this._windowsDestroyedIds[index]);
++
+         this._windows.splice(index, 1);
++        this._windowsDestroyedIds.splice(index, 1);
+ 
+-        clone.destroy();
++        if (cloneDestroy)
++            clone.destroy();
+     },
+ 
+     _doAddWindow(metaWin) {
+@@ -504,7 +512,11 @@ var WorkspaceThumbnail = new Lang.Class({
+           this._bgManager = null;
+         }
+ 
++        for (let index = 0; index < this._windows.length; ++index)
++            this._windows[index].disconnect(this._windowsDestroyedIds[index]);
++
+         this._windows = [];
++        this._windowsDestroyedIds = [];
+         this.actor = null;
+     },
+ 
+@@ -537,6 +549,10 @@ var WorkspaceThumbnail = new Lang.Class({
+         clone.connect('drag-end', () => {
+             Main.overview.endWindowDrag(clone.metaWindow);
+         });
++        let cloneDestroyedId = clone.connect('destroy', () => {
++            this._doRemoveWindow(clone.metaWindow, {cloneDestroy: false});
++        });
++
+         this._contents.add_actor(clone.actor);
+ 
+         if (this._windows.length == 0)
+@@ -545,6 +561,7 @@ var WorkspaceThumbnail = new Lang.Class({
+             clone.setStackAbove(this._windows[this._windows.length - 1].actor);
+ 
+         this._windows.push(clone);
++        this._windowsDestroyedIds.push(cloneDestroyedId);
+ 
+         return clone;
+     },
