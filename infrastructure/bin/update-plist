@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.46 2018/04/29 19:26:33 espie Exp $
+# $OpenBSD: update-plist,v 1.47 2018/04/29 20:38:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -260,13 +260,14 @@ sub annotate
 # and more magic, we want to record fragments as pseudo-objects
 sub record_fragment
 {
-	my ($self, $plist, $not, $name) = @_;
+	my ($self, $plist, $not, $name, $file) = @_;
+	my $f;
 	if ($not) {
-		OpenBSD::PackingElement::NoFragment->add($plist, $name);
-		
+		$f = OpenBSD::PackingElement::NoFragment->add($plist, $name);
 	} else {
-		OpenBSD::PackingElement::Fragment->add($plist, $name);
+		$f = OpenBSD::PackingElement::Fragment->add($plist, $name);
 	}
+	$self->annotate($f, undef, $file);
 }
 
 
