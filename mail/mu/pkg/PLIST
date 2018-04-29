@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/25 01:38:17 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/04/29 09:23:56 solene Exp $
 @bin bin/mu
 @info info/mu4e.info
 @man man/man1/mu-add.1
@@ -15,8 +15,10 @@
 @man man/man1/mu-verify.1
 @man man/man1/mu-view.1
 @man man/man1/mu.1
-@man man/man1/mug.1
+@comment mu is compiled without gtk
+@comment man/man1/mug.1
 @man man/man5/mu-bookmarks.5
+@man man/man7/mu-query.7
 share/doc/mu/
 share/doc/mu/NEWS.org
 share/doc/mu/mu4e-about.org
