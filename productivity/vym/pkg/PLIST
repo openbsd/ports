@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/04 07:31:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/04/29 08:13:07 jasper Exp $
 @bin bin/vym
 @man man/man1/vym.1
 share/doc/vym/
@@ -208,7 +208,5 @@ share/vym/scripts/vivym
 share/vym/scripts/vym-addmail.rb
 share/vym/scripts/vym-ruby.rb
 share/vym/styles/
-share/vym/styles/kdebookmarks2vym.xsl
 share/vym/styles/vym.css
-share/vym/styles/vym2kdebookmarks.xsl
 share/vym/styles/vym2taskjuggler.xsl
