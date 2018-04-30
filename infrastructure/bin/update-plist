@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.49 2018/04/30 11:56:47 espie Exp $
+# $OpenBSD: update-plist,v 1.50 2018/04/30 12:00:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -668,7 +668,7 @@ package OpenBSD::PackingElement::Lib;
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
-	if ($self->name =~ m,^(.*)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
+	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
 		$self->{name} = $s->do_backsubst("$1lib$2.so.", $self).
 		    "\$\{LIB$2_VERSION\}";
 	} else {
