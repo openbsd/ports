@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/05 10:12:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/04/30 07:22:26 ajacoutot Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/doc/remotebox/
@@ -228,8 +228,6 @@ share/remotebox/icons/vm_start_16px.png
 share/remotebox/icons/vm_start_32px.png
 share/remotebox/icons/vrdp_16px.png
 share/remotebox/icons/vrdp_32px.png
-share/remotebox/old_vboxService.pm
-share/remotebox/old_vboxserializers.pl
 share/remotebox/rbox_err.pl
 share/remotebox/rbox_gui_edit.pl
 share/remotebox/rbox_gui_edit_audio.pl
