@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.54 2018/04/30 18:37:28 espie Exp $
+# $OpenBSD: update-plist,v 1.55 2018/04/30 18:49:19 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -871,13 +871,18 @@ for my $i (1, 2) {
 				last;
 			}
 		}
-		if (!$found) {
-			# last resort
-			eval {
-			$o->element_class->add($lists[0]->nlist, 
-			    $lists[0]->strip_prefix($path));
-			};
+		next if $found;
+
+		# last resort for now
+		my $p2 = $lists[0]->strip_prefix($path);
+		my $c = $o->element_class;
+		if ($p2 =~ m|^/| && !$c->absolute_okay) {
+			# XXX we should try to see if it fits with 
+			# other prefixes then
+			print STDERR "Warning: can't put $p2 in any plist\n";
+			next;
 		}
+		$c->add($lists[0]->nlist, $p2);
 	}
 }
 
