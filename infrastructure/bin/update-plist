@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.51 2018/04/30 12:53:45 espie Exp $
+# $OpenBSD: update-plist,v 1.52 2018/04/30 13:23:37 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -449,6 +449,14 @@ sub bad_suffixes
 {
 }
 
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	if (defined $self->{file}) {
+		$filenames->{$self->{file}} = 1;
+	}
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -551,6 +559,13 @@ sub copy_annotations
 {
 	my ($self, $plist) = @_;
 	$self->clone->add_object($plist);
+}
+
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	$existing->{$self->{file}} = 1;
+	$self->SUPER::find_existing_cvstags($filenames, $existing);
 }
 
 package OpenBSD::PackingElement::NewAuth;
@@ -703,6 +718,21 @@ sub baseplist
 	return $n;
 }
 
+sub add_missing_cvstags
+{
+	my ($list, $base) = @_;
+	my $filenames = {};
+	$filenames->{$base} = 1;
+	my $existing = {};
+	$list->find_existing_cvstags($filenames, $existing);
+	for my $name (keys %$filenames) {
+		next if $existing->{$name};
+		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
+		    '$'.'OpenBSD'.'$');
+		$o->{file} = $name;
+	}
+}
+
 # this handles update-plist options proper, finished with --
 $state->handle_options;
 
@@ -840,6 +870,7 @@ for my $p (@lists) {
 	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
+	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p->nlist, $state);
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
