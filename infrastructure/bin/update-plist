@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.55 2018/04/30 18:49:19 espie Exp $
+# $OpenBSD: update-plist,v 1.56 2018/04/30 18:52:36 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -181,6 +181,8 @@ sub do_backsubst
 	my $unsubst = $self->{unsubst};
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
+		# XXX ARCH, MACHINE_ARCH could happen, but only with word
+		#  boundary contexts
 		if ($subst->never_add($k)) {
 			unless (defined $unsubst &&
 			    $unsubst =~ m/\$\{\Q$k\E\}/) {
@@ -210,6 +212,8 @@ sub do_backsubst
 				$string =~ s/^\Q$v\E/\$\{$k2\}/g;
 			}
 		} else {
+			# XXX on the other hand, numeric and version-like
+			# variables shouldn't substitute partial numbers
 			my $v = $subst->value($k);
 			# Empty variable somewhere in the string
 			# if it was already there, we try to locate
@@ -897,7 +901,7 @@ for my $p (@lists) {
 	}
 }
 
-# second pass stripping internal directories should go there
+# XXX second pass stripping internal directories should go there
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
@@ -923,6 +927,9 @@ $> = $ports_uid;
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
+	# XXX write_with_frags is the perfect place to track group/mode,
+	# create strings that change them when needed, and do_backsubst
+	# on them
 	$p->nlist->write_with_frags($p);
 	$p->{tracker}->finish;
 }
