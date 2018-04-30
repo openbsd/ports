@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.56 2018/04/30 18:52:36 espie Exp $
+# $OpenBSD: update-plist,v 1.57 2018/04/30 19:32:51 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -764,6 +764,24 @@ sub add_missing_cvstags
 	}
 }
 
+sub copy_from_old
+{
+	my ($e, $o) = @_;
+
+	my $s = $e->{comesfrom};
+	if ($o->element_class ne ref($e)) {
+		# XXX this should be safe for all our objects
+		bless $e, $o->element_class;
+	}
+	$e->add_object($s->nlist);
+	if (defined $e->{mytags}) {
+		for my $tag (@{$e->{mytags}}) {
+			$tag->add_object($s->nlist);
+			$tag->{found} = 1;
+		}
+	}
+}
+
 # this handles update-plist options proper, finished with --
 $state->handle_options;
 
@@ -836,21 +854,11 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
-		# XXX keeping old objects is fine, but we need to keep
-		# track of type changes. TODO: compare the object
-		# class with the actual result. Maybe respin objects then ?
 		if ($exact->{$path}) {
 			# this will be re-added to multiple paths if there are
 			# multiple matching plists
 			for my $e (@{$exact->{$path}}) {
-				my $s = $e->{comesfrom};
-				$e->add_object($s->nlist);
-				if (defined $e->{mytags}) {
-					for my $tag (@{$e->{mytags}}) {
-						$tag->add_object($s->nlist);
-						$tag->{found} = 1;
-					}
-				}
+				copy_from_old($e, $o);
 			}
 			next;
 		}
