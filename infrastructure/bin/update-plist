@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.60 2018/04/30 21:47:49 espie Exp $
+# $OpenBSD: update-plist,v 1.61 2018/04/30 21:58:04 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -767,17 +767,29 @@ sub add_missing_cvstags
 	}
 }
 
+use UNIVERSAL;
+
 sub copy_from_old
 {
 	my ($e, $o) = @_;
 
 	my $s = $e->{comesfrom};
-	if ($o->element_class ne ref($e) && 
-	    # XXX do not touch commented out data
-	    ref($e) ne "OpenBSD::PackingElement::Comment") {
-		# XXX this should be safe for all our objects
-		bless $e, $o->element_class;
+	my $rebless = 0;
+	if ($o->element_class ne ref($e)) {
+		$rebless = 1;
+		# XXX do not touch commented out data
+		if ($e->isa("OpenBSD::PackingElement::Comment")) {
+			$rebless = 0;
+		# XXX and do not touch directory classes, we don't know
+		# enough from FS2 yet
+		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
+		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
+			$rebless = 0;
+		}
 	}
+	# XXX this should be safe for all our objects
+	bless $e, $o->element_class if $rebless;
+
 	$e->add_object($s->nlist);
 	if (defined $e->{mytags}) {
 		for my $tag (@{$e->{mytags}}) {
