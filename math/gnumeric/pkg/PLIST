@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2017/11/06 10:37:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2018/04/30 09:17:11 ajacoutot Exp $
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert
@@ -47,7 +47,6 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnm-so-filled.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnm-so-line.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnm-so-path.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnm-so-polygon.h
-include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnm-style-impl.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnumeric-conf.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnumeric-features.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/gnumeric-fwd.h
@@ -101,6 +100,7 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-control-gui-pri
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-control-gui.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-control-priv.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-control.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-diff.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-filter-combo.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-filter.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-merge.h
