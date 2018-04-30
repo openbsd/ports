@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_Specials_NoSpecial_hpp,v 1.1 2018/04/30 05:06:09 bcallah Exp $
+
+Fix runtime crash
+
+Index: include/Specials/NoSpecial.hpp
+--- include/Specials/NoSpecial.hpp.orig
++++ include/Specials/NoSpecial.hpp
+@@ -32,7 +32,7 @@ class NoSpecial: public Special {
+         /// Does nothing.
+         void activate() const {}
+ 
+-        float radius() const {}
++        float radius() const { return 0.0; }
+ 
+         /// Draws the special.
+         void draw(float alpha) const;
