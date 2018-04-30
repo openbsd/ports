@@ -1,8 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2018/01/03 07:55:52 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.9 2018/04/30 12:46:22 ajacoutot Exp $
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -637,7 +637,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
+@@ -623,7 +623,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
  imap_libcyrus_imap_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
  	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
  	$(imap_libcyrus_imap_la_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \

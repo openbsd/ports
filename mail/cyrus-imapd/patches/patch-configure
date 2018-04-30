@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.35 2018/01/03 07:55:52 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.36 2018/04/30 12:46:22 ajacoutot Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -25855,7 +25855,7 @@ elif test "${with_perl}" != "no"; then
+@@ -25835,7 +25835,7 @@ elif test "${with_perl}" != "no"; then
  
  
      case "${target_os}" in
