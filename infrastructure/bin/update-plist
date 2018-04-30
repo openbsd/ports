@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.53 2018/04/30 14:28:21 espie Exp $
+# $OpenBSD: update-plist,v 1.54 2018/04/30 18:37:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -832,6 +832,9 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
+		# XXX keeping old objects is fine, but we need to keep
+		# track of type changes. TODO: compare the object
+		# class with the actual result. Maybe respin objects then ?
 		if ($exact->{$path}) {
 			# this will be re-added to multiple paths if there are
 			# multiple matching plists
