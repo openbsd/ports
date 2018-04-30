@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.57 2018/04/30 19:32:51 espie Exp $
+# $OpenBSD: update-plist,v 1.58 2018/04/30 20:13:51 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -600,6 +600,9 @@ sub fullname
 	my $self = shift;
 	# let's pretend we're an object!!!
 	my $path = $self->name;
+	# XXX strip every keyword for matching, we may need to 
+	# be more particular
+	$path =~ s/^\@\w+\s+//;
 	if ($path !~ m|^/|o && $self->cwd ne '.') {
 		$path = $self->cwd."/".$path;
 		$path =~ s,^//,/,;
@@ -769,7 +772,9 @@ sub copy_from_old
 	my ($e, $o) = @_;
 
 	my $s = $e->{comesfrom};
-	if ($o->element_class ne ref($e)) {
+	if ($o->element_class ne ref($e) && 
+	    # XXX do not touch commented out data
+	    ref($e) ne "OpenBSD::PackingElement::Comment") {
 		# XXX this should be safe for all our objects
 		bless $e, $o->element_class;
 	}
@@ -779,6 +784,22 @@ sub copy_from_old
 			$tag->add_object($s->nlist);
 			$tag->{found} = 1;
 		}
+	}
+}
+
+sub copy_existing
+{
+	my ($exact, $path, $o) = @_;
+
+	if ($exact->{$path}) {
+		# this will be re-added to multiple paths if there are
+		# multiple matching plists
+		for my $e (@{$exact->{$path}}) {
+			copy_from_old($e, $o);
+		}
+		return 1;
+	} else {
+		return 0;
 	}
 }
 
@@ -854,14 +875,8 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
-		if ($exact->{$path}) {
-			# this will be re-added to multiple paths if there are
-			# multiple matching plists
-			for my $e (@{$exact->{$path}}) {
-				copy_from_old($e, $o);
-			}
-			next;
-		}
+		next if copy_existing($exact, $path, $o);
+		my $c = $o->element_class;
 
 		my $found = 0;
 		# we didn't find it so we must create a new one
@@ -875,8 +890,8 @@ for my $i (1, 2) {
 			# if we do, we only write non ambiguous names
 			if (@l == 1) {
 				my $s = $l[0]->{comesfrom};
-				my $a =$o->element_class->add($s->nlist, 
-				    $s->strip_prefix($path));
+				my $p2 = $s->strip_prefix($path);
+				my $a = $c->add($p2, $s->nlist);
 				# and match the file
 				$a->{file} = $s->{file};
 				$found = 1;
@@ -886,15 +901,17 @@ for my $i (1, 2) {
 		next if $found;
 
 		# last resort for now
-		my $p2 = $lists[0]->strip_prefix($path);
-		my $c = $o->element_class;
+		my $s = $lists[0];
+		my $p2 = $s->strip_prefix($path);
 		if ($p2 =~ m|^/| && !$c->absolute_okay) {
 			# XXX we should try to see if it fits with 
 			# other prefixes then
 			print STDERR "Warning: can't put $p2 in any plist\n";
 			next;
 		}
-		$c->add($lists[0]->nlist, $p2);
+		my $a = $c->add($p2, $s->nlist);
+		# and match the file
+		$a->{file} = $s->{file};
 	}
 }
 
