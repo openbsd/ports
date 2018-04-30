@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.47 2018/04/29 20:38:44 espie Exp $
+# $OpenBSD: update-plist,v 1.48 2018/04/30 11:50:01 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -356,9 +356,13 @@ sub handle_options
 			my $path = shift;
 			$state->{ignored}{$path} = 1;
 		    },
+		'w' => sub {
+			my $warn = shift;
+			push(@{$state->{warn_suffix}}, $warn);
+		},
 	};
-	$state->SUPER::handle_options('X:P:', 
-	    '[mnx] [-P pkgdir] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('X:P:w:', 
+	    '[mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 }
 
@@ -441,6 +445,10 @@ sub count_directories
 {
 }
 
+sub bad_suffixes
+{
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -449,6 +457,22 @@ sub perform_backsubst
 
 	$self->{name} = $s->do_backsubst($self->{name}, $self);
 
+}
+
+sub bad_suffixes
+{
+	my ($self, $plist, $state) = @_;
+
+	# don't care if it's already in a PLIST
+	return if defined $self->{comesfrom};
+	my $s = $self->fullname;
+#	if ($s =~ m/\/\.[^\/]*\.swp$/) {
+#		print STDERR $plist->pkgname, ":" , $s, "\n";
+#	} elsif ($s =~ m/\.orig$/) {
+#		print STDERR $plist->pkgname, "!" , $s, "\n";
+#	} elsif ($s =~ m/\~$/) {
+#		print STDERR $plist->pkgname, ":" , $s, "\n";
+#	}
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -758,6 +782,7 @@ for my $i (1, 2) {
 			next;
 		}
 
+		my $found = 0;
 		# we didn't find it so we must create a new one
 		# go up dir until we find a matching approximate dir
 		my $d = $path;
@@ -773,14 +798,17 @@ for my $i (1, 2) {
 				    $s->strip_prefix($path));
 				# and match the file
 				$a->{file} = $s->{file};
+				$found = 1;
 				last;
 			}
 		}
-		# last resort
-		eval {
-		$o->element_class->add($lists[0]->nlist, 
-		    $lists[0]->strip_prefix($path));
-		};
+		if (!$found) {
+			# last resort
+			eval {
+			$o->element_class->add($lists[0]->nlist, 
+			    $lists[0]->strip_prefix($path));
+			};
+		}
 	}
 }
 
@@ -804,12 +832,9 @@ for my $p (@lists) {
 	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
-}
-
-for my $p (@lists) {
+	$p->nlist->bad_suffixes($p->nlist, $state);
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
-
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $p (@lists) {
