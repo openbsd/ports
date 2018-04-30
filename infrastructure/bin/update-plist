@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.52 2018/04/30 13:23:37 espie Exp $
+# $OpenBSD: update-plist,v 1.53 2018/04/30 14:28:21 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -600,6 +600,7 @@ sub fullname
 		$path = $self->cwd."/".$path;
 		$path =~ s,^//,/,;
 	}
+	$path =~ s,/$,,;
 	return $path;
 }
 
@@ -622,6 +623,32 @@ sub cwd
 sub copy_annotations
 {
 	# nope these are not normal annotations
+}
+
+package OpenBSD::PackingElement::Sample;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	my $o = $self->{copyfrom};
+	if (!defined $o) {
+		print STDERR "Warning: bogus \@sample ", $self->stringize,
+		    " with no reference file\n";
+	} elsif (!$o->{found}) {
+		print STDERR "Warning: ", $self->stringize,
+		    " references a non-existing file ", $o->stringize, 
+		    " and will not be copied\n";
+	} else {
+		$o->tag_along($self);
+	}
+}
+
+package OpenBSD::PackingElement::Sampledir;
+
+# this is not really smart, but good enough for starters
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
 }
 
 package OpenBSD::PackingElement::Fragment;
@@ -667,7 +694,7 @@ sub show_unknown
 {
 	my $self = shift;
 	if (!$self->{found}) {
-		print "Not found: ", $self->fullname, "(in ", $self->{file}, ")\n";
+		print "Not found: ", $self->fullname, " (in ", $self->{file}, ")\n";
 	}
 }
 
@@ -814,6 +841,7 @@ for my $i (1, 2) {
 				if (defined $e->{mytags}) {
 					for my $tag (@{$e->{mytags}}) {
 						$tag->add_object($s->nlist);
+						$tag->{found} = 1;
 					}
 				}
 			}
