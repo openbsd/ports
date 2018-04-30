@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/04/30 09:09:03 jasper Exp $
 
 CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
 DISTNAME =	kile-2.1.3
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=kile/}
@@ -29,6 +29,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/texlive/base \
 		x11/gtk+3,-guic \
-		${MODKDE4_DEP_DIR}/kate
+		x11/kde-applications/kate
 
 .include <bsd.port.mk>
