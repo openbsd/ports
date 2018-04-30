@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.59 2018/04/30 20:15:15 espie Exp $
+# $OpenBSD: update-plist,v 1.60 2018/04/30 21:47:49 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,7 +131,7 @@ my $special = {
 	FULLPKGPATH => 1,
 	MACHINE_ARCH => 1,
 	ARCH => 1,
-	BASE_PKGPATH => 1,
+	'^BASE_PKGPATH' => 1,
 };
 
 
