@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.48 2018/04/30 11:50:01 espie Exp $
+# $OpenBSD: update-plist,v 1.49 2018/04/30 11:56:47 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -466,13 +466,21 @@ sub bad_suffixes
 	# don't care if it's already in a PLIST
 	return if defined $self->{comesfrom};
 	my $s = $self->fullname;
-#	if ($s =~ m/\/\.[^\/]*\.swp$/) {
-#		print STDERR $plist->pkgname, ":" , $s, "\n";
-#	} elsif ($s =~ m/\.orig$/) {
-#		print STDERR $plist->pkgname, "!" , $s, "\n";
-#	} elsif ($s =~ m/\~$/) {
-#		print STDERR $plist->pkgname, ":" , $s, "\n";
-#	}
+	my $error;
+	if ($s =~ m/\/\.[^\/]*\.swp$/) {
+		$error = "vim swap file";
+	} elsif ($s =~ m/\~$/) {
+		$error = "emacs temporary file";
+	} else {
+		for my $suf (@{$state->{warn_suffix}}) {
+			if ($s =~ m/\Q$suf\E$/) {
+				$error = "$suf suffix";
+				last;
+			}
+		}
+	}
+	print STDERR "Warning: ", $plist->pkgname, " contains $s ($error ?)\n"
+	    if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
