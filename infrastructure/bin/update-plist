@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.50 2018/04/30 12:00:12 espie Exp $
+# $OpenBSD: update-plist,v 1.51 2018/04/30 12:53:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -242,7 +242,7 @@ sub annotate
 {
 	my ($self, $e, $s, $file) = @_;
 	$e->{unsubst} = $s;
-	$e->{file} = $file;
+	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
 
 	# so we redo what subst does, but we mark it!
@@ -398,7 +398,7 @@ sub write_with_frags
 	return if $o->{DONT};
 	my $t = $p->{tracker};
 	if (defined $o->{file}) {
-		$o->write($t->open($o->{file}->name))
+		$o->write($t->open($o->{file}))
 	} else {
 		$o->write($t->default);
 	}
@@ -652,7 +652,7 @@ sub show_unknown
 {
 	my $self = shift;
 	if (!$self->{found}) {
-		print "Not found: ", $self->fullname, "(in ", $self->{file}->name, ")\n";
+		print "Not found: ", $self->fullname, "(in ", $self->{file}, ")\n";
 	}
 }
 
