@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.65 2018/05/01 09:36:56 espie Exp $
+# $OpenBSD: update-plist,v 1.66 2018/05/01 13:21:24 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -46,35 +46,34 @@ BEGIN {
 }
 use lib "$ports1/infrastructure/lib";
 
-# A small package that can switch files when needed
-# used by the writer that writes fragments
+package TrackedFile;
+sub new
+{
+	my $class = shift;
+	bless [], $class;
+}
+
+sub add
+{
+	my ($self, $item) = @_;
+	push(@$self, $item);
+}
+
 package TrackFile;
 
 sub new
 {
 	my ($class, $default) = @_;
-	my $o = bless {known => {}}, $class;
-	$o->{default} = $o->open($default);
-	return $o;
+	my $self = bless {}, $class;
+	$self->{known}{$default} = $self->{default} = TrackedFile->new;
+	return $self;
 }
 
-sub open
+sub file
 {
 	my ($self, $name) = @_;
-	if (!$self->{known}{$name}) {
-		my $full = $name.".new";
-		open(my $fh, '>', $full) or die "Can't open $full: $!";
-		$self->{known}{$name} = $fh;
-	}
+	$self->{known}{$name} //= TrackedFile->new;
 	return $self->{known}{$name};
-}
-
-sub finish
-{
-	my $self = shift;
-	for my $fh (values %{$self->{known}}) {
-		close($fh);
-	}
 }
 
 sub default
@@ -83,6 +82,21 @@ sub default
 	return $self->{default};
 }
 
+sub write_all
+{
+	my ($self, $p) = @_;
+	# XXX we should do them in a nicer order, like start from the
+	# main, figure out what frags we get
+	while (my ($name, $l) = each %{$self->{known}}) {
+		my $full = $name.".new";
+		open(my $fh, '>', $full) or die "Can't open $full: $!";
+		$p->{restate} = {};
+		for my $item (@$l) {
+			$item->write_restate($fh, $p);
+		}
+		close($fh);
+	}
+}
 
 package Forwarder;
 # perfect forwarding
@@ -208,7 +222,7 @@ sub do_backsubst
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/^\Q$v\E/\$\{$k2\}/g;
+				$string =~ s/^\Q$v\E/\$\{$k2\}/;
 			}
 		} else {
 			# XXX on the other hand, numeric and version-like
@@ -395,20 +409,16 @@ sub perform_backsubst
 {
 }
 
-sub write_with_frags
+sub redistribute
 {
 	my ($o, $p) = @_;
 	return if $o->{DONT};
-	my $t = $p->{tracker};
-	# XXX this does not really work: we must figure out fragments first
-	# then restate, so that we mimic the way this actually works...
 	if (defined $o->{file}) {
-		$o->write_restate($t->open($o->{file}), $p)
+		$p->{tracker}->file($o->{file})->add($o);
 	} else {
-		$o->write_restate($t->default, $p);
+		$p->{tracker}->default->add($o);
 	}
 }
-
 sub strip_directories
 {
 }
@@ -1006,12 +1016,8 @@ $> = $ports_uid;
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
-	# XXX write_with_frags is the perfect place to track group/mode,
-	# create strings that change them when needed, and do_backsubst
-	# on them
-	$p->{restate} = {};
-	$p->nlist->write_with_frags($p);
-	$p->{tracker}->finish;
+	$p->nlist->redistribute($p);
+	$p->{tracker}->write_all($p);
 }
 
 my @towrite = ();
