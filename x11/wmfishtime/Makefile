@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/27 16:47:34 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/01 20:13:23 naddy Exp $
 
 COMMENT=		wm-dockapp; clock application with clock, date and fish
 
 DISTNAME=		wmfishtime-1.24
-REVISION=		1
+REVISION=		2
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
@@ -24,7 +24,7 @@ LIB_DEPENDS=		devel/gettext \
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS} -Wall `pkg-config --cflags gtk+-2.0`" \
-			LIBS="`pkg-config --libs gtk+-2.0`"
+			LIBS="`pkg-config --libs gtk+-2.0` -lm"
 
 NO_TEST=		Yes
 
