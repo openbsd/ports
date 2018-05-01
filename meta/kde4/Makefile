@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/04/29 07:47:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2018/05/01 10:36:33 jasper Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,7 +26,7 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal = 4
+REVISION-minimal = 5
 REVISION-games = 0
 REVISION-extras = 0
 REVISION-main =		1
@@ -76,7 +76,6 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/artikulate	\
 	${MODKDE4_DEP_DIR}/blinken	\
 	${MODKDE4_DEP_DIR}/cantor	\
 	${MODKDE4_DEP_DIR}/analitza	\

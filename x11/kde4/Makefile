@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/04/29 07:55:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2018/05/01 10:36:33 jasper Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -100,15 +100,15 @@ SUBDIR += smokeqt
 SUBDIR += p5-qt
 SUBDIR += ruby-qt
 SUBDIR += qyoto
-SUBDIR += smokekde
+#SUBDIR += smokekde
 SUBDIR += py-kde
-SUBDIR += p5-kde
-SUBDIR += korundum
-SUBDIR += kimono
+#SUBDIR += p5-kde
+#SUBDIR += korundum
+#SUBDIR += kimono
 
 # fat packages
 SUBDIR += pim
-SUBDIR += webdev
+#SUBDIR += webdev
 
 # former kdeaccessibility
 SUBDIR += jovie
@@ -133,7 +133,7 @@ SUBDIR += superkaramba
 SUBDIR += sweeper
 
 # former kdeedu
-SUBDIR += artikulate
+#SUBDIR += artikulate
 SUBDIR += blinken
 SUBDIR += cantor
 SUBDIR += analitza
