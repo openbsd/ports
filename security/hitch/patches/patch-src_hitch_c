@@ -1,0 +1,89 @@
+$OpenBSD: patch-src_hitch_c,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+
+Prevent crash after reload with ocsp-dir change:
+https://github.com/varnish/hitch/pull/265
+
+Pledge oscp and worker processes.
+chroot(2) must be hoisted so pledge main process only iff not used.
+
+Index: src/hitch.c
+--- src/hitch.c.orig
++++ src/hitch.c
+@@ -274,6 +274,23 @@ struct worker_update {
+ 	union worker_update_payload 	payload;
+ };
+ 
++char main_promises[] = "stdio rpath wpath cpath inet flock dns getpw proc id";
++char ocsp_promises[] = "stdio rpath wpath inet dns";
++char work_promises[] = "stdio rpath inet dns";
++
++void
++drop_promise(char *promises, char *word)
++{
++	char *w, *p;
++
++	/* find first char after word */
++	if (!(w = strstr(promises, word)))
++		return;
++	p = w + strlen(word);
++	/* clobber word with trailing string */
++	memmove(w, p, strlen(p) + 1);
++}
++
+ /* set a file descriptor (socket) to non-blocking mode */
+ static int
+ setnonblocking(int fd)
+@@ -2984,6 +3001,8 @@ start_workers(int start_index, int count)
+ 				    "Refusing to run workers as root.\n");
+ 				_exit(1);
+ 			}
++			if (pledge(work_promises, NULL) == -1)
++				fail("pledge");
+ 			handle_connections(pfd[0]);
+ 			exit(0);
+ 		} else { /* parent. Track new child. */
+@@ -3009,6 +3028,8 @@ start_ocsp_proc(void)
+ 			    "Refusing to run workers as root.\n");
+ 			_exit(1);
+ 		}
++		if (pledge(ocsp_promises, NULL) == -1)
++			fail("pledge");
+ 		handle_ocsp_task();
+ 	}
+ 
+@@ -3680,7 +3701,8 @@ reconfigure(int argc, char **argv)
+ 	notify_workers(&wu);
+ 
+ 	if (CONFIG->OCSP_DIR != NULL) {
+-		(void) kill(ocsp_proc_pid, SIGTERM);
++		if (ocsp_proc_pid != 0)
++			(void) kill(ocsp_proc_pid, SIGTERM);
+ 		/*
+ 		 * Restarting the OCSP process is taken
+ 		 * care of in do_wait
+@@ -3733,6 +3755,25 @@ main(int argc, char **argv)
+ 	if (config_parse_cli(argc, argv, CONFIG, &rv) != 0) {
+ 		fprintf(stderr, "%s\n", config_error_get());
+ 		return (rv);
++	}
++
++	/* chroot(2) must be hoisted */
++	if (!CONFIG->CHROOT) {
++		/* needs wpath cpath */
++		if (!CONFIG->OCSP_DIR)
++			drop_promise(main_promises, "cpath");
++		/* needs wpath id */
++		if (!(CONFIG->UID >= 0 || CONFIG->GID >= 0)) {
++			drop_promise(main_promises, "id");
++			/* needs wpath cpath */
++			if (!CONFIG->OCSP_DIR)
++				drop_promise(main_promises, "wpath");
++		}
++		/* needs flock */
++		if (!CONFIG->PIDFILE)
++			drop_promise(main_promises, "flock");
++		if (pledge(main_promises, NULL) == -1)
++			fail("pledge");
+ 	}
+ 
+ 	if (CONFIG->TEST) {

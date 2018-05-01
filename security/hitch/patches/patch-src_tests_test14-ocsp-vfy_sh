@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_test14-ocsp-vfy_sh,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+
+No support for environment variables in LibreSSL.
+
+Index: src/tests/test14-ocsp-vfy.sh
+--- src/tests/test14-ocsp-vfy.sh.orig
++++ src/tests/test14-ocsp-vfy.sh
+@@ -22,8 +22,6 @@ EOF
+ 
+ run_cmd -s 1 hitch --test --config=hitch1.cfg
+ 
+-export SSL_CERT_FILE=$CERTSDIR/valid.example.com-ca-chain.pem
+-run_cmd hitch --test --config=hitch1.cfg
+ 
+ unset SSL_CERT_FILE
+ 

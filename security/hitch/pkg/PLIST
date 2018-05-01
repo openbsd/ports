@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+@newgroup _hitch:807
+@newuser _hitch:807:_hitch:daemon:Hitch TLS proxy:/var/hitch:/sbin/nologin
+@man man/man5/hitch.conf.5
+@man man/man8/hitch.8
+@bin sbin/hitch
+share/doc/hitch/
+share/doc/hitch/CHANGES.rst
+share/doc/hitch/README.md
+share/doc/hitch/architecture.md
+share/doc/hitch/certificates.md
+share/doc/hitch/configuration.md
+share/doc/hitch/installation.md
+share/doc/hitch/proxy-protocol.md
+share/doc/hitch/vhosts.md
+share/examples/hitch/
+share/examples/hitch/hitch.conf.example
+@exec-add mkdir -p /var/hitch
+@extraunexec rm -rf /var/hitch
+@rcscript ${RCDIR}/hitch

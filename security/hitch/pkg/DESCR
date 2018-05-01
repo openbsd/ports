@@ -1,0 +1,5 @@
+Hitch is a libev-based high performance TLS proxy designed to handle 10s of
+thousands of connections efficiently on multicore machines.
+
+It supports ALPN, SNI, PROXY protocol, automatic OCSP stapling as well as
+seamless configuration reloads of certificates and listen endpoints.

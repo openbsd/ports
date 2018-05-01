@@ -1,0 +1,10 @@
+#!/bin/ksh
+#
+# $OpenBSD: hitch.rc,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+
+daemon="${TRUEPREFIX}/sbin/hitch --daemon -u _hitch -g _hitch"
+daemon_flags="-s -r ${LOCALSTATEDIR}/hitch --config=${SYSCONFDIR}/hitch.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

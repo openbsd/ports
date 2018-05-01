@@ -1,0 +1,25 @@
+$OpenBSD: patch-hitch_conf_man_rst,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+
+Index: hitch.conf.man.rst
+--- hitch.conf.man.rst.orig
++++ hitch.conf.man.rst
+@@ -139,7 +139,7 @@ ocsp-dir = <string>
+ -------------------
+ 
+ Directory where Hitch will store and read OCSP responses for
+-stapling. Default is "/var/lib/hitch/".
++stapling. Default is "${LOCALSTATEDIR}/hitch/".
+ 
+ Directory must be readable and writable for the configured Hitch user, or
+ automatic retrieval and updating of OCSP responses will not take place.
+@@ -348,8 +348,8 @@ The following file shows the syntax needed to get star
+ 
+     # We strongly recommend you create a separate non-privileged hitch
+     # user and group
+-    user = "hitch"
+-    group = "hitch"
++    user = "_hitch"
++    group = "_hitch"
+ 
+     # Enable to let clients negotiate HTTP/2 with ALPN. (default off)
+     # alpn-protos = "h2, http/1.1"
