@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2018/05/01 20:28:00 naddy Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -107,7 +107,7 @@ xtraceroute_SOURCES = readtexture.c db.c countries.c m
+ DEFS = @DEFS@ -DDATADIR=\"${xtraceroutedatadir}\"        -DLOCALEDIR=\"${xtraceroutelocaledir}\"
+ 
+ 
+-LIBS = @INTLLIBS@ @LIBS@
++LIBS = @INTLLIBS@ @LIBS@ -lm
+ 
+ man_MANS = xtraceroute.1
+ 
