@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.61 2018/04/30 21:58:04 espie Exp $
+# $OpenBSD: update-plist,v 1.62 2018/05/01 07:41:51 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -177,8 +177,7 @@ sub parse_option
 
 sub do_backsubst
 {
-	my ($subst, $string, $self) = @_;
-	my $unsubst = $self->{unsubst};
+	my ($subst, $string, $unsubst) = @_;
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
 		# XXX ARCH, MACHINE_ARCH could happen, but only with word
@@ -402,10 +401,20 @@ sub write_with_frags
 	return if $o->{DONT};
 	my $t = $p->{tracker};
 	if (defined $o->{file}) {
-		$o->write($t->open($o->{file}))
+		$o->write_restate($t->open($o->{file}), $p)
 	} else {
-		$o->write($t->default);
+		$o->write_restate($t->default, $p);
 	}
+}
+
+sub strip_directories
+{
+}
+
+sub write_restate
+{
+	my ($o, $file, $p) = @_;
+	$o->write($file);
 }
 
 sub copy_extra
@@ -467,7 +476,7 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}, $self);
+	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst});
 
 }
 
@@ -516,11 +525,11 @@ sub count_directories
 	$$count++;
 }
 
-sub write_with_frags
+sub strip_directories
 {
-	my ($o, $p) = @_;
-	if (!$p->{stripped}{$o->fullname}) {
-		$o->SUPER::write_with_frags($p);
+	my ($o, $stripped) = @_;
+	if ($stripped->{$o->fullname}) {
+		$o->{DONT} = 1;
 	}
 }
 
@@ -530,7 +539,7 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}.'/', $self);
+	$self->{name} = $s->do_backsubst($self->{name}.'/', $self->{unsubst});
 	$self->{name} =~ s/\/$//;
 }
 
@@ -705,6 +714,30 @@ sub show_unknown
 	}
 }
 
+sub write_restate
+{
+	my ($self, $f, $p) = @_;
+	
+	for my $k (qw(mode owner group)) {
+		my $s = "\@$k";
+		if (defined $self->{$k}) {
+			if (defined $p->{restate}{$k}) {
+				if ($p->{restate}{$k} eq $self->{$k}) {
+					next;
+				}
+			}
+			$s .= " ".$p->{state}{subst}->do_backsubst($self->{$k}, undef);
+		} else {
+			if (!defined $p->{restate}{$k}) {
+				next;
+			}
+		}
+		$p->{restate}{$k} = $self->{$k};
+		print $f $s, "\n";
+	}
+	$self->write($f);
+}
+
 package OpenBSD::PackingElement::FileBase;
 sub bookmark
 {
@@ -718,8 +751,8 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
-		$self->{name} = $s->do_backsubst("$1lib$2.so.", $self).
-		    "\$\{LIB$2_VERSION\}";
+		$self->{name} = $s->do_backsubst("$1lib$2.so.", 
+		    $self->{unsubst})."\$\{LIB$2_VERSION\}";
 	} else {
 		$self->SUPER::perform_backsubst($s);
 	}
@@ -949,6 +982,7 @@ for my $p (@lists) {
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p->nlist, $state);
+	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
@@ -967,6 +1001,7 @@ for my $p (@lists) {
 	# XXX write_with_frags is the perfect place to track group/mode,
 	# create strings that change them when needed, and do_backsubst
 	# on them
+	$p->{restate} = {};
 	$p->nlist->write_with_frags($p);
 	$p->{tracker}->finish;
 }
