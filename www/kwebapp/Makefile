@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/14 01:49:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/01 12:53:30 abieber Exp $
 
 COMMENT =		web application source generator
 
-DISTNAME =		kwebapp-0.4.7
+DISTNAME =		kwebapp-0.4.8
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kwebapp/
