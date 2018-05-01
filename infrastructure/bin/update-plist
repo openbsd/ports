@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.63 2018/05/01 07:46:05 espie Exp $
+# $OpenBSD: update-plist,v 1.64 2018/05/01 08:35:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -482,7 +482,7 @@ sub perform_backsubst
 
 sub bad_suffixes
 {
-	my ($self, $plist, $state) = @_;
+	my ($self, $p, $state) = @_;
 
 	# don't care if it's already in a PLIST
 	return if defined $self->{comesfrom};
@@ -492,6 +492,9 @@ sub bad_suffixes
 		$error = "vim swap file";
 	} elsif ($s =~ m/\~$/) {
 		$error = "emacs temporary file";
+	} elsif ($s eq '/usr/local/lib/charset.alias' && 
+	    $p->olist->fullpkgpath ne 'converters/libiconv') {
+		$error = "file from converters/libiconv";
 	} else {
 		for my $suf (@{$state->{warn_suffix}}) {
 			if ($s =~ m/\Q$suf\E$/) {
@@ -500,8 +503,8 @@ sub bad_suffixes
 			}
 		}
 	}
-	print STDERR "Warning: ", $plist->pkgname, " contains $s ($error ?)\n"
-	    if defined $error;
+	print STDERR "Warning: ", $p->nlist->pkgname, 
+	    " contains $s ($error ?)\n" if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -983,7 +986,7 @@ for my $p (@lists) {
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
-	$p->nlist->bad_suffixes($p->nlist, $state);
+	$p->nlist->bad_suffixes($p, $state);
 	# XXX this has to happen *before* backsubst
 	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
