@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/01 10:36:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2018/05/01 10:42:17 jasper Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -29,7 +29,7 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 REVISION-minimal = 5
 REVISION-games = 0
 REVISION-extras = 0
-REVISION-main =		1
+REVISION-main =		2
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
