@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/26 17:32:48 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/01 00:18:21 ajacoutot Exp $
 
 COMMENT=	version control system for large binary files
+
 DISTNAME=	boar-20170509
+REVISION=	0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.boarvcs.org
@@ -12,16 +14,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://distfiles-openbsd.perso.pw/
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
-MODPY_ADJ_FILES= boar
 
-NO_BUILD=	Yes
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/boar
 PKG_ARCH=	*
 
 INSTDIR=	${PREFIX}/share/boar
+
+do-build:
+# does nothing but required to add python as a BDEP (NO_BUILD would drop it)
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
