@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.309 2018/05/01 13:47:27 kn Exp $
+$OpenBSD: user.list,v 1.310 2018/05/01 23:06:46 danj Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -19,7 +19,7 @@ id  user		group		port options
 508			_postdrop	mail/postfix/{snapshot,stable}
 509 _bitlbee		_bitlbee	net/bitlbee
 510 _pdnsd		_pdnsd		net/pdnsd
-511 _tacacs		_tacacs		net/tacacs+
+#511 _tacacs		_tacacs		net/tacacs+
 512 _silcd		_silcd		net/silc-server
 513 _vsftpd		_vsftpd		net/vsftpd
 514 _scanlogd		_scanlogd	security/scanlogd
@@ -89,10 +89,10 @@ id  user		group		port options
 578 _mrtg		_mrtg		net/mrtg
 579 _hiawatha		_hiawatha	www/hiawatha
 580 _puppet		_puppet		sysutils/ruby-puppet
-581 _gonzui		_gonzui		textproc/gonzui
+#581 _gonzui		_gonzui		textproc/gonzui
 582 _tabled		_tabled		sysutils/tabled
 583			_kdesud		x11/kde/base3
-584 _nepenthes		_nepenthes	net/nepenthes
+#584 _nepenthes		_nepenthes	net/nepenthes
 585 _lighttpd		_lighttpd	www/lighttpd
 586 _gnugk		_gnugk		net/gnugk
 587 _darkstat		_darkstat	net/darkstat
@@ -116,7 +116,7 @@ id  user		group		port options
 #605 _hudson		_hudson		devel/hudson
 606 _ladvd		_ladvd		net/ladvd
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
-608 _cherokee		_cherokee	www/cherokee
+#608 _cherokee		_cherokee	www/cherokee
 609 _powerdns		_powerdns	net/powerdns
 610 _squeezecenter	_squeezecenter	audio/squeezecenter
 611 _icecast		_icecast	net/icecast
@@ -183,7 +183,7 @@ id  user		group		port options
 672 _radicale		_radicale	productivity/radicale
 673 _buildbot		_buildbot	devel/py-buildbot
 674 _buildslave		_buildslave	devel/py-buildslave
-675 _tryton		_tryton		productivity/tryton/trytond
+#675 _tryton		_tryton		productivity/tryton/trytond
 676 _gdm		_gdm		x11/gnome/gdm
 677 _scamper		_scamper	net/scamper
 678 _owamp		_owamp		net/owamp
@@ -206,7 +206,7 @@ id  user		group		port options
 695 _deadwood		_deadwood	net/maradns-deadwood
 696 _sslh		_sslh		net/sslh
 697 _cvsyncd		_cvsyncd	net/cvsync
-698 _yule		_yule		security/samhain
+#698 _yule		_yule		security/samhain
 699 _mozsync		_mozsync	www/mozilla-sync
 700 _yubiserve		_yubiserve	security/yubiserve
 701 _polkitd		_polkitd	sysutils/polkit
@@ -217,11 +217,11 @@ id  user		group		port options
 706 _graphite		_graphite	databases/py-carbon
 707 _spiped		_spiped		security/spiped
 708 _wesnothd		_wesnothd	games/wesnoth
-709 _dnsfilter		_dnsfilter	net/dnsfilter
+#709 _dnsfilter		_dnsfilter	net/dnsfilter
 710 _nikto		_nikto		security/nikto
 711 _xl2tpd		_xl2tpd		net/xl2tpd
 712 			_cvechecker	security/cvechecker
-713 _puppet-dashboard	_puppet-dashboard	www/puppet-dashboard
+#713 _puppet-dashboard	_puppet-dashboard	www/puppet-dashboard
 714 _activemq		_activemq	net/apache-activemq
 715 _postfwd		_postfwd	mail/postfwd
 716 _c-icap		_c-icap		www/c-icap/c-icap
@@ -310,9 +310,9 @@ id  user		group		port options
 799 _prometheus		_prometheus	sysutils/prometheus
 800 _suricata		_suricata	security/suricata
 801 _solr		_solr		textproc/solr
-802 _restic		_restic		susytils/restic-rest-server
+802 _restic		_restic		sysutils/restic-rest-server
 803 _rsyslogd		_rsyslogd	sysutils/rsyslog
-804 _masttermost	_mattermost	net/mattermost-server
+804 _mattermost		_mattermost	net/mattermost-server
 805 _nzbget		_nzbget		news/nzbget
 806 			_nethack36	games/nethack/3.6
 807 _hitch		_hitch		security/hitch
