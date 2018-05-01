@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2018/04/29 08:56:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.505 2018/05/01 13:48:52 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -69,6 +69,7 @@
      SUBDIR += gringotts
      SUBDIR += hatchet
      SUBDIR += heimdal
+     SUBDIR += hitch
      SUBDIR += hlfl
      SUBDIR += hs-SHA
      SUBDIR += hs-crypto-api
