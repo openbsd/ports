@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/01 06:44:39 jasper Exp $
+
+BROKEN =	depends on x11/kde4/kate which was removed
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2018/04/25 16:51:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/01 06:44:39 jasper Exp $
+
+BROKEN =	depends on x11/kde4/kate which was removed
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
