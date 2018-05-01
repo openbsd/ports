@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/02/19 23:28:43 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/01 13:43:51 rpointel Exp $
 
 COMMENT =		static site generator written in Python
 
@@ -39,7 +39,7 @@ MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/git \
-			devel/py-mock
+			devel/py-mock${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/pelican/tests/test_pelican.py
