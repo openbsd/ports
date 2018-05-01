@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.64 2018/05/01 08:35:20 espie Exp $
+# $OpenBSD: update-plist,v 1.65 2018/05/01 09:36:56 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -400,6 +400,8 @@ sub write_with_frags
 	my ($o, $p) = @_;
 	return if $o->{DONT};
 	my $t = $p->{tracker};
+	# XXX this does not really work: we must figure out fragments first
+	# then restate, so that we mimic the way this actually works...
 	if (defined $o->{file}) {
 		$o->write_restate($t->open($o->{file}), $p)
 	} else {
