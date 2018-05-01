@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.62 2018/05/01 07:41:51 espie Exp $
+# $OpenBSD: update-plist,v 1.63 2018/05/01 07:46:05 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -718,6 +718,8 @@ sub write_restate
 {
 	my ($self, $f, $p) = @_;
 	
+	# XXX there should be some more code matching the mode to the original
+	# file that was copied
 	for my $k (qw(mode owner group)) {
 		my $s = "\@$k";
 		if (defined $self->{$k}) {
@@ -982,6 +984,7 @@ for my $p (@lists) {
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p->nlist, $state);
+	# XXX this has to happen *before* backsubst
 	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
