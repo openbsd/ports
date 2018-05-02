@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/05 19:24:14 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/02 18:34:11 naddy Exp $
 
 COMMENT=	small EWMH compliant pager
 
 DISTNAME=	netwmpager-1.11
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://onion.dynserv.net/~timo/netwmpager.html

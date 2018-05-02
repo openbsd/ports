@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2018/05/02 18:34:11 naddy Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -10,7 +10,7 @@ CFLAGS	+= -g -I. $(XFT_CFLAGS) -DVERSION='"$(VERSION)"
+ objs	:= file.o main.o opt.o pager.o sconf.o x.o xmalloc.o
+ 
+ netwmpager: $(objs)
+-	$(call cmd,ld,$(XFT_LIBS) -lm)
++	$(call cmd,ld,$(XFT_LIBS) -lX11 -lm)
+ 
+ clean		+= *.o netwmpager
+ distclean	+= config.mk
