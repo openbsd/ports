@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.66 2018/05/01 13:21:24 espie Exp $
+# $OpenBSD: update-plist,v 1.67 2018/05/02 09:46:18 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -49,14 +49,40 @@ use lib "$ports1/infrastructure/lib";
 package TrackedFile;
 sub new
 {
-	my $class = shift;
-	bless [], $class;
+	my ($class, $name) = @_;
+	bless {name => $name, items => []}, $class;
 }
 
 sub add
 {
 	my ($self, $item) = @_;
-	push(@$self, $item);
+	push(@{$self->{items}}, $item);
+}
+
+sub fh
+{
+	my $self = shift;
+	if (!defined $self->{fh}) {
+		my $full = $self->name.".new";
+		open($self->{fh}, '>', $full) or die "Can't open $full: $!";
+	}
+	return $self->{fh};
+}
+
+sub name
+{
+	my $self = shift;
+	return $self->{name};
+}
+
+sub next_item
+{
+	my $self = shift;
+	if (@{$self->{items}} != 0) {
+		return shift @{$self->{items}};
+	} else {
+		return undef;
+	}
 }
 
 package TrackFile;
@@ -65,14 +91,15 @@ sub new
 {
 	my ($class, $default) = @_;
 	my $self = bless {}, $class;
-	$self->{known}{$default} = $self->{default} = TrackedFile->new;
+	$self->{known}{$default} = 
+	    $self->{default} = TrackedFile->new($default);
 	return $self;
 }
 
 sub file
 {
 	my ($self, $name) = @_;
-	$self->{known}{$name} //= TrackedFile->new;
+	$self->{known}{$name} //= TrackedFile->new($name);
 	return $self->{known}{$name};
 }
 
@@ -85,17 +112,26 @@ sub default
 sub write_all
 {
 	my ($self, $p) = @_;
-	# XXX we should do them in a nicer order, like start from the
-	# main, figure out what frags we get
-	while (my ($name, $l) = each %{$self->{known}}) {
-		my $full = $name.".new";
-		open(my $fh, '>', $full) or die "Can't open $full: $!";
-		$p->{restate} = {};
-		for my $item (@$l) {
-			$item->write_restate($fh, $p);
+
+	# we mimic the way pkg_create writes files
+	$p->{restate} = {};
+
+	my @stack = ();
+	push(@stack, $self->default);
+
+
+	while (my $file = pop @stack) {
+		while (my $i = $file->next_item) {
+			my $filename = $i->write_restate($file, $p);
+			if (defined $filename) {
+				push(@stack, $file);
+				$file = $self->file($filename);
+			}
 		}
-		close($fh);
+		close($file->fh);
 	}
+
+	# XXX we should check we got them all
 }
 
 package Forwarder;
@@ -426,7 +462,8 @@ sub strip_directories
 sub write_restate
 {
 	my ($o, $file, $p) = @_;
-	$o->write($file);
+	$o->write($file->fh);
+	return undef;
 }
 
 sub copy_extra
@@ -689,6 +726,31 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
+sub write_restate
+{
+	my ($self, $file, $p) = @_;
+	$self->SUPER::write_restate($file, $p);
+	my $base = $file->name;
+	my $frag = $self->frag;
+	$base =~ s/PFRAG\./PFRAG.$frag-/ or
+	    $base =~ s/PLIST/PFRAG.$frag/;
+	return $base if $p->{tracker}{known}{$base};
+	return undef;
+}
+
+sub frag
+{
+	my $self = shift;
+	return "$self->{name}";
+}
+
+package OpenBSD::PackingElement::NoFragment;
+sub frag
+{
+	my $self = shift;
+	return "no-$self->{name}";
+}
+
 package OpenBSD::PackingElement::Action;
 sub may_tag_along
 {
@@ -735,6 +797,7 @@ sub write_restate
 	
 	# XXX there should be some more code matching the mode to the original
 	# file that was copied
+	my $fh = $f->fh;
 	for my $k (qw(mode owner group)) {
 		my $s = "\@$k";
 		if (defined $self->{$k}) {
@@ -750,9 +813,10 @@ sub write_restate
 			}
 		}
 		$p->{restate}{$k} = $self->{$k};
-		print $f $s, "\n";
+		print $fh $s, "\n";
 	}
-	$self->write($f);
+	$self->write($fh);
+	return undef;
 }
 
 package OpenBSD::PackingElement::FileBase;
