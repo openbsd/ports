@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2017/12/22 13:52:10 fcambus Exp $
+# $OpenBSD: Makefile,v 1.44 2018/05/02 20:51:14 fcambus Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME=		fuse-1.5.0
+DISTNAME=		fuse-1.5.2
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC ICE SDL SM X11 Xext ao audiofile bz2 c gcrypt
+WANTLIB += FLAC X11 SDL Xext ao audiofile bz2 c gcrypt
 WANTLIB += glib-2.0 gpg-error iconv intl lzma m ogg pcre png pthread
 WANTLIB += sndio spectrum usbhid xcb xml2 z
 
@@ -37,13 +37,14 @@ LIB_DEPENDS+=		x11/gtk+3
 CONFIGURE_ENV+=		ao_available=yes
 
 WANTLIB += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject
+WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject
 WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 pthread-stubs xcb-render xcb-shm
+WANTLIB += pixman-1 xcb-render xcb-shm
 .else
 CONFIGURE_ARGS+=	--without-gtk
+WANTLIB += ICE SM
 .endif
 
 .include <bsd.port.mk>
