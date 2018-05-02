@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.67 2018/05/02 09:46:18 espie Exp $
+# $OpenBSD: update-plist,v 1.68 2018/05/02 09:47:10 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -300,7 +300,8 @@ sub annotate
 
 	# so we redo what subst does, but we mark it!
 
-	return $s unless $s =~ m/\$/o;	# optimization
+	return unless defined $s;
+	return unless $s =~ m/\$/o;	# optimization
 	my $subst = $self->{state}{subst};
 	while ( my $k = ($s =~ m/\$\{([A-Za-z_][^\}]*)\}/o)[0] ) {
 		my $v = $subst->value($k);
