@@ -1,0 +1,148 @@
+.\"	$OpenBSD: update-plist.1,v 1.1 2018/05/02 10:27:50 espie Exp $
+.\"
+.\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: May 2 2018 $
+.Dt UPDATE-PLIST 1
+.Os
+.Sh NAME
+.Nm update-plist
+.Nd create or update packing-list(s) for a given port.
+.Sh SYNOPSIS
+.Ev PORTSDIR Ns = Ns Ar path
+.Op Ev FAKE_TREE_OWNER Ns = Ns Ar user Ev PORTS_TREE_OWNER Ns = Ns Ar user Nm doas
+.Nm update-plist
+.Op Fl mnx
+.Op Fl X Ar path
+.Op Fl w Ar suffix
+.Fl -
+.Ar pkg_create_args ...
+.Sh DESCRIPTION
+.Nm
+is a helper script for the target
+.Ar update-plist
+in
+.Xr bsd.port.mk 5 .
+.Pp
+Along with options and environment variables,
+.Nm
+uses the exact same options and arguments that would be passed to
+.Xr pkg_create 1 .
+Since
+.Xr pkg_create 1
+normally takes one single actual
+.Ar pkgname ,
+there is no ambiguity in
+.Ev MULTI_PACKAGES
+situations.
+.Pp
+The first set of arguments correspond to the
+.Sq default package .
+.Pp
+If
+.Ev PORTS_PRIVSEP
+is in effect,
+.Nm
+is run as root, but will switch back to
+.Ev FAKE_TREE_OWNER
+for scanning the installation directory and to
+.Ev PORTS_TREE_OWNER
+for writing packing-lists.
+.Pp
+.Nm
+may need to know the
+.Ev PORTSDIR
+location in order to scan dependencies to trim common directories.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl w Ar suffix
+warn about suffixes such as
+.Ar .orig
+that (usually) should not end into packing-lists.
+.It Fl X Ar path
+exclude file at absolute
+.Ar path
+from the information recorded in the packing-list.
+.El
+.Pp
+.Nm
+assumes all multi-packages live under the same installation directory
+.Po
+.Xr pkg_create 1 's
+.Fl B
+option
+.Pc ,
+and it will scan all paths under that directory and dispatch
+them into corresponding subpackages, using the following heuristics:
+.Bl -bullet
+.It
+files that were in existing plist(s) will be kept in the same location
+.It
+new files and directories will be put in the packing-list that owns
+the corresponding directory.
+.It
+baring that, new files will be put into the main packing-list.
+.El
+.Pp
+.Nm
+will also scan dependencies, in order to strip common directories.
+.Pp
+Most
+.Ev SUBST_VARS
+variables will be back-substituted into the regenerated packing-lists,
+starting from the longest variable values.
+.Nm
+tries to keep existing substitutions.
+It does not add new substitutions on
+.Ev BASE_PKGPATH
+and
+.Ev BUILD_PKGPATH ,
+it does only substitute
+.Ev FULLPKGNAME
+in
+.Pa share/doc/pkg-readmes
+and it currently does not add new substitutions for
+.Ev ARCH
+nor
+.Ev MACHINE_ARCH .
+.Pp
+Specific items such as shared libraries or binaries will gain annotations
+and special handling, for instance
+.Ev LIBlibname_VERSION .
+.Pp
+Existing packing-lists are scanned for non-file entries, such as
+.Cm newuser ,
+.Cm mode ,
+or
+.Cm exec
+markers.
+Those will be inserted into the updated packing-lists at the most likely
+position.
+.Sh SEE ALSO
+.Xr pkg_add 1 ,
+.Xr pkg_create 1 ,
+.Xr bsd.port.mk 5
+.Sh BUGS AND LIMITATIONS
+.Nm
+might be the most complicated piece of the ports infrastructure.
+There will always be cases that require manual intervention.
+.
+Since
+.Ar fake
+is now run as non-root,
+.Nm
+can't figure out users and groups for new files, so these should be
+considered carefully.
