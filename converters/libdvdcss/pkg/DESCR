@@ -3,7 +3,7 @@ device without having to worry about the decryption.
 
 It can be controlled through environment variables:
 
-DVDCSS_VERBOSE={0|1|2}: 
+DVDCSS_VERBOSE={0|1|2}:
     0: no error messages, no debug messages,
     1: only error messages (this is the default)
     2: error and debug messages
