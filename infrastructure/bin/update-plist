@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.72 2018/05/02 14:00:22 espie Exp $
+# $OpenBSD: update-plist,v 1.73 2018/05/02 14:44:00 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -158,7 +158,7 @@ sub new
 	    # count the number of times we see each value. More than once,
 	    # hard to figure out WHICH one to backsubst
 	    count => {}, 
-	    # note that a variable is actually used. Then if we see the
+	    # record that a variable is actually used. Then if we see the
 	    # string and no backsubst, it's probably intentional
 	    used => {}, 
 	    # list of actual variables we care about, e.g., ignored stuff
@@ -181,7 +181,7 @@ my $special = {
 	FULLPKGPATH => 1,
 	MACHINE_ARCH => 1,
 	ARCH => 1,
-	'^BASE_PKGPATH' => 1,
+	BASE_PKGPATH => 1,
 };
 
 
@@ -229,26 +229,27 @@ sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
+		my $k2 = $k;
+		$k2 =~ s/^\^//;
 		# don't add subst on THOSE variables
 		# TODO ARCH, MACHINE_ARCH could happen, but only with word
 		#  boundary contexts
-		if ($subst->never_add($k)) {
+		if ($subst->never_add($k2)) {
 			unless (defined $unsubst &&
-			    $unsubst =~ m/\$\{\Q$k\E\}/) {
+			    $unsubst =~ m/\$\{\Q$k2\E\}/) {
 			    	# add a magical location for FULLPKGNAME
-			    	next unless $k eq 'FULLPKGNAME' &&
+			    	next unless $k2 eq 'FULLPKGNAME' &&
 				    $string =~ m,^share/doc/pkg-readmes/,;
 			}
 		} else {
 			# Heuristics: if the variable is already known AND was 
 			# not used already, then we don't try to use it
 			next if defined $unsubst &&
-			    $subst->{used}{$k} &&
-			    $unsubst !~ m/\$\{$k\}/;
+			    $subst->{used}{$k2} &&
+			    $unsubst !~ m/\$\{$k2\}/;
 		}
 		    	
 		if ($k =~ m/^\^(.*)$/) {
-			my $k2 = $1;
 			my $v = $subst->value($k2);
 			# Empty variable at start of string
 			# if it was already there we do it again
@@ -269,14 +270,14 @@ sub do_backsubst
 			# the same prefix and apply it
 			if ($v eq '') {
 				if (defined $unsubst &&
-				    $unsubst =~ m/^(.*)\$\{$k\}/) {
+				    $unsubst =~ m/^(.*)\$\{$k2\}/) {
 				    	my $prefix = $1;
 					# XXX hack around @keyword
 					$prefix =~ s/^\@\S+\s+//;
-				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k\}/;
+				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/\Q$v\E/\$\{$k\}/g;
+				$string =~ s/\Q$v\E/\$\{$k2\}/g;
 			}
 		}
 	}
