@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.55 2017/12/15 16:25:31 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.56 2018/05/02 08:21:13 ajacoutot Exp $
 
 - Fix TLS test to work with Clang's emulated TLS
 - Fix curses test to work on OpenBSD
@@ -7,7 +7,7 @@ $OpenBSD: patch-configure,v 1.55 2017/12/15 16:25:31 ajacoutot Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1724,7 +1724,7 @@ static __thread int tls_var;
+@@ -1797,7 +1797,7 @@ static __thread int tls_var;
  int main(void) { return tls_var; }
  EOF
  
@@ -16,7 +16,7 @@ Index: configure
      error_exit "Your compiler does not support the __thread specifier for " \
  	"Thread-Local Storage (TLS). Please upgrade to a version that does."
  fi
-@@ -3170,6 +3170,7 @@ if test "$curses" != "no" ; then
+@@ -3276,6 +3276,7 @@ if test "$curses" != "no" ; then
    fi
    curses_found=no
    cat > $TMPC << EOF
@@ -24,7 +24,7 @@ Index: configure
  #include <locale.h>
  #include <curses.h>
  #include <wchar.h>
-@@ -5124,10 +5125,6 @@ fi
+@@ -5422,10 +5423,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -34,4 +34,4 @@ Index: configure
 -  CFLAGS="-O2 $CFLAGS"
  fi
  
- ##########################################
+ if test "$have_asan" = "yes"; then

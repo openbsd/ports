@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2017/12/15 16:25:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/05/02 08:21:13 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -13,6 +13,7 @@
 @bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-cris
+@bin bin/qemu-system-hppa
 @bin bin/qemu-system-i386
 @bin bin/qemu-system-lm32
 @bin bin/qemu-system-m68k
@@ -28,6 +29,8 @@
 @bin bin/qemu-system-ppc
 @bin bin/qemu-system-ppc64
 @bin bin/qemu-system-ppcemb
+@bin bin/qemu-system-riscv32
+@bin bin/qemu-system-riscv64
 @bin bin/qemu-system-s390x
 @bin bin/qemu-system-sh4
 @bin bin/qemu-system-sh4eb
@@ -76,10 +79,10 @@ share/locale/zh_CN/LC_MESSAGES/qemu.mo
 share/qemu/
 share/qemu/QEMU,cgthree.bin
 share/qemu/QEMU,tcx.bin
-share/qemu/acpi-dsdt.aml
 share/qemu/bamboo.dtb
 share/qemu/bios-256k.bin
 share/qemu/bios.bin
+share/qemu/canyonlands.dtb
 share/qemu/efi-e1000.rom
 share/qemu/efi-e1000e.rom
 share/qemu/efi-eepro100.rom
@@ -88,6 +91,7 @@ share/qemu/efi-pcnet.rom
 share/qemu/efi-rtl8139.rom
 share/qemu/efi-virtio.rom
 share/qemu/efi-vmxnet3.rom
+share/qemu/hppa-firmware.img
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
@@ -153,6 +157,7 @@ share/qemu/skiboot.lid
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
 share/qemu/trace-events-all
+share/qemu/u-boot-sam460-20100605.bin
 share/qemu/u-boot.e500
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin
