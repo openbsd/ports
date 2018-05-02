@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.71 2018/05/02 13:40:28 espie Exp $
+# $OpenBSD: update-plist,v 1.72 2018/05/02 14:00:22 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1058,12 +1058,31 @@ my $portsdir = $ENV{PORTSDIR};
 for my $p (@lists) {
 	my $count = 0;
 	$p->nlist->count_directories(\$count);
-	if ($count > 0) {
+	$p->{count_directories} = $count;
+}
+
+for my $p (@lists) {
+	if ($p->{count_directories} > 0) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
 
-# TODO second pass stripping internal directories should go there
+# replace the cache entries from disk with cache entries from new plists
+for my $p (@lists) {
+	my $pkgpath = $p->olist->fullpkgpath;
+	# optimisation: it's not a dependency, so we don't care
+	next if !defined $cache->{$pkgpath};
+	$cache->{$pkgpath} = {};
+	$state->say("Stripping directories from #1 (trying harder)", $pkgpath);
+	$p->nlist->process_dependency($cache->{$pkgpath});
+}
+
+# and redo the zapping all over again
+for my $p (@lists) {
+	if ($p->{count_directories} > 0) {
+		$p->figure_out_dependencies($cache, $portsdir);
+	}
+}
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
