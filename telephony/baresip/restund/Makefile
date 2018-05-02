@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/02 19:26:54 naddy Exp $
 
 COMMENT =		modular and flexible STUN and TURN Server
 
 V =			0.4.12
 DISTNAME =		restund-${V}
-REVISION =		0
+REVISION =		1
 
 WANTLIB =		c crypto mysqlclient pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
 			databases/mariadb,-main
 
-MAKE_FLAGS +=		USE_MYSQL=1 LIBS="-lc -lre"
+MAKE_FLAGS +=		USE_MYSQL=1 LIBS="-lc -lre -lpthread"
 
 NO_TEST =		Yes
 
