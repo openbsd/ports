@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.69 2018/05/02 10:05:06 espie Exp $
+# $OpenBSD: update-plist,v 1.70 2018/05/02 12:25:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,7 +131,7 @@ sub write_all
 		close($file->fh);
 	}
 
-	# XXX we should check we got them all
+	# TODO we should check we got them all
 }
 
 package Forwarder;
@@ -230,7 +230,7 @@ sub do_backsubst
 	my ($subst, $string, $unsubst) = @_;
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
-		# XXX ARCH, MACHINE_ARCH could happen, but only with word
+		# TODO ARCH, MACHINE_ARCH could happen, but only with word
 		#  boundary contexts
 		if ($subst->never_add($k)) {
 			unless (defined $unsubst &&
@@ -261,7 +261,7 @@ sub do_backsubst
 				$string =~ s/^\Q$v\E/\$\{$k2\}/;
 			}
 		} else {
-			# XXX on the other hand, numeric and version-like
+			# TODO on the other hand, numeric and version-like
 			# variables shouldn't substitute partial numbers
 			my $v = $subst->value($k);
 			# Empty variable somewhere in the string
@@ -662,7 +662,7 @@ sub fullname
 	my $self = shift;
 	# let's pretend we're an object!!!
 	my $path = $self->name;
-	# XXX strip every keyword for matching, we may need to 
+	# TODO strip every keyword for matching, we may need to 
 	# be more particular
 	$path =~ s/^\@\w+\s+//;
 	if ($path !~ m|^/|o && $self->cwd ne '.') {
@@ -796,7 +796,7 @@ sub write_restate
 {
 	my ($self, $f, $p) = @_;
 	
-	# XXX there should be some more code matching the mode to the original
+	# TODO there should be some more code matching the mode to the original
 	# file that was copied
 	my $fh = $f->fh;
 	for my $k (qw(mode owner group)) {
@@ -895,7 +895,7 @@ sub copy_from_old
 		# XXX do not touch commented out data
 		if ($e->isa("OpenBSD::PackingElement::Comment")) {
 			$rebless = 0;
-		# XXX and do not touch directory classes, we don't know
+		# TODO and do not touch directory classes, we don't know
 		# enough from FS2 yet
 		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
 		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
@@ -982,8 +982,7 @@ $state->say("Scanning #1", $base);
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
 
-# XXX this is different from the old code. First we figure out which objects
-# will get copied.
+# First we figure out which objects will get copied.
 $state->say("Figuring out tie points");
 for my $path (keys %$objects) {
 	my $o = $objects->{$path};
@@ -1035,7 +1034,7 @@ for my $i (1, 2) {
 		my $s = $lists[0];
 		my $p2 = $s->strip_prefix($path);
 		if ($p2 =~ m|^/| && !$c->absolute_okay) {
-			# XXX we should try to see if it fits with 
+			# TODO we should try to see if it fits with 
 			# other prefixes then
 			print STDERR "Warning: can't put $p2 in any plist\n";
 			next;
@@ -1057,7 +1056,7 @@ for my $p (@lists) {
 	}
 }
 
-# XXX second pass stripping internal directories should go there
+# TODO second pass stripping internal directories should go there
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
