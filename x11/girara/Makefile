@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/04/28 14:55:47 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/02 11:59:11 ajacoutot Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.2.9
@@ -26,7 +26,7 @@ WANTLIB += notify pango-1.0
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-CONFIGURE_ENV +=	LDFLAGS=-L${X11BASE}/lib
+LDFLAGS=	-L${X11BASE}/lib
 
 TEST_TARGET =	test
 TEST_DEPENDS =	devel/check
