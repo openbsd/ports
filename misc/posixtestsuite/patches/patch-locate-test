@@ -1,0 +1,26 @@
+$OpenBSD: patch-locate-test,v 1.1.1.1 2018/05/02 21:06:48 bluhm Exp $
+
+In shell break does not exit case blocks, so break 1 is enough.
+The POSIX test suite requires features of GNU sed, use it explicitly.
+
+Index: locate-test
+--- locate-test.orig
++++ locate-test
+@@ -85,7 +85,7 @@ do
+           exit 1;
+           ;;
+       *)
+-          break 2;
++          break;
+           ;;
+   esac
+ done
+@@ -113,7 +113,7 @@ find "$WHERE" -type f \
+     $buildable $execs \
+     | if [ $print_execs -eq 1 ]
+         then
+-            sed 's/\.\(sh\|c\)$/.test/' 
++            gsed 's/\.\(sh\|c\)$/.test/' 
+         else
+             cat
+         fi

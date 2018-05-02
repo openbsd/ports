@@ -1,0 +1,10 @@
+The Open POSIX Test Suite is a test suite for POSIX 2001 APIs, not
+tied to specific implementations.  It provides conformance, functional,
+and stress testing.  Initial focus is on Threads, Clocks & Timers,
+Signals, Message Queues, and Semaphores.
+
+To run POSIX test suite on a regular basis as a OpenBSD regression
+test, compile the software as a port.  All files needed to run the
+tests are installed as package.  The port specific tool posixtestsuite
+creates a run time environment, runs the tests, and stores the
+results in the current directory.

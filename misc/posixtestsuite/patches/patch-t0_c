@@ -1,0 +1,15 @@
+$OpenBSD: patch-t0_c,v 1.1.1.1 2018/05/02 21:06:48 bluhm Exp $
+
+strcmp(3) needs string.h, posix test suite should know that.
+
+Index: t0.c
+--- t0.c.orig
++++ t0.c
+@@ -40,6 +40,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <signal.h>
+ 

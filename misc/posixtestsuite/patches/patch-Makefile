@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/05/02 21:06:48 bluhm Exp $
+
+Do not pass linker flags to compiler, clang fails due to -Werror
+-Wunused-command-line-argument.  Set CFLAGS and LDFLAGS directly
+in Makefile.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -29,7 +29,7 @@ top_builddir = .
+ 
+ LOGFILE = $(top_builddir)/logfile
+ 
+-LDFLAGS := $(shell cat LDFLAGS | grep -v \^\#)
++LDFLAGS := -lpthread -lm
+ 
+ RUN_TESTS := $(shell $(top_builddir)/locate-test \
+              --execs $(top_builddir)/$(POSIX_TARGET))
+@@ -54,7 +54,7 @@ stress-tests: stress-make stress-run
+ tests-pretty:
+ 	$(MAKE) all | column -t -s:
+ 
+-CFLAGS = -g -O2 -Wall -Werror -D_POSIX_C_SOURCE=200112L
++CFLAGS = -g -O2 -Wall -Werror -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=600 
+ 
+ # add -std=c99, -std=gnu99 if compiler supports it (gcc-2.95.3 does not).
+ check_gcc = $(shell if $(CC) $(1) -S -o /dev/null -xc /dev/null > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi)
+@@ -165,7 +165,7 @@ $(top_builddir)/t0.val: $(top_builddir)/t0
+ .PRECIOUS: %.o
+ %.o: %.c
+ 	@COMPLOG=$(LOGFILE).$$$$; \
+-	if $(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@ $(LDFLAGS) > $$COMPLOG 2>&1; \
++	if $(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@ > $$COMPLOG 2>&1; \
+ 	then \
+ 		echo "$(@:.o=): build: PASS" | tee -a $(LOGFILE); \
+ 	else \
