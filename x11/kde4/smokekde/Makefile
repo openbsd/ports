@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/01 06:44:39 jasper Exp $
-
-BROKEN =	depends on x11/kde4/kate which was removed
+# $OpenBSD: Makefile,v 1.16 2018/05/02 17:49:27 rsadowski Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
@@ -9,7 +7,6 @@ REVISION =	1
 
 SHARED_LIBS =	smokeakonadi		52.0 # 3.0
 SHARED_LIBS +=	smokeattica		51.0 # 3.0
-SHARED_LIBS +=	smokekate		52.0 # 3.0
 SHARED_LIBS +=	smokekdecore		52.0 # 3.0
 SHARED_LIBS +=	smokekdeui		52.0 # 3.0
 SHARED_LIBS +=	smokekfile		52.0 # 3.0
@@ -34,7 +31,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kateinterfaces ${KDE4LIB}/kcmutils
+WANTLIB += ${KDE4LIB}/kcmutils
 WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kfile ${KDE4LIB}/khtml ${KDE4LIB}/kidletime
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knewstuff2
@@ -54,12 +51,9 @@ WANTLIB += attica soprano sopranoclient sopranoserver
 MODKDE4_USE =	pim libs
 
 LIB_DEPENDS =	databases/soprano \
-		${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
-
-#CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
 
 CXXFLAGS +=	-std=c++03
 
