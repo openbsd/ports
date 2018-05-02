@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.8 2018/05/01 08:07:05 espie Exp $
+# $OpenBSD: FS2.pm,v 1.9 2018/05/02 15:20:54 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -63,8 +63,8 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
-		OpenBSD::FS::File::Library OpenBSD::FS::File::Binary 
-		OpenBSD::FS::File));
+		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
+		OpenBSD::FS::File::Binary OpenBSD::FS::File));
 }
 
 sub recognize
@@ -137,7 +137,7 @@ sub recognize
 	$filename = $fs->resolve_link($filename);
 	return 0 if -l $filename or ! -x $filename;
 	$class->fill_objdump($filename, $fs, $data);
-	if ($data->{objdump} =~m/ .note.openbsd.ident /) {
+	if ($data->{objdump} =~ m/ .note.openbsd.ident /) {
 	    	return 1;
 	} else {
 		return 0;
@@ -265,7 +265,7 @@ sub recognize
 	return 0 if -l $filename;
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
-	    $data->{objdump} !~m/ .interp /) {
+	    $data->{objdump} !~ m/ .interp /) {
 	    	return 1;
 	} else {
 		return 0;
@@ -275,6 +275,25 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Lib';
+}
+
+package OpenBSD::FS::File::Plugin;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+
+	return 0 unless $filename =~ m/\.so$/;
+	$filename = $fs->resolve_link($filename);
+	return 0 if -l $filename;
+	$class->fill_objdump($filename, $fs, $data);
+	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
+	    $data->{objdump} !~ m/ .interp /) {
+	    	return 1;
+	} else {
+		return 0;
+	}
 }
 
 package OpenBSD::FS2;
