@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2018/04/28 11:01:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2018/05/02 11:47:44 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.28.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -70,13 +70,5 @@ CONFIGURE_ARGS=		-Dwith_valgrind=false \
 CONFIGURE_ARGS +=	-Dwith_clang=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
-
-# XXX remove when merged into a stable release, fixed in:
-# https://git.gnome.org/browse/gnome-builder/commit/?id=d5b86775e5c13447c48b3e46a126eba6159ead82
-pre-configure:
-	echo "#!/bin/sh" >${WRKDIR}/bin/g-ir-scanner
-	echo "exec ${LOCALBASE}/bin/g-ir-scanner -L${WRKBUILD}/subprojects/libgd/libgd \"\$$@\"" \
-		>>${WRKDIR}/bin/g-ir-scanner
-	chmod 0555 ${WRKDIR}/bin/g-ir-scanner
 
 .include <bsd.port.mk>
