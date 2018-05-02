@@ -1,8 +1,9 @@
-$OpenBSD: patch-platform_gl_gl-main_c,v 1.5 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-platform_gl_gl-main_c,v 1.6 2018/05/02 14:47:36 sthen Exp $
 
 add pledge(2) to mupdf-gl:
-  - drm : opengl stuff
-  - proc exec : opening a external browser on uri link
+  - drm: opengl stuff
+  - proc exec: opening a external browser on uri link
+  - prot_exec: seems to be needed in mesa startup?
 
 Index: platform/gl/gl-main.c
 --- platform/gl/gl-main.c.orig
@@ -20,7 +21,7 @@ Index: platform/gl/gl-main.c
  
  	/* Init MuPDF */
 +
-+	if (pledge("stdio rpath drm proc exec", NULL) == -1)
++	if (pledge("stdio rpath drm proc exec prot_exec", NULL) == -1)
 +	{
 +		fprintf(stderr, "pledge: %s\n", strerror(errno));
 +		exit(1);
