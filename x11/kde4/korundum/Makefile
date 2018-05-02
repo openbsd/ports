@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/01 06:44:39 jasper Exp $
-
-BROKEN =	depends on x11/kde4/kate which was removed
+# $OpenBSD: Makefile,v 1.20 2018/05/02 17:48:54 rsadowski Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
@@ -14,10 +12,10 @@ WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/knewstuff2
 WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty ${KDE4LIB}/kutils
-WANTLIB += ${KDE4LIB}/kateinterfaces ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/okularcore ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/smokeakonadi
-WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokekate
+WANTLIB += ${KDE4LIB}/smokebase
 WANTLIB += ${KDE4LIB}/smokekdecore ${KDE4LIB}/smokekdeui
 WANTLIB += ${KDE4LIB}/smokekfile ${KDE4LIB}/smokekhtml ${KDE4LIB}/smokekio
 WANTLIB += ${KDE4LIB}/smokeknewstuff2 ${KDE4LIB}/smokeknewstuff3
@@ -41,8 +39,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/ruby-qt,${MODRUBY_FLAVOR}=${MODKDE4_VERSION} \
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/ruby-qt,${MODRUBY_FLAVOR}=${MODKDE4_VERSION} \
 		${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

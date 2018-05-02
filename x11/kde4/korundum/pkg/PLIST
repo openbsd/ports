@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:18:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/02 17:48:54 rsadowski Exp $
 @bin bin/krubyapplication
 @bin bin/rbkconfig_compiler4
 lib/kde4/krubypluginfactory.so
 ${MODRUBY_SITEDIR}/KDE/
-${MODRUBY_SITEDIR}/KDE/kate.rb
 ${MODRUBY_SITEDIR}/KDE/korundum4.rb
 ${MODRUBY_SITEDIR}/KDE/plasma.rb
 ${MODRUBY_SITEDIR}/akonadi/
@@ -23,7 +22,6 @@ ${MODRUBY_SITEDIR}/solid/solid.rb
 ${MODRUBY_SITEDIR}/soprano/
 ${MODRUBY_SITEDIR}/soprano/soprano.rb
 ${MODRUBY_SITEARCHDIR}/akonadi.so
-${MODRUBY_SITEARCHDIR}/kate.so
 ${MODRUBY_SITEARCHDIR}/khtml.so
 ${MODRUBY_SITEARCHDIR}/kio.so
 ${MODRUBY_SITEARCHDIR}/korundum4.so
