@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.1 2018/05/02 10:27:50 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.2 2018/05/02 15:27:51 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -131,6 +131,14 @@ or
 markers.
 Those will be inserted into the updated packing-lists at the most likely
 position.
+.Pp
+.Nm
+will first write files as
+.Pa <file>.new ,
+then it will display which files are new and which files have changed.
+If old packing-lists already exist, it will move old packing lists into
+.Pa <file>.orig
+unless these already exist, then move the new files into position.
 .Sh SEE ALSO
 .Xr pkg_add 1 ,
 .Xr pkg_create 1 ,
