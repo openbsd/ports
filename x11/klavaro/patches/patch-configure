@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2018/05/02 18:17:56 naddy Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4828,7 +4828,7 @@ fi
+ done
+ 
+ 
+-pkg_modules="gtk+-2.0 >= 2.16.0, gtkdatabox >= 0.9.0.0, libcurl >= 7.18.2"
++pkg_modules="gtk+-2.0 >= 2.16.0, gtkdatabox >= 0.9.0.0, gmodule-2.0, libcurl >= 7.18.2"
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
