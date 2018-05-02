@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.68 2018/05/02 09:47:10 espie Exp $
+# $OpenBSD: update-plist,v 1.69 2018/05/02 10:05:06 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -416,7 +416,7 @@ sub handle_options
 		},
 	};
 	$state->SUPER::handle_options('X:P:w:', 
-	    '[mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	    '[-mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 }
 
@@ -936,6 +936,10 @@ $state->handle_options;
 my @lists;
 my $exact = {};
 my $approximate = {};
+
+if (@ARGV == 0) {
+	$state->usage;
+}
 
 # we read all plists using the exact same code as pkg_create
 # e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
