@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.70 2018/05/02 12:25:32 espie Exp $
+# $OpenBSD: update-plist,v 1.71 2018/05/02 13:40:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1030,18 +1030,25 @@ for my $i (1, 2) {
 		}
 		next if $found;
 
-		# last resort for now
-		my $s = $lists[0];
-		my $p2 = $s->strip_prefix($path);
-		if ($p2 =~ m|^/| && !$c->absolute_okay) {
-			# TODO we should try to see if it fits with 
-			# other prefixes then
-			print STDERR "Warning: can't put $p2 in any plist\n";
-			next;
+		# last resort:
+		# try all lists in order, until we find one with 
+		# the right prefix
+		for my $p (@lists) {
+			my $p2 = $p->strip_prefix($path);
+			if ($p2 =~ m|^/| && !$c->absolute_okay) {
+				next;
+			}
+			my $a = $c->add($p->nlist, $p2);
+			# and match the file
+			$a->{file} = $p->{file};
+			$found = 1;
+			last;
 		}
-		my $a = $c->add($s->nlist, $p2);
-		# and match the file
-		$a->{file} = $s->{file};
+		next if $found;
+		# TODO this is where we should figure @cwd stuff
+		# though it's generally better to have distinct plists
+		# for several prefixes
+		print STDERR "Warning: can't put $path in any plist\n";
 	}
 }
 
