@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.4 2018/05/02 19:21:53 naddy Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -146,6 +146,7 @@ MOD_LFLAGS += -L$(SYSROOT)/local/lib
+ endif
+ 
+ LIBS      += -lrem -lm
++LIBS      += -lpthread
+ LIBS      += -L$(SYSROOT)/lib
+ 
+ ifeq ($(OS),win32)
