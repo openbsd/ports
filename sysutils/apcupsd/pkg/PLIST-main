@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/01/22 21:23:30 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/05/03 11:01:24 zhuk Exp $
 @pkgpath sysutils/apcupsd,snmp
 @group bin
 @man man/man5/apcupsd.conf.5
@@ -14,7 +14,6 @@
 @mode
 @owner
 sbin/apcupsctl
-@bin sbin/smtp
 @comment share/applications/
 @group
 share/doc/apcupsd/

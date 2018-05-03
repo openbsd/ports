@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/01/12 14:05:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/05/03 11:01:24 zhuk Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -9,7 +9,7 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
 REVISION =		1
-REVISION-main =		2
+REVISION-main =		3
 
 CATEGORIES =		sysutils
 
@@ -108,5 +108,6 @@ post-install:
 		${WRKINST}/${WEB_ROOT}/cgi-bin/apcupsd/
 	cd ${PREFIX}/share; chown -R root:wheel doc/apcupsd examples/apcupsd
 	chmod 755 ${PREFIX}/sbin/apcupsctl
+	rm -f ${PREFIX}/sbin/smtp
 
 .include <bsd.port.mk>
