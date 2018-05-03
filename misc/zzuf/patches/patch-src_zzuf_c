@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_zzuf_c,v 1.1 2018/05/03 11:02:57 solene Exp $
+
+Index: src/zzuf.c
+--- src/zzuf.c.orig
++++ src/zzuf.c
+@@ -48,7 +48,6 @@
+ #include <errno.h>
+ #include <signal.h>
+ #include <libgen.h>
+-#include <alloca.h>
+ #if defined HAVE_SYS_TIME_H
+ #   include <sys/time.h>
+ #endif
