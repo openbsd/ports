@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2018/04/12 06:07:13 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.49 2018/05/03 13:07:59 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer and MPV
 
-DISTNAME =		smplayer-18.3.0
-REVISION =		0
+DISTNAME =		smplayer-18.4.0
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		http://smplayer.sourceforge.net/
