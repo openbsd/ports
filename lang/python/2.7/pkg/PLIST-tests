@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.14 2017/09/20 18:44:48 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.15 2018/05/03 20:09:25 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=2.7,<2.8
@@ -366,7 +366,6 @@ lib/python2.7/test/seq_tests.py
 lib/python2.7/test/seq_tests.pyc
 lib/python2.7/test/seq_tests.pyo
 lib/python2.7/test/sgml_input.html
-lib/python2.7/test/sha256.pem
 lib/python2.7/test/sortperf.py
 lib/python2.7/test/sortperf.pyc
 lib/python2.7/test/sortperf.pyo
@@ -1654,6 +1653,7 @@ lib/python2.7/test/win_console_handler.pyc
 lib/python2.7/test/win_console_handler.pyo
 lib/python2.7/test/wrongcert.pem
 lib/python2.7/test/xmltestdata/
+lib/python2.7/test/xmltestdata/expat224_utf8_bug.xml
 lib/python2.7/test/xmltestdata/simple-ns.xml
 lib/python2.7/test/xmltestdata/simple.xml
 lib/python2.7/test/xmltestdata/test.xml
