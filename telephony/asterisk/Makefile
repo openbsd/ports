@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.278 2018/03/16 20:57:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.279 2018/05/03 21:10:49 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.20.0
-PJ_V=		2.7.1
+VER=		13.21.0
+PJ_V=		2.7.2
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -25,26 +25,27 @@ PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
+# XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
-WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread spandsp
-WANTLIB-main += sqlite3 ssl tiff uriparser uuid vorbis vorbisenc
-WANTLIB-main += vorbisfile xml2 xslt z
+WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
+WANTLIB-main += spandsp sqlite3 ssl tiff uriparser uuid vorbis
+WANTLIB-main += vorbisenc vorbisfile xml2 xslt z
 
-# XXX Requires either nested functions (gcc only), or -fblocks (clang).
+# Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
+# However -fblocks fails:
 #
-# With clang -fblocks, configure test fails on ld.bfd arches:
+# - configure test fails on ld.bfd arches:
 #
 #    echo 'int main(){return ^{return 42;}();}' | \
 #         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
 #
 # -> undefined reference to `_NSConcreteGlobalBlock'
 #
-# Runtime fails on ld.lld arches: dlopen()ing the .so modules results in
+# - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
 # undefined symbols from the BlocksRuntime lib.
 #
-# keep telephony/asterisk-g729 in sync with this
+# If changing this, keep telephony/asterisk-g729 in sync.
 COMPILER=		base-gcc ports-gcc
-COMPILER_LANGS=		c
 
 SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
@@ -64,6 +65,7 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			devel/jansson \
 			graphics/tiff \
 			net/curl \
+			net/radcli \
 			sysutils/e2fsprogs \
 			telephony/spandsp \
 			textproc/iksemel \
@@ -135,7 +137,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 
 CONFIGURE_ARGS+=	--with-jack=no \
 			--with-lua=no \
-			--with-radius=no \
 			--with-resample=no
 
 # Some build options (including a useful malloc debug) are available
