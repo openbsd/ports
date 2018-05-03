@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2018/05/03 12:47:27 jasper Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -56,6 +56,7 @@ LIB_DEPENDS +=	x11/gtk+2
 .endif
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR}
 
 MAKE_ENV+=	LDSHARED="${CC} -shared -fPIC"
