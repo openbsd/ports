@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2018/05/01 09:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2018/05/03 06:13:32 ajacoutot Exp $
 
 COMMENT=		error codes for GnuPG related software
 
-DISTNAME=		libgpg-error-1.30
+DISTNAME=		libgpg-error-1.31
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gpg-error            3.15     # 24.1
+SHARED_LIBS +=  gpg-error            3.15     # 24.2
 
 HOMEPAGE=		https://www.gnupg.org/software/libgpg-error/index.html
 
