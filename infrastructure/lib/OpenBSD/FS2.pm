@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.9 2018/05/02 15:20:54 espie Exp $
+# $OpenBSD: FS2.pm,v 1.10 2018/05/03 12:13:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -134,7 +134,7 @@ sub element_class
 sub recognize
 {
 	my ($class, $filename, $fs, $data) = @_;
-	$filename = $fs->resolve_link($filename);
+	$filename = $fs->destdir($filename);
 	return 0 if -l $filename or ! -x $filename;
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident /) {
@@ -234,25 +234,6 @@ sub element_class
 	return 'OpenBSD::PackingElement::Manpage';
 }
 
-package OpenBSD::FS::PreSharedObject;
-our @ISA = qw(OpenBSD::FS::File::Pre);
-sub recognize
-{
-	return 1;
-}
-
-sub match
-{
-	my ($self, $check) = @_;
-	if (($check =~m/^ELF (32|64)-bit (MSB|LSB) shared object\,/ &&
-	    $check !~m/\(uses shared libs\)/) ||
-	    $check =~m/OpenBSD\/.* demand paged shared library/) {
-	    	return 1;
-	} else {
-		return 0;
-	}
-}
-
 package OpenBSD::FS::File::Library;
 our @ISA = qw(OpenBSD::FS::File);
 
@@ -261,7 +242,7 @@ sub recognize
 	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m/\/lib[^\/]+\.so\.\d+\.\d+$/;
-	$filename = $fs->resolve_link($filename);
+	$filename = $fs->destdir($filename);
 	return 0 if -l $filename;
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
@@ -285,7 +266,7 @@ sub recognize
 	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m/\.so$/;
-	$filename = $fs->resolve_link($filename);
+	$filename = $fs->destdir($filename);
 	return 0 if -l $filename;
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
