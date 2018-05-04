@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/05/04 11:14:18 pirofti Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
-VERSION=	09.03.0400
+VERSION=	10.02.0000
 PKGNAME=	postgresql-odbc-${VERSION}
 DISTNAME=	psqlodbc-${VERSION}
 CATEGORIES=	databases
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		https://ftp.postgresql.org/pub/odbc/versions/src/
 
-LIB_DEPENDS =		databases/postgresql>=9.3 \
+LIB_DEPENDS =		databases/postgresql>=10.3 \
 			databases/iodbc
 
 WANTLIB =		pq iodbc iodbcinst pthread crypto ssl
