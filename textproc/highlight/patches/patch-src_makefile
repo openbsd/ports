@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_makefile,v 1.19 2018/02/03 10:11:46 benoit Exp $
---- src/makefile.orig	Sat Jan 20 21:42:17 2018
-+++ src/makefile	Sat Feb  3 10:52:47 2018
+$OpenBSD: patch-src_makefile,v 1.20 2018/05/04 20:00:34 benoit Exp $
+Index: src/makefile
+--- src/makefile.orig
++++ src/makefile
 @@ -13,13 +13,13 @@
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
@@ -17,7 +18,7 @@ $OpenBSD: patch-src_makefile,v 1.19 2018/02/03 10:11:46 benoit Exp $
  #CFLAGS:=-ggdb ${CFLAGS} -std=c++11
  
  CFLAGS_DILU=-fno-strict-aliasing
-@@ -39,10 +39,10 @@
+@@ -39,10 +39,10 @@ INCLUDE_DIR=./include/
  # If Lua 5.2 is not default on your system yet you have to
  # use lua5.1 in the pkg-config calls
  
@@ -30,7 +31,7 @@ $OpenBSD: patch-src_makefile,v 1.19 2018/02/03 10:11:46 benoit Exp $
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -53,13 +53,13 @@
+@@ -53,13 +53,13 @@ REGEX_DIR=${CORE_DIR}re/
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR

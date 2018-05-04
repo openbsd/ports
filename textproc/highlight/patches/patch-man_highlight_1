@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_highlight_1,v 1.8 2017/12/02 15:46:10 benoit Exp $
+$OpenBSD: patch-man_highlight_1,v 1.9 2018/05/04 20:00:34 benoit Exp $
 Index: man/highlight.1
 --- man/highlight.1.orig
 +++ man/highlight.1
-@@ -200,13 +200,13 @@ Reformatting code (-F)  will only work with C, C++, C#
- The wrapping options might cause faulty highlighting of long single line comments.
+@@ -211,13 +211,13 @@ Wrapping lines with -V or -W will cause faulty highlig
+ Using line-range might interfere with multi line syntax elements. Use with caution.    
  .SH FILES
  The configuration files are stored in
 -.I /usr/share/highlight/.
