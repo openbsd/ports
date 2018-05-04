@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/06/04 16:36:39 danj Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/04 11:37:24 jasper Exp $
 bin/gunicorn${MODPY_BIN_SUFFIX}
 bin/gunicorn_paster${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/gunicorn/
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gunicorn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/${MODPY_PYCACHE}/
