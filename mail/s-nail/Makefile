@@ -1,45 +1,54 @@
-# $OpenBSD: Makefile,v 1.19 2017/12/08 01:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/05/04 14:07:27 sthen Exp $
 
-COMMENT=		enhanced, MIME capable Berkeley Mail
+COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
-DISTNAME=		s-nail-14.8.16
+DISTNAME=		s-nail-14.9.10
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
-FIX_EXTRACT_PERMISSIONS=Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto iconv idn ssl
+WANTLIB += c crypto curses iconv ssl
 
-MASTER_SITES=		https://www.sdaoden.eu/downloads/
+MASTER_SITES=		https://ftp.sdaoden.eu/
 MAINTAINER=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
+FLAVORS=		idna
+FLAVOR?=
+
+PORTHOME=		${WRKDIR}
 MAKE_FILE=		makefile
 MAKE_FLAGS=		CC="${CC}" \
-			CFLAGS="${CFLAGS}" \
 			C_INCLUDE_PATH="${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS}" \
 			LD_LIBRARY_PATH="${LOCALBASE}/lib" \
-			MANDIR="${PREFIX}/man" \
-			SYSCONFDIR="${SYSCONFDIR}" \
-			WANT_AUTOCC=0 \
-			WANT_EDITLINE=0 \
-			WANT_NCL=1 \
-			WANT_DOTLOCK=0 \
-			SID=
+			VAL_MANDIR="${PREFIX}/man" \
+			VAL_SYSCONFDIR="${SYSCONFDIR}" \
+			VAL_SID= \
+			OPT_ALWAYS_UNICODE_LOCALE=yes \
+			OPT_AGENT=no \
+			OPT_AUTOCC=no \
+			OPT_DOTLOCK=no \
+			OPT_GSSAPI=no \
+			VAL_RANDOM=arc4
+
+.if ${FLAVOR:Midna}
+WANTLIB+=		idn2
+LIB_DEPENDS+=		devel/libidn2
+MAKE_FLAGS+=		OPT_IDNA=yes \
+			VAL_IDNA=idn2
+.else
+MAKE_FLAGS+=		OPT_IDNA=no
+.endif
 
 .if !empty(DEBUG)
-MAKE_FLAGS+=		WANT_DEBUG=1
-FAKE_FLAGS+=		WANT_DEBUG=1
+MAKE_FLAGS+=		OPT_DEBUG=yes
+FAKE_FLAGS+=		OPT_DEBUG=yes
 .endif
 
 MAKE_ENV=		VERBOSE=Yes
 
-LIB_DEPENDS=		converters/libiconv \
-			devel/libidn
-
-INSTALL_TARGET=		packager-install
+LIB_DEPENDS=		converters/libiconv
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nail
