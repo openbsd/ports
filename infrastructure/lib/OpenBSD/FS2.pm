@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.10 2018/05/03 12:13:12 espie Exp $
+# $OpenBSD: FS2.pm,v 1.11 2018/05/04 07:24:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -242,7 +242,7 @@ sub recognize
 	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m/\/lib[^\/]+\.so\.\d+\.\d+$/;
-	$filename = $fs->destdir($filename);
+	$filename = $fs->resolve_link($filename);
 	return 0 if -l $filename;
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
@@ -266,8 +266,7 @@ sub recognize
 	my ($class, $filename, $fs, $data) = @_;
 
 	return 0 unless $filename =~ m/\.so$/;
-	$filename = $fs->destdir($filename);
-	return 0 if -l $filename;
+	$filename = $fs->resolve_link($filename);
 	$class->fill_objdump($filename, $fs, $data);
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
 	    $data->{objdump} !~ m/ .interp /) {
