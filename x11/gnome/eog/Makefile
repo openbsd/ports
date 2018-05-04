@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2018/05/02 16:54:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2018/05/04 20:03:42 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
@@ -31,8 +31,5 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=795546
-CONFIGURE_ARGS +=	-Dc_link_args="-Wl,-z,origin"
 
 .include <bsd.port.mk>
