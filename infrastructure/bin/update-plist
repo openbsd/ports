@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.75 2018/05/04 08:54:31 espie Exp $
+# $OpenBSD: update-plist,v 1.76 2018/05/04 09:08:19 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -904,6 +904,8 @@ sub copy_from_old
 	# XXX this should be safe for all our objects
 	bless $e, $o->element_class if $rebless;
 
+	# TODO we need to check the actual cwd here, so that stuff outside
+	# the prefix gets added reaaaallly late
 	$e->add_object($s->nlist);
 	if (defined $e->{mytags}) {
 		for my $tag (@{$e->{mytags}}) {
