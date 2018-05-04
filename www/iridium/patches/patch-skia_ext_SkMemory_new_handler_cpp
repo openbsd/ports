@@ -1,10 +1,12 @@
-$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.7 2017/10/28 07:36:01 robert Exp $
---- skia/ext/SkMemory_new_handler.cpp.orig.port	Wed Oct 12 21:03:02 2016
-+++ skia/ext/SkMemory_new_handler.cpp	Wed Oct 19 12:56:08 2016
-@@ -68,7 +68,7 @@ static void* sk_malloc_nothrow(size_t size) {
-     // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
-     // doesn't work as intended everywhere.
-     void* result;
+$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.8 2018/05/04 07:14:58 robert Exp $
+
+Index: skia/ext/SkMemory_new_handler.cpp
+--- skia/ext/SkMemory_new_handler.cpp.orig
++++ skia/ext/SkMemory_new_handler.cpp
+@@ -69,7 +69,7 @@ static void* malloc_nothrow(size_t size) {
+   // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
+   // doesn't work as intended everywhere.
+   void* result;
 -#if  defined(OS_IOS)
 +#if  defined(OS_IOS) || defined(OS_BSD)
      result = malloc(size);

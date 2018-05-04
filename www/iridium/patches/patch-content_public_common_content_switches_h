@@ -1,20 +1,14 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.16 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.17 2018/05/04 07:14:57 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -198,6 +198,7 @@ CONTENT_EXPORT extern const char kMojoLocalStorage[];
- CONTENT_EXPORT extern const char kMuteAudio[];
- CONTENT_EXPORT extern const char kNoReferrers[];
- CONTENT_EXPORT extern const char kNoSandbox[];
-+CONTENT_EXPORT extern const char kTrk[];
- CONTENT_EXPORT extern const char kNoZygote[];
- CONTENT_EXPORT extern const char kEnableAppContainer[];
- CONTENT_EXPORT extern const char kDisableAppContainer[];
-@@ -292,7 +293,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
- CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
+@@ -275,7 +275,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+ CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++CONTENT_EXPORT extern const char kTrk[];
++
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
  #endif

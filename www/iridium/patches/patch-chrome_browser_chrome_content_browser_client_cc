@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.16 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.17 2018/05/04 07:14:57 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -267,7 +267,7 @@
+@@ -295,7 +295,7 @@
  #include "chromeos/chromeos_switches.h"
  #include "components/user_manager/user_manager.h"
- #include "services/service_manager/public/interfaces/interface_provider_spec.mojom.h"
+ #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
- #include "chrome/browser/android/app_hooks.h"
-@@ -296,7 +296,7 @@
+ #include "base/android/application_status_listener.h"
+@@ -331,7 +331,7 @@
  #include "chrome/common/importer/profile_import.mojom.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -310,7 +310,7 @@
+@@ -345,7 +345,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -867,7 +867,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -922,7 +922,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -39,7 +39,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -883,7 +883,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -938,7 +938,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -48,16 +48,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1541,7 +1541,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1638,7 +1638,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
 -#elif defined(OS_POSIX)
 +#elif defined(OS_POSIX) && !defined(OS_BSD)
-   if (breakpad::IsCrashReporterEnabled()) {
-     std::string switch_value;
-     std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -2730,7 +2730,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+   bool enable_crash_reporter = breakpad::IsCrashReporterEnabled();
+ #if defined(OS_CHROMEOS)
+   // Chrome OS uses the OS-level crash_reporter for mash services, so disable
+@@ -2932,7 +2932,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -66,12 +66,12 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3354,7 +3354,7 @@ void ChromeContentBrowserClient::InitFrameInterfaces()
+@@ -3653,7 +3653,7 @@ void ChromeContentBrowserClient::InitWebContextInterfa
  #if defined(OS_ANDROID)
    frame_interfaces_parameterized_->AddInterface(base::Bind(
        &ForwardToJavaWebContentsRegistry<blink::mojom::ShareService>));
 -#elif defined(OS_LINUX) || defined(OS_WIN)
-+#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD) 
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    frame_interfaces_->AddInterface(base::Bind(&ShareServiceImpl::Create));
  #endif
  

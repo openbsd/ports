@@ -1,18 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.5 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontCache_cpp,v 1.6 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/WebKit/Source/platform/fonts/FontCache.cpp
 --- third_party/WebKit/Source/platform/fonts/FontCache.cpp.orig
 +++ third_party/WebKit/Source/platform/fonts/FontCache.cpp
-@@ -64,7 +64,7 @@
- 
- namespace blink {
- 
--#if !defined(OS_WIN) && !defined(OS_LINUX)
-+#if !defined(OS_WIN) && !defined(OS_LINUX) && !defined(OS_BSD)
- FontCache::FontCache() : purge_prevent_count_(0), font_manager_(nullptr) {}
- #endif  // !defined(OS_WIN) && !defined(OS_LINUX)
- 
-@@ -85,7 +85,7 @@ FontCache* FontCache::GetFontCache() {
+@@ -83,7 +83,7 @@ FontCache::FontCache()
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();

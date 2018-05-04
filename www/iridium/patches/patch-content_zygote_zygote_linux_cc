@@ -1,0 +1,18 @@
+$OpenBSD: patch-content_zygote_zygote_linux_cc,v 1.1 2018/05/04 07:14:57 robert Exp $
+
+Index: content/zygote/zygote_linux.cc
+--- content/zygote/zygote_linux.cc.orig
++++ content/zygote/zygote_linux.cc
+@@ -1,6 +1,7 @@
+ // Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
++#if 0
+ 
+ #include "content/zygote/zygote_linux.h"
+ 
+@@ -666,3 +667,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
+ }
+ 
+ }  // namespace content
++#endif

@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_strings_grdp,v 1.2 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-components_autofill_strings_grdp,v 1.3 2018/05/04 07:14:57 robert Exp $
 
 Index: components/autofill_strings.grdp
 --- components/autofill_strings.grdp.orig
 +++ components/autofill_strings.grdp
-@@ -207,7 +207,7 @@
+@@ -219,7 +219,7 @@
        Do you want Chromium to save this card?
      </message>
    </if>
@@ -12,7 +12,7 @@ Index: components/autofill_strings.grdp
      <then>
        <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_TITLE_TO_CLOUD" desc="Title text for the Autofill save card prompt when the card is to be saved by uploading it to Google Payments and also saved locally. The prompt can be either a bubble or an infobar.">
          Do you want to save this card to your Google Account?
-@@ -225,7 +225,7 @@
+@@ -240,7 +240,7 @@
    <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION" desc="Explanation of the effect of the Autofill save card prompt when the card is to be saved by uploading it to Google Payments and also saved locally. The prompt can be either a bubble or an infobar.">
      Pay quickly on sites and apps across devices using cards you have saved with Google.
    </message>

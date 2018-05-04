@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.7 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.8 2018/05/04 07:14:58 robert Exp $
 Index: ui/webui/resources/js/cr.js
 --- ui/webui/resources/js/cr.js.orig
 +++ ui/webui/resources/js/cr.js

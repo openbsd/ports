@@ -1,0 +1,23 @@
+$OpenBSD: patch-net_proxy_resolution_proxy_service_cc,v 1.1 2018/05/04 07:14:58 robert Exp $
+
+Index: net/proxy_resolution/proxy_service.cc
+--- net/proxy_resolution/proxy_service.cc.orig
++++ net/proxy_resolution/proxy_service.cc
+@@ -46,7 +46,7 @@
+ #elif defined(OS_MACOSX)
+ #include "net/proxy_resolution/proxy_config_service_mac.h"
+ #include "net/proxy_resolution/proxy_resolver_mac.h"
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #include "net/proxy_resolution/proxy_config_service_linux.h"
+ #elif defined(OS_ANDROID)
+ #include "net/proxy_resolution/proxy_config_service_android.h"
+@@ -1459,7 +1459,7 @@ ProxyResolutionService::CreateSystemProxyConfigService
+              << "profile_io_data.cc::CreateProxyConfigService and this should "
+              << "be used only for examples.";
+   return std::make_unique<UnsetProxyConfigService>();
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   std::unique_ptr<ProxyConfigServiceLinux> linux_config_service(
+       new ProxyConfigServiceLinux());
+ 

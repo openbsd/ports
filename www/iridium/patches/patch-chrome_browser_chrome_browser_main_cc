@@ -1,18 +1,19 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.11 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.12 2018/05/04 07:14:57 robert Exp $
+
 Index: chrome/browser/chrome_browser_main.cc
 --- chrome/browser/chrome_browser_main.cc.orig
 +++ chrome/browser/chrome_browser_main.cc
-@@ -190,7 +190,7 @@
- #include "chrome/browser/offline_pages/offline_page_info_handler.h"
- #endif
+@@ -211,7 +211,7 @@
+ #include "chromeos/settings/cros_settings_names.h"
+ #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -283,7 +283,7 @@
- #endif
+@@ -251,7 +251,7 @@
+ #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
@@ -20,25 +21,34 @@ Index: chrome/browser/chrome_browser_main.cc
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -709,7 +709,7 @@ void ChromeBrowserMainParts::SetupFieldTrials() {
-   field_trial_synchronizer_ = new FieldTrialSynchronizer();
+@@ -1327,7 +1327,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+       AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
+     }
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
-   metrics::DesktopSessionDurationTracker::Initialize();
- #endif
-   metrics::RendererUptimeTracker::Initialize();
-@@ -1142,7 +1142,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+-#if defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+     // Create directory for user-level Native Messaging manifest files. This
+     // makes it less likely that the directory will be created by third-party
+     // software with incorrect owner or permission. See crbug.com/725513 .
+@@ -1340,7 +1340,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX)
    // Set the product channel for crash reports.
-   base::debug::SetCrashKeyValue(crash_keys::kChannel,
-                                 chrome::GetChannelString());
-@@ -1329,7 +1329,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
+   breakpad::SetChannelCrashKey(chrome::GetChannelString());
+ #endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
+@@ -1366,7 +1366,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+     tracing::SetupNavigationTracing();
+   }
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   metrics::DesktopSessionDurationTracker::Initialize();
+ #endif
+@@ -1574,7 +1574,7 @@ void ChromeBrowserMainParts::PreBrowserStart() {
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

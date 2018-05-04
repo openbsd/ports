@@ -1,15 +1,13 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.4 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.5 2018/05/04 07:14:57 robert Exp $
+
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
 +++ components/crash/content/browser/BUILD.gn
-@@ -18,13 +18,12 @@ source_set("browser") {
- 
-   deps = [
-     "//base",
--    "//breakpad:client",
+@@ -24,10 +24,9 @@ source_set("browser") {
      "//components/crash/content/app",
      "//content/public/browser",
      "//content/public/common",
+-    "//third_party/breakpad:client",
    ]
  
 -  if (is_linux || is_android) {
@@ -23,6 +21,6 @@ Index: components/crash/content/browser/BUILD.gn
    # headers, so add the dependency here.
 -  if (is_posix && !is_ios) {
 +  if (is_posix && !is_ios && !is_openbsd) {
-     configs += [ "//breakpad:client_config" ]
-     public_configs = [ "//breakpad:client_config" ]
+     configs += [ "//third_party/breakpad:client_config" ]
+     public_configs = [ "//third_party/breakpad:client_config" ]
    }

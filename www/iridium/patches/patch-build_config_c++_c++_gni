@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.2 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.3 2018/05/04 07:14:57 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
@@ -7,8 +7,8 @@ Index: build/config/c++/c++.gni
    # is not supported.
    use_custom_libcxx =
        is_msan || is_fuchsia ||
--      (is_linux && is_clang &&
-+      (is_linux && is_clang && !is_openbsd &&
+-      (is_linux &&
++      (is_linux && !is_openbsd &&
         (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
  
    # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if

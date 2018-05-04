@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.10 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.11 2018/05/04 07:14:57 robert Exp $
 
 Index: base/threading/platform_thread_linux.cc
 --- base/threading/platform_thread_linux.cc.orig
 +++ base/threading/platform_thread_linux.cc
-@@ -19,7 +19,9 @@
+@@ -18,7 +18,9 @@
  
  #if !defined(OS_NACL) && !defined(OS_AIX)
  #include <pthread.h>
@@ -13,9 +13,9 @@ Index: base/threading/platform_thread_linux.cc
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::string& name) 
+@@ -128,7 +130,7 @@ bool GetCurrentThreadPriorityForPlatform(ThreadPriorit
+ void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
-   tracked_objects::ThreadData::InitializeThreadContext(name);
  
 -#if !defined(OS_NACL) && !defined(OS_AIX)
 +#if !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)

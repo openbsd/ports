@@ -1,8 +1,8 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.5 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.6 2018/05/04 07:14:57 robert Exp $
 Index: components/autofill/core/browser/autofill_experiments.cc
 --- components/autofill/core/browser/autofill_experiments.cc.orig
 +++ components/autofill/core/browser/autofill_experiments.cc
-@@ -183,7 +183,7 @@ unsigned int GetPopupMargin() {
+@@ -197,7 +197,7 @@ unsigned int GetPopupMargin() {
  }
  
  bool OfferStoreUnmaskedCards() {

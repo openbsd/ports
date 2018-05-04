@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: remoting/base/chromoting_event.cc
 --- remoting/base/chromoting_event.cc.orig
 +++ remoting/base/chromoting_event.cc
-@@ -103,7 +103,7 @@ void ChromotingEvent::AddSystemInfo() {
+@@ -166,7 +166,7 @@ void ChromotingEvent::AddSystemInfo() {
    SetString(kCpuKey, base::SysInfo::OperatingSystemArchitecture());
    SetString(kOsVersionKey, base::SysInfo::OperatingSystemVersion());
    SetString(kWebAppVersionKey, STRINGIZE(VERSION));

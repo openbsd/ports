@@ -1,23 +1,23 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/angle/src/libANGLE/Display.cpp
 --- third_party/angle/src/libANGLE/Display.cpp.orig
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -61,7 +61,7 @@
+@@ -62,7 +62,7 @@
  #if defined(ANGLE_ENABLE_VULKAN)
  #if defined(ANGLE_PLATFORM_WINDOWS)
  #include "libANGLE/renderer/vulkan/win32/DisplayVkWin32.h"
 -#elif defined(ANGLE_PLATFORM_LINUX)
 +#elif defined(ANGLE_PLATFORM_POSIX)
  #include "libANGLE/renderer/vulkan/xcb/DisplayVkXcb.h"
- #else
- #error Unsupported Vulkan platform.
-@@ -207,7 +207,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
+ #elif defined(ANGLE_PLATFORM_ANDROID)
+ #include "libANGLE/renderer/vulkan/android/DisplayVkAndroid.h"
+@@ -210,7 +210,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
  #if defined(ANGLE_ENABLE_VULKAN)
  #if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayVkWin32(state);
 -#elif defined(ANGLE_PLATFORM_LINUX)
 +#elif defined(ANGLE_PLATFORM_POSIX)
              impl = new rx::DisplayVkXcb(state);
- #else
- #error Unsupported Vulkan platform.
+ #elif defined(ANGLE_PLATFORM_ANDROID)
+             impl = new rx::DisplayVkAndroid(state);

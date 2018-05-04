@@ -1,17 +1,17 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.5 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.6 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -261,7 +261,6 @@ component("gl") {
+@@ -297,7 +297,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
 -      "//third_party/mesa:osmesa",
        "//third_party/swiftshader",
      ]
- 
-@@ -434,10 +433,6 @@ test("gl_unittests") {
+   }
+@@ -497,10 +496,6 @@ test("gl_unittests") {
      "//ui/gl/init",
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
@@ -20,5 +20,5 @@ Index: ui/gl/BUILD.gn
 -  data_deps = [
 -    "//third_party/mesa:osmesa",
    ]
- }
  
+   if (use_x11) {

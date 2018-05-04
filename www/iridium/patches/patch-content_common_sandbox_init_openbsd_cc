@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.9 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.10 2018/05/04 07:14:57 robert Exp $
 Index: content/common/sandbox_init_openbsd.cc
 --- content/common/sandbox_init_openbsd.cc.orig
 +++ content/common/sandbox_init_openbsd.cc
@@ -68,7 +68,7 @@ Index: content/common/sandbox_init_openbsd.cc
 +  } else if (process_type == switches::kUtilityProcess) {
 +    // "cache" the amount of physical memory before pledge(2)
 +    base::SysInfo::AmountOfPhysicalMemoryMB();
-+    if (pledge("stdio rpath cpath wpath fattr recvfd", NULL) == -1) {
++    if (pledge("stdio rpath cpath wpath fattr sendfd recvfd", NULL) == -1) {
 +      LOG(ERROR) << "pledge() failed, errno: " << errno;
 +      _exit(1);
 +    }

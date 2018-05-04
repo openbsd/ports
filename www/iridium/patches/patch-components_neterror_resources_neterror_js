@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.5 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.6 2018/05/04 07:14:57 robert Exp $
 --- components/neterror/resources/neterror.js.orig.port	Fri Mar 10 10:02:29 2017
 +++ components/neterror/resources/neterror.js	Fri Mar 10 10:02:45 2017
 @@ -150,7 +150,7 @@ function setUpCachedButton(buttonStrings) {

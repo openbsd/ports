@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig

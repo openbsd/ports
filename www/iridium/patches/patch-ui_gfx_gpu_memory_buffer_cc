@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.cc
 --- ui/gfx/gpu_memory_buffer.cc.orig
 +++ ui/gfx/gpu_memory_buffer.cc
-@@ -37,7 +37,7 @@ GpuMemoryBufferHandle CloneHandleForIPC(
+@@ -36,7 +36,7 @@ GpuMemoryBufferHandle CloneHandleForIPC(
        gfx::GpuMemoryBufferHandle handle;
        handle.type = gfx::NATIVE_PIXMAP;
        handle.id = source_handle.id;

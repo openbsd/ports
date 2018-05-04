@@ -1,0 +1,27 @@
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.1 2018/05/04 07:14:57 robert Exp $
+
+Index: content/gpu/gpu_sandbox_hook_linux.cc
+--- content/gpu/gpu_sandbox_hook_linux.cc.orig
++++ content/gpu/gpu_sandbox_hook_linux.cc
+@@ -2,6 +2,7 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#if 0
+ #include "content/gpu/gpu_sandbox_hook_linux.h"
+ 
+ #include <dlfcn.h>
+@@ -68,7 +69,7 @@ inline bool UseLibV4L2() {
+ #endif
+ }
+ 
+-constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
++constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
+ 
+ void AddV4L2GpuWhitelist(
+     std::vector<BrokerFilePermission>* permissions,
+@@ -298,3 +299,4 @@ bool GpuProcessPreSandboxHook(service_manager::Sandbox
+ }
+ 
+ }  // namespace content
++#endif

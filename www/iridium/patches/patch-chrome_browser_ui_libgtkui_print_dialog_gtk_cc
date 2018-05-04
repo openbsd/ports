@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_libgtkui_print_dialog_gtk_cc,v 1.2 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_libgtkui_print_dialog_gtk_cc,v 1.3 2018/05/04 07:14:57 robert Exp $
 Index: chrome/browser/ui/libgtkui/print_dialog_gtk.cc
 --- chrome/browser/ui/libgtkui/print_dialog_gtk.cc.orig
 +++ chrome/browser/ui/libgtkui/print_dialog_gtk.cc

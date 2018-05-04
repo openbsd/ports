@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_base_ime_ime_engine_handler_interface_h,v 1.4 2017/10/28 07:36:01 robert Exp $
---- ui/base/ime/ime_engine_handler_interface.h.orig.port	Thu Mar  9 21:04:49 2017
-+++ ui/base/ime/ime_engine_handler_interface.h	Fri Mar 10 07:46:26 2017
-@@ -142,7 +142,7 @@ class UI_BASE_IME_EXPORT IMEEngineHandlerInterface {
+$OpenBSD: patch-ui_base_ime_ime_engine_handler_interface_h,v 1.5 2018/05/04 07:14:58 robert Exp $
+Index: ui/base/ime/ime_engine_handler_interface.h
+--- ui/base/ime/ime_engine_handler_interface.h.orig
++++ ui/base/ime/ime_engine_handler_interface.h
+@@ -138,7 +138,7 @@ class UI_BASE_IME_EXPORT IMEEngineHandlerInterface {
    // Hides the input view window (from API call).
    virtual void HideInputView() = 0;
  

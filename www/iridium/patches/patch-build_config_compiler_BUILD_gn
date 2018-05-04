@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.6 2017/12/22 08:21:56 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.7 2018/05/04 07:14:57 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -46,7 +46,7 @@ declare_args() {
+@@ -51,7 +51,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,16 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -231,7 +231,7 @@ config("compiler") {
-     # Linker warnings.
-     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
-         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
--        current_os != "aix") {
-+        current_os != "aix" && !is_openbsd) {
-       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
-       # crbug.com/485542
-@@ -294,7 +294,7 @@ config("compiler") {
+@@ -293,7 +293,7 @@ config("compiler") {
        }
      }
  
@@ -30,7 +21,13 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -343,8 +343,6 @@ config("compiler") {
+@@ -339,13 +339,12 @@ config("compiler") {
+     cflags += [ "-pipe" ]
+ 
+     ldflags += [
++      "-Wl,-z,wxneeded",
+       "-Wl,-z,noexecstack",
+       "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
      if (!using_sanitizer) {
@@ -39,36 +36,30 @@ Index: build/config/compiler/BUILD.gn
        # Functions interposed by the sanitizers can make ld think
        # that some libraries aren't needed when they actually are,
        # http://crbug.com/234010. As workaround, disable --as-needed.
-@@ -474,7 +472,6 @@ config("compiler") {
-     } else {
-       cflags_cc += [ "-std=gnu++14" ]
-     }
--    cflags_cc += [ "-fno-delete-null-pointer-checks" ]
-   } else if (!is_win && !is_nacl) {
-     if (target_os == "android") {
-       cxx11_override = use_cxx11_on_android
-@@ -1217,13 +1214,13 @@ config("default_warnings") {
-         "-Wno-address-of-packed-member",
- 
-         # TODO(hans): https://crbug.com/681136
--        "-Wno-unused-lambda-capture",
-+        # "-Wno-unused-lambda-capture",
- 
-         # TODO(thakis ): https://crbug.com/683349
-         "-Wno-user-defined-warnings",
- 
-         # TODO(thakis): https://crbug.com/753973
--        "-Wno-enum-compare-switch",
-+        # "-Wno-enum-compare-switch",
-       ]
-     } else if (use_xcode_clang && xcode_version_int >= 830) {
-       # This is necessary to allow a progressive transition from using xcode 8.0
-@@ -1794,7 +1791,7 @@ config("symbols") {
+@@ -436,7 +435,7 @@ config("compiler") {
+   # TODO(hans): Remove this once Clang generates better optimized debug info by
+   # default. https://crbug.com/765793
+   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
+-      target_os != "chromeos") {
++      target_os != "chromeos" && !is_openbsd) {
+     cflags += [
+       "-Xclang",
+       "-mllvm",
+@@ -2007,7 +2006,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
 -      cflags += [ "-g2" ]
 +      cflags += [ "-g0" ]
      }
-     if (use_debug_fission) {
+     if (use_debug_fission && !is_nacl) {
        cflags += [ "-gsplit-dwarf" ]
+@@ -2109,7 +2108,7 @@ config("default_fatal_linker_warnings") {
+   if (!is_win && fatal_linker_warnings &&
+       !(is_chromeos && current_cpu == "arm") &&
+       !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-      current_os != "aix") {
++      current_os != "aix" && !is_openbsd) {
+     # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+     # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+     # crbug.com/485542

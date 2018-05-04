@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.8 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.9 2018/05/04 07:14:57 robert Exp $
 --- base/debug/debugger_posix.cc.orig.port	Thu Dec 15 00:02:02 2016
 +++ base/debug/debugger_posix.cc	Tue Jan  3 20:29:54 2017
 @@ -34,6 +34,10 @@

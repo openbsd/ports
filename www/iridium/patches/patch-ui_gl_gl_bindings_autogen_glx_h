@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_h,v 1.6 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_h,v 1.7 2018/05/04 07:14:58 robert Exp $
 Index: ui/gl/gl_bindings_autogen_glx.h
 --- ui/gl/gl_bindings_autogen_glx.h.orig
 +++ ui/gl/gl_bindings_autogen_glx.h

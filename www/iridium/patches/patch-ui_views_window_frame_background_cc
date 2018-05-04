@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_window_frame_background_cc,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_views_window_frame_background_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/views/window/frame_background.cc
 --- ui/views/window/frame_background.cc.orig

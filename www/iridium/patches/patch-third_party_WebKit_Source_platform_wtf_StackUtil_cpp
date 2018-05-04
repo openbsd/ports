@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_wtf_StackUtil_cpp,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_wtf_StackUtil_cpp,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/WebKit/Source/platform/wtf/StackUtil.cpp
 --- third_party/WebKit/Source/platform/wtf/StackUtil.cpp.orig

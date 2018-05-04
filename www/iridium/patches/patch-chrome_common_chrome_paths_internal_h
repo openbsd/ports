@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.5 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.6 2018/05/04 07:14:57 robert Exp $
 --- chrome/common/chrome_paths_internal.h.orig.port	Wed Apr 19 21:06:30 2017
 +++ chrome/common/chrome_paths_internal.h	Thu Apr 27 19:56:00 2017
 @@ -45,7 +45,7 @@ void GetUserCacheDirectory(const base::FilePath& profi

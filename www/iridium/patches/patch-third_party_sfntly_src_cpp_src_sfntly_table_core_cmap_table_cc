@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_sfntly_src_cpp_src_sfntly_table_core_cmap_table_cc,v 1.2 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_sfntly_src_cpp_src_sfntly_table_core_cmap_table_cc,v 1.3 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc
 --- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc.orig

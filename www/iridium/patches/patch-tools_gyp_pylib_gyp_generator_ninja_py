@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_ninja_py,v 1.12 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_ninja_py,v 1.13 2018/05/04 07:14:58 robert Exp $
 Index: tools/gyp/pylib/gyp/generator/ninja.py
 --- tools/gyp/pylib/gyp/generator/ninja.py.orig
 +++ tools/gyp/pylib/gyp/generator/ninja.py

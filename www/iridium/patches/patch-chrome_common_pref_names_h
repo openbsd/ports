@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.15 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.16 2018/05/04 07:14:57 robert Exp $
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -330,7 +330,7 @@ extern const char kForceGoogleSafeSearch[];
+@@ -314,7 +314,7 @@ extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kForceSessionSync[];
  extern const char kAllowedDomainsForApps[];
@@ -11,7 +11,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -363,7 +363,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -347,7 +347,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -19,8 +19,8 @@ Index: chrome/common/pref_names.h
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  extern const char kUseCustomChromeFrame[];
  #endif
- extern const char kBackShortcutBubbleShownCount[];
-@@ -523,7 +523,7 @@ extern const char kAppWindowPlacement[];
+ #if BUILDFLAG(ENABLE_PLUGINS)
+@@ -492,7 +492,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
@@ -28,4 +28,4 @@ Index: chrome/common/pref_names.h
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
- 
+ #if defined(OS_ANDROID)

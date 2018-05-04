@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.9 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_cc,v 1.10 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/gl/sync_control_vsync_provider.cc
 --- ui/gl/sync_control_vsync_provider.cc.orig
@@ -21,9 +21,9 @@ Index: ui/gl/sync_control_vsync_provider.cc
    // On platforms where we can't get an accurate reading on the refresh
    // rate we fall back to the assumption that we're displaying 60 frames
    // per second.
-@@ -39,7 +39,7 @@ SyncControlVSyncProvider::~SyncControlVSyncProvider() 
- void SyncControlVSyncProvider::GetVSyncParameters(
-     const UpdateVSyncCallback& callback) {
+@@ -48,7 +48,7 @@ bool SyncControlVSyncProvider::GetVSyncParametersIfAva
+     base::TimeTicks* timebase_out,
+     base::TimeDelta* interval_out) {
    TRACE_EVENT0("gpu", "SyncControlVSyncProvider::GetVSyncParameters");
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

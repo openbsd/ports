@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_html_forms_InternalPopupMenu_cpp,v 1.2 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_core_html_forms_InternalPopupMenu_cpp,v 1.3 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp
 --- third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp.orig
 +++ third_party/WebKit/Source/core/html/forms/InternalPopupMenu.cpp
-@@ -127,7 +127,7 @@ class InternalPopupMenu::ItemIterationContext {
+@@ -126,7 +126,7 @@ class InternalPopupMenu::ItemIterationContext {
          is_in_group_(false),
          buffer_(buffer) {
      DCHECK(buffer_);

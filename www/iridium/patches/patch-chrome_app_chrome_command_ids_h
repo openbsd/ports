@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.4 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.5 2018/05/04 07:14:57 robert Exp $
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig
 +++ chrome/app/chrome_command_ids.h
@@ -9,5 +9,5 @@ Index: chrome/app/chrome_command_ids.h
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #define IDC_USE_SYSTEM_TITLE_BAR        34051
+ #define IDC_RESTORE_WINDOW              34052
  #endif
- 

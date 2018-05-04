@@ -1,6 +1,8 @@
-$OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.7 2017/10/28 07:36:01 robert Exp $
---- ui/base/ime/input_method_initializer.cc.orig.port	Sun Mar  6 00:48:54 2016
-+++ ui/base/ime/input_method_initializer.cc	Sun Mar  6 00:49:28 2016
+$OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.8 2018/05/04 07:14:58 robert Exp $
+
+Index: ui/base/ime/input_method_initializer.cc
+--- ui/base/ime/input_method_initializer.cc.orig
++++ ui/base/ime/input_method_initializer.cc
 @@ -8,14 +8,14 @@
  
  #if defined(OS_CHROMEOS)
@@ -15,19 +17,19 @@ $OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.7 2017/10/28 07:36:0
  
 -#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
 +#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
- const ui::LinuxInputMethodContextFactory* g_linux_input_method_context_factory;
+ const ui::LinuxInputMethodContextFactory*
+     g_linux_input_method_context_factory_for_testing;
  #endif
- 
-@@ -38,7 +38,7 @@ void ShutdownInputMethod() {
+@@ -39,7 +39,7 @@ void ShutdownInputMethod() {
  void InitializeInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Initialize();
 -#elif defined(USE_AURA) && defined(OS_LINUX)
 +#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
-   if (!g_linux_input_method_context_factory)
-     g_linux_input_method_context_factory = new FakeInputMethodContextFactory();
-   const LinuxInputMethodContextFactory* factory =
-@@ -54,7 +54,7 @@ void InitializeInputMethodForTesting() {
+   if (!g_linux_input_method_context_factory_for_testing)
+     g_linux_input_method_context_factory_for_testing =
+         new FakeInputMethodContextFactory();
+@@ -56,7 +56,7 @@ void InitializeInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();
@@ -35,4 +37,4 @@ $OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.7 2017/10/28 07:36:0
 +#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
    const LinuxInputMethodContextFactory* factory =
        LinuxInputMethodContextFactory::instance();
-   CHECK(!factory || factory == g_linux_input_method_context_factory)
+   CHECK(!factory || factory == g_linux_input_method_context_factory_for_testing)

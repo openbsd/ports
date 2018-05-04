@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.7 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.8 2018/05/04 07:14:57 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig

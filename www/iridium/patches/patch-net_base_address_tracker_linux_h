@@ -1,6 +1,8 @@
-$OpenBSD: patch-net_base_address_tracker_linux_h,v 1.6 2017/10/28 07:36:01 robert Exp $
---- net/base/address_tracker_linux.h.orig.port	Thu Mar  3 10:10:38 2016
-+++ net/base/address_tracker_linux.h	Thu Mar  3 10:10:45 2016
+$OpenBSD: patch-net_base_address_tracker_linux_h,v 1.7 2018/05/04 07:14:57 robert Exp $
+
+Index: net/base/address_tracker_linux.h
+--- net/base/address_tracker_linux.h.orig
++++ net/base/address_tracker_linux.h
 @@ -7,9 +7,6 @@
  
  #include <sys/socket.h>  // Needed to include netlink.

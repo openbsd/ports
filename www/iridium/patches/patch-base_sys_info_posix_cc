@@ -1,8 +1,8 @@
-$OpenBSD: patch-base_sys_info_posix_cc,v 1.7 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-base_sys_info_posix_cc,v 1.8 2018/05/04 07:14:57 robert Exp $
 Index: base/sys_info_posix.cc
 --- base/sys_info_posix.cc.orig
 +++ base/sys_info_posix.cc
-@@ -143,6 +143,19 @@ int64_t SysInfo::AmountOfVirtualMemory() {
+@@ -146,6 +146,19 @@ int64_t SysInfo::AmountOfVirtualMemory() {
  }
  #endif
  
@@ -21,4 +21,4 @@ Index: base/sys_info_posix.cc
 +
  // static
  int64_t SysInfo::AmountOfFreeDiskSpace(const FilePath& path) {
-   base::ThreadRestrictions::AssertIOAllowed();
+   AssertBlockingAllowed();

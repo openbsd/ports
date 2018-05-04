@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside_cc,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_handler-inside_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: v8/src/trap-handler/handler-inside.cc
 --- v8/src/trap-handler/handler-inside.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.8 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.9 2018/05/04 07:14:57 robert Exp $
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
@@ -13,7 +13,7 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
  }
  
  }  // namespace
-@@ -121,8 +123,10 @@ views::View* FirstRunDialog::CreateExtraView() {
+@@ -114,8 +116,10 @@ views::View* FirstRunDialog::CreateExtraView() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

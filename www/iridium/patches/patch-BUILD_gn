@@ -1,30 +1,30 @@
-$OpenBSD: patch-BUILD_gn,v 1.5 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.6 2018/05/04 07:14:57 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
 +++ BUILD.gn
-@@ -361,7 +361,7 @@ group("gn_all") {
+@@ -357,7 +357,7 @@ group("gn_all") {
      }
    }
  
 -  if (is_linux || is_android) {
 +  if ((is_linux && !is_openbsd) || is_android) {
      deps += [
-       "//breakpad:breakpad_unittests",
-       "//breakpad:core-2-minidump",
+       "//third_party/breakpad:breakpad_unittests",
+       "//third_party/breakpad:core-2-minidump",
 @@ -398,8 +398,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
 -      "//sandbox/linux:chrome_sandbox",
 -      "//sandbox/linux:sandbox_linux_unittests",
+       "//testing:empty_main",
      ]
  
-     if (use_dbus) {
-@@ -456,10 +454,6 @@ group("gn_all") {
-         "//chrome/test:sync_performance_tests",
+@@ -457,10 +455,6 @@ group("gn_all") {
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
+         "//components/sync:run_sync_testserver",
 -        "//courgette:courgette",
 -        "//courgette:courgette_fuzz",
 -        "//courgette:courgette_minimal_tool",
@@ -32,50 +32,59 @@ Index: BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -508,10 +502,6 @@ group("gn_all") {
+@@ -513,10 +507,6 @@ group("gn_all") {
+       "//mojo:mojo_perftests",
+       "//services/service_manager/public/cpp",
+       "//testing/gmock:gmock_main",
+-      "//third_party/breakpad:dump_syms($host_toolchain)",
+-      "//third_party/breakpad:microdump_stackwalk($host_toolchain)",
+-      "//third_party/breakpad:minidump_dump($host_toolchain)",
+-      "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
+     ]
  
-   if (is_android || (is_linux && !is_chromeos)) {
-     deps += [
--      "//breakpad:dump_syms($host_toolchain)",
--      "//breakpad:microdump_stackwalk($host_toolchain)",
--      "//breakpad:minidump_dump($host_toolchain)",
--      "//breakpad:minidump_stackwalk($host_toolchain)",
-       "//components/network_hints/browser",
-       "//content/public/app:browser",
-       "//content/public/app:child",
-@@ -584,7 +574,7 @@ group("gn_all") {
+     if (!is_android) {
+@@ -594,7 +584,7 @@ group("gn_all") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
 -  } else if (!is_android && !is_ios && !is_fuchsia) {
 +  } else if (!is_android && !is_ios && !is_fuchsia && !is_openbsd) {
-     deps += [ "//breakpad:symupload($host_toolchain)" ]
+     deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -927,7 +917,7 @@ if (!is_ios && !is_fuchsia) {
-       data_deps += [ "//content/shell:content_shell_crash_service" ]
+@@ -835,7 +825,6 @@ if (is_chromeos) {
+       "//ppapi/examples/video_decode",
+       "//sandbox/linux:chrome_sandbox",
+       "//sandbox/linux:sandbox_linux_unittests",
+-      "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
+ 
+       # Blocked on https://github.com/catapult-project/catapult/issues/2297
+       #"//third_party/catapult/telemetry:bitmaptools",
+@@ -938,7 +927,7 @@ if (!is_ios) {
+       ]
      }
  
 -    if (!is_win && !is_android) {
 +    if (!is_win && !is_android && !is_openbsd) {
-       data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+       data_deps +=
+           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
- 
-@@ -935,7 +925,7 @@ if (!is_ios && !is_fuchsia) {
-       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+@@ -947,7 +936,7 @@ if (!is_ios) {
+       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
 -    if (is_linux) {
 +    if (is_linux && !is_openbsd) {
-       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1019,8 +1009,6 @@ group("chromium_builder_perf") {
-         "//chrome/installer/mini_installer:mini_installer",
-         "//chrome/test:angle_perftests",
-       ]
+@@ -1071,9 +1060,6 @@ group("chromium_builder_perf") {
+ 
+     if (is_win) {
+       data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]
 -    } else {
--      data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+-      data_deps +=
+-          [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-   }
- }
+     if (is_win || is_android) {
+       data_deps += [ "//chrome/test:angle_perftests" ]

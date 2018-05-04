@@ -1,8 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.9 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.10 2018/05/04 07:14:57 robert Exp $
+
 Index: chrome/browser/download/download_commands.cc
 --- chrome/browser/download/download_commands.cc.orig
 +++ chrome/browser/download/download_commands.cc
-@@ -222,7 +222,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
+@@ -248,7 +248,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
        return download_item_->GetOpenWhenComplete() ||
               download_crx_util::IsExtensionDownload(*download_item_);
      case ALWAYS_OPEN_TYPE:
@@ -10,17 +11,17 @@ Index: chrome/browser/download/download_commands.cc
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
-             download_item_->GetBrowserContext());
-@@ -266,7 +266,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+             content::DownloadItemUtils::GetBrowserContext(download_item_));
+@@ -292,7 +292,7 @@ void DownloadCommands::ExecuteCommand(Command command)
        bool is_checked = IsCommandChecked(ALWAYS_OPEN_TYPE);
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
-           download_item_->GetBrowserContext());
+           content::DownloadItemUtils::GetBrowserContext(download_item_));
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          DownloadItemModel(download_item_)
-@@ -379,7 +379,7 @@ Browser* DownloadCommands::GetBrowser() const {
+@@ -407,7 +407,7 @@ Browser* DownloadCommands::GetBrowser() const {
    return browser_displayer.browser();
  }
  
@@ -29,7 +30,7 @@ Index: chrome/browser/download/download_commands.cc
  bool DownloadCommands::IsDownloadPdf() const {
    base::FilePath path = download_item_->GetTargetFilePath();
    return path.MatchesExtension(FILE_PATH_LITERAL(".pdf"));
-@@ -396,7 +396,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -424,7 +424,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
                                            : true);

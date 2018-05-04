@@ -1,21 +1,14 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.16 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.17 2018/05/04 07:14:57 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -47,6 +47,8 @@ const char kAllowLoopbackInPeerConnection[] =
- // finishes.
- const char kAllowNoSandboxJob[]             = "allow-no-sandbox-job";
- 
-+const char kTrk[]                           = "trk";
-+
- // Allows debugging of sandboxed processes (see zygote_main_linux.cc).
- const char kAllowSandboxDebugging[]         = "allow-sandbox-debugging";
- 
-@@ -1031,7 +1033,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
-     "disable-vaapi-accelerated-video-encode";
+@@ -964,7 +964,9 @@ const char kDisableAudioSupportForDesktopShare[] =
+ const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++const char kTrk[]                           = "trk";
++
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  // Allows sending text-to-speech requests to speech-dispatcher, a common
  // Linux speech service. Because it's buggy, the user must explicitly

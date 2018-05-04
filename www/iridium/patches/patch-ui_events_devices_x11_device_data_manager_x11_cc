@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.12 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.13 2018/05/04 07:14:58 robert Exp $
 Index: ui/events/devices/x11/device_data_manager_x11.cc
 --- ui/events/devices/x11/device_data_manager_x11.cc.orig
 +++ ui/events/devices/x11/device_data_manager_x11.cc
-@@ -830,6 +830,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
+@@ -829,6 +829,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
  }
  
  void DeviceDataManagerX11::DisableDevice(int deviceid) {

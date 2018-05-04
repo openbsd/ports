@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_feature_engagement_public_event_constants_h,v 1.1 2018/05/04 07:14:57 robert Exp $
+
+Index: components/feature_engagement/public/event_constants.h
+--- components/feature_engagement/public/event_constants.h.orig
++++ components/feature_engagement/public/event_constants.h
+@@ -42,7 +42,7 @@ extern const char kIncognitoWindowOpened[];
+ extern const char kIncognitoWindowSessionTimeMet[];
+ #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS) || defined(OS_BSD)
+ // This event is included in the deferred onboarding events for the New Tab
+ // described above, but it is also used on iOS, so it must be compiled
+ // separately.

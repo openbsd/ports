@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_gl_gl_implementation_cc,v 1.1 2018/05/04 07:14:58 robert Exp $
+
+Index: ui/gl/gl_implementation.cc
+--- ui/gl/gl_implementation.cc.orig
++++ ui/gl/gl_implementation.cc
+@@ -122,7 +122,7 @@ GLImplementation GetNamedGLImplementation(const std::s
+ }
+ 
+ GLImplementation GetSoftwareGLImplementation() {
+-#if (defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)))
++#if (defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)))
+   return kGLImplementationSwiftShaderGL;
+ #else
+   return kGLImplementationOSMesaGL;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.4 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_trace_event_malloc_dump_provider_cc,v 1.5 2018/05/04 07:14:57 robert Exp $
 
 Index: base/trace_event/malloc_dump_provider.cc
 --- base/trace_event/malloc_dump_provider.cc.orig
@@ -12,8 +12,8 @@ Index: base/trace_event/malloc_dump_provider.cc
  #else
  #include <malloc.h>
  #endif
-@@ -243,6 +245,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
-   allocated_objects_count = main_heap_info.block_count;
+@@ -252,6 +254,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+   }
  #elif defined(OS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.
 +#elif defined(OS_BSD)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.h
 --- ui/gfx/native_pixmap_handle.h.orig
@@ -12,7 +12,7 @@ Index: ui/gfx/native_pixmap_handle.h
  #include "base/file_descriptor_posix.h"
  #endif
  
-@@ -46,14 +46,14 @@ struct GFX_EXPORT NativePixmapHandle {
+@@ -54,14 +54,14 @@ struct GFX_EXPORT NativePixmapHandle {
  
    ~NativePixmapHandle();
  

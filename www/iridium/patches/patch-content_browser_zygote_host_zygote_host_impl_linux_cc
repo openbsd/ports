@@ -1,0 +1,39 @@
+$OpenBSD: patch-content_browser_zygote_host_zygote_host_impl_linux_cc,v 1.1 2018/05/04 07:14:57 robert Exp $
+
+Index: content/browser/zygote_host/zygote_host_impl_linux.cc
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig
++++ content/browser/zygote_host/zygote_host_impl_linux.cc
+@@ -72,6 +72,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
+ }
+ 
+ void ZygoteHostImpl::Init(const base::CommandLine& command_line) {
++#if !defined(OS_BSD)
+   if (command_line.HasSwitch(switches::kNoSandbox)) {
+     return;
+   }
+@@ -130,6 +131,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
+            "you can try using --"
+         << switches::kNoSandbox << ".";
+   }
++#endif
+ }
+ 
+ void ZygoteHostImpl::AddZygotePid(pid_t pid) {
+@@ -154,6 +156,7 @@ pid_t ZygoteHostImpl::LaunchZygote(
+     base::CommandLine* cmd_line,
+     base::ScopedFD* control_fd,
+     base::FileHandleMappingVector additional_remapped_fds) {
++#if !defined(OS_BSD)
+   int fds[2];
+   CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds));
+   CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
+@@ -218,6 +221,9 @@ pid_t ZygoteHostImpl::LaunchZygote(
+ 
+   AddZygotePid(pid);
+   return pid;
++#else
++  return 0;
++#endif
+ }
+ 
+ #if !defined(OS_OPENBSD)

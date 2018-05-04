@@ -1,17 +1,63 @@
-$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.14 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.15 2018/05/04 07:14:57 robert Exp $
+
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig
 +++ components/policy/resources/policy_templates.json
-@@ -2247,7 +2247,7 @@
-           'name': 'GSSAPILibraryName',
-           'type': 'string',
-           'schema': { 'type': 'string' },
--          'supported_on': ['chrome.linux:9-'],
-+          'supported_on': ['chrome.linux:9-', 'chrome.openbsd:9-'],
-           'features': {
-             'dynamic_refresh': False,
-             'per_profile': False,
-@@ -4895,7 +4895,7 @@
+@@ -608,7 +608,7 @@
+       'name': 'HomepageLocation',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
++      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'chrome.openbsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -636,7 +636,7 @@
+       'name': 'HomepageIsNewTabPage',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
++      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'chrome.openbsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -663,7 +663,7 @@
+       'name': 'NewTabPageLocation',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.*:58-', 'chrome_os:58-'],
++      'supported_on': ['chrome.*:58-', 'chrome_os:58-', 'chrome.openbsd:9-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,
+@@ -1354,7 +1354,7 @@
+       'name': 'RemoteAccessHostMatchUsername',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome_os:42-'],
++      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-', 'chrome_os:42-', 'chrome.openbsd:25-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -2584,7 +2584,7 @@
+       'name': 'GSSAPILibraryName',
+       'type': 'string',
+       'schema': { 'type': 'string' },
+-      'supported_on': ['chrome.linux:9-'],
++      'supported_on': ['chrome.linux:9-', 'chrome.openbsd:9-'],
+       'features': {
+         'dynamic_refresh': False,
+         'per_profile': False,
+@@ -2636,7 +2636,7 @@
+       'name': 'NtlmV2Enabled',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-'],
++      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-','chrome.openbsd:63-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -5355,7 +5355,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -20,7 +66,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5805,7 +5805,7 @@
+@@ -6371,7 +6371,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -29,3 +75,12 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
+@@ -6886,7 +6886,7 @@
+       'name': 'FullscreenAllowed',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-'],
++      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-', 'chrome.openbsd:31-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': True,

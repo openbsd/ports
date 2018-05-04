@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig
@@ -12,7 +12,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  #include "Main/libX11.hpp"
  #endif
  
-@@ -118,7 +118,7 @@ EGLDisplay GetDisplay(EGLNativeDisplayType display_id)
+@@ -119,7 +119,7 @@ EGLDisplay GetDisplay(EGLNativeDisplayType display_id)
  		// FIXME: Check if display_id is the default display
  	}
  
@@ -21,16 +21,25 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  		if(!libX11)
  		{
  			return success(HEADLESS_DISPLAY);
-@@ -174,7 +174,7 @@ const char *QueryString(EGLDisplay dpy, EGLint name)
- 	if(dpy == EGL_NO_DISPLAY && name == EGL_EXTENSIONS)
+@@ -176,7 +176,7 @@ const char *QueryString(EGLDisplay dpy, EGLint name)
  	{
  		return success(
+ 			"EGL_KHR_client_get_all_proc_addresses "
 -#if defined(__linux__) && !defined(__ANDROID__)
 +#if (defined(__linux__) && !defined(__ANDROID__)) || defined(__OpenBSD__)
  			"EGL_KHR_platform_gbm "
  			"EGL_KHR_platform_x11 "
  #endif
-@@ -1073,7 +1073,7 @@ EGLDisplay GetPlatformDisplayEXT(EGLenum platform, voi
+@@ -944,7 +944,7 @@ EGLBoolean WaitNative(EGLint engine)
+ 
+ 	if(context)
+ 	{
+-		#if defined(__linux__) && !defined(__ANDROID__)
++		#if (defined(__linux__) && !defined(__ANDROID__)) || defined(__OpenBSD__)
+ 			egl::Display *display = context->getDisplay();
+ 
+ 			if(!display)
+@@ -1110,7 +1110,7 @@ EGLDisplay GetPlatformDisplayEXT(EGLenum platform, voi
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLint *attrib_list = %p)", platform, native_display, attrib_list);
  

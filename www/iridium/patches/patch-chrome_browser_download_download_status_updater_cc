@@ -1,6 +1,8 @@
-$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
---- chrome/browser/download/download_status_updater.cc.orig.port	Thu Dec 15 00:02:04 2016
-+++ chrome/browser/download/download_status_updater.cc	Tue Jan  3 20:29:55 2017
+$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
+
+Index: chrome/browser/download/download_status_updater.cc
+--- chrome/browser/download/download_status_updater.cc.orig
++++ chrome/browser/download/download_status_updater.cc
 @@ -13,7 +13,7 @@
  #include "base/memory/ptr_util.h"
  #include "build/build_config.h"
@@ -10,10 +12,10 @@ $OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.6 2017/10
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -136,7 +136,7 @@ void DownloadStatusUpdater::OnDownloadUpdated(
+@@ -136,7 +136,7 @@ void DownloadStatusUpdater::OnDownloadUpdated(content:
  #if defined(OS_ANDROID) || (defined(USE_AURA) && !defined(OS_WIN))
  void DownloadStatusUpdater::UpdateAppIconDownloadProgress(
-     content::DownloadItem* download) {
+     download::DownloadItem* download) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    const views::LinuxUI* linux_ui = views::LinuxUI::instance();

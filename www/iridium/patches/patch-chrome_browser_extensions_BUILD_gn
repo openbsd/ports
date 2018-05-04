@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.5 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.6 2018/05/04 07:14:57 robert Exp $
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1107,6 +1107,10 @@ static_library("extensions") {
-     defines += [ "ENABLE_HOTWORDING" ]
+@@ -1114,6 +1114,10 @@ static_library("extensions") {
+     deps += [ "//chrome/common:service_process_mojom" ]
    }
  
 +  if (is_openbsd) {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.9 2017/12/04 13:55:41 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.10 2018/05/04 07:14:57 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -54,6 +54,10 @@ int ChromeMain(int argc, const char** argv);
+@@ -50,6 +50,10 @@ int ChromeMain(int argc, const char** argv);
  #if !defined(CHROME_MULTIPLE_DLL_CHILD)
  static void trace_url_request(const std::string &caller, const GURL &url)
  {
@@ -14,7 +14,7 @@ Index: chrome/app/chrome_main.cc
  	iridium::log_url_request(caller, url);
  	if (url.scheme() != url::kTraceScheme)
  		/* Do not show infobar for non-trk URLs */
-@@ -110,7 +114,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -106,7 +110,7 @@ int ChromeMain(int argc, const char** argv) {
    ALLOW_UNUSED_LOCAL(command_line);
  
    // Chrome-specific process modes.

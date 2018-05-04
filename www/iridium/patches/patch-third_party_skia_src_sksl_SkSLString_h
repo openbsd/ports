@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_skia_src_sksl_SkSLString_h,v 1.1 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-third_party_skia_src_sksl_SkSLString_h,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: third_party/skia/src/sksl/SkSLString.h
 --- third_party/skia/src/sksl/SkSLString.h.orig
 +++ third_party/skia/src/sksl/SkSLString.h
-@@ -18,6 +18,8 @@
+@@ -22,6 +22,8 @@
      #include "SkString.h"
  #endif
  
@@ -11,4 +11,4 @@ Index: third_party/skia/src/sksl/SkSLString.h
 +
  namespace SkSL {
  
- class String : public SKSL_STRING_BASE {
+ // Represents a (not necessarily null-terminated) slice of a string.

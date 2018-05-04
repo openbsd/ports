@@ -1,14 +1,14 @@
-$OpenBSD: patch-build_config_allocator_gni,v 1.4 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-build_config_allocator_gni,v 1.5 2018/05/04 07:14:57 robert Exp $
 
 Index: build/config/allocator.gni
 --- build/config/allocator.gni.orig
 +++ build/config/allocator.gni
 @@ -7,7 +7,7 @@ import("//build/config/sanitizers/sanitizers.gni")
  # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
- if (is_android || current_cpu == "mipsel" || is_mac || is_ios || is_asan ||
-     is_lsan || is_tsan || is_msan || is_win || is_syzyasan || is_fuchsia ||
--    (is_linux && target_cpu == "arm64")) {
-+    (is_linux && target_cpu == "arm64") || is_openbsd) {
+ if (is_android || current_cpu == "mipsel" || is_mac || is_ios ||
+     is_asan || is_lsan || is_tsan || is_msan || is_win || is_syzyasan ||
+-    is_fuchsia || (is_linux && target_cpu == "arm64")) {
++    is_fuchsia || (is_linux && target_cpu == "arm64") || is_openbsd) {
    _default_allocator = "none"
  } else {
    _default_allocator = "tcmalloc"

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_h,v 1.5 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_input_method_input_method_engine_h,v 1.6 2018/05/04 07:14:57 robert Exp $
 --- chrome/browser/ui/input_method/input_method_engine.h.orig.port	Wed May 25 04:54:10 2016
 +++ chrome/browser/ui/input_method/input_method_engine.h	Thu May 26 08:09:41 2016
 @@ -27,7 +27,7 @@ class InputMethodEngine : public InputMethodEngineBase

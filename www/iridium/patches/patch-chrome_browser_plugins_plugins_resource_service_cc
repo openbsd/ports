@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
 
 Index: chrome/browser/plugins/plugins_resource_service.cc
 --- chrome/browser/plugins/plugins_resource_service.cc.orig
 +++ chrome/browser/plugins/plugins_resource_service.cc
-@@ -59,7 +59,7 @@ GURL GetPluginsServerURL() {
+@@ -61,7 +61,7 @@ GURL GetPluginsServerURL() {
    filename = "plugins_win.json";
  #elif defined(OS_CHROMEOS)
    filename = "plugins_chromeos.json";

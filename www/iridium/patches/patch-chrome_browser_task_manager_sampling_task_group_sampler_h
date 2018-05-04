@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.2 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.3 2018/05/04 07:14:57 robert Exp $
 --- chrome/browser/task_manager/sampling/task_group_sampler.h.orig.port	Sat Feb  4 11:46:22 2017
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h	Sat Feb  4 12:07:33 2017
 @@ -45,7 +45,7 @@ class TaskGroupSampler : public base::RefCountedThread

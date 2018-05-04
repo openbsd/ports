@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_catalog_store_cc,v 1.3 2017/12/04 13:55:42 robert Exp $
+$OpenBSD: patch-services_catalog_store_cc,v 1.4 2018/05/04 07:14:58 robert Exp $
 Index: services/catalog/store.cc
 --- services/catalog/store.cc.orig
 +++ services/catalog/store.cc

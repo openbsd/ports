@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_i18n_icu_util_cc,v 1.1 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_i18n_icu_util_cc,v 1.2 2018/05/04 07:14:57 robert Exp $
 
 Index: base/i18n/icu_util.cc
 --- base/i18n/icu_util.cc.orig
@@ -12,7 +12,7 @@ Index: base/i18n/icu_util.cc
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
  
-@@ -312,7 +312,7 @@ bool InitializeICU() {
+@@ -257,7 +257,7 @@ bool InitializeICU() {
  // TODO(jungshik): Some callers do not care about tz at all. If necessary,
  // add a boolean argument to this function to init'd the default tz only
  // when requested.

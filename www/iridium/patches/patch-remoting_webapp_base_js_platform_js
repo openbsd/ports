@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_webapp_base_js_platform_js,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-remoting_webapp_base_js_platform_js,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: remoting/webapp/base/js/platform.js
 --- remoting/webapp/base/js/platform.js.orig

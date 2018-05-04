@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.6 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
 +++ base/process/process_metrics_openbsd.cc
@@ -24,9 +24,15 @@ Index: base/process/process_metrics_openbsd.cc
  
  #include "base/macros.h"
  #include "base/memory/ptr_util.h"
-@@ -22,20 +33,27 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -21,21 +32,33 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+   return WrapUnique(new ProcessMetrics(process));
  }
  
++bool GetVmStatInfo(VmStatInfo* vmstat) {
++  NOTIMPLEMENTED();
++  return false;
++}
++
  size_t ProcessMetrics::GetPagefileUsage() const {
 -  struct kinfo_proc info;
 -  size_t length;
@@ -57,7 +63,7 @@ Index: base/process/process_metrics_openbsd.cc
  }
  
  size_t ProcessMetrics::GetPeakPagefileUsage() const {
-@@ -43,20 +61,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
+@@ -43,20 +66,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
  }
  
  size_t ProcessMetrics::GetWorkingSetSize() const {
@@ -91,7 +97,7 @@ Index: base/process/process_metrics_openbsd.cc
  }
  
  size_t ProcessMetrics::GetPeakWorkingSetSize() const {
-@@ -96,20 +122,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -96,20 +127,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
  }
  
  static int GetProcessCPU(pid_t pid) {
@@ -122,8 +128,8 @@ Index: base/process/process_metrics_openbsd.cc
 +  return pctcpu;
  }
  
- double ProcessMetrics::GetCPUUsage() {
-@@ -123,7 +156,6 @@ double ProcessMetrics::GetCPUUsage() {
+ double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+@@ -123,7 +161,6 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
    }
  
    int64_t time_delta = (time - last_cpu_time_).InMicroseconds();
@@ -131,7 +137,7 @@ Index: base/process/process_metrics_openbsd.cc
  
    if (time_delta == 0)
      return 0;
-@@ -163,4 +195,67 @@ size_t GetSystemCommitCharge() {
+@@ -162,4 +199,67 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

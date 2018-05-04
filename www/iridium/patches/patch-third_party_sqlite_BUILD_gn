@@ -1,22 +1,23 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.3 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.4 2018/05/04 07:14:58 robert Exp $
+
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
 +++ third_party/sqlite/BUILD.gn
-@@ -127,7 +127,7 @@ if (!use_system_sqlite) {
+@@ -155,7 +155,7 @@ config("sqlite_warnings") {
+     # sqlite3Fts3InitTok).
+     cflags += [ "-Wno-unused-function" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     cflags += [
+       # SQLite doesn"t believe in compiler warnings,
+       # preferring testing.
+@@ -242,7 +242,7 @@ component("chromium_sqlite3") {
+     ":sqlite_warnings",
+   ]
  
-     # Pull in config.h on Linux.  This allows use of preprocessor macros which
-     # are not available to the build config.
--    if (is_linux) {
-+    if (is_linux && !is_openbsd) {
-       defines += [ "_HAVE_SQLITE_CONFIG_H" ]
-     }
- 
-@@ -161,7 +161,7 @@ if (!use_system_sqlite) {
-       ":sqlite_warnings",
-     ]
- 
--    if (is_linux) {
-+    if (is_linux && !is_openbsd) {
-       libs = [ "dl" ]
-     } else if (is_mac || is_ios) {
-       libs = [
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     libs = [ "dl" ]
+   } else if (is_mac || is_ios) {
+     libs = [ "CoreFoundation.framework" ]

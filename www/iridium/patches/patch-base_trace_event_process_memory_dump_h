@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_trace_event_process_memory_dump_h,v 1.5 2018/05/04 07:14:57 robert Exp $
+
+Index: base/trace_event/process_memory_dump.h
+--- base/trace_event/process_memory_dump.h.orig
++++ base/trace_event/process_memory_dump.h
+@@ -22,7 +22,7 @@
+ 
+ // Define COUNT_RESIDENT_BYTES_SUPPORTED if platform supports counting of the
+ // resident memory.
+-#if (defined(OS_POSIX) && !defined(OS_NACL)) || defined(OS_WIN)
++#if (defined(OS_POSIX) && !defined(OS_NACL) && !defined(OS_BSD)) || defined(OS_WIN)
+ #define COUNT_RESIDENT_BYTES_SUPPORTED
+ #endif
+ 

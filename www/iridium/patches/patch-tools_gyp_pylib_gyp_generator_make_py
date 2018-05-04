@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.6 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.7 2018/05/04 07:14:58 robert Exp $
 Index: tools/gyp/pylib/gyp/generator/make.py
 --- tools/gyp/pylib/gyp/generator/make.py.orig
 +++ tools/gyp/pylib/gyp/generator/make.py

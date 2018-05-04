@@ -1,0 +1,19 @@
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.1 2018/05/04 07:14:58 robert Exp $
+
+Index: services/device/hid/BUILD.gn
+--- services/device/hid/BUILD.gn.orig
++++ services/device/hid/BUILD.gn
+@@ -41,6 +41,13 @@ source_set("hid") {
+     "//services/device/public/mojom",
+   ]
+ 
++  if (is_openbsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++  }
++
+   if (is_linux && use_udev) {
+     sources += [
+       "hid_service_linux.cc",

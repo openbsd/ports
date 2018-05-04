@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_defaults_cc,v 1.9 2017/10/28 07:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_defaults_cc,v 1.10 2018/05/04 07:14:57 robert Exp $
 --- chrome/browser/defaults.cc.orig.port	Wed May 25 04:54:08 2016
 +++ chrome/browser/defaults.cc	Thu May 26 08:09:40 2016
 @@ -44,7 +44,7 @@ const bool kSyncAutoStarts = true;

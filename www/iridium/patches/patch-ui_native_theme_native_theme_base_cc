@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.1 2017/10/28 07:36:01 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
 
 Index: ui/native_theme/native_theme_base.cc
 --- ui/native_theme/native_theme_base.cc.orig
