@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.89 2018/05/04 18:57:35 espie Exp $
+# $OpenBSD: update-plist,v 1.90 2018/05/04 19:21:14 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -541,6 +541,20 @@ sub show_unknown
 	}
 }
 
+sub copy_with_tags
+{
+	my ($self, $plist) = @_;
+
+	$self->{found} = 1;
+	$self->add_object($plist);
+	if (defined $self->{mytags}) {
+		for my $tag (@{$self->{mytags}}) {
+			$tag->add_object($plist);
+			$tag->{found} = 1;
+		}
+	}
+}
+
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -649,14 +663,7 @@ package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
-	$self->{found} = 1;
-	$self->clone->add_object($plist);
-	if (defined $self->{mytags}) {
-		for my $tag (@{$self->{mytags}}) {
-			$tag->add_object($plist);
-			$tag->{found} = 1;
-		}
-	}
+	$self->copy_with_tags($plist);
 }
 
 sub find_existing_cvstags
@@ -670,12 +677,6 @@ sub tie_objects
 {
 	my ($self, $plist) = @_;
 	$plist->{state}{lastobject} = $self;
-}
-
-package OpenBSD::PackingElement::NewAuth;
-sub copy_annotations
-{
-	&OpenBSD::PackingElement::Meta::copy_annotations;
 }
 
 # these are not really in the plist on disk!
@@ -934,9 +935,6 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	if ($self->name !~ /^\// && $self->cwd ne $plist->{state}->cwd) {
-	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
-	}
 	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
@@ -989,18 +987,17 @@ sub copy_from_old
 			$rebless = 0;
 		}
 	}
+
 	# XXX this should be safe for all our objects
 	bless $e, $o->element_class if $rebless;
 
-	# TODO we need to check the actual cwd here, so that stuff outside
-	# the prefix gets added reaaaallly late
-	$e->add_object($s->nlist);
-	if (defined $e->{mytags}) {
-		for my $tag (@{$e->{mytags}}) {
-			$tag->add_object($s->nlist);
-			$tag->{found} = 1;
-		}
+	# mark it for later
+	if ($e->cwd ne $s->{state}{prefix}) {
+		push(@{$s->{badcwd}}, $e);
+		return;
 	}
+
+	$e->copy_with_tags($s->nlist);
 }
 
 sub copy_existing
@@ -1142,6 +1139,18 @@ for my $i (1, 2) {
 		# though it's generally better to have distinct plists
 		# for several prefixes
 		print STDERR "Warning: can't put $path in any plist\n";
+	}
+}
+
+# now we can handle stuff outside of cwd, if needed
+for my $p (@lists) {
+	my $cwd = $p->{state}{prefix};
+	for my $e (@{$p->{badcwd}}) {
+		if ($e->cwd ne $cwd) {
+			$cwd = $e->cwd;
+			OpenBSD::PackingElement::Cwd->add($p->nlist, $cwd);
+		}
+		$e->copy_with_tags($p->nlist);
 	}
 }
 
