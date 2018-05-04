@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.77 2018/05/04 09:20:52 espie Exp $
+# $OpenBSD: update-plist,v 1.78 2018/05/04 09:52:50 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -914,11 +914,6 @@ sub copy_from_old
 		$rebless = 1;
 		# XXX do not touch commented out data
 		if ($e->isa("OpenBSD::PackingElement::Comment")) {
-			$rebless = 0;
-		# TODO and do not touch directory classes, we don't know
-		# enough from FS2 yet
-		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
-		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
 			$rebless = 0;
 		}
 	}
