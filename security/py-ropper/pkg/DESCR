@@ -1,0 +1,4 @@
+Ropper can be used to look at information about files in different file formats
+and can find ROP and JOP gadgets to build chains for different architectures.
+Ropper supports ELF, MachO and the PE file format. Other files can be opened in
+RAW format.
