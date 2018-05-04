@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.11 2018/05/04 07:24:39 espie Exp $
+# $OpenBSD: FS2.pm,v 1.12 2018/05/04 09:50:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -23,7 +23,7 @@ use OpenBSD::IdCache;
 sub new
 {
 	my ($class, $filename, $owner, $group) = @_;
-	bless {path =>$filename, owner => $owner, group => $group}, $class
+	bless {path => $filename, owner => $owner, group => $group}, $class
 }
 
 sub path
@@ -64,7 +64,8 @@ sub classes
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
-		OpenBSD::FS::File::Binary OpenBSD::FS::File));
+		OpenBSD::FS::File::Binary OpenBSD::FS::File::Font
+		OpenBSD::FS::File));
 }
 
 sub recognize
@@ -91,6 +92,11 @@ sub stage
 	1;
 }	
 
+# some files may "bleed" into parents
+sub tweak_other_paths
+{
+}
+
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
 sub recognize
@@ -102,6 +108,20 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Dir';
+}
+
+package OpenBSD::FS::File::ManDirectory;
+our @ISA = qw(OpenBSD::FS::File::Directory);
+sub element_class
+{
+	'OpenBSD::PackingElement::Mandir';
+}
+
+package OpenBSD::FS::File::FontDirectory;
+our @ISA = qw(OpenBSD::FS::File::Directory);
+sub element_class
+{
+	'OpenBSD::PackingElement::Fontdir';
 }
 
 package OpenBSD::FS::File::Rc;
@@ -146,6 +166,7 @@ sub recognize
 
 package OpenBSD::FS::File::Info;
 our @ISA = qw(OpenBSD::FS::File);
+use File::Basename;
 
 sub recognize
 {
@@ -171,6 +192,22 @@ sub element_class
 	'OpenBSD::PackingElement::InfoFile';
 }
 
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $m = dirname($self->path);
+	if (exists $files->{$m}) {
+		bless $files->{$m}, "OpenBSD::FS::File::InfoDirectory";
+	}
+}
+
+package OpenBSD::FS::File::InfoDirectory;
+our @ISA = qw(OpenBSD::FS::File::Directory);
+sub element_class
+{
+	'OpenBSD::PackingElement::Infodir';
+}
+
 package OpenBSD::FS::File::Subinfo;
 our @ISA = qw(OpenBSD::FS::File::Info);
 sub recognize
@@ -184,6 +221,13 @@ sub recognize
 		return $class->SUPER::recognize("$1.info");
 	}
 	return 0;
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+
+	$fs->zap_dirs($files, $self->path);
 }
 
 package OpenBSD::FS::File::Dirinfo;
@@ -211,6 +255,8 @@ sub recognize
 
 package OpenBSD::FS::File::Manpage;
 our @ISA = qw(OpenBSD::FS::File);
+use File::Basename;
+
 sub recognize
 {
 	my ($class, $re, $fs) = @_;
@@ -232,6 +278,15 @@ sub recognize
 sub element_class
 {
 	return 'OpenBSD::PackingElement::Manpage';
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $m = dirname(dirname($self->path));
+	if (exists $files->{$m}) {
+		bless $files->{$m}, "OpenBSD::FS::File::ManDirectory";
+	}
 }
 
 package OpenBSD::FS::File::Library;
@@ -273,6 +328,29 @@ sub recognize
 	    	return 1;
 	} else {
 		return 0;
+	}
+}
+
+package OpenBSD::FS::File::Font;
+our @ISA = qw(OpenBSD::FS::File);
+use File::Basename;
+
+# XXX TODO  evaluate whether we ought to be smarter in recognizing fonts
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+
+	return 0 unless $filename =~ m/\.(ttf|pfb|pcf(\.gz)?)$/;
+
+	return 1;
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $m = dirname($self->path);
+	if (exists $files->{$m}) {
+		bless $files->{$m}, "OpenBSD::FS::File::FontDirectory";
 	}
 }
 
@@ -429,11 +507,8 @@ sub scan
 				return;
 			}
 			my $file = $self->create($path);
-			if ($file->isa("OpenBSD::FS::File::Subinfo")) {
-				$self->zap_dirs($files, $path);
-				return;
-			}
 			$files->{$path} = $file;
+			$file->tweak_other_paths($self, $files);
 		}, $self->destdir);
 	$self->zap_dirs($files, '/etc/X11/app-defaults');
 	return $files;
