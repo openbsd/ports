@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.86 2018/05/04 12:14:07 espie Exp $
+# $OpenBSD: update-plist,v 1.87 2018/05/04 12:18:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -790,7 +790,7 @@ sub frag
 
 package OpenBSD::PackingElement::Action;
 
-# TODO old make-plist would check whether the subsitutions didn't change
+# TODO old make-plist would check whether the substitutions didn't change
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
