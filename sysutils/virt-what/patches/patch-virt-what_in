@@ -1,7 +1,9 @@
-$OpenBSD: patch-virt-what_in,v 1.4 2018/04/25 16:49:20 jasper Exp $
+$OpenBSD: patch-virt-what_in,v 1.5 2018/05/04 19:43:46 jasper Exp $
 
-Use sysctl on OpenBSD -- use this to recognize SmartOS KVM
-https://www.redhat.com/archives/virt-tools-list/2018-April/msg00046.html
+From d7fd8a7843030d2b1719353edfcd49dba3000122 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 25 Apr 2018 16:41:32 +0200
+Subject: [PATCH] Allow using sysctl, for example when /proc isn't available
 
 From eefc1e7e3dd8fb422baf0f13aec1df9880541b83 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <bug@jasper.la>
