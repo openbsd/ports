@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.85 2018/05/04 12:10:23 espie Exp $
+# $OpenBSD: update-plist,v 1.86 2018/05/04 12:14:07 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1167,6 +1167,9 @@ for my $p (@lists) {
 	$p->nlist->bad_suffixes($p, $state);
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
+
+# TODO   old make-plist noticed libraries with a LIB*_VERSION but no
+# matching file
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $p (@lists) {
