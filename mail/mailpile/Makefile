@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/27 08:31:01 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/04 12:35:02 solene Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
@@ -26,11 +26,13 @@ RUN_DEPENDS =	devel/py-fasteners \
 TEST_DEPENDS =	shells/bash \
 		${RUN_DEPENDS}
 
-NO_BUILD =	Yes
-
 PKG_ARCH =	*
 
 INSTDIR =	${PREFIX}/share/mailpile
+
+# Nothing to build but allows MODPY to
+# define BUILD_DEPENDS correctly
+do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
