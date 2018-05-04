@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.73 2018/05/02 14:44:00 espie Exp $
+# $OpenBSD: update-plist,v 1.74 2018/05/04 07:29:30 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -366,11 +366,14 @@ sub figure_out_dependencies
 {
 	my ($self, $cache, $portsdir) = @_;
 	my @solve = ();
+	my $register = $self->{directory_register};
 	for my $full (keys %{$self->{state}{dependencies}}) {
 		next unless $full =~ m/^(.*?):/;
 		push(@solve, $1);
 	}
 	while (@solve != 0) {
+		# optimization: don't try if we don't have directories left
+		return if !%$register;
 		my $pkgpath = pop @solve;
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
@@ -383,7 +386,10 @@ sub figure_out_dependencies
 			$plist->process_dependency($cache->{$pkgpath});
 		}
 		for my $dir (keys %{$cache->{$pkgpath}{dir}}) {
-			$self->{stripped}{$dir} = 1;
+			if (defined $register->{$dir}) {
+				$register->{$dir}{DONT} = 1;
+				delete $register->{$dir};
+			}
 		}
 		push(@solve, keys %{$cache->{$pkgpath}{pkgpath}});
 	}
@@ -457,9 +463,6 @@ sub redistribute
 		$p->{tracker}->default->add($o);
 	}
 }
-sub strip_directories
-{
-}
 
 sub write_restate
 {
@@ -505,7 +508,7 @@ sub may_tag_along
 {
 }
 
-sub count_directories
+sub tag_directories
 {
 }
 
@@ -573,18 +576,11 @@ sub process_dependency
 	$mtree->{dir}{$self->fullname} = 1;
 }
 
-sub count_directories
+sub tag_directories
 {
-	my ($self, $count) = @_;
-	$$count++;
-}
+	my ($self, $h) = @_;
 
-sub strip_directories
-{
-	my ($o, $stripped) = @_;
-	if ($stripped->{$o->fullname}) {
-		$o->{DONT} = 1;
-	}
+	$h->{$self->fullname} = $self;
 }
 
 # dir-like objects HAVE a / added at the end...
@@ -1057,13 +1053,12 @@ for my $i (1, 2) {
 my $cache = {};
 my $portsdir = $ENV{PORTSDIR};
 for my $p (@lists) {
-	my $count = 0;
-	$p->nlist->count_directories(\$count);
-	$p->{count_directories} = $count;
+	$p->{directory_register} = {};
+	$p->nlist->tag_directories($p->{directory_register});
 }
 
 for my $p (@lists) {
-	if ($p->{count_directories} > 0) {
+	if (%{$p->{directory_register}}) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
@@ -1080,7 +1075,7 @@ for my $p (@lists) {
 
 # and redo the zapping all over again
 for my $p (@lists) {
-	if ($p->{count_directories} > 0) {
+	if (%{$p->{directory_register}}) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
@@ -1094,8 +1089,6 @@ for my $p (@lists) {
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p, $state);
-	# XXX this has to happen *before* backsubst
-	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
