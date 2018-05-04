@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/02 17:49:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2018/05/04 07:50:26 jasper Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	smokeakonadi		52.0 # 3.0
 SHARED_LIBS +=	smokeattica		51.0 # 3.0
