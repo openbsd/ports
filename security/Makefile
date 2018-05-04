@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2018/05/01 13:48:52 kn Exp $
+# $OpenBSD: Makefile,v 1.506 2018/05/04 05:32:28 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -312,6 +312,8 @@
      SUBDIR += py-pgpdump,python3
      SUBDIR += py-potr
      SUBDIR += py-potr,python3
+     SUBDIR += py-ropper
+     SUBDIR += py-ropper,python3
      SUBDIR += py-rsa
      SUBDIR += py-rsa,python3
      SUBDIR += py-scp
