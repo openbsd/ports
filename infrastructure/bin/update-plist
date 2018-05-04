@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.76 2018/05/04 09:08:19 espie Exp $
+# $OpenBSD: update-plist,v 1.77 2018/05/04 09:20:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -228,7 +228,10 @@ sub parse_option
 
 sub do_backsubst
 {
-	my ($subst, $string, $unsubst) = @_;
+	my ($subst, $string, $unsubst, $context) = @_;
+
+	# set default context if needed
+	$context //= 'OpenBSD::PackingElement';
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
@@ -260,7 +263,7 @@ sub do_backsubst
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/^\Q$v\E/\$\{$k2\}/;
+				$string = $context->unsubst_at_start($string, $v, $k2);
 			}
 		} else {
 			# TODO on the other hand, numeric and version-like
@@ -526,13 +529,21 @@ sub find_existing_cvstags
 	}
 }
 
+sub unsubst_at_start
+{
+	my ($self, $string, $v, $k) = @_;
+	$string =~ s/^\Q$v\E/\$\{$k\}/;
+	return $string;
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst});
+	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst}, 
+	    $self);
 
 }
 
@@ -757,6 +768,16 @@ sub may_tag_along
 	my ($self, $plist) = @_;
 	# for now, we might do something smarter later
 	$self->attach_to_lastobject($plist);
+}
+
+sub unsubst_at_start
+{
+	my ($self, $string, $v, $k) = @_;
+
+	$string = $self->SUPER::unsubst_at_start($string, $v, $k);
+
+	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k\}/g;
+	return $string;
 }
 
 package OpenBSD::PackingElement::FileObject;
