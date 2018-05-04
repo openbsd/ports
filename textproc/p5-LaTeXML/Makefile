@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/04 11:12:46 pirofti Exp $
 
 COMMENT =	LaTeX to XML/HTML/MathML Converter
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	LaTeXML-0.8.2
+DISTNAME =	LaTeXML-0.8.2_3
 CATEGORIES =	textproc
-REVISION =	1
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
