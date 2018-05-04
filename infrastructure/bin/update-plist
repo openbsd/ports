@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.79 2018/05/04 11:07:57 espie Exp $
+# $OpenBSD: update-plist,v 1.80 2018/05/04 11:32:22 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -446,10 +446,6 @@ sub known_directory
 {
 }
 
-sub show_unknown
-{
-}
-
 sub copy_annotations
 {
 }
@@ -536,6 +532,15 @@ sub unsubst_at_start
 	return $string;
 }
 
+sub show_unknown
+{
+	my $self = shift;
+	if (!$self->{found}) {
+		print "Not found: ", $self->fullstring, " (in ", 
+		    $self->{file}, ")\n";
+	}
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -617,6 +622,7 @@ package OpenBSD::PackingElement::Meta;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
+	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
 
@@ -634,6 +640,7 @@ package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
+	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
 
@@ -656,13 +663,30 @@ sub copy_annotations
 {
 }
 
+sub show_unknown
+{
+}
+
 package OpenBSD::PackingElement::SpecialFile;
 sub copy_annotations
 {
 }
 
+sub show_unknown
+{
+}
+
 package OpenBSD::PackingElement::ExtraInfo;
 sub copy_annotations
+{
+}
+
+sub show_unknown
+{
+}
+
+package OpenBSD::PackingElement::Cwd;
+sub show_unknown
 {
 }
 
