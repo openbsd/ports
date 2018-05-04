@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.88 2018/05/04 18:29:04 espie Exp $
+# $OpenBSD: update-plist,v 1.89 2018/05/04 18:57:35 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -539,6 +539,13 @@ sub show_unknown
 		print "Not found: ", $self->fullstring, " (in ", 
 		    $self->{file}, ")\n";
 	}
+}
+
+package OpenBSD::PackingElement::State;
+
+# that stuff NEVER gets copied over, but interpolated from existing objects
+sub show_unknown
+{
 }
 
 # objects are (mostly) stuff with paths that can get substs...
