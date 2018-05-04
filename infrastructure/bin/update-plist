@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.87 2018/05/04 12:18:27 espie Exp $
+# $OpenBSD: update-plist,v 1.88 2018/05/04 18:29:04 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -644,6 +644,12 @@ sub copy_annotations
 	my ($self, $plist) = @_;
 	$self->{found} = 1;
 	$self->clone->add_object($plist);
+	if (defined $self->{mytags}) {
+		for my $tag (@{$self->{mytags}}) {
+			$tag->add_object($plist);
+			$tag->{found} = 1;
+		}
+	}
 }
 
 sub find_existing_cvstags
@@ -651,6 +657,12 @@ sub find_existing_cvstags
 	my ($self, $filenames, $existing) = @_;
 	$existing->{$self->{file}} = 1;
 	$self->SUPER::find_existing_cvstags($filenames, $existing);
+}
+
+sub tie_objects
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
 }
 
 package OpenBSD::PackingElement::NewAuth;
@@ -1071,6 +1083,7 @@ for my $path (keys %$objects) {
 $state->say("Tieing loose objects");
 for my $p (@lists) {
 	$p->olist->tie_objects($p->olist);
+	$p->olist->copy_annotations($p->nlist);
 }
 
 $state->say("Copying objects");
@@ -1160,7 +1173,6 @@ for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
 	# CWD that we added manually... this sucks a bit!!!
 	$p->nlist->{items}[0]{DONT} = 1;
-	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
