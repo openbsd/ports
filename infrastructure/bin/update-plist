@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.82 2018/05/04 11:46:21 espie Exp $
+# $OpenBSD: update-plist,v 1.83 2018/05/04 12:00:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -875,14 +875,34 @@ sub bookmark
 }
 
 package OpenBSD::PackingElement::Lib;
+my $first_warn = 1;
+sub check_lib_version
+{
+	my ($self, $version, $name, $v) = @_;
+	if (defined $v) {
+		return if $v eq $version;
+		print STDERR "ERROR: version mismatch for lib: ", $name,
+		    " (", $version, " vs. ", $v, ")\n";
+	} else {
+		if ($first_warn) {
+			print STDERR "Warning: unregistered shared lib(s)\n";
+			$first_warn = 0;
+		}
+		print STDERR "SHARED_LIBS +=\t$name ",
+		    ' 'x (25-length $name), "0.0 # $version\n";
+	}
+}
+
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
-	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
-		# XXX note we don't need to check the variable exists
-		# because things will fail in an obvious way during make package
-		$self->{name} = $s->do_backsubst("$1lib$2.so.", 
-		    $self->{unsubst})."\$\{LIB$2_VERSION\}";
+	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
+		my ($path, $name, $version) = ($1, $2, $3);
+		my $k = "LIB${name}_VERSION";
+		$self->{name} = $s->do_backsubst("${path}lib$name.so.", 
+		    $self->{unsubst})."\$\{$k\}";
+		$self->check_lib_version($version, $name, 
+			$s->value($k));
 	} else {
 		$self->SUPER::perform_backsubst($s);
 	}
