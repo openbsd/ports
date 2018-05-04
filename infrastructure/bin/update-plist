@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.78 2018/05/04 09:52:50 espie Exp $
+# $OpenBSD: update-plist,v 1.79 2018/05/04 11:07:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1157,13 +1157,15 @@ for my $p (@lists) {
 	}
 }
 
-if (@towrite > 0 && !$cantmove) {
-	for my $k (@towrite) {
-		if (-f $k) {
-			rename($k, "$k.orig") or 
-			    die "can't rename $k to $k.orig: $!";
-		}
-		rename("$k.new", $k) or 
-			    die "can't rename $k.new to $k: $!";
+if ($cantmove) {
+	exit(2);
+}
+
+for my $k (@towrite) {
+	if (-f $k) {
+		rename($k, "$k.orig") or 
+		    die "can't rename $k to $k.orig: $!";
 	}
+	rename("$k.new", $k) or 
+		    die "can't rename $k.new to $k: $!";
 }
