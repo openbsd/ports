@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/03/04 10:41:12 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/05/04 21:04:43 benoit Exp $
 @extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
@@ -16,8 +16,10 @@ share/rocksndiamonds/graphics/gfx_classic/RocksBusy.png
 share/rocksndiamonds/graphics/gfx_classic/RocksCE.png
 share/rocksndiamonds/graphics/gfx_classic/RocksDC.png
 share/rocksndiamonds/graphics/gfx_classic/RocksDC2.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDF.png
 share/rocksndiamonds/graphics/gfx_classic/RocksDoor.png
 share/rocksndiamonds/graphics/gfx_classic/RocksDoor2.png
+share/rocksndiamonds/graphics/gfx_classic/RocksDoorMM.png
 share/rocksndiamonds/graphics/gfx_classic/RocksEMC.png
 share/rocksndiamonds/graphics/gfx_classic/RocksElements.png
 share/rocksndiamonds/graphics/gfx_classic/RocksFontBig.png
@@ -27,6 +29,7 @@ share/rocksndiamonds/graphics/gfx_classic/RocksFontMedium.png
 share/rocksndiamonds/graphics/gfx_classic/RocksFontSmall.png
 share/rocksndiamonds/graphics/gfx_classic/RocksHeroes.png
 share/rocksndiamonds/graphics/gfx_classic/RocksIcon32x32.png
+share/rocksndiamonds/graphics/gfx_classic/RocksMM.png
 share/rocksndiamonds/graphics/gfx_classic/RocksMore.png
 share/rocksndiamonds/graphics/gfx_classic/RocksSP.png
 share/rocksndiamonds/graphics/gfx_classic/RocksScreen.png
@@ -514,6 +517,7 @@ share/rocksndiamonds/sounds/snd_classic/amoebe.wav
 share/rocksndiamonds/sounds/snd_classic/autsch.wav
 share/rocksndiamonds/sounds/snd_classic/base.wav
 share/rocksndiamonds/sounds/snd_classic/blurb.wav
+share/rocksndiamonds/sounds/snd_classic/bong.wav
 share/rocksndiamonds/sounds/snd_classic/booom.wav
 share/rocksndiamonds/sounds/snd_classic/bug.wav
 share/rocksndiamonds/sounds/snd_classic/buing.wav
@@ -521,28 +525,39 @@ share/rocksndiamonds/sounds/snd_classic/deng.wav
 share/rocksndiamonds/sounds/snd_classic/door.wav
 share/rocksndiamonds/sounds/snd_classic/empty.wav
 share/rocksndiamonds/sounds/snd_classic/exit.wav
+share/rocksndiamonds/sounds/snd_classic/fuel.wav
 share/rocksndiamonds/sounds/snd_classic/gate.wav
 share/rocksndiamonds/sounds/snd_classic/gong.wav
 share/rocksndiamonds/sounds/snd_classic/halloffame.wav
+share/rocksndiamonds/sounds/snd_classic/holz.wav
+share/rocksndiamonds/sounds/snd_classic/hui.wav
 share/rocksndiamonds/sounds/snd_classic/infotron.wav
+share/rocksndiamonds/sounds/snd_classic/kabumm.wav
+share/rocksndiamonds/sounds/snd_classic/kink.wav
 share/rocksndiamonds/sounds/snd_classic/klapper.wav
+share/rocksndiamonds/sounds/snd_classic/kling.wav
 share/rocksndiamonds/sounds/snd_classic/klopf.wav
 share/rocksndiamonds/sounds/snd_classic/klumpf.wav
 share/rocksndiamonds/sounds/snd_classic/knack.wav
 share/rocksndiamonds/sounds/snd_classic/knurk.wav
 share/rocksndiamonds/sounds/snd_classic/lachen.wav
+share/rocksndiamonds/sounds/snd_classic/laser.wav
 share/rocksndiamonds/sounds/snd_classic/miep.wav
 share/rocksndiamonds/sounds/snd_classic/njam.wav
 share/rocksndiamonds/sounds/snd_classic/oeffnen.wav
 share/rocksndiamonds/sounds/snd_classic/pling.wav
 share/rocksndiamonds/sounds/snd_classic/pong.wav
 share/rocksndiamonds/sounds/snd_classic/pusch.wav
+share/rocksndiamonds/sounds/snd_classic/quiek.wav
 share/rocksndiamonds/sounds/snd_classic/quirk.wav
 share/rocksndiamonds/sounds/snd_classic/roaaar.wav
 share/rocksndiamonds/sounds/snd_classic/roehr.wav
 share/rocksndiamonds/sounds/snd_classic/schlurf.wav
 share/rocksndiamonds/sounds/snd_classic/sirr.wav
+share/rocksndiamonds/sounds/snd_classic/slurp.wav
 share/rocksndiamonds/sounds/snd_classic/soundsinfo.conf
+share/rocksndiamonds/sounds/snd_classic/warnton.wav
+share/rocksndiamonds/sounds/snd_classic/whoosh.wav
 share/rocksndiamonds/sounds/snd_classic/zisch.wav
 share/rocksndiamonds/sounds/snd_classic/zonkdown.wav
 share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
