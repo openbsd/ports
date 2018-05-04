@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/04 22:30:08 solene Exp $
+bin/barony
+@bin bin/barony-bin
+@bin bin/barony-editor
+share/barony/
+share/barony/lang/
+share/barony/lang/en.ttf
+share/barony/lang/en.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
