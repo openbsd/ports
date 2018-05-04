@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.74 2018/05/04 07:29:30 espie Exp $
+# $OpenBSD: update-plist,v 1.75 2018/05/04 08:54:31 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,7 +16,6 @@
 
 use strict;
 use warnings;
-use OpenBSD::PkgCreate;
 
 my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
@@ -45,6 +44,8 @@ BEGIN {
 	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
+use OpenBSD::PkgCreate;
+use OpenBSD::FS2;
 
 package TrackedFile;
 sub new
@@ -422,9 +423,10 @@ sub handle_options
 			push(@{$state->{warn_suffix}}, $warn);
 		},
 	};
-	$state->SUPER::handle_options('X:P:w:', 
-	    '[-mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rX:P:w:', 
+	    '[-mnrx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
+	$state->{scan_as_root} = $state->opt('r');
 }
 
 # copy_extra: stuff that can't be easily deduced but should be copied
@@ -974,10 +976,13 @@ my $base = $lists[0]->{state}{base};
 
 # now we ask the file system what exists, and fill file objects according to
 # that.
-require OpenBSD::FS2;
 $state->say("Scanning #1", $base);
+if ($state->{scan_as_root}) {
+	$> = 0;
+}
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
+$> = $fake_uid;
 
 # First we figure out which objects will get copied.
 $state->say("Figuring out tie points");
