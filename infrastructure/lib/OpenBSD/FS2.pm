@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.12 2018/05/04 09:50:48 espie Exp $
+# $OpenBSD: FS2.pm,v 1.13 2018/05/04 10:54:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -227,6 +227,7 @@ sub tweak_other_paths
 {
 	my ($self, $fs, $files) = @_;
 
+	delete $files->{$self->path};
 	$fs->zap_dirs($files, $self->path);
 }
 
