@@ -1,27 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/09/04 10:53:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/04 09:54:41 jasper Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
 @pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
-bin/createfontdatachunk.py${MODPY_BIN_SUFFIX}
-bin/enhancer.py${MODPY_BIN_SUFFIX}
-bin/explode.py${MODPY_BIN_SUFFIX}
-bin/gifmaker.py${MODPY_BIN_SUFFIX}
-bin/painter.py${MODPY_BIN_SUFFIX}
-bin/pilconvert.py${MODPY_BIN_SUFFIX}
-bin/pildriver.py${MODPY_BIN_SUFFIX}
-bin/pilfile.py${MODPY_BIN_SUFFIX}
-bin/pilfont.py${MODPY_BIN_SUFFIX}
-bin/pilprint.py${MODPY_BIN_SUFFIX}
-bin/player.py${MODPY_BIN_SUFFIX}
-bin/thresholder.py${MODPY_BIN_SUFFIX}
-bin/viewer.py${MODPY_BIN_SUFFIX}
 ${INCL_DIR}/ImPlatform.h
 ${INCL_DIR}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
+lib/python${MODPY_VERSION}/site-packages/PIL/BlpImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BufrStubImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ContainerIO.py
@@ -79,7 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MicImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpoImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
-lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO-README.md
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PaletteFile.py
@@ -88,6 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/PcdImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PcfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PcxImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PdfImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/PdfParser.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PixarImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PngImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PpmImagePlugin.py
@@ -109,6 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BdfFontFile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BlpImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BmpImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BufrStubImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ContainerIO.${MODPY_PYC_MAGIC_TAG}pyc
@@ -174,6 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PcdImagePlugin.${MO
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PcfFontFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PcxImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PdfImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PdfParser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PixarImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PngImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PpmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -197,6 +187,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_binary.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_tkinter_finder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
@@ -208,6 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/_tkinter_finder.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
 lib/python${MODPY_VERSION}/site-packages/PIL/features.py
+lib/python${MODPY_VERSION}/site-packages/PIL/version.py
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
