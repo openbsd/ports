@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.90 2018/05/04 19:21:14 espie Exp $
+# $OpenBSD: update-plist,v 1.91 2018/05/05 09:02:50 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -549,6 +549,7 @@ sub copy_with_tags
 	$self->add_object($plist);
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
+			next if $tag->{found};
 			$tag->add_object($plist);
 			$tag->{found} = 1;
 		}
@@ -767,6 +768,10 @@ sub may_tag_along
 	}
 }
 
+sub known_object
+{
+}
+
 package OpenBSD::PackingElement::Sampledir;
 
 # this is not really smart, but good enough for starters
@@ -827,6 +832,10 @@ sub unsubst_at_start
 	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k\}/g;
 	return $string;
 }
+
+package OpenBSD::PackingElement::Unexec;
+# TODO unexec's commands must be later in the plist, we should try to
+# identify them
 
 package OpenBSD::PackingElement::FileObject;
 use File::Basename;
@@ -986,6 +995,10 @@ sub copy_from_old
 		if ($e->isa("OpenBSD::PackingElement::Shell")) {
 			$rebless = 0;
 		}
+		# XXX and we cannot figure out sample dirs by ourselves
+		if ($e->isa("OpenBSD::PackingElement::Sampledir")) {
+			$rebless = 0;
+		}
 	}
 
 	# XXX this should be safe for all our objects
@@ -1049,7 +1062,6 @@ while (@ARGV > 0) {
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
 	$r->add_extra_info($r->olist, $s);
-	# for removing directory stuff later on
 # except that we also record where each object live, including directory
 # locations.  As a rule, "exact" information will supersede deduced directory
 # names.
@@ -1111,6 +1123,12 @@ for my $i (1, 2) {
 			if (@l == 1) {
 				my $s = $l[0]->{comesfrom};
 				my $p2 = $s->strip_prefix($path);
+				if ($p2 =~ m/^\// && !$c->absolute_okay) {
+					# this will get caught as new element
+					# TODO list of data to build inside
+					# its own cwd
+					last;
+				}
 				my $a = $c->add($s->nlist, $p2);
 				# and match the file
 				$a->{file} = $s->{file};
@@ -1193,6 +1211,7 @@ for my $p (@lists) {
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p, $state);
+	# TODO rework backsubst into redistribute, based on fullstring
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
