@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/23 14:29:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/05 19:22:55 jasper Exp $
 
 COMMENT=		simple task management application
 
@@ -21,4 +21,10 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libpeas
 
+# XXX
+# Generate this file upfront as it may not be created in time
+# due to ninja's randomization.
+pre-build:
+	exec ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/gtd-vcs-identifier.h
 .include <bsd.port.mk>
