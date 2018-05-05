@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/04 22:30:08 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/05 08:23:17 ajacoutot Exp $
 
 V =		3.1.4
 COMMENT =	3D, first person roguelike
@@ -8,6 +8,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 HOMEPAGE =	http://www.baronygame.com/
 MAINTAINER =	David Carlier <devnexen@gmail.com>
