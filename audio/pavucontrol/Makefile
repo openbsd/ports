@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/16 23:20:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/05 15:42:05 espie Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -9,7 +9,7 @@ DISTNAME =		pavucontrol-3.0
 HOMEPAGE =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 CATEGORIES =		audio
-REVISION =		2
+REVISION =		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
