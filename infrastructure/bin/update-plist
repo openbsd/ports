@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.103 2018/05/05 22:37:53 espie Exp $
+# $OpenBSD: update-plist,v 1.104 2018/05/05 22:52:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -988,7 +988,9 @@ sub copy_from_old
 	}
 
 	# mark it for later
-	if ($e->cwd ne $s->{state}{prefix}) {
+	if ($e->cwd ne $s->{state}{prefix} && 
+	    # XXX doesn't apply to @rcscript
+	    $o->stage == 1) {
 		push(@{$s->{badcwd}}, $e);
 		return;
 	}
