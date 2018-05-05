@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/28 19:22:24 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/05 10:39:13 jasper Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -49,9 +49,9 @@ CONFIGURE_ARGS=		-DWITH_SSE2=ON
 CONFIGURE_ARGS=		-DWITH_SSE2=OFF
 .endif
 
-CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
-
 # Only used by Ubuntu's Unity.
-CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF
+CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF \
+			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			-DCMAKE_EXE_LINKER_FLAGS="-lintl"
 
 .include <bsd.port.mk>
