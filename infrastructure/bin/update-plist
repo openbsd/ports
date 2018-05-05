@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.100 2018/05/05 13:36:27 espie Exp $
+# $OpenBSD: update-plist,v 1.101 2018/05/05 15:53:40 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1064,7 +1064,7 @@ if ($state->{scan_as_root}) {
 }
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
-$> = $fake_uid;
+$> = $fake_uid if defined $fake_uid;
 
 # First we figure out which objects will get copied.
 $state->say("Figuring out tie points");
@@ -1206,9 +1206,11 @@ for my $p (@lists) {
 }
 
 # switch to ports owner
-$> = 0;
-$) = $ports_gid;
-$> = $ports_uid;
+if (defined $ports_gid) {
+	$> = 0;
+	$) = $ports_gid;
+	$> = $ports_uid;
+}
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
