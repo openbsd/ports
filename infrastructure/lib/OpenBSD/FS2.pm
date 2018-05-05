@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.13 2018/05/04 10:54:20 espie Exp $
+# $OpenBSD: FS2.pm,v 1.14 2018/05/05 17:32:13 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -508,7 +508,7 @@ sub scan
 				return;
 			}
 			my $file = $self->create($path);
-			$files->{$path} = $file;
+			$files->{$file->path} = $file;
 			$file->tweak_other_paths($self, $files);
 		}, $self->destdir);
 	$self->zap_dirs($files, '/etc/X11/app-defaults');
