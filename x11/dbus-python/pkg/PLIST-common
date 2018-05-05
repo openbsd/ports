@@ -1,12 +1,5 @@
-@comment $OpenBSD: PLIST-common,v 1.2 2013/09/17 10:07:51 sthen Exp $
+@comment $OpenBSD: PLIST-common,v 1.3 2018/05/05 09:05:20 ajacoutot Exp $
 @conflict dbus-python-*
 @pkgpath x11/dbus-python
 include/dbus-1.0/dbus/dbus-python.h
 lib/pkgconfig/dbus-python.pc
-share/doc/dbus-python/
-share/doc/dbus-python/API_CHANGES.txt
-share/doc/dbus-python/HACKING.txt
-share/doc/dbus-python/NEWS
-share/doc/dbus-python/PY3PORT.txt
-share/doc/dbus-python/README
-share/doc/dbus-python/tutorial.txt
