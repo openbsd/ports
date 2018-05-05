@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.98 2018/05/05 12:45:09 espie Exp $
+# $OpenBSD: update-plist,v 1.99 2018/05/05 13:13:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1033,8 +1033,8 @@ while (@ARGV > 0) {
 	$r->{state} = $s;
 	$s->handle_options;
 	$s->{opt}{q} = 1;
-	die "bad arguments to update-plist" if @{$s->{contents}} != 1;
-	$r->{base_plistname} = $s->{contents}->[0];
+	# last content we have, thanks ruby :(
+	$r->{base_plistname} = $s->{contents}->[-1];
 	push(@lists, $r);
 	my $pkg = shift;
 
