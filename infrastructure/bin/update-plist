@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.95 2018/05/05 11:29:45 espie Exp $
+# $OpenBSD: update-plist,v 1.96 2018/05/05 11:48:46 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -231,6 +231,8 @@ sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
 
+	# TODO variables with an empty subst should be dealt with separately
+	# as it's impossible to predict in which order to do the change
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
