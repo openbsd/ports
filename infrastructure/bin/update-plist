@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.92 2018/05/05 09:07:57 espie Exp $
+# $OpenBSD: update-plist,v 1.93 2018/05/05 09:36:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -183,6 +183,7 @@ my $special = {
 	MACHINE_ARCH => 1,
 	ARCH => 1,
 	BASE_PKGPATH => 1,
+	LOCALSTATEDIR => 1,
 };
 
 
@@ -228,10 +229,8 @@ sub parse_option
 
 sub do_backsubst
 {
-	my ($subst, $string, $unsubst, $context) = @_;
+	my ($subst, $string, $unsubst) = @_;
 
-	# set default context if needed
-	$context //= 'OpenBSD::PackingElement';
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
@@ -263,7 +262,8 @@ sub do_backsubst
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
-				$string = $context->unsubst_at_start($string, $v, $k2);
+				$string =~ s/^\Q$v\E/\$\{$k2\}/;
+				$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
 			}
 		} else {
 			# TODO on the other hand, numeric and version-like
@@ -366,6 +366,12 @@ sub strip_prefix
 	return $path;
 }
 
+sub subst
+{
+	my $self = shift;
+	return $self->{state}{subst};
+}
+
 sub figure_out_dependencies
 {
 	my ($self, $cache, $portsdir) = @_;
@@ -450,10 +456,6 @@ sub copy_annotations
 {
 }
 
-sub perform_backsubst
-{
-}
-
 sub redistribute
 {
 	my ($o, $p) = @_;
@@ -468,8 +470,15 @@ sub redistribute
 sub write_restate
 {
 	my ($o, $file, $p) = @_;
-	$o->write($file->fh);
+	$o->write_backsubst($file, $p);
 	return undef;
+}
+
+sub write_backsubst
+{
+	my ($o, $file, $p) = @_;
+	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst});
+	print {$file->fh} $s, "\n";
 }
 
 sub copy_extra
@@ -525,13 +534,6 @@ sub find_existing_cvstags
 	}
 }
 
-sub unsubst_at_start
-{
-	my ($self, $string, $v, $k) = @_;
-	$string =~ s/^\Q$v\E/\$\{$k\}/;
-	return $string;
-}
-
 sub show_unknown
 {
 	my $self = shift;
@@ -568,15 +570,6 @@ sub show_unknown
 
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
-sub perform_backsubst
-{
-	my ($self, $s) = @_;
-
-	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst}, 
-	    $self);
-
-}
-
 sub bad_suffixes
 {
 	my ($self, $p, $state) = @_;
@@ -628,14 +621,6 @@ sub tag_directories
 
 # dir-like objects HAVE a / added at the end...
 package OpenBSD::PackingElement::DirBase;
-sub perform_backsubst
-{
-	my ($self, $s) = @_;
-
-	$self->{name} = $s->do_backsubst($self->{name}.'/', $self->{unsubst});
-	$self->{name} =~ s/\/$//;
-}
-
 sub bookmark
 {
 	my ($self, $plist) = @_;
@@ -651,15 +636,7 @@ sub copy_annotations
 	$self->clone->add_object($plist);
 }
 
-sub perform_backsubst
-{
-	&OpenBSD::PackingElement::Object::perform_backsubst;
-}
-
 package OpenBSD::PackingElement::UniqueOption;
-sub perform_backsubst
-{
-}
 
 # TODO CVSTags should be used as "initial placeholders" for objects such
 # as exec that will be orphaned otherwise
@@ -699,6 +676,10 @@ sub copy_annotations
 }
 
 sub show_unknown
+{
+}
+
+sub write_restate
 {
 }
 
@@ -830,16 +811,6 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
-sub unsubst_at_start
-{
-	my ($self, $string, $v, $k) = @_;
-
-	$string = $self->SUPER::unsubst_at_start($string, $v, $k);
-
-	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k\}/g;
-	return $string;
-}
-
 package OpenBSD::PackingElement::Unexec;
 # TODO unexec's commands must be later in the plist, we should try to
 # identify them
@@ -882,7 +853,6 @@ sub write_restate
 	
 	# TODO there should be some more code matching the mode to the original
 	# file that was copied
-	my $fh = $f->fh;
 	for my $k (qw(mode owner group)) {
 		my $s = "\@$k";
 		if (defined $self->{$k}) {
@@ -891,16 +861,16 @@ sub write_restate
 					next;
 				}
 			}
-			$s .= " ".$p->{state}{subst}->do_backsubst($self->{$k}, undef);
+			$s .= " ".$p->subst->do_backsubst($self->{$k}, undef);
 		} else {
 			if (!defined $p->{restate}{$k}) {
 				next;
 			}
 		}
 		$p->{restate}{$k} = $self->{$k};
-		print $fh $s, "\n";
+		print {$f->fh} $s, "\n";
 	}
-	$self->write($fh);
+	$self->write_backsubst($f, $p);
 	return undef;
 }
 
@@ -934,18 +904,19 @@ sub check_lib_version
 	}
 }
 
-sub perform_backsubst
+sub write_backsubst
 {
-	my ($self, $s) = @_;
+	my ($self, $f, $p) = @_;
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
-		$self->{name} = $s->do_backsubst("${path}lib$name.so.", 
+		my $s = $p->subst->do_backsubst("${path}lib$name.so.", 
 		    $self->{unsubst})."\$\{$k\}";
 		$self->check_lib_version($version, $name, 
-			$s->value($k));
+			$p->subst->value($k));
+		print {$f->fh} "\@", $self->keyword, " ", $s, "\n";
 	} else {
-		$self->SUPER::perform_backsubst($s);
+		$self->SUPER::write_backsubst($f, $p);
 	}
 }
 
@@ -1206,7 +1177,6 @@ for my $p (@lists) {
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p, $state);
 	# TODO rework backsubst into redistribute, based on fullstring
-	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
 # TODO   old make-plist noticed libraries with a LIB*_VERSION but no
