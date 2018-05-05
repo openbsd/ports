@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.91 2018/05/05 09:02:50 espie Exp $
+# $OpenBSD: update-plist,v 1.92 2018/05/05 09:07:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -556,6 +556,9 @@ sub copy_with_tags
 	}
 }
 
+# will be zero for classes that cannot be deduced from the FS
+sub rebless_okay { 1 }
+
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -751,6 +754,8 @@ sub copy_annotations
 	# nope these are not normal annotations
 }
 
+sub rebless_okay { 0 }
+
 package OpenBSD::PackingElement::Sample;
 sub may_tag_along
 {
@@ -780,6 +785,8 @@ sub may_tag_along
 	my ($self, $plist) = @_;
 	$self->attach_to_lastobject($plist);
 }
+
+sub rebless_okay { 0 }
 
 package OpenBSD::PackingElement::Fragment;
 sub may_tag_along
@@ -905,6 +912,9 @@ sub bookmark
 	$plist->{state}{lastfile} = $self;
 }
 
+package OpenBSD::PackingElement::Shell;
+sub rebless_okay { 0 }
+
 package OpenBSD::PackingElement::Lib;
 my $first_warn = 1;
 sub check_lib_version
@@ -978,31 +988,15 @@ sub add_missing_cvstags
 	}
 }
 
-use UNIVERSAL;
-
 sub copy_from_old
 {
 	my ($e, $o) = @_;
 
 	my $s = $e->{comesfrom};
 	my $rebless = 0;
-	if ($o->element_class ne ref($e)) {
-		$rebless = 1;
-		# XXX do not touch commented out data
-		if ($e->isa("OpenBSD::PackingElement::Comment")) {
-			$rebless = 0;
-		}
-		if ($e->isa("OpenBSD::PackingElement::Shell")) {
-			$rebless = 0;
-		}
-		# XXX and we cannot figure out sample dirs by ourselves
-		if ($e->isa("OpenBSD::PackingElement::Sampledir")) {
-			$rebless = 0;
-		}
+	if ($o->element_class ne ref($e) && $e->rebless_okay) {
+		bless $e, $o->element_class;
 	}
-
-	# XXX this should be safe for all our objects
-	bless $e, $o->element_class if $rebless;
 
 	# mark it for later
 	if ($e->cwd ne $s->{state}{prefix}) {
