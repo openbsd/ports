@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.96 2018/05/05 11:48:46 espie Exp $
+# $OpenBSD: update-plist,v 1.97 2018/05/05 12:07:34 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -195,10 +195,15 @@ sub add
 	if ($k eq 'FLAVORS') {
 		$self->{l} = [];
 		$self->{count} = {};
+		$self->{lempty} = [];
 	}
 	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
 	} else {
-		unshift(@{$self->{l}}, $k);
+		if ($v eq '') {
+			unshift(@{$self->{lempty}}, $k);
+		} else {
+			unshift(@{$self->{l}}, $k);
+		}
 		$self->{count}{$v}++;
 	}
 	$self->{delegate}->add($k, $v);
@@ -231,8 +236,6 @@ sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
 
-	# TODO variables with an empty subst should be dealt with separately
-	# as it's impossible to predict in which order to do the change
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
@@ -256,35 +259,34 @@ sub do_backsubst
 		    	
 		if ($k =~ m/^\^(.*)$/) {
 			my $v = $subst->value($k2);
-			# Empty variable at start of string
-			# if it was already there we do it again
-			if ($v eq '') {
-				if (defined $unsubst &&
-				    $unsubst =~ m/^\$\{$k2\}/) {
-				    	$string =~ s/^/\$\{$k2\}/;
-				}
-			} else {
-				$string =~ s/^\Q$v\E/\$\{$k2\}/;
-				$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
-			}
+			$string =~ s/^\Q$v\E/\$\{$k2\}/;
+			$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
 		} else {
 			# TODO on the other hand, numeric and version-like
 			# variables shouldn't substitute partial numbers
 			my $v = $subst->value($k);
-			# Empty variable somewhere in the string
-			# if it was already there, we try to locate
-			# the same prefix and apply it
-			if ($v eq '') {
-				if (defined $unsubst &&
-				    $unsubst =~ m/^(.*)\$\{$k2\}/) {
-				    	my $prefix = $1;
-					$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
-				}
-			} else {
-				$string =~ s/\Q$v\E/\$\{$k2\}/g;
-			}
+			$string =~ s/\Q$v\E/\$\{$k2\}/g;
 		}
 	}
+
+	# we can't do empty subst without an unsubst;
+	return $string unless defined $unsubst;
+
+	# this part will be done repeatedly
+	my $old;
+	do {
+		$old = $string;
+		for my $k (@{$subst->{lempty}}) {
+			my $k2 = $k;
+			$k2 =~ s/^\^//;
+			if ($unsubst =~ m/^(.*)\$\{$k2\}/) {
+				my $prefix = $1;
+				# XXX avoid infinite loop
+				next if $string =~ m/\Q$prefix\E\$\{\Q$k2\E\}/;
+				$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
+			}
+		}
+	} while ($old ne $string);
 	return $string;
 }
 
