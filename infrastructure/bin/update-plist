@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.101 2018/05/05 15:53:40 espie Exp $
+# $OpenBSD: update-plist,v 1.102 2018/05/05 22:32:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -114,25 +114,25 @@ sub write_all
 {
 	my ($self, $p) = @_;
 
-	# we mimic the way pkg_create writes files
-	$p->{restate} = {};
+	for my $i (@{$p->{base_plists}}) {
+		# we mimic the way pkg_create writes files
+		$p->{restate} = {};
 
-	my @stack = ();
-	push(@stack, $self->default);
+		my @stack = ();
+		push(@stack, $self->file($i));
 
 
-	while (my $file = pop @stack) {
-		while (my $i = $file->next_item) {
-			my $filename = $i->write_restate($file, $p);
-			if (defined $filename) {
-				push(@stack, $file);
-				$file = $self->file($filename);
+		while (my $file = pop @stack) {
+			while (my $i = $file->next_item) {
+				my $filename = $i->write_restate($file, $p);
+				if (defined $filename) {
+					push(@stack, $file);
+					$file = $self->file($filename);
+				}
 			}
+			close($file->fh);
 		}
-		close($file->fh);
 	}
-
-	# TODO we should check we got them all
 }
 
 package Forwarder;
@@ -1033,8 +1033,7 @@ while (@ARGV > 0) {
 	$r->{state} = $s;
 	$s->handle_options;
 	$s->{opt}{q} = 1;
-	# last content we have, thanks ruby :(
-	$r->{base_plistname} = $s->{contents}->[-1];
+	$r->{base_plists} = $s->{contents};
 	push(@lists, $r);
 	my $pkg = shift;
 
@@ -1192,7 +1191,9 @@ for my $p (@lists) {
 	$p->nlist->{items}[0]{DONT} = 1;
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
-	add_missing_cvstags($p->nlist, $p->{base_plistname});
+	for my $i (@{$p->{base_plists}}) {
+		add_missing_cvstags($p->nlist, $i);
+	}
 	$p->nlist->bad_suffixes($p, $state);
 	# TODO rework backsubst into redistribute, based on fullstring
 }
@@ -1213,7 +1214,8 @@ if (defined $ports_gid) {
 }
 
 for my $p (@lists) {
-	$p->{tracker} = TrackFile->new($p->{base_plistname});
+	# default is the last content we have, thanks ruby :(
+	$p->{tracker} = TrackFile->new($p->{base_plists}->[-1]);
 	$p->nlist->redistribute($p);
 	$p->{tracker}->write_all($p);
 }
