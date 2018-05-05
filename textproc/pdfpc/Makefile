@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/02 17:50:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/05 09:43:26 jasper Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
-GH_TAGNAME=		v4.1
+GH_TAGNAME=		v4.1.1
 PKGNAME=		pdfpc-${GH_TAGNAME:S/v//:S/-/./}
 
 CATEGORIES=		textproc
@@ -21,7 +21,7 @@ MODULES=		devel/cmake
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gee-0.8 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m pango-1.0
-WANTLIB += pangocairo-1.0 poppler-glib pthread X11 intl
+WANTLIB += pangocairo-1.0 poppler-glib X11 intl fribidi
 
 BUILD_DEPENDS=		lang/vala
 LIB_DEPENDS=		devel/libgee \
