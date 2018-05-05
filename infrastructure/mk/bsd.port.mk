@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1398 2018/05/05 12:50:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1399 2018/05/05 12:50:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -72,7 +72,7 @@ USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
 WRKOBJDIR_MFS ?= /tmp/pobj
 FAKEOBJDIR ?=
-NEW_UPDATE_PLIST ?= No
+NEW_UPDATE_PLIST ?= Yes
 UPDATE_PLIST_ARGS ?=
 
 BULK_TARGETS ?=
