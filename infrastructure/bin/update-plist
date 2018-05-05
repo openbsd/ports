@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.102 2018/05/05 22:32:52 espie Exp $
+# $OpenBSD: update-plist,v 1.103 2018/05/05 22:37:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -205,7 +205,7 @@ sub add
 	} else {
 		# any variable that expands to @comment should never get
 		# added where it wasn't already
-		if ($v =~ m/\@comment\s*/) {
+		if ($v =~ m/^\@comment\s*$/) {
 			my $k2 = $k;
 			$k2 =~ s/\^//;
 			$self->{special}{$k2} = 1;
