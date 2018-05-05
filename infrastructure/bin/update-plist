@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.97 2018/05/05 12:07:34 espie Exp $
+# $OpenBSD: update-plist,v 1.98 2018/05/05 12:45:09 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -162,9 +162,21 @@ sub new
 	    # record that a variable is actually used. Then if we see the
 	    # string and no backsubst, it's probably intentional
 	    used => {}, 
+	    # special variables we won't add in substitutions
+	    special => {
+		FULLPKGNAME => 1,
+		FULLPKGPATH => 1,
+		MACHINE_ARCH => 1,
+		ARCH => 1,
+		BASE_PKGPATH => 1,
+		LOCALSTATEDIR => 1,
+	    },
 	    # list of actual variables we care about, e.g., ignored stuff
 	    # and whatnot
-	    l => []}, shift;
+	    l => [],
+	    # variables that expand to nothing have specific handling
+	    lempty => [],
+	    }, shift;
 }
 
 my $ignore = {
@@ -177,14 +189,6 @@ my $ignore = {
 	EPOCH => 1,
 };
 
-my $special = {
-	FULLPKGNAME => 1,
-	FULLPKGPATH => 1,
-	MACHINE_ARCH => 1,
-	ARCH => 1,
-	BASE_PKGPATH => 1,
-	LOCALSTATEDIR => 1,
-};
 
 
 sub add
@@ -199,6 +203,13 @@ sub add
 	}
 	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
 	} else {
+		# any variable that expands to @comment should never get
+		# added where it wasn't already
+		if ($v =~ m/\@comment\s*/) {
+			my $k2 = $k;
+			$k2 =~ s/\^//;
+			$self->{special}{$k2} = 1;
+		}
 		if ($v eq '') {
 			unshift(@{$self->{lempty}}, $k);
 		} else {
@@ -222,7 +233,7 @@ sub never_add
 	if ($self->{count}{$self->value($k)} > 1) {
 		return 1;
 	} else {
-		return $special->{$k};
+		return $self->{special}{$k};
 	}
 }
 
