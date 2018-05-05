@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/23 13:38:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/05 19:27:43 jasper Exp $
 include/gtksourceview-4/
 include/gtksourceview-4/gtksourceview/
 include/gtksourceview-4/gtksourceview/completion-providers/
@@ -248,6 +248,7 @@ share/gtksourceview-4/language-specs/tcl.lang
 share/gtksourceview-4/language-specs/tera.lang
 share/gtksourceview-4/language-specs/texinfo.lang
 share/gtksourceview-4/language-specs/thrift.lang
+share/gtksourceview-4/language-specs/toml.lang
 share/gtksourceview-4/language-specs/vala.lang
 share/gtksourceview-4/language-specs/vbnet.lang
 share/gtksourceview-4/language-specs/verilog.lang
