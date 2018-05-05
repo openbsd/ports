@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.477 2018/04/27 16:35:04 danj Exp $
+# $OpenBSD: Makefile,v 1.478 2018/05/05 12:50:06 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -87,6 +87,7 @@
      SUBDIR += fleetctl
      SUBDIR += flock
      SUBDIR += fprintd
+     SUBDIR += free
      SUBDIR += freedt
      SUBDIR += freeipmi
      SUBDIR += fsstress
