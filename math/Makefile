@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2018/02/28 15:34:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.147 2018/05/05 15:05:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -105,6 +105,8 @@
      SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-gnuplot
+     SUBDIR += py-graphviz
+     SUBDIR += py-graphviz,python3
      SUBDIR += py-mpmath
      SUBDIR += py-mpmath,python3
      SUBDIR += py-numexpr
