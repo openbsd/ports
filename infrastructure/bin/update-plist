@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.104 2018/05/05 22:52:23 espie Exp $
+# $OpenBSD: update-plist,v 1.105 2018/05/05 23:34:36 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -247,7 +247,7 @@ sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
 
-	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
+	for my $k (sort {length($subst->value($b)) <=> length($subst->value($a))} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
 		# don't add subst on THOSE variables
