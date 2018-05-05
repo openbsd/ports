@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/04/29 18:54:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/05/05 09:39:27 jasper Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 include/libgeoclue-2.0/
@@ -19,6 +19,7 @@ lib/pkgconfig/libgeoclue-2.0.pc
 @bin libexec/geoclue
 libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
+@bin libexec/geoclue-2.0/demos/agent
 @bin libexec/geoclue-2.0/demos/where-am-i
 share/applications/geoclue-where-am-i.desktop
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
@@ -39,6 +40,12 @@ share/examples/geoclue/geoclue/
 @sample ${SYSCONFDIR}/geoclue/
 share/examples/geoclue/geoclue/geoclue.conf
 @sample ${SYSCONFDIR}/geoclue/geoclue.conf
+share/examples/geoclue/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/geoclue/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/geoclue/xdg/autostart/geoclue-demo-agent.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/geoclue-demo-agent.desktop
 share/gir-1.0/Geoclue-2.0.gir
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2018/04/23 09:00:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2018/05/05 09:39:27 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.4.8
+VERSION=		2.4.10
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
@@ -22,12 +22,14 @@ EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 json-glib-1.0
 WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z iconv intl
-WANTLIB += avahi-client avahi-common avahi-glib dbus-1
+WANTLIB += avahi-client avahi-common avahi-glib dbus-1 notify png
+WANTLIB += gdk_pixbuf-2.0
 
 MODULES=		textproc/intltool \
 			x11/gnome
 
 LIB_DEPENDS=		devel/libsoup \
+			devel/libnotify \
 			devel/json-glib \
 			net/avahi
 
