@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.574 2018/05/04 11:42:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.575 2018/05/05 15:08:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -393,6 +393,8 @@
      SUBDIR += py-m2r,python3
      SUBDIR += py-mistune
      SUBDIR += py-mistune,python3
+     SUBDIR += py-natsort
+     SUBDIR += py-natsort,python3
      SUBDIR += py-nltk
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc
@@ -409,6 +411,8 @@
      SUBDIR += py-prettytable,python3
      SUBDIR += py-pyRFC3339
      SUBDIR += py-pyRFC3339,python3
+     SUBDIR += py-pygfm
+     SUBDIR += py-pygfm,python3
      SUBDIR += py-pygments
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify
