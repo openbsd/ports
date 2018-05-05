@@ -1,0 +1,3 @@
+natsort provides a function natsorted that helps sort lists 'naturally'
+('naturally' is rather ill-defined, but in general it means sorting
+based on meaning and not computer code point).
