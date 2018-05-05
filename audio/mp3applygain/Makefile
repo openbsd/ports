@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/14 15:11:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/05 15:38:23 espie Exp $
 
 COMMENT=	apply gain information to mp3 audio data
 
 VERSION=	1.1.0
 DISTNAME=	mp3applygain-${VERSION}
 CATEGORIES=	audio
+REVISION =	0
 
 HOMEPAGE=	https://github.com/jeremyevans/mp3applygain
 
