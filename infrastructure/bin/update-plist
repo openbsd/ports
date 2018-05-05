@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.94 2018/05/05 10:17:30 espie Exp $
+# $OpenBSD: update-plist,v 1.95 2018/05/05 11:29:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -636,8 +636,6 @@ sub copy_annotations
 
 package OpenBSD::PackingElement::UniqueOption;
 
-# TODO CVSTags should be used as "initial placeholders" for objects such
-# as exec that will be orphaned otherwise
 package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
@@ -656,6 +654,13 @@ sub tie_objects
 {
 	my ($self, $plist) = @_;
 	$plist->{state}{lastobject} = $self;
+}
+
+# we will never do backsubst on CVSTags
+sub write_backsubst
+{
+	my ($o, $file, $p) = @_;
+	$o->write($file->fh);
 }
 
 # these are not really in the plist on disk!
