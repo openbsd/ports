@@ -1,0 +1,3 @@
+This package facilitates the creation and rendering of graph
+descriptions in the DOT language of the Graphviz graph drawing software
+from Python.
