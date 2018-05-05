@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.93 2018/05/05 09:36:57 espie Exp $
+# $OpenBSD: update-plist,v 1.94 2018/05/05 10:17:30 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -276,9 +276,7 @@ sub do_backsubst
 				if (defined $unsubst &&
 				    $unsubst =~ m/^(.*)\$\{$k2\}/) {
 				    	my $prefix = $1;
-					# XXX hack around @keyword
-					$prefix =~ s/^\@\S+\s+//;
-				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k2\}/;
+					$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
 				}
 			} else {
 				$string =~ s/\Q$v\E/\$\{$k2\}/g;
