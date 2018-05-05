@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1397 2018/04/30 11:57:39 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1398 2018/05/05 12:50:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1917,7 +1917,7 @@ check-register-all:
 
 .for _S in ${MULTI_PACKAGES}
 
-# run under _pbuild
+# run under _pfetch
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
@@ -1935,8 +1935,9 @@ ${_CACHE_REPO}${_PKGFILE${_S}}:
 ${_PACKAGE_COOKIE${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
+	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
-	cd ${.CURDIR} && ${_PBUILD} ${MAKE} $$f && \
+	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
 		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
