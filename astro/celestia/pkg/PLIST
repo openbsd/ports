@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/07/09 01:41:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/05 11:43:30 espie Exp $
 @bin bin/celestia
 share/applications/celestia.desktop
 share/celestia/
@@ -549,8 +549,6 @@ share/celestia/textures/medres/venus.jpg
 share/celestia/textures/medres/venuslike.jpg
 share/celestia/textures/medres/venuslikenight.jpg
 share/celestia/textures/medres/venussurface.jpg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/celestia.mo
 share/locale/ar/LC_MESSAGES/celestia_constellations.mo
 share/locale/be/LC_MESSAGES/celestia.mo
@@ -576,8 +574,6 @@ share/locale/ja/LC_MESSAGES/celestia.mo
 share/locale/ja/LC_MESSAGES/celestia_constellations.mo
 share/locale/ko/LC_MESSAGES/celestia.mo
 share/locale/ko/LC_MESSAGES/celestia_constellations.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/celestia.mo
 share/locale/lt/LC_MESSAGES/celestia_constellations.mo
 share/locale/lv/LC_MESSAGES/celestia.mo
