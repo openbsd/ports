@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2018/05/04 22:31:43 solene Exp $
+# $OpenBSD: Makefile,v 1.377 2018/05/06 15:15:50 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -17,6 +17,7 @@
      SUBDIR += angband,sdl
      SUBDIR += angrydd
      SUBDIR += armagetronad
+     SUBDIR += arx-libertatis
      SUBDIR += asciiquarium
      SUBDIR += astromenace
      SUBDIR += atomix
