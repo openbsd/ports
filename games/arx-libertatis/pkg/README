@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.1.1.1 2018/05/06 15:15:00 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Arx Libertatis
+==============
+Arx Libertatis requires the original game files from Arx Fatalis to work
+properly.  These can be from an original CD, Steam, or GOG.com.
+
+The port comes with a script to install the game data. It can be invoked
+with:
+
+$ arx-install-data /path/to/setup_arx_fatalis.exe
+
+$ arx-install-data /path/to/setup_arx_fatalis_2.0.0.7.exe (GOG.com
+version, requires innoextract which is in ports)
+
+$ arx-install-data /path/to/mount/point (mountpoint of original CD)
+
+Detailed instructions are available here:
+
+http://wiki.arx-libertatis.org/Installing_the_game_data_under_Linux

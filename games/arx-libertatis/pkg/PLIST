@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/06 15:15:00 bcallah Exp $
+bin/arx
+bin/arx-install-data
+@bin bin/arxsavetool
+@bin bin/arxunpak
+@man man/man1/arxsavetool.1
+@man man/man1/arxunpak.1
+@man man/man6/arx.6
+share/applications/arx-libertatis.desktop
+share/arx/
+@bin share/arx/arx
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/pixmaps/
+share/pixmaps/arx-libertatis.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
