@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_todoist_gtd-provider-todoist_c,v 1.3 2018/05/06 09:08:08 ajacoutot Exp $
+$OpenBSD: patch-plugins_todoist_gtd-provider-todoist_c,v 1.4 2018/05/06 09:21:41 ajacoutot Exp $
 
-warning: implicit declaration of function 'strptime' is invalid in C99
+https://gitlab.gnome.org/GNOME/gnome-todo/merge_requests/39
 
 Index: plugins/todoist/gtd-provider-todoist.c
 --- plugins/todoist/gtd-provider-todoist.c.orig
