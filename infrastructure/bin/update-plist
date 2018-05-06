@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.106 2018/05/05 23:38:54 espie Exp $
+# $OpenBSD: update-plist,v 1.107 2018/05/06 15:40:15 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -976,7 +976,7 @@ sub add_missing_cvstags
 	for my $name (keys %$filenames) {
 		next if $existing->{$name};
 		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
-		    '$'.'OpenBSD'.'$');
+		    '$'.'OpenBSD: '.basename($name).',v$');
 		$o->{file} = $name;
 	}
 }
