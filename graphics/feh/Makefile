@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2018/02/11 19:23:49 kn Exp $
+# $OpenBSD: Makefile,v 1.90 2018/05/06 15:22:12 bcallah Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-2.23.1
+DISTNAME=	feh-2.26
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -27,12 +27,13 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 TEST_DEPENDS=	devel/p5-Test-Command
 
 CFLAGS+=	-I${LOCALBASE}/include \
-		-I${X11BASE}/include
+		-I${X11BASE}/include \
+		-std=gnu99
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 MAKE_FLAGS=	LDFLAGS="${LDFLAGS}" \
 		man_dir="${DESTDIR}${PREFIX}/man" \
 		example_dir="${DESTDIR}${PREFIX}/share/examples/feh" \
-		exif=1
+		exif=1 verscmp=0
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
 USE_GMAKE=	Yes

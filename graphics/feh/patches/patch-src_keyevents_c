@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_keyevents_c,v 1.17 2018/03/17 08:30:09 landry Exp $
+$OpenBSD: patch-src_keyevents_c,v 1.18 2018/05/06 15:22:12 bcallah Exp $
 Index: src/keyevents.c
 --- src/keyevents.c.orig
 +++ src/keyevents.c
-@@ -225,7 +225,7 @@ void init_keyevents(void) {
+@@ -226,7 +226,7 @@ void init_keyevents(void) {
  
  	free(confpath);
  
@@ -11,13 +11,3 @@ Index: src/keyevents.c
  		return;
  
  	while (fgets(line, sizeof(line), conf)) {
-@@ -390,7 +390,8 @@ void feh_event_handle_keypress(XEvent * ev)
- 
- fehkey *feh_str_to_kb(char *action)
- {
--	for (unsigned int i = 0; i < EVENT_LIST_END; i++) {
-+	unsigned int i;
-+	for (i = 0; i < EVENT_LIST_END; i++) {
- 		if (!strcmp(action, keys[i].name)) {
- 			return &keys[i];
- 		}
