@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.107 2018/05/06 15:40:15 espie Exp $
+# $OpenBSD: update-plist,v 1.108 2018/05/06 15:56:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -569,8 +569,7 @@ sub copy_with_tags
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
 			next if $tag->{found};
-			$tag->add_object($plist);
-			$tag->{found} = 1;
+			copy_with_tags($tag, $plist);
 		}
 	}
 }
@@ -836,16 +835,26 @@ sub may_tag_along
 package OpenBSD::PackingElement::Unexec;
 # TODO unexec's commands must be later in the plist, we should try to
 # identify them
+sub known_object
+{
+	my ($self, $exact, $approximate, $comes_after) = @_;
+	for my $i (split/\s+/, $self->{expanded}) {
+		next if $i eq "/usr/bin/env";
+		next if $i =~ m/^\-/;
+		next if $i =~ m/\=/;
+		$comes_after->{$i} = $self;
+	}
+}
 
 package OpenBSD::PackingElement::FileObject;
 use File::Basename;
 
 sub known_object
 {
-	my ($self, $h, $ap) = @_;
+	my ($self, $exact, $approximate, $comes_after) = @_;
 	my $f = $self->fullname;
-	push @{$h->{$f}}, $self;
-	delete $ap->{$f};
+	push @{$exact->{$f}}, $self;
+	delete $approximate->{$f};
 }
 
 sub known_directory
@@ -1024,6 +1033,7 @@ $state->handle_options;
 my @lists;
 my $exact = {};
 my $approximate = {};
+my $comes_after = {};
 
 if (@ARGV == 0) {
 	$state->usage;
@@ -1054,7 +1064,7 @@ while (@ARGV > 0) {
 # locations.  As a rule, "exact" information will supersede deduced directory
 # names.
 	$r->olist->known_directory($approximate, $r->olist);
-	$r->olist->known_object($exact, $approximate);
+	$r->olist->known_object($exact, $approximate, $comes_after);
 }
 
 
