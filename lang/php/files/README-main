@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2016/04/28 18:19:23 sthen Exp $
+$OpenBSD: README-main,v 1.3 2018/05/06 14:32:41 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,12 +28,6 @@ and start it at runtime:
     rcctl enable php${SV}_fpm
     rcctl start php${SV}_fpm
 
-Consult your web server documentation and sample configuration
-for further advice. In particular:
-
-    httpd(8)  /etc/examples/httpd.conf
-    nginx     ${LOCALBASE}/share/nginx/nginx.conf
-
 php-fpm has its own configuration file, ${SYSCONFDIR}/php-fpm.conf.
 This controls how the php processes are started. The default settings
 are suitable for many standard cases, but can be changed to provide
@@ -41,16 +35,23 @@ greater control for sites handling high loads or to provide
 separation between different php applications by running them
 under different uids or in individual chroot(2) jails.
 
-Apache module
--------------
-The most common option for use with Apache is the mod_php Apache module.
+Your HTTP server needs to be configured to pass requests for PHP
+resources to php-fpm. See the documentation and sample configuration.
+For nginx, an example is provided in ${LOCALBASE}/share/nginx/nginx.conf.
+For OpenBSD base's httpd(8) you can use a configuration fragment like:
+
+	location "*.php" {
+		fastcgi socket "/run/php-fpm.sock"
+	}
+
+For Apache, the most common option is with the mod_php Apache module.
 This is loaded directly as part of the web server process. Configuration
 is fairly simple, but in this case the operating system can't provide
 memory protection between the two; therefore bugs in php can potentially
 do more damage this way.
 
-Another option is to use FastCGI as described in the previous section;
-you can use mod_proxy_fcgi to interface it with Apache.
+Another option is to use FastCGI via php-fpm; you can use mod_proxy_fcgi
+to interface it with Apache.
 
 If you wish to use the Apache module, enable it by creating a
 symbolic link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
