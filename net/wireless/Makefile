@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/03 23:27:01 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/06 14:05:56 sthen Exp $
 
 COMMENT =	automatically scan for and configure wireless networks
-GH_ACCOUNT =	farhaven
-GH_PROJECT =	wireless
-GH_TAGNAME =	v4
+
+V =		5
+DISTNAME =	wireless-v$V
+PKGNAME =	wireless-$V
 
 CATEGORIES =	net
+
+HOMEPAGE =	https://github.com/farhaven/wireless
 
 MAINTAINER =	Gregor Best <gbe@unobtanium.de>
 
@@ -14,6 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge
 WANTLIB =	c
+
+MASTER_SITES =	https://github.com/farhaven/wireless/releases/download/v$V/
 
 NO_TEST =	Yes
 
