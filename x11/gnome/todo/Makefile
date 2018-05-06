@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/05 19:22:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2018/05/06 09:08:08 ajacoutot Exp $
 
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,10 +22,4 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libpeas
 
-# XXX
-# Generate this file upfront as it may not be created in time
-# due to ninja's randomization.
-pre-build:
-	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/gtd-vcs-identifier.h
 .include <bsd.port.mk>

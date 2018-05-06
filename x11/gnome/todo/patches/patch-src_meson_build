@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2018/05/06 09:08:08 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-todo/issues/170
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -99,6 +99,8 @@ sources += gnome.mkenums(
+   h_template: enum + '.h.template'
+ )
+ 
++sources += vcs_identifier_h
++
+ incs = [
+   top_inc,
+   include_directories(
