@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.108 2018/05/06 15:56:45 espie Exp $
+# $OpenBSD: update-plist,v 1.109 2018/05/06 16:14:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -992,10 +992,9 @@ sub add_missing_cvstags
 
 sub copy_from_old
 {
-	my ($e, $o) = @_;
+	my ($e, $o, $unexec) = @_;
 
 	my $s = $e->{comesfrom};
-	my $rebless = 0;
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
 		bless $e, $o->element_class;
 	}
@@ -1008,18 +1007,24 @@ sub copy_from_old
 		return;
 	}
 
-	$e->copy_with_tags($s->nlist);
+	if (defined $unexec) {
+		# XXX we need to unmark it so it can tag along
+		delete $e->{found};
+		$unexec->tag_along($e);
+	} else {
+		$e->copy_with_tags($s->nlist);
+	}
 }
 
 sub copy_existing
 {
-	my ($exact, $path, $o) = @_;
+	my ($exact, $path, $o, $comes_after) = @_;
 
 	if ($exact->{$path}) {
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
 		for my $e (@{$exact->{$path}}) {
-			copy_from_old($e, $o);
+			copy_from_old($e, $o, $comes_after->{$path});
 		}
 		return 1;
 	} else {
@@ -1105,7 +1110,7 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
-		next if copy_existing($exact, $path, $o);
+		next if copy_existing($exact, $path, $o, $comes_after);
 		my $c = $o->element_class;
 
 		my $found = 0;
