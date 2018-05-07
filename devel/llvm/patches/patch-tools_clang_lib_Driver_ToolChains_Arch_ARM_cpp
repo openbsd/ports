@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_ARM_cpp,v 1.1 2018/05/07 06:42:54 ajacoutot Exp $
+
+Switch armv7 to the "softfp" floating-point ABI.  The ABI is identical to
+the "soft" floating-point ABI but this does allow the compiler to generate
+FPU instructions.
+
+Index: tools/clang/lib/Driver/ToolChains/Arch/ARM.cpp
+--- tools/clang/lib/Driver/ToolChains/Arch/ARM.cpp.orig
++++ tools/clang/lib/Driver/ToolChains/Arch/ARM.cpp
+@@ -232,7 +232,7 @@ arm::FloatABI arm::getARMFloatABI(const ToolChain &TC,
+       break;
+ 
+     case llvm::Triple::OpenBSD:
+-      ABI = FloatABI::Soft;
++      ABI = FloatABI::SoftFP;
+       break;
+ 
+     default:
