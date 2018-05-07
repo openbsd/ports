@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2018/04/24 08:41:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2018/05/07 10:01:20 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -1037,9 +1037,7 @@ share/evolution/views/tasks/With_Status.galview
 share/evolution/views/tasks/galview.xml
 share/examples/evolution/
 share/examples/evolution/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/evolution/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/evolution/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 share/glib-2.0/schemas/org.gnome.evolution.addressbook.gschema.xml
