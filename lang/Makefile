@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2018/04/25 07:43:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.221 2018/05/07 17:55:38 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -87,6 +87,7 @@
      SUBDIR += racket-minimal
      SUBDIR += racket-minimal,no_jit
      SUBDIR += rakudo
+     SUBDIR += regina
      SUBDIR += ruby
      SUBDIR += rust
      SUBDIR += sbcl
