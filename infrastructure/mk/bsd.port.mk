@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1399 2018/05/05 12:50:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1400 2018/05/07 15:33:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -74,6 +74,7 @@ WRKOBJDIR_MFS ?= /tmp/pobj
 FAKEOBJDIR ?=
 NEW_UPDATE_PLIST ?= Yes
 UPDATE_PLIST_ARGS ?=
+UPDATE_PLIST_OPTS ?=
 
 BULK_TARGETS ?=
 BULK_DO ?=
@@ -2378,7 +2379,7 @@ _update_plist = ${_cache_fragment}; \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
-	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} --
+	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .endfor
