@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.15 2018/05/05 22:42:30 espie Exp $
+# $OpenBSD: FS2.pm,v 1.16 2018/05/07 12:15:36 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -285,6 +285,14 @@ sub tweak_other_paths
 {
 	my ($self, $fs, $files) = @_;
 	my $m = dirname(dirname($self->path));
+
+	# this should take care of language subdirectories
+	unless ($m =~ m,/man$,) {
+		$m = dirname($m);
+	}
+	# and make sure we're really a man directory
+	return unless $m =~ m,/man$,;
+
 	if (exists $files->{$m}) {
 		bless $files->{$m}, "OpenBSD::FS::File::ManDirectory";
 	}
