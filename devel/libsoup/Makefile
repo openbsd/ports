@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.112 2018/04/23 10:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2018/05/07 13:11:10 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.62.1
+GNOME_VERSION =		2.62.2
 
 SHARED_LIBS +=  soup-2.4             10.1     # 9.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 9.0
@@ -44,7 +44,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mtests}
 MODULES +=		lang/php
-BUILD_DEPENDS +=	php-${MODPHP_VSPEC}-ap2:lang/php/${MODPHP_VERSION},ap2 \
+BUILD_DEPENDS +=	lang/php/${MODPHP_VERSION} \
 			lang/php/${MODPHP_VERSION},-xmlrpc \
 			net/curl \
 			www/apache-httpd
