@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/02 19:21:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/07 07:22:54 feinerer Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.8
+V =			0.5.9
 DISTNAME =		baresip-$V
 REVISION =		0
 PKGNAME-main =		baresip-$V
@@ -15,7 +15,7 @@ WANTLIB-main += re rem sndfile sndio spandsp speex speexdsp swscale
 WANTLIB-main += twolame v4l2 vpx x264 x265
 
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB-gtk2 += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 intl mpg123 pango-1.0
 WANTLIB-gtk2 += pangocairo-1.0 pangoft2-1.0 re z
