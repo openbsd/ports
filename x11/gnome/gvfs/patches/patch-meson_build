@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.2 2018/05/03 12:22:13 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.3 2018/05/07 09:22:20 ajacoutot Exp $
 
 From 4a4d1f8cc93e9b1a03c773b3e8b32411e2efb6e0 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?I=C3=B1igo=20Mart=C3=ADnez?= <inigomartinez@gmail.com>
@@ -15,7 +15,7 @@ Index: meson.build
 +++ meson.build
 @@ -2,10 +2,7 @@ project(
    'gvfs', 'c',
-   version: '1.36.1',
+   version: '1.36.2',
    license: 'LGPL2+',
 -  default_options: [
 -    'b_lundef=true',

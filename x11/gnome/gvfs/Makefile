@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2018/04/23 12:06:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2018/05/07 09:22:20 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.36.1
+GNOME_VERSION=		1.36.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
