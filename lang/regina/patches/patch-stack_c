@@ -1,0 +1,25 @@
+$OpenBSD: patch-stack_c,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+
+time_t requires %lld
+
+Index: stack.c
+--- stack.c.orig
++++ stack.c
+@@ -1314,7 +1314,7 @@ int create_queue( tsd_t *TSD, const streng *queue_name
+          /*
+           * Create a unique queue name
+           */
+-         sprintf(buf,"S%d-%ld-%d", getpid(), clock(), st->runner++ );
++         sprintf(buf,"S%d-%lld-%d", getpid(), clock(), st->runner++ );
+          new_queue = Str_cre_TSD( TSD, buf ) ;
+       }
+       else
+@@ -1344,7 +1344,7 @@ int create_queue( tsd_t *TSD, const streng *queue_name
+                /*
+                 * Create a unique queue name
+                 */
+-               sprintf(buf,"S%d-%ld-%d", getpid(), clock(), st->runner++ );
++               sprintf(buf,"S%d-%lld-%d", getpid(), clock(), st->runner++ );
+                new_queue = Str_cre_TSD( TSD, buf ) ;
+                rc = 1;
+             }

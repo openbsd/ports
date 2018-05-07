@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+@bin bin/regina
+bin/regina-config
+@bin bin/rexx
+@bin bin/rxqueue
+@bin bin/rxstack
+include/rexxsaa.h
+lib/libregina.a
+@lib lib/libregina.so.${LIBregina_VERSION}
+@man man/man1/regina-config.1
+@man man/man1/regina.1
+@man man/man1/rxqueue.1
+@man man/man1/rxstack.1
+share/Regina-REXX/
+share/Regina-REXX/addons/
+share/Regina-REXX/addons/libregutil.so
+share/Regina-REXX/addons/librxtest1.so
+share/Regina-REXX/addons/librxtest2.so
+share/Regina-REXX/de.mtb
+share/Regina-REXX/en.mtb
+share/Regina-REXX/es.mtb
+share/Regina-REXX/examples/
+share/Regina-REXX/examples/animal.rexx
+share/Regina-REXX/examples/block.rexx
+share/Regina-REXX/examples/dateconv.rexx
+share/Regina-REXX/examples/dynfunc.rexx
+share/Regina-REXX/examples/newstr.rexx
+share/Regina-REXX/examples/regutil.rexx
+share/Regina-REXX/examples/rexxcps.rexx
+share/Regina-REXX/examples/timeconv.rexx
+share/Regina-REXX/no.mtb
+share/Regina-REXX/pl.mtb
+share/Regina-REXX/pt.mtb
+share/Regina-REXX/rxstack
+@sample ${SYSCONFDIR}/rxstack
+share/Regina-REXX/sv.mtb
+share/Regina-REXX/tr.mtb

@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+
+Force versioned shlib.
+Make sure 64-bit and 32-bit archs are properly discovered.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3492,9 +3492,11 @@ case "$target" in
+       ;;
+    *-freebsd* | *-openbsd*)
+       mach="`uname -m`"
+-      if test "$mach" = "amd64"; then
++      if test "$mach" = "amd64" -o "$mach" = "alpha" -o "$mach" = "mips64" -o "$mach" = "mips64el" -o "$mach" = "aarch64" ; then
+          bitflag="64"
+          osis64bit=yes
++      else
++         bitflag="32"
+       fi
+       ;;
+    *nto-qnx*)
+@@ -8686,13 +8688,13 @@ case "$target" in
+                    LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
+                    SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
+                 else
+-                   LD_RXLIB_A1="ld -Bdynamic -Bshareable ${LDFLAGS} -o \$(@)"
+-                   LD_RXLIB_A2="ld -Bdynamic -Bshareable ${LDFLAGS} -o \$(@)"
+-                   LD_RXLIB_UTILA="ld -Bdynamic -Bshareable ${LDFLAGS} -o \$(@)"
++                   LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
++                   LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
++                   LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
+                    LD_RXLIB_B1="-lc -L. -l${SHLFILE}"
+                    LD_RXLIB_B2="-lc -L. -l${SHLFILE}"
+                    LD_RXLIB_UTILB="-lc -L. -l${SHLFILE}"
+-                   SHL_LD="ld -Bdynamic -Bshareable ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
++                   SHL_LD="$ac_cv_prog_CC -shared ${LDFLAGS} -o ${SHLPRE}${SHLFILE}${SHLPST}.0.0 "'$('SHOFILES')'
+                 fi
+                 STATIC_LDFLAGS="-static"
+                 SHLPRE="lib"

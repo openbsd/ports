@@ -1,0 +1,34 @@
+$OpenBSD: patch-builtin_c,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+
+time_t requires %lld
+
+Index: builtin.c
+--- builtin.c.orig
++++ builtin.c
+@@ -1039,7 +1039,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
+          break ;
+ 
+       case 'L':
+-         answer->len = sprintf(answer->value, "%02d:%02d:%02d.%06ld", tmdata.tm_hour, tmdata.tm_min, tmdata.tm_sec, unow );
++         answer->len = sprintf(answer->value, "%02d:%02d:%02d.%06lld", tmdata.tm_hour, tmdata.tm_min, tmdata.tm_sec, unow );
+          break ;
+ 
+       case 'M':
+@@ -1068,7 +1068,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
+ 
+       case 'T':
+          rnow = mktime( &tmdata );
+-         answer->len = sprintf(answer->value, "%ld", rnow );
++         answer->len = sprintf(answer->value, "%lld", rnow );
+          break ;
+ 
+       default:
+@@ -1308,7 +1308,7 @@ streng *std_date( tsd_t *TSD, cparamboxptr parms )
+       case 'T':
+          tmdata.tm_year -= 1900;
+          rnow = mktime( &tmdata );
+-         answer->len = sprintf(answer->value, "%ld", rnow );
++         answer->len = sprintf(answer->value, "%lld", rnow );
+          break ;
+ 
+       case 'U':
