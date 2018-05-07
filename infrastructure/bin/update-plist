@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.110 2018/05/07 10:33:07 espie Exp $
+# $OpenBSD: update-plist,v 1.111 2018/05/07 12:24:28 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -890,7 +890,12 @@ sub write_restate
 					next;
 				}
 			}
-			$s .= " ".$p->subst->do_backsubst($self->{$k}, undef);
+			if ($k eq 'mode') {
+				$s .= " ".$self->{$k};
+			} else {
+				$s .= " ".
+				    $p->subst->do_backsubst($self->{$k}, undef);
+			}
 		} else {
 			if (!defined $p->{restate}{$k}) {
 				next;
