@@ -1,0 +1,20 @@
+nnn is probably the fastest and most resource-sensitive (with all its
+capabilities) file browser you have ever used. It's extremely flexible too -
+integrates with your DE and favourite GUI utilities, works with the desktop
+opener, supports bookmarks, has smart navigation shortcuts,
+navigate-as-you-type mode, disk usage analyzer mode, comprehensive file details
+and much more.
+
+Cool things you can do with nnn:
+
+- open any file in the default desktop application or a custom one
+- navigate-as-you-type (search-as-you-type enabled even on directory switch)
+- check disk usage with number of files in current directory tree
+- run desktop search utility (gnome-search-tool or catfish) in any directory
+- copy absolute file paths to clipboard, spawn a terminal and use the paths
+- navigate instantly using shortcuts like ~, -, & or handy bookmarks
+- use cd ..... at chdir prompt to go to a parent directory
+- detailed file stats, media info, list and extract archives
+- pin a directory you may need to revisit and jump to it anytime
+- lock the current terminal after a specified idle time
+- change directory on exit
