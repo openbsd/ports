@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2018/03/29 22:38:53 fcambus Exp $
+# $OpenBSD: Makefile,v 1.40 2018/05/07 09:33:09 fcambus Exp $
 
 V =		2.8.9
-PL =		17
+PL =		18
 COMMENT =	text web browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
-HOMEPAGE =	http://lynx.invisible-island.net/
+HOMEPAGE =	https://lynx.invisible-island.net/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB +=	c crypto curses ssl z
 
-MASTER_SITES =	http://invisible-mirror.net/archives/lynx/tarballs/ \
+MASTER_SITES =	https://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
 
 CONFIGURE_STYLE =	gnu
