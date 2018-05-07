@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.109 2018/05/06 16:14:20 espie Exp $
+# $OpenBSD: update-plist,v 1.110 2018/05/07 10:33:07 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -833,8 +833,6 @@ sub may_tag_along
 }
 
 package OpenBSD::PackingElement::Unexec;
-# TODO unexec's commands must be later in the plist, we should try to
-# identify them
 sub known_object
 {
 	my ($self, $exact, $approximate, $comes_after) = @_;
@@ -1216,7 +1214,6 @@ for my $p (@lists) {
 		add_missing_cvstags($p->nlist, $i);
 	}
 	$p->nlist->bad_suffixes($p, $state);
-	# TODO rework backsubst into redistribute, based on fullstring
 }
 
 # TODO   old make-plist noticed libraries with a LIB*_VERSION but no
