@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.1 2018/05/08 11:48:01 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.2 2018/05/08 11:53:58 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -32,8 +32,14 @@ sub AUTOLOAD
 	goto &$fullsub;
 }
 
+# this is the code that does all the heavy lifting finding variables
+# to put into plists
+
 package OpenBSD::ReverseSubst;
 our @ISA = qw(Forwarder);
+
+# this hijacks the "normal" subst code, but it does gather some useful
+# statistics
 sub new
 {
 	bless {delegate => OpenBSD::Subst->new, 
@@ -108,6 +114,8 @@ sub value
 	return $self->{delegate}->value($k);
 }
 
+# heuristics to figure out which substitutions we should never add:
+# some are "hard-coded", others are just ambiguous
 sub never_add
 {
 	my ($self, $k) = @_;
@@ -118,12 +126,14 @@ sub never_add
 	}
 }
 
-# this has to call self's add in order for reverse_subst to work properly
+# this can't delegate if reversesubst is to work properly
 sub parse_option
 {
 	&OpenBSD::Subst::parse_option;
 }
 
+# create actual reverse substitution. $unsubst is the string already stored
+# in an existing plist, to figure out ambiguous cases and empty substs
 sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
@@ -181,6 +191,7 @@ sub do_backsubst
 				next if $string =~ m/\Q$prefix\E\$\{\Q$k2\E\}/;
 				$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
 			}
+			# TODO we could also try based on suffixes ?
 		}
 	} while ($old ne $string);
 	return $string;
