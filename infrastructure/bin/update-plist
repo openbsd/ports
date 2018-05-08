@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.113 2018/05/08 11:21:25 espie Exp $
+# $OpenBSD: update-plist,v 1.114 2018/05/08 11:34:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1349,7 +1349,7 @@ for my $p (@{$self->{lists}}) {
 				print STDERR "No $name.new written\n";
 				$exitcode = 1;
 			} elsif (compare($k, "$k.new") == 0) {
-				unlink("$k.new");
+				unlink("$k.new") unless $self->{state}->not;
 			} else {
 				print "$name changed";
 				push(@towrite, $k);
@@ -1369,6 +1369,10 @@ for my $p (@{$self->{lists}}) {
 
 if ($cantmove) {
 	exit(2);
+}
+
+if ($self->{state}->not) {
+	exit($exitcode);
 }
 
 for my $k (@towrite) {
