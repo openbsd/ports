@@ -1,0 +1,6 @@
+YAPF is a formatter based off of 'clang-format'. In essence, the algorithm takes
+the code and reformats it to the best formatting that conforms to the style
+guide, even if the original code didn't violate the style guide. If the whole
+codebase of a project is simply piped through YAPF whenever modifications are
+made, the style remains consistent throughout the project and there's no point
+arguing about style in every code review.
