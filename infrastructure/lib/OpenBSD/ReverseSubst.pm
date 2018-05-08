@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.2 2018/05/08 11:53:58 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.3 2018/05/08 11:56:25 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -42,6 +42,7 @@ our @ISA = qw(Forwarder);
 # statistics
 sub new
 {
+	my ($class, $state) = @_;
 	bless {delegate => OpenBSD::Subst->new, 
 	    # count the number of times we see each value. More than once,
 	    # hard to figure out WHICH one to backsubst
@@ -63,7 +64,7 @@ sub new
 	    l => [],
 	    # variables that expand to nothing have specific handling
 	    lempty => [],
-	    }, shift;
+	    }, $class;
 }
 
 my $ignore = {

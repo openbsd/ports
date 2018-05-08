@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.115 2018/05/08 11:48:01 espie Exp $
+# $OpenBSD: update-plist,v 1.116 2018/05/08 11:56:25 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -260,7 +260,7 @@ our @ISA = qw(OpenBSD::PkgCreate::State);
 sub init
 {
 	my ($self, $realstate) = @_;
-	$self->{subst} = OpenBSD::ReverseSubst->new;
+	$self->{subst} = OpenBSD::ReverseSubst->new($realstate);
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
 	$self->{repo} = $realstate->{repo};
