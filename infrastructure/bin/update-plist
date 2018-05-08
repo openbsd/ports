@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.120 2018/05/08 13:23:51 espie Exp $
+# $OpenBSD: update-plist,v 1.121 2018/05/08 16:00:19 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -495,7 +495,6 @@ sub tag_directories
 	$h->{$self->fullname} = $self;
 }
 
-# dir-like objects HAVE a / added at the end...
 package OpenBSD::PackingElement::DirBase;
 sub bookmark
 {
@@ -651,7 +650,7 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
-# likewise, sampledirs do not need to become normal dirs
+# likewise, sampledirs do not want to become normal dirs
 sub rebless_okay { 0 }
 
 # those are objects that only exist in update-plist
@@ -703,6 +702,7 @@ package OpenBSD::PackingElement::Unexec;
 sub known_object
 {
 	my ($self, $o) = @_;
+	# figure out possible commands in the list
 	for my $i (split/\s+/, $self->{expanded}) {
 		next if $i eq "/usr/bin/env";
 		next if $i =~ m/^\-/;
@@ -812,6 +812,8 @@ sub write_backsubst
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
+		# XXX do we want to do backsubst on the variable name ?
+		# there's one port that uses that "feature"
 		my $s = $p->subst->do_backsubst("${path}lib$name.so.", 
 		    $self->{unsubst})."\$\{$k\}";
 		$self->check_lib_version($version, $name, 
@@ -972,7 +974,7 @@ sub copy_from_old
 		bless $e, $o->element_class;
 	}
 
-	# mark it for later
+	# mark it for later (see add_delayed_objects)
 	if ($e->cwd ne $s->{state}{prefix} && 
 	    # XXX doesn't apply to @rcscript
 	    $o->stage == 1) {
@@ -1020,7 +1022,8 @@ sub handle_annotations
 	}
 
 	# THEN we attach annotations to the closest known object
-	# This ought to work better if files vanish
+	# This is sturdy when files vanish, as we tag along with
+	# the nearest file
 	$self->{state}->say("Tieing loose objects");
 	for my $p (@{$self->{lists}}) {
 		$p->olist->tie_objects($p->olist);
@@ -1061,7 +1064,6 @@ sub walk_up_directory
 sub last_resort
 {
 	my ($self, $path, $c) = @_;
-	# last resort:
 	# try all lists in order, until we find one with 
 	# the right prefix
 	for my $p (@{$self->{lists}}) {
@@ -1100,6 +1102,9 @@ sub copy_objects
 {
 	my $self = shift;
 	$self->{state}->say("Copying objects");
+	# XXX stage 2 is for rcscript, which are kind of special with
+	# their included cwd (why did I do things that way again?
+	# check why absolute_okay is not enough)
 	for my $stage (1, 2) {
 		for my $path (sort keys %{$self->{objects}}) {
 			$self->copy_object($stage, $path);
@@ -1110,9 +1115,10 @@ sub copy_objects
 sub add_delayed_objects
 {
 	my $self = shift;
-	# now we can handle stuff outside of cwd, if needed
+	# now we can handle stuff outside of cwd, if that applies
 	for my $p (@{$self->{lists}}) {
 		my $cwd = $p->{state}{prefix};
+		# we destate the cwd to try to minimize dir changes
 		for my $e (@{$p->{badcwd}}) {
 			if ($e->cwd ne $cwd) {
 				$cwd = $e->cwd;
@@ -1154,7 +1160,7 @@ sub strip_dependency_directories
 		$p->nlist->process_dependency($cache->{$pkgpath});
 	}
 
-	# and redo the zapping all over again
+	# and redo the zapping all over again, now that we fudged the cache
 	for my $p (@{$self->{lists}}) {
 		if (%{$p->{directory_register}}) {
 			$p->figure_out_dependencies($cache, $portsdir);
@@ -1219,6 +1225,8 @@ $self->parse_args;
 $self->scan_fake_dir;
 $self->handle_annotations;
 $self->copy_objects;
+
+# XXX check the order of delayed objects (cwd) vs extra files (no actual cwd)?
 $self->add_delayed_objects;
 $self->strip_dependency_directories;
 $self->adjust_final;
@@ -1238,7 +1246,7 @@ $self->display_stripped_info;
 # variables!
 $self->write_new_files;
 
-# this is the final adjustment
+# and now, we figure out where to move the new files
 my @towrite = ();
 my $cantmove = 0;
 
