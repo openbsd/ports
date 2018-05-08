@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.3 2018/05/08 08:05:48 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.4 2018/05/08 11:36:43 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -68,6 +68,10 @@ location in order to scan dependencies to trim common directories.
 .Pp
 The options are as follows:
 .Bl -tag -width Ds
+.It Fl n
+do not move the final plists in position. Instead, leave the
+.Pa <file>.new
+files for comparison.
 .It Fl r
 run the
 .Pa fake
