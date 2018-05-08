@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.5 2018/05/08 13:09:32 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.6 2018/05/08 13:13:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -71,7 +71,7 @@ sub new
 		}
 	}
 	if (defined $state->{start_only}) {
-		for my $v (@{$state->{dont_backsubst}}) {
+		for my $v (@{$state->{start_only}}) {
 			$o->{start_only}{$v} = 1;
 		}
 	}
