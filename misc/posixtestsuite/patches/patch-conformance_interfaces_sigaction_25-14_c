@@ -1,0 +1,22 @@
+$OpenBSD: patch-conformance_interfaces_sigaction_25-14_c,v 1.1 2018/05/08 22:13:36 bluhm Exp $
+
+Check error code of fork(2).
+
+Index: conformance/interfaces/sigaction/25-14.c
+--- conformance/interfaces/sigaction/25-14.c.orig
++++ conformance/interfaces/sigaction/25-14.c
+@@ -59,7 +59,13 @@ void handler(int signo)
+ 
+ int main()
+ {
+-	if (fork() == 0) {
++	pid_t pid;
++
++	pid = fork();
++	if (pid == -1) {
++		perror("fork");
++		return PTS_UNRESOLVED;
++	} else if (pid == 0) {
+ 		/* child */
+ 
+ 		struct sigaction act;

@@ -1,0 +1,20 @@
+$OpenBSD: patch-conformance_interfaces_sigaction_11-1_c,v 1.1 2018/05/08 22:13:36 bluhm Exp $
+
+Check error code of fork(2).
+
+Index: conformance/interfaces/sigaction/11-1.c
+--- conformance/interfaces/sigaction/11-1.c.orig
++++ conformance/interfaces/sigaction/11-1.c
+@@ -51,7 +51,11 @@ int main()
+ 	sigemptyset(&act.sa_mask);
+ 	sigaction(SIGCHLD,  &act, 0);     
+ 
+-	if ((pid = fork()) == 0) {
++	pid = fork();
++	if (pid == -1) {
++		perror("fork");
++		return PTS_UNRESOLVED;
++	} else if (pid == 0) {
+ 		/* child */
+ 		while(1) {
+ 			/* wait forever, or until we are 

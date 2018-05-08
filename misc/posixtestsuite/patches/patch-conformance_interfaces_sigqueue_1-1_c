@@ -1,0 +1,20 @@
+$OpenBSD: patch-conformance_interfaces_sigqueue_1-1_c,v 1.1 2018/05/08 22:13:36 bluhm Exp $
+
+Check error code of fork(2).
+
+Index: conformance/interfaces/sigqueue/1-1.c
+--- conformance/interfaces/sigqueue/1-1.c.orig
++++ conformance/interfaces/sigqueue/1-1.c
+@@ -40,7 +40,11 @@ int main()
+ {
+ 	int pid;
+ 
+-	if ((pid = fork()) == 0) {
++	pid = fork();
++	if (pid == -1) {
++		perror("fork");
++		return PTS_UNRESOLVED;
++	} else if (pid == 0) {
+ 		/* child here */
+ 		struct sigaction act;
+ 		act.sa_flags=SA_SIGINFO;
