@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.117 2018/05/08 12:47:46 espie Exp $
+# $OpenBSD: update-plist,v 1.118 2018/05/08 13:09:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -846,10 +846,15 @@ sub handle_options
 		'w' => sub {
 			my $warn = shift;
 			push(@{$state->{warn_suffix}}, $warn);
-		},
+		    },
+		'i' => sub {
+			my $var = shift;
+			push(@{$state->{dont_backsubst}}, $var);
+		    },
 	};
-	$state->SUPER::handle_options('rvX:P:w:', 
-	    '[-mnrvx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rvi:s:X:P:w:', 
+	    '[-mnrvx] [-i var] [-P pkgdir] [-s var] [-w suffix]',
+	    '[-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');

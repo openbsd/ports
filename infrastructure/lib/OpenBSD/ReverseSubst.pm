@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.4 2018/05/08 12:19:40 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.5 2018/05/08 13:09:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -43,7 +43,7 @@ our @ISA = qw(Forwarder);
 sub new
 {
 	my ($class, $state) = @_;
-	bless {delegate => OpenBSD::Subst->new, 
+	my $o = bless {delegate => OpenBSD::Subst->new, 
 	    # count the number of times we see each value. More than once,
 	    # hard to figure out WHICH one to backsubst
 	    count => {}, 
@@ -65,6 +65,17 @@ sub new
 	    # variables that expand to nothing have specific handling
 	    lempty => [],
 	    }, $class;
+	if (defined $state->{dont_backsubst}) {
+		for my $v (@{$state->{dont_backsubst}}) {
+			$o->{special}{$v} = 1;
+		}
+	}
+	if (defined $state->{start_only}) {
+		for my $v (@{$state->{dont_backsubst}}) {
+			$o->{start_only}{$v} = 1;
+		}
+	}
+	return $o;
 }
 
 # those are actually just passed thru to pkg_create for special
@@ -155,7 +166,7 @@ sub unsubst_non_empty_var
 		    $unsubst !~ m/\$\{$k2\}/;
 	}
 		
-	if ($k =~ m/^\^(.*)$/) {
+	if ($k =~ m/^\^(.*)$/ || $subst->{start_only}{$k}) {
 		my $v = $subst->value($k2);
 		$string =~ s/^\Q$v\E/\$\{$k2\}/;
 		$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
