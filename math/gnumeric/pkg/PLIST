@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2018/04/30 09:17:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/05/08 08:01:42 ajacoutot Exp $
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert
@@ -297,7 +297,6 @@ share/glib-2.0/schemas/org.gnome.gnumeric.gschema.xml
 share/glib-2.0/schemas/org.gnome.gnumeric.plugin.gschema.xml
 share/gnumeric/
 share/gnumeric/${GNOME_VERSION}/
-share/gnumeric/${GNOME_VERSION}/GNOME_Gnumeric-gtk.xml
 share/gnumeric/${GNOME_VERSION}/Gnumeric-embed.xml
 share/gnumeric/${GNOME_VERSION}/autoformat-templates/
 share/gnumeric/${GNOME_VERSION}/autoformat-templates/3D/
