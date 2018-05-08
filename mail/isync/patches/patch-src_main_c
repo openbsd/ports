@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_main_c,v 1.3 2018/05/08 22:07:42 kn Exp $
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -120,6 +120,8 @@ PACKAGE " " VERSION " - mailbox synchronizer\n"
+ 	exit( code );
+ }
+ 
++int needs_proc_exec = 0;
++
+ static void ATTR_PRINTFLIKE(1, 2)
+ debug( const char *msg, ... )
+ {
+@@ -716,6 +718,29 @@ main( int argc, char **argv )
+ 
+ 	if (load_config( config, pseudo ))
+ 		return 1;
++
++	if (mvars->list) {
++		if (needs_proc_exec) {
++			if (pledge("stdio rpath inet flock dns getpw proc exec"
++			    " prot_exec", NULL) == -1)
++				sys_error("pledge\n");
++		} else {
++			if (pledge("stdio rpath inet flock dns getpw"
++			    " prot_exec",
++			    NULL) == -1)
++				sys_error("pledge\n");
++		}
++	} else {
++		if (needs_proc_exec) {
++			if (pledge("stdio rpath wpath cpath inet flock dns"
++			    " getpw proc exec prot_exec", NULL) == -1)
++				sys_error("pledge\n");
++		} else {
++			if (pledge("stdio rpath wpath cpath inet flock dns"
++			    " getpw prot_exec", NULL) == -1)
++				sys_error("pledge\n");
++		}
++	}
+ 
+ 	if (!channels) {
+ 		fputs( "No channels defined. Try 'man " EXE "'\n", stderr );

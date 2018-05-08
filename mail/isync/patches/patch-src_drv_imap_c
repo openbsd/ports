@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_drv_imap_c,v 1.1 2018/05/08 22:07:42 kn Exp $
+
+Index: src/drv_imap.c
+--- src/drv_imap.c.orig
++++ src/drv_imap.c
+@@ -41,6 +41,8 @@
+ # include <sasl/saslutil.h>
+ #endif
+ 
++extern int needs_proc_exec;
++
+ #ifdef HAVE_LIBSSL
+ enum { SSL_None, SSL_STARTTLS, SSL_IMAPS };
+ #endif
+@@ -3267,6 +3269,8 @@ imap_parse_store( conffile_t *cfg, store_conf_t **stor
+ 		}
+ 		acc_opt = 1;
+ 	}
++	if (server->sconf.tunnel || server->pass_cmd)
++		needs_proc_exec = 1;
+ 	if (store)
+ 		type = "IMAP store", name = store->gen.name;
+ 	else

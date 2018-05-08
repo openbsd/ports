@@ -1,16 +1,21 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/17 00:22:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2018/05/08 22:07:42 kn Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.3.0
+REVISION=	0
+
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
 HOMEPAGE=	http://isync.sourceforge.net/
 
-# GPLv2
+MAINTAINER=	Klemens Nanni <kn@openbsd.org>
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB= c crypto db sasl2 ssl z
 
 COMPILER=		base-clang ports-clang ports-gcc
@@ -20,7 +25,7 @@ LIB_DEPENDS=		databases/db/v4 \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4 -g" \
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
