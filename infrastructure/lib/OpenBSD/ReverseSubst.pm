@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.3 2018/05/08 11:56:25 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.4 2018/05/08 12:19:40 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -67,23 +67,21 @@ sub new
 	    }, $class;
 }
 
+# those are actually just passed thru to pkg_create for special
+# purposes, we don't need to consider them at all
 my $ignore = {
 	COMMENT => 1,
 	MAINTAINER => 1,
 	PERMIT_PACKAGE_CDROM => 1,
 	PERMIT_PACKAGE_FTP => 1,
 	HOMEPAGE => 1,
-	REVISION => 1,
-	EPOCH => 1,
 };
-
-
 
 sub add
 {
 	my ($self, $k, $v) = @_;
 	# XXX whatever is before FLAVORS is internal pkg_create options
-	# so ignore them
+	# such as flavor conditionals, so ignore them
 	if ($k eq 'FLAVORS') {
 		$self->{l} = [];
 		$self->{count} = {};
@@ -133,6 +131,43 @@ sub parse_option
 	&OpenBSD::Subst::parse_option;
 }
 
+sub unsubst_non_empty_var
+{
+	my ($subst, $string, $k, $unsubst) = @_;
+	my $k2 = $k;
+	$k2 =~ s/^\^//;
+	# don't add subst on THOSE variables
+	# TODO ARCH, MACHINE_ARCH could happen, but only with word
+	#  boundary contexts
+	if ($subst->never_add($k2)) {
+		unless (defined $unsubst &&
+		    $unsubst =~ m/\$\{\Q$k2\E\}/) {
+			# add a magical location for FULLPKGNAME
+			return $string unless $k2 eq 'FULLPKGNAME' &&
+			    $string =~ m,^share/doc/pkg-readmes/,;
+		}
+	} else {
+		# Heuristics: if the variable is already known AND was 
+		# not used already, then we don't try to use it
+		# XXX should we look for the value in $unsubst ?
+		return $string if defined $unsubst &&
+		    $subst->{used}{$k2} &&
+		    $unsubst !~ m/\$\{$k2\}/;
+	}
+		
+	if ($k =~ m/^\^(.*)$/) {
+		my $v = $subst->value($k2);
+		$string =~ s/^\Q$v\E/\$\{$k2\}/;
+		$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
+	} else {
+		# TODO on the other hand, numeric and version-like
+		# variables shouldn't substitute partial numbers
+		my $v = $subst->value($k);
+		$string =~ s/\Q$v\E/\$\{$k2\}/g;
+	}
+	return $string;
+}
+
 # create actual reverse substitution. $unsubst is the string already stored
 # in an existing plist, to figure out ambiguous cases and empty substs
 sub do_backsubst
@@ -144,36 +179,7 @@ sub do_backsubst
 	    {length($subst->value($b)) <=> length($subst->value($a))} 
 	    @{$subst->{l}}];
 	for my $k (@{$subst->{vars}}) {
-		my $k2 = $k;
-		$k2 =~ s/^\^//;
-		# don't add subst on THOSE variables
-		# TODO ARCH, MACHINE_ARCH could happen, but only with word
-		#  boundary contexts
-		if ($subst->never_add($k2)) {
-			unless (defined $unsubst &&
-			    $unsubst =~ m/\$\{\Q$k2\E\}/) {
-			    	# add a magical location for FULLPKGNAME
-			    	next unless $k2 eq 'FULLPKGNAME' &&
-				    $string =~ m,^share/doc/pkg-readmes/,;
-			}
-		} else {
-			# Heuristics: if the variable is already known AND was 
-			# not used already, then we don't try to use it
-			next if defined $unsubst &&
-			    $subst->{used}{$k2} &&
-			    $unsubst !~ m/\$\{$k2\}/;
-		}
-		    	
-		if ($k =~ m/^\^(.*)$/) {
-			my $v = $subst->value($k2);
-			$string =~ s/^\Q$v\E/\$\{$k2\}/;
-			$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
-		} else {
-			# TODO on the other hand, numeric and version-like
-			# variables shouldn't substitute partial numbers
-			my $v = $subst->value($k);
-			$string =~ s/\Q$v\E/\$\{$k2\}/g;
-		}
+		$string = $subst->unsubst_non_empty_var($string, $k, $unsubst);
 	}
 
 	# we can't do empty subst without an unsubst;
