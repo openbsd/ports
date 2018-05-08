@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.5 2018/05/08 13:13:20 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.6 2018/05/08 13:23:51 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -26,6 +26,7 @@
 .Nm update-plist
 .Op Fl mnrvx
 .Op Fl i Ar var
+.Op Fl S Ar var
 .Op Fl s Ar var
 .Op Fl X Ar path
 .Op Fl w Ar suffix
@@ -83,6 +84,12 @@ files for comparison.
 run the
 .Pa fake
 directory scan as root.
+.It Fl S Ar var
+consider variable for substitution only at the end of paths,
+e.g., for suffixes like
+.Pa .pyc
+or
+.Pa .pyo .
 .It Fl s Ar var
 consider variable for substitution only at start of paths,
 e.g., for directories like

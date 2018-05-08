@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.6 2018/05/08 13:13:20 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.7 2018/05/08 13:23:51 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -73,6 +73,11 @@ sub new
 	if (defined $state->{start_only}) {
 		for my $v (@{$state->{start_only}}) {
 			$o->{start_only}{$v} = 1;
+		}
+	}
+	if (defined $state->{suffix_only}) {
+		for my $v (@{$state->{suffix_only}}) {
+			$o->{suffix_only}{$v} = 1;
 		}
 	}
 	return $o;
@@ -166,14 +171,16 @@ sub unsubst_non_empty_var
 		    $unsubst !~ m/\$\{$k2\}/;
 	}
 		
+	my $v = $subst->value($k2);
 	if ($k =~ m/^\^(.*)$/ || $subst->{start_only}{$k}) {
-		my $v = $subst->value($k2);
 		$string =~ s/^\Q$v\E/\$\{$k2\}/;
 		$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
+	} elsif ($subst->{suffix_only}{$k}) {
+		$string =~ s/\Q$v\E$/\$\{$k2\}/;
+		$string =~ s/\Q$v\E([\s:=])/\$\{$k2\}$1/g;
 	} else {
 		# TODO on the other hand, numeric and version-like
 		# variables shouldn't substitute partial numbers
-		my $v = $subst->value($k);
 		$string =~ s/\Q$v\E/\$\{$k2\}/g;
 	}
 	return $string;
