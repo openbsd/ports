@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/05/06 14:32:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/05/08 12:04:55 martijn Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
@@ -25,21 +25,21 @@ pre-patch:
 .endif
 
 # mysql
-MULTI_PACKAGES+=	-mysql
+PHP_EXTENSIONS+=	-mysql
 COMMENT-mysql=		mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
 LIB_DEPENDS-mysql=	databases/mariadb
 WANTLIB-mysql=		pthread lib/mysql/mysqlclient
 
 # sybase-ct
-MULTI_PACKAGES+=	-sybase_ct
+PHP_EXTENSIONS+=	-sybase_ct
 COMMENT-sybase_ct=	sybase database access extensions for php5
 CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	databases/freetds
 WANTLIB-sybase_ct=	ct pthread
 
 # mssql
-MULTI_PACKAGES+=	-mssql
+PHP_EXTENSIONS+=	-mssql
 COMMENT-mssql=		microsoft sql access extensions for php5
 CONFIGURE_ARGS+=        --with-mssql=shared,${LOCALBASE}
 LIB_DEPENDS-mssql=	databases/freetds
