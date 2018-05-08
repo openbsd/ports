@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.116 2018/05/08 11:56:25 espie Exp $
+# $OpenBSD: update-plist,v 1.117 2018/05/08 12:47:46 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -136,10 +136,45 @@ sub write_all
 	}
 }
 
+# PlistReader is "just" a specialized version of PkgCreate algorithm
+# that does mimic what PkgCreate reader does with a few specialized methods
 package PlistReader;
 our @ISA = qw(OpenBSD::PkgCreate);
 
-# this is where the magic happens:
+sub new
+{
+	my $class = shift;
+	bless { olist => OpenBSD::PackingList->new,
+		nlist => OpenBSD::PackingList->new }, $class;
+}
+
+sub olist
+{
+	my $self = shift;
+	return $self->{olist};
+}
+
+sub nlist
+{
+	my $self = shift;
+	return $self->{nlist};
+}
+
+sub strip_prefix
+{
+	my ($self, $path) = @_;
+	$path =~ s,^\Q$self->{state}{prefix}\E/,,;
+	return $path;
+}
+
+sub subst
+{
+	my $self = shift;
+	return $self->{state}{subst};
+}
+
+
+# this is where the magic happens, with the specialized methods
 # e is the plist element
 # self is the reader (with pkgname et al)
 # file is the fileclass where this comes from
@@ -188,47 +223,19 @@ sub missing_fragments
 {
 }
 
-sub new
-{
-	my $class = shift;
-	bless { olist => OpenBSD::PackingList->new,
-		nlist => OpenBSD::PackingList->new }, $class;
-}
-
-sub olist
-{
-	my $self = shift;
-	return $self->{olist};
-}
-
-sub nlist
-{
-	my $self = shift;
-	return $self->{nlist};
-}
-
-sub strip_prefix
-{
-	my ($self, $path) = @_;
-	$path =~ s,^\Q$self->{state}{prefix}\E/,,;
-	return $path;
-}
-
-sub subst
-{
-	my $self = shift;
-	return $self->{state}{subst};
-}
 
 sub figure_out_dependencies
 {
 	my ($self, $cache, $portsdir) = @_;
 	my @solve = ();
 	my $register = $self->{directory_register};
+	# compute initial list of dependencies
 	for my $full (keys %{$self->{state}{dependencies}}) {
 		next unless $full =~ m/^(.*?):/;
 		push(@solve, $1);
 	}
+
+	# and do the walk
 	while (@solve != 0) {
 		# optimization: don't try if we don't have directories left
 		return if !%$register;
@@ -254,9 +261,12 @@ sub figure_out_dependencies
 	}
 }
 
+# specialized state
 package PlistReader::State;
 our @ISA = qw(OpenBSD::PkgCreate::State);
 
+# mostly make sure we don't care about problems, that our subst records stuff
+# and that we have a progressmeter
 sub init
 {
 	my ($self, $realstate) = @_;
@@ -266,46 +276,43 @@ sub init
 	$self->{repo} = $realstate->{repo};
 }
 
-package UpdatePlist::State;
-our @ISA = qw(OpenBSD::AddCreateDelete::State);
-sub handle_options
-{
-	my $state = shift;
-	$state->{opt} = {
-		'X' => sub {
-			my $path = shift;
-			$state->{ignored}{$path} = 1;
-		    },
-		'w' => sub {
-			my $warn = shift;
-			push(@{$state->{warn_suffix}}, $warn);
-		},
-	};
-	$state->SUPER::handle_options('rvX:P:w:', 
-	    '[-mnrvx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
-    	$state->{pkgdir} = $state->opt('P');
-	$state->{scan_as_root} = $state->opt('r');
-	$state->{verbose} = $state->opt('v');
-}
 
-# copy_extra: stuff that can't be easily deduced but should be copied
+# Most of the heavy lifting is done by visitor methods, as always
+
 package OpenBSD::PackingElement;
+
+# record everything we need to know about the object:
+# exact file name, approximate directories, possible command names
+# that must come after unexec
 sub known_object
 {
 }
 
-sub process_dependency
-{
-}
-
+# record known directories and their parents as anchors for new objects
+# note we can't mark directories for stripping yet, as we don't have them all
 sub known_directory
 {
 }
 
+# while scanning a dependency, note further dependencies to process,
+# and directories we can strip
+sub process_dependency
+{
+}
+
+# keep a record of directories that can get removed by dependencies
+sub tag_directories
+{
+}
+
+# non-file objects that can be copied directly, as their location is automatic
+# (e.g., conflict, pkgpath, etc)
 sub copy_annotations
 {
 }
 
+# the actual method that stores the objects for writing, dispatching them
+# to the correct fragment
 sub redistribute
 {
 	my ($o, $p) = @_;
@@ -317,6 +324,12 @@ sub redistribute
 	}
 }
 
+# the actual method that keeps state (@mode/@owner/@group) and does
+# backsubstitution and writing.
+# part of the state is the current fragment, so it should return the
+# new filename when it changes
+# Note that this is not called as a visitor, but directly by the FileTracker
+# on the lists it builds
 sub write_restate
 {
 	my ($o, $file, $p) = @_;
@@ -324,6 +337,8 @@ sub write_restate
 	return undef;
 }
 
+# default backsubstitution and writing. Adequate for almost everything
+# but @libs
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
@@ -331,10 +346,14 @@ sub write_backsubst
 	print {$file->fh} $s, "\n";
 }
 
-sub copy_extra
+# extra objects that get copied very late (e.g., @extra)
+sub copy_extra 
 {
 }
 
+
+# some objects will have lists of tags, so that when they get copied
+# the tags come with them
 sub tag_along
 {
 	my ($self, $n) = @_;
@@ -342,6 +361,10 @@ sub tag_along
 	push(@{$self->{mytags}}, $n);
 }
 
+# this is the actual marking for later:
+# we "keep state" of objects that accept tags (because they were found
+# so we know we'll get them)
+# and objects that are not found will tag along if appropriate
 sub tie_objects
 {
 	my ($self, $plist) = @_;
@@ -352,6 +375,7 @@ sub tie_objects
 	}
 }
 
+# so this will use the default attach_to_lastobject mostly
 sub attach_to_lastobject
 {
 	my ($self, $plist) = @_;
@@ -360,22 +384,23 @@ sub attach_to_lastobject
 	}
 }
 
+# if the object is appropriate, it becomes a last object
 sub bookmark
 {
 }
 
+# if the object is appropriate, it will tag along
 sub may_tag_along
 {
 }
 
-sub tag_directories
-{
-}
-
+# warn about files with a wrong name (.swp, ~, .orig)
 sub bad_suffixes
 {
 }
 
+# record every cvstag in existence and files that will be written
+# so that files without a cvstag will gain one
 sub find_existing_cvstags
 {
 	my ($self, $filenames, $existing) = @_;
@@ -393,6 +418,8 @@ sub show_unknown
 	}
 }
 
+# this is not used as a visitor, but rather invoked explicitly when copying
+# an object that can have tags
 sub copy_with_tags
 {
 	my ($self, $plist) = @_;
@@ -514,7 +541,7 @@ sub write_backsubst
 	$o->write($file->fh);
 }
 
-# these are not really in the plist on disk!
+# this is extra stuff that PkgCreate  builds but that we don't want to copy
 package OpenBSD::PackingElement::Name;
 sub copy_annotations
 {
@@ -552,13 +579,13 @@ sub show_unknown
 }
 
 package OpenBSD::PackingElement::Comment;
+# comments need to pretend they're like file objects, so that you can comment
+# file objects
 sub fullname
 {
 	my $self = shift;
-	# let's pretend we're an object!!!
 	my $path = $self->name;
-	# TODO strip every keyword for matching, we may need to 
-	# be more particular
+	# strip every keyword for matching
 	$path =~ s/^\@\w+\s+//;
 	if ($path !~ m|^/|o && $self->cwd ne '.') {
 		$path = $self->cwd."/".$path;
@@ -568,6 +595,8 @@ sub fullname
 	return $path;
 }
 
+# comments that are not found as actual paths will tag along after the last
+# object they saw
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
@@ -586,9 +615,10 @@ sub cwd
 
 sub copy_annotations
 {
-	# nope these are not normal annotations
+	# nope these are not normal annotations we can copy
 }
 
+# if a file was commented, do not bring it back as a real file
 sub rebless_okay { 0 }
 
 package OpenBSD::PackingElement::Sample;
@@ -621,15 +651,19 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
+# likewise, sampledirs do not need to become normal dirs
 sub rebless_okay { 0 }
 
+# those are objects that only exist in update-plist
 package OpenBSD::PackingElement::Fragment;
+# copy them in the right location
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
 	$self->attach_to_lastobject($plist);
 }
 
+# while writing, change file accordingly
 sub write_restate
 {
 	my ($self, $file, $p) = @_;
@@ -645,7 +679,7 @@ sub write_restate
 sub frag
 {
 	my $self = shift;
-	return "$self->{name}";
+	return $self->{name};
 }
 
 package OpenBSD::PackingElement::NoFragment;
@@ -750,6 +784,7 @@ sub bookmark
 }
 
 package OpenBSD::PackingElement::Shell;
+# we have no way to figure out @shell
 sub rebless_okay { 0 }
 
 package OpenBSD::PackingElement::Lib;
@@ -794,6 +829,30 @@ sub copy_extra
 
 	$self->{found} = 1;
 	$self->clone->add_object($plist);
+}
+
+
+# This is the UpdatePlist main code proper
+package UpdatePlist::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+sub handle_options
+{
+	my $state = shift;
+	$state->{opt} = {
+		'X' => sub {
+			my $path = shift;
+			$state->{ignored}{$path} = 1;
+		    },
+		'w' => sub {
+			my $warn = shift;
+			push(@{$state->{warn_suffix}}, $warn);
+		},
+	};
+	$state->SUPER::handle_options('rvX:P:w:', 
+	    '[-mnrvx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+    	$state->{pkgdir} = $state->opt('P');
+	$state->{scan_as_root} = $state->opt('r');
+	$state->{verbose} = $state->opt('v');
 }
 
 package UpdatePlist;
