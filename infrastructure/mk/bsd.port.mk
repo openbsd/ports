@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1400 2018/05/07 15:33:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1401 2018/05/08 08:09:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -72,7 +72,6 @@ USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
 WRKOBJDIR_MFS ?= /tmp/pobj
 FAKEOBJDIR ?=
-NEW_UPDATE_PLIST ?= Yes
 UPDATE_PLIST_ARGS ?=
 UPDATE_PLIST_OPTS ?=
 
@@ -1016,7 +1015,6 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
 	FULLPKGNAME MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX \
 	^RCDIR ^LOCALSTATEDIR
-_tmpvars =
 
 _PKG_ADD_AUTO ?=
 .if !empty(_DEPENDENCY_STACK)
@@ -1038,7 +1036,6 @@ _PKG_ARGS += -Dno_mips64=1
 .endif
 
 _PKG_ARGS += -DFLAVORS=${FLAVOR_EXT:Q}
-_tmpvars += FLAVORS=${FLAVOR_EXT:Q}
 _PKG_ARGS += -B ${WRKINST}
 .if ${LOCALBASE} != "/usr/local"
 _PKG_ARGS += -L${LOCALBASE}
@@ -1050,10 +1047,8 @@ PKG_ARGS${_S} += ${_PKG_ARGS}
 .  for _v in ${SUBST_VARS}
 .    if defined(${_v:S/^^//}${_S})
 _substvars${_S} += -D${_v}=${${_v:S/^^//}${_S}:Q}
-_tmpvars += ${_v}${_S}=${${_v:S/^^//}${_S}:Q}
 .    else
 _substvars${_S} += -D${_v}=${${_v:S/^^//}:Q}
-_tmpvars += ${_v}=${${_v:S/^^//}:Q}
 .    endif
 .  endfor
 
@@ -2362,17 +2357,10 @@ _internal-test:
 _internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 .  endif
 
-# packing list utilities.  This generates a packing list from a recently
-# installed port.  Not perfect, but pretty close.  The generated file
+# packing list utilities.  This generates a packing list from the WRKINST
+# directory. Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
-# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=OpenBSD, vers=${OSREV})
-# when port is installed or package created.
-#
-_extra_info =
-.  for _s in ${MULTI_PACKAGES}
-_extra_info += PLIST${_s}='${PLIST${_s}}'
-_extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends)"
-.  endfor
+# In particular, since we no longer run fake as root
 
 _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
@@ -2388,20 +2376,7 @@ _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
-.if ${NEW_UPDATE_PLIST:L} == "yes"
 	@${_update_plist}
-.else
-	@DESTDIR=${WRKINST} \
-	PREFIX=${TRUEPREFIX} \
-	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	MAKE="${MAKE}" \
-	PORTSDIR=${PORTSDIR} \
-	PORTSDIR_PATH=${PORTSDIR_PATH} \
-	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${BUILD_PACKAGES}' \
-	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE} ${WRKINST}/.saved_libs' \
-	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/make-plist \
-	${_extra_info} ${_tmpvars}
-.endif
 
 update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
