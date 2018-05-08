@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.479 2018/05/07 18:30:38 kn Exp $
+# $OpenBSD: Makefile,v 1.480 2018/05/08 10:49:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -236,6 +236,8 @@
      SUBDIR += py-parallel-ssh,python3
      SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
+     SUBDIR += py-pynetbox
+     SUBDIR += py-pynetbox,python3
      SUBDIR += py-statgrab
      SUBDIR += py-statgrab,python3
      SUBDIR += py-tsk
