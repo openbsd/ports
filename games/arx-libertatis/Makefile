@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/06 15:15:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/08 21:41:08 espie Exp $
 
 COMMENT =	cross-platform port of Arx Fatalis, a first-person RPG
 CATEGORIES =	games
@@ -21,6 +21,7 @@ COMPILER =	base-clang ports-gcc ports-clang
 
 MODULES =	devel/cmake
 
+BUILD_DEPENDS =	devel/boost>=1.48
 LIB_DEPENDS =	audio/openal \
 		devel/sdl \
 		graphics/glew
