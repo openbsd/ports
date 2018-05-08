@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.33 2018/03/18 08:56:21 jsg Exp $
+#	$OpenBSD: Makefile,v 1.34 2018/05/08 13:46:06 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,8 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.03
-REVISION=	0
+VERSION=	2018.05
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -15,25 +14,11 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-PATCHFILES=		u-boot-bcm2835_sdhost_freq.patch:1 \
-			u-boot-rpi3_lan78xx.patch:2 \
-			u-boot-rpi3_32b_lan8xx.patch:3 \
-			u-boot-rpi3bp_ident.patch:4 \
-			u-boot-net_is_active.patch:5 \
-			u-boot-lan7xxx_phylib.patch:6 \
-			u-boot-mvebu_8k_distro_boot.patch:7 \
-			u-boot-pine64_add_gigabit_fix.patch:8 \
-			u-boot-pine64_use_gigabit_fix.patch:9
+PATCHFILES=	u-boot-rk3288_clk_gmac.patch:1 \
+		u-boot-rockchip_ns16550_mem32.patch:2
 
-MASTER_SITES1=		https://patchwork.ozlabs.org/patch/887255/mbox/?/
-MASTER_SITES2=		https://patchwork.ozlabs.org/patch/886254/mbox/?/
-MASTER_SITES3=		https://patchwork.ozlabs.org/patch/886622/mbox/?/
-MASTER_SITES4=		https://patchwork.ozlabs.org/patch/886253/mbox/?/
-MASTER_SITES5=		https://patchwork.ozlabs.org/patch/886255/mbox/?/
-MASTER_SITES6=		https://patchwork.ozlabs.org/patch/886258/mbox/?/
-MASTER_SITES7=		https://patchwork.ozlabs.org/patch/887264/mbox/?/
-MASTER_SITES8=		https://patchwork.ozlabs.org/patch/873752/mbox/?/
-MASTER_SITES9=		https://patchwork.ozlabs.org/patch/873751/mbox/?/
+MASTER_SITES1=		https://patchwork.ozlabs.org/patch/910079/mbox/?/
+MASTER_SITES2=		https://patchwork.ozlabs.org/patch/910119/mbox/?/
 PATCH_DIST_STRIP=	-p1
 
 # GPLv2
