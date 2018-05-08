@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/02 21:06:46 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/08 22:14:19 bluhm Exp $
 
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2
+REVISION =	0
 
 CATEGORIES =	misc
 
@@ -30,8 +31,11 @@ LIBEXEC_DIR =		${PREFIX}/libexec/posixtestsuite
 LIBDATA_DIR =		${PREFIX}/libdata/posixtestsuite
 
 pre-build:
-	cd ${WRKBUILD} && ./locate-test --buildable . >build.list
-	cd ${WRKBUILD} && ./locate-test --execs . >run.list
+	cd ${WRKBUILD} && ./locate-test --buildable . >build.list.tmp
+	cd ${WRKBUILD} && ./locate-test --execs . >run.list.tmp
+	cd ${WRKBUILD} && sed 's,^\./,,' build.list.tmp | sort >build.list
+	cd ${WRKBUILD} && sed 's,^\./,,' run.list.tmp | sort >run.list
+	cd ${WRKBUILD} && rm -f *.tmp
 
 post-build:
 	cd ${WRKBUILD} &&\
@@ -43,7 +47,7 @@ post-build:
 	cd ${WRKBUILD} &&\
 	    file="";\
 	    while read line; do\
-		IFS=' :.';\
+		IFS=' :';\
 		set -- $$line;\
 		unset IFS;\
 		name="$$1";\
@@ -85,6 +89,8 @@ post-build:
 		esac;\
 		echo "$$line" >>"$$file";\
 	    done <logfile
+	cd ${WRKBUILD} && sh -n ${FILESDIR}/posixtestsuite.sh
+	cd ${WRKBUILD} && perl -c ${FILESDIR}/posixtestsuite-html.pl
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${LIBEXEC_DIR}
@@ -94,32 +100,33 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/build.list ${LIBDATA_DIR}/
 	${INSTALL_DATA} ${WRKBUILD}/run.list ${LIBDATA_DIR}/
 	${INSTALL_DATA} ${WRKBUILD}/test.list ${LIBDATA_DIR}/
+	${INSTALL_DATA} ${WRKBUILD}/logfile ${LIBDATA_DIR}/build.log
 	cd ${WRKBUILD} &&\
 	    while read test; do\
-		echo test $$test;\
-		${INSTALL_PROGRAM_DIR} ${LIBEXEC_DIR}/`dirname "$$test"`;\
-		${INSTALL_DATA_DIR} ${LIBDATA_DIR}/`dirname "$$test"`;\
+		echo test "$$test";\
 		name="$${test%.test}";\
-		if [ -f "$$name".sh ]; then\
-		    ${INSTALL_SCRIPT} "$$name".sh ${LIBEXEC_DIR}/"$${test}";\
-		    ${INSTALL_DATA} "$$name".sh ${LIBDATA_DIR}/"$$name".sh;\
-		elif [ -f "$$name".c ]; then\
-		    ${INSTALL_PROGRAM} "$$test" ${LIBEXEC_DIR}/"$$test";\
-		    ${INSTALL_DATA} "$$name".c ${LIBDATA_DIR}/"$$name".c;\
-		else\
-		    echo no test source for: $$name >&2;\
-		    exit 1;\
-		fi;\
+		dir=`dirname "$$name"`;\
+		[ -f "$$name".sh ] || continue;\
+		${INSTALL_DATA_DIR} ${LIBDATA_DIR}/$$dir;\
+		${INSTALL_DATA} "$$name".sh ${LIBDATA_DIR}/"$$name".sh;\
+		${INSTALL_PROGRAM_DIR} ${LIBEXEC_DIR}/$$dir;\
+		${INSTALL_SCRIPT} "$$name".sh ${LIBEXEC_DIR}/"$${test}";\
 	    done <test.list
 	cd ${WRKBUILD} &&\
 	    while read source; do\
-		echo source $$source;\
-		${INSTALL_DATA_DIR} ${LIBDATA_DIR}/`dirname "$$source"`;\
-		${INSTALL_DATA} "$$source" ${LIBDATA_DIR}/"$$source";\
+		echo source "$$source";\
 		name="$${source%.c}";\
+		dir=`dirname "$$name"`;\
+		${INSTALL_DATA_DIR} ${LIBDATA_DIR}/$$dir;\
+		${INSTALL_DATA} "$$name".c ${LIBDATA_DIR}/"$$name".c;\
 		${INSTALL_DATA} "$$name".build ${LIBDATA_DIR}/"$$name".build;\
+		[ -f "$$name".test ] || continue;\
+		${INSTALL_PROGRAM_DIR} ${LIBEXEC_DIR}/$$dir;\
+		${INSTALL_PROGRAM} "$$name".test ${LIBEXEC_DIR}/"$$name".test;\
 	    done <build.list
 	${SUBST_PROGRAM} ${FILESDIR}/posixtestsuite.sh\
 	    ${PREFIX}/bin/posixtestsuite
+	${INSTALL_SCRIPT} ${FILESDIR}/posixtestsuite-html.pl\
+	    ${PREFIX}/bin/posixtestsuite-html
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$OpenBSD: posixtestsuite.sh,v 1.1.1.1 2018/05/02 21:06:48 bluhm Exp $
+#	$OpenBSD: posixtestsuite.sh,v 1.2 2018/05/08 22:14:19 bluhm Exp $
 
 # Copyright (c) 2018 Alexander Bluhm <bluhm@openbsd.org>
 #
@@ -20,9 +20,19 @@ set -e
 libexec_dir=${TRUEPREFIX}/libexec/posixtestsuite
 libdata_dir=${TRUEPREFIX}/libdata/posixtestsuite
 
+uname -srm >uname.out
+
 timeout_val=240
 timeout_ret=`cat $libdata_dir/t0.val`
 timeout="$libexec_dir/t0 $timeout_val"
+
+while read source; do
+	dir=${source%/*}
+	mkdir -p $dir
+	# provide source and build log for debugging
+	cp $libdata_dir/$source $dir
+	cp $libdata_dir/${source%.c}.build $dir
+done <${libdata_dir}/build.list
 
 exec 3>logfile
 while read test; do
@@ -32,6 +42,9 @@ while read test; do
 	cd $dir
 	name=${test%.test}
 	name=${name##*/}
+	if [ -f $libdata_dir/${test%.test}.sh ]; then
+		cp $libdata_dir/${test%.test}.sh .
+	fi
 	echo -n execution: "" >$name.run
 	echo -n ${test%.test}: execution: "" >&3
 	echo -n ${test%.test}: execution: ""
@@ -40,8 +53,6 @@ while read test; do
 	result=$?
 	set -e
 	if [ -f $libdata_dir/${test%.test}.c ]; then
-		cat $libdata_dir/${test%.test}.c >$name.c
-		cat $libdata_dir/${test%.test}.build >$name.build
 		case $result in
 		0)
 			msg=PASS
@@ -69,7 +80,6 @@ while read test; do
 			;;
 		esac
 	else
-		cat $libdata_dir/${test%.test}.sh >$name.sh
 		case $result in
 		0)
 			msg=PASS
@@ -85,9 +95,13 @@ while read test; do
 		echo $msg >&3
 	else
 		echo $msg: Output: >&3
-		cat $name.log  >&3
+		cat $name.log >&3
+		echo >&3
 	fi
 	echo $msg
 	rm -f $name.log
 	)
 done <${libdata_dir}/test.list
+
+cp $libdata_dir/build.log build.log
+mv logfile run.log
