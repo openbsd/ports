@@ -1,10 +1,11 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.10 2017/07/30 17:05:54 sthen Exp $
+$OpenBSD: patch-html_pages_about_inc_php,v 1.11 2018/05/09 20:24:21 sthen Exp $
 
 Index: html/pages/about.inc.php
 --- html/pages/about.inc.php.orig
 +++ html/pages/about.inc.php
-@@ -1,6 +1,6 @@
- <?php
+@@ -3,7 +3,7 @@
+ use LibreNMS\Authentication\Auth;
+ 
  $pagetitle[] = 'About';
 -$git_log = `git log -10`;
 +$git_log = '';

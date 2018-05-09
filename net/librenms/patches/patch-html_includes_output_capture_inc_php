@@ -1,9 +1,9 @@
-$OpenBSD: patch-html_includes_output_capture_inc_php,v 1.1 2017/12/13 15:30:43 sthen Exp $
+$OpenBSD: patch-html_includes_output_capture_inc_php,v 1.2 2018/05/09 20:24:21 sthen Exp $
 
 Index: html/includes/output/capture.inc.php
 --- html/includes/output/capture.inc.php.orig
 +++ html/includes/output/capture.inc.php
-@@ -33,7 +33,7 @@ $type = $_REQUEST['type'];
+@@ -35,7 +35,7 @@ $type = $_REQUEST['type'];
  
  switch ($type) {
      case 'poller':
@@ -12,7 +12,7 @@ Index: html/includes/output/capture.inc.php
          $filename = "poller-$hostname.txt";
          break;
      case 'snmpwalk':
-@@ -48,7 +48,7 @@ switch ($type) {
+@@ -50,7 +50,7 @@ switch ($type) {
          $filename = $device['os'] . '-' . $device['hostname'] . '.snmpwalk';
          break;
      case 'discovery':
