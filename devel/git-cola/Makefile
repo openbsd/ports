@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2018/02/18 11:35:48 bket Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/09 04:24:30 bket Exp $
 
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	3.0
+MODPY_EGG_VERSION=	3.1
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	git-cola
@@ -29,7 +29,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/py-qt4
 
 TEST_DEPENDS =	devel/py-mock \
-		devel/py-nose
+		devel/py-test
+
+USE_GMAKE =	Yes
 
 MODPY_ADJ_FILES= share/git-cola/bin/git-xbase
 

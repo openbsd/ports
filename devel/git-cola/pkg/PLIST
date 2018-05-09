@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/02/18 11:35:48 bket Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/05/09 04:24:30 bket Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -51,6 +51,7 @@ share/git-cola/icons/dark/folder.svg
 share/git-cola/icons/dark/gear.svg
 share/git-cola/icons/dark/git-branch.svg
 share/git-cola/icons/dark/git-cola.svg
+share/git-cola/icons/dark/git-commit.svg
 share/git-cola/icons/dark/git-compare.svg
 share/git-cola/icons/dark/git-merge.svg
 share/git-cola/icons/dark/link-external.svg
@@ -98,6 +99,7 @@ share/git-cola/icons/folder.svg
 share/git-cola/icons/gear.svg
 share/git-cola/icons/git-branch.svg
 share/git-cola/icons/git-cola.svg
+share/git-cola/icons/git-commit.svg
 share/git-cola/icons/git-compare.svg
 share/git-cola/icons/git-merge.svg
 share/git-cola/icons/link-external.svg
@@ -141,6 +143,8 @@ share/git-cola/lib/cola/compat.py
 share/git-cola/lib/cola/compat.pyc
 share/git-cola/lib/cola/core.py
 share/git-cola/lib/cola/core.pyc
+share/git-cola/lib/cola/dag.py
+share/git-cola/lib/cola/dag.pyc
 share/git-cola/lib/cola/decorators.py
 share/git-cola/lib/cola/decorators.pyc
 share/git-cola/lib/cola/diffparse.py
@@ -221,6 +225,8 @@ share/git-cola/lib/cola/widgets/browse.py
 share/git-cola/lib/cola/widgets/browse.pyc
 share/git-cola/lib/cola/widgets/cfgactions.py
 share/git-cola/lib/cola/widgets/cfgactions.pyc
+share/git-cola/lib/cola/widgets/clone.py
+share/git-cola/lib/cola/widgets/clone.pyc
 share/git-cola/lib/cola/widgets/commitmsg.py
 share/git-cola/lib/cola/widgets/commitmsg.pyc
 share/git-cola/lib/cola/widgets/common.py
@@ -253,6 +259,8 @@ share/git-cola/lib/cola/widgets/grep.py
 share/git-cola/lib/cola/widgets/grep.pyc
 share/git-cola/lib/cola/widgets/highlighter.py
 share/git-cola/lib/cola/widgets/highlighter.pyc
+share/git-cola/lib/cola/widgets/imageview.py
+share/git-cola/lib/cola/widgets/imageview.pyc
 share/git-cola/lib/cola/widgets/log.py
 share/git-cola/lib/cola/widgets/log.pyc
 share/git-cola/lib/cola/widgets/main.py
