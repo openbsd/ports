@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+
+We need the compat.
+
+Index: lib/x86_64/libm_amd.h
+--- lib/x86_64/libm_amd.h.orig
++++ lib/x86_64/libm_amd.h
+@@ -68,7 +68,7 @@ regulations applicable in licensee's jurisdiction.
+ 
+ #include <math.h>
+ 
+-#if !defined(TARGET_WIN)
++#if !defined(TARGET_LINUX)
+ typedef long __INT8_T;
+ typedef unsigned long __UINT8_T;
+ 
+@@ -88,6 +88,13 @@ struct exception {
+   double arg2;
+   double retval;
+ };
++
++/* We're missing these on OpenBSD, found in NetBSD math.h */
++#define DOMAIN		1
++#define SING		2
++#define OVERFLOW	3
++#define UNDERFLOW	4
++
+ #endif
+ 
+ #ifndef _COMPLEX_DEFINED

@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_x86_64_CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+
+Index: lib/x86_64/CMakeLists.txt
+--- lib/x86_64/CMakeLists.txt.orig
++++ lib/x86_64/CMakeLists.txt
+@@ -88,7 +88,7 @@ list(APPEND DEFINITIONS _GNU_SOURCE _ISOC99_SOURCE)
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+   list(APPEND DEFINITIONS _GNU_SOURCE)
+ endif()
+-set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings -Werror ")
++set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings ")
+ libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "isoc99")
+ 
+ # isoc99_log2

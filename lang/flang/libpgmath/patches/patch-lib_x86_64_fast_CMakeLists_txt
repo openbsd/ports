@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+
+Index: lib/x86_64/fast/CMakeLists.txt
+--- lib/x86_64/fast/CMakeLists.txt.orig
++++ lib/x86_64/fast/CMakeLists.txt
+@@ -39,11 +39,11 @@ add_custom_command(OUTPUT tmp.${TARGET_NAME}.h PRE_BUI
+ add_custom_target(${TARGET_NAME} ALL
+   DEPENDS tmp.${TARGET_NAME}.h)
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|OpenBSD")
+   list(APPEND DEFINITIONS LINUX_ELF)
+ endif()
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ set(SRCS
+   fastmath.S)
+-libmath_add_object_library("${SRCS}" "-m64 -O3" "${DEFINITIONS}" "fastmath")
++libmath_add_object_library("${SRCS}" "-m64 -mtune=knl -march=knl" "${DEFINITIONS}" "fastmath")
+ add_dependencies(fastmath mthdecls)

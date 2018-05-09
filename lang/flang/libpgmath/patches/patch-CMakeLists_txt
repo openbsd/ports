@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -71,7 +71,7 @@ set(LIBPGMATH_TOOLS_DIR ${LIBPGMATH_BASE_DIR}/tools)
+ set(LIBPGMATH_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
+ set(LIBPGMATH_RUNTIME_PATH ${CMAKE_BINARY_DIR}/lib)
+ set(LIBPGMATH_LIBRARY_NAME pgmath)
+-set(LIBPGMATH_RTL lib${LIBPGMATH_LIBRARY_NAME}.so)
++set(LIBPGMATH_RTL lib${LIBPGMATH_LIBRARY_NAME}.so.${LIBpgmath_VERSION})
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+ # Require out of source build.

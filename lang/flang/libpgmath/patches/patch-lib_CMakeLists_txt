@@ -1,0 +1,54 @@
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+
+Some ugly hacks here.
+
+Index: lib/CMakeLists.txt
+--- lib/CMakeLists.txt.orig
++++ lib/CMakeLists.txt
+@@ -16,20 +16,22 @@
+ 
+ set_property(GLOBAL APPEND PROPERTY "TARGET_OBJECTS")
+ 
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64")
+-  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64|amd64")
++  set(CMAKE_SYSTEM_PROCESSOR "x86_64")
+ 
++  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|OpenBSD")
++
+     set(DEFINITIONS_L1
+       HOST_LINUX LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8
+       TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
+-      __gnu_linux__ PG_PIC)
+-    set(FLAGS_L1 "-m64 -O3 ")
++      __gnu_linux__ linux PG_PIC)
++    set(FLAGS_L1 "-m64 ")
+ 
+     set(DEFINITIONS_L2
+       LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 __gnu_linux__
+       TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
+-      PG_PIC)
+-    set(FLAGS_L2 "-m64 -O3 -mtune=core-avx2 -march=core-avx2 ")
++      linux PG_PIC)
++    set(FLAGS_L2 "-m64 -mtune=knl -march=knl ")
+ 
+     # common
+     # Definitions and compiler flags for level 1 directories
+@@ -147,7 +149,7 @@ endif()
+ 
+ # Include directories
+ include_directories(common)
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64|amd64")
+   include_directories(x86_64)
+ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+   include_directories(ppc64le)
+@@ -155,7 +157,7 @@ endif()
+ 
+ # Add directories to build
+ add_subdirectory(common)
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64|amd64")
+   add_subdirectory(x86_64)
+ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+   add_subdirectory(ppc64le)
