@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.121 2018/05/08 16:00:19 espie Exp $
+# $OpenBSD: update-plist,v 1.122 2018/05/09 10:06:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -141,6 +141,9 @@ sub write_all
 package PlistReader;
 our @ISA = qw(OpenBSD::PkgCreate);
 
+use File::Path qw(make_path);
+use File::Basename;
+
 sub new
 {
 	my $class = shift;
@@ -223,6 +226,31 @@ sub missing_fragments
 {
 }
 
+sub get_plist
+{
+	my ($self, $pkgpath, $portsdir) = @_;
+	my $fullpath;
+	if (defined $self->{state}{cache_dir}) {
+		$fullpath = $pkgpath;
+		# flatten the pkgpath proper
+		$fullpath =~ s,/,.,g;
+		$fullpath = "$self->{state}{cache_dir}/$fullpath";
+		if (-f $fullpath) {
+			return OpenBSD::PackingList->fromfile($fullpath,
+			    \&OpenBSD::PackingList::UpdatePlistOnly);
+		} else {
+			make_path(dirname($fullpath));
+		}
+	}
+	my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
+	    $self->{state}, $pkgpath, $portsdir,
+	    \&OpenBSD::PackingList::UpdatePlistOnly,
+	    "print-plist-with-depends", "wantlib_args=no-wantlib-args");
+	if (defined $fullpath) {
+		$plist->tofile($fullpath);
+	}
+	return $plist;
+}
 
 sub figure_out_dependencies
 {
@@ -244,10 +272,7 @@ sub figure_out_dependencies
 			$cache->{$pkgpath} = {};
 			$self->{state}->say("Stripping directories from #1",
 			    $pkgpath);
-			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
-			    $self->{state}, $pkgpath, $portsdir,
-			    \&OpenBSD::PackingList::UpdatePlistOnly,
-			    "print-plist-with-depends", "wantlib_args=no-wantlib-args");
+			my $plist = $self->get_plist($pkgpath, $portsdir);
 			$plist->process_dependency($cache->{$pkgpath});
 		}
 		for my $dir (keys %{$cache->{$pkgpath}{dir}}) {
@@ -274,6 +299,7 @@ sub init
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
 	$self->{repo} = $realstate->{repo};
+	$self->{cache_dir} = $realstate->{cache_dir};
 }
 
 
@@ -863,12 +889,13 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvi:s:S:X:P:w:', 
-	    '[-mnrvx] [-i var] [-P pkgdir] [-S var] [-s var]',
+	$state->SUPER::handle_options('rvC:i:s:S:X:P:w:', 
+	    '[-mnrvx] [-C dir] [-i var] [-P pkgdir] [-S var] [-s var]',
 	    '[-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
+	$state->{cache_dir} = $state->opt('C');
 }
 
 package UpdatePlist;
