@@ -1,10 +1,20 @@
-$OpenBSD: patch-drivers_unix_os_unix_cpp,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
+$OpenBSD: patch-drivers_unix_os_unix_cpp,v 1.2 2018/05/09 20:26:08 sthen Exp $
 
-hardcode executablepath
+- fix with clang6 on ILP32 arches
+- hardcode executable path
 
 Index: drivers/unix/os_unix.cpp
 --- drivers/unix/os_unix.cpp.orig
 +++ drivers/unix/os_unix.cpp
+@@ -235,7 +235,7 @@ OS::TimeZoneInfo OS_Unix::get_time_zone_info() const {
+ 
+ void OS_Unix::delay_usec(uint32_t p_usec) const {
+ 
+-	struct timespec rem = { p_usec / 1000000, (p_usec % 1000000) * 1000 };
++	struct timespec rem = { p_usec / 1000000, static_cast<long>((p_usec % 1000000) * 1000) };
+ 	while (nanosleep(&rem, &rem) == EINTR) {
+ 	}
+ }
 @@ -456,7 +456,7 @@ String OS_Unix::get_executable_path() const {
  #elif defined(__OpenBSD__)
  	char resolved_path[MAXPATHLEN];
