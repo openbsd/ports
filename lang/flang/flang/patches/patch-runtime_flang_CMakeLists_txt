@@ -1,11 +1,21 @@
-$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.2 2018/05/09 22:27:41 bcallah Exp $
 
 No -lrt
+Appease lld
 
 Index: runtime/flang/CMakeLists.txt
 --- runtime/flang/CMakeLists.txt.orig
 +++ runtime/flang/CMakeLists.txt
-@@ -491,7 +491,7 @@ add_flang_library(flang_shared
+@@ -18,7 +18,7 @@ enable_language(C ASM Fortran) # Enable assembly and F
+ 
+ SET(ASM_OPTIONS "-DLINUX_ELF")
+ SET(CMAKE_ASM_FLAGS "${CFLAGS} ${ASM_OPTIONS}" )
+-SET(CMAKE_SHARED_LINKER_FLAGS "-no-flang-libs")
++SET(CMAKE_SHARED_LINKER_FLAGS "-no-flang-libs -L/usr/lib")
+ 
+ # We are using Fortran driver to build this library with fresh compiler
+ # components, so point its binary directory to the build directory to pick up
+@@ -426,7 +426,7 @@ add_flang_library(flang_shared
  set_property(TARGET flang_shared PROPERTY OUTPUT_NAME flang)
  target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
  # Resolve symbols against libm and librt

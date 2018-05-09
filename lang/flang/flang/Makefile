@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/07 14:58:18 ajacoutot Exp $
-
-BROKEN =	needs an update
+# $OpenBSD: Makefile,v 1.11 2018/05/09 22:27:41 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
-DISTNAME =	flang-5.0.1.20180308
+DISTNAME =	flang-6.0.0.20180507
 
-SHARED_LIBS +=	flang                     0.0 # 5.0
-SHARED_LIBS +=	flangrti                  0.0 # 5.0
-SHARED_LIBS +=	ompstub                   0.0 # 5.0
+SHARED_LIBS +=	flang                     1.0 # 6.0
+SHARED_LIBS +=	flangrti                  1.0 # 6.0
+SHARED_LIBS +=	ompstub                   0.0 # 6.0
 
 GH_PROJECT =	flang
-GH_COMMIT =	e8123d1aa7882ea996851133b77ef17f1ec0e51d
+GH_COMMIT =	79dced4b9be4bb20f25ea5ebbb5cb61b1626f0c1
 
-WANTLIB += c execinfo m pthread
+WANTLIB += c execinfo m pgmath pthread
 
 # C11
 COMPILER =	base-clang ports-gcc ports-clang
@@ -22,16 +20,19 @@ MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/llvm \
 		${RUN_DEPENDS}
 
-LIB_DEPENDS =	devel/libexecinfo
+LIB_DEPENDS =	devel/libexecinfo \
+		lang/flang/libpgmath
 
 RUN_DEPENDS =	lang/flang/driver
 
 # Fortran support has not been integrated into Ninja yet
 USE_NINJA =	No
 
+# CONFIGURE_ENV is to appease lld
 CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \
 			-DFLANG_LIBEXECINFO="${LOCALBASE}/lib/libexecinfo.a" \
 			-DFLANG_LIBOMP="${WRKBUILD}/lib/libompstub.a" \
+			-DLIBPGMATH="${LOCALBASE}/lib/libpgmath.a" \
 			-DWITH_WERROR=OFF
 
 post-patch:

@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_Driver_ToolChains_CommonArgs_cpp,v 1.1 2018/05/09 22:27:41 bcallah Exp $
+
+Appease lld.
+
+Index: lib/Driver/ToolChains/CommonArgs.cpp
+--- lib/Driver/ToolChains/CommonArgs.cpp.orig
++++ lib/Driver/ToolChains/CommonArgs.cpp
+@@ -183,6 +183,7 @@ void tools::AddLinkerInputs(const ToolChain &TC, const
+     // Add Fortan "main" before the first linker input
+     if (!SeenFirstLinkerInput) {
+       if (needFortranMain(D, Args)) {
++        CmdArgs.push_back("-lflangrti");
+         CmdArgs.push_back("-lflangmain");
+       }
+       SeenFirstLinkerInput = true;
+@@ -206,6 +207,7 @@ void tools::AddLinkerInputs(const ToolChain &TC, const
+   }
+ 
+   if (!SeenFirstLinkerInput && needFortranMain(D, Args)) {
++    CmdArgs.push_back("-lflangrti");
+     CmdArgs.push_back("-lflangmain");
+   }
+ 

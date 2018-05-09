@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/07 14:58:18 ajacoutot Exp $
-
-BROKEN =	needs work for LLVM 6.0
+# $OpenBSD: Makefile,v 1.5 2018/05/09 22:27:41 bcallah Exp $
 
 # If you are updating to a new version
-# (e.g. 5.0->5.1 or 6.0), you need to sync
+# (e.g. 6.0->6.1 or 7.0), you need to sync
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
-DISTNAME =	flang-driver-5.0.1.20180308
+DISTNAME =	flang-driver-6.0.0.20180416
 
 GH_PROJECT =	flang-driver
-GH_COMMIT =	095de1354dd583b0cd4c7a91d5c328710a1a9c32
+GH_COMMIT =	ccd507ca383f2122b2c5510aac0f7393f440398a
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
