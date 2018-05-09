@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/20 14:34:39 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/09 06:32:20 rpointel Exp $
 bin/oledump
 share/oledump/
 share/oledump/decoder_add1.py
@@ -15,6 +15,7 @@ share/oledump/plugin_jumplist.py
 share/oledump/plugin_linear.py
 share/oledump/plugin_msg.py
 share/oledump/plugin_msi.py
+share/oledump/plugin_office_crypto.py
 share/oledump/plugin_str_sub.py
 share/oledump/plugin_stream_o.py
 share/oledump/plugin_stream_sample.py
