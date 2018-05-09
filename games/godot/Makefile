@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/09 20:26:47 sthen Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -63,7 +63,7 @@ LIB_DEPENDS =		archivers/zstd \
 
 NO_TEST =		Yes
 
-post-patch:
+pre-build:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp
 
 do-install:
