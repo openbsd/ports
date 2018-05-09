@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.122 2018/05/09 10:06:23 espie Exp $
+# $OpenBSD: update-plist,v 1.123 2018/05/09 13:58:06 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -460,6 +460,11 @@ sub copy_with_tags
 	}
 }
 
+# pass every actual file to pkglocate to check for unregistered conflicts
+sub locate_files
+{
+}
+
 # will be zero for classes that cannot be deduced from the FS
 sub rebless_okay { 1 }
 
@@ -809,6 +814,12 @@ sub bookmark
 	$plist->{state}{lastfile} = $self;
 }
 
+sub locate_files
+{
+	my ($self, $locator) = @_;
+	$locator->add_param($self->fullname);
+}
+
 package OpenBSD::PackingElement::Shell;
 # we have no way to figure out @shell
 sub rebless_okay { 0 }
@@ -859,6 +870,56 @@ sub copy_extra
 	$self->clone->add_object($plist);
 }
 
+
+# small class that runs pkglocate in batches
+package OpenBSD::Pkglocate;
+sub new
+{
+	my $class = shift;
+	bless {result => {}, params => []}, $class;
+}
+
+sub add_param
+{
+	my ($self, @p) = @_;
+	push(@{$self->{params}}, @p);
+	while (@{$self->{params}} > 200) {
+		$self->run_command;
+	}
+}
+
+sub run_command
+{
+	my $self = shift;
+
+	if (@{$self->{params}} == 0) {
+		return;
+	}
+	my %h = map {($_, 1)} @{$self->{params}};
+	open(my $cmd, '-|', 'pkg_locate', map {"*:$_"} @{$self->{params}});
+	while (<$cmd>) {
+		chomp;
+		my ($pkgname, $pkgpath, $path) = split(':', $_, 3);
+
+		# pkglocate will return partial results, we only care about
+		# exact stuff
+		if ($h{$path}) {
+			push(@{$self->{result}{$pkgname}}, $path);
+		}
+	}
+	close($cmd);
+
+	$self->{params} = [];
+}
+
+sub result
+{
+	my $self = shift;
+	while (@{$self->{params}} > 0) {
+		$self->run_command;
+	}
+	return $self->{result};
+}
 
 # This is the UpdatePlist main code proper
 package UpdatePlist::State;
@@ -1247,6 +1308,30 @@ sub display_stripped_info
 	}
 }
 
+sub try_pkglocate
+{
+	my $self = shift;
+	# hardcode the location for now
+	return unless -x '/usr/local/bin/pkg_locate';
+
+	# if we have pkglocate installed, *always* use it
+	$self->{state}->say("Looking for unregistered conflicts");
+	for my $p (@{$self->{lists}}) {
+		my $locator = OpenBSD::Pkglocate->new;
+		$p->nlist->locate_files($locator);
+		require OpenBSD::PkgCfl;
+
+		my $l = OpenBSD::PkgCfl->make_conflict_list($p->nlist);
+		my $r = $locator->result;
+		for my $pkgname (sort keys %$r) {
+			next if $l->conflicts_with($pkgname);
+			print "Warning: ", $p->nlist->pkgname, 
+			    " conflicts with ", $pkgname, ":", 
+			    join(' ', @{$r->{$pkgname}}), "\n";
+		}
+	}
+}
+
 my $self = UpdatePlist->new;
 $self->parse_args;
 $self->scan_fake_dir;
@@ -1258,7 +1343,11 @@ $self->add_delayed_objects;
 $self->strip_dependency_directories;
 $self->adjust_final;
 
+
+
+$self->display_stripped_info;
 $self->show_unknown;
+$self->try_pkglocate;
 
 # switch to ports owner
 if (defined $ports_gid) {
@@ -1266,8 +1355,6 @@ if (defined $ports_gid) {
 	$) = $ports_gid;
 	$> = $ports_uid;
 }
-
-$self->display_stripped_info;
 
 # this is the step responsible for adjusting mode AND backsubstituting
 # variables!
