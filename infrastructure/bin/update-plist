@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.124 2018/05/09 15:06:25 espie Exp $
+# $OpenBSD: update-plist,v 1.125 2018/05/09 17:26:31 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -896,7 +896,7 @@ sub run_command
 		return;
 	}
 	my %h = map {($_, 1)} @{$self->{params}};
-	open(my $cmd, '-|', 'pkg_locate', map {"*:$_"} @{$self->{params}});
+	open(my $cmd, '-|', 'pkg_locate', map {":$_"} @{$self->{params}});
 	while (<$cmd>) {
 		chomp;
 		my ($pkgname, $pkgpath, $path) = split(':', $_, 3);
