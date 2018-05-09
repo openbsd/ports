@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/05/09 19:01:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/09 19:22:21 sthen Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -37,6 +37,9 @@ CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \
 			-DENABLE_SDL=ON
 # Creates unlinkable files ('data' according to file(1))
 CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
+# Assembler autodetection fails on i386, can be worked around with
+# -DCMAKE_ASM_NASM_COMPILER=yasm, but then linking fails.
+CONFIGURE_ARGS +=	-DENABLE_ASM=OFF
 
 CXXFLAGS +=		-Wno-c++11-narrowing -I${X11BASE}/include
 
@@ -44,15 +47,5 @@ NO_TEST =		Yes
 
 post-install:
 	mv ${PREFIX}/etc/ ${PREFIX}/share/examples/vbam/
-
-.include <bsd.port.arch.mk>
-
-# workaround broken auto-detection; "Found assembler: nasm;yasm" ->
-# "The CMAKE_ASM_NASM_COMPILER: nasm;yasm is not a full path
-# and was not found in the PATH."
-.if ${MACHINE_ARCH} == i386
-CONFIGURE_ARGS +=	-DCMAKE_ASM_NASM_COMPILER=yasm
-BUILD_DEPENDS +=	devel/yasm
-.endif
 
 .include <bsd.port.mk>
