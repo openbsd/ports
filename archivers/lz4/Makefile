@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2018/01/16 14:03:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/05/09 14:09:43 sthen Exp $
 
-SHARED_LIBS +=	lz4                       2.0
+SHARED_LIBS +=	lz4                       2.1
 
 COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.8.1.2
+GH_TAGNAME=	v1.8.2
 
 CATEGORIES=	archivers
 
@@ -23,7 +23,8 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" \
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
-		MANDIR="${PREFIX}/man/man1" \
+		V=1 \
+		MANDIR="${PREFIX}/man" \
 		SONAME_FLAGS= \
 		SHARED_EXT_VER="so.${LIBlz4_VERSION}"
 FAKE_FLAGS=	PREFIX=${PREFIX}
