@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/03 11:18:34 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/09 21:22:42 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.3.0
+REVISION=		0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -23,7 +24,8 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
 
-CONFIGURE_ARGS+=	--disable-hardening \
+CONFIGURE_ARGS+=	--disable-gnutls \
+			--disable-hardening \
 			--with-lua \
 			--without-net-snmp \
 			--enable-dns-over-tls \
