@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/24 15:35:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/09 05:35:02 bcallah Exp $
 
 COMMENT =	small and easy to use console text editor
-DISTNAME =	dte-1.6
+DISTNAME =	dte-1.7
 CATEGORIES =	editors
 
 HOMEPAGE =	https://craigbarnes.gitlab.io/dte/
