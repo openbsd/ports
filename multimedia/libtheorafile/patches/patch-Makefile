@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/02/22 07:54:51 bentley Exp $
+$OpenBSD: patch-Makefile,v 1.2 2018/05/09 21:41:15 sthen Exp $
 
 fix library suffix
 add ${LOCALBASE}/lib to linker path
@@ -37,5 +37,5 @@ Index: Makefile
  	rm -f libtheorafile.$(TARGET)
  
  test:
--	$(CC) -g sdl2test/sdl2test.c theorafile.c -I. `sdl2-config --cflags --libs` $(DEPS) -Wall
+-	$(CC) -g -o theorafile-test sdl2test/sdl2test.c theorafile.c -I. `sdl2-config --cflags --libs` $(DEPS) -Wall
 +	$(CC) ${CFLAGS} ${LDFLAGS} -g -o theorafile-test sdl2test/sdl2test.c theorafile.c -I. -I${LOCALBASE}/include `sdl2-config --cflags --libs` -L${LOCALBASE}/lib $(DEPS) -Wall
