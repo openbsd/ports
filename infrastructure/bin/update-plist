@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.123 2018/05/09 13:58:06 espie Exp $
+# $OpenBSD: update-plist,v 1.124 2018/05/09 15:06:25 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -876,7 +876,7 @@ package OpenBSD::Pkglocate;
 sub new
 {
 	my $class = shift;
-	bless {result => {}, params => []}, $class;
+	bless {result => {}, params => [], bypath => {}}, $class;
 }
 
 sub add_param
@@ -905,6 +905,7 @@ sub run_command
 		# exact stuff
 		if ($h{$path}) {
 			push(@{$self->{result}{$pkgname}}, $path);
+			$self->{bypath}{$pkgname} = $pkgpath;
 		}
 	}
 	close($cmd);
@@ -919,6 +920,12 @@ sub result
 		$self->run_command;
 	}
 	return $self->{result};
+}
+
+sub bypath
+{
+	my ($self, $pkgname) = @_;
+	return $self->{bypath}{$pkgname};
 }
 
 # This is the UpdatePlist main code proper
@@ -1308,6 +1315,28 @@ sub display_stripped_info
 	}
 }
 
+sub locate_list
+{
+	my ($self, $p) = @_;
+	my $locator = OpenBSD::Pkglocate->new;
+	$p->nlist->locate_files($locator);
+	my $l = $p->nlist->conflict_list;
+	my $r = $locator->result;
+	for my $pkgname (sort keys %$r) {
+		next if $l->conflicts_with($pkgname);
+		my $path = $locator->bypath($pkgname);
+		my $portsdir = $ENV{PORTSDIR};
+		my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
+		    $self->{state}, $path, $portsdir, 
+		    \&OpenBSD::PackingList::ConflictOnly, 
+		    "print-plist");
+		my $myname = $p->nlist->pkgname;
+		next if $plist->conflict_list->conflicts_with($myname);
+		print "Warning: ", $myname, " conflicts with ", $pkgname, " (",
+		    $path, "):", join(' ', @{$r->{$pkgname}}), "\n";
+	}
+}
+
 sub try_pkglocate
 {
 	my $self = shift;
@@ -1317,18 +1346,7 @@ sub try_pkglocate
 	# if we have pkglocate installed, *always* use it
 	$self->{state}->say("Looking for unregistered conflicts");
 	for my $p (@{$self->{lists}}) {
-		my $locator = OpenBSD::Pkglocate->new;
-		$p->nlist->locate_files($locator);
-		require OpenBSD::PkgCfl;
-
-		my $l = OpenBSD::PkgCfl->make_conflict_list($p->nlist);
-		my $r = $locator->result;
-		for my $pkgname (sort keys %$r) {
-			next if $l->conflicts_with($pkgname);
-			print "Warning: ", $p->nlist->pkgname, 
-			    " conflicts with ", $pkgname, ":", 
-			    join(' ', @{$r->{$pkgname}}), "\n";
-		}
+		$self->locate_list($p);
 	}
 }
 
