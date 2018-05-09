@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/04/24 13:03:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/09 19:01:14 sthen Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -44,5 +44,15 @@ NO_TEST =		Yes
 
 post-install:
 	mv ${PREFIX}/etc/ ${PREFIX}/share/examples/vbam/
+
+.include <bsd.port.arch.mk>
+
+# workaround broken auto-detection; "Found assembler: nasm;yasm" ->
+# "The CMAKE_ASM_NASM_COMPILER: nasm;yasm is not a full path
+# and was not found in the PATH."
+.if ${MACHINE_ARCH} == i386
+CONFIGURE_ARGS +=	-DCMAKE_ASM_NASM_COMPILER=yasm
+BUILD_DEPENDS +=	devel/yasm
+.endif
 
 .include <bsd.port.mk>
