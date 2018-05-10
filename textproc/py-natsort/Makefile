@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/05 15:06:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/10 07:26:25 ajacoutot Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
 MODPY_EGG_VERSION =	5.3.0
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc devel
 
@@ -23,5 +24,8 @@ FLAVOR ?=
 
 # could also make use of 'fastnumbers'
 RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
+
+post-install:
+	mv ${PREFIX}/bin/natsort{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
