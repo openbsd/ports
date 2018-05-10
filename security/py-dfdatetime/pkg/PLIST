@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/01 13:22:27 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/10 07:25:29 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -46,8 +46,3 @@ lib/python${MODPY_VERSION}/site-packages/dfdatetime/systemtime.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/time_elements.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/uuid_time.py
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/webkit_time.py
-share/doc/dfdatetime/
-share/doc/dfdatetime/ACKNOWLEDGEMENTS
-share/doc/dfdatetime/AUTHORS
-share/doc/dfdatetime/LICENSE
-share/doc/dfdatetime/README
