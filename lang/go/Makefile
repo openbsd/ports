@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/04/06 13:01:39 kn Exp $
+# $OpenBSD: Makefile,v 1.53 2018/05/10 18:39:35 kn Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -23,7 +23,8 @@ WANTLIB =		c pthread
 
 MASTER_SITES =		https://golang.org/dl/
 
-BUILD_DEPENDS =		lang/go-bootstrap shells/bash
+BUILD_DEPENDS =		lang/go-bootstrap \
+			shells/bash
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
@@ -34,10 +35,10 @@ WRKSRC =		${WRKDIST}/src
 
 INSTALL_STRIP =
 
-GOOS = 			openbsd
+GOOS =			openbsd
 GOARCH =		unknown
-GOROOT = 		${PREFIX}/go
-GOROOT_BOOTSTRAP =	${PREFIX}/go/bootstrap
+GOROOT =		${PREFIX}/go
+GOROOT_BOOTSTRAP =	${GOROOT}/bootstrap
 
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
@@ -46,13 +47,13 @@ GOARCH =		386
 .endif
 
 GOCFG =			/${GOOS}_${GOARCH}
+GOTOOLS =		pkg/tool/${GOCFG}
 
 do-configure:
 .	if ${GOARCH} == "unknown"
 		@echo "Unable to determine GOARCH for ${MACHINE_ARCH}."
 		@exit 1
 .	endif
-
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -62,42 +63,36 @@ do-build:
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} \
 		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
-		./make.bash --no-banner
+		    ./make.bash --no-banner
 
 do-test:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
-		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} GOCACHE=off ./run.bash
+		PATH=${WRKDIST}/bin:${PATH} \
+		GOROOT=${WRKDIST} \
+		GOCACHE=off \
+		    ./run.bash
 
 do-install:
-	${INSTALL_PROGRAM_DIR} ${GOROOT}
-
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
-	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
 
-	@cd ${PREFIX}/bin && \
-		ln -sf ../go/bin/go go
-	@cd ${PREFIX}/bin && \
-		ln -sf ../go/bin/gofmt gofmt
-
-	@cd ${WRKDIST} && \
-		find . -type f -maxdepth 1 \
-			-exec ${INSTALL_DATA} -p {} \
-			${GOROOT} \;
-
-.	for dir in api doc lib misc src pkg/include pkg/${GOCFG} test
-		@cd ${WRKDIST} && \
-			find ${dir} -type d \
-				-exec ${INSTALL_DATA_DIR} \
-				${GOROOT}/{} \;
-		@cd ${WRKDIST} && \
-			find ${dir} ! -name \*.orig -type f \
-				-exec ${INSTALL_DATA} -p {} \
-				${GOROOT}/{} \;
+.	for prog in go gofmt
+		${INSTALL_PROGRAM} -p ${WRKDIST}/bin/${prog} ${GOROOT}/bin
+		@ln -s ../go/bin/${prog} ${PREFIX}/bin/${prog}
 .	endfor
 
-	${INSTALL_PROGRAM_DIR} ${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
-	${INSTALL_PROGRAM} -p ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
-		${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
+	find ${WRKDIST} -maxdepth 1 -type f \
+		-exec ${INSTALL_DATA} -p {} ${GOROOT} \;
+
+.	for dir in api doc lib misc src pkg/include pkg/${GOCFG} test
+		cd ${WRKDIST} && \
+			find ${dir} -type d \
+				-exec ${INSTALL_DATA_DIR} ${GOROOT}/{} \; \
+			    -o -type f ! -name \*.orig \
+				-exec ${INSTALL_DATA} -p {} ${GOROOT}/{} \;
+.	endfor
+
+	${INSTALL_PROGRAM_DIR} ${GOROOT}/${GOTOOLS}
+	${INSTALL_PROGRAM} -p ${WRKDIST}/${GOTOOLS}/* ${GOROOT}/${GOTOOLS}
 
 .include <bsd.port.mk>

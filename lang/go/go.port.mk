@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.18 2018/03/14 14:12:02 jsing Exp $
+# $OpenBSD: go.port.mk,v 1.19 2018/05/10 18:39:35 kn Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -64,8 +64,8 @@ MODGO_INSTALL_TARGET =	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/* \
 MODGO_INSTALL_TARGET +=	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH} && \
 			cd ${MODGO_WORKSPACE} && \
 			find src pkg -type d -exec ${INSTALL_DATA_DIR} \
-				${MODGO_PACKAGE_PATH}/{} \; && \
-			find src pkg -type f -exec ${INSTALL_DATA} -p \
+				${MODGO_PACKAGE_PATH}/{} \; \
+			    -o -type f -exec ${INSTALL_DATA} -p \
 				${MODGO_WORKSPACE}/{} \
 				${MODGO_PACKAGE_PATH}/{} \;
 
