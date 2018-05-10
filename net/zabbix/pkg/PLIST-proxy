@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-proxy,v 1.1 2018/01/25 13:56:35 robert Exp $
+@comment $OpenBSD: PLIST-proxy,v 1.2 2018/05/10 12:17:42 ajacoutot Exp $
 @man man/man8/zabbix_proxy.8
 @bin sbin/zabbix_proxy
 share/examples/zabbix/zabbix_proxy.conf
@@ -15,4 +15,3 @@ share/examples/zabbix/zabbix_proxy.conf
 @owner
 @group
 @rcscript ${RCDIR}/zabbix_proxy
-@rcscript ${RCDIR}/zabbix_server
