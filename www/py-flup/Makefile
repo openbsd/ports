@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/09 09:26:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/05/10 06:18:55 ajacoutot Exp $
 
 COMMENT =		random assortment of WSGI servers, middleware
 
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-
-NO_TEST =		Yes
 
 MODPY_SETUPTOOLS =	Yes
 
