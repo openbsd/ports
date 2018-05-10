@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2018/04/26 09:19:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2018/05/10 12:36:43 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.28.1
+GNOME_VERSION=		3.28.2
 
 API_SUFFIX=		-2
 SUBST_VARS=		API_SUFFIX
@@ -67,13 +67,9 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
-# XXX more: clang finds more issues!
 	sed -i -e 's,-Wempty-body,,' \
-		-e 's,-Werror=maybe-uninitialized,,' \
 		-e 's,-Wno-error=maybe-uninitialized,,' \
-		-e 's,-Werror=redundant-decls,,' \
-		-e 's,-Werror=format-nonliteral,,' \
-		-e 's,-Wvla,,' \
+		-e 's,-Werror=logical-op,,' \
 		${WRKSRC}/{,cogl,clutter}/configure{,.ac} \
 		${WRKSRC}/cogl/tests/conform/Makefile.in \
 		${WRKSRC}/cogl/test-fixtures/Makefile.in
