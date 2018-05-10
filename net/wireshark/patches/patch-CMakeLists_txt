@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2017/08/30 12:42:34 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2018/05/10 20:36:34 sthen Exp $
 
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
@@ -7,20 +7,21 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -706,11 +706,11 @@ set(WIRESHARK_LD_FLAGS
- # XXX - are there other compilers that don't support -pie?  It's
- # not as if the only platforms we support are Windows and Linux....
- #
--if(NOT CMAKE_VERSION VERSION_LESS "2.8.9")
--	set(WIRESHARK_LD_FLAGS ${WIRESHARK_LD_FLAGS}
--		-pie
--	)
--endif()
-+#if(NOT CMAKE_VERSION VERSION_LESS "2.8.9")
-+#	set(WIRESHARK_LD_FLAGS ${WIRESHARK_LD_FLAGS}
-+#		-pie
-+#	)
-+#endif()
+@@ -666,17 +666,6 @@ else() # ! MSVC
+ 		# -fwhopr
+ 		# -fwhole-program
+ 	)
+-	# CMAKE_POSITION_INDEPENDENT_CODE is only supported starting with CMake
+-	# 2.8.9. Do not add -pie automatically for older versions.
+-	#
+-	# XXX - are there other compilers that don't support -pie?  It's
+-	# not as if the only platforms we support are Windows and Linux....
+-	#
+-	if(NOT CMAKE_VERSION VERSION_LESS "2.8.9")
+-		set(WIRESHARK_LD_FLAGS ${WIRESHARK_LD_FLAGS}
+-			-pie
+-		)
+-	endif()
+ endif() # ! MSVC
  
- include(CheckCLinkerFlag)
- set(_C 0)
+ set( C_FLAG_TESTS ${WIRESHARK_COMMON_FLAGS} ${WIRESHARK_C_ONLY_FLAGS} )

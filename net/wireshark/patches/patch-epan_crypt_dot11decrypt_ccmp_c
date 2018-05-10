@@ -1,0 +1,17 @@
+$OpenBSD: patch-epan_crypt_dot11decrypt_ccmp_c,v 1.1 2018/05/10 20:36:34 sthen Exp $
+
+Index: epan/crypt/dot11decrypt_ccmp.c
+--- epan/crypt/dot11decrypt_ccmp.c.orig
++++ epan/crypt/dot11decrypt_ccmp.c
+@@ -127,7 +127,10 @@ static void ccmp_init_blocks(
+ 		aad[2] = wh->fc[0];
+ 	aad[3] = (UINT8)(wh->fc[1] & 0xc7);    /* XXX magic #s */
+ 	/* NB: we know 3 addresses are contiguous */
+-	memcpy(aad + 4, &wh->addr1[0], 3 * DOT11DECRYPT_MAC_LEN);
++	memcpy(aad + 4, &wh->addr1[0], DOT11DECRYPT_MAC_LEN);
++	memcpy(aad + 4 + DOT11DECRYPT_MAC_LEN, &wh->addr2[0], DOT11DECRYPT_MAC_LEN);
++	memcpy(aad + 4 + 2 * DOT11DECRYPT_MAC_LEN, &wh->addr3[0], DOT11DECRYPT_MAC_LEN);
++
+ 	aad[22] = (UINT8)(wh->seq[0] & DOT11DECRYPT_SEQ_FRAG_MASK);
+ 	aad[23] = 0; /* all bits masked */
+ 	/*

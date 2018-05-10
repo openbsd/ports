@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/04/04 22:31:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2018/05/10 20:36:34 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 #BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)   # trying ports-gcc
@@ -7,12 +7,12 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
-WVER =		2.4.6
+V =		2.6.0
 PORTROACH =	limitw:1,even
-DISTNAME =	wireshark-${WVER}
-PKGNAME-main =	wireshark-${WVER}
-PKGNAME-text =	tshark-${WVER}
-PKGNAME-gtk =	wireshark-gtk-${WVER}
+DISTNAME =	wireshark-$V
+PKGNAME-main =	wireshark-$V
+PKGNAME-text =	tshark-$V
+PKGNAME-gtk =	wireshark-gtk-$V
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
@@ -29,7 +29,7 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB +=	c glib-2.0 m pcap z
+cWANTLIB +=	c glib-2.0 gmodule-2.0 m pcap z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -54,25 +54,27 @@ MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text += GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error lz4
-WANTLIB-text += nghttp2 smi spandsp snappy ssh xml2
+WANTLIB-text += bcg729 cares gcrypt gnutls lz4
+WANTLIB-text += maxminddb nghttp2 smi spandsp snappy ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += pthread wireshark wiretap wscodecs wsutil
+WANTLIB-main += wireshark wiretap wscodecs wsutil
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
 WANTLIB-gtk =	${cWANTLIB}
-WANTLIB-gtk += cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 gobject-2.0 gtk-3
-WANTLIB-gtk += pango-1.0 pangocairo-1.0 portaudio wireshark wiretap
-WANTLIB-gtk += wscodecs wsutil
+WANTLIB-gtk +=  wireshark wiretap wscodecs wsutil
+WANTLIB-gtk +=  cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 gobject-2.0 gtk-3
+WANTLIB-gtk +=  pango-1.0 pangocairo-1.0
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
 
+WVER =			${V:C/..$//}
 SUBST_VARS =		WVER
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/desktop-file-utils \
+			devel/git \
 			textproc/libxml \
 			textproc/libxslt \
 			devel/xdg-utils \
@@ -88,17 +90,18 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			archivers/snappy \
 			devel/glib2 \
 			net/libcares \
+			net/libmaxminddb  \
 			net/libsmi \
-			net/GeoIP  \
 			security/gnutls \
 			security/libgcrypt \
 			security/libssh \
+			telephony/bcg729 \
 			telephony/spandsp \
 			textproc/libxml \
 			www/nghttp2
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
+			tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg
 # will probably be "extra" - this library dep doesn't seem to actually show
@@ -107,16 +110,14 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 # an "Extra" (that may later change to a real WANTLIB) than failing builds.
 WANTLIB-main +=		Qt5Svg
 
-LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
-			x11/gtk+3 \
-			audio/portaudio-svn
+LIB_DEPENDS-gtk +=	tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
+			x11/gtk+3
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DDUMPCAP_INST_VALS=suid \
 			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
-			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
-			-DSH_EXECUTABLE=/bin/ksh
+			-DCOMPILER_CAN_HANDLE_SSE4_2=false
 
 .include <bsd.port.arch.mk>
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-rawshark_c,v 1.1 2017/09/01 09:39:29 sthen Exp $
+$OpenBSD: patch-rawshark_c,v 1.2 2018/05/10 20:36:34 sthen Exp $
 
 Index: rawshark.c
 --- rawshark.c.orig
 +++ rawshark.c
-@@ -602,7 +602,11 @@ main(int argc, char *argv[])
+@@ -585,7 +585,11 @@ main(int argc, char *argv[])
                  limit.rlim_cur = get_positive_int(optarg, "memory limit");
                  limit.rlim_max = get_positive_int(optarg, "memory limit");
  
