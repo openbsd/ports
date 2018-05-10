@@ -1,0 +1,29 @@
+$OpenBSD: patch-avahi-core_socket_c,v 1.5 2018/05/10 15:08:37 ajacoutot Exp $
+
+Unbreak IPv6: sendmsg() to 0:0:ff02:: failed: Invalid argument
+
+Index: avahi-core/socket.c
+--- avahi-core/socket.c.orig
++++ avahi-core/socket.c
+@@ -574,7 +574,7 @@ int avahi_send_dns_packet_ipv6(
+     struct msghdr msg;
+     struct iovec io;
+     struct cmsghdr *cmsg;
+-    size_t cmsg_data[(CMSG_SPACE(sizeof(struct in6_pktinfo))/sizeof(size_t)) + 1];
++    u_char cmsg_data[CMSG_SPACE(sizeof(struct in6_pktinfo))];
+ 
+     assert(fd >= 0);
+     assert(p);
+@@ -602,10 +602,10 @@ int avahi_send_dns_packet_ipv6(
+ 
+         memset(cmsg_data, 0, sizeof(cmsg_data));
+         msg.msg_control = cmsg_data;
+-        msg.msg_controllen = CMSG_LEN(sizeof(struct in6_pktinfo));
++        msg.msg_controllen = CMSG_SPACE(sizeof(struct in6_pktinfo));
+ 
+         cmsg = CMSG_FIRSTHDR(&msg);
+-        cmsg->cmsg_len = msg.msg_controllen;
++        cmsg->cmsg_len = CMSG_LEN(sizeof(struct in6_pktinfo));
+         cmsg->cmsg_level = IPPROTO_IPV6;
+         cmsg->cmsg_type = IPV6_PKTINFO;
+ 
