@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_ui_workspaceThumbnail_js,v 1.1 2018/04/29 10:43:33 jasper Exp $
+$OpenBSD: patch-js_ui_workspaceThumbnail_js,v 1.2 2018/05/10 12:37:10 jasper Exp $
 
 https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/4/diffs
 
@@ -42,7 +42,7 @@ Index: js/ui/workspaceThumbnail.js
          this._allWindows = [];
          this._minimizedChangedIds = [];
          for (let i = 0; i < windows.length; i++) {
-@@ -373,7 +377,7 @@ var WorkspaceThumbnail = new Lang.Class({
+@@ -371,7 +375,7 @@ var WorkspaceThumbnail = new Lang.Class({
          return this._collapseFraction;
      },
  
@@ -51,7 +51,7 @@ Index: js/ui/workspaceThumbnail.js
          let win = metaWin.get_compositor_private();
  
          // find the position of the window in our list
-@@ -383,9 +387,13 @@ var WorkspaceThumbnail = new Lang.Class({
+@@ -381,9 +385,13 @@ var WorkspaceThumbnail = new Lang.Class({
              return;
  
          let clone = this._windows[index];
@@ -66,7 +66,7 @@ Index: js/ui/workspaceThumbnail.js
      },
  
      _doAddWindow(metaWin) {
-@@ -504,7 +512,11 @@ var WorkspaceThumbnail = new Lang.Class({
+@@ -502,7 +510,11 @@ var WorkspaceThumbnail = new Lang.Class({
            this._bgManager = null;
          }
  
@@ -78,7 +78,7 @@ Index: js/ui/workspaceThumbnail.js
          this.actor = null;
      },
  
-@@ -537,6 +549,10 @@ var WorkspaceThumbnail = new Lang.Class({
+@@ -535,6 +547,10 @@ var WorkspaceThumbnail = new Lang.Class({
          clone.connect('drag-end', () => {
              Main.overview.endWindowDrag(clone.metaWindow);
          });
@@ -89,7 +89,7 @@ Index: js/ui/workspaceThumbnail.js
          this._contents.add_actor(clone.actor);
  
          if (this._windows.length == 0)
-@@ -545,6 +561,7 @@ var WorkspaceThumbnail = new Lang.Class({
+@@ -543,6 +559,7 @@ var WorkspaceThumbnail = new Lang.Class({
              clone.setStackAbove(this._windows[this._windows.length - 1].actor);
  
          this._windows.push(clone);
