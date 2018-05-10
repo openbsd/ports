@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/05 17:47:30 jsing Exp $
+# $OpenBSD: Makefile,v 1.10 2018/05/10 18:41:04 kn Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -6,19 +6,19 @@ COMMENT =		Go programming language
 
 VERSION =		1.4
 RELEASE =		20171003
-DISTNAME = 		go${VERSION}-bootstrap-${RELEASE}
-PKGNAME = 		go-bootstrap-${VERSION}.${RELEASE}
+DISTNAME =		go${VERSION}-bootstrap-${RELEASE}
+PKGNAME =		go-bootstrap-${VERSION}.${RELEASE}
 CATEGORIES =		lang
 REVISION =		0
 
 HOMEPAGE =		https://golang.org/
 
-MAINTAINER = 		Joel Sing <jsing@openbsd.org>
+MAINTAINER =		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE_CDROM =	bootstrap only
 PERMIT_PACKAGE_FTP =	bootstrap only
-PERMIT_DISTFILES_FTP =  bootstrap only
+PERMIT_DISTFILES_FTP =	bootstrap only
 
 WANTLIB =		c m pthread
 
@@ -35,9 +35,9 @@ WRKSRC =		${WRKDIST}/src
 
 INSTALL_STRIP =
 
-GOOS = 			openbsd
+GOOS =			openbsd
 GOARCH =		unknown
-GOROOT = 		${PREFIX}/go/bootstrap
+GOROOT =		${PREFIX}/go/bootstrap
 
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
@@ -50,18 +50,19 @@ EXEPREFIX =		8
 PKG_ARGS +=		-Damd64=0
 PKG_ARGS +=		-Di386=1
 .else
-PKG_ARGS += 		-Damd64=0 -Di386=0
+PKG_ARGS += 		-Damd64=0
+PKG_ARGS += 		-Di386=0
 .endif
 
 GOCFG =			/${GOOS}_${GOARCH}
 GOEXE =			${GOCFG}/${EXEPREFIX}
+GOTOOLS =		pkg/tool/${GOCFG}
 
 do-configure:
 .	if ${GOARCH} == "unknown"
 		@echo "Unable to determine GOARCH for ${MACHINE_ARCH}."
 		@exit 1
 .	endif
-
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -75,7 +76,9 @@ do-build:
 do-test:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
-		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
+		PATH=${WRKDIST}/bin:${PATH} \
+		GOROOT=${WRKDIST} \
+		    ./run.bash
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}
@@ -83,25 +86,19 @@ do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
 	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
 
-	@cd ${WRKDIST} && \
-		find . ! -name .git\* ! -name .hg\* -type f -maxdepth 1 \
-			-exec ${INSTALL_DATA} -p {} \
-			${GOROOT} \;
+	find ${WRKDIST} -maxdepth 1 -type f ! -name .git\* ! -name .hg\* \
+		-exec ${INSTALL_DATA} -p {} ${GOROOT} \;
 
 .	for dir in doc include lib misc src pkg
-		@cd ${WRKDIST} && \
+		cd ${WRKDIST} && \
 			find ${dir} -type d \
-				-exec ${INSTALL_DATA_DIR} \
-				${GOROOT}/{} \;
-		@cd ${WRKDIST} && \
-			find ${dir} ! -name \*.orig -type f \
-				-exec ${INSTALL_DATA} -p {} \
-				${GOROOT}/{} \;
+				-exec ${INSTALL_DATA_DIR} ${GOROOT}/{} \; \
+			    -o -type f ! -name \*.orig \
+				-exec ${INSTALL_DATA} -p {} ${GOROOT}/{} \;
 .	endfor
 
 	# These get installed via `find' however we need them to be executable
-	${INSTALL_PROGRAM_DIR} ${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
-	${INSTALL_PROGRAM} -p ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
-		${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
+	${INSTALL_PROGRAM_DIR} ${GOROOT}/${GOTOOLS}
+	${INSTALL_PROGRAM} -p ${WRKDIST}/${GOTOOLS}/* ${GOROOT}/${GOTOOLS}
 
 .include <bsd.port.mk>
