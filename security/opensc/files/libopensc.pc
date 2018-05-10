@@ -5,6 +5,6 @@ includedir=${prefix}/include
 
 Name: libopensc
 Description: OpenSC smartcard framework
-Version: ${GH_TAGNAME}
+Version: ${V}
 Libs: -L${libdir} -lopensc
 Cflags: -I${includedir}
