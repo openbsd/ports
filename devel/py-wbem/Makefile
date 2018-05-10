@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/26 09:35:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/10 07:32:16 ajacoutot Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
 MODPY_EGG_VERSION=	0.12.2
-REVISION=		0
+REVISION=		1
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
@@ -31,5 +31,11 @@ TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-ply${MODPY_FLAVOR}>=3.11
 
 MODPY_SETUPTOOLS=	Yes
+
+post-install:
+	rm ${PREFIX}/bin/*.bat
+	mv ${PREFIX}/bin/mof_compiler{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/wbemcli{,${MODPY_BIN_SUFFIX}}
+	mv ${PREFIX}/bin/wbemcli{,${MODPY_BIN_SUFFIX}}.py
 
 .include <bsd.port.mk>

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/25 10:10:48 jasper Exp $
-bin/mof_compiler
-bin/mof_compiler.bat
-bin/wbemcli
-bin/wbemcli.bat
-bin/wbemcli.py
+@comment $OpenBSD: PLIST,v 1.5 2018/05/10 07:32:16 ajacoutot Exp $
+bin/mof_compiler${MODPY_BIN_SUFFIX}
+bin/wbemcli${MODPY_BIN_SUFFIX}
+bin/wbemcli${MODPY_BIN_SUFFIX}.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/
 lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
