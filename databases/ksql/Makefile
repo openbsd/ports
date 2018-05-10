@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/28 18:11:53 jturner Exp $
+# $OpenBSD: Makefile,v 1.11 2018/05/10 16:54:09 jturner Exp $
 
 COMMENT =		yet another SQLite wrapper
 
-DISTNAME =		ksql-0.3.1
+DISTNAME =		ksql-0.3.2
 CATEGORIES =		databases
 
 MAINTAINER =		James Turner <james@calminferno.net>
