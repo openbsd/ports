@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.69 2018/05/10 15:25:36 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2018/05/10 15:26:16 espie Exp $
+    SUBDIR =
     SUBDIR += 3.4
     SUBDIR += 3.4,no_x11
     SUBDIR += 3.4,qt
