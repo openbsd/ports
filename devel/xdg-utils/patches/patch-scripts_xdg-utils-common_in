@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_xdg-utils-common_in,v 1.4 2017/05/09 07:11:55 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-utils-common_in,v 1.5 2018/05/11 05:47:28 ajacoutot Exp $
 
 Make xdg-open work with toad(8) under KDE4.
 
 Index: scripts/xdg-utils-common.in
 --- scripts/xdg-utils-common.in.orig
 +++ scripts/xdg-utils-common.in
-@@ -309,6 +309,7 @@ detectDE()
+@@ -313,6 +313,7 @@ detectDE()
      if [ x"$DE" = x"" ]; then
        # classic fallbacks
        if [ x"$KDE_FULL_SESSION" != x"" ]; then DE=kde;
