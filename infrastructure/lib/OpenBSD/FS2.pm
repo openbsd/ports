@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.16 2018/05/07 12:15:36 espie Exp $
+# $OpenBSD: FS2.pm,v 1.17 2018/05/11 10:25:05 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -427,6 +427,7 @@ sub mtree
 		$mtree->{'/usr/local/lib/X11'} = 1;
 		$mtree->{'/usr/local/include/X11'} = 1;
 		$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
+		$mtree->{'/var/tmp'} = 1;
 		# zap /usr/libdata/xxx from perl install
 		$mtree->{$Config{'installarchlib'}} = 1;
 		$mtree->{dirname($Config{'installarchlib'})} = 1;
