@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.128 2018/05/11 03:58:11 espie Exp $
+# $OpenBSD: update-plist,v 1.129 2018/05/11 09:45:34 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -385,6 +385,7 @@ sub tag_along
 	my ($self, $n) = @_;
 
 	push(@{$self->{mytags}}, $n);
+	$n->{tagged} = 1;
 }
 
 # this is the actual marking for later:
@@ -673,6 +674,9 @@ sub may_tag_along
 
 sub known_object
 {
+	my ($self, $o) = @_;
+	my $f = $self->fullname;
+	push @{$o->{sample}{$f}}, $self;
 }
 
 package OpenBSD::PackingElement::Sampledir;
@@ -1202,6 +1206,19 @@ sub last_resort
 	return 0;
 }
 
+# somewhat devious: that file was created by the fake install, BUT we
+# install a sample instead. Make sure the sample is copied over in some
+# plist, though
+sub is_a_sample
+{
+	my ($self, $path) = @_;
+	return 0 unless defined $self->{sample}{$path};
+	for my $e (@{$self->{sample}{$path}}) {
+		return 1 if $e->{tagged};
+	}
+	return 0;
+}
+
 sub copy_object
 {
 	my ($self, $stage, $path) = @_;
@@ -1214,6 +1231,7 @@ sub copy_object
 	return if $self->walk_up_directory($path, $c);
 	return if $self->last_resort($path, $c);
 
+	return if $self->is_a_sample($path);
 	# TODO this is where we should figure @cwd stuff
 	# though it's generally better to have distinct plists
 	# for several prefixes
