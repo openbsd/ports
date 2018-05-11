@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/31 06:33:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/11 10:37:17 sthen Exp $
 @bin bin/kawa
 bin/qexo
-info/kawa.info
-info/kawa.info-1
-info/kawa.info-2
-info/kawa.info-3
-info/kawa.info-4
+@info info/kawa.info
 @man man/man1/kawa.1
 @man man/man1/qexo.1
 share/kawa/

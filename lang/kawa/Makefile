@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2018/03/18 13:26:46 sthen Exp $
-
-BROKEN-i386=		doesn't build reliably#'
+# $OpenBSD: Makefile,v 1.17 2018/05/11 10:37:17 sthen Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
-DISTNAME=		kawa-2.4
+DISTNAME=		kawa-3.0
 CATEGORIES=		lang java
 
 HOMEPAGE=		https://www.gnu.org/software/kawa/
@@ -24,7 +22,7 @@ USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
-WANTLIB+=		c ncurses readline
+WANTLIB+=		c curses readline
 BUILD_DEPENDS=		print/texinfo \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
@@ -40,14 +38,7 @@ MAKE_FLAGS=		JAVAC=${JAVA_HOME}/bin/javac \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-.include <bsd.port.arch.mk>
-# fails with this on i386, fails without this on amd64, unsure about
-# other arch but lp64 is probably not a bad indicator.
-.if ${PROPERTIES:Mlp64}
 MAKE_ENV+=		SLIB_JAVAFLAGS=-Xmx1200M
-.else
-MAKE_ENV+=		SLIB_JAVAFLAGS=-Xmx800M
-.endif
 
 # use UTF-8 encoding to avoid following errors:
 # unmappable character for encoding ASCII
@@ -56,8 +47,12 @@ MAKE_ENV+=		LANG=en_US.UTF-8
 TEST_FLAGS =		DIFF=diff \
 			PATH=${PATH}:${JAVA_HOME}/bin
 
+# Use a bit complex xargs avoid unneeded modifications to files
+# causing build issues on i386.
 pre-patch:
 	find ${WRKSRC} -type f | \
-		xargs sed -i 's,^JAR =.*,JAR = ${JAVA_HOME}/bin/jar,g'
+		xargs fgrep -l "JAR =" | \
+		xargs sed -i 's,^JAR =.*,JAR = ${JAVA_HOME}/bin/jar,g'; \
+		touch ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
