@@ -13,5 +13,5 @@ standard unix, but the code is rather sloppy and needs quite a few
 patches to run correctly on OpenBSD. Do not trust it for anything
 important.
 
-This package mostly exist to facilitate running code that 
+This package mostly exist to facilitate running code that
 occasionally wants xmlrpc, such as cmake.

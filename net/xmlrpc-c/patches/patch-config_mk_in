@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_mk_in,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: config.mk.in
+--- config.mk.in.orig
++++ config.mk.in
+@@ -255,6 +255,18 @@ ifeq ($(patsubst netbsd%,netbsd,$(HOST_OS)),netbsd)
+   NEED_WL_RPATH=yes
+ endif
+ 
++ifeq ($(patsubst openbsd%,openbsd,$(HOST_OS)),openbsd)
++  SHARED_LIB_TYPE = unix
++  SHLIB_SUFFIX = so
++  MUST_BUILD_SHLIB = Y
++  MUST_BUILD_SHLIBLE = Y
++  shlibfn = $(1:%=%.$(SHLIB_SUFFIX).$(MAJ).$(MIN))
++  shliblefn = $(1:%=%.$(SHLIB_SUFFIX))
++  CFLAGS_SHLIB = -fpic
++  LDFLAGS_SHLIB = -shared -Wl,-soname,$(SONAME) $(SHLIB_CLIB)
++  NEED_WL_RPATH=yes
++endif
++
+ ifeq ($(patsubst freebsd%,freebsd,$(HOST_OS)),freebsd)
+   SHARED_LIB_TYPE = unix
+   SHLIB_SUFFIX = so

@@ -1,0 +1,40 @@
+$OpenBSD: patch-unix-common_mk,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: unix-common.mk
+--- unix-common.mk.orig
++++ unix-common.mk
+@@ -52,22 +52,18 @@
+ # SONAME is the name of the library file being built, with the minor
+ #   version number cut off.  E.g. if we're building libfoo.so.1.2, SONAME
+ #   is libfoo.so.1 .
+-SONAME = $(@:%.$(MIN)=%)
++SONAME = $(@:%.$(MAJ).$(MIN)=%)
+ 
+ SHLIB_CMD = $(CCLD) $(LADD) $(LDFLAGS_SHLIB) -o $@ $^ 
+ 
+ SHLIB_LE_TARGETS = $(call shliblefn, $(SHARED_LIBS_TO_BUILD))
+ 
+-$(SHLIB_LE_TARGETS):%:%.$(MAJ)
++$(SHLIB_LE_TARGETS):%:%.$(MAJ).$(MIN)
+ 	rm -f $@
+ 	$(LN_S) $< $@
+ 
+ SONAME_TARGETS = $(SHLIB_LE_TARGETS:%=%.$(MAJ))
+ 
+-$(SONAME_TARGETS):%:%.$(MIN)
+-	rm -f $@
+-	$(LN_S) $< $@
+-
+ .PHONY: $(SHLIB_INSTALL_TARGETS)
+ .PHONY: install-shared-libraries
+ 
+@@ -80,9 +76,3 @@ install-shared-libraries: $(SHLIB_INSTALL_TARGETS)
+ $(SHLIB_INSTALL_TARGETS):%/install:%.$(SHLIB_SUFFIX).$(MAJ).$(MIN)
+ # $< is a library file name, e.g. libfoo.so.3.1 .
+ 	$(INSTALL_SHLIB) $< $(DESTDIR)$(LIBINST_DIR)/$<
+-	cd $(DESTDIR)$(LIBINST_DIR); \
+-	  rm -f $(<:%.$(MIN)=%); \
+-          $(LN_S) $< $(<:%.$(MIN)=%)
+-	cd $(DESTDIR)$(LIBINST_DIR); \
+-	  rm -f $(<:%.$(MAJ).$(MIN)=%); \
+-          $(LN_S) $(<:%.$(MIN)=%) $(<:%.$(MAJ).$(MIN)=%)

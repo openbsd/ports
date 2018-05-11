@@ -1,0 +1,28 @@
+$OpenBSD: patch-common_mk,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: common.mk
+--- common.mk.orig
++++ common.mk
+@@ -49,11 +49,11 @@ CFLAGS_COMMON = -DNDEBUG
+ CXXFLAGS_COMMON = -DNDEBUG
+ 
+ ifeq ($(C_COMPILER_GNU),yes)
+-  CFLAGS_COMMON += $(GCC_C_WARNINGS) -fno-common -g -O3
++  CFLAGS_COMMON += $(GCC_C_WARNINGS) -fno-common
+ endif
+ 
+ ifeq ($(CXX_COMPILER_GNU),yes)
+-  CXXFLAGS_COMMON += $(GCC_CXX_WARNINGS) -g
++  CXXFLAGS_COMMON += $(GCC_CXX_WARNINGS)
+ endif
+ 
+ # -qrtti tell the IBM compilers to allow dynamic type casting.  Without it,
+@@ -69,7 +69,7 @@ DISTDIR = $(BLDDIR)/$(PACKAGE)-$(VERSION)/$(SUBDIR)
+ # MAJ is the major version number, but is set separately by
+ # individual make files so that the major number of one library can change
+ # from one release to another while the major number of another does not.
+-MIN = $(XMLRPC_MINOR_RELEASE)
++MIN = $(LIB_MIN)
+ 
+ # CURDIR was introduced in GNU Make 3.77.
+ ifeq ($(CURDIR)x,x)

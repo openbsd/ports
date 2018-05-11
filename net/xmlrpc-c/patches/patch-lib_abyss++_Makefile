@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_abyss++_Makefile,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: lib/abyss++/Makefile
+--- lib/abyss++/Makefile.orig
++++ lib/abyss++/Makefile
+@@ -28,7 +28,7 @@ TARGET_MODS_PP = \
+   $(LIBXMLRPC_ABYSSPP_MODS) \
+ 
+ OMIT_ABYSSPP_LIB_RULE = Y
+-MAJ = 8
++MAJ = $(LIB_MAJ)
+   # Major number of shared libraries in this directory
+ 
+ include $(SRCDIR)/common.mk

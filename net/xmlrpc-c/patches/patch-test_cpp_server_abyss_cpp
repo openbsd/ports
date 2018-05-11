@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_cpp_server_abyss_cpp,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: test/cpp/server_abyss.cpp
+--- test/cpp/server_abyss.cpp.orig
++++ test/cpp/server_abyss.cpp
+@@ -85,7 +85,7 @@ class boundSocket { (public)
+         sockAddr.sin_port   = htons(portNumber);
+         sockAddr.sin_addr.s_addr = 0;
+ 
+-        rc = bind(this->fd, (struct sockaddr *)&sockAddr, sizeof(sockAddr));
++        rc = ::bind(this->fd, (struct sockaddr *)&sockAddr, sizeof(sockAddr));
+         
+         if (rc != 0) {
+             closesock(this->fd);

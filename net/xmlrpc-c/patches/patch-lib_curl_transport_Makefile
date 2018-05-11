@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_curl_transport_Makefile,v 1.1 2018/05/11 19:15:53 sthen Exp $
+
+Index: lib/curl_transport/Makefile
+--- lib/curl_transport/Makefile.orig
++++ lib/curl_transport/Makefile
+@@ -37,7 +37,7 @@ CURL_VERSION := $(shell curl-config --vernum)
+ # major version in hexadecimal; the second two are the minor version number
+ # and so on.  So "071000" means 7.16.0.
+ 
+-NEED_CURL_TYPES_H := $(shell if test $(CURL_VERSION) '<' 071000; then echo Y; fi)
++NEED_CURL_TYPES_H := N
+ 
+ ifeq ($(NEED_CURL_TYPES_H),Y)
+   CFLAGS_LOCAL += -DNEED_CURL_TYPES_H
