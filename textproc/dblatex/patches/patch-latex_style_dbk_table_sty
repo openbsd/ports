@@ -1,0 +1,31 @@
+$OpenBSD: patch-latex_style_dbk_table_sty,v 1.1 2018/05/11 18:48:35 stsp Exp $
+Remove use of private internal macro; fixes compatibility problem with texlive
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=840189
+Index: latex/style/dbk_table.sty
+--- latex/style/dbk_table.sty.orig
++++ latex/style/dbk_table.sty
+@@ -9,7 +9,6 @@
+ \usepackage{longtable}
+ \usepackage{lscape}
+ \usepackage{colortbl}
+-\usepackage{multirow}
+ \usepackage{calc}
+ \usepackage{hhline}
+ 
+@@ -20,16 +19,6 @@
+ \expandafter\renewcommand\expandafter\multicolumn
+   \expandafter[\expandafter3\expandafter]\expandafter{%
+   \multicolumn{#1}{#2}{#3}}
+-
+-% Make \@xmultirow long
+-\expandafter\long\expandafter\def%
+-\expandafter\@xmultirow%
+-\expandafter#\expandafter1%
+-\expandafter[\expandafter#\expandafter2\expandafter]%
+-\expandafter#\expandafter3%
+-\expandafter[\expandafter#\expandafter4\expandafter]%
+-\expandafter#\expandafter5%
+-\expandafter{\@xmultirow{#1}[#2]{#3}[#4]{#5}}
+ 
+ % For the newtbl code
+ \newdimen\newtblstarfactor%
