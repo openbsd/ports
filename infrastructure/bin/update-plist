@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.125 2018/05/09 17:26:31 espie Exp $
+# $OpenBSD: update-plist,v 1.126 2018/05/11 02:38:30 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -875,8 +875,16 @@ sub copy_extra
 package OpenBSD::Pkglocate;
 sub new
 {
-	my $class = shift;
-	bless {result => {}, params => [], bypath => {}}, $class;
+	my ($class, $state) = @_;
+	my $ncpu;
+	if (defined $state->opt('j')) {
+		$ncpu = $state->opt('j');
+	} else {
+		$ncpu = `sysctl -n hw.ncpu`;
+		chomp $ncpu;
+	}
+	bless {result => {}, params => [], bypath => {}, queue => [],
+		ncpu => $ncpu}, $class;
 }
 
 sub add_param
@@ -895,22 +903,32 @@ sub run_command
 	if (@{$self->{params}} == 0) {
 		return;
 	}
+	if (@{$self->{queue}} > $self->{ncpu}) {
+		$self->get_results;
+	}
 	my %h = map {($_, 1)} @{$self->{params}};
 	open(my $cmd, '-|', 'pkg_locate', map {":$_"} @{$self->{params}});
-	while (<$cmd>) {
+	push(@{$self->{queue}}, { h => \%h, pipe => $cmd});
+	$self->{params} = [];
+}
+
+sub get_results
+{
+	my $self = shift;
+	my $e = shift @{$self->{queue}};
+	my $fh = $e->{pipe};
+	while (<$fh>) {
 		chomp;
 		my ($pkgname, $pkgpath, $path) = split(':', $_, 3);
 
 		# pkglocate will return partial results, we only care about
 		# exact stuff
-		if ($h{$path}) {
+		if ($e->{h}{$path}) {
 			push(@{$self->{result}{$pkgname}}, $path);
 			$self->{bypath}{$pkgname} = $pkgpath;
 		}
 	}
-	close($cmd);
-
-	$self->{params} = [];
+	close($fh);
 }
 
 sub result
@@ -918,6 +936,9 @@ sub result
 	my $self = shift;
 	while (@{$self->{params}} > 0) {
 		$self->run_command;
+	}
+	while (@{$self->{queue}}) {
+		$self->get_results;
 	}
 	return $self->{result};
 }
@@ -957,9 +978,9 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvC:i:s:S:X:P:w:', 
-	    '[-mnrvx] [-C dir] [-i var] [-P pkgdir] [-S var] [-s var]',
-	    '[-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rvFC:i:j:s:S:X:P:w:', 
+	    '[-Fmnrvx] [-C dir] [-i var] [-j jobs] [-P pkgdir] [-S var]',
+	    '[-s var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
@@ -1315,10 +1336,20 @@ sub display_stripped_info
 	}
 }
 
+sub short_list
+{
+	my ($self, $l) = @_;
+	if (@$l > 10) {
+		return join(' ', splice(@$l, 0, 10))."...";
+	} else {
+		return join(' ', @$l);
+	}
+}
+
 sub locate_list
 {
 	my ($self, $p) = @_;
-	my $locator = OpenBSD::Pkglocate->new;
+	my $locator = OpenBSD::Pkglocate->new($p->{state});
 	$p->nlist->locate_files($locator);
 	my $l = $p->nlist->conflict_list;
 	my $r = $locator->result;
@@ -1333,7 +1364,7 @@ sub locate_list
 		my $myname = $p->nlist->pkgname;
 		next if $plist->conflict_list->conflicts_with($myname);
 		print "Warning: ", $myname, " conflicts with ", $pkgname, " (",
-		    $path, "):", join(' ', @{$r->{$pkgname}}), "\n";
+		    $path, "):", $self->short_list($r->{$pkgname}), "\n";
 	}
 }
 
@@ -1341,12 +1372,13 @@ sub try_pkglocate
 {
 	my $self = shift;
 	# hardcode the location for now
-	return unless -x '/usr/local/bin/pkg_locate';
-
-	# if we have pkglocate installed, *always* use it
-	$self->{state}->say("Looking for unregistered conflicts");
-	for my $p (@{$self->{lists}}) {
-		$self->locate_list($p);
+	if (-x '/usr/local/bin/pkg_locate') {
+		$self->{state}->say("Looking for unregistered conflicts");
+		for my $p (@{$self->{lists}}) {
+			$self->locate_list($p);
+		}
+    	} else {
+		$self->{state}->say("Can't look for conflicts, pkglocate not installed");
 	}
 }
 
@@ -1365,7 +1397,9 @@ $self->adjust_final;
 
 $self->display_stripped_info;
 $self->show_unknown;
-$self->try_pkglocate;
+if (!$self->{state}->opt('F')) {
+	$self->try_pkglocate;
+}
 
 # switch to ports owner
 if (defined $ports_gid) {
