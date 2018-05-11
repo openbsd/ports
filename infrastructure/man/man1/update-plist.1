@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.8 2018/05/09 14:06:19 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.9 2018/05/11 02:43:24 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 9 2018 $
+.Dd $Mdocdate: May 11 2018 $
 .Dt UPDATE-PLIST 1
 .Os
 .Sh NAME
@@ -24,9 +24,10 @@
 .Ev PORTSDIR Ns = Ns Ar path
 .Op Ev FAKE_TREE_OWNER Ns = Ns Ar user Ev PORTS_TREE_OWNER Ns = Ns Ar user Nm doas
 .Nm update-plist
-.Op Fl mnrvx
+.Op Fl Fmnrvx
 .Op Fl C Ar dir
 .Op Fl i Ar var
+.Op Fl j Ar jobs
 .Op Fl S Ar var
 .Op Fl s Ar var
 .Op Fl X Ar path
@@ -73,47 +74,58 @@ location in order to scan dependencies to trim common directories.
 The options are as follows:
 .Bl -tag -width Ds
 .It Fl C Ar dir
-use a cache directory
+Use a cache directory
 .Ar dir
 for scanning dependencies.
 Beware that this directory should then be cleaned manually if the
 dependencies plists change.
 But this will speed up plist regeneration for ports with lots of dependencies
 significantly.
+.It Fl F
+Do not try to run
+.Xr pkg_locate 1 .
 .It Fl i Ar var
-ignore variable
+Ignore variable
 .Ar var
 for new substitutions.
 Only existing substitutions will be considered for the new lists.
+.It Fl j Ar jobs
+Use
+.Ar jobs
+concurrent
+.Xr pkg_locate 1
+pipes.
+Default is
+.Sq hw.ncpu .
 .It Fl n
-do not move the final plists in position. Instead, leave the
+Do not move the final plists in position. Instead, leave the
 .Pa <file>.new
 files for comparison.
 .It Fl r
-run the
+Run the
 .Pa fake
 directory scan as root.
 .It Fl S Ar var
-consider variable for substitution only at the end of paths,
+Consider variable for substitution only at the end of paths,
 e.g., for suffixes like
 .Pa .pyc
 or
 .Pa .pyo .
 .It Fl s Ar var
-consider variable for substitution only at start of paths,
+Consider variable for substitution only at start of paths,
 e.g., for directories like
 .Pa /etc/rc.d
 or
 .Pa /usr/local .
 .It Fl v
-verbose mode.
+Verbose mode.
 Explain about directories stripped from dependencies.
 .It Fl w Ar suffix
-warn about suffixes such as
+Warn about suffixes such as
 .Ar .orig
 that (usually) should not end into packing-lists.
 .It Fl X Ar path
-exclude file at absolute
+Exclude file at absolute
 .Ar path
 from the information recorded in the packing-list.
 .El
@@ -145,6 +157,9 @@ If the
 package is installed,
 .Nm
 will make use of it and report unregistered conflicts.
+This can be disabled with
+.Fl F
+as it is time-consuming.
 .Pp
 Most
 .Ev SUBST_VARS
