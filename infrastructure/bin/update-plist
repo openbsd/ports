@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.130 2018/05/11 10:03:45 espie Exp $
+# $OpenBSD: update-plist,v 1.131 2018/05/11 15:07:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -928,6 +928,14 @@ sub run_command
 		$self->get_results;
 	}
 	my %h = map {($_, 1)} @{$self->{params}};
+	# XXX so this is slightly tricky, we do run a pipe, and don't
+	# look at the results just yet.
+	# *if* the pipe produces lots of results, it will be stuck,
+	# and when we grab the results, we will get stuff sequentially
+	# but we are gambling that pipes produce few results each,
+	# so they will just sit in the memory buffer when done
+	# (we could also move to non-blocking pipes, which is slightly
+	# crazy for such a small optimization)
 	open(my $cmd, '-|', 'pkg_locate', map {":$_"} @{$self->{params}});
 	push(@{$self->{queue}}, { h => \%h, pipe => $cmd});
 	$self->{params} = [];
