@@ -1,0 +1,25 @@
+$OpenBSD: patch-test_sav_run_c,v 1.1.1.1 2018/05/11 15:07:02 bcallah Exp $
+
+We're trying to get rid of libexecinfo.
+
+Index: test/sav/run.c
+--- test/sav/run.c.orig
++++ test/sav/run.c
+@@ -3,7 +3,7 @@
+ #include "game/game.h"
+ #include "game/settings.h"
+ 
+-#if defined(__GNUC__) && !defined(__MINGW32__)
++#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(__OpenBSD__)
+ #include <execinfo.h>
+ #endif
+ 
+@@ -22,7 +22,7 @@
+ 
+ static void handler(int sig)
+ {
+-#if defined(__GNUC__) && !defined(__MINGW32__)
++#if defined(__GNUC__) && !defined(__MINGW32__) && !defined(__OpenBSD__)
+     void *array[100];
+     size_t size;
+ 

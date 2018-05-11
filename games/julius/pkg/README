@@ -1,0 +1,29 @@
+$OpenBSD: README,v 1.1.1.1 2018/05/11 15:07:02 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+julius
+======
+julius requires the original game files from Caesar III to work
+properly.  These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_caesar3_2.0.0.9.exe using the innoextract package. The files will
+will be in a directory named app. You must keep this directory, though
+it can be renamed and moved to a location of your choosing, and you can
+delete everything else that is extracted from the exe, such as the tmp
+directory.
+
+The game can by run in two ways. First, it can be run from the app
+directory itself, such as the following:
+$ innoextract setup_caesar3_2.0.0.9.exe
+$ cd app
+$ julius
+
+Or, it can be run as:
+$ julius /path/to/app/
+
+Note that in either case, save files will be saved to the app directory
+so you must have write access to it.

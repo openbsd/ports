@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/11 15:07:02 bcallah Exp $
+@bin bin/julius
+share/doc/pkg-readmes/${FULLPKGNAME}

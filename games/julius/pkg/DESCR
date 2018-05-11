@@ -1,0 +1,12 @@
+julius is an open source re-implementation of the Caesar III game
+engine.
+
+In Caesar III, players take on the role of a Roman governor, tasked with
+building up a grand Roman city, in which they must ensure their citizens
+have their needs met, that their city is safe and profitable, while
+meeting various goals set for them and dealing with various disasters,
+angry gods and hostile enemies.
+
+While this package and the game engine are open source, one still needs
+to provide the original game assets from Caesar III, which is not open
+source. You will need to purchase the original game to use this package.
