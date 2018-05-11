@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.72 2018/03/13 19:29:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.73 2018/05/11 20:00:57 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -38,7 +38,6 @@ lib/${MOZILLA_PROJECT}/browser/features/followonsearch@mozilla.com.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/onboarding@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}/browser/features/shield-recipe-client@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/webcompat@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/omni.ja
 lib/${MOZILLA_PROJECT}/chrome.manifest
@@ -59,7 +58,6 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
 lib/${MOZILLA_PROJECT}/gtk2/
 @lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
-lib/${MOZILLA_PROJECT}/icudt60l.dat
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}

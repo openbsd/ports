@@ -1,0 +1,24 @@
+$OpenBSD: patch-toolkit_xre_nsAppRunner_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+
+Index: toolkit/xre/nsAppRunner.cpp
+--- toolkit/xre/nsAppRunner.cpp.orig
++++ toolkit/xre/nsAppRunner.cpp
+@@ -4450,6 +4450,18 @@ void AddSandboxAnnotations()
+   sandboxCapable = true;
+ #elif defined(XP_LINUX)
+   sandboxCapable = SandboxInfo::Get().CanSandboxContent();
++#elif defined(__OpenBSD__)
++  sandboxCapable = true;
++  nsAutoCString promisesString;
++  Preferences::GetCString("security.sandbox.pledge.main",
++                          promisesString);
++  if (pledge(promisesString.get(), NULL) == -1) {
++    if (errno == EINVAL)
++        printf_stderr("pledge promises for main process is a malformed string: '%s'\n", promisesString.get());
++    if (errno == EPERM)
++        printf_stderr("pledge promises for main process cant elevate priviledges: '%s'\n", promisesString.get());
++  } else
++      printf_stderr("pledged main process (pid=%d) with promises: '%s'\n", getpid(), promisesString.get());
+ #endif
+ 
+   CrashReporter::AnnotateCrashReport(

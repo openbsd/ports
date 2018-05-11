@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.348 2018/03/26 16:51:44 landry Exp $
+# $OpenBSD: Makefile,v 1.349 2018/05/11 20:00:57 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	59.0.2
-MOZILLA_COMMIT =	239e434d6d2b8e1e2b697c3416d1e96d48fe98e5
+MOZILLA_VERSION =	60.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-MASTER_SITES =	https://distfiles.bsdfrog.org/mozilla/
+WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}
 SO_VERSION =	76.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -69,6 +67,7 @@ MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 DPB_PROPERTIES =	lonesome
 .endif
 #CONFIGURE_ARGS +=	--enable-linker=lld
+CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
 
 SUBST_VARS +=	LOCALBASE X11BASE
 

@@ -1,0 +1,32 @@
+$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+
+Index: dom/ipc/ContentChild.cpp
+--- dom/ipc/ContentChild.cpp.orig
++++ dom/ipc/ContentChild.cpp
+@@ -97,6 +97,8 @@
+ #include "CubebUtils.h"
+ #elif defined(XP_MACOSX)
+ #include "mozilla/Sandbox.h"
++#elif defined(__OpenBSD__)
++#include <unistd.h>
+ #endif
+ #endif
+ 
+@@ -1719,6 +1721,17 @@ ContentChild::RecvSetProcessSandbox(const MaybeFileDes
+   mozilla::SandboxTarget::Instance()->StartSandbox();
+ #elif defined(XP_MACOSX)
+   sandboxEnabled = StartMacOSContentSandbox();
++#elif defined(__OpenBSD__)
++  nsAutoCString promisesString;
++  Preferences::GetCString("security.sandbox.pledge.content",
++                          promisesString);
++  if (pledge(promisesString.get(), NULL) == -1) {
++    if (errno == EINVAL)
++        printf_stderr("pledge promises for content process is a malformed string: '%s'\n", promisesString.get());
++    if (errno == EPERM)
++        printf_stderr("pledge promises for content process cant elevate priviledges: '%s'\n", promisesString.get());
++  } else
++      printf_stderr("pledged content process (pid=%d) with promises: '%s'\n", getpid(), promisesString.get());
+ #endif
+ 
+   CrashReporter::AnnotateCrashReport(
