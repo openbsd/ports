@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.129 2018/05/11 09:45:34 espie Exp $
+# $OpenBSD: update-plist,v 1.130 2018/05/11 10:03:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -876,10 +876,21 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	$self->{found} = 1;
-	$self->clone->add_object($plist);
+	if (!$self->{found}) {
+		$self->{found} = 1;
+		$self->clone->add_object($plist);
+	}
 }
 
+sub rebless_okay() { 0 }
+
+package OpenBSD::PackingElement::Extradir;
+sub rebless_okay() { 0 }
+
+sub copy_extra
+{
+	&OpenBSD::PackingElement::Extra::copy_extra;
+}
 
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
