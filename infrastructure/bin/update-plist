@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.127 2018/05/11 02:59:40 espie Exp $
+# $OpenBSD: update-plist,v 1.128 2018/05/11 03:58:11 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1366,8 +1366,14 @@ sub locate_list
 		my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
 		    $self->{state}, $path, $portsdir, 
 		    \&OpenBSD::PackingList::ConflictOnly, 
-		    "print-plist");
+		    "print-plist",
+		    # XXX pkglocate does not include default flavors
+		    "FULLPATH=No");
 		my $myname = $p->nlist->pkgname;
+		# Cheat in case ask_tree didn't work anyhow.
+		if (!defined $plist->pkgname) {
+			$plist->set_pkgname($pkgname);
+		}
 		next if $plist->conflict_list->conflicts_with($myname);
 		print "Warning: ", $myname, " conflicts with ", $pkgname, " (",
 		    $path, "):", $self->short_list($r->{$pkgname}), "\n";
