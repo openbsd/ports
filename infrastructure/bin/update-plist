@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.134 2018/05/12 10:41:40 espie Exp $
+# $OpenBSD: update-plist,v 1.135 2018/05/12 11:13:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -271,7 +271,7 @@ sub figure_out_dependencies
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
 			$self->{state}->say("Stripping directories from #1",
-			    $pkgpath);
+			    $pkgpath) unless $self->{state}{quiet};
 			my $plist = $self->get_plist($pkgpath, $portsdir);
 			$plist->process_dependency($cache->{$pkgpath});
 		}
@@ -299,6 +299,7 @@ sub init
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
 	$self->{repo} = $realstate->{repo};
+	$self->{quiet} = $realstate->{quiet};
 	$self->{cache_dir} = $realstate->{cache_dir};
 }
 
@@ -888,6 +889,12 @@ sub copy_extra
 	}
 }
 
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
+}
+
 sub rebless_okay() { 0 }
 
 package OpenBSD::PackingElement::Extradir;
@@ -1017,13 +1024,14 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvV:FC:i:j:s:S:X:P:w:', 
+	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:', 
 	    '[-Fmnrvx] [-C dir] [-i var] [-j jobs] [-P pkgdir] [-S var]',
 	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
 	$state->{cache_dir} = $state->opt('C');
+	$state->{quiet} = $state->opt('q');
 }
 
 package UpdatePlist;
@@ -1052,7 +1060,8 @@ sub process_next_subpackage
 
 	$r->olist->set_pkgname($pkg);
 	$r->nlist->set_pkgname($pkg);
-	$self->{state}->say("Reading existing plist for #1", $pkg);
+	$self->{state}->say("Reading existing plist for #1", $pkg) 
+	    unless $self->{state}{quiet};
 	$r->read_all_fragments($s, $r->olist);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
@@ -1090,7 +1099,8 @@ sub scan_fake_dir
 
 	# now we ask the file system what exists, and fill file 
 	# objects according to that.
-	$self->{state}->say("Scanning #1", $base);
+	$self->{state}->say("Scanning #1", $base)
+	    unless $self->{state}{quiet};
 	local $> = 0 if $self->{state}{scan_as_root};
 
 	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored});
@@ -1157,7 +1167,8 @@ sub handle_annotations
 {
 	my $self = shift;
 	# First we figure out which objects will get copied.
-	$self->{state}->say("Figuring out tie points");
+	$self->{state}->say("Figuring out tie points")
+	    unless $self->{state}{quiet};
 	for my $path (keys %{$self->{objects}}) {
 		my $o = $self->{objects}{$path};
 		if ($self->{exact}{$path}) {
@@ -1170,7 +1181,8 @@ sub handle_annotations
 	# THEN we attach annotations to the closest known object
 	# This is sturdy when files vanish, as we tag along with
 	# the nearest file
-	$self->{state}->say("Tieing loose objects");
+	$self->{state}->say("Tieing loose objects")
+	    unless $self->{state}{quiet};
 	for my $p (@{$self->{lists}}) {
 		$p->olist->tie_objects($p->olist);
 		$p->olist->copy_annotations($p->nlist);
@@ -1261,7 +1273,8 @@ sub copy_object
 sub copy_objects
 {
 	my $self = shift;
-	$self->{state}->say("Copying objects");
+	$self->{state}->say("Copying objects")
+	    unless $self->{state}{quiet};
 	# XXX stage 2 is for rcscript, which are kind of special with
 	# their included cwd (why did I do things that way again?
 	# check why absolute_okay is not enough)
@@ -1316,7 +1329,7 @@ sub strip_dependency_directories
 		next if !defined $cache->{$pkgpath};
 		$cache->{$pkgpath} = {};
 		$self->{state}->say("Stripping directories from #1 (trying harder)", 
-		    $pkgpath);
+		    $pkgpath) unless $self->{state}{quiet};
 		$p->nlist->process_dependency($cache->{$pkgpath});
 	}
 
@@ -1335,7 +1348,6 @@ sub adjust_final
 		$p->nlist->{name}{DONT} = 1;
 		# CWD that we added manually... this sucks a bit!!!
 		$p->nlist->{items}[0]{DONT} = 1;
-		# that stuff might have cwd, so we copy it late
 		$p->olist->copy_extra($p->nlist);
 		for my $i (@{$p->{base_plists}}) {
 			add_missing_cvstags($p->nlist, $i);
@@ -1423,7 +1435,8 @@ sub try_pkglocate
 	my $self = shift;
 	# hardcode the location for now
 	if (-x '/usr/local/bin/pkg_locate') {
-		$self->{state}->say("Looking for unregistered conflicts");
+		$self->{state}->say("Looking for unregistered conflicts")
+		    unless $self->{state}{quiet};
 		for my $p (@{$self->{lists}}) {
 			$self->locate_list($p);
 		}
