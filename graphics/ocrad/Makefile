@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/12 13:47:14 solene Exp $
 
 COMMENT=	OCR program for pnm files
 
-DISTNAME=	ocrad-0.25
-REVISION=	2
+DISTNAME=	ocrad-0.26
+
 CATEGORIES=	graphics
 EXTRACT_SUFX=	.tar.lz
 
