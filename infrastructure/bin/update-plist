@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.131 2018/05/11 15:07:23 espie Exp $
+# $OpenBSD: update-plist,v 1.132 2018/05/12 07:48:38 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -363,8 +363,7 @@ sub write_restate
 	return undef;
 }
 
-# default backsubstitution and writing. Adequate for almost everything
-# but @libs
+# default backsubstitution and writing. 
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
@@ -827,6 +826,14 @@ sub locate_files
 	$locator->add_param($self->fullname);
 }
 
+sub write_backsubst
+{
+	my ($self, $f, $p) = @_;
+	if (defined $self->{nochecksum}) {
+		print {$f->fh} "\@comment no checksum\n";
+	}
+	$self->SUPER::write_backsubst($f, $p);
+}
 
 sub is_file { 1 }
 
