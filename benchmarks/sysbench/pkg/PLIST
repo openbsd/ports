@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
-bin/sysbench
+@comment $OpenBSD: PLIST,v 1.2 2018/05/12 13:58:30 espie Exp $
+@bin bin/sysbench
 share/doc/sysbench/
 share/doc/sysbench/manual.html
 share/examples/sysbench/

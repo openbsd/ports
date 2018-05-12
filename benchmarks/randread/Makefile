@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/05/12 13:58:30 espie Exp $
 
 COMMENT=	help benchmark random read performance
 
 DISTNAME=	randread-0.2
 CATEGORIES=	benchmarks
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://randread.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=randread/}

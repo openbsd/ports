@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/24 12:20:38 schwarze Exp $
+# $OpenBSD: Makefile,v 1.10 2018/05/12 13:58:30 espie Exp $
 
 COMMENT=	Unix benchmark utility
 
 DISTNAME=	ubench-0.32
 CATEGORIES=	benchmarks
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.phystech.com/download/ubench.html
 MASTER_SITES=	http://www.phystech.com/ftp/
