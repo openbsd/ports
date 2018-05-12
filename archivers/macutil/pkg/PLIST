@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/27 17:44:19 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/12 09:22:27 espie Exp $
 @conflict avenger-*
-bin/binhex
-bin/frommac
-bin/hexbin
-bin/macsave
-bin/macstream
-bin/macunpack
-bin/tomac
+@bin bin/binhex
+@bin bin/frommac
+@bin bin/hexbin
+@bin bin/macsave
+@bin bin/macstream
+@bin bin/macunpack
+@bin bin/tomac
 @man man/man1/binhex.1
 @man man/man1/frommac.1
 @man man/man1/hexbin.1

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/12 23:09:08 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2018/05/12 09:22:27 espie Exp $
 
 COMMENT=	handle the old .ZOO archive format
 
 DISTNAME=	zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://spacehopper.org/mirrors/
 

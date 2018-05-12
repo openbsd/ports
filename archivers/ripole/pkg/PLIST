@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 10:40:32 merdely Exp $
-bin/ripole
+@comment $OpenBSD: PLIST,v 1.2 2018/05/12 09:22:27 espie Exp $
+@bin bin/ripole
 share/doc/ripole/
 share/doc/ripole/README

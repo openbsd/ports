@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/04 17:05:50 alek Exp $
-bin/lha
+@comment $OpenBSD: PLIST,v 1.7 2018/05/12 09:22:27 espie Exp $
+@bin bin/lha
 @man man/ja_JP.EUC/man1/lha.1
 @comment @man man/mann/lha.n
