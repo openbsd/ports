@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 16:06:03 espie Exp $
-bin/zmrx
-bin/zmtx
+@comment $OpenBSD: PLIST,v 1.5 2018/05/12 14:08:51 espie Exp $
+@bin bin/zmrx
+@bin bin/zmtx
 @man man/man1/zmrx.1
 @man man/man1/zmtx.1
