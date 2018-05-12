@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/27 23:36:31 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/12 09:52:07 espie Exp $
 bin/puddletag
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/__init__.py
@@ -145,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 @man man/man1/puddletag.1
 share/applications/puddletag.desktop
+@comment share/man/
+@comment share/man/man1/
 share/pixmaps/
 share/pixmaps/puddletag.png
 @exec %D/bin/update-desktop-database
