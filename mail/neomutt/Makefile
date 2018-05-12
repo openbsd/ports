@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/05/12 12:50:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/05/12 13:02:33 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -23,6 +23,7 @@ LIB_DEPENDS+=	devel/gettext \
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
+SEPARATE_BUILD=	Yes
 FLAVORS=	gpgme sasl
 FLAVOR?=
 
