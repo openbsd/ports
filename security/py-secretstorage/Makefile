@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/28 21:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/12 21:17:53 jasper Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
 MODPY_EGG_VERSION=	2.3.1
 DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=   		security
 
@@ -20,7 +21,7 @@ MODPY_SETUPTOOLS=	Yes
 NO_TEST=		Yes
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			security/py-crypto${MODPY_FLAVOR} \
+			security/py-cryptography${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR}
 
 FLAVORS =		python3
