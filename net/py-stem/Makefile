@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/12 20:04:12 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/12 19:51:53 jasper Exp $
 
 COMMENT =		Tor controller library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.6.0
 V =			${MODPY_EGG_VERSION:S/b//}
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		py-stem-${V}
+REVISION =		0
 WRKDIST =		${WRKDIR}/stem-${V}
 
 SUBST_VARS +=		V
@@ -24,8 +25,6 @@ FLAVOR ?=
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-
-RUN_DEPENDS =		security/py-crypto${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
