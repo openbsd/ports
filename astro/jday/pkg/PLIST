@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:31:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/12 09:41:31 espie Exp $
 @conflict netatalk-*
-bin/dbd
-bin/j2d
-bin/jday
+@bin bin/dbd
+@bin bin/j2d
+@bin bin/jday
 include/jday.h
 lib/libjday.a
 lib/libjday.la

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2015/11/24 09:11:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2018/05/12 09:41:31 espie Exp $
 
 COMMENT=		wm-dockapp; shows the moon phase
 
 DISTNAME=		wmMoonClock-1.27
 PKGNAME=		${DISTNAME:L}
-REVISION=		4
+REVISION=		5
 CATEGORIES=		astro x11 x11/windowmaker
 
 # GPL

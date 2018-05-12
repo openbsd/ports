@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/12 09:41:31 espie Exp $
 
 COMMENT=		displays the phase of the moon in ascii
 
 DISTNAME=		phoon_29jun2005
 PKGNAME=		phoon-20050629
 CATEGORIES=		astro
+REVISION =		0
 
 HOMEPAGE=		http://www.acme.com/software/phoon/
 

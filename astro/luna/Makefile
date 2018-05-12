@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/13 03:00:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2018/05/12 09:41:31 espie Exp $
 
 COMMENT=	display the moon's phase
 
@@ -6,6 +6,7 @@ DISTNAME=	luna19s
 PKGNAME=	luna-1.9
 CATEGORIES=	astro
 EXTRACT_SUFX=	.lzh
+REVISION =	0
 
 EXTRACT_CASES=	*.lzh) lha xw=${WRKDIR}/${DISTNAME} ${FULLDISTDIR}/$$archive ;;
 

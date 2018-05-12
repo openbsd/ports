@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/01/22 22:58:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2018/05/12 09:41:31 espie Exp $
 
 COMMENT=		wm-dockapp; displays the earth on an icon
 
 DISTNAME=		wmglobe-1.3
-REVISION=		5
+REVISION=		6
 CATEGORIES=		astro x11 x11/windowmaker
 
 HOMEPAGE=		http://hamete.org/static/wmg/
