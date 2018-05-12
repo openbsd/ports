@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.7 2018/05/08 13:23:51 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.8 2018/05/12 07:59:00 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -51,7 +51,7 @@ sub new
 	    # string and no backsubst, it's probably intentional
 	    used => {}, 
 	    # special variables we won't add in substitutions
-	    special => {
+	    dont_backsubst => {
 		FULLPKGNAME => 1,
 		FULLPKGPATH => 1,
 		MACHINE_ARCH => 1,
@@ -64,20 +64,15 @@ sub new
 	    l => [],
 	    # variables that expand to nothing have specific handling
 	    lempty => [],
+	    # variables that expand to something that looks like a version
+	    # number won't substitute in the middle of numbers by default
+	    isversion => {},
 	    }, $class;
-	if (defined $state->{dont_backsubst}) {
-		for my $v (@{$state->{dont_backsubst}}) {
-			$o->{special}{$v} = 1;
-		}
-	}
-	if (defined $state->{start_only}) {
-		for my $v (@{$state->{start_only}}) {
-			$o->{start_only}{$v} = 1;
-		}
-	}
-	if (defined $state->{suffix_only}) {
-		for my $v (@{$state->{suffix_only}}) {
-			$o->{suffix_only}{$v} = 1;
+    	for my $k (qw(dont_backsubst start_only suffix_only no_version)) {
+		if (defined $state->{$k}) {
+			for my $v (@{$state->{$k}}) {
+				$o->{$k}{$v} = 1;
+			}
 		}
 	}
 	return $o;
@@ -96,6 +91,10 @@ my $ignore = {
 sub add
 {
 	my ($self, $k, $v) = @_;
+
+	my $k2 = $k;
+	$k2 =~ s/\^//;
+
 	# XXX whatever is before FLAVORS is internal pkg_create options
 	# such as flavor conditionals, so ignore them
 	if ($k eq 'FLAVORS') {
@@ -103,18 +102,19 @@ sub add
 		$self->{count} = {};
 		$self->{lempty} = [];
 	}
-	if ($ignore->{$k} || $k =~ m/^LIB\S+_VERSION$/) {
+	if ($ignore->{$k2} || $k2 =~ m/^LIB\S+_VERSION$/) {
 	} else {
 		# any variable that expands to @comment should never get
 		# added where it wasn't already
 		if ($v =~ m/^\@comment\s*$/) {
-			my $k2 = $k;
-			$k2 =~ s/\^//;
-			$self->{special}{$k2} = 1;
+			$self->{dont_backsubst}{$k2} = 1;
 		}
 		if ($v eq '') {
 			unshift(@{$self->{lempty}}, $k);
 		} else {
+			if ($v =~ m/^[\d\.]+$/ && !$self->{no_version}{$k2}) {
+				$self->{isversion}{$k2} = 1;
+			}
 			unshift(@{$self->{l}}, $k);
 		}
 		$self->{count}{$v}++;
@@ -137,7 +137,7 @@ sub never_add
 	if ($self->{count}{$self->value($k)} > 1) {
 		return 1;
 	} else {
-		return $self->{special}{$k};
+		return $self->{dont_backsubst}{$k};
 	}
 }
 
@@ -179,9 +179,13 @@ sub unsubst_non_empty_var
 		$string =~ s/\Q$v\E$/\$\{$k2\}/;
 		$string =~ s/\Q$v\E([\s:=])/\$\{$k2\}$1/g;
 	} else {
-		# TODO on the other hand, numeric and version-like
-		# variables shouldn't substitute partial numbers
-		$string =~ s/\Q$v\E/\$\{$k2\}/g;
+		if ($subst->{isversion}{$k2}) {
+			$string =~ s/(\D)\Q$v\E(\D)/$1\$\{$k2\}$2/g;
+			$string =~ s/^\Q$v\E(\D)/\$\{$k2\}$1/;
+			$string =~ s/(\D)\Q$v\E$/$1\$\{$k2\}/;
+		} else {
+			$string =~ s/\Q$v\E/\$\{$k2\}/g;
+		}
 	}
 	return $string;
 }
