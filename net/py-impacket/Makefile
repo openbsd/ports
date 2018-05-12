@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/01 15:13:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/12 21:01:05 jasper Exp $
 
 COMMENT =		Python classes providing access to network packets
 
 MODPY_EGG_VERSION =	0.9.15
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 CATEGORIES =   		net security
 
@@ -34,10 +34,14 @@ MODPY_ADJ_FILES =	impacket/ese.py \
 # not required for normal use.
 RUN_DEPENDS =		devel/py-asn1>=0.1.7 \
 			net/py-pcapy \
-			security/py-crypto>=2.6 \
+			security/py-cryptodome \
 			security/py-openssl
 
 NO_TEST =		Yes
+
+# py-crypto -> py-cryptodome
+pre-patch:
+	sed -i 's,Crypto\.,Cryptodome\.,g' ${WRKSRC}/**/*.py
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \
