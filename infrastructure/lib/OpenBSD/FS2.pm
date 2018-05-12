@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.17 2018/05/11 10:25:05 espie Exp $
+# $OpenBSD: FS2.pm,v 1.18 2018/05/12 11:21:27 sthen Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -349,7 +349,7 @@ sub recognize
 {
 	my ($class, $filename, $fs, $data) = @_;
 
-	return 0 unless $filename =~ m/\.(ttf|pfb|pcf(\.gz)?)$/;
+	return 0 unless $filename =~ m,^/usr/local/share/fonts/.*\.(ot[cf]|tt[cf]|pf[ab]|pcf(\.gz)?)$,;
 
 	return 1;
 }
