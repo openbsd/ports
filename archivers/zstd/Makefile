@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/04/04 16:10:02 bket Exp $
+# $OpenBSD: Makefile,v 1.17 2018/05/12 14:49:01 jca Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -22,7 +22,6 @@ LIB_DEPENDS =		archivers/lz4 \
 			archivers/xz
 
 COMPILER =		base-clang ports-clang ports-gcc
-COMPILER_LANGS =	c
 
 MAKE_ENV =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
