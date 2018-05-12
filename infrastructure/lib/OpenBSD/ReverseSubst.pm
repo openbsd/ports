@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.8 2018/05/12 07:59:00 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.9 2018/05/12 10:46:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -15,6 +15,58 @@
 
 use strict;
 use warnings;
+
+# prefix and suffix have a default meaning, and then a special meaning
+# for some element classes
+package OpenBSD::PackingElement;
+sub unsubst_prefix
+{
+	my ($self, $string, $v, $k2) = @_;
+	
+	# XXX needs_keyword does not return what we need
+	# so the simplest way is to try this, and if it fails, we
+	# do the normal unsubst
+	eval {
+		my $key = $self->keyword;
+		$string =~ s/^\@\Q$key\E\s+\Q$v\E/\@$key \$\{$k2\}/;
+	};
+	if ($@) {
+		$string =~ s/^\Q$v\E/\$\{$k2\}/;
+	}
+	return $string;
+}
+
+sub unsubst_suffix
+{
+	my ($self, $string, $v, $k2) = @_;
+	$string =~ s/\Q$v\E$/\$\{$k2\}/;
+	return $string;
+}
+
+package OpenBSD::PackingElement::Action;
+sub unsubst_prefix
+{
+	my ($self, $string, $v, $k2) = @_;
+	
+	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
+	return $self->SUPER::unsubst_prefix($string, $v, $k2);
+}
+
+sub unsubst_suffix
+{
+	my ($self, $string, $v, $k2) = @_;
+	$string =~ s/\Q$v\E([\s:=])/\$\{$k2\}$1/g;
+	return $self->SUPER::unsubst_suffix($string, $v, $k2);
+}
+
+
+package OpenBSD::PackingElement::Manpage;
+sub unsubst_suffix
+{
+	my ($self, $string, $v, $k2) = @_;
+	$string =~ s/\Q$v\E(\.[^\.]+(\.gz|\.Z)?)$/\$\{$k2\}$1/;
+	return $self->SUPER::unsubst_suffix($string, $v, $k2);
+}
 
 package Forwarder;
 # perfect forwarding
@@ -86,6 +138,7 @@ my $ignore = {
 	PERMIT_PACKAGE_CDROM => 1,
 	PERMIT_PACKAGE_FTP => 1,
 	HOMEPAGE => 1,
+	TRUEPREFIX => 1,
 };
 
 sub add
@@ -117,7 +170,12 @@ sub add
 			}
 			unshift(@{$self->{l}}, $k);
 		}
-		$self->{count}{$v}++;
+		# if two variables expand to the same thing, but one is
+		# marked "don't backsubst", then we should backsubst the other
+		$self->{count}{$v} //= 0;
+		if (!$self->{dont_backsubst}{$k2}) {
+			$self->{count}{$v}++;
+		}
 	}
 	$self->{delegate}->add($k, $v);
 }
@@ -147,37 +205,59 @@ sub parse_option
 	&OpenBSD::Subst::parse_option;
 }
 
+
+# after we got all variables, but before performing backsubst
+sub finalize
+{
+	my $subst = shift;
+	# sort non empty variables by reverse length
+	$subst->{vars} = [sort 
+	    {length($subst->value($b)) <=> length($subst->value($a))} 
+	    @{$subst->{l}}];
+}
+
+# some unsubst variables have special cases
+sub special_case
+{
+	my ($subst, $k, $v, $string) = @_;
+	if ($k eq 'FULLPKGNAME' && $string =~ m,^share/doc/pkg-readmes/,) {
+		return 1;
+	}
+	if ($k eq 'MACHINE_ARCH' && $string =~ m/\Q$v\E-openbsd/) {
+		return 1;
+	}
+	return 0;
+}
+
 sub unsubst_non_empty_var
 {
-	my ($subst, $string, $k, $unsubst) = @_;
+	my ($subst, $string, $k, $unsubst, $context) = @_;
 	my $k2 = $k;
 	$k2 =~ s/^\^//;
+	my $v = $subst->value($k2);
 	# don't add subst on THOSE variables
 	# TODO ARCH, MACHINE_ARCH could happen, but only with word
 	#  boundary contexts
 	if ($subst->never_add($k2)) {
 		unless (defined $unsubst &&
 		    $unsubst =~ m/\$\{\Q$k2\E\}/) {
-			# add a magical location for FULLPKGNAME
-			return $string unless $k2 eq 'FULLPKGNAME' &&
-			    $string =~ m,^share/doc/pkg-readmes/,;
+			return $string 
+			    unless $subst->special_case($k2, $v, $string);
 		}
 	} else {
 		# Heuristics: if the variable is already known AND was 
-		# not used already, then we don't try to use it
-		# XXX should we look for the value in $unsubst ?
+		# not used already, AND the value was in unsubst
+		# then we don't add a new substitution
 		return $string if defined $unsubst &&
 		    $subst->{used}{$k2} &&
-		    $unsubst !~ m/\$\{$k2\}/;
+		    $unsubst !~ m/\$\{$k2\}/ &&
+		    $unsubst =~ m/\Q$v\E/;
 	}
 		
-	my $v = $subst->value($k2);
 	if ($k =~ m/^\^(.*)$/ || $subst->{start_only}{$k}) {
-		$string =~ s/^\Q$v\E/\$\{$k2\}/;
-		$string =~ s/([\s:=])\Q$v\E/$1\$\{$k2\}/g;
+		$string = $context->unsubst_prefix($string, $v, $k2);
 	} elsif ($subst->{suffix_only}{$k}) {
-		$string =~ s/\Q$v\E$/\$\{$k2\}/;
-		$string =~ s/\Q$v\E([\s:=])/\$\{$k2\}$1/g;
+		$string = $context->unsubst_suffix($string, $v, $k2);
 	} else {
 		if ($subst->{isversion}{$k2}) {
 			$string =~ s/(\D)\Q$v\E(\D)/$1\$\{$k2\}$2/g;
@@ -194,14 +274,15 @@ sub unsubst_non_empty_var
 # in an existing plist, to figure out ambiguous cases and empty substs
 sub do_backsubst
 {
-	my ($subst, $string, $unsubst) = @_;
+	my ($subst, $string, $unsubst, $context) = @_;
 
-	# sort non empty variables by reverse length
-	$subst->{vars} //= [sort 
-	    {length($subst->value($b)) <=> length($subst->value($a))} 
-	    @{$subst->{l}}];
+	if (!defined $subst->{vars}) {
+		$subst->finalize;
+	}
+	$context //= 'OpenBSD::PackingElement';
 	for my $k (@{$subst->{vars}}) {
-		$string = $subst->unsubst_non_empty_var($string, $k, $unsubst);
+		$string = $subst->unsubst_non_empty_var($string, $k, $unsubst,
+		    $context);
 	}
 
 	# we can't do empty subst without an unsubst;
