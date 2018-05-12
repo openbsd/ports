@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/01/25 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/05/12 14:06:17 espie Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -496,5 +496,5 @@ sbin/xferfaxstats
 @unexec rm %D/libdata/hylafax/FIFO
 @extraunexec rm -f /var/spool/hylafax
 share/doc/pkg-readmes/${FULLPKGNAME}
-@rcscript ${RCDIR}/hfaxd
 @rcscript ${RCDIR}/faxq
+@rcscript ${RCDIR}/hfaxd
