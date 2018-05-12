@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.9 2018/05/11 02:43:24 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.10 2018/05/12 11:40:43 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 11 2018 $
+.Dd $Mdocdate: May 12 2018 $
 .Dt UPDATE-PLIST 1
 .Os
 .Sh NAME
@@ -24,7 +24,7 @@
 .Ev PORTSDIR Ns = Ns Ar path
 .Op Ev FAKE_TREE_OWNER Ns = Ns Ar user Ev PORTS_TREE_OWNER Ns = Ns Ar user Nm doas
 .Nm update-plist
-.Op Fl Fmnrvx
+.Op Fl Fmnqrvx
 .Op Fl C Ar dir
 .Op Fl i Ar var
 .Op Fl j Ar jobs
@@ -101,6 +101,10 @@ Default is
 Do not move the final plists in position. Instead, leave the
 .Pa <file>.new
 files for comparison.
+.It Fl q
+Quiet mode.
+Do not display status progress messages.
+Note that this is not the opposite of verbose mode.
 .It Fl r
 Run the
 .Pa fake
@@ -120,6 +124,7 @@ or
 .It Fl v
 Verbose mode.
 Explain about directories stripped from dependencies.
+Note that this is not the opposite of quiet mode.
 .It Fl w Ar suffix
 Warn about suffixes such as
 .Ar .orig
