@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/09/19 11:50:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/05/12 10:00:24 espie Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -48,7 +48,6 @@ include/pulse/util.h
 include/pulse/version.h
 include/pulse/volume.h
 include/pulse/xmalloc.h
-lib/cmake/
 lib/cmake/PulseAudio/
 lib/cmake/PulseAudio/PulseAudioConfig.cmake
 lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
@@ -170,7 +169,6 @@ share/bash-completion/completions/pulseaudio
 share/examples/pulseaudio/
 share/examples/pulseaudio/dbus-1/
 share/examples/pulseaudio/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/pulseaudio/dbus-1/system.d/pulseaudio-system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/pulseaudio-system.conf
 share/examples/pulseaudio/pulse/

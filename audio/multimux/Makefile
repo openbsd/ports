@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/05/12 10:00:24 espie Exp $
 
 COMMENT=		create multichannel WAV audio files
 DISTNAME=		multimux-0.2.5.2
 CATEGORIES=		audio
+REVISION =		0
 
 HOMEPAGE=		http://panteltje.com/panteltje/dvd/
 MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>

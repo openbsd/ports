@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/03 16:28:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/12 10:00:24 espie Exp $
 @bin bin/gsound-play
 include/gsound-attr.h
 include/gsound-context.h
@@ -11,8 +11,6 @@ lib/libgsound.la
 lib/pkgconfig/gsound.pc
 share/gir-1.0/
 share/gir-1.0/GSound-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gsound/
 share/gtk-doc/html/gsound/GSoundContext.html
 share/gtk-doc/html/gsound/annotation-glossary.html
@@ -32,7 +30,5 @@ share/gtk-doc/html/gsound/right.png
 share/gtk-doc/html/gsound/style.css
 share/gtk-doc/html/gsound/up-insensitive.png
 share/gtk-doc/html/gsound/up.png
-share/vala/
-share/vala/vapi/
 share/vala/vapi/gsound.deps
 share/vala/vapi/gsound.vapi

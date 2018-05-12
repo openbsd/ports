@@ -1,17 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/12 10:00:24 espie Exp $
 @bin bin/vagalume
 bin/vagalumectl
 @man man/man1/vagalume.1
 @man man/man1/vagalumectl.1
 share/applications/vagalume.desktop
 share/dbus-1/services/vagalume.service
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/vagalume.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/actions/
 share/icons/hicolor/scalable/actions/accessories-text-editor.svg
 share/icons/hicolor/scalable/actions/document-save.svg
 share/icons/hicolor/scalable/actions/emblem-favorite.svg

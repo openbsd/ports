@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/07 16:05:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/05/12 10:00:24 espie Exp $
 
 COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 HOMEPAGE=	http://mad.sourceforge.net/
 

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/18 10:26:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/05/12 10:00:24 espie Exp $
 @conflict mad-*
 bin/abxtest
-bin/madplay
+@bin bin/madplay
 @man man/man1/abxtest.1
 @man man/man1/madplay.1
 share/locale/en/LC_MESSAGES/madplay.mo

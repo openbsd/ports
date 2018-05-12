@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/02/13 22:33:13 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/12 10:00:24 espie Exp $
 @bin bin/schismtracker
 @man man/man1/schismtracker.1
-share/applications/
 share/applications/schism.desktop
 share/pixmaps/
 share/pixmaps/schism-icon-128.png

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/09 13:28:31 espie Exp $
-bin/normalize
+@comment $OpenBSD: PLIST,v 1.6 2018/05/12 10:00:24 espie Exp $
+@bin bin/normalize
 bin/normalize-mp3
 bin/normalize-ogg
 @man man/man1/normalize-mp3.1

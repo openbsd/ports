@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2018/05/12 10:00:24 espie Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.8.2
 DISTNAME=		vagalume_$V.orig
 PKGNAME=		vagalume-$V
-REVISION=		20
+REVISION=		21
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/

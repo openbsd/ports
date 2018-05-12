@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/12 10:00:24 espie Exp $
 
 COMMENT=		GObject library for playing system sounds
 
 GNOME_PROJECT=		gsound
 GNOME_VERSION=		1.0.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gsound                    0.0 # 0.0
 

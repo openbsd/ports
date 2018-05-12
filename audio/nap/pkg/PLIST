@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/12/04 17:00:53 steven Exp $
-bin/nap
+@comment $OpenBSD: PLIST,v 1.8 2018/05/12 10:00:24 espie Exp $
+@bin bin/nap
 @mode u+s
-bin/napping
+@bin bin/napping
 @mode
 @man man/man1/nap.1
 share/doc/nap/
