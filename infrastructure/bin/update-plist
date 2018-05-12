@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.133 2018/05/12 07:59:00 espie Exp $
+# $OpenBSD: update-plist,v 1.134 2018/05/12 10:41:40 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -367,7 +367,7 @@ sub write_restate
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
-	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst});
+	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst}, $o);
 	print {$file->fh} $s, "\n";
 }
 
@@ -866,10 +866,9 @@ sub write_backsubst
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
-		# XXX do we want to do backsubst on the variable name ?
-		# there's one port that uses that "feature"
-		my $s = $p->subst->do_backsubst("${path}lib$name.so.", 
-		    $self->{unsubst})."\$\{$k\}";
+		# XXX redo backsubst on the variable name
+		my $s = $p->subst->do_backsubst("${path}lib$name.so.\$\{$k\}", 
+		    $self->{unsubst}, $self);
 		$self->check_lib_version($version, $name, 
 			$p->subst->value($k));
 		print {$f->fh} "\@", $self->keyword, " ", $s, "\n";
@@ -1095,15 +1094,6 @@ sub scan_fake_dir
 	local $> = 0 if $self->{state}{scan_as_root};
 
 	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored});
-}
-
-sub baseplist
-{
-	my ($self, $n) = @_;
-	if (!$self->{state}{verbose} && defined $self->{state}{pkgdir}) {
-		$n =~ s/\Q$self->{state}{pkgdir}\E\///;
-	}
-	return $n;
 }
 
 sub add_missing_cvstags
@@ -1481,25 +1471,24 @@ my $exitcode = 0;
 # let's see if we want to update things
 for my $p (@{$self->{lists}}) {
 	for my $k (sort keys %{$p->{tracker}{known}}) {
-		my $name = $self->baseplist($k);
 		if (-f $k) {
 			if (!-f "$k.new") {
-				print STDERR "No $name.new written\n";
+				print STDERR "No $k.new written\n";
 				$exitcode = 1;
 			} elsif (compare($k, "$k.new") == 0) {
 				unlink("$k.new") unless $self->{state}->not;
 			} else {
-				print "$name changed";
+				print "$k changed";
 				push(@towrite, $k);
 				if (-f $k.".orig") {
-					print " but $name.orig exists\n";
+					print " but $k.orig exists\n";
 					$cantmove = 1;
 				} else {
 					print "\n";
 				}
 			}
 		} else {
-			print "$name is new\n";
+			print "$k is new\n";
 			push(@towrite, $k);
 		}
 	}
