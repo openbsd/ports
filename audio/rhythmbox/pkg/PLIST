@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2017/01/03 18:54:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/05/12 09:54:43 espie Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -308,6 +308,7 @@ lib/rhythmbox/sample-plugins/sample/sample.plugin
 @bin libexec/rhythmbox-metadata
 @man man/man1/rhythmbox-client.1
 @man man/man1/rhythmbox.1
+share/appdata/
 share/appdata/rhythmbox.appdata.xml
 share/applications/rhythmbox-device.desktop
 share/applications/rhythmbox.desktop
