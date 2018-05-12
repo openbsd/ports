@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2018/05/12 14:01:17 espie Exp $
 
 COMMENT=	big5/gb enhanced truetype font manager
 
 DISTNAME=	ttfm-0.9.5
 PKGNAME=	zh-${DISTNAME}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	chinese
 
 # BSD/X11

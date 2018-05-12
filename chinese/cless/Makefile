@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.21 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/12 14:01:17 espie Exp $
 #
 
 COMMENT=	pager utility that speaks Chinese
@@ -12,7 +12,7 @@ DISTNAME=       cless-290
 PKGNAME=        zh-${DISTNAME}
 CATEGORIES=     chinese misc
 MASTER_SITES=   http://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
-REVISION =	0
+REVISION =	1
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes

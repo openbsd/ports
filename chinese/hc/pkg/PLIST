@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:29:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/12 14:01:17 espie Exp $
 @conflict hc-*
 bin/b2g
 bin/g2b
-bin/hc
+@bin bin/hc
 @man man/man1/hc.1
 share/hc/
 share/hc/hc-supp.tab

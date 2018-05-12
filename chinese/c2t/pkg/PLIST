@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/06 14:37:29 espie Exp $
-bin/c2t
+@comment $OpenBSD: PLIST,v 1.7 2018/05/12 14:01:17 espie Exp $
+@bin bin/c2t
 @man man/man1/c2t.1
 share/chinese/
 share/chinese/gb/

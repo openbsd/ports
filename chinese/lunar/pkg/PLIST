@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/08/06 16:06:02 espie Exp $
-bin/lunar
+@comment $OpenBSD: PLIST,v 1.7 2018/05/12 14:01:17 espie Exp $
+@bin bin/lunar
 @man man/man1/lunar.1
 share/chinese/
 share/chinese/lunar.bitmap
