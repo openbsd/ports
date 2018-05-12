@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.135 2018/05/12 11:13:52 espie Exp $
+# $OpenBSD: update-plist,v 1.136 2018/05/12 11:57:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -303,6 +303,20 @@ sub init
 	$self->{cache_dir} = $realstate->{cache_dir};
 }
 
+# if we're in quiet mode, get rid of status messages
+sub set_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::set_status(@_);
+}
+
+sub end_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::end_status(@_);
+}
 
 # Most of the heavy lifting is done by visitor methods, as always
 
