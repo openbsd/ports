@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.12 2017/01/31 19:01:41 jasper Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.13 2018/05/12 14:03:46 jasper Exp $
 
-https://github.com/i3/i3status/pull/198
+warning: implicit declaration of function 'free' is invalid in C99
 
---- src/print_wireless_info.c.orig	Sun Jan 29 13:00:06 2017
-+++ src/print_wireless_info.c	Sun Jan 29 13:00:33 2017
-@@ -49,6 +49,7 @@
- #include <sys/ioctl.h>
- #include <sys/socket.h>
- #include <net/if.h>
-+#include <sys/select.h> /* fd_set */
- #include <sys/types.h>
- #include <netinet/in.h>
- #include <netinet/if_ether.h>
+Index: src/print_wireless_info.c
+--- src/print_wireless_info.c.orig
++++ src/print_wireless_info.c
+@@ -1,5 +1,6 @@
+ // vim:ts=4:sw=4:expandtab
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <yajl/yajl_gen.h>
+ #include <yajl/yajl_version.h>

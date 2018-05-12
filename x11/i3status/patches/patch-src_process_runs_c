@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_process_runs_c,v 1.1 2018/05/12 14:03:46 jasper Exp $
+
+glob_t.gl_pathc is an int on OpenBSD instead of size_t
+
+Index: src/process_runs.c
+--- src/process_runs.c.orig
++++ src/process_runs.c
+@@ -33,7 +33,7 @@ bool process_runs(const char *path) {
+             return false;
+         return (kill(strtol(pidbuf, NULL, 10), 0) == 0 || errno == EPERM);
+     }
+-    for (size_t i = 0; i < globbuf.gl_pathc; i++) {
++    for (int i = 0; i < globbuf.gl_pathc; i++) {
+         if (!slurp(globbuf.gl_pathv[i], pidbuf, sizeof(pidbuf))) {
+             globfree(&globbuf);
+             return false;

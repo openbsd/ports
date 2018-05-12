@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.14 2017/08/14 22:32:17 jcs Exp $
+$OpenBSD: patch-src_print_battery_info_c,v 1.15 2018/05/12 14:03:46 jasper Exp $
 Index: src/print_battery_info.c
 --- src/print_battery_info.c.orig
 +++ src/print_battery_info.c
@@ -11,7 +11,7 @@ Index: src/print_battery_info.c
  #include <machine/apmvar.h>
  #endif
  
-@@ -209,11 +211,15 @@ static bool slurp_battery_info(struct battery_info *ba
+@@ -221,11 +223,15 @@ static bool slurp_battery_info(struct battery_info *ba
  #elif defined(__OpenBSD__)
      /*
  	 * We're using apm(4) here, which is the interface to acpi(4) on amd64/i386 and
@@ -29,10 +29,11 @@ Index: src/print_battery_info.c
  
      apm_fd = open("/dev/apm", O_RDONLY);
      if (apm_fd < 0) {
-@@ -251,6 +257,29 @@ static bool slurp_battery_info(struct battery_info *ba
+@@ -262,6 +268,29 @@ static bool slurp_battery_info(struct battery_info *ba
+     /* Can't give a meaningful value for remaining minutes if we're charging. */
      if (batt_info->status != CS_CHARGING) {
          batt_info->seconds_remaining = apm_info.minutes_left * 60;
-     }
++    }
 +
 +    /* If acpibat* are present, check sensors for data not present via APM. */
 +    batt_info->present_rate = 0;
@@ -55,16 +56,6 @@ Index: src/print_battery_info.c
 +            }
 +            batt_info->present_rate += sensor.value;
 +        }
-+    }
+     }
  #elif defined(__NetBSD__)
      /*
-      * Using envsys(4) via sysmon(4).
-@@ -482,7 +511,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
-     /* These OSes report battery stats in whole percent. */
-     integer_battery_capacity = true;
- #endif
--#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__) || defined(__OpenBSD__)
-     /* These OSes report battery time in minutes. */
-     hide_seconds = true;
- #endif
