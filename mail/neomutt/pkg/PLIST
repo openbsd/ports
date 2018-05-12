@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/12/15 20:14:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/05/12 12:50:25 sthen Exp $
 @bin bin/neomutt
 libexec/neomutt/
 @bin libexec/neomutt/pgpewrap
@@ -13,12 +13,11 @@ libexec/neomutt/smime_keys
 @man man/man5/neomuttrc.5
 share/doc/neomutt/
 share/doc/neomutt/CODE_OF_CONDUCT.md
-share/doc/neomutt/COPYRIGHT
+share/doc/neomutt/COPYRIGHT.md
 share/doc/neomutt/ChangeLog.md
-share/doc/neomutt/INSTALL
+share/doc/neomutt/INSTALL.md
 share/doc/neomutt/LICENSE.md
 share/doc/neomutt/PGP-Notes.txt
-share/doc/neomutt/README.SSL
 share/doc/neomutt/README.md
 share/doc/neomutt/advancedusage.html
 share/doc/neomutt/colorschemes/

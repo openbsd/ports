@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/06 11:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/05/12 12:50:25 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	neomutt-20180323
+GH_TAGNAME=	neomutt-20180512
 DISTNAME=	${GH_TAGNAME}
-REVISION=	1
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -33,13 +32,12 @@ BUILD_DEPENDS+=	lang/jimtcl \
 CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--with-ui=ncurses \
 		--docdir="${PREFIX}/share/doc/neomutt" \
-		--flock \
-		--disable-fcntl \
+		--with-lock=flock \
 		--fmemopen \
 		--ssl
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
-		CFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
