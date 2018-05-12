@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/01/03 19:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2018/05/12 20:05:25 jasper Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
 MODPY_EGG_VERSION = 1.6.2
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	www devel
 
@@ -22,7 +22,7 @@ MODULES =	lang/python
 FLAVORS=	python3
 FLAVOR?=
 
-RUN_DEPENDS =	security/py-crypto${MODPY_FLAVOR} 
+RUN_DEPENDS =	security/py-cryptodome${MODPY_FLAVOR} 
 
 # some TDEP are nissing a python3 FLAVOR
 .if ${FLAVOR:Mpython3}
