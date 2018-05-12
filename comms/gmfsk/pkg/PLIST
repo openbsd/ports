@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/04/20 14:39:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/05/12 14:29:01 espie Exp $
 @bin bin/gmfsk
 share/gnome/
 share/gnome/help/
@@ -15,7 +15,6 @@ share/gnome/help/gmfsk/C/legal.xml
 share/omf/
 share/omf/gmfsk/
 share/omf/gmfsk/gmfsk-C.omf
-share/pixmaps/
 share/pixmaps/gmfsk/
 share/pixmaps/gmfsk/gnome-screenshot.png
 share/pixmaps/gmfsk/mfsk.png

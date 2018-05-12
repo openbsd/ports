@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/07/18 15:31:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/12 14:29:01 espie Exp $
 
 COMMENT=	SNPP client/server (alphanum pager software)
 
 DISTNAME=	qpage-3.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	comms
 
 # custom; see LICENSE

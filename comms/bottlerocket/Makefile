@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/05/12 14:29:01 espie Exp $
 
 COMMENT=	X.10 firecracker interface
 
 DISTNAME=	bottlerocket-0.04c
-REVISION =	1
+REVISION =	2
 CATEGORIES=	comms
 
 HOMEPAGE =	http://www.linuxha.com/bottlerocket/

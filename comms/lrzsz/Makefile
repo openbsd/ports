@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2018/05/12 14:29:01 espie Exp $
 
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
 DISTNAME=	lrzsz-0.12.20
-REVISION=	0
+REVISION=	1
 CATEGORIES=	comms
 
 HOMEPAGE=	http://www.ohse.de/uwe/software/lrzsz.html

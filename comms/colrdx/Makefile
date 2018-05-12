@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/02/27 15:40:54 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/12 14:29:01 espie Exp $
 
 COMMENT=	curses DX cluster watcher
 
 DISTNAME=	colrdx-1.02
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/colrdx.html

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 16:06:03 espie Exp $
-bin/lrb
-bin/lrx
-bin/lrz
-bin/lsb
-bin/lsx
-bin/lsz
+@comment $OpenBSD: PLIST,v 1.5 2018/05/12 14:29:01 espie Exp $
+@bin bin/lrb
+@bin bin/lrx
+@bin bin/lrz
+@bin bin/lsb
+@bin bin/lsx
+@bin bin/lsz
 @man man/man1/lrz.1
 @man man/man1/lsz.1
