@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/05/12 13:59:37 espie Exp $
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 @bin bin/pcb
@@ -29,49 +29,33 @@ share/examples/pcb/libraries/example.m4
 share/gEDA/
 share/gEDA/scheme/
 share/gEDA/scheme/gnet-pcbfwd.scm
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-gerber-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-pcb-footprint-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-pcb-layout-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-pcb-netlist-16.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-excellon-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-gerber-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-pcb-footprint-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-pcb-layout-22.png
 share/icons/hicolor/22x22/mimetypes/application-x-pcb-netlist-22.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/mimetypes/
 share/icons/hicolor/24x24/mimetypes/application-x-excellon-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-gerber-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-pcb-footprint-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-pcb-layout-24.png
 share/icons/hicolor/24x24/mimetypes/application-x-pcb-netlist-24.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-excellon-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-gerber-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-pcb-footprint-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-pcb-layout-32.png
 share/icons/hicolor/32x32/mimetypes/application-x-pcb-netlist-32.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/pcb-48.png
-share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-excellon-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-gerber-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-pcb-footprint-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-pcb-layout-48.png
 share/icons/hicolor/48x48/mimetypes/application-x-pcb-netlist-48.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/pcb.svg
-share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/application-x-excellon.svg
 share/icons/hicolor/scalable/mimetypes/application-x-gerber.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-footprint.svg

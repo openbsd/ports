@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2018/05/12 13:59:37 espie Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20110918
 CATEGORIES=	cad
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=	http://pcb.gpleda.org/
 

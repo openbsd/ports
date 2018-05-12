@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/05/22 11:31:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/12 13:59:37 espie Exp $
 @bin bin/convert_sym
 bin/garchive
 @bin bin/gattrib
@@ -2124,8 +2124,6 @@ share/icons/hicolor/scalable/apps/geda-gschem.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-gsch2pcb-project.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-schematic.svg
 share/icons/hicolor/scalable/mimetypes/application-x-geda-symbol.svg
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/geda-gschem.mo
 share/locale/de/LC_MESSAGES/geda-gattrib.mo
 share/locale/de/LC_MESSAGES/geda-gschem.mo
