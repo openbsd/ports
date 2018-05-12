@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_lib_fclose_c,v 1.1 2018/05/12 16:52:25 jsing Exp $
+
+Unbreak funopen usage with libtorsocks - always call the libc fclose
+function, even when fd < 0.
+
+Index: src/lib/fclose.c
+--- src/lib/fclose.c.orig
++++ src/lib/fclose.c
+@@ -64,11 +64,9 @@ LIBC_FCLOSE_RET_TYPE tsocks_fclose(LIBC_FCLOSE_SIG)
+ 		connection_put_ref(conn);
+ 	}
+ 
++error:
+ 	/* Return the original libc fclose. */
+ 	return tsocks_libc_fclose(fp);
+-
+-error:
+-	return -1;
+ }
+ 
+ /*

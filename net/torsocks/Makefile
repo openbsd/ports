@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/29 21:44:30 gsoares Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/12 16:52:25 jsing Exp $
 
 COMMENT =		socks proxy for use with tor
 
 DISTNAME =		torsocks-2.2.0
+REVISION =		0
 
 GH_PROJECT =		torsocks
 GH_ACCOUNT =		dgoulet
