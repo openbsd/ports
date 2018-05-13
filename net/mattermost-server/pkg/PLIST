@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/23 16:51:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/13 06:54:33 robert Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -14,32 +14,32 @@ share/examples/mattermost/default.json
 @group
 share/mattermost/
 share/mattermost/client/
-share/mattermost/client/0.ae73e69812642442f921.js
-share/mattermost/client/0.ae73e69812642442f921.js.map
+share/mattermost/client/0.14cb5b1a47e01503ba25.js
+share/mattermost/client/0.14cb5b1a47e01503ba25.js.map
 share/mattermost/client/1.878f90209fac6c967e0a.js
 share/mattermost/client/1.878f90209fac6c967e0a.js.map
-share/mattermost/client/10.06456f2fec098f526edd.js
-share/mattermost/client/10.06456f2fec098f526edd.js.map
+share/mattermost/client/10.81b0acef34d339d4bb5f.js
+share/mattermost/client/10.81b0acef34d339d4bb5f.js.map
 share/mattermost/client/11.9e3f980baab7058832dc.js
 share/mattermost/client/11.9e3f980baab7058832dc.js.map
 share/mattermost/client/12.ac155e629184aad42bd5.js
 share/mattermost/client/12.ac155e629184aad42bd5.js.map
-share/mattermost/client/13.a84914395c510d8fa2ec.js
-share/mattermost/client/13.a84914395c510d8fa2ec.js.map
+share/mattermost/client/13.7f8aaa22b94a8ed2e02b.js
+share/mattermost/client/13.7f8aaa22b94a8ed2e02b.js.map
 share/mattermost/client/14.3cd9cf72c88de3803729.js
 share/mattermost/client/14.3cd9cf72c88de3803729.js.map
 share/mattermost/client/15.350b924cd25619b512bf.js
 share/mattermost/client/15.350b924cd25619b512bf.js.map
-share/mattermost/client/16.e9113288624d19947b7d.js
-share/mattermost/client/16.e9113288624d19947b7d.js.map
+share/mattermost/client/16.312776e7e313b18e080e.js
+share/mattermost/client/16.312776e7e313b18e080e.js.map
 share/mattermost/client/17.c3d3e22e48b3c93b7338.js
 share/mattermost/client/17.c3d3e22e48b3c93b7338.js.map
 share/mattermost/client/18.19b2fae5cf62cdefff98.js
 share/mattermost/client/18.19b2fae5cf62cdefff98.js.map
 share/mattermost/client/19.19720d3969547670ae9b.js
 share/mattermost/client/19.19720d3969547670ae9b.js.map
-share/mattermost/client/2.7d86a177d8e411344b9a.js
-share/mattermost/client/2.7d86a177d8e411344b9a.js.map
+share/mattermost/client/2.06c2b12b32dfc25cbb52.js
+share/mattermost/client/2.06c2b12b32dfc25cbb52.js.map
 share/mattermost/client/20.8a143881c43f34451cb9.js
 share/mattermost/client/20.8a143881c43f34451cb9.js.map
 share/mattermost/client/21.3751a69b03b95d22413a.js
@@ -48,22 +48,22 @@ share/mattermost/client/22.1e48eb24e76de266b014.js
 share/mattermost/client/22.1e48eb24e76de266b014.js.map
 share/mattermost/client/23.2e6a8e784c99a68ba3fd.js
 share/mattermost/client/23.2e6a8e784c99a68ba3fd.js.map
-share/mattermost/client/24.b899ce85daad2738f8c3.js
-share/mattermost/client/24.b899ce85daad2738f8c3.js.map
+share/mattermost/client/24.71c67645a7031c50f1e5.js
+share/mattermost/client/24.71c67645a7031c50f1e5.js.map
 share/mattermost/client/25.a97a46673866b824ada6.js
 share/mattermost/client/25.a97a46673866b824ada6.js.map
-share/mattermost/client/26.80f2e99a53f0f5997537.js
-share/mattermost/client/26.80f2e99a53f0f5997537.js.map
-share/mattermost/client/3.b543751091e18967d6d1.js
-share/mattermost/client/3.b543751091e18967d6d1.js.map
-share/mattermost/client/4.815e3aec4c6a491bf69a.js
-share/mattermost/client/4.815e3aec4c6a491bf69a.js.map
+share/mattermost/client/26.8d8564442137dff77861.js
+share/mattermost/client/26.8d8564442137dff77861.js.map
+share/mattermost/client/3.8de5c051ccdcf14b2e9a.js
+share/mattermost/client/3.8de5c051ccdcf14b2e9a.js.map
+share/mattermost/client/4.fd936a223f282842a347.js
+share/mattermost/client/4.fd936a223f282842a347.js.map
 share/mattermost/client/5.41f034990aa1a4856b60.js
 share/mattermost/client/5.41f034990aa1a4856b60.js.map
 share/mattermost/client/6.08992981da3dfc732f02.js
 share/mattermost/client/6.08992981da3dfc732f02.js.map
-share/mattermost/client/7.3f8379dfcf52524df1de.js
-share/mattermost/client/7.3f8379dfcf52524df1de.js.map
+share/mattermost/client/7.8e2bc431b948cb84d104.js
+share/mattermost/client/7.8e2bc431b948cb84d104.js.map
 share/mattermost/client/8.b7873a549a4781aa0636.js
 share/mattermost/client/8.b7873a549a4781aa0636.js.map
 share/mattermost/client/9.141d2923d3486feee4d2.js
@@ -2403,8 +2403,8 @@ share/mattermost/client/main.24a544c47d6d0deb4fe7fff736dbba2b.css
 share/mattermost/client/main.24a544c47d6d0deb4fe7fff736dbba2b.css.map
 share/mattermost/client/main.3c103f28b9bfdb9be3fe2dafcf078dda.css
 share/mattermost/client/main.3c103f28b9bfdb9be3fe2dafcf078dda.css.map
-share/mattermost/client/main.990f04dc8f8d091fb7a8.js
-share/mattermost/client/main.990f04dc8f8d091fb7a8.js.map
+share/mattermost/client/main.8dd433b8abdaefd2bad8.js
+share/mattermost/client/main.8dd433b8abdaefd2bad8.js.map
 share/mattermost/client/root.html
 share/mattermost/fonts/
 share/mattermost/fonts/luximbi.ttf
