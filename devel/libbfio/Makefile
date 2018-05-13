@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/26 13:46:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/13 16:57:21 espie Exp $
 
 COMMENT =		basic file input/output abstraction C library
 
@@ -16,11 +16,12 @@ HOMEPAGE =		https://github.com/libyal/libbfio/wiki
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
+BUILD_DEPENDS =	
 
 MASTER_SITES =		https://github.com/libyal/libbfio/releases/download/${VERSION}/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS +=	--mandir=${PREFIX}/man --disable-nls
 
 NO_TEST =		Yes
 
