@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2017/05/19 09:19:48 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2018/05/13 06:26:35 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -27,16 +27,14 @@ bin/gdal-config
 @bin bin/ogrtindex
 @bin bin/testepsg
 include/cpl_atomic_ops.h
-include/cpl_aws.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
-include/cpl_cpu_features.h
 include/cpl_csv.h
 include/cpl_error.h
-include/cpl_google_cloud.h
 include/cpl_hash_set.h
 include/cpl_http.h
+include/cpl_json.h
 include/cpl_list.h
 include/cpl_minixml.h
 include/cpl_minizip_ioapi.h
@@ -47,17 +45,12 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_progress.h
 include/cpl_quad_tree.h
-include/cpl_sha1.h
-include/cpl_sha256.h
 include/cpl_spawn.h
 include/cpl_string.h
 include/cpl_time.h
 include/cpl_virtualmem.h
 include/cpl_vsi.h
-include/cpl_vsi_error.h
 include/cpl_vsi_virtual.h
-include/cpl_vsil_curl_priv.h
-include/cpl_worker_thread_pool.h
 include/cplkeywordparser.h
 include/gdal.h
 include/gdal_alg.h
@@ -73,22 +66,16 @@ include/gdal_simplesurf.h
 include/gdal_utils.h
 include/gdal_version.h
 include/gdal_vrt.h
-include/gdalexif.h
 include/gdalgeorefpamdataset.h
 include/gdalgrid.h
 include/gdalgrid_priv.h
 include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
-include/gdaljp2metadatagenerator.h
 include/gdalpansharpen.h
-include/gdalsse_priv.h
 include/gdalwarper.h
-include/gdalwarpkernel_opencl.h
 include/gnm.h
 include/gnm_api.h
 include/gnmgraph.h
-include/gvgcpfit.h
-include/internal_qhull_headers.h
 include/memdataset.h
 include/ogr_api.h
 include/ogr_core.h
@@ -101,7 +88,6 @@ include/ogr_spatialref.h
 include/ogr_srs_api.h
 include/ogrsf_frmts.h
 include/rawdataset.h
-include/thinplatespline.h
 include/vrtdataset.h
 lib/gdalplugins/
 lib/libgdal.a
@@ -149,6 +135,7 @@ share/gdal/ellipsoid.csv
 share/gdal/epsg.wkt
 share/gdal/esri_StatePlane_extra.wkt
 share/gdal/esri_Wisconsin_extra.wkt
+share/gdal/esri_epsg.wkt
 share/gdal/esri_extra.wkt
 share/gdal/gcs.csv
 share/gdal/gcs.override.csv
@@ -204,6 +191,7 @@ share/gdal/pci_datum.txt
 share/gdal/pci_ellips.txt
 share/gdal/pcs.csv
 share/gdal/pcs.override.csv
+share/gdal/pds4_template.xml
 share/gdal/plscenesconf.json
 share/gdal/prime_meridian.csv
 share/gdal/projop_wparm.csv
