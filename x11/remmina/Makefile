@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/05/10 12:32:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2018/05/13 06:59:04 landry Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -8,6 +8,7 @@ DISTNAME=		remmina-${V}
 GH_TAGNAME=		v1.2.0-rcgit.29
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
+REVISION=		0
 
 CATEGORIES=		x11 net
 
@@ -24,6 +25,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 intl pango-1.0 pthread ssh ssh_threads
 WANTLIB += telepathy-glib vncclient vte-2.91 xkbfile
 WANTLIB += winpr2 soup-2.4 json-glib-1.0 crypto dbus-1 dbus-glib-1 ssl
+WANTLIB += cairo-gobject fribidi pangocairo-1.0 secret-1 spice-client-glib-2.0
+WANTLIB += spice-client-gtk-3.0
 
 MODULES=		devel/cmake
 
@@ -37,6 +40,8 @@ LIB_DEPENDS=		devel/gettext \
 			net/libvncserver \
 			security/libssh \
 			x11/freerdp \
+			x11/spice-gtk \
+			x11/gnome/libsecret \
 			net/telepathy/telepathy-glib
 
 RUN_DEPENDS=		devel/desktop-file-utils \
