@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.507 2018/05/11 20:11:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.508 2018/05/13 13:38:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -88,7 +88,6 @@
      SUBDIR += john
      SUBDIR += john-jumbo
      SUBDIR += kc
-     SUBDIR += kedpm
      SUBDIR += keepassx
      SUBDIR += keepassxc
      SUBDIR += keepassxc,yubikey
