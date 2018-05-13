@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/17 17:37:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/13 11:46:40 espie Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB = m
 WANTLIB += ${COMPILER_LIBCXX}
@@ -43,7 +43,7 @@ MODULES =	multimedia/phonon
 LIB_DEPENDS =	editors/qscintilla \
 		graphics/qimageblitz \
 		${MODKDE4_DEP_DIR}/smokegen \
-		x11/qwt
+		qwt-*-!qt5:x11/qwt,
 
 NO_TEST =	Yes
 
