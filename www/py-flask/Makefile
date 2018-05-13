@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2017/08/11 16:56:43 danj Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/13 19:07:30 danj Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
-MODPY_EGG_VERSION =	0.12.2
+MODPY_EGG_VERSION =	0.12.3
 DISTNAME =		Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -35,13 +35,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 
 MAKE_ENV =		PYTHONPATH="${WRKSRC}" SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
-post-build:
-	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask
-	cd ${WRKSRC}/docs/_build/html && \
-	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
