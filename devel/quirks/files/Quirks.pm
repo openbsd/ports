@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.607 2018/04/30 07:04:16 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.608 2018/05/13 13:39:22 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1288,6 +1288,7 @@ my $obsolete_reason = {
 	'gtkglextmm' => 3,
 	'goocanvas' => 3,
 	'osm2go' => 6,
+	'kedpm' => 6,
 };
 
 # reasons for obsolete packages
