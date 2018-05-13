@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/01 09:24:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2018/05/13 13:48:39 jasper Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20180127
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
@@ -66,7 +66,7 @@ RUN_DEPENDS +=	devel/ipython \
 		security/libbde \
 		security/libewf \
 		security/py-artifacts \
-		security/py-crypto \
+		security/py-cryptodome \
 		security/py-dfdatetime \
 		security/py-dfvfs \
 		security/py-dfwinreg \
