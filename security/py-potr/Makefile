@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:26:14 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/13 06:39:22 jasper Exp $
 
 COMMENT =		pure Python Off-The-Record encryption
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		python-potr-${MODPY_EGG_VERSION}
 PKGNAME =		py-potr-${MODPY_EGG_VERSION}
 CATEGORIES =		security net
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
@@ -23,6 +23,6 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS =		security/py-crypto${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
