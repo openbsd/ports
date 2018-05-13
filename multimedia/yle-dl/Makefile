@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/12 13:25:46 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/13 07:13:04 jasper Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		2.28
 MODPY_EGG_VERSION =	${GH_TAGNAME}
+REVISION =		0
 
 COMMENT =		download videos from YLE Areena
 
@@ -21,7 +22,7 @@ MODULES =		lang/python \
 TEST_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-progress \
 			net/rtmpdump \
-			security/py-crypto \
+			security/py-cryptodome \
 			www/py-requests \
 			lang/php/${MODPHP_VERSION},-curl \
 			lang/php/${MODPHP_VERSION},-mcrypt \
