@@ -1,0 +1,68 @@
+$OpenBSD: patch-Scripts_sql-update-3_2_10_to_4_0_0-mysql_sh,v 1.1 2018/05/14 06:57:10 sebastia Exp $
+
+Index: Scripts/sql-update-3.2.10_to_4.0.0-mysql.sh
+--- Scripts/sql-update-3.2.10_to_4.0.0-mysql.sh.orig
++++ Scripts/sql-update-3.2.10_to_4.0.0-mysql.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
+@@ -12,16 +12,24 @@ set -e
+ defaultusername=$USER
+ defaulthostname=127.0.0.1
+ defaultdatabase=sogo
+-indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++if [ -f /etc/sogo/sogo.conf ];then
++  indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++else
++  indextable=$(sogo-tool dump-defaults | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++fi
+ if [ -z "$indextable" ]; then
+   echo "Couldn't fetch OCSFolderInfoURL value, aborting" >&2
+   exit 1
+ fi
+-storeurl=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++if [ -f /etc/sogo/sogo.conf ];then
++  storeurl=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++else
++  storeurl=$(sogo-tool dump-defaults | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++fi
+ 
+-read -p "Username ($defaultusername): " username
+-read -p "Hostname ($defaulthostname): " hostname
+-read -p "Database ($defaultdatabase): " database
++read username?"Username ($defaultusername): "
++read hostname?"Hostname ($defaulthostname): "
++read database?"Database ($defaultdatabase): "
+ 
+ if [ -z "$username" ]
+ then
+@@ -40,7 +48,7 @@ fi
+ 
+ sqlscript=""
+ 
+-function growUserProfile() {
++growUserProfile() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE sogo_user_profile MODIFY c_defaults LONGTEXT;\\n\"`";
+@@ -50,7 +58,7 @@ function growUserProfile() {
+     IFS="$oldIFS"
+ }
+ 
+-function growMailInContactsQuick() {
++growMailInContactsQuick() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE $table MODIFY c_mail text;\\n\"`";
+@@ -58,7 +66,7 @@ function growMailInContactsQuick() {
+     IFS="$oldIFS"
+ }
+ 
+-function addCertificateInContactsQuick() {
++addCertificateInContactsQuick() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE $table ADD c_hascertificate INT4 DEFAULT 0;\\n\"`";

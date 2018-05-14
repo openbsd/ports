@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.21 2017/07/05 21:11:50 sebastia Exp $
+# $OpenBSD: README,v 1.22 2018/05/14 06:57:10 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -218,45 +218,6 @@ Update the files in the chroot environment of apache as root:
 # mkdir -p ${VARBASE}/www/lib/sogo
 # cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
 
-Upgrade SOGo from < 1.3.5
-=========================
-Since version 1.3.5, SOGo requires to have a OCSSessionsFolderURL default set,
-which you need to create. For example run the following command as user _sogo:
-
-$ defaults write sogod OCSSessionsFolderURL \
-postgresql://_sogo:sogo@localhost:5432/sogo/sogo_sessions_folder
-
-Upgrade SOGo from < 1.3.12
-==========================
-With version 1.3.12, the database schema got some enhancements, for example
-to permit syncs of cards with big photos in them.
-
-Run one of the following scripts as the SOGo system user _sogo. Depending on
-the database you use, choose the postgres or mysql variant. The scripts
-will ask you for the database credentials.
-
-# su _sogo -c "${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-postgres.sh"
-# su _sogo -c "${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh"
-
-Upgrade SOGo from < 1.3.16
-==========================
-New password schemes were introduced. You may want to set the
-userPasswordAlgorithm default, i.e.:
-
-# su _sogo "defaults write sogod userPasswordAlgorithm ssha"
-
-Upgrade SOGo from < 1.3.17
-==========================
-With version 1.3.17, the "cycle info" field of the calendar tables
-was enlarged.
-
-Run one of the following scripts as the SOGo system user _sogo. Depending on
-the database you use, choose the postgres or mysql variant. The scripts
-will ask you for the database credentials.
-
-# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-postgres.sh"
-# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh"
-
 Upgrade SOGo from < 2.1.1
 =========================
 With version 2.1.0, the WOPort default changed from listening on *:20000
@@ -269,11 +230,10 @@ Upgrade SOGo from < 2.3.0
 ==========================
 With version 2.3.0, the database schema needs to be extended.
 
-Run one of the following scripts as the SOGo system user _sogo. Depending on
-the database you use, choose the postgres or mysql variant. The scripts
-will ask you for the database credentials.
+Run one of the following scripts as the SOGo system user _sogo. Choose the
+script based on your database backend. The scripts will ask you for the database credentials.
 
-# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-postgres.sh"
+# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0.sh"
 # su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh"
 
 Upgrade SOGo from < 3.0.0
@@ -282,7 +242,18 @@ With version 3.X you can update the database schema to the optional
 9-table model. The conversion is not required, and you should only do it
 when you are sure you know what you are doing.
 The scripts require you have configured sogo via /etc/sogo/sogo.conf,
-as well as they have to run with bash. Use at your own risk.
+as well as they have to run with bash. You might install bash manually.
+Use at your own risk.
 
 # su _sogo "${TRUEPREFIX}/bin/bash ${TRUEPREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined.sh"
 # su _sogo "${TRUEPREFIX}/bin/bash ${TRUEPREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined-mysql.sh"
+
+Upgrade SOGo from < 4.0.0
+=========================
+Updating SOGo from version 3.X to 4.X requires an update of the database schema.
+
+Run one of the following scripts as the SOGo system user _sogo. Choose the
+based on your database backend. The scripts will ask you for the database credentials.
+
+# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-3.2.10_to_4.0.0.sh"
+# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-3.2.10_to_4.0.0-mysql.sh"

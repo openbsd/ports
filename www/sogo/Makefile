@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.74 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.75 2018/05/14 06:57:10 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	3.2.10
+VERSION =	4.0.0
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
-REVISION =	1
 
 SHARED_LIBS +=	GDLContentStore 3.0
-SHARED_LIBS +=	NGCards		3.0
-SHARED_LIBS +=	SOGo		4.1
-SHARED_LIBS +=	SOGoUI		2.1
+SHARED_LIBS +=	NGCards		3.1
+SHARED_LIBS +=	SOGo		5.0
+SHARED_LIBS +=	SOGoUI		2.2
 
 CATEGORIES =	www
-HOMEPAGE =	http://www.sogo.nu/
+HOMEPAGE =	https://sogo.nu/
 MASTER_SITES =	${HOMEPAGE}/files/downloads/SOGo/Sources/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -51,38 +50,17 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION
 SOGOLIBDIR =	lib/GNUstep/Frameworks/SOGo.framework/Versions/${LIBSOGo_VERSION}
 SUBST_VARS +=	SOGOLIBDIR VARBASE
 
+SCRIPTS = 	cas-proxy-validate.py sql-update-2.2.17_to_2.3.0.sh \
+		sql-update-3.2.10_to_4.0.0.sh sql-update-2.2.17_to_2.3.0-mysql.sh \
+		sql-update-3.2.10_to_4.0.0-mysql.sh sql-update-3.0.0-to-combined.sh \
+		sql-update-3.0.0-to-combined-mysql.sh updates.php
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sogo
+.for _s in ${SCRIPTS}
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/cas-proxy-validate.py \
-		${PREFIX}/share/doc/sogo/cas-proxy-validate.py
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-1.3.11_to_1.3.12.sh \
-		${PREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-postgres.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-1.3.11_to_1.3.12-mysql.sh \
-		${PREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-1.3.16_to_1.3.17.sh \
-		${PREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-postgres.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-1.3.16_to_1.3.17-mysql.sh \
-		${PREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-2.2.17_to_2.3.0.sh \
-		${PREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-postgres.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh \
-		${PREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-3.0.0-to-combined.sh \
-		${PREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/sql-update-3.0.0-to-combined-mysql.sh \
-		${PREFIX}/share/doc/sogo/sql-update-3.0.0-to-combined-mysql.sh
-	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${WRKSRC}/Scripts/updates.php \
-		${PREFIX}/share/doc/sogo/updates.php
+		${WRKSRC}/Scripts/${_s} ${PREFIX}/share/doc/sogo/${_s}
+.endfor
 
 do-test:
 	cd ${WRKSRC}/Tests/Integration && ${MAKE_PROGRAM} && ./teststrings.sh

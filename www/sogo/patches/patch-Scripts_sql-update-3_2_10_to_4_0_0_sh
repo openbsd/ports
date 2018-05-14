@@ -1,0 +1,59 @@
+$OpenBSD: patch-Scripts_sql-update-3_2_10_to_4_0_0_sh,v 1.1 2018/05/14 06:57:10 sebastia Exp $
+
+Index: Scripts/sql-update-3.2.10_to_4.0.0.sh
+--- Scripts/sql-update-3.2.10_to_4.0.0.sh.orig
++++ Scripts/sql-update-3.2.10_to_4.0.0.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
+@@ -10,16 +10,24 @@ set -e
+ defaultusername=$USER
+ defaulthostname=localhost
+ defaultdatabase=sogo
+-indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++if [ -f /etc/sogo/sogo.conf ];then
++  indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++else
++  indextable=$(sogo-tool dump-defaults | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++fi
+ if [ -z "$indextable" ]; then
+   echo "Couldn't fetch OCSFolderInfoURL value, aborting" >&2
+   exit 1
+ fi
+-storeurl=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++if [ -f /etc/sogo/sogo.conf ];then
++  storeurl=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++else
++  storeurl=$(sogo-tool dump-defaults | awk -F\" '/ OCSStoreURL =/  {print $2}' |  awk -F/ '{print $NF}')
++fi
+ 
+-read -p "Username ($defaultusername): " username
+-read -p "Hostname ($defaulthostname): " hostname
+-read -p "Database ($defaultdatabase): " database
++read username?"Username ($defaultusername): "
++read hostname?"Hostname ($defaulthostname): "
++read database?"Database ($defaultdatabase): "
+ 
+ if [ -z "$username" ]
+ then
+@@ -36,7 +44,7 @@ fi
+ 
+ sqlscript=""
+ 
+-function growMailInContactsQuick() {
++growMailInContactsQuick() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE $table ALTER COLUMN c_mail TYPE TEXT;\\n\"`";
+@@ -44,7 +52,7 @@ function growMailInContactsQuick() {
+     IFS="$oldIFS"
+ }
+ 
+-function addCertificateInContactsQuick() {
++addCertificateInContactsQuick() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE $table ADD c_hascertificate INT4 DEFAULT 0;\\n\"`";
