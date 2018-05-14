@@ -1,4 +1,6 @@
-$OpenBSD: patch-yubiserve_py,v 1.6 2015/08/25 12:24:02 sthen Exp $
+$OpenBSD: patch-yubiserve_py,v 1.7 2018/05/14 06:55:45 jasper Exp $
+
+py-crypto -> py-cryptodome
 
 sqlite3 support from
 http://code.google.com/p/yubico-yubiserve/source/list r39
@@ -6,14 +8,19 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
 remove bogus timestamp checking code; that isn't what the timestamps are for,
 and they wrap after between 0 and 24-and-a-bit days uptime causing failures.
 
---- yubiserve.py.orig	Tue Aug 25 13:20:55 2015
-+++ yubiserve.py	Tue Aug 25 13:21:29 2015
-@@ -1,4 +1,4 @@
+Index: yubiserve.py
+--- yubiserve.py.orig
++++ yubiserve.py
+@@ -1,7 +1,7 @@
 -#!/usr/bin/python
 +#!${MODPY_BIN}
  import re, os, time, socket
  import urlparse, SocketServer, urllib, BaseHTTPServer
- from Crypto.Cipher import AES
+-from Crypto.Cipher import AES
++from Cryptodome.Cipher import AES
+ from OpenSSL import SSL
+ import hmac, hashlib
+ from threading import Thread
 @@ -10,12 +10,16 @@ try:
  except ImportError:
  	pass
