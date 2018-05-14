@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2018/05/14 12:19:37 landry Exp $
 
 COMMENT =	OpenStreetMap editor
+BROKEN =	gdal 2.3 fallout
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
