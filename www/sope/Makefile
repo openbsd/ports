@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.71 2017/09/23 10:27:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2018/05/14 06:56:43 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		3.2.10
+VERSION =		4.0.0
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
-REVISION-main =		1
-REVISION-mysql =	1
-REVISION-postgres =	1
 
-SO_MAJOR=	4
+SO_MAJOR=	5
 SO_MINOR=	0
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams SaxObjC WEExtensions \
@@ -22,7 +19,7 @@ SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 .endfor
 
 CATEGORIES=	www
-HOMEPAGE=	http://www.sogo.nu
+HOMEPAGE=	https://sogo.nu
 MASTER_SITES=	${HOMEPAGE}/files/downloads/SOGo/Sources/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
