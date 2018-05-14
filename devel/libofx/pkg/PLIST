@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/10/04 20:50:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/05/14 16:35:30 landry Exp $
 @bin bin/ofx2qif
 @bin bin/ofxdump
 include/libofx/
@@ -105,12 +105,12 @@ share/doc/libofx/html/closed.png
 share/doc/libofx/html/config_8h_source.html
 share/doc/libofx/html/context_8cpp_source.html
 share/doc/libofx/html/context_8hh_source.html
-share/doc/libofx/html/dir_20e2ca10065093359117ddd9c719c709.html
 share/doc/libofx/html/dir_3cf3786b460160ab6139135c3eddb41a.html
 share/doc/libofx/html/dir_7d631e890fcd4250cf03649d3bed4eac.html
+share/doc/libofx/html/dir_9460453d9008c9291cba4f293409bc20.html
 share/doc/libofx/html/dir_9571d6a5bfc7e277cfafd71e2e16ab1b.html
-share/doc/libofx/html/dir_ab98ed36b5046cc6bcd1f3e3933b5014.html
-share/doc/libofx/html/dir_af29dbbdf5b6c58f7cdd493f608c14fa.html
+share/doc/libofx/html/dir_e0e4dfed3f9f897973147be48dc62b4e.html
+share/doc/libofx/html/dir_e0ea214261c79df555950d97d39aa382.html
 share/doc/libofx/html/doxygen.css
 share/doc/libofx/html/doxygen.png
 share/doc/libofx/html/dynsections.js
@@ -196,9 +196,9 @@ share/doc/libofx/html/inc_2libofx_8h.js
 share/doc/libofx/html/inc_2libofx_8h_source.html
 share/doc/libofx/html/index.html
 share/doc/libofx/html/jquery.js
-share/doc/libofx/html/libofx-0_89_811_2inc_2libofx_8h.html
-share/doc/libofx/html/libofx-0_89_811_2inc_2libofx_8h.js
-share/doc/libofx/html/libofx-0_89_811_2inc_2libofx_8h_source.html
+share/doc/libofx/html/libofx-0_89_812_2inc_2libofx_8h.html
+share/doc/libofx/html/libofx-0_89_812_2inc_2libofx_8h.js
+share/doc/libofx/html/libofx-0_89_812_2inc_2libofx_8h_source.html
 share/doc/libofx/html/messages_8cpp.html
 share/doc/libofx/html/messages_8cpp.js
 share/doc/libofx/html/messages_8cpp_source.html

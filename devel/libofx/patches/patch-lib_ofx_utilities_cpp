@@ -1,19 +1,18 @@
-$OpenBSD: patch-lib_ofx_utilities_cpp,v 1.2 2012/09/09 20:27:48 landry Exp $
+$OpenBSD: patch-lib_ofx_utilities_cpp,v 1.3 2018/05/14 16:35:30 landry Exp $
 We don't support extern daylight
---- lib/ofx_utilities.cpp.orig	Tue Apr 19 18:22:04 2011
-+++ lib/ofx_utilities.cpp	Sat Sep  8 12:07:05 2012
-@@ -116,8 +116,13 @@ time_t ofxdate_to_time_t(const string ofxdate)
+Index: lib/ofx_utilities.cpp
+--- lib/ofx_utilities.cpp.orig
++++ lib/ofx_utilities.cpp
+@@ -138,8 +138,12 @@ time_t ofxdate_to_time_t(const string ofxdate)
+   char time_zone_specified = false;
    string ofxdate_whole;
    time_t temptime;
- 
--  time.tm_isdst = daylight; // initialize dst setting
-+  int daylight; 
++  int daylight;
 +  const struct tm* t;
+ 
    std::time(&temptime);
 +  t = localtime(&temptime);
 +  daylight = t->tm_isdst;
-+
-+  time.tm_isdst = daylight; // iniitialize dst setting
-   local_offset = difftime(mktime(localtime(&temptime)), mktime(gmtime(&temptime))) + (3600 * daylight);
- 
-   if (ofxdate.size() != 0)
+   local_offset = difftime(mktime(localtime(&temptime)), mktime(gmtime(&temptime)));
+   /* daylight is set to 1 if the timezone indicated by the environment (either TZ or /etc/localtime) uses daylight savings time (aka summer time). We use it here to provisionally set tm_isdst. */
+   time.tm_isdst = daylight;
