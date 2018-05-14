@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/09 19:52:10 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/14 17:20:37 feinerer Exp $
 
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	0.6.2
+MODPY_EGG_VERSION =	0.6.5
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
@@ -18,5 +18,8 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=n/nbxmpp/}
 
 MODULES =		lang/python
 NO_TEST =		Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
