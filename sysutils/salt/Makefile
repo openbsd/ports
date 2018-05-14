@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2018/04/25 17:16:19 robert Exp $
+# $OpenBSD: Makefile,v 1.127 2018/05/14 19:16:50 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
@@ -20,7 +20,7 @@ COMMENT =		remote execution and configuration management system
 MODPY_EGG_VERSION =	2018.3.0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -50,7 +50,7 @@ RUN_DEPENDS =		devel/py-futures \
 
 # requirements/zeromq.txt
 RUN_DEPENDS +=		net/py-zmq \
-			security/py-crypto
+			security/py-cryptodome
 
 # salt/output/progress.py
 RUN_DEPENDS +=		devel/py-progressbar
