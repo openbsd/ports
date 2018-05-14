@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/03/30 17:29:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/14 21:27:11 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -19,7 +19,6 @@ lib/kritaplugins/kritaarrangedocker.so
 lib/kritaplugins/kritaartisticcolorselector.so
 lib/kritaplugins/kritaasccdl.so
 lib/kritaplugins/kritaassistanttool.so
-lib/kritaplugins/kritabigbrother.so
 lib/kritaplugins/kritablurfilter.so
 lib/kritaplugins/kritabrushexport.so
 lib/kritaplugins/kritabrushimport.so
@@ -879,7 +878,6 @@ share/krita/workspaces/Minimal.kws
 share/krita/workspaces/Small_Vector.kws
 share/krita/workspaces/VFX_Paint.kws
 share/kritaplugins/
-share/kritaplugins/bigbrother.xmlgui
 share/kritaplugins/buginfo.xmlgui
 share/kritaplugins/clonesarray.xmlgui
 share/kritaplugins/colorrange.xmlgui
