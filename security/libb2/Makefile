@@ -1,37 +1,31 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/01 15:40:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/14 20:03:04 bket Exp $
 
 COMMENT =	library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp
-DISTNAME =	libb2-0.98.20171225
+
+V =		0.98
+DISTNAME =	libb2-${V}
+EPOCH =		0
+
+SHARED_LIBS =	b2	0.0 # 1.3
+
 CATEGORIES =	security
 
-SHARED_LIBS +=	b2                        0.0 # 1.3
+HOMEPAGE =	https://blake2.net/
 
-# No GH_TAGNAME
-GH_ACCOUNT =	BLAKE2
-GH_PROJECT =	libb2
-GH_COMMIT =	60ea749837362c226e8501718f505ab138e5c19d
-
-MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
+MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # CC0
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+MASTER_SITES =	https://github.com/BLAKE2/libb2/releases/download/v${V}/
 
-CONFIGURE_STYLE =	gnu
+SEPARATE_BUILD =	Yes
+
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--disable-fat \
 			--disable-native \
 			--disable-openmp
 
-SEPARATE_BUILD =	Yes
-
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
