@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2018/04/28 09:58:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2018/05/14 18:54:26 jasper Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
+REVISION-main =		0
 
 CATEGORIES =		sysutils
 
@@ -25,7 +26,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		textproc/py-sphinx
-RUN_DEPENDS =		security/py-crypto \
+RUN_DEPENDS =		security/py-cryptodome \
 			security/py-keyczar \
 			security/py-paramiko \
 			security/py-passlib \
