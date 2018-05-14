@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2018/05/14 16:36:55 landry Exp $
 
 COMMENT=	personal accounting application
 
-GH_ACCOUNT =	grisbi
-GH_PROJECT =	grisbi
-GH_TAGNAME =	upstream_version_1_0_1
-DISTNAME=	grisbi-1.0.1
-REVISION=	1
+DISTNAME=	grisbi-1.0.3
+EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
 
 CATEGORIES=	productivity x11
 
@@ -24,7 +22,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.8
 WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m ofx
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
-WANTLIB += iconv intl
+WANTLIB += iconv intl fribidi
 
 MODULES =	textproc/intltool
 
@@ -37,6 +35,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
+BUILD_DEPENDS=	devel/cunit
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
@@ -44,15 +43,5 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
 CONFIGURE_ARGS=	--with-openssl
-
-AUTOMAKE_VERSION =	1.14
-AUTOCONF_VERSION =	2.65
-BUILD_DEPENDS +=	devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		./autogen.sh
 
 .include <bsd.port.mk>
