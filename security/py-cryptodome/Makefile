@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/29 08:55:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/14 16:43:33 sthen Exp $
 
 COMMENT =	self-contained cryptographic library for Python
 
@@ -25,7 +25,16 @@ FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+SUBST_VARS +=		AESNI_COMMENT
 
 RUN_DEPENDS =		devel/gmp
+
+.include <bsd.port.arch.mk>
+
+.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
+AESNI_COMMENT =
+.else
+AESNI_COMMENT = "@comment "
+.endif
 
 .include <bsd.port.mk>

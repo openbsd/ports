@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/29 08:55:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/14 16:43:33 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/AES.py
@@ -52,7 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_mode_ofb.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_mode_openpgp.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_mode_siv.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_aes.so
-lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_aesni.so
+${AESNI_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_aesni.so
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_arc2.so
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_blowfish.so
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_cast.so
