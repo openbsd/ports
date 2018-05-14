@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/04/27 09:08:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2018/05/14 09:34:43 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -8,7 +8,7 @@ COMMENT-plugins=	gegl plugins
 API_VERSION=		0.2
 SUBST_VARS=		API_VERSION
 
-V=			${API_VERSION}.0
+V=			${API_VERSION}.2
 DISTNAME=		gegl-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -17,11 +17,8 @@ CATEGORIES=		graphics devel
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
-REVISION-main=		7
-REVISION-plugins=	10
-
-SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
-
+SHARED_LIBS +=  gegl-0.2             0.0      # 201.1
+SHARED_LIBS +=  gegl-sc-0.2          0.0      # unknown
 
 HOMEPAGE=		http://gegl.org/
 
@@ -37,30 +34,30 @@ MULTI_PACKAGES=		-main -plugins
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 iconv intl m pcre z
 
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += X11 Xext Xrender babl-0.1 c cairo croco-0.6 expat fontconfig
+WANTLIB-main += freetype fribidi gdk_pixbuf-2.0 graphite2 harfbuzz
+WANTLIB-main += jasper jpeg lzma pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += pixman-1 png pthread rsvg-2 xcb xcb-render xcb-shm
+WANTLIB-main += xml2
+
+WANTLIB-plugins += ${WANTLIB}
+WANTLIB-plugins += ${COMPILER_LIBCXX} Half Iex IexMath IlmImf IlmThread
+WANTLIB-plugins += Imath avcodec avformat avutil babl-0.1 bz2 crypto gegl-0.2
+WANTLIB-plugins += gsm mp3lame ogg opus speex ssl swresample vorbis vorbisenc
+WANTLIB-plugins += vpx x264 x265 xvidcore
+
 MODULES=		textproc/intltool
 
 USE_GMAKE=		Yes
 
-WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += X11 Xrender c cairo croco-0.6 expat fontconfig
-WANTLIB-main += freetype gdk_pixbuf-2.0 jpeg pango-1.0 lzma
-WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB-main += xcb xml2 xcb-render rsvg-2 babl-0.1
-WANTLIB-main += Xext jasper xcb-shm graphite2 harfbuzz
-
 BUILD_DEPENDS=		graphics/exiv2
 
 LIB_DEPENDS-main= 	x11/gnome/librsvg \
-			graphics/babl>=0.1.10
+			graphics/babl
 
-WANTLIB-plugins += ${WANTLIB} ${COMPILER_LIBCXX} ${LIBECXX}
-WANTLIB-plugins += gsm mp3lame ogg IlmImf avutil bz2 speex
-WANTLIB-plugins += vorbis vorbisenc x264 avcodec avformat vpx
-WANTLIB-plugins += Half Iex IexMath IlmThread Imath xvidcore
-WANTLIB-plugins += crypto opus pthread ssl swresample x265
-
-RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
-LIB_DEPENDS-plugins= 	graphics/ilmbase \
+LIB_DEPENDS-plugins= 	${BUILD_PKGPATH},-main \
+			graphics/ilmbase \
 			graphics/openexr \
 			graphics/ffmpeg
 
