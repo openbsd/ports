@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_keyczar_keys_py,v 1.1 2018/05/14 18:54:13 jasper Exp $
+
+py-crypto -> py-cryptodome
+
+Index: src/keyczar/keys.py
+--- src/keyczar/keys.py.orig
++++ src/keyczar/keys.py
+@@ -30,9 +30,9 @@ try:
+ except ImportError:
+   import sha as sha1
+ 
+-from Crypto.Cipher import AES
+-from Crypto.PublicKey import DSA
+-from Crypto.PublicKey import RSA
++from Cryptodome.Cipher import AES
++from Cryptodome.PublicKey import DSA
++from Cryptodome.PublicKey import RSA
+ try:
+   import simplejson as json
+ except ImportError:

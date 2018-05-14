@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/16 07:03:35 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2018/05/14 18:54:13 jasper Exp $
 
 COMMENT =		toolkit for safe and simple cryptography
 
 MODPY_EGG_VERSION =	0.716
 DISTNAME =		python-keyczar-${MODPY_EGG_VERSION}
 PKGNAME =		py-keyczar-${MODPY_EGG_VERSION}
+REVISION =		0
 EPOCH =			0
 
 CATEGORIES =		security
@@ -22,7 +23,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-asn1 \
-			security/py-crypto
+			security/py-cryptodome
 
 TEST_DEPENDS =		${RUN_DEPENDS}
 
