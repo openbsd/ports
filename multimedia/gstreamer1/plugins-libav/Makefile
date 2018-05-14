@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/04/12 11:42:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2018/05/14 11:36:55 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -33,6 +33,9 @@ libav_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--disable-sdl2 \
 			--disable-vfp \
 			--disable-debug
+
+# don't pick up nasm(1)
+libav_CONFIGURE_ARGS +=	--x86asmexe=yasm
 
 CONFIGURE_ARGS=		--with-libav-extra-configure="${libav_CONFIGURE_ARGS}"
 
