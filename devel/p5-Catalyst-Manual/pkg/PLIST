@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/08 22:01:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/05/15 11:21:21 espie Exp $
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst/Manual/
 @comment ${P5SITE}/Catalyst/Manual.pm
@@ -11,8 +11,10 @@ ${P5SITE}/Catalyst/Manual/Deployment/
 ${P5SITE}/Catalyst/Manual/Deployment.pod
 ${P5SITE}/Catalyst/Manual/Deployment/Apache/
 ${P5SITE}/Catalyst/Manual/Deployment/Apache/FastCGI.pod
+@comment ${P5SITE}/Catalyst/Manual/Deployment/Apache/FastCGI.pod.orig
 ${P5SITE}/Catalyst/Manual/Deployment/Apache/mod_perl.pod
 ${P5SITE}/Catalyst/Manual/Deployment/DevelopmentServer.pod
+@comment ${P5SITE}/Catalyst/Manual/Deployment/DevelopmentServer.pod.orig
 ${P5SITE}/Catalyst/Manual/Deployment/FastCGI.pod
 ${P5SITE}/Catalyst/Manual/Deployment/IIS/
 ${P5SITE}/Catalyst/Manual/Deployment/IIS/FastCGI.pod
@@ -40,6 +42,7 @@ ${P5SITE}/Catalyst/Manual/Tutorial/08_Testing.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/
 ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod.orig
 ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormFu.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormHandler.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/10_Appendices.pod

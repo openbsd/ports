@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/10/12 17:47:23 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/15 11:21:21 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/BSD/
 ${P5ARCH}/BSD/arc4random.pm
+@comment ${P5ARCH}/BSD/arc4random.pm.orig
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/BSD/
 ${P5ARCH}/auto/BSD/arc4random/

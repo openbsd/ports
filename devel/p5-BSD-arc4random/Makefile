@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/10/12 17:53:51 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2018/05/15 11:21:21 espie Exp $
 
 COMMENT =	perl interface to the arc4 random number generator
 
 DISTNAME =	BSD-arc4random-1.50
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
