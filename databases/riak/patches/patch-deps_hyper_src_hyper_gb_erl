@@ -1,0 +1,16 @@
+$OpenBSD: patch-deps_hyper_src_hyper_gb_erl,v 1.1 2018/05/15 06:38:33 jmatthew Exp $
+
+Use non-deprecated type for gb_trees
+
+Index: deps/hyper/src/hyper_gb.erl
+--- deps/hyper/src/hyper_gb.erl.orig
++++ deps/hyper/src/hyper_gb.erl
+@@ -67,7 +67,7 @@ bytes({T, _}) ->
+     erts_debug:flat_size(T) * 8.
+ 
+ 
+--spec register_sum({gb_tree(),number()}) -> float().
++-spec register_sum({gb_trees:tree(),number()}) -> float().
+ register_sum({T, M}) ->
+     {MaxI, Sum} = fold(fun (Index, Value, {I, Acc}) ->
+                             Zeroes = Index - I - 1,

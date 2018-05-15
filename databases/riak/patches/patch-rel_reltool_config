@@ -1,38 +1,57 @@
-$OpenBSD: patch-rel_reltool_config,v 1.2 2016/05/13 04:29:58 jmatthew Exp $
+$OpenBSD: patch-rel_reltool_config,v 1.3 2018/05/15 06:38:33 jmatthew Exp $
 
-Remove yokozuna
+Remove yokozuna and erlang_js
 
---- rel/reltool.config.orig	Thu Apr  7 10:04:44 2016
-+++ rel/reltool.config	Wed May 11 11:34:44 2016
+Index: rel/reltool.config
+--- rel/reltool.config.orig
++++ rel/reltool.config
+@@ -15,7 +15,7 @@
+          os_mon,
+          crypto,
+          runtime_tools,
+-         erlang_js,
++%%         erlang_js,
+          xmerl,
+          mochiweb,
+          webmachine,
 @@ -26,7 +26,7 @@
+          riak_pipe,
           riak_kv,
-          riak_search,
           riak_api,
 -         yokozuna,
 +%%         yokozuna,
+          riak_repl,
+          fuse,
           cluster_info,
-          riak_control,
-          exometer_core,
-@@ -58,7 +58,7 @@
+@@ -52,7 +52,7 @@
+        {app, mnesia, [{incl_app_filters, ["ebin/*"]}]},
+        {app, cuttlefish, [{incl_cond, include}]},
+        {app, cluster_info, [{incl_cond, include}]},
+-       {app, erlang_js, [{incl_cond, include}]},
++%%       {app, erlang_js, [{incl_cond, include}]},
+        {app, ebloom, []},
+        {app, riaknostic, [{incl_cond, include}]},
+        {app, bitcask, [{incl_cond, include}]},
+@@ -60,7 +60,7 @@
+        {app, riak_core, [{incl_cond, include}]},
         {app, riak_pipe, [{incl_cond, include}]},
         {app, riak_kv, [{incl_cond, include}]},
-        {app, riak_search, [{incl_cond, include}]},
 -       {app, yokozuna, [{incl_cond, include}]},
 +%%       {app, yokozuna, [{incl_cond, include}]},
+        {app, riak_repl, [{incl_cond, include}]},
         {app, eper, [{incl_cond, include}]},
         {app, sasl, [{incl_cond, include}]},
-        {app, syslog, [{incl_cond, include}]},
-@@ -117,7 +117,7 @@
+@@ -120,7 +120,7 @@
             {template, "../deps/riak_kv/priv/multi_backend.schema", "lib/20-multi_backend.schema"},
             {template, "../deps/eleveldb/priv/eleveldb.schema", "lib/21-leveldb.schema"},
             {template, "../deps/eleveldb/priv/eleveldb_multi.schema", "lib/22-leveldb_multi.schema"},
 -           {template, "../deps/yokozuna/priv/yokozuna.schema", "lib/30-yokozuna.schema"},
 +%%           {template, "../deps/yokozuna/priv/yokozuna.schema", "lib/30-yokozuna.schema"},
  
-            %% Copy additional bin scripts
-            {template, "files/riak-admin", "bin/riak-admin"},
-@@ -125,7 +125,7 @@
-            {template, "files/search-cmd", "bin/search-cmd"},
+            {template, "files/advanced.config", "etc/advanced.config"},
+ 
+@@ -130,7 +130,7 @@
+            {template, "files/riak-repl", "bin/riak-repl"},
  
             {mkdir, "lib/basho-patches"},
 -           {copy, "../apps/riak/ebin/etop_txt.beam", "lib/basho-patches"},

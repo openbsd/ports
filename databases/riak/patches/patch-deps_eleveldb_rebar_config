@@ -1,11 +1,12 @@
-$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.6 2016/05/15 06:44:21 jmatthew Exp $
+$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.7 2018/05/15 06:38:33 jmatthew Exp $
 
 link in libsnappy from its build tree rather than the installed location,
 since running make install is problematic.
 
---- deps/eleveldb/rebar.config.orig	Wed Apr 13 00:46:02 2016
-+++ deps/eleveldb/rebar.config	Wed May 11 11:45:43 2016
-@@ -17,7 +17,7 @@
+Index: deps/eleveldb/rebar.config
+--- deps/eleveldb/rebar.config.orig
++++ deps/eleveldb/rebar.config
+@@ -22,7 +22,7 @@
               {"CFLAGS", "$CFLAGS -Wall -O3 -fPIC"},
               {"CXXFLAGS", "$CXXFLAGS -Wall -O3 -fPIC"},
               {"DRV_CFLAGS", "$DRV_CFLAGS -O3 -Wall -I c_src/leveldb/include -I c_src/leveldb -I c_src/system/include"},

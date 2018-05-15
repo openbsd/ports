@@ -1,9 +1,10 @@
-$OpenBSD: patch-vars_config,v 1.5 2015/01/16 04:42:13 jmatthew Exp $
+$OpenBSD: patch-vars_config,v 1.6 2018/05/15 06:38:33 jmatthew Exp $
 
 use system locations for riak files.
 
---- rel/vars.config.orig	Sat Jan 10 09:29:36 2015
-+++ rel/vars.config	Fri Jan 16 13:27:44 2015
+Index: rel/vars.config
+--- rel/vars.config.orig
++++ rel/vars.config
 @@ -2,11 +2,11 @@
  %% ex: ft=erlang ts=4 sw=4 et
  
@@ -21,7 +22,7 @@ use system locations for riak files.
  
  %%
  %% etc/app.config
-@@ -40,16 +40,16 @@
+@@ -41,16 +41,16 @@
  %%
  %% bin/riak
  %%
