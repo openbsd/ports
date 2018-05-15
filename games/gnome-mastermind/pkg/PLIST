@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/15 11:50:56 espie Exp $
 @bin bin/gnome-mastermind
 share/applications/gnome-mastermind.desktop
+share/gnome/
 share/gnome-mastermind/
 share/gnome-mastermind/AUTHORS
 share/gnome-mastermind/BUGS
@@ -20,6 +21,7 @@ share/gnome-mastermind/themes/tango-flat.svg
 share/gnome-mastermind/themes/tango.svg
 share/gnome-mastermind/ui/
 share/gnome-mastermind/ui/ui.xml
+share/gnome/help/
 share/gnome/help/gnome-mastermind/
 share/gnome/help/gnome-mastermind/C/
 share/gnome/help/gnome-mastermind/C/figures/
@@ -80,11 +82,13 @@ share/locale/it/LC_MESSAGES/gnome-mastermind.mo
 share/locale/pl/LC_MESSAGES/gnome-mastermind.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-mastermind.mo
 share/locale/sv/LC_MESSAGES/gnome-mastermind.mo
+share/omf/
 share/omf/gnome-mastermind/
 share/omf/gnome-mastermind/gnome-mastermind-C.omf
 share/omf/gnome-mastermind/gnome-mastermind-fr.omf
 share/omf/gnome-mastermind/gnome-mastermind-id.omf
 share/omf/gnome-mastermind/gnome-mastermind-it.omf
+share/pixmaps/
 share/pixmaps/gnome-mastermind.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
