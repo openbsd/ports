@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/01/14 15:36:40 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2018/05/15 11:08:12 espie Exp $
+lib/lua/
+lib/lua/${MODLUA_VERSION}/
+lib/lua/${MODLUA_VERSION}/dbd/
 lib/lua/${MODLUA_VERSION}/dbd/sqlite3.so
+share/lua/
+share/lua/${MODLUA_VERSION}/
 share/lua/${MODLUA_VERSION}/DBI.lua
