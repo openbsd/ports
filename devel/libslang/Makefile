@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2016/09/13 14:40:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2018/05/15 15:04:09 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
-REVISION=	2
+REVISION=	3
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 
@@ -32,7 +32,11 @@ CONFIGURE_ARGS=		--with-pnginc=${LOCALBASE}/include \
 TEST_TARGET=		runtests
 TEST_FLAGS=		TCAPLIB="-ltermlib"
 
-MAKE_ENV=		LIBslang_MAJOR=${LIBslang_VERSION:R} \
+LIBslang_MAJOR=${LIBslang_VERSION:R}
+
+SUBST_VARS += LIBslang_MAJOR
+
+MAKE_ENV=		LIBslang_MAJOR=${LIBslang_MAJOR} \
 			LIBslang_MINOR=${LIBslang_VERSION:E}
 
 pre-configure:

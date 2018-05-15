@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/03/10 21:58:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/05/15 15:04:09 espie Exp $
 @bin bin/slsh
 include/slang.h
 include/slcurses.h
-@comment lib/libslang.so.15
+@comment lib/libslang.so
+@comment lib/libslang.so.${LIBslang_MAJOR}
+@lib lib/libslang.so.${LIBslang_VERSION}
 lib/slang/
 lib/slang/v2/
 lib/slang/v2/modules/
-@comment lib/libslang.so
-@lib lib/libslang.so.${LIBslang_VERSION}
 lib/slang/v2/modules/csv-module.so
 lib/slang/v2/modules/fcntl-module.so
 lib/slang/v2/modules/fork-module.so
