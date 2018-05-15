@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/24 10:31:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/15 11:18:19 espie Exp $
 @conflict gtk2mm-<2.22
 include/atkmm-1.6/
 include/atkmm-1.6/atkmm/
@@ -57,8 +57,6 @@ lib/libatkmm-1.6.a
 lib/libatkmm-1.6.la
 @lib lib/libatkmm-1.6.so.${LIBatkmm-1.6_VERSION}
 lib/pkgconfig/atkmm-1.6.pc
-share/devhelp/
-share/devhelp/books/
 share/devhelp/books/atkmm-1.6/
 share/devhelp/books/atkmm-1.6/atkmm-1.6.devhelp2
 share/doc/atkmm-1.6/
