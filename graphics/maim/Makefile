@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/05/15 19:03:13 rsadowski Exp $
 
-V =		5.4.65
-REVISION =	0
+V =		5.5.1
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 
@@ -28,8 +27,8 @@ LIB_DEPENDS +=		graphics/jpeg \
 			graphics/slop \
 			textproc/icu4c
 
-CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
-			-DCMAKE_COMPRESS_MAN=False
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
+			-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
 
 NO_TEST =	Yes
 
