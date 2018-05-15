@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2018/05/14 12:19:37 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2018/05/15 05:28:07 landry Exp $
 
 COMMENT =	OpenStreetMap editor
-BROKEN =	gdal 2.3 fallout
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.3
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo x11
 
@@ -17,7 +16,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 NO_TEST =	Yes
-MODULES =	x11/qt4
+MODULES =	devel/qmake x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
@@ -28,11 +27,8 @@ LIB_DEPENDS =	devel/proj \
 WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c iconv intl m proj pthread gdal
 WANTLIB += ${COMPILER_LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
-do-configure:
-	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 PROJ=1 NODEBUG=1 RELEASE=1 \
-	PREFIX=${WRKINST}${PREFIX} TRANSDIR_MERKAARTOR=${WRKINST}/${PREFIX}/share/merkaartor/translations
-
-pre-build:
-	cd ${WRKSRC}/translations && ${MAKE} release
+#generate the .qm files from the .ts files before configure runs
+pre-configure:
+	cd ${WRKSRC} && lrelease4 src/src.pro
 
 .include <bsd.port.mk>
