@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2018/04/02 17:16:19 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2018/05/15 17:39:19 bket Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-DISTNAME=	mbedtls-2.8.0
+DISTNAME=	mbedtls-2.9.0
 EXTRACT_SUFX=	-gpl.tgz
 
 # check SOVERSION
-SHARED_LIBS +=  mbedtls                   3.1 # 2.8
-SHARED_LIBS +=  mbedcrypto                2.1 # 2.8
-SHARED_LIBS +=  mbedx509                  1.0 # 2.8
+SHARED_LIBS +=  mbedtls                   3.2 # 10
+SHARED_LIBS +=  mbedcrypto                2.1 # 2
+SHARED_LIBS +=  mbedx509                  1.0 # 0
 
 CATEGORIES=	security
 
@@ -17,7 +17,6 @@ HOMEPAGE=	https://tls.mbed.org/
 # Dual licensed: GPLv2+/Commercial, Apache v2 is also available
 PERMIT_PACKAGE_CDROM=	Yes
 
-# libssl/libcrypto are used for polarssl_o_p_test only
 WANTLIB += c pthread
 
 MASTER_SITES=	https://tls.mbed.org/download/
