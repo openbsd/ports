@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.6 2018/04/24 20:52:13 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.7 2018/05/15 11:38:07 robert Exp $
 
 Index: spooler/DAgent.cpp
 --- spooler/DAgent.cpp.orig
@@ -15,7 +15,7 @@ Index: spooler/DAgent.cpp
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3371,8 +3376,8 @@ int main(int argc, char *argv[]) {
+@@ -3399,8 +3404,8 @@ int main(int argc, char *argv[]) {
  	static const configsetting_t lpDefaults[] = {
  		{ "server_bind", "" },
  		{ "server_bind_intf", "" },
@@ -25,8 +25,8 @@ Index: spooler/DAgent.cpp
 +		{ "run_as_group", "_kopano" },
  		{ "pid_file", "/var/run/kopano/dagent.pid" },
  		{"coredump_enabled", "systemdefault"},
- 		{"lmtp_port", "2003", CONFIGSETTING_NONEMPTY},
-@@ -3391,12 +3396,12 @@ int main(int argc, char *argv[]) {
+ 		{"lmtp_listen", "*:2003", CONFIGSETTING_NONEMPTY},
+@@ -3420,12 +3425,12 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "error", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },

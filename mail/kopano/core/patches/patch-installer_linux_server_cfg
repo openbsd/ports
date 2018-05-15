@@ -1,9 +1,9 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.4 2018/04/24 20:52:13 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.5 2018/05/15 11:38:07 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
 +++ installer/linux/server.cfg
-@@ -44,7 +44,7 @@ server_listen = *:236
+@@ -43,7 +43,7 @@ server_listen = *:236
  # field is SPACE separated
  # eg: local_admin_users = root vmail
  # Default: root
@@ -12,7 +12,7 @@ Index: installer/linux/server.cfg
  
  # The user has full rights on a folder by default, uncomment the following line to disable this.
  #owner_auto_full_access = true
-@@ -53,16 +53,16 @@ local_admin_users = root kopano
+@@ -52,16 +52,16 @@ local_admin_users = root kopano
  #system_email_address = postmaster@localhost
  
  # drop privileges and run the process as this user
@@ -32,7 +32,7 @@ Index: installer/linux/server.cfg
  
  # Use given allocator library. Values like libtcmalloc.so.4,
  # libtcmalloc_minimal.so.4 and libjemalloc.so.2 would work.
-@@ -158,7 +158,7 @@ local_admin_users = root kopano
+@@ -156,7 +156,7 @@ local_admin_users = root kopano
  # When attachment_storage is 'files', use this path to store the files
  # When attachment_storage is 's3', use this path to set a prefix to all
  # attachment data of a certain cluster, for example 'attach'

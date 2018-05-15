@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/03/29 19:41:46 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2018/05/15 11:38:07 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
@@ -20,7 +20,6 @@ SHARED_LIBS +=  kcmapi                    0.0 # 0.0
 SHARED_LIBS +=  kcserver                  0.0 # 0.0
 SHARED_LIBS +=  kcsoap                    0.0 # 0.0
 SHARED_LIBS +=  kcssl                     0.0 # 0.0
-SHARED_LIBS +=  kcsync                    0.0 # 0.0
 SHARED_LIBS +=  kcutil                    0.0 # 0.0
 
 MULTI_PACKAGES=	-main -mapi

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2018/04/28 13:03:14 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2018/05/15 11:38:07 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -105,11 +105,6 @@ include/libfreebusy/freebusyguid.h
 include/libfreebusy/freebusytags.h
 include/libfreebusy/freebusyutil.h
 include/libfreebusy/recurrence.h
-include/libkcsync/
-include/libkcsync/ECSyncContext.h
-include/libkcsync/ECSyncLog.h
-include/libkcsync/ECSyncSettings.h
-include/libkcsync/ECSyncUtil.h
 include/librosie.h
 include/mapi4linux/
 include/mapi4linux/edkguid.h
@@ -156,8 +151,6 @@ lib/libkcsoap.a
 @lib lib/libkcsoap.so.${LIBkcsoap_VERSION}
 lib/libkcssl.a
 @lib lib/libkcssl.so.${LIBkcssl_VERSION}
-lib/libkcsync.a
-@lib lib/libkcsync.so.${LIBkcsync_VERSION}
 lib/libkcutil.a
 @lib lib/libkcutil.so.${LIBkcutil_VERSION}
 lib/libmapi.a
@@ -495,9 +488,7 @@ sbin/kopano-mailbox-permissions
 sbin/kopano-migration-pst
 @bin sbin/kopano-monitor
 sbin/kopano-mr-accept
-sbin/kopano-mr-accept.py
 sbin/kopano-mr-process
-sbin/kopano-mr-process.py
 sbin/kopano-presence
 sbin/kopano-recreate-systemfolders
 sbin/kopano-rules
