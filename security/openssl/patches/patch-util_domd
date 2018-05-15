@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_domd,v 1.1 2018/05/15 15:15:05 visa Exp $
+
+Fix make depend on gcc architectures.
+
+Index: util/domd
+--- util/domd.orig
++++ util/domd
+@@ -17,6 +17,7 @@ cp Makefile.save Makefile
+ # fake the presence of Kerberos
+ touch $TOP/krb5.h
+ if ${MAKEDEPEND} --version 2>&1 | grep "clang" > /dev/null ||
++   ${MAKEDEPEND} --version 2>&1 | grep "GCC" > /dev/null ||
+    echo $MAKEDEPEND | grep "gcc" > /dev/null; then
+     args=""
+     while [ $# -gt 0 ]; do
