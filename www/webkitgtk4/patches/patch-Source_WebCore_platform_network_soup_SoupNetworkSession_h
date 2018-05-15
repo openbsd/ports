@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_WebCore_platform_network_soup_SoupNetworkSession_h,v 1.1 2018/05/15 08:55:40 ajacoutot Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=185378
+
+Index: Source/WebCore/platform/network/soup/SoupNetworkSession.h
+--- Source/WebCore/platform/network/soup/SoupNetworkSession.h.orig
++++ Source/WebCore/platform/network/soup/SoupNetworkSession.h
+@@ -26,6 +26,7 @@
+ #ifndef SoupNetworkSession_h
+ #define SoupNetworkSession_h
+ 
++#include <URL.h>
+ #include <gio/gio.h>
+ #include <pal/SessionID.h>
+ #include <wtf/Function.h>
