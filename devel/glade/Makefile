@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/04/23 16:56:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2018/05/15 19:20:21 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -41,6 +41,7 @@ MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
 MODGNOME_TOOLS += gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS +=	--disable-webkit2gtk
 
 post-install:
 	rm ${PREFIX}/lib/glade/modules/*.{a,la}
