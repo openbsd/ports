@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins_node_d_openbsd_vmstat_in,v 1.1 2018/05/15 05:48:32 florian Exp $
+
+Index: plugins/node.d.openbsd/vmstat.in
+--- plugins/node.d.openbsd/vmstat.in.orig
++++ plugins/node.d.openbsd/vmstat.in
+@@ -75,10 +75,7 @@ if [ "$1" = "config" ]; then
+ 	echo 'blocked.label wait'
+ 	echo 'blocked.info processes blocked for resources (I/O, paging, etc)'
+ 	echo 'blocked.type GAUGE'
+-	echo 'pagewait.label pagewait'
+-	echo 'pagewait.info processes waiting for page-in'
+-	echo 'pagewait.type GAUGE'
+ 	exit 0
+ fi
+ 
+-/usr/bin/vmstat 1 2 | /usr/bin/awk 'END { print "running.value " $1 "\nblocked.value " $2 "\npagewait.value " $3}' 
++/usr/bin/vmstat 1 2 | /usr/bin/awk 'END { print "running.value " $1 "\nblocked.value " $2}'

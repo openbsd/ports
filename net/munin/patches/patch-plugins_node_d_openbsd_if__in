@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_node_d_openbsd_if__in,v 1.4 2018/04/01 08:21:01 kirby Exp $
+$OpenBSD: patch-plugins_node_d_openbsd_if__in,v 1.5 2018/05/15 05:48:32 florian Exp $
 Index: plugins/node.d.openbsd/if_.in
 --- plugins/node.d.openbsd/if_.in.orig
 +++ plugins/node.d.openbsd/if_.in
@@ -28,11 +28,11 @@ Index: plugins/node.d.openbsd/if_.in
  	echo 'graph_vlabel bits per ${graph_period} in (-) / out (+)'
  	echo 'graph_category network'
 -	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: On older BSD systems the data source for this plugin uses 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is unsuitable for old production environments."
-+	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes.
++	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes."
  	echo 'rbytes.label received'
          echo 'rbytes.type DERIVE'
          echo 'rbytes.graph no'
-@@ -69,9 +69,9 @@ fi
+@@ -69,9 +69,11 @@ fi
  if [ "$INTERFACE" = "aggregated" ]; then
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
@@ -42,10 +42,12 @@ Index: plugins/node.d.openbsd/if_.in
 +/<Link>/ {
 +	if (NF == 5) { 
 +		rsum += $4; osum += $5;
++	} else if (NF == 6) { 
++		rsum += $5; osum += $6;
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
  			rsum += $7; osum += $10;
-@@ -79,7 +79,7 @@ BEGIN { rsum = 0; osum = 0; }
+@@ -79,7 +81,7 @@ BEGIN { rsum = 0; osum = 0; }
  			rsum += $7; osum += $10;
  		}
  	} else { # NF == 12
@@ -54,7 +56,7 @@ Index: plugins/node.d.openbsd/if_.in
  	}
  }
  END {
-@@ -89,17 +89,17 @@ END {
+@@ -89,17 +91,20 @@ END {
    
  else
  	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '
@@ -66,6 +68,9 @@ Index: plugins/node.d.openbsd/if_.in
 +	if (NF == 5) { 
 +		print "rbytes.value", $4;
 +		print "obytes.value", $5;
++	} else 	if (NF == 6) { 
++		print "rbytes.value", $5;
++		print "obytes.value", $6;
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
  			print "rbytes.value", $7;

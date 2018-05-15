@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_node_d_openbsd_if_errcoll__in,v 1.3 2018/04/01 08:21:01 kirby Exp $
+$OpenBSD: patch-plugins_node_d_openbsd_if_errcoll__in,v 1.4 2018/05/15 05:48:32 florian Exp $
 Index: plugins/node.d.openbsd/if_errcoll_.in
 --- plugins/node.d.openbsd/if_errcoll_.in.orig
 +++ plugins/node.d.openbsd/if_errcoll_.in
@@ -23,7 +23,7 @@ Index: plugins/node.d.openbsd/if_errcoll_.in
  		exit 0
  	else
  		exit 1
-@@ -57,21 +57,21 @@ if [ "$1" = "config" ]; then
+@@ -57,25 +57,15 @@ if [ "$1" = "config" ]; then
  	exit 0
  fi;
  
@@ -36,22 +36,24 @@ Index: plugins/node.d.openbsd/if_errcoll_.in
  		print "ierrors.value", $5;
 -		print "oerrors.value", $8;
 -		print "collisions.value", $10;
-+		print "oerrors.value", $7;
-+		print "collisions.value", $8;
- 	} else if (NF == 11) {
- 		if ($4 ~ /:/) {
+-	} else if (NF == 11) {
+-		if ($4 ~ /:/) {
 -			print "ierrors.value", $6;
 -			print "oerrors.value", $9;
-+			print "ierrors.value", $8;
-+			print "oerrors.value", $10;
- 			print "collisions.value", $11;
- 		} else {
+-			print "collisions.value", $11;
+-		} else {
 -			print "ierrors.value", $5;
 -			print "oerrors.value", $9;
 -			print "collisions.value", $11;
-+			print "ierrors.value", $6;
-+			print "oerrors.value", $8;
-+			print "collisions.value", $9;
- 		}
- 	} else { # NF == 12
+-		}
+-	} else { # NF == 12
++		print "oerrors.value", $7;
++		print "collisions.value", $8;
++	} else {
  		print "ierrors.value", $6;
+-		print "oerrors.value", $10;
+-		print "collisions.value", $12;
++		print "oerrors.value", $8;
++		print "collisions.value", $9;
+ 	}
+ }'
