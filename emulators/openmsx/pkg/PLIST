@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/03 08:35:06 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/15 14:49:45 espie Exp $
 @bin bin/openmsx
 share/doc/openmsx/
 share/doc/openmsx/GPL.txt
@@ -22,6 +22,8 @@ share/doc/openmsx/release-notes.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/openmsx/
 share/openmsx/extensions/
+share/openmsx/extensions/ASCII_Japanese_MSX-Write.xml
+share/openmsx/extensions/ASCII_Japanese_MSX-Write_II.xml
 share/openmsx/extensions/ASCII_MSX-DOS2.xml
 share/openmsx/extensions/AVT_DPF-550.xml
 share/openmsx/extensions/Beer_IDE.xml
@@ -41,6 +43,7 @@ share/openmsx/extensions/Gradiente_CT-80E.xml
 share/openmsx/extensions/Konami_EC-702.xml
 share/openmsx/extensions/Konami_SD-Snatcher_Sound_Cartridge.xml
 share/openmsx/extensions/Konami_Snatcher_Sound_Cartridge.xml
+share/openmsx/extensions/Konami_Ultimate_Collection.xml
 share/openmsx/extensions/Lascom_Kanji-dummy.rom.gz
 share/openmsx/extensions/Lascom_Kanji.xml
 share/openmsx/extensions/MIDI_Interface_3.xml
@@ -75,6 +78,7 @@ share/openmsx/extensions/Sony_HBI-55.xml
 share/openmsx/extensions/Sony_HBK-30.xml
 share/openmsx/extensions/Spectravideo_SVI-707.xml
 share/openmsx/extensions/Talent_DPF-550.xml
+share/openmsx/extensions/Tecall_MSX_RAMFILE_TM220.xml
 share/openmsx/extensions/Toshiba_HX-MU900.xml
 share/openmsx/extensions/Yamaha_SFG-01.xml
 share/openmsx/extensions/Yamaha_SFG-05.xml
@@ -118,7 +122,9 @@ share/openmsx/machines/Acid1Test-slots.xml
 share/openmsx/machines/Acid2Test-hardware.xml
 share/openmsx/machines/Acid3Test-mapper.xml
 share/openmsx/machines/Al_Alamiah_AX170.xml
+share/openmsx/machines/Al_Alamiah_AX370.xml
 share/openmsx/machines/Aucnet_NIA-2001.xml
+share/openmsx/machines/Bawareth_Perfect_MSX1.xml
 share/openmsx/machines/Boosted_MSX2+_JP.txt
 share/openmsx/machines/Boosted_MSX2+_JP.xml
 share/openmsx/machines/Boosted_MSX2_EN.txt
@@ -247,6 +253,9 @@ share/openmsx/machines/Sony_HB-F9P.xml
 share/openmsx/machines/Sony_HB-F9P_Russian.xml
 share/openmsx/machines/Sony_HB-F9S.xml
 share/openmsx/machines/Sony_HB-G900P.xml
+share/openmsx/machines/Spectravideo_SVI-318.xml
+share/openmsx/machines/Spectravideo_SVI-328.xml
+share/openmsx/machines/Spectravideo_SVI-328_superexpanded.xml
 share/openmsx/machines/Spectravideo_SVI-728.xml
 share/openmsx/machines/Spectravideo_SVI-728_ES.xml
 share/openmsx/machines/Spectravideo_SVI-738.xml
@@ -370,6 +379,7 @@ share/openmsx/scripts/_vdp.tcl
 share/openmsx/scripts/_vdp_access_test.tcl
 share/openmsx/scripts/_vdp_busy.tcl
 share/openmsx/scripts/_vdrive.tcl
+share/openmsx/scripts/_vgmrecorder.tcl
 share/openmsx/scripts/_vu-meters.tcl
 share/openmsx/scripts/_widgets.tcl
 share/openmsx/scripts/autoplug.tcl
@@ -380,6 +390,7 @@ share/openmsx/scripts/keybindings.tcl
 share/openmsx/scripts/lazy.tcl
 share/openmsx/scripts/load_icons.tcl
 share/openmsx/scripts/mode.tcl
+share/openmsx/scripts/osd_menu.tcl
 share/openmsx/scripts/reverse.tcl
 share/openmsx/scripts/screenshot.tcl
 share/openmsx/scripts/session_management.tcl
@@ -554,3 +565,4 @@ share/openmsx/unicodemaps/unicodemap.kr
 share/openmsx/unicodemaps/unicodemap.proto_fr
 share/openmsx/unicodemaps/unicodemap.proto_int
 share/openmsx/unicodemaps/unicodemap.ru
+share/openmsx/unicodemaps/unicodemap.svi
