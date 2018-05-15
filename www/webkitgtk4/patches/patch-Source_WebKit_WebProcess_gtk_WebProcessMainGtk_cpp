@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_WebKit_WebProcess_gtk_WebProcessMainGtk_cpp,v 1.1 2018/05/15 06:51:59 ajacoutot Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=185378
+
+Index: Source/WebKit/WebProcess/gtk/WebProcessMainGtk.cpp
+--- Source/WebKit/WebProcess/gtk/WebProcessMainGtk.cpp.orig
++++ Source/WebKit/WebProcess/gtk/WebProcessMainGtk.cpp
+@@ -28,6 +28,7 @@
+ #include "WebProcessMainUnix.h"
+ 
+ #include "ChildProcessMain.h"
++#include "URL.h"
+ #include "WebProcess.h"
+ #include <WebCore/SoupNetworkSession.h>
+ #include <gtk/gtk.h>

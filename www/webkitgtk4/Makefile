@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/04/10 13:20:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2018/05/15 06:51:59 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.20.1
+V =			2.20.2
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -33,14 +33,14 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
-WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant fontconfig
-WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu hyphen icudata
-WANTLIB += icui18n icuuc intl jpeg m notify pango-1.0 pangocairo-1.0
-WANTLIB += png secret-1 soup-2.4 sqlite3 tasn1 webp webpdemux
-WANTLIB += woff2dec xml2 xslt z
+WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig
+WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB += hyphen icudata icui18n icuuc intl jpeg m notify pango-1.0
+WANTLIB += pangocairo-1.0 png secret-1 soup-2.4 sqlite3 tasn1
+WANTLIB += webp webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		http://webkitgtk.org/releases/
 
@@ -75,7 +75,7 @@ LIB_DEPENDS =		archivers/woff2 \
 			devel/libsoup \
 			graphics/libwebp \
 			multimedia/gstreamer1/plugins-base \
-			textproc/enchant \
+			textproc/enchant2 \
 			textproc/hyphen \
 			textproc/libxslt \
 			x11/gnome/libsecret \
