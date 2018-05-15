@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.9 2018/05/12 10:46:39 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.10 2018/05/15 08:30:55 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -23,14 +23,10 @@ sub unsubst_prefix
 {
 	my ($self, $string, $v, $k2) = @_;
 	
-	# XXX needs_keyword does not return what we need
-	# so the simplest way is to try this, and if it fails, we
-	# do the normal unsubst
-	eval {
-		my $key = $self->keyword;
-		$string =~ s/^\@\Q$key\E\s+\Q$v\E/\@$key \$\{$k2\}/;
-	};
-	if ($@) {
+	# if we start with a keyword, substitute after it
+	if ($string =~ m/^\@/) {
+		$string =~ s/^(\@\S+\s+)\Q$v\E/$1\$\{$k2\}/;
+	} else {
 		$string =~ s/^\Q$v\E/\$\{$k2\}/;
 	}
 	return $string;
