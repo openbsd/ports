@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_common_stanza_session_py,v 1.1 2018/05/15 18:38:19 jasper Exp $
+
+py-crypto -> py-cryptodome
+
+Index: src/common/stanza_session.py
+--- src/common/stanza_session.py.orig
++++ src/common/stanza_session.py
+@@ -41,8 +41,8 @@ import logging
+ log = logging.getLogger('gajim.c.stanza_session')
+ 
+ if gajim.HAVE_PYCRYPTO:
+-    from Crypto.Cipher import AES
+-    from Crypto.PublicKey import RSA
++    from Cryptodome.Cipher import AES
++    from Cryptodome.PublicKey import RSA
+ 
+     from common import dh
+     import secrets
