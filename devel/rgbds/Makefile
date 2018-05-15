@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/03 05:31:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/15 07:28:15 bentley Exp $
 
 COMMENT =	Game Boy development system
 
-V =		0.3.6
+V =		0.3.7
 DISTNAME =	rgbds-$V
 
 CATEGORIES =	devel
