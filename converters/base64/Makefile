@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2014/11/01 21:17:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/15 11:05:43 espie Exp $
 
 COMMENT=	converter to/from base64 encoding
 
 DISTNAME=	base64-1.5
 CATEGORIES=	converters
+REVISION =	0
 
 HOMEPAGE=	http://www.fourmilab.ch/webtools/base64/
 

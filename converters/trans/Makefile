@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/05/15 11:05:43 espie Exp $
 
 COMMENT=	character encoding converter generator package
 
 DISTNAME=	trans120
 PKGNAME=	trans-1.20
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters
 
 PERMIT_PACKAGE_CDROM=	no fee

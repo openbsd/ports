@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:25:51 espie Exp $
-bin/checkiso
-bin/checkuni
-bin/transce8
-bin/transhtm
-bin/transiso
-bin/transtab
+@comment $OpenBSD: PLIST,v 1.5 2018/05/15 11:05:43 espie Exp $
+@bin bin/checkiso
+@bin bin/checkuni
+@bin bin/transce8
+@bin bin/transhtm
+@bin bin/transiso
+@bin bin/transtab
 lib/trans/
 lib/trans/README
 lib/trans/bin/
