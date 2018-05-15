@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.45 2018/05/15 19:10:23 jasper Exp $
 
 COMMENT=	monitor arp & rarp requests
 
 DISTNAME=	arpwatch-2.1a15
-REVISION=	15
+REVISION=	16
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

@@ -1,0 +1,41 @@
+$OpenBSD: patch-arpwatch_c,v 1.1 2018/05/15 19:10:24 jasper Exp $
+
+- Do not bail if the interface does not have an IP assigned.
+- time_t format string fixes
+
+Index: arpwatch.c
+--- arpwatch.c.orig
++++ arpwatch.c
+@@ -223,9 +223,11 @@ main(int argc, char **argv)
+ 
+ 		/* Determine network and netmask */
+ 		if (pcap_lookupnet(interface, &net, &netmask, errbuf) < 0) {
+-			(void)fprintf(stderr, "%s: bad interface %s: %s\n",
+-			    prog, interface, errbuf);
+-			exit(1);
++			(void)fprintf(stderr,
++			    "%s: WARNING: cannot determine net/mask: %s\n",
++			    prog, errbuf);
++			net = 0;
++			netmask = 0;
+ 		}
+ 
+ 		/* Drop into the background if not debugging */
+@@ -401,7 +403,7 @@ process_ether(register u_char *u, register const struc
+ 	t = h->ts.tv_sec;
+ 	can_checkpoint = 0;
+ 	if (!ent_add(sia, sea, t, NULL))
+-		syslog(LOG_ERR, "ent_add(%s, %s, %ld) failed",
++		syslog(LOG_ERR, "ent_add(%s, %s, %lld) failed",
+ 		    intoa(sia), e2str(sea), t);
+ 	can_checkpoint = 1;
+ }
+@@ -550,7 +552,7 @@ process_fddi(register u_char *u, register const struct
+ 	t = h->ts.tv_sec;
+ 	can_checkpoint = 0;
+ 	if (!ent_add(sia, sea, t, NULL))
+-		syslog(LOG_ERR, "ent_add(%s, %s, %ld) failed",
++		syslog(LOG_ERR, "ent_add(%s, %s, %lld) failed",
+ 		    intoa(sia), e2str(sea), t);
+ 	can_checkpoint = 1;
+ }

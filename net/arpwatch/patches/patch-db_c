@@ -1,0 +1,20 @@
+$OpenBSD: patch-db_c,v 1.1 2018/05/15 19:10:24 jasper Exp $
+
+ignore 0.0.0.0
+https://sources.debian.org/patches/arpwatch/2.1a15-6/25ignore_zero_ip/
+
+Index: db.c
+--- db.c.orig
++++ db.c
+@@ -95,6 +95,11 @@ ent_add(register u_int32_t a, register u_char *e, time
+ 	u_char *e2;
+ 	time_t t2;
+ 
++	/* Ignore 0.0.0.0 */
++	if (a == 0) {
++		return(1);
++	}
++
+ 	/* Lookup ip address */
+ 	ap = ainfo_find(a);
+ 

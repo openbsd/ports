@@ -1,0 +1,17 @@
+$OpenBSD: patch-ec_c,v 1.1 2018/05/15 19:10:24 jasper Exp $
+
+zero-pad MAC address to match ifconfig(8) output
+https://sources.debian.org/patches/arpwatch/2.1a15-6/33_bug315215_zero-pad-MAC/
+
+Index: ec.c
+--- ec.c.orig
++++ ec.c
+@@ -218,7 +218,7 @@ e2str(register u_char *e)
+ {
+ 	static char str[32];
+ 
+-	(void)sprintf(str, "%x:%x:%x:%x:%x:%x",
++	(void)sprintf(str, "%02x:%02x:%02x:%02x:%02x:%02x",
+ 	    e[0], e[1], e[2], e[3], e[4], e[5]);
+ 	return (str);
+ }
