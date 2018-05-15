@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_nids_h,v 1.1 2018/05/15 19:17:05 jasper Exp $
+
+https://github.com/MITRECND/libnids/commit/81d7ac0d09cb5c98cf8eff9e6aaba1f4eb5ed519
+
+Index: src/nids.h
+--- src/nids.h.orig
++++ src/nids.h
+@@ -106,6 +106,7 @@ struct tcp_stream
+   int read;
+   struct tcp_stream *next_free;
+   void *user;
++  long ts;
+ };
+ 
+ struct nids_prm
+@@ -131,6 +132,7 @@ struct nids_prm
+   int queue_limit;
+   int tcp_workarounds;
+   pcap_t *pcap_desc;
++  int tcp_flow_timeout;
+ };
+ 
+ struct tcp_timeout

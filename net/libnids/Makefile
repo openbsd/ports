@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.42 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2018/05/15 19:17:05 jasper Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
-SHARED_LIBS= nids 0.0
-
 DISTNAME=	libnids-1.24
-REVISION=	1
-FIX_EXTRACT_PERMISSIONS=Yes
+SHARED_LIBS=	nids 0.1
+REVISION=	2
 
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
 
 HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
+FIX_EXTRACT_PERMISSIONS=Yes
 
 WANTLIB += lib/libnet-1.0/net=0 pcap
 

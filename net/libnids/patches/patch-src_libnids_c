@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_libnids_c,v 1.6 2010/04/09 09:48:18 jasper Exp $
---- src/libnids.c.orig	Mon Mar  1 22:13:25 2010
-+++ src/libnids.c	Fri Apr  9 10:00:43 2010
+$OpenBSD: patch-src_libnids_c,v 1.7 2018/05/15 19:17:05 jasper Exp $
+
+nids_params:
+https://github.com/MITRECND/libnids/commit/81d7ac0d09cb5c98cf8eff9e6aaba1f4eb5ed519
+https://github.com/MITRECND/libnids/commit/4ab31b6efaf15a01b7121443b6e3de4cde13d3a5
+
+Index: src/libnids.c
+--- src/libnids.c.orig
++++ src/libnids.c
 @@ -14,7 +14,9 @@
  #include <stdlib.h>
  #include <string.h>
@@ -24,7 +30,17 @@ $OpenBSD: patch-src_libnids_c,v 1.6 2010/04/09 09:48:18 jasper Exp $
  #ifdef __linux__
  extern int set_all_promisc();
  #endif
-@@ -619,22 +627,46 @@ int nids_init()
+@@ -108,7 +116,8 @@ struct nids_prm nids_params = {
+     0,				/* multiproc */
+     20000,			/* queue_limit */
+     0,				/* tcp_workarounds */
+-    NULL			/* pcap_desc */
++    NULL,			/* pcap_desc */
++    3600			        /* tcp_flow_timeout */
+ };
+ 
+ static int nids_ip_filter(struct ip *x, int len)
+@@ -619,22 +628,46 @@ int nids_init()
      case DLT_NULL:
          nids_linkoffset = 4;
          break;

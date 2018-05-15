@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_tcp_h,v 1.1 2018/05/15 19:17:05 jasper Exp $
+
+warning: incompatible pointer types passing 'struct bpf_timeval *' to parameter of type 'struct timeval *'
+
+Index: src/tcp.h
+--- src/tcp.h.orig
++++ src/tcp.h
+@@ -5,6 +5,7 @@
+ #ifndef _NIDS_TCP_H
+ #define _NIDS_TCP_H
+ #include <sys/time.h>
++#include <net/bpf.h>
+ 
+ struct skbuff {
+   struct skbuff *next;
+@@ -25,6 +26,6 @@ int tcp_init(int);
+ void tcp_exit(void);
+ void process_tcp(u_char *, int);
+ void process_icmp(u_char *);
+-void tcp_check_timeouts(struct timeval *);
++void tcp_check_timeouts(struct bpf_timeval *);
+ 
+ #endif /* _NIDS_TCP_H */
