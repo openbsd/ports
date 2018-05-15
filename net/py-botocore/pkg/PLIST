@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.84 2018/05/09 10:51:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.85 2018/05/15 09:16:33 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -483,6 +483,13 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/paginators-1.json
