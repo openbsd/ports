@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2015/03/20 16:07:08 czarkoff Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/05/15 11:08:51 espie Exp $
 @pkgpath databases/mdbtools/snapshot,-main
 @bin bin/mdb-array
 @bin bin/mdb-export
@@ -38,6 +38,7 @@ lib/pkgconfig/libmdbsql.pc
 @man man/man1/mdb-tables.1
 @man man/man1/mdb-ver.1
 @comment man/mant/
+share/applications/
 share/omf/
 share/omf/mdbtools/
 share/omf/mdbtools/gmdb-C.omf
