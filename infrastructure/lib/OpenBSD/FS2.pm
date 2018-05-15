@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.18 2018/05/12 11:21:27 sthen Exp $
+# $OpenBSD: FS2.pm,v 1.19 2018/05/15 10:34:16 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -240,12 +240,15 @@ sub recognize
 	return 0 unless $filename =~ m/\/dir$/;
 	$filename = $fs->resolve_link($filename);
 	open my $fh, '<', $filename or return 0;
-	my $tag = <$fh>;
-	chomp $tag;
-	$tag.=" ".<$fh>;
-	chomp $tag;
-	$tag.=" ".<$fh>;
+	my @tags = ();
+	for my $i (1 .. 4) {
+		my $tag = <$fh>;
+		last unless defined $tag;
+		chomp $tag;
+		push(@tags, $tag);
+	}
 	close $fh;
+	my $tag = join(' ', @tags);
 	if ($tag =~ /^(?:\-\*\- Text \-\*\-\s+)?This is the file .*, which contains the topmost node of the Info hierarchy/) {
 		return 1;
 	} else {
