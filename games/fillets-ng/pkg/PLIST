@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/06 22:18:31 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/15 11:50:08 espie Exp $
 @bin bin/fillets
 @man man/man6/fillets.6
 share/fillets-ng/
@@ -1016,7 +1016,7 @@ share/fillets-ng/images/demo_briefcase/demo_047.png
 share/fillets-ng/images/demo_briefcase/demo_048.png
 share/fillets-ng/images/demo_briefcase/demo_049.png
 share/fillets-ng/images/demo_briefcase/demo_050.png
-share/fillets-ng/images/demo_briefcase/demo_0${MODLUA_DEP_VERSION}.png
+share/fillets-ng/images/demo_briefcase/demo_051.png
 share/fillets-ng/images/demo_briefcase/demo_052.png
 share/fillets-ng/images/demo_briefcase/demo_053.png
 share/fillets-ng/images/demo_briefcase/demo_054.png
@@ -1118,7 +1118,7 @@ share/fillets-ng/images/demo_briefcase/demo_147.png
 share/fillets-ng/images/demo_briefcase/demo_148.png
 share/fillets-ng/images/demo_briefcase/demo_149.png
 share/fillets-ng/images/demo_briefcase/demo_150.png
-share/fillets-ng/images/demo_briefcase/demo_1${MODLUA_DEP_VERSION}.png
+share/fillets-ng/images/demo_briefcase/demo_151.png
 share/fillets-ng/images/demo_briefcase/demo_152.png
 share/fillets-ng/images/demo_briefcase/demo_153.png
 share/fillets-ng/images/demo_briefcase/demo_154.png
@@ -1218,7 +1218,7 @@ share/fillets-ng/images/demo_briefcase/demo_247.png
 share/fillets-ng/images/demo_briefcase/demo_248.png
 share/fillets-ng/images/demo_briefcase/demo_249.png
 share/fillets-ng/images/demo_briefcase/demo_250.png
-share/fillets-ng/images/demo_briefcase/demo_2${MODLUA_DEP_VERSION}.png
+share/fillets-ng/images/demo_briefcase/demo_251.png
 share/fillets-ng/images/demo_briefcase/demo_252.png
 share/fillets-ng/images/demo_briefcase/demo_253.png
 share/fillets-ng/images/demo_briefcase/demo_254.png
