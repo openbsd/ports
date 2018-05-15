@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2018/04/25 08:41:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2018/05/15 13:27:47 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -7,7 +7,7 @@ COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		3.28.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += brotlicommon brotlidec c cairo cairo-gobject dbus-1
-WANTLIB += drm enchant epoxy expat ffi fontconfig freetype fribidi
+WANTLIB += drm enchant-2 epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstallocators-1.0
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
@@ -30,7 +30,7 @@ WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
 WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
 WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z
+WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z aspell
 
 MODULES=		devel/dconf \
 			lang/python \

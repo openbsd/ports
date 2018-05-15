@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/27 11:00:35 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2018/05/15 13:27:47 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -11,6 +11,7 @@ SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
 MATE_VERSION=		1.20.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +24,7 @@ WANTLIB += iconv intl m pcre pixman-1 pthread sqlite3
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
 WANTLIB += archive atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += cairo-gobject cairo caja-extension dbus-1 djvulibre
-WANTLIB += enchant ${LIBECXX} gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += enchant-2 ${LIBECXX} gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gmp gpg-error graphite2 gs gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gtk-3 gxps harfbuzz-icu harfbuzz hogweed hyphen
@@ -31,7 +32,7 @@ WANTLIB += icudata icui18n icuuc idn2 javascriptcoregtk-4.0 jpeg lcms2
 WANTLIB += lz4 lzma nettle notify openjp2 orc-0.4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler secret-1
 WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
-WANTLIB += z xslt
+WANTLIB += z xslt aspell
 WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
@@ -45,7 +46,6 @@ LIB_DEPENDS=		databases/sqlite3 \
 			print/libspectre \
 			graphics/djvulibre \
 			graphics/libgxps \
-			textproc/enchant \
 			textproc/icu4c \
 			www/webkitgtk4 \
 			x11/mate/caja
