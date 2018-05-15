@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/01 17:02:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/15 11:14:46 espie Exp $
 bin/ports-readmes
 libdata/ports-readmes-dancer/
 libdata/ports-readmes-dancer/bin/
@@ -30,4 +30,5 @@ libdata/ports-readmes-dancer/views/index.tt
 libdata/ports-readmes-dancer/views/layouts/
 libdata/ports-readmes-dancer/views/layouts/main.tt
 libdata/ports-readmes-dancer/views/port.tt
+@comment libdata/ports-readmes-dancer/views/port.tt.orig
 libdata/ports-readmes-dancer/views/searchresult.tt
