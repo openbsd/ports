@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2018/05/15 13:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2018/05/15 15:14:03 ajacoutot Exp $
 
 # XXX: PORTROACH set below to override the value from gnome.port.mk
 
@@ -43,7 +43,6 @@ RUN_DEPENDS=		net/telepathy/telepathy-mission-control
 TEST_DEPENDS=		${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS +=	gobject-introspection vala
-MODGNOME_CPPFLAGS +=	-L${X11BASE}/lib
 
 # requires libofono (not ported)
 CONFIGURE_ARGS += 	--disable-ofono-backend
