@@ -1,25 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/03 03:04:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/15 07:10:42 bentley Exp $
 @bin bin/starfighter
 share/applications/starfighter.desktop
 share/doc/starfighter/
 share/doc/starfighter/COPYING
-share/doc/starfighter/arrowNorthEast.png
-share/doc/starfighter/dollar.png
-share/doc/starfighter/heart.png
-share/doc/starfighter/index.html
-share/doc/starfighter/plasmaAmmo.png
-share/doc/starfighter/plasmaDamage.png
-share/doc/starfighter/plasmaRate.png
-share/doc/starfighter/rocket.png
-share/doc/starfighter/rocketAmmo.png
-share/doc/starfighter/sflogo.png
-share/doc/starfighter/superCharge.png
+share/doc/starfighter/LICENSES
+share/doc/starfighter/README.txt
+share/doc/starfighter/docs/
+share/doc/starfighter/docs/COPYING
+share/doc/starfighter/docs/arrowNorthEast.png
+share/doc/starfighter/docs/dollar.png
+share/doc/starfighter/docs/heart.png
+share/doc/starfighter/docs/index.html
+share/doc/starfighter/docs/plasmaAmmo.png
+share/doc/starfighter/docs/plasmaDamage.png
+share/doc/starfighter/docs/plasmaRate.png
+share/doc/starfighter/docs/rocket.png
+share/doc/starfighter/docs/rocketAmmo.png
+share/doc/starfighter/docs/sflogo.png
+share/doc/starfighter/docs/superCharge.png
 share/pixmaps/
 share/pixmaps/starfighter.png
 share/starfighter/
 share/starfighter/data/
 share/starfighter/data/credits.txt
-share/starfighter/data/intro.txt
 share/starfighter/gfx/
 share/starfighter/gfx/aimFighter1.png
 share/starfighter/gfx/aimFighter2.png
