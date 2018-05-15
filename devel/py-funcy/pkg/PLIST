@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/11 05:27:48 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/15 07:58:25 rpointel Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/funcy/
 lib/python${MODPY_VERSION}/site-packages/funcy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/funcy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/funcy-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/funcy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/funcy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/funcy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/funcy/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/funcy/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/funcy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/funcy/${MODPY_PYCACHE}_inspect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/funcy/${MODPY_PYCACHE}calc.${MODPY_PYC_MAGIC_TAG}pyc

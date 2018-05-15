@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/11 05:27:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/15 07:58:25 rpointel Exp $
 
 COMMENT =	fancy and practical functional tools
 
-MODPY_EGG_VERSION =	1.10.1
+MODPY_EGG_VERSION =	1.10.2
 DISTNAME =	funcy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
