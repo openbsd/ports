@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/09 11:24:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/15 11:52:38 espie Exp $
 @bin bin/solarus
 @bin bin/solarus-run
 include/solarus/
@@ -245,7 +245,6 @@ lib/libsolarus-gui.so
 @lib lib/libsolarus.so.${LIBsolarus_VERSION}
 @man man/man6/solarus-run.6
 @man man/man6/solarus.6
-share/applications/
 share/applications/solarus.desktop
 share/icons/hicolor/128x128/apps/solarus.png
 share/icons/hicolor/16x16/apps/solarus.png
@@ -253,7 +252,7 @@ share/icons/hicolor/24x24/apps/solarus.png
 share/icons/hicolor/256x256/apps/solarus.png
 share/icons/hicolor/32x32/apps/solarus.png
 share/icons/hicolor/48x48/apps/solarus.png
-share/icons/hicolor/${MODLUA_DEP_VERSION}2x${MODLUA_DEP_VERSION}2/apps/solarus.png
+share/icons/hicolor/512x512/apps/solarus.png
 share/icons/hicolor/64x64/apps/solarus.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
