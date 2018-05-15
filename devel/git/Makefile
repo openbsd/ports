@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2018/03/04 10:31:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.188 2018/05/15 15:15:58 espie Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -58,6 +58,8 @@ RUN_DEPENDS-x11 =	${BASE_PKGPATH},-main \
 LIB_DEPENDS-x11 =
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
+
+UPDATE_PLIST_ARGS += -i MODPY_VERSION
 
 MAKE_FLAGS =		V=1 \
 			gitexecdir=libexec/git \
