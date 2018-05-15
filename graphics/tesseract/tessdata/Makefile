@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/28 08:50:55 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/15 12:09:52 espie Exp $
 
 LANGS=			afr amh ara asm aze aze_cyrl bel ben bod bos bul cat \
 			ceb ces chi_sim chi_tra chr cym dan dan_frak deu \
@@ -49,6 +49,7 @@ EPOCH-fin=		0
 EPOCH-kor=		0
 EPOCH-por=		0
 EPOCH-srp=		0
+REVISION=		0
 
 .for l in ${LANGS}
 COMMENT-${l}=		${l} language data for Tesseract
