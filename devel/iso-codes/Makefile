@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/23 12:03:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2018/05/15 10:51:24 espie Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -9,6 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://alioth.debian.org/projects/pkg-isocodes/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+REVISION =	0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
