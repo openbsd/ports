@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/05/15 19:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2018/05/16 12:37:32 jasper Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -32,9 +32,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/arpwatch.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/arpsnmp.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	@for i in ethercodes.dat *.awk; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${EXAMPLESDIR}; \
-	done
+	${INSTALL_DATA} ${WRKSRC}/*.awk ${EXAMPLESDIR}
 	@${INSTALL_DATA} /dev/null ${EXAMPLESDIR}/arp.dat
 	@${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${EXAMPLESDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/massagevendor ${EXAMPLESDIR}
