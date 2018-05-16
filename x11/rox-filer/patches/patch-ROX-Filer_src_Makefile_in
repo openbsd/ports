@@ -1,10 +1,21 @@
-$OpenBSD: patch-ROX-Filer_src_Makefile_in,v 1.1 2010/10/23 18:43:58 jasper Exp $
+$OpenBSD: patch-ROX-Filer_src_Makefile_in,v 1.2 2018/05/16 09:54:33 jasper Exp $
 
-Don't create a debug binary (that doesn't work anyway), this
-breaks mips64(el).
+- Link with libm for floor(3)
+- Don't create a debug binary (that doesn't work anyway), this
+  breaks mips64(el).
 
---- ROX-Filer/src/Makefile.in.orig	Sun May 10 14:22:54 2009
-+++ ROX-Filer/src/Makefile.in	Sat Oct 23 20:17:07 2010
+Index: ROX-Filer/src/Makefile.in
+--- ROX-Filer/src/Makefile.in.orig
++++ ROX-Filer/src/Makefile.in
+@@ -7,7 +7,7 @@ CC = @CC@
+ .SUFFIXES: .c .o
+ 
+ PKG_CONFIG = @PKG_CONFIG@
+-LIBS = @LIBS@ @LFS_LDFLAGS@ -lICE -lSM
++LIBS = @LIBS@ @LFS_LDFLAGS@ -lICE -lSM -lm
+ #PROF = -fprofile-arcs -pg
+ 
+ PKG_CONFIG_FLAGS=
 @@ -47,10 +47,6 @@ OBJECTS = abox.o action.o appinfo.o appmenu.o bind.o b
  ${PROG}: ${OBJECTS}
  	${CC} -o "${PROG}" ${OBJECTS} ${LDFLAGS}
