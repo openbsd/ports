@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2018/05/08 07:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2018/05/16 09:20:05 nigel Exp $
 
 COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.28.3
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -17,9 +18,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += brotlicommon brotlidec c cairo cairo-gobject crypto
-WANTLIB += curl dbus-1 drm enchant epoxy exif exiv2 expat ffi
+WANTLIB += Xrandr Xrender Xt Xxf86vm aspell atk-1.0 atk-bridge-2.0
+WANTLIB += atspi brotlicommon brotlidec c cairo cairo-gobject crypto
+WANTLIB += curl dbus-1 drm enchant-2 epoxy exif exiv2 expat ffi
 WANTLIB += fontconfig freetype fribidi gbm gck-1 gcr-base-3 gcr-ui-3
 WANTLIB += gcrypt gdata gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0
 WANTLIB += glapi glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gpg-error
