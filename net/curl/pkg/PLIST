@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2018/03/14 19:16:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.49 2018/05/16 19:06:05 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -127,6 +127,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_DNS_LOCAL_IP4.3
 @man man/man3/CURLOPT_DNS_LOCAL_IP6.3
 @man man/man3/CURLOPT_DNS_SERVERS.3
+@man man/man3/CURLOPT_DNS_SHUFFLE_ADDRESSES.3
 @man man/man3/CURLOPT_DNS_USE_GLOBAL_CACHE.3
 @man man/man3/CURLOPT_EGDSOCKET.3
 @man man/man3/CURLOPT_ERRORBUFFER.3
@@ -152,6 +153,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_FTP_USE_PRET.3
 @man man/man3/CURLOPT_GSSAPI_DELEGATION.3
 @man man/man3/CURLOPT_HAPPY_EYEBALLS_TIMEOUT_MS.3
+@man man/man3/CURLOPT_HAPROXYPROTOCOL.3
 @man man/man3/CURLOPT_HEADER.3
 @man man/man3/CURLOPT_HEADERDATA.3
 @man man/man3/CURLOPT_HEADERFUNCTION.3
