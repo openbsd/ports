@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/15 11:00:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/05/16 06:55:44 ajacoutot Exp $
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
 include/babl-${API_VERSION}/babl/babl-introspect.h
@@ -36,5 +36,5 @@ lib/babl-${API_VERSION}/u32.so
 lib/babl-${API_VERSION}/ycbcr.so
 lib/libbabl-${API_VERSION}.a
 lib/libbabl-${API_VERSION}.la
-@lib lib/libbabl-${API_VERSION}.so.${LIBbabl-0.1_VERSION}
+@lib lib/libbabl-${API_VERSION}.so.${LIBbabl-${API_VERSION}_VERSION}
 lib/pkgconfig/babl.pc

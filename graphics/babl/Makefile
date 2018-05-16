@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2018/04/27 08:52:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2018/05/16 06:55:44 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
 API_VERSION=		0.1
 SUBST_VARS=		API_VERSION
-V=			${API_VERSION}.46
+V=			${API_VERSION}.48
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS +=  babl-0.1             1.4      # 145.1
+SHARED_LIBS +=  babl-0.1             1.4      # 147.1
 
 HOMEPAGE=		http://gegl.org/babl/
 
