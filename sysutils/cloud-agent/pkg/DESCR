@@ -1,0 +1,3 @@
+This is a simple OpenBSD-specific agent that handles provisioning and
+cloud initialization on clouds such as Microsoft Azure, Amazon AWS,
+Apache CloudStack, or OpenStack.
