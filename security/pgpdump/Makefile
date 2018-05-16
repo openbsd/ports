@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2017/12/02 18:42:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/16 07:56:09 bket Exp $
 
 COMMENT=		PGP packet visualizer
 
-DISTNAME=		pgpdump-0.32
+DISTNAME=		pgpdump-0.33
 CATEGORIES=		security
 
-HOMEPAGE=		http://www.mew.org/~kazu/proj/pgpdump/
+HOMEPAGE=		https://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
