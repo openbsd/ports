@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2018/05/16 06:40:51 ajacoutot Exp $
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-1.6.5
+DISTNAME=	znc-1.7.0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
-REVISION=	0
 
 HOMEPAGE=	http://znc.in/
 
@@ -14,22 +13,16 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m pthread ssl z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB=	c crypto m pthread ssl z ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-gcc
+MODULES=	devel/cmake
 
-
-MAKE_FLAGS=	VERBOSE=1
+COMPILER=	base-clang ports-gcc
 
 SEPARATE_BUILD=	Yes
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-charset \
-		--disable-optimization
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_GNUMAKE=gmake
+CONFIGURE_ARGS+=	-DWANT_CYRUS=NO \
+			-DWANT_I18N=NO \
+			-DWANT_ICU=NO
 
 NO_TEST=	Yes
 
