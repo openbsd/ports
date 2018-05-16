@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2018/05/10 15:08:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2018/05/16 16:18:52 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk=		gtk+2 avahi-ui libraries
@@ -16,15 +16,15 @@ PKGNAME-main=		avahi-${V}
 PKGNAME-gtk=		avahi-gtk-${V}
 PKGNAME-gtk3=		avahi-gtk3-${V}
 PKGNAME-gui=		avahi-gui-${V}
-PKGNAME-python=		py-avahi-${V}
+PKGNAME-python=		py3-avahi-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		2
-REVISION-gtk=		1
-REVISION-gtk3=		1
-REVISION-gui=		1
-REVISION-python=	0
-REVISION-ui=		0
+REVISION-main=		3
+REVISION-gtk=		2
+REVISION-gtk3=		2
+REVISION-gui=		2
+REVISION-python=	2
+REVISION-ui=		1
 
 CATEGORIES=		net devel
 
@@ -81,15 +81,16 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk:N-gtk3:N-python:N-ui}
 .if ${BUILD_PACKAGES:M-gui}
 ### common
 MODULES+=		lang/python
-BUILD_DEPENDS+=		devel/py-gobject3 \
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
 			lang/python/${MODPY_VERSION},-gdbm \
-			x11/dbus-python
+			x11/dbus-python${MODPY_FLAVOR}
 
 ### -gtk
 LIB_DEPENDS-gtk=	x11/gtk+2 \
 			${BUILD_PKGPATH}
 RUN_DEPENDS-gtk=	${BUILD_PKGPATH},-ui
-WANTLIB-gtk += X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB-gtk += X11 Xcomposite Xcursor Xdamage Xext Xfixes fribidi
 WANTLIB-gtk += Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1
 WANTLIB-gtk += expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0
 WANTLIB-gtk += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
@@ -110,15 +111,15 @@ WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi iconv intl
-WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz
+WANTLIB-gtk3 += fribidi atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gtk3 += graphite2 epoxy
 
 ### -gui
 LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
 RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
-			x11/dbus-python \
-			devel/py-twisted \
+			x11/dbus-python${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR} \
 			devel/desktop-file-utils
 
 # pygobject GTK2 introspection (not provided by indirect dependencies)
@@ -132,7 +133,7 @@ WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += xcb xcb-render xcb-shm z ffi
-WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
+WANTLIB-gui += fribidi atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gui += graphite2 epoxy iconv intl
 
 ### -python
@@ -164,8 +165,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			PTHREAD_CFLAGS="-pthread" \
-			PTHREAD_LIBS="-pthread" \
-			PYTHON="${MODPY_BIN}"
+			PTHREAD_LIBS="-pthread"
 CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 			--with-avahi-user=_avahi \
 			--with-avahi-group=_avahi \
@@ -206,6 +206,8 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 
 pre-configure:
+	mv ${WRKSRC}/service-type-database/build-db.in \
+		${WRKSRC}/service-type-database/build-db
 	find ${WRKSRC} -name Makefile.in -exec \
 		sed -i -e 's,LIBINTL,INTLLIBS,g;' \
 			-e 's,LIBICONV,LTLIBICONV,g' {} \;
