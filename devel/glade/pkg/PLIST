@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/02/18 09:43:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/05/16 06:59:10 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
 include/libgladeui-2.0/
 include/libgladeui-2.0/gladeui/
+include/libgladeui-2.0/gladeui/glade-adaptor-chooser.h
 include/libgladeui-2.0/gladeui/glade-app.h
 include/libgladeui-2.0/gladeui/glade-base-editor.h
 include/libgladeui-2.0/gladeui/glade-builtins.h
@@ -118,6 +119,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselection.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-fontselectiondialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-frame.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-glarea.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-grid.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-handlebox.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-hbox.png
@@ -272,6 +274,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselection.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-fontselectiondialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-frame.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-glarea.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-grid.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-handlebox.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-hbox.png
@@ -479,7 +482,6 @@ share/help/hi/glade/figures/
 share/help/hi/glade/figures/main-window.png
 share/help/hi/glade/index.docbook
 share/help/hi/glade/legal.xml
-share/help/hu/
 share/help/hu/glade/
 share/help/hu/glade/figures/
 share/help/hu/glade/figures/main-window.png
@@ -505,7 +507,6 @@ share/help/oc/glade/figures/
 share/help/oc/glade/figures/main-window.png
 share/help/oc/glade/index.docbook
 share/help/oc/glade/legal.xml
-share/help/pl/
 share/help/pl/glade/
 share/help/pl/glade/figures/
 share/help/pl/glade/figures/main-window.png
@@ -547,6 +548,7 @@ share/icons/hicolor/24x24/apps/glade.png
 share/icons/hicolor/256x256/apps/glade.png
 share/icons/hicolor/32x32/apps/glade.png
 share/icons/hicolor/48x48/apps/glade.png
+share/icons/hicolor/scalable/apps/glade-brand-symbolic.svg
 share/icons/hicolor/scalable/apps/glade-symbolic.svg
 share/locale/ar/LC_MESSAGES/glade.mo
 share/locale/ast/LC_MESSAGES/glade.mo
