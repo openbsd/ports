@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/13 03:00:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.27 2018/05/17 10:21:41 espie Exp $
 
 COMMENT=	mold spreading over your X11 screen
 
 DISTNAME=	xmold
 PKGNAME=	xmold-1.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 PERMIT_PACKAGE_CDROM=	no license

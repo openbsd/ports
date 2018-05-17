@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2018/05/17 10:21:42 espie Exp $
 
 COMMENT=	animated autohiding applications launcher
 
 DISTNAME=	yeahlaunch-0.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://phrat.de/yeahtools.html

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-lib,v 1.15 2018/01/22 22:08:42 kili Exp $
-lib/ghc/
+@comment $OpenBSD: PLIST-lib,v 1.16 2018/05/17 10:21:42 espie Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Paths_xmonad.hi

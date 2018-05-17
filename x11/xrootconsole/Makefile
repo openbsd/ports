@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/11 23:51:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/05/17 10:21:42 espie Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
 DISTNAME=		xrootconsole-${V}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11
 
 # GPL

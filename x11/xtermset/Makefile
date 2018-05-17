@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/21 06:23:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2018/05/17 10:21:42 espie Exp $
 
 COMMENT=	dynamically change some settings of an xterm
 
 DISTNAME=	xtermset-0.5.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 # GPL
