@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/17 12:21:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/05/17 10:32:12 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
 YK_PROJECT=	yubikey-personalization
-DISTNAME=	ykpers-1.18.1
+DISTNAME=	ykpers-1.19.0
 
-SHARED_LIBS +=	ykpers-1                  0.6 # 19.0
+SHARED_LIBS +=	ykpers-1                  0.7 # 20.0
 
 CATEGORIES=	sysutils
 
