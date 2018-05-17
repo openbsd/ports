@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 09:17:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/17 06:30:05 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -113,7 +113,7 @@ lib/gegl-${API_VERSION}/webp-save.so
 lib/girepository-1.0/Gegl-${API_VERSION}.typelib
 lib/libgegl-${API_VERSION}.a
 lib/libgegl-${API_VERSION}.la
-@lib lib/libgegl-${API_VERSION}.so.${LIBgegl-0.4_VERSION}
+@lib lib/libgegl-${API_VERSION}.so.${LIBgegl-${API_VERSION}_VERSION}
 lib/libgegl-npd-${API_VERSION}.so
 lib/libgegl-sc-${API_VERSION}.so
 lib/pkgconfig/gegl-${API_VERSION}.pc
