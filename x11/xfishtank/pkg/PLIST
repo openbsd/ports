@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/07/08 04:19:24 pvalchev Exp $
-bin/xfishtank
+@comment $OpenBSD: PLIST,v 1.3 2018/05/17 10:23:12 espie Exp $
+@bin bin/xfishtank
