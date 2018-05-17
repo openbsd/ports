@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2018/05/17 09:56:33 espie Exp $
 
 PORTROACH+=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		2.30.7
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
 
