@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/17 09:55:44 espie Exp $
 
 COMMENT =		scriptable interfaces to interact with test programs
 DISTNAME =		kyua-testers-0.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jmmv/kyua
