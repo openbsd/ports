@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/03/19 19:48:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/17 09:48:15 espie Exp $
 
 VERSION =	2.107.1
 MASTER_SITES =	http://mirrors.jenkins-ci.org/war-stable/${VERSION}/
 DIST_SUBDIR =	jenkins-stable
+REVISION =	0
 
 .include <bsd.port.mk>
 
