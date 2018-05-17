@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/03/14 14:17:59 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/17 09:45:58 espie Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
@@ -86,6 +86,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_netbsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_netbsd_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_openbsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_openbsd_test.go
+@comment ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_openbsd_test.go.orig
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_solaris_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dirent.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/endian_big.go
