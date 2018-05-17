@@ -1,0 +1,20 @@
+$OpenBSD: patch-salt_grains_core_py,v 1.1 2018/05/17 12:51:10 jasper Exp $
+
+don't crash when calling swapctl fails, i.e. when there's no swap configured.
+
+Index: salt/grains/core.py
+--- salt/grains/core.py.orig
++++ salt/grains/core.py
+@@ -452,7 +452,11 @@ def _bsd_memdata(osdata):
+ 
+         if osdata['kernel'] == 'OpenBSD':
+             swapctl = salt.utils.path.which('swapctl')
+-            swap_total = __salt__['cmd.run']('{0} -sk'.format(swapctl)).split(' ')[1]
++            ret = __salt__['cmd.run_all']('{0} -sk'.format(swapctl))
++            if ret['retcode'] != 0:
++                swap_total = 0
++            else:
++                swap_total = ret['stdout'].split(' ')[1]
+         else:
+             swap_total = __salt__['cmd.run']('{0} -n vm.swap_total'.format(sysctl))
+         grains['swap_total'] = int(swap_total) // 1024 // 1024
