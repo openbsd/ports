@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/05/02 19:36:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/17 09:55:16 espie Exp $
 include/libconfig.h
 include/libconfig.h++
 @info info/libconfig.info
 lib/cmake/
 lib/cmake/libconfig/
-lib/cmake/libconfig/libconfigConfig.cmake
 lib/cmake/libconfig++/
 lib/cmake/libconfig++/libconfig++Config.cmake
+lib/cmake/libconfig/libconfigConfig.cmake
 lib/libconfig++.a
 lib/libconfig++.la
 @lib lib/libconfig++.so.${LIBconfig++_VERSION}
@@ -23,4 +23,6 @@ share/examples/libconfig/example2.c
 share/examples/libconfig/example2.cpp
 share/examples/libconfig/example3.c
 share/examples/libconfig/example3.cpp
+share/examples/libconfig/example4.c
+share/examples/libconfig/example4.cfg
 share/examples/libconfig/example4.cpp
