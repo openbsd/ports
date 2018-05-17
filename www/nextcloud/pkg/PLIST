@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/04/27 06:24:02 gonzalo Exp $
-@unexec-delete rm -f /var/www/conf/modules/httpd-nextcloud.conf
-@unexec-delete rm -f /var/www/conf/modules/apache-nextcloud.conf
+@comment $OpenBSD: PLIST,v 1.12 2018/05/17 08:57:47 gonzalo Exp $
+@unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
+@unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/apache-nextcloud.conf.dist
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/apache-nextcloud.conf
+@sample ${PREFIX}/conf/modules.sample/apache-nextcloud.conf
 conf/modules.sample/httpd-nextcloud.conf.dist
-@sample /var/www/conf/modules.sample/httpd-nextcloud.conf
+@sample ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf
 nextcloud/
 nextcloud/.htaccess.dist
 @sample nextcloud/.htaccess
@@ -681,16 +680,16 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudhsmv2/2017-04-28/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudhsmv2/2017-04-28/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudhsmv2/2017-04-28/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/20${MAJOR}-01-01/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/20${MAJOR}-01-01/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/20${MAJOR}-01-01/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/2013-01-01/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/2013-01-01/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearch/2013-01-01/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearchdomain/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearchdomain/20${MAJOR}-01-01/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearchdomain/20${MAJOR}-01-01/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearchdomain/2013-01-01/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudsearchdomain/2013-01-01/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/20${MAJOR}-11-01/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/20${MAJOR}-11-01/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/20${MAJOR}-11-01/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/2013-11-01/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/2013-11-01/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/cloudtrail/2013-11-01/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/codebuild/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/codebuild/2016-10-06/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/codebuild/2016-10-06/api-2.json.php
@@ -899,10 +898,10 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/iot/2015-05-28/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/iot/2015-05-28/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/iot/2015-05-28/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/20${MAJOR}-12-02/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/20${MAJOR}-12-02/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/20${MAJOR}-12-02/paginators-1.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/20${MAJOR}-12-02/waiters-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/2013-12-02/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/2013-12-02/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/2013-12-02/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesis/2013-12-02/waiters-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesisanalytics/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesisanalytics/2015-08-14/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/kinesisanalytics/2015-08-14/api-2.json.php
@@ -954,10 +953,10 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/mturk-requester/2017-01-17/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/mturk-requester/2017-01-17/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/mturk-requester/2017-01-17/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/20${MAJOR}-02-18/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/20${MAJOR}-02-18/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/20${MAJOR}-02-18/paginators-1.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/20${MAJOR}-02-18/waiters-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/2013-02-18/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/2013-02-18/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/2013-02-18/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworks/2013-02-18/waiters-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworkscm/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworkscm/2016-11-01/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/opsworkscm/2016-11-01/api-2.json.php
@@ -997,10 +996,10 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/resourcegroupstaggingapi/2017-01-26/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/resourcegroupstaggingapi/2017-01-26/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/resourcegroupstaggingapi/2017-01-26/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/20${MAJOR}-04-01/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/20${MAJOR}-04-01/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/20${MAJOR}-04-01/paginators-1.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/20${MAJOR}-04-01/waiters-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/2013-04-01/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/2013-04-01/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/2013-04-01/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53/2013-04-01/waiters-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53domains/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53domains/2014-05-15/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/route53domains/2014-05-15/api-2.json.php
@@ -1048,9 +1047,9 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/states/2016-11-23/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/states/2016-11-23/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/states/2016-11-23/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/20${MAJOR}-06-30/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/20${MAJOR}-06-30/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/20${MAJOR}-06-30/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/2013-06-30/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/2013-06-30/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/storagegateway/2013-06-30/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/streams.dynamodb/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/streams.dynamodb/2012-08-10/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/streams.dynamodb/2012-08-10/api-2.json.php
@@ -1060,9 +1059,9 @@ nextcloud/3rdparty/aws/aws-sdk-php/src/data/sts/2011-06-15/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/sts/2011-06-15/api-2.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/sts/2011-06-15/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/20${MAJOR}-04-15/
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/20${MAJOR}-04-15/api-2.json.php
-nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/20${MAJOR}-04-15/paginators-1.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/2013-04-15/
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/2013-04-15/api-2.json.php
+nextcloud/3rdparty/aws/aws-sdk-php/src/data/support/2013-04-15/paginators-1.json.php
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/swf/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/swf/2012-01-25/
 nextcloud/3rdparty/aws/aws-sdk-php/src/data/swf/2012-01-25/api-2.json.php
@@ -6006,7 +6005,7 @@ nextcloud/apps/dav/lib/Migration/BuildCalendarSearchIndex.php
 nextcloud/apps/dav/lib/Migration/BuildCalendarSearchIndexBackgroundJob.php
 nextcloud/apps/dav/lib/Migration/CalDAVRemoveEmptyValue.php
 nextcloud/apps/dav/lib/Migration/FixBirthdayCalendarComponent.php
-nextcloud/apps/dav/lib/Migration/Version1004Date20170825${MAJOR}4824.php
+nextcloud/apps/dav/lib/Migration/Version1004Date20170825134824.php
 nextcloud/apps/dav/lib/Migration/Version1004Date20170919104507.php
 nextcloud/apps/dav/lib/Migration/Version1004Date20170924124212.php
 nextcloud/apps/dav/lib/Migration/Version1004Date20170926103422.php
@@ -7664,10 +7663,10 @@ nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJIS2004-UTF8-V.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISPro-UCS2-HW-V.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISPro-UCS2-V.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISPro-UTF8-V.bcmap
-nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02${MAJOR}-UTF32-H.bcmap
-nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02${MAJOR}-UTF32-V.bcmap
-nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02${MAJOR}2004-UTF32-H.bcmap
-nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02${MAJOR}2004-UTF32-V.bcmap
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX0213-UTF32-H.bcmap
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX0213-UTF32-V.bcmap
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02132004-UTF32-H.bcmap
+nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniJISX02132004-UTF32-V.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniKS-UCS2-H.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniKS-UCS2-V.bcmap
 nextcloud/apps/files_pdfviewer/vendor/pdfjs/web/cmaps/UniKS-UTF16-H.bcmap
@@ -11763,7 +11762,7 @@ nextcloud/apps/twofactor_backupcodes/lib/Db/BackupCode.php
 nextcloud/apps/twofactor_backupcodes/lib/Db/BackupCodeMapper.php
 nextcloud/apps/twofactor_backupcodes/lib/Migration/
 nextcloud/apps/twofactor_backupcodes/lib/Migration/Version1002Date20170607104347.php
-nextcloud/apps/twofactor_backupcodes/lib/Migration/Version1002Date201706071${MAJOR}030.php
+nextcloud/apps/twofactor_backupcodes/lib/Migration/Version1002Date20170607113030.php
 nextcloud/apps/twofactor_backupcodes/lib/Migration/Version1002Date20170919123342.php
 nextcloud/apps/twofactor_backupcodes/lib/Migration/Version1002Date20170926101419.php
 nextcloud/apps/twofactor_backupcodes/lib/Provider/
@@ -12688,11 +12687,11 @@ nextcloud/core/Controller/WalledGardenController.php
 nextcloud/core/Middleware/
 nextcloud/core/Middleware/TwoFactorMiddleware.php
 nextcloud/core/Migrations/
-nextcloud/core/Migrations/Version${MAJOR}000Date20170705121758.php
-nextcloud/core/Migrations/Version${MAJOR}000Date20170718121200.php
-nextcloud/core/Migrations/Version${MAJOR}000Date20170814074715.php
-nextcloud/core/Migrations/Version${MAJOR}000Date20170919121250.php
-nextcloud/core/Migrations/Version${MAJOR}000Date20170926101637.php
+nextcloud/core/Migrations/Version13000Date20170705121758.php
+nextcloud/core/Migrations/Version13000Date20170718121200.php
+nextcloud/core/Migrations/Version13000Date20170814074715.php
+nextcloud/core/Migrations/Version13000Date20170919121250.php
+nextcloud/core/Migrations/Version13000Date20170926101637.php
 nextcloud/core/ajax/
 nextcloud/core/ajax/update.php
 nextcloud/core/css/
@@ -15521,8 +15520,8 @@ nextcloud/version.php
 @owner www
 @group www
 @sample nextcloud/data/
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
 @mode
 @owner
 @group
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}

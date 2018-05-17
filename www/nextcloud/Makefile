@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/27 09:15:07 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.13 2018/05/17 08:57:47 gonzalo Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			13.0.2
+REVISION=              0
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -36,6 +37,7 @@ INSTDIR=		${PREFIX}/nextcloud
 TINSTDIR=		${TRUEPREFIX}/nextcloud
 VR=			${V:R}
 MAJOR=			${VR:R}
+MODPHP_VERSION=        7.0
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR MAJOR
 
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
@@ -54,7 +56,7 @@ RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-intl
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-mcrypt
 
 # distributed caching and Transactional File Locking
-RUN_DEPENDS +=		databases/pecl-redis
+RUN_DEPENDS +=		databases/pecl-redis${MODPHP_FLAVOR}
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
