@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.138 2018/05/15 16:32:10 espie Exp $
+# $OpenBSD: update-plist,v 1.139 2018/05/17 09:36:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -466,6 +466,7 @@ sub copy_with_tags
 	my ($self, $plist) = @_;
 
 	$self->{found} = 1;
+	$self->{tagged_along} = 1;
 	$self->add_object($plist);
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
@@ -486,6 +487,28 @@ sub rebless_okay { 1 }
 # unexec should only match objects which are actual files and not directories
 sub is_file { 0 }
 
+# helper method for bad_suffixes
+# the code that checks the suffixes
+sub check_suffix
+{
+	my ($self, $state) = @_;
+	my $s = $self->fullname;
+	my $error;
+	if ($s =~ m/\/\.[^\/]*\.swp$/) {
+		$error = "vim swap file";
+	} elsif ($s =~ m/\~$/) {
+		$error = "emacs temporary file";
+	} else {
+		for my $suf (@{$state->{warn_suffix}}) {
+			if ($s =~ m/\Q$suf\E$/) {
+				$error = "$suf suffix";
+				last;
+			}
+		}
+	}
+	return $error;
+}
+
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -501,22 +524,9 @@ sub bad_suffixes
 
 	# don't care if it's already in a PLIST
 	return if defined $self->{comesfrom};
-	my $s = $self->fullname;
-	my $error;
-	if ($s =~ m/\/\.[^\/]*\.swp$/) {
-		$error = "vim swap file";
-	} elsif ($s =~ m/\~$/) {
-		$error = "emacs temporary file";
-	} else {
-		for my $suf (@{$state->{warn_suffix}}) {
-			if ($s =~ m/\Q$suf\E$/) {
-				$error = "$suf suffix";
-				last;
-			}
-		}
-	}
-	print STDERR "Warning: ", $p->nlist->pkgname, 
-	    " contains $s ($error ?)\n" if defined $error;
+	my $error = $self->check_suffix($state);
+	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
+	    $self->fullstring, " ($error ?)\n" if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -661,6 +671,17 @@ sub cwd
 sub copy_annotations
 {
 	# nope these are not normal annotations we can copy
+}
+
+sub bad_suffixes
+{
+	my ($self, $p, $state) = @_;
+
+	return if !defined $self->{tagged_along};
+	my $error = $self->check_suffix($state);
+	print STDERR "Warning: ", $p->nlist->pkgname, " still contains ",
+	    $self->fullstring, " (no matching file and $error ?)\n" 
+	    if defined $error;
 }
 
 # if a file was commented, do not bring it back as a real file
