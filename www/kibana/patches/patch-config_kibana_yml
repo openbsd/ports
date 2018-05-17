@@ -1,7 +1,19 @@
-$OpenBSD: patch-config_kibana_yml,v 1.2 2016/12/17 12:13:21 jasper Exp $
---- config/kibana.yml.orig	Wed Nov  2 15:02:06 2016
-+++ config/kibana.yml	Wed Nov  2 15:02:35 2016
-@@ -82,7 +82,7 @@
+$OpenBSD: patch-config_kibana_yml,v 1.3 2018/05/17 10:34:39 pvk Exp $
+Index: config/kibana.yml
+--- config/kibana.yml.orig
++++ config/kibana.yml
+@@ -36,8 +36,8 @@
+ # the username and password that the Kibana server uses to perform maintenance on the Kibana
+ # index at startup. Your Kibana users still need to authenticate with Elasticsearch, which
+ # is proxied through the Kibana server.
+-#elasticsearch.username: "user"
+-#elasticsearch.password: "pass"
++#elasticsearch.username: "kibana"
++#elasticsearch.password: "<pwd>"
+ 
+ # Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively.
+ # These settings enable SSL for outgoing requests from the Kibana server to the browser.
+@@ -83,13 +83,13 @@
  #pid.file: /var/run/kibana.pid
  
  # Enables you specify a file where Kibana stores log output.
@@ -10,3 +22,10 @@ $OpenBSD: patch-config_kibana_yml,v 1.2 2016/12/17 12:13:21 jasper Exp $
  
  # Set the value of this setting to true to suppress all logging output.
  #logging.silent: false
+ 
+ # Set the value of this setting to true to suppress all logging output other than error messages.
+-#logging.quiet: false
++logging.quiet: true
+ 
+ # Set the value of this setting to true to log all events, including system usage information
+ # and all requests.
