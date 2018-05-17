@@ -1,0 +1,4 @@
+X-Pack is an Elastic Stack extension that bundles security, alerting,
+monitoring, reporting, and graph capabilities into one easy-to-install package.
+While the X-Pack components are designed to work together seamlessly,
+you can easily enable or disable the features you want to use.

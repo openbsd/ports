@@ -1,0 +1,87 @@
+$OpenBSD: README,v 1.1.1.1 2018/05/17 11:08:38 pvk Exp $
+
++-----------------------------------------------------------------------
+| Running Elastic X-Pack on OpenBSD
++-----------------------------------------------------------------------
+
+${FULLPKGNAME} is a repack of the official Elastic X-Pack distribution
+with some workarounds required to make it work on OpenBSD:
+
+ - Fixed shell path in bash scripts
+ - Disabled Kibana reporting plugin due to node.js version incompatibility
+
+Useless content such as Windows *.bat scripts and platform-specific binaries
+for Chrome, Phantomjs and ML-related files was removed.
+
+Limitations
+===========
+1. Elastic products are not supported on OpenBSD, leaving X-Pack usable for
+either testing (with 30-days trial license) or for setups with features
+provided by free basic license (annual, renewable via e-mail registration).
+Support matrix: https://www.elastic.co/support/matrix#matrix_os
+Subscription types: https://www.elastic.co/subscriptions
+2. Machine learning and reporting features are not available for OpenBSD.
+
+X-Pack Installation for Elasticsearch
+=====================================
+X-Pack plugin installation script requires ${SYSCONFDIR}/elasticsearch
+folder to be owned by user who installs X-Pack, i.e. _elasticsearch.
+
+In OpenBSD, ${SYSCONFDIR}/elasticsearch is owned by root._elasticsearch.
+To avoid errors, change ${SYSCONFDIR}/elasticsearch owner to _elasticsearch
+before X-Pack installation and change it back to root after:
+
+	# rcctl stop elasticsearch
+	# chown _elasticsearch ${SYSCONFDIR}/elasticsearch
+	# doas -u _elasticsearch \
+		${LOCALBASE}/elasticsearch/bin/elasticsearch-plugin install \
+		file://${TRUEPREFIX}/share/x-pack/${FULLPKGNAME}.zip
+	# chown root ${SYSCONFDIR}/elasticsearch
+
+Machine learning features are not available for OpenBSD, so after X-Pack plugin
+installation, uncomment the following line in ${SYSCONFDIR}/elasticsearch/elasticsearch.yml:
+
+	#xpack.ml.enabled: false
+
+Start elasticsearch and generate default passwords:
+
+	# rcctl start elasticsearch
+	# doas -u _elasticsearch \
+		${TRUEPREFIX}/elasticsearch/bin/x-pack/setup-passwords auto
+
+Note the passwords for elastic and kibana users.
+
+X-Pack Installation for Kibana
+==============================
+Stop Kibana and install X-Pack:
+
+	# rcctl stop kibana
+	# doas -u _kibana \
+	    ${LOCALBASE}/kibana/bin/kibana-plugin install \
+	    file://${TRUEPREFIX}/share/x-pack/${FULLPKGNAME}.zip
+
+Add credentials generated in step 2 to ${SYSCONFDIR}/kibana/kibana.yml:
+
+	elasticsearch.username: "kibana"
+	elasticsearch.password:  "<pwd>"
+
+Start Kibana:
+
+	# rcctl start kibana
+
+Log in as the built-in elastic user with the auto-generated password
+from step 2.
+
+X-Pack Installation for Logstash
+================================
+Stop Logstash and install X-Pack:
+
+	# rcctl stop logstash
+	# doas -u _logstash \
+		${LOCALBASE}/logstash/bin/logstash-plugin install \
+		file://${TRUEPREFIX}/share/x-pack/${FULLPKGNAME}.zip
+
+Add credentials generated in step 2 to ${SYSCONFDIR}/logstash/logstash.yml:
+
+	xpack.monitoring.elasticsearch.username: logstash_system
+	xpack.monitoring.elasticsearch.password: <pwd>
