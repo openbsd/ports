@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/25 15:48:02 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2018/05/17 09:21:12 espie Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
 V =		1.5.2
 DISTNAME =	influxdb-${V}
+REVISION =	0
 
 HOMEPAGE =	https://influxdata.com
 # selfhosted because we bundle go deps
