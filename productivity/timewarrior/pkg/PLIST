@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/17 23:22:21 sthen Exp $
+@bin bin/timew
+@man man/man1/timew.1
+share/doc/timewarrior/
+share/doc/timewarrior/AUTHORS
+share/doc/timewarrior/COPYING
+share/doc/timewarrior/ChangeLog
+share/doc/timewarrior/INSTALL
+share/doc/timewarrior/LICENSE
+share/doc/timewarrior/NEWS
+share/doc/timewarrior/README.md
+share/doc/timewarrior/doc/
+share/doc/timewarrior/doc/holidays/
+share/doc/timewarrior/doc/holidays/README
+share/doc/timewarrior/doc/holidays/holidays.en-US
+share/doc/timewarrior/doc/holidays/refresh
+share/doc/timewarrior/doc/themes/
+share/doc/timewarrior/doc/themes/README
+share/doc/timewarrior/doc/themes/dark.theme
+share/doc/timewarrior/doc/themes/dark_blue.theme
+share/doc/timewarrior/doc/themes/dark_green.theme
+share/doc/timewarrior/doc/themes/dark_red.theme
+share/doc/timewarrior/ext/
+share/doc/timewarrior/ext/on-modify.timewarrior
+share/doc/timewarrior/ext/totals.py

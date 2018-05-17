@@ -1,0 +1,6 @@
+Timewarrior is a command line time tracking application, which allows
+you to record time spent on activities.
+
+It can be used as a companion program for Taskwarrior - a hook script
+provides integration with the matching start and stop commands, thereby
+enabling proper time tracking for Taskwarrior users.
