@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_jvm_options,v 1.1 2018/05/17 10:50:12 pvk Exp $
+
+Index: config/jvm.options
+--- config/jvm.options.orig
++++ config/jvm.options
+@@ -34,6 +34,9 @@
+ 
+ ## basic
+ 
++# OpenBSD-specific
++-Djava.library.path=${TRUEPREFIX}/jruby/lib/jni/x86_64-OpenBSD
++
+ # set the I/O temp directory
+ #-Djava.io.tmpdir=$HOME
+ 

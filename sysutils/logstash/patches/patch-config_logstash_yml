@@ -1,0 +1,28 @@
+$OpenBSD: patch-config_logstash_yml,v 1.1 2018/05/17 10:50:12 pvk Exp $
+
+Index: config/logstash.yml
+--- config/logstash.yml.orig
++++ config/logstash.yml
+@@ -25,7 +25,7 @@
+ # Which directory should be used by logstash and its plugins
+ # for any persistent needs. Defaults to LOGSTASH_HOME/data
+ #
+-# path.data:
++path.data: ${LOCALSTATEDIR}/logstash/data
+ #
+ # ------------ Pipeline Settings --------------
+ #
+@@ -206,9 +206,12 @@
+ #
+ # log.level: info
+ # path.logs:
++path.logs: ${LOCALSTATEDIR}/log/logstash
+ #
+ # ------------ Other Settings --------------
+ #
+ # Where to find custom plugins
+ # path.plugins: []
+-
++# X-Pack monitoring credentials:
++#xpack.monitoring.elasticsearch.username: logstash_system
++#xpack.monitoring.elasticsearch.password: <pwd>

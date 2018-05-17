@@ -1,2 +1,4 @@
-SHA256 (logstash-2.4.0.tar.gz) = YixDXFwPQOIF/U2UEetAnMUpks9i3eTHzUbkgM2CR8w=
-SIZE (logstash-2.4.0.tar.gz) = 83882952
+SHA256 (logstash-6.2.4.tar.gz) = QEDCtqHpxpCLEohWWQIaNdykFca4hM72k4/MWJ6UQx4=
+SHA256 (netty-tcnative-boringssl-static-2.0.7.Final.jar) = U+7pidepfmLzDc329DPncVH6a4BCBR6wND3mCZvZXkw=
+SIZE (logstash-6.2.4.tar.gz) = 147224408
+SIZE (netty-tcnative-boringssl-static-2.0.7.Final.jar) = 962767

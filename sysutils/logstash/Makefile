@@ -1,65 +1,78 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/04 17:18:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/17 10:50:12 pvk Exp $
 
-COMMENT=		tool for managing events and logs
+# N.B. netty-tcnative dynamically linked with libpthread.so.25.1/amd64
+ONLY_FOR_ARCHS =	amd64
+COMMENT =		tool for managing events and logs
 
-V=			2.4.0
-DISTNAME=		logstash-$V
-PKGNAME=		logstash-${V:S/-/./}
-EPOCH=			0
-REVISION=		3
+V =			6.2.4
+DISTNAME =		logstash-$V
+PKGNAME =		logstash-${V:S/-/./}
+EPOCH =			0
 
-CATEGORIES=		sysutils
+CATEGORIES =		sysutils
 
-HOMEPAGE=		https://www.elastic.co/products/logstash
+HOMEPAGE =		https://www.elastic.co/products/logstash
 
-MAINTAINER=		Pavel Korovin <pvk@openbsd.org>
+MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		https://download.elastic.co/logstash/logstash/
+MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
 
-MODULES=		java
-MODJAVA_VER=		1.8+
-MODJAVA_JRERUN=		Yes
+MASTER_SITES0 =		https://distfiles.nl/
+DISTFILES =		logstash-$V.tar.gz \
+			netty-tcnative-boringssl-static-2.0.7.Final.jar:0
+EXTRACT_ONLY =		logstash-$V.tar.gz
 
-RUN_DEPENDS=		java/javaPathHelper \
+MODULES =		java
+MODJAVA_VER =		1.8+
+MODJAVA_JRERUN =	Yes
+
+RUN_DEPENDS =		java/javaPathHelper \
 			lang/jruby \
 			shells/bash
 
-NO_TEST=		Yes
+NO_TEST =		Yes
 
-LS_BASE=		${PREFIX}/logstash/
+LOGSTASH_HOME =		${PREFIX}/logstash/
 
-JFFI_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
-SUBST_VARS=		JFFI_ARCH
+JFFI_ARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
+SUBST_TARGETS =		${WRKSRC}/bin/logstash{.lib.sh,-plugin} \
+			${WRKSRC}/config/{jvm.options,logstash.yml,pipelines.yml}
+SUBST_VARS =		JFFI_ARCH LOCALSTATEDIR
 
 # with NO_BUILD defined JAVA_HOME won't get set, so this is as close as we'll
 # get to "building". Wipe the jruby vendor directory as we'll later link to
 # the system jruby.
 do-build:
-	-rm -rf ${WRKSRC}/vendor/bundle/jruby/1.9/gems/childprocess-0.5.9/lib/childprocess/unix/platform
-	-rm -r ${WRKSRC}/vendor/jruby/lib/jni
-	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/i386-{darwin,freebsd,linux,solaris,windows}
-	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/{i486-gnu,mips*}
-	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/powerpc-{aix,darwin,linux}
-	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/{ppc*,s390*,sparc*}
-	-rm -rf ${WRKSRC}/vendor/jruby/lib/ruby/shared/ffi/platform/x86_64-{darwin,freebsd,linux,solaris,windows}
-	${SUBST_CMD} ${WRKSRC}/bin/logstash.lib.sh
+	${SUBST_CMD} ${SUBST_TARGETS}
+	rm ${WRKSRC}/bin/{*.bat,*.beforesubst,*.orig,system-install}
+	rm ${WRKSRC}/config/*.{beforesubst,orig} \
+		${WRKSRC}/config/startup.options
+	rm ${WRKSRC}/vendor/jruby/bin/*.{bash,bat,dll,exe,sh}
+	rm -r ${WRKSRC}/vendor/jruby/lib/jni
+	cd ${WRKSRC}/vendor/jruby/lib/ruby/stdlib/ffi/platform/ && \
+		rm -r *-{aix,cygwin,darwin,freebsd,gnu,linux,netbsd,solaris,windows}
 	@# apply hammer to fixup weird modes
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
-	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
 	chmod 755 ${WRKSRC}/vendor/jruby/bin/*
 
 do-install:
-	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,vendor}/
-	${INSTALL_DATA} ${WRKSRC}/Gemfile* ${LS_BASE}
-.for b in logstash logstash-plugin logstash.lib.sh plugin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
-.endfor
-	cd ${WRKSRC} && cp -R lib vendor ${LS_BASE}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/logstash.conf \
-		${PREFIX}/share/examples/logstash/logstash.conf
+	${INSTALL_DATA_DIR} ${LOGSTASH_HOME}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${LOGSTASH_HOME}/bin/
+	${INSTALL_DATA} ${WRKSRC}/Gemfile* ${LOGSTASH_HOME}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/logstash/
+	${INSTALL_DATA} ${WRKSRC}/{CONTRIBUTORS,LICENSE,NOTICE.TXT} \
+		 ${PREFIX}/share/doc/logstash/
+	${INSTALL_DATA} ${WRKSRC}/config/* ${PREFIX}/share/examples/logstash/
+	cp -R ${WRKSRC}/{lib,logstash-*,modules,tools,vendor} ${LOGSTASH_HOME}
+	cp ${FULLDISTDIR}/netty-tcnative-boringssl-static-2.0.7.Final.jar \
+		${LOGSTASH_HOME}/vendor/bundle/jruby/2.3.0/gems/logstash-input-beats-5.0.13-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.7.Final/
+	${INSTALL_DATA} ${FILESDIR}/filebeat.yml \
+		${PREFIX}/share/examples/logstash/filebeat.yml
+	cd ${PREFIX}/logstash && \
+		ln -s ${LOCALSTATEDIR}/logstash/data data && \
+		ln -s ${SYSCONFDIR}/logstash config
 
 .include <bsd.port.mk>

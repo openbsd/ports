@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_pipelines_yml,v 1.1 2018/05/17 10:50:12 pvk Exp $
+
+Index: config/pipelines.yml
+--- config/pipelines.yml.orig
++++ config/pipelines.yml
+@@ -77,4 +77,6 @@
+ #   If using dead_letter_queue.enable: true, the directory path where the data files will be stored.
+ #   Default is path.data/dead_letter_queue
+ #
+-#   path.dead_letter_queue:
+\ No newline at end of file
++#   path.dead_letter_queue:
++- pipeline.id: filebeat
++  path.config: "${SYSCONFDIR}/logstash/conf.d/filebeat.yml"

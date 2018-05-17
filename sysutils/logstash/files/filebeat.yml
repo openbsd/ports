@@ -1,0 +1,44 @@
+input {
+  beats {
+    host => "127.0.0.1"
+    port => 5044
+  }
+}
+
+filter {
+  if [message] =~ /(last message repeated.*)|(logfile turned over)/ {
+    drop {}
+  }
+
+  mutate {
+    remove_field => [ "[beat][name]", "[prospector][type]", "offset", "source" ]
+    remove_tag => "beats_input_codec_plain_applied"
+  }
+
+  mutate {
+    lowercase => "host"
+  }
+
+  if [message] {
+    grok {
+      match => [ "message", "%{SYSLOGTIMESTAMP:[@metadata][timestamp]} (?:%{SYSLOGFACILITY} )?%{SYSLOGHOST:logsource} %{SYSLOGPROG}: %{GREEDYDATA:message}" ]
+      overwrite => [ "message" ]
+    }
+  }
+
+  date {
+    match => [ "[@metadata][timestamp]", "MMM dd HH:mm:ss", "MMM  d HH:mm:ss", "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    #user => "logstash"
+    #password => "<pwd>"
+    index => "logstash-%{+YYYY.MM.dd}"
+    template => "/etc/logstash/conf.d/templates/elasticsearch-template-es6x.json"
+    template_name => "logstash"
+    template_overwrite => "true"
+  }
+}

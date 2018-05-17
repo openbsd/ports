@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2016/04/26 13:31:25 jasper Exp $
+$OpenBSD: README,v 1.2 2018/05/17 10:50:12 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,29 +6,19 @@ $OpenBSD: README,v 1.1 2016/04/26 13:31:25 jasper Exp $
 
 Logstash should be started with it's own uid/gid _logstash, since this user
 has all necessary filesystem permissions. For example, if you want to check
-the configuration, use su(1):
+the configuration, use doas(1):
 
-    # su -m _logstash -c \
-        "${TRUEPREFIX}/logstash/bin/logstash -f /etc/logstash/conf"
+    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/logstash -t
 
 Or if you want to manage plugins:
 
-    # su -m _logstash -c "${TRUEPREFIX}/logstash/bin/plugin install <plugin>"
+    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/plugin install <plugin>
 
-If you get an error from JVM stating that it could not reserve enough space
-for object heap, it indicates that your login(1) class has insufficient data
-size limit to run Logstash with its default settings.
+Elastic X-Pack is available as separate OpenBSD package:
 
-Logstash sets JVM heap size to 500 megabytes by default; with this limit your
-datasize-cur limit should be at least 780 megabytes.
+	# pkg_add x-pack
 
-You can either adjust your limits in login.conf(5), or adjust the heap size 
-setting an it via the environment variable:
-
-    # su -m _logstash -c "env LS_HEAP_SIZE=200m \
-	${TRUEPREFIX}/logstash/bin/logstash -f /etc/logstash/conf"
-	
-or if you want to install plugin:
-
-    # su -m _logstash -c "env LS_HEAP_SIZE=200m \
-	${TRUEPREFIX}/logstash/bin/plugin install <plugin>"
+Upgrading Logstash
+==================
+Please refer to the upstream documentation when performing upgrades:
+https://www.elastic.co/guide/en/logstash/current/upgrading-logstash.html

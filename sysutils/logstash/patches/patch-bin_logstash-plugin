@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_logstash-plugin,v 1.1 2018/05/17 10:50:12 pvk Exp $
+
+Index: bin/logstash-plugin
+--- bin/logstash-plugin.orig
++++ bin/logstash-plugin
+@@ -4,6 +4,9 @@ unset CDPATH
+ . "$(cd `dirname $0`/..; pwd)/bin/logstash.lib.sh"
+ setup
+ 
++# set HOME to keep Maven repo for Logstash in /var/logstash/.m2
++export HOME=${LOCALSTATEDIR}/logstash
++
+ # bin/logstash-plugin is a short lived ruby script thus we can use aggressive "faster starting JRuby options"
+ # see https://github.com/jruby/jruby/wiki/Improving-startup-time
+ export JRUBY_OPTS="$JRUBY_OPTS -J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-noverify -X-C -Xcompile.invokedynamic=false"
