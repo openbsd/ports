@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/23 22:45:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/05/17 06:05:58 ajacoutot Exp $
 bin/meson
 bin/mesonconf
 bin/mesonintrospect
@@ -7,7 +7,7 @@ bin/wraptool
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}astinterpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}rewriter.${M
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/astinterpreter.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}backends.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}ninjabackend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -46,7 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/xcodebackend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/build.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/${MODPY_PYCACHE}c.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/${MODPY_PYCACHE}compilers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -75,7 +75,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/vala.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/coredata.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}boost.${MODPY_PYC_MAGIC_TAG}pyc
@@ -101,7 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/mintro.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mlog.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}gnome.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
@@ -135,7 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/optinterpreter.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/rewriter.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}cleantrees.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}commandrunner.${MODPY_PYC_MAGIC_TAG}pyc
@@ -175,7 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/vcstagger.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/yelphelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}wrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/wrap/${MODPY_PYCACHE}wraptool.${MODPY_PYC_MAGIC_TAG}pyc
