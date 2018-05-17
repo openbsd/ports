@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/05/09 20:24:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/05/17 08:27:43 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,6 +7,7 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.39
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
@@ -21,6 +22,7 @@ MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 MODULES =	lang/php \
 		lang/python
+MODPHP_VERSION = 7.0
 MODPY_BUILDDEP = No
 
 RUN_DEPENDS =	databases/py-mysql \

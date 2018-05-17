@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/05/09 20:24:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/05/17 08:27:43 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
 librenms/
@@ -2568,7 +2568,7 @@ librenms/includes/definitions/freebsd.yaml
 librenms/includes/definitions/ftd.yaml
 librenms/includes/definitions/ftos.yaml
 librenms/includes/definitions/fujitsueternusos.yaml
-librenms/includes/definitions/fujitsu${MODPY_PYOEXTENSION}s.yaml
+librenms/includes/definitions/fujitsupyos.yaml
 librenms/includes/definitions/fusion.yaml
 librenms/includes/definitions/fxm.yaml
 librenms/includes/definitions/fxos.yaml
@@ -3626,7 +3626,7 @@ librenms/includes/polling/os/fortios.inc.php
 librenms/includes/polling/os/fortiswitch.inc.php
 librenms/includes/polling/os/foundryos.inc.php
 librenms/includes/polling/os/ftos.inc.php
-librenms/includes/polling/os/fujitsu${MODPY_PYOEXTENSION}s.inc.php
+librenms/includes/polling/os/fujitsupyos.inc.php
 librenms/includes/polling/os/fusion.inc.php
 librenms/includes/polling/os/fxm.inc.php
 librenms/includes/polling/os/fxos.inc.php
