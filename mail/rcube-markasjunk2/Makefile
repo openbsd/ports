@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/17 08:33:20 sthen Exp $
 
 COMMENT=	roundcube plugin: add Spam/Ham-buttons
 
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-Mark-as-Junk-2
 GH_TAGNAME=	1.9
+REVISION=	1
+
 DISTNAME=	rcube-markasjunk2-${GH_TAGNAME}
 DISTFILES=	${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX}
-REVISION=	0
 
 CATEGORIES=	mail www
 
@@ -26,6 +27,8 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.0
+
 RUN_DEPENDS=	mail/roundcubemail>=1.1
 
 do-install:

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/27 12:41:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/17 08:33:20 sthen Exp $
 
 COMMENT=	roundcube plugin: LDAP Alias Sync
 
 GH_ACCOUNT=	dim-0
 GH_PROJECT=	ldapAliasSync
 GH_COMMIT=	3ba0bdfd671f98eab754cdd4f0fb581381870b72
+REVISION=	0
+
 DISTNAME=	rcube-ldapAliasSync-20160131
 DISTFILES=	${DISTNAME}{${GH_COMMIT}}${EXTRACT_SUFX}
 
@@ -25,6 +27,8 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.0
+
 RUN_DEPENDS=	mail/roundcubemail>=1.1 \
 		lang/php/${MODPHP_VERSION},-ldap
 
