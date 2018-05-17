@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/17 09:40:30 espie Exp $
 @comment avr32/lib/libiberty.a
-avr32/lib/ucr1/
 avr32/lib/ucr1/libiberty.a
-avr32/lib/ucr2/
 avr32/lib/ucr2/libiberty.a
-avr32/lib/ucr2nomul/
 avr32/lib/ucr2nomul/libiberty.a
-avr32/lib/ucr3/
 avr32/lib/ucr3/libiberty.a
-avr32/lib/ucr3fp/
 avr32/lib/ucr3fp/libiberty.a
 @bin bin/avr32-c++
 @bin bin/avr32-cpp
@@ -17,6 +12,11 @@ avr32/lib/ucr3fp/libiberty.a
 @bin bin/avr32-gcc-4.4.7
 bin/avr32-gccbug
 @bin bin/avr32-gcov
+@comment @info info/cpp.info
+@comment @info info/cppinternals.info
+@comment @info info/gcc.info
+@comment @info info/gccinstall.info
+@comment @info info/gccint.info
 lib/gcc/
 lib/gcc/avr32/
 lib/gcc/avr32/4.4.7/
@@ -886,15 +886,10 @@ libexec/gcc/avr32/4.4.7/install-tools/fixinc.sh
 @bin libexec/gcc/avr32/4.4.7/install-tools/fixincl
 libexec/gcc/avr32/4.4.7/install-tools/mkheaders
 libexec/gcc/avr32/4.4.7/install-tools/mkinstalldirs
-@man man/man1/avr32-g++.1
 @man man/man1/avr32-cpp.1
+@man man/man1/avr32-g++.1
 @man man/man1/avr32-gcc.1
 @man man/man1/avr32-gcov.1
-@comment @info info/cpp.info
-@comment @info info/cppinternals.info
-@comment @info info/gcc.info
-@comment @info info/gccinstall.info
-@comment @info info/gccint.info
 @comment @man man/man7/fsf-funding.7
 @comment @man man/man7/gfdl.7
 @comment @man man/man7/gpl.7
