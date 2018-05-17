@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/02/06 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/05/17 09:44:38 espie Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
@@ -219,25 +219,11 @@ share/gnome/help/gconf-editor/zh_TW/figures/entry-schema.png
 share/gnome/help/gconf-editor/zh_TW/figures/entry-string.png
 share/gnome/help/gconf-editor/zh_TW/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/zh_TW/gconf-editor.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gconf-editor.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gconf-editor.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gconf-editor.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/gconf-editor.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gconf-editor.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gconf-editor.png
 share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo

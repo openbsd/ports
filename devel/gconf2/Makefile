@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.95 2018/05/17 09:44:38 espie Exp $
 
 COMMENT=		configuration database system for GNOME
 
 GNOME_PROJECT=		GConf
 GNOME_VERSION=		3.2.6
 PKGNAME=		gconf2-${GNOME_VERSION}
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=  gconf-2              6.2      # 5.5
 
