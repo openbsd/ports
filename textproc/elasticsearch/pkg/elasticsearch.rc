@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: elasticsearch.rc,v 1.6 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: elasticsearch.rc,v 1.7 2018/05/17 10:22:58 pvk Exp $
 
 daemon="${TRUEPREFIX}/elasticsearch/bin/elasticsearch"
-daemon_flags="-d -Edefault.path.conf=${SYSCONFDIR}/elasticsearch -p /var/run/elasticsearch/elasticsearch.pid"
+daemon_flags="-d -p /var/run/elasticsearch/elasticsearch.pid"
 daemon_user="_elasticsearch"
 
 . /etc/rc.d/rc.subr
@@ -11,14 +11,6 @@ daemon_user="_elasticsearch"
 pexp="$(${LOCALBASE}/bin/javaPathHelper -c elasticsearch) .*org.elasticsearch.bootstrap.Elasticsearch.*"
 
 rc_reload=NO
-
-rc_start() {
-	${rcexec} \
-		"ES_INCLUDE=\"${SYSCONFDIR}/elasticsearch/elasticsearch.in.sh\" \
-                "CONF_DIR=\"${SYSCONFDIR}/elasticsearch\"" \
-		JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h elasticsearch)\" \
-		${daemon} ${daemon_flags}"
-}
 
 rc_pre() {
 	install -d -o _elasticsearch /var/run/elasticsearch/

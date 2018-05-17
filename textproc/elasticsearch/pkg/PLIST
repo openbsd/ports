@@ -1,61 +1,68 @@
-@comment $OpenBSD: PLIST,v 1.28 2017/10/09 20:19:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/05/17 10:22:58 pvk Exp $
 @ask-update elasticsearch-<2.0.0 Make sure your existing data is backed up
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
-@extraunexec rm -rf /var/elasticsearch/*
+@extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/{elasticsearch.keystore,x-pack/}
+@extraunexec rm -rf ${PREFIX}/elasticsearch/{bin,plugins}/x-pack/
+@extraunexec rm -rf ${LOCALSTATEDIR}/elasticsearch/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/log/elasticsearch/*
 elasticsearch/
-@owner _elasticsearch
+@mode 0775
+@group _elasticsearch
 elasticsearch/bin/
-@owner
+@mode
+@group
 elasticsearch/bin/elasticsearch
-@owner _elasticsearch
-@sample ${SYSCONFDIR}/elasticsearch/scripts/
-@owner
+elasticsearch/bin/elasticsearch-env
+elasticsearch/bin/elasticsearch-keystore
 elasticsearch/bin/elasticsearch-plugin
 elasticsearch/bin/elasticsearch-translog
 elasticsearch/lib/
 elasticsearch/lib/HdrHistogram-2.1.9.jar
 elasticsearch/lib/elasticsearch-${V}.jar
+elasticsearch/lib/elasticsearch-cli-${V}.jar
+elasticsearch/lib/elasticsearch-core-${V}.jar
+elasticsearch/lib/elasticsearch-launchers-${V}.jar
 elasticsearch/lib/hppc-0.7.1.jar
-elasticsearch/lib/jackson-core-2.8.6.jar
-elasticsearch/lib/jackson-dataformat-cbor-2.8.6.jar
-elasticsearch/lib/jackson-dataformat-smile-2.8.6.jar
-elasticsearch/lib/jackson-dataformat-yaml-2.8.6.jar
-elasticsearch/lib/java-version-checker-${V}.jar
-elasticsearch/lib/jna-4.4.0-1.jar
-elasticsearch/lib/joda-time-2.9.5.jar
+elasticsearch/lib/jackson-core-2.8.10.jar
+elasticsearch/lib/jackson-dataformat-cbor-2.8.10.jar
+elasticsearch/lib/jackson-dataformat-smile-2.8.10.jar
+elasticsearch/lib/jackson-dataformat-yaml-2.8.10.jar
+elasticsearch/lib/jna-4.5.1.jar
+elasticsearch/lib/joda-time-2.9.9.jar
 elasticsearch/lib/jopt-simple-5.0.2.jar
 elasticsearch/lib/jts-1.13.jar
 elasticsearch/lib/log4j-1.2-api-2.9.1.jar
 elasticsearch/lib/log4j-api-2.9.1.jar
 elasticsearch/lib/log4j-core-2.9.1.jar
-elasticsearch/lib/lucene-analyzers-common-6.6.1.jar
-elasticsearch/lib/lucene-backward-codecs-6.6.1.jar
-elasticsearch/lib/lucene-core-6.6.1.jar
-elasticsearch/lib/lucene-grouping-6.6.1.jar
-elasticsearch/lib/lucene-highlighter-6.6.1.jar
-elasticsearch/lib/lucene-join-6.6.1.jar
-elasticsearch/lib/lucene-memory-6.6.1.jar
-elasticsearch/lib/lucene-misc-6.6.1.jar
-elasticsearch/lib/lucene-queries-6.6.1.jar
-elasticsearch/lib/lucene-queryparser-6.6.1.jar
-elasticsearch/lib/lucene-sandbox-6.6.1.jar
-elasticsearch/lib/lucene-spatial-6.6.1.jar
-elasticsearch/lib/lucene-spatial-extras-6.6.1.jar
-elasticsearch/lib/lucene-spatial3d-6.6.1.jar
-elasticsearch/lib/lucene-suggest-6.6.1.jar
+elasticsearch/lib/lucene-analyzers-common-7.2.1.jar
+elasticsearch/lib/lucene-backward-codecs-7.2.1.jar
+elasticsearch/lib/lucene-core-7.2.1.jar
+elasticsearch/lib/lucene-grouping-7.2.1.jar
+elasticsearch/lib/lucene-highlighter-7.2.1.jar
+elasticsearch/lib/lucene-join-7.2.1.jar
+elasticsearch/lib/lucene-memory-7.2.1.jar
+elasticsearch/lib/lucene-misc-7.2.1.jar
+elasticsearch/lib/lucene-queries-7.2.1.jar
+elasticsearch/lib/lucene-queryparser-7.2.1.jar
+elasticsearch/lib/lucene-sandbox-7.2.1.jar
+elasticsearch/lib/lucene-spatial-7.2.1.jar
+elasticsearch/lib/lucene-spatial-extras-7.2.1.jar
+elasticsearch/lib/lucene-spatial3d-7.2.1.jar
+elasticsearch/lib/lucene-suggest-7.2.1.jar
+elasticsearch/lib/plugin-classloader-${V}.jar
 elasticsearch/lib/plugin-cli-${V}.jar
-elasticsearch/lib/securesm-1.1.jar
-elasticsearch/lib/snakeyaml-1.15.jar
+elasticsearch/lib/securesm-1.2.jar
+elasticsearch/lib/snakeyaml-1.17.jar
 elasticsearch/lib/spatial4j-0.6.jar
 elasticsearch/lib/t-digest-3.0.jar
-@owner _elasticsearch
-@sample elasticsearch/plugins/
-@owner
 elasticsearch/modules/
 elasticsearch/modules/aggs-matrix-stats/
 elasticsearch/modules/aggs-matrix-stats/aggs-matrix-stats-${V}.jar
 elasticsearch/modules/aggs-matrix-stats/plugin-descriptor.properties
+elasticsearch/modules/analysis-common/
+elasticsearch/modules/analysis-common/analysis-common-${V}.jar
+elasticsearch/modules/analysis-common/plugin-descriptor.properties
 elasticsearch/modules/ingest-common/
 elasticsearch/modules/ingest-common/ingest-common-${V}.jar
 elasticsearch/modules/ingest-common/jcodings-1.0.12.jar
@@ -67,31 +74,33 @@ elasticsearch/modules/lang-expression/asm-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-tree-5.0.4.jar
 elasticsearch/modules/lang-expression/lang-expression-${V}.jar
-elasticsearch/modules/lang-expression/lucene-expressions-6.6.1.jar
+elasticsearch/modules/lang-expression/lucene-expressions-7.2.1.jar
 elasticsearch/modules/lang-expression/plugin-descriptor.properties
 elasticsearch/modules/lang-expression/plugin-security.policy
-elasticsearch/modules/lang-groovy/
-elasticsearch/modules/lang-groovy/groovy-2.4.6-indy.jar
-elasticsearch/modules/lang-groovy/lang-groovy-${V}.jar
-elasticsearch/modules/lang-groovy/plugin-descriptor.properties
-elasticsearch/modules/lang-groovy/plugin-security.policy
 elasticsearch/modules/lang-mustache/
 elasticsearch/modules/lang-mustache/compiler-0.9.3.jar
 elasticsearch/modules/lang-mustache/lang-mustache-${V}.jar
 elasticsearch/modules/lang-mustache/plugin-descriptor.properties
 elasticsearch/modules/lang-mustache/plugin-security.policy
 elasticsearch/modules/lang-painless/
-elasticsearch/modules/lang-painless/antlr4-runtime-4.5.1-1.jar
+elasticsearch/modules/lang-painless/antlr4-runtime-4.5.3.jar
 elasticsearch/modules/lang-painless/asm-debug-all-5.1.jar
+elasticsearch/modules/lang-painless/elasticsearch-scripting-painless-spi-${V}.jar
 elasticsearch/modules/lang-painless/lang-painless-${V}.jar
 elasticsearch/modules/lang-painless/plugin-descriptor.properties
 elasticsearch/modules/lang-painless/plugin-security.policy
+elasticsearch/modules/mapper-extras/
+elasticsearch/modules/mapper-extras/mapper-extras-${V}.jar
+elasticsearch/modules/mapper-extras/plugin-descriptor.properties
 elasticsearch/modules/parent-join/
 elasticsearch/modules/parent-join/parent-join-${V}.jar
 elasticsearch/modules/parent-join/plugin-descriptor.properties
 elasticsearch/modules/percolator/
 elasticsearch/modules/percolator/percolator-${V}.jar
 elasticsearch/modules/percolator/plugin-descriptor.properties
+elasticsearch/modules/rank-eval/
+elasticsearch/modules/rank-eval/plugin-descriptor.properties
+elasticsearch/modules/rank-eval/rank-eval-${V}.jar
 elasticsearch/modules/reindex/
 elasticsearch/modules/reindex/commons-codec-1.10.jar
 elasticsearch/modules/reindex/commons-logging-1.1.3.jar
@@ -103,45 +112,58 @@ elasticsearch/modules/reindex/httpcore-nio-4.4.5.jar
 elasticsearch/modules/reindex/plugin-descriptor.properties
 elasticsearch/modules/reindex/plugin-security.policy
 elasticsearch/modules/reindex/reindex-${V}.jar
-elasticsearch/modules/transport-netty3/
-elasticsearch/modules/transport-netty3/netty-3.10.6.Final.jar
-elasticsearch/modules/transport-netty3/plugin-descriptor.properties
-elasticsearch/modules/transport-netty3/plugin-security.policy
-elasticsearch/modules/transport-netty3/transport-netty3-${V}.jar
+elasticsearch/modules/repository-url/
+elasticsearch/modules/repository-url/plugin-descriptor.properties
+elasticsearch/modules/repository-url/plugin-security.policy
+elasticsearch/modules/repository-url/repository-url-${V}.jar
 elasticsearch/modules/transport-netty4/
-elasticsearch/modules/transport-netty4/netty-buffer-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-codec-http-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-common-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-handler-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-resolver-4.1.13.Final.jar
-elasticsearch/modules/transport-netty4/netty-transport-4.1.13.Final.jar
+elasticsearch/modules/transport-netty4/netty-buffer-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-codec-http-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-common-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-handler-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-resolver-4.1.16.Final.jar
+elasticsearch/modules/transport-netty4/netty-transport-4.1.16.Final.jar
 elasticsearch/modules/transport-netty4/plugin-descriptor.properties
 elasticsearch/modules/transport-netty4/plugin-security.policy
 elasticsearch/modules/transport-netty4/transport-netty4-${V}.jar
+elasticsearch/modules/tribe/
+elasticsearch/modules/tribe/plugin-descriptor.properties
+elasticsearch/modules/tribe/tribe-${V}.jar
+@mode 0775
+@group _elasticsearch
+@sample elasticsearch/plugins/
+@mode
+@group
 share/doc/elasticsearch/
+share/doc/elasticsearch/LICENSE.txt
+share/doc/elasticsearch/NOTICE.txt
 share/doc/elasticsearch/README.textile
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/elasticsearch/
-@mode 775
-@owner _elasticsearch
+@mode 0770
 @group _elasticsearch
 @sample ${SYSCONFDIR}/elasticsearch/
+@sample ${SYSCONFDIR}/elasticsearch/scripts/
 @mode
-@owner
 @group
-share/examples/elasticsearch/elasticsearch.in.sh
-@sample ${SYSCONFDIR}/elasticsearch/elasticsearch.in.sh
 share/examples/elasticsearch/elasticsearch.yml
+@mode 0640
 @sample ${SYSCONFDIR}/elasticsearch/elasticsearch.yml
+@mode
 share/examples/elasticsearch/jvm.options
+@mode 0640
 @sample ${SYSCONFDIR}/elasticsearch/jvm.options
+@mode
 share/examples/elasticsearch/log4j2.properties
+@mode 0640
 @sample ${SYSCONFDIR}/elasticsearch/log4j2.properties
+@mode 0770
 @owner _elasticsearch
 @group _elasticsearch
-@sample /var/elasticsearch/
-@sample /var/log/elasticsearch/
+@sample ${LOCALSTATEDIR}/elasticsearch/
+@sample ${LOCALSTATEDIR}/log/elasticsearch/
+@mode
 @owner
 @group
 @rcscript ${RCDIR}/elasticsearch

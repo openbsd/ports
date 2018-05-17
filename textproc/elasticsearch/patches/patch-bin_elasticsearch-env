@@ -1,0 +1,31 @@
+$OpenBSD: patch-bin_elasticsearch-env,v 1.1 2018/05/17 10:22:58 pvk Exp $
+
+Index: bin/elasticsearch-env
+--- bin/elasticsearch-env.orig
++++ bin/elasticsearch-env
+@@ -3,7 +3,7 @@
+ set -e -o pipefail
+ 
+ CDPATH=""
+-
++JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h elasticsearch)"
+ SCRIPT="$0"
+ 
+ # SCRIPT might be an arbitrarily deep series of symbolic links; loop until we
+@@ -67,7 +67,7 @@ fi
+ 
+ export HOSTNAME=$HOSTNAME
+ 
+-if [ -z "$ES_PATH_CONF" ]; then ES_PATH_CONF="$ES_HOME"/config; fi
++if [ -z "$ES_PATH_CONF" ]; then ES_PATH_CONF="${BASESYSCONFDIR}/elasticsearch"; fi
+ 
+ if [ -z "$ES_PATH_CONF" ]; then
+   echo "ES_PATH_CONF must be set to the configuration path"
+@@ -85,6 +85,6 @@ if [ -z "$ES_TMPDIR" ]; then
+   if [ $mktemp_coreutils -eq 0 ]; then
+     ES_TMPDIR=`mktemp -d --tmpdir "elasticsearch.XXXXXXXX"`
+   else
+-    ES_TMPDIR=`mktemp -d -t elasticsearch`
++    ES_TMPDIR=`mktemp -d -t elasticsearch.XXXXXXXX`
+   fi
+ fi

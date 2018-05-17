@@ -1,48 +1,45 @@
-# $OpenBSD: Makefile,v 1.53 2018/04/04 17:18:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2018/05/17 10:22:58 pvk Exp $
 
-COMMENT=		distributed RESTful search and analytics
+COMMENT =		distributed RESTful search and analytics
 
-V=			5.6.4
-DISTNAME=		elasticsearch-$V
-CATEGORIES=		textproc
-REVISION=		1
+V =			6.2.4
+DISTNAME =		elasticsearch-$V
+CATEGORIES =		textproc
 
-HOMEPAGE=		https://www.elastic.co/products/elasticsearch
+HOMEPAGE =		https://www.elastic.co/products/elasticsearch
 
-MAINTAINER=		Pavel Korovin <pvk@openbsd.org>
+MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		https://artifacts.elastic.co/downloads/elasticsearch/
+MASTER_SITES =		https://artifacts.elastic.co/downloads/elasticsearch/
 
-MODULES=		java
-MODJAVA_VER=		1.8+
-MODJAVA_JRERUN=		Yes
+MODULES =		java
+MODJAVA_VER =		1.8+
+MODJAVA_JRERUN =	Yes
 
-RUN_DEPENDS=		java/javaPathHelper \
+RUN_DEPENDS =		java/javaPathHelper \
 			shells/bash
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
+NO_BUILD =		Yes
+NO_TEST =		Yes
 
-SUBST_VARS +=		V
-ES_BASE=		${PREFIX}/elasticsearch/
+SUBST_VARS +=		BASESYSCONFDIR V
+ES_HOME =		${PREFIX}/elasticsearch/
 
 do-install:
-	cd ${WRKSRC}/bin; \
-		sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-		elasticsearch elasticsearch{-plugin,-translog,.in.sh}
-	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib,modules,plugins}/ \
+	${SUBST_CMD} ${WRKSRC}/bin/elasticsearch-env
+	rm ${WRKSRC}/bin/*.{bat,beforesubst,exe,orig} ${WRKSRC}/config/*.orig
+	sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' ${WRKSRC}/bin/*
+	${INSTALL_DATA_DIR} ${ES_HOME}/{bin,lib,modules,plugins}/ \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
-.for b in elasticsearch elasticsearch-plugin elasticsearch-translog
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${ES_BASE}/bin/
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${ES_BASE}/lib/
-.for c in ${WRKSRC}/config/*.yml ${WRKSRC}/config/*.options ${WRKSRC}/config/*.properties ${WRKSRC}/bin/elasticsearch.in.sh
-	${INSTALL_DATA} ${WRKSRC}/$c ${PREFIX}/share/examples/elasticsearch/
-.endfor
-	cp -R ${WRKSRC}/modules ${ES_BASE}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${ES_HOME}/bin/
+	${INSTALL_DATA} ${WRKSRC}/config/* ${PREFIX}/share/examples/elasticsearch/
+	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${ES_HOME}/lib/
+	cp -R ${WRKSRC}/modules ${ES_HOME}/
+	${INSTALL_DATA} ${WRKSRC}/{LICENSE,NOTICE}.txt \
+		${PREFIX}/share/doc/elasticsearch/
 	${INSTALL_DATA} ${WRKSRC}/README.textile ${PREFIX}/share/doc/elasticsearch/
 
 .include <bsd.port.mk>

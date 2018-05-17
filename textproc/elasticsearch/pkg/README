@@ -1,45 +1,77 @@
-$OpenBSD: README,v 1.5 2016/12/17 12:11:02 jasper Exp $
+$OpenBSD: README,v 1.6 2018/05/17 10:22:58 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-File Descriptors
-================
-By default, the _elasticsearch user, and so the elasticsearch
-server run in the login(1) class of "daemon".
-You can query the number of maximum allowed open file descriptors
-by running:
+Initial Node/Cluster Configuration
+==================================
+Configuratoin files are located in ${SYSCONFDIR}/elasticsearch
+
+By default, elasticsearch binds to localhost addresses. Since OpenBSD does not
+support IPv4 to IPv6 address mapping, either IPv4 or IPv6 can be used, but not
+both of them (see JDK/JRE package README for more details).
+
+Thus by default elasticsearch will bind to 127.0.0.1 and will not be useful
+for anything except testing.
+
+After configuring network.host to non-default localhost address, elasticsearch
+will assume it's in "production" mode and will enforce bootstrap checks, one
+of which is the limit for maximum number of open file descriptors (openfiles).
+
+Resource Limits: File Descriptors
+=================================
+The minimum number of openfiles required for production Elasticsearch node
+is 65536. Elasticsearch will not start if openfiles limit is lower than this.
+
+OpenBSD's defaults are very conservative in allocation of system resources,
+in order to run Elasticsearch, the following steps required:
+
+1. Adjust kern.maxfiles:
+
+	# sysctl kern.maxfiles=65536
+	# echo "kern.maxfiles=65536" >> /etc/sysctl.conf
+
+2. Configure elasticsearch login class in /etc/login.conf
+
+	elasticsearch:\
+		:openfiles=65536:\
+		:tc=daemon:
+
+For busy elasticsearch node with lots of indexes, openfiles limit should be
+increased even more, e.g. 131070.
+
+You can query the number of number of open file descriptors along with
+maximum allowed by running:
 
 	$ ftp -o - "http://localhost:9200/_nodes/stats/process?pretty"
 
-and searching for the "max_file_descriptors" value.
+and searching for "open_file_descriptors" and "max_file_descriptors" values.
 
-Elasticsearch documentation suggests increasing file descriptor
-limits to 32k or even 64k. You can adjust this limit appropriately
-by configuring own login(1) class for _elasticsearch user.
+Resource Limits: Maximum Number of File Locks
+=============================================
+If you are getting "java.io.IOException: No locks available" errors, increase
+kern.maxlocksperuid over the default of 1024:
 
-For example, add this to the login.conf(5) file:
-	elasticsearch:\
-		:openfiles=4096:\
-		:tc=daemon:
-
-Rebuild the login.conf.db file if necessary:
-
-	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
-
-If you are still getting errors about too many open files, you may
-need to adjust the kern.maxfiles value so you can further increase
-the open files limit in login.conf(5):
-
-	# sysctl -w kern.maxfiles=32768
-	# echo "kern.maxfiles=32768" >> /etc/sysctl.conf
+	# sysctl kern.maxlocksperuid=2048
+	# echo "kern.maxlocksperuid=2048" >> /etc/sysctl.conf
 
 Elasticsearch Plugins Management
 ================================
 Elasticsearch plugins management involves running Java code which can download
 and execute arbitrary code from the Internet. To avoid running these tasks
-as root, use su(1):
+as root, use doas(1):
 
-	# su -m _elasticsearch -c \
-	    "${TRUEPREFIX}/elasticsearch/bin/elasticsearch-plugin install <plugin>"
+	# doas -u _elasticsearch \
+		${TRUEPREFIX}/elasticsearch/bin/elasticsearch-plugin install <plugin>
+
+Elastic X-Pack is available as separate OpenBSD package:
+
+	# pkg_add x-pack
+
+See X-Pack package README for more information.
+
+Upgrading ElasticSearch
+=======================
+Please refer to the upstream documentation when performing upgrades:
+https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
