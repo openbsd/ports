@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1401 2018/05/08 08:09:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1402 2018/05/17 09:59:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2365,7 +2365,7 @@ _internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
-	-w ${PATCHORIG} -w ${DISTORIG} \
+	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}
