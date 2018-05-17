@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2017/12/02 09:30:03 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2018/05/17 12:47:32 pvk Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
@@ -41,8 +41,6 @@ post-install:
 	cp ${WRKSRC}/$c ${PREFIX}/share/examples/${BEAT}/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/
-	${INSTALL_SCRIPT} ${WRKDIST}/libbeat/scripts/migrate_beat_config_1_x_to_5_0.py \
-		${PREFIX}/share/${BEAT}/
 .if defined(BEATS_MODULES) && ${BEATS_MODULES:L} == "yes"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${BEAT}/module/
 	cd ${WRKSRC}/module && \
