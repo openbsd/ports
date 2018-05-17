@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/05/17 09:20:07 espie Exp $
 @bin bin/gq
 share/applications/gq.desktop
 share/gnome/
@@ -12,10 +12,6 @@ share/gnome/help/gq-manual/de/gq-manual.xml
 share/gnome/help/gq-manual/de/legal.xml
 share/gq/
 share/gq/gq.glade
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/ldap-group.png
 share/icons/hicolor/16x16/apps/ldap-organization.png
 share/icons/hicolor/16x16/apps/ldap-person.png

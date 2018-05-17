@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/12/01 10:01:33 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/05/17 09:20:08 espie Exp $
 @option is-branch
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
@@ -6,7 +6,6 @@ bin/puppetdb
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/puppetdb/
 share/examples/puppetdb/puppetlabs/
-@sample ${SYSCONFDIR}/puppetlabs/
 share/examples/puppetdb/puppetlabs/puppetdb/
 @sample ${SYSCONFDIR}/puppetlabs/puppetdb/
 share/examples/puppetdb/puppetlabs/puppetdb/bootstrap.cfg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/25 20:08:33 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/17 09:20:08 espie Exp $
 @comment bin/dbicadmin
 ${P5SITE}/DBIx/Class.pm
 ${P5SITE}/DBIx/Class.pod
@@ -67,6 +67,7 @@ ${P5SITE}/DBIx/Class/Manual/QuickStart.pod
 ${P5SITE}/DBIx/Class/Manual/Reading.pod
 ${P5SITE}/DBIx/Class/Manual/ResultClass.pod
 ${P5SITE}/DBIx/Class/Manual/Troubleshooting.pod
+@comment ${P5SITE}/DBIx/Class/Manual/Troubleshooting.pod.orig
 ${P5SITE}/DBIx/Class/Optional/
 ${P5SITE}/DBIx/Class/Optional/Dependencies.pm
 ${P5SITE}/DBIx/Class/Optional/Dependencies.pod

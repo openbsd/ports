@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/17 09:20:08 espie Exp $
 
 COMMENT=		create random people
 
@@ -6,6 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Data-RandomPerson-0.50
 CATEGORIES=		databases
+REVISION =		0
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 

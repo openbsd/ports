@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-plugin,v 1.4 2017/12/01 10:01:33 sebastia Exp $
+@comment $OpenBSD: PLIST-plugin,v 1.5 2018/05/17 09:20:08 espie Exp $
 @option is-branch
-${MODRUBY_SITEDIR}/puppet/util/puppetdb/
 ${MODRUBY_SITEDIR}/puppet/face/node/deactivate.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/status.rb
 ${MODRUBY_SITEDIR}/puppet/functions/puppetdb_query.rb
@@ -10,6 +9,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/puppetdb_apply.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/node/puppetdb.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/resource/puppetdb.rb
 ${MODRUBY_SITEDIR}/puppet/reports/puppetdb.rb
+${MODRUBY_SITEDIR}/puppet/util/puppetdb/
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb.rb
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/atom.rb
 ${MODRUBY_SITEDIR}/puppet/util/puppetdb/char_encoding.rb

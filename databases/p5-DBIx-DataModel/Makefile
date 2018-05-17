@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/05/17 09:20:08 espie Exp $
 
 COMMENT=	classes and UML-style associations on top of DBI
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	DBIx-DataModel-1.09
-REVISION=	1
+REVISION=	2
 CATEGORIES=	databases
 
 # Perl
