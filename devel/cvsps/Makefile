@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/29 12:08:50 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/17 09:43:33 espie Exp $
 
 COMMENT=	generate patchsets from CVS repositories
 
@@ -7,7 +7,7 @@ COMMENT=	generate patchsets from CVS repositories
 # support, before removing diff support completely, and ceasing development.
 # deliberately holding at 2.1 for now.
 DISTNAME=	cvsps-2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=     devel
 HOMEPAGE=	http://cvsps.sourceforge.net/
 

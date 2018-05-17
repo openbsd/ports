@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 13:21:05 avsm Exp $
-bin/cvsps
+@comment $OpenBSD: PLIST,v 1.2 2018/05/17 09:43:33 espie Exp $
+@bin bin/cvsps
 @man man/man1/cvsps.1

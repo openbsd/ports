@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/13 21:44:27 sthen Exp $
-bin/cdecl
-bin/chilight
-bin/cobfusc
-bin/cundecl
-bin/cunloop
-bin/yyextract
-bin/yyref
+@comment $OpenBSD: PLIST,v 1.2 2018/05/17 09:43:33 espie Exp $
+@bin bin/cdecl
+@bin bin/chilight
+@bin bin/cobfusc
+@bin bin/cundecl
+@bin bin/cunloop
+@bin bin/yyextract
+@bin bin/yyref
 @info info/cutils.info
 @man man/man1/cdecl.1
 @man man/man1/chilight.1

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/17 09:43:33 espie Exp $
 
 COMMENT=	safely manipulate and inspect CVS respositories
 
 DISTNAME=	cvslock-0.2
 CATEGORIES=	devel
+REVISION =	0
 
 MAINTAINER=	Manuel Rodrigo Rabade Garcia <mig@mig-29.net>
 
