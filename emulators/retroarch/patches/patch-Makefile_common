@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile_common,v 1.1 2018/05/17 09:55:46 jasper Exp $
+
+Explicitly link with libusb-1.0 
+
+Index: Makefile.common
+--- Makefile.common.orig
++++ Makefile.common
+@@ -952,11 +952,7 @@ ifeq ($(HAVE_THREADS), 1)
+ ifeq ($(HAVE_HID), 1)
+    DEFINES += -DHAVE_LIBUSB
+    OBJ += input/drivers_hid/libusb_hid.o
+-   ifneq ($(findstring BSD,$(OS)),)
+-      LIBS += -lusb
+-   else
+-      LIBS += -lusb-1.0
+-   endif
++   LIBS += -lusb-1.0
+ endif
+ endif
+ endif
