@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2017/07/26 22:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2018/05/17 08:15:06 jasper Exp $
 
 COMMENT=	powerful newsreader
 
 V=		0.140
 DISTNAME=	pan-${V}
 CATEGORIES=	news x11
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
@@ -18,7 +18,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject enchant gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-3 gtkspell3-3 iconv
 WANTLIB += intl m notify pango-1.0 pangocairo-1.0 pthread ${COMPILER_LIBCXX}
-WANTLIB += z
+WANTLIB += z fribidi
 
 USE_GMAKE= 	Yes
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS=	--with-gtk3 --enable-libnotify --enable-gkr --with-gnutls
 
 .include <bsd.port.mk>
