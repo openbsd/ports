@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.269 2018/04/24 08:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.270 2018/05/18 07:56:19 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.28.1
+GNOME_VERSION=		3.28.2
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -15,14 +15,14 @@ SHARED_LIBS +=  gdm                  0.0      # 1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xtst accountsservice atk-1.0
+WANTLIB += Xi Xinerama Xrandr Xrender accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl ltdl
 WANTLIB += m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread util vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z fribidi
 
 MODULES=		x11/gnome \
 			devel/dconf
