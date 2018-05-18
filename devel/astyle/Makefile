@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/29 17:31:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/18 02:49:29 bcallah Exp $
 
-V=			3.0.1
+V=			3.1
 COMMENT=		indenter and formatter of C/C++/Java source files
 DISTNAME=		astyle_${V}_linux
 PKGNAME=		astyle-${V}
