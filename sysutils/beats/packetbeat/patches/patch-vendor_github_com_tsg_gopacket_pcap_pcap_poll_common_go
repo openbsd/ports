@@ -1,0 +1,14 @@
+$OpenBSD: patch-vendor_github_com_tsg_gopacket_pcap_pcap_poll_common_go,v 1.1 2018/05/18 07:18:18 jasper Exp $
+
+Index: vendor/github.com/tsg/gopacket/pcap/pcap_poll_common.go
+--- vendor/github.com/tsg/gopacket/pcap/pcap_poll_common.go.orig
++++ vendor/github.com/tsg/gopacket/pcap/pcap_poll_common.go
+@@ -3,7 +3,7 @@
+ package pcap
+ 
+ /*
+-#include <pcap/pcap.h>
++#include <pcap.h>
+ */
+ import "C"
+ 
