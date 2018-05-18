@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/05/13 13:18:25 sthen Exp $
-@extraunexec rm -rf /var/www/racktables/plugins/*
+@comment $OpenBSD: PLIST,v 1.13 2018/05/18 01:43:02 sthen Exp $
+@extraunexec rm -rf ${PREFIX}/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
 racktables/
@@ -202,4 +202,4 @@ racktables/wwwroot/pix/tango-view-refresh-16x16.png
 racktables/wwwroot/pix/tango-view-refresh-32x32.png
 racktables/wwwroot/pix/unchecked.png
 racktables/wwwroot/pix/virtualresources.png
-@extra /var/www/racktables/inc/secret.php
+@extra ${PREFIX}/racktables/inc/secret.php

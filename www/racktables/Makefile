@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2017/08/11 13:58:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/05/18 01:43:02 sthen Exp $
 
 COMMENT=	web-based rack/IP management
 
 DISTNAME=	RackTables-0.20.14
+REVISION=	0
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.racktables.org/
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
