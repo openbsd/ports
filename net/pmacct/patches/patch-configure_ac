@@ -1,6 +1,7 @@
-diff --git configure.ac configure.ac
-index c22d91e..aacb5b1 100644
---- configure.ac
+$OpenBSD: patch-configure_ac,v 1.1 2018/05/18 10:52:13 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
 +++ configure.ac
 @@ -26,12 +26,6 @@ AC_MSG_RESULT($host_os)
  AC_MSG_CHECKING(hardware)

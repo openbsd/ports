@@ -1,63 +1,70 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/24 21:22:58 job Exp $
+# $OpenBSD: Makefile,v 1.27 2018/05/18 10:52:13 sthen Exp $
 
-COMMENT=	IP accounting software
+COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
-DISTNAME=	pmacct-1.7.0
+DISTNAME=	pmacct-1.7.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
+MASTER_SITES=	http://www.pmacct.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pcap pthread sqlite3>=8 z
-
-MASTER_SITES=	${HOMEPAGE}
-
-NO_TEST=	Yes
-CONFIGURE_STYLE= autoconf no-autoheader
-AUTOCONF_VERSION= 2.69
-USE_GMAKE=	Yes
-CONFIGURE_ARGS= --enable-ipv6 \
-		--enable-sqlite3 \
-		--with-sqlite3-includes="${LOCALBASE}/include"
-.ifdef DEBUG
-MAKE_ARGS+=	DEBUG=1
-.endif
+WANTLIB += c jansson m maxminddb pcap pthread sodium sqlite3 z zmq
 
 FLAVORS=	mysql postgresql
 FLAVOR?=
 
-LIB_DEPENDS+=	databases/sqlite3
+LIB_DEPENDS+=	databases/sqlite3 \
+		devel/jansson \
+		net/libmaxminddb \
+		net/zeromq
+
+CONFIGURE_STYLE= autoconf no-autoheader
+AUTOCONF_VERSION= 2.69
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS= --enable-ipv6 \
+		--enable-geoipv2 \
+		--enable-jansson \
+		--enable-sqlite3 \
+		--enable-zmq
+USE_GMAKE=	Yes
+NO_TEST=	Yes
 
 .if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=	databases/postgresql
 WANTLIB +=	pq>=2
-CONFIGURE_ARGS+= --enable-pgsql \
-		--with-pgsql-includes="${LOCALBASE}/include/postgresql/"
+CONFIGURE_ARGS+= --enable-pgsql
 .else
 CONFIGURE_ARGS+= --disable-pgsql
 .endif
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	lib/mysql/mysqlclient ${COMPILER_LIBCXX}
+WANTLIB+=	crypto mysqlclient ssl
 CONFIGURE_ARGS+= --enable-mysql
 .else
 CONFIGURE_ARGS+= --disable-mysql
 .endif
 
+.ifdef DEBUG
+MAKE_ARGS+=	DEBUG=1
+.endif
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pmacct
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pmacct/sql
-	${INSTALL_DATA} ${WRKSRC}/{CONFIG-KEYS,FAQS,QUICKSTART,TOOLS,UPGRADE} \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pmacct \
+		${PREFIX}/share/examples/pmacct/{lg,sql}
+	cd ${WRKSRC}; ${INSTALL_DATA} [A-Z]!(akefile*) sql/README* \
 	    ${PREFIX}/share/doc/pmacct/
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/pmacct/
-	cp -r ${WRKSRC}/examples/* ${PREFIX}/share/examples/pmacct/
+	cp -r ${WRKSRC}/examples/!(lg) ${PREFIX}/share/examples/pmacct/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/pmacct/
 	chmod -R a+rX ${PREFIX}/share/examples/pmacct/
-	${INSTALL_DATA} ${WRKSRC}/sql/README* ${PREFIX}/share/doc/pmacct/
-	${INSTALL_DATA} `find ${WRKSRC}/sql -type f \! -name README*` \
+	cd ${WRKSRC}/examples; \
+	    ${INSTALL_PROGRAM} lg/pmbgp ${PREFIX}/share/examples/pmacct/lg/; \
+	    ${INSTALL_DATA} lg/pmbgp.py ${PREFIX}/share/examples/pmacct/lg/
+	${INSTALL_DATA} ${WRKSRC}/sql/!(README*) \
 	    ${PREFIX}/share/examples/pmacct/sql/
 
 .include <bsd.port.mk>

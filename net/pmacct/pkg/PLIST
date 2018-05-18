@@ -1,57 +1,69 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/01/24 21:22:58 job Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/05/18 10:52:13 sthen Exp $
 @pkgpath net/pmacct,threads
 @bin bin/pmacct
 @bin sbin/nfacctd
 @bin sbin/pmacctd
+@bin sbin/pmbgpd
+@bin sbin/pmbmpd
+@bin sbin/pmtelemetryd
 @bin sbin/sfacctd
 %%mysql%%
 %%postgresql%%
 share/doc/pmacct/
+share/doc/pmacct/AUTHORS
 share/doc/pmacct/CONFIG-KEYS
+share/doc/pmacct/COPYING
+share/doc/pmacct/ChangeLog
 share/doc/pmacct/FAQS
-share/doc/pmacct/INTERNALS
-share/doc/pmacct/IPFIX
-share/doc/pmacct/PLUGINS
+share/doc/pmacct/INSTALL
 share/doc/pmacct/QUICKSTART
 share/doc/pmacct/README.64bit
+share/doc/pmacct/README.GeoIP
 share/doc/pmacct/README.IPv6
 share/doc/pmacct/README.cos
-share/doc/pmacct/README.GeoIP
 share/doc/pmacct/README.custom_primitives
 share/doc/pmacct/README.etype
+share/doc/pmacct/README.export_proto
 share/doc/pmacct/README.iface
 share/doc/pmacct/README.label
 share/doc/pmacct/README.mask
 share/doc/pmacct/README.mpls
 share/doc/pmacct/README.nat
-share/doc/pmacct/README.pkt_len_distrib
 share/doc/pmacct/README.sampling_rate
 share/doc/pmacct/README.sqlite3
 share/doc/pmacct/README.tag2
 share/doc/pmacct/README.timestamp
-share/doc/pmacct/SIGNALS
+share/doc/pmacct/README.tunnel
 share/doc/pmacct/TOOLS
-share/doc/pmacct/TRIGGER_VARS
 share/doc/pmacct/UPGRADE
 share/examples/pmacct/
-share/examples/pmacct/agent_to_peer.map.example
-share/examples/pmacct/allow-list.example
+share/examples/pmacct/allow.lst.example
 share/examples/pmacct/amqp/
 share/examples/pmacct/amqp/amqp_receiver.py
+share/examples/pmacct/avro/
+share/examples/pmacct/avro/avro_file_decoder.py
+share/examples/pmacct/bgp_agent.map.example
 share/examples/pmacct/bgp_md5.lst.example
+share/examples/pmacct/bgp_xconnects.map.example
 share/examples/pmacct/flow_to_rd.map.example
-share/examples/pmacct/gnuplot-example.sh
-share/examples/pmacct/gnuplot.script.example
 share/examples/pmacct/kafka/
 share/examples/pmacct/kafka/kafka_consumer.py
+share/examples/pmacct/lg/
+@bin share/examples/pmacct/lg/pmbgp
+share/examples/pmacct/lg/pmbgp.py
 share/examples/pmacct/lpref.map.example
 share/examples/pmacct/med.map.example
-share/examples/pmacct/mrtg-example.sh
-share/examples/pmacct/mrtg.conf.example
+share/examples/pmacct/misc/
+share/examples/pmacct/misc/gnuplot-example.sh
+share/examples/pmacct/misc/gnuplot.script.example
+share/examples/pmacct/misc/mrtg-example.sh
+share/examples/pmacct/misc/mrtg.conf.example
+share/examples/pmacct/misc/rrdtool-example.sh
 share/examples/pmacct/networks.lst.example
 share/examples/pmacct/nfacctd-print.conf.example
 share/examples/pmacct/nfacctd-sql_v1.conf.example
 share/examples/pmacct/nfacctd-sql_v2.conf.example
+share/examples/pmacct/pcap_interfaces.map.example
 share/examples/pmacct/peers.map.example
 share/examples/pmacct/pmacctd-imt.conf.example
 share/examples/pmacct/pmacctd-multiple-plugins.conf.example
@@ -63,7 +75,6 @@ share/examples/pmacct/pretag.map.example
 share/examples/pmacct/primitives.lst.example
 share/examples/pmacct/probe_netflow.conf.example
 share/examples/pmacct/probe_sflow.conf.example
-share/examples/pmacct/rrdtool-example.sh
 share/examples/pmacct/sampling.map.example
 share/examples/pmacct/sql/
 share/examples/pmacct/sql/pmacct-create-table_bgp_v1.sqlite3
