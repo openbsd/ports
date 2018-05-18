@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/04 12:35:02 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/18 20:06:32 jasper Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
 GH_ACCOUNT =	mailpile
 GH_PROJECT =	Mailpile
 GH_TAGNAME =	1.0.0rc2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	mail
 
@@ -19,7 +19,7 @@ MODULES =	lang/python
 RUN_DEPENDS =	devel/py-fasteners \
 		security/py-pgpdump \
 		security/gnupg \
-		security/py-crypto \
+		security/py-cryptodome \
 		textproc/py-lxml \
 		www/py-jinja2
 

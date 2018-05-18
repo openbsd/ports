@@ -1,0 +1,18 @@
+$OpenBSD: patch-mailpile_crypto_aes_utils_py,v 1.1 2018/05/18 20:06:32 jasper Exp $
+
+py-crypto -> py-cryptodome
+
+Index: mailpile/crypto/aes_utils.py
+--- mailpile/crypto/aes_utils.py.orig
++++ mailpile/crypto/aes_utils.py
+@@ -51,8 +51,8 @@ def make_cryptography_utils():
+ 
+ 
+ def make_pycrypto_utils():
+-    from Crypto.Cipher import AES
+-    from Crypto.Util import Counter
++    from Cryptodome.Cipher import AES
++    from Cryptodome.Util import Counter
+ 
+     def _nonce_as_int(nonce):
+         i1, i2, i3, i4 = struct.unpack(">IIII", nonce)
