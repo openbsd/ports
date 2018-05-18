@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_LYUtils_c,v 1.4 2018/03/29 22:38:53 fcambus Exp $
+$OpenBSD: patch-src_LYUtils_c,v 1.5 2018/05/18 14:22:07 fcambus Exp $
 
 Use getenv("HOME") to determine the home directory instead of using getpwuid in
 order to avoid a "getpw" promise.  This is the only location not covered by the
@@ -8,7 +8,7 @@ no breakage is to be expected from this.
 Index: src/LYUtils.c
 --- src/LYUtils.c.orig
 +++ src/LYUtils.c
-@@ -5236,10 +5236,11 @@ const char *Home_Dir(void)
+@@ -5175,10 +5175,11 @@ const char *Home_Dir(void)
  	    /*
  	     * One could use getlogin() and getpwnam() here instead.
  	     */
