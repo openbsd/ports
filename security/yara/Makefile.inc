@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2017/11/11 13:14:39 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2018/05/18 09:02:29 rpointel Exp $
 
-VERSION =		3.7.0
+VERSION ?=		3.7.1
 
 CATEGORIES =		security
 
@@ -12,3 +12,4 @@ GH_TAGNAME =   v${VERSION}
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes
 
+MAINTAINER ?=	Remi Pointel <rpointel@openbsd.org>
