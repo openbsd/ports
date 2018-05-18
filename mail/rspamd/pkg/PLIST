@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/05/02 15:19:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/05/18 20:10:23 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -21,6 +21,8 @@ share/examples/rspamd/2tld.inc
 @sample ${SYSCONFDIR}/rspamd/2tld.inc
 share/examples/rspamd/actions.conf
 @sample ${SYSCONFDIR}/rspamd/actions.conf
+share/examples/rspamd/cgp.inc
+@sample ${SYSCONFDIR}/rspamd/cgp.inc
 share/examples/rspamd/common.conf
 @sample ${SYSCONFDIR}/rspamd/common.conf
 share/examples/rspamd/composites.conf
