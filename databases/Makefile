@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2018/05/18 20:20:31 landry Exp $
+# $OpenBSD: Makefile,v 1.360 2018/05/18 20:26:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -165,7 +165,6 @@
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon
      SUBDIR += py-cdb
-     SUBDIR += py-couchdb
      SUBDIR += py-flask-sqlalchemy
      SUBDIR += py-ldap
      SUBDIR += py-minidb
