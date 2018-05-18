@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2018/05/09 10:10:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2018/05/18 20:18:36 landry Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -40,7 +40,6 @@
      SUBDIR += lives
      SUBDIR += lsdvd
      SUBDIR += mediainfo
-     SUBDIR += mediatomb
      SUBDIR += ming
      SUBDIR += minidlna
      SUBDIR += mjpegtools
