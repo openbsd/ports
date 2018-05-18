@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.17 2018/03/13 19:29:35 landry Exp $
+$OpenBSD: README,v 1.18 2018/05/18 19:36:47 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,19 +28,28 @@ right click, choose New String. Set the name to
 "network.protocol-handler.app.mailto" and the value to the path to
 your mailer.
 
-Plugins
-=======
-Firefox looks for plugins in ~/.mozilla/plugins and
-${TRUEPREFIX}/lib/mozilla/plugins.
-If the environment variable MOZ_PLUGIN_PATH is specified, this
-location will be overridden.
-
 Debugging
 =========
 If you encounter crashes, you might want to build the debug FLAVOR of
-this package, and run firefox inside gdb, so that you can gather
+this package, and run firefox inside egdb, so that you can gather
 debugging logs and traces (for all threads!).
-Bug reports without that information will be ignored.
+If this is a pledge violation, you should figure out which codepath
+in which process leads to calling a forbidden syscall, and which pledge
+is missing from the two default sets configured in
+security.sandbox.pledge.main and security.sandbox.pledge.content
+about:config keys.
+Bug reports without enough information will be ignored.
+
+D-BUS
+=====
+For proper integration with various desktop-oriented components, firefox
+needs a session bus instance running.
+If you're not running a desktop environment that takes care of it,
+refer to /usr/local/share/doc/pkg-readmes/dbus-* to configure your
+session startup script to start one.
+Without a session bus running, it is likely that GLIB will try to spawn
+one when needed, leading to a 'proc' pledge violation in the content
+process.
 
 HTML5 audio/video support
 =========================
