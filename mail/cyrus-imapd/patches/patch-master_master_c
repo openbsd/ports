@@ -1,0 +1,23 @@
+$OpenBSD: patch-master_master_c,v 1.1 2018/05/18 11:16:43 ajacoutot Exp $
+
+warning: format specifies type 'long' but the argument has type 'rlim_t' (aka 'unsigned long long') [-Wformat]
+
+Index: master/master.c
+--- master/master.c.orig
++++ master/master.c
+@@ -1945,13 +1945,13 @@ static void limit_fds(rlim_t x)
+     }
+ 
+     if (verbose > 1) {
+-        syslog(LOG_DEBUG, "set maximum file descriptors to %ld/%ld",
++        syslog(LOG_DEBUG, "set maximum file descriptors to %llu/%llu",
+                rl.rlim_cur, rl.rlim_max);
+     }
+ 
+     if (setrlimit(RLIMIT_NUMFDS, &rl) < 0) {
+         syslog(LOG_ERR,
+-               "setrlimit: Unable to set file descriptors limit to %ld: %m",
++               "setrlimit: Unable to set file descriptors limit to %llu: %m",
+                rl.rlim_cur);
+     }
+ }

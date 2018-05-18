@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/04/30 12:46:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/05/18 11:16:43 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -34,7 +34,7 @@ cyrus/libexec/pop3proxyd
 cyrus/libexec/proxyd
 @bin cyrus/libexec/smmapd
 @bin cyrus/libexec/timsieved
-cyrus/man/
+@mandir cyrus/man/
 cyrus/man/man1/
 @man cyrus/man/man1/httptest.1
 @man cyrus/man/man1/imtest.1
@@ -422,6 +422,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.5.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.6.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.7.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
