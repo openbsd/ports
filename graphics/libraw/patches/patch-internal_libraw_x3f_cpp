@@ -1,11 +1,11 @@
-$OpenBSD: patch-internal_libraw_x3f_cpp,v 1.5 2018/05/14 19:32:20 rsadowski Exp $
+$OpenBSD: patch-internal_libraw_x3f_cpp,v 1.6 2018/05/18 06:04:33 rsadowski Exp $
 
 fix non-constant-expression cannot be narrowed from type 'int' to 'int16_t'
 (aka 'short') with clang6
 Index: internal/libraw_x3f.cpp
 --- internal/libraw_x3f.cpp.orig
 +++ internal/libraw_x3f.cpp
-@@ -1389,7 +1389,9 @@ static void huffman_decode_row(x3f_info_t *I,
+@@ -1398,7 +1398,9 @@ static void huffman_decode_row(x3f_info_t *I,
    x3f_image_data_t *ID = &DEH->data_subsection.image_data;
    x3f_huffman_t *HUF = ID->huffman;
  
