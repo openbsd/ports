@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/10 14:32:18 bket Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/18 23:34:41 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.9
+MODPY_EGG_VERSION=	2.10
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
@@ -32,6 +32,7 @@ TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR} \
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/
 	mv ${PREFIX}/share/urlwatch/examples ${PREFIX}/share/examples/urlwatch
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/urlwatch/config.py.orig
 	rmdir ${PREFIX}/share/{man,urlwatch}
 
 do-test:
