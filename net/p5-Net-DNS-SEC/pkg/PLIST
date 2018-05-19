@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/04/01 23:23:07 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/05/19 10:24:38 bluhm Exp $
 @conflict p5-Net-DNS-<1.01
+${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS/SEC/
@@ -12,6 +13,7 @@ ${P5ARCH}/Net/DNS/SEC/Keyset.pm
 ${P5ARCH}/Net/DNS/SEC/Private.pm
 ${P5ARCH}/Net/DNS/SEC/RSA.pm
 ${P5ARCH}/Net/DNS/SEC/libcrypto.pod
+${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DNS/
 ${P5ARCH}/auto/Net/DNS/SEC/
