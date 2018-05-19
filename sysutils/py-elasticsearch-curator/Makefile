@@ -1,30 +1,34 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/01 12:34:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2018/05/19 22:32:59 pvk Exp $
 
 COMMENT=	manage Elasticsearch indices
 
-MODPY_EGG_VERSION=5.3.0
+MODPY_EGG_VERSION=5.5.2
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
-PKGNAME=	py-elasticsearch-curator-${MODPY_EGG_VERSION}
+PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_EGG_VERSION}
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/elastic/curator
 
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
+MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =	Yes
-
 MODULES=	lang/python
-RUN_DEPENDS=	devel/py-certifi>=2017.4.17 \
-		devel/py-click>=6.7 \
-		devel/py-voluptuous \
-		textproc/py-elasticsearch>=5.4,<6 \
-		textproc/py-yaml
-
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS= Yes
+
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS=	devel/py-certifi,python3>=2018.4.16 \
+		devel/py-click,python3>=6.7 \
+		devel/py-six,python3>=1.11.0 \
+		devel/py-voluptuous,python3>=0.9.3 \
+		textproc/py-elasticsearch,python3>=5.5.2,<7.0.0 \
+		textproc/py-yaml,python3>=3.10
+
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # Requires unported nosexcover
 NO_TEST=	Yes
