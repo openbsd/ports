@@ -1,4 +1,6 @@
-$OpenBSD: patch-plugins_sqlite_io_SQLiteCommon_hpp,v 1.1 2018/04/11 07:47:09 landry Exp $
+$OpenBSD: patch-plugins_sqlite_io_SQLiteCommon_hpp,v 1.2 2018/05/19 15:01:48 landry Exp $
+
+https://github.com/PDAL/PDAL/pull/2027
 
 Index: plugins/sqlite/io/SQLiteCommon.hpp
 --- plugins/sqlite/io/SQLiteCommon.hpp.orig
