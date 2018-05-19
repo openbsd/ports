@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/04/14 22:35:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/05/19 21:51:46 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt[,compressed][,idn][,sidebar]${FLAVOR_COMMA}
@@ -110,6 +110,8 @@ share/locale/id/LC_MESSAGES/mutt.mo
 share/locale/it/LC_MESSAGES/mutt.mo
 share/locale/ja/LC_MESSAGES/mutt.mo
 share/locale/ko/LC_MESSAGES/mutt.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/mutt.mo
 share/locale/nl/LC_MESSAGES/mutt.mo
 share/locale/pl/LC_MESSAGES/mutt.mo

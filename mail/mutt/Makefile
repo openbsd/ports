@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.106 2018/04/14 22:35:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2018/05/19 21:51:46 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.9.5
+DISTNAME=	mutt-1.10.0
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto curses iconv idn intl qdbm ssl z
+WANTLIB+=	c crypto curses iconv idn2 intl qdbm ssl z
 
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		https://ftp.osuosl.org/pub/mutt/ \
@@ -23,7 +23,7 @@ MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 
 LIB_DEPENDS=	databases/qdbm \
 		devel/gettext \
-		devel/libidn
+		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+= --enable-compressed \
 		--disable-fcntl \
 		--enable-flock \
 		--enable-hcache \
-		--with-idn \
+		--with-idn2 \
 		--enable-imap \
 		--enable-pop \
 		--enable-sidebar \
