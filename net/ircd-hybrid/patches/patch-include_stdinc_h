@@ -1,7 +1,8 @@
-$OpenBSD: patch-include_stdinc_h,v 1.6 2016/03/07 07:13:20 ajacoutot Exp $
---- include/stdinc.h.orig	Wed Feb 24 08:06:07 2016
-+++ include/stdinc.h	Sun Mar  6 21:07:09 2016
-@@ -53,6 +53,8 @@
+$OpenBSD: patch-include_stdinc_h,v 1.7 2018/05/19 06:28:10 ajacoutot Exp $
+Index: include/stdinc.h
+--- include/stdinc.h.orig
++++ include/stdinc.h
+@@ -49,6 +49,8 @@
  #include <stdarg.h>
  #include <signal.h>
  #include <ctype.h>
