@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/05/19 21:34:50 sthen Exp $
 
 COMMENT =		tool to search text in PDF files
 
-DISTNAME =		pdfgrep-2.0.1
-REVISION =		1
+DISTNAME =		pdfgrep-2.1.0
 
 CATEGORIES =		textproc
 

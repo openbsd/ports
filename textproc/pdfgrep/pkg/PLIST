@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/24 09:57:04 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/19 21:34:50 sthen Exp $
 @bin bin/pdfgrep
 @man man/man1/pdfgrep.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/pdfgrep
 share/zsh/
 share/zsh/site-functions/
