@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/04/10 11:37:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/05/19 06:21:25 ajacoutot Exp $
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/basecamerabinsrc/
@@ -150,40 +150,40 @@ lib/gstreamer-${API}/libgsty4mdec.so
 lib/gstreamer-${API}/libgstyadif.so
 lib/libgstadaptivedemux-${API}.a
 lib/libgstadaptivedemux-${API}.la
-@lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-1.0_VERSION}
+@lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-${API}_VERSION}
 lib/libgstbadaudio-${API}.a
 lib/libgstbadaudio-${API}.la
-@lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-1.0_VERSION}
+@lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-${API}_VERSION}
 lib/libgstbadvideo-${API}.a
 lib/libgstbadvideo-${API}.la
-@lib lib/libgstbadvideo-${API}.so.${LIBgstbadvideo-1.0_VERSION}
+@lib lib/libgstbadvideo-${API}.so.${LIBgstbadvideo-${API}_VERSION}
 lib/libgstbasecamerabinsrc-${API}.a
 lib/libgstbasecamerabinsrc-${API}.la
-@lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-1.0_VERSION}
+@lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-${API}_VERSION}
 lib/libgstcodecparsers-${API}.a
 lib/libgstcodecparsers-${API}.la
-@lib lib/libgstcodecparsers-${API}.so.${LIBgstcodecparsers-1.0_VERSION}
+@lib lib/libgstcodecparsers-${API}.so.${LIBgstcodecparsers-${API}_VERSION}
 lib/libgstinsertbin-${API}.a
 lib/libgstinsertbin-${API}.la
-@lib lib/libgstinsertbin-${API}.so.${LIBgstinsertbin-1.0_VERSION}
+@lib lib/libgstinsertbin-${API}.so.${LIBgstinsertbin-${API}_VERSION}
 lib/libgstisoff-${API}.a
 lib/libgstisoff-${API}.la
-@lib lib/libgstisoff-${API}.so.${LIBgstisoff-1.0_VERSION}
+@lib lib/libgstisoff-${API}.so.${LIBgstisoff-${API}_VERSION}
 lib/libgstmpegts-${API}.a
 lib/libgstmpegts-${API}.la
-@lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-1.0_VERSION}
+@lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-${API}_VERSION}
 lib/libgstphotography-${API}.a
 lib/libgstphotography-${API}.la
-@lib lib/libgstphotography-${API}.so.${LIBgstphotography-1.0_VERSION}
+@lib lib/libgstphotography-${API}.so.${LIBgstphotography-${API}_VERSION}
 lib/libgstplayer-${API}.a
 lib/libgstplayer-${API}.la
-@lib lib/libgstplayer-${API}.so.${LIBgstplayer-1.0_VERSION}
+@lib lib/libgstplayer-${API}.so.${LIBgstplayer-${API}_VERSION}
 lib/libgsturidownloader-${API}.a
 lib/libgsturidownloader-${API}.la
-@lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-1.0_VERSION}
+@lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
 lib/libgstwebrtc-${API}.a
 lib/libgstwebrtc-${API}.la
-@lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-1.0_VERSION}
+@lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
 lib/pkgconfig/gstreamer-bad-video-${API}.pc
 lib/pkgconfig/gstreamer-codecparsers-${API}.pc
@@ -479,7 +479,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gme.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gmedec.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gsm.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-gstsiren.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-hls.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-id3tag.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-inter.html
@@ -518,7 +517,6 @@ share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-pcapparse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-pnm.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-proxy.html
-share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rawparse.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-removesilence.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-resindvd.html
 share/gtk-doc/html/gst-plugins-bad-plugins-${API}/gst-plugins-bad-plugins-plugin-rfbsrc.html

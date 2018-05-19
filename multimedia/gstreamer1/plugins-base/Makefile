@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.63 2018/04/12 11:42:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2018/05/19 06:21:25 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS +=  gsttag-1.0           4.0      # 1400.0
-SHARED_LIBS +=  gstaudio-1.0         4.0      # 1400.0
-SHARED_LIBS +=  gstfft-1.0           4.0      # 1400.0
-SHARED_LIBS +=  gstvideo-1.0         4.0      # 1400.0
-SHARED_LIBS +=  gstapp-1.0           4.0      # 1400.0
-SHARED_LIBS +=  gstrtp-1.0           4.0      # 1400.0
-SHARED_LIBS +=  gstsdp-1.0           4.0      # 1400.0
-SHARED_LIBS +=  gstrtsp-1.0          4.0      # 1400.0
-SHARED_LIBS +=  gstpbutils-1.0       4.0      # 1400.0
-SHARED_LIBS +=  gstriff-1.0          4.0      # 1400.0
-SHARED_LIBS +=  gstallocators-1.0    3.0      # 1400.0
-SHARED_LIBS +=  gstgl-1.0            3.0      # 1400.0
+SHARED_LIBS +=  gsttag-1.0           4.0      # 1401.0
+SHARED_LIBS +=  gstaudio-1.0         4.0      # 1401.0
+SHARED_LIBS +=  gstfft-1.0           4.0      # 1401.0
+SHARED_LIBS +=  gstvideo-1.0         4.0      # 1401.0
+SHARED_LIBS +=  gstapp-1.0           4.0      # 1401.0
+SHARED_LIBS +=  gstrtp-1.0           4.0      # 1401.0
+SHARED_LIBS +=  gstsdp-1.0           4.0      # 1401.0
+SHARED_LIBS +=  gstrtsp-1.0          4.0      # 1401.0
+SHARED_LIBS +=  gstpbutils-1.0       4.0      # 1401.0
+SHARED_LIBS +=  gstriff-1.0          4.0      # 1401.0
+SHARED_LIBS +=  gstallocators-1.0    3.0      # 1401.0
+SHARED_LIBS +=  gstgl-1.0            3.0      # 1401.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
@@ -29,7 +29,7 @@ WANTLIB += harfbuzz iconv intl jpeg m ogg opus orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sndio theoradec theoraenc vorbis vorbisenc vorbisidec
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += z
+WANTLIB += z fribidi
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gobject-introspection

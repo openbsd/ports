@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/04/10 11:37:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/05/19 06:21:25 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -242,40 +242,40 @@ lib/gstreamer-${API}/libgstximagesink.so
 lib/gstreamer-${API}/libgstxvimagesink.so
 lib/libgstallocators-${API}.a
 lib/libgstallocators-${API}.la
-@lib lib/libgstallocators-${API}.so.${LIBgstallocators-1.0_VERSION}
+@lib lib/libgstallocators-${API}.so.${LIBgstallocators-${API}_VERSION}
 lib/libgstapp-${API}.a
 lib/libgstapp-${API}.la
-@lib lib/libgstapp-${API}.so.${LIBgstapp-1.0_VERSION}
+@lib lib/libgstapp-${API}.so.${LIBgstapp-${API}_VERSION}
 lib/libgstaudio-${API}.a
 lib/libgstaudio-${API}.la
-@lib lib/libgstaudio-${API}.so.${LIBgstaudio-1.0_VERSION}
+@lib lib/libgstaudio-${API}.so.${LIBgstaudio-${API}_VERSION}
 lib/libgstfft-${API}.a
 lib/libgstfft-${API}.la
-@lib lib/libgstfft-${API}.so.${LIBgstfft-1.0_VERSION}
+@lib lib/libgstfft-${API}.so.${LIBgstfft-${API}_VERSION}
 lib/libgstgl-${API}.a
 lib/libgstgl-${API}.la
-@lib lib/libgstgl-${API}.so.${LIBgstgl-1.0_VERSION}
+@lib lib/libgstgl-${API}.so.${LIBgstgl-${API}_VERSION}
 lib/libgstpbutils-${API}.a
 lib/libgstpbutils-${API}.la
-@lib lib/libgstpbutils-${API}.so.${LIBgstpbutils-1.0_VERSION}
+@lib lib/libgstpbutils-${API}.so.${LIBgstpbutils-${API}_VERSION}
 lib/libgstriff-${API}.a
 lib/libgstriff-${API}.la
-@lib lib/libgstriff-${API}.so.${LIBgstriff-1.0_VERSION}
+@lib lib/libgstriff-${API}.so.${LIBgstriff-${API}_VERSION}
 lib/libgstrtp-${API}.a
 lib/libgstrtp-${API}.la
-@lib lib/libgstrtp-${API}.so.${LIBgstrtp-1.0_VERSION}
+@lib lib/libgstrtp-${API}.so.${LIBgstrtp-${API}_VERSION}
 lib/libgstrtsp-${API}.a
 lib/libgstrtsp-${API}.la
-@lib lib/libgstrtsp-${API}.so.${LIBgstrtsp-1.0_VERSION}
+@lib lib/libgstrtsp-${API}.so.${LIBgstrtsp-${API}_VERSION}
 lib/libgstsdp-${API}.a
 lib/libgstsdp-${API}.la
-@lib lib/libgstsdp-${API}.so.${LIBgstsdp-1.0_VERSION}
+@lib lib/libgstsdp-${API}.so.${LIBgstsdp-${API}_VERSION}
 lib/libgsttag-${API}.a
 lib/libgsttag-${API}.la
-@lib lib/libgsttag-${API}.so.${LIBgsttag-1.0_VERSION}
+@lib lib/libgsttag-${API}.so.${LIBgsttag-${API}_VERSION}
 lib/libgstvideo-${API}.a
 lib/libgstvideo-${API}.la
-@lib lib/libgstvideo-${API}.so.${LIBgstvideo-1.0_VERSION}
+@lib lib/libgstvideo-${API}.so.${LIBgstvideo-${API}_VERSION}
 lib/pkgconfig/gstreamer-allocators-${API}.pc
 lib/pkgconfig/gstreamer-app-${API}.pc
 lib/pkgconfig/gstreamer-audio-${API}.pc

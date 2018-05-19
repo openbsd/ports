@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/04/10 11:37:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/05/19 06:21:25 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-stats-${API}
@@ -140,19 +140,19 @@ lib/gstreamer-${API}/libgstcoreelements.so
 lib/gstreamer-${API}/libgstcoretracers.so
 lib/libgstbase-${API}.a
 lib/libgstbase-${API}.la
-@lib lib/libgstbase-${API}.so.${LIBgstbase-1.0_VERSION}
+@lib lib/libgstbase-${API}.so.${LIBgstbase-${API}_VERSION}
 lib/libgstcheck-${API}.a
 lib/libgstcheck-${API}.la
-@lib lib/libgstcheck-${API}.so.${LIBgstcheck-1.0_VERSION}
+@lib lib/libgstcheck-${API}.so.${LIBgstcheck-${API}_VERSION}
 lib/libgstcontroller-${API}.a
 lib/libgstcontroller-${API}.la
-@lib lib/libgstcontroller-${API}.so.${LIBgstcontroller-1.0_VERSION}
+@lib lib/libgstcontroller-${API}.so.${LIBgstcontroller-${API}_VERSION}
 lib/libgstnet-${API}.a
 lib/libgstnet-${API}.la
-@lib lib/libgstnet-${API}.so.${LIBgstnet-1.0_VERSION}
+@lib lib/libgstnet-${API}.so.${LIBgstnet-${API}_VERSION}
 lib/libgstreamer-${API}.a
 lib/libgstreamer-${API}.la
-@lib lib/libgstreamer-${API}.so.${LIBgstreamer-1.0_VERSION}
+@lib lib/libgstreamer-${API}.so.${LIBgstreamer-${API}_VERSION}
 lib/pkgconfig/gstreamer-${API}.pc
 lib/pkgconfig/gstreamer-base-${API}.pc
 lib/pkgconfig/gstreamer-check-${API}.pc

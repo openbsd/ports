@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/04/12 11:42:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2018/05/19 06:21:25 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -20,7 +20,7 @@ WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl execinfo
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += EGL FLAC GL GLESv2 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm atk-1.0
+WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB-main += atk-bridge-2.0 atspi bz2 cairo cairo-gobject dbus-1
 WANTLIB-main += drm epoxy expat fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glapi graphite2 gstallocators-1.0 gstcontroller-1.0
@@ -29,7 +29,7 @@ WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gthread-2.0 gtk-3 harfbuzz jpeg
 WANTLIB-main += lzma mpg123 ogg ossaudio pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png shout soup-2.4 speex sqlite3 tag theora
 WANTLIB-main += twolame v4l2 v4lconvert vorbis vpx wavpack xcb-dri2
-WANTLIB-main += xcb-glx xcb-render xcb-shm xcb-xfixes xml2
+WANTLIB-main += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 fribidi
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
