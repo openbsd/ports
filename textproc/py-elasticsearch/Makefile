@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/29 17:46:47 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/19 22:31:22 pvk Exp $
 
 COMMENT=	Python client for Elasticsearch
 
-MODPY_EGG_VERSION=5.4.0
+MODPY_EGG_VERSION=6.2.0
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.elastic.co/guide/en/elasticsearch/client/python-api
 
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
+MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,9 +21,12 @@ DIST_SUBDIR=	py-elasticsearch
 MODPY_PI =	Yes
 
 MODULES=	lang/python
-RUN_DEPENDS=	www/py-urllib3
+RUN_DEPENDS=	www/py-urllib3${MODPY_FLAVOR}>=1.21.1,<1.23
 
 MODPY_SETUPTOOLS= Yes
+
+FLAVORS=	python3
+FLAVOR?=
 
 # Requires unported nosexcover
 NO_TEST =	Yes
