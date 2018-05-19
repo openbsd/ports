@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2018/04/01 07:05:48 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2018/05/19 07:13:07 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.8.7.3
+XFCE_VERSION=	0.8.7.4
 XFCE_GOODIE=	xfce4-terminal
 
 # GPLv2
@@ -16,7 +16,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui \
 
 WANTLIB=	X11 X11-xcb atk-1.0 c gdk_pixbuf-2.0 gio-2.0 \
 		ICE SM Xcomposite Xcursor Xdamage Xext Xfixes \
-		Xi Xinerama Xrandr Xrender Xtst cairo expat fontconfig freetype \
+		Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype fribidi \
 		gmodule-2.0 gthread-2.0 m pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread \
 		xcb xcb-render xcb-shm z xcb-util pcre2-8 iconv intl \
