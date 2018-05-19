@@ -1,11 +1,12 @@
-$OpenBSD: patch-certifi_core_py,v 1.3 2016/02/07 15:32:28 shadchin Exp $
---- certifi/core.py.orig	Sun Sep  6 08:24:20 2015
-+++ certifi/core.py	Sun Jan 24 23:02:08 2016
+$OpenBSD: patch-certifi_core_py,v 1.4 2018/05/19 22:26:22 pvk Exp $
+Index: certifi/core.py
+--- certifi/core.py.orig
++++ certifi/core.py
 @@ -19,9 +19,7 @@ class DeprecatedBundleWarning(DeprecationWarning):
  
  
  def where():
--    f = os.path.split(__file__)[0]
+-    f = os.path.dirname(__file__)
 -
 -    return os.path.join(f, 'cacert.pem')
 +    return '/etc/ssl/cert.pem'
