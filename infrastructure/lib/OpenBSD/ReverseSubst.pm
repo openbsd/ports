@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.13 2018/05/20 07:57:16 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.14 2018/05/20 15:58:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -39,6 +39,29 @@ sub unsubst_suffix
 	return $string;
 }
 
+sub unsubst_version
+{
+	my ($self, $string, $v, $k2) = @_;
+	# we have to loop over the string because negative assertions are
+	# hard for non constant width strings
+	my $done = '';
+	# so remove each $v
+	while ($string =~ s/(.*?)\Q$v\E//) {
+		$done .= $1;
+		# if it's in the middle of a larger version string, nope
+		if ($done =~ m/\d$/ || $string =~ m/^\d/ ||
+		# also do dewey numbers if $v is also one
+		    ($v =~ m/\./ && 
+		     ($done =~ m/\d\.$/ || $string =~ m/^\.\d/))) {
+			$done .= $v;
+		} else {
+		# otherwise it's okay
+			$done .= "\${$k2}";
+		}
+	}
+	return $done.$string;
+}
+
 package OpenBSD::PackingElement::Action;
 sub unsubst_prefix
 {
@@ -62,6 +85,17 @@ sub unsubst_suffix
 	my ($self, $string, $v, $k2) = @_;
 	$string =~ s/\Q$v\E(\.[^\.]+(\.gz|\.Z)?)$/\$\{$k2\}$1/;
 	return $self->SUPER::unsubst_suffix($string, $v, $k2);
+}
+
+# allow version unsubst not affecting the manpage part
+sub unsubst_version
+{
+	my ($self, $string, $v, $k2) = @_;
+	if ($string =~ m/(.*)(\.[^\.]+(\.gz|\.Z)?)$/) {
+		return $self->SUPER::unsubst_version($1, $v, $k2).$2;
+	} else {
+		return $self->SUPER::unsubst_version($string, $v, $k2);
+	}
 }
 
 package Forwarder;
@@ -234,29 +268,6 @@ sub special_case
 	return 0;
 }
 
-sub unsubst_version
-{
-	my ($subst, $string, $v, $k2) = @_;
-	# we have to loop over the string because negative assertions are
-	# hard for non constant width strings
-	my $done = '';
-	# so remove each $v
-	while ($string =~ s/(.*?)\Q$v\E//) {
-		$done .= $1;
-		# if it's in the middle of a larger version string, nope
-		if ($done =~ m/\d$/ || $string =~ m/^\d/ ||
-		# also do dewey numbers if $v is also one
-		    ($v =~ m/\./ && 
-		     ($done =~ m/\d\.$/ || $string =~ m/^\.\d/))) {
-			$done .= $v;
-		} else {
-		# otherwise it's okay
-			$done .= "\${$k2}";
-		}
-	}
-	return $done.$string;
-}
-
 sub unsubst_non_empty_var
 {
 	my ($subst, $string, $k, $unsubst, $context) = @_;
@@ -288,7 +299,7 @@ sub unsubst_non_empty_var
 		$string = $context->unsubst_suffix($string, $v, $k2);
 	} else {
 		if ($subst->{isversion}{$k2}) {
-			$string = $subst->unsubst_version($string, $v, $k2);
+			$string = $context->unsubst_version($string, $v, $k2);
 		} else {
 			$string =~ s/\Q$v\E/\$\{$k2\}/g;
 		}
