@@ -1,0 +1,12 @@
+Tarlz is a small and simple implementation of the tar archiver. By default
+tarlz creates, lists and extracts archives in the ustar format compressed with
+lzip on a per file basis. Tarlz can append files to the end of such compressed
+archives.
+
+Each tar member is compressed in its own lzip member, as well as the
+end-of-file blocks. This same method works for any tar format (gnu, ustar,
+posix) and is fully backward compatible with standard tar tools, which treat
+the resulting multimember tar.lz archive like any other tar.lz archive.
+
+Tarlz can create tar archives with four levels of compression granularity; per
+file, per directory, appendable solid, and solid.
