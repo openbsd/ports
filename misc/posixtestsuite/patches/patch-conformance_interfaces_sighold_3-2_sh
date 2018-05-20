@@ -1,0 +1,13 @@
+$OpenBSD: patch-conformance_interfaces_sighold_3-2_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Use installed package to execute buildonly test.
+
+Index: conformance/interfaces/sighold/3-2.sh
+--- conformance/interfaces/sighold/3-2.sh.orig
++++ conformance/interfaces/sighold/3-2.sh
+@@ -10,4 +10,4 @@
+ #   Test various methods of passing invalid signals to sighold().
+ # 
+ 
+-conformance/interfaces/sighold/3-core-buildonly.test 2
++${TRUEPREFIX}/libexec/posixtestsuite/conformance/interfaces/sighold/3-core-buildonly.test 2

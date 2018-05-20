@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#	$OpenBSD: posixtestsuite-html.pl,v 1.1 2018/05/08 22:14:19 bluhm Exp $
+#	$OpenBSD: posixtestsuite-html.pl,v 1.2 2018/05/20 01:35:54 bluhm Exp $
 # convert results of open POSIX test suite to a html table
 
 # Copyright (c) 2016-2018 Alexander Bluhm <bluhm@genua.de>
@@ -28,18 +28,21 @@ my $now = strftime("%FT%TZ", gmtime);
 my %opts;
 getopt('o:', \%opts);
 my @os;
-@os = split(/\s,/, $opts{o}) if $opts{o};
+@os = split(/[,\s]/, $opts{o}) if $opts{o};
 
 my %source;
 my %out;
 foreach my $os (@os, "") {
     my $dir = "";
     $dir = "out/$os/" if $os;
+    open(my $un, '<', "${dir}uname.out")
+	or die "Open '${dir}uname.out' for reading failed: $!";
     open(my $bl, '<', "${dir}build.log")
 	or die "Open '${dir}build.log' for reading failed: $!";
     open(my $rl, '<', "${dir}run.log")
 	or die "Open '${dir}run.log' for reading failed: $!";
 
+    my $uname = <$un>;
     my %test;
     while (<$bl>) {
 	my ($name, $action, $result) = split(/[ :\n]+/);
@@ -50,8 +53,9 @@ foreach my $os (@os, "") {
 	    -f $source or die "Source file '$source' missing";
 	    $source{$name} = $source;
 	}
-	my $build = "${dir}$name.build";
-	-f "$build" or die "Build log '$build' missing";
+	my $build = "${dir}$name.build.log";
+	-f $build or $build = "${dir}$name.build";  # backwards compatibility
+	-f $build or die "Build log '$build' missing";
 	$test{$name}{log} = $build;
     }
     while (<$rl>) {
@@ -63,12 +67,16 @@ foreach my $os (@os, "") {
 	    -f $source or die "Source file '$source' missing";
 	    $source{$name} = $source;
 	}
-	my $run = "${dir}$name.run";
+	my $run = "${dir}$name.run.log";
+	-f $run or $run = "${dir}$name.run";  # backwards compatibility
 	-f $run or die "Run log '$run' missing";
 	$test{$name}{log} = $run;
     }
 
-    $out{$os} = \%test if $os || !%out;
+    if ($os || !%out) {
+	    $out{$os}{uname} = $uname;
+	    $out{$os}{test} = \%test;
+    }
 }
 
 print <<"HEADER";
@@ -109,18 +117,26 @@ print <<"HEADER";
 HEADER
 
 print "<table>\n";
-foreach my $name (sort keys %source) {
+print "  <tr>\n    <th></th>\n";
+foreach my $os (reverse sort keys %out) {
+    my $date = $os;
+    my $uname = $out{$os}{uname};
+    print "    <th>$date<br>$uname</th>\n";
+}
+print "  </tr>\n";
+foreach my $name (reverse sort keys %source) {
     my $source = $source{$name};
     print "  <tr>\n    <th><a href=\"$source\">$name</a></th>\n";
     foreach my $os (sort keys %out) {
-	my $status = $out{$os}{$name}{execution};
+	my $test = $out{$os}{test}{$name};
+	my $status = $test->{execution};
 	if (!$status) {
-	    $status = $out{$os}{$name}{link};
+	    $status = $test->{link};
 	    $status = 'BUILDONLY' if $status && $status eq 'PASS';
 	}
-	$status ||= $out{$os}{$name}{build};
+	$status ||= $test->{build};
 	$status ||= "";
-	my $log = $out{$os}{$name}{log};
+	my $log = $test->{log};
 	my $class = " class=\"result $status\"";
 	my $href = $log ? "<a href=\"$log\">" : "";
 	my $enda = $href ? "</a>" : "";

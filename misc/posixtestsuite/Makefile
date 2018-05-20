@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/08 22:14:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/20 01:35:54 bluhm Exp $
 
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	misc
 
@@ -30,12 +30,47 @@ TEST_TARGET =		run-tests
 LIBEXEC_DIR =		${PREFIX}/libexec/posixtestsuite
 LIBDATA_DIR =		${PREFIX}/libdata/posixtestsuite
 
+BUILDONLY_USER =	conformance/interfaces/sigaddset/1-1.sh \
+			conformance/interfaces/sigaddset/1-2.sh \
+			conformance/interfaces/sigaddset/4-1.sh \
+			conformance/interfaces/sigaddset/4-2.sh \
+			conformance/interfaces/sigaddset/4-3.sh \
+			conformance/interfaces/sigaddset/4-4.sh \
+			conformance/interfaces/sigdelset/1-1.sh \
+			conformance/interfaces/sigdelset/1-2.sh \
+			conformance/interfaces/sigdelset/4-1.sh \
+			conformance/interfaces/sigdelset/4-2.sh \
+			conformance/interfaces/sigdelset/4-3.sh \
+			conformance/interfaces/sigdelset/4-4.sh \
+			conformance/interfaces/sighold/3-1.sh \
+			conformance/interfaces/sighold/3-2.sh \
+			conformance/interfaces/sighold/3-3.sh \
+			conformance/interfaces/sighold/3-4.sh \
+			conformance/interfaces/sigignore/5-1.sh \
+			conformance/interfaces/sigignore/5-2.sh \
+			conformance/interfaces/sigignore/5-3.sh \
+			conformance/interfaces/sigignore/5-4.sh \
+			conformance/interfaces/sigismember/5-1.sh \
+			conformance/interfaces/sigismember/5-2.sh \
+			conformance/interfaces/sigismember/5-3.sh \
+			conformance/interfaces/sigismember/5-4.sh \
+			conformance/interfaces/sigprocmask/17-1.sh \
+			conformance/interfaces/sigprocmask/17-2.sh \
+			conformance/interfaces/sigprocmask/17-3.sh \
+			conformance/interfaces/sigprocmask/17-4.sh \
+			conformance/interfaces/sigrelse/3-1.sh \
+			conformance/interfaces/sigrelse/3-2.sh \
+			conformance/interfaces/sigrelse/3-3.sh \
+			conformance/interfaces/sigrelse/3-4.sh \
+			conformance/interfaces/sigaltstack/9-1.c
+
 pre-build:
 	cd ${WRKBUILD} && ./locate-test --buildable . >build.list.tmp
 	cd ${WRKBUILD} && ./locate-test --execs . >run.list.tmp
 	cd ${WRKBUILD} && sed 's,^\./,,' build.list.tmp | sort >build.list
 	cd ${WRKBUILD} && sed 's,^\./,,' run.list.tmp | sort >run.list
 	cd ${WRKBUILD} && rm -f *.tmp
+	cd ${WRKBUILD} && ${SUBST_CMD} ${BUILDONLY_USER}
 
 post-build:
 	cd ${WRKBUILD} &&\
@@ -55,7 +90,7 @@ post-build:
 		result="$$3";\
 		case "$$action" in\
 		build)\
-		    file="$$name".build;\
+		    file="$$name".build.log;\
 		    true >"$$file";\
 		    case "$$result" in\
 		    PASS)\
@@ -119,7 +154,8 @@ do-install:
 		dir=`dirname "$$name"`;\
 		${INSTALL_DATA_DIR} ${LIBDATA_DIR}/$$dir;\
 		${INSTALL_DATA} "$$name".c ${LIBDATA_DIR}/"$$name".c;\
-		${INSTALL_DATA} "$$name".build ${LIBDATA_DIR}/"$$name".build;\
+		${INSTALL_DATA} "$$name".build.log\
+		    ${LIBDATA_DIR}/"$$name".build.log;\
 		[ -f "$$name".test ] || continue;\
 		${INSTALL_PROGRAM_DIR} ${LIBEXEC_DIR}/$$dir;\
 		${INSTALL_PROGRAM} "$$name".test ${LIBEXEC_DIR}/"$$name".test;\

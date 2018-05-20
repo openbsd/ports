@@ -1,0 +1,13 @@
+$OpenBSD: patch-conformance_interfaces_sigdelset_4-2_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Use installed package to execute buildonly test.
+
+Index: conformance/interfaces/sigdelset/4-2.sh
+--- conformance/interfaces/sigdelset/4-2.sh.orig
++++ conformance/interfaces/sigdelset/4-2.sh
+@@ -10,4 +10,4 @@
+ #   Test various methods of removing invalid signals to sigaddset().
+ # 
+ 
+-conformance/interfaces/sigdelset/4-core-buildonly.test 2
++${TRUEPREFIX}/libexec/posixtestsuite/conformance/interfaces/sigdelset/4-core-buildonly.test 2

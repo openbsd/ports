@@ -1,0 +1,13 @@
+$OpenBSD: patch-conformance_interfaces_sigignore_5-1_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Use installed package to execute buildonly test.
+
+Index: conformance/interfaces/sigignore/5-1.sh
+--- conformance/interfaces/sigignore/5-1.sh.orig
++++ conformance/interfaces/sigignore/5-1.sh
+@@ -9,4 +9,4 @@
+ #   Test various methods of passing invalid signals to sigignore().
+ # 
+ 
+-conformance/interfaces/sigignore/5-core-buildonly.test 1
++${TRUEPREFIX}/libexec/posixtestsuite/conformance/interfaces/sigignore/5-core-buildonly.test 1

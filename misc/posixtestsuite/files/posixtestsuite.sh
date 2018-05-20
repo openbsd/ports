@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$OpenBSD: posixtestsuite.sh,v 1.2 2018/05/08 22:14:19 bluhm Exp $
+#	$OpenBSD: posixtestsuite.sh,v 1.3 2018/05/20 01:35:54 bluhm Exp $
 
 # Copyright (c) 2018 Alexander Bluhm <bluhm@openbsd.org>
 #
@@ -31,7 +31,7 @@ while read source; do
 	mkdir -p $dir
 	# provide source and build log for debugging
 	cp $libdata_dir/$source $dir
-	cp $libdata_dir/${source%.c}.build $dir
+	cp $libdata_dir/${source%.c}.build.log $dir
 done <${libdata_dir}/build.list
 
 exec 3>logfile
@@ -45,7 +45,8 @@ while read test; do
 	if [ -f $libdata_dir/${test%.test}.sh ]; then
 		cp $libdata_dir/${test%.test}.sh .
 	fi
-	echo -n execution: "" >$name.run
+	file=$name.run.log
+	echo -n execution: "" >$file
 	echo -n ${test%.test}: execution: "" >&3
 	echo -n ${test%.test}: execution: ""
 	set +e
@@ -89,8 +90,8 @@ while read test; do
 			;;
 		esac
 	fi
-	echo $msg >>$name.run
-	cat $name.log >>$name.run
+	echo $msg >>$file
+	cat $name.log >>$file
 	if [ "$result" -eq 0 ]; then
 		echo $msg >&3
 	else

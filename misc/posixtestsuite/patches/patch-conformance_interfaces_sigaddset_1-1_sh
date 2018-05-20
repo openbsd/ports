@@ -1,0 +1,13 @@
+$OpenBSD: patch-conformance_interfaces_sigaddset_1-1_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Use installed package to execute buildonly test.
+
+Index: conformance/interfaces/sigaddset/1-1.sh
+--- conformance/interfaces/sigaddset/1-1.sh.orig
++++ conformance/interfaces/sigaddset/1-1.sh
+@@ -17,4 +17,4 @@
+ 
+ # Calling 1-core-buildonly.test with a 0 parameter initializes to an
+ # empty set.
+-conformance/interfaces/sigaddset/1-core-buildonly.test 0
++${TRUEPREFIX}/libexec/posixtestsuite/conformance/interfaces/sigaddset/1-core-buildonly.test 0

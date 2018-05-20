@@ -1,0 +1,13 @@
+$OpenBSD: patch-conformance_interfaces_sigrelse_3-4_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Use installed package to execute buildonly test.
+
+Index: conformance/interfaces/sigrelse/3-4.sh
+--- conformance/interfaces/sigrelse/3-4.sh.orig
++++ conformance/interfaces/sigrelse/3-4.sh
+@@ -9,4 +9,4 @@
+ #   Test various methods of adding invalid signals to sigrelse().
+ # 
+ 
+-conformance/interfaces/sigrelse/3-core-buildonly.test 4
++${TRUEPREFIX}/libexec/posixtestsuite/conformance/interfaces/sigrelse/3-core-buildonly.test 4

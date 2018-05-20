@@ -1,0 +1,16 @@
+$OpenBSD: patch-stress_threads_pthread_create_testfrmw_c,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+
+Fix clang format security warning to make test compile.
+
+Index: stress/threads/pthread_create/testfrmw.c
+--- stress/threads/pthread_create/testfrmw.c.orig
++++ stress/threads/pthread_create/testfrmw.c
+@@ -54,7 +54,7 @@ void output( char * string, ... )
+    nw = time(NULL);
+    now = localtime(&nw);
+    if (now == NULL)
+-      printf(ts);
++      puts(ts);
+    else
+       printf("[%2.2d:%2.2d:%2.2d]", now->tm_hour, now->tm_min, now->tm_sec);
+    va_start( ap, string);
