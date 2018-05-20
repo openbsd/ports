@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/20 08:32:01 espie Exp $
 
 COMMENT=	full screen simple editor
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
 CATEGORIES=	editors
+REVISION =	0
 
 HOMEPAGE=	http://uemacs.tripod.com/
 

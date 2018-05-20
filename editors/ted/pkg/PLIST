@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:01:07 espie Exp $
-bin/Ted
+@comment $OpenBSD: PLIST,v 1.6 2018/05/20 08:32:01 espie Exp $
+@bin bin/Ted
 lib/X11/app-defaults/Ted
 share/Ted/
 share/Ted/afm/
