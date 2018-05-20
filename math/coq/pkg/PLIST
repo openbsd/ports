@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/03/29 11:27:01 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/05/20 08:25:36 espie Exp $
 %%native%%
 @bin bin/coq-tex
 @bin bin/coq_makefile
@@ -1004,6 +1004,8 @@ share/doc/coq/COPYRIGHT
 share/doc/coq/CREDITS
 share/doc/coq/FAQ-CoqIde
 share/doc/coq/LICENSE
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/coq-db.el
 share/emacs/site-lisp/coq-font-lock.el
 share/emacs/site-lisp/coq-inferior.el
