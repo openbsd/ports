@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/20 08:48:55 espie Exp $
 
 COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/

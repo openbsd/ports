@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/17 07:46:59 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/20 08:48:55 espie Exp $
 @bin bin/barrage
 share/applications/barrage.desktop
 share/barrage/
@@ -29,16 +29,8 @@ share/barrage/sounds/gunfire.wav
 share/barrage/sounds/highlight.wav
 share/doc/barrage/
 share/doc/barrage/README
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/barrage.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/barrage.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/barrage.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

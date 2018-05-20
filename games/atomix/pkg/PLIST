@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/05 12:20:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/20 08:48:55 espie Exp $
 @mode g+s
 @group games
-bin/atomix
+@bin bin/atomix
 @mode
 @group
 share/applications/atomix.desktop
@@ -81,10 +81,7 @@ share/atomix/themes/default/wall-vertical-leftx.png
 share/atomix/themes/default/wall-vertical-rightx.png
 share/atomix/themes/default/wall-vertical-top-end.png
 share/atomix/themes/default/wall-vertical.png
-share/gnome-2.0/
-share/gnome-2.0/ui/
 share/gnome-2.0/ui/atomix-ui.xml
-share/pixmaps/
 share/pixmaps/atomix-icon.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

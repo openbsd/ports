@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2018/01/13 03:00:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2018/05/20 08:48:55 espie Exp $
 
 COMMENT=	curses version of the classic game
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games
 
 # License: NONE
