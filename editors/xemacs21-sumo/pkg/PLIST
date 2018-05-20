@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/05/14 09:52:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/05/20 08:41:43 espie Exp $
 lib/xemacs/xemacs-packages/
 lib/xemacs/xemacs-packages/etc/
 lib/xemacs/xemacs-packages/etc/BABYL
@@ -1823,7 +1823,7 @@ lib/xemacs/xemacs-packages/etc/zenirc/server-list
 lib/xemacs/xemacs-packages/etc/zenirc/tao-of-irc
 lib/xemacs/xemacs-packages/etc/zenirc/tour.of.irc
 lib/xemacs/xemacs-packages/etc/zenirc/undernet
-lib/xemacs/xemacs-packages/info/
+@info lib/xemacs/xemacs-packages/info/
 @info lib/xemacs/xemacs-packages/info/app-dev-guide.info
 @info lib/xemacs/xemacs-packages/info/auctex.info
 @info lib/xemacs/xemacs-packages/info/bbdb.info

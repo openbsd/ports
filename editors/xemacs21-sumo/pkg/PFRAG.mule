@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.mule,v 1.10 2011/01/03 10:44:41 jasper Exp $
+@comment $OpenBSD: PFRAG.mule,v 1.11 2018/05/20 08:41:43 espie Exp $
 lib/xemacs/${MULE}-packages/
 lib/xemacs/${MULE}-packages/etc/
 lib/xemacs/${MULE}-packages/etc/app-defaults/
@@ -138,7 +138,7 @@ lib/xemacs/${MULE}-packages/etc/start-files/ja/locale-start.elc
 lib/xemacs/${MULE}-packages/etc/start-files/ro/
 lib/xemacs/${MULE}-packages/etc/start-files/ro/locale-start.el
 lib/xemacs/${MULE}-packages/etc/start-files/ro/locale-start.elc
-lib/xemacs/${MULE}-packages/info/
+@info lib/xemacs/${MULE}-packages/info/
 @info lib/xemacs/${MULE}-packages/info/latin-euro-standards.info
 @info lib/xemacs/${MULE}-packages/info/latin-unity.info
 lib/xemacs/${MULE}-packages/info/lookup-guide.info

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2013/05/14 09:52:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/20 08:41:43 espie Exp $
 
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
-REVISION=		0
+REVISION=		1
 DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
 SUP_mule=		xemacs-mule-sumo-${VERSION}.tar.gz
 SUPDISTFILES=		${SUP_mule}
