@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/12 13:47:14 solene Exp $
+# $OpenBSD: Makefile,v 1.16 2018/05/20 13:18:37 solene Exp $
 
 COMMENT=	OCR program for pnm files
 
@@ -14,9 +14,11 @@ WANTLIB=	c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=simple
 
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+FAKE_FLAGS=	infodir="${PREFIX}/info" \
+		mandir="${PREFIX}/man"
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/doc/ocrad.1 ${PREFIX}/man/man1
