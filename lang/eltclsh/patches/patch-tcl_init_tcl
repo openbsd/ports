@@ -1,9 +1,10 @@
-$OpenBSD: patch-tcl_init_tcl,v 1.1 2012/10/10 22:09:29 stu Exp $
+$OpenBSD: patch-tcl_init_tcl,v 1.2 2018/05/20 10:49:38 matthieu Exp $
 
 Adjust for OpenBSD-specific Tcl package path layout.
 
---- tcl/init.tcl.orig	Thu Jun 16 11:17:42 2011
-+++ tcl/init.tcl	Wed Oct 10 01:40:07 2012
+Index: tcl/init.tcl
+--- tcl/init.tcl.orig
++++ tcl/init.tcl
 @@ -30,10 +30,24 @@
  #
  
@@ -31,8 +32,3 @@ Adjust for OpenBSD-specific Tcl package path layout.
  
  # Install default signal handlers (if the signal command exists)
  if { [info command signal] != "" } { namespace eval el {
-@@ -82,3 +96,4 @@ if {[info exists ::argv]} {
-     unset i
-     catch { unset pkgname }
- }
-+unset m

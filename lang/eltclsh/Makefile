@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2018/05/20 10:49:38 matthieu Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
-DISTNAME =	eltclsh-1.12
+DISTNAME =	eltclsh-1.16
 CATEGORIES =	lang x11
-REVISION =	2
 
-MASTER_SITES =	http://www.openrobots.org/distfiles/eltclsh/
+MASTER_SITES =	https://www.openrobots.org/distfiles/eltclsh/
 
-HOMEPAGE =	http://www.openrobots.org/wiki/eltclsh
+HOMEPAGE =	https://git.openrobots.org/projects/eltclsh/
 
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
@@ -37,8 +36,8 @@ NO_TEST =		Yes
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 
 post-install:
-	rm ${WRKINST}${MODTCL_TCLDIR}/eltcl/libeltclsh.la
-	rm ${WRKINST}${MODTCL_TCLDIR}/eltcl/libeltclsh.a
+	rm ${WRKINST}${MODTCL_TCLDIR}/libeltclsh.la
+	rm ${WRKINST}${MODTCL_TCLDIR}/libeltclsh.a
 	rm ${WRKINST}${MODTCL_TCLDIR}/pkgconfig/eltclsh.pc
 	rmdir ${WRKINST}${MODTCL_TCLDIR}/pkgconfig
 
