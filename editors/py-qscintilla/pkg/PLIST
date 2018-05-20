@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/30 13:51:17 landry Exp $
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/
+@comment $OpenBSD: PLIST,v 1.5 2018/05/20 08:30:21 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.pyi
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.so
 lib/${QTVER}/qsci/api/python/QScintilla2.api
-${SIPDIR}/
 ${SIPDIR}/Qsci/
 ${SIPDIR}/Qsci/qsciabstractapis.sip
 ${SIPDIR}/Qsci/qsciapis.sip
