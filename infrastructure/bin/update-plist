@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.141 2018/05/20 10:22:04 espie Exp $
+# $OpenBSD: update-plist,v 1.142 2018/05/20 10:34:11 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -51,8 +51,8 @@ use OpenBSD::ReverseSubst;
 package TrackedFile;
 sub new
 {
-	my ($class, $name) = @_;
-	bless {name => $name, items => []}, $class;
+	my ($class, $name, $ext) = @_;
+	bless {name => $name, ext => $ext, items => []}, $class;
 }
 
 sub add
@@ -65,7 +65,7 @@ sub fh
 {
 	my $self = shift;
 	if (!defined $self->{fh}) {
-		my $full = $self->name.".new";
+		my $full = $self->name.$self->{ext};
 		open($self->{fh}, '>', $full) or die "Can't open $full: $!";
 	}
 	return $self->{fh};
@@ -91,17 +91,17 @@ package TrackFile;
 
 sub new
 {
-	my ($class, $default) = @_;
-	my $self = bless {}, $class;
+	my ($class, $default, $ext) = @_;
+	my $self = bless {ext => $ext}, $class;
 	$self->{known}{$default} = 
-	    $self->{default} = TrackedFile->new($default);
+	    $self->{default} = TrackedFile->new($default, $self->{ext});
 	return $self;
 }
 
 sub file
 {
 	my ($self, $name) = @_;
-	$self->{known}{$name} //= TrackedFile->new($name);
+	$self->{known}{$name} //= TrackedFile->new($name, $self->{ext});
 	return $self->{known}{$name};
 }
 
@@ -1059,14 +1059,17 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:', 
-	    '[-Fmnrvx] [-C dir] [-i var] [-j jobs] [-P pkgdir] [-S var]',
-	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:e:E:', 
+	    '[-Fmnrvx] [-C dir] [-E ext] [-e ext] [-i var] [-j jobs]',
+	    '[-P pkgdir] [-S var] [-s var] [-V var] [-w suffix]',
+	    '[-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
 	$state->{cache_dir} = $state->opt('C');
 	$state->{quiet} = $state->opt('q');
+	$state->{extnew} = $state->opt('E') // ".new";
+	$state->{extorig} = $state->opt('e') // ".orig";
 }
 
 package UpdatePlist;
@@ -1405,7 +1408,8 @@ sub write_new_files
 	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		# default is the last content we have, thanks ruby :(
-		$p->{tracker} = TrackFile->new($p->{base_plists}->[-1]);
+		$p->{tracker} = TrackFile->new($p->{base_plists}->[-1],
+		    $self->{state}{extnew});
 		$p->nlist->redistribute($p);
 		$p->{tracker}->write_all($p);
 		# TODO   old make-plist noticed libraries with a 
@@ -1519,20 +1523,22 @@ my $cantmove = 0;
 
 my $exitcode = 0;
 
+my $new = $self->{state}{extnew};
+my $orig = $self->{state}{extorig};
 # let's see if we want to update things
 for my $p (@{$self->{lists}}) {
 	for my $k (sort keys %{$p->{tracker}{known}}) {
 		if (-f $k) {
-			if (!-f "$k.new") {
-				print STDERR "No $k.new written\n";
+			if (!-f "$k$new") {
+				print STDERR "No $k$new written\n";
 				$exitcode = 1;
-			} elsif (compare($k, "$k.new") == 0) {
-				unlink("$k.new") unless $self->{state}->not;
+			} elsif (compare($k, "$k$new") == 0) {
+				unlink("$k$new") unless $self->{state}->not;
 			} else {
 				print "$k changed";
 				push(@towrite, $k);
-				if (-f $k.".orig") {
-					print " but $k.orig exists\n";
+				if (-f "$k$orig") {
+					print " but $k$orig exists\n";
 					$cantmove = 1;
 				} else {
 					print "\n";
@@ -1555,11 +1561,11 @@ if ($self->{state}->not) {
 
 for my $k (@towrite) {
 	if (-f $k) {
-		rename($k, "$k.orig") or 
-		    die "can't rename $k to $k.orig: $!";
+		rename($k, "$k$orig") or 
+		    die "can't rename $k to $k$orig: $!";
 	}
-	rename("$k.new", $k) or 
-		    die "can't rename $k.new to $k: $!";
+	rename("$k$new", $k) or 
+		    die "can't rename $k$new to $k: $!";
 }
 
 exit($exitcode);
