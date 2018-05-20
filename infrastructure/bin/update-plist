@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.140 2018/05/20 08:42:31 espie Exp $
+# $OpenBSD: update-plist,v 1.141 2018/05/20 10:22:04 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -461,6 +461,8 @@ sub show_unknown
 
 # this is not used as a visitor, but rather invoked explicitly when copying
 # an object that can have tags
+# TODO some tags should be copied "later" (in redistribute) so that they
+# get in the plist "out-of-order" (comments in preamble)
 sub copy_with_tags
 {
 	my ($self, $plist) = @_;
