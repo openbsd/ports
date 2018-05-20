@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/30 07:32:07 wilfried Exp $
-bin/wmmultipop3
+@comment $OpenBSD: PLIST,v 1.2 2018/05/20 08:19:25 espie Exp $
+@bin bin/wmmultipop3

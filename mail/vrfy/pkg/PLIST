@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:09:45 espie Exp $
-bin/vrfy
+@comment $OpenBSD: PLIST,v 1.5 2018/05/20 08:19:25 espie Exp $
+@bin bin/vrfy
 @man man/man1/vrfy.1
 share/doc/vrfy/
 share/doc/vrfy/RELEASE_NOTES

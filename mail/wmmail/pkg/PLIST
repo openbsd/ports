@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/20 08:19:25 espie Exp $
+GNUstep/Apps/
 GNUstep/Apps/WMMail.app/
 GNUstep/Apps/WMMail.app/Anims/
 GNUstep/Apps/WMMail.app/Anims/NeXT/
@@ -51,4 +52,4 @@ GNUstep/Apps/WMMail.app/Sounds/doorbell.au
 GNUstep/Apps/WMMail.app/Sounds/drip.au
 GNUstep/Apps/WMMail.app/Sounds/hammer.au
 GNUstep/Apps/WMMail.app/Sounds/monkey.au
-GNUstep/Apps/WMMail.app/WMMail
+@bin GNUstep/Apps/WMMail.app/WMMail

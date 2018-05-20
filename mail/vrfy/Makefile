@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/20 08:19:25 espie Exp $
 
 COMMENT=		verify email addresses and mailing lists
 
 DISTNAME=		vrfy_990522
 PKGNAME=		vrfy-99.05.22
-REVISION =		0
+REVISION =		1
 CATEGORIES=		mail
 
 PERMIT_PACKAGE_CDROM=	Yes
