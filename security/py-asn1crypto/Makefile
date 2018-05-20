@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/05 17:44:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/20 20:08:40 sthen Exp $
 
 COMMENT =	fast ASN.1 parser and serializer
 
-MODPY_EGG_VERSION = 0.23.0
+MODPY_EGG_VERSION = 0.24.0
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	wbond
 GH_PROJECT =	asn1crypto
