@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.10 2018/05/15 08:30:55 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.11 2018/05/20 07:41:11 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -115,6 +115,8 @@ sub new
 	    # variables that expand to something that looks like a version
 	    # number won't substitute in the middle of numbers by default
 	    isversion => {},
+	    # under some cases, some variables are a priority
+	    disregard_count => {},
 	    }, $class;
     	for my $k (qw(dont_backsubst start_only suffix_only no_version)) {
 		if (defined $state->{$k}) {
@@ -188,7 +190,8 @@ sub value
 sub never_add
 {
 	my ($self, $k) = @_;
-	if ($self->{count}{$self->value($k)} > 1) {
+	if (!$self->{disregard_count}{$k} &&
+	    $self->{count}{$self->value($k)} > 1) {
 		return 1;
 	} else {
 		return $self->{dont_backsubst}{$k};
@@ -210,6 +213,12 @@ sub finalize
 	$subst->{vars} = [sort 
 	    {length($subst->value($b)) <=> length($subst->value($a))} 
 	    @{$subst->{l}}];
+	# remove the ambiguity of PREFIX vs LOCALBASE
+	my $v = $subst->value('PREFIX');
+	if ($v eq $subst->value('LOCALBASE') &&
+	    $subst->{count}{$v} == 2) {
+	    	$subst->{disregard_count}{PREFIX} = 1;
+	}
 }
 
 # some unsubst variables have special cases
@@ -223,6 +232,26 @@ sub special_case
 		return 1;
 	}
 	return 0;
+}
+
+sub unsubst_version
+{
+	my ($subst, $string, $v, $k2) = @_;
+	# we have to loop over the string because negative assertions are
+	# hard for non constant width strings
+	my $done = '';
+	# so remove each $v
+	while ($string =~ s/(.*?)\Q$v\E//) {
+		$done .= $1;
+		# if it's in the middle of a larger version string, nope
+		if ($done =~ m/\d\.?$/ || $string =~ m/\.?\d/) {
+			$done .= $v;
+		} else {
+		# otherwise it's okay
+			$done .= "\${$k2}";
+		}
+	}
+	return $done.$string;
 }
 
 sub unsubst_non_empty_var
@@ -256,9 +285,7 @@ sub unsubst_non_empty_var
 		$string = $context->unsubst_suffix($string, $v, $k2);
 	} else {
 		if ($subst->{isversion}{$k2}) {
-			$string =~ s/(\D)\Q$v\E(\D)/$1\$\{$k2\}$2/g;
-			$string =~ s/^\Q$v\E(\D)/\$\{$k2\}$1/;
-			$string =~ s/(\D)\Q$v\E$/$1\$\{$k2\}/;
+			$string = $subst->unsubst_version($string, $v, $k2);
 		} else {
 			$string =~ s/\Q$v\E/\$\{$k2\}/g;
 		}
