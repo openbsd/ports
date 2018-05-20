@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/06 10:11:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/20 08:35:15 espie Exp $
 @pkgpath editors/xemacs21
 %%mule%%
 @bin bin/ellcc
@@ -13,7 +13,7 @@ bin/xemacs-${BRANCH}.${VERSION}.dmp
 @bin bin/xemacs-ctags
 @bin bin/xemacs-etags
 bin/xemacs-rcs-checkin
-info/xemacs-${BRANCH}.${VERSION}/
+@info info/xemacs-${BRANCH}.${VERSION}/
 @info info/xemacs-${BRANCH}.${VERSION}/cl.info
 @info info/xemacs-${BRANCH}.${VERSION}/custom.info
 @info info/xemacs-${BRANCH}.${VERSION}/emodules.info
@@ -29,8 +29,6 @@ info/xemacs-${BRANCH}.${VERSION}/
 @info info/xemacs-${BRANCH}.${VERSION}/widget.info
 @info info/xemacs-${BRANCH}.${VERSION}/xemacs-faq.info
 @info info/xemacs-${BRANCH}.${VERSION}/xemacs.info
-@comment no checksum
-info/xemacs-${BRANCH}.${VERSION}/dir
 lib/xemacs/
 lib/xemacs-${BRANCH}.${VERSION}/
 lib/xemacs-${BRANCH}.${VERSION}/${GCCARCH}/
@@ -1155,7 +1153,7 @@ lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt102.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt125.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt200.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt201.el
-lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt${VERSION}0.el
+lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt220.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt240.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt300.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/term/vt320.el
