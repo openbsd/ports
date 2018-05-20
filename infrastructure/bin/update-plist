@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.139 2018/05/17 09:36:12 espie Exp $
+# $OpenBSD: update-plist,v 1.140 2018/05/20 08:42:31 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -736,7 +736,8 @@ sub may_tag_along
 sub write_restate
 {
 	my ($self, $file, $p) = @_;
-	$self->SUPER::write_restate($file, $p);
+	# don't do backsubst on fragments, pkg_create does not!
+	$self->write($file->fh);
 	my $base = $file->name;
 	my $frag = $self->frag;
 	$base =~ s/PFRAG\./PFRAG.$frag-/ or
