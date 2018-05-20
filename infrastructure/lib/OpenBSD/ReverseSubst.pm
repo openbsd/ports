@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.11 2018/05/20 07:41:11 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.12 2018/05/20 07:50:08 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -244,7 +244,7 @@ sub unsubst_version
 	while ($string =~ s/(.*?)\Q$v\E//) {
 		$done .= $1;
 		# if it's in the middle of a larger version string, nope
-		if ($done =~ m/\d\.?$/ || $string =~ m/\.?\d/) {
+		if ($done =~ m/\d\.?$/ || $string =~ m/^\.?\d/) {
 			$done .= $v;
 		} else {
 		# otherwise it's okay
