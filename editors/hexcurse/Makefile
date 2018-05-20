@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/20 08:27:18 espie Exp $
 
 COMMENT=	user-friendly ncurses-based hexeditor with many features
 
 DISTNAME=	hexcurse-1.55
 CATEGORIES=	editors
+REVISION =	0
 
 HOMEPAGE=	http://www.jewfish.net/description.php?title=HexCurse
 

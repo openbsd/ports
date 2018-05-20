@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/05/01 16:25:20 jca Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/05/20 08:27:18 espie Exp $
 @option is-branch
 @pkgpath editors/emacs22,-main
 @pkgpath editors/emacs22,-el
@@ -93,6 +93,7 @@ libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
 share/appdata/
 share/appdata/emacs.appdata.xml
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/emacs/
 share/emacs/${VERSION}/
 share/emacs/${VERSION}/etc/
 share/emacs/${VERSION}/etc/AUTHORS
@@ -4122,4 +4123,5 @@ share/emacs/${VERSION}/lisp/xwidget.el.gz
 share/emacs/${VERSION}/lisp/xwidget.elc
 share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
+share/emacs/site-lisp/
 share/emacs/site-lisp/subdirs.el

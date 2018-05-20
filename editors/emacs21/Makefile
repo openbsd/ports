@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2017/12/26 06:37:21 jca Exp $
+# $OpenBSD: Makefile,v 1.94 2018/05/20 08:27:18 espie Exp $
 
 BROKEN-powerpc=		dumped executable fails with SIGABRT
 
@@ -13,7 +13,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		37
+REVISION-main=		38
 REVISION-el=		7
 REVISION-leim=		7
 
