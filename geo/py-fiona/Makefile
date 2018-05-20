@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/20 07:18:15 landry Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 
@@ -7,7 +7,7 @@ GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	Toblerity
 GH_PROJECT =	Fiona
 DISTNAME =	py-fiona-${MODPY_EGG_VERSION:S/post/pl/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -20,6 +20,8 @@ MODULES =	lang/python
 
 FLAVORS =		python3
 FLAVOR ?=
+
+COMPILER =	base-clang ports-gcc
 
 MODPY_SETUPTOOLS =	Yes
 
