@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/01/21 06:23:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/20 08:21:35 espie Exp $
 
 COMMENT=	free spreadsheet with graphical user interface
 
 DISTNAME=	abs-src-0.8
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	math
 
 PERMIT_PACKAGE_CDROM=   Yes

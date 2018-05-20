@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:11:58 espie Exp $
-bin/abs
+@comment $OpenBSD: PLIST,v 1.3 2018/05/20 08:21:35 espie Exp $
+@bin bin/abs
 share/examples/abs/
 share/examples/abs/benchmarck.abs
 share/examples/abs/call.abs
