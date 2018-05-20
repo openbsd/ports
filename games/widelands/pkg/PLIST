@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/01/07 22:05:09 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/20 07:37:19 espie Exp $
 @bin bin/widelands
 @bin bin/wl_map_info
 @bin bin/wl_map_object_info
@@ -8823,8 +8823,8 @@ share/widelands/tribes/workers/atlanteans/builder/waiting_049.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_049_pc.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_050.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_050_pc.png
-share/widelands/tribes/workers/atlanteans/builder/waiting_0${MODLUA_DEP_VERSION}.png
-share/widelands/tribes/workers/atlanteans/builder/waiting_0${MODLUA_DEP_VERSION}_pc.png
+share/widelands/tribes/workers/atlanteans/builder/waiting_051.png
+share/widelands/tribes/workers/atlanteans/builder/waiting_051_pc.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_052.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_052_pc.png
 share/widelands/tribes/workers/atlanteans/builder/waiting_053.png
@@ -16746,8 +16746,8 @@ share/widelands/tribes/workers/barbarians/builder/waiting_049.png
 share/widelands/tribes/workers/barbarians/builder/waiting_049_pc.png
 share/widelands/tribes/workers/barbarians/builder/waiting_050.png
 share/widelands/tribes/workers/barbarians/builder/waiting_050_pc.png
-share/widelands/tribes/workers/barbarians/builder/waiting_0${MODLUA_DEP_VERSION}.png
-share/widelands/tribes/workers/barbarians/builder/waiting_0${MODLUA_DEP_VERSION}_pc.png
+share/widelands/tribes/workers/barbarians/builder/waiting_051.png
+share/widelands/tribes/workers/barbarians/builder/waiting_051_pc.png
 share/widelands/tribes/workers/barbarians/builder/waiting_052.png
 share/widelands/tribes/workers/barbarians/builder/waiting_052_pc.png
 share/widelands/tribes/workers/barbarians/builder/waiting_053.png
@@ -24961,8 +24961,8 @@ share/widelands/tribes/workers/empire/builder/waiting_049.png
 share/widelands/tribes/workers/empire/builder/waiting_049_pc.png
 share/widelands/tribes/workers/empire/builder/waiting_050.png
 share/widelands/tribes/workers/empire/builder/waiting_050_pc.png
-share/widelands/tribes/workers/empire/builder/waiting_0${MODLUA_DEP_VERSION}.png
-share/widelands/tribes/workers/empire/builder/waiting_0${MODLUA_DEP_VERSION}_pc.png
+share/widelands/tribes/workers/empire/builder/waiting_051.png
+share/widelands/tribes/workers/empire/builder/waiting_051_pc.png
 share/widelands/tribes/workers/empire/builder/waiting_052.png
 share/widelands/tribes/workers/empire/builder/waiting_052_pc.png
 share/widelands/tribes/workers/empire/builder/waiting_053.png
