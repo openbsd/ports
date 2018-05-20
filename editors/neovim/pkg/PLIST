@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/12/02 12:28:05 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/20 08:30:56 espie Exp $
 @bin bin/nvim
 @man man/man1/nvim.1
 share/applications/nvim.desktop
@@ -710,7 +710,7 @@ share/nvim/runtime/keymap/serbian-latin.vim
 share/nvim/runtime/keymap/serbian-latin_utf-8.vim
 share/nvim/runtime/keymap/serbian.vim
 share/nvim/runtime/keymap/serbian_cp1250.vim
-share/nvim/runtime/keymap/serbian_cp12${MODLUA_DEP_VERSION}.vim
+share/nvim/runtime/keymap/serbian_cp1251.vim
 share/nvim/runtime/keymap/serbian_iso-8859-2.vim
 share/nvim/runtime/keymap/serbian_iso-8859-5.vim
 share/nvim/runtime/keymap/serbian_utf-8.vim
@@ -786,7 +786,7 @@ share/nvim/runtime/print/ascii.ps
 share/nvim/runtime/print/cidfont.ps
 share/nvim/runtime/print/cns_roman.ps
 share/nvim/runtime/print/cp1250.ps
-share/nvim/runtime/print/cp12${MODLUA_DEP_VERSION}.ps
+share/nvim/runtime/print/cp1251.ps
 share/nvim/runtime/print/cp1252.ps
 share/nvim/runtime/print/cp1253.ps
 share/nvim/runtime/print/cp1254.ps
