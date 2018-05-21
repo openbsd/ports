@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#	$OpenBSD: posixtestsuite-html.pl,v 1.2 2018/05/20 01:35:54 bluhm Exp $
+#	$OpenBSD: posixtestsuite-html.pl,v 1.3 2018/05/21 19:22:58 bluhm Exp $
 # convert results of open POSIX test suite to a html table
 
 # Copyright (c) 2016-2018 Alexander Bluhm <bluhm@genua.de>
@@ -124,10 +124,10 @@ foreach my $os (reverse sort keys %out) {
     print "    <th>$date<br>$uname</th>\n";
 }
 print "  </tr>\n";
-foreach my $name (reverse sort keys %source) {
+foreach my $name (sort keys %source) {
     my $source = $source{$name};
     print "  <tr>\n    <th><a href=\"$source\">$name</a></th>\n";
-    foreach my $os (sort keys %out) {
+    foreach my $os (reverse sort keys %out) {
 	my $test = $out{$os}{test}{$name};
 	my $status = $test->{execution};
 	if (!$status) {

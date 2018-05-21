@@ -1,0 +1,52 @@
+$OpenBSD: patch-conformance_interfaces_mmap_14-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang time_t printf format warning to make test compile.
+
+Index: conformance/interfaces/mmap/14-1.c
+--- conformance/interfaces/mmap/14-1.c.orig
++++ conformance/interfaces/mmap/14-1.c
+@@ -50,7 +50,7 @@ int main()
+   total_size = 1024;
+   size = total_size;
+ 
+-  time_t mtime1, mtime2, ctime1, ctime2;
++  long long mtime1, mtime2, ctime1, ctime2;
+    
+   char *ch;
+  
+@@ -68,7 +68,7 @@ int main()
+   
+   data = (char *) malloc(total_size); 
+   memset(data, 'a', total_size);
+-  printf("Time before write(): %ld\n", time(NULL));
++  printf("Time before write(): %lld\n", (long long)time(NULL));
+   if (write(fd, data, total_size) != total_size)
+   {
+     printf(TNAME "Error at write(): %s\n", 
+@@ -90,7 +90,7 @@ int main()
+     exit(PTS_FAIL);
+   }
+   sleep(1); 
+-  printf("Time before write reference: %ld\n", time(NULL));
++  printf("Time before write reference: %lld\n", (long long)time(NULL));
+   /* Before write reference */
+   if (stat(tmpfname, &stat_buff) == -1)
+   {
+@@ -110,7 +110,7 @@ int main()
+   * is not acurate enough to reflect the update
+   */
+   sleep(1);
+-  printf("Time before msync(): %ld\n", time(NULL));
++  printf("Time before msync(): %lld\n", (long long)time(NULL));
+   msync(pa, size, MS_SYNC);
+ 
+   /* FIXME: Update the in-core meta data to the disk */
+@@ -127,7 +127,7 @@ int main()
+   ctime2 = stat_buff.st_ctime;
+   mtime2 = stat_buff.st_mtime;
+  
+-  printf("ctime1: %ld, ctime2: %ld\nmtime1: %ld, mtime2: %ld\n",
++  printf("ctime1: %lld, ctime2: %lld\nmtime1: %lld, mtime2: %lld\n",
+                   ctime1, ctime2, mtime1, mtime2); 
+   if (ctime2 == ctime1 || mtime2 == mtime1)
+   {

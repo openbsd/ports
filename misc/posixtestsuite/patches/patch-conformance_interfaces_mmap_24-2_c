@@ -1,0 +1,16 @@
+$OpenBSD: patch-conformance_interfaces_mmap_24-2_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang rlim_t printf format warning to make test compile.
+
+Index: conformance/interfaces/mmap/24-2.c
+--- conformance/interfaces/mmap/24-2.c.orig
++++ conformance/interfaces/mmap/24-2.c
+@@ -74,7 +74,7 @@ int main()
+ 		printf(TNAME " Error at getrlimit(): %s\n", strerror(errno));
+ 		return PTS_UNRESOLVED;
+   }
+-  printf("available memory: %lu\n", rlim.rlim_cur); 
++  printf("available memory: %llu\n", (unsigned long long)rlim.rlim_cur); 
+  
+   /* First mmap, just to get a legal addr for second mmap */ 
+   fd = shm_fd;	

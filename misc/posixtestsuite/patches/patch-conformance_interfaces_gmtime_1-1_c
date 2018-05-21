@@ -1,0 +1,16 @@
+$OpenBSD: patch-conformance_interfaces_gmtime_1-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang time_t printf format warning to make test compile.
+
+Index: conformance/interfaces/gmtime/1-1.c
+--- conformance/interfaces/gmtime/1-1.c.orig
++++ conformance/interfaces/gmtime/1-1.c
+@@ -23,7 +23,7 @@ int main ()
+ 
+ 	(void) time(&the_time);
+ 	tm_ptr = gmtime(&the_time);
+-	printf("Raw time is %ld \n", the_time);
++	printf("Raw time is %lld \n", (long long)the_time);
+ 	printf("gmtime gives:\n");
+ 
+ 	/* Checking the seconds */

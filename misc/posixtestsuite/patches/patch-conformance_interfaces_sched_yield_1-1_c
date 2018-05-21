@@ -1,0 +1,25 @@
+$OpenBSD: patch-conformance_interfaces_sched_yield_1-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang pthread_t printf format warning to make test compile.
+
+Index: conformance/interfaces/sched_yield/1-1.c
+--- conformance/interfaces/sched_yield/1-1.c.orig
++++ conformance/interfaces/sched_yield/1-1.c
+@@ -133,7 +133,7 @@ void * runner(void * arg) {
+ 	long result = 0;
+ #ifdef LINUX        
+         set_thread_affinity(*(int *)arg);
+-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
++        fprintf(stderr, "%ld bind to cpu: %d\n", (long)pthread_self(), *(int*)arg);
+ #endif
+ 	
+ 	for(;i<LOOP;i++){
+@@ -156,7 +156,7 @@ void * runner(void * arg) {
+ void * busy_thread(void *arg){
+ #ifdef LINUX        
+         set_thread_affinity(*(int *)arg);
+-        fprintf(stderr, "%ld bind to cpu: %d\n", pthread_self(), *(int*)arg);
++        fprintf(stderr, "%ld bind to cpu: %d\n", (long)pthread_self(), *(int*)arg);
+ #endif
+         while(1){ 
+                 nb_call++;

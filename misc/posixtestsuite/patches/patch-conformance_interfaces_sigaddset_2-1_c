@@ -1,0 +1,24 @@
+$OpenBSD: patch-conformance_interfaces_sigaddset_2-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Initialize signalset with random data, gcc 4.2.1 complains about
+uninitialized value.
+
+Index: conformance/interfaces/sigaddset/2-1.c
+--- conformance/interfaces/sigaddset/2-1.c.orig
++++ conformance/interfaces/sigaddset/2-1.c
+@@ -14,11 +14,15 @@
+  */
+ #include <stdio.h>
+ #include <signal.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "posixtest.h"
+ 
+ int main()
+ {
+ 	sigset_t signalset;
++
++	memset(&signalset, random(), sizeof(signalset));
+ 
+ 	if (sigaddset(&signalset, SIGALRM) == 0) {
+ 		if (sigismember(&signalset, SIGALRM) == 1) {

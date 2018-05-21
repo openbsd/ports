@@ -1,0 +1,16 @@
+$OpenBSD: patch-conformance_interfaces_sigaction_28-10_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang printf format security warning to make test compile.
+
+Index: conformance/interfaces/sigaction/28-10.c
+--- conformance/interfaces/sigaction/28-10.c.orig
++++ conformance/interfaces/sigaction/28-10.c
+@@ -138,7 +138,7 @@ void output( char * string, ... )
+ 	now = localtime( &nw );
+ 
+ 	if ( now == NULL )
+-		printf( ts );
++		puts( ts );
+ 	else
+ 		printf( "[%2.2d:%2.2d:%2.2d]", now->tm_hour, now->tm_min, now->tm_sec );
+ 

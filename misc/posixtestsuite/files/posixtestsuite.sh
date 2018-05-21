@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$OpenBSD: posixtestsuite.sh,v 1.3 2018/05/20 01:35:54 bluhm Exp $
+#	$OpenBSD: posixtestsuite.sh,v 1.4 2018/05/21 19:22:58 bluhm Exp $
 
 # Copyright (c) 2018 Alexander Bluhm <bluhm@openbsd.org>
 #
@@ -70,7 +70,7 @@ while read test; do
 		5)
 			msg=UNTESTED
 			;;
-		$timeout)
+		$timeout_ret)
 			msg=HUNG
 			;;
 		1??)

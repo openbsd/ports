@@ -1,0 +1,16 @@
+$OpenBSD: patch-conformance_interfaces_strftime_2-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix array size, gcc 4.2.1 bound check refuses bogus strftime maxsize.
+
+Index: conformance/interfaces/strftime/2-1.c
+--- conformance/interfaces/strftime/2-1.c.orig
++++ conformance/interfaces/strftime/2-1.c
+@@ -25,7 +25,7 @@ int main () {
+     /* current time */
+     time_t t = time(NULL);
+     struct tm* local_t = localtime(&t);
+-    char text[20];
++    char text[256];
+     int result;
+ 
+     setlocale(LC_TIME, "");

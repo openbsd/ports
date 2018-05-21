@@ -1,6 +1,6 @@
-$OpenBSD: patch-conformance_interfaces_pthread_cond_broadcast_testfrmw_c,v 1.1 2018/05/20 01:35:54 bluhm Exp $
+$OpenBSD: patch-conformance_interfaces_pthread_cond_broadcast_testfrmw_c,v 1.2 2018/05/21 19:22:58 bluhm Exp $
 
-Fix clang format security warning to make test compile.
+Fix clang printf format security warning to make test compile.
 
 Index: conformance/interfaces/pthread_cond_broadcast/testfrmw.c
 --- conformance/interfaces/pthread_cond_broadcast/testfrmw.c.orig

@@ -1,0 +1,54 @@
+$OpenBSD: patch-conformance_interfaces_mmap_13-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+
+Fix clang time_t printf format warning to make test compile.
+
+Index: conformance/interfaces/mmap/13-1.c
+--- conformance/interfaces/mmap/13-1.c.orig
++++ conformance/interfaces/mmap/13-1.c
+@@ -55,7 +55,7 @@ int main()
+   size = total_size;
+ 
+   struct stat stat_buff, stat_buff2;
+-  time_t atime1, atime2, atime3;
++  long long atime1, atime2, atime3;
+    
+   char *ch;
+  
+@@ -73,7 +73,7 @@ int main()
+   
+   data = (char *) malloc(total_size); 
+   memset(data, 'a', total_size);
+-  printf("Time before write(): %ld\n", time(NULL));
++  printf("Time before write(): %lld\n", (long long)time(NULL));
+   if (write(fd, data, total_size) != total_size)
+   {
+     printf(TNAME "Error at write(): %s\n", 
+@@ -97,7 +97,7 @@ int main()
+   
+   flag = MAP_SHARED;
+   prot = PROT_READ | PROT_WRITE;
+-  printf("Time before mmap(): %ld\n", time(NULL));
++  printf("Time before mmap(): %lld\n", (long long)time(NULL));
+   pa = mmap(addr, size, prot, flag, fd, off);
+   if (pa == MAP_FAILED)
+   {
+@@ -126,7 +126,7 @@ int main()
+   ch = pa;
+   *ch = 'b';
+   
+-  printf("Time before munmap(): %ld\n", time(NULL));
++  printf("Time before munmap(): %lld\n", (long long)time(NULL));
+   munmap(pa, size);
+   
+   /* FIXME: Update the in-core meta data to the disk */
+@@ -142,8 +142,8 @@ int main()
+   /* atime3: write to memory */
+   atime3 = stat_buff.st_atime;
+   
+-  printf("atime1: %d, atime2: %d, atime3: %d\n",
+-         (int)atime1, (int)atime2, (int)atime3);
++  printf("atime1: %lld, atime2: %lld, atime3: %lld\n",
++         atime1, atime2, atime3);
+   if (atime1 != atime3 || 
+   	  atime1 != atime2 )
+   {
