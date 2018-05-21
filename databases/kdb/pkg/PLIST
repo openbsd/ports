@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/05 10:12:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/21 10:53:10 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
 @bin bin/kdb3_sqlite3_dump
@@ -59,6 +59,8 @@ include/KDb3/KDbObject
 include/KDb3/KDbObject.h
 include/KDb3/KDbObjectNameValidator
 include/KDb3/KDbObjectNameValidator.h
+include/KDb3/KDbOrderByColumn
+include/KDb3/KDbOrderByColumn.h
 include/KDb3/KDbParser
 include/KDb3/KDbParser.h
 include/KDb3/KDbPreparedStatement
@@ -67,6 +69,8 @@ include/KDb3/KDbPreparedStatementInterface
 include/KDb3/KDbPreparedStatementInterface.h
 include/KDb3/KDbProperties
 include/KDb3/KDbProperties.h
+include/KDb3/KDbQueryAsterisk
+include/KDb3/KDbQueryAsterisk.h
 include/KDb3/KDbQueryColumnInfo
 include/KDb3/KDbQueryColumnInfo.h
 include/KDb3/KDbQuerySchema
@@ -81,6 +85,8 @@ include/KDb3/KDbRelationship
 include/KDb3/KDbRelationship.h
 include/KDb3/KDbResult
 include/KDb3/KDbResult.h
+include/KDb3/KDbSelectStatementOptions
+include/KDb3/KDbSelectStatementOptions.h
 include/KDb3/KDbSqlField
 include/KDb3/KDbSqlField.h
 include/KDb3/KDbSqlRecord
@@ -93,6 +99,8 @@ include/KDb3/KDbTableOrQuerySchema
 include/KDb3/KDbTableOrQuerySchema.h
 include/KDb3/KDbTableSchema
 include/KDb3/KDbTableSchema.h
+include/KDb3/KDbTableSchemaChangeListener
+include/KDb3/KDbTableSchemaChangeListener.h
 include/KDb3/KDbTableViewColumn
 include/KDb3/KDbTableViewColumn.h
 include/KDb3/KDbTableViewData
@@ -101,6 +109,10 @@ include/KDb3/KDbToken
 include/KDb3/KDbToken.h
 include/KDb3/KDbTransaction
 include/KDb3/KDbTransaction.h
+include/KDb3/KDbTransactionData
+include/KDb3/KDbTransactionData.h
+include/KDb3/KDbTransactionGuard
+include/KDb3/KDbTransactionGuard.h
 include/KDb3/KDbTristate
 include/KDb3/KDbTristate.h
 include/KDb3/KDbUtils
@@ -115,6 +127,7 @@ include/KDb3/kdb_version.h
 lib/cmake/KDb3/
 lib/cmake/KDb3/KDbConfig.cmake
 lib/cmake/KDb3/KDbConfigVersion.cmake
+lib/cmake/KDb3/KDbQCHTargets.cmake
 lib/cmake/KDb3/KDbTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KDb3/KDbTargets.cmake
 @lib lib/libKDb3.so.${LIBKDb3_VERSION}
@@ -158,11 +171,18 @@ share/locale/fi/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/fi/LC_MESSAGES/kdb_postgresqldriver_qt.qm
 share/locale/fi/LC_MESSAGES/kdb_qt.qm
 share/locale/fi/LC_MESSAGES/kdb_sqlitedriver_qt.qm
+share/locale/fr/LC_MESSAGES/kdb_mysqldriver_qt.qm
+share/locale/fr/LC_MESSAGES/kdb_postgresqldriver_qt.qm
+share/locale/fr/LC_MESSAGES/kdb_qt.qm
+share/locale/fr/LC_MESSAGES/kdb_sqlitedriver_qt.qm
 share/locale/gl/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/gl/LC_MESSAGES/kdb_postgresqldriver_qt.qm
 share/locale/gl/LC_MESSAGES/kdb_qt.qm
 share/locale/gl/LC_MESSAGES/kdb_sqlitedriver_qt.qm
 share/locale/hu/LC_MESSAGES/kdb_mysqldriver_qt.qm
+share/locale/ia/LC_MESSAGES/kdb_mysqldriver_qt.qm
+share/locale/ia/LC_MESSAGES/kdb_qt.qm
+share/locale/ia/LC_MESSAGES/kdb_sqlitedriver_qt.qm
 share/locale/it/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/it/LC_MESSAGES/kdb_postgresqldriver_qt.qm
 share/locale/it/LC_MESSAGES/kdb_qt.qm
@@ -203,6 +223,10 @@ share/locale/sv/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/sv/LC_MESSAGES/kdb_postgresqldriver_qt.qm
 share/locale/sv/LC_MESSAGES/kdb_qt.qm
 share/locale/sv/LC_MESSAGES/kdb_sqlitedriver_qt.qm
+share/locale/tr/LC_MESSAGES/kdb_mysqldriver_qt.qm
+share/locale/tr/LC_MESSAGES/kdb_postgresqldriver_qt.qm
+share/locale/tr/LC_MESSAGES/kdb_qt.qm
+share/locale/tr/LC_MESSAGES/kdb_sqlitedriver_qt.qm
 share/locale/uk/LC_MESSAGES/kdb_mysqldriver_qt.qm
 share/locale/uk/LC_MESSAGES/kdb_postgresqldriver_qt.qm
 share/locale/uk/LC_MESSAGES/kdb_qt.qm

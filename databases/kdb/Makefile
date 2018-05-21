@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/05 10:12:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/21 10:53:10 rsadowski Exp $
 
 COMMENT =	database connectivity and creation framework
 
-VERSION =	3.0.2
+VERSION =	3.1.0
 DISTNAME =	kdb-${VERSION}
 
-SHARED_LIBS +=  KDb3                      0.0 # 3.0
+SHARED_LIBS +=  KDb3                      1.0 # 3.0
 
 CATEGORIES =	databases
 
@@ -38,8 +38,5 @@ LIB_DEPENDS =		devel/kf5/kcoreaddons \
 
 CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
 			-DBUILD_EXAMPLES:Bool=Yes
-
-
-CONFIGURE_ENV =		LDFLAGS="-lc"
 
 .include <bsd.port.mk>
