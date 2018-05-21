@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.19 2018/05/10 18:39:35 kn Exp $
+# $OpenBSD: go.port.mk,v 1.20 2018/05/21 21:11:27 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -45,11 +45,13 @@ MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 CATEGORIES +=		lang/go
 
 MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
-MODGO_FLAGS +=		-x
+MODGO_FLAGS +=		-v -p ${MAKE_JOBS}
 
 .if empty(DEBUG)
 # by default omit symbol table, debug information and DWARF symbol table
 MODGO_LDFLAGS +=	-s -w
+.else
+MODGO_FLAGS +=		-x
 .endif
 
 INSTALL_STRIP =
