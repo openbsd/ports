@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/23 20:52:33 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/21 01:48:38 stu Exp $
 bin/eagle
 libdata/Eagle/
 libdata/Eagle/bin/
@@ -33,6 +33,7 @@ libdata/Eagle/lib/Eagle1.0/list.eagle
 libdata/Eagle/lib/Eagle1.0/object.eagle
 libdata/Eagle/lib/Eagle1.0/pkgIndex.eagle
 libdata/Eagle/lib/Eagle1.0/pkgIndex.tcl
+libdata/Eagle/lib/Eagle1.0/pkgt.eagle
 libdata/Eagle/lib/Eagle1.0/platform.eagle
 libdata/Eagle/lib/Eagle1.0/process.eagle
 libdata/Eagle/lib/Eagle1.0/runopt.eagle
@@ -42,7 +43,15 @@ libdata/Eagle/lib/Eagle1.0/shim.eagle
 libdata/Eagle/lib/Eagle1.0/test.eagle
 libdata/Eagle/lib/Eagle1.0/testlog.eagle
 libdata/Eagle/lib/Eagle1.0/unkobj.eagle
+libdata/Eagle/lib/Eagle1.0/unzip.eagle
 libdata/Eagle/lib/Eagle1.0/update.eagle
 libdata/Eagle/lib/Eagle1.0/vendor.eagle
 libdata/Eagle/lib/Eagle1.0/word.tcl
+libdata/Eagle/lib/Test1.0/
+libdata/Eagle/lib/Test1.0/all.eagle
+libdata/Eagle/lib/Test1.0/constraints.eagle
+libdata/Eagle/lib/Test1.0/epilogue.eagle
+libdata/Eagle/lib/Test1.0/pkgIndex.eagle
+libdata/Eagle/lib/Test1.0/pkgIndex.tcl
+libdata/Eagle/lib/Test1.0/prologue.eagle
 libdata/Eagle/license.terms

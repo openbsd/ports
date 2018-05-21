@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/04 17:17:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/21 01:48:38 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		6234.51946
+P =		6543.58654
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}beta39
+PKGNAME =	${DISTNAME}beta41
 EPOCH =		0
 CATEGORIES =	lang lang/tcl
-HOMEPAGE =	http://eagle.to/
+HOMEPAGE =	https://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
-		https://eagle.to/releases/${V}.${P}/ \
+		https://download.eagle.to/releases/${V}.${P}/ \
 		https://distfiles.nl/
 
 DISTFILES =	EagleBinaryMonoOnUnix${V}.${P}.rar
@@ -36,38 +36,38 @@ WRKSRC =	${WRKDIR}/Eagle
 EAGLE_DIR =	libdata/Eagle
 EAGLE_INS_DIR = ${PREFIX}/${EAGLE_DIR}
 EAGLE_BIN_DIR =	${EAGLE_INS_DIR}/bin
-EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib/Eagle${V}
+EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib
 EAGLE_BIN =	${PREFIX}/bin/eagle
 
 # Skip tests that are too timing-sensitive to succeed everywhere
 EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle perf*.eagle'
 
-# Skip tests that may hang or fail due to pthread and/or Mono issues
-EAGLE_TEST_FLAGS += -skip 'interp-1.72 object-8.108 object-10.* socket-2.2 host-1.3'
+# Skip tests that may hang or fail
+EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2'
 
 # "-namespaces 1" enables namespace tests
 # "set no(bigLists) 1" avoids oom problems
 # "set no(exec) 1; set no(compileCSharp) 1" to work around Mono bugs
 # "set no(tcl) 1" ignores any installed Tcl
 # "set test_log {}" disables logging test results to a file
-# "set test_(all_)path {...}" to work around Eagle test bugs
 
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
 	-namespaces 1 \
 	-preInitialize 'set no(bigLists) 1; set no(exec) 1; set no(compileCSharp) 1; set no(tcl) 1' \
-	-preInitialize 'set test_log {}; set test_path {${WRKSRC}/Tests}; set test_all_path {${WRKSRC}/lib/Test1.0}' \
+	-preInitialize 'set test_log {}' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
 
 do-install:
-	${INSTALL_DATA_DIR} ${EAGLE_BIN_DIR} ${EAGLE_LIB_DIR}
 .for SRC GLOB DEST in \
+		.		license.terms	${EAGLE_INS_DIR} \
 		bin		*		${EAGLE_BIN_DIR} \
-		lib/Eagle${V}	*		${EAGLE_LIB_DIR} \
-		.		license.terms	${EAGLE_INS_DIR}
+		lib/Eagle${V}	*		${EAGLE_LIB_DIR}/Eagle${V} \
+		lib/Test${V}	*		${EAGLE_LIB_DIR}/Test${V}
 
+	${INSTALL_DATA_DIR} ${DEST}
 	${INSTALL_DATA} ${WRKSRC}/${SRC}/${GLOB} ${DEST}
 .endfor
 	echo '#! /bin/sh' > ${EAGLE_BIN}
