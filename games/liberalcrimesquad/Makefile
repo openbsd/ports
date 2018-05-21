@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/28 18:08:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/21 07:00:18 ajacoutot Exp $
 
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
@@ -30,6 +30,10 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-liconv"
+
+# don't pick up SDL2
+CONFIGURE_ENV +=	ac_cv_lib_SDL2_SDL_Init= \
+			ac_cv_path_SDL_CONFIG=
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
