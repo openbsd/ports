@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1402 2018/05/17 09:59:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1403 2018/05/21 21:26:39 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3406,7 +3406,7 @@ repackage:
 	@${_MAKE} package
 
 rebuild:
-	@rm -f ${_BUILD_COOKIE}
+	@${_PBUILD} rm -f ${_BUILD_COOKIE}
 	@${_MAKE} build
 
 uninstall deinstall:
@@ -3415,10 +3415,10 @@ uninstall deinstall:
 
 peek-ftp:
 	@echo "DISTFILES=${DISTFILES}"
-	@install -d ${DISTDIR_MODE} ${FULLDISTDIR}; \
+	@${_PFETCH} install -d ${DISTDIR_MODE} ${FULLDISTDIR}; \
 	cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
 	for i in ${MASTER_SITES:Mftp*}; do \
-		echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; \
+		echo "Connecting to $$i"; ${_PFETCH} ${FETCH_CMD} $$i ; break; \
 	done
 
 show-required-by:
