@@ -1,54 +1,60 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/05 10:18:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/21 10:53:43 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
-@bin bin/kexi
-@lib lib/libkexicore.so.${LIBkexicore_VERSION}
-@lib lib/libkexidatatable.so.${LIBkexidatatable_VERSION}
-@lib lib/libkexidataviewcommon.so.${LIBkexidataviewcommon_VERSION}
-@lib lib/libkexiextendedwidgets.so.${LIBkexiextendedwidgets_VERSION}
-@lib lib/libkexiformutils.so.${LIBkexiformutils_VERSION}
-@lib lib/libkexiguiutils.so.${LIBkexiguiutils_VERSION}
-@lib lib/libkeximain.so.${LIBkeximain_VERSION}
-@lib lib/libkeximigrate.so.${LIBkeximigrate_VERSION}
-@lib lib/libkexirelationsview.so.${LIBkexirelationsview_VERSION}
-@lib lib/libkexiundo.so.${LIBkexiundo_VERSION}
-@lib lib/libkexiutils.so.${LIBkexiutils_VERSION}
-@lib lib/libkformdesigner.so.${LIBkformdesigner_VERSION}
+@bin bin/kexi-3.1
+@lib lib/libkexicore3.1.so.${LIBkexicore3.1_VERSION}
+@lib lib/libkexidatatable3.1.so.${LIBkexidatatable3.1_VERSION}
+@lib lib/libkexidataviewcommon3.1.so.${LIBkexidataviewcommon3.1_VERSION}
+@lib lib/libkexiextendedwidgets3.1.so.${LIBkexiextendedwidgets3.1_VERSION}
+@lib lib/libkexiformutils3.1.so.${LIBkexiformutils3.1_VERSION}
+@lib lib/libkexiguiutils3.1.so.${LIBkexiguiutils3.1_VERSION}
+@lib lib/libkeximain3.1.so.${LIBkeximain3.1_VERSION}
+@lib lib/libkeximigrate3.1.so.${LIBkeximigrate3.1_VERSION}
+@lib lib/libkexirelationsview3.1.so.${LIBkexirelationsview3.1_VERSION}
+@lib lib/libkexiundo3.1.so.${LIBkexiundo3.1_VERSION}
+@lib lib/libkexiutils3.1.so.${LIBkexiutils3.1_VERSION}
+@lib lib/libkformdesigner3.1.so.${LIBkformdesigner3.1_VERSION}
 lib/qt5/plugins/kexi/
-lib/qt5/plugins/kexi/forms/
-lib/qt5/plugins/kexi/forms/widgets/
-lib/qt5/plugins/kexi/forms/widgets/kexiforms_dbwidgetsplugin.so
-lib/qt5/plugins/kexi/forms/widgets/kexiforms_standardwidgetsplugin.so
-lib/qt5/plugins/kexi/forms/widgets/kexiforms_webbrowserwidgetplugin.so
-lib/qt5/plugins/kexi/kexi_csvimportexportplugin.so
-lib/qt5/plugins/kexi/kexi_formplugin.so
-lib/qt5/plugins/kexi/kexi_migrationplugin.so
-lib/qt5/plugins/kexi/kexi_queryplugin.so
-lib/qt5/plugins/kexi/kexi_reportplugin.so
-lib/qt5/plugins/kexi/kexi_tableplugin.so
-lib/qt5/plugins/kexi/migrate/
-lib/qt5/plugins/kexi/migrate/keximigrate_mdb.so
-lib/qt5/plugins/kexi/migrate/keximigrate_mysql.so
-lib/qt5/plugins/kexi/migrate/keximigrate_postgresql.so
-lib/qt5/plugins/kexi/migrate/keximigrate_tsv.so
-share/applications/org.kde.kexi.desktop
+lib/qt5/plugins/kexi/3.1/
+lib/qt5/plugins/kexi/3.1/forms/
+lib/qt5/plugins/kexi/3.1/forms/widgets/
+lib/qt5/plugins/kexi/3.1/forms/widgets/org.kexi-project.form.widgets.main.so
+lib/qt5/plugins/kexi/3.1/forms/widgets/org.kexi-project.form.widgets.web-browser.so
+lib/qt5/plugins/kexi/3.1/kexi_csvimportexportplugin.so
+lib/qt5/plugins/kexi/3.1/kexi_formplugin.so
+lib/qt5/plugins/kexi/3.1/kexi_migrationplugin.so
+lib/qt5/plugins/kexi/3.1/kexi_queryplugin.so
+lib/qt5/plugins/kexi/3.1/kexi_reportplugin.so
+lib/qt5/plugins/kexi/3.1/kexi_tableplugin.so
+lib/qt5/plugins/kexi/3.1/migrate/
+lib/qt5/plugins/kexi/3.1/migrate/keximigrate_mdb.so
+lib/qt5/plugins/kexi/3.1/migrate/keximigrate_mysql.so
+lib/qt5/plugins/kexi/3.1/migrate/keximigrate_postgresql.so
+lib/qt5/plugins/kexi/3.1/migrate/keximigrate_tsv.so
+share/applications/org.kde.kexi-3.1.desktop
+share/doc/HTML/de/kexi/
+share/doc/HTML/de/kexi/index.cache.bz2
+share/doc/HTML/de/kexi/index.docbook
+share/doc/HTML/it/kexi/
+share/doc/HTML/it/kexi/index.cache.bz2
+share/doc/HTML/it/kexi/index.docbook
+share/doc/HTML/nl/kexi/
+share/doc/HTML/nl/kexi/index.cache.bz2
+share/doc/HTML/nl/kexi/index.docbook
 share/kexi/
-share/kexi/icons/
-share/kexi/icons/hicolor/
-share/kexi/icons/hicolor/16x16/
-share/kexi/icons/hicolor/16x16/actions/
-share/kexi/icons/hicolor/16x16/actions/web_browser.png
-share/kexi/icons/hicolor/22x22/
-share/kexi/icons/hicolor/22x22/actions/
-share/kexi/icons/hicolor/22x22/actions/web_browser.png
-share/kexi/icons/kexi_breeze.rcc
-share/kexi/status/
-share/kexi/status/3.0.0/
-share/kexi/status/3.0.0/contribution_details.ui
-share/kexi/status/3.0.0/contribution_help.ui
-share/kexi/status/3.0.0/status.rcc
-share/kexi/status/3.0.0/status.ui
-share/kexi/status/3.0.0/status_strings.ui
+share/kexi/3.1/
+share/kexi/3.1/examples/
+share/kexi/3.1/examples/Simple_Database.kexi
+share/kexi/3.1/icons/
+share/kexi/3.1/icons/kexi_breeze.rcc
+share/kexi/3.1/icons/org.kexi-project.form.widgets.main_breeze.rcc
+share/kexi/3.1/icons/org.kexi-project.form.widgets.web-browser_breeze.rcc
+share/kexi/3.1/status/
+share/kexi/3.1/status/contribution_details.ui
+share/kexi/3.1/status/contribution_help.ui
+share/kexi/3.1/status/status.rcc
+share/kexi/3.1/status/status.ui
+share/kexi/3.1/status/status_strings.ui
 share/locale/ar/LC_MESSAGES/kexi.mo
 share/locale/ast/LC_MESSAGES/kexi.mo
 share/locale/ast/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
@@ -83,6 +89,7 @@ share/locale/de/LC_MESSAGES/keximigrate_mdb.mo
 share/locale/el/LC_MESSAGES/kexi.mo
 share/locale/el/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/el/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
+share/locale/el/LC_MESSAGES/keximigrate_mdb.mo
 share/locale/en_GB/LC_MESSAGES/kexi.mo
 share/locale/en_GB/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/en_GB/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
@@ -111,6 +118,7 @@ share/locale/ga/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
 share/locale/gl/LC_MESSAGES/kexi.mo
 share/locale/gl/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/gl/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
+share/locale/gl/LC_MESSAGES/keximigrate_mdb.mo
 share/locale/he/LC_MESSAGES/kexi.mo
 share/locale/hi/LC_MESSAGES/kexi.mo
 share/locale/hne/LC_MESSAGES/kexi.mo
@@ -191,6 +199,7 @@ share/locale/tg/LC_MESSAGES/kexi.mo
 share/locale/tr/LC_MESSAGES/kexi.mo
 share/locale/tr/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/tr/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
+share/locale/tr/LC_MESSAGES/keximigrate_mdb.mo
 share/locale/ug/LC_MESSAGES/kexi.mo
 share/locale/ug/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/ug/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
@@ -210,6 +219,6 @@ share/locale/zh_TW/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/keximigrate_mdb.mo
 share/metainfo/
-share/metainfo/org.kde.kexi.appdata.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/metainfo/org.kde.kexi-3.1.appdata.xml

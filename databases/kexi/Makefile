@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/07 09:03:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/21 10:53:43 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	visual database applications creator
 
-VERSION =	3.0.2
+VERSION =	3.1.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  kexicore                  0.0 # 15.0
-SHARED_LIBS +=  kexidatatable             0.0 # 15.0
-SHARED_LIBS +=  kexidataviewcommon        0.0 # 15.0
-SHARED_LIBS +=  kexiextendedwidgets       0.0 # 15.0
-SHARED_LIBS +=  kexiformutils             0.0 # 15.0
-SHARED_LIBS +=  kexiguiutils              0.0 # 15.0
-SHARED_LIBS +=  keximain                  0.0 # 15.0
-SHARED_LIBS +=  keximigrate               0.0 # 15.0
-SHARED_LIBS +=  kexirelationsview         0.0 # 15.0
-SHARED_LIBS +=  kexiundo                  0.0 # 15.0
-SHARED_LIBS +=  kexiutils                 0.0 # 15.0
-SHARED_LIBS +=  kformdesigner             0.0 # 15.0
+SHARED_LIBS +=  kexicore3.1               0.0 # 3.1
+SHARED_LIBS +=  kexidatatable3.1          0.0 # 3.1
+SHARED_LIBS +=  kexidataviewcommon3.1     0.0 # 3.1
+SHARED_LIBS +=  kexiextendedwidgets3.1    0.0 # 3.1
+SHARED_LIBS +=  kexiformutils3.1          0.0 # 3.1
+SHARED_LIBS +=  kexiguiutils3.1           0.0 # 3.1
+SHARED_LIBS +=  keximain3.1               0.0 # 3.1
+SHARED_LIBS +=  keximigrate3.1            0.0 # 3.1
+SHARED_LIBS +=  kexirelationsview3.1      0.0 # 3.1
+SHARED_LIBS +=  kexiundo3.1               0.0 # 3.1
+SHARED_LIBS +=  kexiutils3.1              0.0 # 3.1
+SHARED_LIBS +=  kformdesigner3.1          0.0 # 3.1
 
 CATEGORIES =	databases
 
@@ -38,8 +37,9 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
 WANTLIB += KPropertyCore3 KPropertyWidgets3 KReport3 Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5WebKit Qt5WebKitWidgets
-WANTLIB += Qt5Widgets Qt5Xml c glib-2.0 iconv m mysqlclient
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Test Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml c glib-2.0 iconv
+WANTLIB += m mysqlclient
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}}
 EXTRACT_SUFX =	.tar.xz
@@ -81,8 +81,6 @@ CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
 			-DBUILD_EXAMPLES:Bool=Yes \
 			-DKEXI_QTGUI_RUNTIME_AVAILABLE:Bool=Yes \
 			-DKEXI_ENABLE_QTGUI_FOR_TESTS:Bool=No
-
-CONFIGURE_ENV =		LDFLAGS="-lc"
 
 TEST_IS_INTERACTIVE =	X11
 
