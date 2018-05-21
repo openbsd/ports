@@ -1,6 +1,7 @@
-$OpenBSD: patch-magick_MagickCore_pc_in,v 1.4 2016/03/08 00:27:03 sthen Exp $
---- magick/MagickCore.pc.in.orig	Sun Mar  6 14:20:31 2016
-+++ magick/MagickCore.pc.in	Mon Mar  7 14:22:13 2016
+$OpenBSD: patch-magick_MagickCore_pc_in,v 1.5 2018/05/21 21:12:48 sthen Exp $
+Index: magick/MagickCore.pc.in
+--- magick/MagickCore.pc.in.orig
++++ magick/MagickCore.pc.in
 @@ -1,8 +1,8 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
@@ -13,7 +14,7 @@ $OpenBSD: patch-magick_MagickCore_pc_in,v 1.4 2016/03/08 00:27:03 sthen Exp $
  moduledir=@libdir@/ImageMagick-@MAGICK_MAJOR_VERSION@.@MAGICK_MINOR_VERSION@.@MAGICK_MICRO_VERSION@/modules-@MAGICK_ABI_SUFFIX@
  
 @@ -11,5 +11,5 @@ Description: MagickCore - C API for ImageMagick (ABI @
- URL: https://www.imagemagick.org
+ URL: https://github.com/ImageMagick/ImageMagick6
  Version: @PACKAGE_VERSION@
  Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
 -Libs: -L${libdir} -l${libname}

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.175 2018/03/17 16:02:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2018/05/21 21:12:48 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.9
-DASHVER=		38
+DASHVER=		46
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     6.0      # 5.0
+SHARED_LIBS +=	MagickCore-6.Q16     6.1      # 5.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.0      # 5.0
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
 

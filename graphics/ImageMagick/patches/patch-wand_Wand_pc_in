@@ -1,6 +1,7 @@
-$OpenBSD: patch-wand_Wand_pc_in,v 1.5 2016/03/08 00:27:03 sthen Exp $
---- wand/Wand.pc.in.orig	Sun Mar  6 14:20:31 2016
-+++ wand/Wand.pc.in	Mon Mar  7 14:21:02 2016
+$OpenBSD: patch-wand_Wand_pc_in,v 1.6 2018/05/21 21:12:48 sthen Exp $
+Index: wand/Wand.pc.in
+--- wand/Wand.pc.in.orig
++++ wand/Wand.pc.in
 @@ -1,8 +1,8 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
@@ -12,7 +13,7 @@ $OpenBSD: patch-wand_Wand_pc_in,v 1.5 2016/03/08 00:27:03 sthen Exp $
  libname=MagickWand-@MAGICK_MAJOR_VERSION@.@MAGICK_ABI_SUFFIX@
   
  Name: MagickWand
-@@ -11,5 +11,5 @@ URL: https://www.imagemagick.org
+@@ -11,5 +11,5 @@ URL: https://github.com/ImageMagick/ImageMagick6
  Version: @PACKAGE_VERSION@
  Requires: MagickCore
  Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
