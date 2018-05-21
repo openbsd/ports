@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/05 10:07:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/21 10:51:08 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
 include/KPropertyCore3/
@@ -6,8 +6,12 @@ include/KPropertyCore3/KProperty
 include/KPropertyCore3/KProperty.h
 include/KPropertyCore3/KPropertyFactory
 include/KPropertyCore3/KPropertyFactory.h
+include/KPropertyCore3/KPropertyListData
+include/KPropertyCore3/KPropertyListData.h
 include/KPropertyCore3/KPropertySet
 include/KPropertyCore3/KPropertySet.h
+include/KPropertyCore3/KPropertySetBuffer
+include/KPropertyCore3/KPropertySetBuffer.h
 include/KPropertyCore3/config-kproperty.h
 include/KPropertyCore3/kproperty_version.h
 include/KPropertyCore3/kpropertycore_export.h
@@ -23,6 +27,10 @@ include/KPropertyWidgets3/KPropertyEditorView
 include/KPropertyWidgets3/KPropertyEditorView.h
 include/KPropertyWidgets3/KPropertyGenericSelectionEditor
 include/KPropertyWidgets3/KPropertyGenericSelectionEditor.h
+include/KPropertyWidgets3/KPropertyMultiLineStringEditor
+include/KPropertyWidgets3/KPropertyMultiLineStringEditor.h
+include/KPropertyWidgets3/KPropertyRectFEditor
+include/KPropertyWidgets3/KPropertyRectFEditor.h
 include/KPropertyWidgets3/KPropertyStringEditor
 include/KPropertyWidgets3/KPropertyStringEditor.h
 include/KPropertyWidgets3/KPropertyUrlEditor
@@ -62,11 +70,13 @@ include/KPropertyWidgets3/utils.h
 lib/cmake/KPropertyCore3/
 lib/cmake/KPropertyCore3/KPropertyCoreConfig.cmake
 lib/cmake/KPropertyCore3/KPropertyCoreConfigVersion.cmake
+lib/cmake/KPropertyCore3/KPropertyCoreQCHTargets.cmake
 lib/cmake/KPropertyCore3/KPropertyCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPropertyCore3/KPropertyCoreTargets.cmake
 lib/cmake/KPropertyWidgets3/
 lib/cmake/KPropertyWidgets3/KPropertyWidgetsConfig.cmake
 lib/cmake/KPropertyWidgets3/KPropertyWidgetsConfigVersion.cmake
+lib/cmake/KPropertyWidgets3/KPropertyWidgetsQCHTargets.cmake
 lib/cmake/KPropertyWidgets3/KPropertyWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPropertyWidgets3/KPropertyWidgetsTargets.cmake
 @lib lib/libKPropertyCore3.so.${LIBKPropertyCore3_VERSION}
@@ -76,3 +86,53 @@ lib/pkgconfig/KPropertyWidgets3.pc
 share/kpropertywidgets3/
 share/kpropertywidgets3/icons/
 share/kpropertywidgets3/icons/kproperty_breeze.rcc
+share/locale/ast/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ast/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/ca/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ca/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/ca@valencia/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ca@valencia/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/cs/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/cs/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/de/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/de/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/en_GB/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/en_GB/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/es/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/es/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/fi/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/fi/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/fr/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/fr/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/gl/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/gl/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/ia/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ia/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/it/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/it/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/ja/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ja/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/lt/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/lt/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/nl/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/nl/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/pl/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/pl/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/pt/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/pt/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/pt_BR/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/pt_BR/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/ru/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/ru/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/sk/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/sk/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/sv/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/sv/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/tr/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/tr/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/uk/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/uk/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/zh_CN/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/zh_CN/LC_MESSAGES/kpropertywidgets_qt.qm
+share/locale/zh_TW/LC_MESSAGES/kpropertycore_qt.qm
+share/locale/zh_TW/LC_MESSAGES/kpropertywidgets_qt.qm
