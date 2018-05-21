@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.142 2018/05/20 10:34:11 espie Exp $
+# $OpenBSD: update-plist,v 1.143 2018/05/21 06:16:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -185,6 +185,7 @@ sub subst
 sub annotate
 {
 	my ($self, $e, $s, $file) = @_;
+	chomp $s;
 	$e->{unsubst} = $s;
 	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
@@ -1251,6 +1252,10 @@ sub walk_up_directory
 			my $a = $c->add($s->nlist, $p2);
 			# and match the file
 			$a->{file} = $s->{file};
+			# unsubst is used as a hint in reversesubst, so we
+			# can use the directory part BUT we need to figure
+			# it out.
+#			$a->{unsubst} = $l[0]->{unsubst};
 			return 1;
 		}
 	}
