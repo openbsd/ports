@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/04/29 22:24:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2018/05/21 07:21:22 landry Exp $
 
 V =			0.3.9
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 EXTRACT_SUFX =		.tar.xz
+REVISION =	0
 
 HOMEPAGE =		http://pwmt.org/projects/zathura/
 
@@ -29,6 +30,7 @@ WANTLIB += gobject-2.0 gtk-3 intl magic pango-1.0 sqlite3
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS +=	-Denable-synctex=false
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test
