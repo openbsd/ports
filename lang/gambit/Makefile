@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/03/02 12:02:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.30 2018/05/21 14:30:43 juanfra Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
@@ -44,7 +44,8 @@ do-test:
 
 # alpha: "cc1: out of memory allocating 1608 bytes"
 # hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa"
+# sparc64: "virtual memory exhausted: Cannot allocate memory" (ports cluster)
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
 CFLAGS += -O0
 .endif
 
