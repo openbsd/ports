@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.54 2018/05/21 22:18:02 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 
@@ -29,6 +29,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 MODULES=	lang/php devel/cmake
 MODPHP_RUNDEP=	No
+MODPHP_VERSION=	5.6
 NO_TEST =	Yes
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
 RUN_DEPENDS-main =	www/spawn-fcgi

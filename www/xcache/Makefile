@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/19 23:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2018/05/21 22:18:02 sthen Exp $
 
 COMMENT=	fast and stable PHP opcode cacher
 
@@ -16,6 +16,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/php
+MODPHP_VERSION=		5.6
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/re2c>=0.13.4 \

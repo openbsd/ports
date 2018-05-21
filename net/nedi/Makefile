@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/19 19:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/21 22:18:02 sthen Exp $
 
 COMMENT =			network discovery tool
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =			${HOMEPAGE}/pub/
 
 MODULES =			lang/php
+# XXX needs updating to nedi 1.6 for PHP-mysqli before it can work with PHP 7
+MODPHP_VERSION =		5.6
 
 RUN_DEPENDS =			databases/mariadb,-server \
 				databases/p5-DBD-mysql \
