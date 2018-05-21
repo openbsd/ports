@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_common_helpers_py,v 1.5 2017/03/17 08:33:16 pea Exp $
---- src/common/helpers.py.orig.port	Wed Feb  1 14:16:03 2017
-+++ src/common/helpers.py	Thu Mar  2 21:46:21 2017
-@@ -844,7 +844,7 @@ def play_sound_file(path_to_soundfile):
+$OpenBSD: patch-gajim_common_helpers_py,v 1.1 2018/05/21 06:10:43 feinerer Exp $
+
+Index: gajim/common/helpers.py
+--- gajim/common/helpers.py.orig
++++ gajim/common/helpers.py
+@@ -915,7 +915,7 @@ def play_sound_file(path_to_soundfile):
              def _oss_play():
                  sndfile = wave.open(path_to_soundfile, 'rb')
                  (nc, sw, fr, nf, comptype, compname) = sndfile.getparams()

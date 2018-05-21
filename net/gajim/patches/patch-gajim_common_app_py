@@ -1,0 +1,16 @@
+$OpenBSD: patch-gajim_common_app_py,v 1.1 2018/05/21 06:10:43 feinerer Exp $
+
+py-crypto -> py-cryptodome
+
+Index: gajim/common/app.py
+--- gajim/common/app.py.orig
++++ gajim/common/app.py
+@@ -164,7 +164,7 @@ except ImportError:
+ 
+ HAVE_PYCRYPTO = True
+ try:
+-    __import__('Crypto')
++    __import__('Cryptodome')
+ except ImportError:
+     HAVE_PYCRYPTO = False
+ 

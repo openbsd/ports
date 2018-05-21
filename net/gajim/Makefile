@@ -1,48 +1,40 @@
-# $OpenBSD: Makefile,v 1.80 2018/05/16 21:41:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2018/05/21 06:10:43 feinerer Exp $
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.16.9
-REVISION=	1
+MODPY_EGG_VERSION=	1.0.3
+DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
 
-HOMEPAGE=	https://www.gajim.org/
+HOMEPAGE=	https://www.gajim.org
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
+MASTER_SITES=	${HOMEPAGE}/downloads/1.0/
 
 # GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS=	Yes
 
-USE_GMAKE=	Yes
-LIBTOOL_FLAGS=	--tag=disable-static
+COMMON_DEPENDS=	net/avahi,,-python \
+		net/py-nbxmpp${MODPY_FLAVOR} \
+		security/py-cryptodome${MODPY_FLAVOR} \
+		security/py-openssl${MODPY_FLAVOR} \
+		security/py-gnupg${MODPY_FLAVOR} \
+		textproc/gspell \
+		x11/dbus-python${MODPY_FLAVOR}
 
-MODULES=	lang/python \
-		textproc/intltool
-
-PATCHORIG=	.orig.port
-
-COMMON_DEPENDS=	databases/py-sqlite2 \
-		devel/py-notify \
-		net/avahi,,-python \
-		net/py-dns \
-		net/py-nbxmpp \
-		security/py-cryptodome \
-		security/py-openssl \
-		security/py-gnupg \
-		textproc/gtkspell \
-		x11/dbus-python \
-		x11/py-gtk2
-
-BUILD_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		devel/gettext-tools
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/desktop-file-utils \
-		devel/py-asn1 \
+		devel/py-asn1${MODPY_FLAVOR} \
+		graphics/py-cairo${MODPY_FLAVOR} \
+		graphics/py-Pillow${MODPY_FLAVOR} \
+		security/py-keyring${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
 .include <bsd.port.mk>

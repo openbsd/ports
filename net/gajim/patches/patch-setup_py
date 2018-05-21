@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1 2018/05/21 06:10:43 feinerer Exp $
+
+Use correct location and do not compress man pages.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -113,11 +113,11 @@ def build_man(build_cmd):
+ def install_man(install_cmd):
+     data_files = install_cmd.distribution.data_files
+     man_dir = os.path.join(build_dir, 'man')
+-    target = 'share/man/man1'
++    target = 'man/man1'
+ 
+     for man in MAN_FILES:
+         man_file_gz = os.path.join(man_dir, man + '.gz')
+-        data_files.append((target, [man_file_gz]))
++        data_files.append((target, [os.path.join('data', man)]))
+ 
+ 
+ def build_intl(build_cmd):
