@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.48 2017/11/11 10:43:31 ajacoutot Exp $
+$OpenBSD: README,v 1.49 2018/05/22 06:57:44 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,8 +26,51 @@ configuration page and logs:
 
 OpenBSD HTTP daemon
 -------------------
-See:
-    https://github.com/reyk/httpd/wiki/Running-ownCloud-with-httpd-on-OpenBSD
+httpd(8) example configuration for owncloud:
+
+ext_if="egress"
+
+types { include "/usr/share/misc/mime.types" }
+
+server "domain.tld" {
+	listen on $ext_if tls port 443
+
+        tls {
+        certificate "/etc/ssl/acme/domain.tld_fullchain.pem"
+       	key "/etc/ssl/acme/private/domain.tld_private.pem"
+        }
+
+	# First deny access to the specified files
+	location "/db_structure.xml"    { block }
+	location "/.ht*"                { block }
+	location "/README"              { block }
+	location "/data*"               { block }
+	location "/config*"             { block }
+	location "/build*"              { block }
+	location "/tests*"              { block }
+	location "/config*"             { block }
+	location "/lib*"                { block }
+	location "/3rdparty*"           { block }
+	location "/templates*"          { block }
+	location "/data*"               { block }
+	location "/.ht*"                { block }
+	location "/.user*"              { block }
+	location "/autotest*"           { block }
+	location "/occ*"                { block }
+	location "/issue*"              { block }
+	location "/indie*"              { block }
+	location "/db_*"                { block }
+	location "/console*"            { block }
+
+	location "/*.php*" {
+		root { "/owncloud", strip 1 }
+		fastcgi socket "/run/php-fpm.sock"
+	}
+
+	location "/*" {
+		root { "/owncloud", strip 1 }
+	}
+}
 
 nginx
 -----

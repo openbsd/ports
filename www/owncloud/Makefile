@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2018/04/28 09:07:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2018/05/22 06:57:44 gonzalo Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			10.0.8
+REVISION=		0
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -35,6 +36,7 @@ PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/owncloud
 TINSTDIR=		${TRUEPREFIX}/owncloud
 VR=			${V:R}
+MODPHP_VERSION=		7.0
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR
 
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
@@ -53,7 +55,7 @@ RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-intl
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-mcrypt
 
 # distributed caching and Transactional File Locking
-RUN_DEPENDS +=		databases/pecl-redis
+RUN_DEPENDS +=		databases/pecl-redis${MODPHP_FLAVOR}
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
