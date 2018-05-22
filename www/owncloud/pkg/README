@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.49 2018/05/22 06:57:44 gonzalo Exp $
+$OpenBSD: README,v 1.50 2018/05/22 07:19:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,19 +26,16 @@ configuration page and logs:
 
 OpenBSD HTTP daemon
 -------------------
-httpd(8) example configuration for owncloud:
+httpd(8) example configuration for ownCloud:
 
-ext_if="egress"
-
-types { include "/usr/share/misc/mime.types" }
-
+---8<---------------------------------------------------------------------------
 server "domain.tld" {
-	listen on $ext_if tls port 443
+	listen on egress tls port 443
 
-        tls {
-        certificate "/etc/ssl/acme/domain.tld_fullchain.pem"
-       	key "/etc/ssl/acme/private/domain.tld_private.pem"
-        }
+	tls {
+		certificate "/etc/ssl/domain.tld_fullchain.pem"
+		key "/etc/ssl/private/domain.tld_private.pem"
+	}
 
 	# First deny access to the specified files
 	location "/db_structure.xml"    { block }
@@ -71,6 +68,7 @@ server "domain.tld" {
 		root { "/owncloud", strip 1 }
 	}
 }
+---8<---------------------------------------------------------------------------
 
 nginx
 -----
