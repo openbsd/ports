@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/01 10:19:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/05/22 12:21:22 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 #COMMENT-lua=		Redland librdf Lua Bindings
@@ -55,6 +55,7 @@ WANTLIB-python=		${WANTLIB} raptor2 rasqal
 #WANTLIB-lua=		${WANTLIB} ${MODLUA_WANTLIB}
 
 MODULES+=		lang/php
+MODPHP_VERSION=		5.6
 CONFIGURE_ARGS+=	--with-php
 MODPHP_RUNDEP=		No
 CONFIGURE_ENV+=		PHP=${MODPHP_BIN} \
