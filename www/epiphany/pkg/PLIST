@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/04/23 13:18:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/05/22 17:26:58 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -19,6 +19,8 @@ share/glib-2.0/schemas/org.gnome.epiphany.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Epiphany.search-provider.ini
+share/help/
+share/help/C/
 share/help/C/epiphany/
 share/help/C/epiphany/browse-local.page
 share/help/C/epiphany/browse-private.page
@@ -49,6 +51,7 @@ share/help/C/epiphany/pref-passwords.page
 share/help/C/epiphany/pref.page
 share/help/C/epiphany/prob-restore-closed-page.page
 share/help/C/epiphany/proxy.page
+share/help/cs/
 share/help/cs/epiphany/
 share/help/cs/epiphany/browse-local.page
 share/help/cs/epiphany/browse-private.page
@@ -79,6 +82,7 @@ share/help/cs/epiphany/pref-passwords.page
 share/help/cs/epiphany/pref.page
 share/help/cs/epiphany/prob-restore-closed-page.page
 share/help/cs/epiphany/proxy.page
+share/help/de/
 share/help/de/epiphany/
 share/help/de/epiphany/browse-local.page
 share/help/de/epiphany/browse-private.page
@@ -109,6 +113,7 @@ share/help/de/epiphany/pref-passwords.page
 share/help/de/epiphany/pref.page
 share/help/de/epiphany/prob-restore-closed-page.page
 share/help/de/epiphany/proxy.page
+share/help/el/
 share/help/el/epiphany/
 share/help/el/epiphany/browse-local.page
 share/help/el/epiphany/browse-private.page
@@ -139,6 +144,7 @@ share/help/el/epiphany/pref-passwords.page
 share/help/el/epiphany/pref.page
 share/help/el/epiphany/prob-restore-closed-page.page
 share/help/el/epiphany/proxy.page
+share/help/es/
 share/help/es/epiphany/
 share/help/es/epiphany/browse-local.page
 share/help/es/epiphany/browse-private.page
@@ -169,6 +175,7 @@ share/help/es/epiphany/pref-passwords.page
 share/help/es/epiphany/pref.page
 share/help/es/epiphany/prob-restore-closed-page.page
 share/help/es/epiphany/proxy.page
+share/help/fr/
 share/help/fr/epiphany/
 share/help/fr/epiphany/browse-local.page
 share/help/fr/epiphany/browse-private.page
@@ -199,6 +206,7 @@ share/help/fr/epiphany/pref-passwords.page
 share/help/fr/epiphany/pref.page
 share/help/fr/epiphany/prob-restore-closed-page.page
 share/help/fr/epiphany/proxy.page
+share/help/gl/
 share/help/gl/epiphany/
 share/help/gl/epiphany/browse-local.page
 share/help/gl/epiphany/browse-private.page
@@ -229,6 +237,7 @@ share/help/gl/epiphany/pref-passwords.page
 share/help/gl/epiphany/pref.page
 share/help/gl/epiphany/prob-restore-closed-page.page
 share/help/gl/epiphany/proxy.page
+share/help/hu/
 share/help/hu/epiphany/
 share/help/hu/epiphany/browse-local.page
 share/help/hu/epiphany/browse-private.page
@@ -259,6 +268,7 @@ share/help/hu/epiphany/pref-passwords.page
 share/help/hu/epiphany/pref.page
 share/help/hu/epiphany/prob-restore-closed-page.page
 share/help/hu/epiphany/proxy.page
+share/help/ko/
 share/help/ko/epiphany/
 share/help/ko/epiphany/browse-local.page
 share/help/ko/epiphany/browse-private.page
@@ -320,6 +330,7 @@ share/help/pl/epiphany/pref-passwords.page
 share/help/pl/epiphany/pref.page
 share/help/pl/epiphany/prob-restore-closed-page.page
 share/help/pl/epiphany/proxy.page
+share/help/pt_BR/
 share/help/pt_BR/epiphany/
 share/help/pt_BR/epiphany/browse-local.page
 share/help/pt_BR/epiphany/browse-private.page
@@ -381,6 +392,7 @@ share/help/ru/epiphany/pref-passwords.page
 share/help/ru/epiphany/pref.page
 share/help/ru/epiphany/prob-restore-closed-page.page
 share/help/ru/epiphany/proxy.page
+share/help/sv/
 share/help/sv/epiphany/
 share/help/sv/epiphany/browse-local.page
 share/help/sv/epiphany/browse-private.page
@@ -461,6 +473,8 @@ share/locale/hr/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
 share/locale/hy/LC_MESSAGES/epiphany.mo
 share/locale/id/LC_MESSAGES/epiphany.mo
+share/locale/ig/
+share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/epiphany.mo
 share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
@@ -516,6 +530,8 @@ share/locale/uz/LC_MESSAGES/epiphany.mo
 share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
+share/locale/yo/
+share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
