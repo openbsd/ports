@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/13 07:13:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2018/05/22 08:18:08 sthen Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		2.28
 MODPY_EGG_VERSION =	${GH_TAGNAME}
-REVISION =		0
+REVISION =		1
 
 COMMENT =		download videos from YLE Areena
 

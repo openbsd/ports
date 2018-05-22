@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/28 15:37:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/22 08:18:08 sthen Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
-V =			1.0.10
-
 GH_ACCOUNT =		d11wtq
 GH_PROJECT =		boris
-GH_TAGNAME =		v$V
-
-DISTNAME =		${GH_PROJECT}-$V
+GH_TAGNAME =		v1.0.10
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/22 08:18:08 sthen Exp $
 
 COMMENT=		Markdown implementation for PHP
 
 V =			1.6.0
 DISTNAME =		php-markdown-lib-$V
 PKGNAME =		${DISTNAME:S/-lib//}
+REVISION =		0
 CATEGORIES=		www
 
 HOMEPAGE =		https://michelf.ca/projets/php-markdown/

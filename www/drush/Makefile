@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/02/27 17:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/22 08:18:08 sthen Exp $
 
 COMMENT =	command line access to most of Drupal
 
 CATEGORIES =	www devel
 
 V=		8.0.3
+REVISION=	0
 DISTNAME=	drush-$V
 EXTRACT_SUFX=	-deps.tar.xz
 

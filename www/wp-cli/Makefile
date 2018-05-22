@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/10 16:44:01 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/22 08:18:09 sthen Exp $
 
 COMMENT =	command line tool for wordpress
 
 GH_ACCOUNT =	wp-cli
 GH_PROJECT =	wp-cli
 GH_TAGNAME =	v1.4.1
+REVISION =	0
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar

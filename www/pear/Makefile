@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/04/01 18:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/05/22 08:18:08 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.phar
 EXTRACT_ONLY=
 PKGNAME-main=	pear-${VERSION}
 PKGNAME-utils=	pear-utils-${VERSION}
+REVISION=	0
 WRKDIST=	${WRKDIR}
 CATEGORIES=	www devel
 

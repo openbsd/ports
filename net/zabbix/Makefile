@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2018/05/10 12:17:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2018/05/22 08:18:08 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -16,7 +16,8 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-proxy =	0
+REVISION-proxy =	1
+REVISION-web =		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -87,6 +88,7 @@ LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			security/libssh2 \
 			textproc/libxml
 WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2
+RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server
 .if empty(FLAVOR)
