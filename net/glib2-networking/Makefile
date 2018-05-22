@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2018/05/22 07:04:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2018/05/22 15:44:11 ajacoutot Exp $
 
 COMMENT=		network-related gio modules for GLib
 
-GNOME_VERSION=		2.56.0
+GNOME_VERSION=		2.56.1
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
 
@@ -19,7 +19,7 @@ WANTLIB += c gio-2.0 glib-2.0 gnutls gobject-2.0 intl p11-kit
 WANTLIB += proxy
 
 # c++11
-COMPILER =		base-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/meson \
 			x11/gnome
