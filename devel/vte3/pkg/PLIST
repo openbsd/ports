@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/04/23 12:48:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.35 2018/05/22 17:26:46 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -17,7 +17,7 @@ include/vte-${API_V}/vte/vteversion.h
 lib/girepository-1.0/Vte-${API_V}.typelib
 lib/libvte-${API_V}.a
 lib/libvte-${API_V}.la
-@lib lib/libvte-${API_V}.so.${LIBvte-2.91_VERSION}
+@lib lib/libvte-${API_V}.so.${LIBvte-${API_V}_VERSION}
 lib/pkgconfig/vte-${API_V}.pc
 share/gir-1.0/Vte-${API_V}.gir
 share/gtk-doc/html/vte-${API_V}/
