@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_libcompiler_builtins_build_rs,v 1.1 2018/01/27 09:22:00 landry Exp $
-Use local compiler_rt
+$OpenBSD: patch-src_libcompiler_builtins_build_rs,v 1.2 2018/05/22 06:04:33 landry Exp $
+Use local compiler_rt.
+https://github.com/rust-lang-nursery/compiler-builtins/pull/241/commits/d8bbc810161a787f5b398c6f7b447570e7468780
 Index: src/libcompiler_builtins/build.rs
 --- src/libcompiler_builtins/build.rs.orig
 +++ src/libcompiler_builtins/build.rs
-@@ -12,6 +12,12 @@ fn main() {
+@@ -10,6 +10,12 @@ fn main() {
          return;
      }
  

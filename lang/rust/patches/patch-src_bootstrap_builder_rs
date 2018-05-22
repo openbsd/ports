@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.3 2018/04/02 07:21:50 landry Exp $
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.4 2018/05/22 06:04:33 landry Exp $
+- always pass -j to cargo
 - disable test::Bootstrap (require network)
 - disable test::Debuginfo (require recent gdb, and some are failing with egdb)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -318,9 +318,9 @@ impl<'a> Builder<'a> {
+@@ -304,9 +304,9 @@ impl<'a> Builder<'a> {
                  tool::RustInstaller, tool::Cargo, tool::Rls, tool::Rustdoc, tool::Clippy,
-                 native::Llvm, tool::Rustfmt, tool::Miri),
+                 native::Llvm, tool::Rustfmt, tool::Miri, native::Lld),
              Kind::Check => describe!(check::Std, check::Test, check::Rustc),
 -            Kind::Test => describe!(test::Tidy, test::Bootstrap, test::Ui, test::RunPass,
 +            Kind::Test => describe!(test::Tidy, test::Ui, test::RunPass,
@@ -16,3 +17,16 @@ Index: src/bootstrap/builder.rs
                  test::UiFullDeps, test::RunPassFullDeps, test::RunFailFullDeps,
                  test::CompileFailFullDeps, test::IncrementalFullDeps, test::Rustdoc, test::Pretty,
                  test::RunPassPretty, test::RunFailPretty, test::RunPassValgrindPretty,
+@@ -534,11 +534,7 @@ impl<'a> Builder<'a> {
+              .arg("--target")
+              .arg(target);
+ 
+-        // If we were invoked from `make` then that's already got a jobserver
+-        // set up for us so no need to tell Cargo about jobs all over again.
+-        if env::var_os("MAKEFLAGS").is_none() && env::var_os("MFLAGS").is_none() {
+-             cargo.arg("-j").arg(self.jobs().to_string());
+-        }
++        cargo.arg("-j").arg(self.jobs().to_string());
+ 
+         // FIXME: Temporary fix for https://github.com/rust-lang/cargo/issues/3005
+         // Force cargo to output binaries with disambiguating hashes in the name

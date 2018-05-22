@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_test_run-pass_stack-probes-lto_rs,v 1.1 2018/05/22 06:04:33 landry Exp $
+Disable stack-probes test (MAP_STACK terminate the process in a way the testsuite fails).
+Index: src/test/run-pass/stack-probes-lto.rs
+--- src/test/run-pass/stack-probes-lto.rs.orig
++++ src/test/run-pass/stack-probes-lto.rs
+@@ -19,6 +19,7 @@
+ // ignore-emscripten no processes
+ // ignore-musl FIXME #31506
+ // ignore-pretty
++// ignore-openbsd
+ // min-system-llvm-version 5.0
+ // compile-flags: -C lto
+ // no-prefer-dynamic

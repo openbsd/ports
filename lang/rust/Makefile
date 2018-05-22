@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.67 2018/04/07 14:56:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2018/05/22 06:04:33 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
@@ -12,14 +12,14 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.25.0
-CARGO_V =		0.26.0
+V =			1.26.0
+CARGO_V =		0.27.0
 DISTNAME =		rustc-${V}-src
-REVISION = 0
 
 # rustc bootstrap version
-BV-amd64 =		1.25.0-20180326
-BV-i386 =		1.25.0-20180330
+BV-aarch64 =		1.26.0-20180518
+BV-amd64 =		1.26.0-20180508
+BV-i386 =		1.26.0-20180509
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -48,6 +48,7 @@ FLAVOR ?=
 PSEUDO_FLAVORS =	native_bootstrap
 
 DIST_SUBDIR =		rust
+EXTRACT_SUFX =		.tar.xz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if ${FLAVOR} == native_bootstrap
 BUILD_DEPENDS+=		lang/rust
@@ -57,17 +58,20 @@ DISTFILES +=		${BOOTSTRAP}
 
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
-BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}.tar.gz:0
+BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
 SUPDISTFILES +=		${BOOTSTRAP-$m}
 .endfor
 
 # per MACHINE_ARCH configuration
-.if "${MACHINE_ARCH}" == "amd64"
+.if "${MACHINE_ARCH}" == "aarch64"
+TRIPLE_ARCH =		aarch64-unknown-openbsd
+PKG_ARGS +=		-Daarch64=1 -Damd64=0 -Di386=0
+.elif "${MACHINE_ARCH}" == "amd64"
 TRIPLE_ARCH =		x86_64-unknown-openbsd
-PKG_ARGS +=		-Damd64=1 -Di386=0
+PKG_ARGS +=		-Daarch64=0 -Damd64=1 -Di386=0
 .elif "${MACHINE_ARCH}" == "i386"
 TRIPLE_ARCH =		i686-unknown-openbsd
-PKG_ARGS +=		-Damd64=0 -Di386=1
+PKG_ARGS +=		-Daarch64=0 -Damd64=0 -Di386=1
 .endif
 
 MODULES +=		lang/python \
@@ -83,9 +87,13 @@ LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
-MAKE_ENV =	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
-		RUST_BACKTRACE=1
-TEST_ENV =	RUST_BACKTRACE=0
+MAKE_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1
+TEST_ENV +=	RUST_BACKTRACE=0
+
+.ifdef DEBUG
+MAKE_ENV +=	RUST_BACKTRACE=1
+MAKE_ENV +=	RUST_LOG=info
+.endif
 
 # build/configuration variables
 PATCHORIG =		.openbsd.orig
@@ -104,7 +112,7 @@ SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/src/vendor/*/.cargo-checksum.json
-	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/cargotest/support/paths.rs
+	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/testsuite/cargotest/support/paths.rs
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -156,7 +164,9 @@ TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py
 
 do-build:
-	${BUILD_BIN} dist --jobs=${MAKE_JOBS}
+	${BUILD_BIN} dist --jobs=${MAKE_JOBS} \
+		src/libstd src/librustc src/doc cargo
+	rm -rf -- ${WRKBUILD}/build/tmp/dist
 
 COMPONENTS ?=	rustc-${V} rust-std-${V} rust-docs-${V} cargo-${CARGO_V}
 do-install:
@@ -194,7 +204,7 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
 
 do-test:
-	${TEST_BIN} test --jobs=${MAKE_JOBS}
+	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast
 
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new

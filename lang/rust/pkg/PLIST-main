@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2017/07/31 13:19:13 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2018/05/22 06:04:33 landry Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -6,6 +6,9 @@ bin/rust-gdb
 @bin bin/rustc
 @bin bin/rustdoc
 lib/rustlib/
+%%aarch64%%
+%%amd64%%
+%%i386%%
 lib/rustlib/etc/
 lib/rustlib/etc/debugger_pretty_printers_common.py
 lib/rustlib/etc/debugger_pretty_printers_common.pyc
@@ -15,8 +18,6 @@ lib/rustlib/etc/gdb_rust_pretty_printing.py
 lib/rustlib/etc/gdb_rust_pretty_printing.pyc
 lib/rustlib/etc/lldb_rust_formatters.py
 lib/rustlib/etc/lldb_rust_formatters.pyc
-%%amd64%%
-%%i386%%
 @man man/man1/cargo-bench.1
 @man man/man1/cargo-build.1
 @man man/man1/cargo-check.1

@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.11 2018/04/02 07:21:50 landry Exp $
+$OpenBSD: patch-src_bootstrap_lib_rs,v 1.12 2018/05/22 06:04:33 landry Exp $
 let us compilation choice to be honored.
+https://github.com/rust-lang/rust/issues/39900
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -642,7 +642,6 @@ impl Build {
+@@ -641,7 +641,6 @@ impl Build {
          // cc-rs because the build scripts will determine that for themselves.
          let mut base = self.cc[&target].args().iter()
                             .map(|s| s.to_string_lossy().into_owned())

@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.3 2018/04/02 07:21:50 landry Exp $
-try to reduce memory usage on i386:
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.4 2018/05/22 06:04:33 landry Exp $
+try to reduce memory usage on aarch64:
  - small code size to optimize (more codegen-units)
  - optimization level to 1 (instead of 2) to reduce the work in memory
  - reduce memory use by retaining fewer names within compilation artifacts
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -174,6 +174,12 @@ fn main() {
-             cmd.arg("-Ccodegen-units=16").arg("-Zthinlto");
+@@ -180,6 +180,13 @@ fn main() {
+             cmd.arg("-C").arg(format!("codegen-units={}", s));
          }
  
-+        if target.contains("i686-unknown-openbsd") && crate_name == "rustc" {
++        if target.contains("aarch64-unknown-openbsd")
++            && crate_name == "rustc" {
 +            cmd.arg("-C").arg("codegen-units=16")
 +               .arg("-C").arg("opt-level=1")
 +               .arg("-Z").arg("fewer-names");

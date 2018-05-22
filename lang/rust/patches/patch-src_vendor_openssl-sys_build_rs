@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_vendor_openssl-sys_build_rs,v 1.4 2017/12/04 17:31:49 landry Exp $
+$OpenBSD: patch-src_vendor_openssl-sys_build_rs,v 1.5 2018/05/22 06:04:33 landry Exp $
 The LibreSSL version in -current isn't explicitly supported.
 Index: src/vendor/openssl-sys/build.rs
 --- src/vendor/openssl-sys/build.rs.orig
 +++ src/vendor/openssl-sys/build.rs
-@@ -317,7 +317,7 @@ fn validate_headers(include_dirs: &[PathBuf]) -> Versi
+@@ -324,7 +324,7 @@ fn validate_headers(include_dirs: &[PathBuf]) -> Versi
  #include <openssl/opensslconf.h>
  
  #if LIBRESSL_VERSION_NUMBER >= 0x20700000

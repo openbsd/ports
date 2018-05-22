@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.8 2017/12/04 17:31:49 landry Exp $
-Disable 6 failing tests (related to unix socket). Needs more investigation.
+$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.9 2018/05/22 06:04:33 landry Exp $
+Disable some failing tests (related to unix socket). Needs more investigation.
 Index: src/libstd/sys/unix/ext/net.rs
 --- src/libstd/sys/unix/ext/net.rs.orig
 +++ src/libstd/sys/unix/ext/net.rs
-@@ -1260,7 +1260,7 @@ impl UnixDatagram {
+@@ -1289,7 +1289,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -12,7 +12,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1285,7 +1285,7 @@ impl UnixDatagram {
+@@ -1328,7 +1328,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -21,7 +21,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1302,7 +1302,7 @@ impl UnixDatagram {
+@@ -1359,7 +1359,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -30,7 +30,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1319,7 +1319,7 @@ impl UnixDatagram {
+@@ -1376,7 +1376,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -39,16 +39,16 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1412,7 +1412,7 @@ mod test {
+@@ -1469,7 +1469,7 @@ mod test {
      use thread;
-     use io;
+     use io::{self, ErrorKind};
      use io::prelude::*;
 -    use time::Duration;
 +    //use time::Duration;
      use sys_common::io::test::tmpdir;
  
      use super::*;
-@@ -1427,6 +1427,7 @@ mod test {
+@@ -1484,6 +1484,7 @@ mod test {
      }
  
      #[test]
@@ -56,7 +56,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      fn basic() {
          let dir = tmpdir();
          let socket_path = dir.path().join("sock");
-@@ -1551,6 +1552,7 @@ mod test {
+@@ -1608,6 +1609,7 @@ mod test {
      }
  
      #[test]

@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tools_cargo_src_cargo_core_package_id_rs,v 1.2 2017/10/17 17:19:24 danj Exp $
+$OpenBSD: patch-src_tools_cargo_src_cargo_core_package_id_rs,v 1.3 2018/05/22 06:04:33 landry Exp $
 Don't rely on source_id for generating a hash as it could contains build dependent information (full path of the build directory).
 See https://github.com/rust-lang/rust/issues/39786
 Index: src/tools/cargo/src/cargo/core/package_id.rs
 --- src/tools/cargo/src/cargo/core/package_id.rs.orig
 +++ src/tools/cargo/src/cargo/core/package_id.rs
-@@ -75,7 +75,6 @@ impl Hash for PackageId {
+@@ -78,7 +78,6 @@ impl Hash for PackageId {
      fn hash<S: hash::Hasher>(&self, state: &mut S) {
          self.inner.name.hash(state);
          self.inner.version.hash(state);

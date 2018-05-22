@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_stdsimd_coresimd_x86_mod_rs,v 1.1 2018/05/22 06:04:33 landry Exp $
+Disable coresimd::x86::__m256 test. Need to check.
+Index: src/stdsimd/coresimd/x86/mod.rs
+--- src/stdsimd/coresimd/x86/mod.rs.orig
++++ src/stdsimd/coresimd/x86/mod.rs
+@@ -279,7 +279,7 @@ types! {
+     ///
+     /// # Examples
+     ///
+-    /// ```
++    /// ```no_run
+     /// # #![feature(cfg_target_feature, target_feature, stdsimd)]
+     /// # #![cfg_attr(not(dox), no_std)]
+     /// # #[cfg(not(dox))]
