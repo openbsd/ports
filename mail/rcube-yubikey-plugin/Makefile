@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/17 08:33:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/05/22 08:19:06 sthen Exp $
 
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
@@ -25,8 +25,6 @@ INSTDIR=	${WRKINST}${TINSTDIR}
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
-MODPHP_VERSION=	7.0
-
 RUN_DEPENDS=	mail/roundcubemail>=0.9 \
 		lang/php/${MODPHP_VERSION},-curl \
 		www/pear

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/17 08:57:47 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/22 08:19:06 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
@@ -37,7 +37,6 @@ INSTDIR=		${PREFIX}/nextcloud
 TINSTDIR=		${TRUEPREFIX}/nextcloud
 VR=			${V:R}
 MAJOR=			${VR:R}
-MODPHP_VERSION=        7.0
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR MAJOR
 
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \

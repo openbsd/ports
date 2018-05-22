@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/05/17 08:27:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2018/05/22 08:19:06 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -22,7 +22,6 @@ MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 MODULES =	lang/php \
 		lang/python
-MODPHP_VERSION = 7.0
 MODPY_BUILDDEP = No
 
 RUN_DEPENDS =	databases/py-mysql \

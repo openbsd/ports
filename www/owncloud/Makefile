@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2018/05/22 07:19:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2018/05/22 08:19:06 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
@@ -37,7 +37,6 @@ PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/owncloud
 TINSTDIR=		${TRUEPREFIX}/owncloud
 VR=			${V:R}
-MODPHP_VERSION=		7.0
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR
 
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
