@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.158 2018/04/25 11:10:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.159 2018/05/22 17:26:52 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.28.1
+GNOME_VERSION=	3.28.2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
-		devel/vte3>=0.46.1 \
+		devel/vte3>=0.52.2 \
 		sysutils/e2fsprogs \
 		x11/gnome/nautilus>=3.22.1
 
