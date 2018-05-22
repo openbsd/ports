@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.4 2018/05/22 20:15:03 kn Exp $
+$OpenBSD: patch-src_main_c,v 1.5 2018/05/22 21:24:08 jca Exp $
 
 Index: src/main.c
 --- src/main.c.orig
@@ -12,7 +12,7 @@ Index: src/main.c
  static void ATTR_PRINTFLIKE(1, 2)
  debug( const char *msg, ... )
  {
-@@ -716,6 +718,28 @@ main( int argc, char **argv )
+@@ -716,6 +718,36 @@ main( int argc, char **argv )
  
  	if (load_config( config, pseudo ))
  		return 1;
@@ -20,22 +20,30 @@ Index: src/main.c
 +	if (mvars->list) {
 +		if (needs_proc_exec) {
 +			if (pledge("stdio rpath inet flock dns getpw tty"
-+			    " proc exec prot_exec", NULL) == -1)
++			    " proc exec prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
++				exit(1);
++			}
 +		} else {
 +			if (pledge("stdio rpath inet flock dns getpw tty"
-+			    " prot_exec", NULL) == -1)
++			    " prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
++				exit(1);
++			}
 +		}
 +	} else {
 +		if (needs_proc_exec) {
 +			if (pledge("stdio rpath wpath cpath inet flock dns"
-+			    " getpw tty proc exec prot_exec", NULL) == -1)
++			    " getpw tty proc exec prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
++				exit(1);
++			}
 +		} else {
 +			if (pledge("stdio rpath wpath cpath inet flock dns"
-+			    " getpw tty prot_exec", NULL) == -1)
++			    " getpw tty prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
++				exit(1);
++			}
 +		}
 +	}
  
