@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/04/22 13:30:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2018/05/22 07:04:41 jasper Exp $
 
 COMMENT=		network-related gio modules for GLib
 
@@ -17,6 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gnutls gobject-2.0 intl p11-kit
 WANTLIB += proxy
+
+# c++11
+COMPILER =		base-clang ports-gcc
 
 MODULES=		devel/meson \
 			x11/gnome
