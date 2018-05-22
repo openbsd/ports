@@ -1,0 +1,16 @@
+$OpenBSD: patch-php7-ext_main_cpp,v 1.1 2018/05/22 08:17:45 sthen Exp $
+
+Index: php7-ext/main.cpp
+--- php7-ext/main.cpp.orig
++++ php7-ext/main.cpp
+@@ -110,10 +110,8 @@
+ // we need to include this in c++ space because php.h also includes it in
+ // 'extern "C"'-space which doesn't work in win32
+ #include <cmath>
+-#if __GNUC_PREREQ(5, 0) && !__GNUC_PREREQ(6, 0)
+ using std::isfinite;
+ using std::isnan;
+-#endif
+ 
+ extern "C" {
+ 	// Remove these defines to remove warnings

@@ -1,0 +1,16 @@
+$OpenBSD: patch-php7-ext_typeconversion_cpp,v 1.1 2018/05/22 08:17:45 sthen Exp $
+
+Index: php7-ext/typeconversion.cpp
+--- php7-ext/typeconversion.cpp.orig
++++ php7-ext/typeconversion.cpp
+@@ -20,10 +20,8 @@
+ #include <cmath>
+ #include <mapiutil.h>
+ #include "php-ext/phpconfig.h"
+-#if __GNUC_PREREQ(5, 0) && !__GNUC_PREREQ(6, 0)
+ using std::isfinite;
+ using std::isnan;
+-#endif
+ 
+ extern "C" {
+ 	// Remove these defines to remove warnings
