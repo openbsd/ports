@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2018/05/22 08:16:55 sthen Exp $
 
 COMMENT=		open source web analytics software program
 
 DISTNAME=		piwik-3.0.3
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.piwik.org/
@@ -26,7 +27,6 @@ SUBST_VARS=		INSTDIR
 MODULES=	lang/php \
 		lang/python
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
-		lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-pdo_mysql
 
 MODPY_ADJ_FILES=misc/log-analytics/import_logs.py

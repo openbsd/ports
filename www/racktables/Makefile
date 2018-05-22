@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/18 01:43:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/05/22 08:16:55 sthen Exp $
 
 COMMENT=	web-based rack/IP management
 
 DISTNAME=	RackTables-0.20.14
-REVISION=	0
+REVISION=	1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=racktables/}
 MODULES=	lang/php
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
-		lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
 		lang/php/${MODPHP_VERSION},-snmp \
 		net/p5-Net-Telnet
