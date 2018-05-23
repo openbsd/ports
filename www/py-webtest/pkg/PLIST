@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/17 16:52:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/23 13:43:31 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -9,24 +9,25 @@ lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/webtest/
 lib/python${MODPY_VERSION}/site-packages/webtest/__init__.py
-lib/python${MODPY_VERSION}/site-packages/webtest/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}debugapp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}forms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}lint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}sel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/app.py
-lib/python${MODPY_VERSION}/site-packages/webtest/app.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/compat.py
-lib/python${MODPY_VERSION}/site-packages/webtest/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.py
-lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/ext.py
-lib/python${MODPY_VERSION}/site-packages/webtest/ext.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/forms.py
-lib/python${MODPY_VERSION}/site-packages/webtest/forms.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/http.py
-lib/python${MODPY_VERSION}/site-packages/webtest/http.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/lint.py
-lib/python${MODPY_VERSION}/site-packages/webtest/lint.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/response.py
-lib/python${MODPY_VERSION}/site-packages/webtest/response.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/sel.py
-lib/python${MODPY_VERSION}/site-packages/webtest/sel.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/utils.py
-lib/python${MODPY_VERSION}/site-packages/webtest/utils.pyc
