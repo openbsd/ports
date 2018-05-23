@@ -1,4 +1,4 @@
-$OpenBSD: patch-conformance_interfaces_mmap_14-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
+$OpenBSD: patch-conformance_interfaces_mmap_14-1_c,v 1.2 2018/05/23 20:28:34 bluhm Exp $
 
 Fix clang time_t printf format warning to make test compile.
 
@@ -23,6 +23,15 @@ Index: conformance/interfaces/mmap/14-1.c
    if (write(fd, data, total_size) != total_size)
    {
      printf(TNAME "Error at write(): %s\n", 
+@@ -80,7 +80,7 @@ int main()
+   sleep(1); 
+   flag = MAP_SHARED;
+   prot = PROT_READ | PROT_WRITE;
+-  printf("Time before mmap(): %ld\n", time(NULL));
++  printf("Time before mmap(): %lld\n", (long long)time(NULL));
+   pa = mmap(addr, size, prot, flag, fd, off);
+   if (pa == MAP_FAILED)
+   {
 @@ -90,7 +90,7 @@ int main()
      exit(PTS_FAIL);
    }

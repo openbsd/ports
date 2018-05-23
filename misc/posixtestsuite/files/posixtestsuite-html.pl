@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#	$OpenBSD: posixtestsuite-html.pl,v 1.3 2018/05/21 19:22:58 bluhm Exp $
+#	$OpenBSD: posixtestsuite-html.pl,v 1.4 2018/05/23 20:28:34 bluhm Exp $
 # convert results of open POSIX test suite to a html table
 
 # Copyright (c) 2016-2018 Alexander Bluhm <bluhm@genua.de>
@@ -43,10 +43,12 @@ foreach my $os (@os, "") {
 	or die "Open '${dir}run.log' for reading failed: $!";
 
     my $uname = <$un>;
+    my $fail = 0;
     my %test;
     while (<$bl>) {
 	my ($name, $action, $result) = split(/[ :\n]+/);
 	$action =~ /^(build|link)$/ or next;
+	$fail++ unless $result =~ /^(PASS|SKIP)$/;
 	$test{$name}{$action} = "$action $result";
 	unless ($source{$name}) {
 	    my $source = "$name.c";
@@ -54,13 +56,14 @@ foreach my $os (@os, "") {
 	    $source{$name} = $source;
 	}
 	my $build = "${dir}$name.build.log";
-	-f $build or $build = "${dir}$name.build";  # backwards compatibility
+	next if !-f $build && -f "${dir}$name.build";  # backwards compatibility
 	-f $build or die "Build log '$build' missing";
 	$test{$name}{log} = $build;
     }
     while (<$rl>) {
 	my ($name, $action, $result) = split(/[ :\n]+/);
 	$action =~ /^execution$/ or next;
+	$fail++ unless $result =~ /^(PASS|SKIP)$/;
 	$test{$name}{$action} = $result;
 	unless ($source{$name}) {
 	    my $source = "$name.sh";
@@ -68,14 +71,17 @@ foreach my $os (@os, "") {
 	    $source{$name} = $source;
 	}
 	my $run = "${dir}$name.run.log";
-	-f $run or $run = "${dir}$name.run";  # backwards compatibility
+	next if !-f $run && -f "${dir}$name.run";  # backwards compatibility
 	-f $run or die "Run log '$run' missing";
 	$test{$name}{log} = $run;
     }
+    my $total = scalar keys %test;
+    my $pass = $total - $fail;
 
     if ($os || !%out) {
 	    $out{$os}{uname} = $uname;
 	    $out{$os}{test} = \%test;
+	    $out{$os}{pass} = $pass / $total;
     }
 }
 
@@ -84,7 +90,7 @@ print <<"HEADER";
 <html>
 
 <head>
-  <title>OpenBSD Open POSIX Test Suite Results</title>
+  <title>Open POSIX Test Suite Results</title>
   <style>
     th { text-align: left; white-space: nowrap; }
     tr:hover {background-color: #e0e0e0}
@@ -106,18 +112,23 @@ print <<"HEADER";
     <td>$now</td>
   </tr>
   <tr>
-    <th>test</th>
-    <td><a href=\"build.log\">build</a></td>
+    <th>test build</th>
+    <td><a href=\"build.log\">log</a></td>
   </tr>
   <tr>
-    <th>test</th>
-    <td><a href=\"run.log\">run</a></td>
+    <th>test run</th>
+    <td><a href=\"run.log\">log</a></td>
   </tr>
 </table>
 HEADER
 
 print "<table>\n";
-print "  <tr>\n    <th></th>\n";
+print "  <tr>\n    <th>pass rate</th>\n";
+foreach my $os (reverse sort keys %out) {
+    my $percent = sprintf("%d%%", 100 * $out{$os}{pass});
+    print "    <th>$percent</th>\n";
+}
+print "  <tr>\n    <th>machine</th>\n";
 foreach my $os (reverse sort keys %out) {
     my $date = $os;
     my $uname = $out{$os}{uname};
@@ -132,7 +143,7 @@ foreach my $name (sort keys %source) {
 	my $status = $test->{execution};
 	if (!$status) {
 	    $status = $test->{link};
-	    $status = 'BUILDONLY' if $status && $status eq 'PASS';
+	    $status = 'BUILDONLY' if $status && $status eq 'link PASS';
 	}
 	$status ||= $test->{build};
 	$status ||= "";

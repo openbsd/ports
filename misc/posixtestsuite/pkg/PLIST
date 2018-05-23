@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/21 19:22:58 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/23 20:28:34 bluhm Exp $
 bin/posixtestsuite
 bin/posixtestsuite-html
 libdata/posixtestsuite/
@@ -4493,6 +4493,7 @@ libexec/posixtestsuite/conformance/interfaces/mmap/
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/11-5.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/12-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/13-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/mmap/14-1.test
 libexec/posixtestsuite/conformance/interfaces/mmap/16-1.test
 libexec/posixtestsuite/conformance/interfaces/mmap/17-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/18-1.test
