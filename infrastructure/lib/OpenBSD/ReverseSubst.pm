@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.15 2018/05/21 06:16:23 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.16 2018/05/23 13:53:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -62,6 +62,16 @@ sub unsubst_version
 	return $done.$string;
 }
 
+sub assert_valid_prefix
+{
+	my ($self, $subst, $string, $unsubst) = @_;
+	return if !defined $unsubst;
+	my $s2 = $subst->do($unsubst);
+	$s2 =~ s,/+$,/,;
+	die "Not a valid unsubst '$unsubst' vs '$string' vs '$s2'"
+	    if $string !~ m/^\Q$s2\E/;
+}
+
 package OpenBSD::PackingElement::Action;
 sub unsubst_prefix
 {
@@ -96,6 +106,14 @@ sub unsubst_version
 	} else {
 		return $self->SUPER::unsubst_version($string, $v, $k2);
 	}
+}
+
+package OpenBSD::PackingElement::Lib;
+sub assert_valid_prefix
+{
+	my ($self, $subst, $string, $unsubst) = @_;
+	# libraries are already partially subst'd at this stage
+	$self->SUPER::assert_valid_prefix($subst, $subst->do($string), $unsubst);
 }
 
 package Forwarder;
@@ -307,29 +325,21 @@ sub unsubst_non_empty_var
 	return $string;
 }
 
-sub assert_valid_prefix
-{
-	my ($subst, $string, $unsubst) = @_;
-	my $s2 = $subst->do($unsubst);
-	die "Not a valid unsubst '$unsubst' vs '$string'"
-	    if $string !~ m/^\Q$s2\E/;
-}
-
 # create actual reverse substitution. $unsubst is the string already stored
 # in an existing plist, to figure out ambiguous cases and empty substs
 sub do_backsubst
 {
 	my ($subst, $string, $unsubst, $context) = @_;
 
+	$context //= 'OpenBSD::PackingElement';
 	# note that unsubst doesn't necessarily match the whole of subst
 	# (in new elements, it can be stolen from approximate matches)
 	# but it should always be a legitimate prefix of subst
-	#$subst->assert_valid_prefix($string, $unsubst);
+	#$context->assert_valid_prefix($subst, $string, $unsubst);
 
 	if (!defined $subst->{vars}) {
 		$subst->finalize;
 	}
-	$context //= 'OpenBSD::PackingElement';
 	for my $k (@{$subst->{vars}}) {
 		$string = $subst->unsubst_non_empty_var($string, $k, $unsubst,
 		    $context);
