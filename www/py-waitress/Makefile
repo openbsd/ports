@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/02 10:09:44 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/23 12:49:37 jasper Exp $
 
 COMMENT =		pure-Python WSGI server
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		waitress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,5 +15,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
+
+BUILD_DEPENDS =		textproc/py-sphinx
+
+post-install:
+	mv ${PREFIX}/bin/waitress-serve{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>
