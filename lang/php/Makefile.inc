@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.103 2018/05/08 12:04:55 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.104 2018/05/23 06:51:14 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -104,7 +104,8 @@ CONFIGURE_ARGS+=	--with-openssl \
 			--enable-sysvsem \
 			--enable-sysvshm \
 			--enable-mbstring \
-			--enable-exif
+			--enable-exif \
+			--enable-phar
 
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
@@ -357,6 +358,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-cgi-${PV}
 # Make sure that php-cgi.1 still just sources php.1 when importing a new major version.
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
+	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
+	${INSTALL_MAN} ${WRKBUILD}/ext/phar/phar.1 ${PREFIX}/man/man1/phar-${PV}.1
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/fpm/php-fpm ${PREFIX}/sbin/php-fpm-${PV}
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \

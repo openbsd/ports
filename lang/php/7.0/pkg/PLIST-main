@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/04/25 11:21:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/05/23 06:51:14 martijn Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -20,6 +20,7 @@
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
+bin/phar-${PV}
 lib/php-${PV}/
 lib/php-${PV}/libphp7.so
 lib/php-${PV}/modules/
@@ -27,6 +28,7 @@ lib/php-${PV}/modules/opcache.so
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
+@man man/man1/phar-${PV}.1
 @man man/man8/php-fpm-${PV}.8
 @bin sbin/php-fpm-${PV}
 share/doc/pkg-readmes/${FULLPKGNAME}
