@@ -1,9 +1,0 @@
-To completely deinstall the opengroupware package you
-need to perform these steps as root:
-
-	rm -f ${VARBASE}/www/conf/modules/opengroupware.conf
-        and edit ${VARBASE}/www/conf/httpd.conf
-        remove the line: LoadModule ngobjweb_module
-
-Do not do this if you plan on re-installing the opengroupware
-package at some future time.
