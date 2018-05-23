@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.120 2018/04/26 12:08:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2018/05/23 12:40:53 robert Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		5.10.1.47
+V=		5.12.0.226
+
 DISTNAME=	mono-${V}
 
 CATEGORIES=	lang devel
@@ -37,6 +38,7 @@ MODMONO_DEPS=	No
 
 USE_GMAKE=	Yes
 
+USE_LIBTOOL=	gnu
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \

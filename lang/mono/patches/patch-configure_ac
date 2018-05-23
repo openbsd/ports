@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.5 2018/03/29 19:33:18 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2018/05/23 12:40:53 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -954,7 +954,6 @@ with_unreal_default=no
+@@ -1066,7 +1066,6 @@ with_unreal_default=no
  with_wasm_default=no
  
  with_bitcode_default=no
@@ -11,27 +11,7 @@ Index: configure.ac
  
  INVARIANT_AOT_OPTIONS=nimt-trampolines=2000,ntrampolines=9000,nrgctx-fetch-trampolines=256,ngsharedvt-trampolines=4000
  
-@@ -3271,6 +3270,9 @@ case "$host" in
- 			BTLS_PLATFORM=i386
- 			;;
- 		  openbsd*|freebsd*|kfreebsd-gnu*)
-+			AOT_SUPPORTED="yes"
-+			BTLS_SUPPORTED=yes
-+			BTLS_PLATFORM=i386
- 		        ;;
- 		esac
- 		;;
-@@ -3295,6 +3297,9 @@ case "$host" in
- 			boehm_supported=false
- 			;;
- 		  openbsd*|freebsd*|kfreebsd-gnu*)
-+			AOT_SUPPORTED="yes"
-+			BTLS_SUPPORTED=yes
-+			BTLS_PLATFORM=x86_64
- 			;;
- 		  mingw*)
- 			;;
-@@ -4283,17 +4288,13 @@ AC_ARG_WITH(lazy_gc_thread_creation, [  --with-lazy-gc
+@@ -4450,17 +4449,13 @@ AC_ARG_WITH(lazy_gc_thread_creation, [  --with-lazy-gc
  	fi
  ], [with_lazy_gc_thread_creation=no])
  

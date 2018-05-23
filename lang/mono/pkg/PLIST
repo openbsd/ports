@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/03/29 19:33:18 robert Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/05/23 12:40:53 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -10,6 +10,7 @@ bin/certmgr
 bin/chktrust
 bin/crlupdate
 bin/csc
+bin/csc-dim
 bin/csharp
 bin/csi
 bin/disco
@@ -22,6 +23,7 @@ bin/genxs
 bin/httpcfg
 bin/ikdasm
 bin/ilasm
+bin/illinkanalyzer
 bin/installvst
 bin/lc
 bin/macpack
@@ -128,6 +130,7 @@ include/mono-2.0/mono/utils/
 include/mono-2.0/mono/utils/mono-counters.h
 include/mono-2.0/mono/utils/mono-dl-fallback.h
 include/mono-2.0/mono/utils/mono-error.h
+include/mono-2.0/mono/utils/mono-jemalloc.h
 include/mono-2.0/mono/utils/mono-logger.h
 include/mono-2.0/mono/utils/mono-publib.h
 lib/libMonoPosixHelper.a
@@ -1017,10 +1020,12 @@ lib/mono/4.5/Facades/System.Linq.Queryable.dll
 lib/mono/4.5/Facades/System.Linq.dll
 lib/mono/4.5/Facades/System.Net.AuthenticationManager.dll
 lib/mono/4.5/Facades/System.Net.Cache.dll
+lib/mono/4.5/Facades/System.Net.Http.Rtc.dll
 lib/mono/4.5/Facades/System.Net.HttpListener.dll
 lib/mono/4.5/Facades/System.Net.Mail.dll
 lib/mono/4.5/Facades/System.Net.NameResolution.dll
 lib/mono/4.5/Facades/System.Net.NetworkInformation.dll
+lib/mono/4.5/Facades/System.Net.Ping.dll
 lib/mono/4.5/Facades/System.Net.Primitives.dll
 lib/mono/4.5/Facades/System.Net.Requests.dll
 lib/mono/4.5/Facades/System.Net.Security.dll
@@ -1039,8 +1044,10 @@ lib/mono/4.5/Facades/System.Reflection.Primitives.dll
 lib/mono/4.5/Facades/System.Reflection.TypeExtensions.dll
 lib/mono/4.5/Facades/System.Reflection.TypeExtensions.pdb
 lib/mono/4.5/Facades/System.Reflection.dll
+lib/mono/4.5/Facades/System.Resources.Reader.dll
 lib/mono/4.5/Facades/System.Resources.ReaderWriter.dll
 lib/mono/4.5/Facades/System.Resources.ResourceManager.dll
+lib/mono/4.5/Facades/System.Resources.Writer.dll
 lib/mono/4.5/Facades/System.Runtime.CompilerServices.VisualC.dll
 lib/mono/4.5/Facades/System.Runtime.Extensions.dll
 lib/mono/4.5/Facades/System.Runtime.Handles.dll
@@ -1048,6 +1055,7 @@ lib/mono/4.5/Facades/System.Runtime.InteropServices.RuntimeInformation.dll
 lib/mono/4.5/Facades/System.Runtime.InteropServices.WindowsRuntime.dll
 lib/mono/4.5/Facades/System.Runtime.InteropServices.dll
 lib/mono/4.5/Facades/System.Runtime.Numerics.dll
+lib/mono/4.5/Facades/System.Runtime.Serialization.Formatters.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Json.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Primitives.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll
@@ -1057,6 +1065,7 @@ lib/mono/4.5/Facades/System.Security.AccessControl.dll
 lib/mono/4.5/Facades/System.Security.Claims.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.pdb
+lib/mono/4.5/Facades/System.Security.Cryptography.Csp.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.DeriveBytes.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encoding.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encryption.Aes.dll
@@ -1288,6 +1297,14 @@ lib/mono/4.5/csi.exe.config
 lib/mono/4.5/csi.rsp
 lib/mono/4.5/culevel.exe
 lib/mono/4.5/culevel.pdb
+lib/mono/4.5/dim/
+lib/mono/4.5/dim/Microsoft.CodeAnalysis.CSharp.dll
+lib/mono/4.5/dim/Microsoft.CodeAnalysis.dll
+lib/mono/4.5/dim/System.Collections.Immutable.dll
+lib/mono/4.5/dim/System.Reflection.Metadata.dll
+lib/mono/4.5/dim/csc.exe
+lib/mono/4.5/dim/csc.exe.config
+lib/mono/4.5/dim/csc.rsp
 lib/mono/4.5/disco.exe
 lib/mono/4.5/disco.pdb
 lib/mono/4.5/dtd2rng.exe
@@ -1306,14 +1323,14 @@ lib/mono/4.5/ikdasm.exe
 lib/mono/4.5/ikdasm.pdb
 lib/mono/4.5/ilasm.exe
 lib/mono/4.5/ilasm.pdb
+lib/mono/4.5/illinkanalyzer.exe
+lib/mono/4.5/illinkanalyzer.pdb
 lib/mono/4.5/installutil.exe
 lib/mono/4.5/installutil.pdb
 lib/mono/4.5/installvst.exe
 lib/mono/4.5/installvst.pdb
 lib/mono/4.5/lc.exe
 lib/mono/4.5/lc.pdb
-lib/mono/4.5/linkeranalyzer.exe
-lib/mono/4.5/linkeranalyzer.pdb
 lib/mono/4.5/macpack.exe
 lib/mono/4.5/macpack.pdb
 lib/mono/4.5/makecert.exe
@@ -3303,6 +3320,7 @@ lib/pkgconfig/xbuild12.pc
 @man man/man1/genxs.1
 @man man/man1/httpcfg.1
 @man man/man1/ilasm.1
+@man man/man1/illinkanalyzer.1
 @man man/man1/lc.1
 @man man/man1/macpack.1
 @man man/man1/makecert.1
