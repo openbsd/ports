@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.144 2018/05/23 07:26:53 ajacoutot Exp $
+# $OpenBSD: update-plist,v 1.145 2018/05/23 12:41:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -185,14 +185,14 @@ sub subst
 sub annotate
 {
 	my ($self, $e, $s, $file) = @_;
-	chomp $s;
-	$e->{unsubst} = $s;
 	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
 
 	# so we redo what subst does, but we mark it!
 
 	return unless defined $s;
+	chomp $s;
+	$e->{unsubst} = $s;
 	return unless $s =~ m/\$/o;	# optimization
 	my $subst = $self->{state}{subst};
 	while ( my $k = ($s =~ m/\$\{([A-Za-z_][^\}]*)\}/o)[0] ) {
