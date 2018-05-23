@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/02 22:27:53 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/23 13:33:50 abieber Exp $
 @bin bin/restic
 @man man/man1/restic-backup.1
+@man man/man1/restic-cache.1
 @man man/man1/restic-cat.1
 @man man/man1/restic-check.1
 @man man/man1/restic-diff.1
