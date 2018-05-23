@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.143 2018/05/21 06:16:23 espie Exp $
+# $OpenBSD: update-plist,v 1.144 2018/05/23 07:26:53 ajacoutot Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1485,7 +1485,7 @@ sub try_pkglocate
 			$self->locate_list($p);
 		}
     	} else {
-		$self->{state}->say("Can't look for conflicts, pkglocate not installed");
+		$self->{state}->say("Can't look for conflicts, pkglocatedb not installed");
 	}
 }
 
