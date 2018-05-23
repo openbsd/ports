@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.610 2018/05/21 10:01:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.611 2018/05/23 12:02:48 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1294,6 +1294,7 @@ my $obsolete_reason = {
 	'apache-couchdb' => 6,
 	'py-couchdb' => 6,
 	'chive' => 3,
+	'opengroupware' => 3,
 };
 
 # reasons for obsolete packages
