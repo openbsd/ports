@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.145 2018/05/23 12:41:03 espie Exp $
+# $OpenBSD: update-plist,v 1.146 2018/05/23 13:57:59 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -188,12 +188,13 @@ sub annotate
 	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
 
-	# so we redo what subst does, but we mark it!
-
 	return unless defined $s;
 	chomp $s;
 	$e->{unsubst} = $s;
+
 	return unless $s =~ m/\$/o;	# optimization
+
+	# so we redo what subst does, but we keep track of it!
 	my $subst = $self->{state}{subst};
 	while ( my $k = ($s =~ m/\$\{([A-Za-z_][^\}]*)\}/o)[0] ) {
 		my $v = $subst->value($k);
@@ -323,6 +324,8 @@ sub end_status
 
 package OpenBSD::PackingElement;
 
+use File::Basename;
+
 # record everything we need to know about the object:
 # exact file name, approximate directories, possible command names
 # that must come after unexec
@@ -383,7 +386,7 @@ sub write_restate
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
-	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst}, $o);
+	my $s = $p->subst->do_backsubst($o->fullstring, $o->unsubst, $o);
 	print {$file->fh} $s, "\n";
 }
 
@@ -510,6 +513,41 @@ sub check_suffix
 		}
 	}
 	return $error;
+}
+
+sub unsubst
+{
+	my $a = shift;
+
+	if (!defined $a->{unsubst} && defined $a->{hint_dir}) {
+		my $d = $a->{hint_dir};
+		my $o = $a->{hint_obj};
+
+		# handle keywords
+		my $s = $a->fullstring;
+		my $subst = $o->{comesfrom}->subst;
+		my $d2 = $o->{unsubst};
+		my $k = '';
+		if ($s =~ s/^(\@\S+\s+)//) {
+			$k = $1;
+		}
+		$d2 =~ s/^(\@\S+\s+)//;
+		# so figure out the maximum possible directory
+		while (1) {
+			my $s2 = $subst->do($d2);
+			if ($s =~ m/^\Q$s2\E\//) {
+				$a->{unsubst} = "$k$d2";
+#			for debugging, commented out
+#				print $a->fullstring, 
+#				    " gains partial $a->{unsubst} from ",
+#				    $o->{unsubst}, "\n";
+				last;
+			}
+			last if $s2 eq '/';
+			$d2 = dirname($d2);
+		}
+	}
+	return $a->{unsubst};
 }
 
 package OpenBSD::PackingElement::State;
@@ -904,11 +942,11 @@ sub write_backsubst
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
 		# XXX redo backsubst on the variable name
-		my $s = $p->subst->do_backsubst("${path}lib$name.so.\$\{$k\}", 
-		    $self->{unsubst}, $self);
+		my $s = $p->subst->do_backsubst(
+		    "\@lib ${path}lib$name.so.\$\{$k\}", $self->unsubst, $self);
 		$self->check_lib_version($version, $name, 
 			$p->subst->value($k));
-		print {$f->fh} "\@", $self->keyword, " ", $s, "\n";
+		print {$f->fh} "$s\n";
 	} else {
 		$self->SUPER::write_backsubst($f, $p);
 	}
@@ -1254,8 +1292,9 @@ sub walk_up_directory
 			$a->{file} = $s->{file};
 			# unsubst is used as a hint in reversesubst, so we
 			# can use the directory part BUT we need to figure
-			# it out.
-#			$a->{unsubst} = $l[0]->{unsubst};
+			# it out.  Delay it until we need it
+			$a->{hint_dir} = $d;
+			$a->{hint_obj} = $l[0];
 			return 1;
 		}
 	}
