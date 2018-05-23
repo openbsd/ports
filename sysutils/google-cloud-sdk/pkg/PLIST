@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.76 2018/05/16 06:55:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.77 2018/05/23 06:47:41 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -1847,6 +1847,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/completers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/completers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/concept_parsers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/concept_parsers.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/info_holders.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/info_holders.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/resource_parameter_info.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/resource_parameter_info.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/gaia.py
@@ -4965,6 +4967,8 @@ google-cloud-sdk/lib/surface/container/builds/submit.pyc
 google-cloud-sdk/lib/surface/container/clusters/
 google-cloud-sdk/lib/surface/container/clusters/__init__.py
 google-cloud-sdk/lib/surface/container/clusters/__init__.pyc
+google-cloud-sdk/lib/surface/container/clusters/add_iam_policy_binding.py
+google-cloud-sdk/lib/surface/container/clusters/add_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/container/clusters/create.py
 google-cloud-sdk/lib/surface/container/clusters/create.pyc
 google-cloud-sdk/lib/surface/container/clusters/delete.py
@@ -4977,6 +4981,8 @@ google-cloud-sdk/lib/surface/container/clusters/get_iam_policy.py
 google-cloud-sdk/lib/surface/container/clusters/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/container/clusters/list.py
 google-cloud-sdk/lib/surface/container/clusters/list.pyc
+google-cloud-sdk/lib/surface/container/clusters/remove_iam_policy_binding.py
+google-cloud-sdk/lib/surface/container/clusters/remove_iam_policy_binding.pyc
 google-cloud-sdk/lib/surface/container/clusters/resize.py
 google-cloud-sdk/lib/surface/container/clusters/resize.pyc
 google-cloud-sdk/lib/surface/container/clusters/set_iam_policy.py
@@ -5306,6 +5312,22 @@ google-cloud-sdk/lib/surface/dlp/
 google-cloud-sdk/lib/surface/dlp/__init__.py
 google-cloud-sdk/lib/surface/dlp/__init__.pyc
 google-cloud-sdk/lib/surface/dlp/__init__.yaml
+google-cloud-sdk/lib/surface/dlp/datasources/
+google-cloud-sdk/lib/surface/dlp/datasources/__init__.py
+google-cloud-sdk/lib/surface/dlp/datasources/__init__.pyc
+google-cloud-sdk/lib/surface/dlp/datasources/bigquery/
+google-cloud-sdk/lib/surface/dlp/datasources/bigquery/__init__.py
+google-cloud-sdk/lib/surface/dlp/datasources/bigquery/__init__.pyc
+google-cloud-sdk/lib/surface/dlp/datasources/bigquery/analyze.yaml
+google-cloud-sdk/lib/surface/dlp/datasources/bigquery/inspect.yaml
+google-cloud-sdk/lib/surface/dlp/datasources/datastore/
+google-cloud-sdk/lib/surface/dlp/datasources/datastore/__init__.py
+google-cloud-sdk/lib/surface/dlp/datasources/datastore/__init__.pyc
+google-cloud-sdk/lib/surface/dlp/datasources/datastore/inspect.yaml
+google-cloud-sdk/lib/surface/dlp/datasources/gcs/
+google-cloud-sdk/lib/surface/dlp/datasources/gcs/__init__.py
+google-cloud-sdk/lib/surface/dlp/datasources/gcs/__init__.pyc
+google-cloud-sdk/lib/surface/dlp/datasources/gcs/inspect.yaml
 google-cloud-sdk/lib/surface/dlp/images/
 google-cloud-sdk/lib/surface/dlp/images/__init__.py
 google-cloud-sdk/lib/surface/dlp/images/__init__.pyc
@@ -7364,6 +7386,10 @@ google-cloud-sdk/lib/third_party/containerregistry/transport/retry_.py
 google-cloud-sdk/lib/third_party/containerregistry/transport/retry_.pyc
 google-cloud-sdk/lib/third_party/containerregistry/transport/transport_pool_.py
 google-cloud-sdk/lib/third_party/containerregistry/transport/transport_pool_.pyc
+google-cloud-sdk/lib/third_party/contextlib2/
+google-cloud-sdk/lib/third_party/contextlib2/LICENSE
+google-cloud-sdk/lib/third_party/contextlib2/__init__.py
+google-cloud-sdk/lib/third_party/contextlib2/__init__.pyc
 google-cloud-sdk/lib/third_party/dateutil/
 google-cloud-sdk/lib/third_party/dateutil/LICENSE
 google-cloud-sdk/lib/third_party/dateutil/__init__.py
