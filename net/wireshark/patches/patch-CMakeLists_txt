@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2018/05/10 20:36:34 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2018/05/24 17:05:47 sthen Exp $
 
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
@@ -7,7 +7,7 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -666,17 +666,6 @@ else() # ! MSVC
+@@ -674,17 +674,6 @@ else() # ! MSVC
  		# -fwhopr
  		# -fwhole-program
  	)

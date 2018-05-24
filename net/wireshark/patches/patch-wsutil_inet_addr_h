@@ -1,0 +1,23 @@
+$OpenBSD: patch-wsutil_inet_addr_h,v 1.1 2018/05/24 17:05:47 sthen Exp $
+
+partially revert https://github.com/wireshark/wireshark/commit/becc442da
+which breaks build on OpenBSD
+
+wsutil/inet_addr.c:51:28: error: invalid application of 'sizeof' to an incomplete type 'struct in6_addr'
+            memset(dst, 0, sizeof(struct in6_addr));
+                           ^     ~~~~~~~~~~~~~~~~~
+
+Index: wsutil/inet_addr.h
+--- wsutil/inet_addr.h.orig
++++ wsutil/inet_addr.h
+@@ -13,6 +13,10 @@
+ #include "ws_symbol_export.h"
+ #include "ws_attributes.h"
+ 
++#ifdef HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
++
+ #include <glib.h>
+ #include "inet_ipv4.h"
+ #include "inet_ipv6.h"

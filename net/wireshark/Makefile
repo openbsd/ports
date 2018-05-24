@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/05/24 14:28:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2018/05/24 17:05:47 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 #BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)   # trying ports-gcc
@@ -7,14 +7,12 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
-V =		2.6.0
+V =		2.6.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
 PKGNAME-gtk =	wireshark-gtk-$V
-
-REVISION =	0
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
