@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.102 2018/04/25 21:27:06 steven Exp $
+# $OpenBSD: Makefile,v 1.103 2018/05/24 21:23:50 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.2.2
+VERSION =	4.4.0
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		9.0
-SHARED_LIBS +=	octgui		3.0
-SHARED_LIBS +=	octinterp	8.0
+SHARED_LIBS +=	octave		10.0
+SHARED_LIBS +=	octgui		4.0
+SHARED_LIBS +=	octinterp	9.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
@@ -18,14 +18,14 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Widgets Qt5Core
-WANTLIB += qscintilla2_qt5
-WANTLIB += SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm amd
+WANTLIB += Qt5Help Qt5Sql qscintilla2_qt5
+WANTLIB += SM X11 X11-xcb Xdamage
+WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd
 WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
 WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
-WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
+WANTLIB += fftw3f_threads fontconfig freetype gl2ps glapi
 WANTLIB += glpk glut gmp hdf5 iconv intl lapack lcms2 ltdl lzma m curses
 WANTLIB += nghttp2 ogg pcre png portaudio pthread qhull qrupdate
 WANTLIB += sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
@@ -67,7 +67,7 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/suitesparse \
 		net/curl \
 		print/gl2ps \
-		x11/fltk
+		x11/qt5/qttools,-main
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
@@ -79,7 +79,9 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="${MODQT_LRELEASE}" \
-		CXXFLAGS="${CXXFLAGS} -std=gnu++11"
+		CFLAGS="${CFLAGS} -std=gnu11" \
+		CXXFLAGS="${CXXFLAGS} -std=gnu++11" \
+		QHELPGENERATOR=${LOCALBASE}/lib/qt5/bin/qhelpgenerator
 
 # needed to build on amd64
 GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
