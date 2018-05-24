@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2018/05/19 06:21:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2018/05/24 15:38:00 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gsttag-1.0           4.0      # 1401.0
 SHARED_LIBS +=  gstaudio-1.0         4.0      # 1401.0
@@ -22,14 +23,14 @@ MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
 WANTLIB += EGL GL GLESv2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xrender Xv Xxf86vm c cairo cdda_interface cdda_paranoia
-WANTLIB += drm expat ffi fontconfig freetype gbm gio-2.0 glapi
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gstbase-1.0
-WANTLIB += gstcontroller-1.0 gstnet-1.0 gstreamer-1.0 gthread-2.0
-WANTLIB += harfbuzz iconv intl jpeg m ogg opus orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += sndio theoradec theoraenc vorbis vorbisenc vorbisidec
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += z fribidi
+WANTLIB += drm expat ffi fontconfig freetype fribidi gbm gio-2.0
+WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0
+WANTLIB += graphite2 gstbase-1.0 gstcontroller-1.0 gstnet-1.0
+WANTLIB += gstreamer-1.0 gthread-2.0 harfbuzz iconv intl jpeg
+WANTLIB += m ogg opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread sndio theoradec theoraenc
+WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shm xcb-xfixes z
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gobject-introspection
@@ -46,6 +47,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 			audio/tremor \
 			devel/orc \
 			devel/pango \
+			graphics/graphene \
 			multimedia/libtheora
 
 # needed for the gio plugin
