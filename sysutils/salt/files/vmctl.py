@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# $OpenBSD: vmctl.py,v 1.2 2018/01/02 19:56:26 jasper Exp $
+# $OpenBSD: vmctl.py,v 1.3 2018/05/24 16:59:40 jasper Exp $
 '''
 Manage vms running on the OpenBSD VMM hypervisor using vmctl(8).
 
@@ -20,7 +20,7 @@ import logging
 import re
 
 # Imoprt salt libs:
-import salt.utils
+import salt.utils.path
 from salt.exceptions import (CommandExecutionError, SaltInvocationError)
 from salt.ext.six.moves import zip
 
@@ -31,7 +31,7 @@ def __virtual__():
     '''
     Only works on OpenBSD with vmctl(8) present.
     '''
-    if __grains__['os'] == 'OpenBSD' and salt.utils.which('vmctl'):
+    if __grains__['os'] == 'OpenBSD' and salt.utils.path.which('vmctl'):
         return True
 
     return (False, 'The vmm execution module cannot be loaded: either the system is not OpenBSD or the vmctl binary was not found')

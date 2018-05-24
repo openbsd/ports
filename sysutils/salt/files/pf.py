@@ -25,7 +25,7 @@ def __virtual__():
     Only works on OpenBSD for now; other systems with pf (macOS, FreeBSD, etc)
     need to be tested before enabling them.
     '''
-    if __grains__['os'] == 'OpenBSD' and salt.utils.which('pfctl'):
+    if __grains__['os'] == 'OpenBSD' and salt.utils.path.which('pfctl'):
         return True
 
     return (False, 'The pf execution module cannot be loaded: either the system is not OpenBSD or the pfctl binary was not found')
