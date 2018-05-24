@@ -1,0 +1,33 @@
+$OpenBSD: patch-modules_printbackends_meson_build,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+
+Last chunk: always enable the lpr print backend
+
+Index: modules/printbackends/meson.build
+--- modules/printbackends/meson.build.orig
++++ modules/printbackends/meson.build
+@@ -8,10 +8,11 @@ if enable_cups != 'no'
+   #if cups_config.found()
+   # FIXME: eek, see configure.ac (we're just not going to support non-standar prefix for now)
+   #endif
+-  if cc.has_header('cups/cups.h')
++  if cc.compiles('#include <cups/cups.h>', name : 'cups/cups.h')
++    cups_incdir = include_directories('${LOCALBASE}/include')
+     # TODO: include_directories from cups-config
+-    cups_major_version = cc.compute_int('CUPS_VERSION_MAJOR', prefix : '#include <cups/cups.h>')
+-    cups_minor_version = cc.compute_int('CUPS_VERSION_MINOR', prefix : '#include <cups/cups.h>')
++    cups_major_version = cc.compute_int('CUPS_VERSION_MAJOR', prefix : '#include <cups/cups.h>', include_directories : cups_incdir)
++    cups_minor_version = cc.compute_int('CUPS_VERSION_MINOR', prefix : '#include <cups/cups.h>', include_directories : cups_incdir)
+     message('Found CUPS version: @0@.@1@'.format(cups_major_version, cups_minor_version))
+     if cups_major_version > 1 or cups_minor_version >= 2
+       if cups_major_version > 1 or cups_minor_version >= 6
+@@ -76,9 +77,7 @@ if get_option('enable-test-print-backend') == 'yes'
+   print_backends += ['test']
+ endif
+ 
+-if not print_backends.contains('papi') and not print_backends.contains('cups')
+-  print_backends += ['lpr']
+-endif
++print_backends += ['lpr']
+ 
+ printbackends_subdir = 'gtk-4.0/@0@/printbackends'.format(gtk_binary_version)
+ printbackends_install_dir = join_paths(get_option('libdir'), printbackends_subdir)

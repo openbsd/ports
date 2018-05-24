@@ -1,0 +1,35 @@
+$OpenBSD: README-main,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Default theme XXX c/p from x11/gtk+3, does it still work?
+=============
+The default GTK+ theme engine can be modified by editing:
+    ~/.config/gtk-4.0/settings.ini
+and appending a line similar to:
+gtk-theme-name = oxygen-gtk
+
+Some themes are available as packages ("gtk4-*-engine").
+
+Printing
+========
+
+Preview XXX c/p from x11/gtk+3, does it still work?
+-------
+By default, GTK+ uses the "evince-previewer" command from the evince package to
+display a "Print Preview". This can be modified by editing:
+    ~/.config/gtk-4.0/settings.ini
+and appending the following line:
+gtk-print-preview-command = epdfview %f
+
+(epdfview can be replaced by any other PDF viewer command like xpdf...)
+
+Note that by default, "evince" will remove the temporary PDF preview
+file (/tmp/previewXXXXXX.pdf) when done, that might not be the case with
+other PDF viewers.
+
+CUPS
+----
+Printing to CUPS requires installing the gtk+4-cups package.
