@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/10 12:22:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/24 10:24:37 sthen Exp $
 
 COMMENT=		full-text search engine based on Lucene
 
-V=			7.3.0
+V=			7.3.1
 DISTNAME=		solr-$V
 EXTRACT_SUFX =		.tgz
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		java
 MODJAVA_VER=		1.8+
+SUBST_VARS=		V
 RUN_DEPENDS=		shells/bash \
 			java/javaPathHelper
 

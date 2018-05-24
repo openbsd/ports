@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/10 12:22:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/24 10:24:37 sthen Exp $
 @newgroup _solr:801
 @newuser _solr:801:_solr:daemon:solr user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/solr/*
 @extraunexec rm /var/log/solr/*
 bin/solr
 share/solr/
-@owner _solr
 @mode 770
+@owner _solr
 @sample ${LOCALSTATEDIR}/db/solr/
 @sample /var/log/solr/
 @mode
@@ -38,11 +38,11 @@ share/solr/contrib/analysis-extras/lib/morfologik-stemming-2.1.1.jar
 share/solr/contrib/analysis-extras/lib/opennlp-maxent-3.0.3.jar
 share/solr/contrib/analysis-extras/lib/opennlp-tools-1.8.3.jar
 share/solr/contrib/analysis-extras/lucene-libs/
-share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-icu-7.3.0.jar
-share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-morfologik-7.3.0.jar
-share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-opennlp-7.3.0.jar
-share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-smartcn-7.3.0.jar
-share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-stempel-7.3.0.jar
+share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-icu-${V}.jar
+share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-morfologik-${V}.jar
+share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-opennlp-${V}.jar
+share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-smartcn-${V}.jar
+share/solr/contrib/analysis-extras/lucene-libs/lucene-analyzers-stempel-${V}.jar
 share/solr/contrib/clustering/
 share/solr/contrib/clustering/README.txt
 share/solr/contrib/clustering/lib/
@@ -110,12 +110,6 @@ share/solr/contrib/langid/lib/langdetect-1.1-20120112.jar
 share/solr/contrib/langid/lib/opennlp-tools-1.8.3.jar
 share/solr/contrib/ltr/
 share/solr/contrib/ltr/README.txt
-share/solr/contrib/map-reduce/
-share/solr/contrib/map-reduce/lib/
-share/solr/contrib/morphlines-cell/
-share/solr/contrib/morphlines-cell/lib/
-share/solr/contrib/morphlines-core/
-share/solr/contrib/morphlines-core/lib/
 share/solr/contrib/prometheus-exporter/
 share/solr/contrib/prometheus-exporter/README.txt
 share/solr/contrib/prometheus-exporter/bin/
@@ -138,7 +132,7 @@ share/solr/contrib/prometheus-exporter/lib/simpleclient_httpserver-0.2.0.jar
 share/solr/contrib/prometheus-exporter/lib/slf4j-api-1.7.24.jar
 share/solr/contrib/prometheus-exporter/lib/slf4j-log4j12-1.7.24.jar
 share/solr/contrib/prometheus-exporter/lucene-libs/
-share/solr/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-7.3.0.jar
+share/solr/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-${V}.jar
 share/solr/contrib/uima/
 share/solr/contrib/uima/README.txt
 share/solr/contrib/uima/lib/
@@ -149,7 +143,7 @@ share/solr/contrib/uima/lib/WhitespaceTokenizer-2.3.1.jar
 share/solr/contrib/uima/lib/commons-digester-2.1.jar
 share/solr/contrib/uima/lib/uimaj-core-2.3.1.jar
 share/solr/contrib/uima/lucene-libs/
-share/solr/contrib/uima/lucene-libs/lucene-analyzers-uima-7.3.0.jar
+share/solr/contrib/uima/lucene-libs/lucene-analyzers-uima-${V}.jar
 share/solr/contrib/velocity/
 share/solr/contrib/velocity/lib/
 share/solr/contrib/velocity/lib/commons-beanutils-1.8.3.jar
@@ -157,20 +151,20 @@ share/solr/contrib/velocity/lib/commons-collections-3.2.2.jar
 share/solr/contrib/velocity/lib/velocity-1.7.jar
 share/solr/contrib/velocity/lib/velocity-tools-2.0.jar
 share/solr/dist/
-share/solr/dist/solr-analysis-extras-7.3.0.jar
-share/solr/dist/solr-analytics-7.3.0.jar
-share/solr/dist/solr-cell-7.3.0.jar
-share/solr/dist/solr-clustering-7.3.0.jar
-share/solr/dist/solr-core-7.3.0.jar
-share/solr/dist/solr-dataimporthandler-7.3.0.jar
-share/solr/dist/solr-dataimporthandler-extras-7.3.0.jar
-share/solr/dist/solr-langid-7.3.0.jar
-share/solr/dist/solr-ltr-7.3.0.jar
-share/solr/dist/solr-prometheus-exporter-7.3.0.jar
-share/solr/dist/solr-solrj-7.3.0.jar
-share/solr/dist/solr-test-framework-7.3.0.jar
-share/solr/dist/solr-uima-7.3.0.jar
-share/solr/dist/solr-velocity-7.3.0.jar
+share/solr/dist/solr-analysis-extras-${V}.jar
+share/solr/dist/solr-analytics-${V}.jar
+share/solr/dist/solr-cell-${V}.jar
+share/solr/dist/solr-clustering-${V}.jar
+share/solr/dist/solr-core-${V}.jar
+share/solr/dist/solr-dataimporthandler-${V}.jar
+share/solr/dist/solr-dataimporthandler-extras-${V}.jar
+share/solr/dist/solr-langid-${V}.jar
+share/solr/dist/solr-ltr-${V}.jar
+share/solr/dist/solr-prometheus-exporter-${V}.jar
+share/solr/dist/solr-solrj-${V}.jar
+share/solr/dist/solr-test-framework-${V}.jar
+share/solr/dist/solr-uima-${V}.jar
+share/solr/dist/solr-velocity-${V}.jar
 share/solr/dist/solrj-lib/
 share/solr/dist/solrj-lib/commons-io-2.5.jar
 share/solr/dist/solrj-lib/commons-math3-3.6.1.jar
@@ -191,7 +185,7 @@ share/solr/dist/test-framework/lib/junit-4.10.jar
 share/solr/dist/test-framework/lib/junit4-ant-2.5.3.jar
 share/solr/dist/test-framework/lib/randomizedtesting-runner-2.5.3.jar
 share/solr/dist/test-framework/lucene-libs/
-share/solr/dist/test-framework/lucene-libs/lucene-test-framework-7.3.0.jar
+share/solr/dist/test-framework/lucene-libs/lucene-test-framework-${V}.jar
 share/solr/docs/
 share/solr/docs/images/
 share/solr/docs/images/solr.svg
@@ -738,7 +732,7 @@ share/solr/licenses/commons-digester-NOTICE.txt
 share/solr/licenses/commons-exec-1.3.jar.sha1
 share/solr/licenses/commons-exec-LICENSE-ASL.txt
 share/solr/licenses/commons-exec-NOTICE.txt
-share/solr/licenses/commons-fileupload-1.3.2.jar.sha1
+share/solr/licenses/commons-fileupload-1.3.3.jar.sha1
 share/solr/licenses/commons-fileupload-LICENSE-ASL.txt
 share/solr/licenses/commons-fileupload-NOTICE.txt
 share/solr/licenses/commons-io-2.5.jar.sha1
@@ -1168,7 +1162,7 @@ share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-collections-3.2.2.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-compiler-2.7.6.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-configuration-1.6.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-exec-1.3.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-fileupload-1.3.2.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-fileupload-1.3.3.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-io-2.5.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-lang-2.6.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/commons-lang3-3.6.jar
@@ -1196,31 +1190,31 @@ share/solr/server/solr-webapp/webapp/WEB-INF/lib/jackson-dataformat-smile-2.5.4.
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/janino-2.7.6.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/joda-time-2.2.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-kuromoji-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-phonetic-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-backward-codecs-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-classification-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-codecs-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-core-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-expressions-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-grouping-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-highlighter-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-join-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-memory-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-queries-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-queryparser-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-sandbox-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-spatial-extras-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-spatial3d-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-suggest-7.3.0.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-common-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-kuromoji-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-analyzers-phonetic-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-backward-codecs-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-classification-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-codecs-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-core-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-expressions-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-grouping-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-highlighter-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-join-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-memory-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-misc-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-queries-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-queryparser-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-sandbox-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-spatial-extras-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-spatial3d-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/lucene-suggest-${V}.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/noggit-0.8.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/org.restlet-2.3.0.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/org.restlet.ext.servlet-2.3.0.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.1.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/solr-core-7.3.0.jar
-share/solr/server/solr-webapp/webapp/WEB-INF/lib/solr-solrj-7.3.0.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/solr-core-${V}.jar
+share/solr/server/solr-webapp/webapp/WEB-INF/lib/solr-solrj-${V}.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/spatial4j-0.7.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/stax2-api-3.1.4.jar
 share/solr/server/solr-webapp/webapp/WEB-INF/lib/t-digest-3.1.jar
