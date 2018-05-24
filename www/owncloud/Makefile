@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2018/05/22 08:19:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2018/05/24 07:27:45 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
@@ -6,11 +6,11 @@ V=			10.0.8
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
-HOMEPAGE=		http://owncloud.org/
+HOMEPAGE=		https://owncloud.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -23,7 +23,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.owncloud.org/community/
+MASTER_SITES=		https://download.owncloud.org/community/
 
 MODULES=		lang/php
 
