@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.146 2018/05/23 13:57:59 espie Exp $
+# $OpenBSD: update-plist,v 1.147 2018/05/24 14:35:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -535,19 +535,41 @@ sub unsubst
 		# so figure out the maximum possible directory
 		while (1) {
 			my $s2 = $subst->do($d2);
-			if ($s =~ m/^\Q$s2\E\//) {
-				$a->{unsubst} = "$k$d2";
-#			for debugging, commented out
-#				print $a->fullstring, 
-#				    " gains partial $a->{unsubst} from ",
-#				    $o->{unsubst}, "\n";
-				last;
+			if ($s2 =~ m/\/$/) {
+				if ($s =~ m/^\Q$s2\E/) {
+					$a->{unsubst} = "$k$d2";
+					last;
+				}
+		    	} else {
+				if ($s =~ m/^\Q$s2\E\//) {
+					$a->{unsubst} = "$k$d2/";
+					last;
+
+				}
 			}
-			last if $s2 eq '/';
+			last if $s2 eq '/' or $s2 eq '.';
 			$d2 = dirname($d2);
 		}
+#		for debugging, commented out
+#		print $a->fullstring, " gains partial $a->{unsubst} from ",
+#		    $o->{unsubst}, "\n";
 	}
 	return $a->{unsubst};
+}
+
+sub rebless
+{
+	my ($self, $newclass) = @_;
+	my $old_prefix = $self->fullstring;
+	$old_prefix =~ s/^(\@\S+\s|).*/$1/;
+	bless $self, $newclass;
+	my $new_prefix = $self->fullstring;
+	$new_prefix =~ s/^(\@\S+\s|).*/$1/;
+	if (defined $self->unsubst) {
+		print "Changing $self->{unsubst} to ";
+		$self->{unsubst} =~ s/^\Q$old_prefix\E/$new_prefix/;
+		print "$self->{unsubst}\n";
+	}
 }
 
 package OpenBSD::PackingElement::State;
@@ -1204,7 +1226,7 @@ sub copy_from_old
 
 	my $s = $e->{comesfrom};
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
-		bless $e, $o->element_class;
+		$e->rebless($o->element_class);
 	}
 
 	# mark it for later (see add_delayed_objects)
