@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2018/04/27 09:17:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.456 2018/05/24 15:37:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -91,6 +91,7 @@
      SUBDIR += gracula
      SUBDIR += grafx2
      SUBDIR += grap
+     SUBDIR += graphene
      SUBDIR += graphite2
      SUBDIR += gthumb
      SUBDIR += gtkam
