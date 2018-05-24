@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:37:58 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/05/24 07:42:18 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/dtopt/
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,14 +7,14 @@ lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dtopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/dtopt/COMPARE.py
-lib/python${MODPY_VERSION}/site-packages/dtopt/COMPARE.pyc
 lib/python${MODPY_VERSION}/site-packages/dtopt/ELLIPSIS.py
-lib/python${MODPY_VERSION}/site-packages/dtopt/ELLIPSIS.pyc
 lib/python${MODPY_VERSION}/site-packages/dtopt/NORMALIZE_WHITESPACE.py
-lib/python${MODPY_VERSION}/site-packages/dtopt/NORMALIZE_WHITESPACE.pyc
 lib/python${MODPY_VERSION}/site-packages/dtopt/__init__.py
-lib/python${MODPY_VERSION}/site-packages/dtopt/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtopt/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/dtopt/${MODPY_PYCACHE}COMPARE.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dtopt/${MODPY_PYCACHE}ELLIPSIS.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dtopt/${MODPY_PYCACHE}NORMALIZE_WHITESPACE.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dtopt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dtopt/tests.py
-lib/python${MODPY_VERSION}/site-packages/dtopt/tests.pyc
 share/doc/py-dtopt/
 share/doc/py-dtopt/index.txt
