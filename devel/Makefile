@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1732 2018/05/09 10:06:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1733 2018/05/24 06:40:29 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -146,7 +146,6 @@
      SUBDIR += giggle
      SUBDIR += gindent
      SUBDIR += git
-     SUBDIR += git-bz
      SUBDIR += git-cola
      SUBDIR += git-cvs
      SUBDIR += git-lfs
