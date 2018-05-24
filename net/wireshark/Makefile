@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/05/10 20:36:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2018/05/24 14:28:41 ajacoutot Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 #BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)   # trying ports-gcc
@@ -13,6 +13,8 @@ DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
 PKGNAME-gtk =	wireshark-gtk-$V
+
+REVISION =	0
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0
 SHARED_LIBS +=	wsutil               3.0      # 5.0
@@ -35,10 +37,11 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MULTI_PACKAGES = -text -main -gtk
 PSEUDO_FLAVORS = no_x11 no_gtk no_qt
-# sync with devel/mozjs17: qt -> polkit -> mozjs17
+# sync with devel/spidermonkey52: qt -> polkit -> mozjs17
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
+    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 FLAVOR ?=
 .else
 FLAVOR ?=	no_qt
