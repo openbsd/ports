@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.105 2018/05/25 13:59:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.106 2018/05/25 17:02:32 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -41,10 +41,6 @@ MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
 INI_TEMPLATES?=		development production
-
-# XXX use the bundled libtool because it needs some specific options we
-# don't have.
-USE_LIBTOOL?=		No
 
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
@@ -208,14 +204,19 @@ WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
 # mysqli
 PHP_EXTENSIONS+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php
-CONFIGURE_ARGS+=	--with-mysqli=shared
-LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
-WANTLIB-mysqli=		pthread
+#  libmysqlclient
+CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
+LIB_DEPENDS-mysqli=	databases/mariadb
+WANTLIB-mysqli=		crypto m pthread ssl z lib/mysql/mysqlclient
+#  mysqlnd
+#CONFIGURE_ARGS+=	--with-mysqli=shared
+#LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
+#WANTLIB-mysqli=		pthread
 
 # odbc
 PHP_EXTENSIONS+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php
-CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc iodbcinst pthread
 
@@ -229,9 +230,14 @@ WANTLIB-pcntl=		pthread
 # pdo-mysql
 PHP_EXTENSIONS+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php
-CONFIGURE_ARGS+=	--with-pdo-mysql=shared
-LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
-WANTLIB-pdo_mysql=	pthread
+#  libmysqlclient
+CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_mysql=	databases/mariadb
+WANTLIB-pdo_mysql=	crypto m pthread ssl z lib/mysql/mysqlclient
+#  mysqlnd
+#CONFIGURE_ARGS+=	--with-pdo-mysql=shared
+#LIB_DEPENDS-pdo_mysql=	# empty: using PHP's mysqlnd
+#WANTLIB-pdo_mysql=	pthread
 
 # pdo-odbc
 PHP_EXTENSIONS+=	-pdo_odbc
