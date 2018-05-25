@@ -1,5 +1,5 @@
 Start sabnzbd by using the rc.d(8) script or by running
-${TRUEPREFIX}/bin/sabnzbd and do the initial configuration via
+${PREFIX}/bin/sabnzbd and do the initial configuration via
 http://localhost:8080/
 
 If you have an existing configuration, it can be copied to _sabnzbd's
