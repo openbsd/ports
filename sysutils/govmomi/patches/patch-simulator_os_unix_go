@@ -1,21 +1,18 @@
-$OpenBSD: patch-simulator_os_unix_go,v 1.2 2018/03/17 11:41:45 ajacoutot Exp $
+$OpenBSD: patch-simulator_os_unix_go,v 1.3 2018/05/25 08:07:13 ajacoutot Exp $
 
 Index: simulator/os_unix.go
 --- simulator/os_unix.go.orig
 +++ simulator/os_unix.go
-@@ -29,12 +29,12 @@ func (ds *Datastore) stat() error {
+@@ -29,10 +29,10 @@ func (ds *Datastore) stat() error {
  		return err
  	}
  
--	bsize := uint64(stat.Bsize) / 512
-+	bsize := uint64(stat.F_bsize) / 512
- 
--	info.FreeSpace = int64(stat.Bfree*bsize) >> 1
-+	info.FreeSpace = int64(stat.F_bfree*bsize) >> 1
+-	info.FreeSpace = int64(stat.Bfree * uint64(stat.Bsize))
++	info.FreeSpace = int64(stat.F_bfree * uint64(stat.F_bsize))
  
  	ds.Summary.FreeSpace = info.FreeSpace
--	ds.Summary.Capacity = int64(stat.Blocks*bsize) >> 1
-+	ds.Summary.Capacity = int64(stat.F_blocks*bsize) >> 1
+-	ds.Summary.Capacity = int64(stat.Blocks * uint64(stat.Bsize))
++	ds.Summary.Capacity = int64(stat.F_blocks * uint64(stat.F_bsize))
  
  	return nil
  }
