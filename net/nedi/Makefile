@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/21 22:18:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/05/25 12:16:52 sthen Exp $
 
 COMMENT =			network discovery tool
 
 DISTNAME =			nedi-bsd-1.0.8
+FIX_EXTRACT_PERMISSIONS =	Yes
 PKGNAME =			nedi-1.0.8
 REVISION =			11
 EXTRACT_SUFX =			.tgz

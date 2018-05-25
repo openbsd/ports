@@ -1,7 +1,8 @@
-$OpenBSD: patch-nedi_conf,v 1.1 2012/02/17 21:41:08 mglocker Exp $
---- nedi.conf.orig	Wed Jan 18 21:04:01 2012
-+++ nedi.conf	Wed Jan 18 21:04:48 2012
-@@ -141,7 +141,7 @@ clilib		IoPty
+$OpenBSD: patch-nedi_conf,v 1.2 2018/05/25 12:16:52 sthen Exp $
+Index: nedi.conf
+--- nedi.conf.orig
++++ nedi.conf
+@@ -140,7 +140,7 @@ clilib		IoPty
  rrdcmd		rrdtool
  
  # Location of NeDi
