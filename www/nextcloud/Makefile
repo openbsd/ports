@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/22 08:19:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/25 14:03:36 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			13.0.2
-REVISION=              0
+REVISION=		1
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -40,7 +40,8 @@ MAJOR=			${VR:R}
 SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR MAJOR
 
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
-			lang/php/${MODPHP_VERSION},-zip
+			lang/php/${MODPHP_VERSION},-zip \
+			${MODPHP_PDO_DEPENDS}
 
 # http user authentication
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-curl

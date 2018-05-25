@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.37 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2018/05/25 14:03:36 sthen Exp $
 
 COMMENT =	web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga-web
 GH_TAGNAME =	v1.14.1
-REVISION =	0
+REVISION =	1
 
 MODULES=	lang/php
 
 COMMON =	www/pear \
 		shells/bash
 
+MODPHP_PDO_ALLOWED = mysql pgsql
+MODPHP_PDO_PREF =    mysql
+
 RUN_DEPENDS =	${COMMON_DEPENDS} \
+		${MODPHP_PDO_DEPENDS}
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-xsl \
-		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql \
 		net/icinga/core \
 		net/icinga/core,-ido>=1.11
 # Optional php extensions: ldap soap xmlrpc memcache

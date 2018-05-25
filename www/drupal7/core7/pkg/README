@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2016/06/30 12:05:41 espie Exp $
+$OpenBSD: README,v 1.2 2018/05/25 14:03:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,9 +11,8 @@ ln -sf ../modules.sample/${DRUPAL}.conf \
 	/var/www/conf/modules
 
 Drupal can work with a PostgreSQL, MySQL or SQLite3 database.
-Support for SQLite3 is included with the main php package; to use
-another database, the corresponding package needs to be installed:
-    php-pdo_pgsql or php-pdo_mysql
+If you don't already have the corresponding PDO package, install it:
+    php-pdo_pgsql, php-pdo_mysql or php-pdo_sqlite
 
 If you just want to try out drupal, you don't need any database server,
 an sqlite file will do just fine.

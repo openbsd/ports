@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/05/25 14:03:36 sthen Exp $
 
 COMMENT =	command line access to most of Drupal
 
 CATEGORIES =	www devel
 
 V=		8.0.3
-REVISION=	0
+REVISION=	1
 DISTNAME=	drush-$V
 EXTRACT_SUFX=	-deps.tar.xz
 
@@ -20,7 +20,8 @@ MODULES=	lang/php
 PERMIT_PACKAGE_CDROM= Yes
 
 NO_BUILD=	Yes
-RUN_DEPENDS=	archivers/gtar
+RUN_DEPENDS=	archivers/gtar \
+		${MODPHP_PDO_DEPENDS}
 SUBST_VARS=	MODPHP_BIN
 
 do-install:

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/25 14:03:36 sthen Exp $
 
 COMMENT =	powerful content management system
 
 DISTNAME =	drupal-7.59
 PKGNAME =	drupal-7.59
-REVISION =	0
+REVISION =	1
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =	lang/php
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd \
+		${MODPHP_PDO_DEPENDS}
 
 do-install:
 		mkdir -p ${PREFIX}/${DRUPAL_ROOT}
