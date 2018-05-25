@@ -1,4 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.19 2018/05/22 08:16:24 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.20 2018/05/25 14:01:24 sthen Exp $
 
 CATEGORIES+=		lang/php
 
@@ -36,6 +36,14 @@ MODPHP_LIBDIR=		${LOCALBASE}/lib/php-${MODPHP_VERSION}
 
 MODPHP_CONFIGURE_ARGS=	--with-php-config=${LOCALBASE}/bin/php-config-${MODPHP_VERSION}
 SUBST_VARS+=		MODPHP_VERSION
+
+# build a string that can be included in RUN_DEPENDS to match suitable PDO types
+MODPHP_PDO_ALLOWED?=	mysql pgsql sqlite
+MODPHP_PDO_PREF?=	sqlite
+.for i in ${MODPHP_PDO_ALLOWED}
+MODPHP_PDO_DEPENDS:=	${MODPHP_PDO_DEPENDS}php-pdo_$i-${MODPHP_VSPEC}|
+.endfor
+MODPHP_PDO_DEPENDS:=	${MODPHP_PDO_DEPENDS:S/|$//}:lang/php/${MODPHP_VERSION},-pdo_${MODPHP_PDO_PREF}
 
 MODPHP_DO_PHPIZE?=
 .if !empty(MODPHP_DO_PHPIZE)
