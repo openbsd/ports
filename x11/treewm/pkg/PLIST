@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:32 espie Exp $
-bin/treewm
-bin/xkill-treewm
-bin/xprop-treewm
+@comment $OpenBSD: PLIST,v 1.5 2018/05/25 13:01:42 espie Exp $
+@bin bin/treewm
+@bin bin/xkill-treewm
+@bin bin/xprop-treewm
 share/doc/treewm/
 share/doc/treewm/ChangeLog
 share/doc/treewm/PROBLEMS

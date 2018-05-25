@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:32 espie Exp $
-bin/wmbutton
+@comment $OpenBSD: PLIST,v 1.3 2018/05/25 13:01:42 espie Exp $
+@bin bin/wmbutton
 share/examples/wmbutton/
 share/examples/wmbutton/dot.wmbutton.sample

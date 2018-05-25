@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/18 18:22:10 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/25 13:01:41 espie Exp $
 
 COMMENT=		wm-dockapp; resembling a miniature pin board
 
 DISTNAME=		wmpinboard-1.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
 # GPL

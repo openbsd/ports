@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/05 22:11:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/05/25 13:01:42 espie Exp $
 
 COMMENT=	twm with a virtual desktop
 
 DISTNAME=	tvtwm.pl11
 PKGNAME=	tvtwm-0pl11
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 # BSD-like/badly worded

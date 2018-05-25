@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/26 22:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/05/25 13:01:41 espie Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10
-REVISION =	7
+REVISION =	8
 CATEGORIES=	x11
 
 # MIT

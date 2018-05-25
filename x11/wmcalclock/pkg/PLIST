@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:32 espie Exp $
-bin/wmCalClock
+@comment $OpenBSD: PLIST,v 1.3 2018/05/25 13:01:41 espie Exp $
+@bin bin/wmCalClock
 @man man/man1/wmCalClock.1

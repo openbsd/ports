@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/25 13:01:42 espie Exp $
 
 COMMENT=		manage opacity property of windows, extended version
 
 DISTNAME=		transset-df-6
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.forchheimer.se/transset-df/

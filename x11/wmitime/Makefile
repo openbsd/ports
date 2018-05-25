@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/03 18:41:29 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2018/05/25 13:01:41 espie Exp $
 
 COMMENT=		wm-dockapp; shows the date, time, and Internet time
 
 DISTNAME=		wmitime-0.3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
 # GPL

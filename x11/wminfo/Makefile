@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/03 18:17:19 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2018/05/25 13:01:41 espie Exp $
 
 COMMENT=		wm-dockapp; displays scrolling text
 
 DISTNAME=		wminfo-1.51
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
 # GPL

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/17 07:36:55 sturm Exp $
-bin/wmi
-bin/wmiremote
+@comment $OpenBSD: PLIST,v 1.2 2018/05/25 13:01:41 espie Exp $
+@bin bin/wmi
+@bin bin/wmiremote
 @man man/man1/wmi.1
 @man man/man1/wmiremote.1
 @man man/man5/actions.conf.5

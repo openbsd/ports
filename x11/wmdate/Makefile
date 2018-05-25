@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2018/05/25 13:01:41 espie Exp $
 
 COMMENT=		wm-dockapp; shows the current date
 
 DISTNAME=		wmdate-0.7
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11 x11/windowmaker
 
 # BSD
