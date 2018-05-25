@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/05/25 17:18:28 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/05/25 22:43:41 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -218,7 +218,7 @@ share/php-${PV}/include/ext/mbstring/oniguruma/oniguruma.h
 share/php-${PV}/include/ext/mbstring/php_mbregex.h
 share/php-${PV}/include/ext/mbstring/php_onig_compat.h
 share/php-${PV}/include/ext/mysqli/
-share/php-${PV}/include/ext/mysqli/mysqli_libmysql.h
+share/php-${PV}/include/ext/mysqli/mysqli_mysqlnd.h
 share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h

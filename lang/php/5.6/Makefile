@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.66 2018/05/25 17:02:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2018/05/25 22:43:41 sthen Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
 PV=		5.6
 V=		${PV}.36
-REVISION=	0
+
+REVISION=	    0
+REVISION-mysql=	    1
+REVISION-mysqli=    1
+REVISION-pdo_mysql= 1
 
 MASTER_SITES0=	https://download.suhosin.org/
 
@@ -27,13 +31,9 @@ pre-patch:
 # mysql
 PHP_EXTENSIONS+=	-mysql
 COMMENT-mysql=		mysql database access extensions for php5
-#  libmysqlclient
-CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		pthread lib/mysql/mysqlclient
-#  mysqlnd
-#CONFIGURE_ARGS+=	--with-mysql=shared
-#WANTLIB-mysql=		pthread
+CONFIGURE_ARGS+=	--with-mysql=shared
+LIB_DEPENDS-mysql=	# using mysqlnd
+WANTLIB-mysql=		pthread
 
 # sybase-ct
 PHP_EXTENSIONS+=	-sybase_ct

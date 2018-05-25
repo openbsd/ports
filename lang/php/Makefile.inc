@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.106 2018/05/25 17:02:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.107 2018/05/25 22:43:41 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -65,6 +65,11 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
 			--program-suffix=-${PV} \
 			--with-readline
+
+# mysqlnd default is a hardcoded /tmp/mysql.sock
+# can't be set in general for mysqlnd, but the various consumers do have
+# settings: mysqli.default_socket / pdo_mysql.default_socket
+CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 
 # sapi
 CONFIGURE_ARGS+=	--enable-cgi
@@ -204,14 +209,9 @@ WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
 # mysqli
 PHP_EXTENSIONS+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php
-#  libmysqlclient
-CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
-LIB_DEPENDS-mysqli=	databases/mariadb
-WANTLIB-mysqli=		crypto m pthread ssl z lib/mysql/mysqlclient
-#  mysqlnd
-#CONFIGURE_ARGS+=	--with-mysqli=shared
-#LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
-#WANTLIB-mysqli=		pthread
+CONFIGURE_ARGS+=	--with-mysqli=shared
+LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
+WANTLIB-mysqli=		pthread
 
 # odbc
 PHP_EXTENSIONS+=	-odbc
@@ -230,14 +230,9 @@ WANTLIB-pcntl=		pthread
 # pdo-mysql
 PHP_EXTENSIONS+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php
-#  libmysqlclient
-CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-pdo_mysql=	databases/mariadb
-WANTLIB-pdo_mysql=	crypto m pthread ssl z lib/mysql/mysqlclient
-#  mysqlnd
-#CONFIGURE_ARGS+=	--with-pdo-mysql=shared
-#LIB_DEPENDS-pdo_mysql=	# empty: using PHP's mysqlnd
-#WANTLIB-pdo_mysql=	pthread
+CONFIGURE_ARGS+=	--with-pdo-mysql=shared
+LIB_DEPENDS-pdo_mysql=	# empty: using PHP's mysqlnd
+WANTLIB-pdo_mysql=	pthread
 
 # pdo-odbc
 PHP_EXTENSIONS+=	-pdo_odbc
@@ -338,7 +333,7 @@ LIB_DEPENDS-zip=
 WANTLIB-zip=		z pthread
 
 # some variables to substitute
-SUBST_VARS=	MODPHP_CONFIG_PATH SV PV
+SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV
 PHP_VERSION=	${V}
 SV=		${PV:S/.//}
 
