@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_twisted_internet_test_test_tcp_py,v 1.1 2018/05/25 10:42:38 pvk Exp $
+
+Index: src/twisted/internet/test/test_tcp.py
+--- src/twisted/internet/test/test_tcp.py.orig
++++ src/twisted/internet/test/test_tcp.py
+@@ -2515,7 +2515,11 @@ class SimpleUtilityTests(TestCase):
+         accidentally block if it receives bad input.)
+         """
+         err = self.assertRaises(socket.gaierror, _resolveIPv6, "::1", "http")
+-        self.assertEqual(err.args[0], socket.EAI_NONAME)
++        if sys.platform.startswith(('openbsd')):
++            # https://bugs.python.org/issue1282647
++            self.assertEqual(err.args[0], socket.EAI_SERVICE)
++        else:
++            self.assertEqual(err.args[0], socket.EAI_NONAME)
+ 
+     if platform.isWindows():
+         test_resolveNumericService.skip = ("The AI_NUMERICSERV flag is not "

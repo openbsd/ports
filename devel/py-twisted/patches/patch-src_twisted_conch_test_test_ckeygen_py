@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_twisted_conch_test_test_ckeygen_py,v 1.1 2018/05/25 10:42:38 pvk Exp $
+
+Index: src/twisted/conch/test/test_ckeygen.py
+--- src/twisted/conch/test/test_ckeygen.py.orig
++++ src/twisted/conch/test/test_ckeygen.py
+@@ -68,9 +68,9 @@ class KeyGenTests(TestCase):
+     def _testrun(self, keyType, keySize=None):
+         filename = self.mktemp()
+         if keySize is None:
+-            subprocess.call(['ckeygen', '-t', keyType, '-f', filename, '--no-passphrase'])
++            subprocess.call(['ckeygen${MODPY_BIN_SUFFIX}', '-t', keyType, '-f', filename, '--no-passphrase'])
+         else:
+-            subprocess.call(['ckeygen', '-t', keyType, '-f', filename, '--no-passphrase',
++            subprocess.call(['ckeygen${MODPY_BIN_SUFFIX}', '-t', keyType, '-f', filename, '--no-passphrase',
+                 '-b', keySize])
+         privKey = Key.fromFile(filename)
+         pubKey = Key.fromFile(filename + '.pub')
+@@ -94,7 +94,7 @@ class KeyGenTests(TestCase):
+     def test_runBadKeytype(self):
+         filename = self.mktemp()
+         with self.assertRaises(subprocess.CalledProcessError):
+-            subprocess.check_call(['ckeygen', '-t', 'foo', '-f', filename])
++            subprocess.check_call(['ckeygen${MODPY_BIN_SUFFIX}', '-t', 'foo', '-f', filename])
+ 
+ 
+ 

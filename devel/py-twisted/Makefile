@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/06 19:14:00 pvk Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/25 10:42:38 pvk Exp $
 
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	17.9.0
+MODPY_EGG_VERSION =	18.4.0
 
 EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
@@ -45,7 +45,8 @@ RUN_DEPENDS +=		devel/py-SOAPpy
 .endif
 
 SUBST_FILES =		${WRKSRC}/src/Twisted.egg-info/entry_points.txt \
-			${WRKSRC}/src/twisted/python/_setup.py
+			${WRKSRC}/src/twisted/python/_setup.py \
+			${WRKSRC}/src/twisted/conch/test/test_ckeygen.py
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_ENV =		LC_ALL=en_US.UTF-8
