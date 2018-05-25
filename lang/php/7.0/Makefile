@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/05/25 13:59:19 sthen Exp $
-
-BROKEN-sparc64=	SIGBUS during phar generation
+# $OpenBSD: Makefile,v 1.49 2018/05/25 14:21:17 sthen Exp $
 
 PV=		7.0
 V=		${PV}.30
