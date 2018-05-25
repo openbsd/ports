@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/05/25 13:07:59 espie Exp $
 @unexec-delete rm -f %D/share/icons/Tango/icon-theme.cache
 @comment lib/locale/
-share/icons/
 share/icons/Tango/
 share/icons/Tango/16x16/
 share/icons/Tango/16x16/actions/
