@@ -1,24 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.28 2017/12/30 09:21:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/05/25 00:58:43 bcallah Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
 lib/liferea/girepository-1.0/
 lib/liferea/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/plugins/
-lib/liferea/plugins/${MODPY_PYCACHE}/
+lib/liferea/plugins/${MODPY_PYCACHE}
 lib/liferea/plugins/${MODPY_PYCACHE}bold-unread.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}gnome-keyring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/${MODPY_PYCACHE}headerbar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}libnotify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}media-player.${MODPY_PYC_MAGIC_TAG}pyc
+lib/liferea/plugins/${MODPY_PYCACHE}plugin-installer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}trayicon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/bold-unread.plugin
 lib/liferea/plugins/bold-unread.py
 lib/liferea/plugins/gnome-keyring.plugin
 lib/liferea/plugins/gnome-keyring.py
+lib/liferea/plugins/headerbar.plugin
+lib/liferea/plugins/headerbar.py
 lib/liferea/plugins/libnotify.plugin
 lib/liferea/plugins/libnotify.py
 lib/liferea/plugins/media-player.plugin
 lib/liferea/plugins/media-player.py
+lib/liferea/plugins/plugin-installer.plugin
+lib/liferea/plugins/plugin-installer.py
 lib/liferea/plugins/trayicon.plugin
 lib/liferea/plugins/trayicon.py
 lib/liferea/web-extension/
@@ -108,7 +114,10 @@ share/liferea/gir-1.0/Liferea-3.0.gir
 share/liferea/google_source.ui
 share/liferea/inoreader_source.ui
 share/liferea/liferea.css
+share/liferea/liferea_menu.ui
+share/liferea/liferea_toolbar.ui
 share/liferea/mainwindow.ui
+share/liferea/mark_read_dialog.ui
 share/liferea/new_folder.ui
 share/liferea/new_newsbin.ui
 share/liferea/new_subscription.ui
@@ -127,6 +136,7 @@ share/liferea/opml/feedlist_hu.opml
 share/liferea/opml/feedlist_id.opml
 share/liferea/opml/feedlist_it.opml
 share/liferea/opml/feedlist_nl.opml
+share/liferea/opml/feedlist_no.opml
 share/liferea/opml/feedlist_pl.opml
 share/liferea/opml/feedlist_pt.opml
 share/liferea/opml/feedlist_pt_BR.opml
