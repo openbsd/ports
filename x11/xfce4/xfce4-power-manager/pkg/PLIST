@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/02/25 13:28:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/25 12:47:31 espie Exp $
 @bin bin/xfce4-power-manager
 @bin bin/xfce4-power-manager-settings
 lib/xfce4/panel/plugins/libxfce4powermanager.so
@@ -10,8 +10,6 @@ share/appdata/
 share/appdata/xfce4-power-manager.appdata.xml
 share/applications/xfce4-power-manager-settings.desktop
 share/examples/xfce4-power-manager/
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/xfce4-power-manager/xfce4-power-manager.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/xfce4-power-manager.desktop
 share/icons/hicolor/32x32/status/ac-adapter.png

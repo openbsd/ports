@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/10/31 15:35:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/05/25 12:47:31 espie Exp $
 @bin bin/ristretto
+share/appdata/
 share/appdata/ristretto.appdata.xml
 share/applications/ristretto.desktop
 share/icons/hicolor/128x128/apps/ristretto.png

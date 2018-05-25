@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/03/16 20:31:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/05/25 12:47:31 espie Exp $
 @conflict xfce4-toys-*
 @conflict xfce-utils-*
 @pkgpath x11/xfce4/xfce-utils
@@ -27,10 +27,6 @@ lib/xfce4/session/splash-engines/libsimple.so
 share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
 share/examples/xfce4-session/
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
-@sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/xfce4-session/Xft.xrdb
 share/examples/xfce4-session/xfce4-session.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
@@ -113,8 +109,6 @@ share/locale/vi/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.xfce.session.policy
 share/themes/Default/balou/
 share/themes/Default/balou/logo.png

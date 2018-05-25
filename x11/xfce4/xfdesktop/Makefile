@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2017/10/26 08:26:59 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2018/05/25 12:47:31 espie Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
 XFCE_VERSION =	4.12.4
+REVISION =	0
 
 PORTROACH=	limitw:1,even
 

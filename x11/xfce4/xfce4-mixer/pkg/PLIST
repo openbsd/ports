@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/03/16 20:41:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/05/25 12:47:31 espie Exp $
 @bin bin/xfce4-mixer
 lib/xfce4/panel/plugins/libmixer.so
 @man man/man1/xfce4-mixer.1
@@ -52,7 +52,6 @@ share/locale/vi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
-share/pixmaps/
 share/pixmaps/xfce4-mixer/
 share/pixmaps/xfce4-mixer/chain-broken.png
 share/pixmaps/xfce4-mixer/chain.png

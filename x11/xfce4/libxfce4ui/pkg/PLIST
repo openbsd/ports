@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/16 20:21:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/05/25 12:47:31 espie Exp $
 @conflict libxfcegui4-<4.7.0
 @conflict xfce-utils-*
 @bin bin/xfce4-about
@@ -52,7 +52,6 @@ lib/pkgconfig/libxfce4ui-1.pc
 lib/pkgconfig/libxfce4ui-2.pc
 share/applications/xfce4-about.desktop
 share/examples/xfconf/
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/xfce4/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/

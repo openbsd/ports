@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/04/06 07:33:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/05/25 12:47:31 espie Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -43,7 +43,6 @@ share/dbus-1/services/org.xfce.Thunar.service
 share/doc/Thunar/
 share/doc/Thunar/README.gtkrc
 share/examples/Thunar/
-@sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/Thunar/
 share/examples/Thunar/uca.xml
 @sample ${SYSCONFDIR}/xdg/Thunar/uca.xml

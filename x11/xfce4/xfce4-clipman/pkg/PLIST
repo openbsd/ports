@@ -1,16 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.18 2017/02/06 09:27:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/05/25 12:47:31 espie Exp $
 @bin bin/xfce4-clipman
 @bin bin/xfce4-clipman-settings
 @bin bin/xfce4-popup-clipman
 bin/xfce4-popup-clipman-actions
 lib/xfce4/panel/plugins/libclipman.so
+share/appdata/
 share/appdata/xfce4-clipman.appdata.xml
 share/applications/xfce4-clipman.desktop
 share/examples/xfce4-clipman/
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/xfce4/
-@sample ${SYSCONFDIR}/xdg/xfce4/panel/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/xfce4-clipman/xfce4-clipman-actions.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/panel/xfce4-clipman-actions.xml
 share/examples/xfce4-clipman/xfce4-clipman-plugin-autostart.desktop

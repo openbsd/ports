@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2018/05/25 12:47:31 espie Exp $
 
 COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.4.0
 XFCE_GOODIE=	mousepad
-REVISION=	3
+REVISION=	4
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

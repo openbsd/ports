@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/16 20:35:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/05/25 12:47:31 espie Exp $
 @bin bin/mousepad
 share/applications/mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
@@ -9,6 +9,8 @@ share/locale/cs/LC_MESSAGES/mousepad.mo
 share/locale/da/LC_MESSAGES/mousepad.mo
 share/locale/de/LC_MESSAGES/mousepad.mo
 share/locale/el/LC_MESSAGES/mousepad.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mousepad.mo
 share/locale/en_GB/LC_MESSAGES/mousepad.mo
 share/locale/es/LC_MESSAGES/mousepad.mo
