@@ -1,4 +1,4 @@
-@comment $OpenBSD
+@comment $OpenBSD: PFRAG.no-python3,v 1.2 2018/05/25 10:07:31 pvk Exp $
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/mail/alias.py
