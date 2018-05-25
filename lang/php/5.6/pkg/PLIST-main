@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2018/05/23 06:51:14 martijn Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2018/05/25 13:59:19 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=5.6,<5.7
 @conflict php-fpm->=5.6,<5.7
 @conflict php5-core->=5.2
 @conflict php5-core-fastcgi->=5.2
-@conflict php5-pdo_sqlite->=5.2
 @pkgpath lang/php/5.4
-@pkgpath lang/php/5.4,-pdo_sqlite
 @pkgpath lang/php/5.6,-fpm
 @pkgpath lang/php/5.6,-main,ap2
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}/php-${PV}.sample/*
@@ -18,33 +16,33 @@
 @mode
 @owner
 @group
+bin/phar-${PV}
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
-bin/phar-${PV}
 lib/php-${PV}/
 lib/php-${PV}/libphp5.so
 lib/php-${PV}/modules/
 lib/php-${PV}/modules/opcache.so
+@man man/man1/phar-${PV}.1
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
-@man man/man1/phar-${PV}.1
 @man man/man8/php-fpm-${PV}.8
 @bin sbin/php-fpm-${PV}
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/php-${PV}/
-@sample /var/www/conf/modules.sample/
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
 share/examples/php-${PV}/opcache.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/opcache.ini
+share/examples/php-${PV}/php-fpm.conf
+@sample ${SYSCONFDIR}/php-fpm.conf
 share/examples/php-${PV}/php.conf
-@sample /var/www/conf/modules.sample/php-${PV}.conf
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
 @sample ${SYSCONFDIR}/php-${PV}.ini
-share/examples/php-${PV}/php-fpm.conf
-@sample ${SYSCONFDIR}/php-fpm.conf
 share/php-${PV}/
 share/php-${PV}/build/
 share/php-${PV}/build/Makefile.global
@@ -223,7 +221,7 @@ share/php-${PV}/include/ext/mbstring/oniguruma/oniguruma.h
 share/php-${PV}/include/ext/mbstring/php_mbregex.h
 share/php-${PV}/include/ext/mbstring/php_onig_compat.h
 share/php-${PV}/include/ext/mysqli/
-share/php-${PV}/include/ext/mysqli/mysqli_libmysql.h
+share/php-${PV}/include/ext/mysqli/mysqli_mysqlnd.h
 share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h
@@ -281,9 +279,6 @@ share/php-${PV}/include/ext/spl/spl_functions.h
 share/php-${PV}/include/ext/spl/spl_heap.h
 share/php-${PV}/include/ext/spl/spl_iterators.h
 share/php-${PV}/include/ext/spl/spl_observer.h
-share/php-${PV}/include/ext/sqlite3/
-share/php-${PV}/include/ext/sqlite3/libsqlite/
-share/php-${PV}/include/ext/sqlite3/libsqlite/sqlite3.h
 share/php-${PV}/include/ext/standard/
 share/php-${PV}/include/ext/standard/base64.h
 share/php-${PV}/include/ext/standard/basic_functions.h

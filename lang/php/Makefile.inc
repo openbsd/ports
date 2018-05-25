@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.104 2018/05/23 06:51:14 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.105 2018/05/25 13:59:19 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -12,7 +12,7 @@ DISTFILES+=		php-${V}.tar.bz2
 DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
-MAINTAINER=		Robert Nagy <robert@openbsd.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=		http://www.php.net/
 
 MASTER_SITES=		http://se.php.net/distributions/ \
@@ -67,8 +67,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-pic \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
-			--with-pdo-sqlite \
-			--with-sqlite3 \
 			--program-suffix=-${PV} \
 			--with-readline
 
@@ -210,16 +208,16 @@ WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
 # mysqli
 PHP_EXTENSIONS+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php
-CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
-LIB_DEPENDS-mysqli=	databases/mariadb
-WANTLIB-mysqli=		crypto m pthread ssl z lib/mysql/mysqlclient
+CONFIGURE_ARGS+=	--with-mysqli=shared
+LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
+WANTLIB-mysqli=		pthread
 
 # odbc
 PHP_EXTENSIONS+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbc>=2 pthread iodbcinst
+WANTLIB-odbc=		iodbc iodbcinst pthread
 
 # pcntl
 PHP_EXTENSIONS+=	-pcntl
@@ -231,16 +229,30 @@ WANTLIB-pcntl=		pthread
 # pdo-mysql
 PHP_EXTENSIONS+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php
-CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-pdo_mysql=	databases/mariadb
-WANTLIB-pdo_mysql=	crypto m pthread ssl z lib/mysql/mysqlclient
+CONFIGURE_ARGS+=	--with-pdo-mysql=shared
+LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
+WANTLIB-pdo_mysql=	pthread
+
+# pdo-odbc
+PHP_EXTENSIONS+=	-pdo_odbc
+COMMENT-pdo_odbc=	PDO database access extensions for php
+CONFIGURE_ARGS+=        --with-pdo-odbc=shared,iODBC,${LOCALBASE}
+LIB_DEPENDS-pdo_odbc=	databases/iodbc
+WANTLIB-pdo_odbc=	iodbc pthread
 
 # pdo-pgsql
 PHP_EXTENSIONS+=	-pdo_pgsql
-COMMENT-pdo_pgsql=	PDO database access extensions for php
+COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
 CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
 WANTLIB-pdo_pgsql=	pq>=2 pthread
+
+# pdo-sqlite
+PHP_EXTENSIONS+=	-pdo_sqlite
+COMMENT-pdo_sqlite=	PDO sqlite3 database access extensions for php
+CONFIGURE_ARGS+=        --with-pdo-sqlite=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
+WANTLIB-pdo_sqlite=	pthread sqlite3
 
 # pgsql
 PHP_EXTENSIONS+=	-pgsql
@@ -276,6 +288,13 @@ COMMENT-snmp=		snmp protocol extensions for php
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
+
+# sqlite3
+PHP_EXTENSIONS+=	-sqlite3
+COMMENT-sqlite3=	sqlite3 database access extension for php
+CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
+LIB_DEPENDS-sqlite3=	databases/sqlite3
+WANTLIB-sqlite3=	sqlite3 pthread
 
 # pdo-dblib
 PHP_EXTENSIONS+=	-pdo_dblib

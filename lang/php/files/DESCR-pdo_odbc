@@ -1,0 +1,3 @@
+pdo_odbc is a driver that implements the PHP Data Objects (PDO)
+interface to enable access from PHP to various databases via their
+ODBC drivers.
