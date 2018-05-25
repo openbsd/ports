@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/07 07:26:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/25 06:39:07 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -149,6 +149,21 @@ include/dlib/crc32/
 include/dlib/crc32.h
 include/dlib/crc32/crc32_kernel_1.h
 include/dlib/crc32/crc32_kernel_abstract.h
+include/dlib/cuda/
+include/dlib/cuda/cpu_dlib.h
+include/dlib/cuda/cublas_dlibapi.h
+include/dlib/cuda/cuda_data_ptr.h
+include/dlib/cuda/cuda_dlib.h
+include/dlib/cuda/cuda_errors.h
+include/dlib/cuda/cuda_utils.h
+include/dlib/cuda/cudnn_dlibapi.h
+include/dlib/cuda/curand_dlibapi.h
+include/dlib/cuda/cusolver_dlibapi.h
+include/dlib/cuda/gpu_data.h
+include/dlib/cuda/gpu_data_abstract.h
+include/dlib/cuda/tensor.h
+include/dlib/cuda/tensor_abstract.h
+include/dlib/cuda/tensor_tools.h
 include/dlib/data_io/
 include/dlib/data_io.h
 include/dlib/data_io/image_dataset_metadata.h
@@ -181,17 +196,6 @@ include/dlib/dnn/
 include/dlib/dnn.h
 include/dlib/dnn/core.h
 include/dlib/dnn/core_abstract.h
-include/dlib/dnn/cpu_dlib.h
-include/dlib/dnn/cublas_dlibapi.h
-include/dlib/dnn/cuda_data_ptr.h
-include/dlib/dnn/cuda_dlib.h
-include/dlib/dnn/cuda_errors.h
-include/dlib/dnn/cuda_utils.h
-include/dlib/dnn/cudnn_dlibapi.h
-include/dlib/dnn/curand_dlibapi.h
-include/dlib/dnn/cusolver_dlibapi.h
-include/dlib/dnn/gpu_data.h
-include/dlib/dnn/gpu_data_abstract.h
 include/dlib/dnn/input.h
 include/dlib/dnn/input_abstract.h
 include/dlib/dnn/layers.h
@@ -200,9 +204,6 @@ include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
-include/dlib/dnn/tensor.h
-include/dlib/dnn/tensor_abstract.h
-include/dlib/dnn/tensor_tools.h
 include/dlib/dnn/trainer.h
 include/dlib/dnn/trainer_abstract.h
 include/dlib/dnn/utilities.h
@@ -334,6 +335,8 @@ include/dlib/geometry/border_enumerator.h
 include/dlib/geometry/border_enumerator_abstract.h
 include/dlib/geometry/drectangle.h
 include/dlib/geometry/drectangle_abstract.h
+include/dlib/geometry/line.h
+include/dlib/geometry/line_abstract.h
 include/dlib/geometry/point_transforms.h
 include/dlib/geometry/point_transforms_abstract.h
 include/dlib/geometry/rectangle.h
@@ -740,7 +743,6 @@ include/dlib/pixel.h
 include/dlib/platform.h
 include/dlib/python/
 include/dlib/python.h
-include/dlib/python/numpy.h
 include/dlib/python/numpy_image.h
 include/dlib/python/pyassert.h
 include/dlib/python/pybind_utils.h
