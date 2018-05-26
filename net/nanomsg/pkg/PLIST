@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/16 07:32:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/26 19:38:16 jasper Exp $
 @bin bin/nanocat
 include/nanomsg/
 include/nanomsg/bus.h
@@ -12,5 +12,9 @@ include/nanomsg/reqrep.h
 include/nanomsg/survey.h
 include/nanomsg/tcp.h
 include/nanomsg/ws.h
+lib/cmake/
+lib/cmake/nanomsg/
+lib/cmake/nanomsg/nanomsg-config-release.cmake
+lib/cmake/nanomsg/nanomsg-config.cmake
 @lib lib/libnanomsg.so.${LIBnanomsg_VERSION}
 lib/pkgconfig/nanomsg.pc

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/07 12:01:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/26 19:38:16 jasper Exp $
 
 COMMENT =		socket library providing multiple communication patterns
 
 GH_ACCOUNT =		nanomsg
 GH_PROJECT =		nanomsg
-GH_TAGNAME =		1.1.2
+GH_TAGNAME =		1.1.3
 
 SHARED_LIBS +=  	nanomsg		0.0 # 1.0
 
