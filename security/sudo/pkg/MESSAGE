@@ -1,4 +1,4 @@
-Please see the ${TRUEPREFIX}/share/doc/sudo/UPGRADE file for important
+Please see the ${PREFIX}/share/doc/sudo/UPGRADE file for important
 information about upgrading from a previous version of sudo.
 
 Important user-visible changes compared to the version of sudo that
