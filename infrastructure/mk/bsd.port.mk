@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1403 2018/05/21 21:26:39 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1404 2018/05/26 14:21:40 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -118,7 +118,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
 	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED COMPILER \
-	COMPILER_LANGS COMPILER_LINKS
+	COMPILER_LANGS COMPILER_LINKS SUBST_VARS UPDATE_PLIST_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -1852,6 +1852,21 @@ _check_wrkdir = ${_PBUILD} ${_PERLSCRIPT}/check-wrkdir
 _check_wrkdir = :
 .endif
 
+# packing list utilities.  This generates a packing list from the WRKINST
+# directory. Not perfect, but pretty close.  The generated file
+# will have to have some tweaks done by hand.
+# In particular, since we no longer run fake as root
+
+_update_plist = ${_cache_fragment}; \
+	PORTSDIR=${PORTSDIR} \
+	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
+	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
+	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
+	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
+.for i in ${BUILD_PACKAGES}
+_update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
+.endfor
+
 ###
 ### end of variable setup. Only targets now
 ###
@@ -2356,21 +2371,6 @@ _internal-test:
 .  else
 _internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 .  endif
-
-# packing list utilities.  This generates a packing list from the WRKINST
-# directory. Not perfect, but pretty close.  The generated file
-# will have to have some tweaks done by hand.
-# In particular, since we no longer run fake as root
-
-_update_plist = ${_cache_fragment}; \
-	PORTSDIR=${PORTSDIR} \
-	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
-	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
-	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
-	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
-.for i in ${BUILD_PACKAGES}
-_update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
-.endfor
 
 _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
