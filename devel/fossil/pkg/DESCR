@@ -14,7 +14,7 @@ installing it alone is not enough. You also need to run the following:
 $ fossil settings clearsign on -global
 
 This package can be built with a static FLAVOR, which makes it easier
-to use in a chrooted apache environment.  ${TRUEPREFIX}/bin/fossil must
+to use in a chrooted apache environment.  ${PREFIX}/bin/fossil must
 be copied to /var/www/bin.  Note that it requires /var/tmp in the
 chroot dir:
 
