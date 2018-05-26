@@ -5,7 +5,7 @@ This schema is mostly optimized for tools, and cumbersome to query by
 hand.
 
 Database Schema:
-- Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
+- _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
 PKGPATH points to a PATHS entry corresponding to the stripped down version of 
 FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
 is already stripped.  Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
@@ -16,7 +16,7 @@ for each SUBPACKAGE.
 CANONICAL points to the actual ID to use as an entry in other tables, for
 FULLPKGPATH which don't have their own entry.
 
-- Ports(FULLPKGPATH, ...)
+- _Ports(FULLPKGPATH, ...)
 holds all the information retrieved through various variables that is not
 stored in specialized tables, e.g.,:
     AUTOCONF_VERSION 
@@ -67,17 +67,17 @@ Note that USE_WXNEEDED is 3-valued: 2 is special, 1 is yes, undef is no.
 
 MULTI_PACKAGES ports hold several entries with corresponding FULLPKGPATH
 
-- Flavors(FULLPKGPATH, VALUE)
-- PseudoFlavors(FULLPKGPATH, VALUE)
-- Categories(FULLPKGPATH, VALUE)
-- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)	('-' values are not stored)
-- Modules(FULLPKGPATH, VALUE)
-- Configure(FULLPKGPATH, VALUE) 	(corresponds to CONFIGURE_STYLE)
-- ConfigureArgs(FULLPKGPATH, VALUE)
-- MasterSites(FULLPKGPATH, N, VALUE)
-- Makefiles(FULLPKGPATH, VALUE)
-- NotForArch(FULLPKGPATH, VALUE)
-- OnlyForArch(FULLPKGPATH, VALUE)
+- _Flavors(FULLPKGPATH, VALUE)
+- _PseudoFlavors(FULLPKGPATH, VALUE)
+- _Categories(FULLPKGPATH, VALUE)
+- _Multi(FULLPKGPATH, VALUE, SUBPKGPATH)	('-' values are not stored)
+- _Modules(FULLPKGPATH, VALUE)
+- _Configure(FULLPKGPATH, VALUE) 	(corresponds to CONFIGURE_STYLE)
+- _ConfigureArgs(FULLPKGPATH, VALUE)
+- _MasterSites(FULLPKGPATH, N, VALUE)
+- _Makefiles(FULLPKGPATH, VALUE)
+- _NotForArch(FULLPKGPATH, VALUE)
+- _OnlyForArch(FULLPKGPATH, VALUE)
 All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)
@@ -89,7 +89,7 @@ Each keyword table follows the same scheme
 TABLENAME(KEYREF, VALUE)
 
 
-- Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
+- _Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
 All depends are stored in a single table, including the type:
 0 -> library
 1 -> run
@@ -98,20 +98,20 @@ All depends are stored in a single table, including the type:
 with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
 we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
 the rest.
-- Wantlib(FULLPKGPATH, VALUE, EXTRA)
+- _Wantlib(FULLPKGPATH, VALUE, EXTRA)
 All the libraries the FULLPKGPATH depends upon, with optional version 
 number specification stored in EXTRA
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
-- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
+- _Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
 also contains the normalized pkgpath for the corresponding subpackage.
 - Broken(FULLPKGPATH, ARCH, TEXT)
 This is stored both in the main table (for now) and in a separate table, with
 keywords since it may be arch-dependent
 
-- Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
+- _Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
 
-- TARGETS(FULLPKGPATH, VALUE)
+- _TARGETS(FULLPKGPATH, VALUE)
 
 Some information, both in the main table and in secondary tables 
 is stored as keyword references to other tables:
