@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/05/26 10:38:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2018/05/26 13:57:05 espie Exp $
 
 COMMENT =		database toolkit for Python
 
@@ -25,11 +25,13 @@ FLAVOR ?=
 
 MAKE_ENV +=		PYTHONPATH=.
 
+.if ${FLAVOR} == ""
 # Other DB connectors would work, too.
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			databases/py-sqlite2${MODPY_FLAVOR}>=2.8.3 \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
