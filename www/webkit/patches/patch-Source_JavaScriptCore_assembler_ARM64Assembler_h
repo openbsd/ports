@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARM64Assembler_h,v 1.1 2018/05/26 09:54:19 phessler Exp $
+
+Index: Source/JavaScriptCore/assembler/ARM64Assembler.h
+--- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
++++ Source/JavaScriptCore/assembler/ARM64Assembler.h
+@@ -2756,6 +2756,8 @@ class ARM64Assembler { (public)
+     {
+ #if OS(IOS)
+         sys_cache_control(kCacheFunctionPrepareForExecution, code, size);
++#elif OS(FREEBSD) || OS(NETBSD) || OS(OPENBSD)
++	__clear_cache(code, reinterpret_cast<char*>(code) + size);
+ #else
+ #error "The cacheFlush support is missing on this platform."
+ #endif
