@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/04/12 09:53:54 bluhm Exp $
+# $OpenBSD: Makefile,v 1.17 2018/05/26 20:55:55 phessler Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -44,6 +44,10 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-openssl \
 			--with-zlib \
 			--without-sphinx
+
+.if ${MACHINE_ARCH} == "aarch64"
+CONFIGURE_ARGS +=	--disable-armv8crypto
+.endif
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 PKG_ARGS =		-Dx86=1
