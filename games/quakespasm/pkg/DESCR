@@ -6,7 +6,7 @@ To run QuakeSpasm you must have the original quake datafiles from one of
 the original CD releases or obtained from the Steam or GOG online stores.
 
 For the base game copy the "id1" directory to
-${TRUEPREFIX}/share/quakespasm/id1
+${PREFIX}/share/quakespasm/id1
 
 The mission pack directories "rogue" and "hipnotic" can also be copied
 into place and run by specifying the -game <dirname>, ie
