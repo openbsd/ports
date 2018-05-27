@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2018/05/15 15:04:09 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2018/05/27 08:37:05 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
-REVISION=	3
+REVISION=	4
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 
@@ -42,4 +42,7 @@ MAKE_ENV=		LIBslang_MAJOR=${LIBslang_MAJOR} \
 pre-configure:
 	cd ${AUTOCONF_DIR}; cp configure ..
 
+post-install:
+	mkdir -p ${PREFIX}/share/slsh/examples
+	mv ${WRKINST}/${SYSCONFDIR}/slsh.rc ${PREFIX}/share/slsh/examples
 .include <bsd.port.mk>

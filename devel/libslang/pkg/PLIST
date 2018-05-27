@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/05/15 15:04:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/05/27 08:37:05 espie Exp $
 @bin bin/slsh
 include/slang.h
 include/slcurses.h
 @comment lib/libslang.so
 @comment lib/libslang.so.${LIBslang_MAJOR}
 @lib lib/libslang.so.${LIBslang_VERSION}
+lib/pkgconfig/slang.pc
 lib/slang/
 lib/slang/v2/
 lib/slang/v2/modules/
@@ -73,6 +74,9 @@ share/slsh/cmaps/topo.map
 share/slsh/cmaps/wysiwyg.map
 share/slsh/cmdopt.sl
 share/slsh/csv.sl
+share/slsh/examples/
+share/slsh/examples/slsh.rc
+@sample ${SYSCONFDIR}/slsh.rc
 share/slsh/fcntl.sl
 share/slsh/fork.sl
 share/slsh/glob.sl
