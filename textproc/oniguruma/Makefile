@@ -1,20 +1,26 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/27 07:28:06 martijn Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/27 14:41:21 sthen Exp $
 
 COMMENT=	regular expressions library
 
 V=		6.8.2
 DISTNAME=	onig-$V
-SHARED_LIBS=	onig 3.0
 PKGNAME=	oniguruma-$V
+REVISION=	0
+
+SHARED_LIBS +=  onig                 3.0      # 5.0
+
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://github.com/kkos/oniguruma/
 
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://github.com/kkos/oniguruma/releases/download/v${V}/
+MASTER_SITES=	https://github.com/kkos/oniguruma/releases/download/v$V/
 
-CONFIGURE_STYLE=gnu
+SEPARATE_BUILD=	 Yes
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
