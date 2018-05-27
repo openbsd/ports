@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.148 2018/05/27 07:13:49 espie Exp $
+# $OpenBSD: update-plist,v 1.149 2018/05/27 09:38:21 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1332,9 +1332,7 @@ sub copy_from_old
 	}
 
 	# mark it for later (see add_delayed_objects)
-	if ($e->cwd ne $s->{state}{prefix} && 
-	    # XXX doesn't apply to @rcscript
-	    $o->stage == 1) {
+	if ($e->cwd ne $s->{state}{prefix}) {
 		push(@{$s->{badcwd}}, $e);
 		return;
 	}
@@ -1459,9 +1457,8 @@ sub is_a_sample
 
 sub copy_object
 {
-	my ($self, $stage, $path) = @_;
+	my ($self, $path) = @_;
 	my $o = $self->{objects}{$path};
-	return unless $o->stage == $stage;
 
 	return if $self->copy_existing($path, $o);
 	my $c = $o->element_class;
@@ -1481,13 +1478,8 @@ sub copy_objects
 	my $self = shift;
 	$self->{state}->say("Copying objects")
 	    unless $self->{state}{quiet};
-	# XXX stage 2 is for rcscript, which are kind of special with
-	# their included cwd (why did I do things that way again?
-	# check why absolute_okay is not enough)
-	for my $stage (1, 2) {
-		for my $path (sort keys %{$self->{objects}}) {
-			$self->copy_object($stage, $path);
-		}
+	for my $path (sort keys %{$self->{objects}}) {
+	    $self->copy_object($path);
 	}
 }
 

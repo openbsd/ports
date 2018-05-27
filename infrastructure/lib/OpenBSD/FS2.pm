@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.19 2018/05/15 10:34:16 espie Exp $
+# $OpenBSD: FS2.pm,v 1.20 2018/05/27 09:38:21 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -87,11 +87,6 @@ sub fill_objdump
 	$data->{objdump} = $check;
 }
 
-sub stage
-{
-	1;
-}	
-
 # some files may "bleed" into parents
 sub tweak_other_paths
 {
@@ -136,11 +131,6 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::RcScript';
-}
-
-sub stage
-{
-	2;
 }
 
 package OpenBSD::FS::File::Binary;
