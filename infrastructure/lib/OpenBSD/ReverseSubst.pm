@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.16 2018/05/23 13:53:39 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.17 2018/05/27 11:56:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -72,6 +72,10 @@ sub assert_valid_prefix
 	    if $string !~ m/^\Q$s2\E/;
 }
 
+sub adjust
+{
+}
+
 package OpenBSD::PackingElement::Action;
 sub unsubst_prefix
 {
@@ -116,6 +120,15 @@ sub assert_valid_prefix
 	$self->SUPER::assert_valid_prefix($subst, $subst->do($string), $unsubst);
 }
 
+package OpenBSD::PackingElement::DirBase;
+
+# make sure dirobjects show an explicit / at end, even added after the subst
+sub adjust
+{
+	my ($self, $rstring) = @_;
+	$$rstring =~ s,([^/])$,$1/,;
+}
+
 package Forwarder;
 # perfect forwarding
 sub AUTOLOAD
@@ -151,14 +164,7 @@ sub new
 	    # string and no backsubst, it's probably intentional
 	    used => {}, 
 	    # special variables we won't add in substitutions
-	    dont_backsubst => {
-		FULLPKGNAME => 1,
-		FULLPKGPATH => 1,
-		MACHINE_ARCH => 1,
-		ARCH => 1,
-		BASE_PKGPATH => 1,
-		LOCALSTATEDIR => 1,
-	    },
+	    dont_backsubst => {},
 	    # list of actual variables we care about, e.g., ignored stuff
 	    # and whatnot
 	    l => [],
@@ -188,7 +194,6 @@ my $ignore = {
 	PERMIT_PACKAGE_CDROM => 1,
 	PERMIT_PACKAGE_FTP => 1,
 	HOMEPAGE => 1,
-	TRUEPREFIX => 1,
 };
 
 sub add
@@ -364,6 +369,7 @@ sub do_backsubst
 			# TODO we could also try based on suffixes ?
 		}
 	} while ($old ne $string);
+	$context->adjust(\$string);
 	return $string;
 }
 
