@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.149 2018/05/27 09:38:21 espie Exp $
+# $OpenBSD: update-plist,v 1.150 2018/05/27 12:15:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -568,7 +568,6 @@ sub rebless
 	$new_prefix =~ s/^(\@\S+\s|).*/$1/;
 	if (defined $self->unsubst) {
 		$self->{unsubst} =~ s/^\Q$old_prefix\E/$new_prefix/;
-		print "$self->{unsubst}\n";
 	}
 }
 
