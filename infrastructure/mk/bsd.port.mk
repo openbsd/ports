@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1404 2018/05/26 14:21:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1405 2018/05/27 07:15:06 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1057,7 +1057,7 @@ _substvars${_S} += -D${_v}=${${_v:S/^^//}:Q}
 PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
 .  endif
 
-PKG_ARGS${_S} += ${_substvars${_S}}
+PKG_ARGS${_S} += ${_substvars${_S}:N-D^TRUEPREFIX=*}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
@@ -1861,6 +1861,7 @@ _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
+	-u ${PORTSDIR}/infrastructure/db/user.list \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}
