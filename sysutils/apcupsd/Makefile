@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/05/03 11:01:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2018/05/27 10:56:33 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -33,7 +33,8 @@ NO_TEST =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		${VARBASE}/www
-SUBST_VARS +=		WEB_ROOT ^BASESYSCONFDIR
+SUBST_VARS +=		WEB_ROOT BASESYSCONFDIR
+UPDATE_PLIST_ARGS +=	-s BASESYSCONFDIR
 SYSCONFDIR =		${BASESYSCONFDIR}/apcupsd
 
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man \

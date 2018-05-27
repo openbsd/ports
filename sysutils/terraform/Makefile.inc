@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2017/06/26 09:06:57 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2018/05/27 10:56:33 espie Exp $
 
 DIST_SUBDIR=		terraform
 
@@ -21,5 +21,5 @@ GH_ACCOUNT ?=		terraform-providers
 GH_PROJECT ?=		terraform-provider-${PROVIDER}
 PKGDIR ?=		${.CURDIR}/../pkg
 RUN_DEPENDS +=		sysutils/terraform/terraform
-SUBST_VARS +=		^PROVIDER
+SUBST_VARS +=		PROVIDER
 .endif

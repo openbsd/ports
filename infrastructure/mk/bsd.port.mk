@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1405 2018/05/27 07:15:06 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1406 2018/05/27 10:56:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1011,10 +1011,10 @@ _lt_libs += LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
 _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 .endfor
 
-# Create the generic variable substitution list, from subst vars
-SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
-	FULLPKGNAME MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX \
-	^RCDIR ^LOCALSTATEDIR
+# Create the generic variable substitution list
+SUBST_VARS += ARCH BASE_PKGPATH FLAVOR_EXT FULLPKGNAME HOMEPAGE \
+	LOCALBASE LOCALSTATEDIR MACHINE_ARCH MAINTAINER \
+	PREFIX RCDIR SYSCONFDIR TRUEPREFIX X11BASE
 
 _PKG_ADD_AUTO ?=
 .if !empty(_DEPENDENCY_STACK)
@@ -1862,6 +1862,8 @@ _update_plist = ${_cache_fragment}; \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
 	-u ${PORTSDIR}/infrastructure/db/user.list \
+	-s PREFIX -s SYSCONFDIR -s BASE_PKGPATH -s LOCALBASE \
+	-s X11BASE -s RCDIR -s LOCALSTATEDIR \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}

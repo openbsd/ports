@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.92 2018/01/15 23:59:33 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.93 2018/05/27 10:56:33 espie Exp $
 
 # ruby module
 
@@ -146,7 +146,8 @@ MODRUBY_RELDOCDIR=	share/doc/${MODRUBY_PKG_PREFIX}
 MODRUBY_RELEXAMPLEDIR=	share/examples/${MODRUBY_PKG_PREFIX}
 MODRUBY_DOCDIR=		${PREFIX}/${MODRUBY_RELDOCDIR}
 MODRUBY_EXAMPLEDIR=	${PREFIX}/${MODRUBY_RELEXAMPLEDIR}
-SUBST_VARS +=		^MODRUBY_RELDOCDIR ^MODRUBY_RELEXAMPLEDIR
+SUBST_VARS +=		MODRUBY_RELDOCDIR MODRUBY_RELEXAMPLEDIR
+UPDATE_PLIST_ARGS += -s MODRUBY_RELDOCDIR MODRUBY_RELEXAMPLEDIR
 
 # Assume that we want to automatically add ruby to BUILD_DEPENDS
 # and RUN_DEPENDS unless the port specifically requests not to.
@@ -215,7 +216,8 @@ PKG_ARCH=	*
 
 # PLIST magic.  Set variables so that the same PLIST will work for
 # all ruby versions and implementations.
-SUBST_VARS+=	^GEM_LIB ^GEM_BIN DISTNAME
+SUBST_VARS+=	GEM_LIB GEM_BIN DISTNAME
+UPDATE_PLIST_ARGS += -s GEM_LIB -s GEM_BIN
 
 .  if ${MODRUBY_REV} == jruby
 GEM=		${RUBY} -S gem
@@ -299,8 +301,9 @@ do-install:
 .endif
 
 # These are mostly used by the non-gem ports.
-SUBST_VARS+=	^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
+SUBST_VARS+=	MODRUBY_SITEARCHDIR MODRUBY_SITEDIR MODRUBY_LIBREV \
 		MODRUBY_ARCH
+UPDATE_PLIST_ARGS += -s MODRUBY_SITEARCHDIR -s MODRUBY_SITEDIR
 
 # test stuff
 
