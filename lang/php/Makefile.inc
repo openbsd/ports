@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.107 2018/05/25 22:43:41 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.108 2018/05/27 16:32:44 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -72,7 +72,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 
 # sapi
-CONFIGURE_ARGS+=	--enable-cgi
+CONFIGURE_ARGS+=	--enable-cgi \
+			--enable-cli
 
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
 BUILD_DEPENDS+=		www/apache-httpd
@@ -85,26 +86,25 @@ CONFIGURE_ARGS+=	--enable-fpm \
 CONFIGURE_ARGS+=	--enable-opcache
 
 # default included php extensions
-CONFIGURE_ARGS+=	--with-openssl \
-			--with-zlib \
-			--enable-xml \
-			--enable-wddx \
-			--enable-cli \
+CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
-			--with-gettext=${LOCALBASE} \
+			--with-openssl \
+			--with-pcre-regex \
+			--with-zlib \
 			--enable-bcmath \
-			--enable-session \
 			--enable-calendar \
 			--enable-ctype \
+			--enable-exif \
 			--enable-ftp \
-			--with-pcre-regex \
+			--enable-mbstring \
+			--enable-phar \
+			--enable-session \
 			--enable-sockets \
 			--enable-sysvmsg \
 			--enable-sysvsem \
 			--enable-sysvshm \
-			--enable-mbstring \
-			--enable-exif \
-			--enable-phar
+			--enable-wddx \
+			--enable-xml
 
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
@@ -116,9 +116,9 @@ MULTI_PACKAGES+=	${SAPI} ${PHP_EXTENSIONS}
 RUN_DEPENDS-main=	mail/femail,-chroot
 
 .for i in ${SAPI}
-WANTLIB$i+=		c crypto curses iconv intl lzma m pthread \
-			readline ssl xml2 z
-LIB_DEPENDS$i+=		devel/gettext \
+WANTLIB$i +=		c crypto curses iconv intl lzma m pthread
+WANTLIB$i +=		readline ssl xml2 z
+LIB_DEPENDS$i +=	devel/gettext \
 			textproc/libxml
 .endfor
 
@@ -132,32 +132,25 @@ PHP_EXTENSIONS+=	-bz2
 COMMENT-bz2=		bzip2 compression extensions for php
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 LIB_DEPENDS-bz2=	archivers/bzip2
-WANTLIB-bz2=		bz2>=10 pthread
+WANTLIB-bz2=		bz2 pthread
 
 # curl
 PHP_EXTENSIONS+=	-curl
 COMMENT-curl=		curl URL library extensions for php
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		pthread crypto nghttp2 ssl z curl>=2
+WANTLIB-curl=		crypto curl nghttp2 pthread ssl z
 
 # dba
 PHP_EXTENSIONS+=	-dba
 COMMENT-dba=		dba GDBM access extensions for php
 CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
 LIB_DEPENDS-dba=	databases/gdbm
-WANTLIB-dba=		gdbm>=2 pthread
+WANTLIB-dba=		gdbm iconv intl pthread
 
 # gd
 PHP_EXTENSIONS+=	-gd
 COMMENT-gd=		image manipulation extensions for php
-LIB_DEPENDS-gd=		graphics/jpeg \
-			graphics/png
-.if ${PV} == "5.6"
-LIB_DEPENDS-gd+=	devel/t1lib
-WANTLIB-gd+=		t1>=5
-.endif
-WANTLIB-gd+=		z jpeg>=62 png>=3 pthread X11 Xpm freetype
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
@@ -165,13 +158,20 @@ CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-t1lib=${LOCALBASE} \
 			--with-freetype-dir=${X11BASE} \
 			--with-xpm-dir=${X11BASE}
+LIB_DEPENDS-gd=		graphics/jpeg \
+			graphics/png
+.if ${PV} == "5.6"
+LIB_DEPENDS-gd+=	devel/t1lib
+WANTLIB-gd+=		t1
+.endif
+WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
 
 # gmp
 PHP_EXTENSIONS+=	-gmp
 COMMENT-gmp=		gmp math library support for php
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 LIB_DEPENDS-gmp=	devel/gmp
-WANTLIB-gmp=		gmp>=4 pthread
+WANTLIB-gmp=		gmp pthread
 
 # intl
 PHP_EXTENSIONS+=	-intl
@@ -180,9 +180,7 @@ CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
-WANTLIB-intl=		icudata icui18n icuio icuuc pthread
-# only needed for php7+, simpler to list it unconditionally
-WANTLIB-intl+=		${COMPILER_LIBCXX} m
+WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
 
 # imap
 PHP_EXTENSIONS+=	-imap
@@ -190,21 +188,22 @@ COMMENT-imap=		imap, pop3 and nntp extensions for php
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-imap-ssl
 LIB_DEPENDS-imap=	mail/alpine,-c-client
-WANTLIB-imap=		pthread crypto ssl c-client>=5
+WANTLIB-imap=		c-client crypto pthread ssl
 
 # ldap
 PHP_EXTENSIONS+=	-ldap
 COMMENT-ldap=		ldap protocol extensions for php
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 LIB_DEPENDS-ldap=	databases/openldap
-WANTLIB-ldap=		pthread ldap>=2 lber
+WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 pthread sasl2 ssl
 
 # mcrypt
 PHP_EXTENSIONS+=	-mcrypt
 COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
-LIB_DEPENDS-mcrypt=	security/libmcrypt devel/libtool,-ltdl
-WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
+LIB_DEPENDS-mcrypt=	security/libmcrypt \
+			devel/libtool,-ltdl
+WANTLIB-mcrypt=		ltdl mcrypt pthread
 
 # mysqli
 PHP_EXTENSIONS+=	-mysqli
@@ -224,7 +223,7 @@ WANTLIB-odbc=		iodbc iodbcinst pthread
 PHP_EXTENSIONS+=	-pcntl
 COMMENT-pcntl=		PCNTL extensions for php
 CONFIGURE_ARGS+=	--enable-pcntl=shared
-LIB_DEPENDS-pcntl=
+LIB_DEPENDS-pcntl=	# empty
 WANTLIB-pcntl=		pthread
 
 # pdo-mysql
@@ -246,34 +245,34 @@ PHP_EXTENSIONS+=	-pdo_pgsql
 COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
 CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
-WANTLIB-pdo_pgsql=	pq>=2 pthread
+WANTLIB-pdo_pgsql=	crypto pq pthread ssl
 
 # pdo-sqlite
 PHP_EXTENSIONS+=	-pdo_sqlite
 COMMENT-pdo_sqlite=	PDO sqlite3 database access extensions for php
 CONFIGURE_ARGS+=        --with-pdo-sqlite=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
-WANTLIB-pdo_sqlite=	pthread sqlite3
+WANTLIB-pdo_sqlite=	m pthread sqlite3 z
 
 # pgsql
 PHP_EXTENSIONS+=	-pgsql
 COMMENT-pgsql=		pgsql database access extensions for php
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pgsql=	databases/postgresql
-WANTLIB-pgsql=		pq>=2 pthread
+WANTLIB-pgsql=		crypto pq pthread ssl
 
 # pspell
 PHP_EXTENSIONS+=	-pspell
 COMMENT-pspell=		pspell library extensions for php
 CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
 LIB_DEPENDS-pspell=	textproc/aspell/core
-WANTLIB-pspell=		aspell>=16 pspell>=16 pthread
+WANTLIB-pspell=		aspell iconv intl pspell pthread
 
 # shmop
 PHP_EXTENSIONS+=	-shmop
 COMMENT-shmop=		shared memory extensions for php
 CONFIGURE_ARGS+=	--enable-shmop=shared,${LOCALBASE}
-LIB_DEPENDS-shmop=
+LIB_DEPENDS-shmop=	# empty
 WANTLIB-shmop=		pthread
 
 # soap
@@ -281,56 +280,58 @@ PHP_EXTENSIONS+=	-soap
 COMMENT-soap=		SOAP functions for php
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap=		iconv m pthread z xml2>=8 lzma
+WANTLIB-soap=		iconv lzma m pthread xml2 z
 
 # snmp
 PHP_EXTENSIONS+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 LIB_DEPENDS-snmp=	net/net-snmp
-WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
+WANTLIB-snmp=		crypto m netsnmp pthread
 
 # sqlite3
 PHP_EXTENSIONS+=	-sqlite3
 COMMENT-sqlite3=	sqlite3 database access extension for php
 CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
 LIB_DEPENDS-sqlite3=	databases/sqlite3
-WANTLIB-sqlite3=	sqlite3 pthread
+WANTLIB-sqlite3=	m pthread sqlite3 z
 
 # pdo-dblib
 PHP_EXTENSIONS+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	sybdb>=6 pthread
+WANTLIB-pdo_dblib=	ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
+			intl nettle p11-kit pthread sybdb tasn1 unistring z
 
 # tidy
 PHP_EXTENSIONS+=	-tidy
 COMMENT-tidy=		tidy HTML cleaner bindings
 CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 LIB_DEPENDS-tidy=	www/tidyp
-WANTLIB-tidy=		tidyp pthread
+WANTLIB-tidy=		pthread tidyp-1.04
 
 # xml-rpc
 PHP_EXTENSIONS+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
-WANTLIB-xmlrpc=		iconv m z xml2>=8 pthread lzma
+WANTLIB-xmlrpc=		iconv lzma m pthread xml2 z
 
 # xsl
 PHP_EXTENSIONS+=	-xsl
 COMMENT-xsl=		XSL functions for php
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		m xml2 xslt>=3 exslt pthread
+WANTLIB-xsl=		exslt gcrypt gpg-error iconv intl lzma m pthread \
+			xml2 xslt z
 
 # zip
 PHP_EXTENSIONS+=	-zip
 COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
-LIB_DEPENDS-zip=
-WANTLIB-zip=		z pthread
+LIB_DEPENDS-zip=	# empty
+WANTLIB-zip=		pthread z
 
 # some variables to substitute
 SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV

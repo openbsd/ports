@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2018/05/25 22:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2018/05/27 16:32:44 sthen Exp $
 
 PV=		7.0
 V=		${PV}.30
-
-REVISION=	    0
-REVISION-mysqli=    1
-REVISION-pdo_mysql= 1
+REVISION=	2
 
 BUILD_DEPENDS+=	devel/bison
 
