@@ -1,0 +1,14 @@
+$OpenBSD: patch-sapi_phpdbg_phpdbg_h,v 1.1 2018/05/27 20:05:30 martijn Exp $
+
+Index: sapi/phpdbg/phpdbg.h
+--- sapi/phpdbg/phpdbg.h.orig
++++ sapi/phpdbg/phpdbg.h
+@@ -64,7 +64,7 @@
+ # include "TSRM.h"
+ #endif
+ 
+-#ifdef LIBREADLINE
++#ifdef HAVE_LIBREADLINE
+ #   include <readline/readline.h>
+ #   include <readline/history.h>
+ #endif

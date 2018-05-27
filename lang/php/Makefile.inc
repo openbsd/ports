@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.110 2018/05/27 19:54:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.111 2018/05/27 20:05:30 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
-COMMENT-cgi=		cgi sapi for php
 
 PKGNAME-main?=		php-${V}
 
@@ -109,7 +108,7 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap -mcrypt \
 PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql
 .endif
 
-SAPI+=			-main -apache -cgi
+SAPI+=			-main -apache -cgi -dbg
 MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 
 # setup for no_* build options to disable extensions with extra dep's;
@@ -125,13 +124,21 @@ CONFIGURE_ARGS+=	--enable-cli \
 			--with-fpm-user=www \
 			--with-fpm-group=www
 
+# cgi
+COMMENT-cgi=		cgi sapi for php
 CONFIGURE_ARGS+=	--enable-cgi
 
+# apache
 COMMENT-apache=		php module for Apache httpd
 .if ${BUILD_PACKAGES:M-apache}
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
 BUILD_DEPENDS+=		www/apache-httpd
 .endif
+
+# phpdbg
+COMMENT-dbg=		debug sapi for php
+CONFIGURE_ARGS+=	--enable-phpdbg
+WANTLIB-dbg=		readline 
 
 .for i in ${SAPI}
 WANTLIB$i +=		c crypto curses iconv intl lzma m pthread
@@ -412,6 +419,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-cgi-${PV}
+	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/phpdbg/phpdbg ${PREFIX}/bin/phpdbg-${PV}
+	${INSTALL_MAN} ${WRKBUILD}/sapi/phpdbg/phpdbg.1 ${PREFIX}/man/man1/phpdbg-${PV}.1
 # Make sure that php-cgi.1 still just sources php.1 when importing a new major version.
 	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
 	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}

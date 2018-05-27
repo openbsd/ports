@@ -1,0 +1,6 @@
+phpdbg aims to be a lightweight, powerful, easy to use debugging
+platform for PHP5.4+.
+
+Implemented as a SAPI module, phpdbg can excert complete control over
+the environment without impacting the functionality or performance of
+your code.
