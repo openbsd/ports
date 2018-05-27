@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.113 2018/05/27 20:49:30 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.114 2018/05/27 22:05:50 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=	--enable-cli \
 			--with-fpm-group=www
 
 # cgi
-COMMENT-cgi=		cgi sapi for php
+COMMENT-cgi=		php CGI binary
 CONFIGURE_ARGS+=	--enable-cgi
 
 # apache
@@ -137,9 +137,8 @@ BUILD_DEPENDS+=		www/apache-httpd
 .endif
 
 # phpdbg
-COMMENT-dbg=		debug sapi for php
+COMMENT-dbg=		interactive php debugger
 CONFIGURE_ARGS+=	--enable-phpdbg
-WANTLIB-dbg=		readline 
 
 .for i in ${SAPI}
 WANTLIB$i +=		c crypto curses iconv intl lzma m onig
@@ -289,6 +288,8 @@ LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
 WANTLIB-pdo_sqlite=	m pthread sqlite3 z
 .if ${BUILD_PACKAGES:M-pdo_sqlite}
 CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-pdo-sqlite=no
 .endif
 
 # pgsql
@@ -335,6 +336,8 @@ LIB_DEPENDS-sqlite3=	databases/sqlite3
 WANTLIB-sqlite3=	m pthread sqlite3 z
 .if ${BUILD_PACKAGES:M-sqlite3}
 CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-sqlite3=no
 .endif
 
 # pdo-dblib
