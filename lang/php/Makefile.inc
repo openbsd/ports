@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.108 2018/05/27 16:32:44 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.109 2018/05/27 16:40:38 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES+=		gcc4
 # for atomic builtins
@@ -53,7 +53,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 # configure detects us as having decimal fp support but it's not built in
 # in libgcc. https://bugs.php.net/bug.php?id=68114
 CONFIGURE_ENV+=		ac_cv_decimal_fp_supported=no
-MAKE_ENV=               ${CONFIGURE_ENV}
+MAKE_ENV=		${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
@@ -66,9 +66,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--program-suffix=-${PV} \
 			--with-readline
 
-# mysqlnd default is a hardcoded /tmp/mysql.sock
-# can't be set in general for mysqlnd, but the various consumers do have
-# settings: mysqli.default_socket / pdo_mysql.default_socket
+# override mysqlnd default of /tmp/mysql.sock (if using libmysql this
+# is fetched from mysql_config instead)
 CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 
 # sapi
@@ -236,21 +235,21 @@ WANTLIB-pdo_mysql=	pthread
 # pdo-odbc
 PHP_EXTENSIONS+=	-pdo_odbc
 COMMENT-pdo_odbc=	PDO database access extensions for php
-CONFIGURE_ARGS+=        --with-pdo-odbc=shared,iODBC,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
 LIB_DEPENDS-pdo_odbc=	databases/iodbc
 WANTLIB-pdo_odbc=	iodbc pthread
 
 # pdo-pgsql
 PHP_EXTENSIONS+=	-pdo_pgsql
 COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
-CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
 WANTLIB-pdo_pgsql=	crypto pq pthread ssl
 
 # pdo-sqlite
 PHP_EXTENSIONS+=	-pdo_sqlite
 COMMENT-pdo_sqlite=	PDO sqlite3 database access extensions for php
-CONFIGURE_ARGS+=        --with-pdo-sqlite=shared,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
 WANTLIB-pdo_sqlite=	m pthread sqlite3 z
 
@@ -299,7 +298,7 @@ WANTLIB-sqlite3=	m pthread sqlite3 z
 # pdo-dblib
 PHP_EXTENSIONS+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
-CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
+CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_dblib=	databases/freetds
 WANTLIB-pdo_dblib=	ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
 			intl nettle p11-kit pthread sybdb tasn1 unistring z
