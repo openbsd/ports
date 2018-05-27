@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.12 2018/05/27 07:18:21 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.13 2018/05/27 09:49:37 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -135,8 +135,8 @@ e.g., for directories like
 or
 .Pa /usr/local .
 .It Fl u Ar userlist
-Location of user list database 
-.Po 
+Location of user list database
+.Po
 usually
 .Pa ${PORTSDIR}/infrastructure/db/user.list
 .Pc ,
@@ -180,6 +180,9 @@ the corresponding directory.
 .It
 baring that, new files will be put into the main packing-list.
 .El
+.Pp
+As far as possible, everything that looks like actual files will be sorted
+in alphabetical order, after variable substitutions.
 .Pp
 .Nm
 will also scan dependencies, in order to strip common directories.
