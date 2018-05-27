@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.147 2018/05/24 14:35:20 espie Exp $
+# $OpenBSD: update-plist,v 1.148 2018/05/27 07:13:49 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -440,7 +440,8 @@ sub may_tag_along
 }
 
 # warn about files with a wrong name (.swp, ~, .orig)
-sub bad_suffixes
+# or weird users/groups
+sub last_check
 {
 }
 
@@ -493,7 +494,7 @@ sub rebless_okay { 1 }
 # unexec should only match objects which are actual files and not directories
 sub is_file { 0 }
 
-# helper method for bad_suffixes
+# helper method
 # the code that checks the suffixes
 sub check_suffix
 {
@@ -566,7 +567,6 @@ sub rebless
 	my $new_prefix = $self->fullstring;
 	$new_prefix =~ s/^(\@\S+\s|).*/$1/;
 	if (defined $self->unsubst) {
-		print "Changing $self->{unsubst} to ";
 		$self->{unsubst} =~ s/^\Q$old_prefix\E/$new_prefix/;
 		print "$self->{unsubst}\n";
 	}
@@ -581,7 +581,7 @@ sub show_unknown
 
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
-sub bad_suffixes
+sub last_check
 {
 	my ($self, $p, $state) = @_;
 
@@ -736,7 +736,7 @@ sub copy_annotations
 	# nope these are not normal annotations we can copy
 }
 
-sub bad_suffixes
+sub last_check
 {
 	my ($self, $p, $state) = @_;
 
@@ -1001,6 +1001,66 @@ sub copy_extra
 	&OpenBSD::PackingElement::Extra::copy_extra;
 }
 
+package OpenBSD::PackingElement::Manpage;
+
+sub check_suffix
+{
+	my ($self, $state) = @_;
+	my $s = $self->fullname;
+	my $error;
+	if ($s =~ m/(\.Z|\.gz)$/) {
+		$error = "compressed manpage";
+	} elsif ($s =~ m/\.0$/) {
+		$error = "preformatted manpage (USE_GROFF ?)";
+	} elsif ($s =~ m/\.tbl$/) {
+		$error = "unformatted .tbl manpage";
+	}
+	return $error;
+}
+
+# we want to warn even if it's already present
+sub last_check
+{
+	my ($self, $p, $state) = @_;
+	my $error = $self->check_suffix($state);
+	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
+	    $self->fullstring, " ($error ?)\n" if defined $error;
+}
+
+package OpenBSD::PackingElement::NewAuth;
+sub last_check
+{
+	my ($self, $p, $state) = @_;
+	if ($self->{name} !~ /^_/) {
+		print STDERR "Warning: ", $p->nlist->pkgname, " defines ",
+		    $self->fullstring, " (no starting _)\n";
+	} else {
+		my $userlist = $state->get_userlist;
+		return unless defined $userlist;
+		my $entry = $userlist->{$self->{name}};
+		if (!defined $entry) {
+			print STDERR "Warning: ", $p->nlist->pkgname, 
+			    " defines ", $self->fullstring, 
+			    " (no entry in user db)\n";
+	    	} elsif ($entry != $self->id) {
+			print STDERR "Warning: ", $p->nlist->pkgname, 
+			    " defines ", $self->fullstring, 
+			    " (user db id does not match)\n";
+	    	}
+	}
+}
+
+package OpenBSD::PackingElement::NewUser;
+sub id
+{
+	return shift->{uid};
+}
+package OpenBSD::PackingElement::NewGroup;
+sub id
+{
+	return shift->{gid};
+}
+
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
 sub new
@@ -1120,10 +1180,10 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:e:E:', 
+	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:e:E:u:', 
 	    '[-Fmnrvx] [-C dir] [-E ext] [-e ext] [-i var] [-j jobs]',
-	    '[-P pkgdir] [-S var] [-s var] [-V var] [-w suffix]',
-	    '[-X path] -- pkg_create_args ...');
+	    '[-P pkgdir] [-S var] [-s var] [-u userdb] [-V var]',
+	    '[-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
@@ -1131,6 +1191,48 @@ sub handle_options
 	$state->{quiet} = $state->opt('q');
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
+}
+
+sub parse_userdb
+{
+	my ($self, $fname) = @_;
+	if (!defined $fname) {
+		print STDERR "Can't check user list: no -u option\n";
+		return undef;
+	}
+	my $result = {};
+	open(my $fh, '<', $fname) or die "Can't open $fname: $!";
+	# skip header
+	while (<$fh>) {
+		last if m/^\-\-\-\-\-\-\-/;
+	}
+	# duplicate check
+	my $known = {};
+	while (<$fh>) {
+		next if m/^\#/;
+		chomp;
+		my @l = split(/\s+/, $_);
+		if (@l < 3 || $l[0] !~ m/^\d+$/ || $l[1] !~ m/^_/) {
+			print STDERR  "Bad line: $_ at $. of $fname";
+			next;
+		}
+		if (defined $known->{$l[0]}) {
+			print STDERR "Duplicate id: $l[0] in $fname\n";
+			next;
+		}
+		$known->{$l[0]} = 1;
+		$result->{$l[1]} = $l[0];
+	}
+	return $result;
+}
+
+sub get_userlist
+{
+	my $state = shift;
+	if (!exists $state->{userlist}) {
+		$state->{userlist} = $state->parse_userdb($state->opt('u'));
+	}
+	return $state->{userlist};
 }
 
 package UpdatePlist;
@@ -1456,7 +1558,7 @@ sub adjust_final
 		for my $i (@{$p->{base_plists}}) {
 			add_missing_cvstags($p->nlist, $i);
 		}
-		$p->nlist->bad_suffixes($p, $self->{state});
+		$p->nlist->last_check($p, $self->{state});
     	}
 }
 
