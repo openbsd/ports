@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2018/05/06 14:32:41 sthen Exp $
+$OpenBSD: README-main,v 1.4 2018/05/27 19:54:17 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,14 +12,14 @@ case with simple "static" files) or pass the request on to other
 software for handling. The web server must be configured to handle
 this - different methods are used depending on the server software.
 
-httpd(8), nginx, lighttpd, etc: FastCGI
+FastCGI: httpd(8), nginx, lighttpd, etc
 ---------------------------------------
 Most modern web servers support FastCGI which is a simple method of
 interfacing to many kinds of application server. This is usually the
 preferred method of passing requests to php, and is the only method
 possible for many servers such as httpd(8), nginx and lighttpd.
 
-The OpenBSD php packages include php-fpm, FastCGI Process Manager.
+The main OpenBSD php packages include php-fpm, FastCGI Process Manager.
 This manages pools of FastCGI processes: starts/restarts them and
 maintains a minimum and maximum number of spare processes as
 configured. You can use rcctl(8) to enable php-fpm at boot,
@@ -44,14 +44,16 @@ For OpenBSD base's httpd(8) you can use a configuration fragment like:
 		fastcgi socket "/run/php-fpm.sock"
 	}
 
-For Apache, the most common option is with the mod_php Apache module.
-This is loaded directly as part of the web server process. Configuration
-is fairly simple, but in this case the operating system can't provide
-memory protection between the two; therefore bugs in php can potentially
-do more damage this way.
+Apache httpd
+------------
+For Apache, the most common option is with the mod_php Apache module
+provided in the php-apache package. This is loaded directly as part of
+the web server process. Configuration is fairly simple, but in this
+case the operating system can't provide memory protection between
+the two; therefore bugs in php can potentially do more damage.
 
-Another option is to use FastCGI via php-fpm; you can use mod_proxy_fcgi
-to interface it with Apache.
+Another option is to use FastCGI via php-fpm as in the above section;
+you can use mod_proxy_fcgi to interface it with Apache.
 
 If you wish to use the Apache module, enable it by creating a
 symbolic link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf

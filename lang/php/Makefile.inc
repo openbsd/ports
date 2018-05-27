@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.109 2018/05/27 16:40:38 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.110 2018/05/27 19:54:17 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -70,17 +70,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 # is fetched from mysql_config instead)
 CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 
-# sapi
-CONFIGURE_ARGS+=	--enable-cgi \
-			--enable-cli
-
-CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
-BUILD_DEPENDS+=		www/apache-httpd
-
-CONFIGURE_ARGS+=	--enable-fpm \
-			--with-fpm-user=www \
-			--with-fpm-group=www
-
 # zend extensions
 CONFIGURE_ARGS+=	--enable-opcache
 
@@ -105,14 +94,44 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--enable-wddx \
 			--enable-xml
 
+RUN_DEPENDS-main=	mail/femail,-chroot
+
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
 
-SAPI+=			-main -cgi
 ZEND_EXTENSIONS+=	-opcache
-MULTI_PACKAGES+=	${SAPI} ${PHP_EXTENSIONS}
 
-RUN_DEPENDS-main=	mail/femail,-chroot
+PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap -mcrypt \
+			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
+			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
+			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
+.if ${PV} == "5.6"
+PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql
+.endif
+
+SAPI+=			-main -apache -cgi
+MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
+
+# setup for no_* build options to disable extensions with extra dep's;
+# can't be used for version-specific extensions in 5.6/Makefile
+PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-/no_/g}
+PSEUDO_FLAVORS+=	no_apache
+
+.include <bsd.port.arch.mk>
+
+# sapi
+CONFIGURE_ARGS+=	--enable-cli \
+			--enable-fpm \
+			--with-fpm-user=www \
+			--with-fpm-group=www
+
+CONFIGURE_ARGS+=	--enable-cgi
+
+COMMENT-apache=		php module for Apache httpd
+.if ${BUILD_PACKAGES:M-apache}
+CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
+BUILD_DEPENDS+=		www/apache-httpd
+.endif
 
 .for i in ${SAPI}
 WANTLIB$i +=		c crypto curses iconv intl lzma m pthread
@@ -121,42 +140,37 @@ LIB_DEPENDS$i +=	devel/gettext \
 			textproc/libxml
 .endfor
 
-
 #
 # Loadable php extensions by name that are included in all versions
 #
 
 # bz2
-PHP_EXTENSIONS+=	-bz2
 COMMENT-bz2=		bzip2 compression extensions for php
-CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 LIB_DEPENDS-bz2=	archivers/bzip2
 WANTLIB-bz2=		bz2 pthread
+.if ${BUILD_PACKAGES:M-bz2}
+CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
+.endif
 
 # curl
-PHP_EXTENSIONS+=	-curl
 COMMENT-curl=		curl URL library extensions for php
-CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
 WANTLIB-curl=		crypto curl nghttp2 pthread ssl z
+.if ${BUILD_PACKAGES:M-curl}
+CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
+.endif
 
 # dba
-PHP_EXTENSIONS+=	-dba
 COMMENT-dba=		dba GDBM access extensions for php
-CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
 LIB_DEPENDS-dba=	databases/gdbm
 WANTLIB-dba=		gdbm iconv intl pthread
+.if ${BUILD_PACKAGES:M-dba}
+CONFIGURE_ARGS+=	--enable-dba=shared \
+			--with-gdbm=${LOCALBASE}
+.endif
 
 # gd
-PHP_EXTENSIONS+=	-gd
 COMMENT-gd=		image manipulation extensions for php
-CONFIGURE_ARGS+=	--with-gd=shared \
-			--with-jpeg-dir=${LOCALBASE} \
-			--with-png-dir=${LOCALBASE} \
-			--with-zlib-dir=/usr \
-			--with-t1lib=${LOCALBASE} \
-			--with-freetype-dir=${X11BASE} \
-			--with-xpm-dir=${X11BASE}
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
 .if ${PV} == "5.6"
@@ -164,169 +178,191 @@ LIB_DEPENDS-gd+=	devel/t1lib
 WANTLIB-gd+=		t1
 .endif
 WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
+.if ${BUILD_PACKAGES:M-gd}
+CONFIGURE_ARGS+=	--with-gd=shared \
+			--with-jpeg-dir=${LOCALBASE} \
+			--with-png-dir=${LOCALBASE} \
+			--with-zlib-dir=/usr \
+			--with-t1lib=${LOCALBASE} \
+			--with-freetype-dir=${X11BASE} \
+			--with-xpm-dir=${X11BASE}
+.endif
 
 # gmp
-PHP_EXTENSIONS+=	-gmp
 COMMENT-gmp=		gmp math library support for php
-CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 LIB_DEPENDS-gmp=	devel/gmp
 WANTLIB-gmp=		gmp pthread
+.if ${BUILD_PACKAGES:M-gd}
+CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
+.endif
 
 # intl
-PHP_EXTENSIONS+=	-intl
 COMMENT-intl=		intl library support for php
-CONFIGURE_ARGS+=	--enable-intl=shared \
-			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
 WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
+.if ${BUILD_PACKAGES:M-intl}
+CONFIGURE_ARGS+=	--enable-intl=shared \
+			--with-icu-dir=${LOCALBASE}
+.endif
 
 # imap
-PHP_EXTENSIONS+=	-imap
 COMMENT-imap=		imap, pop3 and nntp extensions for php
-CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
-			--with-imap-ssl
 LIB_DEPENDS-imap=	mail/alpine,-c-client
 WANTLIB-imap=		c-client crypto pthread ssl
+.if ${BUILD_PACKAGES:M-imap}
+CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
+			--with-imap-ssl
+.endif
 
 # ldap
-PHP_EXTENSIONS+=	-ldap
 COMMENT-ldap=		ldap protocol extensions for php
-CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 LIB_DEPENDS-ldap=	databases/openldap
 WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 pthread sasl2 ssl
+.if ${BUILD_PACKAGES:M-ldap}
+CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
+.endif
 
 # mcrypt
-PHP_EXTENSIONS+=	-mcrypt
 COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php
-CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
 LIB_DEPENDS-mcrypt=	security/libmcrypt \
 			devel/libtool,-ltdl
 WANTLIB-mcrypt=		ltdl mcrypt pthread
+.if ${BUILD_PACKAGES:M-mcrypt}
+CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
+.endif
 
 # mysqli
-PHP_EXTENSIONS+=	-mysqli
 COMMENT-mysqli=		mysql database access extensions for php
 CONFIGURE_ARGS+=	--with-mysqli=shared
 LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
 WANTLIB-mysqli=		pthread
 
 # odbc
-PHP_EXTENSIONS+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php
-CONFIGURE_ARGS+=	--with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc iodbcinst pthread
+.if ${BUILD_PACKAGES:M-odbc}
+CONFIGURE_ARGS+=	--with-iodbc=shared,${LOCALBASE}
+.endif
 
 # pcntl
-PHP_EXTENSIONS+=	-pcntl
 COMMENT-pcntl=		PCNTL extensions for php
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=	# empty
 WANTLIB-pcntl=		pthread
 
 # pdo-mysql
-PHP_EXTENSIONS+=	-pdo_mysql
 COMMENT-pdo_mysql=	PDO mysql database access extensions for php
 CONFIGURE_ARGS+=	--with-pdo-mysql=shared
 LIB_DEPENDS-pdo_mysql=	# empty: using PHP's mysqlnd
 WANTLIB-pdo_mysql=	pthread
 
 # pdo-odbc
-PHP_EXTENSIONS+=	-pdo_odbc
 COMMENT-pdo_odbc=	PDO database access extensions for php
-CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
 LIB_DEPENDS-pdo_odbc=	databases/iodbc
 WANTLIB-pdo_odbc=	iodbc pthread
+.if ${BUILD_PACKAGES:M-pdo_odbc}
+CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
+.endif
 
 # pdo-pgsql
-PHP_EXTENSIONS+=	-pdo_pgsql
 COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
-CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
 WANTLIB-pdo_pgsql=	crypto pq pthread ssl
+.if ${BUILD_PACKAGES:M-pdo_pgsql}
+CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
+.endif
 
 # pdo-sqlite
-PHP_EXTENSIONS+=	-pdo_sqlite
 COMMENT-pdo_sqlite=	PDO sqlite3 database access extensions for php
-CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
 WANTLIB-pdo_sqlite=	m pthread sqlite3 z
+.if ${BUILD_PACKAGES:M-pdo_sqlite}
+CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE}
+.endif
 
 # pgsql
-PHP_EXTENSIONS+=	-pgsql
 COMMENT-pgsql=		pgsql database access extensions for php
-CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pgsql=	databases/postgresql
 WANTLIB-pgsql=		crypto pq pthread ssl
+.if ${BUILD_PACKAGES:M-pgsql}
+CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
+.endif
 
 # pspell
-PHP_EXTENSIONS+=	-pspell
 COMMENT-pspell=		pspell library extensions for php
-CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
 LIB_DEPENDS-pspell=	textproc/aspell/core
 WANTLIB-pspell=		aspell iconv intl pspell pthread
+.if ${BUILD_PACKAGES:M-pspell}
+CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
+.endif
 
 # shmop
-PHP_EXTENSIONS+=	-shmop
 COMMENT-shmop=		shared memory extensions for php
 CONFIGURE_ARGS+=	--enable-shmop=shared,${LOCALBASE}
 LIB_DEPENDS-shmop=	# empty
 WANTLIB-shmop=		pthread
 
 # soap
-PHP_EXTENSIONS+=	-soap
 COMMENT-soap=		SOAP functions for php
-CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
 WANTLIB-soap=		iconv lzma m pthread xml2 z
+.if ${BUILD_PACKAGES:M-soap}
+CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
+.endif
 
 # snmp
-PHP_EXTENSIONS+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php
-CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp pthread
+.if ${BUILD_PACKAGES:M-snmp}
+CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
+.endif
 
 # sqlite3
-PHP_EXTENSIONS+=	-sqlite3
 COMMENT-sqlite3=	sqlite3 database access extension for php
-CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
 LIB_DEPENDS-sqlite3=	databases/sqlite3
 WANTLIB-sqlite3=	m pthread sqlite3 z
+.if ${BUILD_PACKAGES:M-sqlite3}
+CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
+.endif
 
 # pdo-dblib
-PHP_EXTENSIONS+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
-CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_dblib=	databases/freetds
 WANTLIB-pdo_dblib=	ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
 			intl nettle p11-kit pthread sybdb tasn1 unistring z
+.if ${BUILD_PACKAGES:M-pdo_dblib}
+CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
+.endif
 
 # tidy
-PHP_EXTENSIONS+=	-tidy
 COMMENT-tidy=		tidy HTML cleaner bindings
-CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 LIB_DEPENDS-tidy=	www/tidyp
 WANTLIB-tidy=		pthread tidyp-1.04
+.if ${BUILD_PACKAGES:M-tidy}
+CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
+.endif
 
 # xml-rpc
-PHP_EXTENSIONS+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php
-CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
 WANTLIB-xmlrpc=		iconv lzma m pthread xml2 z
+.if ${BUILD_PACKAGES:M-xmlrpc}
+CONFIGURE_ARGS+=	--with-xmlrpc=shared
+.endif
 
 # xsl
-PHP_EXTENSIONS+=	-xsl
 COMMENT-xsl=		XSL functions for php
-CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
 WANTLIB-xsl=		exslt gcrypt gpg-error iconv intl lzma m pthread \
 			xml2 xslt z
+.if ${BUILD_PACKAGES:M-xsl}
+CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
+.endif
 
 # zip
-PHP_EXTENSIONS+=	-zip
 COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 LIB_DEPENDS-zip=	# empty

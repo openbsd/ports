@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2018/05/27 16:32:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2018/05/27 19:54:17 sthen Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
 PV=		5.6
 V=		${PV}.36
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES0=	https://download.suhosin.org/
 
@@ -25,14 +25,12 @@ pre-patch:
 .endif
 
 # mysql
-PHP_EXTENSIONS+=	-mysql
 COMMENT-mysql=		mysql database access extensions for php5
 CONFIGURE_ARGS+=	--with-mysql=shared
 LIB_DEPENDS-mysql=	# using mysqlnd
 WANTLIB-mysql=		pthread
 
 # sybase-ct
-PHP_EXTENSIONS+=	-sybase_ct
 COMMENT-sybase_ct=	sybase database access extensions for php5
 CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	databases/freetds
@@ -40,7 +38,6 @@ WANTLIB-sybase_ct=	ct ffi gcrypt gmp gnutls gpg-error hogweed iconv \
 			idn2 intl nettle p11-kit pthread tasn1 unistring z
 
 # mssql
-PHP_EXTENSIONS+=	-mssql
 COMMENT-mssql=		microsoft sql access extensions for php5
 CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
 LIB_DEPENDS-mssql=	databases/freetds
