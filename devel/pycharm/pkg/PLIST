@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/27 07:25:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/27 17:09:44 rsadowski Exp $
 bin/pycharm
+@man man/man1/pycharm.1
 pycharm/
 pycharm/Install-Linux-tar.txt
 pycharm/bin/
@@ -307,7 +308,7 @@ pycharm/helpers/extra_syspath.py
 pycharm/helpers/generator3.py
 pycharm/helpers/icon-robots.txt
 pycharm/helpers/packaging_tool.py
-pycharm/helpers/pip-9.0.1.tar.gz
+pycharm/helpers/pip-9.0.3.tar.gz
 pycharm/helpers/pockets/
 pycharm/helpers/pockets/__init__.py
 pycharm/helpers/pockets/_version.py
@@ -1453,7 +1454,8 @@ pycharm/helpers/required_gen_version
 pycharm/helpers/rest_runners/
 pycharm/helpers/rest_runners/rst2smth.py
 pycharm/helpers/rest_runners/sphinx_runner.py
-pycharm/helpers/setuptools-28.8.0.tar.gz
+pycharm/helpers/setuptools-36.8.0.tar.gz
+pycharm/helpers/setuptools-39.0.1.tar.gz
 pycharm/helpers/six.py
 pycharm/helpers/sphinxcontrib/
 pycharm/helpers/sphinxcontrib/__init__.py
@@ -2567,7 +2569,7 @@ pycharm/lib/annotations.jar
 pycharm/lib/asm-all.jar
 pycharm/lib/automaton.jar
 pycharm/lib/batik-all.jar
-pycharm/lib/bcprov-jdk15on-1.55.jar
+pycharm/lib/bcprov-jdk15on-1.59.jar
 pycharm/lib/bootstrap.jar
 pycharm/lib/cglib-nodep-3.2.4.jar
 pycharm/lib/cli-parser-1.1.jar
@@ -2597,7 +2599,9 @@ pycharm/lib/imageio-tiff-3.2.1.jar
 pycharm/lib/imgscalr-lib-4.2.jar
 pycharm/lib/ini4j-0.5.5-2.jar
 pycharm/lib/isorelax.jar
-pycharm/lib/jackson-core-2.8.8.jar
+pycharm/lib/jackson-annotations-2.9.0.jar
+pycharm/lib/jackson-core-2.9.5.jar
+pycharm/lib/jackson-databind-2.9.5.jar
 pycharm/lib/javassist-3.21.0-GA.jar
 pycharm/lib/jaxen-1.1.3.jar
 pycharm/lib/jayatana-1.2.4.jar
@@ -2754,9 +2758,6 @@ pycharm/plugins/rest/lib/resources_en.jar
 pycharm/plugins/rest/lib/rest.jar
 pycharm/plugins/settings-repository/
 pycharm/plugins/settings-repository/lib/
-pycharm/plugins/settings-repository/lib/jackson-annotations-2.8.1.jar
-pycharm/plugins/settings-repository/lib/jackson-core-2.8.1.jar
-pycharm/plugins/settings-repository/lib/jackson-databind-2.8.1.jar
 pycharm/plugins/settings-repository/lib/jgit.jar
 pycharm/plugins/settings-repository/lib/resources_en.jar
 pycharm/plugins/settings-repository/lib/settings-repository.jar

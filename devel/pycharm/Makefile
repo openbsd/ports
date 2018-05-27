@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/27 07:25:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/05/27 17:09:44 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2018.1.2
+V=			2018.1.3
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -46,5 +46,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${PC}/pycharm.png
 	@${SUBST_DATA} ${FILESDIR}/pycharm.desktop \
 		${PREFIX}/share/applications/pycharm.desktop
+	${INSTALL_MAN} ${FILESDIR}/pycharm.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
