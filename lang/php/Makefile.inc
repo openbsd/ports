@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.112 2018/05/27 20:23:19 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.113 2018/05/27 20:49:30 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -376,6 +376,36 @@ COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 LIB_DEPENDS-zip=	# empty
 WANTLIB-zip=		pthread z
+
+#   the following extensions are 5.6-only:
+
+.if ${PV} == "5.6"
+# mysql
+COMMENT-mysql=		mysql database access extensions for php5
+LIB_DEPENDS-mysql=	# using mysqlnd
+WANTLIB-mysql=		pthread
+.if ${BUILD_PACKAGES:M-mysql}
+CONFIGURE_ARGS+=	--with-mysql=shared
+.endif
+
+# sybase-ct
+COMMENT-sybase_ct=	sybase database access extensions for php5
+LIB_DEPENDS-sybase_ct=	databases/freetds
+WANTLIB-sybase_ct=	ct ffi gcrypt gmp gnutls gpg-error hogweed iconv \
+			idn2 intl nettle p11-kit pthread tasn1 unistring z
+.if ${BUILD_PACKAGES:M-sybase_ct}
+CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
+.endif
+
+# mssql
+COMMENT-mssql=		microsoft sql access extensions for php5
+LIB_DEPENDS-mssql=	databases/freetds
+WANTLIB-mssql=		ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
+			intl nettle p11-kit pthread sybdb tasn1 unistring z
+.if ${BUILD_PACKAGES:M-mssql}
+CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
+.endif
+.endif
 
 # some variables to substitute
 SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV

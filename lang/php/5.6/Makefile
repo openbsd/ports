@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/05/27 20:23:19 martijn Exp $
+# $OpenBSD: Makefile,v 1.71 2018/05/27 20:49:30 sthen Exp $
 
 BROKEN-alpha=	pcre_jit_compile.c:65:2: error: #error Unsupported architecture
 
@@ -24,25 +24,5 @@ CONFIGURE_ARGS+= --enable-suhosin
 pre-patch:
 	@mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
 .endif
-
-# mysql
-COMMENT-mysql=		mysql database access extensions for php5
-CONFIGURE_ARGS+=	--with-mysql=shared
-LIB_DEPENDS-mysql=	# using mysqlnd
-WANTLIB-mysql=		pthread
-
-# sybase-ct
-COMMENT-sybase_ct=	sybase database access extensions for php5
-CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
-LIB_DEPENDS-sybase_ct=	databases/freetds
-WANTLIB-sybase_ct=	ct ffi gcrypt gmp gnutls gpg-error hogweed iconv \
-			idn2 intl nettle p11-kit pthread tasn1 unistring z
-
-# mssql
-COMMENT-mssql=		microsoft sql access extensions for php5
-CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
-LIB_DEPENDS-mssql=	databases/freetds
-WANTLIB-mssql=		ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
-			intl nettle p11-kit pthread sybdb tasn1 unistring z
 
 .include <bsd.port.mk>
