@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.111 2018/05/27 20:05:30 martijn Exp $
+# $OpenBSD: Makefile.inc,v 1.112 2018/05/27 20:23:19 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -75,6 +75,7 @@ CONFIGURE_ARGS+=	--enable-opcache
 # default included php extensions
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
+			--with-onig=${LOCALBASE} \
 			--with-openssl \
 			--with-pcre-regex \
 			--with-zlib \
@@ -141,10 +142,11 @@ CONFIGURE_ARGS+=	--enable-phpdbg
 WANTLIB-dbg=		readline 
 
 .for i in ${SAPI}
-WANTLIB$i +=		c crypto curses iconv intl lzma m pthread
-WANTLIB$i +=		readline ssl xml2 z
+WANTLIB$i +=		c crypto curses iconv intl lzma m onig
+WANTLIB$i +=		pthread readline ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext \
-			textproc/libxml
+			textproc/libxml \
+			textproc/oniguruma
 .endfor
 
 #
