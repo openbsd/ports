@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.310 2018/05/01 23:06:46 danj Exp $
+$OpenBSD: user.list,v 1.311 2018/05/28 09:06:19 espie Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -186,7 +186,7 @@ id  user		group		port options
 #675 _tryton		_tryton		productivity/tryton/trytond
 676 _gdm		_gdm		x11/gnome/gdm
 677 _scamper		_scamper	net/scamper
-678 _owamp		_owamp		net/owamp
+678 _owampd		_owampd		net/owamp
 679 _milter-checkrcpt	_milter-checkrcpt	mail/milter-checkrcpt
 680 _zeya		_zeya		audio/zeya
 681 _inadyn		_inadyn		net/inadyn
