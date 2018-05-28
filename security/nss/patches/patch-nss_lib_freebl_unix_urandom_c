@@ -1,7 +1,8 @@
-$OpenBSD: patch-nss_lib_freebl_unix_urandom_c,v 1.1 2018/05/12 18:10:12 landry Exp $
+$OpenBSD: patch-nss_lib_freebl_unix_urandom_c,v 1.2 2018/05/28 12:44:30 landry Exp $
 
 Use getentropy on OpenBSD too
 https://bugzilla.mozilla.org/show_bug.cgi?id=1461075
+https://hg.mozilla.org/projects/nss/rev/8e600e2af5bf0c29e88f928471e6aba1a734d05b
 
 Index: nss/lib/freebl/unix_urandom.c
 --- nss/lib/freebl/unix_urandom.c.orig
