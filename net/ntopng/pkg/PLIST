@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/10/17 10:39:12 sthen Exp $
-@newgroup _ntopng:767
-@newuser _ntopng:767:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.4 2018/05/28 12:17:12 sthen Exp $
+@newgroup _ntopng:809
+@newuser _ntopng:809:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/ntopng/*
+@rcscript ${RCDIR}/ntopng
 @bin bin/ntopng
 @man man/man8/ntopng.8
 share/doc/ntopng/
@@ -511,5 +512,3 @@ share/ntopng/scripts/lua/vlan_details.lua
 share/ntopng/scripts/lua/vlan_stats.lua
 @owner _ntopng
 @sample ${LOCALSTATEDIR}/db/ntopng/
-@owner
-@rcscript ${RCDIR}/ntopng
