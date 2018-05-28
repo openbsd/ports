@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/08 07:10:43 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/28 18:47:00 landry Exp $
 
-COMMENT =		Qt Widgets for Technical Applications
-DISTNAME =		qwt-6.1.3
-SHARED_LIBS =		qwt 7.0
+COMMENT-main =		Qt Widgets for Technical Applications
+COMMENT-common =	common files for the qwt packages
+
+VERSION =		6.1.3
+DISTNAME =		qwt-${VERSION}
+SHARED_LIBS =		qwt${QTLIBSUFFIX} 7.0
+PKGNAME-main =	qwt-${VERSION}
+FULLPKGNAME-common =	qwt-common-${VERSION}
+FULLPKGPATH-common =	x11/qwt,-common
+REVISION =		0
+
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
 
 HOMEPAGE =		http://qwt.sourceforge.net/
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 
 # Qwt License, Version 1.0
@@ -17,30 +26,44 @@ MODULES =		devel/qmake
 MODQMAKE_INSTALL_ROOT =
 NO_TEST =		Yes
 USE_GMAKE =		Yes
-
-FLAVORS =	qt5
+MULTI_PACKAGES=		-main -common
+FLAVORS =		qt5
 FLAVOR ?=
 
 .if ${FLAVOR:Mqt5}
+PKGSPEC-main =	qwt-*-qt5
 MODULES +=	x11/qt5
 QTVER =	qt5
+QTLIBSUFFIX =	-${QTVER}
 LIB_DEPENDS +=	x11/qt5/qtsvg \
 		x11/qt5/qttools
-WANTLIB +=	GL Qt5Concurrent Qt5Core Qt5Designer Qt5Gui Qt5OpenGL
-WANTLIB +=	Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB-main +=	GL Qt5Concurrent Qt5Core Qt5Designer Qt5Gui Qt5OpenGL
+WANTLIB-main +=	Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml
 .else
+PKGSPEC-main =	qwt-*-!qt5
 MODULES +=	x11/qt4
 QTVER =	qt4
-WANTLIB +=	GL ICE QtDesigner QtGui QtOpenGL QtScript QtSvg QtXml SM X11 Xext Xi
-WANTLIB +=	Xinerama Xrender fontconfig freetype pthread
+QTLIBSUFFIX =	# empty
+WANTLIB-main +=	GL ICE QtDesigner QtGui QtOpenGL QtScript QtSvg QtXml SM X11 Xext Xi
+WANTLIB-main +=	Xinerama Xrender fontconfig freetype pthread
 .endif
 
-WANTLIB +=	${COMPILER_LIBCXX} m
+WANTLIB-main +=	${COMPILER_LIBCXX} m
 
-SUBST_VARS =	WRKINST QTVER
+WANTLIB-common = 	# empty
+RUN_DEPENDS-common = 	# empty
+LIB_DEPENDS-common = 	# empty
+PKG_ARCH-common=	*
+
+RUN_DEPENDS =	${FULLPKGPATH-common}
+
+SUBST_VARS =	WRKINST QTVER QTLIBSUFFIX
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/qwtconfig.pri
+	${SUBST_CMD} ${WRKSRC}/{qwtconfig.pri,qwt.prf} \
+		${WRKSRC}/designer/designer.pro \
+		${WRKSRC}/textengines/textengines.pri \
+		${WRKSRC}/src/src.pro
 
 post-configure:
 # ensure CXXFLAGS/-std=c++11 is passed to all clang++ invocations,including the ones generating dependencies
@@ -49,6 +72,7 @@ post-configure:
 .endif
 
 post-install:
+	rm -rf ${PREFIX}/share/doc/qwt/html/*.md5
 	mv ${PREFIX}/share/doc/qwt/man/man3 ${PREFIX}/man/
 
 .include <bsd.port.mk>

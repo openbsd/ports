@@ -1,0 +1,14 @@
+$OpenBSD: patch-designer_designer_pro,v 1.4 2018/05/28 18:47:00 landry Exp $
+
+Index: designer/designer.pro
+--- designer/designer.pro.orig
++++ designer/designer.pro
+@@ -84,7 +84,7 @@ contains(QWT_CONFIG, QwtDesigner) {
+         # into the plugin. Not supported on Windows !
+ 
+         QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt)
++        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt${QTLIBSUFFIX})
+ 
+         contains(QWT_CONFIG, QwtDll) {
+ 

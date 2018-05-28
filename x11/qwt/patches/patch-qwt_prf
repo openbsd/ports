@@ -1,0 +1,11 @@
+$OpenBSD: patch-qwt_prf,v 1.1 2018/05/28 18:47:00 landry Exp $
+
+Index: qwt.prf
+--- qwt.prf.orig
++++ qwt.prf
+@@ -34,4 +34,4 @@ else {
+ }   
+ 
+ # QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt)
++qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt${QTLIBSUFFIX})

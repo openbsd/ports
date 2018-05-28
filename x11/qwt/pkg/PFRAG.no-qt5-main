@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.no-qt5-main,v 1.1 2018/05/28 18:47:00 landry Exp $
+@conflict qwt-*-!qt5
+@pkgpath x11/qwt
+@lib lib/libqwt${QTLIBSUFFIX}.so.${LIBqwt_VERSION}
