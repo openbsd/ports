@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.482 2018/05/17 11:11:07 pvk Exp $
+# $OpenBSD: Makefile,v 1.483 2018/05/28 02:11:07 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -279,6 +279,7 @@
      SUBDIR += ruby-vlad
      SUBDIR += rundeck
      SUBDIR += runit
+     SUBDIR += rw
      SUBDIR += safecat
      SUBDIR += salt
      SUBDIR += salt-testing
