@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.151 2018/05/28 05:39:57 espie Exp $
+# $OpenBSD: update-plist,v 1.152 2018/05/28 09:03:38 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1037,11 +1037,13 @@ sub last_check
 		my $userlist = $state->get_userlist;
 		return unless defined $userlist;
 		my $entry = $userlist->{$self->{name}};
+		my $id = $self->id;
+		$id =~ s/^!//;
 		if (!defined $entry) {
 			print STDERR "Warning: ", $p->nlist->pkgname, 
 			    " defines ", $self->fullstring, 
 			    " (no entry in user db)\n";
-	    	} elsif ($entry != $self->id) {
+	    	} elsif ($entry != $id) {
 			print STDERR "Warning: ", $p->nlist->pkgname, 
 			    " defines ", $self->fullstring, 
 			    " (user db id does not match)\n";
