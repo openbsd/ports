@@ -1,0 +1,14 @@
+$OpenBSD: patch-mimetic_codec_base64_cxx,v 1.1 2018/05/28 16:46:14 jca Exp $
+
+Index: mimetic/codec/base64.cxx
+--- mimetic/codec/base64.cxx.orig
++++ mimetic/codec/base64.cxx
+@@ -13,7 +13,7 @@ const char Base64::sEncTable[] = 
+     "abcdefghijklmnopqrstuvwxyz"
+     "0123456789+/=";
+ 
+-const char Base64::sDecTable[] = {
++const signed char Base64::sDecTable[] = {
+         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
