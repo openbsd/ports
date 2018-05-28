@@ -1,38 +1,36 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/05/28 20:20:46 landry Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-GITLAB_PROJECT = davical
-GITLAB_ACCOUNT = davical-project
-GITLAB_TAG =	r1.1.3.1
-DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
+DISTNAME =	davical_1.1.7.orig
+PKGNAME =	davical-1.1.7
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
-REVISION =	4
 
-HOMEPAGE =	http://www.davical.org/
+HOMEPAGE =	https://www.davical.org/
+MASTER_SITES =	https://www.davical.org/downloads/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://rhaalovely.net/stuff/
-
+WRKSRC= 	${WRKDIR}
 MODULES =	lang/php
 PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/davical
-WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
 TINSTDIR =	${TRUEPREFIX}/davical
 
 SUBST_VARS =	TINSTDIR
 
 RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-pdo_pgsql \
-		www/awl>=0.55 \
+		www/awl>=0.59 \
 		devel/p5-YAML \
 		databases/p5-DBD-Pg
 
 NO_BUILD =	Yes
+# some tests but makefile need patching
 NO_TEST =	Yes
 PKG_ARCH =	*
 

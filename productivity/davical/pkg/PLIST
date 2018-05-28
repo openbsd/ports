@@ -1,19 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/30 10:01:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/28 20:20:46 landry Exp $
 davical/
 davical/INSTALL
 davical/README
 davical/config/
-davical/config/.gitignore
 davical/config/apache-davical.conf
 davical/config/debug-config.php
 davical/config/example-administration.yml
 davical/config/example-config.php
 @sample davical/config/config.php
-davical/config/imap_pam_conf_php.txt
 davical/config/other-config.php
 davical/davical.conf
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/davical.conf
+@sample ${PREFIX}/conf/modules.sample/
+@sample ${PREFIX}/conf/modules.sample/davical.conf
 davical/dba/
 davical/dba/appuser_permissions.txt
 davical/dba/base-data.sql
@@ -39,6 +37,7 @@ davical/dba/patches/1.2.1.sql
 davical/dba/patches/1.2.10.sql
 davical/dba/patches/1.2.10a.sql
 davical/dba/patches/1.2.11.sql
+davical/dba/patches/1.2.12.sql
 davical/dba/patches/1.2.1a.sql
 davical/dba/patches/1.2.1b.sql
 davical/dba/patches/1.2.2.sql
@@ -50,6 +49,8 @@ davical/dba/patches/1.2.6.sql
 davical/dba/patches/1.2.7.sql
 davical/dba/patches/1.2.8.sql
 davical/dba/patches/1.2.9.sql
+davical/dba/patches/1.3.1.sql
+davical/dba/patches/1.3.2.sql
 davical/dba/rrule_functions-8.1.sql
 davical/dba/rrule_functions.sql
 davical/dba/rrule_tests.sql
@@ -60,7 +61,6 @@ davical/dba/views/dav_principal.sql
 davical/dba/windows/
 davical/dba/windows/create-database.bat
 davical/htdocs/
-davical/htdocs/.gitignore
 davical/htdocs/.htaccess
 davical/htdocs/admin.php
 davical/htdocs/always.php
@@ -79,6 +79,7 @@ davical/htdocs/images/up.gif
 davical/htdocs/index.php
 davical/htdocs/js/
 davical/htdocs/js/browse.js
+davical/htdocs/metrics.php
 davical/htdocs/public.php
 davical/htdocs/robots.txt
 davical/htdocs/setup.php
@@ -86,7 +87,6 @@ davical/htdocs/tools.php
 davical/htdocs/tz.php
 davical/htdocs/upgrade.php
 davical/inc/
-davical/inc/.gitignore
 davical/inc/AtomFeed.php
 davical/inc/CalDAVRequest.php
 davical/inc/DAVPrincipal.php
@@ -96,7 +96,6 @@ davical/inc/DAViCalSession.php
 davical/inc/HTTPAuthSession.php
 davical/inc/Principal.php
 davical/inc/PublicSession.php
-davical/inc/RRule-v2.php
 davical/inc/RRule.php
 davical/inc/WritableCollection.php
 davical/inc/always.php.in
@@ -150,7 +149,6 @@ davical/inc/page-footer.php
 davical/inc/page-header.php
 davical/inc/pubsub.php
 davical/inc/schedule-functions.php
-davical/inc/test-RRULE.php
 davical/inc/tz/
 davical/inc/tz/capabilities.php
 davical/inc/tz/expand.php
@@ -165,8 +163,8 @@ davical/inc/vcard.php
 davical/inc/vtimezone.php
 davical/inc/well-known.php
 davical/po/
-davical/po/.gitignore
 davical/po/ar.po
+davical/po/ar.values
 davical/po/ca.po
 davical/po/cs_CZ.po
 davical/po/de.po
@@ -182,6 +180,7 @@ davical/po/es_VE.values
 davical/po/et.po
 davical/po/et.values
 davical/po/fi.po
+davical/po/fi.values
 davical/po/fr.po
 davical/po/fr.values
 davical/po/hu.po
@@ -192,6 +191,7 @@ davical/po/it.values
 davical/po/ja.po
 davical/po/ja.values
 davical/po/ko_KR.po
+davical/po/ko_KR.values
 davical/po/messages.pot
 davical/po/nb_NO.po
 davical/po/nb_NO.values
@@ -207,12 +207,14 @@ davical/po/pt_PT.values
 davical/po/ru.po
 davical/po/ru.values
 davical/po/sk_SK.po
+davical/po/sk_SK.values
 davical/po/sv.po
 davical/po/sv.values
 davical/scripts/
 davical/scripts/archive-old-events.php
 davical/scripts/build-always.sh
 davical/scripts/cron-sync-ldap.php
+davical/scripts/davical-cli
 davical/scripts/export_calendar.php
 davical/scripts/load_calendar.php
 davical/scripts/po/
