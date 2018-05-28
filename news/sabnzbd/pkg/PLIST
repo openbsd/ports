@@ -1,12 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/02/25 20:11:33 mglocker Exp $
-@newgroup _sabnzbd:717
-@newuser _sabnzbd:717:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
+@comment $OpenBSD: PLIST,v 1.6 2018/05/28 12:25:20 sthen Exp $
+@newgroup _sabnzbd:810
+@newuser _sabnzbd:810:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd
 @group _sabnzbd
 @sample /var/sabnzbd/
+@owner
+@group
+@rcscript ${RCDIR}/sabnzbd
+@owner _sabnzbd
+@group _sabnzbd
 bin/sabnzbd
 @owner
 @group
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/ABOUT.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/COPYRIGHT.txt
@@ -120,8 +127,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_builtin.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_builtin.pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_${MODPY_PYOEXTENSION}penssl.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_${MODPY_PYOEXTENSION}penssl.pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_pyopenssl.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/ssl_pyopenssl.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/test_wsgiserver.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/cherrypy/wsgiserver/test_wsgiserver.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/
@@ -684,4 +691,3 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/apireg.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/apireg.pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/mailslot.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/util/mailslot.pyc
-@rcscript ${RCDIR}/sabnzbd

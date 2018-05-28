@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.314 2018/05/28 12:17:12 sthen Exp $
+$OpenBSD: user.list,v 1.315 2018/05/28 12:25:20 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -318,3 +318,4 @@ id  user		group		port options
 807 _hitch		_hitch		security/hitch
 808 _motion		_motion		multimedia/motion
 809 _ntopng		_ntopng		net/ntopng
+810 _sabnzbd		_sabnzbd	news/sabnzbd
