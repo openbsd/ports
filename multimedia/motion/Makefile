@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2018/03/29 23:36:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/05/28 12:01:57 sthen Exp $
 
 V=		4.1.1
-REVISION=	0
+REVISION=	1
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
