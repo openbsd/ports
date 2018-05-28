@@ -1,25 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/28 20:19:41 landry Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
-GITLAB_PROJECT = awl
-GITLAB_ACCOUNT = davical-project
-GITLAB_TAG =	r0.55
-DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
-PKGNAME =	php-${DISTNAME}
+DISTNAME =	awl_0.59.orig
+PKGNAME =	php-awl-0.59
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	www
 PKG_ARCH =	*
-REVISION =	1
-
-HOMEPAGE =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-#DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
-#MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
-MASTER_SITES =	https://spacehopper.org/mirrors/
+MASTER_SITES =	https://www.davical.org/downloads/
 
+WRKSRC =	${WRKDIR}
 PREFIX =	${VARBASE}/www
 WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
 INSTDIR =	${PREFIX}/${GITLAB_PROJECT}
