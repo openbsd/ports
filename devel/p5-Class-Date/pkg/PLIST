@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/05/15 11:21:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/05/28 19:21:24 bluhm Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/Date/
 ${P5SITE}/Class/Date.pm
-${P5SITE}/Class/Date.pm.orig
-${P5SITE}/Class/Date.pod
+@comment ${P5SITE}/Class/Date.pm.orig
 ${P5SITE}/Class/Date/Const.pm
 ${P5SITE}/Class/Date/Invalid.pm
 ${P5SITE}/Class/Date/Rel.pm
 @man man/man3p/Class::Date.3p
+@man man/man3p/Class::Date::Const.3p
+@man man/man3p/Class::Date::Invalid.3p
+@man man/man3p/Class::Date::Rel.3p
