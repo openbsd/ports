@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/13 11:46:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/05/28 18:47:45 landry Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB = m
 WANTLIB += ${COMPILER_LIBCXX}
