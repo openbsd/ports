@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/05/28 05:11:05 feinerer Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -3,5 +3,5 @@ from setuptools import setup
+ 
+ # See setup.cfg for configuration.
+ setup(
+-    data_files=[('share/man/man1', ['doc/qr.1'])],
++    data_files=[('man/man1', ['doc/qr.1'])],
+ )

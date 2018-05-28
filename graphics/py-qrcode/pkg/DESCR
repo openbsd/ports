@@ -1,0 +1,11 @@
+QR (Quick Response) codes are 2D pictographic codes that can encode many types
+of data. They can be quickly machine-read and are quite robust.
+
+This package provides qrcode, a pure Python module to generate QR codes, with
+direct output as SVG, or in other image formats via modules such as Pillow and
+pymaging.
+
+It also provides qr(1), a script using the above module, which can take data
+from standard input or the command line and format as a QR code. By default,
+ASCII art will be used if output is directed to the terminal, otherwise an
+image file will be output.
