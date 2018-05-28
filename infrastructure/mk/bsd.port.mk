@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1407 2018/05/27 11:54:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1408 2018/05/28 18:53:19 landry Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1996,11 +1996,7 @@ ${_INSTALL_COOKIE${_S}}:
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-install-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
-	@if ${PKG_INFO} -e ${FULLPKGNAME${_S}}; then \
-		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
-	else \
-		${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
-	fi
+	@${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} ${PKGFILE${_S}};
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
 
