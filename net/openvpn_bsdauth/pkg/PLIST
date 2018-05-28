@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:28 naddy Exp $
-@newgroup _openvpnusers:596
+@comment $OpenBSD: PLIST,v 1.4 2018/05/28 17:29:01 jasper Exp $
+@newgroup _openvpnusers:811
 @mode 2550
 @owner _openvpn
 @group auth
