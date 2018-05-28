@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2018/05/20 07:21:58 landry Exp $
+# $OpenBSD: Makefile,v 1.86 2018/05/28 18:48:22 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-3.0.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	22.0 \
 		qgis_app	7.0 \
@@ -74,7 +75,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c expat fcgi gdal geos_c gsl gslcblas m pq proj ${MODPY_WANTLIB}
-WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt spatialindex
+WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
 WANTLIB += spatialite sqlite3 util zip
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad Qt5OpenGL
