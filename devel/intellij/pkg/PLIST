@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/04/14 07:08:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.32 2018/05/28 10:29:28 rsadowski Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -92,7 +92,7 @@ intellij/lib/asm-tree-5.0.3.jar
 intellij/lib/automaton.jar
 intellij/lib/baksmali-2.2.1.jar
 intellij/lib/batik-all.jar
-intellij/lib/bcprov-jdk15on-1.55.jar
+intellij/lib/bcprov-jdk15on-1.59.jar
 intellij/lib/bootstrap.jar
 intellij/lib/cglib-nodep-3.2.4.jar
 intellij/lib/cli-parser-1.1.jar
@@ -102,7 +102,7 @@ intellij/lib/common-lang-3.2.1.jar
 intellij/lib/commons-codec-1.9.jar
 intellij/lib/commons-compress-1.10.jar
 intellij/lib/commons-httpclient-3.1-patched.jar
-intellij/lib/commons-imaging-1.0-RC.jar
+intellij/lib/commons-imaging-1.0-RC-1.jar
 intellij/lib/commons-io-2.2.jar
 intellij/lib/commons-logging-1.2.jar
 intellij/lib/commons-net-3.3.jar
@@ -141,7 +141,9 @@ intellij/lib/imageio-tiff-3.2.1.jar
 intellij/lib/imgscalr-lib-4.2.jar
 intellij/lib/ini4j-0.5.5-2.jar
 intellij/lib/isorelax.jar
-intellij/lib/jackson-core-2.8.8.jar
+intellij/lib/jackson-annotations-2.9.0.jar
+intellij/lib/jackson-core-2.9.5.jar
+intellij/lib/jackson-databind-2.9.5.jar
 intellij/lib/java-api.jar
 intellij/lib/java-impl.jar
 intellij/lib/java_resources_en.jar
@@ -646,9 +648,6 @@ intellij/plugins/properties/lib/properties.jar
 intellij/plugins/properties/lib/resources_en.jar
 intellij/plugins/settings-repository/
 intellij/plugins/settings-repository/lib/
-intellij/plugins/settings-repository/lib/jackson-annotations-2.8.1.jar
-intellij/plugins/settings-repository/lib/jackson-core-2.8.1.jar
-intellij/plugins/settings-repository/lib/jackson-databind-2.8.1.jar
 intellij/plugins/settings-repository/lib/jgit.jar
 intellij/plugins/settings-repository/lib/resources_en.jar
 intellij/plugins/settings-repository/lib/settings-repository.jar
