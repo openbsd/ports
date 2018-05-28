@@ -1,0 +1,7 @@
+Sortix rw is a program that reads blocks from the standard input and
+copies them to the standard output until the end of the standard input.
+rw(1) is designed to be a replacement for dd(1), providing only the core
+blockwise I/O. It has a standard command line interface with dashed
+options, useful and efficient defaults, and is simpler because it
+doesn't support converting the input (e.g. converting ASCII to/from
+EBCDIC).
