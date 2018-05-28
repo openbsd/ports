@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.150 2018/05/27 12:15:57 espie Exp $
+# $OpenBSD: update-plist,v 1.151 2018/05/28 05:39:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -473,11 +473,11 @@ sub copy_with_tags
 	my ($self, $plist) = @_;
 
 	$self->{found} = 1;
-	$self->{tagged_along} = 1;
 	$self->add_object($plist);
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
 			next if $tag->{found};
+			$tag->{tagged_along} = 1;
 			copy_with_tags($tag, $plist);
 		}
 	}
