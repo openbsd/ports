@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/02 06:59:06 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2018/05/29 07:32:31 kirby Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
@@ -28,6 +28,8 @@ MASTER_SITES =	https://github.com/scp-fs2open/fs2open.github.com/releases/downlo
 # Remove on next update
 DISTFILES = ${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
+# c++11
+COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua
 LIB_DEPENDS =		audio/openal \
