@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/02/27 09:28:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2018/05/29 16:00:08 ajacoutot Exp $
 
 COMMENT =		library to generate, and check strenght of passwords
 
@@ -8,6 +8,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${V}
 DISTNAME =		libpwquality-${V}
+REVISION =		0
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
@@ -15,8 +16,6 @@ CATEGORIES =		security
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
-
-HOMEPAGE =		https://fedorahosted.org/libpwquality/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
