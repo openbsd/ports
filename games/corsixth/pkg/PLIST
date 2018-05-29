@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/31 22:14:44 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/29 07:53:24 espie Exp $
 bin/CorsixTH
 share/CorsixTH/
 share/CorsixTH/Bitmap/
@@ -63,6 +63,7 @@ share/CorsixTH/Levels/st.peter's.map
 share/CorsixTH/Lua/
 share/CorsixTH/Lua/api_version.lua
 share/CorsixTH/Lua/app.lua
+@comment share/CorsixTH/Lua/app.lua.orig
 share/CorsixTH/Lua/audio.lua
 share/CorsixTH/Lua/base_config.lua
 share/CorsixTH/Lua/calls_dispatcher.lua
