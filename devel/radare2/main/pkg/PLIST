@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/10/10 12:20:17 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/29 07:49:32 espie Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2pm
@@ -125,7 +125,7 @@ include/libr/sflib/linux-x86-64/sflib.h
 include/libr/sflib/linux-x86-64/sfsyscall.h
 include/libr/sflib/linux-x86-64/sfsysnr.h
 lib/libr2.so
-@bin lib/libr2.so.2.0
+@lib lib/libr2.so.${LIBr2_VERSION}
 @lib lib/libr_anal.so.${LIBr_anal_VERSION}
 @lib lib/libr_asm.so.${LIBr_asm_VERSION}
 @lib lib/libr_bin.so.${LIBr_bin_VERSION}
