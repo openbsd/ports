@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/28 20:19:41 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2018/05/29 06:03:18 landry Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
@@ -15,8 +15,7 @@ MASTER_SITES =	https://www.davical.org/downloads/
 
 WRKSRC =	${WRKDIR}
 PREFIX =	${VARBASE}/www
-WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
-INSTDIR =	${PREFIX}/${GITLAB_PROJECT}
+INSTDIR =	${PREFIX}/awl
 SUBST_VARS =	INSTDIR
 NO_BUILD =	Yes
 NO_TEST =	Yes
