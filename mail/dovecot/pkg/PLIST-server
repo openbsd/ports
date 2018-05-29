@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.65 2018/03/29 23:50:28 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.66 2018/05/29 14:25:11 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -706,6 +706,7 @@ libexec/dovecot/deliver
 @man man/man1/doveadm-purge.1
 @man man/man1/doveadm-pw.1
 @man man/man1/doveadm-quota.1
+@man man/man1/doveadm-rebuild.1
 @man man/man1/doveadm-reload.1
 @man man/man1/doveadm-replicator.1
 @man man/man1/doveadm-search.1
@@ -822,6 +823,7 @@ share/doc/dovecot/wiki/HowTo.Rootless.txt
 share/doc/dovecot/wiki/HowTo.SimpleVirtualInstall.txt
 share/doc/dovecot/wiki/HowTo.WriteConfiguration.txt
 share/doc/dovecot/wiki/HowTo.txt
+share/doc/dovecot/wiki/IMAPServer.Hibernation.txt
 share/doc/dovecot/wiki/IMAPServer.txt
 share/doc/dovecot/wiki/ImapMetadata.txt
 share/doc/dovecot/wiki/IndexFiles.txt
