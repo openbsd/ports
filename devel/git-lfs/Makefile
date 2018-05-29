@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/05/29 19:22:01 bket Exp $
 
 COMMENT =		Git extension for versioning large files
 
 GH_PROJECT =		git-lfs
 GH_ACCOUNT =		git-lfs
-GH_TAGNAME =		v2.4.0
-REVISION =		0
+GH_TAGNAME =		v2.4.1
 
 CATEGORIES =		devel
 
@@ -21,7 +20,8 @@ MODULES =		lang/go \
 MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 
-BUILD_DEPENDS =		textproc/ruby-ronn
+BUILD_DEPENDS =		textproc/groff \
+			textproc/ruby-ronn
 RUN_DEPENDS =		devel/git
 
 # Convert the manpages with ronn instead of mangen.go
