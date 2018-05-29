@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2018/05/29 04:11:51 kspillner Exp $
 
 COMMENT =	lightweight server providing access to task data
 
 DISTNAME =	taskd-1.1.0
 CATEGORIES =	productivity net
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.taskwarrior.org/
 
 MAINTAINER =	Kent R. Spillner <kspillner@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}/download/
+MASTER_SITES =	${HOMEPAGE}download/
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
@@ -26,9 +26,6 @@ LIB_DEPENDS =	security/gnutls
 CONFIGURE_ARGS +=	-DTASKD_DOCDIR=share/taskd \
 			-DTASKD_MAN1DIR=man/man1 \
 			-DTASKD_MAN5DIR=man/man5
-
-CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
 

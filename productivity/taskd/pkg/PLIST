@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/14 11:31:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/29 04:11:54 kspillner Exp $
 @newgroup _taskd:734
-@newuser _taskd:732:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
+@newuser _taskd:734:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
 @extraunexec rm -rf /var/taskd
 @extraunexec rm -rf /var/log/taskd
 @mode 0750
