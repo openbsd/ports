@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2018/05/22 14:57:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/05/29 13:54:05 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
-V=		8.2.1
+V=		8.2.2
 DISTNAME=	conserver-$V
-REVISION=	7
 CATEGORIES=	comms
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+= --with-uds=${LOCALSTATEDIR}/run/conserver \
 .if ${FLAVOR:Mipmi}
 CONFIGURE_ARGS+= --with-freeipmi=yes
 LIB_DEPENDS+=	sysutils/freeipmi
-WANTLIB+=	freeipmi ipmiconsole pthread
+WANTLIB+=	freeipmi ipmiconsole
 .endif
 
 post-install:

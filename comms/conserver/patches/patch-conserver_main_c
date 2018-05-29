@@ -1,11 +1,11 @@
-$OpenBSD: patch-conserver_main_c,v 1.1 2018/05/22 14:57:44 sthen Exp $
+$OpenBSD: patch-conserver_main_c,v 1.2 2018/05/29 13:54:05 sthen Exp $
 
 enable "setproctitle" option by default, for more information ps listings
 
 Index: conserver/main.c
 --- conserver/main.c.orig
 +++ conserver/main.c
-@@ -72,7 +72,7 @@ CONFIG defConfig =
+@@ -70,7 +70,7 @@ CONFIG defConfig =
      DEFPORT,
      FLAGTRUE, FLAGTRUE, 0, DEFBASEPORT, (char *)0, 0
  #if HAVE_SETPROCTITLE

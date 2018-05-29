@@ -1,7 +1,8 @@
-$OpenBSD: patch-conserver_group_c,v 1.7 2015/11/19 14:03:30 sthen Exp $
---- conserver/group.c.orig	Thu Nov 19 13:55:52 2015
-+++ conserver/group.c	Thu Nov 19 13:59:18 2015
-@@ -754,7 +754,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
+$OpenBSD: patch-conserver_group_c,v 1.8 2018/05/29 13:54:05 sthen Exp $
+Index: conserver/group.c
+--- conserver/group.c.orig
++++ conserver/group.c
+@@ -752,7 +752,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
      struct spwd *spwd;
  # endif
  

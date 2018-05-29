@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.5 2015/08/11 21:13:14 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.6 2018/05/29 13:54:05 sthen Exp $
 --- configure.in.orig	Thu Apr 17 22:55:38 2014
 +++ configure.in	Thu Jul 30 16:52:11 2015
 @@ -413,14 +413,14 @@ AC_ARG_WITH(uds,
@@ -28,11 +28,11 @@ $OpenBSD: patch-configure_in,v 1.5 2015/08/11 21:13:14 sthen Exp $
 +#error "no SO_PEERCRED defined"
 +#endif
 +						],
-+				    		[AC_MSG_RESULT(yes)
-+				     		AC_DEFINE(UDS_CRED_STYPE, ucred, [Defined to UDS credential structure name])
-+				     		AC_DEFINE(UDS_CRED_UID, uid, [Defined to UDS credential structure uid field])
-+				     		AC_DEFINE(UDS_CRED_SO, SO_PEERCRED, [Defined to UDS credential socket option])
-+				     		AC_DEFINE(TRUST_UDS_CRED)],
++						[AC_MSG_RESULT(yes)
++						AC_DEFINE(UDS_CRED_STYPE, ucred, [Defined to UDS credential structure name])
++						AC_DEFINE(UDS_CRED_UID, uid, [Defined to UDS credential structure uid field])
++						AC_DEFINE(UDS_CRED_SO, SO_PEERCRED, [Defined to UDS credential socket option])
++						AC_DEFINE(TRUST_UDS_CRED)],
 +						[
 +							AC_TRY_COMPILE([#include <sys/types.h>
 +								#include <sys/socket.h>],

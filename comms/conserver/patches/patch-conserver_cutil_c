@@ -1,7 +1,8 @@
-$OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
---- conserver/cutil.c.orig	Sun Apr 20 08:17:56 2014
-+++ conserver/cutil.c	Tue Oct  7 17:25:07 2014
-@@ -1845,7 +1845,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+$OpenBSD: patch-conserver_cutil_c,v 1.6 2018/05/29 13:54:05 sthen Exp $
+Index: conserver/cutil.c
+--- conserver/cutil.c.orig
++++ conserver/cutil.c
+@@ -1843,7 +1843,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  {
  # ifdef SIOCGIFCONF
      struct ifconf ifc;
@@ -10,7 +11,7 @@ $OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
  #  ifdef SIOCGIFFLAGS
      struct ifreq ifrcopy;
  #  endif
-@@ -1914,7 +1914,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1912,7 +1912,7 @@ ProbeInterfaces(in_addr_t bindAddr)
       * than loop through looking for valid interfaces that are up
       * twice, huh?
       */
@@ -19,7 +20,7 @@ $OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
      CONDDEBUG((1, "ProbeInterfaces(): ifc_len==%d max_count==%d",
  	       ifc.ifc_len, count));
  
-@@ -1933,17 +1933,17 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1931,17 +1931,17 @@ ProbeInterfaces(in_addr_t bindAddr)
  
      for (m = r = 0; r < ifc.ifc_len;) {
  	struct sockaddr *sa;
@@ -43,7 +44,7 @@ $OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
  
  	if (sa->sa_family == AF_INET) {
  	    struct sockaddr_in *sin = (struct sockaddr_in *)sa;
-@@ -1964,14 +1964,14 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1962,14 +1962,14 @@ ProbeInterfaces(in_addr_t bindAddr)
  
  #  ifdef SIOCGIFFLAGS
  	    /* make sure the interface is up */
@@ -60,7 +61,7 @@ $OpenBSD: patch-conserver_cutil_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
  
  #  if HAVE_MEMCPY
  	    memcpy(&myAddrs[m], &(sin->sin_addr), sizeof(struct in_addr));
-@@ -1980,7 +1980,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1978,7 +1978,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  #  endif
  
  	    Verbose("interface address %s (%s)", inet_ntoa(myAddrs[m]),
