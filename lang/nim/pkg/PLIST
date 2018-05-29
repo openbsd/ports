@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/01/09 10:32:33 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/29 08:10:42 espie Exp $
 @conflict nimrod-<0.11.2
 @pkgpath lang/nimrod
 @bin bin/nim
@@ -108,6 +108,7 @@ lib/nim/pure/distros.nim
 lib/nim/pure/dynlib.nim
 lib/nim/pure/encodings.nim
 lib/nim/pure/endians.nim
+@comment lib/nim/pure/endians.nim.orig
 lib/nim/pure/etcpriv.nim
 lib/nim/pure/events.nim
 lib/nim/pure/fenv.nim
