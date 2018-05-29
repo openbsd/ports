@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/05/04 19:14:00 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2018/05/29 07:52:12 espie Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -8,7 +8,7 @@ REV=		18
 
 DISTNAME=	beav-140
 PKGNAME=	beav-${VERSION}.${REV}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	editors
 
 # GPLv2+
