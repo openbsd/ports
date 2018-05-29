@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/07 07:51:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/29 08:13:38 espie Exp $
 bin/cgal_create_CMakeLists
 bin/cgal_create_cmake_script
 include/CGAL/
@@ -2480,6 +2480,7 @@ include/CGAL/compiler_config.h
 include/CGAL/compute_average_spacing.h
 include/CGAL/compute_outer_frame_margin.h
 include/CGAL/config.h
+@comment include/CGAL/config.h.orig
 include/CGAL/connect_holes.h
 include/CGAL/constant.h
 include/CGAL/constructions/
