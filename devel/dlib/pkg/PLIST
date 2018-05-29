@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/25 06:39:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/29 16:06:55 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -86,10 +86,12 @@ include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/
 include/dlib/cmake_utils/add_global_compiler_switch.cmake
+include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/find_blas.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
+include/dlib/cmake_utils/test_for_avx/
 include/dlib/cmake_utils/test_for_cpp11/
 include/dlib/cmake_utils/test_for_cuda/
 include/dlib/cmake_utils/test_for_cudnn/
