@@ -1,0 +1,25 @@
+$OpenBSD: patch-plugins_rdp_rdp_file_c,v 1.1 2018/05/29 18:43:11 jasper Exp $
+
+Revert https://github.com/FreeRDP/Remmina/commit/9df60caeb4f62303c29d69021991e3de14802ba1#diff-7ea33c789952583adb2e74168c346a6a
+FreeRDP_GatewayAccessToken was introduced in FreeRDP rc2
+
+Index: plugins/rdp/rdp_file.c
+--- plugins/rdp/rdp_file.c.orig
++++ plugins/rdp/rdp_file.c
+@@ -98,11 +98,11 @@ static void remmina_rdp_file_import_field(RemminaFile*
+ 	}else if (g_strcmp0(key, "gatewayhostname") == 0) {
+ 		remmina_plugin_service->file_set_string(remminafile, "gateway_server", value);
+ 	}else if (g_strcmp0(key, "gatewayusagemethod") == 0) {
+-		remmina_plugin_service->file_set_int(remminafile, "gateway_usage", (atoi(value) == TSC_PROXY_MODE_DETECT));
+-	} else if (g_strcmp0(key, "gatewayaccesstoken") == 0) {
+-		remmina_plugin_service->file_set_string(remminafile, "gatewayaccesstoken", value);
+-	} else if (g_strcmp0(key, "authentication level") == 0) {
+-		remmina_plugin_service->file_set_int(remminafile, "authentication level", atoi(value));
++		remmina_plugin_service->file_set_string(remminafile, "gatewayusagemethod", value);
++	}else if (g_strcmp0(key, "gatewaycredentialssource") == 0) {
++		remmina_plugin_service->file_set_string(remminafile, "gatewaycredentialssource", value);
++	}else if (g_strcmp0(key, "gatewayprofileusagemethod") == 0) {
++		remmina_plugin_service->file_set_string(remminafile, "gatewayprofileusagemethod", value);
+ 	}
+ 	/* tsclient fields, import only */
+ 	else if (g_strcmp0(key, "client hostname") == 0) {
