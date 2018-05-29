@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/28 12:01:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/05/29 07:30:45 espie Exp $
 @pkgpath multimedia/motion,bktr${FLAVOR_COMMA}
 @newgroup _motion:808
 @newuser _motion:808:_motion:daemon:motion user:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/motion/
-@rcscript ${RCDIR}/motion
 @bin bin/motion
 @man man/man1/motion.1
 share/doc/motion/
@@ -23,3 +22,4 @@ share/examples/motion/camera3-dist.conf
 share/examples/motion/camera4-dist.conf
 share/examples/motion/motion-dist.conf
 @sample ${SYSCONFDIR}/motion/motion.conf
+@rcscript ${RCDIR}/motion
