@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/02/13 10:27:00 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/05/29 08:12:26 espie Exp $
 bin/verilator
 @bin bin/verilator_bin
 @bin bin/verilator_bin_dbg
@@ -50,6 +50,7 @@ share/verilator/include/verilated_vcd_sc.h
 share/verilator/include/verilated_vpi.cpp
 share/verilator/include/verilated_vpi.h
 share/verilator/include/verilatedos.h
+@comment share/verilator/include/verilatedos.h.orig
 share/verilator/include/vltstd/
 share/verilator/include/vltstd/svdpi.h
 share/verilator/include/vltstd/vpi_user.h
