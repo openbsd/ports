@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_platform_julius_c,v 1.1.1.1 2018/05/11 15:07:02 bcallah Exp $
+$OpenBSD: patch-src_platform_julius_c,v 1.2 2018/05/30 03:22:34 bcallah Exp $
 
 We're trying to get rid of libexecinfo.
 
@@ -14,7 +14,7 @@ Index: src/platform/julius.c
  #include <execinfo.h>
  #endif
  
-@@ -55,7 +55,7 @@ enum {
+@@ -50,7 +50,7 @@ enum {
  };
  
  static void handler(int sig) {

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/11 15:07:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/05/30 03:22:34 bcallah Exp $
 
 # XXX: Use MASTER_SITES once a release comes out?
 COMMENT =	open source re-implementation of Caesar III game engine
-DISTNAME =	${GH_PROJECT}-0.0.0.20180430
+DISTNAME =	${GH_PROJECT}-0.0.0.20180527
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	bvschaik
 GH_PROJECT =	julius
-GH_COMMIT =	cb7ecdfdae9b4fbb6f61db6abb287a84dca2afb5
+GH_COMMIT =	159a5084a4a5e899d87c9ce89b7d330ae2141dc9
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
