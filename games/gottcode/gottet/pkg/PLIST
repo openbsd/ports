@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 15:18:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/30 03:06:33 bcallah Exp $
 @bin bin/gottet
 @man man/man6/gottet.6
 share/applications/gottet.desktop
@@ -17,10 +17,12 @@ share/gottet/translations/gottet_lt.qm
 share/gottet/translations/gottet_ms.qm
 share/gottet/translations/gottet_nl.qm
 share/gottet/translations/gottet_pl.qm
+share/gottet/translations/gottet_pt.qm
 share/gottet/translations/gottet_ro.qm
 share/gottet/translations/gottet_ru.qm
 share/gottet/translations/gottet_tr.qm
 share/gottet/translations/gottet_vi.qm
+share/gottet/translations/gottet_zh.qm
 share/gottet/translations/gottet_zh_TW.qm
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
