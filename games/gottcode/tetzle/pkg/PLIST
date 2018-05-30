@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/12/29 23:32:46 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/05/30 03:07:58 bcallah Exp $
 @bin bin/tetzle
 @man man/man6/tetzle.6
 share/applications/tetzle.desktop
@@ -24,6 +24,7 @@ share/tetzle/translations/
 share/tetzle/translations/tetzle_ca.qm
 share/tetzle/translations/tetzle_cs.qm
 share/tetzle/translations/tetzle_de.qm
+share/tetzle/translations/tetzle_el.qm
 share/tetzle/translations/tetzle_en.qm
 share/tetzle/translations/tetzle_eo.qm
 share/tetzle/translations/tetzle_es.qm
@@ -32,14 +33,17 @@ share/tetzle/translations/tetzle_he.qm
 share/tetzle/translations/tetzle_lt.qm
 share/tetzle/translations/tetzle_lv.qm
 share/tetzle/translations/tetzle_ms.qm
+share/tetzle/translations/tetzle_nb_NO.qm
 share/tetzle/translations/tetzle_nl.qm
 share/tetzle/translations/tetzle_pl.qm
+share/tetzle/translations/tetzle_pt.qm
 share/tetzle/translations/tetzle_pt_BR.qm
 share/tetzle/translations/tetzle_ro.qm
 share/tetzle/translations/tetzle_ru.qm
 share/tetzle/translations/tetzle_tr.qm
 share/tetzle/translations/tetzle_uk.qm
 share/tetzle/translations/tetzle_uk_UA.qm
+share/tetzle/translations/tetzle_zh.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
