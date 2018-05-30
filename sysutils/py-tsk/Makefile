@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/14 12:36:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2018/05/30 06:47:23 espie Exp $
 
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
@@ -15,7 +15,10 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		lang/python
+MODULES =		lang/python 
+# so that we get gawk poisoning in the sleuthkit part
+MODULES += 		gnu
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
