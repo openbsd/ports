@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/12 21:26:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2018/05/30 09:10:59 rpointel Exp $
 
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_EGG_VERSION = 20171230
+MODPY_EGG_VERSION = 20180510
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	security
 
