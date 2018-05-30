@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/24 13:13:40 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/30 02:41:16 bcallah Exp $
 @bin bin/focuswriter
 @man man/man1/focuswriter.1
 share/applications/focuswriter.desktop
@@ -279,7 +279,7 @@ share/focuswriter/icons/hicolor/index.theme
 share/focuswriter/sounds/
 share/focuswriter/sounds/keyany.wav
 share/focuswriter/sounds/keyenter.wav
-share/focuswriter/symbols900.dat
+share/focuswriter/symbols1000.dat
 share/focuswriter/themes/
 share/focuswriter/themes/bitterskies.theme
 share/focuswriter/themes/enchantment.theme
