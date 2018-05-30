@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/08 15:15:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/30 03:07:43 bcallah Exp $
 @bin bin/tanglet
 @man man/man6/tanglet.6
 share/applications/tanglet.desktop
@@ -62,8 +62,10 @@ share/tanglet/data/nl/dictionary
 share/tanglet/data/nl/name
 share/tanglet/data/nl/words
 share/tanglet/translations/
+share/tanglet/translations/tanglet_ca.qm
 share/tanglet/translations/tanglet_cs.qm
 share/tanglet/translations/tanglet_de.qm
+share/tanglet/translations/tanglet_el.qm
 share/tanglet/translations/tanglet_en.qm
 share/tanglet/translations/tanglet_es.qm
 share/tanglet/translations/tanglet_es_CL.qm
@@ -75,6 +77,7 @@ share/tanglet/translations/tanglet_lt.qm
 share/tanglet/translations/tanglet_ms.qm
 share/tanglet/translations/tanglet_nl.qm
 share/tanglet/translations/tanglet_pl.qm
+share/tanglet/translations/tanglet_pt.qm
 share/tanglet/translations/tanglet_ro.qm
 share/tanglet/translations/tanglet_szl.qm
 share/tanglet/translations/tanglet_tr.qm
