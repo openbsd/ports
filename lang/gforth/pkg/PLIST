@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/27 07:58:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/05/30 11:29:29 espie Exp $
 bin/gforth
 @bin bin/gforth-${V}
 bin/gforth-fast
@@ -26,6 +26,9 @@ lib/gforth/${V}/libcc-named/cstr.so.0.0
 lib/gforth/${V}/libcc-named/fflib.a
 lib/gforth/${V}/libcc-named/fflib.la
 lib/gforth/${V}/libcc-named/fflib.so.0.0
+lib/gforth/${V}/libcc-named/libffi.a
+lib/gforth/${V}/libcc-named/libffi.la
+@lib lib/gforth/${V}/libcc-named/libffi.so.${LIBffi_VERSION}
 lib/gforth/${V}/libcc-named/socket.a
 lib/gforth/${V}/libcc-named/socket.la
 lib/gforth/${V}/libcc-named/socket.so.0.0

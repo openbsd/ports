@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/10/25 12:22:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/05/30 11:29:29 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
 
@@ -10,8 +10,9 @@ COMMENT =		ANSI/200x Forth interpreter and compiler
 
 V =			0.7.3
 DISTNAME =		gforth-${V}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		lang
+SHARED_LIBS +=		ffi			0.0 # 0.0
 
 HOMEPAGE =		http://www.gnu.org/software/gforth/
 
