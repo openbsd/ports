@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/04/24 08:55:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/05/30 07:20:39 ajacoutot Exp $
 @bin bin/gnome-builder
 include/gnome-builder/
 include/gnome-builder/gstyle/
@@ -241,6 +241,7 @@ include/gnome-builder/libide/testing/ide-test-manager.h
 include/gnome-builder/libide/testing/ide-test-provider.h
 include/gnome-builder/libide/testing/ide-test.h
 include/gnome-builder/libide/threading/
+include/gnome-builder/libide/threading/ide-task.h
 include/gnome-builder/libide/threading/ide-thread-pool.h
 include/gnome-builder/libide/transfers/
 include/gnome-builder/libide/transfers/ide-pkcon-transfer.h
@@ -355,8 +356,8 @@ share/gnome-builder/vapi/gstyle-private.deps
 share/gnome-builder/vapi/gstyle-private.vapi
 share/gnome-builder/vapi/libide-1.0.deps
 share/gnome-builder/vapi/libide-1.0.vapi
-share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder-dark.xml
-share/gtksourceview${MODPY_BIN_SUFFIX}.0/styles/builder.xml
+share/gtksourceview-3.0/styles/builder-dark.xml
+share/gtksourceview-3.0/styles/builder.xml
 share/icons/hicolor/16x16/actions/builder-build-configure-symbolic.symbolic.png
 share/icons/hicolor/16x16/actions/builder-build-symbolic.symbolic.png
 share/icons/hicolor/16x16/actions/builder-debugger-symbolic.symbolic.png
@@ -453,6 +454,7 @@ share/locale/oc/LC_MESSAGES/gnome-builder.mo
 share/locale/pl/LC_MESSAGES/gnome-builder.mo
 share/locale/pt/LC_MESSAGES/gnome-builder.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-builder.mo
+share/locale/ro/LC_MESSAGES/gnome-builder.mo
 share/locale/ru/LC_MESSAGES/gnome-builder.mo
 share/locale/sk/LC_MESSAGES/gnome-builder.mo
 share/locale/sl/LC_MESSAGES/gnome-builder.mo
