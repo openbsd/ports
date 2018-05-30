@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/30 03:07:13 bcallah Exp $
 @bin bin/peg-e
 @man man/man6/peg-e.6
 share/applications/peg-e.desktop
@@ -53,6 +53,7 @@ share/peg-e/translations/pege_lt.qm
 share/peg-e/translations/pege_ms.qm
 share/peg-e/translations/pege_nl.qm
 share/peg-e/translations/pege_pl.qm
+share/peg-e/translations/pege_pt.qm
 share/peg-e/translations/pege_ro.qm
 share/peg-e/translations/pege_ru.qm
 share/peg-e/translations/pege_tr.qm
