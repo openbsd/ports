@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/13 13:48:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2018/05/30 09:13:46 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20180127
+MODPY_EGG_VERSION =	20180524
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
-REVISION =		1
 
 DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
@@ -76,13 +75,21 @@ RUN_DEPENDS +=	devel/ipython \
 		sysutils/py-tsk \
 		textproc/py-yaml \
 		www/py-requests \
-		www/py-urllib3
+		www/py-urllib3 \
+		textproc/py-elasticsearch \
+		devel/py-dtfabric \
+		devel/py-biplist
 
 TEST_DEPENDS +=	devel/py-test \
 		${RUN_DEPENDS}
 
+# py-elasticsearch in ports in > 5.5.1, ignore error
+post-extract:
+	sed -i "s/maximum_version: 5.5.1/#maximum_version: 5.5.1/" ${WRKSRC}/dependencies.ini
+
+pre-test:
+	touch ${WRKSRC}/utils/__init__.py
 do-test:
 	cd ${WRKSRC} && LC_CTYPE='en_US.UTF-8' ${MODPY_BIN} ./run_tests.py
-
 
 .include <bsd.port.mk>

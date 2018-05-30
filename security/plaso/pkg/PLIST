@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/01 13:25:08 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/30 09:13:46 rpointel Exp $
 bin/image_export.py
 bin/log2timeline.py
 bin/pinfo.py
 bin/psort.py
 bin/psteal.py
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/plaso/
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,6 +27,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analysis/file_hashes.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/file_hashes.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/interface.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/analysis/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/analysis/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/manager.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analysis/mediator.py
@@ -63,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashing_analyzer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/hashing_analyzer.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/interface.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/manager.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/analyzers/yara_analyzer.py
@@ -111,6 +117,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/output_modules.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/output_modules.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/parsers.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/parsers.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/process_resources.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/process_resources.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/profiling.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/server_config.py
@@ -147,12 +155,14 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/xlsx_output.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/xlsx_output.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/yara_rules.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/yara_rules.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/zeromq.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/zeromq.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/image_export_tool.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/image_export_tool.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/log2timeline_tool.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/log2timeline_tool.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/cli/logging_filter.py
-lib/python${MODPY_VERSION}/site-packages/plaso/cli/logging_filter.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/pinfo_tool.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/pinfo_tool.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/psort_tool.py
@@ -219,6 +229,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/engine/filter_file.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/filter_file.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/knowledge_base.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/knowledge_base.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/path_helper.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/path_helper.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/plaso_queue.py
@@ -227,10 +239,12 @@ lib/python${MODPY_VERSION}/site-packages/plaso/engine/process_info.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/process_info.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/processing_status.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/processing_status.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/engine/profiler.py
-lib/python${MODPY_VERSION}/site-packages/plaso/engine/profiler.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/profilers.py
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/profilers.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/single_process.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/single_process.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/tagging_file.py
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/tagging_file.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/worker.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/worker.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/zeromq_queue.py
@@ -317,6 +331,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ganalytics.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ganalytics.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/gdrive.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/gdrive.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/gdrive_synclog.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/gdrive_synclog.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/hachoir.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/hachoir.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/iis.py
@@ -331,6 +347,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/java_idx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/java_idx.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/kik_ios.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/kik_ios.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ls_quarantine.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/ls_quarantine.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/mac_appfirewall.py
@@ -411,6 +429,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/formatters/task_scheduler.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/task_scheduler.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/text.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/text.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/trendmicroav.py
+lib/python${MODPY_VERSION}/site-packages/plaso/formatters/trendmicroav.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/twitter_ios.py
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/twitter_ios.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/formatters/userassist.py
@@ -456,6 +476,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/lib/binary.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/binary.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/bufferlib.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/bufferlib.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/lib/decorators.py
+lib/python${MODPY_VERSION}/site-packages/plaso/lib/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/definitions.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/definitions.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/errors.py
@@ -489,6 +511,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/base_process.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/base_process.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/engine.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/engine.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/multi_process_queue.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/multi_process_queue.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/plaso_xmlrpc.py
@@ -520,6 +544,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/output/kml.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/kml.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/l2t_csv.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/l2t_csv.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/output/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/output/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/manager.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/mediator.py
@@ -532,6 +558,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/output/rawpy.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/rawpy.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/shared_4n6time.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/shared_4n6time.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/output/shared_elastic.py
+lib/python${MODPY_VERSION}/site-packages/plaso/output/shared_elastic.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/sqlite_4n6time.py
 lib/python${MODPY_VERSION}/site-packages/plaso/output/sqlite_4n6time.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/output/timesketch_out.py
@@ -606,6 +634,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/firefox_cache.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/firefox_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/fseventsd.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/gdrive_synclog.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/gdrive_synclog.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/hachoir.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/hachoir.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/iis.py
@@ -614,6 +644,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/mac_appfirewall.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/mac_appfirewall.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/mac_keychain.py
@@ -775,6 +807,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/systemd_journal.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/systemd_journal.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_parser.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/trendmicroav.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/trendmicroav.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmp.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmp.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmpx.py
@@ -869,6 +903,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/linux.py
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/linux.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/macos.py
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/macos.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/preprocessors/manager.py
@@ -882,6 +918,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/serializer/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/json_serializer.py
 lib/python${MODPY_VERSION}/site-packages/plaso/serializer/json_serializer.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/serializer/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/serializer/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/__init__.pyc
@@ -900,6 +938,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/storage/identifiers.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/identifiers.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/interface.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/logger.py
+lib/python${MODPY_VERSION}/site-packages/plaso/storage/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/__init__.py
 lib/python${MODPY_VERSION}/site-packages/plaso/storage/sqlite/__init__.pyc
