@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/02 12:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/05/30 03:06:49 bcallah Exp $
 @bin bin/hexalate
 @man man/man6/hexalate.6
 share/applications/hexalate.desktop
@@ -18,10 +18,12 @@ share/hexalate/translations/hexalate_lt.qm
 share/hexalate/translations/hexalate_ms.qm
 share/hexalate/translations/hexalate_nl.qm
 share/hexalate/translations/hexalate_pl.qm
+share/hexalate/translations/hexalate_pt.qm
 share/hexalate/translations/hexalate_pt_BR.qm
 share/hexalate/translations/hexalate_ro.qm
 share/hexalate/translations/hexalate_ru.qm
 share/hexalate/translations/hexalate_tr.qm
+share/hexalate/translations/hexalate_zh.qm
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/hexalate.png
