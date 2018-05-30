@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.152 2018/05/28 09:03:38 espie Exp $
+# $OpenBSD: update-plist,v 1.153 2018/05/30 14:13:34 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1037,7 +1037,7 @@ sub last_check
 		my $userlist = $state->get_userlist;
 		return unless defined $userlist;
 		my $entry = $userlist->{$self->{name}};
-		my $id = $self->id;
+		my $id = $self->id2;
 		$id =~ s/^!//;
 		if (!defined $entry) {
 			print STDERR "Warning: ", $p->nlist->pkgname, 
@@ -1052,12 +1052,12 @@ sub last_check
 }
 
 package OpenBSD::PackingElement::NewUser;
-sub id
+sub id2
 {
 	return shift->{uid};
 }
 package OpenBSD::PackingElement::NewGroup;
-sub id
+sub id2
 {
 	return shift->{gid};
 }
