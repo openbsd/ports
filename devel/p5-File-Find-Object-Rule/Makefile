@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/15 22:15:33 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2018/05/30 12:55:00 bluhm Exp $
 
-COMMENT =		alternative interface to File::Find::Object
+COMMENT =	alternative interface to File::Find::Object
 
-DISTNAME =		File-Find-Object-Rule-0.0306
+DISTNAME =	File-Find-Object-Rule-0.0307
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -12,14 +12,14 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
+BUILD_DEPENDS =		devel/p5-Module-Build>=0.28
 RUN_DEPENDS =		devel/p5-Class-XSAccessor \
-			devel/p5-File-Find-Object>=0.2.1 \
+			devel/p5-File-Find-Object \
 			devel/p5-Number-Compare \
 			textproc/p5-Text-Glob
-TEST_DEPENDS =		devel/p5-Test-Pod>=1.14 \
-			devel/p5-Test-Pod-Coverage>=1.04
 
 CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
