@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 07:27:17 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/05/30 14:53:35 rpointel Exp $
 bin/wapiti
 bin/wapiti-getcookie
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/wapiti-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/${MODPY_PYCACHE}/
@@ -26,10 +26,12 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_d
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_exec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_htaccess.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_methods.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_nikto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_permanentxss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_shellshock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_sql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_ssrf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_xss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/attack.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_backup.py
@@ -40,10 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_delay.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_exec.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_file.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_htaccess.py
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_methods.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_nikto.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_permanentxss.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_shellshock.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_sql.py
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_ssrf.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/mod_xss.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/
@@ -52,7 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/blindSQLPaylo
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/busterPayloads.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/execPayloads.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/fileHandlingPayloads.txt
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/xssPayloads.txt
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/attacks/xssPayloads.ini
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/language/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/language/de/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/language/de/LC_MESSAGES/
@@ -120,6 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}lamejs.$
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}sqlite_persister.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}swf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}web.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}xss_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/crawler.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsoncookie.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/
@@ -132,6 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/lamejs.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/sqlite_persister.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/swf.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/web.py
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/xss_utils.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}/
