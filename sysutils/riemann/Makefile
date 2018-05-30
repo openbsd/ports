@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/28 12:54:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/05/30 06:58:59 espie Exp $
 
 COMMENT =	network event stream processing system
 
 V =		0.3.0
 DISTNAME =	riemann-${V}
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://riemann.io
 
