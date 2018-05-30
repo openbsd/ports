@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/08 15:15:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/30 03:07:26 bcallah Exp $
 @bin bin/simsu
 @man man/man6/simsu.6
 share/applications/simsu.desktop
@@ -32,6 +32,7 @@ share/simsu/translations/simsu_es_CL.qm
 share/simsu/translations/simsu_fr.qm
 share/simsu/translations/simsu_he.qm
 share/simsu/translations/simsu_hu.qm
+share/simsu/translations/simsu_it.qm
 share/simsu/translations/simsu_lt.qm
 share/simsu/translations/simsu_ms.qm
 share/simsu/translations/simsu_nl.qm
@@ -41,6 +42,7 @@ share/simsu/translations/simsu_ro.qm
 share/simsu/translations/simsu_ru.qm
 share/simsu/translations/simsu_tr.qm
 share/simsu/translations/simsu_uk.qm
+share/simsu/translations/simsu_zh.qm
 share/simsu/translations/simsu_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
