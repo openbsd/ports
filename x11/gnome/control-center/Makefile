@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2018/04/24 20:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2018/05/30 07:39:06 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.28.1
-REVISION=		0
+GNOME_VERSION=		3.28.2
 
 CATEGORIES=		x11
 
