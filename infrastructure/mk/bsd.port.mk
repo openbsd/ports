@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1410 2018/05/29 11:40:42 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1411 2018/05/30 11:16:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -868,7 +868,7 @@ TEST_ENV += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 XAUTHORITY ?= ${HOME}/.Xauthority
 .endif
 
-_PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
+_PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
 .for _s in ${BUILD_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
@@ -943,47 +943,28 @@ FULLPKGPATH = ${FULLPKGPATH${SUBPACKAGE}}
 _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
 
-FAKE_AS_ROOT ?= No
-.if ${FAKE_AS_ROOT:L} == "yes"
-_FAKESUDO_CHECK_COOKIE = ${WRKDIR}/.test-sudo
-_BINOWNGRP = -o ${BINOWN} -g ${BINGRP}
-_SHAREOWNGRP = -o ${SHAREOWN} -g ${SHAREGRP}
-_MANOWNGRP = -o ${MANOWN} -g ${MANGRP}
-.else
-_FAKESUDO = ${_PBUILD}
-_FAKESUDO_CHECK_COOKIE =
-_BINOWNGRP = 
-_SHAREOWNGRP =
-_MANOWNGRP =
 _INSTALL_WRAPPER = ${PORTSDIR}/infrastructure/bin/install-wrapper
-.endif
 
-.if ${FAKE_AS_ROOT:L:Malways-wrap}
-_INSTALL = ${_PERLSCRIPT}/install-wrapper
-.elif ${FAKE_AS_ROOT:L:Mno}
 _INSTALL ?= ${WRKDIR}/bin/install
-.else
-_INSTALL ?= /usr/bin/install
-.endif
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM = \
-	${_INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP} ${_BINOWNGRP} -m ${BINMODE}
+	${_INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP} -m ${BINMODE}
 INSTALL_SCRIPT = \
-	${_INSTALL} ${INSTALL_COPY} ${_BINOWNGRP} -m ${BINMODE}
+	${_INSTALL} ${INSTALL_COPY} -m ${BINMODE}
 INSTALL_DATA = \
-	${_INSTALL} ${INSTALL_COPY} ${_SHAREOWNGRP} -m ${SHAREMODE}
+	${_INSTALL} ${INSTALL_COPY} -m ${SHAREMODE}
 INSTALL_MAN = \
-	${_INSTALL} ${INSTALL_COPY} ${_MANOWNGRP} -m ${MANMODE}
+	${_INSTALL} ${INSTALL_COPY} -m ${MANMODE}
 
 INSTALL_PROGRAM_DIR = \
-	${_INSTALL} -d ${_BINOWNGRP} -m ${DIRMODE}
+	${_INSTALL} -d -m ${DIRMODE}
 INSTALL_SCRIPT_DIR = \
 	${INSTALL_PROGRAM_DIR}
 INSTALL_DATA_DIR = \
-	${_INSTALL} -d ${_SHAREOWNGRP} -m ${DIRMODE}
+	${_INSTALL} -d -m ${DIRMODE}
 INSTALL_MAN_DIR = \
-	${_INSTALL} -d ${_MANOWNGRP} -m ${DIRMODE}
+	${_INSTALL} -d -m ${DIRMODE}
 
 WRKOBJDIR_MODE ?=
 DISTDIR_MODE ?= ${WRKOBJDIR_MODE}
@@ -1063,24 +1044,18 @@ PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
-.  if ${FAKE_AS_ROOT:L} == "no"
-SUBST_CMD${_S} += -i
-.  endif
-SUBST_CMD${_S} += -B ${WRKDIR}
+SUBST_CMD${_S} += -i -B ${WRKDIR}
 .endfor
 
 SUBST_CMD = ${_PERLSCRIPT}/pkg_subst
 .for _v in ${SUBST_VARS}
 SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .endfor
-.if ${FAKE_AS_ROOT:L} == "no"
-SUBST_CMD += -i
-.endif
-SUBST_CMD += -B ${WRKDIR}
+SUBST_CMD += -i -B ${WRKDIR}
 
-SUBST_PROGRAM = ${SUBST_CMD} -c ${_BINOWNGRP} -m ${BINMODE}
-SUBST_DATA = ${SUBST_CMD} -c ${_SHAREOWNGRP} -m ${SHAREMODE}
-SUBST_MAN = ${SUBST_CMD} -c ${_MANOWNGRP} -m ${MANMODE}
+SUBST_PROGRAM = ${SUBST_CMD} -c -m ${BINMODE}
+SUBST_DATA = ${SUBST_CMD} -c -m ${SHAREMODE}
+SUBST_MAN = ${SUBST_CMD} -c -m ${MANMODE}
 
 # XXX
 .if ${MULTI_PACKAGES} == "-"
@@ -1574,8 +1549,8 @@ MODSIMPLE_configure = \
 	cd ${WRKCONF} && ${SETENV} \
 		CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS:C/ *$//}" \
 		CXX="${CXX}" ac_cv_path_CXX="${CXX}" CXXFLAGS="${CXXFLAGS:C/ *$//}" \
-		INSTALL="${_INSTALL} -c ${_BINOWNGRP}" \
-		ac_given_INSTALL="${_INSTALL} -c ${_BINOWNGRP}" \
+		INSTALL="${_INSTALL} -c" \
+		ac_given_INSTALL="${_INSTALL} -c" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
 		YACC="${YACC}" \
@@ -1966,7 +1941,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp=${PERMIT_PACKAGE_FTP${_S}:L:Q} permit_cdrom=${PERMIT_PACKAGE_CDROM${_S}:L:Q} && \
 	if deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
 			${MAKE} print-package-args) && \
-		${_FAKESUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 			$$deps ${PKG_ARGS${_S}} $$tmp && \
 		${_check_lib_depends} $$tmp && \
 		${_register_plist${_S}} $$tmp && \
@@ -1976,7 +1951,7 @@ ${_PACKAGE_COOKIE${_S}}:
 		${_PSUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
 		 	exit 0; \
 	else \
-		${_FAKESUDO} rm -f $$tmp; \
+		${_PBUILD} rm -f $$tmp; \
 	    exit 1; \
 	fi
 # End of PACKAGE.
@@ -2242,8 +2217,8 @@ lib-depends-check:
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} package; \
 	${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
 
-${WRKINST}/.saved_libs: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
-	@${_FAKESUDO} ${SETENV} ${_CHECK_LIB_DEPENDS} -O $@t && ${_FAKESUDO} mv $@t $@
+${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
+	@${_PBUILD} ${SETENV} ${_CHECK_LIB_DEPENDS} -O $@t && ${_PBUILD} mv $@t $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
 	@-${_cache_fragment}; for s in ${BUILD_PACKAGES}; do \
@@ -2253,9 +2228,9 @@ port-lib-depends-check: ${WRKINST}/.saved_libs
 			${_CHECK_LIB_DEPENDS} -i -s ${WRKINST}/.saved_libs; \
 	done
 
-_internal-manpages-check: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
+_internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
-		${_FAKESUDO} /usr/libexec/makewhatis -p . && \
+		${_PBUILD} /usr/libexec/makewhatis -p . && \
 		cat mandoc.db
 
 # Most standard port targets create a cookie to avoid being re-run.
@@ -2373,7 +2348,7 @@ _internal-test:
 _internal-test: ${_BUILD_COOKIE} ${_DEPTEST_COOKIES} ${_TEST_COOKIE}
 .  endif
 
-_internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
+_internal-plist _internal-update-plist: _internal-fake
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
 	@${_MAKE} _internal-generate-readmes
@@ -2471,9 +2446,7 @@ ${_WRKDIR_COOKIE}:
 	fi
 	@${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
-.if ${FAKE_AS_ROOT:L} != "yes"
 	@${_PBUILD} install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
-.endif
 .if !empty(WRKDIR_LINKNAME)
 	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
@@ -2787,30 +2760,24 @@ _pre-fake-modules:
 .  endif
 .endfor
 
-${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
+${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
-	@if [ x`umask 022;${_FAKESUDO} /bin/sh -c umask` != x022 ]; then \
-		echo >&2 "Error: your umask is \"`${_FAKESUDO} /bin/sh -c umask`"\".; \
+	@if [ x`umask 022;${_PBUILD} /bin/sh -c umask` != x022 ]; then \
+		echo >&2 "Error: your umask is \"`${_PBUILD} /bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
-.if ${FAKE_AS_ROOT:L} == "yes"
-	@${_FAKESUDO} install -d -m 755 ${_BINOWNGRP} ${WRKINST}
-.else
-	${_FAKESUDO} install -d -m 755 ${WRKINST}
-.endif
-	@${_FAKESUDO} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
+	${_PBUILD} install -d -m 755 ${WRKINST}
+	@${_PBUILD} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
 		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
-.if ${FAKE_AS_ROOT:L} != "yes"
-	@${_FAKESUDO} chmod -R a+rX ${WRKINST}
+	@${_PBUILD} chmod -R a+rX ${WRKINST}
 	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chown
 	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chgrp
 	@${_PBUILD} install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
-.endif
 	${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
 	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
 .endif
-	@${_FAKESUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
+	@${_PBUILD} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .if target(pre-install)
 	@${_SUDOMAKESYS} pre-install ${FAKE_SETUP}
 .endif
@@ -2818,7 +2785,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${_SUDOMAKESYS} do-install ${FAKE_SETUP}
 .else
 # What FAKE normally does:
-	@cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} \
+	@cd ${WRKBUILD} && umask 022 && exec ${_PBUILD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
@@ -2828,7 +2795,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
-	@${_FAKESUDO} ${_MAKE_COOKIE} $@
+	@${_PBUILD} ${_MAKE_COOKIE} $@
 
 # XXX this is a separate step that is "always on" and doesn't generate
 # cookies
@@ -2837,14 +2804,14 @@ _internal-generate-readmes: ${_FAKE_COOKIE}
 	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
 	if test -e ${PKGDIR}/README; then \
 		echo "Installing ${PKGDIR}/README as $$r"; \
-		${_FAKESUDO} ${SUBST_CMD} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README $$r; \
+		${_PBUILD} ${SUBST_CMD} -m ${SHAREMODE} -c ${PKGDIR}/README $$r; \
 	fi
 .else
 .  for _s in ${MULTI_PACKAGES}
 	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
 	if test -e ${PKGDIR}/README${_s}; then \
 		echo "Installing ${PKGDIR}/README${_s} as $$r"; \
-		${_FAKESUDO} ${SUBST_CMD${_s}} ${_SHAREOWNGRP} -m ${SHAREMODE} -c ${PKGDIR}/README${_s} $$r; \
+		${_PBUILD} ${SUBST_CMD${_s}} -m ${SHAREMODE} -c ${PKGDIR}/README${_s} $$r; \
 	fi
 .  endfor
 .endif
@@ -2852,7 +2819,7 @@ _internal-generate-readmes: ${_FAKE_COOKIE}
 		if test X"$$i" != "X*.rc"; then \
 			r=${WRKINST}${RCDIR}/$${i%.rc}; \
 			echo "Installing ${PKGDIR}/$$i as $$r"; \
-			${_FAKESUDO} ${SUBST_CMD} ${_BINOWNGRP} -m ${BINMODE} -c $$i $$r; \
+			${_PBUILD} ${SUBST_CMD} -m ${BINMODE} -c $$i $$r; \
 		fi; \
 	done
 
@@ -2976,7 +2943,7 @@ _internal-clean:
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 .if ${_clean:Mfake}
-	@if cd ${WRKINST} 2>/dev/null; then ${_FAKESUDO} rm -rf ${WRKINST}; fi
+	@if cd ${WRKINST} 2>/dev/null; then ${_PBUILD} rm -rf ${WRKINST}; fi
 .endif
 .if ${_clean:Mwork} || (${_clean:Mbuild} && ${SEPARATE_BUILD:L} == "no")
 .  if ${_clean:Mflavors}

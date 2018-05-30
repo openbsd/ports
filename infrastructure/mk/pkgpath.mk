@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.71 2018/05/05 12:50:12 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.72 2018/05/30 11:16:05 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -146,13 +146,13 @@ _PMAKE = ${_MAKE}
 _MK_READABLE = :
 _pkgmode = $$(id -u):$$(id -g)
 _usermode =
-_UPDATE_PLIST_SETUP=${_FAKESUDO}
+_UPDATE_PLIST_SETUP=${_PBUILD}
 _INSTALL_CACHE_REPO = install -d ${PACKAGE_REPOSITORY_MODE}
 .endif
 
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
 _MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
-_SUDOMAKESYS = cd ${.CURDIR} && umask 022 && PKGPATH=${PKGPATH} exec ${_FAKESUDO} ${MAKE}
+_SUDOMAKESYS = cd ${.CURDIR} && umask 022 && PKGPATH=${PKGPATH} exec ${_PBUILD} ${MAKE}
 
 REPORT_PROBLEM_LOGFILE ?=
 .if !empty(REPORT_PROBLEM_LOGFILE)
