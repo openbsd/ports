@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2018/04/28 14:46:32 landry Exp $
+# $OpenBSD: Makefile,v 1.615 2018/05/30 07:40:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -93,6 +93,7 @@
      SUBDIR += gromit
      SUBDIR += gtk+2
      SUBDIR += gtk+3
+     SUBDIR += gtk+4
      SUBDIR += gtk-chtheme
      SUBDIR += gtk-engines2
      SUBDIR += gtk-vnc
