@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/07 09:21:04 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2018/05/30 14:03:05 rpointel Exp $
 
 COMMENT =		Windows Registry data extraction tool
 
-DISTNAME =		regripper-2.8pl3
+DISTNAME =		regripper-2.8pl4
 
 CATEGORIES =		security
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		keydet89
 GH_PROJECT =		RegRipper2.8
-GH_COMMIT =		c65c823d2c8371a9f0702248ab22d506ea0a2678
+GH_COMMIT =		79e852a37636daf0d0842a78baa355d514e5c104
 
 MODULES =		perl
 

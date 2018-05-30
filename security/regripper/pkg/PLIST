@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/09/07 09:21:04 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/05/30 14:03:05 rpointel Exp $
 bin/rip.pl
 ${P5SITE}/regripper/
 ${P5SITE}/regripper/shellitems.pl
@@ -38,6 +38,8 @@ share/regripper/plugins/auditpol_xp.pl
 share/regripper/plugins/autoendtasks.pl
 share/regripper/plugins/autorun.pl
 share/regripper/plugins/backuprestore.pl
+share/regripper/plugins/bam.pl
+share/regripper/plugins/bam_tln.pl
 share/regripper/plugins/banner.pl
 share/regripper/plugins/baseline.pl
 share/regripper/plugins/bho.pl
@@ -144,6 +146,7 @@ share/regripper/plugins/liveContactsGUID.pl
 share/regripper/plugins/load.pl
 share/regripper/plugins/logmein.pl
 share/regripper/plugins/logmein_tln.pl
+share/regripper/plugins/logonstats.pl
 share/regripper/plugins/logonusername.pl
 share/regripper/plugins/lsa_packages.pl
 share/regripper/plugins/lsasecrets.pl
@@ -222,6 +225,8 @@ share/regripper/plugins/rdpport.pl
 share/regripper/plugins/reading_locations.pl
 share/regripper/plugins/realplayer6.pl
 share/regripper/plugins/realvnc.pl
+share/regripper/plugins/recentapps.pl
+share/regripper/plugins/recentapps_tln.pl
 share/regripper/plugins/recentdocs.pl
 share/regripper/plugins/recentdocs_timeline.pl
 share/regripper/plugins/recentdocs_tln.pl
@@ -242,7 +247,9 @@ share/regripper/plugins/safeboot.pl
 share/regripper/plugins/sam
 share/regripper/plugins/samparse.pl
 share/regripper/plugins/samparse_tln.pl
+share/regripper/plugins/sbs.pl
 share/regripper/plugins/schedagent.pl
+share/regripper/plugins/searchscopes.pl
 share/regripper/plugins/secctr.pl
 share/regripper/plugins/secrets.pl
 share/regripper/plugins/secrets_tln.pl
