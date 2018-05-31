@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/31 14:57:13 edd Exp $
+bin/rename
+${P5SITE}/File/
+${P5SITE}/File/Rename.pm
+@man man/man1/rename.1
+@man man/man3p/File::Rename.3p
