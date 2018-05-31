@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.155 2018/05/31 09:14:12 espie Exp $
+# $OpenBSD: update-plist,v 1.156 2018/05/31 09:33:38 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -516,6 +516,17 @@ sub check_suffix
 	return $error;
 }
 
+# helper method
+# @extra and friends may have unneeded ${PREFIX} prepended to them
+sub strip_redundant_absolute
+{
+	my ($self, $p) = @_;
+	# remove unneeded absolute paths
+	if ($self->name =~ m/^\// && $self->cwd eq $p->{state}{prefix}) {
+		$self->{name} = $p->strip_prefix($self->name);
+	}
+}
+
 sub unsubst
 {
 	my $a = shift;
@@ -576,19 +587,6 @@ package OpenBSD::PackingElement::State;
 # that stuff NEVER gets copied over, but interpolated from existing objects
 sub show_unknown
 {
-}
-
-# objects are (mostly) stuff with paths that can get substs...
-package OpenBSD::PackingElement::Object;
-sub last_check
-{
-	my ($self, $p, $state) = @_;
-
-	# don't care if it's already in a PLIST
-	return if defined $self->{comesfrom};
-	my $error = $self->check_suffix($state);
-	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?)\n" if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -739,6 +737,7 @@ sub last_check
 {
 	my ($self, $p, $state) = @_;
 
+	$self->strip_redundant_absolute($p);
 	return if !defined $self->{tagged_along};
 	my $error = $self->check_suffix($state);
 	print STDERR "Warning: ", $p->nlist->pkgname, " still contains ",
@@ -846,6 +845,19 @@ sub known_object
 
 package OpenBSD::PackingElement::FileObject;
 use File::Basename;
+
+# FileObjects are (mostly) stuff with paths that can get substs...
+sub last_check
+{
+	my ($self, $p, $state) = @_;
+
+	$self->strip_redundant_absolute($p);
+	# don't care if it's already in a PLIST
+	return if defined $self->{comesfrom};
+	my $error = $self->check_suffix($state);
+	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
+	    $self->fullstring, " ($error ?)\n" if defined $error;
+}
 
 sub known_object
 {
@@ -990,15 +1002,6 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
-sub last_check
-{
-	my ($self, $p, $state) = @_;
-	# some people write extra with unneeded absolute paths.
-	if ($self->cwd eq $p->{state}{prefix}) {
-		$self->{name} = $p->strip_prefix($self->name);
-	}
-}
-
 sub rebless_okay() { 0 }
 
 package OpenBSD::PackingElement::Extradir;
@@ -1007,11 +1010,6 @@ sub rebless_okay() { 0 }
 sub copy_extra
 {
 	&OpenBSD::PackingElement::Extra::copy_extra;
-}
-
-sub last_check
-{
-	&OpenBSD::PackingElement::Extra::last_check;
 }
 
 package OpenBSD::PackingElement::Manpage;
