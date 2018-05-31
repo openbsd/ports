@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_functions_php,v 1.19 2018/05/09 20:24:21 sthen Exp $
+$OpenBSD: patch-includes_functions_php,v 1.20 2018/05/31 20:40:41 sthen Exp $
 
 Index: includes/functions.php
 --- includes/functions.php.orig
@@ -12,12 +12,3 @@ Index: includes/functions.php
      $tmp = explode("\n", $ex);
      if ($tmp[sizeof($tmp)-1] != "OK") {
          $ret .= "Could not remove files:\n$ex\n";
-@@ -2426,7 +2426,7 @@ function return_num($entry)
- function locate_binary($binary)
- {
-     if (!str_contains($binary, '/')) {
--        $output = `whereis -b $binary`;
-+        $output = `whereis $binary`;
-         $list = trim(substr($output, strpos($output, ':') + 1));
-         $targets = explode(' ', $list);
- 

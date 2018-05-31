@@ -1,0 +1,26 @@
+$OpenBSD: patch-_env_example,v 1.1 2018/05/31 20:40:41 sthen Exp $
+
+Index: .env.example
+--- .env.example.orig
++++ .env.example
+@@ -1,8 +1,14 @@
+-APP_KEY=
++#APP_KEY=<< insert from "${MODPHP_BIN} artisan key:generate" >>
++#APP_URL=https://librenms.example.com
+ 
+-#DB_HOST=
+-#DB_DATABASE=
+-#DB_USERNAME=
+-#DB_PASSWORD=
++#NODE_ID=hostname.example.com
+ 
+-#APP_URL=
++#DB_HOST=localhost
++#DB_DATABASE=librenms
++#DB_USERNAME=librenms
++#DB_PASSWORD=password
++#DB_PORT=<< optional >>
++#DB_SOCKET=<< optional >>
++
++LIBRENMS_USER=_librenms
++LIBRENMS_GROUP=_librenms

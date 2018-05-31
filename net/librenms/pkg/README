@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2018/01/05 14:51:42 sthen Exp $
+$OpenBSD: README,v 1.9 2018/05/31 20:40:41 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,10 +8,11 @@ LibreNMS is primarily PHP-based, however it relies on running a number of
 other programs during normal operation. As such it is not suitable for
 running in the typical chroot jail used by default on OpenBSD (a chrooted
 web server process is OK, provided that PHP is run separately, e.g. via
-FastCGI, and PHP itself is not chrooted). 
+FastCGI, and PHP itself is not chrooted).
 
-System loads during SNMP polling can be heavy; beyond initial testing and
-evaluation, it is probably happier run on a dedicated system.
+System loads during SNMP polling and graph generation can be heavy;
+if monitoring more than a handful of systems beyond initial testing and
+evaluation it is probably best to run on a dedicated system.
 
 Database configuration
 ======================
@@ -30,7 +31,7 @@ exit
 
 Webserver configuration
 =======================
-LibreNMS should be run on a dedicated vhost. Sample configuration sections
+Run LibreNMS on a dedicated virtual host. Sample configuration sections
 for NGINX and Apache httpd 2.x are shown below.
 
 If using php-fpm, disable any "chroot" line from ${SYSCONFDIR}/php-fpm.conf,
@@ -160,3 +161,22 @@ Rotate LibreNMS' logs in newsyslog.conf, e.g.:
 
 Upstream documentation is present in ${INSTDIR}/doc and also online at
 http://docs.librenms.org/.
+
+Updating from 1.39 or earlier
+=============================
+As of 1.40, LibreNMS now uses the Laravel framework which requires some
+additional setup. Upstream has code to copy this across from an existing
+configuration initially, but it's not functional in this packaged
+environment.
+
+Generate an APP_KEY:
+
+# cd /var/www/librenms
+# doas -u _librenms ${MODPHP_BIN} artisan key:generate
+
+Copy this to the clipboard, then edit ${INSTDIR}/.env and fill in the
+relevant details.
+
+It may also be necessary to raise max_connections in ${SYSCONFDIR}/my.cnf;
+https://community.librenms.org/t/new-requirements-for-1-40/4057
+recommends doubling this value.

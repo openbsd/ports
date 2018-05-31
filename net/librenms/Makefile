@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.65 2018/05/22 08:19:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2018/05/31 20:40:41 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.39
+GH_TAGNAME =	1.40
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	net www
 
@@ -65,10 +64,13 @@ post-extract:
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
 	sed -i 's, librenms , _librenms ,' ${WRKSRC}/librenms.nonroot.cron
 
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/.env.example
+
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
-	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
+	find ${INSTDIR} -name '*.orig' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
 	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
@@ -83,6 +85,7 @@ dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${DISTNAME}.tar.gz; \
 	cd librenms-${GH_TAGNAME}; \
+	[ -r .env ] || cp .env.example .env; \
 	composer install --no-dev; \
 	tar cf - vendor | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \

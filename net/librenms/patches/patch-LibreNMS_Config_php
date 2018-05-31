@@ -1,0 +1,14 @@
+$OpenBSD: patch-LibreNMS_Config_php,v 1.1 2018/05/31 20:40:41 sthen Exp $
+
+Index: LibreNMS/Config.php
+--- LibreNMS/Config.php.orig
++++ LibreNMS/Config.php
+@@ -532,7 +532,7 @@ class Config
+     public static function locateBinary($binary)
+     {
+         if (!str_contains($binary, '/')) {
+-            $output = `whereis -b $binary`;
++            $output = `whereis $binary`;
+             $list = trim(substr($output, strpos($output, ':') + 1));
+             $targets = explode(' ', $list);
+             foreach ($targets as $target) {
