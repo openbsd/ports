@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/30 11:38:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/05/31 21:04:09 sthen Exp $
 @pkgpath net/unifi
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:${PREFIX}/share/unifi:/sbin/nologin
+@rcscript ${RCDIR}/unifi
 bin/unifi
 bin/unifi-discover
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -1174,5 +1175,3 @@ share/unifi/webapps/ROOT/pages/voucher.jsp
 share/unifi/work/
 @extraunexec rm -rf %D/share/unifi/{backup,dl,data,run,work,conf}
 @extraunexec rm -rf /var/log/unifi
-@owner
-@rcscript ${RCDIR}/unifi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2018/05/30 11:38:43 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2018/05/31 21:04:09 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -32,7 +32,7 @@ MODULES=	java
 MODJAVA_VER=	1.8+
 MODJAVA_JRERUN=	yes
 
-RUN_DEPENDS=	databases/mongodb \
+RUN_DEPENDS=	databases/mongodb<3.6.0 \
 		java/javaPathHelper
 
 NO_BUILD=	Yes

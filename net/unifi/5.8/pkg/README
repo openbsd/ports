@@ -1,0 +1,25 @@
+$OpenBSD: README,v 1.1 2018/05/31 21:04:09 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If using UniFi on a system with other threaded programs, it is likely that
+sysctl kern.maxthread would need to be increased from the default (usually
+done in /etc/sysctl.conf).
+
+WARNING: UniFi admin password is available without authentication to localhost.
+$ echo 'db.admin.find()' | mongo --quiet 127.0.0.1:27117/ace
+
+To import your own signed SSL key/certificate:
+
+# rcctl stop unifi
+# cd ${TRUEPREFIX}/share/unifi/data
+# openssl pkcs12 -export -in /etc/ssl/server.crt \
+   -inkey /etc/ssl/private/server.key \
+   -certfile /etc/ssl/intermediate.crt -out unifi.p12 \
+   -name unifi -password pass:aircontrolenterprise
+# $JAVAHOME/bin/keytool -importkeystore -srckeystore unifi.p12 \
+   -srcstoretype PKCS12 -srcstorepass aircontrolenterprise \
+   -destkeystore keystore.new -storepass aircontrolenterprise
+# rcctl start unifi
