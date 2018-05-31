@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1411 2018/05/30 11:16:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1412 2018/05/31 08:59:29 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1836,12 +1836,12 @@ _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
-	-u ${PORTSDIR}/infrastructure/db/user.list \
 	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i FULLPKGPATH \
 	-i LOCALSTATEDIR -i MACHINE_ARCH \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
+	-X ${WRKINST}/.fake_log \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
