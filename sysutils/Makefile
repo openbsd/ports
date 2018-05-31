@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.483 2018/05/28 02:11:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.484 2018/05/31 14:58:59 edd Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -190,6 +190,7 @@
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-File-Monitor
      SUBDIR += p5-File-NFSLock
+     SUBDIR += p5-File-Rename
      SUBDIR += p5-File-Which
      SUBDIR += p5-Filesys-Df
      SUBDIR += p5-Filesys-DiskSpace
