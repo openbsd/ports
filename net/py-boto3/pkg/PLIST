@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/09 10:51:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/05/31 09:37:06 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/boto3/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/boto3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -59,7 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/data/sqs/2012-11-05/
 lib/python${MODPY_VERSION}/site-packages/boto3/data/sqs/2012-11-05/resources-1.json
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/${MODPY_PYCACHE}attr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -87,7 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/docs/utils.py
 lib/python${MODPY_VERSION}/site-packages/boto3/docs/waiter.py
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}conditions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
@@ -99,7 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/transform.py
 lib/python${MODPY_VERSION}/site-packages/boto3/dynamodb/types.py
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}createtags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}deletetags.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,7 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/ec2/deletetags.py
 lib/python${MODPY_VERSION}/site-packages/boto3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/boto3/resources/params.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/response.py
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}inject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/s3/${MODPY_PYCACHE}transfer.${MODPY_PYC_MAGIC_TAG}pyc
