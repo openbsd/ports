@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.153 2018/05/30 14:13:34 espie Exp $
+# $OpenBSD: update-plist,v 1.154 2018/05/31 09:00:45 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1026,42 +1026,6 @@ sub last_check
 	    $self->fullstring, " ($error ?)\n" if defined $error;
 }
 
-package OpenBSD::PackingElement::NewAuth;
-sub last_check
-{
-	my ($self, $p, $state) = @_;
-	if ($self->{name} !~ /^_/) {
-		print STDERR "Warning: ", $p->nlist->pkgname, " defines ",
-		    $self->fullstring, " (no starting _)\n";
-	} else {
-		my $userlist = $state->get_userlist;
-		return unless defined $userlist;
-		my $entry = $userlist->{$self->{name}};
-		my $id = $self->id2;
-		$id =~ s/^!//;
-		if (!defined $entry) {
-			print STDERR "Warning: ", $p->nlist->pkgname, 
-			    " defines ", $self->fullstring, 
-			    " (no entry in user db)\n";
-	    	} elsif ($entry != $id) {
-			print STDERR "Warning: ", $p->nlist->pkgname, 
-			    " defines ", $self->fullstring, 
-			    " (user db id does not match)\n";
-	    	}
-	}
-}
-
-package OpenBSD::PackingElement::NewUser;
-sub id2
-{
-	return shift->{uid};
-}
-package OpenBSD::PackingElement::NewGroup;
-sub id2
-{
-	return shift->{gid};
-}
-
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
 sub new
@@ -1183,7 +1147,7 @@ sub handle_options
 	};
 	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:e:E:u:', 
 	    '[-Fmnrvx] [-C dir] [-E ext] [-e ext] [-i var] [-j jobs]',
-	    '[-P pkgdir] [-S var] [-s var] [-u userdb] [-V var]',
+	    '[-P pkgdir] [-S var] [-s var] [-V var]',
 	    '[-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
@@ -1192,48 +1156,6 @@ sub handle_options
 	$state->{quiet} = $state->opt('q');
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
-}
-
-sub parse_userdb
-{
-	my ($self, $fname) = @_;
-	if (!defined $fname) {
-		print STDERR "Can't check user list: no -u option\n";
-		return undef;
-	}
-	my $result = {};
-	open(my $fh, '<', $fname) or die "Can't open $fname: $!";
-	# skip header
-	while (<$fh>) {
-		last if m/^\-\-\-\-\-\-\-/;
-	}
-	# duplicate check
-	my $known = {};
-	while (<$fh>) {
-		next if m/^\#/;
-		chomp;
-		my @l = split(/\s+/, $_);
-		if (@l < 3 || $l[0] !~ m/^\d+$/ || $l[1] !~ m/^_/) {
-			print STDERR  "Bad line: $_ at $. of $fname";
-			next;
-		}
-		if (defined $known->{$l[0]}) {
-			print STDERR "Duplicate id: $l[0] in $fname\n";
-			next;
-		}
-		$known->{$l[0]} = 1;
-		$result->{$l[1]} = $l[0];
-	}
-	return $result;
-}
-
-sub get_userlist
-{
-	my $state = shift;
-	if (!exists $state->{userlist}) {
-		$state->{userlist} = $state->parse_userdb($state->opt('u'));
-	}
-	return $state->{userlist};
 }
 
 package UpdatePlist;
