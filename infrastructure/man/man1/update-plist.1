@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.13 2018/05/27 09:49:37 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.14 2018/05/31 09:49:20 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 27 2018 $
+.Dd $Mdocdate: May 31 2018 $
 .Dt UPDATE-PLIST 1
 .Os
 .Sh NAME
@@ -32,7 +32,6 @@
 .Op Fl j Ar jobs
 .Op Fl S Ar var
 .Op Fl s Ar var
-.Op Fl u Ar userlist
 .Op Fl X Ar path
 .Op Fl w Ar suffix
 .Fl -
@@ -134,20 +133,6 @@ e.g., for directories like
 .Pa /etc/rc.d
 or
 .Pa /usr/local .
-.It Fl u Ar userlist
-Location of user list database
-.Po
-usually
-.Pa ${PORTSDIR}/infrastructure/db/user.list
-.Pc ,
-a central registry of all ports users and groups mentionned
-in packing-lists.
-.Nm
-will check
-.Cm @newuser
-and
-.Cm @newgroup
-entries against said list, and warn in case of discrepancies.
 .It Fl v
 Verbose mode.
 Explain about directories stripped from dependencies.
