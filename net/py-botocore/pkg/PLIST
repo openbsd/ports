@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.85 2018/05/15 09:16:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.86 2018/05/31 09:36:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/botocore/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -600,6 +600,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mturk/2017-01-17/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/examples-1.json
@@ -616,6 +621,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/examples-1.json
@@ -803,7 +812,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/paginator
 lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}pyc
@@ -818,7 +827,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}utils.${M
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}waiter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}docevents.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/bcdoc/${MODPY_PYCACHE}docstringparser.${MODPY_PYC_MAGIC_TAG}pyc
@@ -864,12 +873,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/validate.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/${MODPY_PYCACHE}adapters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
@@ -896,11 +905,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/hooks.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/models.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/${MODPY_PYCACHE}big5prober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -978,7 +987,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/cha
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/chardet/utf8prober.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/${MODPY_PYCACHE}_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
@@ -994,7 +1003,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/url
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/${MODPY_PYCACHE}ntlmpool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/contrib/${MODPY_PYCACHE}pyopenssl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1005,7 +1014,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/url
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/filepost.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/${MODPY_PYCACHE}ordered_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1013,7 +1022,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/url
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/six.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}_implementation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.py
@@ -1022,7 +1031,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/url
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/response.py
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/vendored/requests/packages/urllib3/util/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
