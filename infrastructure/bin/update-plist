@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.154 2018/05/31 09:00:45 espie Exp $
+# $OpenBSD: update-plist,v 1.155 2018/05/31 09:14:12 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -990,6 +990,15 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
+sub last_check
+{
+	my ($self, $p, $state) = @_;
+	# some people write extra with unneeded absolute paths.
+	if ($self->cwd eq $p->{state}{prefix}) {
+		$self->{name} = $p->strip_prefix($self->name);
+	}
+}
+
 sub rebless_okay() { 0 }
 
 package OpenBSD::PackingElement::Extradir;
@@ -998,6 +1007,11 @@ sub rebless_okay() { 0 }
 sub copy_extra
 {
 	&OpenBSD::PackingElement::Extra::copy_extra;
+}
+
+sub last_check
+{
+	&OpenBSD::PackingElement::Extra::last_check;
 }
 
 package OpenBSD::PackingElement::Manpage;
