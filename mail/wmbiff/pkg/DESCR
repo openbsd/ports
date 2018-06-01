@@ -1,8 +1,0 @@
-WMBiff is an WindowMaker dock applet that displays the number of read
-and unread messages in up to five mailboxes.  You can define actions to
-execute on new mail arrival (for example, play a sound file),
-[auto]fetchmail from a remote server or execute your mail reader with a
-mouse click.  WMBiff also supports polling the output of shell commands,
-so you can extend its functionality easily via shell scripts.  At this
-time, wmbiff supports unix-style, maildir, pop3, APOP, IMAP, IMAPS and
-mailboxes, as well as Licq and GnomeICU history files.
