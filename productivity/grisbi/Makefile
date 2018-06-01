@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2018/05/14 16:36:55 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2018/06/01 07:35:36 landry Exp $
 
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-1.0.3
+DISTNAME=	grisbi-1.0.4
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
 
