@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.156 2018/05/31 09:33:38 espie Exp $
+# $OpenBSD: update-plist,v 1.157 2018/06/01 10:17:36 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -440,7 +440,7 @@ sub may_tag_along
 }
 
 # warn about files with a wrong name (.swp, ~, .orig)
-# or weird users/groups
+# or fuss with paths
 sub last_check
 {
 }
@@ -852,11 +852,11 @@ sub last_check
 	my ($self, $p, $state) = @_;
 
 	$self->strip_redundant_absolute($p);
-	# don't care if it's already in a PLIST
-	return if defined $self->{comesfrom};
 	my $error = $self->check_suffix($state);
+	return unless defined $error;
+	my $condition = defined $self->{comesfrom} ? "old" : "new";
 	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?)\n" if defined $error;
+	    $self->fullstring, " ($error ?, $condition in plist)\n";
 }
 
 sub known_object
@@ -1027,15 +1027,6 @@ sub check_suffix
 		$error = "unformatted .tbl manpage";
 	}
 	return $error;
-}
-
-# we want to warn even if it's already present
-sub last_check
-{
-	my ($self, $p, $state) = @_;
-	my $error = $self->check_suffix($state);
-	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?)\n" if defined $error;
 }
 
 # small class that runs pkglocate in batches
@@ -1425,6 +1416,8 @@ sub add_delayed_objects
 	for my $p (@{$self->{lists}}) {
 		my $cwd = $p->{state}{prefix};
 		# we destate the cwd to try to minimize dir changes
+		# note that these items are sorted, so it won't switch
+		# all over the place.
 		for my $e (@{$p->{badcwd}}) {
 			if ($e->cwd ne $cwd) {
 				$cwd = $e->cwd;
