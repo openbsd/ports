@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.484 2018/05/31 14:58:59 edd Exp $
+# $OpenBSD: Makefile,v 1.485 2018/06/01 15:06:22 danj Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -109,7 +109,6 @@
      SUBDIR += grive2
      SUBDIR += grub
      SUBDIR += gsmartcontrol
-     SUBDIR += hot-babe
      SUBDIR += hotplug-diskmount
      SUBDIR += htop
      SUBDIR += idled
