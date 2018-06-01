@@ -1,6 +1,7 @@
---- xstatbar.c.orig	Tue Feb  9 11:18:02 2016
-+++ xstatbar.c	Tue Feb  9 11:19:05 2016
-@@ -297,6 +297,7 @@
+Index: xstatbar.c
+--- xstatbar.c.orig
++++ xstatbar.c
+@@ -297,6 +297,7 @@ draw_divider(XColor color, int x, int width)
  void
  draw()
  {
@@ -8,7 +9,7 @@
     static int spacing = 10;
     int x, y;
     int cpu;
-@@ -323,6 +324,7 @@
+@@ -323,6 +324,7 @@ draw()
     /* copy the buffer to the window and flush */
     XCopyArea(XINFO.disp, XINFO.buf, XINFO.win, XINFO.gc,
        0, 0, XINFO.width, XINFO.height, 0, 0);
