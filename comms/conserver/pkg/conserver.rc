@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: conserver.rc,v 1.9 2018/05/22 14:57:44 sthen Exp $
+# $OpenBSD: conserver.rc,v 1.10 2018/06/01 17:06:21 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/conserver -d"
 daemon_flags="-n"
@@ -8,7 +8,7 @@ daemon_user="_conserver"
 
 . /etc/rc.d/rc.subr
 
-pexp="(${daemon}${daemon_flags:+ ${daemon_flags}}|conserver: master.*)"
+pexp="(${daemon}${daemon_flags:+ ${daemon_flags}}|conserver: .*)"
 
 rc_pre() {
 	install -d -o _conserver /var/run/conserver
