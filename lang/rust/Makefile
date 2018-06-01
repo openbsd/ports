@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/05/22 06:04:33 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2018/06/01 06:02:10 landry Exp $
 
 # snapshots are only available for amd64 and i386, for now
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.26.0
+V =			1.26.1
 CARGO_V =		0.27.0
 DISTNAME =		rustc-${V}-src
 
