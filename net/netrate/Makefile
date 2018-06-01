@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/01 15:32:04 sthen Exp $
 
 COMMENT=		FreeBSD's tcp/udp traffic generator#'
 
 DISTNAME=		netrate-20140413
 CATEGORIES=		benchmarks net
+REVISION=		0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

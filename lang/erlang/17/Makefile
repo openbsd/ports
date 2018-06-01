@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/03/19 20:57:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/01 15:32:04 sthen Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
@@ -12,8 +12,8 @@ DISTNAME=	otp_src_$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
-REVISION-main=	10
-REVISION-wx=	2
+REVISION-main=	11
+REVISION-wx=	3
 
 VERSION_SPEC=	>=17v0,<18v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}

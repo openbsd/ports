@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2018/04/27 11:27:07 robert Exp $
+# $OpenBSD: Makefile,v 1.142 2018/06/01 15:32:04 sthen Exp $
 
 # All patches annotated with XXKVM are to prevent any kvm(3) which
 # results in an abort() for the caller.
@@ -8,7 +8,7 @@ COMMENT=		portable library for obtaining system information
 GNOME_VERSION=		2.38.0
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		gtop-2.0	10.0	# .10.0
 
