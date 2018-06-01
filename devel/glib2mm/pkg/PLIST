@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/04/22 13:30:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2018/06/01 07:23:48 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -443,13 +443,13 @@ lib/glibmm-${V}/proc/pm/Util.pm
 lib/glibmm-${V}/proc/pm/WrapParser.pm
 lib/libgiomm-${V}.a
 lib/libgiomm-${V}.la
-@lib lib/libgiomm-${V}.so.${LIBgiomm-2.4_VERSION}
+@lib lib/libgiomm-${V}.so.${LIBgiomm-${V}_VERSION}
 lib/libglibmm-${V}.a
 lib/libglibmm-${V}.la
-@lib lib/libglibmm-${V}.so.${LIBglibmm-2.4_VERSION}
+@lib lib/libglibmm-${V}.so.${LIBglibmm-${V}_VERSION}
 lib/libglibmm_generate_extra_defs-${V}.a
 lib/libglibmm_generate_extra_defs-${V}.la
-@lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-2.4_VERSION}
+@lib lib/libglibmm_generate_extra_defs-${V}.so.${LIBglibmm_generate_extra_defs-${V}_VERSION}
 lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
 share/devhelp/books/glibmm-${V}/
