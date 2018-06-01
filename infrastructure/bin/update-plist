@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.157 2018/06/01 10:17:36 espie Exp $
+# $OpenBSD: update-plist,v 1.158 2018/06/01 10:25:09 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -715,6 +715,10 @@ sub fullname
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
+	if ($self->{name} =~ m/^intentional/i && 
+	    defined $plist->{state}{lastobject}) {
+		$plist->{state}{lastobject}{intentional} = 1;
+	}
 	$self->attach_to_lastobject($plist);
 }
 
@@ -852,6 +856,7 @@ sub last_check
 	my ($self, $p, $state) = @_;
 
 	$self->strip_redundant_absolute($p);
+	return if $self->{intentional};
 	my $error = $self->check_suffix($state);
 	return unless defined $error;
 	my $condition = defined $self->{comesfrom} ? "old" : "new";
@@ -1396,7 +1401,7 @@ sub copy_object
 	# TODO this is where we should figure @cwd stuff
 	# though it's generally better to have distinct plists
 	# for several prefixes
-	print STDERR "Warning: can't put $path in any plist\n";
+	print STDERR "Can't put $path in any plist\n";
 }
 
 sub copy_objects
