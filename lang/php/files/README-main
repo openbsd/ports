@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2018/05/27 19:54:17 sthen Exp $
+$OpenBSD: README-main,v 1.5 2018/06/01 17:45:19 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -114,3 +114,16 @@ you can use these shell commands:
 
 After enabling or disabling extensions (or otherwise modifying php's
 configuration), use rcctl(8) to restart php${SV}_fpm or Apache.
+
+TLS Connections from PHP
+========================
+The chroot jail commonly used with PHP on OpenBSD restricts access to
+files outside of /var/www. If using PHP software which makes an outgoing
+TLS connection, you will need to copy in the relevant root certificates
+in order that server certificates can be verified:
+
+    # mkdir -p ${CHROOT_DIR}/etc/ssl
+    # install -m 444 -o root -g bin /etc/ssl/cert.pem ${CHROOT_DIR}/etc/ssl/cert.pem
+
+As this file is updated from time to time, you might like to add the
+"install" line to /etc/rc.local.
