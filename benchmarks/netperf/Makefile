@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/09/08 09:36:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/06/01 14:24:55 sthen Exp $
 
 COMMENT=	network performance benchmark
 
@@ -8,7 +8,7 @@ GH_TAGNAME=	netperf-2.7.0
 DISTNAME=	netperf-2.7.0-gh
 WRKDIST=	${WRKDIR}/netperf-${GH_TAGNAME}
 PKGNAME=	${GH_TAGNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	benchmarks net
 

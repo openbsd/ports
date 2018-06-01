@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/01 14:24:55 sthen Exp $
 
 COMMENT=	WindowMaker dock app similar to xload
 
 DISTNAME=	wmmon-1.0b2
-REVISION =	3
+REVISION =	4
 CATEGORIES=	sysutils x11 x11/windowmaker
 
 MASTER_SITES=	https://distfiles.nl/

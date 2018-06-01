@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2018/06/01 14:24:55 sthen Exp $
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
@@ -7,7 +7,7 @@ V=		2.3.10
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gkrellm.net/
