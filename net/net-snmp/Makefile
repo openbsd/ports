@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2018/04/26 14:18:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2018/06/01 15:35:50 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.3
-REVISION-main=	15
+REVISION-main=	16
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
