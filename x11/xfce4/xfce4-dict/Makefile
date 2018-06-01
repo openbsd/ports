@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/26 18:59:32 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2018/06/01 06:07:57 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.8.0
+XFCE_VERSION=	0.8.1
 XFCE_GOODIE=	xfce4-dict
-REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,5 +24,6 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4panel-2.0 xfce4util z harfbuzz graphite2 xfce4ui-2
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 gtk-3
+WANTLIB += fribidi
 
 .include <bsd.port.mk>
