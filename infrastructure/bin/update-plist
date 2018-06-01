@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.158 2018/06/01 10:25:09 espie Exp $
+# $OpenBSD: update-plist,v 1.159 2018/06/01 12:29:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1198,12 +1198,7 @@ sub process_next_subpackage
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
 	$r->add_extra_info($r->olist, $s);
-# except that we also record where each object live, including directory
-# locations.  As a rule, "exact" information will supersede deduced directory
-# names.
 	push(@{$self->{lists}}, $r);
-	$r->olist->known_directory($self, $r->olist);
-	$r->olist->known_object($self);
 }
 
 sub parse_args
@@ -1221,6 +1216,20 @@ sub parse_args
 		$self->process_next_subpackage;
 	}
 
+}
+
+sub known_objects
+{
+	# let's record where each object live, including directory
+	# locations.  As a rule, "exact" information will supersede 
+	# deduced directory names.
+	my $self = shift;
+	for my $p (@{$self->{lists}}) {
+		$p->olist->known_directory($self, $p->olist);
+	}
+	for my $p (@{$self->{lists}}) {
+		$p->olist->known_object($self);
+	}
 }
 
 sub scan_fake_dir
@@ -1579,6 +1588,7 @@ sub try_pkglocate
 
 my $self = UpdatePlist->new;
 $self->parse_args;
+$self->known_objects;
 $self->scan_fake_dir;
 $self->handle_annotations;
 $self->copy_objects;
