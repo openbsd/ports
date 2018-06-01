@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.613 2018/06/01 15:06:50 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.614 2018/06/01 18:11:44 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1297,6 +1297,17 @@ my $obsolete_reason = {
 	'opengroupware' => 3,
 	'git-bz' => 3,
 	'hot-babe' => 3,
+	'wmgrabimage' => 0,
+	'wmphoto' => 0,
+	'wmminichess' => 0,
+	'wmifinfo' => 0,
+	'wmnet' => 0,
+	'wmwave' => 0,
+	'wmcb' => 0,
+	'wmpinboard' => 0,
+	'wmbiff' => 0,
+	'wmmail' => 0,
+	'wmtimer' => 0,
 };
 
 # reasons for obsolete packages
