@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:39:41 naddy Exp $
-@mode 2555
-@group kmem
-@bin bin/wmnet
-@mode
-@group
-@man man/man1/wmnet.1
