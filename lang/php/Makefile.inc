@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.114 2018/05/27 22:05:50 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.115 2018/06/01 11:27:18 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -49,9 +49,14 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
 			COMPILER_LIBCXX="${LIBCXX}" \
 			lt_cv_path_SED=/usr/bin/sed
+
 # configure detects us as having decimal fp support but it's not built in
 # in libgcc. https://bugs.php.net/bug.php?id=68114
 CONFIGURE_ENV+=		ac_cv_decimal_fp_supported=no
+
+# don't pick-up libpam
+CONFIGURE_ENV+=		ac_cv_lib_pam_pam_start=no
+
 MAKE_ENV=		${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--enable-shared \
