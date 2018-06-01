@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2018/05/30 07:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2018/06/01 15:44:28 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.28.2
+REVISION=		0
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 

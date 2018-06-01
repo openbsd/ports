@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/27 11:01:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/01 15:44:28 sthen Exp $
 
 COMMENT=	CPU load monitor
 
-REVISION =	3
+REVISION =	4
 DISTNAME=	TimeMon-4.2
 CATEGORIES=	sysutils
 

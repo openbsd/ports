@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/01 15:44:28 sthen Exp $
 
 COMMENT=		wm-dockapp; display CPU and memory load
 
 DISTNAME=		bubblemon-dockapp-1.46
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		sysutils x11 x11/windowmaker
 

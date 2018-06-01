@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2018/04/28 14:40:26 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2018/06/01 15:44:28 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -18,6 +18,7 @@ COMMENT-ping =		collectd ping plugin
 V =			5.8.0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
+REVISION-main =		0
 PKGNAME-mysql =		collectd-mysql-$V
 PKGNAME-pgsql =		collectd-pgsql-$V
 PKGNAME-rrdtool =	collectd-rrdtool-$V

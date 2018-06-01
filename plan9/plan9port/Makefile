@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/26 10:45:04 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2018/06/01 15:44:28 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		plan9port-20180117
 

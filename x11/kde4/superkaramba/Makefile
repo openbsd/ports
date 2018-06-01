@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 11:57:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/01 15:44:28 sthen Exp $
 
 COMMENT =	interactive desktop widgets for KDE
 DISTNAME =	superkaramba-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	superkaramba	50.0 # 4.7
 
