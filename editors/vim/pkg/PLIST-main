@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2018/03/08 16:04:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2018/06/01 17:50:43 rsadowski Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -69,6 +69,7 @@ share/vim/${P}/autoload/xml/xsd.vim
 share/vim/${P}/autoload/xml/xsl.vim
 share/vim/${P}/autoload/xmlcomplete.vim
 share/vim/${P}/autoload/zip.vim
+share/vim/${P}/autoload/xmlformat.vim
 share/vim/${P}/bugreport.vim
 share/vim/${P}/colors/
 share/vim/${P}/colors/README.txt
@@ -90,6 +91,8 @@ share/vim/${P}/colors/shine.vim
 share/vim/${P}/colors/slate.vim
 share/vim/${P}/colors/torte.vim
 share/vim/${P}/colors/zellner.vim
+share/vim/${P}/colors/tools/
+share/vim/${P}/colors/tools/check_colors.vim
 share/vim/${P}/compiler/
 share/vim/${P}/compiler/README.txt
 share/vim/${P}/compiler/ant.vim
@@ -299,8 +302,8 @@ share/vim/${P}/doc/workshop.txt
 share/vim/${P}/evim.vim
 share/vim/${P}/filetype.vim
 share/vim/${P}/ftoff.vim
-share/vim/${P}/ftplugin.vim
 share/vim/${P}/ftplugin/
+share/vim/${P}/ftplugin.vim
 share/vim/${P}/ftplugin/README.txt
 share/vim/${P}/ftplugin/a2ps.vim
 share/vim/${P}/ftplugin/aap.vim
@@ -517,8 +520,8 @@ share/vim/${P}/ftplugin/zimbu.vim
 share/vim/${P}/ftplugin/zsh.vim
 share/vim/${P}/ftplugof.vim
 share/vim/${P}/gvimrc_example.vim
-share/vim/${P}/indent.vim
 share/vim/${P}/indent/
+share/vim/${P}/indent.vim
 share/vim/${P}/indent/README.txt
 share/vim/${P}/indent/aap.vim
 share/vim/${P}/indent/ada.vim
@@ -1449,6 +1452,7 @@ share/vim/${P}/syntax/yaml.vim
 share/vim/${P}/syntax/z8a.vim
 share/vim/${P}/syntax/zimbu.vim
 share/vim/${P}/syntax/zsh.vim
+share/vim/${P}/syntax/debcopyright.vim
 share/vim/${P}/tools/
 share/vim/${P}/tools/README.txt
 share/vim/${P}/tools/blink.c
