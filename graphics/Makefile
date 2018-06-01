@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2018/05/28 05:14:45 feinerer Exp $
+# $OpenBSD: Makefile,v 1.458 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -285,9 +285,7 @@
      SUBDIR += viewnior
      SUBDIR += vigra
      SUBDIR += waffle
-     SUBDIR += wmgrabimage
      SUBDIR += wmicons
-     SUBDIR += wmphoto
      SUBDIR += xanim
      SUBDIR += xaos
      SUBDIR += xbmbrowser

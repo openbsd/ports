@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1072 2018/05/15 04:27:59 feinerer Exp $
+# $OpenBSD: Makefile,v 1.1073 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -741,10 +741,7 @@
      SUBDIR += wifind
      SUBDIR += wireless
      SUBDIR += wireshark
-     SUBDIR += wmifinfo
-     SUBDIR += wmnet
      SUBDIR += wmnetload
-     SUBDIR += wmwave
      SUBDIR += wol
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c

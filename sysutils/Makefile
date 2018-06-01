@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.485 2018/06/01 15:06:22 danj Exp $
+# $OpenBSD: Makefile,v 1.486 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -350,7 +350,6 @@
      SUBDIR += waagent
      SUBDIR += whowatch
      SUBDIR += wmapm
-     SUBDIR += wmcb
      SUBDIR += wmcube
      SUBDIR += wmmon
      SUBDIR += wmwlmon

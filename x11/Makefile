@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.615 2018/05/30 07:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.616 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -326,7 +326,6 @@
      SUBDIR += wmmenu
      SUBDIR += wmmenu,gdk_pixbuf
      SUBDIR += wmname
-     SUBDIR += wmpinboard
      SUBDIR += wmtime
      SUBDIR += wmtz
      SUBDIR += wmutils

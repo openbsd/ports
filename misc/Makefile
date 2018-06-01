@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2018/05/02 21:10:05 bluhm Exp $
+# $OpenBSD: Makefile,v 1.183 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -113,7 +113,6 @@
      SUBDIR += vmware-vncpasswd
      SUBDIR += vttest
      SUBDIR += wmmand
-     SUBDIR += wmtimer
      SUBDIR += wordnet
      SUBDIR += xcdroast
      SUBDIR += xd

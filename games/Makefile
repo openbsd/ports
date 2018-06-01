@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2018/05/11 15:07:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.379 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -296,7 +296,6 @@
      SUBDIR += widelands
      SUBDIR += witchblast
      SUBDIR += wizznic
-     SUBDIR += wmminichess
      SUBDIR += wmtictactoe
      SUBDIR += wordwarvi
      SUBDIR += wtf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2018/04/26 20:21:41 solene Exp $
+# $OpenBSD: Makefile,v 1.366 2018/06/01 17:57:43 solene Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -233,8 +233,6 @@
      SUBDIR += tnef
      SUBDIR += trojita
      SUBDIR += vrfy
-     SUBDIR += wmbiff
-     SUBDIR += wmmail
      SUBDIR += wmmultipop3
      SUBDIR += wmpop3
      SUBDIR += xlbiff
