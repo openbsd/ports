@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/14 16:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/02 11:47:13 jasper Exp $
 
 COMMENT =	self-contained cryptographic library for Python
 
 # Using py-cryptodomex to prevent a conflict with py-crypto.
 # Switch to py-cryptodome when py-crypto has been removed.
 MODPY_EGG_VERSION =	3.6.1
-DISTNAME =	pycryptodomex-${MODPY_EGG_VERSION}
+DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
+REVISION =	0
 
 CATEGORIES =	security
 
