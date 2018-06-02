@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/18 23:34:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/02 13:57:12 sthen Exp $
 bin/urlwatch
 lib/python${MODPY_VERSION}/site-packages/urlwatch/
 lib/python${MODPY_VERSION}/site-packages/urlwatch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -14,7 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urlwatch/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urlwatch/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
