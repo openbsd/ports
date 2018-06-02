@@ -1,4 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.20 2018/05/25 14:01:24 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.21 2018/06/02 20:58:14 sthen Exp $
 
 CATEGORIES+=		lang/php
 
@@ -40,8 +40,11 @@ SUBST_VARS+=		MODPHP_VERSION
 # build a string that can be included in RUN_DEPENDS to match suitable PDO types
 MODPHP_PDO_ALLOWED?=	mysql pgsql sqlite
 MODPHP_PDO_PREF?=	sqlite
-.for i in ${MODPHP_PDO_ALLOWED}
+MODPHP_PDO_DEPENDS=
+.for i in $(MODPHP_PDO_PREF) ${MODPHP_PDO_ALLOWED}
+.  if !${MODPHP_PDO_DEPENDS:M*pdo_$i*}
 MODPHP_PDO_DEPENDS:=	${MODPHP_PDO_DEPENDS}php-pdo_$i-${MODPHP_VSPEC}|
+.  endif
 .endfor
 MODPHP_PDO_DEPENDS:=	${MODPHP_PDO_DEPENDS:S/|$//}:lang/php/${MODPHP_VERSION},-pdo_${MODPHP_PDO_PREF}
 
