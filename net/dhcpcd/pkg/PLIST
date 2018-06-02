@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/06 10:11:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/02 11:45:15 sthen Exp $
 @extraunexec rm ${LOCALSTATEDIR}/db/dhcpcd/*
-@sample ${LOCALSTATEDIR}/db/dhcpcd/
-@comment handle DUID file move for a smoother transition to 7.0
-@exec-update [[ ! -f ${LOCALSTATEDIR}/db/dhcpcd/duid ]] && [[ -r /etc/dhcpcd.duid ]] && cp ${SYSCONFDIR}/dhcpcd.duid ${LOCALSTATEDIR}/db/dhcpcd/duid; true
+@rcscript ${RCDIR}/dhcpcd
 libexec/dhcpcd-hooks/
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/02-dump
@@ -24,4 +22,6 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dhcpcd/
 share/examples/dhcpcd/dhcpcd.conf
 @sample ${SYSCONFDIR}/dhcpcd.conf
-@rcscript ${RCDIR}/dhcpcd
+@sample ${LOCALSTATEDIR}/db/dhcpcd/
+@comment handle DUID file move for a smoother transition to 7.0
+@exec-update [[ ! -f ${LOCALSTATEDIR}/db/dhcpcd/duid ]] && [[ -r ${SYSCONFDIR}/dhcpcd.duid ]] && cp ${SYSCONFDIR}/dhcpcd.duid ${LOCALSTATEDIR}/db/dhcpcd/duid; true
