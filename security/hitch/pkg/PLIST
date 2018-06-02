@@ -1,6 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/02 09:51:33 kn Exp $
 @newgroup _hitch:807
 @newuser _hitch:807:_hitch:daemon:Hitch TLS proxy:/var/hitch:/sbin/nologin
+@rcscript ${RCDIR}/hitch
+@extraunexec rm -rf ${LOCALSTATEDIR}/hitch/*
+@mode 700
+@owner _hitch
+@group _hitch
+@sample ${LOCALSTATEDIR}/hitch/
+@mode
+@owner
+@group
 @man man/man5/hitch.conf.5
 @man man/man8/hitch.8
 @bin sbin/hitch
@@ -15,6 +24,3 @@ share/doc/hitch/proxy-protocol.md
 share/doc/hitch/vhosts.md
 share/examples/hitch/
 share/examples/hitch/hitch.conf.example
-@exec-add mkdir -p /var/hitch
-@extraunexec rm -rf /var/hitch
-@rcscript ${RCDIR}/hitch
