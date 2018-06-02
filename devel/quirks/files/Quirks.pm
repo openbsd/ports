@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.615 2018/06/02 11:47:13 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.616 2018/06/02 12:04:48 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1312,6 +1312,8 @@ my $obsolete_reason = {
 	'wmbiff' => 0,
 	'wmmail' => 0,
 	'wmtimer' => 0,
+	'py-crypto' => 3,
+	'py3-crypto' => 3,
 };
 
 # reasons for obsolete packages
