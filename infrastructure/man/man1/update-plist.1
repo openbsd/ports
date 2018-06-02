@@ -1,4 +1,4 @@
-.\"	$OpenBSD: update-plist.1,v 1.14 2018/05/31 09:49:20 espie Exp $
+.\"	$OpenBSD: update-plist.1,v 1.15 2018/06/02 09:52:22 espie Exp $
 .\"
 .\" Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 31 2018 $
+.Dd $Mdocdate: June 2 2018 $
 .Dt UPDATE-PLIST 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Ev PORTSDIR Ns = Ns Ar path
 .Op Ev FAKE_TREE_OWNER Ns = Ns Ar user Ev PORTS_TREE_OWNER Ns = Ns Ar user Nm doas
-.Nm update-plist
+.Nm
 .Op Fl Fmnqrvx
 .Op Fl C Ar dir
 .Op Fl E Ar ext
@@ -80,9 +80,9 @@ Use a cache directory
 .Ar dir
 for scanning dependencies.
 Beware that this directory should then be cleaned manually if the
-dependencies plists change.
-But this will speed up plist regeneration for ports with lots of dependencies
-significantly.
+dependencies's packing-lists change.
+But this will speed up packing-list regeneration for ports with
+lots of dependencies significantly.
 .It Fl E Ar ext
 Write new files with
 .Ar ext
@@ -110,7 +110,7 @@ pipes.
 Default is
 .Sq hw.ncpu .
 .It Fl n
-Do not move the final plists in position. Instead, leave the
+Do not move the final packing-lists in position. Instead, leave the
 .Pa <file>.new
 files for comparison.
 .It Fl q
@@ -150,7 +150,7 @@ from the information recorded in the packing-list.
 .Nm
 assumes all multi-packages live under the same installation directory
 .Po
-.Xr pkg_create 1 's
+.Xr pkg_create 1 Ns 's
 .Fl B
 option
 .Pc ,
@@ -158,16 +158,30 @@ and it will scan all paths under that directory and dispatch
 them into corresponding subpackages, using the following heuristics:
 .Bl -bullet
 .It
-files that were in existing plist(s) will be kept in the same location
+files that were in existing packing-list(s) will be kept in the same
+packing-list.
 .It
 new files and directories will be put in the packing-list that owns
 the corresponding directory.
 .It
-baring that, new files will be put into the main packing-list.
+baring that, new files will be put into the first packing-list whose PREFIX
+fits.
 .El
 .Pp
 As far as possible, everything that looks like actual files will be sorted
 in alphabetical order, after variable substitutions.
+.Pp
+.Nm
+will warn for a lot of conditions, such as pre-formatted manpages, or files
+ending in pre-patch suffixes.
+Adding a
+.Cm @comment Ar intentional<reason>
+will silence the warning.
+For instance:
+.Bd -literal -offset indent
+@man man/ja_JP.EUC/cat1/kakasi.0
+@comment intentional: mandoc does't handle this locale
+.Ed
 .Pp
 .Nm
 will also scan dependencies, in order to strip common directories.
