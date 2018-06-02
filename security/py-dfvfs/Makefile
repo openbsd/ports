@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/30 09:10:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/02 12:01:58 jasper Exp $
 
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
 MODPY_EGG_VERSION = 20180510
 DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -37,10 +38,6 @@ RUN_DEPENDS +=	devel/py-construct \
 		sysutils/libvmdk \
 		sysutils/libvshadow \
 		sysutils/libvslvm
-
-# py-crypto -> py-cryptodome
-pre-patch:
-	sed -i 's,Crypto\.,Cryptodome\.,g' ${WRKSRC}/dfvfs/encryption/*.py
 
 do-test:
 	touch ${WRKSRC}/utils/__init__.py

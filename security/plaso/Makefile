@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/30 09:13:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_EGG_VERSION =	20180524
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
+REVISION =		0
 
 DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 

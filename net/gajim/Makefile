@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2018/05/21 06:10:43 feinerer Exp $
+# $OpenBSD: Makefile,v 1.82 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT=	jabber client written in pygtk
 MODPY_EGG_VERSION=	1.0.3
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
+REVISION=	0
 CATEGORIES=	net x11
 
 HOMEPAGE=	https://www.gajim.org

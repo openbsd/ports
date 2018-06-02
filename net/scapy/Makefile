@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/14 06:54:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2018/06/02 12:01:58 jasper Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION=	2.3.3
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		net
 
@@ -35,20 +35,6 @@ PKG_ARCH=	*
 
 post-extract:
 	gunzip ${WRKSRC}/doc/scapy.1.gz
-
-# py-crypto -> py-cryptodome
-_PYCRYPTO =	scapy/layers/dot11.py \
-		scapy/layers/ipsec.py \
-		scapy/layers/ntp.py \
-		scapy/layers/tls/cert.py \
-		scapy/layers/tls/crypto/pkcs1.py \
-		scapy/layers/tls/__init__.py \
-		scapy/contrib/ospf.py
-
-pre-patch:
-.for f in ${_PYCRYPTO}
-	sed -i 's,from Crypto,from Cryptodome,g' ${WRKSRC}/$f
-.endfor
 
 pre-configure:
 	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \

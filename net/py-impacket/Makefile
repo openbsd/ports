@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/12 21:01:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT =		Python classes providing access to network packets
 
 MODPY_EGG_VERSION =	0.9.15
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 EPOCH =			0
 CATEGORIES =   		net security
 
@@ -38,10 +38,6 @@ RUN_DEPENDS =		devel/py-asn1>=0.1.7 \
 			security/py-openssl
 
 NO_TEST =		Yes
-
-# py-crypto -> py-cryptodome
-pre-patch:
-	sed -i 's,Crypto\.,Cryptodome\.,g' ${WRKSRC}/**/*.py
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \

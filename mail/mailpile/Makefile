@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/18 20:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
 GH_ACCOUNT =	mailpile
 GH_PROJECT =	Mailpile
 GH_TAGNAME =	1.0.0rc2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	mail
 

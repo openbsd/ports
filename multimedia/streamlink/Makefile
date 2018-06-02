@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/13 07:10:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT =	pipe video streams into a video player
 CATEGORIES =	multimedia net
@@ -6,7 +6,7 @@ CATEGORIES =	multimedia net
 GH_ACCOUNT =	streamlink
 GH_PROJECT =	streamlink
 GH_TAGNAME =	0.12.1
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -34,10 +34,5 @@ TEST_DEPENDS =	devel/py-country${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
 		www/py-requests-mock${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
-
-# py-crypto -> py-cryptodome
-pre-patch:
-	sed -i 's,Crypto\.,Cryptodome\.,g' ${WRKSRC}/tests/*.py \
-		${WRKSRC}/src/streamlink/*/*.py
 
 .include <bsd.port.mk>

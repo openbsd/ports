@@ -4,7 +4,7 @@ COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.6
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.zip
 
@@ -30,12 +30,6 @@ RUN_DEPENDS =	security/distorm3 \
 WRKDIST = 	${WRKDIR}/volatility-master
 
 NO_TEST =		Yes
-
-# py-crypto -> py-cryptodome
-pre-patch:
-	sed -i 's,Crypto\.,Cryptodome\.,g' ${WRKSRC}/volatility/win32/domcachedump.py \
-		${WRKSRC}/volatility/win32/hashdump.py \
-		${WRKSRC}/volatility/win32/lsasecrets.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/volatility/

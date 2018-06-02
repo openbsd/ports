@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2018/05/14 18:54:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/02 12:01:59 jasper Exp $
 
 COMMENT =		toolkit for safe and simple cryptography
 
 MODPY_EGG_VERSION =	0.716
 DISTNAME =		python-keyczar-${MODPY_EGG_VERSION}
 PKGNAME =		py-keyczar-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 CATEGORIES =		security

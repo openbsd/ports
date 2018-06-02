@@ -1,6 +1,4 @@
-$OpenBSD: patch-yubiserve_py,v 1.7 2018/05/14 06:55:45 jasper Exp $
-
-py-crypto -> py-cryptodome
+$OpenBSD: patch-yubiserve_py,v 1.8 2018/06/02 12:01:59 jasper Exp $
 
 sqlite3 support from
 http://code.google.com/p/yubico-yubiserve/source/list r39
@@ -11,16 +9,12 @@ and they wrap after between 0 and 24-and-a-bit days uptime causing failures.
 Index: yubiserve.py
 --- yubiserve.py.orig
 +++ yubiserve.py
-@@ -1,7 +1,7 @@
+@@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!${MODPY_BIN}
  import re, os, time, socket
  import urlparse, SocketServer, urllib, BaseHTTPServer
--from Crypto.Cipher import AES
-+from Cryptodome.Cipher import AES
- from OpenSSL import SSL
- import hmac, hashlib
- from threading import Thread
+ from Crypto.Cipher import AES
 @@ -10,12 +10,16 @@ try:
  except ImportError:
  	pass
