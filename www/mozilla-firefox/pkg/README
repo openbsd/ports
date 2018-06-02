@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.18 2018/05/18 19:36:47 landry Exp $
+$OpenBSD: README,v 1.19 2018/06/02 11:45:27 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -83,7 +83,7 @@ layers.acceleration.force-enable knob to true.  Check the 'Decision log'
 section in about:support to see whether HW_COMPOSITING and OPENGL_COMPOSITING
 are enabled.
 
-Similarly, for the rust-base WebRender compositor, it is enabled by setting
+Similarly, for the rust-based WebRender compositor, it is enabled by setting
 MOZ_WEBRENDER=1 in the environment, or by switching the about:config
 gfx.webrender.enabled knob to true. Check it is enabled in the 'Features'
 section of about:support. For this feature, WebGL2 is necessary, so your
