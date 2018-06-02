@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.16 2018/03/19 20:57:20 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2018/06/02 14:03:24 sthen Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
 CATEGORIES =	lang
 
 # Erlang 16/17: Erlang Public License
-# 	 	http://www.erlang.org/EPLICENSE
+#		http://www.erlang.org/EPLICENSE
 # Erlang 18:	Apachev2
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.erlang.org/
 MASTER_SITES ?=	${HOMEPAGE}download/
 
 DISTFILES ?=	${DISTNAME}.tar.gz \
-	  	otp_doc_man_${V}.tar.gz
+		otp_doc_man_${V}.tar.gz
 
 EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
 
@@ -21,7 +21,7 @@ CONFIGURE_STYLE ?=	autoconf no-autoheader
 CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION ?=	2.59
 AUTOCONF_DIR ?=		${WRKSRC} \
-	     		${WRKSRC}/erts \
+			${WRKSRC}/erts \
 			${WRKSRC}/lib/wx/
 MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/06/01 15:32:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/02 14:03:24 sthen Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
@@ -9,6 +9,7 @@ V=		17.5
 MAJ_V=		17
 EPOCH=		0
 DISTNAME=	otp_src_$V
+PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
@@ -23,8 +24,8 @@ BUILD_DEPENDS+=	textproc/libxslt
 
 CONFIGURE_ARGS+=--without-jinterface	\
 		--without-odbc		\
-		--enable-threads 	\
-		--enable-kernel-poll \
+		--enable-threads	\
+		--enable-kernel-poll	\
 		--disable-hipe
 
 MULTI_PACKAGES = -main -wx
