@@ -1,7 +1,8 @@
-$OpenBSD: patch-agent_mibgroup_mibII_ipAddr_c,v 1.4 2014/12/09 15:20:06 sthen Exp $
---- agent/mibgroup/mibII/ipAddr.c.orig	Wed Feb 27 14:42:24 2013
-+++ agent/mibgroup/mibII/ipAddr.c	Wed Feb 27 15:38:13 2013
-@@ -757,10 +757,10 @@ static int      nifs;
+$OpenBSD: patch-agent_mibgroup_mibII_ipAddr_c,v 1.5 2018/06/02 20:53:37 sthen Exp $
+Index: agent/mibgroup/mibII/ipAddr.c
+--- agent/mibgroup/mibII/ipAddr.c.orig
++++ agent/mibgroup/mibII/ipAddr.c
+@@ -758,10 +758,10 @@ static int      nifs;
  static void
  get_iflist(void)
  {
@@ -14,7 +15,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_ipAddr_c,v 1.4 2014/12/09 15:20:06 sthen Ex
      size_t          len;
      struct rt_msghdr *rtm;
      struct if_msghdr *ifm;
-@@ -786,63 +786,57 @@ get_iflist(void)
+@@ -787,63 +787,57 @@ get_iflist(void)
          return;
      }
  

@@ -1,7 +1,11 @@
-$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_openbsd_c,v 1.1 2015/09/11 16:33:05 sthen Exp $
---- agent/mibgroup/if-mib/data_access/interface_openbsd.c.orig	Fri Sep 11 10:30:14 2015
-+++ agent/mibgroup/if-mib/data_access/interface_openbsd.c	Fri Sep 11 10:31:45 2015
-@@ -333,7 +333,8 @@ netsnmp_openbsd_interface_get_if_speed(char *name, u_i
+$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_openbsd_c,v 1.2 2018/06/02 20:53:37 sthen Exp $
+
+ifm_media changed from u_int to uint64_t in OpenBSD 5.9
+
+Index: agent/mibgroup/if-mib/data_access/interface_openbsd.c
+--- agent/mibgroup/if-mib/data_access/interface_openbsd.c.orig
++++ agent/mibgroup/if-mib/data_access/interface_openbsd.c
+@@ -334,7 +334,8 @@ netsnmp_openbsd_interface_get_if_speed(char *name, u_i
  {
      int s;
      struct ifmediareq ifmr;
@@ -11,7 +15,7 @@ $OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_openbsd_c,v 1.1 2015
      u_int t_speed, t_speed_high; 
      u_int m_speed, m_speed_high;
  
-@@ -360,7 +361,7 @@ netsnmp_openbsd_interface_get_if_speed(char *name, u_i
+@@ -361,7 +362,7 @@ netsnmp_openbsd_interface_get_if_speed(char *name, u_i
      _openbsd_interface_ifmedia_to_speed(ifmr.ifm_current, speed, speed_high);
  
      if (*speed == 0 &&

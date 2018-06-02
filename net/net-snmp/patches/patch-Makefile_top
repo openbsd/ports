@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_top,v 1.16 2014/12/09 15:20:06 sthen Exp $
---- Makefile.top.orig	Sat Aug  9 03:49:58 2014
-+++ Makefile.top	Mon Aug 11 23:29:23 2014
-@@ -39,6 +39,8 @@ LIBTOOLCLEAN	= $(LIBTOOL) --mode=clean rm -f
+$OpenBSD: patch-Makefile_top,v 1.17 2018/06/02 20:53:37 sthen Exp $
+Index: Makefile.top
+--- Makefile.top.orig
++++ Makefile.top
+@@ -40,6 +40,8 @@ LIBTOOLCLEAN	= $(LIBTOOL) --mode=clean rm -f
  FEATURECHECK	= $(top_srcdir)/local/minimalist/feature-check
  FEATUREPROCESS	= $(top_srcdir)/local/minimalist/feature-remove
  INSTALL_DATA    = @INSTALL_DATA@
@@ -10,9 +11,9 @@ $OpenBSD: patch-Makefile_top,v 1.16 2014/12/09 15:20:06 sthen Exp $
  SED		= @SED@
  LN_S		= @LN_S@
  AUTOCONF	= @AUTOCONF@
-@@ -84,7 +86,7 @@ LIBCURRENT  = 30
+@@ -86,7 +88,7 @@ LIBCURRENT  = 35
  LIBAGE      = 0
- LIBREVISION = 3
+ LIBREVISION = 0
  
 -LIB_LD_CMD      = $(LIBTOOL) --mode=link $(LINKCC) $(CFLAGS) -rpath $(libdir) -version-info $(LIBCURRENT):$(LIBREVISION):$(LIBAGE) -o
 +LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -o

@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.99 2018/06/01 15:35:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2018/06/02 20:53:37 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.7.3
-REVISION-main=	16
+V=		5.8.rc3
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
-PKGNAME-main=	net-snmp-$V
-PKGNAME-tkmib=	net-snmp-tkmib-$V
+PKGNAME-main=	net-snmp-${V:S/.rc/rc/}
+PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.rc/rc/}
 
-LIBV=		14.0
+# tkmib isn't flavoured
+FULLPKGPATH-tkmib= net/net-snmp,-tkmib
+FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.rc/rc/}
+
+LIBV=		15.0
 .for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd
 SHARED_LIBS +=	$i ${LIBV}
 .endfor
@@ -26,12 +29,15 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=		c crypto kvm m perl pthread
+WANTLIB-main=		c crypto kvm m perl
+
+FLAVORS=		readonly
+FLAVOR?=
 
 RUN_DEPENDS-tkmib=	net/net-snmp \
 			x11/p5-Tk
 
-NET_SNMP_MIB_LIST=	smux mibII/mta_sendmail
+NET_SNMP_MIB_LIST=	mibII/mta_sendmail
 
 # set the default mib search list:
 # - net-snmp default mibs (include/net-snmp/net-snmp-config.h.in)
@@ -41,8 +47,7 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
 
-CONFIGURE_STYLE=  autoconf
-AUTOCONF_VERSION= 2.68
+CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS=   --enable-ipv6 \
 	--enable-mfd-rewrites \
 	--with-copy-persistent-files="no" \
@@ -58,12 +63,17 @@ CONFIGURE_ARGS=   --enable-ipv6 \
 CONFIGURE_ENV=	ac_cv_IFNET_NEEDS_KERNEL=no
 TEST_TARGET=	test
 
+.if ${FLAVOR:Mreadonly}
+CONFIGURE_ARGS+= --enable-read-only
+.else
+NET_SNMP_MIB_LIST+= smux
+.endif
+
 pre-configure:
 	@if ! grep '^#define NETSNMP_DEFAULT_MIBS "${DEFAULT_MIBS}"$$' \
 	    ${WRKSRC}/include/net-snmp/net-snmp-config.h.in > /dev/null; then \
 	    echo 'DEFAULT_MIBS in the port Makefile is out of sync'; exit 1; fi
 	@perl -pi -e 's,(snmpd\(8\)|snmpd\.conf\(5\)),netsnmp-\1,' ${WRKSRC}/man/*
-	rm ${WRKSRC}/include/net-snmp/system/openbsd[0-9].h
 
 post-install:
 	@perl -pi -e 's,^(#define[ ]PACKAGE_.*)$$,/* $$1 */,' \

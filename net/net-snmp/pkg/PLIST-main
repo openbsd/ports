@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2016/05/12 22:00:14 sthen Exp $
-@newgroup _netsnmp:760
-@newuser _netsnmp:760:_netsnmp:daemon:Net-SNMP user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.22 2018/06/02 20:53:37 sthen Exp $
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
+@newgroup _netsnmp:760
+@newuser _netsnmp:760:_netsnmp:daemon:Net-SNMP user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/net-snmp/*
+!%%readonly%%
+@rcscript ${RCDIR}/netsnmpd
+@rcscript ${RCDIR}/netsnmptrapd
+@sample ${LOCALSTATEDIR}/net-snmp/
+@extra ${SYSCONFDIR}/snmp/snmp.conf
+@extra ${SYSCONFDIR}/snmp/snmptrapd.conf
 @bin bin/agentxtrap
-@bin bin/encode_keychange
+bin/checkbandwidth
 bin/fixproc
 @comment bin/ipf-mod.pl
 bin/mib2c
@@ -17,7 +23,6 @@ bin/net-snmp-create-v3-user
 bin/snmp-bridge-mib
 @bin bin/snmpbulkget
 @bin bin/snmpbulkwalk
-bin/snmpcheck
 bin/snmpconf
 @bin bin/snmpdelta
 @bin bin/snmpdf
@@ -25,14 +30,13 @@ bin/snmpconf
 @bin bin/snmpgetnext
 bin/snmpinform
 @bin bin/snmpnetstat
-@bin bin/snmpset
+@comment @bin bin/snmpps
 @bin bin/snmpstatus
 @bin bin/snmptable
 @bin bin/snmptest
+@comment bin/snmptop
 @bin bin/snmptranslate
 @bin bin/snmptrap
-@bin bin/snmpusm
-@bin bin/snmpvacm
 @bin bin/snmpwalk
 bin/traptoemail
 include/net-snmp/
@@ -60,6 +64,7 @@ include/net-snmp/agent/mib_modules.h
 include/net-snmp/agent/mode_end_call.h
 include/net-snmp/agent/multiplexer.h
 include/net-snmp/agent/net-snmp-agent-includes.h
+include/net-snmp/agent/netsnmp_close_fds.h
 include/net-snmp/agent/null.h
 include/net-snmp/agent/old_api.h
 include/net-snmp/agent/read_only.h
@@ -116,6 +121,7 @@ include/net-snmp/library/lcd_time.h
 include/net-snmp/library/md5.h
 include/net-snmp/library/mib.h
 include/net-snmp/library/mt_support.h
+include/net-snmp/library/netsnmp-attribute-format.h
 include/net-snmp/library/oid.h
 include/net-snmp/library/oid_stash.h
 include/net-snmp/library/parse.h
@@ -179,6 +185,13 @@ include/net-snmp/system/bsdi4.h
 include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
 include/net-snmp/system/darwin10.h
+include/net-snmp/system/darwin11.h
+include/net-snmp/system/darwin12.h
+include/net-snmp/system/darwin13.h
+include/net-snmp/system/darwin14.h
+include/net-snmp/system/darwin15.h
+include/net-snmp/system/darwin16.h
+include/net-snmp/system/darwin17.h
 include/net-snmp/system/darwin7.h
 include/net-snmp/system/darwin8.h
 include/net-snmp/system/darwin9.h
@@ -199,11 +212,17 @@ include/net-snmp/system/freebsd9.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
+include/net-snmp/system/kfreebsd.h
 include/net-snmp/system/linux.h
 include/net-snmp/system/mingw32.h
+include/net-snmp/system/mingw32msvc.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
+include/net-snmp/system/nto-qnx6.h
 include/net-snmp/system/openbsd.h
+include/net-snmp/system/openbsd4.h
+include/net-snmp/system/openbsd5.h
+include/net-snmp/system/openbsd6.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
@@ -235,7 +254,7 @@ lib/libnetsnmptrapd.la
 @lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/Makefile.subs.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/MakefileSubs.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/ASN.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/OID.pm
@@ -288,10 +307,12 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/autosplit.ix
 @man man/man1/snmpgetnext.1
 @man man/man1/snmpinform.1
 @man man/man1/snmpnetstat.1
+@man man/man1/snmpps.1
 @man man/man1/snmpset.1
 @man man/man1/snmpstatus.1
 @man man/man1/snmptable.1
 @man man/man1/snmptest.1
+@man man/man1/snmptop.1
 @man man/man1/snmptranslate.1
 @man man/man1/snmptrap.1
 @man man/man1/snmpusm.1
@@ -508,6 +529,7 @@ share/snmp/mib2c.iterate_access.conf
 share/snmp/mib2c.mfd.conf
 share/snmp/mib2c.notify.conf
 share/snmp/mib2c.old-api.conf
+share/snmp/mib2c.org-mode.conf
 share/snmp/mib2c.perl.conf
 share/snmp/mib2c.raw-table.conf
 share/snmp/mib2c.scalar.conf
@@ -566,6 +588,7 @@ share/snmp/mibs/SNMP-TSM-MIB.txt
 share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
 share/snmp/mibs/SNMP-USM-AES-MIB.txt
 share/snmp/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
+share/snmp/mibs/SNMP-USM-HMAC-SHA2-MIB.txt
 share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
 share/snmp/mibs/SNMPv2-CONF.txt
 share/snmp/mibs/SNMPv2-MIB.txt
@@ -606,8 +629,3 @@ share/snmp/snmpconf-data/snmptrapd-data/logging
 share/snmp/snmpconf-data/snmptrapd-data/runtime
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
-@sample /var/net-snmp/
-@extra ${SYSCONFDIR}/snmp/snmp.conf
-@extra ${SYSCONFDIR}/snmp/snmptrapd.conf
-@rcscript ${RCDIR}/netsnmpd
-@rcscript ${RCDIR}/netsnmptrapd

@@ -1,22 +1,26 @@
 Simple Network Management Protocol (SNMP) is a widely used protocol for
-monitoring the health of network equipment (eg. routers), computer equipment
-and even devices like UPSs. Net-SNMP is a suite of applications used to
-implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6.
+monitoring health and statistics of many types of equipment (e.g. routers,
+computers, printers, power systems, environmental monitors, etc).
+Net-SNMP provides a library, daemons and utilities:
 
-This package includes the Net-SNMP library, snmpd (an extensible agent
-for responding to SNMP queries for management information with built-in
-support for a wide range of MIB information modules), snmptrapd (a daemon
-to receive and log or forward SNMP notifications), and various command-
-line applications to:
+- snmpd responds to SNMP queries. It has built-in support for a wide
+range of information, and can be extended. Not to be confused with the
+SNMP daemon in the OpenBSD base OS which is recommended in most cases.
+Manuals are netsnmp-snmpd(8) and netsnmp-snmpd.conf(5) to avoid conflict.
 
-- retrieve information from an SNMP-capable device, either using single
-  requests (snmpget, snmpgetnext), or multiple requests (snmpwalk,
-  snmptable, snmpdelta).
-- manipulate configuration information on an SNMP-capable device (snmpset).
-- retrieve a fixed collection of information from an SNMP-capable device
-  (snmpdf, snmpnetstat, snmpstatus).
-- convert between numerical and textual forms of MIB OIDs, and display
-  MIB content and structure (snmptranslate).
+- snmptrapd receives notifications from devices (TRAP and INFORM).
+It can log, run external handlers, or forward over the network.
 
-Note that to avoid conflicts, the snmpd.conf(5) and snmpd(8) manpages
-are installed with a "netsnmp-" prefix e.g. netsnmp-snmpd(8).
+- tools for standard queries (snmpget*, snmpwalk, snmpbulk*), writes
+(snmpset), and sending notifications (snmpinform, snmptrap).
+
+- tools with special output types; snmpdelta displays differences over
+time, snmptable collates information from SNMP tables (e.g. ifTable),
+and there are single-purpose tools like snmpstatus, snmpdf, snmpps,
+snmptop, snmpnetstat.
+
+- snmptransate converts between numerical and textual forms of MIB OIDs,
+and displays MIB content and structure>
+
+Flavor:
+	readonly - removes all SET support from the code.
