@@ -1,11 +1,12 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.17 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.18 2018/06/02 17:19:23 robert Exp $
+
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -453,7 +453,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -416,7 +416,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+                                           switches::kAudioOutputChannels));
      }
-   }
- 
+   } else if (process_type == switches::kGpuProcess) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Necessary for accelerated 2d canvas.  By default on Linux, Chromium assumes

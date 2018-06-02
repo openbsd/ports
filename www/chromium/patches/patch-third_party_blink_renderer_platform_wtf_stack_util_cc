@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_wtf_StackUtil_cpp,v 1.2 2017/09/09 19:16:43 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.1 2018/06/02 17:19:23 robert Exp $
 
-Index: third_party/WebKit/Source/platform/wtf/StackUtil.cpp
---- third_party/WebKit/Source/platform/wtf/StackUtil.cpp.orig
-+++ third_party/WebKit/Source/platform/wtf/StackUtil.cpp
+Index: third_party/blink/renderer/platform/wtf/stack_util.cc
+--- third_party/blink/renderer/platform/wtf/stack_util.cc.orig
++++ third_party/blink/renderer/platform/wtf/stack_util.cc
 @@ -16,6 +16,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif

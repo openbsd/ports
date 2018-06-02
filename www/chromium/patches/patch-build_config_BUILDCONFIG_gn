@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.9 2018/04/23 15:00:15 robert Exp $
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.10 2018/06/02 17:19:23 robert Exp $
 
 Index: build/config/BUILDCONFIG.gn
 --- build/config/BUILDCONFIG.gn.orig
@@ -29,16 +29,16 @@ Index: build/config/BUILDCONFIG.gn
    } else {
      assert(false, "Unsupported host_os: $host_os")
    }
-@@ -255,6 +257,8 @@ if (target_os == "android") {
- } else if (target_os == "winrt_81" || target_os == "winrt_81_phone" ||
-            target_os == "winrt_10") {
-   _default_toolchain = "//build/toolchain/win:winrt_$target_cpu"
+@@ -258,6 +260,8 @@ if (target_os == "android") {
+   _default_toolchain = "//build/toolchain/win:uwp_$target_cpu"
+ } else if (target_os == "aix") {
+   _default_toolchain = "//build/toolchain/aix:$target_cpu"
 +} else if (target_os == "openbsd") {
 +  _default_toolchain = host_toolchain
  } else {
    assert(false, "Unsupported target_os: $target_os")
  }
-@@ -296,6 +300,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -298,6 +302,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = false
    is_win = true
@@ -46,7 +46,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "mac") {
    is_android = false
    is_chromeos = false
-@@ -306,6 +311,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -308,6 +313,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -54,7 +54,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "android") {
    is_android = true
    is_chromeos = false
-@@ -316,6 +322,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -318,6 +324,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -62,7 +62,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "chromeos") {
    is_android = false
    is_chromeos = true
-@@ -326,6 +333,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -328,6 +335,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -70,7 +70,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
    # It is not set by default or on the command line. We treat is as a
-@@ -339,6 +347,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -341,6 +349,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = true
    is_posix = true
    is_win = false
@@ -78,15 +78,15 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "fuchsia") {
    is_android = false
    is_chromeos = false
-@@ -349,6 +358,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -351,6 +360,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
-   is_posix = true
+   is_posix = false
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "ios") {
    is_android = false
    is_chromeos = false
-@@ -359,6 +369,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -361,6 +371,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -94,7 +94,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "linux") {
    is_android = false
    is_chromeos = false
-@@ -369,6 +380,7 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -371,6 +382,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -102,7 +102,7 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "aix") {
    is_android = false
    is_chromeos = false
-@@ -379,6 +391,18 @@ if (current_os == "win" || current_os == "winrt_81" ||
+@@ -381,6 +393,18 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false

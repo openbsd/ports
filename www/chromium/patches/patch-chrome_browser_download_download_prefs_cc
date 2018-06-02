@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.11 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.12 2018/06/02 17:19:23 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
 +++ chrome/browser/download/download_prefs.cc
-@@ -61,7 +61,7 @@ namespace {
+@@ -62,7 +62,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
  bool DownloadPathIsDangerous(const base::FilePath& download_path) {
@@ -12,7 +12,7 @@ Index: chrome/browser/download/download_prefs.cc
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -140,7 +140,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
+@@ -141,7 +141,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
                                  GetDefaultDownloadDirectoryForProfile()));
  #endif  // defined(OS_CHROMEOS)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/download/download_prefs.cc
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -227,7 +227,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -228,7 +228,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -30,7 +30,7 @@ Index: chrome/browser/download/download_prefs.cc
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if defined(OS_ANDROID)
-@@ -332,7 +332,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -333,7 +333,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  }
  
  bool DownloadPrefs::IsAutoOpenUsed() const {
@@ -39,7 +39,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -346,7 +346,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
+@@ -347,7 +347,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
      return false;
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
@@ -48,7 +48,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -383,7 +383,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
+@@ -384,7 +384,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
    SaveAutoOpenState();
  }
  
@@ -57,7 +57,7 @@ Index: chrome/browser/download/download_prefs.cc
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -404,7 +404,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -405,7 +405,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {

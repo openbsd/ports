@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.78 2018/04/26 19:41:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.79 2018/06/02 17:19:23 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -332,22 +332,26 @@ chrome/resources/inspector/network_test_runner/
 chrome/resources/inspector/network_test_runner/network_test_runner_module.js
 chrome/resources/inspector/node_app.html
 chrome/resources/inspector/node_app.js
+chrome/resources/inspector/node_debugger/
+chrome/resources/inspector/node_debugger/node_debugger_module.js
 chrome/resources/inspector/object_ui/
 chrome/resources/inspector/object_ui/object_ui_module.js
 chrome/resources/inspector/perf_ui/
 chrome/resources/inspector/perf_ui/perf_ui_module.js
+chrome/resources/inspector/performance_monitor/
+chrome/resources/inspector/performance_monitor/performance_monitor_module.js
 chrome/resources/inspector/performance_test_runner/
 chrome/resources/inspector/performance_test_runner/performance_test_runner_module.js
 chrome/resources/inspector/product_registry_impl/
 chrome/resources/inspector/product_registry_impl/product_registry_impl_module.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler_module.js
+chrome/resources/inspector/protocol_monitor/
+chrome/resources/inspector/protocol_monitor/protocol_monitor_module.js
 chrome/resources/inspector/quick_open/
 chrome/resources/inspector/quick_open/quick_open_module.js
 chrome/resources/inspector/resources/
 chrome/resources/inspector/resources/resources_module.js
-chrome/resources/inspector/screencast/
-chrome/resources/inspector/screencast/screencast_module.js
 chrome/resources/inspector/sdk_test_runner/
 chrome/resources/inspector/sdk_test_runner/sdk_test_runner_module.js
 chrome/resources/inspector/search/

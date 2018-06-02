@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.6 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.7 2018/06/02 17:19:23 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -74,7 +74,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
+@@ -87,7 +87,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
        tab_strip_(tab_strip),
        is_incognito_(tab_strip->IsIncognito()) {
    set_animate_on_state_change(true);

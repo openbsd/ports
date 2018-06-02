@@ -1,7 +1,8 @@
-$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.4 2017/03/14 12:18:54 robert Exp $
---- components/neterror/resources/neterror.js.orig.port	Fri Mar 10 10:02:29 2017
-+++ components/neterror/resources/neterror.js	Fri Mar 10 10:02:45 2017
-@@ -150,7 +150,7 @@ function setUpCachedButton(buttonStrings) {
+$OpenBSD: patch-components_neterror_resources_neterror_js,v 1.5 2018/06/02 17:19:23 robert Exp $
+Index: components/neterror/resources/neterror.js
+--- components/neterror/resources/neterror.js.orig
++++ components/neterror/resources/neterror.js
+@@ -153,7 +153,7 @@ function setUpCachedButton(buttonStrings) {
  }
  
  var primaryControlOnLeft = true;

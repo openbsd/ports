@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_skia_FontCacheSkia_cpp,v 1.20 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.1 2018/06/02 17:19:23 robert Exp $
 
-Index: third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig
-+++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp
+Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
+--- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig
++++ third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 @@ -60,7 +60,7 @@ AtomicString ToAtomicString(const SkString& str) {
    return AtomicString::FromUTF8(str.c_str(), str.size());
  }

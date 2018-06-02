@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.13 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.14 2018/06/02 17:19:23 robert Exp $
 Index: third_party/angle/BUILD.gn
 --- third_party/angle/BUILD.gn.orig
 +++ third_party/angle/BUILD.gn
@@ -10,7 +10,7 @@ Index: third_party/angle/BUILD.gn
        ]
      }
    }
-@@ -813,10 +814,6 @@ foreach(is_shared_library,
+@@ -812,10 +813,6 @@ foreach(is_shared_library,
  
      if (is_linux) {
        sources += rebase_path(util_gypi.util_linux_sources, ".", "util")

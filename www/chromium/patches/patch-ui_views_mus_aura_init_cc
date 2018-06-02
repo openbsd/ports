@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.9 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-ui_views_mus_aura_init_cc,v 1.10 2018/06/02 17:19:23 robert Exp $
 
 Index: ui/views/mus/aura_init.cc
 --- ui/views/mus/aura_init.cc.orig
@@ -9,7 +9,7 @@ Index: ui/views/mus/aura_init.cc
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- #include "components/font_service/public/cpp/font_loader.h"
+ #include "components/services/font/public/cpp/font_loader.h"
  #include "ui/gfx/platform_font_linux.h"
  #endif
 @@ -59,7 +59,7 @@ AuraInit::AuraInit() {

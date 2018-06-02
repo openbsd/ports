@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.1 2018/04/25 09:23:38 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.2 2018/06/02 17:19:23 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig
@@ -14,7 +14,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    int statm_fd = autoclose.get();
  
 @@ -203,6 +206,7 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
-   dump->resident_set_kb = process_metrics->GetWorkingSetSize() / 1024;
+   dump->resident_set_kb = process_metrics->GetResidentSetSize() / 1024;
  
    return true;
 +#endif

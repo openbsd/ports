@@ -1,8 +1,8 @@
-$OpenBSD: patch-device_usb_BUILD_gn,v 1.9 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-device_usb_BUILD_gn,v 1.10 2018/06/02 17:19:23 robert Exp $
 Index: device/usb/BUILD.gn
 --- device/usb/BUILD.gn.orig
 +++ device/usb/BUILD.gn
-@@ -108,7 +108,7 @@ static_library("usb") {
+@@ -109,7 +109,7 @@ static_library("usb") {
      ]
    }
  

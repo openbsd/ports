@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.7 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.8 2018/06/02 17:19:23 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -56,7 +56,7 @@ extern const base::Feature kAsyncDns;
+@@ -52,7 +52,7 @@ extern const base::Feature kAsyncDns;
  extern const base::Feature kAutomaticTabDiscarding;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  
@@ -11,4 +11,13 @@ Index: chrome/common/chrome_features.h
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX)
+ 
+@@ -76,7 +76,7 @@ extern const base::Feature kDialogTouchBar;
+ extern const base::Feature kTabStripKeyboardFocus;
+ #endif  // defined(OS_MACOSX)
+ 
+-#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
+ extern const base::Feature kCertDualVerificationTrialFeature;
+ #endif
  

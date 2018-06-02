@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.15 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.16 2018/06/02 17:19:23 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
@@ -13,7 +13,7 @@ Index: tools/gn/bootstrap/bootstrap.py
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -662,6 +663,39 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -712,6 +713,39 @@ def write_gn_ninja(path, root_gen_dir, options, window
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }
  
@@ -53,7 +53,7 @@ Index: tools/gn/bootstrap/bootstrap.py
    if is_linux or is_aix:
      static_libraries['xdg_user_dirs'] = {
          'sources': [
-@@ -777,18 +811,6 @@ def write_gn_ninja(path, root_gen_dir, options):
+@@ -827,18 +861,6 @@ def write_gn_ninja(path, root_gen_dir, options, window
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',

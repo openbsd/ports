@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_editing_EditingBehavior_cpp,v 1.2 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_editing_editing_behavior_cc,v 1.1 2018/06/02 17:19:23 robert Exp $
 
-Index: third_party/WebKit/Source/core/editing/EditingBehavior.cpp
---- third_party/WebKit/Source/core/editing/EditingBehavior.cpp.orig
-+++ third_party/WebKit/Source/core/editing/EditingBehavior.cpp
+Index: third_party/blink/renderer/core/editing/editing_behavior.cc
+--- third_party/blink/renderer/core/editing/editing_behavior.cc.orig
++++ third_party/blink/renderer/core/editing/editing_behavior.cc
 @@ -270,7 +270,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
    // unexpected behaviour
    if (ch < ' ')

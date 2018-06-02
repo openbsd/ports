@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.5 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.6 2018/06/02 17:19:23 robert Exp $
 
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: third_party/sqlite/BUILD.gn
      cflags += [
        # SQLite doesn"t believe in compiler warnings,
        # preferring testing.
-@@ -242,7 +242,7 @@ component("chromium_sqlite3") {
+@@ -243,7 +243,7 @@ component("chromium_sqlite3") {
      ":sqlite_warnings",
    ]
  

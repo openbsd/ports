@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.10 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.11 2018/06/02 17:19:23 robert Exp $
 
 Index: chrome/app/settings_strings.grdp
 --- chrome/app/settings_strings.grdp.orig
 +++ chrome/app/settings_strings.grdp
-@@ -408,7 +408,7 @@
+@@ -453,7 +453,7 @@
        Themes
      </message>
    </if>
@@ -12,7 +12,7 @@ Index: chrome/app/settings_strings.grdp
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>
-@@ -422,7 +422,7 @@
+@@ -467,7 +467,7 @@
        Use Classic
      </message>
    </if>

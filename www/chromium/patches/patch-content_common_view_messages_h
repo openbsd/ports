@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_common_view_messages_h,v 1.12 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-content_common_view_messages_h,v 1.13 2018/06/02 17:19:23 robert Exp $
 Index: content/common/view_messages.h
 --- content/common/view_messages.h.orig
 +++ content/common/view_messages.h
-@@ -225,7 +225,7 @@ IPC_STRUCT_TRAITS_BEGIN(content::RendererPreferences)
+@@ -229,7 +229,7 @@ IPC_STRUCT_TRAITS_BEGIN(content::RendererPreferences)
    IPC_STRUCT_TRAITS_MEMBER(disable_client_blocked_error_page)
    IPC_STRUCT_TRAITS_MEMBER(plugin_fullscreen_allowed)
    IPC_STRUCT_TRAITS_MEMBER(network_contry_iso)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.8 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.9 2018/06/02 17:19:23 robert Exp $
 
 Index: content/browser/child_process_launcher_helper_linux.cc
 --- content/browser/child_process_launcher_helper_linux.cc.orig
 +++ content/browser/child_process_launcher_helper_linux.cc
-@@ -17,7 +17,9 @@
+@@ -18,7 +18,9 @@
  #include "content/public/common/content_switches.h"
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
@@ -13,7 +13,7 @@ Index: content/browser/child_process_launcher_helper_linux.cc
  #include "gpu/config/gpu_switches.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
  
-@@ -70,6 +72,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -71,6 +73,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -21,7 +21,7 @@ Index: content/browser/child_process_launcher_helper_linux.cc
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
-@@ -101,6 +104,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -102,6 +105,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      process.zygote = zygote_handle;
      return process;
    }
@@ -29,7 +29,7 @@ Index: content/browser/child_process_launcher_helper_linux.cc
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -118,10 +122,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
+@@ -119,10 +123,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead,
      int* exit_code) {
@@ -42,8 +42,8 @@ Index: content/browser/child_process_launcher_helper_linux.cc
    if (known_dead) {
      return base::GetKnownDeadTerminationStatus(
          process.process.Handle(), exit_code);
-@@ -140,13 +146,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
-     ChildProcessLauncherHelper::Process process) {
+@@ -144,13 +150,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+   DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
 +#if !defined(OS_BSD)

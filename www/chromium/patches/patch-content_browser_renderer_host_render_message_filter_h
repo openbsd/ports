@@ -1,8 +1,16 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.6 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.7 2018/06/02 17:19:23 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -122,7 +122,7 @@ class CONTENT_EXPORT RenderMessageFilter
+@@ -114,14 +114,14 @@ class CONTENT_EXPORT RenderMessageFilter
+       const url::Origin& cache_storage_origin,
+       const std::string& cache_storage_cache_name) override;
+   void HasGpuProcess(HasGpuProcessCallback callback) override;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void SetThreadPriority(int32_t ns_tid,
+                          base::ThreadPriority priority) override;
+ #endif
  
    void OnResolveProxy(const GURL& url, IPC::Message* reply_msg);
  

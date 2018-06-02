@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.12 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-media_base_video_frame_cc,v 1.13 2018/06/02 17:19:23 robert Exp $
 
 Index: media/base/video_frame.cc
 --- media/base/video_frame.cc.orig
@@ -39,7 +39,7 @@ Index: media/base/video_frame.cc
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
      std::vector<int> original_fds;
-@@ -742,7 +742,7 @@ size_t VideoFrame::shared_memory_offset() const {
+@@ -787,7 +787,7 @@ size_t VideoFrame::shared_memory_offset() const {
    return shared_memory_offset_;
  }
  

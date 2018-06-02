@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.15 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.16 2018/06/02 17:19:23 robert Exp $
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -1749,11 +1749,6 @@ jumbo_source_set("browser") {
+@@ -1729,11 +1729,6 @@ jumbo_source_set("browser") {
        "tracing/cros_tracing_agent.cc",
        "tracing/cros_tracing_agent.h",
      ]

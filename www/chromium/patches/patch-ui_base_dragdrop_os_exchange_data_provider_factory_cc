@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.4 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.5 2018/06/02 17:19:23 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_factory.cc
 --- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig
 +++ ui/base/dragdrop/os_exchange_data_provider_factory.cc
-@@ -9,7 +9,7 @@
+@@ -8,7 +8,7 @@
  
  #if defined(USE_X11)
  #include "ui/base/dragdrop/os_exchange_data_provider_aurax11.h"
@@ -12,7 +12,7 @@ Index: ui/base/dragdrop/os_exchange_data_provider_factory.cc
  #include "ui/base/dragdrop/os_exchange_data_provider_aura.h"
  #elif defined(OS_MACOSX)
  #include "ui/base/dragdrop/os_exchange_data_provider_builder_mac.h"
-@@ -43,7 +43,7 @@ OSExchangeDataProviderFactory::CreateProvider() {
+@@ -42,7 +42,7 @@ OSExchangeDataProviderFactory::CreateProvider() {
  
  #if defined(USE_X11)
    return std::make_unique<OSExchangeDataProviderAuraX11>();

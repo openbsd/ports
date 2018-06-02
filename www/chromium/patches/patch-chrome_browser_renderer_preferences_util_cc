@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.20 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.21 2018/06/02 17:19:23 robert Exp $
 Index: chrome/browser/renderer_preferences_util.cc
 --- chrome/browser/renderer_preferences_util.cc.orig
 +++ chrome/browser/renderer_preferences_util.cc
 @@ -20,7 +20,7 @@
- #include "third_party/WebKit/public/public_features.h"
+ #include "third_party/blink/public/public_buildflags.h"
  #include "third_party/skia/include/core/SkColor.h"
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2018/05/16 17:48:07 robert Exp $
+# $OpenBSD: Makefile,v 1.373 2018/06/02 17:19:23 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			66.0.3359.181
+V=			67.0.3396.62
 
 DISTNAME=		chromium-${V}
 
@@ -35,14 +35,6 @@ MODULES=	lang/python
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=	No
-
-.if ${PROPERTIES:Mclang}    
-PATCH_LIST=	patch-* clang-*                            
-.endif                      
-
-# XXX Missing directory from distfile
-#PATCHFILES+=		add-missing-blink-tools.patch:0	
-#PATCH_DIST_STRIP=	-p1
 
 PATCHORIG=	.orig.port
 

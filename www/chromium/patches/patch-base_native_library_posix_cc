@@ -1,7 +1,8 @@
-$OpenBSD: patch-base_native_library_posix_cc,v 1.2 2016/12/10 15:35:25 robert Exp $
---- base/native_library_posix.cc.orig.port	Fri Dec  2 17:54:51 2016
-+++ base/native_library_posix.cc	Fri Dec  2 17:55:04 2016
-@@ -30,7 +30,7 @@ NativeLibrary LoadNativeLibraryWithOptions(const FileP
+$OpenBSD: patch-base_native_library_posix_cc,v 1.3 2018/06/02 17:19:23 robert Exp $
+Index: base/native_library_posix.cc
+--- base/native_library_posix.cc.orig
++++ base/native_library_posix.cc
+@@ -29,7 +29,7 @@ NativeLibrary LoadNativeLibraryWithOptions(const FileP
    // http://crbug.com/17943, http://crbug.com/17557, http://crbug.com/36892,
    // and http://crbug.com/40794.
    int flags = RTLD_LAZY;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.7 2018/04/23 15:00:16 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.8 2018/06/02 17:19:23 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -96,7 +96,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
+@@ -85,7 +85,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  
@@ -12,3 +12,12 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
+@@ -142,7 +142,7 @@ const base::Feature kTabMetricsLogging{"TabMetricsLogg
+                                        base::FEATURE_ENABLED_BY_DEFAULT};
+ #endif
+ 
+-#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
+ // Enables the dual certificate verification trial feature.
+ // https://crbug.com/649026
+ const base::Feature kCertDualVerificationTrialFeature{
