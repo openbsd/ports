@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2018/05/13 13:38:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.509 2018/06/02 12:02:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -272,8 +272,6 @@
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-crack
      SUBDIR += py-cryptkit
-     SUBDIR += py-crypto
-     SUBDIR += py-crypto,python3
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
      SUBDIR += py-cryptography
