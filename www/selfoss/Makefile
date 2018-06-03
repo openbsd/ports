@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/22 08:18:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/06/03 08:17:03 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
 V=			2.18
 DISTNAME=		selfoss-$V
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
@@ -20,7 +20,8 @@ EXTRACT_SUFX=		.zip
 
 MODULES=		lang/php
 
-RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd
+RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
+			${MODPHP_PDO_DEPENDS}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

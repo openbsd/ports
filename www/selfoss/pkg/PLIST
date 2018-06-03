@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/29 09:37:07 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/06/03 08:17:03 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 selfoss/.htaccess
@@ -220,8 +220,8 @@ selfoss/public/win8-70-icon.png
 selfoss/public/win8-71-icon.png
 selfoss/run.php
 selfoss/selfoss.conf.dist
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/selfoss.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/selfoss.conf
 selfoss/spouts/
 selfoss/spouts/deviantart/
 selfoss/spouts/deviantart/dailydeviations.php
@@ -2072,5 +2072,5 @@ selfoss/vendor/willwashburn/phpamo/src/Formatter/FormatterInterface.php
 selfoss/vendor/willwashburn/phpamo/src/Formatter/HexFormatter.php
 selfoss/vendor/willwashburn/phpamo/src/Formatter/QueryStringFormatter.php
 selfoss/vendor/willwashburn/phpamo/src/Phpamo.php
-@cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+@cwd ${LOCALBASE}
+share/doc/pkg-readmes/${FULLPKGNAME}
