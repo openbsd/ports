@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.35 2017/02/07 09:38:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2018/06/03 11:19:25 ajacoutot Exp $
 
 COMMENT=		hardware identification and configuration data
 
-DISTNAME=		hwdata-0.297
-EXTRACT_SUFX=		.tar.bz2
+GH_ACCOUNT=		vcrhonek
+GH_PROJECT=		hwdata
+GH_TAGNAME=		v0.312
 
 CATEGORIES=		misc
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-HOMEPAGE=		http://git.fedorahosted.org/git/hwdata.git
-
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://fedorahosted.org/releases/h/w/hwdata/
 
 PKG_ARCH=		*
 NO_BUILD=		Yes

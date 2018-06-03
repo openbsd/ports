@@ -1,2 +1,5 @@
 hwdata contains various hardware identification and configuration data,
-such as the pci.ids and usb.ids databases.
+such as the pci.ids and usb.ids databases:
+- http://uefi.org/pnp_id_list                                                   
+- http://www.linux-usb.org/usb.ids                                              
+- https://raw.githubusercontent.com/pciutils/pciids/master/pci.ids
