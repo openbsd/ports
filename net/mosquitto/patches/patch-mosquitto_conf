@@ -1,8 +1,8 @@
-$OpenBSD: patch-mosquitto_conf,v 1.3 2018/04/23 08:41:07 jasper Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.4 2018/06/03 14:20:43 jasper Exp $
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
-@@ -32,7 +32,7 @@
+@@ -28,7 +28,7 @@
  # This should be set to /var/run/mosquitto.pid if mosquitto is
  # being run automatically on boot with an init script and 
  # start-stop-daemon or similar.
@@ -11,7 +11,7 @@ Index: mosquitto.conf
  
  # When run as root, drop privileges to this user and its primary 
  # group.
-@@ -40,7 +40,7 @@
+@@ -36,7 +36,7 @@
  # If run as a non-root user, this setting has no effect.
  # Note that on Windows this has no effect and so mosquitto should 
  # be started by the user you wish it to run as.
@@ -20,7 +20,7 @@ Index: mosquitto.conf
  
  # The maximum number of QoS 1 and 2 messages currently inflight per 
  # client.
-@@ -130,7 +130,7 @@
+@@ -157,7 +157,7 @@
  # given, the default listener will not be bound to a specific 
  # address and so will be accessible to all network interfaces.
  # bind_address ip-address/host name
@@ -29,7 +29,7 @@ Index: mosquitto.conf
  
  # Port to use for the default listener.
  #port 1883
-@@ -461,7 +461,7 @@
+@@ -494,7 +494,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.

@@ -1,8 +1,9 @@
-$OpenBSD: patch-test_Makefile,v 1.1 2017/04/15 20:46:16 sthen Exp $
---- test/Makefile.orig	Fri Apr 14 14:43:53 2017
-+++ test/Makefile	Fri Apr 14 14:44:39 2017
-@@ -16,32 +16,32 @@ test :
- 	$(MAKE) -C lib test
+$OpenBSD: patch-test_Makefile,v 1.2 2018/06/03 14:20:43 jasper Exp $
+Index: test/Makefile
+--- test/Makefile.orig
++++ test/Makefile
+@@ -20,32 +20,32 @@ ptest :
+ 	$(MAKE) -C lib ptest
  
  fake_user : fake_user.o
 -	${CC} $^ -o $@ ../lib/libmosquitto.so.${SOVERSION}
