@@ -1,0 +1,4 @@
+The truncate utility adjusts the length of each regular file given on
+the command-line.
+
+It is a port of the truncate utility from DragonFly BSD.
