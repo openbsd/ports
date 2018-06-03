@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/06/03 11:20:18 jasper Exp $
 
 COMMENT =	command line todo list manager
 
@@ -6,9 +6,11 @@ VERSION =	2.5.1
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
 CATEGORIES =	productivity
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://www.taskwarrior.org/
+HOMEPAGE =	https://tawww.skwarrior.org/
+
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MASTER_SITES =	${HOMEPAGE}download/
 
@@ -21,6 +23,7 @@ MODULES =		devel/cmake \
 			lang/lua \
 			lang/python
 MODLUA_SA =		Yes
+MODPY_RUNDEP =		No
 
 WANTLIB += c gnutls m pthread ${COMPILER_LIBCXX}
 
@@ -30,7 +33,8 @@ CONFIGURE_STYLE =	cmake
 
 CONFIGURE_ARGS +=	-DTASK_DOCDIR=share/taskwarrior \
 			-DTASK_MAN1DIR=man/man1 \
-			-DTASK_MAN5DIR=man/man5
+			-DTASK_MAN5DIR=man/man5 \
+			-Ddoc_FILES="README.md"
 
 CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,11 +42,11 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 NO_TEST =		Yes
 
 pre-configure:
-	@sed -i 's,share/doc/task/,share/taskwarrior/,g' \
+	sed -i 's,share/doc/task/,share/taskwarrior/,g' \
 		${WRKSRC}/doc/man/task-color.5.in \
 		${WRKSRC}/doc/man/taskrc.5.in \
 		${WRKSRC}/src/Config.cpp
-	@sed -i 's,share/doc/task-VERSION/,share/taskwarrior/,g' \
+	sed -i 's,share/doc/task-VERSION/,share/taskwarrior/,g' \
 		${WRKSRC}/scripts/vim/README
 
 post-install:

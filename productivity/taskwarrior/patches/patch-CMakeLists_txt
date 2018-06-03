@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2018/06/03 11:20:18 jasper Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -193,7 +193,7 @@ if (EXISTS performance)
+   add_subdirectory (performance EXCLUDE_FROM_ALL)
+ endif (EXISTS performance)
+ 
+-set (doc_FILES NEWS ChangeLog README.md INSTALL AUTHORS COPYING LICENSE)
++set (doc_FILES NEWS README.md)
+ foreach (doc_FILE ${doc_FILES})
+   install (FILES ${doc_FILE}  DESTINATION ${TASK_DOCDIR})
+ endforeach (doc_FILE)
