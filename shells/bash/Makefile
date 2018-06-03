@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.106 2018/02/06 22:48:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.107 2018/06/03 20:41:59 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.4.18
-PKGNAME=	bash-4.4.19
+PKGNAME=	bash-4.4.23
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-4.4-patches/}
 DIST_SUBDIR=	bash
-.for i in 19
+.for i in 19 20 21 22 23
 PATCHFILES+=	bash44-0$i:0
 .endfor
 
