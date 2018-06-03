@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.487 2018/06/03 15:55:36 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -329,6 +329,7 @@
      SUBDIR += tphdisk
      SUBDIR += tray-app
      SUBDIR += tree
+     SUBDIR += truncate
      SUBDIR += ttyload
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
