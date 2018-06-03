@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.159 2018/06/01 12:29:32 espie Exp $
+# $OpenBSD: update-plist,v 1.160 2018/06/03 10:06:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1153,9 +1153,9 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:e:E:u:', 
+	$state->SUPER::handle_options('rvqV:FC:i:j:L:s:S:X:P:w:e:E:', 
 	    '[-Fmnrvx] [-C dir] [-E ext] [-e ext] [-i var] [-j jobs]',
-	    '[-P pkgdir] [-S var] [-s var] [-V var]',
+	    '[-L logfile] [-P pkgdir] [-S var] [-s var] [-V var]',
 	    '[-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
@@ -1164,6 +1164,7 @@ sub handle_options
 	$state->{quiet} = $state->opt('q');
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
+	$state->{logfile} = $state->opt('L');
 }
 
 package UpdatePlist;
@@ -1244,7 +1245,8 @@ sub scan_fake_dir
 	    unless $self->{state}{quiet};
 	local $> = 0 if $self->{state}{scan_as_root};
 
-	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored});
+	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored},
+	    $self->{state}{logfile});
 }
 
 sub add_missing_cvstags
