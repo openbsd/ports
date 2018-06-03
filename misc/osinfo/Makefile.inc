@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/10/27 08:59:40 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2018/06/03 10:54:55 ajacoutot Exp $
 
 V ?=			1.0.0
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://libosinfo.org/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://fedorahosted.org/releases/l/i/libosinfo/
+MASTER_SITES=		https://releases.pagure.org/libosinfo/
 
 USE_GMAKE ?=		Yes
 

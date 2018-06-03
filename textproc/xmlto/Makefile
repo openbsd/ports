@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/03 10:54:55 ajacoutot Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 
 DISTNAME=	xmlto-0.0.28
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
+
 CATEGORIES=	textproc
 
-HOMEPAGE=	https://fedorahosted.org/xmlto/
+HOMEPAGE=	https://pagure.io/xmlto
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
+MASTER_SITES=	https://releases.pagure.org/xmlto/
 
 RUN_DEPENDS=	misc/gnugetopt \
 		print/libpaper \

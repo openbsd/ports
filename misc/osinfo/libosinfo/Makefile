@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/09 15:24:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/03 10:54:55 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -27,7 +27,6 @@ RUN_DEPENDS=		misc/hwdata \
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
 			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
 
-# https://fedorahosted.org/libosinfo/ticket/5
 MAKE_FLAGS=		NO_UNDEFINED_FLAGS=
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/24 19:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/06/03 10:54:55 ajacoutot Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
-REVISION =	9
+REVISION =	10
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 
-HOMEPAGE=	https://fedorahosted.org/LinCity-NG/
+HOMEPAGE=	https://github.com/lincity-ng/lincity-ng
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lincity-ng.berlios/}
 

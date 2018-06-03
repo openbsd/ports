@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/03 10:54:55 ajacoutot Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
 VERSION =	0.7.5
 DISTNAME =	gtk-nodoka-engine-${VERSION}
 PKGNAME =	gtk2-nodoka-engine-${VERSION}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES =	x11
 
-HOMEPAGE =	https://fedorahosted.org/nodoka/wiki
+HOMEPAGE =	https://pagure.io/nodoka-theme
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES =	http://fedorahosted.org/releases/n/o/nodoka/
+MASTER_SITES =	http://bsdforge.com/projects/source/x11-themes/gtk-nodoka-engine/
 
 LIB_DEPENDS =	x11/gtk+2
 
