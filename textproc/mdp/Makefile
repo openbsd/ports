@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/25 12:55:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/03 05:44:29 rpointel Exp $
 
 COMMENT =	command-line based markdown presentation tool
 
 GH_ACCOUNT =	visit1985
 GH_PROJECT =	mdp
-GH_TAGNAME =	1.0.10
-REVISION =	0
+GH_TAGNAME =	1.0.12
 
 CATEGORIES =	textproc
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ncursesw
+WANTLIB +=	c curses
 
 MAKE_FLAGS =		PREFIX=${PREFIX}
 
