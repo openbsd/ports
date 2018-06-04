@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.115 2018/06/01 11:27:18 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.116 2018/06/04 15:22:36 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
 			--with-onig=${LOCALBASE} \
 			--with-openssl \
-			--with-pcre-regex \
+			--with-pcre-regex=${LOCALBASE} \
 			--with-zlib \
 			--enable-bcmath \
 			--enable-calendar \
@@ -146,9 +146,10 @@ COMMENT-dbg=		interactive php debugger
 CONFIGURE_ARGS+=	--enable-phpdbg
 
 .for i in ${SAPI}
-WANTLIB$i +=		c crypto curses iconv intl lzma m onig
+WANTLIB$i +=		c crypto curses iconv intl lzma m onig pcre
 WANTLIB$i +=		pthread readline ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext \
+			devel/pcre \
 			textproc/libxml \
 			textproc/oniguruma
 .endfor
