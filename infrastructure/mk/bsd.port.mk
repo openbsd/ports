@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1413 2018/06/04 06:12:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1414 2018/06/04 06:14:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -943,8 +943,6 @@ FULLPKGPATH = ${FULLPKGPATH${SUBPACKAGE}}
 _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
 
-_INSTALL_WRAPPER = ${PORTSDIR}/infrastructure/bin/install-wrapper
-
 _INSTALL ?= ${WRKDIR}/bin/install
 
 # A few aliases for *-install targets
@@ -1557,7 +1555,8 @@ MODSIMPLE_configure = \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
 FAKE_SETUP = PATH='${PORTPATH}' TRUEPREFIX=${PREFIX} \
-	PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
+	PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST} \
+	FAKELOG=${WRKINST}/.fake_log
 
 _CLEANDEPENDS ?= Yes
 
@@ -1827,6 +1826,10 @@ _check_wrkdir = ${_PBUILD} ${_PERLSCRIPT}/check-wrkdir
 _check_wrkdir = :
 .endif
 
+.for wrapper command in install install chown chown chown chgrp
+_wrap_install_commands += ${_PBUILD} install -m ${BINMODE} ${PORTSDIR}/infrastructure/bin/${wrapper}-wrapper /${WRKDIR}/bin/${command};
+.endfor
+
 # packing list utilities.  This generates a packing list from the WRKINST
 # directory. Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
@@ -1841,7 +1844,7 @@ _update_plist = ${_cache_fragment}; \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
-	-X ${WRKINST}/.fake_log \
+	-L ${WRKINST}/.fake_log \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
@@ -2446,7 +2449,7 @@ ${_WRKDIR_COOKIE}:
 	fi
 	@${_PBUILD} install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@${_PBUILD} mkdir -p ${WRKDIR} ${WRKDIR}/bin
-	@${_PBUILD} install -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
+	@${_wrap_install_commands}
 .if !empty(WRKDIR_LINKNAME)
 	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
@@ -2770,9 +2773,8 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_PBUILD} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
 		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
 	@${_PBUILD} chmod -R a+rX ${WRKINST}
-	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chown
-	@${_PBUILD} ln -sf /bin/echo ${WRKDIR}/bin/chgrp
-	@${_PBUILD} install -C -m ${BINMODE} ${_INSTALL_WRAPPER} ${WRKDIR}/bin/install
+
+	@${_wrap_install_commands}
 	${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
 	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
