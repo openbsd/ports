@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1412 2018/05/31 08:59:29 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1413 2018/06/04 06:12:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -542,7 +542,7 @@ BASE_PKGPATH := ${PKGPATH}
 # It encodes flavors and pseudo-flavors.
 _FLAVOR_EXT2 :=
 BUILD_PKGPATH := ${PKGPATH}
-_PKG_ARGS =
+_PKG_ARGS = -u ${PORTSDIR}/infrastructure/db/user.list
 .if !empty(PLIST_DB)
 _PKG_ARGS += -DHISTORY_DIR=${PLIST_DB}/history
 .endif
