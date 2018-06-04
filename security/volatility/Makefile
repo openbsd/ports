@@ -1,4 +1,4 @@
-# $OpenBSD#
+# $OpenBSD: Makefile,v 1.11 2018/06/04 00:56:09 sthen Exp $
 
 COMMENT =		memory artifact extraction utility framework
 
