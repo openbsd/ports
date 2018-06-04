@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/25 19:18:50 jasper Exp $
-
-BROKEN-macppc =			fontforge doesnt validate fonts
-BROKEN-sparc64 =		fontforge doesnt validate fonts
+# $OpenBSD: Makefile,v 1.12 2018/06/04 06:47:07 jasper Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
-V =				1.7.1
+V =				1.7.2
 DISTNAME =			fantasque-sans-$V
-DISTFILES =			${DISTNAME}{FantasqueSansMono}.tar.gz
-REVISION =			1
+DISTFILES =			${DISTNAME}{FantasqueSansMono-Normal}.tar.gz
 
 CATEGORIES =			fonts
 
@@ -28,6 +24,7 @@ FONTDIR =			${PREFIX}/share/fonts/fantasque-sans
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/OTF/*.otf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/TTF/*.ttf ${FONTDIR}
 
 .include <bsd.port.mk>
