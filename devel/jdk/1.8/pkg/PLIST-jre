@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.5 2017/03/10 02:21:22 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.6 2018/06/04 17:03:36 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jre->=1.8v0,<1.9v0
@@ -115,12 +115,17 @@ ${JREHOME}/lib/psfontj2d.properties
 ${JREHOME}/lib/resources.jar
 ${JREHOME}/lib/rt.jar
 ${JREHOME}/lib/security/
-${JREHOME}/lib/security/US_export_policy.jar
 ${JREHOME}/lib/security/blacklisted.certs
 ${JREHOME}/lib/security/cacerts
 ${JREHOME}/lib/security/java.policy
 ${JREHOME}/lib/security/java.security
-${JREHOME}/lib/security/local_policy.jar
+${JREHOME}/lib/security/policy/
+${JREHOME}/lib/security/policy/limited/
+${JREHOME}/lib/security/policy/limited/US_export_policy.jar
+${JREHOME}/lib/security/policy/limited/local_policy.jar
+${JREHOME}/lib/security/policy/unlimited/
+${JREHOME}/lib/security/policy/unlimited/US_export_policy.jar
+${JREHOME}/lib/security/policy/unlimited/local_policy.jar
 ${JREHOME}/lib/sound.properties
 ${JREHOME}/lib/tzdb.dat
 @mandir ${JREHOME}/man/

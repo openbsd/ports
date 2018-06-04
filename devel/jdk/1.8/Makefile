@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/11 12:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2018/06/04 17:03:35 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
 
 COMMENT-main=	OpenJDK Software Development Kit v${V}
 COMMENT-jre=	OpenJDK Runtime Environment v${V}
-U=		144
+U=		172
 V=		1.8.0.${U}
-B=		b01
+B=		b11
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	0
 
 DIST_SUBDIR=	jdk
-DISTNAME=	openjdk-8u144b01-bsd-port-20170828
+DISTNAME=	openjdk-8u172b11-bsd-port-20180529
 BOOTJDK_DATE=	20180306
 EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
