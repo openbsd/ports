@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/01 22:49:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/04 20:25:33 rsadowski Exp $
 
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
 
-SHARED_LIBS +=  KF5Purpose                0.0 # 5.43
-SHARED_LIBS +=  KF5PurposeWidgets         0.0 # 5.43
-SHARED_LIBS +=  PhabricatorHelpers        0.0 # 5.43
-SHARED_LIBS +=  ReviewboardHelpers        0.0 # 5.43
+SHARED_LIBS +=  KF5Purpose                0.1 # 5.43
+SHARED_LIBS +=  KF5PurposeWidgets         0.1 # 5.43
+SHARED_LIBS +=  PhabricatorHelpers        0.1 # 5.43
+SHARED_LIBS +=  ReviewboardHelpers        0.1 # 5.43
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Widgets c m
+WANTLIB += KF5KIOCore KF5Service Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Widgets c m
 
 MODULES =		lang/python
 

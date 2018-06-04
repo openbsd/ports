@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:31 rsadowski Exp $
 
 COMMENT =		Qt wrapper for BlueZ 5 DBus API
 DISTNAME =		bluez-qt-${VERSION}
 
-SHARED_LIBS =		KF5BluezQt		4.0
+SHARED_LIBS =		KF5BluezQt		4.1
 
 WANTLIB = ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Qml m
 

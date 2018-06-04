@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/09 21:10:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/04 20:25:32 rsadowski Exp $
 bin/preparetips5
 include/KF5/KConfigWidgets/
 include/KF5/KConfigWidgets/KCModule
@@ -194,6 +194,7 @@ share/locale/se/kf5_entry.desktop
 share/locale/si/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/si/kf5_entry.desktop
 share/locale/sk/LC_MESSAGES/kconfigwidgets5.mo
+share/locale/sk/kf5_entry.desktop
 share/locale/sl/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/sl/kf5_entry.desktop
 share/locale/sq/LC_MESSAGES/kconfigwidgets5.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/02/26 20:33:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/04 20:25:33 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -107,6 +107,7 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RangeSlider.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/ScrollBar.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/ScrollView.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Slider.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/SpinBox.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Switch.qml
@@ -296,6 +297,7 @@ lib/qt5/qml/org/kde/plasma/platformcomponents/qmldir
 share/kdevappwizard/
 share/kdevappwizard/templates/
 share/kdevappwizard/templates/cpp-plasmoid.tar.bz2
+share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
@@ -434,7 +436,6 @@ share/plasma/desktoptheme/air/widgets/bar_meter_vertical.svgz
 share/plasma/desktoptheme/air/widgets/branding.svgz
 share/plasma/desktoptheme/air/widgets/busywidget.svgz
 share/plasma/desktoptheme/air/widgets/button.svgz
-share/plasma/desktoptheme/air/widgets/calendar.svgz
 share/plasma/desktoptheme/air/widgets/checkmarks.svgz
 share/plasma/desktoptheme/air/widgets/clock.svgz
 share/plasma/desktoptheme/air/widgets/containment-controls.svgz
@@ -528,6 +529,7 @@ share/plasma/desktoptheme/default/icons/start.svgz
 share/plasma/desktoptheme/default/icons/system.svgz
 share/plasma/desktoptheme/default/icons/touchpad.svgz
 share/plasma/desktoptheme/default/icons/user.svgz
+share/plasma/desktoptheme/default/icons/video-card.svgz
 share/plasma/desktoptheme/default/icons/video.svgz
 share/plasma/desktoptheme/default/icons/view.svgz
 share/plasma/desktoptheme/default/icons/vlc.svgz
@@ -643,7 +645,6 @@ share/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
 share/plasma/desktoptheme/oxygen/widgets/branding.svgz
 share/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
 share/plasma/desktoptheme/oxygen/widgets/button.svgz
-share/plasma/desktoptheme/oxygen/widgets/calendar.svgz
 share/plasma/desktoptheme/oxygen/widgets/clock.svgz
 share/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
 share/plasma/desktoptheme/oxygen/widgets/dragger.svgz

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/02/26 20:33:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/04 20:25:31 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -72,6 +72,7 @@ share/ECM/modules/ECMQtDeclareLoggingCategory.cmake
 share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.h.in
 share/ECM/modules/ECMQueryQmake.cmake
+share/ECM/modules/ECMSetupQtPluginMacroNames.cmake
 share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
@@ -82,7 +83,9 @@ share/ECM/test-modules/
 share/ECM/test-modules/test_execute_and_compare.cmake
 share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake
+share/ECM/toolchain/ECMAndroidDeployQt.cmake
 share/ECM/toolchain/deployment-file.json.in
+share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
 share/doc/ECM/
 share/doc/ECM/ExtraCMakeModules.qch
@@ -136,6 +139,7 @@ share/doc/ECM/html/_sources/module/ECMOptionalAddSubdirectory.txt
 share/doc/ECM/html/_sources/module/ECMPackageConfigHelpers.txt
 share/doc/ECM/html/_sources/module/ECMPoQmTools.txt
 share/doc/ECM/html/_sources/module/ECMQtDeclareLoggingCategory.txt
+share/doc/ECM/html/_sources/module/ECMSetupQtPluginMacroNames.txt
 share/doc/ECM/html/_sources/module/ECMSetupVersion.txt
 share/doc/ECM/html/_sources/module/ECMUninstallTarget.txt
 share/doc/ECM/html/_sources/module/ECMUseFindModules.txt
@@ -213,6 +217,7 @@ share/doc/ECM/html/module/ECMOptionalAddSubdirectory.html
 share/doc/ECM/html/module/ECMPackageConfigHelpers.html
 share/doc/ECM/html/module/ECMPoQmTools.html
 share/doc/ECM/html/module/ECMQtDeclareLoggingCategory.html
+share/doc/ECM/html/module/ECMSetupQtPluginMacroNames.html
 share/doc/ECM/html/module/ECMSetupVersion.html
 share/doc/ECM/html/module/ECMUninstallTarget.html
 share/doc/ECM/html/module/ECMUseFindModules.html

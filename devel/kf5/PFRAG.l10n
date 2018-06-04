@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.l10n,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
-@comment remember to sync with x11/plasma/PFRAG.l10n
+@comment $OpenBSD: PFRAG.l10n,v 1.2 2018/06/04 20:25:31 rsadowski Exp $
 @conflict kde-l10n-ar-*
 @conflict kde-l10n-bg-*
 @conflict kde-l10n-bs-*
@@ -53,3 +52,4 @@
 @conflict kde-l10n-wa-*
 @conflict kde-l10n-zh_CN-*
 @conflict kde-l10n-zh_TW-*
+@comment remember to sync with x11/plasma/PFRAG.l10n

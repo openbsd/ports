@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT =		reporting of idle time of user and system
 DISTNAME =		kidletime-${VERSION}
 
-SHARED_LIBS =		KF5IdleTime		4.0
+SHARED_LIBS =		KF5IdleTime		4.1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5X11Extras SM X11 X11-xcb Xext Xss m xcb xcb-sync

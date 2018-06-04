@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:33 rsadowski Exp $
 
 COMMENT =	KDE data plotting framework
 DISTNAME =	kplotting-${VERSION}
 
-SHARED_LIBS =	KF5Plotting		4.0
+SHARED_LIBS =	KF5Plotting		4.1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
 
-SHARED_LIBS =		KF5KHtml	4.0
+SHARED_LIBS =		KF5KHtml	4.1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -11,9 +11,10 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel KF5I18n
 WANTLIB += KF5IconThemes KF5JS KF5JobWidgets KF5KIOCore KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Parts KF5Service KF5SonnetCore
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5X11Extras Qt5Xml SM X11
-WANTLIB += Xext gif jpeg m phonon4qt5experimental png z
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext gif jpeg m phonon4qt5experimental
+WANTLIB += png z
 
 MODULES =		multimedia/phonon
 

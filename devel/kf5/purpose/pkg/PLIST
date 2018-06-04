@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/01 22:49:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/04 20:25:33 rsadowski Exp $
 include/KF5/purpose/
 include/KF5/purpose/Purpose/
 include/KF5/purpose/Purpose/AlternativesModel
@@ -49,6 +49,7 @@ lib/qt5/qml/org/kde/purpose/reviewboard/
 lib/qt5/qml/org/kde/purpose/reviewboard/librbpurposequickplugin.so
 lib/qt5/qml/org/kde/purpose/reviewboard/qmldir
 @bin libexec/kf5/purposeprocess
+share/examples/xdg/purpose.categories
 share/icons/hicolor/128x128/apps/phabricator-purpose.png
 share/icons/hicolor/128x128/apps/reviewboard-purpose.png
 share/icons/hicolor/16x16/apps/phabricator-purpose.png
@@ -141,7 +142,16 @@ share/locale/es/LC_MESSAGES/purpose_pastebin.mo
 share/locale/es/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/es/LC_MESSAGES/purpose_saveas.mo
 share/locale/es/LC_MESSAGES/purpose_youtube.mo
+share/locale/fi/LC_MESSAGES/libpurpose_quick.mo
+share/locale/fi/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/fi/LC_MESSAGES/purpose_email.mo
+share/locale/fi/LC_MESSAGES/purpose_imgur.mo
+share/locale/fi/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/fi/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/fi/LC_MESSAGES/purpose_pastebin.mo
 share/locale/fi/LC_MESSAGES/purpose_reviewboard.mo
+share/locale/fi/LC_MESSAGES/purpose_saveas.mo
+share/locale/fi/LC_MESSAGES/purpose_youtube.mo
 share/locale/fr/LC_MESSAGES/libpurpose_quick.mo
 share/locale/fr/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/fr/LC_MESSAGES/purpose_email.mo
@@ -198,7 +208,16 @@ share/locale/nl/LC_MESSAGES/purpose_pastebin.mo
 share/locale/nl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nl/LC_MESSAGES/purpose_saveas.mo
 share/locale/nl/LC_MESSAGES/purpose_youtube.mo
+share/locale/nn/LC_MESSAGES/libpurpose_quick.mo
+share/locale/nn/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/nn/LC_MESSAGES/purpose_email.mo
+share/locale/nn/LC_MESSAGES/purpose_imgur.mo
 share/locale/nn/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/nn/LC_MESSAGES/purpose_nextcloud.mo
+share/locale/nn/LC_MESSAGES/purpose_pastebin.mo
+share/locale/nn/LC_MESSAGES/purpose_reviewboard.mo
+share/locale/nn/LC_MESSAGES/purpose_saveas.mo
+share/locale/nn/LC_MESSAGES/purpose_youtube.mo
 share/locale/pl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pl/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pl/LC_MESSAGES/purpose_email.mo

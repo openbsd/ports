@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/12 19:35:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/04 20:25:33 rsadowski Exp $
 @option no-default-conflict
 @conflict prison->=5
 include/KF5/
@@ -15,6 +15,12 @@ lib/cmake/KF5Prison/KF5PrisonConfigVersion.cmake
 lib/cmake/KF5Prison/KF5PrisonTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Prison/KF5PrisonTargets.cmake
 @lib lib/libKF5Prison.so.${LIBKF5Prison_VERSION}
+lib/qt5/qml/
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/prison/
+lib/qt5/qml/org/kde/prison/libprisonquickplugin.so
+lib/qt5/qml/org/kde/prison/qmldir
 share/examples/xdg/
 share/examples/xdg/prison.categories
 share/kf5/

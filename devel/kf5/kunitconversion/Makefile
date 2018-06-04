@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/09 21:10:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:33 rsadowski Exp $
 
 COMMENT =	KDE framework for converting physical units
 DISTNAME =	kunitconversion-${VERSION}
 
-SHARED_LIBS =	KF5UnitConversion	3.0
+SHARED_LIBS =	KF5UnitConversion	3.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Network m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/26 20:33:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/04 20:25:33 rsadowski Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
@@ -12,11 +12,10 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Declarative
 WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Notifications KF5Package
 WANTLIB += KF5QuickAddons KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext c m xcb xcb-composite xcb-damage xcb-render
-WANTLIB += xcb-shape xcb-xfixes
-
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext c m xcb xcb-composite xcb-damage
+WANTLIB += xcb-render xcb-shape xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/gettext-tools \

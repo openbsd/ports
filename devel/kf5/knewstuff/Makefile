@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT =		KDE framework for sharing additional application data
 DISTNAME =		knewstuff-${VERSION}
 
-SHARED_LIBS +=  KF5NewStuff               4.0
-SHARED_LIBS +=  KF5NewStuffCore           3.0
+SHARED_LIBS +=  KF5NewStuff               4.1
+SHARED_LIBS +=  KF5NewStuffCore           3.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5Widgets Qt5Xml m
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets Qt5Xml
+WANTLIB += m
 
 BUILD_DEPENDS =		devel/gettext-tools
 
@@ -28,6 +29,7 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
+			devel/kf5/kirigami2 \
 			x11/qt5/qtdeclarative
 
 PORTHOME =		${WRKDIR}

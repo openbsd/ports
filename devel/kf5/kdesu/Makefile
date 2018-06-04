@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/09 21:10:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT =	KDE wrapper over su/sudo/doas commands
 DISTNAME =	kdesu-${VERSION}
 
-SHARED_LIBS =	KF5Su		4.0
+SHARED_LIBS =	KF5Su		4.1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5Pty KF5Service Qt5Core SM X11 Xext c m

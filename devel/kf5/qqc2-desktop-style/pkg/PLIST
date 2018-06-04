@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/26 20:33:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/04 20:25:33 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
@@ -13,6 +13,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/CheckIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ComboBox.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Container.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Control.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/DelayButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Dial.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Dialog.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/DialogButtonBox.qml
@@ -22,6 +23,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/GroupBox.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ItemDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Label.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Menu.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuBarItem.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuItem.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Popup.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ProgressBar.qml
@@ -29,6 +31,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RangeSlider.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RoundButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ScrollBar.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ScrollView.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Slider.qml

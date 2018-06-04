@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/02/12 19:35:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	6.0
+SHARED_LIBS =		KF5KDELibs4Support	6.1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -12,9 +12,9 @@ WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c m
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Designer
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kded \

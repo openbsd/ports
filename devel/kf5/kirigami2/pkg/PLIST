@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/26 20:33:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/04 20:25:32 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
 include/KF5/Kirigami2/PlatformTheme
+include/KF5/Kirigami2/TabletModeWatcher
 include/KF5/Kirigami2/kirigami2_export.h
 include/KF5/Kirigami2/kirigamipluginfactory.h
 include/KF5/Kirigami2/platformtheme.h
+include/KF5/Kirigami2/tabletmodewatcher.h
 lib/cmake/KF5Kirigami2/
 lib/cmake/KF5Kirigami2/KF5Kirigami2Config.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2ConfigVersion.cmake
@@ -19,6 +21,7 @@ lib/qt5/qml/org/kde/kirigami.2/
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationItem.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationWindow.qml
+lib/qt5/qml/org/kde/kirigami.2/AbstractCard.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractItemViewHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/Action.qml
@@ -26,11 +29,15 @@ lib/qt5/qml/org/kde/kirigami.2/ApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ApplicationWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/BasicListItem.qml
+lib/qt5/qml/org/kde/kirigami.2/Card.qml
+lib/qt5/qml/org/kde/kirigami.2/CardsGridView.qml
+lib/qt5/qml/org/kde/kirigami.2/CardsLayout.qml
+lib/qt5/qml/org/kde/kirigami.2/CardsListView.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/GlobalDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/Heading.qml
-lib/qt5/qml/org/kde/kirigami.2/Icon.qml
+lib/qt5/qml/org/kde/kirigami.2/InlineMessage.qml
 lib/qt5/qml/org/kde/kirigami.2/ItemViewHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/Label.qml
 lib/qt5/qml/org/kde/kirigami.2/OverlayDrawer.qml
@@ -48,6 +55,15 @@ lib/qt5/qml/org/kde/kirigami.2/plugins.qmltypes
 lib/qt5/qml/org/kde/kirigami.2/private/
 lib/qt5/qml/org/kde/kirigami.2/private/ActionButton.qml
 lib/qt5/qml/org/kde/kirigami.2/private/ActionIconGroup.qml
+lib/qt5/qml/org/kde/kirigami.2/private/ActionMenuItem.qml
+lib/qt5/qml/org/kde/kirigami.2/private/ActionMenuItemBase.qml
+lib/qt5/qml/org/kde/kirigami.2/private/ActionMenuItemQt510.qml
+lib/qt5/qml/org/kde/kirigami.2/private/ActionMenuItemQt59.qml
+lib/qt5/qml/org/kde/kirigami.2/private/ActionsMenu.qml
+lib/qt5/qml/org/kde/kirigami.2/private/BannerGroup.qml
+lib/qt5/qml/org/kde/kirigami.2/private/BannerImage.qml
+lib/qt5/qml/org/kde/kirigami.2/private/CardsGridViewPrivate.qml
+lib/qt5/qml/org/kde/kirigami.2/private/CardsListViewPrivate.qml
 lib/qt5/qml/org/kde/kirigami.2/private/CornerShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultListItemBackground.qml
 lib/qt5/qml/org/kde/kirigami.2/private/EdgeShadow.qml
@@ -72,9 +88,11 @@ lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/AbstractCard.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/ApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/FormLayout.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlayDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/OverlaySheet.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/SwipeListItem.qml
@@ -82,6 +100,8 @@ lib/qt5/qml/org/kde/kirigami.2/templates/private/
 lib/qt5/qml/org/kde/kirigami.2/templates/private/BackButton.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ContextIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ForwardButton.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/MenuIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/ScrollView.qml

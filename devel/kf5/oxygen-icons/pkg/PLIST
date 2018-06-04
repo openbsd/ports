@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/26 07:53:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/04 20:25:33 rsadowski Exp $
 @pkgpath x11/kde4/oxygen-icons
 @unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
@@ -107,6 +107,7 @@ share/icons/oxygen/base/128x128/apps/akonadi.png
 share/icons/oxygen/base/128x128/apps/akregator.png
 share/icons/oxygen/base/128x128/apps/amarok.png
 share/icons/oxygen/base/128x128/apps/ark.png
+share/icons/oxygen/base/128x128/apps/artikulate.png
 share/icons/oxygen/base/128x128/apps/baloo.png
 share/icons/oxygen/base/128x128/apps/basket.png
 share/icons/oxygen/base/128x128/apps/braindump.png
@@ -737,6 +738,7 @@ share/icons/oxygen/base/128x128/places/folder-download.png
 share/icons/oxygen/base/128x128/places/folder-downloads.png
 share/icons/oxygen/base/128x128/places/folder-dropbox.png
 share/icons/oxygen/base/128x128/places/folder-favorites.png
+share/icons/oxygen/base/128x128/places/folder-games.png
 share/icons/oxygen/base/128x128/places/folder-gdrive.png
 share/icons/oxygen/base/128x128/places/folder-green.png
 share/icons/oxygen/base/128x128/places/folder-grey.png
@@ -1089,6 +1091,7 @@ share/icons/oxygen/base/16x16/actions/edit-paste.png
 share/icons/oxygen/base/16x16/actions/edit-redo.png
 share/icons/oxygen/base/16x16/actions/edit-rename.png
 share/icons/oxygen/base/16x16/actions/edit-select-all.png
+share/icons/oxygen/base/16x16/actions/edit-select-none.png
 share/icons/oxygen/base/16x16/actions/edit-select.png
 share/icons/oxygen/base/16x16/actions/edit-table-cell-merge.png
 share/icons/oxygen/base/16x16/actions/edit-table-cell-split.png
@@ -1371,6 +1374,9 @@ share/icons/oxygen/base/16x16/actions/media-eject.png
 share/icons/oxygen/base/16x16/actions/media-playback-pause.png
 share/icons/oxygen/base/16x16/actions/media-playback-start.png
 share/icons/oxygen/base/16x16/actions/media-playback-stop.png
+share/icons/oxygen/base/16x16/actions/media-playlist-repeat-amarok.png
+share/icons/oxygen/base/16x16/actions/media-playlist-repeat.png
+share/icons/oxygen/base/16x16/actions/media-playlist-shuffle.png
 share/icons/oxygen/base/16x16/actions/media-record.png
 share/icons/oxygen/base/16x16/actions/media-seek-backward.png
 share/icons/oxygen/base/16x16/actions/media-seek-forward.png
@@ -1474,6 +1480,7 @@ share/icons/oxygen/base/16x16/actions/quickopen-file.png
 share/icons/oxygen/base/16x16/actions/quickopen-function.png
 share/icons/oxygen/base/16x16/actions/quickopen.png
 share/icons/oxygen/base/16x16/actions/quickview.png
+share/icons/oxygen/base/16x16/actions/rating-unrated.png
 share/icons/oxygen/base/16x16/actions/rating.png
 share/icons/oxygen/base/16x16/actions/ratiocrop.png
 share/icons/oxygen/base/16x16/actions/refactor.png
@@ -1512,6 +1519,7 @@ share/icons/oxygen/base/16x16/actions/show-dialogs.png
 share/icons/oxygen/base/16x16/actions/show-grid.png
 share/icons/oxygen/base/16x16/actions/show-menu.png
 share/icons/oxygen/base/16x16/actions/show-offline.png
+share/icons/oxygen/base/16x16/actions/shuffle.png
 share/icons/oxygen/base/16x16/actions/skg-chart-bubble.png
 share/icons/oxygen/base/16x16/actions/skrooge_credit_card.png
 share/icons/oxygen/base/16x16/actions/skrooge_less.png
@@ -1566,6 +1574,8 @@ share/icons/oxygen/base/16x16/actions/tag-people.png
 share/icons/oxygen/base/16x16/actions/tag-places.png
 share/icons/oxygen/base/16x16/actions/tag-properties.png
 share/icons/oxygen/base/16x16/actions/tag-recents.png
+share/icons/oxygen/base/16x16/actions/tag-reset.png
+share/icons/oxygen/base/16x16/actions/tag.png
 share/icons/oxygen/base/16x16/actions/text-convert-to-regular.png
 share/icons/oxygen/base/16x16/actions/text-field.png
 share/icons/oxygen/base/16x16/actions/text-frame-link.png
@@ -1725,6 +1735,7 @@ share/icons/oxygen/base/16x16/actions/window-new.png
 share/icons/oxygen/base/16x16/actions/window-next.png
 share/icons/oxygen/base/16x16/actions/window-previous.png
 share/icons/oxygen/base/16x16/actions/x-clementine-artist.png
+share/icons/oxygen/base/16x16/actions/x-clementine-shuffle.png
 share/icons/oxygen/base/16x16/actions/x-shape-image.png
 share/icons/oxygen/base/16x16/actions/x-shape-text.png
 share/icons/oxygen/base/16x16/actions/xml-node-duplicate.png
@@ -1764,6 +1775,7 @@ share/icons/oxygen/base/16x16/apps/akonadi.png
 share/icons/oxygen/base/16x16/apps/akregator.png
 share/icons/oxygen/base/16x16/apps/amarok.png
 share/icons/oxygen/base/16x16/apps/ark.png
+share/icons/oxygen/base/16x16/apps/artikulate.png
 share/icons/oxygen/base/16x16/apps/basket.png
 share/icons/oxygen/base/16x16/apps/braindump.png
 share/icons/oxygen/base/16x16/apps/calligraauthor.png
@@ -1970,10 +1982,15 @@ share/icons/oxygen/base/16x16/devices/drive-optical.png
 share/icons/oxygen/base/16x16/devices/drive-removable-media-usb-pendrive.png
 share/icons/oxygen/base/16x16/devices/drive-removable-media-usb.png
 share/icons/oxygen/base/16x16/devices/drive-removable-media.png
+share/icons/oxygen/base/16x16/devices/hands-free.png
+share/icons/oxygen/base/16x16/devices/handset.png
+share/icons/oxygen/base/16x16/devices/headphone.png
+share/icons/oxygen/base/16x16/devices/headset.png
 share/icons/oxygen/base/16x16/devices/input-gaming.png
 share/icons/oxygen/base/16x16/devices/input-keyboard.png
 share/icons/oxygen/base/16x16/devices/input-mouse.png
 share/icons/oxygen/base/16x16/devices/input-tablet.png
+share/icons/oxygen/base/16x16/devices/internal.png
 share/icons/oxygen/base/16x16/devices/media-flash-memory-stick.png
 share/icons/oxygen/base/16x16/devices/media-flash-sd-mmc.png
 share/icons/oxygen/base/16x16/devices/media-flash-smart-media.png
@@ -1988,6 +2005,7 @@ share/icons/oxygen/base/16x16/devices/media-optical-recordable.png
 share/icons/oxygen/base/16x16/devices/media-optical-video.png
 share/icons/oxygen/base/16x16/devices/media-optical.png
 share/icons/oxygen/base/16x16/devices/media-tape.png
+share/icons/oxygen/base/16x16/devices/microphone.png
 share/icons/oxygen/base/16x16/devices/modem.png
 share/icons/oxygen/base/16x16/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/16x16/devices/multimedia-player.png
@@ -1996,14 +2014,18 @@ share/icons/oxygen/base/16x16/devices/network-wireless.png
 share/icons/oxygen/base/16x16/devices/pda.png
 share/icons/oxygen/base/16x16/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/base/16x16/devices/phone.png
+share/icons/oxygen/base/16x16/devices/portable.png
 share/icons/oxygen/base/16x16/devices/printer.png
 share/icons/oxygen/base/16x16/devices/scanner.png
 share/icons/oxygen/base/16x16/devices/secure-card.png
 share/icons/oxygen/base/16x16/devices/smartphone.png
+share/icons/oxygen/base/16x16/devices/speaker.png
 share/icons/oxygen/base/16x16/devices/tablet.png
+share/icons/oxygen/base/16x16/devices/tv.png
 share/icons/oxygen/base/16x16/devices/video-display.png
 share/icons/oxygen/base/16x16/devices/video-projector.png
 share/icons/oxygen/base/16x16/devices/video-television.png
+share/icons/oxygen/base/16x16/devices/webcam.png
 share/icons/oxygen/base/16x16/emblems/
 share/icons/oxygen/base/16x16/emblems/emblem-added.png
 share/icons/oxygen/base/16x16/emblems/emblem-encrypted-locked.png
@@ -2026,6 +2048,7 @@ share/icons/oxygen/base/16x16/emblems/image-has-versions-open.png
 share/icons/oxygen/base/16x16/emblems/image-has-versions.png
 share/icons/oxygen/base/16x16/emblems/image-stack-open.png
 share/icons/oxygen/base/16x16/emblems/image-stack.png
+share/icons/oxygen/base/16x16/emblems/media-mount.png
 share/icons/oxygen/base/16x16/emblems/vcs-added.png
 share/icons/oxygen/base/16x16/emblems/vcs-conflicting.png
 share/icons/oxygen/base/16x16/emblems/vcs-locally-modified-unstaged.png
@@ -2427,6 +2450,7 @@ share/icons/oxygen/base/16x16/places/folder-download.png
 share/icons/oxygen/base/16x16/places/folder-downloads.png
 share/icons/oxygen/base/16x16/places/folder-dropbox.png
 share/icons/oxygen/base/16x16/places/folder-favorites.png
+share/icons/oxygen/base/16x16/places/folder-games.png
 share/icons/oxygen/base/16x16/places/folder-gdrive.png
 share/icons/oxygen/base/16x16/places/folder-green.png
 share/icons/oxygen/base/16x16/places/folder-grey.png
@@ -2580,6 +2604,7 @@ share/icons/oxygen/base/16x16/status/weather-snow-scattered-day.png
 share/icons/oxygen/base/16x16/status/weather-snow-scattered-night.png
 share/icons/oxygen/base/16x16/status/weather-snow-scattered.png
 share/icons/oxygen/base/16x16/status/weather-snow.png
+share/icons/oxygen/base/16x16/status/weather-storm-day.png
 share/icons/oxygen/base/16x16/status/weather-storm-night.png
 share/icons/oxygen/base/16x16/status/weather-storm.png
 share/icons/oxygen/base/16x16/status/window-suppressed.png
@@ -2826,6 +2851,7 @@ share/icons/oxygen/base/22x22/actions/edit-paste.png
 share/icons/oxygen/base/22x22/actions/edit-redo.png
 share/icons/oxygen/base/22x22/actions/edit-rename.png
 share/icons/oxygen/base/22x22/actions/edit-select-all.png
+share/icons/oxygen/base/22x22/actions/edit-select-none.png
 share/icons/oxygen/base/22x22/actions/edit-select.png
 share/icons/oxygen/base/22x22/actions/edit-table-cell-merge.png
 share/icons/oxygen/base/22x22/actions/edit-table-cell-split.png
@@ -3123,6 +3149,9 @@ share/icons/oxygen/base/22x22/actions/media-eject.png
 share/icons/oxygen/base/22x22/actions/media-playback-pause.png
 share/icons/oxygen/base/22x22/actions/media-playback-start.png
 share/icons/oxygen/base/22x22/actions/media-playback-stop.png
+share/icons/oxygen/base/22x22/actions/media-playlist-repeat-amarok.png
+share/icons/oxygen/base/22x22/actions/media-playlist-repeat.png
+share/icons/oxygen/base/22x22/actions/media-playlist-shuffle.png
 share/icons/oxygen/base/22x22/actions/media-record.png
 share/icons/oxygen/base/22x22/actions/media-seek-backward.png
 share/icons/oxygen/base/22x22/actions/media-seek-forward.png
@@ -3235,6 +3264,7 @@ share/icons/oxygen/base/22x22/actions/quickopen-file.png
 share/icons/oxygen/base/22x22/actions/quickopen-function.png
 share/icons/oxygen/base/22x22/actions/quickopen.png
 share/icons/oxygen/base/22x22/actions/quickview.png
+share/icons/oxygen/base/22x22/actions/rating-unrated.png
 share/icons/oxygen/base/22x22/actions/rating.png
 share/icons/oxygen/base/22x22/actions/ratiocrop.png
 share/icons/oxygen/base/22x22/actions/refactor.png
@@ -3264,6 +3294,7 @@ share/icons/oxygen/base/22x22/actions/settings-configure.png
 share/icons/oxygen/base/22x22/actions/shallow-history.png
 share/icons/oxygen/base/22x22/actions/shear.png
 share/icons/oxygen/base/22x22/actions/show-menu.png
+share/icons/oxygen/base/22x22/actions/shuffle.png
 share/icons/oxygen/base/22x22/actions/skg-chart-bubble.png
 share/icons/oxygen/base/22x22/actions/skrooge_credit_card.png
 share/icons/oxygen/base/22x22/actions/skrooge_less.png
@@ -3321,6 +3352,9 @@ share/icons/oxygen/base/22x22/actions/tag-folder.png
 share/icons/oxygen/base/22x22/actions/tag-people.png
 share/icons/oxygen/base/22x22/actions/tag-places.png
 share/icons/oxygen/base/22x22/actions/tag-properties.png
+share/icons/oxygen/base/22x22/actions/tag-recents.png
+share/icons/oxygen/base/22x22/actions/tag-reset.png
+share/icons/oxygen/base/22x22/actions/tag.png
 share/icons/oxygen/base/22x22/actions/text-field.png
 share/icons/oxygen/base/22x22/actions/text-frame-link.png
 share/icons/oxygen/base/22x22/actions/text-frame-unlink.png
@@ -3484,6 +3518,7 @@ share/icons/oxygen/base/22x22/actions/window-duplicate.png
 share/icons/oxygen/base/22x22/actions/window-new.png
 share/icons/oxygen/base/22x22/actions/window-next.png
 share/icons/oxygen/base/22x22/actions/window-previous.png
+share/icons/oxygen/base/22x22/actions/x-clementine-shuffle.png
 share/icons/oxygen/base/22x22/actions/x-shape-image.png
 share/icons/oxygen/base/22x22/actions/x-shape-text.png
 share/icons/oxygen/base/22x22/actions/zoom-1-to-2.png
@@ -3521,6 +3556,7 @@ share/icons/oxygen/base/22x22/apps/akonadi.png
 share/icons/oxygen/base/22x22/apps/akregator.png
 share/icons/oxygen/base/22x22/apps/amarok.png
 share/icons/oxygen/base/22x22/apps/ark.png
+share/icons/oxygen/base/22x22/apps/artikulate.png
 share/icons/oxygen/base/22x22/apps/basket.png
 share/icons/oxygen/base/22x22/apps/calligraflow.png
 share/icons/oxygen/base/22x22/apps/calligrakexi.png
@@ -3727,10 +3763,16 @@ share/icons/oxygen/base/22x22/devices/drive-optical.png
 share/icons/oxygen/base/22x22/devices/drive-removable-media-usb-pendrive.png
 share/icons/oxygen/base/22x22/devices/drive-removable-media-usb.png
 share/icons/oxygen/base/22x22/devices/drive-removable-media.png
+share/icons/oxygen/base/22x22/devices/hands-free.png
+share/icons/oxygen/base/22x22/devices/handset.png
+share/icons/oxygen/base/22x22/devices/headphone.png
+share/icons/oxygen/base/22x22/devices/headset.png
+share/icons/oxygen/base/22x22/devices/hifi.png
 share/icons/oxygen/base/22x22/devices/input-gaming.png
 share/icons/oxygen/base/22x22/devices/input-keyboard.png
 share/icons/oxygen/base/22x22/devices/input-mouse.png
 share/icons/oxygen/base/22x22/devices/input-tablet.png
+share/icons/oxygen/base/22x22/devices/internal.png
 share/icons/oxygen/base/22x22/devices/media-flash-memory-stick.png
 share/icons/oxygen/base/22x22/devices/media-flash-sd-mmc.png
 share/icons/oxygen/base/22x22/devices/media-flash-smart-media.png
@@ -3745,28 +3787,41 @@ share/icons/oxygen/base/22x22/devices/media-optical-recordable.png
 share/icons/oxygen/base/22x22/devices/media-optical-video.png
 share/icons/oxygen/base/22x22/devices/media-optical.png
 share/icons/oxygen/base/22x22/devices/media-tape.png
+share/icons/oxygen/base/22x22/devices/microphone.png
 share/icons/oxygen/base/22x22/devices/modem.png
 share/icons/oxygen/base/22x22/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/22x22/devices/multimedia-player.png
+share/icons/oxygen/base/22x22/devices/network-offline.png
+share/icons/oxygen/base/22x22/devices/network-wired-disconnected.png
 share/icons/oxygen/base/22x22/devices/network-wired.png
+share/icons/oxygen/base/22x22/devices/network-wireless-acquiring.png
 share/icons/oxygen/base/22x22/devices/network-wireless-connected-00.png
 share/icons/oxygen/base/22x22/devices/network-wireless-connected-100.png
 share/icons/oxygen/base/22x22/devices/network-wireless-connected-25.png
 share/icons/oxygen/base/22x22/devices/network-wireless-connected-50.png
 share/icons/oxygen/base/22x22/devices/network-wireless-connected-75.png
 share/icons/oxygen/base/22x22/devices/network-wireless-disconnected.png
+share/icons/oxygen/base/22x22/devices/network-wireless-signal-excellent.png
+share/icons/oxygen/base/22x22/devices/network-wireless-signal-good.png
+share/icons/oxygen/base/22x22/devices/network-wireless-signal-none.png
+share/icons/oxygen/base/22x22/devices/network-wireless-signal-ok.png
+share/icons/oxygen/base/22x22/devices/network-wireless-signal-weak.png
 share/icons/oxygen/base/22x22/devices/network-wireless.png
 share/icons/oxygen/base/22x22/devices/pda.png
 share/icons/oxygen/base/22x22/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/base/22x22/devices/phone.png
+share/icons/oxygen/base/22x22/devices/portable.png
 share/icons/oxygen/base/22x22/devices/printer.png
 share/icons/oxygen/base/22x22/devices/scanner.png
 share/icons/oxygen/base/22x22/devices/secure-card.png
 share/icons/oxygen/base/22x22/devices/smartphone.png
+share/icons/oxygen/base/22x22/devices/speaker.png
 share/icons/oxygen/base/22x22/devices/tablet.png
+share/icons/oxygen/base/22x22/devices/tv.png
 share/icons/oxygen/base/22x22/devices/video-display.png
 share/icons/oxygen/base/22x22/devices/video-projector.png
 share/icons/oxygen/base/22x22/devices/video-television.png
+share/icons/oxygen/base/22x22/devices/webcam.png
 share/icons/oxygen/base/22x22/emblems/
 share/icons/oxygen/base/22x22/emblems/emblem-added.png
 share/icons/oxygen/base/22x22/emblems/emblem-encrypted-locked.png
@@ -3784,6 +3839,7 @@ share/icons/oxygen/base/22x22/emblems/image-has-versions-open.png
 share/icons/oxygen/base/22x22/emblems/image-has-versions.png
 share/icons/oxygen/base/22x22/emblems/image-stack-open.png
 share/icons/oxygen/base/22x22/emblems/image-stack.png
+share/icons/oxygen/base/22x22/emblems/media-mount.png
 share/icons/oxygen/base/22x22/emblems/vcs-added.png
 share/icons/oxygen/base/22x22/emblems/vcs-conflicting.png
 share/icons/oxygen/base/22x22/emblems/vcs-locally-modified-unstaged.png
@@ -4224,6 +4280,7 @@ share/icons/oxygen/base/22x22/places/folder-download.png
 share/icons/oxygen/base/22x22/places/folder-downloads.png
 share/icons/oxygen/base/22x22/places/folder-dropbox.png
 share/icons/oxygen/base/22x22/places/folder-favorites.png
+share/icons/oxygen/base/22x22/places/folder-games.png
 share/icons/oxygen/base/22x22/places/folder-gdrive.png
 share/icons/oxygen/base/22x22/places/folder-green.png
 share/icons/oxygen/base/22x22/places/folder-grey.png
@@ -4379,6 +4436,7 @@ share/icons/oxygen/base/22x22/status/weather-snow-scattered-day.png
 share/icons/oxygen/base/22x22/status/weather-snow-scattered-night.png
 share/icons/oxygen/base/22x22/status/weather-snow-scattered.png
 share/icons/oxygen/base/22x22/status/weather-snow.png
+share/icons/oxygen/base/22x22/status/weather-storm-day.png
 share/icons/oxygen/base/22x22/status/weather-storm-night.png
 share/icons/oxygen/base/22x22/status/weather-storm.png
 share/icons/oxygen/base/22x22/status/window-suppressed.png
@@ -4439,6 +4497,7 @@ share/icons/oxygen/base/256x256/apps/accessories-calculator.png
 share/icons/oxygen/base/256x256/apps/accessories-dictionary.png
 share/icons/oxygen/base/256x256/apps/akonadi.png
 share/icons/oxygen/base/256x256/apps/akregator.png
+share/icons/oxygen/base/256x256/apps/artikulate.png
 share/icons/oxygen/base/256x256/apps/clock.png
 share/icons/oxygen/base/256x256/apps/digikam.png
 share/icons/oxygen/base/256x256/apps/hotspot.png
@@ -4898,6 +4957,7 @@ share/icons/oxygen/base/256x256/places/folder-download.png
 share/icons/oxygen/base/256x256/places/folder-downloads.png
 share/icons/oxygen/base/256x256/places/folder-dropbox.png
 share/icons/oxygen/base/256x256/places/folder-favorites.png
+share/icons/oxygen/base/256x256/places/folder-games.png
 share/icons/oxygen/base/256x256/places/folder-gdrive.png
 share/icons/oxygen/base/256x256/places/folder-green.png
 share/icons/oxygen/base/256x256/places/folder-grey.png
@@ -5137,6 +5197,7 @@ share/icons/oxygen/base/32x32/actions/edit-paste.png
 share/icons/oxygen/base/32x32/actions/edit-redo.png
 share/icons/oxygen/base/32x32/actions/edit-rename.png
 share/icons/oxygen/base/32x32/actions/edit-select-all.png
+share/icons/oxygen/base/32x32/actions/edit-select-none.png
 share/icons/oxygen/base/32x32/actions/edit-select.png
 share/icons/oxygen/base/32x32/actions/edit-table-cell-merge.png
 share/icons/oxygen/base/32x32/actions/edit-table-cell-split.png
@@ -5323,6 +5384,9 @@ share/icons/oxygen/base/32x32/actions/media-eject.png
 share/icons/oxygen/base/32x32/actions/media-playback-pause.png
 share/icons/oxygen/base/32x32/actions/media-playback-start.png
 share/icons/oxygen/base/32x32/actions/media-playback-stop.png
+share/icons/oxygen/base/32x32/actions/media-playlist-repeat-amarok.png
+share/icons/oxygen/base/32x32/actions/media-playlist-repeat.png
+share/icons/oxygen/base/32x32/actions/media-playlist-shuffle.png
 share/icons/oxygen/base/32x32/actions/media-record.png
 share/icons/oxygen/base/32x32/actions/media-seek-backward.png
 share/icons/oxygen/base/32x32/actions/media-seek-forward.png
@@ -5377,6 +5441,7 @@ share/icons/oxygen/base/32x32/actions/quickopen-file.png
 share/icons/oxygen/base/32x32/actions/quickopen-function.png
 share/icons/oxygen/base/32x32/actions/quickopen.png
 share/icons/oxygen/base/32x32/actions/quickview.png
+share/icons/oxygen/base/32x32/actions/rating-unrated.png
 share/icons/oxygen/base/32x32/actions/rating.png
 share/icons/oxygen/base/32x32/actions/resource-calendar-child-insert.png
 share/icons/oxygen/base/32x32/actions/resource-calendar-child.png
@@ -5395,6 +5460,7 @@ share/icons/oxygen/base/32x32/actions/select-rectangular.png
 share/icons/oxygen/base/32x32/actions/services.png
 share/icons/oxygen/base/32x32/actions/shapes.png
 share/icons/oxygen/base/32x32/actions/show-menu.png
+share/icons/oxygen/base/32x32/actions/shuffle.png
 share/icons/oxygen/base/32x32/actions/skg-chart-bubble.png
 share/icons/oxygen/base/32x32/actions/skrooge_credit_card.png
 share/icons/oxygen/base/32x32/actions/skrooge_less.png
@@ -5599,6 +5665,7 @@ share/icons/oxygen/base/32x32/actions/window-duplicate.png
 share/icons/oxygen/base/32x32/actions/window-new.png
 share/icons/oxygen/base/32x32/actions/window-next.png
 share/icons/oxygen/base/32x32/actions/window-previous.png
+share/icons/oxygen/base/32x32/actions/x-clementine-shuffle.png
 share/icons/oxygen/base/32x32/actions/zoom-1-to-2.png
 share/icons/oxygen/base/32x32/actions/zoom-2-to-1.png
 share/icons/oxygen/base/32x32/actions/zoom-draw.png
@@ -5628,6 +5695,7 @@ share/icons/oxygen/base/32x32/apps/amarok.png
 share/icons/oxygen/base/32x32/apps/amarok_change_language.png
 share/icons/oxygen/base/32x32/apps/application-sxw.png
 share/icons/oxygen/base/32x32/apps/ark.png
+share/icons/oxygen/base/32x32/apps/artikulate.png
 share/icons/oxygen/base/32x32/apps/baloo.png
 share/icons/oxygen/base/32x32/apps/basket.png
 share/icons/oxygen/base/32x32/apps/braindump.png
@@ -5837,10 +5905,15 @@ share/icons/oxygen/base/32x32/devices/drive-optical.png
 share/icons/oxygen/base/32x32/devices/drive-removable-media-usb-pendrive.png
 share/icons/oxygen/base/32x32/devices/drive-removable-media-usb.png
 share/icons/oxygen/base/32x32/devices/drive-removable-media.png
+share/icons/oxygen/base/32x32/devices/hands-free.png
+share/icons/oxygen/base/32x32/devices/handset.png
+share/icons/oxygen/base/32x32/devices/headphone.png
+share/icons/oxygen/base/32x32/devices/headset.png
 share/icons/oxygen/base/32x32/devices/input-gaming.png
 share/icons/oxygen/base/32x32/devices/input-keyboard.png
 share/icons/oxygen/base/32x32/devices/input-mouse.png
 share/icons/oxygen/base/32x32/devices/input-tablet.png
+share/icons/oxygen/base/32x32/devices/internal.png
 share/icons/oxygen/base/32x32/devices/media-flash-memory-stick.png
 share/icons/oxygen/base/32x32/devices/media-flash-sd-mmc.png
 share/icons/oxygen/base/32x32/devices/media-flash-smart-media.png
@@ -5856,29 +5929,42 @@ share/icons/oxygen/base/32x32/devices/media-optical-recordable.png
 share/icons/oxygen/base/32x32/devices/media-optical-video.png
 share/icons/oxygen/base/32x32/devices/media-optical.png
 share/icons/oxygen/base/32x32/devices/media-tape.png
+share/icons/oxygen/base/32x32/devices/microphone.png
 share/icons/oxygen/base/32x32/devices/modem.png
 share/icons/oxygen/base/32x32/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/32x32/devices/multimedia-player.png
+share/icons/oxygen/base/32x32/devices/network-offline.png
+share/icons/oxygen/base/32x32/devices/network-wired-disconnected.png
 share/icons/oxygen/base/32x32/devices/network-wired.png
+share/icons/oxygen/base/32x32/devices/network-wireless-acquiring.png
 share/icons/oxygen/base/32x32/devices/network-wireless-connected-00.png
 share/icons/oxygen/base/32x32/devices/network-wireless-connected-100.png
 share/icons/oxygen/base/32x32/devices/network-wireless-connected-25.png
 share/icons/oxygen/base/32x32/devices/network-wireless-connected-50.png
 share/icons/oxygen/base/32x32/devices/network-wireless-connected-75.png
 share/icons/oxygen/base/32x32/devices/network-wireless-disconnected.png
+share/icons/oxygen/base/32x32/devices/network-wireless-signal-excellent.png
+share/icons/oxygen/base/32x32/devices/network-wireless-signal-good.png
+share/icons/oxygen/base/32x32/devices/network-wireless-signal-none.png
+share/icons/oxygen/base/32x32/devices/network-wireless-signal-ok.png
+share/icons/oxygen/base/32x32/devices/network-wireless-signal-weak.png
 share/icons/oxygen/base/32x32/devices/network-wireless.png
 share/icons/oxygen/base/32x32/devices/pda.png
 share/icons/oxygen/base/32x32/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/base/32x32/devices/phone.png
+share/icons/oxygen/base/32x32/devices/portable.png
 share/icons/oxygen/base/32x32/devices/printer-laser.png
 share/icons/oxygen/base/32x32/devices/printer.png
 share/icons/oxygen/base/32x32/devices/scanner.png
 share/icons/oxygen/base/32x32/devices/secure-card.png
 share/icons/oxygen/base/32x32/devices/smartphone.png
+share/icons/oxygen/base/32x32/devices/speaker.png
 share/icons/oxygen/base/32x32/devices/tablet.png
+share/icons/oxygen/base/32x32/devices/tv.png
 share/icons/oxygen/base/32x32/devices/video-display.png
 share/icons/oxygen/base/32x32/devices/video-projector.png
 share/icons/oxygen/base/32x32/devices/video-television.png
+share/icons/oxygen/base/32x32/devices/webcam.png
 share/icons/oxygen/base/32x32/emblems/
 share/icons/oxygen/base/32x32/emblems/emblem-encrypted-locked.png
 share/icons/oxygen/base/32x32/emblems/emblem-encrypted-unlocked.png
@@ -6295,6 +6381,7 @@ share/icons/oxygen/base/32x32/places/folder-download.png
 share/icons/oxygen/base/32x32/places/folder-downloads.png
 share/icons/oxygen/base/32x32/places/folder-dropbox.png
 share/icons/oxygen/base/32x32/places/folder-favorites.png
+share/icons/oxygen/base/32x32/places/folder-games.png
 share/icons/oxygen/base/32x32/places/folder-gdrive.png
 share/icons/oxygen/base/32x32/places/folder-green.png
 share/icons/oxygen/base/32x32/places/folder-grey.png
@@ -6439,6 +6526,7 @@ share/icons/oxygen/base/32x32/status/weather-snow-scattered-day.png
 share/icons/oxygen/base/32x32/status/weather-snow-scattered-night.png
 share/icons/oxygen/base/32x32/status/weather-snow-scattered.png
 share/icons/oxygen/base/32x32/status/weather-snow.png
+share/icons/oxygen/base/32x32/status/weather-storm-day.png
 share/icons/oxygen/base/32x32/status/weather-storm-night.png
 share/icons/oxygen/base/32x32/status/weather-storm.png
 share/icons/oxygen/base/32x32/status/window-suppressed.png
@@ -6597,6 +6685,7 @@ share/icons/oxygen/base/48x48/actions/edit-paste.png
 share/icons/oxygen/base/48x48/actions/edit-redo.png
 share/icons/oxygen/base/48x48/actions/edit-rename.png
 share/icons/oxygen/base/48x48/actions/edit-select-all.png
+share/icons/oxygen/base/48x48/actions/edit-select-none.png
 share/icons/oxygen/base/48x48/actions/edit-select.png
 share/icons/oxygen/base/48x48/actions/edit-table-cell-merge.png
 share/icons/oxygen/base/48x48/actions/edit-table-cell-split.png
@@ -6781,6 +6870,9 @@ share/icons/oxygen/base/48x48/actions/media-eject.png
 share/icons/oxygen/base/48x48/actions/media-playback-pause.png
 share/icons/oxygen/base/48x48/actions/media-playback-start.png
 share/icons/oxygen/base/48x48/actions/media-playback-stop.png
+share/icons/oxygen/base/48x48/actions/media-playlist-repeat-amarok.png
+share/icons/oxygen/base/48x48/actions/media-playlist-repeat.png
+share/icons/oxygen/base/48x48/actions/media-playlist-shuffle.png
 share/icons/oxygen/base/48x48/actions/media-record.png
 share/icons/oxygen/base/48x48/actions/media-seek-backward.png
 share/icons/oxygen/base/48x48/actions/media-seek-forward.png
@@ -6829,6 +6921,7 @@ share/icons/oxygen/base/48x48/actions/quickopen-file.png
 share/icons/oxygen/base/48x48/actions/quickopen-function.png
 share/icons/oxygen/base/48x48/actions/quickopen.png
 share/icons/oxygen/base/48x48/actions/quickview.png
+share/icons/oxygen/base/48x48/actions/rating-unrated.png
 share/icons/oxygen/base/48x48/actions/rating.png
 share/icons/oxygen/base/48x48/actions/resource-calendar-child-insert.png
 share/icons/oxygen/base/48x48/actions/resource-calendar-child.png
@@ -6846,6 +6939,7 @@ share/icons/oxygen/base/48x48/actions/run-build.png
 share/icons/oxygen/base/48x48/actions/select-rectangular.png
 share/icons/oxygen/base/48x48/actions/services.png
 share/icons/oxygen/base/48x48/actions/show-menu.png
+share/icons/oxygen/base/48x48/actions/shuffle.png
 share/icons/oxygen/base/48x48/actions/skg-chart-bubble.png
 share/icons/oxygen/base/48x48/actions/skrooge_credit_card.png
 share/icons/oxygen/base/48x48/actions/skrooge_less.png
@@ -7035,6 +7129,7 @@ share/icons/oxygen/base/48x48/actions/window-new.png
 share/icons/oxygen/base/48x48/actions/window-next.png
 share/icons/oxygen/base/48x48/actions/window-previous.png
 share/icons/oxygen/base/48x48/actions/window-suppressed.png
+share/icons/oxygen/base/48x48/actions/x-clementine-shuffle.png
 share/icons/oxygen/base/48x48/actions/zoom-1-to-2.png
 share/icons/oxygen/base/48x48/actions/zoom-2-to-1.png
 share/icons/oxygen/base/48x48/actions/zoom-draw.png
@@ -7062,6 +7157,7 @@ share/icons/oxygen/base/48x48/apps/akonadi.png
 share/icons/oxygen/base/48x48/apps/akregator.png
 share/icons/oxygen/base/48x48/apps/amarok.png
 share/icons/oxygen/base/48x48/apps/ark.png
+share/icons/oxygen/base/48x48/apps/artikulate.png
 share/icons/oxygen/base/48x48/apps/basket.png
 share/icons/oxygen/base/48x48/apps/braindump.png
 share/icons/oxygen/base/48x48/apps/calligraauthor.png
@@ -7324,6 +7420,7 @@ share/icons/oxygen/base/48x48/emblems/emblem-important.png
 share/icons/oxygen/base/48x48/emblems/emblem-mounted.png
 share/icons/oxygen/base/48x48/emblems/emblem-new.png
 share/icons/oxygen/base/48x48/emblems/emblem-symbolic-link.png
+share/icons/oxygen/base/48x48/emblems/media-mount.png
 share/icons/oxygen/base/48x48/emotes/
 share/icons/oxygen/base/48x48/emotes/face-angel.png
 share/icons/oxygen/base/48x48/emotes/face-embarrassed.png
@@ -7712,6 +7809,7 @@ share/icons/oxygen/base/48x48/places/folder-download.png
 share/icons/oxygen/base/48x48/places/folder-downloads.png
 share/icons/oxygen/base/48x48/places/folder-dropbox.png
 share/icons/oxygen/base/48x48/places/folder-favorites.png
+share/icons/oxygen/base/48x48/places/folder-games.png
 share/icons/oxygen/base/48x48/places/folder-gdrive.png
 share/icons/oxygen/base/48x48/places/folder-green.png
 share/icons/oxygen/base/48x48/places/folder-grey.png
@@ -7948,6 +8046,7 @@ share/icons/oxygen/base/64x64/apps/akonadi.png
 share/icons/oxygen/base/64x64/apps/akregator.png
 share/icons/oxygen/base/64x64/apps/amarok.png
 share/icons/oxygen/base/64x64/apps/ark.png
+share/icons/oxygen/base/64x64/apps/artikulate.png
 share/icons/oxygen/base/64x64/apps/basket.png
 share/icons/oxygen/base/64x64/apps/braindump.png
 share/icons/oxygen/base/64x64/apps/calligraauthor.png
@@ -8574,6 +8673,7 @@ share/icons/oxygen/base/64x64/places/folder-download.png
 share/icons/oxygen/base/64x64/places/folder-downloads.png
 share/icons/oxygen/base/64x64/places/folder-dropbox.png
 share/icons/oxygen/base/64x64/places/folder-favorites.png
+share/icons/oxygen/base/64x64/places/folder-games.png
 share/icons/oxygen/base/64x64/places/folder-gdrive.png
 share/icons/oxygen/base/64x64/places/folder-green.png
 share/icons/oxygen/base/64x64/places/folder-grey.png

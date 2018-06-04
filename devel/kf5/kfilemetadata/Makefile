@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/26 20:33:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/04 20:25:32 rsadowski Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata
@@ -6,7 +6,7 @@ DISTNAME =	kfilemetadata-${VERSION}
 PKGNAME-main =	kf5-kfilemetadata-${VERSION}
 PKGNAME-locale =kf5-kfilemetadata-l10n-${VERSION}
 
-SHARED_LIBS =	KF5FileMetaData		5.0 # 5.20
+SHARED_LIBS =	KF5FileMetaData		5.1 # 5.20
 
 # split l10n off main package to deconflict with KDE4's kfilemetadata
 # use -locale instead of -l10n to please update-plist
@@ -30,8 +30,7 @@ LIB_DEPENDS-main =	audio/taglib \
 			graphics/exiv2 \
 			graphics/ffmpeg \
 			print/poppler,,-qt5 \
-			textproc/ebook-tools \
-			x11/qt5/qtmultimedia
+			textproc/ebook-tools
 
 PKG_ARCH-locale =	*
 
