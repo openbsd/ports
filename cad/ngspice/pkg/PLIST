@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/05 08:13:58 bentley Exp $
-@bin bin/ngmakeidx
-@bin bin/ngmultidec
-@bin bin/ngnutmeg
-@bin bin/ngproc2mod
-@bin bin/ngsconvert
+@comment $OpenBSD: PLIST,v 1.5 2018/06/04 10:52:34 bentley Exp $
 @bin bin/ngspice
 include/ngspice/
 include/ngspice/1-f-code.h
@@ -137,9 +132,6 @@ include/ngspice/wstdio.h
 @man man/man1/ngsconvert.1
 @man man/man1/ngspice.1
 share/ngspice/
-share/ngspice/helpdir/
-share/ngspice/helpdir/ngspice.idx
-share/ngspice/helpdir/ngspice.txt
 share/ngspice/scripts/
 share/ngspice/scripts/setplot
 share/ngspice/scripts/spectrum
