@@ -1,5 +1,5 @@
-#! /usr/bin/perl
-# Copyright (c) 2014-2018
+#! /bin/sh
+# Copyright (c) 2018
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -22,39 +22,8 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-use strict;
-use warnings;
-use Getopt::Std;
-
-my %opts;
-getopts('bCcDdpSsB:f:g:m:o:', \%opts);
-
-for my $s (qw(b C c D d p S s)) {
-	if ($opts{$s}) {
-		unshift(@ARGV, "-$s");
-	}
-}
-
-if ($opts{m}) {
-	my $mode = $opts{m};
-	if ($mode eq '444' || $mode eq '0444') {
-		$mode = '644';
-	} elsif ($mode eq '555' || $mode eq '0555') {
-		$mode = '755';
-	}
-	unshift(@ARGV, '-m', $mode);
-}
-
-if (defined $ENV{FAKELOG} && ($opts{g} || $opts{o})) {
-	require Cwd;
-	open my $fh, ">>", $ENV{FAKELOG} or die;
-	my @args = @ARGV;
-	if ($opts{g}) {
-		unshift(@args, '-g', $opts{g});
-	}
-	if ($opts{o}) {
-		unshift(@args, '-o', $opts{o});
-	}
-	print $fh join(" ", Cwd::getcwd(), 'install', @args), "\n";
-}
-exec {'/usr/bin/install'} ('install', @ARGV);
+# protect against FAKELOG not passed correctly
+case X$FAKELOG in 
+X) ;;
+*) echo `pwd` ${0##*/} "$@" >>$FAKELOG;;
+esac
