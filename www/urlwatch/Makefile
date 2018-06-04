@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/02 13:57:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/04 14:04:54 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.12
+MODPY_EGG_VERSION=	2.13
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
 
 HOMEPAGE=	https://thp.io/2008/urlwatch/
 
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI =	Yes
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
-MODPY_SETUPTOOLS=       Yes
+MODPY_PI=	Yes
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+MODPY_SETUPTOOLS= Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
