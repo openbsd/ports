@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.8 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =		high-level decoding and seeking API for Opus files
 DISTNAME =		opusfile-0.9

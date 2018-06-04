@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.9 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =		interactive fractal zoomer and morpher
 

@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =		string matching library
 

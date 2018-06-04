@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.3 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =	sets body for redirect response, if it's not already set
 

@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.8 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.4

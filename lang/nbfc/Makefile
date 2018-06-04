@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.7 2018/06/04 01:47:30 sthen Exp $
 
 COMMENT =		new brainfuck compiler
 
