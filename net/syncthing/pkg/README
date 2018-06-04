@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2016/05/25 13:41:43 edd Exp $
+$OpenBSD: README,v 1.3 2018/06/04 08:51:48 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -46,3 +46,19 @@ on per-user basis:
 This will result in a new tmux(1) session being spawned each system
 boot. The user can later use `tmux attach` to view and control their
 Syncthing process.
+
+File Descriptor Limits
+======================
+
+Syncthing is fairly hungry for file descriptors and the default limits may be
+insufficient. If you run Syncthing via the rc.d(8) script, then you can give
+Syncthing more file descriptors by adding the following to login.conf(5):
+
+       syncthing:\
+                :openfiles-cur=4096:\
+                :openfiles-max=4096:\
+                :tc=daemon:
+
+Don't forget to rebuild the login.conf.db file (if necessary):
+
+        # [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
