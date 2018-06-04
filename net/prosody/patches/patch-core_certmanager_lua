@@ -1,9 +1,9 @@
-$OpenBSD: patch-core_certmanager_lua,v 1.1 2018/01/18 03:22:34 danj Exp $
+$OpenBSD: patch-core_certmanager_lua,v 1.2 2018/06/04 19:53:58 landry Exp $
 
 Index: core/certmanager.lua
 --- core/certmanager.lua.orig
 +++ core/certmanager.lua
-@@ -94,7 +94,7 @@ end
+@@ -102,7 +102,7 @@ end
  
  -- Built-in defaults
  local core_defaults = {
