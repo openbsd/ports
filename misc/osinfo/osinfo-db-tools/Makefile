@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/14 11:43:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/04 08:12:41 ajacoutot Exp $
 
 COMMENT=		tools to manage the libosinfo database
 
-V=			1.1.0
 DISTNAME=		osinfo-db-tools-${V}
 REVISION=		0
 
