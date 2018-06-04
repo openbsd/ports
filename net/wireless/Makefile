@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/06 14:05:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/04 19:52:09 kn Exp $
 
 COMMENT =	automatically scan for and configure wireless networks
 
-V =		5
+V =		6
 DISTNAME =	wireless-v$V
 PKGNAME =	wireless-$V
 
