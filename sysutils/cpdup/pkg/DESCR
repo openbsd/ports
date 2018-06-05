@@ -1,0 +1,12 @@
+The cpdup utility makes an exact mirror copy of the source in the
+destination, creating and deleting files and directories as necessary.
+UTimes, hardlinks, softlinks, devices, permissions, and flags are
+mirrored. By default, cpdup asks for confirmation if any file or
+directory needs to be removed from the destination and does not copy
+files which it believes to have already been synchronized (by observing
+that the source and destination files' sizes and mtimes match). cpdup
+does not cross mount points in either the source or the destination. As
+a safety measure, cpdup refuses to replace a destination directory with
+a file.
+
+It is a port of the cpdup utility from DragonFly BSD.
