@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/22 08:20:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/05 08:01:08 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
@@ -42,6 +42,7 @@ lib/asb-plugins-5/libasb_plugin_desktop.so
 lib/asb-plugins-5/libasb_plugin_font.so
 lib/asb-plugins-5/libasb_plugin_gettext.so
 lib/asb-plugins-5/libasb_plugin_hardcoded.so
+lib/asb-plugins-5/libasb_plugin_icon.so
 lib/asb-plugins-5/libasb_plugin_shell_extension.so
 lib/girepository-1.0/AppStreamBuilder-1.0.typelib
 lib/girepository-1.0/AppStreamGlib-1.0.typelib
@@ -60,6 +61,7 @@ share/gettext/its/appdata.its
 share/gettext/its/appdata.loc
 share/gir-1.0/AppStreamBuilder-1.0.gir
 share/gir-1.0/AppStreamGlib-1.0.gir
+share/installed-tests/
 share/installed-tests/appstream-glib/
 share/installed-tests/appstream-glib/appdata-validate.test
 share/installed-tests/appstream-glib/destdir-check.test
