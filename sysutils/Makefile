@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2018/06/03 15:55:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.488 2018/06/05 17:27:33 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -47,8 +47,9 @@
      SUBDIR += consolekit
      SUBDIR += consul
      SUBDIR += consul-template
-     SUBDIR += cpuid
      SUBDIR += coreutils
+     SUBDIR += cpdup
+     SUBDIR += cpuid
      SUBDIR += crashme
      SUBDIR += curlftpfs
      SUBDIR += d-feet
@@ -314,6 +315,7 @@
      SUBDIR += syslog-ng
      SUBDIR += sysmon
      SUBDIR += tabled
+     SUBDIR += tabs
      SUBDIR += tarsnap
      SUBDIR += tarsnap-gui
      SUBDIR += tarsnapper
