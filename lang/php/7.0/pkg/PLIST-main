@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2018/06/04 15:22:37 martijn Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2018/06/05 12:50:29 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -238,6 +238,12 @@ share/php-${PV}/include/ext/mysqlnd/mysqlnd_structs.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd_wireprotocol.h
 share/php-${PV}/include/ext/mysqlnd/php_mysqlnd.h
 share/php-${PV}/include/ext/pcre/
+share/php-${PV}/include/ext/pcre/pcrelib/
+share/php-${PV}/include/ext/pcre/pcrelib/config.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcre.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcre_internal.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcreposix.h
+share/php-${PV}/include/ext/pcre/pcrelib/ucp.h
 share/php-${PV}/include/ext/pcre/php_pcre.h
 share/php-${PV}/include/ext/pdo/
 share/php-${PV}/include/ext/pdo/php_pdo.h
