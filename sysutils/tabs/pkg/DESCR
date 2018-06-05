@@ -1,0 +1,5 @@
+The tabs utility displays a series of characters that clear the hardware
+terminal tab settings then initialises tab stops at specified positions,
+and optionally adjusts the margin.
+
+It is a port of the tabs utility from DragonFly BSD.
