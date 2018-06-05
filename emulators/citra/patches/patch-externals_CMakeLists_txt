@@ -1,0 +1,28 @@
+$OpenBSD: patch-externals_CMakeLists_txt,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+remove cryptopp, enet from builtins
+
+Index: externals/CMakeLists.txt
+--- externals/CMakeLists.txt.orig
++++ externals/CMakeLists.txt
+@@ -7,9 +7,6 @@ include(DownloadExternals)
+ add_library(catch-single-include INTERFACE)
+ target_include_directories(catch-single-include INTERFACE catch/single_include)
+ 
+-# Crypto++
+-add_subdirectory(cryptopp)
+-
+ # Dynarmic
+ if (ARCHITECTURE_x86_64)
+     # Dynarmic will skip defining xbyak if it's already defined, we then define it below
+@@ -54,10 +51,6 @@ if (ARCHITECTURE_x86_64)
+     target_include_directories(xbyak INTERFACE ./xbyak/xbyak)
+     target_compile_definitions(xbyak INTERFACE XBYAK_NO_OP_NAMES)
+ endif()
+-
+-# ENet
+-add_subdirectory(enet)
+-target_include_directories(enet INTERFACE ./enet/include)
+ 
+ if (ENABLE_WEB_SERVICE)
+     # LibreSSL

@@ -1,0 +1,43 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+remove check for submodules
+fix man path
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -29,20 +29,6 @@ endif()
+ # Sanity check : Check that all submodules are present
+ # =======================================================================
+ 
+-function(check_submodules_present)
+-    file(READ "${CMAKE_SOURCE_DIR}/.gitmodules" gitmodules)
+-    string(REGEX MATCHALL "path *= *[^ \t\r\n]*" gitmodules ${gitmodules})
+-    foreach(module ${gitmodules})
+-        string(REGEX REPLACE "path *= *" "" module ${module})
+-        if (NOT EXISTS "${CMAKE_SOURCE_DIR}/${module}/.git")
+-            message(SEND_ERROR "Git submodule ${module} not found."
+-                    "Please run: git submodule update --init --recursive")
+-        endif()
+-    endforeach()
+-endfunction()
+-check_submodules_present()
+-
+-
+ configure_file(${CMAKE_SOURCE_DIR}/dist/compatibility_list/compatibility_list.qrc
+                ${CMAKE_BINARY_DIR}/dist/compatibility_list/compatibility_list.qrc
+                COPYONLY)
+@@ -397,11 +383,11 @@ endif()
+ if(UNIX)
+     if(ENABLE_SDL2)
+         install(FILES "${CMAKE_SOURCE_DIR}/dist/citra.6"
+-                DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man6")
++                DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man6")
+     endif()
+ 
+     if (ENABLE_QT)
+         install(FILES "${CMAKE_SOURCE_DIR}/dist/citra-qt.6"
+-                DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man6")
++                DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man6")
+     endif()
+ endif()

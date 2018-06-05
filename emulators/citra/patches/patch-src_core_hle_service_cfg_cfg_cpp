@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_core_hle_service_cfg_cfg_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+fix namespace error
+
+Index: src/core/hle/service/cfg/cfg.cpp
+--- src/core/hle/service/cfg/cfg.cpp.orig
++++ src/core/hle/service/cfg/cfg.cpp
+@@ -670,7 +670,7 @@ void Module::GenerateConsoleUniqueId(u32& random_numbe
+     CryptoPP::AutoSeededRandomPool rng;
+     random_number = rng.GenerateWord32(0, 0xFFFF);
+     u64_le local_friend_code_seed;
+-    rng.GenerateBlock(reinterpret_cast<CryptoPP::byte*>(&local_friend_code_seed),
++    rng.GenerateBlock(reinterpret_cast<byte*>(&local_friend_code_seed),
+                       sizeof(local_friend_code_seed));
+     console_id = (local_friend_code_seed & 0x3FFFFFFFF) | (static_cast<u64>(random_number) << 48);
+ }

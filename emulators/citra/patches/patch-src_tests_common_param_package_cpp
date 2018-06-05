@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_common_param_package_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+fix include path for catch.cpp
+
+Index: src/tests/common/param_package.cpp
+--- src/tests/common/param_package.cpp.orig
++++ src/tests/common/param_package.cpp
+@@ -3,7 +3,7 @@
+ // Refer to the license.txt file included.
+ 
+ #include <cmath>
+-#include <catch.hpp>
++#include <catch/catch.hpp>
+ #include "common/param_package.h"
+ 
+ namespace Common {

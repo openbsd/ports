@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_glad_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+fix include path
+
+Index: src/tests/glad.cpp
+--- src/tests/glad.cpp.orig
++++ src/tests/glad.cpp
+@@ -2,7 +2,7 @@
+ // Licensed under GPLv2 or any later version
+ // Refer to the license.txt file included.
+ 
+-#include <catch.hpp>
++#include <catch/catch.hpp>
+ #include <glad/glad.h>
+ 
+ // This is not an actual test, but a work-around for issue #2183.

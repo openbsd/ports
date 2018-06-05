@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_core_hle_kernel_hle_ipc_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+fix include path
+
+Index: src/tests/core/hle/kernel/hle_ipc.cpp
+--- src/tests/core/hle/kernel/hle_ipc.cpp.orig
++++ src/tests/core/hle/kernel/hle_ipc.cpp
+@@ -2,7 +2,7 @@
+ // Licensed under GPLv2 or any later version
+ // Refer to the license.txt file included.
+ 
+-#include <catch.hpp>
++#include <catch/catch.hpp>
+ #include "core/hle/ipc.h"
+ #include "core/hle/kernel/client_port.h"
+ #include "core/hle/kernel/client_session.h"

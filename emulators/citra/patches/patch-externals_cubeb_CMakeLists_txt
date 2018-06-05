@@ -1,0 +1,16 @@
+$OpenBSD: patch-externals_cubeb_CMakeLists_txt,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+attempt to fix path to include directory of cubeb
+
+Index: externals/cubeb/CMakeLists.txt
+--- externals/cubeb/CMakeLists.txt.orig
++++ externals/cubeb/CMakeLists.txt
+@@ -78,7 +78,7 @@ target_include_directories(cubeb
+   PUBLIC $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/exports>
+ )
+ 
+-install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION ${CMAKE_INSTALL_PREFIX})
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include DESTINATION ${CMAKE_INSTALL_PREFIX})
+ install(DIRECTORY ${CMAKE_BINARY_DIR}/exports/ DESTINATION ${CMAKE_INSTALL_PREFIX}/include/cubeb)
+ 
+ include(CMakePackageConfigHelpers)

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_tests_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+
+fix include path
+
+Index: src/tests/tests.cpp
+--- src/tests/tests.cpp.orig
++++ src/tests/tests.cpp
+@@ -3,7 +3,7 @@
+ // Refer to the license.txt file included.
+ 
+ #define CATCH_CONFIG_MAIN
+-#include <catch.hpp>
++#include <catch/catch.hpp>
+ 
+ // Catch provides the main function since we've given it the
+ // CATCH_CONFIG_MAIN preprocessor directive.
