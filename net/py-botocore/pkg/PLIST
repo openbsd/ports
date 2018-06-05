@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2018/06/03 11:45:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.88 2018/06/05 08:07:10 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -368,6 +368,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/efs/2015-02-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/efs/2015-02-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/efs/2015-02-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/efs/2015-02-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/paginators-1.json
