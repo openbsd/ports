@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2018/03/16 22:01:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.97 2018/06/05 07:41:21 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -6,6 +6,7 @@
     SUBDIR += atari800
     SUBDIR += bochs
     SUBDIR += bochs,debug
+    SUBDIR += citra
     SUBDIR += coldfire
     SUBDIR += desmume
     SUBDIR += dgen-sdl
