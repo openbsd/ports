@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.50 2018/05/22 07:19:07 ajacoutot Exp $
+$OpenBSD: README,v 1.51 2018/06/05 09:39:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -102,17 +102,16 @@ with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
 For enhanced performance, a PHP opcode cache can be used, either use "opcache"
 built-in to PHP 5.5+, enable "opcache.ini" to use it)
-or install xcache.
+or install xcache (PHP 5.x only).
 
 Database configuration
 ----------------------
 See the following URL for setting up a database for ownCloud:
     https://doc.owncloud.org/server/${VR}/admin_manual/configuration_database/linux_database_configuration.html
 
-ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database. Support for
-SQLite3 is included with the main php package; to use another database, the
+ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database. The
 corresponding package needs to be installed *before* setting up ownCloud:
-    php-pgsql or php-pdo_mysql
+    php-pdo_sqlite, php-pgsql or php-pdo_mysql
 
 Configuration file
 ------------------
@@ -129,7 +128,7 @@ execute one task with each page loaded ("AJAX" option in the admin interface).
 The prefered way is to use a cron(8) job instead.
 (see https://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
 e.g.
-*/15	*	*	*	*	su -m www -c "${LOCALBASE}/bin/php-5.6 -f ${INSTDIR}/cron.php"
+*/15	*	*	*	*	su -m www -c "${MODPHP_BIN} -f ${INSTDIR}/cron.php"
 
 Memory caching and file locking
 -------------------------------
