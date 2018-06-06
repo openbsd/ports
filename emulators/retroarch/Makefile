@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/17 09:55:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/06 09:08:59 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
 V =			1.7.2
-REVISION =		0
-DISTNAME =		retroarch-$V
+REVISION =		1
+DISTNAME =		RetroArch-$V
+PKGNAME =		retroarch-$V
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://www.libretro.com/
 
-# GPLv3+
+# code GPLv3+, assets CC-BY-4.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
@@ -19,9 +20,9 @@ WANTLIB += avcodec avformat avutil c drm freetype gbm m openal
 WANTLIB += pthread swresample swscale usb-1.0 xcb xkbcommon
 WANTLIB += z
 
-GH_ACCOUNT =		libretro
-GH_PROJECT =		RetroArch
-GH_TAGNAME =		v$V
+MASTER_SITES =		https://github.com/libretro/RetroArch/releases/download/v$V/
+
+EXTRACT_SUFX =		.tar.xz
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
