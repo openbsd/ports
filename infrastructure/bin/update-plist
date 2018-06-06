@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.160 2018/06/03 10:06:39 espie Exp $
+# $OpenBSD: update-plist,v 1.161 2018/06/06 11:22:57 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -744,9 +744,10 @@ sub last_check
 	$self->strip_redundant_absolute($p);
 	return if !defined $self->{tagged_along};
 	my $error = $self->check_suffix($state);
-	print STDERR "Warning: ", $p->nlist->pkgname, " still contains ",
-	    $self->fullstring, " (no matching file and $error ?)\n" 
-	    if defined $error;
+	if (defined $error) {
+		push(@{$p->{oldcomments}}, $self->fullstring. 
+		    " (no matching file and $error ?)");
+	}
 }
 
 # if a file was commented, do not bring it back as a real file
@@ -859,9 +860,12 @@ sub last_check
 	return if $self->{intentional};
 	my $error = $self->check_suffix($state);
 	return unless defined $error;
-	my $condition = defined $self->{comesfrom} ? "old" : "new";
-	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?, $condition in plist)\n";
+	if (defined $self->{comesfrom}) {
+		push(@{$p->{oldorigfiles}}, $self->fullstring. " ($error ?)");
+	} else {
+		$self->{DONT} = 1;
+		push(@{$p->{origfiles}}, $self->fullstring. " ($error ?)");
+	}
 }
 
 sub known_object
@@ -1412,7 +1416,7 @@ sub copy_object
 	# TODO this is where we should figure @cwd stuff
 	# though it's generally better to have distinct plists
 	# for several prefixes
-	print STDERR "Can't put $path in any plist\n";
+	push(@{$self->{orphan_paths}}, $path);
 }
 
 sub copy_objects
@@ -1498,12 +1502,41 @@ sub adjust_final
     	}
 }
 
-sub show_unknown
+sub report_issues
 {
 	my $self = shift;
+	if (exists $self->{orphan_paths}) {
+		print "Can't put into any plist (no applicable prefix):\n";
+		for my $p (@{$self->{orphan_paths}}) {
+			print "\t$p\n";
+		}
+	}
 	# let's show a quick summary of stuff we couldn't figure out
 	for my $p (@{$self->{lists}}) {
 		$p->olist->show_unknown;
+	}
+	for my $p (@{$self->{lists}}) {
+		next unless exists $p->{origfiles};
+		print "Warning: entries NOT added to ", $p->nlist->pkgname, 
+		    ":\n";
+		for my $e (@{$p->{origfiles}}) {
+			print "\t$e\n";
+		}
+	}
+	for my $p (@{$self->{lists}}) {
+		next unless exists $p->{oldorigfiles};
+		print "Warning: possible problematic entries in ", 
+		    $p->nlist->pkgname, ":\n";
+		for my $e (@{$p->{oldorigfiles}}) {
+			print "\t$e\n";
+		}
+	}
+	for my $p (@{$self->{lists}}) {
+		next unless exists $p->{oldcomments};
+		print "Warning: ", $p->nlist->pkgname, " still contains:\n";
+		for my $e (@{$p->{oldcomments}}) {
+			print "\t$e\n";
+		}
 	}
 }
 
@@ -1606,7 +1639,7 @@ $self->adjust_final;
 
 
 $self->display_stripped_info;
-$self->show_unknown;
+$self->report_issues;
 if (!$self->{state}->opt('F')) {
 	$self->try_pkglocate;
 }
@@ -1637,6 +1670,8 @@ for my $p (@{$self->{lists}}) {
 			if (!-f "$k$new") {
 				print STDERR "No $k$new written\n";
 				$exitcode = 1;
+			# TODO get common code out of register-plist
+			# to figure out what discrepancies don't really matter
 			} elsif (compare($k, "$k$new") == 0) {
 				unlink("$k$new") unless $self->{state}->not;
 			} else {
