@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2018/06/01 17:50:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.170 2018/06/06 08:53:30 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -10,6 +10,7 @@ GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
 PKGNAME-main=	vim-$V
+REVISION-main=	0
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 
 AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-	       	devel/gettext-tools
+		devel/gettext-tools
 
 .if ${FLAVOR:Mhuge}
 CONFIGURE_ARGS+= --with-features=huge

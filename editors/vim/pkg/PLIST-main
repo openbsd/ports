@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2018/06/01 17:50:43 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2018/06/06 08:53:30 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -68,8 +68,8 @@ share/vim/${P}/autoload/xml/xhtml11.vim
 share/vim/${P}/autoload/xml/xsd.vim
 share/vim/${P}/autoload/xml/xsl.vim
 share/vim/${P}/autoload/xmlcomplete.vim
-share/vim/${P}/autoload/zip.vim
 share/vim/${P}/autoload/xmlformat.vim
+share/vim/${P}/autoload/zip.vim
 share/vim/${P}/bugreport.vim
 share/vim/${P}/colors/
 share/vim/${P}/colors/README.txt
@@ -89,10 +89,10 @@ share/vim/${P}/colors/peachpuff.vim
 share/vim/${P}/colors/ron.vim
 share/vim/${P}/colors/shine.vim
 share/vim/${P}/colors/slate.vim
-share/vim/${P}/colors/torte.vim
-share/vim/${P}/colors/zellner.vim
 share/vim/${P}/colors/tools/
 share/vim/${P}/colors/tools/check_colors.vim
+share/vim/${P}/colors/torte.vim
+share/vim/${P}/colors/zellner.vim
 share/vim/${P}/compiler/
 share/vim/${P}/compiler/README.txt
 share/vim/${P}/compiler/ant.vim
@@ -967,6 +967,7 @@ share/vim/${P}/syntax/dcd.vim
 share/vim/${P}/syntax/dcl.vim
 share/vim/${P}/syntax/debchangelog.vim
 share/vim/${P}/syntax/debcontrol.vim
+share/vim/${P}/syntax/debcopyright.vim
 share/vim/${P}/syntax/debsources.vim
 share/vim/${P}/syntax/def.vim
 share/vim/${P}/syntax/denyhosts.vim
@@ -1452,7 +1453,6 @@ share/vim/${P}/syntax/yaml.vim
 share/vim/${P}/syntax/z8a.vim
 share/vim/${P}/syntax/zimbu.vim
 share/vim/${P}/syntax/zsh.vim
-share/vim/${P}/syntax/debcopyright.vim
 share/vim/${P}/tools/
 share/vim/${P}/tools/README.txt
 share/vim/${P}/tools/blink.c
