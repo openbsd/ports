@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.7 2018/01/13 01:11:36 sthen Exp $
+@comment $OpenBSD: PLIST-docs,v 1.8 2018/06/06 14:31:11 sthen Exp $
 share/doc/xmlsec1/
 share/doc/xmlsec1/api/
 share/doc/xmlsec1/api/home.png
@@ -51,6 +51,12 @@ share/doc/xmlsec1/api/xmlsec-keysdata.html
 share/doc/xmlsec1/api/xmlsec-keysmngr.html
 share/doc/xmlsec1/api/xmlsec-list.html
 share/doc/xmlsec1/api/xmlsec-membuf.html
+share/doc/xmlsec1/api/xmlsec-msccng-ref.html
+share/doc/xmlsec1/api/xmlsec-mscng-app.html
+share/doc/xmlsec1/api/xmlsec-mscng-certkeys.html
+share/doc/xmlsec1/api/xmlsec-mscng-crypto.html
+share/doc/xmlsec1/api/xmlsec-mscng-keysstore.html
+share/doc/xmlsec1/api/xmlsec-mscng-x509.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-app.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-certkeys.html
 share/doc/xmlsec1/api/xmlsec-mscrypto-crypto.html

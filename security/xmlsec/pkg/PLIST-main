@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/01/13 01:11:36 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/06/06 14:31:11 sthen Exp $
 @pkgpath security/xmlsec
 @bin bin/xmlsec1
 bin/xmlsec1-config
@@ -68,5 +68,4 @@ lib/pkgconfig/xmlsec1.pc
 lib/xmlsec1Conf.sh
 @man man/man1/xmlsec1-config.1
 @man man/man1/xmlsec1.1
-share/aclocal/
 share/aclocal/xmlsec1.m4

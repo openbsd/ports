@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_testrun_sh,v 1.3 2018/01/13 01:11:36 sthen Exp $
+$OpenBSD: patch-tests_testrun_sh,v 1.4 2018/06/06 14:31:11 sthen Exp $
 
 Remove bash-ism.
 
 Index: tests/testrun.sh
 --- tests/testrun.sh.orig
 +++ tests/testrun.sh
-@@ -383,7 +383,7 @@ execEncTest() {
+@@ -390,7 +390,7 @@ execEncTest() {
  rm -rf $tmpfile $tmpfile.2 tmpfile.3
  
  # run tests
