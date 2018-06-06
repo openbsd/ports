@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2018/04/23 13:09:58 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2018/06/06 10:45:21 rsadowski Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.6.6
+REVISION =		0
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
-SHARED_LIBS +=	knot                 3.0      # .7.0
+SHARED_LIBS +=	knot                 4.0      # .7.0
 SHARED_LIBS +=	dnssec               1.0      # .5.0
 
 CATEGORIES =		net
@@ -18,8 +19,8 @@ MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
-WANTLIB += m nettle p11-kit pthread tasn1 unistring urcu urcu-common
-WANTLIB += z
+WANTLIB += lmdb m nettle p11-kit pthread tasn1 unistring urcu
+WANTLIB += urcu-common z
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
@@ -37,7 +38,8 @@ BUILD_DEPENDS =		devel/bison
 LIB_DEPENDS =		devel/gettext \
 			devel/libidn2 \
 			devel/liburcu \
-			security/gnutls
+			security/gnutls \
+			databases/lmdb
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
