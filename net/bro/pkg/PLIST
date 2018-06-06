@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/10/12 17:53:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/06 11:30:00 ajacoutot Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
+@rcscript ${RCDIR}/bro
 @bin bin/adtrace
 @bin bin/bro
 bin/bro-config
@@ -146,6 +147,7 @@ share/bro/base/bif/plugins/Bro_Login.functions.bif.bro
 share/bro/base/bif/plugins/Bro_MIME.events.bif.bro
 share/bro/base/bif/plugins/Bro_Modbus.events.bif.bro
 share/bro/base/bif/plugins/Bro_MySQL.events.bif.bro
+share/bro/base/bif/plugins/Bro_NCP.consts.bif.bro
 share/bro/base/bif/plugins/Bro_NCP.events.bif.bro
 share/bro/base/bif/plugins/Bro_NTLM.events.bif.bro
 share/bro/base/bif/plugins/Bro_NTLM.types.bif.bro
@@ -741,4 +743,3 @@ share/examples/bro/site/local.bro
 @sample ${LOCALSTATEDIR}/spool/bro/tmp/
 @exec-add ln -sf ${LOCALSTATEDIR}/spool/bro/broctl-config.sh %D/share/broctl/scripts/
 @unexec-delete rm -f %D/share/broctl/scripts/broctl-config.sh
-@rcscript ${RCDIR}/bro
