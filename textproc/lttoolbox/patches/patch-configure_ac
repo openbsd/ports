@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure_ac,v 1.1 2018/06/06 09:16:11 bentley Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -130,6 +130,16 @@ AX_CHECK_COMPILE_FLAG([-std=c++20], [CXXFLAGS="$CXXFLA
+  ])
+ ])
+ 
++AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++#include <cstddef>
++#include <cstdint>
++#include <type_traits>
++]],[[
++using namespace std;
++static_assert(!is_same<size_t,uint32_t>::value, "size_t == uint32_t");
++static_assert(!is_same<size_t,uint64_t>::value, "size_t == uint64_t");
++   ]])], [AC_DEFINE([SIZET_NOT_CSTDINT], [1], [size_t != (uint32_t, uint64_t)])])
++
+ AM_PATH_PYTHON([2], [], [AC_MSG_WARN([Can't run 'make test' without Python installed.])])
+ 
+ AC_OUTPUT([Makefile lttoolbox.pc lttoolbox/Makefile])

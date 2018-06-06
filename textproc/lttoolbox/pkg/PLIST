@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/07 07:14:56 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/06 09:16:11 bentley Exp $
 @bin bin/lt-comp
 @bin bin/lt-expand
 @bin bin/lt-print
@@ -13,6 +13,7 @@ include/lttoolbox-${V}/lttoolbox/att_compiler.h
 include/lttoolbox-${V}/lttoolbox/buffer.h
 include/lttoolbox-${V}/lttoolbox/compiler.h
 include/lttoolbox-${V}/lttoolbox/compression.h
+include/lttoolbox-${V}/lttoolbox/deserialiser.h
 include/lttoolbox-${V}/lttoolbox/entry_token.h
 include/lttoolbox-${V}/lttoolbox/exception.h
 include/lttoolbox-${V}/lttoolbox/expander.h
@@ -26,13 +27,15 @@ include/lttoolbox-${V}/lttoolbox/my_stdio.h
 include/lttoolbox-${V}/lttoolbox/node.h
 include/lttoolbox-${V}/lttoolbox/pattern_list.h
 include/lttoolbox-${V}/lttoolbox/regexp_compiler.h
+include/lttoolbox-${V}/lttoolbox/serialiser.h
 include/lttoolbox-${V}/lttoolbox/sorted_vector.h
 include/lttoolbox-${V}/lttoolbox/state.h
+include/lttoolbox-${V}/lttoolbox/string_to_wostream.h
 include/lttoolbox-${V}/lttoolbox/tmx_compiler.h
 include/lttoolbox-${V}/lttoolbox/trans_exe.h
 include/lttoolbox-${V}/lttoolbox/transducer.h
 include/lttoolbox-${V}/lttoolbox/xml_parse_util.h
-@lib lib/liblttoolbox3-${V}.so.${LIBlttoolbox3-3.3_VERSION}
+@lib lib/liblttoolbox3-${V}.so.${LIBlttoolbox3-3.4_VERSION}
 lib/liblttoolbox3.a
 lib/liblttoolbox3.la
 @lib lib/liblttoolbox3.so.${LIBlttoolbox3_VERSION}
