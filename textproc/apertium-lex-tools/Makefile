@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/08 02:55:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/06 09:15:47 bentley Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
-DISTNAME =		apertium-lex-tools-0.1.0
-REVISION =		2
+DISTNAME =		apertium-lex-tools-0.2.0
 
 CATEGORIES =		textproc
 
@@ -19,7 +18,8 @@ WANTLIB += apertium3 c lttoolbox3 m pcre pthread ${COMPILER_LIBCXX} xml2 z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/autoconf-archive
 LIB_DEPENDS =		devel/pcre \
 			textproc/apertium \
 			textproc/libxml \
@@ -39,6 +39,6 @@ pre-configure:
 	cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
+		autoreconf -fi
 
 .include <bsd.port.mk>
