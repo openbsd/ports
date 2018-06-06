@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.361 2018/05/26 10:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.362 2018/06/06 10:36:48 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -28,6 +28,7 @@
      SUBDIR += libpqxx
      SUBDIR += libzdb
      SUBDIR += liquibase
+     SUBDIR += lmdb
      SUBDIR += luadbi
      SUBDIR += lualdap
      SUBDIR += luasqlite3
