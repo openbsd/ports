@@ -1,0 +1,16 @@
+$OpenBSD: patch-apertium_Makefile_in,v 1.1 2018/06/06 09:16:27 bentley Exp $
+
+Don't download assets during build.
+
+Index: apertium/Makefile
+--- apertium/Makefile.in.orig
++++ apertium/Makefile.in
+@@ -796,7 +796,7 @@ GENERATEDSCRIPTS = apertium-gen-deformat apertium-gen-
+ lib_LTLIBRARIES = libapertium3.la
+ libapertium3_la_SOURCES = $(h_sources) $(cc_sources)
+ libapertium3_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
+-bin_SCRIPTS = $(GENERATEDSCRIPTS) apertium-get/apertium-get
++bin_SCRIPTS = $(GENERATEDSCRIPTS)
+ instdir = apertium
+ apertiumdir = $(prefix)/share/apertium
+ apertiuminclude = $(prefix)/include/apertium-$(GENERIC_API_VERSION)
