@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontMetrics_cpp,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_FontMetrics_cpp,v 1.2 2018/06/06 07:50:54 robert Exp $
 
-Index: third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
---- third_party/WebKit/Source/platform/fonts/FontMetrics.cpp.orig
-+++ third_party/WebKit/Source/platform/fonts/FontMetrics.cpp
+Index: third_party/blink/renderer/platform/fonts/font_metrics.cc
+--- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig
++++ third_party/blink/renderer/platform/fonts/font_metrics.cc
 @@ -38,7 +38,7 @@
  
  namespace blink {

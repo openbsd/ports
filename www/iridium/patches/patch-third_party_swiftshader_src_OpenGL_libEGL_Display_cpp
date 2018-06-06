@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.3 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_Display_cpp,v 1.4 2018/06/06 07:50:54 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig
@@ -12,7 +12,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  #include "Main/libX11.hpp"
  #elif defined(__APPLE__)
  #include "OSXUtils.hpp"
-@@ -64,7 +64,7 @@ Display *Display::get(EGLDisplay dpy)
+@@ -66,7 +66,7 @@ Display *Display::get(EGLDisplay dpy)
  
  	static void *nativeDisplay = nullptr;
  
@@ -21,7 +21,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  		// Even if the application provides a native display handle, we open (and close) our own connection
  		if(!nativeDisplay && dpy != HEADLESS_DISPLAY && libX11 && libX11->XOpenDisplay)
  		{
-@@ -87,7 +87,7 @@ Display::~Display()
+@@ -89,7 +89,7 @@ Display::~Display()
  {
  	terminate();
  
@@ -30,7 +30,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  		if(nativeDisplay && libX11->XCloseDisplay)
  		{
  			libX11->XCloseDisplay((::Display*)nativeDisplay);
-@@ -561,7 +561,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
+@@ -678,7 +678,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
  			return false;
  		}
  		return true;
@@ -39,7 +39,7 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
  		if(nativeDisplay)
  		{
  			XWindowAttributes windowAttributes;
-@@ -727,7 +727,7 @@ sw::Format Display::getDisplayFormat() const
+@@ -844,7 +844,7 @@ sw::Format Display::getDisplayFormat() const
  
  		// No framebuffer device found, or we're in user space
  		return sw::FORMAT_X8B8G8R8;

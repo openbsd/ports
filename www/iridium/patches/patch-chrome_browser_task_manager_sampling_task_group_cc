@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.5 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.6 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.cc
 --- chrome/browser/task_manager/sampling/task_group.cc.orig
 +++ chrome/browser/task_manager/sampling/task_group.cc
-@@ -33,7 +33,7 @@ const int kBackgroundRefreshTypesMask =
+@@ -32,7 +32,7 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
  #endif  // defined(OS_WIN)

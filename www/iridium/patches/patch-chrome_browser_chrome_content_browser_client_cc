@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.17 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.18 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -295,7 +295,7 @@
+@@ -304,7 +304,7 @@
  #include "chromeos/chromeos_switches.h"
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -331,7 +331,7 @@
+@@ -341,7 +341,7 @@
  #include "chrome/common/importer/profile_import.mojom.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -345,7 +345,7 @@
+@@ -355,7 +355,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -922,7 +922,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -1032,7 +1032,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new ChromeBrowserMainPartsMac(parameters);
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
@@ -39,7 +39,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts = new ChromeBrowserMainPartsLinux(parameters);
  #elif defined(OS_ANDROID)
    main_parts = new ChromeBrowserMainPartsAndroid(parameters);
-@@ -938,7 +938,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -1048,7 +1048,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -48,7 +48,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1638,7 +1638,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1788,7 +1788,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -57,7 +57,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    bool enable_crash_reporter = breakpad::IsCrashReporterEnabled();
  #if defined(OS_CHROMEOS)
    // Chrome OS uses the OS-level crash_reporter for mash services, so disable
-@@ -2932,7 +2932,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3088,7 +3088,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -66,7 +66,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -3653,7 +3653,7 @@ void ChromeContentBrowserClient::InitWebContextInterfa
+@@ -3794,7 +3794,7 @@ void ChromeContentBrowserClient::InitWebContextInterfa
  #if defined(OS_ANDROID)
    frame_interfaces_parameterized_->AddInterface(base::Bind(
        &ForwardToJavaWebContentsRegistry<blink::mojom::ShareService>));

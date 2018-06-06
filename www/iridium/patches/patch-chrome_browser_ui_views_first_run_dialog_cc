@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.9 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.10 2018/06/06 07:50:54 robert Exp $
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -40,8 +40,10 @@ using views::GridLayout;
+@@ -39,8 +39,10 @@ using views::GridLayout;
  namespace {
  
  void InitCrashReporterIfEnabled(bool enabled) {
@@ -13,7 +13,7 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
  }
  
  }  // namespace
-@@ -114,8 +116,10 @@ views::View* FirstRunDialog::CreateExtraView() {
+@@ -111,8 +113,10 @@ views::View* FirstRunDialog::CreateExtraView() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-v8_tools_run_py,v 1.2 2018/06/06 07:50:55 robert Exp $
 
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig

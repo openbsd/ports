@@ -1,18 +1,9 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.1 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.2 2018/06/06 07:50:54 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
 +++ net/base/address_tracker_linux.cc
-@@ -5,7 +5,7 @@
- #include "net/base/address_tracker_linux.h"
- 
- #include <errno.h>
--#include <linux/if.h>
-+#include <net/if.h>
- #include <stdint.h>
- #include <sys/ioctl.h>
- 
-@@ -19,96 +19,9 @@
+@@ -19,96 +19,10 @@
  namespace net {
  namespace internal {
  
@@ -106,11 +97,12 @@ Index: net/base/address_tracker_linux.cc
 -  if (ioctl(ioctl_socket.get(), SIOCGIFNAME, &ifr) == 0)
 -    strncpy(buf, ifr.ifr_name, IFNAMSIZ - 1);
 -  return buf;
++  NOTIMPLEMENTED();
 +  return NULL;
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -151,93 +64,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
+@@ -151,93 +65,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
  }
  
  void AddressTrackerLinux::Init() {
@@ -194,7 +186,7 @@ Index: net/base/address_tracker_linux.cc
 -
 -  if (tracking_) {
 -    rv = base::MessageLoopForIO::current()->WatchFileDescriptor(
--        netlink_fd_, true, base::MessageLoopForIO::WATCH_READ, &watcher_, this);
+-        netlink_fd_, true, base::MessagePumpForIO::WATCH_READ, &watcher_, this);
 -    if (rv < 0) {
 -      PLOG(ERROR) << "Could not watch NETLINK socket";
 -      AbortAndForceOnline();
@@ -206,7 +198,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -248,25 +76,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+@@ -248,25 +77,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -232,7 +224,7 @@ Index: net/base/address_tracker_linux.cc
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -317,102 +126,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -317,102 +127,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -336,7 +328,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -449,34 +163,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -449,34 +164,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_process_kill_h,v 1.1 2018/06/06 07:50:54 robert Exp $
+
+Index: base/process/kill.h
+--- base/process/kill.h.orig
++++ base/process/kill.h
+@@ -111,7 +111,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
+ BASE_EXPORT TerminationStatus GetKnownDeadTerminationStatus(
+     ProcessHandle handle, int* exit_code);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Spawns a thread to wait asynchronously for the child |process| to exit
+ // and then reaps it.
+ BASE_EXPORT void EnsureProcessGetsReaped(Process process);

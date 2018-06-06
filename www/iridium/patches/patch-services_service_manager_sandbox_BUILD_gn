@@ -1,10 +1,10 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.2 2018/06/06 07:50:54 robert Exp $
 
 Index: services/service_manager/sandbox/BUILD.gn
 --- services/service_manager/sandbox/BUILD.gn.orig
 +++ services/service_manager/sandbox/BUILD.gn
 @@ -27,7 +27,7 @@ component("sandbox") {
-     ":sanitizer_flags",
+     ":sanitizer_buildflags",
      "//base",
    ]
 -  if (is_linux) {

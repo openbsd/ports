@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.16 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.17 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -583,7 +583,7 @@ const FeatureEntry::Choice kForceTextDirectionChoices[
+@@ -593,7 +593,7 @@ const FeatureEntry::Choice kForceTextDirectionChoices[
       switches::kForceDirectionRTL},
  };
  
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  // Feature used to enable the identification of open tabs given URLs in
  // suggestions, and converting those suggestions to ones that allow switching to
  // the tab if found.  Currently only on the desktop. Includes button option
-@@ -2438,7 +2438,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2441,7 +2441,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -3068,7 +3068,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3058,7 +3058,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kLeftToRightUrlsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kLeftToRightUrls)},
  

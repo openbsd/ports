@@ -1,18 +1,34 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.3 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.4 2018/06/06 07:50:54 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.cc
 --- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
 +++ gpu/ipc/common/gpu_memory_buffer_support.cc
-@@ -8,7 +8,7 @@
- #include "build/build_config.h"
- #include "ui/gl/gl_bindings.h"
+@@ -12,7 +12,7 @@
+ #include "gpu/ipc/common/gpu_memory_buffer_impl_io_surface.h"
+ #endif
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #include "ui/gfx/client_native_pixmap_factory.h"
+ #include "ui/gfx/linux/client_native_pixmap_factory_dmabuf.h"
+@@ -36,13 +36,13 @@ namespace gpu {
+ GpuMemoryBufferSupport::GpuMemoryBufferSupport() {
+ #if defined(USE_OZONE)
+   client_native_pixmap_factory_ = ui::CreateClientNativePixmapFactoryOzone();
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   client_native_pixmap_factory_.reset(
+       gfx::CreateClientNativePixmapFactoryDmabuf());
  #endif
+ }
  
-@@ -23,7 +23,7 @@ gfx::GpuMemoryBufferType GetNativeGpuMemoryBufferType(
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
+ GpuMemoryBufferSupport::GpuMemoryBufferSupport(
+     std::unique_ptr<gfx::ClientNativePixmapFactory>
+         client_native_pixmap_factory)
+@@ -57,7 +57,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
    return gfx::IO_SURFACE_BUFFER;
  #elif defined(OS_ANDROID)
    return gfx::ANDROID_HARDWARE_BUFFER;
@@ -21,12 +37,21 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    return gfx::NATIVE_PIXMAP;
  #elif defined(OS_WIN)
    return gfx::DXGI_SHARED_HANDLE;
-@@ -75,7 +75,7 @@ bool IsNativeGpuMemoryBufferConfigurationSupported(gfx
-   }
-   NOTREACHED();
+@@ -112,7 +112,7 @@ bool GpuMemoryBufferSupport::IsNativeGpuMemoryBufferCo
    return false;
+ #elif defined(USE_OZONE)
+   return client_native_pixmap_factory_->IsConfigurationSupported(format, usage);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   if (!gfx::ClientNativePixmapFactory::GetInstance()) {
-     // unittests don't have to set ClientNativePixmapFactory.
-     return false;
+   return false;  // TODO(julian.isorce): Add linux support.
+ #elif defined(OS_WIN)
+   switch (usage) {
+@@ -168,7 +168,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+       return GpuMemoryBufferImplIOSurface::CreateFromHandle(
+           handle, size, format, usage, callback);
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     case gfx::NATIVE_PIXMAP:
+       return GpuMemoryBufferImplNativePixmap::CreateFromHandle(
+           client_native_pixmap_factory(), handle, size, format, usage,

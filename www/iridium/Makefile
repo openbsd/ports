@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/05/04 07:14:57 robert Exp $
+# $OpenBSD: Makefile,v 1.74 2018/06/06 07:50:54 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			2018.4.66.0
+V=			2018.5.67
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -37,10 +37,6 @@ MODULES=	lang/python
 COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=	No
-
-.if ${PROPERTIES:Mclang}    
-PATCH_LIST=	patch-* clang-*                            
-.endif
 
 PATCHORIG=	.orig.port
 

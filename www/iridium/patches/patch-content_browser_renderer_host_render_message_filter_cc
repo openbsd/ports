@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.4 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.5 2018/06/06 07:50:54 robert Exp $
 
 Index: content/browser/renderer_host/render_message_filter.cc
 --- content/browser/renderer_host/render_message_filter.cc.orig
 +++ content/browser/renderer_host/render_message_filter.cc
-@@ -78,7 +78,7 @@
- #include "content/common/mac/font_loader.h"
+@@ -76,7 +76,7 @@
+ #if defined(OS_MACOSX)
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
 -#if defined(OS_LINUX)
@@ -12,8 +12,8 @@ Index: content/browser/renderer_host/render_message_filter.cc
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -207,7 +207,7 @@ void RenderMessageFilter::LoadFont(const base::string1
- #endif  // defined(OS_MACOSX)
+@@ -194,7 +194,7 @@ void RenderMessageFilter::CreateFullscreenWidget(
+   std::move(callback).Run(route_id);
  }
  
 -#if defined(OS_LINUX)
@@ -21,12 +21,12 @@ Index: content/browser/renderer_host/render_message_filter.cc
  void RenderMessageFilter::SetThreadPriorityOnFileThread(
      base::PlatformThreadId ns_tid,
      base::ThreadPriority priority) {
-@@ -230,7 +230,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+@@ -215,7 +215,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+ }
+ #endif
  
- void RenderMessageFilter::SetThreadPriority(int32_t ns_tid,
-                                             base::ThreadPriority priority) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+ void RenderMessageFilter::SetThreadPriority(int32_t ns_tid,
+                                             base::ThreadPriority priority) {
    constexpr base::TaskTraits kTraits = {
-       base::MayBlock(), base::TaskPriority::USER_BLOCKING,
-       base::TaskShutdownBehavior::CONTINUE_ON_SHUTDOWN};

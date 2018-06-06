@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.8 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.9 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
-@@ -58,7 +58,7 @@
+@@ -57,7 +57,7 @@
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #include "chrome/browser/extensions/api/screenlock_private/screenlock_private_api.h"

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.16 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.17 2018/06/06 07:50:54 robert Exp $
 
 Index: content/app/content_main_runner.cc
 --- content/app/content_main_runner.cc.orig
 +++ content/app/content_main_runner.cc
-@@ -82,10 +82,10 @@
+@@ -84,10 +84,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -16,7 +16,7 @@ Index: content/app/content_main_runner.cc
  #include "content/zygote/zygote_main.h"
  #include "sandbox/linux/services/libc_interceptor.h"
  #endif
-@@ -115,7 +115,7 @@
+@@ -153,7 +153,7 @@
  namespace content {
  extern int GpuMain(const content::MainFunctionParams&);
  #if BUILDFLAG(ENABLE_PLUGINS)
@@ -25,7 +25,7 @@ Index: content/app/content_main_runner.cc
  extern int PluginMain(const content::MainFunctionParams&);
  #endif
  extern int PpapiPluginMain(const MainFunctionParams&);
-@@ -492,7 +492,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -702,7 +702,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
          kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

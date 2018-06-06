@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.2 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_profiles_avatar_button_cc,v 1.3 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/ui/views/profiles/avatar_button.cc
 --- chrome/browser/ui/views/profiles/avatar_button.cc.orig
 +++ chrome/browser/ui/views/profiles/avatar_button.cc
-@@ -233,7 +233,7 @@ AvatarButton::AvatarButton(views::MenuButtonListener* 
+@@ -250,7 +250,7 @@ AvatarButton::AvatarButton(views::MenuButtonListener* 
    } else if (apply_ink_drop) {
      SetInkDropMode(InkDropMode::ON);
      SetFocusPainter(nullptr);
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/profiles/avatar_button.cc
      set_ink_drop_base_color(SK_ColorWHITE);
      SetBorder(std::make_unique<AvatarButtonThemedBorder>());
      generic_avatar_ =
-@@ -510,7 +510,7 @@ bool AvatarButton::IsCondensible() const {
+@@ -544,7 +544,7 @@ bool AvatarButton::IsCondensible() const {
  #endif
  }
  bool AvatarButton::ShouldApplyInkDrop() const {

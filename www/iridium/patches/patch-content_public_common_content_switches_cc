@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.17 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.18 2018/06/06 07:50:54 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -964,7 +964,9 @@ const char kDisableAudioSupportForDesktopShare[] =
+@@ -972,7 +972,9 @@ const char kDisableAudioSupportForDesktopShare[] =
  const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  

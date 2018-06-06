@@ -1,18 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.17 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.18 2018/06/06 07:50:54 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -212,7 +212,7 @@
- #include "base/fuchsia/default_job.h"
- #endif  // defined(OS_FUCHSIA)
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- #include "content/browser/sandbox_host_linux.h"
- #include "content/browser/zygote_host/zygote_host_impl_linux.h"
- 
-@@ -254,6 +254,11 @@
+@@ -240,6 +240,11 @@
  #include "services/ui/common/image_cursors_set.h"
  #endif
  
@@ -24,10 +15,10 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -632,6 +637,11 @@ int BrowserMainLoop::EarlyInitialization() {
-   // No thread should be created before this call, as SetupSandbox()
-   // will end-up using fork().
-   SetupSandbox(parsed_command_line_);
+@@ -548,6 +553,11 @@ int BrowserMainLoop::EarlyInitialization() {
+   // by now since a thread to start the ServiceManager has been created
+   // before the browser main loop starts.
+   DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
 +#elif defined(OS_BSD)
 +  SandboxHostLinux::GetInstance()->Init();
 +  base::FileHandleMappingVector fds_to_map;

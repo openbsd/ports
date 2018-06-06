@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_bindings_core_v8_v8_script_runner_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+
+Index: third_party/blink/renderer/bindings/core/v8/v8_script_runner.cc
+--- third_party/blink/renderer/bindings/core/v8/v8_script_runner.cc.orig
++++ third_party/blink/renderer/bindings/core/v8/v8_script_runner.cc
+@@ -54,7 +54,7 @@
+ 
+ #if defined(OS_WIN)
+ #include <malloc.h>
+-#else
++#elif !defined(OS_OPENBSD)
+ #include <alloca.h>
+ #endif
+ 

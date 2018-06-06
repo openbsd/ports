@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.4 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.5 2018/06/06 07:50:54 robert Exp $
 Index: chrome/browser/ui/task_manager/task_manager_columns.cc
 --- chrome/browser/ui/task_manager/task_manager_columns.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_columns.cc
-@@ -99,7 +99,7 @@ const TableColumnData kColumns[] = {
+@@ -93,7 +93,7 @@ const TableColumnData kColumns[] = {
       arraysize("100000") * kCharWidth, -1, true, false, false},
  #endif
  

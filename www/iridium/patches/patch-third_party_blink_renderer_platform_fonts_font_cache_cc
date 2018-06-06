@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+
+Index: third_party/blink/renderer/platform/fonts/font_cache.cc
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig
++++ third_party/blink/renderer/platform/fonts/font_cache.cc
+@@ -85,7 +85,7 @@ FontCache::FontCache()
+ FontPlatformData* FontCache::SystemFontPlatformData(
+     const FontDescription& font_description) {
+   const AtomicString& family = FontCache::SystemFontFamily();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (family.IsEmpty() || family == FontFamilyNames::system_ui)
+     return nullptr;
+ #else

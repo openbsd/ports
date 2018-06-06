@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.17 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.18 2018/06/06 07:50:54 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -275,7 +275,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+@@ -277,7 +277,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
  CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  

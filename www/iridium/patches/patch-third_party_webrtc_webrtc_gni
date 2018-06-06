@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.2 2018/06/06 07:50:55 robert Exp $
 
 Index: third_party/webrtc/webrtc.gni
 --- third_party/webrtc/webrtc.gni.orig
 +++ third_party/webrtc/webrtc.gni
-@@ -207,7 +207,7 @@ rtc_libvpx_dir = "//third_party/libvpx"
+@@ -211,7 +211,7 @@ rtc_libvpx_dir = "//third_party/libvpx"
  rtc_opus_dir = "//third_party/opus"
  
  # Desktop capturer is supported only on Windows, OSX and Linux.

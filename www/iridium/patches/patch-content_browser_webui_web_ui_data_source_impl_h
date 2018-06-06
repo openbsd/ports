@@ -1,0 +1,30 @@
+$OpenBSD: patch-content_browser_webui_web_ui_data_source_impl_h,v 1.1 2018/06/06 07:50:54 robert Exp $
+
+revert https://chromium-review.googlesource.com/c/chromium/src/+/986504
+
+Index: content/browser/webui/web_ui_data_source_impl.h
+--- content/browser/webui/web_ui_data_source_impl.h.orig
++++ content/browser/webui/web_ui_data_source_impl.h
+@@ -30,15 +30,15 @@ class CONTENT_EXPORT WebUIDataSourceImpl : public URLD
+                                            public WebUIDataSource {
+  public:
+   // WebUIDataSource implementation:
+-  void AddString(base::StringPiece name, const base::string16& value) override;
+-  void AddString(base::StringPiece name, const std::string& value) override;
+-  void AddLocalizedString(base::StringPiece name, int ids) override;
++  void AddString(const std::string& name, const base::string16& value) override;
++  void AddString(const std::string& name, const std::string& value) override;
++  void AddLocalizedString(const std::string& name, int ids) override;
+   void AddLocalizedStrings(
+       const base::DictionaryValue& localized_strings) override;
+-  void AddBoolean(base::StringPiece name, bool value) override;
+-  void AddInteger(base::StringPiece name, int32_t value) override;
+-  void SetJsonPath(base::StringPiece path) override;
+-  void AddResourcePath(base::StringPiece path, int resource_id) override;
++  void AddBoolean(const std::string& name, bool value) override;
++  void AddInteger(const std::string& name, int32_t value) override;
++  void SetJsonPath(const std::string& path) override;
++  void AddResourcePath(const std::string& path, int resource_id) override;
+   void SetDefaultResource(int resource_id) override;
+   void SetRequestFilter(
+       const WebUIDataSource::HandleRequestCallback& callback) override;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/05/04 07:14:58 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/06 07:50:55 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -329,22 +329,26 @@ iridium/resources/inspector/network_test_runner/
 iridium/resources/inspector/network_test_runner/network_test_runner_module.js
 iridium/resources/inspector/node_app.html
 iridium/resources/inspector/node_app.js
+iridium/resources/inspector/node_debugger/
+iridium/resources/inspector/node_debugger/node_debugger_module.js
 iridium/resources/inspector/object_ui/
 iridium/resources/inspector/object_ui/object_ui_module.js
 iridium/resources/inspector/perf_ui/
 iridium/resources/inspector/perf_ui/perf_ui_module.js
+iridium/resources/inspector/performance_monitor/
+iridium/resources/inspector/performance_monitor/performance_monitor_module.js
 iridium/resources/inspector/performance_test_runner/
 iridium/resources/inspector/performance_test_runner/performance_test_runner_module.js
 iridium/resources/inspector/product_registry_impl/
 iridium/resources/inspector/product_registry_impl/product_registry_impl_module.js
 iridium/resources/inspector/profiler/
 iridium/resources/inspector/profiler/profiler_module.js
+iridium/resources/inspector/protocol_monitor/
+iridium/resources/inspector/protocol_monitor/protocol_monitor_module.js
 iridium/resources/inspector/quick_open/
 iridium/resources/inspector/quick_open/quick_open_module.js
 iridium/resources/inspector/resources/
 iridium/resources/inspector/resources/resources_module.js
-iridium/resources/inspector/screencast/
-iridium/resources/inspector/screencast/screencast_module.js
 iridium/resources/inspector/sdk_test_runner/
 iridium/resources/inspector/sdk_test_runner/sdk_test_runner_module.js
 iridium/resources/inspector/search/

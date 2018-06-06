@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.14 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.15 2018/06/06 07:50:54 robert Exp $
 
 Index: chrome/browser/ui/webui/about_ui.cc
 --- chrome/browser/ui/webui/about_ui.cc.orig
 +++ chrome/browser/ui/webui/about_ui.cc
-@@ -405,7 +405,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
+@@ -386,7 +386,7 @@ class AboutDnsHandler : public base::RefCountedThreadS
    DISALLOW_COPY_AND_ASSIGN(AboutDnsHandler);
  };
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -465,7 +465,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -444,7 +444,7 @@ void AboutUIHTMLSource::StartDataRequest(
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;
