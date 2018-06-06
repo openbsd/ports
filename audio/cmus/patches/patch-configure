@@ -1,12 +1,16 @@
-$OpenBSD: patch-configure,v 1.4 2017/02/18 10:19:10 jca Exp $
+$OpenBSD: patch-configure,v 1.5 2018/06/06 12:14:44 kn Exp $
 
 The ffmpeg plugin uses functions from libavcodec, so ensure that it is linked
 against libavcodec.
 
 Commit 9bde48f1b59d upstream.
 
---- configure.orig	Mon Jul 13 12:00:56 2015
-+++ configure	Thu Feb  9 12:11:12 2017
+Also make sure that the ffmpeg.c build test uses -std=gnu99, as does the
+final build.
+
+Index: configure
+--- configure.orig
++++ configure
 @@ -378,7 +378,7 @@ check_aac()
  check_ffmpeg()
  {
@@ -16,3 +20,12 @@ Commit 9bde48f1b59d upstream.
  	if check_header "libavcodec/avcodec.h" $FFMPEG_CFLAGS
  	then
  		HAVE_FFMPEG_AVCODEC_H=n
+@@ -387,7 +387,7 @@ check_ffmpeg()
+ 	fi
+ 	# ffmpeg api changes so frequently that it is best to compile the module
+ 	libs="$LDDLFLAGS $FFMPEG_LIBS"
+-	cflags="$SOFLAGS $FFMPEG_CFLAGS"
++	cflags="-std=gnu99 $SOFLAGS $FFMPEG_CFLAGS"
+ 	if test "$HAVE_FFMPEG_AVCODEC_H" = y
+ 	then
+ 		cflags="$cflags -DHAVE_FFMPEG_AVCODEC_H"

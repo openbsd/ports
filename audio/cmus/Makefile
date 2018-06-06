@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/02/18 10:19:10 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/06 12:14:43 kn Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -7,7 +7,7 @@ V=			2.7.1
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
-REVISION=		1
+REVISION=		2
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=		-main -ffmpeg
 
-WANTLIB-main+=		c cdio cdio_cdda cue discid FLAC>=5 m mad>=2 ncursesw
+WANTLIB-main+=		c cdio cdio_cdda cue curses discid FLAC>=5 m mad>=2
 WANTLIB-main+=		ogg opusfile pthread sndio wavpack iconv
 
 LIB_DEPENDS-main=	audio/flac \
