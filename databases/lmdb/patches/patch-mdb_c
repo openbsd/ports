@@ -1,0 +1,18 @@
+$OpenBSD: patch-mdb_c,v 1.1.1.1 2018/06/06 10:34:28 rsadowski Exp $
+
+Index: mdb.c
+--- mdb.c.orig
++++ mdb.c
+@@ -4927,7 +4927,11 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+ 	if (env->me_fd!=INVALID_HANDLE_VALUE || (flags & ~(CHANGEABLE|CHANGELESS)))
+ 		return EINVAL;
+ 
+-	flags |= env->me_flags;
++	/*
++	 * Always force MDB_WRITEMAP, the code does the right thing if
++	 * asking for a read-only handle.
++	 */
++	flags |= MDB_WRITEMAP;
+ 
+ 	rc = mdb_fname_init(path, flags, &fname);
+ 	if (rc)

@@ -1,0 +1,56 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/06/06 10:34:28 rsadowski Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -18,21 +18,22 @@
+ # There may be other macros in mdb.c of interest. You should
+ # read mdb.c before changing any of them.
+ #
+-CC	= gcc
++CC	= @CC@
+ AR	= ar
+ W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
+ THREADS = -pthread
+-OPT = -O2 -g
+ CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
+ LDLIBS	=
+ SOLIBS	=
+-SOEXT	= .so
+-prefix	= /usr/local
++SHARED_VERSION_MAJOR ?= 0
++SHARED_VERSION_MINOR ?= 0
++SOEXT	= .so.$(SHARED_VERSION_MAJOR).$(SHARED_VERSION_MINOR)
++prefix	= ${LOCALBASE}/
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+ includedir = $(prefix)/include
+-datarootdir = $(prefix)/share
++datarootdir = $(prefix)
+ mandir = $(datarootdir)/man
+ 
+ ########################################################################
+@@ -45,14 +46,14 @@ PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
+ all:	$(ILIBS) $(PROGS)
+ 
+ install: $(ILIBS) $(IPROGS) $(IHDRS)
+-	mkdir -p $(DESTDIR)$(bindir)
+-	mkdir -p $(DESTDIR)$(libdir)
+-	mkdir -p $(DESTDIR)$(includedir)
+-	mkdir -p $(DESTDIR)$(mandir)/man1
+-	for f in $(IPROGS); do cp $$f $(DESTDIR)$(bindir); done
+-	for f in $(ILIBS); do cp $$f $(DESTDIR)$(libdir); done
+-	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
+-	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(bindir)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(libdir)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(includedir)
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(mandir)/man1
++	for f in $(IPROGS); do ${BSD_INSTALL_PROGRAM} $$f $(DESTDIR)$(bindir); done
++	for f in $(ILIBS); do ${BSD_INSTALL_DATA} $$f $(DESTDIR)$(libdir); done
++	for f in $(IHDRS); do ${BSD_INSTALL_DATA} $$f $(DESTDIR)$(includedir); done
++	for f in $(IDOCS); do ${BSD_INSTALL_MAN} $$f $(DESTDIR)$(mandir)/man1; done
+ 
+ clean:
+ 	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb

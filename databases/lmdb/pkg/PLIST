@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/06 10:34:28 rsadowski Exp $
+@bin bin/mdb_copy
+@bin bin/mdb_dump
+@bin bin/mdb_load
+@bin bin/mdb_stat
+include/lmdb.h
+lib/liblmdb.a
+@lib lib/liblmdb.so.${LIBlmdb_VERSION}
+@man man/man1/mdb_copy.1
+@man man/man1/mdb_dump.1
+@man man/man1/mdb_load.1
+@man man/man1/mdb_stat.1
