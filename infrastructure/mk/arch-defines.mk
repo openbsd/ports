@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.49 2018/04/24 15:30:59 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.50 2018/06/06 17:03:46 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -60,7 +60,7 @@ LIBECXX = estdc++>=17 pthread
 # system version wide specifics
 _SYSTEM_VERSION = 0
 _SYSTEM_VERSION-aarch64 = 2
-_SYSTEM_VERSION-amd64 = 2
+_SYSTEM_VERSION-amd64 = 3
 _SYSTEM_VERSION-arm = 2
 _SYSTEM_VERSION-i386 = 2
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
