@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2018/06/06 10:30:16 rsadowski Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.8.1.1
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS += kmm_kdchart                      1.1 # 0.0
 SHARED_LIBS += kmm_mymoney                      1.1 # 0.0
@@ -54,7 +54,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		security/p5-Crypt-SSLeay \
 		x11/gtk+3,-guic \
-		${MODKDE4_DEP_DIR}/kcalc \
+		x11/kde-applications/kcalc \
 		${MODKDE4_DEP_DIR}/kgpg
 
 LIB_DEPENDS =	devel/gwenhywfar>=4.13.1p3 \

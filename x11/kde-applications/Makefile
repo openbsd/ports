@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/29 06:51:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/06 10:30:16 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -46,7 +46,7 @@
      #SUBDIR += kbreakout
      #SUBDIR += kbruch
      #SUBDIR += kcachegrind
-     #SUBDIR += kcalc
+     SUBDIR += kcalc
      SUBDIR += kcalcore
      #SUBDIR += kcalutils
      #SUBDIR += kcharselect
