@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/04 20:25:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/06 10:51:39 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules	# 100% tests passed, 0 tests failed out of 49
@@ -69,7 +69,7 @@ SUBDIR += kxmlrpcclient		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kdeclarative		# 100% tests passed, 0 tests failed out of 2
 SUBDIR += kcmutils		# NO_TEST
 SUBDIR += kdewebkit		# NO_TEST
-SUBDIR += baloo			# 68% tests passed, 6 tests failed out of 19
+SUBDIR += baloo			# NO_TEST
 SUBDIR += kdesignerplugin	# 100% tests passed, 0 tests failed out of 2
 SUBDIR += knotifyconfig		# NO_TEST
 SUBDIR += ktexteditor		# 98% tests passed, 1 tests failed out of 66
