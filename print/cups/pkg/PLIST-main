@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2017/10/14 10:22:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2018/06/06 08:23:30 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
 @extraunexec rm -rf ${SYSCONFDIR}/cups/*.conf.O /var/log/cups
+@rcscript ${RCDIR}/cupsd
 @bin bin/cancel
 @bin bin/cupstestdsc
 @bin bin/cupstestppd
@@ -803,7 +804,6 @@ share/examples/cups/cupsd.conf.default
 @group
 share/examples/cups/dbus-1/
 share/examples/cups/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 @group _cups
 share/examples/cups/dbus-1/system.d/cups.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/cups.conf
@@ -842,4 +842,3 @@ share/locale/ru/cups_ru.po
 share/locale/zh_CN/cups_zh_CN.po
 @extraunexec rm -rf /var/cache/cups
 @extraunexec rm -rf /var/spool/cups
-@rcscript ${RCDIR}/cupsd

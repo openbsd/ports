@@ -1,4 +1,4 @@
-$OpenBSD: patch-scheduler_ipp_c,v 1.24 2017/11/02 09:52:07 ajacoutot Exp $
+$OpenBSD: patch-scheduler_ipp_c,v 1.25 2018/06/06 08:23:30 ajacoutot Exp $
 
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
@@ -6,7 +6,7 @@ on low-end configurations.
 Index: scheduler/ipp.c
 --- scheduler/ipp.c.orig
 +++ scheduler/ipp.c
-@@ -4524,7 +4524,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
+@@ -4495,7 +4495,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
    close(temppipe[1]);
  
   /*
@@ -15,7 +15,7 @@ Index: scheduler/ipp.c
    */
  
    total = 0;
-@@ -4544,7 +4544,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
+@@ -4515,7 +4515,7 @@ copy_model(cupsd_client_t *con,		/* I - Client connect
      FD_SET(temppipe[0], &input);
      FD_SET(CGIPipes[0], &input);
  
