@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.10 2018/04/25 09:23:38 robert Exp $
+$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.11 2018/06/07 08:48:29 robert Exp $
 Index: content/common/sandbox_init_openbsd.cc
 --- content/common/sandbox_init_openbsd.cc.orig
 +++ content/common/sandbox_init_openbsd.cc
@@ -50,7 +50,7 @@ Index: content/common/sandbox_init_openbsd.cc
 +      _exit(1);
 +    }
 +  } else if (process_type == switches::kGpuProcess) {
-+    if (pledge("stdio drm prot_exec recvfd sendfd", NULL) == -1) {
++    if (pledge("stdio drm prot_exec recvfd sendfd tmppath", NULL) == -1) {
 +      LOG(ERROR) << "pledge() failed, errno: " << errno;
 +      _exit(1);
 +    }
