@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/06 09:16:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/07 08:21:34 ajacoutot Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
@@ -23,7 +23,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml
 
