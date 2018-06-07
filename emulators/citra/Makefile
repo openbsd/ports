@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/07 16:29:26 sthen Exp $
+
+BROKEN-i386 =	always_inline function '_mm_sra_pi32' requires target feature 'mmx', but would be inlined into function 'calcCrossCorr' that is compiled without support for 'mmx'
 
 USE_WXNEEDED =	Yes
 
