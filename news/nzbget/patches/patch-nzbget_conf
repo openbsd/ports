@@ -1,4 +1,4 @@
-$OpenBSD: patch-nzbget_conf,v 1.1.1.1 2018/04/03 17:45:43 bket Exp $
+$OpenBSD: patch-nzbget_conf,v 1.2 2018/06/07 15:30:59 bket Exp $
 
 Index: nzbget.conf
 --- nzbget.conf.orig
@@ -12,16 +12,16 @@ Index: nzbget.conf
  
  # Destination directory for downloaded files.
  #
-@@ -297,7 +297,7 @@ Server1.Notes=
- #
- # NOTE: If you set the option to "127.0.0.1" you will be able to connect to NZBGet
- # only from the computer running NZBGet. This restriction applies to web-interface too.
+@@ -301,7 +301,7 @@ Server1.Notes=
+ # NOTE: NZBGet also supports listening on Unix domain sockets instead of TCP/IP
+ # sockets. To activate this mode set option <ControlIP> to a local path
+ # (e. g. "ControlIP=/var/sock").
 -ControlIP=0.0.0.0
 +ControlIP=127.0.0.1
  
  # Port which NZBGet server and remote client use (1-65535).
  #
-@@ -437,7 +437,7 @@ CertCheck=no
+@@ -452,7 +452,7 @@ UpdateCheck=stable
  # NOTE: This option has effect only if the program was started from
  # root-account, otherwise it is ignored and the daemon runs under
  # current user id.

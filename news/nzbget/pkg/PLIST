@@ -1,7 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/03 17:45:43 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/07 15:30:59 bket Exp $
 @newgroup _nzbget:805
 @newuser _nzbget:805:805:daemon:NZBGet Account:${LOCALSTATEDIR}/nzbget:/sbin/nologin
+@rcscript ${RCDIR}/nzbget
+@mode 750
+@owner _nzbget
+@group _nzbget
+@sample ${LOCALSTATEDIR}/nzbget/
+@sample ${LOCALSTATEDIR}/nzbget/nzb/
+@sample ${LOCALSTATEDIR}/nzbget/tmp/
+@sample ${LOCALSTATEDIR}/nzbget/queue/
+@mode
+@owner
+@group
 @bin bin/nzbget
+@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/nzbget.{lock,log}
+@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/nzb/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/tmp/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/queue/*
 share/doc/nzbget/
 share/doc/nzbget/COPYING
 share/doc/nzbget/ChangeLog
@@ -27,6 +42,8 @@ share/nzbget/webui/history.js
 share/nzbget/webui/img/
 share/nzbget/webui/img/download-anim-green-2x.png
 share/nzbget/webui/img/download-anim-orange-2x.png
+share/nzbget/webui/img/favicon-256x256-opaque.png
+share/nzbget/webui/img/favicon-256x256.png
 share/nzbget/webui/img/favicon.ico
 share/nzbget/webui/img/icons-2x.png
 share/nzbget/webui/img/icons.png
@@ -50,11 +67,3 @@ share/nzbget/webui/status.js
 share/nzbget/webui/style.css
 share/nzbget/webui/upload.js
 share/nzbget/webui/util.js
-@rcscript ${RCDIR}/nzbget
-@mode 750
-@owner _nzbget
-@group _nzbget
-@sample ${LOCALSTATEDIR}/nzbget/
-@sample ${LOCALSTATEDIR}/nzbget/nzb/
-@sample ${LOCALSTATEDIR}/nzbget/tmp/
-@sample ${LOCALSTATEDIR}/nzbget/queue/
