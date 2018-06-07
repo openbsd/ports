@@ -1,0 +1,37 @@
+$OpenBSD: patch-pf_queue_py,v 1.1.1.1 2018/06/07 09:07:39 jasper Exp $
+
+https://github.com/dotpy/py-pf/pull/10
+
+Index: pf/queue.py
+--- pf/queue.py.orig
++++ pf/queue.py
+@@ -74,12 +74,12 @@ class FlowQueue(PFObject):
+     def __init__(self, flows, quantum=0, target=0, interval=0):
+         """ """
+         if isinstance(flows, pf._struct.pf_queue_fqspec):
+-	    self._from_struct(flows)
+-	else:
+-	    self.flows    = flows
+-	    self.quantum  = quantum
+-	    self.target   = target * 1000000
+-	    self.interval = interval * 1000000
++            self._from_struct(flows)
++        else:
++            self.flows    = flows
++            self.quantum  = quantum
++            self.target   = target * 1000000
++            self.interval = interval * 1000000
+ 
+     def _from_struct(self, fq):
+         """ """
+@@ -161,8 +161,8 @@ class PFQueue(PFObject):
+         elif self.ifname:
+             s += " on {.ifname}".format(self)
+         if self.flags & PFQS_FLOWQUEUE:
+-	    s += " {.flowqueue}".format(self)
+-	if self.linkshare.bandwidth or self.linkshare.burst:
++            s += " {.flowqueue}".format(self)
++        if self.linkshare.bandwidth or self.linkshare.burst:
+             s += " bandwidth {}".format(self.linkshare)
+         if self.realtime.bandwidth:
+             s += ", min {}".format(self.realtime)

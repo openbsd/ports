@@ -1,0 +1,29 @@
+$OpenBSD: patch-pf_constants_py,v 1.1.1.1 2018/06/07 09:07:39 jasper Exp $
+
+- ImportError: cannot import name 'maxint'
+- https://github.com/dotpy/py-pf/pull/11 
+
+Index: pf/constants.py
+--- pf/constants.py.orig
++++ pf/constants.py
+@@ -1,7 +1,9 @@
+ """Export constants shared by all classes of the module."""
+ 
+-from sys import maxint
++import six
+ 
++if six.PY2:
++    from sys import maxint
+ 
+ # Actions (from /usr/include/net/pfvar.h)
+ PF_PASS                 = 0
+@@ -23,8 +25,7 @@ PF_AFRT                 = 15
+ 
+ # PF transaction types (from /usr/include/net/pfvar.h)
+ PF_TRANS_RULESET        = 0
+-PF_TRANS_ALTQ           = 1
+-PF_TRANS_TABLE          = 2
++PF_TRANS_TABLE          = 1
+ 
+ # PF rule flags (from /usr/include/net/pfvar.h)
+ PFRULE_DROP             = 0x0000

@@ -1,0 +1,66 @@
+$OpenBSD: python3-pf_filter_py,v 1.1.1.1 2018/06/07 09:07:39 jasper Exp $
+
+All integers are long integers in Python 3.
+
+Index: pf/filter.py
+--- pf/filter.py.orig
++++ pf/filter.py
+@@ -29,9 +29,10 @@ __all__ = ['PacketFilter']
+ 
+ # ioctl() operations
+ IOCPARM_MASK     = 0x1fff
+-IOC_VOID         = 0x20000000L
+-IOC_OUT          = 0x40000000L
+-IOC_IN           = 0x80000000L
++IOC_VOID         = 0x20000000
++IOC_OUT          = 0x40000000
++IOC_IN           = 0x80000000
++
+ IOC_INOUT        = IOC_IN | IOC_OUT
+ 
+ def _IOC(inout, group, num, len):
+@@ -149,7 +150,7 @@ class PacketFilter(object):
+         with open(self.dev, 'w') as d:
+             try:
+                 ioctl(d, DIOCSTART)
+-            except IOError, (e, s):
++            except IOError as e:
+                 if e != EEXIST:       # EEXIST means PF is already enabled
+                     raise
+ 
+@@ -158,7 +159,7 @@ class PacketFilter(object):
+         with open(self.dev, 'w') as d:
+             try:
+                 ioctl(d, DIOCSTOP)
+-            except IOError, (e, s):
++            except IOError as e:
+                 if e != ENOENT:       # ENOENT means PF is already disabled
+                     raise 
+ 
+@@ -229,7 +230,7 @@ class PacketFilter(object):
+             with _PFTrans(d):
+                 try:
+                     ioctl(d, DIOCSETLIMIT, pl)
+-                except IOError, (e, s):
++                except IOError as e:
+                     if e == EBUSY:
+                         raise PFError("Current pool size > {0:d}".format(value))
+                     raise
+@@ -330,7 +331,7 @@ class PacketFilter(object):
+             with _PFTrans(d):
+                 try:
+                     ioctl(d, DIOCSETSTATUSIF, pi)
+-                except IOError, (e, s):
++                except IOError as e:
+                     if e == EINVAL:
+                         raise PFError("Invalid ifname: '{0}'".format(ifname))
+                     raise
+@@ -620,7 +621,7 @@ class PacketFilter(object):
+         for t in buffer[:io.pfrio_size]:
+             try:
+                 addrs = self.get_addrs(PFTable(t))
+-            except IOError, (e, s):
++            except IOError as e:
+                 pass       # Ignore tables of which you can't get the addresses
+             else:
+                 tables.append(PFTable(t, *addrs))

@@ -1,0 +1,4 @@
+py-pf is a pure-Python module for managing OpenBSD's Packet Filter. It
+aims to add powerful and flexible scripting capabilities to PF, making
+integration with third-party software (like IDS, web-based configuration
+interfaces or custom management scripts) much easier.
