@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.94 2018/05/02 11:51:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2018/06/07 07:38:26 ajacoutot Exp $
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.28.0
-REVISION=		1
+GNOME_VERSION=		3.28.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
