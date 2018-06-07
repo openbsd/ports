@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1073 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.1074 2018/06/07 09:09:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -587,6 +587,8 @@
      SUBDIR += py-paho-mqtt,python3
      SUBDIR += py-pcapy
      SUBDIR += py-pcapy,python3
+     SUBDIR += py-pf
+     SUBDIR += py-pf,python3
      SUBDIR += py-raet
      SUBDIR += py-s3transfer
      SUBDIR += py-s3transfer,python3
