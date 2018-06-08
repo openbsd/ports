@@ -1,10 +1,11 @@
-$OpenBSD: patch-lisp_files_el,v 1.2 2017/05/01 16:25:20 jca Exp $
+$OpenBSD: patch-lisp_files_el,v 1.3 2018/06/08 22:19:20 jca Exp $
 
 - open ports tree patches in diff-mode.
 
---- lisp/files.el.orig	Fri Feb  3 11:25:44 2017
-+++ lisp/files.el	Fri Feb 10 14:18:32 2017
-@@ -2524,6 +2524,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|7Z
+Index: lisp/files.el
+--- lisp/files.el.orig
++++ lisp/files.el
+@@ -2660,6 +2660,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|CB
       ("\\.\\(as\\|mi\\|sm\\)2\\'" . snmpv2-mode)
       ("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode)
       ("\\.\\(dif\\|pat\\)\\'" . diff-mode) ; for MS-DOS
