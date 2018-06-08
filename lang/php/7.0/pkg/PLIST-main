@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2018/06/05 12:50:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2018/06/08 19:42:40 kili Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -36,7 +36,6 @@ share/examples/php-${PV}/opcache.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/opcache.ini
 share/examples/php-${PV}/php-fpm.conf
 @sample ${SYSCONFDIR}/php-fpm.conf
-share/examples/php-${PV}/php.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
 @sample ${SYSCONFDIR}/php-${PV}.ini
