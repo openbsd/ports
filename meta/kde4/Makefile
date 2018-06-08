@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/08 05:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2018/06/08 07:36:58 jasper Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,7 +28,7 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	7
 REVISION-games = 0
-REVISION-extras = 0
+REVISION-extras = 1
 REVISION-main =		3
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -247,7 +247,6 @@ RUN_DEPENDS-extras = \
 	multimedia/k3b-kde4		\
 	multimedia/kdenlive		\
 	productivity/kmymoney		\
-	sysutils/krename-kde4		\
-	x11/yakuake-kde4
+	sysutils/krename-kde4
 
 .include <bsd.port.mk>
