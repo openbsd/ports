@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/04/28 19:20:17 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2018/06/08 20:32:16 denis Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -6,6 +6,7 @@ BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 COMMENT =		open source client for Windows Terminal Server
 DISTNAME =		freerdp-2.0.0-rc1
 PKGNAME =		freerdp-2.0.0rc1
+REVISION =		0
 CATEGORIES =		x11 net
 
 SHARED_LIBS +=  freerdp-client2           0.0 # 2.0

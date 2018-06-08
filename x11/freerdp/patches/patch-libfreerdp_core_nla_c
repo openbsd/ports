@@ -1,0 +1,29 @@
+$OpenBSD: patch-libfreerdp_core_nla_c,v 1.1 2018/06/08 20:32:16 denis Exp $
+
+Fix nla: don't use server version
+
+  https://github.com/FreeRDP/FreeRDP/commit/e7ae3f6babc881d893411a5ada9156abe8525b2f
+
+Index: libfreerdp/core/nla.c
+--- libfreerdp/core/nla.c.orig
++++ libfreerdp/core/nla.c
+@@ -1663,14 +1663,18 @@ BOOL nla_send(rdpNla* nla)
+ static int nla_decode_ts_request(rdpNla* nla, wStream* s)
+ {
+ 	int length;
++	UINT32 version = 0;
+ 
+ 	/* TSRequest */
+ 	if (!ber_read_sequence_tag(s, &length) ||
+ 	    !ber_read_contextual_tag(s, 0, &length, TRUE) ||
+-	    !ber_read_integer(s, &nla->version))
++	    !ber_read_integer(s, &version))
+ 	{
+ 		return -1;
+ 	}
++
++	if (version < nla->version)
++		nla->version = version;
+ 
+ 	/* [1] negoTokens (NegoData) */
+ 	if (ber_read_contextual_tag(s, 1, &length, TRUE) != FALSE)
