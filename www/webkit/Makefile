@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2017/11/19 13:23:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2018/06/08 23:39:50 ajacoutot Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -15,12 +15,10 @@ EPOCH =			1
 CATEGORIES =		www
 DPB_PROPERTIES =	parallel
 EXTRACT_SUFX =		.tar.xz
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://webkitgtk.org/
 MASTER_SITES =		http://webkitgtk.org/releases/
-
-MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 SHARED_LIBS += javascriptcoregtk-1.0	5.0 # 16.19
 SHARED_LIBS += webkitgtk-1.0		7.0 # 22.17
