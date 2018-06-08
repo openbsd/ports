@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/06/08 12:37:23 stu Exp $
+
+We don't need no stinkin' SQLite3 extensions.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12365,7 +12365,7 @@ fi
+ #########
+ # Add extensions to build
+ #
+-if test "$SQLITE3_LOADEXTENSION" = "1" ; then
++if test "$SQLITE3_LOADEXTENSION" != "1" ; then
+    EXT_BLOBTOXY=libsqlite3_mod_blobtoxy.la
+    EXT_IMPEXP=libsqlite3_mod_impexp.la
+    EXT_CSVTABLE=libsqlite3_mod_csvtable.la

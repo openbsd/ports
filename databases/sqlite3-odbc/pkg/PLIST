@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/08 12:37:23 stu Exp $
+lib/libsqlite3odbc.so
