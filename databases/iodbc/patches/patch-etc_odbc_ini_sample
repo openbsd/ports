@@ -1,7 +1,8 @@
-$OpenBSD: patch-etc_odbc_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- etc/odbc.ini.sample.orig	Mon Jan 18 23:37:33 1999
-+++ etc/odbc.ini.sample	Thu Jun 16 02:23:15 2011
-@@ -1,22 +1,20 @@
+$OpenBSD: patch-etc_odbc_ini_sample,v 1.2 2018/06/08 12:41:29 stu Exp $
+Index: etc/odbc.ini.sample
+--- etc/odbc.ini.sample.orig
++++ etc/odbc.ini.sample
+@@ -1,22 +1,26 @@
  ;
  ;  odbc.ini
  ;
@@ -13,6 +14,7 @@ $OpenBSD: patch-etc_odbc_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
  [ODBC Data Sources]
 -OpenLink = OpenLink (MT)
 +ExampleTDS = example MS server
++ExampleSQLite3 = example SQLite3 db
  
 -[OpenLink]
 -Driver          = /home/openlink/lib/oplodbc.so.1
@@ -34,6 +36,11 @@ $OpenBSD: patch-etc_odbc_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
 +TDS_Version = 7.0
 +language    = us_english
  
++[ExampleSQLite3]
++Description = test ODBC for SQLite3
++Driver = SQLite3
++Database = :memory:
++
  [Default]
 -Driver = /home/openlink/lib/oplodbc.so.1
 +Driver = FreeTDS

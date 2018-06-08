@@ -1,11 +1,13 @@
-$OpenBSD: patch-etc_odbcinst_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
---- etc/odbcinst.ini.sample.orig	Thu Jun 16 01:16:51 2011
-+++ etc/odbcinst.ini.sample	Thu Jun 16 01:29:28 2011
-@@ -1,6 +1,11 @@
+$OpenBSD: patch-etc_odbcinst_ini_sample,v 1.2 2018/06/08 12:41:29 stu Exp $
+Index: etc/odbcinst.ini.sample
+--- etc/odbcinst.ini.sample.orig
++++ etc/odbcinst.ini.sample
+@@ -1,6 +1,16 @@
  [ODBC Drivers]
 -OpenLink (MT) = Installed
 +PostgreSQL = Installed
 +FreeTDS = Installed
++SQLite3 = Installed
  
 -[OpenLink (MT)]
 -Driver = /home/openlink/lib/oplodbc.so.1
@@ -17,3 +19,7 @@ $OpenBSD: patch-etc_odbcinst_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
 +[FreeTDS]
 +Description = FreeTDS ODBC driver for MSSQL
 +Driver      = ${LOCALBASE}/lib/libtdsodbc.so
++
++[SQLite3]
++Description = ODBC driver for SQLite3
++Driver      = ${LOCALBASE}/lib/libsqlite3odbc.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/15 15:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2018/06/08 12:41:29 stu Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -8,6 +8,8 @@ DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
 PKGNAME-main=		iodbc-$V
 PKGNAME-admin=		iodbc-admin-$V
+
+REVISION =		0
 
 CATEGORIES=		databases
 
@@ -28,7 +30,7 @@ WANTLIB-main += c
 
 WANTLIB-admin += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-admin += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
-WANTLIB-admin += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-admin += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-admin += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB-admin += harfbuzz iconv intl iodbc iodbcinst m pango-1.0 pangocairo-1.0
 WANTLIB-admin += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
