@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2018/06/06 10:36:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.363 2018/06/08 12:38:28 stu Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -237,6 +237,7 @@
      SUBDIR += soprano
      SUBDIR += sqlite
      SUBDIR += sqlite3
+     SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl
      SUBDIR += sqlitebrowser
      SUBDIR += sqliteman
