@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_ProcessInfo_cpp,v 1.1.1.1 2018/06/08 04:40:20 rsadowski Exp $
+
+Index: src/ProcessInfo.cpp
+--- src/ProcessInfo.cpp.orig
++++ src/ProcessInfo.cpp
+@@ -761,12 +761,12 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
+             return false;
+         }
+ 
+-        setName(kInfoProc->p_comm);
++        setName(QString::fromUtf8(kInfoProc->p_comm));
+         setPid(kInfoProc->p_pid);
+         setParentPid(kInfoProc->p_ppid);
+         setForegroundPid(kInfoProc->p_tpgid);
+         setUserId(kInfoProc->p_uid);
+-        setUserName(kInfoProc->p_login);
++        setUserName(QString::fromUtf8(kInfoProc->p_login));
+ 
+         free(kInfoProc);
+         return true;
+@@ -815,7 +815,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
+         }
+ 
+         for (char **p = argv; *p != NULL; p++) {
+-            addArgument(QString(*p));
++            addArgument(QString::fromUtf8(*p));
+         }
+         free(argv);
+         return true;
