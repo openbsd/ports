@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/05/02 20:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/08 05:22:52 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,10 +26,10 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal = 6
+REVISION-minimal =	7
 REVISION-games = 0
 REVISION-extras = 0
-REVISION-main =		2
+REVISION-main =		3
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -215,7 +215,6 @@ RUN_DEPENDS-minimal = \
 	${KDE4-accessibility}			\
 	${MODKDE4_DEP_DIR}/baseapps		\
 	${MODKDE4_DEP_DIR}/kgpg			\
-	${MODKDE4_DEP_DIR}/konsole		\
 	${MODKDE4_DEP_DIR}/kwalletmanager	\
 	${MODKDE4_DEP_DIR}/workspace
 
@@ -234,7 +233,6 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/artwork		\
 	${MODKDE4_DEP_DIR}/base-artwork		\
 	${MODKDE4_DEP_DIR}/kgpg			\
-	${MODKDE4_DEP_DIR}/konsole		\
 	${MODKDE4_DEP_DIR}/kwalletmanager	\
 	${MODKDE4_DEP_DIR}/pim			\
 	${MODKDE4_DEP_DIR}/wallpapers		\

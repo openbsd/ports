@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/06 10:30:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/08 05:22:52 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -114,7 +114,7 @@
      #SUBDIR += kolourpaint
      #SUBDIR += kompare
      #SUBDIR += konquest
-     #SUBDIR += konsole
+     SUBDIR += konsole
      #SUBDIR += kontactinterface
      #SUBDIR += kopete
      #SUBDIR += kpat
