@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1736 2018/05/29 18:52:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1737 2018/06/08 14:25:26 kevlo Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1651,6 +1651,7 @@
      SUBDIR += remake
      SUBDIR += reposurgeon
      SUBDIR += rgbds
+     SUBDIR += riscv-elf
      SUBDIR += rlog
      SUBDIR += ruby-abstract
      SUBDIR += ruby-arrayfields
