@@ -1,0 +1,14 @@
+$OpenBSD: patch-ld_Makefile_in,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+
+Index: ld/Makefile.in
+--- ld/Makefile.in.orig
++++ ld/Makefile.in
+@@ -181,7 +181,7 @@ LTYACCCOMPILE = $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOO
+ SOURCES = $(libldtestplug_la_SOURCES) $(libldtestplug2_la_SOURCES) \
+ 	$(libldtestplug3_la_SOURCES) $(libldtestplug4_la_SOURCES) \
+ 	$(ld_new_SOURCES) $(EXTRA_ld_new_SOURCES)
+-INFO_DEPS = ld.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)/../texinfo
+ DVIS = ld.dvi
+ PDFS = ld.pdf

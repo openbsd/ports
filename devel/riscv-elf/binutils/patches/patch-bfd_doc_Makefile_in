@@ -1,0 +1,14 @@
+$OpenBSD: patch-bfd_doc_Makefile_in,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+
+Index: bfd/doc/Makefile.in
+--- bfd/doc/Makefile.in.orig
++++ bfd/doc/Makefile.in
+@@ -104,7 +104,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ depcomp =
+ am__depfiles_maybe =
+ SOURCES =
+-INFO_DEPS = bfd.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ DVIS = bfd.dvi
