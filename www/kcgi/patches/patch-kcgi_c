@@ -1,0 +1,20 @@
+$OpenBSD: patch-kcgi_c,v 1.1 2018/06/08 17:30:16 jturner Exp $
+
+Fix bug in kutil_urlencode on signed char platforms where the top bit
+of the character is set (found by and fix from Ross L Richardson).
+
+Already passed on to Kristaps, local diff while we await a new release
+with this fixed.
+
+Index: kcgi.c
+--- kcgi.c.orig
++++ kcgi.c
+@@ -431,7 +431,7 @@ kutil_urlencode(const char *cp)
+ 			p[cur++] = '+';
+ 			continue;
+ 		}
+-		cur += snprintf(p + cur, 4, "%%%.2x", ch);
++		cur += snprintf(p + cur, 4, "%%%.2x", (unsigned char)ch);
+ 	}
+ 
+ 	return(p);
