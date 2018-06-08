@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.353 2018/06/02 11:45:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.354 2018/06/08 16:45:31 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	60.0.1
+MOZILLA_VERSION =	60.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
