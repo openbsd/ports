@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/02/09 10:04:53 gonzalo Exp $
+$OpenBSD: README,v 1.4 2018/06/08 14:46:21 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,14 +28,49 @@ run the following as root:
 
 OpenBSD HTTP daemon
 -------------------
-httpd(8) example configuration for nextcloud is stored under:
-    ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf
+httpd(8) example configuration for Nextcloud:
 
-It needs to be enabled by (assuming you already have httpd and php working):
+---8<---------------------------------------------------------------------------
+server "domain.tld" {
+    listen on egress tls port 443
 
-# cp ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf /etc/
-# echo 'include "/etc/httpd-nextcloud.conf"' >> /etc/httpd.conf
-# rcctl restart httpd
+    tls {
+        certificate "/etc/ssl/domain.tld_fullchain.pem"
+        key "/etc/ssl/private/domain.tld_private.pem"
+    }
+
+    # First deny access to the specified files
+    location "/db_structure.xml"    { block }
+    location "/.ht*"                { block }
+    location "/README"              { block }
+    location "/data*"               { block }
+    location "/config*"             { block }
+    location "/build*"              { block }
+    location "/tests*"              { block }
+    location "/config*"             { block }
+    location "/lib*"                { block }
+    location "/3rdparty*"           { block }
+    location "/templates*"          { block }
+    location "/data*"               { block }
+    location "/.ht*"                { block }
+    location "/.user*"              { block }
+    location "/autotest*"           { block }
+    location "/occ*"                { block }
+    location "/issue*"              { block }
+    location "/indie*"              { block }
+    location "/db_*"                { block }
+    location "/console*"            { block }
+
+    location "/*.php*" {
+        root { "/nextcloud", strip 1 }
+        fastcgi socket "/run/php-fpm.sock"
+    }
+
+    location "/*" {
+        root { "/nextcloud", strip 1 }
+    }
+}
+---8<---------------------------------------------------------------------------
 
 nginx
 -----

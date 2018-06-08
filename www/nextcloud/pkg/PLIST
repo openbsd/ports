@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/05/17 08:57:47 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/08 14:46:21 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
+conf/modules.sample/
 conf/modules.sample/apache-nextcloud.conf.dist
-@sample ${PREFIX}/conf/modules.sample/apache-nextcloud.conf
-conf/modules.sample/httpd-nextcloud.conf.dist
-@sample ${PREFIX}/conf/modules.sample/httpd-nextcloud.conf
+@sample conf/modules.sample/apache-nextcloud.conf
 nextcloud/
 nextcloud/.htaccess.dist
 @sample nextcloud/.htaccess
@@ -5929,6 +5928,7 @@ nextcloud/apps/dav/lib/CardDAV/Xml/Groups.php
 nextcloud/apps/dav/lib/Command/
 nextcloud/apps/dav/lib/Command/CreateAddressBook.php
 nextcloud/apps/dav/lib/Command/CreateCalendar.php
+nextcloud/apps/dav/lib/Command/RemoveInvalidShares.php
 nextcloud/apps/dav/lib/Command/SyncBirthdayCalendar.php
 nextcloud/apps/dav/lib/Command/SyncSystemAddressBook.php
 nextcloud/apps/dav/lib/Comments/
@@ -9357,14 +9357,8 @@ nextcloud/apps/firstrunwizard/l10n/
 nextcloud/apps/firstrunwizard/l10n/.gitignore
 nextcloud/apps/firstrunwizard/l10n/.tx/
 nextcloud/apps/firstrunwizard/l10n/.tx/config
-nextcloud/apps/firstrunwizard/l10n/ar.js
-nextcloud/apps/firstrunwizard/l10n/ar.json
 nextcloud/apps/firstrunwizard/l10n/ast.js
 nextcloud/apps/firstrunwizard/l10n/ast.json
-nextcloud/apps/firstrunwizard/l10n/az.js
-nextcloud/apps/firstrunwizard/l10n/az.json
-nextcloud/apps/firstrunwizard/l10n/bg.js
-nextcloud/apps/firstrunwizard/l10n/bg.json
 nextcloud/apps/firstrunwizard/l10n/bn_IN.php
 nextcloud/apps/firstrunwizard/l10n/ca.js
 nextcloud/apps/firstrunwizard/l10n/ca.json
@@ -9382,8 +9376,6 @@ nextcloud/apps/firstrunwizard/l10n/el.js
 nextcloud/apps/firstrunwizard/l10n/el.json
 nextcloud/apps/firstrunwizard/l10n/en_GB.js
 nextcloud/apps/firstrunwizard/l10n/en_GB.json
-nextcloud/apps/firstrunwizard/l10n/eo.js
-nextcloud/apps/firstrunwizard/l10n/eo.json
 nextcloud/apps/firstrunwizard/l10n/es.js
 nextcloud/apps/firstrunwizard/l10n/es.json
 nextcloud/apps/firstrunwizard/l10n/es_419.js
@@ -9424,8 +9416,6 @@ nextcloud/apps/firstrunwizard/l10n/et_EE.js
 nextcloud/apps/firstrunwizard/l10n/et_EE.json
 nextcloud/apps/firstrunwizard/l10n/eu.js
 nextcloud/apps/firstrunwizard/l10n/eu.json
-nextcloud/apps/firstrunwizard/l10n/fa.js
-nextcloud/apps/firstrunwizard/l10n/fa.json
 nextcloud/apps/firstrunwizard/l10n/fi.js
 nextcloud/apps/firstrunwizard/l10n/fi.json
 nextcloud/apps/firstrunwizard/l10n/fr.js
@@ -9436,8 +9426,6 @@ nextcloud/apps/firstrunwizard/l10n/hu.js
 nextcloud/apps/firstrunwizard/l10n/hu.json
 nextcloud/apps/firstrunwizard/l10n/ia.js
 nextcloud/apps/firstrunwizard/l10n/ia.json
-nextcloud/apps/firstrunwizard/l10n/id.js
-nextcloud/apps/firstrunwizard/l10n/id.json
 nextcloud/apps/firstrunwizard/l10n/is.js
 nextcloud/apps/firstrunwizard/l10n/is.json
 nextcloud/apps/firstrunwizard/l10n/it.js
@@ -9452,30 +9440,22 @@ nextcloud/apps/firstrunwizard/l10n/ko.json
 nextcloud/apps/firstrunwizard/l10n/ku_IQ.php
 nextcloud/apps/firstrunwizard/l10n/lt_LT.js
 nextcloud/apps/firstrunwizard/l10n/lt_LT.json
-nextcloud/apps/firstrunwizard/l10n/lv.js
-nextcloud/apps/firstrunwizard/l10n/lv.json
 nextcloud/apps/firstrunwizard/l10n/ms_MY.php
 nextcloud/apps/firstrunwizard/l10n/nb.js
 nextcloud/apps/firstrunwizard/l10n/nb.json
 nextcloud/apps/firstrunwizard/l10n/nl.js
 nextcloud/apps/firstrunwizard/l10n/nl.json
-nextcloud/apps/firstrunwizard/l10n/oc.js
-nextcloud/apps/firstrunwizard/l10n/oc.json
 nextcloud/apps/firstrunwizard/l10n/pl.js
 nextcloud/apps/firstrunwizard/l10n/pl.json
 nextcloud/apps/firstrunwizard/l10n/pt_BR.js
 nextcloud/apps/firstrunwizard/l10n/pt_BR.json
 nextcloud/apps/firstrunwizard/l10n/pt_PT.js
 nextcloud/apps/firstrunwizard/l10n/pt_PT.json
-nextcloud/apps/firstrunwizard/l10n/ro.js
-nextcloud/apps/firstrunwizard/l10n/ro.json
 nextcloud/apps/firstrunwizard/l10n/ru.js
 nextcloud/apps/firstrunwizard/l10n/ru.json
 nextcloud/apps/firstrunwizard/l10n/si_LK.php
 nextcloud/apps/firstrunwizard/l10n/sk.js
 nextcloud/apps/firstrunwizard/l10n/sk.json
-nextcloud/apps/firstrunwizard/l10n/sl.js
-nextcloud/apps/firstrunwizard/l10n/sl.json
 nextcloud/apps/firstrunwizard/l10n/sq.js
 nextcloud/apps/firstrunwizard/l10n/sq.json
 nextcloud/apps/firstrunwizard/l10n/sr.js
@@ -9484,13 +9464,9 @@ nextcloud/apps/firstrunwizard/l10n/sv.js
 nextcloud/apps/firstrunwizard/l10n/sv.json
 nextcloud/apps/firstrunwizard/l10n/ta_LK.php
 nextcloud/apps/firstrunwizard/l10n/te.php
-nextcloud/apps/firstrunwizard/l10n/th.js
-nextcloud/apps/firstrunwizard/l10n/th.json
 nextcloud/apps/firstrunwizard/l10n/tr.js
 nextcloud/apps/firstrunwizard/l10n/tr.json
 nextcloud/apps/firstrunwizard/l10n/ug.php
-nextcloud/apps/firstrunwizard/l10n/uk.js
-nextcloud/apps/firstrunwizard/l10n/uk.json
 nextcloud/apps/firstrunwizard/l10n/zh_CN.js
 nextcloud/apps/firstrunwizard/l10n/zh_CN.json
 nextcloud/apps/firstrunwizard/l10n/zh_HK.php
@@ -10565,6 +10541,8 @@ nextcloud/apps/oauth2/lib/Db/ClientMapper.php
 nextcloud/apps/oauth2/lib/Exceptions/
 nextcloud/apps/oauth2/lib/Exceptions/AccessTokenNotFoundException.php
 nextcloud/apps/oauth2/lib/Exceptions/ClientNotFoundException.php
+nextcloud/apps/oauth2/lib/Migration/
+nextcloud/apps/oauth2/lib/Migration/SetTokenExpiration.php
 nextcloud/apps/oauth2/lib/Settings/
 nextcloud/apps/oauth2/lib/Settings/Admin.php
 nextcloud/apps/oauth2/templates/
@@ -11108,8 +11086,6 @@ nextcloud/apps/survey_client/js/admin.js
 nextcloud/apps/survey_client/l10n/
 nextcloud/apps/survey_client/l10n/.tx/
 nextcloud/apps/survey_client/l10n/.tx/config
-nextcloud/apps/survey_client/l10n/ast.js
-nextcloud/apps/survey_client/l10n/ast.json
 nextcloud/apps/survey_client/l10n/ca.js
 nextcloud/apps/survey_client/l10n/ca.json
 nextcloud/apps/survey_client/l10n/cs.js
@@ -11194,8 +11170,6 @@ nextcloud/apps/survey_client/l10n/pt_PT.js
 nextcloud/apps/survey_client/l10n/pt_PT.json
 nextcloud/apps/survey_client/l10n/ru.js
 nextcloud/apps/survey_client/l10n/ru.json
-nextcloud/apps/survey_client/l10n/sk.js
-nextcloud/apps/survey_client/l10n/sk.json
 nextcloud/apps/survey_client/l10n/sq.js
 nextcloud/apps/survey_client/l10n/sq.json
 nextcloud/apps/survey_client/l10n/sr.js
@@ -11552,6 +11526,8 @@ nextcloud/apps/theming/l10n/fr.js
 nextcloud/apps/theming/l10n/fr.json
 nextcloud/apps/theming/l10n/gl.js
 nextcloud/apps/theming/l10n/gl.json
+nextcloud/apps/theming/l10n/he.js
+nextcloud/apps/theming/l10n/he.json
 nextcloud/apps/theming/l10n/hu.js
 nextcloud/apps/theming/l10n/hu.json
 nextcloud/apps/theming/l10n/id.js
@@ -12692,6 +12668,7 @@ nextcloud/core/Migrations/Version13000Date20170718121200.php
 nextcloud/core/Migrations/Version13000Date20170814074715.php
 nextcloud/core/Migrations/Version13000Date20170919121250.php
 nextcloud/core/Migrations/Version13000Date20170926101637.php
+nextcloud/core/Migrations/Version13000Date20180516101403.php
 nextcloud/core/ajax/
 nextcloud/core/ajax/update.php
 nextcloud/core/css/
@@ -13253,6 +13230,7 @@ nextcloud/core/doc/user/_sources/pim/
 nextcloud/core/doc/user/_sources/pim/calendar.txt
 nextcloud/core/doc/user/_sources/pim/contacts.txt
 nextcloud/core/doc/user/_sources/pim/index.txt
+nextcloud/core/doc/user/_sources/pim/sync_android.txt
 nextcloud/core/doc/user/_sources/pim/sync_ios.txt
 nextcloud/core/doc/user/_sources/pim/sync_kde.txt
 nextcloud/core/doc/user/_sources/pim/sync_osx.txt
@@ -13383,6 +13361,7 @@ nextcloud/core/doc/user/pim/
 nextcloud/core/doc/user/pim/calendar.html
 nextcloud/core/doc/user/pim/contacts.html
 nextcloud/core/doc/user/pim/index.html
+nextcloud/core/doc/user/pim/sync_android.html
 nextcloud/core/doc/user/pim/sync_ios.html
 nextcloud/core/doc/user/pim/sync_kde.html
 nextcloud/core/doc/user/pim/sync_osx.html
@@ -13702,6 +13681,8 @@ nextcloud/core/l10n/el.js
 nextcloud/core/l10n/el.json
 nextcloud/core/l10n/en_GB.js
 nextcloud/core/l10n/en_GB.json
+nextcloud/core/l10n/eo.js
+nextcloud/core/l10n/eo.json
 nextcloud/core/l10n/es.js
 nextcloud/core/l10n/es.json
 nextcloud/core/l10n/es_419.js
@@ -14255,6 +14236,7 @@ nextcloud/lib/private/Archive/TAR.php
 nextcloud/lib/private/Archive/ZIP.php
 nextcloud/lib/private/Authentication/
 nextcloud/lib/private/Authentication/Exceptions/
+nextcloud/lib/private/Authentication/Exceptions/ExpiredTokenException.php
 nextcloud/lib/private/Authentication/Exceptions/InvalidTokenException.php
 nextcloud/lib/private/Authentication/Exceptions/LoginRequiredException.php
 nextcloud/lib/private/Authentication/Exceptions/PasswordLoginForbiddenException.php
