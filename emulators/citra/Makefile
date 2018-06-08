@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/07 16:29:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/08 05:23:21 bentley Exp $
 
 BROKEN-i386 =	always_inline function '_mm_sra_pi32' requires target feature 'mmx', but would be inlined into function 'calcCrossCorr' that is compiled without support for 'mmx'
 
@@ -26,7 +26,8 @@ MASTER_SITES =	https://spacehopper.org/mirrors/
 
 MODULES =	devel/cmake \
 		x11/qt5
-BUILD_DEPENDS =	devel/catch2
+BUILD_DEPENDS =	devel/catch2 \
+		devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
