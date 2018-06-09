@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.21 2018/06/03 10:06:39 espie Exp $
+# $OpenBSD: FS2.pm,v 1.22 2018/06/09 09:46:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -517,39 +517,13 @@ sub scan
 	return $files;
 }
 
-sub parse_chown
-{
-}
-
-sub parse_chgrp
-{
-}
-
-sub parse_install
-{
-}
-
 sub parse_logfile
 {
 	my ($self, $filename) = @_;
 	# don't bother if it's not there
 	return unless -f $filename;
-	open(my $fh, '<', $filename) or die "can't read $filename: $!";
-	while(<$fh>) {
-		chomp;
-		if (m/^(\S+)\s+(install|chown|chgrp)\s+(.*)/) {
-			my ($cwd, $cmd, @args) = ($1, $2, split(/\s+/, $3));
-			if ($cmd eq 'chown') {
-				$self->parse_chown($cwd, @args);
-			} elsif ($cmd eq 'chgrp') {
-				$self->parse_chgrp($cwd, @args);
-			} elsif ($cmd eq 'install') {
-				$self->parse_install($cwd, @args);
-			}
-		} else {
-			print "Bad line in $filename at $.: $_\n";
-		}
-	}
+	require OpenBSD::LogParser;
+	OpenBSD::LogParser->parse_file($self, $filename);
 }
 
 # build a hash of files needing registration
@@ -560,7 +534,7 @@ sub fill
 
 	if (defined $logfile) {
 		$self->{ignored}{$logfile} = 1;
-		$self->parse_logfile($logfile);
+#		$self->parse_logfile($logfile);
 	}
 
 	my $files = $self->scan;
