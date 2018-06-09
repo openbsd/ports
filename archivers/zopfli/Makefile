@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/18 13:09:23 sthen Exp $
-
-# __builtin_clz
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
+# $OpenBSD: Makefile,v 1.5 2018/06/09 18:38:18 bket Exp $
 
 COMMENT =		deflate-compatible compression format
 
 GH_ACCOUNT =		google
 GH_PROJECT =		zopfli
-GH_TAGNAME =		zopfli-1.0.1
+GH_TAGNAME =		zopfli-1.0.2
 DISTNAME =		${GH_TAGNAME}
 
 CATEGORIES =		archivers

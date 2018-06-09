@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_zopfli_lz77_c,v 1.1 2018/06/09 18:38:18 bket Exp $
+
+Unbreak on architectures with strict alignement requirements.
+
+Index: src/zopfli/lz77.c
+--- src/zopfli/lz77.c.orig
++++ src/zopfli/lz77.c
+@@ -299,6 +299,7 @@ static const unsigned char* GetMatch(const unsigned ch
+                                      const unsigned char* end,
+                                      const unsigned char* safe_end) {
+ 
++#ifndef __STRICT_ALIGNMENT
+   if (sizeof(size_t) == 8) {
+     /* 8 checks at once per array bounds check (size_t is 64-bit). */
+     while (scan < safe_end && *((size_t*)scan) == *((size_t*)match)) {
+@@ -312,7 +313,9 @@ static const unsigned char* GetMatch(const unsigned ch
+       scan += 4;
+       match += 4;
+     }
+-  } else {
++  } else
++#endif /* ! __STRICT_ALIGNMENT */
++  {
+     /* do 8 checks at once per array bounds check. */
+     while (scan < safe_end && *scan == *match && *++scan == *++match
+           && *++scan == *++match && *++scan == *++match
