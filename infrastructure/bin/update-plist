@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.161 2018/06/06 11:22:57 espie Exp $
+# $OpenBSD: update-plist,v 1.162 2018/06/09 10:51:39 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1502,6 +1502,18 @@ sub adjust_final
     	}
 }
 
+sub report_per_list
+{
+	my ($self, $key, $msg) = @_;
+	for my $p (@{$self->{lists}}) {
+		next unless exists $p->{$key};
+		$self->{state}->say($msg, $p->nlist->pkgname);
+		for my $e (@{$p->{$key}}) {
+			$self->{state}->say(" #1", $e);
+		}
+	}
+}
+
 sub report_issues
 {
 	my $self = shift;
@@ -1515,29 +1527,11 @@ sub report_issues
 	for my $p (@{$self->{lists}}) {
 		$p->olist->show_unknown;
 	}
-	for my $p (@{$self->{lists}}) {
-		next unless exists $p->{origfiles};
-		print "Warning: entries NOT added to ", $p->nlist->pkgname, 
-		    ":\n";
-		for my $e (@{$p->{origfiles}}) {
-			print "\t$e\n";
-		}
-	}
-	for my $p (@{$self->{lists}}) {
-		next unless exists $p->{oldorigfiles};
-		print "Warning: possible problematic entries in ", 
-		    $p->nlist->pkgname, ":\n";
-		for my $e (@{$p->{oldorigfiles}}) {
-			print "\t$e\n";
-		}
-	}
-	for my $p (@{$self->{lists}}) {
-		next unless exists $p->{oldcomments};
-		print "Warning: ", $p->nlist->pkgname, " still contains:\n";
-		for my $e (@{$p->{oldcomments}}) {
-			print "\t$e\n";
-		}
-	}
+	$self->report_per_list("origfiles", 
+	    "Warning: entries NOT added to #1:");
+	$self->report_per_list("oldorigfiles", 
+	    "Warning: possible problematic entries in #1:");
+	$self->report_per_list("oldcomments", "Warning: #1 still contains:");
 }
 
 sub write_new_files
