@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/24 15:09:47 anton Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/09 22:05:46 anton Exp $
 
 COMMENT = 		simple markdown translator
 
-DISTNAME = 		lowdown-0.3.2
-REVISION =		0
+DISTNAME = 		lowdown-0.3.3
 
 CATEGORIES = 		textproc
 
