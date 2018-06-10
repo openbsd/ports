@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2017/04/23 21:05:47 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.9 2018/06/10 03:13:20 stu Exp $
 
 Don't use soname when linking.
 
---- Makefile.in.orig	Fri Apr  7 22:27:33 2017
-+++ Makefile.in	Mon Apr 17 01:06:32 2017
-@@ -10,7 +10,6 @@ STRIP = @STRIP@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -25,7 +25,6 @@ STRIP = @STRIP@
  SH_CFLAGS ?= @SH_CFLAGS@
  SH_LDFLAGS ?= @SH_LDFLAGS@
  @if SH_SOPREFIX
@@ -12,7 +13,7 @@ Don't use soname when linking.
  @endif
  SHOBJ_CFLAGS ?= @SHOBJ_CFLAGS@
  @if JIM_STATICLIB
-@@ -60,6 +59,7 @@ JIMSH := jimsh@EXEEXT@
+@@ -75,6 +74,7 @@ JIMSH := jimsh@EXEEXT@
  INSTALL_DATA_DIR ?= mkdir -p
  INSTALL_DATA ?= cp
  INSTALL_PROGRAM ?= cp
@@ -20,8 +21,8 @@ Don't use soname when linking.
  @endif
  
  all: $(JIMSH) @C_EXT_SHOBJS@
-@@ -74,19 +74,24 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
- 	$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
+@@ -96,20 +96,25 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+ 	$(Q)$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
 -install: all @TCL_EXTS@ install-exec install-docs
@@ -37,6 +38,7 @@ Don't use soname when linking.
  	$(INSTALL_DATA) jim-config.h $(DESTDIR)@includedir@
 -	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
 -	$(INSTALL_DATA) build-jim-ext $(DESTDIR)@bindir@
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)@libdir@/pkgconfig
  	$(INSTALL_DATA) jimtcl.pc $(DESTDIR)@libdir@/pkgconfig
  
 +install-exas:
@@ -49,7 +51,7 @@ Don't use soname when linking.
  install-exec: all
  	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
  	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
-@@ -203,6 +208,8 @@ install-docs:
+@@ -261,6 +266,8 @@ install-docs:
  install-docs: docs
  	$(INSTALL_DATA_DIR) $(DESTDIR)$(docdir)
  	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(docdir)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/04 15:37:17 stu Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/10 03:13:20 stu Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
-DISTNAME =		jimtcl-0.77pl1
-SHARED_LIBS =		jim 2.4
+DISTNAME =		jimtcl-0.77pl2
+SHARED_LIBS =		jim 2.5
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -13,9 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c crypto execinfo m sqlite3 ssl z
 
-GH_ACCOUNT =		msteveb
-GH_PROJECT =		jimtcl
-GH_COMMIT =		57eb43959e993e6166a09e4d883ab0e944f7b4af
+MASTER_SITES =		https://chiselapp.com/user/stwo/repository/tarballia/uv/
 
 MODULES =		lang/tcl
 
