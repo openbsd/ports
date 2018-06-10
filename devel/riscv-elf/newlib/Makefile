@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/10 14:53:19 kevlo Exp $
 
 COMMENT=	newlib for riscv-elf cross-development
 
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://sourceware.org/pub/newlib/
 EXTRACT_SUFX=	.tar.gz
 
 BUILD_DEPENDS=	devel/riscv-elf/binutils \
+		sysutils/coreutils \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	devel/riscv-elf/gcc
 
