@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/02 20:23:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/11 13:22:25 jasper Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		font family inspired by Highway Gothic
 
-V =			3.0.2
+V =			3.0.3
 DISTNAME =		overpass-$V
 
 CATEGORIES =		fonts
