@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2018/05/17 08:01:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2018/06/11 22:55:55 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,15 +12,13 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.20.2
+V =			2.20.3
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
-
-REVISION =		1
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     2.4 # 18.6
 SHARED_LIBS +=  webkit2gtk-${API}            2.4 # 37.24
@@ -56,7 +54,7 @@ COMPILER =		base-clang ports-clang ports-gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	Tools/gtk/generate-inspector-gresource-manifest.py
+MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
 NO_TEST =		Yes
