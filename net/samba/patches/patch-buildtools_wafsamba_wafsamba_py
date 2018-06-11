@@ -1,4 +1,4 @@
-$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.4 2018/02/15 09:59:44 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.5 2018/06/11 11:59:51 jca Exp $
 
 - allow the library version to be overriden
 
@@ -9,7 +9,7 @@ $OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.4 2018/02/15 09:59:44 jca Ex
 Index: buildtools/wafsamba/wafsamba.py
 --- buildtools/wafsamba/wafsamba.py.orig
 +++ buildtools/wafsamba/wafsamba.py
-@@ -217,6 +217,14 @@ def SAMBA_LIBRARY(bld, libname, source,
+@@ -219,6 +219,14 @@ def SAMBA_LIBRARY(bld, libname, source,
      deps = TO_LIST(deps)
      deps.append(obj_target)
  
@@ -24,7 +24,7 @@ Index: buildtools/wafsamba/wafsamba.py
      realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
      link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
  
-@@ -329,9 +337,9 @@ def SAMBA_LIBRARY(bld, libname, source,
+@@ -331,9 +339,9 @@ def SAMBA_LIBRARY(bld, libname, source,
  
      if pc_files is not None and not private_library:
          if pyembed and bld.env['IS_EXTRA_PYTHON']:

@@ -1,10 +1,11 @@
-$OpenBSD: patch-python_samba_provision___init___py,v 1.4 2016/11/09 15:59:37 jca Exp $
+$OpenBSD: patch-python_samba_provision___init___py,v 1.5 2018/06/11 11:59:51 jca Exp $
 
 - net/isc-bind group name
 
---- python/samba/provision/__init__.py.orig	Mon Sep 12 18:42:36 2016
-+++ python/samba/provision/__init__.py	Mon Sep 12 18:42:36 2016
-@@ -1969,7 +1969,7 @@ def provision(logger, session_info, smbconf=None,
+Index: python/samba/provision/__init__.py
+--- python/samba/provision/__init__.py.orig
++++ python/samba/provision/__init__.py
+@@ -2057,7 +2057,7 @@ def provision(logger, session_info, smbconf=None,
      root_gid = pwd.getpwuid(root_uid).pw_gid
  
      try:

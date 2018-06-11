@@ -1,0 +1,14 @@
+$OpenBSD: patch-source3_torture_test_messaging_send_all_c,v 1.1 2018/06/11 11:59:51 jca Exp $
+
+Index: source3/torture/test_messaging_send_all.c
+--- source3/torture/test_messaging_send_all.c.orig
++++ source3/torture/test_messaging_send_all.c
+@@ -160,7 +160,7 @@ static void collect_pong_received(struct tevent_req *s
+ 
+ 	if (rec->src.pid == (uint64_t)getpid()) {
+ 		fprintf(stderr, "Received my own broadcast!\n");
+-		tevent_req_error(req, EMULTIHOP);
++		tevent_req_error(req, EINVAL);
+ 		return;
+ 	}
+ 

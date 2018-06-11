@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.25 2017/11/22 16:15:44 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.26 2018/06/11 11:59:51 jca Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -168,24 +168,21 @@ share/examples/samba/scripts/printing/
 share/examples/samba/scripts/printing/cups/
 share/examples/samba/scripts/printing/cups/smbaddprinter.pl
 share/examples/samba/scripts/printing/cups/smbdelprinter.pl
-share/examples/samba/scripts/shares/
-share/examples/samba/scripts/shares/perl/
-share/examples/samba/scripts/shares/perl/modify_samba_config.pl
-share/examples/samba/scripts/shares/python/
-share/examples/samba/scripts/shares/python/SambaConfig.py
-share/examples/samba/scripts/shares/python/SambaParm.py
-share/examples/samba/scripts/shares/python/generate_parm_table.py
-share/examples/samba/scripts/shares/python/modify_samba_config.py
-share/examples/samba/scripts/shares/python/smbparm.py
 share/examples/samba/scripts/users_and_groups/
 share/examples/samba/scripts/users_and_groups/adduserstogroups.pl
 share/examples/samba/scripts/users_and_groups/createdomobj.pl
 share/examples/samba/scripts/vfs/
 share/examples/samba/scripts/vfs/media_harmony/
 share/examples/samba/scripts/vfs/media_harmony/trigger_avid_update.py
+share/examples/samba/scripts/vfs/virusfilter/
+share/examples/samba/scripts/vfs/virusfilter/virusfilter-notify.ksh
 share/examples/samba/scripts/wins_hook/
 share/examples/samba/scripts/wins_hook/README
 share/examples/samba/scripts/wins_hook/dns_update
+share/examples/samba/systemtap/
+share/examples/samba/systemtap/gencache.stp
+share/examples/samba/systemtap/generate-winbindd.stp.sh
+share/examples/samba/systemtap/winbindd.stp
 share/examples/samba/tridge/
 share/examples/samba/tridge/README
 share/examples/samba/tridge/smb.conf

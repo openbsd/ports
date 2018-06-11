@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.253 2018/04/26 13:42:45 jca Exp $
+# $OpenBSD: Makefile,v 1.254 2018/06/11 11:59:51 jca Exp $
 
-VERSION =		4.7.7
+VERSION =		4.8.2
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -17,11 +17,8 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.2.3
-TEVENT_V =		0.9.34
-
-REVISION-ldb =		1
-REVISION-tevent =	3
+LDB_V =			1.3.3
+TEVENT_V =		0.9.36
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -37,30 +34,30 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.1 \
-			ldb			0.5 \
+			ldb			0.6 \
 			ndr			0.3 \
 			ndr-krb5pac		0.1 \
 			ndr-nbt			0.1 \
 			ndr-standard		3.0 \
-			netapi			2.0 \
-			pyldb-util		0.2 \
+			netapi			2.1 \
+			pyldb-util		0.3 \
 			roken-samba4		0.0 \
 			samba-credentials	0.2 \
 			samba-errors		1.0 \
-			samba-hostconfig	3.0 \
+			samba-hostconfig	4.0 \
 			samba-passdb		2.0 \
 			samba-policy		0.0 \
-			samba-util		3.0 \
+			samba-util		3.1 \
 			samdb			0.1 \
-			smbclient		4.1 \
-			smbconf			3.0 \
+			smbclient		4.2 \
+			smbconf			4.0 \
 			smbldap			0.1 \
-			tevent			0.3 \
-			tevent-util		0.1 \
+			tevent			0.4 \
+			tevent-util		1.0 \
 			wbclient		3.2 \
 			wind-samba4		0.0 \
-			replace			4.0 \
-			util-setid		4.0
+			replace			5.0 \
+			util-setid		5.0
 
 CATEGORIES =		net sysutils security
 
@@ -153,6 +150,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-configdir=${SYSCONFDIR}/samba \
 			--with-statedir=${VARBASE}/samba \
 			--with-privatedir=${VARBASE}/samba/private \
+			--with-bind-dns-dir=${VARBASE}/samba/bind-dns \
 			--with-lockdir=${VARBASE}/run/samba \
 			--with-privileged-socket-dir=${VARBASE}/samba \
 			--without-pie \

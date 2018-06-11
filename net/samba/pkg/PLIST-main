@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2018/02/15 09:59:44 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2018/06/11 11:59:51 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
+@sample ${SYSCONFDIR}/samba/
 @bin bin/cifsdd
 @bin bin/dbwrap_tool
 @bin bin/eventlogadm
@@ -164,8 +165,6 @@ lib/pkgconfig/samba-util.pc
 lib/pkgconfig/samdb.pc
 lib/pkgconfig/smbclient.pc
 lib/pkgconfig/wbclient.pc
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/samba/
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.pyc
@@ -173,6 +172,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/__init__.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/_glue.so
 lib/python${MODPY_VERSION}/site-packages/samba/_ldb.so
 lib/python${MODPY_VERSION}/site-packages/samba/auth.so
+lib/python${MODPY_VERSION}/site-packages/samba/colour.py
+lib/python${MODPY_VERSION}/site-packages/samba/colour.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/colour.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/common.py
 lib/python${MODPY_VERSION}/site-packages/samba/common.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/common.${MODPY_PYOEXTENSION}
@@ -229,15 +231,38 @@ lib/python${MODPY_VERSION}/site-packages/samba/descriptor.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/dnsserver.py
 lib/python${MODPY_VERSION}/site-packages/samba/dnsserver.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/dnsserver.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/domain_update.py
+lib/python${MODPY_VERSION}/site-packages/samba/domain_update.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/domain_update.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.py
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/dsdb.so
 lib/python${MODPY_VERSION}/site-packages/samba/dsdb_dns.so
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/__init__.py
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/__init__.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic.py
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic_packets.py
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic_packets.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/emulate/traffic_packets.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/forest_update.py
+lib/python${MODPY_VERSION}/site-packages/samba/forest_update.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/forest_update.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/gensec.so
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.py
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/getopt.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/gpclass.py
+lib/python${MODPY_VERSION}/site-packages/samba/gpclass.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/gpclass.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/gpo.so
+lib/python${MODPY_VERSION}/site-packages/samba/graph.py
+lib/python${MODPY_VERSION}/site-packages/samba/graph.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/graph.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/hostconfig.py
 lib/python${MODPY_VERSION}/site-packages/samba/hostconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/hostconfig.${MODPY_PYOEXTENSION}
@@ -270,9 +295,15 @@ lib/python${MODPY_VERSION}/site-packages/samba/messaging.so
 lib/python${MODPY_VERSION}/site-packages/samba/ms_display_specifiers.py
 lib/python${MODPY_VERSION}/site-packages/samba/ms_display_specifiers.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/ms_display_specifiers.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/ms_forest_updates_markdown.py
+lib/python${MODPY_VERSION}/site-packages/samba/ms_forest_updates_markdown.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/ms_forest_updates_markdown.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/ms_schema.py
 lib/python${MODPY_VERSION}/site-packages/samba/ms_schema.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/ms_schema.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/ms_schema_markdown.py
+lib/python${MODPY_VERSION}/site-packages/samba/ms_schema_markdown.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/ms_schema_markdown.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/ndr.py
 lib/python${MODPY_VERSION}/site-packages/samba/ndr.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/ndr.${MODPY_PYOEXTENSION}
@@ -342,6 +373,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/netcmd/testparm.${MODPY_PYOEXTENS
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.py
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/netcmd/user.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/netcmd/visualize.py
+lib/python${MODPY_VERSION}/site-packages/samba/netcmd/visualize.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/netcmd/visualize.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.py
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/ntacls.${MODPY_PYOEXTENSION}
@@ -439,12 +473,27 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/__init__.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/check_output.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/check_output.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/check_output.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/samba_dnsupdate.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/smbcontrol.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_learner.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_replay.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_replay.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_replay.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/traffic_summary.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/common.${MODPY_PYOEXTENSION}
@@ -528,9 +577,25 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/docs.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_lock.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_lock.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_lock.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_schema_attributes.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_schema_attributes.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dsdb_schema_attributes.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/__init__.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/__init__.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic_packet.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic_packet.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/emulate/traffic_packet.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/encrypted_secrets.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/encrypted_secrets.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/encrypted_secrets.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/gensec.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/gensec.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/gensec.${MODPY_PYOEXTENSION}
@@ -540,6 +605,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/get_opt.${MODPY_PYOEXTENSIO
 lib/python${MODPY_VERSION}/site-packages/samba/tests/glue.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/glue.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/glue.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/graph.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/graph.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/graph.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/hostconfig.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/hostconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/hostconfig.${MODPY_PYOEXTENSION}
@@ -562,6 +630,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/kcc/kcc_utils.${MODPY_PYOEX
 lib/python${MODPY_VERSION}/site-packages/samba/tests/kcc/ldif_import_export.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/kcc/ldif_import_export.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/kcc/ldif_import_export.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5_credentials.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5_credentials.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5_credentials.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/libsmb_samba_internal.${MODPY_PYOEXTENSION}
@@ -586,12 +657,15 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/netlogonsvc.${MODPY_PYOEXTE
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ntacls.${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmauth.py
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmauth.pyc
-lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmauth.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ntlmdisabled.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/pam_winbind_warn_pwd_expire.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/param.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/param.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/param.${MODPY_PYOEXTENSION}
@@ -610,6 +684,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/password_hash_gpgme.${MODPY
 lib/python${MODPY_VERSION}/site-packages/samba/tests/password_hash_ldap.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/password_hash_ldap.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/password_hash_ldap.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/password_quality.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/password_quality.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/password_quality.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/policy.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/policy.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/policy.${MODPY_PYOEXTENSION}
@@ -650,6 +727,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/gpo.${MODPY_PYOE
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/group.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/group.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/group.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/help.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/help.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/help.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/join.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/join.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/join.${MODPY_PYOEXTENSION}
@@ -659,6 +739,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/ntacl.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/processes.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/provision_password_check.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/provision_password_check.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/provision_password_check.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/rodc.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/rodc.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/rodc.${MODPY_PYOEXTENSION}
@@ -680,6 +763,12 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/user_virtualCryp
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/user_wdigest.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/user_wdigest.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/user_wdigest.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize_drs.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize_drs.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/samba_tool/visualize_drs.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samdb.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samdb.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/samdb.${MODPY_PYOEXTENSION}
@@ -695,6 +784,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/strings.${MODPY_PYOEXTENSIO
 lib/python${MODPY_VERSION}/site-packages/samba/tests/subunitrun.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/subunitrun.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/subunitrun.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/tdb_util.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/unicodenames.${MODPY_PYOEXTENSION}
@@ -765,6 +857,7 @@ lib/samba/ldb/descriptor.so
 lib/samba/ldb/dirsync.so
 lib/samba/ldb/dns_notify.so
 lib/samba/ldb/dsdb_notification.so
+lib/samba/ldb/encrypted_secrets.so
 lib/samba/ldb/extended_dn_in.so
 lib/samba/ldb/extended_dn_out.so
 lib/samba/ldb/extended_dn_store.so
@@ -807,14 +900,15 @@ lib/samba/ldb/subtree_delete.so
 lib/samba/ldb/subtree_rename.so
 lib/samba/ldb/tdb.so
 lib/samba/ldb/tombstone_reanimate.so
+lib/samba/ldb/unique_object_sids.so
 lib/samba/ldb/update_keytab.so
 lib/samba/ldb/vlv.so
 lib/samba/ldb/wins_ldb.so
 lib/samba/libCHARSET3-samba4.so
 lib/samba/libHDB-SAMBA4-samba4.so
 lib/samba/libLIBWBCLIENT-OLD-samba4.so
-lib/samba/libMESSAGING-samba4.so
 lib/samba/libMESSAGING-SEND-samba4.so
+lib/samba/libMESSAGING-samba4.so
 lib/samba/libaddns-samba4.so
 lib/samba/libads-samba4.so
 @lib lib/samba/libasn1-samba4.so.${LIBasn1-samba4_VERSION}
@@ -847,7 +941,7 @@ lib/samba/libevents-samba4.so
 lib/samba/libflag-mapping-samba4.so
 lib/samba/libgenrand-samba4.so
 lib/samba/libgensec-samba4.so
-lib/samba/libgpo-samba4.so
+lib/samba/libgpext-samba4.so
 lib/samba/libgse-samba4.so
 @lib lib/samba/libgssapi-samba4.so.${LIBgssapi-samba4_VERSION}
 @lib lib/samba/libhcrypto-samba4.so.${LIBhcrypto-samba4_VERSION}
@@ -925,6 +1019,7 @@ lib/samba/nss_info/rfc2307.so
 lib/samba/nss_info/sfu.so
 lib/samba/nss_info/sfu20.so
 lib/samba/process_model/
+lib/samba/process_model/prefork.so
 lib/samba/process_model/standard.so
 lib/samba/service/
 lib/samba/service/cldap.so
@@ -977,9 +1072,9 @@ lib/samba/vfs/streams_xattr.so
 lib/samba/vfs/syncops.so
 lib/samba/vfs/time_audit.so
 lib/samba/vfs/unityed_media.so
+lib/samba/vfs/virusfilter.so
 lib/samba/vfs/worm.so
 lib/samba/vfs/xattr_tdb.so
-lib/security/
 lib/security/pam_winbind.so
 lib/winbind_krb5_locator.so
 ${P5SITE}/Parse/
@@ -1059,6 +1154,8 @@ libexec/samba/
 @man man/man5/smbpasswd.5
 @man man/man7/libsmbclient.7
 @man man/man7/samba.7
+@man man/man7/traffic_learner.7
+@man man/man7/traffic_replay.7
 @man man/man7/winbind_krb5_locator.7
 @man man/man8/cifsdd.8
 @man man/man8/eventlogadm.8
@@ -1079,6 +1176,7 @@ libexec/samba/
 @man man/man8/samba-regedit.8
 @man man/man8/samba-tool.8
 @man man/man8/samba.8
+@man man/man8/samba_gpoupdate.8
 @man man/man8/smbd.8
 @man man/man8/smbpasswd.8
 @man man/man8/smbspool.8
@@ -1086,7 +1184,6 @@ libexec/samba/
 @man man/man8/vfs_acl_tdb.8
 @man man/man8/vfs_acl_xattr.8
 @man man/man8/vfs_aio_fork.8
-@man man/man8/vfs_aio_linux.8
 @man man/man8/vfs_aio_pthread.8
 @man man/man8/vfs_audit.8
 @man man/man8/vfs_btrfs.8
@@ -1108,6 +1205,7 @@ libexec/samba/
 @man man/man8/vfs_linux_xfs_sgid.8
 @man man/man8/vfs_media_harmony.8
 @man man/man8/vfs_netatalk.8
+@man man/man8/vfs_nfs4acl_xattr.8
 @man man/man8/vfs_offline.8
 @man man/man8/vfs_prealloc.8
 @man man/man8/vfs_preopen.8
@@ -1124,12 +1222,14 @@ libexec/samba/
 @man man/man8/vfs_time_audit.8
 @man man/man8/vfs_tsmsm.8
 @man man/man8/vfs_unityed_media.8
+@man man/man8/vfs_virusfilter.8
 @man man/man8/vfs_worm.8
 @man man/man8/vfs_xattr_tdb.8
 @man man/man8/winbindd.8
 @bin sbin/nmbd
 @bin sbin/samba
 sbin/samba_dnsupdate
+sbin/samba_gpoupdate
 sbin/samba_kcc
 sbin/samba_spnupdate
 sbin/samba_upgradedns
@@ -1138,7 +1238,6 @@ sbin/samba_upgradedns
 share/doc/pkg-readmes/${FULLPKGNAME}
 @comment share/doc/samba/
 share/examples/samba/
-@sample ${SYSCONFDIR}/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
 @comment share/perl5/
@@ -1146,11 +1245,29 @@ share/samba/
 share/samba/setup/
 share/samba/setup/DB_CONFIG
 share/samba/setup/ad-schema/
+share/samba/setup/ad-schema/AD_DS_Attributes__Windows_Server_2012_R2.ldf
+share/samba/setup/ad-schema/AD_DS_Attributes__Windows_Server_2016.ldf
+share/samba/setup/ad-schema/AD_DS_Classes__Windows_Server_2012_R2.ldf
+share/samba/setup/ad-schema/AD_DS_Classes__Windows_Server_2016.ldf
+share/samba/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2008_R2.ldf
+share/samba/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2012.ldf
+share/samba/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2008_R2.ldf
+share/samba/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2012.ldf
 share/samba/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 share/samba/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
 share/samba/setup/ad-schema/MS-AD_Schema_2K8_R2_Attributes.txt
 share/samba/setup/ad-schema/MS-AD_Schema_2K8_R2_Classes.txt
 share/samba/setup/ad-schema/licence.txt
+share/samba/setup/adprep/
+share/samba/setup/adprep/WindowsServerDocs/
+share/samba/setup/adprep/WindowsServerDocs/Forest-Wide-Updates.md
+share/samba/setup/adprep/WindowsServerDocs/Sch49.ldf.diff
+share/samba/setup/adprep/WindowsServerDocs/Sch50.ldf.diff
+share/samba/setup/adprep/WindowsServerDocs/Sch51.ldf.diff
+share/samba/setup/adprep/WindowsServerDocs/Sch57.ldf.diff
+share/samba/setup/adprep/WindowsServerDocs/Sch59.ldf.diff
+share/samba/setup/adprep/WindowsServerDocs/Schema-Updates.md
+share/samba/setup/adprep/fix-forest-rev.ldf
 share/samba/setup/aggregate_schema.ldif
 share/samba/setup/cn=samba.ldif
 share/samba/setup/display-specifiers/
@@ -1160,6 +1277,7 @@ share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k3R2.txt
 share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k8.txt
 share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
 share/samba/setup/dns_update_list
+share/samba/setup/extended-rights.ldif
 share/samba/setup/fedora-ds-init.ldif
 share/samba/setup/fedorads-dna.ldif
 share/samba/setup/fedorads-index.ldif
@@ -1234,16 +1352,14 @@ share/samba/setup/share.ldif
 share/samba/setup/slapd.conf
 share/samba/setup/spn_update_list
 share/samba/setup/ypServ30.ldif
+@mode 0750
+@sample /var/cache/samba/
+@sample ${SAMBA_LOGDIR}/
+@sample /var/samba/
+@mode 0700
+@sample /var/samba/private/
 @rcscript ${RCDIR}/nmbd
 @rcscript ${RCDIR}/samba
 @rcscript ${RCDIR}/samba_ad_dc
 @rcscript ${RCDIR}/smbd
 @rcscript ${RCDIR}/winbindd
-@mode 0750
-@sample /var/cache/samba/
-@sample ${SAMBA_LOGDIR}/
-@mode
-@mode 0750
-@sample /var/samba/
-@mode 0700
-@sample /var/samba/private/
