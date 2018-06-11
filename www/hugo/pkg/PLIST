@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/11 21:17:14 solene Exp $
+@bin bin/hugo
+@man man/man1/hugo-benchmark.1
+@man man/man1/hugo-config.1
+@man man/man1/hugo-convert-toJSON.1
+@man man/man1/hugo-convert-toTOML.1
+@man man/man1/hugo-convert-toYAML.1
+@man man/man1/hugo-convert.1
+@man man/man1/hugo-env.1
+@man man/man1/hugo-gen-autocomplete.1
+@man man/man1/hugo-gen-chromastyles.1
+@man man/man1/hugo-gen-doc.1
+@man man/man1/hugo-gen-man.1
+@man man/man1/hugo-gen.1
+@man man/man1/hugo-import-jekyll.1
+@man man/man1/hugo-import.1
+@man man/man1/hugo-list-drafts.1
+@man man/man1/hugo-list-expired.1
+@man man/man1/hugo-list-future.1
+@man man/man1/hugo-list.1
+@man man/man1/hugo-new-site.1
+@man man/man1/hugo-new-theme.1
+@man man/man1/hugo-new.1
+@man man/man1/hugo-server.1
+@man man/man1/hugo-version.1
+@man man/man1/hugo.1
