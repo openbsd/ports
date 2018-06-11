@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/13 14:36:09 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2018/06/11 14:58:56 bket Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_store_8
 
 COMMENT =		fuse-based cryptographic filesystem
 
-V =			1.9.4
+V =			1.9.5
 DISTNAME =		encfs-$V
 
 CATEGORIES =		security
