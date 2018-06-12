@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.575 2018/05/05 15:08:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.576 2018/06/12 15:47:38 stu Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -513,6 +513,7 @@
      SUBDIR += svndumptool
      SUBDIR += swish-e
      SUBDIR += tcpdf
+     SUBDIR += tdom
      SUBDIR += texi2html
      SUBDIR += texi2mdoc
      SUBDIR += the_silver_searcher
