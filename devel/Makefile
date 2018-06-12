@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1738 2018/06/12 05:47:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1739 2018/06/12 13:01:55 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1212,6 +1212,7 @@
      SUBDIR += ptlib
      SUBDIR += pudb
      SUBDIR += pudb,python3
+     SUBDIR += pycdc
      SUBDIR += pycharm
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
