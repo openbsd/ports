@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_Makefile_in,v 1.3 2018/06/12 06:07:29 bentley Exp $
+
+fix accidental inclusion of SDL_Mixer for wad creation
+
+Index: data/Makefile.in
+--- data/Makefile.in.orig
++++ data/Makefile.in
+@@ -689,7 +689,7 @@ clean-noinstPROGRAMS:
+ 
+ rdatawad$(EXEEXT): $(rdatawad_OBJECTS) $(rdatawad_DEPENDENCIES) $(EXTRA_rdatawad_DEPENDENCIES) 
+ 	@rm -f rdatawad$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(rdatawad_OBJECTS) $(rdatawad_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(rdatawad_OBJECTS) $(rdatawad_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
