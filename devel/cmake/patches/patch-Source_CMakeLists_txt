@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_CMakeLists_txt,v 1.10 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-Source_CMakeLists_txt,v 1.11 2018/06/12 05:12:01 rsadowski Exp $
 Index: Source/CMakeLists.txt
 --- Source/CMakeLists.txt.orig
 +++ Source/CMakeLists.txt
@@ -12,7 +12,7 @@ Index: Source/CMakeLists.txt
    ${CMAKE_TAR_INCLUDES}
    ${CMAKE_COMPRESS_INCLUDES}
    ${CMake_HAIKU_INCLUDE_DIRS}
-@@ -273,7 +276,6 @@ set(SRCS
+@@ -275,7 +278,6 @@ set(SRCS
    cmRulePlaceholderExpander.cxx
    cmRulePlaceholderExpander.h
    cmLocalUnixMakefileGenerator3.cxx

@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.8 2018/03/14 12:24:54 rsadowski Exp $
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.9 2018/06/12 05:12:01 rsadowski Exp $
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -1195,11 +1195,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
+@@ -1196,11 +1196,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
  
  bool cmGeneratorTarget::HasSOName(const std::string& config) const
  {
@@ -18,7 +18,7 @@ Index: Source/cmGeneratorTarget.cxx
  }
  
  bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -2974,9 +2978,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -2978,9 +2982,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -35,7 +35,7 @@ Index: Source/cmGeneratorTarget.cxx
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -3002,6 +3012,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3006,6 +3016,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // The library name.
    name = prefix + base + suffix;
  
@@ -69,8 +69,8 @@ Index: Source/cmGeneratorTarget.cxx
 +
    if (this->IsFrameworkOnApple()) {
      realName = prefix;
-     if (!this->Makefile->PlatformIsAppleIos()) {
-@@ -3013,7 +3051,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+     if (!this->Makefile->PlatformIsAppleEmbedded()) {
+@@ -3017,7 +3055,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
      soName = realName;
    } else {
      // The library's soname.
@@ -82,7 +82,7 @@ Index: Source/cmGeneratorTarget.cxx
  
      // The library's real name on disk.
      this->ComputeVersionedName(realName, prefix, base, suffix, name, version);
-@@ -4142,7 +4184,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
+@@ -4146,7 +4188,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
    vName = this->Makefile->IsOn("APPLE") ? (prefix + base) : name;
    if (version) {
      vName += ".";

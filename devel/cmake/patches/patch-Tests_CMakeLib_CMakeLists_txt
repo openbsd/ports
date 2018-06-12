@@ -1,0 +1,13 @@
+$OpenBSD: patch-Tests_CMakeLib_CMakeLists_txt,v 1.1 2018/06/12 05:12:01 rsadowski Exp $
+
+Index: Tests/CMakeLib/CMakeLists.txt
+--- Tests/CMakeLib/CMakeLists.txt.orig
++++ Tests/CMakeLib/CMakeLists.txt
+@@ -2,6 +2,7 @@ include_directories(
+   ${CMAKE_CURRENT_BINARY_DIR}
+   ${CMake_BINARY_DIR}/Source
+   ${CMake_SOURCE_DIR}/Source
++  ${CMAKE_LIBUV_INCLUDES}
+   )
+ 
+ set(CMakeLib_TESTS

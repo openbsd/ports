@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.32 2018/03/14 12:24:54 rsadowski Exp $
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.33 2018/06/12 05:12:01 rsadowski Exp $
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -227,7 +227,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+@@ -229,7 +229,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
      this->SetPropertyDefault("BUILD_RPATH", nullptr);
      this->SetPropertyDefault("INSTALL_NAME_DIR", nullptr);
      this->SetPropertyDefault("INSTALL_RPATH", "");

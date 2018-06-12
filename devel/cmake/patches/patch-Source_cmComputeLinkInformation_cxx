@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.20 2018/03/14 12:24:54 rsadowski Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.21 2018/06/12 05:12:01 rsadowski Exp $
 Index: Source/cmComputeLinkInformation.cxx
 --- Source/cmComputeLinkInformation.cxx.orig
 +++ Source/cmComputeLinkInformation.cxx
@@ -60,7 +60,7 @@ Index: Source/cmComputeLinkInformation.cxx
        }
      } else {
        // This is a library or option specified by the user.
-@@ -982,11 +998,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -980,11 +996,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
    }
  
@@ -84,7 +84,7 @@ Index: Source/cmComputeLinkInformation.cxx
    }
  
    // If this platform wants a flag before the full path, add it.
-@@ -1539,6 +1562,57 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
+@@ -1537,6 +1560,57 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
    if (const char* implicitDirs =
          this->Makefile->GetDefinition(implicitDirVar)) {
      cmSystemTools::ExpandListArgument(implicitDirs, implicitDirVec);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.15 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.16 2018/06/12 05:12:01 rsadowski Exp $
 Index: Modules/FindPythonLibs.cmake
 --- Modules/FindPythonLibs.cmake.orig
 +++ Modules/FindPythonLibs.cmake
@@ -33,7 +33,7 @@ Index: Modules/FindPythonLibs.cmake
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)
  unset(_PYTHON1_VERSIONS)
-@@ -191,20 +198,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+@@ -190,20 +197,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
        endforeach()
      endif()
  

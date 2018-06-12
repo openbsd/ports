@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.22 2018/03/14 12:24:54 rsadowski Exp $
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.23 2018/06/12 05:12:01 rsadowski Exp $
 Index: Modules/FindJava.cmake
 --- Modules/FindJava.cmake.orig
 +++ Modules/FindJava.cmake
@@ -11,8 +11,8 @@ Index: Modules/FindJava.cmake
  # The HINTS option should only be used for values computed from the system.
  set(_JAVA_HINTS)
  if(_JAVA_HOME)
-@@ -97,19 +99,22 @@ list(APPEND _JAVA_HINTS
-   )
+@@ -127,19 +129,22 @@ endif()
+ 
  # Hard-coded guesses should still go in PATHS. This ensures that the user
  # environment can always override hard guesses.
 -set(_JAVA_PATHS
