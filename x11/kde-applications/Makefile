@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/08 05:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/12 16:54:58 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -197,7 +197,7 @@
      #SUBDIR += svgpart
      #SUBDIR += sweeper
      #SUBDIR += syndication
-     #SUBDIR += umbrello
+     SUBDIR += umbrello
      #SUBDIR += zeroconf-ioslave
 
 .include <bsd.port.subdir.mk>

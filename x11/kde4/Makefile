@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/06/08 05:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.49 2018/06/12 16:54:58 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -261,7 +261,7 @@ SUBDIR += poxml
 SUBDIR += sdk-kioslaves
 SUBDIR += sdk-strigi-analyzers
 SUBDIR += sdk-thumbnailers
-SUBDIR += umbrello
+#SUBDIR += umbrello			x11/kde-applications
 
 # former kdetoys
 SUBDIR += amor

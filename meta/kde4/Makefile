@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/08 07:36:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/12 16:54:57 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,6 +28,7 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	7
 REVISION-games = 0
+REVISION-sdk = 0
 REVISION-extras = 1
 REVISION-main =		3
 
@@ -191,8 +192,7 @@ RUN_DEPENDS-sdk = \
 	${MODKDE4_DEP_DIR}/poxml		\
 	${MODKDE4_DEP_DIR}/sdk-kioslaves	\
 	${MODKDE4_DEP_DIR}/sdk-strigi-analyzers	\
-	${MODKDE4_DEP_DIR}/sdk-thumbnailers	\
-	${MODKDE4_DEP_DIR}/umbrello
+	${MODKDE4_DEP_DIR}/sdk-thumbnailers
 
 RUN_DEPENDS-toys = \
 	${MODKDE4_DEP_DIR}/amor		\
