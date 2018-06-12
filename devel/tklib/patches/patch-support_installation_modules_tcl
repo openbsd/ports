@@ -1,7 +1,8 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.3 2017/05/14 09:02:01 stu Exp $
---- support/installation/modules.tcl.orig	Fri Mar 31 13:13:21 2017
-+++ support/installation/modules.tcl	Sat Apr 22 01:58:32 2017
-@@ -31,26 +31,27 @@ array set guide {}
+$OpenBSD: patch-support_installation_modules_tcl,v 1.4 2018/06/12 23:46:26 stu Exp $
+Index: support/installation/modules.tcl
+--- support/installation/modules.tcl.orig
++++ support/installation/modules.tcl
+@@ -31,34 +31,33 @@ array set guide {}
  # @@ Registration START
  
  #      name           pkg   doc   example
@@ -31,6 +32,7 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.3 2017/05/14 09:02:01 stu E
  Module mentry        _tab  _null _exa
  Module menubar       _tcl  _man  _exa
  Module ntext         _tcl  _man  _exa
+-Module persistentSelection _tcl _man _exa
 +Module notifywindow  _tcm  _man  _null
  Module plotchart     _tcl  _man  _exa
  Module style         _tcl  _man  _null
@@ -39,3 +41,10 @@ $OpenBSD: patch-support_installation_modules_tcl,v 1.3 2017/05/14 09:02:01 stu E
  Module tablelist     _tab  _null _exa
  Module tkpiechart    _tcl  _man  _exa
  Module tooltip       _tcl  _man  _null
+ Module wcb           _tab  _null _exa
+ Module widget        _tcl  _man  _exa
+ Module widgetl       _tcl  _man  _null
+-Module widgetPlus    _tcl  _man  _exa
+ Module widgetv       _tcl  _man  _null
+ 
+ Application  diagram-viewer

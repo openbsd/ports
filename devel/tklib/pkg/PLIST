@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/05/14 09:02:01 stu Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/12 23:46:26 stu Exp $
 @conflict mentry-*
 @conflict wcb-*
 @pkgpath devel/mentry
@@ -383,6 +383,7 @@ share/examples/tklib/ntext/
 share/examples/tklib/ntext/ntextDemoBindings.tcl
 share/examples/tklib/ntext/ntextDemoIndent.tcl
 share/examples/tklib/ntext/ntextDemoMacScrolling.tcl
+share/examples/tklib/ntext/ntextDemoScroll.tcl
 share/examples/tklib/ntext/ntextExample.tcl
 share/examples/tklib/plotchart/
 share/examples/tklib/plotchart/demo.tcl
