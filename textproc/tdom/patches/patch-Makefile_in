@@ -1,0 +1,43 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+
+Install to OpenBSD locations and adjust pkgIndex.tcl accordingly.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -407,12 +407,12 @@ install-lib-binaries: binaries
+ 	@$(INSTALL_DATA_DIR) $(DESTDIR)$(pkglibdir)
+ 	@list='$(lib_BINARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+-	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p; \
++	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p"; \
++	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
+ 	    if test "x$$stub" = "xstub"; then \
+-		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \
+-		$(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p; \
++		echo " $(RANLIB_STUB) $(DESTDIR)$(libdir)/$$p"; \
++		$(RANLIB_STUB) $(DESTDIR)$(libdir)/$$p; \
+ 	    else \
+ 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+@@ -427,8 +427,8 @@ install-lib-binaries: binaries
+ 	    fi; \
+ 	  fi; \
+ 	done
+-	@echo "Installing tdomConfig.sh to $(DESTDIR)$(libdir)/"
+-	@$(INSTALL_DATA) tdomConfig.sh "$(DESTDIR)$(libdir)/tdomConfig.sh"
++	@echo "Installing tdomConfig.sh to $(DESTDIR)$(pkglibdir)/"
++	@$(INSTALL_DATA) tdomConfig.sh "$(DESTDIR)$(pkglibdir)/tdomConfig.sh"
+ 	@list='$(PKG_TCL_SOURCES)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+ 	    destp=`basename $$p`; \
+@@ -438,6 +438,7 @@ install-lib-binaries: binaries
+ 	done
+ 	@if test "x$(SHARED_BUILD)" = "x1"; then \
+ 	    echo " Install pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \
++	    perl -pi -e 's!dir lib!dir .. .. lib!' pkgIndex.tcl; \
+ 	    $(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir); \
+ 	fi
+ 

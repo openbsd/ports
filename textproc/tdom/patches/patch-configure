@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+
+Do this here so it propagates through everything.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -9131,7 +9131,7 @@ TDOMSHELL=tcldomsh
+     #--------------------------------------------------------------------
+ 
+     # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-    eval pkglibdir="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
++    eval pkglibdir="${libdir}"
+     if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+ 	eval PKG_STUB_LIB_FLAG="-l${PACKAGE_NAME}stub${PACKAGE_VERSION}"
+     else

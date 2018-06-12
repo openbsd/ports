@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+include/tdom.h
+@lib lib/libtdom${VER}.so.${LIBtdom${VER}_VERSION}
+lib/libtdomstub${VER}.a
+lib/tcl/modules/86/tdomhtml-0.1.0.tm
+lib/tcl/tdom/
+lib/tcl/tdom/pkgIndex.tcl
+lib/tcl/tdom/tdom.tcl
+lib/tcl/tdom/tdomConfig.sh
+@man man/mann/dom.n
+@man man/mann/domDoc.n
+@man man/mann/domNode.n
+@man man/mann/expat.n
+@man man/mann/expatapi.n
+@man man/mann/tdomcmd.n
+@man man/mann/tnc.n

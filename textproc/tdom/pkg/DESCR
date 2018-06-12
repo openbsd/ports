@@ -1,0 +1,26 @@
+Combines high performance XML data processing with
+easy and powerful Tcl scripting functionality.
+
+Includes the tdomhtml extension which implements a simple HTML
+layer on top of the core DOM Level-1 specification.
+
+Features:
+
+ * A Tcl interface to expat for event-like (SAX-like) XML parsing.
+
+ * A complete, compliant and fast XPath implementation in C
+   following the November 99 W3C recommendation for navigation
+   and data extraction.
+
+ * A fast XSLT implementation in C following the W3C
+   Recommendation 16 November 1999.
+
+ * DTD validation.
+
+ * A JSON parser that parses any possible JSON input into a DOM
+   tree without losing information.
+
+ * An efficient and Tcl'ish way to create XML and HTML documents
+   and JSON strings.
+
+ * An even faster simple XML parser for trusted XML input.
