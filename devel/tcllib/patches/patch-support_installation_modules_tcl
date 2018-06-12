@@ -1,4 +1,4 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.9 2017/12/25 04:38:15 stu Exp $
+$OpenBSD: patch-support_installation_modules_tcl,v 1.10 2018/06/12 23:45:43 stu Exp $
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl
@@ -166,9 +166,9 @@ Index: support/installation/modules.tcl
 -Module  tiff        _tcl  _man  _null
 +Module  tiff        _tcm  _man  _null
  Module  tool        _tcl  _man  _null
+ Module  tool-ui     _tcl  _man  _null
  Module  tool_datatype        _tcl  _man  _null
- Module  transfer    _tcl  _man  _null
-@@ -152,14 +154,14 @@ Module  treeql      _tcl  _man  _null
+@@ -153,14 +155,14 @@ Module  treeql      _tcl  _man  _null
  Module  try         _tcl  _man  _null
  Module  udpcluster  _tcl  _man  _null
  Module  uev         _tcl  _man  _null

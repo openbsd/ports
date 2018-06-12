@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/12/25 04:38:15 stu Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/12 23:45:43 stu Exp $
 bin/dtplite
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl
@@ -221,10 +221,9 @@ lib/tcl/http/
 lib/tcl/http/autoproxy.tcl
 lib/tcl/http/pkgIndex.tcl
 lib/tcl/httpd/
-lib/tcl/httpd/content.tcl
+lib/tcl/httpd/build.tcl
 lib/tcl/httpd/httpd.tcl
 lib/tcl/httpd/pkgIndex.tcl
-lib/tcl/httpd/scgi-app.tcl
 lib/tcl/httpwget/
 lib/tcl/httpwget/pkgIndex.tcl
 lib/tcl/httpwget/wget.tcl
@@ -293,6 +292,7 @@ lib/tcl/math/misc.tcl
 lib/tcl/math/mvlinreg.tcl
 lib/tcl/math/numtheory.tcl
 lib/tcl/math/optimize.tcl
+lib/tcl/math/pca.tcl
 lib/tcl/math/pdf_stat.tcl
 lib/tcl/math/pkgIndex.tcl
 lib/tcl/math/plotstat.tcl
@@ -332,7 +332,7 @@ lib/tcl/modules/85/blowfish-1.0.4.tm
 lib/tcl/modules/85/cmdline-1.5.tm
 lib/tcl/modules/85/comm-4.6.3.1.tm
 lib/tcl/modules/85/counter-2.0.4.tm
-lib/tcl/modules/85/cron-2.0.tm
+lib/tcl/modules/85/cron-2.1.tm
 lib/tcl/modules/85/csv-0.8.1.tm
 lib/tcl/modules/85/dicttool-1.1.tm
 lib/tcl/modules/85/dtplite-1.3.tm
@@ -352,7 +352,7 @@ lib/tcl/modules/85/namespacex-0.1.tm
 lib/tcl/modules/85/ncgi-1.4.3.tm
 lib/tcl/modules/85/nmea-1.0.0.tm
 lib/tcl/modules/85/nntp-0.2.1.tm
-lib/tcl/modules/85/oauth-1.tm
+lib/tcl/modules/85/oauth-1.0.2.tm
 lib/tcl/modules/85/otp-1.0.0.tm
 lib/tcl/modules/85/pki-0.10.tm
 lib/tcl/modules/85/pluginmgr-0.3.tm
@@ -366,18 +366,12 @@ lib/tcl/modules/85/soundex-1.0.tm
 lib/tcl/modules/85/tar-0.11.tm
 lib/tcl/modules/85/tiff-0.2.1.tm
 lib/tcl/modules/85/units-2.2.1.tm
-lib/tcl/modules/85/uuid-1.0.5.tm
+lib/tcl/modules/85/uuid-1.0.6.tm
 lib/tcl/modules/85/websocket-1.4.1.tm
 lib/tcl/nettool/
-lib/tcl/nettool/available_ports.tcl
-lib/tcl/nettool/generic.tcl
-lib/tcl/nettool/locateport.tcl
+lib/tcl/nettool/build.tcl
 lib/tcl/nettool/nettool.tcl
 lib/tcl/nettool/pkgIndex.tcl
-lib/tcl/nettool/platform_unix.tcl
-lib/tcl/nettool/platform_unix_linux.tcl
-lib/tcl/nettool/platform_unix_macosx.tcl
-lib/tcl/nettool/platform_windows.tcl
 lib/tcl/nns/
 lib/tcl/nns/common.tcl
 lib/tcl/nns/nns.tcl
@@ -641,6 +635,10 @@ lib/tcl/tie/tie_growfile.tcl
 lib/tcl/tie/tie_log.tcl
 lib/tcl/tie/tie_rarray.tcl
 lib/tcl/tool/
+lib/tcl/tool-ui/
+lib/tcl/tool-ui/build.tcl
+lib/tcl/tool-ui/pkgIndex.tcl
+lib/tcl/tool-ui/tool-ui.tcl
 lib/tcl/tool/build.tcl
 lib/tcl/tool/pkgIndex.tcl
 lib/tcl/tool/tool.tcl
@@ -868,6 +866,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/html.n
 @man man/mann/html_cssdefaults.n
 @man man/mann/htmlparse.n
+@man man/mann/httpd.n
 @man man/mann/huddle.n
 @man man/mann/iban.n
 @man man/mann/ident.n
@@ -963,6 +962,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/numtheory.n
 @man man/mann/oauth.n
 @man man/mann/observe.n
+@man man/mann/oometa.n
 @man man/mann/ooutil.n
 @man man/mann/optimize.n
 @man man/mann/otp.n
@@ -974,6 +974,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/page_util_norm_peg.n
 @man man/mann/page_util_peg.n
 @man man/mann/page_util_quote.n
+@man man/mann/pca.n
 @man man/mann/peg.n
 @man man/mann/peg_interp.n
 @man man/mann/picoirc.n
@@ -1132,6 +1133,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/toc_structure.n
 @man man/mann/token.n
 @man man/mann/token_shell.n
+@man man/mann/tool-ui.n
 @man man/mann/tool.n
 @man man/mann/tool_dict_ensemble.n
 @man man/mann/tqueue.n
