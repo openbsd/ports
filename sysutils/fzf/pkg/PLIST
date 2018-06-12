@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/12 00:10:00 abieber Exp $
+@bin bin/fzf
+bin/fzf-tmux
+@man man/man1/fzf-tmux.1
+@man man/man1/fzf.1

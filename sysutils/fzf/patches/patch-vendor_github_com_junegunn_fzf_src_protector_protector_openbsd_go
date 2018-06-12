@@ -1,0 +1,16 @@
+$OpenBSD: patch-vendor_github_com_junegunn_fzf_src_protector_protector_openbsd_go,v 1.1.1.1 2018/06/12 00:10:00 abieber Exp $
+
+Index: vendor/github.com/junegunn/fzf/src/protector/protector_openbsd.go
+--- vendor/github.com/junegunn/fzf/src/protector/protector_openbsd.go.orig
++++ vendor/github.com/junegunn/fzf/src/protector/protector_openbsd.go
+@@ -0,0 +1,10 @@
++// +build openbsd
++
++package protector
++
++import "golang.org/x/sys/unix"
++
++// Protect calls OS specific protections like pledge on OpenBSD
++func Protect(s string) {
++	unix.Pledge(s, nil)
++}
