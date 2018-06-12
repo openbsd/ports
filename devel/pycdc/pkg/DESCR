@@ -1,0 +1,4 @@
+Decompyle++ aims to translate compiled Python byte-code back into valid and
+human-readable Python source code. It seeks to support byte-code from any
+version of Python. Decompyle++ includes both a byte-code disassembler (pycdas)
+and a decompiler (pycdc).
