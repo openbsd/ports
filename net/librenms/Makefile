@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2018/05/31 20:40:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2018/06/12 19:08:40 jasper Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 GH_TAGNAME =	1.40
+REVISION =	0
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -28,6 +29,7 @@ RUN_DEPENDS =	databases/py-mysql \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mcrypt \
 		lang/php/${MODPHP_VERSION},-mysqli \
+		lang/php/${MODPHP_VERSION},-pdo_mysql \
 		lang/php/${MODPHP_VERSION},-snmp \
 		net/fping \
 		net/mtr \
