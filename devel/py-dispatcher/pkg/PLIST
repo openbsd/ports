@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/12 05:45:45 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pydispatch/
+lib/python${MODPY_VERSION}/site-packages/pydispatch/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}dispatcher.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}robust.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}robustapply.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}saferef.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydispatch/dispatcher.py
+lib/python${MODPY_VERSION}/site-packages/pydispatch/errors.py
+lib/python${MODPY_VERSION}/site-packages/pydispatch/robust.py
+lib/python${MODPY_VERSION}/site-packages/pydispatch/robustapply.py
+lib/python${MODPY_VERSION}/site-packages/pydispatch/saferef.py
