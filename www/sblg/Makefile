@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/17 08:32:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/12 04:49:55 bentley Exp $
 
 COMMENT =	simple off-line blog utility
 
-DISTNAME =	sblg-0.4.12
-REVISION =	0
+DISTNAME =	sblg-0.4.13
 CATEGORIES =	www
 
 HOMEPAGE =	https://kristaps.bsd.lv/sblg/
