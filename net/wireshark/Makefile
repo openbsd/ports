@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/05/24 17:05:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2018/06/13 21:58:41 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 #BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)   # trying ports-gcc
@@ -8,6 +8,7 @@ COMMENT-text =	network protocol analyzer
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
 V =		2.6.1
+REVISION-gtk =	0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -113,6 +114,9 @@ WANTLIB-main +=		Qt5Svg
 
 LIB_DEPENDS-gtk +=	tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
 			x11/gtk+3
+# XXX gtk build still picks this up even though it doesn't show in symbols
+# or objdump. problem will magically vanish when upstream remove gtk support!
+BUILD_DEPENDS +=	audio/portaudio-svn
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
