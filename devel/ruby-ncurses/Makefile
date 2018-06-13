@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2016/11/04 21:26:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.43 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT=		Ruby interface to ncurses
 
 VERSION=		1.2.4
 DISTNAME=		ncurses-ruby-${VERSION}
 PKGNAME=		ncurses-${VERSION}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/eclubb/ncurses-ruby

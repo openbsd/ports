@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2017/10/23 21:46:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.45 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT=		Ruby interface to hyperestraier
 
 V=			1.4.10
 DISTNAME=		estraier-${V}
 PKGNAME=		hyperestraier-${V}
+REVISION =		0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://fallabs.com/hyperestraier/rubynativeapi/

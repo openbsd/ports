@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/16 00:18:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/13 22:26:53 jeremy Exp $
 
 COMMENT=		ruby graphical tooklit using Tk
 
 DISTNAME=		tk-0.2.0
+REVISION =		0
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/ruby/tk

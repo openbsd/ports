@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/04 21:26:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT =		provides fast methods for escaping text
 
 DISTNAME =		fast_xs-0.8.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://github.com/brianmario/fast_xs

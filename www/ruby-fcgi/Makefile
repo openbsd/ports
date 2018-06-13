@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2016/11/04 21:26:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/13 22:26:53 jeremy Exp $
 
 COMMENT=	ruby FastCGI library
 
 DISTNAME=	fcgi-0.9.2.1
-REVISION =	0
+REVISION =	1
 CATEGORIES=	www
 
 # ruby license

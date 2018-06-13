@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/17 21:40:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT =		ruby wrapper for pledge(2)
 
 DISTNAME =		pledge-1.0.0
 CATEGORIES =		security	
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/jeremyevans/ruby-pledge
 

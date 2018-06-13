@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/04 15:47:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT =	Ruby interface to GSL
 
 DISTNAME =	gsl-2.1.0.3
+REVISION =	0
 CATEGORIES =	devel
 
 # GPLv2

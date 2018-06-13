@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/06 15:56:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/13 22:26:52 jeremy Exp $
 
 COMMENT =		LALR(1) parser generator for ruby
 
 DISTNAME =		racc-1.4.14
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/tenderlove/racc
