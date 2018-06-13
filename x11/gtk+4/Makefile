@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/13 11:31:01 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
 # XXX -Dman-pages=true yet no man page is built
 # XXX add support for libcloudproviders? (-Denable-cloudproviders=true)
+
+# XXX meson(1) dependency ordering issue
+BROKEN=			fatal error: 'gdkmarshalers.h' file not found
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
