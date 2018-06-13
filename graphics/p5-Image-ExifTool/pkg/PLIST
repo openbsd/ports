@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/03/13 15:27:45 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/06/13 12:15:47 rpointel Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -201,6 +201,7 @@ ${P5SITE}/Image/ExifTool/Unknown.pm
 ${P5SITE}/Image/ExifTool/VCard.pm
 ${P5SITE}/Image/ExifTool/Validate.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
+${P5SITE}/Image/ExifTool/WTV.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
 ${P5SITE}/Image/ExifTool/WriteExif.pl
 ${P5SITE}/Image/ExifTool/WriteIPTC.pl
@@ -378,6 +379,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::VCard.3p
 @man man/man3p/Image::ExifTool::Validate.3p
 @man man/man3p/Image::ExifTool::Vorbis.3p
+@man man/man3p/Image::ExifTool::WTV.3p
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
 @man man/man3p/Image::ExifTool::WriteExif.3p
 @man man/man3p/Image::ExifTool::WriteIPTC.3p
