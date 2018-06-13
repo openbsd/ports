@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/04 08:12:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/13 10:03:54 ajacoutot Exp $
 
 COMMENT=		osinfo database files
 
-V=			20180531
+V=			20180612
 DISTNAME=		osinfo-db-${V}
 EXTRACT_SUFX=		.tar.xz
 
