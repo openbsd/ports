@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_tinydtls_Makefile_in,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+
+Index: ext/tinydtls/Makefile.in
+--- ext/tinydtls/Makefile.in.orig
++++ ext/tinydtls/Makefile.in
+@@ -31,8 +31,8 @@ exec_prefix = @exec_prefix@
+ abs_builddir = @abs_builddir@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-libdir = @libdir@
+-includedir = @includedir@/@PACKAGE_NAME@
++libdir = $(PREFIX)/lib
++includedir = $(PREFIX)/include/@PACKAGE_NAME@
+ package = @PACKAGE_TARNAME@-@PACKAGE_VERSION@
+ 
+ install := cp

@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -595,6 +595,11 @@ case $host in
+     #AC_SUBST(OS_MACOS)
+     ;;
+ 
++    *-openbsd*)
++    AC_MSG_RESULT([OpenBSD])
++    ADDITIONAL_CFLAGS="-D_GNU_SOURCE -DWITH_POSIX"
++    ;;
++
+     *-freebsd1*)
+     AC_MSG_RESULT([FreeBSD-1x])
+     ADDITIONAL_CFLAGS="-D_GNU_SOURCE"

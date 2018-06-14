@@ -1,0 +1,19 @@
+libcoap implements a lightweight application-protocol for devices that
+are constrained in their resources such as computing power, RF range,
+memory, bandwidth, or network packet sizes. This protocol, CoAP was
+standardized in the IETF as RFC 7252.
+
+The library provides the core functionality for development of
+resource-efficient CoAP servers and clients, including resource
+observation and block-wise transfer.
+
+Example implementations show how these features can be used in
+applications:
+
+coap-client is a wget-like tool to generate simple requests for
+retrieval and modification of resources on a remote server.
+
+coap-server is a basic server application that illustrates various
+server-side features of libcoap.
+
+coap-rd implements a simple CoAP Resource Directory.

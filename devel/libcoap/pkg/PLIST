@@ -1,0 +1,122 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+@bin bin/coap-client
+@bin bin/coap-rd
+@bin bin/coap-server
+include/coap/
+include/coap/address.h
+include/coap/async.h
+include/coap/bits.h
+include/coap/block.h
+include/coap/coap.h
+include/coap/coap_dtls.h
+include/coap/coap_event.h
+include/coap/coap_io.h
+include/coap/coap_session.h
+include/coap/coap_time.h
+include/coap/debug.h
+include/coap/encode.h
+include/coap/libcoap.h
+include/coap/mem.h
+include/coap/net.h
+include/coap/option.h
+include/coap/pdu.h
+include/coap/prng.h
+include/coap/resource.h
+include/coap/str.h
+include/coap/subscribe.h
+include/coap/uri.h
+include/coap/uthash.h
+include/tinydtls/
+include/tinydtls/aes/
+include/tinydtls/aes/rijndael.h
+include/tinydtls/alert.h
+include/tinydtls/ccm.h
+include/tinydtls/crypto.h
+include/tinydtls/dtls.h
+include/tinydtls/dtls_config.h
+include/tinydtls/dtls_debug.h
+include/tinydtls/dtls_time.h
+include/tinydtls/ecc/
+include/tinydtls/ecc/ecc.h
+include/tinydtls/ecc/test_helper.h
+include/tinydtls/global.h
+include/tinydtls/hmac.h
+include/tinydtls/netq.h
+include/tinydtls/numeric.h
+include/tinydtls/peer.h
+include/tinydtls/prng.h
+include/tinydtls/session.h
+include/tinydtls/sha2/
+include/tinydtls/sha2/sha2.h
+include/tinydtls/state.h
+include/tinydtls/tinydtls.h
+include/tinydtls/uthash.h
+include/tinydtls/utlist.h
+lib/libcoap-2-tinydtls.a
+lib/libcoap-2-tinydtls.la
+@lib lib/libcoap-2-tinydtls.so.${LIBcoap-2-tinydtls_VERSION}
+lib/libtinydtls.a
+lib/pkgconfig/libcoap-2-tinydtls.pc
+@man man/man1/coap-client.1
+@man man/man1/coap-rd.1
+@man man/man1/coap-server.1
+@man man/man3/coap_add_attr.3
+@man man/man3/coap_add_data.3
+@man man/man3/coap_add_option.3
+@man man/man3/coap_add_optlist_pdu.3
+@man man/man3/coap_add_resource.3
+@man man/man3/coap_add_token.3
+@man man/man3/coap_attribute.3
+@man man/man3/coap_context.3
+@man man/man3/coap_context_set_pki.3
+@man man/man3/coap_context_set_psk.3
+@man man/man3/coap_debug_set_packet_loss.3
+@man man/man3/coap_delete_all_resources.3
+@man man/man3/coap_delete_optlist.3
+@man man/man3/coap_delete_resource.3
+@man man/man3/coap_dtls_is_supported.3
+@man man/man3/coap_encode_var_bytes.3
+@man man/man3/coap_endpoint_set_default_mtu.3
+@man man/man3/coap_find_attr.3
+@man man/man3/coap_find_observer.3
+@man man/man3/coap_free_context.3
+@man man/man3/coap_free_endpoint.3
+@man man/man3/coap_get_tls_library_version.3
+@man man/man3/coap_handler.3
+@man man/man3/coap_insert_optlist.3
+@man man/man3/coap_new_client_session.3
+@man man/man3/coap_new_client_session_pki.3
+@man man/man3/coap_new_client_session_psk.3
+@man man/man3/coap_new_context.3
+@man man/man3/coap_new_endpoint.3
+@man man/man3/coap_new_optlist.3
+@man man/man3/coap_observe.3
+@man man/man3/coap_pdu_init.3
+@man man/man3/coap_pdu_setup.3
+@man man/man3/coap_recovery.3
+@man man/man3/coap_register_handler.3
+@man man/man3/coap_register_nack_handler.3
+@man man/man3/coap_register_ping_handler.3
+@man man/man3/coap_register_pong_handler.3
+@man man/man3/coap_register_response_handler.3
+@man man/man3/coap_resource.3
+@man man/man3/coap_resource_get_uri_path.3
+@man man/man3/coap_resource_init.3
+@man man/man3/coap_resource_notify_observers.3
+@man man/man3/coap_resource_set_get_observable.3
+@man man/man3/coap_resource_set_mode.3
+@man man/man3/coap_resource_unknown_init.3
+@man man/man3/coap_session_get_ack_random_factor.3
+@man man/man3/coap_session_get_ack_timeout.3
+@man man/man3/coap_session_get_max_transmit.3
+@man man/man3/coap_session_reference.3
+@man man/man3/coap_session_release.3
+@man man/man3/coap_session_set_ack_random_factor.3
+@man man/man3/coap_session_set_ack_timeout.3
+@man man/man3/coap_session_set_max_retransmit.3
+@man man/man3/coap_session_set_mtu.3
+@man man/man3/coap_split_path.3
+@man man/man3/coap_split_query.3
+@man man/man3/coap_tls_is_supported.3
+@man man/man3/coap_tls_library.3
+@man man/man7/coap.7

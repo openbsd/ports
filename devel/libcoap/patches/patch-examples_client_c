@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_client_c,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+
+Index: examples/client.c
+--- examples/client.c.orig
++++ examples/client.c
+@@ -1012,6 +1012,9 @@ get_session(
+     memset( &hints, 0, sizeof( struct addrinfo ) );
+     hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
+     hints.ai_socktype = COAP_PROTO_RELIABLE(proto) ? SOCK_STREAM : SOCK_DGRAM; /* Coap uses UDP */
++#ifndef AI_ALL
++#define AI_ALL 0
++#endif
+     hints.ai_flags = AI_PASSIVE | AI_NUMERICHOST | AI_NUMERICSERV | AI_ALL;
+ 
+     s = getaddrinfo( local_addr, local_port, &hints, &result );
