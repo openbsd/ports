@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/11 21:17:14 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/14 11:57:19 jca Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
-VERSION =	0.41
-GH_ACCOUNT =	gohugoio
-GH_PROJECT =	hugo
-GH_TAGNAME =	v${VERSION}
+DISTNAME =	hugo-0.42
 
 CATEGORIES =	www
 
@@ -22,6 +19,8 @@ WANTLIB +=	c pthread
 MASTER_SITES =	https://files.fairydust.space/
 
 MODULES =	lang/go
+
+ALL_TARGET =	github.com/gohugoio/hugo
 
 SEPARATE_BUILD =	Yes
 
