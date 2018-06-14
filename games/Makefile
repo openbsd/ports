@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.379 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.380 2018/06/14 23:38:36 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -147,6 +147,7 @@
      SUBDIR += jag
      SUBDIR += jbrickshooter
      SUBDIR += julius
+     SUBDIR += jumpnbump
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
      SUBDIR += koboredux
