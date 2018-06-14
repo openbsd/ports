@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/02/22 07:58:22 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.18 2018/06/14 08:19:56 gonzalo Exp $
 
 COMMENT =	software version control visualization tool
 
-DISTNAME =	gource-0.48
+DISTNAME =	gource-0.49
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	http://gource.io/
 
