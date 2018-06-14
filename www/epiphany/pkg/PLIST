@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/05/22 17:26:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.42 2018/06/14 10:37:28 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -429,6 +429,7 @@ share/icons/hicolor/32x32/apps/org.gnome.Epiphany.png
 share/icons/hicolor/48x48/apps/org.gnome.Epiphany.png
 share/icons/hicolor/512x512/apps/org.gnome.Epiphany.png
 share/icons/hicolor/symbolic/apps/org.gnome.Epiphany-symbolic.svg
+share/locale/af/LC_MESSAGES/epiphany.mo
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
