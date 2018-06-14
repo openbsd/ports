@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2018/04/26 07:12:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.53 2018/06/14 06:41:02 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -579,6 +579,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/get-invalida
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/list-distributions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/list-invalidations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudfront/update-distribution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudsearchdomain/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudsearchdomain/upload-documents.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudtrail/create-subscription.rst
@@ -1685,6 +1687,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/list-subscriptions-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/list-subscriptions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/list-topics.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/publish.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/set-subscription-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/subscribe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sns/unsubscribe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/sqs/
