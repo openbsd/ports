@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/24 15:37:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/14 06:30:51 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
 GH_ACCOUNT=		ebassi
 GH_PROJECT=		graphene
-GH_TAGNAME=		1.8.0
+GH_TAGNAME=		1.8.2
 
-SHARED_LIBS += graphene-1.0              0.0 # 0.800.0
+SHARED_LIBS += graphene-1.0              0.0 # 0.800.2
 
 CATEGORIES=		graphics
 
