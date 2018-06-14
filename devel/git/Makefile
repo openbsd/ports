@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.189 2018/06/04 10:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2018/06/14 17:43:47 kn Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.16.4
+V =		2.17.1
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -16,7 +16,7 @@ HOMEPAGE =	https://git-scm.com/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 DOC_DISTFILE =		git-manpages-${V}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}
@@ -24,8 +24,10 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
-MODULES =		x11/tk lang/python
+MODULES =		lang/python \
+			x11/tk
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
@@ -88,7 +90,7 @@ TEST_DEPENDS =		archivers/gtar \
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
-	@cd ${WRKSRC}/doc && ${TAR} -xzf ${FULLDISTDIR}/${DOC_DISTFILE}
+	${TAR} -C ${WRKSRC}/doc -xzf ${FULLDISTDIR}/${DOC_DISTFILE}
 	@cd ${WRKSRC} && perl -pi -e "s|/usr/share/git|${TRUEPREFIX}/share/git|g" \
 		doc/man1/git-clone.1 doc/man1/git-init.1 doc/man1/gitweb.1
 
@@ -109,13 +111,13 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/setgitperms.perl \
 		${PREFIX}/share/git-core/templates/hooks/setgitperms.perl
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
-	cd ${WRKBUILD}/gitweb && \
-		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install
+	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/gitweb \
+		gitwebdir=${TRUEPREFIX}/share/gitweb install
 	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 
 do-test:
-	cd ${WRKSRC} && ${MAKE_ENV} GIT_TEST_OPTS="--immediate" ${MAKE_PROGRAM} \
+	${MAKE_ENV} GIT_TEST_OPTS="--immediate" ${MAKE_PROGRAM} -C ${WRKSRC}/t \
 		HOME=${WRKDIST}/t test
 
 .include <bsd.port.mk>

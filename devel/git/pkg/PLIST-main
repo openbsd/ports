@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.81 2018/03/06 22:20:53 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.82 2018/06/14 17:43:48 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/gitdaemon
 @bin bin/git
 bin/git-cvsserver
 @bin bin/git-receive-pack
@@ -9,12 +10,6 @@ bin/git-cvsserver
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
 lib/libgit.a
-libdata/perl5/site_perl/Git/
-libdata/perl5/site_perl/Git.pm
-libdata/perl5/site_perl/Git/I18N.pm
-libdata/perl5/site_perl/Git/IndexInfo.pm
-libdata/perl5/site_perl/Git/Packet.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libexec/git/
 @bin libexec/git/git
 @bin libexec/git/git-add
@@ -351,8 +346,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git.1
 @man man/man1/gitremote-helpers.1
 @man man/man1/gitweb.1
-@man man/man3p/Git.3p
-@man man/man3p/Git::I18N.3p
 @man man/man5/gitattributes.5
 @man man/man5/githooks.5
 @man man/man5/gitignore.5
@@ -426,4 +419,18 @@ share/locale/ru/LC_MESSAGES/git.mo
 share/locale/sv/LC_MESSAGES/git.mo
 share/locale/vi/LC_MESSAGES/git.mo
 share/locale/zh_CN/LC_MESSAGES/git.mo
-@rcscript ${RCDIR}/gitdaemon
+share/perl5/
+share/perl5/FromCPAN/
+share/perl5/FromCPAN/Error.pm
+share/perl5/FromCPAN/Mail/
+share/perl5/FromCPAN/Mail/Address.pm
+share/perl5/Git/
+share/perl5/Git.pm
+share/perl5/Git/I18N.pm
+share/perl5/Git/IndexInfo.pm
+share/perl5/Git/LoadCPAN/
+share/perl5/Git/LoadCPAN.pm
+share/perl5/Git/LoadCPAN/Error.pm
+share/perl5/Git/LoadCPAN/Mail/
+share/perl5/Git/LoadCPAN/Mail/Address.pm
+share/perl5/Git/Packet.pm
