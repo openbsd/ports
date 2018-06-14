@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/04/25 10:02:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/06/14 18:58:26 jasper Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -906,8 +906,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/jboss7.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/jboss7.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/jboss7_cli.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/jboss7_cli.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/modules/jenkins.py
-lib/python${MODPY_VERSION}/site-packages/salt/modules/jenkins.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/jenkinsmod.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/jenkinsmod.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/junos.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/junos.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/k8s.py
@@ -3120,6 +3120,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/win_functions.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_functions.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_osinfo.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_osinfo.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/win_reg.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/win_reg.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_runas.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_runas.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/win_update.py
@@ -3142,6 +3144,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/yast.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/yast.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/zeromq.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/zeromq.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/zfs.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/zfs.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/version.py
 lib/python${MODPY_VERSION}/site-packages/salt/version.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/wheel/
