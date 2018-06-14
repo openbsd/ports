@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/05/15 05:48:32 florian Exp $
+# $OpenBSD: Makefile,v 1.69 2018/06/14 14:17:30 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -10,7 +10,7 @@ DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
-REVISION-main =	0
+REVISION-main =	1
 
 HOMEPAGE =	http://munin-monitoring.org/
 MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
@@ -35,6 +35,7 @@ MODRUBY_BUILDDEP =	No
 BUILD_DEPENDS +=	devel/p5-Module-Build
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
+			devel/p5-List-MoreUtils \
 			devel/p5-Log-Log4perl \
 			devel/p5-Net-Server \
 			net/p5-Net-CIDR
