@@ -40,8 +40,8 @@ SHA256 (vim-spell/hu.iso-8859-2.spl) = ad+s78InXni3luVAU7wUAwpIVvYgX2gNWxEMAGEdf
 SHA256 (vim-spell/hu.utf-8.spl) = sCzDO/aayrJNmviP1RTk5NCMKZXaW/LoiMw4MGJE/2g=
 SHA256 (vim-spell/id.latin1.spl) = RkbNfH/UC5NVQ3p8X3R29j5q2NrLEgg2LBMODmN4njU=
 SHA256 (vim-spell/id.utf-8.spl) = cdZJLEegWW8xUjm9Xh0iGGcWbe92AwnIgDLuLyQF60s=
-SHA256 (vim-spell/it.latin1.spl) = fDa5zbIJKl/SeFChHQPb+iC02Oau3LPIJzL73N+2lUY=
-SHA256 (vim-spell/it.utf-8.spl) = k1Y6n5sLsm+4Juv7l6EUjIqtZty5MVYxGWvbJqCOoIo=
+SHA256 (vim-spell/it.latin1.spl) = vyE34XqMsVSFCEuANYPGgTQJDi/8d5FT+7pq1bpzXRc=
+SHA256 (vim-spell/it.utf-8.spl) = 2AczkD6DbVN5DAq4wcLyn2Y8oqd67ns4Guprh2KudBM=
 SHA256 (vim-spell/ku.iso-8859-9.spl) = HY60YpHmTtZx8kugG+4+HUDqaK+2BBiXvbes2wekvMY=
 SHA256 (vim-spell/ku.utf-8.spl) = FLajWqAzbMXY4XaB/z9Va58Zd5uEgb4e0hWG356P+V8=
 SHA256 (vim-spell/la.latin1.spl) = vs5b8cRGEcX4A7vwKfYbdWOaxe33A1GDnr/0ZaU6wJ4=
@@ -70,9 +70,9 @@ SHA256 (vim-spell/pl.iso-8859-2.spl) = KcJkUDWQe11muo8lXkEHJiXUkUvz2xm+ZCHPiaiTQ
 SHA256 (vim-spell/pl.utf-8.spl) = FM5QZEzT9p1adhtptZOKbQMYIytctqgB3DTCPaWF5+k=
 SHA256 (vim-spell/pt.latin1.spl) = PBw2IzVCTIkOaD7JlnTfi2nccGsTZvvCBeOVVDZRhoA=
 SHA256 (vim-spell/pt.utf-8.spl) = Pl/BALaVG3g8+zOGraQ8s5g5VT4E+qQVr1z1vV1qtjs=
-SHA256 (vim-spell/ro.cp1250.spl) = zL1u0N/xkR/HVjCOG893uIhsU6KVFNecZtnFndIWi3c=
-SHA256 (vim-spell/ro.iso-8859-2.spl) = HJVxK+Ein/qsUXO0a+heFqQFpy3Sc+0vT0RStN9Np4Q=
-SHA256 (vim-spell/ro.utf-8.spl) = q+71+cjfi3taA40J+zfVmji42AqIErvObnCjSxoGoq0=
+SHA256 (vim-spell/ro.cp1250.spl) = t8lvbQZA5IOyn3d4ajmWeRqo0TdMVgTQH8Y22P7jnDc=
+SHA256 (vim-spell/ro.iso-8859-2.spl) = EGWyfAC1YkgpWGXz7XCAql7F20KiuxkF0tTUbUK1PRA=
+SHA256 (vim-spell/ro.utf-8.spl) = q8HkBUlsbyPfpQwQPKUjsw6S9Pw9DbKhEFTZrh14WgE=
 SHA256 (vim-spell/ru.cp1251.spl) = UinsnRKAqbXXMTyOueC/Ouao570LXCdFXLM/74Yfzhk=
 SHA256 (vim-spell/ru.koi8-r.spl) = kqP7X1p0K3JRWfHZKYcLeKmDG0WHNr36XHOSrK8XxM8=
 SHA256 (vim-spell/ru.utf-8.spl) = 6y0714ogILMLzAp8/r2s6/t6QnWBEU9muIpXeubaxU0=
@@ -145,8 +145,8 @@ SIZE (vim-spell/hu.iso-8859-2.spl) = 3128107
 SIZE (vim-spell/hu.utf-8.spl) = 3083320
 SIZE (vim-spell/id.latin1.spl) = 156419
 SIZE (vim-spell/id.utf-8.spl) = 156610
-SIZE (vim-spell/it.latin1.spl) = 1234535
-SIZE (vim-spell/it.utf-8.spl) = 1232148
+SIZE (vim-spell/it.latin1.spl) = 1234549
+SIZE (vim-spell/it.utf-8.spl) = 1232162
 SIZE (vim-spell/ku.iso-8859-9.spl) = 32305
 SIZE (vim-spell/ku.utf-8.spl) = 33154
 SIZE (vim-spell/la.latin1.spl) = 92134
@@ -175,9 +175,9 @@ SIZE (vim-spell/pl.iso-8859-2.spl) = 1682132
 SIZE (vim-spell/pl.utf-8.spl) = 1650849
 SIZE (vim-spell/pt.latin1.spl) = 2639764
 SIZE (vim-spell/pt.utf-8.spl) = 2633185
-SIZE (vim-spell/ro.cp1250.spl) = 177117
-SIZE (vim-spell/ro.iso-8859-2.spl) = 177117
-SIZE (vim-spell/ro.utf-8.spl) = 180927
+SIZE (vim-spell/ro.cp1250.spl) = 506377
+SIZE (vim-spell/ro.iso-8859-2.spl) = 506346
+SIZE (vim-spell/ro.utf-8.spl) = 1074389
 SIZE (vim-spell/ru.cp1251.spl) = 777422
 SIZE (vim-spell/ru.koi8-r.spl) = 777418
 SIZE (vim-spell/ru.utf-8.spl) = 837741
