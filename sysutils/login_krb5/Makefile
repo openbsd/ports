@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/14 08:02:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/14 06:58:10 ajacoutot Exp $
 
 COMMENT=		authentication provider for KerberosV
 
 GIT_PROJECT=		login_krb5
-GIT_COMMIT=		97e345f
-GIT_COMMIT=		5e8d667
-REVISION=		0
+GIT_COMMIT=		f31110a
 
 DISTNAME=		${GIT_COMMIT}
-PKGNAME=		${GIT_PROJECT}-6.1.2
+PKGNAME=		${GIT_PROJECT}-6.3
 
 DIST_SUBDIR=		${GIT_PROJECT}
 WRKDIST=		${WRKDIR}/${GIT_PROJECT}-${GIT_COMMIT}
