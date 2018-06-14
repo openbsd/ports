@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/07 08:21:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/14 07:02:26 bentley Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.4
-DISTNAME =		lttoolbox-3.4.0
+VER =			3.4.2
+DISTNAME =		lttoolbox-${VER}
 
 SHARED_LIBS +=		lttoolbox3-$V             1.0 # 0.0
 SHARED_LIBS +=		lttoolbox3                1.0 # 0.0
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
+MASTER_SITES =		https://github.com/apertium/lttoolbox/releases/download/v${VER}/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lttoolbox_serialiser_h,v 1.1 2018/06/06 09:16:11 bentley Exp $
+$OpenBSD: patch-lttoolbox_serialiser_h,v 1.2 2018/06/14 07:02:26 bentley Exp $
 
 https://github.com/apertium/lttoolbox/issues/11
 
@@ -14,21 +14,3 @@ Index: lttoolbox/serialiser.h
  #include "exception.h"
  
  #include <stdint.h>
-@@ -64,7 +66,7 @@ class Serialiser<std::pair<first_type, second_type> > 
-             std::ostream &Output);
- };
- 
--#ifdef __APPLE__
-+#ifdef SIZET_NOT_CSTDINT
- template <> class Serialiser<size_t> {
- public:
-   inline static void serialise(const size_t &SerialisedType_,
-@@ -186,7 +188,7 @@ void int_serialise(const integer_type &SerialisedType_
-   }
- }
- 
--#ifdef __APPLE__
-+#ifdef SIZET_NOT_CSTDINT
- void Serialiser<size_t>::serialise(const size_t &SerialisedType_,
-                                     std::ostream &Output) {
-   int_serialise((uint64_t)SerialisedType_, Output);

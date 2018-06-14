@@ -1,4 +1,4 @@
-$OpenBSD: patch-lttoolbox_deserialiser_h,v 1.1 2018/06/06 09:16:11 bentley Exp $
+$OpenBSD: patch-lttoolbox_deserialiser_h,v 1.2 2018/06/14 07:02:26 bentley Exp $
 
 https://github.com/apertium/lttoolbox/issues/11
 
@@ -14,21 +14,3 @@ Index: lttoolbox/deserialiser.h
  #include "exception.h"
  
  #include <stdint.h>
-@@ -66,7 +68,7 @@ class Deserialiser<std::pair<first_type, second_type> 
-   deserialise(std::istream &Stream_);
- };
- 
--#ifdef __APPLE__
-+#ifdef SIZET_NOT_CSTDINT
- template <> class Deserialiser<size_t> {
- public:
-   inline static size_t deserialise(std::istream &Stream_);
-@@ -163,7 +165,7 @@ integer_type int_deserialise(std::istream &Stream_) {
-   }
- }
- 
--#ifdef __APPLE__
-+#ifdef SIZET_NOT_CSTDINT
- size_t Deserialiser<size_t>::deserialise(std::istream &Stream_) {
-   return int_deserialise<uint64_t>(Stream_);
- }
