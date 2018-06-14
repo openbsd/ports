@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/06/12 05:12:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/06/14 17:04:45 sthen Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -179,6 +179,7 @@ share/cmake/Help/generator/CodeBlocks.rst
 share/cmake/Help/generator/CodeLite.rst
 share/cmake/Help/generator/Eclipse CDT4.rst
 share/cmake/Help/generator/Green Hills MULTI.rst
+share/cmake/Help/generator/KDevelop3.rst
 share/cmake/Help/generator/Kate.rst
 share/cmake/Help/generator/MSYS Makefiles.rst
 share/cmake/Help/generator/MinGW Makefiles.rst
@@ -298,7 +299,6 @@ share/cmake/Help/module/Documentation.rst
 share/cmake/Help/module/ExternalData.rst
 share/cmake/Help/module/ExternalProject.rst
 share/cmake/Help/module/FeatureSummary.rst
-share/cmake/Help/module/FetchContent.rst
 share/cmake/Help/module/FindALSA.rst
 share/cmake/Help/module/FindASPELL.rst
 share/cmake/Help/module/FindAVIFile.rst
@@ -347,7 +347,6 @@ share/cmake/Help/module/FindHg.rst
 share/cmake/Help/module/FindICU.rst
 share/cmake/Help/module/FindITK.rst
 share/cmake/Help/module/FindIce.rst
-share/cmake/Help/module/FindIconv.rst
 share/cmake/Help/module/FindIcotool.rst
 share/cmake/Help/module/FindImageMagick.rst
 share/cmake/Help/module/FindIntl.rst
@@ -549,7 +548,6 @@ share/cmake/Help/policy/CMP0068.rst
 share/cmake/Help/policy/CMP0069.rst
 share/cmake/Help/policy/CMP0070.rst
 share/cmake/Help/policy/CMP0071.rst
-share/cmake/Help/policy/CMP0072.rst
 share/cmake/Help/policy/DEPRECATED.txt
 share/cmake/Help/policy/DISALLOWED_COMMAND.txt
 share/cmake/Help/prop_cache/
@@ -642,12 +640,10 @@ share/cmake/Help/prop_sf/AUTOUIC_OPTIONS.rst
 share/cmake/Help/prop_sf/COMPILE_DEFINITIONS.rst
 share/cmake/Help/prop_sf/COMPILE_DEFINITIONS_CONFIG.rst
 share/cmake/Help/prop_sf/COMPILE_FLAGS.rst
-share/cmake/Help/prop_sf/COMPILE_OPTIONS.rst
 share/cmake/Help/prop_sf/EXTERNAL_OBJECT.rst
 share/cmake/Help/prop_sf/Fortran_FORMAT.rst
 share/cmake/Help/prop_sf/GENERATED.rst
 share/cmake/Help/prop_sf/HEADER_FILE_ONLY.rst
-share/cmake/Help/prop_sf/INCLUDE_DIRECTORIES.rst
 share/cmake/Help/prop_sf/KEEP_EXTENSION.rst
 share/cmake/Help/prop_sf/LABELS.rst
 share/cmake/Help/prop_sf/LANGUAGE.rst
@@ -666,8 +662,6 @@ share/cmake/Help/prop_sf/VS_DEPLOYMENT_CONTENT.rst
 share/cmake/Help/prop_sf/VS_DEPLOYMENT_LOCATION.rst
 share/cmake/Help/prop_sf/VS_INCLUDE_IN_VSIX.rst
 share/cmake/Help/prop_sf/VS_RESOURCE_GENERATOR.rst
-share/cmake/Help/prop_sf/VS_SHADER_DISABLE_OPTIMIZATIONS.rst
-share/cmake/Help/prop_sf/VS_SHADER_ENABLE_DEBUG.rst
 share/cmake/Help/prop_sf/VS_SHADER_ENTRYPOINT.rst
 share/cmake/Help/prop_sf/VS_SHADER_FLAGS.rst
 share/cmake/Help/prop_sf/VS_SHADER_MODEL.rst
@@ -727,7 +721,6 @@ share/cmake/Help/prop_tgt/ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst
 share/cmake/Help/prop_tgt/ARCHIVE_OUTPUT_NAME.rst
 share/cmake/Help/prop_tgt/ARCHIVE_OUTPUT_NAME_CONFIG.rst
 share/cmake/Help/prop_tgt/AUTOGEN_BUILD_DIR.rst
-share/cmake/Help/prop_tgt/AUTOGEN_PARALLEL.rst
 share/cmake/Help/prop_tgt/AUTOGEN_TARGET_DEPENDS.rst
 share/cmake/Help/prop_tgt/AUTOMOC.rst
 share/cmake/Help/prop_tgt/AUTOMOC_COMPILER_PREDEFINES.rst
@@ -794,7 +787,6 @@ share/cmake/Help/prop_tgt/HAS_CXX.rst
 share/cmake/Help/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
 share/cmake/Help/prop_tgt/IMPORTED.rst
 share/cmake/Help/prop_tgt/IMPORTED_CONFIGURATIONS.rst
-share/cmake/Help/prop_tgt/IMPORTED_GLOBAL.rst
 share/cmake/Help/prop_tgt/IMPORTED_IMPLIB.rst
 share/cmake/Help/prop_tgt/IMPORTED_IMPLIB_CONFIG.rst
 share/cmake/Help/prop_tgt/IMPORTED_LIBNAME.rst
@@ -943,7 +935,6 @@ share/cmake/Help/release/
 share/cmake/Help/release/3.0.rst
 share/cmake/Help/release/3.1.rst
 share/cmake/Help/release/3.10.rst
-share/cmake/Help/release/3.11.rst
 share/cmake/Help/release/3.2.rst
 share/cmake/Help/release/3.3.rst
 share/cmake/Help/release/3.4.rst
@@ -991,7 +982,6 @@ share/cmake/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst
 share/cmake/Help/variable/CMAKE_ARGC.rst
 share/cmake/Help/variable/CMAKE_ARGV0.rst
-share/cmake/Help/variable/CMAKE_AUTOGEN_PARALLEL.rst
 share/cmake/Help/variable/CMAKE_AUTOMOC.rst
 share/cmake/Help/variable/CMAKE_AUTOMOC_COMPILER_PREDEFINES.rst
 share/cmake/Help/variable/CMAKE_AUTOMOC_DEPEND_FILTERS.rst
@@ -1016,7 +1006,6 @@ share/cmake/Help/variable/CMAKE_CACHE_MINOR_VERSION.rst
 share/cmake/Help/variable/CMAKE_CACHE_PATCH_VERSION.rst
 share/cmake/Help/variable/CMAKE_CFG_INTDIR.rst
 share/cmake/Help/variable/CMAKE_CL_64.rst
-share/cmake/Help/variable/CMAKE_CODEBLOCKS_COMPILER_ID.rst
 share/cmake/Help/variable/CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES.rst
 share/cmake/Help/variable/CMAKE_CODELITE_USE_TARGETS.rst
 share/cmake/Help/variable/CMAKE_COLOR_MAKEFILE.rst
@@ -1034,7 +1023,6 @@ share/cmake/Help/variable/CMAKE_CROSSCOMPILING_EMULATOR.rst
 share/cmake/Help/variable/CMAKE_CTEST_COMMAND.rst
 share/cmake/Help/variable/CMAKE_CUDA_EXTENSIONS.rst
 share/cmake/Help/variable/CMAKE_CUDA_HOST_COMPILER.rst
-share/cmake/Help/variable/CMAKE_CUDA_SEPARABLE_COMPILATION.rst
 share/cmake/Help/variable/CMAKE_CUDA_STANDARD.rst
 share/cmake/Help/variable/CMAKE_CUDA_STANDARD_REQUIRED.rst
 share/cmake/Help/variable/CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES.rst
@@ -1099,7 +1087,6 @@ share/cmake/Help/variable/CMAKE_Fortran_MODDIR_FLAG.rst
 share/cmake/Help/variable/CMAKE_Fortran_MODOUT_FLAG.rst
 share/cmake/Help/variable/CMAKE_Fortran_MODULE_DIRECTORY.rst
 share/cmake/Help/variable/CMAKE_GENERATOR.rst
-share/cmake/Help/variable/CMAKE_GENERATOR_INSTANCE.rst
 share/cmake/Help/variable/CMAKE_GENERATOR_PLATFORM.rst
 share/cmake/Help/variable/CMAKE_GENERATOR_TOOLSET.rst
 share/cmake/Help/variable/CMAKE_GNUtoMS.rst
@@ -1121,7 +1108,6 @@ share/cmake/Help/variable/CMAKE_INCLUDE_DIRECTORIES_BEFORE.rst
 share/cmake/Help/variable/CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE.rst
 share/cmake/Help/variable/CMAKE_INCLUDE_PATH.rst
 share/cmake/Help/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.rst
-share/cmake/Help/variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
 share/cmake/Help/variable/CMAKE_INSTALL_MESSAGE.rst
 share/cmake/Help/variable/CMAKE_INSTALL_NAME_DIR.rst
 share/cmake/Help/variable/CMAKE_INSTALL_PREFIX.rst
@@ -1132,7 +1118,6 @@ share/cmake/Help/variable/CMAKE_INTERNAL_PLATFORM_ABI.rst
 share/cmake/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.rst
 share/cmake/Help/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.rst
 share/cmake/Help/variable/CMAKE_IOS_INSTALL_COMBINED.rst
-share/cmake/Help/variable/CMAKE_JOB_POOLS.rst
 share/cmake/Help/variable/CMAKE_JOB_POOL_COMPILE.rst
 share/cmake/Help/variable/CMAKE_JOB_POOL_LINK.rst
 share/cmake/Help/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.rst
@@ -1162,8 +1147,6 @@ share/cmake/Help/variable/CMAKE_LANG_CREATE_SHARED_LIBRARY.rst
 share/cmake/Help/variable/CMAKE_LANG_CREATE_SHARED_MODULE.rst
 share/cmake/Help/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS.rst
-share/cmake/Help/variable/CMAKE_LANG_FLAGS_CONFIG.rst
-share/cmake/Help/variable/CMAKE_LANG_FLAGS_CONFIG_INIT.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_DEBUG.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_DEBUG_INIT.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_INIT.rst
@@ -1173,7 +1156,6 @@ share/cmake/Help/variable/CMAKE_LANG_FLAGS_RELEASE.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.rst
 share/cmake/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.rst
-share/cmake/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_CONFIG.rst
 share/cmake/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_DEBUG.rst
 share/cmake/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_MINSIZEREL.rst
 share/cmake/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELEASE.rst
@@ -1228,8 +1210,6 @@ share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.rst
 share/cmake/Help/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.rst
 share/cmake/Help/variable/CMAKE_MODULE_PATH.rst
 share/cmake/Help/variable/CMAKE_MSVCIDE_RUN_PATH.rst
-share/cmake/Help/variable/CMAKE_NETRC.rst
-share/cmake/Help/variable/CMAKE_NETRC_FILE.rst
 share/cmake/Help/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.rst
 share/cmake/Help/variable/CMAKE_NOT_USING_CONFIG_FLAGS.rst
 share/cmake/Help/variable/CMAKE_NO_BUILTIN_CHRPATH.rst
@@ -1323,13 +1303,11 @@ share/cmake/Help/variable/CMAKE_WIN32_EXECUTABLE.rst
 share/cmake/Help/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.rst
 share/cmake/Help/variable/CMAKE_XCODE_ATTRIBUTE_an-attribute.rst
 share/cmake/Help/variable/CMAKE_XCODE_GENERATE_SCHEME.rst
-share/cmake/Help/variable/CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY.rst
 share/cmake/Help/variable/CMAKE_XCODE_PLATFORM_TOOLSET.rst
 share/cmake/Help/variable/CPACK_ABSOLUTE_DESTINATION_FILES.rst
 share/cmake/Help/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.rst
 share/cmake/Help/variable/CPACK_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.rst
 share/cmake/Help/variable/CPACK_INCLUDE_TOPLEVEL_DIRECTORY.rst
-share/cmake/Help/variable/CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.rst
 share/cmake/Help/variable/CPACK_INSTALL_SCRIPT.rst
 share/cmake/Help/variable/CPACK_PACKAGING_INSTALL_PREFIX.rst
 share/cmake/Help/variable/CPACK_SET_DESTDIR.rst
@@ -1391,7 +1369,6 @@ share/cmake/Help/variable/CTEST_P4_CLIENT.rst
 share/cmake/Help/variable/CTEST_P4_COMMAND.rst
 share/cmake/Help/variable/CTEST_P4_OPTIONS.rst
 share/cmake/Help/variable/CTEST_P4_UPDATE_OPTIONS.rst
-share/cmake/Help/variable/CTEST_RUN_CURRENT_SCRIPT.rst
 share/cmake/Help/variable/CTEST_SCP_COMMAND.rst
 share/cmake/Help/variable/CTEST_SITE.rst
 share/cmake/Help/variable/CTEST_SOURCE_DIRECTORY.rst
@@ -1451,10 +1428,10 @@ share/cmake/Modules/AddFileDependencies.cmake
 share/cmake/Modules/AndroidTestUtilities/
 share/cmake/Modules/AndroidTestUtilities.cmake
 share/cmake/Modules/AndroidTestUtilities/PushToAndroidDevice.cmake
+share/cmake/Modules/AutogenInfo.cmake.in
 share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
 share/cmake/Modules/BasicConfigVersion-ExactVersion.cmake.in
 share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
-share/cmake/Modules/BasicConfigVersion-SameMinorVersion.cmake.in
 share/cmake/Modules/BundleUtilities.cmake
 share/cmake/Modules/CMake.cmake
 share/cmake/Modules/CMakeASM-ATTInformation.cmake
@@ -1519,9 +1496,9 @@ share/cmake/Modules/CMakeFindDependencyMacro.cmake
 share/cmake/Modules/CMakeFindEclipseCDT4.cmake
 share/cmake/Modules/CMakeFindFrameworks.cmake
 share/cmake/Modules/CMakeFindJavaCommon.cmake
+share/cmake/Modules/CMakeFindKDevelop3.cmake
 share/cmake/Modules/CMakeFindKate.cmake
 share/cmake/Modules/CMakeFindPackageMode.cmake
-share/cmake/Modules/CMakeFindSublimeText2.cmake
 share/cmake/Modules/CMakeFindWMake.cmake
 share/cmake/Modules/CMakeFindXCode.cmake
 share/cmake/Modules/CMakeForceCompiler.cmake
@@ -1533,7 +1510,6 @@ share/cmake/Modules/CMakeGenericSystem.cmake
 share/cmake/Modules/CMakeGraphVizOptions.cmake
 share/cmake/Modules/CMakeIOSInstallCombined.cmake
 share/cmake/Modules/CMakeImportBuildSettings.cmake
-share/cmake/Modules/CMakeInitializeConfigs.cmake
 share/cmake/Modules/CMakeJOMFindMake.cmake
 share/cmake/Modules/CMakeJavaCompiler.cmake.in
 share/cmake/Modules/CMakeJavaInformation.cmake
@@ -1746,7 +1722,6 @@ share/cmake/Modules/Compiler/MIPSpro-C.cmake
 share/cmake/Modules/Compiler/MIPSpro-CXX.cmake
 share/cmake/Modules/Compiler/MIPSpro-DetermineCompiler.cmake
 share/cmake/Modules/Compiler/MIPSpro-Fortran.cmake
-share/cmake/Modules/Compiler/MSVC-ASM.cmake
 share/cmake/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
 share/cmake/Modules/Compiler/MSVC-CXX.cmake
 share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake
@@ -1822,9 +1797,6 @@ share/cmake/Modules/ExternalProject-verify.cmake.in
 share/cmake/Modules/ExternalProject.cmake
 share/cmake/Modules/FLTKCompatibility.cmake
 share/cmake/Modules/FeatureSummary.cmake
-share/cmake/Modules/FetchContent/
-share/cmake/Modules/FetchContent.cmake
-share/cmake/Modules/FetchContent/CMakeLists.cmake.in
 share/cmake/Modules/FindALSA.cmake
 share/cmake/Modules/FindASPELL.cmake
 share/cmake/Modules/FindAVIFile.cmake
@@ -2269,7 +2241,6 @@ share/cmake/Modules/Platform/Windows-Determine-CXX.cmake
 share/cmake/Modules/Platform/Windows-Embarcadero-C.cmake
 share/cmake/Modules/Platform/Windows-Embarcadero-CXX.cmake
 share/cmake/Modules/Platform/Windows-Embarcadero.cmake
-share/cmake/Modules/Platform/Windows-Flang-Fortran.cmake
 share/cmake/Modules/Platform/Windows-G95-Fortran.cmake
 share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake
 share/cmake/Modules/Platform/Windows-GNU-C.cmake
@@ -2549,6 +2520,7 @@ share/doc/cmake/html/_sources/generator/CodeBlocks.txt
 share/doc/cmake/html/_sources/generator/CodeLite.txt
 share/doc/cmake/html/_sources/generator/Eclipse CDT4.txt
 share/doc/cmake/html/_sources/generator/Green Hills MULTI.txt
+share/doc/cmake/html/_sources/generator/KDevelop3.txt
 share/doc/cmake/html/_sources/generator/Kate.txt
 share/doc/cmake/html/_sources/generator/MSYS Makefiles.txt
 share/doc/cmake/html/_sources/generator/MinGW Makefiles.txt
@@ -2660,7 +2632,6 @@ share/doc/cmake/html/_sources/module/Documentation.txt
 share/doc/cmake/html/_sources/module/ExternalData.txt
 share/doc/cmake/html/_sources/module/ExternalProject.txt
 share/doc/cmake/html/_sources/module/FeatureSummary.txt
-share/doc/cmake/html/_sources/module/FetchContent.txt
 share/doc/cmake/html/_sources/module/FindALSA.txt
 share/doc/cmake/html/_sources/module/FindASPELL.txt
 share/doc/cmake/html/_sources/module/FindAVIFile.txt
@@ -2709,7 +2680,6 @@ share/doc/cmake/html/_sources/module/FindHg.txt
 share/doc/cmake/html/_sources/module/FindICU.txt
 share/doc/cmake/html/_sources/module/FindITK.txt
 share/doc/cmake/html/_sources/module/FindIce.txt
-share/doc/cmake/html/_sources/module/FindIconv.txt
 share/doc/cmake/html/_sources/module/FindIcotool.txt
 share/doc/cmake/html/_sources/module/FindImageMagick.txt
 share/doc/cmake/html/_sources/module/FindIntl.txt
@@ -2911,7 +2881,6 @@ share/doc/cmake/html/_sources/policy/CMP0068.txt
 share/doc/cmake/html/_sources/policy/CMP0069.txt
 share/doc/cmake/html/_sources/policy/CMP0070.txt
 share/doc/cmake/html/_sources/policy/CMP0071.txt
-share/doc/cmake/html/_sources/policy/CMP0072.txt
 share/doc/cmake/html/_sources/prop_cache/
 share/doc/cmake/html/_sources/prop_cache/ADVANCED.txt
 share/doc/cmake/html/_sources/prop_cache/HELPSTRING.txt
@@ -3002,12 +2971,10 @@ share/doc/cmake/html/_sources/prop_sf/AUTOUIC_OPTIONS.txt
 share/doc/cmake/html/_sources/prop_sf/COMPILE_DEFINITIONS.txt
 share/doc/cmake/html/_sources/prop_sf/COMPILE_DEFINITIONS_CONFIG.txt
 share/doc/cmake/html/_sources/prop_sf/COMPILE_FLAGS.txt
-share/doc/cmake/html/_sources/prop_sf/COMPILE_OPTIONS.txt
 share/doc/cmake/html/_sources/prop_sf/EXTERNAL_OBJECT.txt
 share/doc/cmake/html/_sources/prop_sf/Fortran_FORMAT.txt
 share/doc/cmake/html/_sources/prop_sf/GENERATED.txt
 share/doc/cmake/html/_sources/prop_sf/HEADER_FILE_ONLY.txt
-share/doc/cmake/html/_sources/prop_sf/INCLUDE_DIRECTORIES.txt
 share/doc/cmake/html/_sources/prop_sf/KEEP_EXTENSION.txt
 share/doc/cmake/html/_sources/prop_sf/LABELS.txt
 share/doc/cmake/html/_sources/prop_sf/LANGUAGE.txt
@@ -3026,8 +2993,6 @@ share/doc/cmake/html/_sources/prop_sf/VS_DEPLOYMENT_CONTENT.txt
 share/doc/cmake/html/_sources/prop_sf/VS_DEPLOYMENT_LOCATION.txt
 share/doc/cmake/html/_sources/prop_sf/VS_INCLUDE_IN_VSIX.txt
 share/doc/cmake/html/_sources/prop_sf/VS_RESOURCE_GENERATOR.txt
-share/doc/cmake/html/_sources/prop_sf/VS_SHADER_DISABLE_OPTIMIZATIONS.txt
-share/doc/cmake/html/_sources/prop_sf/VS_SHADER_ENABLE_DEBUG.txt
 share/doc/cmake/html/_sources/prop_sf/VS_SHADER_ENTRYPOINT.txt
 share/doc/cmake/html/_sources/prop_sf/VS_SHADER_FLAGS.txt
 share/doc/cmake/html/_sources/prop_sf/VS_SHADER_MODEL.txt
@@ -3087,7 +3052,6 @@ share/doc/cmake/html/_sources/prop_tgt/ARCHIVE_OUTPUT_DIRECTORY_CONFIG.txt
 share/doc/cmake/html/_sources/prop_tgt/ARCHIVE_OUTPUT_NAME.txt
 share/doc/cmake/html/_sources/prop_tgt/ARCHIVE_OUTPUT_NAME_CONFIG.txt
 share/doc/cmake/html/_sources/prop_tgt/AUTOGEN_BUILD_DIR.txt
-share/doc/cmake/html/_sources/prop_tgt/AUTOGEN_PARALLEL.txt
 share/doc/cmake/html/_sources/prop_tgt/AUTOGEN_TARGET_DEPENDS.txt
 share/doc/cmake/html/_sources/prop_tgt/AUTOMOC.txt
 share/doc/cmake/html/_sources/prop_tgt/AUTOMOC_COMPILER_PREDEFINES.txt
@@ -3153,7 +3117,6 @@ share/doc/cmake/html/_sources/prop_tgt/HAS_CXX.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPORTED.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPORTED_CONFIGURATIONS.txt
-share/doc/cmake/html/_sources/prop_tgt/IMPORTED_GLOBAL.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPORTED_IMPLIB.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPORTED_IMPLIB_CONFIG.txt
 share/doc/cmake/html/_sources/prop_tgt/IMPORTED_LIBNAME.txt
@@ -3298,7 +3261,6 @@ share/doc/cmake/html/_sources/release/
 share/doc/cmake/html/_sources/release/3.0.txt
 share/doc/cmake/html/_sources/release/3.1.txt
 share/doc/cmake/html/_sources/release/3.10.txt
-share/doc/cmake/html/_sources/release/3.11.txt
 share/doc/cmake/html/_sources/release/3.2.txt
 share/doc/cmake/html/_sources/release/3.3.txt
 share/doc/cmake/html/_sources/release/3.4.txt
@@ -3345,7 +3307,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ARGC.txt
 share/doc/cmake/html/_sources/variable/CMAKE_ARGV0.txt
-share/doc/cmake/html/_sources/variable/CMAKE_AUTOGEN_PARALLEL.txt
 share/doc/cmake/html/_sources/variable/CMAKE_AUTOMOC.txt
 share/doc/cmake/html/_sources/variable/CMAKE_AUTOMOC_COMPILER_PREDEFINES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_AUTOMOC_DEPEND_FILTERS.txt
@@ -3370,7 +3331,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_CACHE_MINOR_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CACHE_PATCH_VERSION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CFG_INTDIR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CL_64.txt
-share/doc/cmake/html/_sources/variable/CMAKE_CODEBLOCKS_COMPILER_ID.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CODELITE_USE_TARGETS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_COLOR_MAKEFILE.txt
@@ -3388,7 +3348,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_CROSSCOMPILING_EMULATOR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CTEST_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CUDA_EXTENSIONS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CUDA_HOST_COMPILER.txt
-share/doc/cmake/html/_sources/variable/CMAKE_CUDA_SEPARABLE_COMPILATION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CUDA_STANDARD.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CUDA_STANDARD_REQUIRED.txt
 share/doc/cmake/html/_sources/variable/CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES.txt
@@ -3452,7 +3411,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_Fortran_MODDIR_FLAG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Fortran_MODOUT_FLAG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_Fortran_MODULE_DIRECTORY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_GENERATOR.txt
-share/doc/cmake/html/_sources/variable/CMAKE_GENERATOR_INSTANCE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_GENERATOR_PLATFORM.txt
 share/doc/cmake/html/_sources/variable/CMAKE_GENERATOR_TOOLSET.txt
 share/doc/cmake/html/_sources/variable/CMAKE_GNUtoMS.txt
@@ -3474,7 +3432,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_INCLUDE_DIRECTORIES_BEFORE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INCLUDE_PATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.txt
-share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_MESSAGE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_NAME_DIR.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INSTALL_PREFIX.txt
@@ -3485,7 +3442,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_INTERNAL_PLATFORM_ABI.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.txt
 share/doc/cmake/html/_sources/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_IOS_INSTALL_COMBINED.txt
-share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOLS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_COMPILE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_JOB_POOL_LINK.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.txt
@@ -3515,8 +3471,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_LANG_CREATE_SHARED_LIBRARY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_CREATE_SHARED_MODULE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS.txt
-share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_CONFIG.txt
-share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_CONFIG_INIT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_DEBUG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_DEBUG_INIT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_INIT.txt
@@ -3526,7 +3480,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_RELEASE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.txt
-share/doc/cmake/html/_sources/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_CONFIG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_DEBUG.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_MINSIZEREL.txt
 share/doc/cmake/html/_sources/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELEASE.txt
@@ -3581,8 +3534,6 @@ share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MODULE_PATH.txt
 share/doc/cmake/html/_sources/variable/CMAKE_MSVCIDE_RUN_PATH.txt
-share/doc/cmake/html/_sources/variable/CMAKE_NETRC.txt
-share/doc/cmake/html/_sources/variable/CMAKE_NETRC_FILE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NOT_USING_CONFIG_FLAGS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_NO_BUILTIN_CHRPATH.txt
@@ -3675,13 +3626,11 @@ share/doc/cmake/html/_sources/variable/CMAKE_WIN32_EXECUTABLE.txt
 share/doc/cmake/html/_sources/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_ATTRIBUTE_an-attribute.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_GENERATE_SCHEME.txt
-share/doc/cmake/html/_sources/variable/CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY.txt
 share/doc/cmake/html/_sources/variable/CMAKE_XCODE_PLATFORM_TOOLSET.txt
 share/doc/cmake/html/_sources/variable/CPACK_ABSOLUTE_DESTINATION_FILES.txt
 share/doc/cmake/html/_sources/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.txt
 share/doc/cmake/html/_sources/variable/CPACK_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.txt
 share/doc/cmake/html/_sources/variable/CPACK_INCLUDE_TOPLEVEL_DIRECTORY.txt
-share/doc/cmake/html/_sources/variable/CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.txt
 share/doc/cmake/html/_sources/variable/CPACK_INSTALL_SCRIPT.txt
 share/doc/cmake/html/_sources/variable/CPACK_PACKAGING_INSTALL_PREFIX.txt
 share/doc/cmake/html/_sources/variable/CPACK_SET_DESTDIR.txt
@@ -3742,7 +3691,6 @@ share/doc/cmake/html/_sources/variable/CTEST_P4_CLIENT.txt
 share/doc/cmake/html/_sources/variable/CTEST_P4_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CTEST_P4_OPTIONS.txt
 share/doc/cmake/html/_sources/variable/CTEST_P4_UPDATE_OPTIONS.txt
-share/doc/cmake/html/_sources/variable/CTEST_RUN_CURRENT_SCRIPT.txt
 share/doc/cmake/html/_sources/variable/CTEST_SCP_COMMAND.txt
 share/doc/cmake/html/_sources/variable/CTEST_SITE.txt
 share/doc/cmake/html/_sources/variable/CTEST_SOURCE_DIRECTORY.txt
@@ -3972,6 +3920,7 @@ share/doc/cmake/html/generator/CodeBlocks.html
 share/doc/cmake/html/generator/CodeLite.html
 share/doc/cmake/html/generator/Eclipse CDT4.html
 share/doc/cmake/html/generator/Green Hills MULTI.html
+share/doc/cmake/html/generator/KDevelop3.html
 share/doc/cmake/html/generator/Kate.html
 share/doc/cmake/html/generator/MSYS Makefiles.html
 share/doc/cmake/html/generator/MinGW Makefiles.html
@@ -4084,7 +4033,6 @@ share/doc/cmake/html/module/Documentation.html
 share/doc/cmake/html/module/ExternalData.html
 share/doc/cmake/html/module/ExternalProject.html
 share/doc/cmake/html/module/FeatureSummary.html
-share/doc/cmake/html/module/FetchContent.html
 share/doc/cmake/html/module/FindALSA.html
 share/doc/cmake/html/module/FindASPELL.html
 share/doc/cmake/html/module/FindAVIFile.html
@@ -4133,7 +4081,6 @@ share/doc/cmake/html/module/FindHg.html
 share/doc/cmake/html/module/FindICU.html
 share/doc/cmake/html/module/FindITK.html
 share/doc/cmake/html/module/FindIce.html
-share/doc/cmake/html/module/FindIconv.html
 share/doc/cmake/html/module/FindIcotool.html
 share/doc/cmake/html/module/FindImageMagick.html
 share/doc/cmake/html/module/FindIntl.html
@@ -4336,7 +4283,6 @@ share/doc/cmake/html/policy/CMP0068.html
 share/doc/cmake/html/policy/CMP0069.html
 share/doc/cmake/html/policy/CMP0070.html
 share/doc/cmake/html/policy/CMP0071.html
-share/doc/cmake/html/policy/CMP0072.html
 share/doc/cmake/html/prop_cache/
 share/doc/cmake/html/prop_cache/ADVANCED.html
 share/doc/cmake/html/prop_cache/HELPSTRING.html
@@ -4427,12 +4373,10 @@ share/doc/cmake/html/prop_sf/AUTOUIC_OPTIONS.html
 share/doc/cmake/html/prop_sf/COMPILE_DEFINITIONS.html
 share/doc/cmake/html/prop_sf/COMPILE_DEFINITIONS_CONFIG.html
 share/doc/cmake/html/prop_sf/COMPILE_FLAGS.html
-share/doc/cmake/html/prop_sf/COMPILE_OPTIONS.html
 share/doc/cmake/html/prop_sf/EXTERNAL_OBJECT.html
 share/doc/cmake/html/prop_sf/Fortran_FORMAT.html
 share/doc/cmake/html/prop_sf/GENERATED.html
 share/doc/cmake/html/prop_sf/HEADER_FILE_ONLY.html
-share/doc/cmake/html/prop_sf/INCLUDE_DIRECTORIES.html
 share/doc/cmake/html/prop_sf/KEEP_EXTENSION.html
 share/doc/cmake/html/prop_sf/LABELS.html
 share/doc/cmake/html/prop_sf/LANGUAGE.html
@@ -4451,8 +4395,6 @@ share/doc/cmake/html/prop_sf/VS_DEPLOYMENT_CONTENT.html
 share/doc/cmake/html/prop_sf/VS_DEPLOYMENT_LOCATION.html
 share/doc/cmake/html/prop_sf/VS_INCLUDE_IN_VSIX.html
 share/doc/cmake/html/prop_sf/VS_RESOURCE_GENERATOR.html
-share/doc/cmake/html/prop_sf/VS_SHADER_DISABLE_OPTIMIZATIONS.html
-share/doc/cmake/html/prop_sf/VS_SHADER_ENABLE_DEBUG.html
 share/doc/cmake/html/prop_sf/VS_SHADER_ENTRYPOINT.html
 share/doc/cmake/html/prop_sf/VS_SHADER_FLAGS.html
 share/doc/cmake/html/prop_sf/VS_SHADER_MODEL.html
@@ -4512,7 +4454,6 @@ share/doc/cmake/html/prop_tgt/ARCHIVE_OUTPUT_DIRECTORY_CONFIG.html
 share/doc/cmake/html/prop_tgt/ARCHIVE_OUTPUT_NAME.html
 share/doc/cmake/html/prop_tgt/ARCHIVE_OUTPUT_NAME_CONFIG.html
 share/doc/cmake/html/prop_tgt/AUTOGEN_BUILD_DIR.html
-share/doc/cmake/html/prop_tgt/AUTOGEN_PARALLEL.html
 share/doc/cmake/html/prop_tgt/AUTOGEN_TARGET_DEPENDS.html
 share/doc/cmake/html/prop_tgt/AUTOMOC.html
 share/doc/cmake/html/prop_tgt/AUTOMOC_COMPILER_PREDEFINES.html
@@ -4578,7 +4519,6 @@ share/doc/cmake/html/prop_tgt/HAS_CXX.html
 share/doc/cmake/html/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html
 share/doc/cmake/html/prop_tgt/IMPORTED.html
 share/doc/cmake/html/prop_tgt/IMPORTED_CONFIGURATIONS.html
-share/doc/cmake/html/prop_tgt/IMPORTED_GLOBAL.html
 share/doc/cmake/html/prop_tgt/IMPORTED_IMPLIB.html
 share/doc/cmake/html/prop_tgt/IMPORTED_IMPLIB_CONFIG.html
 share/doc/cmake/html/prop_tgt/IMPORTED_LIBNAME.html
@@ -4723,7 +4663,6 @@ share/doc/cmake/html/release/
 share/doc/cmake/html/release/3.0.html
 share/doc/cmake/html/release/3.1.html
 share/doc/cmake/html/release/3.10.html
-share/doc/cmake/html/release/3.11.html
 share/doc/cmake/html/release/3.2.html
 share/doc/cmake/html/release/3.3.html
 share/doc/cmake/html/release/3.4.html
@@ -4772,7 +4711,6 @@ share/doc/cmake/html/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.html
 share/doc/cmake/html/variable/CMAKE_ARGC.html
 share/doc/cmake/html/variable/CMAKE_ARGV0.html
-share/doc/cmake/html/variable/CMAKE_AUTOGEN_PARALLEL.html
 share/doc/cmake/html/variable/CMAKE_AUTOMOC.html
 share/doc/cmake/html/variable/CMAKE_AUTOMOC_COMPILER_PREDEFINES.html
 share/doc/cmake/html/variable/CMAKE_AUTOMOC_DEPEND_FILTERS.html
@@ -4797,7 +4735,6 @@ share/doc/cmake/html/variable/CMAKE_CACHE_MINOR_VERSION.html
 share/doc/cmake/html/variable/CMAKE_CACHE_PATCH_VERSION.html
 share/doc/cmake/html/variable/CMAKE_CFG_INTDIR.html
 share/doc/cmake/html/variable/CMAKE_CL_64.html
-share/doc/cmake/html/variable/CMAKE_CODEBLOCKS_COMPILER_ID.html
 share/doc/cmake/html/variable/CMAKE_CODEBLOCKS_EXCLUDE_EXTERNAL_FILES.html
 share/doc/cmake/html/variable/CMAKE_CODELITE_USE_TARGETS.html
 share/doc/cmake/html/variable/CMAKE_COLOR_MAKEFILE.html
@@ -4815,7 +4752,6 @@ share/doc/cmake/html/variable/CMAKE_CROSSCOMPILING_EMULATOR.html
 share/doc/cmake/html/variable/CMAKE_CTEST_COMMAND.html
 share/doc/cmake/html/variable/CMAKE_CUDA_EXTENSIONS.html
 share/doc/cmake/html/variable/CMAKE_CUDA_HOST_COMPILER.html
-share/doc/cmake/html/variable/CMAKE_CUDA_SEPARABLE_COMPILATION.html
 share/doc/cmake/html/variable/CMAKE_CUDA_STANDARD.html
 share/doc/cmake/html/variable/CMAKE_CUDA_STANDARD_REQUIRED.html
 share/doc/cmake/html/variable/CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES.html
@@ -4879,7 +4815,6 @@ share/doc/cmake/html/variable/CMAKE_Fortran_MODDIR_FLAG.html
 share/doc/cmake/html/variable/CMAKE_Fortran_MODOUT_FLAG.html
 share/doc/cmake/html/variable/CMAKE_Fortran_MODULE_DIRECTORY.html
 share/doc/cmake/html/variable/CMAKE_GENERATOR.html
-share/doc/cmake/html/variable/CMAKE_GENERATOR_INSTANCE.html
 share/doc/cmake/html/variable/CMAKE_GENERATOR_PLATFORM.html
 share/doc/cmake/html/variable/CMAKE_GENERATOR_TOOLSET.html
 share/doc/cmake/html/variable/CMAKE_GNUtoMS.html
@@ -4901,7 +4836,6 @@ share/doc/cmake/html/variable/CMAKE_INCLUDE_DIRECTORIES_BEFORE.html
 share/doc/cmake/html/variable/CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE.html
 share/doc/cmake/html/variable/CMAKE_INCLUDE_PATH.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.html
-share/doc/cmake/html/variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_MESSAGE.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_NAME_DIR.html
 share/doc/cmake/html/variable/CMAKE_INSTALL_PREFIX.html
@@ -4912,7 +4846,6 @@ share/doc/cmake/html/variable/CMAKE_INTERNAL_PLATFORM_ABI.html
 share/doc/cmake/html/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.html
 share/doc/cmake/html/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION_CONFIG.html
 share/doc/cmake/html/variable/CMAKE_IOS_INSTALL_COMBINED.html
-share/doc/cmake/html/variable/CMAKE_JOB_POOLS.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOL_COMPILE.html
 share/doc/cmake/html/variable/CMAKE_JOB_POOL_LINK.html
 share/doc/cmake/html/variable/CMAKE_LANG_ANDROID_TOOLCHAIN_MACHINE.html
@@ -4942,8 +4875,6 @@ share/doc/cmake/html/variable/CMAKE_LANG_CREATE_SHARED_LIBRARY.html
 share/doc/cmake/html/variable/CMAKE_LANG_CREATE_SHARED_MODULE.html
 share/doc/cmake/html/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS.html
-share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_CONFIG.html
-share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_CONFIG_INIT.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_DEBUG.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_DEBUG_INIT.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_INIT.html
@@ -4953,7 +4884,6 @@ share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_RELEASE.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.html
 share/doc/cmake/html/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.html
-share/doc/cmake/html/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_CONFIG.html
 share/doc/cmake/html/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_DEBUG.html
 share/doc/cmake/html/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_MINSIZEREL.html
 share/doc/cmake/html/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELEASE.html
@@ -5008,8 +4938,6 @@ share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS_CONFIG_INIT.html
 share/doc/cmake/html/variable/CMAKE_MODULE_LINKER_FLAGS_INIT.html
 share/doc/cmake/html/variable/CMAKE_MODULE_PATH.html
 share/doc/cmake/html/variable/CMAKE_MSVCIDE_RUN_PATH.html
-share/doc/cmake/html/variable/CMAKE_NETRC.html
-share/doc/cmake/html/variable/CMAKE_NETRC_FILE.html
 share/doc/cmake/html/variable/CMAKE_NINJA_OUTPUT_PATH_PREFIX.html
 share/doc/cmake/html/variable/CMAKE_NOT_USING_CONFIG_FLAGS.html
 share/doc/cmake/html/variable/CMAKE_NO_BUILTIN_CHRPATH.html
@@ -5102,13 +5030,11 @@ share/doc/cmake/html/variable/CMAKE_WIN32_EXECUTABLE.html
 share/doc/cmake/html/variable/CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS.html
 share/doc/cmake/html/variable/CMAKE_XCODE_ATTRIBUTE_an-attribute.html
 share/doc/cmake/html/variable/CMAKE_XCODE_GENERATE_SCHEME.html
-share/doc/cmake/html/variable/CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY.html
 share/doc/cmake/html/variable/CMAKE_XCODE_PLATFORM_TOOLSET.html
 share/doc/cmake/html/variable/CPACK_ABSOLUTE_DESTINATION_FILES.html
 share/doc/cmake/html/variable/CPACK_COMPONENT_INCLUDE_TOPLEVEL_DIRECTORY.html
 share/doc/cmake/html/variable/CPACK_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.html
 share/doc/cmake/html/variable/CPACK_INCLUDE_TOPLEVEL_DIRECTORY.html
-share/doc/cmake/html/variable/CPACK_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.html
 share/doc/cmake/html/variable/CPACK_INSTALL_SCRIPT.html
 share/doc/cmake/html/variable/CPACK_PACKAGING_INSTALL_PREFIX.html
 share/doc/cmake/html/variable/CPACK_SET_DESTDIR.html
@@ -5169,7 +5095,6 @@ share/doc/cmake/html/variable/CTEST_P4_CLIENT.html
 share/doc/cmake/html/variable/CTEST_P4_COMMAND.html
 share/doc/cmake/html/variable/CTEST_P4_OPTIONS.html
 share/doc/cmake/html/variable/CTEST_P4_UPDATE_OPTIONS.html
-share/doc/cmake/html/variable/CTEST_RUN_CURRENT_SCRIPT.html
 share/doc/cmake/html/variable/CTEST_SCP_COMMAND.html
 share/doc/cmake/html/variable/CTEST_SITE.html
 share/doc/cmake/html/variable/CTEST_SOURCE_DIRECTORY.html

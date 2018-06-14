@@ -1,8 +1,8 @@
-$OpenBSD: patch-Tests_RunCMake_CMakeLists_txt,v 1.5 2018/06/12 05:12:01 rsadowski Exp $
+$OpenBSD: patch-Tests_RunCMake_CMakeLists_txt,v 1.6 2018/06/14 17:04:45 sthen Exp $
 Index: Tests/RunCMake/CMakeLists.txt
 --- Tests/RunCMake/CMakeLists.txt.orig
 +++ Tests/RunCMake/CMakeLists.txt
-@@ -100,7 +100,6 @@ add_RunCMake_test(CMP0054)
+@@ -93,7 +93,6 @@ add_RunCMake_test(CMP0054)
  add_RunCMake_test(CMP0055)
  add_RunCMake_test(CMP0057)
  add_RunCMake_test(CMP0059)

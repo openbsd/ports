@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindKDE3_cmake,v 1.5 2018/06/12 05:12:01 rsadowski Exp $
+$OpenBSD: patch-Modules_FindKDE3_cmake,v 1.6 2018/06/14 17:04:45 sthen Exp $
 Index: Modules/FindKDE3.cmake
 --- Modules/FindKDE3.cmake.orig
 +++ Modules/FindKDE3.cmake
-@@ -293,12 +293,6 @@ if(KDE3_FOUND)
+@@ -294,12 +294,6 @@ if(KDE3_FOUND)
        set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-exceptions -fno-check-new -fno-common")
     endif ()
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-bootstrap,v 1.17 2018/06/12 05:12:01 rsadowski Exp $
+$OpenBSD: patch-bootstrap,v 1.18 2018/06/14 17:04:45 sthen Exp $
 
 Use Ninja to build CMake
 XXX: broken on m88k
@@ -23,8 +23,8 @@ Index: bootstrap
  cmake_man_dir_default="`cmake_install_dest_default MAN ${cmake_man_dir_keyword}`"
  cmake_xdgdata_dir_default="`cmake_install_dest_default XDGDATA ${cmake_xdgdata_dir_keyword}`"
  
--CMAKE_KNOWN_C_COMPILERS="cc gcc clang xlc icc tcc"
--CMAKE_KNOWN_CXX_COMPILERS="aCC xlC CC g++ clang++ c++ icc como "
+-CMAKE_KNOWN_C_COMPILERS="cc gcc xlc icc tcc"
+-CMAKE_KNOWN_CXX_COMPILERS="aCC xlC CC g++ c++ icc como "
 -CMAKE_KNOWN_MAKE_PROCESSORS="gmake make"
 +CMAKE_KNOWN_C_COMPILERS="cc"
 +CMAKE_KNOWN_CXX_COMPILERS="c++"
@@ -38,9 +38,9 @@ Index: bootstrap
    cmForEachCommand \
 +  cmFortranParserImpl \
    cmFunctionCommand \
-   cmFSPermissions \
    cmGeneratedFileStream \
-@@ -331,6 +336,7 @@ CMAKE_CXX_SOURCES="\
+   cmGeneratorExpression \
+@@ -330,6 +335,7 @@ CMAKE_CXX_SOURCES="\
    cmGetTestPropertyCommand \
    cmGlobalCommonGenerator \
    cmGlobalGenerator \
@@ -48,7 +48,7 @@ Index: bootstrap
    cmGlobalUnixMakefileGenerator3 \
    cmHexFileConverter \
    cmIfCommand \
-@@ -351,10 +357,12 @@ CMAKE_CXX_SOURCES="\
+@@ -350,10 +356,12 @@ CMAKE_CXX_SOURCES="\
    cmInstalledFile \
    cmLinkDirectoriesCommand \
    cmLinkLineComputer \
@@ -61,7 +61,7 @@ Index: bootstrap
    cmLocalUnixMakefileGenerator3 \
    cmMSVC60LinkLineComputer \
    cmMacroCommand \
-@@ -369,6 +377,10 @@ CMAKE_CXX_SOURCES="\
+@@ -368,6 +376,10 @@ CMAKE_CXX_SOURCES="\
    cmMessageCommand \
    cmMessenger \
    cmNewLineStyle \
@@ -72,7 +72,7 @@ Index: bootstrap
    cmOSXBundleGenerator \
    cmOptionCommand \
    cmOrderDirectories \
-@@ -438,6 +450,8 @@ LexerParser_CXX_SOURCES="\
+@@ -436,6 +448,8 @@ LexerParser_CXX_SOURCES="\
    cmCommandArgumentParser \
    cmExprLexer \
    cmExprParser \
@@ -81,7 +81,7 @@ Index: bootstrap
  "
  
  LexerParser_C_SOURCES="\
-@@ -1406,7 +1420,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
+@@ -1385,7 +1399,7 @@ cmake_cxx_flags="${cmake_cxx_flags} \
    -I`cmake_escape \"${cmake_source_dir}/Source/LexerParser\"` \
    -I`cmake_escape \"${cmake_source_dir}/Utilities\"`"
  echo "cmake: ${objs}" > "${cmake_bootstrap_dir}/Makefile"

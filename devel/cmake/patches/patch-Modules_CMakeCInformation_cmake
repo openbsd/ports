@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_CMakeCInformation_cmake,v 1.7 2018/06/12 05:12:01 rsadowski Exp $
+$OpenBSD: patch-Modules_CMakeCInformation_cmake,v 1.8 2018/06/14 17:04:45 sthen Exp $
 Index: Modules/CMakeCInformation.cmake
 --- Modules/CMakeCInformation.cmake.orig
 +++ Modules/CMakeCInformation.cmake
-@@ -142,7 +142,7 @@ include(CMakeCommonLanguageInclude)
+@@ -165,7 +165,7 @@ include(CMakeCommonLanguageInclude)
  # create a C shared library
  if(NOT CMAKE_C_CREATE_SHARED_LIBRARY)
    set(CMAKE_C_CREATE_SHARED_LIBRARY

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_cxx,v 1.16 2018/06/12 05:12:01 rsadowski Exp $
+$OpenBSD: patch-Source_cmake_cxx,v 1.17 2018/06/14 17:04:45 sthen Exp $
 
 Revert 4e3c7725d0d724d7a8a0e8305d15713e01b20503: we want to build
 CMake using Ninja
@@ -6,7 +6,7 @@ CMake using Ninja
 Index: Source/cmake.cxx
 --- Source/cmake.cxx.orig
 +++ Source/cmake.cxx
-@@ -69,9 +69,7 @@
+@@ -76,9 +76,7 @@
  #include "cmGlobalWatcomWMakeGenerator.h"
  #endif
  #include "cmGlobalUnixMakefileGenerator3.h"
@@ -16,7 +16,7 @@ Index: Source/cmake.cxx
  #include "cmExtraCodeLiteGenerator.h"
  
  #if !defined(CMAKE_BOOT_MINGW)
-@@ -1699,9 +1697,7 @@ void cmake::AddDefaultGenerators()
+@@ -1662,9 +1660,7 @@ void cmake::AddDefaultGenerators()
    this->Generators.push_back(cmGlobalMinGWMakefileGenerator::NewFactory());
  #endif
    this->Generators.push_back(cmGlobalUnixMakefileGenerator3::NewFactory());
