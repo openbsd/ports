@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2018/06/08 19:42:40 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2018/06/15 10:20:53 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -143,23 +143,6 @@ share/php-${PV}/include/ext/dom/
 share/php-${PV}/include/ext/dom/xml_common.h
 share/php-${PV}/include/ext/filter/
 share/php-${PV}/include/ext/filter/php_filter.h
-share/php-${PV}/include/ext/gd/
-share/php-${PV}/include/ext/gd/gd_compat.h
-share/php-${PV}/include/ext/gd/gdcache.h
-share/php-${PV}/include/ext/gd/libgd/
-share/php-${PV}/include/ext/gd/libgd/gd.h
-share/php-${PV}/include/ext/gd/libgd/gd_intern.h
-share/php-${PV}/include/ext/gd/libgd/gd_io.h
-share/php-${PV}/include/ext/gd/libgd/gdcache.h
-share/php-${PV}/include/ext/gd/libgd/gdfontg.h
-share/php-${PV}/include/ext/gd/libgd/gdfontl.h
-share/php-${PV}/include/ext/gd/libgd/gdfontmb.h
-share/php-${PV}/include/ext/gd/libgd/gdfonts.h
-share/php-${PV}/include/ext/gd/libgd/gdfontt.h
-share/php-${PV}/include/ext/gd/libgd/gdhelpers.h
-share/php-${PV}/include/ext/gd/libgd/jisx0208.h
-share/php-${PV}/include/ext/gd/libgd/wbmp.h
-share/php-${PV}/include/ext/gd/php_gd.h
 share/php-${PV}/include/ext/hash/
 share/php-${PV}/include/ext/hash/php_hash.h
 share/php-${PV}/include/ext/hash/php_hash_adler32.h

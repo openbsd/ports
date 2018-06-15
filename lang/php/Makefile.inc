@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.117 2018/06/05 12:50:28 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.118 2018/06/15 10:20:53 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -453,8 +453,10 @@ DESCR-main=		${.CURDIR}/../files/DESCR-main
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
 		${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME-main}
+.if ${BUILD_PACKAGES:M-apache}
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${PV:C/\.[0-9]$//}.so \
 		${PREFIX}/${APACHE_MODULE_SUBDIR}/
+.endif
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/conf/php-${PV}.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
@@ -480,10 +482,12 @@ post-install:
 		${PREFIX}/share/examples/php-${PV}/php.conf
 
 .for m in ${PHP_EXTENSIONS:S/-//g}
+.if ${BUILD_PACKAGES:M-$m}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
 	echo "extension=${m}.so" > \
 		${PREFIX}/share/examples/php-${PV}/${m}.ini
+.endif
 .endfor
 .for m in ${ZEND_EXTENSIONS:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
