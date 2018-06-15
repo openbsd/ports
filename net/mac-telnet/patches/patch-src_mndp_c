@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_mndp_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Index: src/mndp.c
+--- src/mndp.c.orig
++++ src/mndp.c
+@@ -26,6 +26,12 @@
+ #include <net/ethernet.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
++#include <netinet/if_ether.h>
+ #else
+ #include <netinet/ether.h>
+ #endif

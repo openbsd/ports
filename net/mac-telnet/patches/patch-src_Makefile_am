@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Harder to port than the others, and doesn't seem really desirable
+for OpenBSD anyway, so mactelnetd is in the too-hard basket for now.
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,5 +1,5 @@
+ bin_PROGRAMS = mactelnet macping mndp
+-sbin_PROGRAMS = mactelnetd
++#sbin_PROGRAMS = mactelnetd
+ 
+ mactelnet_SOURCES = config.h mactelnet.c mactelnet.h protocol.c protocol.h console.c console.h interfaces.c interfaces.h md5.c md5.h mndp.c mndp.h autologin.c autologin.h gettext.h extra.h utlist.h
+ mactelnet_CFLAGS = -DFROM_MACTELNET

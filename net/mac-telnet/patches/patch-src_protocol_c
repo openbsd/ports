@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_protocol_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Index: src/protocol.c
+--- src/protocol.c.orig
++++ src/protocol.c
+@@ -31,6 +31,12 @@
+ #include <net/ethernet.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
++#include <netinet/if_ether.h>
+ #else
+ #include <netinet/ether.h>
+ #endif
+@@ -553,7 +559,7 @@ int query_mndp_or_mac(char *address, unsigned char *ds
+ 		}
+ 	} else {
+ 		/* Convert mac address string to ether_addr struct */
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 		struct ether_addr* dstmac_buf = ether_aton(address);
+ 		memcpy(dstmac, dstmac_buf, sizeof(struct ether_addr));
+ #else

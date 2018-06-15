@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Due to the nature of this program, return packets from the target device
+aren't usually sent to an address where PF can match them with a state
+table entry for outgoing traffic, so with a typical "deny incoming"
+ruleset, return packets from the device won't arrive.
+
+You can add PF rules to permit the packets for MNDP and MAC-Telnet
+respectively:
+
+   pass proto udp from 0.0.0.0/32 port {5678 20561}
+
+If using a multihomed system, mactelnet using the default setup with
+ethernet broadcasts may not send packets via the correct interface.
+Use the -n flag to send unicast packets instead (requires starting
+mactelnet as root) to bypass this issue.

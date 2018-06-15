@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_mactelnet_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Index: src/mactelnet.c
+--- src/mactelnet.c.orig
++++ src/mactelnet.c
+@@ -36,6 +36,11 @@
+ #if defined(__FreeBSD__) || defined(__APPLE__)
+ #include <sys/types.h>
+ #include <net/ethernet.h>
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#include <net/if.h>
++#include <netinet/in.h>
++#include <netinet/if_ether.h>
+ #else
+ #include <netinet/ether.h>
+ #endif
+@@ -485,6 +490,11 @@ int main (int argc, char **argv) {
+ 
+ 			case 'n':
+ 				use_raw_socket = 1;
++				if(drop_priv == 0) {
++					snprintf(nonpriv_username,
++					    sizeof(nonpriv_username), "_mactelnet");
++					drop_priv = 1;
++				}
+ 				break;
+ 
+ 			case 'u':

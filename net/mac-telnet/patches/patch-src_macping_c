@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_macping_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Index: src/macping.c
+--- src/macping.c.orig
++++ src/macping.c
+@@ -28,6 +28,14 @@
+ #include <netinet/in.h>
+ #define ETH_FRAME_LEN ETHER_MAX_LEN
+ #define ETH_ALEN ETHER_ADDR_LEN
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/if_ether.h>
++#include <netinet/in.h>
++#define ETH_FRAME_LEN ETHER_MAX_LEN
++#define ETH_ALEN ETHER_ADDR_LEN
+ #else
+ #include <netinet/ether.h>
+ #endif

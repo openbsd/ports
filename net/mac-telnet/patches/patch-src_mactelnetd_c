@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_mactelnetd_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+
+Harder to port than the others, and doesn't seem really desirable
+for OpenBSD anyway, so mactelnetd is in the too-hard basket for now.
+
+Index: src/mactelnetd.c
+--- src/mactelnetd.c.orig
++++ src/mactelnetd.c
+@@ -37,7 +37,7 @@
+ #else
+ #include <endian.h>
+ #endif
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <paths.h>
+ #endif
+ #include <time.h>
+@@ -64,7 +64,7 @@
+ #include <sys/sysinfo.h>
+ #endif
+ #include <pwd.h>
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <sys/time.h>
+ /* This is the really Posix interface the Linux code should have used !!*/
+ #include <utmpx.h>
