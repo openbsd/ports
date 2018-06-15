@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2018/05/28 19:21:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.35 2018/06/15 18:52:42 bluhm Exp $
 
 COMMENT =	module for easy date and time manipulation
 
-DISTNAME =	Class-Date-1.1.16
+DISTNAME =	Class-Date-1.1.17
 
 CATEGORIES =	devel
 
