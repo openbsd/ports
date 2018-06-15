@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2018/02/21 21:02:52 steven Exp $
+# $OpenBSD: Makefile,v 1.49 2018/06/15 02:01:13 daniel Exp $
 
 BROKEN-alpha =	numpy/linalg/umath_linalg.c.src:3231: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.9.2
+MODPY_EGG_VERSION=	1.9.3
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		math devel
 
@@ -20,14 +19,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		blas lapack m pthread ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
-
 MODULES=		lang/python \
 			fortran
 
 FLAVORS=		python3
 FLAVOR?=
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_SETUP=		setupegg.py
 MODPY_DISTUTILS_BUILD = build --build-base=${WRKBUILD} --fcompiler=gnu95
