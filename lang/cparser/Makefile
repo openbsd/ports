@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/06 01:21:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/15 01:04:54 bcallah Exp $
 
 # Depends on devel/libfirm
 ONLY_FOR_ARCHS =	amd64 arm i386
 
 # Must keep version number in sync with devel/libfirm
 COMMENT =	C99 parser and frontend for libFirm
-DISTNAME =	cparser-1.22.1
+DISTNAME =	${GH_PROJECT}-1.22.1pl1
 CATEGORIES =	lang
 
-# amd64 PIC *just* missed 1.22.0; this goes away next update
+# Upstream expects you to use tags.
 GH_ACCOUNT =	libfirm
 GH_PROJECT =	cparser
-GH_COMMIT =	1930dff97172e8199c0d6f452f59dee47569d594
+GH_COMMIT =	62acdfe4b7897b2107246376667e09fc30f84a76
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -19,18 +19,16 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c firm m
-
-# Uncomment next update
-# MASTER_SITES =	https://github.com/libfirm/cparser/archive/
-
-MODULES =	devel/cmake
+WANTLIB += c firm
 
 LIB_DEPENDS =	devel/libfirm
 
-NO_TEST =	Yes
+USE_GMAKE =	Yes
+MAKE_FLAGS =	FIRM_LIBS="-L${LOCALBASE}/lib -lfirm" \
+		REVISION="${GH_COMMIT}" V=1 variant=optimize
 
-# GitHub has silly naming practices. Uncomment next update.
-# WRKDIST =	${WRKDIR}/cparser-${DISTNAME}
+FAKE_FLAGS =	DESTDIR= MANDIR="${DESTDIR}${PREFIX}/man"
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

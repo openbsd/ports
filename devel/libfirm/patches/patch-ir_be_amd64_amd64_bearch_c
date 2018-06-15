@@ -1,0 +1,16 @@
+$OpenBSD: patch-ir_be_amd64_amd64_bearch_c,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+
+We hereby declare the amd64 backend no longer experimental.
+It compiles the vast majority of OpenBSD C code just fine.
+
+Index: ir/be/amd64/amd64_bearch.c
+--- ir/be/amd64/amd64_bearch.c.orig
++++ ir/be/amd64/amd64_bearch.c
+@@ -774,7 +774,6 @@ static void amd64_init(void)
+ 	amd64_cconv_init();
+ 	x86_set_be_asm_constraint_support(&amd64_asm_constraints);
+ 
+-	ir_target.experimental = "the amd64 backend is experimental and unfinished (consider the ia32 backend)";
+ 	ir_target.fast_unaligned_memaccess = true;
+ 	ir_target.float_int_overflow       = ir_overflow_indefinite;
+ }

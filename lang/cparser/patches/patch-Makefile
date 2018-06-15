@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -34,7 +34,7 @@ endif
+ 
+ CPPFLAGS := $(CPPFLAGS) $(FIRM_CPPFLAGS)
+ 
+-CFLAGS += -Wall -W -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS += -Wall -W -Wstrict-prototypes -Wmissing-prototypes -I${LOCALBASE}/include
+ # With -std=c99 we get __STRICT_ANSI__ which disables all posix declarations
+ # in cygwin, regardless of a set POSIX_C_SOURCE feature test macro.
+ ifneq ($(filter %cygwin %mingw32, $(shell $(CC) $(CFLAGS) -dumpmachine)),)
+@@ -43,7 +43,7 @@ else
+ CFLAGS += -std=c99 -pedantic
+ endif
+ CFLAGS_debug    = -O0 -g
+-CFLAGS_optimize = -O3 -fomit-frame-pointer -DNDEBUG -DNO_DEFAULT_VERIFY
++CFLAGS_optimize = -fomit-frame-pointer -DNDEBUG -DNO_DEFAULT_VERIFY
+ CFLAGS_profile  = -pg -O3 -fno-inline
+ CFLAGS_coverage = --coverage -O0
+ CFLAGS += $(CFLAGS_$(variant))

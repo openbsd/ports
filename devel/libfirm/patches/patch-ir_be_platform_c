@@ -1,0 +1,16 @@
+$OpenBSD: patch-ir_be_platform_c,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+
+cparser/libFirm doesn't understand __only_inline.
+This lets us work around it.
+
+Index: ir/be/platform.c
+--- ir/be/platform.c.orig
++++ ir/be/platform.c
+@@ -171,6 +171,7 @@ void ir_platform_set(ir_machine_triple_t const *machin
+ 		goto BSD;
+ 	} else if (strstart(os, "openbsd")) {
+ 		ppdef1("__OpenBSD__");
++		ppdef("_ANSI_LIBRARY", ""); /* avoid __only_inline */
+ 		goto BSD;
+ 	} else if (strstr(os, "bsd") != NULL) {
+ BSD:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/20 09:13:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/15 01:04:54 bcallah Exp $
 include/libfirm/
 include/libfirm/adt/
 include/libfirm/adt/array.h
@@ -11,8 +11,6 @@ include/libfirm/adt/hungarian.h
 include/libfirm/adt/list.h
 include/libfirm/adt/obst.h
 include/libfirm/adt/obstack.h
-include/libfirm/adt/pdeq.h
-include/libfirm/adt/plist.h
 include/libfirm/adt/pmap.h
 include/libfirm/adt/pqueue.h
 include/libfirm/adt/pset.h
@@ -33,7 +31,6 @@ include/libfirm/firm_common.h
 include/libfirm/firm_types.h
 include/libfirm/heights.h
 include/libfirm/ident.h
-include/libfirm/irarch.h
 include/libfirm/ircgopt.h
 include/libfirm/ircons.h
 include/libfirm/irconsconfirm.h
@@ -58,18 +55,14 @@ include/libfirm/irouts.h
 include/libfirm/irprintf.h
 include/libfirm/irprog.h
 include/libfirm/irverify.h
+include/libfirm/jit.h
 include/libfirm/lowering.h
 include/libfirm/nodes.h
 include/libfirm/statev.h
+include/libfirm/target.h
 include/libfirm/timing.h
 include/libfirm/tv.h
 include/libfirm/typerep.h
 include/libfirm/vrp.h
-lib/cmake/
-lib/cmake/libfirm/
-lib/cmake/libfirm/libfirmConfig.cmake
-lib/cmake/libfirm/libfirmConfigVersion.cmake
-lib/cmake/libfirm/libfirmTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/libfirm/libfirmTargets.cmake
+lib/libfirm.a
 @lib lib/libfirm.so.${LIBfirm_VERSION}
-lib/pkgconfig/libfirm.pc

@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -38,7 +38,7 @@ endif
+ CFLAGS_debug       = -O0 -g3
+ CFLAGS_profile     = -O3 -pg -fno-inline -DNDEBUG
+ CFLAGS_coverage    = -O0 --coverage
+-CFLAGS_optimize    = -O3 -fomit-frame-pointer -DNDEBUG
++CFLAGS_optimize    = -fomit-frame-pointer -DNDEBUG
+ LINKFLAGS_debug    =
+ LINKFLAGS_profile  = -pg
+ LINKFLAGS_coverage = --coverage
+@@ -156,7 +156,7 @@ $(libfirm_dll): $(libfirm_OBJECTS)
+ # Determine if we can use cparser-beta for quickcheck
+ QUICKCHECK_DEFAULT := $(shell which cparser-beta 2> /dev/null || echo true) -fsyntax-only
+ QUICKCHECK ?= $(QUICKCHECK_DEFAULT)
+-QUICKCHECK_FLAGS ?= -m32 -Wno-compat-option -Wno-shadow -Wno-shadow-local -Wunreachable-code
++QUICKCHECK_FLAGS ?= -Wno-compat-option -Wno-shadow -Wno-shadow-local -Wunreachable-code
+ 
+ $(builddir)/%.o: %.c $(IR_SPEC_GENERATED_INCLUDES)
+ 	@echo CC $@
