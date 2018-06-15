@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.317 2018/05/29 04:11:49 kspillner Exp $
+$OpenBSD: user.list,v 1.318 2018/06/15 09:29:03 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -320,3 +320,4 @@ id  user		group		port options
 809 _ntopng		_ntopng		net/ntopng
 810 _sabnzbd		_sabnzbd	news/sabnzbd
 811 			_openvpnusers	net/openvpn_bsdauth
+812 _mactelnet		_mactelnet	net/mac-telnet
