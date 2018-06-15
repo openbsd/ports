@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/07 09:07:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/15 06:36:30 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/pf/
 lib/python${MODPY_VERSION}/site-packages/pf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}_struct.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/pf/status.py
 lib/python${MODPY_VERSION}/site-packages/pf/table.py
 lib/python${MODPY_VERSION}/site-packages/pf/tests/
 lib/python${MODPY_VERSION}/site-packages/pf/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}test_filter.${MODPY_PYC_MAGIC_TAG}pyc
