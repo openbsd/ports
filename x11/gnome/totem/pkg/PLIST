@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2017/11/02 14:19:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/06/15 13:41:29 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -255,6 +255,19 @@ share/help/gl/totem/figures/totem_volume_maximum_button.png
 share/help/gl/totem/figures/totem_volume_mute_button.png
 share/help/gl/totem/index.docbook
 share/help/gl/totem/legal.xml
+share/help/hr/
+share/help/hr/totem/
+share/help/hr/totem/figures/
+share/help/hr/totem/figures/totem_next_button.png
+share/help/hr/totem/figures/totem_pause_button.png
+share/help/hr/totem/figures/totem_play_button.png
+share/help/hr/totem/figures/totem_previous_button.png
+share/help/hr/totem/figures/totem_show_playlist_button.png
+share/help/hr/totem/figures/totem_start_window.png
+share/help/hr/totem/figures/totem_volume_maximum_button.png
+share/help/hr/totem/figures/totem_volume_mute_button.png
+share/help/hr/totem/index.docbook
+share/help/hr/totem/legal.xml
 share/help/id/
 share/help/id/totem/
 share/help/id/totem/figures/
@@ -294,6 +307,19 @@ share/help/ja/totem/figures/totem_volume_maximum_button.png
 share/help/ja/totem/figures/totem_volume_mute_button.png
 share/help/ja/totem/index.docbook
 share/help/ja/totem/legal.xml
+share/help/nb/
+share/help/nb/totem/
+share/help/nb/totem/figures/
+share/help/nb/totem/figures/totem_next_button.png
+share/help/nb/totem/figures/totem_pause_button.png
+share/help/nb/totem/figures/totem_play_button.png
+share/help/nb/totem/figures/totem_previous_button.png
+share/help/nb/totem/figures/totem_show_playlist_button.png
+share/help/nb/totem/figures/totem_start_window.png
+share/help/nb/totem/figures/totem_volume_maximum_button.png
+share/help/nb/totem/figures/totem_volume_mute_button.png
+share/help/nb/totem/index.docbook
+share/help/nb/totem/legal.xml
 share/help/oc/totem/
 share/help/oc/totem/figures/
 share/help/oc/totem/figures/totem_next_button.png
@@ -559,7 +585,6 @@ share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 share/locale/zu/LC_MESSAGES/totem.mo
-share/metainfo/
 share/metainfo/org.gnome.Totem.appdata.xml
 share/thumbnailers/totem.thumbnailer
 share/totem/
