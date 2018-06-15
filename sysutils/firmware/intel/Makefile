@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/17 11:38:06 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/15 04:24:22 jsg Exp $
 
 FW_DRIVER=	intel
 
-FW_VER=		20180312
+FW_VER=		20180425
 EPOCH=		0
-MASTER_SITES=	https://downloadmirror.intel.com/27591/eng/
+MASTER_SITES=	https://downloadmirror.intel.com/27776/eng/
 
 DISTNAME=	microcode-${FW_VER}
 
@@ -15,6 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/intel
-	${INSTALL_DATA} ${WRKDIR}/intel-ucode/* ${PREFIX}/firmware/intel
+	${INSTALL_DATA} ${WRKDIR}/intel-ucode/*-* ${PREFIX}/firmware/intel
 
 .include <bsd.port.mk>
