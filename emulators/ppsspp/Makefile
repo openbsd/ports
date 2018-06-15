@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/04 05:09:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/15 08:12:31 bentley Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
 GH_ACCOUNT =	hrydgard
 GH_PROJECT =	ppsspp
-GH_TAGNAME =	v1.5.4
+GH_TAGNAME =	v1.6.3
 
 GLSLANG =	2edde6665d9a56ead5ea0e55b4e64d9a803e6164
-PPSSPP_LANG =	6537fc1bf38d0787a1d86375e5b3cb267349d2d5
+PPSSPP_LANG =	1153a4293006db9d2a6e701df72df843b98234b5
 SPIRV_CROSS =	90966d50f57608587bafd95b4e345b02b814754a
 ARMIPS =	0.9
 TINYFORMAT =	b7f5a22753c81d834ab5133d655f1fd525280765
@@ -38,7 +38,7 @@ DIST_SUBDIR =	ppsspp
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW GLU SDL2 avcodec avformat avutil c m snappy
-WANTLIB += swresample swscale z zip 
+WANTLIB += swresample swscale z zip
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		archivers/snappy \
@@ -50,7 +50,8 @@ COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_FFMPEG=ON \
 			-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}"
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
+			-DUSE_SYSTEM_LIBZIP=ON
 
 NO_TEST =		Yes
 

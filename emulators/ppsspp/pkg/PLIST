@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/04 05:09:32 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/15 08:12:31 bentley Exp $
 @bin bin/PPSSPPSDL
 share/ppsspp/
 share/ppsspp/assets/
@@ -80,6 +80,7 @@ share/ppsspp/assets/shaders/4xhqglsl.vsh
 share/ppsspp/assets/shaders/5xBR-lv2.fsh
 share/ppsspp/assets/shaders/5xBR.fsh
 share/ppsspp/assets/shaders/5xBR.vsh
+share/ppsspp/assets/shaders/GaussianDownscale.fsh
 share/ppsspp/assets/shaders/aacolor.fsh
 share/ppsspp/assets/shaders/aacolor.vsh
 share/ppsspp/assets/shaders/bloom.fsh
@@ -93,6 +94,7 @@ share/ppsspp/assets/shaders/grayscale.fsh
 share/ppsspp/assets/shaders/inversecolors.fsh
 share/ppsspp/assets/shaders/natural.fsh
 share/ppsspp/assets/shaders/natural.vsh
+share/ppsspp/assets/shaders/naturalA.fsh
 share/ppsspp/assets/shaders/scanlines.fsh
 share/ppsspp/assets/shaders/sharpen.fsh
 share/ppsspp/assets/shaders/upscale_spline36.fsh
