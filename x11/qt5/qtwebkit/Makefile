@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2018/03/29 20:04:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/15 17:50:46 rsadowski Exp $
 
 QT5NAME =		QtWebkit
-REVISION =		5
+REVISION =		6
 COMMENT =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
 DPB_PROPERTIES =	parallel
@@ -47,6 +47,8 @@ LIB_DEPENDS =		databases/sqlite3 \
 			x11/qt5/qtlocation>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+
+CXXFLAGS +=		-fno-ret-protector
 
 MAKE_ENV =		NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \
