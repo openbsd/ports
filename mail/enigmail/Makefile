@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2018/05/31 20:57:48 giovanni Exp $
+# $OpenBSD: Makefile,v 1.44 2018/06/15 12:09:22 giovanni Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
 COMMENT-main =		GnuPG extension for Thunderbird
 COMMENT-seamonkey =	GnuPG extension for Seamonkey
 
-V =		2.0.5
+V =		2.0.7
 DISTNAME =	enigmail-${V}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-seamonkey =	enigmail-seamonkey-${V}
@@ -55,8 +55,8 @@ post-build:
 
 do-install:
 .for a in ${APPS}
-	${INSTALL_DATA_DIR} ${EXTDIR}/${a}/${GUID}
-	${UNZIP} -oq ${WRKBUILD}/build/enigmail*.xpi -d ${EXTDIR}/${a}/${GUID}
+	${INSTALL_DATA_DIR} ${EXTDIR}/${a}
+	cp ${WRKBUILD}/build/enigmail-${V}.xpi ${EXTDIR}/${a}/${GUID}.xpi
 .endfor
 
 .include <bsd.port.mk>
