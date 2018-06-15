@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/08 14:54:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/15 23:33:43 bcallah Exp $
 @bin bin/hyperrogue
 share/doc/hyperrogue/
 share/doc/hyperrogue/README.md
@@ -92,6 +92,7 @@ share/hyperrogue/sounds/speak-prince.ogg
 share/hyperrogue/sounds/speak-princess.ogg
 share/hyperrogue/sounds/splash1.ogg
 share/hyperrogue/sounds/splash2.ogg
+share/hyperrogue/sounds/steamhiss.ogg
 share/hyperrogue/sounds/storm.ogg
 share/hyperrogue/sounds/tada.ogg
 share/hyperrogue/sounds/trapdoor.ogg

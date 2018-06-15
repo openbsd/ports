@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/08 14:54:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/15 23:33:43 bcallah Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
-GH_TAGNAME =	10.0o
+GH_TAGNAME =	v10.4b
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -37,14 +37,10 @@ MAKE_FLAGS =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -std=c++11"
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-# Set version number correctly (upstream oversight?)
-# Disable hardcoded optimizations, including -std=c++11
-#   It gets added back anyhow, and if you don't the C compiler
-#   will pick it up and clang will error out.
+# Disable hardcoded optimizations
 # autoreconf taken from games/manaplus
 pre-configure:
-	sed -i "s,9.4d,${GH_TAGNAME},g" ${WRKSRC}/configure.ac
-	sed -i -e 's,-O0,,g' -e 's,-std=c++11,,g' ${WRKSRC}/Makefile.am
+	sed -i 's,-O0,,g' ${WRKSRC}/Makefile.am
 	cd ${WRKSRC} && \
 		${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
