@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2018/02/03 21:01:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2018/06/16 09:16:50 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -59,11 +60,12 @@ WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5UnitConversion KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
-WANTLIB += fontconfig freetype gsl gslcblas iconv lcms2 m phonon4qt5experimental
-WANTLIB += poppler poppler-qt5 z
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11
+WANTLIB += Xext c fontconfig freetype gsl gslcblas iconv lcms2
+WANTLIB += m phonon4qt5experimental poppler poppler-qt5 qca-qt5
+WANTLIB += z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
@@ -112,7 +114,8 @@ LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		graphics/jpeg \
 		graphics/openjpeg \
 		graphics/lcms2 \
-		print/poppler,,-qt5
+		print/poppler,,-qt5 \
+		security/qca-qt5
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
