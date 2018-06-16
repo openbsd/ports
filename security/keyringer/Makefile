@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/03 15:39:24 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/16 11:47:06 jca Exp $
 
 COMMENT =	manage and share secrets using GnuPG and Git
 
 DISTNAME =	keyringer-0.5.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -27,5 +27,7 @@ MAKE_FLAGS =		PREFIX="${PREFIX}" \
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
