@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/27 10:34:53 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/16 15:52:46 rpe Exp $
 
 COMMENT =		Simple Revision Control
 
-DISTNAME =		src-1.17
+DISTNAME =		src-1.18
 
 CATEGORIES =		devel
 
@@ -23,6 +23,7 @@ RUN_DEPENDS =		devel/grcs \
 
 TEST_DEPENDS =		devel/git \
 			devel/pylint \
+			shells/bash \
 			${RUN_DEPENDS}
 
 USE_GMAKE =		Yes
@@ -41,6 +42,7 @@ do-install:
 # Disable sscs and python 3.x tests.
 pre-test:
 	sed -i	-e '/srctest -b sccs/d ' -e '/p python3/d' ${WRKSRC}/Makefile
-	ln -s ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
+	sed -i '1s,^#!/bin/sh,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/srctest
+	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 
 .include <bsd.port.mk>

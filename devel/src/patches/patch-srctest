@@ -1,0 +1,19 @@
+$OpenBSD: patch-srctest,v 1.1 2018/06/16 15:52:46 rpe Exp $
+
+See upstream merge request https://gitlab.com/esr/src/merge_requests/20
+
+Index: srctest
+--- srctest.orig
++++ srctest
+@@ -1492,7 +1492,10 @@ author Eric Sunshine <sunshine@sunshineco.com> 1509732
+ committer Roy G. Biv <spectrum@color.com> 1511228715 +0000
+ EOF
+ 
+-    $src ${TESTOPTS#-T} fast-export 1 tiebreak |
++    git init --quiet &&
++        git config user.name user_name &&
++        git config user.email user_email &&
++        $src ${TESTOPTS#-T} fast-export 1 tiebreak |
+ 	grep -E 'author|committer' >rfc822export.actual
+     diff rfc822export.expect rfc822export.actual
+     check "fast-export: consult RFC 822 headers"
