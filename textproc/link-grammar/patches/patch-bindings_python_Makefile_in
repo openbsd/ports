@@ -1,8 +1,9 @@
-$OpenBSD: patch-bindings_python_Makefile_in,v 1.6 2018/04/28 15:37:31 ajacoutot Exp $
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.7 2018/06/16 11:13:30 ajacoutot Exp $
+
 Index: bindings/python/Makefile.in
 --- bindings/python/Makefile.in.orig
 +++ bindings/python/Makefile.in
-@@ -446,9 +446,9 @@ _clinkgrammar_la_CPPFLAGS = \
+@@ -447,9 +447,9 @@ _clinkgrammar_la_CPPFLAGS = \
  # symlink to it of an unversioned name (at least up and including libtool
  # 2.4.6).  This is bad for Python modules, as they must have an identifier
  # name.

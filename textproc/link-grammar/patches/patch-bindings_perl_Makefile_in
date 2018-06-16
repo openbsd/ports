@@ -1,0 +1,14 @@
+$OpenBSD: patch-bindings_perl_Makefile_in,v 1.1 2018/06/16 11:13:30 ajacoutot Exp $
+
+Index: bindings/perl/Makefile.in
+--- bindings/perl/Makefile.in.orig
++++ bindings/perl/Makefile.in
+@@ -430,7 +430,7 @@ clinkgrammar_la_CPPFLAGS = \
+    -I$(top_srcdir)         \
+    -I$(top_builddir)
+ 
+-clinkgrammar_la_LDFLAGS = -version-info @VERSION_INFO@ $(PERL_LDFLAGS) -module -no-undefined
++clinkgrammar_la_LDFLAGS = -avoid-version $(PERL_LDFLAGS) -module -no-undefined
+ clinkgrammar_la_LIBADD =  \
+ 	$(top_builddir)/link-grammar/liblink-grammar.la \
+ 	$(am__append_1) $(am__append_2)
