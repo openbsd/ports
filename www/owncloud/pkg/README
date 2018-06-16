@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.51 2018/06/05 09:39:48 sthen Exp $
+$OpenBSD: README,v 1.52 2018/06/16 08:26:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,15 +14,6 @@ Post-installation instructions
 ==============================
 
 *** It is highly recommended to use SSL on the webserver (HTTPS).
-
-chroot(2)
----------
-When running ownCloud with a chrooted web server, the UTF-8 locale files must be
-copied under the /var/www chroot to prevent warning messages in the admin
-configuration page and logs:
-    # mkdir -p /var/www/usr/share/locale/UTF-8/
-    # cp /usr/share/locale/UTF-8/LC_CTYPE \
-        /var/www/usr/share/locale/UTF-8/
 
 OpenBSD HTTP daemon
 -------------------
@@ -60,12 +51,14 @@ server "domain.tld" {
 	location "/console*"            { block }
 
 	location "/*.php*" {
-		root { "/owncloud", strip 1 }
+		root "/owncloud"
+		request strip 1
 		fastcgi socket "/run/php-fpm.sock"
 	}
 
 	location "/*" {
-		root { "/owncloud", strip 1 }
+		root "/owncloud"
+		request strip 1
 	}
 }
 ---8<---------------------------------------------------------------------------
@@ -112,6 +105,12 @@ See the following URL for setting up a database for ownCloud:
 ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database. The
 corresponding package needs to be installed *before* setting up ownCloud:
     php-pdo_sqlite, php-pgsql or php-pdo_mysql
+
+ownCloud can work with various database types. Ensure that the package(s) for
+PHP support is installed and enabled *before* setting up ownCloud:
+	For SQLite:	php-pdo_sqlite and php-sqlite3
+	For PostgreSQL:	php-pdo_pgsql
+	For MariaDB:	php-pdo_mysql
 
 Configuration file
 ------------------
@@ -170,10 +169,6 @@ Updating
 ========
 Before updating to a new release, read:
     https://doc.owncloud.org/server/${VR}/admin_manual/maintenance/upgrade.html
-
-When using a PostgreSQL or MariaDB, the corresponding MDB2 php package must be
-installed to properly upgrade the database:
-    php-pgsql or php-mysql
 
 WebDAV access
 =============
