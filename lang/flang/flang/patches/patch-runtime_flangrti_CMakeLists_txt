@@ -1,17 +1,17 @@
-$OpenBSD: patch-runtime_flangrti_CMakeLists_txt,v 1.2 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_CMakeLists_txt,v 1.3 2018/06/16 20:08:28 bcallah Exp $
 
 We need -lexecinfo. Use the static version for ease.
 
 Index: runtime/flangrti/CMakeLists.txt
 --- runtime/flangrti/CMakeLists.txt.orig
 +++ runtime/flangrti/CMakeLists.txt
-@@ -112,6 +113,9 @@ find_library( 
-   libpgmath.so
+@@ -113,6 +113,9 @@ find_library( 
    HINTS ${CMAKE_BINARY_DIR}/lib)
  target_link_libraries(flangrti_shared ${LIBPGMATH})
-+
+ 
 +# Import execinfo
 +target_link_libraries(flangrti_shared ${FLANG_LIBEXECINFO})
- 
++
  if( ${TARGET_ARCHITECTURE} STREQUAL "aarch64" )
    target_compile_definitions(flangrti_static PRIVATE TARGET_LINUX_ARM)
+   target_compile_definitions(flangrti_shared PRIVATE TARGET_LINUX_ARM)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/06/16 20:08:28 bcallah Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -71,7 +71,7 @@ set(LIBPGMATH_TOOLS_DIR ${LIBPGMATH_BASE_DIR}/tools)
+@@ -74,7 +74,7 @@ set(LIBPGMATH_TOOLS_DIR ${LIBPGMATH_BASE_DIR}/tools)
  set(LIBPGMATH_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
  set(LIBPGMATH_RUNTIME_PATH ${CMAKE_BINARY_DIR}/lib)
  set(LIBPGMATH_LIBRARY_NAME pgmath)

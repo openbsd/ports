@@ -1,14 +1,16 @@
-$OpenBSD: patch-lib_common_dispatch_c,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+$OpenBSD: patch-lib_common_dispatch_c,v 1.2 2018/06/16 20:08:28 bcallah Exp $
 
 Index: lib/common/dispatch.c
 --- lib/common/dispatch.c.orig
 +++ lib/common/dispatch.c
-@@ -65,9 +65,6 @@
+@@ -61,11 +61,7 @@
  #include <string.h>
  #include <unistd.h>
  #include <inttypes.h>
 -#ifdef TARGET_LINUX_X8664
 -#include <malloc.h>
+-#else
+ #include <sched.h>
 -#endif
  #include "mth_tbldefs.h"
  #if defined(TARGET_LINUX_X8664) || defined(TARGET_OSX_X8664)

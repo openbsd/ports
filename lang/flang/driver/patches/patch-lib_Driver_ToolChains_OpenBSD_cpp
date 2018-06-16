@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.3 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.4 2018/06/16 20:08:28 bcallah Exp $
 
 Index: lib/Driver/ToolChains/OpenBSD.cpp
 --- lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -41,7 +41,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
    AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs, JA);
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nodefaultlibs)) {
-@@ -189,8 +197,14 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -189,8 +197,16 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  
      // FIXME: For some reason GCC passes -lgcc before adding
      // the default system libraries. Just mimic this for now.
@@ -51,13 +51,15 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
 +    else
 +      CmdArgs.push_back("-lgcc");
  
-+    CmdArgs.push_back("-lpgmath");
-+    CmdArgs.push_back("-lflang");
++    if (!Args.hasArg(options::OPT_noFlangLibs)) {
++      CmdArgs.push_back("-lpgmath");
++      CmdArgs.push_back("-lflang");
++    }
 +
      if (Args.hasArg(options::OPT_pthread)) {
        if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
          CmdArgs.push_back("-lpthread_p");
-@@ -205,7 +219,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -205,7 +221,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
          CmdArgs.push_back("-lc");
      }
  
@@ -69,7 +71,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -226,8 +243,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -226,8 +245,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &Triple,
                   const ArgList &Args)
      : Generic_ELF(D, Triple, Args) {
@@ -79,7 +81,7 @@ Index: lib/Driver/ToolChains/OpenBSD.cpp
  }
  
  Tool *OpenBSD::buildAssembler() const {
-@@ -235,3 +251,62 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -235,3 +253,62 @@ Tool *OpenBSD::buildAssembler() const {
  }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }

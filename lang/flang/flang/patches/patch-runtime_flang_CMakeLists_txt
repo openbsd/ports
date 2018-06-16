@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.2 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.3 2018/06/16 20:08:28 bcallah Exp $
 
 No -lrt
 Appease lld
@@ -15,7 +15,7 @@ Index: runtime/flang/CMakeLists.txt
  
  # We are using Fortran driver to build this library with fresh compiler
  # components, so point its binary directory to the build directory to pick up
-@@ -426,7 +426,7 @@ add_flang_library(flang_shared
+@@ -479,7 +479,7 @@ add_flang_library(flang_shared
  set_property(TARGET flang_shared PROPERTY OUTPUT_NAME flang)
  target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
  # Resolve symbols against libm and librt
