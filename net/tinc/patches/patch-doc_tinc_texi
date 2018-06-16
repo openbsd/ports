@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_tinc_texi,v 1.7 2018/04/18 10:16:22 kn Exp $
+$OpenBSD: patch-doc_tinc_texi,v 1.8 2018/06/16 11:20:29 rsadowski Exp $
 Index: doc/tinc.texi
 --- doc/tinc.texi.orig
 +++ doc/tinc.texi
@@ -11,7 +11,7 @@ Index: doc/tinc.texi
  
  
  @c ==================================================================
-@@ -2502,8 +2502,6 @@ For IPv6 addresses:
+@@ -2503,8 +2503,6 @@ For IPv6 addresses:
  On some platforms, when running tinc in switch mode, the VPN interface must be set to tap mode with an ifconfig command:
  
  @multitable {Darwin (Mac OS X)} {ifconfig route add -bla network address netmask netmask prefixlength interface}
