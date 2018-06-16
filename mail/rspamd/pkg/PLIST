@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/05/18 20:10:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/06/16 13:47:22 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/rspamd
+@sample ${SYSCONFDIR}/rspamd/
 @bin bin/rspamadm
 @bin bin/rspamc
 @bin bin/rspamd
@@ -16,7 +18,6 @@ lib/rspamd/libtorch.so
 @man man/man1/rspamc.1
 @man man/man8/rspamd.8
 share/examples/rspamd/
-@sample ${SYSCONFDIR}/rspamd/
 share/examples/rspamd/2tld.inc
 @sample ${SYSCONFDIR}/rspamd/2tld.inc
 share/examples/rspamd/actions.conf
@@ -244,6 +245,8 @@ share/rspamd/languages/vi.json
 share/rspamd/languages/yi.json
 share/rspamd/languages/zh-CN.json
 share/rspamd/lib/
+share/rspamd/lib/ansicolors.lua
+share/rspamd/lib/argparse.lua
 share/rspamd/lib/decisiontree/
 share/rspamd/lib/decisiontree/CartNode.lua
 share/rspamd/lib/decisiontree/CartTrainer.lua
@@ -503,18 +506,17 @@ share/rspamd/lib/optim/rprop.lua
 share/rspamd/lib/optim/sgd.lua
 share/rspamd/lib/paths/
 share/rspamd/lib/paths/init.lua
+share/rspamd/lib/plugins_stats.lua
+share/rspamd/lib/rescore_utility.lua
 share/rspamd/lib/rspamadm/
-share/rspamd/lib/rspamadm/ansicolors.lua
 share/rspamd/lib/rspamadm/confighelp.lua
 share/rspamd/lib/rspamadm/configwizard.lua
 share/rspamd/lib/rspamadm/corpus_test.lua
 share/rspamd/lib/rspamadm/fuzzy_convert.lua
 share/rspamd/lib/rspamadm/fuzzy_stat.lua
-share/rspamd/lib/rspamadm/getopt.lua
 share/rspamd/lib/rspamadm/grep.lua
-share/rspamd/lib/rspamadm/plugins_stats.lua
+share/rspamd/lib/rspamadm/keypair.lua
 share/rspamd/lib/rspamadm/rescore.lua
-share/rspamd/lib/rspamadm/rescore_utility.lua
 share/rspamd/lib/rspamadm/stat_convert.lua
 share/rspamd/lib/torch/
 share/rspamd/lib/torch/CmdLine.lua
@@ -629,6 +631,3 @@ share/rspamd/www/react-index.html
 @owner _rspamd
 @group _rspamd
 @sample ${LOCALSTATEDIR}/rspamd/
-@owner
-@group
-@rcscript ${RCDIR}/rspamd
