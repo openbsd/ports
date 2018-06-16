@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/16 11:49:00 rsadowski Exp $
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
 
-VERSION=		2.0
-DISTNAME=		droplet-${VERSION}
 GH_ACCOUNT =		scality
 GH_PROJECT =		Droplet
-GH_COMMIT =		22e7e46214a26c36a2314ef0c23ee42c861ec6bd
+GH_TAGNAME =		v2.0
+DISTNAME=		droplet-${GH_TAGNAME:S/v//}
+REVISION=		0
 
 SHARED_LIBS=		droplet		1.0 #0.0
 
-MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
