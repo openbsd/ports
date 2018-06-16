@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2016/12/02 15:01:21 jca Exp $
+$OpenBSD: README,v 1.6 2018/06/16 08:34:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,13 +23,15 @@ server "default" {
 	}
 
 	location "/baikal/*.php*" {
-		root { "/baikal/html", strip 1 }
+		root "/baikal/html"
+		request strip 1
 		fastcgi socket "/run/php-fpm.sock"
 		directory index index.php
 	}
 
 	location "/baikal/*" {
-		root { "/baikal/html", strip 1 }
+		root "/baikal/html"
+		request strip 1
 		directory index index.php
 	}
 }
