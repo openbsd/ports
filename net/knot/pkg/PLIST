@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/12/17 11:05:42 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/17 13:18:09 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/knot
 @bin bin/kdig
 @bin bin/khost
 @bin bin/kjournalprint
@@ -119,6 +120,3 @@ share/examples/knot/knot.sample.conf
 @mode 750
 @owner _knot
 @sample ${LOCALSTATEDIR}/db/knot/
-@owner
-@mode
-@rcscript ${RCDIR}/knot
