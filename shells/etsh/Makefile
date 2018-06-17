@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/25 19:07:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/17 20:08:21 bcallah Exp $
 
-V =		5.1.5
-COMMENT =	enhanced Thompson shell from Sixth Edition Unix
+V =		5.2.0
+COMMENT =	enhanced port of Thompson shell from Sixth Edition Unix
 DISTNAME =	etsh-${V}
 EPOCH =		0
 CATEGORIES =	shells
