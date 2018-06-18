@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2018/06/18 09:49:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2018/06/18 09:50:55 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -52,7 +52,7 @@ CONFIGURE_ARGS=		--with-dbus-user=_dbus \
 			--disable-modular-tests \
 			--disable-systemd
 
-# autolaunch brings too much magic to spawn a dbus-daemon(1) process and we
+# autolaunch brings too much magic to spawn a dbus-daemon(1) process and we want
 # predictable buses; we can't use --without-x because this would break bus
 # activated clients (since we don't use systemd)
 CONFIGURE_ARGS +=	--disable-x11-autolaunch
