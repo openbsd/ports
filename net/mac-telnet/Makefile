@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/18 10:00:10 ajacoutot Exp $
 
 COMMENT=	client for MikroTik's "L2 telnet" protocol#'
 
@@ -20,7 +20,8 @@ WANTLIB += c
 
 BUILD_DEPENDS=	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/gettext-tools
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	--disable-nls
