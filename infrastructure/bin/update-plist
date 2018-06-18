@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.162 2018/06/09 10:51:39 espie Exp $
+# $OpenBSD: update-plist,v 1.163 2018/06/18 15:51:24 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -791,6 +791,18 @@ sub rebless_okay { 0 }
 
 # those are objects that only exist in update-plist
 package OpenBSD::PackingElement::Fragment;
+our @ISA=qw(OpenBSD::PackingElement);
+
+{
+no warnings qw(redefine);
+sub needs_keyword() { 0 }
+
+sub stringize
+{
+	return '%%'.shift->{name}.'%%';
+}
+}
+
 # copy them in the right location
 sub may_tag_along
 {
@@ -819,6 +831,15 @@ sub frag
 }
 
 package OpenBSD::PackingElement::NoFragment;
+our @ISA=qw(OpenBSD::PackingElement::Fragment);
+{
+no warnings qw(redefine);
+sub stringize
+{
+	return '!%%'.shift->{name}.'%%';
+}
+}
+
 sub frag
 {
 	my $self = shift;
