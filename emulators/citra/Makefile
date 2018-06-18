@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/08 05:23:21 bentley Exp $
-
-BROKEN-i386 =	always_inline function '_mm_sra_pi32' requires target feature 'mmx', but would be inlined into function 'calcCrossCorr' that is compiled without support for 'mmx'
+# $OpenBSD: Makefile,v 1.4 2018/06/18 17:44:38 thfr Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	nintendo 3DS emulator
 
-V =		717
+V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
 
@@ -23,6 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5OpenGL
 WANTLIB += Qt5Widgets SDL2 c cryptopp enet iconv m
 
 MASTER_SITES =	https://spacehopper.org/mirrors/
+EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \
 		x11/qt5
