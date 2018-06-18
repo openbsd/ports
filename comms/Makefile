@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2017/11/14 20:27:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.72 2018/06/18 23:55:38 thfr Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -24,6 +24,7 @@
      SUBDIR += jpilot
      SUBDIR += kermit
      SUBDIR += lcdproc
+     SUBDIR += libhidapi
      SUBDIR += lrzsz
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
