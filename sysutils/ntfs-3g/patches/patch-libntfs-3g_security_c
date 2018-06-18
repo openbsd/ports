@@ -1,0 +1,85 @@
+$OpenBSD: patch-libntfs-3g_security_c,v 1.1 2018/06/18 12:39:57 helg Exp $
+
+Index: libntfs-3g/security.c
+--- libntfs-3g/security.c.orig
++++ libntfs-3g/security.c
+@@ -47,6 +47,10 @@
+ #ifdef HAVE_SYS_STAT_H
+ #include <sys/stat.h>
+ #endif
++#ifdef __OpenBSD__
++#include <sys/sysctl.h>
++#include <sys/types.h>
++#endif
+ 
+ #include <unistd.h>
+ #include <pwd.h>
+@@ -1228,6 +1232,68 @@ static BOOL groupmember(struct SECURITY_CONTEXT *scx, 
+ 		close(fd);
+ 		}
+ 	}
++	return (ismember);
++}
++
++#elif defined(__OpenBSD__)
++
++static BOOL groupmember(struct SECURITY_CONTEXT *scx, uid_t uid, gid_t gid)
++{
++	struct kinfo_proc *kp;
++	size_t size;
++	int mib[6];
++	int ip, ig;
++	int pcnt;
++	gid_t *g;
++	pid_t tid;
++	BOOL ismember;
++
++	if (scx->vol->secure_flags & (1 << SECURITY_STATICGRPS))
++		ismember = staticgroupmember(scx, uid, gid);
++	else {
++		ismember = FALSE; /* default return */
++		tid = scx->tid;
++		mib[0] = CTL_KERN;
++		mib[1] = KERN_PROC;
++		mib[2] = KERN_PROC_ALL | KERN_PROC_SHOW_THREADS;
++		mib[3] = 0;
++		mib[4] = sizeof(struct kinfo_proc);
++		mib[5] = 0;
++		if (sysctl(mib, 6, NULL, &size, NULL, 0) == -1)
++			ntfs_log_error("Could not get size of process table: "
++			    "%s\n", strerror(errno));
++		else {
++			mib[5] = size / sizeof(struct kinfo_proc);
++			kp = malloc(size);
++			if ((kp == NULL) ||
++			    (sysctl(mib, 6, kp, &size, NULL, 0) == -1))
++				ntfs_log_error("Could not get process table: "
++				    "%s\n", strerror(errno));
++			else {
++				pcnt = size / sizeof(struct kinfo_proc);
++				ip = 0;
++				while ((kp[ip].p_tid != tid) && (ip < pcnt))
++					ip++;
++
++				if (ip < pcnt) {
++					if (kp[ip].p_gid == gid)
++						ismember = TRUE;
++					g = kp[ip].p_groups;
++					ig = 0;
++					while (!ismember
++					    && (ig < kp[ip].p_ngroups)
++					    && (*g != gid)) {
++						ig++;
++						g++;
++					}
++					if (ig < kp[ip].p_ngroups)
++						ismember = TRUE;
++				}
++				free(kp);
++			}
++		}
++	}
++
+ 	return (ismember);
+ }
+ 
