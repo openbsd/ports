@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/04 10:51:29 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/18 11:46:12 sthen Exp $
 roundcubemail/plugins/markasjunk2/
 roundcubemail/plugins/markasjunk2/CHANGELOG
 roundcubemail/plugins/markasjunk2/README.md
@@ -14,8 +14,10 @@ roundcubemail/plugins/markasjunk2/drivers/email_learn.php
 roundcubemail/plugins/markasjunk2/drivers/sa_blacklist.php
 roundcubemail/plugins/markasjunk2/drivers/sa_detach.php
 roundcubemail/plugins/markasjunk2/localization/
+roundcubemail/plugins/markasjunk2/localization/bg_BG.inc
 roundcubemail/plugins/markasjunk2/localization/ca_ES.inc
 roundcubemail/plugins/markasjunk2/localization/cs_CZ.inc
+roundcubemail/plugins/markasjunk2/localization/da_DK.inc
 roundcubemail/plugins/markasjunk2/localization/de_CH.inc
 roundcubemail/plugins/markasjunk2/localization/de_DE.inc
 roundcubemail/plugins/markasjunk2/localization/en_GB.inc
@@ -34,6 +36,7 @@ roundcubemail/plugins/markasjunk2/localization/pl_PL.inc
 roundcubemail/plugins/markasjunk2/localization/pt_BR.inc
 roundcubemail/plugins/markasjunk2/localization/ro_RO.inc
 roundcubemail/plugins/markasjunk2/localization/ru_RU.inc
+roundcubemail/plugins/markasjunk2/localization/sk_SK.inc
 roundcubemail/plugins/markasjunk2/localization/tr_TR.inc
 roundcubemail/plugins/markasjunk2/localization/zh_TW.inc
 roundcubemail/plugins/markasjunk2/markasjunk2.js
