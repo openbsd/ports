@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2018/02/23 22:34:18 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/18 09:03:18 kn Exp $
 
 COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.3.1
+GH_TAGNAME =	v1.3.2
 
 CATEGORIES =	x11
 
