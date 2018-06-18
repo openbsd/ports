@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.155 2018/04/24 16:08:06 solene Exp $
+# $OpenBSD: OpenBSD,v 1.156 2018/06/18 05:46:57 thfr Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -72,6 +72,7 @@
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
+45.52		-122.681944	"thfr"		# Thomas Frohwein
 45.52582	-73.57180	"danj"		# Daniel Jakots
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
