@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/11/01 06:27:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/06/18 09:49:52 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/machine-id
+@rcscript ${RCDIR}/messagebus
 @bin bin/dbus-cleanup-sockets
 @bin bin/dbus-daemon
 @bin bin/dbus-launch
@@ -93,4 +94,3 @@ share/xml/dbus-1/
 share/xml/dbus-1/busconfig.dtd
 share/xml/dbus-1/introspect.dtd
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure=${SYSCONFDIR}/machine-id
-@rcscript ${RCDIR}/messagebus
