@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+libusb Workaround
+=================
+
+*** WARNING ***
+libhidapi uses devel/libusb1 to communicate with USB HID devices. uhid(4) and
+uhidev(4) need to be disabled in the kernel (see config(8)) or the device will
+not be available to libusb. Note that this also deactivates other USB HIDs like
+USB keyboard and mouse.

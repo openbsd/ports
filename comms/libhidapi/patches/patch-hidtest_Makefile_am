@@ -1,0 +1,19 @@
+$OpenBSD: patch-hidtest_Makefile_am,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
+pry hidraw out of hidapi's cold, dead hands
+
+Index: hidtest/Makefile.am
+--- hidtest/Makefile.am.orig
++++ hidtest/Makefile.am
+@@ -2,10 +2,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/hidapi/
+ 
+ ## Linux
+ if OS_LINUX
+-noinst_PROGRAMS = hidtest-libusb hidtest-hidraw
+-
+-hidtest_hidraw_SOURCES = hidtest.cpp
+-hidtest_hidraw_LDADD = $(top_builddir)/linux/libhidapi-hidraw.la
++noinst_PROGRAMS = hidtest-libusb
+ 
+ hidtest_libusb_SOURCES = hidtest.cpp
+ hidtest_libusb_LDADD = $(top_builddir)/libusb/libhidapi-libusb.la

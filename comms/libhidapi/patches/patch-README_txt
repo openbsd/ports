@@ -1,0 +1,16 @@
+$OpenBSD: patch-README_txt,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
+rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
+
+Index: README.txt
+--- README.txt.orig
++++ README.txt
+@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
+ 	int i;
+ 
+ 	// Initialize the hidapi library
+-	res = hid_init();
++	res = hidapi_hid_init();
+ 
+ 	// Open the device using the VID, PID,
+ 	// and optionally the Serial number.

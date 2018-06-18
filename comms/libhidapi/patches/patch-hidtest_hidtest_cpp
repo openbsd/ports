@@ -1,0 +1,16 @@
+$OpenBSD: patch-hidtest_hidtest_cpp,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
+rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
+
+Index: hidtest/hidtest.cpp
+--- hidtest/hidtest.cpp.orig
++++ hidtest/hidtest.cpp
+@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
+ 
+ 	struct hid_device_info *devs, *cur_dev;
+ 	
+-	if (hid_init())
++	if (hidapi_hid_init())
+ 		return -1;
+ 
+ 	devs = hid_enumerate(0x0, 0x0);

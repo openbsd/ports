@@ -1,0 +1,16 @@
+$OpenBSD: patch-hidapi_hidapi_h,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
+rename hid_init() to hidapi_hid_init() to avoid collision with usbhid
+
+Index: hidapi/hidapi.h
+--- hidapi/hidapi.h.orig
++++ hidapi/hidapi.h
+@@ -93,7 +93,7 @@ extern "C" {
+ 			@returns
+ 				This function returns 0 on success and -1 on error.
+ 		*/
+-		int HID_API_EXPORT HID_API_CALL hid_init(void);
++		int HID_API_EXPORT HID_API_CALL hidapi_hid_init(void);
+ 
+ 		/** @brief Finalize the HIDAPI library.
+ 

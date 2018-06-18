@@ -1,0 +1,5 @@
+HIDAPI is a multi-platform library which allows an application to interface
+with USB and Bluetooth HID-Class devices on Windows, Linux, FreeBSD, and Mac OS
+X. On OpenBSD (like on FreeBSD), the backend uses libusb-1.0 to communicate
+directly to a USB device. This back-end will of course not work with Bluetooth
+devices.

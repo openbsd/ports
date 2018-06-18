@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+include/hidapi/
+include/hidapi/hidapi.h
+lib/libhidapi-libusb.a
+lib/libhidapi-libusb.la
+@lib lib/libhidapi-libusb.so.${LIBhidapi-libusb_VERSION}
+@lib lib/libhidapi.so.${LIBhidapi_VERSION}
+lib/pkgconfig/hidapi-libusb.pc
+share/doc/hidapi/
+share/doc/hidapi/AUTHORS.txt
+share/doc/hidapi/LICENSE-bsd.txt
+share/doc/hidapi/LICENSE-gpl3.txt
+share/doc/hidapi/LICENSE-orig.txt
+share/doc/hidapi/LICENSE.txt
+share/doc/hidapi/README.txt
+share/doc/pkg-readmes/${FULLPKGNAME}

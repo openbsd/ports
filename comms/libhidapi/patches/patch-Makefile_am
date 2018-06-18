@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+
+disable hidraw (not supported on OpenBSD)
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -8,7 +8,7 @@ pkgconfigdir=$(libdir)/pkgconfig
+ endif
+ 
+ if OS_LINUX
+-pkgconfig_DATA=pc/hidapi-hidraw.pc pc/hidapi-libusb.pc
++pkgconfig_DATA=pc/hidapi-libusb.pc
+ else
+ pkgconfig_DATA=pc/hidapi.pc
+ endif
+@@ -16,7 +16,7 @@ endif
+ SUBDIRS=
+ 
+ if OS_LINUX
+-SUBDIRS += linux libusb
++SUBDIRS += libusb
+ endif
+ 
+ if OS_DARWIN
