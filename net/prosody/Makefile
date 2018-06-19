@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2018/06/04 19:53:58 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2018/06/19 11:55:26 jca Exp $
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME=	prosody-0.10.2
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -35,7 +36,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--c-compiler="${CC}" \
 		--linker="${CC}" \
 		--ldflags="-I/usr/include -I${LOCALBASE}/include -L/usr/lib -L${LOCALBASE}/lib -shared" \
-		--cflags="${CFLAGS} -I${LOCALBASE}/include -fPIC"
+		--cflags="${CFLAGS} -I${LOCALBASE}/include -fPIC -std=c99"
 
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
