@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/05/26 10:38:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/06/19 13:59:24 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -498,6 +498,7 @@ share/doc/py-sqlalchemy/_modules/examples/versioned_history/test_versioning.html
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_map.html
 share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_rows.html
+share/doc/py-sqlalchemy/_modules/examples/versioned_rows/versioned_rows_w_versionid.html
 share/doc/py-sqlalchemy/_modules/examples/vertical/
 share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike-polymorphic.html
 share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike.html
@@ -916,6 +917,7 @@ share/examples/py-sqlalchemy/versioned_rows/
 share/examples/py-sqlalchemy/versioned_rows/__init__.py
 share/examples/py-sqlalchemy/versioned_rows/versioned_map.py
 share/examples/py-sqlalchemy/versioned_rows/versioned_rows.py
+share/examples/py-sqlalchemy/versioned_rows/versioned_rows_w_versionid.py
 share/examples/py-sqlalchemy/vertical/
 share/examples/py-sqlalchemy/vertical/__init__.py
 share/examples/py-sqlalchemy/vertical/dictlike-polymorphic.py
