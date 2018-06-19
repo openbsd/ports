@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/04/29 09:00:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/06/19 13:27:01 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -162,6 +162,10 @@ share/icons/hicolor/22x22/apps/meld.png
 share/icons/hicolor/32x32/apps/meld.png
 share/icons/hicolor/48x48/apps/meld-version-control.png
 share/icons/hicolor/48x48/apps/meld.png
+share/icons/hicolor/scalable/apps/meld-figuring-linked.svg
+share/icons/hicolor/scalable/apps/meld-figuring.svg
+share/icons/hicolor/scalable/apps/meld-unlinking-plus-overlay.svg
+share/icons/hicolor/scalable/apps/meld-unlinking.svg
 share/icons/hicolor/scalable/apps/meld.svg
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
