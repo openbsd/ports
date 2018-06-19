@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/18 08:15:11 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/19 17:48:49 jca Exp $
 
 COMMENT =	z3 theorem prover
 
@@ -19,6 +19,9 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS +=	--prefix=${PREFIX} \
 			--python
+
+# c++11
+COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python
 
