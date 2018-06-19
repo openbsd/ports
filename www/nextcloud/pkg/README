@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/06/08 14:46:21 gonzalo Exp $
+$OpenBSD: README,v 1.5 2018/06/19 13:47:54 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -67,7 +67,8 @@ server "domain.tld" {
     }
 
     location "/*" {
-        root { "/nextcloud", strip 1 }
+        root "/nextcloud"
+        request strip 1
     }
 }
 ---8<---------------------------------------------------------------------------
