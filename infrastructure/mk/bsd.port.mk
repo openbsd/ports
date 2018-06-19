@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1414 2018/06/04 06:14:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1415 2018/06/19 10:13:31 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2769,13 +2769,13 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		echo >&2 "Error: your umask is \"`${_PBUILD} /bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
-	${_PBUILD} install -d -m 755 ${WRKINST}
+	@${_PBUILD} install -d -m 755 ${WRKINST}
 	@${_PBUILD} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
 		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
 	@${_PBUILD} chmod -R a+rX ${WRKINST}
 
 	@${_wrap_install_commands}
-	${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
+	@${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
 	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
 .endif
