@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/08 05:59:22 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/19 12:11:32 rpointel Exp $
 bin/yapf${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/yapf/
 lib/python${MODPY_VERSION}/site-packages/yapf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -23,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}errors.${M
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}file_resources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}format_decision_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}format_token.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}identify_container.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}line_joiner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}object_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/errors.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/file_resources.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/format_decision_state.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/format_token.py
+lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/identify_container.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/line_joiner.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/object_state.py
 lib/python${MODPY_VERSION}/site-packages/yapf/yapflib/py3compat.py
