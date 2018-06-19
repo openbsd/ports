@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/14 07:03:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/19 17:53:48 jca Exp $
 
 COMMENT =		rule-based machine translation platform
 
@@ -25,6 +25,9 @@ WANTLIB += ${COMPILER_LIBCXX} xml2 z
 
 MASTER_SITES =		https://github.com/apertium/apertium/releases/download/v${VER}/ \
 			https://distfiles.ajb.soy/
+
+# c++11
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		shells/bash \
