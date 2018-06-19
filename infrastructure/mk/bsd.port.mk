@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1415 2018/06/19 10:13:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1416 2018/06/19 19:04:58 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -128,6 +128,7 @@ _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 .endif
 
 PATCH_CHECK_ONLY ?= No
+EDIT_PATCHES ?= Yes
 REFETCH ?= false
 PORTROACH ?=
 
@@ -2362,11 +2363,9 @@ update-patches:
 		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
 		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
 		${_PERLSCRIPT}/update-patches`; \
-	case $$toedit in "");; \
-	*) read i?'edit patches: '; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
-
-
+	if [ -n "$$toedit" ] && [ "${EDIT_PATCHES:L}" != no ]; then \
+		cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit; \
+	fi
 
 .endif # IGNORECMD
 
