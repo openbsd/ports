@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/26 02:15:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/20 20:06:22 bcallah Exp $
 
 # Does not build with ports-gcc (tested on armv7)
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
-DISTNAME =	openjk-0.0.0.20180414
+DISTNAME =	openjk-0.0.0.20180608
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	JACoders
 GH_PROJECT =	OpenJK
-GH_COMMIT =	698fe7c0e150b3f38e0d5d229faf36ad7948afca
+GH_COMMIT =	9736ae61da6de669dd3dc210c7be69be1d0214b3
 
 HOMEPAGE =	https://openjk.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
