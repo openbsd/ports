@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.80 2018/06/13 10:12:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.81 2018/06/20 11:11:59 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -261,8 +261,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/csek_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/csek_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/daisy_utils.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/daisy_utils.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/file_utils.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/file_utils.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/filter_rewrite.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/filter_rewrite.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/firewalls_utils.py
@@ -1567,6 +1565,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/completers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/completers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resource_args.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resource_args.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/kms/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/logs/__init__.py
@@ -1865,6 +1865,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/concept_parsers.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/concept_parsers.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/info_holders.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/info_holders.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/presentation_specs.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/presentation_specs.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/resource_parameter_info.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/concepts/resource_parameter_info.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/gaia.py
@@ -7075,6 +7077,8 @@ google-cloud-sdk/lib/surface/topic/projections.py
 google-cloud-sdk/lib/surface/topic/projections.pyc
 google-cloud-sdk/lib/surface/topic/resource_keys.py
 google-cloud-sdk/lib/surface/topic/resource_keys.pyc
+google-cloud-sdk/lib/surface/topic/startup.py
+google-cloud-sdk/lib/surface/topic/startup.pyc
 google-cloud-sdk/lib/surface/version.py
 google-cloud-sdk/lib/surface/version.pyc
 google-cloud-sdk/lib/third_party/
