@@ -1,4 +1,9 @@
-This class implements a complete RFC 2822 parser that
-locates email addresses in strings and returns a list of
-Email::Address objects found. Alternately you may construct
-objects manually.
+DEPRECATED class implementing an RFC 2822 parser that locates email
+addresses in strings and returns a list of Email::Address objects found.
+Alternately you may construct objects manually.
+
+"This module has a vulnerability (CVE-2015-7686) which allows remote
+attackers to cause denial of service. In other words, sometimes it takes
+way too long to process certain kinds of input. Maybe someday this will
+be fixed. Until then, use Email::Address::XS instead which has backward
+compatible API."
