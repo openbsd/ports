@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.367 2018/06/20 16:14:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -119,6 +119,7 @@
      SUBDIR += p5-Email-Abstract
      SUBDIR += p5-Email-Address
      SUBDIR += p5-Email-Address-List
+     SUBDIR += p5-Email-Address-XS
      SUBDIR += p5-Email-Date
      SUBDIR += p5-Email-Date-Format
      SUBDIR += p5-Email-Filter
