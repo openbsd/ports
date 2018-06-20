@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/20 11:33:20 feinerer Exp $
+lib/python${MODPY_VERSION}/site-packages/axolotl_curve25519.so
+lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/top_level.txt
