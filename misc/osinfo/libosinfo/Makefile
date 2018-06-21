@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/04 08:12:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/21 11:21:57 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=		devel/glib2 \
 
 RUN_DEPENDS=		misc/hwdata \
 			misc/osinfo/osinfo-db
+
+TEST_DEPENDS=		misc/osinfo/osinfo-db
 
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
 			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
