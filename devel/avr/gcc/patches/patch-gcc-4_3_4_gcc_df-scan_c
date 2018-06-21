@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc-4_3_4_gcc_df-scan_c,v 1.1 2018/06/21 14:23:11 kurt Exp $
+
+Index: gcc-4.3.4/gcc/df-scan.c
+--- gcc-4.3.4/gcc/df-scan.c.orig
++++ gcc-4.3.4/gcc/df-scan.c
+@@ -3846,7 +3846,7 @@ df_record_exit_block_uses (bitmap exit_block_uses)
+ {
+   struct df_collection_rec collection_rec;
+   memset (&collection_rec, 0, sizeof (struct df_collection_rec));
+-  collection_rec.use_vec = alloca (sizeof (struct df_ref*) * FIRST_PSEUDO_REGISTER);
++  collection_rec.use_vec = alloca (sizeof (struct df_ref*) * (FIRST_PSEUDO_REGISTER+1));
+ 
+   df_exit_block_uses_collect (&collection_rec, exit_block_uses);
+ 

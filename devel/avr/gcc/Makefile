@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/05/23 08:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/21 14:23:10 kurt Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -10,7 +10,7 @@ WANTLIB=		c gmp mpfr
 
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	avr-gcc-${V}
-REVISION=	1
+REVISION=	2
 DISTFILES=	gcc-core-${V}${EXTRACT_SUFX} \
 		gcc-g++-${V}${EXTRACT_SUFX}
 #EXTRACT_ONLY=	${DISTFILES}
