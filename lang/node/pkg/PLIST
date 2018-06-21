@@ -1,14 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/02/10 14:50:35 abieber Exp $
-@comment node/6.x/lib/node_modules/npm/bin/node-gyp-bin/node-gyp.orig
-@comment node/6.x/lib/node_modules/npm/lib/build.js.orig
-@comment node/6.x/lib/node_modules/npm/lib/npm.js.orig
-@comment node/6.x/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py.orig
-@comment node/6.x/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py.orig
-@comment node/6.x/lib/node_modules/npm/node_modules/node-gyp/lib/install.js.beforesubst
-@comment node/6.x/lib/node_modules/npm/node_modules/node-gyp/lib/install.js.orig
-@comment node/6.x/lib/nede_modules/npm/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-verify.1
-@comment node/6.x/lib/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-conv.1
-@comment node/6.x/lib/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-sign.1
+@comment $OpenBSD: PLIST,v 1.35 2018/06/21 23:13:28 abieber Exp $
 @bin bin/node
 bin/node-gyp
 bin/npm
@@ -1891,14 +1881,12 @@ lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypd.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypsh.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypsh.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py
-lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py.orig
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs_test.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py
-lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py.orig
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja_test.py
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja_test.pyc
@@ -1961,16 +1949,11 @@ lib/node_modules/node-gyp/gyp/tools/pretty_vcproj.pyc
 lib/node_modules/node-gyp/lib/
 lib/node_modules/node-gyp/lib/Find-VS2017.cs
 lib/node_modules/node-gyp/lib/build.js
-lib/node_modules/node-gyp/lib/build.js.orig
 lib/node_modules/node-gyp/lib/clean.js
 lib/node_modules/node-gyp/lib/configure.js
-lib/node_modules/node-gyp/lib/configure.js.beforesubst
-lib/node_modules/node-gyp/lib/configure.js.orig
 lib/node_modules/node-gyp/lib/find-node-directory.js
 lib/node_modules/node-gyp/lib/find-vs2017.js
 lib/node_modules/node-gyp/lib/install.js
-lib/node_modules/node-gyp/lib/install.js.beforesubst
-lib/node_modules/node-gyp/lib/install.js.orig
 lib/node_modules/node-gyp/lib/list.js
 lib/node_modules/node-gyp/lib/node-gyp.js
 lib/node_modules/node-gyp/lib/process-release.js
@@ -2726,7 +2709,6 @@ lib/node_modules/npm/bin/node-gyp-bin/
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.beforesubst
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
-lib/node_modules/npm/bin/node-gyp-bin/node-gyp.orig
 lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd
@@ -3010,7 +2992,6 @@ lib/node_modules/npm/lib/link.js
 lib/node_modules/npm/lib/logout.js
 lib/node_modules/npm/lib/ls.js
 lib/node_modules/npm/lib/npm.js
-lib/node_modules/npm/lib/npm.js.orig
 lib/node_modules/npm/lib/outdated.js
 lib/node_modules/npm/lib/owner.js
 lib/node_modules/npm/lib/pack.js
@@ -3101,7 +3082,7 @@ lib/node_modules/npm/lib/visnup.js
 lib/node_modules/npm/lib/whoami.js
 lib/node_modules/npm/lib/xmas.js
 lib/node_modules/npm/make.bat
-lib/node_modules/npm/man/
+@mandir lib/node_modules/npm/man/
 lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-README.1
 @man lib/node_modules/npm/man/man1/npm-access.1
@@ -4568,11 +4549,10 @@ lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/priv
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/signature.js
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/ssh-buffer.js
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/utils.js
-lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-conv.1
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-sign.1
-@man lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-verify.1
+lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-conv.1
+lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-sign.1
+lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/man/man1/sshpk-verify.1
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/
 lib/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/.npmignore

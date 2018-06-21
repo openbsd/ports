@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_v8_src_v8_gyp,v 1.1 2018/02/10 14:50:35 abieber Exp $
+$OpenBSD: patch-deps_v8_src_v8_gyp,v 1.2 2018/06/21 23:13:28 abieber Exp $
 
 Index: deps/v8/src/v8.gyp
 --- deps/v8/src/v8.gyp.orig
@@ -12,15 +12,3 @@ Index: deps/v8/src/v8.gyp
              }],
            ],
          },
-@@ -2046,9 +2046,10 @@
-                 '-L/usr/local/lib -lexecinfo',
-             ]},
-             'sources': [
-+              'base/debug/stack_trace_posix.cc',
-               'base/platform/platform-openbsd.cc',
-               'base/platform/platform-posix.h',
--              'base/platform/platform-posix.cc'
-+              'base/platform/platform-posix.cc',
-               'base/platform/platform-posix-time.h',
-               'base/platform/platform-posix-time.cc',
-             ],

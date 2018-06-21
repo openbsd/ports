@@ -1,8 +1,8 @@
-$OpenBSD: patch-deps_v8_Makefile,v 1.4 2018/02/10 14:50:35 abieber Exp $
+$OpenBSD: patch-deps_v8_Makefile,v 1.5 2018/06/21 23:13:28 abieber Exp $
 Index: deps/v8/Makefile
 --- deps/v8/Makefile.orig
 +++ deps/v8/Makefile
-@@ -432,7 +432,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+@@ -436,7 +436,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
  	$(eval V8_TARGET_ARCH:=$(subst .,,$(suffix $(basename $@))))
  	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(shell pwd)/gypfiles:$(PYTHONPATH):$(shell pwd)/tools/gyp/pylib:$(PYTHONPATH)" \
  	GYP_GENERATORS=make \
@@ -11,7 +11,7 @@ Index: deps/v8/Makefile
  	              -Igypfiles/standalone.gypi --depth=. \
  	              -Dv8_target_arch=$(V8_TARGET_ARCH) \
  	              $(if $(findstring $(CXX_TARGET_ARCH),$(V8_TARGET_ARCH)), \
-@@ -445,7 +445,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+@@ -449,7 +449,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
  $(OUTDIR)/Makefile.native: $(GYPFILES) $(ENVFILE)
  	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(shell pwd)/gypfiles:$(PYTHONPATH):$(shell pwd)/tools/gyp/pylib:$(PYTHONPATH)" \
  	GYP_GENERATORS=make \
