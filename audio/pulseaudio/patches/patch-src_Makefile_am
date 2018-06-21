@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_am,v 1.14 2017/09/19 11:50:43 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.15 2018/06/21 15:23:40 ajacoutot Exp $
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
-@@ -742,7 +742,7 @@ endif
+@@ -750,7 +750,7 @@ endif
  
  libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS) $(LIBSNDFILE_CFLAGS)
  libpulsecommon_@PA_MAJORMINOR@_la_LDFLAGS = $(AM_LDFLAGS) $(AM_LIBLDFLAGS) -avoid-version
@@ -11,7 +11,7 @@ Index: src/Makefile.am
  
  if HAVE_MEMFD
  libpulsecommon_@PA_MAJORMINOR@_la_SOURCES += \
-@@ -1282,6 +1282,9 @@ modlibexec_LTLIBRARIES += \
+@@ -1291,6 +1291,9 @@ modlibexec_LTLIBRARIES += \
  		module-oss.la
  endif
  
@@ -21,24 +21,17 @@ Index: src/Makefile.am
  if HAVE_COREAUDIO
  modlibexec_LTLIBRARIES += \
  		module-coreaudio-detect.la \
-@@ -1509,6 +1512,7 @@ SYMDEF_FILES = \
- 		module-x11-xsmp-symdef.h \
- 		module-x11-cork-request-symdef.h \
- 		module-oss-symdef.h \
-+		module-sndio-symdef.h \
- 		module-alsa-sink-symdef.h \
- 		module-alsa-source-symdef.h \
- 		module-alsa-card-symdef.h \
-@@ -1830,6 +1834,12 @@ liboss_util_la_LIBADD = $(MODULE_LIBADD)
- module_oss_la_SOURCES = modules/oss/module-oss.c
+@@ -1768,6 +1771,13 @@ module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
  module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la
+ module_oss_la_CFLAGS = $(AM_CFLAGS) -DPA_MODULE_NAME=module_oss
 +
 +# SNDIO
 +
 +module_sndio_la_SOURCES = modules/module-sndio.c
 +module_sndio_la_LDFLAGS = $(MODULE_LDFLAGS)
 +module_sndio_la_LIBADD = $(MODULE_LIBADD) -lsndio
++module_sndio_CFLAGS = $(AM_CFLAGS) -DPA_MODULE_NAME=module_sndio
  
  # COREAUDIO
  

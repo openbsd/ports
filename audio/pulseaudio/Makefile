@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2018/05/15 08:58:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2018/06/21 15:23:40 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -9,14 +9,13 @@ PORTROACH=		skipv:11.99.1
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		11.1
+VERSION=		12.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
 
-SHARED_LIBS +=  pulse                6.2      # .20.2
-SHARED_LIBS +=  pulse-simple         1.0      # .1.1
-SHARED_LIBS +=  pulse-mainloop-glib  1.0      # .0.5
+SHARED_LIBS +=  pulse                7.0      # .20.3
+SHARED_LIBS +=  pulse-simple         1.1      # .1.1
+SHARED_LIBS +=  pulse-mainloop-glib  1.1      # .0.5
 
 CATEGORIES=		audio
 
@@ -97,7 +96,8 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-waveout \
 			--disable-gconf \
 			--disable-avahi \
-			--disable-orc
+			--disable-orc \
+			--disable-gsettings
 
 .if ${MACHINE_ARCH} == "aarch64"
 CONFIGURE_ARGS+=	--disable-neon-opt
@@ -131,7 +131,6 @@ pre-configure:
 		aclocal && \
 		intltoolize --force
 ### END SNDIO ###
-	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio
 

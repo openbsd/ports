@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.10 2016/06/28 08:47:18 ajacoutot Exp $
---- src/modules/module-detect.c.orig	Tue May 10 14:28:04 2016
-+++ src/modules/module-detect.c	Tue Jun 28 09:57:18 2016
+$OpenBSD: patch-src_modules_module-detect_c,v 1.11 2018/06/21 15:23:40 ajacoutot Exp $
+Index: src/modules/module-detect.c
+--- src/modules/module-detect.c.orig
++++ src/modules/module-detect.c
 @@ -32,6 +32,10 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -12,17 +13,18 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.10 2016/06/28 08:47:18 ajacoutot
  #include <pulsecore/core-error.h>
  #include <pulsecore/module.h>
  #include <pulsecore/modargs.h>
-@@ -206,6 +210,19 @@ static int detect_solaris(pa_core *c, int just_one) {
+@@ -207,6 +211,20 @@ static int detect_solaris(pa_core *c, int just_one) {
  }
  #endif
  
 +#ifdef __OpenBSD__
 +static int detect_sndio(pa_core *c, int just_one) {
 +    char args[64];
++    pa_module *m = NULL;
 +
 +    pa_snprintf(args, sizeof(args), "device=%s", SIO_DEVANY);
 +
-+    if (!pa_module_load(c, "module-sndio", args))
++    if (pa_module_load(&m, c, "module-sndio", args) < 0)
 +        return 0;
 +
 +    return 1;
@@ -31,8 +33,8 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.10 2016/06/28 08:47:18 ajacoutot
 +
  #ifdef OS_IS_WIN32
  static int detect_waveout(pa_core *c, int just_one) {
-     /*
-@@ -247,6 +264,9 @@ int pa__init(pa_module*m) {
+     pa_module *m = NULL;
+@@ -249,6 +267,9 @@ int pa__init(pa_module*m) {
  #endif
  #ifdef OS_IS_WIN32
      if ((n = detect_waveout(m->core, just_one)) <= 0)

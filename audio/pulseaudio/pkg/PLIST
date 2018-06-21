@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/05/12 10:00:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/21 15:23:40 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
 @unexec-delete rm -rf /var/db/pulse
-bin/esdcompat
 @bin bin/pacat
 @bin bin/pacmd
 @bin bin/pactl
@@ -74,6 +73,7 @@ lib/pulse-${VERSION}/modules/libraop.so
 lib/pulse-${VERSION}/modules/librtp.so
 lib/pulse-${VERSION}/modules/module-allow-passthrough.so
 lib/pulse-${VERSION}/modules/module-always-sink.so
+lib/pulse-${VERSION}/modules/module-always-source.so
 lib/pulse-${VERSION}/modules/module-augment-properties.so
 lib/pulse-${VERSION}/modules/module-card-restore.so
 lib/pulse-${VERSION}/modules/module-cli-protocol-tcp.so
@@ -141,7 +141,7 @@ lib/pulseaudio/libpulsecommon-${VERSION}.so
 lib/pulseaudio/libpulsecore-${VERSION}.a
 lib/pulseaudio/libpulsecore-${VERSION}.la
 lib/pulseaudio/libpulsecore-${VERSION}.so
-@man man/man1/esdcompat.1
+libexec/pulse/
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1

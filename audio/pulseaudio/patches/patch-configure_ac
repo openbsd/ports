@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.16 2017/09/19 11:50:43 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.17 2018/06/21 15:23:40 ajacoutot Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1330,9 +1330,9 @@ fi
+@@ -1364,9 +1364,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
  AX_DEFINE_DIR(PA_SYSTEM_RUNTIME_PATH, PA_SYSTEM_RUNTIME_PATH, [System runtime dir])
