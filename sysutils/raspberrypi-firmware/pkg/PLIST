@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/03/18 09:19:41 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/21 03:05:08 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -28,6 +28,7 @@ share/raspberrypi-firmware/boot/overlays/ads7846.dtbo
 share/raspberrypi-firmware/boot/overlays/akkordion-iqdacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-digione.dtbo
+share/raspberrypi-firmware/boot/overlays/allo-katana-dac-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-piano-dac-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/applepi-dac.dtbo
@@ -35,6 +36,7 @@ share/raspberrypi-firmware/boot/overlays/at86rf233.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-addons.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-wm8731-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/audremap.dtbo
+share/raspberrypi-firmware/boot/overlays/balena-fin.dtbo
 share/raspberrypi-firmware/boot/overlays/bmp085_i2c-sensor.dtbo
 share/raspberrypi-firmware/boot/overlays/dht11.dtbo
 share/raspberrypi-firmware/boot/overlays/dionaudio-loco-v2.dtbo
@@ -74,9 +76,11 @@ share/raspberrypi-firmware/boot/overlays/i2s-gpio28-31.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-dacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/iqaudio-digi-wm8804-audio.dtbo
+share/raspberrypi-firmware/boot/overlays/jedec-spi-nor.dtbo
 share/raspberrypi-firmware/boot/overlays/justboom-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/justboom-digi.dtbo
 share/raspberrypi-firmware/boot/overlays/lirc-rpi.dtbo
+share/raspberrypi-firmware/boot/overlays/ltc294x.dtbo
 share/raspberrypi-firmware/boot/overlays/mbed-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp23017.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp23s17.dtbo
@@ -139,6 +143,7 @@ share/raspberrypi-firmware/boot/overlays/spi2-1cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-2cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-3cs.dtbo
 share/raspberrypi-firmware/boot/overlays/superaudioboard.dtbo
+share/raspberrypi-firmware/boot/overlays/sx150x.dtbo
 share/raspberrypi-firmware/boot/overlays/tinylcd35.dtbo
 share/raspberrypi-firmware/boot/overlays/uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/uart1.dtbo
