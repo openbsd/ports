@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_plugins_todo_gbp-todo-model_c,v 1.1 2018/04/25 09:51:10 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_todo_gbp-todo-model_c,v 1.2 2018/06/21 09:25:18 ajacoutot Exp $
 
 XXX rework and push upstream
 
 Index: src/plugins/todo/gbp-todo-model.c
 --- src/plugins/todo/gbp-todo-model.c.orig
 +++ src/plugins/todo/gbp-todo-model.c
-@@ -320,8 +320,10 @@ gbp_todo_model_mine_worker (GTask        *task,
+@@ -323,8 +323,10 @@ gbp_todo_model_mine_worker (GTask        *task,
  
    launcher = ide_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE);
  
