@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/04/23 08:49:06 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2018/06/21 17:23:36 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -136,6 +136,8 @@ share/vala-${API_V}/vapi/goocanvas.vapi
 share/vala-${API_V}/vapi/graphene-1.0.deps
 share/vala-${API_V}/vapi/graphene-1.0.vapi
 share/vala-${API_V}/vapi/gsl.vapi
+share/vala-${API_V}/vapi/gst-editing-services-1.0.deps
+share/vala-${API_V}/vapi/gst-editing-services-1.0.vapi
 share/vala-${API_V}/vapi/gstreamer-0.10.deps
 share/vala-${API_V}/vapi/gstreamer-0.10.vapi
 share/vala-${API_V}/vapi/gstreamer-1.0.vapi
