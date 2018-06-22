@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/22 13:05:57 abieber Exp $
 
 COMMENT =	pass compatible password manager written in go
 
-V =		1.6.11
+V =		1.8.1
 DISTNAME =	gopass-${V}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB += c pthread
 
-MASTER_SITES =	https://github.com/justwatchcom/gopass/releases/download/v${V}/
+MASTER_SITES =	https://github.com/gopasspw/gopass/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
@@ -25,7 +24,7 @@ MODGO_LDFLAGS =	-X "main.version=${V}"
 RUN_DEPENDS =	devel/git \
 		security/gnupg2
 
-ALL_TARGET =	github.com/justwatchcom/gopass
+ALL_TARGET =	github.com/gopasspw/gopass
 
 # Tests require MODGO_ENV, but break in weird ways when it is set.
 NO_TEST =	Yes
