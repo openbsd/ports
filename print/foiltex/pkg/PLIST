@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/05/04 11:13:52 edd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/22 17:33:51 espie Exp $
+share/texmf-local/
 share/texmf-local/doc/
 share/texmf-local/doc/latex/
 share/texmf-local/doc/latex/foiltex/
@@ -16,5 +17,5 @@ share/texmf-local/tex/latex/foiltex/foil30.clo
 share/texmf-local/tex/latex/foiltex/foils.cls
 share/texmf-local/tex/latex/foiltex/foils.sty
 share/texmf-local/tex/latex/foiltex/foilshrt.clo
-@exec %D/bin/mktexlsr %D/share/texmflocal > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr %D/share/texmflocal > /dev/null 2>&1
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
