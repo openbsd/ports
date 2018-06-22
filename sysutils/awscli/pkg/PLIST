@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2018/06/14 06:41:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2018/06/22 21:15:56 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -901,6 +901,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpn-gateway.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-account-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-addresses.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-aggregate-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-availability-zones.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-bundle-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-classic-link-instances.rst
@@ -937,6 +938,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-in
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interfaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-placement-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-prefix-lists.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-principal-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-regions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-modifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-offerings.rst
