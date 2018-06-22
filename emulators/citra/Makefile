@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/18 17:44:38 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/22 00:42:13 sthen Exp $
+
+BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
 
 USE_WXNEEDED =	Yes
 
