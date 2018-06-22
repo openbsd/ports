@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/10 08:39:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/22 16:31:45 espie Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -32,7 +32,7 @@ MAKE_FLAGS =		CC="${CC}" \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
-CONFIGURE_ARGS =	--program-prefix=u
+CONFIGURE_ARGS =	--program-prefix=u --disable-json
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
