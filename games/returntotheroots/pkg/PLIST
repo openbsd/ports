@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/09 03:47:55 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/22 20:42:12 bcallah Exp $
 @bin bin/s25client
 @bin bin/s25edit
 lib/driver/
@@ -62,7 +62,7 @@ share/s25rttr/RTTR/LSTS/GAME/map_new.LST/
 share/s25rttr/RTTR/LSTS/GAME/map_new.LST/20000.rle.nx0.ny0.bmp
 share/s25rttr/RTTR/LSTS/GAME/map_new.LST/3150.player.nx140.ny80.bmp
 share/s25rttr/RTTR/LSTS/GAME/map_new.LST/3151.player.nx140.ny80.bmp
-share/s25rttr/RTTR/LSTS/GAME/map_new.LST/31${MODLUA_DEP_VERSION}.player.nx140.ny80.bmp
+share/s25rttr/RTTR/LSTS/GAME/map_new.LST/3152.player.nx140.ny80.bmp
 share/s25rttr/RTTR/LSTS/GAME/map_new.LST/3153.player.nx140.ny80.bmp
 share/s25rttr/RTTR/LSTS/OUTLINE_FONTS.LST
 share/s25rttr/RTTR/LSTS/RTTR.LST
@@ -123,6 +123,10 @@ share/s25rttr/RTTR/MAPS/NEW/
 share/s25rttr/RTTR/MAPS/NEW/3islands.wld
 share/s25rttr/RTTR/MAPS/NEW/4ZIGARRE.SWD
 share/s25rttr/RTTR/MAPS/NEW/AKARTE03-fix.swd
+share/s25rttr/RTTR/MAPS/NEW/AM_FANGDERZEIT.SWD
+share/s25rttr/RTTR/MAPS/NEW/AM_FLUCHTWEG.SWD
+share/s25rttr/RTTR/MAPS/NEW/AM_KAESETOAST.SWD
+share/s25rttr/RTTR/MAPS/NEW/AM_TALDERSATYRE.SWD
 share/s25rttr/RTTR/MAPS/NEW/AufBreiter.swd
 share/s25rttr/RTTR/MAPS/NEW/Bagel5.SWD
 share/s25rttr/RTTR/MAPS/NEW/Bergruft.swd

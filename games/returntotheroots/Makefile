@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/10 09:26:02 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/22 20:42:12 bcallah Exp $
 
-V =		0.8.2.20180107
+V =		0.8.2.20180604
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
 DISTNAME =	s25client-${V}
 PKGNAME =	returntotheroots-${V}
@@ -20,7 +20,7 @@ WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt bz2 c execinfo iconv m miniupnpc
 WANTLIB += ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://devio.us/~bcallah/source/
+MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
 # C++11
 COMPILER =	base-clang ports-gcc ports-clang
