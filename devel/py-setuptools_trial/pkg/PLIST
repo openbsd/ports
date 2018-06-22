@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/22 22:02:09 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}setuptools_trial.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/_version.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_trial/setuptools_trial.py
+share/doc/python-setuptools_trial/
+share/doc/python-setuptools_trial/COPYING.SPL.txt
+share/doc/python-setuptools_trial/README.rst

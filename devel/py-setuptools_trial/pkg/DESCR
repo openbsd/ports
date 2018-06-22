@@ -1,0 +1,5 @@
+This is a plugin for setuptools that integrates Twisted trial. Once
+installed, "python ./setup.py trial" will run the package's unit
+tests using Twisted trial. The package can also optionally be
+configured so that "python ./setup.py test" will use Twisted trial
+instead of pyunit a.k.a. unittest.
