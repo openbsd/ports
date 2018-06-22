@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/20 15:14:11 stu Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/22 06:55:21 ajacoutot Exp $
 
 COMMENT =	dbus bindings for Tcl
 
 V =		2.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	dbus-tcl-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus
