@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/20 15:14:24 stu Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/22 06:57:08 ajacoutot Exp $
 
 COMMENT =	high level interface to dbus-tcl
 
 V =		1.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	dbus-intf-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus
