@@ -1,0 +1,29 @@
+$OpenBSD: patch-gtk_gtkfilechooserdefault_c,v 1.3 2018/06/22 18:59:05 tb Exp $
+
+Index: gtk/gtkfilechooserdefault.c
+--- gtk/gtkfilechooserdefault.c.orig
++++ gtk/gtkfilechooserdefault.c
+@@ -2810,8 +2810,8 @@ bookmarks_check_remove_sensitivity (GtkFileChooserDefa
+ {
+   GtkTreeIter iter;
+   gboolean removable = FALSE;
++  gboolean have_bookmark_name = FALSE;
+   gchar *name = NULL;
+-  gchar *tip;
+   
+   if (shortcuts_get_selected (impl, &iter))
+     {
+@@ -2820,6 +2820,13 @@ bookmarks_check_remove_sensitivity (GtkFileChooserDefa
+                           SHORTCUTS_COL_NAME, &name,
+                           -1);
+       gtk_widget_set_sensitive (impl->browse_shortcuts_remove_button, removable);
++
++      have_bookmark_name = name != NULL && name[0] != '\0';
++    }
++
++  if (have_bookmark_name)
++    {
++      char *tip;
+ 
+       if (removable)
+         tip = g_strdup_printf (_("Remove the bookmark '%s'"), name);

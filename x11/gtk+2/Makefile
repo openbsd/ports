@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2018/01/09 13:22:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.223 2018/06/22 18:59:05 tb Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -9,6 +9,7 @@ COMMENT-cups=		gtk+2 CUPS print backend
 
 GNOME_VERSION=		2.24.32
 GNOME_PROJECT=		gtk+
+REVISION=		0
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
