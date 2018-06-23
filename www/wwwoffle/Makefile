@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/23 14:56:24 ajacoutot Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
-DISTNAME=		wwwoffle-2.9i
+DISTNAME=		wwwoffle-2.9j
 CATEGORIES=		www
-REVISION=		0
 
 HOMEPAGE=		http://www.gedanken.org.uk/software/wwwoffle/
 

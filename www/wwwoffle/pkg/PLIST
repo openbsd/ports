@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/11/10 13:56:01 sthen Exp $
-@newgroup _wwwoffle:761
-@newuser _wwwoffle:761:_wwwoffle:daemon:wwwoffle user:${LOCALSTATEDIR}/spool/wwwoffle:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.9 2018/06/23 14:56:24 ajacoutot Exp $
 @pkgpath www/wwwoffle,de
 @pkgpath www/wwwoffle,es
 @pkgpath www/wwwoffle,fr
 @pkgpath www/wwwoffle,it
 @pkgpath www/wwwoffle,pl
 @pkgpath www/wwwoffle,ru
+@newgroup _wwwoffle:761
+@newuser _wwwoffle:761:_wwwoffle:daemon:wwwoffle user:${LOCALSTATEDIR}/spool/wwwoffle:/sbin/nologin
+@rcscript ${RCDIR}/wwwoffled
 @bin bin/wwwoffle
 bin/wwwoffle-fsck
 bin/wwwoffle-gunzip
@@ -44,7 +45,6 @@ share/doc/wwwoffle/README.win32
 share/doc/wwwoffle/de/
 share/doc/wwwoffle/de/CHANGES.CONF
 share/doc/wwwoffle/de/INSTALL
-share/doc/wwwoffle/de/LSM
 share/doc/wwwoffle/de/NEWS
 share/doc/wwwoffle/de/README.1st
 share/doc/wwwoffle/de/README.CONF
@@ -52,7 +52,6 @@ share/doc/wwwoffle/de/README.CONF.html
 share/doc/wwwoffle/de/README.html
 share/doc/wwwoffle/es/
 share/doc/wwwoffle/es/INSTALL
-share/doc/wwwoffle/es/LSM
 share/doc/wwwoffle/es/README
 share/doc/wwwoffle/es/README.1st
 share/doc/wwwoffle/es/README.CONF
@@ -69,18 +68,18 @@ share/doc/wwwoffle/fr/wwwoffle.conf.man
 @comment share/doc/wwwoffle/nl/
 share/doc/wwwoffle/pl/
 share/doc/wwwoffle/pl/INSTALL
-share/doc/wwwoffle/pl/LSM
 share/doc/wwwoffle/pl/README.1st
 share/doc/wwwoffle/pl/README.lang
+share/doc/wwwoffle/ru/
 share/examples/wwwoffle/
 @sample ${SYSCONFDIR}/wwwoffle/
-@owner root
 @mode 440
+@owner root
 share/examples/wwwoffle/wwwoffle.conf
 @sample ${SYSCONFDIR}/wwwoffle/wwwoffle.conf
 @mode
 @owner
-@cwd ${LOCALSTATEDIR}/spool
+@cwd /var/spool
 @owner _wwwoffle
 wwwoffle/
 @owner
@@ -925,6 +924,3 @@ wwwoffle/search/namazu/scripts/wwwoffle-mknmz-full
 wwwoffle/search/namazu/scripts/wwwoffle-mknmz-lasttime
 wwwoffle/search/namazu/scripts/wwwoffle-namazu
 wwwoffle/search/udmsearch
-@owner root
-@group
-@rcscript ${RCDIR}/wwwoffled
