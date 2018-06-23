@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.61 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/06/23 16:23:15 ajacoutot Exp $
 
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
-DISTNAME=		grip-3.5.2
+DISTNAME=		grip-3.8.1
 CATEGORIES=		audio
-REVISION=		1
 
 HOMEPAGE=		http://sourceforge.net/projects/grip/
 
-# GPLv2
+# GPLv2 - LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bonobo-2
-WANTLIB += bonobo-activation bonoboui-2 c cairo cdda_interface
-WANTLIB += cdda_paranoia crypto curl fontconfig freetype gconf-2
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 id3 intl m nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ssl ${COMPILER_LIBCXX} vte z
-WANTLIB += ORBitCosNaming-2 canberra dbus-1 dbus-glib-1 expat
-WANTLIB += ffi gailutil gcrypt gnome-keyring gpg-error graphite2
-WANTLIB += harfbuzz iconv ltdl lzma ncurses ogg pcre pixman-1
-WANTLIB += png util vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm xml2
+WANTLIB += ${COMPILER_LIBCXX} ICE ORBit-2 ORBitCosNaming-2 SM
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
+WANTLIB += bonoboui-2 c cairo canberra cdda_interface cdda_paranoia
+WANTLIB += crypto curl curses dbus-1 dbus-glib-1 expat ffi fontconfig
+WANTLIB += freetype fribidi gailutil gconf-2 gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
+WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
+WANTLIB += gpg-error graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += iconv id3 intl ltdl lzma m nghttp2 ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png popt ssl util vorbis
+WANTLIB += vorbisfile vte xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=grip/}
+
 MODULES=		x11/gnome
+
 MODGNOME_TOOLS=		yelp desktop-file-utils
 
 LIB_DEPENDS=		audio/cdparanoia \
@@ -40,5 +40,7 @@ RUN_DEPENDS=		audio/vorbis-tools
 BUILD_DEPENDS=		devel/gettext-tools
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ARGS=		--disable-werror
 
 .include <bsd.port.mk>
