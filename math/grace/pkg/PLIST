@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/08 10:37:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/23 19:53:36 schwarze Exp $
 bin/grace
 bin/gracebat
 grace/
@@ -7,10 +7,10 @@ grace/auxiliary/README
 grace/auxiliary/convcal.c
 grace/auxiliary/magic.grace
 grace/bin/
-grace/bin/convcal
+@bin grace/bin/convcal
 grace/bin/fdf2fit
 grace/bin/gracebat
-grace/bin/grconvert
+@bin grace/bin/grconvert
 grace/doc/
 grace/doc/10.1.dat
 grace/doc/10a.dat
@@ -30,9 +30,6 @@ grace/doc/Tutorial.html
 grace/doc/UsersGuide.dvi
 grace/doc/UsersGuide.html
 grace/doc/convcal.1
-grace/doc/grace.1
-grace/doc/gracebat.1
-grace/doc/grconvert.1
 grace/doc/mygraph.png
 grace/doc/nohelp.html
 grace/doc/philosophical-gnu-sm.jpg

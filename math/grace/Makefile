@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2018/06/23 19:53:36 schwarze Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	7
+REVISION=	8
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -71,12 +71,12 @@ post-install:
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/grace
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/gracebat
 	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/xmgrace
-	ln -sf ../../grace/doc/xmgrace.1 ${PREFIX}/man/man1/xmgrace.1
+	mv ${PREFIX}/grace/doc/xmgrace.1 ${PREFIX}/man/man1/xmgrace.1
 .endif
 	ln -sf ${GRACE_DIR}/include/grace_np.h ${PREFIX}/include/grace_np.h
 	ln -sf ${GRACE_DIR}/lib/libgrace_np.a ${PREFIX}/lib/libgrace_np.a
-	ln -sf ../../grace/doc/grace.1 ${PREFIX}/man/man1/grace.1
-	ln -sf ../../grace/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
-	ln -sf ../../grace/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
+	mv ${PREFIX}/grace/doc/grace.1 ${PREFIX}/man/man1/grace.1
+	mv ${PREFIX}/grace/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
+	mv ${PREFIX}/grace/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
 
 .include <bsd.port.mk>
