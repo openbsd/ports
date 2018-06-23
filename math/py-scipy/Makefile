@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/23 18:45:10 daniel Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -6,11 +6,10 @@ BROKEN-alpha =		ICE in scipy/optimize/minpack/lmstr.f:462
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	0.16.1
+MODPY_EGG_VERSION=	0.17.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math devel
-REVISION=		1
 
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
@@ -20,15 +19,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 WANTLIB += blas lapack m pthread ${COMPILER_LIBCXX} util
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
-HOMEPAGE=		http://numeric.scipy.org/
+HOMEPAGE=		https://scipy.org/
 
 MODULES=		lang/python fortran
 
 FLAVORS=		python3
 FLAVOR?=
 
-MODFORTRAN_COMPILER =	g77
+MODFORTRAN_COMPILER =	gfortran
+
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS=       Yes
 MODPY_SETUP=            setupegg.py
 
@@ -50,11 +50,6 @@ MODPY_COMMENT3 = "@comment "
 MODPY_COMMENT3 =
 .endif
 SUBST_VARS += MODPY_COMMENT3
-
-# fix perms
-post-extract:
-	find ${WRKSRC} -type d | xargs chmod 755
-	find ${WRKSRC} -type f | xargs chmod 644
 
 do-test: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
