@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2017/12/30 08:52:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2018/06/23 15:25:18 ajacoutot Exp $
 
 COMMENT=	Python interface to cURL library
 
-MODPY_EGG_VERSION=	7.43.0.1
+MODPY_EGG_VERSION=	7.43.0.2
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net

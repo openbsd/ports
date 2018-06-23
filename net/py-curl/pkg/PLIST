@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/01/06 10:49:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/23 15:25:18 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/curl/
 lib/python${MODPY_VERSION}/site-packages/curl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curl/${MODPY_PYCACHE}/
@@ -17,6 +17,7 @@ share/examples/${MODPY_PY_PREFIX}curl/
 share/examples/${MODPY_PY_PREFIX}curl/basicfirst.py
 share/examples/${MODPY_PY_PREFIX}curl/file_upload.py
 share/examples/${MODPY_PY_PREFIX}curl/linksys.py
+share/examples/${MODPY_PY_PREFIX}curl/opensocketexception.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/file_upload_buffer.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/file_upload_real.py
@@ -25,7 +26,11 @@ share/examples/${MODPY_PY_PREFIX}curl/quickstart/follow_redirect.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/form_post.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/get.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/get_python2.py
+share/examples/${MODPY_PY_PREFIX}curl/quickstart/get_python2_https.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/get_python3.py
+share/examples/${MODPY_PY_PREFIX}curl/quickstart/get_python3_https.py
+share/examples/${MODPY_PY_PREFIX}curl/quickstart/put_buffer.py
+share/examples/${MODPY_PY_PREFIX}curl/quickstart/put_file.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/response_headers.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/response_info.py
 share/examples/${MODPY_PY_PREFIX}curl/quickstart/write_file.py
