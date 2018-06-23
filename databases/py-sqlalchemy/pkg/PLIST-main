@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2018/06/23 21:39:45 landry Exp $
-@pkgpath databases/py-sqlalchemy
-@pkgpath databases/py-sqlalchemy,python3
+@comment $OpenBSD: PLIST-main,v 1.2 2018/06/23 22:29:48 sthen Exp $
+@pkgpath databases/py-sqlalchemy${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
