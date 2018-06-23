@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/20 07:34:29 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2018/06/23 21:56:10 landry Exp $
 
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	1.1.2
+MODPY_EGG_VERSION=	1.2.0
 DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
-PKGNAME=	py-buildslave-${MODPY_EGG_VERSION:S/post/pl/}
 
 CATEGORIES=	devel
 
@@ -21,22 +20,23 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=	devel/py-twisted \
-		devel/py-future
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
+		devel/py-future${MODPY_FLAVOR}
 
-NO_TEST =	Yes
-#TEST_DEPENDS=	${RUN_DEPENDS} \
-#		devel/py-setuptools_trial \
-#		devel/py-scandir \
-#		devel/py-mock
+TEST_DEPENDS=	${RUN_DEPENDS} \
+		devel/py-setuptools_trial${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR}
+
+UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 
 HOMEDIR =	/var/buildslave
 
 SUBST_VARS +=	HOMEDIR
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-buildslave
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-buildslave
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/buildbot-worker
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/buildbot-worker
 	${INSTALL_MAN} ${WRKSRC}/docs/buildbot-worker.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

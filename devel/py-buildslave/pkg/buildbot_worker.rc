@@ -1,0 +1,15 @@
+#!/bin/ksh
+#
+# $OpenBSD: buildbot_worker.rc,v 1.1 2018/06/23 21:56:10 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/buildbot-worker start --nodaemon"
+daemon_flags="${HOMEDIR}"
+daemon_user="_buildslave"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+rc_bg=YES
+
+rc_cmd $1
