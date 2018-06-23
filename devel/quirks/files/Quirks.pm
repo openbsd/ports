@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.617 2018/06/16 11:58:22 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.618 2018/06/23 09:00:55 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1294,7 +1294,6 @@ my $obsolete_reason = {
 	'goocanvas' => 3,
 	'osm2go' => 6,
 	'kedpm' => 6,
-	'spidermonkey' => 3,
 	'mediatomb' => 3,
 	'apache-couchdb' => 6,
 	'py-couchdb' => 6,
