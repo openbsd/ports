@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/05/07 18:05:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2018/06/23 09:00:11 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.52.3
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -37,7 +38,7 @@ MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
 
 LIB_DEPENDS=		devel/gobject-introspection \
-			devel/spidermonkey52>=52.0,<53.0 \
+			devel/spidermonkey52 \
 			x11/gtk+3
 
 TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)
