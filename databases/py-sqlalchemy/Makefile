@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/19 13:59:24 rpointel Exp $
+# $OpenBSD: Makefile,v 1.36 2018/06/23 21:39:45 landry Exp $
 
-COMMENT =		database toolkit for Python
+COMMENT-main =		database toolkit for Python
+COMMENT-docs =		documentation and examples for sqlalchemy
 
 MODPY_EGG_VERSION =	1.2.8
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
-PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
+FULLPKGNAME-main =	${MODPY_PY_PREFIX}sqlalchemy-${MODPY_EGG_VERSION}
+FULLPKGPATH-main =	databases/py-sqlalchemy${MODPY_FLAVOR}
+FULLPKGNAME-docs =	py-sqlalchemy-docs-${MODPY_EGG_VERSION}
+FULLPKGPATH-docs =	databases/py-sqlalchemy,-docs
+REVISION =		0
 
 CATEGORIES =		databases
 
@@ -13,13 +18,18 @@ HOMEPAGE =		http://www.sqlalchemy.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
-
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI = 		Yes
 
+WANTLIB +=		${MODPY_WANTLIB}
+WANTLIB +=		pthread
+RUN_DEPENDS +=		databases/py-sqlalchemy,-docs
+
+WANTLIB-docs =		#empty
+RUN_DEPENDS-docs =	#empty
+
+MULTI_PACKAGES =	-main -docs
 FLAVORS =		python3
 FLAVOR ?=
 
@@ -29,7 +39,7 @@ MAKE_ENV +=		PYTHONPATH=.
 TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 # On python3, sqlite3 is used.
-.if ${FLAVOR} == ""
+.if empty (FLAVOR)
 TEST_DEPENDS +=		databases/py-sqlite2${MODPY_FLAVOR}>=2.8.3
 .endif
 
