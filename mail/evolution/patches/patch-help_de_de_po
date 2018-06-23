@@ -1,0 +1,16 @@
+$OpenBSD: patch-help_de_de_po,v 1.1 2018/06/23 09:56:17 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/evolution/issues/31
+
+Index: help/de/de.po
+--- help/de/de.po.orig
++++ help/de/de.po
+@@ -1582,7 +1582,7 @@ msgstr ""
+ "Sie können die Zeitzone-Informationen auch individuell für jeden Termin "
+ "eingeben. Hierzu <link xref=\"calendar-usage\">erstellen Sie einen neuen "
+ "Termin oder bearbeiten einen bestehenden Termin</link> und klicken dann "
+-"unter <gui>Zeitzone</gui> auf <gui style=\"button\">Auswählen …/gui>, um die "
++"unter <gui>Zeitzone</gui> auf <gui style=\"button\">Auswählen …</gui>, um die "
+ "gewünschte Zeitzone einzugeben. Wenn Sie zum Beispiel in Berlin leben, aber "
+ "eine Telefonbesprechung mit jemandem in New York um 12 Uhr mittags haben, "
+ "müssen Sie Ihre Planungen untereinander koordinieren. Sie können Verwirrung "

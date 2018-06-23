@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.290 2018/05/07 10:01:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.291 2018/06/23 09:56:17 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.28.2
+GNOME_VERSION=		3.28.3
 
 CATEGORIES=		mail
 
@@ -24,7 +24,7 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += cryptui ebook-1.2 ebook-contacts-1.2 ecal-1.2 edataserver-1.2
+WANTLIB += ebook-1.2 ebook-contacts-1.2 ecal-1.2 edataserver-1.2
 WANTLIB += edataserverui-1.2 enchant gailutil-3 gcr-base-3 gcr-ui-3
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gtk-3
@@ -44,8 +44,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
 			textproc/gtkspell3 \
 			x11/gnome/autoar \
-			x11/gnome/desktop \
-			x11/gnome/libcryptui
+			x11/gnome/desktop
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 

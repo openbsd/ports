@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_calendar_gui_e-meeting-time-sel_h,v 1.1 2018/06/23 09:56:17 ajacoutot Exp $
+
+From a87ce36cdaaf59ca808e5836ba8d87fb8bef955c Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 14 Jun 2018 14:28:37 +0200
+Subject: [PATCH] Bug 796174 - strcat() considered unsafe for buffer overflow
+
+Index: src/calendar/gui/e-meeting-time-sel.h
+--- src/calendar/gui/e-meeting-time-sel.h.orig
++++ src/calendar/gui/e-meeting-time-sel.h
+@@ -55,9 +55,6 @@
+ 	(G_TYPE_INSTANCE_GET_CLASS \
+ 	((obj), E_TYPE_MEETING_TIME_SELECTOR))
+ 
+-/* Define this to include the debugging functions. */
+-#undef E_MEETING_TIME_SELECTOR_DEBUG
+-
+ /* This is the width of the icon column in the attendees list. */
+ #define E_MEETING_TIME_SELECTOR_ICON_COLUMN_WIDTH	24
+ 
+@@ -417,15 +414,6 @@ void		e_meeting_time_selector_refresh_free_busy
+ 						(EMeetingTimeSelector *mts,
+ 						 gint row,
+ 						 gboolean all);
+-
+-/* Debugging function to dump information on all attendees. */
+-#ifdef E_MEETING_TIME_SELECTOR_DEBUG
+-void		e_meeting_time_selector_dump	(EMeetingTimeSelector *mts);
+-gchar *		e_meeting_time_selector_dump_time
+-						(EMeetingTime *mtstime);
+-gchar *		e_meeting_time_selector_dump_date
+-						(GDate *date);
+-#endif /* E_MEETING_TIME_SELECTOR_DEBUG */
+ 
+ G_END_DECLS
+ 

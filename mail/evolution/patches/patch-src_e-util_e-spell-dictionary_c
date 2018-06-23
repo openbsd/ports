@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_e-util_e-spell-dictionary_c,v 1.1 2018/06/23 09:56:17 ajacoutot Exp $
+
+From a87ce36cdaaf59ca808e5836ba8d87fb8bef955c Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 14 Jun 2018 14:28:37 +0200
+Subject: [PATCH] Bug 796174 - strcat() considered unsafe for buffer overflow
+
+Index: src/e-util/e-spell-dictionary.c
+--- src/e-util/e-spell-dictionary.c.orig
++++ src/e-util/e-spell-dictionary.c
+@@ -101,8 +101,7 @@ _get_isocodeslocaledir (void)
+ 	if (beenhere)
+ 		return retval;
+ 
+-	strcpy (retval, _get_iso_codes_prefix ());
+-	strcat (retval, "\\share\\locale" );
++	g_snprintf (retval, sizeof (retval), "%s\\share\\locale", _get_iso_codes_prefix ());
+ 	beenhere = 1;
+ 	return retval;
+ }

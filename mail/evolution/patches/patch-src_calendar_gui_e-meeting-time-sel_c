@@ -1,0 +1,108 @@
+$OpenBSD: patch-src_calendar_gui_e-meeting-time-sel_c,v 1.1 2018/06/23 09:56:17 ajacoutot Exp $
+
+From a87ce36cdaaf59ca808e5836ba8d87fb8bef955c Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 14 Jun 2018 14:28:37 +0200
+Subject: [PATCH] Bug 796174 - strcat() considered unsafe for buffer overflow
+
+Index: src/calendar/gui/e-meeting-time-sel.c
+--- src/calendar/gui/e-meeting-time-sel.c.orig
++++ src/calendar/gui/e-meeting-time-sel.c
+@@ -1566,97 +1566,6 @@ e_meeting_time_selector_set_read_only (EMeetingTimeSel
+ 	gtk_widget_set_sensitive (mts->end_date_edit, !read_only);
+ }
+ 
+-/*
+- * DEBUGGING ROUTINES - functions to output various bits of data.
+- */
+-
+-#ifdef E_MEETING_TIME_SELECTOR_DEBUG
+-
+-/* Debugging function to dump information on all attendees. */
+-void
+-e_meeting_time_selector_dump (EMeetingTimeSelector *mts)
+-{
+-	EMeetingTimeSelectorAttendee *attendee;
+-	EMeetingTimeSelectorPeriod *period;
+-	gint row, period_num;
+-	gchar buffer[128];
+-
+-	g_return_if_fail (E_IS_MEETING_TIME_SELECTOR (mts));
+-
+-	g_print ("\n\nAttendee Information:\n");
+-
+-	for (row = 0; row < mts->attendees->len; row++) {
+-		attendee = &g_array_index (mts->attendees,
+-					   EMeetingTimeSelectorAttendee, row);
+-		g_print ("Attendee: %s\n", attendee->name);
+-		g_print (
+-			"  Longest Busy Period: %i days\n",
+-			attendee->longest_period_in_days);
+-
+-		e_meeting_time_selector_attendee_ensure_periods_sorted (mts, attendee);
+-#if 1
+-		for (period_num = 0;
+-		     period_num < attendee->busy_periods->len;
+-		     period_num++) {
+-			period = &g_array_index (attendee->busy_periods,
+-						 EMeetingTimeSelectorPeriod,
+-						 period_num);
+-
+-			/* These are just for debugging so don't need i18n. */
+-			g_date_strftime (
+-				buffer, sizeof (buffer),
+-				"%A, %B %d, %Y", &period->start.date);
+-			g_print (
+-				"  Start: %s %i:%02i\n", buffer,
+-				period->start.hour, period->start.minute);
+-
+-			g_date_strftime (
+-				buffer, sizeof (buffer),
+-				"%A, %B %d, %Y", &period->end.date);
+-			g_print (
+-				"  End  : %s %i:%02i\n", buffer,
+-				period->end.hour, period->end.minute);
+-		}
+-#endif
+-	}
+-
+-}
+-
+-/* This formats a EMeetingTimein a string and returns it.
+- * Note that it uses a static buffer. */
+-gchar *
+-e_meeting_time_selector_dump_time (EMeetingTime *mtstime)
+-{
+-	static gchar buffer[128];
+-
+-	gchar buffer2[128];
+-
+-	/* This is just for debugging so doesn't need i18n. */
+-	g_date_strftime (
+-		buffer, sizeof (buffer), "%A, %B %d, %Y",
+-		&mtstime->date);
+-	sprintf (
+-		buffer2, " at %i:%02i", (gint) mtstime->hour,
+-		(gint) mtstime->minute);
+-	strcat (buffer, buffer2);
+-
+-	return buffer;
+-}
+-
+-/* This formats a GDate in a string and returns it.
+- * Note that it uses a static buffer. */
+-gchar *
+-e_meeting_time_selector_dump_date (GDate *date)
+-{
+-	static gchar buffer[128];
+-
+-	/* This is just for debugging so doesn't need i18n. */
+-	g_date_strftime (buffer, sizeof (buffer), "%A, %B %d, %Y", date);
+-	return buffer;
+-}
+-
+-#endif /* E_MEETING_TIME_SELECTOR_DEBUG */
+-
+ static void
+ e_meeting_time_selector_on_invite_others_button_clicked (GtkWidget *button,
+                                                          EMeetingTimeSelector *mts)
