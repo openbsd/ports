@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/16 13:48:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/23 14:43:54 ajacoutot Exp $
 include/spice-1/
 include/spice-1/spice/
 include/spice-1/spice/barrier.h
@@ -14,6 +14,7 @@ include/spice-1/spice/qxl_dev.h
 include/spice-1/spice/qxl_windows.h
 include/spice-1/spice/start-packed.h
 include/spice-1/spice/stats.h
+include/spice-1/spice/stream-device.h
 include/spice-1/spice/types.h
 include/spice-1/spice/vd_agent.h
 include/spice-1/spice/vdi_dev.h
