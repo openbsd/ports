@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/23 09:01:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/23 11:49:15 jasper Exp $
 @pkgpath lang/spidermonkey
 @bin bin/js${MOZILLA_VERSION}
 bin/js${MOZILLA_VERSION}-config
@@ -137,6 +137,7 @@ include/mozjs-${MOZILLA_VERSION}/mozilla/StackWalk.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/StaticAnalysisFunctions.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/TaggedAnonymousMemory.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/TemplateLib.h
+include/mozjs-${MOZILLA_VERSION}/mozilla/TextUtils.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/ThreadLocal.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/TimeStamp.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/ToString.h
