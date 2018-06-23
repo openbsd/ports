@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.618 2018/06/23 09:00:55 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.619 2018/06/23 22:01:43 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -533,6 +533,13 @@ my $stem_extensions = {
 	'py-crypto' => 'py-cryptodome',
 	'py3-crypto' => 'py3-cryptodome',
 	'py-link-grammar' => 'py3-link-grammar',
+	'py-buildbot' => 'buildbot',
+	'py-buildbot-www' => 'py3-buildbot-www',
+	'py-buildbot-pkg' => 'py3-buildbot-pkg',
+	'py-buildbot-grid-view' => 'py3-buildbot-grid-view',
+	'py-buildbot-console-view' => 'py3-buildbot-console-view',
+	'py-buildbot-waterfall-view' => 'py3-buildbot-waterfall-view',
+	'py-buildslave' => 'buildbot-worker',
 };
 
 my $obsolete_reason = {
