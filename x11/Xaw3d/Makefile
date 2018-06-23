@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/03 14:29:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2018/06/23 13:57:51 ajacoutot Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
-PKGNAME=	Xaw3d-1.6.2
+PKGNAME=	Xaw3d-1.6.3
 DISTNAME=	lib${PKGNAME}
 
 SHARED_LIBS +=	Xaw3d                12.0     # 8.0
