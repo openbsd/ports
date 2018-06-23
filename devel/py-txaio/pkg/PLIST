@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/17 17:58:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/23 17:33:04 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/txaio/
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,20 +8,21 @@ lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/txaio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/txaio/__init__.py
-lib/python${MODPY_VERSION}/site-packages/txaio/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}_iotype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}_unframework.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}aio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}testutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/txaio/${MODPY_PYCACHE}tx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/_common.py
-lib/python${MODPY_VERSION}/site-packages/txaio/_common.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/_iotype.py
-lib/python${MODPY_VERSION}/site-packages/txaio/_iotype.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/_unframework.py
-lib/python${MODPY_VERSION}/site-packages/txaio/_unframework.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/_version.py
-lib/python${MODPY_VERSION}/site-packages/txaio/_version.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/aio.py
-lib/python${MODPY_VERSION}/site-packages/txaio/aio.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/interfaces.py
-lib/python${MODPY_VERSION}/site-packages/txaio/interfaces.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/testutil.py
-lib/python${MODPY_VERSION}/site-packages/txaio/testutil.pyc
 lib/python${MODPY_VERSION}/site-packages/txaio/tx.py
-lib/python${MODPY_VERSION}/site-packages/txaio/tx.pyc
