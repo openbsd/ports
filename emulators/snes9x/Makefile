@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2018/01/14 21:11:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.41 2018/06/23 12:11:02 fcambus Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
-DISTNAME =	snes9x-1.55
+DISTNAME =	snes9x-1.56.2
 
 CATEGORIES =	emulators games
 
@@ -17,21 +17,23 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	non-commercial
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL X11 Xext Xrandr Xv atk-1.0
-WANTLIB += c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl m pango-1.0
-WANTLIB += pangocairo-1.0 png xml2 z
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 Xext Xrandr Xv atk-1.0
+WANTLIB += c cairo cairo-gobject epoxy fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl
+WANTLIB += m pango-1.0 pangocairo-1.0 png xml2 z
 
 MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
-EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	devel/sdl \
+LIB_DEPENDS =	devel/sdl2 \
 		graphics/png \
 		textproc/libxml \
 		x11/gtk+3
+
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 MODULES =	textproc/intltool
 
@@ -45,7 +47,8 @@ CONFIGURE_ARGS = --without-portaudio \
 		 --without-alsa \
 		 --without-pulseaudio \
 		 --without-system-zip \
-		 --with-gtk3
+		 --with-gtk3 \
+		 --with-zlib
 
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -53,6 +56,15 @@ CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/gtk
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+pre-configure:
+	@cd ${WRKSRC} && \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snes9x

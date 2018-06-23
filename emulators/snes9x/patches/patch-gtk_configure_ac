@@ -1,0 +1,14 @@
+$OpenBSD: patch-gtk_configure_ac,v 1.1 2018/06/23 12:11:02 fcambus Exp $
+
+Index: gtk/configure.ac
+--- gtk/configure.ac.orig
++++ gtk/configure.ac
+@@ -165,7 +165,7 @@ else
+   CFLAGS="$CFLAGS -fomit-frame-pointer"
+ fi
+ 
+-LIBS="$LIBS -lX11 -ldl -lXext"
++LIBS="$LIBS -lX11 -lXext"
+ 
+ ZSNESFX='#ZSNESFX=yes'
+ ZSNESC4='#ZSNESC4=yes'
