@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2018/04/23 10:38:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2018/06/23 14:45:20 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
 DISTNAME=	virt-viewer-6.0
 CATEGORIES=	x11
-REVISION=	3
+REVISION=	4
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -26,7 +26,7 @@ WANTLIB += hogweed iconv idn2 intl jpeg lz4 lzma m nettle nghttp2 ogg
 WANTLIB += opus orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pulse pulse-mainloop-glib sasl2
 WANTLIB += sndfile spice-client-glib-2.0 spice-client-gtk-3.0
-WANTLIB += spice-controller ssh2 ssl tasn1 unistring util virt
+WANTLIB += ssh2 ssl tasn1 unistring util virt
 WANTLIB += virt-glib-1.0 vorbis vorbisenc xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=	http://virt-manager.org/download/sources/virt-viewer/
