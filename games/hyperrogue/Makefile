@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/15 23:33:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/23 17:28:27 bcallah Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
-GH_TAGNAME =	v10.4b
+GH_TAGNAME =	v10.4f
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -38,9 +38,12 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 # Disable hardcoded optimizations
+# savepng.c was renamed to savepng.cpp...
+# Correct version number
 # autoreconf taken from games/manaplus
 pre-configure:
-	sed -i 's,-O0,,g' ${WRKSRC}/Makefile.am
+	sed -i -e 's,-O0,,g' -e 's,savepng.c,savepng.cpp,g' ${WRKSRC}/Makefile.am
+	sed -i 's,10.4b,10.4f,g' ${WRKSRC}/configure.ac
 	cd ${WRKSRC} && \
 		${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
