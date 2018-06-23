@@ -1,8 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/28 14:45:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/23 14:57:02 ajacoutot Exp $
 @bin bin/qt5ct
 lib/qt5/plugins/platformthemes/libqt5ct.so
 lib/qt5/plugins/styles/
 lib/qt5/plugins/styles/libqt5ct-style.so
 share/applications/qt5ct.desktop
+share/qt5ct/
+share/qt5ct/colors/
+share/qt5ct/colors/airy.conf
+share/qt5ct/colors/darker.conf
+share/qt5ct/colors/dusk.conf
+share/qt5ct/colors/sand.conf
+share/qt5ct/colors/simple.conf
+share/qt5ct/colors/waves.conf
+share/qt5ct/qss/
+share/qt5ct/qss/fusion-fixes.qss
+share/qt5ct/qss/scrollbar-simple.qss
+share/qt5ct/qss/sliders-simple.qss
+share/qt5ct/qss/tooltip-simple.qss
+share/qt5ct/qss/traynotification-simple.qss
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
