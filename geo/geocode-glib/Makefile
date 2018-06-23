@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/23 13:04:50 jasper Exp $
 
 COMMENT=	convenience library for the geocoding
 
-GNOME_VERSION=	3.24.0
+GNOME_VERSION=	3.26.0
 GNOME_PROJECT=	geocode-glib
-REVISION=	0
 
 SHARED_LIBS +=	geocode-glib         0.1      # 0.0
 
@@ -16,18 +15,18 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
-WANTLIB += json-glib-1.0 lzma m pcre pthread soup-2.4 sqlite3 xml2 z
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0 m soup-2.4
 
-MODULES=	x11/gnome
-
+MODULES=	devel/meson \
+		x11/gnome
 
 LIB_DEPENDS=	devel/json-glib>=1.0.0 \
 		devel/libsoup
 
 MODGNOME_TOOLS += gobject-introspection gtk-update-icon-cache
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS +=-Denable-gtk-doc=false \
+		 -Denable-installed-tests=false
 
 PORTHOME=	${WRKDIST}
 
