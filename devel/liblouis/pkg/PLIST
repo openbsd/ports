@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/27 15:06:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/06/23 17:52:25 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -41,7 +41,6 @@ lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}__init__.${MODPY_
 @man man/man1/lou_translate.1
 share/liblouis/
 share/liblouis/tables/
-share/liblouis/tables/Cz-Cz-g1.utb
 share/liblouis/tables/Es-Es-G0.utb
 share/liblouis/tables/Es-Es-g1.utb
 share/liblouis/tables/IPA-unicode-range.uti
@@ -84,7 +83,9 @@ share/liblouis/tables/controlchars.cti
 share/liblouis/tables/corrections.cti
 share/liblouis/tables/countries.cti
 share/liblouis/tables/cs-chardefs.cti
+share/liblouis/tables/cs-comp8.utb
 share/liblouis/tables/cs-g1.ctb
+share/liblouis/tables/cs-letterDef8Dots.uti
 share/liblouis/tables/cs-translation.cti
 share/liblouis/tables/cs.tbl
 share/liblouis/tables/cy-cy-g1.utb

@@ -1,8 +1,9 @@
-$OpenBSD: patch-python_louis_Makefile_in,v 1.9 2017/12/30 08:43:25 ajacoutot Exp $
+$OpenBSD: patch-python_louis_Makefile_in,v 1.10 2018/06/23 17:52:25 ajacoutot Exp $
+
 Index: python/louis/Makefile.in
 --- python/louis/Makefile.in.orig
 +++ python/louis/Makefile.in
-@@ -993,7 +993,7 @@ uninstall-am:
+@@ -1007,7 +1007,7 @@ uninstall-am:
  
  
  all:
