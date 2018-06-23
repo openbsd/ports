@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/01/21 19:40:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/23 11:26:12 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -317,6 +317,7 @@ lib/elixir/lib/logger/ebin/
 lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Backends.Console.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Config.beam
+lib/elixir/lib/logger/ebin/Elixir.Logger.ErlangHandler.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.ErrorHandler.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Formatter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Translator.beam
