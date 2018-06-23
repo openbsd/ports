@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/17 06:55:04 jasper Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.3 2018/06/23 13:06:52 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/croniter/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,13 +7,13 @@ lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/croniter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}croniter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/croniter/croniter.py
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}test_croniter.${MODPY_PYC_MAGIC_TAG}pyc
