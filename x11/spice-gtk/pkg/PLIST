@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/12/02 18:10:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/23 14:45:01 ajacoutot Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -15,7 +15,6 @@ include/spice-client-glib-2.0/channel-usbredir.h
 include/spice-client-glib-2.0/channel-webdav.h
 include/spice-client-glib-2.0/smartcard-manager.h
 include/spice-client-glib-2.0/spice-audio.h
-include/spice-client-glib-2.0/spice-channel-enums.h
 include/spice-client-glib-2.0/spice-channel.h
 include/spice-client-glib-2.0/spice-client.h
 include/spice-client-glib-2.0/spice-file-transfer-task.h
@@ -34,8 +33,6 @@ include/spice-client-gtk-3.0/spice-gtk-session.h
 include/spice-client-gtk-3.0/spice-widget-enums.h
 include/spice-client-gtk-3.0/spice-widget.h
 include/spice-client-gtk-3.0/usb-device-widget.h
-include/spice-controller/
-include/spice-controller/spice-controller.h
 lib/girepository-1.0/SpiceClientGLib-2.0.typelib
 lib/girepository-1.0/SpiceClientGtk-3.0.typelib
 lib/libspice-client-glib-2.0.a
@@ -44,12 +41,8 @@ lib/libspice-client-glib-2.0.la
 lib/libspice-client-gtk-3.0.a
 lib/libspice-client-gtk-3.0.la
 @lib lib/libspice-client-gtk-3.0.so.${LIBspice-client-gtk-3.0_VERSION}
-lib/libspice-controller.a
-lib/libspice-controller.la
-@lib lib/libspice-controller.so.${LIBspice-controller_VERSION}
 lib/pkgconfig/spice-client-glib-2.0.pc
 lib/pkgconfig/spice-client-gtk-3.0.pc
-lib/pkgconfig/spice-controller.pc
 @man man/man1/spice-client.1
 share/gir-1.0/SpiceClientGLib-2.0.gir
 share/gir-1.0/SpiceClientGtk-3.0.gir
@@ -100,4 +93,3 @@ share/vala/vapi/spice-client-glib-2.0.deps
 share/vala/vapi/spice-client-glib-2.0.vapi
 share/vala/vapi/spice-client-gtk-3.0.deps
 share/vala/vapi/spice-client-gtk-3.0.vapi
-share/vala/vapi/spice-protocol.vapi

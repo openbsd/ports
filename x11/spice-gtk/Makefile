@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2018/04/28 08:28:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2018/06/23 14:45:01 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.34
-REVISION=	1
+DISTNAME=	spice-gtk-0.35
 
 CATEGORIES=	x11 net
 
-SHARED_LIBS +=  spice-client-glib-2.0     4.0 # 14.0
-SHARED_LIBS +=  spice-client-gtk-3.0      2.1 # 5.0
-SHARED_LIBS +=  spice-controller          1.2 # 0.0
+SHARED_LIBS +=  spice-client-glib-2.0     5.0 # 14.0
+SHARED_LIBS +=  spice-client-gtk-3.0      3.0 # 5.0
 
 HOMEPAGE=	http://www.spice-space.org/page/Spice-Gtk
 
@@ -38,11 +36,11 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
-		devel/spice-protocol>=0.12.11 \
+		devel/spice-protocol>=0.12.14 \
 		sysutils/usbutils \
 		textproc/asciidoc
 
-RUN_DEPENDS=	devel/spice-protocol>=0.12.11 \
+RUN_DEPENDS=	devel/spice-protocol>=0.12.14 \
 		sysutils/usbutils
 
 LIB_DEPENDS=	archivers/lz4 \
