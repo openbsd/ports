@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/15 08:53:49 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/23 21:42:29 landry Exp $
 
-REVISION=2
+REVISION=3
 
 COMMENT =	sqlalchemy support for flask
 
