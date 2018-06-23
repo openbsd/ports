@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2017/07/27 14:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2018/06/23 16:14:33 ajacoutot Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 #'
 
-DISTNAME=	lame-3.99.5
-REVISION=	1
+DISTNAME=	lame-3.100
 
-SHARED_LIBS +=  mp3lame              2.1      # 0.1
+SHARED_LIBS +=  mp3lame              2.1      # 0.0
 
 CATEGORIES=	audio
 
@@ -18,18 +17,20 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c iconv m ncurses
+WANTLIB += c curses iconv m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 
 LIB_DEPENDS=	converters/libiconv
 
-USE_GMAKE=	Yes
-
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ARGS=	--enable-mp3rtp \
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS= --disable-cpml \
+		--disable-decoder \
+		--enable-frontend \
+		--enable-dynamic-frontends \
 		--disable-mp3x \
+		--enable-mp3rtp \
+		--without-dmalloc \
 		--with-fileio=lame
 
 .if ${MACHINE_ARCH} == "i386"
