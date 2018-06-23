@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2018/03/17 08:34:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2018/06/23 07:23:09 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-VER=		2.7
+VER=		2.8
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
 
-SHARED_LIBS=	x265	14.0
+SHARED_LIBS=	x265	15.0
 
 HOMEPAGE=	http://x265.org/
 
