@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1741 2018/06/22 22:03:27 landry Exp $
+# $OpenBSD: Makefile,v 1.1742 2018/06/23 21:48:36 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1582,6 +1582,7 @@
      SUBDIR += py-twisted
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio
+     SUBDIR += py-txaio,python3
      SUBDIR += py-typing
      SUBDIR += py-typing,python3
      SUBDIR += py-tz

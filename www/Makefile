@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.870 2018/06/12 04:45:54 rpointel Exp $
+# $OpenBSD: Makefile,v 1.871 2018/06/23 21:48:36 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -375,6 +375,7 @@
      SUBDIR += py-CherryPy
      SUBDIR += py-aiohttp
      SUBDIR += py-autobahn
+     SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker
      SUBDIR += py-beaker,python3
      SUBDIR += py-beautifulsoup
@@ -457,6 +458,7 @@
      SUBDIR += py-selenium,python3
      SUBDIR += py-sockjs-tornado
      SUBDIR += py-tempita
+     SUBDIR += py-tempita,python3
      SUBDIR += py-terminado
      SUBDIR += py-terminado,python3
      SUBDIR += py-tornado
