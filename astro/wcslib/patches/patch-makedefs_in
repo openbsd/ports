@@ -1,7 +1,8 @@
-$OpenBSD: patch-makedefs_in,v 1.1.1.1 2013/04/11 14:05:18 zhuk Exp $
---- makedefs.in.orig	Tue Jan 29 09:29:22 2013
-+++ makedefs.in	Wed Feb 13 17:22:13 2013
-@@ -131,7 +131,7 @@
+$OpenBSD: patch-makedefs_in,v 1.2 2018/06/23 16:24:07 ajacoutot Exp $
+Index: makedefs.in
+--- makedefs.in.orig
++++ makedefs.in
+@@ -132,7 +132,7 @@
  
    LIBDIR   := $(DESTDIR)@libdir@
    BINDIR   := $(DESTDIR)@bindir@
