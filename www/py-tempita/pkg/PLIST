@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/30 21:43:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/23 17:34:56 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,10 +7,11 @@ lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/tempita/
 lib/python${MODPY_VERSION}/site-packages/tempita/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tempita/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/tempita/__main__.py
-lib/python${MODPY_VERSION}/site-packages/tempita/__main__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tempita/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tempita/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tempita/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tempita/${MODPY_PYCACHE}_looper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tempita/${MODPY_PYCACHE}compat3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tempita/_looper.py
-lib/python${MODPY_VERSION}/site-packages/tempita/_looper.pyc
 lib/python${MODPY_VERSION}/site-packages/tempita/compat3.py
-lib/python${MODPY_VERSION}/site-packages/tempita/compat3.pyc
