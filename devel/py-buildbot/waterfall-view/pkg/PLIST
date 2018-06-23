@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/18 20:35:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/23 21:57:50 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view-${MODPY_EGG_VER
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/__init__.py
-lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/static/scripts.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_waterfall_view/static/styles.css

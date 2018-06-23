@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/14 17:12:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/23 21:57:50 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.py
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/d3.min.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/
