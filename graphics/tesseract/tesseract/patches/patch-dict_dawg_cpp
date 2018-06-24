@@ -1,4 +1,5 @@
-$OpenBSD: patch-dict_dawg_cpp,v 1.1 2015/11/13 12:54:23 ajacoutot Exp $
+$OpenBSD: patch-dict_dawg_cpp,v 1.2 2018/06/24 12:27:05 ajacoutot Exp $
+
 --- dict/dawg.cpp.orig	Thu Jul 22 02:48:12 2010
 +++ dict/dawg.cpp	Fri Jul  8 13:23:50 2011
 @@ -29,6 +29,10 @@

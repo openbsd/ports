@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/03 13:59:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/24 12:27:05 ajacoutot Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-GH_TAGNAME=	3.05.01
+GH_TAGNAME=	3.05.02
 
 SHARED_LIBS +=  tesseract            3.2      # 3.5
 
-WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig freetype
-WANTLIB += gif glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
-WANTLIB += iconv icudata icui18n icuuc intl jpeg lept m openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread ${LIBCXX} tiff webp xcb xcb-render
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender c cairo expat ffi
+WANTLIB += fontconfig freetype fribidi gif glib-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 harfbuzz iconv icudata icui18n
+WANTLIB += icuuc intl jpeg lept m openjp2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png tiff webp xcb xcb-render
 WANTLIB += xcb-shm z
 
 # c++11: needed to build the training tools

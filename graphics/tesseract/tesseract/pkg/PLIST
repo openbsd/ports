@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/28 21:01:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/24 12:27:05 ajacoutot Exp $
 @pkgpath graphics/tesseract,-main
 @pkgpath graphics/tesseract
 @bin bin/ambiguous_words
@@ -60,7 +60,6 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/tesseract/
 share/examples/tesseract/eurotext.tif
 share/examples/tesseract/phototest.tif
-share/tessdata/
 share/tessdata/configs/
 share/tessdata/configs/ambigs.train
 share/tessdata/configs/api_config
