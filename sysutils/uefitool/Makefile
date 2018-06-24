@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/18 15:08:19 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/24 10:56:55 kn Exp $
 
 COMMENT =		parse, extract and modify UEFI firmware images
 
 GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
-GH_TAGNAME =		0.22.3
+GH_TAGNAME =		0.24.0
 
 CATEGORIES =		sysutils
 
