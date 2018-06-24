@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/04/27 16:25:12 solene Exp $
+# $OpenBSD: Makefile,v 1.38 2018/06/24 18:33:36 solene Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.4.6
+V =			1.4.8
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -20,10 +20,6 @@ MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
-
-MODULES=		gcc4
-MODGCC4_ARCHS=		i386
-MODGCC4_LANGS=		c
 
 WANTLIB=		c m util
 
@@ -66,10 +62,7 @@ LOCAL_VERSION =		openbsd
 VERSION_FILE =		${WRKSRC}/version.lisp-expr
 
 pre-configure:
-	sed 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' \
-		< ${VERSION_FILE} > ${VERSION_FILE}.new
-	mv ${VERSION_FILE}.new ${VERSION_FILE}
-	sed -i 's,egcc,${CC},g' ${WRKSRC}/src/runtime/Config.*-openbsd
+	sed -i 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' ${VERSION_FILE}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
