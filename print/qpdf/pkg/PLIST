@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/09 09:20:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/24 07:37:32 ajacoutot Exp $
 bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate
 include/qpdf/
 include/qpdf/Buffer.hh
 include/qpdf/BufferInputSource.hh
+include/qpdf/ClosedFileInputSource.hh
 include/qpdf/Constants.h
 include/qpdf/DLL.h
 include/qpdf/FileInputSource.hh
@@ -21,10 +22,17 @@ include/qpdf/Pl_RunLength.hh
 include/qpdf/Pl_StdioFile.hh
 include/qpdf/PointerHolder.hh
 include/qpdf/QPDF.hh
+include/qpdf/QPDFAcroFormDocumentHelper.hh
+include/qpdf/QPDFAnnotationObjectHelper.hh
+include/qpdf/QPDFDocumentHelper.hh
 include/qpdf/QPDFExc.hh
+include/qpdf/QPDFFormFieldObjectHelper.hh
 include/qpdf/QPDFObjGen.hh
 include/qpdf/QPDFObject.hh
 include/qpdf/QPDFObjectHandle.hh
+include/qpdf/QPDFObjectHelper.hh
+include/qpdf/QPDFPageDocumentHelper.hh
+include/qpdf/QPDFPageObjectHelper.hh
 include/qpdf/QPDFTokenizer.hh
 include/qpdf/QPDFWriter.hh
 include/qpdf/QPDFXRefEntry.hh
