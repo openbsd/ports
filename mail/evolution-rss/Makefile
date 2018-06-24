@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2018/05/15 13:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2018/06/24 07:19:15 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		19
+REVISION=		20
 
 CATEGORIES=		mail
 
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xxf86vm archive atk-1.0 atk-bridge-2.0
+WANTLIB += Xrandr Xrender Xt Xxf86vm archive aspell atk-1.0 atk-bridge-2.0
 WANTLIB += atspi brotlicommon brotlidec bz2 c cairo cairo-gobject
-WANTLIB += camel-1.2 canberra canberra-gtk3 crypto cryptui curl
-WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += enchant epoxy expat ffi fontconfig freetype fribidi
+WANTLIB += camel-1.2 canberra canberra-gtk3 crypto curl db dbus-1
+WANTLIB += drm ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
+WANTLIB += edata-book-1.2 edataserver-1.2 edataserverui-1.2 enchant
+WANTLIB += enchant-2 epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gailutil-3 gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdata
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-autoar-0 gnome-autoar-gtk-0 gnome-desktop-3 goa-1.0
@@ -39,7 +39,7 @@ WANTLIB += pixman-1 plc4 plds4 png sasl2 secret-1 smime3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 tasn1 vorbis vorbisfile
 WANTLIB += webkit2gtk-4.0 webp webpdemux woff2common woff2dec
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z aspell enchant-2
+WANTLIB += xml2 xslt z
 WANTLIB += lib/evolution/eabutil
 WANTLIB += lib/evolution/econtacteditor
 WANTLIB += lib/evolution/econtactlisteditor
