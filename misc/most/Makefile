@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2015/04/25 21:56:38 rpe Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/24 12:06:43 ajacoutot Exp $
 
-PORTROACH=	limit:.*[^a]$$
+PORTROACH=	skipv:5.0.0
 
 COMMENT=	browse or page through a text file
 
