@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/24 10:54:19 kn Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-1.5
-REVISION=	4
+REVISION=	5
 CATEGORIES=	security
 
 # BSD
@@ -11,13 +11,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	c pthread
 
-HOMEPAGE=	http://www.sshguard.net/
+HOMEPAGE=	https://www.sshguard.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sshguard/}
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
-NO_TEST=	Yes
+CONFIGURE_ARGS=	--with-firewall=pf
 
-CONFIGURE_ARGS = --with-firewall=pf 
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
