@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.75 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2018/06/24 12:22:51 ajacoutot Exp $
+
+PORTROACH=	skipv:gd-2.2.5
 
 COMMENT=	library for dynamic creation of images
 
