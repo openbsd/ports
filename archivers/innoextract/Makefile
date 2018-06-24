@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/24 08:56:16 jca Exp $
 
 COMMENT=	unpack Inno Setup installers
 
-DISTNAME=	innoextract-1.6
-REVISION=	0
+DISTNAME=	innoextract-1.7
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
@@ -16,7 +15,7 @@ MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB+=	boost_system-mt c iconv lzma m pthread ${COMPILER_LIBCXX}
+WANTLIB+=	c iconv lzma m pthread ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \
@@ -37,6 +36,6 @@ NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/innoextract ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/innoextract.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKBUILD}/innoextract.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
