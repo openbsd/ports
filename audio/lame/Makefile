@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2018/06/23 16:14:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/06/24 10:25:21 ajacoutot Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 #'
 
 DISTNAME=	lame-3.100
+REVISION=	0
 
-SHARED_LIBS +=  mp3lame              2.1      # 0.0
+SHARED_LIBS +=  mp3lame              2.2      # 0.0
 
 CATEGORIES=	audio
 
@@ -25,9 +26,6 @@ LIB_DEPENDS=	converters/libiconv
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --disable-cpml \
-		--disable-decoder \
-		--enable-frontend \
-		--enable-dynamic-frontends \
 		--disable-mp3x \
 		--enable-mp3rtp \
 		--without-dmalloc \
