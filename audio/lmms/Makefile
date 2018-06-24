@@ -1,57 +1,61 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:15 sthen Exp $
-
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
+# $OpenBSD: Makefile,v 1.15 2018/06/24 11:57:13 sthen Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
-DISTNAME =		lmms-0.4.8
-REVISION =		4
+# rolled from git; requires submodules
+# git clone --recurse-submodules -b v1.2.0-rc6 https://github.com/lmms/lmms
+DISTNAME =		lmms-1.2.0rc6
+EXTRACT_SUFX =		.tar.xz
+
 CATEGORIES =		audio
 
-HOMEPAGE =		http://lmms.sourceforge.net/
+HOMEPAGE =		https://lmms.io/
+
+MASTER_SITES =		https://spacehopper.org/mirrors/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		ICE SM QtGui QtXml X11 Xext Xft Xinerama c fltk jack \
-			fftw3f fluidsynth fontconfig freetype m ncurses ogg \
-			pthread readline samplerate sndfile sndio vorbis \
-			vorbisenc vorbisfile z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += c curses fftw3f fluidsynth jack m mp3lame ogg portaudio
+WANTLIB += readline samplerate sndfile sndio vorbis vorbisenc
+WANTLIB += vorbisfile
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lmms/}
-EXTRACT_SUFX =		.tar.bz2
+COMPILER =		base-clang ports-gcc
 
-MODULES =		x11/qt4 devel/cmake
+MODULES =		x11/qt5 devel/cmake
 
-BUILD_DEPENDS =		audio/portaudio-svn
 RUN_DEPENDS =		devel/desktop-file-utils \
-			misc/shared-mime-info
-LIB_DEPENDS =		audio/jack \
-			math/fftw3,float \
-			audio/fluidsynth \
+			misc/shared-mime-info \
+			x11/gtk+3,-guic
+LIB_DEPENDS =		audio/fluidsynth \
+			audio/jack \
+			audio/lame \
 			audio/libsamplerate \
 			audio/libvorbis \
-			x11/fltk
+			audio/portaudio-svn \
+			math/fftw3,float
 
-USE_X11 =		Yes
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+			CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-			CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
-CONFIGURE_ARGS =	-DWANT_OSS=OFF -DWANT_SDL=OFF -DWANT_PULSEAUDIO=OFF
+CONFIGURE_ARGS =	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5/cmake \
+			-DLMMS_HAVE_OSS=FALSE \
+			-DWANT_QT5=ON \
+			-DWANT_SDL=OFF \
+			-DWANT_PULSEAUDIO=OFF
 
 # these are all available as separate ports
-CONFIGURE_ARGS +=	-DWANT_CALF=OFF -DWANT_CAPS=OFF -DWANT_CMT=OFF \
-			-DWANT_SWH=OFF -DWANT_TAP=OFF
+CONFIGURE_ARGS +=	-DWANT_CALF=OFF \
+			-DWANT_CAPS=OFF \
+			-DWANT_CMT=OFF \
+			-DWANT_SWH=OFF \
+			-DWANT_TAP=OFF
 
-MAKE_FLAGS +=		VERBOSE=1
+# needs wine
+CONFIGURE_ARGS +=	-DWANT_VST=OFF
 
 NO_TEST =		Yes
-
-post-patch:
-	cp ${FILESDIR}/FindSndio.cmake ${WRKSRC}/cmake/modules/
-	cp ${FILESDIR}/{Audio,Midi}Sndio.h ${WRKSRC}/include/
-	cp ${FILESDIR}/AudioSndio.cpp ${WRKSRC}/src/core/audio/
-	cp ${FILESDIR}/MidiSndio.cpp ${WRKSRC}/src/core/midi/
 
 .include <bsd.port.mk>

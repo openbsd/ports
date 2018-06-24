@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2018/06/24 11:57:13 sthen Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-FIND_PACKAGE(Doxygen)
++#FIND_PACKAGE(Doxygen)
+ 
+ if(DOXYGEN_FOUND)
+ 	set(INPUTDIRS 

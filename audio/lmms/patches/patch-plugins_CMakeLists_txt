@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_CMakeLists_txt,v 1.1 2018/06/24 11:57:13 sthen Exp $
+
+Index: plugins/CMakeLists.txt
+--- plugins/CMakeLists.txt.orig
++++ plugins/CMakeLists.txt
+@@ -80,7 +80,7 @@ IF("${PLUGIN_LIST}" STREQUAL "")
+ 		watsyn
+ 		waveshaper
+ 		vibed
+-		zynaddsubfx
++#		zynaddsubfx
+ 	)
+ 
+ ENDIF("${PLUGIN_LIST}" STREQUAL "")
