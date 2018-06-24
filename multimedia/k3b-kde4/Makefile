@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/24 12:05:48 ajacoutot Exp $
+
+PORTROACH =		skipv:2.0.3
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
