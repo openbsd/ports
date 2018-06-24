@@ -1,17 +1,23 @@
-# $OpenBSD: Makefile,v 1.36 2017/12/02 11:34:17 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2018/06/24 12:02:09 ajacoutot Exp $
 
-COMMENT =	library to parse Uniform Resource Identifiers
+COMMENT =		library to parse Uniform Resource Identifiers
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	URI-1.71
-CATEGORIES =	www
-FIX_EXTRACT_PERMISSIONS = Yes
+PKG_ARCH =		*
+
+DISTNAME =		URI-1.74
+
+CATEGORIES =		www
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test-Needs
+
 # not ported yet
-#TEST_DEPENDS =	misc/p5-Business-ISBN
+#TEST_DEPENDS +=	misc/p5-Business-ISBN
 
 .include <bsd.port.mk>
