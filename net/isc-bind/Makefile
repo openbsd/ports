@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/03/16 15:02:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/06/25 20:42:32 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -6,6 +6,7 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 # stable (and for stable branches, point releases are bug fixes only).
 # The next ESV will be 9.16.
 V=		9.11.3
+REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -47,6 +48,7 @@ CONFIGURE_ARGS=	--enable-filter-aaaa \
 		--enable-threads \
 		--with-libtool \
 		--with-randomdev=/dev/random \
+		--without-lmdb \
 		--without-readline \
 		--with-python=${MODPY_BIN}
 
