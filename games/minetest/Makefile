@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/25 20:02:06 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2018/06/25 20:44:13 landry Exp $
 
 COMMENT =		infinite-world block sandbox game
 # minetest_game is still 0.4.17
@@ -7,6 +7,7 @@ GAME_V =		0.4.17
 V =			${GAME_V}.1
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
+REVISION =	0
 
 HOMEPAGE =		http://www.minetest.net/
 
@@ -14,7 +15,7 @@ HOMEPAGE =		http://www.minetest.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Irrlicht SM X11 Xext
-WANTLIB += Xxf86vm bz2 c curl curses form freetype iconv intl
+WANTLIB += Xxf86vm bz2 c curl curses form freetype gmp iconv intl
 WANTLIB += jpeg luajit-${MODLUA_VERSION} m ogg openal png pq
 WANTLIB += spatialindex sqlite3 vorbis vorbisfile z
 
@@ -37,6 +38,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS =		audio/openal \
+			devel/gmp \
 			databases/sqlite3 \
 			databases/postgresql \
 			geo/spatialindex \
