@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/20 14:44:18 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/25 06:32:39 landry Exp $
 
 COMMENT =	web interface for buildbot
 
 PART = www
+REVISION=	0
 
-BUILD_DEPENDS =	www/py-autobahn \
-		devel/py-mock \
+BUILD_DEPENDS =	www/py-autobahn${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-buildbot/pkg
 
 RUN_DEPENDS +=	devel/py-buildbot/grid-view \
