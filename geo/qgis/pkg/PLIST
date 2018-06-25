@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2018/04/23 17:00:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/06/25 06:52:59 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -40,6 +40,7 @@ include/qgis/qgsabstract3dsymbol.h
 include/qgis/qgsabstractdatasourcewidget.h
 include/qgis/qgsabstractgeometry.h
 include/qgis/qgsabstractlayoutiterator.h
+include/qgis/qgsabstractmetadatabase.h
 include/qgis/qgsabstractreportsection.h
 include/qgis/qgsaction.h
 include/qgis/qgsactionmanager.h
@@ -49,6 +50,7 @@ include/qgis/qgsactionscoperegistry.h
 include/qgis/qgsadvanceddigitizingdockwidget.h
 include/qgis/qgsaggregatecalculator.h
 include/qgis/qgsaggregatetoolbutton.h
+include/qgis/qgsalgorithmimportphotos.h
 include/qgis/qgsalignraster.h
 include/qgis/qgsanimatedicon.h
 include/qgis/qgsannotation.h
@@ -396,6 +398,8 @@ include/qgis/qgslayertreeregistrybridge.h
 include/qgis/qgslayertreeutils.h
 include/qgis/qgslayertreeview.h
 include/qgis/qgslayertreeviewdefaultactions.h
+include/qgis/qgslayertreeviewindicator.h
+include/qgis/qgslayertreeviewitemdelegate.h
 include/qgis/qgslayout.h
 include/qgis/qgslayoutaligner.h
 include/qgis/qgslayoutatlas.h
@@ -478,6 +482,7 @@ include/qgis/qgsline3dsymbol.h
 include/qgis/qgsline3dsymbol_p.h
 include/qgis/qgslinearminmaxenhancement.h
 include/qgis/qgslinearminmaxenhancementwithclip.h
+include/qgis/qgslinesegment.h
 include/qgis/qgslinestring.h
 include/qgis/qgslinesymbollayer.h
 include/qgis/qgslistfieldformatter.h
@@ -548,6 +553,13 @@ include/qgis/qgsmemoryfeatureiterator.h
 include/qgis/qgsmemoryprovider.h
 include/qgis/qgsmemoryproviderutils.h
 include/qgis/qgsmenuheader.h
+include/qgis/qgsmeshdataprovider.h
+include/qgis/qgsmeshlayer.h
+include/qgis/qgsmeshlayerinterpolator.h
+include/qgis/qgsmeshlayerrenderer.h
+include/qgis/qgsmeshmemorydataprovider.h
+include/qgis/qgsmeshrenderersettings.h
+include/qgis/qgsmeshvectorrenderer.h
 include/qgis/qgsmessagebar.h
 include/qgis/qgsmessagebaritem.h
 include/qgis/qgsmessagelog.h
@@ -568,6 +580,7 @@ include/qgis/qgsmultisurface.h
 include/qgis/qgsnative.h
 include/qgis/qgsnetworkaccessmanager.h
 include/qgis/qgsnetworkcontentfetcher.h
+include/qgis/qgsnetworkcontentfetcherregistry.h
 include/qgis/qgsnetworkcontentfetchertask.h
 include/qgis/qgsnetworkdiskcache.h
 include/qgis/qgsnetworkdistancestrategy.h
@@ -641,10 +654,13 @@ include/qgis/qgsprevieweffect.h
 include/qgis/qgsprintlayout.h
 include/qgis/qgsprocessing.h
 include/qgis/qgsprocessingalgorithm.h
+include/qgis/qgsprocessingalgorithmconfigurationwidget.h
 include/qgis/qgsprocessingalgorithmdialogbase.h
 include/qgis/qgsprocessingalgrunnertask.h
+include/qgis/qgsprocessingconfigurationwidgets.h
 include/qgis/qgsprocessingcontext.h
 include/qgis/qgsprocessingfeedback.h
+include/qgis/qgsprocessingguiregistry.h
 include/qgis/qgsprocessingmodelalgorithm.h
 include/qgis/qgsprocessingmodelchildalgorithm.h
 include/qgis/qgsprocessingmodelchildparametersource.h
@@ -653,6 +669,8 @@ include/qgis/qgsprocessingmodeloutput.h
 include/qgis/qgsprocessingmodelparameter.h
 include/qgis/qgsprocessingoutputs.h
 include/qgis/qgsprocessingparameters.h
+include/qgis/qgsprocessingparametertype.h
+include/qgis/qgsprocessingparametertypeimpl.h
 include/qgis/qgsprocessingprovider.h
 include/qgis/qgsprocessingregistry.h
 include/qgis/qgsprocessingutils.h
@@ -662,7 +680,10 @@ include/qgis/qgsprojectfiletransform.h
 include/qgis/qgsprojectionselectiondialog.h
 include/qgis/qgsprojectionselectiontreewidget.h
 include/qgis/qgsprojectionselectionwidget.h
+include/qgis/qgsprojectmetadata.h
 include/qgis/qgsprojectproperty.h
+include/qgis/qgsprojectstorage.h
+include/qgis/qgsprojectstorageregistry.h
 include/qgis/qgsprojectversion.h
 include/qgis/qgsproperty.h
 include/qgis/qgsproperty_p.h
@@ -672,6 +693,7 @@ include/qgis/qgspropertyoverridebutton.h
 include/qgis/qgspropertytransformer.h
 include/qgis/qgsprovidermetadata.h
 include/qgis/qgsproviderregistry.h
+include/qgis/qgsproxystyle.h
 include/qgis/qgspythonrunner.h
 include/qgis/qgsqtlocationconnection.h
 include/qgis/qgsquerybuilder.h
@@ -720,6 +742,7 @@ include/qgis/qgsrastertransparencywidget.h
 include/qgis/qgsrasterviewport.h
 include/qgis/qgsratiolockbutton.h
 include/qgis/qgsreadwritecontext.h
+include/qgis/qgsreclassifyutils.h
 include/qgis/qgsrectangle.h
 include/qgis/qgsreferencedgeometry.h
 include/qgis/qgsregularpolygon.h
@@ -854,6 +877,7 @@ include/qgis/qgstransactiongroup.h
 include/qgis/qgstransformeffect.h
 include/qgis/qgstreewidgetitem.h
 include/qgis/qgstriangle.h
+include/qgis/qgstriangularmesh.h
 include/qgis/qgsuniquevaluesconfigdlg.h
 include/qgis/qgsuniquevaluewidgetfactory.h
 include/qgis/qgsuniquevaluewidgetwrapper.h
@@ -907,6 +931,7 @@ include/qgis/qgsvectorsimplifymethod.h
 include/qgis/qgsvertexmarker.h
 include/qgis/qgsvirtuallayerdefinition.h
 include/qgis/qgsvirtuallayerdefinitionutils.h
+include/qgis/qgsvirtuallayertask.h
 include/qgis/qgsvscrollarea.h
 include/qgis/qgswebpage.h
 include/qgis/qgswebview.h
@@ -977,6 +1002,7 @@ lib/qgis/plugins/libgeorefplugin.so
 lib/qgis/plugins/libgpsimporterplugin.so
 lib/qgis/plugins/libgpxprovider.so
 lib/qgis/plugins/libidentcertauthmethod.so
+lib/qgis/plugins/libmdalprovider.so
 lib/qgis/plugins/libmssqlprovider.so
 lib/qgis/plugins/libofflineeditingplugin.so
 lib/qgis/plugins/libogrprovider.so
@@ -1377,6 +1403,7 @@ share/qgis/python/plugins/db_manager/table_viewer.py
 share/qgis/python/plugins/db_manager/ui/
 share/qgis/python/plugins/db_manager/ui/__init__.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgAddGeometryColumn.py
+share/qgis/python/plugins/db_manager/ui/ui_DlgCancelTaskQuery.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgCreateConstraint.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgCreateIndex.py
 share/qgis/python/plugins/db_manager/ui/ui_DlgCreateTable.py
@@ -1531,6 +1558,7 @@ share/qgis/python/plugins/processing/algs/grass7/description/r.describe.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.distance.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.drain.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.fill.dir.txt
+share/qgis/python/plugins/processing/algs/grass7/description/r.fill.stats.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.fillnulls.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.flow.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.grow.distance.txt
@@ -1886,13 +1914,10 @@ share/qgis/python/plugins/processing/algs/qgis/DefineProjection.py
 share/qgis/python/plugins/processing/algs/qgis/Delaunay.py
 share/qgis/python/plugins/processing/algs/qgis/DeleteColumn.py
 share/qgis/python/plugins/processing/algs/qgis/DeleteDuplicateGeometries.py
-share/qgis/python/plugins/processing/algs/qgis/DeleteHoles.py
 share/qgis/python/plugins/processing/algs/qgis/DensifyGeometries.py
 share/qgis/python/plugins/processing/algs/qgis/DensifyGeometriesInterval.py
-share/qgis/python/plugins/processing/algs/qgis/Difference.py
 share/qgis/python/plugins/processing/algs/qgis/EliminateSelection.py
 share/qgis/python/plugins/processing/algs/qgis/ExecuteSQL.py
-share/qgis/python/plugins/processing/algs/qgis/Explode.py
 share/qgis/python/plugins/processing/algs/qgis/ExportGeometryInfo.py
 share/qgis/python/plugins/processing/algs/qgis/ExtendLines.py
 share/qgis/python/plugins/processing/algs/qgis/ExtentFromLayer.py
@@ -1912,7 +1937,6 @@ share/qgis/python/plugins/processing/algs/qgis/HypsometricCurves.py
 share/qgis/python/plugins/processing/algs/qgis/IdwInterpolation.py
 share/qgis/python/plugins/processing/algs/qgis/ImportIntoPostGIS.py
 share/qgis/python/plugins/processing/algs/qgis/ImportIntoSpatialite.py
-share/qgis/python/plugins/processing/algs/qgis/Intersection.py
 share/qgis/python/plugins/processing/algs/qgis/KeepNBiggestParts.py
 share/qgis/python/plugins/processing/algs/qgis/LinesToPolygons.py
 share/qgis/python/plugins/processing/algs/qgis/MeanAndStdDevPlot.py
@@ -1921,7 +1945,6 @@ share/qgis/python/plugins/processing/algs/qgis/NearestNeighbourAnalysis.py
 share/qgis/python/plugins/processing/algs/qgis/OffsetLine.py
 share/qgis/python/plugins/processing/algs/qgis/Orthogonalize.py
 share/qgis/python/plugins/processing/algs/qgis/PointDistance.py
-share/qgis/python/plugins/processing/algs/qgis/PointOnSurface.py
 share/qgis/python/plugins/processing/algs/qgis/PointsAlongGeometry.py
 share/qgis/python/plugins/processing/algs/qgis/PointsDisplacement.py
 share/qgis/python/plugins/processing/algs/qgis/PointsFromLines.py
@@ -1974,12 +1997,10 @@ share/qgis/python/plugins/processing/algs/qgis/SpatialJoinSummary.py
 share/qgis/python/plugins/processing/algs/qgis/SpatialiteExecuteSQL.py
 share/qgis/python/plugins/processing/algs/qgis/StatisticsByCategories.py
 share/qgis/python/plugins/processing/algs/qgis/SumLines.py
-share/qgis/python/plugins/processing/algs/qgis/SymmetricalDifference.py
 share/qgis/python/plugins/processing/algs/qgis/TextToFloat.py
 share/qgis/python/plugins/processing/algs/qgis/TinInterpolation.py
 share/qgis/python/plugins/processing/algs/qgis/TopoColors.py
 share/qgis/python/plugins/processing/algs/qgis/TruncateTable.py
-share/qgis/python/plugins/processing/algs/qgis/Union.py
 share/qgis/python/plugins/processing/algs/qgis/UniqueValues.py
 share/qgis/python/plugins/processing/algs/qgis/VariableDistanceBuffer.py
 share/qgis/python/plugins/processing/algs/qgis/VectorLayerHistogram.py
@@ -1993,6 +2014,8 @@ share/qgis/python/plugins/processing/algs/qgis/ui/
 share/qgis/python/plugins/processing/algs/qgis/ui/AddNewExpressionDialog.ui
 share/qgis/python/plugins/processing/algs/qgis/ui/AggregatesPanel.py
 share/qgis/python/plugins/processing/algs/qgis/ui/DlgFieldsCalculator.ui
+share/qgis/python/plugins/processing/algs/qgis/ui/ExecuteSQLWidget.py
+share/qgis/python/plugins/processing/algs/qgis/ui/ExecuteSQLWidgetBase.ui
 share/qgis/python/plugins/processing/algs/qgis/ui/FieldsCalculatorDialog.py
 share/qgis/python/plugins/processing/algs/qgis/ui/FieldsMappingPanel.py
 share/qgis/python/plugins/processing/algs/qgis/ui/HeatmapWidgets.py
@@ -2065,9 +2088,7 @@ share/qgis/python/plugins/processing/algs/saga/description/CloseGapswithStepwise
 share/qgis/python/plugins/processing/algs/saga/description/CloseOneCellGaps.txt
 share/qgis/python/plugins/processing/algs/saga/description/ClusterAnalysis(Shapes).txt
 share/qgis/python/plugins/processing/algs/saga/description/ClusterAnalysis.txt
-share/qgis/python/plugins/processing/algs/saga/description/ClusterAnalysisforGrids.txt
 share/qgis/python/plugins/processing/algs/saga/description/Concentration.txt
-share/qgis/python/plugins/processing/algs/saga/description/ConfusionMatrix(GridPolygons).txt
 share/qgis/python/plugins/processing/algs/saga/description/ConfusionMatrix(PolygonsGrid).txt
 share/qgis/python/plugins/processing/algs/saga/description/ConfusionMatrix(TwoGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/ConnectivityAnalysis.txt
@@ -2155,11 +2176,8 @@ share/qgis/python/plugins/processing/algs/saga/description/GaussianFilter.txt
 share/qgis/python/plugins/processing/algs/saga/description/GenerateShapes.txt
 share/qgis/python/plugins/processing/algs/saga/description/GeodesicMorphologicalReconstruction.txt
 share/qgis/python/plugins/processing/algs/saga/description/GeographicCoordinateGrids.txt
-share/qgis/python/plugins/processing/algs/saga/description/GeographicallyWeightedMultipleRegression(Points).txt
 share/qgis/python/plugins/processing/algs/saga/description/GeographicallyWeightedMultipleRegression(PointsGrids).txt
 share/qgis/python/plugins/processing/algs/saga/description/GeographicallyWeightedMultipleRegression.txt
-share/qgis/python/plugins/processing/algs/saga/description/GeographicallyWeightedRegression(PointsGrid).txt
-share/qgis/python/plugins/processing/algs/saga/description/GeographicallyWeightedRegression.txt
 share/qgis/python/plugins/processing/algs/saga/description/GeometricFigures.txt
 share/qgis/python/plugins/processing/algs/saga/description/GetShapesExtents.txt
 share/qgis/python/plugins/processing/algs/saga/description/GlobalMoransIforGrids.txt
@@ -2248,7 +2266,6 @@ share/qgis/python/plugins/processing/algs/saga/description/NaturalNeighbour.txt
 share/qgis/python/plugins/processing/algs/saga/description/NearestNeighbour.txt
 share/qgis/python/plugins/processing/algs/saga/description/NormalBayesClassification(OpenCV).txt
 share/qgis/python/plugins/processing/algs/saga/description/OrderedWeightedAveraging(OWA).txt
-share/qgis/python/plugins/processing/algs/saga/description/OrdinaryKriging(Global).txt
 share/qgis/python/plugins/processing/algs/saga/description/OrdinaryKriging.txt
 share/qgis/python/plugins/processing/algs/saga/description/OverlandFlow-KinematicWaveD8.txt
 share/qgis/python/plugins/processing/algs/saga/description/OverlandFlowDistancetoChannelNetwork.txt
@@ -2264,19 +2281,12 @@ share/qgis/python/plugins/processing/algs/saga/description/PolartoCartesianCoord
 share/qgis/python/plugins/processing/algs/saga/description/Polygon-LineIntersection.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonCentroids.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonClipping.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonDifference.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonDissolve.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonDissolveAllPolygs.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonIdentity.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonIntersect.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonPartstoSeparatePolygons.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonProperties.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonSelf-Intersection.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonSelfIntersection.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonShapeIndices.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonSymmetricalDifference.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonUnion.txt
-share/qgis/python/plugins/processing/algs/saga/description/PolygonUpdate.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolygonstoEdgesandNodes.txt
 share/qgis/python/plugins/processing/algs/saga/description/PolynomialRegression.txt
 share/qgis/python/plugins/processing/algs/saga/description/PrincipleComponentsAnalysis.txt
@@ -2371,7 +2381,6 @@ share/qgis/python/plugins/processing/algs/saga/description/TransformShapes.txt
 share/qgis/python/plugins/processing/algs/saga/description/TransposeGrids.txt
 share/qgis/python/plugins/processing/algs/saga/description/Triangulation.txt
 share/qgis/python/plugins/processing/algs/saga/description/Union.txt
-share/qgis/python/plugins/processing/algs/saga/description/UniversalKriging(Global).txt
 share/qgis/python/plugins/processing/algs/saga/description/UniversalKriging.txt
 share/qgis/python/plugins/processing/algs/saga/description/Update.txt
 share/qgis/python/plugins/processing/algs/saga/description/UpslopeArea.txt
@@ -2456,6 +2465,8 @@ share/qgis/python/plugins/processing/gui/TestTools.py
 share/qgis/python/plugins/processing/gui/ToolboxAction.py
 share/qgis/python/plugins/processing/gui/__init__.py
 share/qgis/python/plugins/processing/gui/algnames.txt
+share/qgis/python/plugins/processing/gui/enummodelerwidget.py
+share/qgis/python/plugins/processing/gui/matrixmodelerwidget.py
 share/qgis/python/plugins/processing/gui/menus.py
 share/qgis/python/plugins/processing/gui/wrappers.py
 share/qgis/python/plugins/processing/gui/wrappers_map_theme.py
@@ -2464,45 +2475,6 @@ share/qgis/python/plugins/processing/images/
 share/qgis/python/plugins/processing/images/delete.svg
 share/qgis/python/plugins/processing/images/dem.png
 share/qgis/python/plugins/processing/images/edit.svg
-share/qgis/python/plugins/processing/images/ftools/
-share/qgis/python/plugins/processing/images/ftools/basic_statistics.png
-share/qgis/python/plugins/processing/images/ftools/buffer.png
-share/qgis/python/plugins/processing/images/ftools/centroids.png
-share/qgis/python/plugins/processing/images/ftools/check_geometry.png
-share/qgis/python/plugins/processing/images/ftools/clip.png
-share/qgis/python/plugins/processing/images/ftools/convex_hull.png
-share/qgis/python/plugins/processing/images/ftools/delaunay.png
-share/qgis/python/plugins/processing/images/ftools/difference.png
-share/qgis/python/plugins/processing/images/ftools/dissolve.png
-share/qgis/python/plugins/processing/images/ftools/eliminate.png
-share/qgis/python/plugins/processing/images/ftools/export_geometry.png
-share/qgis/python/plugins/processing/images/ftools/extract_nodes.png
-share/qgis/python/plugins/processing/images/ftools/intersect.png
-share/qgis/python/plugins/processing/images/ftools/join_attributes.png
-share/qgis/python/plugins/processing/images/ftools/join_location.png
-share/qgis/python/plugins/processing/images/ftools/layer_extent.png
-share/qgis/python/plugins/processing/images/ftools/lines_intersection.png
-share/qgis/python/plugins/processing/images/ftools/matrix.png
-share/qgis/python/plugins/processing/images/ftools/mean.png
-share/qgis/python/plugins/processing/images/ftools/merge_shapes.png
-share/qgis/python/plugins/processing/images/ftools/multi_to_single.png
-share/qgis/python/plugins/processing/images/ftools/neighbour.png
-share/qgis/python/plugins/processing/images/ftools/random_points.png
-share/qgis/python/plugins/processing/images/ftools/random_selection.png
-share/qgis/python/plugins/processing/images/ftools/regular_points.png
-share/qgis/python/plugins/processing/images/ftools/select_location.png
-share/qgis/python/plugins/processing/images/ftools/simplify.png
-share/qgis/python/plugins/processing/images/ftools/single_to_multi.png
-share/qgis/python/plugins/processing/images/ftools/split_layer.png
-share/qgis/python/plugins/processing/images/ftools/sub_selection.png
-share/qgis/python/plugins/processing/images/ftools/sum_lines.png
-share/qgis/python/plugins/processing/images/ftools/sum_points.png
-share/qgis/python/plugins/processing/images/ftools/sym_difference.png
-share/qgis/python/plugins/processing/images/ftools/to_lines.png
-share/qgis/python/plugins/processing/images/ftools/union.png
-share/qgis/python/plugins/processing/images/ftools/unique.png
-share/qgis/python/plugins/processing/images/ftools/vector_grid.png
-share/qgis/python/plugins/processing/images/ftools/voronoi.png
 share/qgis/python/plugins/processing/images/gdaltools/
 share/qgis/python/plugins/processing/images/gdaltools/24-to-8-bits.png
 share/qgis/python/plugins/processing/images/gdaltools/8-to-24-bits.png
@@ -2551,8 +2523,8 @@ share/qgis/python/plugins/processing/modeler/ModelerScene.py
 share/qgis/python/plugins/processing/modeler/ModelerUtils.py
 share/qgis/python/plugins/processing/modeler/MultilineTextPanel.py
 share/qgis/python/plugins/processing/modeler/OpenModelFromFileAction.py
-share/qgis/python/plugins/processing/modeler/WrongModelException.py
 share/qgis/python/plugins/processing/modeler/__init__.py
+share/qgis/python/plugins/processing/modeler/exceptions.py
 share/qgis/python/plugins/processing/preconfigured/
 share/qgis/python/plugins/processing/preconfigured/DeletePreconfiguredAlgorithmAction.py
 share/qgis/python/plugins/processing/preconfigured/NewPreconfiguredAlgorithmAction.py
@@ -2567,6 +2539,7 @@ share/qgis/python/plugins/processing/script/AddScriptFromTemplateAction.py
 share/qgis/python/plugins/processing/script/CreateNewScriptAction.py
 share/qgis/python/plugins/processing/script/DeleteScriptAction.py
 share/qgis/python/plugins/processing/script/EditScriptAction.py
+share/qgis/python/plugins/processing/script/OpenScriptFromFileAction.py
 share/qgis/python/plugins/processing/script/ScriptAlgorithmProvider.py
 share/qgis/python/plugins/processing/script/ScriptEdit.py
 share/qgis/python/plugins/processing/script/ScriptEditorDialog.py
@@ -2614,6 +2587,8 @@ share/qgis/python/plugins/processing/ui/DlgPostgisTableSelector.ui
 share/qgis/python/plugins/processing/ui/DlgRenderingStyles.ui
 share/qgis/python/plugins/processing/ui/DlgScriptEditor.ui
 share/qgis/python/plugins/processing/ui/ProcessingToolbox.ui
+share/qgis/python/plugins/processing/ui/enummodelerwidgetbase.ui
+share/qgis/python/plugins/processing/ui/matrixmodelerwidgetbase.ui
 share/qgis/python/plugins/processing/ui/resultsdockbase.ui
 share/qgis/python/plugins/processing/ui/widgetBaseSelector.ui
 share/qgis/python/plugins/processing/ui/widgetBatchPanel.ui
@@ -2665,6 +2640,19 @@ share/qgis/python/qgis/analysis/
 share/qgis/python/qgis/analysis/__init__.py
 share/qgis/python/qgis/core/
 share/qgis/python/qgis/core/__init__.py
+share/qgis/python/qgis/core/additions/
+share/qgis/python/qgis/core/additions/__init__.py
+share/qgis/python/qgis/core/additions/edit.py
+share/qgis/python/qgis/core/additions/fromfunction.py
+share/qgis/python/qgis/core/additions/metaenum.py
+share/qgis/python/qgis/core/additions/processing.py
+share/qgis/python/qgis/core/additions/projectdirtyblocker.py
+share/qgis/python/qgis/core/additions/qgsfeature.py
+share/qgis/python/qgis/core/additions/qgsfunction.py
+share/qgis/python/qgis/core/additions/qgsgeometry.py
+share/qgis/python/qgis/core/additions/qgssettings.py
+share/qgis/python/qgis/core/additions/qgstaskwrapper.py
+share/qgis/python/qgis/core/additions/readwritecontextentercategory.py
 share/qgis/python/qgis/core/contextmanagers.py
 share/qgis/python/qgis/gui/
 share/qgis/python/qgis/gui/__init__.py
@@ -3982,6 +3970,8 @@ share/qgis/resources/metadata-ISO/language_codes_ISO_639.csv
 share/qgis/resources/metadata-ISO/licenses.csv
 share/qgis/resources/metadata-ISO/md_scope_codes.csv
 share/qgis/resources/metadata-ISO/mime.csv
+share/qgis/resources/palettes/
+share/qgis/resources/palettes/new_layer_colors.gpl
 share/qgis/resources/qgis.db
 share/qgis/resources/qgis_global_settings.ini
 share/qgis/resources/server/
