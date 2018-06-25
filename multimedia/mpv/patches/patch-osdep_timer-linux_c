@@ -1,0 +1,17 @@
+$OpenBSD: patch-osdep_timer-linux_c,v 1.1 2018/06/25 16:43:01 sthen Exp $
+
+OpenBSD doesn't define _POSIX_TIMERS because we are missing some of the
+required clocks, but we do have enough for mpv.
+
+Index: osdep/timer-linux.c
+--- osdep/timer-linux.c.orig
++++ osdep/timer-linux.c
+@@ -19,6 +19,8 @@
+  */
+ 
+ #include <unistd.h>
++#undef _POSIX_TIMERS
++#define _POSIX_TIMERS 1
+ #include <stdlib.h>
+ #include <time.h>
+ #include <sys/time.h>
