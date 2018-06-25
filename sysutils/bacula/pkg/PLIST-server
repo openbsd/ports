@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2017/07/07 16:01:58 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.23 2018/06/25 17:02:32 sthen Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @pkgpath sysutils/bacula,-server,mysql
@@ -6,6 +6,8 @@
 @pkgpath sysutils/bacula,-server,sqlite3
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/bacula
+@rcscript ${RCDIR}/bacula_dir
+@rcscript ${RCDIR}/bacula_sd
 lib/libbacsd.la
 @lib lib/libbacsd.so.${LIBbacsd_VERSION}
 lib/libbacsql.la
@@ -61,8 +63,6 @@ sbin/btraceback
 @bin sbin/bwild
 @bin sbin/dbcheck
 share/doc/pkg-readmes/${FULLPKGNAME}
-@mode 750
-share/examples/bacula/
 @mode 644
 share/examples/bacula/bacula-dir.conf
 @mode 640
@@ -74,7 +74,3 @@ share/examples/bacula/bacula-sd.conf
 @mode 640
 @group _bacula
 @sample ${SYSCONFDIR}/bacula-sd.conf
-@mode
-@group
-@rcscript ${RCDIR}/bacula_dir
-@rcscript ${RCDIR}/bacula_sd

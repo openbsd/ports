@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-bat,v 1.13 2014/04/19 09:44:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-bat,v 1.14 2018/06/25 17:02:32 sthen Exp $
 @man man/man1/bat.1
 @bin sbin/bat
+share/applications/
 share/applications/bat.desktop
 share/doc/bacula/clients.html
 share/doc/bacula/console.html

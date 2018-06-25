@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2017/07/07 16:01:58 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2018/06/25 17:02:32 sthen Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/nonexistent:/sbin/nologin
 @comment lib/bpipe-fd.a
+@rcscript ${RCDIR}/bacula
+@rcscript ${RCDIR}/bacula_fd
 lib/bpipe-fd.so
 lib/libbac.la
 @lib lib/libbac.so.${LIBbac_VERSION}
@@ -13,6 +15,7 @@ lib/libbacfind.la
 @lib lib/libbacfind.so.${LIBbacfind_VERSION}
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
+libexec/bacula/bacula-tray-monitor.desktop
 libexec/bacula/bacula_config
 libexec/bacula/bconsole
 libexec/bacula/tapealert
@@ -53,7 +56,3 @@ share/examples/bacula/bacula-fd.conf
 share/examples/bacula/bconsole.conf
 @group _bacula
 @sample ${SYSCONFDIR}/bconsole.conf
-@mode
-@group
-@rcscript ${RCDIR}/bacula_fd
-@rcscript ${RCDIR}/bacula
