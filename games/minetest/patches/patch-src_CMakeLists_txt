@@ -1,58 +1,18 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.12 2016/06/28 13:56:58 landry Exp $
---- src/CMakeLists.txt.orig	Sun May 15 14:49:15 2016
-+++ src/CMakeLists.txt	Tue Jun 28 15:56:19 2016
-@@ -61,6 +61,8 @@ set(USE_GETTEXT FALSE)
- 
- if(ENABLE_GETTEXT)
- 	find_package(GettextLib)
-+	find_package(Iconv)
-+	find_package(Intl)
- 	if(GETTEXT_FOUND)
- 		if(WIN32)
- 			message(STATUS "GetText library: ${GETTEXT_LIBRARY}")
-@@ -306,7 +308,10 @@ else()
- 	if(APPLE)
- 		set(PLATFORM_LIBS "-framework CoreFoundation" ${PLATFORM_LIBS})
- 	else()
--		set(PLATFORM_LIBS -lrt ${PLATFORM_LIBS})
-+		check_library_exists(rt clock_gettime "" HAVE_LIBRT)
-+		if (HAVE_LIBRT)
-+			set(PLATFORM_LIBS -lrt ${PLATFORM_LIBS})
-+		endif()
- 	endif(APPLE)
- 
- 	# This way Xxf86vm is found on OpenBSD too
-@@ -550,7 +555,8 @@ if(BUILD_CLIENT)
- 		${BZIP2_LIBRARIES}
- 		${PNG_LIBRARIES}
- 		${X11_LIBRARIES}
--		${GETTEXT_LIBRARY}
-+		${ICONV_LIBRARIES}
-+		${Intl_LIBRARIES}
- 		${SOUND_LIBRARIES}
- 		${SQLITE3_LIBRARY}
- 		${LUA_LIBRARY}
-@@ -612,7 +618,8 @@ if(BUILD_SERVER)
- 		${ZLIB_LIBRARIES}
- 		${SQLITE3_LIBRARY}
- 		${JSON_LIBRARY}
--		${GETTEXT_LIBRARY}
-+		${ICONV_LIBRARIES}
-+		${Intl_LIBRARIES}
- 		${LUA_LIBRARY}
- 		${GMP_LIBRARY}
- 		${PLATFORM_LIBS}
-@@ -682,14 +689,12 @@ else()
- 		set(OTHER_FLAGS "-mthreads -fexceptions")
+$OpenBSD: patch-src_CMakeLists_txt,v 1.13 2018/06/25 20:02:06 landry Exp $
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -756,14 +756,12 @@ else()
+ 		set(OTHER_FLAGS "${OTHER_FLAGS} -mthreads -fexceptions")
  	endif()
  
--	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -ffast-math -Wall -pipe -funroll-loops")
-+	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS}")
- 	if(APPLE)
+-	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
++	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall")
+ 	if(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")
  		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
 -	else()
--		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -fomit-frame-pointer")
- 	endif(APPLE)
+-		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -fomit-frame-pointer")
+ 	endif(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")
  	set(CMAKE_CXX_FLAGS_SEMIDEBUG "-g -O1 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
 -	set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
 +	set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
