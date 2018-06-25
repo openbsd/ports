@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/02/17 23:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/25 18:18:41 jung Exp $
 
 COMMENT =		Gopher protocol daemon
 
-DISTNAME =		geomyidae-0.31
+DISTNAME =		geomyidae-0.32.1
 
 CATEGORIES =		net
 
@@ -13,6 +13,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c
 
 MASTER_SITES =		${HOMEPAGE}/snapshot/
