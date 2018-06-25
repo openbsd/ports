@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/07/13 00:56:55 stu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/25 23:11:32 stu Exp $
 lib/tcl/dbus-tcl/
-lib/tcl/dbus-tcl/libdbus.so
+lib/tcl/dbus-tcl/libdbus${VER}.so
 lib/tcl/dbus-tcl/pkgIndex.tcl
 @man man/mann/dbus.n
 share/doc/dbus-tcl/

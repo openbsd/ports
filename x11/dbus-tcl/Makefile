@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/22 06:55:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/25 23:11:32 stu Exp $
 
 COMMENT =	dbus bindings for Tcl
 
-V =		2.1
-REVISION =	1
-DISTNAME =	dbus-tcl-${V}
+V =		2.2
+
+DISTNAME =	dbus-${V}
+PKGNAME =	dbus-tcl-${V}
 CATEGORIES =	x11
-HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus
+HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	dbus-1
-MASTER_SITES =	https://chiselapp.com/user/stwo/repository/tarballia/uv/
+MASTER_SITES =	${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} devel/tcllib
 LIB_DEPENDS =	x11/dbus
@@ -24,6 +25,8 @@ FAKE_FLAGS =	INSTALL_PROGRAM='$${INSTALL_DATA}' \
 		PACKAGE_TARNAME=dbus-tcl \
 		pkglibdir='$$(libdir)/tcl/$$(PACKAGE_NAME)'
 
+TEST_FLAGS =	TCLSH_PROG='${LOCALBASE}/bin/dbus-run-session ${MODTCL_BIN}'
+
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
@@ -31,9 +34,11 @@ CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
 		--mandir='$${prefix}/man' \
 		--enable-threads
 
-TEST_IS_INTERACTIVE = X11
 WRKDIST =	${WRKDIR}/dbus-${V}
 TEST_TARGET =	test
+SUBST_VARS =	VER
+
+VER =		${V:S/.//g}
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/demos/{dbusmon,qdbus}.tcl
