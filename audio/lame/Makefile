@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/06/24 10:25:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2018/06/25 16:18:07 sthen Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 #'
@@ -34,6 +34,7 @@ CONFIGURE_ARGS= --disable-cpml \
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+= --enable-nasm
+USE_GMAKE=	Yes	# required for i386/ directory
 .else
 CONFIGURE_ARGS+= --disable-nasm
 .endif
