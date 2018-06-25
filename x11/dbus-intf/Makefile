@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/22 06:57:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/25 23:13:57 stu Exp $
 
 COMMENT =	high level interface to dbus-tcl
 
-V =		1.2
-REVISION =	1
-DISTNAME =	dbus-intf-${V}
+V =		1.3
+
+DISTNAME =	dbif-${V}
+PKGNAME =	dbus-intf-${V}
 CATEGORIES =	x11
-HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus
+HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbif/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://chiselapp.com/user/stwo/repository/tarballia/uv/
+MASTER_SITES =	${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	x11/dbus-tcl>=2.1
