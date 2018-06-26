@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/04/13 07:37:08 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/26 06:20:41 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -56,6 +56,7 @@ share/openttd/ai/compat_1.4.nut
 share/openttd/ai/compat_1.5.nut
 share/openttd/ai/compat_1.6.nut
 share/openttd/ai/compat_1.7.nut
+share/openttd/ai/compat_1.8.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -75,6 +76,7 @@ share/openttd/game/compat_1.4.nut
 share/openttd/game/compat_1.5.nut
 share/openttd/game/compat_1.6.nut
 share/openttd/game/compat_1.7.nut
+share/openttd/game/compat_1.8.nut
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
@@ -149,6 +151,7 @@ share/openttd/media/extra_grf/airport_preview.nfo
 share/openttd/media/extra_grf/airport_preview.png
 share/openttd/media/extra_grf/airports.nfo
 share/openttd/media/extra_grf/airports.png
+share/openttd/media/extra_grf/airports_orig_extra.nfo
 share/openttd/media/extra_grf/aqueduct.nfo
 share/openttd/media/extra_grf/aqueduct.png
 share/openttd/media/extra_grf/assemble_nfo.awk
@@ -160,6 +163,7 @@ share/openttd/media/extra_grf/canals.png
 share/openttd/media/extra_grf/canals_extra.nfo
 share/openttd/media/extra_grf/chars.nfo
 share/openttd/media/extra_grf/chars.png
+share/openttd/media/extra_grf/chars_orig_extra.nfo
 share/openttd/media/extra_grf/elrails.nfo
 share/openttd/media/extra_grf/elrails.png
 share/openttd/media/extra_grf/fix_graphics.nfo
