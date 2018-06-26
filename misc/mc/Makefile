@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2018/01/08 11:35:28 kirby Exp $
+# $OpenBSD: Makefile,v 1.64 2018/06/26 14:32:28 kirby Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.20
+DISTNAME=		mc-4.8.21
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.midnight-commander.org/
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c curses iconv intl m pcre pthread glib-2.0 gmodule-2.0 slang
 WANTLIB += crypto ssl z ssh2
 
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		security/libssh2
