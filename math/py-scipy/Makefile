@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/23 18:45:10 daniel Exp $
+# $OpenBSD: Makefile,v 1.32 2018/06/26 11:25:41 daniel Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -9,6 +9,8 @@ COMMENT=		maths, science and engineering modules for Python
 MODPY_EGG_VERSION=	0.17.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
+
 CATEGORIES=		math devel
 
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
@@ -31,6 +33,7 @@ MODFORTRAN_COMPILER =	gfortran
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=       Yes
 MODPY_SETUP=            setupegg.py
+MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
