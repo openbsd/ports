@@ -1,0 +1,4 @@
+Analitza is a library that work with mathematical objects. Analitza add
+mathematical features to your program, such as symbolic computations and some
+numerical methods; for instance the library can parse mathematical expressions
+and let you evaluate and draw them.
