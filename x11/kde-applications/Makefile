@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/12 16:54:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/26 05:49:55 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
      #SUBDIR += akonadi
-     #SUBDIR += analitza
+     SUBDIR += analitza
      #SUBDIR += ark
      #SUBDIR += artikulate
      #SUBDIR += audiocd-kio
@@ -12,7 +12,7 @@
      #SUBDIR += bomber
      #SUBDIR += bovo
      #SUBDIR += calendarsupport
-     #SUBDIR += cantor
+     SUBDIR += cantor
      #SUBDIR += cervisia
      #SUBDIR += dolphin
      #SUBDIR += dolphin-plugins
@@ -31,7 +31,7 @@
      #SUBDIR += kaccounts-providers
      #SUBDIR += kajongg
      #SUBDIR += kalarmcal
-     #SUBDIR += kalgebra
+     SUBDIR += kalgebra
      #SUBDIR += kalzium
      #SUBDIR += kamera
      #SUBDIR += kanagram
