@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/05/05 02:32:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2018/06/26 21:25:04 rsadowski Exp $
 
-COMMENT =		GTK2 terminal emulator with split-window and tabs support
+COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
-MODPY_EGG_VERSION =	0.98
+MODPY_EGG_VERSION =	1.91
 DISTNAME =		terminator-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		x11
 
@@ -13,17 +12,20 @@ HOMEPAGE =		https://gnometerminator.blogspot.com/p/introduction.html
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		http://launchpad.net/terminator/trunk/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES =		https://launchpad.net/terminator/gtk3/${MODPY_EGG_VERSION}/+download/
 
 MODULES =		lang/python \
 			textproc/intltool
-RUN_DEPENDS =		devel/vte,-python \
-			devel/py-notify \
-			devel/desktop-file-utils \
-			x11/gtk+3,-guic \
-			x11/keybinder,-python
 
-NO_TEST =		Yes
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/gsettings-desktop-schemas \
+			devel/py-gobject3 \
+			devel/py-notify \
+			devel/vte3 \
+			sysutils/py-psutil \
+			x11/gtk+3,-guic \
+			x11/gtk+3 \
+			x11/keybinder3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--without-icon-cache
