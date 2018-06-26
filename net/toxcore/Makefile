@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/29 11:14:09 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/26 20:34:04 landry Exp $
 
 COMMENT =		Tox client library
 
-V =			0.2.2
+V =			0.2.3
 DISTNAME =		toxcore-$V
 
 GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
 GH_TAGNAME =		v$V
 
-SHARED_LIBS +=  	toxcore	0.0 # 0.0
+SHARED_LIBS +=  	toxcore	0.1 # 0.1
 CATEGORIES =		net telephony
 
 HOMEPAGE =		https://tox.chat/
