@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/26 11:08:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/26 16:56:50 rsadowski Exp $
 
 COMMENT =	Qt4 client for the X2Go system
 
-DISTNAME =	x2goclient-4.1.1.1
+DISTNAME =	x2goclient-4.1.2.1
 
 CATEGORIES =	x11
 
@@ -54,7 +54,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/x2goclient-cli ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.GPGCARD ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/provider/etc/x2goplugin-apache.conf \
-		${EXAMPLESDIR}
 
 .include <bsd.port.mk>

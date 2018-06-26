@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/08 18:05:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/26 16:56:50 rsadowski Exp $
 @bin bin/x2goclient
 @man man/man1/x2goclient.1
 share/doc/x2goclient/
@@ -6,4 +6,3 @@ share/doc/x2goclient/LICENSE
 share/examples/x2goclient/
 share/examples/x2goclient/HOWTO.GPGCARD
 share/examples/x2goclient/x2goclient-cli
-share/examples/x2goclient/x2goplugin-apache.conf
