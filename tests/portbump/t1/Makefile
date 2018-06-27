@@ -53,17 +53,14 @@ FLAVOR?=	no_gui no_mono no_qt3 no_qt4 bootstrap
 
 MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -ui
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	converters/xmltoman \
 		devel/gobject-introspection \
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
-		gdbm daemon dbus-1 ffi \
-		${MODGETTEXT_WANTLIB}
-LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		devel/glib2 \
+		gdbm daemon dbus-1 ffi
+LIB_DEPENDS-main= devel/glib2 \
 		databases/gdbm \
 		devel/libdaemon>=0.14 \
 		x11/dbus
@@ -98,11 +95,9 @@ BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
 
 ### -gtk
 SHARED_LIBS +=  avahi-ui             0.0      # .1.0
-LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
-		x11/gtk+2 \
+LIB_DEPENDS-gtk= x11/gtk+2 \
 		${BUILD_PKGPATH}
-RUN_DEPENDS-gtk= ${MODGETTEXT_RUN_DEPENDS} \
-		${BUILD_PKGPATH},-ui
+RUN_DEPENDS-gtk= ${BUILD_PKGPATH},-ui
 WANTLIB-gtk=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
@@ -110,16 +105,13 @@ WANTLIB-gtk=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common xcb-shm \
-		avahi-glib ffi harfbuzz graphite2 \
-		${MODGETTEXT_WANTLIB}
+		avahi-glib ffi harfbuzz graphite2
 
 ### -gtk3
 SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
-LIB_DEPENDS-gtk3= ${MODGETTEXT_LIB_DEPENDS} \
-		x11/gtk+3 \
+LIB_DEPENDS-gtk3= x11/gtk+3 \
 		${BUILD_PKGPATH}
-RUN_DEPENDS-gtk3= ${MODGETTEXT_RUN_DEPENDS} \
-		${BUILD_PKGPATH},-ui
+RUN_DEPENDS-gtk3= ${BUILD_PKGPATH},-ui
 WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
 WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
@@ -127,15 +119,13 @@ WANTLIB-gtk3 += dbus-1 expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += xcb-shm z ffi
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gtk3 += graphite2
 
 ### -gui
-LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
-		${BUILD_PKGPATH},-gtk3
-RUN_DEPENDS-gui= ${MODGETTEXT_RUN_DEPENDS} \
-		${MODPY_RUN_DEPENDS} \
+LIB_DEPENDS-gui= ${BUILD_PKGPATH},-gtk3
+RUN_DEPENDS-gui= ${MODPY_RUN_DEPENDS} \
 		lang/python/${MODPY_VERSION},-gdbm \
 		x11/py-gtk2 \
 		x11/dbus-python \
@@ -151,7 +141,6 @@ WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gui += graphite2
-WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
 LIB_DEPENDS-ui= # empty
@@ -169,13 +158,12 @@ CONFIGURE_ARGS+= --disable-gtk \
 .if ${BUILD_PACKAGES:M-qt3}
 SHARED_LIBS +=  avahi-qt3            0.0      # .1.2
 MODULES+=	x11/qt3
-LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
-		${MODQT3_LIB_DEPENDS} \
+LIB_DEPENDS-qt3= ${MODQT3_LIB_DEPENDS} \
 		${BUILD_PKGPATH}
 WANTLIB-qt3=	GL ICE SM X11 Xcursor Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread xcb z \
-		avahi-common ${COMPILER_LIBCXX} ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
+		avahi-common ${COMPILER_LIBCXX} ${MODQT3_WANTLIB} \
 		Xdamage Xxf86vm drm pthread-stubs
 .else
 CONFIGURE_ARGS+= --disable-qt3
@@ -184,10 +172,9 @@ CONFIGURE_ARGS+= --disable-qt3
 .if ${BUILD_PACKAGES:M-qt4}
 SHARED_LIBS +=  avahi-qt4            0.0      # .1.2
 MODULES+=	x11/qt4
-LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
-		x11/qt4 \
+LIB_DEPENDS-qt4= x11/qt4 \
 		${BUILD_PKGPATH}
-WANTLIB-qt4=	QtCore avahi-common m ${COMPILER_LIBCXX} ${MODGETTEXT_WANTLIB} \
+WANTLIB-qt4=	QtCore avahi-common m ${COMPILER_LIBCXX} \
 		pthread
 .else
 CONFIGURE_ARGS+= --disable-qt4

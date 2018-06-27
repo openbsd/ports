@@ -27,8 +27,7 @@ WANTLIB += tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 
-MODULES=		devel/gettext \
-			x11/gnome \
+MODULES=		x11/gnome \
 			devel/dconf
 
 RUN_DEPENDS=		x11/gnome/gvfs \

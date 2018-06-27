@@ -13,7 +13,7 @@ SUHOSIN_P_V=	0.9.10unofficial
 REVISION=	4
 REVISION-main=	7
 REVISION-odbc=	5
-REVISION-fpm=		0
+REVISION-fpm=		5
 
 SHARED_LIBS  =			\
 		foooo   0.0

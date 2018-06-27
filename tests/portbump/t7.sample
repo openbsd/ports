@@ -6,7 +6,9 @@ PKGNAME =	portbump-t7-1.0
 PKGNAME-main =	${PKGNAME}
 PKGNAME-qt4 =	portbump-t7-qt4-1.0
 
-WANTLIB-main =  c m pthread
+WANTLIB =  c pthread
+
+WANTLIB-main =  ${WANTLIB} m
 
 WANTLIB-qt4 =  ${MODQT4_WANTLIB}
 WANTLIB-qt4 += c pthread

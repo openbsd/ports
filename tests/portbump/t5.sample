@@ -24,6 +24,8 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
+PKG_ARCH-ui=	*
+
 REVISION-main=	10
 REVISION-gtk=	5
 REVISION-mono=	2
@@ -79,18 +81,16 @@ WANTLIB-gui += gtk-3 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gui += pcre pixman-1 png pthread pthread-stubs qwe xcb
 WANTLIB-gui += xcb-render xcb-shm z
 
-WANTLIB-mono=  qwe
-
 WANTLIB-qt3=  ${MODQT3_WANTLIB}
 WANTLIB-qt3+= GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB-qt3+= Xmu Xrandr Xrender Xt Xxf86vm avahi-common drm expat
 WANTLIB-qt3+= fontconfig freetype jpeg lcms m mng png pthread
-WANTLIB-qt3+= pthread-stubs qwe stdc++ xcb z
+WANTLIB-qt3+= pthread-stubs qwe ${COMPILER_LIBCXX} xcb z
 
 WANTLIB-qt4=  ${MODQT4_WANTLIB}
-WANTLIB-qt4+= avahi-common m pthread qwe stdc++
+WANTLIB-qt4+= avahi-common m pthread qwe ${COMPILER_LIBCXX}
 
-WANTLIB-ui=  qwe
+WANTLIB-ui = # no-arch package
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
@@ -213,8 +213,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		PTHREAD_CFLAGS="-pthread" \
 		PTHREAD_LIBS="-pthread" \
 		PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
+CONFIGURE_ARGS+=--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 		--with-avahi-user=_avahi \
 		--with-avahi-group=_avahi \
 		--with-avahi-priv-access-group=wheel \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2017/07/16 19:19:02 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2018/06/27 16:18:56 zhuk Exp $
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
@@ -308,14 +308,11 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-MODULES=		devel/gettext
-
-WANTLIB-main+=		c crypto m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		c crypto m pthread ssl xml2>=8 z
 # php 5.4/5.5 : WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			mail/femail,-chroot
+RUN_DEPENDS-main=	mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 .if ${PV} != "5.4" && ${PV} != "5.5"
