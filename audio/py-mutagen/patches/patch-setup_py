@@ -1,12 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.7 2015/06/03 06:37:26 jasper Exp $
---- setup.py.orig	Wed Apr 29 17:55:52 2015
-+++ setup.py	Wed Jun  3 08:23:10 2015
-@@ -214,7 +214,7 @@ class coverage_cmd(Command):
+$OpenBSD: patch-setup_py,v 1.8 2018/06/27 13:50:20 sthen Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -238,7 +238,7 @@ if __name__ == "__main__":
+         version_string = ".".join(map(str, version))
  
- 
- if os.name == "posix":
--    data_files = [('share/man/man1', glob.glob("man/*.1"))]
-+    data_files = [('man/man1', glob.glob("man/*.1"))]
- else:
-     data_files = []
+     if os.name == "posix":
+-        data_files = [('share/man/man1', glob.glob("man/*.1"))]
++        data_files = [('man/man1', glob.glob("man/*.1"))]
+     else:
+         data_files = []
  
