@@ -1,9 +1,9 @@
-$OpenBSD: patch-gtk_updateiconcache_c,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+$OpenBSD: patch-gtk_updateiconcache_c,v 1.2 2018/06/27 11:28:17 ajacoutot Exp $
 
 Index: gtk/updateiconcache.c
 --- gtk/updateiconcache.c.orig
 +++ gtk/updateiconcache.c
-@@ -1717,6 +1717,11 @@ main (int argc, char **argv)
+@@ -1712,6 +1712,11 @@ main (int argc, char **argv)
    path = g_locale_to_utf8 (path, -1, NULL, NULL, NULL);
  #endif
  

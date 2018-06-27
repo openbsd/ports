@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/06/27 11:28:17 ajacoutot Exp $
 @conflict gtk+3-*
 @comment conflicts: share/gettext/its/gtkbuilder.{its,loc}
 @comment conflicts: share/glib-2.0/schemas/*.xml
-@unexec-delete rm -f %D/lib/gtk-4.0/4.0.0/immodules.cache
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application
 @bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-icon-browser
 @bin bin/gtk4-launch
-@bin bin/gtk4-query-immodules
 @bin bin/gtk4-query-settings
 @bin bin/gtk4-widget-factory
 include/gtk-4.0/
@@ -18,6 +16,7 @@ include/gtk-4.0/gdk/gdk-autocleanup.h
 include/gtk-4.0/gdk/gdk.h
 include/gtk-4.0/gdk/gdkapplaunchcontext.h
 include/gtk-4.0/gdk/gdkcairo.h
+include/gtk-4.0/gdk/gdkcairocontext.h
 include/gtk-4.0/gdk/gdkclipboard.h
 include/gtk-4.0/gdk/gdkconfig.h
 include/gtk-4.0/gdk/gdkcontentdeserializer.h
@@ -33,27 +32,30 @@ include/gtk-4.0/gdk/gdkdisplay.h
 include/gtk-4.0/gdk/gdkdisplaymanager.h
 include/gtk-4.0/gdk/gdkdnd.h
 include/gtk-4.0/gdk/gdkdrawcontext.h
-include/gtk-4.0/gdk/gdkdrawingcontext.h
+include/gtk-4.0/gdk/gdkdrop.h
 include/gtk-4.0/gdk/gdkenumtypes.h
 include/gtk-4.0/gdk/gdkevents.h
 include/gtk-4.0/gdk/gdkframeclock.h
 include/gtk-4.0/gdk/gdkframetimings.h
 include/gtk-4.0/gdk/gdkglcontext.h
+include/gtk-4.0/gdk/gdkgltexture.h
 include/gtk-4.0/gdk/gdkkeys.h
 include/gtk-4.0/gdk/gdkkeysyms.h
+include/gtk-4.0/gdk/gdkmemorytexture.h
 include/gtk-4.0/gdk/gdkmonitor.h
+include/gtk-4.0/gdk/gdkpaintable.h
 include/gtk-4.0/gdk/gdkpango.h
 include/gtk-4.0/gdk/gdkpixbuf.h
 include/gtk-4.0/gdk/gdkproperty.h
 include/gtk-4.0/gdk/gdkrectangle.h
 include/gtk-4.0/gdk/gdkrgba.h
 include/gtk-4.0/gdk/gdkseat.h
+include/gtk-4.0/gdk/gdksnapshot.h
+include/gtk-4.0/gdk/gdksurface.h
 include/gtk-4.0/gdk/gdktexture.h
-include/gtk-4.0/gdk/gdkthreads.h
 include/gtk-4.0/gdk/gdktypes.h
 include/gtk-4.0/gdk/gdkversionmacros.h
 include/gtk-4.0/gdk/gdkvulkancontext.h
-include/gtk-4.0/gdk/gdkwindow.h
 include/gtk-4.0/gdk/gdkx.h
 include/gtk-4.0/gdk/x11/
 include/gtk-4.0/gdk/x11/gdkx-autocleanups.h
@@ -72,9 +74,10 @@ include/gtk-4.0/gdk/x11/gdkx11monitor.h
 include/gtk-4.0/gdk/x11/gdkx11property.h
 include/gtk-4.0/gdk/x11/gdkx11screen.h
 include/gtk-4.0/gdk/x11/gdkx11selection.h
+include/gtk-4.0/gdk/x11/gdkx11surface.h
 include/gtk-4.0/gdk/x11/gdkx11utils.h
-include/gtk-4.0/gdk/x11/gdkx11window.h
 include/gtk-4.0/gsk/
+include/gtk-4.0/gsk/gsk-autocleanup.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskenums.h
 include/gtk-4.0/gsk/gskenumtypes.h
@@ -203,6 +206,7 @@ include/gtk-4.0/gtk/gtkentrybuffer.h
 include/gtk-4.0/gtk/gtkentrycompletion.h
 include/gtk-4.0/gtk/gtkenums.h
 include/gtk-4.0/gtk/gtkeventcontroller.h
+include/gtk-4.0/gtk/gtkeventcontrollerkey.h
 include/gtk-4.0/gtk/gtkeventcontrollermotion.h
 include/gtk-4.0/gtk/gtkeventcontrollerscroll.h
 include/gtk-4.0/gtk/gtkexpander.h
@@ -226,6 +230,7 @@ include/gtk-4.0/gtk/gtkgesturemultipress.h
 include/gtk-4.0/gtk/gtkgesturepan.h
 include/gtk-4.0/gtk/gtkgesturerotate.h
 include/gtk-4.0/gtk/gtkgesturesingle.h
+include/gtk-4.0/gtk/gtkgesturestylus.h
 include/gtk-4.0/gtk/gtkgestureswipe.h
 include/gtk-4.0/gtk/gtkgesturezoom.h
 include/gtk-4.0/gtk/gtkglarea.h
@@ -235,7 +240,6 @@ include/gtk-4.0/gtk/gtkicontheme.h
 include/gtk-4.0/gtk/gtkiconview.h
 include/gtk-4.0/gtk/gtkimage.h
 include/gtk-4.0/gtk/gtkimcontext.h
-include/gtk-4.0/gtk/gtkimcontextinfo.h
 include/gtk-4.0/gtk/gtkimcontextsimple.h
 include/gtk-4.0/gtk/gtkimmodule.h
 include/gtk-4.0/gtk/gtkimmulticontext.h
@@ -249,6 +253,9 @@ include/gtk-4.0/gtk/gtklistbox.h
 include/gtk-4.0/gtk/gtkliststore.h
 include/gtk-4.0/gtk/gtklockbutton.h
 include/gtk-4.0/gtk/gtkmain.h
+include/gtk-4.0/gtk/gtkmediacontrols.h
+include/gtk-4.0/gtk/gtkmediafile.h
+include/gtk-4.0/gtk/gtkmediastream.h
 include/gtk-4.0/gtk/gtkmenu.h
 include/gtk-4.0/gtk/gtkmenubar.h
 include/gtk-4.0/gtk/gtkmenubutton.h
@@ -257,7 +264,6 @@ include/gtk-4.0/gtk/gtkmenushell.h
 include/gtk-4.0/gtk/gtkmenutoolbutton.h
 include/gtk-4.0/gtk/gtkmessagedialog.h
 include/gtk-4.0/gtk/gtkmodelbutton.h
-include/gtk-4.0/gtk/gtkmodules.h
 include/gtk-4.0/gtk/gtkmountoperation.h
 include/gtk-4.0/gtk/gtknativedialog.h
 include/gtk-4.0/gtk/gtknotebook.h
@@ -267,7 +273,7 @@ include/gtk-4.0/gtk/gtkpadcontroller.h
 include/gtk-4.0/gtk/gtkpagesetup.h
 include/gtk-4.0/gtk/gtkpaned.h
 include/gtk-4.0/gtk/gtkpapersize.h
-include/gtk-4.0/gtk/gtkplacessidebar.h
+include/gtk-4.0/gtk/gtkpicture.h
 include/gtk-4.0/gtk/gtkpopover.h
 include/gtk-4.0/gtk/gtkpopovermenu.h
 include/gtk-4.0/gtk/gtkprintcontext.h
@@ -279,11 +285,6 @@ include/gtk-4.0/gtk/gtkradiobutton.h
 include/gtk-4.0/gtk/gtkradiomenuitem.h
 include/gtk-4.0/gtk/gtkradiotoolbutton.h
 include/gtk-4.0/gtk/gtkrange.h
-include/gtk-4.0/gtk/gtkrecentchooser.h
-include/gtk-4.0/gtk/gtkrecentchooserdialog.h
-include/gtk-4.0/gtk/gtkrecentchoosermenu.h
-include/gtk-4.0/gtk/gtkrecentchooserwidget.h
-include/gtk-4.0/gtk/gtkrecentfilter.h
 include/gtk-4.0/gtk/gtkrecentmanager.h
 include/gtk-4.0/gtk/gtkrender.h
 include/gtk-4.0/gtk/gtkrevealer.h
@@ -330,8 +331,6 @@ include/gtk-4.0/gtk/gtktoggletoolbutton.h
 include/gtk-4.0/gtk/gtktoolbar.h
 include/gtk-4.0/gtk/gtktoolbutton.h
 include/gtk-4.0/gtk/gtktoolitem.h
-include/gtk-4.0/gtk/gtktoolitemgroup.h
-include/gtk-4.0/gtk/gtktoolpalette.h
 include/gtk-4.0/gtk/gtktoolshell.h
 include/gtk-4.0/gtk/gtktooltip.h
 include/gtk-4.0/gtk/gtktreednd.h
@@ -346,9 +345,11 @@ include/gtk-4.0/gtk/gtktreeviewcolumn.h
 include/gtk-4.0/gtk/gtktypebuiltins.h
 include/gtk-4.0/gtk/gtktypes.h
 include/gtk-4.0/gtk/gtkversion.h
+include/gtk-4.0/gtk/gtkvideo.h
 include/gtk-4.0/gtk/gtkviewport.h
 include/gtk-4.0/gtk/gtkvolumebutton.h
 include/gtk-4.0/gtk/gtkwidget.h
+include/gtk-4.0/gtk/gtkwidgetpaintable.h
 include/gtk-4.0/gtk/gtkwidgetpath.h
 include/gtk-4.0/gtk/gtkwindow.h
 include/gtk-4.0/gtk/gtkwindowgroup.h
@@ -366,18 +367,7 @@ lib/girepository-1.0/Gsk-4.0.typelib
 lib/girepository-1.0/Gtk-4.0.typelib
 lib/gtk-4.0/
 lib/gtk-4.0/4.0.0/
-lib/gtk-4.0/4.0.0/immodules/
-lib/gtk-4.0/4.0.0/immodules/im-am-et.so
-lib/gtk-4.0/4.0.0/immodules/im-cedilla.so
-lib/gtk-4.0/4.0.0/immodules/im-cyrillic-translit.so
-lib/gtk-4.0/4.0.0/immodules/im-inuktitut.so
-lib/gtk-4.0/4.0.0/immodules/im-ipa.so
-lib/gtk-4.0/4.0.0/immodules/im-multipress.so
-lib/gtk-4.0/4.0.0/immodules/im-thai.so
-lib/gtk-4.0/4.0.0/immodules/im-ti-er.so
-lib/gtk-4.0/4.0.0/immodules/im-ti-et.so
-lib/gtk-4.0/4.0.0/immodules/im-viqr.so
-lib/gtk-4.0/4.0.0/immodules/im-xim.so
+lib/gtk-4.0/4.0.0/media/
 lib/gtk-4.0/4.0.0/printbackends/
 lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
 lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
@@ -385,15 +375,15 @@ lib/gtk-4.0/4.0.0/printbackends/libprintbackend-lpr.so
 lib/pkgconfig/gtk+-4.0.pc
 lib/pkgconfig/gtk+-unix-print-4.0.pc
 lib/pkgconfig/gtk+-x11-4.0.pc
+libexec/installed-tests/
+libexec/installed-tests/gtk-4.0/
+libexec/installed-tests/gtk-4.0/tools/
+libexec/installed-tests/gtk-4.0/tools/settings
+libexec/installed-tests/gtk-4.0/tools/simplify
 share/applications/gtk4-demo.desktop
 share/applications/gtk4-icon-browser.desktop
 share/applications/gtk4-widget-factory.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/examples/gtk+4/
-share/examples/gtk+4/gtk-4.0/
-@sample ${SYSCONFDIR}/gtk-4.0/
-share/examples/gtk+4/gtk-4.0/im-multipress.conf
-@sample ${SYSCONFDIR}/gtk-4.0/im-multipress.conf
 share/gettext/its/gtkbuilder.its
 share/gettext/its/gtkbuilder.loc
 share/gir-1.0/Gdk-4.0.gir
@@ -671,7 +661,9 @@ share/locale/zh_HK/LC_MESSAGES/gtk40-properties.mo
 share/locale/zh_HK/LC_MESSAGES/gtk40.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40-properties.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40.mo
-@exec %D/bin/gtk4-query-immodules --update-cache
+share/metainfo/
+share/metainfo/org.gtk.Demo.appdata.xml
+share/metainfo/org.gtk.WidgetFactory.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

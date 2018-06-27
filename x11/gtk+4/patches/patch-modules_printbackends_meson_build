@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_printbackends_meson_build,v 1.1.1.1 2018/05/24 15:54:09 ajacoutot Exp $
+$OpenBSD: patch-modules_printbackends_meson_build,v 1.2 2018/06/27 11:28:17 ajacoutot Exp $
 
 Last chunk: always enable the lpr print backend
 
 Index: modules/printbackends/meson.build
 --- modules/printbackends/meson.build.orig
 +++ modules/printbackends/meson.build
-@@ -8,10 +8,11 @@ if enable_cups != 'no'
+@@ -21,10 +21,11 @@ if enable_cups
    #if cups_config.found()
    # FIXME: eek, see configure.ac (we're just not going to support non-standar prefix for now)
    #endif
@@ -20,11 +20,11 @@ Index: modules/printbackends/meson.build
      message('Found CUPS version: @0@.@1@'.format(cups_major_version, cups_minor_version))
      if cups_major_version > 1 or cups_minor_version >= 2
        if cups_major_version > 1 or cups_minor_version >= 6
-@@ -76,9 +77,7 @@ if get_option('enable-test-print-backend') == 'yes'
-   print_backends += ['test']
+@@ -73,9 +74,7 @@ if os_unix
  endif
  
--if not print_backends.contains('papi') and not print_backends.contains('cups')
+ # Automatic fall-back to the lpr backend
+-if not print_backends.contains('cups')
 -  print_backends += ['lpr']
 -endif
 +print_backends += ['lpr']
