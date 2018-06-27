@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/05/25 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:24 espie Exp $
 @bin bin/xfce4-mixer
 lib/xfce4/panel/plugins/libmixer.so
 @man man/man1/xfce4-mixer.1
@@ -65,5 +65,4 @@ share/xfce4-mixer/icons/hicolor/scalable/
 share/xfce4-mixer/icons/hicolor/scalable/status/
 share/xfce4-mixer/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 share/xfce4/panel/plugins/mixer.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

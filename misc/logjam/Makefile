@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2018/06/27 21:03:57 espie Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/

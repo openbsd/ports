@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/05/12 10:00:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:03:35 espie Exp $
 @bin bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 @man man/man1/gqmpeg.1
@@ -87,5 +87,4 @@ share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
 share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
 share/pixmaps/
 share/pixmaps/gqmpeg.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

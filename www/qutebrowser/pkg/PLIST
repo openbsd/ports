@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/10/15 08:33:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:06 espie Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -396,7 +396,6 @@ share/pixmaps/
 share/pixmaps/qutebrowser/
 share/pixmaps/qutebrowser/qutebrowser.ico
 share/pixmaps/qutebrowser/qutebrowser.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

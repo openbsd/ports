@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2018/06/22 08:30:46 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2018/06/27 21:04:23 espie Exp $
 
 COMMENT=	Xfce4 extension library
 
 XFCE_VERSION=	0.12.2
 XFCE_PROJECT=	exo
+REVISION=	0
 
 PORTROACH=	limitw:1,even
 

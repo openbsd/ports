@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/09/19 14:06:53 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/06/27 21:03:58 espie Exp $
 @pkgpath net/amule
 @bin bin/alc
 @bin bin/alcc
@@ -90,5 +90,4 @@ share/pixmaps/alc.xpm
 share/pixmaps/amule.xpm
 share/pixmaps/amulegui.xpm
 share/pixmaps/wxcas.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

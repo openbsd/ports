@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/28 20:19:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:51 espie Exp $
 bin/mapcatcher
 bin/mapdownloader
 lib/python${MODPY_VERSION}/site-packages/GMapCatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -199,5 +199,4 @@ share/pixmaps/gmapcatcher/marker_s.png
 share/pixmaps/gmapcatcher/missing.png
 share/pixmaps/gmapcatcher/setup.bmp
 share/pixmaps/mapcatcher.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

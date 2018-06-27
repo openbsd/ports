@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:07:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:16 espie Exp $
 @bin bin/kiriki
 share/applications/kde4/kiriki.desktop
 share/apps/kiriki/
@@ -21,7 +21,6 @@ share/icons/hicolor/22x22/apps/kiriki.png
 share/icons/hicolor/32x32/apps/kiriki.png
 share/icons/hicolor/48x48/apps/kiriki.png
 share/icons/hicolor/64x64/apps/kiriki.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

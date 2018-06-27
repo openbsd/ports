@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.7 2016/03/11 23:03:21 naddy Exp $
+@comment $OpenBSD: PLIST-gui,v 1.8 2018/06/27 21:04:00 espie Exp $
 bin/sshvnc
 bin/ssvnc
 bin/tsvnc
@@ -19,5 +19,4 @@ lib/ssvnc/util/ssvnc.tcl
 lib/ssvnc/util/stunnel-server.conf
 @man man/man1/ssvnc.1
 share/applications/ssvnc.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

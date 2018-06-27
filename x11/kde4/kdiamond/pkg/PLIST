@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:59:50 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:15 espie Exp $
 @conflict kdegames-<4.10
 @bin bin/kdiamond
 share/applications/kde4/kdiamond.desktop
@@ -31,7 +31,6 @@ share/icons/hicolor/scalable/apps/kdiamond.svgz
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg
 share/sounds/KDiamond-Stone-Touch.ogg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

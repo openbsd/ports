@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/06/21 18:05:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2018/06/27 21:04:08 espie Exp $
 
 TRACKER_API=		2.0
 
@@ -6,6 +6,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
 GNOME_VERSION=		3.28.3
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/04/23 16:34:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/06/27 21:04:08 espie Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
@@ -236,5 +236,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-color-manager.mo
 share/metainfo/org.gnome.ColorProfileViewer.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

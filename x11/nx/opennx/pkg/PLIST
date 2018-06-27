@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/08/20 22:06:01 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:21 espie Exp $
 @bin NX/bin/opennx
 @bin NX/bin/pconnect
 @bin NX/bin/watchreader
@@ -49,7 +49,6 @@ share/icons/hicolor/scalable/mimetypes/nx-desktop.svg
 share/locale/de/LC_MESSAGES/opennx.mo
 share/locale/ja/LC_MESSAGES/opennx.mo
 share/locale/ru/LC_MESSAGES/opennx.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/30 07:22:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:04 espie Exp $
 
 COMMENT=		VirtualBox client with remote management
 
 DISTNAME=		RemoteBox-2.5
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=		sysutils x11 emulators
 

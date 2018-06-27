@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/30 11:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:54 espie Exp $
 
 COMMENT =	fast and simple GTK+ image viewer
 
 MODPY_EGG_VERSION = 0.9.5.2
 DISTNAME =	mirage-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	graphics
 

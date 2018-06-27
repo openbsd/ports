@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/20 08:48:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:43 espie Exp $
 
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-2.14.0
-REVISION=	13
+REVISION=	14
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 

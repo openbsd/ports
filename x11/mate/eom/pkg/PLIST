@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/10 15:07:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:21 espie Exp $
 @bin bin/eom
 include/eom-2.20/
 include/eom-2.20/eom/
@@ -459,8 +459,7 @@ share/locale/zh_CN/LC_MESSAGES/eom.mo
 share/locale/zh_HK/LC_MESSAGES/eom.mo
 share/locale/zh_TW/LC_MESSAGES/eom.mo
 share/locale/zu/LC_MESSAGES/eom.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/01 21:09:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:17 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kmplot
 lib/kde4/libkmplotpart.so
@@ -52,7 +52,6 @@ share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
 share/kde4/services/kmplot_part.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:15 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kgeography
 share/applications/kde4/kgeography.desktop
@@ -1020,7 +1020,6 @@ share/icons/hicolor/32x32/apps/kgeography.png
 share/icons/hicolor/48x48/apps/kgeography.png
 share/icons/hicolor/64x64/apps/kgeography.png
 share/icons/hicolor/scalable/apps/kgeography.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

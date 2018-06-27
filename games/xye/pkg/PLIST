@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/15 19:24:15 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:51 espie Exp $
 @bin bin/xye
 share/applications/xye.desktop
 share/pixmaps/
@@ -45,5 +45,4 @@ share/xye/res/fon.bmp
 share/xye/res/fon_bold.bmp
 share/xye/res/xye.png
 share/xye/res/xye_luminosity.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

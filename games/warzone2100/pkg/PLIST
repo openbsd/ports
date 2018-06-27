@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/05/24 13:06:47 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:51 espie Exp $
 @bin bin/warzone2100
 @man man/man6/warzone2100.6
 share/applications/warzone2100.desktop
@@ -111,5 +111,4 @@ share/warzone2100/music/music.wpl
 share/warzone2100/music/track1.ogg
 share/warzone2100/music/track2.ogg
 share/warzone2100/music/track3.ogg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

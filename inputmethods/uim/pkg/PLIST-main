@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/01/09 16:45:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2018/06/27 21:03:55 espie Exp $
 @pkgpath inputmethods/uim
 @pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
@@ -401,5 +401,4 @@ share/uim/yahoo-jp-custom.scm
 share/uim/yahoo-jp-key-custom.scm
 share/uim/yahoo-jp.scm
 share/uim/zaurus.scm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

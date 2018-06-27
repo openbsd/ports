@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/04/23 22:02:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/06/27 21:04:11 espie Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -130,5 +130,4 @@ share/xdg-desktop-portal/portals/
 share/xdg-desktop-portal/portals/gnome-shell.portal
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

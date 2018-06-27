@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/06/13 09:24:23 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:47 espie Exp $
 @bin bin/ja2
 @man man/man6/ja2.6
 share/applications/ja2-stracciatella.desktop
@@ -92,7 +92,6 @@ share/ja2/mods/test-json-dialogs/data/
 share/ja2/mods/test-json-dialogs/data/mercedt/
 share/ja2/mods/test-json-dialogs/data/mercedt/009.edt.json
 share/ja2/mods/test-json-dialogs/readme.txt
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

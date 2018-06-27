@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/04/28 09:11:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:02 espie Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/
@@ -733,8 +733,7 @@ share/locale/zh_TW/LC_MESSAGES/glabels-3.0.mo
 share/mime/packages/glabels-3.0.xml
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime

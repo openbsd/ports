@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/02 20:40:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:39 espie Exp $
 bin/luma
 lib/python${MODPY_VERSION}/site-packages/luma/
 lib/python${MODPY_VERSION}/site-packages/luma-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -280,5 +280,4 @@ share/pixmaps/
 share/pixmaps/luma.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

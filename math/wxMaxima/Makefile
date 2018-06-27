@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:57 espie Exp $
 
 # http://marc.info/?l=openbsd-ports&m=140587945502296&w=2
 BROKEN =		allocation error starting socket server
@@ -7,7 +7,7 @@ COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
 DISTNAME =		wxMaxima-12.09.0
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://wxmaxima.sourceforge.net/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/27 14:06:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:35 espie Exp $
 @bin bin/calfjackhost
 lib/ladspa/
 lib/ladspa/calf.so
@@ -31,5 +31,4 @@ share/ladspa/rdf/
 share/ladspa/rdf/calf.rdf
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

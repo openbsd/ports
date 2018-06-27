@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-gtk,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.2 2018/06/27 21:03:39 espie Exp $
 @bin bin/distccmon-gnome
 share/distcc/
 share/distcc/distccmon-gnome-icon.png
 share/distcc/distccmon-gnome.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

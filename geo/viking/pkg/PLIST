@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/12/30 14:45:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:52 espie Exp $
 @bin bin/viking
 share/applications/viking.desktop
 share/icons/hicolor/48x48/apps/viking.png
@@ -44,5 +44,4 @@ share/viking/latlontz.txt
 share/viking/maps.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

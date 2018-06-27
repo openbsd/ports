@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2017/11/21 18:16:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/06/27 21:03:54 espie Exp $
 @bin bin/gthumb
 include/gthumb-${API_V}/
 include/gthumb-${API_V}/gthumb/
@@ -1021,7 +1021,6 @@ share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

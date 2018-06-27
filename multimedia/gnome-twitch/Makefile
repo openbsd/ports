@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/19 22:49:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:57 espie Exp $
 
 COMMENT =	desktop Twitch.tv client
 CATEGORIES =	multimedia games x11
@@ -6,6 +6,7 @@ CATEGORIES =	multimedia games x11
 GH_ACCOUNT =	vinszent
 GH_PROJECT =	gnome-twitch
 GH_TAGNAME =	v0.4.2
+REVISION =	0
 
 HOMEPAGE =	http://gnome-twitch.vinszent.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

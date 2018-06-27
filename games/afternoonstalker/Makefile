@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:43 espie Exp $
 
 COMMENT=	Night Stalker clone for X
 
 DISTNAME=	afternoonstalker-1.1.5
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 

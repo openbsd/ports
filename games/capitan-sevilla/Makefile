@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:44 espie Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -6,7 +6,7 @@ DISTNAME =		capitan-sevilla-${VERSION}
 CATEGORIES =		games
 HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
 
-REVISION =		2
+REVISION =		3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

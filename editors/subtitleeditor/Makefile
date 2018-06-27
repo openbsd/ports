@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2018/04/28 14:23:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2018/06/27 21:03:41 espie Exp $
 
 COMMENT=		GTK+ subtitles editor
 
 V=			0.54.0
 DISTNAME=		subtitleeditor-${V}
+REVISION=		0
 
 CATEGORIES=		graphics editors
 

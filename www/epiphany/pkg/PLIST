@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/06/14 10:37:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.43 2018/06/27 21:04:05 espie Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -538,8 +538,7 @@ share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 share/metainfo/org.gnome.Epiphany.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

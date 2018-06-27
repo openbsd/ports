@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2018/04/26 20:13:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2018/06/27 21:04:25 espie Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -747,5 +747,4 @@ share/xscreensaver/glade/screensaver-locking.png
 share/xscreensaver/glade/screensaver-power.png
 share/xscreensaver/glade/screensaver-snap.png
 share/xscreensaver/glade/xscreensaver-demo.glade2
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

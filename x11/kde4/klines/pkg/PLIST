@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:15 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:16 espie Exp $
 @conflict kdegames-<4
 @bin bin/klines
 share/applications/kde4/klines.desktop
@@ -29,7 +29,6 @@ share/icons/hicolor/22x22/apps/klines.png
 share/icons/hicolor/32x32/apps/klines.png
 share/icons/hicolor/48x48/apps/klines.png
 share/icons/hicolor/64x64/apps/klines.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

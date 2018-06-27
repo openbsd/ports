@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2017/04/23 11:11:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2018/06/27 21:04:12 espie Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -4029,8 +4029,7 @@ share/wallpapers/sunshine-after-the-rain.jpg
 share/wallpapers/sunshine-after-the-rain.jpg.desktop
 share/wallpapers/triplegears.jpg
 share/wallpapers/triplegears.jpg.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg

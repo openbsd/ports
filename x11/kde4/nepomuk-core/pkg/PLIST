@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/09 20:03:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:19 espie Exp $
 @conflict kde-runtime-<4.8.80
 bin/nepomuk-simpleresource-rcgen
 @bin bin/nepomuk2-rcgen
@@ -199,5 +199,4 @@ share/ontology/kde/kuvo.ontology
 share/ontology/kde/kuvo.trig
 share/ontology/kde/nrio.ontology
 share/ontology/kde/nrio.trig
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

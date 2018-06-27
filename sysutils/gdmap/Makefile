@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:03 espie Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://gdmap.sourceforge.net/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/26 13:04:14 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:45 espie Exp $
 @bin bin/compdic
 @bin bin/eliot
 @bin bin/eliotcurses
@@ -25,5 +25,4 @@ share/locale/fr/LC_MESSAGES/eliot.mo
 share/locale/id/LC_MESSAGES/eliot.mo
 share/locale/it/LC_MESSAGES/eliot.mo
 share/locale/sr/LC_MESSAGES/eliot.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

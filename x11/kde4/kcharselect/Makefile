@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:15 espie Exp $
 
 COMMENT =	KDE character select and clipboard copy
 DISTNAME =	kcharselect-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2018/06/27 21:04:02 espie Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
 CATEGORIES =	net security
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://www.fwbuilder.org/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/12/16 19:53:15 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:42 espie Exp $
 @bin bin/texmaker
 share/applications/texmaker.desktop
 share/pixmaps/
@@ -101,5 +101,4 @@ share/texmaker/usermanual_en.html
 share/texmaker/usermanual_fr.html
 share/texmaker/usermanual_hu.html
 share/texmaker/usermanual_ru.html
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

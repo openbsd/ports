@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/01/25 08:59:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:01 espie Exp $
 bin/install-printerdriver
 bin/scp-dbus-service
 bin/system-config-printer
@@ -193,5 +193,4 @@ share/system-config-printer/userdefault.py
 share/system-config-printer/xml/
 share/system-config-printer/xml/preferreddrivers.rng
 share/system-config-printer/xml/validate.py
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

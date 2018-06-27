@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/09/21 09:48:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:04:22 espie Exp $
 @bin bin/sawfish
 bin/sawfish-about
 bin/sawfish-client
@@ -4096,5 +4096,4 @@ share/xsessions/
 share/xsessions/sawfish.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

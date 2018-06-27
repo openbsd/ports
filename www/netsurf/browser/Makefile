@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/27 21:04:06 espie Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.7
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/

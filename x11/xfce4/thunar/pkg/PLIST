@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/05/25 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/06/27 21:04:24 espie Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -127,5 +127,4 @@ share/polkit-1/actions/org.xfce.thunar.policy
 share/xfce4/panel/plugins/thunar-tpa.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

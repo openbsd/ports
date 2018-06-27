@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/06 04:46:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/27 21:04:07 espie Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 
@@ -7,6 +7,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	Swordfish90
 GH_PROJECT =	cool-retro-term
 GH_TAGNAME =	1.0.1
+REVISION =	0
 
 QMLTERMWIDGET =	08958f7c83a7d05627f623b8904f3e79a0b7366b
 MASTER_SITES0 =	https://github.com/Swordfish90/qmltermwidget/archive/

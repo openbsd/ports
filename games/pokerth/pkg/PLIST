@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/01/30 14:47:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:49 espie Exp $
 @bin bin/pokerth
 @bin bin/pokerth_server
 share/applications/pokerth.desktop
@@ -487,5 +487,4 @@ share/pokerth/data/translations/qt_sv.qm
 share/pokerth/data/translations/qt_uk.qm
 share/pokerth/data/translations/qt_zh_CN.qm
 share/pokerth/data/translations/qt_zh_TW.qm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

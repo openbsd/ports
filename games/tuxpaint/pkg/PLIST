@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/04 11:56:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:50 espie Exp $
 bin/tp-magic-config
 @bin bin/tuxpaint
 bin/tuxpaint-import
@@ -1405,5 +1405,4 @@ share/tuxpaint/templates/sun_behind_leaves.jpg
 share/tuxpaint/templates/trees_above.jpg
 share/tuxpaint/templates/trees_at_dusk.jpg
 share/tuxpaint/templates/wool_mill_machine.jpg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/20 07:18:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:58 espie Exp $
 @bin bin/kdenlive
 @bin bin/kdenlive_render
 lib/kde4/libkdenlive_sampleplugin.so
@@ -459,8 +459,7 @@ share/mime/packages/kdenlive.xml
 share/mime/packages/westley.xml
 share/pixmaps/
 share/pixmaps/kdenlive.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

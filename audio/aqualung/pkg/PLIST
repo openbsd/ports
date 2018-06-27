@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/05 14:59:34 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:34 espie Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
 share/applications/aqualung.desktop
@@ -177,5 +177,4 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 share/locale/zh/
 share/locale/zh/LC_MESSAGES/
 share/locale/zh/LC_MESSAGES/aqualung.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

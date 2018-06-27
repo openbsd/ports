@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/04/10 20:21:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/06/27 21:04:23 espie Exp $
 @conflict xfcalendar-*
 @bin bin/globaltime
 @bin bin/orage
@@ -110,5 +110,4 @@ share/orage/sounds/Wall_c.wav
 share/xfce4/panel/plugins/xfce4-orageclock-plugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

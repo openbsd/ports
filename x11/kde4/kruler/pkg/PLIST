@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:37 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:18 espie Exp $
 @conflict kdegraphics-<4
 @bin bin/kruler
 share/applications/kde4/kruler.desktop
@@ -27,7 +27,6 @@ share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/64x64/apps/kruler.png
 share/icons/hicolor/scalable/apps/kruler.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

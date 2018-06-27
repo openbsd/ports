@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/12 09:52:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:36 espie Exp $
 bin/puddletag
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/__init__.py
@@ -149,5 +149,4 @@ share/applications/puddletag.desktop
 @comment share/man/man1/
 share/pixmaps/
 share/pixmaps/puddletag.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

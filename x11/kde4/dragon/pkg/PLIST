@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:31:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:13 espie Exp $
 @bin bin/dragon
 lib/kde4/dragonpart.so
 @man man/man1/dragon.1
@@ -34,8 +34,7 @@ share/icons/oxygen/scalable/actions/player-volume-muted.svgz
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
 share/kde4/services/dragonplayer_part.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2018/01/30 14:47:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2018/06/27 21:03:49 espie Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
 BROKEN-hppa =	needs atomic ops
 
 DISTNAME =	pokerth-1.1.2
+REVISION =	0
 
 CATEGORIES=	games x11
 

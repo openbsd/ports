@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/01 15:37:15 shadchin Exp $
+# $OpenBSD: Makefile,v 1.45 2018/06/27 21:03:40 espie Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -55,6 +55,7 @@ RUN_DEPENDS +=		math/py-numpy,python3
 RUN_DEPENDS +=		devel/py-backports-shutil-get-terminal-size
 TEST_DEPENDS +=		devel/py-mock
 .endif
+REVISION =		0
 
 # Build some HTML docs. OK to ignore python and systrace warnings.
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}

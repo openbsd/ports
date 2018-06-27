@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2018/04/23 17:11:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.59 2018/06/27 21:04:10 espie Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 include/nautilus/
@@ -164,5 +164,4 @@ share/metainfo/org.gnome.Nautilus.appdata.xml
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

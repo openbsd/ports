@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/19 13:47:55 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:56 espie Exp $
 @bin bin/kasumi
 @man man/man1/kasumi.1
 share/applications/kasumi.desktop
@@ -6,5 +6,4 @@ share/locale/it/LC_MESSAGES/kasumi.mo
 share/locale/ja/LC_MESSAGES/kasumi.mo
 share/pixmaps/
 share/pixmaps/kasumi.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

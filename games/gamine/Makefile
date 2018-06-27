@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/27 21:03:45 espie Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	games
 

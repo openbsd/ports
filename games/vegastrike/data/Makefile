@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:50 espie Exp $
 
 COMMENT =	data files for vegastrike
 
 DISTNAME =	vegastrike-data-${V}
-REVISION = 	1
+REVISION = 	2
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

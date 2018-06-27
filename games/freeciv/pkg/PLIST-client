@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.15 2016/03/01 08:41:58 kirby Exp $
+@comment $OpenBSD: PLIST-client,v 1.16 2018/06/27 21:03:45 espie Exp $
 @conflict freeciv-share-<2
 @conflict freeciv-server-<2.4.4
 @pkgpath games/freeciv,-client,gtk2
@@ -2644,5 +2644,4 @@ share/pixmaps/
 share/pixmaps/freeciv-client.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

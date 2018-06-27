@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/04/23 20:12:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:08 espie Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -347,5 +347,4 @@ share/metainfo/org.gnome.clocks.appdata.xml
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

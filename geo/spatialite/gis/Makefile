@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:52 espie Exp $
 
 COMMENT =	minimalistic GIS on top of spatialite and rasterlite
 PROJECT =	spatialite_gis
 DISTNAME =	${PROJECT}-1.0.0c
-REVISION=	5
+REVISION=	6
 
 LIB_DEPENDS +=	print/libharu \
 		databases/sqlite3 \

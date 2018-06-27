@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:44 espie Exp $
 
 COMMENT =	console-based 52-card solitare game
 DISTNAME =	bluemoon-2.12
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 

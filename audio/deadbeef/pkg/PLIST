@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/09/13 08:48:12 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:35 espie Exp $
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/artwork.h
@@ -227,7 +227,6 @@ share/locale/uk/LC_MESSAGES/deadbeef.mo
 share/locale/vi/LC_MESSAGES/deadbeef.mo
 share/locale/zh_CN/LC_MESSAGES/deadbeef.mo
 share/locale/zh_TW/LC_MESSAGES/deadbeef.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

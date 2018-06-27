@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/13 16:58:07 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:23 espie Exp $
 
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		wxGlade-${MODPY_EGG_VERSION}
 PKGNAME=		wxglade-${MODPY_EGG_VERSION}
+REVISION=		0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxglade/}
 

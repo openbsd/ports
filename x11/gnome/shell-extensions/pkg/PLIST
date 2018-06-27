@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/04/23 22:02:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/06/27 21:04:11 espie Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
@@ -126,5 +126,4 @@ share/locale/zh_HK/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell-extensions.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/02 12:14:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:07 espie Exp $
 @bin bin/fsv2
 include/fsv2/
 include/fsv2/ColorCellEditable.h
@@ -23,5 +23,4 @@ share/doc/fsv2/viewport.png
 share/doc/fsv2/window.html
 share/doc/fsv2/window.png
 share/locale/ru/LC_MESSAGES/fsv2.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:44 espie Exp $
 
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00
-REVISION =	1
+REVISION =	2
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	games

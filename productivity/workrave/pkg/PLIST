@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/10/26 20:24:54 edd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:02 espie Exp $
 @bin bin/workrave
 lib/girepository-1.0/Workrave-1.0.typelib
 lib/libworkrave-private-1.0.a
@@ -128,7 +128,6 @@ share/workrave/images/workrave-quiet-icon-medium.png
 share/workrave/images/workrave-suspended-icon-medium.png
 share/workrave/images/workrave.png
 share/workrave/images/workrave.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

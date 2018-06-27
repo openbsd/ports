@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/09/24 12:46:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:10 espie Exp $
 @bin bin/gkbd-keyboard-display
 include/libgnomekbd/
 include/libgnomekbd/gkbd-configuration.h
@@ -111,5 +111,4 @@ share/locale/zh_HK/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

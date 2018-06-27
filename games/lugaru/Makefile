@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/14 11:00:20 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:47 espie Exp $
 
 COMMENT =	third-person rabbit combat action game
 
 DISTNAME =	lugaru-1.2
+REVISION =	0
 
 CATEGORIES =	games
 

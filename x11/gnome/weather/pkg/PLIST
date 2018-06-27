@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/11/03 13:51:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:11 espie Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.appdata.xml
@@ -87,5 +87,4 @@ share/org.gnome.Weather/org.gnome.Weather.BackgroundService.src.gresource
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

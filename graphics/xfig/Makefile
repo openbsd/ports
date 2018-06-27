@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2018/04/24 20:56:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2018/06/27 21:03:55 espie Exp $
 
 COMMENT=	CAD drawing program for X11
 
 # print/transfig usually needs to be in-sync
 DISTNAME=	xfig-3.2.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://mcj.sourceforge.net/

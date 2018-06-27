@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/20 08:48:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:43 espie Exp $
 @bin bin/barrage
 share/applications/barrage.desktop
 share/barrage/
@@ -32,7 +32,6 @@ share/doc/barrage/README
 share/icons/hicolor/16x16/apps/barrage.png
 share/icons/hicolor/32x32/apps/barrage.png
 share/icons/hicolor/48x48/apps/barrage.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

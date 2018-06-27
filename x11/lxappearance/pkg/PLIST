@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/09 14:08:18 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:20 espie Exp $
 @bin bin/lxappearance
 include/lxappearance/
 include/lxappearance/lxappearance.h
@@ -62,5 +62,4 @@ share/lxappearance/
 share/lxappearance/ui/
 share/lxappearance/ui/about.ui
 share/lxappearance/ui/lxappearance.ui
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

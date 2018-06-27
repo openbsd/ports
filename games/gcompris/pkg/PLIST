@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2017/08/18 11:42:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/06/27 21:03:46 espie Exp $
 @bin bin/gcompris
 @bin bin/gcompris-gnuchess
 lib/gcompris/
@@ -18666,5 +18666,4 @@ share/locale/zh_TW/LC_MESSAGES/gcompris.mo
 share/locale/zu/LC_MESSAGES/gcompris.mo
 share/pixmaps/gcompris-edit.png
 share/pixmaps/gcompris.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

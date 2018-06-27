@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/08 06:32:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/27 21:03:59 espie Exp $
 
 COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	1.3.15
+REVISION =		0
 
 CATEGORIES =	net
 

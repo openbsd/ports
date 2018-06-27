@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/07/09 10:03:05 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:03:35 espie Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -1311,5 +1311,4 @@ share/locale/zh_CN/LC_MESSAGES/exaile.mo
 share/locale/zh_TW/LC_MESSAGES/exaile.mo
 share/pixmaps/
 share/pixmaps/exaile.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

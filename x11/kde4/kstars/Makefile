@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/09 15:12:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/27 21:04:18 espie Exp $
 
 COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 # Crashed after following actions:
 #   1. Enable OpenGL;

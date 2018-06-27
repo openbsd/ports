@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:36:15 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:19 espie Exp $
 @bin bin/palapeli
 include/kde4/Pala/
 include/kde4/Pala/Slicer
@@ -72,8 +72,7 @@ share/kde4/services/palapeli_rectslicer.desktop
 share/kde4/services/palathumbcreator.desktop
 share/kde4/servicetypes/libpala-slicerplugin.desktop
 share/mime/packages/palapeli-mimetypes.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

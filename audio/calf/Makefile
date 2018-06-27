@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/16 04:04:58 kirby Exp $
+# $OpenBSD: Makefile,v 1.29 2018/06/27 21:03:35 espie Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	CALF LADSPA plugins
 DISTNAME =	calf-0.0.18.6
 CATEGORIES =	audio
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://calf-studio-gear.org/
 

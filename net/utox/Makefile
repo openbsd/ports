@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/29 11:15:17 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:00 espie Exp $
 
 COMMENT =	lightweight Tox client
 
@@ -7,6 +7,7 @@ V =		0.17.0
 DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
 MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
+REVISION =	0
 
 CATEGORIES =	net
 

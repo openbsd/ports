@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2018/02/13 21:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2018/06/27 21:03:39 espie Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
 V=		17.12
-REVISION=	0
+REVISION=	1
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
 EXTRACT_SUFX=	.tar.xz

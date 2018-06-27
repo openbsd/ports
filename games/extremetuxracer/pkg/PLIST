@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/01 16:53:41 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:45 espie Exp $
 @bin bin/etr
 share/applications/etr.desktop
 share/doc/etr/
@@ -552,5 +552,4 @@ share/etr/translations/xx_XX.lst
 share/pixmaps/
 share/pixmaps/etr.png
 share/pixmaps/etr.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

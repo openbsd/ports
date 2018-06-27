@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/01 21:22:08 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:55 espie Exp $
 include/ibus-anthy-1.0/
 include/ibus-anthy-1.0/anthygcontext.h
 lib/girepository-1.0/Anthy-9000.typelib
@@ -66,7 +66,6 @@ share/locale/el/LC_MESSAGES/ibus-anthy.mo
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-anthy.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

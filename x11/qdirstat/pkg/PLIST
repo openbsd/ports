@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/26 12:54:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:22 espie Exp $
 @pkgpath x11/kdirstat
 @conflict kdirstat-*
 @bin bin/qdirstat
@@ -28,7 +28,6 @@ share/doc/qdirstat/stats/Percentiles-Table.md
 share/doc/qdirstat/stats/README.md
 share/doc/qdirstat/stats/Statistics.md
 share/icons/hicolor/32x32/apps/qdirstat.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

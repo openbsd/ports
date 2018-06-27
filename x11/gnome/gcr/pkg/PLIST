@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/04/23 10:53:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:09 espie Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -311,5 +311,4 @@ share/vala/vapi/pkcs11.vapi
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

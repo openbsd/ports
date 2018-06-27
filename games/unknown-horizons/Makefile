@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/04 22:04:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/27 21:03:50 espie Exp $
 
 COMMENT =	economic historical real-time strategy game
 
 MODPY_EGG_VERSION =	2017.2
 PKGNAME =		unknown-horizons-${MODPY_EGG_VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	unknown-horizons
 GH_PROJECT =	unknown-horizons

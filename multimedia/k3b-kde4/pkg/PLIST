@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/15 09:56:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:58 espie Exp $
 @bin bin/k3b
 bin/k3bsetup
 include/kde4/k3b_export.h
@@ -752,8 +752,7 @@ share/locale/zh_TW/LC_MESSAGES/libk3b.mo
 share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
 share/mime/packages/x-k3b.xml
 share/polkit-1/actions/org.kde.kcontrol.k3bsetup.policy
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

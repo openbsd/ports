@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/24 11:56:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/27 21:04:11 espie Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
 GNOME_VERSION=		3.28.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 

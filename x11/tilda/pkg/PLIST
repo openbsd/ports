@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/11/06 06:54:54 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:23 espie Exp $
 @bin bin/tilda
 share/appdata/
 share/appdata/tilda.appdata.xml
@@ -27,5 +27,4 @@ share/locale/tr/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
 share/pixmaps/
 share/pixmaps/tilda.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

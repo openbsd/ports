@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/02/25 08:45:08 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2018/06/27 21:04:23 espie Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -6,6 +6,7 @@ GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_COMMIT =		358d2f86a74cc37573e6c5175f40f2a810c2b0a7
 DISTNAME =		xarchiver-0.5.4.12pl0
+REVISION =		0
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 

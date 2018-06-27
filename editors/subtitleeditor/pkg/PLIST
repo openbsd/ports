@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/08/27 16:33:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:03:41 espie Exp $
 @bin bin/subtitleeditor
 lib/libsubtitleeditor.a
 lib/libsubtitleeditor.la
@@ -237,5 +237,4 @@ share/subtitleeditor/ui/dialog-script-properties.ui
 share/subtitleeditor/ui/subtitleeditor.ui
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

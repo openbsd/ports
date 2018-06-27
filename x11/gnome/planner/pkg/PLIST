@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/05/22 11:31:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:04:10 espie Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -295,5 +295,4 @@ ${SCHEMAS_INSTDIR}/planner.schemas
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

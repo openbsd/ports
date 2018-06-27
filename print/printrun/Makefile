@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/27 06:56:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/27 21:04:01 espie Exp $
 
 COMMENT=	3D printing host suite
 DISTNAME=	printrun-20150310
 CATEGORIES=	print
+REVISION=	0
 
 GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun

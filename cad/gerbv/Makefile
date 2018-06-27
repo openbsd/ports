@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2018/01/01 18:11:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/27 21:03:37 espie Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.6.2
 CATEGORIES=		cad graphics
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://gerbv.gpleda.org/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>

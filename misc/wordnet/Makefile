@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/27 21:03:57 espie Exp $
 
 COMMENT=		browser for a large lexical database of English
 
 DISTNAME=		WordNet-3.0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} wn3.1.dict.tar.gz:0
 PKGNAME=		wordnet-3.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:56 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:15 espie Exp $
 @conflict kdeutils-<4
 @bin bin/kdf
 @bin bin/kwikdisk
@@ -33,8 +33,7 @@ share/icons/oxygen/16x16/apps/kcmdf.png
 share/icons/oxygen/22x22/apps/kcmdf.png
 share/icons/oxygen/32x32/apps/kcmdf.png
 share/kde4/services/kcmdf.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

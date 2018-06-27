@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2018/06/27 21:04:19 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict kdelibs->=4
@@ -3673,8 +3673,7 @@ share/kde4/servicetypes/qimageio_plugin.desktop
 share/kde4/servicetypes/renamedialogplugin.desktop
 share/kde4/servicetypes/sonnetspeller.desktop
 share/mime/packages/kde.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

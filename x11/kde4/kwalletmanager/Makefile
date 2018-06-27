@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:19 espie Exp $
 
 COMMENT =	KDE password management
 DISTNAME =	kwalletmanager-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

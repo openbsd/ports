@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/20 08:30:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:41 espie Exp $
 @bin bin/nvim
 @man man/man1/nvim.1
 share/applications/nvim.desktop
@@ -1422,5 +1422,4 @@ share/nvim/runtime/tutor/en/vim-01-beginner.tutor
 share/nvim/runtime/tutor/tutor.tutor
 share/pixmaps/
 share/pixmaps/nvim.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

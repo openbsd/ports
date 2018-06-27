@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-qt,v 1.2 2012/04/15 20:03:16 kirby Exp $
+@comment $OpenBSD: PLIST-qt,v 1.3 2018/06/27 21:03:52 espie Exp $
 @bin bin/guibabel-qt
 share/applications/gpsbabel.desktop
 share/pixmaps/
 share/pixmaps/gpsbabel.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

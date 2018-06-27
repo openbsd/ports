@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/24 12:44:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:06 espie Exp $
 @bin bin/vimb
 lib/vimb/
 lib/vimb/webext_main.so
 @man man/man1/vimb.1
 share/applications/vimb.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

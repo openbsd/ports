@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/27 21:03:54 espie Exp $
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://pinta-project.com/
 

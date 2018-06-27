@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/09 20:03:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:17 espie Exp $
 @conflict kdegames-<4.10
 @bin bin/knetwalk
 share/applications/kde4/knetwalk.desktop
@@ -34,7 +34,6 @@ share/icons/hicolor/32x32/apps/knetwalk.png
 share/icons/hicolor/48x48/apps/knetwalk.png
 share/icons/hicolor/64x64/apps/knetwalk.png
 share/icons/hicolor/scalable/apps/knetwalk.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

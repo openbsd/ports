@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/06 03:10:48 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:43 espie Exp $
 @bin bin/pcsxr
 lib/games/
 lib/games/psemu/
@@ -54,5 +54,4 @@ share/psemu/dfsound.ui
 share/psemu/dfxvideo.ui
 share/psemu/peopsxgl.ui
 share/psemu/sio1.ui
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

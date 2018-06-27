@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/13 16:58:09 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:23 espie Exp $
 bin/wxglade
 @comment bin/wxglade.pyw
 lib/python${MODPY_VERSION}/site-packages/wxGlade-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -980,5 +980,4 @@ share/doc/wxglade/install/update-po.py
 share/doc/wxglade/license.txt
 share/doc/wxglade/manpage.xml
 share/doc/wxglade/manual.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

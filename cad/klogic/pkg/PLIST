@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/05/01 19:24:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:38 espie Exp $
 @bin bin/klogic
 share/applications/kde4/klogic.desktop
 share/apps/klogic/
@@ -115,5 +115,4 @@ share/locale/it/LC_MESSAGES/klogic.mo
 share/locale/sv/LC_MESSAGES/klogic.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

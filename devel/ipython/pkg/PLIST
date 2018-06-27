@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/12/13 14:50:45 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/06/27 21:03:40 espie Exp $
 bin/iptest${MODPY_BIN_SUFFIX}
 @comment bin/iptest2
 @comment bin/iptest3
@@ -1159,5 +1159,4 @@ share/examples/ipython${MODPY_BIN_SUFFIX}/utils/
 share/examples/ipython${MODPY_BIN_SUFFIX}/utils/cwd_prompt.py
 share/examples/ipython${MODPY_BIN_SUFFIX}/utils/list_pyfiles.ipy
 share/examples/ipython${MODPY_BIN_SUFFIX}/utils/list_subdirs.ipy
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

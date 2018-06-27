@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:50 espie Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.22
 CATEGORIES=	games graphics
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.tuxpaint.org/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/29 10:07:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:40 espie Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 KDEV_V =	4.7.1
 KDEVPLAT_V =	1.7.1
-REVISION =	3
+REVISION =	4
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 

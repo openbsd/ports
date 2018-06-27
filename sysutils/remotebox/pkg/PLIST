@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/04/30 07:22:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:04 espie Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/doc/remotebox/
@@ -248,5 +248,4 @@ share/remotebox/rbox_prefs.pl
 share/remotebox/remotebox.xml
 share/remotebox/vboxService.pm
 share/remotebox/vboxserializers.pl
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

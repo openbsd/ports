@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/06/27 21:03:38 espie Exp $
 
 COMMENT =	logic circuit simulator for KDE
 
 DISTNAME =	klogic-4.0.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	cad education x11 x11/kde
 

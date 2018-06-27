@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2018/06/27 21:03:38 espie Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-1.8.2
 CATEGORIES=	comms
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.jpilot.org/
 

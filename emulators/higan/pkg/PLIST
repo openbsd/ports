@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:43 espie Exp $
 @bin bin/higan
 @bin bin/icarus
 share/applications/higan.desktop
@@ -38,5 +38,4 @@ share/icarus/Database/Super Famicom.bml
 share/pixmaps/
 share/pixmaps/higan.png
 share/pixmaps/icarus.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

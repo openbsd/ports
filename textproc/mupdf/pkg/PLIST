@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/04/23 11:55:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:04:04 espie Exp $
 bin/mupdf
 @bin bin/mupdf-gl
 @bin bin/mupdf-x11
@@ -127,5 +127,4 @@ share/doc/mupdf/template.html
 share/doc/mupdf/thirdparty.html
 share/pixmaps/
 share/pixmaps/mupdf.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

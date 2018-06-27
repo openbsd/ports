@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/10/14 19:52:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:04:09 espie Exp $
 @bin bin/ghex
 include/gtkhex-3/
 include/gtkhex-3/gtkhex.h
@@ -205,8 +205,7 @@ share/locale/vi/LC_MESSAGES/ghex-3.0.mo
 share/locale/wa/LC_MESSAGES/ghex-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/ghex-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/ghex-3.0.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

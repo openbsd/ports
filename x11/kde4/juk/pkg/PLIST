@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:41 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:14 espie Exp $
 @conflict kdemultimedia-<4
 @bin bin/juk
 share/appdata/
@@ -35,7 +35,6 @@ share/icons/hicolor/48x48/apps/juk.png
 share/icons/hicolor/64x64/apps/juk.png
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/jukservicemenu.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

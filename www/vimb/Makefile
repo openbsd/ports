@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/26 20:41:35 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/27 21:04:06 espie Exp $
 
 COMMENT =	modal webkit-based browser inspired by vim
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
 GH_TAGNAME =	3.2.0
+REVISION =	0
 
 CATEGORIES =	www x11
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/06/05 12:20:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:03:43 espie Exp $
 %%sdl%%
 @extraunexec rm /var/games/angband/*/* 2>/dev/null || true
 @mode g+s
@@ -85,5 +85,4 @@ share/applications/angband-x11.desktop
 @sample /var/games/angband/user/
 @mode
 @group
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

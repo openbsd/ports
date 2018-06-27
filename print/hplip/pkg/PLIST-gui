@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.11 2013/08/21 13:20:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.12 2018/06/27 21:04:01 espie Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
 bin/hp-colorcal
@@ -488,5 +488,4 @@ share/hplip/ui4/wifisetupdialog.py
 share/hplip/ui4/wifisetupdialog.pyc
 share/hplip/ui4/wifisetupdialog_base.py
 share/hplip/ui4/wifisetupdialog_base.pyc
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:58 espie Exp $
 
 COMMENT =		video editor and a VJ tool
 
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2

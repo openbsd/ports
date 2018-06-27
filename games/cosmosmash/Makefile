@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/06/27 21:03:44 espie Exp $
 
 COMMENT=	astrosmash clone for X
 
 DISTNAME =	cosmosmash-1.4.7
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games
 

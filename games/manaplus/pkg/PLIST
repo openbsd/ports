@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2018/04/23 20:06:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/06/27 21:03:48 espie Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -852,5 +852,4 @@ share/manaplus/data/translations/test/
 share/manaplus/data/translations/test/test1.po
 share/pixmaps/
 share/pixmaps/manaplus.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

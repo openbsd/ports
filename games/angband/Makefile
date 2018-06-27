@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/05 12:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:43 espie Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -9,7 +9,7 @@ V_DLDIR =		${V:C/\.[0-9]$//}
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
 CATEGORIES=     	games
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://rephial.org
 

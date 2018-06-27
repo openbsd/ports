@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2018/03/15 15:15:07 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2018/06/27 21:03:41 espie Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -4430,5 +4430,4 @@ share/mime/packages/openoffice.org.xml
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

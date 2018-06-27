@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2016/06/29 16:14:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/06/27 21:04:12 espie Exp $
 @option is-branch
 @bin bin/atlantik
 @bin bin/kasteroids
@@ -2663,8 +2663,7 @@ share/mimelnk/application/x-kolf.desktop
 share/mimelnk/application/x-kourse.desktop
 share/mimelnk/application/x-tuberling.desktop
 share/services/atlantik.protocol
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg

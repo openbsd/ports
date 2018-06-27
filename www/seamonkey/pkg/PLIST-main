@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2018/03/15 05:38:07 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2018/06/27 21:04:06 espie Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -114,5 +114,4 @@ share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
 share/pixmaps/${MOZILLA_PROJECT}.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

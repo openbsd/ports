@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:19 espie Exp $
 
 COMMENT =	card game for KDE
 DISTNAME =	lskat-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

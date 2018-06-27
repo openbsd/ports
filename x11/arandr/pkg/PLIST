@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/04 20:24:54 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:07 espie Exp $
 bin/arandr
 bin/unxrandr
 lib/python${MODPY_VERSION}/site-packages/arandr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -62,5 +62,4 @@ share/locale/sv/LC_MESSAGES/arandr.mo
 share/locale/tr/LC_MESSAGES/arandr.mo
 share/locale/uk/LC_MESSAGES/arandr.mo
 share/locale/zh_CN/LC_MESSAGES/arandr.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

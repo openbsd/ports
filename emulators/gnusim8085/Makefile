@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:03:42 espie Exp $
 
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
 V =			1.3.7
 DISTNAME =		gnusim8085-${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		emulators devel
 

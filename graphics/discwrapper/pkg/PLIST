@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:06:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:53 espie Exp $
 @bin bin/discwrapper
 share/applications/discwrapper.desktop
 share/discwrapper/
@@ -90,5 +90,4 @@ share/pixmaps/
 share/pixmaps/discwrapper.png
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

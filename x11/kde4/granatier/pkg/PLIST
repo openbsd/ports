@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:34:17 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:14 espie Exp $
 @bin bin/granatier
 share/applications/kde4/granatier.desktop
 share/apps/granatier/
@@ -150,7 +150,6 @@ share/icons/hicolor/32x32/apps/granatier.png
 share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
 share/icons/hicolor/scalable/apps/granatier.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

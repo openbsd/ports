@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2017/03/27 12:37:06 landry Exp $
+# $OpenBSD: Makefile,v 1.55 2018/06/27 21:03:37 espie Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
 MODPY_EGG_VERSION=1.7b1
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	audio
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/05/25 12:47:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/27 21:04:25 espie Exp $
 @bin bin/xfdesktop
 @bin bin/xfdesktop-settings
 @man man/man1/xfdesktop.1
@@ -83,5 +83,4 @@ share/pixmaps/xfdesktop/
 share/pixmaps/xfdesktop/xfdesktop-fallback-icon.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

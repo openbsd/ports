@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/16 11:33:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:54 espie Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -970,7 +970,6 @@ share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
 share/metainfo/
 share/metainfo/org.kde.krita.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

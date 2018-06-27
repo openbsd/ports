@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2017/11/09 17:00:28 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/06/27 21:03:52 espie Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -2633,5 +2633,4 @@ share/doc/blender/jemalloc-license.txt
 share/doc/blender/ocio-license.txt
 share/pixmaps/
 share/pixmaps/blender.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

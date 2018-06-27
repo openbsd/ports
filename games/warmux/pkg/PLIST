@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/30 09:14:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:51 espie Exp $
 @pkgpath games/wormux
 @bin bin/warmux
 @bin bin/warmux-index-server
@@ -54,8 +54,7 @@ share/locale/uk/LC_MESSAGES/warmux.mo
 share/locale/zh_CN/LC_MESSAGES/warmux.mo
 share/locale/zh_TW/LC_MESSAGES/warmux.mo
 share/pixmaps/
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 share/pixmaps/warmux_128x128.png
 share/warmux/
 share/warmux/.nomedia

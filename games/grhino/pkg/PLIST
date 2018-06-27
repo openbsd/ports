@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/13 08:28:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:47 espie Exp $
 @bin bin/grhino
 @bin bin/gtp-rhino
 share/applications/grhino.desktop
@@ -53,5 +53,4 @@ share/omf/grhino/
 share/omf/grhino/grhino-C.omf
 share/pixmaps/
 share/pixmaps/grhino.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

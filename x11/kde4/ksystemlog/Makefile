@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 11:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/27 21:04:18 espie Exp $
 
 COMMENT =	system log files viewer for KDE
 DISTNAME =	ksystemlog-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdeadmin/ksystemlog

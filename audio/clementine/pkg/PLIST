@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/05 14:00:16 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:35 espie Exp $
 @bin bin/clementine
 @bin bin/clementine-tagreader
 share/applications/clementine.desktop
@@ -583,7 +583,6 @@ share/kde4/services/clementine-feed.protocol
 share/kde4/services/clementine-itms.protocol
 share/kde4/services/clementine-itpc.protocol
 share/kde4/services/clementine-zune.protocol
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

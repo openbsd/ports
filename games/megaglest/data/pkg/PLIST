@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/09/14 04:43:57 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:48 espie Exp $
 @conflict megaglest-<3.13.0
 share/appdata/
 share/appdata/megaglest.appdata.xml
@@ -6867,5 +6867,4 @@ share/megaglest/tutorials/3_advanced_tutorial/loading_screen.jpg
 share/pixmaps/
 share/pixmaps/megaglest.png
 share/pixmaps/megaglest.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

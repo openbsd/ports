@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:47:08 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:20 espie Exp $
 @conflict kdeutils-<4
 @bin bin/superkaramba
 @lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
@@ -19,7 +19,6 @@ share/icons/hicolor/64x64/apps/superkaramba.png
 share/icons/hicolor/scalable/apps/superkaramba.svgz
 share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

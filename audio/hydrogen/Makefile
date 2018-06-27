@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/16 20:19:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/06/27 21:03:35 espie Exp $
 
 COMMENT=		software drum machine
 
 DISTNAME=		hydrogen-0.9.4
-REVISION=		5
+REVISION=		6
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.hydrogen-music.org/

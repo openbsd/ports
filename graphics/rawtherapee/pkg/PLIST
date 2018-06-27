@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/03/30 07:52:01 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:54 espie Exp $
 @bin bin/rawtherapee
 @bin bin/rawtherapee-cli
 @man man/man1/rawtherapee.1
@@ -994,7 +994,6 @@ share/rawtherapee/themes/images/twb/radio-inconsistent.png
 share/rawtherapee/themes/images/twb/radio-unchecked-disabled.png
 share/rawtherapee/themes/images/twb/radio-unchecked.png
 share/rawtherapee/themes/system.iconset
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

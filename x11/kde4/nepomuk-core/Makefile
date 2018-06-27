@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 21:04:19 espie Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	nepomukcore		53.0 # 4.9
 #SHARED_LIBS +=	nepomuksync		0.0 # 4.9

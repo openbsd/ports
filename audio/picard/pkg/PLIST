@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/04 06:24:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:36 espie Exp $
 bin/picard
 lib/python${MODPY_VERSION}/site-packages/picard/
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -308,8 +308,7 @@ share/picard/swapprefix.py
 share/picard/titlecase.py
 share/picard/tracks2clipboard.py
 share/pixmaps/
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 share/pixmaps/hicolor/
 share/pixmaps/hicolor/128x128/
 share/pixmaps/hicolor/128x128/apps/

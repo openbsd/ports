@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 11:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:16 espie Exp $
 
 COMMENT =	clickomania-like game for KDE
 DISTNAME =	klickety-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

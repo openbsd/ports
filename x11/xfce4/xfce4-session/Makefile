@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2018/05/25 12:47:31 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2018/06/27 21:04:24 espie Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
 XFCE_VERSION=	4.12.1
-REVISION=	4
+REVISION=	5
 
 PORTROACH=	limitw:1,even
 

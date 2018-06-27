@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:14 espie Exp $
 @conflict kdeaccessibility-<4
 @bin bin/jovie
 lib/kde4/jovie_stringreplacerplugin.so
@@ -56,7 +56,6 @@ share/kde4/services/jovie_xmltransformerplugin.desktop
 share/kde4/services/kcmkttsd.desktop
 share/kde4/services/kttsd.desktop
 share/kde4/servicetypes/jovie_filterplugin.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/06/26 03:51:14 daniel Exp $
+# $OpenBSD: Makefile,v 1.52 2018/06/27 21:03:40 espie Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
@@ -6,6 +6,7 @@ V=			2018.1.5
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
 MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>

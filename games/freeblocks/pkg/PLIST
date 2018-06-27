@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/22 01:58:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:45 espie Exp $
 @bin bin/freeblocks
 share/applications/freeblocks.desktop
 share/freeblocks/
@@ -37,5 +37,4 @@ share/freeblocks/res/sounds/switch.wav
 share/icons/hicolor/32x32/apps/freeblocks.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

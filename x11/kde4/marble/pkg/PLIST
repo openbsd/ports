@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/01 21:09:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:19 espie Exp $
 @bin bin/marble
 @bin bin/marble-mobile
 @bin bin/marble-qt
@@ -1247,8 +1247,7 @@ share/kde4/services/marble_thumbnail_shp.desktop
 share/kde4/services/plasma-applet-kworldclock.desktop
 share/kde4/services/plasma-runner-marble.desktop
 share/mime/packages/geo.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

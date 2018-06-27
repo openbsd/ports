@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/05/04 21:04:43 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:03:49 espie Exp $
 @extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
@@ -561,8 +561,7 @@ share/rocksndiamonds/sounds/snd_classic/whoosh.wav
 share/rocksndiamonds/sounds/snd_classic/zisch.wav
 share/rocksndiamonds/sounds/snd_classic/zonkdown.wav
 share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @mode 775
 @group games
 @sample /var/games/rocksndiamonds/

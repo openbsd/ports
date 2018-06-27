@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/12/27 20:55:47 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:00 espie Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -137,7 +137,6 @@ share/owncloud/i18n/client_tr.qm
 share/owncloud/i18n/client_uk.qm
 share/owncloud/i18n/client_zh_CN.qm
 share/owncloud/i18n/client_zh_TW.qm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

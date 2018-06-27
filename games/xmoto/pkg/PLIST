@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/08 11:11:15 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:51 espie Exp $
 @bin bin/xmoto
 @man man/man6/xmoto.6
 share/applications/xmoto.desktop
@@ -96,5 +96,4 @@ share/xmoto/Textures/Musics/ridealong.ogg
 share/xmoto/Textures/Musics/speeditup.ogg
 share/xmoto/xmoto.bin
 @comment share/xmoto/xmoto_icone_x.ico
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/05/30 07:20:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/06/27 21:04:08 espie Exp $
 @bin bin/gnome-builder
 include/gnome-builder/
 include/gnome-builder/gstyle/
@@ -468,7 +468,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-builder.mo
 share/metainfo/org.gnome.Builder.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

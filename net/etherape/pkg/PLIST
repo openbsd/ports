@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/05/08 08:31:31 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:59 espie Exp $
 @bin bin/etherape
 @man man/man1/etherape.1
 share/applications/etherape.desktop
@@ -16,5 +16,4 @@ share/locale/sv/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
 share/pixmaps/
 share/pixmaps/etherape.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

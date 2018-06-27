@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/04 09:13:10 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:58 espie Exp $
 @bin bin/mpv
 @man man/man1/mpv.1
 share/applications/mpv.desktop
@@ -17,8 +17,7 @@ share/icons/hicolor/scalable/apps/mpv.svg
 share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 share/zsh/
 share/zsh/vendor-completions/
 share/zsh/vendor-completions/_mpv

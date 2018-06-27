@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2018/05/20 08:43:45 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2018/06/27 21:03:42 espie Exp $
 
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0
-REVISION=	23
+REVISION=	24
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/

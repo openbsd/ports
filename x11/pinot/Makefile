@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2017/12/26 19:18:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2018/06/27 21:04:22 espie Exp $
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
-REVISION=	15
+REVISION=	16
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 

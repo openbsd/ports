@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/07/17 19:48:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:39 espie Exp $
 bin/bpdb${MODPY_BIN_SUFFIX}
 bin/bpython${MODPY_BIN_SUFFIX}
 bin/bpython-curses${MODPY_BIN_SUFFIX}
@@ -187,5 +187,4 @@ share/appdata/bpython${MODPY_BIN_SUFFIX}.appdata.xml
 share/applications/bpython${MODPY_BIN_SUFFIX}.desktop
 share/pixmaps/
 share/pixmaps/bpython${MODPY_BIN_SUFFIX}.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

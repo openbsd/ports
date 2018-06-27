@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/28 14:00:03 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:22 espie Exp $
 
 COMMENT=	lightweight GTK+ clipboard manager
 
 DISTNAME=	parcellite-1.0.2rc5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	Lawrence Teo <lteo@openbsd.org>

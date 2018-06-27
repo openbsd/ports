@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/15 04:02:29 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:44 espie Exp $
 bin/choria
 share/applications/choria.desktop
 share/choria/
@@ -208,5 +208,4 @@ share/doc/choria/changelog.txt
 share/doc/choria/license.txt
 share/pixmaps/
 share/pixmaps/choria.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

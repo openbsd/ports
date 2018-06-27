@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2018/06/27 21:04:00 espie Exp $
 
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.1.0
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://mcabber.com/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/30 09:09:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:41 espie Exp $
 
 CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
 DISTNAME =	kile-2.1.3
-REVISION =	7
+REVISION =	8
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=kile/}

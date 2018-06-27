@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/09/05 17:39:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/06/27 21:03:53 espie Exp $
 @pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/
@@ -1805,7 +1805,6 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/
 share/mime-info/dia.keys
 share/mime-info/dia.mime
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

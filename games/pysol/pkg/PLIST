@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/01 09:34:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:49 espie Exp $
 bin/pysol
 lib/python${MODPY_VERSION}/site-packages/PySolFC-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysollib/
@@ -18853,7 +18853,6 @@ share/locale/ru_RU/
 share/locale/ru_RU/LC_MESSAGES/
 share/locale/ru_RU/LC_MESSAGES/pysol.mo
 share/pixmaps/
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 share/pixmaps/pysol01.png
 share/pixmaps/pysol02.png

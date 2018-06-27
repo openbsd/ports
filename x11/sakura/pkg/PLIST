@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/05/25 13:07:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:22 espie Exp $
 @bin bin/sakura
 @man man/man1/sakura.1
 share/applications/sakura.desktop
@@ -25,5 +25,4 @@ share/locale/uk/LC_MESSAGES/sakura.mo
 share/locale/zh_CN/LC_MESSAGES/sakura.mo
 share/pixmaps/
 share/pixmaps/terminal-tango.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/12 13:59:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:38 espie Exp $
 @bin bin/openscad
 @man man/man1/openscad.1
 share/appdata/
@@ -159,7 +159,6 @@ share/openscad/locale/ru/LC_MESSAGES/
 share/openscad/locale/ru/LC_MESSAGES/openscad.mo
 share/pixmaps/
 share/pixmaps/openscad.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

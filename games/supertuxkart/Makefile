@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/27 15:45:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:50 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -8,6 +8,7 @@ V =			0.9.3
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
+REVISION =		0
 
 CATEGORIES =		games
 

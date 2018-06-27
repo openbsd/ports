@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/12/22 11:41:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:10 espie Exp $
 bin/ocrfeeder
 bin/ocrfeeder-cli
 lib/python${MODPY_VERSION}/site-packages/ocrfeeder/
@@ -383,5 +383,4 @@ share/ocrfeeder/menubar.ui
 share/ocrfeeder/spell-checker.ui
 share/pixmaps/
 share/pixmaps/ocrfeeder.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

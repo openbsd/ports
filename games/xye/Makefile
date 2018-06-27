@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/28 18:11:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:03:51 espie Exp $
 
 COMMENT =	puzzle game collecting diamonds and avoiding obstacles
 DISTNAME =	xye-0.12.2
 CATEGORIES =	games x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://xye.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

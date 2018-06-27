@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/29 09:04:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:52 espie Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/
@@ -41,5 +41,4 @@ share/mime/packages/gpx-viewer.xml
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/27 11:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 21:04:18 espie Exp $
 
 COMMENT =	audio CD player for KDE
 DISTNAME =	kscd-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

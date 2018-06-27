@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.60 2018/04/25 11:10:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.61 2018/06/27 21:04:11 espie Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -678,7 +678,6 @@ share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
 share/metainfo/org.gnome.Terminal.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

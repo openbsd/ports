@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/11 12:28:07 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:36 espie Exp $
 @bin bin/ocp
 bin/ocp-curses
 bin/ocp-sdl
@@ -87,5 +87,4 @@ share/ocp/data/ocp.hlp
 share/ocp/etc/
 share/ocp/etc/ocp.ini
 share/ocp/ultradir/
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

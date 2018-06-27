@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/06/10 07:25:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:24 espie Exp $
 @bin bin/xfce4-dict
 lib/xfce4/panel/plugins/libxfce4dict.so
 @man man/man1/xfce4-dict.1
@@ -55,5 +55,4 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-dict.mo
 share/xfce4/panel/plugins/xfce4-dict-plugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

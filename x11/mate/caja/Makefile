@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/27 12:07:35 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:20 espie Exp $
 
 COMMENT=		file manager for the MATE desktop
+REVISION=		0
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 

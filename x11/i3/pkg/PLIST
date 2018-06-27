@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/11/13 20:46:23 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:04:12 espie Exp $
 @conflict i3bar-<=0.6.21p1
 @pkgpath x11/i3bar
 @bin bin/i3
@@ -46,5 +46,4 @@ share/examples/i3/config.keycodes
 share/xsessions/
 share/xsessions/i3-with-shmlog.desktop
 share/xsessions/i3.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

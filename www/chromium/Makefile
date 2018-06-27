@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2018/06/19 05:32:31 robert Exp $
+# $OpenBSD: Makefile,v 1.377 2018/06/27 21:04:05 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -11,6 +11,7 @@ COMMENT=		Chromium browser
 V=			67.0.3396.87
 
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 

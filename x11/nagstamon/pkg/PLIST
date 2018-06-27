@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/08/31 13:10:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:21 espie Exp $
 bin/nagstamon
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Config.py
@@ -236,5 +236,4 @@ lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODP
 share/applications/nagstamon.desktop
 share/pixmaps/
 share/pixmaps/nagstamon.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/10 09:34:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:57 espie Exp $
 @bin bin/wishwn
 @bin bin/wn
 bin/wnb
@@ -55,5 +55,4 @@ share/wordnet/lib/wnres/license.txt
 share/wordnet/lib/wnres/wn.xbm
 share/wordnet/lib/wnres/wnb.man
 share/wordnet/lib/wnres/wngloss.man
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

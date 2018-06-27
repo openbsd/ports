@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/05/26 21:34:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/27 21:03:49 espie Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -246,7 +246,6 @@ share/pixmaps/pioneers/style-human-7.png
 share/pixmaps/pioneers/style-human.png
 share/pixmaps/pioneers/trade.svg
 share/pixmaps/pioneers/wool.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

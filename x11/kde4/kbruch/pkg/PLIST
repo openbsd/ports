@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/01 21:09:41 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:15 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kbruch
 @man man/man1/kbruch.1
@@ -48,7 +48,6 @@ share/icons/hicolor/32x32/apps/kbruch.png
 share/icons/hicolor/48x48/apps/kbruch.png
 share/icons/hicolor/64x64/apps/kbruch.png
 share/icons/hicolor/scalable/apps/kbruch.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

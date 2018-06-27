@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/08 19:20:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:36 espie Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
@@ -7,7 +7,7 @@ GH_PROJECT =	MilkyTracker
 GH_TAGNAME =	v1.02.00
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 

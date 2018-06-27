@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/12/03 00:52:03 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:07 espie Exp $
 bin/ccsm
 lib/python${MODPY_VERSION}/site-packages/ccm/
 lib/python${MODPY_VERSION}/site-packages/ccm/Conflicts.py
@@ -203,5 +203,4 @@ share/locale/zh_CN/LC_MESSAGES/ccsm.mo
 share/locale/zh_HK/LC_MESSAGES/ccsm.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

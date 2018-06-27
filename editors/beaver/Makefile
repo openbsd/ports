@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/27 21:03:41 espie Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -6,7 +6,7 @@ DISTNAME=	beaver0_3_0_1
 PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors
 
-REVISION=	10
+REVISION=	11
 
 HOMEPAGE=	http://beaver-editor.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beaver-editor/}

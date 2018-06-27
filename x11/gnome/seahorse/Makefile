@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.110 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.111 2018/06/27 21:04:10 espie Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.20.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 

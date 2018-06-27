@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 15:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:40 espie Exp $
 bin/spe
 lib/python${MODPY_VERSION}/site-packages/_spe/
 lib/python${MODPY_VERSION}/site-packages/_spe/Blender_signature.py
@@ -981,5 +981,4 @@ lib/python${MODPY_VERSION}/site-packages/spe-0.0.0-py${MODPY_VERSION}.egg-info
 share/applications/spe.desktop
 share/pixmaps/
 share/pixmaps/spe.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/27 21:04:14 espie Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	audio
 

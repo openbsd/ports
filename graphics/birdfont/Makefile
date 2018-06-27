@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2018/01/01 10:59:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2018/06/27 21:03:52 espie Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.21.0
 CATEGORIES =	graphics print
+REVISION =	0
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
 SHARED_LIBS +=	birdgems			17.0 # 2.11.7

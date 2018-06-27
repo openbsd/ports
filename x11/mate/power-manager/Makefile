@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/27 12:09:10 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:21 espie Exp $
 
 COMMENT=		MATE power manager
+REVISION=		0
 
 MATE_PROJECT=		mate-power-manager
 MATE_VERSION=		1.20.1

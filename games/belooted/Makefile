@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/06/27 21:03:44 espie Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.4.1
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	games
 

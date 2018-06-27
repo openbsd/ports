@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/11 17:44:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:05 espie Exp $
 @bin bin/dillo
 bin/dillo-install-hyphenation
 @bin bin/dpid
@@ -51,5 +51,4 @@ share/examples/dillo/keysrc
 @sample ${SYSCONFDIR}/dillo/keysrc
 share/pixmaps/
 share/pixmaps/dillo.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/24 11:57:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/27 21:03:36 espie Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
@@ -6,6 +6,7 @@ COMMENT =		music studio with tracking, sampling and MIDI
 # git clone --recurse-submodules -b v1.2.0-rc6 https://github.com/lmms/lmms
 DISTNAME =		lmms-1.2.0rc6
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 CATEGORIES =		audio
 

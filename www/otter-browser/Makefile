@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/04 18:55:16 awolk Exp $
+# $OpenBSD: Makefile,v 1.27 2018/06/27 21:04:06 espie Exp $
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-0.9.94
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/03/17 16:14:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/27 21:03:58 espie Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		multimedia
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/27 10:36:42 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:58 espie Exp $
 bin/autolives.pl
 bin/build-lives-rfx-plugin
 bin/build-lives-rfx-plugin-multi
@@ -274,5 +274,4 @@ share/locale/tr/LC_MESSAGES/lives.mo
 share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/
 share/pixmaps/lives.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

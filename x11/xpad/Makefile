@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/14 15:44:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.39 2018/06/27 21:04:25 espie Exp $
 
 V=		5.0.0
 COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	http://xpad.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>

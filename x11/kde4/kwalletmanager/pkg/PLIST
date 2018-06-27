@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/27 07:30:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:19 espie Exp $
 @conflict kdeutils-<4
 @conflict kwallet-*
 @pkgpath x11/kde4/kwallet
@@ -48,7 +48,6 @@ share/icons/hicolor/64x64/apps/kwalletmanager2.png
 share/kde4/services/kwalletconfig.desktop
 share/kde4/services/kwalletmanager_show.desktop
 share/polkit-1/actions/org.kde.kcontrol.kcmkwallet.policy
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

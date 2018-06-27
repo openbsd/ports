@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/14 20:17:17 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:01 espie Exp $
 @bin bin/xournal
 share/applications/xournal.desktop
 share/doc/xournal/
@@ -56,8 +56,7 @@ share/xournal/pixmaps/xoj.svg
 share/xournal/pixmaps/xournal.png
 share/xournal/pixmaps/xournal.svg
 share/xournal/pixmaps/yellow.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

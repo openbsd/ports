@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:45 espie Exp $
 
 V =		2.1
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
 CATEGORIES =	games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://nongnu.org/eliot/
 

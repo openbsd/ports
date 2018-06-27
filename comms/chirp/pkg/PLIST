@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/01/08 01:37:02 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:38 espie Exp $
 bin/chirpw
 bin/rpttool
 lib/python${MODPY_VERSION}/site-packages/chirp/
@@ -378,5 +378,4 @@ share/doc/chirp/
 share/doc/chirp/COPYING
 share/pixmaps/
 share/pixmaps/chirp.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

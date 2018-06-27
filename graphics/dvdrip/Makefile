@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/28 18:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:53 espie Exp $
 
 PORTROACH=	skipv:0.98.11_01
 
 COMMENT=	full featured DVD copy program
 
 VERSION=	0.98.11
-REVISION=	2
+REVISION=	3
 DISTNAME=	dvdrip-${VERSION}
 CATEGORIES=	graphics audio multimedia perl5
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/11/04 22:28:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:06 espie Exp $
 @bin bin/netsurf-gtk
 @man man/man1/netsurf-gtk.1
 share/applications/netsurf.desktop
@@ -77,5 +77,4 @@ share/netsurf/toolbar.gtk2.ui
 share/netsurf/viewdata.gtk2.ui
 share/netsurf/warning.gtk2.ui
 share/netsurf/welcome.html
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

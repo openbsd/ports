@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/05/19 09:06:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:04:03 espie Exp $
 @bin bin/keepassxc
 @bin bin/keepassxc-cli
 %%browser%%
@@ -321,8 +321,7 @@ share/keepassxc/wordlists/eff_large.wordlist
 share/metainfo/
 share/metainfo/org.keepassxc.KeePassXC.appdata.xml
 share/mime/packages/keepassxc.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

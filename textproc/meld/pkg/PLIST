@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/06/19 13:27:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:04:04 espie Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -259,5 +259,4 @@ share/mime/packages/meld.xml
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

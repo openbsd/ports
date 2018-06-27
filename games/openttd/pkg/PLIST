@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/06/26 06:20:41 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/06/27 21:03:48 espie Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -229,7 +229,6 @@ share/openttd/scripts/pre_server.scr.example
 share/openttd/scripts/readme.txt
 share/pixmaps/
 share/pixmaps/openttd.32.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

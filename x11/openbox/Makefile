@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/06/27 21:04:21 espie Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	3
+REVISION =	4
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2

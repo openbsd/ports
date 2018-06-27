@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/05/07 10:11:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:56 espie Exp $
 @pkgpath mail/evolution-plugin-rss
 @bin bin/evolution-import-rss
 lib/evolution/modules/evolution-module-rss.so
@@ -65,5 +65,4 @@ share/locale/th/LC_MESSAGES/evolution-rss.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-rss.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

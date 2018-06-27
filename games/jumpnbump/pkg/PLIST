@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/14 23:38:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:47 espie Exp $
 @bin bin/gobpack
 @bin bin/jnbpack
 @bin bin/jnbunpack
@@ -15,5 +15,4 @@ share/jumpnbump/
 share/jumpnbump/jumpbump.dat
 share/jumpnbump/jumpnbump_menu.glade
 share/locale/fr/LC_MESSAGES/jumpnbump-menu.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

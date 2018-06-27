@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 13:59:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:37 espie Exp $
 bin/exfalso
 bin/operon
 bin/quodlibet
@@ -1053,7 +1053,6 @@ share/locale/zh_TW/LC_MESSAGES/quodlibet.mo
 share/zsh/
 share/zsh/vendor-completions/
 share/zsh/vendor-completions/_quodlibet
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

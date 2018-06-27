@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/17 19:29:36 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:54 espie Exp $
 @bin bin/grafx2
 share/applications/grafx2.desktop
 share/grafx2/
@@ -37,5 +37,4 @@ share/grafx2/skins/skin_scenish.png
 share/grafx2/skins/unicode_0410-044F.png
 share/pixmaps/
 share/pixmaps/grafx2.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

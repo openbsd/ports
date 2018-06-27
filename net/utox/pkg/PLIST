@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/29 11:15:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:00 espie Exp $
 @bin bin/utox
 @man man/man1/utox.1
 share/applications/utox.desktop
@@ -18,7 +18,6 @@ share/icons/hicolor/64x64/apps/utox-64x64.png
 share/icons/hicolor/72x72/apps/utox-72x72.png
 share/icons/hicolor/96x96/apps/utox-96x96.png
 share/icons/hicolor/scalable/apps/utox.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

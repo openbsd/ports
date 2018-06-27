@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/12 10:00:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:37 espie Exp $
 @bin bin/schismtracker
 @man man/man1/schismtracker.1
 share/applications/schism.desktop
 share/pixmaps/
 share/pixmaps/schism-icon-128.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

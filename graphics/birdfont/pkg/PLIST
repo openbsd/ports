@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/11/08 11:45:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:03:52 espie Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
@@ -36,5 +36,4 @@ share/mime/packages/birdfont.xml
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

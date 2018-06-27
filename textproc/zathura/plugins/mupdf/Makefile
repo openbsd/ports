@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/28 14:57:32 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/27 21:04:04 espie Exp $
 
 V =		0.3.3
 COMMENT =	mupdf pdf plugin for zathura
 DISTNAME =	zathura-pdf-mupdf-${V}
+REVISION =	0
 
 HOMEPAGE =	https://pwmt.org/projects/zathura-pdf-mupdf/
 

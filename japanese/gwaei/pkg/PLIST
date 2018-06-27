@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/27 18:02:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:55 espie Exp $
 @bin bin/gwaei
 @bin bin/waei
 include/libwaei/
@@ -77,7 +77,6 @@ share/omf/gwaei/
 share/omf/gwaei/gwaei-C.omf
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

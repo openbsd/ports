@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/02/13 05:13:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/27 21:03:39 espie Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -24,6 +24,7 @@ FLAVOR ?=
 .if ${FLAVOR:Mpython3}
 PKGNAME =	bpython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 .endif
+REVISION =	0
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-curtsies${MODPY_FLAVOR} \

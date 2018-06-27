@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.59 2018/06/27 21:03:34 espie Exp $
 
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
@@ -6,7 +6,7 @@ BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog
 COMMENT =		graphical audio player which supports lots of formats
 
 DISTNAME =		audacious-3.9
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		audcore		4.0 	# 5.0
 SHARED_LIBS +=		audgui		4.0	# 5.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/09 21:00:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:07 espie Exp $
 @bin bin/gigolo
 @man man/man1/gigolo.1
 share/applications/gigolo.desktop
@@ -58,5 +58,4 @@ share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/gigolo.mo
 share/locale/zh_CN/LC_MESSAGES/gigolo.mo
 share/locale/zh_TW/LC_MESSAGES/gigolo.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

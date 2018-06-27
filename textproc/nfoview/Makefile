@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2018/04/23 20:32:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/27 21:04:04 espie Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.24
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
+REVISION =	0
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview

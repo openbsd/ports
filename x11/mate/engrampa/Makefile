@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/26 08:24:04 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:20 espie Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
 
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

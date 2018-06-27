@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/17 08:53:24 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:48 espie Exp $
 @bin bin/meandmyshadow
 share/applications/meandmyshadow.desktop
 share/icons/hicolor/16x16/apps/meandmyshadow.png
@@ -228,5 +228,4 @@ share/meandmyshadow/data/themes/classic/shadow/shadowright.png
 share/meandmyshadow/data/themes/classic/theme.mnmstheme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

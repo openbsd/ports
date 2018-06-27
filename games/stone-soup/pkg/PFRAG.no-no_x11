@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2016/10/01 12:56:54 stsp Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.7 2018/06/27 21:03:49 espie Exp $
 share/applications/crawl-tiles.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
@@ -33,5 +33,4 @@ share/crawl/dat/tiles/title_white_noise_grabbing_the_orb.png
 share/crawl/dat/tiles/wall.png
 share/pixmaps/
 share/pixmaps/stone-soup.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/03/02 16:36:08 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:40 espie Exp $
 bin/lazarus-ide
 bin/lazbuild
 bin/lazres
@@ -12025,7 +12025,6 @@ share/pixmaps/
 share/pixmaps/lazarus.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

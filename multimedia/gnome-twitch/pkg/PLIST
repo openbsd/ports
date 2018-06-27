@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/15 11:32:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:58 espie Exp $
 @bin bin/gnome-twitch
 include/gnome-twitch/
 include/gnome-twitch/gt-log.h
@@ -32,8 +32,7 @@ share/locale/pt/LC_MESSAGES/gnome-twitch.mo
 share/locale/ru/LC_MESSAGES/gnome-twitch.mo
 share/locale/sr/LC_MESSAGES/gnome-twitch.mo
 share/locale/sv/LC_MESSAGES/gnome-twitch.mo
-@exec %D/bin/update-desktop-database  
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database  
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

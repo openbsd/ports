@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:17 espie Exp $
 @conflict kdegames-<4
 @bin bin/konquest
 share/applications/kde4/konquest.desktop
@@ -20,7 +20,6 @@ share/icons/hicolor/22x22/apps/konquest.png
 share/icons/hicolor/32x32/apps/konquest.png
 share/icons/hicolor/48x48/apps/konquest.png
 share/icons/hicolor/64x64/apps/konquest.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

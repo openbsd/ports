@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/05/27 10:08:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:53 espie Exp $
 @bin bin/gpicview
 share/applications/gpicview.desktop
 share/gpicview/
@@ -80,5 +80,4 @@ share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 share/locale/zh_TW/LC_MESSAGES/gpicview.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

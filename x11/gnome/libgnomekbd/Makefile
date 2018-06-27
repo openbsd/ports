@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2017/11/01 14:54:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2018/06/27 21:04:10 espie Exp $
 
 COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		3.26.0
+REVISION=		0
 
 SHARED_LIBS +=  gnomekbd             8.0      # 8.0
 SHARED_LIBS +=  gnomekbdui           8.0      # 8.0

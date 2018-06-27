@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2016/08/05 05:26:42 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/06/27 21:03:43 espie Exp $
 @bin bin/nestopia
 share/applications/nestopia.desktop
 share/nestopia/
@@ -13,5 +13,4 @@ share/nestopia/icons/nestopia64.png
 share/nestopia/icons/nestopia96.png
 share/pixmaps/
 share/pixmaps/nestopia.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

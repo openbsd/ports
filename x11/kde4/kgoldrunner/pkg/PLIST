@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:02 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:15 espie Exp $
 @conflict kdegames-<4
 @bin bin/kgoldrunner
 share/applications/kde4/KGoldrunner.desktop
@@ -82,7 +82,6 @@ share/icons/hicolor/22x22/apps/kgoldrunner.png
 share/icons/hicolor/32x32/apps/kgoldrunner.png
 share/icons/hicolor/48x48/apps/kgoldrunner.png
 share/icons/hicolor/64x64/apps/kgoldrunner.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

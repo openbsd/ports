@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/24 20:04:25 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:04:00 espie Exp $
 @bin bin/mcabber
 @man man/man1/mcabber.1
 share/applications/mcabber.desktop
@@ -366,5 +366,4 @@ share/mcabber/help/uk/hlp_source.txt
 share/mcabber/help/uk/hlp_status.txt
 share/mcabber/help/uk/hlp_status_to.txt
 share/mcabber/help/uk/hlp_version.txt
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

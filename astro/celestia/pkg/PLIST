@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/05 11:43:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:34 espie Exp $
 @bin bin/celestia
 share/applications/celestia.desktop
 share/celestia/
@@ -606,5 +606,4 @@ share/locale/zh_TW/LC_MESSAGES/celestia.mo
 share/locale/zh_TW/LC_MESSAGES/celestia_constellations.mo
 share/pixmaps/
 share/pixmaps/celestia.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

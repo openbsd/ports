@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/24 14:07:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:15 espie Exp $
 @conflict kdenetwork-<4.11
 @bin bin/kget
 lib/kde4/kcm_kget_checksumsearchfactory.so
@@ -101,7 +101,6 @@ share/kde4/services/plasma-runner-kget.desktop
 share/kde4/servicetypes/kget_plugin.desktop
 share/ontology/kde/kget_history.ontology
 share/ontology/kde/kget_history.trig
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

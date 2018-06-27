@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/02 00:54:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:47 espie Exp $
 
 COMMENT =		simple text adventure interpreter
 V =			3.0.1
@@ -7,6 +7,7 @@ PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games
 HOMEPAGE =		https://instead.syscall.ru/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
+REVISION =		0
 
 # MIT, LGPL (SDL_anigif), zlib (SDL_gfx), 3-clause BSDL (tinymt32)
 PERMIT_PACKAGE_CDROM =	Yes

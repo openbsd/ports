@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 12:13:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:41 espie Exp $
 @bin bin/kile
 share/applications/kde4/kile.desktop
 share/apps/kconf_update/kile.upd
@@ -1662,8 +1662,7 @@ share/locale/x-test/LC_MESSAGES/kile.mo
 share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/locale/zh_TW/LC_MESSAGES/kile.mo
 share/mime/packages/kile.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/21 10:53:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:38 espie Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.1.0
 DISTNAME =	kexi-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kexicore3.1               0.0 # 3.1
 SHARED_LIBS +=  kexidatatable3.1          0.0 # 3.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:42:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:54 espie Exp $
 bin/scratch
 @man man/man1/scratch.1
 share/applications/scratch.desktop
@@ -1197,7 +1197,6 @@ share/scratch/locale/zh_CN.po
 share/scratch/locale/zh_TW.po
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

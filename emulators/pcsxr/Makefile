@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:43 espie Exp $
 
 COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
-REVISION =	7
+REVISION =	8
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 

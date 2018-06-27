@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:18 espie Exp $
 
 COMMENT =	KDE educational Logo programming environment
 DISTNAME =	kturtle-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

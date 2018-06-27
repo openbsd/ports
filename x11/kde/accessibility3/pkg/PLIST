@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/07/29 01:15:52 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/06/27 21:04:12 espie Exp $
 @pkgpath x11/kde/accessibility3,-main
 @bin bin/kmag
 @bin bin/kmousetool
@@ -431,8 +431,7 @@ share/services/kttsjobmgr.desktop
 share/servicetypes/kttsd_audioplugin.desktop
 share/servicetypes/kttsd_filterplugin.desktop
 share/servicetypes/kttsd_synthplugin.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

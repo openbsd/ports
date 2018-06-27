@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/12 19:28:43 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:05 espie Exp $
 @bin bin/luakit
 @man man/man1/luakit.1
 share/applications/luakit.desktop
@@ -124,5 +124,4 @@ share/luakit/resources/icons/tab-icon-security-error.png
 share/luakit/resources/icons/tab-icon-security-error@2x.png
 share/pixmaps/
 share/pixmaps/luakit.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

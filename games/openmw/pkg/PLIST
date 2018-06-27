@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/05 19:59:13 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:48 espie Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -132,5 +132,4 @@ share/openmw/resources/version
 share/pixmaps/
 share/pixmaps/openmw-cs.png
 share/pixmaps/openmw.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

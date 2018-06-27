@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/25 10:16:44 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/27 21:04:23 espie Exp $
 
 COMMENT=	GTK+2 front-end for command line archiving tools
 
 V=		0.2.8-6
 DISTNAME=	xarchive-$V
 PKGNAME=	xarchive-${V:S/-/./}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11
 
 HOMEPAGE=	http://xarchive.sourceforge.net/

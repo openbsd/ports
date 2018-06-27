@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/08 04:40:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:12 espie Exp $
 @conflict kdebase-<4
 @conflict kde-l10n-*
 @pkgpath x11/kde4/konsole
@@ -120,5 +120,4 @@ share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo
 share/metainfo/
 share/metainfo/org.kde.konsole.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

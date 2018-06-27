@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:16:35 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:17 espie Exp $
 @bin bin/kollision
 share/applications/kde4/kollision.desktop
 share/apps/kollision/
@@ -29,8 +29,7 @@ share/icons/oxygen/64x64/apps/kollision.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/apps/
 share/icons/oxygen/scalable/apps/kollision.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

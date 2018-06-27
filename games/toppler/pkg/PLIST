@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/10/22 19:33:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:50 espie Exp $
 @mode g+s
 @group games
 @bin bin/toppler
@@ -26,5 +26,4 @@ share/pixmaps/toppler.xpm
 share/toppler/
 share/toppler/toppler.dat
 share/toppler/toppler.ogg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

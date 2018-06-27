@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/06/27 21:03:45 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	isometric RPG game
 DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.freedroid.org/
 

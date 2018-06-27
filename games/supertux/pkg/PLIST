@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/18 16:28:50 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:50 espie Exp $
 @bin bin/supertux2
 share/appdata/
 share/appdata/supertux2.appdata.xml
@@ -3178,5 +3178,4 @@ share/supertux2/speech/tux_hello.ogg
 share/supertux2/speech/tux_murp_01.ogg
 share/supertux2/speech/tux_rap.ogg
 share/supertux2/speech/tux_upset.ogg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

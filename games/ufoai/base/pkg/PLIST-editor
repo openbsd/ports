@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-editor,v 1.4 2014/09/29 18:23:15 kirby Exp $
+@comment $OpenBSD: PLIST-editor,v 1.5 2018/06/27 21:03:50 espie Exp $
 bin/uforadiant
 @man man/man6/ufo2map.6
 @man man/man6/uforadiant.6
@@ -843,5 +843,4 @@ share/ufoai/radiant/sourceviewer/ump.lang
 share/ufoai/radiant/user.xml
 @bin share/ufoai/ufo2map
 @bin share/ufoai/ufomodel
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

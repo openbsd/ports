@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:46 espie Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -6,7 +6,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 

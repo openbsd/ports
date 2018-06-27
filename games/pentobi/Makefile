@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/03 17:04:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:49 espie Exp $
 
 COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-14.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://pentobi.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/06/02 10:39:11 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:53 espie Exp $
 bin/dvdrip
 bin/dvdrip-exec
 bin/dvdrip-master
@@ -113,7 +113,6 @@ share/locale/sr/LC_MESSAGES/video.dvdrip.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/video.dvdrip.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

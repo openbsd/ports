@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/04/26 17:42:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:03:56 espie Exp $
 @bin bin/galculator
 @man man/man1/galculator.1
 share/appdata/
@@ -58,7 +58,6 @@ share/locale/zh_CN/LC_MESSAGES/galculator.mo
 share/locale/zh_TW/LC_MESSAGES/galculator.mo
 share/pixmaps/
 share/pixmaps/galculator.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

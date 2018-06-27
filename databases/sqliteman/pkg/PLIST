@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/11/10 22:28:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:39 espie Exp $
 @bin bin/sqliteman
 share/applications/sqliteman.desktop
 share/icons/hicolor/32x32/apps/sqliteman.png
@@ -133,5 +133,4 @@ share/sqliteman/sqliteman_pl.qm
 share/sqliteman/sqliteman_ru.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

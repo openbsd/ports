@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:13 espie Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	multimedia
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2018/06/27 21:03:59 espie Exp $
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
 DISTNAME=	ettercap-0.7.5.3
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 22:04:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:50 espie Exp $
 bin/unknown-horizons
 lib/python${MODPY_VERSION}/site-packages/UnknownHorizons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/horizons/
@@ -14143,5 +14143,4 @@ share/unknown-horizons/content/scenarios/tutorial_zh_CN.yaml
 share/unknown-horizons/content/scenarios/tutorial_zh_TW.yaml
 share/unknown-horizons/content/settings-template.xml
 share/unknown-horizons/settings-template.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

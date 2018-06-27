@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/12/07 22:44:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:58 espie Exp $
 @bin bin/synfigstudio
 include/synfigapp-0.0/
 include/synfigapp-0.0/synfigapp/
@@ -383,8 +383,7 @@ share/synfig/plugins/add-skeleton-simple/stickman.sif
 share/synfig/plugins/view-unhide-all-layers/
 share/synfig/plugins/view-unhide-all-layers/plugin.xml
 share/synfig/plugins/view-unhide-all-layers/view-unhide-all-layers.py
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime

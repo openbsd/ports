@@ -3,6 +3,7 @@
 COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${VERSION}
 CATEGORIES =	x11 math
+REVISION =	0
 
 KDE5 =		Yes
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/21 07:00:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:47 espie Exp $
 
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-${V}{v${V}}
 PKGNAME =	liberalcrimesquad-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	http://lcs.wikidot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

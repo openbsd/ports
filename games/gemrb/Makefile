@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/27 18:12:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:46 espie Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
 DISTNAME =		gemrb-0.8.5
+REVISION =		0
 
 CATEGORIES =		games emulators x11
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2018/04/12 06:53:06 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2018/06/27 21:04:23 espie Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	1.0.1
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

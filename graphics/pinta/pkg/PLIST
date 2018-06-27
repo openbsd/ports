@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/16 15:20:02 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:54 espie Exp $
 bin/pinta
 lib/pinta/
 lib/pinta/Pinta.Core.dll
@@ -119,5 +119,4 @@ share/pixmaps/
 share/pixmaps/pinta.xpm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

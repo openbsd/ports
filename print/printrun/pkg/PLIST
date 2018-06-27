@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/26 23:10:08 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:01 espie Exp $
 bin/plater
 bin/printcore
 bin/pronsole
@@ -132,5 +132,4 @@ share/pronterface/locale/it/LC_MESSAGES/pronterface.mo
 share/pronterface/locale/nl/
 share/pronterface/locale/nl/LC_MESSAGES/
 share/pronterface/locale/nl/LC_MESSAGES/pronterface.mo
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/update-desktop-database
+@tag update-desktop-database

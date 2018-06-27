@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/01 21:09:47 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:20 espie Exp $
 @bin bin/rocs
 include/kde4/rocs/
 include/kde4/rocs/ConsoleModule.h
@@ -198,7 +198,6 @@ share/kde4/services/rocs_transformedgesplugin.desktop
 share/kde4/servicetypes/RocsDataStructurePlugin.desktop
 share/kde4/servicetypes/RocsGraphFilePlugin.desktop
 share/kde4/servicetypes/RocsToolsPlugin.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

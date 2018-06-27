@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/11/24 15:02:24 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:37 espie Exp $
 @bin bin/Fritzing
 bin/fritzing
 share/applications/fritzing.desktop
@@ -9562,5 +9562,4 @@ share/fritzing/translations/syntax/
 share/fritzing/translations/syntax/arduino.xml
 share/fritzing/translations/syntax/picaxe.xml
 share/fritzing/translations/syntax/styles.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

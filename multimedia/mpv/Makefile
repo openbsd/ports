@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/06/25 16:43:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2018/06/27 21:03:58 espie Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	aarch64 alpha amd64 arm i386 mips64 mips64el powerpc \
@@ -10,7 +10,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.22.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		multimedia x11
 

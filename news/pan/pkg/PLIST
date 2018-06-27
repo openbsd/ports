@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/04/22 05:33:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:01 espie Exp $
 @bin bin/pan
 share/appdata/
 share/appdata/pan.appdata.xml
@@ -52,5 +52,4 @@ share/locale/zh_CN/LC_MESSAGES/pan.mo
 share/locale/zh_TW/LC_MESSAGES/pan.mo
 share/pixmaps/
 share/pixmaps/pan.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

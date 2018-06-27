@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:16 espie Exp $
 @conflict kdegames-<4.10
 @bin bin/kmahjongg
 share/applications/kde4/kmahjongg.desktop
@@ -168,7 +168,6 @@ share/icons/hicolor/32x32/apps/kmahjongg.png
 share/icons/hicolor/48x48/apps/kmahjongg.png
 share/icons/hicolor/64x64/apps/kmahjongg.png
 share/icons/hicolor/scalable/apps/kmahjongg.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

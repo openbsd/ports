@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/24 17:21:40 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:46 espie Exp $
 @bin bin/bgolly
 @bin bin/golly
 share/applications/golly.desktop
@@ -527,5 +527,4 @@ share/golly/Scripts/Python/tile-with-clip.py
 share/golly/Scripts/Python/tile.py
 share/pixmaps/
 share/pixmaps/golly.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

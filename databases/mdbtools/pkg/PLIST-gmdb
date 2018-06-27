@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gmdb,v 1.2 2015/03/20 16:27:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gmdb,v 1.3 2018/06/27 21:03:39 espie Exp $
 @pkgpath databases/mdbtools/snapshot,-gmdb
 @bin bin/gmdb2
 include/gmdb.h
@@ -41,5 +41,4 @@ share/gnome/help/gmdb/C/figures/gmdb2_sql_window.png
 share/gnome/help/gmdb/C/figures/gmdb2_window.png
 share/gnome/help/gmdb/C/gmdb.xml
 share/gnome/help/gmdb/C/legal.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:35 espie Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.5.7.2
 CATEGORIES=		audio x11
-REVISION=		5
+REVISION=		6
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

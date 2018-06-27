@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/27 11:00:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:20 espie Exp $
 @bin bin/atril
 @bin bin/atril-previewer
 @bin bin/atril-thumbnailer
@@ -457,8 +457,7 @@ share/locale/de/LC_MESSAGES/atril.mo
 share/locale/de_CH/LC_MESSAGES/atril.mo
 share/locale/dz/LC_MESSAGES/atril.mo
 share/locale/el/LC_MESSAGES/atril.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 share/locale/en_AU/LC_MESSAGES/atril.mo
@@ -500,8 +499,7 @@ share/locale/ko/LC_MESSAGES/atril.mo
 share/locale/ks/LC_MESSAGES/atril.mo
 share/locale/ku/LC_MESSAGES/atril.mo
 share/locale/ku_IQ/LC_MESSAGES/atril.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 share/locale/ky/LC_MESSAGES/atril.mo
@@ -550,8 +548,7 @@ share/locale/zh_CN/LC_MESSAGES/atril.mo
 share/locale/zh_HK/LC_MESSAGES/atril.mo
 share/locale/zh_TW/LC_MESSAGES/atril.mo
 share/thumbnailers/atril.thumbnailer
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

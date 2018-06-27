@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/26 21:25:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:22 espie Exp $
 bin/remotinator
 bin/terminator
 bin/terminator.wrapper
@@ -290,5 +290,4 @@ share/terminator/terminatorlib/themes/Raleigh/gtk-3.0/apps/terminator.css
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

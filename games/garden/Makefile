@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/06 17:02:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/27 21:03:45 espie Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.9
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

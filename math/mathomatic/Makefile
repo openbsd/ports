@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:57 espie Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
 DISTNAME =	mathomatic-16.0.0
+REVISION =	0
 
 CATEGORIES =	math
 

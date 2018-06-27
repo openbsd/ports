@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/09 20:03:24 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:14 espie Exp $
 @conflict gwenview4-*
 @bin bin/gwenview
 @bin bin/gwenview_importer
@@ -48,7 +48,6 @@ share/icons/hicolor/scalable/actions/document-share.svgz
 share/icons/hicolor/scalable/apps/gwenview.svgz
 share/kde4/services/ServiceMenus/slideshow.desktop
 share/kde4/services/gvpart.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

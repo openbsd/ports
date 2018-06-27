@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/23 16:23:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:03:35 espie Exp $
 @bin bin/grip
 @man man/man1/grip.1
 share/applications/grip.desktop
@@ -93,5 +93,4 @@ share/pixmaps/grip.png
 share/pixmaps/griptray.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

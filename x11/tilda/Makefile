@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/07/08 07:02:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2018/06/27 21:04:23 espie Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -7,7 +7,7 @@ GH_PROJECT=		tilda
 GH_TAGNAME=		tilda-1.3.3
 DISTNAME=		tilda-1.3.3
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 

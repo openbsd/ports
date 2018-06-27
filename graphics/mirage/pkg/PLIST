@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/29 07:07:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:54 espie Exp $
 bin/mirage
 lib/python${MODPY_VERSION}/site-packages/Mirage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/imgfuncs.so
@@ -32,5 +32,4 @@ share/mirage/stock_leave-fullscreen.png
 share/mirage/stock_shuffle.png
 share/pixmaps/
 share/pixmaps/mirage.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

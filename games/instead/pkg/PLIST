@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/25 19:46:59 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:47 espie Exp $
 bin/instead
 @bin bin/sdl-instead
 @man man/man6/instead.6
@@ -170,5 +170,4 @@ share/pixmaps/sdl_instead.ico
 share/pixmaps/sdl_instead.png
 share/pixmaps/sdl_instead.svg
 share/pixmaps/sdl_instead_1.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

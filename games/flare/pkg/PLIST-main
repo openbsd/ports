@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2017/11/18 17:01:06 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/06/27 21:03:45 espie Exp $
 @pkgpath games/flare
 @bin bin/flare
 @man man/man1/flare.1
@@ -74,7 +74,6 @@ share/flare/default/mods/default/menus/gameload.txt
 share/flare/default/mods/default/menus/gamenew.txt
 share/flare/default/mods/default/menus/menus.txt
 share/icons/hicolor/scalable/apps/flare.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

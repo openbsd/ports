@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/23 15:58:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:04:08 espie Exp $
 bin/gnome-characters
 lib/org.gnome.Characters/
 lib/org.gnome.Characters/girepository-1.0/
@@ -85,8 +85,7 @@ share/org.gnome.Characters/org.gnome.Characters.BackgroundService.data.gresource
 share/org.gnome.Characters/org.gnome.Characters.BackgroundService.src.gresource
 share/org.gnome.Characters/org.gnome.Characters.data.gresource
 share/org.gnome.Characters/org.gnome.Characters.src.gresource
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

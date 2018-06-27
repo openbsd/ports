@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/30 15:54:50 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:47 espie Exp $
 @mode g+s
 @group games
 @bin bin/lbreakout2
@@ -326,5 +326,4 @@ share/locale/da/LC_MESSAGES/lbreakout2.mo
 share/locale/de/LC_MESSAGES/lbreakout2.mo
 share/locale/fr/LC_MESSAGES/lbreakout2.mo
 share/locale/tr/LC_MESSAGES/lbreakout2.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

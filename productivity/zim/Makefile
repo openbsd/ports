@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/04 22:02:58 benno Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/27 21:04:02 espie Exp $
 
 COMMENT =		desktop wiki
 
 MODPY_EGG_VERSION =	0.67
 DISTNAME =		zim-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 

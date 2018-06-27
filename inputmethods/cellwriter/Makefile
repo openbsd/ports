@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:55 espie Exp $
 
 COMMENT =		grid-entry natural handwriting input panel
 
 DISTNAME =		cellwriter-1.3.5
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		inputmethods x11
 

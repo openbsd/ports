@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/22 12:26:46 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/27 21:03:54 espie Exp $
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
@@ -7,6 +7,7 @@ GH_TAGNAME =		v2.1.3
 COMMENT =		simple image viewer
 CATEGORIES =		graphics x11
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

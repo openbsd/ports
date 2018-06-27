@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/07/01 08:46:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/27 21:04:25 espie Exp $
 @bin bin/xfe
 @bin bin/xfi
 @bin bin/xfp
@@ -1996,5 +1996,4 @@ share/xfe/icons/xfe-theme/zoomin.png
 share/xfe/icons/xfe-theme/zoomout.png
 share/xfe/icons/xfe-theme/zoomwin.png
 share/xfe/xferc
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

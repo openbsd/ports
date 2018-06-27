@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2018/04/17 14:47:49 schwarze Exp $
+# $OpenBSD: Makefile,v 1.159 2018/06/27 21:04:12 espie Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		46
+REVISION-main =		47
 REVISION-langlist =	2
 
 MODKDE_VERSION =	3.5.8

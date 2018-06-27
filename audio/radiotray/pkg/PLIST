@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/11 09:02:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:37 espie Exp $
 bin/radiotray
 lib/python${MODPY_VERSION}/site-packages/radiotray/
 lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -172,5 +172,4 @@ share/radiotray/plugins/matemediakeys.plugin
 share/radiotray/plugins/notification.plugin
 share/radiotray/plugins/sleeptimer.config
 share/radiotray/plugins/sleeptimer.plugin
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

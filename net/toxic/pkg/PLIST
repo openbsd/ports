@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/29 11:16:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:00 espie Exp $
 @bin bin/toxic
 @man man/man1/toxic.1
 @man man/man5/toxic.conf.5
@@ -15,5 +15,4 @@ share/toxic/sounds/ToxicRecvMessage.wav
 share/toxic/sounds/ToxicTransferComplete.wav
 share/toxic/sounds/ToxicTransferStart.wav
 share/toxic/toxic.conf.example
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

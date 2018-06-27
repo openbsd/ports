@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/12 14:29:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:38 espie Exp $
 bin/wammu
 bin/wammu-configure
 lib/python${MODPY_VERSION}/site-packages/Wammu/
@@ -240,5 +240,4 @@ share/pixmaps/wammu.ico
 share/pixmaps/wammu.png
 share/pixmaps/wammu.svg
 share/pixmaps/wammu.xpm
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

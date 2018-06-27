@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2018/05/02 14:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/06/27 21:04:04 espie Exp $
 
 SHARED_LIBS +=	mupdf		7.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.13.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 

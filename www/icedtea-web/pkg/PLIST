@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/07/28 13:34:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:05 espie Exp $
 bin/itweb-settings
 bin/javaws
 bin/policyeditor
@@ -16,5 +16,4 @@ share/icedtea-web/javaws_splash.png
 share/icedtea-web/netx.jar
 share/pixmaps/
 share/pixmaps/javaws.png
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

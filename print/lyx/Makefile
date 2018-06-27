@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2017/12/19 14:06:52 jca Exp $
+# $OpenBSD: Makefile,v 1.81 2018/06/27 21:04:01 espie Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 # XXX check source files for UTF-8 BOM, they break build with base gcc
 DISTNAME=	lyx-2.2.3
+REVISION=	0
 
 CATEGORIES=	print editors
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:45 espie Exp $
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.3
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}files/
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://crimson.seul.org/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/03 08:51:29 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:58 espie Exp $
 bin/oggconvert
 lib/python${MODPY_VERSION}/site-packages/OggConvert/
 lib/python${MODPY_VERSION}/site-packages/OggConvert/__init__.py
@@ -61,5 +61,4 @@ share/locale/zh_CN/LC_MESSAGES/oggconvert.mo
 share/locale/zh_TW/LC_MESSAGES/oggconvert.mo
 share/pixmaps/
 share/pixmaps/oggconvert.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

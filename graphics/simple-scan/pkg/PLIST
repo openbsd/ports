@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/23 13:44:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:03:55 espie Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -733,5 +733,4 @@ share/simple-scan/icons/hicolor/scalable/actions/
 share/simple-scan/icons/hicolor/scalable/actions/object-crop.svg
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

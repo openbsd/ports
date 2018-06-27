@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/06/29 14:46:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:07 espie Exp $
 @bin bin/ASFileBrowser
 @bin bin/ASMount
 @bin bin/ASRun
@@ -1581,5 +1581,4 @@ share/gnome-session/sessions/
 share/gnome-session/sessions/AfterStep.session
 share/gnome/wm-properties/
 share/gnome/wm-properties/AfterStep.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

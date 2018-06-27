@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/10/28 10:10:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:04:04 espie Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -1000,5 +1000,4 @@ share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

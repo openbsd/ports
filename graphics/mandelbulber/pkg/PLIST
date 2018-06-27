@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/01 14:51:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:54 espie Exp $
 @bin bin/mandelbulber
 share/applications/mandelbulber.desktop
 share/mandelbulber/
@@ -107,5 +107,4 @@ share/mandelbulber/textures/colour palette.jpg
 share/mandelbulber/textures/envmap.jpg
 share/mandelbulber/textures/lightmap.jpg
 share/mandelbulber/textures/lightmap2.jpg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

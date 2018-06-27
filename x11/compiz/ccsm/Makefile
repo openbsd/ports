@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:04:07 espie Exp $
 
 COMMENT =	compiz configuration manager
 
 DISTNAME =	ccsm-0.8.4
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	http://releases.compiz.org/components/ccsm/
 

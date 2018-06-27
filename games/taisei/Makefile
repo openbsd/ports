@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/17 22:54:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:50 espie Exp $
 
 COMMENT =		clone of the touhou games
 
 V =			1.0a
 DISTNAME =		taisei-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 

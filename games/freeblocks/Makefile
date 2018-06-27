@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/27 21:03:45 espie Exp $
 
 V =		0.5
 COMMENT =	puzzle game with similar gameplay to Tetris Attack
 DISTNAME =	freeblocks-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	dorkster
 GH_PROJECT =	freeblocks

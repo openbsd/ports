@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/10 15:52:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2018/06/27 21:04:11 espie Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.10.1
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		security
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/12/14 17:22:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:20 espie Exp $
 @pkgpath x11/lumina/i18n
 @pkgpath x11/lumina/lumina
 @unexec-delete rm -f %D/share/icons/material-design-dark/icon-theme.cache
@@ -2684,5 +2684,4 @@ share/xsessions/
 share/xsessions/Lumina-DE.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/material-design-dark
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/material-design-light
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

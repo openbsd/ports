@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/25 19:11:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.34 2018/06/27 21:03:36 espie Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -8,6 +8,7 @@ DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
+REVISION =	0
 
 HOMEPAGE =	http://musescore.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

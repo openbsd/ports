@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/05/24 21:23:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:03:57 espie Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -2397,5 +2397,4 @@ share/octave/site/api-v52/m/
 share/octave/site/m/
 share/octave/site/m/startup/
 share/octave/site/m/startup/octaverc
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

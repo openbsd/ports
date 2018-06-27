@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/02/06 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:45 espie Exp $
 @bin bin/gamine
 share/applications/gamine.desktop
 share/doc/gamine/
@@ -46,5 +46,4 @@ ${SCHEMAS_INSTDIR}/gamine.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

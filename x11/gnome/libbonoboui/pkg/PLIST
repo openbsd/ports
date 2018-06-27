@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2016/03/19 10:08:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/27 21:04:09 espie Exp $
 @bin bin/bonobo-browser
 @bin bin/test-moniker
 include/libbonoboui-2.0/
@@ -180,5 +180,4 @@ share/locale/zh_CN/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

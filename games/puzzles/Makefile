@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:49 espie Exp $
 
 COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20170507
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://rhaalovely.net/stuff/
 HOMEPAGE =	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/

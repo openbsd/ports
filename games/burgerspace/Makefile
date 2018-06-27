@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/27 21:03:44 espie Exp $
 
 COMMENT=	burgertime clone for X
 
 DISTNAME =	burgerspace-1.9.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games
 

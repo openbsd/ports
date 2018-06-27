@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/06/06 07:50:54 robert Exp $
+# $OpenBSD: Makefile,v 1.75 2018/06/27 21:04:05 espie Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,6 +13,7 @@ V=			2018.5.67
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+REVISION=		0
 
 CATEGORIES=		www
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:44 espie Exp $
 
 COMMENT =	open source, classic overhead run-and-gun game
 DISTNAME =	cdogs-sdl-0.5.5.1
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://cxong.github.io/cdogs-sdl/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:45 espie Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
@@ -7,7 +7,7 @@ BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 V =			0.7.4
 DISTNAME =		etr-$V
 PKGNAME =		extremetuxracer-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

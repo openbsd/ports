@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.34 2018/06/27 21:03:49 espie Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -11,7 +11,7 @@ VERSION = 	0.18.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
+REVISION=	1
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/10 18:28:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:40 espie Exp $
 @bin bin/kdevelop
 bin/kdevelop!
 include/kde4/kdevelop/
@@ -771,8 +771,7 @@ share/locale/zh_TW/LC_MESSAGES/kdevqthelp.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/mime/packages/kdevelop.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

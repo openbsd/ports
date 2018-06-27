@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/12 19:48:57 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:53 espie Exp $
 @bin bin/djview
 lib/mozilla/
 lib/mozilla/plugins/
@@ -19,7 +19,6 @@ share/djvu/djview4/djview_zh_tw.qm
 share/icons/hicolor/32x32/mimetypes/djvulibre-djview4.png
 share/icons/hicolor/64x64/mimetypes/djvulibre-djview4.png
 share/icons/hicolor/scalable/mimetypes/djvulibre-djview4.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2018/06/27 21:04:22 espie Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.9.7
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/

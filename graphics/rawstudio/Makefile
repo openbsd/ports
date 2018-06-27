@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2018/04/28 15:04:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:54 espie Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	18
+REVISION =	19
 
 CATEGORIES =	graphics
 

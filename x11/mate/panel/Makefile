@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/27 12:08:48 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/27 21:04:21 espie Exp $
 
 COMMENT=		panel component for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2017/09/02 21:59:05 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/06/27 21:03:56 espie Exp $
 @pkgpath mail/sylpheed,compface
 @pkgpath mail/sylpheed,compface,gpgme
 @pkgpath mail/sylpheed,gpgme
@@ -171,5 +171,4 @@ share/sylpheed/manual/ja/sylpheed-7.html
 share/sylpheed/manual/ja/sylpheed-8.html
 share/sylpheed/manual/ja/sylpheed-9.html
 share/sylpheed/manual/ja/sylpheed.html
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

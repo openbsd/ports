@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/16 17:58:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:36 espie Exp $
 @bin bin/potamus
 share/applications/potamus.desktop
 share/icons/hicolor/48x48/apps/potamus.png
@@ -16,5 +16,4 @@ share/potamus/potamus.glade
 share/potamus/potamus.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
