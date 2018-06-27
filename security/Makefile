@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.510 2018/06/20 11:44:33 feinerer Exp $
+# $OpenBSD: Makefile,v 1.511 2018/06/27 07:27:43 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -288,6 +288,7 @@
      SUBDIR += py-dfwinreg
      SUBDIR += py-ecdsa
      SUBDIR += py-ecdsa,python3
+     SUBDIR += py-elfesteem
      SUBDIR += py-gnupg
      SUBDIR += py-gnupg,python3
      SUBDIR += py-josepy
