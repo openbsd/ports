@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.21 2018/04/05 13:23:28 sthen Exp $
+# $OpenBSD: portbump,v 1.22 2018/06/27 16:20:08 zhuk Exp $
 #
 # Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
 #
@@ -322,7 +322,7 @@ sub _add_new_revs {
 	if ($self->{maxrevsin}->{count} > 1) {
 		return 0 unless $lineno == $self->{maxrevsin}->{blockend};
 	}
-	if ($self->{has_global_rev}) {
+	if (defined $self->{global_rev}) {
 		return 0 unless $self->_is_mpkg_port;
 	}
 
@@ -334,7 +334,7 @@ sub _add_new_revs {
 		     $lineno == $self->{newrevplace}->{$subpkg}->{blockend})) {
 			my $line = $self->_adj_whitespace(
 			    "REVISION" . $subpkg,
-			    "0",
+			    ($self->{global_rev} // -1) + 1,
 			    $self->{newrevplace}->{$subpkg}->{wssample});
 			print $out $line, "\n";
 			$nchanges++;
@@ -608,12 +608,11 @@ sub process_makefile {
 	my @mod_wantlib_seen;
 
 	my @mentionedsubpkgs;
-	$self->{has_global_rev} = 0;
 	while (<$in>) {
 		chomp;
 
-		if (/^ *REVISION(\s*)[\+\?\!]*=/) {
-			$self->{has_global_rev} = 1;
+		if (/^ *REVISION\s*[\+\?\!]*=\s*([0-9]+)/) {
+			$self->{global_rev} = $1;
 		}
 
 		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z0-9_+]*)?\b/) {
@@ -731,7 +730,7 @@ sub process_makefile {
 	}
 
 	# make sure new REVISION-foo won't arise when bumping REVISION
-	if ($self->{has_global_rev} and $self->{maxrevsin}->{blockend} <
+	if (defined($self->{global_rev}) and $self->{maxrevsin}->{blockend} <
 		                        $self->{newrevplace}->{""}->{blockend}) {
 		$self->{maxrevsin}->{blockend} = $self->{newrevplace}->{""}->{blockend};
 		$self->{maxrevsin}->{count} = 2;    # see _add_new_revs for >1 check
