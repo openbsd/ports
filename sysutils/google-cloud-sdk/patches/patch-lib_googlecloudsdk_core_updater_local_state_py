@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_updater_local_state_py,v 1.9 2018/04/12 08:03:22 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_updater_local_state_py,v 1.10 2018/06/27 11:25:07 ajacoutot Exp $
 
 Text from lib/googlecloudsdk/core/updater/update_manager.py.
 
 Index: lib/googlecloudsdk/core/updater/local_state.py
 --- lib/googlecloudsdk/core/updater/local_state.py.orig
 +++ lib/googlecloudsdk/core/updater/local_state.py
-@@ -55,10 +55,13 @@ class InvalidSDKRootError(Error):
+@@ -56,10 +56,13 @@ class InvalidSDKRootError(Error):
  
    def __init__(self):
      super(InvalidSDKRootError, self).__init__(
