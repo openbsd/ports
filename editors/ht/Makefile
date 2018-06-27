@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 20:43:11 benoit Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
 DISTNAME =		ht-2.1.0
 CATEGORIES =		editors
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://hte.sourceforge.net/
 

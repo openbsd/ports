@@ -1,0 +1,15 @@
+$OpenBSD: patch-httag_h,v 1.1 2018/06/27 20:43:11 benoit Exp $
+
+fix arch where char are unsigned by default
+
+--- httag.h.orig	Wed Jun 27 22:32:27 2018
++++ httag.h	Wed Jun 27 22:33:33 2018
+@@ -69,7 +69,7 @@
+ } PACKED;
+ 
+ struct ht_tag_flags_s {
+-	char bitidx;
++	signed char bitidx;
+ 	const char *desc;
+ } PACKED;
+ 
