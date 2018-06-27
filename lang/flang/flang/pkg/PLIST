@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/27 00:09:26 bcallah Exp $
 @bin bin/flang1
 @bin bin/flang2
 include/ieee_arithmetic.mod
+include/ieee_arithmetic_la.mod
 include/ieee_exceptions.mod
+include/ieee_exceptions_la.mod
 include/ieee_features.mod
 include/iso_c_binding.mod
 include/iso_fortran_env.mod

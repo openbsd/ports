@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/23 01:10:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/27 00:09:26 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-6.0.0.20180621
+REVISION =	0
 
 SHARED_LIBS +=	flang                     1.1 # 6.0
 SHARED_LIBS +=	flangrti                  1.0 # 6.0
@@ -33,9 +34,5 @@ CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \
 			-DFLANG_LIBOMP="${WRKBUILD}/lib/libompstub.a" \
 			-DLIBPGMATH="${LOCALBASE}/lib/libpgmath.a" \
 			-DWITH_WERROR=OFF
-
-post-patch:
-	@cp -R ${WRKSRC}/tools/flang2/flang2exe/x86_64-Linux \
-		${WRKSRC}/tools/flang2/flang2exe/x86_64-OpenBSD
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2018/06/16 20:08:28 bcallah Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.3 2018/06/27 00:09:26 bcallah Exp $
 
 Some ugly hacks here.
 
@@ -41,6 +41,21 @@ Index: lib/CMakeLists.txt
  
      # common
      # Definitions and compiler flags for level 1 directories
+@@ -151,12 +154,12 @@ else()
+   set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
+     TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
+     TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
+-  set(FLAGS_L1 "-O3 -mfma -ffp-contract=fast ")
++  set(FLAGS_L1 " ")
+ 
+   set(DEFINITIONS_L2 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
+     TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
+     TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
+-  set(FLAGS_L2 "-O3 -mfma -ffp-contract=fast ")
++  set(FLAGS_L2 " ")
+ 
+   # common
+   # Definitions and compiler flags for level 1 directories
 @@ -180,7 +183,7 @@ else()
  endif()
  
