@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_qsynthOptions_cpp,v 1.1.1.1 2018/06/27 17:47:07 sebastia Exp $
+
+Some defaults for midi/audio to sndiod
+
+Index: src/qsynthOptions.cpp
+--- src/qsynthOptions.cpp.orig
++++ src/qsynthOptions.cpp
+@@ -485,8 +485,9 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+ 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
+ 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
+ #else
+-	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "alsa_seq").toString();
+-	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "jack").toString();
++	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "sndio").toString();
++	pSetup->sMidiDevice      = m_settings.value("/MidiDevice", "midithru/0").toString();
++	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "sndio").toString();
+ 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 64).toInt();
+ 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 2).toInt();
+ #endif
+@@ -494,7 +495,6 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+ 	pSetup->sJackName        = m_settings.value("/JackName", "qsynth").toString();
+ 	pSetup->bJackAutoConnect = m_settings.value("/JackAutoConnect", true).toBool();
+ 	pSetup->bJackMulti       = m_settings.value("/JackMulti", false).toBool();
+-	pSetup->sMidiDevice      = m_settings.value("/MidiDevice").toString();
+ 	pSetup->iMidiChannels    = m_settings.value("/MidiChannels", 16).toInt();
+ 	pSetup->sMidiBankSelect  = m_settings.value("/MidiBankSelect", "gm").toString();
+ 	pSetup->sAudioDevice     = m_settings.value("/AudioDevice").toString();

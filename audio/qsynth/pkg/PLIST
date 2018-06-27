@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/27 17:47:07 sebastia Exp $
+@bin bin/qsynth
+share/applications/
+share/applications/qsynth.desktop
+share/pixmaps/
+share/pixmaps/qsynth.png
+share/qsynth/
+share/qsynth/translations/
+share/qsynth/translations/qsynth_cs.qm
+share/qsynth/translations/qsynth_de.qm
+share/qsynth/translations/qsynth_es.qm
+share/qsynth/translations/qsynth_fr.qm
+share/qsynth/translations/qsynth_ru.qm
+share/qsynth/translations/qsynth_sr.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
