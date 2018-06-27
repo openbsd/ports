@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/07 05:50:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/27 03:15:59 bcallah Exp $
 
 COMMENT =	pipe video streams into a video player
 CATEGORIES =	multimedia net
 
 GH_ACCOUNT =	streamlink
 GH_PROJECT =	streamlink
-GH_TAGNAME =	0.13.0
+GH_TAGNAME =	0.14.0
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
