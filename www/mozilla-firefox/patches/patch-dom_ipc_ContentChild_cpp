@@ -1,9 +1,9 @@
-$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+$OpenBSD: patch-dom_ipc_ContentChild_cpp,v 1.2 2018/06/27 05:05:20 landry Exp $
 
 Index: dom/ipc/ContentChild.cpp
 --- dom/ipc/ContentChild.cpp.orig
 +++ dom/ipc/ContentChild.cpp
-@@ -97,6 +97,8 @@
+@@ -103,6 +103,8 @@
  #include "CubebUtils.h"
  #elif defined(XP_MACOSX)
  #include "mozilla/Sandbox.h"
@@ -12,7 +12,7 @@ Index: dom/ipc/ContentChild.cpp
  #endif
  #endif
  
-@@ -1719,6 +1721,17 @@ ContentChild::RecvSetProcessSandbox(const MaybeFileDes
+@@ -1737,6 +1739,25 @@ ContentChild::RecvSetProcessSandbox(const MaybeFileDes
    mozilla::SandboxTarget::Instance()->StartSandbox();
  #elif defined(XP_MACOSX)
    sandboxEnabled = StartMacOSContentSandbox();
@@ -22,11 +22,19 @@ Index: dom/ipc/ContentChild.cpp
 +                          promisesString);
 +  if (pledge(promisesString.get(), NULL) == -1) {
 +    if (errno == EINVAL)
-+        printf_stderr("pledge promises for content process is a malformed string: '%s'\n", promisesString.get());
++        printf_stderr("(pid=%d) pledge promises for content process is a malformed string: '%s'\n", getpid(), promisesString.get());
 +    if (errno == EPERM)
 +        printf_stderr("pledge promises for content process cant elevate priviledges: '%s'\n", promisesString.get());
-+  } else
-+      printf_stderr("pledged content process (pid=%d) with promises: '%s'\n", getpid(), promisesString.get());
++  } else {
++    if (getenv("MOZ_SANDBOX_LOGGING")) {
++      printf_stderr("(pid=%d) pledged content process with promises: '%s'\n", getpid(), promisesString.get());
++    }
++    if (!getenv("DBUS_SESSION_BUS_ADDRESS")) {
++      printf_stderr("(pid=%d) no session dbus found, faking one\n", getpid());
++    }
++    /* dont overwrite an existing session dbus address, but ensure it is set */
++    setenv("DBUS_SESSION_BUS_ADDRESS","",0);
++  }
  #endif
  
    CrashReporter::AnnotateCrashReport(

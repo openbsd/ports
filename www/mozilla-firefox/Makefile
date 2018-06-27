@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.354 2018/06/08 16:45:31 landry Exp $
+# $OpenBSD: Makefile,v 1.355 2018/06/27 05:05:20 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	60.0.2
+MOZILLA_VERSION =	61.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	77.0
+SO_VERSION =	78.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -38,13 +38,17 @@ MOZILLA_USE_GTK3 = Yes
 MOZILLA_USE_BUNDLED_ICU =	Yes
 # 59 is broken with system cairo and the option is being dropped
 MOZILLA_USE_BUNDLED_CAIRO = Yes
+# #1460600
+MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 
 # firefox >= 53 needs rust
 BUILD_DEPENDS +=	lang/rust
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
+# 61 requires both versions of python
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 
-WANTLIB += X11-xcb intl xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb Xcursor Xi fribidi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -53,7 +57,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
-# needed to find sqlite header
+# needed to find sqlite header, #1470961
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 # bug 857628

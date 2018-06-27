@@ -1,4 +1,4 @@
-$OpenBSD: patch-gfx_thebes_gfxFcPlatformFontList_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+$OpenBSD: patch-gfx_thebes_gfxFcPlatformFontList_cpp,v 1.2 2018/06/27 05:05:20 landry Exp $
 
 Index: gfx/thebes/gfxFcPlatformFontList.cpp
 --- gfx/thebes/gfxFcPlatformFontList.cpp.orig
@@ -12,7 +12,7 @@ Index: gfx/thebes/gfxFcPlatformFontList.cpp
  #include "mozilla/SandboxBrokerPolicyFactory.h"
  #include "mozilla/SandboxSettings.h"
  #endif
-@@ -1526,7 +1526,7 @@ gfxFcPlatformFontList::AddFontSetFamilies(FcFontSet* a
+@@ -1514,7 +1514,7 @@ gfxFcPlatformFontList::AddFontSetFamilies(FcFontSet* a
              continue;
          }
  
@@ -21,7 +21,7 @@ Index: gfx/thebes/gfxFcPlatformFontList.cpp
          // Skip any fonts that will be blocked by the content-process sandbox
          // policy.
          if (aPolicy && !(aPolicy->Lookup(reinterpret_cast<const char*>(path)) &
-@@ -1688,7 +1688,7 @@ gfxFcPlatformFontList::InitFontListForPlatform()
+@@ -1676,7 +1676,7 @@ gfxFcPlatformFontList::InitFontListForPlatform()
  
      UniquePtr<SandboxPolicy> policy;
  

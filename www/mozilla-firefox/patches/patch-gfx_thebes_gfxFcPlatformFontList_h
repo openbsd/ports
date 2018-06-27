@@ -1,9 +1,9 @@
-$OpenBSD: patch-gfx_thebes_gfxFcPlatformFontList_h,v 1.1 2018/05/11 20:00:57 landry Exp $
+$OpenBSD: patch-gfx_thebes_gfxFcPlatformFontList_h,v 1.2 2018/06/27 05:05:20 landry Exp $
 
 Index: gfx/thebes/gfxFcPlatformFontList.h
 --- gfx/thebes/gfxFcPlatformFontList.h.orig
 +++ gfx/thebes/gfxFcPlatformFontList.h
-@@ -22,7 +22,7 @@
+@@ -23,7 +23,7 @@
  #include <cairo.h>
  #include <cairo-ft.h>
  
@@ -12,7 +12,7 @@ Index: gfx/thebes/gfxFcPlatformFontList.h
  #include "mozilla/SandboxBroker.h"
  #endif
  
-@@ -325,7 +325,7 @@ class gfxFcPlatformFontList : public gfxPlatformFontLi
+@@ -339,7 +339,7 @@ class gfxFcPlatformFontList : public gfxPlatformFontLi
  protected:
      virtual ~gfxFcPlatformFontList();
  

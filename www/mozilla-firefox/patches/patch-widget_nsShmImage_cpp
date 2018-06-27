@@ -1,17 +1,21 @@
-$OpenBSD: patch-widget_nsShmImage_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+$OpenBSD: patch-widget_nsShmImage_cpp,v 1.2 2018/06/27 05:05:20 landry Exp $
 
 shmget sometimes still gets called:
 https://bugzilla.mozilla.org/show_bug.cgi?id=1376910 ?
 https://bugzilla.mozilla.org/show_bug.cgi?id=1438401 ?
+also at startup when layers.acceleration.force-enable defaults to false
+
 Index: widget/nsShmImage.cpp
 --- widget/nsShmImage.cpp.orig
 +++ widget/nsShmImage.cpp
-@@ -67,6 +67,10 @@ nsShmImage::CreateShmSegment()
+@@ -67,6 +67,12 @@ nsShmImage::CreateShmSegment()
  {
    size_t size = SharedMemory::PageAlignedSize(mStride * mSize.height);
  
 +#if defined(__OpenBSD__) && defined(MOZ_SANDBOX)
-+  fprintf(stderr, "%s called when pledged, noop\n", __func__);
++  if (getenv("MOZ_SANDBOX_LOGGING")) {
++    fprintf(stderr, "(pid=%d) %s called when pledged\n", getpid(), __func__);
++  }
 +  return false;
 +#endif
    mShmId = shmget(IPC_PRIVATE, size, IPC_CREAT | 0600);

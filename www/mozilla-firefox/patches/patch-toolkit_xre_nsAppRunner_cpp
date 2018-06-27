@@ -1,9 +1,9 @@
-$OpenBSD: patch-toolkit_xre_nsAppRunner_cpp,v 1.1 2018/05/11 20:00:57 landry Exp $
+$OpenBSD: patch-toolkit_xre_nsAppRunner_cpp,v 1.2 2018/06/27 05:05:20 landry Exp $
 
 Index: toolkit/xre/nsAppRunner.cpp
 --- toolkit/xre/nsAppRunner.cpp.orig
 +++ toolkit/xre/nsAppRunner.cpp
-@@ -4450,6 +4450,18 @@ void AddSandboxAnnotations()
+@@ -4448,6 +4448,21 @@ void AddSandboxAnnotations()
    sandboxCapable = true;
  #elif defined(XP_LINUX)
    sandboxCapable = SandboxInfo::Get().CanSandboxContent();
@@ -14,11 +14,14 @@ Index: toolkit/xre/nsAppRunner.cpp
 +                          promisesString);
 +  if (pledge(promisesString.get(), NULL) == -1) {
 +    if (errno == EINVAL)
-+        printf_stderr("pledge promises for main process is a malformed string: '%s'\n", promisesString.get());
++        printf_stderr("(pid=%d) pledge promises for main process is a malformed string: '%s'\n", getpid(), promisesString.get());
 +    if (errno == EPERM)
 +        printf_stderr("pledge promises for main process cant elevate priviledges: '%s'\n", promisesString.get());
-+  } else
-+      printf_stderr("pledged main process (pid=%d) with promises: '%s'\n", getpid(), promisesString.get());
++  } else {
++    if (getenv("MOZ_SANDBOX_LOGGING")) {
++      printf_stderr("(pid=%d) pledged main process with promises: '%s'\n", getpid(), promisesString.get());
++    }
++  }
  #endif
  
    CrashReporter::AnnotateCrashReport(
