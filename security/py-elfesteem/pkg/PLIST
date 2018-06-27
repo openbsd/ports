@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/27 07:26:58 rpointel Exp $
+bin/elfcli
+lib/python${MODPY_VERSION}/site-packages/ELF_Esteem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/elfesteem/
+lib/python${MODPY_VERSION}/site-packages/elfesteem/__init__.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/cstruct.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/cstruct.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/elf.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/elf.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/elf_init.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/elf_init.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/jclass_init.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/jclass_init.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/minidump.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/minidump.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/minidump_init.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/minidump_init.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/new_cstruct.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/new_cstruct.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/pe.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/pe.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/pe_init.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/pe_init.pyc
+lib/python${MODPY_VERSION}/site-packages/elfesteem/strpatchwork.py
+lib/python${MODPY_VERSION}/site-packages/elfesteem/strpatchwork.pyc
