@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2018/05/31 14:07:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/27 20:56:54 benoit Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
-V =			5.1.2
+V =			5.1.3
 DISTNAME =		stella-$V
 CATEGORIES =		emulators
 EXTRACT_SUFX =		-src.tar.xz
@@ -26,8 +26,7 @@ CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS += 		-L${LOCALBASE}/lib
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--disable-gl \
-			--with-libpng-prefix=${LOCALBASE}/lib
+CONFIGURE_ARGS +=	--with-libpng-prefix=${LOCALBASE}/lib
 
 USE_GMAKE =		Yes
 
