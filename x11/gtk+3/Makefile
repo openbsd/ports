@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2018/05/24 15:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.195 2018/06/27 06:53:06 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -6,7 +6,7 @@
 CFLAGS +=		-g
 INSTALL_STRIP=		# empty
 
-PORTROACH=		skipv:3.90.0,3.92.1
+PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
