@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2018/03/29 23:06:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.400 2018/06/27 17:48:20 sebastia Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -206,6 +206,7 @@
      SUBDIR += py-vorbis
      SUBDIR += pykaraoke
      SUBDIR += pympd
+     SUBDIR += qsynth
      SUBDIR += quodlibet
      SUBDIR += radiotray
      SUBDIR += rgain
