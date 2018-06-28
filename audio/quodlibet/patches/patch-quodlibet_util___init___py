@@ -1,0 +1,22 @@
+$OpenBSD: patch-quodlibet_util___init___py,v 1.1 2018/06/28 10:10:16 sthen Exp $
+
+Index: quodlibet/util/__init__.py
+--- quodlibet/util/__init__.py.orig
++++ quodlibet/util/__init__.py
+@@ -34,14 +34,14 @@ from quodlibet.util.dprint import print_d, print_, pri
+ from .misc import cached_func, get_module_dir, get_ca_file, \
+     get_locale_encoding, NamedTemporaryFile
+ from .environment import is_plasma, is_unity, is_enlightenment, \
+-    is_linux, is_windows, is_wine, is_osx
++    is_linux, is_openbsd, is_windows, is_wine, is_osx
+ from .enum import enum
+ from .i18n import _, C_, locale_format
+ 
+ 
+ # pyflakes
+ cached_func, enum, print_w, print_exc, is_plasma, is_unity, is_enlightenment,
+-is_linux, is_windows, is_wine, is_osx, get_module_dir, get_ca_file,
++is_linux, is_openbsd, is_windows, is_wine, is_osx, get_module_dir, get_ca_file,
+ get_locale_encoding, NamedTemporaryFile
+ 
+ 
