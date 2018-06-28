@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/05/15 20:21:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/28 12:22:47 sthen Exp $
 share/fonts/
 share/fonts/powerline/
 @fontdir share/fonts/powerline/AnonymousPro/
@@ -55,11 +55,11 @@ share/fonts/powerline/Hack/Hack-Regular.ttf
 share/fonts/powerline/Hack/LICENSE.txt
 share/fonts/powerline/Hack/README.rst
 share/fonts/powerline/Hack/hack-specimen-for-Powerline.png
+@fontdir share/fonts/powerline/Inconsolata/
 @fontdir share/fonts/powerline/Inconsolata-g/
 share/fonts/powerline/Inconsolata-g/Inconsolata-g for Powerline.otf
 share/fonts/powerline/Inconsolata-g/LICENSE.txt
 share/fonts/powerline/Inconsolata-g/README.rst
-@fontdir share/fonts/powerline/Inconsolata/
 share/fonts/powerline/Inconsolata/Inconsolata for Powerline.otf
 share/fonts/powerline/Inconsolata/LICENSE.txt
 share/fonts/powerline/Inconsolata/README.rst
@@ -146,7 +146,7 @@ share/fonts/powerline/Tinos/Tinos Bold Italic for Powerline.ttf
 share/fonts/powerline/Tinos/Tinos Bold for Powerline.ttf
 share/fonts/powerline/Tinos/Tinos Italic for Powerline.ttf
 share/fonts/powerline/Tinos/Tinos for Powerline.ttf
-share/fonts/powerline/UbuntuMono/
+@fontdir share/fonts/powerline/UbuntuMono/
 share/fonts/powerline/UbuntuMono/LICENCE.txt
 share/fonts/powerline/UbuntuMono/README.rst
 share/fonts/powerline/UbuntuMono/Ubuntu Mono derivative Powerline Bold Italic.ttf

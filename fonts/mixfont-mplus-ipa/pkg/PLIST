@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/02 22:22:37 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/28 12:22:47 sthen Exp $
 @pkgpath japanese/mplus-ttf
 @pkgpath fonts/ja-mplus-ttf
+share/fonts/
 @fontdir share/fonts/mixfont-mplus-ipa/
 share/fonts/mixfont-mplus-ipa/M+1P+IPAG-circle.ttf
 share/fonts/mixfont-mplus-ipa/M+1P+IPAG.ttf

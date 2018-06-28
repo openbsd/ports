@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/01 10:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/28 12:22:47 sthen Exp $
 share/fonts/
 @fontdir share/fonts/profont/
-share/fonts/profont/ProFont_Redistribution_Terms.txt
 share/fonts/profont/ProFontWindows.ttf
+share/fonts/profont/ProFont_Redistribution_Terms.txt

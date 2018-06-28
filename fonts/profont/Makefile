@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/28 12:22:47 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		ProFont-2.2
 CATEGORIES =		fonts x11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.fontsquirrel.com/fonts/ProFontWindows
 

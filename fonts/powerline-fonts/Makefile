@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/05/15 20:21:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/28 12:22:47 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -6,6 +6,7 @@ COMMENT=	patched fonts with symbols for powerline/airline
 
 V=		0.20151211
 DISTNAME=	powerline-fonts-$V
+REVISION=	0
 
 CATEGORIES=	fonts
 

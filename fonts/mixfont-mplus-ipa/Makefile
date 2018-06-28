@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 22:22:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/28 12:22:47 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -8,7 +8,7 @@ DISTNAME=	mixfont-mplus-ipa-TrueType-20060520
 PKGNAME=	mixfont-mplus-ipa-20060520
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	fonts japanese x11
-REVISION=	6
+REVISION=	7
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

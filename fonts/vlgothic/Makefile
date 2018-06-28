@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 18:19:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/28 12:22:47 sthen Exp $
 
 COMMENT =	Japanese gothic TrueType fonts from Vine Linux
 
 V =		20141206
 DISTNAME =	VLGothic-$V
 PKGNAME =	vlgothic-$V
+REVISION =	0
 
 CATEGORIES =	fonts japanese x11
 
