@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/03 22:28:41 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/28 14:52:28 espie Exp $
 @conflict kdeutils-<4
 @bin bin/kcalc
 lib/libkdeinit4_kcalc.so
@@ -13,5 +13,4 @@ share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database

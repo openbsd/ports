@@ -7,8 +7,7 @@ extra file: patches/patch-xyz.orig
 extra file: patches/qwerty
 extra file: pkg/qwerty
 kdeui WANTLIB without x11/kde* in MODULES (check other libs, too!)
-missing @exec of update-desktop-database
-missing @unexec-delete of update-desktop-database
+missing @tag update-desktop-database
 missing RDEP on devel/desktop-file-utils
 no distinfo in .
 non-empty WANTLIB for arch-independent package
