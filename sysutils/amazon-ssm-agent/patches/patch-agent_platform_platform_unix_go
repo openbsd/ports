@@ -1,4 +1,5 @@
-$OpenBSD: patch-agent_platform_platform_unix_go,v 1.4 2017/08/19 10:48:34 ajacoutot Exp $
+$OpenBSD: patch-agent_platform_platform_unix_go,v 1.5 2018/06/28 08:19:23 ajacoutot Exp $
+
 Index: agent/platform/platform_unix.go
 --- agent/platform/platform_unix.go.orig
 +++ agent/platform/platform_unix.go

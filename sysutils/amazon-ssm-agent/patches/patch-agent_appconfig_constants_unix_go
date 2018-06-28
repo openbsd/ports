@@ -1,4 +1,5 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.5 2018/04/27 08:02:47 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.6 2018/06/28 08:19:23 ajacoutot Exp $
+
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
 +++ agent/appconfig/constants_unix.go

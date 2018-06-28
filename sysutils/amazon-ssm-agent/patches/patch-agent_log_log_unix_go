@@ -1,4 +1,5 @@
-$OpenBSD: patch-agent_log_log_unix_go,v 1.1.1.1 2017/01/04 09:05:40 ajacoutot Exp $
+$OpenBSD: patch-agent_log_log_unix_go,v 1.2 2018/06/28 08:19:23 ajacoutot Exp $
+
 --- agent/log/log_unix.go.orig	Tue Jan  3 10:39:41 2017
 +++ agent/log/log_unix.go	Tue Jan  3 10:39:57 2017
 @@ -24,7 +24,7 @@ const (

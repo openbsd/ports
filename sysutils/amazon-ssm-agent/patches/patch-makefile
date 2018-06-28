@@ -1,4 +1,5 @@
-$OpenBSD: patch-makefile,v 1.6 2018/04/27 08:02:47 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.7 2018/06/28 08:19:23 ajacoutot Exp $
+
 Index: makefile
 --- makefile.orig
 +++ makefile
@@ -17,7 +18,7 @@ Index: makefile
  
  prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -126,6 +126,22 @@ build-freebsd: checkstyle copy-src pre-build
+@@ -142,6 +142,22 @@ build-freebsd: checkstyle copy-src pre-build
  			$(BGO_SPACE)/agent/cli-main/cli-main.go
  	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-document-worker -v \
  								$(BGO_SPACE)/agent/framework/processor/executer/outofproc/worker/main.go
