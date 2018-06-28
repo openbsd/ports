@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 14:45:05 denis Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/28 11:28:00 denis Exp $
 bin/blaeu-cert
 bin/blaeu-reach
 bin/blaeu-resolve
@@ -11,4 +11,5 @@ lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-i
 lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
+share/blaeu/
 share/blaeu/README.rst

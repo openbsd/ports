@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 14:45:05 denis Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/28 11:28:00 denis Exp $
 
 COMMENT =	create measurements on RIPE Atlas probes.
 
-MODPY_EGG_VERSION = 1.1.3
+MODPY_EGG_VERSION = 1.1.4
 DISTNAME =	blaeu-${MODPY_EGG_VERSION}
 CATEGORIES =	net
 
