@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/01 15:32:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/28 10:06:12 matthieu Exp $
+
+# BROKEN-hppa =	undefined reference to __sync atomic ops
 
 COMMENT =	multi-platform library for asynchronous I/O
 
