@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.22 2018/06/09 09:46:27 espie Exp $
+# $OpenBSD: FS2.pm,v 1.23 2018/06/28 17:56:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -61,6 +61,7 @@ sub create
 sub classes
 {
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
+		OpenBSD::FS::File::Desktop
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
@@ -125,12 +126,33 @@ our @ISA = qw(OpenBSD::FS::File);
 sub recognize
 {
 	my ($class, $filename, $fs) = @_;
-	return $filename =~ m,/rc\.d/,;
+	return $filename =~ m,/rc\.d/, && -f $fs->destdir($filename);
 }
 
 sub element_class
 {
 	'OpenBSD::PackingElement::RcScript';
+}
+
+package OpenBSD::FS::File::Desktop;
+our @ISA = qw(OpenBSD::FS::File::Directory);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return 0 unless $filename =~ m/\.desktop$/ && 
+	    -f $fs->destdir($filename);
+	$filename = $fs->resolve_link($filename);
+	open my $fh, '<:utf8', $filename or return 0;
+#	open my $fh, '<', $filename or return 0;
+	my $tag = <$fh>;
+	chomp;
+	return 1 if $tag =~ m/^\[Desktop Entry\]/;
+	return 0;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::Desktop';
 }
 
 package OpenBSD::FS::File::Binary;
