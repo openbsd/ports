@@ -1,0 +1,12 @@
+This package contains controller software for Ubiquiti UniFi access points,
+switches, gateways and phones.
+
+This package is from the 5.6 LTS branch, which continues to have support
+for the Broadcom-based first generation of 802.11ac access points (UAP-AC,
+UAP-ACv2, UAP-AC-Outdoor) and the Atheros-based but limited-memory
+Picostation M2.
+
+For other devices (including the older Atheros-based 802.11n access points)
+the stable branch is recommended instead.
+
+This branch will receive security updates until November 2018.
