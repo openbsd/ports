@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/26 05:34:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/28 12:30:42 espie Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
@@ -239,7 +239,6 @@ share/locale/zh_CN/LC_MESSAGES/cantor.mo
 share/locale/zh_TW/LC_MESSAGES/cantor.mo
 share/metainfo/
 share/metainfo/org.kde.cantor.appdata.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@tag update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

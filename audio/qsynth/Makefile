@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/27 17:47:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2018/06/28 12:30:43 espie Exp $
 
 COMMENT =		Qt GUI Interface for FluidSynth
 
 DISTNAME =		qsynth-0.5.1
+REVISION =		0
 
 CATEGORIES =		audio
 
