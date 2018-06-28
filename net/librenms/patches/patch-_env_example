@@ -1,11 +1,11 @@
-$OpenBSD: patch-_env_example,v 1.1 2018/05/31 20:40:41 sthen Exp $
+$OpenBSD: patch-_env_example,v 1.2 2018/06/28 18:42:57 sthen Exp $
 
 Index: .env.example
 --- .env.example.orig
 +++ .env.example
 @@ -1,8 +1,14 @@
 -APP_KEY=
-+#APP_KEY=<< insert from "${MODPHP_BIN} artisan key:generate" >>
++#APP_KEY=base64:xxx  << insert this from "${MODPHP_BIN} artisan key:generate"
 +#APP_URL=https://librenms.example.com
  
 -#DB_HOST=

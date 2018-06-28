@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2018/05/31 20:40:41 sthen Exp $
+$OpenBSD: README,v 1.10 2018/06/28 18:42:57 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -42,7 +42,7 @@ If using Apache mod_php, avoid using chroot.
 If you wish to use memcache, install the pecl-memcached package.
 
 Ensure that symbolic links have been created to enable the required
-PHP modules; to do this in bulk:
+PHP modules; to do this for all installed modules:
 
   cd ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample
   for i in *; do ln -fs ../php-${MODPHP_VERSION}.sample/$i ../php-${MODPHP_VERSION}/; done
@@ -167,7 +167,8 @@ Updating from 1.39 or earlier
 As of 1.40, LibreNMS now uses the Laravel framework which requires some
 additional setup. Upstream has code to copy this across from an existing
 configuration initially, but it's not functional in this packaged
-environment.
+environment. Until this is done you will see a page with a red block
+with white "Whoops, looks like something went wrong" text.
 
 Generate an APP_KEY:
 
@@ -177,6 +178,9 @@ Generate an APP_KEY:
 Copy this to the clipboard, then edit ${INSTDIR}/.env and fill in the
 relevant details.
 
+Make sure that you have the required PHP modules enabled via symlinks in
+${SYSCONFDIR}/php-${MODPHP_VERSION}.sample as described in "Webserver
+configuration" above. In particular, pdo_mysql is now required.
+
 It may also be necessary to raise max_connections in ${SYSCONFDIR}/my.cnf;
-https://community.librenms.org/t/new-requirements-for-1-40/4057
-recommends doubling this value.
+see https://community.librenms.org/t/new-requirements-for-1-40/4057

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2018/06/12 19:08:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2018/06/28 18:42:56 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 GH_TAGNAME =	1.40
-REVISION =	0
+REVISION =	1
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -64,7 +64,10 @@ post-extract:
 	    -e "s,'/usr/lib/nagios/plugins,'/usr/local/libexec/nagios/plugins,;" \
 	    ${WRKSRC}/includes/defaults.inc.php
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
-	sed -i 's, librenms , _librenms ,' ${WRKSRC}/librenms.nonroot.cron
+	sed -i \
+	    -e 's, librenms , _librenms ,' \
+	    -e 's, /var/www/librenms/cronic, -n,' \
+	    ${WRKSRC}/librenms.nonroot.cron
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/.env.example
