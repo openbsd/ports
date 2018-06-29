@@ -1,42 +1,19 @@
-$OpenBSD: patch-update-mime-database_c,v 1.5 2018/04/28 14:02:17 landry Exp $
-
-https://bugs.freedesktop.org/show_bug.cgi?id=16816
-https://cgit.freedesktop.org/xdg/shared-mime-info/commit/?id=553aa73de2c6a5bb221bcd9153c2425cd236c703
-https://cgit.freedesktop.org/xdg/shared-mime-info/commit/?id=fc149b7615deecf3c3af73bcc5ee98a4b716fbac
+$OpenBSD: patch-update-mime-database_c,v 1.6 2018/06/29 14:09:44 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=104368
 
 Index: update-mime-database.c
 --- update-mime-database.c.orig
 +++ update-mime-database.c
-@@ -49,6 +49,9 @@
-  * delete. It is also used to warn about invalid MIME types.
-  */
- const char *media_types[] = {
-+	"all",
-+	"uri",
-+	"print",
- 	"text",
- 	"application",
- 	"image",
-@@ -265,7 +268,7 @@ static Type *get_type(const char *name, GError **error
- 			return type;
- 	}
- 
--	g_warning("Unknown media type in type '%s'", name);
-+	g_message("Unknown media type in type '%s'", name);
- 
- 	return type;
- }
-@@ -3671,6 +3674,11 @@ int main(int argc, char **argv)
- 	if (optind != argc - 1)
- 	{
- 		usage(argv[0]);
-+		return EXIT_FAILURE;
-+	}
-+
-+	if (pledge("stdio rpath wpath cpath getpw", NULL) == -1) {
-+		g_warning(_("pledge"));
+@@ -3679,6 +3679,11 @@ int main(int argc, char **argv)
  		return EXIT_FAILURE;
  	}
  
++	if (pledge("stdio rpath wpath cpath getpw", NULL) == -1) {
++		g_warning(_("pledge"));
++		return EXIT_FAILURE;
++	}
++
+ 	LIBXML_TEST_VERSION;
+ 
+ 	mime_dir = argv[optind];
