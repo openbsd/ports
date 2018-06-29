@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/04/24 08:35:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/06/29 07:21:38 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -659,9 +659,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/tutorialgenerator.py
 @man man/man1/orca.1
 share/examples/orca/
 share/examples/orca/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/orca/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/orca/xdg/autostart/orca-autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/orca-autostart.desktop
 share/help/
