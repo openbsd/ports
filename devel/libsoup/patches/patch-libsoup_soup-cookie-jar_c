@@ -1,0 +1,19 @@
+$OpenBSD: patch-libsoup_soup-cookie-jar_c,v 1.1 2018/06/29 07:10:51 ajacoutot Exp $
+
+From db2b0d5809d5f8226d47312b40992cadbcde439f Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@igalia.com>
+Date: Sun, 24 Jun 2018 19:46:19 -0500
+Subject: [PATCH] cookie-jar: bail if hostname is an empty string
+
+Index: libsoup/soup-cookie-jar.c
+--- libsoup/soup-cookie-jar.c.orig
++++ libsoup/soup-cookie-jar.c
+@@ -307,7 +307,7 @@ get_cookies (SoupCookieJar *jar, SoupURI *uri, gboolea
+ 
+ 	priv = soup_cookie_jar_get_instance_private (jar);
+ 
+-	if (!uri->host)
++	if (!uri->host || !uri->host[0])
+ 		return NULL;
+ 
+ 	/* The logic here is a little weird, but the plan is that if
