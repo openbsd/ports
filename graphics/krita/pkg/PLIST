@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 10:11:11 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -29,7 +29,6 @@ lib/kritaplugins/kritacolorgenerator.so
 lib/kritaplugins/kritacolorrange.so
 lib/kritaplugins/kritacolorselectorng.so
 lib/kritaplugins/kritacolorsfilters.so
-lib/kritaplugins/kritacolorslider.so
 lib/kritaplugins/kritacolorsmudgepaintop.so
 lib/kritaplugins/kritacolorspaceconversion.so
 lib/kritaplugins/kritacompositiondocker.so

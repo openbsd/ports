@@ -1,38 +1,37 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 10:11:11 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.0.4
+VERSION =	4.1.0
 DISTNAME =	krita-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  kritabasicflakes          0.0 # 16.0
-SHARED_LIBS +=  kritacolord               0.0 # 16.0
-SHARED_LIBS +=  kritaflake                1.0 # 16.0
-SHARED_LIBS +=  kritaodf                  0.0 # 16.0
-SHARED_LIBS +=  kritapigment              1.0 # 16.0
-SHARED_LIBS +=  kritaplugin               0.0 # 16.0
-SHARED_LIBS +=  kritastore                0.0 # 16.0
-SHARED_LIBS +=  kritatext                 0.0 # 16.0
-SHARED_LIBS +=  kritatextlayout           0.0 # 16.0
-SHARED_LIBS +=  kritaundo2                0.0 # 16.0
-SHARED_LIBS +=  kritavectorimage          1.0 # 16.0
-SHARED_LIBS +=  kritaversion              0.0 # 16.0
-SHARED_LIBS +=  kritawidgets              0.0 # 16.0
-SHARED_LIBS +=  kritawidgetutils          2.0 # 16.0
-SHARED_LIBS +=  kritacommand              0.0 # 16.0
-SHARED_LIBS +=  kritaimpex                0.0 # 16.0
-SHARED_LIBS +=  kritalibkis               0.0 # 16.0
-SHARED_LIBS +=  kritalibkra               0.0 # 16.0
-SHARED_LIBS +=  kritaqml                  0.0 # 16.0
+SHARED_LIBS +=  kritabasicflakes          1.0 # 16.0
+SHARED_LIBS +=  kritacolord               1.0 # 16.0
+SHARED_LIBS +=  kritaflake                2.0 # 16.0
+SHARED_LIBS +=  kritaodf                  1.0 # 16.0
+SHARED_LIBS +=  kritapigment              2.0 # 16.0
+SHARED_LIBS +=  kritaplugin               1.0 # 16.0
+SHARED_LIBS +=  kritastore                1.0 # 16.0
+SHARED_LIBS +=  kritatext                 1.0 # 16.0
+SHARED_LIBS +=  kritatextlayout           1.0 # 16.0
+SHARED_LIBS +=  kritaundo2                1.0 # 16.0
+SHARED_LIBS +=  kritavectorimage          2.0 # 16.0
+SHARED_LIBS +=  kritaversion              1.0 # 16.0
+SHARED_LIBS +=  kritawidgets              1.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          3.0 # 16.0
+SHARED_LIBS +=  kritacommand              1.0 # 16.0
+SHARED_LIBS +=  kritaimpex                1.0 # 16.0
+SHARED_LIBS +=  kritalibkis               1.0 # 16.0
+SHARED_LIBS +=  kritalibkra               1.0 # 16.0
+SHARED_LIBS +=  kritaqml                  1.0 # 16.0
 # XXX Version numbers from editors/calligra 2.x port
-SHARED_LIBS +=  kritapsd                  1.0 # 14.0
-SHARED_LIBS +=  kritacolor                1.0 # 14.0
-SHARED_LIBS +=  kritaglobal               2.0 # 14.0
-SHARED_LIBS +=  kritaimage                52.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             51.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           51.0 # 0.0
-SHARED_LIBS +=  kritaui                   55.0 # 0.0
+SHARED_LIBS +=  kritapsd                  2.0 # 14.0
+SHARED_LIBS +=  kritacolor                2.0 # 14.0
+SHARED_LIBS +=  kritaglobal               3.0 # 14.0
+SHARED_LIBS +=  kritaimage                53.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             52.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           52.0 # 0.0
+SHARED_LIBS +=  kritaui                   56.0 # 0.0
 
 CATEGORIES =	graphics
 DPB_PROPERTIES =	parallel
@@ -55,7 +54,7 @@ WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas jpeg
 WANTLIB += lcms2 m png poppler poppler-qt5 raw tiff xcb xcb-util
 WANTLIB += z
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION:S/.1//}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
 
 MODULES =	devel/kf5
@@ -91,7 +90,8 @@ LIB_DEPENDS +=		graphics/jpeg \
 			devel/kf5/kservice \
 			devel/gsl \
 			x11/qt5/qtsvg \
-			x11/qt5/qtmultimedia
+			x11/qt5/qtmultimedia \
+			x11/qt5/qtdeclarative
 
 BUILD_DEPENDS +=	math/eigen3 \
 			net/curl \
