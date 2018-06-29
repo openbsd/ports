@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/06/29 05:19:47 landry Exp $
+# $OpenBSD: Makefile,v 1.71 2018/06/29 06:25:55 landry Exp $
 
 # snapshots are only available these archs
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -84,7 +84,7 @@ BUILD_DEPENDS +=	devel/llvm>=6.0,<6.1
 BUILD_DEPENDS +=	devel/ninja
 
 .if ${MACHINE_ARCH} != aarch64
-TEST_DEPENDS +=		devel/gdb
+BUILD_DEPENDS +=		devel/gdb
 .endif
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
