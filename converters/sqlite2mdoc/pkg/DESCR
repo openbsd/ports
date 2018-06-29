@@ -1,0 +1,4 @@
+This utility accepts an SQLite3 header file sqlite3.h and produces a
+set of decently well-formed mdoc(7) files documenting the C API.
+These will be roughly equivalent to the C-language Interface
+Specification for SQLite3.
