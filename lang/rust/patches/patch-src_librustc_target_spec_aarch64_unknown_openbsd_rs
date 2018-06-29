@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_librustc_back_target_aarch64_unknown_openbsd_rs,v 1.1 2018/05/22 06:04:33 landry Exp $
+$OpenBSD: patch-src_librustc_target_spec_aarch64_unknown_openbsd_rs,v 1.1 2018/06/29 05:19:47 landry Exp $
 Add aarch64-unknown-openbsd support.
 https://github.com/rust-lang/rust/pull/50678/commits/f430d7c3c781c48827a1c28fb391d90a0f5ee710
-Index: src/librustc_back/target/aarch64_unknown_openbsd.rs
---- src/librustc_back/target/aarch64_unknown_openbsd.rs.orig
-+++ src/librustc_back/target/aarch64_unknown_openbsd.rs
-@@ -0,0 +1,32 @@
+Index: src/librustc_target/spec/aarch64_unknown_openbsd.rs
+--- src/librustc_target/spec/aarch64_unknown_openbsd.rs.orig
++++ src/librustc_target/spec/aarch64_unknown_openbsd.rs
+@@ -0,0 +1,31 @@
 +// Copyright 2018 The Rust Project Developers. See the COPYRIGHT
 +// file at the top-level directory of this distribution and at
 +// http://rust-lang.org/COPYRIGHT.
@@ -15,8 +15,7 @@ Index: src/librustc_back/target/aarch64_unknown_openbsd.rs
 +// option. This file may not be copied, modified, or distributed
 +// except according to those terms.
 +
-+use LinkerFlavor;
-+use target::{Target, TargetResult};
++use spec::{LinkerFlavor, Target, TargetResult};
 +
 +pub fn target() -> TargetResult {
 +    let mut base = super::openbsd_base::opts();

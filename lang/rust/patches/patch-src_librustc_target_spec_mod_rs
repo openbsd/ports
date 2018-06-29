@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_librustc_back_target_mod_rs,v 1.4 2018/05/22 06:04:33 landry Exp $
+$OpenBSD: patch-src_librustc_target_spec_mod_rs,v 1.1 2018/06/29 05:19:47 landry Exp $
 Add aarch64-unknown-openbsd support.
 https://github.com/rust-lang/rust/pull/50678/commits/f430d7c3c781c48827a1c28fb391d90a0f5ee710
-Index: src/librustc_back/target/mod.rs
---- src/librustc_back/target/mod.rs.orig
-+++ src/librustc_back/target/mod.rs
-@@ -185,6 +185,7 @@ supported_targets! {
+Index: src/librustc_target/spec/mod.rs
+--- src/librustc_target/spec/mod.rs.orig
++++ src/librustc_target/spec/mod.rs
+@@ -313,6 +313,7 @@ supported_targets! {
  
      ("x86_64-unknown-bitrig", x86_64_unknown_bitrig),
  

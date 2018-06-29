@@ -1,25 +1,21 @@
-$OpenBSD: patch-src_bootstrap_builder_rs,v 1.4 2018/05/22 06:04:33 landry Exp $
+$OpenBSD: patch-src_bootstrap_builder_rs,v 1.5 2018/06/29 05:19:47 landry Exp $
 - always pass -j to cargo
 - disable test::Bootstrap (require network)
-- disable test::Debuginfo (require recent gdb, and some are failing with egdb)
 Index: src/bootstrap/builder.rs
 --- src/bootstrap/builder.rs.orig
 +++ src/bootstrap/builder.rs
-@@ -304,9 +304,9 @@ impl<'a> Builder<'a> {
-                 tool::RustInstaller, tool::Cargo, tool::Rls, tool::Rustdoc, tool::Clippy,
+@@ -312,7 +312,7 @@ impl<'a> Builder<'a> {
                  native::Llvm, tool::Rustfmt, tool::Miri, native::Lld),
-             Kind::Check => describe!(check::Std, check::Test, check::Rustc),
+             Kind::Check => describe!(check::Std, check::Test, check::Rustc, check::CodegenBackend,
+                 check::Rustdoc),
 -            Kind::Test => describe!(test::Tidy, test::Bootstrap, test::Ui, test::RunPass,
 +            Kind::Test => describe!(test::Tidy, test::Ui, test::RunPass,
                  test::CompileFail, test::ParseFail, test::RunFail, test::RunPassValgrind,
--                test::MirOpt, test::Codegen, test::CodegenUnits, test::Incremental, test::Debuginfo,
-+                test::MirOpt, test::Codegen, test::CodegenUnits, test::Incremental,
+                 test::MirOpt, test::Codegen, test::CodegenUnits, test::Incremental, test::Debuginfo,
                  test::UiFullDeps, test::RunPassFullDeps, test::RunFailFullDeps,
-                 test::CompileFailFullDeps, test::IncrementalFullDeps, test::Rustdoc, test::Pretty,
-                 test::RunPassPretty, test::RunFailPretty, test::RunPassValgrindPretty,
-@@ -534,11 +534,7 @@ impl<'a> Builder<'a> {
-              .arg("--target")
-              .arg(target);
+@@ -559,11 +559,7 @@ impl<'a> Builder<'a> {
+             cargo.env("RUST_CHECK", "1");
+         }
  
 -        // If we were invoked from `make` then that's already got a jobserver
 -        // set up for us so no need to tell Cargo about jobs all over again.

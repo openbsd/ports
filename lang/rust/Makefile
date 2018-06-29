@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.69 2018/06/01 06:02:10 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2018/06/29 05:19:47 landry Exp $
 
-# snapshots are only available for amd64 and i386, for now
+# snapshots are only available these archs
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 .if "${MACHINE_ARCH}" == "i386"
@@ -12,14 +12,14 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.26.1
-CARGO_V =		0.27.0
+V =			1.27.0
+CARGO_V =		0.28.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.26.0-20180518
-BV-amd64 =		1.26.0-20180508
-BV-i386 =		1.26.0-20180509
+BV-aarch64 =		1.27.0-20180622
+BV-amd64 =		1.27.0-20180619
+BV-i386 =		1.27.0-20180619
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -83,6 +83,10 @@ BUILD_DEPENDS +=	shells/bash
 BUILD_DEPENDS +=	devel/llvm>=6.0,<6.1
 BUILD_DEPENDS +=	devel/ninja
 
+.if ${MACHINE_ARCH} != aarch64
+TEST_DEPENDS +=		devel/gdb
+.endif
+
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
@@ -133,6 +137,9 @@ do-configure:
 		>>${WRKBUILD}/config.toml
 .endif
 	echo 'python = "${MODPY_BIN}"' >>${WRKBUILD}/config.toml
+.if ${MACHINE_ARCH} != aarch64
+	echo 'gdb = "${LOCALBASE}/bin/egdb"' >>${WRKBUILD}/config.toml
+.endif
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
@@ -146,6 +153,9 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
+
+	# XXX workaround for https://github.com/rust-lang/rust/issues/51650
+	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
