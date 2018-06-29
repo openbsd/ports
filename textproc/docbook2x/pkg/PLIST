@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/04 14:07:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 09:58:56 espie Exp $
 bin/db2x_manxml
 bin/db2x_texixml
 bin/db2x_xsltproc
@@ -179,5 +179,4 @@ share/docbook2X/xslt/texi/toc.xsl
 share/docbook2X/xslt/texi/verbatim.xsl
 share/docbook2X/xslt/texi/xref.xsl
 share/libxml2/docbook2X.spec
-@exec %D/share/libxml2/rebuild
-@unexec-delete %D/share/libxml2/rebuild
+@tag libxml2/rebuild

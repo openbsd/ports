@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2014/10/17 13:24:59 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/06/29 09:58:57 espie Exp $
 @pkgpath textproc/libxml
+@define-tag libxml2/rebuild at-end %D/share/libxml2/rebuild
+@tag libxml2/rebuild
 bin/xml2-config
 @bin bin/xmlcatalog
 @bin bin/xmllint
@@ -286,5 +288,4 @@ share/gtk-doc/html/libxml2/style.css
 share/gtk-doc/html/libxml2/up.png
 share/libxml2/
 share/libxml2/rebuild
-@exec %D/share/libxml2/rebuild
 @extra /var/db/xmlcatalog

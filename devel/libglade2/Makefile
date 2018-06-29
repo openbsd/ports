@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2018/06/29 09:58:56 espie Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -8,7 +8,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		libglade2-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		15
+REVISION=		16
 
 SHARED_LIBS +=  glade-2.0            1.0      # 1.0
 

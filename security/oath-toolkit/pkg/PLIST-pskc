@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pskc,v 1.5 2016/09/03 14:23:38 sthen Exp $
+@comment $OpenBSD: PLIST-pskc,v 1.6 2018/06/29 09:58:56 espie Exp $
 @bin bin/pskctool
 include/pskc/
 include/pskc/container.h
@@ -128,5 +128,4 @@ share/xml/pskc/catalog-pskc.xml
 share/xml/pskc/pskc-schema.xsd
 share/xml/pskc/xenc-schema.xsd
 share/xml/pskc/xmldsig-core-schema.xsd
-@exec %D/share/libxml2/rebuild
-@unexec-delete %D/share/libxml2/rebuild
+@tag libxml2/rebuild
