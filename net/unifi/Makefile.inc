@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2018/05/31 21:04:09 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2018/06/29 11:24:49 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -45,6 +45,9 @@ SUBST_VARS=	VERSION
 
 post-extract:
 	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
+
+do-configure:
+	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
 	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}.jar ${WRKSRC}/lib/
 
 do-install:
