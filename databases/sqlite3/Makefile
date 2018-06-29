@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.94 2018/06/27 04:55:34 landry Exp $
+# $OpenBSD: Makefile,v 1.95 2018/06/29 19:51:00 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3240000
 PKGNAME=	sqlite3-3.24.0
+REVISION =	0
 
 SHARED_LIBS +=  sqlite3                   37.3 # 8.6
 
@@ -31,6 +32,10 @@ CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB
 
 # update p5-DBD-SQLite's Makefile.PL if enabling -DSQLITE_ENABLE_COLUMN_METADATA
+BUILD_DEPENDS =	converters/sqlite2mdoc
+post-install:
+		${INSTALL_DATA_DIR} ${PREFIX}/man/man3
+		${LOCALBASE}/bin/sqlite2mdoc -p ${PREFIX}/man/man3 ${PREFIX}/include/sqlite3.h
 
 NO_TEST=	Yes
 
