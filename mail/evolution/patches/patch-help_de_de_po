@@ -1,6 +1,9 @@
-$OpenBSD: patch-help_de_de_po,v 1.1 2018/06/23 09:56:17 ajacoutot Exp $
+$OpenBSD: patch-help_de_de_po,v 1.2 2018/06/29 14:39:26 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/evolution/issues/31
+From 3eac94b31f9b3012af30a7c8d680458ec7fa766b Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 23 Jun 2018 11:35:44 +0200
+Subject: [PATCH] typo: fix closing tag
 
 Index: help/de/de.po
 --- help/de/de.po.orig
