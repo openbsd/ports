@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:36 espie Exp $
 @bin bin/xfce4-power-manager
 @bin bin/xfce4-power-manager-settings
 lib/xfce4/panel/plugins/libxfce4powermanager.so
@@ -154,6 +154,5 @@ share/locale/zh_HK/LC_MESSAGES/xfce4-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-power-manager.mo
 share/polkit-1/actions/org.xfce.power.policy
 share/xfce4/panel/plugins/power-manager-plugin.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

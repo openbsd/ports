@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:30 espie Exp $
 
 COMMENT =	two-players games based on Snake and Tron for KDE
 DISTNAME =	ksnakeduel-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

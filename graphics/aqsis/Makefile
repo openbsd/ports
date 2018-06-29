@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/27 21:03:52 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/06/29 22:16:15 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.8.2
 DISTNAME=	aqsis-${V}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 
 SO_VERSION=	1.0 # 1.6

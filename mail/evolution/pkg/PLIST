@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/06/29 22:16:17 espie Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -5304,8 +5304,7 @@ share/metainfo/org.gnome.Evolution-bogofilter.metainfo.xml
 share/metainfo/org.gnome.Evolution-pst.metainfo.xml
 share/metainfo/org.gnome.Evolution-spamassassin.metainfo.xml
 share/metainfo/org.gnome.Evolution.appdata.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

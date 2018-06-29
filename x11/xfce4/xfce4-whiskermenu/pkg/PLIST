@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/05/24 13:56:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:37 espie Exp $
 bin/xfce4-popup-whiskermenu
 lib/xfce4/panel/plugins/libwhiskermenu.so
 @man man/man1/xfce4-popup-whiskermenu.1
@@ -62,5 +62,4 @@ share/locale/vi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/xfce4/panel/plugins/whiskermenu.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

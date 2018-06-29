@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:31 espie Exp $
 
 COMMENT =	KDE libraries for education apps
 CATEGORIES =	education devel
 DISTNAME =	libkdeedu-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	keduvocdocument		52.0 # 4.7
 

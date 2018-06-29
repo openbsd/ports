@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:04:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:28 espie Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

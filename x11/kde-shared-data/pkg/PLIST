@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/10 08:03:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:26 espie Exp $
 @conflict kdebase-<3.5.10p32
 @conflict kde-runtime-<4.11.4p2
 share/desktop-directories/
@@ -63,5 +63,4 @@ share/icons/hicolor/32x32/apps/hi32-app-knetattach.png
 share/icons/hicolor/48x48/apps/hi48-app-knetattach.png
 share/icons/hicolor/64x64/apps/hi64-app-knetattach.png
 share/icons/hicolor/scalable/apps/hisc-app-knetattach.svgz
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

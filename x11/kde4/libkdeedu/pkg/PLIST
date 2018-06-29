@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/06 08:36:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:31 espie Exp $
 include/kde4/libkdeedu/
 include/kde4/libkdeedu/keduvocarticle.h
 include/kde4/libkdeedu/keduvocconjugation.h
@@ -110,5 +110,4 @@ share/icons/hicolor/scalable/actions/newfunction.svgz
 share/icons/hicolor/scalable/actions/newparametric.svgz
 share/icons/hicolor/scalable/actions/newpolar.svgz
 share/icons/hicolor/scalable/actions/resetview.svgz
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

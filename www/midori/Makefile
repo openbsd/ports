@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/06/27 21:04:05 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2018/06/29 22:16:21 espie Exp $
 
 COMMENT =	lightweight web browser
 
@@ -6,7 +6,7 @@ XFCE_VERSION =	0.5.11
 XFCE_GOODIE =	midori
 DISTNAME =	midori_0.5.11_all_
 WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>

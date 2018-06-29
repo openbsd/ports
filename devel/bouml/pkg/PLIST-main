@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/06/27 21:03:39 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2018/06/29 22:16:10 espie Exp $
 @bin bin/bouml
 @bin bin/browsersort
 @bin bin/cpp_generator
@@ -2153,5 +2153,4 @@ share/icons/hicolor/64x64/apps/bouml.png
 share/icons/hicolor/64x64/apps/projectControl.png
 share/icons/hicolor/64x64/apps/projectSynchro.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

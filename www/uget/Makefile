@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:04:06 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:22 espie Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.0.11
 CATEGORIES =	www net x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://ugetdm.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

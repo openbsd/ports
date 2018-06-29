@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2018/06/29 22:16:10 espie Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7
 GNOME_PROJECT=	giggle
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	devel x11
 

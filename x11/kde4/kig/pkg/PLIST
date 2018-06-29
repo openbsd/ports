@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:28 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kig
 bin/pykig.py
@@ -343,5 +343,4 @@ share/icons/hicolor/scalable/apps/kig.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
 share/kde4/services/kig_part.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

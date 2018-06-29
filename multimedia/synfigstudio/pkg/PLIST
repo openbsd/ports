@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:18 espie Exp $
 @bin bin/synfigstudio
 include/synfigapp-0.0/
 include/synfigapp-0.0/synfigapp/
@@ -384,7 +384,6 @@ share/synfig/plugins/view-unhide-all-layers/
 share/synfig/plugins/view-unhide-all-layers/plugin.xml
 share/synfig/plugins/view-unhide-all-layers/view-unhide-all-layers.py
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:11 espie Exp $
 @bin bin/ghostwriter
 @man man/man1/ghostwriter.1
 share/appdata/
@@ -20,5 +20,4 @@ share/icons/hicolor/scalable/apps/ghostwriter.svg
 share/pixmaps/
 share/pixmaps/ghostwriter.xpm
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/27 21:04:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:37 espie Exp $
 @pkgpath x11/yakuake-kde4
 @bin bin/yakuake
 share/applications/org.kde.yakuake.desktop
@@ -213,5 +213,4 @@ share/yakuake/skins/plastik_light/title/quit_over.png
 share/yakuake/skins/plastik_light/title/quit_up.png
 share/yakuake/skins/plastik_light/title/right.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

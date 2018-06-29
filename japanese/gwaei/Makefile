@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2018/06/29 22:16:17 espie Exp $
 
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	17
+REVISION =	18
 
 SHARED_LIBS =	waei	0.0
 

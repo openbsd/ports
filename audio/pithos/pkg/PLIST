@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:09 espie Exp $
 bin/pithos
 lib/python${MODPY_VERSION}/site-packages/pithos/
 lib/python${MODPY_VERSION}/site-packages/pithos-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/
@@ -87,6 +87,5 @@ share/appdata/pithos.appdata.xml
 share/applications/pithos.desktop
 share/icons/hicolor/48x48/apps/pithos-tray-icon.png
 share/icons/hicolor/scalable/apps/pithos.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

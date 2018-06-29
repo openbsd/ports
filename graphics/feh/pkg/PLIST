@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:03:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/29 22:16:16 espie Exp $
 @bin bin/feh
 @man man/man1/feh.1
 share/applications/feh.desktop
@@ -33,6 +33,5 @@ share/feh/images/menubg_default.png
 share/feh/images/menubg_sky.png
 share/icons/hicolor/48x48/apps/feh.png
 share/icons/hicolor/scalable/apps/feh.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

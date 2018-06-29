@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:27 espie Exp $
 @bin bin/dragon
 lib/kde4/dragonpart.so
 @man man/man1/dragon.1
@@ -35,7 +35,5 @@ share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/dragonplayer_play_dvd.desktop
 share/kde4/services/dragonplayer_part.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/oxygen

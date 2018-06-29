@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:27 espie Exp $
 @bin bin/filelight
 lib/kde4/filelightpart.so
 share/applications/kde4/filelight.desktop
@@ -24,5 +24,4 @@ share/icons/hicolor/64x64/apps/filelight.png
 share/icons/hicolor/scalable/apps/filelight.svgz
 share/kde4/services/filelightpart.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

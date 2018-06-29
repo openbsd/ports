@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:18 espie Exp $
 
 COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.10
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>

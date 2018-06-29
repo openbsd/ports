@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/06/29 22:16:34 espie Exp $
 
 COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.6.1
 CATEGORIES=		x11 graphics
+REVISION=		0
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
 

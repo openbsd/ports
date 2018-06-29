@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2018/06/27 21:04:00 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/06/29 22:16:19 espie Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -815,6 +815,5 @@ share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-offline.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-pending.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-xa.png
 share/pixmaps/pidgin/tray/hicolor/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

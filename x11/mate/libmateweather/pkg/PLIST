@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/10 15:07:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:33 espie Exp $
 include/libmateweather/
 include/libmateweather/location-entry.h
 include/libmateweather/mateweather-enum-types.h
@@ -638,5 +638,4 @@ share/locale/zh_HK/LC_MESSAGES/libmateweather.mo
 share/locale/zh_TW/LC_MESSAGES/libmateweather.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mate
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mate
+@tag gtk-update-icon-cache %D/share/icons/mate

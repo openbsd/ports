@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:31 espie Exp $
 @bin bin/marble
 @bin bin/marble-mobile
 @bin bin/marble-qt
@@ -1250,5 +1250,4 @@ share/mime/packages/geo.xml
 @tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

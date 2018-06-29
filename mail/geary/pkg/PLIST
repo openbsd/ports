@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:17 espie Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
@@ -250,8 +250,7 @@ share/locale/uk/LC_MESSAGES/geary.mo
 share/locale/vi/LC_MESSAGES/geary.mo
 share/locale/zh_CN/LC_MESSAGES/geary.mo
 share/locale/zh_TW/LC_MESSAGES/geary.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/29 22:16:11 espie Exp $
 
 BROKEN =	build fails fairly often, "EAccessViolation: Access violation"
 
@@ -9,7 +9,7 @@ COMMENT =		Delphi compatible IDE
 V =			1.6.4
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
-REVISION =		0
+REVISION =		1
 
 FPC_V =			3.0.2
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:18 espie Exp $
 bin/deluge
 bin/deluge-console
 bin/deluge-gtk
@@ -1412,5 +1412,4 @@ share/pixmaps/
 share/pixmaps/deluge.png
 share/pixmaps/deluge.xpm
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

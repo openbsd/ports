@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:29 espie Exp $
 @conflict kdeaccessibility-<4
 @bin bin/kmag
 @man man/man1/kmag.1
@@ -21,5 +21,4 @@ share/doc/HTML/en/kmag/screenshot.png
 share/icons/hicolor/16x16/apps/kmag.png
 share/icons/hicolor/32x32/apps/kmag.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:04:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/06/29 22:16:21 espie Exp $
 @bin bin/minitube
 share/appdata/
 share/appdata/minitube.appdata.xml
@@ -64,6 +64,5 @@ share/minitube/locale/uk_UA.qm
 share/minitube/locale/vi.qm
 share/minitube/locale/zh_CN.qm
 share/minitube/locale/zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

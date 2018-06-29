@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/06/27 21:03:49 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/06/29 22:16:14 espie Exp $
 bin/redeclipse
 bin/redeclipse-server
 lib/redeclipse/
@@ -22,6 +22,5 @@ share/icons/hicolor/48x48/apps/redeclipse.png
 share/icons/hicolor/64x64/apps/redeclipse.png
 share/pixmaps/
 share/pixmaps/redeclipse.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

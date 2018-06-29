@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:27 espie Exp $
 @conflict kdegames-<4.10
 bin/kajongg
 bin/kajonggserver
@@ -333,5 +333,4 @@ share/icons/hicolor/64x64/apps/kajongg.png
 share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/kajongg.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

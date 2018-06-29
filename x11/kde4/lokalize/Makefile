@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:31 espie Exp $
 
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/lokalize

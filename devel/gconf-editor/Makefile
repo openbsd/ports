@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.82 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2018/06/29 22:16:10 espie Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	3.0.1
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	devel x11
 

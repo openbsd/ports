@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:13 espie Exp $
 @bin bin/connectagram
 @man man/man6/connectagram.6
 share/applications/connectagram.desktop
@@ -46,6 +46,5 @@ share/metainfo/
 share/metainfo/connectagram.appdata.xml
 share/pixmaps/
 share/pixmaps/connectagram.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

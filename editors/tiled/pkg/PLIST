@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:12 espie Exp $
 @bin bin/automappingconverter
 @bin bin/tiled
 @bin bin/tmxrasterizer
@@ -38,5 +38,4 @@ share/tiled/translations/tiled_pt_BR.qm
 share/tiled/translations/tiled_ru.qm
 share/tiled/translations/tiled_zh.qm
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

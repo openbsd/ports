@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/27 12:09:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:33 espie Exp $
 share/icons/ContrastHigh/
 share/icons/ContrastHigh/16x16/
 share/icons/ContrastHigh/16x16/actions/
@@ -5312,4 +5312,4 @@ share/themes/TraditionalOk/xfwm4/top-left-inactive.xpm
 share/themes/TraditionalOk/xfwm4/top-right-active.png
 share/themes/TraditionalOk/xfwm4/top-right-active.xpm
 share/themes/TraditionalOk/xfwm4/top-right-inactive.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/ContrastHigh
+@tag gtk-update-icon-cache %D/share/icons/ContrastHigh

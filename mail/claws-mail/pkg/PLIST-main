@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2018/06/29 22:16:17 espie Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -389,5 +389,4 @@ share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/tr/LC_MESSAGES/claws-mail.mo
 share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

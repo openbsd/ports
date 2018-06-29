@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:18 espie Exp $
 
 PORTROACH =		skipv:2.0.3
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
 CATEGORIES =		multimedia
-REVISION =		2
+REVISION =		3
 
 # bump away from KDE3 version
 SHARED_LIBS =		k3blib		50.1

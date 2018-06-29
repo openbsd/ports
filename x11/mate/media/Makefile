@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:33 espie Exp $
 
 COMMENT=		media tools for the MATE desktop
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-media
 

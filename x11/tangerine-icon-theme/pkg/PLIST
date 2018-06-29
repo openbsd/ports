@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/30 12:48:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:35 espie Exp $
 @unexec-delete rm -f %D/share/icons/Tangerine/icon-theme.cache
 share/icons/Tangerine/
 share/icons/Tangerine/16x16/
@@ -1172,4 +1172,4 @@ share/icons/Tangerine/scalable/status/trashcan_full.svg
 share/icons/Tangerine/scalable/status/user-trash-full.svg
 share/icons/Tangerine/scalable/status/xfce-trash_full.svg
 share/locale/fr/LC_MESSAGES/tangerine-icon-theme.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tangerine
+@tag gtk-update-icon-cache %D/share/icons/Tangerine

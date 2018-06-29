@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:12 espie Exp $
 @bin bin/fs-uae
 @bin bin/fs-uae-device-helper
 share/applications/fs-uae.desktop
@@ -254,6 +254,5 @@ share/locale/pl/LC_MESSAGES/fs-uae.mo
 share/locale/pt/LC_MESSAGES/fs-uae.mo
 share/locale/sr/LC_MESSAGES/fs-uae.mo
 share/locale/tr/LC_MESSAGES/fs-uae.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

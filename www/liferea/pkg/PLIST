@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/06/27 21:04:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/06/29 22:16:21 espie Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -214,6 +214,5 @@ share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

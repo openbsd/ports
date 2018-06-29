@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:35 espie Exp $
 share/icons/Tango/16x16/devices/multimedia-player-dell-dj-pocket.png
 share/icons/Tango/16x16/devices/multimedia-player-ipod-U2-color.png
 share/icons/Tango/16x16/devices/multimedia-player-ipod-U2-monochrome.png
@@ -63,5 +63,4 @@ share/icons/Tango/scalable/devices/multimedia-player-ipod-standard-monochrome.sv
 share/icons/Tango/scalable/devices/multimedia-player-ipod-video-black.svg
 share/icons/Tango/scalable/devices/multimedia-player-ipod-video-white.svg
 share/icons/Tango/scalable/devices/multimedia-player-motorola-rokr.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tango
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tango
+@tag gtk-update-icon-cache %D/share/icons/Tango

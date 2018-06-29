@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:19 espie Exp $
 @bin bin/hexchat
 include/hexchat-plugin.h
 lib/hexchat/
@@ -76,6 +76,5 @@ share/locale/vi/LC_MESSAGES/hexchat.mo
 share/locale/wa/LC_MESSAGES/hexchat.mo
 share/locale/zh_CN/LC_MESSAGES/hexchat.mo
 share/locale/zh_TW/LC_MESSAGES/hexchat.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

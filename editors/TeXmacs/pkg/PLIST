@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:11 espie Exp $
 bin/fig2ps
 bin/texmacs
 include/TeXmacs.h
@@ -5791,8 +5791,7 @@ share/mime-info/texmacs.mime
 share/mime/packages/texmacs.xml
 share/pixmaps/
 share/pixmaps/TeXmacs.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@tag gtk-update-icon-cache %D/share/icons/gnome
 @tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

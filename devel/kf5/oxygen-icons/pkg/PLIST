@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/04 20:25:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:10 espie Exp $
 @pkgpath x11/kde4/oxygen-icons
 @unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
@@ -8800,5 +8800,4 @@ share/icons/oxygen/base/8x8/emblems/vcs-update-required.png
 share/icons/oxygen/base/8x8/places/
 share/icons/oxygen/base/8x8/places/folder-activities.png
 share/icons/oxygen/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@tag gtk-update-icon-cache %D/share/icons/oxygen

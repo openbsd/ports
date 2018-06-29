@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/12/28 12:15:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:36 espie Exp $
 lib/xfce4/panel/plugins/libmailwatch.so
 share/icons/hicolor/48x48/apps/xfce-newmail.png
 share/icons/hicolor/48x48/apps/xfce-nomail.png
@@ -48,5 +48,4 @@ share/locale/vi/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 share/xfce4/panel/plugins/mailwatch.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2018/06/27 21:04:22 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2018/06/29 22:16:34 espie Exp $
 
 COMMENT=	extensible window manager
 
 VERSION=	1.9.1
 DISTNAME=	sawfish-${VERSION}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	x11
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:32 espie Exp $
 @bin bin/step
 share/appdata/
 share/appdata/step.appdata.xml
@@ -99,5 +99,4 @@ share/icons/hicolor/32x32/apps/step.png
 share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/64x64/apps/step.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

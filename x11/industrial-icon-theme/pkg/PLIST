@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:25 espie Exp $
 @unexec-delete rm -f %D/share/icons/Industrial/icon-theme.cache
 @comment lib/locale/
 share/icons/
@@ -242,4 +242,4 @@ share/icons/Industrial/48x48/status/gnome-fs-directory-visiting.png
 share/icons/Industrial/48x48/status/stock_open.icon
 share/icons/Industrial/48x48/status/stock_open.png
 share/icons/Industrial/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Industrial
+@tag gtk-update-icon-cache %D/share/icons/Industrial

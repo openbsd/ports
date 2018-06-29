@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/23 15:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2018/06/29 22:16:34 espie Exp $
 
 COMMENT =		minimal, flat style icon theme
 
 GH_ACCOUNT =		snwh
 GH_PROJECT =		moka-icon-theme
 GH_TAGNAME =		v5.4.0
+REVISION =		0
 
 CATEGORIES =		x11
 

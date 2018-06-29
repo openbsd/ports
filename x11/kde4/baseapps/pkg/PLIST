@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:26 espie Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -492,7 +492,5 @@ share/templates/linkProgram.desktop
 share/templates/linkURL.desktop
 share/templates/linkZIP.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/oxygen

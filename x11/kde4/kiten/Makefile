@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:28 espie Exp $
 
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	kiten			50.0 # 4.7
 

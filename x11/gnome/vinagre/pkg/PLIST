@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/06/27 21:04:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2018/06/29 22:16:25 espie Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/GConf/gsettings/org.gnome.Vinagre.convert
@@ -380,8 +380,7 @@ share/telepathy/clients/Vinagre.client
 share/vinagre/
 share/vinagre/vinagre-ui.xml
 share/vinagre/vinagre.ui
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @tag update-desktop-database

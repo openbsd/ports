@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2018/06/29 22:16:16 espie Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6
 PKGNAME=	${DISTNAME:S/djview/djview4/}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html

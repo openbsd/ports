@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:12 espie Exp $
 @bin bin/dustrac-editor
 @bin bin/dustrac-game
 share/appdata/
@@ -154,5 +154,4 @@ share/pixmaps/
 share/pixmaps/dustrac-editor.png
 share/pixmaps/dustrac-game.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

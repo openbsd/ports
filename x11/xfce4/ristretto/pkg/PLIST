@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/06/29 22:16:36 espie Exp $
 @bin bin/ristretto
 share/appdata/
 share/appdata/ristretto.appdata.xml
@@ -56,6 +56,5 @@ share/locale/ur_PK/LC_MESSAGES/ristretto.mo
 share/locale/vi/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
 share/locale/zh_TW/LC_MESSAGES/ristretto.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

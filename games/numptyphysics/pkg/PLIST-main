@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/06/27 21:03:48 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/06/29 22:16:14 espie Exp $
 @pkgpath games/numptyphysics
 @bin bin/numptyphysics
 share/applications/numptyphysics.desktop
@@ -39,5 +39,4 @@ share/numptyphysics/theend.png
 share/numptyphysics/tick.png
 share/numptyphysics/undo.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

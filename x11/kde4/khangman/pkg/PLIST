@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:28 espie Exp $
 @conflict kdeedu-<4
 @bin bin/khangman
 include/khangman/
@@ -57,5 +57,4 @@ share/icons/hicolor/80x80/apps/khangman-harmattan.png
 share/icons/hicolor/scalable/apps/khangman-harmattan.svgz
 share/icons/hicolor/scalable/apps/khangman.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

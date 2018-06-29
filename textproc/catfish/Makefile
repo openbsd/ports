@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/27 21:04:04 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/06/29 22:16:21 espie Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.4.2
 DISTNAME =	catfish-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

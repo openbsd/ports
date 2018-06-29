@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2018/06/27 21:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2018/06/29 22:16:31 espie Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -12,7 +12,7 @@ PKGNAME-langlist =	kde4-langlist-$V
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs-${MODKDE4_SPEC}
-REVISION-main =		13
+REVISION-main =		14
 REVISION-en_US =	0
 REVISION-langlist =	0
 

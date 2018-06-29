@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/24 13:36:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:24 espie Exp $
 
 COMMENT=		extra themes for GNOME applications
 
 GNOME_PROJECT=		gnome-themes-extra
 GNOME_VERSION=		3.28
-REVISION=		0
+REVISION=		1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

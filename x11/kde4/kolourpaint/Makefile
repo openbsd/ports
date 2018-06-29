@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/29 22:16:29 espie Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	kolourpaint_lgpl	51.0	# 4.7
 

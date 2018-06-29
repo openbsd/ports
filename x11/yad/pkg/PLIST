@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/08/17 14:17:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:37 espie Exp $
 @bin bin/yad
 @man man/man1/yad.1
 share/aclocal/yad.m4
@@ -16,5 +16,4 @@ share/locale/ru/LC_MESSAGES/yad.mo
 share/locale/sk/LC_MESSAGES/yad.mo
 share/locale/uk/LC_MESSAGES/yad.mo
 share/locale/zh_TW/LC_MESSAGES/yad.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

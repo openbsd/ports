@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:17 espie Exp $
 @bin bin/viewnior
 @man man/man1/viewnior.1
 share/applications/viewnior.desktop
@@ -48,6 +48,5 @@ share/viewnior/pixmaps/object-rotate-left.png
 share/viewnior/pixmaps/object-rotate-right.png
 share/viewnior/vnr-crop-dialog.ui
 share/viewnior/vnr-preferences-dialog.ui
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

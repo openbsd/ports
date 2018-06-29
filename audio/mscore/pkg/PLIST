@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:09 espie Exp $
 @conflict mscore-*
 @bin bin/mscore
 bin/musescore
@@ -221,6 +221,5 @@ share/mscore-2.2/wallpaper/paper2.png
 share/mscore-2.2/wallpaper/paper3.png
 share/mscore-2.2/wallpaper/paper4.png
 share/mscore-2.2/wallpaper/paper5.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

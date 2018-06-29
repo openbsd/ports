@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/29 22:16:35 espie Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-REVISION=	10
+REVISION=	11
 
 CATEGORIES =	x11
 

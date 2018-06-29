@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/29 22:16:34 espie Exp $
 
 COMMENT=		MATE support utilities
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 

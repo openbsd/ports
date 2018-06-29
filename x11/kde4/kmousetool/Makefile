@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:04:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:29 espie Exp $
 
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

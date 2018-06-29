@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:32 espie Exp $
 @bin bin/picmi
 share/applications/kde4/picmi.desktop
 share/apps/picmi/
@@ -52,5 +52,4 @@ share/icons/hicolor/48x48/apps/picmi.png
 share/icons/hicolor/64x64/apps/picmi.png
 share/icons/hicolor/scalable/apps/picmi.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

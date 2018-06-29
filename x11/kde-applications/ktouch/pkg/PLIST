@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/ktouch
 @bin bin/ktouch
@@ -330,5 +330,4 @@ share/locale/zh_TW/LC_MESSAGES/ktouch.mo
 share/metainfo/
 share/metainfo/org.kde.ktouch.appdata.xml
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

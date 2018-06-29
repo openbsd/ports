@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:30 espie Exp $
 @bin bin/ksudoku
 share/applications/kde4/ksudoku.desktop
 share/apps/ksudoku/
@@ -138,5 +138,4 @@ share/icons/hicolor/128x128/apps/ksudoku.png
 share/icons/hicolor/16x16/apps/ksudoku.png
 share/icons/hicolor/32x32/apps/ksudoku.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

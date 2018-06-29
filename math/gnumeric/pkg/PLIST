@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/06/29 22:16:18 espie Exp $
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert
@@ -1888,6 +1888,5 @@ share/pixmaps/gnumeric/win32-gnumeric.ico
 share/pixmaps/win32-gnumeric.ico
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

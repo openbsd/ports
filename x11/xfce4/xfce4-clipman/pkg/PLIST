@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/29 22:16:36 espie Exp $
 @bin bin/xfce4-clipman
 @bin bin/xfce4-clipman-settings
 @bin bin/xfce4-popup-clipman
@@ -69,6 +69,5 @@ share/locale/vi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/panel/plugins/xfce4-clipman-plugin.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

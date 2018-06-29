@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2018/06/27 21:04:05 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2018/06/29 22:16:21 espie Exp $
 
 COMMENT-main=	checks HTML documents for broken links, CLI
 COMMENT-x11=	checks HTML documents for broken links, GUI
 
 V=		9.3
 REVISION-main=	3
-REVISION-x11=	2
+REVISION-x11=	3
 MODPY_EGG_VERSION=${V}
 GH_ACCOUNT=	wummel
 GH_PROJECT=	linkchecker

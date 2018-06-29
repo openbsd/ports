@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kipi,v 1.4 2018/06/27 21:03:53 espie Exp $
+@comment $OpenBSD: PLIST-kipi,v 1.5 2018/06/29 22:16:16 espie Exp $
 @conflict digikam-<3
 @conflict kipi-plugins-*
 @bin bin/dngconverter
@@ -2097,7 +2097,5 @@ share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a boy.ple
 share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a girl.ple
 share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Tux Rider.ple
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/oxygen

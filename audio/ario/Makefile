@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:03:34 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/29 22:16:08 espie Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	16
+REVISION =	17
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0

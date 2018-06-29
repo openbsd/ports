@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:04:15 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/29 22:16:28 espie Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB =  c m pthread ${MODPY_WANTLIB}
 WANTLIB += ${COMPILER_LIBCXX}

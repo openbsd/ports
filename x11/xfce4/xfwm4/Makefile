@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2018/06/27 21:04:25 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2018/06/29 22:16:37 espie Exp $
 
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
 XFCE_VERSION=	4.12.4
-REVISION=	1
+REVISION=	2
 
 PORTROACH=	limitw:1,even
 

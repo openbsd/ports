@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:13 espie Exp $
 @bin bin/tetzle
 @man man/man6/tetzle.6
 share/applications/tetzle.desktop
@@ -44,6 +44,5 @@ share/tetzle/translations/tetzle_tr.qm
 share/tetzle/translations/tetzle_uk.qm
 share/tetzle/translations/tetzle_uk_UA.qm
 share/tetzle/translations/tetzle_zh.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

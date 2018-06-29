@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/28 12:30:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
@@ -187,5 +187,4 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/metainfo/
 share/metainfo/org.kde.kalgebra.appdata.xml
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

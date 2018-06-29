@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:13 espie Exp $
 @bin bin/garden
 share/appdata/
 share/appdata/garden.appdata.xml
@@ -73,5 +73,4 @@ share/garden/wavs/whoosh.wav
 share/garden/wavs/worms.wav
 share/icons/hicolor/scalable/apps/garden.svg
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

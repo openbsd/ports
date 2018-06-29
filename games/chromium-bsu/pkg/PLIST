@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:12 espie Exp $
 @bin bin/chromium-bsu
 @man man/man6/chromium-bsu.6
 share/applications/chromium-bsu.desktop
@@ -103,6 +103,5 @@ share/locale/sv/LC_MESSAGES/chromium-bsu.mo
 share/locale/tr/LC_MESSAGES/chromium-bsu.mo
 share/locale/zh_CN/LC_MESSAGES/chromium-bsu.mo
 share/locale/zh_TW/LC_MESSAGES/chromium-bsu.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:31 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kturtle
 share/appdata/
@@ -26,5 +26,4 @@ share/icons/hicolor/48x48/apps/kturtle.png
 share/icons/hicolor/64x64/apps/kturtle.png
 share/icons/hicolor/scalable/apps/kturtle.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

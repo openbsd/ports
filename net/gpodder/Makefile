@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/29 22:16:19 espie Exp $
 
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.10.1
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder

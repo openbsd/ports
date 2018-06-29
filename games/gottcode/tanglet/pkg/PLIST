@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:13 espie Exp $
 @bin bin/tanglet
 @man man/man6/tanglet.6
 share/applications/tanglet.desktop
@@ -84,6 +84,5 @@ share/tanglet/translations/tanglet_tr.qm
 share/tanglet/translations/tanglet_uk.qm
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

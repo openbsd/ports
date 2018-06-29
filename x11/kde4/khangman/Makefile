@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:15 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:28 espie Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	khangmanengine		50.0
 

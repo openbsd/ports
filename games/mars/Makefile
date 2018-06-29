@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/29 22:16:14 espie Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://mars-game.sourceforge.net/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:20 espie Exp $
 bin/menulibre
 lib/python${MODPY_VERSION}/site-packages/menulibre/
 lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -88,6 +88,5 @@ share/menulibre/ui/
 share/menulibre/ui/MenulibreWindow.ui
 share/pixmaps/
 share/pixmaps/menulibre.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

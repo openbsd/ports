@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/06/27 21:04:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/29 22:16:19 espie Exp $
 @pkgpath print/lyx,qt
 @pkgpath print/lyx,xforms
 @bin bin/lyx
@@ -2644,6 +2644,5 @@ share/lyx/ui/stdtoolbars.inc
 share/lyx/unicodesymbols
 share/pixmaps/
 share/pixmaps/lyx.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

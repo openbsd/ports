@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:19 espie Exp $
 @bin bin/psi
 share/applications/psi.desktop
 share/icons/hicolor/128x128/apps/psi.png
@@ -188,5 +188,4 @@ share/psi/sound/offline.wav
 share/psi/sound/online.wav
 share/psi/sound/send.wav
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

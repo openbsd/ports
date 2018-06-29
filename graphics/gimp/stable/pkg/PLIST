@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/06/27 21:03:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/06/29 22:16:16 espie Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -2340,6 +2340,5 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

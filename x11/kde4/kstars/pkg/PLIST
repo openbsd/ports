@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:30 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kstars
 lib/libhtmesh.a
@@ -480,5 +480,4 @@ share/icons/hicolor/48x48/apps/kstars.png
 share/icons/hicolor/64x64/apps/kstars.png
 share/icons/hicolor/scalable/apps/kstars.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

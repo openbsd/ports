@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/27 21:04:02 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:20 espie Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 MODPY_EGG_VERSION=	0.3.1
 DISTNAME=		gtg-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		productivity
 

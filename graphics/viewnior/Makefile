@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/27 21:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:17 espie Exp $
 
 COMMENT=		fast and simple image viewer
 
 DISTNAME=		viewnior-1.6
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics x11
 

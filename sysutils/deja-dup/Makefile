@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2018/06/29 22:16:20 espie Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		34.3
 GNOME_PROJECT=		deja-dup
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils
 

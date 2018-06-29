@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/16 18:27:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:11 espie Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -840,5 +840,4 @@ share/qtcreator/translations/qtcreator_sl.qm
 share/qtcreator/translations/qtcreator_uk.qm
 share/qtcreator/translations/qtcreator_zh_CN.qm
 share/qtcreator/translations/qtcreator_zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

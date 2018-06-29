@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:12 espie Exp $
 @bin bin/snes9x-gtk
 share/applications/snes9x.desktop
 share/doc/snes9x/
@@ -24,6 +24,5 @@ share/locale/ru/LC_MESSAGES/snes9x-gtk.mo
 share/locale/sr@latin/LC_MESSAGES/snes9x-gtk.mo
 share/snes9x/
 share/snes9x/cheats.bml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

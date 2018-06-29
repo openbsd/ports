@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:03:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/06/29 22:16:15 espie Exp $
 @bin bin/darktable
 @bin bin/darktable-chart
 @bin bin/darktable-cli
@@ -379,6 +379,5 @@ share/locale/sk/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

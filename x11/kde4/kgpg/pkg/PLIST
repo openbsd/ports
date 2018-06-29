@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:28 espie Exp $
 @conflict kdeutils-<4
 @bin bin/kgpg
 share/appdata/
@@ -84,5 +84,4 @@ share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

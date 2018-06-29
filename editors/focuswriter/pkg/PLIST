@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:11 espie Exp $
 @bin bin/focuswriter
 @man man/man1/focuswriter.1
 share/applications/focuswriter.desktop
@@ -352,6 +352,5 @@ share/metainfo/
 share/metainfo/focuswriter.appdata.xml
 share/pixmaps/
 share/pixmaps/focuswriter.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

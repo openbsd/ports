@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:32 espie Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${MODKDE4_VERSION}
-REVISION =	5
+REVISION =	6
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

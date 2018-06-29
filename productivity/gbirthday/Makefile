@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:19 espie Exp $
 
 COMMENT =		birthday reminder with tray notification
 
 GH_ACCOUNT = 		lafrech
 GH_PROJECT =		gbirthday
 GH_TAGNAME = 		v0.6.10
-REVISION =              0
+REVISION =              1
 
 CATEGORIES =		productivity x11
 

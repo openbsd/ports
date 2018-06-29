@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/27 12:09:37 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:33 espie Exp $
 
 COMMENT=		standard MATE themes
+REVISION=		0
 
 MATE_PROJECT=		mate-themes
 MATE_VERSION=		3.22.16

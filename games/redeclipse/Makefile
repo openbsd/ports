@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:14 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -20,7 +20,7 @@ PKGNAME-data=	${N}-data-${V}
 MASTER_SITES=	https://github.com/red-eclipse/base/releases/download/v${V}/
 DISTNAME=	redeclipse_${V}_combined
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	0
+REVISION-main=	1
 
 PKG_ARCH-data=	*
 

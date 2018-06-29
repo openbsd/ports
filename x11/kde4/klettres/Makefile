@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:04:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:28 espie Exp $
 
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

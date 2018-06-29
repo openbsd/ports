@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:09 espie Exp $
 @bin bin/convert_sym
 bin/garchive
 @bin bin/gattrib
@@ -2145,5 +2145,4 @@ share/mime/packages/libgeda.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

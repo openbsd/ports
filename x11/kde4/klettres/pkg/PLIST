@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:29 espie Exp $
 @conflict kdeedu-<4
 @bin bin/klettres
 share/appdata/
@@ -193,5 +193,4 @@ share/icons/hicolor/48x48/apps/klettres.png
 share/icons/hicolor/64x64/apps/klettres.png
 share/icons/hicolor/scalable/apps/klettres.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:21 espie Exp $
 bin/catfish
 lib/python${MODPY_VERSION}/site-packages/catfish/
 lib/python${MODPY_VERSION}/site-packages/catfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -82,6 +82,5 @@ share/locale/tr/LC_MESSAGES/catfish.mo
 share/locale/uk/LC_MESSAGES/catfish.mo
 share/locale/zh_CN/LC_MESSAGES/catfish.mo
 share/locale/zh_TW/LC_MESSAGES/catfish.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:03:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:08 espie Exp $
 @bin bin/gmpc
 @bin bin/gmpc-remote
 bin/gmpc-remote-stream
@@ -861,7 +861,5 @@ share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
 share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Humanity
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Humanity
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/Humanity

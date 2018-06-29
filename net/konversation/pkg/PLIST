@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:19 espie Exp $
 @bin bin/konversation
 share/applications/org.kde.konversation.desktop
 share/doc/HTML/ca/konversation/
@@ -296,5 +296,4 @@ share/locale/zh_TW/LC_MESSAGES/konversation.mo
 share/metainfo/
 share/metainfo/org.kde.konversation.appdata.xml
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

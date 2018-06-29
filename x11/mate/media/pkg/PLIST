@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:33 espie Exp $
 @bin bin/mate-volume-control
 @bin bin/mate-volume-control-applet
 @man man/man1/mate-volume-control-applet.1
@@ -179,5 +179,4 @@ share/sounds/mate/default/alerts/drip.ogg
 share/sounds/mate/default/alerts/glass.ogg
 share/sounds/mate/default/alerts/sonar.ogg
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

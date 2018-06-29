@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2018/06/27 21:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2018/06/29 22:16:17 espie Exp $
 
 COMMENT=	GTK-based scientific calculator
 
 GH_ACCOUNT=	galculator
 GH_PROJECT=	galculator
 GH_TAGNAME=	v2.1.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.mnim.org/

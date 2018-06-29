@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:29 espie Exp $
 @conflict kdeaccessibility-<4
 @bin bin/kmousetool
 @man man/man1/kmousetool.1
@@ -18,5 +18,4 @@ share/icons/hicolor/32x32/actions/kmousetool_off.png
 share/icons/hicolor/32x32/actions/kmousetool_on.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:29 espie Exp $
 @conflict kdesdk-<4.11
 @bin bin/kompare
 include/kde4/kompare/
@@ -36,5 +36,4 @@ share/kde4/services/komparepart.desktop
 share/kde4/servicetypes/komparenavigationpart.desktop
 share/kde4/servicetypes/kompareviewpart.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

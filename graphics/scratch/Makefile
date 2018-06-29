@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/29 22:16:17 espie Exp $
 
 COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	5
+REVISION =	6
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

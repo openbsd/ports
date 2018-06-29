@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:11 espie Exp $
 bin/poedit
 @man man/man1/poedit.1
 share/applications/poedit.desktop
@@ -207,5 +207,4 @@ share/poedit/icons/poedit-status-nothing.png
 share/poedit/icons/poedit-update.png
 share/poedit/icons/view-fullscreen.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

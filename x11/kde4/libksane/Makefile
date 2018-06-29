@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 11:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:31 espie Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 CATEGORIES =	graphics devel
 DISTNAME =	libksane-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	ksane			50.0	# 0.2
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:12 espie Exp $
 
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
 DISTNAME =	barrage-1.0.4
 CATEGORIES=	games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE=	http://lgames.sourceforge.net/?project=Barrage
 

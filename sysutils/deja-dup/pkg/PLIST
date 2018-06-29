@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:04:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:20 espie Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 lib/deja-dup/
@@ -1032,8 +1032,7 @@ share/locale/vi/LC_MESSAGES/deja-dup.mo
 share/locale/zh_CN/LC_MESSAGES/deja-dup.mo
 share/locale/zh_HK/LC_MESSAGES/deja-dup.mo
 share/locale/zh_TW/LC_MESSAGES/deja-dup.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

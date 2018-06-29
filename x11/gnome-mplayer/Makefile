@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2018/06/27 21:04:11 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2018/06/29 22:16:25 espie Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
@@ -6,7 +6,7 @@ V =			1.0.9
 DISTNAME =		gnome-mplayer-${V}
 EPOCH =			0
 CATEGORIES =		x11 multimedia
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 

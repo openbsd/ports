@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2018/06/27 21:04:09 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2018/06/29 22:16:23 espie Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
 GNOME_VERSION=		3.28.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gck-1                2.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           3.0      # 1.0

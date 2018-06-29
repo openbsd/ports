@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:09 espie Exp $
 @bin bin/mumble
 lib/mumble/
 lib/mumble/liblink.so
@@ -26,6 +26,5 @@ share/mumble/locale/mumble_sv.qm
 share/mumble/locale/mumble_tr.qm
 share/mumble/locale/mumble_zh_CN.qm
 share/mumble/locale/mumble_zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

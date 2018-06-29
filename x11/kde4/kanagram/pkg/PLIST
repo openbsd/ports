@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:27 espie Exp $
 @conflict kdeedu-<4
 @bin bin/kanagram
 share/appdata/
@@ -60,5 +60,4 @@ share/icons/hicolor/80x80/apps/
 share/icons/hicolor/80x80/apps/kanagram-harmattan.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

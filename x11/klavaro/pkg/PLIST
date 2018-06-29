@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:32 espie Exp $
 @bin bin/klavaro
 @man man/man1/klavaro.1
 share/icons/
@@ -149,5 +149,4 @@ share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:13 espie Exp $
 @bin bin/gottet
 @man man/man6/gottet.6
 share/applications/gottet.desktop
@@ -41,6 +41,5 @@ share/metainfo/
 share/metainfo/gottet.appdata.xml
 share/pixmaps/
 share/pixmaps/gottet.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

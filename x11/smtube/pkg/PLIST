@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:35 espie Exp $
 @bin bin/smtube
 share/applications/smtube.desktop
 share/doc/smtube/
@@ -45,6 +45,5 @@ share/smtube/translations/smtube_tr.qm
 share/smtube/translations/smtube_uk.qm
 share/smtube/translations/smtube_zh_CN.qm
 share/smtube/translations/smtube_zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

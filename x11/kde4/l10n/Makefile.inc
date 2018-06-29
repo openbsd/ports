@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.12 2017/09/13 19:18:43 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2018/06/29 22:16:31 espie Exp $
 
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
-REVISION =		2
+REVISION =		3
 
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =		libs

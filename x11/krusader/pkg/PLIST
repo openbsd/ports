@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:04:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:32 espie Exp $
 @bin bin/krusader
 lib/qt5/plugins/kio_iso.so
 lib/qt5/plugins/kio_krarc.so
@@ -417,5 +417,4 @@ share/locale/zh_TW/LC_MESSAGES/krusader.mo
 share/metainfo/
 share/metainfo/org.kde.krusader.appdata.xml
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

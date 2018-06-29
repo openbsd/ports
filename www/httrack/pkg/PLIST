@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:21 espie Exp $
 @bin bin/htsserver
 @bin bin/httrack
 @bin bin/proxytrack
@@ -243,5 +243,4 @@ share/pixmaps/httrack16x16.xpm
 share/pixmaps/httrack32x32.xpm
 share/pixmaps/httrack48x48.xpm
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

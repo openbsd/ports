@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/27 21:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/06/29 22:16:27 espie Exp $
 
 COMMENT =	letter order game for KDE
 DISTNAME =	kanagram-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 #SHARED_LIBS =	kanagramengine		51.0
 

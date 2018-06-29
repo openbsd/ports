@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:14 espie Exp $
 @bin bin/openrct2
 @bin bin/openrct2-cli
 lib/libopenrct2.a
@@ -65,5 +65,4 @@ share/openrct2/title/rct1aa.parkseq
 share/openrct2/title/rct1aall.parkseq
 share/openrct2/title/rct2.parkseq
 @tag update-desktop-database  
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

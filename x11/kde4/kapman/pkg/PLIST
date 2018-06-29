@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:27 espie Exp $
 @bin bin/kapman
 share/applications/kde4/kapman.desktop
 share/apps/kapman/
@@ -43,5 +43,4 @@ share/sounds/kapman/levelup.ogg
 share/sounds/kapman/life.ogg
 share/sounds/kapman/pill.ogg
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

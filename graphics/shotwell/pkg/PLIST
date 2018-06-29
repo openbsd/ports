@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2018/06/27 21:03:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/06/29 22:16:17 espie Exp $
 @bin bin/shotwell
 lib/libshotwell-authenticator.a
 lib/libshotwell-authenticator.la
@@ -500,8 +500,7 @@ share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_HK/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 share/metainfo/shotwell.appdata.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:34 espie Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -160,6 +160,5 @@ share/pinot/pinot-dbus-daemon.xml
 share/pinot/pinot-enum-index.sh
 share/pinot/stopwords/
 share/pinot/xapian-powered.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

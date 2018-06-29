@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
 CATEGORIES =	education
-REVISION =	0
+REVISION =	1
 
 KDE5 =		Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:19:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:21 espie Exp $
 lib/kde4/kwebkitpart.so
 share/apps/kwebkitpart/
 share/apps/kwebkitpart/error.html
@@ -10,5 +10,4 @@ share/icons/hicolor/32x32/apps/webkit.png
 share/icons/hicolor/48x48/apps/webkit.png
 share/icons/hicolor/64x64/apps/webkit.png
 share/kde4/services/kwebkitpart.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

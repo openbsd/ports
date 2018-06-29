@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/06/29 22:16:18 espie Exp $
 
 COMMENT=	data viewing/plotting tool
 
 GH_ACCOUNT =	Kst-plot
 GH_PROJECT =	kst
 GH_TAGNAME =	v2.0.8
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kst2core                  0.0 # 2.0
 SHARED_LIBS +=  kst2math                  0.0 # 2.0

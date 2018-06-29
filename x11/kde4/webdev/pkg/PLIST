@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:32 espie Exp $
 @bin bin/kfilereplace
 @bin bin/kimagemapeditor
 @bin bin/klinkstatus
@@ -138,5 +138,4 @@ share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
 @bin bin/bovo
 share/applications/kde4/bovo.desktop
 share/apps/bovo/
@@ -28,5 +28,4 @@ share/icons/hicolor/48x48/apps/bovo.png
 share/icons/hicolor/64x64/apps/bovo.png
 share/icons/hicolor/scalable/apps/bovo.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

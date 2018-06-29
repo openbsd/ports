@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:10 espie Exp $
 
 COMMENT=	Qt-based LDAP browser and utility
 
 MODPY_EGG_VERSION=3.0.7
 DISTNAME=	luma-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	databases x11
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:29 espie Exp $
 @conflict kdemultimedia-<4
 @bin bin/kmix
 @bin bin/kmixctrl
@@ -62,5 +62,4 @@ share/kde4/services/kded/kmixd.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/plasma-engine-mixer.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

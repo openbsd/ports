@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/06/29 22:16:11 espie Exp $
 
 # XXX base clang: lots of undefined references to Qt functions
 COMPILER=	base-gcc
@@ -8,7 +8,7 @@ COMMENT=	wysiwyw (what you see is what you want) editing platform
 DISTNAME=	TeXmacs-1.99.4-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://texmacs.org/
 

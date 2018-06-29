@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/27 08:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/29 22:16:18 espie Exp $
 
 PKG_ARCH =		*
 COMMENT =		MIME types and icons for chemical applications
 DISTNAME =		chemical-mime-data-0.1.94
 CATEGORIES =		misc
 HOMEPAGE =		http://chemical-mime.sourceforge.net/
-REVISION =		1
+REVISION =		2
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes

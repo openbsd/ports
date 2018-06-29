@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/06/29 22:16:16 espie Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,8 +16,8 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		4
-REVISION-kipi =		5
+REVISION-main =		5
+REVISION-kipi =		6
 REVISION-mediawiki =	6
 
 EXTRACT_SUFX =		.tar.bz2

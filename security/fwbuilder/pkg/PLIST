@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/06/29 22:16:20 espie Exp $
 @conflict libfwbuilder-*
 @pkgpath security/libfwbuilder
 @bin bin/fwb_iosacl
@@ -407,5 +407,4 @@ share/icons/hicolor/72x72/
 share/icons/hicolor/72x72/apps/
 share/icons/hicolor/72x72/apps/fwbuilder.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

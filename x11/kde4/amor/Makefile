@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	fun desktop animation
 DISTNAME =	amor-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	games
 #HOMEPAGE =	http://amor.kde.org/

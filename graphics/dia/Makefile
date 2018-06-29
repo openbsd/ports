@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.111 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.112 2018/06/29 22:16:16 espie Exp $
 
 COMMENT=		technical diagrams drawing tool
 
 GNOME_PROJECT=		dia
 GNOME_VERSION=		0.97.3
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		graphics
 

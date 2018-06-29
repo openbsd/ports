@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/02/10 17:39:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:22 espie Exp $
 @unexec-delete rm -f %D/share/icons/Faba/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faba-Mono/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faba-Mono-Dark/icon-theme.cache
@@ -4444,6 +4444,6 @@ share/icons/Faba/symbolic/status/weather-showers-scattered-symbolic.svg
 share/icons/Faba/symbolic/status/weather-showers-symbolic.svg
 share/icons/Faba/symbolic/status/weather-snow-symbolic.svg
 share/icons/Faba/symbolic/status/weather-storm-symbolic.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faba
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faba-Mono
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faba-Mono-Dark
+@tag gtk-update-icon-cache %D/share/icons/Faba
+@tag gtk-update-icon-cache %D/share/icons/Faba-Mono
+@tag gtk-update-icon-cache %D/share/icons/Faba-Mono-Dark

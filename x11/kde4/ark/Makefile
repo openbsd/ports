@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	KDE file archiver
 DISTNAME =	ark-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	kerfuffle	51.0 # 4.7
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:13 espie Exp $
 @bin bin/cutemaze
 @man man/man6/cutemaze.6
 share/applications/cutemaze.desktop
@@ -39,6 +39,5 @@ share/metainfo/
 share/metainfo/cutemaze.appdata.xml
 share/pixmaps/
 share/pixmaps/cutemaze.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

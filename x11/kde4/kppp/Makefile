@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:30 espie Exp $
 
 COMMENT =	dialer and pppd front-end for KDE
 DISTNAME =	kppp-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kppp

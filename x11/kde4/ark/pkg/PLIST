@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:26 espie Exp $
 @conflict kdeutils-<4
 @bin bin/ark
 lib/kde4/arkpart.so
@@ -48,5 +48,4 @@ share/kde4/services/kerfuffle_libgz.desktop
 share/kde4/services/kerfuffle_libxz.desktop
 share/kde4/servicetypes/kerfufflePlugin.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

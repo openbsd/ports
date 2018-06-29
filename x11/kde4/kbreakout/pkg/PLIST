@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:27 espie Exp $
 @bin bin/kbreakout
 share/applications/kde4/kbreakout.desktop
 share/apps/kbreakout/
@@ -68,5 +68,4 @@ share/icons/hicolor/32x32/apps/kbreakout.png
 share/icons/hicolor/48x48/apps/kbreakout.png
 share/icons/hicolor/64x64/apps/kbreakout.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

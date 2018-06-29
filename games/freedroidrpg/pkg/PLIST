@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:13 espie Exp $
 @bin bin/freedroidRPG
 @man man/man6/freedroidRPG.6
 share/appdata/
@@ -6853,7 +6853,5 @@ share/locale/sv/LC_MESSAGES/freedroidrpg-data.mo
 share/locale/sv/LC_MESSAGES/freedroidrpg-dialogs.mo
 share/locale/sv/LC_MESSAGES/freedroidrpg.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/HighContrast

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:27 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:33 espie Exp $
 @unexec-delete rm -f %D/share/icons/mate/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/menta/icon-theme.cache
 share/icons/mate/
@@ -7825,5 +7825,5 @@ share/icons/menta/48x48/status/nm-device-wireless.png
 share/icons/menta/48x48/status/nm-no-connection.png
 share/icons/menta/48x48/status/stock_open.png
 share/icons/menta/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mate
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/menta
+@tag gtk-update-icon-cache %D/share/icons/mate
+@tag gtk-update-icon-cache %D/share/icons/menta

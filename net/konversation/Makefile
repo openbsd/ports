@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:19 espie Exp $
 
 COMMENT =	IRC client for KDE
 
 V =		1.7.4
 DISTNAME =	konversation-$V
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 

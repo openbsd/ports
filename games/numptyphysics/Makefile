@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/27 21:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/06/29 22:16:14 espie Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -6,7 +6,7 @@ COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 DISTNAME =		numptyphysics-0.3.r20100916
 PKGNAME-main =		${DISTNAME}
 PKGNAME-npcomplete =	npcomplete-0.0.r20100124
-REVISION-main =		4
+REVISION-main =		5
 REVISION-npcomplete =	2
 
 MULTI_PACKAGES =	-main -npcomplete

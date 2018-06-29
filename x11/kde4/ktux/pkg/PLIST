@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:14:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:31 espie Exp $
 @conflict kdetoys-<4.11
 @bin bin/ktux
 share/apps/ktux/
@@ -22,5 +22,4 @@ share/apps/ktux/sprites/star0002.png
 share/icons/hicolor/16x16/apps/ktux.png
 share/icons/hicolor/32x32/apps/ktux.png
 share/kde4/services/ScreenSavers/ktux.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

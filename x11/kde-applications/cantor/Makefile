@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/28 12:30:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:25 espie Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                51.0 # 17.08
 

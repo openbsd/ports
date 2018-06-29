@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:21 espie Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -73,6 +73,5 @@ share/metainfo/nfoview.appdata.xml
 share/nfoview/
 share/nfoview/menu.ui
 share/nfoview/preferences-dialog.ui
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

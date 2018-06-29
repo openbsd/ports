@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:29 espie Exp $
 @conflict kdegames-<4
 @bin bin/kolf
 @lib ${KDE4LIB}/libkolfprivate.so.${LIBkolfprivate_VERSION}
@@ -40,5 +40,4 @@ share/icons/hicolor/32x32/apps/kolf.png
 share/icons/hicolor/48x48/apps/kolf.png
 share/icons/hicolor/64x64/apps/kolf.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

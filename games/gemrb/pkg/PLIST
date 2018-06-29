@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:13 espie Exp $
 bin/extend2da.py
 @bin bin/gemrb
 lib/gemrb/
@@ -2466,6 +2466,5 @@ share/gemrb/unhardcoded/shared/turn.spl
 share/icons/hicolor/scalable/apps/gemrb.svg
 share/pixmaps/
 share/pixmaps/gemrb.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

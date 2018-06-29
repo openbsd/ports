@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/06/27 21:04:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/06/29 22:16:35 espie Exp $
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
@@ -240,6 +240,5 @@ share/xfce4/helpers/w3m.desktop
 share/xfce4/helpers/xfce4-terminal.desktop
 share/xfce4/helpers/xfe.desktop
 share/xfce4/helpers/xterm.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

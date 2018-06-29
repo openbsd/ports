@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	KDE development helper utilities
 DISTNAME =	kde-dev-utils-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kde-dev-utils

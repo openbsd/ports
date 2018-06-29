@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:33 espie Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -515,7 +515,6 @@ share/mate-panel/ui/window-menu-menu.xml
 share/mate-panel/ui/workspace-switcher-menu.xml
 share/mate-panel/ui/workspace-switcher.ui
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

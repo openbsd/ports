@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:19 espie Exp $
 @bin bin/seafile-applet
 share/applications/seafile.desktop
 share/icons/hicolor/128x128/apps/seafile.png
@@ -11,5 +11,4 @@ share/icons/hicolor/scalable/apps/seafile.svg
 share/pixmaps/
 share/pixmaps/seafile.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

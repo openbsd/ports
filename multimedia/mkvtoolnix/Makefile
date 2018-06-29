@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2018/06/27 21:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2018/06/29 22:16:18 espie Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-9.7.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz

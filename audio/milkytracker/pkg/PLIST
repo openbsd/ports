@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:09 espie Exp $
 @bin bin/milkytracker
 share/applications/milkytracker.desktop
 share/doc/milkytracker/
@@ -16,6 +16,5 @@ share/milkytracker/songs/slumberjack.xm
 share/milkytracker/songs/sv_ttt.xm
 share/milkytracker/songs/theday.xm
 share/milkytracker/songs/universalnetwork2_real.xm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

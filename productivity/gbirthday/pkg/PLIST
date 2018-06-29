@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:19 espie Exp $
 bin/gbirthday
 lib/python${MODPY_VERSION}/site-packages/gbirthday/
 lib/python${MODPY_VERSION}/site-packages/gbirthday/__init__.py
@@ -37,5 +37,4 @@ lib/python${MODPY_VERSION}/site-packages/gbirthday/test_databases.pyc
 share/applications/gbirthday.desktop
 share/icons/hicolor/scalable/apps/gbirthday.svg
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

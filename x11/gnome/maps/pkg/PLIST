@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/27 21:04:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:24 espie Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -132,8 +132,7 @@ share/locale/zh_HK/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-maps.mo
 share/metainfo/
 share/metainfo/org.gnome.Maps.appdata.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

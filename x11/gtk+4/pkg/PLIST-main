@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2018/06/27 21:04:12 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2018/06/29 22:16:25 espie Exp $
 @conflict gtk+3-*
 @comment conflicts: share/gettext/its/gtkbuilder.{its,loc}
 @comment conflicts: share/glib-2.0/schemas/*.xml
@@ -664,8 +664,7 @@ share/locale/zh_TW/LC_MESSAGES/gtk40.mo
 share/metainfo/
 share/metainfo/org.gtk.Demo.appdata.xml
 share/metainfo/org.gtk.WidgetFactory.appdata.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

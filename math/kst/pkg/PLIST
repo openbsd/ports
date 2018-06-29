@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:18 espie Exp $
 @bin bin/kst2
 lib/kst2/
 lib/kst2/plugins/
@@ -29,5 +29,4 @@ share/mimelink/
 share/mimelink/application/
 share/mimelink/application/x-kst2.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

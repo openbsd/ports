@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/27 08:14:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:21 espie Exp $
 
 COMMENT=		GUI to dvd+rw-tools and cdrecord
 
 DISTNAME=		tkdvd-4.0.9
-REVISION =		2
+REVISION =		3
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://regis.damongeot.free.fr/tkdvd/

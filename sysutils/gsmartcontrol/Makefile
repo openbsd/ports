@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/06/29 22:16:20 espie Exp $
 
 COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
 DISTNAME=		gsmartcontrol-1.1.3
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils x11
 

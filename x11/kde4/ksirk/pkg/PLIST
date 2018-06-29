@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:30 espie Exp $
 @bin bin/ksirk
 @bin bin/ksirkskineditor
 @lib ${KDE4LIB}/libiris_ksirk.so.${LIBiris_ksirk_VERSION}
@@ -130,7 +130,5 @@ share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/ksirk.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/locolor

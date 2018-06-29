@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:08 espie Exp $
 
 COMMENT =	Qt-based MPD client
 
 V =			2.2.0
 DISTNAME =	cantata-${V}
-REVISION =	1
+REVISION =	2
 HOMEPAGE =	https://github.com/CDrummond/cantata
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/

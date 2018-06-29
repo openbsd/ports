@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nuvola,v 1.3 2013/12/08 19:13:29 zhuk Exp $
+@comment $OpenBSD: PLIST-nuvola,v 1.4 2018/06/29 22:16:26 espie Exp $
 @conflict kdeartwork->=4,<4.10.5p1
 @unexec-delete rm -f %D/share/icons/nuvola/icon-theme.cache
 share/icons/nuvola/
@@ -3810,4 +3810,4 @@ share/icons/nuvola/scalable/status/dialog-authentication.svg
 share/icons/nuvola/scalable/status/dialog-information.svg
 share/icons/nuvola/scalable/status/dialog-warning.svg
 share/icons/nuvola/scalable/status/user-trash-full.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/nuvola
+@tag gtk-update-icon-cache %D/share/icons/nuvola

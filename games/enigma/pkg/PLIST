@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:12 espie Exp $
 @bin bin/enigma
 @man man/man6/enigma.6
 share/appdata/
@@ -7989,6 +7989,5 @@ share/locale/sv/LC_MESSAGES/enigma.mo
 share/locale/uk/LC_MESSAGES/enigma.mo
 share/pixmaps/
 share/pixmaps/enigma.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/27 21:04:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/06/29 22:16:24 espie Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/
@@ -355,8 +355,7 @@ share/org.gnome.Music/
 share/org.gnome.Music/gir-1.0/
 share/org.gnome.Music/gir-1.0/Gd-1.0.gir
 share/org.gnome.Music/org.gnome.Music.gresource
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2018/06/27 21:04:00 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2018/06/29 22:16:19 espie Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 #BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)   # trying ports-gcc
@@ -14,7 +14,7 @@ DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
 PKGNAME-gtk =	wireshark-gtk-$V
-REVISION-main =	1
+REVISION-main =	2
 REVISION-text =	0
 
 SHARED_LIBS +=	wscodecs             0.0      # 0.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/06/27 21:03:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/06/29 22:16:08 espie Exp $
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -126,5 +126,4 @@ share/locale/vi/LC_MESSAGES/audacious.mo
 share/locale/zh_CN/LC_MESSAGES/audacious.mo
 share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

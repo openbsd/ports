@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/14 12:44:17 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:22 espie Exp $
 @unexec-delete rm -f %D/share/icons/Faenza/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
@@ -29539,9 +29539,9 @@ share/icons/Faenza/stock/scalable/stock_new-meeting.svg
 share/icons/Faenza/stock/scalable/stock_people.svg
 share/icons/Faenza/stock/scalable/stock_person-panel.svg
 share/icons/Faenza/stock/scalable/stock_person.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Ambiance
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Dark
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Darker
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Darkest
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Radiance
+@tag gtk-update-icon-cache %D/share/icons/Faenza
+@tag gtk-update-icon-cache %D/share/icons/Faenza-Ambiance
+@tag gtk-update-icon-cache %D/share/icons/Faenza-Dark
+@tag gtk-update-icon-cache %D/share/icons/Faenza-Darker
+@tag gtk-update-icon-cache %D/share/icons/Faenza-Darkest
+@tag gtk-update-icon-cache %D/share/icons/Faenza-Radiance

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:11 espie Exp $
 @bin bin/leafpad
 share/applications/leafpad.desktop
 share/doc/leafpad/
@@ -67,6 +67,5 @@ share/locale/zh_TW/LC_MESSAGES/leafpad.mo
 share/pixmaps/
 share/pixmaps/leafpad.png
 share/pixmaps/leafpad.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

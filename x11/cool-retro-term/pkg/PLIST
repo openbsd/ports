@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:22 espie Exp $
 @bin bin/cool-retro-term
 lib/qt5/qml/QMLTermWidget/
 lib/qt5/qml/QMLTermWidget/QMLTermScrollbar.qml
@@ -48,6 +48,5 @@ share/icons/hicolor/128x128/apps/cool-retro-term.png
 share/icons/hicolor/256x256/apps/cool-retro-term.png
 share/icons/hicolor/32x32/apps/cool-retro-term.png
 share/icons/hicolor/64x64/apps/cool-retro-term.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

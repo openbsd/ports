@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/27 21:04:01 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:19 espie Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
 CATEGORIES =	productivity
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
 HOMEPAGE =	https://sourceforge.net/projects/entomologist/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:21 espie Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
-REVISION =		0
+REVISION =		1
 
 # "main" application libraries
 SHARED_LIBS +=  htsjava                   0.0 # 2.48

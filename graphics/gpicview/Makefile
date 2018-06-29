@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2018/06/29 22:16:16 espie Exp $
 
 COMMENT =	simple and fast image viewer for X11
 
 DISTNAME =	gpicview-0.2.5
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics x11
 

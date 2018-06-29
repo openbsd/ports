@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/06 10:51:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:10 espie Exp $
 @conflict baloo-*
 include/KF5/Baloo/
 include/KF5/Baloo/Baloo/
@@ -477,5 +477,4 @@ share/locale/zh_TW/LC_MESSAGES/balooshow5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_tags.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_timeline.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

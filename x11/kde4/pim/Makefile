@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2018/06/27 21:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2018/06/29 22:16:32 espie Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	7
+REVISION =	8
 DPB_PROPERTIES +=	parallel
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}

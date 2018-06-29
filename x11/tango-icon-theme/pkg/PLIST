@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/05/25 13:07:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:35 espie Exp $
 @unexec-delete rm -f %D/share/icons/Tango/icon-theme.cache
 @comment lib/locale/
 share/icons/Tango/
@@ -4278,4 +4278,4 @@ share/icons/Tango/scalable/status/weather-showers.svg
 share/icons/Tango/scalable/status/weather-snow.svg
 share/icons/Tango/scalable/status/weather-storm.svg
 share/icons/Tango/scalable/status/xfce-trash_full.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tango
+@tag gtk-update-icon-cache %D/share/icons/Tango

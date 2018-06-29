@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:27 espie Exp $
 
 COMMENT =	KDE text to speech application
 DISTNAME =	jovie-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	kttsd	51.0 # 4.7
 

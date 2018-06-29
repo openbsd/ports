@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:16 espie Exp $
 bin/drawpile
 @bin bin/drawpile-2.0.10
 @bin bin/drawpile-srv
@@ -178,6 +178,5 @@ share/drawpile/drawpile/theme/light/zoom-in.svg
 share/drawpile/drawpile/theme/light/zoom-original.svg
 share/drawpile/drawpile/theme/light/zoom-out.svg
 share/icons/hicolor/256x256/apps/drawpile-256x256.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/06/29 22:16:15 espie Exp $
 @bin bin/merkaartor
 lib/merkaartor/
 lib/merkaartor/plugins/
@@ -62,6 +62,5 @@ share/merkaartor/translations/merkaartor_uk.qm
 share/merkaartor/translations/merkaartor_vi.qm
 share/merkaartor/translations/merkaartor_zh_CN.qm
 share/merkaartor/translations/merkaartor_zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

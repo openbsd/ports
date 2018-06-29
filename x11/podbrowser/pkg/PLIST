@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:34 espie Exp $
 bin/html2ps-podbrowser
 bin/podbrowser
 @man man/man1/podbrowser.1
@@ -6,6 +6,5 @@ share/applications/podbrowser.desktop
 share/icons/hicolor/48x48/apps/podbrowser.png
 share/podbrowser/
 share/podbrowser/podbrowser.glade
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/06/27 21:03:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/06/29 22:16:10 espie Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
@@ -280,7 +280,5 @@ share/locale/vi/LC_MESSAGES/geany.mo
 share/locale/zh_CN/LC_MESSAGES/geany.mo
 share/locale/zh_TW/LC_MESSAGES/geany.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tango
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tango
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/Tango

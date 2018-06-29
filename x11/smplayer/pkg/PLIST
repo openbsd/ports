@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:35 espie Exp $
 @bin bin/simple_web_server
 @bin bin/smplayer
 @man man/man1/smplayer.1
@@ -109,6 +109,5 @@ share/smplayer/translations/smplayer_uz.qm
 share/smplayer/translations/smplayer_vi_VN.qm
 share/smplayer/translations/smplayer_zh_CN.qm
 share/smplayer/translations/smplayer_zh_TW.qm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:04:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/06/29 22:16:30 espie Exp $
 
 COMMENT =	strategy game for KDE
 DISTNAME =	ksirk-${MODKDE4_VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =	iris_ksirk		51.0  # 4.10
 

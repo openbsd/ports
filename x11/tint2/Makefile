@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:35 espie Exp $
 
 COMMENT=	freedesktop-compliant panel
 
@@ -7,7 +7,7 @@ CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
 WRKDIST=	${WRKDIR}/tint2-v$V-b810bad93ff65854137fbd2f344ad2f99338008f
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
 

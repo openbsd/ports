@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:09 espie Exp $
 
 COMMENT =		low-latency voice chat client
 
 GH_ACCOUNT =		mumble-voip
 GH_PROJECT =		mumble
 GH_TAGNAME =		1.2.19
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 

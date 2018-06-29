@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:03:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:13 espie Exp $
 bin/gbrainy
 lib/gbrainy/
 lib/gbrainy/gbrainy.Core.dll
@@ -578,6 +578,5 @@ share/pixmaps/gbrainy.png
 share/pixmaps/gbrainy.svg
 share/pixmaps/gbrainy16.png
 share/pixmaps/gbrainy48.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

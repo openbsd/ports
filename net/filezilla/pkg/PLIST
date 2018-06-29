@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/06/29 22:16:19 espie Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -667,5 +667,4 @@ share/locale/zh_TW/LC_MESSAGES/filezilla.mo
 share/pixmaps/
 share/pixmaps/filezilla.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

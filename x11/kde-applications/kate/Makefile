@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/27 21:04:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kate-editor.org/
 

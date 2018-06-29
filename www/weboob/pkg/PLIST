@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:04:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:22 espie Exp $
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 bin/boobank${MODPY_BIN_SUFFIX}
 bin/boobathon${MODPY_BIN_SUFFIX}
 bin/boobcoming${MODPY_BIN_SUFFIX}

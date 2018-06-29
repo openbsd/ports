@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/27 21:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/06/29 22:16:14 espie Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
 COMMENT =		open source reimplementation of the original X-Com
 DISTNAME =		openxcom-1.0.0
-REVISION = 		7
+REVISION = 		8
 EPOCH =			0
 CATEGORIES =		games x11
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:29 espie Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	textproc devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kompare

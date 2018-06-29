@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:25 espie Exp $
 
 COMMENT =		complete, multi-colored suite of icons
 
 V =			5.5.1
-REVISION =		8
+REVISION =		9
 DISTNAME =		gnome-colors-${V}
 PKGNAME =		gnome-colors-icon-theme-${V}
 CATEGORIES =		x11

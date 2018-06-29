@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/04 20:25:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:10 espie Exp $
 @unexec-delete rm -f %D/share/icons/breeze-dark/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/breeze/icon-theme.cache
 share/icons/breeze/
@@ -15844,5 +15844,5 @@ share/icons/breeze/status/symbolic/user-status-pending-symbolic.svg
 share/icons/breeze/status/symbolic/user-trash-full-symbolic.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic-rtl.svg
 share/icons/breeze/status/symbolic/view-wrapped-symbolic.svg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/breeze-dark
+@tag gtk-update-icon-cache %D/share/icons/breeze
+@tag gtk-update-icon-cache %D/share/icons/breeze-dark

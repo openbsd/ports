@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/23 15:16:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:34 espie Exp $
 @unexec-delete rm -f %D/share/icons/Moka/icon-theme.cache
 share/icons/Moka/
 share/icons/Moka/16x16/
@@ -36281,4 +36281,4 @@ share/icons/Moka/96x96@2x/web/wikipedia.png
 share/icons/Moka/96x96@2x/web/wordpress.png
 share/icons/Moka/96x96@2x/web/yahoo.png
 share/icons/Moka/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Moka
+@tag gtk-update-icon-cache %D/share/icons/Moka

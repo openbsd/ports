@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
 @conflict kdesdk-<4.11
 @bin bin/cervisia
 @bin bin/cvsaskpass
@@ -73,5 +73,4 @@ share/icons/hicolor/scalable/actions/vcs-update-cvs-cervisia.svgz
 share/kde4/services/cervisiapart.desktop
 share/kde4/services/cvsservice.desktop
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

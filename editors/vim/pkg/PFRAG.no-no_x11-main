@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.10 2018/06/27 21:03:42 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.11 2018/06/29 22:16:12 espie Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -27,7 +27,5 @@ share/icons/locolor/32x32/apps/gvim.png
 share/pixmaps/
 share/pixmaps/vim.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/locolor

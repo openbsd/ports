@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/06/29 22:16:14 espie Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:04:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:20 espie Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -179,6 +179,5 @@ share/locale/zh_HK/LC_MESSAGES/rednotebook.mo
 share/locale/zh_TW/LC_MESSAGES/rednotebook.mo
 share/metainfo/
 share/metainfo/rednotebook.appdata.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

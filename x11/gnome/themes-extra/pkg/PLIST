@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/24 13:13:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:24 espie Exp $
 @conflict gnome-themes-<2.32.1p3
 @conflict gnome-themes-standard-*
 @pkgpath x11/gnome/themes-standard
@@ -3915,4 +3915,4 @@ share/themes/HighContrast/gtk-2.0/gtkrc
 share/themes/HighContrast/gtk-3.0/
 share/themes/HighContrast/gtk-3.0/gtk.css
 share/themes/HighContrast/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@tag gtk-update-icon-cache %D/share/icons/HighContrast

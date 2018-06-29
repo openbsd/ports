@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:29 espie Exp $
 @conflict kdegraphics-<4
 @bin bin/kolourpaint
 @lib ${KDE4LIB}/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
@@ -184,5 +184,4 @@ share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

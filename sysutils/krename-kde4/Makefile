@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:20 espie Exp $
 
 COMMENT =	powerful batch file renamer for KDE4
 
@@ -10,7 +10,7 @@ DOCFILES =	krename-3.0.12.pdf \
 		krename-3.0.3-ru.pdf
 DISTFILES =	${SRCFILES} ${DOCFILES}
 EXTRACT_ONLY =	${SRCFILES}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	sysutils x11
 HOMEPAGE =	http://www.krename.net/

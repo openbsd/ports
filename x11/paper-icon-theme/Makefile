@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/23 14:32:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/06/29 22:16:34 espie Exp $
 
 COMMENT=		modern freedesktop flat icon theme
 
 V=			1.5.0
 WRKDIST=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${GH_PROJECT}-${V}
+REVISION=		0
 
 GH_ACCOUNT=		snwh
 GH_PROJECT=		paper-icon-theme

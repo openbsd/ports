@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:15 espie Exp $
 @bin bin/valyriatear
 @man man/man6/valyriatear.6
 share/appdata/
@@ -1582,6 +1582,5 @@ share/valyriatear/snd/volume_test.wav
 share/valyriatear/snd/wave1_spell.ogg
 share/valyriatear/snd/wind.ogg
 share/valyriatear/snd/wolf_howl.ogg
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/06/29 22:16:37 espie Exp $
 @conflict xfce4-toys-*
 @conflict xfce-utils-*
 @pkgpath x11/xfce4/xfce-utils
@@ -115,6 +115,5 @@ share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
 share/xsessions/
 share/xsessions/xfce.desktop
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

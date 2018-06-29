@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:32 espie Exp $
 
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

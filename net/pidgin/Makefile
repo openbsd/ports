@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2018/06/27 21:04:00 espie Exp $
+# $OpenBSD: Makefile,v 1.141 2018/06/29 22:16:19 espie Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -16,7 +16,7 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:12 espie Exp $
 @bin bin/blobwars
 share/applications/blobwars.desktop
 share/blobwars/
@@ -38,5 +38,4 @@ share/locale/nl/LC_MESSAGES/blobwars.mo
 share/locale/pl/LC_MESSAGES/blobwars.mo
 share/locale/sv/LC_MESSAGES/blobwars.mo
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

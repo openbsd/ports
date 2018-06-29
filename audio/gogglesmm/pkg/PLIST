@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:09 espie Exp $
 @bin bin/gogglesmm
 @man man/man1/gogglesmm.1
 share/applications/gogglesmm.desktop
@@ -15,6 +15,5 @@ share/locale/fr/LC_MESSAGES/gogglesmm.mo
 share/locale/hu/LC_MESSAGES/gogglesmm.mo
 share/locale/pt/LC_MESSAGES/gogglesmm.mo
 share/locale/ru/LC_MESSAGES/gogglesmm.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

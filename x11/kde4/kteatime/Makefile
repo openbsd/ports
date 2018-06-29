@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:30 espie Exp $
 
 COMMENT =	simple timer tray app for KDE
 DISTNAME =	kteatime-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	productivity
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdetoys/kteatime

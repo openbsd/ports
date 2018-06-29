@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:28 espie Exp $
 @conflict kdesdk-<4.11
 bin/dprof2calltree
 bin/hotshot2calltree
@@ -31,5 +31,4 @@ share/doc/HTML/en/kcachegrind/index.docbook
 share/icons/hicolor/32x32/apps/kcachegrind.png
 share/icons/hicolor/48x48/apps/kcachegrind.png
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

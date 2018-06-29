@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:27 espie Exp $
 
 COMMENT =	app template generator for KDE development
 DISTNAME =	kapptemplate-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kapptemplate

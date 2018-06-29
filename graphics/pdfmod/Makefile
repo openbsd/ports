@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:16 espie Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
 GNOME_PROJECT=	pdfmod
 GNOME_VERSION=	0.9.1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	graphics print
 

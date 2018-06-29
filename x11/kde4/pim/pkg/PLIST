@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/06/29 22:16:32 espie Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -1432,9 +1432,6 @@ share/kde4/servicetypes/dbuscalendar.desktop
 share/kde4/servicetypes/dbusmail.desktop
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/oxygen
+@tag gtk-update-icon-cache %D/share/icons/locolor

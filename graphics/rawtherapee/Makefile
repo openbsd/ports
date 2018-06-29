@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2018/06/29 22:16:17 espie Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = 	amd64
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-5.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 

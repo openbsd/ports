@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:15 espie Exp $
 @bin bin/tbftss
 share/applications/tbftss.desktop
 share/icons/hicolor/128x128/apps/tbftss.png
@@ -530,5 +530,4 @@ share/tbftss/sound/65787__iwilldstroyu__laserrocket.ogg
 share/tbftss/sound/77087__supraliminal__laser-short.ogg
 share/tbftss/sound/88275__s-dij__gbc-reload-06.ogg
 @tag update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor

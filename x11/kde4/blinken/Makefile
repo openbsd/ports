@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:26 espie Exp $
 
 COMMENT =	KDE game Simon Says
 DISTNAME =	blinken-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

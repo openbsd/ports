@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:34 espie Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -345,8 +345,7 @@ share/remmina/ui/remmina_string_list.glade
 share/telepathy/
 share/telepathy/clients/
 share/telepathy/clients/Remmina.client
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

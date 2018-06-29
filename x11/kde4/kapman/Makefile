@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:04:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:27 espie Exp $
 
 COMMENT =	Pac-Man clone for KDE
 DISTNAME =	kapman-${MODKDE4_VERSION}
-REVISION =	4
+REVISION =	5
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
