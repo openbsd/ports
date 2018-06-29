@@ -1,21 +1,19 @@
-$OpenBSD: patch-tests_playTests_sh,v 1.9 2018/04/04 16:10:02 bket Exp $
+$OpenBSD: patch-tests_playTests_sh,v 1.10 2018/06/29 19:02:07 bket Exp $
+
+Revert https://github.com/facebook/zstd/pull/1124 as it causes 'make test' to
+fail. This is explained by a test trying to write to /dev/random, which fails
+as a regular user is not allowed to write to this device. /dev/zero has
+different permissions set.
+
 Index: tests/playTests.sh
 --- tests/playTests.sh.orig
 +++ tests/playTests.sh
-@@ -69,6 +69,7 @@ UNAME=$(uname)
- case "$UNAME" in
-   Darwin) MD5SUM="md5 -r" ;;
-   FreeBSD) MD5SUM="gmd5sum" ;;
-+  OpenBSD) MD5SUM="md5" ;;
-   *) MD5SUM="md5sum" ;;
- esac
+@@ -56,7 +56,7 @@ fi
  
-@@ -258,7 +259,7 @@ rm ./*.tmp ./*.zstd
- $ECHO "frame concatenation tests completed"
- 
- 
--if [ "$isWindows" = false ] && [ "$UNAME" != 'SunOS' ] ; then
-+if [ "$isWindows" = false ] && [ "$UNAME" != 'SunOS' ] && [ "$(uname -s)" != "OpenBSD" ] ; then
- $ECHO "\n**** flush write error test **** "
- 
- $ECHO "$ECHO foo | $ZSTD > /dev/full"
+ isWindows=false
+ INTOVOID="/dev/null"
+-DEVDEVICE="/dev/random"
++DEVDEVICE="/dev/zero"
+ case "$OS" in
+   Windows*)
+     isWindows=true

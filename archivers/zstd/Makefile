@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/12 14:49:01 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2018/06/29 19:02:07 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.3.4
-SHARED_LIBS =		zstd	1.0	# 1.3.4
+GH_TAGNAME =		v1.3.5
+SHARED_LIBS =		zstd	1.1	# 1.3.5
 
 CATEGORIES =		archivers
 
 HOMEPAGE =		https://facebook.github.io/zstd/
 
-MAINTAINER =		Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
+MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD 3 clauses + GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
