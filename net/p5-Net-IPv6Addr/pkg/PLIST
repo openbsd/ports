@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/27 21:06:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/30 08:13:30 benoit Exp $
 ${P5SITE}/Net/IPv6Addr.pm
+${P5SITE}/Net/IPv6Addr.pod
 @man man/man3p/Net::IPv6Addr.3p
