@@ -1,13 +1,14 @@
-$OpenBSD: patch-numpy_distutils_fcompiler_gnu_py,v 1.1 2015/01/15 02:55:22 daniel Exp $
+$OpenBSD: patch-numpy_distutils_fcompiler_gnu_py,v 1.2 2018/06/30 21:49:33 daniel Exp $
 
 Causes segmentation fault on powerpc when building py-scipy.
 
 See discussion at:
 https://github.com/numpy/numpy/issues/5451
 
---- numpy/distutils/fcompiler/gnu.py.orig	Wed Jan 14 12:54:27 2015
-+++ numpy/distutils/fcompiler/gnu.py	Wed Jan 14 12:54:33 2015
-@@ -201,7 +201,6 @@ class GnuFCompiler(FCompiler):
+Index: numpy/distutils/fcompiler/gnu.py
+--- numpy/distutils/fcompiler/gnu.py.orig
++++ numpy/distutils/fcompiler/gnu.py
+@@ -237,7 +237,6 @@ class GnuFCompiler(FCompiler):
              opt = ['-O2']
          else:
              opt = ['-O3']

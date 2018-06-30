@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2018/06/15 02:01:13 daniel Exp $
+# $OpenBSD: Makefile,v 1.50 2018/06/30 21:49:33 daniel Exp $
 
 BROKEN-alpha =	numpy/linalg/umath_linalg.c.src:3231: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.9.3
+MODPY_EGG_VERSION=	1.14.5
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+EXTRACT_SUFX=		.zip
 
 CATEGORIES=		math devel
 
@@ -27,10 +28,10 @@ FLAVOR?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_SETUP=		setupegg.py
-MODPY_DISTUTILS_BUILD = build --build-base=${WRKBUILD} --fcompiler=gnu95
+MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
+		devel/py-tz${MODPY_FLAVOR}
 
 MODFORTRAN_COMPILER =	gfortran
 
@@ -42,7 +43,7 @@ pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
 
 do-test: fake
-	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
+	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 	    'import numpy ; numpy.test()'
 
 .include <bsd.port.mk>
