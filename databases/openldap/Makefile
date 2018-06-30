@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2018/03/29 19:32:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.163 2018/06/30 11:41:36 landry Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -33,7 +33,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c crypto ssl
 
 MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
-		http://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
 		http://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		http://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
