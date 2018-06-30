@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 03:15:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/06/30 18:16:57 bcallah Exp $
 bin/streamlink
 lib/python${MODPY_VERSION}/site-packages/streamlink/
 lib/python${MODPY_VERSION}/site-packages/streamlink-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -178,6 +178,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}medi
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}mips.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}mitele.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}mixer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}mjunoon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}mlgtv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}nbc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}nbcsports.${MODPY_PYC_MAGIC_TAG}pyc
@@ -371,6 +372,7 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mediaklikk.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mips.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mitele.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mixer.py
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mjunoon.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/mlgtv.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/nbc.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/nbcsports.py
