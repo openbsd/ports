@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.214 2018/01/13 03:00:46 bentley Exp $
+# $OpenBSD: network.conf.template,v 1.215 2018/06/30 11:39:09 landry Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -68,7 +68,6 @@ MASTER_SITE_GCC+=	\
 	https://ftp.nluug.nl/languages/gcc/ \
 	https://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	ftp://gcc.gnu.org/pub/gcc/ \
-	http://gd.tuwien.ac.at/gnu/gcc/ \
 	http://gcc.igor.onlinedirect.bg/ \
 	http://gcc.parentinginformed.com/ \
 	http://gcc.skazkaforyou.com/ \
@@ -98,7 +97,6 @@ MASTER_SITE_R5CONTRIB+=	\
 
 MASTER_SITE_SUNSITE+=	\
 	https://www.ibiblio.org/pub/Linux/ \
-	http://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
 	http://ftp.uniovi.es/pub/linux/ \
 	http://ftp.lip6.fr/pub/linux/sunsite/ \
 	http://ftp.man.poznan.pl/pub/linux/sunsite/ \
