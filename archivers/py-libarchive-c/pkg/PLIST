@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/28 14:31:28 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/06/30 15:22:36 bcallah Exp $
 lib/python${MODPY_VERSION}/site-packages/libarchive/
 lib/python${MODPY_VERSION}/site-packages/libarchive/__init__.py
-lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}entry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
