@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/09/22 15:09:29 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/06/30 03:38:40 jturner Exp $
 @bin bin/6m
 @bin bin/h
 @bin bin/mbld
@@ -18,12 +18,18 @@ lib/myr/libescfmt.a
 lib/myr/libescfmt.use
 lib/myr/libfileutil.a
 lib/myr/libfileutil.use
+lib/myr/libflate.a
+lib/myr/libflate.use
 lib/myr/libhttp.a
 lib/myr/libhttp.use
 lib/myr/libinifile.a
 lib/myr/libinifile.use
+lib/myr/libiter.a
+lib/myr/libiter.use
 lib/myr/libjson.a
 lib/myr/libjson.use
+lib/myr/libmath.a
+lib/myr/libmath.use
 lib/myr/libregex.a
 lib/myr/libregex.use
 lib/myr/libstd.a

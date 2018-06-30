@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/10 00:47:33 jturner Exp $
+# $OpenBSD: Makefile,v 1.9 2018/06/30 03:38:40 jturner Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		systems language that is both powerful and fun to use
 
-DISTNAME =		myrddin-0.2.2
+DISTNAME =		myrddin-0.3.0
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -27,5 +27,8 @@ TEST_TARGET =		check
 # Remove hardcoded optimizations.
 pre-configure:
 	sed -i -e 's,-Werror,,g' -e 's,-O0,,g' ${WRKSRC}/mk/c.mk
+
+pre-build:
+	cd ${WRKDIST} && ${MAKE_PROGRAM} bootstrap
 
 .include <bsd.port.mk>
