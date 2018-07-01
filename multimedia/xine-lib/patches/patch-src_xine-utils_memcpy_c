@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-utils_memcpy_c,v 1.5 2018/07/01 21:10:48 sthen Exp $
+
+Make use of clock_gettime().
+
+Index: src/xine-utils/memcpy.c
+--- src/xine-utils/memcpy.c.orig
++++ src/xine-utils/memcpy.c
+@@ -597,7 +597,7 @@ static const struct {
+ 
+ static uint64_t memcpy_timing[sizeof(memcpy_method)/sizeof(memcpy_method[0])] = { 0, };
+ 
+-#ifdef HAVE_POSIX_TIMERS
++#if defined(HAVE_POSIX_TIMERS) || defined(__OpenBSD__)
+ /* Prefer clock_gettime() where available. */
+ 
+ # ifndef CLOCK_THREAD_CPUTIME_ID
