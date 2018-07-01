@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/22 15:53:45 jung Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/01 18:05:30 jung Exp $
 @newgroup _geomyidae:754
 @newuser _geomyidae:754:_geomyidae:daemon:Geomyidae Gopher Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/geomyidae
 @bin bin/geomyidae
 @man man/man8/geomyidae.8
 share/doc/geomyidae/
@@ -21,7 +22,3 @@ share/examples/geomyidae/log
 @owner _geomyidae
 @group _geomyidae
 @sample /var/log/geomyidae.log
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/geomyidae
