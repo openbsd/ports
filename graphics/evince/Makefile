@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2018/07/01 09:00:36 espie Exp $
+# $OpenBSD: Makefile,v 1.159 2018/07/01 09:25:59 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -86,7 +86,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
 WANTLIB += nautilus-extension crypto lz4
 
-# XXX not sure that's needed automatic conversion`
+# XXX not sure that's needed automatic conversion
 RUN_DEPENDS +=	print/texlive/base,-main
 .endif
 
