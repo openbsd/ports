@@ -1,21 +1,22 @@
-$OpenBSD: patch-plugins_node_d_openbsd_df_inode_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
---- plugins/node.d.openbsd/df_inode.in.orig	Mon Sep 21 09:37:21 2009
-+++ plugins/node.d.openbsd/df_inode.in	Sat Oct 23 16:34:39 2010
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-plugins_node_d_openbsd_df_inode_in,v 1.2 2018/07/01 15:02:36 kirby Exp $
+Index: plugins/node.d.openbsd/df_inode.in
+--- plugins/node.d.openbsd/df_inode.in.orig
++++ plugins/node.d.openbsd/df_inode.in
+@@ -25,7 +25,7 @@ fi
  
  print_values() {
  	mfs=0
--	/bin/df -P -i -t noprocfs,devfs,fdescfs,linprocfs,nfs,nullfs | tail +2 | grep -v "//" | while read i; do
-+	/bin/df -i -t noprocfs,devfs,fdescfs,linprocfs,nfs,nullfs | tail +2 | grep -v "//" | while read i; do
+-	/bin/df -P -i $EXCLUDEDFS | tail -n +2 | sort | grep -v "//" | while read i; do
++	/bin/df -i $EXCLUDEDFS | tail -n +2 | sort | grep -v "//" | while read i; do
  		case $i in
  		mfs:*) name=mfs$mfs; mfs=`expr $mfs + 1`;;
  		*) name=`echo $i | awk '{ gsub("[^a-zA-Z0-9_]", "_", $1); print $1 }'` ;;
-@@ -44,7 +44,7 @@ if [ "$1" = "config" ]; then
+@@ -52,7 +52,7 @@ if [ "$1" = "config" ]; then
  	echo 'graph_category disk'
  	echo 'graph_scale no'
  	echo 'graph_info This graph shows the inode usage for the partitions of types that use inodes.'
--	/bin/df -P -i -t noprocfs,devfs,fdescfs,linprocfs,nfs,nullfs | tail +2 | grep -v "//" | awk "
-+	/bin/df -i -t noprocfs,devfs,fdescfs,linprocfs,nfs,nullfs | tail +2 | grep -v "//" | awk "
+-	/bin/df -P -i $EXCLUDEDFS | tail -n +2 | sort | grep -v "//" | awk "
++	/bin/df -i $EXCLUDEDFS | tail -n +2 | sort | grep -v "//" | awk "
  		BEGIN {
  			mfs = 0
  		}

@@ -1,7 +1,8 @@
-$OpenBSD: patch-plugins_node_d_openbsd_netstat_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
---- plugins/node.d.openbsd/netstat.in.orig	Fri Aug 31 19:22:50 2012
-+++ plugins/node.d.openbsd/netstat.in	Sun Sep 30 23:23:02 2012
-@@ -74,13 +74,6 @@ if [ "$1" = "config" ]; then
+$OpenBSD: patch-plugins_node_d_openbsd_netstat_in,v 1.3 2018/07/01 15:02:36 kirby Exp $
+Index: plugins/node.d.openbsd/netstat.in
+--- plugins/node.d.openbsd/netstat.in.orig
++++ plugins/node.d.openbsd/netstat.in
+@@ -77,13 +77,6 @@ if [ "$1" = "config" ]; then
  	echo 'failed.info The number of failed TCP connection attempts per second.'
  	print_warning failed
  	print_critical failed

@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile_config,v 1.3 2012/10/12 09:46:46 kirby Exp $
---- Makefile.config.orig	Fri Aug 31 19:22:50 2012
-+++ Makefile.config	Tue Oct  2 22:56:29 2012
+$OpenBSD: patch-Makefile_config,v 1.4 2018/07/01 15:02:36 kirby Exp $
+Index: Makefile.config
+--- Makefile.config.orig
++++ Makefile.config
 @@ -17,10 +17,10 @@
  #
  # the base of the Munin installation.
@@ -60,15 +61,6 @@ $OpenBSD: patch-Makefile_config,v 1.3 2012/10/12 09:46:46 kirby Exp $
  
  # Location of PID files and other statefiles. On the server, must be
  # writable by the user "munin".
-@@ -66,7 +69,7 @@ STATEDIR   = $(DESTDIR)/var/run/munin
- PERL       := $(shell which perl)
- 
- # The python interpreter to use (used by some plugins)
--PYTHON     := /usr/bin/env python
-+#PYTHON     := /usr/bin/env python
- 
- # The ruby interpreter to use (used by some plugins)
- RUBY       := /usr/bin/env ruby
 @@ -106,7 +109,7 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
  
  # How to figure out the hostname. (Only used in default configuration
