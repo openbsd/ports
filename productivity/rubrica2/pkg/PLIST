@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/07/01 18:33:37 espie Exp $
 @bin bin/rubrica2
 include/libral-1.0/
 include/libral-1.0/libral/
@@ -123,5 +123,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/rubrica2.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

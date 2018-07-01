@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:38 espie Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -683,6 +683,5 @@ share/kde4/services/wcpotdprovider.desktop
 share/kde4/servicetypes/plasma_comicprovider.desktop
 share/kde4/servicetypes/plasma_potdprovider.desktop
 share/mime/packages/lancelotpart-mime.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

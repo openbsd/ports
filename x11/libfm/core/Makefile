@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/07/01 18:33:38 espie Exp $
 
 COMMENT=		glib/gio-based lib for file management
-REVISION=		0
+REVISION=		1
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo exif expat ffi fm-extra

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/07/01 18:33:37 espie Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -6592,7 +6592,6 @@ share/icons/hicolor/64x64/mimetypes/application-x-mobipocket-ebook-64.png
 share/icons/hicolor/64x64/mimetypes/application-x-topaz-ebook-64.png
 share/icons/hicolor/64x64/mimetypes/text-lrs-64.png
 share/mime/packages/calibre-mimetypes.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

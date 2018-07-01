@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:38 espie Exp $
 @conflict kdesdk->=4,<4.11
 @bin bin/okteta
 bin/struct2osd.sh
@@ -448,6 +448,5 @@ share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/oktetapart.desktop
 share/mime/packages/okteta.xml
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

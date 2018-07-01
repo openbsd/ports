@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/07/01 18:33:36 espie Exp $
 
 COMMENT =		fractal image generator
 
@@ -8,7 +8,7 @@ DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
 GH_PROJECT =		gnofract4d
 GH_ACCOUNT =		edyoung
 GH_TAGNAME =		V_${MODPY_EGG_VERSION:S/./_/g}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		graphics
 

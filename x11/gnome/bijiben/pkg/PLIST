@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/07/01 18:33:38 espie Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.bijiben.desktop
@@ -341,5 +341,4 @@ share/mime/packages/org.gnome.bijiben.xml
 @tag gtk-update-icon-cache %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:39 espie Exp $
 @pkgpath x11/tint
 @bin bin/tint2
 @bin bin/tint2conf
@@ -48,5 +48,4 @@ share/tint2/
 share/tint2/default_icon.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

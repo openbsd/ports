@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/07/01 18:33:35 espie Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,7 +6,7 @@ CATEGORIES =		cad
 HOMEPAGE =		http://geda.seul.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		15
+REVISION =		16
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 

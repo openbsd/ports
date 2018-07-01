@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/07/01 18:33:37 espie Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -322,6 +322,5 @@ share/mime-info/homebank.keys
 share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

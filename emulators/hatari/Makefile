@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/01 18:33:36 espie Exp $
 
 ONLY_FOR_ARCHS = i386 amd64 powerpc arm
 
@@ -7,7 +7,7 @@ COMMENT =	Atari ST/STE/TT/Falcon emulator
 V =		2.1.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 

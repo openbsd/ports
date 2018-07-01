@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2018/07/01 18:33:38 espie Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.4
 CATEGORIES=	x11
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://openbox.org/wiki/Obconf
 

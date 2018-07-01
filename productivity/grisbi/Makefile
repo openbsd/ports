@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2018/06/29 22:16:20 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2018/07/01 18:33:37 espie Exp $
 
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-1.0.4
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	productivity x11
 

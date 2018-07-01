@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/27 21:03:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/07/01 18:33:36 espie Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -2402,6 +2402,5 @@ share/pixmaps/maxima-new.png
 share/pixmaps/maxima-new.svg
 share/pixmaps/text-x-maxima-out.svg
 share/pixmaps/text-x-maximasession.svg
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

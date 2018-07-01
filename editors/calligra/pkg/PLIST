@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/07/01 18:33:35 espie Exp $
 @conflict koffice-*
 @pkgpath editors/calligra-l10n/bs
 @conflict calligra-l10n-bs-*
@@ -7432,6 +7432,5 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

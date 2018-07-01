@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/06/29 22:16:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/07/01 18:33:36 espie Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -2750,7 +2750,6 @@ share/mime-info/gramps.mime
 share/mime/packages/gramps.xml
 share/pixmaps/
 share/pixmaps/gramps.png
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/gnome
 @tag update-desktop-database

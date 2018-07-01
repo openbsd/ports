@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/04/14 10:01:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/07/01 18:33:38 espie Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
 @bin bin/akonaditest
@@ -1493,6 +1493,5 @@ share/kde4/servicetypes/kontactplugin.desktop
 share/kde4/servicetypes/kresources_manager.desktop
 share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/packages/kdepimlibs-mime.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 share/mime/packages/x-vnd.akonadi.socialfeeditem.xml

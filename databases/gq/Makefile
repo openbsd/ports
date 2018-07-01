@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2018/06/29 22:16:10 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2018/07/01 18:33:35 espie Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.3.4
-REVISION=	14
+REVISION=	15
 
 CATEGORIES=	databases sysutils
 

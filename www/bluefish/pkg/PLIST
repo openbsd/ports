@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/07/01 18:33:38 espie Exp $
 @bin bin/bluefish
 lib/bluefish/
 lib/bluefish/about.so
@@ -470,7 +470,6 @@ share/xml/bluefish/
 share/xml/bluefish/2.0/
 share/xml/bluefish/2.0/bflang2.rng
 share/xml/bluefish/catalog.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

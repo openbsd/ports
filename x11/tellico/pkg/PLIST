@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/07/01 18:33:38 espie Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -333,6 +333,5 @@ share/tellico/welcome.html
 share/tellico/xmp2tellico.xsl
 share/tellico/z3950-servers.cfg
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

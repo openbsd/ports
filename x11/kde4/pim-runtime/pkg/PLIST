@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/07/01 18:33:38 espie Exp $
 @bin bin/accountwizard
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_davgroupware_resource
@@ -225,7 +225,6 @@ share/kde4/servicetypes/davgroupwareprovider.desktop
 share/mime/packages/accountwizard-mime.xml
 share/mime/packages/kdepim-mime.xml
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 share/mime/packages/x-vnd.akonadi.socialnotification.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

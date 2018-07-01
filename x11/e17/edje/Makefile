@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2018/07/01 18:33:38 espie Exp $
 
 COMMENT =		complex graphical design & layout library
 
 DISTNAME =		edje-1.7.10
 EPOCH =			2
 SHARED_LIBS +=	edje                 4.0      # 8.10
-REVISION =		3
+REVISION =		4
 
 # BSD (epp binary GPLv2)
 PERMIT_PACKAGE_CDROM =	Yes

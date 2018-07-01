@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/01 18:33:37 espie Exp $
 @bin bin/xca
 @bin bin/xca_db_stat
 @man man/man1/xca.1
@@ -39,5 +39,4 @@ share/xca/xca_ru.qm
 share/xca/xca_sk.qm
 share/xca/xca_tr.qm
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

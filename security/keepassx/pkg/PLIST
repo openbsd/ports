@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:37 espie Exp $
 @bin bin/keepassx
 lib/keepassx/
 lib/keepassx/libkeepassx-autotype-x11.so
@@ -192,7 +192,6 @@ share/keepassx/translations/keepassx_uk.qm
 share/keepassx/translations/keepassx_zh_CN.qm
 share/keepassx/translations/keepassx_zh_TW.qm
 share/mime/packages/keepassx.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

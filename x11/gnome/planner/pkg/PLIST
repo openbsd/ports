@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/06/29 22:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/07/01 18:33:38 espie Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -292,6 +292,5 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/planner.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

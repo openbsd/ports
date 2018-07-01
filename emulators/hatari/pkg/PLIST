@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:36 espie Exp $
 bin/atari-convert-dir
 @bin bin/gst2ascii
 @bin bin/hatari
@@ -86,5 +86,4 @@ share/icons/hicolor/scalable/mimetypes/application-x-stx-disk-image.svg
 share/mime/packages/hatari.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

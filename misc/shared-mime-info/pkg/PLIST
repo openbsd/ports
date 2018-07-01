@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/06/29 14:09:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/07/01 18:33:37 espie Exp $
 share/mime/
 share/mime/packages/
 share/mime/packages/freedesktop.org.xml
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@define-tag update-mime-database at-end %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @bin bin/update-mime-database
 @man man/man1/update-mime-database.1
 share/locale/ar/LC_MESSAGES/shared-mime-info.mo
@@ -118,4 +119,3 @@ share/mime/video/
 share/mime/x-content/
 share/mime/x-epoc/
 share/pkgconfig/shared-mime-info.pc
-@exec %D/bin/update-mime-database %D/share/mime

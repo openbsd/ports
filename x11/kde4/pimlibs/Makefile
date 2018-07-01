@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2018/04/14 10:01:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2018/07/01 18:33:38 espie Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-4.14.10
-REVISION =	5
+REVISION =	6
 
 DPB_PROPERTIES =	parallel
 

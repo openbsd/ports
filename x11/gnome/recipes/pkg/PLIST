@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/01 18:33:38 espie Exp $
 @bin bin/gnome-recipes
 share/appdata/
 share/appdata/org.gnome.Recipes.appdata.xml
@@ -263,8 +263,7 @@ share/locale/sr/LC_MESSAGES/gnome-recipes.mo
 share/locale/sv/LC_MESSAGES/gnome-recipes.mo
 share/mime/packages/org.gnome.Recipes-mime.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

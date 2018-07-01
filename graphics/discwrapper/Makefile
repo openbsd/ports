@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:36 espie Exp $
 
 COMMENT=	disc cover designer
 
 DISTNAME=	discwrapper-1.2.2
-REVISION =	2
+REVISION =	3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://discwrapper.sourceforge.net/

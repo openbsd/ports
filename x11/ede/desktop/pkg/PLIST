@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:38 espie Exp $
 @bin bin/ede-about
 @bin bin/ede-autostart
 @bin bin/ede-bell-conf
@@ -1525,7 +1525,6 @@ share/wallpapers/winter-sunset-3456x2304.jpg
 share/xsessions/
 share/xsessions/ede.desktop
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/edeneu
 @tag gtk-update-icon-cache %D/share/icons/kbflags

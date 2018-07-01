@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/01 09:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/01 18:33:35 espie Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -6,7 +6,7 @@ V =			0.10
 DISTNAME =		ktikz_${V}
 PKGNAME =		KtikZ-${V}
 
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/

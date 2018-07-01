@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/29 22:16:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/07/01 18:33:35 espie Exp $
 @bin bin/gq
 share/applications/gq.desktop
 share/gnome/
@@ -34,6 +34,5 @@ share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textview.png
 share/pixmaps/gq/warning.xpm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

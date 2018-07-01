@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/01 18:33:36 espie Exp $
 @conflict cmail-*
 bin/cmail
 @bin bin/xboard
@@ -241,6 +241,5 @@ share/locale/zh_HK/LC_MESSAGES/xboard.mo
 share/locale/zh_TW/LC_MESSAGES/xboard.mo
 share/mime/packages/xboard.xml
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/07/01 18:33:39 espie Exp $
 @bin bin/remote-viewer
 @bin bin/virt-viewer
 libexec/spice-xpi-client-remote-viewer
@@ -116,5 +116,4 @@ share/locale/zu/LC_MESSAGES/virt-viewer.mo
 share/mime/packages/virt-viewer-mime.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

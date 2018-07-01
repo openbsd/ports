@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/06/29 22:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.42 2018/07/01 18:33:36 espie Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -4347,5 +4347,4 @@ share/qgis/svg/wind_roses/WindRose_02.svg
 share/qgis/wms_metadata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

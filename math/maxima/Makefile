@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2018/07/01 18:33:36 espie Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.41.0
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://maxima.sourceforge.net/
 MAINTAINER=		Ingo Feinerer <feinerer@logic.at>

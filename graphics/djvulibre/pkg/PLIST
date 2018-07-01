@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:36 espie Exp $
 @pkgpath graphics/djvulibre,no_x11
 @comment bin/any2djvu
 @bin bin/bzz
@@ -88,5 +88,4 @@ share/icons/hicolor/96x96/mimetypes/djvu.png
 share/icons/hicolor/scalable/mimetypes/djvu.svgz
 share/mime/packages/djvulibre-mime.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

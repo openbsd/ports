@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/01 18:33:36 espie Exp $
 
 BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
 
@@ -9,7 +9,7 @@ COMMENT =	nintendo 3DS emulator
 V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/12/28 12:26:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:38 espie Exp $
 @bin bin/edje_cc
 @bin bin/edje_decc
 @bin bin/edje_external_inspector
@@ -71,5 +71,4 @@ share/edje/examples/toggle_using_filter.edc
 share/edje/include/
 share/edje/include/edje.inc
 share/mime/packages/edje.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

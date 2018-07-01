@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/01 18:33:37 espie Exp $
 @bin bin/grisbi
 @man man/man1/grisbi.1
 share/applications/grisbi.desktop
@@ -520,6 +520,5 @@ share/pixmaps/grisbi/transdisplay.png
 share/pixmaps/grisbi/transfer.png
 share/pixmaps/grisbi/warnings.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

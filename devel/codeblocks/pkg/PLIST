@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/29 22:16:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/07/01 18:33:35 espie Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks
@@ -1974,6 +1974,5 @@ share/mime/packages/codeblocks.xml
 share/pixmaps/
 share/pixmaps/codeblocks.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/01 18:33:36 espie Exp $
 @bin bin/citra
 @bin bin/citra-qt
 @bin bin/citra-room
@@ -8,6 +8,5 @@ share/applications/citra.desktop
 share/icons/hicolor/scalable/apps/citra.svg
 share/mime/packages/citra.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

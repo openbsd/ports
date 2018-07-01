@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:35 espie Exp $
 @bin bin/lmms
 lib/lmms/
 lib/lmms/libOPL2.so
@@ -2822,7 +2822,6 @@ share/lmms/wavetables/saw.bin
 share/lmms/wavetables/sqr.bin
 share/lmms/wavetables/tri.bin
 share/mime/packages/lmms.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

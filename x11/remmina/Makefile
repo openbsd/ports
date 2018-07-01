@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/07/01 18:33:38 espie Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -6,7 +6,7 @@ GH_TAGNAME=		v1.2.30
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
 PKGNAME =		remmina-${GH_TAGNAME:S/v//}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		x11 net
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/27 21:04:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/07/01 18:33:37 espie Exp $
 @bin bin/scribus
 include/scribus/
 include/scribus/KarbonCurveFit.h
@@ -3449,6 +3449,5 @@ share/scribus/translations/scribus.uk.qm
 share/scribus/translations/scribus.zh_CN.qm
 share/scribus/translations/scribus.zh_TW.qm
 share/scribus/unicodenameslist.txt
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

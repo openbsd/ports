@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:30 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/07/01 18:33:38 espie Exp $
 
 COMMENT =	solitare games collection for KDE
 DISTNAME =	kpat-${MODKDE4_VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =	kcardgame	50.0
 

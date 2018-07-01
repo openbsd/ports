@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/10 14:05:00 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:37 espie Exp $
 @pkgpath x11/kde4/akonadi
 @bin bin/akonadi_agent_launcher
 @bin bin/akonadi_agent_server
@@ -49,5 +49,4 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

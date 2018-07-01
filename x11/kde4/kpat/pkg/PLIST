@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:38 espie Exp $
 @conflict kdegames-<4
 @bin bin/kpat
 @lib ${KDE4LIB}/libkcardgame.so.${LIBkcardgame_VERSION}
@@ -58,6 +58,5 @@ share/icons/hicolor/48x48/apps/kpat.png
 share/icons/hicolor/64x64/apps/kpat.png
 share/mime/packages/kpatience.xml
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

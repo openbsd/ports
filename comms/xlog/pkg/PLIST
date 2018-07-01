@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:35 espie Exp $
 @bin bin/xlog
 @man man/man1/xlog.1
 share/applications/xlog.desktop
@@ -527,6 +527,5 @@ share/xlog/maps/ZP.png
 share/xlog/maps/ZS.png
 share/xlog/maps/ZS8.png
 share/xlog/maps/worldmap.jpg
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database

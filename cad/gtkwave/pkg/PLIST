@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:35 espie Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
@@ -100,6 +100,5 @@ share/pixmaps/gtkwave_256x256x32.png
 share/pixmaps/gtkwave_files_256x256x32.png
 share/pixmaps/gtkwave_savefiles_256x256x32.png
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/gnome

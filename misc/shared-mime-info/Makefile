@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2018/06/29 14:09:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/07/01 18:33:37 espie Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-1.10
+REVISION=		0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info

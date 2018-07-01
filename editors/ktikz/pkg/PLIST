@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/07/01 18:33:35 espie Exp $
 @bin bin/qtikz
 @man man/man1/qtikz.1
 share/applications/qtikz.desktop
@@ -18,5 +18,4 @@ share/qtikz/templates/beamer-example-template.pgs
 share/qtikz/templates/template_example.pgs
 share/qtikz/templates/template_example2.pgs
 @tag update-desktop-database
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database

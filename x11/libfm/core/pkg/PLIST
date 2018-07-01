@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:38 espie Exp $
 @pkgpath x11/libfm
 @bin bin/libfm-pref-apps
 @bin bin/lxshortcut
@@ -112,6 +112,5 @@ share/libfm/ui/filesearch.ui
 share/libfm/ui/preferred-apps.ui
 share/libfm/ui/progress.ui
 share/mime/packages/libfm.xml
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
+@tag update-mime-database
 @tag update-desktop-database
