@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/29 18:11:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/01 02:08:21 jturner Exp $
 
 COMMENT =		extract C reference manpages from SQLite3 header file
 
-DISTNAME =		sqlite2mdoc-0.1.2
+DISTNAME =		sqlite2mdoc-0.1.4
 
 MAINTAINER =		Kristaps Dzonsons <kristaps@bsd.lv>
 
