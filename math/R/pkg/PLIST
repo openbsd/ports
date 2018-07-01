@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2018/04/24 17:13:38 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.38 2018/07/01 09:02:41 espie Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -1964,5 +1964,4 @@ share/texmf-local/tex/latex/omsaett.fd
 share/texmf-local/tex/latex/omscmtt.fd
 share/texmf-local/tex/latex/ts1aer.fd
 share/texmf-local/tex/latex/ts1aett.fd
-@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@tag mktexlsr-local

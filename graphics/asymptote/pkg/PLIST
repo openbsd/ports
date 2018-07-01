@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/05/30 19:56:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/07/01 09:02:41 espie Exp $
 @bin bin/asy
 @info info/asy-faq.info
 @info info/asymptote.info
@@ -452,5 +452,4 @@ share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
 share/texmf-local/tex/latex/asymptote/latexmkrc
 share/texmf-local/tex/latex/asymptote/ocg.sty
-@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@tag mktexlsr-local

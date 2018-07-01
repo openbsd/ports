@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/07/01 09:02:41 espie Exp $
 
 COMMENT =	driver to format LaTeX documents
 
 DISTNAME =	LaTeX-Driver-0.200.4
 CATEGORIES =	textproc
+REVISION =	0
 
 MODULES =	cpan
 PKG_ARCH =	*

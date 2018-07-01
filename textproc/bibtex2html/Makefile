@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/30 07:42:00 feinerer Exp $
+# $OpenBSD: Makefile,v 1.4 2018/07/01 09:02:41 espie Exp $
 
 COMMENT =		collection of tools for translating from BibTeX to HTML
 
 DISTNAME =		bibtex2html-1.99
+REVISION =		0
 
 CATEGORIES =		textproc
 HOMEPAGE =		https://www.lri.fr/~filliatr/bibtex2html/

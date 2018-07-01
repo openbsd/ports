@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/04/27 09:18:03 feinerer Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/01 09:02:41 espie Exp $
 
 COMMENT =	pretty printing of your mails
 
 DISTNAME =	muttprint-0.73
+REVISION =	0
 
 CATEGORIES =	print mail
 

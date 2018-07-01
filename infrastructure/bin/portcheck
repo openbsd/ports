@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.118 2018/06/28 14:52:28 espie Exp $
+# $OpenBSD: portcheck,v 1.119 2018/07/01 09:02:41 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -906,12 +906,12 @@ sub_checks() {
 
 # Checks made:
 #   * If package installs system-wide icons, it should have the
-#     x11/gtk+3,-guic dependency and @exec/@unexec-delete with
-#     %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$theme
+#     x11/gtk+3,-guic dependency and 
+#     @tag gtk-update-icon-cache %D/share/icons/$theme
 #     for each icon theme used in package. If there is an
-#     index.theme provided, then, instead of gtk-update-icon-cache,
-#     @unexec-delete should contain the following command:
-#     rm -f %D/share/icons/$theme/icon-theme.cache
+#     index.theme provided, then, instead of the tag,
+#     it should contain the following:
+#     @unexec-delete rm -f %D/share/icons/$theme/icon-theme.cache
 #
 #   * If package adds a MIME type handler, it should have the
 #     devel/desktop-file-utils dependency and @tag update-desktop-database . 

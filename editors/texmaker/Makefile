@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2018/06/27 21:03:41 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2018/07/01 09:02:40 espie Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.5
 CATEGORIES=		editors
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 

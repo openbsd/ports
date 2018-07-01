@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/11 23:49:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/07/01 09:02:41 espie Exp $
 
 COMMENT=		create PNG images from LaTeX expressions
 
 DISTNAME=		l2p-1.1.1
 CATEGORIES=		graphics print
+REVISION=		0
 
 HOMEPAGE=		http://redsymbol.net/software/l2p/
 

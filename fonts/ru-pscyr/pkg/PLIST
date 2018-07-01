@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/30 19:56:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/01 09:02:41 espie Exp $
 @pkgpath russion/pscyr
 share/texmf-local/doc/
 share/texmf-local/doc/fonts/
@@ -349,9 +349,8 @@ share/texmf-local/tex/latex/pscyr/t2aflz.fd
 share/texmf-local/tex/latex/pscyr/t2afma.fd
 share/texmf-local/tex/latex/pscyr/t2aftm.fd
 share/texmf-local/tex/latex/pscyr/t2aftx.fd
-@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@tag mktexlsr-local
 @exec %D/bin/updmap-sys --quiet --nomkmap --enable Map=pscyr.map
 @exec %D/bin/updmap-sys --quiet --enable Map=pscyr2.map
-@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
 @unexec-delete %D/bin/updmap-sys --quiet --nomkmap --disable pscyr.map
 @unexec-delete %D/bin/updmap-sys --quiet --disable pscyr2.map

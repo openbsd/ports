@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/03 10:24:55 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/01 09:02:41 espie Exp $
 @bin bin/ginfo
 @bin bin/ginstall-info
 bin/gmakeinfo
@@ -506,5 +506,4 @@ share/texmf-local/tex/texinfo/txi-ru.tex
 share/texmf-local/tex/texinfo/txi-sr.tex
 share/texmf-local/tex/texinfo/txi-tr.tex
 share/texmf-local/tex/texinfo/txi-uk.tex
-@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@tag mktexlsr-local
