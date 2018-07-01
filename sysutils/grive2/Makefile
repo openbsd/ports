@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/01 11:52:40 rsadowski Exp $
 
 COMMENT =	third-party client for Google Drive
 
 VERSION =	0.5.0
 DISTNAME =	grive2-${VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 HOMEPAGE = 	http://yourcmc.ru/wiki/Grive2
 

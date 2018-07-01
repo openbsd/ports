@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/01 11:52:40 rsadowski Exp $
 
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.5.1
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.profanity.im/
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
