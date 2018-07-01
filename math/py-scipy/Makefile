@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/26 11:25:41 daniel Exp $
-
-BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
-BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
-BROKEN-alpha =		ICE in scipy/optimize/minpack/lmstr.f:462
+# $OpenBSD: Makefile,v 1.33 2018/07/01 23:14:19 daniel Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	0.17.1
+MODPY_EGG_VERSION=	1.1.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		math devel
 
@@ -32,7 +27,6 @@ MODFORTRAN_COMPILER =	gfortran
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=       Yes
-MODPY_SETUP=            setupegg.py
 MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
@@ -41,21 +35,13 @@ LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS}
 RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.6.0 \
 			devel/swig
 
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/amd -I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
 
-# scipy.weave is only packaged under python2
-.if ${FLAVOR:Mpython3}
-MODPY_COMMENT3 = "@comment "
-.else
-MODPY_COMMENT3 =
-.endif
-SUBST_VARS += MODPY_COMMENT3
-
 do-test: fake
-	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
+	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 		'import scipy ; scipy.test("full")'
 
 .include <bsd.port.mk>
