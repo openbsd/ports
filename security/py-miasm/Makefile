@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/27 14:32:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/01 19:13:59 sthen Exp $
+
+BROKEN-i386 =	uint128_t
 
 COMMENT =	reverse engineering framework in Python
 
