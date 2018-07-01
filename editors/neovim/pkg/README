@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2017/05/02 20:58:42 edd Exp $
+$OpenBSD: README,v 1.2 2018/07/01 14:16:29 edd Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,5 +18,8 @@ dir is ~/.config/nvim, and the main config file is ~/.config/nvim/init.vim. You
 can symlink your existing traditional vim config and directory to the new
 paths, and this will work.
 
-The first time you invoke nvim, run ':CheckHealth' to see what else you might
+The first time you invoke nvim, run ':checkhealth' to see what else you might
 need to do to migrate.
+
+Please note that ':checkhealth' was called ':CheckHealth' (with different
+capitalisation) prior to neovim version 0.3.0.

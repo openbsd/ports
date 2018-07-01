@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:03:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/01 14:16:29 edd Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.2.2
-REVISION =	1
+GH_TAGNAME =	v0.3.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -15,7 +14,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
-WANTLIB += unibilium util uv vterm
+WANTLIB += unibilium util uv vterm ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake \
 			lang/lua \
@@ -46,7 +45,9 @@ CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN} \
 # Tests need gmake
 USE_GMAKE = Yes
 # `test_startup_utf8.vim' requires either bash or zsh
-TEST_DEPENDS = shells/bash
+TEST_DEPENDS =	shells/bash \
+		editors/py-neovim \
+		editors/py-neovim,python3
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.

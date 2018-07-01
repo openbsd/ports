@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/01 14:16:29 edd Exp $
 @bin bin/nvim
 @man man/man1/nvim.1
 share/applications/nvim.desktop
@@ -56,6 +56,8 @@ share/nvim/runtime/autoload/context.vim
 share/nvim/runtime/autoload/contextcomplete.vim
 share/nvim/runtime/autoload/csscomplete.vim
 share/nvim/runtime/autoload/decada.vim
+share/nvim/runtime/autoload/dist/
+share/nvim/runtime/autoload/dist/ft.vim
 share/nvim/runtime/autoload/gnat.vim
 share/nvim/runtime/autoload/gzip.vim
 share/nvim/runtime/autoload/health/
@@ -204,6 +206,7 @@ share/nvim/runtime/doc/api.txt
 share/nvim/runtime/doc/arabic.txt
 share/nvim/runtime/doc/autocmd.txt
 share/nvim/runtime/doc/change.txt
+share/nvim/runtime/doc/channel.txt
 share/nvim/runtime/doc/cmdline.txt
 share/nvim/runtime/doc/debug.txt
 share/nvim/runtime/doc/deprecated.txt
@@ -728,6 +731,8 @@ share/nvim/runtime/keymap/ukrainian-jcuken.vim
 share/nvim/runtime/keymap/vietnamese-telex_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-viqr_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-vni_utf-8.vim
+share/nvim/runtime/lua/
+share/nvim/runtime/lua/man.lua
 share/nvim/runtime/macmap.vim
 share/nvim/runtime/macros/
 share/nvim/runtime/macros/editexisting.vim
@@ -766,7 +771,6 @@ share/nvim/runtime/pack/dist/opt/vimball/doc/vimball.txt
 share/nvim/runtime/pack/dist/opt/vimball/plugin/
 share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
 share/nvim/runtime/plugin/
-share/nvim/runtime/plugin/gui_shim.vim
 share/nvim/runtime/plugin/gzip.vim
 share/nvim/runtime/plugin/health.vim
 share/nvim/runtime/plugin/man.vim
@@ -815,6 +819,8 @@ share/nvim/runtime/print/mac-roman.ps
 share/nvim/runtime/print/prolog.ps
 share/nvim/runtime/rgb.txt
 share/nvim/runtime/scripts.vim
+share/nvim/runtime/spell/
+share/nvim/runtime/spell/en.utf-8.spl
 share/nvim/runtime/synmenu.vim
 share/nvim/runtime/syntax/
 share/nvim/runtime/syntax/2html.vim
@@ -1419,7 +1425,9 @@ share/nvim/runtime/syntax/zsh.vim
 share/nvim/runtime/tutor/
 share/nvim/runtime/tutor/en/
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor
+share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
 share/nvim/runtime/tutor/tutor.tutor
+share/nvim/runtime/tutor/tutor.tutor.json
 share/pixmaps/
 share/pixmaps/nvim.png
 @tag update-desktop-database
