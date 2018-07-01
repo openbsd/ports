@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2018/06/28 18:42:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2018/07/01 21:49:17 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.40
-REVISION =	1
+GH_TAGNAME =	1.41
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -65,8 +64,8 @@ post-extract:
 	    ${WRKSRC}/includes/defaults.inc.php
 	find ${WRKSRC} -type f -print0 | xargs -r0 perl -pi -e '$R'
 	sed -i \
-	    -e 's, librenms , _librenms ,' \
-	    -e 's, /var/www/librenms/cronic, -n,' \
+	    -e 's, librenms *, _librenms ,' \
+	    -e 's,/var/www/librenms/cronic,-n,' \
 	    ${WRKSRC}/librenms.nonroot.cron
 
 do-configure:

@@ -1,9 +1,9 @@
-$OpenBSD: patch-poller-wrapper_py,v 1.13 2017/12/13 15:30:43 sthen Exp $
+$OpenBSD: patch-poller-wrapper_py,v 1.14 2018/07/01 21:49:17 sthen Exp $
 
 Index: poller-wrapper.py
 --- poller-wrapper.py.orig
 +++ poller-wrapper.py
-@@ -53,7 +53,7 @@ config_file = ob_install_dir + '/config.php'
+@@ -54,7 +54,7 @@ config_file = ob_install_dir + '/config.php'
  
  
  def get_config_data():
@@ -12,12 +12,12 @@ Index: poller-wrapper.py
      try:
          proc = subprocess.Popen(config_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
      except:
-@@ -74,7 +74,7 @@ except:
+@@ -75,7 +75,7 @@ except:
      print "ERROR: Could not load or parse configuration, are PATHs correct?"
      sys.exit(2)
  
 -poller_path = config['install_dir'] + '/poller.php'
 +poller_path = ob_install_dir + '/poller.php'
+ log_dir = config['log_dir']
  db_username = config['db_user']
  db_password = config['db_pass']
- db_port = int(config['db_port'])
