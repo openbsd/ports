@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/24 20:55:04 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2018/07/01 06:28:12 landry Exp $
 
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 2.0.7
+MODPY_EGG_VERSION = 2.1.0
 
 GH_ACCOUNT =	idan
 GH_PROJECT =	oauthlib
