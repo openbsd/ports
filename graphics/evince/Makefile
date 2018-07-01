@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.157 2018/06/29 22:16:16 espie Exp $
+# $OpenBSD: Makefile,v 1.158 2018/07/01 09:00:36 espie Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.28.2
-REVISION=		1
+REVISION=		2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -81,10 +81,13 @@ CONFIGURE_ARGS +=	--disable-dbus \
 MODGNOME_TOOLS +=	yelp
 LIB_DEPENDS +=		graphics/djvulibre \
 			graphics/libgxps \
-			print/texlive/base \
+			print/texlive/base,-mktexlsr \
 			x11/gnome/nautilus
 WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
 WANTLIB += nautilus-extension crypto lz4
+
+# XXX not sure that's needed automatic conversion`
+RUN_DEPENDS +=	print/texlive/base,-main
 .endif
 
 post-install:
