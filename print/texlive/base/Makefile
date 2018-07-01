@@ -1,11 +1,17 @@
-# $OpenBSD: Makefile,v 1.99 2018/04/10 20:43:51 edd Exp $
+# $OpenBSD: Makefile,v 1.100 2018/07/01 08:59:32 espie Exp $
 
-COMMENT =		base binaries for TeXLive typesetting distribution
+COMMENT-main =		base binaries for TeXLive typesetting distribution
+COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-REVISION =		0
+
+REVISION-main =		1
+
+MULTI_PACKAGES = -main -mktexlsr
+PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
+PKGNAME-main =		${PKGNAME}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -15,16 +21,20 @@ SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
-WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-WANTLIB += cups cupsimage dbus-1 expat ffi fontconfig freetype
-WANTLIB += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
-WANTLIB += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
-WANTLIB += intl jbig2dec jpeg lcms2 m nettle p11-kit paper pcre
-WANTLIB += pixman-1 png potrace tasn1 tiff unistring webp xcb
-WANTLIB += xcb-render xcb-shm z zzip
+WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB-main += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
+WANTLIB-main += cups cupsimage dbus-1 expat ffi fontconfig freetype
+WANTLIB-main += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
+WANTLIB-main += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
+WANTLIB-main += intl jbig2dec jpeg lcms2 m nettle p11-kit paper pcre
+WANTLIB-main += pixman-1 png potrace tasn1 tiff unistring webp xcb
+WANTLIB-main += xcb-render xcb-shm z zzip
 
-RUN_DEPENDS =		print/ghostscript/gnu \
+WANTLIB-main += kpathsea
+
+WANTLIB-mktexlsr = c
+
+RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/detex \
 			print/dvi2tty \
 			print/ps2eps \
@@ -32,7 +42,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/t1utils \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
-LIB_DEPENDS =		converters/libiconv \
+LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
 			graphics/gd \
 			graphics/cairo \
@@ -42,7 +52,8 @@ LIB_DEPENDS =		converters/libiconv \
 			print/libpaper \
 			archivers/zziplib \
 			graphics/potrace \
-			print/ghostscript/gnu
+			print/ghostscript/gnu \
+			${BASE_PKGPATH},-mktexlsr
 
 MODULES =		textproc/intltool perl
 
@@ -79,7 +90,7 @@ CFLAGS +=	-fPIC
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
 	${MACHINE} == "powerpc" || ${MACHINE} == "sparc64"
 BUILD_DEPENDS +=	lang/clisp
-RUN_DEPENDS +=		lang/clisp
+RUN_DEPENDS-main +=		lang/clisp
 CONFIGURE_ARGS +=	--enable-xindy \
 			--disable-xindy-rules
 PKG_ARGS +=		-Dxindy=1

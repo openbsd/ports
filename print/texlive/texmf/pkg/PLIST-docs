@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.19 2018/04/11 13:40:41 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.20 2018/07/01 08:59:32 espie Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2017
 @conflict texlive_texmf-minimal-<2017
@@ -19705,5 +19705,4 @@ share/texmf-dist/doc/xetex/xetexref/xetex-reference.tex
 share/texmf-dist/scripts/
 share/texmf-dist/scripts/texlive/
 share/texmf-dist/scripts/texlive/NEWS
-@exec %D/bin/mktexlsr > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
+@tag mktexlsr

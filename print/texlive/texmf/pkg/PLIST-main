@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2018/04/11 13:40:41 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2018/07/01 08:59:32 espie Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2017
 @conflict texlive_texmf-docs-<2017
@@ -31009,5 +31009,4 @@ share/texmf-dist/tex4ht/xtpipes/xtpipes.dtd
 share/texmf-dist/ttf2pk/
 share/texmf-dist/ttf2pk/VPS.rpl
 share/texmf-dist/ttf2pk/ttf2pk.cfg
-@exec %D/bin/mktexlsr > /dev/null 2>&1
-@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
+@tag mktexlsr

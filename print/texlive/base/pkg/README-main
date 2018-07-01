@@ -1,0 +1,105 @@
+$OpenBSD: README-main,v 1.1 2018/07/01 08:59:32 espie Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Texmf Subsets
+=============
+
+There are a number of texmf trees in the OpenBSD packages:
+
+texmf-buildset:
+  The smallest of the subsets. This is primarily for building OpenBSD
+  ports (approx 100M).
+
+texmf-minimal:
+  A teTeX like tree, suitable for casual TeX users who do not need many
+  extra macros or ConTeXt (approx 250MB).
+
+texmf-full:
+  Extra macros (approx 650MB).
+
+texmf-context:
+  Macros for the conTeXt typesetter (approx 10MB).
+
+  This was separated because conTeXt maintains it's own hashes separate
+  from that of libkpse. As 99% of users don't use this, these hashes are
+  generated only when the conTeXt macros are installed.
+
+texmf-doc:
+  Documentation (approx 900MB).
+
+  To take load off the OpenBSD mirrors this is only the documentation
+  for the texmf-minimal and texmf-buildset trees. This should include
+  documentation for the most popular packages.
+
+All sizes are approximate compressed package sizes and the texmf package
+contents do not overlap.
+
+There is a *lot* of functionality in texmf-full, so before reporting
+"missing" features, please try installing texmf-full first. Eg. xindy
+requires texmf-full.
+
+User Local Texmf Trees
+======================
+
+Individual users may override or add to the TeX class and style files
+supplied by TeX Live by installing them into ~/texmf. There is no need
+to run mktexlsr(1) for a texmf tree in a user's $HOME. You can test the
+installation by searching for the files using kpsewhich(1). Eg:
+
+% find $HOME/texmf
+/home/edd/texmf
+/home/edd/texmf/tex
+/home/edd/texmf/tex/latex
+/home/edd/texmf/tex/latex/acronym
+/home/edd/texmf/tex/latex/acronym/acronym.sty
+% kpsewhich acronym.sty
+/home/edd/texmf/tex/latex/acronym/acronym.sty
+
+Other Misc. Notes
+=================
+
+Tlmgr
+-----
+
+The 'tlmgr' script is disabled in the OpenBSD package. If you were to use
+tlmgr to alter/update your texmf, the package tools would become rather upset.
+
+Soft Dependencies
+-----------------
+
+Some requirements of TeX Live were not included as dependencies to make the
+package less bloated for people who don't need those features.
+
+As far as I know:
+
+ * asymptote is in ports: graphics/asymptote
+ * TeX Works is editors/texworks
+ * latexmk is textproc/latexmk
+ * textproc/py-pygments is required for the minted package.
+ * converters/unix2dos is needed for installfont-tl script
+ * x11/tk/${MODTK_VERSION} is needed for epspdftk
+ * lang/ruby/${MODRUBY_LIBREV} is needed for convbkmk, epspdf, and
+   other stuff.
+ * Some scripts need bash.
+
+If you know more, please mail the package maintainer.
+
+Notes for Developers
+--------------------
+
+ * If you have a port which needs TeX stuff at build time, then it should
+   BUILD_DEPENDS upon texlive_base which in turn will pull in
+   texlive_texmf-buildset.
+
+ * If the buildset is missing something that your port needs to build, then
+   you can depend temporarily upon texlive_texmf-minimal or texlive_texmf-full.
+   If you have to do this, please send an email to MAINTAINER so that we can
+   have the support you need added to the buildset texmf.
+
+ * If a non-texlive port installs texmf files then they should be installed
+   into share/texmf-local, NOT share/texmf or share/texmf-dist.
+
+Have fun TeXing.

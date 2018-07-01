@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/06/24 15:14:25 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2018/07/01 08:59:32 espie Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -23,9 +23,11 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
-REVISION-main =		0
-REVISION-full =		0
-REVISION-buildset =	0
+REVISION-main =		1
+REVISION-full =		1
+REVISION-buildset =	1
+REVISION-context =	0
+REVISION-docs =		0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -42,15 +44,16 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
+RUN_DEPENDS-main +=	texlive_base-${V}p1:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+RUN_DEPENDS-docs +=	texlive_base-${V}p1:print/texlive/base,-main \
 			x11/p5-Tk
+RUN_DEPENDS-buildset +=	texlive_mktexlsr-${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 

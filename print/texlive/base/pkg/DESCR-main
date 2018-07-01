@@ -1,0 +1,6 @@
+TeX Live is an easy way to get up and running with TeX. It provides a
+comprehensive TeX system which includes all the major TeX-related
+programs, macro packages, and fonts that are free software, including
+support for many languages around the world.
+
+This package contains the binary programs required by TeXLive.

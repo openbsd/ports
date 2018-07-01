@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-buildset,v 1.9 2018/04/11 13:40:41 edd Exp $
+@comment $OpenBSD: PLIST-buildset,v 1.10 2018/07/01 08:59:32 espie Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2017
 @conflict texlive_texmf-docs-<2017
@@ -6163,4 +6163,4 @@ share/texmf-var/web2c/xetex/cont-en.fmt
 share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
-@exec-update if [ -e "%D/bin/mktexlsr" ]; then %D/bin/mktexlsr > /dev/null 2>&1; fi
+@tag mktexlsr

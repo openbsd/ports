@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.xindy,v 1.3 2011/11/23 12:00:45 edd Exp $
-@bin bin/tex2xindy
-bin/texindy
-bin/xindy
-bin/xindy.mem
