@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/02 12:30:56 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/01 14:21:36 edd Exp $
 
 COMMENT =	Python plugin support for Neovim
 
-MODPY_EGG_VERSION =	0.2.0
+MODPY_EGG_VERSION =	0.2.6
 DISTNAME =		py-neovim-${MODPY_EGG_VERSION}
 
 CATEGORIES =	editors devel
@@ -26,11 +26,13 @@ RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
 			devel/py-uv${MODPY_FLAVOR} \
 			devel/py-greenlet${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+			devel/py-test${MODPY_FLAVOR} \
+			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 WRKDIST =		${WRKDIR}/neovim-${MODPY_EGG_VERSION}
 
+# You may need to increase the file descriptor ulimits to run tests.
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
