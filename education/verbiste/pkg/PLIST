@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/01 09:01:29 espie Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -47,6 +47,4 @@ share/verbiste-0.1/conjugation-it.xml
 share/verbiste-0.1/verbs-fr.xml
 share/verbiste-0.1/verbs-it.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@comment texlive is not a strict RUN_DEPEND, so allow hashing to fail
-@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1 || true
-@unexec-delete %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1 || true
+@tag mktexlsr-local
