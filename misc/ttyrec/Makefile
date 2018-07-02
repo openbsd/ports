@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2018/07/02 07:21:10 ajacoutot Exp $
 
 COMMENT=	tty recorder
 
 DISTNAME=	ttyrec-1.0.8
-REVISION=	2
+REVISION=	3
 CATEGORIES=	misc
 
-HOMEPAGE=	http://0xcc.net/ttyrec/index.html.en
+HOMEPAGE=	http://0xcc.net/ttyrec/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
