@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/01 11:52:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/02 11:21:29 naddy Exp $
 
 COMMENT =	third-party client for Google Drive
 
 VERSION =	0.5.0
 DISTNAME =	grive2-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -15,7 +15,6 @@ HOMEPAGE = 	http://yourcmc.ru/wiki/Grive2
 GH_ACCOUNT =	vitalif
 GH_PROJECT =	grive2
 GH_COMMIT =	ae06eccb38b2fe250c9ddeac3e3973f80b8a0aa9
-REVISION =	0
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
