@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/07/02 08:22:25 landry Exp $
 
 COMMENT =	Qt-based MPD client
 
-V =			2.2.0
+V =			2.3.1
 DISTNAME =	cantata-${V}
-REVISION =	2
 HOMEPAGE =	https://github.com/CDrummond/cantata
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
 WANTLIB += avcodec avformat avutil c cddb cdio cdio_cdda cdio_paranoia
-WANTLIB += m mpg123 mtp musicbrainz5 tag z
+WANTLIB += m mpg123 mtp musicbrainz5 tag z avahi-client avahi-common
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -39,5 +38,9 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
 			-DENABLE_LIBVLC=OFF \
 			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
 			-DLCONVERT_EXECUTABLE:String=${LOCALBASE}/lib/qt5/bin/lconvert
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cantata/dbus-1/system.d/
+	mv ${WRKINST}/etc/dbus-1/system.d/*.conf ${PREFIX}/share/examples/cantata/dbus-1/system.d/
 
 .include <bsd.port.mk>

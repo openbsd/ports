@@ -1,56 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/02 08:22:25 landry Exp $
 @bin bin/cantata
 lib/cantata/
+@bin lib/cantata/cantata-mounter
 @bin lib/cantata/cantata-replaygain
 @bin lib/cantata/cantata-tags
 share/applications/cantata.desktop
 share/cantata/
-share/cantata/config/
-share/cantata/config/lyrics_providers.xml
-share/cantata/config/podcast_directories.xml
-share/cantata/config/scrobblers.xml
-share/cantata/config/tag_fixes.xml
-share/cantata/config/weblinks.xml
-share/cantata/fonts/
-share/cantata/fonts/fontawesome-webfont.ttf
 share/cantata/icons/
-share/cantata/icons/bbc.svg
-share/cantata/icons/cantata/
-share/cantata/icons/cantata/AUTHORS
-share/cantata/icons/cantata/LICENSE
-share/cantata/icons/cantata/index.theme
-share/cantata/icons/cantata/svg/
-share/cantata/icons/cantata/svg/audio-x-generic.svg
-share/cantata/icons/cantata/svg/cantata.svg
-share/cantata/icons/cantata/svg/drive-removable-media-usb-pendrive.svg
-share/cantata/icons/cantata/svg/folder-downloads.svg
-share/cantata/icons/cantata/svg/folder-temp.svg
-share/cantata/icons/cantata/svg/fork.svg
-share/cantata/icons/cantata/svg/information.svg
-share/cantata/icons/cantata/svg/inode-directory.svg
-share/cantata/icons/cantata/svg/multimedia-player.svg
-share/cantata/icons/cantata/svg/network-server-database.svg
-share/cantata/icons/cantata/svg/preferences-desktop-keyboard.svg
-share/cantata/icons/cantata/svg/preferences-other.svg
-share/cantata/icons/cantata/svg/speaker.svg
-share/cantata/icons/cantata/svg64/
-share/cantata/icons/cantata/svg64/dialog-error.svg
-share/cantata/icons/cantata/svg64/dialog-information.svg
-share/cantata/icons/cantata/svg64/dialog-question.svg
-share/cantata/icons/cantata/svg64/dialog-warning.svg
-share/cantata/icons/cbc.svg
-share/cantata/icons/npr.svg
 share/cantata/icons/podcasts.png
 share/cantata/icons/soundcloud.png
 share/cantata/icons/stream.png
-share/cantata/mpd/
-share/cantata/mpd/mpd.conf.template
 share/cantata/scripts/
 share/cantata/scripts/cantata-dynamic
 share/cantata/scripts/cantata-remote
+share/cantata/scripts/mount.cifs.wrapper
 share/cantata/translations/
-share/cantata/translations/blank.qm
 share/cantata/translations/cantata_cs.qm
+share/cantata/translations/cantata_da.qm
 share/cantata/translations/cantata_de.qm
 share/cantata/translations/cantata_en_GB.qm
 share/cantata/translations/cantata_es.qm
@@ -62,6 +28,14 @@ share/cantata/translations/cantata_ko.qm
 share/cantata/translations/cantata_pl.qm
 share/cantata/translations/cantata_ru.qm
 share/cantata/translations/cantata_zh_CN.qm
+share/dbus-1/system-services/mpd.cantata.mounter.service
+share/examples/cantata/
+share/examples/cantata/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
+share/examples/cantata/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/cantata/dbus-1/system.d/mpd.cantata.mounter.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/mpd.cantata.mounter.conf
 share/icons/hicolor/128x128/apps/cantata.png
 share/icons/hicolor/16x16/apps/cantata.png
 share/icons/hicolor/22x22/apps/cantata.png
@@ -71,7 +45,7 @@ share/icons/hicolor/32x32/apps/cantata.png
 share/icons/hicolor/48x48/apps/cantata.png
 share/icons/hicolor/512x512/apps/cantata.png
 share/icons/hicolor/64x64/apps/cantata.png
-share/icons/hicolor/scalable/apps/cantata-symbolic.svg
 share/icons/hicolor/scalable/apps/cantata.svg
+share/icons/hicolor/symbolic/apps/cantata-symbolic.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
+@tag update-desktop-database 

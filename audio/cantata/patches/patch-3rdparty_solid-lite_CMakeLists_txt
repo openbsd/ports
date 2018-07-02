@@ -1,0 +1,16 @@
+$OpenBSD: patch-3rdparty_solid-lite_CMakeLists_txt,v 1.1 2018/07/02 08:22:25 landry Exp $
+
+fallout from https://github.com/CDrummond/cantata/issues/1175
+
+Index: 3rdparty/solid-lite/CMakeLists.txt
+--- 3rdparty/solid-lite/CMakeLists.txt.orig
++++ 3rdparty/solid-lite/CMakeLists.txt
+@@ -45,7 +45,7 @@ set(solidlite_LIB_SRCS
+    backends/shared/rootdevice.cpp
+ )
+ 
+-   if (NOT WIN32 AND NOT APPLE AND WITH_SOLID_UDISKS2)
++   if (NOT WIN32 AND NOT APPLE AND NOT OPENBSD AND WITH_SOLID_UDISKS2)
+      find_package( UDev REQUIRED)
+      macro_log_feature( UDEV_FOUND "UDev" "UDev support for Solid" "http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html" FALSE "" "Allows Solid to use UDev to provide information about devices on Linux" )
+    endif()
