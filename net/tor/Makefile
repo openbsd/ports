@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.114 2018/06/13 13:59:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.115 2018/07/02 10:00:41 kn Exp $
 
 COMMENT=	anonymity service using onion routing
 
 DISTNAME=	tor-0.3.3.7
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
@@ -31,5 +32,8 @@ DB_DIR=		/var/tor
 SUBST_VARS+=	DB_DIR
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/TUNING ${PREFIX}/share/doc/tor/
 
 .include <bsd.port.mk>
