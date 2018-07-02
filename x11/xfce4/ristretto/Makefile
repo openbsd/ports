@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/29 22:16:35 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/07/02 08:19:56 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
-XFCE_VERSION=	0.8.2
+XFCE_VERSION=	0.8.3
 XFCE_GOODIE=	ristretto
-REVISION =	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,14 +13,13 @@ MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 RUN_DEPENDS=	misc/shared-mime-info
 
-LIB_DEPENDS=	x11/dbus-glib \
-		devel/libmagic \
+LIB_DEPENDS=	devel/libmagic \
 		graphics/libexif \
 		x11/xfce4/libxfce4ui \
 		x11/xfce4/xfconf>=4.12.1
 
 WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes SM ICE \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 \
+		Xi Xinerama Xrandr Xrender atk-1.0 c cairo fribidi \
 		exif fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/07/02 08:19:56 landry Exp $
 @bin bin/ristretto
 share/appdata/
 share/appdata/ristretto.appdata.xml
@@ -44,6 +44,7 @@ share/locale/ro/LC_MESSAGES/ristretto.mo
 share/locale/ru/LC_MESSAGES/ristretto.mo
 share/locale/sk/LC_MESSAGES/ristretto.mo
 share/locale/sl/LC_MESSAGES/ristretto.mo
+share/locale/sq/LC_MESSAGES/ristretto.mo
 share/locale/sr/LC_MESSAGES/ristretto.mo
 share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/te/LC_MESSAGES/ristretto.mo
