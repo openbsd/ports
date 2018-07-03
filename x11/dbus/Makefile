@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2018/06/18 09:50:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2018/07/03 07:24:09 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -13,7 +13,7 @@ EPOCH-main=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS +=  dbus-1               11.2     # 22.6
 
@@ -53,9 +53,13 @@ CONFIGURE_ARGS=		--with-dbus-user=_dbus \
 			--disable-systemd
 
 # autolaunch brings too much magic to spawn a dbus-daemon(1) process and we want
-# predictable buses; we can't use --without-x because this would break bus
-# activated clients (since we don't use systemd)
-CONFIGURE_ARGS +=	--disable-x11-autolaunch
+# predictable buses; don't disable it yet because it breaks applications that
+# require a user session and can't handle the lack of one
+#CONFIGURE_ARGS +=	--disable-x11-autolaunch
+
+# we can't use --without-x because this would break bus activated clients (since
+# we don't use systemd)
+#CONFIGURE_ARGS +=	--without-x
 
 # gives no chance of picking up devel/libexecinfo
 CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no \
