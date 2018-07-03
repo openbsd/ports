@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/30 09:10:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/03 11:32:39 rpointel Exp $
 
 COMMENT =	Digital Forensics date and time
 
-MODPY_EGG_VERSION = 20180510
+MODPY_EGG_VERSION = 20180606
 DISTNAME =	dfdatetime-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/30 09:10:19 rpointel Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.7 2018/07/03 11:32:39 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/dfdatetime/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dfdatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
