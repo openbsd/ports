@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/03/05 09:44:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/03 14:32:48 bcallah Exp $
 %%no_x11%%
 !%%no_x11%%
 share/cataclysm-dda/
@@ -39,6 +39,7 @@ share/cataclysm-dda/json/emit.json
 share/cataclysm-dda/json/faults.json
 share/cataclysm-dda/json/flags.json
 share/cataclysm-dda/json/furniture.json
+share/cataclysm-dda/json/game_balance.json
 share/cataclysm-dda/json/gates.json
 share/cataclysm-dda/json/harvest.json
 share/cataclysm-dda/json/health_msgs.json
@@ -75,6 +76,7 @@ share/cataclysm-dda/json/items/ammo/300.json
 share/cataclysm-dda/json/items/ammo/3006.json
 share/cataclysm-dda/json/items/ammo/308.json
 share/cataclysm-dda/json/items/ammo/32.json
+share/cataclysm-dda/json/items/ammo/357.json
 share/cataclysm-dda/json/items/ammo/36paper.json
 share/cataclysm-dda/json/items/ammo/38.json
 share/cataclysm-dda/json/items/ammo/40.json
@@ -93,6 +95,7 @@ share/cataclysm-dda/json/items/ammo/700nx.json
 share/cataclysm-dda/json/items/ammo/762.json
 share/cataclysm-dda/json/items/ammo/762R.json
 share/cataclysm-dda/json/items/ammo/762x25.json
+share/cataclysm-dda/json/items/ammo/84x246mm.json
 share/cataclysm-dda/json/items/ammo/8x40mm.json
 share/cataclysm-dda/json/items/ammo/9mm.json
 share/cataclysm-dda/json/items/ammo/9x18.json
@@ -111,6 +114,7 @@ share/cataclysm-dda/json/items/armor/bandolier.json
 share/cataclysm-dda/json/items/armor/boots.json
 share/cataclysm-dda/json/items/armor/holster.json
 share/cataclysm-dda/json/items/bionics.json
+share/cataclysm-dda/json/items/biosignatures.json
 share/cataclysm-dda/json/items/book/
 share/cataclysm-dda/json/items/book/archery.json
 share/cataclysm-dda/json/items/book/barter.json
@@ -152,6 +156,7 @@ share/cataclysm-dda/json/items/comestibles.json
 share/cataclysm-dda/json/items/comestibles/brewing.json
 share/cataclysm-dda/json/items/comestibles/carnivore.json
 share/cataclysm-dda/json/items/comestibles/drink.json
+share/cataclysm-dda/json/items/comestibles/egg.json
 share/cataclysm-dda/json/items/comestibles/med.json
 share/cataclysm-dda/json/items/comestibles/mutagen.json
 share/cataclysm-dda/json/items/comestibles/protein.json
@@ -177,6 +182,7 @@ share/cataclysm-dda/json/items/gun/300.json
 share/cataclysm-dda/json/items/gun/3006.json
 share/cataclysm-dda/json/items/gun/308.json
 share/cataclysm-dda/json/items/gun/32.json
+share/cataclysm-dda/json/items/gun/357.json
 share/cataclysm-dda/json/items/gun/36paper.json
 share/cataclysm-dda/json/items/gun/38.json
 share/cataclysm-dda/json/items/gun/40.json
@@ -195,6 +201,7 @@ share/cataclysm-dda/json/items/gun/700nx.json
 share/cataclysm-dda/json/items/gun/762.json
 share/cataclysm-dda/json/items/gun/762R.json
 share/cataclysm-dda/json/items/gun/762x25.json
+share/cataclysm-dda/json/items/gun/84x246mm.json
 share/cataclysm-dda/json/items/gun/8x40mm.json
 share/cataclysm-dda/json/items/gun/9mm.json
 share/cataclysm-dda/json/items/gun/9x18.json
@@ -210,7 +217,6 @@ share/cataclysm-dda/json/items/gun/ups.json
 share/cataclysm-dda/json/items/gunmod/
 share/cataclysm-dda/json/items/gunmod/accessories.json
 share/cataclysm-dda/json/items/gunmod/barrel.json
-share/cataclysm-dda/json/items/gunmod/bore.json
 share/cataclysm-dda/json/items/gunmod/grip.json
 share/cataclysm-dda/json/items/gunmod/laser_gunmods.json
 share/cataclysm-dda/json/items/gunmod/magazine.json
@@ -230,6 +236,7 @@ share/cataclysm-dda/json/items/magazine/300.json
 share/cataclysm-dda/json/items/magazine/3006.json
 share/cataclysm-dda/json/items/magazine/308.json
 share/cataclysm-dda/json/items/magazine/32.json
+share/cataclysm-dda/json/items/magazine/357.json
 share/cataclysm-dda/json/items/magazine/38.json
 share/cataclysm-dda/json/items/magazine/40.json
 share/cataclysm-dda/json/items/magazine/40mm.json
@@ -241,10 +248,12 @@ share/cataclysm-dda/json/items/magazine/545x39.json
 share/cataclysm-dda/json/items/magazine/57.json
 share/cataclysm-dda/json/items/magazine/5x50.json
 share/cataclysm-dda/json/items/magazine/762.json
+share/cataclysm-dda/json/items/magazine/762R.json
 share/cataclysm-dda/json/items/magazine/762x25.json
 share/cataclysm-dda/json/items/magazine/8x40mm.json
 share/cataclysm-dda/json/items/magazine/9mm.json
 share/cataclysm-dda/json/items/magazine/9x18.json
+share/cataclysm-dda/json/items/magazine/liquid.json
 share/cataclysm-dda/json/items/magazine/nail.json
 share/cataclysm-dda/json/items/magazine/shot.json
 share/cataclysm-dda/json/items/magazine/weldgas.json
@@ -258,6 +267,7 @@ share/cataclysm-dda/json/items/resources/metals.json
 share/cataclysm-dda/json/items/resources/misc.json
 share/cataclysm-dda/json/items/software.json
 share/cataclysm-dda/json/items/tool/
+share/cataclysm-dda/json/items/tool/deployable.json
 share/cataclysm-dda/json/items/tool/lighting.json
 share/cataclysm-dda/json/items/tool/med.json
 share/cataclysm-dda/json/items/tool/radio_tools.json
@@ -289,6 +299,7 @@ share/cataclysm-dda/json/mapgen/bandit_camp.json
 share/cataclysm-dda/json/mapgen/bank.json
 share/cataclysm-dda/json/mapgen/bar.json
 share/cataclysm-dda/json/mapgen/basement/
+share/cataclysm-dda/json/mapgen/basement/basement_bionic.json
 share/cataclysm-dda/json/mapgen/basement/basement_chem.json
 share/cataclysm-dda/json/mapgen/basement/basement_game.json
 share/cataclysm-dda/json/mapgen/basement/basement_guns.json
@@ -374,6 +385,8 @@ share/cataclysm-dda/json/mapgen/house/house_garage3.json
 share/cataclysm-dda/json/mapgen/house/house_garage4.json
 share/cataclysm-dda/json/mapgen/house/house_garage5.json
 share/cataclysm-dda/json/mapgen/house/house_garage6.json
+share/cataclysm-dda/json/mapgen/house/house_garage7.json
+share/cataclysm-dda/json/mapgen/house/house_garage8.json
 share/cataclysm-dda/json/mapgen/house/house_garage_prepper.json
 share/cataclysm-dda/json/mapgen/house/house_gardener.json
 share/cataclysm-dda/json/mapgen/house/house_library.json
@@ -482,11 +495,13 @@ share/cataclysm-dda/json/mapgen/warehouse.json
 share/cataclysm-dda/json/mapgen_palettes/
 share/cataclysm-dda/json/mapgen_palettes/basement.json
 share/cataclysm-dda/json/mapgen_palettes/church.json
+share/cataclysm-dda/json/mapgen_palettes/evac_center.json
 share/cataclysm-dda/json/mapgen_palettes/hospital.json
 share/cataclysm-dda/json/mapgen_palettes/houses_multistory.json
 share/cataclysm-dda/json/mapgen_palettes/lumberyard.json
 share/cataclysm-dda/json/mapgen_palettes/mansion.json
 share/cataclysm-dda/json/mapgen_palettes/office_doctor.json
+share/cataclysm-dda/json/mapgen_palettes/shelter.json
 share/cataclysm-dda/json/mapgen_palettes/subway.json
 share/cataclysm-dda/json/martialarts.json
 share/cataclysm-dda/json/materials.json
@@ -499,13 +514,19 @@ share/cataclysm-dda/json/monsterdrops/zombie_soldier.json
 share/cataclysm-dda/json/monsterdrops/zombie_survivor.json
 share/cataclysm-dda/json/monsterdrops/zombie_technician.json
 share/cataclysm-dda/json/monstergroups.json
+share/cataclysm-dda/json/monstergroups_egg.json
 share/cataclysm-dda/json/monsters/
 share/cataclysm-dda/json/monsters.json
+share/cataclysm-dda/json/monsters/bird.json
 share/cataclysm-dda/json/monsters/defense_bot.json
 share/cataclysm-dda/json/monsters/drones.json
 share/cataclysm-dda/json/monsters/fish.json
+share/cataclysm-dda/json/monsters/insect_spider.json
+share/cataclysm-dda/json/monsters/mammal.json
 share/cataclysm-dda/json/monsters/military.json
 share/cataclysm-dda/json/monsters/obsolete.json
+share/cataclysm-dda/json/monsters/reptile_amphibian.json
+share/cataclysm-dda/json/monsters/triffid.json
 share/cataclysm-dda/json/monsters/zed_children.json
 share/cataclysm-dda/json/monsters/zed_explosive.json
 share/cataclysm-dda/json/morale_types.json
@@ -514,6 +535,7 @@ share/cataclysm-dda/json/multitile_city_buildings.json
 share/cataclysm-dda/json/mutation_category.json
 share/cataclysm-dda/json/mutation_ordering.json
 share/cataclysm-dda/json/mutations.json
+share/cataclysm-dda/json/npc_destination_locations.json
 share/cataclysm-dda/json/npcs/
 share/cataclysm-dda/json/npcs/NC_ARSONIST.json
 share/cataclysm-dda/json/npcs/NC_BARTENDER.json
@@ -548,11 +570,12 @@ share/cataclysm-dda/json/npcs/missiondef.json
 share/cataclysm-dda/json/npcs/npc.json
 share/cataclysm-dda/json/npcs/talk_tags.json
 share/cataclysm-dda/json/overmap_connections.json
-share/cataclysm-dda/json/overmap_locations.json
+share/cataclysm-dda/json/overmap_special_locations.json
 share/cataclysm-dda/json/overmap_specials.json
 share/cataclysm-dda/json/overmap_terrain.json
 share/cataclysm-dda/json/player_activities.json
 share/cataclysm-dda/json/professions.json
+share/cataclysm-dda/json/ranged_balance.json
 share/cataclysm-dda/json/recipes/
 share/cataclysm-dda/json/recipes/ammo/
 share/cataclysm-dda/json/recipes/ammo/components.json
@@ -697,12 +720,14 @@ share/cataclysm-dda/mods/Boats/b_vehicles.json
 share/cataclysm-dda/mods/Boats/b_wooden_boat_parts.json
 share/cataclysm-dda/mods/Boats/modinfo.json
 share/cataclysm-dda/mods/BrightNights/
+share/cataclysm-dda/mods/BrightNights/bionics.json
 share/cataclysm-dda/mods/BrightNights/effects.json
 share/cataclysm-dda/mods/BrightNights/gun.json
 share/cataclysm-dda/mods/BrightNights/item groups/
 share/cataclysm-dda/mods/BrightNights/item groups/locations.json
 share/cataclysm-dda/mods/BrightNights/item_groups.json
 share/cataclysm-dda/mods/BrightNights/items/
+share/cataclysm-dda/mods/BrightNights/items/bionics.json
 share/cataclysm-dda/mods/BrightNights/items/books.json
 share/cataclysm-dda/mods/BrightNights/items/generic.json
 share/cataclysm-dda/mods/BrightNights/mapgen/
@@ -748,9 +773,9 @@ share/cataclysm-dda/mods/EW_Pack/ew_bullet_pulling.json
 share/cataclysm-dda/mods/EW_Pack/ew_item_groups.json
 share/cataclysm-dda/mods/EW_Pack/ew_magazines.json
 share/cataclysm-dda/mods/EW_Pack/ew_recipes.json
-share/cataclysm-dda/mods/EW_Pack/ew_retool.json
 share/cataclysm-dda/mods/EW_Pack/ew_weapons.json
 share/cataclysm-dda/mods/EW_Pack/modinfo.json
+share/cataclysm-dda/mods/EW_Pack/obsolete.json
 share/cataclysm-dda/mods/Fast_Zombies/
 share/cataclysm-dda/mods/Fast_Zombies/main.lua
 share/cataclysm-dda/mods/Fast_Zombies/modinfo.json
@@ -1658,9 +1683,11 @@ share/cataclysm-dda/mods/More_Survival_Tools/terrain.json
 share/cataclysm-dda/mods/More_Survival_Tools/traps.json
 share/cataclysm-dda/mods/Mundane_Zombies/
 share/cataclysm-dda/mods/Mundane_Zombies/modinfo.json
+share/cataclysm-dda/mods/Mundane_Zombies/z2keep.txt
 share/cataclysm-dda/mods/Mutant_NPCs/
 share/cataclysm-dda/mods/Mutant_NPCs/modinfo.json
 share/cataclysm-dda/mods/Mutant_NPCs/npc_classes_mutant.json
+share/cataclysm-dda/mods/Mutant_NPCs/trait_groups.json
 share/cataclysm-dda/mods/NPC_Traits/
 share/cataclysm-dda/mods/NPC_Traits/modinfo.json
 share/cataclysm-dda/mods/NPC_Traits/npc_classes.json
@@ -1870,6 +1897,7 @@ share/cataclysm-dda/mods/realguns/gunmod.json
 share/cataclysm-dda/mods/realguns/item_groups.json
 share/cataclysm-dda/mods/realguns/magazine.json
 share/cataclysm-dda/mods/realguns/modinfo.json
+share/cataclysm-dda/mods/realguns/obsolete.json
 share/cataclysm-dda/mods/realguns/recipes.json
 share/cataclysm-dda/mods/realguns/requirements.json
 share/cataclysm-dda/mods/realguns/uncraft.json

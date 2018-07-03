@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2018/03/05 09:44:06 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2018/07/03 14:32:48 bcallah Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/cataclysm-dda/gfx/
@@ -12,13 +12,13 @@ share/cataclysm-dda/gfx/ChestHole16Tileset/tile_config.json
 share/cataclysm-dda/gfx/ChestHole16Tileset/tiles.png
 share/cataclysm-dda/gfx/ChestHole16Tileset/tiles24.png
 share/cataclysm-dda/gfx/ChestHole16Tileset/tileset.txt
+share/cataclysm-dda/gfx/ChestHole16Tileset/tree.png
 share/cataclysm-dda/gfx/ChestHole32Tileset/
 share/cataclysm-dda/gfx/ChestHole32Tileset/fallback.png
 share/cataclysm-dda/gfx/ChestHole32Tileset/tile_config.json
 share/cataclysm-dda/gfx/ChestHole32Tileset/tiles.png
 share/cataclysm-dda/gfx/ChestHole32Tileset/tiles48.png
 share/cataclysm-dda/gfx/ChestHole32Tileset/tileset.txt
-share/cataclysm-dda/gfx/ChestHole32Tileset/tilesold.png
 share/cataclysm-dda/gfx/ChestHole32Tileset/tree.png
 share/cataclysm-dda/gfx/ChestHole32Tileset_iso/
 share/cataclysm-dda/gfx/ChestHole32Tileset_iso/fallback.png
@@ -58,26 +58,22 @@ share/cataclysm-dda/gfx/MShock32TilesetModded/tiles.png
 share/cataclysm-dda/gfx/MShock32TilesetModded/tileset.txt
 share/cataclysm-dda/gfx/MshockXotto+/
 share/cataclysm-dda/gfx/MshockXotto+/expan.png
+share/cataclysm-dda/gfx/MshockXotto+/expan2.png
 share/cataclysm-dda/gfx/MshockXotto+/fallback.png
 share/cataclysm-dda/gfx/MshockXotto+/tile_config.json
 share/cataclysm-dda/gfx/MshockXotto+/tiles.png
 share/cataclysm-dda/gfx/MshockXotto+/tileset.txt
 share/cataclysm-dda/gfx/MshockXotto+/tree.png
+share/cataclysm-dda/gfx/MshockXotto+/treeO.png
 share/cataclysm-dda/gfx/RetroASCIITileset/
 share/cataclysm-dda/gfx/RetroASCIITileset/retroasciitiles.png
 share/cataclysm-dda/gfx/RetroASCIITileset/tile_config.json
 share/cataclysm-dda/gfx/RetroASCIITileset/tileset.txt
-share/cataclysm-dda/gfx/RetroDaysTileset10/
-share/cataclysm-dda/gfx/RetroDaysTileset10/retrodaysfallback10.png
-share/cataclysm-dda/gfx/RetroDaysTileset10/retrodaystiles10.png
-share/cataclysm-dda/gfx/RetroDaysTileset10/tile_config.json
-share/cataclysm-dda/gfx/RetroDaysTileset10/tileset.txt
-share/cataclysm-dda/gfx/RetroDaysTileset20/
-share/cataclysm-dda/gfx/RetroDaysTileset20/tile_config.json
-share/cataclysm-dda/gfx/RetroDaysTileset20/tileset.txt
-share/cataclysm-dda/gfx/RetroDaysTileset20_iso/
-share/cataclysm-dda/gfx/RetroDaysTileset20_iso/retrodaystiles20.png
-share/cataclysm-dda/gfx/RetroDaysTileset20_iso/tile_config.json
+share/cataclysm-dda/gfx/RetroDaysTileset/
+share/cataclysm-dda/gfx/RetroDaysTileset/fallback.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tile_config.json
+share/cataclysm-dda/gfx/RetroDaysTileset/tiles.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tileset.txt
 share/cataclysm-dda/gfx/ThuztorTileset@/
 share/cataclysm-dda/gfx/ThuztorTileset@/thuztortiles@.png
 share/cataclysm-dda/gfx/ThuztorTileset@/tile_config.json
@@ -86,15 +82,13 @@ share/cataclysm-dda/gfx/TsuTileset/
 share/cataclysm-dda/gfx/TsuTileset/tile_config.json
 share/cataclysm-dda/gfx/TsuTileset/tileset.txt
 share/cataclysm-dda/gfx/TsuTileset/tsutiles.png
-share/cataclysm-dda/gfx/make_iso.py
-share/cataclysm-dda/gfx/tile.png
 share/cataclysm-dda/gfx/tile_config.json
 share/cataclysm-dda/gfx/tile_config_template.json
 share/cataclysm-dda/gfx/tinytile.png
 share/cataclysm-dda/sound/
 share/cataclysm-dda/sound/Basic/
-share/cataclysm-dda/sound/Basic/menu_error.wav
-share/cataclysm-dda/sound/Basic/menu_move.wav
+share/cataclysm-dda/sound/Basic/menu_error.ogg
+share/cataclysm-dda/sound/Basic/menu_move.ogg
 share/cataclysm-dda/sound/Basic/musicset.json
 share/cataclysm-dda/sound/Basic/soundpack.txt
 share/cataclysm-dda/sound/Basic/soundset.json
