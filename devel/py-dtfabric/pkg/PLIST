@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/29 18:50:25 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/03 11:31:33 rpointel Exp $
 bin/validate-definitions${MODPY_BIN_SUFFIX}
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/dtfabric/
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
