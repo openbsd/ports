@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2018/07/03 18:16:23 espie Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
@@ -7,6 +7,10 @@ EPOCH=			0
 CATEGORIES=     	net
 REVISION=		5
 FIX_EXTRACT_PERMISSIONS=Yes
+
+# this litle shit has its own mkdep that stashes /usr/local dependencies
+# in makefiles
+DPB_PROPERTIES =	nojunk
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
 
