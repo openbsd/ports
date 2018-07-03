@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2018/07/01 09:02:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.39 2018/07/03 21:46:50 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -1379,7 +1379,6 @@ lib/R/library/survival/data/
 lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
-lib/R/library/survival/data/datalist
 lib/R/library/survival/doc/
 lib/R/library/survival/doc/adjcurve.R
 lib/R/library/survival/doc/adjcurve.Rnw
@@ -1391,6 +1390,9 @@ lib/R/library/survival/doc/index.html
 lib/R/library/survival/doc/multi.R
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf
+lib/R/library/survival/doc/population.R
+lib/R/library/survival/doc/population.Rnw
+lib/R/library/survival/doc/population.pdf
 lib/R/library/survival/doc/splines.R
 lib/R/library/survival/doc/splines.Rnw
 lib/R/library/survival/doc/splines.pdf
