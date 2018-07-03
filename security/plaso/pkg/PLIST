@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/30 09:13:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/03 14:43:07 rpointel Exp $
+@comment bin/__init__.py
 bin/image_export.py
 bin/log2timeline.py
 bin/pinfo.py
 bin/psort.py
 bin/psteal.py
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/plaso/
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/plaso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -85,6 +84,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/analysis_plugins.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/analysis_plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/artifact_definitions.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/artifact_definitions.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/artifact_filters.py
+lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/artifact_filters.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/data_location.py
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/data_location.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/cli/helpers/database_config.py
@@ -219,6 +220,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/dependencies.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/__init__.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/artifact_filters.py
+lib/python${MODPY_VERSION}/site-packages/plaso/engine/artifact_filters.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/configurations.py
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/configurations.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/engine/engine.py
@@ -500,8 +503,6 @@ lib/python${MODPY_VERSION}/site-packages/plaso/lib/specification.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/specification.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/timelib.py
 lib/python${MODPY_VERSION}/site-packages/plaso/lib/timelib.pyc
-lib/python${MODPY_VERSION}/site-packages/plaso/lib/utils.py
-lib/python${MODPY_VERSION}/site-packages/plaso/lib/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/__init__.py
 lib/python${MODPY_VERSION}/site-packages/plaso/multi_processing/__init__.pyc
@@ -577,6 +578,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/android_app_usage.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/android_app_usage.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/asl.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/asl.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/asl.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bash_history.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bash_history.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/bencode_parser.py
@@ -607,6 +609,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/manager.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cookie_plugins/manager.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cups_ipp.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cups_ipp.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/cups_ipp.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/custom_destinations.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/custom_destinations.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/docker.py
@@ -615,6 +618,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dpkg.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dpkg.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dsv_parser.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dsv_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dtfabric_parser.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/dtfabric_parser.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/esedb_plugins/
@@ -644,6 +649,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/interface.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/java_idx.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/logger.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/mac_appfirewall.py
@@ -666,6 +672,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/msiecf.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/msiecf.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ntfs.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ntfs.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/ntfs.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/olecf_plugins/
@@ -720,6 +727,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/timemachine
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plist_plugins/timemachine.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/pls_recall.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/pls_recall.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/pls_recall.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plugins.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/popcontest.py
@@ -728,8 +736,10 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/presets.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/presets.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/recycler.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/recycler.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/recycler.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/safari_cookies.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/safari_cookies.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/safari_cookies.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sccm.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/sccm.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/selinux.py
@@ -811,6 +821,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/trendmicroav.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/trendmicroav.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmp.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmp.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmp.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmpx.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/utmpx.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winevt.py
@@ -821,6 +832,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winfirewall.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winfirewall.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winjob.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winjob.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winjob.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winlnk.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winlnk.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winprefetch.py
@@ -890,6 +902,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/winrar.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winreg_plugins/winrar.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winrestore.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winrestore.pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/winrestore.yaml
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/xchatlog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/xchatlog.pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/xchatscrollback.py

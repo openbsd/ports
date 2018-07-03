@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/02 12:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/03 14:43:07 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20180524
+MODPY_EGG_VERSION =	20180630
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
-REVISION =		0
-
-DISTFILES =		${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 
 CATEGORIES =		security
 
@@ -77,16 +74,17 @@ RUN_DEPENDS +=	devel/ipython \
 		textproc/py-yaml \
 		www/py-requests \
 		www/py-urllib3 \
-		textproc/py-elasticsearch \
 		devel/py-dtfabric \
 		devel/py-biplist
 
 TEST_DEPENDS +=	devel/py-test \
 		${RUN_DEPENDS}
 
-# py-elasticsearch in ports in > 5.5.1, ignore error
+# py-elasticsearch in ports is > 5.5.1
+# mark elasticsearch as not required, so we can use plaso
 post-extract:
-	sed -i "s/maximum_version: 5.5.1/#maximum_version: 5.5.1/" ${WRKSRC}/dependencies.ini
+	sed -i "s/'5.5.1', True)/'5.5.1', False)/" ${WRKSRC}/plaso/dependencies.py
+	sed "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
 
 pre-test:
 	touch ${WRKSRC}/utils/__init__.py
