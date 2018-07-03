@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_flang_unf_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-runtime_flang_unf_c,v 1.2 2018/07/03 04:04:11 bcallah Exp $
 
 No async IO support
 
@@ -31,7 +31,7 @@ Index: runtime/flang/unf.c
    return FALSE;
  }
  
-@@ -380,6 +371,7 @@ __unf_init(bool read, bool byte_swap)
+@@ -386,6 +377,7 @@ __unf_init(bool read, bool byte_swap)
      }
    }
  
@@ -39,7 +39,7 @@ Index: runtime/flang/unf.c
    if (a) { /* starting async i/o? */
      if (Fcb->asyptr == (void *)0) {
        UNF_ERR(FIO_EASYNC);
-@@ -395,6 +387,7 @@ __unf_init(bool read, bool byte_swap)
+@@ -401,6 +393,7 @@ __unf_init(bool read, bool byte_swap)
        UNF_ERR(__io_errno());
      }
    }
@@ -47,7 +47,7 @@ Index: runtime/flang/unf.c
  
    if (!read) {
      if (Fcb->acc != FIO_DIRECT && !tmp_gbl)
-@@ -490,6 +483,7 @@ unf_read_do_resid:
+@@ -496,6 +489,7 @@ unf_read_do_resid:
  
    if ((stride == 0) || (stride == item_length)) {
      unf_rec.u.s.bytecnt += nbytes;
@@ -55,7 +55,7 @@ Index: runtime/flang/unf.c
      if (Fcb->asy_rw) { /* XXXXXX XX */
        if (Fio_asy_read(Fcb->asyptr, item, nbytes) == -1) {
          ret_val = __fortio_error(__io_errno());
-@@ -497,6 +491,7 @@ unf_read_do_resid:
+@@ -503,6 +497,7 @@ unf_read_do_resid:
        }
        return (0);
      }
@@ -63,7 +63,7 @@ Index: runtime/flang/unf.c
      if (__io_fread(item, nbytes, 1, Fcb->fp) != 1) {
        if (__io_feof(Fcb->fp)) {
          ret_val = __fortio_error(FIO_EEOF);
-@@ -801,6 +796,7 @@ __f90io_unf_write(int type,   /* data type of data (se
+@@ -873,6 +868,7 @@ __f90io_unf_write(int type,   /* data type of data (se
      return 0;
    }
  
@@ -71,7 +71,7 @@ Index: runtime/flang/unf.c
    if (Fcb->asy_rw) { /* stop any async i/o */
      Fcb->asy_rw = 0;
      if (Fio_asy_disable(Fcb->asyptr) == -1) {
-@@ -808,6 +804,7 @@ __f90io_unf_write(int type,   /* data type of data (se
+@@ -880,6 +876,7 @@ __f90io_unf_write(int type,   /* data type of data (se
        goto unf_write_err;
      }
    }
@@ -79,7 +79,7 @@ Index: runtime/flang/unf.c
  
    /* copy 'count' items from 'item' into buffer, skipping by stride  */
  
-@@ -1365,6 +1362,7 @@ usw_read_do_resid:
+@@ -1500,6 +1497,7 @@ usw_read_do_resid:
      return 0;
    }
  
@@ -87,7 +87,7 @@ Index: runtime/flang/unf.c
    if (Fcb->asy_rw) { /* stop any async i/o */
      Fcb->asy_rw = 0;
      if (Fio_asy_disable(Fcb->asyptr) == -1) {
-@@ -1372,6 +1370,7 @@ usw_read_do_resid:
+@@ -1507,6 +1505,7 @@ usw_read_do_resid:
        goto uswr_err;
      }
    }
