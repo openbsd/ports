@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/03 05:06:54 rsadowski Exp $
 @bin bin/nomacs
 @lib lib/libnomacsCore.so.${LIBnomacsCore_VERSION}
 @man man/man1/nomacs.1
@@ -19,6 +19,8 @@ share/nomacs/translations/nomacs_en.qm
 share/nomacs/translations/nomacs_es.qm
 share/nomacs/translations/nomacs_fr.qm
 share/nomacs/translations/nomacs_hr.qm
+share/nomacs/translations/nomacs_hu.qm
+share/nomacs/translations/nomacs_id.qm
 share/nomacs/translations/nomacs_it.qm
 share/nomacs/translations/nomacs_ja.qm
 share/nomacs/translations/nomacs_ko.qm

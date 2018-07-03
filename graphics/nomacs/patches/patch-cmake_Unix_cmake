@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_Unix_cmake,v 1.4 2018/01/29 22:33:07 rsadowski Exp $
+$OpenBSD: patch-cmake_Unix_cmake,v 1.5 2018/07/03 05:06:54 rsadowski Exp $
 
 - Avoid forced linkage with libstdc++.
 - drop CMake calls to QT5_WRAP_CPP()
@@ -15,10 +15,3 @@ Index: cmake/Unix.cmake
  		add_definitions(-DWITH_LIBRAW)
  	endif()
  endif(ENABLE_RAW)
-@@ -132,6 +133,4 @@ IF(USE_SYSTEM_LIBQPSD)
- ELSE()
- 	file(GLOB LIBQPSD_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libqpsd/*.cpp")
- 	file(GLOB LIBQPSD_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libqpsd/*.h")
--	file(GLOB LIBQPSD_MOCS "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/libqpsd/*.h")
--	QT5_WRAP_CPP(LIBQPSD_MOC_SRC ${LIBQPSD_MOCS})
- ENDIF(USE_SYSTEM_LIBQPSD)
