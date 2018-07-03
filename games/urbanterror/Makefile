@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/23 22:59:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/03 14:49:18 bcallah Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT = 	fast-paced hollywood-tactical shooter: "fun over realism"
-DISTNAME =	urbanterror-4.3.3
+DISTNAME =	urbanterror-4.3.4
 
 GH_ACCOUNT =	Barbatos
 GH_PROJECT =	ioq3-for-UrbanTerror-4
-GH_TAGNAME =	release-4.3.3
+GH_TAGNAME =	release-4.3.4
 
 CATEGORIES =	games x11
 
@@ -23,9 +23,6 @@ WANTLIB += X11 Xxf86vm c m pthread SDL
 LIB_DEPENDS =	devel/sdl
 RUN_DEPENDS =	games/urbanterror-data \
 		net/curl
-# using clang's integrated assembler for %xmm (code/qcommon/snapvector_sse.c)
-MODULES =	lang/clang
-MODCLANG_ARCHS = i386
 
 USE_GMAKE =	Yes
 ALL_TARGET =    release
