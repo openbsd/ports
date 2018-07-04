@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1743 2018/06/25 05:59:42 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1744 2018/07/04 21:09:02 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -294,6 +294,7 @@
      SUBDIR += legit
      SUBDIR += libIDL
      SUBDIR += libJudy
+     SUBDIR += libaio_compat
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libbfio
