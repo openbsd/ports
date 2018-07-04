@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.4 2018/06/27 00:09:26 bcallah Exp $
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.5 2018/07/04 22:00:28 bcallah Exp $
 
-No -lrt
+Replace -lrt with -laio_compat
 Appease lld
 Work around standalone preprocessing of F95 files with C compiler
 
@@ -39,7 +39,7 @@ Index: runtime/flang/CMakeLists.txt
  target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
  # Resolve symbols against libm and librt
 -target_link_libraries(flang_shared m rt)
-+target_link_libraries(flang_shared m)
++target_link_libraries(flang_shared m aio_compat)
  
  set(SHARED_LIBRARY FALSE)
  
