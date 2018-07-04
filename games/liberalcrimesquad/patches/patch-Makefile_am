@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2018/07/04 15:10:31 bcallah Exp $
+
+Do not install .mid or .ogg files since we don't use SDL2 (aka sound) support.
+Makes it look less like bad packaging on my end.
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -22,27 +22,7 @@ dist_art_DATA = art/abort.cmv art/anchor.cmv art/glams
+  art/mapCSV_NuclearPlant_Specials.csv art/mapCSV_NuclearPlant_Tiles.csv\
+  art/mapCSV_WhiteHouse_Specials.csv art/mapCSV_WhiteHouse_Tiles.csv\
+  art/mapCSV_WhiteHouse2_Specials.csv art/mapCSV_WhiteHouse2_Tiles.csv\
+- art/mapCSV_WhiteHouse3_Specials.csv art/mapCSV_WhiteHouse3_Tiles.csv\
+- \
+- art/midi/abort.mid art/midi/activate.mid art/midi/alarmed.mid art/midi/anchor.mid\
+- art/midi/basemode.mid art/midi/carchase.mid art/midi/cartheft.mid art/midi/dating.mid\
+- art/midi/defeat.mid art/midi/disbanded.mid art/midi/elections.mid art/midi/finances.mid\
+- art/midi/footchase.mid art/midi/glamshow.mid art/midi/heavycombat.mid art/midi/interrogation.mid\
+- art/midi/lacops.mid art/midi/liberalagenda.mid art/midi/newgame.mid art/midi/newscast.mid\
+- art/midi/newspaper.mid art/midi/reaganified.mid art/midi/recruiting.mid art/midi/reviewmode.mid\
+- art/midi/shopping.mid art/midi/siege.mid art/midi/sitemode.mid art/midi/sleepers.mid\
+- art/midi/stalinized.mid art/midi/stopevil.mid art/midi/suspicious.mid art/midi/titlemode.mid\
+- art/midi/trial.mid art/midi/victory.mid\
+- \
+- art/ogg/abort.ogg art/ogg/activate.ogg art/ogg/alarmed.ogg art/ogg/anchor.ogg\
+- art/ogg/basemode.ogg art/ogg/carchase.ogg art/ogg/cartheft.ogg art/ogg/dating.ogg\
+- art/ogg/defeat.ogg art/ogg/disbanded.ogg art/ogg/elections.ogg art/ogg/finances.ogg\
+- art/ogg/footchase.ogg art/ogg/glamshow.ogg art/ogg/heavycombat.ogg art/ogg/interrogation.ogg\
+- art/ogg/lacops.ogg art/ogg/liberalagenda.ogg art/ogg/newgame.ogg art/ogg/newscast.ogg\
+- art/ogg/newspaper.ogg art/ogg/reaganified.ogg art/ogg/recruiting.ogg art/ogg/reviewmode.ogg\
+- art/ogg/shopping.ogg art/ogg/siege.ogg art/ogg/sitemode.ogg art/ogg/sleepers.ogg\
+- art/ogg/stalinized.ogg art/ogg/stopevil.ogg art/ogg/suspicious.ogg art/ogg/titlemode.ogg\
+- art/ogg/trial.ogg art/ogg/victory.ogg
++ art/mapCSV_WhiteHouse3_Specials.csv art/mapCSV_WhiteHouse3_Tiles.csv
+ 
+ 
+ dist_app_DATA = crimesquad.desktop

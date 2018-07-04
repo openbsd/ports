@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/04 15:10:31 bcallah Exp $
 @bin bin/crimesquad
 @man man/man6/crimesquad.6
 share/applications/crimesquad.desktop
@@ -8,11 +8,14 @@ share/lcs/art/abort.cmv
 share/lcs/art/anchor.cmv
 share/lcs/art/armors.xml
 share/lcs/art/armsdealer.xml
+share/lcs/art/augmentations.xml
 share/lcs/art/clips.xml
+share/lcs/art/creatures.xml
 share/lcs/art/deptstore.xml
 share/lcs/art/glamshow.cmv
 share/lcs/art/lacops.cmv
 share/lcs/art/largecap.cpc
+share/lcs/art/licenses.txt
 share/lcs/art/loot.xml
 share/lcs/art/mapCSV_Bank_Specials.csv
 share/lcs/art/mapCSV_Bank_Tiles.csv

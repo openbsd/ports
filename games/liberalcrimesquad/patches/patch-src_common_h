@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_common_h,v 1.1 2018/07/04 15:10:31 bcallah Exp $
+
+Don't use SDL2.
+
+Index: src/common.h
+--- src/common.h.orig
++++ src/common.h
+@@ -20,7 +20,7 @@
+ #endif
+ 
+ // uncomment this next line if you want to disable SDL (which is for music/sound)
+-//#define DONT_INCLUDE_SDL
++#define DONT_INCLUDE_SDL
+ 
+ /* some compilers sometimes define _WIN32 but not WIN32 on Windows, but LCS usually
+    just checks if WIN32's defined, so the next couple lines fix that so it works */
