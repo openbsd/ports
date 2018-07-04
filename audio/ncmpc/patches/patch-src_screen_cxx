@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_screen_cxx,v 1.1 2018/07/04 09:02:58 landry Exp $
+
+Because c++14 zomg woot woot
+
+Index: src/screen.cxx
+--- src/screen.cxx.orig
++++ src/screen.cxx
+@@ -56,8 +56,8 @@ ScreenManager::MakePage(const struct screen_functions 
+ 		return i;
+ 
+ 	auto j = pages.emplace(&sf,
+-			       sf.init(*this, main_window.w,
+-				       main_window.size));
++			       std::unique_ptr<Page>(sf.init(*this, main_window.w,
++				       main_window.size)));
+ 	assert(j.second);
+ 	return j.first;
+ }
