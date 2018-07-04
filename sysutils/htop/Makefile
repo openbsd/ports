@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/04 03:50:16 ians Exp $
 
 COMMENT =	interactive process viewer
-V =		2.1.0
+V =		2.2.0
 DISTNAME =	htop-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://hisham.hm/htop/index.php
