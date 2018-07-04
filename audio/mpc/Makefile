@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2018/04/23 17:11:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2018/07/04 09:02:21 landry Exp $
 
 COMMENT=		command line client for mpd
 
-VER=			0.29
+VER=			0.30
 DISTNAME=		mpc-${VER}
 CATEGORIES=		audio
 EXTRACT_SUFX=		.tar.xz
