@@ -1,0 +1,6 @@
+libaio_compat is a port of the POSIX asynchronous I/O library from
+DragonFly BSD to OpenBSD.
+
+This version of AIO is aimed at standards compliance; it is not aimed at
+either reasonability or performance. It merely wraps synchronous I/O
+routines.
