@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.14 2017/03/01 11:56:05 naddy Exp $
+# $OpenBSD: README,v 1.15 2018/07/05 03:47:35 thfr Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@
 # First, create the basic directory structure:
 
 cd /var/www
-mkdir -p tmp usr
+mkdir -p tmp usr dev
 chown www:www tmp	# needs to be writeable for the www user
 
 cd /var/www/usr
