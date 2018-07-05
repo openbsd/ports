@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:04:05 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2018/07/05 16:55:42 giovanni Exp $
 
 COMMENT =	Java web start runtime
 DISTNAME =	icedtea-web-1.6.2
-REVISION =	5
+REVISION =	6
 CATEGORIES =	www
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
@@ -24,7 +24,8 @@ MODULES =	java
 MODJAVA_VER=	1.8
 
 #build system does horrible things with bash
-RUN_DEPENDS =	shells/bash
+RUN_DEPENDS =	shells/bash \
+		devel/desktop-file-utils
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		archivers/zip
 
