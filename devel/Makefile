@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1744 2018/07/04 21:09:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1745 2018/07/05 05:02:21 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1209,6 +1209,7 @@
      SUBDIR += promu
      SUBDIR += protobuf
      SUBDIR += protobuf-c
+     SUBDIR += protozero
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += ptlib
