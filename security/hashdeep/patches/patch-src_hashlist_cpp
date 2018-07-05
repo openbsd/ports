@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_hashlist_cpp,v 1.1.1.1 2018/07/05 19:17:20 feinerer Exp $
+
+Fixes for Clang 6.
+
+Index: src/hashlist.cpp
+--- src/hashlist.cpp.orig
++++ src/hashlist.cpp
+@@ -342,7 +342,7 @@ hashlist::load_hash_file(display *ocb,const std::strin
+     file_data_t *t = new (std::nothrow) file_data_t();
+     if (NULL == t)
+     {
+-      ocb->fatal_error("%s: Out of memory in line %"PRIu64,
++      ocb->fatal_error("%s: Out of memory in line %" PRIu64,
+ 		       fn.c_str(), line_number);
+     }
+ 
+@@ -390,7 +390,7 @@ hashlist::load_hash_file(display *ocb,const std::strin
+       if ( !algorithm_t::valid_hash(hash_column[column_number],word))
+       {
+ 	if (ocb)
+-	  ocb->error("%s: Invalid %s hash in line %"PRIu64,
++	  ocb->error("%s: Invalid %s hash in line %" PRIu64,
+ 		     fn.c_str(),
+ 		     hashes[hash_column[column_number]].name.c_str(),
+ 		     line_number);

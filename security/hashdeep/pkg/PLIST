@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/05 19:17:20 feinerer Exp $
+@bin bin/hashdeep
+@bin bin/md5deep
+@bin bin/sha1deep
+@bin bin/sha256deep
+@bin bin/tigerdeep
+@bin bin/whirlpooldeep
+@man man/man1/hashdeep.1
+@man man/man1/md5deep.1
+@man man/man1/sha1deep.1
+@man man/man1/sha256deep.1
+@man man/man1/tigerdeep.1
+@man man/man1/whirlpooldeep.1
