@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.6 2018/01/25 15:02:25 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.7 2018/07/05 09:49:13 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -1286,8 +1286,6 @@ share/doc/qt5/html/images/manual-layout.png
 share/doc/qt5/html/images/mapviewer.png
 share/doc/qt5/html/images/margins_qml.png
 @comment share/doc/qt5/html/images/masterdetail-example.png
-share/doc/qt5/html/images/materials-cpp.png
-share/doc/qt5/html/images/materials.png
 share/doc/qt5/html/images/maze.png
 share/doc/qt5/html/images/mdi-cascade.png
 share/doc/qt5/html/images/mdi-example.png
@@ -1368,6 +1366,7 @@ share/doc/qt5/html/images/parentchange.png
 share/doc/qt5/html/images/pathstroke-demo.png
 share/doc/qt5/html/images/pathview.gif
 share/doc/qt5/html/images/patternist-wordProcessor.png
+share/doc/qt5/html/images/pbr-materials.png
 share/doc/qt5/html/images/peripheral-structure.png
 share/doc/qt5/html/images/piechart_customization.png
 share/doc/qt5/html/images/piemenu-boundingItem-example.png
@@ -4139,7 +4138,6 @@ share/doc/qt5/html/qmake-running.html
 share/doc/qt5/html/qmake-test-function-reference.html
 share/doc/qt5/html/qmake-tutorial.html
 share/doc/qt5/html/qmake-variable-reference.html
-share/doc/qt5/html/qmake.index
 share/doc/qt5/html/qmake.qhp
 share/doc/qt5/html/qmake.qhp.sha1
 share/doc/qt5/html/qmap-const-iterator-members.html
@@ -4475,6 +4473,7 @@ share/doc/qt5/html/qml-qt3d-render-blendequationarguments.html
 share/doc/qt5/html/qml-qt3d-render-buffer-members.html
 share/doc/qt5/html/qml-qt3d-render-buffer.html
 share/doc/qt5/html/qml-qt3d-render-camera-members.html
+share/doc/qt5/html/qml-qt3d-render-camera-obsolete.html
 share/doc/qt5/html/qml-qt3d-render-camera.html
 share/doc/qt5/html/qml-qt3d-render-cameralens-members.html
 share/doc/qt5/html/qml-qt3d-render-cameralens.html
@@ -4598,6 +4597,8 @@ share/doc/qt5/html/qml-qt3d-render-viewport-members.html
 share/doc/qt5/html/qml-qt3d-render-viewport.html
 share/doc/qt5/html/qml-qt3d-scene2d-scene2d-members.html
 share/doc/qt5/html/qml-qt3d-scene2d-scene2d.html
+share/doc/qt5/html/qml-qt3d-scene3d-scene3d-members.html
+share/doc/qt5/html/qml-qt3d-scene3d-scene3d.html
 share/doc/qt5/html/qml-qtaudioengine-attenuationmodelinverse-members.html
 share/doc/qt5/html/qml-qtaudioengine-attenuationmodelinverse.html
 share/doc/qt5/html/qml-qtaudioengine-attenuationmodellinear-members.html
@@ -6768,35 +6769,7 @@ share/doc/qt5/html/qt3d-extras-qmlmodule.html
 share/doc/qt5/html/qt3d-index.html
 share/doc/qt5/html/qt3d-input-qmlmodule.html
 share/doc/qt5/html/qt3d-logic-qmlmodule.html
-share/doc/qt5/html/qt3d-materials-barrel-qml.html
-share/doc/qt5/html/qt3d-materials-basiccamera-qml.html
-share/doc/qt5/html/qt3d-materials-chest-qml.html
-share/doc/qt5/html/qt3d-materials-cpp-barrel-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-barrel-h.html
-share/doc/qt5/html/qt3d-materials-cpp-example.html
-share/doc/qt5/html/qt3d-materials-cpp-houseplant-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-houseplant-h.html
-share/doc/qt5/html/qt3d-materials-cpp-main-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-materials-cpp-pro.html
-share/doc/qt5/html/qt3d-materials-cpp-planeentity-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-planeentity-h.html
-share/doc/qt5/html/qt3d-materials-cpp-renderableentity-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-renderableentity-h.html
-share/doc/qt5/html/qt3d-materials-cpp-rotatingtrefoilknot-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-rotatingtrefoilknot-h.html
-share/doc/qt5/html/qt3d-materials-cpp-trefoilknot-cpp.html
-share/doc/qt5/html/qt3d-materials-cpp-trefoilknot-h.html
 share/doc/qt5/html/qt3d-materials-example.html
-share/doc/qt5/html/qt3d-materials-houseplant-qml.html
-share/doc/qt5/html/qt3d-materials-lights-qml.html
-share/doc/qt5/html/qt3d-materials-main-cpp.html
-share/doc/qt5/html/qt3d-materials-main-qml.html
-share/doc/qt5/html/qt3d-materials-materials-pro.html
-share/doc/qt5/html/qt3d-materials-materials-qrc.html
-share/doc/qt5/html/qt3d-materials-planeentity-qml.html
-share/doc/qt5/html/qt3d-materials-renderableentity-qml.html
-share/doc/qt5/html/qt3d-materials-sortedforwardrenderer-qml.html
-share/doc/qt5/html/qt3d-materials-trefoilknot-qml.html
 share/doc/qt5/html/qt3d-multiviewport-example.html
 share/doc/qt5/html/qt3d-multiviewport-main-cpp.html
 share/doc/qt5/html/qt3d-multiviewport-main-qml.html
@@ -6853,6 +6826,7 @@ share/doc/qt5/html/qt3d-scene3d-animatedentity-qml.html
 share/doc/qt5/html/qt3d-scene3d-example.html
 share/doc/qt5/html/qt3d-scene3d-main-cpp.html
 share/doc/qt5/html/qt3d-scene3d-main-qml.html
+share/doc/qt5/html/qt3d-scene3d-qmlmodule.html
 share/doc/qt5/html/qt3d-scene3d-scene3d-pro.html
 share/doc/qt5/html/qt3d-scene3d-scene3d-qrc.html
 share/doc/qt5/html/qt3d-shadow-map-qml-adseffect-qml.html
@@ -7937,6 +7911,7 @@ share/doc/qt5/html/qt3drender-qbufferprivate.html
 share/doc/qt5/html/qt3drender-qbufferupdate-members.html
 share/doc/qt5/html/qt3drender-qbufferupdate.html
 share/doc/qt5/html/qt3drender-qcamera-members.html
+share/doc/qt5/html/qt3drender-qcamera-obsolete.html
 share/doc/qt5/html/qt3drender-qcamera.html
 share/doc/qt5/html/qt3drender-qcameralens-members.html
 share/doc/qt5/html/qt3drender-qcameralens.html
@@ -8630,8 +8605,8 @@ share/doc/qt5/html/qt3drender-render-pickingutils-hierarchicalentitypicker-membe
 share/doc/qt5/html/qt3drender-render-pickingutils-hierarchicalentitypicker.html
 share/doc/qt5/html/qt3drender-render-pickingutils-trianglecollisiongathererfunctor-members.html
 share/doc/qt5/html/qt3drender-render-pickingutils-trianglecollisiongathererfunctor.html
-share/doc/qt5/html/qt3drender-render-pickingutils-viewportcameraareatriplet-members.html
-share/doc/qt5/html/qt3drender-render-pickingutils-viewportcameraareatriplet.html
+share/doc/qt5/html/qt3drender-render-pickingutils-viewportcameraareadetails-members.html
+share/doc/qt5/html/qt3drender-render-pickingutils-viewportcameraareadetails.html
 share/doc/qt5/html/qt3drender-render-pickingutils.html
 share/doc/qt5/html/qt3drender-render-plane-members.html
 share/doc/qt5/html/qt3drender-render-plane.html
@@ -8667,8 +8642,6 @@ share/doc/qt5/html/qt3drender-render-renderconfiguration.html
 share/doc/qt5/html/qt3drender-render-renderentityfunctor-members.html
 share/doc/qt5/html/qt3drender-render-renderentityfunctor.html
 share/doc/qt5/html/qt3drender-render-renderer-members.html
-share/doc/qt5/html/qt3drender-render-renderer-viewsubmissionresultdata-members.html
-share/doc/qt5/html/qt3drender-render-renderer-viewsubmissionresultdata.html
 share/doc/qt5/html/qt3drender-render-renderer.html
 share/doc/qt5/html/qt3drender-render-renderercache-leafnodedata-members.html
 share/doc/qt5/html/qt3drender-render-renderercache-leafnodedata.html
@@ -8813,8 +8786,6 @@ share/doc/qt5/html/qt3drender-render-trianglesvisitor.html
 share/doc/qt5/html/qt3drender-render-uniformblockvaluebuilder-members.html
 share/doc/qt5/html/qt3drender-render-uniformblockvaluebuilder.html
 share/doc/qt5/html/qt3drender-render-uniformvalue-members.html
-share/doc/qt5/html/qt3drender-render-uniformvalue-texture-members.html
-share/doc/qt5/html/qt3drender-render-uniformvalue-texture.html
 share/doc/qt5/html/qt3drender-render-uniformvalue.html
 share/doc/qt5/html/qt3drender-render-updatelevelofdetailjob-members.html
 share/doc/qt5/html/qt3drender-render-updatelevelofdetailjob.html
@@ -8837,6 +8808,12 @@ share/doc/qt5/html/qt3drender-render-vsyncframeadvanceservice.html
 share/doc/qt5/html/qt3drender-render.html
 share/doc/qt5/html/qt3drender-rendercapturedata-members.html
 share/doc/qt5/html/qt3drender-rendercapturedata.html
+share/doc/qt5/html/qt3drender-scene3dcleaner-members.html
+share/doc/qt5/html/qt3drender-scene3dcleaner.html
+share/doc/qt5/html/qt3drender-scene3dsgmaterialshader-members.html
+share/doc/qt5/html/qt3drender-scene3dsgmaterialshader.html
+share/doc/qt5/html/qt3drender-scene3dsgnode-members.html
+share/doc/qt5/html/qt3drender-scene3dsgnode.html
 share/doc/qt5/html/qt3drender-stlgeometryloader-members.html
 share/doc/qt5/html/qt3drender-stlgeometryloader.html
 share/doc/qt5/html/qt3drender-textureloadinghelper-members.html
