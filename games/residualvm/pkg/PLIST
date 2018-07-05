@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/05 09:18:34 bentley Exp $
 @bin bin/residualvm
 @man man/man6/residualvm.6
 share/applications/residualvm.desktop
@@ -21,6 +21,37 @@ share/pixmaps/
 share/pixmaps/residualvm.xpm
 share/residualvm/
 share/residualvm/modern.zip
+share/residualvm/myst3.dat
 share/residualvm/residualvm-grim-patch.lab
+share/residualvm/shaders/
+share/residualvm/shaders/dim.fragment
+share/residualvm/shaders/dim.vertex
+share/residualvm/shaders/emerg.fragment
+share/residualvm/shaders/emerg.vertex
+share/residualvm/shaders/emi_actor.fragment
+share/residualvm/shaders/emi_actor.vertex
+share/residualvm/shaders/emi_background.fragment
+share/residualvm/shaders/emi_background.vertex
+share/residualvm/shaders/emi_dimplane.fragment
+share/residualvm/shaders/emi_dimplane.vertex
+share/residualvm/shaders/grim_actor.fragment
+share/residualvm/shaders/grim_actor.vertex
+share/residualvm/shaders/grim_background.fragment
+share/residualvm/shaders/grim_background.vertex
+share/residualvm/shaders/grim_primitive.fragment
+share/residualvm/shaders/grim_primitive.vertex
+share/residualvm/shaders/myst3_box.fragment
+share/residualvm/shaders/myst3_box.vertex
+share/residualvm/shaders/myst3_cube.fragment
+share/residualvm/shaders/myst3_cube.vertex
+share/residualvm/shaders/myst3_text.fragment
+share/residualvm/shaders/myst3_text.vertex
+share/residualvm/shaders/shadowplane.fragment
+share/residualvm/shaders/shadowplane.vertex
+share/residualvm/shaders/smush.fragment
+share/residualvm/shaders/smush.vertex
+share/residualvm/shaders/text.fragment
+share/residualvm/shaders/text.vertex
+share/residualvm/translations.dat
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
