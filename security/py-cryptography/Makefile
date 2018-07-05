@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/23 13:06:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/07/05 10:34:15 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	2.2.2
+REVISION=	0
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
@@ -15,6 +16,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	${MODPY_WANTLIB} crypto pthread ssl
+
+COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
