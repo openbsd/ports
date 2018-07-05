@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.512 2018/06/27 14:33:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.513 2018/07/05 19:19:27 feinerer Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -67,6 +67,7 @@
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += gringotts
+     SUBDIR += hashdeep
      SUBDIR += hatchet
      SUBDIR += heimdal
      SUBDIR += hitch
