@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/04/24 13:17:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2018/07/05 05:18:24 bentley Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -19,6 +19,7 @@
      SUBDIR += jeoip
      SUBDIR += josm
      SUBDIR += libchamplain
+     SUBDIR += libosmium
      SUBDIR += mapcache
      SUBDIR += mapproxy
      SUBDIR += mapserver
