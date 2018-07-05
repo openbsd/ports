@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.89 2018/06/22 21:15:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.90 2018/07/05 18:55:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/paginators-1.json
