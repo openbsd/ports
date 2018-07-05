@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/05 08:01:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2018/07/05 18:49:26 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
 DISTNAME=		appstream-glib-0.7.9
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS += appstream-glib            3.3 # 8.0.10
 SHARED_LIBS += appstream-builder         3.3 # 8.0.10
@@ -63,6 +64,7 @@ pre-configure:
 		libappstream-builder/plugins/asb-plugin-appdata.c \
 		libappstream-builder/plugins/asb-plugin-font.c \
 		libappstream-builder/plugins/asb-plugin-gettext.c \
+		libappstream-builder/plugins/asb-plugin-icon.c \
 		libappstream-builder/asb-utils.c \
 		libappstream-builder/asb-self-test.c
 ###
