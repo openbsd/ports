@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1745 2018/07/05 05:02:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.1746 2018/07/05 09:15:26 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1787,6 +1787,7 @@
      SUBDIR += subversion
      SUBDIR += swig
      SUBDIR += t1lib
+     SUBDIR += tbb
      SUBDIR += tclap
      SUBDIR += tclarc4random
      SUBDIR += tclcl
