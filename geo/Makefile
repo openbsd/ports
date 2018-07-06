@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/07/05 05:18:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.60 2018/07/06 06:00:54 bentley Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -28,6 +28,7 @@
      SUBDIR += osm-gps-map
      SUBDIR += osm2pgrouting
      SUBDIR += osm2pgsql
+     SUBDIR += osrm-backend
      SUBDIR += p5-GPS-PRN
      SUBDIR += p5-Geo-Coder-US
      SUBDIR += p5-Geo-Constants
