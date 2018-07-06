@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1 2016/07/11 09:23:17 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/06 08:47:58 feinerer Exp $
 
 COMMENT =		exFAT file system through FUSE
 
-V = 			1.2.4
+V =			1.2.8
 GH_ACCOUNT =		relan
 GH_PROJECT =		exfat
 GH_TAGNAME =		v${V}
-DISTNAME =      	exfat-fuse-${V}
+DISTNAME =		exfat-fuse-${V}
 
 CATEGORIES =		sysutils
 
