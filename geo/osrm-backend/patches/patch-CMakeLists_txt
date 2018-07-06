@@ -1,0 +1,32 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/07/06 06:00:02 bentley Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -379,7 +379,7 @@ if("${LINKER_VERSION}" MATCHES "GNU gold" OR "${LINKER
+     set(LINKER_FLAGS "${LINKER_FLAGS} -Wl,--gc-sections")
+   endif()
+   # Default linker optimization flags
+-  set(LINKER_FLAGS "${LINKER_FLAGS} -Wl,-O1 -Wl,--hash-style=gnu -Wl,--sort-common")
++  set(LINKER_FLAGS "${LINKER_FLAGS} -Wl,--sort-common")
+ 
+ else()
+   message(STATUS "Using unknown linker, not setting linker optimizations")
+@@ -410,10 +410,6 @@ if(APPLE)
+     message(STATUS "linking against libc++")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+   endif()
+-endif()
+-
+-if(UNIX AND NOT APPLE)
+-  set(MAYBE_RT_LIBRARY -lrt)
+ endif()
+ 
+ find_package(Threads REQUIRED)
+@@ -873,4 +869,4 @@ if (ENABLE_NODE_BINDINGS)
+   endforeach()
+   add_library(check-headers STATIC EXCLUDE_FROM_ALL ${sources})
+   set_target_properties(check-headers PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${check_headers_dir})
+-endif()
+\ No newline at end of file
++endif()
