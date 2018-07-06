@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.82 2018/06/14 17:43:48 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.83 2018/07/06 20:15:42 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -37,6 +37,7 @@ libexec/git/git-bisect
 @bin libexec/git/git-clone
 @bin libexec/git/git-column
 @bin libexec/git/git-commit
+@bin libexec/git/git-commit-graph
 @bin libexec/git/git-commit-tree
 @bin libexec/git/git-config
 @bin libexec/git/git-count-objects
@@ -141,6 +142,7 @@ libexec/git/git-request-pull
 @bin libexec/git/git-rm
 libexec/git/git-send-email
 @bin libexec/git/git-send-pack
+@bin libexec/git/git-serve
 libexec/git/git-sh-i18n
 @bin libexec/git/git-sh-i18n--envsubst
 libexec/git/git-sh-setup
@@ -184,6 +186,7 @@ libexec/git/mergetools/diffuse
 libexec/git/mergetools/ecmerge
 libexec/git/mergetools/emerge
 libexec/git/mergetools/examdiff
+libexec/git/mergetools/guiffy
 libexec/git/mergetools/gvimdiff
 libexec/git/mergetools/gvimdiff2
 libexec/git/mergetools/gvimdiff3
@@ -221,6 +224,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-clean.1
 @man man/man1/git-clone.1
 @man man/man1/git-column.1
+@man man/man1/git-commit-graph.1
 @man man/man1/git-commit-tree.1
 @man man/man1/git-commit.1
 @man man/man1/git-config.1
