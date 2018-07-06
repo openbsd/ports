@@ -1,12 +1,25 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.5 2018/04/28 15:04:29 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
 
+- Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
+  section when linking, as we do when using ld from binutils.
 - Keep the STT_FILE symbol in the table so that we know what file was used to compile an object.
 - Put .got.plt in RELRO.
+
 
 Index: tools/lld/ELF/Writer.cpp
 --- tools/lld/ELF/Writer.cpp.orig
 +++ tools/lld/ELF/Writer.cpp
-@@ -487,7 +487,7 @@ template <class ELFT> void Writer<ELFT>::run() {
+@@ -110,7 +110,8 @@ StringRef elf::getOutputSectionName(InputSectionBase *
+   for (StringRef V :
+        {".text.", ".rodata.", ".data.rel.ro.", ".data.", ".bss.rel.ro.",
+         ".bss.", ".init_array.", ".fini_array.", ".ctors.", ".dtors.", ".tbss.",
+-        ".gcc_except_table.", ".tdata.", ".ARM.exidx.", ".ARM.extab."}) {
++        ".gcc_except_table.", ".tdata.", ".ARM.exidx.", ".ARM.extab.",
++        ".openbsd.randomdata."}) {
+     StringRef Prefix = V.drop_back();
+     if (S->Name.startswith(V) || S->Name == Prefix)
+       return Prefix;
+@@ -487,7 +488,7 @@ template <class ELFT> void Writer<ELFT>::run() {
  
  static bool shouldKeepInSymtab(SectionBase *Sec, StringRef SymName,
                                 const Symbol &B) {
@@ -15,7 +28,7 @@ Index: tools/lld/ELF/Writer.cpp
      return false;
  
    // If sym references a section in a discarded group, don't keep it.
-@@ -643,7 +643,11 @@ static bool isRelroSection(const OutputSection *Sec) {
+@@ -643,7 +644,11 @@ static bool isRelroSection(const OutputSection *Sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
    if (Sec == InX::GotPlt->getParent())

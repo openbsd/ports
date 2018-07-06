@@ -1,11 +1,23 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.11 2018/07/04 09:53:49 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.12 2018/07/06 06:55:10 ajacoutot Exp $
 
-Alias the command line parameter -p to -pg.
+- Add ret protctor options as no-ops.
+- Alias the command line parameter -p to -pg.
 
 Index: tools/clang/include/clang/Driver/Options.td
 --- tools/clang/include/clang/Driver/Options.td.orig
 +++ tools/clang/include/clang/Driver/Options.td
-@@ -2170,7 +2170,7 @@ def pthreads : Flag<["-"], "pthreads">;
+@@ -1458,6 +1458,10 @@ def fstack_protector_strong : Flag<["-"], "fstack-prot
+   HelpText<"Use a strong heuristic to apply stack protectors to functions">;
+ def fstack_protector : Flag<["-"], "fstack-protector">, Group<f_Group>,
+   HelpText<"Enable stack protectors for functions potentially vulnerable to stack smashing">;
++def fno_ret_protector : Flag<["-"], "fno-ret-protector">, Group<f_Group>,
++  HelpText<"Disable return protector">;
++def fret_protector : Flag<["-"], "fret-protector">, Group<f_Group>,
++  HelpText<"Enable return protector">;
+ def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
+   HelpText<"Emit full debug info for all types used by the program">;
+ def fno_standalone_debug : Flag<["-"], "fno-standalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
+@@ -2170,7 +2174,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
  def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;

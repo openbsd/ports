@@ -1,0 +1,43 @@
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+
+Add RETGUARD to clang for amd64. This security mechanism uses per-function
+random cookies to protect access to function return instructions, with the
+effect that the integrity of the return address is protected, and function
+return instructions are harder to use in ROP gadgets.
+   
+On function entry the return address is combined with a per-function random
+cookie and stored in the stack frame. The integrity of this value is verified
+before function return, and if this check fails, the program aborts. In this way
+RETGUARD is an improved stack protector, since the cookies are per-function. The
+verification routine is constructed such that the binary space immediately
+before each ret instruction is padded with int03 instructions, which makes these
+return instructions difficult to use in ROP gadgets. In the kernel, this has the
+effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+essentially gadget free, leaving only the polymorphic gadgets that result from
+jumping into the instruction stream partway through other instructions. Work to
+remove these gadgets will continue through other mechanisms.
+
+Index: lib/Target/X86/X86FrameLowering.h
+--- lib/Target/X86/X86FrameLowering.h.orig
++++ lib/Target/X86/X86FrameLowering.h
+@@ -68,6 +68,19 @@ class X86FrameLowering : public TargetFrameLowering { 
+   void emitPrologue(MachineFunction &MF, MachineBasicBlock &MBB) const override;
+   void emitEpilogue(MachineFunction &MF, MachineBasicBlock &MBB) const override;
+ 
++  /// determineReturnProtectorTempRegister - find a free register for the
++  /// return protector cookie calculation.
++  virtual bool determineReturnProtectorTempRegister(MachineFunction &MF,
++                  const SmallVector<MachineBasicBlock *, 4> &SaveBlocks,
++                  const SmallVector<MachineBasicBlock *, 4> &RestoreBlocks) const override;
++
++
++  /// Insert Return Protector instrumentation prologue / epilogue
++  void insertReturnProtectorPrologue(MachineFunction &MF,
++                                     MachineBasicBlock &MBB) const override;
++  bool insertReturnProtectorEpilogue(MachineFunction &MF,
++                                     MachineBasicBlock &MBB) const override;
++
+   void adjustForSegmentedStacks(MachineFunction &MF,
+                                 MachineBasicBlock &PrologueMBB) const override;
+ 

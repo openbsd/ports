@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.5 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
 
-Use int3 trap padding between functions instead of trapsleds with a leading jump.
+- Use int3 trap padding between functions instead of trapsleds with a leading jump.
+- Emit trap alignment between basic blocks that are unrechable via
+  fallthrough. Avoids unnecessary jmp instructions in the middle
+  of functions and makes disassembly nicer to read.
 
 Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
@@ -14,13 +17,10 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->EmitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -1908,6 +1908,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
-     OutStreamer->EmitCodeAlignment(1u << NumBits);
-   else
-     OutStreamer->EmitValueToAlignment(1u << NumBits);
-+}
-+
-+//===----------------------------------------------------------------------===//
+@@ -1911,6 +1911,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
+ }
+ 
+ //===----------------------------------------------------------------------===//
 +/// EmitTrapAlignment - Emit an alignment directive to the specified power of
 +/// two boundary, but call EmitTrapToAlignment to fill with Trap instructions
 +/// if the Target implements EmitTrapToAlignment.
@@ -43,6 +43,28 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 +void AsmPrinter::EmitTrapToAlignment(unsigned NumBits) const {
 +  if (NumBits == 0) return;
 +  OutStreamer->EmitCodeAlignment(1u << NumBits);
- }
- 
++}
++
++//===----------------------------------------------------------------------===//
+ // Constant emission.
  //===----------------------------------------------------------------------===//
+ 
+@@ -2657,11 +2682,15 @@ void AsmPrinter::EmitBasicBlockStart(const MachineBasi
+     }
+   }
+ 
+-  // Emit an alignment directive for this block, if needed.
+-  if (unsigned Align = MBB.getAlignment())
+-    EmitAlignment(Align);
+   MCCodePaddingContext Context;
+   setupCodePaddingContext(MBB, Context);
++  // Emit an alignment directive for this block, if needed.
++  if (unsigned Align = MBB.getAlignment()) {
++    if (Context.IsBasicBlockReachableViaFallthrough)
++      EmitAlignment(Align);
++    else
++      EmitTrapAlignment(Align);
++  }
+   OutStreamer->EmitCodePaddingBasicBlockStart(Context);
+ 
+   // If the block has its address taken, emit any labels that were used to

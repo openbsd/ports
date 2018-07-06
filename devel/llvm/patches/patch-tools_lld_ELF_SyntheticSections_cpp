@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
+
+Work around a bug where discarding the .ARM.exidx section in the armv7 kernel
+linker script makes ld.lld(1) crash.  This has been fixed in a different
+(proper?) way upstream but backporting their fix is a bit too invasive.
+
+Index: tools/lld/ELF/SyntheticSections.cpp
+--- tools/lld/ELF/SyntheticSections.cpp.orig
++++ tools/lld/ELF/SyntheticSections.cpp
+@@ -2571,6 +2571,9 @@ void ARMExidxSentinelSection::writeTo(uint8_t *Buf) {
+ // The sentinel has to be removed if there are no other .ARM.exidx entries.
+ bool ARMExidxSentinelSection::empty() const {
+   OutputSection *OS = getParent();
++  if (!OS)
++    return false;
++
+   for (auto *B : OS->SectionCommands)
+     if (auto *ISD = dyn_cast<InputSectionDescription>(B))
+       for (auto *S : ISD->Sections)
