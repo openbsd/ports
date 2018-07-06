@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/05 19:17:20 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/06 19:01:21 feinerer Exp $
 
 COMMENT =		tools to compute hashes recursively
 
@@ -14,6 +14,9 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
+
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
