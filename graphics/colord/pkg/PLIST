@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/08/17 13:33:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/07/06 06:04:42 espie Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -217,5 +217,4 @@ share/vala/vapi/colord.vapi
 @group _colord
 @sample /var/db/colord/
 @sample /var/db/colord/icc/
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

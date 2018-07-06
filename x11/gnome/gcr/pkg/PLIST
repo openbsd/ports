@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/07/06 06:04:45 espie Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -307,6 +307,5 @@ share/vala/vapi/gcr-ui-3.vapi
 share/vala/vapi/pkcs11.vapi
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/07/06 06:04:44 espie Exp $
 @conflict california-*
 @pkgpath x11/gnome/california
 @bin bin/gnome-calendar
@@ -76,7 +76,6 @@ share/locale/zh_HK/LC_MESSAGES/gnome-calendar.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calendar.mo
 share/metainfo/
 share/metainfo/org.gnome.Calendar.appdata.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

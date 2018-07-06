@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:04:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/07/06 06:04:44 espie Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 @man man/man1/gnome-dictionary.1
@@ -708,6 +708,5 @@ share/locale/xh/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-dictionary.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

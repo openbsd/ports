@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:45 espie Exp $
 @conflict latexila-*
 @pkgpath x11/gnome/latexila
 @bin bin/gnome-latex
@@ -215,6 +215,5 @@ share/locale/uk/LC_MESSAGES/gnome-latex.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-latex.mo
 share/metainfo/org.gnome.gnome-latex.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

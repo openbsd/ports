@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/07/06 06:04:42 espie Exp $
 @bin bin/emerillon
 include/emerillon-0.1/
 include/emerillon-0.1/emerillon/
@@ -163,5 +163,4 @@ share/locale/zh_CN/LC_MESSAGES/emerillon.mo
 share/vala/vapi/emerillon.deps
 share/vala/vapi/emerillon.vapi
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

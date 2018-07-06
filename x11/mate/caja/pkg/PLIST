@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/06 06:04:47 espie Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -265,5 +265,4 @@ share/pixmaps/caja/knob.png
 share/pixmaps/caja/thumbnail_frame.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2018/04/23 15:37:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/07/06 06:04:46 espie Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
@@ -174,5 +174,4 @@ share/locale/zh_CN/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

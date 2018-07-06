@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2018/04/23 13:54:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.51 2018/07/06 06:04:42 espie Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -538,5 +538,4 @@ share/vala/vapi/libedataserver-1.2.deps
 share/vala/vapi/libedataserver-1.2.vapi
 share/vala/vapi/libedataserverui-1.2.deps
 share/vala/vapi/libedataserverui-1.2.vapi
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

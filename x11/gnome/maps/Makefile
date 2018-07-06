@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/29 22:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/07/06 06:04:45 espie Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		3.28.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 

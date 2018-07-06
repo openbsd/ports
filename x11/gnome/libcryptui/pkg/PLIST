@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/10 06:57:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/06 06:04:45 espie Exp $
 @conflict seahorse-<=3.1.0
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -150,5 +150,4 @@ share/pixmaps/cryptui/scalable/seahorse-sign-bad.svg
 share/pixmaps/cryptui/scalable/seahorse-sign-ok.svg
 share/pixmaps/cryptui/scalable/seahorse-sign-unknown.svg
 share/pixmaps/cryptui/scalable/seahorse-sign.svg
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

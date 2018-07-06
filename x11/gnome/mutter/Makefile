@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2018/06/27 21:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2018/07/06 06:04:45 espie Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.28.2
-REVISION=		0
+REVISION=		1
 
 API_SUFFIX=		-2
 SUBST_VARS=		API_SUFFIX

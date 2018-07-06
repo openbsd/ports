@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/07/06 06:04:41 espie Exp $
 
 COMMENT =	internet radio browser and player
 GH_TAGNAME =	v7.1
 GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	gradio
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio www
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:04:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/06 06:04:44 espie Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
@@ -937,8 +937,7 @@ share/help/zh_TW/gnome-calculator/scientific.page
 share/help/zh_TW/gnome-calculator/superscript.page
 share/help/zh_TW/gnome-calculator/trigonometry.page
 share/help/zh_TW/gnome-calculator/variables.page
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database
 share/icons/hicolor/16x16/apps/gnome-calculator.png
 share/icons/hicolor/22x22/apps/gnome-calculator.png

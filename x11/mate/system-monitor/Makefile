@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/06 06:04:48 espie Exp $
 
 COMMENT=		MATE system monitor
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-system-monitor
 

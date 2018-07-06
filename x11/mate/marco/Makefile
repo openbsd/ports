@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/06 06:04:47 espie Exp $
 
 COMMENT=		the MATE window manager
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 

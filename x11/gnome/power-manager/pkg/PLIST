@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/29 22:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:46 espie Exp $
 @bin bin/gnome-power-statistics
 share/applications/org.gnome.PowerStats.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
@@ -95,5 +95,4 @@ share/metainfo/
 share/metainfo/org.gnome.PowerStats.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

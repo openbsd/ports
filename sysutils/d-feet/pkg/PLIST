@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:43 espie Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -138,6 +138,5 @@ share/locale/tr/LC_MESSAGES/d-feet.mo
 share/locale/zh_CN/LC_MESSAGES/d-feet.mo
 @tag gtk-update-icon-cache %D/share/icons/HighContrast
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

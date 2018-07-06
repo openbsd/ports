@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:46 espie Exp $
 @conflict seahorse-plugins-*
 @bin bin/seahorse-tool
 lib/nautilus/extensions-3.0/libnautilus-seahorse.so
@@ -89,6 +89,5 @@ share/seahorse-nautilus/ui/
 share/seahorse-nautilus/ui/seahorse-multi-encrypt.xml
 share/seahorse-nautilus/ui/seahorse-notify.xml
 share/seahorse-nautilus/ui/seahorse-progress.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

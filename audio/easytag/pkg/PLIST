@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/06/29 22:16:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/07/06 06:04:41 espie Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
@@ -259,7 +259,6 @@ share/locale/tr/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
 share/locale/zh_TW/LC_MESSAGES/easytag.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

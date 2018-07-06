@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2018/06/29 22:16:25 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2018/07/06 06:04:47 espie Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -1418,7 +1418,6 @@ share/themes/Emacs/
 share/themes/Emacs/gtk-3.0/
 share/themes/Emacs/gtk-3.0/gtk-keys.css
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @exec %D/bin/gtk-query-immodules-3.0 --update-cache
 @tag update-desktop-database

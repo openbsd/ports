@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/09/04 09:47:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/06 06:04:43 espie Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
 include/mission-control-5.5/
@@ -50,5 +50,4 @@ share/gtk-doc/html/mission-control-plugins/right.png
 share/gtk-doc/html/mission-control-plugins/style.css
 share/gtk-doc/html/mission-control-plugins/up-insensitive.png
 share/gtk-doc/html/mission-control-plugins/up.png
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

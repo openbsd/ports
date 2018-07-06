@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.110 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.111 2018/07/06 06:04:47 espie Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
 GNOME_PROJECT=		vinagre
 GNOME_VERSION=		3.22.0
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		net
 

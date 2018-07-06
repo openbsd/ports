@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/01/03 18:54:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:44 espie Exp $
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
@@ -156,5 +156,4 @@ share/locale/zh_HK/LC_MESSAGES/caribou.mo
 share/locale/zh_TW/LC_MESSAGES/caribou.mo
 share/vala/vapi/caribou-1.0.deps
 share/vala/vapi/caribou-1.0.vapi
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

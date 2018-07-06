@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/11/02 11:33:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/07/06 06:04:44 espie Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -121,5 +121,4 @@ share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/06/29 22:16:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/07/06 06:04:43 espie Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -2590,7 +2590,6 @@ share/locale/ur/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

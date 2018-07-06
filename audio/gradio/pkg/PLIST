@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/06 06:04:42 espie Exp $
 @bin bin/gradio
 share/appdata/
 share/appdata/de.haeckerfelix.gradio.appdata.xml
@@ -34,5 +34,4 @@ share/locale/sv/LC_MESSAGES/gradio.mo
 share/locale/tr/LC_MESSAGES/gradio.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

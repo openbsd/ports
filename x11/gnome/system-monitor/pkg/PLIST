@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/06/27 21:04:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/07/06 06:04:46 espie Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill
@@ -483,5 +483,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
 share/metainfo/gnome-system-monitor.appdata.xml
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

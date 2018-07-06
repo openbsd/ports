@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2018/06/27 21:04:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.45 2018/07/06 06:04:47 espie Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -442,6 +442,5 @@ share/yelp/xslt/info2html.xsl
 share/yelp/xslt/mal2html.xsl
 share/yelp/xslt/man2html.xsl
 share/yelp/xslt/yelp-common.xsl
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

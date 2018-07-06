@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/06 06:04:42 espie Exp $
 include/geoclue/
 include/geoclue/gc-iface-address.h
 include/geoclue/gc-iface-geoclue.h
@@ -101,5 +101,4 @@ share/gtk-doc/html/geoclue/simple-example.html
 share/gtk-doc/html/geoclue/simple-master-example.html
 share/gtk-doc/html/geoclue/style.css
 share/gtk-doc/html/geoclue/up.png
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

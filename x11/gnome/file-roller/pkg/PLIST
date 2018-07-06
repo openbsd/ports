@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/07/06 06:04:44 espie Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -530,5 +530,4 @@ share/locale/zu/LC_MESSAGES/file-roller.mo
 share/metainfo/org.gnome.FileRoller.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2018/06/29 22:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.185 2018/07/06 06:04:45 espie Exp $
 
 TRACKER_API=		2.0
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.28.1
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.4.0
 

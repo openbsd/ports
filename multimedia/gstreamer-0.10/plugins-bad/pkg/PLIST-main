@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2016/11/15 20:35:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2018/07/06 06:04:43 espie Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -220,5 +220,4 @@ share/locale/tr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

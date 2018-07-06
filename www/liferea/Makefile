@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.105 2018/07/06 06:04:43 espie Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -6,7 +6,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.3
 DISTNAME=		liferea-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www news x11
 

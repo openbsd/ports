@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.129 2018/05/07 10:13:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2018/07/06 06:04:45 espie Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		3.28.2
+REVISION=		0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

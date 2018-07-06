@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2018/06/27 21:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2018/07/06 06:04:42 espie Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		21
+REVISION=		22
 
 CATEGORIES=		mail
 

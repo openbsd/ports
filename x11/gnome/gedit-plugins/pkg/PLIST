@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/04/23 14:59:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/07/06 06:04:45 espie Exp $
 @conflict gedit-<3.14.0
 lib/gedit/plugins/${MODPY_PYCACHE}/
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -880,5 +880,4 @@ share/locale/xh/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

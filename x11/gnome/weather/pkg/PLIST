@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:47 espie Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.appdata.xml
@@ -83,7 +83,6 @@ share/org.gnome.Weather/org.gnome.Weather.Application.src.gresource
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService.data.gresource
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService.src.gresource
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

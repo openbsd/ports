@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2017/04/26 13:13:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/07/06 06:04:43 espie Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -115,5 +115,4 @@ share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
 share/vala/vapi/folks.deps
 share/vala/vapi/folks.vapi
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

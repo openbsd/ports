@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/06 06:04:44 espie Exp $
 @conflict dconf-<0.22.0
 @pkgpath devel/dconf,-editor
 @bin bin/dconf-editor
@@ -80,7 +80,6 @@ share/locale/zh_HK/LC_MESSAGES/dconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/dconf-editor.mo
 share/metainfo/
 share/metainfo/ca.desrt.dconf-editor.appdata.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

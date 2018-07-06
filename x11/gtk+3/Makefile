@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2018/06/29 22:16:25 espie Exp $
+# $OpenBSD: Makefile,v 1.198 2018/07/06 06:04:47 espie Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -23,7 +23,7 @@ PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 REVISION-cups=		main
 REVISION-cups=		0
-REVISION-main=		1
+REVISION-main=		2
 REVISION-guic=		0
 
 CATEGORIES=		x11 devel

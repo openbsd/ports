@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/04/23 10:36:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/07/06 06:04:45 espie Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -256,5 +256,4 @@ share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgweather-locations.mo
 share/vala/vapi/gweather-3.0.deps
 share/vala/vapi/gweather-3.0.vapi
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

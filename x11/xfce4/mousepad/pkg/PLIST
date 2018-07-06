@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:04:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/06 06:04:48 espie Exp $
 @bin bin/mousepad
 share/applications/mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
@@ -52,5 +52,4 @@ share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

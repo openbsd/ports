@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:43 espie Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -997,6 +997,5 @@ share/locale/zh_CN/LC_MESSAGES/gtranslator.mo
 share/locale/zh_HK/LC_MESSAGES/gtranslator.mo
 share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

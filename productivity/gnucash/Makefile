@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2018/06/29 22:16:20 espie Exp $
+# $OpenBSD: Makefile,v 1.100 2018/07/06 06:04:43 espie Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		2.6.21
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		1
+REVISION =		2
 
 # XXX
 GNOME_VERSION_DOCS =	2.6.20

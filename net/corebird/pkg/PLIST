@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/06 06:04:43 espie Exp $
 @bin bin/corebird
 @man man/man1/corebird.1
 share/applications/org.baedert.corebird.desktop
@@ -55,8 +55,7 @@ share/locale/uk_UA/LC_MESSAGES/
 share/locale/uk_UA/LC_MESSAGES/corebird.mo
 share/locale/zh_CN/LC_MESSAGES/corebird.mo
 share/locale/zh_TW/LC_MESSAGES/corebird.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/27 21:04:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/07/06 06:04:44 espie Exp $
 @bin bin/gnome-contacts
 @bin libexec/gnome-contacts-search-provider
 @man man/man1/gnome-contacts.1
@@ -87,6 +87,5 @@ share/locale/zh_CN/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-contacts.mo
 share/metainfo/org.gnome.Contacts.appdata.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

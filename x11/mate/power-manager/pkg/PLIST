@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:48 espie Exp $
 @bin bin/mate-power-manager
 @bin bin/mate-power-preferences
 @bin bin/mate-power-statistics
@@ -773,5 +773,4 @@ share/mate-power-manager/ui/inhibit-applet-menu.xml
 share/polkit-1/actions/org.mate.power.policy
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

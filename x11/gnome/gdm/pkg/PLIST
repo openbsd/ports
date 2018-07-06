@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.90 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.91 2018/07/06 06:04:45 espie Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -333,6 +333,5 @@ share/pixmaps/puflogh1000X248.gif
 @group
 @mode
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @rcscript ${RCDIR}/gdm

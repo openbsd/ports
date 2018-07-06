@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/07/06 06:04:44 espie Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -462,6 +462,5 @@ share/locale/zh_HK/LC_MESSAGES/baobab.mo
 share/locale/zh_TW/LC_MESSAGES/baobab.mo
 share/metainfo/org.gnome.baobab.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database

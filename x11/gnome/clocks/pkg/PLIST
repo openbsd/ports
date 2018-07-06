@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:44 espie Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -343,7 +343,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-clocks.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-clocks.mo
 share/metainfo/org.gnome.clocks.appdata.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

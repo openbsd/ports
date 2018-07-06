@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/07/06 06:04:43 espie Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -251,8 +251,7 @@ share/meld/ui/tab-placeholder.ui
 share/meld/ui/vcview-ui.xml
 share/meld/ui/vcview.ui
 share/mime/packages/meld.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag gtk-update-icon-cache %D/share/icons/HighContrast

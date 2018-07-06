@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2018/06/26 07:51:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2018/07/06 06:04:46 espie Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -8,6 +8,7 @@ GNOME_VERSION=		2.0.4
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
+REVISION=		0
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/grilo-plugins

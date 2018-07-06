@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/06 06:04:48 espie Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
@@ -119,6 +119,5 @@ share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
 share/mate-notification-daemon/
 share/mate-notification-daemon/mate-notification-properties.ui
 @tag update-desktop-database
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

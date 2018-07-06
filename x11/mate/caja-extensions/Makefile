@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/10 15:07:16 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/06 06:04:47 espie Exp $
 
 COMMENT=		extensions for Caja, the MATE file manager
+REVISION=		0
 
 MATE_PROJECT=		caja-extensions
 

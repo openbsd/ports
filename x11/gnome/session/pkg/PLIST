@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2018/04/23 20:03:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2018/07/06 06:04:46 espie Exp $
 bin/gnome-session
 bin/gnome-session-custom-session
 @bin bin/gnome-session-inhibit
@@ -132,5 +132,4 @@ share/wayland-sessions/gnome.desktop
 share/xsessions/
 share/xsessions/gnome-xorg.desktop
 share/xsessions/gnome.desktop
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

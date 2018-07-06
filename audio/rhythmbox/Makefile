@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.168 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.169 2018/07/06 06:04:42 espie Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.2
-REVISION=		7
+REVISION=		8
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 

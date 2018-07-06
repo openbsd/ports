@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/06/29 22:16:25 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2018/07/06 06:04:47 espie Exp $
 
 PKG_ARCH=		*
 
@@ -6,7 +6,7 @@ COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
 GNOME_VERSION=		3.26.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

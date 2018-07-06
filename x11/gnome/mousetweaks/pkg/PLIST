@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/10/26 08:52:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:45 espie Exp $
 @bin bin/mousetweaks
 @man man/man1/mousetweaks.1
 share/GConf/gsettings/mousetweaks.convert
@@ -79,5 +79,4 @@ share/mousetweaks/drag-click.png
 share/mousetweaks/mousetweaks.ui
 share/mousetweaks/right-click.png
 share/mousetweaks/single-click.png
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/06 06:04:47 espie Exp $
 
 COMMENT=		MATE calculator
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-calc
 MATE_VERSION=		1.20.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/06 06:04:43 espie Exp $
 bin/virt-clone
 bin/virt-convert
 bin/virt-install
@@ -258,7 +258,6 @@ share/virt-manager/virtinst/urlfetcher.py
 share/virt-manager/virtinst/util.py
 share/virt-manager/virtinst/xmlbuilder.py
 share/virt-manager/virtinst/xmlnsqemu.py
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

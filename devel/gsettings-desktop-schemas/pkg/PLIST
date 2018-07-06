@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/04/23 08:11:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/07/06 06:04:42 espie Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -96,5 +96,4 @@ share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_HK/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/zh_TW/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/pkgconfig/gsettings-desktop-schemas.pc
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2018/07/06 06:04:42 espie Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.90
 GNOME_PROJECT =	emerillon
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	geo x11
 

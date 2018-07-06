@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2018/06/26 07:51:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2018/07/06 06:04:46 espie Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -319,5 +319,4 @@ share/vala/vapi/tracker-miner-${TRACKER_API}.deps
 share/vala/vapi/tracker-miner-${TRACKER_API}.vapi
 share/vala/vapi/tracker-sparql-${TRACKER_API}.deps
 share/vala/vapi/tracker-sparql-${TRACKER_API}.vapi
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@tag glib-compile-schemas
