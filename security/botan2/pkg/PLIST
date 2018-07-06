@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/12 09:53:54 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/06 00:18:39 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -19,6 +19,7 @@ include/botan-2/botan/assert.h
 include/botan-2/botan/atomic.h
 include/botan-2/botan/auto_rng.h
 include/botan-2/botan/b64_filt.h
+include/botan-2/botan/base32.h
 include/botan-2/botan/base64.h
 include/botan-2/botan/basefilt.h
 include/botan-2/botan/bcrypt.h
@@ -216,6 +217,7 @@ include/botan-2/botan/rotate.h
 include/botan-2/botan/rsa.h
 include/botan-2/botan/salsa20.h
 include/botan-2/botan/scan_name.h
+include/botan-2/botan/scrypt.h
 include/botan-2/botan/secmem.h
 include/botan-2/botan/secqueue.h
 include/botan-2/botan/seed.h
@@ -333,6 +335,8 @@ share/botan-2/data/asn1_print/output3.txt
 share/botan-2/data/asn1_print/output4.txt
 share/botan-2/data/asn1_print/output5.txt
 share/botan-2/data/asn1_print/output6.txt
+share/botan-2/data/asn1_time.vec
+share/botan-2/data/base32.vec
 share/botan-2/data/base64.vec
 share/botan-2/data/block/
 share/botan-2/data/block/aes.vec
@@ -461,6 +465,7 @@ share/botan-2/data/pubkey/ecdsa_invalid.vec
 share/botan-2/data/pubkey/ecdsa_prob.vec
 share/botan-2/data/pubkey/ecdsa_rfc6979.vec
 share/botan-2/data/pubkey/ecdsa_verify.vec
+share/botan-2/data/pubkey/ecdsa_wycheproof.vec
 share/botan-2/data/pubkey/ecgdsa.vec
 share/botan-2/data/pubkey/ecies-18033.vec
 share/botan-2/data/pubkey/ecies.vec
@@ -483,12 +488,15 @@ share/botan-2/data/pubkey/rsaes.vec
 share/botan-2/data/pubkey/sm2_enc.vec
 share/botan-2/data/pubkey/sm2_sig.vec
 share/botan-2/data/pubkey/workfactor.vec
+share/botan-2/data/pubkey/x25519.vec
+share/botan-2/data/pubkey/xmss_invalid.vec
 share/botan-2/data/pubkey/xmss_sig.vec
 share/botan-2/data/pubkey/xmss_verify.vec
 share/botan-2/data/rfc6979.vec
 share/botan-2/data/rng/
 share/botan-2/data/rng/chacha_rng.vec
 share/botan-2/data/rng/hmac_drbg.vec
+share/botan-2/data/scrypt.vec
 share/botan-2/data/siv_ad.vec
 share/botan-2/data/stream/
 share/botan-2/data/stream/chacha.vec
@@ -507,6 +515,7 @@ share/botan-2/data/timing/lucky13sec4sha1.vec
 share/botan-2/data/timing/lucky13sec4sha256.vec
 share/botan-2/data/timing/lucky13sec4sha384.vec
 share/botan-2/data/timing/manger.vec
+share/botan-2/data/timing/pow_mod.vec
 share/botan-2/data/tls/
 share/botan-2/data/tls-policy/
 share/botan-2/data/tls-policy/bsi.txt
@@ -514,7 +523,8 @@ share/botan-2/data/tls-policy/compat.txt
 share/botan-2/data/tls-policy/datagram.txt
 share/botan-2/data/tls-policy/default.txt
 share/botan-2/data/tls-policy/strict.txt
-share/botan-2/data/tls-policy/suiteb.txt
+share/botan-2/data/tls-policy/suiteb_128.txt
+share/botan-2/data/tls-policy/suiteb_192.txt
 share/botan-2/data/tls/alert.vec
 share/botan-2/data/tls/cert_status.vec
 share/botan-2/data/tls/cert_verify.vec
@@ -1895,6 +1905,7 @@ share/doc/botan-2/manual/contents.rst
 share/doc/botan-2/manual/credentials_manager.rst
 share/doc/botan-2/manual/cryptobox.rst
 share/doc/botan-2/manual/deprecated.rst
+share/doc/botan-2/manual/ecc.rst
 share/doc/botan-2/manual/ffi.rst
 share/doc/botan-2/manual/filters.rst
 share/doc/botan-2/manual/fpe.rst
@@ -1914,6 +1925,7 @@ share/doc/botan-2/manual/psk_db.rst
 share/doc/botan-2/manual/pubkey.rst
 share/doc/botan-2/manual/python.rst
 share/doc/botan-2/manual/rng.rst
+share/doc/botan-2/manual/roadmap.rst
 share/doc/botan-2/manual/secmem.rst
 share/doc/botan-2/manual/side_channels.rst
 share/doc/botan-2/manual/srp.rst
