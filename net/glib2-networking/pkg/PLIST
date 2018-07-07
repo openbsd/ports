@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/05/22 15:44:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/07/07 22:39:42 espie Exp $
 lib/gio/modules/libgiognomeproxy.so
 lib/gio/modules/libgiognutls.so
 lib/gio/modules/libgiolibproxy.so
@@ -77,5 +77,4 @@ share/locale/vi/LC_MESSAGES/glib-networking.mo
 share/locale/zh_CN/LC_MESSAGES/glib-networking.mo
 share/locale/zh_HK/LC_MESSAGES/glib-networking.mo
 share/locale/zh_TW/LC_MESSAGES/glib-networking.mo
-@exec %D/bin/gio-querymodules %D/lib/gio/modules
-@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
+@tag gio-querymodules

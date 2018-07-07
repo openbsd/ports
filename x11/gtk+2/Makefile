@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2018/06/22 18:59:05 tb Exp $
+# $OpenBSD: Makefile,v 1.224 2018/07/07 22:39:42 espie Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -13,6 +13,7 @@ REVISION=		0
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
+REVISION-main=		1
 
 CATEGORIES=		x11 devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/06/27 21:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2018/07/07 22:39:42 espie Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -19,7 +19,7 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
-REVISION=		6
+REVISION=		7
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/uim-$V/
 HOMEPAGE=		https://github.com/uim/uim

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.182 2018/07/07 22:39:42 espie Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,7 +14,7 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
-REVISION-main=		0
+REVISION-main=		1
 REVISION-smb=		0
 
 # LGPLv2

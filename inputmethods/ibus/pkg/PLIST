@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/07/07 22:39:42 espie Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -220,10 +220,8 @@ share/locale/zh_TW/LC_MESSAGES/ibus10.mo
 share/vala/vapi/ibus-1.0.deps
 share/vala/vapi/ibus-1.0.vapi
 @tag glib-compile-schemas
-@exec %D/bin/gtk-query-immodules-2.0 --update-cache
-@unexec-delete %D/bin/gtk-query-immodules-2.0 --update-cache
-@exec %D/bin/gtk-query-immodules-3.0 --update-cache
-@unexec-delete %D/bin/gtk-query-immodules-3.0 --update-cache
+@tag gtk-query-immodules-2.0
+@tag gtk-query-immodules-3.0
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @exec %D/bin/dconf update

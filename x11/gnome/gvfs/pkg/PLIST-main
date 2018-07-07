@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2018/07/07 22:39:42 espie Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/gvfs-cat
 bin/gvfs-copy
@@ -165,6 +165,5 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
-@exec %D/bin/gio-querymodules %D/lib/gio/modules
-@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
+@tag gio-querymodules
 @tag glib-compile-schemas

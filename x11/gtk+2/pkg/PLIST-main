@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.46 2018/01/09 13:22:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.47 2018/07/07 22:39:42 espie Exp $
 @conflict gail-*
 @conflict gtk+2-docs-*
 @pkgpath x11/gtk+2
 @pkgpath x11/gtk+2,-docs
+@define-tag gtk-query-immodules-2.0 at-end %D/bin/gtk-query-immodules-2.0 --update-cache
+@tag gtk-query-immodules-2.0
 @unexec-delete rm -f %D/lib/gtk-2.0/2.10.0/immodules.cache
 bin/gtk-builder-convert
 @bin bin/gtk-demo
@@ -1209,4 +1211,3 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/
 share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
-@exec %D/bin/gtk-query-immodules-2.0 --update-cache

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/07 22:39:42 espie Exp $
 @bin bin/scim
 @bin bin/scim-config-agent
 bin/scim-setup
@@ -154,6 +154,5 @@ share/scim/icons/sctc.png
 share/scim/icons/setup.png
 share/scim/icons/trademark.png
 share/scim/icons/up.png
-@exec %D/bin/gtk-query-immodules-2.0 --update-cache
-@unexec-delete %D/bin/gtk-query-immodules-2.0 --update-cache
+@tag gtk-query-immodules-2.0
 @tag update-desktop-database

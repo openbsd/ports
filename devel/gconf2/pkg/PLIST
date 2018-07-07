@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/05/17 09:44:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/07/07 22:39:42 espie Exp $
 @conflict gconf2-polkit-*
 @pkgpath devel/gconf2,-main
 @pkgpath devel/gconf2,-polkit
@@ -173,5 +173,4 @@ share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 @sample /var/db/gconf/gconf.xml.system/
-@exec %D/bin/gio-querymodules %D/lib/gio/modules
-@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
+@tag gio-querymodules

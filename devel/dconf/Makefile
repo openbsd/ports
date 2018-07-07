@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/04/29 09:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/07/07 22:39:42 espie Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -7,7 +7,7 @@ COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
 GNOME_VERSION=		0.28.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 
