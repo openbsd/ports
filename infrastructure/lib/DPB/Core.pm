@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.85 2017/11/30 14:54:00 espie Exp $
+# $OpenBSD: Core.pm,v 1.86 2018/07/07 23:46:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -460,7 +460,8 @@ sub same_host_jobs
 sub status
 {
 	my ($self, $v) = @_;
-	while (my ($pid, $core) = each %{$self->repository}) {
+	for my $pid (keys %{$self->repository}) {
+		my $core = $self->repository->{$pid};
 		next if !defined $core->job->{v};
 		if ($core->job->{v} == $v) {
 			return "building on ".$core->hostname;
