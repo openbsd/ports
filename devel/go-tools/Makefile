@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/07/08 13:46:54 bentley Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
@@ -7,7 +7,7 @@ GH_COMMIT = 		ce871d178848e3eea1e8795e5cfb74053dde4bb9
 DISTNAME =		go-tools-1.10.20180216
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -18,6 +18,7 @@ WANTLIB +=		c pthread
 
 MODULES =		lang/go
 MODGO_ENV =		PATH="${PORTPATH}"
+MODGO_TYPE =		bin lib
 
 BUILD_DEPENDS =		net/go-net
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
@@ -50,6 +51,9 @@ _SUBPKGS =		benchcmp \
 
 ALL_TARGET =		${_SUBPKGS:%=${_MAIN}/cmd/%}
 WRKSRC =		${MODGO_WORKSPACE}/src/${_MAIN}
+
+post-extract:
+	mkdir -p ${MODGO_WORKSPACE}/pkg
 
 # godoc needs special handling - prior to Go 1.2, godoc was part of the base
 # distribution and there is a remaining mapping that causes 'go install' to
