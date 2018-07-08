@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/02 12:01:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2018/07/08 16:30:57 sthen Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION=	2.3.3
+MODPY_EGG_VERSION=	2.4.0
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION =		4
-
 CATEGORIES=		net
 
-HOMEPAGE=	http://secdev.org/projects/scapy/
+HOMEPAGE=	https://scapy.net/
 
 MAINTAINER=	Daniel Jakots <obsd@chown.me>
 
@@ -16,9 +14,8 @@ MAINTAINER=	Daniel Jakots <obsd@chown.me>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES0=	https://spacehopper.org/mirrors/
-DISTFILES=	${DISTNAME}.tgz ethertypes-20120703:0
+DISTFILES=	${EXTRACT_ONLY} ethertypes-20120703:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
 

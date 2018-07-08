@@ -1,12 +1,13 @@
-$OpenBSD: patch-scapy_config_py,v 1.3 2016/11/14 20:04:56 danj Exp $
---- scapy/config.py.orig	Tue Oct 18 10:44:43 2016
-+++ scapy/config.py	Mon Oct 31 10:36:06 2016
-@@ -385,7 +385,7 @@ contribs: a dict which can be used by contrib layers t
-                    "mobileip", "netbios", "netflow", "ntp", "ppp",
+$OpenBSD: patch-scapy_config_py,v 1.4 2018/07/08 16:30:57 sthen Exp $
+Index: scapy/config.py
+--- scapy/config.py.orig
++++ scapy/config.py
+@@ -445,7 +445,7 @@ debug_tls:When 1, print some TLS session secrets when 
+                    "mobileip", "netbios", "netflow", "ntp", "ppp", "pptp",
                     "radius", "rip", "rtp", "skinny", "smb", "snmp",
                     "tftp", "x509", "bluetooth", "dhcp6", "llmnr",
--                   "sctp", "vrrp", "ipsec", "lltd", "vxlan"]
-+                   "sctp", "vrrp", "ipsec", "lltd", "vxlan", "loop"]
+-                   "sctp", "vrrp", "ipsec", "lltd", "vxlan", "eap"]
++                   "sctp", "vrrp", "ipsec", "lltd", "vxlan", "eap", "loop"]
      contribs = dict()
- 
- 
+     crypto_valid = isCryptographyValid()
+     crypto_valid_advanced = isCryptographyAdvanced()
