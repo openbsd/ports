@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.490 2018/06/22 13:58:31 landry Exp $
+# $OpenBSD: Makefile,v 1.491 2018/07/08 11:26:51 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -252,6 +252,7 @@
      SUBDIR += ranger
      SUBDIR += ranval
      SUBDIR += raspberrypi-firmware
+     SUBDIR += rclone
      SUBDIR += rcm
      SUBDIR += rdiff-backup
      SUBDIR += relayd-updateconf
