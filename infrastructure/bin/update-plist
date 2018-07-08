@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.165 2018/07/08 19:39:33 espie Exp $
+# $OpenBSD: update-plist,v 1.166 2018/07/08 19:57:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -582,6 +582,12 @@ sub rebless
 	}
 }
 
+# check_specific($h): some file types have specific needs (e.g., @tag)
+# so we record these as $h->{should}, and we record the actual
+# @tag  if we see it as $h->{has}.
+sub check_specific
+{
+}
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -777,13 +783,28 @@ sub known_object
 	push @{$o->{sample}{$f}}, $self;
 }
 
+package OpenBSD::PackingElement::Tag;
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{has}{$self->name} = 1;
+}
+
 package OpenBSD::PackingElement::Desktop;
 our @ISA=qw(OpenBSD::PackingElement::File);
-# placeholder for tags!
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'update-desktop-database'} = 1;
+}
 
 package OpenBSD::PackingElement::Glib2Schema;
 our @ISA=qw(OpenBSD::PackingElement::File);
-# placeholder for tags!
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'glib-compile-schemas'} = 1;
+}
 
 package OpenBSD::PackingElement::Sampledir;
 
@@ -1516,6 +1537,19 @@ sub strip_dependency_directories
 	}
 }
 
+sub add_missing_tags
+{
+	my $self = shift;
+	for my $p (@{$self->{lists}}) {
+		my $h = { should => {}, has => {}};
+		$p->nlist->check_specific($h);
+		for my $k (keys %{$h->{should}}) {
+			next if $h->{has}{$k};
+			OpenBSD::PackingElement::Tag->add($p->nlist, $k);
+		}
+	}
+}
+
 sub adjust_final
 {
 	my $self = shift;
@@ -1650,6 +1684,7 @@ $self->known_objects;
 $self->scan_fake_dir;
 $self->handle_annotations;
 $self->copy_objects;
+$self->add_missing_tags;
 
 # XXX check the order of delayed objects (cwd) vs extra files (no actual cwd)?
 $self->add_delayed_objects;
