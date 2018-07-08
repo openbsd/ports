@@ -1,16 +1,24 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.3 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.4 2018/07/08 10:32:45 ajacoutot Exp $
 
-Use the integrated assembler by default on Mips64.
+[mips][ias] Enable IAS by default for OpenBSD / FreeBSD mips64/mips64el.
 
 Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
 --- tools/clang/lib/Driver/ToolChains/Gnu.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Gnu.cpp
-@@ -2250,7 +2250,8 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
-     // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
-     // Other targets are unable to distinguish N32 from N64.
+@@ -2246,11 +2246,13 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+     return true;
+   case llvm::Triple::mips64:
+   case llvm::Triple::mips64el:
+-    // Enabled for Debian and Android mips64/mipsel, as they can precisely
+-    // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
+-    // Other targets are unable to distinguish N32 from N64.
++    // Enabled for Debian, Android, FreeBSD and OpenBSD mips64/mipsel, as they
++    // can precisely identify the ABI in use (Debian) or only use N64 for MIPS64
++    // (Android). Other targets are unable to distinguish N32 from N64.
      if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||
 -        getTriple().isAndroid())
 +        getTriple().isAndroid() ||
++        getTriple().isOSFreeBSD() ||
 +        getTriple().isOSOpenBSD())
        return true;
      return false;

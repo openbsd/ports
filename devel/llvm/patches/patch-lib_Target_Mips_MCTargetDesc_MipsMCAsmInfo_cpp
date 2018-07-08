@@ -1,18 +1,18 @@
-$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp,v 1.5 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp,v 1.6 2018/07/08 10:32:45 ajacoutot Exp $
 
-Use the integrated assembler by default on Mips64.
+[mips][ias] Enable IAS by default for OpenBSD / FreeBSD mips64/mips64el.
 
 Index: lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp
 --- lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp.orig
 +++ lib/Target/Mips/MCTargetDesc/MipsMCAsmInfo.cpp
-@@ -62,6 +62,10 @@ MipsMCAsmInfo::MipsMCAsmInfo(const Triple &TheTriple) 
-   if (TheTriple.getEnvironment() == Triple::GNUABI64)
-     UseIntegratedAssembler = true;
- 
-+  // Enable IAS by default for OpenBSD mips64/mips64el.
-+  if (TheTriple.getOS() == Triple::OpenBSD)
-+    UseIntegratedAssembler = true;
-+
+@@ -65,4 +65,10 @@ MipsMCAsmInfo::MipsMCAsmInfo(const Triple &TheTriple) 
    // Enable IAS by default for Android mips64el that uses N64 ABI.
    if (TheTriple.getArch() == Triple::mips64el && TheTriple.isAndroid())
      UseIntegratedAssembler = true;
++
++  // Enable IAS by default for FreeBSD / OpenBSD mips64/mips64el.
++  if (TheTriple.isOSFreeBSD() ||
++      TheTriple.isOSOpenBSD())
++
++    UseIntegratedAssembler = true;
+ }
