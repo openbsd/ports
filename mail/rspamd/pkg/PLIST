@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/16 13:47:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/07/08 14:13:56 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -516,6 +516,7 @@ share/rspamd/lib/rspamadm/fuzzy_convert.lua
 share/rspamd/lib/rspamadm/fuzzy_stat.lua
 share/rspamd/lib/rspamadm/grep.lua
 share/rspamd/lib/rspamadm/keypair.lua
+share/rspamd/lib/rspamadm/mime.lua
 share/rspamd/lib/rspamadm/rescore.lua
 share/rspamd/lib/rspamadm/stat_convert.lua
 share/rspamd/lib/torch/
@@ -622,9 +623,9 @@ share/rspamd/www/js/lib/domReady.js
 share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/humanize.min.js
 share/rspamd/www/js/lib/jquery-3.3.1.min.js
+share/rspamd/www/js/lib/require.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
-share/rspamd/www/js/require.js
 share/rspamd/www/plugins.txt
 share/rspamd/www/react-index.html
 @sample ${LOCALSTATEDIR}/log/rspamd/
