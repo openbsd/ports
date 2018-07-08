@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.164 2018/06/28 17:56:53 espie Exp $
+# $OpenBSD: update-plist,v 1.165 2018/07/08 19:39:33 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -778,6 +778,10 @@ sub known_object
 }
 
 package OpenBSD::PackingElement::Desktop;
+our @ISA=qw(OpenBSD::PackingElement::File);
+# placeholder for tags!
+
+package OpenBSD::PackingElement::Glib2Schema;
 our @ISA=qw(OpenBSD::PackingElement::File);
 # placeholder for tags!
 

@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.23 2018/06/28 17:56:53 espie Exp $
+# $OpenBSD: FS2.pm,v 1.24 2018/07/08 19:39:33 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -62,6 +62,7 @@ sub classes
 {
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
+		OpenBSD::FS::File::Glib2Schema
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
@@ -135,7 +136,7 @@ sub element_class
 }
 
 package OpenBSD::FS::File::Desktop;
-our @ISA = qw(OpenBSD::FS::File::Directory);
+our @ISA = qw(OpenBSD::FS::File);
 sub recognize
 {
 	my ($class, $filename, $fs) = @_;
@@ -153,6 +154,19 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Desktop';
+}
+
+package OpenBSD::FS::File::Glib2Schema;
+our @ISA = qw(OpenBSD::FS::File);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,glib-2\.0/schemas/.*\.xml$,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::Glib2Schema';
 }
 
 package OpenBSD::FS::File::Binary;
