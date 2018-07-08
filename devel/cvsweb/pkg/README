@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.15 2018/07/05 03:47:35 thfr Exp $
+# $OpenBSD: README,v 1.16 2018/07/08 21:10:48 gonzalo Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${FULLPKGNAME} on OpenBSD
@@ -71,6 +71,11 @@ cp -p /usr/libdata/perl5/`arch -s`-openbsd/DynaLoader.pm .
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/Fcntl.pm .
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/auto/Fcntl/Fcntl.so ./auto/Fcntl/
 
+# You also need to enable slowcgi(8):
+
+rcctl enable slowcgi
+rcctl start slowcgi
+
 # Editing cvsweb and cvsweb.conf
 # ------------------------------
 #
@@ -98,3 +103,21 @@ cp -p /usr/libdata/perl5/`arch -s`-openbsd/auto/Fcntl/Fcntl.so ./auto/Fcntl/
 #
 # $mime_types = '/var/www/conf/mime.types';		       (default)
 # $mime_types = '/conf/mime.types';			       (chroot)
+
+# Example httpd.conf(5) for cvsweb
+# --------------------------------
+#
+# server "domain.tld" {
+#      listen on * port 80
+#      #listen on egress tls port 443
+#
+#      #tls {
+#              #certificate "/etc/ssl/domain.tld_fullchain.pem"
+#              #key "/etc/ssl/private/domain.tld_private.pem"
+#      #}
+#
+#      location "/cgi-bin/*" {
+#              fastcgi
+#              root "/"
+#      }
+# }
