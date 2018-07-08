@@ -1,0 +1,3 @@
+Rclone is a command line program to sync files and directories to and
+from various storage backends such as Amazon S3, Google Drive, Dropbox,
+WebDAV, SFTP, etc.
