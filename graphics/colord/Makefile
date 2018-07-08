@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2018/07/08 20:10:33 espie Exp $
 
 # XXX newer versions hard depend on gusb and udev...
 PORTROACH=	skipv:1.4.0,1.4.1,1.4.2,1.4.3
@@ -8,7 +8,7 @@ COMMENT=	device color profile management daemon
 V=		1.3.5
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  colordprivate        1.1      # 2.5
 SHARED_LIBS +=  colord               1.5      # 2.5
