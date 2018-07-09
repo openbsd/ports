@@ -1,20 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 12:43:20 pirofti Exp $
+# $OpenBSD: Makefile,v 1.14 2018/07/09 07:51:05 jasper Exp $
 
 COMMENT =		library to edit command lines as they are typed in
 
-V =			6.3
+V =			7.0
 DISTNAME =		readline-${V}
 PKGNAME =		readline-${V}
-PATCHFILES =		readline63-001:0 \
-			readline63-002:0 \
-			readline63-003:0 \
-			readline63-004:0 \
-			readline63-005:0 \
-			readline63-006:0 \
-			readline63-007:0 \
-			readline63-008:0
 
-LIBV =			1.0
+LIBV =			2.0
 SHARED_LIBS +=		ehistory ${LIBV}
 SHARED_LIBS +=		ereadline ${LIBV}
 
@@ -22,13 +14,11 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://tiswww.case.edu/php/chet/readline/rltop.html
 
-MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
-
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=readline/}
-MASTER_SITES0 =		${MASTER_SITE_GNU:=readline/${DISTNAME}-patches/}
+#MASTER_SITES0 =		${MASTER_SITE_GNU:=readline/${DISTNAME}-patches/}
 CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
 

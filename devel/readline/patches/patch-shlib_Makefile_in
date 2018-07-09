@@ -1,7 +1,8 @@
-$OpenBSD: patch-shlib_Makefile_in,v 1.1.1.1 2010/07/23 14:51:11 laurent Exp $
---- shlib/Makefile.in.orig	Tue Jul 13 11:58:49 2010
-+++ shlib/Makefile.in	Tue Jul 13 12:00:00 2010
-@@ -118,8 +118,8 @@ CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(CPPFLAGS) $(INCLUDES
+$OpenBSD: patch-shlib_Makefile_in,v 1.2 2018/07/09 07:51:05 jasper Exp $
+Index: shlib/Makefile.in
+--- shlib/Makefile.in.orig
++++ shlib/Makefile.in
+@@ -118,8 +118,8 @@ CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(INCLUDES) $(CPPFLAGS
  
  # The name of the main library target.
  

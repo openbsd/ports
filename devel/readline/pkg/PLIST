@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/05 12:43:20 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/09 07:51:05 jasper Exp $
 include/ereadline/
 include/ereadline/readline/
 include/ereadline/readline/chardefs.h
@@ -32,6 +32,7 @@ share/readline/manexamp.c
 share/readline/rl-callbacktest.c
 share/readline/rl-fgets.c
 share/readline/rl.c
+share/readline/rlbasic.c
 share/readline/rlcat.c
 share/readline/rlevent.c
 share/readline/rlptytest.c
