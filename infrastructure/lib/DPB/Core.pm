@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.86 2018/07/07 23:46:05 espie Exp $
+# $OpenBSD: Core.pm,v 1.87 2018/07/09 20:49:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -545,12 +545,7 @@ sub mark_ready
 {
 	my $self = shift;
 	$self->SUPER::mark_ready;
-	my $hostname = $self->hostname;
-	if (-e "$logdir/stop-$hostname") {
-		push(@{$stopped{$hostname}}, $self);
-	} else {
-		$self->mark_available($self);
-	}
+	$self->mark_available($self);
 	return $self;
 }
 
@@ -559,9 +554,7 @@ sub avail
 	my $self = shift;
 	for my $h (keys %stopped) {
 		if (!-e "$logdir/stop-$h") {
-			for my $c (@{$stopped{$h}}) {
-				$self->mark_available($c);
-			}
+			$self->mark_available(@{$stopped{$h}});
 			delete $stopped{$h};
 		}
 	}
@@ -626,7 +619,12 @@ sub mark_available
 				next LOOP;
 			}
 		}
-		push(@{$self->available}, $core);
+		my $hostname = $core->hostname;
+		if (-e "$logdir/stop-$hostname") {
+			push(@{$stopped{$hostname}}, $core);
+		} else {
+			push(@{$self->available}, $core);
+		}
 	}
 }
 
