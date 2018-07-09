@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/12/22 10:28:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/09 12:16:46 jasper Exp $
 @pkgpath sysutils/tmuxinator,ruby20
 @pkgpath sysutils/tmuxinator,ruby21
 @pkgpath sysutils/tmuxinator,ruby22
@@ -53,6 +53,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/noroot.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/nowindows.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample.deprecations.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample.yml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_alias.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_emoji_as_name.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_literals_as_window_name.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_number_as_name.yml
