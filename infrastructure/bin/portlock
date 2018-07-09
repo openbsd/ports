@@ -1,0 +1,78 @@
+#! /usr/bin/perl
+# $OpenBSD: portlock,v 1.1 2018/07/09 11:33:04 espie Exp $
+# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+use Fcntl;
+use File::Basename;
+use Getopt::Std;
+
+my %opts;
+if (!getopts('m:g:', \%opts)) {
+	exit(1);
+}
+
+if (@ARGV == 0) {
+	exit(1);
+}
+
+my $p = {};
+if ($opts{g}) {
+	$p->{group} = $opts{g};
+} else {
+	$( =~ m/^(\d+)/ and $p->{group} = $1;
+}
+if ($opts{m}) {
+	$p->{mode} = oct($opts{m});
+}
+
+my $fname = shift;
+my $dname = dirname $fname;
+my $done = 0;
+
+unless (-e $dname) {
+	require File::Path;
+	if ($p->{mode}) {
+		my $m = umask(0);
+		File::Path::make_path($dname, $p);
+		umask($m);
+	} else {
+		File::Path::make_path($dname, $p);
+	}
+}
+if (!-d $dname) {
+	print STDERR "lock directory location $dname is not a directory\n";
+	exit(1);
+}
+if (!-w _) {
+	print STDERR "you don't have permission to write into $dname ($<, $()\n";
+	exit(1);
+}
+
+while(1) {
+	if (sysopen my $handle, $fname, O_WRONLY | O_EXCL | O_CREAT, 0666) {
+		if (@ARGV)  {
+			print $handle join("\n", @ARGV), "\n";
+		}
+		close($handle);
+		exit(0);
+	}
+	unless ($done) {
+		print STDERR "Awaiting lock $fname\n";
+		$done = 1;
+}
+	sleep(1);
+}

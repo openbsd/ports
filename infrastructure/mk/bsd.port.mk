@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1416 2018/06/19 19:04:58 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1417 2018/07/09 11:33:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1628,7 +1628,7 @@ ERRORS += "Fatal: $w ends with a slash"
 # to remove locks handling, define LOCKDIR to an empty value
 LOCKDIR ?= ${WRKOBJDIR}/locks
 
-LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/dolock
+LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/portlock
 UNLOCK_CMD ?= ${_PBUILD} rm -f
 _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
