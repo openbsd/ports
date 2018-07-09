@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/05/15 11:48:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/09 20:04:42 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -280,13 +280,11 @@ kopano-webapp/client/extjs/ux/ux-all-debug.js
 kopano-webapp/client/extjs/ux/ux-all.js
 kopano-webapp/client/fingerprint-debug.js
 kopano-webapp/client/fingerprint.js
-kopano-webapp/client/fingerprint.js.map
 kopano-webapp/client/kopano-debug.js
 kopano-webapp/client/kopano.js
 kopano-webapp/client/kopano.js.map
 kopano-webapp/client/resize-debug.js
 kopano-webapp/client/resize.js
-kopano-webapp/client/resize.js.map
 kopano-webapp/client/resources/
 kopano-webapp/client/resources/config.rb
 kopano-webapp/client/resources/css/
@@ -382,7 +380,7 @@ kopano-webapp/client/resources/images/buttons/triangle_right_stop_outline.png
 kopano-webapp/client/resources/images/default_contact_profile.png
 kopano-webapp/client/resources/images/favicon.ico
 kopano-webapp/client/resources/images/icons/
-kopano-webapp/client/resources/images/icons-s4d78048d22.png
+kopano-webapp/client/resources/images/icons-s5e0631df8c.png
 kopano-webapp/client/resources/images/icons/arrow_down_l.png
 kopano-webapp/client/resources/images/icons/arrow_down_l_white.png
 kopano-webapp/client/resources/images/icons/arrow_down_s.png
@@ -523,6 +521,7 @@ kopano-webapp/client/resources/images/icons/icon_remove_favorites.png
 kopano-webapp/client/resources/images/icons/icon_restore.png
 kopano-webapp/client/resources/images/icons/icon_seal.png
 kopano-webapp/client/resources/images/icons/icon_sendas.png
+kopano-webapp/client/resources/images/icons/icon_share.png
 kopano-webapp/client/resources/images/icons/icon_shortcuts.png
 kopano-webapp/client/resources/images/icons/icon_sort_ascending.png
 kopano-webapp/client/resources/images/icons/icon_sort_descending.png
@@ -1007,8 +1006,8 @@ kopano-webapp/index.php
 kopano-webapp/init.php
 kopano-webapp/kopano-webapp.conf
 kopano-webapp/kopano-webapp.conf.dist
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/kopano-webapp.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/kopano-webapp.conf
 kopano-webapp/kopano.php
 kopano-webapp/plugins/
 kopano-webapp/plugins/contactfax/
@@ -1600,7 +1599,6 @@ kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm-debug.js
 kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm.js
 kopano-webapp/plugins/files/js/files-debug.js
 kopano-webapp/plugins/files/js/files.js
-kopano-webapp/plugins/files/js/files.js.map
 kopano-webapp/plugins/files/language/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/LC_MESSAGES/
@@ -1634,6 +1632,8 @@ kopano-webapp/plugins/files/language/nl_NL.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/plugin_files.mo
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/plugin_files.mo
@@ -2683,6 +2683,8 @@ kopano-webapp/plugins/filesbackendOwncloud/language/nl_NL.UTF-8/LC_MESSAGES/plug
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
@@ -2766,6 +2768,8 @@ kopano-webapp/plugins/filesbackendSMB/language/nl_NL.UTF-8/LC_MESSAGES/plugin_fi
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
@@ -2893,21 +2897,6 @@ kopano-webapp/plugins/intranet/resources/css/
 kopano-webapp/plugins/intranet/resources/css/intranet.css
 kopano-webapp/plugins/intranet/resources/icons/
 kopano-webapp/plugins/intranet/resources/icons/icon_default.png
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/config.php.dist
-@sample kopano-webapp/plugins/kopano-webapp-plugin-mattermost/config.php
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/js/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/js/kopano-webapp-plugin-mattermost-debug.js
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/js/kopano-webapp-plugin-mattermost.js
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/js/kopano-webapp-plugin-mattermost.js.map
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/manifest.xml
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/php/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/php/plugin.mattermost.php
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/resources/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/resources/css/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/resources/css/kopano-webapp-plugin-mattermost.css
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/resources/img/
-kopano-webapp/plugins/kopano-webapp-plugin-mattermost/resources/img/icon_mattermost.png
 kopano-webapp/plugins/pimfolder/
 kopano-webapp/plugins/pimfolder/LICENSE.txt
 kopano-webapp/plugins/pimfolder/config.php.dist
@@ -3118,65 +3107,6 @@ kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/plugin.dev.js
 kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/plugin.js
 kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/plugin.min.js
 kopano-webapp/plugins/spellchecker/tinymce-plugin/spellchecker/spellchecker.php
-kopano-webapp/plugins/spreedwebrtc/
-kopano-webapp/plugins/spreedwebrtc/config.php.dist
-@sample kopano-webapp/plugins/spreedwebrtc/config.php
-kopano-webapp/plugins/spreedwebrtc/js/
-kopano-webapp/plugins/spreedwebrtc/js/AngularPlugin.js
-kopano-webapp/plugins/spreedwebrtc/js/jquery-1.6.2.min.js
-kopano-webapp/plugins/spreedwebrtc/js/kopano-webapp-plugin-meetings-3.0.4.4.js.map
-kopano-webapp/plugins/spreedwebrtc/js/spreedwebrtc-debug.js
-kopano-webapp/plugins/spreedwebrtc/js/spreedwebrtc.js
-kopano-webapp/plugins/spreedwebrtc/manifest.xml
-kopano-webapp/plugins/spreedwebrtc/php/
-kopano-webapp/plugins/spreedwebrtc/php/AngularPluginWrapper.php
-kopano-webapp/plugins/spreedwebrtc/php/class.turnauth.php
-kopano-webapp/plugins/spreedwebrtc/php/class.webmeetings_auth_simple.php
-kopano-webapp/plugins/spreedwebrtc/php/class.webmeetingsauth.php
-kopano-webapp/plugins/spreedwebrtc/php/jsconfig.php
-kopano-webapp/plugins/spreedwebrtc/php/module.spreedwebrtc.php
-kopano-webapp/plugins/spreedwebrtc/php/plugin.spreedwebrtc.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_api.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_auth.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_common.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_login.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_token.php
-kopano-webapp/plugins/spreedwebrtc/php/webapp_auth_userinfo.php
-kopano-webapp/plugins/spreedwebrtc/php/zarafa_session.php
-kopano-webapp/plugins/spreedwebrtc/resources/
-kopano-webapp/plugins/spreedwebrtc/resources/css/
-kopano-webapp/plugins/spreedwebrtc/resources/css/login.css
-kopano-webapp/plugins/spreedwebrtc/resources/css/spreedwebrtc.css
-kopano-webapp/plugins/spreedwebrtc/resources/icons/
-kopano-webapp/plugins/spreedwebrtc/resources/icons/available.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/away.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/busy.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/go_offline_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/offline.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/online.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/popout_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/powered_by_spreed.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_textchat_context_menu_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_videocall_context_menu_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webmeeting_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webmeeting_settings_category_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_active_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_incall_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_inchat_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_menu_inactive_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_menu_opened_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/spreed_webrtc_offline_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/unavailable.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/volume_controls_high_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/volume_controls_low_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/volume_controls_mute_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/icons/webmeetings_icon.png
-kopano-webapp/plugins/spreedwebrtc/resources/img/
-kopano-webapp/plugins/spreedwebrtc/resources/img/control_panel_c.jpg
-kopano-webapp/plugins/spreedwebrtc/resources/img/introduction_c.jpg
-kopano-webapp/plugins/spreedwebrtc/resources/img/pop_out_c.jpg
-kopano-webapp/plugins/spreedwebrtc/resources/img/wm_logo.png
 kopano-webapp/plugins/titlecounter/
 kopano-webapp/plugins/titlecounter/LICENSE.txt
 kopano-webapp/plugins/titlecounter/config.php.dist
@@ -3205,12 +3135,14 @@ kopano-webapp/server/includes/core/
 kopano-webapp/server/includes/core/class.attachmentstate.php
 kopano-webapp/server/includes/core/class.browserfingerprint.php
 kopano-webapp/server/includes/core/class.bus.php
+kopano-webapp/server/includes/core/class.colors.php
 kopano-webapp/server/includes/core/class.configcheck.php
 kopano-webapp/server/includes/core/class.conversion.php
 kopano-webapp/server/includes/core/class.dispatcher.php
 kopano-webapp/server/includes/core/class.encryptionstore.php
 kopano-webapp/server/includes/core/class.entryid.php
 kopano-webapp/server/includes/core/class.filter.php
+kopano-webapp/server/includes/core/class.freebusy.php
 kopano-webapp/server/includes/core/class.jsonrequest.php
 kopano-webapp/server/includes/core/class.language.php
 kopano-webapp/server/includes/core/class.mapisession.php
