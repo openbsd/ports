@@ -1,0 +1,14 @@
+$OpenBSD: patch-ECtools_search_kopano_search_plaintext_py,v 1.1 2018/07/09 20:28:10 robert Exp $
+
+Index: ECtools/search/kopano_search/plaintext.py
+--- ECtools/search/kopano_search/plaintext.py.orig
++++ ECtools/search/kopano_search/plaintext.py
+@@ -44,7 +44,7 @@ for (X, C) in DB:
+         CMD[Y] = C
+ 
+ def setlimits():
+-    resource.setrlimit(resource.RLIMIT_AS, (MAX_MEMORY, MAX_MEMORY))
++    resource.setrlimit(resource.RLIMIT_DATA, (MAX_MEMORY, MAX_MEMORY))
+     resource.setrlimit(resource.RLIMIT_CPU, (MAX_TIME, MAX_TIME))
+ 
+ def convert(cmd, data, log):
