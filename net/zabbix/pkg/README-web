@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.8 2015/04/20 21:16:04 ajacoutot Exp $
+$OpenBSD: README-web,v 1.9 2018/07/09 10:02:53 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,14 +7,24 @@ $OpenBSD: README-web,v 1.8 2015/04/20 21:16:04 ajacoutot Exp $
 The Zabbix web frontend has been installed into
 ${PREFIX-web}/zabbix
 
-You should point this to the DocumentRoot of your web-server:
-    # ln -s ../zabbix /var/www/htdocs/zabbix
-(make sure you use a relative symlink since Apache is chrooted)
-
 Zabbix Web can work with a PostgreSQL, MySQL or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed:
     php-pgsql or php-mysqli
+
+Zabbix requires a timezone to be configured in PHP; zabbix.ini
+sets this to UTC, you may like to adjust this. After making these
+changes, stop and start your webserver.
+
+Finally, edit ${ZABBIX_WEB}/conf/zabbix.conf.php according to your needs.
+Below are instructions for setting up Zabbix Web with Apache or NGINX.
+
+Apache
+======
+
+You should point this to the DocumentRoot of your web-server:
+    # ln -s ../zabbix /var/www/htdocs/zabbix
+(make sure you use a relative symlink since Apache is chrooted)
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
 httpd (the "Status of Zabbix" page uses /bin/ps and /dev/kmem to
@@ -28,8 +38,35 @@ you can do this by creating symbolic links as follows:
     # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/zabbix.ini \
       ${SYSCONFDIR}/php-${MODPHP_VERSION}/zabbix.ini
 
-Zabbix requires a timezone to be configured in PHP; zabbix.ini
-sets this to UTC, you may like to adjust this. After making these
-changes, stop and start httpd.
+NGINX
+=====
 
-At last, edit ${ZABBIX_WEB}/conf/zabbix.conf.php according to your needs.
+First install and enable php-fpm and enable the required modules:
+
+    # cd ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample
+    # for i in *; do ln -fs ../php-${MODPHP_VERSION}.sample/$i ../php-${MODPHP_VERSION}/; done
+
+Next configure a nginx such as:
+
+server {                         
+  listen        80;              
+  server_name   zabbix.example.com;
+  root          ${ZABBIX_WEB};
+  index         index.php;                             
+  error_page    403 404 502 503 504  /zabbix/index.php;
+  
+  location ~ \.php {                                                         
+    fastcgi_pass        unix:run/php-fpm.sock;
+    fastcgi_index       index.php;     
+    fastcgi_param       DOCUMENT_ROOT $document_root;
+    fastcgi_param       SCRIPT_FILENAME $request_filename;
+    include             fastcgi_params;
+  }                   
+  location ~ \.(jpg|jpeg|gif|png|ico)$ {
+     access_log      off;
+     expires         33d;
+  }
+  location ~ ^\.ht {
+    deny        all;
+  }
+}
