@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.44 2017/11/20 12:24:43 sebastia Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2018/07/09 06:56:42 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -18,9 +18,6 @@ SUBST_VARS +=	RUBY
 # Ruby version as Puppet. Please consult this matrix before adjusting:
 # https://docs.puppet.com/guides/platforms.html#ruby-versions
 #
-# The Puppet 3 ports have been unhooked and should be removed after
-# removed after OpenBSD 6.1.
-#
 # Common:
 #   devel/ruby-rgen
 #   databases/ruby-hiera-eyaml
@@ -29,11 +26,6 @@ SUBST_VARS +=	RUBY
 #   sysutils/mcollective
 #   sysutils/ruby-augeas
 #   sysutils/ruby-shadow
-# Puppet 3:
-#   databases/puppetdb
-#   databases/ruby-hiera
-#   sysutils/ruby-facter
-#   www/puppet-dashboard
 # Puppet 4:
 #   databases/puppetdb4
 #   databases/ruby-hiera3
