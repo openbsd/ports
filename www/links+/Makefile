@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.61 2018/04/26 00:35:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.62 2018/07/09 02:19:49 bcallah Exp $
 
 COMMENT=	graphics and text browser
-VER=		2.15
+VER=		2.16
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
@@ -21,7 +21,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-ssl --without-brotli
+CONFIGURE_ARGS+= --with-ssl --without-brotli --without-lzip
 
 FLAVORS=	no_x11
 FLAVOR?=
