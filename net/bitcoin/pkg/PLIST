@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+@newgroup _bitcoind:813
+@newuser _bitcoind:813:813:daemon:Bitcoind Account:${VARBASE}/empty:/sbin/nologin
+@rcscript ${RCDIR}/bitcoind
+@mode 750
+@owner _bitcoind
+@group _bitcoind
+@sample ${VARBASE}/bitcoin/
+@mode
+@owner
+@group
+@bin bin/bench_bitcoin
+@bin bin/bitcoin-cli
+@bin bin/bitcoin-tx
+@bin bin/bitcoind
+@comment @bin bin/test_bitcoin
+@comment @bin bin/test_bitcoin-qt
+include/bitcoinconsensus.h
+include/secp256k1.h
+include/secp256k1_recovery.h
+include/univalue.h
+lib/libbitcoinconsensus.a
+lib/libbitcoinconsensus.la
+@lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
+lib/libsecp256k1.a
+lib/libsecp256k1.la
+@lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
+lib/libunivalue.a
+lib/libunivalue.la
+@lib lib/libunivalue.so.${LIBunivalue_VERSION}
+lib/pkgconfig/libbitcoinconsensus.pc
+lib/pkgconfig/libsecp256k1.pc
+lib/pkgconfig/libunivalue.pc
+@man man/man1/bitcoin-cli.1
+@man man/man1/bitcoin-tx.1
+@man man/man1/bitcoind.1
+share/bash-completion/completions/bitcoin/
+share/bash-completion/completions/bitcoin/bitcoin-cli.bash-completion
+share/bash-completion/completions/bitcoin/bitcoin-tx.bash-completion
+share/bash-completion/completions/bitcoin/bitcoind.bash-completion
+share/bitcoin/
+share/bitcoin/rpcauth.py
+share/doc/bitcoin/
+share/doc/bitcoin/assets-attribution.md
+share/doc/bitcoin/benchmarking.md
+share/doc/bitcoin/bips.md
+share/doc/bitcoin/dnsseed-policy.md
+share/doc/bitcoin/fuzzing.md
+share/doc/bitcoin/reduce-traffic.md
+share/doc/bitcoin/tor.md
+share/doc/bitcoin/translation_process.md
+share/doc/bitcoin/translation_strings_policy.md
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/bitcoin/
+share/examples/bitcoin/bitcoin.conf
+@sample ${SYSCONFDIR}/bitcoin.conf
+!%%no_x11%%

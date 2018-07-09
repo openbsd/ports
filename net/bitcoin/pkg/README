@@ -1,0 +1,26 @@
+$OpenBSD: README,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+RPC user and password
+=====================
+
+Change rpcuser/rpcpassword in ${SYSCONFDIR}/bitcoin.conf before starting
+bitcoind via rc.d(8).
+
+Run the following command to create a RPC password:
+
+${LOCALBASE}/share/bitcoin/rpcauth.py USERNAME
+
+Storage requirements
+====================
+
+You may wish to reduce storage requirements by pruning (deleting) old blocks.
+Enable prune in ${SYSCONFDIR}/bitcoin.conf brefore you start bitcoind first
+time or enable block pruning on the command line:
+
+    -prune=N: where N is the number of MB to allot for raw block & undo data.
+
+The minimum allowed size is 550MB. See bitcoind(1).

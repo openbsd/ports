@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: bitcoind.rc,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+
+daemon="${TRUEPREFIX}/bin/bitcoind"
+daemon_timeout="300"
+daemon_user="_bitcoind"
+data_dir="${VARBASE}/bitcoin"
+daemon_flags="-daemon -conf=/etc/bitcoin.conf -datadir=${data_dir}"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+
+rc_cmd $1
