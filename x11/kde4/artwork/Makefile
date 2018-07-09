@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/29 22:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2018/07/09 15:09:41 ajacoutot Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
 COMMENT-emoticons =	KDE emoticons
@@ -14,8 +14,8 @@ PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
 REVISION-emoticons =	2
 REVISION-main =		2
-REVISION-mono =		5
-REVISION-nuvola =	3
+REVISION-mono =		6
+REVISION-nuvola =	4
 
 PKGSPEC-main =		kdeartwork-${MODKDE4_SPEC}
 

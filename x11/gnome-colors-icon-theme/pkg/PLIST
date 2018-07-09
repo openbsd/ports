@@ -1,12 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:25 espie Exp $
-@unexec-delete rm -f %D/share/icons/gnome-brave/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-colors-common/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-dust/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-human/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-illustrious/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-noble/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-wine/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-wise/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.7 2018/07/09 15:09:38 ajacoutot Exp $
 share/icons/
 share/icons/gnome-brave/
 share/icons/gnome-brave/16x16/

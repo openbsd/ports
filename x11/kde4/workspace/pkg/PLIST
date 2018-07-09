@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/07/09 15:09:44 ajacoutot Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
 @newuser _kdm:730:_kdm:daemon:KDM greeter:/nonexistent:/sbin/nologin
-@unexec-delete rm -f %D/share/icons/Oxygen_Black/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Oxygen_Blue/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Oxygen_White/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Oxygen_Yellow/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Oxygen_Zion/icon-theme.cache
 @bin bin/genkdmconf
 @bin bin/kaccess
 @bin bin/kapplymousetheme

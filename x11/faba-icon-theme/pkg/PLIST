@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:22 espie Exp $
-@unexec-delete rm -f %D/share/icons/Faba/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faba-Mono/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faba-Mono-Dark/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.4 2018/07/09 15:09:37 ajacoutot Exp $
 share/icons/Faba/
 share/icons/Faba-Mono/
 share/icons/Faba-Mono-Dark/

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-mono,v 1.5 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST-mono,v 1.6 2018/07/09 15:09:41 ajacoutot Exp $
 @option is-branch
 @conflict kdeartwork->=4,<4.10.5p1
 @conflict kdeaccessibility3->=3,<3.5.10p16
 @pkgpath x11/kde/accessibility3,-mono
-@unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
 share/icons/mono/
 share/icons/mono/128x128/
 share/icons/mono/128x128/animations/

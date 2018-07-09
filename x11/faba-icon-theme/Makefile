@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:22 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/07/09 15:09:37 ajacoutot Exp $
 
 COMMENT =		sexy and modern icon theme with Tango influences
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		snwh
 GH_PROJECT =		faba-icon-theme
 GH_TAGNAME =		v4.1.2
 CATEGORIES =		x11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://snwh.org/moka#faba-icon-theme
 MASTER_SITES0 =		https://github.com/moka-project/faba-mono-icons/raw/master/

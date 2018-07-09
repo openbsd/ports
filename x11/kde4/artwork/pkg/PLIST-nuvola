@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-nuvola,v 1.4 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST-nuvola,v 1.5 2018/07/09 15:09:43 ajacoutot Exp $
 @conflict kdeartwork->=4,<4.10.5p1
-@unexec-delete rm -f %D/share/icons/nuvola/icon-theme.cache
 share/icons/nuvola/
 share/icons/nuvola/128x128/
 share/icons/nuvola/128x128/actions/

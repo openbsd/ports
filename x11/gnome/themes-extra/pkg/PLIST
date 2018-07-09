@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/29 22:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/07/09 15:09:41 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @conflict gnome-themes-standard-*
 @pkgpath x11/gnome/themes-standard
-@unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 lib/gtk-2.0/2.10.0/engines/libadwaita.so
 share/examples/gnome-themes-extra/
 share/examples/gnome-themes-extra/gtkrc

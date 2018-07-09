@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:34 espie Exp $
-@unexec-delete rm -f %D/share/icons/Paper/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.5 2018/07/09 15:09:46 ajacoutot Exp $
 share/icons/Paper/
 share/icons/Paper/16x16/
 share/icons/Paper/16x16/actions/

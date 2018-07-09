@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:36 espie Exp $
-@unexec-delete rm -f %D/share/icons/Rodent/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.15 2018/07/09 15:09:56 ajacoutot Exp $
 lib/pkgconfig/xfce4-icon-theme-1.0.pc
 share/icons/Rodent/
 share/icons/Rodent/48x48/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2018/06/29 22:16:25 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2018/07/09 15:09:41 ajacoutot Exp $
 @option no-default-conflict
 @option is-branch
 @conflict kdelibs-<4
@@ -7,7 +7,6 @@
 @conflict kdeaddons-<3.4
 @conflict kdeadmin-<3.4
 @pkgpath x11/kde/libs3
-@unexec-delete rm -f %D/share/icons/crystalsvg/icon-theme.cache
 @bin bin/artsmessage
 bin/checkXML
 @bin bin/dcop

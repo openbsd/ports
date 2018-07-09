@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/29 22:16:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/07/09 15:09:44 ajacoutot Exp $
 @pkgpath x11/lumina/i18n
 @pkgpath x11/lumina/lumina
-@unexec-delete rm -f %D/share/icons/material-design-dark/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/material-design-light/icon-theme.cache
 bin/lte
 @bin bin/lthemeengine
 @bin bin/lumina-archiver

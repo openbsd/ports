@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:22 espie Exp $
-@unexec-delete rm -f %D/share/icons/Faenza/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faenza-Darker/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faenza-Darkest/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Faenza-Radiance/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.6 2018/07/09 15:09:38 ajacoutot Exp $
 share/icons/Faenza/
 share/icons/Faenza-Ambiance/
 share/icons/Faenza-Ambiance/index.theme

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/09 15:09:38 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
-@unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
 share/icons/Adwaita/16x16/
 share/icons/Adwaita/16x16/actions/
