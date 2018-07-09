@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.2 2018/07/09 00:30:07 bcallah Exp $
 
 Index: lib/x86_64/fast/CMakeLists.txt
 --- lib/x86_64/fast/CMakeLists.txt.orig
@@ -14,6 +14,6 @@ Index: lib/x86_64/fast/CMakeLists.txt
  include_directories(${CMAKE_CURRENT_BINARY_DIR})
  set(SRCS
    fastmath.S)
--libmath_add_object_library("${SRCS}" "-m64 -O3" "${DEFINITIONS}" "fastmath")
-+libmath_add_object_library("${SRCS}" "-m64 -mtune=knl -march=knl" "${DEFINITIONS}" "fastmath")
+-libmath_add_object_library("${SRCS}" "-m64 -O3 -mtune=skylake-avx512 -march=skylake-avx512" "${DEFINITIONS}" "fastmath")
++libmath_add_object_library("${SRCS}" "-m64 -mtune=skylake-avx512 -march=skylake-avx512" "${DEFINITIONS}" "fastmath")
  add_dependencies(fastmath mthdecls)
