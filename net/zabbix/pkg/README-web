@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.9 2018/07/09 10:02:53 jasper Exp $
+$OpenBSD: README-web,v 1.10 2018/07/09 20:15:04 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -70,3 +70,27 @@ server {
     deny        all;
   }
 }
+
+httpd.conf(5)
+=============
+
+server "zabbix.example.com" {
+	listen on * 80
+	listen on * tls port 443
+	directory { index "index.php" }
+
+	tls {
+		certificate "/etc/ssl/acme/zabbix.example.com_fullchain.pem"
+		key "/etc/ssl/acme/private/zabbix.example.com_private.pem"
+	}
+
+	# Increase connection limits to extend the lifetime
+	connection { max requests 500, timeout 3600 }
+	connection { max request body 8388608 }
+
+	location "*.php" {
+		fastcgi socket "/run/php-fpm.sock"
+	}
+	root "/zabbix"
+}
+
