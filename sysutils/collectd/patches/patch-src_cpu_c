@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_cpu_c,v 1.1 2018/07/09 07:02:20 sthen Exp $
+
+Unless sched.h is included, collectd's cpu module falls back to using local
+definitions of CPUSTATES and related macros which no longer match ones used
+by the kernel.
+
+Index: src/cpu.c
+--- src/cpu.c.orig
++++ src/cpu.c
+@@ -64,6 +64,10 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
++#ifdef HAVE_SYS_SCHED_H
++#include <sys/sched.h>
++#endif
++
+ #ifdef HAVE_SYS_DKSTAT_H
+ #include <sys/dkstat.h>
+ #endif

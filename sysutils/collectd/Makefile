@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/06/01 15:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2018/07/09 07:02:20 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -18,7 +18,7 @@ COMMENT-ping =		collectd ping plugin
 V =			5.8.0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-mysql =		collectd-mysql-$V
 PKGNAME-pgsql =		collectd-pgsql-$V
 PKGNAME-rrdtool =	collectd-rrdtool-$V
@@ -122,7 +122,8 @@ WANTLIB += c crypto gpg-error kvm curl xml2 lzma nghttp2
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt iconv intl
 WANTLIB += yajl
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 # uses -export-symbol-regex
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS =	--tag=disable-static

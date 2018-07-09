@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2018/07/09 07:02:20 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -351,6 +351,7 @@ AC_CHECK_HEADERS([netinet/udp.h], [], [],
+ 
+ # For cpu modules
+ AC_CHECK_HEADERS([sys/dkstat.h])
++AC_CHECK_HEADERS([sys/sched.h])
+ if test "x$ac_system" = "xDarwin"; then
+   AC_CHECK_HEADERS(
+     [ \
