@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1418 2018/07/09 13:55:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1419 2018/07/09 14:48:08 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1425,7 +1425,7 @@ _DEPENDS_TARGET ?= install
 
 # Various dependency styles
 _resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			${_PERLSCRIPT}/resolve-lib
+			${_PERLSCRIPT}/port-resolve-lib-helper
 
 PKG_CREATE_NO_CHECKS ?= No
 .if ${PKG_CREATE_NO_CHECKS:L} == "yes"

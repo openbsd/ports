@@ -1,0 +1,98 @@
+#! /usr/bin/perl
+# $OpenBSD: port-resolve-lib-helper,v 1.1 2018/07/09 14:48:08 espie Exp $
+#
+# Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+use strict;
+use warnings;
+use OpenBSD::LibSpec;
+use OpenBSD::LibSpec::Build;
+use OpenBSD::Paths;
+
+my $LOCALBASE = $ENV{LOCALBASE} // '/usr/local';
+my $error = 0;
+my ($needed, $silent) = @_;
+my $emited = {};
+
+sub solve_spec
+{
+	my ($spec, $repo) = @_;
+	my $r = $spec->findbest($repo, $LOCALBASE);
+	if ($needed) {
+		if (!defined $r || $r->is_static) {
+			return;
+		} else {
+			exit(0);
+		}
+	}
+	
+	if (!defined $r) {
+		print STDERR "Missing library for ", $spec->to_string, "\n" 
+		    unless $silent;
+		$error = 1;
+	} else {
+		my $string = $spec->key.$r->version;
+		unless ($emited->{$string}) {
+			$emited->{$string} = 1;
+			print $string, "\n" unless $silent;
+		}
+	}
+}
+
+
+# Grab arguments
+while (@ARGV > 0) {
+	if ($ARGV[0] eq '-needed') {
+		$needed = 1;
+		$error = 1;
+		shift;
+	} elsif ($ARGV[0] eq '-silent') {
+		$silent = 1;
+		shift;
+	} else {
+		last;
+	}
+}
+
+# my $_;
+my $repo = OpenBSD::LibRepo->new;
+
+while(<STDIN>) {
+	chomp;
+	for my $s (split(/\s+/, $_)) {
+		my $lib = OpenBSD::Library::Build->from_string($s);
+		next if !$lib->is_valid;
+		$repo->register($lib, 1);
+	}
+}
+
+my $done = {};
+for my $s (@ARGV) {
+	my $spec = OpenBSD::LibSpec::Build->from_string($s);
+	next if $done->{$spec};
+	$done->{$spec} = 1;
+	solve_spec($spec, $repo);
+}
+
+exit($error);
