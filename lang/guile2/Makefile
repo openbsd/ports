@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/19 15:50:11 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2018/07/09 14:33:09 ajacoutot Exp $
 
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
 # proper guile2 includes directory
@@ -11,8 +11,9 @@ COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 VERSION=		2.2.3
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
-V=			${VERSION:C,.[0-9]+$,,}
+V=			${VERSION:R}
 SUBST_VARS=		V
+REVISION=		0
 
 CATEGORIES=		lang
 
@@ -45,7 +46,7 @@ LIB_DEPENDS=		converters/libunistring \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--program-transform-name="s,guile,guile2,"
+CONFIGURE_ARGS=		--program-suffix=${V}
 
 # Needed because otherwise regress tests won't build:
 # warning: format '%ji' expects type 'intmax_t', but argument 4 has type 'scm_t_intmax'
@@ -54,7 +55,7 @@ CONFIGURE_ARGS +=	--disable-error-on-warning
 post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
 	# fix conflict with devel/guile
-	mv ${PREFIX}/share/aclocal/guile{,2}.m4
+	mv ${PREFIX}/share/aclocal/guile{,${V}}.m4
 	rm -rf ${PREFIX}/info
 
 .include <bsd.port.mk>

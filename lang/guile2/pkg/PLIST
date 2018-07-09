@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/03 14:42:50 ajacoutot Exp $
-bin/guild
-@bin bin/guile2
-bin/guile2-config
-bin/guile2-snarf
-bin/guile2-tools
+@comment $OpenBSD: PLIST,v 1.6 2018/07/09 14:33:09 ajacoutot Exp $
+bin/guild${V}
+bin/guile-config${V}
+bin/guile-snarf${V}
+bin/guile-tools${V}
+@bin bin/guile${V}
 include/guile/
 include/guile/${V}/
 include/guile/${V}/libguile/
@@ -476,11 +476,11 @@ lib/guile/${V}/extensions/guile-readline.la
 lib/guile/${V}/extensions/guile-readline.so.0.0
 lib/libguile-${V}.a
 lib/libguile-${V}.la
-@lib lib/libguile-${V}.so.${LIBguile-2.2_VERSION}
+@lib lib/libguile-${V}.so.${LIBguile-${V}_VERSION}
 lib/libguile-${V}.so.0.1-gdb.scm
 lib/pkgconfig/guile-${V}.pc
-@man man/man1/guile2.1
-share/aclocal/guile2.m4
+@man man/man1/guile${V}.1
+share/aclocal/guile${V}.m4
 share/guile/
 share/guile/${V}/
 share/guile/${V}/guile-procedures.txt
@@ -839,5 +839,5 @@ share/guile/${V}/web/server/http.scm
 share/guile/${V}/web/uri.scm
 share/guile/site/
 share/guile/site/${V}/
-@exec GUILE_WARN_DEPRECATED=no guile2 --fresh-auto-compile --no-auto-compile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
+@exec GUILE_WARN_DEPRECATED=no guile${V} --fresh-auto-compile --no-auto-compile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
 @unexec-delete rm %D/share/guile/site/${V}/slibcat
