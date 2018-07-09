@@ -1,3 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/08 11:25:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/09 06:34:25 jasper Exp $
 @bin bin/rclone
 @man man/man1/rclone.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/rclone
+share/zsh/
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_rclone
