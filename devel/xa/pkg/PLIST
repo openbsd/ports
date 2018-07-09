@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/09 13:54:58 fcambus Exp $
+@bin bin/file65
+@bin bin/ldo65
+@bin bin/printcbm
+@bin bin/reloc65
+@bin bin/uncpk
+@bin bin/xa
+@man man/man1/file65.1
+@man man/man1/ldo65.1
+@man man/man1/printcbm.1
+@man man/man1/reloc65.1
+@man man/man1/uncpk.1
+@man man/man1/xa.1
