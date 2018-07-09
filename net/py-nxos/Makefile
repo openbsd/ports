@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 14:22:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/09 12:13:58 jasper Exp $
 
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
-MODPY_EGG_VERSION =	0.0.3
+MODPY_EGG_VERSION =	0.0.4
 DISTNAME =		pynxos-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
 
