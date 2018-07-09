@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1417 2018/07/09 11:33:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1418 2018/07/09 13:55:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3016,7 +3016,7 @@ describe:
 .  endif
 	@echo -n ${_COMMENT${_S}:S/^"//:S/"$//:S/^'//:S/'$//:Q}"|"; \
 	if [ -f ${DESCR${_S}} ]; then \
-		echo -n `PORTSDIR_PATH=${PORTSDIR_PATH} ${_PERLSCRIPT}/getpkgpath ${DESCR${_S}}`'|';  \
+		echo -n `PORTSDIR_PATH=${PORTSDIR_PATH} ${_PERLSCRIPT}/port-getpkgpath-helper ${DESCR${_S}}`'|';  \
 	else \
 		echo -n "/dev/null|"; \
 	fi; \

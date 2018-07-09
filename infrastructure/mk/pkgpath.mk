@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.72 2018/05/30 11:16:05 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.73 2018/07/09 13:55:14 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -13,7 +13,7 @@ _PERLSCRIPT = /usr/bin/perl ${PORTSDIR}/infrastructure/bin
 
 .if !defined(PKGPATH)
 PKGPATH != PORTSDIR_PATH=${PORTSDIR_PATH} \
-	${_PERLSCRIPT}/getpkgpath ${.CURDIR}
+	${_PERLSCRIPT}/port-getpkgpath-helper ${.CURDIR}
 .  if empty(PKGPATH)
 ERRORS += "Fatal: can't figure out PKGPATH"
 PKGPATH =${.CURDIR}
