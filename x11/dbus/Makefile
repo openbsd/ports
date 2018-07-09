@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2018/07/03 07:24:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2018/07/09 08:32:32 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -54,7 +54,7 @@ CONFIGURE_ARGS=		--with-dbus-user=_dbus \
 
 # autolaunch brings too much magic to spawn a dbus-daemon(1) process and we want
 # predictable buses; don't disable it yet because it breaks applications that
-# require a user session and can't handle the lack of one
+# require a user session and can't handle the lack of one (e.g. net/gpodder)
 #CONFIGURE_ARGS +=	--disable-x11-autolaunch
 
 # we can't use --without-x because this would break bus activated clients (since
