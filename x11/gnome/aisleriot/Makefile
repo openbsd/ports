@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/07/09 14:38:54 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -48,8 +48,6 @@ AUTOCONF_VERSION =	2.69
 
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
-CONFIGURE_ENV =		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
-			GUILE="${LOCALBASE}/bin/guile2" \
-			GUILE_CONFIG="${LOCALBASE}/bin/guile2-config"
+CONFIGURE_ENV =		CONFIG_SHELL="${LOCALBASE}/bin/bash"
 
 .include <bsd.port.mk>
