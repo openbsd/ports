@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.77 2018/02/09 17:08:33 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.78 2018/07/09 15:00:06 jca Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -98,6 +98,7 @@ MASTER_SITES =		???
 
 # Dependencies
 #
+#COMPILER =		???
 #MODULES =		???
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
