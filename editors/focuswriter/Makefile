@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2018/07/08 02:44:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/09 02:09:24 bcallah Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
 DISTNAME =	focuswriter-1.6.14
 CATEGORIES =	editors
 EXTRACT_SUFX =	-src.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
