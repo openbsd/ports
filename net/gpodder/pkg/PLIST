@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/07/09 12:47:04 sthen Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}build_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}build_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,10 +60,15 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MOD
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}utilwin32ctypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}utilwin32ctypes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}utilwin32locale.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}utilwin32locale.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}vimeo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}vimeo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}youtube.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}youtube.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/build_info.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/common.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/config.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/core.py
@@ -187,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}model.${MO
 lib/python${MODPY_VERSION}/site-packages/gpodder/test/model.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/unittests.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/util.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/utilwin32ctypes.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/utilwin32locale.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/vimeo.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/youtube.py
 @man man/man1/gpo.1
@@ -202,6 +211,7 @@ share/gpodder/examples/hello_world.py
 share/gpodder/extensions/
 share/gpodder/extensions/${MODPY_PYCACHE}/
 share/gpodder/extensions/${MODPY_PYCACHE}audio_converter.${MODPY_PYC_MAGIC_TAG}pyc
+share/gpodder/extensions/${MODPY_PYCACHE}command_on_download.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}concatenate_videos.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}enqueue_in_mediaplayer.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}episode_website_context_menu.${MODPY_PYC_MAGIC_TAG}pyc
@@ -224,6 +234,7 @@ share/gpodder/extensions/${MODPY_PYCACHE}ubuntu_unity.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}update_feeds_on_startup.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}video_converter.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/audio_converter.py
+share/gpodder/extensions/command_on_download.py
 share/gpodder/extensions/concatenate_videos.py
 share/gpodder/extensions/enqueue_in_mediaplayer.py
 share/gpodder/extensions/episode_website_context_menu.py
@@ -307,6 +318,7 @@ share/locale/fi/LC_MESSAGES/gpodder.mo
 share/locale/fr/LC_MESSAGES/gpodder.mo
 share/locale/gl/LC_MESSAGES/gpodder.mo
 share/locale/he/LC_MESSAGES/gpodder.mo
+share/locale/hu/LC_MESSAGES/gpodder.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
 share/locale/id_ID/LC_MESSAGES/gpodder.mo
