@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/08/19 17:06:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2018/07/09 13:48:16 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -13,7 +13,7 @@ DISTFILES_DB ?= ${.CURDIR}/infrastructure/db/locate.database
 .elif defined(key) || defined(name) || defined(category) || defined(author)
 
 # set up subdirs from the index, assume it's up-to-date
-_CMD = perl ${.CURDIR}/infrastructure/bin/retrieve-index index='${.CURDIR}/INDEX'
+_CMD = perl ${.CURDIR}/infrastructure/bin/port-search-helper index='${.CURDIR}/INDEX'
 .  if defined(key)
 _CMD += key='${key}'
 .  endif
