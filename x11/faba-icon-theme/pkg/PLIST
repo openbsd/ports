@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/09 15:09:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/09 21:53:42 ajacoutot Exp $
 share/icons/Faba/
 share/icons/Faba-Mono/
 share/icons/Faba-Mono-Dark/
@@ -2584,6 +2584,7 @@ share/icons/Faba/16x16/actions/edit-paste.svg
 share/icons/Faba/16x16/actions/edit-redo.svg
 share/icons/Faba/16x16/actions/edit-undo.svg
 share/icons/Faba/16x16/actions/extract-archive.svg
+share/icons/Faba/16x16/actions/fileopen.svg
 share/icons/Faba/16x16/actions/folder-add.svg
 share/icons/Faba/16x16/actions/folder-new.svg
 share/icons/Faba/16x16/actions/format-justify-center.svg
@@ -2971,6 +2972,7 @@ share/icons/Faba/16x16/status/dialog-error.svg
 share/icons/Faba/16x16/status/dialog-information.svg
 share/icons/Faba/16x16/status/dialog-question.svg
 share/icons/Faba/16x16/status/dialog-warning.svg
+share/icons/Faba/16x16/status/folder-drag-accept.svg
 share/icons/Faba/16x16/status/folder-open.svg
 share/icons/Faba/16x16/status/image-loading.svg
 share/icons/Faba/16x16/status/image-missing.svg
@@ -3022,6 +3024,7 @@ share/icons/Faba/24x24/actions/edit-redo.svg
 share/icons/Faba/24x24/actions/edit-select-all.svg
 share/icons/Faba/24x24/actions/edit-undo.svg
 share/icons/Faba/24x24/actions/event-new.svg
+share/icons/Faba/24x24/actions/fileopen.svg
 share/icons/Faba/24x24/actions/folder-new.svg
 share/icons/Faba/24x24/actions/format-justify-center.svg
 share/icons/Faba/24x24/actions/format-justify-fill.svg
@@ -3520,9 +3523,7 @@ share/icons/Faba/24x24/panel/xfpm-ups-missing.svg
 share/icons/Faba/24x24/places/
 share/icons/Faba/24x24/places/folder-documents.svg
 share/icons/Faba/24x24/places/folder-download.svg
-share/icons/Faba/24x24/places/folder-drag-accept.svg
 share/icons/Faba/24x24/places/folder-music.svg
-share/icons/Faba/24x24/places/folder-open.svg
 share/icons/Faba/24x24/places/folder-publicshare.svg
 share/icons/Faba/24x24/places/folder-saved-search.svg
 share/icons/Faba/24x24/places/folder-templates.svg
@@ -3532,26 +3533,18 @@ share/icons/Faba/24x24/places/library-music.svg
 share/icons/Faba/24x24/status/
 share/icons/Faba/24x24/status/dialog-error.svg
 share/icons/Faba/24x24/status/dialog-info.svg
+share/icons/Faba/24x24/status/folder-drag-accept.svg
+share/icons/Faba/24x24/status/folder-open.svg
 share/icons/Faba/24x24/status/media-playlist-repeat-symbolic.svg
 share/icons/Faba/24x24/status/media-playlist-shuffle-rtl-symbolic.svg
 share/icons/Faba/24x24/status/media-playlist-shuffle-symbolic.svg
 share/icons/Faba/256x256/
-share/icons/Faba/256x256/actions/
-share/icons/Faba/256x256/actions/folder-open.png
-share/icons/Faba/256x256/places/
-share/icons/Faba/256x256/places/folder-documents.png
-share/icons/Faba/256x256/places/folder-download.png
-share/icons/Faba/256x256/places/folder-music.png
-share/icons/Faba/256x256/places/folder-pictures.png
-share/icons/Faba/256x256/places/folder-publicshare.png
-share/icons/Faba/256x256/places/folder-remote.png
-share/icons/Faba/256x256/places/folder-templates.png
-share/icons/Faba/256x256/places/folder-videos.png
-share/icons/Faba/256x256/places/folder.png
+share/icons/Faba/256x256/status/
+share/icons/Faba/256x256/status/folder-drag-accept.png
+share/icons/Faba/256x256/status/folder-open.png
 share/icons/Faba/32x32/
 share/icons/Faba/32x32/actions/
 share/icons/Faba/32x32/actions/document-print.svg
-share/icons/Faba/32x32/actions/folder-open.png
 share/icons/Faba/32x32/actions/help-contents.svg
 share/icons/Faba/32x32/actions/help-faq.svg
 share/icons/Faba/32x32/actions/system-lock-screen.svg
@@ -3640,6 +3633,8 @@ share/icons/Faba/32x32/places/user-desktop.svg
 share/icons/Faba/32x32/places/user-home.svg
 share/icons/Faba/32x32/status/
 share/icons/Faba/32x32/status/dialog-question.svg
+share/icons/Faba/32x32/status/folder-drag-accept.png
+share/icons/Faba/32x32/status/folder-open.png
 share/icons/Faba/32x32/status/printer-error.svg
 share/icons/Faba/32x32/status/printer-paused.svg
 share/icons/Faba/32x32/status/printer-printing.svg
@@ -3661,6 +3656,7 @@ share/icons/Faba/48x48/actions/document-save-as.svg
 share/icons/Faba/48x48/actions/document-save.svg
 share/icons/Faba/48x48/actions/edit-copy.svg
 share/icons/Faba/48x48/actions/edit-delete.svg
+share/icons/Faba/48x48/actions/fileopen.svg
 share/icons/Faba/48x48/actions/folder-add.svg
 share/icons/Faba/48x48/actions/folder-new.svg
 share/icons/Faba/48x48/actions/mail-archive.svg
@@ -3908,8 +3904,6 @@ share/icons/Faba/48x48/status/software-update-download.svg
 share/icons/Faba/48x48/status/software-update-urgent.svg
 share/icons/Faba/48x48/status/view-private.svg
 share/icons/Faba/64x64/
-share/icons/Faba/64x64/actions/
-share/icons/Faba/64x64/actions/folder-open.png
 share/icons/Faba/64x64/apps/
 share/icons/Faba/64x64/apps/accessories-calculator.svg
 share/icons/Faba/64x64/apps/apport.svg
@@ -3970,6 +3964,9 @@ share/icons/Faba/64x64/places/library-music.svg
 share/icons/Faba/64x64/places/network-server.svg
 share/icons/Faba/64x64/places/network-workgroup.svg
 share/icons/Faba/64x64/places/user-home.svg
+share/icons/Faba/64x64/status/
+share/icons/Faba/64x64/status/folder-drag-accept.png
+share/icons/Faba/64x64/status/folder-open.png
 share/icons/Faba/96x96/
 share/icons/Faba/96x96/places/
 share/icons/Faba/96x96/places/folder-documents.svg
@@ -3982,6 +3979,8 @@ share/icons/Faba/96x96/places/folder-templates.svg
 share/icons/Faba/96x96/places/folder-videos.svg
 share/icons/Faba/96x96/places/folder.svg
 share/icons/Faba/96x96/places/user-home.svg
+share/icons/Faba/96x96/status/
+share/icons/Faba/96x96/status/folder-open.svg
 share/icons/Faba/index.theme
 share/icons/Faba/symbolic/
 share/icons/Faba/symbolic/actions/
