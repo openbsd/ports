@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/09 14:08:21 fcambus Exp $
+${P5ARCH}/auto/bareword/
+${P5ARCH}/auto/bareword/filehandles/
+${P5ARCH}/auto/bareword/filehandles/filehandles.so
+${P5ARCH}/bareword/
+${P5ARCH}/bareword/filehandles.pm
+@man man/man3p/bareword::filehandles.3p
