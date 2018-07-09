@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/24 11:37:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/09 08:21:21 jsg Exp $
 
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 
-FW_VER=		20180425
-REVISION=	0
+FW_VER=		20180703
 EPOCH=		0
-MASTER_SITES=	https://downloadmirror.intel.com/27776/eng/
+MASTER_SITES=	https://downloadmirror.intel.com/27945/eng/
 
 DISTNAME=	microcode-${FW_VER}
 
