@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1419 2018/07/09 14:48:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1420 2018/07/09 15:24:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3391,7 +3391,7 @@ peek-ftp:
 	done
 
 show-required-by:
-	@cd ${PORTSDIR} && make all-dir-depends | ${_PERLSCRIPT}/extract-dependencies -r ${_ALLPKGPATHS}
+	@cd ${PORTSDIR} && make all-dir-depends | ${_PERLSCRIPT}/port-extract-dependencies-helper -r ${_ALLPKGPATHS}
 
 
 show:
