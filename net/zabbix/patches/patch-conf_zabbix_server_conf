@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_zabbix_server_conf,v 1.8 2018/01/25 13:56:35 robert Exp $
+$OpenBSD: patch-conf_zabbix_server_conf,v 1.9 2018/07/09 09:56:27 jasper Exp $
 Index: conf/zabbix_server.conf
 --- conf/zabbix_server.conf.orig
 +++ conf/zabbix_server.conf
@@ -7,7 +7,7 @@ Index: conf/zabbix_server.conf
  # LogFile=
  
 -LogFile=/tmp/zabbix_server.log
-+# LogFile=/tmp/zabbix_server.log
++LogFile=/var/log/zabbix/server.log
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.

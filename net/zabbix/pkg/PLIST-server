@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2018/01/25 13:56:35 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2018/07/09 09:56:27 jasper Exp $
 @conflict zabbix-agent-<=1.8.3p5
+@extraunexec rm -rf /var/log/zabbix/*
 @man man/man8/zabbix_server.8
 @sample ${SYSCONFDIR}/zabbix/
 @bin sbin/zabbix_server
@@ -60,4 +61,9 @@ share/zabbix/schema/sqlite3/
 share/zabbix/schema/sqlite3/data.sql
 share/zabbix/schema/sqlite3/images.sql
 share/zabbix/schema/sqlite3/schema.sql
+@mode 0755
+@owner _zabbix
+@sample /var/log/zabbix/
+@owner
+@mode
 @rcscript ${RCDIR}/zabbix_server

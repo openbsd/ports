@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.7 2018/01/25 13:56:35 robert Exp $
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.8 2018/07/09 09:56:27 jasper Exp $
 Index: conf/zabbix_proxy.conf
 --- conf/zabbix_proxy.conf.orig
 +++ conf/zabbix_proxy.conf
@@ -7,7 +7,7 @@ Index: conf/zabbix_proxy.conf
  # LogFile=
  
 -LogFile=/tmp/zabbix_proxy.log
-+# LogFile=/tmp/zabbix_proxy.log
++LogFile=/var/log/zabbix/proxy.log
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
