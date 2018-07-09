@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2017/10/08 07:15:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.42 2018/07/09 10:42:45 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -70,6 +70,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/v2/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/v2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/v2/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/arch/base/
@@ -144,6 +147,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/v8/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/devuan/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/devuan.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/devuan/base/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/devuan/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/devuan/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/elementary/base.rb
@@ -398,6 +406,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/arch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/coreos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/darwin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/debian.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/devuan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/eos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/esxi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/freebsd.rb
@@ -456,6 +465,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/service_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon2/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon2/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/group_spec.rb
