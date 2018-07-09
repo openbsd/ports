@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/23 13:33:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2018/07/09 15:17:53 rsadowski Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
-V =		0.9.0
+V =		0.9.1
 DISTNAME =	restic-${V}
 
 CATEGORIES =	sysutils
