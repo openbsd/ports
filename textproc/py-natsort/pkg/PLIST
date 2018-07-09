@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/21 20:30:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/09 10:35:24 jasper Exp $
 bin/natsort${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/natsort/
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,7 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/natsort/__init__.py
 lib/python${MODPY_VERSION}/site-packages/natsort/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,7 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/natsort/_version.py
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}fake_fastnumbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/${MODPY_PYCACHE}fastnumbers.${MODPY_PYC_MAGIC_TAG}pyc
