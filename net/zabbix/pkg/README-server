@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.12 2017/11/03 11:14:52 jca Exp $
+$OpenBSD: README-server,v 1.13 2018/07/09 07:56:01 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -78,9 +78,9 @@ PostgreSQL
 Assuming you have an administrative account named `postgres',
 you can create the 'zabbix' user and database like this:
 
-    createuser -U postgres --pwprompt --no-superuser \
+    $ createuser -U postgres --pwprompt --no-superuser \
       --createdb --no-createrole zabbix
-    createdb -U zabbix zabbix
+    $ createdb -U zabbix zabbix
 
 And initialize the database:
 
@@ -89,6 +89,12 @@ And initialize the database:
 The following steps are not required for setting up a Zabbix Proxy.
     $ cat images.sql | psql -U zabbix zabbix
     $ cat data.sql | psql -U zabbix zabbix
+
+When using PostgreSQL at least the following sysctl limits need to be set:
+
+    kern.seminfo.semmni=30
+    kern.seminfo.semmns=120
+    kern.shminfo.shmall=524288
 
 SQLite3
 =======
