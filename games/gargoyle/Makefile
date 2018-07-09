@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2018/07/09 15:45:48 naddy Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
@@ -7,7 +7,7 @@ GH_PROJECT =	garglk
 GH_TAGNAME =	stable-2011.1
 DISTNAME =	gargoyle-${GH_TAGNAME:S/stable-//}
 EPOCH =		0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	games x11
 
