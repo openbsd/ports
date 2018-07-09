@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/06/27 13:14:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/07/09 08:46:39 ajacoutot Exp $
 @bin bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/
@@ -68,6 +68,7 @@ share/gtk-doc/html/cairo/cairo-Recording-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Regions.html
 share/gtk-doc/html/cairo/cairo-SVG-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Script-Surfaces.html
+share/gtk-doc/html/cairo/cairo-Tags-and-Links.html
 share/gtk-doc/html/cairo/cairo-Transformations.html
 share/gtk-doc/html/cairo/cairo-Types.html
 share/gtk-doc/html/cairo/cairo-User-Fonts.html
