@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/09 14:03:35 fcambus Exp $
+${P5SITE}/Mixin/
+${P5SITE}/Mixin/Linewise/
+${P5SITE}/Mixin/Linewise.pm
+${P5SITE}/Mixin/Linewise/Readers.pm
+${P5SITE}/Mixin/Linewise/Writers.pm
+@man man/man3p/Mixin::Linewise.3p
+@man man/man3p/Mixin::Linewise::Readers.3p
+@man man/man3p/Mixin::Linewise::Writers.3p
