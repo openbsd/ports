@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.5 2018/05/15 11:38:07 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.6 2018/07/09 16:29:20 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
@@ -27,7 +27,7 @@ Index: installer/linux/server.cfg
  #pid_file = /var/run/kopano/server.pid
  
  # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano
+-#running_path = /var/lib/kopano/empty
 +#running_path = /var/empty
  
  # Use given allocator library. Values like libtcmalloc.so.4,
@@ -41,3 +41,22 @@ Index: installer/linux/server.cfg
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
+@@ -347,12 +347,12 @@ local_admin_users = root kopano
+ 
+ # scripts which create stores for users from an external source
+ # used for ldap and unix plugins only
+-#createuser_script = /usr/lib/kopano/userscripts/createuser
+-#deleteuser_script = /usr/lib/kopano/userscripts/deleteuser
+-#creategroup_script = /usr/lib/kopano/userscripts/creategroup
+-#deletegroup_script = /usr/lib/kopano/userscripts/deletegroup
+-#createcompany_script = /usr/lib/kopano/userscripts/createcompany
+-#deletecompany_script = /usr/lib/kopano/userscripts/deletecompany
++#createuser_script = /usr/local/lib/kopano/userscripts/createuser
++#deleteuser_script = /usr/local/lib/kopano/userscripts/deleteuser
++#creategroup_script = /usr/local/lib/kopano/userscripts/creategroup
++#deletegroup_script = /usr/local/lib/kopano/userscripts/deletegroup
++#createcompany_script = /usr/local/lib/kopano/userscripts/createcompany
++#deletecompany_script = /usr/local/lib/kopano/userscripts/deletecompany
+ 
+ # Set this option to 'yes' to skip the creation and deletion of new users
+ # The action will be logged, so you can see if your changes to the plugin

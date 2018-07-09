@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/05/15 11:38:07 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2018/07/09 16:29:20 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -10,6 +10,14 @@
 @extraunexec rm -rf /var/db/kopano/client/*
 @extraunexec rm -rf /var/db/kopano/index/*
 @extraunexec rm -rf /var/log/kopano/*.log
+@rcscript ${RCDIR}/kopano
+@rcscript ${RCDIR}/kopano_gateway
+@rcscript ${RCDIR}/kopano_ical
+@rcscript ${RCDIR}/kopano_monitor
+@rcscript ${RCDIR}/kopano_search
+@rcscript ${RCDIR}/kopano_server
+@rcscript ${RCDIR}/kopano_spamd
+@rcscript ${RCDIR}/kopano_spooler
 @bin bin/kopano-fsck
 bin/kopano-migration-imap
 @bin bin/kopano-oof
@@ -46,7 +54,6 @@ include/kopano/ECDefs.h
 include/kopano/ECFeatures.hpp
 include/kopano/ECGetText.h
 include/kopano/ECGuid.h
-include/kopano/ECIConv.h
 include/kopano/ECInterfaceDefs.h
 include/kopano/ECKeyTable.h
 include/kopano/ECLogger.h
@@ -127,6 +134,28 @@ lib/kopano/libkcserver-db.a
 lib/kopano/libkcserver-db.so
 lib/kopano/libkcserver-ldap.a
 lib/kopano/libkcserver-ldap.so
+lib/kopano/userscripts/
+@sample ${SYSCONFDIR}/kopano/userscripts/
+lib/kopano/userscripts/createcompany
+lib/kopano/userscripts/createcompany.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/
+lib/kopano/userscripts/createcompany.d/00createpublic
+lib/kopano/userscripts/creategroup
+lib/kopano/userscripts/creategroup.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/creategroup.d/
+lib/kopano/userscripts/createuser
+lib/kopano/userscripts/createuser.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/
+lib/kopano/userscripts/createuser.d/00createstore
+lib/kopano/userscripts/deletecompany
+lib/kopano/userscripts/deletecompany.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/deletecompany.d/
+lib/kopano/userscripts/deletegroup
+lib/kopano/userscripts/deletegroup.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/deletegroup.d/
+lib/kopano/userscripts/deleteuser
+lib/kopano/userscripts/deleteuser.d/
+@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser.d/
 lib/libkcarchiver.a
 @lib lib/libkcarchiver.so.${LIBkcarchiver_VERSION}
 lib/libkcarchivercore.a
@@ -137,20 +166,18 @@ lib/libkcicalmapi.a
 @lib lib/libkcicalmapi.so.${LIBkcicalmapi_VERSION}
 lib/libkcinetmapi.a
 @lib lib/libkcinetmapi.so.${LIBkcinetmapi_VERSION}
-lib/libkcmapi.a
-@lib lib/libkcmapi.so.${LIBkcmapi_VERSION}
 lib/libkcpyconv-${MODPY_VERSION}.so
 lib/libkcpyconv.a
 lib/libkcpyconv.so
 lib/libkcpydirector-${MODPY_VERSION}.so
 lib/libkcpydirector.a
 lib/libkcpydirector.so
+lib/libkcpyplug.a
+@lib lib/libkcpyplug.so.${LIBkcpyplug_VERSION}
 lib/libkcserver.a
 @lib lib/libkcserver.so.${LIBkcserver_VERSION}
 lib/libkcsoap.a
 @lib lib/libkcsoap.so.${LIBkcsoap_VERSION}
-lib/libkcssl.a
-@lib lib/libkcssl.so.${LIBkcssl_VERSION}
 lib/libkcutil.a
 @lib lib/libkcutil.so.${LIBkcutil_VERSION}
 lib/libmapi.a
@@ -220,8 +247,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/attendee.py
 lib/python${MODPY_VERSION}/site-packages/kopano/attendee.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.py
 lib/python${MODPY_VERSION}/site-packages/kopano/autoaccept.pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/body.py
-lib/python${MODPY_VERSION}/site-packages/kopano/body.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/autoprocess.py
+lib/python${MODPY_VERSION}/site-packages/kopano/autoprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/company.py
 lib/python${MODPY_VERSION}/site-packages/kopano/company.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/compat.py
@@ -304,6 +331,8 @@ lib/python${MODPY_VERSION}/site-packages/kopano/store.py
 lib/python${MODPY_VERSION}/site-packages/kopano/store.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/table.py
 lib/python${MODPY_VERSION}/site-packages/kopano/table.pyc
+lib/python${MODPY_VERSION}/site-packages/kopano/timezone.py
+lib/python${MODPY_VERSION}/site-packages/kopano/timezone.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/user.py
 lib/python${MODPY_VERSION}/site-packages/kopano/user.pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/utils.py
@@ -422,6 +451,7 @@ lib/sysusers.d/kopano-sysusers.conf
 lib/tmpfiles.d/
 lib/tmpfiles.d/kopano-tmpfiles.conf
 libexec/kopano/
+@bin libexec/kopano/kscriptrun
 @bin libexec/kopano/mapitime
 @man man/man1/kopano-fsck.1
 @man man/man1/kopano-oof.1
@@ -500,6 +530,9 @@ sbin/kopano-spamd
 @bin sbin/kopano-spooler
 @bin sbin/kopano-srvadm
 @bin sbin/kopano-storeadm
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/kopano-bash-completion.sh
 share/doc/kopano/
 share/doc/kopano-gateway/
 @mode 0555
@@ -520,8 +553,6 @@ share/doc/kopano/ssl-certificates.sh
 share/doc/kopano/update-resource-recipients
 @mode
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/examples/bash_completion.d/
-share/examples/bash_completion.d/kopano-bash-completion.sh
 share/examples/kopano/
 @sample ${SYSCONFDIR}/kopano/
 @mode 750
@@ -602,48 +633,15 @@ share/examples/kopano/spamd.cfg
 @sample ${SYSCONFDIR}/kopano/spamd.cfg
 share/examples/kopano/spooler.cfg
 @sample ${SYSCONFDIR}/kopano/spooler.cfg
+share/examples/kopano/sysconfig.txt
 share/examples/kopano/unix.cfg
 share/examples/kopano/userscripts/
-@sample ${SYSCONFDIR}/kopano/userscripts/
-@mode 755
-share/examples/kopano/userscripts/companies_common.sh
-@sample ${SYSCONFDIR}/kopano/userscripts/companies_common.sh
-share/examples/kopano/userscripts/createcompany
-@sample ${SYSCONFDIR}/kopano/userscripts/createcompany
 share/examples/kopano/userscripts/createcompany.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/
-share/examples/kopano/userscripts/createcompany.d/00createpublic
-@sample ${SYSCONFDIR}/kopano/userscripts/createcompany.d/00createpublic
-share/examples/kopano/userscripts/creategroup
-@sample ${SYSCONFDIR}/kopano/userscripts/creategroup
-@mode
 share/examples/kopano/userscripts/creategroup.d/
-@mode 755
-share/examples/kopano/userscripts/createuser
-@sample ${SYSCONFDIR}/kopano/userscripts/createuser
 share/examples/kopano/userscripts/createuser.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/
-share/examples/kopano/userscripts/createuser.d/00createstore
-@sample ${SYSCONFDIR}/kopano/userscripts/createuser.d/00createstore
-share/examples/kopano/userscripts/deletecompany
-@sample ${SYSCONFDIR}/kopano/userscripts/deletecompany
-@mode
 share/examples/kopano/userscripts/deletecompany.d/
-@mode 755
-share/examples/kopano/userscripts/deletegroup
-@sample ${SYSCONFDIR}/kopano/userscripts/deletegroup
-@mode
 share/examples/kopano/userscripts/deletegroup.d/
-@mode 755
-share/examples/kopano/userscripts/deleteuser
-@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser
 share/examples/kopano/userscripts/deleteuser.d/
-@sample ${SYSCONFDIR}/kopano/userscripts/deleteuser.d/
-share/examples/kopano/userscripts/groups_common.sh
-@sample ${SYSCONFDIR}/kopano/userscripts/groups_common.sh
-share/examples/kopano/userscripts/users_common.sh
-@sample ${SYSCONFDIR}/kopano/userscripts/users_common.sh
-@mode
 share/examples/logrotate.d/
 share/examples/logrotate.d/kopano
 share/gdb/
@@ -747,11 +745,3 @@ share/locale/sv/LC_MESSAGES/kopano.mo
 share/locale/tr/LC_MESSAGES/kopano.mo
 share/locale/zh_CN/LC_MESSAGES/kopano.mo
 share/locale/zh_TW/LC_MESSAGES/kopano.mo
-@rcscript ${RCDIR}/kopano
-@rcscript ${RCDIR}/kopano_gateway
-@rcscript ${RCDIR}/kopano_ical
-@rcscript ${RCDIR}/kopano_monitor
-@rcscript ${RCDIR}/kopano_search
-@rcscript ${RCDIR}/kopano_server
-@rcscript ${RCDIR}/kopano_spamd
-@rcscript ${RCDIR}/kopano_spooler

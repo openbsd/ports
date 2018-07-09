@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_monitor_cfg,v 1.2 2018/03/16 15:35:02 robert Exp $
+$OpenBSD: patch-installer_linux_monitor_cfg,v 1.3 2018/07/09 16:29:20 robert Exp $
 
 Index: installer/linux/monitor.cfg
 --- installer/linux/monitor.cfg.orig
@@ -19,7 +19,7 @@ Index: installer/linux/monitor.cfg
 +pid_file = /var/run/kopano/monitor.pid
  
  # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano
+-#running_path = /var/lib/kopano/empty
 +running_path = /var/empty
  
  ##############################################################

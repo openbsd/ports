@@ -1,10 +1,10 @@
-$OpenBSD: patch-swig_python_kopano_kopano_item_py,v 1.2 2018/03/29 19:41:46 robert Exp $
+$OpenBSD: patch-swig_python_kopano_kopano_item_py,v 1.3 2018/07/09 16:29:20 robert Exp $
 
 Index: swig/python/kopano/kopano/item.py
 --- swig/python/kopano/kopano/item.py.orig
 +++ swig/python/kopano/kopano/item.py
-@@ -16,6 +16,7 @@ import struct
- import time
+@@ -13,6 +13,7 @@ import os
+ import sys
  import traceback
  import warnings
 +from MAPI.Defs import bin2hex

@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.4 2018/05/15 11:38:07 robert Exp $
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.5 2018/07/09 16:29:20 robert Exp $
 
 Index: installer/linux/spooler.cfg
 --- installer/linux/spooler.cfg.orig
@@ -19,7 +19,7 @@ Index: installer/linux/spooler.cfg
 +pid_file = /var/run/kopano/spooler.pid
  
  # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano
+-#running_path = /var/lib/kopano/empty
 +running_path = /var/empty
  
  # create memory coredumps upon crash [no, systemdefault, yes]

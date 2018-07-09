@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/22 08:17:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/07/09 16:29:20 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
@@ -6,22 +6,19 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
 
-REVISION-mapi=	0
-
 CATEGORIES=	mail www productivity
 
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=  mapi			  3.0 # .0.0
+SHARED_LIBS +=  mapi			  3.0 # 0.0
 SHARED_LIBS +=  kcarchiver                0.0 # 0.0
 SHARED_LIBS +=  kcarchivercore            0.0 # 0.0
 SHARED_LIBS +=  kcfreebusy                0.0 # 0.0
 SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
-SHARED_LIBS +=  kcmapi                    0.0 # 0.0
+SHARED_LIBS +=  kcpyplug                  0.0 # 0.0
 SHARED_LIBS +=  kcserver                  0.0 # 0.0
 SHARED_LIBS +=  kcsoap                    0.0 # 0.0
-SHARED_LIBS +=  kcssl                     0.0 # 0.0
 SHARED_LIBS +=  kcutil                    0.0 # 0.0
 
 MULTI_PACKAGES=	-main -mapi
@@ -43,7 +40,7 @@ BUILD_DEPENDS=	devel/gettext-tools \
 		sysutils/coreutils
 
 WANTLIB += c m pthread z vmime execinfo iconv icudata icui18n icuuc intl
-WANTLIB += lzma crypto
+WANTLIB += lzma crypto ssl
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
@@ -51,6 +48,9 @@ WANTLIB-main += mysqlclient curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r popt jsoncpp
+
+# Do not substitute MODULE_NAME
+UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
@@ -77,7 +77,7 @@ WANTLIB-mapi += ${WANTLIB}
 WANTLIB-mapi += ical icalss mapi
 WANTLIB-mapi += xml2
 WANTLIB-mapi += ${LIBCXX}
-WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi kcmapi
+WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi
 WANTLIB-mapi += kcutil
 
 
@@ -137,8 +137,8 @@ pre-configure:
 		for i in *.cfg ldap.m4 createuser.dotforward ; do \
 			${SUBST_CMD} $$i; \
 			perl -pi -e 's/\r\n/\n/;' $$i; done
-	for i in ${SUB_SCRIPTS}; do \
-		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
+#	for i in ${SUB_SCRIPTS}; do \
+#		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/spooler/{DAgent,Spooler}.cpp \
 		${WRKSRC}/tools/python-scripts/kopano-cachestat
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \

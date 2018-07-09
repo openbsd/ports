@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_libkcutil_sym_in,v 1.1 2018/07/09 16:29:20 robert Exp $
+
+Index: common/libkcutil.sym.in
+--- common/libkcutil.sym.in.orig
++++ common/libkcutil.sym.in
+@@ -34,6 +34,8 @@ global:
+ 		VTT*;
+ 		std::*::_S_*;
+ 	};
++	_ZN2KC10ECKeyTable*;
++	_ZN2KC10ECTableRow*;
+ local:
+ 	*;
+ };

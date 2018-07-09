@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.2 2018/07/09 16:29:20 robert Exp $
 
 Index: installer/linux/ical.cfg
 --- installer/linux/ical.cfg.orig
@@ -19,8 +19,8 @@ Index: installer/linux/ical.cfg
 +pid_file = /var/run/kopano/ical.pid
  
  # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano
+-#running_path = /var/lib/kopano/empty
 +running_path = /var/empty
  
- # IP Address to bind to (empty for ANY)
- #server_bind =
+ # Space-separated list of address:port specifiers for where the server should
+ # listen for connections.

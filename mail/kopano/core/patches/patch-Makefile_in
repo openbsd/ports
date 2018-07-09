@@ -1,18 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2018/05/15 11:38:07 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2018/07/09 16:29:20 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1277,7 +1277,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
+@@ -1240,7 +1240,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
  	common/database.cpp common/include/kopano/database.hpp
  
  kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
--kopano_dbadm_LDADD = libkcmapi.la libkcutil.la ${MYSQL_LIBS}
-+kopano_dbadm_LDADD = libkcmapi.la libkcutil.la ${MYSQL_LIBS} ${PROG_LIBS}
+-kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS}
++kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS} ${PROG_LIBS}
  
  #
  # kopano-fsck
-@@ -4795,7 +4795,7 @@ default.sym provider/plugin.sym provider/provider.sym:
+@@ -4742,7 +4742,7 @@ default.sym provider/plugin.sym provider/provider.sym 
  
  .PHONY: source-moved-check
  source-moved-check:
