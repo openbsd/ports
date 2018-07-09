@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/09 05:36:45 rsadowski Exp $
+lib/python${MODPY_VERSION}/site-packages/pyaes/
+lib/python${MODPY_VERSION}/site-packages/pyaes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyaes/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyaes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyaes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaes/${MODPY_PYCACHE}aes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaes/${MODPY_PYCACHE}blockfeeder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaes/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyaes/aes.py
+lib/python${MODPY_VERSION}/site-packages/pyaes/blockfeeder.py
+lib/python${MODPY_VERSION}/site-packages/pyaes/util.py
