@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1748 2018/07/09 14:04:54 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1749 2018/07/09 14:08:59 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1172,6 +1172,7 @@
      SUBDIR += p5-accessors
      SUBDIR += p5-aliased
      SUBDIR += p5-autobox
+     SUBDIR += p5-bareword-filehandles
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
