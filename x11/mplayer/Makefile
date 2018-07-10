@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.283 2018/06/24 17:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.284 2018/07/10 16:26:42 naddy Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20161008
 FFMPEG_V=	20180219
 DISTNAME=	mplayer-${V}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -141,15 +141,9 @@ CONFIGURE_ARGS+=--disable-caca \
 		--disable-speex \
 		--disable-theora \
 		--disable-toolame \
+		--disable-tremor \
 		--disable-twolame \
 		--disable-win32dll
-
-.if ${MACHINE_ARCH:Marm}
-WANTLIB+=	ogg vorbisidec
-LIB_DEPENDS+=	audio/tremor
-.else
-CONFIGURE_ARGS+=--disable-tremor
-.endif
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
@@ -159,15 +153,6 @@ CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--disable-altivec \
 		--enable-runtime-cpudetection
-.endif
-
-.if ${MACHINE_ARCH:Marm}
-# disable common floating point decoders that have integer alternatives
-CONFIGURE_ARGS+=--disable-decoder=mp2float \
-		--disable-decoder=mp3adufloat \
-		--disable-decoder=mp3float \
-		--disable-decoder=mp3on4float \
-		--disable-decoder=vorbis
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
