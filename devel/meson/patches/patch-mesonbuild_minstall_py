@@ -1,0 +1,35 @@
+$OpenBSD: patch-mesonbuild_minstall_py,v 1.1 2018/07/10 12:29:16 ajacoutot Exp $
+
+Do not install compressed manpages.
+
+Index: mesonbuild/minstall.py
+--- mesonbuild/minstall.py.orig
++++ mesonbuild/minstall.py
+@@ -12,7 +12,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-import sys, pickle, os, shutil, subprocess, gzip, errno
++import sys, pickle, os, shutil, subprocess, errno
+ import shlex
+ import argparse
+ from glob import glob
+@@ -334,17 +334,7 @@ class Installer:
+             outdir = os.path.dirname(outfilename)
+             d.dirmaker.makedirs(outdir, exist_ok=True)
+             install_mode = m[2]
+-            if outfilename.endswith('.gz') and not full_source_filename.endswith('.gz'):
+-                with open(outfilename, 'wb') as of:
+-                    with open(full_source_filename, 'rb') as sf:
+-                        # Set mtime and filename for reproducibility.
+-                        with gzip.GzipFile(fileobj=of, mode='wb', filename='', mtime=0) as gz:
+-                            gz.write(sf.read())
+-                shutil.copystat(full_source_filename, outfilename)
+-                print('Installing %s to %s' % (full_source_filename, outdir))
+-                append_to_log(self.lf, outfilename)
+-            else:
+-                self.do_copyfile(full_source_filename, outfilename)
++            self.do_copyfile(full_source_filename, outfilename)
+             set_mode(outfilename, install_mode, d.install_umask)
+ 
+     def install_headers(self, d):
