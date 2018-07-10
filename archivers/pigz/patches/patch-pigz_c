@@ -1,0 +1,30 @@
+$OpenBSD: patch-pigz_c,v 1.1 2018/07/10 13:32:44 kn Exp $
+
+Index: pigz.c
+--- pigz.c.orig
++++ pigz.c
+@@ -4307,6 +4307,11 @@ int main(int argc, char **argv) {
+     char *opts, *p;                 // environment default options, marker
+     ball_t err;                     // error information from throw()
+ 
++    if (pledge("stdio rpath wpath cpath fattr chown", NULL) == -1) {
++        complain("pledge");
++        exit(1);
++    }
++
+     g.ret = 0;
+     try {
+         // initialize globals
+@@ -4408,6 +4413,12 @@ int main(int argc, char **argv) {
+             else if (option(argv[n]))   // process argument
+                 argv[n] = NULL;         // remove if option
+         option(NULL);                   // check for missing parameter
++
++        if (g.pipeout || g.decode == 2)
++            if (pledge("stdio rpath cpath", NULL) == -1) {
++                complain("pledge");
++                exit(1);
++            }
+ 
+         // process command-line filenames
+         done = 0;
