@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/07/10 13:50:52 naddy Exp $
 
-COMMENT =	zuma-like arkade game
+COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
-REVISION =	3
+REVISION =	4
 CATEGORIES =	games
 
 HOMEPAGE =	http://zaz.sourceforge.net/
