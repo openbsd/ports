@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2018/07/06 06:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.272 2018/07/10 20:09:01 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -17,6 +17,8 @@ WANTLIB += glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3 intl json-glib-1.0
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
+
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 BUILD_DEPENDS=		textproc/xmlto \
 			x11/gnome/settings-daemon
