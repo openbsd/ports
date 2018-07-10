@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-problems,v 1.4 2016/09/14 15:02:41 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.1 2018/07/10 09:03:51 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
