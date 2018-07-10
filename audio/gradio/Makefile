@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/07/06 06:04:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/07/10 14:28:46 ajacoutot Exp $
 
 COMMENT =	internet radio browser and player
 GH_TAGNAME =	v7.1
@@ -25,5 +25,7 @@ MODULES =		devel/meson \
 			textproc/intltool
 
 BUILD_DEPENDS +=	lang/vala
+
+LDFLAGS =		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
