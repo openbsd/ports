@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/29 11:57:02 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/10 15:43:51 naddy Exp $
 
 # http://build-failures.rhaalovely.net//alpha/2017-11-19/devel/gtest.log
 BROKEN-alpha =	googletest/test/gtest_unittest.cc:2730: error: unrecognizable insn:
@@ -24,8 +24,6 @@ HOMEPAGE =	https://github.com/google/googletest
 .include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=	-mxgot
-.elif ${MACHINE_ARCH} == "arm" && ${PROPERTIES:Mgcc4}
-CXXFLAGS +=	-O0
 .endif
 
 # New BSD
