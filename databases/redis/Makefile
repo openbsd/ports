@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.103 2018/04/26 11:15:46 kn Exp $
+# $OpenBSD: Makefile,v 1.104 2018/07/10 13:44:57 kn Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-4.0.9
+DISTNAME =		redis-4.0.10
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
-MAINTAINER = 		David Coppa <dcoppa@openbsd.org>
+MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		c ${MODLUA_WANTLIB} m pthread
+WANTLIB +=		c ${MODLUA_WANTLIB} m pthread
 
 MASTER_SITES =		http://download.redis.io/releases/
 
