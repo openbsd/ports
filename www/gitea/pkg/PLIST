@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/08 11:08:58 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/10 13:21:31 robert Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/gitea
 @bin sbin/gitea
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gitea/
@@ -2328,7 +2329,3 @@ share/gitea/templates/user/settings/twofa_enroll.tmpl
 @owner _gitea
 @group _gitea
 @sample /var/gitea/
-@owner
-@group
-@mode
-@rcscript ${RCDIR}/gitea
