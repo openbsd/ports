@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/01/11 21:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2018/07/10 13:28:24 naddy Exp $
 
 COMMENT-main=		ur-quan masters: space exploration game with battles
 COMMENT-content=	ur-quan masters: game content
@@ -34,7 +34,7 @@ PKGNAME-remix3 =	uqm-remix3-$V
 PKGNAME-remix4 =	uqm-remix4-$V
 PKGNAME-threedomusic =	uqm-threedomusic-$V
 PKGNAME-voice =		uqm-voice-$V
-REVISION =		3
+REVISION =		4
 EXTRACT_ONLY =		${uqm_source}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
