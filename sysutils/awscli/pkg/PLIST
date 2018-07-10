@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2018/06/22 21:15:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2018/07/10 09:51:57 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -614,14 +614,38 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/set-alarm-st
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/batch-get-repositories.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/create-branch.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/create-pull-request.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/create-repository.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/delete-branch.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/delete-comment-content.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/delete-repository.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/describe-pull-request-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-blob.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-branch.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comments-for-compared-commit.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-comments-for-pull-request.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-commit.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-differences.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-merge-conflicts.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-pull-request.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-repository-triggers.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/get-repository.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/list-branches.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/list-pull-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/list-repositories.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/merge-pull-request-by-fast-forward.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-for-compared-commit.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-for-pull-request.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/post-comment-reply.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/put-file.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/put-repository-triggers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/test-repository-triggers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-comment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-default-branch.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-pull-request-description.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-pull-request-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-pull-request-title.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repository-description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repository-name.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/
@@ -1528,6 +1552,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/move-acco
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/remove-account-from-organization.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/update-organizational-unit.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/organizations/update-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/describe-dimension-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/get-resource-metrics.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-tag-to-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-instance.rst
@@ -1807,6 +1834,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/list-domains.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/list-workflow-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/register-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/register-workflow-type.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/create-workspaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/describe-workspace-bundles.rst
