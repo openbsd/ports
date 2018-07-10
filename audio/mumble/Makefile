@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/07/10 10:54:23 tb Exp $
 
 COMMENT =		low-latency voice chat client
 
 GH_ACCOUNT =		mumble-voip
 GH_PROJECT =		mumble
 GH_TAGNAME =		1.2.19
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		audio
 
@@ -19,6 +19,8 @@ WANTLIB +=		fontconfig freetype lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB +=		lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=		lib/qt4/QtXml m opus portaudio protobuf
 WANTLIB +=		pthread sndfile speex speexdsp ssl ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/qmake x11/qt4
 SEPARATE_BUILD =	No
@@ -37,8 +39,10 @@ RUN_DEPENDS =		audio/celt07 \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
+# CONFIG+=c++11 because of protobuf
 MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			QMAKE_LRELEASE=${MODQT_LRELEASE} \
+			CONFIG+=c++11 \
 			CONFIG+=no-11x \
 			CONFIG+=no-alsa \
 			CONFIG+=no-bonjour \
