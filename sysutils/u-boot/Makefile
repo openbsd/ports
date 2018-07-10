@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.35 2018/07/10 03:40:36 jsg Exp $
+#	$OpenBSD: Makefile,v 1.36 2018/07/10 12:30:16 ajacoutot Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -35,7 +35,8 @@ MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/dtc \
+BUILD_DEPENDS=	devel/bison \
+		devel/dtc \
 		devel/swig \
 		textproc/gsed
 
