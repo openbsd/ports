@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/06/29 22:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2018/07/10 20:13:15 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -74,6 +74,8 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook
 MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
+
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Dcheese=false \
 			-Dwayland=false
