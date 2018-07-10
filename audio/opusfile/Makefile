@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 01:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/10 15:30:15 naddy Exp $
 
 COMMENT =		high-level decoding and seeking API for Opus files
 DISTNAME =		opusfile-0.9
+REVISION =		0
 CATEGORIES =		audio
 
 SHARED_LIBS +=		opusfile                  1.0 # 4.2
@@ -24,9 +25,5 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-maintainer-mode
 CONFIGURE_ARGS +=	--disable-doc	# requires doxygen
-
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS +=	--enable-fixed-point
-.endif
 
 .include <bsd.port.mk>
