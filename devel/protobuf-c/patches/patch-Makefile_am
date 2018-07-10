@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_am,v 1.3 2017/06/28 13:16:49 ajacoutot Exp $
+$OpenBSD: patch-Makefile_am,v 1.4 2018/07/10 10:49:43 tb Exp $
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -191,21 +191,4 @@ install-data-hook:
+@@ -274,21 +274,4 @@ install-data-hook:
  	$(MKDIR_P) $(DESTDIR)$(includedir)/google/protobuf-c
- 	cd $(DESTDIR)$(includedir)/google/protobuf-c && rm -vf protobuf-c.h
+ 	cd $(DESTDIR)$(includedir)/google/protobuf-c && rm -f protobuf-c.h
  	cd $(DESTDIR)$(includedir)/google/protobuf-c && $(LN_S) ../../protobuf-c/protobuf-c.h protobuf-c.h
 -
 -#
