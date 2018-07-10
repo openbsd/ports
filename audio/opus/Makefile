@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/06/30 19:32:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/07/10 15:17:41 naddy Exp $
 
 # invalid use of `restrict'
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -24,10 +24,5 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-doc	# requires doxygen
-
-# fixed-point asm code requires EABI.
-#.if ${MACHINE_ARCH} == "arm"
-#CONFIGURE_ARGS+=--enable-fixed-point
-#.endif
 
 .include <bsd.port.mk>
