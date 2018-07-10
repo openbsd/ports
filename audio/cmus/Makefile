@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/06 12:14:43 kn Exp $
+# $OpenBSD: Makefile,v 1.17 2018/07/10 15:25:19 naddy Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -7,7 +7,7 @@ V=			2.7.1
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
-REVISION=		2
+REVISION=		3
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=		-main -ffmpeg
 
-WANTLIB-main+=		c cdio cdio_cdda cue curses discid FLAC>=5 m mad>=2
-WANTLIB-main+=		ogg opusfile pthread sndio wavpack iconv
+WANTLIB-main+=		c cdio cdio_cdda cue curses discid FLAC iconv m mad
+WANTLIB-main+=		ogg opusfile pthread sndio vorbis vorbisfile wavpack
 
 LIB_DEPENDS-main=	audio/flac \
 			audio/libcdio \
@@ -32,6 +32,7 @@ LIB_DEPENDS-main=	audio/flac \
 			audio/libdiscid \
 			audio/libmad \
 			audio/libogg \
+			audio/libvorbis \
 			audio/opusfile \
 			audio/wavpack \
 			converters/libiconv
@@ -67,15 +68,6 @@ CONFIGURE_ARGS=		prefix=${PREFIX} \
 			CONFIG_SNDIO=y \
 			CONFIG_SUN=n \
 			CONFIG_VTX=n
-
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS+=	CONFIG_TREMOR=y
-LIB_DEPENDS-main+=	audio/tremor
-WANTLIB-main+=		vorbisidec>=1
-.else
-LIB_DEPENDS-main+=	audio/libvorbis
-WANTLIB-main+=		vorbis>=0 vorbisfile>=1
-.endif
 
 NO_TEST=		Yes
 
