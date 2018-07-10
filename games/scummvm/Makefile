@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2018/06/27 21:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2018/07/10 16:02:35 naddy Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.0.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://www.scummvm.org/frs/scummvm/${V}/
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -14,8 +14,8 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png sndio ${COMPILER_LIBCXX}
-WANTLIB += theoradec z
+WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png ogg sndio
+WANTLIB += ${COMPILER_LIBCXX} theoradec vorbis vorbisfile z
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
@@ -27,6 +27,7 @@ COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	audio/libmad \
+		audio/libvorbis \
 		audio/flac \
 		audio/faad>=2.7 \
 		devel/sdl2 \
@@ -46,15 +47,6 @@ CONFIGURE_ARGS+= --disable-alsa \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-.if ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS +=	--enable-tremor --disable-vorbis
-LIB_DEPENDS +=		audio/tremor
-WANTLIB +=		vorbisidec>=1
-.else
-LIB_DEPENDS +=		audio/libvorbis
-WANTLIB +=		ogg vorbis>=0 vorbisfile>=1
-.endif
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
