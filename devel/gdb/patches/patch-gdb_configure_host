@@ -1,0 +1,11 @@
+$OpenBSD: patch-gdb_configure_host,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+--- gdb/configure.host.orig	Sat Jan 21 05:48:42 2017
++++ gdb/configure.host	Tue Mar  7 23:52:43 2017
+@@ -82,6 +82,7 @@ case "${host}" in
+ *-*-darwin*)		gdb_host=darwin ;;
+ 
+ aarch64*-*-linux*)	gdb_host=linux ;;
++aarch64*-*-openbsd*)	gdb_host=obsd ;;
+ 
+ alpha*-*-linux*)	gdb_host=alpha-linux ;;
+ alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu)

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.54 2018/06/18 14:53:12 kettenis Exp $
+# $OpenBSD: Makefile,v 1.55 2018/07/10 11:03:46 kettenis Exp $
 
 # adjust lang/ocaml if gdb is ported to aarch64
-NOT_FOR_ARCHS=	aarch64
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 

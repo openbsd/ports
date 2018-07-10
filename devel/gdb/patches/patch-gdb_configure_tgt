@@ -1,0 +1,18 @@
+$OpenBSD: patch-gdb_configure_tgt,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+Index: gdb/configure.tgt
+--- gdb/configure.tgt.orig
++++ gdb/configure.tgt
+@@ -51,6 +51,13 @@ aarch64*-*-linux*)
+ 	build_gdbserver=yes
+ 	;;
+ 
++aarch64*-*-openbsd*)
++	# Target: OpenBSD/arm64
++	gdb_target_obs="aarch64-tdep.o aarch64obsd-tdep.o aarch64-insn.o \
++			obsd-tdep.o solib-svr4.o \
++			symfile-mem.o aarch64-insn.o"
++	;;
++
+ alpha*-*-linux*)
+ 	# Target: Little-endian Alpha running Linux
+ 	gdb_target_obs="alpha-tdep.o alpha-mdebug-tdep.o alpha-linux-tdep.o \
