@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/15 19:54:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2018/07/10 13:13:42 jasper Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
+GH_ACCOUNT =		dlbeer
+GH_PROJECT =		mspdebug
+GH_TAGNAME =		v0.23
 DISTNAME=		mspdebug-0.23
+REVISION =		0
 CATEGORIES=		devel
 
-HOMEPAGE=		http://mspdebug.sourceforge.net/
+HOMEPAGE=		https://dlbeer.co.nz/mspdebug/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mspdebug/}
 
 WANTLIB += c pthread readline termcap usb
 
