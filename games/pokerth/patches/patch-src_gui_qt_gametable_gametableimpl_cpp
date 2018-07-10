@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gui_qt_gametable_gametableimpl_cpp,v 1.1 2018/07/10 10:53:10 tb Exp $
+
+https://github.com/albmed/pokerth/commit/8e5b09ac62a66ed560ea9869caf3351959e399ce
+
+Index: src/gui/qt/gametable/gametableimpl.cpp
+--- src/gui/qt/gametable/gametableimpl.cpp.orig
++++ src/gui/qt/gametable/gametableimpl.cpp
+@@ -3859,7 +3859,7 @@ void gameTableImpl::triggerVoteOnKick(int id)
+ 	int playerCount = static_cast<int>(seatList->size());
+ 	if (id < playerCount) {
+ 		PlayerListIterator pos = seatList->begin();
+-		advance(pos, id);
++		std::advance(pos, id);
+ 		myStartWindow->getSession()->startVoteKickPlayer((*pos)->getMyUniqueID());
+ 	}
+ }

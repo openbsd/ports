@@ -1,0 +1,25 @@
+$OpenBSD: patch-pokerth_proto,v 1.1 2018/07/10 10:53:10 tb Exp $
+
+https://github.com/albmed/pokerth/commit/8e5b09ac62a66ed560ea9869caf3351959e399ce
+
+Index: pokerth.proto
+--- pokerth.proto.orig
++++ pokerth.proto
+@@ -29,6 +29,8 @@
+  * as that of the covered work.                                              *
+  *****************************************************************************/
+ 
++syntax = "proto2";
++
+ option java_package = "de.pokerth.protocol";
+ option java_outer_classname = "ProtoBuf";
+ option optimize_for = LITE_RUNTIME;
+@@ -701,7 +703,7 @@ message ReportGameAckMessage {
+ 
+ message ErrorMessage {
+ 	enum ErrorReason {
+-		reserved = 0;
++		custReserved = 0;
+ 		initVersionNotSupported = 1;
+ 		initServerFull = 2;
+ 		initAuthFailure = 3;

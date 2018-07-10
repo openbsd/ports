@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_net_common_netpacket_cpp,v 1.1 2018/07/10 10:53:10 tb Exp $
+
+https://github.com/albmed/pokerth/commit/8e5b09ac62a66ed560ea9869caf3351959e399ce
+
+Index: src/net/common/netpacket.cpp
+--- src/net/common/netpacket.cpp.orig
++++ src/net/common/netpacket.cpp
+@@ -249,7 +249,7 @@ NetPacket::GameErrorToNetError(int gameErrorReason)
+ 		retVal = ErrorMessage::sessionTimeout;
+ 		break;
+ 	default :
+-		retVal = ErrorMessage::reserved;
++		retVal = ErrorMessage::custReserved;
+ 		break;
+ 	}
+ 	return retVal;
