@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.34 2018/05/08 13:46:06 jsg Exp $
+#	$OpenBSD: Makefile,v 1.35 2018/07/10 03:40:36 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,7 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.05
+VERSION=	2018.07
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -14,11 +14,18 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-PATCHFILES=	u-boot-rk3288_clk_gmac.patch:1 \
-		u-boot-rockchip_ns16550_mem32.patch:2
+PATCHFILES=	u-boot-hyp_migrate_stack.patch:1 \
+		u-boot-efi_payloads_nonsec.patch:2 \
+		u-boot-efi_nonsec_once.patch:3 \
+		u-boot-hyp_lpae.patch:4 \
+		u-boot-revert_efi_no_nonsec.patch:5
 
-MASTER_SITES1=		https://patchwork.ozlabs.org/patch/910079/mbox/?/
-MASTER_SITES2=		https://patchwork.ozlabs.org/patch/910119/mbox/?/
+MASTER_SITES1=		https://patchwork.ozlabs.org/patch/930263/mbox/?/
+MASTER_SITES2=		https://patchwork.ozlabs.org/patch/930266/mbox/?/
+MASTER_SITES3=		https://patchwork.ozlabs.org/patch/930264/mbox/?/
+MASTER_SITES4=		https://patchwork.ozlabs.org/patch/930265/mbox/?/
+MASTER_SITES5=		https://patchwork.ozlabs.org/patch/930267/mbox/?/
+
 PATCH_DIST_STRIP=	-p1
 
 # GPLv2
