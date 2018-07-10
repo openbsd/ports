@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/09 22:10:05 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/10 12:29:21 gonzalo Exp $
 
 COMMENT =	OTP extension for password-store
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	pass-otp-${V}
-REVISION =	0
 
 CATEGORIES =	security
 
