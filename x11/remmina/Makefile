@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/07/10 12:35:01 sthen Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
 GH_TAGNAME=		v1.2.30
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
-PKGNAME =		remmina-${GH_TAGNAME:S/v//}
-REVISION =		2
+PKGNAME=		remmina-${GH_TAGNAME:S/v//}
+REVISION=		3
 
 CATEGORIES=		x11 net
 
@@ -54,6 +54,6 @@ CONFIGURE_ARGS=		-DWITH_SSE2=OFF
 
 # Appindicator is only used by Ubuntu's Unity.
 CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF \
-			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include"
+			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"
 
 .include <bsd.port.mk>
