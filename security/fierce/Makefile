@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/20 17:56:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/10 13:30:21 jasper Exp $
 
 COMMENT =		DNS reconnaissance tool for locating non-contiguous IP space
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.2.2
 GH_ACCOUNT =		mschwager
 GH_PROJECT =		fierce
 GH_TAGNAME =		${MODPY_EGG_VERSION}
@@ -22,10 +22,6 @@ RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/fierce.py
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fierce/
-	mv ${PREFIX}/lists ${PREFIX}/share/fierce/
+	${SUBST_CMD} ${WRKSRC}/fierce/fierce.py
 
 .include <bsd.port.mk>
