@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/10 13:32:52 jasper Exp $
 
 COMMENT=		template rendering and notifications with Consul
 
-GH_TAGNAME=		v0.19.4
+GH_TAGNAME=		v0.19.5
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		consul-template
-REVISION=		1
 
 CATEGORIES=		sysutils net
 
