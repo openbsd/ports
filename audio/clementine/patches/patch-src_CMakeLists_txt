@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2014/10/01 20:52:48 dcoppa Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.4 2018/07/10 10:55:07 tb Exp $
 1. -Wno-unused-private-field -Wno-unknown-warning-option dont exist on gcc 4.8
-2. FIX BUG 4401: No namespaces for DBus interfaces, from upstream.
---- src/CMakeLists.txt.orig	Wed Apr 23 12:16:44 2014
-+++ src/CMakeLists.txt	Wed Oct  1 16:35:16 2014
+2. Respect CXXFLAGS
+3. FIX BUG 4401: No namespaces for DBus interfaces, from upstream.
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
 @@ -1,6 +1,6 @@
  
  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 -set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs -Wno-unused-private-field -Wno-unknown-warning-option --std=c++0x -U__STRICT_ANSI__")
-+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs --std=c++0x -U__STRICT_ANSI__")
++set(CMAKE_CXX_FLAGS "-Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs --std=c++0x -U__STRICT_ANSI__ ${CMAKE_CXX_FLAGS}")
  
  option(BUILD_WERROR "Build with -Werror" ON)
  

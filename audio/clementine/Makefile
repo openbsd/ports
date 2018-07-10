@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2018/07/10 10:55:07 tb Exp $
 
 COMMENT =	Qt4-based featureful music player
 
 V =		1.2.3
 DISTNAME =	clementine-${V}
 CATEGORIES =	audio x11
-REVISION =	12
+REVISION =	13
 
 HOMEPAGE =	http://clementine-player.org/
 
@@ -32,6 +32,7 @@ WANTLIB += plist
 
 MODULES =		devel/cmake x11/qt4
 COMPILER =		base-clang ports-gcc
+CXXFLAGS +=		-std=c++11
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \

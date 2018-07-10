@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_clementine-tagreader_CMakeLists_txt,v 1.1 2018/07/10 10:55:07 tb Exp $
+
+Respect CXXFLAGS
+
+Index: ext/clementine-tagreader/CMakeLists.txt
+--- ext/clementine-tagreader/CMakeLists.txt.orig
++++ ext/clementine-tagreader/CMakeLists.txt
+@@ -7,7 +7,7 @@ include_directories(${CMAKE_BINARY_DIR}/ext/libclement
+ include_directories(${CMAKE_SOURCE_DIR}/src)
+ include_directories(${CMAKE_BINARY_DIR}/src)
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x -U__STRICT_ANSI__")
++set(CMAKE_CXX_FLAGS "--std=c++0x -U__STRICT_ANSI__ ${CMAKE_CXX_FLAGS}")
+ 
+ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+ 
