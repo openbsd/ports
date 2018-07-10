@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/10 14:45:53 ajacoutot Exp $
 
 COMMENT =	desktop Twitch.tv client
 CATEGORIES =	multimedia games x11
@@ -39,5 +39,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =	-Dbuild-player-backends=gstreamer-cairo,gstreamer-opengl
+
+LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
