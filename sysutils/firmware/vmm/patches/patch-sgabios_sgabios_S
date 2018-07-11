@@ -1,0 +1,61 @@
+--- ../sgabios/sgabios.S.orig	Thu Apr 22 02:03:40 2010
++++ ../sgabios/sgabios.S	Tue Jul 10 15:58:01 2018
+@@ -2360,6 +2360,7 @@ resize_end:
+   popw %ds                             /* ds = cs */
+   call get_byte                        /* flush any remaining "wrong" input */
+   jnz resize_end
++#if 0
+   call send_crlf                       /* place cursor on start of last line */
+   movw $mfg_string, %si
+   call send_asciz_out
+@@ -2370,27 +2371,34 @@ resize_end:
+   movw $long_version, %si
+   call send_asciz_out
+   call send_crlf
++#endif
+   /* if vga attached, skip terminal message and bda setup... */
+   cmpw $0xc000, %cs:old_int10h_seg     /* vga attached? */
+   jz post_bda_init_tail                /* if so, don't modify BDA */
++#if 0
+   /* show detected terminal size, or default if none detected */
+   movw $term_info, %si
+   call send_asciz_out
++#endif
+   pushw $BDA_SEG
+   popw %ds                             /* ds = 0x40 */
+   movb %cs:term_cols, %al
+   movb %al, BDA_COLS                   /* 40:4a = number of character cols */
+   movb $0, BDA_CURSOR_COL              /* 40:51 = cursor0 col */
++#if 0
+   call send_number
+   movb $0x78, %al                      /* x */
+   call send_byte
++#endif
+   movb %cs:term_rows, %al
+   movb %al, %ah
+   decb %ah                             /* ah = rows-1 */
+   movb %ah, BDA_ROWS                   /* 40:84 = num character rows - 1 */
+   movb %ah, BDA_CURSOR_ROW             /* 40:50 = cursor0 row */
++#if 0
+   call send_number
+   call send_crlf
++#endif
+   movb $3, BDA_MODE_NUM
+   movb $0x29, BDA_MODE_SEL
+   movw $VGA_IO_BASE, BDA_6845_ADDR
+@@ -2418,6 +2426,7 @@ post_bda_init_tail:
+   movw $ebda_info, %si
+   call send_asciz_out
+   movw %cs:sgabios_ebda_logbuf_offset, %ax
++#if 0
+   xchgb %ah, %al
+   call send_number
+   movb $0x20, %al
+@@ -2425,6 +2434,7 @@ post_bda_init_tail:
+   movb %ah, %al
+   call send_number
+   call send_crlf
++#endif
+   popw %es
+   popw %ds
+   popaw

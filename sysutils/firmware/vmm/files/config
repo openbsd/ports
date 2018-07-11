@@ -1,4 +1,4 @@
-# $OpenBSD: config,v 1.5 2018/04/26 12:23:32 sthen Exp $
+# $OpenBSD: config,v 1.6 2018/07/11 09:09:46 reyk Exp $
 #
 # Automatically generated file; DO NOT EDIT.
 # SeaBIOS Configuration
@@ -73,7 +73,7 @@ CONFIG_KBD_CALL_INT15_4F=y
 #
 # CONFIG_PIRTABLE is not set
 # CONFIG_MPTABLE is not set
-# CONFIG_SMBIOS is not set
+CONFIG_SMBIOS=y
 # CONFIG_ACPI is not set
 # CONFIG_FW_ROMFILE_LOAD is not set
 
@@ -92,7 +92,7 @@ CONFIG_VGA_EXTRA_STACK_SIZE=512
 #
 # Debugging
 #
-CONFIG_DEBUG_LEVEL=3
+CONFIG_DEBUG_LEVEL=-1
 CONFIG_DEBUG_SERIAL=y
 CONFIG_DEBUG_SERIAL_PORT=0x3f8
-CONFIG_DEBUG_IO=y
+CONFIG_DEBUG_IO=n

@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_fw_smbios_c,v 1.1 2018/07/11 09:09:46 reyk Exp $
+
+--- src/fw/smbios.c.orig	Fri Nov 10 17:49:19 2017
++++ src/fw/smbios.c	Tue Jul 10 17:29:14 2018
+@@ -6,6 +6,7 @@
+ //
+ // This file may be distributed under the terms of the GNU LGPLv3 license.
+ 
++#include "autoversion.h"
+ #include "config.h" // CONFIG_*
+ #include "malloc.h" // free
+ #include "output.h" // dprintf
+@@ -174,8 +175,8 @@ smbios_init_type_0(void *start)
+     p->header.length = sizeof(struct smbios_type_0);
+     p->header.handle = 0;
+ 
+-    load_str_field_with_default(0, vendor_str, BUILD_APPNAME);
+-    load_str_field_with_default(0, bios_version_str, BUILD_APPNAME);
++    load_str_field_with_default(0, vendor_str, BUILD_BIOSNAME);
++    load_str_field_with_default(0, bios_version_str, BUILD_VERSION);
+ 
+     p->bios_starting_address_segment = 0xe800;
+ 
+@@ -223,7 +224,7 @@ smbios_init_type_1(void *start)
+     p->header.handle = 0x100;
+ 
+     load_str_field_with_default(1, manufacturer_str, BUILD_APPNAME);
+-    load_str_field_with_default(1, product_name_str, BUILD_APPNAME);
++    load_str_field_with_default(1, product_name_str, BUILD_PRODNAME);
+     load_str_field_or_skip(1, version_str);
+     load_str_field_or_skip(1, serial_number_str);
+ 

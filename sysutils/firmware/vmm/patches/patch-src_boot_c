@@ -1,0 +1,43 @@
+--- src/boot.c.orig	Tue Jul 10 14:52:11 2018
++++ src/boot.c	Tue Jul 10 14:53:18 2018
+@@ -659,7 +659,7 @@ boot_cdrom(struct drive_s *drive)
+ {
+     if (! CONFIG_CDROM_BOOT)
+         return;
+-    printf("Booting from DVD/CD...\n");
++    dprintf(1, "Booting from DVD/CD...\n");
+ 
+     int status = cdrom_boot(drive);
+     if (status) {
+@@ -685,7 +685,7 @@ boot_cbfs(struct cbfs_file *file)
+ {
+     if (!CONFIG_COREBOOT_FLASH)
+         return;
+-    printf("Booting from CBFS...\n");
++    dprintf(1, "Booting from CBFS...\n");
+     cbfs_run_payload(file);
+ }
+ 
+@@ -693,7 +693,7 @@ boot_cbfs(struct cbfs_file *file)
+ static void
+ boot_rom(u32 vector)
+ {
+-    printf("Booting from ROM...\n");
++    dprintf(1, "Booting from ROM...\n");
+     struct segoff_s so;
+     so.segoff = vector;
+     call_boot_entry(so, 0);
+@@ -733,11 +733,11 @@ do_boot(int seq_nr)
+     struct bev_s *ie = &BEV[seq_nr];
+     switch (ie->type) {
+     case IPL_TYPE_FLOPPY:
+-        printf("Booting from Floppy...\n");
++        dprintf(1, "Booting from Floppy...\n");
+         boot_disk(0x00, CheckFloppySig);
+         break;
+     case IPL_TYPE_HARDDISK:
+-        printf("Booting from Hard Disk...\n");
++        dprintf(1, "Booting from Hard Disk...\n");
+         boot_disk(0x80, 1);
+         break;
+     case IPL_TYPE_CDROM:
