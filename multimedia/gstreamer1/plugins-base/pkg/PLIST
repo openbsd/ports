@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/05/19 06:21:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/07/11 13:05:08 naddy Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -219,7 +219,6 @@ lib/gstreamer-${API}/libgstaudiotestsrc.so
 lib/gstreamer-${API}/libgstcdparanoia.so
 lib/gstreamer-${API}/libgstencoding.so
 lib/gstreamer-${API}/libgstgio.so
-lib/gstreamer-${API}/libgstivorbisdec.so
 lib/gstreamer-${API}/libgstogg.so
 lib/gstreamer-${API}/libgstopengl.so
 lib/gstreamer-${API}/libgstopus.so

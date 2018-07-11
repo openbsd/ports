@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2018/05/24 15:38:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2018/07/11 13:05:08 naddy Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gsttag-1.0           4.0      # 1401.0
 SHARED_LIBS +=  gstaudio-1.0         4.0      # 1401.0
@@ -29,8 +29,8 @@ WANTLIB += graphite2 gstbase-1.0 gstcontroller-1.0 gstnet-1.0
 WANTLIB += gstreamer-1.0 gthread-2.0 harfbuzz iconv intl jpeg
 WANTLIB += m ogg opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sndio theoradec theoraenc
-WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes z
+WANTLIB += vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gobject-introspection
@@ -44,7 +44,6 @@ LIB_DEPENDS=		${P}/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/opus \
-			audio/tremor \
 			devel/orc \
 			devel/pango \
 			graphics/graphene \
@@ -55,6 +54,7 @@ RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
 			--disable-alsa \
+			--disable-ivorbis \
 			--disable-libvisual #XXX libvisual needs to be ported
 
 ### SNDIO ###

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/01 16:31:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/11 13:05:08 naddy Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-cdda-*
 @conflict gstreamer-gnome-*
@@ -132,7 +132,6 @@ lib/gstreamer-${VERSION}/libgstencodebin.so
 lib/gstreamer-${VERSION}/libgstffmpegcolorspace.so
 lib/gstreamer-${VERSION}/libgstgdp.so
 lib/gstreamer-${VERSION}/libgstgio.so
-lib/gstreamer-${VERSION}/libgstivorbisdec.so
 lib/gstreamer-${VERSION}/libgstogg.so
 lib/gstreamer-${VERSION}/libgstpango.so
 lib/gstreamer-${VERSION}/libgstplaybin.so
@@ -148,43 +147,43 @@ lib/gstreamer-${VERSION}/libgstvorbis.so
 lib/gstreamer-${VERSION}/libgstximagesink.so
 lib/gstreamer-${VERSION}/libgstxvimagesink.so
 lib/libgstapp-${VERSION}.la
-@lib lib/libgstapp-${VERSION}.so.${LIBgstapp-0.10_VERSION}
+@lib lib/libgstapp-${VERSION}.so.${LIBgstapp-${VERSION}_VERSION}
 lib/libgstaudio-${VERSION}.a
 lib/libgstaudio-${VERSION}.la
-@lib lib/libgstaudio-${VERSION}.so.${LIBgstaudio-0.10_VERSION}
+@lib lib/libgstaudio-${VERSION}.so.${LIBgstaudio-${VERSION}_VERSION}
 lib/libgstcdda-${VERSION}.a
 lib/libgstcdda-${VERSION}.la
-@lib lib/libgstcdda-${VERSION}.so.${LIBgstcdda-0.10_VERSION}
+@lib lib/libgstcdda-${VERSION}.so.${LIBgstcdda-${VERSION}_VERSION}
 lib/libgstfft-${VERSION}.a
 lib/libgstfft-${VERSION}.la
-@lib lib/libgstfft-${VERSION}.so.${LIBgstfft-0.10_VERSION}
+@lib lib/libgstfft-${VERSION}.so.${LIBgstfft-${VERSION}_VERSION}
 lib/libgstinterfaces-${VERSION}.a
 lib/libgstinterfaces-${VERSION}.la
-@lib lib/libgstinterfaces-${VERSION}.so.${LIBgstinterfaces-0.10_VERSION}
+@lib lib/libgstinterfaces-${VERSION}.so.${LIBgstinterfaces-${VERSION}_VERSION}
 lib/libgstnetbuffer-${VERSION}.a
 lib/libgstnetbuffer-${VERSION}.la
-@lib lib/libgstnetbuffer-${VERSION}.so.${LIBgstnetbuffer-0.10_VERSION}
+@lib lib/libgstnetbuffer-${VERSION}.so.${LIBgstnetbuffer-${VERSION}_VERSION}
 lib/libgstpbutils-${VERSION}.a
 lib/libgstpbutils-${VERSION}.la
-@lib lib/libgstpbutils-${VERSION}.so.${LIBgstpbutils-0.10_VERSION}
+@lib lib/libgstpbutils-${VERSION}.so.${LIBgstpbutils-${VERSION}_VERSION}
 lib/libgstriff-${VERSION}.a
 lib/libgstriff-${VERSION}.la
-@lib lib/libgstriff-${VERSION}.so.${LIBgstriff-0.10_VERSION}
+@lib lib/libgstriff-${VERSION}.so.${LIBgstriff-${VERSION}_VERSION}
 lib/libgstrtp-${VERSION}.a
 lib/libgstrtp-${VERSION}.la
-@lib lib/libgstrtp-${VERSION}.so.${LIBgstrtp-0.10_VERSION}
+@lib lib/libgstrtp-${VERSION}.so.${LIBgstrtp-${VERSION}_VERSION}
 lib/libgstrtsp-${VERSION}.a
 lib/libgstrtsp-${VERSION}.la
-@lib lib/libgstrtsp-${VERSION}.so.${LIBgstrtsp-0.10_VERSION}
+@lib lib/libgstrtsp-${VERSION}.so.${LIBgstrtsp-${VERSION}_VERSION}
 lib/libgstsdp-${VERSION}.a
 lib/libgstsdp-${VERSION}.la
-@lib lib/libgstsdp-${VERSION}.so.${LIBgstsdp-0.10_VERSION}
+@lib lib/libgstsdp-${VERSION}.so.${LIBgstsdp-${VERSION}_VERSION}
 lib/libgsttag-${VERSION}.a
 lib/libgsttag-${VERSION}.la
-@lib lib/libgsttag-${VERSION}.so.${LIBgsttag-0.10_VERSION}
+@lib lib/libgsttag-${VERSION}.so.${LIBgsttag-${VERSION}_VERSION}
 lib/libgstvideo-${VERSION}.a
 lib/libgstvideo-${VERSION}.la
-@lib lib/libgstvideo-${VERSION}.so.${LIBgstvideo-0.10_VERSION}
+@lib lib/libgstvideo-${VERSION}.so.${LIBgstvideo-${VERSION}_VERSION}
 lib/pkgconfig/gstreamer-app-${VERSION}.pc
 lib/pkgconfig/gstreamer-audio-${VERSION}.pc
 lib/pkgconfig/gstreamer-cdda-${VERSION}.pc
