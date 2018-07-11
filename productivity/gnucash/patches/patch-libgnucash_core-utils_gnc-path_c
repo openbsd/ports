@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgnucash_core-utils_gnc-path_c,v 1.1 2018/07/11 21:14:36 ajacoutot Exp $
+
+Index: libgnucash/core-utils/gnc-path.c
+--- libgnucash/core-utils/gnc-path.c.orig
++++ libgnucash/core-utils/gnc-path.c
+@@ -93,7 +93,7 @@ gchar *gnc_path_get_pkgdocdir()
+  * @returns A newly allocated string. */
+ gchar *gnc_path_get_pkgsysconfdir()
+ {
+-    gchar *sysconfdir = gnc_gbr_find_etc_dir (SYSCONFDIR);
++    gchar *sysconfdir = gnc_gbr_find_etc_dir ("${SYSCONFDIR}");
+     gchar *result = g_build_filename (sysconfdir, "gnucash", (char*)NULL);
+     g_free (sysconfdir);
+     //printf("Returning pkgsysconfdir %s\n", result);

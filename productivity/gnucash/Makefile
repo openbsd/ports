@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2018/07/11 12:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2018/07/11 21:14:36 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		3.2
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			gnucash-docs-${GNOME_VERSION}.tar.gz
@@ -67,11 +68,14 @@ CONFIGURE_ENV +=	"CXX=${CXX} -I${LOCALBASE}/include/guile/2.2"
 # XXX not picked up from config.h
 CFLAGS +=		-DHAVE_SCANF_LLD
 
-CXXFLAGS=		-Wno-error
+CXXFLAGS +=		-Wno-error
 
 MAKE_ENV =		GUILE_AUTO_COMPILE=0
 
 DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libgnucash/core-utils/gnc-path.c
 
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
