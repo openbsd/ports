@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2016/04/08 11:16:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2018/07/11 20:02:16 jca Exp $
 
 PORTROACH=	limitw:1,even
 
-COMMENT=	library for loading and enumurating of PKCS\#11 modules
+COMMENT=	library for loading and enumerating PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.23.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
