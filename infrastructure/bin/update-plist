@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.166 2018/07/08 19:57:43 espie Exp $
+# $OpenBSD: update-plist,v 1.167 2018/07/11 10:43:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -806,6 +806,14 @@ sub check_specific
 	$h->{should}{'glib-compile-schemas'} = 1;
 }
 
+package OpenBSD::PackingElement::MimeInfo;
+our @ISA=qw(OpenBSD::PackingElement::File);
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'update-mime-database'} = 1;
+}
+
 package OpenBSD::PackingElement::Sampledir;
 
 # this is not really smart, but good enough for starters
@@ -1229,7 +1237,7 @@ sub new
 {
 	my $class = shift;
 	bless {
-	    state => UpdatePlist::State->new('update-plist'),
+	    state => UpdatePlist::State->new,
 	}, $class;
 }
 

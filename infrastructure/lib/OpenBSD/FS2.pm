@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.24 2018/07/08 19:39:33 espie Exp $
+# $OpenBSD: FS2.pm,v 1.25 2018/07/11 10:43:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -63,6 +63,7 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
 		OpenBSD::FS::File::Glib2Schema
+		OpenBSD::FS::File::MimeInfo
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
@@ -167,6 +168,19 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Glib2Schema';
+}
+
+package OpenBSD::FS::File::MimeInfo;
+our @ISA = qw(OpenBSD::FS::File);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,share/mime/packages/.*\.xml$,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::MimeInfo';
 }
 
 package OpenBSD::FS::File::Binary;
