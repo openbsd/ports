@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/03/31 15:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/11 17:21:18 espie Exp $
 
 COMMENT =	nice theme for content heavy sites
-DISTNAME=	newsflash-7.x-2.5
-PKGNAME =	drupal7-theme-newsflash-2.5
+DISTNAME=	newsflash-7.x-2.6
+PKGNAME =	drupal7-theme-newsflash-2.6
 
 # still GPL
 HOMEPAGE =	http://www.roopletheme.com/
