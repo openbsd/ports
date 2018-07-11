@@ -1,0 +1,8 @@
+Arbitrary-precision arithmetic on big integers and on rationals.
+
+This is a legacy library. It used to be part of the core OCaml distribution (in
+otherlibs/num) but is now distributed separately. New applications that need
+arbitrary-precision arithmetic should use the Zarith library
+(https://github.com/ocaml/Zarith) instead of the Num library, and older
+applications that already use Num are encouraged to switch to Zarith. Zarith
+delivers much better performance than Num and has a nicer API.

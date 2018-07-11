@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
+%%dynlink%%
+lib/ocaml/num/arith_status.cmx
+lib/ocaml/num/big_int.cmx
+lib/ocaml/num/nat.cmx
+lib/ocaml/num/num.cmx
+lib/ocaml/num/nums.a
+lib/ocaml/num/nums.cmxa
+lib/ocaml/num/ratio.cmx

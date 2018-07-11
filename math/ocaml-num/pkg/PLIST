@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
+%%native%%
+lib/ocaml/num/
+lib/ocaml/num-top/
+lib/ocaml/num-top/META
+lib/ocaml/num-top/num_top.cma
+lib/ocaml/num-top/num_top.cmi
+lib/ocaml/num-top/num_top_printers.cmi
+lib/ocaml/num/META
+lib/ocaml/num/arith_status.cmi
+lib/ocaml/num/arith_status.cmti
+lib/ocaml/num/arith_status.mli
+lib/ocaml/num/big_int.cmi
+lib/ocaml/num/big_int.cmti
+lib/ocaml/num/big_int.mli
+lib/ocaml/num/libnums.a
+lib/ocaml/num/nat.cmi
+lib/ocaml/num/nat.cmti
+lib/ocaml/num/nat.mli
+lib/ocaml/num/num.cmi
+lib/ocaml/num/num.cmti
+lib/ocaml/num/num.mli
+lib/ocaml/num/nums.cma
+lib/ocaml/num/ratio.cmi
+lib/ocaml/num/ratio.cmti
+lib/ocaml/num/ratio.mli
+lib/ocaml/stublibs/dllnums.so
+@comment lib/ocaml/stublibs/dllnums.so.owner
