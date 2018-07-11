@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/09 09:46:18 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/11 13:38:03 naddy Exp $
 bin/nyxmms2
 @bin bin/xmms2
 @bin bin/xmms2-et
@@ -129,7 +129,6 @@ lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
 lib/xmms2/libxmms_rss.so
 lib/xmms2/libxmms_sndfile.so
-lib/xmms2/libxmms_tremor.so
 lib/xmms2/libxmms_tta.so
 lib/xmms2/libxmms_vorbis.so
 lib/xmms2/libxmms_wave.so

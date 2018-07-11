@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/16 19:52:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.46 2018/07/11 13:38:03 naddy Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -23,10 +23,10 @@ MAINTAINER=		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += FLAC ao avahi-client avahi-common avahi-glib avcodec
-WANTLIB += avutil c curl gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 intl jack m mad ncurses ogg pcre perl pthread readline
+WANTLIB += avutil c curl curses gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 intl jack m mad ogg pcre perl pthread readline
 WANTLIB += sndfile speex sqlite3 ${COMPILER_LIBCXX} vorbis vorbisfile
-WANTLIB += vorbisidec vpx x264 xml2 opus swresample x265 ${MODPY_WANTLIB}
+WANTLIB += vpx x264 xml2 opus swresample x265 ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
@@ -49,8 +49,7 @@ LIB_DEPENDS =		devel/glib2 \
 			net/curl \
 			audio/libmad \
 			net/avahi \
-			audio/libsndfile \
-			audio/tremor
+			audio/libsndfile
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
 			src/clients/lib/xmmsclient++-glib/wscript \
@@ -72,7 +71,7 @@ do-configure:
 		--no-cython \
 		--disable-shmvis-server \
 		--without-optionals=medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby \
-		--without-plugins=airplay,alsa,cdda,coreaudio,faad,gme,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,speex,sun,vocoder,waveout,wavpack
+		--without-plugins=airplay,alsa,cdda,coreaudio,faad,gme,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,speex,sun,tremor,vocoder,waveout,wavpack
 
 post-configure:
 	# avoid linking to bogus libraries
