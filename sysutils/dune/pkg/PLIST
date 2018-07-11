@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 14:50:55 chrisz Exp $
+@bin bin/jbuilder
+@man man/man1/jbuilder-build.1
+@man man/man1/jbuilder-clean.1
+@man man/man1/jbuilder-exec.1
+@man man/man1/jbuilder-external-lib-deps.1
+@man man/man1/jbuilder-help.1
+@man man/man1/jbuilder-install.1
+@man man/man1/jbuilder-installed-libraries.1
+@man man/man1/jbuilder-promote.1
+@man man/man1/jbuilder-rules.1
+@man man/man1/jbuilder-runtest.1
+@man man/man1/jbuilder-subst.1
+@man man/man1/jbuilder-uninstall.1
+@man man/man1/jbuilder-utop.1
+@man man/man1/jbuilder.1
+@man man/man5/dune-config.5
+share/doc/dune/
+share/doc/dune/CHANGES.md
+share/doc/dune/LICENSE.md
+share/doc/dune/README.md
