@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/13 01:50:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2018/07/11 21:58:34 bcallah Exp $
 
 COMMENT =	small, high performance language with a modern syntax
 CATEGORIES =	lang
 
 GH_ACCOUNT =	marcobambini
 GH_PROJECT =	gravity
-GH_TAGNAME =	0.5.0
+GH_TAGNAME =	0.5.1
 
 HOMEPAGE =	http://creolabs.com/gravity
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -25,6 +25,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gravity ${PREFIX}/bin
 
 do-test:
-	cd ${WRKSRC} && ./unittest test
+	cd ${WRKSRC} && ./gravity -t test
 
 .include <bsd.port.mk>
