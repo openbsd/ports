@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.8 2018/01/07 10:49:15 espie Exp $
+# $OpenBSD: Size.pm,v 1.9 2018/07/11 16:10:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -121,8 +121,10 @@ sub parse_size_file
 	    sub {
 	    	my $fh = shift;
 		for my $p (sort {$a->{pkgpath} cmp $b->{pkgpath}} @rewrite) {
-			print $fh DPB::Serialize::Size->write($p), "\n";
+			print $fh DPB::Serialize::Size->write($p), "\n"
+			    or return 0;
 		}
+		return 1;
 	    });
 	print "Done\n";
 }
