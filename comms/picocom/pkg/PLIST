@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/08 18:19:18 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/11 21:40:43 fcambus Exp $
 @bin bin/picocom
-@man man/man8/picocom.8
+@man man/man1/picocom.1

@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/11 21:40:43 fcambus Exp $
 
 COMMENT =		minimal dumb-terminal emulation program
 
-DISTNAME =		picocom-1.7
-REVISION =		0
-CATEGORIES =		comms
+GH_ACCOUNT =		npat-efault
+GH_PROJECT =		picocom
+GH_TAGNAME =		3.1
 
-HOMEPAGE =		https://github.com/npat-efault/picocom
-MAINTAINER =		Kyle Isom <kyle@tyrfingr.is>
+CATEGORIES =		comms
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
-
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=picocom/}
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_ENV =		LDFLAGS="${LDFLAGS}"
@@ -22,8 +19,7 @@ MAKE_ENV =		LDFLAGS="${LDFLAGS}"
 NO_TEST =		Yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/picocom.8 ${PREFIX}/man/man8/picocom.8
+	${INSTALL_MAN} ${WRKSRC}/picocom.1 ${PREFIX}/man/man1/picocom.1
 	${INSTALL_PROGRAM} ${WRKDIST}/picocom ${PREFIX}/bin/picocom
-
 
 .include <bsd.port.mk>
