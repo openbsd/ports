@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/30 13:32:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2018/07/11 17:24:31 bcallah Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-8.29
+DISTNAME =		coreutils-8.30
 CATEGORIES =		sysutils
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
