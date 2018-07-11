@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.120 2018/07/11 10:16:45 espie Exp $
+# $OpenBSD: portcheck,v 1.121 2018/07/11 10:54:32 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -920,11 +920,10 @@ sub_checks() {
 #     ${PREFIX}/share/applications/ .
 #
 #   * If package adds a MIME types package, it should have the
-#     misc/shared-mime-info dependency and @exec/@unexec-delete with
-#     %D/bin/update-mime-database %D/share/mime
+#     misc/shared-mime-info dependency and @tag update-mime-database
 #
-#   * If package adds a GLib schema, it should have @exec/@unexec-delete
-#     with %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+#   * If package adds a GLib schema, it should have 
+#     @tag glib-compile-schemas
 #     and "devel/dconf" in MODULES (or at least RDEP on devel/dconf).
 #
 #   * If package installs files under ${PREFIX}/share/dbus-1/system-services/,
