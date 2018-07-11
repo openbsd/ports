@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_vtls_openssl_c,v 1.4 2018/05/16 19:06:05 naddy Exp $
+$OpenBSD: patch-lib_vtls_openssl_c,v 1.5 2018/07/11 16:00:03 naddy Exp $
 
 Index: lib/vtls/openssl.c
 --- lib/vtls/openssl.c.orig
 +++ lib/vtls/openssl.c
-@@ -126,12 +126,7 @@
+@@ -129,12 +129,7 @@
  #define X509_get0_notBefore(x) X509_get_notBefore(x)
  #define X509_get0_notAfter(x) X509_get_notAfter(x)
  #define CONST_EXTS /* nope */
@@ -17,7 +17,7 @@ Index: lib/vtls/openssl.c
  #define OpenSSL_version_num() SSLeay()
  #endif
  #endif
-@@ -3645,7 +3640,11 @@ static size_t Curl_ossl_version(char *buffer, size_t s
+@@ -3657,7 +3652,11 @@ static size_t Curl_ossl_version(char *buffer, size_t s
    unsigned long ssleay_value;
    sub[2]='\0';
    sub[1]='\0';
