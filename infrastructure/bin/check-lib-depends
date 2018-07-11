@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.42 2017/07/19 14:17:20 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.43 2018/07/11 12:42:57 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -669,7 +669,7 @@ sub scan_directory
 sub main
 {
 	my $self = shift;
-	my $state = CheckLibDepends::State->new('check-lib-depends');
+	my $state = CheckLibDepends::State->new;
 	$state->{signature_style} = 'unsigned';
 	$state->handle_options;
 	my $need_package = 0;

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.1 2018/07/09 17:17:33 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.2 2018/07/11 12:42:57 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -27,7 +27,7 @@ use File::Temp;
 use OpenBSD::AddCreateDelete;
 
 our $opt_q;
-my $state = OpenBSD::AddCreateDelete::State->new("pkg_outdated");
+my $state = OpenBSD::AddCreateDelete::State->new;
 $state->handle_options('q', "[-mvxq]");
 
 sub collect_installed

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.1 2018/07/10 09:03:51 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.2 2018/07/11 12:42:57 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -224,7 +224,7 @@ sub handle_options
 sub new
 {
 	my ($class) = @_;
-	my $o = $class->SUPER::new('check-problems');
+	my $o = $class->SUPER::new;
 
 	if ($o->ui->opt('D') && $o->ui->opt('C')) {
 		$o->ui->usage("Won't compute anything");

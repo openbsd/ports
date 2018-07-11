@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: pkg_check-manpages,v 1.1 2018/07/10 09:03:51 espie Exp $
+# $OpenBSD: pkg_check-manpages,v 1.2 2018/07/11 12:42:57 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,7 @@ use OpenBSD::Ustar;
 use OpenBSD::Paths;
 use File::Temp;
 
-my $state = OpenBSD::AddCreateDelete::State->new('pkg_check-manpages');
+my $state = OpenBSD::AddCreateDelete::State->new;
 $state->{signature_style} = 'unsigned';
 $state->handle_options('p', '[-mnpx]');
 
