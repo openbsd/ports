@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.76 2017/05/07 16:50:22 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.77 2018/07/11 18:14:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -59,17 +59,20 @@ sub new
 	# rewrite "more or less" the same info, so we flush duplicates,
 	# e.g., keep only most recent checksum seen
 	$o->make_path($distdir);
-	$fh = $o->open('>', "$distdir/distinfo.new");
+	my $name = "$distdir/distinfo";
+	$fh = $o->open('>', "$name.new");
 	if (defined $fh) {
 		for my $k (sort keys %{$o->{sha}}) {
 			print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
-			    "\n";
+			    "\n" or $state->fatal("Can't write #1: #2",
+			    	$name, $!);
+
 		}
 		close ($fh);
 	}
 	print "Done\n";
-	$o->rename("$distdir/distinfo.new", "$distdir/distinfo");
-	$o->{log} = $o->open(">>", "$distdir/distinfo");
+	$o->rename("$name.new", $name);
+	$o->{log} = $o->open(">>", $name);
 	DPB::Util->make_hot($o->{log});
 	return $o;
 }
@@ -141,10 +144,12 @@ sub parse_old
 			if (!$self->{known_sha}{$sha}{$file}) {
 				$self->mark_sha($sha, $file);
 				$self->{known_file}{$file} = 1;
-				print $fh2 "$ts SHA256 ($file) = $sha\n";
+				print $fh2 "$ts SHA256 ($file) = $sha\n"
+				    or return 0;
 			}
 		}
 	}
+	return 1;
 }
 
 sub expire_old
@@ -156,17 +161,19 @@ sub expire_old
 	my $fh2 = $self->open(">", "history.new");
 	return if !$fh2;
 	if (my $fh = $self->open('<', "history")) {
-		$self->parse_old($fh, $fh2);
+		$self->parse_old($fh, $fh2) or return;
 		close $fh;
 	}
 	while (my ($sha, $file) = each %{$self->{reverse}}) {
 		next if $self->{known_sha}{$sha}{$file};
-		print $fh2 "$ts SHA256 ($file) = $sha\n";
+		print $fh2 "$ts SHA256 ($file) = $sha\n" or return;
 		$self->{known_file}{$file} = 1;
 	}
-	for my $special (qw(Makefile distinfo history)) {
+	for my $special (qw(Makefile distinfo history history.new)) {
 		$self->{known_file}{$special} = 1;
 	}
+
+	my $fatal = 0;
 
 	# let's also scan the directory proper
 	require File::Find;
@@ -179,32 +186,35 @@ sub expire_old
 			return;
 		}
 		return unless -f _;
+		return if $fatal;
 		return if m/\.part$/;
 		my $actual = $File::Find::name;
 		$actual =~ s/^.\///;
 		return if $self->{known_file}{$actual};
 		my $sha = OpenBSD::sha->new($_)->stringize;
-		print $fh2 "$ts SHA256 ($actual) = $sha\n";
+		print $fh2 "$ts SHA256 ($actual) = $sha\n" or $fatal = 1;
 		$self->mark_sha($sha, $actual);
 	}, ".");
 
 	my $c = "by_cipher/sha256";
-	if (-d $c) {
+	if (-d $c && !$fatal) {
 		# and scan the ciphers as well !
 		File::Find::find(sub {
 			return unless -f $_;
+			return if $fatal;
 			if ($File::Find::dir =~ 
 			    m/^\.\/by_cipher\/sha256\/..?\/(.*)$/) {
 				my $sha = $1;
 				return if $self->{known_sha}{$sha}{$_};
 				return if $self->{known_short}{$sha}{$_};
-				print $fh2 "$ts SHA256 ($_) = ", $sha, "\n";
+				print $fh2 "$ts SHA256 ($_) = ", $sha, "\n"
+				    or $fatal = 1;
 			}
 		}, $c);
 	}
 
-	close $fh2;
-	$self->rename("history.new", "history");
+	return if $fatal;
+	close $fh2 && $self->rename("history.new", "history");
 }
 
 sub forget_cache
