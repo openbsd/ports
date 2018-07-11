@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/07/10 13:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2018/07/11 22:41:15 naddy Exp $
 
 COMMENT-main=		ur-quan masters: space exploration game with battles
 COMMENT-content=	ur-quan masters: game content
@@ -34,7 +34,7 @@ PKGNAME-remix3 =	uqm-remix3-$V
 PKGNAME-remix4 =	uqm-remix4-$V
 PKGNAME-threedomusic =	uqm-threedomusic-$V
 PKGNAME-voice =		uqm-voice-$V
-REVISION =		4
+REVISION =		5
 EXTRACT_ONLY =		${uqm_source}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
@@ -48,7 +48,7 @@ PERMIT_PACKAGE_CDROM=	NonCommercial
 PERMIT_PACKAGE_FTP=	Yes
 
 LIB_DEPENDS-main=	audio/libmikmod \
-			audio/tremor>=20120410 \
+			audio/libvorbis \
 			devel/sdl-image
 PKG_ARCH-content=	*
 PKG_ARCH-remix1=	*
@@ -60,8 +60,7 @@ PKG_ARCH-voice=		*
 RUN_DEPENDS=		${PKGNAME-main}v0:games/uqm
 RUN_DEPENDS-content=
 RUN_DEPENDS-main=	${PKGNAME-content}v0:games/uqm,-content
-WANTLIB-main=		c m pthread z SDL mikmod>=2.4 vorbisidec>=3 \
-			SDL_image
+WANTLIB-main=		c m pthread z SDL mikmod vorbisfile SDL_image
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
