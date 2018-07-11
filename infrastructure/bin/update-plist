@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.168 2018/07/11 11:34:29 espie Exp $
+# $OpenBSD: update-plist,v 1.169 2018/07/11 11:37:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -822,9 +822,9 @@ use File::Basename;
 sub check_specific
 {
 	my ($self, $h) = @_;
+	# XXX this works because the file happens *after* its parent directory
 	delete $h->{should}{"gtk-update-icon-cache %D/".dirname($self->name)};
 }
-
 
 package OpenBSD::PackingElement::MimeInfo;
 our @ISA=qw(OpenBSD::PackingElement::File);
