@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.94 2018/05/20 08:27:18 espie Exp $
+# $OpenBSD: Makefile,v 1.95 2018/07/11 19:05:42 jca Exp $
 
 BROKEN-powerpc=		dumped executable fails with SIGABRT
+BROKEN-arm64=		unhandled architecture
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
