@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 15:09:00 chrisz Exp $
+%%native%%
+lib/ocaml/stublibs/dllzarith.so
+@comment lib/ocaml/stublibs/dllzarith.so.owner
+lib/ocaml/zarith/
+lib/ocaml/zarith/META
+lib/ocaml/zarith/big_int_Z.cmi
+lib/ocaml/zarith/big_int_Z.mli
+lib/ocaml/zarith/libzarith.a
+lib/ocaml/zarith/q.cmi
+lib/ocaml/zarith/q.mli
+lib/ocaml/zarith/z.cmi
+lib/ocaml/zarith/z.mli
+lib/ocaml/zarith/zarith.cma
+lib/ocaml/zarith/zarith.h

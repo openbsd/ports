@@ -1,0 +1,25 @@
+This library implements arithmetic and logical operations over
+arbitrary-precision integers.
+
+The module is simply named Z. Its interface is similar to that of the Int32,
+Int64 and Nativeint modules from the OCaml standard library, with some
+additional functions. See the file z.mlip for documentation.
+
+The implementation uses GMP (the GNU Multiple Precision arithmetic library) to
+compute over big integers. However, small integers are represented as unboxed
+Caml integers, to save space and improve performance. Big integers are
+allocated in the Caml heap, bypassing GMP's memory management and achieving
+better GC behavior than e.g. the MLGMP library. Computations on small integers
+use a special, faster path (coded in assembly for some platforms and functions)
+eschewing calls to GMP, while computations on large intergers use the low-level
+MPN functions from GMP.
+
+Arbitrary-precision integers can be compared correctly using OCaml's
+polymorphic comparison operators (=, <, >, etc.). This requires OCaml version
+3.12.1 or later, though.
+
+Additional features include:
+
+ * a module Q for rationals, built on top of Z (see q.mli)
+ * a compatibility layer Big_int_Z that implements the same API as Big_int from
+   the legacy Num library, but uses Z internally

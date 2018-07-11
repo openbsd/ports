@@ -1,0 +1,39 @@
+$OpenBSD: patch-project_mak,v 1.1.1.1 2018/07/11 15:09:00 chrisz Exp $
+
+ * respect MAKE
+ * we already configure ocamlfind via OCAMLFIND_DESTDIR.
+
+Index: project.mak
+--- project.mak.orig
++++ project.mak
+@@ -57,7 +57,7 @@ endif
+ all: $(TOINSTALL)
+ 
+ tests:
+-	make -C tests test
++	$(MAKE) -C tests test
+ 
+ zarith.cma: $(MLSRC:%.ml=%.cmo)
+ 	$(OCAMLMKLIB) -failsafe -o zarith $+ $(LIBS)
+@@ -97,10 +97,10 @@ endif
+ 
+ ifeq ($(INSTMETH),findlib)
+ install:
+-	$(OCAMLFIND) install -destdir "$(INSTALLDIR)" zarith META $(TOINSTALL) -optional dllzarith.$(DLLSUFFIX)
++	$(OCAMLFIND) install zarith META $(TOINSTALL) -optional dllzarith.$(DLLSUFFIX)
+ 
+ uninstall:
+-	$(OCAMLFIND) remove -destdir "$(INSTALLDIR)" zarith
++	$(OCAMLFIND) remove zarith
+ endif
+ 
+ 
+@@ -130,7 +130,7 @@ $(AUTOGEN): z.mlp z.mlip $(SSRC) z_pp.pl
+ 
+ clean:
+ 	/bin/rm -rf *.$(OBJSUFFIX) *.$(LIBSUFFIX) *.$(DLLSUFFIX) *.cmi *.cmo *.cmx *.cmxa *.cmxs *.cma  *~ \#* depend test $(AUTOGEN) tmp.c depend
+-	make -C tests clean
++	$(MAKE) -C tests clean
+ 
+ depend: $(AUTOGEN)
+ 	$(OCAMLDEP) -native $(OCAMLINC) $(MLSRC) $(MLISRC) > depend

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2018/07/11 15:09:00 chrisz Exp $
+%%dynlink%%
+lib/ocaml/zarith/big_int_Z.cmx
+lib/ocaml/zarith/q.cmx
+lib/ocaml/zarith/z.cmx
+lib/ocaml/zarith/zarith.a
+lib/ocaml/zarith/zarith.cmxa
