@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: fastnetmon.rc,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+# $OpenBSD: fastnetmon.rc,v 1.2 2018/07/11 15:24:56 ajacoutot Exp $
 
-daemon="${PREFIX}/sbin/fastnetmon --daemonize"
+daemon="${TRUEPREFIX}/sbin/fastnetmon --daemonize"
 daemon_user="_fastnetmon"
 
 . /etc/rc.d/rc.subr
