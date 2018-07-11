@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2017/09/15 09:23:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2018/07/11 09:30:55 jca Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -9,7 +9,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 # Do check that the ports that depend on it still work, or repair them.
 # Don't forget to bump version in ocaml.port.mk, too!
 VERSION=		4.03.0
-REVISION=		2
+REVISION=		3
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -45,11 +45,9 @@ RUN_DEPENDS-graphics +=	lang/ocaml
 WANTLIB-main =		c curses m pthread
 WANTLIB-graphics =	X11
 
-.if ${MACHINE_ARCH} != aarch64
-# for libbfd; devel/gdb doesn't build on aarch64 yet.
+# for libbfd (used by ocamlobjinfo on .cmxs files)
 BUILD_DEPENDS +=	devel/gdb
 WANTLIB-main +=		iberty z
-.endif
 
 .include <bsd.port.arch.mk>
 
