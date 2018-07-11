@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/11 16:05:14 jca Exp $
 @bin bin/test_physfs
 include/physfs.h
 lib/libphysfs.a
 @lib lib/libphysfs.so.${LIBphysfs_VERSION}
+lib/pkgconfig/physfs.pc
