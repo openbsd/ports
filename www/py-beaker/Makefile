@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/23 21:42:29 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2018/07/11 10:02:09 jasper Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
-MODPY_EGG_VERSION = 1.6.2
+MODPY_EGG_VERSION = 1.10.0
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	8
 
 CATEGORIES =	www devel
 
@@ -24,19 +23,18 @@ FLAVOR?=
 
 RUN_DEPENDS =	security/py-cryptodome${MODPY_FLAVOR} 
 
-# some TDEP are nissing a python3 FLAVOR
-.if ${FLAVOR:Mpython3}
+# distfile lacks tests/
 NO_TEST =	Yes
-.else
-# https://pypi.python.org/simple/waitress/ is needed
-TEST_DEPENDS =	databases/py-sqlalchemy \
-		devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR} \
-		misc/py-memcached${MODPY_FLAVOR} \
-		www/py-webtest \
-		${RUN_DEPENDS}
-.endif
+#TEST_DEPENDS = databases/py-sqlalchemy${MODPY_FLAVOR} \
+#		databases/py-mongo${MODPY_FLAVOR} \
+#		databases/py-redis${MODPY_FLAVOR} \
+#		devel/py-coverage${MODPY_FLAVOR} \
+#		devel/py-mock${MODPY_FLAVOR} \
+#		devel/py-nose${MODPY_FLAVOR} \
+#		misc/py-memcached${MODPY_FLAVOR} \
+#		security/py-cryptography${MODPY_FLAVOR} \
+#		www/py-webtest${MODPY_FLAVOR} \
+#		${RUN_DEPENDS}
 
 # needs a running memcached instance in 127.0.0.1:11211
 TEST_IS_INTERACTIVE = Yes
