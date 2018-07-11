@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2018/07/11 09:39:28 espie Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
 DISTNAME=	desktop-file-utils-0.23
-REVISION =	3
+REVISION =	4
 
 EXTRACT_SUFX=	.tar.xz
 
