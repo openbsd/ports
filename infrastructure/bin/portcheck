@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.119 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: portcheck,v 1.120 2018/07/11 10:16:45 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -934,7 +934,7 @@ sub_checks() {
 #     generation of the latter at run-time.
 #
 #   * Manual (man and info) pages should go under ${PREFIX}/{man,info},
-#     not under ${PREFIx}/share/{man,info}.
+#     not under ${PREFIX}/share/{man,info}.
 #
 #   * Manual pages shouldn't be compressed.
 #
