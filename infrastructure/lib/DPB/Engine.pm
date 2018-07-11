@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.125 2017/11/30 14:54:00 espie Exp $
+# $OpenBSD: Engine.pm,v 1.126 2018/07/11 14:43:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -721,8 +721,9 @@ sub dump_dependencies
 	    sub {
 	    	my $log = shift;
 		for my $k (sort {$cache->{$b} <=> $cache->{$a}} keys %$cache) {
-			print $log "$k $cache->{$k}\n";
+			print $log "$k $cache->{$k}\n" or return 0;
 		}
+		return 1;
 	    });
 }
 

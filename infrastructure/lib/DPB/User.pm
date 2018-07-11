@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.23 2017/06/20 15:47:05 espie Exp $
+# $OpenBSD: User.pm,v 1.24 2018/07/11 14:43:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -202,8 +202,10 @@ sub rewrite_file
 			$state->fatal("#1 can't write #2: #3",
 			    $self->user, "$filename.part", $!);
 		}
-		&$sub($f);
-		close $f;
+		if (!&$sub($f) || !close $f) {
+			$state->fatal("#1 can't write data to #2: #3",
+			    $self->user, "$filename.part", $!);
+		}
 		CORE::rename "$filename.part", $filename or
 		    $state->fatal("#1 can't rename #2 to #3: #4",
 		    	$self->user, "$filename.part", $filename, $!);

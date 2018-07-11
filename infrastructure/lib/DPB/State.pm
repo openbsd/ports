@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.23 2018/01/07 10:49:15 espie Exp $
+# $OpenBSD: State.pm,v 1.24 2018/07/11 14:43:31 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -320,10 +320,12 @@ sub rewrite_build_info
 			next unless defined $p->{stats};
 			shift @{$p->{stats}} while @{$p->{stats}} > 10;
 			for my $s (@{$p->{stats}}) {
-				print $f DPB::Serialize::Build->write($s), "\n";
+				print $f DPB::Serialize::Build->write($s), "\n"
+				    or return 0;
 			}
 			delete $p->{stats};
 		}
+		return 1;
 	    });
 }
 
