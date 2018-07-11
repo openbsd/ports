@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mktexlsr,v 1.1 2018/07/01 08:59:32 espie Exp $
+@comment $OpenBSD: PLIST-mktexlsr,v 1.2 2018/07/11 09:38:44 espie Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -6,6 +6,7 @@
 @conflict texlive_base-<2017p1
 @define-tag mktexlsr at-end %D/bin/mktexlsr >/dev/null 2>&1
 @define-tag mktexlsr-local at-end %D/bin/mktexlsr %D/share/texmf-local >/dev/null 2>&1
+@define-tag mktexlsr supersedes mktexlsr-local
 @bin bin/kpseaccess
 @bin bin/kpsereadlink
 @bin bin/kpsestat

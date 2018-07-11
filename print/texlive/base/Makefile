@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2018/07/01 08:59:32 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2018/07/11 09:38:44 espie Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -12,6 +12,7 @@ REVISION-main =		1
 MULTI_PACKAGES = -main -mktexlsr
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
+REVISION-mktexlsr =	0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
