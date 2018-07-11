@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+@newgroup _fastnetmon:814
+@newuser _fastnetmon:814:_fastnetmon:daemon:FastNetMon User:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/log/fastnetmon/*
+@extraunexec rm -rf /var/log/fastnetmon_attacks/*
+@rcscript ${RCDIR}/fastnetmon
+@bin bin/fastnetmon_client
+@man man/man1/fastnetmon.1
+@man man/man1/fastnetmon_client.1
+@bin sbin/fastnetmon
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/fastnetmon/
+@sample ${SYSCONFDIR}/fastnetmon/
+share/examples/fastnetmon/README.md
+share/examples/fastnetmon/bgp_network_collector.py
+share/examples/fastnetmon/bgp_network_retriever.py
+share/examples/fastnetmon/build_any_package.pl
+share/examples/fastnetmon/build_libary_bundle.pl
+share/examples/fastnetmon/enable_passthrough_for_pcie_nic_to_kvm_vm.pl
+share/examples/fastnetmon/exabgp_network_collector.conf
+share/examples/fastnetmon/fastnetmon.conf
+@sample ${SYSCONFDIR}/fastnetmon/fastnetmon.conf
+share/examples/fastnetmon/fastnetmon_notify.py
+share/examples/fastnetmon/install_binary.pl
+share/examples/fastnetmon/notify_about_attack.sh
+share/examples/fastnetmon/notify_with_slack.sh
+share/examples/fastnetmon/reformat_code_with_clang_format.sh
+share/examples/fastnetmon/reset_redis_stats
+@owner _fastnetmon
+@group _fastnetmon
+@sample /var/run/fastnetmon/
+@sample /var/log/fastnetmon/
+@sample /var/log/fastnetmon_attacks/

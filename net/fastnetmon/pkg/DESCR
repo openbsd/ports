@@ -1,0 +1,8 @@
+FastNetMon is a very high performance DDoS detector built on top of
+multiple packet capture engines: NetFlow, IPFIX, sFLOW.
+
+It could detect malicious traffic in your network and immediately block
+it with BGP blackhole or BGP flow spec rules.
+
+It has solid support for all top network vendors and has unlimited
+scalability due to flexible design.

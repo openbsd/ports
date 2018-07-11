@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fastnetmon_packet_parser_h,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+
+Index: src/fastnetmon_packet_parser.h
+--- src/fastnetmon_packet_parser.h.orig
++++ src/fastnetmon_packet_parser.h
+@@ -4,7 +4,7 @@
+ #include <sys/types.h>
+ #include <netinet/in.h> // in6_addr
+ 
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ // For Mac OS X here we can find definition of "struct timeval"
+ #include <sys/time.h>
+ #endif
