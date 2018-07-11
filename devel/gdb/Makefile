@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2018/07/10 11:03:46 kettenis Exp $
-
-# adjust lang/ocaml if gdb is ported to aarch64
+# $OpenBSD: Makefile,v 1.56 2018/07/11 19:45:58 jca Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
