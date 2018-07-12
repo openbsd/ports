@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/29 11:03:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/07/12 09:31:48 sthen Exp $
 
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
 VERSION =		0.40
+REVISION-main =		0
 
 DISTNAME =		lbdb_${VERSION}
 PKGNAME-main =		lbdb-${VERSION}
@@ -11,22 +12,25 @@ PKGNAME-ldap =		lbdb-ldap-${VERSION}
 
 CATEGORIES =		databases mail
 
-HOMEPAGE =		http://www.spinnaker.de/lbdb/
+HOMEPAGE =		https://www.spinnaker.de/lbdb/
 
 MULTI_PACKAGES =	-main -ldap
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB-main =		c iconv
+
+MASTER_SITES =		https://www.spinnaker.de/lbdb/download/
+
+BUILD_DEPENDS =		${RUN_DEPENDS-main}
+LIB_DEPENDS-main =	converters/libiconv
+RUN_DEPENDS-main =	mail/abook
 RUN_DEPENDS-ldap =	databases/p5-ldap \
 			databases/lbdb
 
-LIB_DEPENDS-main =	converters/libiconv
-WANTLIB-main =		c iconv
 LIB_DEPENDS-ldap =
 WANTLIB-ldap =
-
-MASTER_SITES =		http://www.spinnaker.de/debian/
 
 MAKE_ENV =		install_prefix=${WRKINST}
 
@@ -34,9 +38,8 @@ NO_TEST =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS += 	--libdir=${PREFIX}/lib/lbdb \
+CONFIGURE_ARGS +=	--libdir=${PREFIX}/lib/lbdb \
 			--with-libiconv-prefix=${LOCALBASE} \
-			--without-abook \
 			--without-addr-email \
 			--without-niscat \
 			--without-gpg \

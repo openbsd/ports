@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/07/12 09:31:48 sthen Exp $
 bin/lbdb-fetchaddr
 @bin bin/lbdb_dotlock
 bin/lbdbq
@@ -8,6 +8,7 @@ lib/lbdb/
 lib/lbdb/lbdb-munge
 lib/lbdb/lbdb_bbdb_query.el
 lib/lbdb/lbdb_lib
+lib/lbdb/m_abook
 lib/lbdb/m_bbdb
 lib/lbdb/m_fido
 lib/lbdb/m_finger
