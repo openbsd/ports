@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/02/21 09:56:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/07/12 10:03:06 ajacoutot Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/boto/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -457,6 +457,7 @@ lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}bucket.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}bucketlistresultset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}cors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}encryptionconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}key.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}lifecycle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto/gs/${MODPY_PYCACHE}resumable_upload_handler.${MODPY_PYC_MAGIC_TAG}pyc
@@ -466,6 +467,7 @@ lib/python${MODPY_VERSION}/site-packages/boto/gs/bucket.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/bucketlistresultset.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/connection.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/cors.py
+lib/python${MODPY_VERSION}/site-packages/boto/gs/encryptionconfig.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/key.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/lifecycle.py
 lib/python${MODPY_VERSION}/site-packages/boto/gs/resumable_upload_handler.py
