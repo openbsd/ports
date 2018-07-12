@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/08 14:27:07 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/12 21:19:34 sthen Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
 V =		0.25.1
 V_SHARDS =	0.8.1
+REVISION =	0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
@@ -33,6 +34,7 @@ DISTFILES =	crystal-${V}{${V}}.tar.gz \
 COMPILER =	ports-clang
 
 BUILD_DEPENDS =	devel/llvm
+RUN_DEPENDS =	devel/llvm,-main
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/boehm-gc \

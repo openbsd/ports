@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2018/07/08 10:32:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.181 2018/07/12 21:19:34 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -16,6 +16,7 @@ COMMENT-python =	Python bindings for Clang
 LLVM_V =	6.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
+PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 REVISION-main =	1
