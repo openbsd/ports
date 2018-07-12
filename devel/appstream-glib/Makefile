@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2018/07/05 18:49:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2018/07/12 09:59:11 ajacoutot Exp $
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.7.9
+DISTNAME=		appstream-glib-0.7.10
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 SHARED_LIBS += appstream-glib            3.3 # 8.0.10
 SHARED_LIBS += appstream-builder         3.3 # 8.0.10
@@ -18,7 +17,7 @@ HOMEPAGE=		http://people.freedesktop.org/~hughsient/appstream-glib/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += archive c cairo fontconfig freetype gcab-1.0 gdk-3
+WANTLIB += archive c cairo fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl json-glib-1.0 pango-1.0 soup-2.4 uuid yaml
 
@@ -36,8 +35,7 @@ COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gperf
 
-LIB_DEPENDS=		archivers/gcab \
-			archivers/libarchive \
+LIB_DEPENDS=		archivers/libarchive \
 			devel/json-glib \
 			devel/libsoup \
 			devel/libyaml \
