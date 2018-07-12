@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2018/07/11 12:21:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.84 2018/07/12 10:08:09 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -454,8 +454,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/dataproc.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/dataproc.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/exceptions.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/schemas/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/schemas/WorkflowTemplate_v1beta2_schema.yaml
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/storage_helpers.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/storage_helpers.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dataproc/util.py
@@ -5347,12 +5345,8 @@ google-cloud-sdk/lib/surface/dataproc/workflow_templates/delete.py
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/delete.pyc
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/describe.py
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/describe.pyc
-google-cloud-sdk/lib/surface/dataproc/workflow_templates/export.py
-google-cloud-sdk/lib/surface/dataproc/workflow_templates/export.pyc
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/get_iam_policy.py
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/get_iam_policy.pyc
-google-cloud-sdk/lib/surface/dataproc/workflow_templates/import.py
-google-cloud-sdk/lib/surface/dataproc/workflow_templates/import.pyc
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/instantiate.py
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/instantiate.pyc
 google-cloud-sdk/lib/surface/dataproc/workflow_templates/instantiate_from_file.py
