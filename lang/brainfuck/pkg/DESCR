@@ -1,0 +1,9 @@
+Brainfuck is a programming language created in 1993 by Urban Muller and
+notable for its extreme minimalism.
+
+Brainfuck programs are composed as a series of characters. The language
+specification defines eight characters/commands and four areas of
+memory: code, code pointer, memory, and data pointer.
+
+Although the language is Turing complete, the prohibitively long execution
+time makes brainfuck programs impractical.

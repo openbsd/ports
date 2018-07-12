@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_c,v 1.1 2018/07/12 18:26:30 nayden Exp $
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -21,9 +21,9 @@
+ #include <ctype.h>
+ 
+ #ifdef BRAINFUCK_EDITLINE_LIB
+-	#include <editline/readline.h>
++	#include <readline/readline.h>
+ 	#ifndef __APPLE__
+-		#include <editline/history.h>
++		#include <readline/history.h>
+ 	#endif
+ #endif
+ 

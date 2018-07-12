@@ -1,0 +1,32 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/07/12 18:26:30 nayden Exp $
+
+Remove hardcoded -O2.
+Install manual page to the correct location.
+Need to link libedit with libncurses.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -12,11 +12,11 @@ option(BUILD_STATIC_LIB "Build a static library." ON)
+ option(ENABLE_EDITLINE "Enable GNU readline functionality provided by the editline library." ON)
+ 
+ include_directories(include/)
+-add_definitions("-Wall -Wextra -O2 -std=c89")
++add_definitions("-Wall -Wextra -std=c89")
+ add_executable(brainfuck src/main.c src/brainfuck.c)
+ install(TARGETS brainfuck RUNTIME DESTINATION bin)
+ install(FILES include/brainfuck.h DESTINATION "include")
+-install(FILES man/brainfuck.1 DESTINATION "share/man/man1")
++install(FILES man/brainfuck.1 DESTINATION "man/man1")
+ 
+ if(INSTALL_EXAMPLES)
+ 	set(EXAMPLES_DIR "share/brainfuck")
+@@ -26,7 +26,7 @@ endif()
+ 
+ if(ENABLE_EDITLINE)
+   add_definitions("-DBRAINFUCK_EDITLINE_LIB")
+-  target_link_libraries(brainfuck -ledit)
++  target_link_libraries(brainfuck -ledit -lncurses)
+ endif()
+ 
+ if(ENABLE_DEBUG)
