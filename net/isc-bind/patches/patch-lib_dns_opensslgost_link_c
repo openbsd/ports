@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dns_opensslgost_link_c,v 1.1 2018/02/18 11:52:03 sthen Exp $
+$OpenBSD: patch-lib_dns_opensslgost_link_c,v 1.2 2018/07/12 10:12:30 sthen Exp $
 
 Index: lib/dns/opensslgost_link.c
 --- lib/dns/opensslgost_link.c.orig
 +++ lib/dns/opensslgost_link.c
-@@ -28,7 +28,8 @@
+@@ -31,7 +31,8 @@
  #include <openssl/rsa.h>
  #include <openssl/engine.h>
  

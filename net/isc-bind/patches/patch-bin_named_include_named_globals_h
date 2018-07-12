@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_named_include_named_globals_h,v 1.6 2018/01/12 17:08:01 sthen Exp $
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.7 2018/07/12 10:12:30 sthen Exp $
 Index: bin/named/include/named/globals.h
 --- bin/named/include/named/globals.h.orig
 +++ bin/named/include/named/globals.h
-@@ -154,7 +154,7 @@ EXTERN const char *		ns_g_defaultdnstap
+@@ -157,7 +157,7 @@ EXTERN const char *		ns_g_defaultdnstap
  EXTERN const char *		ns_g_defaultdnstap	INIT(NULL);
  #endif /* HAVE_DNSTAP */
  

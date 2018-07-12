@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/01/12 17:08:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/07/12 10:12:30 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/rndc.key
 @extra ${LOCALSTATEDIR}/named/etc/rndc.key
+@rcscript ${RCDIR}/isc_named
 @bin bin/arpaname
 bin/bind9-config
 @bin bin/delv
@@ -145,6 +146,7 @@ include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
 include/isc/crc64.h
+include/isc/deprecated.h
 include/isc/dir.h
 include/isc/entropy.h
 include/isc/errno.h
@@ -170,6 +172,7 @@ include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
 include/isc/lib.h
+include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
@@ -276,6 +279,7 @@ include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/
 include/pkcs11/cryptoki.h
+include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
 include/pkcs11/pkcs11t.h
@@ -481,8 +485,8 @@ share/examples/bind9/
 @sample ${LOCALSTATEDIR}/named/
 @sample ${LOCALSTATEDIR}/named/master/
 @sample ${LOCALSTATEDIR}/named/standard/
-@group _bind
 @mode 750
+@group _bind
 @sample ${LOCALSTATEDIR}/named/etc/
 @mode 775
 @sample ${LOCALSTATEDIR}/named/slave/
@@ -498,13 +502,11 @@ share/examples/bind9/loopback
 share/examples/bind9/loopback6.arpa
 @sample ${LOCALSTATEDIR}/named/standard/loopback6.arpa
 share/examples/bind9/named.conf
-@group _bind
 @mode 640
+@group _bind
 @sample ${LOCALSTATEDIR}/named/etc/named.conf
 @mode
 @group
 share/examples/bind9/root.hint
 @group wheel
 @sample ${LOCALSTATEDIR}/named/etc/root.hint
-@group
-@rcscript ${RCDIR}/isc_named
