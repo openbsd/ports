@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.115 2018/07/02 10:00:41 kn Exp $
+# $OpenBSD: Makefile,v 1.116 2018/07/12 10:38:59 pascal Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.3.3.7
-REVISION=	0
+DISTNAME=	tor-0.3.3.8
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
@@ -23,7 +22,8 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--with-ssl-dir=/usr \
 		--with-libevent-dir="${LOCALBASE}" \
 		--disable-gcc-hardening \
-		--disable-lzma
+		--disable-lzma \
+		--disable-zstd
 CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
 
 LIB_DEPENDS=	devel/libevent2
