@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.41 2018/07/04 09:31:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2018/07/12 11:35:10 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
-API_VERSION=		0.1
-SUBST_VARS=		API_VERSION
-V=			${API_VERSION}.52
+V=			0.1.52
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.bz2
+
+API_VERSION=		${V:R}
+SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
