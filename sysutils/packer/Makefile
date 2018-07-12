@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/10 15:44:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/12 09:53:59 sthen Exp $
+
+# [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
+# constant 4294967295 overflows int
+ONLY_FOR_ARCHS=		${LP64_ARCHS}
 
 COMMENT=		tool for building machine images
 
