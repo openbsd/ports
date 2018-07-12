@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/12 13:58:46 ajacoutot Exp $
+bin/chrome-gnome-shell
+lib/python${MODPY_VERSION}/site-packages/chrome_gnome_shell-0.0.0-py${MODPY_VERSION}.egg-info
+share/applications/org.gnome.ChromeGnomeShell.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.ChromeGnomeShell.service
+share/examples/chrome-gnome-shell/
+share/examples/chrome-gnome-shell/chromium/
+@sample ${SYSCONFDIR}/chromium/
+share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/
+share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+share/icons/gnome/
+share/icons/gnome/128x128/
+share/icons/gnome/128x128/apps/
+share/icons/gnome/128x128/apps/org.gnome.ChromeGnomeShell.png
+share/icons/gnome/16x16/
+share/icons/gnome/16x16/apps/
+share/icons/gnome/16x16/apps/org.gnome.ChromeGnomeShell.png
+share/icons/gnome/48x48/
+share/icons/gnome/48x48/apps/
+share/icons/gnome/48x48/apps/org.gnome.ChromeGnomeShell.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/gnome
