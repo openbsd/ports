@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/22 08:18:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/12 13:29:20 abieber Exp $
 
 COMMENT =	command line tool for wordpress
 
-GH_ACCOUNT =	wp-cli
-GH_PROJECT =	wp-cli
-GH_TAGNAME =	v1.4.1
-REVISION =	0
+V =            1.5.1
+DISTNAME =     wp-cli-${V}
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar
 
-MASTER_SITES =	https://github.com/wp-cli/wp-cli/releases/download/${GH_TAGNAME}/
+MASTER_SITES = https://github.com/wp-cli/wp-cli/releases/download/v${V}/
 
 CATEGORIES =	www
 HOMEPAGE =	http://wp-cli.org/
