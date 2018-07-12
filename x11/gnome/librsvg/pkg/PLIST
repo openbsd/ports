@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.36 2017/10/29 15:23:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/07/12 08:46:25 ajacoutot Exp $
+%%old%%
+%%stable%%
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
@@ -15,16 +17,7 @@ lib/pkgconfig/librsvg-2.0.pc
 @man man/man1/rsvg-convert.1
 share/gir-1.0/Rsvg-2.0.gir
 share/gtk-doc/html/rsvg-2.0/
-share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
 share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-14.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-22.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-32.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-36.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-4.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-8.html
-share/gtk-doc/html/rsvg-2.0/api-index-2-9.html
-share/gtk-doc/html/rsvg-2.0/api-index-deprecated.html
 share/gtk-doc/html/rsvg-2.0/api-index-full.html
 share/gtk-doc/html/rsvg-2.0/home.png
 share/gtk-doc/html/rsvg-2.0/index.html

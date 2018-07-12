@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.stable,v 1.1 2018/07/12 08:46:25 ajacoutot Exp $
+share/doc/librsvg/
+share/doc/librsvg/COMPILING.md
+share/doc/librsvg/CONTRIBUTING.md
+share/doc/librsvg/README.md
+share/doc/librsvg/code-of-conduct.md
+share/gtk-doc/html/rsvg-2.0/ch01.html
+share/gtk-doc/html/rsvg-2.0/rsvg-RsvgHandle.html
