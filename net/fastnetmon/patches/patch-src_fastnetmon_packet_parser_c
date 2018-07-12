@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_fastnetmon_packet_parser_c,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+$OpenBSD: patch-src_fastnetmon_packet_parser_c,v 1.2 2018/07/12 06:27:07 jasper Exp $
+
+From d02c20b3e8c60c4f5b18082db97437b554523bdd Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 11 Jul 2018 16:41:24 +0200
+Subject: [PATCH] add support for OpenBSD
 
 Index: src/fastnetmon_packet_parser.c
 --- src/fastnetmon_packet_parser.c.orig
