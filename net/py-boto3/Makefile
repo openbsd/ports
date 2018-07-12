@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.88 2018/07/11 12:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2018/07/12 10:04:49 ajacoutot Exp $
 
 COMMENT=		AWS SDK for Python
 
-MODPY_EGG_VERSION=	1.7.55
+MODPY_EGG_VERSION=	1.7.56
 DISTNAME=		boto3-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
