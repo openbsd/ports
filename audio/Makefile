@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2018/06/27 17:48:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.401 2018/07/12 20:41:59 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -246,8 +246,6 @@
      SUBDIR += timidity,gtk2
      SUBDIR += timidity,xaw
      SUBDIR += tracker
-     SUBDIR += tremor
-     SUBDIR += tremor-tools
      SUBDIR += twolame
      SUBDIR += umurmur
      SUBDIR += vagalume
