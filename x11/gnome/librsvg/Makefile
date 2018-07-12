@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2018/07/12 08:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2018/07/12 12:23:45 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -8,14 +8,14 @@ OLD_VERSION=		2.40.20
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX} \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}
 
+REVISION=		0
+
 # sync with lang/rust ONLY_FOR_ARCHS
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
 	${MACHINE_ARCH} == "i386"
 SHARED_LIBS +=  rsvg-2               39.0     # 44.5
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
-# /usr/bin/ld: Dwarf Error: found dwarf version '4', this reader only handles version 2 information.
-MAKE_ENV=		RUSTFLAGS='-C link-args=-dwarf-version,2'
 PKG_ARGS=		-Dold=0 -Dstable=1
 .else
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
