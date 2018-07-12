@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.73 2018/07/11 09:16:53 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2018/07/12 08:48:47 ajacoutot Exp $
 
-# snapshots are only available these archs
+# snapshots are only available these archs;
+# sync with MACHINE_ARCH conditional in x11/gnome/librsvg (STABLE_VERSION)
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 .if "${MACHINE_ARCH}" == "i386"
