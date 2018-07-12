@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/12 12:18:00 fcambus Exp $
 
 COMMENT=	GTK-based BDF font editor
 
 DISTNAME=	gbdfed-1.6
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	x11 fonts
+
+HOMEPAGE=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,8 +19,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-render-util z
 
-MASTER_SITES=	https://www.distfiles.pl/
-EXTRACT_SUFX=	.tbz2
+MASTER_SITES=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
+EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	x11/gtk+2
 
