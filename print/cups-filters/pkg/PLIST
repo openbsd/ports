@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/12/20 08:40:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/07/13 08:30:16 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
 @pkgpath print/foomatic-filters
+@rcscript ${RCDIR}/cups_browsed
 bin/driverless
 bin/foomatic-rip
 @bin bin/ttfread
@@ -118,4 +119,3 @@ share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
-@rcscript ${RCDIR}/cups_browsed
