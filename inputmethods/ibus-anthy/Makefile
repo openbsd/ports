@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/29 22:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2018/07/13 22:22:21 sthen Exp $
 
 COMMENT =	japanese input engine for ibus
 
 GH_ACCOUNT =	ibus
 GH_PROJECT =	ibus-anthy
 GH_TAGNAME =	1.5.4
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	anthygobject-1.0	1.0 # 5.504
 
 CATEGORIES =	inputmethods japanese
 
 HOMEPAGE =	https://github.com/fujiwarat/ibus-anthy/wiki
-
-MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/27 21:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/13 22:22:21 sthen Exp $
 
 COMMENT	=	spaced learning system
 
 DISTNAME =	anki-2.0.48-source
 PKGNAME =	${DISTNAME:S/-source//}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	education
 
 HOMEPAGE =	https://ankisrs.net/
-
-MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # AGPL3
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.58 2018/07/07 22:39:42 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2018/07/13 22:22:21 sthen Exp $
 
 COMMENT =	intelligent input bus framework
 
 GH_PROJECT =	ibus
 GH_ACCOUNT =	ibus
 GH_TAGNAME =	1.5.5
-REVISION =	11
+REVISION =	12
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
 CATEGORIES =	inputmethods chinese japanese korean
 
 HOMEPAGE =	https://github.com/ibus/ibus/wiki
-
-MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
