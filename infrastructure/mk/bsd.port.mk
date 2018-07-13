@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1422 2018/07/13 09:07:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1423 2018/07/13 09:46:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2289,6 +2289,7 @@ _internal-checksum: _internal-fetch
 	  set --; \
 	  if ! $$OK; then \
 		if ${REFETCH}; then \
+		echo "$$list"; \
 		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
 		else \
 		  echo "Make sure the Makefile and ${CHECKSUM_FILE}"; \
@@ -2301,12 +2302,20 @@ _internal-checksum: _internal-fetch
 .    endif
 .  endif
 
-_refetch:
 .  for file cipher value in ${_PROBLEMS}
-	@rm ${DISTDIR}/${file}
-	@${_MAKE} ${DISTDIR}/${file} \
-		MASTER_SITE_OVERRIDE="${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
+_override_value = "${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
+_override = MASTER_SITES=${_override_value}
+.    for _I in 0 1 2 3 4 5 6 7 8 9
+.      if defined(MASTER_SITES${_I})
+_override += MASTER_SITES${_I}=${_override_value}
+.      endif
+.    endfor
+_refetch_${_file}:
+	@${_PFETCH} rm ${DISTDIR}/${file}
+	@${_MAKE} ${DISTDIR}/${file} ${_override}
 .  endfor
+
+_refetch: _refetch_${file}
 	${_MAKE} _internal-checksum REFETCH=false
 
 
