@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2018/07/12 09:55:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2018/07/13 08:46:03 jsg Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,6 +11,9 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
+
+REVISION-main=		0
+REVISION-icu=		0
 
 SHARED_LIBS +=  harfbuzz             11.0     # 10800.3
 SHARED_LIBS +=  harfbuzz-icu         1.0      # 10800.3
@@ -59,10 +62,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-introspection \
 			--with-graphite2 \
 			--with-gobject
-
-.if ${MACHINE_ARCH} == "arm"
-CXXFLAGS +=		-DHB_NO_MT
-.endif
 
 pre-configure:
 	sed -i 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},' \
