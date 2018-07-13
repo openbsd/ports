@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/08/24 09:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2018/07/13 02:57:07 jsg Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -9,7 +9,7 @@ VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-REVISION-main=		5
+REVISION-main=		6
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		13.0
@@ -56,12 +56,6 @@ MAKE_FLAGS=		VERBOSE=1 \
 			SO_TARGET_VERSION=${SO_VERSION} \
 			SO_TARGET_VERSION_MAJOR=${SO_VERSION:R} \
 			PKGDATA_INVOKE_OPTS="SO_TARGET_VERSION=${SO_VERSION} SO_TARGET_VERSION_MAJOR=${SO_VERSION:R}"
-
-# icupkg segfaults during the build
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=		-O1 -fno-stack-protector
-CXXFLAGS +=		-O1 -fno-stack-protector
-.endif
 
 .include <bsd.port.arch.mk>
 
