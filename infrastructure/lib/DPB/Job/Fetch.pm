@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.14 2018/07/13 09:07:00 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.15 2018/07/13 09:11:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -223,6 +223,8 @@ sub new
 {
 	my ($class, $file, $e, $fetcher, $logger) = @_;
 	my $job = bless {
+		# need to copy those arrays because we're going to
+		# destroy them, and they are shared between distfiles
 		sites => [@{$file->{site}}],
 		bak => [@{$file->{bak}}],
 		file => $file,
