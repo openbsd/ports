@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2018/06/14 17:04:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2018/07/13 03:00:16 jsg Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -6,6 +6,7 @@ COMMENT =	portable build system
 
 VER =		3.10.2
 EPOCH =		0
+REVISION =	0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
 
@@ -48,10 +49,6 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sphinx-man \
 			--system-libs \
 			--verbose
-
-.if ${MACHINE_ARCH} == "arm"
-CXXFLAGS+=-fno-stack-protector
-.endif
 
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
 
