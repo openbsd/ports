@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1420 2018/07/09 15:24:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1421 2018/07/13 08:07:21 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1137,8 +1137,6 @@ ECHO_MSG ?= echo
 
 # basic master sites configuration
 
-MASTER_SITE_OVERRIDE ?= No
-
 .if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
 .else
@@ -1163,12 +1161,8 @@ MASTER_SITES ?=
 .endif
 
 # I guess we're in the master distribution business! :)  As we gain mirror
-# sites for distfiles, add them to this list.
-.if ${MASTER_SITE_OVERRIDE:L} == "no"
+# sites for distfiles, add them to MASTER_SITE_BACKUP
 MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
-.else
-MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
-.endif
 
 _warn_checksum = :
 .if !empty(MASTER_SITES:M*[^/])
@@ -1180,11 +1174,7 @@ _warn_checksum += ;echo ">>> MASTER_SITES not ending in /: ${MASTER_SITES:M*[^/]
 .    if !empty(MASTER_SITES${_I}:M*[^/])
 _warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${_I}:M*[^/]}"
 .    endif
-.    if ${MASTER_SITE_OVERRIDE:L} == "no"
 MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
-.    else
-MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
-.    endif
 .  endif
 .endfor
 
