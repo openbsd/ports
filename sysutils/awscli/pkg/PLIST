@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2018/07/10 09:51:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2018/07/13 08:37:54 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -137,6 +137,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/list
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/listrunsformatter.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/translator.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/translator.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/constants.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/createdefaultrole.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/createdefaultrole.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/dlm.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/dlm.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/iam.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/dlm/iam.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/__init__.pyc
