@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.13 2017/06/20 15:46:18 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.14 2018/07/13 09:07:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -43,13 +43,13 @@ sub finalize
 		# XXX if we continued, and it failed, then maybe we
 		# got a stupid error message instead, so retry for
 		# full size.
-		if (defined $self->{fetcher}->{initial_sz}) {
+		if (defined $self->{fetcher}{initial_sz}) {
 			$job->{fetcher}->run_as(
 			    sub {
 				unlink($job->{file}->tempfilename);
 			    });
 		} else {
-			shift @{$job->{sites}};
+			shift @{$job->{sites}} || shift @{$job->{bak}};
 		}
 		return $job->bad_file($self->{fetcher}, $core);
 	}
@@ -87,11 +87,21 @@ sub stopped_clock
 	$self->SUPER::stopped_clock($gap);
 }
 
+sub backup_class
+{
+	'DPB::Task::FetchFromBackup'
+}
+
 sub new
 {
 	my ($class, $job) = @_;
+	my $o;
 	if (@{$job->{sites}}) {
-		my $o = bless { site => $job->{sites}[0]}, $class;
+		$o = bless { site => $job->{sites}[0]}, $class;
+	} elsif (@{$job->{bak}}) {
+		$o = bless { site => $job->{bak}[0]}, $class->backup_class;
+	}
+	if (defined $o) {
 		my $sz = (stat $job->{file}->tempfilename)[7];
 		if (defined $sz) {
 			$o->{initial_sz} = $sz;
@@ -100,6 +110,12 @@ sub new
 	} else {
 		undef;
 	}
+}
+
+sub filename
+{
+	my ($self, $info) = @_;
+	return $info->{short};
 }
 
 sub run
@@ -115,7 +131,7 @@ sub run
 	}
 	my $ftp = OpenBSD::Paths->ftp;
 	my @cmd = ('-C', '-o', $job->{file}->tempfilename, '-v',
-	    $site.$job->{file}->{short});
+	    $site.$self->filename($job->{file}));
 	if ($ftp =~ /\s/) {
 		unshift @cmd, split(/\s+/, $ftp);
 	} else {
@@ -153,6 +169,16 @@ sub finalize
 		return $job->bad_file($self, $core);
 	}
 }
+
+package DPB::Task::FetchFromBackup;
+our @ISA=qw(DPB::Task::Fetch);
+
+sub filename
+{
+	my ($self, $info) = @_;
+	return $info->{name};
+}
+
 
 package DPB::Job::Fetch;
 our @ISA = qw(DPB::Job::Normal);
@@ -198,6 +224,7 @@ sub new
 	my ($class, $file, $e, $fetcher, $logger) = @_;
 	my $job = bless {
 		sites => [@{$file->{site}}],
+		bak => [@{$file->{bak}}],
 		file => $file,
 		tasks => [],
 		endcode => $e,

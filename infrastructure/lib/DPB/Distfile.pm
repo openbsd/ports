@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.12 2018/01/04 12:11:26 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.13 2018/07/13 09:07:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,7 +41,7 @@ my $cache = {};
 
 sub create
 {
-	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
+	my ($class, $file, $short, $site, $bak, $distinfo, $v, $repo) = @_;
 
 	bless {
 		name => $file,
@@ -54,7 +54,7 @@ sub create
 # complete object with sha/size info, error out if not same info
 sub complete
 {
-	my ($self, $file, $short, $site, $distinfo, $v, $repo) = @_;
+	my ($self, $file, $short, $site, $bak, $distinfo, $v, $repo) = @_;
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
 	my $error = 0;
@@ -82,6 +82,7 @@ sub complete
 		$self->{sz} = $sz;
 		$self->{sha} = $sha;
 		$self->{site} = $site;
+		$self->{bak} = $bak;
 		return $self;
 	}
 }

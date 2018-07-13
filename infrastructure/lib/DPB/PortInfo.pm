@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.36 2015/06/23 08:51:53 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.37 2018/07/13 09:07:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -284,6 +284,7 @@ my %adder = (
 	MASTER_SITES7 => 'AddOrderedList',
 	MASTER_SITES8 => 'AddOrderedList',
 	MASTER_SITES9 => 'AddOrderedList',
+	MASTER_SITE_BACKUP => 'AddOrderedList',
 	MULTI_PACKAGES => 'AddList',
 	PERMIT_DISTFILES_FTP => 'AddNegative',
 	PERMIT_DISTFILES_CDROM => 'AddNegative',
