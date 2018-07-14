@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.78 2018/07/13 09:07:00 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.79 2018/07/14 09:34:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -284,10 +284,6 @@ sub build_distinfo
 			if ($arg =~ m/^(.*)\{(.*)\}(.*)$/) {
 				$arg = $1 . $3;
 				$url = $2 . $3;
-			}
-			if (!defined $info->{$site}) {
-				$v->break("Can't find $site for $arg");
-				return;
 			}
 			return DPB::Distfile->new($arg, $url, $dir,
 			    $info->{$site},
