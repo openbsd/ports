@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/04/08 03:47:41 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/07/14 17:44:36 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -61,7 +61,7 @@ lib/seed7/lib/comp/drw_act.s7i
 lib/seed7/lib/comp/enu_act.s7i
 lib/seed7/lib/comp/error.s7i
 lib/seed7/lib/comp/expr.s7i
-lib/seed7/lib/comp/expr_util.s7i
+lib/seed7/lib/comp/expr_utl.s7i
 lib/seed7/lib/comp/fil_act.s7i
 lib/seed7/lib/comp/flt_act.s7i
 lib/seed7/lib/comp/gkb_act.s7i
@@ -101,9 +101,7 @@ lib/seed7/lib/draw.s7i
 lib/seed7/lib/duration.s7i
 lib/seed7/lib/echo.s7i
 lib/seed7/lib/editline.s7i
-lib/seed7/lib/enable_input.s7i
 lib/seed7/lib/enable_io.s7i
-lib/seed7/lib/enable_output.s7i
 lib/seed7/lib/encoding.s7i
 lib/seed7/lib/environment.s7i
 lib/seed7/lib/external_file.s7i
