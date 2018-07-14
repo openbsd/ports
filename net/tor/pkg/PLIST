@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/02 10:00:41 kn Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/14 12:16:06 zhuk Exp $
 @newgroup _tor:566
 @newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
-@rcscript ${RCDIR}/tor
 @bin bin/tor
 @bin bin/tor-gencert
 @bin bin/tor-resolve
@@ -30,3 +29,4 @@ share/examples/tor/torrc.sample
 share/tor/
 share/tor/geoip
 share/tor/geoip6
+@rcscript ${RCDIR}/tor
