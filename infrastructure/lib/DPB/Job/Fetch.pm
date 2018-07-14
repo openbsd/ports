@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.16 2018/07/14 09:45:54 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.17 2018/07/14 09:49:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,7 +49,7 @@ sub finalize
 				unlink($job->{file}->tempfilename);
 			    });
 		} else {
-			shift @{$job->{sites}} || shift @{$job->{bak}};
+			$job->next_site;
 		}
 		return $job->bad_file($self->{fetcher}, $core);
 	}
@@ -152,6 +152,7 @@ sub finalize
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
 		if ($job->{file}{sz} == 0) {
+			$job->no_sites;
 			$job->{sites} = $job->{bak} = [];
 			return $job->bad_file($self, $core);
 		}
@@ -164,7 +165,7 @@ sub finalize
 		}
 		# if we got suspended, well, might have to retry same site
 		if (!$self->{got_suspended}) {
-			shift @{$job->{sites}} || shift @{$job->{bak}};
+			$job->next_site;
 		}
 		return $job->bad_file($self, $core);
 	}
@@ -197,6 +198,13 @@ sub new_fetch_task
 	} else {
 		return 0;
 	}
+}
+
+sub next_site
+{
+	my $self = shift;
+
+	shift @{$self->{sites}} || shift @{$self->{bak}};
 }
 
 sub bad_file
