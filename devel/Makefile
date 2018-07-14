@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1749 2018/07/09 14:08:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1750 2018/07/14 15:56:06 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -869,6 +869,7 @@
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
+     SUBDIR += p5-MooX-StrictConstructor
      SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
