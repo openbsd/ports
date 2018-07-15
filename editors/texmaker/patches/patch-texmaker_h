@@ -1,12 +1,13 @@
-$OpenBSD: patch-texmaker_h,v 1.6 2013/06/01 08:27:57 shadchin Exp $
---- texmaker.h.orig	Sun Apr 21 14:50:47 2013
-+++ texmaker.h	Wed May  8 23:15:53 2013
+$OpenBSD: patch-texmaker_h,v 1.7 2018/07/15 23:09:43 shadchin Exp $
+Index: texmaker.h
+--- texmaker.h.orig
++++ texmaker.h
 @@ -48,7 +48,7 @@
  #include "usertagslistwidget.h"
  #include "xmltagslistwidget.h"
  #include "logeditor.h"
 -#include "hunspell/hunspell.hxx"
 +#include <hunspell.hxx>
- #include "browser.h"
  #include "pdfviewerwidget.h"
  #include "pdfviewer.h"
+ #include "sourceview.h"

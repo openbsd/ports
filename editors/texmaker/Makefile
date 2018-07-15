@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2018/07/01 09:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2018/07/15 23:09:43 shadchin Exp $
 
 COMMENT=		LaTeX development environment
-DISTNAME=		texmaker-4.5
+DISTNAME=		texmaker-5.0.2
 CATEGORIES=		editors
-REVISION=		4
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 
@@ -16,14 +15,13 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += ICE QtGui QtNetwork QtScript QtWebKit QtXml SM X11
-WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.6
-WANTLIB += m poppler-qt4 pthread z
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml c hunspell-1.6 m
 
 # c++-11 for required for poppler
 COMPILER=		base-clang ports-gcc
 
-MODULES=		devel/qmake x11/qt4
+MODULES=		devel/qmake x11/qt5
 MODQMAKE_ARGS=		DESKTOPDIR=${LOCALBASE}/share/applications \
 			ICONDIR=${LOCALBASE}/share/pixmaps
 
@@ -31,7 +29,7 @@ RUN_DEPENDS=		print/texlive/base \
 			devel/desktop-file-utils
 
 LIB_DEPENDS=		textproc/hunspell \
-			print/poppler,,-qt4
+			x11/qt5/qtscript,-main
 
 NO_TEST=		Yes
 

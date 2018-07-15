@@ -1,19 +1,20 @@
-$OpenBSD: patch-texmaker_pro,v 1.16 2015/11/14 15:24:44 shadchin Exp $
---- texmaker.pro.orig	Sat Oct 24 14:05:27 2015
-+++ texmaker.pro	Sat Nov  7 20:03:27 2015
-@@ -23,7 +23,7 @@ PKGCONFIG 	= poppler-qt5
- DEFINES += POPPLER24
- } else {
- CONFIG		+= link_pkgconfig
--PKGCONFIG 	= poppler-qt4
-+PKGCONFIG 	= poppler-qt4 hunspell
- DETECTEDPOPPLER=$$system(pkg-config --modversion poppler)
- contains( DETECTEDPOPPLER, "^0.18.*" ){
- DEFINES += OLDPOPPLER
-@@ -98,25 +98,6 @@ HEADERS	+= texmaker.h \
+$OpenBSD: patch-texmaker_pro,v 1.17 2018/07/15 23:09:43 shadchin Exp $
+Index: texmaker.pro
+--- texmaker.pro.orig
++++ texmaker.pro
+@@ -24,6 +24,8 @@ message("Qt>=5.7 is required.")
+ 
+ CONFIG	+= qt hide_symbols warn_off rtti_off exceptions_off c++11 release
+ CONFIG -= precompile_header
++CONFIG += link_pkgconfig
++PKGCONFIG = hunspell
+ 
+ gcc {
+     QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-parameter
+@@ -117,25 +119,6 @@ HEADERS	+= texmaker.h \
  	unicodeview.h \
- 	quickbeamerdialog.h \
  	svnhelper.h \
+ 	quickbeamerdialog.h \
 -	hunspell/affentry.hxx \
 -	hunspell/affixmgr.hxx \
 -	hunspell/atypes.hxx \
@@ -36,7 +37,7 @@ $OpenBSD: patch-texmaker_pro,v 1.16 2015/11/14 15:24:44 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -210,18 +191,6 @@ SOURCES	+= main.cpp \
+@@ -502,18 +485,6 @@ SOURCES	+= main.cpp \
  	unicodeview.cpp \
  	quickbeamerdialog.cpp \
  	svnhelper.cpp \
@@ -55,7 +56,7 @@ $OpenBSD: patch-texmaker_pro,v 1.16 2015/11/14 15:24:44 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -436,40 +405,7 @@ utilities.files = doc/doc1.png \
+@@ -1160,40 +1131,7 @@ utilities.files = doc/doc10.png \
  	locale/texmaker_ar.qm \
  	locale/texmaker_lv.qm \
  	locale/texmaker_uk.qm \

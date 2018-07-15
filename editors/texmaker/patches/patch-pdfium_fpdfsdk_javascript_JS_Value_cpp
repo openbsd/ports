@@ -1,0 +1,18 @@
+$OpenBSD: patch-pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.1 2018/07/15 23:09:43 shadchin Exp $
+
+Index: pdfium/fpdfsdk/javascript/JS_Value.cpp
+--- pdfium/fpdfsdk/javascript/JS_Value.cpp.orig
++++ pdfium/fpdfsdk/javascript/JS_Value.cpp
+@@ -573,7 +573,12 @@ double _getLocalTZA() {
+   long timezone = 0;
+   _get_timezone(&timezone);
+ #endif
++#ifdef __OpenBSD__
++  struct tm *lt;
++  return (double)(-(lt->tm_gmtoff * 1000));
++#else
+   return (double)(-(timezone * 1000));
++#endif
+ }
+ 
+ int _getDaylightSavingTA(double d) {
