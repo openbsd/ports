@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/22 21:57:42 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/15 23:04:32 shadchin Exp $
 
 COMMENT =		autocompletion tool for Python
 
-MODPY_EGG_VERSION =	0.10.2
+MODPY_EGG_VERSION =	0.12.1
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/davidhalter/jedi
+HOMEPAGE =		http://jedi.readthedocs.io
 
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +20,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-parso${MODPY_FLAVOR}
+
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
