@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.18 2018/07/15 09:56:45 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.19 2018/07/15 14:17:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -190,6 +190,7 @@ use File::Basename;
 sub new_fetch_task
 {
 	my $self = shift;
+	$self->{fetching} = 1;
 	my $task = DPB::Task::Fetch->new($self);
 	if ($task) {
 		push(@{$self->{tasks}}, $task);
@@ -224,6 +225,7 @@ sub bad_file
 sub new_checksum_task
 {
 	my ($self, $fetcher, $status) = @_;
+	$self->{fetching} = 0;
 	push(@{$self->{tasks}}, DPB::Task::Checksum->new($fetcher, $status));
 }
 
@@ -255,7 +257,8 @@ sub new
 sub name
 {
 	my $self = shift;
-	return '<'.$self->{file}->{name}."(#".$self->{tries}.")";
+	my $extra = $self->{fetching} ? "" : " cksum...";
+	return '<'.$self->{file}->{name}."(#".$self->{tries}.")".$extra;
 }
 
 sub watched
@@ -263,7 +266,8 @@ sub watched
 	my ($self, $current, $core) = @_;
 	my $w = $self->{watched};
 	my $diff = $w->check_change($current);
-	my $msg = $w->percent_message . $w->frozen_message($diff);
+	my $msg = $self->{fetching} ? 
+	    $w->percent_message.$w->frozen_message($diff) : "";
 	return $self->kill_on_timeout($diff, $core, $msg);
 }
 
