@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.217 2018/07/15 08:37:04 espie Exp $
+# $OpenBSD: network.conf.template,v 1.218 2018/07/15 08:44:33 espie Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -18,7 +18,7 @@ MASTER_SITE_OPENBSD ?= \
 MASTER_SITE_FREEBSD?=	\
 	https://pkg.FreeBSD.org/ports-distfiles/
 
-MASTER_SITE_BACKUP= ${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
+MASTER_SITE_BACKUP= ${MASTER_SITE_OPENBSD}
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
