@@ -1,0 +1,15 @@
+$OpenBSD: patch-playsound_physfsrwops_h,v 1.1 2018/07/15 06:23:59 espie Exp $
+
+Index: playsound/physfsrwops.h
+--- playsound/physfsrwops.h.orig
++++ playsound/physfsrwops.h
+@@ -29,6 +29,9 @@
+ extern "C" {
+ #endif
+ 
++#ifndef __EXPORT__
++#define __EXPORT__  __attribute__((visibility("default")))
++#endif
+ /**
+  * Open a platform-independent filename for reading, and make it accessible
+  *  via an SDL_RWops structure. The file will be closed in PhysicsFS when the
