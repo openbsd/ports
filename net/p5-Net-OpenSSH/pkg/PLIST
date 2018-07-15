@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/01/07 08:51:37 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/15 09:02:55 gonzalo Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/OpenSSH/
 ${P5SITE}/Net/OpenSSH.pm
@@ -15,6 +15,7 @@ ${P5SITE}/Net/OpenSSH/ShellQuoter/MSCmd.pm
 ${P5SITE}/Net/OpenSSH/ShellQuoter/MSWin.pm
 ${P5SITE}/Net/OpenSSH/ShellQuoter/POSIX.pm
 ${P5SITE}/Net/OpenSSH/ShellQuoter/csh.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/fish.pm
 @man man/man3p/Net::OpenSSH.3p
 @man man/man3p/Net::OpenSSH::ConnectionCache.3p
 @man man/man3p/Net::OpenSSH::Constants.3p

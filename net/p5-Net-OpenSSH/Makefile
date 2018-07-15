@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/15 09:02:55 gonzalo Exp $
 
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
-DISTNAME =	Net-OpenSSH-0.68
+DISTNAME =	Net-OpenSSH-0.78
 CATEGORIES =	net security
 MODULES =	cpan
 PKG_ARCH =	*
@@ -13,7 +13,6 @@ MAINTAINER =	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODCPAN_EXAMPLES =	Yes
-MODCPAN_EXAMPLES_DIST =	sample
 
 TEST_IS_INTERACTIVE = Yes
 
