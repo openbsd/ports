@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.79 2018/07/14 09:34:05 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.80 2018/07/15 09:56:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -287,7 +287,6 @@ sub build_distinfo
 			}
 			return DPB::Distfile->new($arg, $url, $dir,
 			    $info->{$site},
-			    $info->{MASTER_SITE_BACKUP},
 			    $checksums, $v, $self);
 		};
 
@@ -305,8 +304,7 @@ sub build_distinfo
 		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
 		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3
 		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6
-		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9
-		    MASTER_SITE_BACKUP)) {
+		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
 		    	delete $info->{$k};
 		}
 		bless $files, "AddDepends";

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.17 2018/07/14 09:49:05 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.18 2018/07/15 09:56:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -234,7 +234,7 @@ sub new
 		# need to copy those arrays because we're going to
 		# destroy them, and they are shared between distfiles
 		sites => [@{$file->{site}}],
-		bak => [@{$file->{bak}}],
+		bak => [@{$fetcher->{state}{backup_sites}}],
 		file => $file,
 		tasks => [],
 		endcode => $e,

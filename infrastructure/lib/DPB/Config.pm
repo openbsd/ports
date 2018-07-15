@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.75 2018/03/11 12:38:17 espie Exp $
+# $OpenBSD: Config.pm,v 1.76 2018/07/15 09:56:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,7 @@ use warnings;
 
 package DPB::Config;
 use DPB::User;
+use DPB::PortInfo;
 
 sub setup_users
 {
@@ -175,13 +176,16 @@ sub parse_command_line
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
 	my $p;
+	my $backup;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $p) =
+	    $state->{distdir}, $state->{localbase}, $backup, $p) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", 
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP",
 		"SIGNING_PARAMETERS");
+
+	$state->{backup_sites} = [AddList->make_list($backup)];
 
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
