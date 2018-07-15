@@ -1,21 +1,22 @@
-$OpenBSD: patch-pbgpp_Application_Handler_py,v 1.1.1.1 2017/01/13 14:15:41 phessler Exp $
+$OpenBSD: patch-pbgpp_Application_Handler_py,v 1.2 2018/07/15 08:57:59 gonzalo Exp $
 
 Avoid using Kafka
 
---- pbgpp/Application/Handler.py.orig	Fri Nov 25 10:19:53 2016
-+++ pbgpp/Application/Handler.py	Fri Jan 13 12:18:39 2017
-@@ -46,7 +46,7 @@ from pbgpp.Output.Formatters.JSON import JSONFormatter
+Index: pbgpp/Application/Handler.py
+--- pbgpp/Application/Handler.py.orig
++++ pbgpp/Application/Handler.py
+@@ -48,7 +48,7 @@ from pbgpp.Output.Formatters.JSON import JSONFormatter
  from pbgpp.Output.Formatters.LineBased import LineBasedFormatter
  from pbgpp.Output.Handler import OutputHandler
  from pbgpp.Output.Pipes.FilePipe import FilePipe
 -from pbgpp.Output.Pipes.KafkaPipe import KafkaPipe
 +#from pbgpp.Output.Pipes.KafkaPipe import KafkaPipe
  from pbgpp.Output.Pipes.StdOutPipe import StdOutPipe
+ from pbgpp.PCAP.CookedCapture import PCAPCookedCapture
  from pbgpp.PCAP.Ethernet import PCAPEthernet
- from pbgpp.PCAP.IP import PCAPIP
-@@ -65,8 +65,8 @@ class PBGPPHandler:
+@@ -67,8 +67,8 @@ class PBGPPHandler:
+ 
          self.fields = None
-         self.progress = False
  
 -        self.kafka_server = None
 -        self.kafka_topic = None
@@ -24,7 +25,7 @@ Avoid using Kafka
  
          self.formatter = None
          self.pipe = None
-@@ -241,10 +241,10 @@ class PBGPPHandler:
+@@ -245,10 +245,10 @@ class PBGPPHandler:
              self.pipe = FilePipe(self.args.output_target)
          elif self.args.pipe == "STDOUT":
              self.pipe = StdOutPipe()

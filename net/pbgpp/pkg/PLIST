@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/13 14:15:41 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/15 08:57:59 gonzalo Exp $
 bin/pbgpp
 lib/python${MODPY_VERSION}/site-packages/pbgpp/
 lib/python${MODPY_VERSION}/site-packages/pbgpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -266,6 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/${MODPY_PYCACHE}Handler.${
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/${MODPY_PYCACHE}Pipe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/
+lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/CookedCapture.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/Ethernet.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/Exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/IP.py
@@ -273,6 +274,7 @@ lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/Information.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/TCP.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/${MODPY_PYCACHE}CookedCapture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/${MODPY_PYCACHE}Ethernet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/${MODPY_PYCACHE}Exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/PCAP/${MODPY_PYCACHE}IP.${MODPY_PYC_MAGIC_TAG}pyc
