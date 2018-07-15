@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/05/17 10:21:41 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/07/15 08:36:39 espie Exp $
 
 COMMENT=	mold spreading over your X11 screen
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=	X11 Xau Xdmcp Xext c m 
 
-MASTER_SITES=	${_MASTER_SITE_FREEBSD}
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 MAKE_FLAGS=	CC="${CC}" \
 		CCOPTIONS="${CFLAGS}"

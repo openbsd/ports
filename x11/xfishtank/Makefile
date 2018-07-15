@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/17 10:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2018/07/15 08:36:39 espie Exp $
 
 COMMENT=	fish swim in the background of your screen
 
@@ -6,7 +6,7 @@ DISTNAME=	xfishtank-2.2
 REVISION=	2
 CATEGORIES=	x11
 
-MASTER_SITES=	${_MASTER_SITE_FREEBSD}
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license

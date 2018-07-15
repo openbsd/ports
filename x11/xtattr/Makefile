@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/01/13 03:00:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2018/07/15 08:36:39 espie Exp $
 
 COMMENT=	changing xterm attributes
 
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 
-MASTER_SITES =	${_MASTER_SITE_FREEBSD}
+MASTER_SITES =	${MASTER_SITE_FREEBSD}
 WANTLIB=		c 
 
 CONFIGURE_STYLE=	imake

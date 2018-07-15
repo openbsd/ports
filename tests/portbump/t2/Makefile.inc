@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2018/06/27 16:18:56 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2018/07/15 08:36:39 espie Exp $
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
@@ -24,7 +24,7 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 MASTER_SITES0=		http://spacehopper.org/mirrors/ \
 			http://download.suhosin.org/ \
 			http://blade2k.humppa.hu/ \
-			${_MASTER_SITE_FREEBSD}
+			${MASTER_SITE_FREEBSD}
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade

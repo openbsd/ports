@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/18 11:54:51 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/15 08:36:39 espie Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES =	nojunk parallel
 
 COMMENT =		headless WebKit scriptable with a JavaScript API
 
-MASTER_SITES=		${_MASTER_SITE_FREEBSD}
+MASTER_SITES=		${MASTER_SITE_FREEBSD}
 DISTNAME =		phantomjs-2.1.1
 REVISION =		5
 DISTFILES =		ariya-${DISTNAME}_GH0.tar.gz \
