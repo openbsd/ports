@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.215 2018/06/30 11:39:09 landry Exp $
+# $OpenBSD: network.conf.template,v 1.216 2018/07/15 08:32:58 espie Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -14,43 +14,15 @@ MASTER_SITE_OPENBSD ?= \
 	https://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/ \
 	https://ftp.fr.openbsd.org/pub/OpenBSD/distfiles/
 
-# Default OpenBSD backup site
-_MASTER_SITE_OPENBSD ?=	${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
-
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=	\
 	https://pkg.FreeBSD.org/ports-distfiles/
 
-# Default NetBSD backup site
-_MASTER_SITE_NETBSD?=	\
-	https://ftp.netbsd.org/pub/pkgsrc/distfiles/${DIST_SUBDIR}/ \
-	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/${DIST_SUBDIR}/
+# FreeBSD master site
+MASTER_SITE_FREEBSD?=	\
+	https://pkg.FreeBSD.org/ports-distfiles/
 
-# Uncomment to retrieve from the OpenBSD sites only
-# MASTER_SITE_OPENBSD=	Yes
-# Uncomment to retrieve from the FreeBSD sites only
-# MASTER_SITE_FREEBSD=	Yes
-# Uncomment to retrieve from the NetBSD sites only
-# MASTER_SITE_NETBSD=	Yes
-
-.if defined(MASTER_SITE_OPENBSD)
-MASTER_SITE_BACKUP=	${_MASTER_SITE_OPENBSD}
-.elif defined(MASTER_SITE_FREEBSD)
-MASTER_SITE_BACKUP=	${_MASTER_SITE_FREEBSD}
-.elif defined(MASTER_SITE_NETBSD)
-MASTER_SITE_BACKUP=	${_MASTER_SITE_NETBSD}
-.endif
-
-# default backup master site
-MASTER_SITE_BACKUP?=	\
-	${_MASTER_SITE_OPENBSD} \
-	${_MASTER_SITE_FREEBSD}
-
-# Uncomment to retrieve from the MASTER_SITE_BACKUP first
-# MASTER_SITE_OVERRIDE=	${MASTER_SITE_BACKUP}
-
-# Uncomment to make symlinks off a CD-Rom instead of copies
-# FETCH_SYMLINK_DISTFILES=Yes
+MASTER_SITE_BACKUP= ${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
