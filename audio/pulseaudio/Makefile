@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2018/06/21 15:23:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2018/07/15 07:24:15 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -9,7 +9,7 @@ PORTROACH=		skipv:11.99.1
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		12.0
+VERSION=		12.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
