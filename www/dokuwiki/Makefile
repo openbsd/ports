@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/01 20:43:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/07/15 20:53:02 rsadowski Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2017-02-19e
-REVISION =	3
+VERSION =	2018-04-22a
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
-HOMEPAGE =	http://www.dokuwiki.org/dokuwiki
+HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://download.dokuwiki.org/src/dokuwiki/
+MASTER_SITES =	https://download.dokuwiki.org/src/dokuwiki/
 
 EXTRACT_SUFX =	.tgz
 NO_BUILD =	Yes
