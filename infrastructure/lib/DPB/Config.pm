@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.76 2018/07/15 09:56:45 espie Exp $
+# $OpenBSD: Config.pm,v 1.77 2018/07/15 11:56:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -175,15 +175,13 @@ sub parse_command_line
 	$state->{log_user}->enforce_local;
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
-	my $p;
 	my $backup;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $backup, $p) =
+	    $state->{distdir}, $state->{localbase}, $backup) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP",
-		"SIGNING_PARAMETERS");
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP");
 
 	$state->{backup_sites} = [AddList->make_list($backup)];
 
@@ -209,12 +207,6 @@ sub parse_command_line
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	$state->{logdir} = $state->expand_path($state->{logdir});
-
-	if ($p =~ m/^\s*$/) {
-		$state->{signer} = '-Dunsigned';
-	} elsif ($p =~ m/\-DSIGNER\=\S+/) {
-		$state->{signer} = $&;
-	}
 
 	$state->{size_log} = "%f/build-stats/%a-size";
 
