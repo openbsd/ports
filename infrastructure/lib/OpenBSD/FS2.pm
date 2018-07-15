@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.26 2018/07/11 11:34:29 espie Exp $
+# $OpenBSD: FS2.pm,v 1.27 2018/07/15 07:29:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -143,7 +143,7 @@ our @ISA = qw(OpenBSD::FS::File);
 sub recognize
 {
 	my ($class, $filename, $fs) = @_;
-	return 0 unless $filename =~ m/\.desktop$/ && 
+	return 0 unless $filename =~ m,share/applications/.*\.desktop$, && 
 	    -f $fs->destdir($filename);
 	$filename = $fs->resolve_link($filename);
 	open my $fh, '<:utf8', $filename or return 0;
