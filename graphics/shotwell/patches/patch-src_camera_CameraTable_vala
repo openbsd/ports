@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.9 2018/03/13 15:04:42 ajacoutot Exp $
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.10 2018/07/15 08:03:11 ajacoutot Exp $
 
 remove gudev requirement
 
@@ -22,38 +22,7 @@ Index: src/camera/CameraTable.vala
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -111,30 +108,6 @@ public class CameraTable {
-     private string[] get_all_usb_cameras() {
-         string[] cameras = new string[0];
-         
--        GLib.List<GUdev.Device> device_list = client.query_by_subsystem(null);
--        foreach (GUdev.Device device in device_list) {
--            string device_file = device.get_device_file();
--            if(
--                // only keep devices that have a non-null device file and that
--                // have both the ID_GPHOTO2 and GPHOTO2_DRIVER properties set
--                (device_file != null) &&
--                (device.has_property("ID_GPHOTO2")) &&
--                (device.has_property("GPHOTO2_DRIVER"))
--            ) {
--                int camera_bus, camera_device;
--                // extract the bus and device IDs from the device file string
--                // TODO: is it safe to parse the absolute path or should we be
--                // smarter and use a regex to only pick up the end of the path?
--                if (device_file.scanf("/dev/bus/usb/%d/%d", out camera_bus, out camera_device) < 2) {
--                    critical("get_all_usb_cameras: Failed to scanf device file %s", device_file);
--                    
--                    continue;
--                }
--                string camera = "usb:%.3d,%.3d".printf(camera_bus, camera_device);
--                debug("USB camera detected at %s", camera);
--                cameras += camera;
--            }
--        }
-         
-         return cameras;
-     }
-@@ -212,24 +185,6 @@ public class CameraTable {
+@@ -118,24 +115,6 @@ public class CameraTable {
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
      
@@ -78,7 +47,7 @@ Index: src/camera/CameraTable.vala
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
          GPhoto.PortInfoList port_info_list;
-@@ -325,24 +280,6 @@ public class CameraTable {
+@@ -220,24 +199,6 @@ public class CameraTable {
                  continue;
              }
              
@@ -103,7 +72,7 @@ Index: src/camera/CameraTable.vala
              if (port.has_prefix("disk:")) {
                  try {
                      var mount = File.new_for_path (port.substring(5)).find_enclosing_mount();
-@@ -392,13 +329,6 @@ public class CameraTable {
+@@ -287,13 +248,6 @@ public class CameraTable {
          }
      }
      
