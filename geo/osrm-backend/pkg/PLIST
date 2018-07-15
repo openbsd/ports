@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/06 06:00:02 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/15 09:39:44 bentley Exp $
+@newgroup _osrm_routed:815
+@newuser _osrm_routed:815:815:daemon:OSRM Router:${VARBASE}/empty:/sbin/nologin
+@rcscript ${RCDIR}/osrm_routed
 @bin bin/osrm-components
 @bin bin/osrm-contract
 @bin bin/osrm-customize
