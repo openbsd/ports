@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.10 2018/07/15 08:03:11 ajacoutot Exp $
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.11 2018/07/15 08:39:28 ajacoutot Exp $
 
 remove gudev requirement
 
@@ -22,10 +22,16 @@ Index: src/camera/CameraTable.vala
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -118,24 +115,6 @@ public class CameraTable {
-             "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
+@@ -112,30 +109,6 @@ public class CameraTable {
+         return "gphoto2://[%s]/".printf(port);
      }
      
+-    public static string? get_port_path(string port) {
+-        // Accepted format is usb:001,005
+-        return port.has_prefix("usb:") ? 
+-            "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
+-    }
+-    
 -    private string? get_name_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
 -            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
@@ -47,7 +53,7 @@ Index: src/camera/CameraTable.vala
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
          GPhoto.PortInfoList port_info_list;
-@@ -220,24 +199,6 @@ public class CameraTable {
+@@ -220,24 +193,6 @@ public class CameraTable {
                  continue;
              }
              
@@ -72,7 +78,7 @@ Index: src/camera/CameraTable.vala
              if (port.has_prefix("disk:")) {
                  try {
                      var mount = File.new_for_path (port.substring(5)).find_enclosing_mount();
-@@ -287,13 +248,6 @@ public class CameraTable {
+@@ -287,13 +242,6 @@ public class CameraTable {
          }
      }
      
