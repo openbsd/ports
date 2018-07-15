@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1750 2018/07/14 15:56:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1751 2018/07/15 22:48:06 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1466,6 +1466,8 @@
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
+     SUBDIR += py-parso
+     SUBDIR += py-parso,python3
      SUBDIR += py-path.py
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
