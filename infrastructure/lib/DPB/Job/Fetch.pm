@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.20 2018/07/16 12:30:53 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.21 2018/07/16 13:23:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -247,6 +247,7 @@ sub new
 		# destroy them, and they are shared between distfiles
 		sites => [@{$file->{site}}],
 		bak => [@{$fetcher->{state}{backup_sites}}],
+		current => '',
 		file => $file,
 		tasks => [],
 		endcode => $e,
