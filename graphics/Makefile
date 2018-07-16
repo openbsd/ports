@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.459 2018/07/16 19:51:55 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -268,6 +268,7 @@
      SUBDIR += shotwell
      SUBDIR += simgear
      SUBDIR += simple-scan
+     SUBDIR += sk1
      SUBDIR += sketch
      SUBDIR += slop
      SUBDIR += sxiv
