@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.19 2018/07/15 14:17:25 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.20 2018/07/16 12:30:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,6 +25,12 @@ sub new
 	my ($class, $fetcher, $status) = @_;
 	bless {fetcher => $fetcher, fetch_status => $status}, $class;
 }
+
+sub want_frozen
+{ 0 }
+
+sub want_percent
+{ 0 }
 
 sub run
 {
@@ -171,6 +177,12 @@ sub finalize
 	}
 }
 
+sub want_frozen
+{ 1 }
+
+sub want_percent
+{ 1 }
+
 package DPB::Task::FetchFromBackup;
 our @ISA=qw(DPB::Task::Fetch);
 
@@ -182,7 +194,7 @@ sub filename
 
 
 package DPB::Job::Fetch;
-our @ISA = qw(DPB::Job::Normal);
+our @ISA = qw(DPB::Job::Watched);
 
 use File::Path;
 use File::Basename;
@@ -190,7 +202,6 @@ use File::Basename;
 sub new_fetch_task
 {
 	my $self = shift;
-	$self->{fetching} = 1;
 	my $task = DPB::Task::Fetch->new($self);
 	if ($task) {
 		push(@{$self->{tasks}}, $task);
@@ -225,7 +236,6 @@ sub bad_file
 sub new_checksum_task
 {
 	my ($self, $fetcher, $status) = @_;
-	$self->{fetching} = 0;
 	push(@{$self->{tasks}}, DPB::Task::Checksum->new($fetcher, $status));
 }
 
@@ -257,18 +267,8 @@ sub new
 sub name
 {
 	my $self = shift;
-	my $extra = $self->{fetching} ? "" : " cksum...";
+	my $extra = $self->{task}->want_percent ? "" : " cksum...";
 	return '<'.$self->{file}->{name}."(#".$self->{tries}.")".$extra;
-}
-
-sub watched
-{
-	my ($self, $current, $core) = @_;
-	my $w = $self->{watched};
-	my $diff = $w->check_change($current);
-	my $msg = $self->{fetching} ? 
-	    $w->percent_message.$w->frozen_message($diff) : "";
-	return $self->kill_on_timeout($diff, $core, $msg);
 }
 
 sub get_timeout

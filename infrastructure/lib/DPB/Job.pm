@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.12 2017/06/20 15:46:18 espie Exp $
+# $OpenBSD: Job.pm,v 1.13 2018/07/16 12:30:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -122,18 +122,6 @@ sub watched
 	return $self->{status};
 }
 
-# abstract method, to be used by jobs that have actual watch limits
-sub kill_on_timeout
-{
-	my ($self, $diff, $core, $msg) = @_;
-	my $to = $self->get_timeout($core);
-	return $msg if !defined $to || $diff <= $to;
-	local $> = 0;	# XXX switch to root, we don't know for sure which
-			# user owns the pid (not really an issue)
-	kill 9, $core->{pid};
-	return $self->{stuck} = "KILLED: $self->{current} stuck at $msg";
-}
-
 sub add_tasks
 {
 	my ($self, @tasks) = @_;
@@ -186,6 +174,42 @@ sub finalize
 	my $self = shift;
 	&{$self->{endcode}}(@_);
 }
+
+# the common stuff for jobs that have a kind of watch log, e.g.,
+# either fetch jobs or build jobs
+
+package DPB::Job::Watched;
+our @ISA =qw(DPB::Job::Normal);
+
+sub kill_on_timeout
+{
+	my ($self, $diff, $core, $msg) = @_;
+	my $to = $self->get_timeout($core);
+	return $msg if !defined $to || $diff <= $to;
+	local $> = 0;	# XXX switch to root, we don't know for sure which
+			# user owns the pid (not really an issue)
+	kill 9, $core->{pid};
+	return $self->{stuck} = "KILLED: $self->{current} stuck at $msg";
+}
+
+sub watched
+{
+	my ($self, $current, $core) = @_;
+	my $w = $self->{watched};
+	return "" unless defined $w;
+	my $diff = $w->check_change($current);
+	my $msg = '';
+	if ($self->{task}->want_percent) {
+		$msg .= $w->percent_message;
+	}
+	if ($self->{task}->want_frozen) {
+		return $self->kill_on_timeout($diff, $core, 
+		    $msg.$w->frozen_message($diff));
+	} else {
+		return $msg;
+	}
+}
+
 
 package DPB::Job::Infinite;
 our @ISA = qw(DPB::Job);
