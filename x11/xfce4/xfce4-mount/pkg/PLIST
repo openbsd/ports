@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/16 05:44:58 landry Exp $
 lib/xfce4/panel/plugins/libmount.so
 share/icons/hicolor/scalable/apps/xfce-mount.svg
 share/locale/ar/LC_MESSAGES/xfce4-mount-plugin.mo
@@ -27,6 +27,7 @@ share/locale/pl/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-mount-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-mount-plugin.mo
