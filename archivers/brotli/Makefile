@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/27 16:30:57 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/16 06:42:56 gonzalo Exp $
 
 COMMENT =		generic lossless compressor
 
 GH_ACCOUNT =		google
 GH_PROJECT =		brotli
-GH_TAGNAME =		v1.0.4
+GH_TAGNAME =		v1.0.5
 
 SHARED_LIBS +=  brotlicommon              1.1 # 0.6
 SHARED_LIBS +=  brotlidec                 1.1 # 0.6
