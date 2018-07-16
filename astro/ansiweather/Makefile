@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/29 11:08:54 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/16 11:41:22 fcambus Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
-V =		1.12.0
+V =		1.13.0
 DISTNAME =	ansiweather-$V
 
 CATEGORIES =	astro
