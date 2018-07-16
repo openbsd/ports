@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1425 2018/07/15 09:57:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1426 2018/07/16 09:11:31 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1137,11 +1137,7 @@ ECHO_MSG ?= echo
 
 # basic master sites configuration
 
-.if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
-.else
-.include "${PORTSDIR}/infrastructure/templates/network.conf.template"
-.endif
 
 .if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
 .  if !empty(GH_COMMIT) && !empty(GH_TAGNAME)
