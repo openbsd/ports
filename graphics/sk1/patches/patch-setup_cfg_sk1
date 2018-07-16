@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_cfg_sk1,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
+
+Index: setup.cfg_sk1
+--- setup.cfg_sk1.orig
++++ setup.cfg_sk1
+@@ -1,9 +1,8 @@
+ [install]
+-install-base=$APP_INSTALL_PATH
+ install-lib=$APP_INSTALL_PATH
+ install-purelib=$APP_INSTALL_PATH
+ install-platlib=$APP_INSTALL_PATH
+-install-scripts=/usr/bin
++install-scripts=${PREFIX}/bin
+ install-data=$APP_INSTALL_PATH
+ install-headers=$APP_INSTALL_PATH
+ 
