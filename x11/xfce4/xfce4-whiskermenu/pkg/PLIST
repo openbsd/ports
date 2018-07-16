@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/16 05:44:11 landry Exp $
 bin/xfce4-popup-whiskermenu
 lib/xfce4/panel/plugins/libwhiskermenu.so
 @man man/man1/xfce4-popup-whiskermenu.1
@@ -37,6 +37,7 @@ share/locale/id/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
+share/locale/ka/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
