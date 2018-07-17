@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.64 2018/02/25 22:59:45 awolk Exp $
+# $OpenBSD: Makefile,v 1.65 2018/07/17 10:09:42 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.92
+
 REVISION=	1
+EPOCH=		0
 
 CATEGORIES=	net
 
