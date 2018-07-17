@@ -1,21 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/23 14:46:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/07/17 07:03:02 ajacoutot Exp $
 @conflict gtef-*
 @pkgpath x11/gnome/gtef
-include/amtk-4/
-include/amtk-4/amtk/
-include/amtk-4/amtk/amtk-action-info-central-store.h
-include/amtk-4/amtk/amtk-action-info-store.h
-include/amtk-4/amtk/amtk-action-info.h
-include/amtk-4/amtk/amtk-action-map.h
-include/amtk-4/amtk/amtk-application-window.h
-include/amtk-4/amtk/amtk-enum-types.h
-include/amtk-4/amtk/amtk-factory.h
-include/amtk-4/amtk/amtk-init.h
-include/amtk-4/amtk/amtk-menu-item.h
-include/amtk-4/amtk/amtk-menu-shell.h
-include/amtk-4/amtk/amtk-types.h
-include/amtk-4/amtk/amtk-utils.h
-include/amtk-4/amtk/amtk.h
 include/tepl-4/
 include/tepl-4/tepl/
 include/tepl-4/tepl/tepl-abstract-factory-vala.h
@@ -44,25 +29,13 @@ include/tepl-4/tepl/tepl-types.h
 include/tepl-4/tepl/tepl-utils.h
 include/tepl-4/tepl/tepl-view.h
 include/tepl-4/tepl/tepl.h
-lib/girepository-1.0/Amtk-4.typelib
 lib/girepository-1.0/Tepl-4.typelib
-lib/libamtk-4.a
-lib/libamtk-4.la
-@lib lib/libamtk-4.so.${LIBamtk-4_VERSION}
 lib/libtepl-4.a
 lib/libtepl-4.la
 @lib lib/libtepl-4.so.${LIBtepl-4_VERSION}
-lib/pkgconfig/amtk-4.pc
 lib/pkgconfig/tepl-4.pc
-share/gir-1.0/Amtk-4.gir
 share/gir-1.0/Tepl-4.gir
 share/gtk-doc/html/tepl-4.0/
-share/gtk-doc/html/tepl-4.0/AmtkActionInfo.html
-share/gtk-doc/html/tepl-4.0/AmtkActionInfoCentralStore.html
-share/gtk-doc/html/tepl-4.0/AmtkActionInfoStore.html
-share/gtk-doc/html/tepl-4.0/AmtkApplicationWindow.html
-share/gtk-doc/html/tepl-4.0/AmtkFactory.html
-share/gtk-doc/html/tepl-4.0/AmtkMenuShell.html
 share/gtk-doc/html/tepl-4.0/TeplAbstractFactory.html
 share/gtk-doc/html/tepl-4.0/TeplAbstractFactoryVala.html
 share/gtk-doc/html/tepl-4.0/TeplApplication.html
@@ -81,9 +54,6 @@ share/gtk-doc/html/tepl-4.0/TeplTab.html
 share/gtk-doc/html/tepl-4.0/TeplTabGroup.html
 share/gtk-doc/html/tepl-4.0/TeplTabLabel.html
 share/gtk-doc/html/tepl-4.0/TeplView.html
-share/gtk-doc/html/tepl-4.0/amtk-api-reference.html
-share/gtk-doc/html/tepl-4.0/amtk-intro.html
-share/gtk-doc/html/tepl-4.0/amtk.html
 share/gtk-doc/html/tepl-4.0/annexes.html
 share/gtk-doc/html/tepl-4.0/annotation-glossary.html
 share/gtk-doc/html/tepl-4.0/api-breaks-1-to-2.html
@@ -91,6 +61,10 @@ share/gtk-doc/html/tepl-4.0/api-breaks-2-to-3-amtk.html
 share/gtk-doc/html/tepl-4.0/api-breaks-2-to-3-tepl.html
 share/gtk-doc/html/tepl-4.0/api-breaks-3-to-4-tepl.html
 share/gtk-doc/html/tepl-4.0/api-breaks.html
+share/gtk-doc/html/tepl-4.0/api-index-1-0.html
+share/gtk-doc/html/tepl-4.0/api-index-2-0.html
+share/gtk-doc/html/tepl-4.0/api-index-3-0.html
+share/gtk-doc/html/tepl-4.0/api-index-4-0.html
 share/gtk-doc/html/tepl-4.0/api-index-full.html
 share/gtk-doc/html/tepl-4.0/code-folding.html
 share/gtk-doc/html/tepl-4.0/file-loading-and-saving.html
@@ -109,10 +83,6 @@ share/gtk-doc/html/tepl-4.0/porting-guides.html
 share/gtk-doc/html/tepl-4.0/right-insensitive.png
 share/gtk-doc/html/tepl-4.0/right.png
 share/gtk-doc/html/tepl-4.0/style.css
-share/gtk-doc/html/tepl-4.0/tepl-4.0-Amtk-Initialization-and-Finalization.html
-share/gtk-doc/html/tepl-4.0/tepl-4.0-AmtkActionMap.html
-share/gtk-doc/html/tepl-4.0/tepl-4.0-AmtkMenuItem.html
-share/gtk-doc/html/tepl-4.0/tepl-4.0-AmtkUtils.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-Tepl-Initialization-and-Finalization.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplIter.html
 share/gtk-doc/html/tepl-4.0/tepl-4.0-TeplMenuShell.html

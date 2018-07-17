@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/23 14:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/17 07:03:01 ajacoutot Exp $
 
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
-GNOME_VERSION=		4.0.0
+GNOME_VERSION=		4.2.0
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  amtk-4                    0.0 # 0.0
-SHARED_LIBS +=  tepl-4                    0.0 # 0.0
+SHARED_LIBS +=  tepl-4                    1.0 # 0.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender amtk-5 atk-1.0 atk-bridge-2.0
 WANTLIB += atspi cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
@@ -27,6 +26,7 @@ MODULES=		x11/gnome
 MODGNOME_TOOLS= 	gobject-introspection
 
 LIB_DEPENDS=		textproc/uchardet \
+			x11/gnome/amtk \
 			x11/gtksourceview4
 
 CONFIGURE_STYLE=	gnu
