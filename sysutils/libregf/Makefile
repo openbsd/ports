@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/11 06:56:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2018/07/17 07:35:55 rpointel Exp $
 
 COMMENT =	library and tools to access the Windows NT Registry File
 
 VERSION = 	20170130
 DISTNAME =	libregf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  regf                       0.0 # 1.0
 
@@ -21,11 +21,12 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
-WANTLIB += bfio c fuse fwsi iconv intl m pthread util
+WANTLIB += bfio c fuse fwnt iconv intl m pthread util
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python \
-			--with-libfwnt=${LOCALBASE}
+			--with-libfwnt=${LOCALBASE} \
+			AWK=/usr/bin/awk
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
@@ -34,7 +35,7 @@ MODULES +=	lang/python
 BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio \
-		sysutils/libfwsi
+		sysutils/libfwnt
 
 TEST_DEPENDS +=	shells/bash
 
