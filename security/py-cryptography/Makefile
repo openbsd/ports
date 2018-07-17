@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/07/05 10:34:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/07/17 14:06:24 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	${MODPY_WANTLIB} crypto pthread ssl
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
