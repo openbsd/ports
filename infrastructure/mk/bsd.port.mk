@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1426 2018/07/16 09:11:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1427 2018/07/17 10:08:55 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -596,6 +596,16 @@ BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
 .endif
 
+# github related variables
+GH_TAGNAME ?=
+GH_COMMIT ?=
+GH_ACCOUNT ?=
+GH_PROJECT ?=
+
+.if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
+DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+.endif
+
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
@@ -818,12 +828,6 @@ _WRKDIRS = ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 
-# github related variables
-GH_TAGNAME ?=
-GH_COMMIT ?=
-GH_ACCOUNT ?=
-GH_PROJECT ?=
-
 .if !empty(GH_TAGNAME)
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 .elif !empty(GH_COMMIT)
@@ -834,10 +838,6 @@ WRKDIST ?= ${WRKDIR}
 .  else
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
 .  endif
-.endif
-
-.if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
-DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 .endif
 
 WRKSRC ?= ${WRKDIST}
