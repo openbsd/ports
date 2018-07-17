@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.1 2017/11/22 03:43:46 kirby Exp $
+$OpenBSD: patch-GNUmakefile,v 1.2 2018/07/17 07:56:44 espie Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
@@ -20,3 +20,12 @@ Index: GNUmakefile
  endif
  
  ifeq ($(PLATFORM),DARWIN)
+@@ -755,7 +754,7 @@ endif
+ 
+ #### Final setup
+ 
+-COMPILERFLAGS += -I$(engine_inc) -I$(mact_inc) -I$(audiolib_inc) -I$(enet_inc)
++COMPILERFLAGS := -I$(engine_inc) -I$(mact_inc) -I$(audiolib_inc) -I$(enet_inc) $(COMPILERFLAGS)
+ 
+ 
+ ##### Recipes
