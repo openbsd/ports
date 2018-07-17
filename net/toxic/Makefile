@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:00 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/17 13:49:23 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
 GH_TAGNAME =		v0.8.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -14,27 +14,42 @@ MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 alut c config curses curl gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl notify m openal png pthread qrencode toxcore
-WANTLIB += util vpx z ${MODPY_WANTLIB}
+WANTLIB += alut c config curses curl intl m openal png pthread
+WANTLIB += qrencode toxcore util z ${MODPY_WANTLIB}
 
 LIB_DEPENDS =		audio/freealut \
 			net/toxcore \
 			devel/libconfig \
-			devel/libnotify \
 			net/curl \
 			graphics/libqrencode
 
-RUN_DEPENDS =		devel/desktop-file-utils
-
-MAKE_ENV +=		ENABLE_PYTHON=1
-MAKE_ENV +=		USER_CFLAGS="${CFLAGS}"
+MAKE_ENV +=		ENABLE_PYTHON=1 \
+			USER_CFLAGS="${CFLAGS}"
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE =	none
 
 USE_GMAKE =		yes
 
+FLAVORS =		no_x11
+FLAVOR ?=
+
+.if ${FLAVOR:Mno_x11}
+MAKE_ENV +=		DISABLE_DESKTOP_NOTIFY=1 \
+			DISABLE_X11=1
+.else
+WANTLIB +=		X11 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB +=		notify vpx
+LIB_DEPENDS +=		devel/libnotify
+
+RUN_DEPENDS =		devel/desktop-file-utils
+.endif
+
 NO_TEST =		Yes
+
+.if ${FLAVOR:Mno_x11}
+post-install:
+	rm -Rf ${PREFIX}/share/applications/
+.endif
 
 .include <bsd.port.mk>
