@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/06 06:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/07/17 11:18:03 ajacoutot Exp $
 
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
@@ -7,7 +7,7 @@ COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.0.5
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  tracker-extract           1.0 # 0.0
 
@@ -68,6 +68,9 @@ CONFIGURE_ARGS +=	--disable-miner-rss
 CONFIGURE_ARGS +=	--disable-libstemmer
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/tracker-miners/
+
+# XXX https://gitlab.gnome.org/GNOME/tracker-miners/issues/7
+CFLAGS +=		-O0
 
 post-install:
 	rm ${PREFIX}/lib/tracker-miners-${TRACKER_API}/extract-modules/*.{a,la}
