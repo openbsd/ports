@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1078 2018/07/11 20:58:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1079 2018/07/17 13:49:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -711,6 +711,7 @@
      SUBDIR += totd
      SUBDIR += toxcore
      SUBDIR += toxic
+     SUBDIR += toxic,no_x11
      SUBDIR += trafshow
      SUBDIR += transmission
      SUBDIR += trickle
