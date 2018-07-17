@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/04 09:07:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/07/17 03:14:53 ians Exp $
 
 COMMENT =	interactive process viewer
 V =		2.2.0
@@ -6,7 +6,7 @@ DISTNAME =	htop-${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	https://hisham.hm/htop/index.php
 MAINTAINER =	Ian Sutton <ian@ce.gl>
-REVISION =	2
+REVISION =	3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
