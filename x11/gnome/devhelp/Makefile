@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/07/06 06:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.118 2018/07/17 07:03:37 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -6,8 +6,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		3.28.1
-REVISION=		4
+GNOME_VERSION=		3.30.0
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
@@ -16,35 +15,23 @@ CATEGORIES=		textproc
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
-WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += brotlicommon brotlidec c cairo cairo-gobject dbus-1
-WANTLIB += drm enchant-2 epoxy expat ffi fontconfig freetype fribidi
-WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstallocators-1.0
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
-WANTLIB += icudata icui18n icuuc intl javascriptcoregtk-4.0 jpeg
-WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
-WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z aspell
+WANTLIB += amtk-5 c gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += pango-1.0 webkit2gtk-4.0
 
 MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
+
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache yelp
 
-BUILD_DEPENDS=		x11/gnome/doc-utils
-LIB_DEPENDS=		www/webkitgtk4
+LIB_DEPENDS=		www/webkitgtk4 \
+			x11/gnome/amtk
 
 # for convenience
 RUN_DEPENDS +=		x11/gnome/devel-docs
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
