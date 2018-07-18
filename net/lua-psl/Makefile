@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/29 18:33:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/18 18:24:02 fcambus Exp $
 
 COMMENT =	Lua bindings to libpsl
 
-V =		0.2
+V =		0.3
 DISTNAME =	lua-psl-${V}
 
 GH_ACCOUNT =	daurnimator
