@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/01 14:41:22 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2018/07/18 22:01:13 jeremy Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -12,6 +12,7 @@ PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
 REVISION-python=	0
+REVISION-ruby=		0
 
 MODULES=	lang/python \
 		lang/ruby
@@ -53,6 +54,10 @@ CONFIGURE_ARGS=		--with-perl \
 			--without-csharp \
 			--without-java \
 			--without-lua
+
+pre-configure:
+	sed -i 's/\(rb_funcall(.*, 0\), NULL);/\1);/' \
+		${WRKSRC}/ruby/xapian_wrap.cc
 
 post-install:
 	mv ${PREFIX}/share/doc/xapian-bindings/ruby{,${MODRUBY_BINREV}}
