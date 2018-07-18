@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/09 14:33:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/18 10:14:40 ajacoutot Exp $
 bin/guild${V}
 bin/guile-config${V}
 bin/guile-snarf${V}
@@ -396,6 +396,7 @@ lib/guile/${V}/ccache/srfi/srfi-60.go
 lib/guile/${V}/ccache/srfi/srfi-64.go
 lib/guile/${V}/ccache/srfi/srfi-67.go
 lib/guile/${V}/ccache/srfi/srfi-69.go
+lib/guile/${V}/ccache/srfi/srfi-71.go
 lib/guile/${V}/ccache/srfi/srfi-8.go
 lib/guile/${V}/ccache/srfi/srfi-88.go
 lib/guile/${V}/ccache/srfi/srfi-9/
@@ -477,7 +478,7 @@ lib/guile/${V}/extensions/guile-readline.so.0.0
 lib/libguile-${V}.a
 lib/libguile-${V}.la
 @lib lib/libguile-${V}.so.${LIBguile-${V}_VERSION}
-lib/libguile-${V}.so.0.1-gdb.scm
+lib/libguile-${V}.so.0.2-gdb.scm
 lib/pkgconfig/guile-${V}.pc
 @man man/man1/guile${V}.1
 share/aclocal/guile${V}.m4
@@ -754,6 +755,7 @@ share/guile/${V}/srfi/srfi-67/
 share/guile/${V}/srfi/srfi-67.scm
 share/guile/${V}/srfi/srfi-67/compare.scm
 share/guile/${V}/srfi/srfi-69.scm
+share/guile/${V}/srfi/srfi-71.scm
 share/guile/${V}/srfi/srfi-8.scm
 share/guile/${V}/srfi/srfi-88.scm
 share/guile/${V}/srfi/srfi-9/
