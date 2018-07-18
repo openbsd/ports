@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.19 2016/05/15 20:08:30 espie Exp $
+# $OpenBSD: Build.pm,v 1.20 2018/07/18 10:49:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -176,6 +176,9 @@ sub recheck_mismatches
 	}
 	# second pass, affinity mismatches
 	for my $v (@{$self->{mismatches}}) {
+		if (defined $core->prop->taint_incompatible($v)) {
+			next;
+		}
 		if ($self->lock_and_start_build($core, $v)) {
 			$self->log('Y', $v, 
 			    " ".$core->hostname." ".$v->{affinity});
