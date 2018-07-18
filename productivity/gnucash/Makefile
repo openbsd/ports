@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2018/07/11 21:14:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2018/07/18 05:46:15 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
@@ -78,7 +78,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libgnucash/core-utils/gnc-path.c
 
 post-configure:
-	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
+	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} MKDIR_P="mkdir -p" \
+		/bin/sh ./configure
 
 post-build:
 	cd ${DOC_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
