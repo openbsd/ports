@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.75 2018/05/03 21:10:50 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.76 2018/07/18 08:47:28 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -15,6 +15,7 @@
 @pkgpath telephony/asterisk,-fax,h323
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h
 include/asterisk/_private.h
@@ -787,7 +788,3 @@ share/examples/asterisk/openbsd/voicemail.conf.sample
 @owner _asterisk
 @sample ${LOCALSTATEDIR}/spool/asterisk/voicemail/default/
 @sample ${LOCALSTATEDIR}/spool/asterisk/voicemail/default/1234/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/asterisk

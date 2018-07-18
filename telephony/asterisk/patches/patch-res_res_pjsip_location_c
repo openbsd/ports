@@ -1,9 +1,9 @@
-$OpenBSD: patch-res_res_pjsip_location_c,v 1.1 2018/05/03 21:11:41 sthen Exp $
+$OpenBSD: patch-res_res_pjsip_location_c,v 1.2 2018/07/18 08:47:28 sthen Exp $
 
 Index: res/res_pjsip/location.c
 --- res/res_pjsip/location.c.orig
 +++ res/res_pjsip/location.c
-@@ -501,7 +501,7 @@ static int expiration_str2struct(const struct aco_opti
+@@ -500,7 +500,7 @@ static int expiration_str2struct(const struct aco_opti
  static int expiration_struct2str(const void *obj, const intptr_t *args, char **buf)
  {
  	const struct ast_sip_contact *contact = obj;

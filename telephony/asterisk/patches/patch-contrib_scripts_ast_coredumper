@@ -1,8 +1,8 @@
-$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.3 2018/05/03 21:10:49 sthen Exp $
+$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.4 2018/07/18 08:47:28 sthen Exp $
 Index: contrib/scripts/ast_coredumper
 --- contrib/scripts/ast_coredumper.orig
 +++ contrib/scripts/ast_coredumper
-@@ -232,7 +232,7 @@ declare -a ARGS_COREDUMPS
+@@ -250,7 +250,7 @@ EOF
  
  # For *BSD, the preferred gdb may be in /usr/local/bin so we
  # need to search for one that supports python.
@@ -11,7 +11,7 @@ Index: contrib/scripts/ast_coredumper
  	result=$($g --batch --ex "python print('hello')" 2>/dev/null || : )
  	if [[ "$result" =~ ^hello$ ]] ; then
  		GDB=$g
-@@ -253,7 +253,7 @@ if [ -n "$OUTPUTDIR" ] ; then
+@@ -271,7 +271,7 @@ if [ -n "$OUTPUTDIR" ] ; then
  fi
  
  if [ ${#COREDUMPS[@]} -eq 0 ] ; then
