@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/05 22:09:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/18 10:46:54 bentley Exp $
 
 COMMENT =		netsurf logging library
 
 NETSURF_PROJECT =	libnslog
 NETSURF_VERSION =	0.1.0
+REVISION =		0
 
 SHARED_LIBS =		nslog 0.0 #0.1.0
 

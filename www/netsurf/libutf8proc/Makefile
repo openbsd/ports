@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/04 22:28:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/18 10:46:54 bentley Exp $
 
 COMMENT =		unicode library
 
 NETSURF_PROJECT =	libutf8proc
 NETSURF_VERSION =	1.3.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		libutf8proc-1.3.1-3-src
 
 CATEGORIES =		textproc

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2018/06/27 21:04:06 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2018/07/18 10:46:54 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.7
-REVISION =		1
+REVISION =		2
 
-HOMEPAGE=		http://www.netsurf-browser.org/
-MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
+HOMEPAGE =		https://www.netsurf-browser.org/
+MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
 BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.5 \
 			www/p5-HTML-Parser
@@ -45,7 +45,7 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_GTK_RESOURCES=${WRKINST}${PREFIX}/share/netsurf/
 
 post-patch:
-	#http://bugs.netsurf-browser.org/mantis/view.php?id=2045
+	#https://bugs.netsurf-browser.org/mantis/view.php?id=2045
 	cp ${WRKSRC}/frontends/gtk/res/options.gtk2.ui{,.unfixed}
 	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/options.gtk2.ui | \
 		sed -e 's/.*>\(.*\)<.*/\1/' | while read c ; do \
