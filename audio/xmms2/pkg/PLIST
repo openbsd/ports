@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/11 13:38:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/18 19:36:37 naddy Exp $
 bin/nyxmms2
 @bin bin/xmms2
 @bin bin/xmms2-et
@@ -120,8 +120,8 @@ lib/xmms2/libxmms_id3v2.so
 lib/xmms2/libxmms_jack.so
 lib/xmms2/libxmms_karaoke.so
 lib/xmms2/libxmms_m3u.so
-lib/xmms2/libxmms_mad.so
 lib/xmms2/libxmms_mp4.so
+lib/xmms2/libxmms_mpg123.so
 lib/xmms2/libxmms_normalize.so
 lib/xmms2/libxmms_null.so
 lib/xmms2/libxmms_nulstripper.so
