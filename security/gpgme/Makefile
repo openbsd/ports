@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2018/04/24 08:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2018/07/19 17:04:45 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
 VERSION =		1.10.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
@@ -45,7 +45,8 @@ BUILD_DEPENDS =		gnupg->=2:security/gnupg2
 # gnupg-* is normally the default anyway, but gnupg1 overrides PKGSPEC
 # so we must be explicit here.
 RUN_DEPENDS =		gnupg-*:security/gnupg
-LIB_DEPENDS-main =	devel/gettext \
+LIB_DEPENDS-main =	${LIB_DEPENDS:N*qt*} \
+			devel/gettext \
 			security/libgpg-error>=1.4 \
 			security/libassuan
 
