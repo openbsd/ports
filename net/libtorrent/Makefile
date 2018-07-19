@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/02/12 17:31:35 tj Exp $
+# $OpenBSD: Makefile,v 1.55 2018/07/19 14:04:57 tj Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -20,7 +20,7 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://rtorrent.net/downloads/
+MASTER_SITES=		https://rtorrent.net/downloads/
 
 WANTLIB=		crypto m pthread ${COMPILER_LIBCXX} z
 
