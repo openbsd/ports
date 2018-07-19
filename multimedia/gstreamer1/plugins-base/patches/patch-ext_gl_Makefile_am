@@ -1,13 +1,13 @@
-$OpenBSD: patch-ext_gl_Makefile_in,v 1.2 2018/05/19 06:21:25 ajacoutot Exp $
+$OpenBSD: patch-ext_gl_Makefile_am,v 1.1 2018/07/19 14:46:43 landry Exp $
 
 Remove -fobjc-arc, only makes sense for objc code and not understood by
 base-gcc and ports-gcc.
 
-Index: ext/gl/Makefile.in
---- ext/gl/Makefile.in.orig
-+++ ext/gl/Makefile.in
-@@ -782,7 +782,6 @@ noinst_HEADERS = gstgluploadelement.h gstgldownloadele
- 	$(am__append_10)
+Index: ext/gl/Makefile.am
+--- ext/gl/Makefile.am.orig
++++ ext/gl/Makefile.am
+@@ -126,7 +126,6 @@ endif
+ 
  libgstopengl_la_OBJCFLAGS = \
  	$(GST_PLUGINS_BASE_CFLAGS) \
 -	-fobjc-arc \
