@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/18 12:44:11 visa Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/19 10:48:23 sthen Exp $
 
 COMMENT =		AT&T Korn Shell
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += c m util
 
-MASTER_SITES =		https://distfiles.bsdfrog.org/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} INIT.${V}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 DIST_SUBDIR =		ksh93
@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} ${AST_ARCH}/bin/ksh ${PREFIX}/bin/ksh93
 	cd ${PREFIX}/bin && ln ksh93 rksh93
 	${INSTALL_DATA} ${AST_ARCH}/lib/lib{ast,cmd,shell}.a ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ksh93		
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ksh93
 	${INSTALL_DATA} ${AST_ARCH}/fun/* ${PREFIX}/share/examples/ksh93
 	${INSTALL_MAN} ${AST_ARCH}/man/man1/sh.1 ${PREFIX}/man/man1/ksh93.1
 	cd ${PREFIX}/man/man1 && ln ksh93.1 rksh93.1
@@ -56,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${AST_INC}/{sfio,sfio_s,shell,cdt,nval,option}.h \
 		${PREFIX}/include/ast
 	${INSTALL_DATA} ${AST_INC}/prototyped.h ${PREFIX}/include/ast
-	
+
 do-test:
 	cd ${WRKSRC}/src/cmd/ksh93/tests && env -i \
 		SHELL=${AST_ARCH}/bin/ksh \
