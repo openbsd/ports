@@ -1,0 +1,15 @@
+$OpenBSD: patch-libusb_os_openbsd_usb_c,v 1.7 2018/07/19 12:36:34 mpi Exp $
+
+Export port number, fix github #314.
+
+Index: libusb/os/openbsd_usb.c
+--- libusb/os/openbsd_usb.c.orig
++++ libusb/os/openbsd_usb.c
+@@ -201,6 +201,7 @@ obsd_get_device_list(struct libusb_context * ctx,
+ 				dev->bus_number = di.udi_bus;
+ 				dev->device_address = di.udi_addr;
+ 				dev->speed = di.udi_speed;
++				dev->port_number = di.udi_port;
+ 
+ 				dpriv = (struct device_priv *)dev->os_priv;
+ 				dpriv->fd = -1;
