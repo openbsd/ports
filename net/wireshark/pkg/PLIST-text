@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.8 2018/05/10 20:36:34 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.9 2018/07/19 10:31:58 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -383,7 +383,7 @@ include/wireshark/epan/dissectors/packet-tcp.h
 include/wireshark/epan/dissectors/packet-tetra.h
 include/wireshark/epan/dissectors/packet-tftp.h
 include/wireshark/epan/dissectors/packet-tn3270.h
-include/wireshark/epan/dissectors/packet-tn${MODLUA_DEP_VERSION}50.h
+include/wireshark/epan/dissectors/packet-tn5250.h
 include/wireshark/epan/dissectors/packet-tpkt.h
 include/wireshark/epan/dissectors/packet-tr.h
 include/wireshark/epan/dissectors/packet-tte.h
