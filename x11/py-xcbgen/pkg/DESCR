@@ -1,0 +1,6 @@
+py-xcbgen generates the X protocol C language bindings from XML
+descriptions.
+
+The XCB library provides an interface to the X Window System protocol,
+designed to replace the Xlib interface. XCB provides several
+advantages over Xlib.
