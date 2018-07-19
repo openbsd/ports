@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2018/06/02 20:58:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/19 18:55:06 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
-GH_TAGNAME =	v2.5.3
-REVISION =	2
+GH_TAGNAME =	v2.6.0
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MODULES=	lang/php
