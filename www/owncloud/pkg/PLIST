@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.72 2018/04/28 09:07:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.73 2018/07/20 13:37:02 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/apache-httpd-owncloud.conf
+@sample conf/modules.sample/
 conf/modules.sample/apache-httpd-owncloud.conf.dist
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/apache-httpd-owncloud.conf
+@sample conf/modules.sample/apache-httpd-owncloud.conf
 owncloud/
 owncloud/.htaccess.dist
 @sample owncloud/.htaccess
@@ -489,7 +489,9 @@ owncloud/apps/dav/lib/Connector/Sabre/TagsPlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/ValidateRequestPlugin.php
 owncloud/apps/dav/lib/DAV/
 owncloud/apps/dav/lib/DAV/AbstractCustomPropertiesBackend.php
+owncloud/apps/dav/lib/DAV/CopyPlugin.php
 owncloud/apps/dav/lib/DAV/FileCustomPropertiesBackend.php
+owncloud/apps/dav/lib/DAV/FileCustomPropertiesPlugin.php
 owncloud/apps/dav/lib/DAV/GroupPrincipalBackend.php
 owncloud/apps/dav/lib/DAV/MiscCustomPropertiesBackend.php
 owncloud/apps/dav/lib/DAV/PublicAuth.php
@@ -504,12 +506,20 @@ owncloud/apps/dav/lib/DAV/SystemPrincipalBackend.php
 owncloud/apps/dav/lib/Files/
 owncloud/apps/dav/lib/Files/BrowserErrorPagePlugin.php
 owncloud/apps/dav/lib/Files/FilesHome.php
+owncloud/apps/dav/lib/Files/ICopySource.php
+owncloud/apps/dav/lib/Files/IFileNode.php
+owncloud/apps/dav/lib/Files/IProvidesAdditionalHeaders.php
+owncloud/apps/dav/lib/Files/PreviewPlugin.php
 owncloud/apps/dav/lib/Files/RootCollection.php
 owncloud/apps/dav/lib/Files/Sharing/
 owncloud/apps/dav/lib/Files/Sharing/PublicLinkCheckPlugin.php
 owncloud/apps/dav/lib/Files/Xml/
 owncloud/apps/dav/lib/Files/Xml/FilterRequest.php
 owncloud/apps/dav/lib/HookManager.php
+owncloud/apps/dav/lib/Meta/
+owncloud/apps/dav/lib/Meta/MetaFile.php
+owncloud/apps/dav/lib/Meta/MetaFolder.php
+owncloud/apps/dav/lib/Meta/RootCollection.php
 owncloud/apps/dav/lib/Repair/
 owncloud/apps/dav/lib/Repair/RemoveInvalidShares.php
 owncloud/apps/dav/lib/RootCollection.php
@@ -2456,13 +2466,17 @@ owncloud/apps/files_external/3rdparty/google-api-php-client/src/Google/Verifier/
 owncloud/apps/files_external/3rdparty/google-api-php-client/src/Google/autoload.php
 owncloud/apps/files_external/3rdparty/icewind/
 owncloud/apps/files_external/3rdparty/icewind/smb/
+owncloud/apps/files_external/3rdparty/icewind/smb/.scrutinizer.yml
 owncloud/apps/files_external/3rdparty/icewind/smb/LICENSE.txt
+owncloud/apps/files_external/3rdparty/icewind/smb/Makefile
 owncloud/apps/files_external/3rdparty/icewind/smb/README.md
 owncloud/apps/files_external/3rdparty/icewind/smb/composer.json
 owncloud/apps/files_external/3rdparty/icewind/smb/src/
+owncloud/apps/files_external/3rdparty/icewind/smb/src/AbstractServer.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/AbstractShare.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/Connection.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/ErrorCodes.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/AnonymousAuth.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/BasicAuth.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Change.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/AccessDeniedException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/AlreadyExistsException.php
@@ -2470,11 +2484,14 @@ owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/AuthenticationEx
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ConnectException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ConnectionException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ConnectionRefusedException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/DependencyException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/Exception.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/FileInUseException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ForbiddenException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/HostDownException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidArgumentException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidHostException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidParameterException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidRequestException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidResourceException.php
@@ -2483,21 +2500,35 @@ owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NoLoginServerExc
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NoRouteToHostException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NotEmptyException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NotFoundException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/OutOfSpaceException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/RevisionMismatchException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/TimedOutException.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/FileInfo.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/IAuth.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/IFileInfo.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/INotifyHandler.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/IServer.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/IShare.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/NativeFileInfo.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/NativeServer.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/NativeShare.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/NativeState.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/NativeStream.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/Parser.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/RawConnection.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/Server.php
-owncloud/apps/files_external/3rdparty/icewind/smb/src/Share.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/KerberosAuth.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeFileInfo.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeReadStream.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeServer.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeShare.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeState.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeStream.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Native/NativeWriteStream.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/ServerFactory.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/System.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/TimeZoneProvider.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/Connection.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/ErrorCodes.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/FileInfo.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/NotifyHandler.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/Parser.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/RawConnection.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/Server.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Wrapped/Share.php
 owncloud/apps/files_external/3rdparty/icewind/streams/
 owncloud/apps/files_external/3rdparty/icewind/streams-dummy/
 owncloud/apps/files_external/3rdparty/icewind/streams-dummy/composer.json
@@ -2800,6 +2831,7 @@ owncloud/apps/files_sharing/css/sharetabview.css
 owncloud/apps/files_sharing/css/upload.css
 owncloud/apps/files_sharing/img/
 owncloud/apps/files_sharing/img/app.svg
+owncloud/apps/files_sharing/img/folder-waiting.svg
 owncloud/apps/files_sharing/js/
 owncloud/apps/files_sharing/js/PublicUploadView.js
 owncloud/apps/files_sharing/js/app.js
@@ -3014,7 +3046,10 @@ owncloud/apps/files_sharing/lib/Middleware/
 owncloud/apps/files_sharing/lib/Middleware/SharingCheckMiddleware.php
 owncloud/apps/files_sharing/lib/Migration.php
 owncloud/apps/files_sharing/lib/MountProvider.php
+owncloud/apps/files_sharing/lib/Notifier.php
 owncloud/apps/files_sharing/lib/Scanner.php
+owncloud/apps/files_sharing/lib/Service/
+owncloud/apps/files_sharing/lib/Service/NotificationPublisher.php
 owncloud/apps/files_sharing/lib/ShareBackend/
 owncloud/apps/files_sharing/lib/ShareBackend/File.php
 owncloud/apps/files_sharing/lib/ShareBackend/Folder.php
@@ -3236,18 +3271,12 @@ owncloud/apps/files_trashbin/list.php
 owncloud/apps/files_trashbin/templates/
 owncloud/apps/files_trashbin/templates/index.php
 owncloud/apps/files_versions/
-owncloud/apps/files_versions/ajax/
-owncloud/apps/files_versions/ajax/getVersions.php
-owncloud/apps/files_versions/ajax/preview.php
-owncloud/apps/files_versions/ajax/rollbackVersion.php
 owncloud/apps/files_versions/appinfo/
 owncloud/apps/files_versions/appinfo/app.php
 owncloud/apps/files_versions/appinfo/info.xml
-owncloud/apps/files_versions/appinfo/routes.php
 owncloud/apps/files_versions/appinfo/signature.json
 owncloud/apps/files_versions/css/
 owncloud/apps/files_versions/css/versions.css
-owncloud/apps/files_versions/download.php
 owncloud/apps/files_versions/img/
 owncloud/apps/files_versions/img/app.svg
 owncloud/apps/files_versions/js/
@@ -3644,6 +3673,7 @@ owncloud/apps/market/vendor/composer/autoload_real.php
 owncloud/apps/market/vendor/composer/autoload_static.php
 owncloud/apps/market/vendor/composer/installed.json
 owncloud/apps/notifications/
+owncloud/apps/notifications/.drone.yml
 owncloud/apps/notifications/CHANGELOG.md
 owncloud/apps/notifications/COPYING
 owncloud/apps/notifications/Makefile
@@ -3652,6 +3682,7 @@ owncloud/apps/notifications/appinfo/Migrations/
 owncloud/apps/notifications/appinfo/Migrations/Version20170801085340.php
 owncloud/apps/notifications/appinfo/Migrations/Version20170801152524.php
 owncloud/apps/notifications/appinfo/Migrations/Version20180119080933.php
+owncloud/apps/notifications/appinfo/Migrations/Version20180604132522.php
 owncloud/apps/notifications/appinfo/app.php
 owncloud/apps/notifications/appinfo/info.xml
 owncloud/apps/notifications/appinfo/routes.php
@@ -3879,25 +3910,6 @@ owncloud/apps/systemtags/lib/Activity/Listener.php
 owncloud/apps/systemtags/list.php
 owncloud/apps/systemtags/templates/
 owncloud/apps/systemtags/templates/list.php
-owncloud/apps/theme-example/
-owncloud/apps/theme-example/appinfo/
-owncloud/apps/theme-example/appinfo/info.xml
-owncloud/apps/theme-example/appinfo/signature.json
-owncloud/apps/theme-example/core/
-owncloud/apps/theme-example/core/css/
-owncloud/apps/theme-example/core/css/styles.css
-owncloud/apps/theme-example/core/img/
-owncloud/apps/theme-example/core/img/favicon-touch.png
-owncloud/apps/theme-example/core/img/favicon-touch.svg
-owncloud/apps/theme-example/core/img/favicon.ico
-owncloud/apps/theme-example/core/img/favicon.png
-owncloud/apps/theme-example/core/img/favicon.svg
-owncloud/apps/theme-example/core/img/logo-icon.png
-owncloud/apps/theme-example/core/img/logo-icon.svg
-owncloud/apps/theme-example/core/img/logo-mail.gif
-owncloud/apps/theme-example/core/img/logo.png
-owncloud/apps/theme-example/core/img/logo.svg
-owncloud/apps/theme-example/defaults.php
 owncloud/apps/updatenotification/
 owncloud/apps/updatenotification/appinfo/
 owncloud/apps/updatenotification/appinfo/app.php
@@ -4163,6 +4175,7 @@ owncloud/core/Controller/TokenController.php
 owncloud/core/Controller/TwoFactorChallengeController.php
 owncloud/core/Controller/UserController.php
 owncloud/core/Middleware/
+owncloud/core/Middleware/AccountModuleMiddleware.php
 owncloud/core/Middleware/TwoFactorMiddleware.php
 owncloud/core/Migrations/
 owncloud/core/Migrations/Version20170101010100.php
@@ -4183,10 +4196,10 @@ owncloud/core/Migrations/Version20170804201253.php
 owncloud/core/Migrations/Version20170928120000.php
 owncloud/core/Migrations/Version20171026130750.php
 owncloud/core/Migrations/Version20180123131835.php
+owncloud/core/Migrations/Version20180302155233.php
 owncloud/core/Migrations/Version20180319102121.php
 owncloud/core/ajax/
 owncloud/core/ajax/appconfig.php
-owncloud/core/ajax/preview.php
 owncloud/core/ajax/share.php
 owncloud/core/ajax/update.php
 owncloud/core/css/
@@ -4263,12 +4276,8 @@ owncloud/core/doc/admin/_images/dropbox-apps-folders.png
 owncloud/core/doc/admin/_images/dropbox-oc.png
 owncloud/core/doc/admin/_images/dropbox-share-available.png
 owncloud/core/doc/admin/_images/enable-app.png
-owncloud/core/doc/admin/_images/encryption1.png
 owncloud/core/doc/admin/_images/encryption10.png
 owncloud/core/doc/admin/_images/encryption12.png
-owncloud/core/doc/admin/_images/encryption14.png
-owncloud/core/doc/admin/_images/encryption15.png
-owncloud/core/doc/admin/_images/encryption3.png
 owncloud/core/doc/admin/_images/encryption7.png
 owncloud/core/doc/admin/_images/encryption8.png
 owncloud/core/doc/admin/_images/encryption9.png
@@ -4305,6 +4314,7 @@ owncloud/core/doc/admin/_images/impersonate-settings.png
 owncloud/core/doc/admin/_images/impersonating-a-user.png
 owncloud/core/doc/admin/_images/import-ssl-cert-1.png
 owncloud/core/doc/admin/_images/import-ssl-cert-2.png
+owncloud/core/doc/admin/_images/import-ssl-root-certificates-admin.png
 owncloud/core/doc/admin/_images/import-the-virtual-appliance.png
 owncloud/core/doc/admin/_images/install-clamav.png
 owncloud/core/doc/admin/_images/install-wizard-a.png
@@ -4340,6 +4350,7 @@ owncloud/core/doc/admin/_images/owncloud-market-custom-groups-install.png
 owncloud/core/doc/admin/_images/owncloud-market-custom-groups.png
 owncloud/core/doc/admin/_images/owncloud-ui-login.png
 owncloud/core/doc/admin/_images/owncloud-update-app-installation-notes.png
+owncloud/core/doc/admin/_images/owncloud-webui-legal-urls-configuration.png
 owncloud/core/doc/admin/_images/password-policy-app.png
 owncloud/core/doc/admin/_images/phpinfo.png
 owncloud/core/doc/admin/_images/picking-a-user-to-impersonate.png
@@ -4410,6 +4421,8 @@ owncloud/core/doc/admin/_sources/appliance/Backup.rst.txt
 owncloud/core/doc/admin/_sources/appliance/Clamav.rst.txt
 owncloud/core/doc/admin/_sources/appliance/Collabora.rst.txt
 owncloud/core/doc/admin/_sources/appliance/certificates.rst.txt
+owncloud/core/doc/admin/_sources/appliance/enterprise-trial.rst.txt
+owncloud/core/doc/admin/_sources/appliance/firewall.rst.txt
 owncloud/core/doc/admin/_sources/appliance/howto-update-owncloud.rst.txt
 owncloud/core/doc/admin/_sources/appliance/index.rst.txt
 owncloud/core/doc/admin/_sources/appliance/installation.rst.txt
@@ -4427,6 +4440,7 @@ owncloud/core/doc/admin/_sources/configuration/files/
 owncloud/core/doc/admin/_sources/configuration/files/big_file_upload_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/files/default_files_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/files/encryption_configuration.rst.txt
+owncloud/core/doc/admin/_sources/configuration/files/encryption_configuration_quick_guide.rst.txt
 owncloud/core/doc/admin/_sources/configuration/files/external_storage/
 owncloud/core/doc/admin/_sources/configuration/files/external_storage/amazons3.rst.txt
 owncloud/core/doc/admin/_sources/configuration/files/external_storage/auth_mechanisms.rst.txt
@@ -4470,11 +4484,13 @@ owncloud/core/doc/admin/_sources/configuration/server/index.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/index_php_less_urls.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/knowledgebase_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/language_configuration.rst.txt
+owncloud/core/doc/admin/_sources/configuration/server/legal_settings_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/logging_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/oc_server_tuning.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/occ_command.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/reverse_proxy_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/security/
+owncloud/core/doc/admin/_sources/configuration/server/security/oauth2.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/security/password-policy.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/security_setup_warnings.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/thirdparty_php_configuration.rst.txt
@@ -4667,6 +4683,8 @@ owncloud/core/doc/admin/appliance/Backup.html
 owncloud/core/doc/admin/appliance/Clamav.html
 owncloud/core/doc/admin/appliance/Collabora.html
 owncloud/core/doc/admin/appliance/certificates.html
+owncloud/core/doc/admin/appliance/enterprise-trial.html
+owncloud/core/doc/admin/appliance/firewall.html
 owncloud/core/doc/admin/appliance/howto-update-owncloud.html
 owncloud/core/doc/admin/appliance/index.html
 owncloud/core/doc/admin/appliance/installation.html
@@ -4684,6 +4702,7 @@ owncloud/core/doc/admin/configuration/files/
 owncloud/core/doc/admin/configuration/files/big_file_upload_configuration.html
 owncloud/core/doc/admin/configuration/files/default_files_configuration.html
 owncloud/core/doc/admin/configuration/files/encryption_configuration.html
+owncloud/core/doc/admin/configuration/files/encryption_configuration_quick_guide.html
 owncloud/core/doc/admin/configuration/files/external_storage/
 owncloud/core/doc/admin/configuration/files/external_storage/amazons3.html
 owncloud/core/doc/admin/configuration/files/external_storage/auth_mechanisms.html
@@ -4727,11 +4746,13 @@ owncloud/core/doc/admin/configuration/server/index.html
 owncloud/core/doc/admin/configuration/server/index_php_less_urls.html
 owncloud/core/doc/admin/configuration/server/knowledgebase_configuration.html
 owncloud/core/doc/admin/configuration/server/language_configuration.html
+owncloud/core/doc/admin/configuration/server/legal_settings_configuration.html
 owncloud/core/doc/admin/configuration/server/logging_configuration.html
 owncloud/core/doc/admin/configuration/server/oc_server_tuning.html
 owncloud/core/doc/admin/configuration/server/occ_command.html
 owncloud/core/doc/admin/configuration/server/reverse_proxy_configuration.html
 owncloud/core/doc/admin/configuration/server/security/
+owncloud/core/doc/admin/configuration/server/security/oauth2.html
 owncloud/core/doc/admin/configuration/server/security/password-policy.html
 owncloud/core/doc/admin/configuration/server/security_setup_warnings.html
 owncloud/core/doc/admin/configuration/server/thirdparty_php_configuration.html
@@ -5532,6 +5553,7 @@ owncloud/core/templates/filetemplates/template.html
 owncloud/core/templates/filetemplates/template.odp
 owncloud/core/templates/filetemplates/template.ods
 owncloud/core/templates/filetemplates/template.odt
+owncloud/core/templates/html.mail.footer.php
 owncloud/core/templates/installation.php
 owncloud/core/templates/internalaltmail.php
 owncloud/core/templates/internalmail.php
@@ -5541,11 +5563,13 @@ owncloud/core/templates/layout.noscript.warning.php
 owncloud/core/templates/layout.user.php
 owncloud/core/templates/login.php
 owncloud/core/templates/lostpassword/
+owncloud/core/templates/lostpassword/altemail.php
 owncloud/core/templates/lostpassword/email.php
 owncloud/core/templates/lostpassword/notify.php
 owncloud/core/templates/lostpassword/resetpassword.php
 owncloud/core/templates/mail.php
 owncloud/core/templates/message.html
+owncloud/core/templates/plain.mail.footer.php
 owncloud/core/templates/singleuser.user.php
 owncloud/core/templates/tags.html
 owncloud/core/templates/twofactorselectchallenge.php
@@ -10889,6 +10913,18 @@ owncloud/lib/composer/symfony/routing/Tests/Fixtures/empty.yml
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/file_resource.yml
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/foo.xml
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/foo1.xml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/bar.xml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/bar.yml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/baz.xml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/baz.yml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/import_multiple.xml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/import_multiple.yml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/import_single.xml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/import_single.yml
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/php_dsl.php
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/php_dsl_bar.php
+owncloud/lib/composer/symfony/routing/Tests/Fixtures/glob/php_dsl_baz.php
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/incomplete.yml
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/list_defaults.xml
 owncloud/lib/composer/symfony/routing/Tests/Fixtures/list_in_list_defaults.xml
@@ -11165,13 +11201,9 @@ owncloud/lib/composer/symfony/translation/phpunit.xml.dist
 owncloud/lib/composer/zendframework/
 owncloud/lib/composer/zendframework/zend-filter/
 owncloud/lib/composer/zendframework/zend-filter/CHANGELOG.md
-owncloud/lib/composer/zendframework/zend-filter/CONDUCT.md
-owncloud/lib/composer/zendframework/zend-filter/CONTRIBUTING.md
 owncloud/lib/composer/zendframework/zend-filter/LICENSE.md
 owncloud/lib/composer/zendframework/zend-filter/README.md
 owncloud/lib/composer/zendframework/zend-filter/composer.json
-owncloud/lib/composer/zendframework/zend-filter/mkdocs.yml
-owncloud/lib/composer/zendframework/zend-filter/phpcs.xml
 owncloud/lib/composer/zendframework/zend-filter/src/
 owncloud/lib/composer/zendframework/zend-filter/src/AbstractDateDropdown.php
 owncloud/lib/composer/zendframework/zend-filter/src/AbstractFilter.php
@@ -11223,6 +11255,7 @@ owncloud/lib/composer/zendframework/zend-filter/src/FilterChain.php
 owncloud/lib/composer/zendframework/zend-filter/src/FilterInterface.php
 owncloud/lib/composer/zendframework/zend-filter/src/FilterPluginManager.php
 owncloud/lib/composer/zendframework/zend-filter/src/FilterPluginManagerFactory.php
+owncloud/lib/composer/zendframework/zend-filter/src/FilterProviderInterface.php
 owncloud/lib/composer/zendframework/zend-filter/src/HtmlEntities.php
 owncloud/lib/composer/zendframework/zend-filter/src/Inflector.php
 owncloud/lib/composer/zendframework/zend-filter/src/Int.php
@@ -11336,17 +11369,9 @@ owncloud/lib/composer/zendframework/zend-servicemanager/src/Tool/FactoryCreator.
 owncloud/lib/composer/zendframework/zend-servicemanager/src/Tool/FactoryCreatorCommand.php
 owncloud/lib/composer/zendframework/zend-stdlib/
 owncloud/lib/composer/zendframework/zend-stdlib/CHANGELOG.md
-owncloud/lib/composer/zendframework/zend-stdlib/CONDUCT.md
-owncloud/lib/composer/zendframework/zend-stdlib/CONTRIBUTING.md
 owncloud/lib/composer/zendframework/zend-stdlib/LICENSE.md
 owncloud/lib/composer/zendframework/zend-stdlib/README.md
-owncloud/lib/composer/zendframework/zend-stdlib/benchmark/
-owncloud/lib/composer/zendframework/zend-stdlib/benchmark/ExtractPriorityQueue.php
-owncloud/lib/composer/zendframework/zend-stdlib/benchmark/InsertPriorityQueue.php
-owncloud/lib/composer/zendframework/zend-stdlib/benchmark/RemovePriorityQueue.php
 owncloud/lib/composer/zendframework/zend-stdlib/composer.json
-owncloud/lib/composer/zendframework/zend-stdlib/mkdocs.yml
-owncloud/lib/composer/zendframework/zend-stdlib/phpcs.xml
 owncloud/lib/composer/zendframework/zend-stdlib/src/
 owncloud/lib/composer/zendframework/zend-stdlib/src/AbstractOptions.php
 owncloud/lib/composer/zendframework/zend-stdlib/src/ArrayObject.php
@@ -11794,6 +11819,8 @@ owncloud/lib/private/Archive/Archive.php
 owncloud/lib/private/Archive/TAR.php
 owncloud/lib/private/Archive/ZIP.php
 owncloud/lib/private/Authentication/
+owncloud/lib/private/Authentication/AccountModule/
+owncloud/lib/private/Authentication/AccountModule/Manager.php
 owncloud/lib/private/Authentication/Exceptions/
 owncloud/lib/private/Authentication/Exceptions/InvalidTokenException.php
 owncloud/lib/private/Authentication/Exceptions/LoginRequiredException.php
@@ -11961,6 +11988,11 @@ owncloud/lib/private/Files/External/StoragesBackendService.php
 owncloud/lib/private/Files/External/VisibilityTrait.php
 owncloud/lib/private/Files/FileInfo.php
 owncloud/lib/private/Files/Filesystem.php
+owncloud/lib/private/Files/Meta/
+owncloud/lib/private/Files/Meta/MetaFileIdNode.php
+owncloud/lib/private/Files/Meta/MetaFileVersionNode.php
+owncloud/lib/private/Files/Meta/MetaRootNode.php
+owncloud/lib/private/Files/Meta/MetaVersionCollection.php
 owncloud/lib/private/Files/Mount/
 owncloud/lib/private/Files/Mount/CacheMountProvider.php
 owncloud/lib/private/Files/Mount/LocalHomeMountProvider.php
@@ -11969,6 +12001,9 @@ owncloud/lib/private/Files/Mount/MountPoint.php
 owncloud/lib/private/Files/Mount/MoveableMount.php
 owncloud/lib/private/Files/Mount/ObjectHomeMountProvider.php
 owncloud/lib/private/Files/Node/
+owncloud/lib/private/Files/Node/AbstractFile.php
+owncloud/lib/private/Files/Node/AbstractFolder.php
+owncloud/lib/private/Files/Node/AbstractNode.php
 owncloud/lib/private/Files/Node/File.php
 owncloud/lib/private/Files/Node/Folder.php
 owncloud/lib/private/Files/Node/HookConnector.php
@@ -12031,6 +12066,8 @@ owncloud/lib/private/Group/Group.php
 owncloud/lib/private/Group/Manager.php
 owncloud/lib/private/Group/MetaData.php
 owncloud/lib/private/HTTPHelper.php
+owncloud/lib/private/Helper/
+owncloud/lib/private/Helper/EnvironmentHelper.php
 owncloud/lib/private/HintException.php
 owncloud/lib/private/Hooks/
 owncloud/lib/private/Hooks/BasicEmitter.php
@@ -12137,7 +12174,6 @@ owncloud/lib/private/Preview/PDF.php
 owncloud/lib/private/Preview/PNG.php
 owncloud/lib/private/Preview/Photoshop.php
 owncloud/lib/private/Preview/Postscript.php
-owncloud/lib/private/Preview/Provider.php
 owncloud/lib/private/Preview/SVG.php
 owncloud/lib/private/Preview/StarOffice.php
 owncloud/lib/private/Preview/TIFF.php
@@ -12375,6 +12411,10 @@ owncloud/lib/public/AppFramework/Utility/
 owncloud/lib/public/AppFramework/Utility/IControllerMethodReflector.php
 owncloud/lib/public/AppFramework/Utility/ITimeFactory.php
 owncloud/lib/public/Authentication/
+owncloud/lib/public/Authentication/Exceptions/
+owncloud/lib/public/Authentication/Exceptions/AccountCheckException.php
+owncloud/lib/public/Authentication/IAccountModule.php
+owncloud/lib/public/Authentication/IAccountModuleController.php
 owncloud/lib/public/Authentication/IApacheBackend.php
 owncloud/lib/public/Authentication/IAuthModule.php
 owncloud/lib/public/Authentication/TwoFactorAuth/
@@ -12479,6 +12519,8 @@ owncloud/lib/public/Files/ForbiddenException.php
 owncloud/lib/public/Files/IHomeStorage.php
 owncloud/lib/public/Files/IMimeTypeDetector.php
 owncloud/lib/public/Files/IMimeTypeLoader.php
+owncloud/lib/public/Files/IPreviewNode.php
+owncloud/lib/public/Files/IProvidesAdditionalHeaders.php
 owncloud/lib/public/Files/IRootFolder.php
 owncloud/lib/public/Files/InvalidCharacterInPathException.php
 owncloud/lib/public/Files/InvalidContentException.php
@@ -12494,6 +12536,7 @@ owncloud/lib/public/Files/NotFoundException.php
 owncloud/lib/public/Files/NotPermittedException.php
 owncloud/lib/public/Files/ObjectStore/
 owncloud/lib/public/Files/ObjectStore/IObjectStore.php
+owncloud/lib/public/Files/ObjectStore/IVersionedObjectStorage.php
 owncloud/lib/public/Files/ReservedWordException.php
 owncloud/lib/public/Files/Storage/
 owncloud/lib/public/Files/Storage.php
@@ -12502,6 +12545,7 @@ owncloud/lib/public/Files/Storage/FlysystemStorageAdapter.php
 owncloud/lib/public/Files/Storage/ILockingStorage.php
 owncloud/lib/public/Files/Storage/IStorage.php
 owncloud/lib/public/Files/Storage/IStorageFactory.php
+owncloud/lib/public/Files/Storage/IVersionedStorage.php
 owncloud/lib/public/Files/Storage/PolyFill/
 owncloud/lib/public/Files/Storage/PolyFill/CopyDirectory.php
 owncloud/lib/public/Files/Storage/StorageAdapter.php
@@ -12585,6 +12629,7 @@ owncloud/lib/public/Notification/INotifier.php
 owncloud/lib/public/PreConditionNotMetException.php
 owncloud/lib/public/Preview/
 owncloud/lib/public/Preview/IProvider.php
+owncloud/lib/public/Preview/IProvider2.php
 owncloud/lib/public/Response.php
 owncloud/lib/public/Route/
 owncloud/lib/public/Route/IRoute.php
@@ -12619,6 +12664,7 @@ owncloud/lib/public/Share/Exceptions/
 owncloud/lib/public/Share/Exceptions/GenericShareException.php
 owncloud/lib/public/Share/Exceptions/IllegalIDChangeException.php
 owncloud/lib/public/Share/Exceptions/ShareNotFound.php
+owncloud/lib/public/Share/Exceptions/TransferSharesException.php
 owncloud/lib/public/Share/IManager.php
 owncloud/lib/public/Share/IProviderFactory.php
 owncloud/lib/public/Share/IShare.php
@@ -12671,6 +12717,7 @@ owncloud/resources/config/ca-bundle.crt
 owncloud/resources/config/mimetypealiases.dist.json
 owncloud/resources/config/mimetypemapping.dist.json
 owncloud/resources/config/readme.md
+owncloud/robots.txt
 owncloud/settings/
 owncloud/settings/Application.php
 owncloud/settings/ChangePassword/
@@ -12683,6 +12730,7 @@ owncloud/settings/Controller/CheckSetupController.php
 owncloud/settings/Controller/CorsController.php
 owncloud/settings/Controller/EncryptionController.php
 owncloud/settings/Controller/GroupsController.php
+owncloud/settings/Controller/LegalSettingsController.php
 owncloud/settings/Controller/LogSettingsController.php
 owncloud/settings/Controller/MailSettingsController.php
 owncloud/settings/Controller/SettingsPageController.php
@@ -12697,6 +12745,7 @@ owncloud/settings/Panels/Admin/Certificates.php
 owncloud/settings/Panels/Admin/Encryption.php
 owncloud/settings/Panels/Admin/FileSharing.php
 owncloud/settings/Panels/Admin/Legacy.php
+owncloud/settings/Panels/Admin/Legal.php
 owncloud/settings/Panels/Admin/Logging.php
 owncloud/settings/Panels/Admin/Mail.php
 owncloud/settings/Panels/Admin/SecurityWarning.php
@@ -12748,6 +12797,7 @@ owncloud/settings/js/panels/authtoken_view.js
 owncloud/settings/js/panels/backgroundjobs.js
 owncloud/settings/js/panels/cors.js
 owncloud/settings/js/panels/encryption.js
+owncloud/settings/js/panels/legal.js
 owncloud/settings/js/panels/mail.js
 owncloud/settings/js/panels/profile.js
 owncloud/settings/js/panels/setupchecks.js
@@ -12945,6 +12995,7 @@ owncloud/settings/templates/panels/admin/backgroundjobs.php
 owncloud/settings/templates/panels/admin/certificates.php
 owncloud/settings/templates/panels/admin/encryption.php
 owncloud/settings/templates/panels/admin/filesharing.php
+owncloud/settings/templates/panels/admin/legal.php
 owncloud/settings/templates/panels/admin/logging.php
 owncloud/settings/templates/panels/admin/mail.php
 owncloud/settings/templates/panels/admin/securitywarning.php
@@ -13463,7 +13514,7 @@ owncloud/version.php
 @group www
 @sample owncloud/data/
 @mode
-@group
 @owner
+@group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
