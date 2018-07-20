@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2017/10/23 21:25:13 stsp Exp $
+# $OpenBSD: Makefile,v 1.52 2018/07/20 10:58:26 juanfra Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.6.1
+REVISION=	0
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
@@ -18,7 +19,7 @@ FLAVOR?=
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += lib/db4/db>=4 expat iconv pthread
+WANTLIB += lib/db4/db>=4 crypto expat iconv pthread ssl
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
@@ -33,6 +34,7 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
 		--includedir=${LOCALBASE}/include/apr-1/ \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
+		--with-crypto \
 		--with-sqlite3=no \
 		--with-pgsql=no \
 		--with-mysql=no \
@@ -45,7 +47,7 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
-WANTLIB+=		crypto sasl2 ssl lber-2.4 ldap-2.4
+WANTLIB+=		sasl2 lber-2.4 ldap-2.4
 .else
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif

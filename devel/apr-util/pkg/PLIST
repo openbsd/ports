@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/06/24 12:32:20 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/20 10:58:26 juanfra Exp $
 @conflict apr-util-mt-*
 @pkgpath devel/apr-util,mt
 bin/apu-1-config
@@ -38,6 +38,10 @@ include/apr-1/apu_errno.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
 lib/apr-util-1/
+lib/apr-util-1/apr_crypto_openssl-1.so
+lib/apr-util-1/apr_crypto_openssl.a
+lib/apr-util-1/apr_crypto_openssl.la
+lib/apr-util-1/apr_crypto_openssl.so
 lib/apr-util-1/apr_dbm_db-1.so
 lib/apr-util-1/apr_dbm_db.a
 lib/apr-util-1/apr_dbm_db.la
