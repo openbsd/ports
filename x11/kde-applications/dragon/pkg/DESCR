@@ -1,0 +1,14 @@
+Dragon Player is a multimedia player where the focus is on simplicity, instead
+of features. Dragon Player does one thing, and only one thing, which is playing
+multimedia files. It's simple interface is designed not to get in your way and
+instead empower you to simply play multimedia files.
+
+Features
+
+- Simple Interface
+- Resuming videos: Starts playing a video where you were watching it last time
+- Support for subtitles: Automatically loads subtitles with the matching name
+- Video display settings (brightness, contrast)
+- Due to using Solid and Phonon DragonPlayer is independent of any multimedia
+  framework or hardware abstraction layer.
+- Supports playing CDs and DVDs
