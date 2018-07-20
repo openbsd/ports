@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/07/20 04:45:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2018/07/20 13:19:51 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,11 +28,11 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	7
 REVISION-games = 0
-REVISION-sdk = 0
+REVISION-sdk = 1
 REVISION-edu = 0
 REVISION-multimedia = 0
 REVISION-extras = 1
-REVISION-main =		5
+REVISION-main =		6
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -186,7 +186,6 @@ RUN_DEPENDS-sdk = \
 	${MODKDE4_DEP_DIR}/kcachegrind		\
 	${MODKDE4_DEP_DIR}/kompare		\
 	${MODKDE4_DEP_DIR}/lokalize		\
-	${MODKDE4_DEP_DIR}/okteta		\
 	${MODKDE4_DEP_DIR}/poxml		\
 	${MODKDE4_DEP_DIR}/sdk-kioslaves	\
 	${MODKDE4_DEP_DIR}/sdk-strigi-analyzers	\

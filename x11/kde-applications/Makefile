@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/07/20 04:45:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2018/07/20 13:19:51 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -182,7 +182,7 @@
      #SUBDIR += marble
      #SUBDIR += messagelib
      #SUBDIR += minuet
-     #SUBDIR += okteta
+     SUBDIR += okteta
      #SUBDIR += okular
      #SUBDIR += palapeli
      #SUBDIR += parley
