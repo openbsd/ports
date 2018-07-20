@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/06/26 05:48:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.51 2018/07/20 04:45:08 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -222,7 +222,7 @@ SUBDIR += svgpart
 
 # former kdemultimedia
 SUBDIR += audiocd-kio
-SUBDIR += dragon
+#SUBDIR += dragon		x11/kde-applications
 SUBDIR += ffmpegthumbs
 SUBDIR += juk
 SUBDIR += kmix
