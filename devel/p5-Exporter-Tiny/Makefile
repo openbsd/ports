@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/24 18:47:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/20 20:02:53 bluhm Exp $
 
 COMMENT =	exporter with the features of Sub::Exporter
 
-DISTNAME =	Exporter-Tiny-1.000000
+DISTNAME =	Exporter-Tiny-1.002001
 
 CATEGORIES =	devel
 
