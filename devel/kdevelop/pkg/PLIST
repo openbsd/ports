@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/20 13:11:46 rsadowski Exp $
 @bin bin/kdevelop
 bin/kdevelop!
 include/kde4/kdevelop/
@@ -26,7 +26,6 @@ lib/kde4/kdevkdeprovider.so
 lib/kde4/kdevmakebuilder.so
 lib/kde4/kdevmanpage.so
 lib/kde4/kdevninja.so
-lib/kde4/kdevokteta.so
 lib/kde4/kdevqthelp.so
 lib/kde4/kdevqthelp_config.so
 lib/kde4/krunner_kdevelopsessions.so
@@ -151,8 +150,6 @@ share/apps/kdevgdb/printers/qt4.py
 share/apps/kdevgdb/printers/qt4.pyc
 share/apps/kdevmanpage/
 share/apps/kdevmanpage/manpagedocumentation.css
-share/apps/kdevokteta/
-share/apps/kdevokteta/kdevokteta.rc
 share/apps/plasma/plasmoids/kdevelopsessions/
 share/apps/plasma/plasmoids/kdevelopsessions/contents/
 share/apps/plasma/plasmoids/kdevelopsessions/contents/ui/
@@ -249,7 +246,6 @@ share/kde4/services/kdevkdeprovider.desktop
 share/kde4/services/kdevmakebuilder.desktop
 share/kde4/services/kdevmanpage.desktop
 share/kde4/services/kdevninja.desktop
-share/kde4/services/kdevokteta.desktop
 share/kde4/services/kdevqthelp.desktop
 share/kde4/services/kdevqthelp_config.desktop
 share/kde4/services/plasma-applet-kdevelopsessions.desktop

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/20 13:11:46 rsadowski Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 KDEV_V =	4.7.1
 KDEVPLAT_V =	1.7.1
-REVISION =	6
+REVISION =	7
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 
@@ -29,10 +29,6 @@ WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/ktexteditor ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
-WANTLIB += ${KDE4LIB}/kasten2controllers ${KDE4LIB}/kasten2core
-WANTLIB += ${KDE4LIB}/kasten2gui ${KDE4LIB}/kasten2okteta1controllers
-WANTLIB += ${KDE4LIB}/kasten2okteta1core ${KDE4LIB}/kasten2okteta1gui
-WANTLIB += ${KDE4LIB}/okteta1core ${KDE4LIB}/okteta1gui
 WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += kdevplatformdebugger kdevplatformdocumentation
 WANTLIB += kdevplatforminterfaces kdevplatformlanguage
@@ -53,8 +49,10 @@ RUN_DEPENDS =	x11/kde-applications/kate \
 		x11/gtk+3,-guic \
 		x11/kde4/kapptemplate>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	devel/kdevplatform>=${KDEVPLAT_V} \
-		x11/kde4/okteta>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	devel/kdevplatform>=${KDEVPLAT_V}
+
+pre-configure:
+	rm ${WRKSRC}/cmake/modules/{FindLibOkteta.cmake,FindLibKasten.cmake}
 
 # XXX because OBJECT_DEPENDS doesn't work as it should in
 # the patch-languages_cpp_CMakeLists_txt
