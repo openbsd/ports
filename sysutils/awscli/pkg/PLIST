@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2018/07/13 08:37:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2018/07/20 13:22:07 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -274,6 +274,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/putmetricdata.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/putmetricdata.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rds.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rds.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rekognition.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/rekognition.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/removals.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/removals.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/route53.py
