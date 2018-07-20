@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2017/04/20 13:48:29 fcambus Exp $
---- src/Makefile.orig	Wed Apr  5 23:29:56 2017
-+++ src/Makefile	Wed Apr  5 23:31:25 2017
+$OpenBSD: patch-src_Makefile,v 1.2 2018/07/20 21:48:48 fcambus Exp $
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
 @@ -2,7 +2,7 @@
  
  CC=gcc
@@ -10,3 +11,12 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2017/04/20 13:48:29 fcambus Exp $
  LDFLAGS0:=$(LDFLAGS)
  ifeq ($(findstring darwin,$(OSTYPE)),) # false if OSTYPE contains "darwin"
  # On Mac OS X using -s gives the following warning:
+@@ -240,7 +240,7 @@ ifdef DJGPP
+ 	$(MAKE)
+ 	cd ..
+ else
+-	cd libdiscmage && CFLAGS=$(CFLAGS0) LDFLAGS=$(LDFLAGS0) $(MAKE)
++	cd libdiscmage && CFLAGS="$(CFLAGS0)" LDFLAGS=$(LDFLAGS0) $(MAKE)
+ endif                                   # DJGPP
+ endif                                   # GCC_WIN
+ endif                                   # USE_DISCMAGE

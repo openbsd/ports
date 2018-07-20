@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libdiscmage_Makefile_in,v 1.1 2018/07/20 21:48:48 fcambus Exp $
+
+Index: src/libdiscmage/Makefile.in
+--- src/libdiscmage/Makefile.in.orig
++++ src/libdiscmage/Makefile.in
+@@ -14,7 +14,7 @@ INSTALL_DATA=@INSTALL_DATA@
+ #RANLIB=@RANLIB@
+ 
+ CC=@CC@
+-CFLAGS0:=$(CFLAGS) -I. -Wall -W -O3 @DEFS@
++CFLAGS0:=$(CFLAGS) -I. -Wall -W @DEFS@
+ CFLAGS=$(CFLAGS0) -DDLL
+ ifdef DLOPEN
+ CFLAGS+=-DDLOPEN

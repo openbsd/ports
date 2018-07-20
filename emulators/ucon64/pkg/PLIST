@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/20 13:48:29 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/20 21:48:48 fcambus Exp $
 @bin bin/ucon64
+lib/libdiscmage.so
 share/doc/ucon64/
 share/doc/ucon64/faq.html
