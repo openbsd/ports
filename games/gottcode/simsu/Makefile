@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/21 05:35:18 bcallah Exp $
 
 GAME =		simsu
 COMMENT =	basic sudoku game
-DISTNAME =	${GAME}-1.3.6-src
-REVISION =	1
+DISTNAME =	${GAME}-1.3.7-src
 
 post-install:
 	mv ${PREFIX}/share/man/man6/${GAME}.6 ${PREFIX}/man/man6
