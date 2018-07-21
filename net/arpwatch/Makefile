@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/05/16 15:32:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2018/07/21 14:14:01 jasper Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pcap
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--quiet
 MAKE_FLAGS+=		ARPDIR=/var/arpwatch
 
 # this provides an up-to-date pregenerated ethercodes.dat file
