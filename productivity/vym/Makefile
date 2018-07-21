@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2018/04/29 08:13:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2018/07/21 19:52:38 zhuk Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-2.6.0
 CATEGORIES=	productivity x11
+REVISION=	0
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
 
@@ -19,6 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	devel/qmake \
 		x11/qt5
+MODQMAKE_ARGS=	DEFINES+=VYM_DOCDIR=\\\\\\\"${PREFIX}/share/doc/vym\\\\\\\"
 
 RUN_DEPENDS=	archivers/zip \
 		archivers/unzip \
@@ -48,6 +50,8 @@ do-install:
 		${INSTALL_DATA} {} ${PREFIX}/share/vym/${i} \;
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/vym.1.gz ${PREFIX}/man/man1
-	gunzip ${PREFIX}/man/man1/vym.1.gz
+	gunzip -f ${PREFIX}/man/man1/vym.1.gz
+	sed -i 's,/usr/share/doc/packages,${TRUEPREFIX}/share/doc,' \
+		${PREFIX}/man/man1/vym.1
 
 .include <bsd.port.mk>
