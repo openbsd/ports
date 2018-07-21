@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.19 2014/03/10 09:34:54 espie Exp $
+# $OpenBSD: Distant.pm,v 1.20 2018/07/21 07:36:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -110,6 +110,8 @@ sub run
 	unlink($socket);
 	my $timeout = $self->{timeout};
 	my $host = $self->{host};
+	# XXX sssh does not like uid games
+	$> = $<;
 	close STDOUT;
 	close STDERR;
 	open STDOUT, '>/dev/null';
