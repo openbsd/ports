@@ -1,0 +1,13 @@
+$OpenBSD: patch-templates_scriptabletags_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: templates/scriptabletags/CMakeLists.txt
+--- templates/scriptabletags/CMakeLists.txt.orig
++++ templates/scriptabletags/CMakeLists.txt
+@@ -16,6 +16,7 @@ grantlee_adjust_plugin_name(grantlee_scriptabletags)
+ target_link_libraries(grantlee_scriptabletags
+   Grantlee5::Templates
+   Qt4::QtScript
++  c pthread
+ )
+ 
+ install(TARGETS grantlee_scriptabletags

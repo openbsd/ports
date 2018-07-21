@@ -1,0 +1,5 @@
+Grantlee is a set of Free Software libraries written using the Qt framework.
+
+The goal of Grantlee Templates is to make it easier for application developers
+to separate the structure of documents from the data they contain, opening the
+door for theming and advanced generation of other text such as code.

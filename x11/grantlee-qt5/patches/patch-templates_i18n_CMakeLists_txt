@@ -1,0 +1,14 @@
+$OpenBSD: patch-templates_i18n_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: templates/i18n/CMakeLists.txt
+--- templates/i18n/CMakeLists.txt.orig
++++ templates/i18n/CMakeLists.txt
+@@ -10,7 +10,7 @@ add_library(grantlee_i18ntags MODULE
+   with_locale.cpp
+ )
+ set_property(TARGET grantlee_i18ntags PROPERTY EXPORT_NAME i18ntags)
+-target_link_libraries(grantlee_i18ntags Grantlee5::Templates)
++target_link_libraries(grantlee_i18ntags Grantlee5::Templates c pthread)
+ target_compile_features(grantlee_i18ntags PRIVATE cxx_auto_type)
+ grantlee_adjust_plugin_name(grantlee_i18ntags)
+ 

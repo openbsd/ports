@@ -1,0 +1,19 @@
+$OpenBSD: patch-templates_tests_pluginpointertest_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: templates/tests/pluginpointertest/CMakeLists.txt
+--- templates/tests/pluginpointertest/CMakeLists.txt.orig
++++ templates/tests/pluginpointertest/CMakeLists.txt
+@@ -17,6 +17,7 @@ set_target_properties(myplugin
+ )
+ target_link_libraries(myplugin
+   Qt5::Core
++  c pthread
+ )
+ 
+ add_executable(main_app main.cpp ${myplugin_sources} ${_plugin_moc_srcs})
+@@ -26,4 +27,5 @@ target_include_directories(main_app
+ )
+ target_link_libraries(main_app
+   Qt5::Core
++  c pthread
+ )

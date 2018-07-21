@@ -1,0 +1,11 @@
+$OpenBSD: patch-templates_tests_templatedirs_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: templates/tests/templatedirs/CMakeLists.txt
+--- templates/tests/templatedirs/CMakeLists.txt.orig
++++ templates/tests/templatedirs/CMakeLists.txt
+@@ -22,4 +22,5 @@ target_link_libraries(
+   template_dirs_test
+   Qt4::QtCore
+   ${Grantlee_TEMPLATES_LIBRARIES}
++  c pthread
+ )

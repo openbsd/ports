@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_contacts_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: examples/contacts/CMakeLists.txt
+--- examples/contacts/CMakeLists.txt.orig
++++ examples/contacts/CMakeLists.txt
+@@ -26,6 +26,7 @@ target_link_libraries(
+   contacts_linguist
+   Grantlee5::Templates
+   Qt5::WebKitWidgets
++  c pthread
+ )
+ 
+ execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink "${PROJECT_SOURCE_DIR}/../../scripts" "${PROJECT_SOURCE_DIR}/scripts")

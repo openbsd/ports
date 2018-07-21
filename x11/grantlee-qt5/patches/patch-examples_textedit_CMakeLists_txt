@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_textedit_CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+
+Index: examples/textedit/CMakeLists.txt
+--- examples/textedit/CMakeLists.txt.orig
++++ examples/textedit/CMakeLists.txt
+@@ -20,6 +20,7 @@ grantlee_adjust_plugin_name(customtags)
+ target_link_libraries(customtags
+   ${Grantlee_TEMPLATES_LIBRARIES}
+   ${Grantlee_TEXTDOCUMENT_LIBRARIES}
++  c pthread
+ )
+ 
+ 
