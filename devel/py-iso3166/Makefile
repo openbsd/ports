@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/30 16:05:25 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/07/22 19:31:02 bcallah Exp $
 
-MODPY_EGG_VERSION =	0.8
+MODPY_EGG_VERSION =	0.9
 COMMENT =	self-contained ISO 3166-1 country definitions library
 DISTNAME =	iso3166-${MODPY_EGG_VERSION}
 PKGNAME =	py-iso3166-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://github.com/deactivated/python-iso3166
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
