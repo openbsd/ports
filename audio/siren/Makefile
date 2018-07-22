@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/12 08:10:04 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.9 2018/07/22 13:59:59 gonzalo Exp $
 
 COMMENT =		text-based audio player
 DISTNAME =		siren-0.7
+REVISION =		0
 CATEGORIES =		audio
-HOMEPAGE =		http://www.kariliq.nl/siren/
+HOMEPAGE =		https://www.kariliq.nl/siren/
 MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
 
 # ISC
@@ -11,14 +12,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/dist/
 
-WANTLIB +=		c curses m pthread sndio z
-WANTLIB +=		FLAC faad id3tag mad mp4v2 opusfile sndfile vorbisfile
-WANTLIB +=		wavpack
+# uses pledge()
+WANTLIB +=		FLAC c curses faad mp4v2 mpg123 opusfile pthread sndfile
+WANTLIB +=		sndio vorbisfile wavpack
 
 LIB_DEPENDS =		audio/faad \
 			audio/flac \
 			audio/libid3tag \
-			audio/libmad \
+			audio/mpg123 \
 			audio/libsndfile \
 			audio/libvorbis \
 			audio/opusfile \
@@ -28,6 +29,9 @@ LIB_DEPENDS =		audio/faad \
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	prefix=${PREFIX} \
 			ao=no \
+			ffmpeg=no \
+			mad=no \
+			mpg123=yes \
 			oss=no \
 			portaudio=no \
 			pulse=no \
