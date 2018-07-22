@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.80 2018/01/29 15:45:29 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.81 2018/07/22 16:43:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -181,7 +181,7 @@ sub report
 	if ($job->{failed}) {
 		my $fh = $self->logger->open('>>', $job->{log});
 		print $fh "Error: job failed with $job->{failed} on ",
-		    $core->hostname, "\n" if defined $fh;
+		    $core->hostname, " at ", time(), "\n" if defined $fh;
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
