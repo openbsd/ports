@@ -1,0 +1,1397 @@
+@comment $OpenBSD: PLIST-nogui,v 1.1.1.1 2018/07/22 16:54:48 thfr Exp $
+@bin bin/dolphin-emu-nogui
+@man man/man6/dolphin-emu-nogui.6
+share/dolphin-emu/
+share/dolphin-emu/sys/
+share/dolphin-emu/sys/GC/
+share/dolphin-emu/sys/GC/dsp_coef.bin
+share/dolphin-emu/sys/GC/dsp_rom.bin
+share/dolphin-emu/sys/GC/font-licenses.txt
+share/dolphin-emu/sys/GC/font_japanese.bin
+share/dolphin-emu/sys/GC/font_western.bin
+share/dolphin-emu/sys/GameSettings/
+share/dolphin-emu/sys/GameSettings/0000000100000002.ini
+share/dolphin-emu/sys/GameSettings/0000000100000002r1.ini
+share/dolphin-emu/sys/GameSettings/C.ini
+share/dolphin-emu/sys/GameSettings/D43.ini
+share/dolphin-emu/sys/GameSettings/D43E01.ini
+share/dolphin-emu/sys/GameSettings/D43J01.ini
+share/dolphin-emu/sys/GameSettings/DD2.ini
+share/dolphin-emu/sys/GameSettings/DLS.ini
+share/dolphin-emu/sys/GameSettings/E.ini
+share/dolphin-emu/sys/GameSettings/E52.ini
+share/dolphin-emu/sys/GameSettings/E53.ini
+share/dolphin-emu/sys/GameSettings/E54.ini
+share/dolphin-emu/sys/GameSettings/E55.ini
+share/dolphin-emu/sys/GameSettings/E56.ini
+share/dolphin-emu/sys/GameSettings/E57.ini
+share/dolphin-emu/sys/GameSettings/E5W.ini
+share/dolphin-emu/sys/GameSettings/E5Z.ini
+share/dolphin-emu/sys/GameSettings/E62.ini
+share/dolphin-emu/sys/GameSettings/E63.ini
+share/dolphin-emu/sys/GameSettings/E6M.ini
+share/dolphin-emu/sys/GameSettings/E6N.ini
+share/dolphin-emu/sys/GameSettings/E6Q.ini
+share/dolphin-emu/sys/GameSettings/E6V.ini
+share/dolphin-emu/sys/GameSettings/E6W.ini
+share/dolphin-emu/sys/GameSettings/E6X.ini
+share/dolphin-emu/sys/GameSettings/E73.ini
+share/dolphin-emu/sys/GameSettings/E79.ini
+share/dolphin-emu/sys/GameSettings/E7J.ini
+share/dolphin-emu/sys/GameSettings/E7V.ini
+share/dolphin-emu/sys/GameSettings/E7Z.ini
+share/dolphin-emu/sys/GameSettings/EA2.ini
+share/dolphin-emu/sys/GameSettings/EA3.ini
+share/dolphin-emu/sys/GameSettings/EA4.ini
+share/dolphin-emu/sys/GameSettings/EA5.ini
+share/dolphin-emu/sys/GameSettings/EA6.ini
+share/dolphin-emu/sys/GameSettings/EA7.ini
+share/dolphin-emu/sys/GameSettings/EA8.ini
+share/dolphin-emu/sys/GameSettings/EA9.ini
+share/dolphin-emu/sys/GameSettings/EAA.ini
+share/dolphin-emu/sys/GameSettings/EAB.ini
+share/dolphin-emu/sys/GameSettings/EAC.ini
+share/dolphin-emu/sys/GameSettings/EAD.ini
+share/dolphin-emu/sys/GameSettings/EAE.ini
+share/dolphin-emu/sys/GameSettings/EAF.ini
+share/dolphin-emu/sys/GameSettings/EAG.ini
+share/dolphin-emu/sys/GameSettings/EAH.ini
+share/dolphin-emu/sys/GameSettings/EAI.ini
+share/dolphin-emu/sys/GameSettings/EAJ.ini
+share/dolphin-emu/sys/GameSettings/EAK.ini
+share/dolphin-emu/sys/GameSettings/EAL.ini
+share/dolphin-emu/sys/GameSettings/EAM.ini
+share/dolphin-emu/sys/GameSettings/EAN.ini
+share/dolphin-emu/sys/GameSettings/EAO.ini
+share/dolphin-emu/sys/GameSettings/EAP.ini
+share/dolphin-emu/sys/GameSettings/EAQ.ini
+share/dolphin-emu/sys/GameSettings/EAR.ini
+share/dolphin-emu/sys/GameSettings/EAS.ini
+share/dolphin-emu/sys/GameSettings/EAT.ini
+share/dolphin-emu/sys/GameSettings/EAU.ini
+share/dolphin-emu/sys/GameSettings/EAV.ini
+share/dolphin-emu/sys/GameSettings/EAW.ini
+share/dolphin-emu/sys/GameSettings/EAY.ini
+share/dolphin-emu/sys/GameSettings/EAZ.ini
+share/dolphin-emu/sys/GameSettings/EB2.ini
+share/dolphin-emu/sys/GameSettings/EB3.ini
+share/dolphin-emu/sys/GameSettings/EB4.ini
+share/dolphin-emu/sys/GameSettings/EB5.ini
+share/dolphin-emu/sys/GameSettings/EB6.ini
+share/dolphin-emu/sys/GameSettings/EB7.ini
+share/dolphin-emu/sys/GameSettings/EB8.ini
+share/dolphin-emu/sys/GameSettings/EB9.ini
+share/dolphin-emu/sys/GameSettings/EBA.ini
+share/dolphin-emu/sys/GameSettings/EBB.ini
+share/dolphin-emu/sys/GameSettings/EBC.ini
+share/dolphin-emu/sys/GameSettings/EBD.ini
+share/dolphin-emu/sys/GameSettings/EBE.ini
+share/dolphin-emu/sys/GameSettings/EBF.ini
+share/dolphin-emu/sys/GameSettings/EBG.ini
+share/dolphin-emu/sys/GameSettings/EBK.ini
+share/dolphin-emu/sys/GameSettings/EBL.ini
+share/dolphin-emu/sys/GameSettings/EBM.ini
+share/dolphin-emu/sys/GameSettings/EBN.ini
+share/dolphin-emu/sys/GameSettings/EBO.ini
+share/dolphin-emu/sys/GameSettings/EBP.ini
+share/dolphin-emu/sys/GameSettings/EBQ.ini
+share/dolphin-emu/sys/GameSettings/EBR.ini
+share/dolphin-emu/sys/GameSettings/EBS.ini
+share/dolphin-emu/sys/GameSettings/EBT.ini
+share/dolphin-emu/sys/GameSettings/EBU.ini
+share/dolphin-emu/sys/GameSettings/EBV.ini
+share/dolphin-emu/sys/GameSettings/EBW.ini
+share/dolphin-emu/sys/GameSettings/EBX.ini
+share/dolphin-emu/sys/GameSettings/EBZ.ini
+share/dolphin-emu/sys/GameSettings/ECA.ini
+share/dolphin-emu/sys/GameSettings/ECC.ini
+share/dolphin-emu/sys/GameSettings/ECD.ini
+share/dolphin-emu/sys/GameSettings/ECE.ini
+share/dolphin-emu/sys/GameSettings/ECF.ini
+share/dolphin-emu/sys/GameSettings/ECG.ini
+share/dolphin-emu/sys/GameSettings/ECI.ini
+share/dolphin-emu/sys/GameSettings/ECJ.ini
+share/dolphin-emu/sys/GameSettings/ECK.ini
+share/dolphin-emu/sys/GameSettings/ECL.ini
+share/dolphin-emu/sys/GameSettings/ECN.ini
+share/dolphin-emu/sys/GameSettings/F.ini
+share/dolphin-emu/sys/GameSettings/FAAE01.ini
+share/dolphin-emu/sys/GameSettings/FABE01.ini
+share/dolphin-emu/sys/GameSettings/FABP01.ini
+share/dolphin-emu/sys/GameSettings/FACE01.ini
+share/dolphin-emu/sys/GameSettings/FACP01.ini
+share/dolphin-emu/sys/GameSettings/FAFE01.ini
+share/dolphin-emu/sys/GameSettings/FAGE01.ini
+share/dolphin-emu/sys/GameSettings/FAHE01.ini
+share/dolphin-emu/sys/GameSettings/FAIE01.ini
+share/dolphin-emu/sys/GameSettings/FAJE01.ini
+share/dolphin-emu/sys/GameSettings/FAJP01.ini
+share/dolphin-emu/sys/GameSettings/FAKE01.ini
+share/dolphin-emu/sys/GameSettings/FAKP01.ini
+share/dolphin-emu/sys/GameSettings/FALE01.ini
+share/dolphin-emu/sys/GameSettings/FAME01.ini
+share/dolphin-emu/sys/GameSettings/FANE01.ini
+share/dolphin-emu/sys/GameSettings/FAOE01.ini
+share/dolphin-emu/sys/GameSettings/FARE01.ini
+share/dolphin-emu/sys/GameSettings/FASE01.ini
+share/dolphin-emu/sys/GameSettings/G2B.ini
+share/dolphin-emu/sys/GameSettings/G2FE78.ini
+share/dolphin-emu/sys/GameSettings/G2M.ini
+share/dolphin-emu/sys/GameSettings/G2ME01.ini
+share/dolphin-emu/sys/GameSettings/G2MP01.ini
+share/dolphin-emu/sys/GameSettings/G2O.ini
+share/dolphin-emu/sys/GameSettings/G2RE52.ini
+share/dolphin-emu/sys/GameSettings/G2V.ini
+share/dolphin-emu/sys/GameSettings/G2X.ini
+share/dolphin-emu/sys/GameSettings/G3A.ini
+share/dolphin-emu/sys/GameSettings/G3F.ini
+share/dolphin-emu/sys/GameSettings/G3L.ini
+share/dolphin-emu/sys/GameSettings/G3Q.ini
+share/dolphin-emu/sys/GameSettings/G3R.ini
+share/dolphin-emu/sys/GameSettings/G3X.ini
+share/dolphin-emu/sys/GameSettings/G4C.ini
+share/dolphin-emu/sys/GameSettings/G4GEE9.ini
+share/dolphin-emu/sys/GameSettings/G4M.ini
+share/dolphin-emu/sys/GameSettings/G4NJDA.ini
+share/dolphin-emu/sys/GameSettings/G4QE01.ini
+share/dolphin-emu/sys/GameSettings/G4S.ini
+share/dolphin-emu/sys/GameSettings/G4SP01.ini
+share/dolphin-emu/sys/GameSettings/G5N.ini
+share/dolphin-emu/sys/GameSettings/G5T.ini
+share/dolphin-emu/sys/GameSettings/G6Q.ini
+share/dolphin-emu/sys/GameSettings/G6T.ini
+share/dolphin-emu/sys/GameSettings/G6W.ini
+share/dolphin-emu/sys/GameSettings/G8M.ini
+share/dolphin-emu/sys/GameSettings/G8ME01.ini
+share/dolphin-emu/sys/GameSettings/G8W.ini
+share/dolphin-emu/sys/GameSettings/G8WP01.ini
+share/dolphin-emu/sys/GameSettings/G9R.ini
+share/dolphin-emu/sys/GameSettings/G9S.ini
+share/dolphin-emu/sys/GameSettings/G9T.ini
+share/dolphin-emu/sys/GameSettings/GAA.ini
+share/dolphin-emu/sys/GameSettings/GAF.ini
+share/dolphin-emu/sys/GameSettings/GAFE01.ini
+share/dolphin-emu/sys/GameSettings/GAK.ini
+share/dolphin-emu/sys/GameSettings/GAL.ini
+share/dolphin-emu/sys/GameSettings/GALE01r0.ini
+share/dolphin-emu/sys/GameSettings/GALE01r1.ini
+share/dolphin-emu/sys/GameSettings/GALE01r2.ini
+share/dolphin-emu/sys/GameSettings/GALP01.ini
+share/dolphin-emu/sys/GameSettings/GAP.ini
+share/dolphin-emu/sys/GameSettings/GAU.ini
+share/dolphin-emu/sys/GameSettings/GAUE08.ini
+share/dolphin-emu/sys/GameSettings/GAV.ini
+share/dolphin-emu/sys/GameSettings/GAY.ini
+share/dolphin-emu/sys/GameSettings/GB3.ini
+share/dolphin-emu/sys/GameSettings/GB4E51.ini
+share/dolphin-emu/sys/GameSettings/GBH.ini
+share/dolphin-emu/sys/GameSettings/GBHEC8.ini
+share/dolphin-emu/sys/GameSettings/GBL.ini
+share/dolphin-emu/sys/GameSettings/GBM.ini
+share/dolphin-emu/sys/GameSettings/GBOP51.ini
+share/dolphin-emu/sys/GameSettings/GBS.ini
+share/dolphin-emu/sys/GameSettings/GBV.ini
+share/dolphin-emu/sys/GameSettings/GBW.ini
+share/dolphin-emu/sys/GameSettings/GBZP08.ini
+share/dolphin-emu/sys/GameSettings/GC2.ini
+share/dolphin-emu/sys/GameSettings/GC6.ini
+share/dolphin-emu/sys/GameSettings/GC9.ini
+share/dolphin-emu/sys/GameSettings/GCC.ini
+share/dolphin-emu/sys/GameSettings/GCCE01.ini
+share/dolphin-emu/sys/GameSettings/GCD.ini
+share/dolphin-emu/sys/GameSettings/GCE.ini
+share/dolphin-emu/sys/GameSettings/GCI.ini
+share/dolphin-emu/sys/GameSettings/GCN.ini
+share/dolphin-emu/sys/GameSettings/GCP.ini
+share/dolphin-emu/sys/GameSettings/GCVEEB.ini
+share/dolphin-emu/sys/GameSettings/GCZ.ini
+share/dolphin-emu/sys/GameSettings/GDD.ini
+share/dolphin-emu/sys/GameSettings/GDDE41.ini
+share/dolphin-emu/sys/GameSettings/GDE.ini
+share/dolphin-emu/sys/GameSettings/GDEE71.ini
+share/dolphin-emu/sys/GameSettings/GDG.ini
+share/dolphin-emu/sys/GameSettings/GDJEB2.ini
+share/dolphin-emu/sys/GameSettings/GDK.ini
+share/dolphin-emu/sys/GameSettings/GDM.ini
+share/dolphin-emu/sys/GameSettings/GDQ.ini
+share/dolphin-emu/sys/GameSettings/GDS.ini
+share/dolphin-emu/sys/GameSettings/GDT.ini
+share/dolphin-emu/sys/GameSettings/GDTE69.ini
+share/dolphin-emu/sys/GameSettings/GDV.ini
+share/dolphin-emu/sys/GameSettings/GDX.ini
+share/dolphin-emu/sys/GameSettings/GE3.ini
+share/dolphin-emu/sys/GameSettings/GE4.ini
+share/dolphin-emu/sys/GameSettings/GE5EA4.ini
+share/dolphin-emu/sys/GameSettings/GE9.ini
+share/dolphin-emu/sys/GameSettings/GEA.ini
+share/dolphin-emu/sys/GameSettings/GED.ini
+share/dolphin-emu/sys/GameSettings/GEN.ini
+share/dolphin-emu/sys/GameSettings/GEO.ini
+share/dolphin-emu/sys/GameSettings/GEZ.ini
+share/dolphin-emu/sys/GameSettings/GF4.ini
+share/dolphin-emu/sys/GameSettings/GF7.ini
+share/dolphin-emu/sys/GameSettings/GF7E01.ini
+share/dolphin-emu/sys/GameSettings/GF7P01.ini
+share/dolphin-emu/sys/GameSettings/GF8E69.ini
+share/dolphin-emu/sys/GameSettings/GFB.ini
+share/dolphin-emu/sys/GameSettings/GFD.ini
+share/dolphin-emu/sys/GameSettings/GFEE01.ini
+share/dolphin-emu/sys/GameSettings/GFEJ01.ini
+share/dolphin-emu/sys/GameSettings/GFF.ini
+share/dolphin-emu/sys/GameSettings/GFG.ini
+share/dolphin-emu/sys/GameSettings/GFH.ini
+share/dolphin-emu/sys/GameSettings/GFY.ini
+share/dolphin-emu/sys/GameSettings/GFYE69.ini
+share/dolphin-emu/sys/GameSettings/GFZ.ini
+share/dolphin-emu/sys/GameSettings/GFZE01.ini
+share/dolphin-emu/sys/GameSettings/GFZJ01.ini
+share/dolphin-emu/sys/GameSettings/GFZJ8P.ini
+share/dolphin-emu/sys/GameSettings/GFZP01.ini
+share/dolphin-emu/sys/GameSettings/GGE.ini
+share/dolphin-emu/sys/GameSettings/GGN.ini
+share/dolphin-emu/sys/GameSettings/GGR.ini
+share/dolphin-emu/sys/GameSettings/GGS.ini
+share/dolphin-emu/sys/GameSettings/GGSEA4.ini
+share/dolphin-emu/sys/GameSettings/GGSPA4.ini
+share/dolphin-emu/sys/GameSettings/GGTE01.ini
+share/dolphin-emu/sys/GameSettings/GGV.ini
+share/dolphin-emu/sys/GameSettings/GGY.ini
+share/dolphin-emu/sys/GameSettings/GGZ.ini
+share/dolphin-emu/sys/GameSettings/GH2.ini
+share/dolphin-emu/sys/GameSettings/GH7.ini
+share/dolphin-emu/sys/GameSettings/GH9.ini
+share/dolphin-emu/sys/GameSettings/GHK.ini
+share/dolphin-emu/sys/GameSettings/GHME4F.ini
+share/dolphin-emu/sys/GameSettings/GHN.ini
+share/dolphin-emu/sys/GameSettings/GHQ.ini
+share/dolphin-emu/sys/GameSettings/GHR.ini
+share/dolphin-emu/sys/GameSettings/GHRE78.ini
+share/dolphin-emu/sys/GameSettings/GHS.ini
+share/dolphin-emu/sys/GameSettings/GHV.ini
+share/dolphin-emu/sys/GameSettings/GHY.ini
+share/dolphin-emu/sys/GameSettings/GIA.ini
+share/dolphin-emu/sys/GameSettings/GIC.ini
+share/dolphin-emu/sys/GameSettings/GICE78.ini
+share/dolphin-emu/sys/GameSettings/GIGJ8P.ini
+share/dolphin-emu/sys/GameSettings/GIL.ini
+share/dolphin-emu/sys/GameSettings/GINE69.ini
+share/dolphin-emu/sys/GameSettings/GIQ.ini
+share/dolphin-emu/sys/GameSettings/GIQE78.ini
+share/dolphin-emu/sys/GameSettings/GIS.ini
+share/dolphin-emu/sys/GameSettings/GIZ.ini
+share/dolphin-emu/sys/GameSettings/GJB.ini
+share/dolphin-emu/sys/GameSettings/GJCE8P.ini
+share/dolphin-emu/sys/GameSettings/GJK.ini
+share/dolphin-emu/sys/GameSettings/GJN.ini
+share/dolphin-emu/sys/GameSettings/GJUE78.ini
+share/dolphin-emu/sys/GameSettings/GJWE78.ini
+share/dolphin-emu/sys/GameSettings/GK2.ini
+share/dolphin-emu/sys/GameSettings/GK4.ini
+share/dolphin-emu/sys/GameSettings/GK4E01.ini
+share/dolphin-emu/sys/GameSettings/GK5.ini
+share/dolphin-emu/sys/GameSettings/GK7.ini
+share/dolphin-emu/sys/GameSettings/GKB.ini
+share/dolphin-emu/sys/GameSettings/GKH.ini
+share/dolphin-emu/sys/GameSettings/GKL.ini
+share/dolphin-emu/sys/GameSettings/GKM.ini
+share/dolphin-emu/sys/GameSettings/GKNEB2.ini
+share/dolphin-emu/sys/GameSettings/GKO.ini
+share/dolphin-emu/sys/GameSettings/GKS.ini
+share/dolphin-emu/sys/GameSettings/GKU.ini
+share/dolphin-emu/sys/GameSettings/GKY.ini
+share/dolphin-emu/sys/GameSettings/GKZ.ini
+share/dolphin-emu/sys/GameSettings/GL5.ini
+share/dolphin-emu/sys/GameSettings/GL7.ini
+share/dolphin-emu/sys/GameSettings/GLC.ini
+share/dolphin-emu/sys/GameSettings/GLG.ini
+share/dolphin-emu/sys/GameSettings/GLM.ini
+share/dolphin-emu/sys/GameSettings/GLME01.ini
+share/dolphin-emu/sys/GameSettings/GLMP01.ini
+share/dolphin-emu/sys/GameSettings/GLNE69.ini
+share/dolphin-emu/sys/GameSettings/GLR.ini
+share/dolphin-emu/sys/GameSettings/GLS.ini
+share/dolphin-emu/sys/GameSettings/GM2.ini
+share/dolphin-emu/sys/GameSettings/GM3.ini
+share/dolphin-emu/sys/GameSettings/GM4.ini
+share/dolphin-emu/sys/GameSettings/GM4E01.ini
+share/dolphin-emu/sys/GameSettings/GM4P01.ini
+share/dolphin-emu/sys/GameSettings/GM5.ini
+share/dolphin-emu/sys/GameSettings/GM6.ini
+share/dolphin-emu/sys/GameSettings/GM8.ini
+share/dolphin-emu/sys/GameSettings/GM8E01.ini
+share/dolphin-emu/sys/GameSettings/GMB.ini
+share/dolphin-emu/sys/GameSettings/GMD.ini
+share/dolphin-emu/sys/GameSettings/GMH.ini
+share/dolphin-emu/sys/GameSettings/GMI.ini
+share/dolphin-emu/sys/GameSettings/GMN.ini
+share/dolphin-emu/sys/GameSettings/GMPE01.ini
+share/dolphin-emu/sys/GameSettings/GMS.ini
+share/dolphin-emu/sys/GameSettings/GMSE01.ini
+share/dolphin-emu/sys/GameSettings/GMSP01.ini
+share/dolphin-emu/sys/GameSettings/GMX.ini
+share/dolphin-emu/sys/GameSettings/GMXE70.ini
+share/dolphin-emu/sys/GameSettings/GN4.ini
+share/dolphin-emu/sys/GameSettings/GN7.ini
+share/dolphin-emu/sys/GameSettings/GNC.ini
+share/dolphin-emu/sys/GameSettings/GNE.ini
+share/dolphin-emu/sys/GameSettings/GNHE5d.ini
+share/dolphin-emu/sys/GameSettings/GNI.ini
+share/dolphin-emu/sys/GameSettings/GNJ.ini
+share/dolphin-emu/sys/GameSettings/GNM.ini
+share/dolphin-emu/sys/GameSettings/GNN.ini
+share/dolphin-emu/sys/GameSettings/GNO.ini
+share/dolphin-emu/sys/GameSettings/GNWE69.ini
+share/dolphin-emu/sys/GameSettings/GO2.ini
+share/dolphin-emu/sys/GameSettings/GO2E4F.ini
+share/dolphin-emu/sys/GameSettings/GO7E69.ini
+share/dolphin-emu/sys/GameSettings/GO7F69.ini
+share/dolphin-emu/sys/GameSettings/GO7P69.ini
+share/dolphin-emu/sys/GameSettings/GOM.ini
+share/dolphin-emu/sys/GameSettings/GOME01.ini
+share/dolphin-emu/sys/GameSettings/GOQ.ini
+share/dolphin-emu/sys/GameSettings/GOS.ini
+share/dolphin-emu/sys/GameSettings/GOW.ini
+share/dolphin-emu/sys/GameSettings/GOY.ini
+share/dolphin-emu/sys/GameSettings/GOYE69.ini
+share/dolphin-emu/sys/GameSettings/GP2.ini
+share/dolphin-emu/sys/GameSettings/GP3.ini
+share/dolphin-emu/sys/GameSettings/GP5.ini
+share/dolphin-emu/sys/GameSettings/GP5E01.ini
+share/dolphin-emu/sys/GameSettings/GP6.ini
+share/dolphin-emu/sys/GameSettings/GP7E01.ini
+share/dolphin-emu/sys/GameSettings/GPA.ini
+share/dolphin-emu/sys/GameSettings/GPE.ini
+share/dolphin-emu/sys/GameSettings/GPH.ini
+share/dolphin-emu/sys/GameSettings/GPIE01.ini
+share/dolphin-emu/sys/GameSettings/GPIP01.ini
+share/dolphin-emu/sys/GameSettings/GPK.ini
+share/dolphin-emu/sys/GameSettings/GPNP08.ini
+share/dolphin-emu/sys/GameSettings/GPO.ini
+share/dolphin-emu/sys/GameSettings/GPOE8P.ini
+share/dolphin-emu/sys/GameSettings/GPOP8P.ini
+share/dolphin-emu/sys/GameSettings/GPS.ini
+share/dolphin-emu/sys/GameSettings/GPSP8P.ini
+share/dolphin-emu/sys/GameSettings/GPT.ini
+share/dolphin-emu/sys/GameSettings/GPVE01.ini
+share/dolphin-emu/sys/GameSettings/GQC.ini
+share/dolphin-emu/sys/GameSettings/GQS.ini
+share/dolphin-emu/sys/GameSettings/GQSEAF.ini
+share/dolphin-emu/sys/GameSettings/GQX.ini
+share/dolphin-emu/sys/GameSettings/GRB.ini
+share/dolphin-emu/sys/GameSettings/GREE08.ini
+share/dolphin-emu/sys/GameSettings/GRH.ini
+share/dolphin-emu/sys/GameSettings/GRJ.ini
+share/dolphin-emu/sys/GameSettings/GRK.ini
+share/dolphin-emu/sys/GameSettings/GRNE52.ini
+share/dolphin-emu/sys/GameSettings/GRQ.ini
+share/dolphin-emu/sys/GameSettings/GRS.ini
+share/dolphin-emu/sys/GameSettings/GRSPAF.ini
+share/dolphin-emu/sys/GameSettings/GRU.ini
+share/dolphin-emu/sys/GameSettings/GRUE78.ini
+share/dolphin-emu/sys/GameSettings/GRY.ini
+share/dolphin-emu/sys/GameSettings/GS2.ini
+share/dolphin-emu/sys/GameSettings/GS2E78.ini
+share/dolphin-emu/sys/GameSettings/GSAP01.ini
+share/dolphin-emu/sys/GameSettings/GSM.ini
+share/dolphin-emu/sys/GameSettings/GSN.ini
+share/dolphin-emu/sys/GameSettings/GSNE8P.ini
+share/dolphin-emu/sys/GameSettings/GSNP8P.ini
+share/dolphin-emu/sys/GameSettings/GSO.ini
+share/dolphin-emu/sys/GameSettings/GSQ.ini
+share/dolphin-emu/sys/GameSettings/GSR.ini
+share/dolphin-emu/sys/GameSettings/GSS.ini
+share/dolphin-emu/sys/GameSettings/GSSE8P.ini
+share/dolphin-emu/sys/GameSettings/GST.ini
+share/dolphin-emu/sys/GameSettings/GSW.ini
+share/dolphin-emu/sys/GameSettings/GSX.ini
+share/dolphin-emu/sys/GameSettings/GSZ.ini
+share/dolphin-emu/sys/GameSettings/GT3.ini
+share/dolphin-emu/sys/GameSettings/GT6.ini
+share/dolphin-emu/sys/GameSettings/GT6E70.ini
+share/dolphin-emu/sys/GameSettings/GT7.ini
+share/dolphin-emu/sys/GameSettings/GTEE01.ini
+share/dolphin-emu/sys/GameSettings/GTEP01.ini
+share/dolphin-emu/sys/GameSettings/GTK.ini
+share/dolphin-emu/sys/GameSettings/GTKE51.ini
+share/dolphin-emu/sys/GameSettings/GTO.ini
+share/dolphin-emu/sys/GameSettings/GTR.ini
+share/dolphin-emu/sys/GameSettings/GTSE4F.ini
+share/dolphin-emu/sys/GameSettings/GTW.ini
+share/dolphin-emu/sys/GameSettings/GTZ.ini
+share/dolphin-emu/sys/GameSettings/GUB.ini
+share/dolphin-emu/sys/GameSettings/GUM.ini
+share/dolphin-emu/sys/GameSettings/GUN.ini
+share/dolphin-emu/sys/GameSettings/GUNE5D.ini
+share/dolphin-emu/sys/GameSettings/GUP.ini
+share/dolphin-emu/sys/GameSettings/GUT.ini
+share/dolphin-emu/sys/GameSettings/GUZ.ini
+share/dolphin-emu/sys/GameSettings/GVC.ini
+share/dolphin-emu/sys/GameSettings/GVJ.ini
+share/dolphin-emu/sys/GameSettings/GVL.ini
+share/dolphin-emu/sys/GameSettings/GVO.ini
+share/dolphin-emu/sys/GameSettings/GVS.ini
+share/dolphin-emu/sys/GameSettings/GVS46E.ini
+share/dolphin-emu/sys/GameSettings/GVS46J.ini
+share/dolphin-emu/sys/GameSettings/GW2.ini
+share/dolphin-emu/sys/GameSettings/GW7.ini
+share/dolphin-emu/sys/GameSettings/GWJ.ini
+share/dolphin-emu/sys/GameSettings/GWL.ini
+share/dolphin-emu/sys/GameSettings/GWLE6L.ini
+share/dolphin-emu/sys/GameSettings/GWLX6L.ini
+share/dolphin-emu/sys/GameSettings/GWP.ini
+share/dolphin-emu/sys/GameSettings/GWQE52.ini
+share/dolphin-emu/sys/GameSettings/GWRE01.ini
+share/dolphin-emu/sys/GameSettings/GWRP01.ini
+share/dolphin-emu/sys/GameSettings/GWT.ini
+share/dolphin-emu/sys/GameSettings/GWWP01.ini
+share/dolphin-emu/sys/GameSettings/GWY.ini
+share/dolphin-emu/sys/GameSettings/GX3.ini
+share/dolphin-emu/sys/GameSettings/GXB.ini
+share/dolphin-emu/sys/GameSettings/GXG.ini
+share/dolphin-emu/sys/GameSettings/GXM.ini
+share/dolphin-emu/sys/GameSettings/GXN.ini
+share/dolphin-emu/sys/GameSettings/GXS.ini
+share/dolphin-emu/sys/GameSettings/GXSP8P.ini
+share/dolphin-emu/sys/GameSettings/GXU.ini
+share/dolphin-emu/sys/GameSettings/GXX.ini
+share/dolphin-emu/sys/GameSettings/GYQ.ini
+share/dolphin-emu/sys/GameSettings/GYT.ini
+share/dolphin-emu/sys/GameSettings/GZ2.ini
+share/dolphin-emu/sys/GameSettings/GZ2E01.ini
+share/dolphin-emu/sys/GameSettings/GZ2J01.ini
+share/dolphin-emu/sys/GameSettings/GZ2P01.ini
+share/dolphin-emu/sys/GameSettings/GZ3E70.ini
+share/dolphin-emu/sys/GameSettings/GZD.ini
+share/dolphin-emu/sys/GameSettings/GZE.ini
+share/dolphin-emu/sys/GameSettings/GZL.ini
+share/dolphin-emu/sys/GameSettings/GZLE01.ini
+share/dolphin-emu/sys/GameSettings/GZLJ01.ini
+share/dolphin-emu/sys/GameSettings/GZLP01.ini
+share/dolphin-emu/sys/GameSettings/GZP.ini
+share/dolphin-emu/sys/GameSettings/GZW.ini
+share/dolphin-emu/sys/GameSettings/HA8.ini
+share/dolphin-emu/sys/GameSettings/HA9.ini
+share/dolphin-emu/sys/GameSettings/HAB.ini
+share/dolphin-emu/sys/GameSettings/HAC.ini
+share/dolphin-emu/sys/GameSettings/HAT.ini
+share/dolphin-emu/sys/GameSettings/HBA.ini
+share/dolphin-emu/sys/GameSettings/HBB.ini
+share/dolphin-emu/sys/GameSettings/HBC.ini
+share/dolphin-emu/sys/GameSettings/HBD.ini
+share/dolphin-emu/sys/GameSettings/HBF.ini
+share/dolphin-emu/sys/GameSettings/HBG.ini
+share/dolphin-emu/sys/GameSettings/HBI.ini
+share/dolphin-emu/sys/GameSettings/HBK.ini
+share/dolphin-emu/sys/GameSettings/HCL.ini
+share/dolphin-emu/sys/GameSettings/HCS.ini
+share/dolphin-emu/sys/GameSettings/J.ini
+share/dolphin-emu/sys/GameSettings/JA7.ini
+share/dolphin-emu/sys/GameSettings/JAE.ini
+share/dolphin-emu/sys/GameSettings/JAL.ini
+share/dolphin-emu/sys/GameSettings/JBA.ini
+share/dolphin-emu/sys/GameSettings/JBC.ini
+share/dolphin-emu/sys/GameSettings/JBK.ini
+share/dolphin-emu/sys/GameSettings/JBQ.ini
+share/dolphin-emu/sys/GameSettings/JBS.ini
+share/dolphin-emu/sys/GameSettings/JBU.ini
+share/dolphin-emu/sys/GameSettings/JC8.ini
+share/dolphin-emu/sys/GameSettings/JCD.ini
+share/dolphin-emu/sys/GameSettings/JCL.ini
+share/dolphin-emu/sys/GameSettings/JCT.ini
+share/dolphin-emu/sys/GameSettings/JCX.ini
+share/dolphin-emu/sys/GameSettings/JCY.ini
+share/dolphin-emu/sys/GameSettings/JDV.ini
+share/dolphin-emu/sys/GameSettings/JEC.ini
+share/dolphin-emu/sys/GameSettings/L.ini
+share/dolphin-emu/sys/GameSettings/M.ini
+share/dolphin-emu/sys/GameSettings/MAK.ini
+share/dolphin-emu/sys/GameSettings/MB3.ini
+share/dolphin-emu/sys/GameSettings/MBA.ini
+share/dolphin-emu/sys/GameSettings/MCD.ini
+share/dolphin-emu/sys/GameSettings/MCS.ini
+share/dolphin-emu/sys/GameSettings/MCV.ini
+share/dolphin-emu/sys/GameSettings/MCW.ini
+share/dolphin-emu/sys/GameSettings/MCY.ini
+share/dolphin-emu/sys/GameSettings/MCZ.ini
+share/dolphin-emu/sys/GameSettings/N.ini
+share/dolphin-emu/sys/GameSettings/NAB.ini
+share/dolphin-emu/sys/GameSettings/NAC.ini
+share/dolphin-emu/sys/GameSettings/NAD.ini
+share/dolphin-emu/sys/GameSettings/NAE.ini
+share/dolphin-emu/sys/GameSettings/NAF.ini
+share/dolphin-emu/sys/GameSettings/NAH.ini
+share/dolphin-emu/sys/GameSettings/NAK.ini
+share/dolphin-emu/sys/GameSettings/NAL.ini
+share/dolphin-emu/sys/GameSettings/NAR.ini
+share/dolphin-emu/sys/GameSettings/P.ini
+share/dolphin-emu/sys/GameSettings/P2M.ini
+share/dolphin-emu/sys/GameSettings/P4B.ini
+share/dolphin-emu/sys/GameSettings/PC6.ini
+share/dolphin-emu/sys/GameSettings/PCK.ini
+share/dolphin-emu/sys/GameSettings/PCS.ini
+share/dolphin-emu/sys/GameSettings/PGS.ini
+share/dolphin-emu/sys/GameSettings/PNJ.ini
+share/dolphin-emu/sys/GameSettings/PRJ.ini
+share/dolphin-emu/sys/GameSettings/PZL.ini
+share/dolphin-emu/sys/GameSettings/PZLE01.ini
+share/dolphin-emu/sys/GameSettings/Q.ini
+share/dolphin-emu/sys/GameSettings/R22.ini
+share/dolphin-emu/sys/GameSettings/R25.ini
+share/dolphin-emu/sys/GameSettings/R2G.ini
+share/dolphin-emu/sys/GameSettings/R38.ini
+share/dolphin-emu/sys/GameSettings/R3A.ini
+share/dolphin-emu/sys/GameSettings/R3B.ini
+share/dolphin-emu/sys/GameSettings/R3D.ini
+share/dolphin-emu/sys/GameSettings/R3M.ini
+share/dolphin-emu/sys/GameSettings/R3N.ini
+share/dolphin-emu/sys/GameSettings/R3O.ini
+share/dolphin-emu/sys/GameSettings/R3R.ini
+share/dolphin-emu/sys/GameSettings/R44.ini
+share/dolphin-emu/sys/GameSettings/R4C.ini
+share/dolphin-emu/sys/GameSettings/R4E.ini
+share/dolphin-emu/sys/GameSettings/R4F.ini
+share/dolphin-emu/sys/GameSettings/R4Z.ini
+share/dolphin-emu/sys/GameSettings/R55.ini
+share/dolphin-emu/sys/GameSettings/R59.ini
+share/dolphin-emu/sys/GameSettings/R5D.ini
+share/dolphin-emu/sys/GameSettings/R5I.ini
+share/dolphin-emu/sys/GameSettings/R5T.ini
+share/dolphin-emu/sys/GameSettings/R5W.ini
+share/dolphin-emu/sys/GameSettings/R64.ini
+share/dolphin-emu/sys/GameSettings/R6B.ini
+share/dolphin-emu/sys/GameSettings/R6Q.ini
+share/dolphin-emu/sys/GameSettings/R6T.ini
+share/dolphin-emu/sys/GameSettings/R6Y.ini
+share/dolphin-emu/sys/GameSettings/R7E.ini
+share/dolphin-emu/sys/GameSettings/R7G.ini
+share/dolphin-emu/sys/GameSettings/R7P.ini
+share/dolphin-emu/sys/GameSettings/R7PE01.ini
+share/dolphin-emu/sys/GameSettings/R7PP01.ini
+share/dolphin-emu/sys/GameSettings/R7X.ini
+share/dolphin-emu/sys/GameSettings/R84.ini
+share/dolphin-emu/sys/GameSettings/R8A.ini
+share/dolphin-emu/sys/GameSettings/R8J.ini
+share/dolphin-emu/sys/GameSettings/R8L.ini
+share/dolphin-emu/sys/GameSettings/R8P.ini
+share/dolphin-emu/sys/GameSettings/R92.ini
+share/dolphin-emu/sys/GameSettings/R9D.ini
+share/dolphin-emu/sys/GameSettings/R9I.ini
+share/dolphin-emu/sys/GameSettings/RB7.ini
+share/dolphin-emu/sys/GameSettings/RBB.ini
+share/dolphin-emu/sys/GameSettings/RBH.ini
+share/dolphin-emu/sys/GameSettings/RBI.ini
+share/dolphin-emu/sys/GameSettings/RBK.ini
+share/dolphin-emu/sys/GameSettings/RBL.ini
+share/dolphin-emu/sys/GameSettings/RBO.ini
+share/dolphin-emu/sys/GameSettings/RBR.ini
+share/dolphin-emu/sys/GameSettings/RBT.ini
+share/dolphin-emu/sys/GameSettings/RBW.ini
+share/dolphin-emu/sys/GameSettings/RCC.ini
+share/dolphin-emu/sys/GameSettings/RCJ.ini
+share/dolphin-emu/sys/GameSettings/RCL.ini
+share/dolphin-emu/sys/GameSettings/RCP.ini
+share/dolphin-emu/sys/GameSettings/RDB.ini
+share/dolphin-emu/sys/GameSettings/RDF.ini
+share/dolphin-emu/sys/GameSettings/RDS.ini
+share/dolphin-emu/sys/GameSettings/RED.ini
+share/dolphin-emu/sys/GameSettings/RELJAB.ini
+share/dolphin-emu/sys/GameSettings/RFB.ini
+share/dolphin-emu/sys/GameSettings/RFC.ini
+share/dolphin-emu/sys/GameSettings/RFF.ini
+share/dolphin-emu/sys/GameSettings/RFQ.ini
+share/dolphin-emu/sys/GameSettings/RFS.ini
+share/dolphin-emu/sys/GameSettings/RG2.ini
+share/dolphin-emu/sys/GameSettings/RG4.ini
+share/dolphin-emu/sys/GameSettings/RG6.ini
+share/dolphin-emu/sys/GameSettings/RGB.ini
+share/dolphin-emu/sys/GameSettings/RGM.ini
+share/dolphin-emu/sys/GameSettings/RGQ.ini
+share/dolphin-emu/sys/GameSettings/RGQE70.ini
+share/dolphin-emu/sys/GameSettings/RGS.ini
+share/dolphin-emu/sys/GameSettings/RGW.ini
+share/dolphin-emu/sys/GameSettings/RH8.ini
+share/dolphin-emu/sys/GameSettings/RHO.ini
+share/dolphin-emu/sys/GameSettings/RI3.ini
+share/dolphin-emu/sys/GameSettings/RIP.ini
+share/dolphin-emu/sys/GameSettings/RIU.ini
+share/dolphin-emu/sys/GameSettings/RIZ.ini
+share/dolphin-emu/sys/GameSettings/RJ2.ini
+share/dolphin-emu/sys/GameSettings/RJC.ini
+share/dolphin-emu/sys/GameSettings/RK2.ini
+share/dolphin-emu/sys/GameSettings/RKD.ini
+share/dolphin-emu/sys/GameSettings/RLJ.ini
+share/dolphin-emu/sys/GameSettings/RLS.ini
+share/dolphin-emu/sys/GameSettings/RLT.ini
+share/dolphin-emu/sys/GameSettings/RM3.ini
+share/dolphin-emu/sys/GameSettings/RM8.ini
+share/dolphin-emu/sys/GameSettings/RM9.ini
+share/dolphin-emu/sys/GameSettings/RMC.ini
+share/dolphin-emu/sys/GameSettings/RMG.ini
+share/dolphin-emu/sys/GameSettings/RMH.ini
+share/dolphin-emu/sys/GameSettings/RMHE08.ini
+share/dolphin-emu/sys/GameSettings/RMHJ08.ini
+share/dolphin-emu/sys/GameSettings/RMHP08.ini
+share/dolphin-emu/sys/GameSettings/RMK.ini
+share/dolphin-emu/sys/GameSettings/RML.ini
+share/dolphin-emu/sys/GameSettings/RMO.ini
+share/dolphin-emu/sys/GameSettings/RMP.ini
+share/dolphin-emu/sys/GameSettings/RNO.ini
+share/dolphin-emu/sys/GameSettings/RNX.ini
+share/dolphin-emu/sys/GameSettings/RO2P7N.ini
+share/dolphin-emu/sys/GameSettings/RO3.ini
+share/dolphin-emu/sys/GameSettings/RO9.ini
+share/dolphin-emu/sys/GameSettings/ROA.ini
+share/dolphin-emu/sys/GameSettings/ROD.ini
+share/dolphin-emu/sys/GameSettings/ROL.ini
+share/dolphin-emu/sys/GameSettings/RON.ini
+share/dolphin-emu/sys/GameSettings/ROU.ini
+share/dolphin-emu/sys/GameSettings/ROW.ini
+share/dolphin-emu/sys/GameSettings/RPB.ini
+share/dolphin-emu/sys/GameSettings/RPG.ini
+share/dolphin-emu/sys/GameSettings/RPJ.ini
+share/dolphin-emu/sys/GameSettings/RPO.ini
+share/dolphin-emu/sys/GameSettings/RPY.ini
+share/dolphin-emu/sys/GameSettings/RQ6.ini
+share/dolphin-emu/sys/GameSettings/RQR.ini
+share/dolphin-emu/sys/GameSettings/RQW.ini
+share/dolphin-emu/sys/GameSettings/RRB.ini
+share/dolphin-emu/sys/GameSettings/RRK.ini
+share/dolphin-emu/sys/GameSettings/RRP.ini
+share/dolphin-emu/sys/GameSettings/RRZ.ini
+share/dolphin-emu/sys/GameSettings/RS5.ini
+share/dolphin-emu/sys/GameSettings/RSB.ini
+share/dolphin-emu/sys/GameSettings/RSBE01.ini
+share/dolphin-emu/sys/GameSettings/RSBP01.ini
+share/dolphin-emu/sys/GameSettings/RSH.ini
+share/dolphin-emu/sys/GameSettings/RSI.ini
+share/dolphin-emu/sys/GameSettings/RSL.ini
+share/dolphin-emu/sys/GameSettings/RSM.ini
+share/dolphin-emu/sys/GameSettings/RSN.ini
+share/dolphin-emu/sys/GameSettings/RSP.ini
+share/dolphin-emu/sys/GameSettings/RSX.ini
+share/dolphin-emu/sys/GameSettings/RT3.ini
+share/dolphin-emu/sys/GameSettings/RT4.ini
+share/dolphin-emu/sys/GameSettings/RT8.ini
+share/dolphin-emu/sys/GameSettings/RTM.ini
+share/dolphin-emu/sys/GameSettings/RTR.ini
+share/dolphin-emu/sys/GameSettings/RTU.ini
+share/dolphin-emu/sys/GameSettings/RTZ.ini
+share/dolphin-emu/sys/GameSettings/RUU.ini
+share/dolphin-emu/sys/GameSettings/RWO.ini
+share/dolphin-emu/sys/GameSettings/RWS.ini
+share/dolphin-emu/sys/GameSettings/RX3.ini
+share/dolphin-emu/sys/GameSettings/RX4E4Z.ini
+share/dolphin-emu/sys/GameSettings/RXX.ini
+share/dolphin-emu/sys/GameSettings/RYB.ini
+share/dolphin-emu/sys/GameSettings/RYW.ini
+share/dolphin-emu/sys/GameSettings/RZD.ini
+share/dolphin-emu/sys/GameSettings/RZDE01r0.ini
+share/dolphin-emu/sys/GameSettings/RZDE01r2.ini
+share/dolphin-emu/sys/GameSettings/RZDJ01.ini
+share/dolphin-emu/sys/GameSettings/RZDP01.ini
+share/dolphin-emu/sys/GameSettings/RZF.ini
+share/dolphin-emu/sys/GameSettings/RZJ.ini
+share/dolphin-emu/sys/GameSettings/RZJP69.ini
+share/dolphin-emu/sys/GameSettings/RZO.ini
+share/dolphin-emu/sys/GameSettings/RZT.ini
+share/dolphin-emu/sys/GameSettings/RZY.ini
+share/dolphin-emu/sys/GameSettings/S2C.ini
+share/dolphin-emu/sys/GameSettings/S2E.ini
+share/dolphin-emu/sys/GameSettings/S2L.ini
+share/dolphin-emu/sys/GameSettings/S2W.ini
+share/dolphin-emu/sys/GameSettings/S3B.ini
+share/dolphin-emu/sys/GameSettings/S59.ini
+share/dolphin-emu/sys/GameSettings/S72.ini
+share/dolphin-emu/sys/GameSettings/S75.ini
+share/dolphin-emu/sys/GameSettings/SAK.ini
+share/dolphin-emu/sys/GameSettings/SAL.ini
+share/dolphin-emu/sys/GameSettings/SB3.ini
+share/dolphin-emu/sys/GameSettings/SB4.ini
+share/dolphin-emu/sys/GameSettings/SBD.ini
+share/dolphin-emu/sys/GameSettings/SBX.ini
+share/dolphin-emu/sys/GameSettings/SC2E8P.ini
+share/dolphin-emu/sys/GameSettings/SC7.ini
+share/dolphin-emu/sys/GameSettings/SCA.ini
+share/dolphin-emu/sys/GameSettings/SCY.ini
+share/dolphin-emu/sys/GameSettings/SD2.ini
+share/dolphin-emu/sys/GameSettings/SD2J01.ini
+share/dolphin-emu/sys/GameSettings/SDB.ini
+share/dolphin-emu/sys/GameSettings/SDM.ini
+share/dolphin-emu/sys/GameSettings/SDN.ini
+share/dolphin-emu/sys/GameSettings/SDW.ini
+share/dolphin-emu/sys/GameSettings/SE2.ini
+share/dolphin-emu/sys/GameSettings/SEA.ini
+share/dolphin-emu/sys/GameSettings/SEM.ini
+share/dolphin-emu/sys/GameSettings/SER.ini
+share/dolphin-emu/sys/GameSettings/SF8.ini
+share/dolphin-emu/sys/GameSettings/SFI.ini
+share/dolphin-emu/sys/GameSettings/SFP.ini
+share/dolphin-emu/sys/GameSettings/SG8.ini
+share/dolphin-emu/sys/GameSettings/SGV.ini
+share/dolphin-emu/sys/GameSettings/SH6.ini
+share/dolphin-emu/sys/GameSettings/SHL.ini
+share/dolphin-emu/sys/GameSettings/SHW.ini
+share/dolphin-emu/sys/GameSettings/SIL.ini
+share/dolphin-emu/sys/GameSettings/SJB.ini
+share/dolphin-emu/sys/GameSettings/SJD.ini
+share/dolphin-emu/sys/GameSettings/SJDJ01.ini
+share/dolphin-emu/sys/GameSettings/SJE.ini
+share/dolphin-emu/sys/GameSettings/SJX.ini
+share/dolphin-emu/sys/GameSettings/SK3.ini
+share/dolphin-emu/sys/GameSettings/SKA.ini
+share/dolphin-emu/sys/GameSettings/SKC.ini
+share/dolphin-emu/sys/GameSettings/SKG.ini
+share/dolphin-emu/sys/GameSettings/SKJ.ini
+share/dolphin-emu/sys/GameSettings/SKO.ini
+share/dolphin-emu/sys/GameSettings/SKV.ini
+share/dolphin-emu/sys/GameSettings/SL2.ini
+share/dolphin-emu/sys/GameSettings/SLS.ini
+share/dolphin-emu/sys/GameSettings/SLW.ini
+share/dolphin-emu/sys/GameSettings/SMB.ini
+share/dolphin-emu/sys/GameSettings/SMF.ini
+share/dolphin-emu/sys/GameSettings/SMN.ini
+share/dolphin-emu/sys/GameSettings/SMNE01.ini
+share/dolphin-emu/sys/GameSettings/SMNP01.ini
+share/dolphin-emu/sys/GameSettings/SMO.ini
+share/dolphin-emu/sys/GameSettings/SNC.ini
+share/dolphin-emu/sys/GameSettings/SND.ini
+share/dolphin-emu/sys/GameSettings/SNG.ini
+share/dolphin-emu/sys/GameSettings/SNJ.ini
+share/dolphin-emu/sys/GameSettings/SNJE69.ini
+share/dolphin-emu/sys/GameSettings/SNS.ini
+share/dolphin-emu/sys/GameSettings/SNT.ini
+share/dolphin-emu/sys/GameSettings/SNY.ini
+share/dolphin-emu/sys/GameSettings/SOM.ini
+share/dolphin-emu/sys/GameSettings/SOS.ini
+share/dolphin-emu/sys/GameSettings/SOU.ini
+share/dolphin-emu/sys/GameSettings/SPD.ini
+share/dolphin-emu/sys/GameSettings/SPR.ini
+share/dolphin-emu/sys/GameSettings/SPT.ini
+share/dolphin-emu/sys/GameSettings/SPV.ini
+share/dolphin-emu/sys/GameSettings/SQD.ini
+share/dolphin-emu/sys/GameSettings/SQI.ini
+share/dolphin-emu/sys/GameSettings/SSQ.ini
+share/dolphin-emu/sys/GameSettings/SSR.ini
+share/dolphin-emu/sys/GameSettings/SST.ini
+share/dolphin-emu/sys/GameSettings/SSZ.ini
+share/dolphin-emu/sys/GameSettings/STS.ini
+share/dolphin-emu/sys/GameSettings/SU7.ini
+share/dolphin-emu/sys/GameSettings/SUK.ini
+share/dolphin-emu/sys/GameSettings/SUKE01.ini
+share/dolphin-emu/sys/GameSettings/SUKJ01.ini
+share/dolphin-emu/sys/GameSettings/SUU.ini
+share/dolphin-emu/sys/GameSettings/SUW.ini
+share/dolphin-emu/sys/GameSettings/SVB.ini
+share/dolphin-emu/sys/GameSettings/SVM.ini
+share/dolphin-emu/sys/GameSettings/SVV.ini
+share/dolphin-emu/sys/GameSettings/SVX.ini
+share/dolphin-emu/sys/GameSettings/SVZ.ini
+share/dolphin-emu/sys/GameSettings/SX3.ini
+share/dolphin-emu/sys/GameSettings/SX4.ini
+share/dolphin-emu/sys/GameSettings/SX7.ini
+share/dolphin-emu/sys/GameSettings/SX8.ini
+share/dolphin-emu/sys/GameSettings/SXC.ini
+share/dolphin-emu/sys/GameSettings/SZB.ini
+share/dolphin-emu/sys/GameSettings/W2G.ini
+share/dolphin-emu/sys/GameSettings/W3G.ini
+share/dolphin-emu/sys/GameSettings/W3M.ini
+share/dolphin-emu/sys/GameSettings/WA2.ini
+share/dolphin-emu/sys/GameSettings/WB2.ini
+share/dolphin-emu/sys/GameSettings/WB3.ini
+share/dolphin-emu/sys/GameSettings/WB4.ini
+share/dolphin-emu/sys/GameSettings/WB6.ini
+share/dolphin-emu/sys/GameSettings/WB7.ini
+share/dolphin-emu/sys/GameSettings/WB8.ini
+share/dolphin-emu/sys/GameSettings/WBX.ini
+share/dolphin-emu/sys/GameSettings/WBY.ini
+share/dolphin-emu/sys/GameSettings/WBZ.ini
+share/dolphin-emu/sys/GameSettings/WC6.ini
+share/dolphin-emu/sys/GameSettings/WCH.ini
+share/dolphin-emu/sys/GameSettings/WD9.ini
+share/dolphin-emu/sys/GameSettings/WDO.ini
+share/dolphin-emu/sys/GameSettings/WF4.ini
+share/dolphin-emu/sys/GameSettings/WFH.ini
+share/dolphin-emu/sys/GameSettings/WFL.ini
+share/dolphin-emu/sys/GameSettings/WFU.ini
+share/dolphin-emu/sys/GameSettings/WGG.ini
+share/dolphin-emu/sys/GameSettings/WGL.ini
+share/dolphin-emu/sys/GameSettings/WGS.ini
+share/dolphin-emu/sys/GameSettings/WHF.ini
+share/dolphin-emu/sys/GameSettings/WHP.ini
+share/dolphin-emu/sys/GameSettings/WHU.ini
+share/dolphin-emu/sys/GameSettings/WHW.ini
+share/dolphin-emu/sys/GameSettings/WIB.ini
+share/dolphin-emu/sys/GameSettings/WJA.ini
+share/dolphin-emu/sys/GameSettings/WKD.ini
+share/dolphin-emu/sys/GameSettings/WLE.ini
+share/dolphin-emu/sys/GameSettings/WLN.ini
+share/dolphin-emu/sys/GameSettings/WLO.ini
+share/dolphin-emu/sys/GameSettings/WLZ.ini
+share/dolphin-emu/sys/GameSettings/WMA.ini
+share/dolphin-emu/sys/GameSettings/WMB.ini
+share/dolphin-emu/sys/GameSettings/WMG.ini
+share/dolphin-emu/sys/GameSettings/WOY.ini
+share/dolphin-emu/sys/GameSettings/WP4.ini
+share/dolphin-emu/sys/GameSettings/WPA.ini
+share/dolphin-emu/sys/GameSettings/WPF.ini
+share/dolphin-emu/sys/GameSettings/WPH.ini
+share/dolphin-emu/sys/GameSettings/WPJ.ini
+share/dolphin-emu/sys/GameSettings/WPS.ini
+share/dolphin-emu/sys/GameSettings/WPU.ini
+share/dolphin-emu/sys/GameSettings/WR5.ini
+share/dolphin-emu/sys/GameSettings/WR9.ini
+share/dolphin-emu/sys/GameSettings/WRI.ini
+share/dolphin-emu/sys/GameSettings/WRX.ini
+share/dolphin-emu/sys/GameSettings/WSL.ini
+share/dolphin-emu/sys/GameSettings/WSR.ini
+share/dolphin-emu/sys/GameSettings/WTE.ini
+share/dolphin-emu/sys/GameSettings/WTK.ini
+share/dolphin-emu/sys/GameSettings/WTU.ini
+share/dolphin-emu/sys/GameSettings/WTX.ini
+share/dolphin-emu/sys/GameSettings/WWA.ini
+share/dolphin-emu/sys/GameSettings/WXB.ini
+share/dolphin-emu/sys/GameSettings/WXP.ini
+share/dolphin-emu/sys/GameSettings/WXR.ini
+share/dolphin-emu/sys/GameSettings/WYM.ini
+share/dolphin-emu/sys/GameSettings/WZI.ini
+share/dolphin-emu/sys/Maps/
+share/dolphin-emu/sys/Maps/GFZE01.map
+share/dolphin-emu/sys/Maps/GMBE8P.map
+share/dolphin-emu/sys/Resources/
+share/dolphin-emu/sys/Resources/Dolphin.png
+share/dolphin-emu/sys/Resources/Flag_Australia.png
+share/dolphin-emu/sys/Resources/Flag_Australia@2x.png
+share/dolphin-emu/sys/Resources/Flag_Australia@4x.png
+share/dolphin-emu/sys/Resources/Flag_Europe.png
+share/dolphin-emu/sys/Resources/Flag_Europe@2x.png
+share/dolphin-emu/sys/Resources/Flag_Europe@4x.png
+share/dolphin-emu/sys/Resources/Flag_France.png
+share/dolphin-emu/sys/Resources/Flag_France@2x.png
+share/dolphin-emu/sys/Resources/Flag_France@4x.png
+share/dolphin-emu/sys/Resources/Flag_Germany.png
+share/dolphin-emu/sys/Resources/Flag_Germany@2x.png
+share/dolphin-emu/sys/Resources/Flag_Germany@4x.png
+share/dolphin-emu/sys/Resources/Flag_International.png
+share/dolphin-emu/sys/Resources/Flag_International@2x.png
+share/dolphin-emu/sys/Resources/Flag_International@4x.png
+share/dolphin-emu/sys/Resources/Flag_Italy.png
+share/dolphin-emu/sys/Resources/Flag_Italy@2x.png
+share/dolphin-emu/sys/Resources/Flag_Italy@4x.png
+share/dolphin-emu/sys/Resources/Flag_Japan.png
+share/dolphin-emu/sys/Resources/Flag_Japan@2x.png
+share/dolphin-emu/sys/Resources/Flag_Japan@4x.png
+share/dolphin-emu/sys/Resources/Flag_Korea.png
+share/dolphin-emu/sys/Resources/Flag_Korea@2x.png
+share/dolphin-emu/sys/Resources/Flag_Korea@4x.png
+share/dolphin-emu/sys/Resources/Flag_Netherlands.png
+share/dolphin-emu/sys/Resources/Flag_Netherlands@2x.png
+share/dolphin-emu/sys/Resources/Flag_Netherlands@4x.png
+share/dolphin-emu/sys/Resources/Flag_Russia.png
+share/dolphin-emu/sys/Resources/Flag_Russia@2x.png
+share/dolphin-emu/sys/Resources/Flag_Russia@4x.png
+share/dolphin-emu/sys/Resources/Flag_Spain.png
+share/dolphin-emu/sys/Resources/Flag_Spain@2x.png
+share/dolphin-emu/sys/Resources/Flag_Spain@4x.png
+share/dolphin-emu/sys/Resources/Flag_Taiwan.png
+share/dolphin-emu/sys/Resources/Flag_Taiwan@2x.png
+share/dolphin-emu/sys/Resources/Flag_Taiwan@4x.png
+share/dolphin-emu/sys/Resources/Flag_USA.png
+share/dolphin-emu/sys/Resources/Flag_USA@2x.png
+share/dolphin-emu/sys/Resources/Flag_USA@4x.png
+share/dolphin-emu/sys/Resources/Flag_Unknown.png
+share/dolphin-emu/sys/Resources/Flag_Unknown@2x.png
+share/dolphin-emu/sys/Resources/Flag_Unknown@4x.png
+share/dolphin-emu/sys/Resources/Platform_File.png
+share/dolphin-emu/sys/Resources/Platform_File@2x.png
+share/dolphin-emu/sys/Resources/Platform_File@4x.png
+share/dolphin-emu/sys/Resources/Platform_Gamecube.png
+share/dolphin-emu/sys/Resources/Platform_Gamecube@2x.png
+share/dolphin-emu/sys/Resources/Platform_Gamecube@4x.png
+share/dolphin-emu/sys/Resources/Platform_Wad.png
+share/dolphin-emu/sys/Resources/Platform_Wad@2x.png
+share/dolphin-emu/sys/Resources/Platform_Wad@4x.png
+share/dolphin-emu/sys/Resources/Platform_Wii.png
+share/dolphin-emu/sys/Resources/Platform_Wii@2x.png
+share/dolphin-emu/sys/Resources/Platform_Wii@4x.png
+share/dolphin-emu/sys/Resources/dolphin_logo.png
+share/dolphin-emu/sys/Resources/dolphin_logo@2x.png
+share/dolphin-emu/sys/Resources/isoproperties_disc.png
+share/dolphin-emu/sys/Resources/isoproperties_file.png
+share/dolphin-emu/sys/Resources/isoproperties_folder.png
+share/dolphin-emu/sys/Resources/nobanner.png
+share/dolphin-emu/sys/Resources/nobanner@2x.png
+share/dolphin-emu/sys/Shaders/
+share/dolphin-emu/sys/Shaders/16bit.glsl
+share/dolphin-emu/sys/Shaders/32bit.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/
+share/dolphin-emu/sys/Shaders/Anaglyph/dubois-LCD-Amber-Blue.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/dubois-LCD-Green-Magenta.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/dubois.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/fullcolor.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/grayscale.glsl
+share/dolphin-emu/sys/Shaders/Anaglyph/grayscale2.glsl
+share/dolphin-emu/sys/Shaders/FXAA.glsl
+share/dolphin-emu/sys/Shaders/acidmetal.glsl
+share/dolphin-emu/sys/Shaders/acidtrip.glsl
+share/dolphin-emu/sys/Shaders/acidtrip2.glsl
+share/dolphin-emu/sys/Shaders/asciiart.glsl
+share/dolphin-emu/sys/Shaders/auto_toon.glsl
+share/dolphin-emu/sys/Shaders/auto_toon2.glsl
+share/dolphin-emu/sys/Shaders/bad_bloom.glsl
+share/dolphin-emu/sys/Shaders/brighten.glsl
+share/dolphin-emu/sys/Shaders/chrismas.glsl
+share/dolphin-emu/sys/Shaders/cool1.glsl
+share/dolphin-emu/sys/Shaders/darkerbrighter.glsl
+share/dolphin-emu/sys/Shaders/emboss.glsl
+share/dolphin-emu/sys/Shaders/fire.glsl
+share/dolphin-emu/sys/Shaders/fire2.glsl
+share/dolphin-emu/sys/Shaders/firewater.glsl
+share/dolphin-emu/sys/Shaders/grayscale.glsl
+share/dolphin-emu/sys/Shaders/grayscale2.glsl
+share/dolphin-emu/sys/Shaders/invert.glsl
+share/dolphin-emu/sys/Shaders/invert_blue.glsl
+share/dolphin-emu/sys/Shaders/invertedoutline.glsl
+share/dolphin-emu/sys/Shaders/lens_distortion.glsl
+share/dolphin-emu/sys/Shaders/mad_world.glsl
+share/dolphin-emu/sys/Shaders/nightvision.glsl
+share/dolphin-emu/sys/Shaders/nightvision2.glsl
+share/dolphin-emu/sys/Shaders/nightvision2scanlines.glsl
+share/dolphin-emu/sys/Shaders/posterize.glsl
+share/dolphin-emu/sys/Shaders/posterize2.glsl
+share/dolphin-emu/sys/Shaders/primarycolors.glsl
+share/dolphin-emu/sys/Shaders/sepia.glsl
+share/dolphin-emu/sys/Shaders/sketchy.glsl
+share/dolphin-emu/sys/Shaders/spookey1.glsl
+share/dolphin-emu/sys/Shaders/spookey2.glsl
+share/dolphin-emu/sys/Shaders/sunset.glsl
+share/dolphin-emu/sys/Shaders/swap_RGB_BGR.glsl
+share/dolphin-emu/sys/Shaders/swap_RGB_BRG.glsl
+share/dolphin-emu/sys/Shaders/swap_RGB_GBR.glsl
+share/dolphin-emu/sys/Shaders/swap_RGB_GRB.glsl
+share/dolphin-emu/sys/Shaders/swap_RGB_RBG.glsl
+share/dolphin-emu/sys/Shaders/toxic.glsl
+share/dolphin-emu/sys/Themes/
+share/dolphin-emu/sys/Themes/Clean/
+share/dolphin-emu/sys/Themes/Clean Blue/
+share/dolphin-emu/sys/Themes/Clean Blue/browse.png
+share/dolphin-emu/sys/Themes/Clean Blue/browse@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/browse@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/classic.png
+share/dolphin-emu/sys/Themes/Clean Blue/classic@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/classic@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/config.png
+share/dolphin-emu/sys/Themes/Clean Blue/config@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/config@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_memorycheck.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_memorycheck@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_add_memorycheck@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_clear.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_clear@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_clear@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_delete.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_delete@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_delete@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_load.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_load@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_load@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_save.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_save@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_set_pc.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_set_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_set_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_show_pc.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_show_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_show_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_skip.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_skip@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_skip@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_in.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_in@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_in@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_out.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_out@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_out@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_over.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_over@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/debugger_step_over@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/fullscreen.png
+share/dolphin-emu/sys/Themes/Clean Blue/fullscreen@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/fullscreen@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/gcpad.png
+share/dolphin-emu/sys/Themes/Clean Blue/gcpad@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/gcpad@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/graphics.png
+share/dolphin-emu/sys/Themes/Clean Blue/graphics@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/graphics@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/open.png
+share/dolphin-emu/sys/Themes/Clean Blue/open@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/open@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/pause.png
+share/dolphin-emu/sys/Themes/Clean Blue/pause@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/pause@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/play.png
+share/dolphin-emu/sys/Themes/Clean Blue/play@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/play@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/refresh.png
+share/dolphin-emu/sys/Themes/Clean Blue/refresh@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/refresh@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/screenshot.png
+share/dolphin-emu/sys/Themes/Clean Blue/screenshot@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/screenshot@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/stop.png
+share/dolphin-emu/sys/Themes/Clean Blue/stop@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/stop@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/wiimote.png
+share/dolphin-emu/sys/Themes/Clean Blue/wiimote@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/wiimote@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/
+share/dolphin-emu/sys/Themes/Clean Emerald/browse.png
+share/dolphin-emu/sys/Themes/Clean Emerald/browse@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/browse@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/classic.png
+share/dolphin-emu/sys/Themes/Clean Emerald/classic@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/classic@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/config.png
+share/dolphin-emu/sys/Themes/Clean Emerald/config@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/config@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_memorycheck.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_memorycheck@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_add_memorycheck@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_clear.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_clear@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_clear@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_delete.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_delete@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_delete@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_load.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_load@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_load@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_save.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_save@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_set_pc.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_set_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_set_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_show_pc.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_show_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_show_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_skip.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_skip@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_skip@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_in.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_in@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_in@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_out.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_out@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_out@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_over.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_over@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/debugger_step_over@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/fullscreen.png
+share/dolphin-emu/sys/Themes/Clean Emerald/fullscreen@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/fullscreen@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/gcpad.png
+share/dolphin-emu/sys/Themes/Clean Emerald/gcpad@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/gcpad@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/graphics.png
+share/dolphin-emu/sys/Themes/Clean Emerald/graphics@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/graphics@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/open.png
+share/dolphin-emu/sys/Themes/Clean Emerald/open@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/open@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/pause.png
+share/dolphin-emu/sys/Themes/Clean Emerald/pause@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/pause@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/play.png
+share/dolphin-emu/sys/Themes/Clean Emerald/play@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/play@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/refresh.png
+share/dolphin-emu/sys/Themes/Clean Emerald/refresh@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/refresh@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/screenshot.png
+share/dolphin-emu/sys/Themes/Clean Emerald/screenshot@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/screenshot@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/stop.png
+share/dolphin-emu/sys/Themes/Clean Emerald/stop@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/stop@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/wiimote.png
+share/dolphin-emu/sys/Themes/Clean Emerald/wiimote@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/wiimote@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/
+share/dolphin-emu/sys/Themes/Clean Lite/browse.png
+share/dolphin-emu/sys/Themes/Clean Lite/browse@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/browse@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/classic.png
+share/dolphin-emu/sys/Themes/Clean Lite/classic@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/classic@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/config.png
+share/dolphin-emu/sys/Themes/Clean Lite/config@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/config@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_memorycheck.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_memorycheck@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_add_memorycheck@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_clear.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_clear@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_clear@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_delete.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_delete@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_delete@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_load.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_load@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_load@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_save.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_save@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_set_pc.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_set_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_set_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_show_pc.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_show_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_show_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_skip.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_skip@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_skip@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_in.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_in@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_in@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_out.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_out@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_out@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_over.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_over@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/debugger_step_over@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/fullscreen.png
+share/dolphin-emu/sys/Themes/Clean Lite/fullscreen@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/fullscreen@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/gcpad.png
+share/dolphin-emu/sys/Themes/Clean Lite/gcpad@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/gcpad@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/graphics.png
+share/dolphin-emu/sys/Themes/Clean Lite/graphics@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/graphics@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/open.png
+share/dolphin-emu/sys/Themes/Clean Lite/open@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/open@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/pause.png
+share/dolphin-emu/sys/Themes/Clean Lite/pause@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/pause@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/play.png
+share/dolphin-emu/sys/Themes/Clean Lite/play@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/play@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/refresh.png
+share/dolphin-emu/sys/Themes/Clean Lite/refresh@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/refresh@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/screenshot.png
+share/dolphin-emu/sys/Themes/Clean Lite/screenshot@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/screenshot@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/stop.png
+share/dolphin-emu/sys/Themes/Clean Lite/stop@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/stop@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/wiimote.png
+share/dolphin-emu/sys/Themes/Clean Lite/wiimote@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/wiimote@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/
+share/dolphin-emu/sys/Themes/Clean Pink/browse.png
+share/dolphin-emu/sys/Themes/Clean Pink/browse@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/browse@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/classic.png
+share/dolphin-emu/sys/Themes/Clean Pink/classic@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/classic@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/config.png
+share/dolphin-emu/sys/Themes/Clean Pink/config@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/config@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_memorycheck.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_memorycheck@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_add_memorycheck@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_clear.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_clear@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_clear@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_delete.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_delete@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_delete@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_load.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_load@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_load@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_save.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_save@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_set_pc.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_set_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_set_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_show_pc.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_show_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_show_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_skip.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_skip@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_skip@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_in.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_in@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_in@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_out.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_out@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_out@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_over.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_over@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/debugger_step_over@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/fullscreen.png
+share/dolphin-emu/sys/Themes/Clean Pink/fullscreen@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/fullscreen@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/gcpad.png
+share/dolphin-emu/sys/Themes/Clean Pink/gcpad@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/gcpad@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/graphics.png
+share/dolphin-emu/sys/Themes/Clean Pink/graphics@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/graphics@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/open.png
+share/dolphin-emu/sys/Themes/Clean Pink/open@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/open@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/pause.png
+share/dolphin-emu/sys/Themes/Clean Pink/pause@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/pause@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/play.png
+share/dolphin-emu/sys/Themes/Clean Pink/play@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/play@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/refresh.png
+share/dolphin-emu/sys/Themes/Clean Pink/refresh@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/refresh@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/screenshot.png
+share/dolphin-emu/sys/Themes/Clean Pink/screenshot@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/screenshot@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/stop.png
+share/dolphin-emu/sys/Themes/Clean Pink/stop@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/stop@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/wiimote.png
+share/dolphin-emu/sys/Themes/Clean Pink/wiimote@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/wiimote@4x.png
+share/dolphin-emu/sys/Themes/Clean/browse.png
+share/dolphin-emu/sys/Themes/Clean/browse@2x.png
+share/dolphin-emu/sys/Themes/Clean/browse@4x.png
+share/dolphin-emu/sys/Themes/Clean/classic.png
+share/dolphin-emu/sys/Themes/Clean/classic@2x.png
+share/dolphin-emu/sys/Themes/Clean/classic@4x.png
+share/dolphin-emu/sys/Themes/Clean/config.png
+share/dolphin-emu/sys/Themes/Clean/config@2x.png
+share/dolphin-emu/sys/Themes/Clean/config@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_memorycheck.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_memorycheck@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_add_memorycheck@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_breakpoint.png
+share/dolphin-emu/sys/Themes/Clean/debugger_breakpoint@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_breakpoint@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_clear.png
+share/dolphin-emu/sys/Themes/Clean/debugger_clear@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_clear@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_delete.png
+share/dolphin-emu/sys/Themes/Clean/debugger_delete@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_delete@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_load.png
+share/dolphin-emu/sys/Themes/Clean/debugger_load@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_load@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_save.png
+share/dolphin-emu/sys/Themes/Clean/debugger_save@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_save@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_set_pc.png
+share/dolphin-emu/sys/Themes/Clean/debugger_set_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_set_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_show_pc.png
+share/dolphin-emu/sys/Themes/Clean/debugger_show_pc@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_show_pc@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_skip.png
+share/dolphin-emu/sys/Themes/Clean/debugger_skip@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_skip@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_in.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_in@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_in@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_out.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_out@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_out@4x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_over.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_over@2x.png
+share/dolphin-emu/sys/Themes/Clean/debugger_step_over@4x.png
+share/dolphin-emu/sys/Themes/Clean/fullscreen.png
+share/dolphin-emu/sys/Themes/Clean/fullscreen@2x.png
+share/dolphin-emu/sys/Themes/Clean/fullscreen@4x.png
+share/dolphin-emu/sys/Themes/Clean/gcpad.png
+share/dolphin-emu/sys/Themes/Clean/gcpad@2x.png
+share/dolphin-emu/sys/Themes/Clean/gcpad@4x.png
+share/dolphin-emu/sys/Themes/Clean/graphics.png
+share/dolphin-emu/sys/Themes/Clean/graphics@2x.png
+share/dolphin-emu/sys/Themes/Clean/graphics@4x.png
+share/dolphin-emu/sys/Themes/Clean/open.png
+share/dolphin-emu/sys/Themes/Clean/open@2x.png
+share/dolphin-emu/sys/Themes/Clean/open@4x.png
+share/dolphin-emu/sys/Themes/Clean/pause.png
+share/dolphin-emu/sys/Themes/Clean/pause@2x.png
+share/dolphin-emu/sys/Themes/Clean/pause@4x.png
+share/dolphin-emu/sys/Themes/Clean/play.png
+share/dolphin-emu/sys/Themes/Clean/play@2x.png
+share/dolphin-emu/sys/Themes/Clean/play@4x.png
+share/dolphin-emu/sys/Themes/Clean/refresh.png
+share/dolphin-emu/sys/Themes/Clean/refresh@2x.png
+share/dolphin-emu/sys/Themes/Clean/refresh@4x.png
+share/dolphin-emu/sys/Themes/Clean/screenshot.png
+share/dolphin-emu/sys/Themes/Clean/screenshot@2x.png
+share/dolphin-emu/sys/Themes/Clean/screenshot@4x.png
+share/dolphin-emu/sys/Themes/Clean/stop.png
+share/dolphin-emu/sys/Themes/Clean/stop@2x.png
+share/dolphin-emu/sys/Themes/Clean/stop@4x.png
+share/dolphin-emu/sys/Themes/Clean/wiimote.png
+share/dolphin-emu/sys/Themes/Clean/wiimote@2x.png
+share/dolphin-emu/sys/Themes/Clean/wiimote@4x.png
+share/dolphin-emu/sys/Wii/
+share/dolphin-emu/sys/Wii/shared2/
+share/dolphin-emu/sys/Wii/shared2/wc24/
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/Readme.txt
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/wc24recv.ctl
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/wc24recv.mbx
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/wc24send.ctl
+share/dolphin-emu/sys/Wii/shared2/wc24/mbox/wc24send.mbx
+share/dolphin-emu/sys/Wii/shared2/wc24/misc.bin
+share/dolphin-emu/sys/Wii/shared2/wc24/nwc24dl.bin
+share/dolphin-emu/sys/Wii/shared2/wc24/nwc24fl.bin
+share/dolphin-emu/sys/Wii/shared2/wc24/nwc24fls.bin
+share/dolphin-emu/sys/Wii/shared2/wc24/nwc24msg.cbk
+share/dolphin-emu/sys/Wii/shared2/wc24/nwc24msg.cfg
+share/dolphin-emu/sys/codehandler.bin
+share/dolphin-emu/sys/totaldb.dsy
+share/dolphin-emu/sys/wiitdb-de.txt
+share/dolphin-emu/sys/wiitdb-en.txt
+share/dolphin-emu/sys/wiitdb-es.txt
+share/dolphin-emu/sys/wiitdb-fr.txt
+share/dolphin-emu/sys/wiitdb-it.txt
+share/dolphin-emu/sys/wiitdb-ja.txt
+share/dolphin-emu/sys/wiitdb-ko.txt
+share/dolphin-emu/sys/wiitdb-nl.txt
+share/dolphin-emu/sys/wiitdb-pt.txt
+share/dolphin-emu/sys/wiitdb-ru.txt
+share/dolphin-emu/sys/wiitdb-zh_CN.txt
+share/dolphin-emu/sys/wiitdb-zh_TW.txt

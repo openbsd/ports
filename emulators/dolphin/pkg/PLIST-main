@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2018/07/22 16:54:48 thfr Exp $
+@bin bin/dolphin-emu
+@man man/man6/dolphin-emu.6
+share/applications/dolphin-emu.desktop
+share/icons/hicolor/256x256/apps/dolphin-emu.png
+share/icons/hicolor/scalable/apps/dolphin-emu.svg
+share/locale/ar/LC_MESSAGES/dolphin-emu.mo
+share/locale/ca/LC_MESSAGES/dolphin-emu.mo
+share/locale/cs/LC_MESSAGES/dolphin-emu.mo
+share/locale/da/LC_MESSAGES/dolphin-emu.mo
+share/locale/de/LC_MESSAGES/dolphin-emu.mo
+share/locale/el/LC_MESSAGES/dolphin-emu.mo
+share/locale/en/LC_MESSAGES/dolphin-emu.mo
+share/locale/es/LC_MESSAGES/dolphin-emu.mo
+share/locale/fa/LC_MESSAGES/dolphin-emu.mo
+share/locale/fr/LC_MESSAGES/dolphin-emu.mo
+share/locale/hr/LC_MESSAGES/dolphin-emu.mo
+share/locale/hu/LC_MESSAGES/dolphin-emu.mo
+share/locale/it/LC_MESSAGES/dolphin-emu.mo
+share/locale/ja/LC_MESSAGES/dolphin-emu.mo
+share/locale/ko/LC_MESSAGES/dolphin-emu.mo
+share/locale/ms/LC_MESSAGES/dolphin-emu.mo
+share/locale/nb/LC_MESSAGES/dolphin-emu.mo
+share/locale/nl/LC_MESSAGES/dolphin-emu.mo
+share/locale/pl/LC_MESSAGES/dolphin-emu.mo
+share/locale/pt/LC_MESSAGES/dolphin-emu.mo
+share/locale/pt_BR/LC_MESSAGES/dolphin-emu.mo
+share/locale/ro/LC_MESSAGES/dolphin-emu.mo
+share/locale/ru/LC_MESSAGES/dolphin-emu.mo
+share/locale/sr/LC_MESSAGES/dolphin-emu.mo
+share/locale/sv/LC_MESSAGES/dolphin-emu.mo
+share/locale/tr/LC_MESSAGES/dolphin-emu.mo
+share/locale/zh_CN/LC_MESSAGES/dolphin-emu.mo
+share/locale/zh_TW/LC_MESSAGES/dolphin-emu.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
