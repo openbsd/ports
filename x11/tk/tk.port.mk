@@ -1,14 +1,11 @@
-# $OpenBSD: tk.port.mk,v 1.12 2013/02/02 11:18:28 stu Exp $
+# $OpenBSD: tk.port.mk,v 1.13 2018/07/22 01:49:25 stu Exp $
 
 CATEGORIES +=		x11/tk
 
 MODTK_VERSION ?= 	8.5
 MODTCL_VERSION ?= 	${MODTK_VERSION}
 
-.if ${MODTK_VERSION} == 8.4
-_MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.5
-MODTK_LIB ?=		tk84
-.elif ${MODTK_VERSION} == 8.5
+.if ${MODTK_VERSION} == 8.5
 _MODTK_SPEC = 		tk->=${MODTK_VERSION},<8.6
 MODTK_LIB ?=		tk85
 .elif ${MODTK_VERSION} == 8.6
