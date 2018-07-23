@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/17 10:01:10 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/07/23 22:46:16 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -13,6 +13,8 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.mingw.org/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
+
+BROKEN =	probable fork bomb. Breaks bulk builds
 
 # Headers: public domain
 # Compiler/toolchain: GPL
