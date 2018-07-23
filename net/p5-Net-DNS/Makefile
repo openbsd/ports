@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2018/07/20 21:16:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.75 2018/07/23 13:30:17 sthen Exp $
 
 COMMENT =	perl interface to the domain name system
 
-DISTNAME =	Net-DNS-1.16
+DISTNAME =	Net-DNS-1.16_01
+PKGNAME =	p5-${DISTNAME:S/_/./}
 SUPDISTFILES =	${DISTFILES}.asc
 
 CATEGORIES =	net
