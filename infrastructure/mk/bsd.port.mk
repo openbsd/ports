@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1427 2018/07/17 10:08:55 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1428 2018/07/23 13:25:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -327,6 +327,10 @@ COMPILER_LIBCXX ?= ${LIBCXX}
 ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
 .  endif
 .endfor
+
+.if !empty(BUILD_DEPENDS:Mdevel/automake/*)
+DPB_PROPERTIES += noconfigurejunk
+.endif
 
 .for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
 .  if target($t)
