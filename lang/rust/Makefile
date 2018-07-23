@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/07/12 08:48:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/07/23 06:56:43 landry Exp $
 
 # snapshots are only available these archs;
 # sync with MACHINE_ARCH conditional in x11/gnome/librsvg (STABLE_VERSION)
@@ -13,7 +13,7 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.27.1
+V =			1.27.2
 CARGO_V =		0.28.0
 DISTNAME =		rustc-${V}-src
 
