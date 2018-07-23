@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/16 21:09:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.23 2018/07/23 14:12:22 espie Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -23,6 +23,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 # clang6 makes sdcc regenerate its configure scripts at *BUILD* time
 # so we need to add the autoconf/automake depends. We don't know
 # why this is.
+DPB_PROPERTIES +=	nojunk
+
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
