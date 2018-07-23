@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.181 2018/07/16 12:30:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.182 2018/07/23 13:24:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -188,6 +188,37 @@ sub finalize
 	my ($self, $core) = @_;
 	$core->unswallow;
 	delete $core->job->{nojunk};
+	$self->SUPER::finalize($core);
+}
+
+
+# some ports prevent junking only up-to-configure
+package DPB::Task::Port::Configure;
+our @ISA = qw(DPB::Task::Port);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	if ($job->{noconfigurejunk}) {
+		delete $core->job->{nojunk};
+	}
+	$self->SUPER::finalize($core);
+}
+
+package DPB::Task::Port::Extract;
+our @ISA = qw(DPB::Task::Port);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	# XXX we only exist because there is nojunk involved
+	$job->{nojunk} = 1;
+	# XXX don't bother marking ourselves for configurejunk
+	if (!$job->{noconfigurejunk}) {
+		print {$job->{lock}} "nojunk\n";
+	}
 	$self->SUPER::finalize($core);
 }
 
@@ -841,6 +872,8 @@ my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
 	clean => 'DPB::Task::Port::Clean',
+	configure => 'DPB::Task::Port::Configure',
+	extract => 'DPB::Task::Port::Extract',
 	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
 	'show-prepare-test-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
@@ -908,10 +941,6 @@ sub save_depends
 {
 	my ($job, $l) = @_;
 	$job->{live_depends} = $l;
-	if ($job->{v}{info}->has_property('nojunk')) {
-		print {$job->{lock}} "nojunk\n";
-		$job->{nojunk} = 1;
-	}
 	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n";
 }
 
@@ -1192,8 +1221,16 @@ sub add_normal_tasks
 	}
 
 	push(@todo, qw(inbetween));
-	if (!$small) {
+	my $nojunk = $self->{v}{info}->has_property("nojunk");
+	my $nojunk2 = $self->{v}{info}->has_property("noconfigurejunk");
+	if ($nojunk || $nojunk2) {
+		push(@todo, qw(extract));
+	}
+	if (!$small || $nojunk2) {
 		push(@todo, qw(patch configure));
+	}
+	if (!$nojunk && $nojunk2) {
+		$self->{noconfigurejunk} = 1;
 	}
 	push(@todo, qw(build));
 
