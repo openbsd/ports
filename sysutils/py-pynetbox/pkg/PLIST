@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/11 07:39:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/07/23 18:06:52 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/pynetbox/
 lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,21 +10,23 @@ lib/python${MODPY_VERSION}/site-packages/pynetbox-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/pynetbox/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/api.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/dcim.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}circuits.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}dcim.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/ipam.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}ipam.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}virtualization.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/api.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/circuits.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/dcim.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/ipam.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/query.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/response.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/endpoint.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/query.py
+lib/python${MODPY_VERSION}/site-packages/pynetbox/lib/response.py
 lib/python${MODPY_VERSION}/site-packages/pynetbox/virtualization.py
-lib/python${MODPY_VERSION}/site-packages/pynetbox/${MODPY_PYCACHE}virtualization.${MODPY_PYC_MAGIC_TAG}pyc
