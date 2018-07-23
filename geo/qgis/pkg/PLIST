@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.43 2018/07/23 07:05:32 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1293,11 +1293,8 @@ share/qgis/python/plugins/db_manager/db_plugins/gpkg/
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/__init__.py
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/connector.py
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/data_model.py
-share/qgis/python/plugins/db_manager/db_plugins/gpkg/icons/
-share/qgis/python/plugins/db_manager/db_plugins/gpkg/icons/gpkg_icon.png
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/info_model.py
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/plugin.py
-share/qgis/python/plugins/db_manager/db_plugins/gpkg/resources_rc.py
 share/qgis/python/plugins/db_manager/db_plugins/gpkg/sql_dictionary.py
 share/qgis/python/plugins/db_manager/db_plugins/html_elems.py
 share/qgis/python/plugins/db_manager/db_plugins/info_model.py
@@ -1307,8 +1304,6 @@ share/qgis/python/plugins/db_manager/db_plugins/postgis/__init__.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/connector.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/connector_test.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/data_model.py
-share/qgis/python/plugins/db_manager/db_plugins/postgis/icons/
-share/qgis/python/plugins/db_manager/db_plugins/postgis/icons/postgis_elephant.png
 share/qgis/python/plugins/db_manager/db_plugins/postgis/info_model.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/plugin.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/plugin_test.py
@@ -1332,17 +1327,13 @@ share/qgis/python/plugins/db_manager/db_plugins/postgis/plugins/versioning/
 share/qgis/python/plugins/db_manager/db_plugins/postgis/plugins/versioning/__init__.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/plugins/versioning/dlg_versioning.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/plugins/versioning/ui_DlgVersioning.py
-share/qgis/python/plugins/db_manager/db_plugins/postgis/resources_rc.py
 share/qgis/python/plugins/db_manager/db_plugins/postgis/sql_dictionary.py
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/__init__.py
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/connector.py
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/data_model.py
-share/qgis/python/plugins/db_manager/db_plugins/spatialite/icons/
-share/qgis/python/plugins/db_manager/db_plugins/spatialite/icons/spatialite_icon.png
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/info_model.py
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/plugin.py
-share/qgis/python/plugins/db_manager/db_plugins/spatialite/resources_rc.py
 share/qgis/python/plugins/db_manager/db_plugins/spatialite/sql_dictionary.py
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/__init__.py
@@ -1350,7 +1341,6 @@ share/qgis/python/plugins/db_manager/db_plugins/vlayers/connector.py
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/data_model.py
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/info_model.py
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/plugin.py
-share/qgis/python/plugins/db_manager/db_plugins/vlayers/resources_rc.py
 share/qgis/python/plugins/db_manager/db_plugins/vlayers/sql_dictionary.py
 share/qgis/python/plugins/db_manager/db_tree.py
 share/qgis/python/plugins/db_manager/dlg_add_geometry_column.py
@@ -1367,25 +1357,12 @@ share/qgis/python/plugins/db_manager/dlg_sql_window.py
 share/qgis/python/plugins/db_manager/dlg_table_properties.py
 share/qgis/python/plugins/db_manager/icons/
 share/qgis/python/plugins/db_manager/icons/about.png
-share/qgis/python/plugins/db_manager/icons/action_del_table.png
-share/qgis/python/plugins/db_manager/icons/action_delete.png
-share/qgis/python/plugins/db_manager/icons/action_edit_table.png
-share/qgis/python/plugins/db_manager/icons/action_export.png
-share/qgis/python/plugins/db_manager/icons/action_import.png
-share/qgis/python/plugins/db_manager/icons/action_new_table.png
-share/qgis/python/plugins/db_manager/icons/action_refresh.png
-share/qgis/python/plugins/db_manager/icons/action_sql_window.png
 share/qgis/python/plugins/db_manager/icons/dbmanager.svg
-share/qgis/python/plugins/db_manager/icons/layer_line.png
-share/qgis/python/plugins/db_manager/icons/layer_point.png
-share/qgis/python/plugins/db_manager/icons/layer_polygon.png
-share/qgis/python/plugins/db_manager/icons/layer_raster.png
 share/qgis/python/plugins/db_manager/icons/layer_unknown.png
 share/qgis/python/plugins/db_manager/icons/namespace.png
 share/qgis/python/plugins/db_manager/icons/namespaces.xpm
 share/qgis/python/plugins/db_manager/icons/plugged.png
 share/qgis/python/plugins/db_manager/icons/sql.gif
-share/qgis/python/plugins/db_manager/icons/table.png
 share/qgis/python/plugins/db_manager/icons/tables.xpm
 share/qgis/python/plugins/db_manager/icons/unplugged.png
 share/qgis/python/plugins/db_manager/icons/user.xpm
