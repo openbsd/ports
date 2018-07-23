@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/07/01 18:33:37 espie Exp $
-share/mime/
-share/mime/packages/
-share/mime/packages/freedesktop.org.xml
+@comment $OpenBSD: PLIST,v 1.34 2018/07/23 07:35:58 ajacoutot Exp $
 @define-tag update-mime-database at-end %D/bin/update-mime-database %D/share/mime
 @tag update-mime-database
+@unexec-delete find %D/share/mime/* -maxdepth 0 -type d ! -name packages -exec rm -rf '{}' \+
+@unexec-delete find %D/share/mime/ -type f ! -name freedesktop.org.xml -exec rm -f '{}' \+
 @bin bin/update-mime-database
 @man man/man1/update-mime-database.1
 share/locale/ar/LC_MESSAGES/shared-mime-info.mo
@@ -83,39 +82,7 @@ share/locale/wa/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
-@comment no checksum
-share/mime/XMLnamespaces
-@comment no checksum
-share/mime/aliases
-share/mime/application/
-share/mime/audio/
-share/mime/font/
-@comment no checksum
-share/mime/generic-icons
-@comment no checksum
-share/mime/globs
-@comment no checksum
-share/mime/globs2
-@comment no checksum
-share/mime/icons
-share/mime/image/
-share/mime/inode/
-@comment no checksum
-share/mime/magic
-share/mime/message/
-@comment no checksum
-share/mime/mime.cache
-share/mime/model/
-share/mime/multipart/
-@comment no checksum
-share/mime/subclasses
-share/mime/text/
-@comment no checksum
-share/mime/treemagic
-@comment no checksum
-share/mime/types
-share/mime/version
-share/mime/video/
-share/mime/x-content/
-share/mime/x-epoc/
+share/mime/
+share/mime/packages/
+share/mime/packages/freedesktop.org.xml
 share/pkgconfig/shared-mime-info.pc
