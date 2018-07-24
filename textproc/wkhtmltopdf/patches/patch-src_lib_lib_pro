@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_lib_lib_pro,v 1.1 2016/01/13 22:31:38 sthen Exp $
---- src/lib/lib.pro.orig	Wed Jan 13 20:36:58 2016
-+++ src/lib/lib.pro	Wed Jan 13 20:37:15 2016
-@@ -41,5 +41,7 @@ TARGET=wkhtmltox
+$OpenBSD: patch-src_lib_lib_pro,v 1.2 2018/07/24 12:03:11 sthen Exp $
+Index: src/lib/lib.pro
+--- src/lib/lib.pro.orig
++++ src/lib/lib.pro
+@@ -36,6 +36,8 @@ windows: CONFIG += skip_target_version_ext
+ TARGET=wkhtmltox
  INSTALLS += target
- wkhtmltox.path=$$INSTALLBASE/lib
  
 +QMAKE_LFLAGS = -L${WRKBUILD}/qt/lib
 +
  DESTDIR = ../../bin
- target.path=$$INSTALLBASE/lib
+ !windows: target.path=$$INSTALLBASE/lib
+ else:     target.path=$$INSTALLBASE/bin

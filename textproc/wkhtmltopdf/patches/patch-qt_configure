@@ -1,7 +1,8 @@
-$OpenBSD: patch-qt_configure,v 1.1 2017/03/02 10:12:02 sthen Exp $
---- qt/configure.orig	Wed Mar  1 20:53:04 2017
-+++ qt/configure	Wed Mar  1 20:53:19 2017
-@@ -3411,7 +3411,7 @@ else
+$OpenBSD: patch-qt_configure,v 1.2 2018/07/24 12:03:11 sthen Exp $
+Index: qt/configure
+--- qt/configure.orig
++++ qt/configure
+@@ -3427,7 +3427,7 @@ else
      CFG_FRAMEWORK=no
  fi
  
