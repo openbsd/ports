@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/19 11:36:54 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/24 12:11:13 espie Exp $
 COMMENT =	X C Binding - protocol binding generator
 
 # please keep in sync with the version in proto/xcb-proto in Xenocara
@@ -23,6 +23,7 @@ MODULES=		lang/python
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+MODPY_BUILDDEP =	Yes
 
 XCBGEN_SRCS= \
 	__init__.py \
