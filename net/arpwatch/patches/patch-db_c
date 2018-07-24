@@ -1,7 +1,9 @@
-$OpenBSD: patch-db_c,v 1.1 2018/05/15 19:10:24 jasper Exp $
+$OpenBSD: patch-db_c,v 1.2 2018/07/24 18:59:20 jasper Exp $
 
 ignore 0.0.0.0
 https://sources.debian.org/patches/arpwatch/2.1a15-6/25ignore_zero_ip/
+
+remove DECnet remnants
 
 Index: db.c
 --- db.c.orig
@@ -18,3 +20,20 @@ Index: db.c
  	/* Lookup ip address */
  	ap = ainfo_find(a);
  
+@@ -124,14 +129,11 @@ ent_add(register u_int32_t a, register u_char *e, time
+ 		ep = ap->elist[1];
+ 		if (MEMCMP(e, ep->e, 6) == 0) {
+ 			/*
+-			 * Suppress report when less than
+-			 * FLIPFLOP_DELTA and one of the two ethernet
+-			 * addresses is a DECnet logical.
++			 * Suppress report when less than FLIPFLOP_DELTA.
+ 			 */
+ 			t2 = ap->elist[0]->t;
+ 			e2 = ap->elist[0]->e;
+-			if (t - t2 < FLIPFLIP_DELTA &&
+-			    (isdecnet(e) || isdecnet(e2)))
++			if (t - t2 < FLIPFLIP_DELTA)
+ 				dosyslog(LOG_INFO,
+ 				    "suppressed DECnet flip flop", a, e, e2);
+ 			else
