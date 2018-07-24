@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.98 2018/05/12 10:47:36 espie Exp $
+# $OpenBSD: python.port.mk,v 1.99 2018/07/24 12:10:10 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -69,12 +69,17 @@ MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
 
+.if ${NO_BUILD:L} == "no"
 MODPY_BUILDDEP ?=	Yes
+.else
+MODPY_BUILDDEP ?=	No
+.endif
 MODPY_RUNDEP ?=		Yes
 
-.if ${NO_BUILD:L} == "no" && ${MODPY_BUILDDEP:L} == "yes"
+.if ${MODPY_BUILDDEP:L} == "yes"
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 .endif
+
 .if ${MODPY_RUNDEP:L} == "yes"
 RUN_DEPENDS +=		${MODPY_RUN_DEPENDS}
 .endif
