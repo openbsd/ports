@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.621 2018/07/12 20:41:59 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.622 2018/07/25 09:07:58 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1044,6 +1044,8 @@ my $obsolete_reason = {
 	'py3-crypto' => 3,
 	'tremor' => 5,
 	'tremor-tools' => 5,
+	'xtrkcad' => 3,
+	'webkit' => 2,
 };
 
 # reasons for obsolete packages
