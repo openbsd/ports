@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/07/25 18:39:04 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -280,7 +280,7 @@ include/mutter/meta/window.h
 include/mutter/meta/workspace.h
 lib/libmutter${API_SUFFIX}.a
 lib/libmutter${API_SUFFIX}.la
-@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter-2_VERSION}
+@lib lib/libmutter${API_SUFFIX}.so.${LIBmutter${API_SUFFIX}_VERSION}
 lib/mutter/
 lib/mutter/Cally${API_SUFFIX}.gir
 lib/mutter/Cally${API_SUFFIX}.typelib

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2018/07/25 18:39:04 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.28.2
-REVISION=		1
+GNOME_VERSION=		3.28.3
 
 API_SUFFIX=		-2
 SUBST_VARS=		API_SUFFIX
@@ -27,6 +26,7 @@ WANTLIB += upower-glib vorbis vorbisfile xcb xcb-dri2 xcb-randr
 WANTLIB += xcb-render xcb-res xcb-shm xcb-util xcb-xfixes xcb-xkb
 WANTLIB += xkbcommon xkbcommon-x11 xkbfile z Xtst
 WANTLIB += GL Xxf86vm fribidi glapi xcb-glx
+WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence
 
 MODULES=		devel/dconf \
 			x11/gnome
