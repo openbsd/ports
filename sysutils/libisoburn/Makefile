@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/19 20:20:44 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/25 14:08:18 stu Exp $
 
 COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
@@ -22,7 +22,7 @@ MASTER_SITES =	http://files.libburnia-project.org/releases/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		lang/tcl x11/tk
+MODULES =		x11/tk
 
 LIB_DEPENDS-main =	sysutils/libisofs \
 			sysutils/libburn
