@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.871 2018/06/23 21:48:36 landry Exp $
+# $OpenBSD: Makefile,v 1.872 2018/07/25 09:06:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -578,7 +578,6 @@
      SUBDIR += wApua
      SUBDIR += wbox
      SUBDIR += webalizer
-     SUBDIR += webkit
      SUBDIR += webkitgtk4
      SUBDIR += weboob
      SUBDIR += weboob,python3
