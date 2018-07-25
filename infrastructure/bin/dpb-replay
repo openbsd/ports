@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb-replay,v 1.5 2018/07/11 12:42:57 espie Exp $
+# $OpenBSD: dpb-replay,v 1.6 2018/07/25 12:43:45 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,9 +33,13 @@ our @ISA = (qw(OpenBSD::State));
 sub handle_options
 {
 	my $state = shift;
-	$state->SUPER::handle_options('cs:', '[-c] [-s speedup] file');
+	$state->SUPER::handle_options('cs:e:', '[-c] [-s speedup] [-e regexp] file');
 	if ($state->opt('c')) {
 		$state->{color} = 1;
+	}
+	if ($state->opt('e')) {
+		my $e = $state->opt('e');
+		$state->{regexp} = qr{$e};
 	}
 }
 
@@ -70,20 +74,27 @@ open(my $fh, '<', $file);
 my $start_ts;
 my $start_time = time();
 my $msg = '';
+my $display = defined $state->{regexp} ? 0 : 1;
 while(<$fh>) {
 	if (m/^\@\@\@(\d+)$/) {
 		chomp;
 		my $ts = int($1);
-		$start_ts //= $ts;
-
-		my $now = time();
-		my $sleep = ($ts-$start_ts)/$speedup - ($now - $start_time);
-		if ($sleep > 0) {
-			sleep($sleep);
+		if (!$display && $msg =~ m/$state->{regexp}/) {
+			$display = 1;
 		}
-		my $method = $term->{write};
-		$term->$method($msg);
-		$term->{msg} = $msg;
+		if ($display) {
+			$start_ts //= $ts;
+
+			my $now = time();
+			my $sleep = ($ts-$start_ts)/$speedup - 
+			    ($now - $start_time);
+			if ($sleep > 0) {
+				sleep($sleep);
+			}
+			my $method = $term->{write};
+			$term->$method($msg);
+			$term->{msg} = $msg;
+		}
 		$msg = '';
 	} else {
 		$msg .= $_;
