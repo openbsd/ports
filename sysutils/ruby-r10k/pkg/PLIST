@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/06/29 07:29:07 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/25 21:03:45 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -443,4 +443,5 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/runner/windows_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/subprocess_error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/symbolize_keys_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/test
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
