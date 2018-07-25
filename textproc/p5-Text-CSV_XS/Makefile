@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/07/25 18:07:12 jasper Exp $
 
 COMMENT =	comma-separated values manipulation routines
 
-DISTNAME =	Text-CSV_XS-1.19
+DISTNAME =	Text-CSV_XS-1.36
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
