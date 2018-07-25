@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.514 2018/07/09 05:38:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.515 2018/07/25 13:55:55 tb Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -398,6 +398,7 @@
      SUBDIR += vpnc
      SUBDIR += wapiti
      SUBDIR += wpa_supplicant
+     SUBDIR += wycheproof-testvectors
      SUBDIR += xca
      SUBDIR += xmlsec
      SUBDIR += yara
