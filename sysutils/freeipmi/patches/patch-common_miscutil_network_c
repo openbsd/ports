@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_miscutil_network_c,v 1.1 2018/07/25 08:38:26 sthen Exp $
+
+Index: common/miscutil/network.c
+--- common/miscutil/network.c.orig
++++ common/miscutil/network.c
+@@ -29,6 +29,7 @@
+ #include "config.h"
+ #endif  /* HAVE_CONFIG_H */
+ 
++#include <sys/socket.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #if STDC_HEADERS
