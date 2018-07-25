@@ -1,17 +1,9 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.4 2018/04/26 19:41:38 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.5 2018/07/25 06:53:36 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -2,6 +2,7 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
- 
-+#if 0
- #include "content/gpu/gpu_sandbox_hook_linux.h"
- 
- #include <dlfcn.h>
-@@ -68,7 +69,7 @@ inline bool UseLibV4L2() {
+@@ -68,7 +68,7 @@ inline bool UseLibV4L2() {
  #endif
  }
  
@@ -20,8 +12,16 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
-@@ -298,3 +299,4 @@ bool GpuProcessPreSandboxHook(service_manager::Sandbox
- }
+@@ -284,9 +284,12 @@ bool BrokerProcessPreSandboxHook(
+ }  // namespace
  
- }  // namespace content
+ bool GpuProcessPreSandboxHook(service_manager::SandboxLinux::Options options) {
++  NOTIMPLEMENTED();
++#if 0
+   service_manager::SandboxLinux::GetInstance()->StartBrokerProcess(
+       CommandSetForGPU(options), FilePermissionsForGpu(options),
+       base::BindOnce(BrokerProcessPreSandboxHook), options);
 +#endif
+ 
+   if (!LoadLibrariesForGpu(options))
+     return false;

@@ -1,0 +1,13 @@
+$OpenBSD: patch-services_service_manager_embedder_switches_h,v 1.1 2018/07/25 06:53:36 robert Exp $
+
+Index: services/service_manager/embedder/switches.h
+--- services/service_manager/embedder/switches.h.orig
++++ services/service_manager/embedder/switches.h
+@@ -19,6 +19,7 @@ extern const char kDefaultServicePrefetchArgument[];
+ SERVICE_MANAGER_EMBEDDER_SWITCHES_EXPORT extern const char
+     kDisableInProcessStackTraces[];
+ SERVICE_MANAGER_EMBEDDER_SWITCHES_EXPORT extern const char kEnableLogging[];
++SERVICE_MANAGER_EMBEDDER_SWITCHES_EXPORT extern const char kEnableUnveil[];
+ SERVICE_MANAGER_EMBEDDER_SWITCHES_EXPORT extern const char kProcessType[];
+ SERVICE_MANAGER_EMBEDDER_SWITCHES_EXPORT extern const char
+     kProcessTypeServiceManager[];

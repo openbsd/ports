@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.1 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.2 2018/07/25 06:53:36 robert Exp $
 
 Index: third_party/fontconfig/include/config.h
 --- third_party/fontconfig/include/config.h.orig
@@ -37,7 +37,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Have POSIX threads */
  #define HAVE_PTHREAD 1
-@@ -138,7 +138,7 @@
+@@ -138,11 +138,14 @@
  #define HAVE_RANDOM 1
  
  /* Define to 1 if you have the `random_r' function. */
@@ -46,7 +46,14 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if you have the `rand_r' function. */
  #define HAVE_RAND_R 1
-@@ -174,7 +174,7 @@
+ 
++/* Define to 1 if you have the `arc4_random' function. */
++#define HAVE_ARC4RANDOM 1
++
+ /* Define to 1 if you have the `readlink' function. */
+ #define HAVE_READLINK 1
+ 
+@@ -174,7 +177,7 @@
  #define HAVE_STRUCT_STATFS_F_FLAGS 1
  
  /* Define to 1 if `f_fstypename' is a member of `struct statfs'. */
@@ -55,7 +62,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if `f_basetype' is a member of `struct statvfs'. */
  /* #undef HAVE_STRUCT_STATVFS_F_BASETYPE */
-@@ -200,7 +200,7 @@
+@@ -200,7 +203,7 @@
  #define HAVE_SYS_PARAM_H 1
  
  /* Define to 1 if you have the <sys/statfs.h> header file. */
@@ -64,7 +71,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if you have the <sys/statvfs.h> header file. */
  #define HAVE_SYS_STATVFS_H 1
-@@ -212,7 +212,7 @@
+@@ -212,7 +215,7 @@
  #define HAVE_SYS_TYPES_H 1
  
  /* Define to 1 if you have the <sys/vfs.h> header file. */
@@ -73,7 +80,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if `usLowerOpticalPointSize' is a member of `TT_OS2'. */
  #define HAVE_TT_OS2_USLOWEROPTICALPOINTSIZE 1
-@@ -238,7 +238,8 @@
+@@ -238,7 +241,8 @@
  /* Define to 1 if you have the `_mktemp_s' function. */
  /* #undef HAVE__MKTEMP_S */
  

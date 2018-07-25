@@ -1,25 +1,26 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.8 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.9 2018/07/25 06:53:36 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
-@@ -51,6 +51,10 @@
+@@ -51,6 +51,11 @@
  #include "gin/v8_initializer.h"
  #endif
  
 +#if defined(OS_OPENBSD)
-+#include "content/common/sandbox_init_openbsd.h"
++#include "content/public/common/sandbox_init.h"
++#include "services/service_manager/sandbox/openbsd/sandbox_openbsd.h"
 +#endif
 +
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -126,6 +130,8 @@ int PpapiPluginMain(const MainFunctionParams& paramete
-       service_manager::SandboxTypeFromCommandLine(command_line),
-       service_manager::SandboxLinux::PreSandboxHook(),
-       service_manager::SandboxLinux::Options());
-+#elif defined(OS_BSD)
-+  InitializeSandbox();
+@@ -121,7 +126,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+   gin::V8Initializer::LoadV8Natives();
  #endif
  
-   ChildProcess ppapi_process;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   service_manager::SandboxLinux::GetInstance()->InitializeSandbox(
+       service_manager::SandboxTypeFromCommandLine(command_line),
+       service_manager::SandboxLinux::PreSandboxHook(),
