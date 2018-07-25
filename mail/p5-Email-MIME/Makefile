@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/28 14:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2018/07/25 08:45:15 ajacoutot Exp $
 
 COMMENT=	handle MIME messages
 
+CPAN_AUTHOR=	RJBS
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-MIME-1.946
+DISTNAME =	Email-MIME-1.940
 CATEGORIES=	mail
+EPOCH=		0
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/28 14:36:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/07/25 08:45:15 ajacoutot Exp $
 @conflict mail/p5-Email-MIME-Creator-*
 @conflict mail/p5-Email-MIME-Modifier-*
 @pkgpath mail/p5-Email-MIME-Creator
@@ -6,13 +6,10 @@
 ${P5SITE}/Email/MIME.pm
 ${P5SITE}/Email/MIME/Creator.pm
 ${P5SITE}/Email/MIME/Encode.pm
-${P5SITE}/Email/MIME/Header/
 ${P5SITE}/Email/MIME/Header.pm
-${P5SITE}/Email/MIME/Header/AddressList.pm
 ${P5SITE}/Email/MIME/Modifier.pm
 @man man/man3p/Email::MIME.3p
 @man man/man3p/Email::MIME::Creator.3p
 @man man/man3p/Email::MIME::Encode.3p
 @man man/man3p/Email::MIME::Header.3p
-@man man/man3p/Email::MIME::Header::AddressList.3p
 @man man/man3p/Email::MIME::Modifier.3p
