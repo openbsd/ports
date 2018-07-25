@@ -1,4 +1,8 @@
-# $OpenBSD: tk.port.mk,v 1.13 2018/07/22 01:49:25 stu Exp $
+# $OpenBSD: tk.port.mk,v 1.14 2018/07/25 14:08:50 stu Exp $
+
+.if ${MODULES:Mlang/tcl}
+ERRORS += "Fatal: MODULES = lang/tcl or x11/tk but not both.\nChoose one and set MOD* variables accordingly."
+.endif
 
 CATEGORIES +=		x11/tk
 
