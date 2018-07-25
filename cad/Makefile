@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/07 14:02:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.24 2018/07/25 09:04:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += fritzing
@@ -18,6 +18,5 @@
      SUBDIR += tkgate
      SUBDIR += xcircuit
      SUBDIR += xnecview
-     SUBDIR += xtrkcad
 
 .include <bsd.port.subdir.mk>
