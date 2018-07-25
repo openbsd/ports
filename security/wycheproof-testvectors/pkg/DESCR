@@ -1,0 +1,4 @@
+Project Wycheproof provides test vectors for crypto algorithms including AES,
+DH, DSA, ECDH, ECDSA, and RSA. These vectors allow to detect whether a library
+is vulnerable to many attacks, including invalid curve attacks, biased nonces
+in digital signature schemes, and all Bleichenbacher attacks.
