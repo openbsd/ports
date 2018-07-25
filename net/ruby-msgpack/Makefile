@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/07/25 21:02:51 sebastia Exp $
 
 COMMENT =	binary-based efficient object serialization library
 
-DISTNAME =	msgpack-1.2.2
-REVISION =	0
+DISTNAME =	msgpack-1.2.4
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://msgpack.org/
