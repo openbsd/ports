@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.52 2018/06/16 08:26:52 ajacoutot Exp $
+$OpenBSD: README,v 1.53 2018/07/25 07:52:25 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,6 +22,9 @@ httpd(8) example configuration for ownCloud:
 ---8<---------------------------------------------------------------------------
 server "domain.tld" {
 	listen on egress tls port 443
+
+	root "/owncloud"
+	request strip 1
 
 	tls {
 		certificate "/etc/ssl/domain.tld_fullchain.pem"
@@ -56,9 +59,8 @@ server "domain.tld" {
 		fastcgi socket "/run/php-fpm.sock"
 	}
 
-	location "/*" {
-		root "/owncloud"
-		request strip 1
+	location "/*.php*" {
+		fastcgi socket "/run/php-fpm.sock"
 	}
 }
 ---8<---------------------------------------------------------------------------
