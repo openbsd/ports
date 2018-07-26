@@ -1,4 +1,8 @@
-$OpenBSD: patch-CPUMeter_c,v 1.1 2018/07/26 11:34:27 ians Exp $
+$OpenBSD: patch-CPUMeter_c,v 1.2 2018/07/26 12:49:04 ians Exp $
+
+Don't allow getRange to set left bound equal to hw.ncpu, since it is used
+as a loop condition. This eliminates a zero-index/off-by-one bug affecting
+eight core machines specifically
 
 Index: CPUMeter.c
 --- CPUMeter.c.orig

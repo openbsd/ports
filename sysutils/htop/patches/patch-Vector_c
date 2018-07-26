@@ -1,4 +1,7 @@
-$OpenBSD: patch-Vector_c,v 1.1 2018/07/26 11:34:27 ians Exp $
+$OpenBSD: patch-Vector_c,v 1.2 2018/07/26 12:49:04 ians Exp $
+
+This function is called at the wrong time and will cause use-after-free's,
+so we leak for now.
 
 Index: Vector.c
 --- Vector.c.orig
