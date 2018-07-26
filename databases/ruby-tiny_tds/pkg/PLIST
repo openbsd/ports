@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/11/13 22:44:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/26 21:34:06 jeremy Exp $
 ${GEM_BIN}/defncopy-ttds${GEM_BIN_SUFFIX}
 ${GEM_BIN}/tsql-ttds${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -21,7 +21,6 @@ ${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/defncopy-ttds
 ${GEM_LIB}/gems/${DISTNAME}/bin/tsql-ttds
-${GEM_LIB}/gems/${DISTNAME}/circle.yml
 ${GEM_LIB}/gems/${DISTNAME}/exe/
 ${GEM_LIB}/gems/${DISTNAME}/exe/.keep
 ${GEM_LIB}/gems/${DISTNAME}/lib/
