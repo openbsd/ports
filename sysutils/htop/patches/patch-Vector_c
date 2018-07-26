@@ -1,0 +1,16 @@
+$OpenBSD: patch-Vector_c,v 1.1 2018/07/26 11:34:27 ians Exp $
+
+Index: Vector.c
+--- Vector.c.orig
++++ Vector.c
+@@ -53,8 +53,8 @@ void Vector_delete(Vector* this) {
+          if (this->array[i])
+             Object_delete(this->array[i]);
+    }
+-   free(this->array);
+-   free(this);
++   /* free(this->array);
++   free(this); */
+ }
+ 
+ #ifdef DEBUG

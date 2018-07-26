@@ -1,0 +1,15 @@
+$OpenBSD: patch-CPUMeter_c,v 1.1 2018/07/26 11:34:27 ians Exp $
+
+Index: CPUMeter.c
+--- CPUMeter.c.orig
++++ CPUMeter.c
+@@ -135,6 +135,9 @@ static void AllCPUsMeter_getRange(Meter* this, int* st
+          *count = cpus / 2;
+          break;
+    }
++
++   if (*count == cpus)
++      *count = *count - 1;
+ }
+ 
+ static void AllCPUsMeter_init(Meter* this) {
