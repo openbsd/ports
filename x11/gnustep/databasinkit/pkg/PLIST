@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/20 18:12:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/07/26 21:08:23 sebastia Exp $
 include/DataBasinKit
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/DataBasinKit.framework/
@@ -11,8 +11,11 @@ lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/DataBasinKit
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBCSVReader.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBCSVWriter.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBFileWriter.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBHTMLWriter.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBLoggerProtocol.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBProgressProtocol.h
+lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSFTypeWrappers.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSObject.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSoap.h
 lib/GNUstep/Frameworks/DataBasinKit.framework/Versions/${VERSION}/Headers/DBSoapCSV.h
