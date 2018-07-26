@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/08 14:46:21 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/26 06:15:52 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -5290,6 +5290,8 @@ nextcloud/apps/activity/l10n/mn.js
 nextcloud/apps/activity/l10n/mn.json
 nextcloud/apps/activity/l10n/ms_MY.js
 nextcloud/apps/activity/l10n/ms_MY.json
+nextcloud/apps/activity/l10n/my.js
+nextcloud/apps/activity/l10n/my.json
 nextcloud/apps/activity/l10n/nb.js
 nextcloud/apps/activity/l10n/nb.json
 nextcloud/apps/activity/l10n/ne.js
@@ -10162,6 +10164,8 @@ nextcloud/apps/nextcloud_announcements/l10n/fr.js
 nextcloud/apps/nextcloud_announcements/l10n/fr.json
 nextcloud/apps/nextcloud_announcements/l10n/gl.js
 nextcloud/apps/nextcloud_announcements/l10n/gl.json
+nextcloud/apps/nextcloud_announcements/l10n/he.js
+nextcloud/apps/nextcloud_announcements/l10n/he.json
 nextcloud/apps/nextcloud_announcements/l10n/hu.js
 nextcloud/apps/nextcloud_announcements/l10n/hu.json
 nextcloud/apps/nextcloud_announcements/l10n/ia.js
@@ -10277,6 +10281,8 @@ nextcloud/apps/notifications/l10n/el.js
 nextcloud/apps/notifications/l10n/el.json
 nextcloud/apps/notifications/l10n/en_GB.js
 nextcloud/apps/notifications/l10n/en_GB.json
+nextcloud/apps/notifications/l10n/eo.js
+nextcloud/apps/notifications/l10n/eo.json
 nextcloud/apps/notifications/l10n/es.js
 nextcloud/apps/notifications/l10n/es.json
 nextcloud/apps/notifications/l10n/es_419.js
@@ -10631,6 +10637,8 @@ nextcloud/apps/password_policy/l10n/fr.js
 nextcloud/apps/password_policy/l10n/fr.json
 nextcloud/apps/password_policy/l10n/gl.js
 nextcloud/apps/password_policy/l10n/gl.json
+nextcloud/apps/password_policy/l10n/he.js
+nextcloud/apps/password_policy/l10n/he.json
 nextcloud/apps/password_policy/l10n/hu.js
 nextcloud/apps/password_policy/l10n/hu.json
 nextcloud/apps/password_policy/l10n/ia.js
@@ -11008,6 +11016,8 @@ nextcloud/apps/sharebymail/l10n/fr.js
 nextcloud/apps/sharebymail/l10n/fr.json
 nextcloud/apps/sharebymail/l10n/gl.js
 nextcloud/apps/sharebymail/l10n/gl.json
+nextcloud/apps/sharebymail/l10n/he.js
+nextcloud/apps/sharebymail/l10n/he.json
 nextcloud/apps/sharebymail/l10n/hu.js
 nextcloud/apps/sharebymail/l10n/hu.json
 nextcloud/apps/sharebymail/l10n/ia.js
@@ -12458,6 +12468,8 @@ nextcloud/apps/workflowengine/l10n/fr.js
 nextcloud/apps/workflowengine/l10n/fr.json
 nextcloud/apps/workflowengine/l10n/gl.js
 nextcloud/apps/workflowengine/l10n/gl.json
+nextcloud/apps/workflowengine/l10n/he.js
+nextcloud/apps/workflowengine/l10n/he.json
 nextcloud/apps/workflowengine/l10n/hu.js
 nextcloud/apps/workflowengine/l10n/hu.json
 nextcloud/apps/workflowengine/l10n/hu_HU.js
@@ -12786,6 +12798,7 @@ nextcloud/core/doc/admin/_images/ldap-wizard-3-login.png
 nextcloud/core/doc/admin/_images/ldap-wizard-4-group.png
 nextcloud/core/doc/admin/_images/local.png
 nextcloud/core/doc/admin/_images/mount_options.png
+nextcloud/core/doc/admin/_images/oauth2-settings.png
 nextcloud/core/doc/admin/_images/oc_admin_app_page.png
 nextcloud/core/doc/admin/_images/openstack.png
 nextcloud/core/doc/admin/_images/phpinfo.png
@@ -12800,7 +12813,6 @@ nextcloud/core/doc/admin/_images/smb.png
 nextcloud/core/doc/admin/_images/smtp-config-php-sendmail.png
 nextcloud/core/doc/admin/_images/smtp-config-smtp.png
 nextcloud/core/doc/admin/_images/smtp-config-wizard.png
-nextcloud/core/doc/admin/_images/theming-log-in-page.png
 nextcloud/core/doc/admin/_images/theming.png
 nextcloud/core/doc/admin/_images/updater-1-update-available.png
 nextcloud/core/doc/admin/_images/updater-2-open-updater.png
@@ -12874,6 +12886,7 @@ nextcloud/core/doc/admin/_sources/configuration_server/harden_server.txt
 nextcloud/core/doc/admin/_sources/configuration_server/index.txt
 nextcloud/core/doc/admin/_sources/configuration_server/language_configuration.txt
 nextcloud/core/doc/admin/_sources/configuration_server/logging_configuration.txt
+nextcloud/core/doc/admin/_sources/configuration_server/oauth2.txt
 nextcloud/core/doc/admin/_sources/configuration_server/occ_command.txt
 nextcloud/core/doc/admin/_sources/configuration_server/reverse_proxy_configuration.txt
 nextcloud/core/doc/admin/_sources/configuration_server/security_setup_warnings.txt
@@ -13071,6 +13084,7 @@ nextcloud/core/doc/admin/configuration_server/harden_server.html
 nextcloud/core/doc/admin/configuration_server/index.html
 nextcloud/core/doc/admin/configuration_server/language_configuration.html
 nextcloud/core/doc/admin/configuration_server/logging_configuration.html
+nextcloud/core/doc/admin/configuration_server/oauth2.html
 nextcloud/core/doc/admin/configuration_server/occ_command.html
 nextcloud/core/doc/admin/configuration_server/reverse_proxy_configuration.html
 nextcloud/core/doc/admin/configuration_server/security_setup_warnings.html
@@ -13646,6 +13660,8 @@ nextcloud/core/js/tests/specs/jquery.contactsmenuSpec.js
 nextcloud/core/js/tests/specs/l10nSpec.js
 nextcloud/core/js/tests/specs/mimeTypeSpec.js
 nextcloud/core/js/tests/specs/oc-backbone-webdavSpec.js
+nextcloud/core/js/tests/specs/public/
+nextcloud/core/js/tests/specs/public/commentsSpec.js
 nextcloud/core/js/tests/specs/setupchecksSpec.js
 nextcloud/core/js/tests/specs/shareSpec.js
 nextcloud/core/js/tests/specs/sharedialoglinkshareview.js
@@ -13731,6 +13747,8 @@ nextcloud/core/l10n/fr.js
 nextcloud/core/l10n/fr.json
 nextcloud/core/l10n/he.js
 nextcloud/core/l10n/he.json
+nextcloud/core/l10n/hr.js
+nextcloud/core/l10n/hr.json
 nextcloud/core/l10n/hu.js
 nextcloud/core/l10n/hu.json
 nextcloud/core/l10n/id.js
@@ -13773,8 +13791,6 @@ nextcloud/core/l10n/sr.js
 nextcloud/core/l10n/sr.json
 nextcloud/core/l10n/sv.js
 nextcloud/core/l10n/sv.json
-nextcloud/core/l10n/th.js
-nextcloud/core/l10n/th.json
 nextcloud/core/l10n/tr.js
 nextcloud/core/l10n/tr.json
 nextcloud/core/l10n/uk.js

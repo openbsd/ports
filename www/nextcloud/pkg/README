@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/06/19 13:47:54 gonzalo Exp $
+$OpenBSD: README,v 1.6 2018/07/26 06:15:52 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,6 +34,13 @@ httpd(8) example configuration for Nextcloud:
 server "domain.tld" {
     listen on egress tls port 443
 
+    directory index "index.php"
+
+    root "/nextcloud"
+    request strip 1
+
+    hsts max-age 15768000
+
     tls {
         certificate "/etc/ssl/domain.tld_fullchain.pem"
         key "/etc/ssl/private/domain.tld_private.pem"
@@ -62,13 +69,7 @@ server "domain.tld" {
     location "/console*"            { block }
 
     location "/*.php*" {
-        root { "/nextcloud", strip 1 }
         fastcgi socket "/run/php-fpm.sock"
-    }
-
-    location "/*" {
-        root "/nextcloud"
-        request strip 1
     }
 }
 ---8<---------------------------------------------------------------------------
