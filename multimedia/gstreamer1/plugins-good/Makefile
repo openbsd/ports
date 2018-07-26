@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/05/19 06:21:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/07/26 13:52:26 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -30,6 +30,7 @@ WANTLIB-main += lzma mpg123 ogg ossaudio pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png shout soup-2.4 speex sqlite3 tag theora
 WANTLIB-main += twolame v4l2 v4lconvert vorbis vpx wavpack xcb-dri2
 WANTLIB-main += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 fribidi
+WANTLIB-main += xcb-dri3 xcb-present xcb-sync xshmfence
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope

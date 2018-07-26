@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.66 2018/07/11 13:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2018/07/26 13:52:26 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		1
 
-SHARED_LIBS +=  gsttag-1.0           4.0      # 1401.0
-SHARED_LIBS +=  gstaudio-1.0         4.0      # 1401.0
-SHARED_LIBS +=  gstfft-1.0           4.0      # 1401.0
-SHARED_LIBS +=  gstvideo-1.0         4.0      # 1401.0
-SHARED_LIBS +=  gstapp-1.0           4.0      # 1401.0
-SHARED_LIBS +=  gstrtp-1.0           4.0      # 1401.0
-SHARED_LIBS +=  gstsdp-1.0           4.0      # 1401.0
-SHARED_LIBS +=  gstrtsp-1.0          4.0      # 1401.0
-SHARED_LIBS +=  gstpbutils-1.0       4.0      # 1401.0
-SHARED_LIBS +=  gstriff-1.0          4.0      # 1401.0
-SHARED_LIBS +=  gstallocators-1.0    3.0      # 1401.0
-SHARED_LIBS +=  gstgl-1.0            3.0      # 1401.0
+SHARED_LIBS +=  gsttag-1.0           4.0      # 1402.0
+SHARED_LIBS +=  gstaudio-1.0         4.0      # 1402.0
+SHARED_LIBS +=  gstfft-1.0           4.0      # 1402.0
+SHARED_LIBS +=  gstvideo-1.0         4.0      # 1402.0
+SHARED_LIBS +=  gstapp-1.0           4.0      # 1402.0
+SHARED_LIBS +=  gstrtp-1.0           4.0      # 1402.0
+SHARED_LIBS +=  gstsdp-1.0           4.0      # 1402.0
+SHARED_LIBS +=  gstrtsp-1.0          4.0      # 1402.0
+SHARED_LIBS +=  gstpbutils-1.0       4.0      # 1402.0
+SHARED_LIBS +=  gstriff-1.0          4.0      # 1402.0
+SHARED_LIBS +=  gstallocators-1.0    3.0      # 1402.0
+SHARED_LIBS +=  gstgl-1.0            3.0      # 1402.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 

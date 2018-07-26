@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.70 2018/05/19 06:21:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2018/07/26 13:52:26 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   3.3      # 1401.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1401.0
-SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1401.0
-SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1401.0
-SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1401.0
-SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1401.0
-SHARED_LIBS +=  gstplayer-1.0        0.3      # 1401.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1401.0
-SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1401.0
-SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1401.0
-SHARED_LIBS +=  gstisoff-1.0         0.0      # 1401.0
-SHARED_LIBS +=  gstwebrtc-1.0        0.0      # 1401.0
+SHARED_LIBS +=  gstphotography-1.0   3.3      # 1402.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 3.3   # 1402.0
+SHARED_LIBS +=  gstcodecparsers-1.0  3.3      # 1402.0
+SHARED_LIBS +=  gstinsertbin-1.0     2.3      # 1402.0
+SHARED_LIBS +=  gsturidownloader-1.0 2.3      # 1402.0
+SHARED_LIBS +=  gstmpegts-1.0        2.3      # 1402.0
+SHARED_LIBS +=  gstplayer-1.0        0.3      # 1402.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 1.3      # 1402.0
+SHARED_LIBS +=  gstbadvideo-1.0      2.3      # 1402.0
+SHARED_LIBS +=  gstbadaudio-1.0      0.3      # 1402.0
+SHARED_LIBS +=  gstisoff-1.0         0.0      # 1402.0
+SHARED_LIBS +=  gstwebrtc-1.0        0.0      # 1402.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 SoundTouch X11 X11-xcb
 WANTLIB += Xdamage Xext Xfixes Xrender Xxf86vm ass bs2b bz2 cairo
@@ -29,6 +29,7 @@ WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz
 WANTLIB += iconv intl lcms2 lzma m mms opus orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png rsvg-2
 WANTLIB += ssl xcb xcb-dri2 xcb-glx xcb-render xcb-shm xcb-xfixes
+WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence
 WANTLIB += xml2 z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}

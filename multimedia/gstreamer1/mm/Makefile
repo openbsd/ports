@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/21 14:42:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2018/07/26 13:52:26 ajacoutot Exp $
 
 COMMENT=		C++ bindings for GStreamer
 
 V=			1.10.0
 DISTNAME=		gstreamermm-${V}
 PKGNAME=		gstreamer1mm-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstreamermm-1.0      1.1      # 1.0
 
