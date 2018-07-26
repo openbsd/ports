@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/10 13:24:14 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.6 2018/07/26 21:30:44 kili Exp $
 
 COMMENT =		standards based terminal calendar
 
@@ -36,7 +36,6 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-capturelog${MODPY_FLAVOR} \
 			devel/py-freezegun${MODPY_FLAVOR}
 
 do-test:
