@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/11/04 21:27:44 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/26 21:34:26 jeremy Exp $
 ${GEM_BIN}/amalgalite-pack${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -84,6 +84,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/default_map_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/function_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integeration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/iso_3166_database.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/json_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/paths_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/progress_handler_spec.rb
