@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+$OpenBSD: patch-configure,v 1.2 2018/07/26 01:56:52 stu Exp $
 
 Do this here so it propagates through everything.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9131,7 +9131,7 @@ TDOMSHELL=tcldomsh
+@@ -8804,7 +8804,7 @@ TDOMSHELL=tcldomsh
      #--------------------------------------------------------------------
  
      # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)

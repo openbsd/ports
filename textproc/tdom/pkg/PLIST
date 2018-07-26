@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/26 01:56:52 stu Exp $
 include/tdom.h
 @lib lib/libtdom${VER}.so.${LIBtdom${VER}_VERSION}
 lib/libtdomstub${VER}.a
@@ -12,5 +12,6 @@ lib/tcl/tdom/tdomConfig.sh
 @man man/mann/domNode.n
 @man man/mann/expat.n
 @man man/mann/expatapi.n
+@man man/mann/pullparser.n
 @man man/mann/tdomcmd.n
 @man man/mann/tnc.n

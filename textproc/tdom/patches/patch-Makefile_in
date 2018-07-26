@@ -1,28 +1,22 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2018/07/26 01:56:52 stu Exp $
 
 Install to OpenBSD locations and adjust pkgIndex.tcl accordingly.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -407,12 +407,12 @@ install-lib-binaries: binaries
- 	@$(INSTALL_DATA_DIR) $(DESTDIR)$(pkglibdir)
- 	@list='$(lib_BINARIES)'; for p in $$list; do \
- 	  if test -f $$p; then \
+@@ -432,8 +432,8 @@ install-lib-binaries: binaries
+ 		echo " $(RANLIB) $$p"; \
+ 		$(RANLIB) $$p; \
+ 	    fi; \
 -	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
 -	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p; \
 +	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p"; \
 +	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p; \
  	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
- 	    if test "x$$stub" = "xstub"; then \
--		echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \
--		$(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p; \
-+		echo " $(RANLIB_STUB) $(DESTDIR)$(libdir)/$$p"; \
-+		$(RANLIB_STUB) $(DESTDIR)$(libdir)/$$p; \
- 	    else \
- 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
- 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
-@@ -427,8 +427,8 @@ install-lib-binaries: binaries
+ 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
+ 	    if test "x$$ext" = "xdll"; then \
+@@ -445,8 +445,8 @@ install-lib-binaries: binaries
  	    fi; \
  	  fi; \
  	done
@@ -33,7 +27,7 @@ Index: Makefile.in
  	@list='$(PKG_TCL_SOURCES)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
  	    destp=`basename $$p`; \
-@@ -438,6 +438,7 @@ install-lib-binaries: binaries
+@@ -456,6 +456,7 @@ install-lib-binaries: binaries
  	done
  	@if test "x$(SHARED_BUILD)" = "x1"; then \
  	    echo " Install pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \

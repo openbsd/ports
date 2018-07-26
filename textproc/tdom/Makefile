@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/26 01:56:52 stu Exp $
 
 COMMENT =		fast XML/DOM/XPath/XSLT/HTML/JSON extension for Tcl
 
-V =			0.9.0
+V =			0.9.1
 VER =			${V:S/.//g}
 
 DISTNAME =		tdom-${V}
