@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/05/05 22:46:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/07/26 21:33:46 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -47,6 +47,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/ssl/server-key.pem
 ${GEM_LIB}/gems/${DISTNAME}/spec/ssl/server-req.pem
 ${GEM_LIB}/gems/${DISTNAME}/spec/test_data
 ${GEM_LIB}/gems/${DISTNAME}/support/
+${GEM_LIB}/gems/${DISTNAME}/support/5072E1F5.asc
 ${GEM_LIB}/gems/${DISTNAME}/support/libmysql.def
 ${GEM_LIB}/gems/${DISTNAME}/support/mysql_enc_to_ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/ruby_enc_to_mysql.rb
