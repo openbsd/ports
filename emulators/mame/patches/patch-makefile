@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.4 2018/07/10 17:29:07 fcambus Exp $
+$OpenBSD: patch-makefile,v 1.5 2018/07/26 13:30:03 fcambus Exp $
 
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
@@ -27,18 +27,17 @@ Index: makefile
  # set the symbols level
  ifdef SYMBOLS
  PARAMS += --SYMBOLS='$(SYMBOLS)'
-@@ -951,9 +946,9 @@ FASTBUILD_PARAMS += $(FASTBUILD_TARGET)-x32
- endif
- endif
- else
+@@ -911,8 +906,8 @@ endif
+ 
+ ifeq ($(OS),windows)
+ ifeq (posix,$(SHELLTYPE))
 -GCC_VERSION      := $(shell $(TOOLCHAIN)$(subst @,,$(CC)) -dumpversion 2> /dev/null)
+-CLANG_VERSION    := $(shell $(TOOLCHAIN)$(subst @,,$(CC)) --version 2> /dev/null| head -n 1 | grep clang | sed "s/^.*[^0-9]\([0-9]\+\.[0-9]\+\.[0-9]\+\).*$$/\1/" | head -n 1)
 +GCC_VERSION      := $(shell cc -dumpversion 2> /dev/null)
- ifneq ($(OS),solaris)
--CLANG_VERSION    := $(shell $(TOOLCHAIN)$(subst @,,$(CC))  --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\(\.[0-9]\)\?' -o | grep -e '[0-9]\.[0-9]\(\.[0-9]\)\?' -o | tail -n 1)
-+CLANG_VERSION    := $(shell cc --version  2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\.[0-9]' -o | sed -e 's,version ,,' | tail -n 1)
- endif
++CLANG_VERSION    := $(shell cc --version 2> /dev/null | head -n 1 | grep -e 'version [0-9]\.[0-9]\.[0-9]' -o | sed -e 's,version ,,' | tail -n 1)
  PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
- GIT_AVAILABLE := $(shell git --version > /dev/null 2>&1 && echo git)
+ GIT_AVAILABLE    := $(shell git --version > /dev/null 2>&1 && echo git)
+ else
 @@ -965,9 +960,9 @@ else
  $(info Clang $(CLANG_VERSION) detected)
  ifneq ($(TARGETOS),asmjs)

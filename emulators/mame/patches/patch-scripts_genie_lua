@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_genie_lua,v 1.5 2018/05/31 09:12:38 fcambus Exp $
+$OpenBSD: patch-scripts_genie_lua,v 1.6 2018/07/26 13:30:03 fcambus Exp $
 
 - Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
 - Remove broken GCC version detection
@@ -31,7 +31,7 @@ Index: scripts/genie.lua
  	if _OPTIONS["LTO"]=="1" then
  		buildoptions {
  -- windows native mingw GCC 5.2 fails with -flto=x with x > 1. bug unfixed as of this commit
-@@ -995,49 +997,6 @@ end
+@@ -995,54 +997,6 @@ end
  
  
  
@@ -55,6 +55,11 @@ Index: scripts/genie.lua
 -					"-Wno-extern-c-compat",
 -					"-Wno-unknown-attributes",
 -					"-Wno-ignored-qualifiers"
+-				}
+-			end
+-			if (version >= 60000) then
+-				buildoptions {
+-					"-Wno-pragma-pack" -- clang 6.0 complains when the packing change lifetime is not contained within a header file.
 -				}
 -			end
 -		else
