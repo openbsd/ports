@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2017/09/10 20:27:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2018/07/26 13:01:25 sebastia Exp $
 
 COMMENT=	framework to major mail protocols
 
-DISTNAME=	Pantomime-1.2.3
+DISTNAME=	Pantomime-1.3.0
 
-SHLIB_VERSION = 1.3
+SHLIB_VERSION = 2.0
 SHARED_LIBS=	Pantomime ${SHLIB_VERSION}
 CATEGORIES=	mail
 
