@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.119 2018/04/11 21:35:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2018/07/26 19:52:55 jasper Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.100.0
+DISTNAME=	clamav-0.100.1
 
 CATEGORIES=	security
 
