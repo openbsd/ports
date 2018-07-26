@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/09/10 20:27:45 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/07/26 13:01:48 sebastia Exp $
 bin/GNUMail
 include/GNUMail
 lib/GNUstep/ApplicationSupport/
@@ -163,6 +163,10 @@ libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/info.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/EditWindow.nib/keyedobjects.nib
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.gorm/
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.classes
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.info
+libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.gorm/objects.gorm
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.nib/
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.nib/classes.nib
 libexec/GNUstep/GNUMail.app/Resources/English.lproj/FindWindow.nib/info.nib

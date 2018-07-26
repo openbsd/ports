@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/09/10 20:27:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.28 2018/07/26 13:01:48 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
-DISTNAME =	GNUMail-1.2.3
-SHLIB_VERSION =	2.1
+DISTNAME =	GNUMail-1.3.0
+SHLIB_VERSION =	3.0
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail
 
@@ -16,7 +16,7 @@ MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 LIB_DEPENDS=	x11/gnustep/addresses \
-		x11/gnustep/pantomime>=1.2.2
+		x11/gnustep/pantomime>=1.3.0
 
 MAKE_ENV+=	GNUMail_INTERFACE_VERSION=${LIBGNUMail_VERSION}
 
