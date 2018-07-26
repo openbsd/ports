@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.50 2018/06/06 17:03:46 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.51 2018/07/26 13:23:01 phessler Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -29,7 +29,7 @@ GO_ARCHS = amd64 i386
 # arches where the base compiler is clang
 CLANG_ARCHS = aarch64 amd64 arm i386
 # arches using LLVM's linker (ld.lld); others use binutils' ld.bfd
-LLD_ARCHS = aarch64
+LLD_ARCHS = aarch64 arm
 
 # arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
 # as well as available for PROPERTIES checks.
@@ -61,7 +61,7 @@ LIBECXX = estdc++>=17 pthread
 _SYSTEM_VERSION = 0
 _SYSTEM_VERSION-aarch64 = 2
 _SYSTEM_VERSION-amd64 = 3
-_SYSTEM_VERSION-arm = 2
+_SYSTEM_VERSION-arm = 3
 _SYSTEM_VERSION-i386 = 2
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
