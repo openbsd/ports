@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/09 19:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/07/26 13:40:52 fcambus Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -6,7 +6,7 @@ BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
-GH_TAGNAME =		v2.0.2
+GH_TAGNAME =		v2.1.0
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
