@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_config,v 1.4 2018/07/01 15:02:36 kirby Exp $
+$OpenBSD: patch-Makefile_config,v 1.5 2018/07/26 19:17:44 kirby Exp $
 Index: Makefile.config
 --- Makefile.config.orig
 +++ Makefile.config
@@ -61,7 +61,7 @@ Index: Makefile.config
  
  # Location of PID files and other statefiles. On the server, must be
  # writable by the user "munin".
-@@ -106,7 +109,7 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
+@@ -105,7 +108,7 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
  
  # How to figure out the hostname. (Only used in default configuration
  # files)
@@ -70,7 +70,7 @@ Index: Makefile.config
  
  # What is the safest way to create a tempfile.
  # Default is to figure it out by testing various methods.
-@@ -117,8 +120,8 @@ MKTEMP     := $(shell ./test-mktemp)
+@@ -116,8 +119,8 @@ MKTEMP     := $(shell ./test-mktemp)
  VERSION    := $(shell ./getversion)
  
  # User to run munin as
@@ -81,7 +81,7 @@ Index: Makefile.config
  
  # Default user to run the plugins as
  PLUGINUSER := nobody
-@@ -130,8 +133,8 @@ CGIUSER := nobody
+@@ -129,8 +132,8 @@ CGIUSER := nobody
  # These will work on most modern OSes:
  #
  GETENT     := $(shell which getent || which true 2>/dev/null)

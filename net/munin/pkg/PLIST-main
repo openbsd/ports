@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2018/04/01 08:21:01 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2018/07/26 19:17:44 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -7,17 +7,8 @@
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/*
 @extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/*
 @extraunexec rm -rf /var/log/munin/*
-@owner _munin
-@sample /var/db/munin/
-@mode 775
-@owner _munin-plugin
-@group _munin
-@sample /var/db/munin/spool/
-@sample /var/db/munin-pluginstate/
-@sample /var/log/munin/
-@mode
-@owner
-@group
+@rcscript ${RCDIR}/munin_asyncd
+@rcscript ${RCDIR}/munin_node
 bin/munin-check
 bin/munindoc
 libdata/perl5/site_perl/Munin/
@@ -337,5 +328,11 @@ share/examples/munin/plugin-conf.d/openbsd-packages
 @sample ${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages
 share/examples/munin/plugins/
 @sample ${SYSCONFDIR}/munin/plugins/
-@rcscript ${RCDIR}/munin_asyncd
-@rcscript ${RCDIR}/munin_node
+@owner _munin
+@sample /var/db/munin/
+@mode 775
+@owner _munin-plugin
+@group _munin
+@sample /var/db/munin/spool/
+@sample /var/db/munin-pluginstate/
+@sample /var/log/munin/

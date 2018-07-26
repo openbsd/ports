@@ -1,12 +1,13 @@
-$OpenBSD: patch-plugins_node_d_sendmail_mailqueue_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
---- plugins/node.d/sendmail_mailqueue.in.orig	Fri Aug 31 19:22:50 2012
-+++ plugins/node.d/sendmail_mailqueue.in	Sun Sep 30 23:19:21 2012
+$OpenBSD: patch-plugins_node_d_sendmail_mailqueue_in,v 1.3 2018/07/26 19:17:44 kirby Exp $
+Index: plugins/node.d/sendmail_mailqueue.in
+--- plugins/node.d/sendmail_mailqueue.in.orig
++++ plugins/node.d/sendmail_mailqueue.in
 @@ -38,7 +38,7 @@ GPLv2
  
  =cut
  
--MSP_QUEUE=/var/spool/mqueue-client
-+MSP_QUEUE=/var/spool/clientmqueue
- MTA_QUEUE=/var/spool/mqueue
- if [ "$mspqueue"  ]; then MSP_QUEUE=$mspqueue ; fi
- if [ "$mtaqueue"  ]; then MTA_QUEUE=$mtaqueue ; fi
+-MSP_QUEUE=${mspqueue:-/var/spool/mqueue-client}
++MSP_QUEUE=${mspqueue:-/var/spool/clientmqueue}
+ MTA_QUEUE=${mtaqueue:-/var/spool/mqueue}
+ 
+ if [ "$1" = "autoconf" ]; then
