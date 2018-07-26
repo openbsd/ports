@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/23 22:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/26 12:58:16 espie Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -13,8 +13,6 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.mingw.org/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
-
-BROKEN =	probable fork bomb. Breaks bulk builds
 
 # Headers: public domain
 # Compiler/toolchain: GPL
@@ -35,25 +33,25 @@ BUILD_DEPENDS =	shells/bash
 BUILD_DEPENDS += textproc/gsed
 
 SCRIPT_MASTER = files/Other/Cross-Hosted%20MinGW%20Build%20Tool/${BASENAME}-${V}
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1/
 
 TOOL_SUFX =	.tar.gz
 TOOL_MASTER = ${MASTER_SITE_SOURCEFORGE:=mingw/}files/MinGW/Base/
 
 TOOL_GCC =	gcc-core-3.4.5-20060117-2
-MASTER_SITES0 = ${TOOL_MASTER}gcc/Version3/Previous%20Release_%20${TOOL_GCC}
+MASTER_SITES0 = ${TOOL_MASTER}gcc/Version3/Previous%20Release_%20${TOOL_GCC}/
 
 TOOL_BINUTILS =	binutils-2.20.1
-MASTER_SITES1 = ${TOOL_MASTER}binutils/${TOOL_BINUTILS}
+MASTER_SITES1 = ${TOOL_MASTER}binutils/${TOOL_BINUTILS}/
 
 TOOL_WRT =	mingwrt-3.18
-MASTER_SITES2 = ${TOOL_MASTER}mingw-rt/${TOOL_WRT}
+MASTER_SITES2 = ${TOOL_MASTER}mingw-rt/${TOOL_WRT}/
 
 TOOL_W32API =	w32api-3.14
-MASTER_SITES3 = ${TOOL_MASTER}w32api/${TOOL_W32API}
+MASTER_SITES3 = ${TOOL_MASTER}w32api/${TOOL_W32API}/
 
 TOOL_G++ =	gcc-g++-3.4.5-20060117-2
-MASTER_SITES4 =	${TOOL_MASTER}g++/Version3/Previous%20Release_%20${TOOL_G++}
+MASTER_SITES4 =	${TOOL_MASTER}g++/Version3/Previous%20Release_%20${TOOL_G++}/
 
 TOOLCHAIN =	${TOOL_BINUTILS}-src${TOOL_SUFX}:0			\
 		${TOOL_GCC}-src${TOOL_SUFX}:1				\
@@ -82,6 +80,7 @@ do-build:
 	    CONFIG_SHELL=${LOCALBASE}/bin/bash \
 	    AWK=/usr/bin/awk \
 	    PATH=${PORTPATH} \
+	    OPENBSD_PATCH_DIR=${PATCHDIR} \
 	    ac_cv_path_mkdir=/bin/mkdir \
 	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended

@@ -1,0 +1,16 @@
+$OpenBSD: patch-x86-mingw32-build_sh_functions,v 1.1 2018/07/26 12:58:16 espie Exp $
+
+Index: x86-mingw32-build.sh.functions
+--- x86-mingw32-build.sh.functions.orig
++++ x86-mingw32-build.sh.functions
+@@ -160,8 +160,9 @@ prepare()
+        esac; break
+      fi
+   done
+-  for PACKAGE in $PATCHES_DIR/$1${3-"-patch"}*
++  for PACKAGE in $PATCHES_DIR/$1${3-"-patch"}* $OPENBSD_PATCH_DIR/patch_$1-*
+   do
++    echo "patch template is $PACKAGE"
+     if test -r $PACKAGE
+     then
+       prompt "$script: applying patch $PACKAGE ... "
