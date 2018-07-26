@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_fping_c,v 1.4 2017/02/10 14:23:49 sthen Exp $
---- src/fping.c.orig	Thu Feb  9 09:22:25 2017
-+++ src/fping.c	Fri Feb 10 14:21:23 2017
-@@ -364,6 +364,9 @@ int main(int argc, char** argv)
-             perror("cannot setuid");
-     }
+$OpenBSD: patch-src_fping_c,v 1.5 2018/07/26 10:37:46 sthen Exp $
+Index: src/fping.c
+--- src/fping.c.orig
++++ src/fping.c
+@@ -354,6 +354,9 @@ int main(int argc, char** argv)
+     int tos = 0;
+     HOST_ENTRY* cursor;
  
 +    if (pledge("stdio inet rpath dns", NULL) == -1)
 +        perror("pledge");
 +
-     ident = getpid() & 0xFFFF;
-     verbose_flag = 1;
-     backoff_flag = 1;
+     prog = argv[0];
+ 
+     s = open_ping_socket(ping_data_size);
 @@ -583,6 +586,11 @@ int main(int argc, char** argv)
          }
      }
@@ -23,22 +24,18 @@ $OpenBSD: patch-src_fping_c,v 1.4 2017/02/10 14:23:49 sthen Exp $
      /* validate various option settings */
  
      if (ttl > 255) {
-@@ -798,6 +806,14 @@ int main(int argc, char** argv)
+@@ -798,6 +806,10 @@ int main(int argc, char** argv)
          exit(num_noaddress ? 2 : 1);
      }
  
-+    if (name_flag) { /* done with file, drop rpath */
-+        if (pledge("stdio inet dns", NULL) == -1)
-+            perror("pledge");
-+    } else { /* and drop dns unless we do reverse lookups */
-+        if (pledge("stdio inet", NULL) == -1)
-+            perror("pledge");
-+    }
++    /* done with file and dns/rdns lookups */
++    if (pledge("stdio inet", NULL) == -1)
++        perror("pledge");
 +
      if (src_addr_present) {
          socket_set_src_addr(s, src_addr);
      }
-@@ -1667,7 +1683,7 @@ int wait_for_reply(long wait_time)
+@@ -1667,7 +1679,7 @@ int wait_for_reply(long wait_time)
  
  #ifndef IPV6
      ip = (struct ip*)buffer;
