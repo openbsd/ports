@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1428 2018/07/23 13:25:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1429 2018/07/27 17:22:24 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2594,9 +2594,9 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # Run as _pbuild
 _post-patch-finalize:
 .if ${USE_WXNEEDED:L} == "yes"
-	@wrktmp=`df -P ${WRKOBJDIR} | awk 'END { print $$6 }'`; \
+	@wrktmp=`df -P ${WRKOBJDIR_${PKGPATH}} | awk 'END { print $$6 }'`; \
 	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
-		echo "Fatal: ${WRKOBJDIR} must be on a wxallowed filesystem" \
+		echo "Fatal: ${WRKOBJDIR_${PKGPATH}} must be on a wxallowed filesystem" \
 			"(in ${PKGPATH})" >&2; \
 		false; \
 	fi
