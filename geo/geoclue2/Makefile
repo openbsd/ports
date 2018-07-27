@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2018/07/27 18:31:42 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.4.10
+VERSION=		2.4.11
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		0
 
 SHARED_LIBS +=  geoclue-2                 0.1 # 0.0
 
@@ -41,7 +40,7 @@ LIB_DEPENDS=		devel/libsoup \
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=		x11/dbus,-suid
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 
 USE_GMAKE=		Yes
 

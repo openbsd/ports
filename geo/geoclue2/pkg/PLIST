@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/07/27 18:31:42 jasper Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 include/libgeoclue-2.0/
@@ -31,7 +31,6 @@ share/dbus-1/system-services/org.freedesktop.GeoClue2.service
 share/examples/geoclue/
 share/examples/geoclue/dbus-1/
 share/examples/geoclue/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
 share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.conf
@@ -47,4 +46,6 @@ share/examples/geoclue/xdg/autostart/
 share/examples/geoclue/xdg/autostart/geoclue-demo-agent.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/geoclue-demo-agent.desktop
 share/gir-1.0/Geoclue-2.0.gir
+share/vala/vapi/libgeoclue-2.0.deps
+share/vala/vapi/libgeoclue-2.0.vapi
 @tag update-desktop-database
