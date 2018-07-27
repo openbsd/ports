@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.50 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.51 2018/07/27 08:44:14 sebastia Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
-DISTNAME=	mcollective-2.11.4
-REVISION=	0
+DISTNAME=	mcollective-2.12.2
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://www.puppetlabs.com/mcollective
+HOMEPAGE=	https://puppet.com/docs/mcollective/current/index.html
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -20,7 +19,7 @@ MODULES=	lang/ruby
 
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}
-RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.4
+RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.4.4
 
 PKG_ARCH=	*
 NO_TEST=	Yes
