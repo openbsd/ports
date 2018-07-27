@@ -1,14 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/20 13:19:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2018/07/27 08:42:58 sebastia Exp $
 
 COMMENT = 	Streaming Text Orientated Messaging Protocol (STOMP) client
 
-# When upgrading to something higher than 1.3.X, ensure it does not break
-# MCollective Rabbitmq SSL backend communication, to not run into 
-# error like: es1_oldrecv: receive failed: Stomp::Error::ReceiveTimeout 
-
-DISTNAME = 	stomp-1.3.5
+DISTNAME = 	stomp-1.4.4
 EPOCH =		0
-REVISION =	0
 CATEGORIES = 	net
 
 HOMEPAGE =	https://github.com/stompgem/stomp
