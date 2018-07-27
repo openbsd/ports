@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/23 11:26:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/27 18:29:25 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -42,6 +42,7 @@ lib/elixir/lib/elixir/ebin/Elixir.CaseClauseError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.Formatter.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.Identifier.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.LoadError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Typespec.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.BitString.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.File.Stream.beam
@@ -84,6 +85,7 @@ lib/elixir/lib/elixir/ebin/Elixir.File.Stat.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.Stream.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.beam
 lib/elixir/lib/elixir/ebin/Elixir.Float.beam
+lib/elixir/lib/elixir/ebin/Elixir.Function.beam
 lib/elixir/lib/elixir/ebin/Elixir.FunctionClauseError.beam
 lib/elixir/lib/elixir/ebin/Elixir.GenEvent.Stream.beam
 lib/elixir/lib/elixir/ebin/Elixir.GenEvent.beam
@@ -267,6 +269,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateDescribeError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateTestError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.EventManager.beam
+lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.FailuresManifest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Filters.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Formatter.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.MultiError.beam
@@ -332,8 +335,6 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.CLI.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Compilers.Elixir.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Compilers.Erlang.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Compilers.Test.beam
-lib/elixir/lib/mix/ebin/Elixir.Mix.Config.Agent.beam
-lib/elixir/lib/mix/ebin/Elixir.Mix.Config.LoadError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Config.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.Converger.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.ElixirSCM.beam
