@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/07 12:07:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2018/07/27 18:32:30 jasper Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
-V =			1.8.1
+V =			1.8.2
 DISTNAME =		ttfautohint-${V}
 SHARED_LIBS +=  ttfautohint               0.0 # 1.0
 CATEGORIES =		graphics
