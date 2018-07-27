@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/15 18:36:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/07/27 18:58:26 jasper Exp $
 bin/suricata-update
 lib/python${MODPY_VERSION}/site-packages/suricata/
 lib/python${MODPY_VERSION}/site-packages/suricata/__init__.py
@@ -38,6 +38,13 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/config.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/
 lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/index.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/index.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/update.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/update.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/engine.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/engine.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/exceptions.py
@@ -52,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/maps.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/maps.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/net.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/net.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/revision.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/revision.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
@@ -62,8 +71,5 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.pyc
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/suricata_update-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/doc/pkg-readmes/${FULLPKGNAME}
