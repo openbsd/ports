@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/04/26 16:06:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2018/07/28 08:08:11 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		2.1
+V=		2.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -27,7 +27,7 @@ MASTER_SITES=	https://www.weechat.org/files/src/
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
-WANTLIB-main=	c curl iconv intl m curses perl pthread \
+WANTLIB-main=	aspell c curl iconv intl m curses perl pthread \
 		gcrypt gnutls gpg-error z
 
 WANTLIB-lua=	${MODLUA_WANTLIB} m
@@ -50,7 +50,8 @@ BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	devel/gettext \
 		security/libgcrypt \
 		security/gnutls \
-		net/curl
+		net/curl \
+		textproc/aspell/core
 
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
@@ -64,7 +65,7 @@ RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS-tcl=	net/weechat,-main ${MODTCL_RUN_DEPENDS}
 
-CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
+CONFIGURE_ARGS+=-DENABLE_ASPELL=yes \
 		-DENABLE_GUILE=no \
 		-DENABLE_RUBY=yes \
 		-DENABLE_LUA=yes \
