@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2018/04/17 21:06:07 kili Exp $
+# $OpenBSD: Makefile,v 1.124 2018/07/28 15:59:24 rsadowski Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -19,12 +19,12 @@ FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
-REVISION-mysql= 	11
-REVISION-postgresql= 	8
-REVISION-main= 		14
-REVISION-html= 		3
-REVISION-examples=	4
-REVISION-sqlite2= 	8
+REVISION-mysql=		12
+REVISION-postgresql=	9
+REVISION-main=		15
+REVISION-html=		4
+REVISION-examples=	5
+REVISION-sqlite2=	8
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk
@@ -43,10 +43,9 @@ QT_PLUGINS=		plugins-${LIBqt-mt_VERSION:R}
 VERSION=	3.8
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
-MASTER_SITES=	https://download.qt-project.org/archive/qt/3/
+MASTER_SITES=	https://download.qt.io/archive/qt/3/
 
 # Old official site
-#MASTER_SITES0=	http://freedesktop.org/~daisuke/
 MASTER_SITES0=	ftp://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
 
 
@@ -56,7 +55,7 @@ PATCH_DIST_STRIP=	-p1
 pre-configure:
 	cd ${WRKDIST} && /bin/sh ./make-symlinks.sh
 
-HOMEPAGE=	http://www.trolltech.com/qt/
+HOMEPAGE=	https://www.qt.io
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
