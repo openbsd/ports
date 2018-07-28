@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_plugins_todo_gbp-todo-model_c,v 1.2 2018/06/21 09:25:18 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_todo_gbp-todo-model_c,v 1.3 2018/07/28 06:50:23 ajacoutot Exp $
 
 XXX rework and push upstream
 
 Index: src/plugins/todo/gbp-todo-model.c
 --- src/plugins/todo/gbp-todo-model.c.orig
 +++ src/plugins/todo/gbp-todo-model.c
-@@ -323,8 +323,10 @@ gbp_todo_model_mine_worker (GTask        *task,
- 
-   launcher = ide_subprocess_launcher_new (G_SUBPROCESS_FLAGS_STDOUT_PIPE);
- 
+@@ -358,8 +358,10 @@ gbp_todo_model_mine_worker (IdeTask      *task,
+     }
+   else
+     {
 -#ifdef __FreeBSD__
 +#if defined (__FreeBSD__)
-   ide_subprocess_launcher_push_argv (launcher, "bsdgrep");
+       ide_subprocess_launcher_push_argv (launcher, "bsdgrep");
 +#elif defined (__OpenBSD__)
-+  ide_subprocess_launcher_push_argv (launcher, "ggrep");
++      ide_subprocess_launcher_push_argv (launcher, "ggrep");
  #else
-   ide_subprocess_launcher_push_argv (launcher, "grep");
+       ide_subprocess_launcher_push_argv (launcher, "grep");
  #endif
