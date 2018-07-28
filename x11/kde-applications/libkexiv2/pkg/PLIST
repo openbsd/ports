@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/28 18:50:56 rsadowski Exp $
+include/KF5/
+include/KF5/KExiv2/
+include/KF5/KExiv2/KExiv2/
+include/KF5/KExiv2/KExiv2/KExiv2
+include/KF5/KExiv2/KExiv2/KExiv2Data
+include/KF5/KExiv2/KExiv2/KExiv2Previews
+include/KF5/KExiv2/KExiv2/RotationMatrix
+include/KF5/KExiv2/kexiv2/
+include/KF5/KExiv2/kexiv2/kexiv2.h
+include/KF5/KExiv2/kexiv2/kexiv2data.h
+include/KF5/KExiv2/kexiv2/kexiv2previews.h
+include/KF5/KExiv2/kexiv2/libkexiv2_export.h
+include/KF5/KExiv2/kexiv2/rotationmatrix.h
+include/KF5/libkexiv2_version.h
+lib/cmake/KF5KExiv2/
+lib/cmake/KF5KExiv2/KF5KExiv2Config.cmake
+lib/cmake/KF5KExiv2/KF5KExiv2ConfigVersion.cmake
+lib/cmake/KF5KExiv2/KF5KExiv2Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5KExiv2/KF5KExiv2Targets.cmake
+@lib lib/libKF5KExiv2.so.${LIBKF5KExiv2_VERSION}
