@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/22 14:50:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/28 18:53:53 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -59,7 +59,7 @@
      #SUBDIR += kde-runtime
      #SUBDIR += kdebugsettings
      #SUBDIR += kdeedu-data
-     #SUBDIR += kdegraphics-mobipocket
+     SUBDIR += kdegraphics-mobipocket
      #SUBDIR += kdegraphics-thumbnailers
      #SUBDIR += kdelibs
      #SUBDIR += kdenetwork-filesharing
@@ -166,7 +166,7 @@
      #SUBDIR += libkdegames
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
-     #SUBDIR += libkexiv2
+     SUBDIR += libkexiv2
      SUBDIR += libkface
      SUBDIR += libkgeomap
      SUBDIR += libkipi
