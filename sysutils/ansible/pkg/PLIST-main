@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2018/07/09 12:32:35 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2018/07/28 12:03:53 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -5982,6 +5982,7 @@ share/doc/ansible/html/vmware/
 share/doc/ansible/html/vmware/faq.html
 share/doc/ansible/html/vmware/index.html
 share/doc/ansible/html/vmware/scenario_clone_template.html
+share/doc/ansible/html/vmware/scenario_remove_vm.html
 share/doc/ansible/html/vmware/vmware_concepts.html
 share/doc/ansible/html/vmware/vmware_external_doc_links.html
 share/doc/ansible/html/vmware/vmware_getting_started.html
