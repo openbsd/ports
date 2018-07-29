@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2018/03/15 21:25:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.58 2018/07/29 22:09:29 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -2488,8 +2488,8 @@ roundcubemail/public_html/program/js
 roundcubemail/public_html/program/resources
 roundcubemail/public_html/skins
 roundcubemail/roundcubemail.conf.dist
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/roundcubemail.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/roundcubemail.conf
 roundcubemail/skins/
 roundcubemail/skins/classic/
 roundcubemail/skins/classic/README
