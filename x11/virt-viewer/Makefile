@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2018/07/01 18:33:39 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/07/29 08:17:00 jasper Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
-DISTNAME=	virt-viewer-6.0
+DISTNAME=	virt-viewer-7.0
 CATEGORIES=	x11
-REVISION=	7
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -35,7 +34,7 @@ USE_GMAKE=	Yes
 
 LIB_DEPENDS=	devel/libvirt-glib \
 		x11/gtk-vnc \
-		x11/spice-gtk>=0.30
+		x11/spice-gtk>=0.35
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		misc/shared-mime-info
@@ -53,7 +52,5 @@ post-install:
 	cd ${WRKSRC}/icons/${s}x${s}/ && ${MAKE_ENV} ${MAKE_PROGRAM} install
 .endfor
 	rm -r ${PREFIX}/share/icons/hicolor/apps/
-	${INSTALL_SCRIPT} ${WRKSRC}/data/spice-xpi-client-remote-viewer \
-		${PREFIX}/libexec/
 
 .include <bsd.port.mk>
