@@ -1,0 +1,7 @@
+VGMPlay is a command line audio player for all VGM files.
+
+Supported files types are:
+* Video Game Music Files (*.vgm, *.vgz)
+* Creative Music Files (*.cmf)
+* DosBox RAW OPL Log Files (*.dro)
+* Playlist files (*.m3u)

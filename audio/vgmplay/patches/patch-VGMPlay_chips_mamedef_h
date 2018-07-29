@@ -1,0 +1,15 @@
+$OpenBSD: patch-VGMPlay_chips_mamedef_h,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+
+Already have M_PI in math.h
+
+Index: VGMPlay/chips/mamedef.h
+--- VGMPlay/chips/mamedef.h.orig
++++ VGMPlay/chips/mamedef.h
+@@ -49,7 +49,6 @@ typedef INT32 stream_sample_t;
+ #else
+ #define INLINE	static inline
+ #endif
+-#define M_PI	3.14159265358979323846
+ 
+ #ifdef _DEBUG
+ #define logerror	printf

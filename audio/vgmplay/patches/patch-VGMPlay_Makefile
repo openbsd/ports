@@ -1,0 +1,91 @@
+$OpenBSD: patch-VGMPlay_Makefile,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+
+Remove hardcoded -O3
+Fix up include dirs and libs
+Print compiling lines
+Fix manual page install
+Use endian-safe code on all archs
+
+Index: VGMPlay/Makefile
+--- VGMPlay/Makefile.orig
++++ VGMPlay/Makefile
+@@ -31,7 +31,7 @@ USE_LIBAO = 1
+ #   0 = undefined (use endian-safe code, might be slightly slower)
+ #   1 = Little Endian (Intel)
+ #   2 = Big Endian (Motorola)
+-BYTE_ORDER = 1
++BYTE_ORDER = 0
+ 
+ 
+ ifdef MACOSX
+@@ -43,7 +43,7 @@ endif
+ 
+ CC = gcc
+ PREFIX = /usr/local
+-MANPREFIX = $(PREFIX)/share/man
++MANPREFIX = $(PREFIX)/man
+ 
+ # -- VGMPlay specific Compile Flags --
+ MAINFLAGS := -DCONSOLE_MODE -DADDITIONAL_FORMATS -DSET_CONSOLE_TITLE
+@@ -84,12 +84,12 @@ endif
+ ifdef DEBUG
+ CFLAGS := -g $(CFLAGS)
+ else
+-CFLAGS := -O3 -g0 $(CFLAGS)
++CFLAGS := $(CFLAGS) -I${LOCALBASE}/include
+ endif
+ #CFLAGS += -Wall
+-CFLAGS += -Wno-unused-variable -Wno-unused-value -Wno-unused-but-set-variable
++CFLAGS += -Wno-unused-variable -Wno-unused-value
+ # libm (math library) and libz (zlib)
+-LDFLAGS := -lm -lz $(LDFLAGS)
++LDFLAGS := -lm -lz $(LDFLAGS) -L${LOCALBASE}/lib
+ 
+ ifdef WINDOWS
+ # for Windows, add kernel32 and winmm (Multimedia APIs)
+@@ -102,7 +102,7 @@ ifdef MACOSX
+ #CFLAGS += -I/some/path
+ else
+ # for Linux, add librt (clock stuff) and libpthread (threads)
+-LDFLAGS += -lrt -lpthread -pthread
++LDFLAGS += -lpthread -pthread
+ endif
+ MAINFLAGS += -pthread -DSHARE_PREFIX=\"$(PREFIX)\"
+ 
+@@ -216,31 +216,23 @@ EXTRA_OBJS = $(VGMPLAY_OBJS) $(VGM2PCM_OBJS) $(VGM2WAV
+ all:	vgmplay vgm2pcm vgm2wav
+ 
+ vgmplay:	$(EMUOBJS) $(MAINOBJS) $(VGMPLAY_OBJS)
+-	@echo Linking vgmplay ...
+-	@$(CC) $(VGMPLAY_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgmplay
+-	@echo Done.
++	$(CC) $(VGMPLAY_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgmplay
+ 
+ vgm2pcm:	$(EMUOBJS) $(MAINOBJS) $(VGM2PCM_OBJS)
+-	@echo Linking vgm2pcm ...
+-	@$(CC) $(VGM2PCM_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgm2pcm
+-	@echo Done.
++	$(CC) $(VGM2PCM_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgm2pcm
+ 
+ vgm2wav:	$(EMUOBJS) $(MAINOBJS) $(VGM2WAV_OBJS)
+-	@echo Linking vgm2wav ...
+-	@$(CC) $(VGM2WAV_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgm2wav
+-	@echo Done.
++	$(CC) $(VGM2WAV_OBJS) $(MAINOBJS) $(EMUOBJS) $(LDFLAGS) -o vgm2wav
+ 
+ # compile the chip-emulator c-files
+ $(EMUOBJ)/%.o:	$(EMUSRC)/%.c
+-	@echo Compiling $< ...
+ 	@mkdir -p $(@D)
+-	@$(CC) $(CFLAGS) $(EMUFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) $(EMUFLAGS) -c $< -o $@
+ 
+ # compile the main c-files
+ $(OBJ)/%.o:	$(SRC)/%.c
+-	@echo Compiling $< ...
+ 	@mkdir -p $(@D)
+-	@$(CC) $(CFLAGS) $(MAINFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) $(MAINFLAGS) -c $< -o $@
+ 
+ clean:
+ 	@echo Deleting object files ...

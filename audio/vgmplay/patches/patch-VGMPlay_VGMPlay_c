@@ -1,0 +1,16 @@
+$OpenBSD: patch-VGMPlay_VGMPlay_c,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+
+Fix formatting
+
+Index: VGMPlay/VGMPlay.c
+--- VGMPlay/VGMPlay.c.orig
++++ VGMPlay/VGMPlay.c
+@@ -5635,7 +5635,7 @@ static void InterpretVGM(UINT32 SampleCount)
+ #ifdef CONSOLE_MODE
+ 				if (! CmdList[Command])
+ 				{
+-					printf("Unknown command: %02hX\n", Command);
++					printf("Unknown command: %02hhX\n", Command);
+ 					CmdList[Command] = true;
+ 				}
+ #endif

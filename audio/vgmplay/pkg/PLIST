@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+@bin bin/vgmplay
+@man man/man1/vgmplay.1
+share/vgmplay/
+share/vgmplay/vgmplay.ini

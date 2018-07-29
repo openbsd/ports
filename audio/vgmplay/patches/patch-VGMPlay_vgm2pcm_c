@@ -1,0 +1,16 @@
+$OpenBSD: patch-VGMPlay_vgm2pcm_c,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+
+Fix formatting
+
+Index: VGMPlay/vgm2pcm.c
+--- VGMPlay/vgm2pcm.c.orig
++++ VGMPlay/vgm2pcm.c
+@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
+ 
+     sampleBuffer = (WAVE_16BS*)malloc(SAMPLESIZE * SampleRate);
+     if (sampleBuffer == NULL) {
+-        fprintf(stderr, "vgm2pcm: error: failed to allocate %u bytes of memory\n", SAMPLESIZE * SampleRate);
++        fprintf(stderr, "vgm2pcm: error: failed to allocate %lu bytes of memory\n", SAMPLESIZE * SampleRate);
+         return 1;
+     }
+ 

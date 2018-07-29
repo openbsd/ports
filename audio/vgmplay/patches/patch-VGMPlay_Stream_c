@@ -1,0 +1,16 @@
+$OpenBSD: patch-VGMPlay_Stream_c,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+
+OpenBSD support; we always use libao.
+
+Index: VGMPlay/Stream.c
+--- VGMPlay/Stream.c.orig
++++ VGMPlay/Stream.c
+@@ -16,7 +16,7 @@
+ #include <fcntl.h>
+ #ifdef __NetBSD__
+ #include <sys/audioio.h>
+-#elif defined(__APPLE__)
++#elif defined(__APPLE__) || defined(__OpenBSD__)
+ // nothing
+ #else
+ #include <linux/soundcard.h>
