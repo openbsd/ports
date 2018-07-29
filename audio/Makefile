@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2018/07/12 20:41:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.402 2018/07/29 03:56:32 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -250,6 +250,7 @@
      SUBDIR += umurmur
      SUBDIR += vagalume
      SUBDIR += vamp-plugin-sdk
+     SUBDIR += vgmplay
      SUBDIR += vlorb
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
