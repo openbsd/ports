@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2018/05/18 20:18:36 landry Exp $
+OpenBSD: Makefile,v 1.105 2018/05/18 20:18:36 landry Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -20,7 +20,7 @@
      SUBDIR += hdhomerun
      SUBDIR += imagination
      SUBDIR += k3b-kde4
-     SUBDIR += kdenlive
+     #SUBDIR += kdenlive
      SUBDIR += kguitar
      SUBDIR += libaacs
      SUBDIR += libass
