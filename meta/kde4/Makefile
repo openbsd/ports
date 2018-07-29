@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/07/20 13:19:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2018/07/29 15:03:46 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,7 +31,7 @@ REVISION-games = 0
 REVISION-sdk = 1
 REVISION-edu = 0
 REVISION-multimedia = 0
-REVISION-extras = 1
+REVISION-extras = 5
 REVISION-main =		6
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -242,7 +242,6 @@ RUN_DEPENDS-extras = \
 	graphics/digikam-kde4,-main	\
 	graphics/digikam-kde4,-kipi	\
 	multimedia/k3b-kde4		\
-	multimedia/kdenlive		\
 	productivity/kmymoney		\
 	sysutils/krename-kde4
 
