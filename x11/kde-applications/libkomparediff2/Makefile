@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/22 14:49:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/07/29 04:47:34 rsadowski Exp $
 
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
+PKGNAME =	libkomparediff2-kf5-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  komparediff2              0.0 # 5.2
