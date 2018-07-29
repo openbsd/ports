@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/27 07:00:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/29 11:27:44 ajacoutot Exp $
 
 COMMENT=		companion library to GObject and Gtk+
 
 GNOME_PROJECT=		libdazzle
-GNOME_VERSION=		3.28.4
+GNOME_VERSION=		3.28.5
 
 SHARED_LIBS +=  dazzle-1.0                1.0 # 0
 
