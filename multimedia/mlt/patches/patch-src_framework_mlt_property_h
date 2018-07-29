@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_framework_mlt_property_h,v 1.1 2017/05/24 16:30:52 espie Exp $
+$OpenBSD: patch-src_framework_mlt_property_h,v 1.2 2018/07/29 15:05:35 rsadowski Exp $
 
 Index: src/framework/mlt_property.h
 --- src/framework/mlt_property.h.orig
 +++ src/framework/mlt_property.h
-@@ -30,8 +30,11 @@
- #include <sys/param.h>
- #endif
+@@ -32,8 +32,11 @@
  
--#if defined(__GLIBC__) || defined(__APPLE__) || (__FreeBSD_version >= 900506)
-+#if defined(__GLIBC__) || defined(__APPLE__) || defined(__FreeBSD_version) && (__FreeBSD_version >= 900506)
- #include <xlocale.h>
+ #if (defined(__GLIBC__) && !defined(__APPLE__)) || HAVE_LOCALE_H
+ #  include <locale.h>
+-#elif defined(__APPLE__) || (__FreeBSD_version >= 900506)
++#elif defined(__APPLE__) || defined(__FreeBSD_version) && (__FreeBSD_version >= 900506)
+ #  include <xlocale.h>
 +#elif defined(__OpenBSD__)
 +/* XXX matches __nop_locale glue in libc++ */
 +typedef void* locale_t;

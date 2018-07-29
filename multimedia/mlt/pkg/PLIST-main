@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2016/04/28 08:20:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/07/29 15:05:35 rsadowski Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
 include/mlt++/
 include/mlt++/Mlt.h
 include/mlt++/MltAnimation.h
+include/mlt++/MltConfig.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
 include/mlt++/MltEvent.h
@@ -27,7 +28,6 @@ include/mlt++/MltService.h
 include/mlt++/MltTokeniser.h
 include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
-include/mlt++/config.h
 include/mlt/framework/
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_animation.h
@@ -51,6 +51,7 @@ include/mlt/framework/mlt_properties.h
 include/mlt/framework/mlt_property.h
 include/mlt/framework/mlt_repository.h
 include/mlt/framework/mlt_service.h
+include/mlt/framework/mlt_slices.h
 include/mlt/framework/mlt_tokeniser.h
 include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
@@ -75,6 +76,7 @@ lib/pkgconfig/mlt++.pc
 lib/pkgconfig/mlt-framework.pc
 share/mlt/
 share/mlt/avformat/
+share/mlt/avformat/blacklist.txt
 share/mlt/avformat/consumer_avformat.yml
 share/mlt/avformat/producer_avformat.yml
 share/mlt/core/
@@ -137,6 +139,7 @@ share/mlt/gtk2/producer_pixbuf.yml
 share/mlt/jackrack/
 share/mlt/jackrack/blacklist.txt
 share/mlt/jackrack/consumer_jack.yml
+share/mlt/jackrack/filter_jack.yml
 share/mlt/jackrack/filter_jackrack.yml
 share/mlt/jackrack/filter_ladspa.yml
 share/mlt/jackrack/producer_ladspa.yml
@@ -216,11 +219,13 @@ share/mlt/plus/consumer_blipflash.yml
 share/mlt/plus/filter_affine.yml
 share/mlt/plus/filter_charcoal.yml
 share/mlt/plus/filter_dance.yml
+share/mlt/plus/filter_dynamic_loudness.yml
 share/mlt/plus/filter_dynamictext.yml
 share/mlt/plus/filter_fft.yml
 share/mlt/plus/filter_invert.yml
 share/mlt/plus/filter_lift_gamma_gain.yml
 share/mlt/plus/filter_loudness.yml
+share/mlt/plus/filter_loudness_meter.yml
 share/mlt/plus/filter_lumakey.yml
 share/mlt/plus/filter_rgblut.yml
 share/mlt/plus/filter_sepia.yml
@@ -232,6 +237,7 @@ share/mlt/presets/consumer/
 share/mlt/presets/consumer/avformat/
 share/mlt/presets/consumer/avformat/AAC
 share/mlt/presets/consumer/avformat/Flash
+share/mlt/presets/consumer/avformat/GIF
 share/mlt/presets/consumer/avformat/MJPEG
 share/mlt/presets/consumer/avformat/MP3
 share/mlt/presets/consumer/avformat/MPEG-2
@@ -243,6 +249,7 @@ share/mlt/presets/consumer/avformat/WAV
 share/mlt/presets/consumer/avformat/WMA
 share/mlt/presets/consumer/avformat/WMV
 share/mlt/presets/consumer/avformat/XDCAM-HD422
+share/mlt/presets/consumer/avformat/YouTube
 share/mlt/presets/consumer/avformat/atsc_1080i_50/
 share/mlt/presets/consumer/avformat/atsc_1080i_50/DNxHD
 share/mlt/presets/consumer/avformat/atsc_1080i_5994/
@@ -307,15 +314,16 @@ share/mlt/presets/consumer/avformat/hdv_720_50p/
 share/mlt/presets/consumer/avformat/hdv_720_50p/HDV
 share/mlt/presets/consumer/avformat/hdv_720_60p/
 share/mlt/presets/consumer/avformat/hdv_720_60p/HDV
+share/mlt/presets/consumer/avformat/intermediate/
+share/mlt/presets/consumer/avformat/intermediate/MJPEG
+share/mlt/presets/consumer/avformat/intermediate/MPEG-2
+share/mlt/presets/consumer/avformat/intermediate/MPEG-4
+share/mlt/presets/consumer/avformat/intermediate/ProRes
+share/mlt/presets/consumer/avformat/intermediate/ProRes-Kostya
 share/mlt/presets/consumer/avformat/lossless/
 share/mlt/presets/consumer/avformat/lossless/FFV1
 share/mlt/presets/consumer/avformat/lossless/H.264
 share/mlt/presets/consumer/avformat/lossless/HuffYUV
-share/mlt/presets/consumer/avformat/lossless/MJPEG
-share/mlt/presets/consumer/avformat/lossless/MPEG-2
-share/mlt/presets/consumer/avformat/lossless/MPEG-4
-share/mlt/presets/consumer/avformat/lossless/ProRes
-share/mlt/presets/consumer/avformat/lossless/ProRes-Kostya
 share/mlt/presets/consumer/avformat/stills/
 share/mlt/presets/consumer/avformat/stills/BMP
 share/mlt/presets/consumer/avformat/stills/DPX
