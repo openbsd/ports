@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/03/15 00:33:54 awolk Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/29 14:06:38 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		7.20
+V=		7.21
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
