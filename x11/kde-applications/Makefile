@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/07/28 18:53:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2018/07/29 15:11:27 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -63,7 +63,7 @@
      #SUBDIR += kdegraphics-thumbnailers
      #SUBDIR += kdelibs
      #SUBDIR += kdenetwork-filesharing
-     #SUBDIR += kdenlive
+     SUBDIR += kdenlive
      #SUBDIR += kdepim
      #SUBDIR += kdepim-addons
      #SUBDIR += kdepim-apps-libs
