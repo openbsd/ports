@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/07/29 03:48:43 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -21,7 +21,7 @@ install:
+ #	a few duplicate musics. Use a .zip archive for woe releases,
+ #	it will duplicate files but avoid creating empty files instead
+ #	of symlinks.
+-	cp -a dink $(DESTDIR)$(DATADIR)/dink/
++	cp -R dink $(DESTDIR)$(DATADIR)/dink/
+ 
+ #	Tidy permissions
+ 	find $(DESTDIR)$(DATADIR)/dink/dink/ -type d -print0 | xargs -0r chmod 755
