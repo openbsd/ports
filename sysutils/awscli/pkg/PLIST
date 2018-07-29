@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2018/07/20 13:22:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.58 2018/07/29 14:04:17 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1128,6 +1128,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/register-task-defin
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/run-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-container-agent.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/create-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/list-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-replication-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/modify-cache-parameter-group.rst
@@ -1254,6 +1259,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/schedule-hbase-back
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/socks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/ssh.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/wait.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/es/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/es/create-elasticsearch-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/delete-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/events/describe-rule.rst
@@ -1690,12 +1697,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3api/upload-part.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/cancel-rotate-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/create-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/delete-resource-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/delete-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/describe-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/get-random-password.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/get-resource-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/get-secret-value.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-secret-version-ids.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-secrets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/put-resource-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/put-secret-value.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/restore-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/rotate-secret.rst
@@ -1848,7 +1858,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/list-workflow-types
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/register-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/swf/register-workflow-type.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-byte-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-ip-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-size-constraint-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-sql-injection-match-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-web-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-xss-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/create-workspaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/describe-workspace-bundles.rst
