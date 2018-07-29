@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1429 2018/07/27 17:22:24 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1430 2018/07/29 13:27:44 schwarze Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2191,7 +2191,7 @@ _internal-fetch-all:
 .if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
-	_internal-install _internal-install-all _internal-manpages-check \
+	_internal-install _internal-install-all \
 	_internal-package _internal-patch _internal-plist _internal-test \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install _internal-generate-readmes \
@@ -2219,11 +2219,6 @@ port-lib-depends-check: ${WRKINST}/.saved_libs
 		wantlib_args=fake-wantlib-args| \
 			${_CHECK_LIB_DEPENDS} -i -s ${WRKINST}/.saved_libs; \
 	done
-
-_internal-manpages-check: ${_FAKE_COOKIE}
-	@cd ${WRKINST}${TRUEPREFIX}/man && \
-		${_PBUILD} /usr/libexec/makewhatis -p . && \
-		cat mandoc.db
 
 # Most standard port targets create a cookie to avoid being re-run.
 #
@@ -2359,7 +2354,7 @@ update-patches:
 
 .for _t in extract patch distpatch configure build all install fake \
 	subupdate fetch fetch-all checksum test prepare install-depends \
-	test-depends clean manpages-check plist update-plist generate-readmes \
+	test-depends clean plist update-plist generate-readmes \
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
@@ -3444,8 +3439,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal-all _internal-build _internal-build-depends \
 	_internal-checksum _internal-clean _internal-configure \
 	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
-	_internal-fetch-all _internal-install-depends \
-	_internal-install-all _internal-manpages-check \
+	_internal-fetch-all _internal-install-depends _internal-install-all \
 	_internal-package _internal-package-only _internal-plist _internal-prepare \
 	_internal-test _internal-test-depends \
 	_internal-subpackage _internal-subupdate \
