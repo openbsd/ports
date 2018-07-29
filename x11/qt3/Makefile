@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2018/07/28 15:59:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.125 2018/07/29 15:15:16 rsadowski Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -24,7 +24,7 @@ REVISION-postgresql=	9
 REVISION-main=		15
 REVISION-html=		4
 REVISION-examples=	5
-REVISION-sqlite2=	8
+REVISION-sqlite2=	9
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk
