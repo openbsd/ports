@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1432 2018/07/30 16:43:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1433 2018/07/30 16:49:44 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1860,7 +1860,7 @@ _FAKE_TREE_LIST = \
 	${_treebase}/share/{dict,examples,misc,pkgconfig,skel} \
 	${_treebase}/share/doc/pkg-readmes \
 	${_nls}/{C,da_DK.ISO_8859-1,de_AT.ISO_8859-1,de_CH.ISO_8859-1} \
-	${_nls}/{de_DE.ISO_8859-1,el_GR.ISO-8859-7,en_AU.ISO_8859-1} \
+	${_nls}/{de_DE.ISO_8859-1,el_GR.ISO_8859-7,en_AU.ISO_8859-1} \
 	${_nls}/{en_CA.ISO_8859-1,en_GB.ISO_8859-1,en_US.ISO_8859-1} \
 	${_nls}/{es_ES.ISO_8859-1,et_EE.ISO_8859-1,fi_FI.ISO_8859-1} \
 	${_nls}/{fr_BE.ISO_8859-1,fr_CA.ISO_8859-1,fr.CH.ISO_8859-1} \
