@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2018/07/30 07:20:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/07/30 08:34:07 ajacoutot Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
 DISTNAME=	desktop-file-utils-0.23
-REVISION =	5
+REVISION =	6
 
 EXTRACT_SUFX=	.tar.xz
 

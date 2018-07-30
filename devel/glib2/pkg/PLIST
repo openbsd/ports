@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2018/07/11 11:21:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.62 2018/07/30 08:34:07 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -6,6 +6,8 @@
 @pkgpath devel/glib2,-main
 @define-tag glib-compile-schemas at-end	%D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @define-tag gio-querymodules at-end %D/bin/gio-querymodules %D/lib/gio/modules
+@tag glib-compile-schemas
+@tag gio-querymodules
 @unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled
 @unexec-delete rm -f %D/lib/gio/modules/giomodule.cache
 @bin bin/gapplication
