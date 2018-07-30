@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/07/11 09:39:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/07/30 07:20:31 ajacoutot Exp $
 @define-tag update-desktop-database at-end %D/bin/update-desktop-database
 @unexec-delete rm -f %D/share/applications/mimeinfo.cache
 bin/desktop-file-edit
@@ -10,3 +10,4 @@ bin/desktop-file-edit
 @man man/man1/desktop-file-install.1
 @man man/man1/desktop-file-validate.1
 @man man/man1/update-desktop-database.1
+@tag update-desktop-database
