@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/07/29 15:03:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2018/07/30 13:52:20 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -29,7 +29,7 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 REVISION-minimal =	7
 REVISION-games = 0
 REVISION-sdk = 1
-REVISION-edu = 0
+REVISION-edu = 1
 REVISION-multimedia = 0
 REVISION-extras = 5
 REVISION-main =		6
@@ -84,7 +84,6 @@ KDE4-edu = \
 	${MODKDE4_DEP_DIR}/kbruch	\
 	${MODKDE4_DEP_DIR}/kgeography	\
 	${MODKDE4_DEP_DIR}/khangman	\
-	${MODKDE4_DEP_DIR}/kig		\
 	${MODKDE4_DEP_DIR}/kiten	\
 	${MODKDE4_DEP_DIR}/klettres	\
 	${MODKDE4_DEP_DIR}/kmplot	\

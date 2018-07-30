@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/07/29 15:11:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2018/07/30 13:52:20 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -84,7 +84,7 @@
      #SUBDIR += khelpcenter
      #SUBDIR += kholidays
      #SUBDIR += kidentitymanagement
-     #SUBDIR += kig
+     SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
      #SUBDIR += kimap
