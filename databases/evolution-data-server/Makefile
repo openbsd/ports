@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.244 2018/07/17 07:04:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.245 2018/07/30 17:39:33 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.28.4
+GNOME_VERSION=		3.28.5
 
 CATEGORIES=		databases productivity
 
@@ -26,7 +26,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject db
-WANTLIB += fribidi gck-1 gcr-base-3 gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0
+WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 gtk-3
 WANTLIB += gweather-3 ical icalss icalvcal icudata icui18n icuuc
 WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 lber ldap
