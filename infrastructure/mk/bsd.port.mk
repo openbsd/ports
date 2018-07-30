@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1430 2018/07/29 13:27:44 schwarze Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1431 2018/07/30 12:43:23 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1839,6 +1839,39 @@ _update_plist = ${_cache_fragment}; \
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .endfor
 
+_cat = {cat1,cat2,cat3,cat3f,cat3p,cat4,cat5,cat6,cat7,cat8,cat9,catl,catn}
+_man = ${_cat:S/cat/man/g}
+_treebase = ${WRKINST}${LOCALBASE}
+_FAKE_TREE_LIST = \
+	${WRKINST}${BASESYSCONFDIR}/{firmware,rc.d} \
+	${_treebase}/bin \
+	${_treebase}/include/X11 \
+	${_treebase}/info \
+	${_treebase}/lib/pkgconfig \
+	${_treebase}/lib/X11/app-defaults \
+	${_treebase}/libdata/perl5/site_perl \
+	${_treebase}/libexec \
+	${_treebase}/man/${_cat} \
+	${_treebase}/man/${_man} \
+	${_treebase}/man/ja_JP.EUC/${_cat} \
+	${_treebase}/man/ja_JP.EUC/${_man} \
+	${_treebase}/sbin \
+	${_treebase}/share/{dict,examples,misc,pkgconfig,skel} \
+	${_treebase}/share/doc/pkg-readmes \
+	${_treebase}/nls/{C,da_DK.ISO_8859-1,de_AT.ISO_8859-1,de_CH.ISO_8859-1} \
+	${_treebase}/nls/{de_DE.ISO_8859-1,el_GR.ISO-8859-7,en_AU.ISO_8859-1} \
+	${_treebase}/nls/{en_CA.ISO_8859-1,en_GB.ISO_8859-1,en_US.ISO_8859-1} \
+	${_treebase}/nls/{es_ES.ISO_8859-1,et_EE.ISO_8859-1,fi_FI.ISO_8859-1} \
+	${_treebase}/nls/{fr_BE.ISO_8859-1,fr_CA.ISO_8859-1,fr.CH.ISO_8859-1} \
+	${_treebase}/nls/{hr_HR.ISO_8859-2,is_IS.ISO_8859-1,it_CH.ISO_8859-1} \
+	${_treebase}/nls/{it_IT.ISO_8859-1,ja_JP.EUC,ko_KR.EUC,lt_LN.ASCII} \
+	${_treebase}/nls/{lt_LN.ISO_8859-1,lt_LN.ISO_8859-2,nl_BE.ISO_8859-1} \
+	${_treebase}/nls/{no_NO.ISO_8859-1,pl_PL.ISO_8859-2,pt_PT.ISO_8859-1} \
+	${_treebase}/nls/{ru_RU.CP866,ru_RU.ISO_8859-5,ru_RU.KOI8-R} \
+	${_treebase}/nls/{sv_SE.ISO_8859-1,uk_UA.KOI8-U} \
+	${WRKINST}${VARBASE}/{db,games,log,spool,www}
+	
+
 ###
 ### end of variable setup. Only targets now
 ###
@@ -2649,6 +2682,12 @@ do-configure:
 
 # The real configure
 
+_post-configure-finalize:
+.for _wrap in aclocal
+	@printf '#!/bin/sh\nexit 1\n' > ${WRKDIR}/bin/${_wrap}
+	@chmod 555 ${WRKDIR}/bin/${_wrap}
+.endfor
+
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 .if defined(_CONFIG_SITE)
@@ -2664,6 +2703,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .if target(post-configure)
 	@${_PMAKE} post-configure
 .endif
+	@${_PMAKE} _post-configure-finalize
 	@${_PMAKE_COOKIE} $@
 
 # The real build
@@ -2747,11 +2787,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 		echo >&2 "Error: your umask is \"`${_PBUILD} /bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
-	@${_PBUILD} install -d -m 755 ${WRKINST}
-	@${_PBUILD} /usr/sbin/mtree -U -e -d -p ${WRKINST} \
-		<${PORTSDIR}/infrastructure/db/fake.mtree >/dev/null
-	@${_PBUILD} chmod -R a+rX ${WRKINST}
-
+	@${_PBUILD} mkdir -p ${_FAKE_TREE_LIST}
 	@${_wrap_install_commands}
 	@${_SUDOMAKESYS} _pre-fake-modules ${FAKE_SETUP}
 .if target(pre-fake)
