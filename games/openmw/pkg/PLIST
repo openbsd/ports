@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/07/30 18:51:40 pascal Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -14,6 +14,10 @@ share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
 share/examples/openmw/gamecontrollerdb.txt
 @sample ${SYSCONFDIR}/openmw/gamecontrollerdb.txt
+share/examples/openmw/gamecontrollerdb_204.txt
+@sample ${SYSCONFDIR}/openmw/gamecontrollerdb_204.txt
+share/examples/openmw/gamecontrollerdb_205.txt
+@sample ${SYSCONFDIR}/openmw/gamecontrollerdb_205.txt
 share/examples/openmw/openmw-cs.cfg
 @sample ${SYSCONFDIR}/openmw/openmw-cs.cfg
 share/examples/openmw/openmw.cfg
