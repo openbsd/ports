@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tests_core_file_sys_path_parser_cpp,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
+$OpenBSD: patch-src_tests_core_file_sys_path_parser_cpp,v 1.2 2018/07/30 10:17:11 rsadowski Exp $
 
 fix include path
 
@@ -10,7 +10,7 @@ Index: src/tests/core/file_sys/path_parser.cpp
  // Refer to the license.txt file included.
  
 -#include <catch.hpp>
-+#include <catch/catch.hpp>
++#include <catch2/catch.hpp>
  #include "common/file_util.h"
  #include "core/file_sys/path_parser.h"
  
