@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.492 2018/07/18 09:29:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.493 2018/07/30 00:36:46 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -58,6 +58,7 @@
      SUBDIR += dcled
      SUBDIR += ddrescue
      SUBDIR += deja-dup
+     SUBDIR += dep
      SUBDIR += detox
      SUBDIR += dfc
      SUBDIR += direvent
