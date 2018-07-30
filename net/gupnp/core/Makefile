@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/03/20 18:21:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2018/07/30 16:45:35 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
 GNOME_PROJECT=		gupnp
-GNOME_VERSION=		1.0.2
+GNOME_VERSION=		1.0.3
 
 SHARED_LIBS +=  gupnp-1.0            3.2     # 4.0
 
