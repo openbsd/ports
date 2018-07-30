@@ -1,0 +1,5 @@
+dep is a prototype dependency management tool for Go. It requires Go 1.9 or
+newer to compile. dep is safe for production use.
+
+dep is the official experiment, but not yet the official tool. Check out the
+Roadmap for more on what this means!
