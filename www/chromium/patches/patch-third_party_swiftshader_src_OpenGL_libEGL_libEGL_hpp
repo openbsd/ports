@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_hpp,v 1.2 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_hpp,v 1.3 2018/07/30 15:28:28 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp
-@@ -106,7 +106,7 @@ class LibEGL (private)
+@@ -104,7 +104,7 @@ class LibEGL (private)
  				#else
  					const char *libEGL_lib[] = {"/vendor/lib/egl/libEGL_swiftshader.so", "/system/lib/egl/libEGL_swiftshader.so"};
  				#endif

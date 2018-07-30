@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,310 @@
+@@ -0,0 +1,314 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -269,6 +269,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +    if (process_type == switches::kRendererProcess ||
 +        process_type == switches::kGpuProcess) {
 +      address_space_limit = 1ULL << 34;
++#if !defined(OS_OPENBSD)
 +      if (options.has_wasm_trap_handler) {
 +        // WebAssembly memory objects use a large amount of address space when
 +        // trap-based bounds checks are enabled. To accomodate this, we allow
@@ -277,10 +278,13 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +        // for any reasonable page. See https://crbug.com/750378.
 +        address_space_limit_max = 1ULL << 42;
 +      } else {
++#endif
 +        // If we are not using trap-based bounds checks, there's no reason to
 +        // allow the address space limit to grow.
 +        address_space_limit_max = address_space_limit;
++#if !defined(OS_OPENBSD)
 +      }
++#endif
 +    }
 +  }
 +

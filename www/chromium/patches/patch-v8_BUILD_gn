@@ -1,8 +1,17 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.17 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-v8_BUILD_gn,v 1.18 2018/07/30 15:28:28 robert Exp $
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -2721,7 +2721,7 @@ v8_component("v8_libbase") {
+@@ -2529,7 +2529,7 @@ v8_source_set("v8_base") {
+       "src/x64/simulator-x64.h",
+       "src/x64/sse-instr.h",
+     ]
+-    if (is_linux) {
++    if (is_linux && !is_openbsd) {
+       sources += [
+         "src/trap-handler/handler-inside-linux.cc",
+         "src/trap-handler/handler-outside-linux.cc",
+@@ -2875,7 +2875,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -11,7 +20,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -2741,6 +2741,12 @@ v8_component("v8_libbase") {
+@@ -2895,6 +2895,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -24,7 +33,7 @@ Index: v8/BUILD.gn
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -2905,6 +2911,8 @@ if (v8_monolithic) {
+@@ -3060,6 +3066,8 @@ if (v8_monolithic) {
  if (v8_use_snapshot && current_toolchain == v8_snapshot_toolchain) {
    v8_executable("mksnapshot") {
      visibility = [ ":*" ]  # Only targets in this file can depend on this.

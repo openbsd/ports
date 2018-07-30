@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.21 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.22 2018/07/30 15:28:28 robert Exp $
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
-@@ -221,7 +221,7 @@ int RendererMain(const MainFunctionParams& parameters)
- #endif
+@@ -218,7 +218,7 @@ int RendererMain(const MainFunctionParams& parameters)
+   InitializeWebRtcModule();
  
    {
 -#if defined(OS_WIN) || defined(OS_MACOSX)
@@ -11,7 +11,7 @@ Index: content/renderer/renderer_main.cc
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      auto render_process = RenderProcessImpl::Create();
-@@ -231,7 +231,7 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -228,7 +228,7 @@ int RendererMain(const MainFunctionParams& parameters)
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

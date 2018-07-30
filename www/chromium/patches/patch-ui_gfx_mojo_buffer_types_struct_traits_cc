@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.6 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.7 2018/07/30 15:28:28 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.cc
 --- ui/gfx/mojo/buffer_types_struct_traits.cc.orig
 +++ ui/gfx/mojo/buffer_types_struct_traits.cc
-@@ -21,7 +21,7 @@ std::vector<mojo::ScopedHandle>
+@@ -27,7 +27,7 @@ std::vector<mojo::ScopedHandle>
  StructTraits<gfx::mojom::NativePixmapHandleDataView, gfx::NativePixmapHandle>::
      fds(const gfx::NativePixmapHandle& pixmap_handle) {
    std::vector<mojo::ScopedHandle> handles;
@@ -12,7 +12,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    for (const base::FileDescriptor& fd : pixmap_handle.fds)
      handles.emplace_back(mojo::WrapPlatformFile(fd.fd));
  #endif  // defined(OS_LINUX)
-@@ -32,7 +32,7 @@ bool StructTraits<
+@@ -38,7 +38,7 @@ bool StructTraits<
      gfx::mojom::NativePixmapHandleDataView,
      gfx::NativePixmapHandle>::Read(gfx::mojom::NativePixmapHandleDataView data,
                                     gfx::NativePixmapHandle* out) {
@@ -21,7 +21,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    mojo::ArrayDataView<mojo::ScopedHandle> handles_data_view;
    data.GetFdsDataView(&handles_data_view);
    for (size_t i = 0; i < handles_data_view.size(); ++i) {
-@@ -67,7 +67,7 @@ const gfx::NativePixmapHandle&
+@@ -71,7 +71,7 @@ const gfx::NativePixmapHandle&
  StructTraits<gfx::mojom::GpuMemoryBufferHandleDataView,
               gfx::GpuMemoryBufferHandle>::
      native_pixmap_handle(const gfx::GpuMemoryBufferHandle& handle) {
@@ -30,7 +30,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    return handle.native_pixmap_handle;
  #else
    static gfx::NativePixmapHandle pixmap_handle;
-@@ -108,7 +108,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -154,7 +154,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
      out->offset = data.offset();
      out->stride = data.stride();
    }

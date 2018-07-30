@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.16 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.17 2018/07/30 15:28:28 robert Exp $
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -1729,11 +1729,6 @@ jumbo_source_set("browser") {
+@@ -1802,11 +1802,6 @@ jumbo_source_set("browser") {
        "tracing/cros_tracing_agent.cc",
        "tracing/cros_tracing_agent.h",
      ]
@@ -13,4 +13,4 @@ Index: content/browser/BUILD.gn
 -    ]
    }
  
-   if (is_chromecast && is_linux) {
+   if (is_chromeos || is_android || is_chromecast) {

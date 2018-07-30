@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.15 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.16 2018/07/30 15:28:28 robert Exp $
 Index: ui/views/window/dialog_delegate.cc
 --- ui/views/window/dialog_delegate.cc.orig
 +++ ui/views/window/dialog_delegate.cc
-@@ -69,7 +69,7 @@ Widget::InitParams DialogDelegate::GetDialogWidgetInit
+@@ -64,7 +64,7 @@ Widget::InitParams DialogDelegate::GetDialogWidgetInit
    params.bounds = bounds;
    DialogDelegate* dialog = delegate->AsDialogDelegate();
  

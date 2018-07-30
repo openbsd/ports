@@ -1,0 +1,16 @@
+$OpenBSD: patch-services_service_manager_zygote_host_zygote_host_impl_linux_h,v 1.1 2018/07/30 15:28:28 robert Exp $
+
+Index: services/service_manager/zygote/host/zygote_host_impl_linux.h
+--- services/service_manager/zygote/host/zygote_host_impl_linux.h.orig
++++ services/service_manager/zygote/host/zygote_host_impl_linux.h
+@@ -44,8 +44,10 @@ class COMPONENT_EXPORT(SERVICE_MANAGER_ZYGOTE) ZygoteH
+                      base::ScopedFD* control_fd,
+                      base::FileHandleMappingVector additional_remapped_fds);
+ 
++#if !defined(OS_BSD)
+   void AdjustRendererOOMScore(base::ProcessHandle process_handle,
+                               int score) override;
++#endif
+ 
+  private:
+   friend struct base::DefaultSingletonTraits<ZygoteHostImpl>;

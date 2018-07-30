@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.81 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.82 2018/07/30 15:28:28 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -194,6 +194,7 @@ chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/Tests.js
 chrome/resources/inspector/accessibility/
+chrome/resources/inspector/accessibility/ARIAProperties.js
 chrome/resources/inspector/accessibility/accessibility_module.js
 chrome/resources/inspector/accessibility_test_runner/
 chrome/resources/inspector/accessibility_test_runner/accessibility_test_runner_module.js
@@ -314,6 +315,8 @@ chrome/resources/inspector/inspector.html
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/integration_test_runner.html
 chrome/resources/inspector/integration_test_runner.js
+chrome/resources/inspector/javascript_metadata/
+chrome/resources/inspector/javascript_metadata/javascript_metadata_module.js
 chrome/resources/inspector/js_app.html
 chrome/resources/inspector/js_app.js
 chrome/resources/inspector/js_profiler/

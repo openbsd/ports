@@ -1,5 +1,6 @@
---- services/service_manager/sandbox/openbsd/sandbox_openbsd.h.orig.port	Sat Jul 14 16:15:11 2018
-+++ services/service_manager/sandbox/openbsd/sandbox_openbsd.h	Sat Jul 14 12:57:36 2018
+Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.h
+--- services/service_manager/sandbox/openbsd/sandbox_openbsd.h.orig
++++ services/service_manager/sandbox/openbsd/sandbox_openbsd.h
 @@ -0,0 +1,264 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -15,8 +16,6 @@
 +#include "base/logging.h"
 +#include "base/macros.h"
 +#include "base/posix/global_descriptors.h"
-+#include "sandbox/linux/syscall_broker/broker_command.h"
-+#include "sandbox/linux/syscall_broker/broker_file_permission.h"
 +#include "services/service_manager/sandbox/export.h"
 +#include "services/service_manager/sandbox/linux/sandbox_seccomp_bpf_linux.h"
 +#include "services/service_manager/sandbox/sandbox_type.h"
@@ -203,6 +202,7 @@
 +  // is impossible (and presumably unsafe).
 +  // This should never be destroyed, as after the sandbox is started it is
 +  // vital to the process.
++#if 0
 +  void StartBrokerProcess(
 +      const sandbox::syscall_broker::BrokerCommandSet& allowed_command_set,
 +      std::vector<sandbox::syscall_broker::BrokerFilePermission> permissions,
@@ -212,6 +212,7 @@
 +  sandbox::syscall_broker::BrokerProcess* broker_process() const {
 +    return broker_process_;
 +  }
++#endif
 +
 + private:
 +  friend struct base::DefaultSingletonTraits<SandboxLinux>;

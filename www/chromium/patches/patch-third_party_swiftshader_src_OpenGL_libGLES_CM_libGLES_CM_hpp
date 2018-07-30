@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp,v 1.2 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp,v 1.3 2018/07/30 15:28:28 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp
 --- third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp.orig
 +++ third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp
-@@ -267,7 +267,7 @@ class LibGLES_CM (private)
+@@ -265,7 +265,7 @@ class LibGLES_CM (private)
  				#else
  					const char *libGLES_CM_lib[] = {"/vendor/lib/egl/libGLESv1_CM_swiftshader.so", "/system/lib/egl/libGLESv1_CM_swiftshader.so"};
  				#endif

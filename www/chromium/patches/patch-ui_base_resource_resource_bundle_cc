@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.27 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.28 2018/07/30 15:28:28 robert Exp $
 
 Index: ui/base/resource/resource_bundle.cc
 --- ui/base/resource/resource_bundle.cc.orig
 +++ ui/base/resource/resource_bundle.cc
-@@ -708,7 +708,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -720,7 +720,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ScaleFactor ResourceBundle::GetMaxScaleFactor() const {
@@ -12,7 +12,7 @@ Index: ui/base/resource/resource_bundle.cc
    return max_scale_factor_;
  #else
    return GetSupportedScaleFactors().back();
-@@ -754,7 +754,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+@@ -766,7 +766,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
    // On platforms other than iOS, 100P is always a supported scale factor.
    // For Windows we have a separate case in this function.
    supported_scale_factors.push_back(SCALE_FACTOR_100P);

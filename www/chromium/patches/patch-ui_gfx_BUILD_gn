@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.1 2018/07/30 15:28:28 robert Exp $
+
+Index: ui/gfx/BUILD.gn
+--- ui/gfx/BUILD.gn.orig
++++ ui/gfx/BUILD.gn
+@@ -568,7 +568,7 @@ source_set("memory_buffer_sources") {
+     deps += [ "//third_party/libdrm" ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_openbsd) {
+     deps += [ "//third_party/libsync" ]
+   }
+ 

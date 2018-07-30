@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.28 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.29 2018/07/30 15:28:28 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
@@ -11,7 +11,7 @@ Index: content/gpu/gpu_main.cc
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "content/common/font_config_ipc_linux.h"
  #include "content/gpu/gpu_sandbox_hook_linux.h"
- #include "content/public/common/common_sandbox_support_linux.h"
+ #include "content/public/common/sandbox_init.h"
 @@ -112,7 +112,7 @@ namespace content {
  
  namespace {
@@ -32,13 +32,13 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxWindows(sandbox_info_);
 @@ -341,7 +341,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
-   if (command_line.HasSwitch(switches::kEnableOOPRasterization)) {
+   if (gpu_preferences.enable_oop_rasterization) {
      SkGraphics::Init();
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
      // Set up the font IPC so that the GPU process can create typefaces.
-     SkFontConfigInterface::SetGlobal(new FontConfigIPC(GetSandboxFD()))
-         ->unref();
+     SkFontConfigInterface::SetGlobal(
+         sk_make_sp<FontConfigIPC>(service_manager::GetSandboxFD()));
 @@ -360,17 +360,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {

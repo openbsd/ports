@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.379 2018/07/25 06:53:36 robert Exp $
+# $OpenBSD: Makefile,v 1.380 2018/07/30 15:28:28 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,10 +8,9 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			67.0.3396.87
+V=			68.0.3440.75
 
 DISTNAME=		chromium-${V}
-REVISION=		2
 
 CATEGORIES=		www
 
@@ -57,6 +56,11 @@ WANTLIB += GL expat
 WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0
 WANTLIB += Xcomposite Xdamage
+WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
+WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
+WANTLIB += gthread-2.0 harfbuzz intl pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png util xcb-dri2 xcb-glx xcb-render xcb-shm
+WANTLIB += xml2 z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -111,7 +115,6 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
-		enable_webrtc=true \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \

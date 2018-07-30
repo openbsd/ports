@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_BUILD_gn,v 1.1 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_wtf_BUILD_gn,v 1.2 2018/07/30 15:28:28 robert Exp $
 
 Index: third_party/blink/renderer/platform/wtf/BUILD.gn
 --- third_party/blink/renderer/platform/wtf/BUILD.gn.orig
 +++ third_party/blink/renderer/platform/wtf/BUILD.gn
-@@ -279,7 +279,7 @@ jumbo_component("wtf") {
+@@ -277,7 +277,7 @@ jumbo_component("wtf") {
    if (is_android) {
      libs = [ "log" ]
    }

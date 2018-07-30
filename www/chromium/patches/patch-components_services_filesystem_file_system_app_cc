@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_services_filesystem_file_system_app_cc,v 1.1 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-components_services_filesystem_file_system_app_cc,v 1.2 2018/07/30 15:28:28 robert Exp $
 
 Index: components/services/filesystem/file_system_app.cc
 --- components/services/filesystem/file_system_app.cc.orig
@@ -13,9 +13,9 @@ Index: components/services/filesystem/file_system_app.cc
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
 @@ -75,7 +75,7 @@ base::FilePath FileSystemApp::GetUserDataDir() {
-     CHECK(PathService::Get(base::DIR_APP_DATA, &path));
+     CHECK(base::PathService::Get(base::DIR_APP_DATA, &path));
  #elif defined(OS_ANDROID)
-     CHECK(PathService::Get(base::DIR_ANDROID_APP_DATA, &path));
+     CHECK(base::PathService::Get(base::DIR_ANDROID_APP_DATA, &path));
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
      std::unique_ptr<base::Environment> env(base::Environment::Create());

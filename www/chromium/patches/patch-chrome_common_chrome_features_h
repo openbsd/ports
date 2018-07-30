@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.8 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.9 2018/07/30 15:28:28 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
@@ -19,5 +19,14 @@ Index: chrome/common/chrome_features.h
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
  extern const base::Feature kCertDualVerificationTrialFeature;
+ #endif
+ 
+@@ -204,7 +204,7 @@ extern const base::Feature kMaterialDesignExtensions;
+ extern const base::Feature kAcknowledgeNtpOverrideOnDeactivate;
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+ extern const base::Feature kWarnBeforeQuitting;
  #endif
  

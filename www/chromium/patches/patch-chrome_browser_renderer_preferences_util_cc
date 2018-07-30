@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.21 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.22 2018/07/30 15:28:28 robert Exp $
 Index: chrome/browser/renderer_preferences_util.cc
 --- chrome/browser/renderer_preferences_util.cc.orig
 +++ chrome/browser/renderer_preferences_util.cc
@@ -20,7 +20,7 @@ Index: chrome/browser/renderer_preferences_util.cc
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -136,7 +136,7 @@ void UpdateFromSystemSettings(content::RendererPrefere
+@@ -132,7 +132,7 @@ void UpdateFromSystemSettings(content::RendererPrefere
      prefs->caret_blink_interval = interval;
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/browser/renderer_preferences_util.cc
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -158,7 +158,7 @@ void UpdateFromSystemSettings(content::RendererPrefere
+@@ -154,7 +154,7 @@ void UpdateFromSystemSettings(content::RendererPrefere
    }
  #endif
  

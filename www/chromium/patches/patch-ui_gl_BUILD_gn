@@ -1,9 +1,18 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.14 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.15 2018/07/30 15:28:28 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -307,7 +307,6 @@ component("gl") {
+@@ -214,7 +214,7 @@ component("gl") {
+       }
+     }
+ 
+-    if (is_posix && !is_fuchsia && !is_mac) {
++    if (is_posix && !is_fuchsia && !is_mac && !is_openbsd) {
+       # Windows has USE_EGL but doesn't support base::FileDescriptor.
+       # libsync isn't supported or needed on MacOSX.
+       # Fuchsia is excluded due to a libsync dependency and because it's
+@@ -311,7 +311,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -11,7 +20,7 @@ Index: ui/gl/BUILD.gn
        "//third_party/swiftshader",
      ]
    }
-@@ -506,10 +505,6 @@ test("gl_unittests") {
+@@ -545,10 +544,6 @@ test("gl_unittests") {
      "//ui/gl/init",
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",

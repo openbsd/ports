@@ -1,4 +1,4 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.16 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-cc_BUILD_gn,v 1.17 2018/07/30 15:28:28 robert Exp $
 Index: cc/BUILD.gn
 --- cc/BUILD.gn.orig
 +++ cc/BUILD.gn
@@ -11,7 +11,7 @@ Index: cc/BUILD.gn
      data_deps = [
        "//third_party/mesa:osmesa",
      ]
-@@ -754,10 +754,6 @@ cc_test("cc_unittests") {
+@@ -753,10 +753,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",

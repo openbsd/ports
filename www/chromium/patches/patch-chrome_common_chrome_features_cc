@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.8 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.9 2018/07/30 15:28:28 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
@@ -21,3 +21,12 @@ Index: chrome/common/chrome_features.cc
  // Enables the dual certificate verification trial feature.
  // https://crbug.com/649026
  const base::Feature kCertDualVerificationTrialFeature{
+@@ -367,7 +367,7 @@ const base::Feature kAcknowledgeNtpOverrideOnDeactivat
+     "AcknowledgeNtpOverrideOnDeactivate", base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+ const base::Feature kWarnBeforeQuitting{"WarnBeforeQuitting",
+                                         base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif

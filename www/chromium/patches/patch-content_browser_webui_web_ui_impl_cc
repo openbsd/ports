@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_browser_webui_web_ui_impl_cc,v 1.1 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_impl_cc,v 1.2 2018/07/30 15:28:28 robert Exp $
 
 revert https://chromium-review.googlesource.com/c/chromium/src/+/986504
 
 Index: content/browser/webui/web_ui_impl.cc
 --- content/browser/webui/web_ui_impl.cc.orig
 +++ content/browser/webui/web_ui_impl.cc
-@@ -247,9 +247,9 @@ void WebUIImpl::CallJavascriptFunctionUnsafe(
+@@ -248,9 +248,9 @@ void WebUIImpl::CallJavascriptFunctionUnsafe(
    ExecuteJavascript(GetJavascriptCall(function_name, args));
  }
  

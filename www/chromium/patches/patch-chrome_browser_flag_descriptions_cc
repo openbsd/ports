@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.9 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.10 2018/07/30 15:28:28 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -2964,7 +2964,7 @@ const char kEnableHomeLauncherDescription[] =
+@@ -3126,7 +3126,7 @@ const char kZipArchiverUnpackerDescription[] =
  
  // Random platform combinations -----------------------------------------------
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.14 2017/07/27 14:23:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.15 2018/07/30 15:28:28 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "chrome/browser/ui/views/frame/browser_command_handler_linux.h"
  #endif
  
-@@ -97,7 +97,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -90,7 +90,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  
