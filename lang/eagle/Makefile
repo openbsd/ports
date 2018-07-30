@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/21 01:48:38 stu Exp $
+# $OpenBSD: Makefile,v 1.23 2018/07/30 22:53:10 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		6543.58654
+P =		6781.49000
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}beta41
+PKGNAME =	${DISTNAME}beta42
 EPOCH =		0
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	https://eagle.to/
@@ -50,13 +50,14 @@ EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2'
 # "set no(exec) 1; set no(compileCSharp) 1" to work around Mono bugs
 # "set no(tcl) 1" ignores any installed Tcl
 # "set test_log {}" disables logging test results to a file
+# "set no(failLogStartSentry) 1" disables Eagle test log sentry checking
 
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
 	-namespaces 1 \
 	-preInitialize 'set no(bigLists) 1; set no(exec) 1; set no(compileCSharp) 1; set no(tcl) 1' \
-	-preInitialize 'set test_log {}' \
+	-preInitialize 'set test_log {}; set no(failLogStartSentry) 1' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
 
