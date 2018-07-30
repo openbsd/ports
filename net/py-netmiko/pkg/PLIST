@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/02 17:53:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/07/30 17:15:33 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/netmiko/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -50,6 +50,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}alcatel
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/${MODPY_PYCACHE}alcatel_sros_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/alcatel_aos_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/alcatel/alcatel_sros_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/
+lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/${MODPY_PYCACHE}apresia_aeos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/apresia/apresia_aeos.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/arista/
 lib/python${MODPY_VERSION}/site-packages/netmiko/arista/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/arista/${MODPY_PYCACHE}/
@@ -116,6 +122,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/cisco_tp_tcce.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/cisco_wlc_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/cisco/cisco_xr_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/cisco_base_connection.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/
+lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/${MODPY_PYCACHE}netscaler_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/citrix/netscaler_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/coriant/
 lib/python${MODPY_VERSION}/site-packages/netmiko/coriant/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/coriant/${MODPY_PYCACHE}/
@@ -127,8 +139,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/dell/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}dell_force10_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}dell_isilon_ssh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}dell_os10_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/${MODPY_PYCACHE}dell_powerconnect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_force10_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_isilon_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_os10_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/dell/dell_powerconnect.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/
 lib/python${MODPY_VERSION}/site-packages/netmiko/eltex/__init__.py
@@ -166,10 +182,10 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/hp/
 lib/python${MODPY_VERSION}/site-packages/netmiko/hp/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}hp_comware_ssh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}hp_procurve_ssh.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/netmiko/hp/hp_comware_ssh.py
-lib/python${MODPY_VERSION}/site-packages/netmiko/hp/hp_procurve_ssh.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}hp_comware.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/hp/${MODPY_PYCACHE}hp_procurve.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/hp/hp_comware.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/hp/hp_procurve.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/
 lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/huawei/${MODPY_PYCACHE}/
