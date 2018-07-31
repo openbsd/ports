@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_common_powi_CMakeLists_txt,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+$OpenBSD: patch-lib_common_powi_CMakeLists_txt,v 1.2 2018/07/31 03:34:42 bcallah Exp $
 
 Index: lib/common/powi/CMakeLists.txt
 --- lib/common/powi/CMakeLists.txt.orig
@@ -14,3 +14,12 @@ Index: lib/common/powi/CMakeLists.txt
      # Set source files
      set(CORE2_SRCS fxpowi.c pxpowi.c)
      set_property(SOURCE ${CORE2_SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-march=core2 ")
+@@ -50,7 +50,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+   set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=power8 ")
+ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+   set(SRCS fxpowi.c gspowi4.c gdpowi2.c pxpowi.c)
+-  set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
++  set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS " ")
+ else()
+   set(SRCS fxpowi.c pxpowi.c)  
+ endif()

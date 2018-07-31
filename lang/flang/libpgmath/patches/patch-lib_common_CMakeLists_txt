@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.3 2018/07/25 21:08:47 bcallah Exp $
+$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.4 2018/07/31 03:34:42 bcallah Exp $
 
 Index: lib/common/CMakeLists.txt
 --- lib/common/CMakeLists.txt.orig
@@ -23,6 +23,17 @@ Index: lib/common/CMakeLists.txt
      add_subdirectory("cos")
      add_subdirectory("cosf")
      add_subdirectory("sincosf")
+@@ -142,8 +142,8 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+     sincosf.c)
+ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+   set_property(SOURCE dispatch.c APPEND_STRING PROPERTY COMPILE_FLAGS "-fno-builtin")
+-  set_property(SOURCE mth_xintrinsics.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
+-  set_property(SOURCE mth_128defs.c mth_128defs_init.c mth_128defs_stats.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
++  set_property(SOURCE mth_xintrinsics.c APPEND_STRING PROPERTY COMPILE_FLAGS " ")
++  set_property(SOURCE mth_128defs.c mth_128defs_init.c mth_128defs_stats.c APPEND_STRING PROPERTY COMPILE_FLAGS " ")
+   set_property(SOURCE mth_128defs_init.c APPEND PROPERTY COMPILE_DEFINITIONS MTH_I_INTRIN_INIT)
+   set_property(SOURCE mth_128defs_stats.c APPEND PROPERTY COMPILE_DEFINITIONS MTH_I_INTRIN_STATS)
+   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z -Wl,combreloc")
 @@ -278,13 +278,13 @@ libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEF
  set(DEFINITIONS_CMPLX ${DEFINITIONS} MTH_CMPLX_C99_ABI)
  libmath_add_object_library("${MTH_CMPLX_SRCS}" "${FLAGS}" "${DEFINITIONS_CMPLX}" "common_mth_cmplx")

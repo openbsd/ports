@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2018/07/25 21:08:47 bcallah Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.5 2018/07/31 03:34:42 bcallah Exp $
 
 Some ugly hacks here.
 
@@ -46,13 +46,13 @@ Index: lib/CMakeLists.txt
      TARGET_LINUX TARGET_LINUX_ARM TARGET_LINUX_ARM64 TARGET_LLVM
      TARGET_LLVM_LINUXAARCH64 TM_I8)
 -  set(FLAGS_L1 "-O3 -mcpu=${LLVM_FLANG_CPU_TARGET} -ffast-math -funroll-loops ")
-+  set(FLAGS_L1 "-mcpu=${LLVM_FLANG_CPU_TARGET} -ffast-math -funroll-loops ")
++  set(FLAGS_L1 "-ffast-math -funroll-loops ")
    set(FLAGS_L1 "${FLAGS_L1} -ffp-contract=fast")
    
    set(DEFINITIONS_L2 HOST_LINUX MAXCPUS=8192 MAXCPUSL=128 MAXCPUSR=128
      TARGET_LINUX TARGET_LINUX_ARM TARGET_LINUX_ARM64 TARGET_LLVM TM_I8)
 -  set(FLAGS_L2 "-O3 -mcpu=${LLVM_FLANG_CPU_TARGET} -ffast-math -funroll-loops -ffp-contract=fast")
-+  set(FLAGS_L2 "-mcpu=${LLVM_FLANG_CPU_TARGET} -ffast-math -funroll-loops -ffp-contract=fast")
++  set(FLAGS_L2 "-ffast-math -funroll-loops -ffp-contract=fast")
  
    # common
    # Definitions and compiler flags for level 1 directories
