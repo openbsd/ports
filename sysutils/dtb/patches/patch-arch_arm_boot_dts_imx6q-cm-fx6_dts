@@ -1,7 +1,8 @@
-$OpenBSD: patch-arch_arm_boot_dts_imx6q-cm-fx6_dts,v 1.1 2016/07/17 15:09:39 jsg Exp $
---- arch/arm/boot/dts/imx6q-cm-fx6.dts.orig	Sun Jul 17 00:15:03 2016
-+++ arch/arm/boot/dts/imx6q-cm-fx6.dts	Sun Jul 17 00:15:38 2016
-@@ -22,6 +22,10 @@
+$OpenBSD: patch-arch_arm_boot_dts_imx6q-cm-fx6_dts,v 1.2 2018/07/31 10:10:37 jsg Exp $
+Index: arch/arm/boot/dts/imx6q-cm-fx6.dts
+--- arch/arm/boot/dts/imx6q-cm-fx6.dts.orig
++++ arch/arm/boot/dts/imx6q-cm-fx6.dts
+@@ -54,6 +54,10 @@
  		reg = <0x10000000 0x80000000>;
  	};
  

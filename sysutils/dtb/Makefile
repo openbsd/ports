@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/04 03:14:22 jsg Exp $
+# $OpenBSD: Makefile,v 1.16 2018/07/31 10:10:37 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-VERSION=	4.17
+VERSION=	4.18-rc7
 DISTNAME=	linux-${VERSION}
 PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
@@ -13,9 +13,9 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # dual GPL/BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v4.x/
-EXTRACT_SUFX=	.tar.xz
-#MASTER_SITES=	https://git.kernel.org/torvalds/t/
+#MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v4.x/
+#EXTRACT_SUFX=	.tar.xz
+MASTER_SITES=	https://git.kernel.org/torvalds/t/
 PKG_ARCH=	*
 
 MODULES=	lang/clang
