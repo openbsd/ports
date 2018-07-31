@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/29 07:53:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/07/31 17:40:59 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
-V =		0.61
+V =		0.62
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 GH_ACCOUNT =	CorsixTH
 GH_PROJECT =	CorsixTH
@@ -38,7 +37,8 @@ RUN_DEPENDS =	audio/timidity \
 
 NO_TEST =	Yes
 
+# Remove the .orig file
 post-install:
-	${SUBST_CMD} -c -m 555 ${FILESDIR}/CorsixTH ${PREFIX}/bin/CorsixTH
+	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua.orig
 
 .include <bsd.port.mk>
