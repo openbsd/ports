@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.36 2018/07/10 12:30:16 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.37 2018/07/31 09:52:54 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,25 +6,13 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.07
+VERSION=	2018.09-rc1
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
-
-PATCHFILES=	u-boot-hyp_migrate_stack.patch:1 \
-		u-boot-efi_payloads_nonsec.patch:2 \
-		u-boot-efi_nonsec_once.patch:3 \
-		u-boot-hyp_lpae.patch:4 \
-		u-boot-revert_efi_no_nonsec.patch:5
-
-MASTER_SITES1=		https://patchwork.ozlabs.org/patch/930263/mbox/?/
-MASTER_SITES2=		https://patchwork.ozlabs.org/patch/930266/mbox/?/
-MASTER_SITES3=		https://patchwork.ozlabs.org/patch/930264/mbox/?/
-MASTER_SITES4=		https://patchwork.ozlabs.org/patch/930265/mbox/?/
-MASTER_SITES5=		https://patchwork.ozlabs.org/patch/930267/mbox/?/
 
 PATCH_DIST_STRIP=	-p1
 
