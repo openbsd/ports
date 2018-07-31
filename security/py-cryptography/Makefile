@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2018/07/17 14:06:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/07/31 11:08:17 jasper Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	2.2.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel

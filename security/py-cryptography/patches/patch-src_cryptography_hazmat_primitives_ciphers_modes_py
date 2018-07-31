@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cryptography_hazmat_primitives_ciphers_modes_py,v 1.1 2018/07/31 11:08:18 jasper Exp $
+
+Security fix for CVE-2018-10903
+https://github.com/pyca/cryptography/pull/4342
+
+Index: src/cryptography/hazmat/primitives/ciphers/modes.py
+--- src/cryptography/hazmat/primitives/ciphers/modes.py.orig
++++ src/cryptography/hazmat/primitives/ciphers/modes.py
+@@ -220,6 +220,7 @@ class GCM(object):
+                         min_tag_length)
+                 )
+         self._tag = tag
++        self._min_tag_length = min_tag_length
+ 
+     tag = utils.read_only_property("_tag")
+     initialization_vector = utils.read_only_property("_initialization_vector")
