@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/31 10:04:37 espie Exp $
 
 COMMENT =		Version Control with Subversion
 
@@ -29,7 +29,9 @@ DOCDIR =		${PREFIX}/share/doc
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cd ${DOCDIR} && \
-		tar -s/svn-book-html-chunk/svnbook/g -zjxf \
-		${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	    PATH=${PORTPATH} \
+	    ${BZIP2} -c -d ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}| \
+	    tar -s/svn-book-html-chunk/svnbook/g -xf -
+		
 
 .include <bsd.port.mk>
