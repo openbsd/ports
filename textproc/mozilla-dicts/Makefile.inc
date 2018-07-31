@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/01/07 08:51:04 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2018/07/31 09:42:18 espie Exp $
 
 # All distfiles are unversioned, and no upstream master site available
 PORTROACH =	ignore:1
@@ -50,8 +50,8 @@ CHECKSUM_FILE =	${.CURDIR}/../distinfo
 SUBST_VARS =	L L2
 
 do-extract:
-	@${UNZIP} -oq ${FULLDISTDIR}/$L.xpi -d ${WRKDIR} \*.aff
-	@${UNZIP} -oq ${FULLDISTDIR}/$L.xpi -d ${WRKDIR} \*.dic
+	@PATH=${PORTPATH} ${UNZIP} -oq ${FULLDISTDIR}/$L.xpi -d ${WRKDIR} \*.aff
+	@PATH=${PORTPATH} ${UNZIP} -oq ${FULLDISTDIR}/$L.xpi -d ${WRKDIR} \*.dic
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mozilla-dicts
