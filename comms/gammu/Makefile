@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/08 07:50:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2018/07/31 11:39:50 kirby Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
 DISTNAME =		gammu-1.39.0
+REVISION = 		0
 
 SHARED_LIBS += 		Gammu 1.0 # 8.1
 SHARED_LIBS += 		gsmsd 1.0 # 8.1
 
 CATEGORIES =		comms
 
-HOMEPAGE =		http://wammu.eu/
+HOMEPAGE =		https://wammu.eu/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curl dbi glib-2.0 gobject-2.0 iconv intl m pthread usb-1.0
 
-MASTER_SITES =		http://dl.cihar.com/gammu/releases/
+MASTER_SITES =		https://dl.cihar.com/gammu/releases/
 
 MODULES =		devel/cmake
 
