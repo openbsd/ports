@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.16 2017/05/25 23:15:41 espie Exp $
+# $OpenBSD: update-patches,v 1.17 2018/07/31 07:13:37 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -44,8 +44,26 @@ if ($patchorig ne '.orig') {
 my $force = defined($ENV{FORCE_REGEN});
 my $verbose = defined($ENV{PATCH_VERBOSE});
 
+my $origwrkdist = $wrkdist;
 # protect against dirty stuff
 $wrkdist =~ s/\/$//g;
+
+if (-l $wrkdist) {
+	$wrkdist = readlink($wrkdist);
+	if (!defined $wrkdist) {
+		say "WRKDIST=$origwrkdist is a symlink that can't be resolved";
+		exit 1;
+	}
+}
+
+if (!-d $wrkdist) {
+	if (!-e $wrkdist) {
+		say "WRKDIST=$origwrkdist does not exist";
+	} else {
+		say "WRKDIST=$origwrkdist is not a directory";
+	}
+	exit 1;
+}
 
 my @diff_args;
 # XXX more processing maybe ?
@@ -53,10 +71,6 @@ if (defined $ENV{DIFF_ARGS}) {
 	push(@diff_args, split(/\s+/, $ENV{DIFF_ARGS}));
 }
 
-if (!-d $wrkdist) {
-	say "WRKDIST=$wrkdist is not a directory";
-	exit 1;
-}
 my ($actual, $saved, $done, $nochange);
 my @edit;
 
@@ -311,7 +325,7 @@ find({wanted =>
 	}
 	my $p = create_patch($src, $dst, $stem);
 	$actual->{$p->{stem}} = $p;
-    }, follow => 1, follow_skip => 2 }, $wrkdist);
+    }, follow => 0, follow_skip => 2 }, $wrkdist);
 
 # do we have patches ?
 if (keys %$actual) {
