@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/27 21:04:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/07/31 17:22:05 bcallah Exp $
 @bin bin/xfe
 @bin bin/xfi
 @bin bin/xfp
@@ -24,6 +24,7 @@ share/locale/es_AR/LC_MESSAGES/xfe.mo
 share/locale/es_CO/
 share/locale/es_CO/LC_MESSAGES/
 share/locale/es_CO/LC_MESSAGES/xfe.mo
+share/locale/fi/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
