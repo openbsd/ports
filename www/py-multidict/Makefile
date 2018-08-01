@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/26 13:05:38 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2018/08/01 22:39:13 juanfra Exp $
 
 COMMENT =		multidict implementation
 
 MODPY_EGG_VERSION =	4.2.0
+REVISION =		0
 DISTNAME =		multidict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www devel
