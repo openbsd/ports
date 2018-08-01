@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.218 2018/06/28 13:15:11 espie Exp $
+# $OpenBSD: Makefile,v 1.219 2018/08/01 05:28:50 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
 
-MOZILLA_VERSION =	2.49.3
+MOZILLA_VERSION =	2.49.4
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.4.2
+PKGNAME-lightning =	lightning-seamonkey-5.4.4
 EPOCH-lightning =	0
-REVISION-lightning =	0
-REVISION-main =		2
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -45,7 +43,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
+WANTLIB += X11-xcb fribidi intl pixman-1 xcb xcb-shm
 WANTLIB-lightning=
 
 # build lightning xpi
