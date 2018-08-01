@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_fping_c,v 1.5 2018/07/26 10:37:46 sthen Exp $
+$OpenBSD: patch-src_fping_c,v 1.6 2018/08/01 15:02:18 millert Exp $
 Index: src/fping.c
 --- src/fping.c.orig
 +++ src/fping.c
@@ -6,13 +6,23 @@ Index: src/fping.c
      int tos = 0;
      HOST_ENTRY* cursor;
  
-+    if (pledge("stdio inet rpath dns", NULL) == -1)
++    if (pledge("stdio inet rpath dns id", NULL) == -1)
 +        perror("pledge");
 +
      prog = argv[0];
  
      s = open_ping_socket(ping_data_size);
-@@ -583,6 +586,11 @@ int main(int argc, char** argv)
+@@ -364,6 +367,9 @@ int main(int argc, char** argv)
+             perror("cannot setuid");
+     }
+ 
++    if (pledge("stdio inet rpath dns", NULL) == -1)
++        perror("pledge");
++
+     ident = getpid() & 0xFFFF;
+     verbose_flag = 1;
+     backoff_flag = 1;
+@@ -583,6 +589,11 @@ int main(int argc, char** argv)
          }
      }
  
@@ -24,7 +34,7 @@ Index: src/fping.c
      /* validate various option settings */
  
      if (ttl > 255) {
-@@ -798,6 +806,10 @@ int main(int argc, char** argv)
+@@ -798,6 +809,10 @@ int main(int argc, char** argv)
          exit(num_noaddress ? 2 : 1);
      }
  
@@ -35,7 +45,7 @@ Index: src/fping.c
      if (src_addr_present) {
          socket_set_src_addr(s, src_addr);
      }
-@@ -1667,7 +1679,7 @@ int wait_for_reply(long wait_time)
+@@ -1667,7 +1682,7 @@ int wait_for_reply(long wait_time)
  
  #ifndef IPV6
      ip = (struct ip*)buffer;
