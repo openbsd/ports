@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.23 2017/06/24 20:19:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/08/01 14:29:28 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
 @newgroup _trac:693
 @newuser _trac:693:_trac:daemon:trac user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/tracd
 bin/trac-admin
 bin/tracd
 lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -151,7 +152,6 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/log_graph.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/ca.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/da.js
-lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/de.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_GB.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_US.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/eo.js
@@ -213,10 +213,6 @@ lib/python${MODPY_VERSION}/site-packages/trac/locale/cs/LC_MESSAGES/tracini.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/LC_MESSAGES/messages.mo
-lib/python${MODPY_VERSION}/site-packages/trac/locale/de/
-lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/
-lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/messages.mo
-lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/tracini.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/LC_MESSAGES/messages.mo
@@ -810,6 +806,7 @@ share/examples/trac/contrib/l10n_diff_index.py
 share/examples/trac/contrib/l10n_reset_en_GB.py
 share/examples/trac/contrib/l10n_revert_lineno_conflicts.py
 share/examples/trac/contrib/make_status.py
+share/examples/trac/contrib/merge_catalog.py
 share/examples/trac/contrib/migrateticketmodel.py
 share/examples/trac/contrib/rpm/
 share/examples/trac/contrib/rpm/installscript
@@ -828,4 +825,3 @@ share/examples/trac/contrib/workflow/showworkflow
 share/examples/trac/contrib/workflow/simple-workflow.ini
 share/examples/trac/contrib/workflow/trivial-workflow.ini
 share/examples/trac/contrib/workflow/workflow_parser.py
-@rcscript ${RCDIR}/tracd
