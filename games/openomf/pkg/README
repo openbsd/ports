@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenOMF
+=======
+OpenOMF requires the original game files from One Must Fall 2097 in
+order to work properly. While OpenOMF is open source software, One Must
+Fall 2097 is proprietary and must be obtained in order to use OpenOMF.
+
+Fortunately, the developers of One Must Fall 2097 released the game as
+freeware in 1999. It is available for download at archive.org:
+https://archive.org/download/OneMustFall2097/OMF21cd-playable.ZIP
+The above zip file has the following checksum:
+SHA256 (OMF21cd-playable.ZIP) = pZ4Ke4NMfyNANwwGXkiuSjsnWzdw91uNGl3YrYi5inQ=
+
+Note that this .ZIP file will extract its contents into the working
+directory!
+
+For a global installation, the game files must be placed in
+${TRUEPREFIX}/share/openomf.
+
+Alternatively, the game can be launched from any directory that holds
+the game assets. If you choose this route, the file
+${TRUEPREFIX}/share/openomf/openomf.bf must be copied to this
+directory before launching the game.

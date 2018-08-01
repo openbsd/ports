@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+@bin bin/openomf
+include/shadowdive/
+include/shadowdive/actions.h
+include/shadowdive/af.h
+include/shadowdive/altpal.h
+include/shadowdive/animation.h
+include/shadowdive/bk.h
+include/shadowdive/bkanim.h
+include/shadowdive/chr.h
+include/shadowdive/colcoord.h
+include/shadowdive/error.h
+include/shadowdive/fonts.h
+include/shadowdive/language.h
+include/shadowdive/move.h
+include/shadowdive/palette.h
+include/shadowdive/pic.h
+include/shadowdive/pilot.h
+include/shadowdive/rec.h
+include/shadowdive/rgba_image.h
+include/shadowdive/score.h
+include/shadowdive/script.h
+include/shadowdive/setup.h
+include/shadowdive/shadowdive.h
+include/shadowdive/sounds.h
+include/shadowdive/sprite.h
+include/shadowdive/taglist.h
+include/shadowdive/tournament.h
+include/shadowdive/vga_image.h
+lib/libshadowdive.a
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/openomf/
+share/openomf/openomf.bk
+share/openomf/openomf_icon.png

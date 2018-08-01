@@ -1,0 +1,20 @@
+OpenOMF is a Open Source remake of "One Must Fall 2097" by Diversions
+Entertainment. Together with networking support, OpenOMF tries to make
+it easier to play One Must Fall in its original glory on multiple
+platforms.
+
+Project goals:
+* At first, as faithful a game binary to the original as possible.
+* Better game controller support (new gamepads etc.)
+* Better networking support. The original game used IPX/SPX networking.
+* More network game types. For example full Internet tournaments are
+  being planned.
+* Support for new graphics and audio. The current version of OpenOMF
+  already supports loading alternate music files. Support for alternate
+  sprites is coming after the game is otherwise working okay.
+* Enhanced tournament mode!
+
+While OpenOMF is open source, the game and its assets are not.
+Fortunately, the developers released the game as freeware in 1999. It
+can be obtained from archive.org:
+https://archive.org/download/OneMustFall2097/OMF21cd-playable.ZIP

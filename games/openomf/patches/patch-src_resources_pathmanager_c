@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_resources_pathmanager_c,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+
+Reconfigure game asset search paths.
+
+Index: src/resources/pathmanager.c
+--- src/resources/pathmanager.c.orig
++++ src/resources/pathmanager.c
+@@ -91,7 +91,7 @@ int pm_init() {
+                 // on linux, the resources will be in ../share/games/openomf, relative to the binary
+                 // so if openomf is installed to /usr/local/bin,
+                 // the resources will be in /usr/local/share/games/openomf
+-                local_path_build(RESOURCE_PATH, bin_base_dir, "../share/games/openomf/");
++                local_path_build(RESOURCE_PATH, bin_base_dir, "../share/openomf/");
+                 local_path_build(PLUGIN_PATH, bin_base_dir, "../lib/openomf/");
+                 m_ok = 1;
+             } else if(!strcasecmp(SDL_GetPlatform(), "Mac OS X")) {
+@@ -112,7 +112,7 @@ int pm_init() {
+             local_path_build(RESOURCE_PATH, "resources\\", "");
+             local_path_build(PLUGIN_PATH, "plugins\\", "");
+         } else {
+-            local_path_build(RESOURCE_PATH, "resources/", "");
++            local_path_build(RESOURCE_PATH, "", "");
+             local_path_build(PLUGIN_PATH, "plugins/", "");
+         }
+     }

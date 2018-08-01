@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+
+Install to a better location.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -385,6 +385,6 @@ INSTALL(TARGETS openomf
+     COMPONENT Binaries
+ )
+ INSTALL(FILES resources/openomf.bk resources/openomf_icon.png
+-    DESTINATION share/games/openomf/
++    DESTINATION share/openomf/
+     COMPONENT Data
+ )
