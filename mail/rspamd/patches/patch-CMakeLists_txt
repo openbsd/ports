@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.15 2018/07/12 18:38:32 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.16 2018/08/01 17:11:44 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
@@ -23,7 +23,7 @@ Index: CMakeLists.txt
  	# Find util library
  	ProcessPackage(LIBUTIL LIBRARY util INCLUDE libutil.h
  		ROOT ${LIBUTIL_ROOT_DIR} OPTIONAL)
-@@ -535,8 +535,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
+@@ -538,8 +538,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
  	ENDIF()
  	SET(POE_LOOP "Loop::Kqueue")
  	SET(TAR "gtar")
@@ -39,7 +39,7 @@ Index: CMakeLists.txt
  IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_BSD_SOURCE -DDARWIN")
  	SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
-@@ -651,7 +657,7 @@ ELSE()
+@@ -654,7 +660,7 @@ ELSE()
  ENDIF()
  
  ProcessPackage(LIBEVENT LIBRARY event INCLUDE event.h INCLUDE_SUFFIXES include/event
