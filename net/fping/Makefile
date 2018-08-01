@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.42 2018/08/01 15:02:18 millert Exp $
+# $OpenBSD: Makefile,v 1.43 2018/08/01 15:15:04 sthen Exp $
 
 COMMENT=	quickly ping N hosts w/o flooding the network
 
 DISTNAME=	fping-3.16
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://fping.org/
+HOMEPAGE=	https://fping.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB += c
 
-MASTER_SITES=	http://fping.org/dist/
+MASTER_SITES=	https://fping.org/dist/
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
