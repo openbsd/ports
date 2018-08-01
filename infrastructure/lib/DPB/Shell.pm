@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.17 2015/07/21 05:10:12 naddy Exp $
+# $OpenBSD: Shell.pm,v 1.18 2018/08/01 15:52:00 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -151,7 +151,7 @@ sub exec
 	}
 	$self->{user} //= $self->prop->{build_user};
 	if ($chroot) {
-		my @cmd2 = ("chroot");
+		my @cmd2 = (OpenBSD::Paths->chroot);
 		if (!$self->prop->{iamroot}) {
 			unshift(@cmd2, OpenBSD::Paths->doas);
 		}
