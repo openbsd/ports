@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2018/06/11 11:59:51 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2018/08/02 11:39:33 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
+@rcscript ${RCDIR}/nmbd
+@rcscript ${RCDIR}/samba
+@rcscript ${RCDIR}/samba_ad_dc
+@rcscript ${RCDIR}/smbd
+@rcscript ${RCDIR}/winbindd
 @sample ${SYSCONFDIR}/samba/
 @bin bin/cifsdd
 @bin bin/dbwrap_tool
@@ -1358,8 +1363,3 @@ share/samba/setup/ypServ30.ldif
 @sample /var/samba/
 @mode 0700
 @sample /var/samba/private/
-@rcscript ${RCDIR}/nmbd
-@rcscript ${RCDIR}/samba
-@rcscript ${RCDIR}/samba_ad_dc
-@rcscript ${RCDIR}/smbd
-@rcscript ${RCDIR}/winbindd
