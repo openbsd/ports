@@ -1,0 +1,9 @@
+Miller (mlr) is like awk, sed, cut, join, and sort for name-indexed data
+such as CSV, TSV, and tabular JSON. You get to work with your data using
+named fields, without needing to count positional column indices. It is
+pipe-friendly and interoperates with the Unix toolkit.
+
+It operates on key-value-pair data while the familiar Unix tools operate
+on integer-indexed fields. This encompasses a variety of data formats,
+including but not limited to the familiar CSV, TSV, and JSON. (Miller
+can handle positionally-indexed data as a special case.)
