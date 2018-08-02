@@ -1,10 +1,10 @@
-$OpenBSD: patch-makefile,v 1.4 2017/06/21 21:19:05 naddy Exp $
+$OpenBSD: patch-makefile,v 1.5 2018/08/02 10:43:01 naddy Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
 @@ -5,11 +5,12 @@
  CXX=c++
- CXXFLAGS=-O2
+ CXXFLAGS=-O2 -Wno-logical-op-parentheses -Wno-switch -Wno-dangling-else
  LIBFLAGS=-fPIC
 -DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DRAR_SMP
 +DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DRAR_SMP -DOPENSSL_AES
