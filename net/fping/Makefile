@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.44 2018/08/01 16:37:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2018/08/02 09:07:47 sthen Exp $
 
 COMMENT=	quickly ping N hosts w/o flooding the network
 
 # XXX sticking with 3.x for now;
 DISTNAME=	fping-3.16
-# some dependent programs rely on fping/fping6 separation and will need
-# patching to move to "fping -4" / "fping -6". there is a build method
-# supposed to give exact compatibility, which can be handled with some
-# bodging, but the new "--disable-ipv4" configure flag doesn't actually
-# work so e.g. "fping6 somehost" succeeds even if somehost is unreachable
-# over v6.
 REVISION=	2
+
+# some dependent programs (net/zabbix, net/monitoring-plugins,
+# net/smokeping, net/librenms) expect fping/fping6 separation and would
+# want patching to move to "fping -4" / "fping -6".
+#
+# there is a build method supposed to give exact compatibility, which
+# can be handled with some bodging in the port, but the new "--disable-ipv4"
+# configure flag doesn't actually work as of 4.0 so e.g. "fping6 somehost"
+# succeeds even if somehost is unreachable over v6.
 
 CATEGORIES=	net
 
