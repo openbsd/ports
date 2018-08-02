@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/04/26 20:55:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/08/02 00:33:09 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -6,7 +6,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.8.4
+V =		2.9.1
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -28,8 +28,10 @@ SHARED_LIBS +=	icinga                    0.0 # 2.6
 SHARED_LIBS +=	livestatus                0.0 # 2.6
 SHARED_LIBS +=	methods                   0.0 # 2.6
 SHARED_LIBS +=	mmatch                    0.0 # 2.6
+SHARED_LIBS +=	mysql_shim                0.0 # 2.9
 SHARED_LIBS +=	notification              0.0 # 2.6
 SHARED_LIBS +=	perfdata                  0.0 # 2.6
+SHARED_LIBS +=	pgsql_shim                0.0 # 2.9
 SHARED_LIBS +=	remote                    0.0 # 2.6
 SHARED_LIBS +=	socketpair                0.0 # 2.6
 
@@ -38,10 +40,10 @@ HOMEPAGE =	https://www.icinga.org/icinga2/
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
-WANTLIB += boost_thread-mt crypto m pthread ssl yajl
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt c crypto curses edit
+WANTLIB += m ssl yajl
 
 MODULES =		devel/cmake
 
@@ -54,37 +56,18 @@ BUILD_DEPENDS =		devel/bison
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
-WANTLIB-main +=		${WANTLIB} c curses edit
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/boost \
 			devel/libyajl
 RUN_DEPENDS-main =	net/monitoring-plugins
-RUN_DEPENDS =           ${BASE_PKGPATH},-main # default for subpackages
+RUN_DEPENDS =           ${BASE_PKGPATH},-main=$Vv${EPOCH} # default for subpackages
 
-WANTLIB-mysql +=	${WANTLIB} mysqlclient \
-			lib/icinga2/base \
-			lib/icinga2/config \
-			lib/icinga2/db_ido \
-			lib/icinga2/execvpe \
-			lib/icinga2/icinga \
-			lib/icinga2/mmatch \
-			lib/icinga2/remote \
-			lib/icinga2/socketpair
+WANTLIB-mysql +=	${COMPILER_LIBCXX} m mysqlclient
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} \
-			${BASE_PKGPATH},-main \
 			databases/mariadb
 
-WANTLIB-pgsql +=	${WANTLIB} pq \
-			lib/icinga2/base \
-			lib/icinga2/config \
-			lib/icinga2/db_ido \
-			lib/icinga2/execvpe \
-			lib/icinga2/icinga \
-			lib/icinga2/mmatch \
-			lib/icinga2/remote \
-			lib/icinga2/socketpair
+WANTLIB-pgsql +=	${COMPILER_LIBCXX} m pq
 LIB_DEPENDS-pgsql =	${LIB_DEPENDS} \
-			${BASE_PKGPATH},-main \
 			databases/postgresql
 
 CONFIGURE_ARGS += \

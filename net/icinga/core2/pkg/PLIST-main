@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2018/03/23 09:31:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2018/08/02 00:33:09 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -6,22 +6,8 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
+@rcscript ${RCDIR}/icinga2
 lib/icinga2/
-@lib lib/icinga2/libbase.so.${LIBbase_VERSION}
-@lib lib/icinga2/libchecker.so.${LIBchecker_VERSION}
-@lib lib/icinga2/libcli.so.${LIBcli_VERSION}
-@lib lib/icinga2/libcompat.so.${LIBcompat_VERSION}
-@lib lib/icinga2/libconfig.so.${LIBconfig_VERSION}
-@lib lib/icinga2/libdb_ido.so.${LIBdb_ido_VERSION}
-@lib lib/icinga2/libexecvpe.so.${LIBexecvpe_VERSION}
-@lib lib/icinga2/libicinga.so.${LIBicinga_VERSION}
-@lib lib/icinga2/liblivestatus.so.${LIBlivestatus_VERSION}
-@lib lib/icinga2/libmethods.so.${LIBmethods_VERSION}
-@lib lib/icinga2/libmmatch.so.${LIBmmatch_VERSION}
-@lib lib/icinga2/libnotification.so.${LIBnotification_VERSION}
-@lib lib/icinga2/libperfdata.so.${LIBperfdata_VERSION}
-@lib lib/icinga2/libremote.so.${LIBremote_VERSION}
-@lib lib/icinga2/libsocketpair.so.${LIBsocketpair_VERSION}
 lib/icinga2/sbin/
 @bin lib/icinga2/sbin/icinga2
 @bin libexec/nagios/check_nscp_api
@@ -31,7 +17,6 @@ share/doc/icinga2/
 share/doc/icinga2/AUTHORS
 share/doc/icinga2/CHANGELOG.md
 share/doc/icinga2/COPYING
-share/doc/icinga2/COPYING.Exceptions
 share/doc/icinga2/NEWS
 share/doc/icinga2/README.md
 share/doc/icinga2/markdown/
@@ -63,6 +48,7 @@ share/doc/icinga2/markdown/images/
 share/doc/icinga2/markdown/images/advanced-topics/
 share/doc/icinga2/markdown/images/advanced-topics/flapping-state-graph.png
 share/doc/icinga2/markdown/images/advanced-topics/icinga2_external_checks_freshness_icingaweb2.png
+share/doc/icinga2/markdown/images/advanced-topics/icingaweb2_downtime_handled.png
 share/doc/icinga2/markdown/images/distributed-monitoring/
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_endpoints.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_distributed_roles.png
@@ -85,6 +71,7 @@ share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_i
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_installer_05.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_01.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02.png
+share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_02_global_zone.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_03.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_04.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_05_nsclient_01.png
@@ -102,9 +89,6 @@ share/doc/icinga2/markdown/images/getting-started/mariadb-centos7.png
 share/doc/icinga2/markdown/images/getting-started/nano-syntax.png
 share/doc/icinga2/markdown/images/getting-started/postgr-import-ido.png
 share/doc/icinga2/markdown/images/getting-started/vim-syntax.png
-share/doc/icinga2/markdown/images/icinga2-api/
-share/doc/icinga2/markdown/images/icinga2-api/icinga2_api_icinga_studio_connect.png
-share/doc/icinga2/markdown/images/icinga2-api/icinga2_api_icinga_studio_overview.png
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bash_completion.d/
 share/examples/bash_completion.d/icinga2
@@ -246,8 +230,8 @@ share/vim/vimfiles/syntax/icinga2.vim
 @sample ${LOCALSTATEDIR}/lib/icinga2/api/repository/
 @sample ${LOCALSTATEDIR}/lib/icinga2/api/zones/
 @mode 700
-@sample ${LOCALSTATEDIR}/lib/icinga2/certs/
 @sample ${LOCALSTATEDIR}/lib/icinga2/certificate-requests/
+@sample ${LOCALSTATEDIR}/lib/icinga2/certs/
 @sample ${LOCALSTATEDIR}/lib/icinga2/pki/
 @mode 755
 @sample ${LOCALSTATEDIR}/log/icinga2/
@@ -256,7 +240,3 @@ share/vim/vimfiles/syntax/icinga2.vim
 @sample ${LOCALSTATEDIR}/spool/icinga2/
 @sample ${LOCALSTATEDIR}/spool/icinga2/perfdata/
 @sample ${LOCALSTATEDIR}/spool/icinga2/tmp/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/icinga2

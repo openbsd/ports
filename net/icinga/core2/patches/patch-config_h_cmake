@@ -1,13 +1,14 @@
-$OpenBSD: patch-config_h_cmake,v 1.7 2017/11/20 11:11:20 sthen Exp $
+$OpenBSD: patch-config_h_cmake,v 1.8 2018/08/02 00:33:09 sthen Exp $
 
 - compiled-in ICINGA_SYSCONFDIR needs to be the standard one (/etc),
 but cmake should install files to an examples directory in our staging
 dir (${PREFIX}/share/examples/icinga2), package tools copy them under
 /etc at install time.
 
---- config.h.cmake.orig	Tue Jan 31 10:18:20 2017
-+++ config.h.cmake	Thu Feb  2 14:06:02 2017
-@@ -13,7 +13,7 @@
+Index: config.h.cmake
+--- config.h.cmake.orig
++++ config.h.cmake
+@@ -14,7 +14,7 @@
  #cmakedefine ICINGA2_UNITY_BUILD
  
  #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"
