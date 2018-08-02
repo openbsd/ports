@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1434 2018/07/30 17:03:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1435 2018/08/02 09:09:22 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2684,12 +2684,6 @@ do-configure:
 
 # The real configure
 
-_post-configure-finalize:
-.for _wrap in aclocal
-	@printf '#!/bin/sh\nexit 1\n' > ${WRKDIR}/bin/${_wrap}
-	@chmod 555 ${WRKDIR}/bin/${_wrap}
-.endfor
-
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 .if defined(_CONFIG_SITE)
@@ -2705,7 +2699,6 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .if target(post-configure)
 	@${_PMAKE} post-configure
 .endif
-	@${_PMAKE} _post-configure-finalize
 	@${_PMAKE_COOKIE} $@
 
 # The real build
