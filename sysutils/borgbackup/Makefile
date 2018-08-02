@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/18 15:40:16 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2018/08/02 13:43:05 juanfra Exp $
 
 COMMENT =		deduplicating backup program
 
 MODPY_EGG_VERSION =	1.1.6
+REVISION =		0
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -29,6 +30,10 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR}
+
+pre-configure:
+	find ${WRKSRC} -type f \
+		-exec perl -i -pe 's# __attribute__\(\(optimize\("Os"\)\)\)##g' {} \;
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${PREFIX}/man/man1/
