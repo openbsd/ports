@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/04 07:14:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.30 2018/08/02 09:15:17 rpointel Exp $
 
 PORTROACH =	limit:^1\.11
 
 COMMENT =	high-level Python web framework (LTS version)
 
-MODPY_EGG_VERSION =	1.11.12
+MODPY_EGG_VERSION =	1.11.15
 LNAME =			django-lts
-
-MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
-
-TEST_DEPENDS =	devel/py-tz,python3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}

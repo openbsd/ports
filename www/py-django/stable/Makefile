@@ -1,17 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/09/07 09:22:04 rpointel Exp $
+# $OpenBSD: Makefile,v 1.20 2018/08/02 09:15:17 rpointel Exp $
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	1.10.8
+MODPY_EGG_VERSION =	2.1
 
 LNAME =			django
-
-FLAVORS =	python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=	devel/py-mock
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}

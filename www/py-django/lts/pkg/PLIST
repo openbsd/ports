@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/04/04 07:14:07 rpointel Exp $
-@conflict py3-django->=1.9,<1.10
+@comment $OpenBSD: PLIST,v 1.28 2018/08/02 09:15:17 rpointel Exp $
+@conflict py3-django->=2.1,<2.2
 @comment bin/django-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6822,6 +6822,9 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.11.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.12.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.13.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.14.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
