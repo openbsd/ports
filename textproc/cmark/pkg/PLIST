@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/03 05:13:37 rsadowski Exp $
+@bin bin/cmark
+include/cmark.h
+include/cmark_export.h
+include/cmark_version.h
+lib/cmake/
+lib/cmake/cmark${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cmark.cmake
+lib/libcmark.a
+@lib lib/libcmark.so.${LIBcmark_VERSION}
+lib/pkgconfig/libcmark.pc
+@man man/man1/cmark.1
+@man man/man3/cmark.3
