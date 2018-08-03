@@ -1,0 +1,24 @@
+$OpenBSD: patch-include_efi_loader_h,v 1.1 2018/08/03 02:57:33 jsg Exp $
+
+revert 4182a129ef735bfd6c54788affe1b649ab85b851
+efi_loader: allocate configuration table array
+
+After this commit, the ConfigurationTable field of the system table
+is no longer translated from a physical address into a virtual address
+when the SerVirtualAddressMap() runtime service gets called.
+
+Broke boot on Orange Pi PC 2.
+
+Index: include/efi_loader.h
+--- include/efi_loader.h.orig
++++ include/efi_loader.h
+@@ -17,9 +17,6 @@
+ 
+ #include <linux/list.h>
+ 
+-/* Maximum number of configuration tables */
+-#define EFI_MAX_CONFIGURATION_TABLES 16
+-
+ int __efi_entry_check(void);
+ int __efi_exit_check(void);
+ const char *__efi_nesting(void);
