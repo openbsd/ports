@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/08/03 07:07:45 espie Exp $
 
 COMMENT=	mail purpose library
 
@@ -36,10 +36,11 @@ CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	cd ${WRKSRC} && ${SETENV} \
+	cd ${WRKSRC} && \
 	    AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
 	    NOCONFIGURE=1 \
+	    PATH=${PORTPATH} \
 	   ./autogen.sh
 
 .include <bsd.port.mk>

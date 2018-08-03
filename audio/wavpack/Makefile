@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/03/16 22:18:41 juanfra Exp $
+# $OpenBSD: Makefile,v 1.25 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -38,8 +38,9 @@ AUTOCONF_VERSION =	2.69
 
 pre-configure:
 	sed -i 's,#include "md5.h",#include <md5.h>,' ${WRKSRC}/cli/*.c
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+	    autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

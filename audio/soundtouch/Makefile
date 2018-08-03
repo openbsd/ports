@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/08/03 07:07:44 espie Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -34,9 +34,10 @@ MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 
 pre-configure:
 	cd ${WRKSRC} && \
-		touch NEWS README AUTHORS ChangeLog && env \
+		touch NEWS README AUTHORS ChangeLog && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		PATH=${PORTPATH} \
 		./bootstrap
 
 .include <bsd.port.mk>

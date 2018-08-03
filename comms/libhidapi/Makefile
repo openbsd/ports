@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =	library for communicating with USB and Bluetooth HID devices
 
@@ -45,6 +45,7 @@ pre-configure:
 	cd ${WRKSRC} && env -i \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		PATH=${PORTPATH} \
 		autoreconf -fi
 post-install:
 	cd ${PREFIX}/lib && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/14 08:47:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/08/03 07:07:45 espie Exp $
 
 COMMENT=		library for handling paper characteristics
 
@@ -39,6 +39,7 @@ pre-configure:
 	cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		PATH=${PORTPATH} \
 		autoreconf -i
 
 post-install:

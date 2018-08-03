@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/19 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/08/03 07:07:44 espie Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -46,8 +46,9 @@ pre-patch:
 	perl -i -pe 's/\r$$//; s/\t*$$//;' ${WRKSRC}/libopenjpeg/opj_malloc.h
 
 post-patch:
-	cd ${WRKSRC} && env AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
-	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" ./bootstrap.sh
+	cd ${WRKSRC} && AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
+	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
+	    PATH=${PORTPATH} ./bootstrap.sh
 
 post-install:
 	cd ${PREFIX}/share/doc/ && mv openjpeg-* openjpeg

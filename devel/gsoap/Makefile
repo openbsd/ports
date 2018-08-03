@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/12 18:31:22 jsing Exp $
+# $OpenBSD: Makefile,v 1.11 2018/08/03 07:07:44 espie Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
@@ -40,6 +40,7 @@ CONFIGURE_ENV=		CPPFLAGS="-DWITH_NO_C_LOCALE=1" LDFLAGS="-pthread"
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+		autoreconf -f -i
 
 .include <bsd.port.mk>

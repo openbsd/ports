@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/08/30 05:37:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =		kevent based inotify
 
@@ -34,7 +34,8 @@ TEST_TARGET =		test
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+		autoreconf -f -i
 
 post-install:
 	@rm -rf ${WRKINST}${LOCALBASE}/lib/inotify/pkgconfig

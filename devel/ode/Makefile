@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	3.0	# 6.0
@@ -36,6 +36,7 @@ pre-configure:
 	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		PATH=${PORTPATH} \
 		autoreconf -fi
 
 post-install:

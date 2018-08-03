@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2018/01/12 19:32:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.102 2018/08/03 07:07:44 espie Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -67,6 +67,6 @@ NO_TEST=	Yes
 pre-configure:
 	@mkdir -p ${WRKSRC}/src/audio/sndio
 	@cp ${FILESDIR}/SDL_sndioaudio.{c,h} ${WRKSRC}/src/audio/sndio
-	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} PATH=${PORTPATH} ./autogen.sh
 
 .include <bsd.port.mk>

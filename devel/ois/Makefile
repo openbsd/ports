@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =		object-oriented input system
 
@@ -41,6 +41,7 @@ post-extract:
 
 post-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./bootstrap
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+		sh ./bootstrap
 
 .include <bsd.port.mk>

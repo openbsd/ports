@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/08/03 07:07:44 espie Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -37,6 +37,7 @@ post-patch:
 	cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		PATH=${PORTPATH} \
 		sh autogen.sh
 
 .include <bsd.port.mk>
