@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/08/28 19:06:35 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/03 07:19:39 espie Exp $
 
 COMMENT =		encoding files for poppler
 DISTNAME =		poppler-data-0.4.8
@@ -14,5 +14,7 @@ PKG_ARCH =		*
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+FAKE_FLAGS = prefix=${LOCALBASE}
 
 .include <bsd.port.mk>
