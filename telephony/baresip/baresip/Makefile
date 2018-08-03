@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/07 07:22:54 feinerer Exp $
+# $OpenBSD: Makefile,v 1.23 2018/08/03 12:20:06 feinerer Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.5.9
+V =			0.5.10
 DISTNAME =		baresip-$V
-REVISION =		0
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
 
 WANTLIB-main += SDL2 X11 Xext avahi-client avahi-common avcodec avdevice
 WANTLIB-main += avformat avutil c gsm m mosquitto mpg123 opus png pthread
-WANTLIB-main += re rem sndfile sndio spandsp speex speexdsp swscale
+WANTLIB-main += re rem sndfile sndio spandsp speexdsp swscale
 WANTLIB-main += twolame v4l2 vpx x264 x265
 
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
@@ -26,7 +25,6 @@ LIB_DEPENDS-main =	audio/gsm \
 			audio/libsndfile \
 			audio/mpg123 \
 			audio/opus \
-			audio/speex \
 			audio/twolame \
 			devel/sdl2 \
 			graphics/ffmpeg \
@@ -73,7 +71,6 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			USE_PLC=yes \
 			USE_SDL2=yes \
 			USE_SNDFILE=yes \
-			USE_SPEEX=yes \
 			USE_SPEEX_AEC=yes \
 			USE_SPEEX_PP=yes \
 			USE_SRTP=yes \

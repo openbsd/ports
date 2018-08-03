@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/03/11 18:48:59 feinerer Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/08/03 12:20:06 feinerer Exp $
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
 lib/baresip/
@@ -11,6 +11,7 @@ lib/baresip/modules/auloop.so
 lib/baresip/modules/avahi.so
 lib/baresip/modules/avcodec.so
 lib/baresip/modules/avformat.so
+lib/baresip/modules/b2bua.so
 lib/baresip/modules/cons.so
 lib/baresip/modules/contact.so
 lib/baresip/modules/ctrl_tcp.so
@@ -40,7 +41,6 @@ lib/baresip/modules/selfview.so
 lib/baresip/modules/snapshot.so
 lib/baresip/modules/sndfile.so
 lib/baresip/modules/sndio.so
-lib/baresip/modules/speex.so
 lib/baresip/modules/speex_aec.so
 lib/baresip/modules/speex_pp.so
 lib/baresip/modules/srtp.so
