@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/05 08:31:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2018/08/04 09:19:35 kn Exp $
 
 COMMENT =	web frontend for git repositories
 
-DISTNAME =	cgit-1.1
+DISTNAME =	cgit-1.2.1
 CATEGORIES =	www devel
-REVISION =	0
 
-DISTFILES =	${DISTNAME}.tar.gz:0 \
-		git-2.10.2.tar.gz:1
+DISTFILES =	${DISTNAME}.tar.xz:0 \
+		git-2.18.0.tar.gz:1
 
 MASTER_SITES0 =		https://git.zx2c4.com/cgit/snapshot/
 MASTER_SITES1 =		https://www.kernel.org/pub/software/scm/git/

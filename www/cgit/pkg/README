@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2017/03/22 20:23:52 landry Exp $
+$OpenBSD: README,v 1.4 2018/08/04 09:19:35 kn Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,16 +7,15 @@ $OpenBSD: README,v 1.3 2017/03/22 20:23:52 landry Exp $
 Cgit config
 ===========
 By default, the cgitrc config file is searched in ${PREFIX}/conf/cgitrc.
-Refer to http://git.zx2c4.com/cgit/tree/cgitrc.5.txt for the syntax.
+Refer to cgitrc(5) for the syntax.
 
 Webserver config
 ================
 
 OpenBSD httpd
 -------------
-ext_ip="0.0.0.0"
 server "default" {
-	listen on $ext_ip port 80
+	listen on egress port 80
 
 	# don't serve static files from cgit CGI: cgit.css and cgit.png
 	location "/cgit.*" {

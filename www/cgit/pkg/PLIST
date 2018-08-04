@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/05 08:31:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/04 09:19:35 kn Exp $
 @group daemon
 @bin cgi-bin/cgit.cgi
 @group
@@ -8,5 +8,5 @@ cgit/cgit.png
 cgit/favicon.ico
 cgit/robots.txt
 @cwd ${LOCALBASE}
-share/doc/pkg-readmes/${FULLPKGNAME}
 @man man/man5/cgitrc.5
+share/doc/pkg-readmes/${FULLPKGNAME}
