@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.55 2016/04/26 10:56:59 sthen Exp $
+# $OpenBSD: gnu.port.mk,v 1.56 2018/08/04 09:01:08 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -10,25 +10,24 @@ MODGNU_AUTOMAKE_DEPENDS = devel/metaauto \
 	devel/automake/${AUTOMAKE_VERSION}
 
 AUTOMAKE_VERSION ?= 1.4
+AUTOCONF_VERSION ?= 2.13
+# missing ?= not an oversight
+AUTOCONF_ENV = PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+MAKE_ENV += AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 .if ${CONFIGURE_STYLE:L:Mautomake}
 BUILD_DEPENDS += ${MODGNU_AUTOMAKE_DEPENDS}
-MAKE_ENV += AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 .  if ${CONFIGURE_STYLE:L:Mautoupdate}
 CONFIGURE_STYLE += autoconf
 .  endif
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mautoconf}
-AUTOCONF_VERSION ?= 2.13
 BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS}
 AUTOCONF ?= autoconf
 AUTOUPDATE ?= autoupdate
 AUTOHEADER ?= autoheader
 AUTOCONF_DIR ?= ${WRKSRC}
-# missing ?= not an oversight
-AUTOCONF_ENV = PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION}
-MAKE_ENV += AUTOCONF_VERSION=${AUTOCONF_VERSION}
 .  if !${CONFIGURE_STYLE:L:Mno-autoheader}
 CONFIGURE_STYLE += autoheader
 .  endif
