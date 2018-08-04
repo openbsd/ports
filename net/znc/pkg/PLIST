@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/05/16 06:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/08/04 05:11:07 ajacoutot Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -38,6 +38,7 @@ include/znc/znc_export_lib_export.h
 include/znc/zncconfig.h
 lib/pkgconfig/znc.pc
 lib/znc/
+lib/znc/admindebug.so
 lib/znc/adminlog.so
 lib/znc/alias.so
 lib/znc/autoattach.so
@@ -160,6 +161,10 @@ share/znc/modules/webadmin/tmpl/listusers.tmpl
 share/znc/modules/webadmin/tmpl/settings.tmpl
 share/znc/modules/webadmin/tmpl/traffic.tmpl
 share/znc/translations/
+share/znc/translations/de-DE
+share/znc/translations/es-ES
+share/znc/translations/id-ID
+share/znc/translations/nl_NL
 share/znc/translations/ru-RU
 share/znc/webskins/
 share/znc/webskins/_default_/
