@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/10/05 11:37:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/04 12:35:42 kirby Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
+REVISION =              0
 
 SHARED_LIBS =		ccnet 2.0
 

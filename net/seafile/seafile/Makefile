@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/10/05 11:37:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/04 12:35:42 kirby Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
+REVISION =              0
 
 SHARED_LIBS =		seafile 3.0
 
