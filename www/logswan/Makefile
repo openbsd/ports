@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:38:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/05 20:41:15 fcambus Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
-V =		2.0.1
+V =		2.0.2
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	c jansson m maxminddb
 
 MASTER_SITES =	https://github.com/fcambus/logswan/releases/download/$V/
+
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 NO_TEST =	Yes
