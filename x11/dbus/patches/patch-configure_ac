@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.8 2018/02/10 00:01:42 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2018/08/05 19:12:05 ajacoutot Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -563,7 +563,7 @@ fi
+@@ -567,7 +567,7 @@ fi
  AC_LANG_PUSH(C)
  AC_CACHE_CHECK([whether va_lists can be copied by value],
  	dbus_cv_va_val_copy,
