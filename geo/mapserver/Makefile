@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.54 2018/05/21 22:18:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2018/08/05 07:22:59 landry Exp $
 
-MULTI_PACKAGES=	-utils -main -php -perl
+MULTI_PACKAGES=	-utils -main -php -perl -python
 
 COMMENT-main=	GIS CGI server
 COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
+COMMENT-python=	Python Mapscript binding
 
-V =		7.0.7
+V =		7.2.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-SHARED_LIBS +=	mapserver 2.0
-README-main =	0
-REVISION-main=	0
+PKGNAME-python=	py3-mapscript-${V}
+SHARED_LIBS +=	mapserver 3.0
 
 CATEGORIES=	geo www
 
@@ -27,9 +27,14 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-MODULES=	lang/php devel/cmake
+MODULES=	lang/php lang/python devel/cmake
 MODPHP_RUNDEP=	No
+#notyet, cf https://github.com/mapserver/mapserver/issues/5592
+#MODPHP_VERSION=	7.0
 MODPHP_VERSION=	5.6
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+CONFIGURE_STYLE=cmake
+
 NO_TEST =	Yes
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
 RUN_DEPENDS-main =	www/spawn-fcgi
@@ -38,6 +43,7 @@ BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
 		devel/harfbuzz \
+		devel/protobuf-c \
 		graphics/cairo \
 		geo/gdal \
 		geo/geos \
@@ -45,22 +51,27 @@ LIB_DEPENDS=	devel/proj \
 		www/fcgi
 
 WANTLIB += curl freetype jpeg m png pq xml2 z proj
-WANTLIB += gdal geos_c cairo fribidi gif harfbuzz
+WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
 
 LIB_DEPENDS-utils =	STEM->=${V}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-php =	STEM->=${V}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-perl =	STEM->=${V}:${BUILD_PKGPATH},-main
+LIB_DEPENDS-python =	STEM->=${V}:${BUILD_PKGPATH},-main
 WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
 WANTLIB-utils =	${WANTLIB} c mapserver
 WANTLIB-php =	${WANTLIB} mapserver
 WANTLIB-perl =	${WANTLIB} c mapserver perl
+WANTLIB-python =	${WANTLIB} mapserver ${MODPY_WANTLIB}
 
 CONFIGURE_ARGS +=	-DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
+			-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_CLIENT_WFS=1 \
 			-DWITH_CLIENT_WMS=1 \
 			-DWITH_CURL=1 \
 			-DWITH_KML=1 \
+			-DWITH_SOS=1 \
 			-DWITH_PHP=1 \
+			-DWITH_PYTHON=1 \
 			-DWITH_PERL=1
 
 PREFIX-main=	${VARBASE}/www
@@ -73,14 +84,16 @@ post-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/perl
 
 	${INSTALL_PROGRAM} ${PREFIX}/bin/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
 
 	echo "; Enable Mapscript extension module\nextension=php_mapscript.so" \
 		> ${PREFIX}/share/examples/php-${MODPHP_VERSION}/mapscript.ini
 
-	${INSTALL_DATA}	${WRKSRC}/mapscript/perl/examples/* \
-		${PREFIX}/share/examples/mapserver/perl
+.for l in perl python
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/${l}
+	${INSTALL_DATA}	${WRKSRC}/mapscript/${l}/examples/* \
+		${PREFIX}/share/examples/mapserver/${l}
+.endfor
 
 .include <bsd.port.mk>
