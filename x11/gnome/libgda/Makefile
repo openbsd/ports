@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.125 2018/06/29 22:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.126 2018/08/05 19:04:52 ajacoutot Exp $
+
+PORTROACH=		skipv:5.90.1
 
 COMMENT-main=		GNOME Data Access library
 COMMENT-ldap=		LDAP backend for libgda
