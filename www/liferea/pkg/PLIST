@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.33 2018/08/06 19:47:15 bket Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
 lib/liferea/girepository-1.0/
 lib/liferea/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/plugins/
-lib/liferea/plugins/${MODPY_PYCACHE}
+lib/liferea/plugins/${MODPY_PYCACHE}/
 lib/liferea/plugins/${MODPY_PYCACHE}bold-unread.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}gnome-keyring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/liferea/plugins/${MODPY_PYCACHE}headerbar.${MODPY_PYC_MAGIC_TAG}pyc
