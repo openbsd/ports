@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/06 21:57:20 bcallah Exp $
+@bin bin/c4group
+@bin bin/openclonk
+share/appdata/
+share/appdata/openclonk.appdata.xml
+share/applications/openclonk.desktop
+share/icons/hicolor/128x128/apps/openclonk.png
+share/icons/hicolor/256x256/apps/openclonk.png
+share/icons/hicolor/32x32/apps/openclonk.png
+share/icons/hicolor/512x512/apps/openclonk.png
+share/icons/hicolor/64x64/apps/openclonk.png
+share/openclonk/
+share/openclonk/Arena.ocf
+share/openclonk/Decoration.ocd
+share/openclonk/Defense.ocf
+share/openclonk/Graphics.ocg
+share/openclonk/Material.ocg
+share/openclonk/Missions.ocf
+share/openclonk/Music.ocg/
+share/openclonk/Music.ocg/@CrushedIceCocktail.ogg
+share/openclonk/Music.ocg/Cavern.ogg
+share/openclonk/Music.ocg/IslandDreams.ogg
+share/openclonk/Music.ocg/LucidDream.ogg
+share/openclonk/Music.ocg/Motorway.ogg
+share/openclonk/Music.ocg/Offshore.ogg
+share/openclonk/Music.ocg/TheSkylands.ogg
+share/openclonk/Music.ocg/UrbanBolero.ogg
+share/openclonk/Music.ocg/Version.txt
+share/openclonk/Music.ocg/authors.txt
+share/openclonk/Objects.ocd
+share/openclonk/Parkour.ocf
+share/openclonk/Sound.ocg
+share/openclonk/System.ocg
+share/openclonk/Tutorials.ocf
+share/openclonk/Worlds.ocf
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

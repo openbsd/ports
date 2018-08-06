@@ -1,0 +1,66 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/06 21:57:20 bcallah Exp $
+
+Install to share/openclonk instead of share/games/openclonk.
+Make sure openclink-server can link properly.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -167,7 +167,7 @@ if(WIN32 AND MINGW)
+ endif()
+ 
+ if(UNIX)
+-	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/games/openclonk\"")
++	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/openclonk\"")
+ endif()
+ 
+ if(APPLE)
+@@ -1052,7 +1052,7 @@ if(HAVE_PTHREAD)
+ 	target_link_libraries(libmisc pthread)
+ endif()
+ if(UNIX AND NOT APPLE)
+-	target_link_libraries(libmisc rt)
++	target_link_libraries(libmisc)
+ endif()
+ 
+ add_library(libc4script
+@@ -1236,6 +1236,7 @@ target_link_libraries(openclonk-server
+ 	libmisc
+ 	libc4script
+ 	libopenclonk
++	termcap
+ )
+ if(UPNP_FOUND)
+ 	target_link_libraries(openclonk-server ${UPNP_LIBRARIES})
+@@ -1537,13 +1538,13 @@ foreach(group ${OC_C4GROUPS})
+ 			DEPENDS "${native_c4group}"
+ 			VERBATIM
+ 		)
+-		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/games/openclonk)
++		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/openclonk)
+ 	endif()
+ endforeach()
+ 
+ if(NOT APPLE)
+ 	if(NOT HEADLESS_ONLY)
+-		install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/planet/Music.ocg DESTINATION share/games/openclonk)
++		install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/planet/Music.ocg DESTINATION share/openclonk)
+ 	endif()
+ 	# group files (game data)
+ 	add_custom_target(groups DEPENDS ${OC_C4GROUPS})
+@@ -1556,14 +1557,12 @@ if(NOT HEADLESS_ONLY)
+ 	if(NOT APPLE)
+ 		# Install new files
+ 		install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/openclonk.desktop DESTINATION share/applications)
+-		# Update the MIME cache -- this makes the clonk:// protocol handler actually work
+-		install(CODE "message(\"Note: Run update-desktop-database to install clonk:// protocol handler\")")
+ 
+ 		# Install software center metadata
+ 		install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/openclonk.appdata.xml DESTINATION share/appdata)
+ 
+ 		# Install binaries
+-		install(TARGETS openclonk DESTINATION games)
++		install(TARGETS openclonk DESTINATION bin)
+ 	else()
+ 		install(TARGETS openclonk
+ 			BUNDLE DESTINATION .
