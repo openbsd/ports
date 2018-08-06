@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_librustdoc_test_rs,v 1.17 2018/06/29 05:19:47 landry Exp $
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.18 2018/08/06 19:07:50 landry Exp $
 fallback to LOCALBASE as default sysroot.
 Index: src/librustdoc/test.rs
 --- src/librustdoc/test.rs.orig
@@ -15,7 +15,7 @@ Index: src/librustdoc/test.rs
          search_paths: libs.clone(),
          crate_types: vec![config::CrateTypeDylib],
          cg: cg.clone(),
-@@ -210,7 +213,10 @@ fn run_test(test: &str, cratename: &str, filename: &Fi
+@@ -213,7 +216,10 @@ fn run_test(test: &str, cratename: &str, filename: &Fi
  
      let sessopts = config::Options {
          maybe_sysroot: maybe_sysroot.or_else(

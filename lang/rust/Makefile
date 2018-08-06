@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2018/07/23 06:56:43 landry Exp $
+# $OpenBSD: Makefile,v 1.76 2018/08/06 19:07:50 landry Exp $
 
 # snapshots are only available these archs;
 # sync with MACHINE_ARCH conditional in x11/gnome/librsvg (STABLE_VERSION)
@@ -13,14 +13,14 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.27.2
-CARGO_V =		0.28.0
+V =			1.28.0
+CARGO_V =		0.29.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.27.0-20180622
-BV-amd64 =		1.27.0-20180619
-BV-i386 =		1.27.0-20180619
+BV-aarch64 =		1.28.0-20180803
+BV-amd64 =		1.28.0-20180731
+BV-i386 =		1.28.0-20180731
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -149,9 +149,6 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
-
-	# XXX workaround for https://github.com/rust-lang/rust/issues/51650
-	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml

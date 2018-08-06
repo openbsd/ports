@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_etc_rust-gdb,v 1.3 2017/06/17 02:06:53 danj Exp $
+$OpenBSD: patch-src_etc_rust-gdb,v 1.4 2018/08/06 19:07:50 landry Exp $
 only compatible with egdb (gdb from ports)
 Index: src/etc/rust-gdb
 --- src/etc/rust-gdb.orig
@@ -22,5 +22,5 @@ Index: src/etc/rust-gdb
 -RUST_GDB="${RUST_GDB:-gdb}"
 +RUST_GDB="${RUST_GDB:-egdb}"
  PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" ${RUST_GDB} \
-   -d "$GDB_PYTHON_MODULE_DIRECTORY" \
+   --directory="$GDB_PYTHON_MODULE_DIRECTORY" \
    -iex "add-auto-load-safe-path $GDB_PYTHON_MODULE_DIRECTORY" \
