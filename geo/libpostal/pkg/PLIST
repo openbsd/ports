@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/06 09:15:11 fcambus Exp $
+@newgroup _libpostal:816
+@extraunexec rm -rf /var/db/libpostal
+@bin bin/address_parser
+include/libpostal/
+include/libpostal/libpostal.h
+lib/libpostal.a
+lib/libpostal.la
+@lib lib/libpostal.so.${LIBpostal_VERSION}
+lib/pkgconfig/libpostal.pc
+@mode 775
+@group _libpostal
+@sample ${LOCALSTATEDIR}/db/libpostal/

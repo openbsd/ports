@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2018/08/06 09:15:11 fcambus Exp $
+
+Remove hardcoded optimization levels.
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,10 +1,10 @@
+ # Inherited from autoconf / user-specified
+ CFLAGS_CONF = @CFLAGS@
+-CFLAGS_BASE = -Wall -Wextra -Wno-unused-function -Wformat -Werror=format-security -Winit-self -Wno-sign-compare -DLIBPOSTAL_DATA_DIR='"$(datadir)/libpostal"' -g $(CFLAGS_CONF)
++CFLAGS_BASE = -Wall -Wextra -Wno-unused-function -Wformat -Werror=format-security -Winit-self -Wno-sign-compare -DLIBPOSTAL_DATA_DIR='"$(datadir)/libpostal"' $(CFLAGS_CONF)
+ CFLAGS_O0 = $(CFLAGS_BASE) -O0
+-CFLAGS_O1 = $(CFLAGS_BASE) -O1
+-CFLAGS_O2 = $(CFLAGS_BASE) -O2
+-CFLAGS_O3 = $(CFLAGS_BASE) -O3
++CFLAGS_O1 = $(CFLAGS_BASE)
++CFLAGS_O2 = $(CFLAGS_BASE)
++CFLAGS_O3 = $(CFLAGS_BASE)
+ DEFAULT_INCLUDES = -I.. -I/usr/local/include
+ 
+ # Wonky but have to be able to override the user's optimization level to compile the scanner

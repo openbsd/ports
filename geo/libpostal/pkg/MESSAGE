@@ -1,0 +1,16 @@
+libpostal requires data files which should be fetched before use.
+
+Fetching data files requires 776M of free space, and the extracted data
+takes 1.8G.
+
+The user fetching data must be part of the _libpostal group:
+
+# usermod -G _libpostal <username>
+
+The data files can then be fetched as follows:
+
+$ cd ${LOCALSTATEDIR}/db/libpostal &&
+for f in language_classifier libpostal_data parser; do
+  ftp https://github.com/openvenues/libpostal/releases/download/v1.0.0/$f.tar.gz
+  tar xfz $f.tar.gz
+done;

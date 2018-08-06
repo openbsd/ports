@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_sparkey_Makefile_am,v 1.1.1.1 2018/08/06 09:15:11 fcambus Exp $
+--- src/sparkey/Makefile.am.orig	Thu Feb  9 20:34:15 2017
++++ src/sparkey/Makefile.am	Mon Feb 13 13:41:01 2017
+@@ -1,5 +1,5 @@
+ CFLAGS_CONF = @CFLAGS@
+-CFLAGS = -I/usr/local/include -O2 -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic $(CFLAGS_CONF)
++CFLAGS = -I/usr/local/include -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic -fgnu89-inline $(CFLAGS_CONF)
+ 
+ noinst_LTLIBRARIES = libsparkey.la
+ libsparkey_la_SOURCES = endiantools.h hashheader.h logheader.h \
