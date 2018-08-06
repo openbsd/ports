@@ -1,31 +1,32 @@
-$OpenBSD: patch-Makefile_sharedlibrary,v 1.1 2017/11/29 13:57:47 bcallah Exp $
+$OpenBSD: patch-Makefile_sharedlibrary,v 1.2 2018/08/06 07:33:57 fcambus Exp $
 
 Index: Makefile.sharedlibrary
 --- Makefile.sharedlibrary.orig
 +++ Makefile.sharedlibrary
-@@ -37,14 +37,14 @@ DUKTAPE_SRCDIR=./src
- #DUKTAPE_SRCDIR=./src-noline
+@@ -55,14 +55,14 @@ DUKTAPE_SRCDIR = ./src
+ CC = gcc
  
  .PHONY: all
--all: libduktape.so.$(REAL_VERSION) libduktaped.so.$(REAL_VERSION)
-+all: libduktape.so.$(REAL_VERSION) duk
+-all: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.$(SO_REALNAME_SUFFIX)
++all: libduktape.$(SO_REALNAME_SUFFIX)
  
  # If the default duk_config.h is not suitable for the distribution, modify it
  # before compiling the shared library and copy the same, edited duk_config.h
  # to $INSTALL_PREFIX/include on installation.
  
- libduktape.so.$(REAL_VERSION):
--	gcc -shared -fPIC -Wall -Wextra -Os -Wl,-soname,libduktape.so.$(SONAME_VERSION) \
-+	${CC} -shared -fPIC -Wall -Wextra ${CFLAGS} -Wl,-soname,libduktape.so.$(REAL_VERSION) \
+ libduktape.$(SO_REALNAME_SUFFIX):
+-	$(CC) -shared -fPIC -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktape.$(SO_SONAME_SUFFIX) \
++	$(CC) -shared -fPIC -Wall -Wextra ${CFLAGS} -Wl,$(LD_SONAME_ARG),libduktape.so.$(REAL_VERSION) \
  		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
  
- libduktaped.so.$(REAL_VERSION):
-@@ -66,6 +66,6 @@ install: libduktape.so.$(REAL_VERSION) libduktaped.so.
- # Note: assumes /usr/local/include/ and /usr/local/lib/ are in include/link
- # path which may not be the case for all distributions.
- #CCOPTS=-I/usr/local/include -L/usr/local/lib
--CCOPTS=-I./examples/cmdline
-+CCOPTS=-I./examples/cmdline -Isrc
- duk:
--	gcc $(CCOPTS) -Wall -Wextra -Os -o $@ ./examples/cmdline/duk_cmdline.c -lduktape -lm
-+	${CC} $(CCOPTS) -Wall -Wextra ${CFLAGS} -o $@ ./examples/cmdline/duk_cmdline.c -L. -lduktape -lm
+ libduktaped.$(SO_REALNAME_SUFFIX):
+@@ -83,6 +83,6 @@ install: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.
+ 	mkdir -p $(INSTALL_PREFIX)/include/
+ 	cp $(DUKTAPE_SRCDIR)/duktape.h $(DUKTAPE_SRCDIR)/duk_config.h $(INSTALL_PREFIX)/include/
+ 
+-CCOPTS = -I./examples/cmdline
+-duk:
+-	$(CC) $(CCOPTS) -I$(INSTALL_PREFIX)/include -L$(INSTALL_PREFIX)/lib -Wall -Wextra -Os -o $@ ./examples/cmdline/duk_cmdline.c -lduktape -lm
++CCOPTS = -I./examples/cmdline -Isrc
++duk:	libduktape.$(SO_REALNAME_SUFFIX)
++	$(CC) $(CCOPTS) -Wall -Wextra ${CFLAGS} -o $@ ./examples/cmdline/duk_cmdline.c -L. -lduktape -lm
