@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1435 2018/08/02 09:09:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1436 2018/08/06 09:36:32 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1819,26 +1819,6 @@ _check_wrkdir = :
 _wrap_install_commands += ${_PBUILD} install -m ${BINMODE} ${PORTSDIR}/infrastructure/bin/${wrapper}-wrapper /${WRKDIR}/bin/${command};
 .endfor
 
-# packing list utilities.  This generates a packing list from the WRKINST
-# directory. Not perfect, but pretty close.  The generated file
-# will have to have some tweaks done by hand.
-# In particular, since we no longer run fake as root
-
-_update_plist = ${_cache_fragment}; \
-	PORTSDIR=${PORTSDIR} \
-	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
-	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
-	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i FULLPKGPATH \
-	-i LOCALSTATEDIR -i MACHINE_ARCH \
-	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
-	-s RCDIR -s SYSCONFDIR -s X11BASE \
-	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
-	-L ${WRKINST}/.fake_log \
-	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
-.for i in ${BUILD_PACKAGES}
-_update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
-.endfor
-
 _cat = {cat1,cat2,cat3,cat3f,cat3p,cat4,cat5,cat6,cat7,cat8,cat9,catl,catn}
 _man = ${_cat:S/cat/man/g}
 _treebase = ${WRKINST}${LOCALBASE}
@@ -1873,6 +1853,31 @@ _FAKE_TREE_LIST = \
 	${_nls}/{sv_SE.ISO_8859-1,uk_UA.KOI8-U} \
 	${WRKINST}${VARBASE}/{db,games,log,spool,www}
 	
+# packing list utilities.  This generates a packing list from the WRKINST
+# directory. Not perfect, but pretty close.  The generated file
+# will have to have some tweaks done by hand.
+# In particular, since we no longer run fake as root
+
+_update_plist = ${_cache_fragment}; \
+	PORTSDIR=${PORTSDIR} \
+	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
+	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
+	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i FULLPKGPATH \
+	-i LOCALSTATEDIR -i MACHINE_ARCH \
+	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
+	-s RCDIR -s SYSCONFDIR -s X11BASE \
+	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs
+
+.for _d in ${_FAKE_TREE_LIST}
+_update_plist += -X ${_d:Q}
+.endfor
+
+_update_plist += -L ${WRKINST}/.fake_log \
+	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
+.for i in ${BUILD_PACKAGES}
+_update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
+.endfor
+
 
 ###
 ### end of variable setup. Only targets now

@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.28 2018/08/04 19:44:31 espie Exp $
+# $OpenBSD: FS2.pm,v 1.29 2018/08/06 09:36:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -461,12 +461,29 @@ use File::Basename;
 use OpenBSD::IdCache;
 use Config;
 
+sub ignore_parents
+{
+	my ($self, $path) = @_;
+	do {
+		$self->{ignored}{$path} = 1;
+		$path = dirname($path);
+		return if $self->{ignored}{$path};
+	} while ($path ne '/' && $path ne $self->{destdir});
+}
+
 # existing files are classified by the following class
 # we look under a destdir, and we do ignore a hash of files
 sub new
 {
 	my ($class, $destdir, $ignored) = @_;
-	bless {destdir => $destdir, ignored => $ignored}, $class;
+	my $o = bless {destdir => $destdir, ignored => {}}, $class;
+	# this allows _FAKE_TREE_LIST to be used
+	for my $d (keys %$ignored) {
+		for my $path (glob $d) {
+			$o->ignore_parents($path);
+		}
+	}
+	return $o;
 }
 
 sub destdir
@@ -513,16 +530,10 @@ sub mtree
 		my $mtree = $self->{mtree} = {};
 		OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
 		OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
-		$mtree->{'/usr/local/lib/X11'} = 1;
-		$mtree->{'/usr/local/include/X11'} = 1;
-		$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
-		$mtree->{'/usr/local/man/ja_JP.EUC/cat3f'} = 1;
-		$mtree->{'/usr/local/man/ja_JP.EUC/man3f'} = 1;
-		$mtree->{'/usr/local/man/ja_JP.EUC/man3p'} = 1;
 		$mtree->{'/var/tmp'} = 1;
 		# zap /usr/libdata/xxx from perl install
-		$mtree->{$Config{'installarchlib'}} = 1;
-		$mtree->{dirname($Config{'installarchlib'})} = 1;
+		$mtree->{$Config{installarchlib}} = 1;
+		$mtree->{dirname($Config{installarchlib})} = 1;
 	}
 	return $self->{mtree};
 }
