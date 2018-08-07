@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/25 09:17:34 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/08/07 19:00:05 tb Exp $
 share/wycheproof/
 share/wycheproof/testvectors/
 share/wycheproof/testvectors/aes_cbc_pkcs5_test.json
+share/wycheproof/testvectors/aes_ccm_test.json
 share/wycheproof/testvectors/aes_cmac_test.json
 share/wycheproof/testvectors/aes_eax_test.json
 share/wycheproof/testvectors/aes_gcm_siv_test.json
@@ -14,10 +15,14 @@ share/wycheproof/testvectors/ecdh_brainpoolP256r1_test.json
 share/wycheproof/testvectors/ecdh_brainpoolP320r1_test.json
 share/wycheproof/testvectors/ecdh_brainpoolP384r1_test.json
 share/wycheproof/testvectors/ecdh_brainpoolP512r1_test.json
+share/wycheproof/testvectors/ecdh_secp224r1_ecpoint_test.json
 share/wycheproof/testvectors/ecdh_secp224r1_test.json
 share/wycheproof/testvectors/ecdh_secp256k1_test.json
+share/wycheproof/testvectors/ecdh_secp256r1_ecpoint_test.json
 share/wycheproof/testvectors/ecdh_secp256r1_test.json
+share/wycheproof/testvectors/ecdh_secp384r1_ecpoint_test.json
 share/wycheproof/testvectors/ecdh_secp384r1_test.json
+share/wycheproof/testvectors/ecdh_secp521r1_ecpoint_test.json
 share/wycheproof/testvectors/ecdh_secp521r1_test.json
 share/wycheproof/testvectors/ecdh_test.json
 share/wycheproof/testvectors/ecdh_webcrypto_test.json
@@ -41,6 +46,13 @@ share/wycheproof/testvectors/ecdsa_webcrypto_test.json
 share/wycheproof/testvectors/eddsa_test.json
 share/wycheproof/testvectors/kw_test.json
 share/wycheproof/testvectors/kwp_test.json
+share/wycheproof/testvectors/rsa_pss_2048_sha1_mgf1_20_test.json
+share/wycheproof/testvectors/rsa_pss_2048_sha256_mgf1_0_test.json
+share/wycheproof/testvectors/rsa_pss_2048_sha256_mgf1_32_test.json
+share/wycheproof/testvectors/rsa_pss_3072_sha256_mgf1_32_test.json
+share/wycheproof/testvectors/rsa_pss_4096_sha256_mgf1_32_test.json
+share/wycheproof/testvectors/rsa_pss_4096_sha512_mgf1_32_test.json
+share/wycheproof/testvectors/rsa_pss_misc_test.json
 share/wycheproof/testvectors/rsa_signature_2048_sha224_test.json
 share/wycheproof/testvectors/rsa_signature_2048_sha256_test.json
 share/wycheproof/testvectors/rsa_signature_2048_sha512_test.json
