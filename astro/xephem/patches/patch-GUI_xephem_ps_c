@@ -1,5 +1,6 @@
---- GUI/xephem/ps.c.orig	Wed Oct  6 13:50:22 1999
-+++ GUI/xephem/ps.c	Thu Jul 11 22:59:22 2002
+Index: GUI/xephem/ps.c
+--- GUI/xephem/ps.c.orig
++++ GUI/xephem/ps.c
 @@ -1693,16 +1693,24 @@ XtPointer call;
  	if (wantp) {
  	    /* print */
@@ -8,10 +9,10 @@
  
 -	    (void) tmpnam (name);
 +	    strcpy(name, "/tmp/xeXXXXXXXX");
-+
+ 
 +	    /*(void) tmpnam (name);*/
 +	    fd = mkstemp(name);  
- 
++
  	    /* VMS tmpnam() doesn't always include the required '.' */
  	    if (!strchr (name, '.'))
  		(void) strcat (name, ".ps");

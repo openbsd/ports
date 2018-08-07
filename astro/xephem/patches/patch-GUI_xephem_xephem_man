@@ -1,0 +1,13 @@
+$OpenBSD: patch-GUI_xephem_xephem_man,v 1.1 2018/08/07 10:20:23 espie Exp $
+make this indexable
+
+Index: GUI/xephem/xephem.man
+--- GUI/xephem/xephem.man.orig
++++ GUI/xephem/xephem.man
+@@ -1,5 +1,5 @@
+ .TH XEphem 1X
+-.SH Name
++.SH NAME
+ XEphem \- an interactive astronomical ephemeris for X
+ .SH Syntax
+ \fBxephem [-prfb] [-install {yes|no|guess}]\fP
