@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2018/08/07 10:16:17 espie Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -20,8 +20,8 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 CONFIGURE_STYLE= imake
 
 do-configure:
-	@cd ${WRKSRC}/libastro && ${SETENV} ${XMKMF}
-	@cd ${WRKSRC}/GUI/xephem && ${SETENV} ${XMKMF}
+	@cd ${WRKSRC}/libastro && ${SETENV} ${MAKE_ENV} ${XMKMF}
+	@cd ${WRKSRC}/GUI/xephem && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 do-build:
 	@cd ${WRKSRC}/libastro && \
