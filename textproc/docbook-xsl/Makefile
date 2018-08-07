@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 09:58:56 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/07 10:08:37 espie Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
@@ -28,13 +28,13 @@ COPYDIRS=	common fo extensions html htmlhelp images \
 		javahelp lib manpages params template xhtml
 
 do-build:
-	cd ${WRKSRC} && ./INSTALL
+	cd ${WRKSRC} && ${MAKE_ENV} ./INSTALL
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${TAR} -cf - . | ${TAR} -xf - -C${DOCSDIR})
-	(cd ${WRKSRC} && \
-		${TAR} -cf - VERSION ${COPYDIRS} | ${TAR} -xf - -C${INSTDIR})
+	cd ${WRKSRC}/doc && ${TAR} -cf - . | ${TAR} -xf - -C${DOCSDIR}
+	cd ${WRKSRC} && \
+		${TAR} -cf - VERSION ${COPYDIRS} | ${TAR} -xf - -C${INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${INSTDIR}/catalog.xml
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_DATA} ${FILESDIR}/docbook-xsl.spec ${PREFIX}/share/libxml2
