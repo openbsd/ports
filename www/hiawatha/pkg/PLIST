@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/04/06 14:43:28 bket Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/08/07 14:26:39 bket Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/hiawatha
 @bin bin/ssi-cgi
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
@@ -36,4 +37,3 @@ share/examples/hiawatha/index.xslt
 @group
 share/examples/hiawatha/mimetype.conf
 @sample ${SYSCONFDIR}/hiawatha/mimetype.conf
-@rcscript ${RCDIR}/hiawatha
