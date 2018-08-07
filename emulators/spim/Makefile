@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2018/08/07 10:05:38 espie Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -25,9 +25,12 @@ MAKE_FLAGS=	PREFIX="${PREFIX}" \
 
 NO_TEST=	Yes
 
-do-build:
-	(cd ${WRKDIST}/spim; ./Configure && ${MAKE_PROGRAM} ${MAKE_FLAGS})
-	(cd ${WRKDIST}/xspim; ${XMKMF} && ${MAKE_PROGRAM} ${MAKE_FLAGS})
+post-configure:
+	cd ${WRKDIST}/spim && ./Configure
+	cd ${WRKDIST}/xspim && ${MAKE_ENV} ${XMKMF}
+
+pre-build:
+	cd ${WRKDIST}/spim && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/spim
