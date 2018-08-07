@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/12/02 18:19:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/07 11:08:01 espie Exp $
 
 COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=Yes
 CONFIGURE_STYLE=imake noman
 
 RUN_DEPENDS=	textproc/sp  textproc/docbook textproc/openjade
+
+MAKE_FLAGS +=	ROOT=${PREFIX}
 
 NO_TEST=	Yes
 
