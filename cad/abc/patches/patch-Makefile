@@ -1,0 +1,35 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/08/08 15:24:47 bcallah Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -75,6 +75,9 @@ endif
+ 
+ ABC_READLINE_INCLUDES ?=
+ ABC_READLINE_LIBRARIES ?= -lreadline
++ifeq ($(OS), OpenBSD)
++  ABC_READLINE_LIBRARIES += -lcurses
++endif
+ 
+ # whether to use libreadline
+ ifndef ABC_USE_NO_READLINE
+@@ -135,12 +138,17 @@ endif
+ 
+ # LIBS := -ldl -lrt
+ LIBS += -lm
+-ifneq ($(OS), FreeBSD)
++ifneq ($(OS), $(filter $(OS), FreeBSD OpenBSD))
+   LIBS += -ldl
+ endif
+ 
++LIBS += -lrt
++
+ ifneq ($(findstring Darwin, $(shell uname)), Darwin)
+-   LIBS += -lrt
++   LIBS := $(filter-out -lrt, $(LIBS))
++endif
++ifeq ($(OS), OpenBSD)
++   LIBS := $(filter-out -lrt, $(LIBS))
+ endif
+ 
+ ifdef ABC_USE_LIBSTDCXX
