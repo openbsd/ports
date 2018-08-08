@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/15 04:24:22 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/08/08 04:57:41 jsg Exp $
 firmware/intel/
 firmware/intel/06-03-02
 firmware/intel/06-05-00
@@ -44,8 +44,10 @@ firmware/intel/06-25-02
 firmware/intel/06-25-05
 firmware/intel/06-26-01
 firmware/intel/06-2a-07
+firmware/intel/06-2c-02
 firmware/intel/06-2d-06
 firmware/intel/06-2d-07
+firmware/intel/06-2e-06
 firmware/intel/06-2f-02
 firmware/intel/06-3a-09
 firmware/intel/06-3c-03
@@ -65,8 +67,11 @@ firmware/intel/06-56-02
 firmware/intel/06-56-03
 firmware/intel/06-56-04
 firmware/intel/06-56-05
+firmware/intel/06-5c-02
 firmware/intel/06-5c-09
+firmware/intel/06-5c-0a
 firmware/intel/06-5e-03
+firmware/intel/06-5f-01
 firmware/intel/06-7a-01
 firmware/intel/06-8e-09
 firmware/intel/06-8e-0a
