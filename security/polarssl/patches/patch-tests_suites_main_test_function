@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_suites_main_test_function,v 1.3 2018/05/15 17:39:19 bket Exp $
+$OpenBSD: patch-tests_suites_main_test_function,v 1.4 2018/08/08 12:51:09 bket Exp $
 
 XXX can't take the address of stdout
 
 Index: tests/suites/main_test.function
 --- tests/suites/main_test.function.orig
 +++ tests/suites/main_test.function
-@@ -436,32 +436,7 @@ int main(int argc, const char *argv[])
+@@ -447,32 +447,7 @@ int main(int argc, const char *argv[])
              {
                  test_info.failed = 0;
  
