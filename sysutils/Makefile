@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.493 2018/07/30 00:36:46 abieber Exp $
+# $OpenBSD: Makefile,v 1.494 2018/08/08 14:16:20 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -301,7 +301,6 @@
      SUBDIR += sleuthkit
      SUBDIR += smartmontools
      SUBDIR += smbldap-tools
-     SUBDIR += snapdl
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += sshfs-fuse
