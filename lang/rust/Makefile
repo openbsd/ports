@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.76 2018/08/06 19:07:50 landry Exp $
+# $OpenBSD: Makefile,v 1.77 2018/08/08 09:19:40 sthen Exp $
 
-# snapshots are only available these archs;
-# sync with MACHINE_ARCH conditional in x11/gnome/librsvg (STABLE_VERSION)
-ONLY_FOR_ARCHS =	aarch64 amd64 i386
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome

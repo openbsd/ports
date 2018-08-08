@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.51 2018/07/26 13:23:01 phessler Exp $
+# $OpenBSD: arch-defines.mk,v 1.52 2018/08/08 09:19:40 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -25,6 +25,7 @@ MONO_ARCHS = amd64 i386
 OCAML_NATIVE_ARCHS = i386 amd64
 OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
 GO_ARCHS = amd64 i386
+RUST_ARCHS = amd64 i386 aarch64
 
 # arches where the base compiler is clang
 CLANG_ARCHS = aarch64 amd64 arm i386
@@ -41,7 +42,8 @@ GCC49_ARCHS =amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
 
 .for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM \
-                     CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO LLD
+                     CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
+                     LLD RUST
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
 PROPERTIES += ${PROP:L}
