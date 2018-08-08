@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2018/07/28 14:36:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.48 2018/08/08 10:22:00 sthen Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
+
+BROKEN-i386 = SIGABRT
 
 COMMENT =		multi-paradigm programming language
 
