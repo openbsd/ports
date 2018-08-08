@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2018/07/25 09:04:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2018/08/08 15:25:20 bcallah Exp $
 
      SUBDIR =
+     SUBDIR += abc
      SUBDIR += fritzing
      SUBDIR += geda-gaf
      SUBDIR += gerbv
