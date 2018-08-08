@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/15 11:43:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/08/08 07:07:25 feinerer Exp $
 
 COMMENT =	firewall knock operator
 
-DISTNAME =	fwknop-2.6.9
-REVISION =	1
+DISTNAME =	fwknop-2.6.10
 
 SHARED_LIBS +=	fko	0.0 # 3.0
 
