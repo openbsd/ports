@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/25 15:50:26 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2018/08/08 19:35:25 jasper Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	grafana
 GH_TAGNAME =	v5.0.4
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -30,8 +31,11 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/grafana-{server,cli} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/grafana
-	${INSTALL_DATA} ${WRKSRC}/conf/*.{ini,toml} ${PREFIX}/share/examples/grafana
+.for c in sample.ini ldap.toml
+	${INSTALL_DATA} ${WRKSRC}/conf/$c ${PREFIX}/share/examples/grafana
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/grafana/conf
+	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini ${PREFIX}/share/grafana/conf/
 	cp -R ${WRKSRC}/public ${PREFIX}/share/grafana
 
 .include <bsd.port.mk>

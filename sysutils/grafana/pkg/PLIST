@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/25 15:50:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/08/08 19:35:25 jasper Exp $
 @newgroup _grafana:798
 @newuser _grafana:798:798:daemon:Grafana Daemon:/var/empty:/sbin/nologin
 @bin bin/grafana-cli
@@ -6,9 +6,8 @@
 share/grafana/
 share/grafana/conf/
 share/examples/grafana/
+share/grafana/conf/defaults.ini
 @sample ${SYSCONFDIR}/grafana/
-share/examples/grafana/defaults.ini
-@sample share/grafana/conf/defaults.ini
 share/examples/grafana/ldap.toml
 @sample ${SYSCONFDIR}/grafana/ldap.toml
 share/examples/grafana/sample.ini
