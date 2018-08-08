@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/08/08 09:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2018/08/08 19:18:58 naddy Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -55,6 +55,7 @@ BUILD_DEPENDS+=		lang/rust
 DISTFILES +=		${BOOTSTRAP}
 .endif
 
+.include <bsd.port.arch.mk>
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
 BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
