@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2018/04/11 07:41:45 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2018/08/09 20:38:36 naddy Exp $
 
 V =	2.4.4
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
+REVISION=	0
 CATEGORIES=	geo databases
 
 SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.4 0.0 # 4.0
@@ -37,6 +38,7 @@ USE_LIBTOOL =	Yes
 #for iconv.h
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=	ac_cv_header_CUnit_CUnit_h=no
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
