@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/12/31 18:46:26 jca Exp $
+# $OpenBSD: Makefile,v 1.51 2018/08/09 20:50:47 ratchov Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -10,7 +10,7 @@ DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
 SHARED_LIBS =	openal	3.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
