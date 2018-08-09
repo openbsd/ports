@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.9 2017/11/05 06:33:45 jca Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2018/08/09 17:39:27 danj Exp $
 
 SOVERSION defaults to 1.0. SHARED_LIBS, however, could be changed
 at any point.  Ensure they are on sync in case INSTSONAME is used
@@ -7,7 +7,7 @@ by a third party.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -464,7 +464,7 @@ esac
+@@ -479,7 +479,7 @@ esac
  
  if test $define_xopen_source = yes
  then
@@ -16,7 +16,7 @@ Index: configure.ac
              Define to the level of X/Open that your system supports)
  
    # On Tru64 Unix 4.0F, defining _XOPEN_SOURCE also requires
-@@ -474,7 +474,7 @@ then
+@@ -489,7 +489,7 @@ then
    AC_DEFINE(_XOPEN_SOURCE_EXTENDED, 1,
     	    Define to activate Unix95-and-earlier features)
  
@@ -25,7 +25,7 @@ Index: configure.ac
    
  fi
  
-@@ -915,6 +915,9 @@ if test $enable_shared = "yes"; then
+@@ -930,6 +930,9 @@ if test $enable_shared = "yes"; then
  	  case $ac_sys_system in
  	      FreeBSD*)
  		SOVERSION=`echo $SOVERSION|cut -d "." -f 1`

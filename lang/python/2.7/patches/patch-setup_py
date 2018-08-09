@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.13 2017/11/05 06:33:45 jca Exp $
+$OpenBSD: patch-setup_py,v 1.14 2018/08/09 17:39:27 danj Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -76,7 +76,7 @@ Index: setup.py
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1843,7 +1853,7 @@ class PyBuildExt(build_ext):
+@@ -1835,7 +1845,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -85,7 +85,7 @@ Index: setup.py
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1898,8 +1908,7 @@ class PyBuildExt(build_ext):
+@@ -1890,8 +1900,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -95,7 +95,7 @@ Index: setup.py
              tklib = self.compiler.find_library_file(lib_dirs,
                                                          'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs,
-@@ -1942,17 +1951,9 @@ class PyBuildExt(build_ext):
+@@ -1934,17 +1943,9 @@ class PyBuildExt(build_ext):
          if host_platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')
