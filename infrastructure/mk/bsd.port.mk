@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1436 2018/08/06 09:36:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1437 2018/08/09 17:41:43 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -272,6 +272,7 @@ NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_TEST ?= No
 INSTALL_TARGET ?= install
+USE_GROFF ?= No
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
@@ -594,7 +595,6 @@ ERRORS += "   (No flavors for this port)."
 .  endif
 .endif
 
-USE_GROFF ?= No
 .if ${USE_GROFF:L} == "yes"
 BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
