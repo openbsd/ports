@@ -1,20 +1,39 @@
-$OpenBSD: patch-OpenBSD_cf,v 1.7 2017/02/25 22:08:42 naddy Exp $
---- OpenBSD.cf.orig	Tue Dec 22 02:28:02 2015
-+++ OpenBSD.cf	Sat Feb 25 23:01:15 2017
-@@ -26,10 +26,12 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
- #define LibDir			/usr/local/lib/X11
- #define UsrLibDir		/usr/local/lib
- #define ManDirectoryRoot	/usr/local/man
+$OpenBSD: patch-OpenBSD_cf,v 1.8 2018/08/09 17:43:00 espie Exp $
+Index: OpenBSD.cf
+--- OpenBSD.cf.orig
++++ OpenBSD.cf
+@@ -22,18 +22,20 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ 
+ #ifdef Ports
+ 
+-#define BinDir			/usr/local/bin
+-#define LibDir			/usr/local/lib/X11
+-#define UsrLibDir		/usr/local/lib
+-#define ManDirectoryRoot	/usr/local/man
+-#define LdPreLib		-L/usr/X11R6/lib -L/usr/local/lib
+-#define XpmLibDir		/usr/X11R6/lib
+-#define XpmIncDir		/usr/X11R6/include
+-#define ConfigDir		/usr/X11R6/lib/X11/config
+-#define IncRoot			/usr/local/include
+-#define TopXInclude		-I/usr/X11R6/include
++#define BinDir			${LOCALBASE}/bin
++#define LibDir			${LOCALBASE}/lib/X11
++#define UsrLibDir		${LOCALBASE}/lib
++#define ManDirectoryRoot	${LOCALBASE}/man
 +#define FontDir			${LOCALBASE}/share/fonts
 +#define FontEncDir		${LOCALBASE}/share/fonts/encodings
- #define LdPreLib		-L/usr/X11R6/lib -L/usr/local/lib
- #define XpmLibDir		/usr/X11R6/lib
- #define XpmIncDir		/usr/X11R6/include
--#define ConfigDir		/usr/X11R6/lib/X11/config
++#define LdPreLib		-L${X11BASE}/lib -L${LOCALBASE}/lib
++#define XpmLibDir		${X11BASE}/lib
++#define XpmIncDir		${X11BASE}/include
 +#define ConfigDir		${LOCALBASE}/lib/X11/config
- #define IncRoot			/usr/local/include
- #define TopXInclude		-I/usr/X11R6/include
++#define IncRoot			${LOCALBASE}/include
++#define TopXInclude		-I${X11BASE}/include
  #define ImakeCmd		imake -DPorts
+-#define DocDir			/usr/local/share/doc
++#define DocDir			${LOCALBASE}/share/doc
+ #define BuildHtmlManPages	NO
+ 
+ #endif
 @@ -172,6 +174,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #ifndef CcCmd
  #define CcCmd 			cc
@@ -32,7 +51,7 @@ $OpenBSD: patch-OpenBSD_cf,v 1.7 2017/02/25 22:08:42 naddy Exp $
 -#define NeqnCmd			neqn -Tlatin1
 -#define NroffCmd		nroff -Tlatin1
 -#define	EqnCmd 			eqn -Tps
-+#ifdef Ports
++#ifdef UseGroff
 +# define NroffCmd		${LOCALBASE}/bin/nroff -Tascii -c
 +# define TroffCmd		${LOCALBASE}/bin/nroff -Tps
 +# define HTMLroffCmd		${LOCALBASE}/bin/nroff -Thtml

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.9 2016/04/26 10:56:59 sthen Exp $
+# $OpenBSD: imake.port.mk,v 1.10 2018/08/09 17:43:00 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -10,6 +10,10 @@ INSTALL_TARGET +=	install.man
 
 XMKMF ?=		xmkmf -a
 XMKMF +=		-DPorts
+
+.if ${USE_GROFF:L} == "yes"
+XMKMF +=		-DUseGroff
+.endif
 
 .if !exists(${X11BASE})
 IGNORE =	"uses imake, but ${X11BASE} not found"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/02/25 22:08:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/08/09 17:43:00 espie Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
@@ -6,7 +6,7 @@ CATEGORIES =	devel x11
 V =		1.0.6
 DISTNAME = 	xorg-cf-files-${V}
 PKGNAME = 	imake-cf-${V}
-REVISION =	1
+REVISION =	2
 MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE_CDROM = 		Yes
@@ -19,11 +19,11 @@ XCONFDIR =	${PREFIX}/lib/X11/config
 
 NO_TEST=	Yes
 
-do-build:
-	sed ${SUBST} <${WRKSRC}/site.def.in >${WRKSRC}/site.def
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/OpenBSD.cf
+
+do-build:
+	sed ${SUBST} <${WRKSRC}/site.def.in >${WRKSRC}/site.def
 
 do-install:
 	${INSTALL_DATA_DIR} ${XCONFDIR}
