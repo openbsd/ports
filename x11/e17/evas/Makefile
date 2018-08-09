@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2018/02/28 19:23:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2018/08/09 07:24:53 ajacoutot Exp $
 
 COMMENT =		canvas API for X
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--enable-small-dither-mask \
 			--enable-line-dither-mask \
 			--disable-wayland-shm \
-			--disable-wayland-egl
+			--disable-wayland-egl \
+			--disable-cpu-neon
 
 CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
