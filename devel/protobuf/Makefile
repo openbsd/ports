@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/08/09 14:50:09 tb Exp $
+# $OpenBSD: Makefile,v 1.22 2018/08/09 16:45:21 tb Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -23,7 +23,7 @@ WANTLIB +=		c m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		https://github.com/google/protobuf/releases/download/v$V/
 
-TEST_DEPENDS =	devel/gtest
+TEST_DEPENDS =		devel/gtest
 
 COMPILER =		base-clang ports-gcc
 
