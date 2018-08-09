@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2018/06/29 17:16:45 landry Exp $
+# $OpenBSD: Makefile,v 1.95 2018/08/09 19:51:50 sthen Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -75,6 +75,8 @@
     SUBDIR += py-html2text
     SUBDIR += py-html2text,python3
     SUBDIR += py-iconvcodec
+    SUBDIR += py-mini-amf
+    SUBDIR += py-mini-amf,python3
     SUBDIR += qprint
     SUBDIR += recode
     SUBDIR += ripmime
