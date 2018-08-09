@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.30 2018/02/05 10:40:03 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.31 2018/08/09 10:58:52 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -263,6 +263,7 @@ share/mysql-test/include/ctype_like_cond_propagation_utf8_german.inc
 share/mysql-test/include/ctype_like_escape.inc
 share/mysql-test/include/ctype_like_ignorable.inc
 share/mysql-test/include/ctype_like_range_f1f2.inc
+share/mysql-test/include/ctype_mdev13118.inc
 share/mysql-test/include/ctype_myanmar.inc
 share/mysql-test/include/ctype_numconv.inc
 share/mysql-test/include/ctype_pad_space.inc
@@ -754,6 +755,7 @@ share/mysql-test/plugin/connect/connect/r/unsigned.result
 share/mysql-test/plugin/connect/connect/r/upd.result
 share/mysql-test/plugin/connect/connect/r/updelx.result
 share/mysql-test/plugin/connect/connect/r/updelx2.result
+share/mysql-test/plugin/connect/connect/r/vcol.result
 share/mysql-test/plugin/connect/connect/r/vec.result
 share/mysql-test/plugin/connect/connect/r/xcol.result
 share/mysql-test/plugin/connect/connect/r/xml.result
@@ -770,6 +772,7 @@ share/mysql-test/plugin/connect/connect/r/xml_mult.result
 share/mysql-test/plugin/connect/connect/r/xml_zip.result
 share/mysql-test/plugin/connect/connect/r/zip.result
 share/mysql-test/plugin/connect/connect/std_data/
+share/mysql-test/plugin/connect/connect/std_data/JavaWrappers.jar
 share/mysql-test/plugin/connect/connect/std_data/JdbcMariaDB.jar
 share/mysql-test/plugin/connect/connect/std_data/Mongo2.jar
 share/mysql-test/plugin/connect/connect/std_data/Mongo3.jar
@@ -893,6 +896,7 @@ share/mysql-test/plugin/connect/connect/t/upd.test
 share/mysql-test/plugin/connect/connect/t/updelx.inc
 share/mysql-test/plugin/connect/connect/t/updelx.test
 share/mysql-test/plugin/connect/connect/t/updelx2.test
+share/mysql-test/plugin/connect/connect/t/vcol.test
 share/mysql-test/plugin/connect/connect/t/vec.test
 share/mysql-test/plugin/connect/connect/t/windows.inc
 share/mysql-test/plugin/connect/connect/t/xcol.test
@@ -1655,7 +1659,8 @@ share/mysql-test/r/alter_table_online.result
 share/mysql-test/r/alter_table_trans.result
 share/mysql-test/r/analyze.result
 share/mysql-test/r/ansi.result
-share/mysql-test/r/assign_key_cache-5405.result
+share/mysql-test/r/assign_key_cache.result
+share/mysql-test/r/assign_key_cache_debug.result
 share/mysql-test/r/auth_rpl.result
 share/mysql-test/r/auto_increment.result
 share/mysql-test/r/auto_increment_ranges_innodb.result
@@ -1701,6 +1706,7 @@ share/mysql-test/r/compress.result
 share/mysql-test/r/concurrent_innodb_safelog.result
 share/mysql-test/r/concurrent_innodb_unsafelog.result
 share/mysql-test/r/connect.result
+share/mysql-test/r/connect_debug.result
 share/mysql-test/r/consistent_snapshot.result
 share/mysql-test/r/constraints.result
 share/mysql-test/r/contributors.result
@@ -1907,6 +1913,7 @@ share/mysql-test/r/grant_cache_ps_prot.result
 share/mysql-test/r/grant_explain_non_select.result
 share/mysql-test/r/grant_lowercase.result
 share/mysql-test/r/grant_lowercase_fs.result
+share/mysql-test/r/grant_not_windows.result
 share/mysql-test/r/greedy_optimizer.result
 share/mysql-test/r/group_by.result
 share/mysql-test/r/group_by_innodb.result
@@ -2229,6 +2236,7 @@ share/mysql-test/r/ps_ddl1.result
 share/mysql-test/r/ps_grant.result
 share/mysql-test/r/ps_max_subselect-5113.result
 share/mysql-test/r/ps_not_windows.result
+share/mysql-test/r/ps_qc_innodb.result
 share/mysql-test/r/query_cache.result
 share/mysql-test/r/query_cache_28249.result
 share/mysql-test/r/query_cache_debug.result
@@ -2350,6 +2358,7 @@ share/mysql-test/r/stat_tables_partition.result
 share/mysql-test/r/stat_tables_rbr.result
 share/mysql-test/r/stat_tables_repl.result
 share/mysql-test/r/statistics.result
+share/mysql-test/r/statistics_close.result
 share/mysql-test/r/statistics_index_crash-7362.result
 share/mysql-test/r/status.result
 share/mysql-test/r/status2.result
@@ -2573,6 +2582,8 @@ share/mysql-test/std_data/ctype_upgrade/mysql050614_xxx_croatian_ci.MYD
 share/mysql-test/std_data/ctype_upgrade/mysql050614_xxx_croatian_ci.MYI
 share/mysql-test/std_data/ctype_upgrade/mysql050614_xxx_croatian_ci.frm
 share/mysql-test/std_data/des_key_file
+share/mysql-test/std_data/frm/
+share/mysql-test/std_data/frm/t1.frm
 share/mysql-test/std_data/funcs_1/
 share/mysql-test/std_data/funcs_1/innodb_tb1.txt
 share/mysql-test/std_data/funcs_1/innodb_tb2.txt
@@ -2831,6 +2842,8 @@ share/mysql-test/suite/archive/suite.pm
 share/mysql-test/suite/binlog/
 share/mysql-test/suite/binlog/combinations
 share/mysql-test/suite/binlog/disabled.def
+share/mysql-test/suite/binlog/include/
+share/mysql-test/suite/binlog/include/check_binlog_size.inc
 share/mysql-test/suite/binlog/r/
 share/mysql-test/suite/binlog/r/binlog_base64_flag.result
 share/mysql-test/suite/binlog/r/binlog_bug23533.result
@@ -2902,6 +2915,7 @@ share/mysql-test/suite/binlog/r/binlog_stm_unsafe_warning.result
 share/mysql-test/suite/binlog/r/binlog_stm_user_variables.result
 share/mysql-test/suite/binlog/r/binlog_switch_inside_trans.result
 share/mysql-test/suite/binlog/r/binlog_tmp_table.result
+share/mysql-test/suite/binlog/r/binlog_tmp_table_row.result
 share/mysql-test/suite/binlog/r/binlog_truncate_innodb.result
 share/mysql-test/suite/binlog/r/binlog_truncate_kill.result
 share/mysql-test/suite/binlog/r/binlog_truncate_myisam.result
@@ -3017,6 +3031,7 @@ share/mysql-test/suite/binlog/t/binlog_stm_unsafe_warning.test
 share/mysql-test/suite/binlog/t/binlog_stm_user_variables.test
 share/mysql-test/suite/binlog/t/binlog_switch_inside_trans.test
 share/mysql-test/suite/binlog/t/binlog_tmp_table.test
+share/mysql-test/suite/binlog/t/binlog_tmp_table_row.test
 share/mysql-test/suite/binlog/t/binlog_truncate_innodb-master.opt
 share/mysql-test/suite/binlog/t/binlog_truncate_innodb.test
 share/mysql-test/suite/binlog/t/binlog_truncate_kill.test
@@ -4384,6 +4399,8 @@ share/mysql-test/suite/handler/interface.result
 share/mysql-test/suite/handler/interface.test
 share/mysql-test/suite/handler/myisam.result
 share/mysql-test/suite/handler/myisam.test
+share/mysql-test/suite/handler/ps.result
+share/mysql-test/suite/handler/ps.test
 share/mysql-test/suite/heap/
 share/mysql-test/suite/heap/btree_varchar_null.result
 share/mysql-test/suite/heap/btree_varchar_null.test
@@ -4407,6 +4424,7 @@ share/mysql-test/suite/innodb/include/restart_and_reinit.inc
 share/mysql-test/suite/innodb/r/
 share/mysql-test/suite/innodb/r/add_constraint.result
 share/mysql-test/suite/innodb/r/alter_key_block_size-11757.result
+share/mysql-test/suite/innodb/r/alter_partitioned_xa.result
 share/mysql-test/suite/innodb/r/alter_rename_existing.result
 share/mysql-test/suite/innodb/r/auto_increment_dup.result
 share/mysql-test/suite/innodb/r/autoinc_debug.result
@@ -4501,6 +4519,7 @@ share/mysql-test/suite/innodb/r/innodb_bug14147491.result
 share/mysql-test/suite/innodb/r/innodb_bug14676111.result
 share/mysql-test/suite/innodb/r/innodb_bug14704286.result
 share/mysql-test/suite/innodb/r/innodb_bug21704.result
+share/mysql-test/suite/innodb/r/innodb_bug27216817.result
 share/mysql-test/suite/innodb/r/innodb_bug30423.result
 share/mysql-test/suite/innodb/r/innodb_bug30919.result
 share/mysql-test/suite/innodb/r/innodb_bug34053.result
@@ -4581,8 +4600,11 @@ share/mysql-test/suite/innodb/r/insert_debug.result
 share/mysql-test/suite/innodb/r/log_file_size.result
 share/mysql-test/suite/innodb/r/mdev-117.result
 share/mysql-test/suite/innodb/r/multi_repair-7404.result
+share/mysql-test/suite/innodb/r/mvcc.result
+share/mysql-test/suite/innodb/r/read_only_recover_committed.result
 share/mysql-test/suite/innodb/r/read_only_recovery.result
 share/mysql-test/suite/innodb/r/recovery_shutdown.result
+share/mysql-test/suite/innodb/r/rename_table.result
 share/mysql-test/suite/innodb/r/row_format_redundant.result
 share/mysql-test/suite/innodb/r/row_lock.result
 share/mysql-test/suite/innodb/r/snapshot.result
@@ -4600,6 +4622,7 @@ share/mysql-test/suite/innodb/r/xa_recovery.result
 share/mysql-test/suite/innodb/t/
 share/mysql-test/suite/innodb/t/add_constraint.test
 share/mysql-test/suite/innodb/t/alter_key_block_size-11757.test
+share/mysql-test/suite/innodb/t/alter_partitioned_xa.test
 share/mysql-test/suite/innodb/t/alter_rename_existing.test
 share/mysql-test/suite/innodb/t/auto_increment_dup.test
 share/mysql-test/suite/innodb/t/autoinc_debug.test
@@ -4724,6 +4747,7 @@ share/mysql-test/suite/innodb/t/innodb_bug14676111.opt
 share/mysql-test/suite/innodb/t/innodb_bug14676111.test
 share/mysql-test/suite/innodb/t/innodb_bug14704286.test
 share/mysql-test/suite/innodb/t/innodb_bug21704.test
+share/mysql-test/suite/innodb/t/innodb_bug27216817.test
 share/mysql-test/suite/innodb/t/innodb_bug30423.test
 share/mysql-test/suite/innodb/t/innodb_bug30919-master.opt
 share/mysql-test/suite/innodb/t/innodb_bug30919.test
@@ -4821,8 +4845,11 @@ share/mysql-test/suite/innodb/t/insert_debug.test
 share/mysql-test/suite/innodb/t/log_file_size.test
 share/mysql-test/suite/innodb/t/mdev-117.test
 share/mysql-test/suite/innodb/t/multi_repair-7404.test
+share/mysql-test/suite/innodb/t/mvcc.test
+share/mysql-test/suite/innodb/t/read_only_recover_committed.test
 share/mysql-test/suite/innodb/t/read_only_recovery.test
 share/mysql-test/suite/innodb/t/recovery_shutdown.test
+share/mysql-test/suite/innodb/t/rename_table.test
 share/mysql-test/suite/innodb/t/row_format_redundant.test
 share/mysql-test/suite/innodb/t/row_lock.test
 share/mysql-test/suite/innodb/t/snapshot.test
@@ -4837,6 +4864,7 @@ share/mysql-test/suite/innodb/t/undo_log.test
 share/mysql-test/suite/innodb/t/xa_recovery.test
 share/mysql-test/suite/innodb_fts/
 share/mysql-test/suite/innodb_fts/r/
+share/mysql-test/suite/innodb_fts/r/basic.result
 share/mysql-test/suite/innodb_fts/r/concurrent_insert.result
 share/mysql-test/suite/innodb_fts/r/create.result
 share/mysql-test/suite/innodb_fts/r/fulltext.result
@@ -4851,7 +4879,6 @@ share/mysql-test/suite/innodb_fts/r/fulltext_order_by.result
 share/mysql-test/suite/innodb_fts/r/fulltext_update.result
 share/mysql-test/suite/innodb_fts/r/fulltext_var.result
 share/mysql-test/suite/innodb_fts/r/innobase_drop_fts_index_table.result
-share/mysql-test/suite/innodb_fts/r/innodb-fts-basic.result
 share/mysql-test/suite/innodb_fts/r/innodb-fts-ddl.result
 share/mysql-test/suite/innodb_fts/r/innodb-fts-fic.result
 share/mysql-test/suite/innodb_fts/r/innodb-fts-stopword.result
@@ -4865,7 +4892,9 @@ share/mysql-test/suite/innodb_fts/r/innodb_fts_proximity.result
 share/mysql-test/suite/innodb_fts/r/innodb_fts_result_cache_limit.result
 share/mysql-test/suite/innodb_fts/r/innodb_fts_stopword_charset.result
 share/mysql-test/suite/innodb_fts/r/innodb_fts_transaction.result
+share/mysql-test/suite/innodb_fts/r/sync_ddl.result
 share/mysql-test/suite/innodb_fts/t/
+share/mysql-test/suite/innodb_fts/t/basic.test
 share/mysql-test/suite/innodb_fts/t/concurrent_insert.test
 share/mysql-test/suite/innodb_fts/t/create.opt
 share/mysql-test/suite/innodb_fts/t/create.test
@@ -4881,7 +4910,6 @@ share/mysql-test/suite/innodb_fts/t/fulltext_order_by.test
 share/mysql-test/suite/innodb_fts/t/fulltext_update.test
 share/mysql-test/suite/innodb_fts/t/fulltext_var.test
 share/mysql-test/suite/innodb_fts/t/innobase_drop_fts_index_table.test
-share/mysql-test/suite/innodb_fts/t/innodb-fts-basic.test
 share/mysql-test/suite/innodb_fts/t/innodb-fts-ddl.test
 share/mysql-test/suite/innodb_fts/t/innodb-fts-fic.test
 share/mysql-test/suite/innodb_fts/t/innodb-fts-stopword.opt
@@ -4896,6 +4924,7 @@ share/mysql-test/suite/innodb_fts/t/innodb_fts_proximity.test
 share/mysql-test/suite/innodb_fts/t/innodb_fts_result_cache_limit.test
 share/mysql-test/suite/innodb_fts/t/innodb_fts_stopword_charset.test
 share/mysql-test/suite/innodb_fts/t/innodb_fts_transaction.test
+share/mysql-test/suite/innodb_fts/t/sync_ddl.test
 share/mysql-test/suite/innodb_zip/
 share/mysql-test/suite/innodb_zip/r/
 share/mysql-test/suite/innodb_zip/r/innodb-create-options.result
@@ -5181,6 +5210,8 @@ share/mysql-test/suite/maria/alter.test
 share/mysql-test/suite/maria/compat_aliases-master.opt
 share/mysql-test/suite/maria/distinct.result
 share/mysql-test/suite/maria/distinct.test
+share/mysql-test/suite/maria/dynamic.result
+share/mysql-test/suite/maria/dynamic.test
 share/mysql-test/suite/maria/group_commit.result
 share/mysql-test/suite/maria/group_commit.test
 share/mysql-test/suite/maria/icp.result
@@ -5490,6 +5521,7 @@ share/mysql-test/suite/parts/inc/partition_varbinary.inc
 share/mysql-test/suite/parts/inc/partition_varchar.inc
 share/mysql-test/suite/parts/inc/partition_year.inc
 share/mysql-test/suite/parts/r/
+share/mysql-test/suite/parts/r/alter_data_directory_innodb.result
 share/mysql-test/suite/parts/r/insert_ignore-5421.result
 share/mysql-test/suite/parts/r/longname.result
 share/mysql-test/suite/parts/r/optimizer.result
@@ -5610,7 +5642,9 @@ share/mysql-test/suite/parts/r/partition_value_innodb.result
 share/mysql-test/suite/parts/r/partition_value_myisam.result
 share/mysql-test/suite/parts/r/quoting.result
 share/mysql-test/suite/parts/r/rpl_partition.result
+share/mysql-test/suite/parts/r/truncate_locked.result
 share/mysql-test/suite/parts/t/
+share/mysql-test/suite/parts/t/alter_data_directory_innodb.test
 share/mysql-test/suite/parts/t/insert_ignore-5421.test
 share/mysql-test/suite/parts/t/longname.test
 share/mysql-test/suite/parts/t/optimizer.test
@@ -5745,6 +5779,7 @@ share/mysql-test/suite/parts/t/partition_value_innodb.test
 share/mysql-test/suite/parts/t/partition_value_myisam.test
 share/mysql-test/suite/parts/t/quoting.test
 share/mysql-test/suite/parts/t/rpl_partition.test
+share/mysql-test/suite/parts/t/truncate_locked.test
 share/mysql-test/suite/percona/
 share/mysql-test/suite/percona/disabled.def
 share/mysql-test/suite/percona/have_response_time_distribution.inc
@@ -6735,6 +6770,7 @@ share/mysql-test/suite/plugins/r/fulltext_plugin.result
 share/mysql-test/suite/plugins/r/locales.result
 share/mysql-test/suite/plugins/r/pam.result
 share/mysql-test/suite/plugins/r/pam_cleartext.result
+share/mysql-test/suite/plugins/r/processlist.result
 share/mysql-test/suite/plugins/r/qc_info.result
 share/mysql-test/suite/plugins/r/qc_info_priv.result
 share/mysql-test/suite/plugins/r/server_audit.result
@@ -6766,6 +6802,7 @@ share/mysql-test/suite/plugins/t/pam.test
 share/mysql-test/suite/plugins/t/pam_cleartext.opt
 share/mysql-test/suite/plugins/t/pam_cleartext.test
 share/mysql-test/suite/plugins/t/pam_init.inc
+share/mysql-test/suite/plugins/t/processlist.test
 share/mysql-test/suite/plugins/t/qc_info.test
 share/mysql-test/suite/plugins/t/qc_info_init.inc
 share/mysql-test/suite/plugins/t/qc_info_init.opt
@@ -6897,6 +6934,7 @@ share/mysql-test/suite/rpl/r/failed_create_view-6409.result
 share/mysql-test/suite/rpl/r/kill_hard-6290.result
 share/mysql-test/suite/rpl/r/last_insert_id.result
 share/mysql-test/suite/rpl/r/myisam_external_lock.result
+share/mysql-test/suite/rpl/r/rename.result
 share/mysql-test/suite/rpl/r/replace.result
 share/mysql-test/suite/rpl/r/rpl000001.a.result
 share/mysql-test/suite/rpl/r/rpl000001.b.result
@@ -7305,6 +7343,7 @@ share/mysql-test/suite/rpl/t/last_insert_id.cnf
 share/mysql-test/suite/rpl/t/last_insert_id.test
 share/mysql-test/suite/rpl/t/myisam_external_lock-slave.opt
 share/mysql-test/suite/rpl/t/myisam_external_lock.test
+share/mysql-test/suite/rpl/t/rename.test
 share/mysql-test/suite/rpl/t/replace.test
 share/mysql-test/suite/rpl/t/rpl_000010-slave.opt
 share/mysql-test/suite/rpl/t/rpl_000010.test
@@ -9686,7 +9725,8 @@ share/mysql-test/t/alter_table_online.test
 share/mysql-test/t/alter_table_trans.test
 share/mysql-test/t/analyze.test
 share/mysql-test/t/ansi.test
-share/mysql-test/t/assign_key_cache-5405.test
+share/mysql-test/t/assign_key_cache.test
+share/mysql-test/t/assign_key_cache_debug.test
 share/mysql-test/t/auth_rpl-slave.opt
 share/mysql-test/t/auth_rpl.test
 share/mysql-test/t/auto_increment.test
@@ -9736,6 +9776,7 @@ share/mysql-test/t/concurrent_innodb_unsafelog-master.opt
 share/mysql-test/t/concurrent_innodb_unsafelog.test
 share/mysql-test/t/connect.cnf
 share/mysql-test/t/connect.test
+share/mysql-test/t/connect_debug.test
 share/mysql-test/t/consistent_snapshot.test
 share/mysql-test/t/constraints.test
 share/mysql-test/t/contributors.test
@@ -9964,6 +10005,7 @@ share/mysql-test/t/grant_explain_non_select.test
 share/mysql-test/t/grant_lowercase.opt
 share/mysql-test/t/grant_lowercase.test
 share/mysql-test/t/grant_lowercase_fs.test
+share/mysql-test/t/grant_not_windows.test
 share/mysql-test/t/greedy_optimizer.test
 share/mysql-test/t/group_by.test
 share/mysql-test/t/group_by_innodb.test
@@ -10328,6 +10370,7 @@ share/mysql-test/t/ps_ddl1.test
 share/mysql-test/t/ps_grant.test
 share/mysql-test/t/ps_max_subselect-5113.test
 share/mysql-test/t/ps_not_windows.test
+share/mysql-test/t/ps_qc_innodb.test
 share/mysql-test/t/query_cache.test
 share/mysql-test/t/query_cache_28249.test
 share/mysql-test/t/query_cache_debug.test
@@ -10462,6 +10505,7 @@ share/mysql-test/t/stat_tables_partition.test
 share/mysql-test/t/stat_tables_rbr.test
 share/mysql-test/t/stat_tables_repl.test
 share/mysql-test/t/statistics.test
+share/mysql-test/t/statistics_close.test
 share/mysql-test/t/statistics_index_crash-7362.test
 share/mysql-test/t/status-master.opt
 share/mysql-test/t/status.test
