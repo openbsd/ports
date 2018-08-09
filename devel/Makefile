@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1752 2018/07/26 08:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.1753 2018/08/09 11:05:06 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -895,6 +895,7 @@
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
+     SUBDIR += p5-MooseX-StrictConstructor
      SUBDIR += p5-MooseX-Storage
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Traits-Pluggable
