@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2017/11/30 16:13:12 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2018/08/09 15:32:36 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -43,6 +43,7 @@ include/postgresql/pg_config.h
 include/postgresql/pg_config_ext.h
 include/postgresql/pg_config_manual.h
 include/postgresql/pg_config_os.h
+include/postgresql/pgtypes.h
 include/postgresql/pgtypes_date.h
 include/postgresql/pgtypes_error.h
 include/postgresql/pgtypes_interval.h
