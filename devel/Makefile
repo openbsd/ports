@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1755 2018/08/09 11:25:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1756 2018/08/09 19:14:43 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1475,6 +1475,8 @@
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3
+     SUBDIR += py-pathlib2
+     SUBDIR += py-pathlib2,python3
      SUBDIR += py-pathspec
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr
