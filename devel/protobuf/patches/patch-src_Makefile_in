@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2018/07/10 10:47:42 tb Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.5 2018/08/09 14:50:10 tb Exp $
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
@@ -66,7 +66,7 @@ Index: src/Makefile.in
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  am__mv = mv -f
-@@ -1858,12 +1849,9 @@ GOOGLEMOCK_BUILD_DIR = ../third_party/googletest/googl
+@@ -1850,12 +1841,9 @@ GOOGLEMOCK_BUILD_DIR = ../third_party/googletest/googl
  GOOGLETEST_SRC_DIR = $(srcdir)/../third_party/googletest/googletest
  GOOGLEMOCK_SRC_DIR = $(srcdir)/../third_party/googletest/googlemock
  protobuf_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
@@ -81,7 +81,7 @@ Index: src/Makefile.in
  
  # Disable optimization for tests unless the user explicitly asked for it,
  # since test_util.cc takes forever to compile with optimization (with GCC).
-@@ -1952,12 +1940,9 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
+@@ -1944,12 +1932,9 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
  # Run cpp_unittest again with PROTOBUF_TEST_NO_DESCRIPTORS defined.
  protobuf_lazy_descriptor_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la \
                        libprotoc.la                                   \
@@ -96,7 +96,7 @@ Index: src/Makefile.in
                                           -DPROTOBUF_TEST_NO_DESCRIPTORS
  
  protobuf_lazy_descriptor_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
-@@ -1980,12 +1965,9 @@ COMMON_LITE_TEST_SOURCES = \
+@@ -1972,12 +1957,9 @@ COMMON_LITE_TEST_SOURCES = \
  # full runtime and we want to make sure this test builds without full
  # runtime.
  protobuf_lite_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la     \
@@ -111,7 +111,7 @@ Index: src/Makefile.in
  
  protobuf_lite_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
  protobuf_lite_test_SOURCES = \
-@@ -1998,12 +1980,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
+@@ -1990,12 +1972,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
  # gtest when building the test internally our memory sanitizer doesn't detect
  # memory leaks (don't know why).
  protobuf_lite_arena_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la \
@@ -126,7 +126,7 @@ Index: src/Makefile.in
  
  protobuf_lite_arena_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
  protobuf_lite_arena_test_SOURCES = \
-@@ -2014,9 +1993,9 @@ nodist_protobuf_lite_arena_test_SOURCES = $(protoc_lit
+@@ -2006,9 +1985,9 @@ nodist_protobuf_lite_arena_test_SOURCES = $(protoc_lit
  
  # Test plugin binary.
  test_plugin_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
