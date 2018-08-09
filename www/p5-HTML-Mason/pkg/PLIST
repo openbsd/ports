@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/04/28 16:13:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/08/09 12:13:31 bluhm Exp $
 @comment bin/convert0.6.README
 @comment bin/convert0.6.pl
 @comment bin/convert0.8.README
 @comment bin/convert0.8.pl
 bin/mason.pl
-${P5SITE}/Apache/
-${P5SITE}/Apache/Mason.pm
-${P5SITE}/Bundle/
-${P5SITE}/Bundle/HTML/
-${P5SITE}/Bundle/HTML/Mason.pm
 ${P5SITE}/HTML/Mason/
 ${P5SITE}/HTML/Mason.pm
 ${P5SITE}/HTML/Mason/Admin.pod
@@ -29,6 +24,7 @@ ${P5SITE}/HTML/Mason/ComponentSource.pm
 ${P5SITE}/HTML/Mason/Devel.pod
 ${P5SITE}/HTML/Mason/Escapes.pm
 ${P5SITE}/HTML/Mason/Exceptions.pm
+${P5SITE}/HTML/Mason/FAQ.pod
 ${P5SITE}/HTML/Mason/FakeApache.pm
 ${P5SITE}/HTML/Mason/Handler.pm
 ${P5SITE}/HTML/Mason/Interp.pm
@@ -48,7 +44,6 @@ ${P5SITE}/HTML/Mason/Subclassing.pod
 ${P5SITE}/HTML/Mason/Tests.pm
 ${P5SITE}/HTML/Mason/Tools.pm
 ${P5SITE}/HTML/Mason/Utils.pm
-@man man/man3p/Bundle::HTML::Mason.3p
 @man man/man3p/HTML::Mason.3p
 @man man/man3p/HTML::Mason::Admin.3p
 @man man/man3p/HTML::Mason::ApacheHandler.3p
@@ -63,6 +58,7 @@ ${P5SITE}/HTML/Mason/Utils.pm
 @man man/man3p/HTML::Mason::Devel.3p
 @man man/man3p/HTML::Mason::Escapes.3p
 @man man/man3p/HTML::Mason::Exceptions.3p
+@man man/man3p/HTML::Mason::FAQ.3p
 @man man/man3p/HTML::Mason::FakeApache.3p
 @man man/man3p/HTML::Mason::Interp.3p
 @man man/man3p/HTML::Mason::Lexer.3p

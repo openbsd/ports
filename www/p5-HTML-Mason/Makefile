@@ -1,36 +1,32 @@
-# $OpenBSD: Makefile,v 1.29 2016/04/28 16:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/08/09 12:13:31 bluhm Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	HTML-Mason-1.45
-REVISION=	1
+DISTNAME=	HTML-Mason-1.58
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.masonhq.com/
-MAINTAINER=	David Hill <dhill@mindcry.org>
 
-# Artistic License
+MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
+
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Cache-Cache>=1.02 \
-		devel/p5-Class-Container>=0.10 \
-		devel/p5-Exception-Class>=1.19 \
-		devel/p5-Params-Validate>=0.74 \
-		devel/p5-Log-Any \
+RUN_DEPENDS =	devel/p5-Cache-Cache>=1.00 \
+		devel/p5-Class-Container>=0.07 \
+		devel/p5-Exception-Class>=1.15 \
+		devel/p5-Log-Any>=0.08 \
+		devel/p5-Params-Validate>=0.70 \
 		devel/p5-Test-Deep \
+		www/ap2-mod_perl \
+		www/p5-CGI>=2.46 \
 		www/p5-HTML-Parser \
-		www/p5-libapreq2 \
-		www/ap2-mod_perl
+		www/p5-libapreq2
+TEST_DEPENDS =	devel/p5-Test-Deep \
+		devel/p5-Test-Memory-Cycle
 
 MAKE_ENV=       TEST_POD=Yes
-
-TEST_DEPENDS=devel/p5-Test-Memory-Cycle \
-		devel/p5-PadWalker
-
-CONFIGURE_STYLE=	modbuild
-CONFIGURE_ARGS+=	--no-prompts
 
 .include <bsd.port.mk>
