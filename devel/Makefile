@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1754 2018/08/09 11:15:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1755 2018/08/09 11:25:51 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -687,6 +687,7 @@
      SUBDIR += p5-Devel-Leak-Object
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-PartialDump
+     SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-Size-Report
