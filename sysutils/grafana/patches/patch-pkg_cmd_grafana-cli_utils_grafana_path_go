@@ -1,0 +1,14 @@
+$OpenBSD: patch-pkg_cmd_grafana-cli_utils_grafana_path_go,v 1.1 2018/08/09 17:19:29 jasper Exp $
+
+Index: pkg/cmd/grafana-cli/utils/grafana_path.go
+--- pkg/cmd/grafana-cli/utils/grafana_path.go.orig
++++ pkg/cmd/grafana-cli/utils/grafana_path.go
+@@ -42,6 +42,8 @@ func returnOsDefault(currentOs string) string {
+ 		return "/usr/local/var/lib/grafana/plugins"
+ 	case "freebsd":
+ 		return "/var/db/grafana/plugins"
++	case "openbsd":
++		return "/var/grafana/plugins"
+ 	default: //"linux"
+ 		return "/var/lib/grafana/plugins"
+ 	}
