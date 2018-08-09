@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/27 21:04:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/08/09 23:25:58 sthen Exp $
 
 COMMENT =	modal webkit-based browser inspired by vim
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
 GH_TAGNAME =	3.2.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www x11
 
 HOMEPAGE =	https://fanglingsu.github.io/vimb/
-
-MAINTAINER =	Leonid Bobrov <mazocomp@disroot.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

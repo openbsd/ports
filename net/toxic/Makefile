@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2018/07/17 13:49:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/08/09 23:25:58 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
 GH_TAGNAME =		v0.8.2
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
-
-MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

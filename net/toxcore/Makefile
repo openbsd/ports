@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/26 20:34:04 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2018/08/09 23:25:58 sthen Exp $
 
 COMMENT =		Tox client library
 
 V =			0.2.3
+REVISION =		0
 DISTNAME =		toxcore-$V
 
 GH_ACCOUNT =		TokTok
@@ -13,8 +14,6 @@ SHARED_LIBS +=  	toxcore	0.1 # 0.1
 CATEGORIES =		net telephony
 
 HOMEPAGE =		https://tox.chat/
-
-MAINTAINER =		Leonid Bobrov <mazocomp@disroot.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
