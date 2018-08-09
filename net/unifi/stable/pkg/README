@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2018/06/28 18:15:20 sthen Exp $
+$OpenBSD: README,v 1.2 2018/08/09 23:13:31 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,9 +7,6 @@ $OpenBSD: README,v 1.1 2018/06/28 18:15:20 sthen Exp $
 If using UniFi on a system with other threaded programs, it is likely that
 sysctl kern.maxthread would need to be increased from the default (usually
 done in /etc/sysctl.conf).
-
-WARNING: UniFi admin password is available without authentication to localhost.
-$ echo 'db.admin.find()' | mongo --quiet 127.0.0.1:27117/ace
 
 To import your own signed SSL key/certificate:
 
