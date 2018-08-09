@@ -1,6 +1,6 @@
-$OpenBSD: patch-x11vnc_gui_c,v 1.5 2010/04/02 00:42:25 sthen Exp $
---- x11vnc/gui.c.orig	Mon Dec 21 04:58:10 2009
-+++ x11vnc/gui.c	Wed Dec 23 22:02:45 2009
+$OpenBSD: patch-src_gui_c,v 1.1 2018/08/09 15:04:21 sthen Exp $
+--- src/gui.c.orig	Mon Dec 21 04:58:10 2009
++++ src/gui.c	Wed Dec 23 22:02:45 2009
 @@ -263,9 +263,8 @@ static void sigusr1 (int sig) {
  
  /* Most of the following mess is for wish on Solaris: */

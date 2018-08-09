@@ -1,6 +1,7 @@
-$OpenBSD: patch-x11vnc_unixpw_c,v 1.1 2012/12/17 19:02:48 naddy Exp $
---- x11vnc/unixpw.c.orig	Thu Aug 11 00:31:32 2011
-+++ x11vnc/unixpw.c	Mon Dec 10 21:59:46 2012
+$OpenBSD: patch-src_unixpw_c,v 1.1 2018/08/09 15:04:21 sthen Exp $
+Index: src/unixpw.c
+--- src/unixpw.c.orig
++++ src/unixpw.c
 @@ -85,13 +85,6 @@ extern char *crypt(const char*, const char *);
  #include <sys/stropts.h>
  #endif
@@ -17,7 +18,7 @@ $OpenBSD: patch-x11vnc_unixpw_c,v 1.1 2012/12/17 19:02:48 naddy Exp $
  void unixpw_keystroke(rfbBool down, rfbKeySym keysym, int init);
 @@ -522,6 +515,9 @@ char *get_pty_ptmx(int *fd_p) {
  
- #if LIBVNCSERVER_HAVE_GRANTPT
+ #if HAVE_GRANTPT
  
 +#if LIBVNCSERVER_HAVE_POSIX_OPENPT
 +	fd = posix_openpt(O_RDWR|O_NOCTTY);
@@ -40,7 +41,7 @@ $OpenBSD: patch-x11vnc_unixpw_c,v 1.1 2012/12/17 19:02:48 naddy Exp $
 -#ifdef IS_BSD
 -	return get_pty_loop(fd_p);
 -#else
- #if LIBVNCSERVER_HAVE_GRANTPT
+ #if HAVE_GRANTPT
  	used_get_pty_ptmx = 1;
  	return get_pty_ptmx(fd_p);
  #else
