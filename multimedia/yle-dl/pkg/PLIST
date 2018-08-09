@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/12 13:25:46 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/08/09 19:57:55 sthen Exp $
 bin/yle-dl
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,15 +11,27 @@ lib/python${MODPY_VERSION}/site-packages/yledl/
 lib/python${MODPY_VERSION}/site-packages/yledl/AdobeHDS.php
 lib/python${MODPY_VERSION}/site-packages/yledl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/yledl/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/yledl/downloaders.py
-lib/python${MODPY_VERSION}/site-packages/yledl/downloaders.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/backends.py
+lib/python${MODPY_VERSION}/site-packages/yledl/backends.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/downloader.py
+lib/python${MODPY_VERSION}/site-packages/yledl/downloader.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/exitcodes.py
+lib/python${MODPY_VERSION}/site-packages/yledl/exitcodes.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/extractors.py
+lib/python${MODPY_VERSION}/site-packages/yledl/extractors.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/hds.py
 lib/python${MODPY_VERSION}/site-packages/yledl/hds.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/http.py
+lib/python${MODPY_VERSION}/site-packages/yledl/http.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/io.py
+lib/python${MODPY_VERSION}/site-packages/yledl/io.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/streamfilters.py
+lib/python${MODPY_VERSION}/site-packages/yledl/streamfilters.pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/streams.py
+lib/python${MODPY_VERSION}/site-packages/yledl/streams.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/utils.py
 lib/python${MODPY_VERSION}/site-packages/yledl/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/version.py
 lib/python${MODPY_VERSION}/site-packages/yledl/version.pyc
-lib/python${MODPY_VERSION}/site-packages/yledl/videoutils.py
-lib/python${MODPY_VERSION}/site-packages/yledl/videoutils.pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/yledl.py
 lib/python${MODPY_VERSION}/site-packages/yledl/yledl.pyc

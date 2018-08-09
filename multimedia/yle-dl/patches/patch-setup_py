@@ -1,0 +1,18 @@
+$OpenBSD: patch-setup_py,v 1.1 2018/08/09 19:57:55 sthen Exp $
+
+Ports uses cryptodome (with Crypto prefix) rather than cryptodomex
+(with Cryptodome prefix). This is referenced in yledl/extractors.py which
+tries with both prefixes.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -38,7 +38,7 @@ setup(
+     packages=['yledl'],
+     include_package_data=True,
+     install_requires=[
+-        'pycryptodomex', 'requests', 'lxml', 'future', 'PySocks', 'mini-amf',
++        'pycryptodome', 'requests', 'lxml', 'future', 'PySocks', 'mini-amf',
+         'attrs >= 17.4.0'
+     ] + ssl_sni_requires,
+     extras_require = {

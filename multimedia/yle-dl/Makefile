@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/02 12:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2018/08/09 19:57:55 sthen Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		2.28
+GH_TAGNAME =		2.34
 MODPY_EGG_VERSION =	${GH_TAGNAME}
-REVISION =		2
 
 COMMENT =		download videos from YLE Areena
 
@@ -20,21 +19,23 @@ MODULES =		lang/python \
 			lang/php
 
 TEST_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/py-progress \
+
+RUN_DEPENDS =		devel/py-attrs \
+			devel/py-future \
+			devel/py-progress \
 			net/rtmpdump \
 			security/py-cryptodome \
 			www/py-requests \
 			lang/php/${MODPHP_VERSION},-curl \
-			lang/php/${MODPHP_VERSION},-mcrypt \
+			net/py-socks \
 			net/wget \
 			textproc/py-lxml \
-			converters/py-amf
-
+			converters/py-mini-amf
 
 MODPY_SETUPTOOLS =	Yes
 MODPHP_BUILDDEP =	No
 
 pre-configure:
-	@sed -i -e "s,'php','${MODPHP_BIN}',g" ${WRKSRC}/yledl/downloaders.py
+	@sed -i -e "s,'php','${MODPHP_BIN}',g" ${WRKSRC}/yledl/io.py
 
 .include <bsd.port.mk>
