@@ -1,0 +1,4 @@
+This module provides a single function which obtains the reference count
+of the object being pointed to by the passed reference value. It also
+provides a debugging assertion that asserts a given reference has a
+count of only 1.

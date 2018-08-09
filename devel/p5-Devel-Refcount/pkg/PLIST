@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/09 11:25:29 fcambus Exp $
+${P5ARCH}/
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/Refcount.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/Refcount/
+${P5ARCH}/auto/Devel/Refcount/Refcount.bs
+${P5ARCH}/auto/Devel/Refcount/Refcount.so
+@man man/man3p/Devel::Refcount.3p
