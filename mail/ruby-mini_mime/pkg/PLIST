@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/09 22:39:51 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CODE_OF_CONDUCT.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/bench/
+${GEM_LIB}/gems/${DISTNAME}/bench/bench.rb
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/console
+${GEM_LIB}/gems/${DISTNAME}/bin/setup
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/db/
+${GEM_LIB}/gems/${DISTNAME}/lib/db/content_type_mime.db
+${GEM_LIB}/gems/${DISTNAME}/lib/db/ext_mime.db
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_mime/
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_mime.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_mime/version.rb
+${GEM_LIB}/gems/${DISTNAME}/mini_mime.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
