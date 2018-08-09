@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2018/08/09 07:24:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2018/08/09 14:49:54 naddy Exp $
 
 COMMENT =		canvas API for X
 
 VERSION =		1.7.10
 DISTNAME =		evas-${VERSION}
 EPOCH =			2
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=	evas                 4.0      # 8.10
 
@@ -36,8 +36,7 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--enable-small-dither-mask \
 			--enable-line-dither-mask \
 			--disable-wayland-shm \
-			--disable-wayland-egl \
-			--disable-cpu-neon
+			--disable-wayland-egl
 
 CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \

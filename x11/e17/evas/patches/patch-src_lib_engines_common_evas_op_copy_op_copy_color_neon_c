@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lib_engines_common_evas_op_copy_op_copy_color_neon_c,v 1.1 2018/08/09 14:49:54 naddy Exp $
+
+Index: src/lib/engines/common/evas_op_copy/op_copy_color_neon.c
+--- src/lib/engines/common/evas_op_copy/op_copy_color_neon.c.orig
++++ src/lib/engines/common/evas_op_copy/op_copy_color_neon.c
+@@ -30,7 +30,7 @@ _op_copy_c_dp_neon(DATA32 *s, DATA8 *m, DATA32 c, DATA
+ 		"blt		"AP"loopout		\n\t"
+ 
+ 	AP"dualloop:					\n\t"
+-		"vstr.32	d0, [%[d]]		\n\t"
++		"vstr.64	d0, [%[d]]		\n\t"
+ 
+ 		"add		%[d], #8		\n\t"
+ 		"andS		%[tmp], %[d], $0x1f	\n\t"
