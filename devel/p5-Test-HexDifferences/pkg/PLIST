@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/09 11:14:41 fcambus Exp $
+${P5SITE}/Test/HexDifferences/
+${P5SITE}/Test/HexDifferences.pm
+${P5SITE}/Test/HexDifferences/HexDump.pm
+@man man/man3p/Test::HexDifferences.3p
+@man man/man3p/Test::HexDifferences::HexDump.3p
