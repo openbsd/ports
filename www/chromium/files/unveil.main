@@ -1,0 +1,43 @@
+# $OpenBSD: unveil.main,v 1.1 2018/08/10 14:57:53 robert Exp $
+
+# needed for chromium
+/etc/chromium r
+
+# needed for fontconfig
+/etc/fonts r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# needed for xdg tools
+/usr/local/bin/xdg-desktop-menu rx
+/usr/local/bin/xdg-open rx
+/usr/local/bin/xdg-settings rx
+
+# misc. files and libraries
+/usr/local/lib r
+/usr/local/chrome rx
+/usr/local/share r
+
+# fontconfig
+/var/cache/fontconfig r
+
+# drm and misc xorg stuff
+/usr/X11R6/lib r
+/usr/X11R6/share r
+
+# needs /var/run in case /var/run/dbus is not available
+# needed by messagebus
+/var/run rw
+
+# ~ gets expanded to $HOME
+~/.Xauthority r
+~/.Xdefaults r
+~/.cache rwc
+~/.fontconfig r
+~/.config rwc
+~/.pki rwc
+~/.config/gtk-3.0 r
+~/.local rwc
+~/.sndio rwc
+~/Downloads rwc

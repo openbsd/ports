@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_zygote_zygote_main_linux_cc,v 1.1 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-services_service_manager_zygote_zygote_main_linux_cc,v 1.2 2018/08/10 14:57:53 robert Exp $
 
 Index: services/service_manager/zygote/zygote_main_linux.cc
 --- services/service_manager/zygote/zygote_main_linux.cc.orig
@@ -13,25 +13,31 @@ Index: services/service_manager/zygote/zygote_main_linux.cc
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -101,6 +103,7 @@ static bool CreateInitProcessReaper(
- // created through the setuid sandbox.
- static bool EnterSuidSandbox(sandbox::SetuidSandboxClient* setuid_sandbox,
-                              base::OnceClosure post_fork_parent_callback) {
+@@ -51,6 +53,7 @@ namespace service_manager {
+ 
+ namespace {
+ 
 +#if !defined(OS_BSD)
-   DCHECK(setuid_sandbox);
-   DCHECK(setuid_sandbox->IsSuidSandboxChild());
- 
-@@ -133,6 +136,9 @@ static bool EnterSuidSandbox(sandbox::SetuidSandboxCli
- 
-   CHECK(service_manager::SandboxDebugHandling::SetDumpableStatusAndHandlers());
-   return true;
-+#else
-+  return false;
-+#endif
+ void CloseFds(const std::vector<int>& fds) {
+   for (const auto& it : fds) {
+     PCHECK(0 == IGNORE_EINTR(close(it)));
+@@ -68,9 +71,11 @@ base::OnceClosure ClosureFromTwoClosures(base::OnceClo
+       },
+       std::move(one), std::move(two));
  }
++#endif
  
- static void DropAllCapabilities(int proc_fd) {
-@@ -178,6 +184,7 @@ static void EnterLayerOneSandbox(service_manager::Sand
+ }  // namespace
+ 
++#if !defined(OS_BSD)
+ // This function triggers the static and lazy construction of objects that need
+ // to be created before imposing the sandbox.
+ static void ZygotePreSandboxInit() {
+@@ -175,9 +180,11 @@ static void EnterLayerOneSandbox(service_manager::Sand
+     CHECK(!using_layer1_sandbox);
+   }
+ }
++#endif
  
  bool ZygoteMain(
      std::vector<std::unique_ptr<ZygoteForkDelegate>> fork_delegates) {

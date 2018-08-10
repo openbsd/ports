@@ -1,23 +1,47 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.5 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.6 2018/08/10 14:57:53 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -68,7 +68,7 @@ inline bool UseLibV4L2() {
+@@ -68,8 +68,9 @@ inline bool UseLibV4L2() {
  #endif
  }
  
 -constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
 +constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
  
++#if !defined(OS_BSD)
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
-@@ -284,9 +284,12 @@ bool BrokerProcessPreSandboxHook(
+     const service_manager::SandboxSeccompBPF::Options& options) {
+@@ -200,6 +201,7 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+   AddStandardGpuWhiteList(&permissions);
+   return permissions;
+ }
++#endif
+ 
+ void LoadArmGpuLibraries() {
+   // Preload the Mali library.
+@@ -260,6 +262,7 @@ bool LoadLibrariesForGpu(
+   return true;
+ }
+ 
++#if !defined(OS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
+     const service_manager::SandboxLinux::Options& options) {
+   sandbox::syscall_broker::BrokerCommandSet command_set;
+@@ -280,13 +283,18 @@ bool BrokerProcessPreSandboxHook(
+   service_manager::SetProcessTitleFromCommandLine(nullptr);
+   return true;
+ }
++#endif
+ 
++
  }  // namespace
  
  bool GpuProcessPreSandboxHook(service_manager::SandboxLinux::Options options) {
 +  NOTIMPLEMENTED();
-+#if 0
++#if !defined(OS_BSD)
    service_manager::SandboxLinux::GetInstance()->StartBrokerProcess(
        CommandSetForGPU(options), FilePermissionsForGpu(options),
        base::BindOnce(BrokerProcessPreSandboxHook), options);

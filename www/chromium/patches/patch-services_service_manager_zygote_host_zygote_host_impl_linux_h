@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_zygote_host_zygote_host_impl_linux_h,v 1.1 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-services_service_manager_zygote_host_zygote_host_impl_linux_h,v 1.2 2018/08/10 14:57:53 robert Exp $
 
 Index: services/service_manager/zygote/host/zygote_host_impl_linux.h
 --- services/service_manager/zygote/host/zygote_host_impl_linux.h.orig
@@ -14,3 +14,15 @@ Index: services/service_manager/zygote/host/zygote_host_impl_linux.h
  
   private:
    friend struct base::DefaultSingletonTraits<ZygoteHostImpl>;
+@@ -58,9 +60,11 @@ class COMPONENT_EXPORT(SERVICE_MANAGER_ZYGOTE) ZygoteH
+ 
+   int renderer_sandbox_status_;
+ 
++#if !defined(OS_BSD)
+   bool use_namespace_sandbox_;
+   bool use_suid_sandbox_;
+   bool use_suid_sandbox_for_adj_oom_score_;
++#endif
+   std::string sandbox_binary_;
+ 
+   // This lock protects the |zygote_pids_| set.

@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,314 @@
+@@ -0,0 +1,317 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -93,6 +93,9 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  const std::string process_type =
 +      command_line->GetSwitchValueASCII(switches::kProcessType);
 +
++  base::SysInfo::AmountOfPhysicalMemory();
++  base::SysInfo::NumberOfProcessors();
++     
 +  if (command_line->HasSwitch(switches::kEnableUnveil))
 +    SetUnveil(process_type);
 +

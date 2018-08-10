@@ -1,16 +1,16 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.17 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.18 2018/08/10 14:57:53 robert Exp $
 
 Index: content/renderer/renderer_main_platform_delegate_linux.cc
 --- content/renderer/renderer_main_platform_delegate_linux.cc.orig
 +++ content/renderer/renderer_main_platform_delegate_linux.cc
-@@ -45,6 +45,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+@@ -44,6 +44,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   // any renderer has been started.
    // Here, we test that the status of SeccompBpf in the renderer is consistent
    // with what SandboxLinux::GetStatus() said we would do.
++#if !defined(OS_BSD)
    auto* linux_sandbox = service_manager::SandboxLinux::GetInstance();
-+#if 0
    if (linux_sandbox->GetStatus() & service_manager::SandboxLinux::kSeccompBPF) {
      CHECK(linux_sandbox->seccomp_bpf_started());
-   }
 @@ -65,6 +66,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
      CHECK_EQ(errno, EPERM);
    }

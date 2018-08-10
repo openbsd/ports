@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.45 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.46 2018/08/10 14:57:53 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
@@ -30,6 +30,15 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
+@@ -650,7 +650,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
+ }
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
+     const std::string& process_type) {
+   base::FilePath dumps_path;
 @@ -1061,7 +1061,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
  #elif defined(OS_CHROMEOS)
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(

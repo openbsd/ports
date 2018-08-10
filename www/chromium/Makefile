@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2018/08/05 12:47:21 robert Exp $
+# $OpenBSD: Makefile,v 1.382 2018/08/10 14:57:53 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			68.0.3440.84
+V=			68.0.3440.106
 
 DISTNAME=		chromium-${V}
 
@@ -121,6 +121,7 @@ GN_ARGS=	enable_nacl=false \
 		use_sndio=true \
 		use_cups=true \
 		use_gtk3=true \
+		use_system_libdrm=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -233,5 +234,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/chromium-browser.desktop \
 		${PREFIX}/share/applications/chromium-browser.desktop
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chromium
+.for f in pledge.main unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
+.endfor
 
 .include <bsd.port.mk>

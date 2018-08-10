@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.44 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.45 2018/08/10 14:57:53 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
@@ -30,6 +30,15 @@ Index: chrome/app/chrome_main_delegate.cc
  void AdjustLinuxOOMScore(const std::string& process_type) {
    // Browsers and zygotes should still be killable, but killed last.
    const int kZygoteScore = 0;
+@@ -348,7 +348,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+ }
+ #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
+ 
+-#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ void SIGTERMProfilingShutdown(int signal) {
+   Profiling::Stop();
+   struct sigaction sigact;
 @@ -400,7 +400,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);

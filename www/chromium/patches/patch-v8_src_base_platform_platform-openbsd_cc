@@ -1,0 +1,25 @@
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.5 2018/08/10 14:57:53 robert Exp $
+
+Index: v8/src/base/platform/platform-openbsd.cc
+--- v8/src/base/platform/platform-openbsd.cc.orig
++++ v8/src/base/platform/platform-openbsd.cc
+@@ -107,7 +107,7 @@ void OS::SignalCodeMovingGC() {
+   // it. This injects a GC marker into the stream of events generated
+   // by the kernel and allows us to synchronize V8 code log and the
+   // kernel log.
+-  int size = sysconf(_SC_PAGESIZE);
++  size_t size = sysconf(_SC_PAGESIZE);
+   FILE* f = fopen(OS::GetGCFakeMMapFile(), "w+");
+   if (f == nullptr) {
+     OS::PrintError("Failed to open %s\n", OS::GetGCFakeMMapFile());
+@@ -115,8 +115,8 @@ void OS::SignalCodeMovingGC() {
+   }
+   void* addr =
+       mmap(NULL, size, PROT_READ | PROT_EXEC, MAP_PRIVATE, fileno(f), 0);
+-  DCHECK(addr != MAP_FAILED);
+-  OS::Free(addr, size);
++  DCHECK_NE(MAP_FAILED, addr);
++  CHECK(Free(addr, size));
+   fclose(f);
+ }
+ 
