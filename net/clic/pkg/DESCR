@@ -1,0 +1,3 @@
+clic is a text based gopher client. It uses navigation through numbering
+and use colours for the selectors. It has a kiosk mode which prevent
+using any other external software and prevent downloading files.
