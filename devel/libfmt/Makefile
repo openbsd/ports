@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/06/17 17:27:28 schwarze Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/10 11:21:19 espie Exp $
 
 COMMENT=	Extensible formatted print C library
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 TEST_TARGET=	test
+MAKE_FLAGS=	LOCALBASE=${LOCALBASE}
 
 pre-build:
 	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC}
