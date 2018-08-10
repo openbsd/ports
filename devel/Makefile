@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1757 2018/08/10 08:20:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1758 2018/08/10 19:49:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1636,6 +1636,7 @@
      SUBDIR += py-yapf
      SUBDIR += py-yapf,python3
      SUBDIR += py-zopecomponent
+     SUBDIR += py-zopecomponent,python3
      SUBDIR += py-zopeevent
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface
