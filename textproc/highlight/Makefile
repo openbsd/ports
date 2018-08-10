@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2018/05/04 20:00:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.56 2018/08/10 03:38:33 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.43
+DISTNAME =		highlight-3.44
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -37,8 +37,6 @@ MAKE_FLAGS =		CXX=${CXX} \
 
 NO_TEST =		Yes
 
-SHARE_DIRS =		langDefs themes
-
 post-extract:
 	gunzip ${WRKSRC}/man/highlight.1.gz
 
@@ -53,10 +51,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/highlight
 	${INSTALL_DATA} ${WRKSRC}/filetypes.conf \
 		${PREFIX}/share/examples/highlight
-.for d in ${SHARE_DIRS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/highlight/$d
-	${INSTALL_DATA} ${WRKSRC}/$d/* ${PREFIX}/share/highlight/$d
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/highlight/{langDefs,themes}
+	cd ${WRKSRC}/themes && pax -rw * ${PREFIX}/share/highlight/themes
+	cd ${WRKSRC}/langDefs && pax -rw * ${PREFIX}/share/highlight/langDefs
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/highlight.1 ${PREFIX}/man/man1
 
