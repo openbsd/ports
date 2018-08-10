@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.40 2018/02/18 16:44:17 espie Exp $
+# $OpenBSD: Locks.pm,v 1.41 2018/08/10 09:50:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -112,6 +112,7 @@ sub clean_old_locks
 			}
 		}
 	}
+	@problems = grep { !m/^\Q$self->{lockdir}\E\/\..*\.swp$/ } @problems;
 	if (@problems) {
 		$state->say("Problematic lockfiles I can't parse:\n\t#1\n".
 			"Waiting for ten seconds",
