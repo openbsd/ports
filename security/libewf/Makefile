@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/03/05 05:46:18 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/10 10:20:22 espie Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
@@ -33,7 +33,8 @@ LIB_DEPENDS +=		devel/libbfio \
 			sysutils/libsmraw
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
+CONFIGURE_ARGS +=	--prefix='${PREFIX}' \
+			--mandir=${PREFIX}/man \
 			--enable-python \
 			--with-pyprefix=${LOCALBASE} \
 			--with-libuuid=no \

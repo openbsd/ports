@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/08/10 10:20:22 espie Exp $
 
 COMMENT=		command line MPEG audio/video/system file toolbox
 
@@ -19,6 +19,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CC="${CXX}"
+CONFIGURE_ARGS +=	--prefix='${PREFIX}'
 
 ALL_TARGET=
 NO_TEST=		Yes

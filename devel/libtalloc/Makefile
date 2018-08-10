@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/23 09:10:28 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2018/08/10 10:20:21 espie Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
@@ -39,7 +39,7 @@ MAKE_ENV +=	LIB${_l:S/-/_/g}_VERSION=${_v}
 TEST_ENV=	LD_LIBRARY_PATH="${WRKSRC}/bin/default"
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS= --mandir="${PREFIX}/man" \
+CONFIGURE_ARGS= --prefix='${PREFIX}' --mandir="${PREFIX}/man" \
 		--disable-rpath
 
 .include <bsd.port.mk>
