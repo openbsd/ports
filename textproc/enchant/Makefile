@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/12/29 08:30:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2018/08/10 10:19:18 espie Exp $
 
 PORTROACH=		limit:^1
 
@@ -58,10 +58,7 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool # libtoolize
 
 pre-configure:
-	cd ${WRKSRC} && ${SETENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 ###
 
 post-install:

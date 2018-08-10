@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/05/12 09:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2018/08/10 10:19:18 espie Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -52,9 +52,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES+=	${SUPDISTFILES}
 
 post-extract:
-	${BZIP2} -dkc ${FULLDISTDIR}/medium_images_270804.tar.bz2 | tar -xf - \
+	PATH=${PORTPATH} ${BZIP2} -dkc ${FULLDISTDIR}/medium_images_270804.tar.bz2 | tar -xf - \
 		-C ${WRKSRC}/vmf -s '#images/medium#.#'
-	${BZIP2} -dkc ${FULLDISTDIR}/big_images_270804.tar.bz2 | tar -xf - \
+	PATH=${PORTPATH} ${BZIP2} -dkc ${FULLDISTDIR}/big_images_270804.tar.bz2 | tar -xf - \
 		-C ${WRKSRC}/vmf -s '#images/big#.#'
 	cp ${FULLDISTDIR}/e43_color1_sh_16k.jpg ${WRKSRC}/vmf/
 	cp ${FULLDISTDIR}/huge.jpg ${WRKSRC}/vmf/

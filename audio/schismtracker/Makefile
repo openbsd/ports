@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/10 10:19:18 espie Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
@@ -34,9 +34,6 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 pre-configure:
-	@cd ${WRKSRC} && \
-	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	autoreconf -i
+	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -i
 
 .include <bsd.port.mk>

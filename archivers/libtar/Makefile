@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/08/10 10:19:18 espie Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -31,8 +31,6 @@ AUTOMAKE_VERSION=	1.11
 NO_TEST=		Yes
 
 pre-configure:
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} PATH=${PORTPATH} \
-		autoreconf --force --install
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf --force --install
 
 .include <bsd.port.mk>

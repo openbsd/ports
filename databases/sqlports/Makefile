@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/05/26 14:20:43 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2018/08/10 10:19:18 espie Exp $
 
 CATEGORIES =		databases
 V =			6.7
@@ -23,7 +23,7 @@ BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 RUN_DEPENDS =		databases/sqlite3
 
 do-build:
-	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
+	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/28 10:06:12 matthieu Exp $
+# $OpenBSD: Makefile,v 1.8 2018/08/10 10:19:18 espie Exp $
 
 # BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -35,11 +35,10 @@ AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.14
 
 pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh autogen.sh
+	cd ${WRKSRC} && ${AUTOCONF_ENV} sh autogen.sh
 
 post-build:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} man -C docs
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} man -C docs
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/libuv.1 ${PREFIX}/man/man1/

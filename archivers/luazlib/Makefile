@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/08/10 10:19:18 espie Exp $
 
 COMMENT=	lua binding of zlib
 DISTNAME=	luazlib-20100731
@@ -16,7 +16,7 @@ TEST_DEPENDS += ${BASE_PKGPATH}
 WANTLIB+=	${MODLUA_WANTLIB} m z
 
 CFLAGS+=	`pkg-config --cflags ${MODLUA_DEP}`
-LINK=		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
+LINK=		${MAKE_ENV} ${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
 do-build:
 	cd ${WRKDIST} && ${LINK} zlib.so lua_zlib.c -lz ${MODLUA_LIB} -lm

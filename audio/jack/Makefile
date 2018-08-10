@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.39 2018/08/10 10:19:18 espie Exp $
 
 COMMENT =		low latency sound server
 
@@ -47,13 +47,10 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 
-AUTO_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
 post-patch:
-	cd ${WRKSRC}; ${AUTO_ENV} aclocal
+	cd ${WRKSRC} && ${AUTOCONF_ENV} aclocal
 
 pre-configure:
-	cd ${WRKSRC}; ${AUTO_ENV} automake --add-missing --foreign
+	cd ${WRKSRC} && ${AUTOCONF_ENV} automake --add-missing --foreign
 
 .include <bsd.port.mk>

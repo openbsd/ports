@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2018/08/10 10:19:18 espie Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
@@ -95,8 +95,7 @@ post-patch:
 	@cp ${FILESDIR}/{Makefile.am,sndio.c} ${WRKSRC}/plugins/sndio
 
 pre-configure:
-	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
+	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf
 
 post-install:
 	@rm ${PREFIX}/lib/deadbeef/*.la

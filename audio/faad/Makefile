@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2016/08/30 12:29:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2018/08/10 10:19:18 espie Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -40,8 +40,6 @@ post-extract:
 	@mv ${WRKSRC}/frontend/faad.man ${WRKSRC}/frontend/faad.1
 
 post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
-	    sh bootstrap
+	@cd ${WRKSRC} && ${AUTOCONF_ENV} sh bootstrap
 
 .include <bsd.port.mk>

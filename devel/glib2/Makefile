@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2018/07/30 08:34:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.278 2018/08/10 10:19:18 espie Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -78,9 +78,6 @@ pre-configure:
 	sed -i "s,/usr/share,${PREFIX}/share,g" \
 		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.xml
-	cd ${WRKSRC} && env -i \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
+	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>

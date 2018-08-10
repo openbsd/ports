@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/08/15 14:44:25 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2018/08/10 10:19:18 espie Exp $
 
 COMMENT =	tiny replacement for Module::Build
 
@@ -23,7 +23,7 @@ RUN_DEPENDS =	devel/p5-ExtUtils-Config \
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 do-install:
-	@cd ${WRKSRC} && perl \
+	@cd ${WRKSRC} && ${MAKE_ENV} perl \
 	    ${MODPERL_BUILD} ${FAKE_TARGET} \
 	        --destdir "${PREFIX}" \
 	        --install_path lib="libdata/perl5/site_perl" \

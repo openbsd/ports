@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.132 2018/08/10 10:19:18 espie Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk=		gtk+2 avahi-ui libraries
@@ -217,8 +217,7 @@ pre-configure:
 		sed -i -e 's,Libs:,Libs: -pthread,;' \
 			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
 	cd ${WRKSRC} && ${SETENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		${AUTOCONF_ENV} \
 		NOCONFIGURE=1 \
 		/bin/sh ./autogen.sh
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/07/05 14:55:22 jcs Exp $
+# $OpenBSD: Makefile,v 1.34 2018/08/10 10:19:18 espie Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -52,16 +52,16 @@ VNCSRC =		${WRKSRC}/vnc_unixsrc/
 VNCLIB =		${PREFIX}/lib/ssvnc/
 
 pre-configure:
-	cd ${WRKSRC}/scripts; ${SUBST_CMD} ssvnc util/ss_vncviewer
+	cd ${WRKSRC}/scripts && ${SUBST_CMD} ssvnc util/ss_vncviewer
 
 do-configure:
-	cd ${VNCSRC}/libvncauth; ${XMKMF}
-	cd ${VNCSRC}/vncviewer; ${XMKMF}
+	cd ${VNCSRC}/libvncauth && ${MAKE_ENV} ${XMKMF}
+	cd ${VNCSRC}/vncviewer && ${MAKE_ENV} ${XMKMF}
 
 do-build:
-	cd ${VNCSRC}/libvncauth; ${SETENV} ${MAKE_ENV} ${MAKE}
-	cd ${VNCSRC}/vncviewer; ${SETENV} ${MAKE_ENV} ${MAKE}
-	cd ${WRKSRC}/vncstorepw; ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${VNCSRC}/libvncauth && ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${VNCSRC}/vncviewer && ${SETENV} ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}/vncstorepw && ${SETENV} ${MAKE_ENV} ${MAKE}
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${VNCLIB}

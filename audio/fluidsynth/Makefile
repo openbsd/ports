@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/08/10 10:19:18 espie Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
@@ -49,7 +49,6 @@ post-patch:
 	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
 
 pre-configure:
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
+	cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
 
 .include <bsd.port.mk>
