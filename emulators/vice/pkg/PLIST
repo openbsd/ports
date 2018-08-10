@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/10 10:47:28 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/10 20:55:26 fcambus Exp $
 @bin bin/c1541
 @bin bin/cartconv
 @bin bin/petcat
@@ -50,6 +50,7 @@ lib/vice/C128/pepto-pal.vpl
 lib/vice/C128/pepto-palold.vpl
 lib/vice/C128/ptoing.vpl
 lib/vice/C128/rgb.vpl
+lib/vice/C128/sdl_hotkeys.vkm
 lib/vice/C128/sdl_pos.vkm
 lib/vice/C128/vdc_comp.vpl
 lib/vice/C128/vdc_deft.vpl
@@ -79,14 +80,21 @@ lib/vice/C64/pepto-pal.vpl
 lib/vice/C64/pepto-palold.vpl
 lib/vice/C64/ptoing.vpl
 lib/vice/C64/rgb.vpl
+lib/vice/C64/sdl_hotkeys.vkm
+lib/vice/C64/sdl_hotkeys_vsid.vkm
+lib/vice/C64/sdl_joymap_ps3.vjm
 lib/vice/C64/sdl_keyrah.vkm
+lib/vice/C64/sdl_keyrah_combian.vkm
 lib/vice/C64/sdl_keyrah_de.vkm
+lib/vice/C64/sdl_keyrah_retropie.vkm
+lib/vice/C64/sdl_keyrah_retropie_de.vkm
 lib/vice/C64/sdl_pos.vkm
 lib/vice/C64/sdl_pos_da.vkm
 lib/vice/C64/sdl_pos_de.vkm
 lib/vice/C64/sdl_pos_fi.vkm
 lib/vice/C64/sdl_pos_no.vkm
 lib/vice/C64/sdl_sym.vkm
+lib/vice/C64/sdl_sym_de.vkm
 lib/vice/C64/sxkernal
 lib/vice/C64/vice.vpl
 lib/vice/C64DTV/
@@ -96,14 +104,19 @@ lib/vice/C64DTV/chargen
 lib/vice/C64DTV/default.vrs
 lib/vice/C64DTV/dtvrom.bin
 lib/vice/C64DTV/kernal
+lib/vice/C64DTV/sdl_hotkeys.vkm
 lib/vice/C64DTV/sdl_keyrah.vkm
+lib/vice/C64DTV/sdl_keyrah_combian.vkm
 lib/vice/C64DTV/sdl_keyrah_de.vkm
+lib/vice/C64DTV/sdl_keyrah_retropie.vkm
+lib/vice/C64DTV/sdl_keyrah_retropie_de.vkm
 lib/vice/C64DTV/sdl_pos.vkm
 lib/vice/C64DTV/sdl_pos_da.vkm
 lib/vice/C64DTV/sdl_pos_de.vkm
 lib/vice/C64DTV/sdl_pos_fi.vkm
 lib/vice/C64DTV/sdl_pos_no.vkm
 lib/vice/C64DTV/sdl_sym.vkm
+lib/vice/C64DTV/sdl_sym_de.vkm
 lib/vice/C64DTV/spiff.vpl
 lib/vice/CBM-II/
 lib/vice/CBM-II/amber.vpl
@@ -136,6 +149,7 @@ lib/vice/CBM-II/rom128l.vrs
 lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom500.vrs
+lib/vice/CBM-II/sdl_hotkeys.vkm
 lib/vice/CBM-II/sdl_sym.vkm
 lib/vice/CBM-II/vice.vpl
 lib/vice/CBM-II/white.vpl
@@ -183,6 +197,7 @@ lib/vice/PET/rom4g40.vrs
 lib/vice/PET/romsuperpet.vrs
 lib/vice/PET/sdl_buuk_sym.vkm
 lib/vice/PET/sdl_grus_sym.vkm
+lib/vice/PET/sdl_hotkeys.vkm
 lib/vice/PET/sdl_sym.vkm
 lib/vice/PET/waterloo-a000.901898-01.bin
 lib/vice/PET/waterloo-b000.901898-02.bin
@@ -202,6 +217,7 @@ lib/vice/PLUS4/kernal
 lib/vice/PLUS4/kernal.005
 lib/vice/PLUS4/kernal.232
 lib/vice/PLUS4/kernal.364
+lib/vice/PLUS4/sdl_hotkeys.vkm
 lib/vice/PLUS4/sdl_pos.vkm
 lib/vice/PLUS4/yape-ntsc.vpl
 lib/vice/PLUS4/yape-pal.vpl
@@ -234,14 +250,19 @@ lib/vice/SCPU64/ptoing.vpl
 lib/vice/SCPU64/rgb.vpl
 lib/vice/SCPU64/scpu64
 lib/vice/SCPU64/scpu64mem.sym
+lib/vice/SCPU64/sdl_hotkeys.vkm
 lib/vice/SCPU64/sdl_keyrah.vkm
+lib/vice/SCPU64/sdl_keyrah_combian.vkm
 lib/vice/SCPU64/sdl_keyrah_de.vkm
+lib/vice/SCPU64/sdl_keyrah_retropie.vkm
+lib/vice/SCPU64/sdl_keyrah_retropie_de.vkm
 lib/vice/SCPU64/sdl_pos.vkm
 lib/vice/SCPU64/sdl_pos_da.vkm
 lib/vice/SCPU64/sdl_pos_de.vkm
 lib/vice/SCPU64/sdl_pos_fi.vkm
 lib/vice/SCPU64/sdl_pos_no.vkm
 lib/vice/SCPU64/sdl_sym.vkm
+lib/vice/SCPU64/sdl_sym_de.vkm
 lib/vice/SCPU64/vice.vpl
 lib/vice/VIC20/
 lib/vice/VIC20/basic
@@ -251,6 +272,7 @@ lib/vice/VIC20/default.vrs
 lib/vice/VIC20/kernal
 lib/vice/VIC20/mike-ntsc.vpl
 lib/vice/VIC20/mike-pal.vpl
+lib/vice/VIC20/sdl_hotkeys.vkm
 lib/vice/VIC20/sdl_pos.vkm
 lib/vice/VIC20/sdl_pos_fi.vkm
 lib/vice/VIC20/vice.vpl
@@ -290,19 +312,17 @@ lib/vice/doc/NEWS
 lib/vice/doc/NLS-Howto.txt
 lib/vice/doc/OFL.txt
 lib/vice/doc/OpenVMS-Howto.txt
-lib/vice/doc/OpenWatcom-Howto.txt
 lib/vice/doc/Readme-Amiga.txt
 lib/vice/doc/Readme-BeOS.txt
 lib/vice/doc/Readme-DOS.txt
 lib/vice/doc/Readme-GTK3.txt
 lib/vice/doc/Readme-MacOSX.txt
-lib/vice/doc/Readme-OS2.txt
 lib/vice/doc/Readme-SDL.txt
 lib/vice/doc/Readme-SDL2.txt
 lib/vice/doc/Readme-Unix.txt
 lib/vice/doc/SDL-Howto.txt
+lib/vice/doc/SDL-support.txt
 lib/vice/doc/Win32-Cygwin-Howto.txt
-lib/vice/doc/Win32-MSVC-Howto.txt
 lib/vice/doc/Win32-Mingw32-Howto.txt
 lib/vice/doc/WinNT-Unicode.txt
 lib/vice/doc/amigaos.html
@@ -310,6 +330,7 @@ lib/vice/doc/android.html
 lib/vice/doc/beos.html
 lib/vice/doc/coding-guidelines.txt
 lib/vice/doc/darwin.html
+lib/vice/doc/ffmpeg-support.txt
 lib/vice/doc/hardware-sids.txt
 lib/vice/doc/iec-bus.txt
 lib/vice/doc/index.html
@@ -323,6 +344,7 @@ lib/vice/doc/sco.html
 lib/vice/doc/sitemap.xml
 lib/vice/doc/solaris.html
 lib/vice/doc/sortix.html
+lib/vice/doc/unix.html
 lib/vice/doc/vice-logo.svg
 lib/vice/doc/vice.chm
 lib/vice/doc/vice.css
