@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/23 13:06:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/08/10 20:13:41 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -516,6 +516,36 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512Monte.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512Monte.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_224LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_224Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_224Monte.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_224ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_256LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_256Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_256Monte.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA2/SHA512_256ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_224LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_224Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_224ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_256LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_256Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_256ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_384LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_384Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_384ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_512LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_512Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHA3/SHA3_512ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE128LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE128Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE128ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE128VariableOut.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE256LongMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE256Monte.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE256ShortMsg.rsp
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/SHAKE/SHAKE256VariableOut.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blake2b.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/hashes/blake2/blake2s.txt
@@ -2122,6 +2152,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/sm
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedValidpre2000UTCnotBeforeDateTest3.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/PKITS_data/smime/SignedinhibitAnyPolicyTest3.eml
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/alternate-rsa-sha1-oid.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/badasn1time.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/badssl-sct.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/bigoid.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/cryptography.io.pem

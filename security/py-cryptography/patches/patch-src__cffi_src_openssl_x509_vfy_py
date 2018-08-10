@@ -1,4 +1,4 @@
-$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.7 2018/02/22 18:49:16 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.8 2018/08/10 20:13:41 sthen Exp $
 
 Index: src/_cffi_src/openssl/x509_vfy.py
 --- src/_cffi_src/openssl/x509_vfy.py.orig
@@ -40,11 +40,11 @@ Index: src/_cffi_src/openssl/x509_vfy.py
 -static const long X509_V_FLAG_SUITEB_192_LOS = 0;
 -static const long X509_V_FLAG_SUITEB_128_LOS = 0;
 -
+ #if !CRYPTOGRAPHY_LIBRESSL_27_OR_GREATER
  int (*X509_VERIFY_PARAM_set1_host)(X509_VERIFY_PARAM *, const char *,
                                     size_t) = NULL;
- int (*X509_VERIFY_PARAM_set1_email)(X509_VERIFY_PARAM *, const char *,
-@@ -257,6 +248,19 @@ void (*X509_VERIFY_PARAM_set_hostflags)(X509_VERIFY_PA
-                                         unsigned int) = NULL;
+@@ -259,6 +250,19 @@ void (*X509_VERIFY_PARAM_set_hostflags)(X509_VERIFY_PA
+ #endif
  #endif
  
 +static const long X509_V_ERR_SUITE_B_INVALID_VERSION = 0;
