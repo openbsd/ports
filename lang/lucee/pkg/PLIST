@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/03/13 11:20:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/10 12:06:33 sthen Exp $
 @conflict railo-*
 @pkgpath lang/railo
 @extraunexec rm -rf %D/lucee/config/*
@@ -22,7 +22,6 @@ lucee/
 @sample lucee/config/
 @sample lucee/config/server/
 @sample lucee/config/web/
-@sample webapps/
 @sample webapps/ROOT/
 @owner
 @group

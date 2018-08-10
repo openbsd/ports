@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2018/03/15 08:08:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/08/10 12:06:33 sthen Exp $
 
 COMMENT=		JVM-based scripting language for web apps (open-source CFML)
 
-V=			5.2.6.59
+V=			5.2.8.50
 DISTNAME=		lucee-$V
 EXTRACT_SUFX=		.war
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{$V}
 
 CATEGORIES=		lang www
 
-HOMEPAGE=		http://lucee.org/
+HOMEPAGE=		https://lucee.org/
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
