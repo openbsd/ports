@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/30 20:16:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/08/10 07:58:24 rpointel Exp $
 bin/recon-cli
 bin/recon-ng
 bin/recon-rpc
@@ -73,7 +73,6 @@ share/recon-ng/modules/recon/companies-contacts/jigsaw/
 share/recon-ng/modules/recon/companies-contacts/jigsaw/point_usage.py
 share/recon-ng/modules/recon/companies-contacts/jigsaw/purchase_contact.py
 share/recon-ng/modules/recon/companies-contacts/jigsaw/search_contacts.py
-share/recon-ng/modules/recon/companies-contacts/linkedin_auth.py
 share/recon-ng/modules/recon/companies-multi/
 share/recon-ng/modules/recon/companies-multi/github_miner.py
 share/recon-ng/modules/recon/companies-multi/whois_miner.py
@@ -143,7 +142,6 @@ share/recon-ng/modules/recon/locations-locations/geocode.py
 share/recon-ng/modules/recon/locations-locations/reverse_geocode.py
 share/recon-ng/modules/recon/locations-pushpins/
 share/recon-ng/modules/recon/locations-pushpins/flickr.py
-share/recon-ng/modules/recon/locations-pushpins/instagram.py
 share/recon-ng/modules/recon/locations-pushpins/picasa.py
 share/recon-ng/modules/recon/locations-pushpins/shodan.py
 share/recon-ng/modules/recon/locations-pushpins/twitter.py

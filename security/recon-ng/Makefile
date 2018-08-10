@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/30 20:16:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/08/10 07:58:24 rpointel Exp $
 
 COMMENT =		web reconnaissance framework
 
-VERSION =		4.9.2
+VERSION =		4.9.3
 DISTNAME =		recon-ng-${VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://bitbucket.org/LaNMaSteR53/recon-ng
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://bitbucket.org/LaNMaSteR53/recon-ng/get/
 DISTFILES =		${DISTNAME}{v${VERSION}}${EXTRACT_SUFX}
-WRKDIST =		${WRKDIR}/LaNMaSteR53-recon-ng-70d967e3f530
+WRKDIST =		${WRKDIR}/LaNMaSteR53-recon-ng-c83599e52159
 
 RUN_DEPENDS =		devel/py-jsonrpclib${MODPY_FLAVOR} \
 			devel/py-olefile${MODPY_FLAVOR} \
