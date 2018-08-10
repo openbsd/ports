@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1756 2018/08/09 19:14:43 danj Exp $
+# $OpenBSD: Makefile,v 1.1757 2018/08/10 08:20:06 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -280,7 +280,6 @@
      SUBDIR += jsoncpp
      SUBDIR += jsonrpc-glib
      SUBDIR += kdevelop
-     SUBDIR += kdevplatform
      SUBDIR += kdiff3
      SUBDIR += kproperty
      SUBDIR += kreport
