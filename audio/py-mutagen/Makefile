@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2018/06/27 13:50:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/08/10 19:36:36 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.40.0
+MODPY_EGG_VERSION = 1.41.0
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
@@ -31,10 +31,14 @@ MODPY_ADJ_FILES =	docs/id3_frames_gen.py \
 
 TEST_DEPENDS =		audio/faad \
 			audio/flac \
-			audio/py-eyed3 \
-			audio/py-vorbis \
 			audio/vorbis-tools \
+			devel/py-hypothesis${MODPY_FLAVOR} \
 			multimedia/oggz
+
+.if ${FLAVOR} != python3
+TEST_DEPENDS +=		audio/py-eyed3 \
+			audio/py-vorbis
+.endif
 
 MAKE_ENV =		LC_CTYPE="en_US.UTF-8"
 
