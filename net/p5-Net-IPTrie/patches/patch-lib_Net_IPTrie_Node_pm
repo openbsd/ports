@@ -1,0 +1,40 @@
+$OpenBSD: patch-lib_Net_IPTrie_Node_pm,v 1.1 2018/08/10 11:08:48 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=97458
+Avoid warning with newer Perl.
+Reference is already weak at lib/Net/IPTrie/Node.pm line 60.
+
+Index: lib/Net/IPTrie/Node.pm
+--- lib/Net/IPTrie/Node.pm.orig
++++ lib/Net/IPTrie/Node.pm
+@@ -4,7 +4,7 @@ use warnings;
+ use strict;
+ use Carp;
+ use Class::Struct;
+-use Scalar::Util qw(weaken);
++use Scalar::Util qw(weaken isweak);
+ use vars qw($VERSION);
+ $VERSION = '0.7';
+ 
+@@ -56,7 +56,9 @@ Net::IPTrie::Node
+ 
+ sub new {
+     my $ret = shift->SUPER::new(@_);
+-    if ( defined($ret->{'Net::IPTrie::_Node::up'}) ) {
++    if ( defined($ret->{'Net::IPTrie::_Node::up'}) &&
++	!isweak($ret->{'Net::IPTrie::_Node::up'}) )
++    {
+ 	weaken $ret->{'Net::IPTrie::_Node::up'};
+     }
+     return $ret;
+@@ -66,7 +68,9 @@ sub up {
+     my $self = shift;
+     if (@_) {
+ 	$self->{'Net::IPTrie::_Node::up'} = shift;
+-	if ( defined($self->{'Net::IPTrie::_Node::up'}) ) {
++	if ( defined($self->{'Net::IPTrie::_Node::up'}) &&
++	    !isweak($self->{'Net::IPTrie::_Node::up'}) )
++	{
+ 	    weaken $self->{'Net::IPTrie::_Node::up'};
+ 	}
+     }

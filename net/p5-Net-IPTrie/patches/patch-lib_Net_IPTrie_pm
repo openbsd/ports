@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Net_IPTrie_pm,v 1.1 2018/08/10 11:08:48 bluhm Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=115579
+IPTrie cannot find IP 0.1.2.3 in subnet 0.0.0.0/8.
+$p->iaddress is defined for 0.0.0.0 but has numeric value 0.
+
+Index: lib/Net/IPTrie.pm
+--- lib/Net/IPTrie.pm.orig
++++ lib/Net/IPTrie.pm
+@@ -168,7 +168,7 @@ sub find {
+ 		$p->$r(Net::IPTrie::Node->new(up=>$p));
+ 	    }else{
+ 		# Just return the closest covering IP block
+-		if ( $p->iaddress ){
++		if ( defined $p->iaddress ){
+ 		    return $p;
+ 		}else{
+ 		    return $p->parent;
