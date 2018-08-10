@@ -1,0 +1,16 @@
+Yosys Open SYnthesis Suite
+
+Yosys is a framework for Verilog RTL synthesis. It currently has extensive
+Verilog-2005 support and provides a basic set of synthesis algorithms for
+various application domains. Selected features and typical applications:
+
+- Process almost any synthesizable Verilog-2005 design
+- Converting Verilog to BLIF / EDIF/ BTOR / SMT-LIB / simple RTL Verilog / etc.
+- Built-in formal methods for checking properties and equivalence
+- Mapping to ASIC standard cell libraries (in Liberty File Format)
+- Mapping to Xilinx 7-Series and Lattice iCE40 FPGAs
+- Foundation and/or front-end for custom flows
+
+Yosys can be adapted to perform any synthesis job by combining the existing
+passes (algorithms) using synthesis scripts and adding additional passes as
+needed by extending the Yosys C++ code base.

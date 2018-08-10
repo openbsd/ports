@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_tools_autotest_sh,v 1.1.1.1 2018/08/10 19:40:02 sthen Exp $
+
+Index: tests/tools/autotest.sh
+--- tests/tools/autotest.sh.orig
++++ tests/tools/autotest.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ libs=""
+ genvcd=false

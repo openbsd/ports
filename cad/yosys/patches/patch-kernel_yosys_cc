@@ -1,0 +1,28 @@
+$OpenBSD: patch-kernel_yosys_cc,v 1.1.1.1 2018/08/10 19:40:02 sthen Exp $
+
+Index: kernel/yosys.cc
+--- kernel/yosys.cc.orig
++++ kernel/yosys.cc
+@@ -46,6 +46,10 @@
+ #  include <glob.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#  include <sys/wait.h>
++#endif
++
+ #include <limits.h>
+ #include <errno.h>
+ 
+@@ -693,6 +697,11 @@ std::string proc_self_dirname()
+ 	for (i = 0; shortpath[i]; i++)
+ 		path += char(shortpath[i]);
+ 	return path;
++}
++#elif defined(__OpenBSD__)
++std::string proc_self_dirname()
++{
++	return "${PREFIX}/bin/";
+ }
+ #elif defined(EMSCRIPTEN)
+ std::string proc_self_dirname()
