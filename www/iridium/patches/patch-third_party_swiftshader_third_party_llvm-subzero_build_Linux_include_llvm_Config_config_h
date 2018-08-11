@@ -1,8 +1,17 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.2 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.3 2018/08/11 16:22:42 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig
 +++ third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
+@@ -24,7 +24,7 @@
+ 
+ /* Define to 1 if you have the declaration of `arc4random', and to 0 if you
+    don't. */
+-#define HAVE_DECL_ARC4RANDOM 0
++#define HAVE_DECL_ARC4RANDOM 1
+ 
+ /* Define to 1 if you have the declaration of `FE_ALL_EXCEPT', and to 0 if you
+    don't. */
 @@ -121,7 +121,7 @@
  #define HAVE_LINK_H 1
  

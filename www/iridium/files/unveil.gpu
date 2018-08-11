@@ -1,0 +1,2 @@
+# $OpenBSD: unveil.gpu,v 1.1 2018/08/11 16:22:42 robert Exp $
+/dev/null r

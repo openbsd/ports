@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/08/11 16:22:42 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -390,6 +390,20 @@ iridium/v8_context_snapshot.bin
 iridium/views_mus_resources.pak
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
+share/examples/iridium/
+@sample ${SYSCONFDIR}/iridium/
+share/examples/iridium/pledge.main
+@sample ${SYSCONFDIR}/iridium/pledge.main
+share/examples/iridium/unveil.gpu
+@sample ${SYSCONFDIR}/iridium/unveil.gpu
+share/examples/iridium/unveil.main
+@sample ${SYSCONFDIR}/iridium/unveil.main
+share/examples/iridium/unveil.plugin
+@sample ${SYSCONFDIR}/iridium/unveil.plugin
+share/examples/iridium/unveil.renderer
+@sample ${SYSCONFDIR}/iridium/unveil.renderer
+share/examples/iridium/unveil.utility
+@sample ${SYSCONFDIR}/iridium/unveil.utility
 share/icons/hicolor/128x128/apps/iridium.png
 share/icons/hicolor/22x22/apps/iridium.png
 share/icons/hicolor/24x24/apps/iridium.png

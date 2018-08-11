@@ -1,9 +1,21 @@
-$OpenBSD: patch-components_crash_content_app_crashpad_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-components_crash_content_app_crashpad_cc,v 1.2 2018/08/11 16:22:42 robert Exp $
 
 Index: components/crash/content/app/crashpad.cc
 --- components/crash/content/app/crashpad.cc.orig
 +++ components/crash/content/app/crashpad.cc
-@@ -119,7 +119,7 @@ void InitializeCrashpadImpl(bool initial_client,
+@@ -101,6 +101,11 @@ void InitializeCrashpadImpl(bool initial_client,
+                             const std::string& user_data_dir,
+                             const base::FilePath& exe_path,
+                             bool embedded_handler) {
++#if defined(OS_BSD)
++  NOTIMPLEMENTED();
++  return;
++#endif
++
+   static bool initialized = false;
+   DCHECK(!initialized);
+   initialized = true;
+@@ -119,7 +124,7 @@ void InitializeCrashpadImpl(bool initial_client,
      // as processed by the backend.
      DCHECK(browser_process || process_type == "Chrome Installer" ||
             process_type == "notification-helper");
@@ -12,7 +24,7 @@ Index: components/crash/content/app/crashpad.cc
      DCHECK(browser_process);
  #else
  #error Port.
-@@ -184,7 +184,7 @@ void InitializeCrashpadImpl(bool initial_client,
+@@ -184,7 +189,7 @@ void InitializeCrashpadImpl(bool initial_client,
    // other "main, first process" to initialize things. There is no "relauncher"
    // on Windows, so this is synonymous with initial_client.
    const bool should_initialize_database_and_set_upload_policy = initial_client;
@@ -21,13 +33,11 @@ Index: components/crash/content/app/crashpad.cc
    const bool should_initialize_database_and_set_upload_policy = browser_process;
  #endif
    if (should_initialize_database_and_set_upload_policy) {
-@@ -253,7 +253,11 @@ bool GetUploadsEnabled() {
+@@ -253,7 +258,9 @@ bool GetUploadsEnabled() {
  }
  
  void DumpWithoutCrashing() {
-+#if defined(OS_BSD)
-+  NOTIMPLEMENTED();
-+#else
++#if !defined(OS_BSD)
    CRASHPAD_SIMULATE_CRASH();
 +#endif
  }

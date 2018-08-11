@@ -1,41 +1,9 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.13 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.14 2018/08/11 16:22:42 robert Exp $
 Index: content/renderer/renderer_main.cc
 --- content/renderer/renderer_main.cc.orig
 +++ content/renderer/renderer_main.cc
-@@ -35,6 +35,7 @@
- #include "ppapi/buildflags/buildflags.h"
- #include "third_party/blink/public/platform/scheduler/web_main_thread_scheduler.h"
- #include "third_party/skia/include/core/SkGraphics.h"
-+#include "third_party/skia/include/ports/SkFontConfigInterface.h"
- #include "ui/base/ui_base_switches.h"
- 
- #if defined(OS_ANDROID)
-@@ -67,6 +68,17 @@
- #include "third_party/webrtc_overrides/init_webrtc.h"  // nogncheck
+@@ -221,7 +221,7 @@ int RendererMain(const MainFunctionParams& parameters)
  #endif
- 
-+#if defined(OS_BSD)
-+#include "content/browser/sandbox_host_linux.h"
-+#include "content/public/common/common_sandbox_support_linux.h"
-+#endif
-+
-+#if defined(OS_BSDD)
-+#include "content/browser/sandbox_host_linux.h"
-+#include "content/common/font_config_ipc_linux.h"
-+#include "content/common/sandbox_linux/sandbox_linux.h"
-+#endif
-+
- namespace content {
- namespace {
- // This function provides some ways to test crash and assertion handling
-@@ -219,9 +231,13 @@ int RendererMain(const MainFunctionParams& parameters)
-   // is OK.
-   InitializeWebRtcModule();
- #endif
-+#if defined(OS_BSD)
-+  SkFontConfigInterface::SetGlobal(
-+      new FontConfigIPC(GetSandboxFD()))->unref();
-+#endif
  
    {
 -#if defined(OS_WIN) || defined(OS_MACOSX)
@@ -43,7 +11,7 @@ Index: content/renderer/renderer_main.cc
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      auto render_process = RenderProcessImpl::Create();
-@@ -231,7 +247,7 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -231,7 +231,7 @@ int RendererMain(const MainFunctionParams& parameters)
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

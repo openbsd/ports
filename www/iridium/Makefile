@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2018/08/11 16:22:42 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -13,7 +13,7 @@ V=			2018.5.67
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
@@ -59,6 +59,7 @@ WANTLIB += GL expat
 WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0
 WANTLIB += Xcomposite Xdamage
+WANTLIB += util
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -120,6 +121,7 @@ GN_ARGS=	enable_nacl=false \
 		use_sndio=true \
 		use_cups=true \
 		use_gtk3=true \
+		use_system_libdrm=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -232,5 +234,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/iridium-browser.desktop \
 		${PREFIX}/share/applications/iridium-browser.desktop
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iridium
+.for f in pledge.main unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/iridium
+.endfor
 
 .include <bsd.port.mk>

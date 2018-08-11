@@ -1,8 +1,16 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.18 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.19 2018/08/11 16:22:42 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -277,7 +277,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+@@ -120,6 +120,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+ CONTENT_EXPORT extern const char kEnableLowResTiling[];
+ CONTENT_EXPORT extern const char kEnableLCDText[];
+ CONTENT_EXPORT extern const char kEnableLogging[];
++CONTENT_EXPORT extern const char kEnableUnveil[];
+ CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
+ CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
+ CONTENT_EXPORT extern const char kEnablePinch[];
+@@ -277,7 +278,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
  CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  

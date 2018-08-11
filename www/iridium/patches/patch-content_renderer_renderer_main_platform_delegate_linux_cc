@@ -1,30 +1,17 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.9 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.10 2018/08/11 16:22:42 robert Exp $
 
 Index: content/renderer/renderer_main_platform_delegate_linux.cc
 --- content/renderer/renderer_main_platform_delegate_linux.cc.orig
 +++ content/renderer/renderer_main_platform_delegate_linux.cc
-@@ -15,6 +15,10 @@
- #include "content/public/common/sandbox_init.h"
- #include "services/service_manager/sandbox/sandbox.h"
- 
-+#if defined(OS_BSD)
-+#include "content/common/sandbox_init_openbsd.h"
-+#endif
-+
- namespace content {
- 
- RendererMainPlatformDelegate::RendererMainPlatformDelegate(
-@@ -34,6 +38,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
-   // https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox.md
-   //
-   // Anything else is started in InitializeSandbox().
-+#if defined(OS_BSD)
-+  InitializeSandbox();
-+#else
-   service_manager::SandboxLinux::Options options;
-   options.has_wasm_trap_handler =
-       base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler);
-@@ -67,6 +74,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+@@ -47,6 +47,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   // Here, we test that the status of SeccompBpf in the renderer is consistent
+   // with what SandboxLinux::GetStatus() said we would do.
+   auto* linux_sandbox = service_manager::SandboxLinux::GetInstance();
++#if 0
+   if (linux_sandbox->GetStatus() & service_manager::SandboxLinux::kSeccompBPF) {
+     CHECK(linux_sandbox->seccomp_bpf_started());
+   }
+@@ -67,6 +68,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
      CHECK_EQ(errno, EPERM);
    }
  #endif  // __x86_64__

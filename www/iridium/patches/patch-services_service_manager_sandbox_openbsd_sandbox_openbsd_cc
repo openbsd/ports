@@ -1,0 +1,314 @@
+Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
+--- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
++++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
+@@ -0,0 +1,310 @@
++// Copyright (c) 2012 The Chromium Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++#include "services/service_manager/sandbox/openbsd/sandbox_openbsd.h"
++
++#include <dirent.h>
++#include <fcntl.h>
++#include <stdint.h>
++#include <sys/resource.h>
++#include <sys/stat.h>
++#include <sys/time.h>
++#include <sys/types.h>
++#include <unistd.h>
++#include <util.h>
++
++#include <limits>
++#include <memory>
++#include <string>
++#include <vector>
++
++#include "base/bind.h"
++#include "base/callback_helpers.h"
++#include "base/command_line.h"
++#include "base/debug/stack_trace.h"
++#include "base/feature_list.h"
++#include "base/files/scoped_file.h"
++#include "base/logging.h"
++#include "base/macros.h"
++#include "base/memory/singleton.h"
++#include "base/posix/eintr_wrapper.h"
++#include "base/strings/string_number_conversions.h"
++#include "base/sys_info.h"
++#include "base/time/time.h"
++#include "build/build_config.h"
++#include "sandbox/linux/services/credentials.h"
++#include "sandbox/linux/services/namespace_sandbox.h"
++#include "sandbox/linux/services/proc_util.h"
++#include "sandbox/linux/services/resource_limits.h"
++#include "sandbox/linux/services/thread_helpers.h"
++#include "sandbox/linux/syscall_broker/broker_command.h"
++#include "sandbox/linux/syscall_broker/broker_process.h"
++#include "sandbox/sandbox_buildflags.h"
++#include "services/service_manager/sandbox/sandbox.h"
++#include "services/service_manager/sandbox/sandbox_type.h"
++#include "services/service_manager/sandbox/switches.h"
++
++#if BUILDFLAG(USING_SANITIZER)
++#include <sanitizer/common_interface_defs.h>
++#endif
++
++#define MAXTOKENS        3
++#define _UNVEIL_MAIN     "/etc/iridium/unveil.main";
++#define _UNVEIL_RENDERER "/etc/iridium/unveil.renderer";
++#define _UNVEIL_GPU      "/etc/iridium/unveil.gpu";
++#define _UNVEIL_PLUGIN   "/etc/iridium/unveil.plugin";
++#define _UNVEIL_UTILITY  "/etc/iridium/unveil.utility";
++
++namespace service_manager {
++
++SandboxLinux::SandboxLinux()
++    : sandbox_status_flags_(kInvalid),
++      pre_initialized_(false),
++      initialize_sandbox_ran_(false),
++      broker_process_(nullptr) {
++}
++
++SandboxLinux::~SandboxLinux() {
++  if (pre_initialized_) {
++    CHECK(initialize_sandbox_ran_);
++  }
++}
++
++SandboxLinux* SandboxLinux::GetInstance() {
++  SandboxLinux* instance = base::Singleton<SandboxLinux>::get();
++  CHECK(instance);
++  return instance;
++}
++
++void SandboxLinux::PreinitializeSandbox() {
++  CHECK(!pre_initialized_);
++#if BUILDFLAG(USING_SANITIZER)
++  // Sanitizers need to open some resources before the sandbox is enabled.
++  // This should not fork, not launch threads, not open a directory.
++  __sanitizer_sandbox_on_notify(sanitizer_args());
++  sanitizer_args_.reset();
++#endif
++  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++  const std::string process_type =
++      command_line->GetSwitchValueASCII(switches::kProcessType);
++
++  if (command_line->HasSwitch(switches::kEnableUnveil))
++    SetUnveil(process_type);
++
++  pre_initialized_ = true;
++}
++
++bool SandboxLinux::SetUnveil(const std::string process_type) {
++  FILE *fp;
++  char *s = NULL, *cp = NULL, *home = NULL, **ap, *tokens[MAXTOKENS];
++  char path[PATH_MAX];
++  const char *ufile;
++  size_t len = 0, lineno = 0;
++
++  if (process_type.empty()) {
++    ufile = _UNVEIL_MAIN;
++  } else if (process_type == switches::kRendererProcess) {
++    ufile = _UNVEIL_RENDERER;
++  } else if (process_type == switches::kGpuProcess) {
++    ufile = _UNVEIL_GPU;
++  } else if (process_type == switches::kPpapiPluginProcess) {
++    ufile = _UNVEIL_PLUGIN;
++  } else if (process_type == switches::kUtilityProcess) {
++    ufile = _UNVEIL_UTILITY;
++  }
++
++  fp = fopen(ufile, "r");
++  if (fp != NULL) {
++    while (!feof(fp)) {
++      if ((s = fparseln(fp, &len, &lineno, NULL,
++          FPARSELN_UNESCCOMM | FPARSELN_UNESCCONT)) == NULL) {
++        if (ferror(fp)) {
++          LOG(ERROR) << "ferror(), errno: " << errno;
++	  _exit(1);
++	} else {
++          continue;
++	}
++      }
++      cp = s;
++      cp += strspn(cp, " \t\n"); /* eat whitespace */
++      if (cp[0] == '\0')
++        continue;
++			
++      for (ap = tokens; ap < &tokens[MAXTOKENS - 1] &&
++          (*ap = strsep(&cp, " \t")) != NULL;) {
++        if (**ap != '\0')
++          ap++;
++      }
++      *ap = NULL;
++
++      if (tokens[1] == NULL) {
++        LOG(ERROR) << ufile << ": line " << lineno << ": must supply value to " << s;
++        _exit(1);
++      }
++
++      if (tokens[0][0] == '~') {
++        if ((home = getenv("HOME")) == NULL || *home == '\0') {
++          LOG(ERROR) << "failed to get home";
++	  _exit(1);
++	}
++        memmove(tokens[0], tokens[0] + 1, strlen(tokens[0]));
++        strncpy(path, home, sizeof(path) - 1);
++        path[sizeof(path) - 1] = '\0';
++        strncat(path, tokens[0], sizeof(path) - 1 - strlen(path));
++      } else {
++        strncpy(path, tokens[0], sizeof(path) - 1);
++        path[sizeof(path) - 1] = '\0';
++      }
++
++      if (unveil(path, tokens[1]) == -1) {
++        LOG(ERROR) << "failed unveiling " << path << " with permissions " << tokens[1];
++        _exit(1);
++      } else {
++        VLOG(1) << "unveiling " << path << " with permissions " << tokens[1];
++      }
++    }
++    fclose(fp);
++  } else {
++        LOG(ERROR) << "failed to open " << ufile << " errno: " << errno;
++        _exit(1);
++  }
++
++  return true;
++}
++
++bool SandboxLinux::InitializeSandbox(SandboxType sandbox_type,
++                                     SandboxLinux::PreSandboxHook hook,
++                                     const Options& options) {
++  DCHECK(!initialize_sandbox_ran_);
++  initialize_sandbox_ran_ = true;
++
++  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++  const std::string process_type =
++      command_line->GetSwitchValueASCII(switches::kProcessType);
++
++  VLOG(1) << "SandboxLinux::InitializeSandbox: " << process_type;
++
++  // Only one thread is running, pre-initialize if not already done.
++  if (!pre_initialized_)
++    PreinitializeSandbox();
++
++  // Attempt to limit the future size of the address space of the process.
++  LimitAddressSpace(process_type, options);
++
++  if (process_type.empty()) {
++    // XXX use a file for listing pledges of the main process for now
++    // XXX not having the file is not a fatal error
++    FILE *fp;
++    char *s = NULL;
++    size_t len = 0;
++    ssize_t read;
++    fp = fopen("/etc/iridium/pledge.main", "r");
++    if (fp != NULL) {
++      while ((read = getline(&s, &len, fp)) != -1 ) {
++        if (s[strlen(s)-1] == '\n')
++          s[strlen(s)-1] = '\0';
++        if (pledge(s, NULL) == -1) {
++          LOG(ERROR) << "pledge() failed, errno:" << errno;
++          _exit(1);
++        }
++      }
++      fclose(fp);
++    }
++
++  } else if (process_type == switches::kRendererProcess) {
++    // prot_exec needed by v8
++    // flock needed by sqlite3 locking
++    if (pledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL) == -1)
++      goto err;
++  } else if (process_type == switches::kGpuProcess) {
++    if (pledge("stdio drm prot_exec recvfd sendfd tmppath", NULL) == -1)
++      goto err;
++  } else if (process_type == switches::kPpapiPluginProcess) {
++    // prot_exec needed by v8
++    if (pledge("stdio prot_exec recvfd sendfd", NULL) == -1)
++      goto err;
++  } else if (process_type == switches::kUtilityProcess) {
++    if (pledge("stdio rpath cpath wpath fattr sendfd recvfd", NULL) == -1)
++      goto err;
++  } else {
++    LOG(ERROR) << "non-pledge()'d process: " << process_type;
++    return false;
++  }
++
++  return true;
++
++err:
++  LOG(ERROR) << "pledge() failed, errno: " << errno;
++  return false;
++}
++
++bool SandboxLinux::LimitAddressSpace(const std::string& process_type,
++                                     const Options& options) {
++#if !defined(ADDRESS_SANITIZER) && !defined(MEMORY_SANITIZER) && \
++    !defined(THREAD_SANITIZER) && !defined(LEAK_SANITIZER)
++  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++  if (SandboxTypeFromCommandLine(*command_line) == SANDBOX_TYPE_NO_SANDBOX) {
++    return false;
++  }
++  // Limit the address space to 4GB.
++  // This is in the hope of making some kernel exploits more complex and less
++  // reliable. It also limits sprays a little on 64 bits.
++  rlim_t address_space_limit = std::numeric_limits<uint32_t>::max();
++  rlim_t address_space_limit_max = std::numeric_limits<uint32_t>::max();
++
++  if (sizeof(rlim_t) == 8) {
++    // On 64 bits, V8 and possibly others will reserve massive memory ranges and
++    // rely on on-demand paging for allocation.  Unfortunately, even
++    // MADV_DONTNEED ranges count towards RLIMIT_AS so this is not an option.
++    // See crbug.com/169327 for a discussion.
++    // On the GPU process, irrespective of V8, we can exhaust a 4GB address
++    // space under normal usage, see crbug.com/271119.
++    // For now, increase limit to 16GB for renderer, worker, and GPU processes
++    // to accomodate.
++    if (process_type == switches::kRendererProcess ||
++        process_type == switches::kGpuProcess) {
++      address_space_limit = 1ULL << 34;
++      if (options.has_wasm_trap_handler) {
++        // WebAssembly memory objects use a large amount of address space when
++        // trap-based bounds checks are enabled. To accomodate this, we allow
++        // the address space limit to adjust dynamically up to a certain limit.
++        // The limit is currently 4TiB, which should allow enough address space
++        // for any reasonable page. See https://crbug.com/750378.
++        address_space_limit_max = 1ULL << 42;
++      } else {
++        // If we are not using trap-based bounds checks, there's no reason to
++        // allow the address space limit to grow.
++        address_space_limit_max = address_space_limit;
++      }
++    }
++  }
++
++  // By default, add a limit to the VmData memory area that would prevent
++  // allocations that can't be index by an int.
++  rlim_t new_data_segment_max_size = std::numeric_limits<int>::max();
++
++  if (sizeof(rlim_t) == 8) {
++    // On 64 bits, increase the RLIMIT_DATA limit to 8GB.
++    // RLIMIT_DATA did not account for mmap()-ed memory until
++    // https://github.com/torvalds/linux/commit/84638335900f1995495838fe1bd4870c43ec1f6.
++    // When Chrome runs on devices with this patch, it will OOM very easily.
++    // See https://crbug.com/752185.
++    new_data_segment_max_size = 1ULL << 33;
++  }
++
++  bool limited_data =
++      sandbox::ResourceLimits::Lower(RLIMIT_DATA, new_data_segment_max_size);
++
++  // Cache the resource limit before turning on the sandbox.
++  base::SysInfo::AmountOfVirtualMemory();
++
++  return limited_data;
++#else
++  base::SysInfo::AmountOfVirtualMemory();
++  return false;
++#endif  // !defined(ADDRESS_SANITIZER) && !defined(MEMORY_SANITIZER) &&
++        // !defined(THREAD_SANITIZER) && !defined(LEAK_SANITIZER)
++}
++
++}  // namespace service_manager
