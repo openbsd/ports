@@ -1,7 +1,8 @@
-$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.4 2016/09/18 15:05:15 pascal Exp $
---- gcc/config/arm/openbsd.h.orig	Wed Sep 14 15:03:10 2016
-+++ gcc/config/arm/openbsd.h	Sat Sep 17 21:13:46 2016
-@@ -0,0 +1,243 @@
+$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.5 2018/08/11 14:11:01 bcallah Exp $
+Index: gcc/config/arm/openbsd.h
+--- gcc/config/arm/openbsd.h.orig
++++ gcc/config/arm/openbsd.h
+@@ -0,0 +1,244 @@
 +/* Definitions of target machine for GNU compiler, OpenBSD/arm ELF version.
 +   Copyright (C) 2002 Free Software Foundation, Inc.
 +   Contributed by Wasabi Systems, Inc.
@@ -80,7 +81,8 @@ $OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.4 2016/09/18 15:05:15 pascal Exp $
 +   %{!static:-Bdynamic} \
 +   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
-+   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
++   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so} \
++   -L/usr/lib"
 +#endif
 +
 +#undef SUBTARGET_EXTRA_ASM_SPEC
