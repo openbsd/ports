@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2018/02/13 13:47:12 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2018/08/11 07:40:56 bket Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
 DISTNAME =	sslh-v1.19c
+REVISION =	0
 PKGNAME =	${DISTNAME:S/-v/-/}
 CATEGORIES =	security net
 
 HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
 
-MAINTAINER =	Bjorn Ketelaars <bjorn.ketelaars@hydroxide.nl>
+MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
