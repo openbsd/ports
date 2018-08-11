@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/21 03:05:08 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/08/11 12:52:33 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -25,6 +25,7 @@ share/raspberrypi-firmware/boot/overlays/adau7002-simple.dtbo
 share/raspberrypi-firmware/boot/overlays/ads1015.dtbo
 share/raspberrypi-firmware/boot/overlays/ads1115.dtbo
 share/raspberrypi-firmware/boot/overlays/ads7846.dtbo
+share/raspberrypi-firmware/boot/overlays/adv7282m.dtbo
 share/raspberrypi-firmware/boot/overlays/akkordion-iqdacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-digione.dtbo
@@ -54,8 +55,10 @@ share/raspberrypi-firmware/boot/overlays/googlevoicehat-soundcard.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir-tx.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-key.dtbo
+share/raspberrypi-firmware/boot/overlays/gpio-no-irq.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-poweroff.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-shutdown.dtbo
+share/raspberrypi-firmware/boot/overlays/hd44780-lcd.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-amp.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/hifiberry-dacplus.dtbo
@@ -94,6 +97,7 @@ share/raspberrypi-firmware/boot/overlays/midi-uart1.dtbo
 share/raspberrypi-firmware/boot/overlays/mmc.dtbo
 share/raspberrypi-firmware/boot/overlays/mpu6050.dtbo
 share/raspberrypi-firmware/boot/overlays/mz61581.dtbo
+share/raspberrypi-firmware/boot/overlays/ov5647.dtbo
 share/raspberrypi-firmware/boot/overlays/papirus.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-act-led.dtbo
 share/raspberrypi-firmware/boot/overlays/pi3-disable-bt.dtbo
@@ -118,6 +122,7 @@ share/raspberrypi-firmware/boot/overlays/rpi-cirrus-wm5102.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-display.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-ft5406.dtbo
+share/raspberrypi-firmware/boot/overlays/rpi-poe.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-proto.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-sense.dtbo
 share/raspberrypi-firmware/boot/overlays/rpi-tv.dtbo
@@ -144,12 +149,15 @@ share/raspberrypi-firmware/boot/overlays/spi2-2cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-3cs.dtbo
 share/raspberrypi-firmware/boot/overlays/superaudioboard.dtbo
 share/raspberrypi-firmware/boot/overlays/sx150x.dtbo
+share/raspberrypi-firmware/boot/overlays/tc358743-audio.dtbo
+share/raspberrypi-firmware/boot/overlays/tc358743.dtbo
 share/raspberrypi-firmware/boot/overlays/tinylcd35.dtbo
 share/raspberrypi-firmware/boot/overlays/uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/uart1.dtbo
 share/raspberrypi-firmware/boot/overlays/upstream-aux-interrupt.dtbo
 share/raspberrypi-firmware/boot/overlays/upstream.dtbo
 share/raspberrypi-firmware/boot/overlays/vc4-fkms-v3d.dtbo
+share/raspberrypi-firmware/boot/overlays/vc4-kms-kippah-7inch.dtbo
 share/raspberrypi-firmware/boot/overlays/vc4-kms-v3d.dtbo
 share/raspberrypi-firmware/boot/overlays/vga666.dtbo
 share/raspberrypi-firmware/boot/overlays/w1-gpio-pullup.dtbo
