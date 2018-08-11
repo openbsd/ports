@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/16 21:41:24 remi Exp $
+# $OpenBSD: Makefile,v 1.6 2018/08/11 09:28:30 remi Exp $
 
 COMMENT =		synchronize calendars and contacts
 
-MODPY_EGG_VERSION =	0.16.3
+MODPY_EGG_VERSION =	0.16.7
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
 CATEGORIES =		productivity
 
 HOMEPAGE =		https://vdirsyncer.pimutils.org/
 
-MAINTAINER =		Remi Locherer <remi.locherer@relo.ch>
+MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +24,7 @@ BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
-			devel/py-click-log${MODPY_FLAVOR}>=0.2.0 \
+			devel/py-click-log${MODPY_FLAVOR}>=0.3.0 \
 			devel/py-click-threading${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR}
 
