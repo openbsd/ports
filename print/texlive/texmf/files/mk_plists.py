@@ -317,8 +317,7 @@ buildset_top_matter = [
     "share/texmf-local/",
 ]
 buildset_bottom_matter = [
-    "@exec-update if [ -e \"%D/bin/mktexlsr\" ]; " +
-    "then %D/bin/mktexlsr > /dev/null 2>&1; fi"
+    "@tag mktexlsr"
 ]
 buildset_files = list_subtract(collect_files(buildset_specs), never_files)
 buildset_files = sorted(buildset_files + TEXMF_VAR_FILES)
@@ -390,8 +389,7 @@ context_top_matter = [
 context_bottom_matter = [
     "@unexec rm -Rf %D/share/texmf-var/luatex-cache/trees",
     "@exec %D/bin/mtxrun --generate > /dev/null 2>&1",
-    "@exec %D/bin/mktexlsr > /dev/null 2>&1",
-    "@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1",
+    "@tag mktexlsr"
 ]
 context_specs = runspecs(context_pkgs) + manspecs(context_pkgs)
 context_files = list_subtract(collect_files(context_specs), never_files)
@@ -419,8 +417,7 @@ minimal_top_matter = [
     "@pkgpath print/teTeX/texmf",
 ]
 minimal_bottom_matter = [
-    "@exec %D/bin/mktexlsr > /dev/null 2>&1",
-    "@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1",
+    "@tag mktexlsr"
 ]
 minimal_specs = runspecs(minimal_pkgs) + \
     manspecs(minimal_pkgs) + \
@@ -451,8 +448,7 @@ full_top_matter = [
     "@pkgpath print/teTeX/texmf",
 ]
 full_bottom_matter = [
-    "@exec %D/bin/mktexlsr > /dev/null 2>&1",
-    "@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1",
+    "@tag mktexlsr"
 ]
 full_specs = runspecs(full_pkgs) + manspecs(full_pkgs)
 full_files = list_subtract(
@@ -486,8 +482,7 @@ doc_top_matter = [
     "@pkgpath print/teTeX_texmf,-doc",
 ]
 doc_bottom_matter = [
-    "@exec %D/bin/mktexlsr > /dev/null 2>&1",
-    "@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1",
+    "@tag mktexlsr"
 ]
 doc_files = list_subtract(
     collect_files(doc_specs, NO_MAN_INFO_PDFMAN_REGEX), never_files)
