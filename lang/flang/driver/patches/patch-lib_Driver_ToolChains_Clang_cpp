@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Driver_ToolChains_Clang_cpp,v 1.3 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-lib_Driver_ToolChains_Clang_cpp,v 1.4 2018/08/11 04:44:12 bcallah Exp $
 
 Index: lib/Driver/ToolChains/Clang.cpp
 --- lib/Driver/ToolChains/Clang.cpp.orig
@@ -12,7 +12,7 @@ Index: lib/Driver/ToolChains/Clang.cpp
      break;
    case llvm::Triple::x86:
    case llvm::Triple::x86_64:
-@@ -3362,9 +3362,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3369,9 +3369,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -27,7 +27,7 @@ Index: lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -3950,7 +3953,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3957,7 +3960,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -37,7 +37,7 @@ Index: lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4781,6 +4785,18 @@ ObjCRuntime Clang::AddObjCRuntimeArgs(const ArgList &a
+@@ -4788,6 +4792,18 @@ ObjCRuntime Clang::AddObjCRuntimeArgs(const ArgList &a
  #else
        unsigned nonFragileABIVersion = 2;
  #endif
