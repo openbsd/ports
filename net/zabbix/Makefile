@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2018/08/12 13:17:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.149 2018/08/12 13:25:53 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -16,7 +16,9 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-main =		0
+REVISION-main =		1
+REVISION-proxy =	0
+REVISION-server =	0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -70,7 +72,8 @@ CONFIGURE_ARGS =	--enable-server \
 			--with-net-snmp \
 			--with-ldap \
 			--with-jabber="${LOCALBASE}" \
-			--with-ssh2
+			--with-ssh2 \
+			--with-openssl
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 			ac_cv_search___res_query=no
