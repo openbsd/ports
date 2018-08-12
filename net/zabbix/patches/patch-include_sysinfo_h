@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_sysinfo_h,v 1.3 2018/08/12 13:17:05 jasper Exp $
+
+Add ZBX_CPU_STATE_SPIN to monitor CP_SPIN
+
+Index: include/sysinfo.h
+--- include/sysinfo.h.orig
++++ include/sysinfo.h
+@@ -155,7 +155,8 @@ extern int	CONFIG_UNSAFE_USER_PARAMETERS;
+ #define ZBX_CPU_STATE_STEAL	7
+ #define ZBX_CPU_STATE_GCPU	8
+ #define ZBX_CPU_STATE_GNICE	9
+-#define ZBX_CPU_STATE_COUNT	10
++#define	ZBX_CPU_STATE_SPIN	10
++#define ZBX_CPU_STATE_COUNT	11
+ 
+ #define ZBX_PROC_STAT_ALL	0
+ #define ZBX_PROC_STAT_RUN	1

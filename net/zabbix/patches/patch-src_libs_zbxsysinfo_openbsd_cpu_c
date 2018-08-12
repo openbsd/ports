@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_cpu_c,v 1.1 2018/08/12 13:17:05 jasper Exp $
+
+Add ZBX_CPU_STATE_SPIN to monitor CP_SPIN
+
+Index: src/libs/zbxsysinfo/openbsd/cpu.c
+--- src/libs/zbxsysinfo/openbsd/cpu.c.orig
++++ src/libs/zbxsysinfo/openbsd/cpu.c
+@@ -103,6 +103,8 @@ int	SYSTEM_CPU_UTIL(AGENT_REQUEST *request, AGENT_RESU
+ 		state = ZBX_CPU_STATE_IDLE;
+ 	else if (0 == strcmp(tmp, "interrupt"))
+ 		state = ZBX_CPU_STATE_INTERRUPT;
++	else if (0 == strcmp(tmp, "spin"))
++		state = ZBX_CPU_STATE_SPIN;
+ 	else
+ 	{
+ 		SET_MSG_RESULT(result, zbx_strdup(NULL, "Invalid second parameter."));
