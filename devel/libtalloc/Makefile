@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/08/10 10:20:21 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/08/12 22:29:10 jca Exp $
 
 COMMENT=	hierarchical memory pool system with destructors
 
 # Keep in sync with the version bundled in net/samba
-DISTNAME=	talloc-2.1.13
+DISTNAME=	talloc-2.1.14
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS+=	talloc		1.1
