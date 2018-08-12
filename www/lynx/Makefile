@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2018/05/18 14:22:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.42 2018/08/12 08:28:49 fcambus Exp $
 
 V =		2.8.9
-PL =		19
+R =		1
 COMMENT =	text web browser
-DISTNAME =	lynx${V}dev.${PL}
-PKGNAME =	lynx-${V}pl${PL}
+DISTNAME =	lynx${V}rel.${R}
+PKGNAME =	lynx-${V}rel${R}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 

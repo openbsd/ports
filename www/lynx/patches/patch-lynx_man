@@ -1,8 +1,8 @@
-$OpenBSD: patch-lynx_man,v 1.7 2018/05/18 14:22:07 fcambus Exp $
+$OpenBSD: patch-lynx_man,v 1.8 2018/08/12 08:28:49 fcambus Exp $
 Index: lynx.man
 --- lynx.man.orig
 +++ lynx.man
-@@ -617,6 +617,22 @@ flushes the cache on a proxy server
+@@ -618,6 +618,22 @@ flushes the cache on a proxy server
  allows a list of services to be disabled selectively.
  Dashes and underscores in option names can be intermixed.
  The following list is printed if no options are specified.

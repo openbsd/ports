@@ -1,4 +1,4 @@
-$OpenBSD: patch-lynx_cfg,v 1.4 2017/07/28 17:05:29 fcambus Exp $
+$OpenBSD: patch-lynx_cfg,v 1.5 2018/08/12 08:28:49 fcambus Exp $
 Index: lynx.cfg
 --- lynx.cfg.orig
 +++ lynx.cfg
@@ -6,7 +6,7 @@ Index: lynx.cfg
  #
  # Normally we expect you will connect to a remote site, e.g., the Lynx starting
  # site:
--STARTFILE:http://lynx.invisible-island.net/
+-STARTFILE:https://lynx.invisible-island.net/
 +STARTFILE:https://www.openbsd.org/
  #
  # As an alternative, you may want to use a local URL.  A good choice for this is
