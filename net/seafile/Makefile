@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/04 18:47:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/13 20:37:23 kirby Exp $
 
 SUBDIR =
-SUBDIR += ccnet
 SUBDIR += client
 SUBDIR += libsearpc
 SUBDIR += seafile

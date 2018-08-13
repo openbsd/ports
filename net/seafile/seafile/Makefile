@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2018/08/04 12:35:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2018/08/13 20:37:24 kirby Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
-REVISION =              0
 
 SHARED_LIBS =		seafile 3.0
 
-cWANTLIB += c ccnet curl event_core event_extra crypto ffi gio-2.0 glib-2.0
+cWANTLIB += c curl event_core event_extra crypto ffi gio-2.0 glib-2.0
 cWANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson m nghttp2 pcre pthread
 cWANTLIB += searpc sqlite3 ssl uuid z
 
@@ -23,8 +22,10 @@ BUILD_DEPENDS =		devel/libtool \
 RUN_DEPENDS = 		devel/py-simplejson
 LIB_DEPENDS = 		devel/libinotify \
 			databases/sqlite3 \
+			devel/libevent2 \
 			net/curl \
-			net/seafile/ccnet
+			net/seafile/libsearpc \
+			sysutils/e2fsprogs
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

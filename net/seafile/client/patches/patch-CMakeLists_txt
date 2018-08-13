@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/08/13 20:37:24 kirby Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -183,7 +183,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+     ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
+ ENDIF()
+ 
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+     SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
+ ENDIF()
+ 
+@@ -801,7 +801,7 @@ ENDIF()
+ 
+ ## QtBus
+ IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+-  target_link_libraries(seafile-applet Qt5::DBus)
++  target_link_libraries(seafile-applet Qt5DBus)
+ ENDIF()
+ 
+ ### Xcode-related, build as a osx bundle
