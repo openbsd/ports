@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.121 2017/10/16 22:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.122 2018/08/13 14:36:41 rsadowski Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.8.3
+DISTNAME=	lftp-4.8.4
 CATEGORIES=	net
 
 HOMEPAGE=	https://lftp.tech/
@@ -20,8 +20,7 @@ LIB_DEPENDS=	devel/libidn2 \
 		devel/gettext \
 		devel/readline>=6.1p2
 
-MASTER_SITES=	http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
-		http://lftp.yar.ru/ftp/ \
+MASTER_SITES=	http://lftp.yar.ru/ftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/
 
 LIBTOOL_FLAGS=	--tag=disable-shared
@@ -32,8 +31,6 @@ CONFIGURE_ARGS=	--with-openssl \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-NO_TEST=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/lftp
 
