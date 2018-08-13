@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.624 2018/08/08 14:16:20 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.625 2018/08/13 20:43:16 kirby Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1049,6 +1049,7 @@ my $obsolete_reason = {
 	'py-test-capturelog' => 5,
 	'py3-test-capturelog' => 5,
 	'snapdl' => 3,
+	'ccnet' => 6,
 };
 
 # reasons for obsolete packages
