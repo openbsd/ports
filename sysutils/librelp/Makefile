@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/02 16:57:56 remi Exp $
+# $OpenBSD: Makefile,v 1.13 2018/08/13 22:07:13 remi Exp $
 
 COMMENT =	reliable event logging protocol library
 
-DISTNAME =	librelp-1.2.15
+DISTNAME =	librelp-1.2.16
 
-SHARED_LIBS +=  relp                      1.1 # 3.0
+SHARED_LIBS +=  relp                      2.0 # 4.0
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://www.librelp.com/
+HOMEPAGE =	https://www.rsyslog.com/librelp/
 
 MAINTAINER =	Remi Locherer <remi@openbsd.org>
 
@@ -22,8 +22,14 @@ MASTER_SITES =		http://download.rsyslog.com/librelp/
 
 LIB_DEPENDS =		security/gnutls
 
+TEST_DEPENDS =		shells/bash \
+			${LIB_DEPENDS}
+
 SEPARATE_BUILD = 	Yes
 
 CONFIGURE_STYLE =	gnu
+
+pre-test:
+	sed -i s,#!/bin/bash,#!${LOCALBASE}/bin/bash, ${WRKSRC}/tests/*.sh
 
 .include <bsd.port.mk>
