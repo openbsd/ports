@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/23 14:12:22 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/08/13 17:07:08 kirby Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -24,6 +24,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 # so we need to add the autoconf/automake depends. We don't know
 # why this is.
 DPB_PROPERTIES +=	nojunk
+
+# c++11
+COMPILER=		base-clang ports-gcc
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
