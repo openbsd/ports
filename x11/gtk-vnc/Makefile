@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2018/04/23 10:39:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2018/08/13 10:10:26 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.7.2
+GNOME_VERSION=		0.8.0
 
 PKGNAME=		${DISTNAME}
 
@@ -28,14 +28,17 @@ WANTLIB += m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sasl2 tasn1 unistring xcb
 WANTLIB += xcb-render xcb-shm z
 
-MODULES=		x11/gnome
+MODULES=		lang/python \
+			x11/gnome
+
+MODGNOME_TOOLS=		gobject-introspection vala
+MODPY_RUNDEP=		No
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		security/cyrus-sasl2 \
 			security/gnutls \
 			security/libgcrypt \
 			x11/gtk+3
-
-MODGNOME_TOOLS=		gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-examples \
