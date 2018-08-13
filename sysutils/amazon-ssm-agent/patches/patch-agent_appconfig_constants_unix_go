@@ -1,9 +1,9 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.6 2018/06/28 08:19:23 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.7 2018/08/13 14:25:50 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
 +++ agent/appconfig/constants_unix.go
-@@ -21,49 +21,49 @@ import "os"
+@@ -23,49 +23,49 @@ import (
  const (
  
  	// PackageRoot specifies the directory under which packages will be downloaded and installed
@@ -66,7 +66,7 @@ Index: agent/appconfig/constants_unix.go
  
  	// List all plugin names, unfortunately golang doesn't support const arrays of strings
  
-@@ -90,8 +90,8 @@ const (
+@@ -92,8 +92,8 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
@@ -77,7 +77,7 @@ Index: agent/appconfig/constants_unix.go
  
  // AppConfigPath is the path of the AppConfig
  var AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -100,9 +100,9 @@ func init() {
+@@ -102,9 +102,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
@@ -87,5 +87,5 @@ Index: agent/appconfig/constants_unix.go
 -		PowerShellPluginCommandName = "/usr/bin/pwsh"
 +		PowerShellPluginCommandName = "${LOCALBASE}/bin/pwsh"
  	}
+ 
  	// if document-worker is not in the default location, try using the snap installed location
- 	if _, err := os.Stat(DefaultDocumentWorker); err != nil {
