@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/04/23 10:55:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/08/13 09:51:07 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -67,10 +67,10 @@ lib/girepository-1.0/Soup-${API_VERSION}.typelib
 lib/girepository-1.0/SoupGNOME-${API_VERSION}.typelib
 lib/libsoup-${API_VERSION}.a
 lib/libsoup-${API_VERSION}.la
-@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.4_VERSION}
+@lib lib/libsoup-${API_VERSION}.so.${LIBsoup-${API_VERSION}_VERSION}
 lib/libsoup-gnome-${API_VERSION}.a
 lib/libsoup-gnome-${API_VERSION}.la
-@lib lib/libsoup-gnome-${API_VERSION}.so.${LIBsoup-gnome-2.4_VERSION}
+@lib lib/libsoup-gnome-${API_VERSION}.so.${LIBsoup-gnome-${API_VERSION}_VERSION}
 lib/pkgconfig/libsoup-${API_VERSION}.pc
 lib/pkgconfig/libsoup-gnome-${API_VERSION}.pc
 share/gir-1.0/Soup-${API_VERSION}.gir
