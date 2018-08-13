@@ -1,11 +1,0 @@
-$OpenBSD: patch-hacks_deco_c,v 1.6 2013/08/06 19:12:32 ajacoutot Exp $
---- hacks/deco.c.orig	Fri Jul  5 20:59:12 2013
-+++ hacks/deco.c	Tue Jul 23 10:36:16 2013
-@@ -300,7 +300,6 @@ deco_free (Display *dpy, Window window, void *closure)
-   free (st);
- }
- 
--
- static const char *deco_defaults [] = {
-   ".background:		black",
-   ".foreground:		white",

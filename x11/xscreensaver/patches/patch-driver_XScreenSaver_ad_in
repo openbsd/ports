@@ -1,9 +1,10 @@
-$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.14 2014/10/27 20:55:50 landry Exp $
+$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.15 2018/08/13 18:53:50 sthen Exp $
 
-Dont hardcode gnome-terminal, fallback to xterm
+Don't hardcode gnome-terminal, fallback to xterm
 
---- driver/XScreenSaver.ad.in.orig	Mon Oct 27 20:37:40 2014
-+++ driver/XScreenSaver.ad.in	Mon Oct 27 20:40:38 2014
+Index: driver/XScreenSaver.ad.in
+--- driver/XScreenSaver.ad.in.orig
++++ driver/XScreenSaver.ad.in
 @@ -100,8 +100,8 @@ GetViewPortIsFullOfLies: False
  !   Gnome 2.4, 2.6: (yelp can't display man pages, as of 2.6.3)
  !

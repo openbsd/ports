@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2018/06/27 21:04:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.45 2018/08/13 18:53:50 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -85,6 +85,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/extrusion
 @bin libexec/xscreensaver/fadeplot
 @bin libexec/xscreensaver/fiberlamp
+@bin libexec/xscreensaver/filmleader
 @bin libexec/xscreensaver/fireworkx
 @bin libexec/xscreensaver/flame
 @bin libexec/xscreensaver/flipflop
@@ -105,6 +106,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/glcells
 @bin libexec/xscreensaver/gleidescope
 @bin libexec/xscreensaver/glhanoi
+@bin libexec/xscreensaver/glitchpeg
 @bin libexec/xscreensaver/glknots
 @bin libexec/xscreensaver/glmatrix
 @bin libexec/xscreensaver/glplanet
@@ -231,6 +233,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/unicrud
 @bin libexec/xscreensaver/unknownpleasures
 @bin libexec/xscreensaver/vermiculate
+@bin libexec/xscreensaver/vfeedback
 libexec/xscreensaver/vidwhacker
 @bin libexec/xscreensaver/vigilance
 @bin libexec/xscreensaver/voronoi
@@ -320,6 +323,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/extrusion.6
 @man man/man6/fadeplot.6
 @man man/man6/fiberlamp.6
+@man man/man6/filmleader.6
 @man man/man6/fireworkx.6
 @man man/man6/flame.6
 @man man/man6/flipflop.6
@@ -340,6 +344,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/glcells.6
 @man man/man6/gleidescope.6
 @man man/man6/glhanoi.6
+@man man/man6/glitchpeg.6
 @man man/man6/glknots.6
 @man man/man6/glmatrix.6
 @man man/man6/glplanet.6
@@ -464,6 +469,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/unicrud.6
 @man man/man6/unknownpleasures.6
 @man man/man6/vermiculate.6
+@man man/man6/vfeedback.6
 @man man/man6/vidwhacker.6
 @man man/man6/vigilance.6
 @man man/man6/voronoi.6
@@ -578,6 +584,7 @@ share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
+share/xscreensaver/config/filmleader.xml
 share/xscreensaver/config/fireworkx.xml
 share/xscreensaver/config/flame.xml
 share/xscreensaver/config/flipflop.xml
@@ -598,6 +605,7 @@ share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glcells.xml
 share/xscreensaver/config/gleidescope.xml
 share/xscreensaver/config/glhanoi.xml
+share/xscreensaver/config/glitchpeg.xml
 share/xscreensaver/config/glknots.xml
 share/xscreensaver/config/glmatrix.xml
 share/xscreensaver/config/glplanet.xml
@@ -723,6 +731,7 @@ share/xscreensaver/config/twang.xml
 share/xscreensaver/config/unicrud.xml
 share/xscreensaver/config/unknownpleasures.xml
 share/xscreensaver/config/vermiculate.xml
+share/xscreensaver/config/vfeedback.xml
 share/xscreensaver/config/vidwhacker.xml
 share/xscreensaver/config/vigilance.xml
 share/xscreensaver/config/voronoi.xml
