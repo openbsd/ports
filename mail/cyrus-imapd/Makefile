@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2018/05/18 11:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2018/08/13 13:10:52 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.0.7
+V=			3.0.8
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -22,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	yes
 
 WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
-WANTLIB += pthread sasl2 ssl ${COMPILER_LIBCXX} uuid z
+WANTLIB += pthread sasl2 sqlite3 ssl ${COMPILER_LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
 
 MASTER_SITES=		http://cyrusimap.org/releases/ \
@@ -33,7 +33,8 @@ USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		textproc/py-sphinx
 
-LIB_DEPENDS=		devel/jansson \
+LIB_DEPENDS=		databases/sqlite3 \
+			devel/jansson \
 			devel/pcre \
 			security/cyrus-sasl2 \
 			sysutils/e2fsprogs \

@@ -1,11 +1,11 @@
-$OpenBSD: patch-imap_mbexamine_c,v 1.7 2018/05/18 11:16:43 ajacoutot Exp $
+$OpenBSD: patch-imap_mbexamine_c,v 1.8 2018/08/13 13:10:52 ajacoutot Exp $
 
 64 bit time_t
 
 Index: imap/mbexamine.c
 --- imap/mbexamine.c.orig
 +++ imap/mbexamine.c
-@@ -241,7 +241,7 @@ static int do_examine(struct findall_data *data, void 
+@@ -243,7 +243,7 @@ static int do_examine(struct findall_data *data, void 
             mailbox->i.start_offset, mailbox->i.record_size);
      printf("  Number of Messages: %u  Mailbox Size: " QUOTA_T_FMT " bytes  Annotations Size: " QUOTA_T_FMT " bytes\n",
             mailbox->i.exists, mailbox->i.quota_mailbox_used, mailbox->i.quota_annot_used);
@@ -14,7 +14,7 @@ Index: imap/mbexamine.c
             mailbox->i.last_appenddate, ctime(&mailbox->i.last_appenddate));
      printf("  UIDValidity: %u  Last UID: %u\n",
             mailbox->i.uidvalidity, mailbox->i.last_uid);
-@@ -262,8 +262,8 @@ static int do_examine(struct findall_data *data, void 
+@@ -264,8 +264,8 @@ static int do_examine(struct findall_data *data, void 
          }
      }
      printf("\n");
@@ -25,7 +25,7 @@ Index: imap/mbexamine.c
      printf("  Highest Mod Sequence: " MODSEQ_FMT "\n",
             mailbox->i.highestmodseq);
  
-@@ -283,10 +283,10 @@ static int do_examine(struct findall_data *data, void 
+@@ -285,10 +285,10 @@ static int do_examine(struct findall_data *data, void 
              flag = 1;
          }
  

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/05/18 11:16:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/08/13 13:10:52 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
 @pkgpath mail/cyrus-imapd,drac
 @newgroup _cyrus:543
 @newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/cyrus_imapd
 bin/cyradm
 cyrus/
 cyrus/bin/
@@ -288,7 +289,6 @@ share/doc/cyrus-imapd/html/imap/developer/developer-tips.html
 share/doc/cyrus-imapd/html/imap/developer/documentation.html
 share/doc/cyrus-imapd/html/imap/developer/github-guide.html
 share/doc/cyrus-imapd/html/imap/developer/install-xapian.html
-share/doc/cyrus-imapd/html/imap/developer/jmap.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/
 share/doc/cyrus-imapd/html/imap/developer/libraries.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/imclient.html
@@ -423,6 +423,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.5.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.7.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.8.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
 share/doc/cyrus-imapd/html/imap/download/upgrade.html
 share/doc/cyrus-imapd/html/imap/installing.html
@@ -694,7 +695,6 @@ share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
 share/examples/cyrus-imapd/tools/rehash
 share/examples/cyrus-imapd/tools/translatesieve
-@rcscript ${RCDIR}/cyrus_imapd
 @mode 750
 @owner _cyrus
 @group _cyrus
@@ -714,3 +714,6 @@ share/examples/cyrus-imapd/tools/translatesieve
 @sample /var/spool/imap/sync./
 @mode 750
 @sample /var/sieve/
+@mode
+@owner
+@group
