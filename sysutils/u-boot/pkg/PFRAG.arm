@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.13 2018/05/08 13:46:06 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.14 2018/08/14 07:23:54 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -61,12 +61,6 @@ share/u-boot/CHIP/u-boot
 share/u-boot/CHIP/u-boot-sunxi-with-spl.bin
 share/u-boot/CHIP/u-boot.bin
 share/u-boot/CHIP/u-boot.img
-share/u-boot/CHIP_pro/
-share/u-boot/CHIP_pro/sunxi-spl.bin
-share/u-boot/CHIP_pro/u-boot
-share/u-boot/CHIP_pro/u-boot-sunxi-with-spl.bin
-share/u-boot/CHIP_pro/u-boot.bin
-share/u-boot/CHIP_pro/u-boot.img
 share/u-boot/Cubieboard/
 share/u-boot/Cubieboard/sunxi-spl.bin
 share/u-boot/Cubieboard/u-boot
@@ -177,11 +171,6 @@ share/u-boot/novena/SPL
 share/u-boot/novena/u-boot
 share/u-boot/novena/u-boot.bin
 share/u-boot/novena/u-boot.img
-share/u-boot/omap3_beagle/
-share/u-boot/omap3_beagle/MLO
-share/u-boot/omap3_beagle/u-boot
-share/u-boot/omap3_beagle/u-boot.bin
-share/u-boot/omap3_beagle/u-boot.img
 share/u-boot/omap4_panda/
 share/u-boot/omap4_panda/MLO
 share/u-boot/omap4_panda/u-boot
@@ -238,10 +227,6 @@ share/u-boot/orangepi_zero/u-boot.img
 share/u-boot/qemu_arm/
 share/u-boot/qemu_arm/u-boot
 share/u-boot/qemu_arm/u-boot.bin
-share/u-boot/riotboard/
-share/u-boot/riotboard/u-boot
-share/u-boot/riotboard/u-boot.bin
-share/u-boot/riotboard/u-boot.imx
 share/u-boot/rpi_2/
 share/u-boot/rpi_2/u-boot
 share/u-boot/rpi_2/u-boot.bin

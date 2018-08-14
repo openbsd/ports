@@ -1,2 +1,4 @@
-SHA256 (u-boot-2018.09-rc1.tar.bz2) = mOCi9ed1DcpNEfrnTbmX7KScMTnzhF2vHtG2gvvz6GA=
-SIZE (u-boot-2018.09-rc1.tar.bz2) = 12668063
+SHA256 (u-boot-2018.09-rc2.tar.bz2) = zkL3qCJ1q+7nBkksm0EEaR36ow4kZEcGSv3D82JQf+M=
+SHA256 (u-boot-efi_loader_relocate.patch) = UeitrCoZ10KVZwf7IeojibipctMax7d7JsCvO4QweI4=
+SIZE (u-boot-2018.09-rc2.tar.bz2) = 12718552
+SIZE (u-boot-efi_loader_relocate.patch) = 2310
