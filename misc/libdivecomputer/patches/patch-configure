@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/08/14 16:12:55 schwarze Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -14590,7 +14590,7 @@ if eval \${$as_CACHEVAR+:} false; then :
+ else
+ 
+   ax_check_save_flags=$CFLAGS
+-  CFLAGS="$CFLAGS  $flag"
++  CFLAGS="$CFLAGS  $flag -Werror"
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
