@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/08 20:32:16 denis Exp $
+# $OpenBSD: Makefile,v 1.33 2018/08/14 08:36:49 kn Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -22,6 +22,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrender Xv avcodec
 WANTLIB += avutil c crypto cups execinfo m pthread ssl xkbfile
+
+# thread-local storage
+COMPILER =		base-clang ports-gcc ports-clang
 
 MODULES =		devel/cmake
 
