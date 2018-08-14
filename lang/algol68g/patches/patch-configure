@@ -1,11 +1,60 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2017/06/29 15:56:14 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2018/08/14 00:50:17 bcallah Exp $
 
-Enable compiler on OpenBSD.
+Enable compiler on OpenBSD (regenerated configure script)
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2371,10 +2371,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -708,7 +708,6 @@ infodir
+ docdir
+ oldincludedir
+ includedir
+-runstatedir
+ localstatedir
+ sharedstatedir
+ sysconfdir
+@@ -792,7 +791,6 @@ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+-runstatedir='${localstatedir}/run'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+@@ -1045,15 +1043,6 @@ do
+   | -silent | --silent | --silen | --sile | --sil)
+     silent=yes ;;
+ 
+-  -runstatedir | --runstatedir | --runstatedi | --runstated \
+-  | --runstate | --runstat | --runsta | --runst | --runs \
+-  | --run | --ru | --r)
+-    ac_prev=runstatedir ;;
+-  -runstatedir=* | --runstatedir=* | --runstatedi=* | --runstated=* \
+-  | --runstate=* | --runstat=* | --runsta=* | --runst=* | --runs=* \
+-  | --run=* | --ru=* | --r=*)
+-    runstatedir=$ac_optarg ;;
+-
+   -sbindir | --sbindir | --sbindi | --sbind | --sbin | --sbi | --sb)
+     ac_prev=sbindir ;;
+   -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
+@@ -1191,7 +1180,7 @@ fi
+ for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
+ 		datadir sysconfdir sharedstatedir localstatedir includedir \
+ 		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
+-		libdir localedir mandir runstatedir
++		libdir localedir mandir
+ do
+   eval ac_val=\$$ac_var
+   # Remove trailing slashes.
+@@ -1344,7 +1333,6 @@ Fine tuning of the installation directories:
+   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+-  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+   --libdir=DIR            object code libraries [EPREFIX/lib]
+   --includedir=DIR        C header files [PREFIX/include]
+   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
+@@ -2383,10 +2371,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
@@ -16,7 +65,12 @@ Index: configure
  #
  # Platform ids.
  #
-@@ -2593,11 +2589,11 @@ $as_echo "netbsd" >&6; }
+@@ -2601,15 +2585,15 @@ $as_echo "netbsd" >&6; }
+ #
+ # OpenBSD.
+ #
+-*86-*-openbsd* | *86_64-*-openbsd*)
++i386-*-openbsd* | amd64-*-openbsd* | x86_64-*-openbsd* | arm*-*-openbsd* | aarch64-*-openbsd*)
  
  $as_echo "#define HAVE_OPENBSD 1" >>confdefs.h
  
@@ -31,58 +85,29 @@ Index: configure
    ;;
  #
  # Others, untested.
-@@ -2695,7 +2691,7 @@ fi
- 
- { $as_echo "$as_me:${as_lineno-$LINENO}: initialising..." >&5
- $as_echo "$as_me: initialising..." >&6;}
--am__api_version='1.14'
-+am__api_version='1.15'
- 
- # Find a good install program.  We prefer a C program (faster),
- # so one script is as good as another.  But avoid the broken or
-@@ -2867,8 +2863,8 @@ test "$program_suffix" != NONE &&
- ac_script='s/[\\$]/&&/g;s/;s,x,x,$//'
- program_transform_name=`$as_echo "$program_transform_name" | sed "$ac_script"`
- 
--# expand $ac_aux_dir to an absolute path
--am_aux_dir=`cd $ac_aux_dir && pwd`
-+# Expand $ac_aux_dir to an absolute path.
-+am_aux_dir=`cd "$ac_aux_dir" && pwd`
- 
- if test x"${MISSING+set}" != xset; then
-   case $am_aux_dir in
-@@ -2887,7 +2883,7 @@ else
- $as_echo "$as_me: WARNING: 'missing' script is too old or missing" >&2;}
- fi
- 
--if test x"${install_sh}" != xset; then
-+if test x"${install_sh+set}" != xset; then
-   case $am_aux_dir in
-   *\ * | *\	*)
-     install_sh="\${SHELL} '$am_aux_dir/install-sh'" ;;
-@@ -3215,8 +3211,8 @@ MAKEINFO=${MAKEINFO-"${am_missing_run}makeinfo"}
- # <http://lists.gnu.org/archive/html/automake/2012-07/msg00014.html>
- mkdir_p='$(MKDIR_P)'
- 
--# We need awk for the "check" target.  The system "awk" is bad on
--# some platforms.
-+# We need awk for the "check" target (and possibly the TAP driver).  The
-+# system "awk" is bad on some platforms.
- # Always define AMTAR for backward compatibility.  Yes, it's still used
- # in the wild :-(  We should find a proper way to deprecate it ...
- AMTAR='$${TAR-tar}'
-@@ -3275,6 +3271,7 @@ END
- fi
+@@ -18564,287 +18548,6 @@ fi
  
  
-+
- ac_config_headers="$ac_config_headers source/a68g-config.h"
- 
- 
-@@ -18570,220 +18567,6 @@ fi
- 
- done
- 
+ $as_echo "#define HAVE_POSTGRESQL 1" >>confdefs.h
+-
+-  fi
+-fi
+-
+-if test "x$enable_compiler" = "xyes"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: Dynamic loader..." >&5
+-$as_echo "$as_me: Dynamic loader..." >&6;}
+-  for ac_header in dlfcn.h
+-do :
+-  ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
+-if test "x$ac_cv_header_dlfcn_h" = xyes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_DLFCN_H 1
+-_ACEOF
+-
+-fi
+-
+-done
+-
 -  ac_fn_c_check_decl "$LINENO" "dlopen" "ac_cv_have_decl_dlopen" "
 -#include <dlfcn.h>
 -
@@ -297,6 +322,54 @@ Index: configure
 -
 -
 -  fi
-   if test "x$enable_compiler" = "xyes"; then
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
- $as_echo_n "checking for dlopen in -ldl... " >&6; }
+-  if test "x$enable_compiler" = "xyes"; then
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+-$as_echo_n "checking for dlopen in -ldl... " >&6; }
+-if ${ac_cv_lib_dl_dlopen+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char dlopen ();
+-int
+-main ()
+-{
+-return dlopen ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_dl_dlopen=yes
+-else
+-  ac_cv_lib_dl_dlopen=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
+-$as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+-if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBDL 1
+-_ACEOF
+-
+-  LIBS="-ldl $LIBS"
+-
+-fi
+-
+-
+-$as_echo "#define HAVE_DL 1" >>confdefs.h
+ 
+   fi
+ fi
