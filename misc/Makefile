@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2018/08/14 16:21:53 schwarze Exp $
+# $OpenBSD: Makefile,v 1.185 2018/08/14 17:22:49 schwarze Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -99,6 +99,7 @@
      SUBDIR += shared-mime-info
      SUBDIR += spdrs60
      SUBDIR += srcpd
+     SUBDIR += subsurface
      SUBDIR += supercat
      SUBDIR += tapclean
      SUBDIR += teseq
