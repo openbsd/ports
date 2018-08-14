@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2018/08/02 11:39:33 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2018/08/14 10:35:00 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -570,6 +570,9 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_forwarder_helpers/server.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_invalid.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_invalid.pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_invalid.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_tkey.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_tkey.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/dns_tkey.${MODPY_PYOEXTENSION}
