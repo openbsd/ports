@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.625 2018/08/13 20:43:16 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.626 2018/08/14 18:48:15 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1050,6 +1050,7 @@ my $obsolete_reason = {
 	'py3-test-capturelog' => 5,
 	'snapdl' => 3,
 	'ccnet' => 6,
+	'dkim-milter' => 10,
 };
 
 # reasons for obsolete packages
@@ -1064,6 +1065,7 @@ my @msg = (
 	"removed in favor of using languages package manager", #7
 	"requires systemd", #8
 	"256 colors only, suggest scrot or xwd", #9
+	"has been replaced by opendkim", #10
 );
 
 # ->is_base_system($handle, $state):
