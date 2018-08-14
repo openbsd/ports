@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2018/06/01 17:57:43 solene Exp $
+# $OpenBSD: Makefile,v 1.184 2018/08/14 16:21:53 schwarze Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -43,6 +43,7 @@
      SUBDIR += insult
      SUBDIR += jive
      SUBDIR += lfm
+     SUBDIR += libdivecomputer
      SUBDIR += lifelines
      SUBDIR += logjam
      SUBDIR += magicpoint
