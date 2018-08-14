@@ -1,8 +1,25 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/08/14 05:23:08 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -34,14 +34,14 @@ include(GenerateExportHeader)
+ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+ set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
+ 
+-if (CMAKE_GENERATOR STREQUAL "Unix Makefiles")
++if (CMAKE_GENERATOR STREQUAL "Unix Makefiles" OR CMAKE_GENERATOR STREQUAL "Ninja")
+   # create coverage build type
+   set(CMAKE_CONFIGURATION_TYPES ${CMAKE_CONFIGURATION_TYPES} Coverage )
+   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
+                 "Debug" "Release" "MinSizeRel" "RelWithDebInfo" "Coverage" "TestCocoon")
+ endif()
+ 
+-if (CMAKE_GENERATOR STREQUAL "Unix Makefiles")
++if (CMAKE_GENERATOR STREQUAL "Unix Makefiles" OR CMAKE_GENERATOR STREQUAL "Ninja")
+   set(CMAKE_CXX_FLAGS_COVERAGE "${CMAKE_CXX_FLAGS_RELEASE} -fprofile-arcs -ftest-coverage")
+   set(CMAKE_C_FLAGS_COVERAGE "${CMAKE_C_FLAGS_RELEASE} -fprofile-arcs -ftest-coverage")
+   set(CMAKE_SHARED_LINKER_FLAGS_COVERAGE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} -fprofile-arcs -ftest-coverage")
 @@ -100,7 +100,7 @@ set (LIB_SUFFIX "" CACHE STRING "Define suffix of libr
  set( LIB_INSTALL_DIR lib${LIB_SUFFIX} )
  set( PLUGIN_INSTALL_DIR ${LIB_INSTALL_DIR}/grantlee/${Grantlee5_MAJOR_MINOR_VERSION_STRING} )

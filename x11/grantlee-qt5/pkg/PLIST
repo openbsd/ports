@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/21 09:48:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/08/14 05:23:08 rsadowski Exp $
 include/grantlee5/
 include/grantlee5/grantlee/
 include/grantlee5/grantlee/abstractlocalizer.h
@@ -33,7 +33,6 @@ include/grantlee5/grantlee/util.h
 include/grantlee5/grantlee/variable.h
 include/grantlee5/grantlee_templates.h
 include/grantlee5/grantlee_textdocument.h
-lib/cmake/
 lib/cmake/Grantlee5/
 lib/cmake/Grantlee5/Grantlee5Config.cmake
 lib/cmake/Grantlee5/Grantlee5ConfigVersion.cmake
