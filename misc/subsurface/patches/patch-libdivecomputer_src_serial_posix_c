@@ -1,0 +1,13 @@
+$OpenBSD: patch-libdivecomputer_src_serial_posix_c,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+
+Index: libdivecomputer/src/serial_posix.c
+--- libdivecomputer/src/serial_posix.c.orig
++++ libdivecomputer/src/serial_posix.c
+@@ -23,6 +23,7 @@
+ #include "config.h"
+ #endif
+ 
++#include <sys/select.h>
+ #include <stdlib.h> // malloc, free
+ #include <string.h>	// strerror
+ #include <errno.h>	// errno

@@ -1,0 +1,60 @@
+$OpenBSD: patch-desktop-widgets_mainwindow_cpp,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+
+Index: desktop-widgets/mainwindow.cpp
+--- desktop-widgets/mainwindow.cpp.orig
++++ desktop-widgets/mainwindow.cpp
+@@ -244,7 +244,6 @@ MainWindow::MainWindow() : QMainWindow(),
+ 	memset(&copyPasteDive, 0, sizeof(copyPasteDive));
+ 	memset(&what, 0, sizeof(what));
+ 
+-	updateManager = new UpdateManager(this);
+ 	undoStack = new QUndoStack(this);
+ 	QAction *undoAction = undoStack->createUndoAction(this, tr("&Undo"));
+ 	QAction *redoAction = undoStack->createRedoAction(this, tr("&Redo"));
+@@ -1323,14 +1322,6 @@ void MainWindow::on_actionAboutSubsurface_triggered()
+ 	dlg.exec();
+ }
+ 
+-void MainWindow::on_action_Check_for_Updates_triggered()
+-{
+-	if (!updateManager)
+-		updateManager = new UpdateManager(this);
+-
+-	updateManager->checkForUpdates();
+-}
+-
+ void MainWindow::on_actionUserManual_triggered()
+ {
+ #ifndef NO_USERMANUAL
+@@ -1497,31 +1488,11 @@ void MainWindow::readSettings()
+ 
+ 	loadRecentFiles();
+ 	if (firstRun) {
+-		checkSurvey();
+ 		firstRun = false;
+ 	}
+ }
+ 
+ #undef TOOLBOX_PREF_BUTTON
+-
+-void MainWindow::checkSurvey()
+-{
+-	QSettings s;
+-	s.beginGroup("UserSurvey");
+-	if (!s.contains("FirstUse42")) {
+-		QVariant value = QDate().currentDate();
+-		s.setValue("FirstUse42", value);
+-	}
+-	// wait a week for production versions, but not at all for non-tagged builds
+-	int waitTime = 7;
+-	QDate firstUse42 = s.value("FirstUse42").toDate();
+-	if (run_survey || (firstUse42.daysTo(QDate().currentDate()) > waitTime && !s.contains("SurveyDone"))) {
+-		if (!survey)
+-			survey = new UserSurvey(this);
+-		survey->show();
+-	}
+-	s.endGroup();
+-}
+ 
+ void MainWindow::writeSettings()
+ {

@@ -1,0 +1,68 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -20,6 +20,8 @@ set(CMAKE_MODULE_PATH
+ )
+ 
+ set(CMAKE_AUTOMOC ON)
++set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
++
+ include(MacroOutOfSourceBuild)
+ MACRO_ENSURE_OUT_OF_SOURCE_BUILD(
+     "We don't support building in source, please create a build folder elsewhere and remember to run git clean -xdf to remove temporary files created by CMake."
+@@ -48,6 +50,9 @@ option(USE_WEBENGINE "Use QWebEngine instead of QWebKi
+ # Options regarding What should we build on subsurface
+ option(MAKE_TESTS "Make the tests" ON)
+ 
++include_directories(${CMAKE_SOURCE_DIR}/libdivecomputer/built/include)
++include_directories(${CMAKE_INSTALL_PREFIX}/include/grantlee5)
++
+ SET(SUBSURFACE_TARGET_EXECUTABLE "DesktopExecutable" CACHE STRING "The type of application, DesktopExecutable or MobileExecutable")
+ LIST(APPEND SUBSURFACE_ACCEPTED_EXECUTABLES  "DesktopExecutable" "MobileExecutable")
+ SET_PROPERTY(CACHE SUBSURFACE_TARGET_EXECUTABLE PROPERTY STRINGS ${SUBSURFACE_ACCEPTED_EXECUTABLES})
+@@ -122,7 +127,6 @@ include(pkgconfig_helper)
+ # if you think a module miss anything, take a look on the specific
+ # module file.
+ include(HandleFindGit2)
+-include(HandleFindLibDiveComputer)
+ if(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "DesktopExecutable")
+         include(HandleFindGrantlee)
+ 	include(HandleUserManual)
+@@ -260,7 +264,7 @@ if(BLESUPPORT)
+ endif()
+ 
+ #set up the subsurface_link_libraries variable
+-set(SUBSURFACE_LINK_LIBRARIES ${SUBSURFACE_LINK_LIBRARIES} ${LIBDIVECOMPUTER_LIBRARIES} ${LIBGIT2_LIBRARIES} ${LIBUSB_LIBRARIES})
++set(SUBSURFACE_LINK_LIBRARIES ${SUBSURFACE_LINK_LIBRARIES} ${LIBGIT2_LIBRARIES} ${LIBUSB_LIBRARIES})
+ qt5_add_resources(SUBSURFACE_RESOURCES subsurface.qrc map-widget/qml/map-widget.qrc)
+ 
+ # include translations
+@@ -323,6 +327,9 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
+                 add_executable(${SUBSURFACE_TARGET} MACOSX_BUNDLE WIN32 ${SUBSURFACE_PKG} ${SUBSURFACE_APP} ${SUBSURFACE_RESOURCES})
+         endif()
+ 
++	add_library(subsurface_dc STATIC IMPORTED)
++	set_target_properties(subsurface_dc PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/libdivecomputer/built/lib/libdivecomputer.a)
++
+ 	if(FBSUPPORT)
+ 		set(FACEBOOK_INTEGRATION facebook_integration)
+ 		add_dependencies(facebook_integration subsurface_generated_ui)
+@@ -336,6 +343,7 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
+ 		subsurface_statistics
+ 		subsurface_models_desktop
+ 		subsurface_corelib
++		subsurface_dc
+ 		${SUBSURFACE_LINK_LIBRARIES}
+ 	)
+ 	add_dependencies(subsurface_desktop_preferences subsurface_generated_ui)
+@@ -503,7 +511,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ 		COMMAND ${MAKENSIS} ${WINDOWSSTAGING}/subsurface.nsi
+ 		DEPENDS fake_install
+ 	)
+-elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ 	# the syntax is odd, but this searches for libqtgeoservices_googlemaps.so
+ 	# in the filesystem below our install-root
+ 	# different Linux flavors put the plugin in different directories

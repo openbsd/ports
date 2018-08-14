@@ -1,0 +1,41 @@
+$OpenBSD: patch-core_linux_c,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+
+Index: core/linux.c
+--- core/linux.c.orig
++++ core/linux.c
+@@ -112,12 +112,19 @@ int enumerate_devices(device_callback_t callback, void
+ 	if (dc_type != DC_TYPE_UEMIS) {
+ 		const char *dirname = "/dev";
+ 		const char *patterns[] = {
++			"ttyU*",
++			"ttyC*",
++			NULL
++		};
++#if 0
++		const char *patterns[] = {
+ 			"ttyUSB*",
+ 			"ttyS*",
+ 			"ttyACM*",
+ 			"rfcomm*",
+ 			NULL
+ 		};
++#endif
+ 
+ 		dp = opendir(dirname);
+ 		if (dp == NULL) {
+@@ -143,6 +150,7 @@ int enumerate_devices(device_callback_t callback, void
+ 		}
+ 		closedir(dp);
+ 	}
++#if 0
+ 	if (dc_type != DC_TYPE_SERIAL) {
+ 		int num_uemis = 0;
+ 		file = fopen("/proc/mounts", "r");
+@@ -177,6 +185,7 @@ int enumerate_devices(device_callback_t callback, void
+ 		if (num_uemis == 1 && entries == 1) /* if we found only one and it's a mounted Uemis, pick it */
+ 			index = 0;
+ 	}
++#endif
+ 	return index;
+ }
+ 

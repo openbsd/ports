@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -45,6 +45,7 @@ macro(TEST NAME FILE)
+ 	target_link_libraries(
+ 		${NAME}
+ 		subsurface_corelib
++		subsurface_dc
+ 		RESOURCE_LIBRARY
+ 		${QT_TEST_LIBRARIES}
+ 		${SUBSURFACE_LINK_LIBRARIES}
