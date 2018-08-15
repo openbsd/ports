@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2018/05/20 10:49:38 matthieu Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2018/08/15 12:09:25 matthieu Exp $
 
 Find X and Tcl includes
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -292,6 +292,7 @@ TCL_STUB_LIB_SPEC = @TCL_STUB_LIB_SPEC@
+@@ -303,6 +303,7 @@ TCL_STUB_LIB_SPEC = @TCL_STUB_LIB_SPEC@
  TCL_VERSION = @TCL_VERSION@
  TK_BIN_DIR = @TK_BIN_DIR@
  TK_INCLUDE_SPEC = @TK_INCLUDE_SPEC@
@@ -13,7 +13,7 @@ Index: src/Makefile.in
  TK_LIB_FILE = @TK_LIB_FILE@
  TK_LIB_FLAG = @TK_LIB_FLAG@
  TK_LIB_SPEC = @TK_LIB_SPEC@
-@@ -377,7 +378,7 @@ AM_CPPFLAGS = ${TCL_INCLUDE_SPEC} -DELTCLSH_DATA='"${d
+@@ -389,7 +390,7 @@ AM_CPPFLAGS = ${TCL_INCLUDE_SPEC} -DELTCLSH_DATA='"${d
  	-DELTCLSH_VERSION='"${PACKAGE_VERSION}"'
  eltclsh_LDFLAGS = ${RUNTIME_PATH}
  eltclsh_LDADD = libcommon.la ${TCL_LIB_SPEC}

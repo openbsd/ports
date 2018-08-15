@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2018/05/20 10:49:38 matthieu Exp $
+# $OpenBSD: Makefile,v 1.32 2018/08/15 12:09:25 matthieu Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
-DISTNAME =	eltclsh-1.16
+DISTNAME =	eltclsh-1.17
 CATEGORIES =	lang x11
 
 MASTER_SITES =	https://www.openrobots.org/distfiles/eltclsh/
@@ -14,11 +14,11 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB += ${MODTK_WANTLIB}
-WANTLIB += X11 Xext Xft Xrender Xss c edit expat fontconfig freetype m
-WANTLIB += termcap xcb z
+WANTLIB =		X11 Xext Xft Xrender Xss c curses edit expat \
+			fontconfig freetype m pthread xcb z ${MODTK_WANTLIB}
 
-MODULES +=	x11/tk
+MODULES =		x11/tk
+MODTK_VERSION =		8.6
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
@@ -34,6 +34,9 @@ FAKE_FLAGS =		ELTCL_LIBRARY=${WRKINST}${MODTCL_TCLDIR}/eltcl
 NO_TEST =		Yes
 
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
+
+CFLAGS +=		-pthread
+LDFLAGS +=		-lpthread
 
 post-install:
 	rm ${WRKINST}${MODTCL_TCLDIR}/libeltclsh.la
