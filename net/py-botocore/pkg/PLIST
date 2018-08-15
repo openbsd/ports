@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.92 2018/08/13 14:15:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.93 2018/08/15 14:04:09 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -191,6 +191,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2017-10-30/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-06-18/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-06-18/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-06-18/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-06-18/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-06-18/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/examples-1.json
