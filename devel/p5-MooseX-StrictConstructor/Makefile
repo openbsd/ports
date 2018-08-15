@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/09 11:04:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/15 09:55:24 fcambus Exp $
 
 COMMENT =	blow up object constructors on unknown attributes
 
@@ -16,7 +16,8 @@ MODULES =	cpan
 RUN_DEPENDS =	devel/p5-Moose \
 		devel/p5-namespace-autoclean
 
-TEST_DEPENDS =	devel/p5-Moose \
+TEST_DEPENDS =	devel/p5-Moo \
+		devel/p5-Moose \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Needs
 
