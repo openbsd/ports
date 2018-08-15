@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/23 07:15:03 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/15 07:07:52 rpointel Exp $
 bin/vba_extract.py${MODPY_BIN_SUFFIX}
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}chart.${MODPY_PYC_MAGIC_TAG}pyc
