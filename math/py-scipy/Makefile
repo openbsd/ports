@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/07/01 23:14:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.34 2018/08/15 14:55:22 ajacoutot Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.6.0 \
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
-MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/amd -I${LOCALBASE}/include"
+MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
 
 do-test: fake
