@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2018/04/24 18:20:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2018/08/15 12:57:18 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
-V=			3.0.3
+V=			3.0.4
 SUBST_VARS=		V
 DISTNAME=		libical-${V}
-
-REVISION-main =		0
-REVISION-glib =		0
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		libical-glib-${V}
 
-SHARED_LIBS +=  ical                 4.0
+SHARED_LIBS +=  ical                 4.1
 SHARED_LIBS +=  icalss               4.0
 SHARED_LIBS +=  icalvcal             3.0
 SHARED_LIBS +=  ical_cxx             1.0
