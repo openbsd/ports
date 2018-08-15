@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.22 2018/01/11 22:00:07 nigel Exp $
+# $OpenBSD: Makefile,v 1.23 2018/08/15 13:20:21 ajacoutot Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
 
-V=			8.16.0.21
+V=			8.16.0.28
 DISTNAME =		sendmail.${V}
 PKGNAME-main =		sendmail-${V}
 PKGNAME-libmilter =	libmilter-${V}
 FULLPKGNAME-libmilter =	libmilter-${V}
 FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
-
-REVISION-main=		3
-REVISION-libmilter=	2
 
 SHARED_LIBS =		milter	4.0
 
@@ -55,7 +52,7 @@ SUBST_VARS +=		LOCALBASE WANT_LDAP WANT_LOCALBASE WANT_SMTP_AUTH
 .if ${FLAVOR:Mldap}
 WANT_LDAP =		Yes
 WANT_LOCALBASE =	Yes
-WANTLIB-main +=		ldap lber-2.4
+WANTLIB-main +=		ldap lber
 LIB_DEPENDS-main +=	databases/openldap,-main
 .endif
 
