@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2018/08/15 22:15:02 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To run the game you need the original Quake 1 data files
+(must be purchased with the game):
+
+1) Create a directory called quake
+
+2) Under the 'quake' directory create the 'id1' directory
+
+3) Copy the original Quake 1 files into that id1 directory.
+   These files are usually pak0.pak, pak1.pak and files under 'glquake'.
+   If files are uppercase, they must be renamed to lowercase.
+
+4) Run 'ezquake' from the quake directory you created in step 1.
