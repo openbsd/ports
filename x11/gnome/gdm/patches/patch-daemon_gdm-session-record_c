@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.9 2017/11/05 02:17:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.10 2018/08/15 13:49:01 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
@@ -117,22 +117,22 @@ Index: daemon/gdm-session-record.c
  void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-@@ -214,8 +305,9 @@ gdm_session_record_login (GPid                  sessio
- #if defined(HAVE_GETUTXENT)
-         g_debug ("Adding or updating utmp record for login");
+@@ -216,8 +307,9 @@ gdm_session_record_login (GPid                  sessio
+         setutxent();
          pututxline (&session_record);
+         endutxent();
 -#elif defined(HAVE_LOGIN)
 -	login (&session_record);
 +#else
 +        if (strcmp (session_record.ut_name, "(unknown)") != 0)
-+            write_utmp_login_manually (&session_record);
++	    write_utmp_login_manually (&session_record);
  #endif
  }
  
-@@ -257,8 +349,8 @@ gdm_session_record_logout (GPid                  sessi
- #if defined(HAVE_GETUTXENT)
-         g_debug ("Adding or updating utmp record for logout");
+@@ -261,8 +353,8 @@ gdm_session_record_logout (GPid                  sessi
+         setutxent();
          pututxline (&session_record);
+         endutxent();
 -#elif defined(HAVE_LOGOUT)
 -        logout (session_record.ut_line);
 +#else

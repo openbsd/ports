@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.272 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.273 2018/08/15 13:49:00 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.28.2
-REVISION=		1
+GNOME_VERSION=		3.28.3
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -19,11 +18,11 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl ltdl
-WANTLIB += m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread util vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm z fribidi
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += intl ltdl m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread util vorbis vorbisfile xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=		x11/gnome \
 			devel/dconf

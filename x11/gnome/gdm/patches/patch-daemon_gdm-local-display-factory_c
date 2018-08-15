@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.8 2017/11/05 02:17:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-local-display-factory_c,v 1.9 2018/08/15 13:49:00 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -92,7 +92,7 @@ Index: daemon/gdm-local-display-factory.c
  
  static void
  on_display_added (GdmDisplayStore        *display_store,
-@@ -576,6 +586,7 @@ static gboolean
+@@ -569,6 +579,7 @@ static gboolean
  gdm_local_display_factory_start (GdmDisplayFactory *base_factory)
  {
          GdmLocalDisplayFactory *factory = GDM_LOCAL_DISPLAY_FACTORY (base_factory);
@@ -100,7 +100,7 @@ Index: daemon/gdm-local-display-factory.c
          GdmDisplayStore *store;
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
-@@ -594,8 +605,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
+@@ -587,8 +598,17 @@ gdm_local_display_factory_start (GdmDisplayFactory *ba
                                   factory,
                                   0);
  
@@ -120,7 +120,7 @@ Index: daemon/gdm-local-display-factory.c
  }
  
  static gboolean
-@@ -606,7 +626,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
+@@ -599,7 +619,9 @@ gdm_local_display_factory_stop (GdmDisplayFactory *bas
  
          g_return_val_if_fail (GDM_IS_LOCAL_DISPLAY_FACTORY (factory), FALSE);
  
@@ -130,7 +130,7 @@ Index: daemon/gdm-local-display-factory.c
  
          store = gdm_display_factory_get_display_store (GDM_DISPLAY_FACTORY (factory));
  
-@@ -762,7 +784,9 @@ gdm_local_display_factory_finalize (GObject *object)
+@@ -755,7 +777,9 @@ gdm_local_display_factory_finalize (GObject *object)
  
          g_hash_table_destroy (factory->priv->used_display_numbers);
  
