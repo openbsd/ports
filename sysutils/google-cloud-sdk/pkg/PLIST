@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.86 2018/08/13 11:18:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.87 2018/08/15 12:54:08 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -400,14 +400,14 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/apis.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/apis.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/attestors.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/attestors.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/containeranalysis.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/containeranalysis.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/iam.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/iam.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/policies.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/policies.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz/util.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz_util.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/container/binauthz_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/constants.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/constants.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/container/images/
@@ -1628,6 +1628,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/application.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/application.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/bindings.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/bindings.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/bindings_vi.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/bindings_vi.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/browser.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/browser.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/interactive/completer.py
@@ -3156,6 +3158,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runti
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig/v1beta1/runtimeconfig_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/runtimeconfig_v1beta1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/serverless_v1alpha1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/serverless_v1alpha1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/serverless_v1alpha1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless/v1alpha1/serverless_v1alpha1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/serverless_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/servicemanagement/__init__.pyc
@@ -9043,6 +9058,8 @@ google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2511.py
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2511.pyc
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2560.py
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2560.pyc
+google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2986.py
+google-cloud-sdk/lib/third_party/pyasn1_modules/rfc2986.pyc
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc3279.py
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc3279.pyc
 google-cloud-sdk/lib/third_party/pyasn1_modules/rfc3280.py
