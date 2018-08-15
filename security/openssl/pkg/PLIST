@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/11/02 22:52:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/08/15 13:19:00 sthen Exp $
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/
@@ -1432,6 +1432,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/SSL_get_servername.3
 @man lib/eopenssl/man/man3/SSL_get_servername_type.3
 @man lib/eopenssl/man/man3/SSL_get_session.3
+@man lib/eopenssl/man/man3/SSL_get_shared_ciphers.3
 @man lib/eopenssl/man/man3/SSL_get_shared_curve.3
 @man lib/eopenssl/man/man3/SSL_get_shutdown.3
 @man lib/eopenssl/man/man3/SSL_get_ssl_method.3
