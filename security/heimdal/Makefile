@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/26 07:45:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2018/08/15 14:21:29 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -10,8 +10,9 @@ DISTNAME=		heimdal-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
+
 REVISION-main=		1
-REVISION-libs=		0
+REVISION-libs=		1
 
 CATEGORIES=		security net
 
