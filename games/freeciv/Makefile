@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.119 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.120 2018/08/15 11:59:55 chrisz Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.5.11
+VERSION=	2.6.0
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
-REVISION-main=	2
-REVISION-client=1
 
 CATEGORIES=	games
 
@@ -22,15 +20,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
-cWANTLIB += bz2 c crypto curl iconv intl lzma m nghttp2 pthread ssl z
+cWANTLIB += bz2 c crypto curl iconv intl lzma m nghttp2 pthread sqlite3 ssl z
 cWANTLIB += ${MODLUA_WANTLIB}
 
 WANTLIB-main += curses readline ${cWANTLIB}
 
-WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xtst
+WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-client += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB-client += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-client += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-client += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB-client += harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB-client += pixman-1 png xcb xcb-render xcb-shm ${cWANTLIB}
@@ -38,12 +36,14 @@ WANTLIB-client += pixman-1 png xcb xcb-render xcb-shm ${cWANTLIB}
 WANTLIB-share=
 
 MODULES=	lang/lua
-MODLUA_VERSION = 5.2
+MODLUA_VERSION = 5.3
 
 BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS-main=	archivers/xz \
+			databases/sqlite3 \
 			net/curl
 LIB_DEPENDS-client=	archivers/xz \
+			databases/sqlite3 \
 			net/curl \
 			x11/gtk+3
 
@@ -71,7 +71,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=	--with-ggz-client=no \
 		--enable-mapimg=no \
-		--enable-sys-lua
+		--enable-sys-lua \
+		--enable-fcdb=sqlite3
 
 MULTI_PACKAGES=	-main -share
 

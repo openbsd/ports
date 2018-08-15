@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2018/08/15 11:59:55 chrisz Exp $
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
@@ -24,10 +24,11 @@ share/doc/freeciv/HOWTOPLAY
 share/doc/freeciv/INSTALL
 share/doc/freeciv/INSTALL.Cygwin
 share/doc/freeciv/NEWS
-share/doc/freeciv/NEWS-2.5
+share/doc/freeciv/NEWS-2.6
 share/doc/freeciv/README.AI
 share/doc/freeciv/README.AI_modules
-share/doc/freeciv/README.SDLClient
+share/doc/freeciv/README.achievements
+share/doc/freeciv/README.actions
 share/doc/freeciv/README.agents
 share/doc/freeciv/README.attributes
 share/doc/freeciv/README.delta
@@ -35,11 +36,9 @@ share/doc/freeciv/README.effects
 share/doc/freeciv/README.fcdb
 share/doc/freeciv/README.governor
 share/doc/freeciv/README.graphics
+share/doc/freeciv/README.msys2
 share/doc/freeciv/README.nations
 share/doc/freeciv/README.packaging
-share/doc/freeciv/README.ruleset_civ2civ3
-share/doc/freeciv/README.ruleset_experimental
-share/doc/freeciv/README.ruleset_multiplayer
 share/doc/freeciv/README.rulesets
 share/doc/freeciv/README.scorelog
 share/doc/freeciv/README.sound

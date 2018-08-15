@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.17 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST-client,v 1.18 2018/08/15 11:59:55 chrisz Exp $
 @conflict freeciv-share-<2
 @conflict freeciv-server-<2.4.4
 @pkgpath games/freeciv,-client,gtk2
@@ -9,6 +9,7 @@
 @comment lib/libfreeciv.la
 @man man/man6/freeciv-client.6
 @man man/man6/freeciv-gtk2.6
+@man man/man6/freeciv-gtk3.22.6
 @comment @man man/man6/freeciv-gtk3.6
 @man man/man6/freeciv-modpack.6
 @comment @man man/man6/freeciv-mp-cli.6
@@ -16,13 +17,55 @@
 @comment man/man6/freeciv-mp-gtk3.6
 @comment man/man6/freeciv-mp-qt.6
 @comment @man man/man6/freeciv-qt.6
+@man man/man6/freeciv-ruledit.6
 @comment @man man/man6/freeciv-sdl.6
+@man man/man6/freeciv-sdl2.6
 @comment @man man/man6/freeciv-xaw.6
 share/appdata/
 share/appdata/freeciv-gtk3.appdata.xml
 share/appdata/freeciv-mp-gtk3.appdata.xml
 share/applications/freeciv-mp-gtk3.desktop
 share/applications/freeciv.desktop
+share/freeciv/amplio2/
+share/freeciv/amplio2.tilespec
+share/freeciv/amplio2/activities.png
+share/freeciv/amplio2/activities.spec
+share/freeciv/amplio2/bases.png
+share/freeciv/amplio2/bases.spec
+share/freeciv/amplio2/cities.png
+share/freeciv/amplio2/cities.spec
+share/freeciv/amplio2/explosions.png
+share/freeciv/amplio2/explosions.spec
+share/freeciv/amplio2/fog.png
+share/freeciv/amplio2/fog.spec
+share/freeciv/amplio2/grid.png
+share/freeciv/amplio2/grid.spec
+share/freeciv/amplio2/hills.png
+share/freeciv/amplio2/hills.spec
+share/freeciv/amplio2/maglev.png
+share/freeciv/amplio2/maglev.spec
+share/freeciv/amplio2/mountains.png
+share/freeciv/amplio2/mountains.spec
+share/freeciv/amplio2/nuke.png
+share/freeciv/amplio2/nuke.spec
+share/freeciv/amplio2/ocean.png
+share/freeciv/amplio2/ocean.spec
+share/freeciv/amplio2/select-alpha.png
+share/freeciv/amplio2/select.spec
+share/freeciv/amplio2/terrain1.png
+share/freeciv/amplio2/terrain1.spec
+share/freeciv/amplio2/terrain2.png
+share/freeciv/amplio2/terrain2.spec
+share/freeciv/amplio2/tiles.png
+share/freeciv/amplio2/tiles.spec
+share/freeciv/amplio2/units.png
+share/freeciv/amplio2/units.spec
+share/freeciv/amplio2/upkeep.png
+share/freeciv/amplio2/upkeep.spec
+share/freeciv/amplio2/veterancy.png
+share/freeciv/amplio2/veterancy.spec
+share/freeciv/amplio2/water.png
+share/freeciv/amplio2/water.spec
 share/freeciv/buildings/
 share/freeciv/buildings/airport.png
 share/freeciv/buildings/aqueduct.png
@@ -36,6 +79,7 @@ share/freeciv/buildings/city_walls.png
 share/freeciv/buildings/coastal_defense.png
 share/freeciv/buildings/colosseum.png
 share/freeciv/buildings/courthouse.png
+share/freeciv/buildings/ecclesiastical_palace.png
 share/freeciv/buildings/factory.png
 share/freeciv/buildings/granary.png
 share/freeciv/buildings/harbor.png
@@ -64,6 +108,10 @@ share/freeciv/buildings/super_highways.png
 share/freeciv/buildings/supermarket.png
 share/freeciv/buildings/temple.png
 share/freeciv/buildings/university.png
+share/freeciv/cimpletoon/
+share/freeciv/cimpletoon.tilespec
+share/freeciv/cimpletoon/orient_units.png
+share/freeciv/cimpletoon/orient_units.spec
 share/freeciv/default.serv
 share/freeciv/flags/
 share/freeciv/flags/abkhazia-large.png
@@ -150,6 +198,10 @@ share/freeciv/flags/anhalt-large.png
 share/freeciv/flags/anhalt-shield-large.png
 share/freeciv/flags/anhalt-shield.png
 share/freeciv/flags/anhalt.png
+share/freeciv/flags/animals-large.png
+share/freeciv/flags/animals-shield-large.png
+share/freeciv/flags/animals-shield.png
+share/freeciv/flags/animals.png
 share/freeciv/flags/anishinaabe-large.png
 share/freeciv/flags/anishinaabe-shield-large.png
 share/freeciv/flags/anishinaabe-shield.png
@@ -2330,6 +2382,7 @@ share/freeciv/flags/zulu-large.png
 share/freeciv/flags/zulu-shield-large.png
 share/freeciv/flags/zulu-shield.png
 share/freeciv/flags/zulu.png
+share/freeciv/gtk3_menus.xml
 share/freeciv/helpdata.txt
 share/freeciv/hex2t/
 share/freeciv/hex2t.tilespec
@@ -2345,6 +2398,48 @@ share/freeciv/hex2t/tiles.png
 share/freeciv/hex2t/tiles.spec
 share/freeciv/hex2t/unitcost.png
 share/freeciv/hex2t/unitcost.spec
+share/freeciv/hexemplio/
+share/freeciv/hexemplio.tilespec
+share/freeciv/hexemplio/activities.png
+share/freeciv/hexemplio/activities.spec
+share/freeciv/hexemplio/bases.png
+share/freeciv/hexemplio/bases.spec
+share/freeciv/hexemplio/cities.png
+share/freeciv/hexemplio/cities.spec
+share/freeciv/hexemplio/embellishments.png
+share/freeciv/hexemplio/embellishments.spec
+share/freeciv/hexemplio/forests.png
+share/freeciv/hexemplio/forests.spec
+share/freeciv/hexemplio/grid.png
+share/freeciv/hexemplio/grid.spec
+share/freeciv/hexemplio/hills.png
+share/freeciv/hexemplio/hills.spec
+share/freeciv/hexemplio/mountains.png
+share/freeciv/hexemplio/mountains.spec
+share/freeciv/hexemplio/rivers.png
+share/freeciv/hexemplio/rivers.spec
+share/freeciv/hexemplio/roads-maglevs.png
+share/freeciv/hexemplio/roads-maglevs.spec
+share/freeciv/hexemplio/roads-rails.png
+share/freeciv/hexemplio/roads-rails.spec
+share/freeciv/hexemplio/roads.png
+share/freeciv/hexemplio/roads.spec
+share/freeciv/hexemplio/select.png
+share/freeciv/hexemplio/select.spec
+share/freeciv/hexemplio/terrain.png
+share/freeciv/hexemplio/terrain.spec
+share/freeciv/hexemplio/tiles.png
+share/freeciv/hexemplio/tiles.spec
+share/freeciv/hexemplio/unitcost.png
+share/freeciv/hexemplio/unitcost.spec
+share/freeciv/hexemplio/unitextras.png
+share/freeciv/hexemplio/unitextras.spec
+share/freeciv/hexemplio/water1.png
+share/freeciv/hexemplio/water1.spec
+share/freeciv/hexemplio/water2.png
+share/freeciv/hexemplio/water2.spec
+share/freeciv/hexemplio/water3.png
+share/freeciv/hexemplio/water3.spec
 share/freeciv/isophex/
 share/freeciv/isophex.tilespec
 share/freeciv/isophex/darkness.png
@@ -2396,6 +2491,8 @@ share/freeciv/misc/cursors.png
 share/freeciv/misc/cursors.spec
 share/freeciv/misc/editor.png
 share/freeciv/misc/editor.spec
+share/freeciv/misc/events.png
+share/freeciv/misc/events.spec
 share/freeciv/misc/flags-large.spec
 share/freeciv/misc/flags.spec
 share/freeciv/misc/governments.png
@@ -2419,6 +2516,13 @@ share/freeciv/misc/techs.spec
 share/freeciv/misc/treaty.png
 share/freeciv/misc/treaty.spec
 share/freeciv/misc/wonders-large.spec
+share/freeciv/override/flags-large.spec
+share/freeciv/override/flags.spec
+share/freeciv/override/shields-large.spec
+share/freeciv/override/shields.spec
+share/freeciv/stdmusic/
+share/freeciv/stdmusic.musicspec
+share/freeciv/stdmusic/CullamBruce-Lockhart--Dawning_Fanfare.ogg
 share/freeciv/stdsounds/
 share/freeciv/stdsounds.soundspec
 share/freeciv/stdsounds/LrgCan.ogg
@@ -2436,6 +2540,7 @@ share/freeciv/stdsounds/foot3.ogg
 share/freeciv/stdsounds/illegal.ogg
 share/freeciv/stdsounds/inh2o.ogg
 share/freeciv/stdsounds/metbrk.ogg
+share/freeciv/stdsounds/wakeup.ogg
 share/freeciv/stdsounds/wall01.ogg
 share/freeciv/stdsounds/woodbrk.ogg
 share/freeciv/themes/
@@ -2576,6 +2681,7 @@ share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/Toolbar/toolbar.png
 share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/bg.png
 share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/gtk.css
 share/freeciv/themes/gui-gtk-3.0/Freeciv/gtk-3.0/menubar.css
+share/freeciv/toonhex.tilespec
 share/freeciv/trident/
 share/freeciv/trident.tilespec
 share/freeciv/trident/auto_ll.spec
@@ -2640,6 +2746,42 @@ share/icons/hicolor/48x48/apps/freeciv-client.png
 share/icons/hicolor/48x48/apps/freeciv-modpack.png
 share/icons/hicolor/64x64/apps/freeciv-client.png
 share/icons/hicolor/64x64/apps/freeciv-modpack.png
+share/locale/ar/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/bg/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ca/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/cs/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/da/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/de/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/el/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/en_GB/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/eo/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/es/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/et/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/fa/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/fi/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/fr/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ga/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/gd/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/he/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/hu/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/id/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/it/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ja/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ko/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/lt/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/nb/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/nl/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/pl/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/pt/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/pt_BR/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ro/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/ru/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/sr/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/sv/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/tr/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/uk/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/zh_CN/LC_MESSAGES/freeciv-ruledit.mo
+share/locale/zh_TW/LC_MESSAGES/freeciv-ruledit.mo
 share/pixmaps/
 share/pixmaps/freeciv-client.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
