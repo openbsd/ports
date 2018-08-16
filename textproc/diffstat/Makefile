@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2017/10/20 19:05:18 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2018/08/16 11:07:57 jca Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
-DISTNAME=		diffstat-1.61
-REVISION=		1
+DISTNAME=		diffstat-1.62
 
 CATEGORIES=		textproc
 
