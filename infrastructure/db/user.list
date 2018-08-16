@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.322 2018/08/06 09:05:54 fcambus Exp $
+$OpenBSD: user.list,v 1.323 2018/08/16 21:43:08 remi Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -325,3 +325,4 @@ id  user		group		port options
 814 _fastnetmon		_fastnetmon	net/fastnetmon
 815 _osrm_routed	_osrm_routed	geo/osrm-backend
 816 			_libpostal	geo/libpostal
+817 _netshot		_netshot	sysutils/netshot
