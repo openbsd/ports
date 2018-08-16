@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2018/03/07 21:00:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2018/08/16 05:31:19 ajacoutot Exp $
 
 COMMENT=	rendering for complex writing systems
 
-DISTNAME=	graphite2-1.3.11
+DISTNAME=	graphite2-1.3.12
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	graphite2 1.2 # 3.0.1
+SHARED_LIBS=	graphite2 2.0 # 3.0.1
 
 CATEGORIES=	graphics
 
@@ -22,6 +22,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silgraphite/}
 
 MODULES=	devel/cmake \
 		lang/python
+
+# c++11
+COMPILER=	base-clang ports-gcc
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
