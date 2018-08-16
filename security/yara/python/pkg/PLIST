@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/18 09:02:29 rpointel Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.5 2018/08/16 09:58:47 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/yara.so
 lib/python${MODPY_VERSION}/site-packages/yara_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yara_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
