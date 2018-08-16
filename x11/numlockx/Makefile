@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/20 09:17:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2018/08/16 07:02:05 ajacoutot Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
@@ -14,7 +14,8 @@ WANTLIB=		X11 Xext c
 MASTER_SITES=		http://home.kde.org/~seli/numlockx/
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.63
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/numlockx
