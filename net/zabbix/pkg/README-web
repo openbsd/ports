@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.10 2018/07/09 20:15:04 gonzalo Exp $
+$OpenBSD: README-web,v 1.11 2018/08/17 19:19:14 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -87,6 +87,10 @@ server "zabbix.example.com" {
 	# Increase connection limits to extend the lifetime
 	connection { max requests 500, timeout 3600 }
 	connection { max request body 8388608 }
+
+	location "/conf/*" {
+		block return 401
+	}
 
 	location "*.php" {
 		fastcgi socket "/run/php-fpm.sock"
