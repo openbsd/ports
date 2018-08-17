@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/07/04 08:51:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2018/08/17 07:34:01 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -21,7 +21,7 @@ share/stellarium/data/base_locations.bin.gz
 share/stellarium/data/constellations_boundaries.dat
 share/stellarium/data/constellations_spans.dat
 share/stellarium/data/countryCodes.dat
-share/stellarium/data/default_config.ini
+share/stellarium/data/default_cfg.ini
 share/stellarium/data/iso3166.tab
 share/stellarium/data/iso639-1.utf8
 share/stellarium/data/nomenclature.fab
@@ -692,6 +692,10 @@ share/stellarium/scripts/largest_known_stars.ssc
 share/stellarium/scripts/lunar_partial.ssc
 share/stellarium/scripts/lunar_total.ssc
 share/stellarium/scripts/messier_tour.ssc
+share/stellarium/scripts/morsels_1.ssc
+share/stellarium/scripts/morsels_2.ssc
+share/stellarium/scripts/morsels_3.ssc
+share/stellarium/scripts/morsels_4.ssc
 share/stellarium/scripts/phobos_phun_1.ssc
 share/stellarium/scripts/phobos_phun_2.ssc
 share/stellarium/scripts/phobos_phun_3.ssc
@@ -1104,6 +1108,17 @@ share/stellarium/skycultures/korean/description.ru.utf8
 share/stellarium/skycultures/korean/description.uk.utf8
 share/stellarium/skycultures/korean/info.ini
 share/stellarium/skycultures/korean/star_names.fab
+share/stellarium/skycultures/lokono/
+share/stellarium/skycultures/lokono/constellation_names.eng.fab
+share/stellarium/skycultures/lokono/constellations_boundaries.dat
+share/stellarium/skycultures/lokono/constellationsart.fab
+share/stellarium/skycultures/lokono/constellationship.fab
+share/stellarium/skycultures/lokono/description.en.utf8
+share/stellarium/skycultures/lokono/info.ini
+share/stellarium/skycultures/lokono/lokono_map_1.png
+share/stellarium/skycultures/lokono/planet_names.fab
+share/stellarium/skycultures/lokono/schulz.png
+share/stellarium/skycultures/lokono/star_names.fab
 share/stellarium/skycultures/macedonian/
 share/stellarium/skycultures/macedonian/constellation_names.eng.fab
 share/stellarium/skycultures/macedonian/constellationsart.fab
@@ -1150,6 +1165,10 @@ share/stellarium/skycultures/maori/description.uk.utf8
 share/stellarium/skycultures/maori/info.ini
 share/stellarium/skycultures/maori/planet_names.fab
 share/stellarium/skycultures/maori/star_names.fab
+share/stellarium/skycultures/maori/tainui.png
+share/stellarium/skycultures/maori/taki.png
+share/stellarium/skycultures/maori/tama.png
+share/stellarium/skycultures/maori/taura.png
 share/stellarium/skycultures/mongolian/
 share/stellarium/skycultures/mongolian/constellation_names.eng.fab
 share/stellarium/skycultures/mongolian/constellation_names.fr.fab
@@ -1520,6 +1539,7 @@ share/stellarium/textures/corona.png
 share/stellarium/textures/cross.png
 share/stellarium/textures/deimos.png
 share/stellarium/textures/dione.png
+share/stellarium/textures/dysnomia.png
 share/stellarium/textures/earth-clouds.png
 share/stellarium/textures/earth-shadow-new.png
 share/stellarium/textures/earth-shadow.png
@@ -1527,6 +1547,7 @@ share/stellarium/textures/earth_cmap.png
 share/stellarium/textures/earthmap.png
 share/stellarium/textures/enceladus.png
 share/stellarium/textures/epimetheus.png
+share/stellarium/textures/eris.png
 share/stellarium/textures/eros.png
 share/stellarium/textures/europa.png
 share/stellarium/textures/fog.png
@@ -1716,6 +1737,7 @@ share/stellarium/translations/stellarium-planetary-features/tr.qm
 share/stellarium/translations/stellarium-planetary-features/tt.qm
 share/stellarium/translations/stellarium-planetary-features/ug.qm
 share/stellarium/translations/stellarium-planetary-features/uk.qm
+share/stellarium/translations/stellarium-planetary-features/ur.qm
 share/stellarium/translations/stellarium-planetary-features/uz.qm
 share/stellarium/translations/stellarium-planetary-features/vi.qm
 share/stellarium/translations/stellarium-planetary-features/wa.qm
@@ -1838,6 +1860,7 @@ share/stellarium/translations/stellarium-remotecontrol/tr.qm
 share/stellarium/translations/stellarium-remotecontrol/tt.qm
 share/stellarium/translations/stellarium-remotecontrol/ug.qm
 share/stellarium/translations/stellarium-remotecontrol/uk.qm
+share/stellarium/translations/stellarium-remotecontrol/ur.qm
 share/stellarium/translations/stellarium-remotecontrol/uz.qm
 share/stellarium/translations/stellarium-remotecontrol/vi.qm
 share/stellarium/translations/stellarium-remotecontrol/wa.qm
@@ -1975,6 +1998,7 @@ share/stellarium/translations/stellarium-skycultures/tr.qm
 share/stellarium/translations/stellarium-skycultures/tt.qm
 share/stellarium/translations/stellarium-skycultures/ug.qm
 share/stellarium/translations/stellarium-skycultures/uk.qm
+share/stellarium/translations/stellarium-skycultures/ur.qm
 share/stellarium/translations/stellarium-skycultures/uz.qm
 share/stellarium/translations/stellarium-skycultures/vi.qm
 share/stellarium/translations/stellarium-skycultures/wa.qm
@@ -2111,6 +2135,7 @@ share/stellarium/translations/stellarium/tr.qm
 share/stellarium/translations/stellarium/tt.qm
 share/stellarium/translations/stellarium/ug.qm
 share/stellarium/translations/stellarium/uk.qm
+share/stellarium/translations/stellarium/ur.qm
 share/stellarium/translations/stellarium/uz.qm
 share/stellarium/translations/stellarium/vi.qm
 share/stellarium/translations/stellarium/wa.qm
