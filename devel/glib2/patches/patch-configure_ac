@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.19 2018/08/09 07:29:38 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.20 2018/08/17 08:03:57 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/glib/issues/972
 https://gitlab.gnome.org/GNOME/glib/issues/1484
@@ -6,7 +6,7 @@ https://gitlab.gnome.org/GNOME/glib/issues/1484
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -3106,13 +3106,26 @@ $ac_cv_sizeof_int)
+@@ -3130,13 +3130,26 @@ $ac_cv_sizeof_int)
    guint64_constant='(val)'
    ;;
  $ac_cv_sizeof_long)
@@ -40,7 +40,7 @@ Index: configure.ac
    ;;
  $ac_cv_sizeof_long_long)
    gint64='long long'
-@@ -3349,7 +3362,14 @@ $ac_cv_sizeof_int)
+@@ -3373,7 +3386,14 @@ $ac_cv_sizeof_int)
    gint64=int
    ;;
  $ac_cv_sizeof_long)
