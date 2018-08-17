@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2018/08/14 17:22:49 schwarze Exp $
+# $OpenBSD: Makefile,v 1.186 2018/08/17 00:47:11 schwarze Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -19,6 +19,7 @@
      SUBDIR += delay
      SUBDIR += dialog
      SUBDIR += digitemp
+     SUBDIR += divecmd
      SUBDIR += dtach
      SUBDIR += dtcltiny
      SUBDIR += dvtm
