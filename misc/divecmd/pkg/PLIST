@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/17 00:44:08 schwarze Exp $
+@bin bin/dcmd
+@bin bin/dcmd2csv
+@bin bin/dcmd2grap
+@bin bin/dcmd2json
+bin/dcmd2pdf
+bin/dcmd2ps
+@bin bin/dcmdedit
+@bin bin/dcmdfind
+@bin bin/dcmdls
+@bin bin/dcmdterm
+@comment bin/ssrf2dcmd
+@man man/man1/dcmd.1
+@man man/man1/dcmd2csv.1
+@man man/man1/dcmd2grap.1
+@man man/man1/dcmd2json.1
+@man man/man1/dcmd2pdf.1
+@man man/man1/dcmd2ps.1
+@man man/man1/dcmdedit.1
+@man man/man1/dcmdfind.1
+@man man/man1/dcmdls.1
+@man man/man1/dcmdterm.1
+@comment man/man1/ssrf2dcmd.1

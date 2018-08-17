@@ -1,0 +1,3 @@
+divecmd is a suite of open source command-line UNIX tools to extract
+and manipulate dives from dive computers.  It's built to work in a
+command-line workflow.
