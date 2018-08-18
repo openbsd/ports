@@ -1,0 +1,4 @@
+This library provides a job-based API for interacting with an IMAP4rev1 server.
+It manages connections, encryption and parameter quoting and encoding, but
+otherwise provides quite a low-level interface to the protocol. This library
+does not implement an IMAP client; it merely makes it easier to do so.
