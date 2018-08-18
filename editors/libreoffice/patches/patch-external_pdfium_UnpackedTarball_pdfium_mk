@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_pdfium_UnpackedTarball_pdfium_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_pdfium_UnpackedTarball_pdfium_mk,v 1.2 2018/08/18 07:07:17 robert Exp $
 
 Index: external/pdfium/UnpackedTarball_pdfium.mk
 --- external/pdfium/UnpackedTarball_pdfium.mk.orig
 +++ external/pdfium/UnpackedTarball_pdfium.mk
-@@ -11,6 +11,7 @@ pdfium_patches :=
- pdfium_patches += visibility.patch.1
- pdfium_patches += ubsan.patch
- pdfium_patches += freetype.patch.1
+@@ -13,6 +13,7 @@ pdfium_patches += ubsan.patch
+ pdfium_patches += icu.patch.1
+ # Fixes build on our baseline.
+ pdfium_patches += build.patch.1
 +pdfium_patches += pdfium-openbsd.patch
  
  $(eval $(call gb_UnpackedTarball_UnpackedTarball,pdfium))

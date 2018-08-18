@@ -1,8 +1,8 @@
-$OpenBSD: patch-basic_source_runtime_methods_cxx,v 1.6 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-basic_source_runtime_methods_cxx,v 1.7 2018/08/18 07:07:17 robert Exp $
 Index: basic/source/runtime/methods.cxx
 --- basic/source/runtime/methods.cxx.orig
 +++ basic/source/runtime/methods.cxx
-@@ -84,6 +84,7 @@ using namespace com::sun::star::uno;
+@@ -85,6 +85,7 @@ using namespace com::sun::star::uno;
  #include <stdio.h>
  #include <stdlib.h>
  #include <errno.h>

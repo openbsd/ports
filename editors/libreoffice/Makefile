@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.188 2018/08/18 07:07:17 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -12,8 +12,8 @@ SHARED_LIBS +=  orcus-0.13                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
-BV=		6.0
-VERSION=	${BV}.3.2
+BV=		6.1
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -22,7 +22,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
-REVISION-main=	2
 
 EPOCH=		0
 
@@ -68,6 +67,7 @@ DISTFILES += 5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz
 DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
 DISTFILES += 7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0
 DISTFILES += xmlsec1-1.2.25.tar.gz:0
+DISTFILES += lxml-4.1.1.tgz:0
 DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
 DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
 DISTFILES += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0
@@ -89,40 +89,41 @@ DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
 DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
-DISTFILES += language-subtag-registry-2017-12-14.tar.bz2:0
+DISTFILES += language-subtag-registry-2018-04-23.tar.bz2:0
 DISTFILES += libabw-0.1.2.tar.xz:0
 DISTFILES += libcdr-0.1.4.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
 DISTFILES += libcmis-0.5.1.tar.gz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
-DISTFILES += libepubgen-0.1.0.tar.bz2:0
-DISTFILES += libetonyek-0.1.7.tar.xz:0
+DISTFILES += libepubgen-0.1.1.tar.xz:0
+DISTFILES += libetonyek-0.1.8.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
 DISTFILES += libgltf-0.0.2.tar.bz2:1
 DISTFILES += liblangtag-0.6.2.tar.bz2:0
-DISTFILES += libmspub-0.1.3.tar.xz:0
-DISTFILES += libmwaw-0.3.13.tar.xz:0
+DISTFILES += libmspub-0.1.4.tar.xz:0
+DISTFILES += libmwaw-0.3.14.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.13.3.tar.gz:0
+DISTFILES += liborcus-0.13.4.tar.gz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.1.tar.xz:0
 DISTFILES += librevenge-0.0.4.tar.bz2:0
-DISTFILES += libstaroffice-0.0.5.tar.xz:0
+DISTFILES += libstaroffice-0.0.6.tar.xz:0
 DISTFILES += libvisio-0.1.6.tar.xz:0
 DISTFILES += libwpd-0.10.2.tar.xz:0
 DISTFILES += libwpg-0.3.2.tar.xz:0
-DISTFILES += libwps-0.4.4.tar.bz2:0
+DISTFILES += libwps-0.4.9.tar.xz:0
 DISTFILES += libwps-0.4.8.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
 DISTFILES += mdds-1.3.1.tar.bz2:0
-DISTFILES += pdfium-3235.tar.bz2:0
+DISTFILES += pdfium-3426.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += ReemKufi-0.6.tar.gz:0
+DISTFILES += ReemKufi-0.7.zip:0
 DISTFILES += Scheherazade-2.100.zip:0
+DISTFILES += Amiri-0.111.zip:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -229,6 +230,7 @@ WANTLIB-main+=	bz2 graphite2
 WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	boost_locale-mt
+WANTLIB-main+=	epoxy
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -249,6 +251,7 @@ LIB_DEPENDS-kde=	x11/kde4/libs \
 WANTLIB-kde+=		ICE SM Xext icuuc
 WANTLIB-kde+=		X11 ${COMPILER_LIBCXX} glib-2.0 intl m pthread
 WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
+WANTLIB-kde+=		epoxy harfbuzz-icu
 
 .include <bsd.port.arch.mk>
 
@@ -274,7 +277,8 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.12
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		KDE4INC="${LOCALBASE}/include/kde4" KDE4LIB="${LOCALBASE}/lib/kde4/libs"\
 		QT4DIR="${LOCALBASE}/lib/qt4" QT4LIB="${LOCALBASE}/qt4" \
@@ -292,6 +296,7 @@ CONFIGURE_ARGS+=\
 		--disable-mergelibs \
 		--disable-dependency-tracking \
 		--disable-online-update \
+		--disable-libnumbertext \
 		--enable-orcus \
 		--enable-gio \
 		--enable-kde4 \

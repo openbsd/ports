@@ -1,9 +1,9 @@
-$OpenBSD: patch-sal_osl_unx_system_hxx,v 1.1 2017/12/29 07:39:30 robert Exp $
+$OpenBSD: patch-sal_osl_unx_system_hxx,v 1.2 2018/08/18 07:07:17 robert Exp $
 
 Index: sal/osl/unx/system.hxx
 --- sal/osl/unx/system.hxx.orig
 +++ sal/osl/unx/system.hxx
-@@ -128,7 +128,6 @@
+@@ -160,7 +160,6 @@
  #endif
  
  #ifdef OPENBSD

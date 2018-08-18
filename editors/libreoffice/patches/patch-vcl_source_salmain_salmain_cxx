@@ -1,4 +1,4 @@
-$OpenBSD: patch-vcl_source_salmain_salmain_cxx,v 1.2 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-vcl_source_salmain_salmain_cxx,v 1.3 2018/08/18 07:07:17 robert Exp $
 
 Index: vcl/source/salmain/salmain.cxx
 --- vcl/source/salmain/salmain.cxx.orig
@@ -7,14 +7,14 @@ Index: vcl/source/salmain/salmain.cxx
  
  #include <salinst.hxx>
  
--#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS
-+#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined OPENBSD
+-#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined HAIKU
++#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined HAIKU && !defined OPENBSD
  #include <opengl/x11/glxtest.hxx>
  #endif
  
  SAL_IMPLEMENT_MAIN() {
--#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS
-+#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined OPENBSD
+-#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined HAIKU
++#if defined( UNX ) && !defined MACOSX && !defined IOS && !defined ANDROID && !defined LIBO_HEADLESS && !defined HAIKU && !defined OPENBSD
      fire_glxtest_process();
  #endif
      tools::extendApplicationEnvironment();

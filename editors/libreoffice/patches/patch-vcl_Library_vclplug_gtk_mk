@@ -1,7 +1,8 @@
-$OpenBSD: patch-vcl_Library_vclplug_gtk_mk,v 1.2 2016/09/04 12:02:49 robert Exp $
---- vcl/Library_vclplug_gtk.mk.orig.port	Fri Jul 29 00:11:19 2016
-+++ vcl/Library_vclplug_gtk.mk	Sat Sep  3 16:55:20 2016
-@@ -120,10 +120,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+$OpenBSD: patch-vcl_Library_vclplug_gtk_mk,v 1.3 2018/08/18 07:07:17 robert Exp $
+Index: vcl/Library_vclplug_gtk.mk
+--- vcl/Library_vclplug_gtk.mk.orig
++++ vcl/Library_vclplug_gtk.mk
+@@ -122,10 +122,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
  ))
  endif
  

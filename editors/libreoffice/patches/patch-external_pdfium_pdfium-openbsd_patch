@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_pdfium_pdfium-openbsd_patch,v 1.1 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-external_pdfium_pdfium-openbsd_patch,v 1.2 2018/08/18 07:07:17 robert Exp $
 
 Index: external/pdfium/pdfium-openbsd.patch
 --- external/pdfium/pdfium-openbsd.patch.orig
 +++ external/pdfium/pdfium-openbsd.patch
-@@ -0,0 +1,75 @@
-+--- core/fxcrt/fx_system.h.orig	Fri Feb  2 23:17:44 2018
-++++ core/fxcrt/fx_system.h	Fri Feb  2 23:17:50 2018
-+@@ -40,7 +40,7 @@
+@@ -0,0 +1,60 @@
++--- core/fxcrt/fx_system.h.orig	Wed Aug 15 15:05:00 2018
+++++ core/fxcrt/fx_system.h	Wed Aug 15 15:05:10 2018
++@@ -41,7 +41,7 @@
 + #elif defined(_WIN64)
 + #define _FX_OS_ _FX_OS_WIN64_
 + #define _FX_PLATFORM_ _FX_PLATFORM_WINDOWS_
@@ -15,9 +15,9 @@ Index: external/pdfium/pdfium-openbsd.patch
 + #define _FX_OS_ _FX_OS_LINUX_
 + #define _FX_PLATFORM_ _FX_PLATFORM_LINUX_
 + #elif defined(__APPLE__)
-+--- core/fxge/fx_ge_linux.cpp.orig	Fri Feb  2 23:20:40 2018
-++++ core/fxge/fx_ge_linux.cpp	Fri Feb  2 23:20:51 2018
-+@@ -148,9 +148,8 @@
++--- core/fxge/fx_ge_linux.cpp.orig	Wed Aug 15 15:05:14 2018
+++++ core/fxge/fx_ge_linux.cpp	Wed Aug 15 15:05:28 2018
++@@ -146,9 +146,8 @@
 +     const char** pUserPaths) {
 +   auto pInfo = pdfium::MakeUnique<CFX_LinuxFontInfo>();
 +   if (!pInfo->ParseFontCfg(pUserPaths)) {
@@ -29,23 +29,8 @@ Index: external/pdfium/pdfium-openbsd.patch
 +     pInfo->AddPath("/usr/local/share/fonts");
 +   }
 +   return std::move(pInfo);
-+--- fpdfsdk/javascript/JS_Value.cpp.orig	Fri Feb  2 23:18:54 2018
-++++ fpdfsdk/javascript/JS_Value.cpp	Fri Feb  2 23:19:15 2018
-+@@ -37,7 +37,12 @@
-+   long timezone = 0;
-+   _get_timezone(&timezone);
-+ #endif  // _FX_PLATFORM_ == _FX_PLATFORM_WINDOWS_
-++#ifdef __OpenBSD__
-++  struct tm *lt;
-++  return (double)(-(lt->tm_gmtoff * 1000));
-++#else
-+   return (double)(-(timezone * 1000));
-++#endif
-+ }
-+ 
-+ int GetDaylightSavingTA(double d) {
-+--- third_party/base/logging.h.orig	Fri Feb  2 23:19:24 2018
-++++ third_party/base/logging.h	Fri Feb  2 23:19:36 2018
++--- third_party/base/logging.h.orig	Wed Aug 15 15:05:36 2018
+++++ third_party/base/logging.h	Wed Aug 15 15:05:46 2018
 +@@ -10,7 +10,7 @@
 + 
 + #ifndef _WIN32
@@ -55,8 +40,8 @@ Index: external/pdfium/pdfium-openbsd.patch
 + #else
 + #define NULL_DEREF_IF_POSSIBLE
 + #endif
-+--- third_party/libopenjpeg20/opj_malloc.h.orig	Fri Feb  2 23:19:48 2018
-++++ third_party/libopenjpeg20/opj_malloc.h	Fri Feb  2 23:19:56 2018
++--- third_party/libopenjpeg20/opj_malloc.h.orig	Wed Aug 15 15:05:54 2018
+++++ third_party/libopenjpeg20/opj_malloc.h	Wed Aug 15 15:06:06 2018
 +@@ -98,7 +98,7 @@
 + #else /* Not _WIN32 */
 +   #if defined(__sun)
@@ -66,9 +51,9 @@ Index: external/pdfium/pdfium-openbsd.patch
 +     #define HAVE_POSIX_MEMALIGN
 +   /* Linux x86_64 and OSX always align allocations to 16 bytes */
 +   #elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)
-+--- xfa/fgas/font/cfgas_fontmgr.cpp.orig	Fri Feb  2 23:20:07 2018
-++++ xfa/fgas/font/cfgas_fontmgr.cpp	Fri Feb  2 23:20:29 2018
-+@@ -436,8 +436,8 @@
++--- xfa/fgas/font/cfgas_fontmgr.cpp.orig	Wed Aug 15 15:06:11 2018
+++++ xfa/fgas/font/cfgas_fontmgr.cpp	Wed Aug 15 15:06:21 2018
++@@ -252,8 +252,8 @@
 + 
 + constexpr const char* g_FontFolders[] = {
 + #if _FX_PLATFORM_ == _FX_PLATFORM_LINUX_

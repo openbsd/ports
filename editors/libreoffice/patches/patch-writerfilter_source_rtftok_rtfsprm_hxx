@@ -1,12 +1,13 @@
-$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.5 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.6 2018/08/18 07:07:17 robert Exp $
+
 Index: writerfilter/source/rtftok/rtfsprm.hxx
 --- writerfilter/source/rtftok/rtfsprm.hxx.orig
 +++ writerfilter/source/rtftok/rtfsprm.hxx
 @@ -14,6 +14,7 @@
  #include <utility>
  #include <vector>
- 
+ #include <map>
 +#include <cstddef>
- #include <boost/intrusive_ptr.hpp>
- #include "rtfvalue.hxx"
  
+ #include <tools/ref.hxx>
+ #include "rtfvalue.hxx"

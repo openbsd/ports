@@ -1,11 +1,11 @@
-$OpenBSD: patch-bridges_source_cpp_uno_gcc3_linux_intel_share_hxx,v 1.1 2017/08/13 17:12:48 robert Exp $
+$OpenBSD: patch-bridges_source_cpp_uno_gcc3_linux_intel_share_hxx,v 1.2 2018/08/18 07:07:17 robert Exp $
 
 Index: bridges/source/cpp_uno/gcc3_linux_intel/share.hxx
 --- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig
 +++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx
 @@ -33,6 +33,23 @@
  #include <uno/any2.h>
- #include "uno/mapping.h"
+ #include <uno/mapping.h>
  
 +namespace __cxxabiv1
 +{
