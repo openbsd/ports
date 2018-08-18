@@ -1,6 +1,7 @@
-$OpenBSD: patch-textdocument_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
---- textdocument/lib/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
-+++ textdocument/lib/CMakeLists.txt	Tue Jun 30 10:08:13 2015
+$OpenBSD: patch-textdocument_lib_CMakeLists_txt,v 1.3 2018/08/18 15:04:40 rsadowski Exp $
+Index: textdocument/lib/CMakeLists.txt
+--- textdocument/lib/CMakeLists.txt.orig
++++ textdocument/lib/CMakeLists.txt
 @@ -26,6 +26,7 @@ generate_export_header(grantlee_gui)
  if (NOT Grantlee_Qt5_TRANSITIONAL)
    target_link_libraries(grantlee_gui
@@ -9,3 +10,12 @@ $OpenBSD: patch-textdocument_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk E
    )
  else()
    target_link_libraries(grantlee_gui
+@@ -44,7 +45,7 @@ install(TARGETS grantlee_gui EXPORT grantlee_targets
+          RUNTIME DESTINATION ${BIN_INSTALL_DIR} COMPONENT TextDocument
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
+          ARCHIVE DESTINATION ${LIB_INSTALL_DIR} COMPONENT TextDocument
+-         INCLUDES DESTINATION include
++         INCLUDES DESTINATION include/grantlee4
+ )
+ 
+ install(FILES

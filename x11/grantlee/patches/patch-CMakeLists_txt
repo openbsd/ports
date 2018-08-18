@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/08/18 15:04:40 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -96,7 +96,7 @@ set (LIB_SUFFIX "" CACHE STRING "Define suffix of libr
+ set( LIB_INSTALL_DIR lib${LIB_SUFFIX} )
+ set( PLUGIN_INSTALL_DIR lib${LIB_SUFFIX}/grantlee/${Grantlee_MAJOR_MINOR_VERSION_STRING} )
+ set( BIN_INSTALL_DIR bin )
+-set( INCLUDE_INSTALL_DIR include )
++set( INCLUDE_INSTALL_DIR include/grantlee4 )
+ set( DATA_INSTALL_DIR share/apps )
+ 
+ # set up RPATH/install_name_dir
+@@ -113,7 +113,7 @@ if (BUILD_GUI AND BUILD_TEXTDOCUMENT)
+   add_subdirectory(textdocument)
+ endif()
+ 
+-set(CMAKECONFIG_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/grantlee" )
++set(CMAKECONFIG_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/grantlee4" )
+ 
+ file(RELATIVE_PATH relInstallDir ${CMAKE_INSTALL_PREFIX}/${CMAKECONFIG_INSTALL_DIR} ${CMAKE_INSTALL_PREFIX} )
+ 

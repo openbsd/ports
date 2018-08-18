@@ -1,6 +1,7 @@
-$OpenBSD: patch-templates_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
---- templates/lib/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
-+++ templates/lib/CMakeLists.txt	Tue Jun 30 10:09:05 2015
+$OpenBSD: patch-templates_lib_CMakeLists_txt,v 1.3 2018/08/18 15:04:40 rsadowski Exp $
+Index: templates/lib/CMakeLists.txt
+--- templates/lib/CMakeLists.txt.orig
++++ templates/lib/CMakeLists.txt
 @@ -100,6 +100,7 @@ if (NOT Grantlee_Qt5_TRANSITIONAL)
    target_link_libraries(grantlee_core
      LINK_PUBLIC Qt4::QtCore
@@ -9,3 +10,12 @@ $OpenBSD: patch-templates_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp 
    )
  else()
    target_link_libraries(grantlee_core
+@@ -119,7 +120,7 @@ install(TARGETS grantlee_core EXPORT grantlee_targets
+          RUNTIME DESTINATION ${BIN_INSTALL_DIR} COMPONENT Templates
+          LIBRARY DESTINATION ${LIB_INSTALL_DIR} COMPONENT Templates
+          ARCHIVE DESTINATION ${LIB_INSTALL_DIR} COMPONENT Templates
+-         INCLUDES DESTINATION include
++         INCLUDES DESTINATION include/grantlee4
+ )
+ 
+ install(FILES
