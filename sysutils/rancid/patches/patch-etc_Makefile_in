@@ -1,6 +1,7 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.5 2016/11/23 12:27:47 sthen Exp $
---- etc/Makefile.in.orig	Tue Sep  6 17:12:39 2016
-+++ etc/Makefile.in	Wed Nov 16 03:51:28 2016
+$OpenBSD: patch-etc_Makefile_in,v 1.6 2018/08/18 21:05:48 pvk Exp $
+Index: etc/Makefile.in
+--- etc/Makefile.in.orig
++++ etc/Makefile.in
 @@ -70,7 +70,7 @@ am__make_running_with_option = \
    test $$has_opt = yes
  am__make_dryrun = (target_option=n; $(am__make_running_with_option))
@@ -10,7 +11,7 @@ $OpenBSD: patch-etc_Makefile_in,v 1.5 2016/11/23 12:27:47 sthen Exp $
  pkgincludedir = $(includedir)/@PACKAGE@
  pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
-@@ -534,30 +534,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
+@@ -538,30 +538,10 @@ uninstall-am: uninstall-pkgdataDATA uninstall-sysconfD
  
  
  install-data-local: all

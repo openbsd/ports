@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/10 21:53:25 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/08/18 21:05:48 pvk Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
@@ -25,6 +25,7 @@ bin/f5rancid
 bin/flogin
 bin/fnlogin
 bin/fnrancid
+bin/fxlogin
 bin/hlogin
 @bin bin/hpuifilter
 bin/hrancid
@@ -75,6 +76,8 @@ lib/rancid/edgemax.pm
 lib/rancid/edgerouter.pm
 lib/rancid/exos.pm
 lib/rancid/foundry.pm
+lib/rancid/fss2.pm
+lib/rancid/fxos.pm
 lib/rancid/ios.pm
 lib/rancid/iossb.pm
 lib/rancid/iosshtech.pm
@@ -86,6 +89,7 @@ lib/rancid/panos.pm
 lib/rancid/rancid.pm
 lib/rancid/rbt.pm
 lib/rancid/sros.pm
+lib/rancid/vrp.pm
 lib/rancid/wavesvros.pm
 @man man/man1/agmrancid.1
 @man man/man1/alogin.1

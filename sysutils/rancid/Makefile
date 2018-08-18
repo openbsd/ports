@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/10 21:53:25 pvk Exp $
+# $OpenBSD: Makefile,v 1.22 2018/08/18 21:05:48 pvk Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
-DISTNAME =	rancid-3.7
+DISTNAME =	rancid-3.8
 EPOCH = 	0
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://www.shrubbery.net/rancid/
+HOMEPAGE =	https://www.shrubbery.net/rancid/
 
 MAINTAINER =	Pavel Korovin <p@tristero.se>
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 
 LOCALSTATEDIR =	${BASELOCALSTATEDIR}/rancid
 
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--disable-mk-localstatedir
 
