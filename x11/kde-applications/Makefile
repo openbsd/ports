@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/07/30 13:52:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2018/08/18 18:38:12 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -87,7 +87,7 @@
      SUBDIR += kig
      #SUBDIR += kigo
      #SUBDIR += killbots
-     #SUBDIR += kimap
+     SUBDIR += kimap
      #SUBDIR += kio-extras
      #SUBDIR += kiriki
      #SUBDIR += kiten
@@ -100,8 +100,8 @@
      #SUBDIR += kmag
      #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
-     #SUBDIR += kmbox
-     #SUBDIR += kmime
+     SUBDIR += kmbox
+     SUBDIR += kmime
      #SUBDIR += kmines
      #SUBDIR += kmix
      #SUBDIR += kmousetool
@@ -118,7 +118,7 @@
      #SUBDIR += kontactinterface
      #SUBDIR += kopete
      #SUBDIR += kpat
-     #SUBDIR += kpimtextedit
+     SUBDIR += kpimtextedit
      #SUBDIR += kppp
      SUBDIR += kqtquickcharts
      #SUBDIR += krdc
@@ -171,7 +171,7 @@
      SUBDIR += libkgeomap
      SUBDIR += libkipi
      #SUBDIR += libkleo
-     #SUBDIR += libkmahjongg
+     SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      #SUBDIR += libksane
      #SUBDIR += libksieve
@@ -194,7 +194,7 @@
      #SUBDIR += signon-kwallet-extension
      #SUBDIR += spectacle
      #SUBDIR += step
-     #SUBDIR += svgpart
+     SUBDIR += svgpart
      #SUBDIR += sweeper
      #SUBDIR += syndication
      SUBDIR += umbrello
