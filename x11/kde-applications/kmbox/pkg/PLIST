@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:19:42 rsadowski Exp $
+include/KF5/KMbox/
+include/KF5/KMbox/KMbox/
+include/KF5/KMbox/KMbox/MBox
+include/KF5/KMbox/KMbox/MBoxEntry
+include/KF5/KMbox/kmbox/
+include/KF5/KMbox/kmbox/kmbox_export.h
+include/KF5/KMbox/kmbox/mbox.h
+include/KF5/KMbox/kmbox/mboxentry.h
+include/KF5/kmbox_version.h
+lib/cmake/KF5Mbox/
+lib/cmake/KF5Mbox/KF5MboxConfig.cmake
+lib/cmake/KF5Mbox/KF5MboxConfigVersion.cmake
+lib/cmake/KF5Mbox/KF5MboxTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Mbox/KF5MboxTargets.cmake
+@lib lib/libKF5Mbox.so.${LIBKF5Mbox_VERSION}
+share/kf5/mkspecs/qt_Mbox.pri
