@@ -1,36 +1,41 @@
-# $OpenBSD: Makefile,v 1.75 2018/07/01 18:33:37 espie Exp $
+
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-9.7.1
-REVISION=	5
+DISTNAME=	mkvtoolnix-25.0.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	FLAC boost_filesystem-mt boost_regex-mt boost_system-mt \
-		c ebml iconv intl m magic matroska ogg pthread vorbis z \
-		${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt
+WANTLIB += boost_regex-mt boost_system-mt c cmark ebml iconv intl
+WANTLIB += m magic matroska ogg vorbis z
 
 MODULES=	lang/ruby
 
 MODRUBY_RUNDEP=	No
 
+# C++11 / C++14
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext-tools \
+		devel/gtest \
+		textproc/docbook \
+		textproc/docbook-xsl \
+		x11/qt5/qttools
 
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
 		devel/boost \
+		devel/cmark \
 		devel/gettext \
 		devel/libmagic \
 		multimedia/libmatroska>=1.4.5 \
@@ -41,12 +46,14 @@ MAKE_ENV+=	V=1
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--disable-optimization \
+		--disable-update-check \
 		--with-boost-date-time=boost_date_time-mt \
 		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-libdir=${LOCALBASE}/lib \
 		--with-boost-regex=boost_regex-mt \
 		--with-boost-system=boost_system-mt \
-		--without-curl
+		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
+
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
@@ -57,33 +64,34 @@ FLAVOR?=
 CONFIGURE_ARGS+= --disable-gui
 .else
 MODULES+=	x11/qt5
-WANTLIB+=	Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB+=	Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5Multimedia
+LIB_DEPENDS +=	x11/qt5/qtmultimedia
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 CPPFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib -L${MODQT5_LIBDIR}
+CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert"
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-# XXX does not build with our pugixml (it's too new)
-CONFIGURE_ENV +=ac_cv_header_pugixml_hpp=no
-
-# avoid hidden build dep on gtest
-CONFIGURE_ENV +=ac_cv_lib_gtest_main_main=no
-
-NO_TEST=	Yes
+pre-patch:
+	@cd ${WRKSRC}/src/mkvtoolnix-gui/jobs/program_runner/ && \
+	cp linux_program_runner.cpp unix_program_runner.cpp && \
+	cp linux_program_runner.h unix_program_runner.h
 
 do-build:
 	@cd ${WRKSRC} && \
-		env -i ${MAKE_ENV} ${RUBY} ./drake -j${MAKE_JOBS} \
-		${MAKE_FLAGS}
+		env -i ${MAKE_ENV} ${RAKE} -j${MAKE_JOBS} ${MAKE_FLAGS}
 
 do-install:
 	@cd ${WRKSRC} && \
-		env -i ${MAKE_ENV} ${RUBY} ./drake \
-		DESTDIR=${WRKINST} install
+		env -i ${MAKE_ENV} ${RAKE} DESTDIR=${WRKINST} install
+
+do-test:
+	@cd ${WRKSRC} && \
+		env -i ${MAKE_ENV} ${RAKE} tests:run_unit
 
 .include <bsd.port.mk>

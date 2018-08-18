@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_h,v 1.1 2018/08/18 06:47:58 rsadowski Exp $
+
+Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h
+--- src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h.orig
++++ src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h
+@@ -2,7 +2,7 @@
+ 
+ #include "common/common_pch.h"
+ 
+-#if defined(SYS_LINUX)
++#if defined(SYS_LINUX) || defined(SYS_BSD)
+ 
+ #include "mkvtoolnix-gui/jobs/program_runner.h"
+ 
+@@ -10,12 +10,12 @@ namespace mtx { namespace gui {
+ 
+ namespace Jobs {
+ 
+-class LinuxProgramRunner: public ProgramRunner {
++class UnixProgramRunner: public ProgramRunner {
+   Q_OBJECT;
+ 
+ public:
+-  explicit LinuxProgramRunner();
+-  virtual ~LinuxProgramRunner();
++  explicit UnixProgramRunner();
++  virtual ~UnixProgramRunner();
+ 
+   virtual bool isRunProgramTypeSupported(Util::Settings::RunProgramType type) override;
+ 

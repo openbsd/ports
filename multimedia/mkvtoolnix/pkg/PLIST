@@ -1,66 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/04/11 05:55:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/08/18 06:47:58 rsadowski Exp $
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
 @bin bin/mkvpropedit
-man/ca/
-man/ca/man1/
-@man man/ca/man1/mkvextract.1
-@man man/ca/man1/mkvinfo.1
-@man man/ca/man1/mkvmerge.1
-@man man/ca/man1/mkvpropedit.1
-man/de/
-man/de/man1/
-@man man/de/man1/mkvextract.1
-@man man/de/man1/mkvinfo.1
-@man man/de/man1/mkvmerge.1
-@man man/de/man1/mkvpropedit.1
-man/es/
-man/es/man1/
-@man man/es/man1/mkvextract.1
-@man man/es/man1/mkvinfo.1
-@man man/es/man1/mkvmerge.1
-@man man/es/man1/mkvpropedit.1
-man/ja/
-man/ja/man1/
-@man man/ja/man1/mkvextract.1
-@man man/ja/man1/mkvinfo.1
-@man man/ja/man1/mkvmerge.1
-@man man/ja/man1/mkvpropedit.1
-man/ko/
-man/ko/man1/
-@man man/ko/man1/mkvextract.1
-@man man/ko/man1/mkvinfo.1
-@man man/ko/man1/mkvmerge.1
-@man man/ko/man1/mkvpropedit.1
 @man man/man1/mkvextract.1
 @man man/man1/mkvinfo.1
 @man man/man1/mkvmerge.1
 @man man/man1/mkvpropedit.1
-man/nl/
-man/nl/man1/
-@man man/nl/man1/mkvextract.1
-@man man/nl/man1/mkvinfo.1
-@man man/nl/man1/mkvmerge.1
-@man man/nl/man1/mkvpropedit.1
-man/pl/
-man/pl/man1/
-@man man/pl/man1/mkvextract.1
-@man man/pl/man1/mkvinfo.1
-@man man/pl/man1/mkvmerge.1
-@man man/pl/man1/mkvpropedit.1
-man/uk/
-man/uk/man1/
-@man man/uk/man1/mkvextract.1
-@man man/uk/man1/mkvinfo.1
-@man man/uk/man1/mkvmerge.1
-@man man/uk/man1/mkvpropedit.1
-man/zh_CN/
-man/zh_CN/man1/
-@man man/zh_CN/man1/mkvextract.1
-@man man/zh_CN/man1/mkvinfo.1
-@man man/zh_CN/man1/mkvmerge.1
-@man man/zh_CN/man1/mkvpropedit.1
 share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
 share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
@@ -75,6 +21,7 @@ share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
 share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ro/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
 share/locale/sr_RS/
 share/locale/sr_RS/LC_MESSAGES/

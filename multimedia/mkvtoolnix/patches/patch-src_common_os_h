@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_os_h,v 1.1 2018/08/18 06:47:58 rsadowski Exp $
+
+Index: src/common/os.h
+--- src/common/os.h.orig
++++ src/common/os.h
+@@ -26,7 +26,7 @@
+ #else
+ # define COMP_GCC
+ # define SYS_UNIX
+-# if defined(__bsdi__) || defined(__FreeBSD__)
++# if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define SYS_BSD
+ # elif defined(__sun) && defined(__SUNPRO_CC)
+ #  undef COMP_GCC

@@ -1,17 +1,6 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.11 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.12 2018/08/18 06:47:58 rsadowski Exp $
 @bin bin/mkvtoolnix-gui
-@man man/ca/man1/mkvtoolnix-gui.1
-@man man/de/man1/mkvtoolnix-gui.1
-@man man/es/man1/mkvtoolnix-gui.1
-@man man/ja/man1/mkvtoolnix-gui.1
-@man man/ko/man1/mkvtoolnix-gui.1
 @man man/man1/mkvtoolnix-gui.1
-@man man/nl/man1/mkvtoolnix-gui.1
-@man man/pl/man1/mkvtoolnix-gui.1
-@man man/uk/man1/mkvtoolnix-gui.1
-@man man/zh_CN/man1/mkvtoolnix-gui.1
-share/applications/mkvinfo.desktop
-share/applications/mkvtoolnix-gui.desktop
 share/icons/hicolor/128x128/apps/mkvextract.png
 share/icons/hicolor/128x128/apps/mkvinfo.png
 share/icons/hicolor/128x128/apps/mkvmerge.png
@@ -52,6 +41,12 @@ share/icons/hicolor/96x96/apps/mkvinfo.png
 share/icons/hicolor/96x96/apps/mkvmerge.png
 share/icons/hicolor/96x96/apps/mkvpropedit.png
 share/icons/hicolor/96x96/apps/mkvtoolnix-gui.png
+share/applications/org.bunkus.mkvtoolnix-gui.desktop
+share/mkvtoolnix/
+share/mkvtoolnix/sounds/
+share/mkvtoolnix/sounds/finished-1.ogg
+share/mkvtoolnix/sounds/finished-2.ogg
+share/mkvtoolnix/sounds/finished-3.ogg
 share/mime/packages/mkvtoolnix.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
