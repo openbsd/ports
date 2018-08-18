@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/30 00:35:56 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/18 01:12:28 abieber Exp $
 
 COMMENT =	Go dependency management tool
-DISTNAME =	dep-0.4.1
+DISTNAME =	dep-0.5.0
 
 CATEGORIES =	sysutils
 
