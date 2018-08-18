@@ -6,6 +6,7 @@ DISTNAME=	mkvtoolnix-25.0.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}sources/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 
@@ -35,7 +36,7 @@ LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
 		devel/boost \
-		devel/cmark \
+		textproc/cmark \
 		devel/gettext \
 		devel/libmagic \
 		multimedia/libmatroska>=1.4.5 \
