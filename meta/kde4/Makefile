@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/08/10 08:23:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.41 2018/08/19 06:13:22 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -32,7 +32,7 @@ REVISION-sdk = 1
 REVISION-edu = 1
 REVISION-multimedia = 0
 REVISION-extras = 6
-REVISION-main =		7
+REVISION-main =		8
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -196,7 +196,6 @@ RUN_DEPENDS-toys = \
 	${MODKDE4_DEP_DIR}/ktux
 
 KDE4-utils = \
-	${MODKDE4_DEP_DIR}/ark			\
 	${MODKDE4_DEP_DIR}/filelight		\
 	${MODKDE4_DEP_DIR}/kdf			\
 	${MODKDE4_DEP_DIR}/kfloppy		\
