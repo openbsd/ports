@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2018/06/23 17:52:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2018/08/19 07:54:04 ajacoutot Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
 V=		3.6.0
 DISTNAME=	liblouis-${V}
+REVISION=	0
 
 SHARED_LIBS +=  louis                7.2      # 16.0
 
@@ -26,7 +27,8 @@ MODPY_ADJ_FILES=tools/lou_harnessGenerator
 BUILD_DEPENDS=	devel/help2man
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-packager="OpenBSD Ports"
+CONFIGURE_ARGS=	--with-packager="OpenBSD Ports" \
+		--enable-ucs4
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}/louis
