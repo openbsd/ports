@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2018/08/18 18:38:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2018/08/19 06:14:10 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
      #SUBDIR += akonadi
      SUBDIR += analitza
-     #SUBDIR += ark
+     SUBDIR += ark
      #SUBDIR += artikulate
      #SUBDIR += audiocd-kio
      #SUBDIR += baloo
