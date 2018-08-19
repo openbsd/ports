@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/07/30 13:52:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2018/08/19 06:12:55 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -118,7 +118,7 @@ SUBDIR += kmag
 SUBDIR += kmouth
 
 # former kdeutils
-SUBDIR += ark
+#SUBDIR += ark			x11/kde-applications
 SUBDIR += filelight
 #SUBDIR += kcalc		x11/kde-applications
 SUBDIR += kcharselect
