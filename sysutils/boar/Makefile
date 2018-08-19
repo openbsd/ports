@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/01 00:18:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/08/19 09:00:45 ajacoutot Exp $
 
 COMMENT=	version control system for large binary files
 
@@ -15,15 +15,15 @@ MASTER_SITES=	http://distfiles-openbsd.perso.pw/
 
 MODULES=	lang/python
 
+NO_BUILD=	Yes
+MODPY_BUILDDEP=	Yes
+
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/boar
 PKG_ARCH=	*
 
 INSTDIR=	${PREFIX}/share/boar
-
-do-build:
-# does nothing but required to add python as a BDEP (NO_BUILD would drop it)
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

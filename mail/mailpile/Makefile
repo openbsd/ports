@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/02 12:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2018/08/19 09:00:45 ajacoutot Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
@@ -30,9 +30,8 @@ PKG_ARCH =	*
 
 INSTDIR =	${PREFIX}/share/mailpile
 
-# Nothing to build but allows MODPY to
-# define BUILD_DEPENDS correctly
-do-build:
+NO_BUILD =		Yes
+MODPY_BUILDDEP =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

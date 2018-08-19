@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2018/08/15 12:54:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2018/08/19 09:00:45 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 #'
@@ -21,12 +21,12 @@ MASTER_SITES=		https://dl.google.com/dl/cloudsdk/release/downloads/
 
 MODULES=		lang/python
 
+NO_BUILD=		Yes
+MODPY_BUILDDEP=		Yes
+
 RUN_DEPENDS=		devel/git
 
 NO_TEST=		Yes
-
-do-build:
-# cannot set NO_BUILD=Yes because it would remove the dependency on python
 
 pre-configure:
 # wildcard, cannot use MODPY_ADJ_FILES

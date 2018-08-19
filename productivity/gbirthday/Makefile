@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/19 09:00:45 ajacoutot Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -27,13 +27,12 @@ MODPY_ADJ_FILES += 	src/gb
 
 PKG_ARCH = 		*
 
+NO_BUILD =		Yes
+MODPY_BUILDDEP =	Yes
+
 post-patch:
 	sed -i 's,_Comment,Comment,' ${WRKSRC}/gbirthday.desktop.in
 	sed -i 's,@VER@,${GH_TAGNAME:S/v//},g' ${WRKSRC}/src/gbirthday/__init__.py
-
-
-do-build:
-	# dummy. cannot be "NO_BUILD" as that zaps BUILD_DEPENDS.
 
 pre-install:
 	find ${WRKSRC} -name \*.orig -exec rm {} \;
