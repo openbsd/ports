@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/20 07:54:04 fcambus Exp $
 
 PORTROACH =	limit:^[0-9].*
 
@@ -6,9 +6,8 @@ COMMENT =	nyancat in your terminal
 
 GH_ACCOUNT =	klange
 GH_PROJECT =	nyancat
-GH_TAGNAME =	1.5.1
+GH_TAGNAME =	1.5.2
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	misc
 
