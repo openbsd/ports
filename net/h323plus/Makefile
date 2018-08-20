@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/08/28 08:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2018/08/20 10:50:45 ajacoutot Exp $
 
 COMMENT=		H.323 video conferencing library
 
-# CVS checkout
-DISTNAME=		h323plus-1.26.8.20170428
+GH_ACCOUNT=		willamowius
+GH_PROJECT=		h323plus
+GH_TAGNAME=		v1_27_0
+PKGNAME=		${DISTNAME:S/_/./g}
 
 CATEGORIES=		net devel
 
@@ -16,10 +18,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL (dlopen(3) GPL modules)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL c crypto expat lber ldap ldap_r m pt pthread sasl2
-WANTLIB += ssl ${COMPILER_LIBCXX}
-
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+WANTLIB += ${COMPILER_LIBCXX} SDL c crypto expat lber ldap ldap_r
+WANTLIB += m pt sasl2 ssl
 
 LIB_DEPENDS=		devel/ptlib
 

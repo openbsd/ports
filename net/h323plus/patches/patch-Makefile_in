@@ -1,11 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2014/04/27 09:46:26 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2018/08/20 10:50:45 ajacoutot Exp $
 
 We only use versioned libraries (.so.X.Y versus .so).
 
---- Makefile.in.orig	Thu Dec 12 17:16:27 2013
-+++ Makefile.in	Sun Apr 27 11:21:31 2014
-@@ -99,22 +99,9 @@ docs: 
- install:
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -100,22 +100,9 @@ install: opt
+ 	echo "*** 'make install' is usually a bad idea, use 'make optnoshared' and point OPENH323DIR to your source dir ***"
  	mkdir -p $(DESTDIR)$(LIBDIR)
  	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*
 -	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
