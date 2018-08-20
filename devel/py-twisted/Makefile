@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/25 10:42:38 pvk Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/20 21:35:11 pvk Exp $
 
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	18.4.0
+MODPY_EGG_VERSION =	18.7.0
 
 EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
@@ -26,7 +26,8 @@ MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		devel/py-incremental${MODPY_FLAVOR}
 
-RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}		\
+RUN_DEPENDS =		devel/py-hamcrest${MODPY_FLAVOR}	\
+			devel/py-asn1${MODPY_FLAVOR}		\
 			devel/py-automat${MODPY_FLAVOR}		\
 			devel/py-constantly${MODPY_FLAVOR}	\
 			devel/py-incremental${MODPY_FLAVOR}	\

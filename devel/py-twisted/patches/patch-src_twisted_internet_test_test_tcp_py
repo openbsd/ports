@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_twisted_internet_test_test_tcp_py,v 1.1 2018/05/25 10:42:38 pvk Exp $
+$OpenBSD: patch-src_twisted_internet_test_test_tcp_py,v 1.2 2018/08/20 21:35:11 pvk Exp $
 
 Index: src/twisted/internet/test/test_tcp.py
 --- src/twisted/internet/test/test_tcp.py.orig
 +++ src/twisted/internet/test/test_tcp.py
-@@ -2515,7 +2515,11 @@ class SimpleUtilityTests(TestCase):
+@@ -3037,7 +3037,11 @@ class SimpleUtilityTests(TestCase):
          accidentally block if it receives bad input.)
          """
          err = self.assertRaises(socket.gaierror, _resolveIPv6, "::1", "http")

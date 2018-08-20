@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_twisted_python__setup_py,v 1.2 2018/05/25 10:42:38 pvk Exp $
+$OpenBSD: patch-src_twisted_python__setup_py,v 1.3 2018/08/20 21:35:11 pvk Exp $
 
 Add suffix for py3 FLAVOR
 
@@ -33,13 +33,3 @@ Index: src/twisted/python/_setup.py
      ]
  
  
-@@ -250,6 +250,9 @@ def getSetupArgs(extensions=_EXTENSIONS):
-         },
-         cmdclass=command_classes,
-         include_package_data=True,
-+	exclude_package_data={
-+	    "": ["*.c", "*.h", "*.pxi", "*.pyx", "build.bat"],
-+	},
-         zip_safe=False,
-         extras_require=_EXTRAS_REQUIRE,
-         package_dir={"": "src"},
