@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2018/08/01 17:11:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2018/08/20 19:48:20 kn Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
@@ -20,19 +20,19 @@ WANTLIB += intl luajit-5.1 m magic pcre pthread sqlite3 ssl z
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	databases/sqlite3 \
-		devel/libmagic \
 		devel/gettext \
 		devel/glib2 \
+		devel/libmagic \
 		devel/pcre \
 		lang/luajit \
 		textproc/icu4c
 BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
-TEST_DEPENDS = ${FULLPKGNAME}:${FULLPKGPATH}
-TEST_DEPENDS +=	databases/redis \
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
+TEST_DEPENDS+=	databases/redis \
+		devel/py-robotframework \
 		sysutils/py-psutil \
-		textproc/py-demjson \
-		devel/py-robotframework
+		textproc/py-demjson
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
@@ -45,7 +45,8 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DRSPAMD_GROUP="_rspamd"
 
 # Make sure we pick up the base libevent, never the ports one!
-CONFIGURE_ARGS +=	-DLIBEVENT_ROOT_DIR=/usr
+CONFIGURE_ARGS+=	-DLIBEVENT_ROOT_DIR=/usr
+
 # Make sure you have no rspamd or redis instances running and note that the
 # test suite uses the network.
 #
