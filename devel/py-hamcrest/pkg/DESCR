@@ -1,0 +1,2 @@
+PyHamcrest is a framework for writing matcher objects, allowing you
+to declaratively define "match" rules.
