@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/02/10 13:55:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/20 07:15:26 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.5
+DISTNAME =		uriparser-0.8.6
 WRKDIST =		${WRKDIR}/uriparser-${DISTNAME}
-REVISION =		1
 
 SHARED_LIBS +=  uriparser                 1.0 # 1.21
 
@@ -34,9 +33,6 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 
 pre-configure:
-	cd ${WRKSRC} && env -i \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
+	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
