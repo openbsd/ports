@@ -1,10 +1,10 @@
-$OpenBSD: patch-custom_conf_app_ini_sample,v 1.1 2018/04/08 11:08:58 pvk Exp $
+$OpenBSD: patch-custom_conf_app_ini_sample,v 1.2 2018/08/20 07:52:01 robert Exp $
 
 Index: custom/conf/app.ini.sample
 --- custom/conf/app.ini.sample.orig
 +++ custom/conf/app.ini.sample
-@@ -5,12 +5,12 @@
- ; App name that shows on every page title
+@@ -7,12 +7,12 @@
+ ; App name that shows in every page title
  APP_NAME = Gitea: Git with a cup of tea
  ; Change it if you run locally
 -RUN_USER = git
@@ -19,7 +19,7 @@ Index: custom/conf/app.ini.sample
  SCRIPT_TYPE = bash
  ; Default ANSI charset
  ANSI_CHARSET =
-@@ -50,7 +50,7 @@ LOCAL_WIKI_PATH = tmp/local-wiki
+@@ -52,7 +52,7 @@ LOCAL_WIKI_PATH = tmp/local-wiki
  ; Whether repository file uploads are enabled. Defaults to `true`
  ENABLED = true
  ; Path for uploads. Defaults to `data/tmp/uploads` (tmp gets deleted on gitea restart)
@@ -27,17 +27,17 @@ Index: custom/conf/app.ini.sample
 +TEMP_PATH = ${LOCALSTATEDIR}/gitea/data/tmp/uploads
  ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
  ALLOWED_TYPES =
- ; Max size of each file in MB. Defaults to 3MB
-@@ -134,7 +134,7 @@ SSH_DOMAIN = %(DOMAIN)s
- ; Network interface builtin SSH server listens on
+ ; Max size of each file in megabytes. Defaults to 3MB
+@@ -137,7 +137,7 @@ SSH_DOMAIN = %(DOMAIN)s
+ ; THe network interface the builtin SSH server should listen on
  SSH_LISTEN_HOST =
  ; Port number to be exposed in clone URL
 -SSH_PORT = 22
 +SSH_PORT = 2222
- ; Port number builtin SSH server listens on
+ ; The port number the builtin SSH server should listen on
  SSH_LISTEN_PORT = %(SSH_PORT)s
  ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
-@@ -169,13 +169,13 @@ DISABLE_ROUTER_LOG = false
+@@ -172,13 +172,13 @@ DISABLE_ROUTER_LOG = false
  ; not forget to export the private key):
  ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
  ; $ openssl pkcs12 -in cert.pfx -out key.pem -nocerts -nodes
@@ -45,7 +45,7 @@ Index: custom/conf/app.ini.sample
 -KEY_FILE = custom/https/key.pem
 +CERT_FILE = ${LOCALSTATEDIR}/gitea/custom/https/cert.pem
 +KEY_FILE = ${LOCALSTATEDIR}/gitea/custom/https/key.pem
- ; Upper level of template and static file path
+ ; Root directory containing templates and static files.
  ; default is the path where Gitea is executed
  STATIC_ROOT_PATH =
  ; Default path for App data
@@ -54,7 +54,16 @@ Index: custom/conf/app.ini.sample
  ; Application level GZIP support
  ENABLE_GZIP = false
  ; Landing page, can be "home", "explore", or "organizations"
-@@ -196,7 +196,7 @@ DSA = 1024
+@@ -186,7 +186,7 @@ LANDING_PAGE = home
+ ; Enables git-lfs support. true or false, default is false.
+ LFS_START_SERVER = false
+ ; Where your lfs files reside, default is data/lfs.
+-LFS_CONTENT_PATH = data/lfs
++LFS_CONTENT_PATH = ${LOCALSTATEDIR}/gitea/data/lfs
+ ; LFS authentication secret, change this yourself
+ LFS_JWT_SECRET =
+ ; LFS authentication validity period (in time.Duration), pushes taking longer than this may fail.
+@@ -201,7 +201,7 @@ DSA = 1024
  
  [database]
  ; Either "mysql", "postgres", "mssql" or "sqlite3", it's your choice
@@ -63,16 +72,17 @@ Index: custom/conf/app.ini.sample
  HOST = 127.0.0.1:3306
  NAME = gitea
  USER = root
-@@ -205,14 +205,14 @@ PASSWD =
+@@ -210,7 +210,7 @@ PASSWD =
  ; For "postgres" only, either "disable", "require" or "verify-full"
  SSL_MODE = disable
- ; For "sqlite3" and "tidb", use absolute path when you start as service
+ ; For "sqlite3" and "tidb", use absolute path when you start gitea as service
 -PATH = data/gitea.db
 +PATH = ${LOCALSTATEDIR}/gitea/data/gitea.db
  ; For "sqlite3" only. Query timeout
  SQLITE_TIMEOUT = 500
  ; For iterate buffer, default is 50
- ITERATE_BUFFER_SIZE = 50
+@@ -219,7 +219,7 @@ ITERATE_BUFFER_SIZE = 50
+ LOG_SQL = true
  
  [indexer]
 -ISSUE_INDEXER_PATH = indexers/issues.bleve
@@ -80,7 +90,7 @@ Index: custom/conf/app.ini.sample
  ; repo indexer by default disabled, since it uses a lot of disk space
  REPO_INDEXER_ENABLED = false
  REPO_INDEXER_PATH = indexers/repos.bleve
-@@ -339,8 +339,8 @@ HELO_HOSTNAME =
+@@ -350,8 +350,8 @@ HELO_HOSTNAME =
  SKIP_VERIFY =
  ; Use client certificate
  USE_CERTIFICATE = false
@@ -91,14 +101,14 @@ Index: custom/conf/app.ini.sample
  ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
  FROM =
  ; Mailer user name and password
-@@ -371,13 +371,13 @@ ITEM_TTL = 16h
+@@ -382,13 +382,13 @@ ITEM_TTL = 16h
  
  [session]
  ; Either "memory", "file", or "redis", default is "memory"
 -PROVIDER = memory
 +PROVIDER = file
  ; Provider config options
- ; memory: not have any config yet
+ ; memory: doesn't have any config yet
  ; file: session file path, e.g. `data/sessions`
  ; redis: network=tcp,addr=:6379,password=macaron,db=0,pool_size=100,idle_timeout=180
  ; mysql: go-sql-driver/mysql dsn config string, e.g. `root:password@/session_table`
@@ -107,25 +117,25 @@ Index: custom/conf/app.ini.sample
  ; Session cookie name
  COOKIE_NAME = i_like_gitea
  ; If you use session in https only, default is false
-@@ -390,7 +390,7 @@ GC_INTERVAL_TIME = 86400
+@@ -401,7 +401,7 @@ GC_INTERVAL_TIME = 86400
  SESSION_LIFE_TIME = 86400
  
  [picture]
 -AVATAR_UPLOAD_PATH = data/avatars
 +AVATAR_UPLOAD_PATH = ${LOCALSTATEDIR}/gitea/data/avatars
- ; Chinese users can choose "duoshuo"
- ; or a custom avatar source, like: http://cn.gravatar.com/avatar/
- GRAVATAR_SOURCE = gravatar
-@@ -405,7 +405,7 @@ ENABLE_FEDERATED_AVATAR = false
+ ; Max Width and Height of uploaded avatars. This is to limit the amount of RAM
+ ; used when resizing the image.
+ AVATAR_MAX_WIDTH = 4096
+@@ -420,7 +420,7 @@ ENABLE_FEDERATED_AVATAR = false
  ; Whether attachments are enabled. Defaults to `true`
- ENABLE = true
+ ENABLED = true
  ; Path for attachments. Defaults to `data/attachments`
 -PATH = data/attachments
 +PATH = ${LOCALSTATEDIR}/gitea/data/attachments
  ; One or more allowed types, e.g. image/jpeg|image/png
  ALLOWED_TYPES = image/jpeg|image/png|application/zip|application/gzip
- ; Max size of each file. Defaults to 32MB
-@@ -420,14 +420,14 @@ MAX_FILES = 5
+ ; Max size of each file. Defaults to 4MB
+@@ -435,14 +435,14 @@ MAX_FILES = 5
  FORMAT =
  
  [log]
@@ -135,7 +145,7 @@ Index: custom/conf/app.ini.sample
  ; Use comma to separate multiple modes, e.g. "console, file"
 -MODE = console
 +MODE = file
- ; Buffer length of channel, keep it as it is if you don't know what it is.
+ ; Buffer length of the channel, keep it as it is if you don't know what it is.
  BUFFER_LEN = 10000
  ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
 -LEVEL = Trace
