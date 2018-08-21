@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.151 2018/05/19 06:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2018/08/21 06:54:30 ajacoutot Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.49
+DISTNAME=	lighttpd-1.4.50
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -30,7 +30,9 @@ CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --with-openssl \
 		 --without-bzip2 \
 		 --without-libev
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CC_FOR_BUILD="${CC}" \
+		CFLAGS_FOR_BUILD="${CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
