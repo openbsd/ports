@@ -1,7 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.16 2018/08/01 17:11:44 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.17 2018/08/21 17:11:08 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
+
+forcibly disable lua < 5.3 (lua_strlen problem)
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -39,6 +41,26 @@ Index: CMakeLists.txt
  IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_BSD_SOURCE -DDARWIN")
  	SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
+@@ -611,13 +617,13 @@ IF(ENABLE_LUAJIT MATCHES "ON")
+ 		INCLUDE_DIRECTORIES("${LUA_INCLUDE_DIR}")
+ 	ENDIF(NOT LUA_FOUND)
+ ELSE(ENABLE_LUAJIT MATCHES "ON")
+-	FindLua(VERSION_MAJOR "5" VERSION_MINOR "3" ROOT "${LUA_ROOT}")
+-	IF(NOT LUA_FOUND)
+-		FindLua(VERSION_MAJOR "5" VERSION_MINOR "2" ROOT "${LUA_ROOT}")
+-		IF(NOT LUA_FOUND)
++#	FindLua(VERSION_MAJOR "5" VERSION_MINOR "3" ROOT "${LUA_ROOT}")
++#	IF(NOT LUA_FOUND)
++#		FindLua(VERSION_MAJOR "5" VERSION_MINOR "2" ROOT "${LUA_ROOT}")
++#		IF(NOT LUA_FOUND)
+ 				FindLua(VERSION_MAJOR "5" VERSION_MINOR "1" ROOT "${LUA_ROOT}")
+-		ENDIF(NOT LUA_FOUND)
+-	ENDIF(NOT LUA_FOUND)
++#		ENDIF(NOT LUA_FOUND)
++#	ENDIF(NOT LUA_FOUND)
+ 	IF(NOT LUA_FOUND)
+ 			MESSAGE(FATAL_ERROR "Lua not found, lua support is required")
+ 	ELSE(NOT LUA_FOUND)
 @@ -654,7 +660,7 @@ ELSE()
  ENDIF()
  

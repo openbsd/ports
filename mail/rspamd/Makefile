@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2018/08/21 16:15:45 sthen Exp $
-
-# non-luajit build currently failing:
-# lua_task.c:(.text+0x7fe7): undefined reference to `lua_strlen'
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+# $OpenBSD: Makefile,v 1.58 2018/08/21 17:11:08 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	1.7.9
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -50,13 +47,16 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 LIB_DEPENDS+=	lang/luajit
 WANTLIB+=	luajit-5.1
+PKG_ARGS +=     -Dluajit=1
 .else
-MODLUA_VERSION=	5.3
+# XXX patched to disable lua 5.3 preference in CMakeLists.txt;
+# for post-1.7.9 try removing that and MODLUA_VERSION=5.3
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
 		-DENABLE_TORCH=0
 MODULES+=	lang/lua
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
+PKG_ARGS +=     -Dluajit=0
 .endif
 
 # Make sure we pick up the base libevent, never the ports one!
