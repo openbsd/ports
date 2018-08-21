@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.8 2018/08/13 14:25:50 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.9 2018/08/21 07:05:34 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
@@ -41,10 +41,3 @@ Index: makefile
  
  .PHONY: build-darwin
  build-darwin: checkstyle copy-src pre-build
-@@ -389,4 +405,4 @@ else
- 	@echo "Start generating mocks in directory" $(MOCKERYDIR)
- endif
- 	mockery -name="[A-Z]*" -dir=$(MOCKERYDIR) -output=mocks
--	mv mocks $(MOCKERYDIR)/mocks
-\ No newline at end of file
-+	mv mocks $(MOCKERYDIR)/mocks
