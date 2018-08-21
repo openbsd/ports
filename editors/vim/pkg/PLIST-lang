@@ -1,5 +1,80 @@
-@comment $OpenBSD: PLIST-lang,v 1.14 2018/03/08 16:04:30 sthen Exp $
+@comment $OpenBSD: PLIST-lang,v 1.15 2018/08/21 16:55:08 sthen Exp $
 @conflict vim-<7.4
+man/da/
+man/da.ISO8859-1/
+man/da.ISO8859-1/man1/
+@man man/da.ISO8859-1/man1/ex.1
+@man man/da.ISO8859-1/man1/gview.1
+@man man/da.ISO8859-1/man1/gvim.1
+@man man/da.ISO8859-1/man1/gvimdiff.1
+@man man/da.ISO8859-1/man1/rgview.1
+@man man/da.ISO8859-1/man1/rgvim.1
+@man man/da.ISO8859-1/man1/rview.1
+@man man/da.ISO8859-1/man1/rvim.1
+@man man/da.ISO8859-1/man1/view.1
+@man man/da.ISO8859-1/man1/vim.1
+@man man/da.ISO8859-1/man1/vimdiff.1
+@man man/da.ISO8859-1/man1/vimtutor.1
+man/da.UTF-8/
+man/da.UTF-8/man1/
+@man man/da.UTF-8/man1/ex.1
+@man man/da.UTF-8/man1/gview.1
+@man man/da.UTF-8/man1/gvim.1
+@man man/da.UTF-8/man1/gvimdiff.1
+@man man/da.UTF-8/man1/rgview.1
+@man man/da.UTF-8/man1/rgvim.1
+@man man/da.UTF-8/man1/rview.1
+@man man/da.UTF-8/man1/rvim.1
+@man man/da.UTF-8/man1/view.1
+@man man/da.UTF-8/man1/vim.1
+@man man/da.UTF-8/man1/vimdiff.1
+@man man/da.UTF-8/man1/vimtutor.1
+man/da/man1/
+@man man/da/man1/ex.1
+@man man/da/man1/gview.1
+@man man/da/man1/gvim.1
+@man man/da/man1/gvimdiff.1
+@man man/da/man1/rgview.1
+@man man/da/man1/rgvim.1
+@man man/da/man1/rview.1
+@man man/da/man1/rvim.1
+@man man/da/man1/view.1
+@man man/da/man1/vim.1
+@man man/da/man1/vimdiff.1
+@man man/da/man1/vimtutor.1
+man/de/
+man/de.ISO8859-1/
+man/de.ISO8859-1/man1/
+@man man/de.ISO8859-1/man1/ex.1
+@man man/de.ISO8859-1/man1/gview.1
+@man man/de.ISO8859-1/man1/gvim.1
+@man man/de.ISO8859-1/man1/rgview.1
+@man man/de.ISO8859-1/man1/rgvim.1
+@man man/de.ISO8859-1/man1/rview.1
+@man man/de.ISO8859-1/man1/rvim.1
+@man man/de.ISO8859-1/man1/view.1
+@man man/de.ISO8859-1/man1/vim.1
+man/de.UTF-8/
+man/de.UTF-8/man1/
+@man man/de.UTF-8/man1/ex.1
+@man man/de.UTF-8/man1/gview.1
+@man man/de.UTF-8/man1/gvim.1
+@man man/de.UTF-8/man1/rgview.1
+@man man/de.UTF-8/man1/rgvim.1
+@man man/de.UTF-8/man1/rview.1
+@man man/de.UTF-8/man1/rvim.1
+@man man/de.UTF-8/man1/view.1
+@man man/de.UTF-8/man1/vim.1
+man/de/man1/
+@man man/de/man1/ex.1
+@man man/de/man1/gview.1
+@man man/de/man1/gvim.1
+@man man/de/man1/rgview.1
+@man man/de/man1/rgvim.1
+@man man/de/man1/rview.1
+@man man/de/man1/rvim.1
+@man man/de/man1/view.1
+@man man/de/man1/vim.1
 man/fr/
 man/fr.ISO8859-1/
 man/fr.ISO8859-1/man1/
@@ -216,6 +291,9 @@ share/vim/${P}/lang/cs.cp1250/LC_MESSAGES/
 share/vim/${P}/lang/cs.cp1250/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/cs/LC_MESSAGES/
 share/vim/${P}/lang/cs/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/da/
+share/vim/${P}/lang/da/LC_MESSAGES/
+share/vim/${P}/lang/da/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/de/
 share/vim/${P}/lang/de/LC_MESSAGES/
 share/vim/${P}/lang/de/LC_MESSAGES/vim.mo
@@ -279,6 +357,8 @@ share/vim/${P}/lang/menu_cs_cz.utf-8.vim
 share/vim/${P}/lang/menu_czech_czech_republic.1250.vim
 share/vim/${P}/lang/menu_czech_czech_republic.1252.vim
 share/vim/${P}/lang/menu_czech_czech_republic.ascii.vim
+share/vim/${P}/lang/menu_da.latin1.vim
+share/vim/${P}/lang/menu_da.utf-8.vim
 share/vim/${P}/lang/menu_de.latin1.vim
 share/vim/${P}/lang/menu_de.utf-8.vim
 share/vim/${P}/lang/menu_de_de.latin1.vim
@@ -463,6 +543,8 @@ share/vim/${P}/tutor/tutor.ca.utf-8
 share/vim/${P}/tutor/tutor.cs
 share/vim/${P}/tutor/tutor.cs.cp1250
 share/vim/${P}/tutor/tutor.cs.utf-8
+share/vim/${P}/tutor/tutor.da
+share/vim/${P}/tutor/tutor.da.utf-8
 share/vim/${P}/tutor/tutor.de
 share/vim/${P}/tutor/tutor.de.utf-8
 share/vim/${P}/tutor/tutor.el
@@ -487,7 +569,7 @@ share/vim/${P}/tutor/tutor.ja.sjis
 share/vim/${P}/tutor/tutor.ja.utf-8
 share/vim/${P}/tutor/tutor.ko.euc
 share/vim/${P}/tutor/tutor.ko.utf-8
-share/vim/${P}/tutor/tutor.lv
+share/vim/${P}/tutor/tutor.lv.utf-8
 share/vim/${P}/tutor/tutor.nb
 share/vim/${P}/tutor/tutor.nb.utf-8
 share/vim/${P}/tutor/tutor.nl

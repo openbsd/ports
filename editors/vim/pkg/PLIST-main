@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2018/06/06 08:53:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/08/21 16:55:08 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -21,6 +21,7 @@ share/vim/
 share/vim/${P}/
 share/vim/${P}/autoload/
 share/vim/${P}/autoload/README.txt
+share/vim/${P}/autoload/RstFold.vim
 share/vim/${P}/autoload/ada.vim
 share/vim/${P}/autoload/adacomplete.vim
 share/vim/${P}/autoload/ccomplete.vim
@@ -506,6 +507,7 @@ share/vim/${P}/ftplugin/verilog.vim
 share/vim/${P}/ftplugin/vhdl.vim
 share/vim/${P}/ftplugin/vim.vim
 share/vim/${P}/ftplugin/vroom.vim
+share/vim/${P}/ftplugin/wast.vim
 share/vim/${P}/ftplugin/xdefaults.vim
 share/vim/${P}/ftplugin/xf86conf.vim
 share/vim/${P}/ftplugin/xhtml.vim
@@ -635,6 +637,7 @@ share/vim/${P}/indent/verilog.vim
 share/vim/${P}/indent/vhdl.vim
 share/vim/${P}/indent/vim.vim
 share/vim/${P}/indent/vroom.vim
+share/vim/${P}/indent/wast.vim
 share/vim/${P}/indent/xf86conf.vim
 share/vim/${P}/indent/xhtml.vim
 share/vim/${P}/indent/xinetd.vim
@@ -1422,6 +1425,7 @@ share/vim/${P}/syntax/voscm.vim
 share/vim/${P}/syntax/vrml.vim
 share/vim/${P}/syntax/vroom.vim
 share/vim/${P}/syntax/vsejcl.vim
+share/vim/${P}/syntax/wast.vim
 share/vim/${P}/syntax/wdiff.vim
 share/vim/${P}/syntax/web.vim
 share/vim/${P}/syntax/webmacro.vim
