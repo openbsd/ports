@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/11 14:18:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/21 03:21:31 bcallah Exp $
 
 COMMENT =	convert SountFont sf2 files into GUS patchsets
-DISTNAME =	unsf-1.1.20160930
+DISTNAME =	unsf-1.1.20180608
 CATEGORIES =	converters audio
 
 GH_ACCOUNT =	psi29a
 GH_PROJECT =	unsf
-GH_COMMIT =	146a0e37eb2f384125613856ee0a0059e59dae58
+GH_COMMIT =	85229250bb2dc19b5aa76391a44e674642142cfe
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
