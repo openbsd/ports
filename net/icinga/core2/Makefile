@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/08/02 00:33:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2018/08/21 20:31:23 kirby Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -78,7 +78,8 @@ CONFIGURE_ARGS += \
 	-DICINGA2_USER:String=_icinga \
 	-DICINGA2_GROUP:String=_icinga \
 	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \
-	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios
+	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios \
+	-DHAVE_LIBEXECINFO=OFF
 
 post-configure:
 	@sed -i 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h
