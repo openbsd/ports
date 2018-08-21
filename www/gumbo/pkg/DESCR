@@ -1,0 +1,15 @@
+Gumbo is an implementation of the HTML5 parsing algorithm implemented as
+a pure C99 library with no outside dependencies. It's designed to serve as
+a building block for other tools and libraries such as linters, validators,
+templating languages, and refactoring and analysis tools.
+
+Goals & features:
+
+- Fully conformant with the HTML5 spec.
+- Robust and resilient to bad input.
+- Simple API that can be easily wrapped by other languages.
+- Support for source locations and pointers back to the original text.
+- Support for fragment parsing.
+- Relatively lightweight, with no outside dependencies.
+- Passes all html5lib tests, including the template tag.
+- Tested on over 2.5 billion pages from Google's index.
