@@ -1,31 +1,11 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.7 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.8 2018/08/21 06:56:09 ajacoutot Exp $
 
-- ELF: Add /usr/lib as default search path.
-
-  GNU ld and gold have this path as default search path.
-  If you don't want this directory, pass -nostdlib.
-- Enable PIE by default.
+Enable PIE by default.
 
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -394,6 +394,15 @@ void LinkerDriver::main(ArrayRef<const char *> ArgsArr
-   }
- }
- 
-+static std::vector<StringRef> getSearchPaths(opt::InputArgList &Args) {
-+  std::vector<StringRef> V;
-+  if (!Args.hasArg(OPT_nostdlib))
-+    V.push_back("=/usr/lib");
-+  for (auto *Arg : Args.filtered(OPT_library_path))
-+    V.push_back(Arg->getValue());
-+  return V;
-+}
-+
- static std::string getRpath(opt::InputArgList &Args) {
-   std::vector<StringRef> V = args::getStrings(Args, OPT_rpath);
-   return llvm::join(V.begin(), V.end(), ":");
-@@ -638,13 +647,14 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+@@ -638,7 +638,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
    Config->Optimize = args::getInteger(Args, OPT_O, 1);
    Config->OrphanHandling = getOrphanHandling(Args);
    Config->OutputFile = Args.getLastArgValue(OPT_o);
@@ -35,10 +15,3 @@ Index: tools/lld/ELF/Driver.cpp
    Config->PrintGcSections =
        Args.hasFlag(OPT_print_gc_sections, OPT_no_print_gc_sections, false);
    Config->Rpath = getRpath(Args);
-   Config->Relocatable = Args.hasArg(OPT_relocatable);
-   Config->SaveTemps = Args.hasArg(OPT_save_temps);
--  Config->SearchPaths = args::getStrings(Args, OPT_library_path);
-+  Config->SearchPaths = getSearchPaths(Args);
-   Config->SectionStartMap = getSectionStartMap(Args);
-   Config->Shared = Args.hasArg(OPT_shared);
-   Config->SingleRoRx = Args.hasArg(OPT_no_rosegment);

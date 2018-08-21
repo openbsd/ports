@@ -1,0 +1,37 @@
+$OpenBSD: patch-lib_Target_AArch64_AArch64FrameLowering_cpp,v 1.1 2018/08/21 06:56:09 ajacoutot Exp $
+
+Add retguard for arm64.
+
+Index: lib/Target/AArch64/AArch64FrameLowering.cpp
+--- lib/Target/AArch64/AArch64FrameLowering.cpp.orig
++++ lib/Target/AArch64/AArch64FrameLowering.cpp
+@@ -95,6 +95,7 @@
+ #include "AArch64InstrInfo.h"
+ #include "AArch64MachineFunctionInfo.h"
+ #include "AArch64RegisterInfo.h"
++#include "AArch64ReturnProtectorLowering.h"
+ #include "AArch64Subtarget.h"
+ #include "AArch64TargetMachine.h"
+ #include "MCTargetDesc/AArch64AddressingModes.h"
+@@ -1243,6 +1244,12 @@ void AArch64FrameLowering::determineCalleeSaves(Machin
+     if (produceCompactUnwindFrame(MF) && !SavedRegs.test(PairedReg))
+       SpillEstimate++;
+   }
++
++  if (MFI.hasReturnProtectorRegister()) {
++    SavedRegs.set(MFI.getReturnProtectorRegister());
++    SpillEstimate++;
++  }
++
+   SpillEstimate += 2; // Conservatively include FP+LR in the estimate
+   unsigned StackEstimate = MFI.estimateStackSize(MF) + 8 * SpillEstimate;
+ 
+@@ -1344,4 +1351,8 @@ bool AArch64FrameLowering::enableStackSlotScavenging(
+     const MachineFunction &MF) const {
+   const AArch64FunctionInfo *AFI = MF.getInfo<AArch64FunctionInfo>();
+   return AFI->hasCalleeSaveStackFreeSpace();
++}
++
++const ReturnProtectorLowering *AArch64FrameLowering::getReturnProtector() const {
++  return &RPL;
+ }

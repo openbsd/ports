@@ -1,50 +1,53 @@
-$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.2 2018/08/21 06:56:09 ajacoutot Exp $
 
-Add RETGUARD to clang for amd64. This security mechanism uses per-function
-random cookies to protect access to function return instructions, with the
-effect that the integrity of the return address is protected, and function
-return instructions are harder to use in ROP gadgets.
+- Add RETGUARD to clang for amd64. This security mechanism uses per-function
+  random cookies to protect access to function return instructions, with the
+  effect that the integrity of the return address is protected, and function
+  return instructions are harder to use in ROP gadgets.
 
-On function entry the return address is combined with a per-function random
-cookie and stored in the stack frame. The integrity of this value is verified
-before function return, and if this check fails, the program aborts. In this way
-RETGUARD is an improved stack protector, since the cookies are per-function. The
-verification routine is constructed such that the binary space immediately
-before each ret instruction is padded with int03 instructions, which makes these
-return instructions difficult to use in ROP gadgets. In the kernel, this has the
-effect of removing approximately 50% of total ROP gadgets, and 15% of unique
-ROP gadgets compared to the 6.3 release kernel. Function epilogues are
-essentially gadget free, leaving only the polymorphic gadgets that result from
-jumping into the instruction stream partway through other instructions. Work to
-remove these gadgets will continue through other mechanisms.
+  On function entry the return address is combined with a per-function random
+  cookie and stored in the stack frame. The integrity of this value is verified
+  before function return, and if this check fails, the program aborts. In this way
+  RETGUARD is an improved stack protector, since the cookies are per-function. The
+  verification routine is constructed such that the binary space immediately
+  before each ret instruction is padded with int03 instructions, which makes these
+  return instructions difficult to use in ROP gadgets. In the kernel, this has the
+  effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+  ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+  essentially gadget free, leaving only the polymorphic gadgets that result from
+  jumping into the instruction stream partway through other instructions. Work to
+  remove these gadgets will continue through other mechanisms.
+- Refactor retguard to make adding additional arches easier.
 
 Index: include/llvm/CodeGen/MachineFrameInfo.h
 --- include/llvm/CodeGen/MachineFrameInfo.h.orig
 +++ include/llvm/CodeGen/MachineFrameInfo.h
-@@ -237,6 +237,11 @@ class MachineFrameInfo {
+@@ -237,6 +237,13 @@ class MachineFrameInfo {
    /// The frame index for the stack protector.
    int StackProtectorIdx = -1;
  
-+  /// The register to use for the return protector temp register
-+  unsigned ReturnProtectorTempRegister = 0;
-+  /// Set to true if using return protectors
-+  bool ReturnProtector = false;
++  struct ReturnProtector {
++    /// The register to use for return protector calculations
++    unsigned Register = 0;
++    /// Set to true if this function needs return protectors
++    bool Needed = false;
++  } RPI;
 +
    /// The frame index for the function context. Used for SjLj exceptions.
    int FunctionContextIdx = -1;
  
-@@ -313,6 +318,14 @@ class MachineFrameInfo {
+@@ -313,6 +320,14 @@ class MachineFrameInfo {
    int getStackProtectorIndex() const { return StackProtectorIdx; }
    void setStackProtectorIndex(int I) { StackProtectorIdx = I; }
    bool hasStackProtectorIndex() const { return StackProtectorIdx != -1; }
 +
-+  /// Return the temporary register for the return protector cookie calculation
-+  int getReturnProtectorTempRegister() const { return ReturnProtectorTempRegister; }
-+  void setReturnProtectorTempRegister(unsigned I) { ReturnProtectorTempRegister = I; }
-+  bool hasReturnProtectorTempRegister() const { return ReturnProtectorTempRegister != 0; }
-+  /// Return the return protector level
-+  void setReturnProtector(bool I) { ReturnProtector = I; }
-+  bool hasReturnProtector() const { return ReturnProtector; }
++  /// Get / Set return protector calculation register
++  unsigned getReturnProtectorRegister() const { return RPI.Register; }
++  void setReturnProtectorRegister(unsigned I) { RPI.Register = I; }
++  bool hasReturnProtectorRegister() const { return RPI.Register != 0; }
++  /// Get / Set if this frame needs a return protector
++  void setReturnProtectorNeeded(bool I) { RPI.Needed = I; }
++  bool getReturnProtectorNeeded() const { return RPI.Needed; }
  
    /// Return the index for the function context object.
    /// This object is used for SjLj exceptions.

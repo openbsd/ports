@@ -1,10 +1,9 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.7 2018/08/21 06:56:09 ajacoutot Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
 - Keep the STT_FILE symbol in the table so that we know what file was used to compile an object.
 - Put .got.plt in RELRO.
-
 
 Index: tools/lld/ELF/Writer.cpp
 --- tools/lld/ELF/Writer.cpp.orig

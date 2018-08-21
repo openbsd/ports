@@ -1,76 +1,70 @@
-$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.2 2018/08/21 06:56:09 ajacoutot Exp $
 
-Add RETGUARD to clang for amd64. This security mechanism uses per-function
-random cookies to protect access to function return instructions, with the
-effect that the integrity of the return address is protected, and function
-return instructions are harder to use in ROP gadgets.
+- Add RETGUARD to clang for amd64. This security mechanism uses per-function
+  random cookies to protect access to function return instructions, with the
+  effect that the integrity of the return address is protected, and function
+  return instructions are harder to use in ROP gadgets.
 
-On function entry the return address is combined with a per-function random
-cookie and stored in the stack frame. The integrity of this value is verified
-before function return, and if this check fails, the program aborts. In this way
-RETGUARD is an improved stack protector, since the cookies are per-function. The
-verification routine is constructed such that the binary space immediately
-before each ret instruction is padded with int03 instructions, which makes these
-return instructions difficult to use in ROP gadgets. In the kernel, this has the
-effect of removing approximately 50% of total ROP gadgets, and 15% of unique
-ROP gadgets compared to the 6.3 release kernel. Function epilogues are
-essentially gadget free, leaving only the polymorphic gadgets that result from
-jumping into the instruction stream partway through other instructions. Work to
-remove these gadgets will continue through other mechanisms.
+  On function entry the return address is combined with a per-function random
+  cookie and stored in the stack frame. The integrity of this value is verified
+  before function return, and if this check fails, the program aborts. In this way
+  RETGUARD is an improved stack protector, since the cookies are per-function. The
+  verification routine is constructed such that the binary space immediately
+  before each ret instruction is padded with int03 instructions, which makes these
+  return instructions difficult to use in ROP gadgets. In the kernel, this has the
+  effect of removing approximately 50% of total ROP gadgets, and 15% of unique
+  ROP gadgets compared to the 6.3 release kernel. Function epilogues are
+  essentially gadget free, leaving only the polymorphic gadgets that result from
+  jumping into the instruction stream partway through other instructions. Work to
+  remove these gadgets will continue through other mechanisms.
+- Refactor retguard to make adding additional arches easier.
 
 Index: lib/CodeGen/PrologEpilogInserter.cpp
 --- lib/CodeGen/PrologEpilogInserter.cpp.orig
 +++ lib/CodeGen/PrologEpilogInserter.cpp
-@@ -175,6 +175,10 @@ bool PEI::runOnMachineFunction(MachineFunction &Fn) {
+@@ -174,7 +174,11 @@ bool PEI::runOnMachineFunction(MachineFunction &Fn) {
+   const Function &F = Fn.getFunction();
    const TargetRegisterInfo *TRI = Fn.getSubtarget().getRegisterInfo();
    const TargetFrameLowering *TFI = Fn.getSubtarget().getFrameLowering();
++  const ReturnProtectorLowering *RPL = TFI->getReturnProtector();
  
-+  // Set Return Protector in the frame
-+  if (F.hasFnAttribute("ret-protector"))
-+    Fn.getFrameInfo().setReturnProtector(true);
++  if (RPL)
++      RPL->setupReturnProtector(Fn);
 +
    RS = TRI->requiresRegisterScavenging(Fn) ? new RegScavenger() : nullptr;
    FrameIndexVirtualScavenging = TRI->requiresFrameIndexScavenging(Fn);
    FrameIndexEliminationScavenging = (RS && !FrameIndexVirtualScavenging) ||
-@@ -209,6 +213,19 @@ bool PEI::runOnMachineFunction(MachineFunction &Fn) {
+@@ -209,6 +213,10 @@ bool PEI::runOnMachineFunction(MachineFunction &Fn) {
    if (!F.hasFnAttribute(Attribute::Naked))
      insertPrologEpilogCode(Fn);
  
 +  // Add Return Protectors if using them
-+  if (Fn.getFrameInfo().hasReturnProtector()) {
-+    std::vector<MachineBasicBlock *> ReturnBlocks;
-+    bool insertedGuard = false;
-+    for (auto &MBB: Fn)
-+      if (MBB.isReturnBlock())
-+        ReturnBlocks.push_back(&MBB);
-+    for (MachineBasicBlock *MBB: ReturnBlocks)
-+      insertedGuard |= TFI->insertReturnProtectorEpilogue(Fn, *MBB);
-+    if (insertedGuard)
-+      TFI->insertReturnProtectorPrologue(Fn, Fn.front());
-+  }
++  if (RPL)
++      RPL->insertReturnProtectors(Fn);
 +
    // Replace all MO_FrameIndex operands with physical register references
    // and actual offsets.
    //
-@@ -293,7 +310,8 @@ void PEI::calculateCallFrameInfo(MachineFunction &Fn) 
+@@ -293,7 +301,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &Fn) 
  /// Compute the sets of entry and return blocks for saving and restoring
  /// callee-saved registers, and placing prolog and epilog code.
  void PEI::calculateSaveRestoreBlocks(MachineFunction &Fn) {
 -  const MachineFrameInfo &MFI = Fn.getFrameInfo();
 +  MachineFrameInfo &MFI = Fn.getFrameInfo();
 +  const TargetFrameLowering *TFI = Fn.getSubtarget().getFrameLowering();
++  const ReturnProtectorLowering *RPL = TFI->getReturnProtector();
  
    // Even when we do not change any CSR, we still want to insert the
    // prologue and epilogue of the function.
-@@ -309,7 +327,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -309,7 +319,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      // epilogue.
      if (!RestoreBlock->succ_empty() || RestoreBlock->isReturnBlock())
        RestoreBlocks.push_back(RestoreBlock);
 -    return;
 +
 +    // If we are adding return protectors ensure we can find a free register
-+    if (MFI.hasReturnProtector() &&
-+        !TFI->determineReturnProtectorTempRegister(Fn, SaveBlocks, RestoreBlocks)) {
++    if (RPL &&
++       !RPL->determineReturnProtectorRegister(Fn, SaveBlocks, RestoreBlocks)) {
 +      // Shrinkwrapping will prevent finding a free register
 +      SaveBlocks.clear();
 +      RestoreBlocks.clear();
@@ -82,23 +76,23 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
    }
  
    // Save refs to entry and return blocks.
-@@ -320,6 +349,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -320,6 +341,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      if (MBB.isReturnBlock())
        RestoreBlocks.push_back(&MBB);
    }
 +
-+  if (MFI.hasReturnProtector())
-+    TFI->determineReturnProtectorTempRegister(Fn, SaveBlocks, RestoreBlocks);
++  if (RPL)
++    RPL->determineReturnProtectorRegister(Fn, SaveBlocks, RestoreBlocks);
  }
  
  static void assignCalleeSavedSpillSlots(MachineFunction &F,
-@@ -341,6 +373,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
+@@ -341,6 +365,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
  
    const TargetFrameLowering *TFI = F.getSubtarget().getFrameLowering();
    MachineFrameInfo &MFI = F.getFrameInfo();
 +
-+  if (MFI.hasReturnProtectorTempRegister())
-+      CSI.push_back(CalleeSavedInfo(MFI.getReturnProtectorTempRegister()));
++  if (TFI->getReturnProtector())
++      TFI->getReturnProtector()->saveReturnProtectorRegister(F, CSI);
 +
    if (!TFI->assignCalleeSavedSpillSlots(F, RegInfo, CSI)) {
      // If target doesn't implement this, use generic code.
