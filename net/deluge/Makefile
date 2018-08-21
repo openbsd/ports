@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:18 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/08/21 00:57:15 tj Exp $
 
 COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	1.3.15
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.deluge-torrent.org/
+HOMEPAGE =	https://www.deluge-torrent.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,6 +26,7 @@ BUILD_DEPENDS =		devel/py-xdg \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-twisted \
 			devel/py-xdg \
+			graphics/py-Pillow \
 			net/libtorrent-rasterbar \
 			textproc/py-chardet \
 			www/py-mako \
