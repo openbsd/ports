@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2018/08/20 19:48:20 kn Exp $
+# $OpenBSD: Makefile,v 1.57 2018/08/21 16:15:45 sthen Exp $
+
+# non-luajit build currently failing:
+# lua_task.c:(.text+0x7fe7): undefined reference to `lua_strlen'
+ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
@@ -16,7 +20,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto event glib-2.0 gthread-2.0 icudata icui18n icuuc
-WANTLIB += intl luajit-5.1 m magic pcre pthread sqlite3 ssl z
+WANTLIB += intl m magic pcre pthread sqlite3 ssl z
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	databases/sqlite3 \
@@ -24,7 +28,6 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/glib2 \
 		devel/libmagic \
 		devel/pcre \
-		lang/luajit \
 		textproc/icu4c
 BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
@@ -34,7 +37,7 @@ TEST_DEPENDS+=	databases/redis \
 		sysutils/py-psutil \
 		textproc/py-demjson
 
-CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
+CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
 		-DDBDIR="${LOCALSTATEDIR}/rspamd" \
@@ -43,6 +46,18 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd" \
 		-DRSPAMD_GROUP="_rspamd"
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+LIB_DEPENDS+=	lang/luajit
+WANTLIB+=	luajit-5.1
+.else
+MODLUA_VERSION=	5.3
+CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
+		-DENABLE_TORCH=0
+MODULES+=	lang/lua
+LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
+WANTLIB+=	${MODLUA_WANTLIB}
+.endif
 
 # Make sure we pick up the base libevent, never the ports one!
 CONFIGURE_ARGS+=	-DLIBEVENT_ROOT_DIR=/usr
