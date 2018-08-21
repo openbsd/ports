@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2018/05/05 15:05:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.148 2018/08/21 02:04:27 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -24,6 +24,7 @@
      SUBDIR += foma
      SUBDIR += freemat
      SUBDIR += galculator
+     SUBDIR += gbc
      SUBDIR += geogebra
      SUBDIR += ginac
      SUBDIR += gnumeric
