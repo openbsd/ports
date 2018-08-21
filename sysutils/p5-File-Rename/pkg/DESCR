@@ -2,11 +2,11 @@ File::Rename is a Perl extension that accepts a list of files, passes
 them through a subroutine, and renames them according to the output
 of that function.
 
-rename(1) is a command-line tool using this extension, allowing batch
+prename(1) is a command-line tool using this extension, allowing batch
 changes like these to be made:
 
 - strip the .bak extension of any *.bak files
-rename 's/\e.bak$//' *.bak
+prename 's/\.bak$//' *.bak
 
 - translate uppercase names to lower
-rename 'y/A-Z/a-z/' *
+prename 'y/A-Z/a-z/' *
