@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2018/04/25 11:43:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/08/21 16:20:40 sthen Exp $
 
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
 ONLY_FOR_ARCHS = powerpc i386 amd64
 # arm needs missing EABI symbols
 # games/tome4 is using embedded copy of luajit
+# if changing, sync in mail/rspamd
 
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
