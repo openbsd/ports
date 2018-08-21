@@ -1,0 +1,12 @@
+bc is an arbitrary precision calculator language. Syntax is similar to
+C, but differs in many substantial areas. It supports interactive
+execution of statements.
+
+It can also be used as a simple console-based calculator.
+
+This GNU version of bc contains several extensions beyond traditional bc
+implementations and the POSIX draft standard.
+
+This package includes GNU dc, another arbitrary precision calculator.
+dc is a reverse-polish desk calculator which supports unlimited
+precision arithmetic. It also allows you to define and call macros.

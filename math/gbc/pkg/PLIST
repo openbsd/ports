@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/21 02:04:04 bcallah Exp $
+@bin bin/gbc
+@bin bin/gdc
+@info info/bc.info
+@info info/dc.info
+@man man/man1/gbc.1
+@man man/man1/gdc.1
