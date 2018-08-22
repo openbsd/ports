@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2018/08/15 12:54:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.88 2018/08/22 20:54:25 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -26,8 +26,10 @@ google-cloud-sdk/bin/gsutil
 google-cloud-sdk/bin/java_dev_appserver.sh
 google-cloud-sdk/data/
 google-cloud-sdk/data/cli/
+google-cloud-sdk/data/cli/bq.json
 google-cloud-sdk/data/cli/gcloud.json
 google-cloud-sdk/data/cli/gcloud_completions.py
+google-cloud-sdk/data/cli/gsutil.json
 google-cloud-sdk/install.sh
 google-cloud-sdk/lib/
 google-cloud-sdk/lib/gcloud.py
@@ -3442,6 +3444,12 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/vpcaccess_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/six_subset/
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/six_subset/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/_internal/six_subset/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/admin/
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/admin/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/appengine/admin/__init__.pyc
