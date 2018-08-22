@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/03/06 18:59:48 bket Exp $
+# $OpenBSD: Makefile,v 1.16 2018/08/22 19:07:48 sthen Exp $
 
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-2.2.3
+DISTNAME =		discount-2.2.4
 
 CATEGORIES =		textproc
 
@@ -18,10 +18,12 @@ EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure.sh
+CONFIGURE_ARGS =	--github-checkbox \
+			--cxx-binding
 
 INSTALL_TARGET =	install.everything
 
 pre-configure:
-	@sed -i 's,\./markdown,\./discount,' ${WRKSRC}/tests/*
+	@sed -i 's,\./markdown,\./discount,' ${WRKSRC}/tests/*.*
 
 .include <bsd.port.mk>
