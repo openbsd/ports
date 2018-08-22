@@ -1,5 +1,0 @@
-If you wish to change from the default basic settings, adapt
-${PREFIX}/conf/catalina.properties as needed (${PREFIX}/README
-has more information). Otherwise you may access the user interface
-at http://hostname:9080/ or https://hostname:8443/ using username
-ubnt, password ubnt.
