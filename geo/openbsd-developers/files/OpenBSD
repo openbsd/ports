@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.156 2018/06/18 05:46:57 thfr Exp $
+# $OpenBSD: OpenBSD,v 1.157 2018/08/22 09:43:15 reyk Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -82,6 +82,7 @@
 47.2230677	-1.5538359	"gilles"	# Gilles Chehade
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
+47.36778	8.53989		"reyk"		# Reyk Floeter
 47.369024	8.538033	"stephan"	# Stephan A. Rickauer
 47.402103	8.502002	"remi"		# Remi Locherer
 47.404841	8.562961	"tb"		# Theo Buehler
@@ -148,7 +149,6 @@
 52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
 52.54		13.41		"phessler"	# Peter Hessler
-52.584		9.739		"reyk"		# Reyk Floeter
 53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
 53.30		-6.24		"niallo"	# Niall O'Higgins
