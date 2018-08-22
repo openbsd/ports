@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.626 2018/08/14 18:48:15 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.627 2018/08/22 16:36:11 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1051,6 +1051,7 @@ my $obsolete_reason = {
 	'snapdl' => 3,
 	'ccnet' => 6,
 	'dkim-milter' => 10,
+	'aircontrol' => 11,
 };
 
 # reasons for obsolete packages
@@ -1066,6 +1067,7 @@ my @msg = (
 	"requires systemd", #8
 	"256 colors only, suggest scrot or xwd", #9
 	"has been replaced by opendkim", #10
+	"no longer packageable", #11
 );
 
 # ->is_base_system($handle, $state):
