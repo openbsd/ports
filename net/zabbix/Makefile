@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2018/08/17 19:19:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.151 2018/08/22 19:57:59 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -17,7 +17,7 @@ FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
 REVISION-main =		1
-REVISION-proxy =	0
+REVISION-proxy =	1
 REVISION-server =	0
 REVISION-web =		0
 
