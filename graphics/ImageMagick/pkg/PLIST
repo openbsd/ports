@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2018/05/24 09:33:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.58 2018/08/22 18:36:00 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 @sample ${SYSCONFDIR}/ImageMagick/
@@ -1263,10 +1263,14 @@ share/examples/ImageMagick/quantization-table.xml
 @sample ${SYSCONFDIR}/ImageMagick/quantization-table.xml
 share/examples/ImageMagick/thresholds.xml
 @sample ${SYSCONFDIR}/ImageMagick/thresholds.xml
+share/examples/ImageMagick/type-apple.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-apple.xml
 share/examples/ImageMagick/type-dejavu.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-dejavu.xml
 share/examples/ImageMagick/type-ghostscript.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-ghostscript.xml
+share/examples/ImageMagick/type-urw-base35.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-urw-base35.xml
 share/examples/ImageMagick/type-windows.xml
 @sample ${SYSCONFDIR}/ImageMagick/type-windows.xml
 share/examples/ImageMagick/type.xml

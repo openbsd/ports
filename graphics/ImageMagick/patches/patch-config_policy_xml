@@ -1,0 +1,18 @@
+$OpenBSD: patch-config_policy_xml,v 1.1 2018/08/22 18:36:00 sthen Exp $
+
+As recommended in http://www.openwall.com/lists/oss-security/2018/08/21/2
+
+Index: config/policy.xml
+--- config/policy.xml.orig
++++ config/policy.xml
+@@ -69,6 +69,10 @@
+   <!-- <policy domain="resource" name="throttle" value="0"/> -->
+   <!-- <policy domain="resource" name="time" value="3600"/> -->
+   <!-- <policy domain="coder" rights="none" pattern="MVG" /> -->
++  <policy domain="coder" rights="none" pattern="PS" />
++  <policy domain="coder" rights="none" pattern="EPS" />
++  <policy domain="coder" rights="none" pattern="PDF" />
++  <policy domain="coder" rights="none" pattern="XPS" />
+   <!-- <policy domain="delegate" rights="none" pattern="HTTPS" /> -->
+   <!-- <policy domain="path" rights="none" pattern="@*" /> -->
+   <!-- <policy domain="cache" name="memory-map" value="anonymous"/> -->

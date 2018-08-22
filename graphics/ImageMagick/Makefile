@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.177 2018/05/24 09:33:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.178 2018/08/22 18:36:00 sthen Exp $
 
 COMMENT=		image processing tools
 
-VER=			6.9.9
-DASHVER=		47
+VER=			6.9.10
+DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     6.1      # 5.0
-SHARED_LIBS +=	MagickWand-6.Q16     4.0      # 5.0
+SHARED_LIBS +=	MagickCore-6.Q16     6.2      # 6.0
+SHARED_LIBS +=	MagickWand-6.Q16     4.0      # 6.0
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
 
 CATEGORIES=		graphics
@@ -72,16 +72,12 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
 
+FAKE_FLAGS=		CONFIGURE_PATH=${PREFIX}/share/examples/ImageMagick
+
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} $$(find . -name '*.pc.in')
 
-post-install:
+xxpost-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ImageMagick
-.for i in coder.xml colors.xml delegates.xml log.xml magic.xml \
-	mime.xml policy.xml quantization-table.xml \
-	thresholds.xml type-dejavu.xml type-ghostscript.xml \
-	type-windows.xml type.xml
-	${INSTALL_DATA} ${WRKSRC}/config/$i ${PREFIX}/share/examples/ImageMagick
-.endfor
 
 .include <bsd.port.mk>
