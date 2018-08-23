@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.459 2018/07/16 19:51:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.460 2018/08/23 05:38:24 landry Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -138,6 +138,7 @@
      SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2
+     SUBDIR += libmypaint
      SUBDIR += libpano13
      SUBDIR += libpgf
      SUBDIR += libqrencode
@@ -164,6 +165,7 @@
      SUBDIR += mplex
      SUBDIR += mscgen
      SUBDIR += mtpaint
+     SUBDIR += mypaint-brushes
      SUBDIR += netpbm
      SUBDIR += nomacs
      SUBDIR += ocrad
