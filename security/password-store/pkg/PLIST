@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/19 09:39:18 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/08/23 08:19:02 bentley Exp $
 bin/pass
 lib/password-store/
 lib/password-store/extensions/
 lib/password-store/platform.sh
 @man man/man1/pass.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/pass
 share/doc/password-store/
 share/doc/password-store/COPYING
@@ -19,6 +17,7 @@ share/examples/password-store/dmenu/
 share/examples/password-store/dmenu/README.md
 share/examples/password-store/dmenu/passmenu
 share/examples/password-store/emacs/
+share/examples/password-store/emacs/CHANGELOG.md
 share/examples/password-store/emacs/Cask
 share/examples/password-store/emacs/README.md
 share/examples/password-store/emacs/password-store.el
