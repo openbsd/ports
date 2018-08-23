@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2018/08/03 05:14:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.582 2018/08/23 05:49:51 landry Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -402,6 +402,8 @@
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc
      SUBDIR += py-numpydoc,python3
+     SUBDIR += py-ofxparse
+     SUBDIR += py-ofxparse,python3
      SUBDIR += py-pandocfilters
      SUBDIR += py-pandocfilters,python3
      SUBDIR += py-pdf
