@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/10 18:00:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/23 18:47:13 jasper Exp $
 
 COMMENT =		C++ bindings for ZeroMQ
 
 GH_ACCOUNT =		zeromq
 GH_PROJECT =		cppzmq
-GH_TAGNAME =		v4.2.2
+GH_TAGNAME =		v4.3.0
 
 CATEGORIES =		net
 
