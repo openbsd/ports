@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2017/02/23 12:30:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2018/08/23 20:27:17 sthen Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		QtPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtpy-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
 
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
