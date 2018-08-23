@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/05/29 22:07:41 nigel Exp $
+# $OpenBSD: Makefile,v 1.68 2018/08/23 06:53:04 landry Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -15,7 +15,7 @@ CATEGORIES=		misc geo
 
 REVISION-main=		9
 REVISION-php=		10
-REVISION-x11=		4
+REVISION-x11=		5
 
 HOMEPAGE=		http://www.catb.org/gpsd/
 
@@ -43,7 +43,8 @@ BUILD_DEPENDS=		textproc/docbook-xsl
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	devel/libusb1
 
-RUN_DEPENDS-x11 =	${BASE_PKGPATH}
+RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
+			x11/py-gtk2
 
 .include <bsd.port.arch.mk>
 
