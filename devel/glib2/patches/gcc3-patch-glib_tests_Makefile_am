@@ -1,0 +1,17 @@
+$OpenBSD: gcc3-patch-glib_tests_Makefile_am,v 1.1 2018/08/23 07:16:36 ajacoutot Exp $
+
+-Wstrict-aliasing is not supported by GCC3.
+
+Index: glib/tests/Makefile.am
+--- glib/tests/Makefile.am.orig
++++ glib/tests/Makefile.am
+@@ -175,9 +175,6 @@ all_markup_data = \
+ 
+ test_programs += atomic
+ atomic_CFLAGS  = $(AM_CFLAGS)
+-if HAVE_GCC
+-atomic_CFLAGS += -Wstrict-aliasing=2
+-endif
+ 
+ overflow_fallback_SOURCES = overflow.c
+ # FIXME: FLAGS?
