@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/01 14:16:29 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2018/08/23 09:11:17 edd Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.3.0
+GH_TAGNAME =	v0.3.1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
