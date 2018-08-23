@@ -1,0 +1,6 @@
+Space Trader centers on buying and selling commodities in various star
+systems around the galaxy. The player has one of several types of
+spacecraft, and interacts with other traders, pirates, and police. The
+goal is to earn enough money to retire to your own moon.
+
+This package is a port of the original Palm OS game to C#.
