@@ -1,0 +1,32 @@
+$OpenBSD: patch-libs_locale_build_Jamfile_v2,v 1.1 2018/08/23 16:38:10 kirby Exp $
+
+Index: libs/locale/build/Jamfile.v2
+--- libs/locale/build/Jamfile.v2.orig
++++ libs/locale/build/Jamfile.v2
+@@ -65,8 +65,8 @@ ICU_LINK =  [ modules.peek : ICU_LINK ] ;
+ 
+ if $(ICU_LINK)
+ {
+-    ICU_OPTS = <include>$(ICU_PATH)/include <linkflags>$(ICU_LINK) <dll-path>$(ICU_PATH)/bin <runtime-link>shared ;
+-    ICU64_OPTS = <include>$(ICU_PATH)/include <linkflags>$(ICU_LINK) <dll-path>$(ICU_PATH)/bin64 <runtime-link>shared ;
++    ICU_OPTS = <include>$(ICU_PATH)/include <linkflags>$(ICU_LINK) <runtime-link>shared ;
++    ICU64_OPTS = <include>$(ICU_PATH)/include <linkflags>$(ICU_LINK) <runtime-link>shared ;
+ }
+ else
+ {
+@@ -124,7 +124,6 @@ else
+       <library>icuuc/<link>shared/<runtime-link>shared 
+       <library>icudt/<link>shared/<runtime-link>shared 
+       <library>icuin/<link>shared/<runtime-link>shared
+-      <dll-path>$(ICU_PATH)/bin
+         <runtime-link>shared ;
+ 
+ 
+@@ -183,7 +182,6 @@ else
+       <library>icuuc_64/<link>shared/<runtime-link>shared 
+       <library>icudt_64/<link>shared/<runtime-link>shared 
+       <library>icuin_64/<link>shared/<runtime-link>shared
+-      <dll-path>$(ICU_PATH)/bin64
+         <runtime-link>shared ;
+  
+     

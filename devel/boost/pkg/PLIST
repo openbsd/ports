@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/01/31 21:54:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/08/23 16:38:10 kirby Exp $
 @bin bin/b2
 @bin bin/bjam
 include/boost/
@@ -10326,8 +10326,8 @@ include/boost/python/converter/implicit.hpp
 include/boost/python/converter/obj_mgr_arg_from_python.hpp
 include/boost/python/converter/object_manager.hpp
 include/boost/python/converter/pointer_type_id.hpp
-include/boost/python/converter/${MODPY_PYOEXTENSION}bject_traits.hpp
-include/boost/python/converter/${MODPY_PYOEXTENSION}bject_type.hpp
+include/boost/python/converter/pyobject_traits.hpp
+include/boost/python/converter/pyobject_type.hpp
 include/boost/python/converter/pytype_function.hpp
 include/boost/python/converter/pytype_object_mgr_traits.hpp
 include/boost/python/converter/registered.hpp
@@ -10390,7 +10390,7 @@ include/boost/python/detail/prefix.hpp
 include/boost/python/detail/preprocessor.hpp
 include/boost/python/detail/python22_fixed.h
 include/boost/python/detail/python_type.hpp
-include/boost/python/detail/raw_${MODPY_PYOEXTENSION}bject.hpp
+include/boost/python/detail/raw_pyobject.hpp
 include/boost/python/detail/referent_storage.hpp
 include/boost/python/detail/result.hpp
 include/boost/python/detail/scope.hpp

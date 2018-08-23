@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.73 2018/01/31 21:54:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2018/08/23 16:38:10 kirby Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	8.0
+SO_VERSION=	9.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -56,7 +57,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 # Boost
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c iconv m z
+WANTLIB += ${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
 
 COMPILER= base-clang ports-gcc
 
@@ -68,7 +69,7 @@ BUILD_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_2} \
 		math/py-numpy
 
 LIB_DEPENDS=	archivers/bzip2 \
-		converters/libiconv
+		textproc/icu4c
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
@@ -79,7 +80,7 @@ TOOLSET=	gcc
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
-BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
+BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-sBZIP2_INCLUDE=${LOCALBASE}/include \
 		-sBZIP2_LIBPATH=${LOCALBASE}/lib \
 		-q \
@@ -94,8 +95,7 @@ BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
 
 BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-toolset=${TOOLSET} \
-		--with-python-root=${LOCALBASE} \
-		--without-icu
+		--with-python-root=${LOCALBASE}
 
 # 'context' and 'coroutine' use MD bits and miss support for Alpha,
 # PA-RISC, SPARC and SuperH. The author does not care
