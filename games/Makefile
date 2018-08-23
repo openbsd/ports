@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2018/08/15 22:15:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.385 2018/08/23 02:38:26 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -249,6 +249,7 @@
      SUBDIR += solarus
      SUBDIR += spacehulk
      SUBDIR += spaceinvaders
+     SUBDIR += spacetrader
      SUBDIR += spacezero
      SUBDIR += spatial
      SUBDIR += speeddreams
