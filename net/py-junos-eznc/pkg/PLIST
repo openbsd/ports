@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 14:20:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/08/23 18:55:01 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/jnpr/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/__init__.py
@@ -140,6 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}nd.${MODP
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}ospf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}phyport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}routes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}securityzone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}teddb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}vlan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/${MODPY_PYCACHE}xcvr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -181,6 +182,8 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/phyport.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/phyport.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/routes.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/routes.yml
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/securityzone.py
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/securityzone.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/teddb.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/teddb.yml
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/op/vlan.py
