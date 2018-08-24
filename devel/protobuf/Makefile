@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/08/09 16:45:21 tb Exp $
+# $OpenBSD: Makefile,v 1.23 2018/08/24 15:47:33 jca Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -33,3 +33,11 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-zlib
 
 .include <bsd.port.mk>
+
+# avoid undefined reference to __atomic_fetch_add_8
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+. if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+CONFIGURE_ENV +=	LIBS="-latomic"
+WANTLIB +=		atomic
+. endif
+.endif
