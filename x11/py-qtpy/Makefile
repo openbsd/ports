@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/23 20:27:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/08/24 18:55:23 sthen Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
@@ -22,6 +22,13 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-NO_TEST =		Yes
+TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR} \
+			x11/py-qt5${MODPY_FLAVOR}
+
+TEST_IS_INTERACTIVE =	x11
+
+# XXX fails with PORTS_PRIVSEP
+do-test:
+	cd ${WRKSRC}/qtpy/tests && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
