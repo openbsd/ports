@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2018/08/24 19:16:36 sthen Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
-DISTNAME=		spampd-2.30
-REVISION=		4
+GH_ACCOUNT=		mpaperno
+GH_PROJECT=		spampd
+GH_TAGNAME=		2.51
 
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.worlddesign.com/index.cfm/page/rd/mta/spampd.htm
 MAINTAINER=		Henrik Friedrichsen <henrik@diff.cc>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
-
-MASTER_SITES=		http://www.worlddesign.com/Content/rd/mta/spampd/
 
 RUN_DEPENDS=		devel/p5-Net-Server \
 			mail/p5-Mail-SpamAssassin
@@ -24,8 +23,8 @@ NO_TEST=		Yes
 
 do-install:
 	cd ${WRKSRC} && \
-		pod2man --section=8 --center="Spam Proxy Daemon" spampd > spampd.8
+		pod2man --section=8 --center="Spam Proxy Daemon" spampd.pl > spampd.8
 	${INSTALL_MAN} ${WRKBUILD}/spampd.8 ${PREFIX}/man/man8/spampd.8
-	${INSTALL_SCRIPT} ${WRKSRC}/spampd ${PREFIX}/sbin/spampd
+	${INSTALL_SCRIPT} ${WRKSRC}/spampd.pl ${PREFIX}/sbin/spampd
 
 .include <bsd.port.mk>
