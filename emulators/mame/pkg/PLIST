@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/08/25 06:44:18 fcambus Exp $
 @conflict sdlmame-*
 @conflict sdlmame-tools-*
 @conflict sdlmess-*
+@pkgpath emulators/sdlmame,-main
+@pkgpath emulators/sdlmame,-tools
+@pkgpath emulators/sdlmess
 @bin bin/castool
 @bin bin/chdman
 @bin bin/floptool
