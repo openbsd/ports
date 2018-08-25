@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/08/25 06:46:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.100 2018/08/25 06:46:59 fcambus Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -41,7 +41,6 @@
     SUBDIR += qemu
     SUBDIR += retroarch
     SUBDIR += ppsspp
-    SUBDIR += sdlmess
     SUBDIR += simh
     SUBDIR += snes9x
     SUBDIR += spim
