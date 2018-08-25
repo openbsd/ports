@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/09 14:37:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/08/25 12:44:47 bcallah Exp $
 
-V =		5.3.0
+V =		5.3.1
 COMMENT =	enhanced port of Thompson shell from Sixth Edition Unix
 DISTNAME =	etsh-${V}
 EPOCH =		0
