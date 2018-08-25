@@ -1,5 +1,0 @@
-MAME stands for Multi Arcade Machine Emulator. As the name suggests, it
-is a program that emulates the hardware (and low-level firmware) of a
-massive variety of arcade machines.
-
-SDLMAME is a port of MAME using the SDL library.
