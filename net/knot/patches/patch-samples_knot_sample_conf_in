@@ -1,13 +1,13 @@
-$OpenBSD: patch-samples_knot_sample_conf_in,v 1.2 2017/06/01 13:42:01 jca Exp $
+$OpenBSD: patch-samples_knot_sample_conf_in,v 1.3 2018/08/25 17:44:10 jca Exp $
 Index: samples/knot.sample.conf.in
 --- samples/knot.sample.conf.in.orig
 +++ samples/knot.sample.conf.in
-@@ -9,7 +9,7 @@ server:
-     # Listen on all configured IPv6 interfaces.
-     listen: ::@53
-     # User for running the server.
--    # user: knot:knot
+@@ -3,7 +3,7 @@
+ 
+ server:
+     rundir: "@run_dir@"
+-    user: knot:knot
 +    user: _knot:_knot
+     listen: [ 127.0.0.1@53, ::1@53 ]
  
  log:
-     # Log info and more serious events to syslog.

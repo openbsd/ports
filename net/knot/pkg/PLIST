@@ -1,47 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/17 13:18:09 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/08/25 17:44:10 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
 @bin bin/kdig
 @bin bin/khost
-@bin bin/kjournalprint
 @bin bin/knsec3hash
 @bin bin/knsupdate
 @bin bin/kzonecheck
-include/dnssec/
-include/dnssec/binary.h
-include/dnssec/crypto.h
-include/dnssec/dnssec.h
-include/dnssec/error.h
-include/dnssec/key.h
-include/dnssec/keyid.h
-include/dnssec/keystore.h
-include/dnssec/keytag.h
-include/dnssec/list.h
-include/dnssec/nsec.h
-include/dnssec/random.h
-include/dnssec/sign.h
-include/dnssec/tsig.h
-include/dnssec/version.h
 include/knot/
 include/knot/module.h
+include/libdnssec/
+include/libdnssec/binary.h
+include/libdnssec/crypto.h
+include/libdnssec/dnssec.h
+include/libdnssec/error.h
+include/libdnssec/key.h
+include/libdnssec/keyid.h
+include/libdnssec/keystore.h
+include/libdnssec/keytag.h
+include/libdnssec/list.h
+include/libdnssec/nsec.h
+include/libdnssec/random.h
+include/libdnssec/sign.h
+include/libdnssec/tsig.h
+include/libdnssec/version.h
 include/libknot/
 include/libknot/attribute.h
-include/libknot/binary.h
 include/libknot/codes.h
 include/libknot/consts.h
 include/libknot/control/
 include/libknot/control/control.h
-include/libknot/cookies/
-include/libknot/cookies/alg-fnv64.h
-include/libknot/cookies/client.h
-include/libknot/cookies/server.h
+include/libknot/cookies.h
 include/libknot/db/
 include/libknot/db/db.h
 include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
 include/libknot/descriptor.h
 include/libknot/dname.h
+include/libknot/endian.h
 include/libknot/errcode.h
 include/libknot/error.h
 include/libknot/libknot.h
@@ -57,32 +53,30 @@ include/libknot/rdataset.h
 include/libknot/rrset-dump.h
 include/libknot/rrset.h
 include/libknot/rrtype/
-include/libknot/rrtype/aaaa.h
 include/libknot/rrtype/dnskey.h
 include/libknot/rrtype/ds.h
 include/libknot/rrtype/naptr.h
 include/libknot/rrtype/nsec.h
 include/libknot/rrtype/nsec3.h
 include/libknot/rrtype/nsec3param.h
-include/libknot/rrtype/opt-cookie.h
 include/libknot/rrtype/opt.h
 include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
 include/libknot/rrtype/tsig.h
-include/libknot/rrtype/txt.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
 include/libknot/version.h
+include/libknot/wire.h
 include/libknot/yparser/
 include/libknot/yparser/yparser.h
 include/libknot/yparser/ypformat.h
 include/libknot/yparser/ypschema.h
 include/libknot/yparser/yptrafo.h
-include/zscanner/
-include/zscanner/error.h
-include/zscanner/scanner.h
-include/zscanner/version.h
+include/libzscanner/
+include/libzscanner/error.h
+include/libzscanner/scanner.h
+include/libzscanner/version.h
 lib/libdnssec.a
 lib/libdnssec.la
 @lib lib/libdnssec.so.${LIBdnssec_VERSION}
@@ -98,19 +92,18 @@ lib/pkgconfig/libknot.pc
 lib/pkgconfig/libzscanner.pc
 @man man/man1/kdig.1
 @man man/man1/khost.1
-@man man/man1/kjournalprint.1
 @man man/man1/knsec3hash.1
 @man man/man1/knsupdate.1
 @man man/man1/kzonecheck.1
 @man man/man5/knot.conf.5
 @man man/man8/keymgr.8
+@man man/man8/kjournalprint.8
 @man man/man8/knotc.8
 @man man/man8/knotd.8
-@man man/man8/pykeymgr.8
 @bin sbin/keymgr
+@bin sbin/kjournalprint
 @bin sbin/knotc
 @bin sbin/knotd
-sbin/pykeymgr
 share/examples/knot/
 @sample ${SYSCONFDIR}/knot/
 share/examples/knot/example.com.zone
