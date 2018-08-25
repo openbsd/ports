@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.627 2018/08/22 16:36:11 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.628 2018/08/25 06:52:39 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -279,6 +279,9 @@ my $stem_extensions = {
 	'py-buildbot-console-view' => 'py3-buildbot-console-view',
 	'py-buildbot-waterfall-view' => 'py3-buildbot-waterfall-view',
 	'py-buildslave' => 'buildbot-worker',
+	'sdlmame' => 'mame',
+	'sdlmame-tools' => 'mame',
+	'sdlmess' => 'mame',
 };
 
 my $obsolete_reason = {
