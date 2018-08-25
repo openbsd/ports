@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_project_settings_cpp,v 1.1.1.1 2018/04/27 07:32:53 bentley Exp $
+$OpenBSD: patch-core_project_settings_cpp,v 1.2 2018/08/25 19:20:29 thfr Exp $
 
 revert long-distance matching in zstd which is based on private functions and
 doesn't compile if archivers/zstd is installed
@@ -9,7 +9,7 @@ based on github issue #17374
 Index: core/project_settings.cpp
 --- core/project_settings.cpp.orig
 +++ core/project_settings.cpp
-@@ -1038,14 +1038,11 @@ ProjectSettings::ProjectSettings() {
+@@ -1041,14 +1041,11 @@ ProjectSettings::ProjectSettings() {
  	GLOBAL_DEF("debug/settings/profiler/max_functions", 16384);
  
  	//assigning here, because using GLOBAL_GET on every block for compressing can be slow

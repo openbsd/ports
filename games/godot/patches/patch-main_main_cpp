@@ -1,0 +1,18 @@
+$OpenBSD: patch-main_main_cpp,v 1.1 2018/08/25 19:20:29 thfr Exp $
+
+log on falling back to dummy audio driver
+
+Index: main/main.cpp
+--- main/main.cpp.orig
++++ main/main.cpp
+@@ -938,6 +938,10 @@ Error Main::setup(const char *execpath, int argc, char
+ 		audio_driver = GLOBAL_DEF("audio/driver", OS::get_singleton()->get_audio_driver_name(0));
+ 	}
+ 
++	if (audio_driver == "Dummy") {
++		print_line("Failed to attach audio driver. Falling back to dummy driver.");
++	}
++
+ 	for (int i = 0; i < OS::get_singleton()->get_audio_driver_count(); i++) {
+ 
+ 		if (audio_driver == OS::get_singleton()->get_audio_driver_name(i)) {
