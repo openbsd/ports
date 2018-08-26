@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/11 14:58:56 bket Exp $
-
-BROKEN-powerpc =	undefined reference to __atomic_store_8
+# $OpenBSD: Makefile,v 1.19 2018/08/26 11:47:10 kirby Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -31,3 +30,7 @@ CONFIGURE_ENV =		CXXFLAGS="-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE"
 TEST_TARGET =		unittests test
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+WANTLIB += atomic
+.endif
