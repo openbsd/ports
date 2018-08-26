@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/08 11:28:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/08/26 13:14:31 fcambus Exp $
 
 COMMENT =	offline mail reader for Blue Wave, QWK, OMEN, SOUP and OPX
 
-V =		0.49
+V =		0.51
 DISTNAME =	mmail-${V}
 PKGNAME =	multimail-${V}
-REVISION =	2
-FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	news
 
-HOMEPAGE =	http://multimail.sourceforge.net/
+HOMEPAGE =	https://multimail.sourceforge.io/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -20,13 +18,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB =	c curses m ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=multimail/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=multimail/}
+
+FIX_EXTRACT_PERMISSIONS = Yes
 
 RUN_DEPENDS =	archivers/unzip \
 		archivers/zip
 
-MAKE_ENV =	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+USE_GMAKE =	Yes
 
 NO_TEST =	Yes
 
