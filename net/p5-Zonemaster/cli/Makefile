@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/06 21:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/08/26 19:37:27 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -6,7 +6,7 @@ COMMENT =	tool to check the quality of a DNS zone
 
 MODULES =	cpan
 CPAN_AUTHOR =	ZNMSTR
-V =		1.1.2
+V =		1.1.3
 DISTNAME =	Zonemaster-CLI-v$V
 PKGNAME =	zonemaster-$V
 CATEGORIES =	net
