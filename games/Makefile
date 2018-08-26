@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.385 2018/08/23 02:38:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.386 2018/08/26 15:30:27 naddy Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -298,7 +298,6 @@
      SUBDIR += warmux
      SUBDIR += warzone2100
      SUBDIR += wesnoth
-     SUBDIR += wesnoth,lite
      SUBDIR += widelands
      SUBDIR += witchblast
      SUBDIR += wizznic
