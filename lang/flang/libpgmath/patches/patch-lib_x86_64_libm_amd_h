@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.1.1.1 2018/05/09 22:26:14 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.2 2018/08/26 00:40:22 bcallah Exp $
 
 We need the compat.
 
@@ -14,17 +14,16 @@ Index: lib/x86_64/libm_amd.h
  typedef long __INT8_T;
  typedef unsigned long __UINT8_T;
  
-@@ -88,6 +88,13 @@ struct exception {
-   double arg2;
-   double retval;
- };
+@@ -79,6 +79,12 @@ typedef unsigned long long __UINT8_T;
+ 
+ /* Open Tools #defines ldexpf */
+ #undef ldexpf
 +
 +/* We're missing these on OpenBSD, found in NetBSD math.h */
 +#define DOMAIN		1
 +#define SING		2
 +#define OVERFLOW	3
 +#define UNDERFLOW	4
-+
+ 
  #endif
  
- #ifndef _COMPLEX_DEFINED
