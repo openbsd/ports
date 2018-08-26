@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/26 09:00:14 awolk Exp $
 @bin bin/ghostwriter
 @man man/man1/ghostwriter.1
 share/appdata/
@@ -6,7 +6,16 @@ share/appdata/ghostwriter.appdata.xml
 share/applications/ghostwriter.desktop
 share/ghostwriter/
 share/ghostwriter/translations/
+share/ghostwriter/translations/ghostwriter_cs.qm
+share/ghostwriter/translations/ghostwriter_de.qm
 share/ghostwriter/translations/ghostwriter_en.qm
+share/ghostwriter/translations/ghostwriter_es.qm
+share/ghostwriter/translations/ghostwriter_fr.qm
+share/ghostwriter/translations/ghostwriter_it.qm
+share/ghostwriter/translations/ghostwriter_ja.qm
+share/ghostwriter/translations/ghostwriter_pl.qm
+share/ghostwriter/translations/ghostwriter_pt_BR.qm
+share/ghostwriter/translations/ghostwriter_ru.qm
 share/ghostwriter/translations/ghostwriter_zh.qm
 share/icons/hicolor/128x128/apps/ghostwriter.png
 share/icons/hicolor/16x16/apps/ghostwriter.png
