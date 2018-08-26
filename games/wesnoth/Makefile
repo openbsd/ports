@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2018/07/29 12:57:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.74 2018/08/26 12:24:50 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.12.6
-REVISION=	3
+DISTNAME=	wesnoth-1.14.4
 
 CATEGORIES=	games x11
 
@@ -20,45 +19,40 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
-WANTLIB += Xext boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt c cairo dbus-1 fontconfig freetype fribidi
-WANTLIB += glib-2.0 gobject-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB += pthread ${COMPILER_LIBCXX} vorbisfile z
+WANTLIB += ICE SDL2 SDL2_image SDL2_mixer SDL2_ttf SM X11 Xext
+WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt
+WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt c cairo crypto dbus-1
+WANTLIB += fontconfig freetype fribidi glib-2.0 gobject-2.0 intl
+WANTLIB += m pango-1.0 pangocairo-1.0 vorbisfile z
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	devel/cmake
+# c++11
+COMPILER = 	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	devel/boost>=1.53.0p6 \
-		devel/sdl-image \
-		devel/sdl-net \
-		devel/sdl-mixer \
-		devel/sdl-ttf \
+LIB_DEPENDS=	devel/boost>=1.66.0p0 \
+		devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-ttf \
 		devel/fribidi \
 		devel/pango \
 		x11/dbus
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		textproc/libxslt
+		textproc/libxslt \
+		x11/gtk+3,-guic
 
 CONFIGURE_ARGS+=-DFIFO_DIR=/var/wesnothd \
 		-DSERVER_UID=708 \
 		-DSERVER_GID=708 \
 		-DENABLE_CAMPAIGN_SERVER=ON \
 		-DENABLE_STRICT_COMPILATION=OFF \
-		-DMANDIR=${PREFIX}/man
-
-SEPARATE_BUILD=	flavored
+		-DOPT=-O2 \
+		-Wno_dev
 
 NO_TEST=	Yes
-
-FLAVORS=	lite
-FLAVOR?=
-
-.if ${FLAVOR:Mlite}
-CONFIGURE_ARGS+=-DENABLE_LOW_MEM=ON
-.endif
 
 post-install:
 	find ${PREFIX} -name .gitignore -exec rm -f {} \+
