@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2018/02/06 21:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/08/26 20:07:28 sthen Exp $
 
 COMMENT =	module to interface the DNS resolver using the ldns library
 
 MODULES =	cpan
 CPAN_AUTHOR =	ZNMSTR
-DISTNAME =	Zonemaster-LDNS-1.0.2
+DISTNAME =	Zonemaster-LDNS-1.1.0
 CATEGORIES =	net
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
@@ -12,12 +12,16 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto idn perl
+WANTLIB += c crypto ldns perl
 
-LIB_DEPENDS =	devel/libidn
 BUILD_DEPENDS =	devel/p5-Devel-CheckLib
+LIB_DEPENDS =	net/ldns/libldns
 TEST_DEPENDS =	devel/p5-Test-Fatal
 
-CONFIGURE_ARGS = --libs=${LOCALBASE}/lib
+CONFIGURE_ARGS = --no-internal-ldns
+
+# XXX something is wrong passing libs from makemaker to the generated
+# Makefile, bodge it for now
+MAKE_FLAGS=	LDLOADLIBS="-lcrypto -lldns"
 
 .include <bsd.port.mk>
