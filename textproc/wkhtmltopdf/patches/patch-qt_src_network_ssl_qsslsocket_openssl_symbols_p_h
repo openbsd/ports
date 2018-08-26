@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.1 2018/07/24 12:03:11 sthen Exp $
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.2 2018/08/26 11:58:36 tb Exp $
 
 Index: qt/src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- qt/src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
@@ -136,25 +136,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols_p.h
  #define q_SKM_sk_num(type, st) ((int (*)(const STACK_OF(type) *))q_sk_num)(st)
  #define q_SKM_sk_value(type, st,i) ((type * (*)(const STACK_OF(type) *, int))q_sk_value)(st, i)
  #define q_sk_GENERAL_NAME_num(st) q_SKM_sk_num(GENERAL_NAME, (st))
-@@ -475,17 +410,8 @@ void q_DSA_get0_pqg(const DSA *d, const BIGNUM **p, co
- #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
- #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
-         q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
--
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
- #define q_X509_get_notAfter(x) X509_get_notAfter(x)
- #define q_X509_get_notBefore(x) X509_get_notBefore(x)
--#else
--ASN1_TIME *q_X509_getm_notAfter(X509 *x);
--ASN1_TIME *q_X509_getm_notBefore(X509 *x);
--#define q_X509_get_notAfter(x) q_X509_getm_notAfter(x)
--#define q_X509_get_notBefore(x) q_X509_getm_notBefore(x)
--#endif
--
- #define q_EVP_PKEY_assign_RSA(pkey,rsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_RSA,\
- 					(char *)(rsa))
- #define q_EVP_PKEY_assign_DSA(pkey,dsa) q_EVP_PKEY_assign((pkey),EVP_PKEY_DSA,\
-@@ -495,21 +421,10 @@ ASN1_TIME *q_X509_getm_notBefore(X509 *x);
+@@ -495,21 +430,10 @@ ASN1_TIME *q_X509_getm_notBefore(X509 *x);
  #else
  #define q_OpenSSL_add_all_algorithms() q_OPENSSL_add_all_algorithms_noconf()
  #endif
