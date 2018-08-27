@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.3 2015/09/17 12:24:42 dcoppa Exp $
---- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	Wed Sep 16 13:27:39 2015
-+++ src/network/ssl/qsslsocket_openssl_symbols.cpp	Wed Sep 16 13:33:06 2015
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.4 2018/08/27 03:54:57 tb Exp $
+Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
+--- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
++++ src/network/ssl/qsslsocket_openssl_symbols.cpp
 @@ -228,13 +228,17 @@ DEFINEFUNC(int, SSL_shutdown, SSL *a, a, return -1, re
  #ifndef OPENSSL_NO_SSL2
  DEFINEFUNC(const SSL_METHOD *, SSLv2_client_method, DUMMYARG, DUMMYARG, return 0, return)
@@ -19,7 +20,16 @@ $OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.3 2015/09/17 
  DEFINEFUNC(const SSL_METHOD *, SSLv23_server_method, DUMMYARG, DUMMYARG, return 0, return)
  DEFINEFUNC(const SSL_METHOD *, TLSv1_server_method, DUMMYARG, DUMMYARG, return 0, return)
  #else
-@@ -822,13 +826,17 @@ bool q_resolveOpenSslSymbols()
+@@ -257,6 +261,8 @@ DEFINEFUNC(void, X509_free, X509 *a, a, return, DUMMYA
+ DEFINEFUNC2(X509_EXTENSION *, X509_get_ext, X509 *a, a, int b, b, return 0, return)
+ DEFINEFUNC(int, X509_get_ext_count, X509 *a, a, return 0, return)
+ DEFINEFUNC4(void *, X509_get_ext_d2i, X509 *a, a, int b, b, int *c, c, int *d, d, return 0, return)
++DEFINEFUNC(ASN1_TIME *, X509_getm_notBefore, const X509 *x, x, return 0, return)
++DEFINEFUNC(ASN1_TIME *, X509_getm_notAfter, const X509 *x, x, return 0, return)
+ DEFINEFUNC(X509_NAME *, X509_get_issuer_name, X509 *a, a, return 0, return)
+ DEFINEFUNC(X509_NAME *, X509_get_subject_name, X509 *a, a, return 0, return)
+ DEFINEFUNC(int, X509_verify_cert, X509_STORE_CTX *a, a, return -1, return)
+@@ -822,13 +828,17 @@ bool q_resolveOpenSslSymbols()
  #ifndef OPENSSL_NO_SSL2
      RESOLVEFUNC(SSLv2_client_method)
  #endif
@@ -37,3 +47,12 @@ $OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.3 2015/09/17 
      RESOLVEFUNC(SSLv23_server_method)
      RESOLVEFUNC(TLSv1_server_method)
      RESOLVEFUNC(X509_NAME_entry_count)
+@@ -858,6 +868,8 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(X509_get_ext_d2i)
+     RESOLVEFUNC(X509_get_issuer_name)
+     RESOLVEFUNC(X509_get_subject_name)
++    RESOLVEFUNC(X509_getm_notAfter)
++    RESOLVEFUNC(X509_getm_notBefore)
+     RESOLVEFUNC(X509_verify_cert)
+     RESOLVEFUNC(d2i_X509)
+     RESOLVEFUNC(i2d_X509)

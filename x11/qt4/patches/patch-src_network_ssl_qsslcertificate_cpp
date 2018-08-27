@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_network_ssl_qsslcertificate_cpp,v 1.1 2018/08/27 03:54:57 tb Exp $
+
+Index: src/network/ssl/qsslcertificate.cpp
+--- src/network/ssl/qsslcertificate.cpp.orig
++++ src/network/ssl/qsslcertificate.cpp
+@@ -698,8 +698,8 @@ QSslCertificate QSslCertificatePrivate::QSslCertificat
+     if (!x509 || !QSslSocket::supportsSsl())
+         return certificate;
+ 
+-    ASN1_TIME *nbef = q_X509_get_notBefore(x509);
+-    ASN1_TIME *naft = q_X509_get_notAfter(x509);
++    ASN1_TIME *nbef = q_X509_getm_notBefore(x509);
++    ASN1_TIME *naft = q_X509_getm_notAfter(x509);
+     certificate.d->notValidBefore = q_getTimeFromASN1(nbef);
+     certificate.d->notValidAfter = q_getTimeFromASN1(naft);
+     certificate.d->null = false;
