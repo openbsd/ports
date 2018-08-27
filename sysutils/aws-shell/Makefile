@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2016/10/11 12:08:36 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2018/08/27 08:32:37 ajacoutot Exp $
 
 PORTROACH=		skipv:reinvent-demo
 
 COMMENT=		integrated shell for working with the AWS CLI
 
-MODPY_EGG_VERSION=	0.1.1
+MODPY_EGG_VERSION=	0.2.0
 GH_ACCOUNT=		awslabs
 GH_PROJECT=		aws-shell
 GH_TAGNAME=		${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -23,9 +22,20 @@ MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		devel/py-configobj \
 			net/py-boto3 \
-			sysutils/awscli
+			sysutils/awscli \
+			textproc/py-pygments
 
 # !!! check setup.py for exact dependencies version
-RUN_DEPENDS +=		devel/py-prompt_toolkit=1.0.7
+RUN_DEPENDS +=		devel/py-prompt_toolkit>=1.0.0,<1.1.0
+
+TEST_DEPENDS +=		${RUN_DEPENDS} \
+			devel/py-unittest2 \
+			devel/py-tox \
+			devel/py-test \
+			devel/py-test-cov \
+			devel/py-mock
+
+# needed for test
+PORTHOME=		${WRKDIST}
 
 .include <bsd.port.mk>
