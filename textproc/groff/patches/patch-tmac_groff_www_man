@@ -1,0 +1,22 @@
+$OpenBSD: patch-tmac_groff_www_man,v 1.1 2018/08/27 00:16:24 schwarze Exp $
+
+This manual page uses the groff_www(7) macro set.
+Map that to the usual man-ext macros for now.
+I have pushed a slightly more invasive fix upstream:
+http://git.savannah.gnu.org/cgit/groff.git/commit/?id=14aef0ff0
+
+Index: tmac/groff_www.man
+--- tmac/groff_www.man.orig
++++ tmac/groff_www.man
+@@ -1,4 +1,11 @@
+ .TH GROFF_WWW @MAN7EXT@ "@MDATE@" "Groff Version @VERSION@"
++.de URL
++.  UR \\$1
++.  nop \\$2
++.  UE \\$3\\&
++..
++.als FTP URL
++.als MTO URL
+ .SH NAME
+ groff_www \- groff macros for authoring web pages
+ .

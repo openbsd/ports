@@ -1,29 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2016/09/13 11:17:21 schwarze Exp $
-chunk 1: Install preformatted manuals, not source pages (local change).
-chunk 2: src/devices/gropdf depends on arch/misc.
-chunk 3: avoid bogus "is up to date" during fake.
-Regarding chunks 2 & 3, current upstream code is completely different now.
+$OpenBSD: patch-Makefile_in,v 1.8 2018/08/27 00:16:24 schwarze Exp $
+chunk 1: src/devices/gropdf depends on arch/misc.
+chunk 2: avoid bogus "is up to date" during fake.
+Upstream code is completely different now.
 --- Makefile.in.orig	Tue Nov  4 09:38:35 2014
 +++ Makefile.in	Thu Sep  8 22:27:19 2016
-@@ -253,15 +253,15 @@ manroot=$(mandir)
- 
- # `man1ext' is the man section for user commands.
- man1ext=1
--man1dir=$(manroot)/man$(man1ext)
-+man1dir=$(manroot)/cat$(man1ext)
- 
- # `man5ext' is the man section for file formats.
- man5ext=5
--man5dir=$(manroot)/man$(man5ext)
-+man5dir=$(manroot)/cat$(man5ext)
- 
- # `man7ext' is the man section for macros.
- man7ext=7
--man7dir=$(manroot)/man$(man7ext)
-+man7dir=$(manroot)/cat$(man7ext)
- 
- # `dist' target is disallowed in some `configure' combinations.
- doc_dist_target_ok=@doc_dist_target_ok@
 @@ -896,6 +896,8 @@ $(GNULIBDIRS): FORCE
  	  $(MAKE) ACLOCAL=: AUTOCONF=: AUTOHEADER=: AUTOMAKE=: $(do) ;; \
  	esac
