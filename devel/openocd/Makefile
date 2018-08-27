@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/10 13:47:41 uaa Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/27 18:46:52 naddy Exp $
 
 COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.10.0
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://openocd.sourceforge.net/
@@ -10,7 +11,7 @@ HOMEPAGE =	http://openocd.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ftdi jim m pthread usb usb-1.0
+WANTLIB += c ftdi hidapi-libusb iconv jim m pthread usb usb-1.0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=openocd/}
 EXTRACT_SUFX =	.tar.bz2
@@ -35,6 +36,7 @@ CONFIGURE_ARGS = --disable-werror \
 		--enable-osbdm \
 		--enable-opendous \
 		--enable-openjtag \
+		--enable-cmsis-dap \
 		--enable-presto \
 		--enable-aice \
 		--enable-buspirate \
@@ -43,12 +45,12 @@ CONFIGURE_ARGS = --disable-werror \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-LIB_DEPENDS =	devel/libftdi>=0.20 \
+LIB_DEPENDS =	comms/libhidapi \
+		devel/libftdi>=0.20 \
 		lang/jimtcl>=0.75
 
 USE_GMAKE =	Yes
 # Fails to link main.o and libopenocd.a properly resulting in undefined reference in the gdb_server.o
 USE_LIBTOOL =	gnu
-NO_TEST =	Yes
 
 .include <bsd.port.mk>
