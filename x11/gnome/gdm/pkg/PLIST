@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.92 2018/08/15 13:49:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.93 2018/08/27 07:29:16 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -27,6 +27,7 @@ lib/libgdm.a
 lib/libgdm.la
 @lib lib/libgdm.so.${LIBgdm_VERSION}
 lib/pkgconfig/gdm.pc
+@bin libexec/gdm-disable-wayland
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
