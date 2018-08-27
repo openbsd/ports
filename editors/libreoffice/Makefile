@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.188 2018/08/18 07:07:17 robert Exp $
+# $OpenBSD: Makefile,v 1.189 2018/08/27 14:07:22 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386
+BROKEN-i386=	undefined refs to operator new/delete in libuno_cppuhelpergcc3.so
 
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
