@@ -1,6 +1,6 @@
-# $OpenBSD: meson.port.mk,v 1.26 2018/07/11 11:51:14 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.27 2018/08/27 07:37:09 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.47.1v0
+BUILD_DEPENDS +=	devel/meson>=0.47.2v0
 SEPARATE_BUILD ?=	Yes
 
 MODMESON_WANTCOLOR ?=	No
