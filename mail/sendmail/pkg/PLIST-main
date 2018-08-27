@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2018/08/15 13:20:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2018/08/27 07:45:09 ajacoutot Exp $
 @newgroup _smmsp:745
 @newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
-@rcscript ${SYSCONFDIR}/rc.d/sendmail
+@rcscript ${RCDIR}/sendmail
 @bin libexec/mail.local
 libexec/sendmail/
 @bin libexec/sendmail/makemap
