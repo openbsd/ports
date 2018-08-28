@@ -1,10 +1,32 @@
-$OpenBSD: patch-screenfetch-dev,v 1.1 2017/11/11 08:07:20 bentley Exp $
-Fix RAM output.
-From upstream 77613487a23fd5a12b70945cf8075c2773553643.
+$OpenBSD: patch-screenfetch-dev,v 1.2 2018/08/28 20:05:18 bcallah Exp $
+Fix "awk: cannot open /proc/fb"
+From upstream dc72b5932e86ba9c4e36110408690abeb2004070
+Fix "unary operator expected" when no GPU is detected
+From upstream 8346a75068323692243805fa702d02ec7538f3b9
+Fix RAM output
+From upstream 77613487a23fd5a12b70945cf8075c2773553643
 Index: screenfetch-dev
 --- screenfetch-dev.orig
 +++ screenfetch-dev
-@@ -1421,7 +1421,7 @@ detectmem () {
+@@ -1332,13 +1332,15 @@ detectgpu () {
+ # Detect Intel GPU  #works in dash
+ # Run it only on Intel Processors if GPU is unknown
+ DetectIntelGPU() {
+-	gpu=$(awk '{print $2}' /proc/fb)
++	if [ -r /proc/fb ]; then
++		gpu=$(awk '{print $2}' /proc/fb)
++	fi
+ 
+ 	case $gpu in
+ 		*intel*) gpu=intel ;;
+ 	esac
+ 
+-        if [ $gpu = intel ]; then
++	if [ "$gpu" = "intel" ]; then
+ 		#Detect CPU
+ 		local CPU=$(uname -p | awk '{print $3}')
+ 		CPU=${CPU#*'-'}; #Detect CPU number
+@@ -1421,7 +1423,7 @@ detectmem () {
  		usedmem=$(($used_mem / 1024^2 ))
  	elif [ "$distro" == "OpenBSD" ]; then
  		totalmem=$(($(sysctl -n hw.physmem) / 1024 / 1024))
