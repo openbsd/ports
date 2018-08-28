@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/20 16:25:06 bluhm Exp $
-
-# https://rt.cpan.org/Public/Bug/Display.html?id=118854
-BROKEN =	Data::Alias 1.20 broken for Perl 5.24.0 and greater
+# $OpenBSD: Makefile,v 1.20 2018/08/28 19:27:45 danj Exp $
 
 COMMENT =	comprehensive set of aliasing operations
 
 MODULES =	cpan
-DISTNAME =	Data-Alias-1.20
+DISTNAME =	Data-Alias-1.21
 CATEGORIES =	devel
 
 # Perl
