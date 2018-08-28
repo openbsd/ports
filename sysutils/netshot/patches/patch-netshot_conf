@@ -1,0 +1,32 @@
+$OpenBSD: patch-netshot_conf,v 1.1 2018/08/28 16:53:05 sthen Exp $
+
+Index: netshot.conf
+--- netshot.conf.orig
++++ netshot.conf
+@@ -1,7 +1,7 @@
+ # Netshot Configuration File
+ 
+ # Log file and level
+-netshot.log.file = /var/log/netshot/netshot.log
++netshot.log.file = ${VARBASE}/log/netshot/netshot.log
+ 
+ # Database connection
+ netshot.db.driver_class = com.mysql.jdbc.Driver
+@@ -13,7 +13,7 @@ netshot.db.password = netshot
+ netshot.db.encryptionPassword = netshot
+ 
+ # REST
+-netshot.http.ssl.keystore.file = /usr/local/netshot/netshot.jks
++netshot.http.ssl.keystore.file = ${PREFIX}/netshot/netshot.jks
+ netshot.http.ssl.keystore.pass = password
+ #netshot.http.baseurl = https://localhost
+ netshot.http.baseurl = https://0.0.0.0
+@@ -29,7 +29,7 @@ netshot.snmptrap.community = Netsh01
+ # General settings
+ netshot.snapshots.auto.interval = 15
+ netshot.snapshots.auto.anyip = true
+-netshot.drivers.path = /usr/local/netshot/drivers
++netshot.drivers.path = ${PREFIX}/netshot/drivers
+ 
+ # Authentication
+ netshot.aaa.maxidletime = 1800
