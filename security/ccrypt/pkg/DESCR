@@ -4,6 +4,3 @@ notorious for using a very weak encryption algorithm. ccrypt is based on
 the Rijndael cipher, which is the U.S. government's chosen candidate for
 the Advanced Encryption Standard. This cipher is believed to provide
 very strong security.
-
-Flavors:
-        emacs - emacs-mode for editing encrypted text files
