@@ -1,0 +1,13 @@
+$OpenBSD: patch-qconfig_c,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+
+Index: qconfig.c
+--- qconfig.c.orig
++++ qconfig.c
+@@ -16,6 +16,7 @@
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <math.h>
++#include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 

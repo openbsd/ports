@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -94,7 +94,8 @@ qrouternullg$(EXEEXT): $(OBJECTS4)
+ 	$(RM) qrouternullg$(EXEEXT)
+ 	$(CC) ${CFLAGS} ${CPPFLAGS} ${DEFS} ${EXTRA_DEFS} \
+ 		${SOURCES4} ${INC_SPECS} -o $@  ${LIB_SPECS_NOSTUB} \
+-		${LD_RUN_PATH} ${LDFLAGS} ${LIBS} ${EXTRA_LIB_SPECS} -lm
++		${LD_RUN_PATH} ${LDFLAGS} ${X_PRE_LIBS} -lX11 ${X_LIBS} \
++		${X_EXTRA_LIBS} ${LIBS} ${EXTRA_LIB_SPECS} -lm
+ 
+ install-nointerp:
+ 	@echo "Installing qrouter"

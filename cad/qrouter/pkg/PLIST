@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+bin/qrouter
+share/qrouter/
+share/qrouter/console.tcl
+share/qrouter/qrouter.so
+share/qrouter/qrouter.tcl
+@bin share/qrouter/qrouterexec
+@bin share/qrouter/qrouternullg
+share/qrouter/tkcon.tcl

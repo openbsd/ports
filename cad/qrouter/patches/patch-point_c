@@ -1,0 +1,13 @@
+$OpenBSD: patch-point_c,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+
+Index: point.c
+--- point.c.orig
++++ point.c
+@@ -8,6 +8,7 @@
+ 
+ #include <stdio.h>
+ #include <unistd.h>
++#include <stdarg.h>
+ #include <stdlib.h>
+ 
+ #include "qrouter.h"

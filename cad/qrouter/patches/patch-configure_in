@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2018/08/28 15:09:08 bcallah Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -847,7 +847,13 @@ if test $usingTcl ; then
+       CFLAGS="${CFLAGS} -l/usr/X11R6/include"
+       ;;
+ 
+-    *-netbsd*|*-openbsd*)
++    *-openbsd*)
++      SHLIB_CFLAGS="-fpic"
++      LDDL_FLAGS="-shared ${LIB_SPECS}"
++      CFLAGS="${CFLAGS} -I${X11BASE}/include"
++      ;;
++
++    *-netbsd*)
+       # Not available on all versions:  check for include file.
+       AC_CHECK_HEADER(dlfcn.h, test_ok=yes, test_ok=no)
+       if test "$test_ok" = yes; then
+@@ -871,7 +877,13 @@ if test $usingTcl ; then
+     esac
+   fi
+   if test "$with_gnu_ld" = "yes" ; then
+-    LDDL_FLAGS="${LDDL_FLAGS} -Wl,--version-script=symbol.map"
++    case $target in
++      *-openbsd*)
++        ;;
++      *)
++        LDDL_FLAGS="${LDDL_FLAGS} -Wl,--version-script=symbol.map"
++        ;;
++    esac
+   fi
+ 
+   AC_SUBST(SHDLIB_EXT)
