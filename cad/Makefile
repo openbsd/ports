@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/08/28 15:09:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2018/08/28 18:27:22 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -6,6 +6,7 @@
      SUBDIR += geda-gaf
      SUBDIR += gerbv
      SUBDIR += gnucap
+     SUBDIR += graywolf
      SUBDIR += gtkwave
      SUBDIR += kicad
      SUBDIR += kicad-library
