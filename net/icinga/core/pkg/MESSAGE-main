@@ -1,0 +1,4 @@
+*** Icinga 1.x is end of life: no more security updates after 2018-12-31.
+
+See https://www.icinga.com/docs/icinga2/latest/doc/23-migrating-from-icinga-1x/
+for information about migrating to the supported 2.x version.
