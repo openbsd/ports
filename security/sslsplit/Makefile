@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/14 18:06:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/28 21:44:48 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
-DISTNAME=	sslsplit-0.5.2
+DISTNAME=	sslsplit-0.5.3
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security
