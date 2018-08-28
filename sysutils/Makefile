@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.496 2018/08/24 05:25:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.497 2018/08/28 11:28:09 remi Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -184,6 +184,7 @@
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
      SUBDIR += neofetch
+     SUBDIR += netshot
      SUBDIR += nnn
      SUBDIR += noice
      SUBDIR += ntfs-3g
