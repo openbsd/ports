@@ -1,0 +1,11 @@
+graywolf is a program for placement of VLSI digital circuits, mainly
+intended as part of qflow tool-chain
+(http://opencircuitdesign.com/qflow/).
+
+It is a fork of the last open-source version of TimberWolf (which is now
+commercial software) and has been modified to streamline the build
+process and make it behave more as a standard command-line tool.
+
+It is based on the general combinatorial optimization technique known as
+simulated annealing and is suitable for standard cell, macro/custom
+cell, and gate-array professional-grade placement.

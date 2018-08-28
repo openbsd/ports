@@ -1,0 +1,24 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -8,7 +8,10 @@ find_package(X11)
+ INCLUDE(CheckIncludeFiles)
+ include(GNUInstallDirs)
+ 
++include_directories(${OPENBSD_LOCALBASE}/include)
++link_directories(${OPENBSD_LOCALBASE}/lib)
+ 
++
+ pkg_check_modules(GSL gsl)
+ 
+ if (NOT GSL_FOUND)
+@@ -36,7 +39,6 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+ 
+ 
+ install(DIRECTORY flow DESTINATION lib/graywolf/bin)
+-install(CODE "EXECUTE_PROCESS(COMMAND ln -sf flow.noroute flow WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib/graywolf/bin/flow)")
+ 
+ add_subdirectory(src)
+ add_subdirectory(script)

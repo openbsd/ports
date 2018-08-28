@@ -1,0 +1,23 @@
+$OpenBSD: patch-include_yalecad_base_h,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+
+Index: include/yalecad/base.h
+--- include/yalecad/base.h.orig
++++ include/yalecad/base.h
+@@ -51,7 +51,7 @@ REVISIONS:  Feb 25, 1989 - modified round macro so res
+ #ifndef STDIO_H
+ #define STDIO_H
+ #include <stdio.h> 
+-#ifdef linux
++#if defined(linux) || defined(__OpenBSD__)
+ #include <stdlib.h>	/* needed for atof() */
+ #endif
+ #endif
+@@ -125,7 +125,7 @@ typedef long SHORT_LONG ;
+ 
+ #include <yalecad/mac.h>
+ 
+-#elif defined(linux) || defined(ultrix)
++#elif defined(linux) || defined(ultrix) || defined(__OpenBSD__)
+ 
+ #ifndef	_LIMITS_H_
+ #include <limits.h>

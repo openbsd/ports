@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_Ylib_timer_c,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+
+Index: src/Ylib/timer.c
+--- src/Ylib/timer.c.orig
++++ src/Ylib/timer.c
+@@ -52,7 +52,7 @@ REVISIONS:  
+ #include <yalecad/base.h>
+ #include <sys/types.h>
+ 
+-#ifdef SYS5
++#if defined(SYS5) || defined(__OpenBSD__)
+ #include <sys/times.h>
+ #else /* SYS5 */
+ #include <sys/timeb.h>
+@@ -63,7 +63,7 @@ static INT milli_timeS ;         /* the millisecond pa
+ /* initialize the timer */
+ void Ytimer_start()
+ {
+-#ifdef SYS5
++#if defined(SYS5) || defined(__OpenBSD__)
+     struct tms tp ;
+     times(&tp);
+     base_timeS = (INT) tp.tms_cstime + (INT) tp.tms_cutime;
+@@ -78,7 +78,7 @@ void Ytimer_start()
+ /* this is the time elapsed since the timer start in milliseconds */
+ void Ytimer_elapsed( INT *time_elapsed )
+ {
+-#ifdef SYS5
++#if defined(SYS5) || defined(__OpenBSD__)
+   struct tms tp;
+ #else /* SYS5 */
+   struct timeb tp;
+@@ -91,7 +91,7 @@ void Ytimer_elapsed( INT *time_elapsed )
+ 	return ;
+     }
+ 
+-#ifdef SYS5
++#if defined(SYS5) || defined(__OpenBSD__)
+     times(&tp);
+     time_offset = (INT) tp.tms_cutime + (INT) tp.tms_cstime;
+     time_offset -= base_timeS;

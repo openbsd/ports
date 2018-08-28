@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+@bin bin/graywolf
+lib/graywolf/
+lib/graywolf/bin/
+@bin lib/graywolf/bin/Mincut
+@bin lib/graywolf/bin/TimberWolfMC
+@bin lib/graywolf/bin/TimberWolfSC
+lib/graywolf/bin/flow/
+lib/graywolf/bin/flow/flow
+lib/graywolf/bin/flow/flow.noroute/
+lib/graywolf/bin/flow/flow.noroute/macro.fdbg
+lib/graywolf/bin/flow/flow.noroute/macro.flow
+lib/graywolf/bin/flow/flow.noroute/macro.fnog
+lib/graywolf/bin/flow/flow.noroute/mixed.flow
+lib/graywolf/bin/flow/flow.noroute/mixed.fnog
+lib/graywolf/bin/flow/flow.noroute/standard.fdbg
+lib/graywolf/bin/flow/flow.noroute/standard.flow
+lib/graywolf/bin/flow/flow.noroute/standard.fnog
+@bin lib/graywolf/bin/genrows
+@bin lib/graywolf/bin/mc_compact
+lib/graywolf/bin/show_flows
+lib/graywolf/bin/splt_file.a
+@bin lib/graywolf/bin/syntax
+@lib lib/libycadgraywolf.so.${LIBycadgraywolf_VERSION}
