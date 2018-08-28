@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.315 2018/08/23 06:33:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.316 2018/08/28 07:56:19 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.10.83
+MODPY_EGG_VERSION=	1.11.2
 DISTNAME=		botocore-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -24,8 +24,8 @@ MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-jmespath${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR}
-
+			textproc/py-docutils${MODPY_FLAVOR} \
+			www/py-urllib3${MODPY_FLAVOR}
 FLAVORS=		python3
 FLAVOR ?=
 

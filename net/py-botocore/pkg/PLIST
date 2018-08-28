@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.93 2018/08/15 14:04:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.94 2018/08/28 07:56:19 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${M
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}httpsession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}paginate.${MODPY_PYC_MAGIC_TAG}pyc
@@ -42,6 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}waiter.${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore/args.py
 lib/python${MODPY_VERSION}/site-packages/botocore/auth.py
 lib/python${MODPY_VERSION}/site-packages/botocore/awsrequest.py
+lib/python${MODPY_VERSION}/site-packages/botocore/cacert.pem
 lib/python${MODPY_VERSION}/site-packages/botocore/client.py
 lib/python${MODPY_VERSION}/site-packages/botocore/compat.py
 lib/python${MODPY_VERSION}/site-packages/botocore/config.py
@@ -751,6 +753,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/shield/2016-06-02/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/signer/2017-08-25/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/examples-1.json
@@ -883,6 +890,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/handlers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/history.py
 lib/python${MODPY_VERSION}/site-packages/botocore/hooks.py
+lib/python${MODPY_VERSION}/site-packages/botocore/httpsession.py
 lib/python${MODPY_VERSION}/site-packages/botocore/loaders.py
 lib/python${MODPY_VERSION}/site-packages/botocore/model.py
 lib/python${MODPY_VERSION}/site-packages/botocore/paginate.py
