@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2018/07/15 17:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2018/08/29 17:10:22 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
-GNOME_VERSION =	0.12.3
+GNOME_VERSION =	0.12.4
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -41,6 +41,6 @@ WANTLIB += gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0
 WANTLIB += girepository-1.0 glib-2.0 gmime-2.6 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 intl javascriptcoregtk-4.0 m notify p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
-WANTLIB += xml2 fribidi
+WANTLIB += xml2
 
 .include <bsd.port.mk>
