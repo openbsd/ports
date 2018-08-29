@@ -1,0 +1,14 @@
+$OpenBSD: patch-kio_kssl_Makefile_in,v 1.1 2018/08/29 14:01:44 espie Exp $
+
+Index: kio/kssl/Makefile.in
+--- kio/kssl/Makefile.in.orig
++++ kio/kssl/Makefile.in
+@@ -51,7 +51,7 @@ CONFIG_HEADER = $(top_builddir)/config.h \
+ 	$(top_builddir)/kjs/global.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+-libkssl_la_LIBADD =
++libkssl_la_LIBADD = -lssl -lcrypto
+ am_libkssl_la_OBJECTS = kssl.lo ksslcertificatehome.lo ksslsettings.lo \
+ 	ksslcertificate.lo ksslconnectioninfo.lo \
+ 	ksslcertificatefactory.lo ksslcertificatecache.lo \
