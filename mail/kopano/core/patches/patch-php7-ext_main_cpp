@@ -1,9 +1,9 @@
-$OpenBSD: patch-php7-ext_main_cpp,v 1.1 2018/05/22 08:17:45 sthen Exp $
+$OpenBSD: patch-php7-ext_main_cpp,v 1.2 2018/08/29 16:58:30 robert Exp $
 
 Index: php7-ext/main.cpp
 --- php7-ext/main.cpp.orig
 +++ php7-ext/main.cpp
-@@ -110,10 +110,8 @@
+@@ -92,10 +92,8 @@
  // we need to include this in c++ space because php.h also includes it in
  // 'extern "C"'-space which doesn't work in win32
  #include <cmath>

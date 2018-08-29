@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_search_kopano_search_plaintext_py,v 1.1 2018/07/09 20:28:10 robert Exp $
+$OpenBSD: patch-ECtools_search_kopano_search_plaintext_py,v 1.2 2018/08/29 16:58:30 robert Exp $
 
 Index: ECtools/search/kopano_search/plaintext.py
 --- ECtools/search/kopano_search/plaintext.py.orig
 +++ ECtools/search/kopano_search/plaintext.py
-@@ -44,7 +44,7 @@ for (X, C) in DB:
+@@ -45,7 +45,7 @@ for (X, C) in DB:
          CMD[Y] = C
  
  def setlimits():

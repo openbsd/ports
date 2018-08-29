@@ -1,20 +1,9 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.9 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.10 2018/08/29 16:58:30 robert Exp $
 
 Index: provider/server/ECServer.cpp
 --- provider/server/ECServer.cpp.orig
 +++ provider/server/ECServer.cpp
-@@ -69,6 +69,10 @@
- #include <kcoidc.h>
- #endif
- 
-+#ifdef __OpenBSD__
-+#include <sys/resource.h>
-+#endif
-+
- // The following value is based on:
- // http://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html#sysvar_thread_stack
- // Since the remote MySQL server can be 32 or 64 bit we'll just go with the value specified
-@@ -887,10 +891,10 @@ static int running_server(char *szName, const char *sz
+@@ -801,10 +801,10 @@ static int running_server(char *szName, const char *sz
  		{"thread_stacksize", "512", CONFIGSETTING_UNUSED},
  		{ "allow_local_users",			"yes", CONFIGSETTING_RELOADABLE },			// allow any user connect through the Unix socket
  		{ "local_admin_users",			"root", CONFIGSETTING_RELOADABLE },			// this local user is admin
@@ -23,12 +12,12 @@ Index: provider/server/ECServer.cpp
 +		{ "run_as_user",			"_kopano" }, // drop root privileges, and run as this user/group
 +		{ "run_as_group",			"_kopano" },
  		{ "pid_file",					"/var/run/kopano/server.pid" },
--		{"running_path", "/var/lib/kopano/empty"},
-+		{"running_path", "/var/empty"},
+-		{"running_path", "/var/lib/kopano/empty", CONFIGSETTING_OBSOLETE},
++		{"running_path", "/var/empty", CONFIGSETTING_OBSOLETE},
  		{"allocator_library", "libtcmalloc_minimal.so.4"},
  		{ "coredump_enabled",			"yes" },
  
-@@ -934,7 +938,7 @@ static int running_server(char *szName, const char *sz
+@@ -845,7 +845,7 @@ static int running_server(char *szName, const char *sz
  		{"attachment_s3_bucketname", ""},
  		{"attachment_s3_region", ""},
  #endif
@@ -37,7 +26,7 @@ Index: provider/server/ECServer.cpp
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -954,12 +958,12 @@ static int running_server(char *szName, const char *sz
+@@ -865,12 +865,12 @@ static int running_server(char *szName, const char *sz
  		{"plugin_path", "(ignored)", CONFIGSETTING_UNUSED},
  		{ "user_plugin",				"db" },
  		{ "user_plugin_config",			"/etc/kopano/ldap.cfg" },

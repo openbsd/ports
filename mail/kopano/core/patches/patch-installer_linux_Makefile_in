@@ -1,9 +1,9 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.6 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.7 2018/08/29 16:58:30 robert Exp $
 
 Index: installer/linux/Makefile.in
 --- installer/linux/Makefile.in.orig
 +++ installer/linux/Makefile.in
-@@ -374,7 +374,7 @@ dist_sysusers_DATA = kopano-sysusers.conf
+@@ -387,7 +387,7 @@ dist_sysusers_DATA = kopano-sysusers.conf
  dist_tmpfiles_DATA = kopano-tmpfiles.conf
  dist_pkgdata_DATA = ldap.active-directory.cfg ldap.openldap.cfg ldap.propmap.cfg
  config_files = \

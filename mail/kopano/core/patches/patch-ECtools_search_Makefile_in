@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_search_Makefile_in,v 1.7 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-ECtools_search_Makefile_in,v 1.8 2018/08/29 16:58:30 robert Exp $
 
 Index: ECtools/search/Makefile.in
 --- ECtools/search/Makefile.in.orig
 +++ ECtools/search/Makefile.in
-@@ -602,7 +602,6 @@ install-exec-local:
+@@ -617,7 +617,6 @@ install-exec-local:
  	rm -Rf build
  
  install-data-local:

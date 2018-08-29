@@ -1,14 +1,15 @@
-$OpenBSD: patch-common_libkcutil_sym_in,v 1.1 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-common_libkcutil_sym_in,v 1.2 2018/08/29 16:58:30 robert Exp $
 
 Index: common/libkcutil.sym.in
 --- common/libkcutil.sym.in.orig
 +++ common/libkcutil.sym.in
-@@ -34,6 +34,8 @@ global:
+@@ -33,6 +33,9 @@ global:
  		VTT*;
  		std::*::_S_*;
  	};
 +	_ZN2KC10ECKeyTable*;
 +	_ZN2KC10ECTableRow*;
++	_ZN2KC18StartLoggerProcess*;
  local:
  	*;
  };

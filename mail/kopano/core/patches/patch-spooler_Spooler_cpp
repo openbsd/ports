@@ -1,9 +1,18 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.8 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.9 2018/08/29 16:58:30 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp
-@@ -897,10 +897,10 @@ int main(int argc, char *argv[]) {
+@@ -221,7 +221,7 @@ static HRESULT StartSpoolerThread(SendData &&sd, const
+ 		return MAPI_E_CALL_FAILED;
+ 	}
+ 	th_arg.release();
+-	ec_log_info("Worker thread 0x%lx started", static_cast<unsigned long>(tid));
++	ec_log_info("Worker thread 0x%lx started", reinterpret_cast<unsigned long>(tid));
+ 	return hrSuccess;
+ }
+ 
+@@ -929,10 +929,10 @@ int main(int argc, char *argv[]) {
  		{ "smtp_server","localhost", CONFIGSETTING_RELOADABLE },
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
@@ -12,12 +21,12 @@ Index: spooler/Spooler.cpp
 +		{ "run_as_user", "_kopano" },
 +		{ "run_as_group", "_kopano" },
  		{ "pid_file", "/var/run/kopano/spooler.pid" },
--		{"running_path", "/var/lib/kopano/empty"},
-+		{"running_path", "/var/empty"},
+-		{"running_path", "/var/lib/kopano/empty", CONFIGSETTING_OBSOLETE},
++		{"running_path", "/var/empty", CONFIGSETTING_OBSOLETE},
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
  		{"log_file", ""},
-@@ -924,8 +924,8 @@ int main(int argc, char *argv[]) {
+@@ -956,8 +956,8 @@ int main(int argc, char *argv[]) {
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },
@@ -27,4 +36,4 @@ Index: spooler/Spooler.cpp
 +        { "plugin_manager_path", "/usr/local/share/kopano-spooler/python" },
  		{ "z_statsd_stats", "/var/run/kopano/statsd.sock" },
  		{ "tmp_path", "/tmp" },
- 		{"log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE},
+ 		{"log_raw_message_path", "/var/lib/kopano", CONFIGSETTING_RELOADABLE},

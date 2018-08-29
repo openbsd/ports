@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.8 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2018/08/29 16:58:30 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -29,8 +29,8 @@ Index: configure.ac
  
  AC_MSG_CHECKING([available C++ standard])
  cxxmode=""
--for i in "c++17" "c++14" "c++11" "c++0x"; do
-+for i in "c++14" "c++11" "c++0x"; do
+-for i in "c++17" "c++14"; do
++for i in "c++14"; do
  	CXXFLAGS="$CXXFLAGS_system -std=$i"
  	AC_COMPILE_IFELSE([AC_LANG_SOURCE([])], [cxxmode="$i"])
  	AS_IF([test -n "$cxxmode"], [break])
