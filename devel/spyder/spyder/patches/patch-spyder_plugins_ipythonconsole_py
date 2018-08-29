@@ -1,0 +1,14 @@
+$OpenBSD: patch-spyder_plugins_ipythonconsole_py,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+
+Index: spyder/plugins/ipythonconsole.py
+--- spyder/plugins/ipythonconsole.py.orig
++++ spyder/plugins/ipythonconsole.py
+@@ -381,7 +381,7 @@ class IPythonConsoleConfigPage(PluginConfigPage):
+ 
+         if sys.platform == 'darwin':
+             backends.append( ("OS X", 4) )
+-        if sys.platform.startswith('linux'):
++        if sys.platform.startswith(('linux', 'openbsd')):
+             backends.append( ("Gtk3", 5) )
+             backends.append( ("Gtk", 6) )
+         if PY2:

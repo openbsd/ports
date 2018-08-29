@@ -1,0 +1,14 @@
+$OpenBSD: patch-spyder___init___py,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+
+Index: spyder/__init__.py
+--- spyder/__init__.py.orig
++++ spyder/__init__.py
+@@ -39,7 +39,7 @@ __trouble_url_short__ = 'https://tinyurl.com/SpyderHel
+ # Dear (Debian, RPM, ...) package makers, please feel free to customize the
+ # following path to module's data (images) and translations:
+ DATAPATH = LOCALEPATH = DOCPATH = MATHJAXPATH = JQUERYPATH = ''
+-
++DOCPATH = '${TRUEPREFIX}/share/doc/spyder/'
+ 
+ import os
+ # Directory of the current file
