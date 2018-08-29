@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2018/07/29 03:56:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.403 2018/08/29 21:20:49 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -162,6 +162,7 @@
      SUBDIR += p5-MPEG-Audio-Frame
      SUBDIR += p5-Music-Audioscrobbler-MPD
      SUBDIR += p5-Music-Audioscrobbler-Submit
+     SUBDIR += p5-MusicBrainz-DiscID
      SUBDIR += p5-Ogg-Vorbis-Header
      SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
      SUBDIR += p5-POE-Component-Client-MPD
