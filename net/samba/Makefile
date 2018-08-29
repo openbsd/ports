@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.256 2018/08/14 10:35:00 jca Exp $
+# $OpenBSD: Makefile,v 1.257 2018/08/29 11:40:23 jca Exp $
 
-VERSION =		4.8.4
+VERSION =		4.8.5
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -17,10 +17,10 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.3.5
+LDB_V =			1.3.6
 TEVENT_V =		0.9.36
 
-REVISION-tevent =	1
+REVISION-tevent =	2
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -36,13 +36,13 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			hx509-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.1 \
-			ldb			0.7 \
+			ldb			0.8 \
 			ndr			0.3 \
 			ndr-krb5pac		0.1 \
 			ndr-nbt			0.1 \
 			ndr-standard		3.0 \
 			netapi			2.1 \
-			pyldb-util		0.4 \
+			pyldb-util		0.5 \
 			roken-samba4		0.0 \
 			samba-credentials	0.2 \
 			samba-errors		1.0 \
@@ -58,8 +58,8 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			tevent-util		1.0 \
 			wbclient		3.2 \
 			wind-samba4		0.0 \
-			replace			6.0 \
-			util-setid		6.0
+			replace			7.0 \
+			util-setid		7.0
 
 CATEGORIES =		net sysutils security
 

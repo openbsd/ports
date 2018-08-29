@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2018/08/14 10:35:00 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2018/08/29 11:40:23 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -857,6 +857,8 @@ lib/samba/idmap/rfc2307.so
 lib/samba/idmap/rid.so
 lib/samba/idmap/script.so
 lib/samba/idmap/tdb2.so
+lib/samba/krb5/
+lib/samba/krb5/winbind_krb5_locator.so
 lib/samba/ldb/acl.so
 lib/samba/ldb/aclread.so
 lib/samba/ldb/anr.so
@@ -1084,7 +1086,6 @@ lib/samba/vfs/virusfilter.so
 lib/samba/vfs/worm.so
 lib/samba/vfs/xattr_tdb.so
 lib/security/pam_winbind.so
-lib/winbind_krb5_locator.so
 ${P5SITE}/Parse/
 ${P5SITE}/Parse/Pidl/
 ${P5SITE}/Parse/Pidl.pm
@@ -1164,7 +1165,6 @@ libexec/samba/
 @man man/man7/samba.7
 @man man/man7/traffic_learner.7
 @man man/man7/traffic_replay.7
-@man man/man7/winbind_krb5_locator.7
 @man man/man8/cifsdd.8
 @man man/man8/eventlogadm.8
 @man man/man8/idmap_ad.8
@@ -1233,6 +1233,7 @@ libexec/samba/
 @man man/man8/vfs_virusfilter.8
 @man man/man8/vfs_worm.8
 @man man/man8/vfs_xattr_tdb.8
+@man man/man8/winbind_krb5_locator.8
 @man man/man8/winbindd.8
 @bin sbin/nmbd
 @bin sbin/samba
