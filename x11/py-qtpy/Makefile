@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/24 18:55:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/08/29 21:19:09 sthen Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
-MODPY_EGG_VERSION =	1.4.2
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		QtPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtpy-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
@@ -22,7 +22,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS +=		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
 
 TEST_IS_INTERACTIVE =	x11
