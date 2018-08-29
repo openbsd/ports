@@ -1,0 +1,2 @@
+MusicBrainz::DiscID is a Perl class to calculate a MusicBrainz DiscID from an
+audio CD in the drive.
