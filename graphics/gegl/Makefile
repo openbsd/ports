@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/05/14 09:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2018/08/30 17:27:50 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -16,6 +16,9 @@ CATEGORIES=		graphics devel
 
 PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 SHARED_LIBS +=  gegl-0.2             0.0      # 201.1
 SHARED_LIBS +=  gegl-sc-0.2          0.0      # unknown
@@ -71,7 +74,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_RUBY="" \
 			ac_cv_path_DOT="no"
 
-CONFIGURE_ARGS=		--disable-docs \
+CONFIGURE_ARGS=		--enable-mmx \
+			--disable-docs \
 			--without-umfpack \
 			--without-sdl \
 			--without-lua \
@@ -80,9 +84,11 @@ CONFIGURE_ARGS=		--disable-docs \
 			--without-libv4l \
 			--without-libspiro
 
-# be safe until proven stable
-CONFIGURE_ARGS +=	--enable-mmx \
-			--disable-sse
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS +=	--enable-sse
+.else
+CONFIGURE_ARGS +=	--disable-sse
+.endif
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=673580
 CONFIGURE_ARGS +=	--without-vala \

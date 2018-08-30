@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/27 09:18:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2018/08/30 17:27:51 ajacoutot Exp $
 
 PORTROACH=		limit:^0\.3
 
@@ -8,7 +8,7 @@ V=			0.3.34
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gegl-0.3             0.6      # 332.0
 
@@ -60,7 +60,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_prog_RUBY="" \
 			ac_cv_path_DOT="no"
 
-CONFIGURE_ARGS=		--without-lensfun \
+CONFIGURE_ARGS=		--enable-mmx \
+			--without-lensfun \
 			--without-openexr \
 			--without-sdl \
 			--without-graphviz \
@@ -73,9 +74,11 @@ CONFIGURE_ARGS=		--without-lensfun \
 # does fishy things (git(1), grabbing the X display...)
 CONFIGURE_ARGS +=	--disable-docs
 
-# be safe until proven stable
-CONFIGURE_ARGS +=	--enable-mmx \
-			--disable-sse
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS +=	--enable-sse
+.else
+CONFIGURE_ARGS +=	--disable-sse
+.endif
 
 post-install:
 	rm ${PREFIX}/lib/gegl-${API_VERSION}/*.{a,la} \
