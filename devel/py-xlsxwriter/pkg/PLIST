@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/08/15 07:07:52 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/08/30 09:24:29 rpointel Exp $
 bin/vba_extract.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}contenttypes
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}drawing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}format.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}packager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}relationships.${MODPY_PYC_MAGIC_TAG}pyc
@@ -56,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/xlsxwriter/contenttypes.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/core.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/custom.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/drawing.py
+lib/python${MODPY_VERSION}/site-packages/xlsxwriter/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/format.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/packager.py
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/relationships.py
