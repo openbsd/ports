@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/08/15 13:02:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/08/30 17:23:47 giovanni Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
 V=			0.1.56
+REVISION=		0
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -31,11 +32,16 @@ CONFIGURE_ENV=		LDFLAGS="-pthread" \
 			ac_cv_path_W3M=no \
 			ac_cv_path_RSVG=no
 
-# be safe until proven stable
 CONFIGURE_ARGS +=	--enable-mmx \
-			--disable-sse \
-			--disable-sse2 \
 			--disable-altivec
+
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS +=	--enable-sse \
+			--enable-sse2
+.else
+CONFIGURE_ARGS +=	--disable-sse \
+			--disable-sse2
+.endif
 
 post-install:
 	rm ${PREFIX}/lib/babl-${API_VERSION}/*.{a,la}
