@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/03 20:22:12 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/08/30 10:26:58 rpointel Exp $
 bin/jadx
 bin/jadx-gui
 share/jadx/
@@ -7,20 +7,24 @@ share/jadx/bin/jadx
 share/jadx/bin/jadx-gui
 share/jadx/lib/
 share/jadx/lib/android-5.1.jar
-share/jadx/lib/annotations-15.0.jar
-share/jadx/lib/asm-6.0.jar
-share/jadx/lib/cloning-1.9.9.jar
+share/jadx/lib/annotations-16.0.2.jar
+share/jadx/lib/asm-6.2.jar
+share/jadx/lib/cloning-1.9.10.jar
 share/jadx/lib/commons-io-2.6.jar
+share/jadx/lib/commons-lang3-3.7.jar
 share/jadx/lib/dx-1.14.jar
-share/jadx/lib/gson-2.8.2.jar
+share/jadx/lib/gson-2.8.5.jar
 share/jadx/lib/image-viewer-1.2.3.jar
-share/jadx/lib/jadx-cli-0.7.1.jar
-share/jadx/lib/jadx-core-0.7.1.jar
-share/jadx/lib/jadx-gui-0.7.1.jar
-share/jadx/lib/jcommander-1.72.jar
+share/jadx/lib/jadx-cli-0.8.0.jar
+share/jadx/lib/jadx-core-0.8.0.jar
+share/jadx/lib/jadx-gui-0.8.0.jar
+share/jadx/lib/jcommander-1.74.jar
 share/jadx/lib/jfontchooser-1.0.5.jar
 share/jadx/lib/logback-classic-1.2.3.jar
 share/jadx/lib/logback-core-1.2.3.jar
 share/jadx/lib/objenesis-2.6.jar
+share/jadx/lib/reactive-streams-1.0.2.jar
 share/jadx/lib/rsyntaxtextarea-2.6.1.jar
+share/jadx/lib/rxjava-2.1.17.jar
+share/jadx/lib/rxjava2-swing-0.2.16.jar
 share/jadx/lib/slf4j-api-1.7.25.jar
