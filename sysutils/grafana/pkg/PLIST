@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/08/09 17:19:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/08/30 07:53:37 jasper Exp $
 @newgroup _grafana:798
 @newuser _grafana:798:798:daemon:Grafana Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/grafana/
@@ -948,24 +948,24 @@ share/grafana/public/app/stores/ViewStore/ViewStore.jest.ts
 share/grafana/public/app/stores/ViewStore/ViewStore.ts
 share/grafana/public/app/stores/store.ts
 share/grafana/public/build/
-share/grafana/public/build/0.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/0.4f5454f867a0cc2fe8dd.js.map
-share/grafana/public/build/1.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/1.4f5454f867a0cc2fe8dd.js.map
-share/grafana/public/build/app.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/app.4f5454f867a0cc2fe8dd.js.map
-share/grafana/public/build/dark.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/dark.4f5454f867a0cc2fe8dd.js.map
+share/grafana/public/build/0.6aa12092d3333cb24394.js
+share/grafana/public/build/0.6aa12092d3333cb24394.js.map
+share/grafana/public/build/1.6aa12092d3333cb24394.js
+share/grafana/public/build/1.6aa12092d3333cb24394.js.map
+share/grafana/public/build/app.6aa12092d3333cb24394.js
+share/grafana/public/build/app.6aa12092d3333cb24394.js.map
+share/grafana/public/build/dark.6aa12092d3333cb24394.js
+share/grafana/public/build/dark.6aa12092d3333cb24394.js.map
 share/grafana/public/build/grafana.dark.css
 share/grafana/public/build/grafana.dark.css.map
 share/grafana/public/build/grafana.light.css
 share/grafana/public/build/grafana.light.css.map
-share/grafana/public/build/light.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/light.4f5454f867a0cc2fe8dd.js.map
-share/grafana/public/build/manifest.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/manifest.4f5454f867a0cc2fe8dd.js.map
-share/grafana/public/build/vendor.4f5454f867a0cc2fe8dd.js
-share/grafana/public/build/vendor.4f5454f867a0cc2fe8dd.js.map
+share/grafana/public/build/light.6aa12092d3333cb24394.js
+share/grafana/public/build/light.6aa12092d3333cb24394.js.map
+share/grafana/public/build/manifest.6aa12092d3333cb24394.js
+share/grafana/public/build/manifest.6aa12092d3333cb24394.js.map
+share/grafana/public/build/vendor.6aa12092d3333cb24394.js
+share/grafana/public/build/vendor.6aa12092d3333cb24394.js.map
 share/grafana/public/dashboards/
 share/grafana/public/dashboards/default.json
 share/grafana/public/dashboards/home.json
