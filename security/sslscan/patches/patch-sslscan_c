@@ -1,4 +1,4 @@
-$OpenBSD: patch-sslscan_c,v 1.8 2018/01/01 14:35:24 sthen Exp $
+$OpenBSD: patch-sslscan_c,v 1.9 2018/08/30 17:05:21 jsing Exp $
 
 Index: sslscan.c
 --- sslscan.c.orig
@@ -33,3 +33,34 @@ Index: sslscan.c
              printf_error("%sSTARTLS LDAP connection to %s:%d failed with '%s'.%s\n",
                           COL_RED, options->host, options->port, unsupported, RESET);
              return 0;
+@@ -2010,13 +2000,13 @@ int checkCertificate(struct sslCheckOptions *options, 
+                                                 printf("Altnames: ");
+                                                 if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 0))
+                                                 {
+-                                                    M_ASN1_OCTET_STRING_print(stdoutBIO, extension->value);
++                                                    ASN1_STRING_print(stdoutBIO, extension->value);
+                                                 }
+                                                 if (options->xmlOutput)
+                                                 {
+                                                     printf_xml("   <altnames><![CDATA[");
+                                                     if (!X509V3_EXT_print(fileBIO, extension, X509_FLAG_COMPAT, 0))
+-                                                        M_ASN1_OCTET_STRING_print(fileBIO, extension->value);
++                                                        ASN1_STRING_print(fileBIO, extension->value);
+                                                 }
+                                                 printf_xml("]]></altnames>\n");
+                                                 printf("\n");
+@@ -2798,12 +2788,12 @@ int showCertificate(struct sslCheckOptions *options)
+                                             if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 8))
+                                             {
+                                                 printf("        ");
+-                                                M_ASN1_OCTET_STRING_print(stdoutBIO, extension->value);
++                                                ASN1_STRING_print(stdoutBIO, extension->value);
+                                             }
+                                             if (options->xmlOutput)
+                                             {
+                                                 if (!X509V3_EXT_print(fileBIO, extension, X509_FLAG_COMPAT, 0))
+-                                                    M_ASN1_OCTET_STRING_print(fileBIO, extension->value);
++                                                    ASN1_STRING_print(fileBIO, extension->value);
+                                                 printf_xml("]]></extension>\n");
+                                             }
+                                             printf("\n");
