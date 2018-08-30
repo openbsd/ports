@@ -1,0 +1,16 @@
+$OpenBSD: patch-vendor_github_com_valyala_tcplisten_socket_bsd_go,v 1.1 2018/08/30 08:31:02 jasper Exp $
+
+Renamed from socket_darwin.go and address:
+
+socket_other.go:11:40: undefined: syscall.SOCK_NONBLOCK
+socket_other.go:11:62: undefined: syscall.SOCK_CLOEXEC 
+
+Index: vendor/github.com/valyala/tcplisten/socket_bsd.go
+--- vendor/github.com/valyala/tcplisten/socket_bsd.go.orig
++++ vendor/github.com/valyala/tcplisten/socket_bsd.go
+@@ -0,0 +1,5 @@
++// +build darwin openbsd
++
++package tcplisten
++
++var newSocketCloexec = newSocketCloexecOld

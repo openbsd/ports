@@ -1,0 +1,14 @@
+$OpenBSD: patch-vendor_github_com_valyala_tcplisten_socket_other_go,v 1.1 2018/08/30 08:31:02 jasper Exp $
+
+socket_other.go:11:40: undefined: syscall.SOCK_NONBLOCK
+socket_other.go:11:62: undefined: syscall.SOCK_CLOEXEC 
+
+Index: vendor/github.com/valyala/tcplisten/socket_other.go
+--- vendor/github.com/valyala/tcplisten/socket_other.go.orig
++++ vendor/github.com/valyala/tcplisten/socket_other.go
+@@ -1,4 +1,4 @@
+-// +build !darwin
++// +build !darwin, !openbsd
+ 
+ package tcplisten
+ 
