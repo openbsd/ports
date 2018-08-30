@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/08/28 19:01:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2018/08/30 10:31:06 ajacoutot Exp $
 
 COMMENT =	module signature file manipulation
 
@@ -12,6 +12,7 @@ MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+BUILD_DEPENDS =		security/gnupg
 RUN_DEPENDS =		textproc/p5-Text-Diff \
 			security/gnupg
 TEST_DEPENDS =		devel/p5-IPC-Run
