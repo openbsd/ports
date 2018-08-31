@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/08/25 06:44:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2018/08/31 16:19:01 fcambus Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -6,10 +6,9 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		200
+V =		201
 DISTNAME =	mame0${V}s
 PKGNAME =	mame-0.${V}
-REVISION =	0
 
 CATEGORIES =	emulators
 
