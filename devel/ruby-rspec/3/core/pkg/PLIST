@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/05/28 08:04:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/08/31 19:06:23 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-core->=2,<4
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}
@@ -20,8 +20,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/backtrace_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/coordinator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/example_minimizer.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/runner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/fork_runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/shell_command.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/shell_runner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/utilities.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/configuration_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/drb.rb
@@ -33,9 +36,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/filter_manager.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/flat_map.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/base_bisect_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/base_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/base_text_formatter.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/bisect_formatter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/bisect_drb_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/bisect_progress_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/console_codes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/deprecation_formatter.rb
