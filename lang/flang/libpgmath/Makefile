@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/26 00:40:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2018/08/31 21:50:08 bcallah Exp $
 
 # Sync version with lang/flang/flang always!
 COMMENT =	LLVM Fortran math library
-DISTNAME =	flang-6.0.0.20180817
+DISTNAME =	flang-6.0.0.20180830
 PKGNAME =	${DISTNAME:S/flang/libpgmath/}
 
 SHARED_LIBS +=	pgmath                    2.0 # 6.0
 
 GH_PROJECT =	flang
-GH_COMMIT =	76c2d594b6cbfef841ed62f9358a0a7df8deb3f5
+GH_COMMIT =	c04c6ca4c803a8daaffaf254a277c8cc4d7407a5
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
