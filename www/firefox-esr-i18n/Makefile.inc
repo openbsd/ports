@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.60 2018/06/27 05:11:34 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.61 2018/08/31 09:42:00 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -11,6 +11,7 @@ PKG_ARCH =	*
 FV =		60.1.0
 V =		${FV:C/b.$//}
 NAME =		firefox-esr-i18n
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -56,5 +57,5 @@ MESSAGE=	${PKGDIR}/MESSAGE
 SUBST_VARS =	V L
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-esr-$V/browser/extensions
-	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox-esr-$V/browser/extensions/langpack-$L@firefox.mozilla.org.xpi
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-esr/browser/extensions
+	${INSTALL_DATA} ${FULLDISTDIR}/$L.xpi ${PREFIX}/lib/firefox-esr/browser/extensions/langpack-$L@firefox.mozilla.org.xpi
