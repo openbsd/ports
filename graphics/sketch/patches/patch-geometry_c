@@ -1,0 +1,14 @@
+$OpenBSD: patch-geometry_c,v 1.1 2018/08/31 12:31:49 solene Exp $
+
+Index: geometry.c
+--- geometry.c.orig
++++ geometry.c
+@@ -615,7 +615,7 @@ int boxes_2d_intersect_p(BOX_2D * a, BOX_2D * b)
+     return 1;
+ }
+ 
+-int boxes_3d_intersect_p(BOX_2D * a, BOX_2D * b)
++int boxes_3d_intersect_p(BOX_3D * a, BOX_3D * b)
+ {
+     if (a->max[X] < b->min[X])	// a left of b
+ 	return 0;

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/08/31 12:31:49 solene Exp $
 
 COMMENT =		3D scene description translator for TeX
 
-DISTNAME =		sketch-0.3.2
+DISTNAME =		sketch-0.3.7
 EXTRACT_SUFX =		.tgz
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://www.frontiernet.net/~eugene.ressler/
+HOMEPAGE =		https://www.frontiernet.net/~eugene.ressler/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

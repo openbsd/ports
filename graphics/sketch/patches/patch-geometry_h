@@ -1,0 +1,14 @@
+$OpenBSD: patch-geometry_h,v 1.1 2018/08/31 12:31:49 solene Exp $
+
+Index: geometry.h
+--- geometry.h.orig
++++ geometry.h
+@@ -237,7 +237,7 @@ void fold_min_max_polyline_3d(BOX_3D * b, POLYLINE_3D 
+ void copy_box_2d(BOX_2D * r, BOX_2D * s);
+ void copy_box_3d(BOX_3D * r, BOX_3D * s);
+ int boxes_2d_intersect_p(BOX_2D * a, BOX_2D * b);
+-int boxes_3d_intersect_p(BOX_2D * a, BOX_2D * b);
++int boxes_3d_intersect_p(BOX_3D * a, BOX_3D * b);
+ 
+ // ---- transformations --------------------------------------------------------
+ 
