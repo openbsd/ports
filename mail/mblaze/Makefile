@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/19 05:25:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/08/31 10:31:41 solene Exp $
 
 COMMENT =	set of Maildir utilities
 
-VERSION =	0.3.2
+VERSION =	0.4
 DISTNAME =	mblaze-${VERSION}
 GH_ACCOUNT =	chneukirchen
 GH_PROJECT =	mblaze
