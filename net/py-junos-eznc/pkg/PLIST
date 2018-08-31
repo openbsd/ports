@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/08/23 18:55:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/08/31 19:07:40 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/jnpr/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/__init__.py
@@ -79,6 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}get_so
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}get_virtual_chassis_information.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}ifd_style.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}iri_mapping.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}is_linux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}personality.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}swver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/current_re.py
@@ -92,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/get_software_informati
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/get_virtual_chassis_information.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/ifd_style.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/iri_mapping.py
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/is_linux.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/personality.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/swver.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/jxml.py
@@ -220,10 +222,12 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_netconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_serial.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/${MODPY_PYCACHE}tty_telnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_netconf.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_serial.py
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_ssh.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/transport/tty_telnet.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/__init__.py
