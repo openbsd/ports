@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2018/01/29 15:47:11 feinerer Exp $
+# $OpenBSD: Makefile,v 1.28 2018/08/31 08:48:12 landry Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-DISTNAME=	abcde-2.7.2
+DISTNAME=	abcde-2.9.2
 EPOCH=		0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://abcde.einval.com/
+
+MAINTAINER=	Charlene Wendling <julianaito@posteo.jp>
 
 # Artistic or GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +19,9 @@ RUN_DEPENDS=	audio/cdparanoia \
 		audio/cd-discid \
 		audio/id3lib \
 		audio/vorbis-tools \
-		shells/bash
+		shells/bash \
+		www/p5-WebService-MusicBrainz \
+		audio/p5-MusicBrainz-DiscID
 
 NO_TEST=	Yes
 
@@ -28,6 +32,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/abcde-musicbrainz-tool ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cddb-tool ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/abcde.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cddb-tool.1 ${PREFIX}/man/man1
