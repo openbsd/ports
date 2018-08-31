@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/07/09 20:04:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/08/31 08:51:42 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -303,7 +303,7 @@ kopano-webapp/client/resources/fonts/kopanowebappdings.woff2
 kopano-webapp/client/resources/images/
 kopano-webapp/client/resources/images/background.svg
 kopano-webapp/client/resources/images/buttons/
-kopano-webapp/client/resources/images/buttons-sd93182de2e.png
+kopano-webapp/client/resources/images/buttons-sb7c8758d9a.png
 kopano-webapp/client/resources/images/buttons/arrow_down_s_btn.png
 kopano-webapp/client/resources/images/buttons/arrow_down_s_white_btn.png
 kopano-webapp/client/resources/images/buttons/arrow_left_l.png
@@ -323,6 +323,7 @@ kopano-webapp/client/resources/images/buttons/icon_cross_white.png
 kopano-webapp/client/resources/images/buttons/icon_delete.png
 kopano-webapp/client/resources/images/buttons/icon_edit_as_new_mail.png
 kopano-webapp/client/resources/images/buttons/icon_embed_attachment.png
+kopano-webapp/client/resources/images/buttons/icon_filter.png
 kopano-webapp/client/resources/images/buttons/icon_floppy.png
 kopano-webapp/client/resources/images/buttons/icon_forward.png
 kopano-webapp/client/resources/images/buttons/icon_invite_attendees.png
@@ -1599,6 +1600,7 @@ kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm-debug.js
 kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm.js
 kopano-webapp/plugins/files/js/files-debug.js
 kopano-webapp/plugins/files/js/files.js
+kopano-webapp/plugins/files/js/files.js.map
 kopano-webapp/plugins/files/language/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/LC_MESSAGES/
@@ -1632,8 +1634,6 @@ kopano-webapp/plugins/files/language/nl_NL.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/plugin_files.mo
-kopano-webapp/plugins/files/language/pt_PT.UTF-8/
-kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/plugin_files.mo
@@ -2683,8 +2683,6 @@ kopano-webapp/plugins/filesbackendOwncloud/language/nl_NL.UTF-8/LC_MESSAGES/plug
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
-kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/
-kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
@@ -2768,8 +2766,6 @@ kopano-webapp/plugins/filesbackendSMB/language/nl_NL.UTF-8/LC_MESSAGES/plugin_fi
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
-kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/
-kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
@@ -2864,10 +2860,11 @@ kopano-webapp/plugins/folderwidgets/resources/
 kopano-webapp/plugins/folderwidgets/resources/css/
 kopano-webapp/plugins/folderwidgets/resources/css/folderwidgets.css
 kopano-webapp/plugins/folderwidgets/resources/images/
-kopano-webapp/plugins/folderwidgets/resources/images/appointments.png
-kopano-webapp/plugins/folderwidgets/resources/images/mail.png
-kopano-webapp/plugins/folderwidgets/resources/images/tasks.png
-kopano-webapp/plugins/folderwidgets/resources/images/today_tentative.png
+kopano-webapp/plugins/folderwidgets/resources/images/calendar.svg
+kopano-webapp/plugins/folderwidgets/resources/images/readMail.svg
+kopano-webapp/plugins/folderwidgets/resources/images/tasks.svg
+kopano-webapp/plugins/folderwidgets/resources/images/tentative.svg
+kopano-webapp/plugins/folderwidgets/resources/images/unreadMail.svg
 kopano-webapp/plugins/gmaps/
 kopano-webapp/plugins/gmaps/LICENSE.txt
 kopano-webapp/plugins/gmaps/config.php.dist
@@ -2921,12 +2918,14 @@ kopano-webapp/plugins/quickitems/js/quickitems.js
 kopano-webapp/plugins/quickitems/js/quickitems.js.map
 kopano-webapp/plugins/quickitems/manifest.xml
 kopano-webapp/plugins/quickitems/resources/
+kopano-webapp/plugins/quickitems/resources/css/
+kopano-webapp/plugins/quickitems/resources/css/quickitems.css
 kopano-webapp/plugins/quickitems/resources/images/
-kopano-webapp/plugins/quickitems/resources/images/quickappt.png
-kopano-webapp/plugins/quickitems/resources/images/quickcontact.png
-kopano-webapp/plugins/quickitems/resources/images/quickmail.png
-kopano-webapp/plugins/quickitems/resources/images/quicknote.png
-kopano-webapp/plugins/quickitems/resources/images/quicktask.png
+kopano-webapp/plugins/quickitems/resources/images/newAppointment.svg
+kopano-webapp/plugins/quickitems/resources/images/newContact.svg
+kopano-webapp/plugins/quickitems/resources/images/newMail.svg
+kopano-webapp/plugins/quickitems/resources/images/newNote.svg
+kopano-webapp/plugins/quickitems/resources/images/newTask.svg
 kopano-webapp/plugins/spellchecker/
 kopano-webapp/plugins/spellchecker-languagepack-dutch/
 kopano-webapp/plugins/spellchecker-languagepack-dutch/LICENSE.txt
