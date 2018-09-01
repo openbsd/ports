@@ -1,0 +1,13 @@
+$OpenBSD: patch-ProxyChannel_cxx,v 1.5 2018/09/01 11:06:06 ajacoutot Exp $
+
+Index: ProxyChannel.cxx
+--- ProxyChannel.cxx.orig
++++ ProxyChannel.cxx
+@@ -20,6 +20,7 @@
+ #include <q931.h>
+ #include <h245.h>
+ #include <h323pdu.h>
++#include <math.h> /* ceil(3) */
+ #include "snmp.h"
+ #include "gk.h"
+ #include "gk_const.h"
