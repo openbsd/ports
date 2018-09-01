@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/08/20 10:50:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2018/09/01 11:05:51 ajacoutot Exp $
 
 COMMENT=		H.323 video conferencing library
 
@@ -6,10 +6,11 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		h323plus
 GH_TAGNAME=		v1_27_0
 PKGNAME=		${DISTNAME:S/_/./g}
+REVISION=		0
 
 CATEGORIES=		net devel
 
-SHARED_LIBS=		h323	6.0
+SHARED_LIBS=		h323	6.1
 
 HOMEPAGE=		http://www.h323plus.org/
 
@@ -33,6 +34,9 @@ MODGNU_CONFIG_GUESS_DIRS= \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		PTLIBDIR=${LOCALBASE}/share/ptlib
+
+# needed by net/gnugk: https://www.gnugk.org/gnugk-manual-14.html
+CONFIGURE_ARGS +=	--enable-h235 # --enable-h46017 --enable-h46026
 
 # http://www.tandberg.com/collateral/tandberg-ITU-license.pdf
 # H.460.23/.24. Contact consulting@h323plus.org for licensing terms.
