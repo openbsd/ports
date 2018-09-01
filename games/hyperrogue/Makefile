@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/05 20:24:45 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2018/09/01 23:15:34 bcallah Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
-GH_TAGNAME =	v10.4j
+GH_TAGNAME =	10.4t
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -37,12 +37,10 @@ MAKE_FLAGS =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -std=c++11"
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-# Disable hardcoded optimizations
 # Correct version number
 # autoreconf taken from games/manaplus
 pre-configure:
-	sed -i -e 's,-O0,,g' ${WRKSRC}/Makefile.am
-	sed -i 's,10.4b,10.4j,g' ${WRKSRC}/configure.ac
+	sed -i 's,10.4i,10.4t,g' ${WRKSRC}/configure.ac
 	cd ${WRKSRC} && \
 		${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i

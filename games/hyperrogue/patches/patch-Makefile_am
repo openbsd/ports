@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2018/09/01 23:15:34 bcallah Exp $
+
+Remove hardcoded optimizations.
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -2,7 +2,7 @@ bin_PROGRAMS = hyperrogue
+ hyperroguedir = $(datadir)/hyperrogue
+ hyperrogue_SOURCES = hyper.cpp savepng.cpp
+ hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\" -DSOUNDDESTDIR=\"$(pkgdatadir)/sounds/\"
+-hyperrogue_CXXFLAGS = -O2 -std=c++11 ${AM_CXXFLAGS}
++hyperrogue_CXXFLAGS = -std=c++11 ${AM_CXXFLAGS}
+ dist_hyperrogue_DATA = hyperrogue-music.txt DejaVuSans-Bold.ttf
+ 
+ # docdir
+@@ -18,7 +18,7 @@ dist_sounds_DATA = sounds/*
+ 
+ noinst_PROGRAMS = langen
+ langen_SOURCES = langen.cpp 
+-langen_CXXFLAGS = -O0 -std=c++11 ${AM_CXXFLAGS}
++langen_CXXFLAGS = -std=c++11 ${AM_CXXFLAGS}
+ BUILT_SOURCES = language-data.cpp
+ 
+ language-data.cpp: langen
