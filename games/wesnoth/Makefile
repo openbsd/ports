@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/08/26 12:24:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.75 2018/09/02 21:13:35 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -6,6 +6,7 @@ BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.14.4
+REVISION=	0
 
 CATEGORIES=	games x11
 
