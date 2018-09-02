@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/09 14:38:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2018/09/02 11:53:32 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.5
-REVISION =		2
+GNOME_VERSION =		3.22.6
 
 CATEGORIES =		games
 
@@ -12,14 +11,14 @@ CATEGORIES =		games
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c
-WANTLIB += cairo cairo-gobject canberra canberra-gtk3 croco-0.6
-WANTLIB += dbus-1 dbus-glib-1 epoxy expat ffi fontconfig freetype
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject canberra canberra-gtk3 croco-0.6 dbus-1
+WANTLIB += dbus-glib-1 epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-3 guile-2.2
 WANTLIB += harfbuzz iconv intl ltdl lzma m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread rsvg-2 unistring
-WANTLIB += vorbis vorbisfile xcb-render xcb-shm xcb xml2 z
+WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
 MODULES =		devel/dconf \
 			devel/gconf2 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/09/02 11:53:32 ajacoutot Exp $
 @bin bin/sol
 lib/aisleriot/
 lib/aisleriot/guile/
@@ -2070,7 +2070,6 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
-share/metainfo/
 share/metainfo/sol.appdata.xml
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
