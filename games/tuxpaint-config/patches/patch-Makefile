@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
---- Makefile.orig	Fri May 29 00:08:08 2009
-+++ Makefile	Sun Dec 20 22:09:37 2009
-@@ -20,7 +20,6 @@ VER_DATE=`date +"%Y-%m-%d"`
+$OpenBSD: patch-Makefile,v 1.6 2018/09/02 08:31:44 ajacoutot Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -20,7 +20,6 @@ endif
  
  # Where to install things:
  
@@ -48,7 +49,7 @@ $OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
  
  releaseclean:
  	@echo
-@@ -153,16 +142,9 @@ install-win32:
+@@ -183,16 +172,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -67,7 +68,7 @@ $OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -240,23 +222,15 @@ install-kde-icons:
+@@ -271,23 +253,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
@@ -95,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
  
  
  # Install the data (sound, graphics, fonts):
-@@ -272,31 +246,15 @@ install-data:
+@@ -303,31 +277,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -131,7 +132,7 @@ $OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
  
  
  # Build the program!
-@@ -304,22 +262,22 @@ install-man:
+@@ -335,22 +293,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
