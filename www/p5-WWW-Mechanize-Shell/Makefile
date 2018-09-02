@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/26 15:40:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/02 19:51:10 bluhm Exp $
 
 COMMENT =	interactive shell for WWW::Mechanize
 
-DISTNAME =	WWW-Mechanize-Shell-0.56
+DISTNAME =	WWW-Mechanize-Shell-0.57
 
 CATEGORIES =	www
 
@@ -30,6 +30,7 @@ TEST_DEPENDS =		devel/p5-File-Slurp \
 			devel/p5-Test-Without-Module \
 			www/p5-CGI \
 			www/p5-HTML-TableExtract \
-			www/p5-HTTP-Daemon
+			www/p5-HTTP-Daemon \
+			www/p5-Test-HTTP-LocalServer>=0.63
 
 .include <bsd.port.mk>
