@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/09/02 17:33:40 naddy Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
 DISTNAME=	ezstream-0.6.0
+REVISION=	0
 CATEGORIES=	net multimedia
 
-HOMEPAGE=	http://www.icecast.org/ezstream/
+HOMEPAGE=	https://icecast.org/ezstream/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

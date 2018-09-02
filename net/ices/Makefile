@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2018/09/02 17:33:41 naddy Exp $
 
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
@@ -6,10 +6,10 @@ PORTROACH_COMMENT=	ices2 is a different port
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-REVISION=	11
+REVISION=	12
 CATEGORIES=	net audio
 
-HOMEPAGE=	http://www.icecast.org/ices.php
+HOMEPAGE=	https://icecast.org/ices/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

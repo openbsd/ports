@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2018/09/02 17:33:41 naddy Exp $
 
 COMMENT=	library for communicating with an icecast server
 
 DISTNAME=	libshout-2.3.1
+REVISION=	0
 SHARED_LIBS=	shout	5.1
 CATEGORIES=	net audio
 
-HOMEPAGE=	http://www.icecast.org/
+HOMEPAGE=	https://icecast.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
