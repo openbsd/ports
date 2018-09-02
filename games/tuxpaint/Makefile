@@ -1,49 +1,47 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2018/09/02 08:31:28 ajacoutot Exp $
 
-COMMENT=	drawing program for children
+COMMENT=		drawing program for children
 
-DISTNAME=	tuxpaint-0.9.22
-CATEGORIES=	games graphics
-REVISION=	1
+DISTNAME=		tuxpaint-0.9.23
+CATEGORIES=		games graphics
 
-HOMEPAGE=	http://www.tuxpaint.org/
+HOMEPAGE=		http://www.tuxpaint.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  SDL SDL_Pango SDL_image SDL_mixer SDL_ttf c cairo fribidi
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 iconv intl m
+WANTLIB += SDL SDL_Pango SDL_image SDL_mixer SDL_ttf c cairo fribidi
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl m
 WANTLIB += paper png pthread rsvg-2 z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
 
-BUILD_DEPENDS=	devel/gettext-tools \
-		devel/gperf
+BUILD_DEPENDS=		devel/gettext-tools \
+			devel/gperf
 
-LIB_DEPENDS=	devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-ttf \
-		x11/gnome/librsvg \
-		print/libpaper \
-		devel/sdl-pango \
-		devel/fribidi
+LIB_DEPENDS=		devel/sdl-image \
+			devel/sdl-mixer \
+			devel/sdl-ttf \
+			devel/sdl-pango \
+			print/libpaper \
+			x11/gnome/librsvg
 
-RUN_DEPENDS=	graphics/netpbm \
-		devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils \
+			graphics/netpbm
 
-USE_GMAKE=	Yes
+USE_GMAKE=		Yes
 
-MAKE_ENV=	SYSCONFDIR=${SYSCONFDIR} OPTFLAGS="${CFLAGS}"
-CFLAGS=		-DHAVE_STRCASESTR
+MAKE_ENV=		linux_ARCH_CFLAGS="${CFLAGS} -DHAVE_STRCASESTR \
+			-I${LOCALBASE}/include"
 
-NO_TEST=	Yes
+NO_TEST=		Yes
 
 pre-configure:
-	@perl -pi -e 's,@\$$\(CC\),\$$\(CC\),g' ${WRKSRC}/Makefile
-	${SUBST_CMD} ${WRKSRC}/Makefile \
-		${WRKSRC}/src/manpage/tuxpaint.1
+	ln -sf /usr/bin/true ${WRKDIR}/bin/kbuildsycoca4
+	sed -i 's,@\$$\(CC\),\$$\(CC\),g' ${WRKSRC}/Makefile
+	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/src/manpage/tuxpaint.1
 
 .include <bsd.port.mk>

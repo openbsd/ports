@@ -1,17 +1,28 @@
-$OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
---- Makefile.orig	Tue Aug 19 09:28:33 2014
-+++ Makefile	Thu Sep  4 13:43:47 2014
-@@ -37,7 +37,7 @@ STDC_LIB:=-lstdc++.r4
- endif
- else
- OS:=linux
--GPERF:=/usr/bin/gperf
-+GPERF:=${LOCALBASE}/bin/gperf
- endif
- endif
- endif
-@@ -110,7 +110,7 @@ osx_PREFIX:=/usr/local
+$OpenBSD: patch-Makefile,v 1.9 2018/09/02 08:31:28 ajacoutot Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -41,7 +41,7 @@ else
+         endif
+       else
+         OS:=linux
+-        GPERF:=/usr/bin/gperf
++        GPERF:=${LOCALBASE}/bin/gperf
+       endif
+     endif
+   endif
+@@ -98,7 +98,7 @@ ARCH_LIBS:=$($(OS)_ARCH_LIBS)
+ windows_ARCH_CFLAGS:=
+ osx_ARCH_CFLAGS:=-mmacosx-version-min=10.7 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
+ beos_ARCH_CFLAGS:=
+-linux_ARCH_CFLAGS:=
++#linux_ARCH_CFLAGS:=
+ ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
+ windows_ARCH_LDFLAGS:=
+@@ -133,7 +133,7 @@ windows_PREFIX:=/usr/local
+ osx_PREFIX:=Resources
  beos_PREFIX=$(shell finddir B_APPS_DIRECTORY)/TuxPaint
  linux_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
@@ -19,101 +30,32 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -143,19 +143,15 @@ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib/tuxpaint/plugins
+@@ -167,19 +167,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
- DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
--DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+-DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)
+-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-$(VER_VERSION)/tuxpaint-dev
 -MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
--DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
-+DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint/tuxpaint-dev
++DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
++DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint/tuxpaint
 +MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
-+DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
+ DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
  
  # BASH tab-completion file:
- COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
+-COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
++COMPLETIONDIR:=${SYSCONFDIR}/bash_completion.d
  
  # 'System-wide' Config file:
--ifeq ($(PREFIX),/usr)
--  CONFDIR:=$(DESTDIR)/etc/tuxpaint
--else
+ ifeq ($(PREFIX),/usr)
+   CONFDIR:=$(DESTDIR)/etc/tuxpaint
+ else
 -  CONFDIR:=$(DESTDIR)$(PREFIX)/etc/tuxpaint
--endif
-+CONFDIR=${SYSCONFDIR}/tuxpaint
++  CONFDIR:=${SYSCONFDIR}/tuxpaint
+ endif
  
  ifeq ($(SYSNAME),Haiku)
-   CONFDIR:=$(shell finddir B_USER_SETTINGS_DIRECTORY)/TuxPaint
-@@ -164,9 +160,9 @@ endif
- # Icons and launchers:
- ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
- X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
--GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
--KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
--KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
-+#GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
-+#KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
-+#KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
- 
- # Maemo flag
- MAEMOFLAG:=
-@@ -225,8 +221,9 @@ endif
- # The entire set of CFLAGS:
- 
- #-ffast-math
--OPTFLAGS:=-O2
--CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
-+#OPTFLAGS:=-O2
-+CFLAGS:=-I${LOCALBASE}/include \
-+	$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
- 	$(if $(filter windows,$(OS)),,$(call comptest,-fvisibility=hidden,)) \
- 	-Wcast-align -Wredundant-decls \
- 	-Wbad-function-cast -Wwrite-strings \
-@@ -259,20 +256,6 @@ MOUSE_CFLAGS:=-Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CUR
- #
- .PHONY: all
- all:	tuxpaint translations magic-plugins tp-magic-config
--# thumb-starters
--	@echo
--	@echo "--------------------------------------------------------------"
--	@echo
--	@echo "Done compiling."
--	@echo
--	@echo "Now run 'make install' with any options you ran 'make' with."
--	@echo "to install Tux Paint."
--	@echo
--	@echo "You may need superuser ('root') privileges, depending on"
--	@echo "where you're installing."
--	@echo "(Depending on your system, you either need to 'su' first,"
--	@echo "or run 'sudo make install'.)"
--	@echo
- 
- .PHONY: releaseclean
- releaseclean:
-@@ -451,23 +434,6 @@ install:	install-bin install-data install-man install-
- 		install-bash-completion \
- 		install-osk \
- 		$(ARCH_INSTALL)
--#install-thumb-starters
--	@echo
--	@echo "--------------------------------------------------------------"
--	@echo
--	@echo "All done! Now (preferably NOT as 'root' superuser),"
--	@echo "you can type the command 'tuxpaint' to run the program!!!"
--	@echo
--	@echo "For more information, see the 'tuxpaint' man page,"
--	@echo "run 'tuxpaint --usage' or see $(DOC_PREFIX)/README.txt"
--	@echo
--	@echo "Visit Tux Paint's home page for more information, updates"
--	@echo "and to learn how you can help out!"
--	@echo
--	@echo "  http://www.tuxpaint.org/"
--	@echo
--	@echo "Enjoy!"
--	@echo
- 
- .PHONY: install-magic-plugins
- install-magic-plugins:
-@@ -609,9 +575,8 @@ uninstall:	uninstall-i18n
+@@ -645,18 +645,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -125,7 +67,18 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  # Install BASH completion file:
  .PHONY: install-bash-completion
-@@ -628,7 +593,7 @@ install-bash-completion:
+ install-bash-completion:
+ 	@echo
+ 	@echo "...Installing BASH completion file..."
+-	@install -d $(COMPLETIONDIR)
+-	@cp src/tuxpaint-completion.bash $(COMPLETIONDIR)
+-	@chmod 644 $(COMPLETIONDIR)/tuxpaint-completion.bash
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/examples/tuxpaint/bash_completion.d
++	${BSD_INSTALL_DATA} src/tuxpaint-completion.bash $(DESTDIR)$(PREFIX)/share/examples/tuxpaint/bash_completion.d/tuxpaint
+ 
+ 
+ # Install example stamps
+@@ -664,7 +662,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -134,7 +87,7 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -675,7 +640,10 @@ $(THUMB_STARTERS):
+@@ -711,7 +709,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -146,7 +99,7 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -817,12 +785,9 @@ install-kde-icons:
+@@ -837,12 +838,9 @@ install-kde-icons:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -162,7 +115,7 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  
  # Install the program:
-@@ -830,9 +795,8 @@ install-icon:
+@@ -850,9 +848,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -174,7 +127,7 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  # Install the required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -909,8 +873,7 @@ install-haiku:
+@@ -929,8 +926,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -184,7 +137,7 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  
  
  # Install the data (sound, graphics, fonts):
-@@ -918,12 +881,14 @@ install-importscript:
+@@ -938,12 +934,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -201,16 +154,16 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -943,7 +908,7 @@ install-osk:
+@@ -963,7 +961,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
 -	@install -d $(DOC_PREFIX)
 +	${BSD_INSTALL_DATA_DIR} $(DOC_PREFIX)
  	@cp -R docs/* $(DOC_PREFIX)
- 	@cp -R magic/magic-docs $(DOC_PREFIX)
- 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
-@@ -955,25 +920,13 @@ install-man:
+ 	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
+ 	@install -d $(DOC_PREFIX)/en/magic-docs
+@@ -977,25 +975,13 @@ install-man:
  	@echo
  	@echo "...Installing man pages..."
  	@# man1 directory...
@@ -239,8 +192,8 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
 +	${BSD_INSTALL_MAN} src/manpage/tp-magic-config.1 $(MAN_PREFIX)/man1
  
  
- 
-@@ -987,7 +940,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
+ # Install the support files for macOS application bundle
+@@ -1030,7 +1016,7 @@ tuxpaint:	obj/tuxpaint.o obj/i18n.o obj/im.o obj/curso
  	@echo "...Linking Tux Paint..."
  	$(CC) $(CFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(FRIBIDI_CFLAGS) $(DEFS) \
  		-o tuxpaint $^ \
@@ -249,14 +202,3 @@ $OpenBSD: patch-Makefile,v 1.8 2017/11/05 19:42:18 espie Exp $
  	@$(RSRC_CMD)
  	@$(MIMESET_CMD)
  
-@@ -1178,8 +1131,8 @@ linux_PLUGIN_LIBS:=
- PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
- 
- #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
--MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
--SHARED_FLAGS:=-shared -fpic -Wl,--warn-shared-textrel
-+MAGIC_CFLAGS:=-g3 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ -I${LOCALBASE}/include
-+SHARED_FLAGS:=-shared -fpic
- 
- MAGIC_C:=$(wildcard magic/src/*.c)
- MAGIC_SO:=$(patsubst magic/src/%.c,magic/%.$(SO_TYPE),$(MAGIC_C))
