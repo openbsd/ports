@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/09/02 23:16:28 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
-V =		2.2.1
+V =		2.3.2
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
-REVISION =	1
 
-HOMEPAGE =	http://musescore.org/
+HOMEPAGE =	https://musescore.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
@@ -40,9 +39,11 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		x11/qt5/qtxmlpatterns
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -Wno-inconsistent-missing-override" \
 		-DBUILD_ALSA=OFF \
 		-DBUILD_JACK=OFF \
 		-DBUILD_PORTMIDI=OFF \
@@ -51,7 +52,7 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 
 NO_TEST =	Yes
 
-# MuseScore-2.2.1 is a bad zip file...
+# Bad zip file...
 WRKDIST =	${WRKDIR}
 
 .include <bsd.port.mk>
