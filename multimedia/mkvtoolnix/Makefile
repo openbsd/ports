@@ -1,12 +1,10 @@
-
+# $OpenBSD: 
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-25.0.0
+DISTNAME=	mkvtoolnix-26.0.0
+
 CATEGORIES=	multimedia x11
-MASTER_SITES=	${HOMEPAGE}sources/
-EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 
@@ -18,6 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt
 WANTLIB += boost_regex-mt boost_system-mt c cmark ebml iconv intl
 WANTLIB += m magic matroska ogg vorbis z
+
+MASTER_SITES=	${HOMEPAGE}sources/
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/ruby
 

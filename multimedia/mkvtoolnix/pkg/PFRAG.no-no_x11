@@ -1,6 +1,10 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.12 2018/08/18 06:47:58 rsadowski Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.13 2018/09/02 14:23:03 rsadowski Exp $
 @bin bin/mkvtoolnix-gui
 @man man/man1/mkvtoolnix-gui.1
+share/applications/org.bunkus.mkvtoolnix-gui.desktop
+share/metainfo/
+share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
+share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
 share/icons/hicolor/128x128/apps/mkvextract.png
 share/icons/hicolor/128x128/apps/mkvinfo.png
 share/icons/hicolor/128x128/apps/mkvmerge.png
@@ -41,13 +45,11 @@ share/icons/hicolor/96x96/apps/mkvinfo.png
 share/icons/hicolor/96x96/apps/mkvmerge.png
 share/icons/hicolor/96x96/apps/mkvpropedit.png
 share/icons/hicolor/96x96/apps/mkvtoolnix-gui.png
-share/applications/org.bunkus.mkvtoolnix-gui.desktop
 share/mkvtoolnix/
 share/mkvtoolnix/sounds/
 share/mkvtoolnix/sounds/finished-1.ogg
 share/mkvtoolnix/sounds/finished-2.ogg
 share/mkvtoolnix/sounds/finished-3.ogg
-share/mime/packages/mkvtoolnix.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database
