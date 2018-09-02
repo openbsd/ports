@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2018/03/18 15:27:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.21 2018/09/02 16:24:55 bluhm Exp $
 
 COMMENT =	iterative SPF lookup
 
-DISTNAME =	Mail-SPF-Iterator-1.114
+DISTNAME =	Mail-SPF-Iterator-1.116
 
 CATEGORIES =	mail
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
