@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/06/27 21:03:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/09/02 15:34:11 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -106,6 +106,7 @@ share/manaplus/data/graphics/gui/buttonpin_disabled.xml
 share/manaplus/data/graphics/gui/buttonpin_highlighted.xml
 share/manaplus/data/graphics/gui/buttonpin_pressed.xml
 share/manaplus/data/graphics/gui/buttonplay.png
+share/manaplus/data/graphics/gui/buttonsicons.png
 share/manaplus/data/graphics/gui/buy.xml
 share/manaplus/data/graphics/gui/charcreate_playerbox.xml
 share/manaplus/data/graphics/gui/checkbox.xml
@@ -124,6 +125,7 @@ share/manaplus/data/graphics/gui/dropdown.xml
 share/manaplus/data/graphics/gui/dropdown_background.xml
 share/manaplus/data/graphics/gui/dropdown_pressed.xml
 share/manaplus/data/graphics/gui/emote_selection.xml
+share/manaplus/data/graphics/gui/emotes.xml
 share/manaplus/data/graphics/gui/emotetabs.xml
 share/manaplus/data/graphics/gui/equipment.xml
 share/manaplus/data/graphics/gui/equipment_background.xml
@@ -137,6 +139,7 @@ share/manaplus/data/graphics/gui/inventory_cell2.xml
 share/manaplus/data/graphics/gui/item_selection.xml
 share/manaplus/data/graphics/gui/item_shortcut_background.xml
 share/manaplus/data/graphics/gui/itemcontainer.xml
+share/manaplus/data/graphics/gui/items.xml
 share/manaplus/data/graphics/gui/keyboard_icon.xml
 share/manaplus/data/graphics/gui/label.xml
 share/manaplus/data/graphics/gui/listbox.xml
@@ -175,6 +178,7 @@ share/manaplus/data/graphics/gui/slider.xml
 share/manaplus/data/graphics/gui/slider_highlighted.xml
 share/manaplus/data/graphics/gui/speechbrowserbox.xml
 share/manaplus/data/graphics/gui/speechbubble.xml
+share/manaplus/data/graphics/gui/spells.xml
 share/manaplus/data/graphics/gui/tab.xml
 share/manaplus/data/graphics/gui/tab_highlighted.xml
 share/manaplus/data/graphics/gui/tab_selected.xml
@@ -364,9 +368,11 @@ share/manaplus/data/themes/enchilado/
 share/manaplus/data/themes/enchilado/buy.xml
 share/manaplus/data/themes/enchilado/colors.xml
 share/manaplus/data/themes/enchilado/cutin.xml
+share/manaplus/data/themes/enchilado/emotes.xml
 share/manaplus/data/themes/enchilado/equipment.xml
 share/manaplus/data/themes/enchilado/info.xml
 share/manaplus/data/themes/enchilado/inventory.xml
+share/manaplus/data/themes/enchilado/items.xml
 share/manaplus/data/themes/enchilado/mailedit.xml
 share/manaplus/data/themes/enchilado/npc.xml
 share/manaplus/data/themes/enchilado/ok.xml
@@ -378,6 +384,7 @@ share/manaplus/data/themes/enchilado/sell.xml
 share/manaplus/data/themes/enchilado/server.xml
 share/manaplus/data/themes/enchilado/serverinfo.xml
 share/manaplus/data/themes/enchilado/shop.xml
+share/manaplus/data/themes/enchilado/spells.xml
 share/manaplus/data/themes/enchilado/window.png
 share/manaplus/data/themes/enchilado/window.xml
 share/manaplus/data/themes/enchilado/world.xml
@@ -770,9 +777,11 @@ share/manaplus/data/themes/pink/bubble.png
 share/manaplus/data/themes/pink/buy.xml
 share/manaplus/data/themes/pink/colors.xml
 share/manaplus/data/themes/pink/cutin.xml
+share/manaplus/data/themes/pink/emotes.xml
 share/manaplus/data/themes/pink/equipment.xml
 share/manaplus/data/themes/pink/info.xml
 share/manaplus/data/themes/pink/inventory.xml
+share/manaplus/data/themes/pink/items.xml
 share/manaplus/data/themes/pink/mailedit.xml
 share/manaplus/data/themes/pink/npc.xml
 share/manaplus/data/themes/pink/ok.xml
@@ -785,6 +794,7 @@ share/manaplus/data/themes/pink/sell.xml
 share/manaplus/data/themes/pink/server.xml
 share/manaplus/data/themes/pink/serverinfo.xml
 share/manaplus/data/themes/pink/shop.xml
+share/manaplus/data/themes/pink/spells.xml
 share/manaplus/data/themes/pink/unknown-item.png
 share/manaplus/data/themes/pink/window.png
 share/manaplus/data/themes/pink/window.xml
@@ -794,9 +804,11 @@ share/manaplus/data/themes/unity/buy.xml
 share/manaplus/data/themes/unity/char.xml
 share/manaplus/data/themes/unity/colors.xml
 share/manaplus/data/themes/unity/cutin.xml
+share/manaplus/data/themes/unity/emotes.xml
 share/manaplus/data/themes/unity/equipment.xml
 share/manaplus/data/themes/unity/info.xml
 share/manaplus/data/themes/unity/inventory.xml
+share/manaplus/data/themes/unity/items.xml
 share/manaplus/data/themes/unity/mailedit.xml
 share/manaplus/data/themes/unity/npc.xml
 share/manaplus/data/themes/unity/ok.xml
@@ -809,6 +821,7 @@ share/manaplus/data/themes/unity/server.xml
 share/manaplus/data/themes/unity/serverinfo.xml
 share/manaplus/data/themes/unity/shop.xml
 share/manaplus/data/themes/unity/social.xml
+share/manaplus/data/themes/unity/spells.xml
 share/manaplus/data/themes/unity/window.png
 share/manaplus/data/themes/unity/window.xml
 share/manaplus/data/themes/unity/world.xml
@@ -816,10 +829,12 @@ share/manaplus/data/themes/wood/
 share/manaplus/data/themes/wood/buy.xml
 share/manaplus/data/themes/wood/colors.xml
 share/manaplus/data/themes/wood/cutin.xml
+share/manaplus/data/themes/wood/emotes.xml
 share/manaplus/data/themes/wood/equipment.xml
 share/manaplus/data/themes/wood/info.xml
 share/manaplus/data/themes/wood/inventory.xml
 share/manaplus/data/themes/wood/item_shortcut_bgr.png
+share/manaplus/data/themes/wood/items.xml
 share/manaplus/data/themes/wood/mailedit.xml
 share/manaplus/data/themes/wood/mouse.png
 share/manaplus/data/themes/wood/npc.xml
@@ -832,6 +847,7 @@ share/manaplus/data/themes/wood/sell.xml
 share/manaplus/data/themes/wood/server.xml
 share/manaplus/data/themes/wood/serverinfo.xml
 share/manaplus/data/themes/wood/shop.xml
+share/manaplus/data/themes/wood/spells.xml
 share/manaplus/data/themes/wood/window.png
 share/manaplus/data/themes/wood/window.xml
 share/manaplus/data/themes/wood/world.xml
