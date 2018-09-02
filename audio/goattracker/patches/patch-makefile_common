@@ -1,21 +1,22 @@
-$OpenBSD: patch-makefile_common,v 1.2 2017/02/26 22:55:38 fcambus Exp $
---- makefile.common.orig	Wed Jul 23 23:58:44 2014
-+++ makefile.common	Sun Feb 26 23:00:21 2017
+$OpenBSD: patch-makefile_common,v 1.3 2018/09/02 06:10:48 fcambus Exp $
+Index: makefile.common
+--- makefile.common.orig
++++ makefile.common
 @@ -1,9 +1,9 @@
  # common makefile directives for linux and win32 build
  
 -CC=gcc
 -CXX=g++
--CFLAGS+=-O3 -Wall -Ibme -Iasm
+-CFLAGS+=-O3 -Wall -Ibme -Iasm -fpermissive
 -CXXFLAGS=$(CFLAGS)
 +CC?=gcc
 +CXX?=g++
-+CFLAGS+=-Wall -Ibme -Iasm
++CFLAGS+=-Wall -Ibme -Iasm -fpermissive
 +CXXFLAGS+=$(CFLAGS)
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
  	$(PREFIX)gt2reloc$(SUFFIX) \
-@@ -48,19 +48,19 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.o bme/bme_mou.
+@@ -43,19 +43,19 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.o bme/bme_mou.
  	strip $@
  	
  $(PREFIX)mod2sng$(SUFFIX): mod2sng.o bme/bme_end.o
