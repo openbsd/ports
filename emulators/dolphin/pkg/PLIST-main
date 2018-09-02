@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2018/07/22 16:54:48 thfr Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/09/02 16:41:40 thfr Exp $
 @bin bin/dolphin-emu
 @man man/man6/dolphin-emu.6
 share/applications/dolphin-emu.desktop
+share/dolphin-emu/sys/GameSettings/GFTE01.ini
 share/icons/hicolor/256x256/apps/dolphin-emu.png
 share/icons/hicolor/scalable/apps/dolphin-emu.svg
 share/locale/ar/LC_MESSAGES/dolphin-emu.mo
