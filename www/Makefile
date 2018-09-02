@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.874 2018/08/21 09:29:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.875 2018/09/02 19:32:57 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -299,6 +299,7 @@
      SUBDIR += p5-SOAP-WSDL
      SUBDIR += p5-Starlet
      SUBDIR += p5-Starman
+     SUBDIR += p5-Test-HTTP-LocalServer
      SUBDIR += p5-Test-HTTP-Server-Simple
      SUBDIR += p5-Twiggy
      SUBDIR += p5-URI
