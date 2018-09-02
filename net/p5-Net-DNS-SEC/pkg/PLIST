@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/05/19 10:24:38 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/09/02 16:10:03 bluhm Exp $
 @conflict p5-Net-DNS-<1.01
 ${P5ARCH}/
 ${P5ARCH}/Net/
@@ -28,6 +28,6 @@ ${P5ARCH}/auto/Net/DNS/SEC/SEC.so
 @man man/man3p/Net::DNS::SEC::RSA.3p
 @man man/man3p/Net::DNS::SEC::libcrypto.3p
 share/examples/p5-Net-DNS-SEC/
-share/examples/p5-Net-DNS-SEC/getkeyset.pl
+share/examples/p5-Net-DNS-SEC/getkeyset
 share/examples/p5-Net-DNS-SEC/key2ds
 share/examples/p5-Net-DNS-SEC/make-signed-keyset
