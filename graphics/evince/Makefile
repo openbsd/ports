@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.160 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.161 2018/09/03 19:56:34 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.28.2
-REVISION=		3
+GNOME_VERSION=		3.28.3
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -49,8 +48,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 
 RUN_DEPENDS=		archivers/unrar \
 			archivers/unzip \
-			devel/gsettings-desktop-schemas \
-			print/ghostscript/gnu
+			devel/gsettings-desktop-schemas
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"

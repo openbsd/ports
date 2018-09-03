@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/09/03 19:56:34 jasper Exp $
 @conflict evince-djvu-*
 @conflict evince-dvi-*
 @conflict nautilus-evince-*
@@ -65,10 +65,8 @@ lib/evince/
 lib/evince/4/
 lib/evince/4/backends/
 lib/evince/4/backends/libpdfdocument.so
-lib/evince/4/backends/libpsdocument.so
 lib/evince/4/backends/libtiffdocument.so
 lib/evince/4/backends/pdfdocument.evince-backend
-lib/evince/4/backends/psdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
@@ -210,9 +208,10 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/EvLayer.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvPage.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvRenderContext.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvSelection.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/annotation-glossary.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-10.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-12.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-14.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-18.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-4.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-6.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-8.html
@@ -246,8 +245,10 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/up-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/up.png
 share/gtk-doc/html/libevview-${MAJ_V}/
 share/gtk-doc/html/libevview-${MAJ_V}/EvJob.html
-share/gtk-doc/html/libevview-${MAJ_V}/annotation-glossary.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-10.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-12.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-14.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-30.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-6.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-8.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-deprecated.html
@@ -3144,7 +3145,6 @@ share/locale/zh_HK/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 share/locale/zu/LC_MESSAGES/evince.mo
 share/metainfo/evince-pdfdocument.metainfo.xml
-share/metainfo/evince-psdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
 share/metainfo/evince.appdata.xml
 !%%light%%

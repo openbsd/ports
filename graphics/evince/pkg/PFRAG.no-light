@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-light,v 1.3 2018/04/23 19:49:14 jasper Exp $
+@comment $OpenBSD: PFRAG.no-light,v 1.4 2018/09/03 19:56:34 jasper Exp $
 @bin bin/evince-thumbnailer
 lib/evince/4/backends/comicsdocument.evince-backend
 lib/evince/4/backends/djvudocument.evince-backend
@@ -10,9 +10,9 @@ lib/evince/4/backends/libxpsdocument.so
 lib/evince/4/backends/xpsdocument.evince-backend
 lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.so
 @bin libexec/evinced
+share/dbus-1/services/org.gnome.evince.Daemon.service
 share/metainfo/evince-comicsdocument.metainfo.xml
 share/metainfo/evince-djvudocument.metainfo.xml
 share/metainfo/evince-dvidocument.metainfo.xml
 share/metainfo/evince-xpsdocument.metainfo.xml
-share/dbus-1/services/org.gnome.evince.Daemon.service
 share/thumbnailers/evince.thumbnailer
