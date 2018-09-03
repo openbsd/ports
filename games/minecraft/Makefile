@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/09/03 08:14:44 solene Exp $
 
 PORTROACH=	skipv:0.1
 PORTROACH_COMMENT=version 0.1 is actually older than 0.0.4
 
 COMMENT=	wrapper for a game about breaking and placing blocks
 
-V=		0.0.4
+V=		0.0.6
 GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
