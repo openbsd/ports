@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/02 15:14:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/03 18:59:41 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 SHARED_LIBS +=  dolphinprivate            0.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.0 # 5.0
@@ -24,9 +25,13 @@ WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 MODULES =	multimedia/phonon
 
 BUILD_DEPENDS +=devel/gettext-tools \
+		devel/kf5/baloo \
+		devel/kf5/kfilemetadata \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/baloo \
+		devel/kf5/kfilemetadata \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic
@@ -56,8 +61,6 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kservice \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		devel/kf5/baloo \
-		devel/kf5/kfilemetadata \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
