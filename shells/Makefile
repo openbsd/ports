@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/23 21:55:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.34 2018/09/03 16:00:44 bcallah Exp $
 
     SUBDIR =
     SUBDIR += bash
     SUBDIR += dash
     SUBDIR += dash,static
+    SUBDIR += elvish
     SUBDIR += es
     SUBDIR += etsh
     SUBDIR += fish
