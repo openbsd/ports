@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/03 14:32:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/03 19:02:21 bcallah Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-2018.06.28
+DISTNAME=		cataclysm-dda-2018.09.02
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_COMMIT=		1db1b62b57a38c18e5f118fb57dcb1290d42d9b9
+GH_COMMIT=		47298ed1dea10582ae57a3decfe548640ac576de
 
 HOMEPAGE=		http://en.cataclysmdda.com
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
@@ -33,8 +33,8 @@ LIB_DEPENDS=		devel/gettext
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MAKE_FLAGS=		RELEASE=1 USE_XDG_DIR=1 LOCALIZE=1 LANGUAGES=all \
-			LUA=1 LUA_BINARY=${MODLUA_BIN:T}
+MAKE_FLAGS=		ASTYLE=0 RELEASE=1 USE_XDG_DIR=1 LOCALIZE=1 \
+			LANGUAGES=all LUA=1 LUA_BINARY=${MODLUA_BIN:T}
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		curses

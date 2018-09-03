@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.5 2018/07/03 14:32:48 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.6 2018/09/03 19:02:21 bcallah Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -78,7 +78,6 @@
+@@ -84,7 +84,6 @@
  # RELEASE is flags for release builds, this disables some debugging flags and
  # enforces build failure when warnings are encountered.
  # We want to error on everything to make sure we don't check in code with new warnings.
@@ -11,7 +11,7 @@ Index: Makefile
  WARNINGS = -Wall -Wextra
  # Uncomment below to disable warnings
  #WARNINGS = -w
-@@ -229,7 +228,6 @@ ifdef RELEASE
+@@ -254,7 +253,6 @@ ifdef RELEASE
        OPTLEVEL = -O3
      endif
    endif
@@ -19,16 +19,7 @@ Index: Makefile
  
    ifdef LTO
      LDFLAGS += -fuse-ld=gold
-@@ -250,7 +248,7 @@ ifdef RELEASE
-   endif
-   DEFINES += -DRELEASE
-   # Check for astyle or JSON regressions on release builds.
--  CHECKS = astyle-check style-json
-+  CHECKS = style-json
- endif
- 
- ifndef RELEASE
-@@ -265,7 +263,7 @@ endif
+@@ -295,7 +293,7 @@ endif
  ifeq ($(shell sh -c 'uname -o 2>/dev/null || echo not'),Cygwin)
      OTHERS += -std=gnu++11
    else
@@ -37,7 +28,7 @@ Index: Makefile
  endif
  
  CXXFLAGS += $(WARNINGS) $(DEBUG) $(DEBUGSYMS) $(PROFILE) $(OTHERS) -MMD -MP
-@@ -406,11 +404,6 @@ ifdef MAPSIZE
+@@ -440,11 +438,6 @@ ifdef MAPSIZE
      CXXFLAGS += -DMAPSIZE=$(MAPSIZE)
  endif
  
@@ -49,7 +40,7 @@ Index: Makefile
  PKG_CONFIG = $(CROSS)pkg-config
  SDL2_CONFIG = $(CROSS)sdl2-config
  
-@@ -708,7 +701,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(ODIR) $(OBJS)
+@@ -773,7 +766,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
  .PHONY: version json-verify
  version:
  	@( VERSION_STRING=$(VERSION) ; \
@@ -57,7 +48,7 @@ Index: Makefile
              [ -e "$(SRC_DIR)/version.h" ] && OLDVERSION=$$(grep VERSION $(SRC_DIR)/version.h|cut -d '"' -f2) ; \
              if [ "x$$VERSION_STRING" != "x$$OLDVERSION" ]; then echo "#define VERSION \"$$VERSION_STRING\"" | tee $(SRC_DIR)/version.h ; fi \
           )
-@@ -762,35 +754,35 @@ distclean:
+@@ -827,35 +819,35 @@ distclean:
  bindist: $(BINDIST)
  
  ifeq ($(TARGETSYSTEM), LINUX)
@@ -112,7 +103,7 @@ Index: Makefile
  	mkdir -p $(LOCALE_DIR)
  ifdef LANGUAGES
  	LOCALE_DIR=$(LOCALE_DIR) lang/compile_mo.sh $(LANGUAGES)
-@@ -959,11 +951,6 @@ astyle: $(ASTYLED_WHITELIST)
+@@ -1027,11 +1019,6 @@ astyle: $(ASTYLED_WHITELIST)
  astyle-all: $(SOURCES) $(HEADERS) $(TESTSRC) $(TESTHDR) $(TOOLSRC)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(SOURCES) $(HEADERS)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(TESTSRC) $(TESTHDR)
