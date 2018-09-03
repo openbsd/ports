@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.23 2015/10/03 11:53:44 robert Exp $
+# $OpenBSD: mono.port.mk,v 1.24 2018/09/03 22:13:35 bcallah Exp $
 
 # XXX list in infrastructure/mk/arch-defines.mk
 # XXX arm powerpc (no support for sigcontext)
@@ -23,28 +23,6 @@ RUN_DEPENDS+=		${MODMONO_RUN_DEPENDS}
 # A list of files where we have to remove the stupid hardcoded .[0-9] major
 # version from library names.
 DLLMAP_FILES?=
-
-.if defined(MODMONO_NANT) && ${MODMONO_NANT:L} == "yes"
-NANT?=		nant
-NANT_FLAGS?=
-
-BUILD_DEPENDS+= devel/nant
-
-MODMONO_BUILD_TARGET=	cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
-MODMONO_INSTALL_TARGET=	cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} \
-	-D:prefix="${PREFIX}" install
-
-.  if !target(do-build)
-do-build:
-	@${MODMONO_BUILD_TARGET}
-.  endif
-
-.  if !target(do-install)
-do-install:
-	@${MODMONO_INSTALL_TARGET}
-.  endif
-
-.endif
 
 .if ${MODMONO_GMCS_COMPAT:L} != "no"
 pre-extract:
