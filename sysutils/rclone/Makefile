@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/09 06:34:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/03 14:48:56 jasper Exp $
 
 COMMENT =	rsync for cloud storage
-V =		1.42
+V =		1.43
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
