@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.47 2018/04/04 20:29:49 danj Exp $
+# $OpenBSD: Makefile,v 1.48 2018/09/03 01:16:06 danj Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.17
+MODPY_EGG_VERSION = 0.7.18.1
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.nongnu.org/duplicity/
-
-MAINTAINER =	Daniel Jakots <obsd@chown.me>
 
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=duplicity/}
 
