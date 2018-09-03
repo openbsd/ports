@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/03 16:00:21 bcallah Exp $
+@bin bin/elvish
