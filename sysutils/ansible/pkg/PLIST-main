@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/07/28 12:03:53 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/09/03 14:54:40 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -5975,6 +5975,8 @@ share/doc/ansible/COPYING
 share/doc/ansible/README.rst
 share/doc/ansible/html/_static/opensearch.xml
 share/doc/ansible/html/dev_guide/testing/sanity/changelog.html
+share/doc/ansible/html/network/user_guide/platform_exos.html
+share/doc/ansible/html/network/user_guide/platform_slxos.html
 share/doc/ansible/html/porting_guides/porting_guide_2.6.html
 share/doc/ansible/html/roadmap/ROADMAP_2_6.html
 share/doc/ansible/html/user_guide/playbooks_module_defaults.html
