@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/09/04 07:46:52 martijn Exp $
 
-BROKEN = fails at runtime "python2.7 in free(): error: modified chunk-pointer 0x..."
+# This port is known to generate errors on (some) radeon cards.
+# Intel cards appear to work fine.
 
 V =			1.3.110
 COMMENT =		guitar hero clone

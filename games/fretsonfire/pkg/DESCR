@@ -10,3 +10,5 @@ Features
     * Supports importing Guitar Hero I and Guitar Hero II songs
     * Multiplatform; runs on Windows, Linux, Mac OS X, OpenBSD and FreeBSD
     * Open source, full Python source code available
+
+This game is known to crash on some (mostly radeon) graphics card.
