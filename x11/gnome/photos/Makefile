@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/07/06 06:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2018/09/04 14:59:25 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -7,8 +7,7 @@ TRACKER_API=		2.0
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.28.0
-REVISION=		2
+GNOME_VERSION=		3.28.1
 
 CATEGORIES=		graphics
 
