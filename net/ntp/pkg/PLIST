@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/07/01 10:35:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/09/04 12:46:18 espie Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man5/ntp.conf.5
@@ -273,7 +273,7 @@ share/doc/ntp/ntpsweep.html
 share/doc/ntp/ntptrace.html
 share/doc/ntp/sntp.html
 share/doc/ntp/update-leap.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ntp/
 share/examples/ntp/README
 share/examples/ntp/baldwin.conf

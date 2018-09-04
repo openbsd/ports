@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/31 09:03:33 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:28 espie Exp $
 @pkgpath x11/slim,-main
 @bin bin/slim
 @lib lib/libslim.so.${LIBslim_VERSION}
 @man man/man1/slim.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/slim/
 share/examples/slim/slim.conf
 @sample ${SYSCONFDIR}/slim.conf

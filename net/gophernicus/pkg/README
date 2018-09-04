@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2015/12/31 07:49:28 jasper Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:17 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Setting up a gopher site

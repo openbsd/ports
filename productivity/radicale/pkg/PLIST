@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/05/16 17:15:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:46:20 espie Exp $
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
 bin/radicale
@@ -53,7 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/storage/multifilesystem.py
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/multifilesystem.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.pyc
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/radicale/
 share/doc/radicale/COPYING
 share/doc/radicale/NEWS.rst

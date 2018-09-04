@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/06/29 06:29:52 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/09/04 12:46:28 espie Exp $
 @mode 2555
 @group utmp
 @bin bin/urxvt
@@ -66,7 +66,7 @@ lib/urxvt/urxvt.pm
 @man man/man1/urxvtd.1
 @man man/man3/urxvtperl.3
 @man man/man7/urxvt.7
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/terminfo/
 share/terminfo/r/
 share/terminfo/r/rxvt-unicode

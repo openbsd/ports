@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2018/06/30 05:59:01 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.66 2018/09/04 12:46:26 espie Exp $
 @group daemon
 piwik/
 piwik/CHANGELOG.md
@@ -8963,4 +8963,4 @@ piwik/vendor/twig/twig/src/Util/
 piwik/vendor/twig/twig/src/Util/DeprecationCollector.php
 piwik/vendor/twig/twig/src/Util/TemplateDirIterator.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

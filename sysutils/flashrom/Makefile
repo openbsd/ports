@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/16 22:16:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/09/04 12:46:22 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=	flash ROM programmer for BIOS etc
 
 DISTNAME=	flashrom-1.0
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	sysutils
 

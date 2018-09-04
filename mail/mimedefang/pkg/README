@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.8 2015/03/28 06:34:52 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Post-installation steps

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2014/03/26 09:50:35 kirby Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:19 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To enable desired plugins copy or link their directories to

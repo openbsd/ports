@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 09:54:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:21 espie Exp $
 @newgroup _cvechecker:712
 @extraunexec rm /var/db/cvechecker/*.db 2>/dev/null || true
 @extraunexec rm /var/db/cvechecker/cache/* 2>/dev/null || true
@@ -22,7 +22,7 @@ share/cvechecker/report.css
 share/doc/cvechecker/
 share/doc/cvechecker/acknowledgements.xml
 share/doc/cvechecker/userguide.xml
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cvechecker/
 @mode 0660
 @group _cvechecker

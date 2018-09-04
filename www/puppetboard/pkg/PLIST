@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/11/02 09:39:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/09/04 12:46:26 espie Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 puppetboard/
 puppetboard/CHANGELOG.rst
@@ -104,4 +104,4 @@ puppetboard/test/test_form.py
 puppetboard/test/test_utils.py
 @rcscript ${RCDIR}/puppetboard
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

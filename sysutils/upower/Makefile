@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/11/29 11:07:46 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2018/09/04 12:46:23 espie Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -8,6 +8,7 @@ DISTNAME =	upower-0.99.7
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          2.1      # 3.1
+REVISION =	0
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/

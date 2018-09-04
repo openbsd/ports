@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/12 19:26:58 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2018/09/04 12:46:22 espie Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/07 10:28:55 form Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
@@ -7,7 +7,7 @@ COMMENT=		thorough, stand alone memory test
 VERSION=		4.20
 DISTNAME=		memtest86+-${VERSION}
 CATEGORIES=		sysutils
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://www.memtest.org/
 

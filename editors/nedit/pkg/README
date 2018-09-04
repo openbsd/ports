@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2012/04/22 10:49:11 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Additional patterns for NEdit have been installed under:

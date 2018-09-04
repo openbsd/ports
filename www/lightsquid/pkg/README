@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:25 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To use lightsquid (with non-chrooted apache, httpd -u), give the www

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/08 08:45:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:09 espie Exp $
 
 CATEGORIES =	books devel
 COMMENT =	POSIX manual pages
 DISTNAME =	man-pages-posix-2013-a
 PKGNAME =	${DISTNAME:C/(-[0-9]+)-/\1/}
 PKG_ARCH =	*
+REVISION =	0
 
 MASTER_SITES =	https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
 EXTRACT_SUFX =	.tar.xz

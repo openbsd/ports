@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/22 20:42:12 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:13 espie Exp $
 @bin bin/s25client
 @bin bin/s25edit
 lib/driver/
@@ -9,7 +9,7 @@ lib/driver/video/libvideoSDL.so
 libexec/s25rttr/
 @bin libexec/s25rttr/s-c_resample
 @bin libexec/s25rttr/sound-convert
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/s25rttr/
 share/doc/s25rttr/de_DE/
 share/doc/s25rttr/de_DE/keyboardlayout.txt

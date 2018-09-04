@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2016/01/27 15:02:01 kirby Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:14 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 You may need to increase the default maximum number of available memory

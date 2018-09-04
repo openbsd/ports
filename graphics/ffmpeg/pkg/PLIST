@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2015/09/10 07:10:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/09/04 12:46:14 espie Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -195,7 +195,7 @@ share/doc/ffmpeg/libswresample.html
 share/doc/ffmpeg/libswscale.html
 share/doc/ffmpeg/nut.html
 share/doc/ffmpeg/platform.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
 share/ffmpeg/

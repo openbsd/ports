@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2017/04/04 21:24:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/09/04 12:46:20 espie Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -92,7 +92,7 @@ share/doc/foo2zjs/README
 share/doc/foo2zjs/getweb
 share/doc/foo2zjs/manual.pdf
 share/doc/foo2zjs/msexpand
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/foo2hbpl/
 share/foo2hbpl/icm/
 share/foo2hiperc/

@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.19 2018/06/01 08:00:05 ajacoutot Exp $
+$OpenBSD: README-main,v 1.20 2018/09/04 12:46:20 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 WARNING: CUPS lp commands are not compatible with the base system ones. When

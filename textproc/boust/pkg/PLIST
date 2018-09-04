@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:23 espie Exp $
 bin/boust
 @man man/man1/boust.1
 share/doc/boust/
 share/doc/boust/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/fonts/
 @fontdir share/fonts/boust/
 share/fonts/boust/10x20bw.pcf.gz

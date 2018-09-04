@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.1 2012/01/01 09:01:41 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2018/09/04 12:46:22 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Gamin provides realtime kqueue(2) notifications and monitoring up to the

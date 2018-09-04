@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.3 2017/04/12 19:29:48 rsadowski Exp $
+$OpenBSD: README,v 1.4 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Font issues in the output window

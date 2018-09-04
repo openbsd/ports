@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/07/18 21:16:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/09/04 12:46:27 espie Exp $
 @pkgpath www/squid/snapshot,-main
 @pkgpath www/squid/stable,-main
 @newgroup _squid:515
@@ -54,7 +54,7 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/ssl_crtd.8
 @man man/man8/storeid_file_rewrite.8
 @bin sbin/squid
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/squid/
 @sample ${SYSCONFDIR}/
 share/examples/squid/cachemgr.conf.default

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/29 16:42:26 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:11 espie Exp $
 bin/pycharm
 @man man/man1/pycharm.1
 pycharm/
@@ -1912,5 +1912,5 @@ pycharm/plugins/yaml/lib/resources_en.jar
 pycharm/plugins/yaml/lib/yaml.jar
 pycharm/pycharm.png
 share/applications/pycharm.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database

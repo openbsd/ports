@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/04/29 12:10:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/09/04 12:46:28 espie Exp $
 bin/ogle
 include/ogle/
 include/ogle/dvd.h
@@ -33,7 +33,7 @@ lib/ogle/ogle_nav_debug
 lib/ogle/ogle_vout_debug
 @man man/man1/ogle.1
 @man man/man5/oglerc.5
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/ogle/
 share/ogle/ogle_conf.dtd
 share/ogle/oglerc

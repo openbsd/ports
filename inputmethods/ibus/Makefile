@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2018/07/13 22:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2018/09/04 12:46:14 espie Exp $
 
 COMMENT =	intelligent input bus framework
 
 GH_PROJECT =	ibus
 GH_ACCOUNT =	ibus
 GH_TAGNAME =	1.5.5
-REVISION =	12
+REVISION =	14
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 

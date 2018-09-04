@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2016/04/04 12:05:37 sthen Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:09 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Squeezelite is a software program emulating a Squeezebox music player.

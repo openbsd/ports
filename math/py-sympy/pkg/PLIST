@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/09 01:07:34 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:16 espie Exp $
 bin/isympy${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/sympy/
 lib/python${MODPY_VERSION}/site-packages/sympy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -2394,4 +2394,4 @@ lib/python${MODPY_VERSION}/site-packages/sympy/vector/tests/test_printing.py
 lib/python${MODPY_VERSION}/site-packages/sympy/vector/tests/test_vector.py
 lib/python${MODPY_VERSION}/site-packages/sympy/vector/vector.py
 @man man/man1/isympy${MODPY_BIN_SUFFIX}.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

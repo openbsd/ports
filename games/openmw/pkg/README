@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2015/12/27 21:55:24 pascal Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 You must legally own and install Morrowind before you can use OpenMW as

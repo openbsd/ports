@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:23 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Sysmon is a lightweight, customizable and scalable remote monitoring tool that

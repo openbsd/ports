@@ -1,7 +1,7 @@
-# $OpenBSD: README,v 1.16 2018/07/08 21:10:48 gonzalo Exp $
+# $OpenBSD: README,v 1.17 2018/09/04 12:46:10 espie Exp $
 # 
 # +-----------------------------------------------------------------------
-# | Running ${FULLPKGNAME} on OpenBSD
+# | Running ${PKGSTEM} on OpenBSD
 # +-----------------------------------------------------------------------
 #
 # Original author: Jolan Luff <jolan@openbsd.org>

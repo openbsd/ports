@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.4 2013/10/17 09:08:15 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Below is a quick start guide to show how to set up Alpine to use IMAP or

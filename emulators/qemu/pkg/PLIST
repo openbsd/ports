@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/05/02 08:21:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/09/04 12:46:12 espie Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -48,7 +48,7 @@
 @man man/man7/qemu-qmp-ref.7
 @man man/man8/qemu-ga.8
 @man man/man8/qemu-nbd.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-doc.txt

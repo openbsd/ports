@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2014/01/25 09:22:35 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:20 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Enhancing printing output

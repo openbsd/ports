@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/25 10:31:47 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:19 espie Exp $
 @newgroup _xl2tpd:711
 @newuser _xl2tpd:711:_xl2tpd:daemon:xl2tpd user:/nonexistent:/sbin/nologin
 @man man/man5/l2tp-secrets.5
@@ -7,7 +7,7 @@
 @man man/man8/xl2tpd.8
 @bin sbin/xl2tpd
 @bin sbin/xl2tpd-control
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/xl2tpd/
 @sample ${SYSCONFDIR}/xl2tpd/
 share/examples/xl2tpd/l2tp-secrets.sample

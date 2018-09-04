@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/11/01 09:10:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:15 espie Exp $
 @conflict avenger-*
 @newgroup _aox:661
 @newuser _aox:661:661:daemon:Archiveopteryx Daemon:/var/empty:/sbin/nologin
@@ -31,7 +31,7 @@ share/doc/archiveopteryx/
 share/doc/archiveopteryx/COPYING
 share/doc/archiveopteryx/README
 share/doc/archiveopteryx/bsd.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/archiveopteryx/
 share/examples/archiveopteryx/archiveopteryx-openssl.conf
 @sample /etc/ssl/archiveopteryx-openssl.conf

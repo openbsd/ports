@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2018/03/11 22:40:20 sthen Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Customizing ${FULLPKGNAME} gamecontroller layout on OpenBSD
+| Customizing ${PKGSTEM} gamecontroller layout on OpenBSD
 +-----------------------------------------------------------------------
 
 The mapping for SDL2's gamecontroller API is currently based on a workaround.

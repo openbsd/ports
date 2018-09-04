@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/08/10 12:06:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:14 espie Exp $
 @conflict railo-*
 @pkgpath lang/railo
 @extraunexec rm -rf %D/lucee/config/*
@@ -57,4 +57,4 @@ webapps/lucee-default/assets/js/lib/jquery-1.10.1.min.js
 webapps/lucee-default/favicon.ico
 webapps/lucee-default/index.cfm
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

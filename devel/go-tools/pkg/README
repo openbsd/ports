@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2016/08/21 14:29:06 czarkoff Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 When started via the rc script, by default godoc will only show

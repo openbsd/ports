@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/16 21:19:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:25 espie Exp $
 
 COMMENT =		framework for loading web content in external viewers
 
 DISTNAME =		mozplugger-2.1.6
+REVISION =		0
 
 CATEGORIES =		www
 

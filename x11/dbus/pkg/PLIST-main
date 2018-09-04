@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/06/18 09:49:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/09/04 12:46:27 espie Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
@@ -81,7 +81,7 @@ share/doc/dbus/examples/GetAllMatchRules.py
 share/doc/dbus/examples/example-session-disable-stats.conf
 share/doc/dbus/examples/example-system-enable-stats.conf
 share/doc/dbus/system-activation.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dbus/
 share/examples/dbus/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/

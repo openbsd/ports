@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2018/03/09 12:37:12 jca Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Upgrading from OpenBSD 5.8 or earlier

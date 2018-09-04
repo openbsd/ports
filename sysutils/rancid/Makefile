@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2018/08/18 21:05:48 pvk Exp $
+# $OpenBSD: Makefile,v 1.23 2018/09/04 12:46:23 espie Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
 DISTNAME =	rancid-3.8
 EPOCH = 	0
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	https://www.shrubbery.net/rancid/
 

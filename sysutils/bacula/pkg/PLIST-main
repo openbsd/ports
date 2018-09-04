@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2018/06/25 17:02:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/09/04 12:46:21 espie Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
@@ -38,7 +38,7 @@ share/doc/bacula/LICENSE-FOSS
 share/doc/bacula/README
 share/doc/bacula/ReleaseNotes
 share/doc/bacula/VERIFYING
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/bacula/
 @mode 750
 @group _bacula

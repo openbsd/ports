@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/24 15:34:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:17 espie Exp $
 @newgroup _minbif:655
 @newuser _minbif:655:_minbif:daemon:Minbif Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/minbif/*
@@ -9,7 +9,7 @@ share/doc/minbif/COPYING
 share/doc/minbif/Doxyfile
 share/doc/minbif/README
 share/doc/minbif/minbif.xinetd
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/minbif/
 @sample ${SYSCONFDIR}/minbif/
 share/examples/minbif/minbif.conf

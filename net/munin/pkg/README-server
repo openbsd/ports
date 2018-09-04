@@ -1,7 +1,7 @@
-$OpenBSD: README-server,v 1.6 2015/07/06 12:13:54 kirby Exp $
+$OpenBSD: README-server,v 1.7 2018/09/04 12:46:17 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 After configuring at least one munin-node instance and adapting

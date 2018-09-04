@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/25 10:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:27 espie Exp $
 
 COMMENT=	clamd-based virus scanner for c-icap
 
 DISTNAME=	squidclamav-6.16
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

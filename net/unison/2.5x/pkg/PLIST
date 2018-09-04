@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/04/26 21:34:23 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:19 espie Exp $
 @option is-branch
 @conflict unison-*
 @bin bin/unison
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/unison/
 share/doc/unison/BUGS.txt
 share/doc/unison/NEWS

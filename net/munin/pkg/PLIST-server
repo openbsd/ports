@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2018/07/26 19:17:44 kirby Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2018/09/04 12:46:17 espie Exp $
 @extraunexec rm -rf /var/www/htdocs/munin/*
 @extraunexec rm -rf /var/db/munin/*
 @owner www
@@ -19,7 +19,7 @@ libexec/munin/munin-update
 @man man/man8/munin-cron.8
 @man man/man8/munin-html.8
 @man man/man8/munin-limits.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @owner www
 share/examples/munin/munin-cgi-graph.log
 @sample /var/log/munin/munin-cgi-graph.log

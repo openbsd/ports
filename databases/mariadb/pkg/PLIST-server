@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2017/08/11 19:04:49 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2018/09/04 12:46:10 espie Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -285,7 +285,7 @@ share/doc/mysql/CREDITS
 share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mysql/
 share/examples/mysql/SELinux/
 share/examples/mysql/SELinux/mariadb.te

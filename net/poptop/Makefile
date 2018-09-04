@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:18 espie Exp $
 
 COMMENT=		PPTP Server
 
 V=			1.3.4
 DISTNAME=		pptpd-$V
 PKGNAME=		poptop-$V
-REVISION=		7
+REVISION=		8
 CATEGORIES=		net
 
 HOMEPAGE=		http://poptop.sourceforge.net/

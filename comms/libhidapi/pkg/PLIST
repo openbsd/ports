@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:09 espie Exp $
 include/hidapi/
 include/hidapi/hidapi.h
 lib/libhidapi-libusb.a
@@ -13,4 +13,4 @@ share/doc/hidapi/LICENSE-gpl3.txt
 share/doc/hidapi/LICENSE-orig.txt
 share/doc/hidapi/LICENSE.txt
 share/doc/hidapi/README.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

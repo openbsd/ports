@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/03/29 13:17:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:21 espie Exp $
 
 COMMENT=	periodic command scheduler
 
@@ -6,7 +6,7 @@ V=		2.5.3
 DISTNAME=	anacron.$V
 PKGNAME=	anacron-$V
 CATEGORIES=	sysutils
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 

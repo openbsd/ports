@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/09/04 12:46:11 espie Exp $
 bin/netbeans
 netbeans/
 netbeans/CREDITS.html
@@ -7906,5 +7906,5 @@ netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-
 netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-zvents.xml
 netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-ui.xml
 share/applications/netbeans.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database

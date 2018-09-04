@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/01/22 11:38:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:21 espie Exp $
 lib/libpromises.a
 lib/libpromises.la
 @lib lib/libpromises.so.${LIBpromises_VERSION}
@@ -13,7 +13,7 @@ lib/libpromises.la
 share/doc/cfengine/
 share/doc/cfengine/ChangeLog
 share/doc/cfengine/README.md
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cfengine/
 share/examples/cfengine/abort.cf
 share/examples/cfengine/accessed_before.cf

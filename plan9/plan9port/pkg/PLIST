@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/05/26 10:45:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:19 espie Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -8080,4 +8080,4 @@ plan9/unix/mkfile.regexp
 plan9/unix/mkfile.utf
 plan9/unix/mkfile.what
 plan9/unix/utf.h
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2014/05/29 08:31:26 kirby Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 PAK-files from the original Dune 2 or Super Dune 2 are needed to play

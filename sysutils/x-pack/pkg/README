@@ -1,10 +1,10 @@
-$OpenBSD: README,v 1.1.1.1 2018/05/17 11:08:38 pvk Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:23 espie Exp $
 
 +-----------------------------------------------------------------------
 | Running Elastic X-Pack on OpenBSD
 +-----------------------------------------------------------------------
 
-${FULLPKGNAME} is a repack of the official Elastic X-Pack distribution
+${PKGSTEM} is a repack of the official Elastic X-Pack distribution
 with some workarounds required to make it work on OpenBSD:
 
  - Fixed shell path in bash scripts

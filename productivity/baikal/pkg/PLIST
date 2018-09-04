@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/12/02 15:01:21 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:20 espie Exp $
 baikal/
 baikal/CHANGELOG.md
 baikal/Core/
@@ -1844,4 +1844,4 @@ baikal/vendor/twig/twig/test/Twig/Tests/TokenStreamTest.php
 baikal/vendor/twig/twig/test/Twig/Tests/integrationTest.php
 baikal/vendor/twig/twig/test/bootstrap.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

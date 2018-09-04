@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2013/04/01 22:02:15 rfreeman Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 PrBoom-Plus can run in several game modes.

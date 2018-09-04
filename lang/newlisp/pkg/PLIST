@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/15 10:07:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:14 espie Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
 bin/newlisp-edit
@@ -18,7 +18,7 @@ share/doc/newlisp/manual_frame.html
 share/doc/newlisp/newLISPdoc.html
 share/doc/newlisp/newlisp_index.html
 share/doc/newlisp/newlisp_manual.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/newlisp-${V}/
 share/newlisp-${V}/guiserver/
 share/newlisp-${V}/guiserver.jar

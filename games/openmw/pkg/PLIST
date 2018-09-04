@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/30 18:51:40 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:13 espie Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/openmw
@@ -9,7 +9,7 @@
 @bin bin/openmw-wizard
 share/applications/openmw-cs.desktop
 share/applications/openmw.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
 share/examples/openmw/gamecontrollerdb.txt

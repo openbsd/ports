@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/29 07:49:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:11 espie Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2pm
@@ -311,7 +311,7 @@ lib/radare2/last
 @man man/man1/rasm2.1
 @man man/man1/rax2.1
 @man man/man7/esil.7
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/radare2/
 share/doc/radare2/all68k.r2
 share/doc/radare2/android

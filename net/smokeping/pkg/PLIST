@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/11/05 16:05:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/09/04 12:46:18 espie Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -143,7 +143,7 @@ lib/Smokeping/sorters/base.pm
 @man man/man7/smokeping_install.7
 @man man/man7/smokeping_master_slave.7
 @man man/man7/smokeping_upgrade.7
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/smokeping/
 @sample ${SYSCONFDIR}/
 share/examples/smokeping/basepage.html.dist

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.3 2017/12/10 12:14:36 awolk Exp $
+$OpenBSD: README,v 1.4 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To run yquake2 on OpenBSD, you need the original Quake II data files

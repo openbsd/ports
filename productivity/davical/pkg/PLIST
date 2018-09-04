@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/28 20:20:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:20 espie Exp $
 davical/
 davical/INSTALL
 davical/README
@@ -223,4 +223,4 @@ davical/scripts/refresh-alarms.php
 davical/scripts/sync-remote-caldav.php
 davical/scripts/tz-update.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

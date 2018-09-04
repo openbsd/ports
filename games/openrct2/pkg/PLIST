@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:13 espie Exp $
 @bin bin/openrct2
 @bin bin/openrct2-cli
 lib/libopenrct2.a
@@ -12,7 +12,7 @@ share/doc/openrct2/changelog.txt
 share/doc/openrct2/contributors.md
 share/doc/openrct2/licence.txt
 share/doc/openrct2/readme.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/openrct2.png
 share/icons/hicolor/16x16/apps/openrct2.png
 share/icons/hicolor/24x24/apps/openrct2.png

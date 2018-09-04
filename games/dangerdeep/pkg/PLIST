@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/07 03:41:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:12 espie Exp $
 @bin bin/dangerdeep
 share/dangerdeep/
 share/dangerdeep/LICENSE
@@ -1242,4 +1242,4 @@ share/dangerdeep/textures/widgeticons_game.png
 share/dangerdeep/textures/widgeticons_grey.png
 share/dangerdeep/textures/widgeticons_menu.png
 share/dangerdeep/textures/wooden_desk.png
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

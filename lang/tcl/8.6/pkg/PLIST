@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/12/25 04:33:39 stu Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/09/04 12:46:15 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tcl->=8.6,<8.7
@@ -1067,4 +1067,4 @@ lib/tcl/tcl8.6/tclIndex
 lib/tcl/tcl8.6/tclooConfig.sh
 lib/tcl/tcl8.6/tm.tcl
 lib/tcl/tcl8.6/word.tcl
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

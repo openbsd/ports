@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/15 20:53:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:24 espie Exp $
 dokuwiki/
 dokuwiki/.htaccess.dist
 @sample dokuwiki/.htaccess
@@ -5248,4 +5248,4 @@ dokuwiki/vendor/splitbrain/php-cli/src/PSR3CLI.php
 dokuwiki/vendor/splitbrain/php-cli/src/TableFormatter.php
 @owner
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

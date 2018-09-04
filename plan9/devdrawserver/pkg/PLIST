@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/07 01:17:42 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:19 espie Exp $
 @bin plan9/bin/devdrawclient
 @bin plan9/bin/devdrawserver
 @bin plan9/bin/dialdevdraw
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

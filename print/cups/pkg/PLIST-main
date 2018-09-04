@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2018/06/06 08:23:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2018/09/04 12:46:20 espie Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -790,7 +790,7 @@ share/doc/cups/pt_BR/index.html
 share/doc/cups/robots.txt
 share/doc/cups/ru/
 share/doc/cups/ru/index.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @group _cups
 share/examples/cups/
 @mode 0640

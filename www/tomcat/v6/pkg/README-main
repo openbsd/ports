@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.5 2011/10/17 11:11:46 dcoppa Exp $
+$OpenBSD: README-main,v 1.6 2018/09/04 12:46:27 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 The tomcat package does not install the example webapps and

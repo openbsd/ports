@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:22 espie Exp $
 
 COMMENT=	authentication provider for OATH one-time passwords
 
 DISTNAME=	login_oath-0.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	sysutils
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
@@ -24,6 +24,6 @@ FAKE_FLAGS=	BINDIR=${PREFIX}/libexec/auth \
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README \
-	    ${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME}
+	    ${PREFIX}/share/doc/pkg-readmes/${PKGSTEM}
 
 .include <bsd.port.mk>

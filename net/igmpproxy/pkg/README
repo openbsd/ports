@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.6 2016/12/04 20:20:44 jca Exp $
+$OpenBSD: README,v 1.7 2018/09/04 12:46:17 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To use igmpproxy on OpenBSD, you will need to configure it by

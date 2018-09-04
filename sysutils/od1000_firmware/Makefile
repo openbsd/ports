@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:23 espie Exp $
 
 COMMENT=	firmware and flash tool for SOFTIRON OverDrive 1000
 
 DISTNAME=	overdrive_1000_firmware-1.02-2017-01-19
 PKGNAME=	od1000_firmware-1.02.20170119
+REVISION=	0
 
 CATEGORIES=	sysutils
 

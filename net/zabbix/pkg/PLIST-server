@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.20 2018/07/09 09:56:27 jasper Exp $
+@comment $OpenBSD: PLIST-server,v 1.21 2018/09/04 12:46:19 espie Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @extraunexec rm -rf /var/log/zabbix/*
 @man man/man8/zabbix_server.8
 @sample ${SYSCONFDIR}/zabbix/
 @bin sbin/zabbix_server
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/zabbix/zabbix_server.conf
 @mode 640
 @group _zabbix

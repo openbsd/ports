@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2018/08/17 07:18:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2018/09/04 12:46:12 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -10,6 +10,7 @@ DISTNAME=	qemu-3.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.qemu.org/
 

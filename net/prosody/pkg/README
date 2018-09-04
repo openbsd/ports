@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.9 2016/02/16 21:42:43 sthen Exp $
+$OpenBSD: README,v 1.10 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Using Prosody in an OpenBSD environment

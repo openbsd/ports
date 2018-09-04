@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/09/02 10:24:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:09 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/fookebox/
 lib/python${MODPY_VERSION}/site-packages/fookebox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fookebox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -134,7 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/fookebox/websetup.py
 lib/python${MODPY_VERSION}/site-packages/fookebox/websetup.pyc
 share/doc/fookebox/
 share/doc/fookebox/config.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/fookebox/
 @sample ${SYSCONFDIR}/fookebox/
 share/examples/fookebox/apache-fcgi.conf

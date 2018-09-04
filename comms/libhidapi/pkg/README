@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:09 espie Exp $
 
 +-------------------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
 libusb Workaround

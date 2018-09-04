@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2017/06/12 10:57:57 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To play ioquake3 on OpenBSD, you need the original game CD key and *.pk3 files.

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/04 10:14:52 sthen Exp $
-share/doc/pkg-readmes/${FULLPKGNAME}
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:22 espie Exp $
+share/doc/pkg-readmes/${PKGSTEM}
 share/memtest86+/
 share/memtest86+/README
 share/memtest86+/memtest

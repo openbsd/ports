@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/29 17:02:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:18 espie Exp $
 @bin bin/obfs4proxy
 @man man/man1/obfs4proxy.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

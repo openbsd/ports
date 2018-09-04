@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/04 22:30:08 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:12 espie Exp $
 bin/barony
 @bin bin/barony-bin
 @bin bin/barony-editor
@@ -6,4 +6,4 @@ share/barony/
 share/barony/lang/
 share/barony/lang/en.ttf
 share/barony/lang/en.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

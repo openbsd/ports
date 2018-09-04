@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/21 10:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2018/09/04 12:46:15 espie Exp $
 
 COMMENT-main=	simple SMTP client
 COMMENT-chroot=	simple SMTP client for chrooted web servers
 
 V=		1.0
 REVISION-main=	1
-REVISION-chroot=2
+REVISION-chroot=3
 DISTNAME=	femail-${V}
 PKGNAME-main=	femail-${V}
 PKGNAME-chroot=	femail-chroot-${V}

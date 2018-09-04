@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2016/10/02 02:06:20 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/09/04 12:46:18 espie Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
@@ -55,7 +55,7 @@ lib/snort_dynamicpreprocessor/libsf_ssl_preproc.a
 lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so
 lib/snort_dynamicrules/
 @man man/man8/snort.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/snort/
 share/doc/snort/AUTHORS
 share/doc/snort/BUGS

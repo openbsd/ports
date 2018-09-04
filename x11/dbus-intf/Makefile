@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/25 23:13:57 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:27 espie Exp $
 
 COMMENT =	high level interface to dbus-tcl
 
@@ -9,6 +9,7 @@ PKGNAME =	dbus-intf-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbif/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

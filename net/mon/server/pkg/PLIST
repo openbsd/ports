@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/10 13:54:56 pea Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:17 espie Exp $
 @newgroup _mon:643
 @newuser _mon:643:_mon:daemon:Mon Server:/var/empty:/bin/sh
 bin/mon
@@ -74,7 +74,7 @@ share/doc/mon/README.software
 share/doc/mon/README.syslog.monitor
 share/doc/mon/README.traps
 share/doc/mon/README.variables
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mon/
 @owner _mon
 @group _mon

@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.9 2015/06/18 21:18:04 kirby Exp $
+$OpenBSD: README-main,v 1.10 2018/09/04 12:46:22 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 NUT is split into separate components. A hardware driver interfaces

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2016/01/07 21:44:20 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:27 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 selfoss is installed under:

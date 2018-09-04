@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2018/07/01 08:59:32 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/09/04 12:46:20 espie Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -425,4 +425,4 @@ lib/pkgconfig/texlua52.pc
 ${P5SITE}/TeXLive/
 ${P5SITE}/TeXLive/TLConfig.pm
 ${P5SITE}/TeXLive/TLUtils.pm
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

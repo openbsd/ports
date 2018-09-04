@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/28 16:40:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:19 espie Exp $
 
 PORTROACH=	skipv:1.1
 
 COMMENT=	UPnP A/V media server
 
 DISTNAME=	ushare-1.1a
-REVISION=	14
+REVISION=	15
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net multimedia

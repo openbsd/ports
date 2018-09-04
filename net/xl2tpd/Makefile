@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/03/08 14:23:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:19 espie Exp $
 
 COMMENT=	l2tp client/server
 
 GH_ACCOUNT=	xelerance
 GH_PROJECT=	xl2tpd
 GH_TAGNAME=	v1.3.11
+REVISION=	0
 
 CATEGORIES=	net
 

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2017/01/19 20:34:04 edd Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:11 espie Exp $
 
 +-------------------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
 libtermkey and tmux

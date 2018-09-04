@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/07 17:56:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:22 espie Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=		sitaramc
 GH_PROJECT=		gitolite
 GH_TAGNAME=		v3.6.7
 CATEGORIES=		sysutils devel
+REVISION=		0
 
 HOMEPAGE=		http://gitolite.com/gitolite/
 

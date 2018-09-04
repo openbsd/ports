@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:12 espie Exp $
 bin/instead
 @bin bin/sdl-instead
 @man man/man6/instead.6
@@ -11,7 +11,7 @@ share/doc/instead/stead2-modules.pdf
 share/doc/instead/stead2.html
 share/doc/instead/stead2.pdf
 share/doc/instead/stead3.pdf
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/instead/
 share/instead/games/
 share/instead/games/tutorial3/

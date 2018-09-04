@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2017/07/13 07:36:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/09/04 12:46:16 espie Exp $
 @conflict avahi-qt3-*
 @conflict avahi-qt4-*
 @conflict howl-*
@@ -138,7 +138,7 @@ share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
 share/dbus-1/system-services/org.freedesktop.Avahi.service
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/avahi/
 @sample ${SYSCONFDIR}/avahi/
 share/examples/avahi/avahi-daemon.conf

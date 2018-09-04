@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/07/08 13:46:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2018/09/04 12:46:10 espie Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
@@ -7,7 +7,7 @@ GH_COMMIT = 		ce871d178848e3eea1e8795e5cfb74053dde4bb9
 DISTNAME =		go-tools-1.10.20180216
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 

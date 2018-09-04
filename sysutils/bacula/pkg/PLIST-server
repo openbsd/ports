@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.23 2018/06/25 17:02:32 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.24 2018/09/04 12:46:21 espie Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @pkgpath sysutils/bacula,-server,mysql
@@ -62,7 +62,7 @@ libexec/bacula/updatedb/README
 sbin/btraceback
 @bin sbin/bwild
 @bin sbin/dbcheck
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @mode 644
 share/examples/bacula/bacula-dir.conf
 @mode 640

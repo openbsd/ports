@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/09/06 11:33:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:27 espie Exp $
 htdocs/syweb/
 htdocs/syweb/class_cache.inc
 htdocs/syweb/class_graph.inc
@@ -31,4 +31,4 @@ symon/pf.layout
 symon/rrds/
 symon/total_firewall.layout
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

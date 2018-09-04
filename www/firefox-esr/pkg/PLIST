@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/09/04 12:46:24 espie Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr/
 lib/${MOZILLA_PROJECT}-esr/application.ini
@@ -58,7 +58,7 @@ lib/${MOZILLA_PROJECT}-esr/platform.ini
 @bin lib/${MOZILLA_PROJECT}-esr/plugin-container
 lib/${MOZILLA_PROJECT}-esr/removed-files
 share/applications/${MOZILLA_PROJECT}-esr.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/
 share/pixmaps/${MOZILLA_PROJECT}-esr.png
 @tag update-desktop-database

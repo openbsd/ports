@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/01/05 23:50:19 bcallah Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 FreeSerf

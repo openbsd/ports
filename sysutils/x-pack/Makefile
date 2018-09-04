@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/17 11:08:38 pvk Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:23 espie Exp $
 
 COMMENT =		extensions for Elastic Stack
 
 DISTNAME =		x-pack-6.2.4
 CATEGORIES =		sysutils
+REVISION =		0
 
 HOMEPAGE =		https://www.elastic.co/products/x-pack
 

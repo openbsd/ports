@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/09/04 12:46:21 espie Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -9,8 +9,9 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
 REVISION =		1
-REVISION-main =		3
+REVISION-main =		4
 REVISION-x11 =		2
+REVISION-cgi =		2
 
 CATEGORIES =		sysutils
 

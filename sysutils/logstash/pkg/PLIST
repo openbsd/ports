@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/05/17 10:50:12 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:22 espie Exp $
 @pkgpath sysutils/logstash/logstash
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
@@ -14307,7 +14307,7 @@ share/doc/logstash/
 share/doc/logstash/CONTRIBUTORS
 share/doc/logstash/LICENSE
 share/doc/logstash/NOTICE.TXT
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/logstash/
 share/examples/logstash/filebeat.yml
 @mode 0640

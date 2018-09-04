@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/27 19:14:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:10 espie Exp $
 
 COMMENT=		PostgreSQL performances monitoring and auditing tool
 
 DISTNAME=		pgcluu-2.7
 CATEGORIES=		databases sysutils
+REVISION=		0
 
 HOMEPAGE=		http://pgcluu.darold.net/
 

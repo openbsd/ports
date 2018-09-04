@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2017/03/23 18:35:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2018/09/04 12:46:27 espie Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/tomcat/
 @owner _tomcat
 @group _tomcat

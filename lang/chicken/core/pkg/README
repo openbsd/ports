@@ -1,5 +1,5 @@
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Chicken Scheme will use better warnings when it has access to module database.

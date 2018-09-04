@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/04/18 10:26:36 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2018/09/04 12:46:19 espie Exp $
 @pkgpath net/vnstat
 @newgroup _vnstat:658
 @newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/sbin/nologin
@@ -13,7 +13,7 @@
 @sample /var/db/vnstat/
 @owner
 @group
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/vnstat/
 share/examples/vnstat/vnstat.conf
 @sample ${SYSCONFDIR}/vnstat.conf

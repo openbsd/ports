@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/23 10:51:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:20 espie Exp $
 
 COMMENT=		PDF backend for CUPS
 
 DISTNAME=		cups-pdf-3.0.1
 CATEGORIES=		print
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.cups-pdf.de/
 MASTER_SITES=		${HOMEPAGE}src/

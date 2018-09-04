@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/08/01 14:29:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/09/04 12:46:27 espie Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -791,7 +791,7 @@ lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/svn_fs.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/svn_fs.pyc
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/svn_prop.py
 lib/python${MODPY_VERSION}/site-packages/tracopt/versioncontrol/svn/svn_prop.pyc
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/trac/
 share/examples/trac/contrib/
 share/examples/trac/contrib/README

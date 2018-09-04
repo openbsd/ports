@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/01/28 03:09:12 lteo Exp $
+# $OpenBSD: Makefile,v 1.100 2018/09/04 12:46:18 espie Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
@@ -39,6 +39,7 @@ DOCS =			AUTHORS CREDITS README README.* *.pdf TODO USAGE \
 
 V =			${VERSION:S/.//g}
 SUBST_VARS +=		V
+REVISION =		0
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/etc/snort.conf

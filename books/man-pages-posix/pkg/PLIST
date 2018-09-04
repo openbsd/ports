@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/08 08:45:22 zhuk Exp $
-share/doc/pkg-readmes/${FULLPKGNAME}
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:09 espie Exp $
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/posix/
 share/doc/posix/POSIX-COPYRIGHT
 share/doc/posix/man/

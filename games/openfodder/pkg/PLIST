@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 16:51:11 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:13 espie Exp $
 bin/OpenFodder
 share/OpenFodder/
 share/OpenFodder/Campaigns/
@@ -39,4 +39,4 @@ share/OpenFodder/Saves/
 share/OpenFodder/Saves/_SavesHere
 share/doc/openfodder/
 share/doc/openfodder/README.md
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

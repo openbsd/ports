@@ -1,7 +1,7 @@
-$OpenBSD: README-server,v 1.18 2015/08/15 07:50:02 ajacoutot Exp $
+$OpenBSD: README-server,v 1.19 2018/09/04 12:46:21 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Note: If upgrading from a version older than 7.2.0, a database upgrade

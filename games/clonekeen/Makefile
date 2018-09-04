@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/02 14:36:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:12 espie Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen

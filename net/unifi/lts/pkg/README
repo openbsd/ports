@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2018/06/28 18:15:19 sthen Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:19 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 If using UniFi on a system with other threaded programs, it is likely that

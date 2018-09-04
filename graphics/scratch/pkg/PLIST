@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:14 espie Exp $
 bin/scratch
 @man man/man1/scratch.1
 share/applications/scratch.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/scratch.png
 share/icons/hicolor/128x128/apps/scratch2.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-scratch-project.png

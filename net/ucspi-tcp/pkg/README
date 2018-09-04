@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2014/06/12 19:00:31 sthen Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:19 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Please note, it is common for scripts using this package to use the

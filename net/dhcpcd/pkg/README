@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2018/02/08 17:55:56 tb Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 DHCPv6-PD (Prefix Delegation)

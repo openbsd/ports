@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/25 23:11:32 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:27 espie Exp $
 lib/tcl/dbus-tcl/
 lib/tcl/dbus-tcl/libdbus${VER}.so
 lib/tcl/dbus-tcl/pkgIndex.tcl
@@ -6,7 +6,7 @@ lib/tcl/dbus-tcl/pkgIndex.tcl
 share/doc/dbus-tcl/
 share/doc/dbus-tcl/dbus.html
 share/doc/dbus-tcl/license.terms
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dbus-tcl/
 share/examples/dbus-tcl/dbusmon.tcl
 share/examples/dbus-tcl/qdbus.tcl

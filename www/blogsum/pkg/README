@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2015/07/18 20:59:06 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:24 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Upgrading Blogsum

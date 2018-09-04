@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/04/25 11:00:34 pea Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:26 espie Exp $
 phpPgAdmin/
 phpPgAdmin/CREDITS
 phpPgAdmin/DEVELOPERS
@@ -390,4 +390,4 @@ phpPgAdmin/xloadtree/
 phpPgAdmin/xloadtree/xloadtree2.js
 phpPgAdmin/xloadtree/xtree2.js
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

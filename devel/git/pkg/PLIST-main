@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.83 2018/07/06 20:15:42 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.84 2018/09/04 12:46:10 espie Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -369,7 +369,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gittutorial-2.7
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/git-blame.el

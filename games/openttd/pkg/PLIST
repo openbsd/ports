@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/09/04 12:46:13 espie Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -29,7 +29,7 @@ share/doc/openttd/palettes/openttd.gpl
 share/doc/openttd/palettes/palette.act
 share/doc/openttd/readme.txt
 share/doc/openttd/tileh.png
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openttd/
 share/examples/openttd/autoexec.scr.example
 share/examples/openttd/game_start.scr.example

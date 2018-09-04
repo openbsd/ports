@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2013/01/25 10:06:33 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To aid development with MSP430 on OpenBSD, a sample Makefile has been

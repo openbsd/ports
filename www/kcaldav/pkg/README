@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2018/04/08 08:29:22 stsp Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:24 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Administrator Quick Start

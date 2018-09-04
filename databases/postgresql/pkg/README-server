@@ -1,7 +1,7 @@
-$OpenBSD: README-server,v 1.23 2017/09/13 14:24:08 pea Exp $
+$OpenBSD: README-server,v 1.24 2018/09/04 12:46:10 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 At least two different accounts are involved when working with PostgreSQL:

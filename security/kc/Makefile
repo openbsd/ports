@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/20 10:23:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/09/04 12:46:21 espie Exp $
 
 COMMENT =	console based password storing application
 
@@ -6,6 +6,7 @@ V =		2.4.2
 DISTNAME =	kc-$V
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	https://github.com/levaidaniel/kc/releases/download/${V}/
+REVISION =	0
 
 CATEGORIES =	security
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2018/05/14 06:57:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.38 2018/09/04 12:46:27 espie Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -2433,7 +2433,7 @@ lib/sogo/
 @bin sbin/sogo-slapd-sockd
 @bin sbin/sogo-tool
 @bin sbin/sogod
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/sogo/
 share/doc/sogo/cas-proxy-validate.py
 share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh

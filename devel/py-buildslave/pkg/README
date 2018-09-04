@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2017/12/18 20:42:31 landry Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 On OpenBSD, the BuildBot package has an associated _buildslave user

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:13 espie Exp $
 @bin bin/openomf
 include/shadowdive/
 include/shadowdive/actions.h
@@ -28,7 +28,7 @@ include/shadowdive/taglist.h
 include/shadowdive/tournament.h
 include/shadowdive/vga_image.h
 lib/libshadowdive.a
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/openomf/
 share/openomf/openomf.bk
 share/openomf/openomf_icon.png

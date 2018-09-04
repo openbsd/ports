@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/31 17:40:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:12 espie Exp $
 @bin bin/corsix-th
 share/corsix-th/
 share/corsix-th/Bitmap/
@@ -355,4 +355,4 @@ share/corsix-th/Lua/walls/white.lua
 share/corsix-th/Lua/walls/yellow.lua
 share/corsix-th/Lua/window.lua
 share/corsix-th/Lua/world.lua
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

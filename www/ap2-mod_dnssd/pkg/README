@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2013/04/06 07:57:42 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:24 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To enable the ap2-mod_dnssd module, the following lines need to be added

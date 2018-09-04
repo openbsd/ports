@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/07/02 09:30:59 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/09/04 12:46:24 espie Exp $
 @conflict p5-XML-LibXML-Common-*
 @pkgpath textproc/p5-LibXML-Common
 ${P5ARCH}/
@@ -86,4 +86,4 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::Text.3p
 @man man/man3p/XML::LibXML::XPathContext.3p
 @man man/man3p/XML::LibXML::XPathExpression.3p
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

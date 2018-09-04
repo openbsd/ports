@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 RPC user and password

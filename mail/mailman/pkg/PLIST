@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/02/05 21:38:44 okan Exp $
+@comment $OpenBSD: PLIST,v 1.30 2018/09/04 12:46:15 espie Exp $
 @pkgpath mail/mailman,postfix
 @pkgpath mail/mailman,sendmail
 @pkgpath mail/mailman,smtpd
@@ -2576,7 +2576,7 @@ share/doc/mailman/UPGRADING
 @mode
 @owner
 @group
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mailman/
 share/examples/mailman/sitelist.cfg
 @sample /var/spool/mailman/data/sitelist.cfg

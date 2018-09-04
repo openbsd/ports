@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/18 10:00:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:17 espie Exp $
 
 COMMENT=	client for MikroTik's "L2 telnet" protocol#'
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	haakonnessjoen
 GH_PROJECT=	MAC-Telnet
 GH_TAGNAME=	v0.4.4
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 
 CATEGORIES=	net
 

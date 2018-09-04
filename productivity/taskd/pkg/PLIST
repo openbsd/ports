@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/29 04:11:54 kspillner Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:20 espie Exp $
 @newgroup _taskd:734
 @newuser _taskd:734:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
 @extraunexec rm -rf /var/taskd
@@ -27,7 +27,7 @@ share/examples/taskd/config
 @mode
 @owner
 @group
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/taskd/pki/
 share/examples/taskd/pki/README
 share/examples/taskd/pki/generate

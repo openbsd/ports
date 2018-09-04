@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.19 2018/06/02 11:45:27 jasper Exp $
+$OpenBSD: README,v 1.20 2018/09/04 12:46:25 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 If you encounter strange problems relating to bookmarks, downloads,

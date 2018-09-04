@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/07/21 08:55:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/09/04 12:46:22 espie Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -43,7 +43,7 @@ share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/consolekit/
 share/examples/consolekit/ConsoleKit/
 @sample ${SYSCONFDIR}/ConsoleKit/

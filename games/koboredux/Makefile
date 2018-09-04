@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:13 espie Exp $
 
 COMMENT =	frenetic space shoot-em-up
 
 V =		0.7.5.1
 DISTNAME =	koboredux-$V
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	olofson
 GH_PROJECT =	koboredux

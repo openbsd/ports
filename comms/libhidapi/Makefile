@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:09 espie Exp $
 
 COMMENT =	library for communicating with USB and Bluetooth HID devices
 
 V =		0.8.0pre20160128
 DISTNAME =	libhidapi-${V}
+REVISION =	0
 
 GH_ACCOUNT =	signal11
 GH_PROJECT =	hidapi

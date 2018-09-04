@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/28 20:20:46 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:20 espie Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -6,6 +6,7 @@ DISTNAME =	davical_1.1.7.orig
 PKGNAME =	davical-1.1.7
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
+REVISION =	0
 
 HOMEPAGE =	https://www.davical.org/
 MASTER_SITES =	https://www.davical.org/downloads/

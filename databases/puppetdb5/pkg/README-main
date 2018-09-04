@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
+$OpenBSD: README-main,v 1.2 2018/09/04 12:46:10 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Web frontend

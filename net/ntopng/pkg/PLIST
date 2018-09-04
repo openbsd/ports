@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/28 12:17:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:18 espie Exp $
 @newgroup _ntopng:809
 @newuser _ntopng:809:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/ntopng/*
@@ -37,7 +37,7 @@ share/doc/ntopng/README.vagrant
 share/doc/ntopng/README.valgrind
 share/doc/ntopng/README.windows
 share/doc/ntopng/README.zmq
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/ntopng/
 share/ntopng/httpdocs/
 share/ntopng/httpdocs/bootstrap/

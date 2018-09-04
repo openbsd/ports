@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/03 08:17:03 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:27 espie Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 selfoss/.htaccess
@@ -2073,4 +2073,4 @@ selfoss/vendor/willwashburn/phpamo/src/Formatter/HexFormatter.php
 selfoss/vendor/willwashburn/phpamo/src/Formatter/QueryStringFormatter.php
 selfoss/vendor/willwashburn/phpamo/src/Phpamo.php
 @cwd ${LOCALBASE}
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

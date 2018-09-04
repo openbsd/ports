@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/07/22 20:41:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:20 espie Exp $
 @extraunexec rm -rf /var/spool/cups-pdf/
 @mode 0700
 @bin libexec/cups/backend/cups-pdf
@@ -7,7 +7,7 @@ share/cups/model/CUPS-PDF_noopt.ppd
 share/cups/model/CUPS-PDF_opt.ppd
 share/doc/cups-pdf/
 share/doc/cups-pdf/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cups-pdf/
 share/examples/cups-pdf/cups-pdf.conf
 @sample ${SYSCONFDIR}/cups/cups-pdf.conf

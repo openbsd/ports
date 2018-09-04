@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:13 espie Exp $
 @bin bin/ja2
 @man man/man6/ja2.6
 share/applications/ja2-stracciatella.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 share/ja2/
 share/ja2/_unittests/

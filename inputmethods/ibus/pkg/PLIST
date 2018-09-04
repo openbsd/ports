@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/09/04 12:46:14 espie Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -61,7 +61,7 @@ share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/ibus.convert
 share/applications/ibus-setup.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ibus/
 share/examples/ibus/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:13 espie Exp $
 
 COMMENT=	GIS WMTS/TMS tile caching server
 
 DISTNAME =	mapcache-1.6.1
 SHARED_LIBS +=	mapcache 2.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	geo www
 

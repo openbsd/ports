@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/27 20:26:56 solene Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:13 espie Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
@@ -14,6 +14,7 @@ V =		1.5.10
 PKGNAME-main =	tome4-${V}
 PKGNAME-data =	tome4-data-${V}
 CATEGORIES =	games x11
+REVISION-main =	0
 
 MASTER_SITES =	http://te4.org/dl/t-engine/ \
 		http://distfiles-openbsd.perso.pw/

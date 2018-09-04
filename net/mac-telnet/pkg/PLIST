@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:17 espie Exp $
 @newgroup _mactelnet:812
 @newuser _mactelnet:812:_mactelnet:daemon:mactelnet user:/nonexistent:/sbin/nologin
 @bin bin/macping
@@ -7,4 +7,4 @@
 @man man/man1/macping.1
 @man man/man1/mactelnet.1
 @man man/man1/mndp.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

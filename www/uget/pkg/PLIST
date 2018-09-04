@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:27 espie Exp $
 @bin bin/uget-gtk
 @bin bin/uget-gtk-1to2
 share/applications/uget-gtk.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/uget-icon.png
 share/icons/hicolor/16x16/apps/uget-icon.png
 share/icons/hicolor/16x16/apps/uget-tray-default.png

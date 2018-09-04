@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 COMMENT =	free remake of One Must Fall 2097 game engine
 DISTNAME =	openomf-0.6.5.1
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://www.openomf.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

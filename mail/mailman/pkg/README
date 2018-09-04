@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2016/04/22 16:42:14 okan Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Throughout this document $mailmandir is the directory mailman is installed

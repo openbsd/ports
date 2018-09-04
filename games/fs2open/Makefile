@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/29 07:32:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2018/09/04 12:46:12 espie Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
 V =		3.8.0
 DISTNAME =	fs2_open_${V:S/./_/g}-source-Unix
 PKGNAME =	fs2open-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 

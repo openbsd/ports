@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/07 10:43:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:19 espie Exp $
 
 COMMENT =		client-server p9p devdraw
 DISTNAME =		devdrawserver-20120504
 CATEGORIES =		plan9
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 

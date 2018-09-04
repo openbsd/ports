@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2015/04/04 14:46:12 zhuk Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Download games from http://instead-games.sourceforge.net

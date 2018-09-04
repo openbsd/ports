@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2013/08/09 16:53:45 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:20 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To configure the apsfilter package, you have to run

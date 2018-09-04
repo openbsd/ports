@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.8 2017/10/09 12:55:30 feinerer Exp $
+$OpenBSD: README,v 1.9 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Configuring Java support

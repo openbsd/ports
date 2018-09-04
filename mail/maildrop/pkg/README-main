@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.1 2013/11/07 07:09:00 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Maildrop must be run as the uid/gid of the user whose mailbox it is

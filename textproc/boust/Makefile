@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:23 espie Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
-REVISION =		3
+REVISION =		4
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://traevoli.com/boust/

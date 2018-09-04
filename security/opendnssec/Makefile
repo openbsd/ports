@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:21 espie Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-1.4.14
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/05/17 10:34:39 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/09/04 12:46:25 espie Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*
@@ -50953,7 +50953,7 @@ share/doc/kibana/
 share/doc/kibana/LICENSE.txt
 share/doc/kibana/NOTICE.txt
 share/doc/kibana/README.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/kibana/
 @mode 0750
 @owner root

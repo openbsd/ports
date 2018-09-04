@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2017/06/01 07:42:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/09/04 12:46:14 espie Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -187,7 +187,7 @@ lib/sane/libsane-xerox_mfp.so
 @man man/man5/sane-xerox_mfp.5
 @man man/man7/sane.7
 @man man/man8/saned.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/sane-backends/
 share/doc/sane-backends/AUTHORS
 share/doc/sane-backends/COPYING

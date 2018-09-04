@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.6 2012/10/18 13:17:36 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2018/09/04 12:46:11 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 By default, xdg-open(1) opens URLs using a predefined order of known

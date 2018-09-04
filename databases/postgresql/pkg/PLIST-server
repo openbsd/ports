@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.35 2018/03/08 13:24:25 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.36 2018/09/04 12:46:10 espie Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -762,7 +762,7 @@ lib/postgresql/utf8_and_win.so
 @man man/man1/pg_waldump.1
 @man man/man1/postgres.1
 @man man/man1/postmaster.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/postgresql/extension/
 share/postgresql/extension/plperl--1.0.sql
 share/postgresql/extension/plperl--unpackaged--1.0.sql

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2015/05/02 21:52:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/09/04 12:46:22 espie Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -283,7 +283,7 @@ share/doc/nut/images/simple.png
 share/doc/nut/images/warning.png
 share/doc/nut/packager-guide.html
 share/doc/nut/user-manual.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/nut/
 @sample ${SYSCONFDIR}/
 @comment share/examples/nut/hosts.conf.sample

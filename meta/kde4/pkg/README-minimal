@@ -1,7 +1,7 @@
-$OpenBSD: README-minimal,v 1.9 2017/04/16 12:43:20 ajacoutot Exp $
+$OpenBSD: README-minimal,v 1.10 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 The KDE4 desktop can be installed using 2 different meta-packages:

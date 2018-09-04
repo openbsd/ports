@@ -1,7 +1,7 @@
-$OpenBSD: README-server,v 1.13 2018/07/09 07:56:01 jasper Exp $
+$OpenBSD: README-server,v 1.14 2018/09/04 12:46:19 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 NOTE for users updating from version <1.8.6 using a node-based

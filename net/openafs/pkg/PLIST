@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/19 11:27:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:18 espie Exp $
 @bin bin/afsmonitor
 @bin bin/bos
 @bin bin/cmdebug
@@ -242,6 +242,6 @@ sbin/openafs-setup
 @bin sbin/volinfo
 @bin sbin/vos
 @bin sbin/vsys
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openafs/
 share/examples/openafs/krb5.conf

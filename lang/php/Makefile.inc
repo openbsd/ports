@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.118 2018/06/15 10:20:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.119 2018/09/04 12:46:14 espie Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -452,7 +452,7 @@ DESCR-main=		${.CURDIR}/../files/DESCR-main
 
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
-		${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME-main}
+		${PREFIX}/share/doc/pkg-readmes/${PKGSTEM-main}
 .if ${BUILD_PACKAGES:M-apache}
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${PV:C/\.[0-9]$//}.so \
 		${PREFIX}/${APACHE_MODULE_SUBDIR}/

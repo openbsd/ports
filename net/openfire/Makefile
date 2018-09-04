@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.50 2018/09/04 12:46:18 espie Exp $
 
 COMMENT=	XMPP real time collaboration server
 V =		4.1.5
 DISTNAME=	openfire_src_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 

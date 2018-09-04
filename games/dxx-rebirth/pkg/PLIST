@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/24 19:13:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:12 espie Exp $
 @bin bin/d1x-rebirth
 @bin bin/d2x-rebirth
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

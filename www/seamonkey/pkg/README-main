@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.6 2015/05/23 12:18:32 ajacoutot Exp $
+$OpenBSD: README-main,v 1.7 2018/09/04 12:46:27 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2017/08/08 06:35:22 bentley Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 By default, koboredux contains only low-resolution graphics and sound.

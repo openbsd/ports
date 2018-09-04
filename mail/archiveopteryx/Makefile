@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:15 espie Exp $
 
 COMMENT =		mail server storing messages in a database
 
 DISTNAME =		archiveopteryx-3.2.0
 CATEGORIES =		mail databases
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.archiveopteryx.org/
 

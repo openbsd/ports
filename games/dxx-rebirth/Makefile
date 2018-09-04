@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/24 19:13:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:12 espie Exp $
 
 V =		0.60
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_v${V}-weekly-11-08-17-src
 PKGNAME =	dxx-rebirth-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.dxx-rebirth.com/
 MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/08/20 14:25:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:10 espie Exp $
 @newgroup _barman:723
 @newuser _barman:723:723:daemon:Barman User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/barman/*
@@ -72,7 +72,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.pyc
 @man man/man1/barman.1
 @man man/man5/barman.5
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/barman/
 share/examples/barman/barman.conf
 @mode 0640

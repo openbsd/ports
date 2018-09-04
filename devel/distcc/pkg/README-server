@@ -1,7 +1,7 @@
-$OpenBSD: README-server,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+$OpenBSD: README-server,v 1.2 2018/09/04 12:46:10 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 distccd

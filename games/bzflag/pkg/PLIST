@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/27 21:03:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:12 espie Exp $
 @bin bin/bzadmin
 @bin bin/bzflag
 @bin bin/bzfs
@@ -210,4 +210,4 @@ share/bzflag/wall.png
 share/bzflag/water.png
 share/bzflag/zone_ground.png
 @tag update-desktop-database
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

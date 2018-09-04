@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/08/09 14:32:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:18 espie Exp $
 @newgroup _mdnsd:664
 @newuser _mdnsd:664:_mdnsd:daemon:MDNS Daemon:/var/empty:/sbin/nologin
 @bin bin/mdnsctl
 @bin bin/mdnsd
 @man man/man8/mdnsctl.8
 @man man/man8/mdnsd.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @rcscript ${RCDIR}/mdnsd

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2015/06/17 10:06:34 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:10 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 PostgreSQL Authentication

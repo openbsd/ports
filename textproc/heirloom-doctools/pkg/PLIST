@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/17 08:00:25 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:24 espie Exp $
 heirloom-doctools/
 heirloom-doctools/bin/
 @bin heirloom-doctools/bin/addbib
@@ -70,7 +70,7 @@ libexec/heirloom-doctools/reftools/papers/Rv7man
 libexec/heirloom-doctools/reftools/papers/runinv
 @bin libexec/heirloom-doctools/vfontedpr
 libexec/heirloom-doctools/vgrindefs
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/heirloom-doctools/
 share/heirloom-doctools/font/
 share/heirloom-doctools/font/devhtml/

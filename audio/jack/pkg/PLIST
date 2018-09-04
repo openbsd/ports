@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/05/05 19:45:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:09 espie Exp $
 @bin bin/jack_alias
 @bin bin/jack_bufsize
 @bin bin/jack_connect
@@ -64,4 +64,4 @@ lib/libjackserver.la
 lib/pkgconfig/jack.pc
 @man man/man1/jackd.1
 @man man/man1/jackstart.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

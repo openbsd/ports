@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/18 11:12:13 edd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:10 espie Exp $
 bin/arduinoboot
 bin/arduinoproject
 share/arduino/
@@ -1103,7 +1103,7 @@ share/doc/arduino/reference/img/
 share/doc/arduino/reference/img/logo.png
 share/doc/arduino/reference/index.html
 share/doc/arduino/todo.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/arduino/
 share/examples/arduino/01.Basics/
 share/examples/arduino/01.Basics/AnalogReadSerial/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.32 2018/09/04 12:46:16 espie Exp $
 
 COMMENT=		DNS relay for ad blocking
 
 V=			2.5.0
-REVISION=		5
+REVISION=		6
 GH_TAGNAME=		ADSUCK_${V:S/./_/g}
 GH_ACCOUNT=		conformal
 GH_PROJECT=		adsuck

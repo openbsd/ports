@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2018/03/03 13:39:18 sthen Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 From the upstream documentation, "Memcached does not spend much, if any,

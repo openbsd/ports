@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2013/04/22 06:48:25 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:22 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Setting up a Git server

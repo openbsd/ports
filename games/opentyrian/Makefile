@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/24 03:57:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:13 espie Exp $
 
 V =			2.1.20130907
 COMMENT =		port of the DOS shoot-em-up Tyrian
 DISTNAME =		opentyrian-${V}-src
 PKGNAME =		opentyrian-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		games x11
 
 HOMEPAGE =		https://bitbucket.org/opentyrian/opentyrian/

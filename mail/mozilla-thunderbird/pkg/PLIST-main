@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2018/06/27 21:03:56 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2018/09/04 12:46:15 espie Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
@@ -54,7 +54,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/run-mozilla.sh
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
 share/applications/${MOZILLA_PROJECT}.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/
 share/pixmaps/${MOZILLA_PROJECT}.png
 @tag update-desktop-database

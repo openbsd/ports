@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2014/07/09 16:09:35 zhuk Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:20 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 If you want to get quotes updates, install the p5-Finance-Quote and

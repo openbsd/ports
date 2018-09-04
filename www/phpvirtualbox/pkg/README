@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.7 2015/07/17 17:40:38 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2018/09/04 12:46:26 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 phpVirtualBox has been installed into:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/12/30 21:57:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:18 espie Exp $
 bin/adig
 bin/ahttp
 bin/antp
@@ -138,4 +138,4 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/settings/templates/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/settings/templates/base.yaml
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/streaming.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/version.py
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

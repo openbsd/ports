@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/20 10:31:53 giovanni Exp $
+# $OpenBSD: Makefile,v 1.14 2018/09/04 12:46:18 espie Exp $
 
 COMMENT=	small daemon for DNSBLs
 
@@ -6,7 +6,7 @@ DISTNAME=	rbldnsd-0.998.20171115
 GH_ACCOUNT=	spamhaus
 GH_PROJECT=	rbldnsd
 GH_COMMIT=	6111aba2a76423a0a05030c1bb8ca697a24877bb
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 

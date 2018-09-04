@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/05/14 16:37:52 schwarze Exp $
+# $OpenBSD: Makefile,v 1.61 2018/09/04 12:46:28 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,7 @@ CATEGORIES =	x11
 
 COMMENT =	DVD player
 DISTNAME =	ogle-0.9.2
-REVISION =	19
+REVISION =	20
 SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/

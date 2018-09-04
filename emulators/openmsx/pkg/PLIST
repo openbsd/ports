@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/15 14:49:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:12 espie Exp $
 @bin bin/openmsx
 share/doc/openmsx/
 share/doc/openmsx/GPL.txt
@@ -19,7 +19,7 @@ share/doc/openmsx/manual/setup.html
 share/doc/openmsx/manual/user.html
 share/doc/openmsx/release-history.txt
 share/doc/openmsx/release-notes.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/openmsx/
 share/openmsx/extensions/
 share/openmsx/extensions/ASCII_Japanese_MSX-Write.xml

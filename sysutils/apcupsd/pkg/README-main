@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.4 2015/06/18 21:52:02 kirby Exp $
+$OpenBSD: README-main,v 1.5 2018/09/04 12:46:21 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Special notice for APC USB devices

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:20 espie Exp $
 @bin bin/kmymoney
 include/kde4/kmymoney/
 include/kde4/kmymoney/databasestoreableobject.h
@@ -1651,7 +1651,7 @@ share/doc/HTML/uk/kmymoney/reference.docbook
 share/doc/HTML/uk/kmymoney/select_currency.png
 share/doc/HTML/uk/kmymoney/tipofday.png
 share/doc/HTML/uk/kmymoney/whatsnew.docbook
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/kmymoney.png
 share/icons/hicolor/128x128/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/16x16/apps/kmymoney.png

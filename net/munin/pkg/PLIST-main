@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2018/07/26 19:17:44 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2018/09/04 12:46:17 espie Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -318,7 +318,7 @@ sbin/munin-run
 sbin/munin-sched
 share/doc/munin/
 share/doc/munin/UPGRADING
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/munin/
 share/examples/munin/munin-node.conf
 @sample ${SYSCONFDIR}/munin/munin-node.conf

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/09/04 12:46:28 espie Exp $
 @bin bin/accountwizard
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_davgroupware_resource
@@ -188,7 +188,7 @@ share/config/kmail-migratorrc
 share/config/kres-migratorrc
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/akonaditray.png
 share/icons/hicolor/128x128/apps/ox.png
 share/icons/hicolor/16x16/apps/facebookresource.png

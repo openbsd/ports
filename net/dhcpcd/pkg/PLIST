@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/02 11:45:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:16 espie Exp $
 @extraunexec rm ${LOCALSTATEDIR}/db/dhcpcd/*
 @rcscript ${RCDIR}/dhcpcd
 libexec/dhcpcd-hooks/
@@ -18,7 +18,7 @@ share/dhcpcd/hooks/10-wpa_supplicant
 share/dhcpcd/hooks/15-timezone
 share/dhcpcd/hooks/29-lookup-hostname
 share/dhcpcd/hooks/50-ypbind
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dhcpcd/
 share/examples/dhcpcd/dhcpcd.conf
 @sample ${SYSCONFDIR}/dhcpcd.conf

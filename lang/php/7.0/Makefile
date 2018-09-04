@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2018/08/01 14:38:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/09/04 12:46:14 espie Exp $
 
 PV=		7.0
 V=		${PV}.31
+PKGSTEM-main =	php-7.0
 
 BUILD_DEPENDS+=	devel/bison
 

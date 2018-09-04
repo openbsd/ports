@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/15 02:28:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/09/04 12:46:09 espie Exp $
 
 COMMENT=		jukebox frontend to mpd
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=		cockroach
 GH_PROJECT=		fookebox
 PKGNAME=		fookebox-${MODPY_EGG_VERSION}
 CATEGORIES=		audio www
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

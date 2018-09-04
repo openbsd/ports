@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/17 10:01:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:11 espie Exp $
 mingw32/
 mingw32/bin/
 @bin mingw32/bin/ar
@@ -931,4 +931,4 @@ mingw32/man/man7/
 @man mingw32/man/man7/fsf-funding.7
 @man mingw32/man/man7/gfdl.7
 @man mingw32/man/man7/gpl.7
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

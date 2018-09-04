@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-common,v 1.5 2015/11/17 08:57:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-common,v 1.6 2018/09/04 12:46:20 espie Exp $
 @conflict hplip-libs-*
 @conflict hplip-<3.13.7p4
 @pkgpath print/hplip,-libs
@@ -19,7 +19,7 @@ lib/libhpmud.la
 @lib lib/libhpmud.so.${LIBhpmud_VERSION}
 share/cups/drv/
 share/cups/drv/hp/
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/hplip/
 share/examples/hplip/db/
 @sample /var/db/hp/

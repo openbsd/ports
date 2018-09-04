@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/09/04 12:46:28 espie Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
 DISTNAME=		skippy-0.5.0
-REVISION=		7
+REVISION=		8
 CATEGORIES=		x11
 
 MASTER_SITES=		http://thegraveyard.org/files/

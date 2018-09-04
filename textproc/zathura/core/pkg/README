@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2014/09/02 13:29:57 landry Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:24 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 With version 0.1.0, zathura has been rearchitectured to use plugins to

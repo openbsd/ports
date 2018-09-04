@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/08/04 15:09:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:11 espie Exp $
 @conflict thinkingrock-<=2.0.1p1
 bin/email
 bin/open
@@ -18,4 +18,4 @@ bin/xdg-settings
 @man man/man1/xdg-open.1
 @man man/man1/xdg-screensaver.1
 @man man/man1/xdg-settings.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

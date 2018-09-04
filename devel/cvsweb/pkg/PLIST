@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/07/26 19:38:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:10 espie Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
 conf/cvsweb/cvsweb.conf.dist
@@ -12,4 +12,4 @@ htdocs/cvsweb/icons/minidir.gif
 htdocs/cvsweb/icons/minitext.gif
 htdocs/cvsweb/icons/text.gif
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

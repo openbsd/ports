@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/03 15:37:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/04 12:46:13 espie Exp $
 
 V =		0.8.2.20180702
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
 DISTNAME =	s25client-${V}
 PKGNAME =	returntotheroots-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 ONLY_FOR_ARCHS =	i386 amd64
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2011/05/11 21:24:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/09/04 12:46:28 espie Exp $
 @pkgpath x11/mplayer,mad
 @pkgpath x11/mplayer,mad,no_x11
 @pkgpath x11/mplayer,sdl,mad
@@ -116,7 +116,7 @@ share/doc/mplayer/windows.html
 share/doc/mplayer/x11.html
 share/doc/mplayer/xv.html
 share/doc/mplayer/zr.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mplayer/
 @sample ${CONFDIR}/
 share/examples/mplayer/codecs.conf

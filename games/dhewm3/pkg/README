@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2016/01/07 10:34:24 pascal Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To play Doom3 on OpenBSD, you need the original game, patched to

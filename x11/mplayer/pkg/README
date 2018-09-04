@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2011/08/17 15:12:15 edd Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:28 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Possible issues with using MPlayer on OpenBSD:

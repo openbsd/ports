@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/05/15 05:15:21 nigel Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/09/04 12:46:13 espie Exp $
 @bin bin/tome4
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/tome4/bootstrap/
 share/tome4/bootstrap/boot.lua
 share/tome4/game/addons/

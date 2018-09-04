@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/09/04 12:46:27 espie Exp $
 @bin bin/gnome-mplayer
 @man man/man1/gnome-mplayer.1
 share/applications/gnome-mplayer.desktop
@@ -12,7 +12,7 @@ share/doc/gnome-mplayer/README
 share/doc/gnome-mplayer/dbus.txt
 share/doc/gnome-mplayer/keyboard_shortcuts.txt
 share/doc/gnome-mplayer/plugin-interaction.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/glib-2.0/schemas/apps.gecko-mediaplayer.preferences.gschema.xml
 share/glib-2.0/schemas/apps.gnome-mplayer.preferences.enums.xml
 share/glib-2.0/schemas/apps.gnome-mplayer.preferences.gschema.xml

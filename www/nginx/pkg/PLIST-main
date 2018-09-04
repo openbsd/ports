@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2016/11/04 22:13:43 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/09/04 12:46:25 espie Exp $
 @pkgpath www/nginx/stable
 @pkgpath www/nginx/devel
 @pkgpath www/nginx
@@ -11,7 +11,7 @@
 @mode
 @owner
 @group
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/nginx/
 @sample ${SYSCONFDIR}/nginx/
 share/nginx/fastcgi_params

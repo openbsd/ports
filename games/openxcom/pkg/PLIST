@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:13 espie Exp $
 @bin bin/openxcom
 share/applications/openxcom.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/openxcom.png
 share/icons/hicolor/48x48/apps/openxcom.png
 share/icons/hicolor/scalable/apps/openxcom.svg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2018/06/27 21:04:01 espie Exp $
+# $OpenBSD: Makefile,v 1.163 2018/09/04 12:46:20 espie Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -19,7 +19,7 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-REVISION-common=	0
+REVISION-common=	1
 REVISION-gui=		1
 REVISION-hpaio=		0
 REVISION-hpcups=	0

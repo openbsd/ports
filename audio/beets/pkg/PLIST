@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/08 13:37:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/09/04 12:46:09 espie Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -222,4 +222,4 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/web/templates/index.html
 lib/python${MODPY_VERSION}/site-packages/beetsplug/zero.py
 @man man/man1/beet.1
 @man man/man5/beetsconfig.5
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

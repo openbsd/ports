@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.4 2012/10/10 21:08:05 landry Exp $
+$OpenBSD: README-main,v 1.5 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 If you encounter strange problems or Thunderbird doesn't start at

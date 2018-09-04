@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/03/20 22:47:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/09/04 12:46:16 espie Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 lib/ejabberd/
@@ -237,7 +237,7 @@ share/doc/ejabberd/msrl-roster-flat.png
 share/doc/ejabberd/webadmmain.png
 share/doc/ejabberd/webadmmainru.png
 share/doc/ejabberd/yozhikheader.png
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ejabberd/
 @sample ${SYSCONFDIR}/ejabberd/
 share/examples/ejabberd/ejabberd.cfg

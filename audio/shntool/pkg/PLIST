@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/18 01:29:56 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:09 espie Exp $
 bin/shncat
 bin/shncmp
 bin/shnconv
@@ -15,4 +15,4 @@ bin/shnstrip
 @bin bin/shntool
 bin/shntrim
 @man man/man1/shntool.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

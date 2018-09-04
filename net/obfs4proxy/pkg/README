@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.2 2018/01/11 03:25:38 danj Exp $
+$OpenBSD: README,v 1.3 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| ${FULLPKGNAME} on OpenBSD
+| ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To use obfs4 as a Bridge Client, please add the following configuration

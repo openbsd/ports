@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/04 15:48:14 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:12 espie Exp $
 
 COMMENT =		replacement for Comic Sans font
 
 TYPEFACE =		comic-neue
 VERSION =		2.3
 DISTNAME =		${TYPEFACE}-${VERSION}
+REVISION =		0
 
 CATEGORIES =		fonts
 

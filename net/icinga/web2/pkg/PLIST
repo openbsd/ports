@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/19 18:55:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:17 espie Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -3003,4 +3003,4 @@ icinga-web2/test/travis_database.sh
 @owner
 @group
 bin/icingacli
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2018/08/23 08:36:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.67 2018/09/04 12:46:10 espie Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -348,7 +348,7 @@ share/bash-completion/completions/gapplication
 share/bash-completion/completions/gdbus
 share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/
 share/gdb/auto-load/
 share/gdb/auto-load/usr/

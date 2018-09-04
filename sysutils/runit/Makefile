@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/08 08:59:16 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2018/09/04 12:46:23 espie Exp $
 
 COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-2.1.2
 CATEGORIES=		sysutils
+REVISION=		0
 
 HOMEPAGE=		http://www.smarden.org/runit/
 

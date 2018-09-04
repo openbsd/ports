@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/28 12:17:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:18 espie Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
@@ -8,7 +8,7 @@ GH_TAGNAME=	3.0
 NDPI_V=		2.0
 # XXX I have a preliminary update to 3.2, but many crashes with SSDP
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 

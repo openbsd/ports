@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:16 espie Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		pavel-odintsov
 GH_PROJECT =		fastnetmon
 GH_COMMIT =		611ccd8bf494d6356901a6ac7cde5998bfe061e2
 DISTNAME =		fastnetmon-1.1.3.1
+REVISION =		0
 
 HOMEPAGE =		https://fastnetmon.com/guides/
 

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:11 espie Exp $
 @bin bin/fs-uae
 @bin bin/fs-uae-device-helper
 share/applications/fs-uae.desktop
 share/doc/fs-uae/
 share/doc/fs-uae/COPYING
 share/doc/fs-uae/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/fs-uae/
 share/examples/fs-uae/fs-uae.conf
 @comment share/examples/fs-uae/fs-uae.conf.beforesubst

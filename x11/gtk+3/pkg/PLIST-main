@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.46 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.47 2018/09/04 12:46:27 espie Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -462,7 +462,7 @@ share/aclocal/gtk-3.0.m4
 share/applications/gtk3-demo.desktop
 share/applications/gtk3-icon-browser.desktop
 share/applications/gtk3-widget-factory.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/gtk+3/
 share/examples/gtk+3/gtk-3.0/
 @sample ${SYSCONFDIR}/gtk-3.0/

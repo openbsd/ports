@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/05/31 14:55:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:23 espie Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -9,6 +9,7 @@ DISTNAME=	v${V}
 PKGNAME=	vmwh-${V}
 EPOCH=		0
 CATEGORIES=	sysutils x11
+REVISION=	0
 
 HOMEPAGE=	https://github.com/jcs/vmwh/
 MAINTAINER=	joshua stein <jcs@openbsd.org>

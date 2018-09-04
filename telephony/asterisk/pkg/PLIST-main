@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.76 2018/07/18 08:47:28 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.77 2018/09/04 12:46:23 espie Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -603,7 +603,7 @@ share/doc/asterisk/UPGRADE-10.txt
 share/doc/asterisk/UPGRADE-11.txt
 share/doc/asterisk/UPGRADE-12.txt
 share/doc/asterisk/UPGRADE.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/asterisk/
 @mode 750
 @group _asterisk

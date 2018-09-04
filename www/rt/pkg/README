@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2011/06/14 13:19:33 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:26 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 In order to complete your rt installations you will first need to

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.66 2018/05/29 14:25:11 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.67 2018/09/04 12:46:15 espie Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -1001,7 +1001,7 @@ share/doc/dovecot/wiki/WhyDoesItNotWork.txt
 share/doc/dovecot/wiki/maildrop.txt
 share/doc/dovecot/wiki/mutt.txt
 share/doc/dovecot/wiki/uw2dovecot.sh.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/dovecot/
 share/dovecot/stopwords/
 share/dovecot/stopwords/stopwords_da.txt

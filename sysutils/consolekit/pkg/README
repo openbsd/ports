@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2015/08/15 11:12:55 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:22 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To enable ConsoleKit in a graphical session, prepend ck-launch-session

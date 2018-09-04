@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 10:34:24 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:12 espie Exp $
 @bin bin/dhewm3
 lib/dhewm3/
 lib/dhewm3/base.so
 lib/dhewm3/d3xp.so
 share/dhewm3/
 share/dhewm3/base/
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/30 16:19:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/09/04 12:46:10 espie Exp $
 
 COMMENT =		Lua procedural language support for PostgreSQL
 
 VERSION =		1.0
 DISTNAME =		pllua-${VERSION}
 PKGNAME =		postgresql-pllua-${VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =		databases
 

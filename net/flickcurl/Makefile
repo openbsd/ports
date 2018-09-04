@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/09/04 12:46:17 espie Exp $
 
 COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.26
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  	flickcurl   2.0      # 0.0
 CATEGORIES =		net

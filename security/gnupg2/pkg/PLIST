@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/12/12 16:22:22 pea Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/09/04 12:46:21 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict gnupg->=2
@@ -60,7 +60,7 @@ share/doc/gnupg2/examples/pwpattern.list
 share/doc/gnupg2/examples/scd-event
 share/doc/gnupg2/examples/trustlist.txt
 share/doc/gnupg2/examples/vsnfd.prf
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/gnupg/
 share/gnupg/distsigkey.gpg
 share/gnupg/help.be.txt

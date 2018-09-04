@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2018/07/29 22:09:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.59 2018/09/04 12:46:15 espie Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -3215,4 +3215,4 @@ roundcubemail/vendor/roundcube/plugin-installer/src/Roundcube/Composer/PluginIns
 roundcubemail/vendor/roundcube/plugin-installer/src/bin/
 roundcubemail/vendor/roundcube/plugin-installer/src/bin/rcubeinitdb.sh
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

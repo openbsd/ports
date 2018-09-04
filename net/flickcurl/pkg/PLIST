@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:17 espie Exp $
 @bin bin/flickcurl
 bin/flickcurl-config
 @bin bin/flickrdf
@@ -10,7 +10,7 @@ lib/pkgconfig/flickcurl.pc
 @man man/man1/flickcurl-config.1
 @man man/man1/flickcurl.1
 @man man/man1/flickrdf.1
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/flickcurl/

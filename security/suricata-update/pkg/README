@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/02/15 18:36:37 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:21 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 suricata-update is the recommended way to install and update rules for

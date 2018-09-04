@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/25 08:46:17 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:23 espie Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1321,7 +1321,7 @@ ${MODRUBY_SITEDIR}/puppet_x.rb
 @man man/man8/puppet-script.8
 @man man/man8/puppet-status.8
 @man man/man8/puppet.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 ${MODRUBY_RELEXAMPLEDIR}-puppet/
 ${MODRUBY_RELEXAMPLEDIR}-puppet/code/
 @sample ${SYSCONFDIR}/puppetlabs/code/environments/

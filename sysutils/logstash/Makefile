@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/17 10:50:12 pvk Exp $
+# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:22 espie Exp $
 
 # N.B. netty-tcnative dynamically linked with libpthread.so.25.1/amd64
 ONLY_FOR_ARCHS =	amd64
@@ -8,6 +8,7 @@ V =			6.2.4
 DISTNAME =		logstash-$V
 PKGNAME =		logstash-${V:S/-/./}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		sysutils
 

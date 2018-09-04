@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.6 2015/05/21 11:44:00 jca Exp $
+$OpenBSD: README,v 1.7 2018/09/04 12:46:09 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 In this package of jackd, the 'dummy' and 'sndio' drivers are supported.

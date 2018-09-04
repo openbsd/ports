@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/07/03 21:46:50 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/09/04 12:46:15 espie Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -1950,7 +1950,7 @@ share/doc/R/manual/images/fig11.png
 share/doc/R/manual/images/fig12.png
 share/doc/R/manual/images/hist.png
 share/doc/R/manual/images/ice.png
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/texmf-local/bibtex/
 share/texmf-local/bibtex/bib/
 share/texmf-local/bibtex/bib/RJournal.bib

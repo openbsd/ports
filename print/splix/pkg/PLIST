@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/25 09:22:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:20 espie Exp $
 @bin libexec/cups/filter/pstoqpdl
 @bin libexec/cups/filter/rastertoqpdl
 share/cups/drv/splix/
@@ -7,4 +7,4 @@ share/cups/drv/splix/splix-lexmark.drv
 share/cups/drv/splix/splix-samsung.drv
 share/cups/drv/splix/splix-toshiba.drv
 share/cups/drv/splix/splix-xerox.drv
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

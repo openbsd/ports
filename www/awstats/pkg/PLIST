@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/12/19 17:31:45 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:24 espie Exp $
 awstats/
 awstats/README.md
 awstats/data/
@@ -844,4 +844,4 @@ awstats/wwwroot/icon/other/vv.png
 awstats/wwwroot/js/
 awstats/wwwroot/js/awstats_misc_tracker.js
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

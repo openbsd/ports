@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 10:41:36 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:10 espie Exp $
 lib/postgresql/pllua.so
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/postgresql/contrib/
 share/postgresql/contrib/pllua.sql

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.8 2017/04/16 09:19:02 jasper Exp $
+$OpenBSD: README,v 1.9 2018/09/04 12:46:28 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 On i386, amd64 and VGA-based alpha, slim is launched on vt05 like xenodm.

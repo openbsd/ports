@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/03 02:10:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/09/04 12:46:12 espie Exp $
 
 COMMENT =	Settlers 1 (Serf City) clone
 DISTNAME =	freeserf-0.1.1.20180302
 CATEGORIES =	games x11
+REVISION =	0
 
 # Switch to GH_TAGNAME or a real tarball once 0.2 is released.
 GH_ACCOUNT =	freeserf

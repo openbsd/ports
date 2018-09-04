@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/08/09 10:58:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2018/09/04 12:46:10 espie Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -14,6 +14,7 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
+REVISION-server=0
 
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \

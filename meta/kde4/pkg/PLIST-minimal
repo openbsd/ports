@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-minimal,v 1.1.1.1 2013/11/25 20:42:17 zhuk Exp $
-share/doc/pkg-readmes/${FULLPKGNAME}
+@comment $OpenBSD: PLIST-minimal,v 1.2 2018/09/04 12:46:16 espie Exp $
+share/doc/pkg-readmes/${PKGSTEM}

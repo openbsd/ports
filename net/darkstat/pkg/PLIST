@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/02/07 08:56:53 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:16 espie Exp $
 @newgroup _darkstat:587
 @newuser _darkstat:587:_darkstat:daemon:Darkstat Network Monitor Account:/nonexistent:/sbin/nologin
 @man man/man8/darkstat.8
 @bin sbin/darkstat
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @rcscript ${RCDIR}/darkstat

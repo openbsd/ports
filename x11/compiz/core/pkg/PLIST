@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/11/26 11:59:32 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:27 espie Exp $
 @bin bin/compiz
 @bin bin/gtk-window-decorator
 include/compiz/
@@ -81,7 +81,7 @@ share/compiz/video.xml
 share/compiz/water.xml
 share/compiz/wobbly.xml
 share/compiz/zoom.xml
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/locale/af/LC_MESSAGES/compiz.mo
 share/locale/ar/LC_MESSAGES/compiz.mo
 share/locale/bg/LC_MESSAGES/compiz.mo

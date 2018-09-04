@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:14 espie Exp $
 @bin bin/scim
 @bin bin/scim-config-agent
 bin/scim-setup
@@ -98,7 +98,7 @@ share/applications/scim-setup.desktop
 share/control-center-2.0/
 share/control-center-2.0/capplets/
 share/control-center-2.0/capplets/scim-setup.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/scim/
 share/examples/scim/config
 @sample ${SYSCONFDIR}/config

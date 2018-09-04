@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.73 2018/07/20 13:37:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.74 2018/09/04 12:46:25 espie Exp $
 @unexec-delete rm -f /var/www/conf/modules/apache-httpd-owncloud.conf
 @sample conf/modules.sample/
 conf/modules.sample/apache-httpd-owncloud.conf.dist
@@ -13517,4 +13517,4 @@ owncloud/version.php
 @owner
 @group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

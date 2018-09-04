@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/11/02 08:44:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/09/04 12:46:20 espie Exp $
 @pkgpath print/a2ps[,a4][,a4dj][,letter][,letterdj]
 @bin bin/a2ps
 bin/card
@@ -221,7 +221,7 @@ share/a2ps/sheets/wdiff.ssh
 share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/a2ps/
 share/examples/a2ps/a2ps-site.cfg
 @sample ${SYSCONFDIR}/a2ps-site.cfg

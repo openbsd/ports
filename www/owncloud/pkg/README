@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.53 2018/07/25 07:52:25 gonzalo Exp $
+$OpenBSD: README,v 1.54 2018/09/04 12:46:25 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 ownCloud is installed under

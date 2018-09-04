@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2018/09/04 12:46:28 espie Exp $
 @conflict gtk+3-*
 @comment conflicts: share/gettext/its/gtkbuilder.{its,loc}
 @comment conflicts: share/glib-2.0/schemas/*.xml
@@ -383,7 +383,7 @@ libexec/installed-tests/gtk-4.0/tools/simplify
 share/applications/gtk4-demo.desktop
 share/applications/gtk4-icon-browser.desktop
 share/applications/gtk4-widget-factory.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/gettext/its/gtkbuilder.its
 share/gettext/its/gtkbuilder.loc
 share/gir-1.0/Gdk-4.0.gir

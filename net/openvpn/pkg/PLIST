@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/03/09 12:37:12 jca Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/09/04 12:46:18 espie Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 include/openvpn/
@@ -20,7 +20,7 @@ share/doc/openvpn/README.IPv6
 share/doc/openvpn/README.down-root
 share/doc/openvpn/README.mbedtls
 share/doc/openvpn/management-notes.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openvpn/
 share/examples/openvpn/sample-config-files/
 share/examples/openvpn/sample-config-files/README

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1 2012/12/31 14:57:15 jasper Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:14 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 GUI

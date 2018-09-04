@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2017/12/22 10:23:26 bcallah Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Postal

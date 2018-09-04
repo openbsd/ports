@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/05/17 09:20:08 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/09/04 12:46:10 espie Exp $
 @option is-branch
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
 bin/puppetdb
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/puppetdb/
 share/examples/puppetdb/puppetlabs/
 share/examples/puppetdb/puppetlabs/puppetdb/

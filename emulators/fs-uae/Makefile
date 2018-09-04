@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/09/04 12:46:11 espie Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -8,7 +8,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>

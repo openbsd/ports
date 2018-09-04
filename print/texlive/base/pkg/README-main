@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.1 2018/07/01 08:59:32 espie Exp $
+$OpenBSD: README-main,v 1.2 2018/09/04 12:46:20 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Texmf Subsets

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/10 20:52:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:23 espie Exp $
 @bin bin/sysmon
 @bin bin/sysmond
 @man man/man1/sysmon.1
 @man man/man5/sysmon.conf.5
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/sysmon/
 share/doc/sysmon/Changes.html
 share/doc/sysmon/LICENSE

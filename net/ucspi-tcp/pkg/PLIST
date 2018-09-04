@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/07/24 17:21:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:19 espie Exp $
 @conflict freedt-<0.22p2
 @conflict tcpcat-*
 @bin bin/addcr
@@ -33,4 +33,4 @@ bin/who@
 @man man/man1/tcpserver.1
 @man man/man1/who@.1
 @man man/man5/tcp-environ.5
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}

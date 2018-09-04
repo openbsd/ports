@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/08/20 07:52:01 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:24 espie Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/gitea
 @bin sbin/gitea
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/gitea/
 share/gitea/conf/
 @owner _gitea

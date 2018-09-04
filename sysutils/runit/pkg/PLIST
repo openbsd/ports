@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/01 14:54:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:23 espie Exp $
 @man man/man8/chpst.8
 @man man/man8/runit-init.8
 @man man/man8/runit.8
@@ -18,7 +18,7 @@ sbin/runsvdir-start
 @bin sbin/sv
 @bin sbin/svlogd
 @bin sbin/utmpset
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/runit/
 share/doc/runit/CHANGES
 share/doc/runit/COPYING

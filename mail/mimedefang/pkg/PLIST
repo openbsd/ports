@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/02/06 16:00:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:46:15 espie Exp $
 @comment non-volatile homedir needed for sa-learn(1), MD sets user_dir to QUARANTINEDIR
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
@@ -21,7 +21,7 @@ bin/watch-multiple-mimedefangs.tcl
 @man man/man8/mimedefang.pl.8
 @man man/man8/watch-mimedefang.8
 @man man/man8/watch-multiple-mimedefangs.8
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/gen-ip-validator.pl
 share/examples/mimedefang/
 share/examples/mimedefang/mail/

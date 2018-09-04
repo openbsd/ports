@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/05/03 01:17:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:18 espie Exp $
 @pkgpath net/nfsen,-main
 @pkgpath net/nfsen,-web
 @conflict nfsen-web-*
@@ -31,7 +31,7 @@ ${P5SITE}/NfSen/Notification.pm
 ${P5SITE}/NfSen/installer-items/
 ${P5SITE}/NfSen/installer-items/CopyRecursive.pm
 ${P5SITE}/NfSen/installer-items/RRDconvertv1.pm
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/nfsen/
 share/examples/nfsen/nfsen.conf
 @sample ${SYSCONFDIR}/nfsen.conf

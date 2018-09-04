@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.12 2017/11/10 20:33:33 jca Exp $
+$OpenBSD: README-main,v 1.13 2018/09/04 12:46:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 The Xfce desktop is composed of 2 meta-packages:

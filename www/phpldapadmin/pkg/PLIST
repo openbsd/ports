@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/11/11 18:17:27 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/09/04 12:46:26 espie Exp $
 @group daemon
 phpldapadmin/
 @comment phpldapadmin/.gitignore
@@ -696,4 +696,4 @@ phpldapadmin/tools/po/messages.header
 phpldapadmin/tools/unserialize.php
 @group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

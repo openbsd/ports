@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:23 espie Exp $
 
 COMMENT =	REST backend for the restic backup tool
 
 V =		0.9.7
 DISTNAME =	rest-server-${V}
 PKGNAME =	restic-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

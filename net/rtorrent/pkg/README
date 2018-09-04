@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2014/07/23 00:44:55 jca Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Note that rTorrent has hash performance issues on BSD systems.

@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2015/05/22 04:17:01 stu Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 The OpenBSD port of the Tcl dynamic language was designed to balance

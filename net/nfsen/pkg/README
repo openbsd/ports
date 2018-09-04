@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2016/04/11 08:51:28 sthen Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Note: the _nfcapd user has been added to group "www".

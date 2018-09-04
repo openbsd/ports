@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/16 20:30:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:23 espie Exp $
 @bin bin/od1000_bootloader
 @bin bin/od1000_flasher
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/od1000_firmware/
 share/od1000_firmware/OVERDRIVE1000_ROM.fd
 share/od1000_firmware/README.txt

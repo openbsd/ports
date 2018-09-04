@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 14:16:29 edd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:11 espie Exp $
 @bin bin/nvim
 @man man/man1/nvim.1
 share/applications/nvim.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/locale/af/LC_MESSAGES/nvim.mo
 share/locale/ca/LC_MESSAGES/nvim.mo
 share/locale/cs.cp1250/

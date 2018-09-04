@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.4 2015/09/28 18:20:29 jasper Exp $
+$OpenBSD: README,v 1.5 2018/09/04 12:46:15 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Z-push is installed under

@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.4 2014/04/19 09:44:11 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2018/09/04 12:46:21 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To be able to interact with the Bacula Director as non-root, the user

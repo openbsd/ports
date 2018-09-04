@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2018/01/28 03:09:12 lteo Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:46:18 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 An up-to-date set of rules is needed for Snort to be useful as an IDS.

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/27 16:51:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:13 espie Exp $
 
 COMMENT =	open source port of Cannon Fodder game
 DISTNAME =	openfodder-1.4.0
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://openfodder.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 15:16:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:17 espie Exp $
 @newgroup _fastnetmon:814
 @newuser _fastnetmon:814:_fastnetmon:daemon:FastNetMon User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/fastnetmon/*
@@ -8,7 +8,7 @@
 @man man/man1/fastnetmon.1
 @man man/man1/fastnetmon_client.1
 @bin sbin/fastnetmon
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/fastnetmon/
 @sample ${SYSCONFDIR}/fastnetmon/
 share/examples/fastnetmon/README.md

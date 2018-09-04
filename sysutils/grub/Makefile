@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/25 12:11:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:22 espie Exp $
 
 BROKEN=		fails with clang, fails with ports-gcc
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	i386
 COMMENT=	GRand Unified Bootloader
 
 DISTNAME=	grub-0.97
-REVISION=	6
+REVISION=	7
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://www.gnu.org/software/grub/

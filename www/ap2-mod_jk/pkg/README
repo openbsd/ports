@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2013/01/25 08:51:16 dcoppa Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:46:24 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Before you can use ap2-mod_jk, you need to enable it in your Apache2

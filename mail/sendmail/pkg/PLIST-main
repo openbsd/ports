@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/08/27 07:45:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/09/04 12:46:15 espie Exp $
 @newgroup _smmsp:745
 @newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/sendmail
@@ -28,7 +28,7 @@ libexec/sendmail/
 @bin sbin/praliases
 sbin/sendmail-disable
 sbin/sendmail-enable
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/sendmail/
 share/doc/sendmail/CACerts
 share/doc/sendmail/FAQ

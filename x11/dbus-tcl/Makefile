@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/25 23:11:32 stu Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:27 espie Exp $
 
 COMMENT =	dbus bindings for Tcl
 
@@ -9,6 +9,7 @@ PKGNAME =	dbus-tcl-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
