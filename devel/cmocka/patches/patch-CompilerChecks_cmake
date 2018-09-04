@@ -1,0 +1,55 @@
+$OpenBSD: patch-CompilerChecks_cmake,v 1.1 2018/09/04 14:07:28 bcallah Exp $
+
+Remove all -Werror= flags.
+
+Index: CompilerChecks.cmake
+--- CompilerChecks.cmake.orig
++++ CompilerChecks.cmake
+@@ -7,39 +7,20 @@ if (UNIX)
+     #
+     # This will prevent that compiler flags are detected incorrectly.
+     #
+-    check_c_compiler_flag("-Werror" REQUIRED_FLAGS_WERROR)
+-    if (REQUIRED_FLAGS_WERROR)
+-        set(CMAKE_REQUIRED_FLAGS "-Werror")
+-
+-        if (PICKY_DEVELOPER)
+-            list(APPEND SUPPORTED_COMPILER_FLAGS "-Werror")
+-        endif()
+-    endif()
+-
+     add_c_compiler_flag("-std=gnu99" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-pedantic" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-pedantic-errors" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wall" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wshadow" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wmissing-prototypes" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wcast-align" SUPPORTED_COMPILER_FLAGS)
+     #add_c_compiler_flag("-Wcast-qual" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=address" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wstrict-prototypes" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=strict-prototypes" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wwrite-strings" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=write-strings" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror-implicit-function-declaration" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wpointer-arith" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=pointer-arith" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wdeclaration-after-statement" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=declaration-after-statement" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wreturn-type" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=return-type" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wuninitialized" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=uninitialized" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wimplicit-fallthrough" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=strict-overflow" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wstrict-overflow=2" SUPPORTED_COMPILER_FLAGS)
+     add_c_compiler_flag("-Wno-format-zero-length" SUPPORTED_COMPILER_FLAGS)
+ 
+@@ -49,7 +30,6 @@ if (UNIX)
+         set(CMAKE_REQUIRED_FLAGS "${CMAKE_REQUIRED_FLAGS} -Wformat")
+     endif()
+     add_c_compiler_flag("-Wformat-security" SUPPORTED_COMPILER_FLAGS)
+-    add_c_compiler_flag("-Werror=format-security" SUPPORTED_COMPILER_FLAGS)
+ 
+     # Allow zero for a variadic macro argument
+     add_c_compiler_flag("-Wno-gnu-zero-variadic-macro-arguments" SUPPORTED_COMPILER_FLAGS)
