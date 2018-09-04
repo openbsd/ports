@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2018/08/26 15:30:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.387 2018/09/04 21:56:32 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -85,6 +85,7 @@
      SUBDIR += egoboo
      SUBDIR += einstein
      SUBDIR += eliot
+     SUBDIR += endless-sky
      SUBDIR += enigma
      SUBDIR += extremetuxracer
      SUBDIR += ezquake
