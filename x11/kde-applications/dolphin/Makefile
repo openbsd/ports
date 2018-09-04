@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/03 18:59:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/04 05:54:42 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  dolphinprivate            0.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.0 # 5.0
@@ -25,17 +25,16 @@ WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 MODULES =	multimedia/phonon
 
 BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/baloo \
 		devel/kf5/kfilemetadata \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/baloo \
 		devel/kf5/kfilemetadata \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic
-
+# XXX devel/kf5/baloo
+# kf5-baloo-5.46.0p0v0 conflicts with baloo-4.14.3 in a bulk build
 LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/attica \
 		devel/kf5/kauth \
