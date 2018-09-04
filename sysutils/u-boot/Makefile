@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.39 2018/08/14 07:23:54 jsg Exp $
+#	$OpenBSD: Makefile,v 1.40 2018/09/04 10:32:15 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,19 +6,13 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.09-rc2
+VERSION=	2018.09-rc3
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
-
-PATCHFILES=	u-boot-efi_loader_relocate.patch:1
-
-MASTER_SITES1=	https://patchwork.ozlabs.org/patch/953493/mbox/?/
-
-PATCH_DIST_STRIP=	-p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
