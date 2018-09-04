@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.16 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.17 2018/09/04 07:20:43 robert Exp $
 
 Index: base/threading/platform_thread_linux.cc
 --- base/threading/platform_thread_linux.cc.orig
@@ -13,6 +13,24 @@ Index: base/threading/platform_thread_linux.cc
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
+@@ -27,7 +29,7 @@
+ 
+ namespace base {
+ namespace {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+ const FilePath::CharType kCgroupDirectory[] =
+     FILE_PATH_LITERAL("/sys/fs/cgroup");
+ 
+@@ -98,7 +100,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+ };
+ 
+ bool SetCurrentThreadPriorityForPlatform(ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   SetThreadCgroupsForThreadPriority(PlatformThread::CurrentId(), priority);
+   return priority == ThreadPriority::REALTIME_AUDIO &&
+          pthread_setschedparam(pthread_self(), SCHED_RR, &kRealTimePrio) == 0;
 @@ -128,7 +130,7 @@ bool GetCurrentThreadPriorityForPlatform(ThreadPriorit
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
@@ -22,3 +40,13 @@ Index: base/threading/platform_thread_linux.cc
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
+@@ -157,7 +159,9 @@ void PlatformThread::SetThreadPriority(PlatformThreadI
+   // priority.
+   CHECK_NE(thread_id, getpid());
+ 
++#if !defined(OS_BSD)
+   SetThreadCgroupsForThreadPriority(thread_id, priority);
++#endif
+ 
+   const int nice_setting = internal::ThreadPriorityToNiceValue(priority);
+   if (setpriority(PRIO_PROCESS, thread_id, nice_setting)) {

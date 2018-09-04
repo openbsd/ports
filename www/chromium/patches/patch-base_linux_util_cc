@@ -1,8 +1,26 @@
-$OpenBSD: patch-base_linux_util_cc,v 1.5 2017/12/16 15:34:39 robert Exp $
+$OpenBSD: patch-base_linux_util_cc,v 1.6 2018/09/04 07:20:43 robert Exp $
 Index: base/linux_util.cc
 --- base/linux_util.cc.orig
 +++ base/linux_util.cc
-@@ -116,7 +116,7 @@ char g_linux_distro[kDistroSize] =
+@@ -76,6 +76,7 @@ class LinuxDistroHelper {
+ #endif  // if defined(OS_LINUX)
+ 
+ bool GetTasksForProcess(pid_t pid, std::vector<pid_t>* tids) {
++#if !defined(OS_BSD)
+   char buf[256];
+   snprintf(buf, sizeof(buf), "/proc/%d/task", pid);
+ 
+@@ -95,6 +96,9 @@ bool GetTasksForProcess(pid_t pid, std::vector<pid_t>*
+   }
+   closedir(task);
+   return true;
++#else
++  return false;
++#endif
+ }
+ 
+ }  // namespace
+@@ -116,7 +120,7 @@ char g_linux_distro[kDistroSize] =
  #endif
  
  std::string GetLinuxDistro() {

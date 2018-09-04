@@ -1,10 +1,13 @@
-# $OpenBSD: unveil.main,v 1.1 2018/08/10 14:57:53 robert Exp $
+# $OpenBSD: unveil.main,v 1.2 2018/09/04 07:20:43 robert Exp $
 
 # needed for chromium
 /etc/chromium r
 
 # needed for fontconfig
 /etc/fonts r
+
+# needed for dbus
+/etc/machine-id r
 
 # needed for IPC communication, X.Org, etc.
 /tmp rwc
