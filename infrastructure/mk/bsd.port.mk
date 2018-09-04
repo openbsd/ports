@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1439 2018/09/04 12:41:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1440 2018/09/04 16:33:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1873,7 +1873,7 @@ _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
-	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i FULLPKGPATH \
+	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i PKGSTEM -i FULLPKGPATH \
 	-i LOCALSTATEDIR -i MACHINE_ARCH \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
