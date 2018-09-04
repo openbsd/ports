@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.44 2018/08/29 17:10:22 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2018/09/04 07:13:15 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
 GNOME_VERSION =	0.12.4
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
+
+
+# Fix build with webkitgtk >= 2.22.0
+MASTER_SITES0=		https://gitlab.gnome.org/GNOME/geary/commit/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=		5d0f711426d76f878cf9b71f7e8f785199c7cde1.patch:0 \
+			0d966950a2cba888873cd3a7f4f42bb7a017dc6d.patch:0 \
+			e091f24b00ec421e1aadd5e360d1550e658ad5ef.patch:0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
