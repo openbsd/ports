@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.17 2018/05/27 11:56:27 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.18 2018/09/04 12:41:51 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -283,6 +283,9 @@ sub special_case
 {
 	my ($subst, $k, $v, $string) = @_;
 	if ($k eq 'FULLPKGNAME' && $string =~ m,^share/doc/pkg-readmes/,) {
+		return 1;
+	}
+	if ($k eq 'PKGSTEM' && $string =~ m,^share/doc/pkg-readmes/,) {
 		return 1;
 	}
 	if ($k eq 'MACHINE_ARCH' && $string =~ m/\Q$v\E-openbsd/) {

@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.24 2018/05/26 14:20:43 espie Exp $
+# $OpenBSD: Info.pm,v 1.25 2018/09/04 12:41:51 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -76,6 +76,7 @@ our $vars = {
     PERMIT_PACKAGE_FTP=> 'YesKeyVar',
     PKGNAME => 'AnyVar',
     PKGSPEC => 'AnyVar',
+    PKGSTEM => 'AnyVar',
     PREFIX => 'PrefixKeyVar',
     PKG_ARCH => 'ArchKeyVar',
     PORTROACH => 'DefinedVar',

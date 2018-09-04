@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1438 2018/08/09 19:53:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1439 2018/09/04 12:41:51 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -122,7 +122,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
-	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PREFIX \
+	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PKGSTEM PREFIX \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR \
 	EPOCH REVISION STATIC_PLIST PKG_ARCH
 .endif
@@ -636,6 +636,8 @@ FULLPKGNAME := ${FULLPKGNAME}v${EPOCH}
 PKGSPEC ?= ${FULLPKGNAME:C/-[0-9].*/-*/}
 PKGSPEC- = ${PKGSPEC}
 FULLPKGNAME- = ${FULLPKGNAME}
+PKGSTEM ?= ${FULLPKGNAME:C/-[0-9].*//}
+PKGSTEM- = ${PKGSTEM}
 .else
 .  for _s in ${MULTI_PACKAGES}
 .    if defined(FULLPKGNAME${_s})
@@ -666,6 +668,7 @@ FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}v${EPOCH${_s}}
 .      endif
 .    endif
 PKGSPEC${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*/-*/}
+PKGSTEM${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*//}
 .  endfor
 .endif
 
@@ -1006,7 +1009,7 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 # Create the generic variable substitution list
 SUBST_VARS += ARCH BASE_PKGPATH FLAVOR_EXT FULLPKGNAME HOMEPAGE \
 	LOCALBASE LOCALSTATEDIR MACHINE_ARCH MAINTAINER \
-	PREFIX RCDIR SYSCONFDIR TRUEPREFIX X11BASE
+	PREFIX RCDIR SYSCONFDIR TRUEPREFIX X11BASE PKGSTEM
 
 _PKG_ADD_AUTO ?=
 .if !empty(_DEPENDENCY_STACK)
@@ -2825,14 +2828,14 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 # cookies
 _internal-generate-readmes: ${_FAKE_COOKIE}
 .if ${MULTI_PACKAGES} == "-"
-	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
+	@r=${WRKINST}${_README_DIR}/${PKGSTEM}; \
 	if test -e ${PKGDIR}/README; then \
 		echo "Installing ${PKGDIR}/README as $$r"; \
 		${_PBUILD} ${SUBST_CMD} -m ${SHAREMODE} -c ${PKGDIR}/README $$r; \
 	fi
 .else
 .  for _s in ${MULTI_PACKAGES}
-	@r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
+	@r=${WRKINST}${_README_DIR}/${PKGSTEM${_s}}; \
 	if test -e ${PKGDIR}/README${_s}; then \
 		echo "Installing ${PKGDIR}/README${_s} as $$r"; \
 		${_PBUILD} ${SUBST_CMD${_s}} -m ${SHAREMODE} -c ${PKGDIR}/README${_s} $$r; \
