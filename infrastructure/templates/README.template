@@ -7,10 +7,10 @@ details:
 - rulers should be the length of the above string.
 
 ------------------------8<------------------------
-$OpenBSD: README.template,v 1.5 2016/08/27 09:47:26 ajacoutot Exp $
+$OpenBSD: README.template,v 1.6 2018/09/04 13:40:26 ajacoutot Exp $
 
 +-------------------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
 Section name 1
