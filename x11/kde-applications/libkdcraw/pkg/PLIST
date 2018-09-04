@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/04 05:30:27 rsadowski Exp $
+include/KF5/
+include/KF5/KDCRAW/
+include/KF5/KDCRAW/KDCRAW/
+include/KF5/KDCRAW/KDCRAW/DcrawInfoContainer
+include/KF5/KDCRAW/KDCRAW/KDcraw
+include/KF5/KDCRAW/KDCRAW/RawDecodingSettings
+include/KF5/KDCRAW/KDCRAW/RawFiles
+include/KF5/KDCRAW/kdcraw/
+include/KF5/KDCRAW/kdcraw/dcrawinfocontainer.h
+include/KF5/KDCRAW/kdcraw/kdcraw.h
+include/KF5/KDCRAW/kdcraw/libkdcraw_export.h
+include/KF5/KDCRAW/kdcraw/rawdecodingsettings.h
+include/KF5/KDCRAW/kdcraw/rawfiles.h
+include/KF5/libkdcraw_version.h
+lib/cmake/KF5KDcraw/
+lib/cmake/KF5KDcraw/KF5KDcrawConfig.cmake
+lib/cmake/KF5KDcraw/KF5KDcrawConfigVersion.cmake
+lib/cmake/KF5KDcraw/KF5KDcrawTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5KDcraw/KF5KDcrawTargets.cmake
+@lib lib/libKF5KDcraw.so.${LIBKF5KDcraw_VERSION}
