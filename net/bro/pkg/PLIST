@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/08/30 07:33:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:53:16 espie Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @rcscript ${RCDIR}/bro
 @bin bin/adtrace
@@ -716,7 +716,7 @@ share/broctl/scripts/send-mail
 share/broctl/scripts/set-bro-path
 share/broctl/scripts/stats-to-csv
 share/broctl/scripts/update
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/bro/
 @sample ${SYSCONFDIR}/bro/
 share/examples/bro/broccoli.conf

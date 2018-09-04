@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2017/02/07 21:40:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2018/09/04 12:53:16 espie Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @comment done this way (rather than SYSCONFDIR/*) for safety...
@@ -15,7 +15,7 @@ share/doc/icinga/Changelog_json
 share/doc/icinga/LICENSE
 share/doc/icinga/README
 share/doc/icinga/UPGRADING
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/icinga/
 @sample ${SYSCONFDIR}/modules/
 @sample ${SYSCONFDIR}/objects/

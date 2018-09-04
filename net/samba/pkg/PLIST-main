@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2018/08/29 11:40:23 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2018/09/04 12:53:16 espie Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -1244,7 +1244,7 @@ sbin/samba_spnupdate
 sbin/samba_upgradedns
 @bin sbin/smbd
 @bin sbin/winbindd
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 @comment share/doc/samba/
 share/examples/samba/
 share/examples/samba/smb.conf.default

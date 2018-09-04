@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/08/15 22:15:02 bcallah Exp $
+$OpenBSD: README,v 1.2 2018/09/04 12:53:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To run the game you need the original Quake 1 data files

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2018/08/30 06:34:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2018/09/04 12:53:16 espie Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -553,7 +553,7 @@ share/doc/kopano/ssl-certificates.sh
 @mode 0555
 share/doc/kopano/update-resource-recipients
 @mode
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/kopano/
 @sample ${SYSCONFDIR}/kopano/
 @mode 750

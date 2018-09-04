@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.31 2016/04/29 09:39:54 sthen Exp $
+$OpenBSD: README-main,v 1.32 2018/09/04 12:53:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Getting Started

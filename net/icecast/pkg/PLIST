@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/01/19 09:14:32 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:53:16 espie Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
 @bin bin/icecast
@@ -42,7 +42,7 @@ share/doc/icecast/relaying.html
 share/doc/icecast/server-stats.html
 share/doc/icecast/win32.html
 share/doc/icecast/yp.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/icecast/
 @owner _icecast
 @group _icecast

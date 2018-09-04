@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.8 2016/12/12 15:12:04 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2018/09/04 12:53:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Note that most broctl(8) commands must be run as root.

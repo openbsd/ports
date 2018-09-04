@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/03 19:51:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/04 12:53:16 espie Exp $
 
 COMMENT =	modern QuakeWorld client
 DISTNAME =	ezquake-${GH_TAGNAME}
@@ -6,6 +6,7 @@ DISTNAME =	ezquake-${GH_TAGNAME}
 GH_ACCOUNT =	ezQuake
 GH_PROJECT =	ezquake-source
 GH_TAGNAME =	3.1
+REVISION =	0
 
 CATEGORIES =	games
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/07/13 08:30:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/09/04 12:53:16 espie Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -103,7 +103,7 @@ share/doc/cups-filters/COPYING
 share/doc/cups-filters/INSTALL
 share/doc/cups-filters/NEWS
 share/doc/cups-filters/README
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/cups-filters/
 share/examples/cups-filters/cups/
 @mode 0644

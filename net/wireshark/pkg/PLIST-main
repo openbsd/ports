@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2018/09/04 12:53:16 espie Exp $
 @bin bin/wireshark
 @man man/man1/wireshark.1
 share/appdata/
 share/appdata/wireshark.appdata.xml
 share/applications/wireshark.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/wireshark.png
 share/icons/hicolor/128x128/mimetypes/application-wireshark-doc.png
 share/icons/hicolor/16x16/apps/wireshark.png

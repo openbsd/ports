@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/08/31 08:51:42 robert Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:53:16 espie Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -3333,4 +3333,4 @@ kopano-webapp/server/language/zh_CN.UTF-8/language.txt
 kopano-webapp/server/manifest.dtd
 kopano-webapp/version
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}

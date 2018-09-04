@@ -1,7 +1,7 @@
-$OpenBSD: README-main,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
+$OpenBSD: README-main,v 1.2 2018/09/04 12:53:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 *** Upgrading users: refer to kopano documentation on the web to check

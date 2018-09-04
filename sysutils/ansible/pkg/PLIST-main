@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/09/03 14:54:40 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/09/04 12:53:16 espie Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -5994,7 +5994,7 @@ share/doc/ansible/html/vmware/vmware_requirements.html
 share/doc/ansible/html/vmware/vmware_scenario_1.html
 share/doc/ansible/html/vmware/vmware_scenarios.html
 share/doc/ansible/html/vmware/vmware_troubleshooting.html
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/
 share/examples/ansible/ansible.cfg

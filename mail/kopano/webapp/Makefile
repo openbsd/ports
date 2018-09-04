@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/08/31 08:51:42 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2018/09/04 12:53:16 espie Exp $
 
 COMMENT=	next generation web interface for Kopano
 
@@ -21,6 +21,7 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 MINOR=		1724
 RPMVER=		981.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
+REVISION=	0
 
 EXTRACT_SUFX=	# empty
 

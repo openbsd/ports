@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2018/08/30 07:33:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/09/04 12:53:16 espie Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.5.5
+REVISION=		0
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 

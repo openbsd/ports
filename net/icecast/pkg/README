@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.5 2015/04/15 13:07:09 jasper Exp $
+$OpenBSD: README,v 1.6 2018/09/04 12:53:16 espie Exp $
 
 +-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Icecast v2 is very versatile and can be used in many different
