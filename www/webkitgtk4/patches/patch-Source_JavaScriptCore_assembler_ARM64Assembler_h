@@ -1,14 +1,14 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_ARM64Assembler_h,v 1.2 2017/09/15 07:43:42 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARM64Assembler_h,v 1.3 2018/09/04 07:12:47 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/assembler/ARM64Assembler.h
 --- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2856,6 +2856,8 @@ class ARM64Assembler { (public)
+@@ -2863,6 +2863,8 @@ class ARM64Assembler { (public)
      {
  #if OS(IOS)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);
 +#elif OS(FREEBSD) || OS(NETBSD) || OS(OPENBSD)
-+	__clear_cache(code, reinterpret_cast<char*>(code) + size);
++        __clear_cache(code, reinterpret_cast<char*>(code) + size);
+ #elif OS(FUCHSIA)
+         zx_cache_flush(code, size, ZX_CACHE_FLUSH_INSN);
  #elif OS(LINUX)
-         size_t page = pageSize();
-         uintptr_t current = reinterpret_cast<uintptr_t>(code);

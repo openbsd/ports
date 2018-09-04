@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.12 2017/09/15 07:43:42 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.13 2018/09/04 07:12:47 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 
@@ -22,21 +22,12 @@ Index: Source/cmake/OptionsCommon.cmake
      endif ()
  endif ()
  
-@@ -116,7 +116,7 @@ endif ()
- 
- # Macros for determining HAVE values.
- macro(_HAVE_CHECK_INCLUDE _variable _header)
--    check_include_file(${_header} ${_variable}_value)
-+    check_include_files("${_header}" ${_variable}_value)
-     SET_AND_EXPOSE_TO_BUILD(${_variable} ${_variable}_value)
- endmacro()
- 
-@@ -143,7 +143,7 @@ _HAVE_CHECK_INCLUDE(HAVE_FEATURES_H features.h)
- _HAVE_CHECK_INCLUDE(HAVE_ERRNO_H errno.h)
- _HAVE_CHECK_INCLUDE(HAVE_LANGINFO_H langinfo.h)
- _HAVE_CHECK_INCLUDE(HAVE_MMAP sys/mman.h)
--_HAVE_CHECK_INCLUDE(HAVE_PTHREAD_NP_H pthread_np.h)
-+_HAVE_CHECK_INCLUDE(HAVE_PTHREAD_NP_H "pthread.h;pthread_np.h")
- _HAVE_CHECK_INCLUDE(HAVE_STRINGS_H strings.h)
- _HAVE_CHECK_INCLUDE(HAVE_SYS_PARAM_H sys/param.h)
- _HAVE_CHECK_INCLUDE(HAVE_SYS_TIME_H sys/time.h)
+@@ -117,7 +117,7 @@ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_FEATURES_H features.h)
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_ERRNO_H errno.h)
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_LANGINFO_H langinfo.h)
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_MMAP sys/mman.h)
+-WEBKIT_CHECK_HAVE_INCLUDE(HAVE_PTHREAD_NP_H pthread_np.h)
++WEBKIT_CHECK_HAVE_INCLUDE(HAVE_PTHREAD_NP_H "pthread.h;pthread_np.h")
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_STRINGS_H strings.h)
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_SYS_PARAM_H sys/param.h)
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_SYS_TIME_H sys/time.h)

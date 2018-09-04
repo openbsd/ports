@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/05/15 06:51:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/09/04 07:12:47 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -10,6 +10,17 @@ include/webkitgtk-${API}/JavaScriptCore/JSTypedArray.h
 include/webkitgtk-${API}/JavaScriptCore/JSValueRef.h
 include/webkitgtk-${API}/JavaScriptCore/JavaScript.h
 include/webkitgtk-${API}/JavaScriptCore/WebKitAvailability.h
+include/webkitgtk-${API}/jsc/
+include/webkitgtk-${API}/jsc/JSCAutocleanups.h
+include/webkitgtk-${API}/jsc/JSCClass.h
+include/webkitgtk-${API}/jsc/JSCContext.h
+include/webkitgtk-${API}/jsc/JSCDefines.h
+include/webkitgtk-${API}/jsc/JSCException.h
+include/webkitgtk-${API}/jsc/JSCValue.h
+include/webkitgtk-${API}/jsc/JSCVersion.h
+include/webkitgtk-${API}/jsc/JSCVirtualMachine.h
+include/webkitgtk-${API}/jsc/JSCWeakValue.h
+include/webkitgtk-${API}/jsc/jsc.h
 include/webkitgtk-${API}/webkit2/
 include/webkitgtk-${API}/webkit2/WebKitApplicationInfo.h
 include/webkitgtk-${API}/webkit2/WebKitAuthenticationRequest.h

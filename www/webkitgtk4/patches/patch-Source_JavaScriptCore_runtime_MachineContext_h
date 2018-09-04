@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.3 2018/05/17 09:14:05 kettenis Exp $
+$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.4 2018/09/04 07:12:47 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -146,6 +146,24 @@ inline void*& stackPointer(mcontext_t& machineContext)
+@@ -188,6 +188,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -25,10 +25,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif defined(__GLIBC__) || defined(__BIONIC__)
+ #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  #if CPU(X86)
-@@ -251,6 +269,24 @@ inline void*& framePointer(mcontext_t& machineContext)
+@@ -335,6 +353,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -50,10 +50,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif defined(__GLIBC__) || defined(__BIONIC__)
+ #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -354,6 +390,24 @@ inline void*& instructionPointer(mcontext_t& machineCo
+@@ -482,6 +518,24 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -75,10 +75,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif defined(__GLIBC__) || defined(__BIONIC__)
+ #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -466,6 +520,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -639,6 +693,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -100,10 +100,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif defined(__GLIBC__) || defined(__BIONIC__)
+ #elif OS(FUCHSIA) || defined(__GLIBC__) || defined(__BIONIC__)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -579,6 +651,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+@@ -752,6 +824,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
  #elif CPU(MIPS)
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
