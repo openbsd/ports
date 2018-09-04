@@ -1,13 +1,20 @@
-SEC is a free and platform independent event correlation tool that was
-designed to fill the gap between commercial event correlation systems
-and homegrown solutions that usually comprise of a few simple shell
-scripts.  SEC accepts input from regular files, named pipes, and
-standard input, making it suitable to employ with any application that
-is able to write its output to a file stream.  The SEC configuration is
-stored in text files as rules, each rule specifying an event matching
-condition, an action list, and optionally a Boolean expression whose
-truth value decides whether the rule can be applied at a given moment.
-Regular expressions are used for defining event matching conditions, and
-output events can be produced by executing user-specified shell scripts
-or programs (e.g., snmptrap or mail), by writing messages to pipes or
-files, and by various other means.
+SEC is an event correlation tool for advanced event processing which can be
+harnessed for event log monitoring, for network and security management, for
+fraud detection, and for any other task which involves event correlation. Event
+correlation is a procedure where a stream of events is processed, in order to
+detect (and act on) certain event groups that occur within predefined time
+windows. Unlike many other event correlation products which are heavyweight
+solutions, SEC is a lightweight and platform-independent event correlator which
+runs as a single process. The user can start it as a daemon, employ it in shell
+pipelines, execute it interactively in a terminal, run many SEC processes
+simultaneously for different tasks, and use it in a wide variety of other ways.
+
+SEC reads lines from files, named pipes, or standard input, matches the lines
+with patterns (like regular expressions or Perl subroutines) for recognizing
+input events, and correlates events according to the rules in its configuration
+file(s). SEC can produce output by executing external programs (e.g., snmptrap
+or mail), by writing to files, by sending data to TCP and UDP based servers, by
+calling precompiled Perl subroutines, etc.
+
+Note that the --dumpfjson option requires the presence of the Perl JSON module,
+available via the p5-JSON package.
