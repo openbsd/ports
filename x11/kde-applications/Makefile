@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/09/02 15:33:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2018/09/04 05:31:36 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -162,7 +162,7 @@
      #SUBDIR += libgravatar
      #SUBDIR += libkcddb
      #SUBDIR += libkcompactdisc
-     #SUBDIR += libkdcraw
+     SUBDIR += libkdcraw
      #SUBDIR += libkdegames
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
