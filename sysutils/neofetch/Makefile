@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/18 21:52:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/04 20:41:42 bcallah Exp $
 
 COMMENT =	system information tool written in bash
 CATEGORIES =	sysutils misc
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	dylanaraps
 GH_PROJECT =	neofetch
