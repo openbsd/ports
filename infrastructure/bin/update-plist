@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.169 2018/07/11 11:37:03 espie Exp $
+# $OpenBSD: update-plist,v 1.170 2018/09/05 10:31:55 sthen Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1125,7 +1125,7 @@ sub new
 	if (defined $state->opt('j')) {
 		$ncpu = $state->opt('j');
 	} else {
-		$ncpu = `sysctl -n hw.ncpu`;
+		$ncpu = `sysctl -n hw.ncpuonline`;
 		chomp $ncpu;
 	}
 	bless {result => {}, params => [], bypath => {}, queue => [],
