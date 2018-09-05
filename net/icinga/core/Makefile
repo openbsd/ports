@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2018/08/28 21:08:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2018/09/05 09:39:04 espie Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -11,7 +11,7 @@ PKGNAME-main =		icinga-${GH_TAGNAME:S/v//}
 PKGNAME-cgi =		icinga-cgi-${GH_TAGNAME:S/v//}
 PKGNAME-ido =		icinga-idoutils-${GH_TAGNAME:S/v//}
 REVISION-ido =		0
-REVISION-main =		2
+REVISION-main =		3
 
 WANTLIB =		c crypto m pthread ssl z
 
