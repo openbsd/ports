@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2018/05/21 14:30:43 juanfra Exp $
+# $OpenBSD: Makefile,v 1.31 2018/09/05 21:39:18 juanfra Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.8.9
+V=		4.9.0
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--includedir=${PREFIX}/include/gambit/ \
 		--libdir=${PREFIX}/lib/gambit/ \
 		--enable-c-opt="${CFLAGS}"
+CONFIGURE_ENV=	CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 MAKE_FILE=	${WRKSRC}/makefile
 
