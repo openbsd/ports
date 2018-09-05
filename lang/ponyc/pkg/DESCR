@@ -1,0 +1,5 @@
+Pony is an open-source, object-oriented, actor-model,
+capabilities-secure, high-performance programming language. Pony is type
+safe, memory sage, exception safe, and can natively call C libraries.
+The overall philosophy of Pony is to get stuff done, and to guarantee
+the result is correct.

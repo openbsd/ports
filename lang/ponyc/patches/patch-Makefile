@@ -1,0 +1,40 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/09/05 18:11:26 bcallah Exp $
+
+Remove hardcoded -O3 and -Werror flags.
+Remove -march and -mtune flags.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -106,9 +106,9 @@ else
+ endif
+ 
+ LIB_EXT ?= a
+-BUILD_FLAGS = -march=$(arch) -mtune=$(tune) -Werror -Wconversion \
++BUILD_FLAGS = -Wconversion \
+   -Wno-sign-conversion -Wextra -Wall
+-LINKER_FLAGS = -march=$(arch) -mtune=$(tune) $(LDFLAGS)
++LINKER_FLAGS = $(LDFLAGS)
+ AR_FLAGS ?= rcs
+ ALL_CFLAGS = -std=gnu11 -fexceptions \
+   -DPONY_VERSION=\"$(tag)\" -DLLVM_VERSION=\"$(llvm_version)\" \
+@@ -201,8 +201,8 @@ ifdef config
+ endif
+ 
+ ifeq ($(config),release)
+-  BUILD_FLAGS += -O3 -DNDEBUG
+-  LL_FLAGS += -O3
++  BUILD_FLAGS += -DNDEBUG
++  LL_FLAGS += -O2
+ 
+   ifeq ($(lto),yes)
+     BUILD_FLAGS += -flto -DPONY_USE_LTO
+@@ -819,7 +819,7 @@ $($(1))/libponyrt.bc: $(depends) $(bcfiles)
+ 	@echo 'Generating bitcode for libponyrt'
+ 	$(SILENT)$(LLVM_LINK) -o $$@ $(bcfiles)
+     ifeq ($(config),release)
+-	$(SILENT)$(LLVM_OPT) -O3 -o $$@ $$@
++	$(SILENT)$(LLVM_OPT) -o $$@ $$@
+     endif
+ libponyrt: $($(1))/libponyrt.bc $($(1))/libponyrt.$(LIB_EXT)
+   else
