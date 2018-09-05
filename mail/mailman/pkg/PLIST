@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.31 2018/09/05 13:37:08 okan Exp $
 @pkgpath mail/mailman,postfix
 @pkgpath mail/mailman,sendmail
 @pkgpath mail/mailman,smtpd
@@ -6,6 +6,7 @@
 @newgroup _mailmanq:769
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
+@rcscript ${RCDIR}/mailman
 @owner _mailman
 @group _mailman
 lib/mailman/
@@ -334,7 +335,7 @@ lib/mailman/Mailman/i18n.pyc
 @comment lib/mailman/Mailman/mm_cfg.py
 lib/mailman/Mailman/mm_cfg.py.dist
 @mode 664
-@sample ${PREFIX}/lib/mailman/Mailman/mm_cfg.py
+@sample lib/mailman/Mailman/mm_cfg.py
 @comment lib/mailman/Mailman/mm_cfg.pyc
 @mode
 lib/mailman/Mailman/versions.py
@@ -429,8 +430,10 @@ lib/mailman/messages/ar/LC_MESSAGES/
 @mode
 lib/mailman/messages/ar/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ar/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/ast/
 lib/mailman/messages/ast/LC_MESSAGES/
+@mode
 lib/mailman/messages/ast/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ast/LC_MESSAGES/mailman.po
 @mode 775
@@ -458,10 +461,18 @@ lib/mailman/messages/de/LC_MESSAGES/
 lib/mailman/messages/de/LC_MESSAGES/mailman.mo
 lib/mailman/messages/de/LC_MESSAGES/mailman.po
 lib/mailman/messages/de/README.de
+@mode 775
 lib/mailman/messages/el/
 lib/mailman/messages/el/LC_MESSAGES/
+@mode
 lib/mailman/messages/el/LC_MESSAGES/mailman.mo
 lib/mailman/messages/el/LC_MESSAGES/mailman.po
+@mode 775
+lib/mailman/messages/eo/
+lib/mailman/messages/eo/LC_MESSAGES/
+@mode
+lib/mailman/messages/eo/LC_MESSAGES/mailman.mo
+lib/mailman/messages/eo/LC_MESSAGES/mailman.po
 @mode 775
 lib/mailman/messages/es/
 lib/mailman/messages/es/LC_MESSAGES/
@@ -482,8 +493,10 @@ lib/mailman/messages/eu/LC_MESSAGES/
 lib/mailman/messages/eu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/eu/LC_MESSAGES/mailman.po
 lib/mailman/messages/eu/README.eu
+@mode 775
 lib/mailman/messages/fa/
 lib/mailman/messages/fa/LC_MESSAGES/
+@mode
 lib/mailman/messages/fa/LC_MESSAGES/mailman.mo
 lib/mailman/messages/fa/LC_MESSAGES/mailman.po
 @mode 775
@@ -500,12 +513,16 @@ lib/mailman/messages/fr/LC_MESSAGES/
 lib/mailman/messages/fr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/fr/LC_MESSAGES/mailman.po
 lib/mailman/messages/fr/README.fr
+@mode 775
 lib/mailman/messages/gl/
 lib/mailman/messages/gl/LC_MESSAGES/
+@mode
 lib/mailman/messages/gl/LC_MESSAGES/mailman.mo
 lib/mailman/messages/gl/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/he/
 lib/mailman/messages/he/LC_MESSAGES/
+@mode
 lib/mailman/messages/he/LC_MESSAGES/mailman.mo
 lib/mailman/messages/he/LC_MESSAGES/mailman.po
 @mode 775
@@ -597,8 +614,10 @@ lib/mailman/messages/ru/LC_MESSAGES/
 lib/mailman/messages/ru/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ru/LC_MESSAGES/mailman.po
 lib/mailman/messages/ru/README.ru
+@mode 775
 lib/mailman/messages/sk/
 lib/mailman/messages/sk/LC_MESSAGES/
+@mode
 lib/mailman/messages/sk/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sk/LC_MESSAGES/mailman.po
 lib/mailman/messages/sk/README.sk
@@ -1044,6 +1063,44 @@ lib/mailman/templates/en/unsub.txt
 lib/mailman/templates/en/unsubauth.txt
 lib/mailman/templates/en/userpass.txt
 lib/mailman/templates/en/verify.txt
+@mode 775
+lib/mailman/templates/eo/
+@mode
+lib/mailman/templates/eo/admlogin.html
+lib/mailman/templates/eo/approve.txt
+lib/mailman/templates/eo/archidxentry.html
+lib/mailman/templates/eo/archidxfoot.html
+lib/mailman/templates/eo/archidxhead.html
+lib/mailman/templates/eo/archlistend.html
+lib/mailman/templates/eo/archliststart.html
+lib/mailman/templates/eo/archtoc.html
+lib/mailman/templates/eo/archtocentry.html
+lib/mailman/templates/eo/archtocnombox.html
+lib/mailman/templates/eo/article.html
+lib/mailman/templates/eo/bounce.txt
+lib/mailman/templates/eo/cronpass.txt
+lib/mailman/templates/eo/disabled.txt
+lib/mailman/templates/eo/emptyarchive.html
+lib/mailman/templates/eo/help.txt
+lib/mailman/templates/eo/invite.txt
+lib/mailman/templates/eo/listinfo.html
+lib/mailman/templates/eo/masthead.txt
+lib/mailman/templates/eo/nomoretoday.txt
+lib/mailman/templates/eo/options.html
+lib/mailman/templates/eo/postack.txt
+lib/mailman/templates/eo/postauth.txt
+lib/mailman/templates/eo/postheld.txt
+lib/mailman/templates/eo/private.html
+lib/mailman/templates/eo/probe.txt
+lib/mailman/templates/eo/refuse.txt
+lib/mailman/templates/eo/roster.html
+lib/mailman/templates/eo/subauth.txt
+lib/mailman/templates/eo/subscribe.html
+lib/mailman/templates/eo/subscribeack.txt
+lib/mailman/templates/eo/unsub.txt
+lib/mailman/templates/eo/unsubauth.txt
+lib/mailman/templates/eo/userpass.txt
+lib/mailman/templates/eo/verify.txt
 @mode 775
 lib/mailman/templates/es/
 @mode
@@ -2557,6 +2614,7 @@ share/doc/mailman/README.CONTRIB
 share/doc/mailman/README.NETSCAPE
 share/doc/mailman/README.USERAGENT
 share/doc/mailman/UPGRADING
+share/doc/pkg-readmes/${PKGSTEM}
 @mode 0775
 @owner _mailman
 @group _mailman
@@ -2576,9 +2634,7 @@ share/doc/mailman/UPGRADING
 @mode
 @owner
 @group
-share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mailman/
 share/examples/mailman/sitelist.cfg
 @sample /var/spool/mailman/data/sitelist.cfg
 @extra /var/cron/tabs/_mailman
-@rcscript ${RCDIR}/mailman
