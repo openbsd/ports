@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.33 2018/07/10 12:32:23 jasper Exp $
+@comment $OpenBSD: PLIST-web,v 1.34 2018/09/05 09:24:31 espie Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -1015,4 +1015,4 @@ share/examples/php-${MODPHP_VERSION}/
 share/examples/php-${MODPHP_VERSION}/zabbix.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/zabbix.ini
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
-${FULLPKGNAME}
+${PKGSTEM}
