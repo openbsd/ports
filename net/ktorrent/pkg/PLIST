@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/09/05 16:26:58 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -14,9 +14,11 @@ lib/qt5/plugins/ktorrent/ktorrent_logviewer.so
 lib/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
 lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
 lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
+lib/qt5/plugins/ktorrent/ktorrent_scripting.so
 lib/qt5/plugins/ktorrent/ktorrent_search.so
 lib/qt5/plugins/ktorrent/ktorrent_stats.so
 lib/qt5/plugins/ktorrent/ktorrent_upnp.so
+lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
 share/applications/org.kde.ktorrent.desktop
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2
@@ -57,6 +59,7 @@ share/doc/HTML/sv/ktorrent/index.docbook
 share/doc/HTML/uk/ktorrent/
 share/doc/HTML/uk/ktorrent/index.cache.bz2
 share/doc/HTML/uk/ktorrent/index.docbook
+share/icons/hicolor/128x128/apps/ktorrent.png
 share/icons/hicolor/16x16/actions/kt-stop-all.png
 share/icons/hicolor/16x16/actions/kt-stop.png
 share/icons/hicolor/16x16/actions/kt-upnp.png
@@ -129,6 +132,22 @@ share/ktorrent/opensearch/duckduckgo.com/opensearch.xml
 share/ktorrent/opensearch/torrentproject.se/
 share/ktorrent/opensearch/torrentproject.se/favicon.ico
 share/ktorrent/opensearch/torrentproject.se/opensearch.xml
+share/ktorrent/scripts/
+share/ktorrent/scripts/auto_remove/
+share/ktorrent/scripts/auto_remove/auto_remove.desktop
+share/ktorrent/scripts/auto_remove/auto_remove.py
+share/ktorrent/scripts/auto_remove/auto_remove.ui
+share/ktorrent/scripts/auto_resume/
+share/ktorrent/scripts/auto_resume/auto_resume.desktop
+share/ktorrent/scripts/auto_resume/auto_resume.py
+share/ktorrent/scripts/auto_resume/auto_resume.ui
+share/ktorrent/scripts/email_notifications/
+share/ktorrent/scripts/email_notifications/email_notifications.desktop
+share/ktorrent/scripts/email_notifications/email_notifications.py
+share/ktorrent/scripts/email_notifications/emailconfig.ui
+share/ktorrent/scripts/tracker_groups/
+share/ktorrent/scripts/tracker_groups/tracker_groups.desktop
+share/ktorrent/scripts/tracker_groups/tracker_groups.py
 share/ktorrent/search/
 share/ktorrent/search/home/
 share/ktorrent/search/home/body-background.jpg
@@ -151,6 +170,7 @@ share/kxmlgui5/ktorrent/ktorrent_bwschedulerui.rc
 share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
+share/kxmlgui5/ktorrent/ktorrent_scriptingui.rc
 share/kxmlgui5/ktorrent/ktorrent_searchui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc

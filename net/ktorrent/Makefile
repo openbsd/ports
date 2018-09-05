@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2018/06/29 22:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2018/09/05 16:26:58 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
-DISTNAME =	ktorrent-5.1.0
-REVISION =	1
+VERSION =	5.1.1
+DISTNAME =	ktorrent-${VERSION}
 
 SHARED_LIBS +=  ktcore                    1.0 # 0.0
 
@@ -19,15 +19,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Parts KF5Plotting KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5Torrent KF5WebKit KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c gcrypt
-WANTLIB += gmp m tag
+WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5KrossCore KF5Notifications KF5NotifyConfig KF5Parts
+WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5Torrent KF5WebKit KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Script Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += c gcrypt gmp m tag
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/5.1/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/${VERSION}/}
 
 MODULES =		devel/kf5 \
 			multimedia/phonon
