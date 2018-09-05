@@ -1,0 +1,17 @@
+$OpenBSD: patch-security_sandbox_common_SandboxSettings_h,v 1.1 2018/09/05 16:19:01 landry Exp $
+
+https://hg.mozilla.org/mozilla-central/rev/8f5c17ac83aa
+
+Index: security/sandbox/common/SandboxSettings.h
+--- security/sandbox/common/SandboxSettings.h.orig
++++ security/sandbox/common/SandboxSettings.h
+@@ -21,5 +21,9 @@ bool IsContentSandboxEnabled();
+ int ClampFlashSandboxLevel(const int aLevel);
+ #endif
+ 
++#if defined(__OpenBSD__)
++bool StartOpenBSDSandbox(GeckoProcessType type);
++#endif
++
+ }
+ #endif // mozilla_SandboxPolicies_h

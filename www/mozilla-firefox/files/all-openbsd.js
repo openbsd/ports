@@ -1,4 +1,7 @@
 // OpenBSD-specific defaults overrides
+// Remove in 63 as its configurable in the UI
+// and the preference key changes
+// cf https://bugzilla.mozilla.org/show_bug.cgi?id=1470082
 pref("media.autoplay.enabled", false);
 pref("app.shield.optoutstudies.enabled", false);
 pref("app.normandy.enabled",false);

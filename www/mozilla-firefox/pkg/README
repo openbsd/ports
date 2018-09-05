@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.20 2018/09/04 12:46:25 espie Exp $
+$OpenBSD: README,v 1.21 2018/09/05 16:19:02 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -37,7 +37,7 @@ If this is a pledge violation, you should figure out which codepath
 in which process leads to calling a forbidden syscall, and which pledge
 is missing from the two default sets configured in
 security.sandbox.pledge.main and security.sandbox.pledge.content
-about:config keys.
+about:config keys. MOZ_LOG=SandboxPledge:5 should help.
 Bug reports without enough information will be ignored.
 
 D-BUS
@@ -47,8 +47,9 @@ needs a session bus instance running.
 If you're not running a desktop environment that takes care of it,
 refer to /usr/local/share/doc/pkg-readmes/dbus-* to configure your
 session startup script to start one.
-Without a session bus running, it is likely that GLIB will try to spawn
-one when needed, leading to a 'proc' pledge violation in the content
+Without a session bus running, the port is faking one (see
+https://bugzilla.mozilla.org/show_bug.cgi?id=1466593), but GLIB might still try
+to spawn one which might lead to a 'proc' pledge violation in the content
 process.
 
 HTML5 audio/video support

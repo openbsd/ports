@@ -1,6 +1,8 @@
-$OpenBSD: patch-xpcom_base_nsMemoryReporterManager_cpp,v 1.2 2018/06/27 05:05:20 landry Exp $
+$OpenBSD: patch-xpcom_base_nsMemoryReporterManager_cpp,v 1.3 2018/09/05 16:19:01 landry Exp $
 
 neuter KERN_PROC sysctl when running w/ pledge
+https://hg.mozilla.org/mozilla-central/rev/3ad8c54c6dc8
+
 Index: xpcom/base/nsMemoryReporterManager.cpp
 --- xpcom/base/nsMemoryReporterManager.cpp.orig
 +++ xpcom/base/nsMemoryReporterManager.cpp
@@ -9,9 +11,9 @@ Index: xpcom/base/nsMemoryReporterManager.cpp
  GetKinfoProcSelf(KINFO_PROC* aProc)
  {
 +#if defined(__OpenBSD__) && defined(MOZ_SANDBOX)
-+  if (getenv("MOZ_SANDBOX_LOGGING")) {
-+    printf_stderr("(pid=%d) %s called when pledged, noop\n", getpid(), __func__);
-+  }
++  static LazyLogModule sPledgeLog("SandboxPledge");
++  MOZ_LOG(sPledgeLog, LogLevel::Debug,
++         ("%s called when pledged\n", __func__));
 +  return NS_ERROR_FAILURE;
 +#endif
    int mib[] = {

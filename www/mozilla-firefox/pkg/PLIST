@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.76 2018/09/04 12:46:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.77 2018/09/05 16:19:02 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -32,7 +32,6 @@ lib/${MOZILLA_PROJECT}/browser/features/
 lib/${MOZILLA_PROJECT}/browser/features/activity-stream@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/aushelper@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/${MOZILLA_PROJECT}@getpocket.com.xpi
-lib/${MOZILLA_PROJECT}/browser/features/followonsearch@mozilla.com.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/onboarding@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
@@ -44,9 +43,6 @@ lib/${MOZILLA_PROJECT}/defaults/
 lib/${MOZILLA_PROJECT}/defaults/pref/
 lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}/dependentlibs.list
-lib/${MOZILLA_PROJECT}/dictionaries/
-lib/${MOZILLA_PROJECT}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
