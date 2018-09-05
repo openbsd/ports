@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.25 2015/06/22 12:18:50 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.26 2018/09/05 09:16:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -142,7 +142,7 @@ sub lock_and_start_build
 
 sub use_core
 {
-	my ($self, $core) = @_;
+	my ($self, $core, $rechecked) = @_;
 	if ($self->preempt_core($core)) {
 		return 1;
 	}
@@ -160,7 +160,7 @@ sub use_core
 			return 1;
 		}
 	}
-	if ($self->recheck_mismatches($core)) {
+	if (!$rechecked && $self->recheck_mismatches($core)) {
 		return 1;
 	}
 	return 0;
@@ -191,7 +191,7 @@ sub start
 	my $self = shift;
 	my $core = $self->get_core;
 
-	if ($self->use_core($core)) {
+	if ($self->use_core($core, 0)) {
 		return 1;
 	} else {
 		$core->mark_ready;
