@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2018/09/05 18:11:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.226 2018/09/05 19:40:18 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -100,6 +100,7 @@
      SUBDIR += scheme48
      SUBDIR += scm
      SUBDIR += scm,no_x11
+     SUBDIR += secularize
      SUBDIR += seed7
      SUBDIR += snobol4
      SUBDIR += spin
