@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2018/06/15 10:20:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2018/09/05 08:52:59 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.0,<7.1
@@ -29,7 +29,7 @@ lib/php-${PV}/modules/opcache.so
 @man man/man1/phpize-${PV}.1
 @man man/man8/php-fpm-${PV}.8
 @bin sbin/php-fpm-${PV}
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/php-${PV}/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
 share/examples/php-${PV}/opcache.ini
