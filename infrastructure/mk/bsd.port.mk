@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1440 2018/09/04 16:33:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1441 2018/09/05 14:10:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2455,7 +2455,7 @@ ${_BULK_COOKIE}:
 .if !empty(BULK_DO_${PKGPATH})
 	@${BULK_DO_${PKGPATH}}
 .endif
-	@${_SUDOMAKE} _internal-clean
+	@${_MAKE} _internal-clean
 	@${_MAKE_COOKIE} $@
 
 # The real targets. Note that some parts always get run, some parts can be
