@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/24 06:32:30 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/06 11:51:33 landry Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.6.2
+GH_TAGNAME =		v0.6.3
 
 CATEGORIES =		devel
 
@@ -24,17 +24,18 @@ MODCARGO_CRATES +=      atty-0.2.10     # MIT
 MODCARGO_CRATES +=      bitflags-1.0.3  # MIT/Apache-2.0
 MODCARGO_CRATES +=      cfg-if-0.1.3    # MIT/Apache-2.0
 MODCARGO_CRATES +=      clap-2.31.2     # MIT
+MODCARGO_CRATES +=      cloudabi-0.0.3  # BSD-2-Clause
 MODCARGO_CRATES +=      dtoa-0.4.2      # MIT/Apache-2.0
 MODCARGO_CRATES +=      fuchsia-zircon-0.3.3    # BSD-3-Clause
 MODCARGO_CRATES +=      fuchsia-zircon-sys-0.3.3        # BSD-3-Clause
 MODCARGO_CRATES +=      itoa-0.4.1      # MIT/Apache-2.0
 MODCARGO_CRATES +=      libc-0.2.41     # MIT/Apache-2.0
-MODCARGO_CRATES +=      log-0.3.9       # MIT/Apache-2.0
 MODCARGO_CRATES +=      log-0.4.1       # MIT/Apache-2.0
 MODCARGO_CRATES +=      proc-macro2-0.4.4       # MIT/Apache-2.0
 MODCARGO_CRATES +=      quote-0.3.15    # MIT/Apache-2.0
 MODCARGO_CRATES +=      quote-0.6.3     # MIT/Apache-2.0
-MODCARGO_CRATES +=      rand-0.4.2      # MIT/Apache-2.0
+MODCARGO_CRATES +=      rand-0.5.5      # MIT/Apache-2.0
+MODCARGO_CRATES +=      rand_core-0.2.1 # MIT/Apache-2.0
 MODCARGO_CRATES +=      redox_syscall-0.1.40    # MIT
 MODCARGO_CRATES +=      redox_termios-0.1.1     # MIT
 MODCARGO_CRATES +=      remove_dir_all-0.5.1    # MIT/Apache-2.0
@@ -46,7 +47,7 @@ MODCARGO_CRATES +=      strsim-0.7.0    # MIT
 MODCARGO_CRATES +=      syn-0.11.11     # MIT/Apache-2.0
 MODCARGO_CRATES +=      syn-0.14.1      # MIT/Apache-2.0
 MODCARGO_CRATES +=      synom-0.11.3    # MIT/Apache-2.0
-MODCARGO_CRATES +=      tempdir-0.3.7   # MIT/Apache-2.0
+MODCARGO_CRATES +=      tempfile-3.0.3  # MIT/Apache-2.0
 MODCARGO_CRATES +=      termion-1.5.1   # MIT
 MODCARGO_CRATES +=      textwrap-0.9.0  # MIT
 MODCARGO_CRATES +=      toml-0.4.6      # MIT/Apache-2.0
