@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/12 01:07:53 danj Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/06 15:49:29 danj Exp $
 @pkgpath net/py3-slixmpp
 lib/python${MODPY_VERSION}/site-packages/slixmpp/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -867,8 +867,10 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/util/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}misc_ops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/${MODPY_PYCACHE}stringprep_profiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/util/cache.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/misc_ops.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/util/sasl/__init__.py
