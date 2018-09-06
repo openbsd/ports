@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_Unix_cmake,v 1.5 2018/07/03 05:06:54 rsadowski Exp $
+$OpenBSD: patch-cmake_Unix_cmake,v 1.6 2018/09/06 16:20:52 rsadowski Exp $
 
 - Avoid forced linkage with libstdc++.
 - drop CMake calls to QT5_WRAP_CPP()
@@ -15,3 +15,12 @@ Index: cmake/Unix.cmake
  		add_definitions(-DWITH_LIBRAW)
  	endif()
  endif(ENABLE_RAW)
+@@ -103,7 +104,7 @@ if(ENABLE_QUAZIP)
+   if(USE_SYSTEM_QUAZIP)
+     SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
+-    find_package(QuaZIP REQUIRED)
++    find_package(QuaZip5 REQUIRED)
+     if(NOT QUAZIP_FOUND)
+ 	    message(FATAL_ERROR "QUAZIP not found. It's mandatory when used with ENABLE_QUAZIP enabled, you can also disable USE_SYSTEM_QUAZIP")
+     else()
