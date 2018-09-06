@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/09 10:10:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/06 05:59:30 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pychromecast/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}authority_keys_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/${MODPY_PYCACHE}cast_channel_pb2.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,7 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/cast_channel_pb2.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/config.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}dashcast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
