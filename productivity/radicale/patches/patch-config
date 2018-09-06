@@ -1,4 +1,4 @@
-$OpenBSD: patch-config,v 1.11 2017/05/16 17:15:40 jasper Exp $
+$OpenBSD: patch-config,v 1.12 2018/09/06 22:48:30 sthen Exp $
 Index: config
 --- config.orig
 +++ config
@@ -15,7 +15,7 @@ Index: config
  
  # SSL Protocol used. See python's ssl module for available values
  #protocol = PROTOCOL_SSLv23
-@@ -80,11 +80,11 @@
+@@ -84,11 +84,11 @@
  #custom_handler =
  
  # Htpasswd filename
@@ -29,7 +29,7 @@ Index: config
  
  # LDAP server URL, with protocol and port
  #ldap_url = ldap://localhost:389/
-@@ -146,7 +146,7 @@
+@@ -150,7 +150,7 @@
  #custom_handler =
  
  # File for rights management from_file
@@ -38,7 +38,7 @@ Index: config
  
  
  [storage]
-@@ -163,7 +163,7 @@
+@@ -167,7 +167,7 @@
  #custom_handler =
  
  # Folder for storing local collections, created if not present
@@ -47,7 +47,7 @@ Index: config
  
  # Database URL for SQLAlchemy
  # dialect+driver://user:password@host/dbname[?key=value..]
-@@ -178,7 +178,7 @@
+@@ -182,7 +182,7 @@
  # If no config is given, simple information is printed on the standard output
  # For more information about the syntax of the configuration file, see:
  # http://docs.python.org/library/logging.config.html
