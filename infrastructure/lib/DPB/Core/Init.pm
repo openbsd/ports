@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.33 2018/09/06 11:31:30 espie Exp $
+# $OpenBSD: Init.pm,v 1.34 2018/09/06 15:01:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ sub finalize
 	}
 	close($fh);
 	$prop->{jobs} //= 1;
-	$prop->{parallel2} //= $prop->parallel;
+	$prop->{parallel2} //= $prop->{parallel};
 	for my $p (qw(parallel parallel2)) {
 		if ($prop->{$p} =~ m/^\/(\d+)$/) {
 			if ($prop->{jobs} == 1) {
