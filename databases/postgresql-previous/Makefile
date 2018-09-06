@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/06 19:10:53 tb Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
 VERSION=	9.6.6
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.8 \
