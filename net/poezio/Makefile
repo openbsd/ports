@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/09/06 15:50:41 danj Exp $
 
 COMMENT =		console XMPP client
 
-MODPY_EGG_VERSION =	0.11
+MODPY_EGG_VERSION =	0.12
 DISTNAME =		poezio-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		0
 
 HOMEPAGE =		https://poez.io/
-MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
