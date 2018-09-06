@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/17 19:39:33 kn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/06 14:12:04 akoshibe Exp $
 bin/mn
 @bin bin/mnexec
 lib/python${MODPY_VERSION}/site-packages/mininet/
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/mininet-2.3.0d1-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/mininet-2.2.2-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mininet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mininet/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/baseintf.py
@@ -42,8 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/intf.py
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/intf.pyc
+lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/mnopts.py
+lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/mnopts.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/node.py
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/node.pyc
+lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/nodelib.py
+lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/nodelib.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/util.py
 lib/python${MODPY_VERSION}/site-packages/mininet/openbsd/util.pyc
 lib/python${MODPY_VERSION}/site-packages/mininet/term.py

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/09 14:56:19 schwarze Exp $
+# $OpenBSD: Makefile,v 1.10 2018/09/06 14:12:04 akoshibe Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
-DISTNAME =	mininet-0.0.20170813
-REVISION =	6
-GH_ACCOUNT =	mininet
-GH_PROJECT =	mininet
-GH_COMMIT =	87e26ef931ee6063332ceba77db472140f832d3a
+V=		2.2.2
+DISTNAME =	mininet-$V
+EXTRACT_SUFX =	.tar.gz
 
 CATEGORIES =	net
 
@@ -19,8 +17,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
 
+MASTER_SITES =	https://github.com/akoshibe/mininet/releases/download/v$V/
+
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+# Does not run with Python 3
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS =		devel/help2man
 RUN_DEPENDS =		net/socat \
 			net/iperf
@@ -28,9 +30,10 @@ RUN_DEPENDS =		net/socat \
 SEPARATE_BUILD =	Yes
 
 do-build:
-	${CC} ${CFLAGS} ${WRKSRC}/mnexec.c -o ${WRKBUILD}/mnexec
+	${CC} ${CFLAGS} ${WRKSRC}/mnexec.c ${WRKSRC}/mnexec_bsd.c \
+		 -o ${WRKBUILD}/mnexec
 	help2man -N -n "create a Mininet network."  --no-discard-stderr \
-		"PYTHONPATH=${WRKBUILD} ${MODPY_BIN} -B ${WRKSRC}/bin/mn" \
+		"PYTHONPATH=${WRKSRC} ${MODPY_BIN} -B ${WRKSRC}/bin/mn" \
 		-o ${WRKBUILD}/mn.1
 	help2man -N -n "execution utility for Mininet."  -h "-h" -v "-v" \
 		--no-discard-stderr ${WRKBUILD}/mnexec -o ${WRKBUILD}/mnexec.1
