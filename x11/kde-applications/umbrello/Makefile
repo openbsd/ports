@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/06 06:54:48 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -12,18 +12,17 @@ KDE5 =		Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Notifications KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextEditor KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c m xml2
-WANTLIB += xslt
+WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KDELibs4Support
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextEditor
+WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets
+WANTLIB += Qt5Xml c m xml2 xslt
 
 MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/gettext-tools \
-		devel/kf5/kdelibs4support \
 		devel/kf5/kdoctools \
 		devel/kf5/kcrash
 
@@ -45,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/ktexteditor \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
+		devel/kf5/kdelibs4support \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtwebkit \
 		textproc/libxslt \
