@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2018/06/21 18:09:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2018/09/06 19:48:35 jasper Exp $
 
 PORTROACH=		limit:^3
 
 COMMENT=		text widget that extends the GTK3 GtkTextView widget
 
 GNOME_PROJECT=		gtksourceview
-GNOME_VERSION=		3.24.8
+GNOME_VERSION=		3.24.9
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
 
 SHARED_LIBS +=	gtksourceview-3.0    3.5      # .9.0

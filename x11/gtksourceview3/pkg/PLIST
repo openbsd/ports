@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/06/21 18:09:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/09/06 19:48:35 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -88,23 +88,6 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceTag.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceUndoManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceView.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/annotation-glossary.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-0.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-10.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-12.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-2.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-4.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-2-8.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-0.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-10.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-12.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-14.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-16.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-18.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-20.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-22.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-24.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-3-4.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-deprecated.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/api-index-full.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch01.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/ch02.html
@@ -210,6 +193,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/lex.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/libtool.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/llvm.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/logcat.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/logtalk.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/lua.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/m4.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/makefile.lang
