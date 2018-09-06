@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.87 2018/07/09 20:49:22 espie Exp $
+# $OpenBSD: Core.pm,v 1.88 2018/09/06 11:31:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -145,12 +145,6 @@ sub memory
 {
 	my $self = shift;
 	return $self->prop->{memory};
-}
-
-sub parallel
-{
-	my $self = shift;
-	return $self->prop->{parallel};
 }
 
 sub hostname

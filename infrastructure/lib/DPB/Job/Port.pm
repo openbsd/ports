@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.182 2018/07/23 13:24:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.183 2018/09/06 11:31:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1123,21 +1123,13 @@ sub new
 	my $job = $class->SUPER::new(@_);
 
 	my $prop = $core->prop;
-	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
-		if ($prop->{jobs} == 1) {
-			$prop->{parallel} = 0;
-		} else {
-			$prop->{parallel} = int($prop->{jobs}/$1);
-			if ($prop->{parallel} < 2) {
-				$prop->{parallel} = 2;
-			}
-		}
-	}
 	# note that lonesome *and* parallel can be specified
 	if ($v->{info}->has_property('lonesome')) {
 		$job->{lonesome} = 1;
 	} 
-	if ($prop->{parallel} && $v->{info}->has_property('parallel')) {
+	if ($prop->{parallel2} && $v->{info}->has_property('parallel2')) {
+		$job->{parallel} = $prop->{parallel2};
+	} elsif ($prop->{parallel} && $v->{info}->has_property('parallel')) {
 		$job->{parallel} = $prop->{parallel};
 	}
 
