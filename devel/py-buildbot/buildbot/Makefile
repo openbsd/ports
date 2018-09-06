@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/09/06 18:34:26 landry Exp $
 
 COMMENT =	continuous integration framework
 
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME}
-REVISION =	1
 
 RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		databases/py-sqlalchemy-migrate${MODPY_FLAVOR} \
