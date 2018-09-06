@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/06 05:05:47 rsadowski Exp $
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Service		4.1
 

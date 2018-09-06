@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/06 05:05:47 rsadowski Exp $
 @bin bin/kbuildsycoca5
 include/KF5/KService/
 include/KF5/KService/KAutostart
@@ -45,7 +45,6 @@ lib/cmake/KF5Service/KF5ServiceTargets.cmake
 share/examples/xdg/kservice.categories
 share/examples/xdg/menus/
 share/examples/xdg/menus/applications-kde5.menu
-@sample ${SYSCONFDIR}/xdg/menus/applications-kde5.menu
 share/kf5/mkspecs/qt_KService.pri
 share/kservicetypes5/
 share/kservicetypes5/application.desktop
