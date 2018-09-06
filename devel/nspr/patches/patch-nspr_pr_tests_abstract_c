@@ -1,0 +1,14 @@
+$OpenBSD: patch-nspr_pr_tests_abstract_c,v 1.1 2018/09/06 18:35:27 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1487579
+Index: nspr/pr/tests/abstract.c
+--- nspr/pr/tests/abstract.c.orig
++++ nspr/pr/tests/abstract.c
+@@ -151,7 +151,7 @@ main()
+ int
+ main()
+ {
+-  prinf("PASS\n");
++  printf("PASS\n");
+   return 0;
+ }
+ #endif

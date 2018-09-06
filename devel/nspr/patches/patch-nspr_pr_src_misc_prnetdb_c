@@ -1,8 +1,8 @@
-$OpenBSD: patch-nspr_pr_src_misc_prnetdb_c,v 1.4 2017/08/07 18:47:47 landry Exp $
+$OpenBSD: patch-nspr_pr_src_misc_prnetdb_c,v 1.5 2018/09/06 18:35:27 landry Exp $
 Index: nspr/pr/src/misc/prnetdb.c
 --- nspr/pr/src/misc/prnetdb.c.orig
 +++ nspr/pr/src/misc/prnetdb.c
-@@ -2034,7 +2034,9 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
+@@ -2048,7 +2048,9 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
           */
          hints.ai_socktype = SOCK_STREAM;
  
