@@ -1,4 +1,4 @@
-Starlet is a standalone HTTP/1.0 server with keep-alive support,
+Starlet is a standalone HTTP/1.1 server with keep-alive support,
 formerly known as Plack::Server::Standalone::Prefork and
 Plack::Server::Standalone::Prefork::Server::Starter.
 
