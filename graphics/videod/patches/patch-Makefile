@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1 2018/09/07 09:53:44 espie Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -15,8 +15,8 @@ MAN8=	videod.8
+ CATMAN8=videod.cat8
+ PSMAN8=	videod.ps8
+ 
+-CFLAGS+=-I/usr/local/include -DVERSION=\"${VERSION}\"
+-LIBS=	-L/usr/local/lib -ljpeg
++CFLAGS+=-I$(LOCALBASE)/include -DVERSION=\"${VERSION}\"
++LIBS=	-L$(LOCALBASE)/lib -ljpeg
+ 
+ all: ${PROG}
+ 
