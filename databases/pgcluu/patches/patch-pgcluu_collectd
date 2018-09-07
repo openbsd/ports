@@ -1,4 +1,4 @@
-$OpenBSD: patch-pgcluu_collectd,v 1.5 2018/07/27 19:14:59 jasper Exp $
+$OpenBSD: patch-pgcluu_collectd,v 1.6 2018/09/07 20:19:48 danj Exp $
 
 - Set $sysinfo{"RELEASE"}, $sysinfo{"CPU"} (minus cache)
 
@@ -10,7 +10,7 @@ Index: pgcluu_collectd
  
  	# Look at CPU informations
 -	my $cmd = 'cat /proc/cpuinfo 2>/dev/null';
-+	my $cmd = 'sysctl hw.ncpu hw.model hw.cpuspeed 2>/dev/null';
++	my $cmd = 'sysctl hw.ncpuonline hw.model hw.cpuspeed 2>/dev/null';
  	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
 -	my @cpuinfo = `$cmd | grep -E "model name|cpu MHz|cache size|cpu cores|processor"`;
 +	my @cpuinfo = `$cmd`;
