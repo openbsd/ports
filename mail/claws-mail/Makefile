@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2018/06/29 22:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.115 2018/09/07 14:08:38 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -6,14 +6,13 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.16.0
+V=			3.17.1
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-main=		2
 
 CATEGORIES=		mail news
 
@@ -41,7 +40,7 @@ RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo crypto curl etpan execinfo
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
@@ -81,6 +80,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libnotify \
 			security/gnutls>=2.2 \
 			security/gpgme \
+			security/libnettle \
 			textproc/libical \
 			x11/dbus-glib
 

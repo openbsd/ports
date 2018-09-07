@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2018/06/29 22:16:17 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2018/09/07 14:08:38 danj Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -32,6 +32,7 @@ include/claws-mail/addrgather.h
 include/claws-mail/addrharvest.h
 include/claws-mail/addrindex.h
 include/claws-mail/addritem.h
+include/claws-mail/addrmerge.h
 include/claws-mail/addrquery.h
 include/claws-mail/addrselect.h
 include/claws-mail/advsearch.h
@@ -53,6 +54,7 @@ include/claws-mail/common/pkcs5_pbkdf2.h
 include/claws-mail/common/plugin.h
 include/claws-mail/common/prefs.h
 include/claws-mail/common/progressindicator.h
+include/claws-mail/common/proxy.h
 include/claws-mail/common/quoted-printable.h
 include/claws-mail/common/session.h
 include/claws-mail/common/smtp.h
@@ -181,37 +183,11 @@ include/claws-mail/password_gtk.h
 include/claws-mail/passwordstore.h
 include/claws-mail/pine.h
 include/claws-mail/plugins/
-include/claws-mail/plugins/claws-mail/
-include/claws-mail/plugins/claws-mail/archiver.h
-include/claws-mail/plugins/claws-mail/archiver_prefs.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/
-include/claws-mail/plugins/claws-mail/gtkhotkey/eggaccelerators.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-error.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-info.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-key-file-registry.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-listener.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-marshal.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-registry.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-utils.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
-include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
 include/claws-mail/plugins/pgpcore/
-include/claws-mail/plugins/pgpcore/autocompletion.h
 include/claws-mail/plugins/pgpcore/passphrase.h
 include/claws-mail/plugins/pgpcore/pgp_utils.h
-include/claws-mail/plugins/pgpcore/pgp_viewer.h
 include/claws-mail/plugins/pgpcore/prefs_gpg.h
-include/claws-mail/plugins/pgpcore/select-keys.h
 include/claws-mail/plugins/pgpcore/sgpgme.h
-include/claws-mail/plugins/pgpinline/
-include/claws-mail/plugins/pgpinline/pgpinline.h
-include/claws-mail/plugins/pgpmime/
-include/claws-mail/plugins/pgpmime/pgpmime.h
-include/claws-mail/plugins/smime/
-include/claws-mail/plugins/smime/smime.h
-include/claws-mail/plugins/vcalendar/
-include/claws-mail/plugins/vcalendar/vcal_interface.h
 include/claws-mail/pop.h
 include/claws-mail/prefs_account.h
 include/claws-mail/prefs_actions.h
@@ -233,6 +209,7 @@ include/claws-mail/prefs_message.h
 include/claws-mail/prefs_migration.h
 include/claws-mail/prefs_msg_colors.h
 include/claws-mail/prefs_other.h
+include/claws-mail/prefs_proxy.h
 include/claws-mail/prefs_quote.h
 include/claws-mail/prefs_receive.h
 include/claws-mail/prefs_send.h
@@ -285,6 +262,8 @@ lib/claws-mail/plugins/bsfilter.la
 lib/claws-mail/plugins/bsfilter.so
 lib/claws-mail/plugins/clamd.la
 lib/claws-mail/plugins/clamd.so
+lib/claws-mail/plugins/dillo.la
+lib/claws-mail/plugins/dillo.so
 lib/claws-mail/plugins/fetchinfo.la
 lib/claws-mail/plugins/fetchinfo.so
 lib/claws-mail/plugins/libravatar.la

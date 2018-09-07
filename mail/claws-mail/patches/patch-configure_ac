@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.18 2018/01/21 19:24:41 danj Exp $
+$OpenBSD: patch-configure_ac,v 1.19 2018/09/07 14:08:38 danj Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
@@ -11,16 +11,7 @@ Index: configure.ac
  	#CFLAGS="-g -Wall -Wno-unused-function"
  fi
  
-@@ -497,6 +497,8 @@ dnl password encryption
- OLDLIBS=$LIBS
- LIBS=
- case $host_os in
-+	*openbsd*)
-+	;;
- 	*dragonfly*)
- 		AC_SEARCH_LIBS(encrypt, cipher, [], AC_MSG_ERROR(['encrypt'-function not found.]))
- 	;;
-@@ -784,6 +786,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -783,6 +783,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -28,7 +19,7 @@ Index: configure.ac
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -856,7 +859,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -855,7 +856,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
