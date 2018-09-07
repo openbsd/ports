@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/25 14:26:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/09/07 20:19:51 jasper Exp $
 bin/cl_napalm_configure
 bin/cl_napalm_test
 bin/cl_napalm_validate
@@ -104,6 +104,13 @@ lib/python${MODPY_VERSION}/site-packages/napalm/ios/templates/set_hostname.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/templates/set_ntp_peers.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/templates/set_ntp_servers.j2
 lib/python${MODPY_VERSION}/site-packages/napalm/ios/templates/snmp_config.j2
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/ip_bgp_all_sum.tpl
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/ip_bgp_neigh.tpl
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/ip_bgp_neigh_afi.tpl
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/show_lldp_neighbors.tpl
+lib/python${MODPY_VERSION}/site-packages/napalm/ios/utils/textfsm_templates/show_lldp_neighbors_detail.tpl
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/napalm/iosxr/__init__.pyc
