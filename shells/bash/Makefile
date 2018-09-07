@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2018/06/03 20:41:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.108 2018/09/07 21:11:14 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -22,6 +22,7 @@ PATCHFILES+=	bash44-0$i:0
 LIB_DEPENDS=	devel/gettext
 WANTLIB=	c curses iconv intl
 
+ALL_TARGET=	all loadables
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 
