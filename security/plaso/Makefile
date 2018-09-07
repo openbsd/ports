@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/03 14:43:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/07 19:47:09 rpointel Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
-MODPY_EGG_VERSION =	20180630
+MODPY_EGG_VERSION =	20180818
 DISTNAME =		plaso-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -84,7 +84,9 @@ TEST_DEPENDS +=	devel/py-test \
 # mark elasticsearch as not required, so we can use plaso
 post-extract:
 	sed -i "s/'5.5.1', True)/'5.5.1', False)/" ${WRKSRC}/plaso/dependencies.py
-	sed "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
+	sed -i "/maximum_version: 5.5.1/d" ${WRKSRC}/dependencies.ini
+	sed -i "/elasticsearch5/d" ${WRKSRC}/plaso/dependencies.py
+	sed -i "/^\[elasticsearch5/,/^$$/d"  ${WRKSRC}/dependencies.ini
 
 pre-test:
 	touch ${WRKSRC}/utils/__init__.py
