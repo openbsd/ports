@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.136 2018/07/11 16:00:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.137 2018/09/07 08:41:56 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.61.0
+DISTNAME=	curl-7.61.1
 SHARED_LIBS=	curl                 25.17    # 9.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tar.xz
 LIB_DEPENDS=	www/nghttp2
 WANTLIB=	c crypto pthread nghttp2 ssl z
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 # Beware of circular dependency curl -> brotli -> cmake -> curl
 CONFIGURE_ARGS=	--with-ca-bundle=/etc/ssl/cert.pem \
