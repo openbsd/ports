@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2018/09/04 12:46:14 espie Exp $
+$OpenBSD: README,v 1.13 2018/09/07 20:08:15 danj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -44,14 +44,14 @@ I want to install the main-distribution
 
 Install racket-minimal and run:
 
-raco pkg install --jobs $(sysctl -n hw.ncpu) --auto main-distribution
+raco pkg install --jobs $(sysctl -n hw.ncpuonline) --auto main-distribution
 
 I'm only interested in DrRacket
 -------------------------------
 
 Install racket-minimal and run:
 
-raco pkg install --jobs $(sysctl -n hw.ncpu) --auto drracket
+raco pkg install --jobs $(sysctl -n hw.ncpuonline) --auto drracket
 
 Add "--binary-lib" if you don't want to generate the documentation (requires
 additional dependencies).

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2018/09/07 20:08:15 danj Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			7.0
-REVISION =		2
+REVISION =		3
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
