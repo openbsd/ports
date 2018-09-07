@@ -1,0 +1,3 @@
+IPC::System::Simple is a Perl module allowing you to run commands,
+in the same way system() does, but with detailed diagnostics,
+output capture and auto die() functionality.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/07 20:57:15 bluhm Exp $
+${P5SITE}/IPC/
+${P5SITE}/IPC/System/
+${P5SITE}/IPC/System/Simple.pm
+@man man/man3p/IPC::System::Simple.3p
