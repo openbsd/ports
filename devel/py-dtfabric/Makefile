@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/03 11:31:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/07 05:54:13 rpointel Exp $
 
 COMMENT =	data type fabric
 
-MODPY_EGG_VERSION =	20180604
+MODPY_EGG_VERSION =	20180808
 DISTNAME =	dtfabric-${MODPY_EGG_VERSION}
 
 PKGNAME =	py-${DISTNAME}
