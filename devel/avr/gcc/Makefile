@@ -1,58 +1,59 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/21 14:23:10 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2018/09/07 20:11:08 jasper Exp $
 
-COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
+COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
-V=4.3.4
-
-#GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c gmp mpfr
-
-EXTRACT_SUFX=	.tar.bz2
+V=		5.4.0
+DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
-REVISION=	2
-DISTFILES=	gcc-core-${V}${EXTRACT_SUFX} \
-		gcc-g++-${V}${EXTRACT_SUFX}
-#EXTRACT_ONLY=	${DISTFILES}
+SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
+SHARED_LIBS +=  cc1                       0.0 # 0.0
+
+# GPLv3
+PERMIT_PACKAGE_CDROM=	Yes
+WANTLIB=		c gmp mpfr ${COMPILER_LIBCXX} m mpc
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(V)/}
+EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	gcc
 
 BUILD_DEPENDS+=		devel/autoconf/2.13 \
 			devel/bison		\
 			devel/metaauto		\
-			devel/avr/binutils
+			devel/avr/binutils>=2.30
 
-LIB_DEPENDS=		devel/gmp>=4.2 \
-			devel/mpfr
+LIB_DEPENDS=		devel/libmpc
 
-LANGS=c,c++
 # dear autoconf, why do you suck so hard?
 CONFIGURE_ENV=	INSTALL="install -c" \
 		INSTALL_DATA="install -c -m 444" \
 		INSTALL_SCRIPT="install -c -m 555"
 
-CONFIGURE_ARGS+= 			\
-	--disable-libssp		\
-	--enable-languages=${LANGS} 	\
-	--enable-cpp			\
-	--with-gmp=${LOCALBASE}		\
-	--with-mpfr=${LOCALBASE}
+CONFIGURE_ARGS+= --disable-libssp \
+		--enable-languages="c,c++" \
+		--enable-cpp \
+		--with-gmp=${LOCALBASE} \
+		--with-mpfr=${LOCALBASE}
 
-MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include -fgnu89-inline"
+MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV=	MACHINE_ARCH=avr
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 YACC=		bison
 
-TEST_DEPENDS=devel/dejagnu
+TEST_DEPENDS=	devel/dejagnu
 
 SUBST_VARS=	V
 
-WRKSRC=${WRKDIR}/gcc-${V}
+# Fix build with clang in c++11 mode
+post-patch:
+	find ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) | \
+		xargs egrep -l '"(HOST_WIDE|PLUGIN_COND|PRId64)' | \
+		xargs sed -i -E -e 's/"(HOST_WIDE|PLUGIN_COND|PRId64)/" \1/g'
 
+# XXX
 post-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/avr/${V}/include*
+	mv -f ${PREFIX}/libexec/gcc/avr/$V/liblto_plugin.so.* \
+		${PREFIX}/libexec/gcc/avr/$V/liblto_plugin.so
 
 .include <bsd.port.mk>

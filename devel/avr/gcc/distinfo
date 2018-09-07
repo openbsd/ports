@@ -1,4 +1,2 @@
-SHA256 (gcc/gcc-core-4.3.4.tar.bz2) = MYmDj1BHvk/1RxHITbF8duz8x5v09NEQv3Mj7rkFaPo=
-SHA256 (gcc/gcc-g++-4.3.4.tar.bz2) = +NJ7TSyPpJKh+LevRqORksKN2h6GOuKKgLf+xMr0FzU=
-SIZE (gcc/gcc-core-4.3.4.tar.bz2) = 24329359
-SIZE (gcc/gcc-g++-4.3.4.tar.bz2) = 5623014
+SHA256 (gcc/gcc-5.4.0.tar.bz2) = YI33bewtNN5lWCSdivTL7iHs7dvLWA1mb3paWDyjMDo=
+SIZE (gcc/gcc-5.4.0.tar.bz2) = 95661481
