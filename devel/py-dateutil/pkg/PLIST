@@ -1,17 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/11/10 06:40:49 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/09/07 11:22:25 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/dateutil/
 lib/python${MODPY_VERSION}/site-packages/dateutil/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}easter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}relativedelta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}rrule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}tzwin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/_common.py
+lib/python${MODPY_VERSION}/site-packages/dateutil/_version.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/easter.py
-lib/python${MODPY_VERSION}/site-packages/dateutil/parser.py
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/${MODPY_PYCACHE}isoparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/_parser.py
+lib/python${MODPY_VERSION}/site-packages/dateutil/parser/isoparser.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/relativedelta.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/rrule.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/
@@ -19,12 +28,15 @@ lib/python${MODPY_VERSION}/site-packages/dateutil/tz/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}_factories.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}tz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/${MODPY_PYCACHE}win.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/_common.py
+lib/python${MODPY_VERSION}/site-packages/dateutil/tz/_factories.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/tz.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/tz/win.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/tzwin.py
+lib/python${MODPY_VERSION}/site-packages/dateutil/utils.py
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/
 lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dateutil/zoneinfo/${MODPY_PYCACHE}/

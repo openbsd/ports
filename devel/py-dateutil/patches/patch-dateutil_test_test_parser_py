@@ -1,0 +1,17 @@
+$OpenBSD: patch-dateutil_test_test_parser_py,v 1.1 2018/09/07 11:22:25 sthen Exp $
+
+our strftime doesn't error out with %-d but just outputs -d rather
+than doing whatever this test wants
+
+Index: dateutil/test/test_parser.py
+--- dateutil/test/test_parser.py.orig
++++ dateutil/test/test_parser.py
+@@ -27,6 +27,8 @@ try:
+ except ValueError:
+     PLATFORM_HAS_DASH_D = False
+ 
++if sys.platform.startswith('openbsd'):
++    PLATFORM_HAS_DASH_D = False
+ 
+ class TestFormat(unittest.TestCase):
+ 
