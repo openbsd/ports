@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2018/02/18 11:24:57 jsing Exp $
+# $OpenBSD: Makefile,v 1.37 2018/09/07 13:25:02 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.3.2
-REVISION=	0
-SHARED_LIBS=	archive		10.1	# 16.2
+DISTNAME=	libarchive-3.3.3
+SHARED_LIBS=	archive		10.2	# 16.3
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
@@ -15,10 +14,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://www.libarchive.org/downloads/
 
-WANTLIB=	bz2 c crypto expat iconv lz4 lzma pthread z
+WANTLIB=	bz2 c crypto expat iconv lz4 lzma pthread z zstd
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lz4 \
 		archivers/xz \
+		archivers/zstd \
 		converters/libiconv
 
 SEPARATE_BUILD=	Yes
