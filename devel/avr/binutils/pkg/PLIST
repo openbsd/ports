@@ -1,98 +1,123 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/11 23:32:31 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/07 20:09:57 jasper Exp $
 avr/
 avr/bin/
 @bin avr/bin/ar
 @bin avr/bin/as
 @bin avr/bin/ld
+@bin avr/bin/ld.bfd
 @bin avr/bin/nm
 @bin avr/bin/objcopy
 @bin avr/bin/objdump
 @bin avr/bin/ranlib
+@bin avr/bin/readelf
 @bin avr/bin/strip
 avr/lib/
 avr/lib/ldscripts/
 avr/lib/ldscripts/avr1.x
 avr/lib/ldscripts/avr1.xbn
+avr/lib/ldscripts/avr1.xe
 avr/lib/ldscripts/avr1.xn
 avr/lib/ldscripts/avr1.xr
 avr/lib/ldscripts/avr1.xu
 avr/lib/ldscripts/avr2.x
 avr/lib/ldscripts/avr2.xbn
+avr/lib/ldscripts/avr2.xe
 avr/lib/ldscripts/avr2.xn
 avr/lib/ldscripts/avr2.xr
 avr/lib/ldscripts/avr2.xu
 avr/lib/ldscripts/avr25.x
 avr/lib/ldscripts/avr25.xbn
+avr/lib/ldscripts/avr25.xe
 avr/lib/ldscripts/avr25.xn
 avr/lib/ldscripts/avr25.xr
 avr/lib/ldscripts/avr25.xu
 avr/lib/ldscripts/avr3.x
 avr/lib/ldscripts/avr3.xbn
+avr/lib/ldscripts/avr3.xe
 avr/lib/ldscripts/avr3.xn
 avr/lib/ldscripts/avr3.xr
 avr/lib/ldscripts/avr3.xu
 avr/lib/ldscripts/avr31.x
 avr/lib/ldscripts/avr31.xbn
+avr/lib/ldscripts/avr31.xe
 avr/lib/ldscripts/avr31.xn
 avr/lib/ldscripts/avr31.xr
 avr/lib/ldscripts/avr31.xu
 avr/lib/ldscripts/avr35.x
 avr/lib/ldscripts/avr35.xbn
+avr/lib/ldscripts/avr35.xe
 avr/lib/ldscripts/avr35.xn
 avr/lib/ldscripts/avr35.xr
 avr/lib/ldscripts/avr35.xu
 avr/lib/ldscripts/avr4.x
 avr/lib/ldscripts/avr4.xbn
+avr/lib/ldscripts/avr4.xe
 avr/lib/ldscripts/avr4.xn
 avr/lib/ldscripts/avr4.xr
 avr/lib/ldscripts/avr4.xu
 avr/lib/ldscripts/avr5.x
 avr/lib/ldscripts/avr5.xbn
+avr/lib/ldscripts/avr5.xe
 avr/lib/ldscripts/avr5.xn
 avr/lib/ldscripts/avr5.xr
 avr/lib/ldscripts/avr5.xu
 avr/lib/ldscripts/avr51.x
 avr/lib/ldscripts/avr51.xbn
+avr/lib/ldscripts/avr51.xe
 avr/lib/ldscripts/avr51.xn
 avr/lib/ldscripts/avr51.xr
 avr/lib/ldscripts/avr51.xu
 avr/lib/ldscripts/avr6.x
 avr/lib/ldscripts/avr6.xbn
+avr/lib/ldscripts/avr6.xe
 avr/lib/ldscripts/avr6.xn
 avr/lib/ldscripts/avr6.xr
 avr/lib/ldscripts/avr6.xu
+avr/lib/ldscripts/avrtiny.x
+avr/lib/ldscripts/avrtiny.xbn
+avr/lib/ldscripts/avrtiny.xe
+avr/lib/ldscripts/avrtiny.xn
+avr/lib/ldscripts/avrtiny.xr
+avr/lib/ldscripts/avrtiny.xu
 avr/lib/ldscripts/avrxmega1.x
 avr/lib/ldscripts/avrxmega1.xbn
+avr/lib/ldscripts/avrxmega1.xe
 avr/lib/ldscripts/avrxmega1.xn
 avr/lib/ldscripts/avrxmega1.xr
 avr/lib/ldscripts/avrxmega1.xu
 avr/lib/ldscripts/avrxmega2.x
 avr/lib/ldscripts/avrxmega2.xbn
+avr/lib/ldscripts/avrxmega2.xe
 avr/lib/ldscripts/avrxmega2.xn
 avr/lib/ldscripts/avrxmega2.xr
 avr/lib/ldscripts/avrxmega2.xu
 avr/lib/ldscripts/avrxmega3.x
 avr/lib/ldscripts/avrxmega3.xbn
+avr/lib/ldscripts/avrxmega3.xe
 avr/lib/ldscripts/avrxmega3.xn
 avr/lib/ldscripts/avrxmega3.xr
 avr/lib/ldscripts/avrxmega3.xu
 avr/lib/ldscripts/avrxmega4.x
 avr/lib/ldscripts/avrxmega4.xbn
+avr/lib/ldscripts/avrxmega4.xe
 avr/lib/ldscripts/avrxmega4.xn
 avr/lib/ldscripts/avrxmega4.xr
 avr/lib/ldscripts/avrxmega4.xu
 avr/lib/ldscripts/avrxmega5.x
 avr/lib/ldscripts/avrxmega5.xbn
+avr/lib/ldscripts/avrxmega5.xe
 avr/lib/ldscripts/avrxmega5.xn
 avr/lib/ldscripts/avrxmega5.xr
 avr/lib/ldscripts/avrxmega5.xu
 avr/lib/ldscripts/avrxmega6.x
 avr/lib/ldscripts/avrxmega6.xbn
+avr/lib/ldscripts/avrxmega6.xe
 avr/lib/ldscripts/avrxmega6.xn
 avr/lib/ldscripts/avrxmega6.xr
 avr/lib/ldscripts/avrxmega6.xu
 avr/lib/ldscripts/avrxmega7.x
 avr/lib/ldscripts/avrxmega7.xbn
+avr/lib/ldscripts/avrxmega7.xe
 avr/lib/ldscripts/avrxmega7.xn
 avr/lib/ldscripts/avrxmega7.xr
 avr/lib/ldscripts/avrxmega7.xu
@@ -100,8 +125,10 @@ avr/lib/ldscripts/avrxmega7.xu
 @bin bin/avr-ar
 @bin bin/avr-as
 @bin bin/avr-c++filt
+@bin bin/avr-elfedit
 @bin bin/avr-gprof
 @bin bin/avr-ld
+@bin bin/avr-ld.bfd
 @bin bin/avr-nm
 @bin bin/avr-objcopy
 @bin bin/avr-objdump
@@ -111,6 +138,7 @@ avr/lib/ldscripts/avrxmega7.xu
 @bin bin/avr-strings
 @bin bin/avr-strip
 @comment @info info/as.info
+@comment @info info/bfd.info
 @comment @info info/binutils.info
 @comment @info info/gprof.info
 @comment @info info/ld.info
@@ -119,6 +147,7 @@ avr/lib/ldscripts/avrxmega7.xu
 @man man/man1/avr-as.1
 @man man/man1/avr-c++filt.1
 @man man/man1/avr-dlltool.1
+@man man/man1/avr-elfedit.1
 @man man/man1/avr-gprof.1
 @man man/man1/avr-ld.1
 @man man/man1/avr-nlmconv.1
