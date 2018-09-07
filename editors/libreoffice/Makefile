@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2018/08/27 14:07:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2018/09/07 07:15:50 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -12,6 +12,8 @@ COMMENT-java=	optional integration of LibreOffice java features
 SHARED_LIBS +=  orcus-0.13                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
+
+REVISION-main=	0
 
 BV=		6.1
 VERSION=	${BV}.0.3
@@ -253,6 +255,7 @@ WANTLIB-kde+=		ICE SM Xext icuuc
 WANTLIB-kde+=		X11 ${COMPILER_LIBCXX} glib-2.0 intl m pthread
 WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
 WANTLIB-kde+=		epoxy harfbuzz-icu
+WANTLIB-kde+=		harfbuzz
 
 .include <bsd.port.arch.mk>
 
@@ -336,6 +339,7 @@ CONFIGURE_ARGS+=\
 		--with-system-redland \
 		--with-system-zlib \
 		--with-vendor="The OpenBSD project" \
+		--with-tls="openssl" \
 		--without-junit \
 		--without-krb5 \
 		--without-gssapi \
@@ -362,7 +366,7 @@ PARALLEL_BUILD = No
 .if defined(MAKE_JOBS)
 NCPU=		${MAKE_JOBS}
 .elif ${FLAVOR:Mparallel}
-NCPU!=		echo $$((`sysctl -n hw.ncpu` + 1))
+NCPU!=		echo $$((`sysctl -n hw.ncpuonline` + 1))
 .else
 NCPU=		1
 .endif

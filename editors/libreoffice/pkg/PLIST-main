@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.52 2018/08/18 07:07:17 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.53 2018/09/07 07:15:50 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -4184,9 +4184,6 @@ lib/libreoffice/share/xslt/import/wordml/wordml2ooo_props.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_settings.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_table.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_text.xsl
-man/ja_JP.EUC/cat3f/
-man/ja_JP.EUC/man3f/
-man/ja_JP.EUC/man3p/
 share/applications/calc.desktop
 share/applications/draw.desktop
 share/applications/impress.desktop
