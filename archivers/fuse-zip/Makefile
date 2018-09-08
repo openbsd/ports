@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/02/06 11:16:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/09/08 10:31:14 espie Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
@@ -18,8 +18,7 @@ MASTER_SITES =		https://bitbucket.org/agalanin/fuse-zip/downloads/
 LIB_DEPENDS =		archivers/libzip>=0.11.2
 
 MAKE_FLAGS =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
-FAKE_FLAGS =		INSTALLPREFIX="${WRKINST}${PREFIX}"
+			LDFLAGS="${LDFLAGS}" prefix="${PREFIX}"
 
 USE_GMAKE =		Yes
 
