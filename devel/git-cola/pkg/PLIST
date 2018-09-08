@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/27 21:03:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/09/08 03:55:10 bket Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -202,6 +202,8 @@ share/git-cola/lib/cola/resources.py
 share/git-cola/lib/cola/resources.pyc
 share/git-cola/lib/cola/settings.py
 share/git-cola/lib/cola/settings.pyc
+share/git-cola/lib/cola/spellcheck.py
+share/git-cola/lib/cola/spellcheck.pyc
 share/git-cola/lib/cola/textwrap.py
 share/git-cola/lib/cola/textwrap.pyc
 share/git-cola/lib/cola/utils.py
@@ -302,6 +304,8 @@ share/git-cola/lib/qtpy/QtDesigner.py
 share/git-cola/lib/qtpy/QtDesigner.pyc
 share/git-cola/lib/qtpy/QtGui.py
 share/git-cola/lib/qtpy/QtGui.pyc
+share/git-cola/lib/qtpy/QtHelp.py
+share/git-cola/lib/qtpy/QtHelp.pyc
 share/git-cola/lib/qtpy/QtMultimedia.py
 share/git-cola/lib/qtpy/QtMultimedia.pyc
 share/git-cola/lib/qtpy/QtNetwork.py
@@ -310,6 +314,8 @@ share/git-cola/lib/qtpy/QtOpenGL.py
 share/git-cola/lib/qtpy/QtOpenGL.pyc
 share/git-cola/lib/qtpy/QtPrintSupport.py
 share/git-cola/lib/qtpy/QtPrintSupport.pyc
+share/git-cola/lib/qtpy/QtSql.py
+share/git-cola/lib/qtpy/QtSql.pyc
 share/git-cola/lib/qtpy/QtSvg.py
 share/git-cola/lib/qtpy/QtSvg.pyc
 share/git-cola/lib/qtpy/QtTest.py
