@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.2 2018/07/11 12:42:57 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.3 2018/09/08 15:33:04 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -124,6 +124,22 @@ sub register
 	my ($self, $o, $pkgname) = @_;
 	$o->{wanted}{$self->{def}} //= $o->{currentname};
 	push @{$o->{all_deps}{$pkgname}}, $self->{def};
+}
+
+package OpenBSD::PackingElement::ExtraInfo;
+sub register
+{
+	my ($self, $o, $pkgname) = @_;
+	if ($self->{cdrom} eq 'yes') {
+		$o->{cdrom_okay}{$pkgname} = 1;
+	} else {
+		$o->{cdrom_okay}{$pkgname} = 0;
+	}
+	if ($self->{ftp} eq 'yes') {
+		$o->{ftp_okay}{$pkgname} = 1;
+	} else {
+		$o->{ftp_okay}{$pkgname} = 0;
+	}
 }
 
 package OpenBSD::PackingElement::Manpage;
@@ -435,6 +451,60 @@ sub compute_conflicts
 	return $r;
 }
 
+sub check_license
+{
+	my ($self, $pkg, $k) = @_;
+	my @todo = ($pkg);
+	my $done = {};
+
+	while (@todo > 0) {
+		my $dep = shift @todo;
+		next if $done->{$dep};
+		$done->{$dep} = 1;
+		if (defined $self->{all_deps}{$dep}) {
+			push(@todo, @{$self->{all_deps}{$dep}});
+		}
+		if (defined $self->{$k}{$dep}) {
+			return $dep if $self->{$k}{$dep} == 0;
+		} else {
+			return $dep;
+		}
+
+	}
+	return undef;
+}
+
+sub check_licenses
+{
+	my ($self) = @_;
+	my $r = {};
+
+	$self->progress->set_header("Compute licenses issues");
+	for my $k (qw(cdrom_okay ftp_okay)) {
+		while (my ($pkg, $v) = each %{$self->{$k}}) {
+			next if $v == 0;
+			print $pkg, "\n";
+			my $d = $self->check_license($pkg, $k);
+			if (defined $d) {
+				$r->{$k}{$pkg} = $d;
+			}
+		}
+	}
+	$self->progress->next;
+	return $r;
+}
+
+sub show_licenses_issues
+{
+	my ($self, $result) = @_;
+	for my $k (qw(cdrom_okay ftp_okay)) {
+		for my $pkg (sort keys %{$result->{$k}}) {
+			$self->say("#1 is marked as #2 but depends on #3",
+			    $pkg, $k, $result->{$k}{$pkg});
+		}
+	}
+}
+
 sub show_conflicts
 {
 	my ($self, $result) = @_;
@@ -459,6 +529,9 @@ sub display_results
 		my $result = $self->compute_conflicts;
 		$self->say("Conflicts:");
 		$self->show_conflicts($result);
+		my $r2 = $self->check_licenses;
+		$self->say("Licenses problems:");
+		$self->show_licenses_issues($r2);
 	}
 }
 
