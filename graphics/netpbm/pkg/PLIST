@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/04/25 18:45:33 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/08 14:04:07 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
@@ -64,7 +64,9 @@ bin/pamfixtrunc
 @bin bin/pamflip
 @bin bin/pamfunc
 @bin bin/pamgauss
+@bin bin/pamgetcolor
 @bin bin/pamgradient
+@bin bin/pamlevels
 @bin bin/pamlookup
 @bin bin/pammasksharpen
 @bin bin/pammixinterlace

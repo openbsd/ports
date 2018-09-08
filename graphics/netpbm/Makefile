@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2018/04/25 18:45:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2018/09/08 14:04:07 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.82.00
-SHARED_LIBS=	netpbm	3.2
+DISTNAME=	netpbm-10.83.01
+SHARED_LIBS=	netpbm	4.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
@@ -62,8 +62,8 @@ test: fake
 distfile:
 	@REPO=https://svn.code.sf.net/p/netpbm/code; \
 	SERIES=advanced; \
-	REV=`svn info $$REPO/$$SERIES/version.mk | \
-	    sed -n 's/Last Changed Rev: //p'`; \
+	REV=`svn info --show-item last-changed-revision \
+            $$REPO/$$SERIES/version.mk`; \
 	VERSION=`(svn cat -r$$REV $$REPO/$$SERIES/version.mk; \
 	    echo 'all:'; \
 	    echo '	@printf "%02d.%02d.%02d" \\'; \
