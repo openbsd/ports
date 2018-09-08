@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.11 2018/09/08 11:15:03 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.12 2018/09/08 12:13:37 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -143,7 +143,7 @@ sub handle_portsdir
 {
 	my ($self, $dir) = @_;
 
-	open(my $input, "cd $dir && $self->{make} print-plist-all-with-depends |");
+	open(my $input, "cd $dir && $self->{make} print-plist-all-with-depends REPORT_PROBLEM=true|");
 	my $done = 0;
 	while (!$done) {
 		my $plist = OpenBSD::PackingList->read($input, 
