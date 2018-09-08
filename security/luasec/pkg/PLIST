@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/05/20 02:24:30 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/08 17:21:14 gsoares Exp $
 lib/lua/${MODLUA_VERSION}/ssl.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/README
@@ -26,6 +26,9 @@ share/examples/${FULLPKGNAME}/chain/
 share/examples/${FULLPKGNAME}/chain/client.lua
 share/examples/${FULLPKGNAME}/chain/server.lua
 share/examples/${FULLPKGNAME}/chain/util.lua
+share/examples/${FULLPKGNAME}/curve-negotiation/
+share/examples/${FULLPKGNAME}/curve-negotiation/client.lua
+share/examples/${FULLPKGNAME}/curve-negotiation/server.lua
 share/examples/${FULLPKGNAME}/dhparam/
 share/examples/${FULLPKGNAME}/dhparam/client.lua
 share/examples/${FULLPKGNAME}/dhparam/params.sh
@@ -48,6 +51,9 @@ share/examples/${FULLPKGNAME}/loop-gc/client.lua
 share/examples/${FULLPKGNAME}/loop-gc/server.lua
 share/examples/${FULLPKGNAME}/loop/client.lua
 share/examples/${FULLPKGNAME}/loop/server.lua
+share/examples/${FULLPKGNAME}/luaossl/
+share/examples/${FULLPKGNAME}/luaossl/client.lua
+share/examples/${FULLPKGNAME}/luaossl/server.lua
 share/examples/${FULLPKGNAME}/oneshot/
 share/examples/${FULLPKGNAME}/oneshot/client.lua
 share/examples/${FULLPKGNAME}/oneshot/server.lua
