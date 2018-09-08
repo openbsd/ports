@@ -1,0 +1,14 @@
+$OpenBSD: patch-gdb_exec_c,v 1.1 2018/09/08 15:16:33 naddy Exp $
+
+Index: gdb/exec.c
+--- gdb/exec.c.orig
++++ gdb/exec.c
+@@ -31,7 +31,7 @@
+ #include "value.h"
+ #include "exec.h"
+ #include "observer.h"
+-#include "arch-utils.c"
++#include "arch-utils.h"
+ 
+ #include <fcntl.h>
+ #include "readline/readline.h"
