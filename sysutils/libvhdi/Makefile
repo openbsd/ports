@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/08 15:23:52 naddy Exp $
 
 COMMENT =	library and tools to access the VHD image format
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS +=	--enable-python
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio
 
