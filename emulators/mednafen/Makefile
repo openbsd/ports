@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2018/09/08 23:08:39 jeremy Exp $
 
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
 
-DISTNAME =	mednafen-0.9.48
-REVISION =	0
+DISTNAME =	mednafen-1.21.3
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io
@@ -17,27 +16,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${HOMEPAGE}/releases/files/
 EXTRACT_SUFX =	.tar.xz
 
-WANTLIB += SDL c iconv intl m pthread sndfile sndio usbhid z
-WANTLIB += FLAC ogg vorbis vorbisenc ${COMPILER_LIBCXX}
+WANTLIB += SDL2 c iconv intl m pthread sndfile sndio usbhid z
+WANTLIB += FLAC ogg samplerate vorbis vorbisenc ${COMPILER_LIBCXX}
 
 USE_GMAKE =	Yes
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	audio/libsndfile \
 		devel/gettext \
-		devel/sdl
+		devel/sdl2
 		
 WRKDIST =	${WRKDIR}/mednafen
 
 USE_WXNEEDED =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \
+CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread -nopie"
 CONFIGURE_ARGS =	--disable-alsa \
 			--disable-rpath \
 			--disable-jack \
-			--with-x \
 			--with-gnu-ld
 
 # this intrinsic is not supported with our old gcc
