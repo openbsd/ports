@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/06 16:20:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2018/09/08 06:56:45 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
@@ -40,5 +40,9 @@ CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP:Bool=ON \
 			-DENABLE_TRANSLATIONS:Bool=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
+
+pre-configure:
+	find ${WRKSRC} -type f -name "*.cpp" -exec \
+		sed -i 's,#include <quazip/JlCompress.h>,#include <quazip5/JlCompress.h>,' {} \;
 
 .include <bsd.port.mk>
