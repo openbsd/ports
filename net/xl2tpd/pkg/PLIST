@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/09 13:19:15 sthen Exp $
 @newgroup _xl2tpd:711
 @newuser _xl2tpd:711:_xl2tpd:daemon:xl2tpd user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/xl2tpd
 @man man/man5/l2tp-secrets.5
 @man man/man5/xl2tpd.conf.5
 @man man/man8/xl2tpd-control.8
@@ -15,4 +16,3 @@ share/examples/xl2tpd/l2tp-secrets.sample
 share/examples/xl2tpd/l2tpd.conf.sample
 @sample ${SYSCONFDIR}/xl2tpd/xl2tpd.conf
 share/examples/xl2tpd/ppp-options.xl2tpd
-@rcscript ${RCDIR}/xl2tpd
