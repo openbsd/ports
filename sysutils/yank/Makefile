@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/06 08:15:50 anton Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/09 16:03:39 anton Exp $
 
 COMMENT =	yank terminal output to clipboard
 
-GH_ACCOUNT =	mptre
-GH_PROJECT =	yank
-GH_TAGNAME =	v0.8.3
-
+V =		1.0.0
+DISTNAME =	yank-${V}
 CATEGORIES =	sysutils
 
+HOMEPAGE =	https://github.com/mptre/yank
 MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	https://github.com/mptre/yank/releases/download/v${V}/
 
 # uses pledge()
 WANTLIB +=	c
