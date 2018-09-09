@@ -1,21 +1,14 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2015/09/16 07:18:45 benoit Exp $
---- Makefile.PL.orig	Tue Sep 15 11:48:58 2015
-+++ Makefile.PL	Wed Sep 16 09:12:07 2015
-@@ -48,7 +48,7 @@ MSG
+$OpenBSD: patch-Makefile_PL,v 1.3 2018/09/09 23:45:31 sthen Exp $
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -44,8 +44,7 @@ MSG
  printf "    [%d] SSH%d\n", $_, $_ for 1..2;
  printf "    [3] Both SSH1 and SSH2\n";
  
 -my $p = prompt("\nWhich protocol(s) do you plan to use?", 3);
+-print "\n";
 +my $p = 3;
- print "\n";
  
  @prereq{keys %{$SSH_PREREQ{$p}}} = values %{$SSH_PREREQ{$p}};
-@@ -74,7 +74,7 @@ my $i = 1;
- for my $ciph(sort { $a->[0] <=> $b->[0] } @cryptmod) {
-     printf "    [%d] %s\n", $i++, $ciph->[0];
- }
--my $c = prompt("\nEnter your choices, separated by spaces:", 1);
-+my $c = "2 3 4 5";
- print "\n";
  
- for my $id(split /\s+/, $c) {
