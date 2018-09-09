@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/09/13 19:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2018/09/09 12:54:52 naddy Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -8,6 +8,7 @@ DISTNAME=	Eterm-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 # also see below
 PKGNAME=	eterm-$V
+REVISION=	0
 SHARED_LIBS +=  Eterm                1.0      # unknown
 CATEGORIES=	x11
 
@@ -36,7 +37,8 @@ CONFIGURE_ARGS=	--enable-trans \
 		--with-backspace=bs \
 		--without-terminfo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv" \
+		ac_cv_path_GDB=no
 
 FLAVORS=	kanji
 FLAVOR?=
