@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2018/05/09 09:39:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/09/09 17:47:28 florian Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 
-V=			4.1.2
+V=			4.1.4
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
