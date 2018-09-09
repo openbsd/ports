@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/09 23:45:49 sthen Exp $
 
 COMMENT=	client for the Secure File Transfer Protocol
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Net-SFTP-0.10
-REVISION=	1
+DISTNAME=	Net-SFTP-0.12
 CATEGORIES=	net security
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	net/p5-Net-SSH-Perl
+RUN_DEPENDS=	net/p5-Net-SSH-Perl \
+		math/p5-Math-Int64
 
 .include <bsd.port.mk>
