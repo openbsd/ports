@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2018/09/08 14:04:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.83 2018/09/09 09:24:59 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.83.01
+DISTNAME=	netpbm-10.83.02
 SHARED_LIBS=	netpbm	4.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
