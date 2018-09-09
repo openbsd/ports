@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/09/09 10:27:29 bluhm Exp $
 
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
-DISTNAME=	iperf-2.0.5
-REVISION=	5
+DISTNAME=	iperf-2.0.12
 CATEGORIES=	net
 
 HOMEPAGE=	http://sourceforge.net/projects/iperf/
@@ -15,10 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iperf/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iperf2/}
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.65
+AUTOCONF_VERSION= 2.69
 
 # Separate build breaks configure test for IPv6 support
 SEPARATE_BUILD=	No
