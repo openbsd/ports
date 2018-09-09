@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/04/04 19:43:36 danj Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/09 17:02:11 danj Exp $
 bin/virtualenv${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}virtualenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,12 +13,9 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv_support/
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv_support/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/argparse-1.4.0-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-9.0.3-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-36.8.0-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-39.0.1-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/wheel-0.29.0-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/wheel-0.30.0-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-10.0.1-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-39.1.0-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/wheel-0.31.1-py2.py3-none-any.whl
 share/doc/${MODPY_PY_PREFIX}virtualenv/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/changes.txt
