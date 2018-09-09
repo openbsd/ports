@@ -1,0 +1,27 @@
+$OpenBSD: patch-ncal_ncal_c,v 1.1.1.1 2018/09/09 13:31:23 naddy Exp $
+
+In the FreeBSD POSIX locale, nl_langinfo(D_MD_ORDER) returns "md".
+
+Index: ncal/ncal.c
+--- ncal/ncal.c.orig
++++ ncal/ncal.c
+@@ -506,9 +506,7 @@ usage(void)
+ {
+ 
+ 	fputs(
+-"Usage: cal [general options] [-hjy] [[month] year]\n"
+-"       cal [general options] [-hj] [-m month] [year]\n"
+-"       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]\n"
++"Usage: ncal [general options] [-hJjpwy] [-s country_code] [[month] year]\n"
+ "       ncal [general options] [-hJeo] [year]\n"
+ "General options: [-NC3] [-A months] [-B months]\n"
+ "For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]\n",
+@@ -547,7 +545,7 @@ printeaster(int y, int julian, int orthodox)
+ 	static int d_first = -1;
+ 
+ 	if (d_first < 0)
+-		d_first = (*nl_langinfo(D_MD_ORDER) == 'd');
++		d_first = ("md"[0] == 'd');
+ 	/* force orthodox easter for years before 1583 */
+ 	if (y < 1583)
+ 		orthodox = 1;

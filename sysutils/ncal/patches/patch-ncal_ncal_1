@@ -1,0 +1,86 @@
+$OpenBSD: patch-ncal_ncal_1,v 1.1.1.1 2018/09/09 13:31:23 naddy Exp $
+
+Index: ncal/ncal.1
+--- ncal/ncal.1.orig
++++ ncal/ncal.1
+@@ -25,27 +25,12 @@
+ .\" $FreeBSD: head/usr.bin/ncal/ncal.1 334873 2018-06-09 04:40:17Z eadler $
+ .\"
+ .Dd June 08, 2018
+-.Dt CAL 1
++.Dt NCAL 1
+ .Os
+ .Sh NAME
+-.Nm cal ,
+ .Nm ncal
+ .Nd displays a calendar and the date of Easter
+ .Sh SYNOPSIS
+-.Nm
+-.Op Fl 3hjy
+-.Op Fl A Ar number
+-.Op Fl B Ar number
+-.Oo
+-.Op Ar month
+-.Ar year
+-.Oc
+-.Nm
+-.Op Fl 3hj
+-.Op Fl A Ar number
+-.Op Fl B Ar number
+-.Fl m Ar month
+-.Op Ar year
+ .Nm ncal
+ .Op Fl 3hjJpwy
+ .Op Fl A Ar number
+@@ -66,10 +51,10 @@
+ .Op Fl d Ar yyyy-mm
+ .Sh DESCRIPTION
+ The
+-.Nm
+-utility displays a simple calendar in traditional format and
+ .Nm ncal
+-offers an alternative layout, more options and the date of Easter.
++utility offers an alternative layout to
++.Xr cal 1 ,
++more options and the date of Easter.
+ The new format is a little cramped but it makes a year fit
+ on a 25x80 terminal.
+ If arguments are not specified,
+@@ -133,7 +118,7 @@ Display the
+ of months before the current month.
+ .It Fl C
+ Switch to
+-.Nm cal
++.Xr cal 1
+ mode.
+ .It Fl N
+ Switch to
+@@ -151,7 +136,7 @@ as the current date (for debugging of highlighting).
+ .Pp
+ A single parameter specifies the year (1\(en9999) to be displayed;
+ note the year must be fully specified:
+-.Dq Li cal 89
++.Dq Li ncal 89
+ will
+ .Em not
+ display a calendar for 1989.
+@@ -160,7 +145,7 @@ year; the month is either a number between 1 and 12, o
+ abbreviated name as specified by the current locale.
+ Month and
+ year default to those of the current system clock and time zone (so
+-.Dq Li cal -m 8
++.Dq Li ncal -m 8
+ will display a calendar for the month of August in the current
+ year).
+ .Pp
+@@ -180,10 +165,6 @@ Highlighting of dates is disabled if stdout is not a t
+ .Xr calendar 3 ,
+ .Xr strftime 3
+ .Sh HISTORY
+-A
+-.Nm
+-command appeared in
+-.At v1 .
+ The
+ .Nm ncal
+ command appeared in
