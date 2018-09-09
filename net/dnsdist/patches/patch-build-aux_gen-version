@@ -1,8 +1,10 @@
-$OpenBSD: patch-build-aux_gen-version,v 1.1.1.1 2017/01/15 17:13:33 sthen Exp $
---- build-aux/gen-version.orig	Sun Jan 15 14:45:58 2017
-+++ build-aux/gen-version	Sun Jan 15 14:47:13 2017
-@@ -1,5 +1,11 @@
- #!/bin/sh
+$OpenBSD: patch-build-aux_gen-version,v 1.2 2018/09/09 15:25:31 sthen Exp $
+Index: build-aux/gen-version
+--- build-aux/gen-version.orig
++++ build-aux/gen-version
+@@ -7,6 +7,12 @@ if [ ! -z "$BUILDER_VERSION" ]; then
+ fi
+ 
  VERSION="unknown"
 +if [ -f .version ]; then
 +  VERSION="$(cat .version)"
