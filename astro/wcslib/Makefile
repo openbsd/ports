@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/23 16:24:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/09 14:33:56 bcallah Exp $
 
 BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
-DISTNAME =	wcslib-5.18
-HOMEPAGE =	http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
+DISTNAME =	wcslib-5.19.1
+HOMEPAGE =	https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
 
 SHARED_LIBS =	wcs		1.1
 
