@@ -1,0 +1,22 @@
+$OpenBSD: patch-volk_lib_CMakeLists_txt,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+--- volk/lib/CMakeLists.txt.orig	Tue Aug  9 17:53:06 2016
++++ volk/lib/CMakeLists.txt	Tue Aug  9 17:54:40 2016
+@@ -264,15 +264,15 @@ endif()
+ if(NOT CROSSCOMPILE_MULTILIB AND CPU_IS_x86)
+     include(CheckTypeSize)
+     check_type_size("void*[8]" SIZEOF_CPU BUILTIN_TYPES_ONLY)
+-    if (${SIZEOF_CPU} EQUAL 64)
++    if ("${SIZEOF_CPU}" STREQUAL "64")
+         OVERRULE_ARCH(32 "CPU width is 64 bits")
+     endif()
+-    if (${SIZEOF_CPU} EQUAL 32)
++    if ("${SIZEOF_CPU}" STREQUAL "32")
+         OVERRULE_ARCH(64 "CPU width is 32 bits")
+     endif()
+ 
+     #MSVC 64 bit does not have MMX, overrule it
+-    if (${SIZEOF_CPU} EQUAL 64 AND MSVC)
++    if ("${SIZEOF_CPU}" EQUAL "64" AND MSVC)
+         OVERRULE_ARCH(mmx "No MMX for Win64")
+     endif()
+ 

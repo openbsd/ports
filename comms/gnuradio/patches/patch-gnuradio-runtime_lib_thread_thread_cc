@@ -1,0 +1,24 @@
+$OpenBSD: patch-gnuradio-runtime_lib_thread_thread_cc,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+Index: gnuradio-runtime/lib/thread/thread.cc
+--- gnuradio-runtime/lib/thread/thread.cc.orig
++++ gnuradio-runtime/lib/thread/thread.cc
+@@ -166,7 +166,8 @@ namespace gr {
+ 
+ 
+ #elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__) || \
+-  defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__GNU__)
++  defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__GNU__) || \
++  defined(__OpenBSD__)
+ 
+ namespace gr {
+   namespace thread {
+@@ -250,7 +251,9 @@ namespace gr {
+ #include <sstream>
+ #include <stdexcept>
+ #include <pthread.h>
++#ifndef __OpenBSD__
+ #include <sys/prctl.h>
++#endif
+ 
+ namespace gr {
+   namespace thread {

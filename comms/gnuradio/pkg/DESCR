@@ -1,0 +1,19 @@
+GNU Radio is a software development toolkit that provides signal processing
+blocks to implement software radios. It can be used with readily-available
+low-cost external RF hardware to create software-defined radios, or without
+hardware in a simulation-like environment. It is widely used in hobbyist,
+academic and commercial environments to support both wireless communications
+research and real-world radio systems.
+
+GNU Radio has filters, channel codes, synchronisation elements, equalizers,
+demodulators, vocoders, decoders, and many other elements (in the GNU Radio
+jargon, we call these elements blocks) which are typically found in radio
+systems. More importantly, it includes a method of connecting these blocks
+and then manages how data is passed from one block to another. Extending GNU
+Radio is also quite easy; if you find a specific block that is missing, you
+can quickly create and add it.
+
+GNU Radio applications are primarily written using the Python programming
+language, while the supplied, performance-critical signal processing path is
+implemented in C++ using processor floating point extensions, where
+available.

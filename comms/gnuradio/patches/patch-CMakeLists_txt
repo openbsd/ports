@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -282,7 +282,7 @@ string(COMPARE EQUAL "${CMAKE_INSTALL_PREFIX}" "/usr" 
+ if(isusr)
+   set(SYSCONFDIR "/${GR_CONF_DIR}" CACHE PATH "System configuration directory")
+ else(isusr)
+-  set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/${GR_CONF_DIR}" CACHE PATH "System configuration directory" FORCE)
++  set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/${GR_CONF_DIR}" CACHE PATH "System configuration directory")
+ endif(isusr)
+ 
+ set(GR_PKG_CONF_DIR ${SYSCONFDIR}/${CMAKE_PROJECT_NAME}/conf.d CACHE PATH "Path to install package configs")

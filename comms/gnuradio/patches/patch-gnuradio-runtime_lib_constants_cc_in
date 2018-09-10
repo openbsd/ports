@@ -1,0 +1,14 @@
+$OpenBSD: patch-gnuradio-runtime_lib_constants_cc_in,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+
+Index: gnuradio-runtime/lib/constants.cc.in
+--- gnuradio-runtime/lib/constants.cc.in.orig
++++ gnuradio-runtime/lib/constants.cc.in
+@@ -62,7 +62,7 @@ namespace gr {
+       return sysconfdir() + "/@CMAKE_PROJECT_NAME@/conf.d";
+     }
+ 
+-    return "@GR_PREFSDIR@";
++    return "@SYSCONFDIR@/@CMAKE_PROJECT_NAME@/conf.d";
+   }
+ 
+   const std::string
