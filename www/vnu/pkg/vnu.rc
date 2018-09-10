@@ -1,0 +1,20 @@
+#!/bin/ksh
+#
+# $OpenBSD: vnu.rc,v 1.1.1.1 2018/09/10 06:50:04 bentley Exp $
+
+daemon="${TRUEPREFIX}/share/vnu/vnu.jar"
+daemon_user="_vnu"
+daemon_flags="8888"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c vnu) -cp ${daemon} nu.validator.servlet.Main ${daemon_flags}"
+
+rc_start() {
+	${rcexec} "$(${LOCALBASE}/bin/javaPathHelper -c vnu) -cp ${daemon} nu.validator.servlet.Main ${daemon_flags}"
+}
+
+rc_cmd $1
