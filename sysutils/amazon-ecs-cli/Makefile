@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2018/07/20 13:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2018/09/10 06:57:50 ajacoutot Exp $
 
 COMMENT=		CLI for AWS ECS
 
-GH_TAGNAME=		v1.7.0
+GH_TAGNAME=		v1.8.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ecs-cli
 PKGNAME=		${DISTNAME:S/amazon-//}
