@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.875 2018/09/02 19:32:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.876 2018/09/10 06:50:54 bentley Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -575,6 +575,7 @@
      SUBDIR += varnish
      SUBDIR += vimb
      SUBDIR += visitors
+     SUBDIR += vnu
      SUBDIR += vteplugin
      SUBDIR += w3m
      SUBDIR += w3m,image
