@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.4 2018/09/10 14:34:17 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.5 2018/09/10 14:54:41 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -45,37 +45,6 @@ sub register_dir
 }
 
 package OpenBSD::PackingElement;
-sub check_common_dirs
-{
-}
-
-package OpenBSD::PackingElement::FileBase;
-use File::Basename;
-sub check_common_dirs
-{
-	my ($item, $t) = @_;
-	my $d = File::Spec->canonpath($item->fullname);
-	main::register_dir(dirname($d), $t->{need_dirs});
-}
-
-package OpenBSD::PackingElement::DirlikeObject;
-sub check_common_dirs
-{
-	my ($item, $t) = @_;
-	my $d = File::Spec->canonpath($item->fullname);
-	$t->{dirs}->{$d} = 1;
-}
-
-package OpenBSD::PackingElement::Dependency;
-sub check_common_dirs
-{
-	my ($item, $t, $o) = @_;
-	$t->{deps}{$item->{def}} = 1;
-	$o->{wanted}{$item->{def}} //= $o->{currentname};
-}
-
-# code for checking conflicts
-package OpenBSD::PackingElement;
 sub register
 {
 }
@@ -93,35 +62,54 @@ package OpenBSD::PackingElement::FileBase;
 my $pkg_list = {};
 my $seen = {};
 
-sub register 
+use File::Basename;
+sub register
 {
-	my ($self, $o, $pkgname) = @_;
+	my ($self, $o, $db, $pkgname) = @_;
+	# common dirs
+	if ($o->{do_dirs}) {
+		my $d = File::Spec->canonpath($self->fullname);
+		main::register_dir(dirname($d), $db->{need_dirs});
+	}
+	# conflicts
+	if ($o->{do_conflicts}) {
+		my $all_conflict = $o->{filehash};
 
-	my $all_conflict = $o->{filehash};
+		my $file = File::Spec->canonpath($self->fullname);
+		# build one single list for each pkgnames combination
+		if (exists $all_conflict->{$file}) {
+			$pkg_list->{$all_conflict->{$file}}{$pkgname} ||=
+			    [@{$all_conflict->{$file}}, $pkgname ];
+			$all_conflict->{$file} = 
+			    $pkg_list->{$all_conflict->{$file}}{$pkgname};
+		} elsif (exists $seen->{$file}) {
+			$pkg_list->{$seen->{$file}}{$pkgname} ||=
+			    [ @{$seen->{$file}}, $pkgname ];
+			$all_conflict->{$file} = 
+			    $pkg_list->{$seen->{$file}}{$pkgname};
+			delete $seen->{$file};
+		} else {
+			$pkg_list->{$pkgname} ||= [$pkgname];
+			$seen->{$file} = $pkg_list->{$pkgname};
+		}
+	}
+}
 
-	my $file = File::Spec->canonpath($self->fullname);
-	# build one single list for each pkgnames combination
-	if (exists $all_conflict->{$file}) {
-		$pkg_list->{$all_conflict->{$file}}{$pkgname} ||=
-		    [@{$all_conflict->{$file}}, $pkgname ];
-		$all_conflict->{$file} = 
-		    $pkg_list->{$all_conflict->{$file}}{$pkgname};
-	} elsif (exists $seen->{$file}) {
-		$pkg_list->{$seen->{$file}}{$pkgname} ||=
-		    [ @{$seen->{$file}}, $pkgname ];
-		$all_conflict->{$file} = 
-		    $pkg_list->{$seen->{$file}}{$pkgname};
-		delete $seen->{$file};
-	} else {
-		$pkg_list->{$pkgname} ||= [$pkgname];
-		$seen->{$file} = $pkg_list->{$pkgname};
+package OpenBSD::PackingElement::DirlikeObject;
+sub register
+{
+	my ($self, $o, $db, $pkgname) = @_;
+	if ($o->{do_dirs}) {
+		my $d = File::Spec->canonpath($self->fullname);
+		$db->{dirs}{$d} = 1;
 	}
 }
 
 package OpenBSD::PackingElement::Dependency;
-sub register 
+sub register
 {
-	my ($self, $o, $pkgname) = @_;
+	my ($self, $o, $db, $pkgname) = @_;
+	$db->{deps}{$self->{def}} = 1;
 	$o->{wanted}{$self->{def}} //= $o->{currentname};
 	push @{$o->{all_deps}{$pkgname}}, $self->{def};
 }
@@ -129,7 +117,7 @@ sub register
 package OpenBSD::PackingElement::ExtraInfo;
 sub register
 {
-	my ($self, $o, $pkgname) = @_;
+	my ($self, $o, $db, $pkgname) = @_;
 	if ($self->{cdrom} eq 'yes') {
 		$o->{cdrom_okay}{$pkgname} = 1;
 	} else {
@@ -210,27 +198,24 @@ sub register_plist
 
 	$self->{got}{$pkgname} = 1;
 
-	if ($self->{do_dirs}) {
-		$self->{db}{$pkgname} = {
-			pkgname => $pkgname,
-			missing_deps => {},
-			dirs => {}, 
-			need_dirs => {}, 
-			deps => {},
-			problems => {}
-		};
+	$self->{db}{$pkgname} = {
+		pkgname => $pkgname,
+		missing_deps => {},
+		dirs => {}, 
+		need_dirs => {}, 
+		deps => {},
+		problems => {}
+	};
 
-		$plist->check_common_dirs($self->{db}{$pkgname}, $self);
-	}
 
 	if ($self->{do_conflicts}) {
 		$self->{conflicts}{$pkgname} = 
 		    OpenBSD::PkgCfl->make_conflict_list($plist);
-		if ($self->ui->opt('e')) {
-			$self->add_more_man($plist);
-		}
-		$plist->register($self, $pkgname);
 	}
+	if ($self->{do_manpages}) {
+		$self->add_more_man($plist);
+	}
+	$plist->register($self, $self->{db}{$pkgname}, $pkgname);
 }
 
 sub handle_options
@@ -252,24 +237,21 @@ sub new
 
 	$o->{do_dirs} = !$o->ui->opt('D');
 	$o->{do_conflicts} = !$o->ui->opt('C');
+	$o->{do_manpages} = $o->ui->opt('e');
 
-	if ($o->{do_dirs}) {
-		$o->{db} = {};
-		$o->{mtree} = { 
-		    '/usr/local/lib/X11' => 1,
-		    '/usr/local/include/X11' => 1,
-		    '/usr/local/lib/X11/app-defaults' => 1
-		    };
-		OpenBSD::Mtree::parse($o->{mtree}, '/', 
-		    '/etc/mtree/4.4BSD.dist');
-		OpenBSD::Mtree::parse($o->{mtree}, '/', 
-		    '/etc/mtree/BSD.x11.dist');
-	}
-	if ($o->{do_conflicts}) {
-		$o->{filehash} = {};
-		$o->{conflicts} = {};
-		$o->{all_deps} = {};
-	}
+	$o->{db} = {};
+	$o->{mtree} = { 
+	    '/usr/local/lib/X11' => 1,
+	    '/usr/local/include/X11' => 1,
+	    '/usr/local/lib/X11/app-defaults' => 1
+	    };
+	OpenBSD::Mtree::parse($o->{mtree}, '/', 
+	    '/etc/mtree/4.4BSD.dist');
+	OpenBSD::Mtree::parse($o->{mtree}, '/', 
+	    '/etc/mtree/BSD.x11.dist');
+	$o->{filehash} = {};
+	$o->{conflicts} = {};
+	$o->{all_deps} = {};
 	return $o;
 }
 
