@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2018/09/04 21:56:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.388 2018/09/10 20:51:37 fcambus Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -276,6 +276,7 @@
      SUBDIR += tong
      SUBDIR += toppler
      SUBDIR += tornado
+     SUBDIR += trader
      SUBDIR += tutris
      SUBDIR += tuxkart
      SUBDIR += tuxpaint
