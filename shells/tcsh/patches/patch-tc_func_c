@@ -1,0 +1,37 @@
+$OpenBSD: patch-tc_func_c,v 1.1 2018/09/10 15:29:16 sthen Exp $
+
+Backout cc952ed for now to workaround https://github.com/tcsh-org/tcsh/issues/5
+(there is also a similar problem with "set noclobber=ask" but that's a newer
+addition and I think never worked in this port yet)
+
+Index: tc.func.c
+--- tc.func.c.orig
++++ tc.func.c
+@@ -1144,6 +1144,7 @@ rmstar(struct wordent *cp)
+     Char   *tag;
+ #endif /* RMDEBUG */
+     Char   *charac;
++    char    c;
+     int     ask, doit, star = 0, silent = 0, opintr_disabled;
+ 
+     if (!adrof(STRrmstar))
+@@ -1176,8 +1177,17 @@ rmstar(struct wordent *cp)
+ 		    if (!Strcmp(args->word, STRstar))
+ 			star = 1;
+ 		if (ask && star) {
+-		    doit = getYN(CGETS(22, 8,
+-			"Do you really want to delete all files? [N/y] "));
++		    xprintf("%s", CGETS(22, 8,
++			    "Do you really want to delete all files? [n/y] "));
++		    flush();
++		    (void) force_read(SHIN, &c, 1);
++		    /* 
++		     * Perhaps we should use the yesexpr from the
++		     * actual locale
++		     */
++		    doit = (strchr(CGETS(22, 14, "Yy"), c) != NULL);
++		    while (c != '\n' && force_read(SHIN, &c, 1) == 1)
++			continue;
+ 		    if (!doit) {
+ 			/* remove the command instead */
+ #ifdef RMDEBUG
