@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1765 2018/09/07 20:59:04 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1766 2018/09/10 19:30:17 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1763,6 +1763,7 @@
      SUBDIR += ruby-yajl,ruby24
      SUBDIR += ruby-yajl,ruby25
      SUBDIR += ruby-zentest
+     SUBDIR += samurai
      SUBDIR += scons
      SUBDIR += sdcc
      SUBDIR += sdl
