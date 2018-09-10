@@ -1,4 +1,4 @@
-$OpenBSD: patch-x2goclient_pro,v 1.3 2018/06/26 16:56:50 rsadowski Exp $
+$OpenBSD: patch-x2goclient_pro,v 1.4 2018/09/10 15:47:23 sthen Exp $
 Index: x2goclient.pro
 --- x2goclient.pro.orig
 +++ x2goclient.pro
@@ -11,15 +11,14 @@ Index: x2goclient.pro
  RESOURCES += res/resources.qrc
  
  exists(res/txt/git-info) {
-@@ -187,6 +187,11 @@ linux-g++ {
-   DEFINES += __linux__
- }
- linux-g++-64 {
-+  message("building $$TARGET with ldap and cups")
-+  LIBS += -lldap -lcups -lX11 -lXpm
-+  DEFINES += __linux__
-+}
-+openbsd-* {
+@@ -190,6 +190,10 @@ linux-g++-64 {
    message("building $$TARGET with ldap and cups")
    LIBS += -lldap -lcups -lX11 -lXpm
    DEFINES += __linux__
++}
++openbsd-* {
++  message("building $$TARGET with ldap and cups")
++  LIBS += -lldap -lcups -lX11 -lXpm
+ }
+ x2go_linux_static {
+   message("linking all libs statically")
