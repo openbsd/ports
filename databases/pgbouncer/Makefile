@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/09/10 12:38:35 pea Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
-V = 		1.8.1
+V = 		1.9.0
 DISTNAME = 	pgbouncer-${V}
-REVISION =      0
 
 CATEGORIES = 	databases
 
@@ -15,7 +14,7 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB = 	c event crypto ssl
+WANTLIB = 	c event crypto ssl pthread
 
 MASTER_SITES = 	https://pgbouncer.github.io/downloads/files/${V}/
 
