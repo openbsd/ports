@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/09/10 21:03:42 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		1.4.1
+V=		2.1.0
 DISTNAME=	xca-$V
-REVISION=	3
 CATEGORIES=	security x11
 
 HOMEPAGE=	https://hohnstaedt.de/xca/
@@ -14,7 +13,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c crypto ltdl
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Sql Qt5Widgets c crypto ltdl
 
 MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.${V}/
 
