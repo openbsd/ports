@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/10 20:50:56 fcambus Exp $
+@bin bin/trader
+@man man/man6/trader.6
+share/locale/da/LC_MESSAGES/trader.mo
+share/locale/de/LC_MESSAGES/trader.mo
+share/locale/en@quot/LC_MESSAGES/trader.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/trader.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
+share/locale/en_CA/LC_MESSAGES/trader.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/trader.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/trader.mo
+share/locale/eo/LC_MESSAGES/trader.mo
+share/locale/fi/LC_MESSAGES/trader.mo
+share/locale/fr/LC_MESSAGES/trader.mo
+share/locale/hr/LC_MESSAGES/trader.mo
+share/locale/hu/LC_MESSAGES/trader.mo
+share/locale/nb/LC_MESSAGES/trader.mo
+share/locale/ru/LC_MESSAGES/trader.mo
+share/locale/sr/LC_MESSAGES/trader.mo
+share/locale/sv/LC_MESSAGES/trader.mo
