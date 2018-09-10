@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.5 2018/09/10 14:54:41 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.6 2018/09/10 15:07:33 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -59,9 +59,6 @@ sub add_extra_manpage
 
 package OpenBSD::PackingElement::FileBase;
 
-my $pkg_list = {};
-my $seen = {};
-
 use File::Basename;
 sub register
 {
@@ -72,8 +69,10 @@ sub register
 		main::register_dir(dirname($d), $db->{need_dirs});
 	}
 	# conflicts
-	if ($o->{do_conflicts}) {
+	if (defined $o->{filehash}) {
 		my $all_conflict = $o->{filehash};
+		my $pkg_list = $o->{pkg_list};
+		my $seen = $o->{seen};
 
 		my $file = File::Spec->canonpath($self->fullname);
 		# build one single list for each pkgnames combination
@@ -249,9 +248,13 @@ sub new
 	    '/etc/mtree/4.4BSD.dist');
 	OpenBSD::Mtree::parse($o->{mtree}, '/', 
 	    '/etc/mtree/BSD.x11.dist');
-	$o->{filehash} = {};
-	$o->{conflicts} = {};
-	$o->{all_deps} = {};
+	if ($o->{do_conflicts}) {
+		$o->{filehash} = {};
+		$o->{pkg_list} = {};
+		$o->{conflicts} = {};
+		$o->{all_deps} = {};
+		$o->{seen} = {};
+	}
 	return $o;
 }
 
