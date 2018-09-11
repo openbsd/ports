@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2018/07/29 15:52:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.108 2018/09/11 04:32:30 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -19,7 +19,6 @@
      SUBDIR += gstreamer1
      SUBDIR += hdhomerun
      SUBDIR += imagination
-     SUBDIR += k3b-kde4
      SUBDIR += kguitar
      SUBDIR += libaacs
      SUBDIR += libass
