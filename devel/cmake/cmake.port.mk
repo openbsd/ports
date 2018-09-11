@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.63 2018/01/26 13:11:14 jca Exp $
+# $OpenBSD: cmake.port.mk,v 1.64 2018/09/11 12:12:31 bcallah Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -16,9 +16,17 @@ USE_NINJA = No
 
 .if ${USE_NINJA:L} == "yes"
 BUILD_DEPENDS += devel/ninja>=1.5.1
-_MODCMAKE_GEN = Ninja
 NINJA ?= ninja
 NINJA_FLAGS ?= -v -j ${MAKE_JOBS}
+.elif ${USE_NINJA:L} == "samurai"
+BUILD_DEPENDS += devel/samurai
+NINJA ?= samu
+NINJA_FLAGS ?= -v -j ${MAKE_JOBS}
+CONFIGURE_ARGS += -DCMAKE_MAKE_PROGRAM=${NINJA}
+.endif
+
+.if ${USE_NINJA:L} == "yes" || ${USE_NINJA:L} == "samurai"
+_MODCMAKE_GEN = Ninja
 MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET}
 MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
