@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/17 16:32:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/09/11 10:04:37 naddy Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
-VERSION=	18.05
+VERSION=	18.08.1
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
