@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sdk_scripting_squirrel_sqvm_cpp,v 1.1 2018/09/11 19:24:43 sthen Exp $
+
+Index: src/sdk/scripting/squirrel/sqvm.cpp
+--- src/sdk/scripting/squirrel/sqvm.cpp.orig
++++ src/sdk/scripting/squirrel/sqvm.cpp
+@@ -1,8 +1,8 @@
+ /*
+ 	see copyright notice in squirrel.h
+ */
+-#include "sqpcheader.h"
+ #include <math.h>
++#include "sqpcheader.h"
+ #include <stdlib.h>
+ #include "sqopcodes.h"
+ #include "sqfuncproto.h"
