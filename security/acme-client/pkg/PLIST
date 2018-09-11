@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/11 10:35:12 sthen Exp $
+@bin bin/eacme-client
+@man man/man1/eacme-client.1
+@mode 755
+@owner root
+@sample /etc/ssl/letsencrypt/
+@mode 700
+@sample /etc/ssl/letsencrypt/private/
+@mode 750
+@group www
+@sample /var/www/letsencrypt/

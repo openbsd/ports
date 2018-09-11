@@ -1,0 +1,10 @@
+acme-client is a client for the ACME protocol used by the Let's Encrypt CA.
+It uses isolated processes for various operations - network code doesn't
+have access to the filesystem, etc - this is enforced by pledge(2).
+
+acme-client is present in the OpenBSD base system. This package is for the
+original version, which uses a different configuration interface (CLI rather
+than configuration file). It also supports the DNS-01 challenge type which
+is not currently available in the version in the base system.
+
+The executable is installed as "eacme-client".
