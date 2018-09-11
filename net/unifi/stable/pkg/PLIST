@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/09/11 20:16:39 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -1262,6 +1262,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/transactions.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/vouchers.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/wizard.json
 share/unifi/webapps/ROOT/app-unifi/migration.html
+share/unifi/webapps/ROOT/app-unifi/serverNotRunning.html
 share/unifi/webapps/ROOT/app-unifi/service-worker.js
 share/unifi/webapps/ROOT/pages/
 share/unifi/webapps/ROOT/pages/voucher.jsp
