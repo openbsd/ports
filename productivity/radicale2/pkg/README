@@ -1,0 +1,50 @@
+$OpenBSD: README,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Radicale will run out of the box but with NO SECURITY.
+
+There are two things you should do to enable security:
+enable passwords and enable encryption.
+
+Authentication
+==============
+To enable simple passwords, edit ${SYSCONFDIR}/radicale/config and change
+"type = None" (i.e. passwords are not requested or checked) to
+"type = htpasswd".
+
+User password(s) may be created with htpasswd(1); e.g.
+"htpasswd ${SYSCONFDIR}/radicale/users username". This uses bcrypt
+which matches Radicale's default.
+
+By default calendars may only be accessed by their owner. To adjust
+the rights for calendars please refer to the
+${SYSCONFDIR}/radicale/rights file and the upstream documentation on
+"Rights Management".
+
+For further authentication options, consult Radicale's documentation.
+Previous users of Radicale 1.x with more complex authentication setup
+should be aware that only none/htpasswd are provided as standard;
+plugins are required for others.
+
+Encryption
+==========
+To enable encryption with the internal web server, change "ssl = False"
+to "ssl = True" in ${SYSCONFDIR}/radicale/config, and install a certificate
+and key in the files named in "certificate" and "key". (They need to be
+readable by the _radicale user, so the common location in /etc/ssl/private
+won't work). Alternatively run HTTP on localhost and proxy from alternative
+web server software.
+
+Upgrading from Radicale 1 to 2
+==============================
+Storage must be exported from Radicale 1.x before upgrading. This README
+file is supplied with Radicale 2, so if you are reading it on an installed
+system, start by uninstalling and reinstalling radicale 1.x, then export:
+
+# doas -u _radicale ${PREFIX}/bin/radicale --export-storage ${VARBASE}/db/radicale/collections
+
+Then install radicale 2.x which can use the exported storage directly.
+For more information, refer to https://radicale.org/1to2/

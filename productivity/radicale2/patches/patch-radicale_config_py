@@ -1,0 +1,46 @@
+$OpenBSD: patch-radicale_config_py,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
+Index: radicale/config.py
+--- radicale/config.py.orig
++++ radicale/config.py
+@@ -87,12 +87,12 @@ INITIAL_CONFIG = OrderedDict([
+             "opposite": ["-S", "--no-ssl"],
+             "type": bool}),
+         ("certificate", {
+-            "value": "/etc/ssl/radicale.cert.pem",
++            "value": "${SYSCONFDIR}/radicale/server.crt",
+             "help": "set certificate file",
+             "aliases": ["-c", "--certificate"],
+             "type": str}),
+         ("key", {
+-            "value": "/etc/ssl/radicale.key.pem",
++            "value": "${SYSCONFDIR}/radicale/private/server.key",
+             "help": "set private key file",
+             "aliases": ["-k", "--key"],
+             "type": str}),
+@@ -133,7 +133,7 @@ INITIAL_CONFIG = OrderedDict([
+             "type": str,
+             "internal": auth.INTERNAL_TYPES}),
+         ("htpasswd_filename", {
+-            "value": "/etc/radicale/users",
++            "value": "${SYSCONFDIR}/radicale/users",
+             "help": "htpasswd filename",
+             "type": str}),
+         ("htpasswd_encryption", {
+@@ -151,7 +151,7 @@ INITIAL_CONFIG = OrderedDict([
+             "type": str,
+             "internal": rights.INTERNAL_TYPES}),
+         ("file", {
+-            "value": "/etc/radicale/rights",
++            "value": "${SYSCONFDIR}/radicale/rights",
+             "help": "file for rights management from_file",
+             "type": str})])),
+     ("storage", OrderedDict([
+@@ -162,7 +162,7 @@ INITIAL_CONFIG = OrderedDict([
+             "internal": storage.INTERNAL_TYPES}),
+         ("filesystem_folder", {
+             "value": os.path.expanduser(
+-                "/var/lib/radicale/collections"),
++                "${VARBASE}/db/radicale/collections"),
+             "help": "path where collections are stored",
+             "type": str}),
+         ("max_sync_token_age", {

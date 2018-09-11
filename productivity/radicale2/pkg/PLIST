@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
+@newgroup _radicale:672
+@newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/radicale
+bin/radicale
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/radicale/
+lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/__main__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}rights.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}web.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}xmlutils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth.py
+lib/python${MODPY_VERSION}/site-packages/radicale/config.py
+lib/python${MODPY_VERSION}/site-packages/radicale/log.py
+lib/python${MODPY_VERSION}/site-packages/radicale/rights.py
+lib/python${MODPY_VERSION}/site-packages/radicale/storage.py
+lib/python${MODPY_VERSION}/site-packages/radicale/web/
+lib/python${MODPY_VERSION}/site-packages/radicale/web.py
+lib/python${MODPY_VERSION}/site-packages/radicale/web/css/
+lib/python${MODPY_VERSION}/site-packages/radicale/web/css/icon.png
+lib/python${MODPY_VERSION}/site-packages/radicale/web/css/main.css
+lib/python${MODPY_VERSION}/site-packages/radicale/web/fn.js
+lib/python${MODPY_VERSION}/site-packages/radicale/web/index.html
+lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/radicale/
+share/doc/radicale/COPYING
+share/doc/radicale/NEWS.md
+share/doc/radicale/README.md
+share/examples/radicale/
+share/examples/radicale/config
+@sample ${SYSCONFDIR}/radicale/
+@sample ${SYSCONFDIR}/radicale/config
+share/examples/radicale/log
+@mode 640
+@owner _radicale
+@group _radicale
+@sample ${VARBASE}/log/radicale
+@mode 700
+@sample ${VARBASE}/db/radicale/
+@sample ${SYSCONFDIR}/radicale/private/
+@mode
+@owner
+@group
+share/examples/radicale/logging
+@sample ${SYSCONFDIR}/radicale/logging
+share/examples/radicale/rights
+@sample ${SYSCONFDIR}/radicale/rights

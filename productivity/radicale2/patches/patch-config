@@ -1,0 +1,53 @@
+$OpenBSD: patch-config,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
+Index: config
+--- config.orig
++++ config
+@@ -3,7 +3,7 @@
+ 
+ # Config file for Radicale - A simple calendar server
+ #
+-# Place it into /etc/radicale/config (global)
++# Place it into ${SYSCONFDIR}/radicale/config (global)
+ # or ~/.config/radicale/config (user)
+ #
+ # The current values are the default ones
+@@ -36,10 +36,10 @@
+ #ssl = False
+ 
+ # SSL certificate path
+-#certificate = /etc/ssl/radicale.cert.pem
++#certificate = ${SYSCONFDIR}/radicale/server.crt
+ 
+ # SSL private key
+-#key = /etc/ssl/radicale.key.pem
++#key = ${SYSCONFDIR}/radicale/private/server.key
+ 
+ # CA certificate for validating clients. This can be used to secure
+ # TCP traffic between Radicale and a reverse proxy
+@@ -74,7 +74,7 @@
+ #type = none
+ 
+ # Htpasswd filename
+-#htpasswd_filename = /etc/radicale/users
++#htpasswd_filename = ${SYSCONFDIR}/radicale/users
+ 
+ # Htpasswd encryption method
+ # Value: plain | sha1 | ssha | crypt | bcrypt | md5
+@@ -93,7 +93,7 @@
+ #type = owner_only
+ 
+ # File for rights management from_file
+-#file = /etc/radicale/rights
++#file = ${SYSCONFDIR}/radicale/rights
+ 
+ 
+ [storage]
+@@ -103,7 +103,7 @@
+ #type = multifilesystem
+ 
+ # Folder for storing local collections, created if not present
+-#filesystem_folder = /var/lib/radicale/collections
++#filesystem_folder = ${VARBASE}/db/radicale/collections
+ 
+ # Lock the storage. Never start multiple instances of Radicale or edit the
+ # storage externally while Radicale is running if disabled.

@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: radicale.rc,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/radicale -d"
+daemon_user="_radicale"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,9 @@
+The Radicale Project is a complete CalDAV calendar server solution,
+capable of making multiple calendars available to local and remote
+users, with optional authentication policies. Calendars can be
+viewed and edited by a calendar client such as
+Mozilla Lightning Calendar or Evolution.
+
+The Radicale Project aims to be a light solution, easy to use, easy
+to install, easy to configure. As a consequence, it requires few
+software dependencies and is pre-configured to work out-of-the-box.
