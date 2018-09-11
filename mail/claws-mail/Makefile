@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2018/09/07 14:08:38 danj Exp $
+# $OpenBSD: Makefile,v 1.116 2018/09/11 17:52:22 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -74,13 +74,13 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
 			archivers/xz \
-			devel/startup-notification \
-			textproc/enchant \
 			audio/libcanberra,-gtk \
 			devel/libnotify \
+			devel/startup-notification \
 			security/gnutls>=2.2 \
 			security/gpgme \
 			security/libnettle \
+			textproc/enchant \
 			textproc/libical \
 			x11/dbus-glib
 
