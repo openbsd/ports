@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.516 2018/09/09 15:05:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.517 2018/09/11 10:35:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
+     SUBDIR += acme-client
      SUBDIR += aescrypt
      SUBDIR += aide
      SUBDIR += aircrack-ng
