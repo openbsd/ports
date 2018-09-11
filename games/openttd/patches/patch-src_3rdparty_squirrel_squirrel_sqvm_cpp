@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_3rdparty_squirrel_squirrel_sqvm_cpp,v 1.1 2018/09/11 19:24:01 sthen Exp $
+
+Unbreak with newer libc++. FreeBSD r447202
+
+Index: src/3rdparty/squirrel/squirrel/sqvm.cpp
+--- src/3rdparty/squirrel/squirrel/sqvm.cpp.orig
++++ src/3rdparty/squirrel/squirrel/sqvm.cpp
+@@ -4,9 +4,9 @@
+ 
+ #include "../../../stdafx.h"
+ 
++#include <math.h>
+ #include <squirrel.h>
+ #include "sqpcheader.h"
+-#include <math.h>
+ #include "sqopcodes.h"
+ #include "sqfuncproto.h"
+ #include "sqvm.h"
