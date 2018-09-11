@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/05/17 23:22:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/09/11 08:55:51 sthen Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -32,6 +32,7 @@
      SUBDIR += py-carddav
      SUBDIR += qhacc
      SUBDIR += radicale
+     SUBDIR += radicale2
      SUBDIR += rednotebook
      SUBDIR += rubrica2
      SUBDIR += siag
