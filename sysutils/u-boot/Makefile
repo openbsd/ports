@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.40 2018/09/04 10:32:15 jsg Exp $
+#	$OpenBSD: Makefile,v 1.41 2018/09/11 10:35:01 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,7 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.09-rc3
+VERSION=	2018.09
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
