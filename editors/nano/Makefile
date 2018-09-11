@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.98 2018/06/03 22:02:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.99 2018/09/11 06:25:29 gonzalo Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.9.8
+DISTNAME=	nano-3.0
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	https://www.nano-editor.org/dist/v2.9/ \
+MASTER_SITES=	https://www.nano-editor.org/dist/v3/ \
 		${MASTER_SITE_GNU:=nano/}
 PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz
