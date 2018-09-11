@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2018/08/23 16:38:10 kirby Exp $
+# $OpenBSD: Makefile,v 1.75 2018/09/11 19:26:14 sthen Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
+# XXX if updating, try to remove -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
+# XXX in archivers/innoextract
 VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/24 08:56:16 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/11 19:26:14 sthen Exp $
 
 COMMENT=	unpack Inno Setup installers
 
@@ -27,7 +27,7 @@ MODULES=	devel/cmake
 
 SEPARATE_BUILD=	Yes
 
-CXXFLAGS+=	-Wno-system-headers
+CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR -Wno-system-headers
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCMAKE_INSTALL_MANDIR="man" \
 		-DDOXYGEN_EXECUTABLE="false"
