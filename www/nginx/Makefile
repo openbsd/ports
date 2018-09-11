@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2018/09/04 12:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.123 2018/09/11 17:16:10 jeremy Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -55,7 +55,7 @@ MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
 			-naxsi -perl -passenger -headers_more -lua
 
 FLAVOR ?=
-PSEUDO_FLAVORS =	no_lua
+PSEUDO_FLAVORS =	no_lua no_passenger
 
 .include <bsd.port.arch.mk>
 
@@ -70,8 +70,6 @@ WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
-
-BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
 
 LIB_DEPENDS-main=	devel/pcre
 LIB_DEPENDS-xslt=	textproc/libxml \
@@ -111,10 +109,6 @@ CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include" \
 		-L "${X11BASE}/lib"
 
-MODULES+=		lang/ruby
-MODRUBY_BUILDDEP=	No
-MODRUBY_RUNDEP=		No
-
 PATCHFILES+=		nginx-${VERSION}-chroot.patch:3
 PATCH_DIST_STRIP=	-p1
 
@@ -125,6 +119,14 @@ MODULES+=		lang/lua
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
 CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/lua-nginx-module
+.endif
+
+.if ${BUILD_PACKAGES:M-passenger}
+MODULES+=		lang/ruby
+MODRUBY_BUILDDEP=	No
+MODRUBY_RUNDEP=		No
+BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
+CONFIGURE_ARGS+=	--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
 .endif
 
 CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
@@ -157,8 +159,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
-			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \
-			--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
+			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module
 
 SUBSTFILES=		conf/nginx.conf \
 			lua-nginx-module/config
