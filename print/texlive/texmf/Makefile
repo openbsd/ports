@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2018/09/11 21:32:28 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -15,7 +15,8 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
+			texlive2017.tlpdb.gz:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -161,17 +162,18 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
-# Generating PLISTs is special for texlive.
-# This target requires py-texscythe.
+# Generating PLISTs is special for TeX Live.
+# This target requires Python-2.7.
 update-plist: plist
-plist:
-	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-		${TRUEPREFIX}/share/examples/py-texscythe/texlive2017.tlpdb.gz
+plist: fake
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \
+		${FILESDIR}/update_plist_hints.py \
+		${DISTDIR}/texlive2017.tlpdb.gz | \
+		${MODPY_BIN} ${FILESDIR}/write_plists.py
 
 # regenerate adj.mk
 adj:
 	${MODPY_BIN} ${FILESDIR}/mk_adj.py ${WRKSRC}/texmf-dist \
 		${WRKSRC} > adj.mk
-
 
 .include <bsd.port.mk>
