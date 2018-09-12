@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.57 2017/10/27 03:16:30 sthen Exp $
+$OpenBSD: patch-configure,v 1.58 2018/09/12 19:59:04 robert Exp $
 
 - lavu/random_seed: use arc4random() when available
 - configure: Also try -mstack-alignment for clang
+- section_data_rel_ro: required by NEON support
 
 Index: configure
 --- configure.orig
@@ -14,16 +15,18 @@ Index: configure
      clock_gettime
      closesocket
      CommandLineToArgvW
-@@ -4308,7 +4309,7 @@ case $target_os in
+@@ -4307,8 +4308,9 @@ case $target_os in
+         ;;
      openbsd|bitrig)
          disable symver
++        enable section_data_rel_ro
          SHFLAGS='-shared'
 -        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
 +        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBVERSION)'
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4672,7 +4673,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4672,7 +4674,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -32,7 +35,7 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5067,6 +5068,7 @@ check_func  ${malloc_prefix}memalign            && ena
+@@ -5067,6 +5069,7 @@ check_func  ${malloc_prefix}memalign            && ena
  check_func  ${malloc_prefix}posix_memalign      && enable posix_memalign
  
  check_func  access
@@ -40,7 +43,7 @@ Index: configure
  check_func_headers time.h clock_gettime || { check_func_headers time.h clock_gettime -lrt && add_extralibs -lrt && LIBRT="-lrt"; }
  check_func  fcntl
  check_func  fork
-@@ -5685,6 +5687,7 @@ elif enabled llvm_gcc; then
+@@ -5685,6 +5688,7 @@ elif enabled llvm_gcc; then
      check_cflags -mllvm -stack-alignment=16
  elif enabled clang; then
      check_cflags -mllvm -stack-alignment=16
@@ -48,7 +51,7 @@ Index: configure
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -6220,8 +6223,8 @@ pkgconfig_generate(){
+@@ -6220,8 +6224,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -59,7 +62,7 @@ Index: configure
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6236,7 +6239,7 @@ Version: $version
+@@ -6236,7 +6240,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -68,7 +71,7 @@ Index: configure
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6260,12 +6263,12 @@ Cflags: -I\${includedir}
+@@ -6260,12 +6264,12 @@ Cflags: -I\${includedir}
  EOF
  }
  

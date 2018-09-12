@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.171 2018/09/12 19:59:04 robert Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -8,7 +8,7 @@ PKGNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
@@ -85,7 +85,6 @@ CONFIGURE_ARGS+= --enable-shared \
 		--disable-mipsfpu \
 		--disable-mmi \
 		--disable-msa \
-		--disable-neon \
 		--disable-outdev=oss \
 		--disable-outdev=sdl \
 		--disable-vfp \
