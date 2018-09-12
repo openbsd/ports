@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2018/09/04 12:46:25 espie Exp $
+$OpenBSD: README,v 1.8 2018/09/12 08:26:48 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -102,7 +102,7 @@ fastcgi_param with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
 For enhanced performance, a PHP opcode cache can be used, either
 use "opcache" (built-in to PHP 5.5+, enable "opcache.ini" to use it)
-or install xcache.
+or install xcache (PHP 5.x only).
 
 Database configuration
 ----------------------
@@ -110,10 +110,9 @@ See the following URL for setting up a database for nextcloud:
     https://docs.nextcloud.com/server/${MAJOR}/admin_manual/configuration_database/linux_database_configuration.html
 
 Nextcloud can work with a PostgreSQL, MariaDB or SQLite3 database.
-Support for SQLite3 is included with the main php package; to use
-another database, the corresponding package needs to be installed
-*before* setting up nextcloud:
-    php-pdo_pgsql or php-pdo_mysql
+Ensure that the corresponding package is installed *before* setting
+up nextcloud:
+    php-pdo_sqlite, php-pdo_pgsql or php-pdo_mysql
 
 Configuration is done under:
     ${INSTDIR}/config/config.php
