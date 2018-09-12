@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.12 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.13 2018/09/12 17:08:22 robert Exp $
 
 Index: components/crash/content/app/BUILD.gn
 --- components/crash/content/app/BUILD.gn.orig
@@ -17,6 +17,6 @@ Index: components/crash/content/app/BUILD.gn
        "//content/public/common:result_codes",
        "//sandbox",
 -      "//third_party/breakpad:client",
+       "//third_party/crashpad/crashpad/snapshot",
      ]
  
-     # Clang's -mstackrealign doesn't work well with

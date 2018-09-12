@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.1 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.2 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 --- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig
 +++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
-@@ -18,7 +18,7 @@
+@@ -13,7 +13,7 @@
  #include "chrome/browser/ui/views/frame/glass_browser_frame_view.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -47,7 +47,7 @@ BrowserNonClientFrameView* CreateBrowserNonClientFrame
+@@ -34,7 +34,7 @@ BrowserNonClientFrameView* CreateBrowserNonClientFrame
  #endif
  #if BUILDFLAG(ENABLE_NATIVE_WINDOW_NAV_BUTTONS)
    std::unique_ptr<views::NavButtonProvider> nav_button_provider;

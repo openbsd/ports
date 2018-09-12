@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.54 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.55 2018/09/12 17:08:22 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -234,6 +234,13 @@
- #include "services/ui/common/image_cursors_set.h"
+@@ -238,6 +238,13 @@
+ #include "base/mac/foundation_util.h"
  #endif
  
 +#if defined(OS_BSD)
@@ -17,7 +17,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -546,6 +553,11 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -587,6 +594,11 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());

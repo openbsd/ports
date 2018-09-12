@@ -1,18 +1,18 @@
-$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.4 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-services_service_manager_sandbox_BUILD_gn,v 1.5 2018/09/12 17:08:22 robert Exp $
 
 Index: services/service_manager/sandbox/BUILD.gn
 --- services/service_manager/sandbox/BUILD.gn.orig
 +++ services/service_manager/sandbox/BUILD.gn
-@@ -27,7 +27,7 @@ component("sandbox") {
-     ":sanitizer_buildflags",
+@@ -28,7 +28,7 @@ component("sandbox") {
      "//base",
+     "//sandbox:common",
    ]
 -  if (is_linux) {
 +  if (is_linux && !is_openbsd) {
      sources += [
        "linux/bpf_base_policy_linux.cc",
        "linux/bpf_base_policy_linux.h",
-@@ -64,6 +64,13 @@ component("sandbox") {
+@@ -65,6 +65,13 @@ component("sandbox") {
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
      ]

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.3 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.4 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -230,7 +230,7 @@ extern const char kChromeUICastHost[];
+@@ -232,7 +232,7 @@ extern const char kChromeUICastHost[];
  extern const char kChromeUICastURL[];
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -239,11 +239,11 @@ extern const char kChromeUIDiscardsURL[];
+@@ -241,11 +241,11 @@ extern const char kChromeUIDiscardsURL[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  

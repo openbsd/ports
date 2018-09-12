@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+
+Index: tools/gn/tools/gn/args.cc
+--- tools/gn/tools/gn/args.cc.orig
++++ tools/gn/tools/gn/args.cc
+@@ -296,6 +296,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+   os = "linux";
+ #elif defined(OS_AIX)
+   os = "aix";
++#elif defined(OS_OPENBSD)
++  os = "openbsd";
+ #else
+ #error Unknown OS type.
+ #endif

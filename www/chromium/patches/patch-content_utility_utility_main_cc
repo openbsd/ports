@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.9 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.10 2018/09/12 17:08:22 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -24,6 +24,10 @@
- #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+@@ -28,6 +28,10 @@
+ #include "base/message_loop/message_pump_mac.h"
  #endif
  
 +#if defined(OS_OPENBSD)
@@ -14,7 +14,7 @@ Index: content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -46,12 +50,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -64,12 +68,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -29,7 +29,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == service_manager::SANDBOX_TYPE_NETWORK) {
      service_manager::SandboxLinux::PreSandboxHook pre_sandbox_hook;
-@@ -61,6 +66,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -79,6 +84,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

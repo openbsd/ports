@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_swiftshader_src_Common_SharedLibrary_hpp,v 1.2 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Common_SharedLibrary_hpp,v 1.3 2018/09/12 17:08:22 robert Exp $
 
 Index: third_party/swiftshader/src/Common/SharedLibrary.hpp
 --- third_party/swiftshader/src/Common/SharedLibrary.hpp.orig
 +++ third_party/swiftshader/src/Common/SharedLibrary.hpp
-@@ -129,7 +129,7 @@ void *loadLibrary(const std::string &libraryDirectory,
+@@ -115,7 +115,7 @@ void *loadLibrary(const std::string &libraryDirectory,
  
  	inline void *getLibraryHandle(const char *path)
  	{

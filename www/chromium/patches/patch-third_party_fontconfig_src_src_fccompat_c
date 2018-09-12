@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_fontconfig_src_src_fccompat_c,v 1.1 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-third_party_fontconfig_src_src_fccompat_c,v 1.2 2018/09/12 17:08:22 robert Exp $
 
 Index: third_party/fontconfig/src/src/fccompat.c
 --- third_party/fontconfig/src/src/fccompat.c.orig
 +++ third_party/fontconfig/src/src/fccompat.c
-@@ -166,7 +166,9 @@ FcRandom(void)
+@@ -169,7 +169,9 @@ FcRandom(void)
  {
      int32_t result;
  

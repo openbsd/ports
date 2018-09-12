@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_extensions_chrome_extensions_client_cc,v 1.7 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_common_extensions_chrome_extensions_client_cc,v 1.8 2018/09/12 17:08:22 robert Exp $
 Index: chrome/common/extensions/chrome_extensions_client.cc
 --- chrome/common/extensions/chrome_extensions_client.cc.orig
 +++ chrome/common/extensions/chrome_extensions_client.cc
-@@ -96,7 +96,10 @@ ChromeChannelForHistogram GetChromeChannelForHistogram
+@@ -99,7 +99,10 @@ ChromeChannelForHistogram GetChromeChannelForHistogram
  static base::LazyInstance<ChromeExtensionsClient>::Leaky g_client =
      LAZY_INSTANCE_INITIALIZER;
  

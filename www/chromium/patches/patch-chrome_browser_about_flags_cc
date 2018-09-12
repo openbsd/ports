@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.44 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.45 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -2408,7 +2408,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
- #endif  // ENABLE_EXTENSIONS
+@@ -2436,7 +2436,7 @@ const FeatureEntry kFeatureEntries[] = {
+     {"force-text-direction", flag_descriptions::kForceTextDirectionName,
+      flag_descriptions::kForceTextDirectionDescription, kOsAll,
+      MULTI_VALUE_TYPE(kForceTextDirectionChoices)},
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -3024,7 +3024,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3059,7 +3059,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kLeftToRightUrlsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kLeftToRightUrls)},
  
@@ -21,3 +21,21 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-new-answer-layout",
       flag_descriptions::kOmniboxNewAnswerLayoutName,
       flag_descriptions::kOmniboxNewAnswerLayoutDescription, kOsDesktop,
+@@ -3415,7 +3415,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kClickToOpenPDFDescription, kOsAll,
+      FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+     {"direct-manipulation-stylus",
+      flag_descriptions::kDirectManipulationStylusName,
+      flag_descriptions::kDirectManipulationStylusDescription,
+@@ -3913,7 +3913,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(ash::features::kOverviewSwipeToClose)},
+ #endif  // OS_CHROMEOS
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+     {"ntp-backgrounds", flag_descriptions::kNtpBackgroundsName,
+      flag_descriptions::kNtpBackgroundsDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kNtpBackgrounds)},

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.31 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.32 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
@@ -30,7 +30,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -835,7 +835,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -840,7 +840,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

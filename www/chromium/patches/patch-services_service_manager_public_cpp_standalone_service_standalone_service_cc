@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_public_cpp_standalone_service_standalone_service_cc,v 1.5 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-services_service_manager_public_cpp_standalone_service_standalone_service_cc,v 1.6 2018/09/12 17:08:22 robert Exp $
 
 Index: services/service_manager/public/cpp/standalone_service/standalone_service.cc
 --- services/service_manager/public/cpp/standalone_service/standalone_service.cc.orig
 +++ services/service_manager/public/cpp/standalone_service/standalone_service.cc
-@@ -60,6 +60,8 @@ void RunStandaloneService(const StandaloneServiceCallb
+@@ -62,6 +62,8 @@ void RunStandaloneService(const StandaloneServiceCallb
              command_line.GetSwitchValueASCII(switches::kServiceSandboxType)),
          SandboxLinux::PreSandboxHook(), sandbox_options);
    }
@@ -11,4 +11,4 @@ Index: services/service_manager/public/cpp/standalone_service/standalone_service
 +  NOTIMPLEMENTED();
  #endif
  
-   mojo::edk::Init();
+   mojo::core::Init();

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.383 2018/09/04 07:20:42 robert Exp $
+# $OpenBSD: Makefile,v 1.384 2018/09/12 17:08:22 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,8 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			68.0.3440.106
-REVISION=		0
+V=			69.0.3497.81
 
 DISTNAME=		chromium-${V}
 
@@ -204,7 +203,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/chrome
-	${INSTALL_DATA} ${BUILDDIR}/*.service ${PREFIX}/chrome
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources

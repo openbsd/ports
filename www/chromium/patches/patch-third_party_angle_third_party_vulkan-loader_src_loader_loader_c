@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_angle_third_party_vulkan-validation-layers_src_loader_loader_c,v 1.4 2018/08/10 14:57:53 robert Exp $
+$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_loader_loader_c,v 1.1 2018/09/12 17:08:22 robert Exp $
 
-Index: third_party/angle/third_party/vulkan-validation-layers/src/loader/loader.c
---- third_party/angle/third_party/vulkan-validation-layers/src/loader/loader.c.orig
-+++ third_party/angle/third_party/vulkan-validation-layers/src/loader/loader.c
+Index: third_party/angle/third_party/vulkan-loader/src/loader/loader.c
+--- third_party/angle/third_party/vulkan-loader/src/loader/loader.c.orig
++++ third_party/angle/third_party/vulkan-loader/src/loader/loader.c
 @@ -213,7 +213,7 @@ void *loader_device_heap_realloc(const struct loader_d
  }
  

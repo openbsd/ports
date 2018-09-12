@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.16 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.17 2018/09/12 17:08:22 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
@@ -49,7 +49,7 @@ Index: base/process/process_metrics.h
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
 @@ -275,7 +275,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
- #endif  // defined(OS_POSIX) && !defined(OS_FUCHSIA)
+ #endif  // defined(OS_POSIX)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)

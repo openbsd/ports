@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_rand_util_h,v 1.2 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-base_rand_util_h,v 1.3 2018/09/12 17:08:22 robert Exp $
 
 Index: base/rand_util.h
 --- base/rand_util.h.orig
@@ -7,8 +7,8 @@ Index: base/rand_util.h
    std::shuffle(first, last, RandomBitGenerator());
  }
  
--#if defined(OS_POSIX) && !defined(OS_FUCHSIA)
-+#if defined(OS_POSIX) && !defined(OS_FUCHSIA) && !defined(OS_OPENBSD)
+-#if defined(OS_POSIX)
++#if defined(OS_POSIX) && !defined(OS_OPENBSD)
  BASE_EXPORT int GetUrandomFD();
  #endif
  

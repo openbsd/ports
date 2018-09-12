@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.44 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.45 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/common/chrome_switches.h
 --- chrome/common/chrome_switches.h.orig
 +++ chrome/common/chrome_switches.h
-@@ -296,12 +296,12 @@ extern const char kAllowNaClFileHandleAPI[];
+@@ -302,12 +302,12 @@ extern const char kAllowNaClFileHandleAPI[];
  extern const char kAllowNaClSocketAPI[];
  #endif
  

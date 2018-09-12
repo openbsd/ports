@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.9 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.10 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_features.h
  extern const base::Feature kCertDualVerificationTrialFeature;
  #endif
  
-@@ -204,7 +204,7 @@ extern const base::Feature kMaterialDesignExtensions;
+@@ -201,7 +201,7 @@ extern const base::Feature kMacMaterialDesignDownloadS
  extern const base::Feature kAcknowledgeNtpOverrideOnDeactivate;
  #endif
  

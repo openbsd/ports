@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_h,v 1.16 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_web_app_h,v 1.17 2018/09/12 17:08:22 robert Exp $
 Index: chrome/browser/web_applications/web_app.h
 --- chrome/browser/web_applications/web_app.h.orig
 +++ chrome/browser/web_applications/web_app.h
-@@ -204,7 +204,7 @@ void UpdateShortcutsForAllApps(Profile* profile,
+@@ -176,7 +176,7 @@ void UpdateShortcutsForAllApps(Profile* profile, base:
  // Returns true if given url is a valid web app url.
  bool IsValidUrl(const GURL& url);
  

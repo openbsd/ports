@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.2 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-third_party_fontconfig_include_config_h,v 1.3 2018/09/12 17:08:22 robert Exp $
 
 Index: third_party/fontconfig/include/config.h
 --- third_party/fontconfig/include/config.h.orig
 +++ third_party/fontconfig/include/config.h
-@@ -14,13 +14,13 @@
- #define ENABLE_LIBXML2 1
+@@ -18,13 +18,13 @@
+ #define ENABLE_NLS 1
  
  /* Additional font directories */
 -#define FC_ADD_FONTS "yes"
@@ -18,17 +18,17 @@ Index: third_party/fontconfig/include/config.h
 +#define FC_DEFAULT_FONTS "/usr/X11R6/lib/X11/fonts"
  
  /* The type of len parameter of the gperf hash/lookup function */
- #define FC_GPERF_SIZE_T unsigned int
-@@ -87,7 +87,7 @@
+ #define FC_GPERF_SIZE_T size_t
+@@ -100,7 +100,7 @@
  #define HAVE_GETPAGESIZE 1
  
  /* Define to 1 if you have the `getprogname' function. */
 -/* #undef HAVE_GETPROGNAME */
 +#define HAVE_GETPROGNAME 1
  
- /* Have Intel __sync_* atomic primitives */
- #define HAVE_INTEL_ATOMIC_PRIMITIVES 1
-@@ -123,7 +123,7 @@
+ /* Define if the GNU gettext() function is already present or preinstalled. */
+ #define HAVE_GETTEXT 1
+@@ -142,7 +142,7 @@
  /* #undef HAVE_NDIR_H */
  
  /* Define to 1 if you have the 'posix_fadvise' function. */
@@ -37,7 +37,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Have POSIX threads */
  #define HAVE_PTHREAD 1
-@@ -138,11 +138,14 @@
+@@ -157,11 +157,14 @@
  #define HAVE_RANDOM 1
  
  /* Define to 1 if you have the `random_r' function. */
@@ -53,7 +53,7 @@ Index: third_party/fontconfig/include/config.h
  /* Define to 1 if you have the `readlink' function. */
  #define HAVE_READLINK 1
  
-@@ -174,7 +177,7 @@
+@@ -199,7 +202,7 @@
  #define HAVE_STRUCT_STATFS_F_FLAGS 1
  
  /* Define to 1 if `f_fstypename' is a member of `struct statfs'. */
@@ -62,7 +62,7 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if `f_basetype' is a member of `struct statvfs'. */
  /* #undef HAVE_STRUCT_STATVFS_F_BASETYPE */
-@@ -200,7 +203,7 @@
+@@ -225,7 +228,7 @@
  #define HAVE_SYS_PARAM_H 1
  
  /* Define to 1 if you have the <sys/statfs.h> header file. */
@@ -71,16 +71,16 @@ Index: third_party/fontconfig/include/config.h
  
  /* Define to 1 if you have the <sys/statvfs.h> header file. */
  #define HAVE_SYS_STATVFS_H 1
-@@ -212,7 +215,7 @@
+@@ -237,7 +240,7 @@
  #define HAVE_SYS_TYPES_H 1
  
  /* Define to 1 if you have the <sys/vfs.h> header file. */
 -#define HAVE_SYS_VFS_H 1
 +/* #undef HAVE_SYS_VFS_H */
  
- /* Define to 1 if `usLowerOpticalPointSize' is a member of `TT_OS2'. */
- #define HAVE_TT_OS2_USLOWEROPTICALPOINTSIZE 1
-@@ -238,7 +241,8 @@
+ /* Define to 1 if you have the <unistd.h> header file. */
+ #define HAVE_UNISTD_H 1
+@@ -257,7 +260,8 @@
  /* Define to 1 if you have the `_mktemp_s' function. */
  /* #undef HAVE__MKTEMP_S */
  

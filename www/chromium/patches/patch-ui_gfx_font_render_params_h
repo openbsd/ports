@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.4 2017/10/25 13:47:07 robert Exp $
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.5 2018/09/12 17:08:22 robert Exp $
 
 Index: ui/gfx/font_render_params.h
 --- ui/gfx/font_render_params.h.orig
 +++ ui/gfx/font_render_params.h
-@@ -107,13 +107,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+@@ -111,13 +111,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  

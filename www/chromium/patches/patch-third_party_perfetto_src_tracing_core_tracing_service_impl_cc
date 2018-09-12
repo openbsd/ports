@@ -1,0 +1,25 @@
+$OpenBSD: patch-third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+
+Index: third_party/perfetto/src/tracing/core/tracing_service_impl.cc
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig
++++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
+@@ -1017,7 +1017,8 @@ TraceBuffer* TracingServiceImpl::GetBufferByID(BufferI
+ 
+ void TracingServiceImpl::UpdateMemoryGuardrail() {
+ #if !PERFETTO_BUILDFLAG(PERFETTO_CHROMIUM_BUILD) && \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX)
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+   uint64_t total_buffer_bytes = 0;
+ 
+   // Sum up all the shared memory buffers.
+@@ -1050,7 +1051,8 @@ void TracingServiceImpl::MaybeSnapshotClocks(
+   protos::ClockSnapshot* clock_snapshot = packet.mutable_clock_snapshot();
+ 
+ #if !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN)
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+   struct {
+     clockid_t id;
+     protos::ClockSnapshot::Clock::Type type;

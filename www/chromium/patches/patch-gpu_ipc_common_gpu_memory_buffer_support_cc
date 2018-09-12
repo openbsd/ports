@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.7 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_cc,v 1.8 2018/09/12 17:08:22 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.cc
 --- gpu/ipc/common/gpu_memory_buffer_support.cc.orig
@@ -48,10 +48,10 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.cc
    switch (usage) {
 @@ -171,7 +171,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
-           handle, size, format, usage, callback);
+           std::move(handle), size, format, usage, callback);
  #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
      case gfx::NATIVE_PIXMAP:
        return GpuMemoryBufferImplNativePixmap::CreateFromHandle(
-           client_native_pixmap_factory(), handle, size, format, usage,
+           client_native_pixmap_factory(), std::move(handle), size, format,

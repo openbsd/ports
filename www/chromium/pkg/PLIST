@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2018/08/10 14:57:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.84 2018/09/12 17:08:22 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -6,10 +6,8 @@ chrome/
 @bin chrome/chrome
 chrome/chrome_100_percent.pak
 chrome/chrome_200_percent.pak
-chrome/font_service.service
 chrome/headless_lib.pak
 chrome/icudtl.dat
-chrome/keyboard_resources.pak
 chrome/libEGL.so
 chrome/libGLESv2.so
 %%component%%
@@ -394,9 +392,6 @@ chrome/swiftshader/libEGL.so
 chrome/swiftshader/libGLESv2.so
 chrome/v8_context_snapshot.bin
 chrome/views_mus_resources.pak
-man/ja_JP.EUC/cat3f/
-man/ja_JP.EUC/man3f/
-man/ja_JP.EUC/man3p/
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/examples/chromium/

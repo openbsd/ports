@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.33 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.34 2018/09/12 17:08:22 robert Exp $
 
 Index: ui/views/controls/textfield/textfield.cc
 --- ui/views/controls/textfield/textfield.cc.orig
@@ -39,7 +39,7 @@ Index: ui/views/controls/textfield/textfield.cc
  #else
    return false;
 @@ -669,7 +669,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
-     ShowImeIfNeeded();
+     ShowVirtualKeyboardIfEnabled();
    }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -65,7 +65,7 @@ Index: ui/views/controls/textfield/textfield.cc
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2054,7 +2054,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -2071,7 +2071,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

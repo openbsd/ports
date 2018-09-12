@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.16 2018/08/10 14:57:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.17 2018/09/12 17:08:22 robert Exp $
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -38,10 +38,12 @@ using views::GridLayout;
+@@ -36,10 +36,12 @@
  
  namespace {
  

@@ -1,8 +1,17 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.9 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.10 2018/09/12 17:08:22 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
+@@ -42,7 +42,7 @@
+ #include "base/files/file_util.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "content/public/common/sandbox_init.h"
+ #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+ #endif
 @@ -51,6 +51,11 @@
  #include "gin/v8_initializer.h"
  #endif

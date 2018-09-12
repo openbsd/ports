@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_physicalsocketserver_cc,v 1.4 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_physicalsocketserver_cc,v 1.5 2018/09/12 17:08:22 robert Exp $
 
 Index: third_party/webrtc/rtc_base/physicalsocketserver.cc
 --- third_party/webrtc/rtc_base/physicalsocketserver.cc.orig
 +++ third_party/webrtc/rtc_base/physicalsocketserver.cc
-@@ -68,7 +68,7 @@ typedef void* SockOptArg;
+@@ -67,7 +67,7 @@ typedef void* SockOptArg;
  
  #endif  // WEBRTC_POSIX
  
@@ -32,8 +32,8 @@ Index: third_party/webrtc/rtc_base/physicalsocketserver.cc
    }
 @@ -318,7 +318,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
  int PhysicalSocket::Send(const void* pv, size_t cb) {
-   int sent = DoSend(s_, reinterpret_cast<const char *>(pv),
-       static_cast<int>(cb),
+   int sent = DoSend(
+       s_, reinterpret_cast<const char*>(pv), static_cast<int>(cb),
 -#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
        // Suppress SIGPIPE. Without this, attempting to send on a socket whose
@@ -41,12 +41,12 @@ Index: third_party/webrtc/rtc_base/physicalsocketserver.cc
        // our process, which by default will terminate the process, which we
 @@ -347,7 +347,7 @@ int PhysicalSocket::SendTo(const void* buffer,
    size_t len = addr.ToSockAddrStorage(&saddr);
-   int sent = DoSendTo(
-       s_, static_cast<const char *>(buffer), static_cast<int>(length),
+   int sent =
+       DoSendTo(s_, static_cast<const char*>(buffer), static_cast<int>(length),
 -#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-       // Suppress SIGPIPE. See above for explanation.
-       MSG_NOSIGNAL,
+                // Suppress SIGPIPE. See above for explanation.
+                MSG_NOSIGNAL,
  #else
 @@ -538,7 +538,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;

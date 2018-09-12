@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.28 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.29 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -10,27 +10,27 @@ Index: chrome/app/generated_resources.grd
 -locale.  The variables is_win, is_macosx, is_linux, and is_posix are available
 +locale.  The variables is_win, is_macosx, is_posix, and is_posix are available
  for making strings OS specific.  Other platform defines such as use_titlecase
- are declared in build/common.gypi.
+ are declared in tools/grit/grit_rule.gni.
  -->
-@@ -6281,7 +6281,7 @@ I don't think this site should be blocked!
+@@ -5208,7 +5208,7 @@ the Bookmarks menu.">
+         </message>
+       </if>
+ 
+-      <if expr="is_win or (is_linux and not chromeos)">
++      <if expr="is_win or (is_posix and not chromeos)">
+         <!-- Confirm to quit panel -->
+         <message name="IDS_CONFIRM_TO_QUIT_DESCRIPTION" desc="Instructions for how the user should confirm quitting.">
+           Hold |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>|+|<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+@@ -6064,7 +6064,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
--      <if expr="not is_linux or chromeos">
-+      <if expr="not is_posix or chromeos">
-         <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
-           Themes
-         </message>
-@@ -6289,7 +6289,7 @@ I don't think this site should be blocked!
-       <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
-         Reset to default theme
-       </message>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
-           Use GTK+ theme
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
          </message>
-@@ -7526,7 +7526,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -6895,7 +6895,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

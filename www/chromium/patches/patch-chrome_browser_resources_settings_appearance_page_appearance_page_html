@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.7 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.8 2018/09/12 17:08:22 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 --- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
-@@ -71,7 +71,7 @@
+@@ -70,7 +70,7 @@
                hidden="[[!pageVisibility.setTheme]]"
                label="$i18n{themes}" sub-label="[[themeSublabel_]]"
                on-click="openThemeUrl_"></cr-link-row>
@@ -12,7 +12,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
              <paper-button id="useDefault" on-click="onUseDefaultTap_"
-@@ -80,7 +80,7 @@
+@@ -79,7 +79,7 @@
              </paper-button>
            </template>
  </if>
@@ -21,7 +21,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                prefs.extensions.theme.id.value, useSystemTheme_)]]"
-@@ -145,7 +145,7 @@
+@@ -144,7 +144,7 @@
              pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
              label="$i18n{showBookmarksBar}">
          </settings-toggle-button>

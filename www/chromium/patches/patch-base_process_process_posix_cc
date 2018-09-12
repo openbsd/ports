@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.16 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.17 2018/09/12 17:08:22 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
@@ -21,7 +21,7 @@ Index: base/process/process_posix.cc
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -265,12 +269,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -262,12 +266,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
@@ -35,7 +35,7 @@ Index: base/process/process_posix.cc
  
  // static
  void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -354,21 +356,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -351,21 +353,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
  
  void Process::Exited(int exit_code) const {}
  
