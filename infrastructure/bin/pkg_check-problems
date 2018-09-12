@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.7 2018/09/12 10:48:13 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.8 2018/09/12 15:34:31 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -302,6 +302,7 @@ sub build_common_dirs
 	my $mtree = $self->{mtree};
 	my @l = keys %$db;
 
+	$self->progress->next;
 	$self->progress->for_list("Checking common dirs", \@l,
 	    sub {
 	    	my $pkgname = shift;
@@ -313,7 +314,6 @@ sub build_common_dirs
 			$t->{problems}{$dir} = 1;
 		}
 	    });
-	$self->progress->next;
 }
 
 sub show_common_dirs
