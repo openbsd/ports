@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.15 2018/09/12 10:48:13 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.16 2018/09/12 13:05:32 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -184,6 +184,7 @@ sub handle_portsdir
 			my $path = $self->{pkgpath}{$pkgname};
 			next if $tried->{$path};
 			$totry->{$path} = 1;
+			$tried->{$path} = 1;
 		}
 		return if !defined $totry;
 		$self->scan_ports($dir, $totry);
