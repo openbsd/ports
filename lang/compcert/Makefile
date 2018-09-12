@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/05 00:20:08 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/12 04:58:49 daniel Exp $
 
-ONLY_FOR_ARCHS =	i386
+BROKEN=			An update of coq >= 8.6.1 is required to unbreak
+
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		high assurance C compiler
 
-V=			2.5
+V=			3.3
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
@@ -28,15 +30,15 @@ USE_GMAKE	= Yes
 CONFIGURE_STYLE = simple
 CONFIGURE_ARGS  = -prefix ${WRKINST}${PREFIX} \
 		  -no-standard-headers \
-		  ${MACHINE_ARCH:S/i386/ia32/}-bsd
+		  ${MACHINE_ARCH}-bsd
 
-BUILD_DEPENDS =	lang/ocaml \
-		math/coq \
-		devel/ocaml-menhir
+BUILD_DEPENDS =	lang/ocaml>=4.02 \
+		math/coq>=8.6.1 \
+		devel/ocaml-menhir>=20171212
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/compcert
-	sed -i -e "s,^stdlib_path=.*,stdlib_path=${TRUEPREFIX}/lib/compcert," \
+	sed -i -e "s,^stdlib_path=.*,stdlib_path=${TRUEPREFIX}/lib," \
 		${PREFIX}/share/compcert/compcert.ini
 
 .include <bsd.port.mk>

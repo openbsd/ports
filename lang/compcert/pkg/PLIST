@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/05 00:20:08 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/12 04:58:49 daniel Exp $
 @bin bin/ccomp
-lib/compcert/
-lib/compcert/libcompcert.a
+lib/libcompcert.a
+@man man/man1/ccomp.1
 share/compcert/
 share/compcert/LICENSE
 share/compcert/compcert.ini
