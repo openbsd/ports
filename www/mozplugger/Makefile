@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/12 19:33:25 naddy Exp $
 
 COMMENT =		framework for loading web content in external viewers
 
@@ -21,6 +21,7 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 CONFIGURE_STYLE =	gnu dest
+CONFIGURE_ARGS =	LLD_EMUL=${LLD_EMUL}
 
 FAKE_FLAGS =		PLUGINDIRS=${WRKINST}${TRUEPREFIX}/lib/mozilla/plugins
 

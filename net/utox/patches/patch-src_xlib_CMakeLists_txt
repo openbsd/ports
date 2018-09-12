@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xlib_CMakeLists_txt,v 1.1 2018/09/12 19:33:25 naddy Exp $
+
+lld 6.0.0 needs an explicit -memulation
+
+Index: src/xlib/CMakeLists.txt
+--- src/xlib/CMakeLists.txt.orig
++++ src/xlib/CMakeLists.txt
+@@ -13,7 +13,7 @@ endif()
+ ## Native Icon data
+ #########################################
+ add_custom_command(OUTPUT icon.o
+-    COMMAND cd ${uTox_SOURCE_DIR}/ && ld -r -b binary -o ${utoxNATIVE_BINARY_DIR}/icon.o icons/utox-128x128.png
++    COMMAND cd ${uTox_SOURCE_DIR}/ && ld -r -b binary ${LLD_EMUL} -o ${utoxNATIVE_BINARY_DIR}/icon.o icons/utox-128x128.png
+     DEPENDS ../../icons/utox-128x128.png )
+ set_source_files_properties( icon.o PROPERTIES EXTERNAL_OBJECT true GENERATED true )
+ add_library(icon STATIC icon.o)

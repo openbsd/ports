@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/09 23:25:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/09/12 19:33:25 naddy Exp $
 
 COMMENT =	lightweight Tox client
 
@@ -33,5 +33,7 @@ COMPILER =	base-clang ports-gcc
 NO_TEST =	yes
 
 WRKDIST =	${WRKDIR}/uTox
+
+CONFIGURE_ARGS =-DLLD_EMUL:String=${LLD_EMUL}
 
 .include <bsd.port.mk>
