@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.20 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.21 2018/09/12 19:10:34 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -57,6 +57,15 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
+@@ -742,7 +737,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_openbsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
 @@ -1477,10 +1472,6 @@ config("default_warnings") {
          cflags += [
            # TODO(thakis): https://crbug.com/753973

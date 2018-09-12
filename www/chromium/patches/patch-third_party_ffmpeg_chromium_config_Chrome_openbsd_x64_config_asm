@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm,v 1.28 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_asm,v 1.29 2018/09/12 19:10:34 robert Exp $
 Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm.orig
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm
@@ -256,7 +256,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.asm
 +%define HAVE_DOS_PATHS 0
 +%define HAVE_LIBC_MSVCRT 0
 +%define HAVE_MMAL_PARAMETER_VIDEO_MAX_NUM_CALLBACKS 0
-+%define HAVE_SECTION_DATA_REL_RO 0
++%define  HAVE_SECTION_DATA_REL_RO 1
 +%define HAVE_THREADS 1
 +%define HAVE_UWP 0
 +%define HAVE_WINRT 0

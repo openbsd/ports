@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.84 2018/09/12 17:08:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.85 2018/09/12 19:10:34 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -387,9 +387,7 @@ chrome/resources/inspector/worker_app.js
 chrome/resources/inspector/workspace_diff/
 chrome/resources/inspector/workspace_diff/workspace_diff_module.js
 chrome/snapshot_blob.bin
-chrome/swiftshader/
-chrome/swiftshader/libEGL.so
-chrome/swiftshader/libGLESv2.so
+%%swiftshader%%
 chrome/v8_context_snapshot.bin
 chrome/views_mus_resources.pak
 @man man/man1/chrome.1

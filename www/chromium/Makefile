@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2018/09/12 17:08:22 robert Exp $
+# $OpenBSD: Makefile,v 1.385 2018/09/12 19:10:34 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -136,6 +136,10 @@ GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memo
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
+.if ${MACHINE_ARCH} != "aarch64"
+PKG_ARGS+=	-Dswiftshader=1	
+.endif
+
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
 GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
@@ -159,7 +163,7 @@ GN_ARGS+=	is_official_build=true \
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.for _arch in x64 ia32
+.for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
@@ -215,11 +219,13 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 
+.if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/swiftshader
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/chrome/swiftshader
 .endfor
+.endif
 
 .if ${FLAVOR:Mcomponent}
 	cp -Rp ${BUILDDIR}/*.so ${PREFIX}/chrome/
