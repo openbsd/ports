@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.52 2018/08/08 09:19:40 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.53 2018/09/12 19:29:08 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -57,6 +57,17 @@ LIBECXX = c++ c++abi pthread
 .else
 LIBCXX = stdc++ pthread
 LIBECXX = estdc++>=17 pthread
+.endif
+
+.if ${PROPERTIES:Mlld}
+# see llvm/tools/lld/ELF/Driver.cpp
+.  for A E in aarch64 aarch64elf  arm armelf  amd64 elf_amd64  i386 elf_i386
+.    if ${MACHINE_ARCH} == $A
+LLD_EMUL = -m$E
+.    endif
+.  endfor
+.else
+LLD_EMUL =
 .endif
 
 # system version wide specifics
