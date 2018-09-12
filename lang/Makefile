@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2018/09/05 19:40:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.227 2018/09/12 05:00:50 daniel Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -18,6 +18,7 @@
      SUBDIR += clisp
      SUBDIR += clazy
      SUBDIR += clojure
+     SUBDIR += compcert
      SUBDIR += cparser
      SUBDIR += crystal
      SUBDIR += cython
