@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.14 2018/09/10 15:15:55 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.15 2018/09/12 10:48:13 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -139,9 +139,9 @@ sub reader
 	    };
 }
 
-sub handle_portsdir
+sub scan_ports
 {
-	my ($self, $dir) = @_;
+	my ($self, $dir, $paths) = @_;
 
 	my $child_pid = open(my $input, "-|");
 
@@ -149,6 +149,9 @@ sub handle_portsdir
 		chdir($dir);
 		open(STDERR, "/dev/null");
 		$ENV{REPORT_PROBLEM} = 'true';
+		if (defined $paths) {
+			$ENV{SUBDIR} = join(' ', sort keys %$paths);
+		}
 		exec("$self->{make} print-plist-all-with-depends");
 	}
 
@@ -163,6 +166,28 @@ sub handle_portsdir
 		}
 	}
 	waitpid $child_pid, 0;
+}
+
+sub handle_portsdir
+{
+	my ($self, $dir) = @_;
+	# prime initial run
+
+	$self->scan_ports($dir, undef);
+	# and now the rescans;
+
+	my $tried = {};
+	while (1) {
+		my $totry = undef;
+		for my $pkgname (keys %{$self->{wanted}}) {
+			next if $self->{got}{$pkgname};
+			my $path = $self->{pkgpath}{$pkgname};
+			next if $tried->{$path};
+			$totry->{$path} = 1;
+		}
+		return if !defined $totry;
+		$self->scan_ports($dir, $totry);
+	}
 }
 
 sub rescan_dependencies

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_check-problems,v 1.6 2018/09/10 15:07:33 espie Exp $
+# $OpenBSD: pkg_check-problems,v 1.7 2018/09/12 10:48:13 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -110,6 +110,7 @@ sub register
 	my ($self, $o, $db, $pkgname) = @_;
 	$db->{deps}{$self->{def}} = 1;
 	$o->{wanted}{$self->{def}} //= $o->{currentname};
+	$o->{pkgpath}{$self->{def}} = $self->{pkgpath};
 	push @{$o->{all_deps}{$pkgname}}, $self->{def};
 }
 
