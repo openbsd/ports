@@ -1,8 +1,14 @@
-# $OpenBSD: Makefile,v 1.99 2018/08/11 04:58:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.100 2018/09/12 15:24:50 espie Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
+#ONLY_FOR_ARCHS-ada = i386 amd64 sparc64 hppa alpha
+#ONLY_FOR_ARCHS-java = amd64 i386 sparc64
+
+NOT_FOR_ARCHS-go = alpha hppa mips64el
 # ignore arches that have a more recent gcc port
 ONLY_FOR_ARCHS = alpha
+ONLY_FOR_ARCHS-java =
+
 DPB_PROPERTIES = parallel
 
 V = 4.6.4
@@ -44,9 +50,7 @@ SHARED_LIBS =	estdc++		14.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386 amd64 sparc64 hppa alpha
-ONLY_FOR_ARCHS-java = amd64 i386 sparc64
-NOT_FOR_ARCHS-go = alpha hppa mips64el
+# XXX superseded by ONLY_FOR_ARCHS
 
 MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada -go
 
