@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.9 2018/08/21 07:05:34 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.10 2018/09/13 14:59:24 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
@@ -18,9 +18,9 @@ Index: makefile
  
  prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -154,6 +154,22 @@ build-freebsd: checkstyle copy-src pre-build
- 			$(BGO_SPACE)/agent/cli-main/cli-main.go
- 	GOOS=freebsd GOARCH=amd64 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/freebsd_amd64/ssm-document-worker -v \
+@@ -218,6 +218,22 @@ build-darwin-386: checkstyle copy-src pre-build
+ 		$(BGO_SPACE)/agent/cli-main/cli-main.go
+ 	GOOS=darwin GOARCH=386 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/darwin_386/ssm-document-worker -v \
  								$(BGO_SPACE)/agent/framework/processor/executer/outofproc/worker/main.go
 +
 +.PHONY: build-openbsd
@@ -39,5 +39,5 @@ Index: makefile
 +	GOOS=openbsd GOARCH=386 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/openbsd_386/ssm-cli -v \
 +	$(BGO_SPACE)/agent/cli-main/cli-main.go
  
- .PHONY: build-darwin
- build-darwin: checkstyle copy-src pre-build
+ .PHONY: build-windows-386
+ build-windows-386: checkstyle copy-src pre-build
