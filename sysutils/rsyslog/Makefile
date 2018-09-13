@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/03/13 09:18:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2018/09/13 21:38:05 remi Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -10,7 +10,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.33.1
+V =			8.37.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
@@ -18,9 +18,8 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
-REVISION-main =		1
 
-HOMEPAGE =		http://www.rsyslog.com/
+HOMEPAGE =		https://www.rsyslog.com/
 
 MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
@@ -55,8 +54,7 @@ LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
 RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 
-MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
-			http://download.rsyslog.com/rsyslog/
+MASTER_SITES =		https://www.rsyslog.com/files/download/rsyslog/
 
 CONFIGURE_STYLE =	gnu
 LIBTOOL_FLAGS = 	--tag=disable-static
@@ -66,8 +64,7 @@ CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mmnormalize \
 			--enable-gnutls \
 			--enable-relp \
-			--enable-elasticsearch \
-			--disable-liblogging-stdlog
+			--enable-elasticsearch
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:
