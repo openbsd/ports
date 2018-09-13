@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.385 2018/09/12 19:10:34 robert Exp $
+# $OpenBSD: Makefile,v 1.386 2018/09/13 15:04:39 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			69.0.3497.81
+V=			69.0.3497.92
 
 DISTNAME=		chromium-${V}
 
@@ -61,6 +61,7 @@ WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz intl pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
+WANTLIB += uuid
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -83,6 +84,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
+		sysutils/e2fsprogs \
 		textproc/libxslt \
 		x11/gtk+3 \
 		print/cups,-libs \
