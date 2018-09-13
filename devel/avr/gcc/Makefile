@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2018/09/07 20:11:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2018/09/13 11:13:00 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
 V=		5.4.0
+REVISION=	0
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
