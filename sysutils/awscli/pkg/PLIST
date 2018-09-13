@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2018/09/01 07:55:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.60 2018/09/13 12:42:51 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -351,6 +351,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/ut
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessendemail.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessendemail.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessionmanager.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessionmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputarg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputarg.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/toplevelbool.py
