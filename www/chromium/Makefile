@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2018/09/13 15:04:39 robert Exp $
+# $OpenBSD: Makefile,v 1.387 2018/09/14 14:56:18 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -138,8 +138,10 @@ GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memo
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
-.if ${MACHINE_ARCH} != "aarch64"
-PKG_ARGS+=	-Dswiftshader=1	
+.if ${MACHINE_ARCH} == "aarch64"
+PKG_ARGS+=	-Dswiftshader=0
+.else
+PKG_ARGS+=	-Dswiftshader=1
 .endif
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
