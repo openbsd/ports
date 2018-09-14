@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2018/08/21 02:04:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.149 2018/09/14 08:10:14 sthen Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -114,6 +114,8 @@
      SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy
      SUBDIR += py-numpy,python3
+     SUBDIR += py-pandas
+     SUBDIR += py-pandas,python3
      SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
      SUBDIR += py-probstat
