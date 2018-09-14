@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2018/08/21 16:55:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2018/09/14 09:11:42 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -35,6 +35,7 @@ share/vim/${P}/autoload/dist/ft.vim
 share/vim/${P}/autoload/getscript.vim
 share/vim/${P}/autoload/gnat.vim
 share/vim/${P}/autoload/gzip.vim
+share/vim/${P}/autoload/haskellcomplete.vim
 share/vim/${P}/autoload/htmlcomplete.vim
 share/vim/${P}/autoload/javascriptcomplete.vim
 share/vim/${P}/autoload/netrw.vim
@@ -154,6 +155,7 @@ share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
 share/vim/${P}/compiler/splint.vim
+share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/tcl.vim
 share/vim/${P}/compiler/tex.vim
 share/vim/${P}/compiler/tidy.vim
@@ -552,6 +554,7 @@ share/vim/${P}/indent/d.vim
 share/vim/${P}/indent/dictconf.vim
 share/vim/${P}/indent/dictdconf.vim
 share/vim/${P}/indent/docbk.vim
+share/vim/${P}/indent/dosbatch.vim
 share/vim/${P}/indent/dtd.vim
 share/vim/${P}/indent/dtrace.vim
 share/vim/${P}/indent/dylan.vim
@@ -745,7 +748,6 @@ share/vim/${P}/macros/matchit.vim
 share/vim/${P}/macros/maze/
 share/vim/${P}/macros/maze/Makefile
 share/vim/${P}/macros/maze/README.txt
-share/vim/${P}/macros/maze/main.aap
 share/vim/${P}/macros/maze/maze.c
 share/vim/${P}/macros/maze/maze_5.78
 share/vim/${P}/macros/maze/maze_mac
@@ -765,6 +767,9 @@ share/vim/${P}/optwin.vim
 share/vim/${P}/pack/
 share/vim/${P}/pack/dist/
 share/vim/${P}/pack/dist/opt/
+share/vim/${P}/pack/dist/opt/cfilter/
+share/vim/${P}/pack/dist/opt/cfilter/plugin/
+share/vim/${P}/pack/dist/opt/cfilter/plugin/cfilter.vim
 share/vim/${P}/pack/dist/opt/dvorak/
 share/vim/${P}/pack/dist/opt/dvorak/dvorak/
 share/vim/${P}/pack/dist/opt/dvorak/dvorak/disable.vim

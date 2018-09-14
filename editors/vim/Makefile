@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.174 2018/08/21 16:55:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2018/09/14 09:11:41 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # XXX if updating major version, sync editors/vim-spell
-V=		8.1.0309
+V=		8.1.0388
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -47,6 +47,10 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext-tools
+
+.if defined(DEBUG)
+MAKE_FLAGS+= STRIP=:
+.endif
 
 .if ${FLAVOR:Mhuge}
 CONFIGURE_ARGS+= --with-features=huge
@@ -124,8 +128,6 @@ CONFIGURE_ARGS+= --enable-gui="athena" \
 WANTLIB +=	m ICE SM X11 Xaw Xmu Xpm Xt
 .elif ${FLAVOR:Mgtk2} && \
 		!${FLAVOR:Mmotif} && !${FLAVOR:Mno_x11} && !${FLAVOR:Mathena}
-MAKE_FLAGS+=	'LDFLAGS=-pthread'
-MAKE_FLAGS+=	'CFLAGS=-pthread'
 LIB_DEPENDS+=	x11/gtk+2
 CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--disable-gtk-check \
