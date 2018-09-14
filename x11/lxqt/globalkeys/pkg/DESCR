@@ -1,0 +1,3 @@
+tools to set global keyboard shortcuts in LXQt sessions, that is
+shortcuts which apply to the LXQt session as a whole and are not
+limited to distinct applications.

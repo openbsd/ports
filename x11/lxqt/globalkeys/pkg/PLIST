@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lxqt-config-globalkeyshortcuts
+@bin bin/lxqt-globalkeysd
+include/lxqt-globalkeys/
+include/lxqt-globalkeys-ui/
+include/lxqt-globalkeys-ui/LXQtGlobalKeysUi/
+include/lxqt-globalkeys-ui/LXQtGlobalKeysUi/ShortcutSelector
+include/lxqt-globalkeys-ui/shortcut_selector.h
+include/lxqt-globalkeys-ui/shortcutselector.h
+include/lxqt-globalkeys/LXQtGlobalKeys/
+include/lxqt-globalkeys/LXQtGlobalKeys/Action
+include/lxqt-globalkeys/LXQtGlobalKeys/Client
+include/lxqt-globalkeys/LXQtGlobalKeys/LXQtGlobalKeys
+include/lxqt-globalkeys/action.h
+include/lxqt-globalkeys/client.h
+include/lxqt-globalkeys/lxqt-globalkeys.h
+include/lxqt-globalkeys/lxqtglobalkeys.h
+@lib lib/liblxqt-globalkeys-ui.so.${LIBlxqt-globalkeys-ui_VERSION}
+@lib lib/liblxqt-globalkeys.so.${LIBlxqt-globalkeys_VERSION}
+libdata/pkgconfig/lxqt-globalkeys-ui.pc
+libdata/pkgconfig/lxqt-globalkeys.pc
+share/applications/lxqt-config-globalkeyshortcuts.desktop
+share/cmake/lxqt-globalkeys/
+share/cmake/lxqt-globalkeys-ui/
+share/cmake/lxqt-globalkeys-ui/lxqt-globalkeys-ui-config-version.cmake
+share/cmake/lxqt-globalkeys-ui/lxqt-globalkeys-ui-config.cmake
+share/cmake/lxqt-globalkeys-ui/lxqt-globalkeys-ui-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/lxqt-globalkeys-ui/lxqt-globalkeys-ui-targets.cmake
+share/cmake/lxqt-globalkeys/lxqt-globalkeys-config-version.cmake
+share/cmake/lxqt-globalkeys/lxqt-globalkeys-config.cmake
+share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets.cmake
+share/examples/lxqt-globalkeys/
+share/examples/lxqt-globalkeys/xdg/
+share/examples/lxqt-globalkeys/xdg/autostart/
+share/examples/lxqt-globalkeys/xdg/autostart/lxqt-globalkeyshortcuts.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-globalkeyshortcuts.desktop
+share/examples/lxqt-globalkeys/xdg/lxqt/
+share/examples/lxqt-globalkeys/xdg/lxqt/globalkeyshortcuts.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/globalkeyshortcuts.conf
+@tag update-desktop-database

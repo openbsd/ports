@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Startup
+=======
+LXQt desktop environment is launched through the 'startlxqt' script.
+Simply add '${LOCALBASE}/bin/startlxqt' to your .xinitrc/.xsession
+script if you use startx, xenodm or slim.
+An lxqt.desktop file is provided for use by kdm.
+
+e.g. console login: ~/.xinitrc
+if [ -x ${PREFIX}/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+${LOCALBASE}/bin/startlxqt
+
+e.g. graphical display manager: ~/.xsession
+if [ -x ${PREFIX}/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval `dbus-launch --sh-syntax --exit-with-x11`
+fi
+${LOCALBASE}/bin/startlxqt

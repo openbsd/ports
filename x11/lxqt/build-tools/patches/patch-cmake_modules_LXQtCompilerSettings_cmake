@@ -1,0 +1,22 @@
+$OpenBSD: patch-cmake_modules_LXQtCompilerSettings_cmake,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+
+Index: cmake/modules/LXQtCompilerSettings.cmake
+--- cmake/modules/LXQtCompilerSettings.cmake.orig
++++ cmake/modules/LXQtCompilerSettings.cmake
+@@ -134,13 +134,13 @@ if (CMAKE_COMPILER_IS_GNUCXX OR LXQT_COMPILER_IS_CLANG
+     # -Bsymbolic-functions: replace dynamic symbols used internally in
+     #                       shared libs with direct addresses.
+     set(SYMBOLIC_FLAGS
+-        "-Wl,-Bsymbolic-functions -Wl,-Bsymbolic"
++        "-Wl,-Bsymbolic"
+     )
+     set(CMAKE_SHARED_LINKER_FLAGS
+-        "-Wl,--no-undefined ${SYMBOLIC_FLAGS} ${CMAKE_SHARED_LINKER_FLAGS}"
++        "${SYMBOLIC_FLAGS} ${CMAKE_SHARED_LINKER_FLAGS}"
+     )
+     set(CMAKE_MODULE_LINKER_FLAGS
+-        "-Wl,--no-undefined ${SYMBOLIC_FLAGS} ${CMAKE_MODULE_LINKER_FLAGS}"
++        "${SYMBOLIC_FLAGS} ${CMAKE_MODULE_LINKER_FLAGS}"
+     )
+     set(CMAKE_EXE_LINKER_FLAGS
+         "${SYMBOLIC_FLAGS} ${CMAKE_EXE_LINKER_FLAGS}"

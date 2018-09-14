@@ -1,0 +1,22 @@
+$OpenBSD: patch-cmake_compiler_settings_cmake,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+
+Index: cmake/compiler_settings.cmake
+--- cmake/compiler_settings.cmake.orig
++++ cmake/compiler_settings.cmake
+@@ -129,13 +129,13 @@ if (CMAKE_COMPILER_IS_GNUCXX OR QTXDG_COMPILER_IS_CLAN
+     # -Bsymbolic-functions: replace dynamic symbols used internally in
+     #                       shared libs with direct addresses.
+     set(SYMBOLIC_FLAGS
+-        "-Wl,-Bsymbolic-functions -Wl,-Bsymbolic"
++        "-Wl,-Bsymbolic"
+     )
+     set(CMAKE_SHARED_LINKER_FLAGS
+-        "-Wl,--no-undefined ${SYMBOLIC_FLAGS} ${CMAKE_SHARED_LINKER_FLAGS}"
++        "${SYMBOLIC_FLAGS} ${CMAKE_SHARED_LINKER_FLAGS}"
+     )
+     set(CMAKE_MODULE_LINKER_FLAGS
+-        "-Wl,--no-undefined ${SYMBOLIC_FLAGS} ${CMAKE_MODULE_LINKER_FLAGS}"
++        "${SYMBOLIC_FLAGS} ${CMAKE_MODULE_LINKER_FLAGS}"
+     )
+     set(CMAKE_EXE_LINKER_FLAGS
+         "${SYMBOLIC_FLAGS} ${CMAKE_EXE_LINKER_FLAGS}"

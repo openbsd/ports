@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -108,8 +108,8 @@ endif()
+ 
+ target_link_libraries(obconf-qt
+   ${QTX_LIBRARIES}
+-  ${GLIB_LIBRARIES}
+-  ${OPENBOX_LIBRARIES}
++  ${GLIB_LDFLAGS}
++  ${OPENBOX_LDFLAGS}
+ )
+ 
+ install(TARGETS obconf-qt RUNTIME DESTINATION bin)

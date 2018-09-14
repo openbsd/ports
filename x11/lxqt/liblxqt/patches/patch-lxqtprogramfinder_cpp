@@ -1,0 +1,40 @@
+$OpenBSD: patch-lxqtprogramfinder_cpp,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+
+Index: lxqtprogramfinder.cpp
+--- lxqtprogramfinder.cpp.orig
++++ lxqtprogramfinder.cpp
+@@ -22,8 +22,16 @@
+  *
+  * END_COMMON_COPYRIGHT_HEADER */
+ 
++#if defined(__OpenBSD__)
++#define NO_WORDEXP
++#endif
++
+ #include "lxqtprogramfinder.h"
++#ifdef NO_WORDEXP
++#include <glob.h>
++#else
+ #include <wordexp.h>
++#endif
+ #include <QDir>
+ #include <QFileInfo>
+ 
+@@ -60,9 +68,17 @@ LXQT_API QStringList ProgramFinder::findPrograms(const
+ 
+ LXQT_API QString ProgramFinder::programName(const QString& command)
+ {
++    #ifdef NO_WORDEXP
++    glob_t we;
++    if (glob(command.toLocal8Bit().constData(), GLOB_ERR, NULL, &we) == 0)
++        if (we.gl_pathc > 0)
++            return QString(we.gl_pathv[0]);
++    return QString();
++    #else
+     wordexp_t we;
+     if (wordexp(command.toLocal8Bit().constData(), &we, WRDE_NOCMD) == 0)
+         if (we.we_wordc > 0)
+             return QString(we.we_wordv[0]);
+     return QString();
++    #endif
+ }

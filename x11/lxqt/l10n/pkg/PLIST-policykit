@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-policykit,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+share/lxqt/translations/lxqt-policykit-agent/
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ca.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cs.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_da.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fr.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hu.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nl.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pl.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pt.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ru.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_tr.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_uk.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_zh_CN.qm

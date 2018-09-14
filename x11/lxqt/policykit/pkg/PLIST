@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@bin bin/lxqt-policykit-agent
+share/examples/lxqt-policykit/
+share/examples/lxqt-policykit/xdg/
+share/examples/lxqt-policykit/xdg/autostart/
+share/examples/lxqt-policykit/xdg/autostart/lxqt-policykit-agent.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-policykit-agent.desktop

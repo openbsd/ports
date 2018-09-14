@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lximage-qt
+share/applications/lximage-qt-screenshot.desktop
+share/applications/lximage-qt.desktop
+share/icons/hicolor/48x48/apps/lximage-qt.png
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

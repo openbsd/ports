@@ -1,0 +1,59 @@
+$OpenBSD: patch-lxqt-session_src_lxqtmodman_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: lxqt-session/src/lxqtmodman.cpp
+--- lxqt-session/src/lxqtmodman.cpp.orig
++++ lxqt-session/src/lxqtmodman.cpp
+@@ -26,6 +26,10 @@
+  *
+  * END_COMMON_COPYRIGHT_HEADER */
+ 
++#if defined(__OpenBSD__)
++#define NO_WORDEXP
++#endif
++
+ #include "lxqtmodman.h"
+ #include <LXQt/Settings>
+ #include <XdgAutoStart>
+@@ -42,7 +46,11 @@
+ #include <QDateTime>
+ #include "wmselectdialog.h"
+ #include "windowmanager.h"
++#ifdef NO_WORDEXP
++#include <glob.h>
++#else
+ #include <wordexp.h>
++#endif
+ #include "log.h"
+ 
+ #include <KWindowSystem/KWindowSystem>
+@@ -435,6 +443,22 @@ bool LXQtModuleManager::nativeEventFilter(const QByteA
+ 
+ void lxqt_setenv(const char *env, const QByteArray &value)
+ {
++    #ifdef NO_WORDEXP
++    glob_t p;
++    glob(value, 0, NULL, &p);
++    if (p.gl_pathc == 1)
++    {
++
++        qCDebug(SESSION) << "Environment variable" << env << "=" << p.gl_pathv[0];
++        qputenv(env, p.gl_pathv[0]);
++    }
++    else
++    {
++        qCWarning(SESSION) << "Error expanding environment variable" << env << "=" << value;
++        qputenv(env, value);
++    }
++    globfree(&p);
++    #else
+     wordexp_t p;
+     wordexp(value, &p, 0);
+     if (p.we_wordc == 1)
+@@ -449,6 +473,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
+         qputenv(env, value);
+     }
+      wordfree(&p);
++    #endif
+ }
+ 
+ void lxqt_setenv_prepend(const char *env, const QByteArray &value, const QByteArray &separator)

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@bin bin/qterminal
+share/appdata/
+share/appdata/qterminal.appdata.xml
+share/applications/qterminal.desktop
+share/applications/qterminal_drop.desktop
+share/icons/hicolor/64x64/apps/qterminal.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

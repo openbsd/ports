@@ -1,0 +1,3 @@
+pavucontrol-qt is the Qt port of volume control pavucontrol of sound
+server PulseAudio. As such it can be used to adjust all controls
+provided by PulseAudio as well as some additional settings.

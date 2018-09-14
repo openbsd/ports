@@ -1,0 +1,60 @@
+$OpenBSD: patch-providers_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: providers.cpp
+--- providers.cpp.orig
++++ providers.cpp
+@@ -28,6 +28,9 @@
+  *
+  * END_COMMON_COPYRIGHT_HEADER */
+ 
++#if defined(__OpenBSD__)
++#define NO_WORDEXP
++#endif
+ 
+ #include "providers.h"
+ #include "yamlparser.h"
+@@ -47,7 +50,11 @@
+ #include <LXQt/ScreenSaver>
+ #include "providers.h"
+ #include <LXQtGlobalKeys/Action>
++#ifdef NO_WORDEXP
++#include <glob.h>
++#else
+ #include <wordexp.h>
++#endif
+ #include <QStandardPaths>
+ 
+ #define MAX_HISTORY 100
+@@ -59,6 +66,24 @@
+ static QString expandCommand(const QString &command, QStringList *arguments=0)
+ {
+     QString program;
++    #ifdef NO_WORDEXP
++    glob_t words;
++
++    if (glob(command.toLocal8Bit().data(), 0, NULL, &words) != 0)
++        return QString();
++
++    char **w;
++    w = words.gl_pathv;
++    program = QString::fromLocal8Bit(w[0]);
++
++    if (arguments)
++    {
++        for (size_t i = 1; i < words.gl_pathc; i++)
++            *arguments << QString::fromLocal8Bit(w[i]);
++    }
++
++    globfree(&words);
++    #else
+     wordexp_t words;
+ 
+     if (wordexp(command.toLocal8Bit().data(), &words, 0) != 0)
+@@ -75,6 +100,7 @@ static QString expandCommand(const QString &command, Q
+     }
+ 
+     wordfree(&words);
++    #endif
+     return program;
+ }
+ 

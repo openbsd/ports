@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-compton-conf,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+share/compton-conf/
+share/compton-conf/translations/
+share/compton-conf/translations/compton-conf_ca.qm
+share/compton-conf/translations/compton-conf_cs.qm
+share/compton-conf/translations/compton-conf_da.qm
+share/compton-conf/translations/compton-conf_de.qm
+share/compton-conf/translations/compton-conf_el.qm
+share/compton-conf/translations/compton-conf_es.qm
+share/compton-conf/translations/compton-conf_fr.qm
+share/compton-conf/translations/compton-conf_hu.qm
+share/compton-conf/translations/compton-conf_id.qm
+share/compton-conf/translations/compton-conf_it.qm
+share/compton-conf/translations/compton-conf_ja.qm
+share/compton-conf/translations/compton-conf_lt.qm
+share/compton-conf/translations/compton-conf_lv.qm
+share/compton-conf/translations/compton-conf_nl.qm
+share/compton-conf/translations/compton-conf_pl.qm
+share/compton-conf/translations/compton-conf_pt.qm
+share/compton-conf/translations/compton-conf_ru.qm
+share/compton-conf/translations/compton-conf_tr.qm
+share/compton-conf/translations/compton-conf_uk.qm
+share/compton-conf/translations/compton-conf_zh_CN.qm

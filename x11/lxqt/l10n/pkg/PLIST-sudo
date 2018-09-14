@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-sudo,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+share/lxqt/translations/lxqt-sudo/
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_ar.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_ca.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_cs.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_da.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_de.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_el.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_es.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_fr.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_hu.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_id.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_it.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_ja.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_lt.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_nl.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_pl.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_ru.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_sk.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_tr.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_uk.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_zh_CN.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_zh_TW.qm

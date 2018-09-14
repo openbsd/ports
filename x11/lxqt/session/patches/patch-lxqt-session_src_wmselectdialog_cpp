@@ -1,0 +1,14 @@
+$OpenBSD: patch-lxqt-session_src_wmselectdialog_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: lxqt-session/src/wmselectdialog.cpp
+--- lxqt-session/src/wmselectdialog.cpp.orig
++++ lxqt-session/src/wmselectdialog.cpp
+@@ -114,7 +114,7 @@ void WmSelectDialog::selectFileDialog(const QModelInde
+     if (item->data(1, TYPE_ROLE) != SELECT_DLG_TYPE)
+         return;
+ 
+-    QString fname = QFileDialog::getOpenFileName(this, "", "/usr/bin/");
++    QString fname = QFileDialog::getOpenFileName(this, "", "${LOCALBASE}/bin/");
+     if (fname.isEmpty())
+         return;
+ 

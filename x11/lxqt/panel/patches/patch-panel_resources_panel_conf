@@ -1,0 +1,25 @@
+$OpenBSD: patch-panel_resources_panel_conf,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+
+Index: panel/resources/panel.conf
+--- panel/resources/panel.conf.orig
++++ panel/resources/panel.conf
+@@ -1,7 +1,7 @@
+ panels=panel1
+ 
+ [panel1]
+-plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,worldclock,showdesktop
++plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,worldclock,showdesktop
+ position=Bottom
+ desktop=0
+ 
+@@ -26,10 +26,6 @@ type=mount
+ 
+ [worldclock]
+ type=worldclock
+-
+-[volume]
+-device=0
+-type=volume
+ 
+ [showdesktop]
+ alignment=Right

@@ -1,0 +1,14 @@
+$OpenBSD: patch-pcmanfm_tabpage_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: pcmanfm/tabpage.cpp
+--- pcmanfm/tabpage.cpp.orig
++++ pcmanfm/tabpage.cpp
+@@ -282,7 +282,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
+ }
+ 
+ void TabPage::onFolderFsInfo() {
+-    guint64 free, total;
++    uint64_t free, total;
+     QString& msg = statusText_[StatusTextFSInfo];
+     if(folder_->getFilesystemInfo(&total, &free)) {
+         char total_str[64];

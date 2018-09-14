@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@bin bin/lxqt-runner
+share/examples/lxqt-runner/
+share/examples/lxqt-runner/xdg/
+share/examples/lxqt-runner/xdg/autostart/
+share/examples/lxqt-runner/xdg/autostart/lxqt-runner.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-runner.desktop

@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lxqt-backlight_backend
+include/lxqt/
+include/lxqt/LXQt/
+include/lxqt/LXQt/Application
+include/lxqt/LXQt/AutostartEntry
+include/lxqt/LXQt/Backlight
+include/lxqt/LXQt/ConfigDialog
+include/lxqt/LXQt/ConfigDialogCmdLineOptions
+include/lxqt/LXQt/Globals
+include/lxqt/LXQt/GridLayout
+include/lxqt/LXQt/HtmlDelegate
+include/lxqt/LXQt/Notification
+include/lxqt/LXQt/PageSelectWidget
+include/lxqt/LXQt/PluginInfo
+include/lxqt/LXQt/Power
+include/lxqt/LXQt/PowerManager
+include/lxqt/LXQt/ProgramFinder
+include/lxqt/LXQt/RotatedWidget
+include/lxqt/LXQt/ScreenSaver
+include/lxqt/LXQt/Settings
+include/lxqt/LXQt/SingleApplication
+include/lxqt/LXQt/Translator
+include/lxqt/LXQt/lxqtapplication.h
+include/lxqt/LXQt/lxqtautostartentry.h
+include/lxqt/LXQt/lxqtbacklight.h
+include/lxqt/LXQt/lxqtconfigdialog.h
+include/lxqt/LXQt/lxqtconfigdialogcmdlineoptions.h
+include/lxqt/LXQt/lxqtglobals.h
+include/lxqt/LXQt/lxqtgridlayout.h
+include/lxqt/LXQt/lxqthtmldelegate.h
+include/lxqt/LXQt/lxqtnotification.h
+include/lxqt/LXQt/lxqtpageselectwidget.h
+include/lxqt/LXQt/lxqtplugininfo.h
+include/lxqt/LXQt/lxqtpower.h
+include/lxqt/LXQt/lxqtpowermanager.h
+include/lxqt/LXQt/lxqtprogramfinder.h
+include/lxqt/LXQt/lxqtrotatedwidget.h
+include/lxqt/LXQt/lxqtscreensaver.h
+include/lxqt/LXQt/lxqtsettings.h
+include/lxqt/LXQt/lxqtsingleapplication.h
+include/lxqt/LXQt/lxqttranslator.h
+@lib lib/liblxqt.so.${LIBlxqt_VERSION}
+libdata/pkgconfig/lxqt.pc
+share/cmake/lxqt/
+share/cmake/lxqt/lxqt-config-version.cmake
+share/cmake/lxqt/lxqt-config.cmake
+share/cmake/lxqt/lxqt-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/lxqt/lxqt-targets.cmake
+share/examples/liblxqt/
+share/examples/liblxqt/xdg/
+share/examples/liblxqt/xdg/lxqt/
+@sample ${SYSCONFDIR}/xdg/lxqt/
+share/examples/liblxqt/xdg/lxqt/power.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/power.conf
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.lxqt.backlight.pkexec.policy

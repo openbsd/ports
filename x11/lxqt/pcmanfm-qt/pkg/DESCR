@@ -1,0 +1,3 @@
+PCManFM-Qt is the Qt port of PCManFM, the file manager of LXDE. In
+LXQt sessions it is in addition used to handle the desktop.
+Nevertheless it can be used independently of LXQt as well.

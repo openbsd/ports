@@ -1,0 +1,14 @@
+$OpenBSD: patch-lxqt-config-session_sessionconfigwindow_cpp,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: lxqt-config-session/sessionconfigwindow.cpp
+--- lxqt-config-session/sessionconfigwindow.cpp.orig
++++ lxqt-config-session/sessionconfigwindow.cpp
+@@ -122,7 +122,7 @@ void SessionConfigWindow::updateCfgComboBox(QComboBox 
+                                             const QString &prompt
+                                            )
+ {
+-    QString fname = QFileDialog::getOpenFileName(cb, prompt, "/usr/bin/");
++    QString fname = QFileDialog::getOpenFileName(cb, prompt, "${LOCALBASE}/bin/");
+     if (fname.isEmpty())
+         return;
+ 

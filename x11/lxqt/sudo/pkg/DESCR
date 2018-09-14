@@ -1,0 +1,3 @@
+lxqt-sudo is a graphical front-end of commands sudo and su respectively.
+As such it enables regular users to launch applications with
+permissions of other users including root.

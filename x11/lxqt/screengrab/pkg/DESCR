@@ -1,0 +1,4 @@
+A program for fast creating screenshots, and easily publishing them
+on internet image hosting services. It works on Linux and Windows
+operating systems. ScreenGrab uses the Qt framework and thus, it
+is independent from any desktop environment.

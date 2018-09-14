@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_CMakeLists_txt,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+
+Index: config/CMakeLists.txt
+--- config/CMakeLists.txt.orig
++++ config/CMakeLists.txt
+@@ -3,6 +3,6 @@
+ configure_file(pcmanfm-qt/lxqt/settings.conf.in pcmanfm-qt/lxqt/settings.conf @ONLY)
+ install(FILES
+     "${CMAKE_CURRENT_BINARY_DIR}/pcmanfm-qt/lxqt/settings.conf"
+-    DESTINATION "${CMAKE_INSTALL_DATADIR}/pcmanfm-qt/lxqt"
++    DESTINATION "${LXQT_ETC_XDG_DIR}/pcmanfm-qt/lxqt"
+     COMPONENT Runtime
+ )

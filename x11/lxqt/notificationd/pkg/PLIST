@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lxqt-config-notificationd
+@bin bin/lxqt-notificationd
+share/applications/lxqt-config-notificationd.desktop
+share/examples/lxqt-notificationd/
+share/examples/lxqt-notificationd/xdg/
+share/examples/lxqt-notificationd/xdg/autostart/
+share/examples/lxqt-notificationd/xdg/autostart/lxqt-notifications.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-notifications.desktop
+@tag update-desktop-database

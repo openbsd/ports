@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/compton-conf
+share/applications/compton-conf.desktop
+share/compton-conf/compton.conf.example
+share/examples/compton-conf/
+share/examples/compton-conf/xdg/
+share/examples/compton-conf/xdg/autostart/
+share/examples/compton-conf/xdg/autostart/lxqt-compton.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-compton.desktop
+@tag update-desktop-database

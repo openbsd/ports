@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-notificationd,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+share/lxqt/translations/lxqt-notificationd/
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ar.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ca.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_cs.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_da.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_de.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_el.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_es.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_fr.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hu.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_id.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_it.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ja.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lt.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lv.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nl.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pl.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ru.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ru_RU.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_tr.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_uk.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_TW.qm

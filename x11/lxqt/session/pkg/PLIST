@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@bin bin/lxqt-config-session
+@bin bin/lxqt-leave
+@bin bin/lxqt-session
+bin/startlxqt
+@man man/man1/lxqt-config-session.1
+@man man/man1/lxqt-leave.1
+@man man/man1/lxqt-session.1
+@man man/man1/startlxqt.1
+share/applications/lxqt-config-session.desktop
+share/applications/lxqt-hibernate.desktop
+share/applications/lxqt-leave.desktop
+share/applications/lxqt-lockscreen.desktop
+share/applications/lxqt-logout.desktop
+share/applications/lxqt-reboot.desktop
+share/applications/lxqt-shutdown.desktop
+share/applications/lxqt-suspend.desktop
+share/examples/lxqt-session/
+share/examples/lxqt-session/xdg/
+share/examples/lxqt-session/xdg/autostart/
+share/examples/lxqt-session/xdg/autostart/lxqt-xscreensaver-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-xscreensaver-autostart.desktop
+share/examples/lxqt-session/xdg/lxqt/
+share/examples/lxqt-session/xdg/lxqt/lxqt.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/lxqt.conf
+share/examples/lxqt-session/xdg/lxqt/session.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/session.conf
+share/examples/lxqt-session/xdg/lxqt/windowmanagers.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/windowmanagers.conf
+share/examples/lxqt-session/xdg/openbox/
+@sample ${SYSCONFDIR}/xdg/openbox/
+share/examples/lxqt-session/xdg/openbox/lxqt-rc.xml
+@sample ${SYSCONFDIR}/xdg/openbox/lxqt-rc.xml
+share/kdm/
+share/kdm/sessions/
+share/kdm/sessions/lxqt.desktop
+share/xsessions/
+share/xsessions/lxqt.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+@tag update-desktop-database

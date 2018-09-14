@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lxqt-config
+@bin bin/lxqt-config-appearance
+@bin bin/lxqt-config-brightness
+@bin bin/lxqt-config-file-associations
+@bin bin/lxqt-config-input
+@bin bin/lxqt-config-locale
+lib/lxqt-config/
+lib/lxqt-config/liblxqt-config-cursor.so
+share/applications/lxqt-config-appearance.desktop
+share/applications/lxqt-config-brightness.desktop
+share/applications/lxqt-config-file-associations.desktop
+share/applications/lxqt-config-input.desktop
+share/applications/lxqt-config-locale.desktop
+share/applications/lxqt-config.desktop
+share/examples/lxqt-config/
+share/examples/lxqt-config/xdg/
+share/examples/lxqt-config/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/examples/lxqt-config/xdg/menus/lxqt-config.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-config.menu
+share/icons/hicolor/48x48/apps/brightnesssettings.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

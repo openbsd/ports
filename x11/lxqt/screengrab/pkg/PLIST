@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@bin bin/screengrab
+lib/screengrab/
+@lib lib/screengrab/libextedit.so.${LIBextedit_VERSION}
+@lib lib/screengrab/libuploader.so.${LIBuploader_VERSION}
+share/applications/screengrab.desktop
+share/doc/screengrab/
+share/doc/screengrab/html/
+share/doc/screengrab/html/default.css
+share/doc/screengrab/html/en/
+share/doc/screengrab/html/en/index.html
+share/doc/screengrab/html/pt_BR/
+share/doc/screengrab/html/pt_BR/index.html
+share/doc/screengrab/html/ru/
+share/doc/screengrab/html/ru/index.html
+share/examples/screengrab/
+@sample ${SYSCONFDIR}/xdg/screengrab/
+share/examples/screengrab/screengrab.conf
+@sample ${SYSCONFDIR}/xdg/screengrab/screengrab.conf
+share/icons/hicolor/32x32/apps/screengrab.png
+share/screengrab/
+share/screengrab/translations/
+share/screengrab/translations/screengrab_ca.qm
+share/screengrab/translations/screengrab_de.qm
+share/screengrab/translations/screengrab_es.qm
+share/screengrab/translations/screengrab_fr.qm
+share/screengrab/translations/screengrab_he.qm
+share/screengrab/translations/screengrab_it.qm
+share/screengrab/translations/screengrab_lt.qm
+share/screengrab/translations/screengrab_pl.qm
+share/screengrab/translations/screengrab_pt_BR.qm
+share/screengrab/translations/screengrab_ru.qm
+share/screengrab/translations/screengrab_uk_UA.qm
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

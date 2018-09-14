@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-powermanagement,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+share/lxqt/translations/lxqt-powermanagement/
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ar.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ca.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_cs.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_da.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_de.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_el.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_es.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_fr.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_hu.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_id.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_it.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ja.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lt.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_nl.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pl.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pt.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ru.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_tr.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_uk.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_zh_CN.qm

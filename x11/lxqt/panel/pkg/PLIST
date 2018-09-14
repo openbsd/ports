@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+@bin bin/lxqt-panel
+include/lxqt/ilxqtpanel.h
+include/lxqt/ilxqtpanelplugin.h
+include/lxqt/lxqtpanelglobals.h
+include/lxqt/pluginsettings.h
+lib/lxqt-panel/
+lib/lxqt-panel/libcolorpicker.so
+lib/lxqt-panel/libcpuload.so
+lib/lxqt-panel/libdirectorymenu.so
+lib/lxqt-panel/libkbindicator.so
+lib/lxqt-panel/libmount.so
+lib/lxqt-panel/libnetworkmonitor.so
+lib/lxqt-panel/libsysstat.so
+@man man/man1/lxqt-panel.1
+share/desktop-directories/
+share/desktop-directories/lxqt-leave.directory
+share/desktop-directories/lxqt-settings.directory
+share/examples/lxqt-panel/
+share/examples/lxqt-panel/xdg/
+share/examples/lxqt-panel/xdg/autostart/
+share/examples/lxqt-panel/xdg/autostart/lxqt-panel.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/lxqt-panel.desktop
+share/examples/lxqt-panel/xdg/lxqt/
+share/examples/lxqt-panel/xdg/lxqt/panel.conf
+@sample ${SYSCONFDIR}/xdg/lxqt/panel.conf
+share/examples/lxqt-panel/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/examples/lxqt-panel/xdg/menus/lxqt-applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications.menu
+share/lxqt/lxqt-panel/
+share/lxqt/lxqt-panel/clock.desktop
+share/lxqt/lxqt-panel/colorpicker.desktop
+share/lxqt/lxqt-panel/cpuload.desktop
+share/lxqt/lxqt-panel/desktopswitch.desktop
+share/lxqt/lxqt-panel/directorymenu.desktop
+share/lxqt/lxqt-panel/kbindicator.desktop
+share/lxqt/lxqt-panel/mainmenu.desktop
+share/lxqt/lxqt-panel/mount.desktop
+share/lxqt/lxqt-panel/networkmonitor.desktop
+share/lxqt/lxqt-panel/quicklaunch.desktop
+share/lxqt/lxqt-panel/showdesktop.desktop
+share/lxqt/lxqt-panel/spacer.desktop
+share/lxqt/lxqt-panel/statusnotifier.desktop
+share/lxqt/lxqt-panel/sysstat.desktop
+share/lxqt/lxqt-panel/taskbar.desktop
+share/lxqt/lxqt-panel/tray.desktop
+share/lxqt/lxqt-panel/worldclock.desktop
