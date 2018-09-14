@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/04 14:07:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/09/14 17:52:08 landry Exp $
 
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
-DISTNAME=		s-nail-14.9.10
+DISTNAME=		s-nail-14.9.11
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
