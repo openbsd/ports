@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/02/27 14:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/15 08:00:06 ajacoutot Exp $
 
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-V =		2.6
+V =		2.7
 DISTNAME =	sysclean-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/sysclean/
