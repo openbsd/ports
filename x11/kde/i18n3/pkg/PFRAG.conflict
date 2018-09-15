@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.conflict,v 1.1 2018/09/15 12:01:59 espie Exp $
+@conflict konsole-*
+@conflict ktouch-*
+@conflict umbrello-*
