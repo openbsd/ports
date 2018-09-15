@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/29 19:02:07 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2018/09/15 17:38:16 visa Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
 GH_TAGNAME =		v1.3.5
+REVISION =		0
 SHARED_LIBS =		zstd	1.1	# 1.3.5
 
 CATEGORIES =		archivers
@@ -21,7 +22,7 @@ WANTLIB =		c lz4 lzma pthread z
 LIB_DEPENDS =		archivers/lz4 \
 			archivers/xz
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MAKE_ENV =		CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
