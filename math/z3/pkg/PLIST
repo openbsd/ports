@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/10 08:17:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/09/15 13:27:29 rsadowski Exp $
 @bin bin/z3
 include/z3++.h
 include/z3.h
@@ -14,12 +14,12 @@ include/z3_polynomial.h
 include/z3_rcf.h
 include/z3_spacer.h
 include/z3_v1.h
-lib/libz3.so
+@lib lib/libz3.so.${LIBz3_VERSION}
 lib/python${MODPY_VERSION}/site-packages/z3/
 lib/python${MODPY_VERSION}/site-packages/z3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/z3/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/lib/
-lib/python${MODPY_VERSION}/site-packages/z3/lib/libz3.so
+@lib lib/python${MODPY_VERSION}/site-packages/z3/lib/libz3.so.${LIBz3_VERSION}
 lib/python${MODPY_VERSION}/site-packages/z3/z3.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3consts.py

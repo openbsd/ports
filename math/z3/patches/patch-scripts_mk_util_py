@@ -1,0 +1,23 @@
+$OpenBSD: patch-scripts_mk_util_py,v 1.1 2018/09/15 13:27:29 rsadowski Exp $
+
+Index: scripts/mk_util.py
+--- scripts/mk_util.py.orig
++++ scripts/mk_util.py
+@@ -49,7 +49,7 @@ C_COMPILERS=['gcc', 'clang']
+ CSC_COMPILERS=['csc', 'mcs']
+ JAVAC=None
+ JAR=None
+-PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib()
++PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib(prefix=getenv("LOCALBASE", None))
+ BUILD_DIR='build'
+ REV_BUILD_DIR='..'
+ SRC_DIR='src'
+@@ -2528,7 +2528,7 @@ def mk_config():
+         elif sysname == 'OpenBSD':
+             CXXFLAGS       = '%s -D_OPENBSD_' % CXXFLAGS
+             OS_DEFINES     = '-D_OPENBSD_'
+-            SO_EXT         = '.so'
++            SO_EXT         = '.so.${LIBz3_VERSION}'
+             SLIBFLAGS      = '-shared'
+         elif sysname.startswith('CYGWIN'):
+             CXXFLAGS       = '%s -D_CYGWIN' % CXXFLAGS
