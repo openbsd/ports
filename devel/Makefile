@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1766 2018/09/10 19:30:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.1767 2018/09/15 13:17:31 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1192,6 +1192,7 @@
      SUBDIR += pango
      SUBDIR += pangomm
      SUBDIR += pangox-compat
+     SUBDIR += pasmo
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += pcre++
