@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:53:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/15 18:54:54 bcallah Exp $
 
+V =		3.1
 COMMENT =	modern QuakeWorld client
-DISTNAME =	ezquake-${GH_TAGNAME}
-
-GH_ACCOUNT =	ezQuake
-GH_PROJECT =	ezquake-source
-GH_TAGNAME =	3.1
-REVISION =	0
-
+DISTNAME =	ezquake-source-${V}
+PKGNAME =	ezquake-${V}
 CATEGORIES =	games
+REVISION =	1
 
 HOMEPAGE =	https://ezquake.github.io/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -18,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL SDL2 c curl expat jansson jpeg m pcre png pthread
 WANTLIB += speex speexdsp z
+
+MASTER_SITES =	https://github.com/ezQuake/ezquake-source/releases/download/${V}/
 
 LIB_DEPENDS =	audio/speex \
 		graphics/jpeg \
@@ -29,6 +28,7 @@ LIB_DEPENDS =	audio/speex \
 
 USE_GMAKE =	Yes
 MAKE_ENV =	V=1
+WRKDIST =	${WRKDIR}
 
 NO_TEST =	Yes
 
