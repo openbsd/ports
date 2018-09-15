@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.46 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2018/09/15 19:26:50 bcallah Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
-V=		2.4.12
+V=		2.4.14
 DISTNAME=	bzflag-${V}
 CATEGORIES=	games x11
 MASTER_SITES=	https://download.bzflag.org/bzflag/source/${V}/
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 HOMEPAGE=	https://www.bzflag.org/
 
-# LGPLv2.1
+# LGPLv2.1 only or MPL 2.0
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += GL GLU SDL2 X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
-WANTLIB += c cares crypto curl drm expat glapi m ncurses
-WANTLIB += nghttp2 pthread sndio ssl usbhid xcb xcb-dri2
-WANTLIB += xcb-glx z ${COMPILER_LIBCXX}
+WANTLIB += c cares crypto curl curses drm expat glapi m
+WANTLIB += nghttp2 pthread samplerate sndio ssl usbhid xcb
+WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync
+WANTLIB += xshmfence z ${COMPILER_LIBCXX}
 
-# c++0x
+# C++11
 COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	devel/sdl2 \
