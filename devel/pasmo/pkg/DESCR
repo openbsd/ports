@@ -1,0 +1,5 @@
+Pasmo is a Z80 cross assembler, written in standard C++ that compiles easily
+in multiple platforms. It can generate object code in the following formats:
+raw binary, Intel HEX, PRL for CP/M Plus RSX, Plus3Dos (Spectrum +3 disk),
+TAP, TZX and CDT (Spectrum and Amstrad CPC emulators tape images), AmsDos
+(Amstrad CPC disk) and MSX (for use with BLOAD from disk in Basic).
