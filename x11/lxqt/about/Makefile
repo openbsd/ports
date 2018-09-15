@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/15 16:53:52 rsadowski Exp $
 
 COMMENT =	information about LXQt and the system its running on
 
@@ -12,6 +12,8 @@ WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
 WANTLIB += Qt5Xml c lxqt m
 
 LIB_DEPENDS +=		x11/lxqt/liblxqt
+
+BUILD_DEPENDS +=	x11/lxqt/build-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/lxqt/l10n,-about
