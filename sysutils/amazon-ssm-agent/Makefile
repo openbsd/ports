@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2018/09/13 14:59:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2018/09/15 08:05:47 ajacoutot Exp $
+
+# i386: pty_openbsd.go:24:10: undefined: ptmget
+ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
