@@ -1,0 +1,4 @@
+GNU Pascal (GPC) is a Pascal compiler built on top of GCC. GNU Pascal is
+ISO 7185 compatible, and implements most of the ISO 10206 Extended
+Pascal standard. GPC also supports Borland Pascal 7.0 and parts of
+Borland Delphi, Mac Pascal, and Pascal-SC (PXSC).

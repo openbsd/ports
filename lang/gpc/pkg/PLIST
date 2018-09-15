@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/15 18:03:31 bcallah Exp $
+@bin bin/gpc
+bin/gpc-run
+lib/gcc/
+lib/gcc/${CONFIG}/
+lib/gcc/${CONFIG}/4.2.4/
+lib/gcc/${CONFIG}/4.2.4/include/
+lib/gcc/${CONFIG}/4.2.4/include/gpc-in-c.h
+lib/gcc/${CONFIG}/4.2.4/libgcc.a
+lib/gcc/${CONFIG}/4.2.4/libgcov.a
+lib/gcc/${CONFIG}/4.2.4/libgpc.a
+lib/gcc/${CONFIG}/4.2.4/units/
+lib/gcc/${CONFIG}/4.2.4/units/crt.inc
+lib/gcc/${CONFIG}/4.2.4/units/crt.pas
+lib/gcc/${CONFIG}/4.2.4/units/crtc.c
+lib/gcc/${CONFIG}/4.2.4/units/crtc.h
+lib/gcc/${CONFIG}/4.2.4/units/crtdjgpp.h
+lib/gcc/${CONFIG}/4.2.4/units/crtlinux386.h
+lib/gcc/${CONFIG}/4.2.4/units/crtx.c
+lib/gcc/${CONFIG}/4.2.4/units/dos.pas
+lib/gcc/${CONFIG}/4.2.4/units/dosunix.pas
+lib/gcc/${CONFIG}/4.2.4/units/fileutils.pas
+lib/gcc/${CONFIG}/4.2.4/units/gmp.pas
+lib/gcc/${CONFIG}/4.2.4/units/gpc-bp.pas
+lib/gcc/${CONFIG}/4.2.4/units/gpc.pas
+lib/gcc/${CONFIG}/4.2.4/units/gpcutil.pas
+lib/gcc/${CONFIG}/4.2.4/units/heapmon.pas
+lib/gcc/${CONFIG}/4.2.4/units/intl.pas
+lib/gcc/${CONFIG}/4.2.4/units/intlc.c
+lib/gcc/${CONFIG}/4.2.4/units/md5.pas
+lib/gcc/${CONFIG}/4.2.4/units/overlay.pas
+lib/gcc/${CONFIG}/4.2.4/units/pipes.pas
+lib/gcc/${CONFIG}/4.2.4/units/pipesc.c
+lib/gcc/${CONFIG}/4.2.4/units/ports.pas
+lib/gcc/${CONFIG}/4.2.4/units/printer.pas
+lib/gcc/${CONFIG}/4.2.4/units/regex.pas
+lib/gcc/${CONFIG}/4.2.4/units/regexc.c
+lib/gcc/${CONFIG}/4.2.4/units/rts-config.inc
+lib/gcc/${CONFIG}/4.2.4/units/strings.pas
+lib/gcc/${CONFIG}/4.2.4/units/stringutils.pas
+lib/gcc/${CONFIG}/4.2.4/units/system.pas
+lib/gcc/${CONFIG}/4.2.4/units/tfdd.pas
+lib/gcc/${CONFIG}/4.2.4/units/trap.pas
+lib/gcc/${CONFIG}/4.2.4/units/trapc.c
+lib/gcc/${CONFIG}/4.2.4/units/turbo3.pas
+lib/gcc/${CONFIG}/4.2.4/units/wincrt.pas
+lib/gcc/${CONFIG}/4.2.4/units/windos.pas
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/4.2.4/
+@bin libexec/gcc/${CONFIG}/4.2.4/collect2
+@bin libexec/gcc/${CONFIG}/4.2.4/gpc1
+%%PPC%%
+@man man/man1/gpc.1
