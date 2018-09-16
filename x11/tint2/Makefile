@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/01 18:33:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/16 17:01:37 bcallah Exp $
 
 COMMENT=	freedesktop-compliant panel
 
-V=		16.2
+V=		16.6.1
 CATEGORIES=	x11
-DISTNAME=	tint2-$V
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
-WRKDIST=	${WRKDIR}/tint2-v$V-b810bad93ff65854137fbd2f344ad2f99338008f
-REVISION=	2
-
+DISTNAME=	tint2-${V}
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM= YES
 
-MASTER_SITES=	https://gitlab.com/o9000/tint2/repository/
+MASTER_SITES=	https://gitlab.com/o9000/tint2/-/archive/${V}/
 
 WANTLIB += Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
