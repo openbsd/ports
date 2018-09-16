@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/09/16 06:55:36 ajacoutot Exp $
 
 COMMENT=		API tools for Amazon EC2 web service
 
 DISTNAME=		ec2-api-tools-1.7.5.1
-REVISION=		2
+REVISION=		3
 
-DISTFILES=		ec2-api-tools${EXTRACT_SUFX}
 EXTRACT_SUFX=		.zip
 
 CATEGORIES=		sysutils
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=		http://s3.amazonaws.com/ec2-downloads/
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.8+
 MODJAVA_JRERUN=		Yes
 
 RUN_DEPENDS=		java/javaPathHelper \
