@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.29 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.30 2018/09/16 11:08:34 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -977,7 +986,7 @@ void RenderThreadImpl::Init(
+@@ -976,7 +985,7 @@ void RenderThreadImpl::Init(
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -34,7 +34,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -1018,7 +1027,7 @@ void RenderThreadImpl::Init(
+@@ -1017,7 +1026,7 @@ void RenderThreadImpl::Init(
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
@@ -43,7 +43,7 @@ Index: content/renderer/render_thread_impl.cc
    render_message_filter()->SetThreadPriority(
        ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
  #endif
-@@ -1224,7 +1233,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
+@@ -1223,7 +1232,7 @@ void RenderThreadImpl::InitializeCompositorThread() {
                       false));
    GetContentClient()->renderer()->PostCompositorThreadCreated(
        compositor_task_runner_.get());
