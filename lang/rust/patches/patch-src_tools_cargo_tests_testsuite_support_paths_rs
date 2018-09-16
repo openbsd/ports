@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_tools_cargo_tests_testsuite_cargotest_support_paths_rs,v 1.1 2018/05/22 06:04:33 landry Exp $
+$OpenBSD: patch-src_tools_cargo_tests_testsuite_support_paths_rs,v 1.1 2018/09/16 16:35:27 landry Exp $
 
-Index: src/tools/cargo/tests/testsuite/cargotest/support/paths.rs
---- src/tools/cargo/tests/testsuite/cargotest/support/paths.rs.orig
-+++ src/tools/cargo/tests/testsuite/cargotest/support/paths.rs
+Index: src/tools/cargo/tests/testsuite/support/paths.rs
+--- src/tools/cargo/tests/testsuite/support/paths.rs.orig
++++ src/tools/cargo/tests/testsuite/support/paths.rs
 @@ -1,4 +1,3 @@
 -use std::env;
  use std::cell::Cell;

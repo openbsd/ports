@@ -1,6 +1,4 @@
-@comment $OpenBSD: PFRAG.amd64-doc,v 1.2 2018/06/29 05:19:47 landry Exp $
-share/doc/rust/html/core/arch/x86/__readeflags.v.html
-share/doc/rust/html/core/arch/x86/__writeeflags.v.html
+@comment $OpenBSD: PFRAG.amd64-doc,v 1.3 2018/09/16 16:35:27 landry Exp $
 share/doc/rust/html/core/arch/x86/_blcfill_u64.v.html
 share/doc/rust/html/core/arch/x86/_blci_u64.v.html
 share/doc/rust/html/core/arch/x86/_blcic_u64.v.html
@@ -10,8 +8,6 @@ share/doc/rust/html/core/arch/x86/_blsfill_u64.v.html
 share/doc/rust/html/core/arch/x86/_blsic_u64.v.html
 share/doc/rust/html/core/arch/x86/_t1mskc_u64.v.html
 share/doc/rust/html/core/arch/x86/_tzmsk_u64.v.html
-share/doc/rust/html/core/arch/x86/fn.__readeflags.html
-share/doc/rust/html/core/arch/x86/fn.__writeeflags.html
 share/doc/rust/html/core/arch/x86/fn._blcfill_u64.html
 share/doc/rust/html/core/arch/x86/fn._blci_u64.html
 share/doc/rust/html/core/arch/x86/fn._blcic_u64.html
@@ -21,8 +17,6 @@ share/doc/rust/html/core/arch/x86/fn._blsfill_u64.html
 share/doc/rust/html/core/arch/x86/fn._blsic_u64.html
 share/doc/rust/html/core/arch/x86/fn._t1mskc_u64.html
 share/doc/rust/html/core/arch/x86/fn._tzmsk_u64.html
-share/doc/rust/html/core/arch/x86_64/__readeflags.v.html
-share/doc/rust/html/core/arch/x86_64/__writeeflags.v.html
 share/doc/rust/html/core/arch/x86_64/_bextr2_u64.v.html
 share/doc/rust/html/core/arch/x86_64/_bextr_u64.v.html
 share/doc/rust/html/core/arch/x86_64/_blcfill_u64.v.html
@@ -41,8 +35,6 @@ share/doc/rust/html/core/arch/x86_64/_pdep_u64.v.html
 share/doc/rust/html/core/arch/x86_64/_pext_u64.v.html
 share/doc/rust/html/core/arch/x86_64/_t1mskc_u64.v.html
 share/doc/rust/html/core/arch/x86_64/_tzmsk_u64.v.html
-share/doc/rust/html/core/arch/x86_64/fn.__readeflags.html
-share/doc/rust/html/core/arch/x86_64/fn.__writeeflags.html
 share/doc/rust/html/core/arch/x86_64/fn._bextr2_u64.html
 share/doc/rust/html/core/arch/x86_64/fn._bextr_u64.html
 share/doc/rust/html/core/arch/x86_64/fn._blcfill_u64.html
@@ -61,11 +53,6 @@ share/doc/rust/html/core/arch/x86_64/fn._pdep_u64.html
 share/doc/rust/html/core/arch/x86_64/fn._pext_u64.html
 share/doc/rust/html/core/arch/x86_64/fn._t1mskc_u64.html
 share/doc/rust/html/core/arch/x86_64/fn._tzmsk_u64.html
-share/doc/rust/html/core/coresimd/x86/eflags/
-share/doc/rust/html/core/coresimd/x86/eflags/__readeflags.v.html
-share/doc/rust/html/core/coresimd/x86/eflags/__writeeflags.v.html
-share/doc/rust/html/core/coresimd/x86/eflags/fn.__readeflags.html
-share/doc/rust/html/core/coresimd/x86/eflags/fn.__writeeflags.html
 share/doc/rust/html/core/coresimd/x86/tbm/_blcfill_u64.v.html
 share/doc/rust/html/core/coresimd/x86/tbm/_blci_u64.v.html
 share/doc/rust/html/core/coresimd/x86/tbm/_blcic_u64.v.html

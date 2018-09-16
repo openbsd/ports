@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2018/08/08 19:18:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2018/09/16 16:35:27 landry Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -11,14 +11,14 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.28.0
-CARGO_V =		0.29.0
+V =			1.29.0
+CARGO_V =		0.30.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.28.0-20180803
-BV-amd64 =		1.28.0-20180731
-BV-i386 =		1.28.0-20180731
+BV-aarch64 =		1.29.0-20180915
+BV-amd64 =		1.29.0-20180911
+BV-i386 =		1.29.0-20180911
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -88,7 +88,8 @@ LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
-MAKE_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1
+MAKE_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
+		LIBSSH2_SYS_USE_PKG_CONFIG=1
 TEST_ENV +=	RUST_BACKTRACE=0
 
 .ifdef DEBUG
@@ -113,7 +114,7 @@ SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/src/vendor/*/.cargo-checksum.json
-	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/testsuite/cargotest/support/paths.rs
+	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/testsuite/support/paths.rs
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -148,6 +149,7 @@ do-configure:
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
+	echo 'verbose-tests = true' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
@@ -229,6 +231,7 @@ bootstrap: build
 	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
+	LD_PRELOAD="${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/codegen-backends/librustc_codegen_llvm-llvm.so" \
 		ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % cp % ${BOOTSTRAPDIR}/lib || true
