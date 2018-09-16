@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/09/16 04:55:44 bket Exp $
+# $OpenBSD: Makefile,v 1.26 2018/09/16 09:10:44 bket Exp $
 
 COMMENT =	python powered git gui
 
@@ -25,16 +25,16 @@ BUILD_DEPENDS =	devel/gettext-tools \
 		devel/git \
 		textproc/xxdiff \
 		x11/py-qt4 \
-		x11/py-qtpy${MODPY_FLAVOR}
+		x11/py-qtpy
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/git \
 		textproc/xxdiff \
 		x11/py-qt4 \
-		x11/py-qtpy${MODPY_FLAVOR}
+		x11/py-qtpy
 
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-mock \
+		devel/py-test
 
 USE_GMAKE =	Yes
 
