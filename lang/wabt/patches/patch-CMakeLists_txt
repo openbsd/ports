@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/09/16 13:32:32 bcallah Exp $
+
+rm -Werror
+rm python - it is only used by tests which we don't execute
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -89,7 +89,7 @@ else ()
+   #   interfaces, etc.
+   # disable -Wpointer-arith: this is a GCC extension, and doesn't work in MSVC.
+   add_definitions(
+-    -Wall -Wextra -Werror -Wno-unused-parameter -Wpointer-arith -g -std=c++11
++    -Wall -Wextra -Wno-unused-parameter -Wpointer-arith -g -std=c++11
+     -Wold-style-cast -Wuninitialized
+   )
+ 
+@@ -370,7 +370,6 @@ if (NOT EMSCRIPTEN)
+   endif ()
+ 
+   # test running
+-  find_package(PythonInterp 2.7 REQUIRED)
+   set(RUN_TESTS_PY ${WABT_SOURCE_DIR}/test/run-tests.py)
+   add_custom_target(run-tests
+     COMMAND ${PYTHON_EXECUTABLE} ${RUN_TESTS_PY} --bindir ${CMAKE_BINARY_DIR}
