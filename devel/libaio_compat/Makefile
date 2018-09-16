@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/04 21:08:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/16 19:34:46 bcallah Exp $
+
+# Only used by lang/flang; only supported on amd64 and arm64
+ONLY_FOR_ARCHS =	amd64 arm64
 
 COMMENT =	port of POSIX asynchronous I/O routines from DragonFly BSD
 DISTNAME =	libaio_compat-5.2.2
