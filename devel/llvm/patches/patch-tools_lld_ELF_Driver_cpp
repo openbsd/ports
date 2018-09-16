@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.8 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.9 2018/09/16 06:09:16 ajacoutot Exp $
 
-Enable PIE by default.
+- Enable PIE by default.
+- Fix --exclude-libs option.
 
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
@@ -15,3 +16,12 @@ Index: tools/lld/ELF/Driver.cpp
    Config->PrintGcSections =
        Args.hasFlag(OPT_print_gc_sections, OPT_no_print_gc_sections, false);
    Config->Rpath = getRpath(Args);
+@@ -957,7 +958,7 @@ static void excludeLibs(opt::InputArgList &Args, Array
+     if (Optional<StringRef> Archive = getArchiveName(File))
+       if (All || Libs.count(path::filename(*Archive)))
+         for (Symbol *Sym : File->getSymbols())
+-          if (!Sym->isLocal())
++          if (!Sym->isLocal() && Sym->File == File)
+             Sym->VersionId = VER_NDX_LOCAL;
+ }
+ 
