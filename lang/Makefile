@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2018/09/15 18:03:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.229 2018/09/16 13:33:11 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -115,5 +115,6 @@
      SUBDIR += unicon
      SUBDIR += vala,
      SUBDIR += verilator
+     SUBDIR += wabt
 
 .include <bsd.port.subdir.mk>
