@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/06/16 11:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2018/09/16 06:56:05 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,15 +7,15 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.5.0
+VERSION =		5.5.1
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
 
-SHARED_LIBS +=  link-grammar         6.0      # 8.7
-SHARED_LIBS +=  link-grammar-java    4.0      # 8.7
+SHARED_LIBS +=  link-grammar         6.0      # 10.1
+SHARED_LIBS +=  link-grammar-java    4.0      # 10.1
 
 CATEGORIES =		textproc
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += hunspell-1.6 m minisat sqlite3 z ${COMPILER_LIBCXX}
 
-WANTLIB-main += ${WANTLIB} c pthread
+WANTLIB-main += ${WANTLIB} c perl pthread
 
 WANTLIB-java += ${WANTLIB} link-grammar pthread
 
@@ -86,7 +86,7 @@ CONFIGURE_ARGS =	--enable-perl-bindings \
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		1.6+
+MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings

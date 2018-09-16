@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2018/06/16 11:13:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-python,v 1.3 2018/09/16 06:56:05 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/
 lib/python${MODPY_VERSION}/site-packages/linkgrammar.pth
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/__init__.py
@@ -10,6 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}clinkgramma
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}linkgrammar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/${MODPY_PYCACHE}linkgrammar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/_clinkgrammar.so
-lib/python${MODPY_VERSION}/site-packages/linkgrammar/_clinkgrammar.so.10.0
+lib/python${MODPY_VERSION}/site-packages/linkgrammar/_clinkgrammar.so.10.1
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/clinkgrammar.py
 lib/python${MODPY_VERSION}/site-packages/linkgrammar/linkgrammar.py

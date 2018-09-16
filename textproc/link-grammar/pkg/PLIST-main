@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2018/06/16 11:13:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2018/09/16 06:56:05 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -77,6 +77,12 @@ share/link-grammar/de/4.0.constituent-knowledge
 share/link-grammar/de/4.0.dict
 share/link-grammar/de/4.0.knowledge
 share/link-grammar/de/4.0.regex
+share/link-grammar/demo-sql/
+share/link-grammar/demo-sql/4.0.affix
+share/link-grammar/demo-sql/4.0.constituent-knowledge
+share/link-grammar/demo-sql/4.0.knowledge
+share/link-grammar/demo-sql/4.0.regex
+share/link-grammar/demo-sql/dict.db
 share/link-grammar/en/
 share/link-grammar/en/4.0.affix
 share/link-grammar/en/4.0.constituent-knowledge
@@ -192,6 +198,7 @@ share/link-grammar/he/
 share/link-grammar/he/4.0.affix
 share/link-grammar/he/4.0.constituent-knowledge
 share/link-grammar/he/4.0.dict
+share/link-grammar/he/4.0.dict.m4
 share/link-grammar/he/4.0.knowledge
 share/link-grammar/he/4.0.regex
 share/link-grammar/id/
