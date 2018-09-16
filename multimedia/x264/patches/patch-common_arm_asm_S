@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_arm_asm_S,v 1.1 2018/09/16 06:37:15 ajacoutot Exp $
+
+Index: common/arm/asm.S
+--- common/arm/asm.S.orig
++++ common/arm/asm.S
+@@ -74,7 +74,7 @@
+ #   define FUNC @
+ #endif
+ 
+-#if SYS_LINUX
++#if SYS_LINUX || SYS_OPENBSD
+ #define HAVE_SECTION_DATA_REL_RO 1
+ #else
+ #define HAVE_SECTION_DATA_REL_RO 0

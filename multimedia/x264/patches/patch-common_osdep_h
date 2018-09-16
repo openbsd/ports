@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_osdep_h,v 1.10 2018/01/20 11:42:59 ajacoutot Exp $
+$OpenBSD: patch-common_osdep_h,v 1.11 2018/09/16 06:37:15 ajacoutot Exp $
 
 Enable the use of __sync_fetch_and_add() on aarch64, alpha, arm, mips64,
 powerpc and sparc64.
@@ -6,7 +6,7 @@ powerpc and sparc64.
 Index: common/osdep.h
 --- common/osdep.h.orig
 +++ common/osdep.h
-@@ -252,7 +252,8 @@ int x264_threading_init( void );
+@@ -255,7 +255,8 @@ int x264_threading_init( void );
  static ALWAYS_INLINE int x264_pthread_fetch_and_add( int *val, int add, x264_pthread_mutex_t *mutex )
  {
  #if HAVE_THREAD
