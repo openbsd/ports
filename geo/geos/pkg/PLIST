@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/02/06 09:56:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/16 16:46:28 landry Exp $
 bin/geos-config
 include/geos/
 include/geos.h
@@ -28,6 +28,7 @@ include/geos/algorithm/RobustDeterminant.h
 include/geos/algorithm/SIRtreePointInRing.h
 include/geos/algorithm/SimplePointInRing.h
 include/geos/algorithm/distance/
+include/geos/algorithm/distance/DiscreteFrechetDistance.h
 include/geos/algorithm/distance/DiscreteHausdorffDistance.h
 include/geos/algorithm/distance/DistanceToPoint.h
 include/geos/algorithm/distance/PointPairDistance.h
@@ -59,7 +60,6 @@ include/geos/geom/GeometryComponentFilter.h
 include/geos/geom/GeometryFactory.h
 include/geos/geom/GeometryFactory.inl
 include/geos/geom/GeometryFilter.h
-include/geos/geom/GeometryList.h
 include/geos/geom/IntersectionMatrix.h
 include/geos/geom/LineSegment.h
 include/geos/geom/LineSegment.inl
@@ -290,6 +290,7 @@ include/geos/operation/distance/DistanceOp.h
 include/geos/operation/distance/FacetSequence.h
 include/geos/operation/distance/FacetSequenceTreeBuilder.h
 include/geos/operation/distance/GeometryLocation.h
+include/geos/operation/distance/IndexedFacetDistance.h
 include/geos/operation/intersection/
 include/geos/operation/intersection/Rectangle.h
 include/geos/operation/intersection/RectangleIntersection.h

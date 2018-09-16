@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2017/02/06 09:56:49 landry Exp $
---- src/Makefile.in.orig	Sat Dec 24 16:54:05 2016
-+++ src/Makefile.in	Tue Jan 24 21:47:47 2017
-@@ -455,8 +455,7 @@ lib_LTLIBRARIES = libgeos.la
- # effort to determine this because depending programs should not be
- # using the C++ library.
+$OpenBSD: patch-src_Makefile_in,v 1.5 2018/09/16 16:46:28 landry Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -462,8 +462,7 @@ lib_LTLIBRARIES = libgeos.la
+ # has changed between releases; the project chooses not to expend the
+ # effort to determine this because GEOS does not promise ABI stability.
  libgeos_la_LDFLAGS = \
--    -release @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@ \
+-    -release @VERSION_RELEASE@ \
 -    -no-undefined
 +    -no-undefined -lstdc++ -lm
  
