@@ -1,7 +1,8 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.15 2018/04/10 11:37:51 ajacoutot Exp $
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.16 2018/09/17 08:46:09 ajacoutot Exp $
 
-Remove -fobjc-arc, only makes sense for objc code and not understood by
-base-gcc and ports-gcc.
+- Remove -fobjc-arc, only makes sense for objc code and not understood by
+  base-gcc and ports-gcc.
+- section_data_rel_ro: required by NEON support
 
 Index: gst-libs/ext/libav/configure
 --- gst-libs/ext/libav/configure.orig
@@ -67,7 +68,15 @@ Index: gst-libs/ext/libav/configure
          _cflags_size="-O2 -Munroll=c:1 $opt_common"
          _cflags_noopt="-O"
          _flags_filter=pgi_flags
-@@ -5315,7 +5315,7 @@ EOF
+@@ -4946,6 +4946,7 @@ case $target_os in
+         ;;
+     openbsd|bitrig)
+         disable symver
++        enable section_data_rel_ro
+         SHFLAGS='-shared'
+         SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
+         SLIB_INSTALL_LINKS=
+@@ -5315,7 +5316,7 @@ EOF
      exit 1
  fi
  
