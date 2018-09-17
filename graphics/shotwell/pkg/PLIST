@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.41 2018/09/17 15:54:03 ajacoutot Exp $
 @bin bin/shotwell
-lib/libshotwell-authenticator.a
-lib/libshotwell-authenticator.la
 @lib lib/libshotwell-authenticator.so.${LIBshotwell-authenticator_VERSION}
-lib/libshotwell-plugin-common.a
-lib/libshotwell-plugin-common.la
 @lib lib/libshotwell-plugin-common.so.${LIBshotwell-plugin-common_VERSION}
+@lib lib/libshotwell-plugin-dev-1.0.so.${LIBshotwell-plugin-dev-1.0_VERSION}
 lib/shotwell/
 lib/shotwell/plugins/
 lib/shotwell/plugins/builtin/
-lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
-lib/shotwell/plugins/builtin/shotwell-publishing.so
-lib/shotwell/plugins/builtin/shotwell-transitions.so
+lib/shotwell/plugins/builtin/libshotwell-publishing-extras.so
+lib/shotwell/plugins/builtin/libshotwell-publishing.so
+lib/shotwell/plugins/builtin/libshotwell-transitions.so
 libexec/shotwell/
 libexec/shotwell/shotwell-settings-migrator
 @bin libexec/shotwell/shotwell-video-thumbnailer
 @man man/man1/shotwell.1
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
+share/apport/
+share/apport/package-hooks/
+share/apport/package-hooks/shotwell.py
 share/glib-2.0/schemas/org.yorba.shotwell-extras.gschema.xml
 share/glib-2.0/schemas/org.yorba.shotwell.gschema.xml
 share/help/
@@ -246,6 +246,51 @@ share/help/es/shotwell/share-upload.page
 share/help/es/shotwell/view-displaying.page
 share/help/es/shotwell/view-information.page
 share/help/es/shotwell/view-sidebar.page
+share/help/fr/
+share/help/fr/shotwell/
+share/help/fr/shotwell/edit-adjustments.page
+share/help/fr/shotwell/edit-crop.page
+share/help/fr/shotwell/edit-date-time.page
+share/help/fr/shotwell/edit-enhance.page
+share/help/fr/shotwell/edit-external.page
+share/help/fr/shotwell/edit-nondestructive.page
+share/help/fr/shotwell/edit-redeye.page
+share/help/fr/shotwell/edit-rotate.page
+share/help/fr/shotwell/edit-straighten.page
+share/help/fr/shotwell/edit-undo.page
+share/help/fr/shotwell/figures/
+share/help/fr/shotwell/figures/crop_thirds.jpg
+share/help/fr/shotwell/figures/edit_toolbar.png
+share/help/fr/shotwell/figures/editing_overview.png
+share/help/fr/shotwell/figures/shotwell_logo.png
+share/help/fr/shotwell/figures/trash_process.png
+share/help/fr/shotwell/formats.page
+share/help/fr/shotwell/import-camera.page
+share/help/fr/shotwell/import-file.page
+share/help/fr/shotwell/import-memorycard.page
+share/help/fr/shotwell/index.page
+share/help/fr/shotwell/organize-event.page
+share/help/fr/shotwell/organize-flag.page
+share/help/fr/shotwell/organize-rating.page
+share/help/fr/shotwell/organize-remove.page
+share/help/fr/shotwell/organize-search.page
+share/help/fr/shotwell/organize-tag.page
+share/help/fr/shotwell/organize-title.page
+share/help/fr/shotwell/other-files.page
+share/help/fr/shotwell/other-missing.page
+share/help/fr/shotwell/other-multiple.page
+share/help/fr/shotwell/other-plugins.page
+share/help/fr/shotwell/raw.page
+share/help/fr/shotwell/running.page
+share/help/fr/shotwell/share-background.page
+share/help/fr/shotwell/share-export.page
+share/help/fr/shotwell/share-print.page
+share/help/fr/shotwell/share-send.page
+share/help/fr/shotwell/share-slideshow.page
+share/help/fr/shotwell/share-upload.page
+share/help/fr/shotwell/view-displaying.page
+share/help/fr/shotwell/view-information.page
+share/help/fr/shotwell/view-sidebar.page
 share/help/hu/
 share/help/hu/shotwell/
 share/help/hu/shotwell/edit-adjustments.page
