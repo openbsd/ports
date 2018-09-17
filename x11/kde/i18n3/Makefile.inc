@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2018/09/14 11:37:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2018/09/17 07:45:41 espie Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -6,7 +6,7 @@ LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	tr uk uz uz@cyrillic vi wa zh_CN zh_TW
 
 
-REVISION = 5
+REVISION = 6
 
 .for i in ${LANGS}
 SUPDISTFILES += kde-i18n-$i-${VERSION}.tar.bz2
