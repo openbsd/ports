@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/11 21:11:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/17 11:55:25 bluhm Exp $
 
 COMMENT =		ospf link-state database viewer
 
-DISTNAME =		OSPF-LSDB-1.08
+DISTNAME =		OSPF-LSDB-1.09
 
 CATEGORIES =		net
 
@@ -23,6 +23,7 @@ RUN_DEPENDS =		devel/p5-Data-Validate \
 			www/p5-CGI
 TEST_DEPENDS =		devel/p5-Test-NoWarnings \
 			devel/p5-Test-Pod \
-			devel/p5-Test-Strict
+			devel/p5-Test-Strict \
+			math/graphviz
 
 .include <bsd.port.mk>
