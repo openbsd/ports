@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/02 09:32:36 sebastia Exp $
-bin/cmark${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.2 2018/09/17 10:35:51 sthen Exp $
+bin/commonmark${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/CommonMark/
 lib/python${MODPY_VERSION}/site-packages/CommonMark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/CommonMark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

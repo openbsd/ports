@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 09:32:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/17 10:35:51 sthen Exp $
 
 COMMENT=		parser for the CommonMark markdown spec
 
 MODPY_EGG_VERSION=	0.7.4
+REVISION=		0
 DISTNAME=		CommonMark-${MODPY_EGG_VERSION}
 PKGNAME=		py-commonmark-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
@@ -25,8 +26,6 @@ TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-hypothesis${MODPY_FLAVOR}
 
 post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
+	mv ${PREFIX}/bin/cmark ${PREFIX}/bin/commonmark${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
