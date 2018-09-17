@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.118 2018/06/27 04:57:03 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.119 2018/09/17 14:10:23 naddy Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -8,7 +8,7 @@
 # seamonkey-2.22/comm-release/mozilla/js/src/vm/Interpreter.cpp:743
 # firefox-25.0/mozilla-release/js/src/builtin/MapObject.cpp:1119
 
-DPB_PROPERTIES ?=	parallel
+DPB_PROPERTIES +=	parallel
 
 .for _lib in ${MOZILLA_LIBS}
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
