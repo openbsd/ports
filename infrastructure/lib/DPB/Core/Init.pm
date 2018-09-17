@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.34 2018/09/06 15:01:39 espie Exp $
+# $OpenBSD: Init.pm,v 1.35 2018/09/17 13:57:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -32,29 +32,14 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	my $fh = $self->{fh};
-	my $prop = $core->prop;
 	if ($core->{status} == 0) {
 		my $line = <$fh>;
 		chomp $line;
 		if ($line =~ m/^\d+$/) {
-			$prop->{jobs} = $line;
+			$core->prop->{jobs} = $line;
 		}
 	}
 	close($fh);
-	$prop->{jobs} //= 1;
-	$prop->{parallel2} //= $prop->{parallel};
-	for my $p (qw(parallel parallel2)) {
-		if ($prop->{$p} =~ m/^\/(\d+)$/) {
-			if ($prop->{jobs} == 1) {
-				$prop->{$p} = 0;
-			} else {
-				$prop->{$p} = int($prop->{jobs}/$1);
-				if ($prop->{$p} < 2) {
-					$prop->{$p} = 2;
-				}
-			}
-		}
-	}
 	return 1;
 }
 
@@ -98,16 +83,32 @@ sub new
 sub finalize
 {
 	my ($self, $core) = @_;
+
+	my $prop = $core->prop;
+	$prop->{jobs} //= 1;
+	$prop->{parallel2} //= $prop->{parallel};
+	for my $p (qw(parallel parallel2)) {
+		if ($prop->{$p} =~ m/^\/(\d+)$/) {
+			if ($prop->{jobs} == 1) {
+				$prop->{$p} = 0;
+			} else {
+				$prop->{$p} = int($prop->{jobs}/$1);
+				if ($prop->{$p} < 2) {
+					$prop->{$p} = 2;
+				}
+			}
+		}
+	}
 	$self->{signature}->print_out($core, $self->{logger});
 	if ($self->{signature}->matches($core, $self->{logger})) {
-		if (defined $core->prop->{squiggles}) {
-			$core->host->{wantsquiggles} = $core->prop->{squiggles};
-		} elsif ($core->prop->{jobs} > 3) {
+		if (defined $prop->{squiggles}) {
+			$core->host->{wantsquiggles} = $prop->{squiggles};
+		} elsif ($prop->{jobs} > 3) {
 			$core->host->{wantsquiggles} = 1;
-		} elsif ($core->prop->{jobs} > 1) {
+		} elsif ($prop->{jobs} > 1) {
 			$core->host->{wantsquiggles} = 0.8;
 		}
-		for my $i (1 .. $core->prop->{jobs}) {
+		for my $i (1 .. $prop->{jobs}) {
 			$core->clone->mark_ready;
 		}
 		return 1;
