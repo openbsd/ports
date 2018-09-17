@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use qbittorrent-nox you should specify the interface and IP
+address to bind to in ~/.config/qBittorrent/qBittorrent.conf
+
+e.g. ~/.config/qBittorrent/qBittorrent.conf:
+[Preferences]
+Connection\Interface=if0
+WebUI\Address=127.0.0.1
+
+Change values to the respective interface and IP address.

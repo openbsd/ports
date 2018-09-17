@@ -1,0 +1,4 @@
+qBittorrent is a bittorrent client programmed in C++ and Qt that
+uses libtorrent-rasterbar. It is fast, stable and provides unicode
+support as well as many features like remote control through a web
+user interface.

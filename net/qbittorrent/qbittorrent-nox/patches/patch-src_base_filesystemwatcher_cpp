@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_base_filesystemwatcher_cpp,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+
+Index: src/base/filesystemwatcher.cpp
+--- src/base/filesystemwatcher.cpp.orig
++++ src/base/filesystemwatcher.cpp
+@@ -30,7 +30,7 @@
+ 
+ #include <QtGlobal>
+ 
+-#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD)
++#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+ #include <cstring>
+ #include <sys/mount.h>
+ #include <sys/param.h>

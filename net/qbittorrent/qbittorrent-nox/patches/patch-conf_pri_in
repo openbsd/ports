@@ -1,0 +1,19 @@
+$OpenBSD: patch-conf_pri_in,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+
+Index: conf.pri.in
+--- conf.pri.in.orig
++++ conf.pri.in
+@@ -1,9 +1,9 @@
+ # @configure_input@
+ 
+-PREFIX = @EXPAND_PREFIX@
+-BINDIR = @EXPAND_BINDIR@
+-DATADIR = @EXPAND_DATADIR@
+-MANPREFIX = @EXPAND_MANDIR@
++PREFIX = ${PREFIX}
++BINDIR = ${PREFIX}/bin
++DATADIR = ${PREFIX}/share
++MANPREFIX = ${PREFIX}/man
+ 
+ QMAKE_CXXFLAGS += @QBT_CONF_EXTRA_CFLAGS@
+ 

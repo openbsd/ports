@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_base_utils_gzip_cpp,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+
+Index: src/base/utils/gzip.cpp
+--- src/base/utils/gzip.cpp.orig
++++ src/base/utils/gzip.cpp
+@@ -52,7 +52,7 @@ QByteArray Utils::Gzip::compress(const QByteArray &dat
+     strm.zalloc = Z_NULL;
+     strm.zfree = Z_NULL;
+     strm.opaque = Z_NULL;
+-    strm.next_in = reinterpret_cast<const Bytef *>(data.constData());
++    strm.next_in = const_cast<Bytef *>(reinterpret_cast<const Bytef *>(data.constData()));
+     strm.avail_in = uInt(data.size());
+     strm.next_out = reinterpret_cast<Bytef *>(tmpBuf.data());
+     strm.avail_out = BUFSIZE;
+@@ -110,7 +110,7 @@ QByteArray Utils::Gzip::decompress(const QByteArray &d
+     strm.zalloc = Z_NULL;
+     strm.zfree = Z_NULL;
+     strm.opaque = Z_NULL;
+-    strm.next_in = reinterpret_cast<const Bytef *>(data.constData());
++    strm.next_in = const_cast<Bytef *>(reinterpret_cast<const Bytef *>(data.constData()));
+     strm.avail_in = uInt(data.size());
+     strm.next_out = reinterpret_cast<Bytef *>(tmpBuf.data());
+     strm.avail_out = BUFSIZE;
