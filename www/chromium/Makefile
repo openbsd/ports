@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.388 2018/09/16 11:08:34 robert Exp $
+# $OpenBSD: Makefile,v 1.389 2018/09/18 12:51:44 espie Exp $
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
-DPB_PROPERTIES=		parallel
+DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
