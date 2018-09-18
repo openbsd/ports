@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/10 01:15:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2018/09/18 02:31:02 bentley Exp $
 
 COMMENT=		script generating a self-extractible .tgz from a directory
 
 V=			2.4.0
 DISTNAME=		makeself-${V}
+REVISION=		0
 
 GH_PROJECT=		makeself
 GH_ACCOUNT=		megastep
@@ -11,7 +12,7 @@ GH_TAGNAME=		release-${V}
 
 CATEGORIES=		archivers misc
 
-HOMEPAGE=		http://makeself.io/
+HOMEPAGE=		https://makeself.io/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
