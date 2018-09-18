@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.50 2018/09/18 18:40:22 sthen Exp $
 
 COMMENT-main=	BIRD internet routing daemon
 COMMENT-doc=	BIRD internet routing daemon (documentation)
 
-V=		1.6.3
-REVISION-main=	1
+V=		1.6.4
 DISTNAME=	bird-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/-/-doc-/}${EXTRACT_SUFX}
@@ -18,7 +17,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=	c ncurses pthread readline
+WANTLIB-main=	c curses pthread readline
 
 MULTI_PACKAGES=	-main -doc
 FULLPKGNAME-doc= bird-doc-$V
