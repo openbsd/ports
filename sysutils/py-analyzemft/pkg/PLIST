@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/18 16:53:03 rpointel Exp $
+bin/analyzeMFT.py
+lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/analyzemft/
+lib/python${MODPY_VERSION}/site-packages/analyzemft/__init__.py
+lib/python${MODPY_VERSION}/site-packages/analyzemft/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/analyzemft/bitparse.py
+lib/python${MODPY_VERSION}/site-packages/analyzemft/bitparse.pyc
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mft.py
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mft.pyc
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mftsession.py
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mftsession.pyc
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mftutils.py
+lib/python${MODPY_VERSION}/site-packages/analyzemft/mftutils.pyc
