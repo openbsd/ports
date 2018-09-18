@@ -1,0 +1,13 @@
+$OpenBSD: patch-sysdep_bsd_sysio_h,v 1.1 2018/09/18 19:21:05 sthen Exp $
+Index: sysdep/bsd/sysio.h
+--- sysdep/bsd/sysio.h.orig
++++ sysdep/bsd/sysio.h
+@@ -199,7 +199,7 @@ sk_prepare_ip_header(sock *s, void *hdr, int dlen)
+ #define TCP_SIG_SPI 0x1000
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define USE_MD5SIG_SETKEY
+ #include "lib/setkey.h"
+ #endif

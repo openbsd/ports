@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1 2018/09/18 19:21:05 sthen Exp $
+@option is-branch
+@conflict bird-v6-*
+@conflict bird-doc-*
+@rcscript ${RCDIR}/bird
+@bin sbin/bird
+@bin sbin/birdc
+@bin sbin/birdcl
+share/doc/bird/
+share/doc/bird/bird.pdf
+share/doc/bird/prog.pdf
+share/examples/bird/
+share/examples/bird/bird.conf
+@sample ${SYSCONFDIR}/bird.conf
+share/examples/bird/bird.conf.example2

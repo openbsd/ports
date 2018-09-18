@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdep_unix_io_c,v 1.7 2018/09/18 18:40:22 sthen Exp $
+$OpenBSD: patch-sysdep_unix_io_c,v 1.1 2018/09/18 19:21:05 sthen Exp $
 Index: sysdep/unix/io.c
 --- sysdep/unix/io.c.orig
 +++ sysdep/unix/io.c

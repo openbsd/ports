@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: bird.rc,v 1.1 2018/09/18 19:21:05 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/bird"
+
+. /etc/rc.d/rc.subr
+
+rc_stop() {
+	${TRUEPREFIX}/sbin/birdc down
+}
+
+rc_cmd $1
