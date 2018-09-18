@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.74 2018/09/04 12:46:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.75 2018/09/18 11:37:08 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/apache-httpd-owncloud.conf
 @sample conf/modules.sample/
 conf/modules.sample/apache-httpd-owncloud.conf.dist
@@ -204,11 +204,16 @@ owncloud/apps/comments/lib/Dav/EntityCollection.php
 owncloud/apps/comments/lib/Dav/EntityTypeCollection.php
 owncloud/apps/comments/lib/Dav/RootCollection.php
 owncloud/apps/configreport/
+owncloud/apps/configreport/.drone.yml
+owncloud/apps/configreport/.php_cs.dist
 owncloud/apps/configreport/LICENSE
+owncloud/apps/configreport/Makefile
 owncloud/apps/configreport/appinfo/
 owncloud/apps/configreport/appinfo/info.xml
 owncloud/apps/configreport/appinfo/routes.php
 owncloud/apps/configreport/appinfo/signature.json
+owncloud/apps/configreport/composer.json
+owncloud/apps/configreport/composer.lock
 owncloud/apps/configreport/js/
 owncloud/apps/configreport/js/admin.js
 owncloud/apps/configreport/lib/
@@ -225,6 +230,9 @@ owncloud/apps/configreport/lib/ReportDataCollector.php
 owncloud/apps/configreport/templates/
 owncloud/apps/configreport/templates/settings/
 owncloud/apps/configreport/templates/settings/admin.php
+owncloud/apps/configreport/vendor-bin/
+owncloud/apps/configreport/vendor-bin/owncloud-codestyle/
+owncloud/apps/configreport/vendor-bin/owncloud-codestyle/composer.json
 owncloud/apps/dav/
 owncloud/apps/dav/appinfo/
 owncloud/apps/dav/appinfo/Migrations/
@@ -237,6 +245,7 @@ owncloud/apps/dav/appinfo/Migrations/Version20170519091921.php
 owncloud/apps/dav/appinfo/Migrations/Version20170526100342.php
 owncloud/apps/dav/appinfo/Migrations/Version20170711193427.php
 owncloud/apps/dav/appinfo/Migrations/Version20170927201245.php
+owncloud/apps/dav/appinfo/Migrations/Version20180622095921.php
 owncloud/apps/dav/appinfo/app.php
 owncloud/apps/dav/appinfo/info.xml
 owncloud/apps/dav/appinfo/signature.json
@@ -474,6 +483,7 @@ owncloud/apps/dav/lib/Connector/Sabre/FakeLockerPlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/File.php
 owncloud/apps/dav/lib/Connector/Sabre/FilesPlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/FilesReportPlugin.php
+owncloud/apps/dav/lib/Connector/Sabre/FilesSearchReportPlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/LockPlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/MaintenancePlugin.php
 owncloud/apps/dav/lib/Connector/Sabre/Node.php
@@ -493,6 +503,7 @@ owncloud/apps/dav/lib/DAV/CopyPlugin.php
 owncloud/apps/dav/lib/DAV/FileCustomPropertiesBackend.php
 owncloud/apps/dav/lib/DAV/FileCustomPropertiesPlugin.php
 owncloud/apps/dav/lib/DAV/GroupPrincipalBackend.php
+owncloud/apps/dav/lib/DAV/LazyOpsPlugin.php
 owncloud/apps/dav/lib/DAV/MiscCustomPropertiesBackend.php
 owncloud/apps/dav/lib/DAV/PublicAuth.php
 owncloud/apps/dav/lib/DAV/Sharing/
@@ -515,7 +526,15 @@ owncloud/apps/dav/lib/Files/Sharing/
 owncloud/apps/dav/lib/Files/Sharing/PublicLinkCheckPlugin.php
 owncloud/apps/dav/lib/Files/Xml/
 owncloud/apps/dav/lib/Files/Xml/FilterRequest.php
+owncloud/apps/dav/lib/Files/Xml/SearchRequest.php
 owncloud/apps/dav/lib/HookManager.php
+owncloud/apps/dav/lib/JobStatus/
+owncloud/apps/dav/lib/JobStatus/Entity/
+owncloud/apps/dav/lib/JobStatus/Entity/JobStatus.php
+owncloud/apps/dav/lib/JobStatus/Entity/JobStatusMapper.php
+owncloud/apps/dav/lib/JobStatus/Home.php
+owncloud/apps/dav/lib/JobStatus/JobStatus.php
+owncloud/apps/dav/lib/JobStatus/RootCollection.php
 owncloud/apps/dav/lib/Meta/
 owncloud/apps/dav/lib/Meta/MetaFile.php
 owncloud/apps/dav/lib/Meta/MetaFolder.php
@@ -2838,6 +2857,7 @@ owncloud/apps/files_sharing/js/app.js
 owncloud/apps/files_sharing/js/authenticate.js
 owncloud/apps/files_sharing/js/external.js
 owncloud/apps/files_sharing/js/public.js
+owncloud/apps/files_sharing/js/settings.js
 owncloud/apps/files_sharing/js/share.js
 owncloud/apps/files_sharing/js/sharedfilelist.js
 owncloud/apps/files_sharing/js/sharetabview.js
@@ -3047,6 +3067,9 @@ owncloud/apps/files_sharing/lib/Middleware/SharingCheckMiddleware.php
 owncloud/apps/files_sharing/lib/Migration.php
 owncloud/apps/files_sharing/lib/MountProvider.php
 owncloud/apps/files_sharing/lib/Notifier.php
+owncloud/apps/files_sharing/lib/Panels/
+owncloud/apps/files_sharing/lib/Panels/Admin/
+owncloud/apps/files_sharing/lib/Panels/Admin/SettingsPanel.php
 owncloud/apps/files_sharing/lib/Scanner.php
 owncloud/apps/files_sharing/lib/Service/
 owncloud/apps/files_sharing/lib/Service/NotificationPublisher.php
@@ -3056,6 +3079,7 @@ owncloud/apps/files_sharing/lib/ShareBackend/Folder.php
 owncloud/apps/files_sharing/lib/SharedMount.php
 owncloud/apps/files_sharing/lib/SharedPropagator.php
 owncloud/apps/files_sharing/lib/SharedStorage.php
+owncloud/apps/files_sharing/lib/SharingBlacklist.php
 owncloud/apps/files_sharing/lib/Updater.php
 owncloud/apps/files_sharing/list.php
 owncloud/apps/files_sharing/public.php
@@ -3064,6 +3088,7 @@ owncloud/apps/files_sharing/templates/authenticate.php
 owncloud/apps/files_sharing/templates/list.php
 owncloud/apps/files_sharing/templates/part.404.php
 owncloud/apps/files_sharing/templates/public.php
+owncloud/apps/files_sharing/templates/settings.php
 owncloud/apps/files_sharing/templates/upload.php
 owncloud/apps/files_trashbin/
 owncloud/apps/files_trashbin/ajax/
@@ -3704,6 +3729,31 @@ owncloud/apps/notifications/js/
 owncloud/apps/notifications/js/app.js
 owncloud/apps/notifications/js/notification.js
 owncloud/apps/notifications/js/personal_settings.js
+owncloud/apps/notifications/l10n/
+owncloud/apps/notifications/l10n/.tx/
+owncloud/apps/notifications/l10n/.tx/config
+owncloud/apps/notifications/l10n/cs_CZ.js
+owncloud/apps/notifications/l10n/cs_CZ.json
+owncloud/apps/notifications/l10n/de.js
+owncloud/apps/notifications/l10n/de.json
+owncloud/apps/notifications/l10n/de_DE.js
+owncloud/apps/notifications/l10n/de_DE.json
+owncloud/apps/notifications/l10n/es.js
+owncloud/apps/notifications/l10n/es.json
+owncloud/apps/notifications/l10n/eu.js
+owncloud/apps/notifications/l10n/eu.json
+owncloud/apps/notifications/l10n/fr.js
+owncloud/apps/notifications/l10n/fr.json
+owncloud/apps/notifications/l10n/id.js
+owncloud/apps/notifications/l10n/id.json
+owncloud/apps/notifications/l10n/pt_BR.js
+owncloud/apps/notifications/l10n/pt_BR.json
+owncloud/apps/notifications/l10n/ru.js
+owncloud/apps/notifications/l10n/ru.json
+owncloud/apps/notifications/l10n/sq.js
+owncloud/apps/notifications/l10n/sq.json
+owncloud/apps/notifications/l10n/th_TH.js
+owncloud/apps/notifications/l10n/th_TH.json
 owncloud/apps/notifications/lib/
 owncloud/apps/notifications/lib/App.php
 owncloud/apps/notifications/lib/AppInfo/
@@ -4059,6 +4109,7 @@ owncloud/apps/user_external/lib/webdavauth.php
 @group www
 owncloud/config/
 @mode 0640
+owncloud/config/config.apps.sample.php
 owncloud/config/config.php.dist
 @sample owncloud/config/config.php
 owncloud/config/config.sample.php
@@ -4236,8 +4287,42 @@ owncloud/core/css/update.css
 owncloud/core/doc/
 owncloud/core/doc/admin/
 owncloud/core/doc/admin/_images/
+owncloud/core/doc/admin/_images/001-ucs-app-collabora-search.png
+owncloud/core/doc/admin/_images/001-ucs-portal.png
+owncloud/core/doc/admin/_images/002-ucs-app-collabora-install.png
+owncloud/core/doc/admin/_images/002-ucs-login.png
+owncloud/core/doc/admin/_images/003-ucs-favorites.png
+owncloud/core/doc/admin/_images/004-ucs-app-collabora-install-admin.png
+owncloud/core/doc/admin/_images/004-ucs-onlyoffice.png
+owncloud/core/doc/admin/_images/005-ucs-app-collabora-install-back.png
+owncloud/core/doc/admin/_images/006-oc-settings.png
+owncloud/core/doc/admin/_images/006-ucs-onlyoffice-install.png
+owncloud/core/doc/admin/_images/007-oc-settings-apps.png
+owncloud/core/doc/admin/_images/007-ucs-onlyoffice-license.png
+owncloud/core/doc/admin/_images/008-oc-settings-show-dis-apps.png
+owncloud/core/doc/admin/_images/008-ucs-install-docker.png
+owncloud/core/doc/admin/_images/009-oc-enable-collabora.png
+owncloud/core/doc/admin/_images/009-ucs-onlyoffice-install-confirm.png
+owncloud/core/doc/admin/_images/010-oc-goto-collabora.png
+owncloud/core/doc/admin/_images/010-ucs-onlyoffice-install-2oc.png
+owncloud/core/doc/admin/_images/011-oc-collabora-open-example.png
+owncloud/core/doc/admin/_images/011-ucs-onlyoffice-install-owncloud.png
+owncloud/core/doc/admin/_images/012-oc-collabora-example.png
+owncloud/core/doc/admin/_images/012-ucs-owncloud-open.png
+owncloud/core/doc/admin/_images/013-ucs-owncloud-login.png
+owncloud/core/doc/admin/_images/014-ucs-owncloud-files.png
+owncloud/core/doc/admin/_images/015-ucs-owncloud-market.png
+owncloud/core/doc/admin/_images/016-ucs-onlyoffice-install-owncloud-market-tools.png
+owncloud/core/doc/admin/_images/017-ucs-onlyoffice-install-owncloud-market-tools-oo.png
+owncloud/core/doc/admin/_images/018-ucs-onlyoffice-install-owncloud-market-tools-oo-install.png
+owncloud/core/doc/admin/_images/019-ucs-owncloud-settings.png
+owncloud/core/doc/admin/_images/020-ucs-owncloud-settings-open.png
+owncloud/core/doc/admin/_images/021-ucs-owncloud-settings-general.png
+owncloud/core/doc/admin/_images/022-ucs-onlyoffice-configure.png
+owncloud/core/doc/admin/_images/025-ucs-owncloud-create-new-document-oo.png
+owncloud/core/doc/admin/_images/026-ucs-onlyoffice-finished.png
+owncloud/core/doc/admin/_images/027-ucs-onlyoffice-pdf.png
 owncloud/core/doc/admin/_images/activate-the-virtual-appliance.png
-owncloud/core/doc/admin/_images/add_storage.png
 owncloud/core/doc/admin/_images/admin_filehandling-1.png
 owncloud/core/doc/admin/_images/admin_filehandling-2.png
 owncloud/core/doc/admin/_images/amazons3.png
@@ -4258,6 +4343,7 @@ owncloud/core/doc/admin/_images/auth_backends.png
 owncloud/core/doc/admin/_images/auth_mechanism.png
 owncloud/core/doc/admin/_images/auth_rsa.png
 owncloud/core/doc/admin/_images/begin-owncloud-uninstall.png
+owncloud/core/doc/admin/_images/blacklisting-groups.png
 owncloud/core/doc/admin/_images/code-integrity-admin.png
 owncloud/core/doc/admin/_images/code-integrity-notification.png
 owncloud/core/doc/admin/_images/configure-mountpoints.png
@@ -4268,6 +4354,7 @@ owncloud/core/doc/admin/_images/create_public_share-10.png
 owncloud/core/doc/admin/_images/create_public_share-6.png
 owncloud/core/doc/admin/_images/create_public_share-8.png
 owncloud/core/doc/admin/_images/create_public_share-9.png
+owncloud/core/doc/admin/_images/customgroup.png
 owncloud/core/doc/admin/_images/deprecs-1.png
 owncloud/core/doc/admin/_images/deprecs-2.png
 owncloud/core/doc/admin/_images/deprecs-3.png
@@ -4275,7 +4362,6 @@ owncloud/core/doc/admin/_images/download-form.png
 owncloud/core/doc/admin/_images/dropbox-apps-folders.png
 owncloud/core/doc/admin/_images/dropbox-oc.png
 owncloud/core/doc/admin/_images/dropbox-share-available.png
-owncloud/core/doc/admin/_images/enable-app.png
 owncloud/core/doc/admin/_images/encryption10.png
 owncloud/core/doc/admin/_images/encryption12.png
 owncloud/core/doc/admin/_images/encryption7.png
@@ -4288,6 +4374,8 @@ owncloud/core/doc/admin/_images/external-sites-4.png
 owncloud/core/doc/admin/_images/external-sites-5.png
 owncloud/core/doc/admin/_images/external-storage-dropbox-highlighted.png
 owncloud/core/doc/admin/_images/external-storage-google-drive-and-dropbox-configuration.png
+owncloud/core/doc/admin/_images/external_storage.png
+owncloud/core/doc/admin/_images/external_storage_types.png
 owncloud/core/doc/admin/_images/federation-0.png
 owncloud/core/doc/admin/_images/federation-1.png
 owncloud/core/doc/admin/_images/federation-2.png
@@ -4296,6 +4384,8 @@ owncloud/core/doc/admin/_images/firewall-1.png
 owncloud/core/doc/admin/_images/firewall-2.png
 owncloud/core/doc/admin/_images/firewall-3.png
 owncloud/core/doc/admin/_images/ftp.png
+owncloud/core/doc/admin/_images/ftp_storage_support.png
+owncloud/core/doc/admin/_images/ftp_storage_support1.png
 owncloud/core/doc/admin/_images/google-drive.png
 owncloud/core/doc/admin/_images/google-drive1.png
 owncloud/core/doc/admin/_images/google-drive10.png
@@ -4334,6 +4424,8 @@ owncloud/core/doc/admin/_images/ldap-wizard-1-server.png
 owncloud/core/doc/admin/_images/ldap-wizard-2-user.png
 owncloud/core/doc/admin/_images/ldap-wizard-3-login.png
 owncloud/core/doc/admin/_images/ldap-wizard-4-group.png
+owncloud/core/doc/admin/_images/letsencrypt-settings.png
+owncloud/core/doc/admin/_images/letsencrypt.png
 owncloud/core/doc/admin/_images/local.png
 owncloud/core/doc/admin/_images/logging-1.png
 owncloud/core/doc/admin/_images/login-to-the-virtual-appliance.png
@@ -4367,7 +4459,6 @@ owncloud/core/doc/admin/_images/sharepoint-1.png
 owncloud/core/doc/admin/_images/sharepoint-2.png
 owncloud/core/doc/admin/_images/sharepoint-3.png
 owncloud/core/doc/admin/_images/sharepoint-4.png
-owncloud/core/doc/admin/_images/sharing-files-2.png
 owncloud/core/doc/admin/_images/sharing-files-settings.png
 owncloud/core/doc/admin/_images/sharing-files-via-social-media.png
 owncloud/core/doc/admin/_images/shib-gui5.png
@@ -4420,6 +4511,7 @@ owncloud/core/doc/admin/_sources/appliance/Active_Directory.rst.txt
 owncloud/core/doc/admin/_sources/appliance/Backup.rst.txt
 owncloud/core/doc/admin/_sources/appliance/Clamav.rst.txt
 owncloud/core/doc/admin/_sources/appliance/Collabora.rst.txt
+owncloud/core/doc/admin/_sources/appliance/Office.rst.txt
 owncloud/core/doc/admin/_sources/appliance/certificates.rst.txt
 owncloud/core/doc/admin/_sources/appliance/enterprise-trial.rst.txt
 owncloud/core/doc/admin/_sources/appliance/firewall.rst.txt
@@ -4487,11 +4579,12 @@ owncloud/core/doc/admin/_sources/configuration/server/language_configuration.rst
 owncloud/core/doc/admin/_sources/configuration/server/legal_settings_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/logging_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/oc_server_tuning.rst.txt
+owncloud/core/doc/admin/_sources/configuration/server/occ_apps_command.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/occ_command.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/reverse_proxy_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/security/
 owncloud/core/doc/admin/_sources/configuration/server/security/oauth2.rst.txt
-owncloud/core/doc/admin/_sources/configuration/server/security/password-policy.rst.txt
+owncloud/core/doc/admin/_sources/configuration/server/security/password_policy.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/security_setup_warnings.rst.txt
 owncloud/core/doc/admin/_sources/configuration/server/thirdparty_php_configuration.rst.txt
 owncloud/core/doc/admin/_sources/configuration/user/
@@ -4538,6 +4631,7 @@ owncloud/core/doc/admin/_sources/enterprise/server_branding/enterprise_server_br
 owncloud/core/doc/admin/_sources/enterprise/server_branding/index.rst.txt
 owncloud/core/doc/admin/_sources/enterprise/user_management/
 owncloud/core/doc/admin/_sources/enterprise/user_management/index.rst.txt
+owncloud/core/doc/admin/_sources/enterprise/user_management/saml_2.0_sso.rst.txt
 owncloud/core/doc/admin/_sources/enterprise/user_management/user_auth_shibboleth.rst.txt
 owncloud/core/doc/admin/_sources/faq/
 owncloud/core/doc/admin/_sources/faq/index.rst.txt
@@ -4682,6 +4776,7 @@ owncloud/core/doc/admin/appliance/Active_Directory.html
 owncloud/core/doc/admin/appliance/Backup.html
 owncloud/core/doc/admin/appliance/Clamav.html
 owncloud/core/doc/admin/appliance/Collabora.html
+owncloud/core/doc/admin/appliance/Office.html
 owncloud/core/doc/admin/appliance/certificates.html
 owncloud/core/doc/admin/appliance/enterprise-trial.html
 owncloud/core/doc/admin/appliance/firewall.html
@@ -4749,11 +4844,12 @@ owncloud/core/doc/admin/configuration/server/language_configuration.html
 owncloud/core/doc/admin/configuration/server/legal_settings_configuration.html
 owncloud/core/doc/admin/configuration/server/logging_configuration.html
 owncloud/core/doc/admin/configuration/server/oc_server_tuning.html
+owncloud/core/doc/admin/configuration/server/occ_apps_command.html
 owncloud/core/doc/admin/configuration/server/occ_command.html
 owncloud/core/doc/admin/configuration/server/reverse_proxy_configuration.html
 owncloud/core/doc/admin/configuration/server/security/
 owncloud/core/doc/admin/configuration/server/security/oauth2.html
-owncloud/core/doc/admin/configuration/server/security/password-policy.html
+owncloud/core/doc/admin/configuration/server/security/password_policy.html
 owncloud/core/doc/admin/configuration/server/security_setup_warnings.html
 owncloud/core/doc/admin/configuration/server/thirdparty_php_configuration.html
 owncloud/core/doc/admin/configuration/user/
@@ -4800,6 +4896,7 @@ owncloud/core/doc/admin/enterprise/server_branding/enterprise_server_branding.ht
 owncloud/core/doc/admin/enterprise/server_branding/index.html
 owncloud/core/doc/admin/enterprise/user_management/
 owncloud/core/doc/admin/enterprise/user_management/index.html
+owncloud/core/doc/admin/enterprise/user_management/saml_2.0_sso.html
 owncloud/core/doc/admin/enterprise/user_management/user_auth_shibboleth.html
 owncloud/core/doc/admin/faq/
 owncloud/core/doc/admin/faq/index.html
@@ -7906,6 +8003,7 @@ owncloud/lib/composer/guzzlehttp/guzzle/src/UriTemplate.php
 owncloud/lib/composer/guzzlehttp/guzzle/src/Url.php
 owncloud/lib/composer/guzzlehttp/guzzle/src/Utils.php
 owncloud/lib/composer/guzzlehttp/ringphp/
+owncloud/lib/composer/guzzlehttp/ringphp/.editorconfig
 owncloud/lib/composer/guzzlehttp/ringphp/.travis.yml
 owncloud/lib/composer/guzzlehttp/ringphp/CHANGELOG.md
 owncloud/lib/composer/guzzlehttp/ringphp/LICENSE
@@ -8037,6 +8135,7 @@ owncloud/lib/composer/league/
 owncloud/lib/composer/league/flysystem/
 owncloud/lib/composer/league/flysystem/LICENSE
 owncloud/lib/composer/league/flysystem/composer.json
+owncloud/lib/composer/league/flysystem/deprecations.md
 owncloud/lib/composer/league/flysystem/src/
 owncloud/lib/composer/league/flysystem/src/Adapter/
 owncloud/lib/composer/league/flysystem/src/Adapter/AbstractAdapter.php
@@ -10732,6 +10831,7 @@ owncloud/lib/composer/symfony/polyfill-mbstring/README.md
 owncloud/lib/composer/symfony/polyfill-mbstring/Resources/
 owncloud/lib/composer/symfony/polyfill-mbstring/Resources/unidata/
 owncloud/lib/composer/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+owncloud/lib/composer/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 owncloud/lib/composer/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 owncloud/lib/composer/symfony/polyfill-mbstring/bootstrap.php
 owncloud/lib/composer/symfony/polyfill-mbstring/composer.json
@@ -12068,6 +12168,7 @@ owncloud/lib/private/Group/MetaData.php
 owncloud/lib/private/HTTPHelper.php
 owncloud/lib/private/Helper/
 owncloud/lib/private/Helper/EnvironmentHelper.php
+owncloud/lib/private/Helper/LocaleHelper.php
 owncloud/lib/private/HintException.php
 owncloud/lib/private/Hooks/
 owncloud/lib/private/Hooks/BasicEmitter.php
@@ -12276,6 +12377,8 @@ owncloud/lib/private/Share20/Hooks.php
 owncloud/lib/private/Share20/Manager.php
 owncloud/lib/private/Share20/ProviderFactory.php
 owncloud/lib/private/Share20/Share.php
+owncloud/lib/private/Shutdown/
+owncloud/lib/private/Shutdown/ShutDownManager.php
 owncloud/lib/private/Streamer.php
 owncloud/lib/private/SubAdmin.php
 owncloud/lib/private/SystemConfig.php
@@ -12601,6 +12704,7 @@ owncloud/lib/public/IUserBackend.php
 owncloud/lib/public/IUserManager.php
 owncloud/lib/public/IUserSession.php
 owncloud/lib/public/Image.php
+owncloud/lib/public/InvalidUserTokenException.php
 owncloud/lib/public/JSON.php
 owncloud/lib/public/L10N/
 owncloud/lib/public/L10N/IFactory.php
@@ -12672,6 +12776,8 @@ owncloud/lib/public/Share/IShareProvider.php
 owncloud/lib/public/Share_Backend.php
 owncloud/lib/public/Share_Backend_Collection.php
 owncloud/lib/public/Share_Backend_File_Dependent.php
+owncloud/lib/public/Shutdown/
+owncloud/lib/public/Shutdown/IShutdownManager.php
 owncloud/lib/public/SystemTag/
 owncloud/lib/public/SystemTag/ISystemTag.php
 owncloud/lib/public/SystemTag/ISystemTagManager.php
@@ -12693,7 +12799,11 @@ owncloud/lib/public/User/IProvidesEMailBackend.php
 owncloud/lib/public/User/IProvidesExtendedSearchBackend.php
 owncloud/lib/public/User/IProvidesHomeBackend.php
 owncloud/lib/public/User/IProvidesQuotaBackend.php
+owncloud/lib/public/User/IProvidesUserNameBackend.php
 owncloud/lib/public/UserInterface.php
+owncloud/lib/public/UserTokenException.php
+owncloud/lib/public/UserTokenExpiredException.php
+owncloud/lib/public/UserTokenMismatchException.php
 owncloud/lib/public/Util/
 owncloud/lib/public/Util.php
 owncloud/lib/public/Util/UserSearch.php
@@ -12771,6 +12881,7 @@ owncloud/settings/ajax/togglegroups.php
 owncloud/settings/ajax/togglesubadmins.php
 owncloud/settings/ajax/uninstallapp.php
 owncloud/settings/css/
+owncloud/settings/css/setpassword.css
 owncloud/settings/css/settings.css
 owncloud/settings/help.php
 owncloud/settings/img/
@@ -12803,6 +12914,7 @@ owncloud/settings/js/panels/profile.js
 owncloud/settings/js/panels/setupchecks.js
 owncloud/settings/js/panels/tokens.js
 owncloud/settings/js/personal.js
+owncloud/settings/js/setpassword.js
 owncloud/settings/js/settings.js
 owncloud/settings/js/users/
 owncloud/settings/js/users/deleteHandler.js
@@ -12988,6 +13100,7 @@ owncloud/settings/templates/changemail/notify.php
 owncloud/settings/templates/email.new_user.php
 owncloud/settings/templates/email.new_user_plain_text.php
 owncloud/settings/templates/help.php
+owncloud/settings/templates/language.php
 owncloud/settings/templates/panels/
 owncloud/settings/templates/panels/admin/
 owncloud/settings/templates/panels/admin/apps.php
@@ -13010,7 +13123,10 @@ owncloud/settings/templates/panels/personal/quota.php
 owncloud/settings/templates/panels/personal/settings.development.notice.php
 owncloud/settings/templates/panels/personal/tokens.php
 owncloud/settings/templates/panels/personal/version.php
+owncloud/settings/templates/resendtokenbymail.php
+owncloud/settings/templates/setpassword.php
 owncloud/settings/templates/settingsPage.php
+owncloud/settings/templates/tokensendnotify.php
 owncloud/settings/templates/users/
 owncloud/settings/templates/users/main.php
 owncloud/settings/templates/users/part.createuser.php
