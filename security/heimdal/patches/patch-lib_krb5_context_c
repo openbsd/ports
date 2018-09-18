@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_krb5_context_c,v 1.1 2018/09/18 11:39:08 ajacoutot Exp $
+
+Fix memory leak with the Squid Kerberos authentication helper.
+
+Index: lib/krb5/context.c
+--- lib/krb5/context.c.orig
++++ lib/krb5/context.c
+@@ -622,6 +622,9 @@ krb5_free_context(krb5_context context)
+     free(context->etypes);
+     free(context->cfg_etypes);
+     free(context->etypes_des);
++    free(context->permitted_enctypes);
++    free(context->tgs_etypes);
++    free(context->as_etypes);
+     krb5_free_host_realm (context, context->default_realms);
+     krb5_config_file_free (context, context->cf);
+     free_error_table (context->et_list);
