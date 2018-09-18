@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/25 21:03:45 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/09/18 21:23:50 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -82,8 +82,8 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1204.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/setup_r10k_env_ubuntu1404.sh
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/
-${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_effects_forge_source.rb
-${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_effects_git_source.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_affects_forge_source.rb
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_affects_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/install_pe_only_module_with_puppetfile.rb
