@@ -1,12 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: spamassassin.rc,v 1.6 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: spamassassin.rc,v 1.7 2018/09/18 06:42:57 giovanni Exp $
 
 daemon="${TRUEPREFIX}/bin/spamd -d"
 daemon_flags="-u _spamdaemon -P"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="/usr/bin/perl -T -w ${daemon}${daemon_flags:+ ${daemon_flags}}"
 
 rc_cmd $1

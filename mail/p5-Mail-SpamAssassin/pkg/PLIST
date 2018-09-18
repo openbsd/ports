@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.37 2018/09/18 06:42:57 giovanni Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
 @extraunexec rm -rf ${CONFDIR}/sa-update-keys
+@rcscript ${RCDIR}/spamassassin
+@owner _spamdaemon
+@group _spamdaemon
+@sample ${LOCALSTATEDIR}/
+@owner
+@group
 bin/sa-awl
 bin/sa-check_spamd
 bin/sa-compile
@@ -79,8 +85,10 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/DCC.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DKIM.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DNSEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/FreeMail.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/FromNameSpoof.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/HTMLEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/HTTPSMismatch.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/HashBL.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Hashcash.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/HeaderEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ImageInfo.pm
@@ -89,11 +97,13 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/PDFInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/PhishTag.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Phishing.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Pyzor.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Razor2.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayCountry.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ReplaceTags.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/ResourceLimits.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Reuse.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Rule2XSBody.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/SPF.pm
@@ -118,9 +128,9 @@ ${P5SITE}/Mail/SpamAssassin/SubProcBackChannel.pm
 ${P5SITE}/Mail/SpamAssassin/Timeout.pm
 ${P5SITE}/Mail/SpamAssassin/Util/
 ${P5SITE}/Mail/SpamAssassin/Util.pm
+@comment ${P5SITE}/Mail/SpamAssassin/Util.pm.beforesubst
 ${P5SITE}/Mail/SpamAssassin/Util/DependencyInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Util/Progress.pm
-${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
 ${P5SITE}/Mail/SpamAssassin/Util/ScopedTimer.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TinyRedis.pm
@@ -174,16 +184,20 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DNSEval.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::FromNameSpoof.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::HashBL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::PDFInfo.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::PhishTag.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Phishing.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Pyzor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Razor2.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::RelayCountry.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::ReplaceTags.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::ResourceLimits.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Reuse.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Rule2XSBody.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::SPF.3p
@@ -205,7 +219,6 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Util.3p
 @man man/man3p/Mail::SpamAssassin::Util::DependencyInfo.3p
 @man man/man3p/Mail::SpamAssassin::Util::Progress.3p
-@man man/man3p/Mail::SpamAssassin::Util::RegistrarBoundaries.3p
 @man man/man3p/spamassassin-run.3p
 share/doc/SpamAssassin/
 share/doc/SpamAssassin/CREDITS
@@ -242,6 +255,7 @@ share/examples/SpamAssassin/init.pre
 @sample ${CONFDIR}/init.pre
 share/examples/SpamAssassin/local.cf
 @sample ${CONFDIR}/local.cf
+@comment share/examples/SpamAssassin/svn_only.pre
 share/examples/SpamAssassin/v310.pre
 @sample ${CONFDIR}/v310.pre
 share/examples/SpamAssassin/v312.pre
@@ -254,6 +268,8 @@ share/examples/SpamAssassin/v340.pre
 @sample ${CONFDIR}/v340.pre
 share/examples/SpamAssassin/v341.pre
 @sample ${CONFDIR}/v341.pre
+share/examples/SpamAssassin/v342.pre
+@sample ${CONFDIR}/v342.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/10_hasbase.cf
@@ -303,7 +319,9 @@ share/spamassassin/50_scores.cf
 share/spamassassin/60_adsp_override_dkim.cf
 share/spamassassin/60_awl.cf
 share/spamassassin/60_shortcircuit.cf
+share/spamassassin/60_txrep.cf
 share/spamassassin/60_whitelist.cf
+share/spamassassin/60_whitelist_auth.cf
 share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
@@ -319,7 +337,3 @@ share/spamassassin/local.cf
 share/spamassassin/regression_tests.cf
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/user_prefs.template
-@rcscript ${RCDIR}/spamassassin
-@owner _spamdaemon
-@group _spamdaemon
-@sample ${LOCALSTATEDIR}/
