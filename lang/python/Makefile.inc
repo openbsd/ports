@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.124 2017/11/03 13:13:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.125 2018/09/18 16:43:12 danj Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -30,12 +30,11 @@ PKGNAME-tools =	python-tools-${VERSION}${PATCHLEVEL}
 PKGSPEC-tools =	python-tools-${VERSION_SPEC}
 
 CATEGORIES =	lang
-MASTER_SITES =	http://www.python.org/ftp/${PSUBDIR}/ \
-		http://sunsite.informatik.rwth-aachen.de/python/ftp/${PSUBDIR}/
+MASTER_SITES =	https://www.python.org/ftp/${PSUBDIR}/
 PSUBDIR ?=	python/${VERSION}${PATCHLEVEL}
 EXTRACT_SUFX =	.tgz
 
-HOMEPAGE =	http://www.python.org/
+HOMEPAGE =	https://www.python.org/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
