@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/22 22:02:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/18 17:07:16 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial/
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -14,6 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}_versi
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial/${MODPY_PYCACHE}setuptools_trial.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial/_version.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_trial/setuptools_trial.py
-share/doc/python-setuptools_trial/
-share/doc/python-setuptools_trial/COPYING.SPL.txt
-share/doc/python-setuptools_trial/README.rst
+@comment share/doc/python-setuptools_trial/
+@comment share/doc/python-setuptools_trial/COPYING.SPL.txt
+@comment share/doc/python-setuptools_trial/README.rst
