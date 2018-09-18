@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_KChart_CMakeLists_txt,v 1.1.1.1 2018/09/18 10:22:03 rsadowski Exp $
+
+Index: src/KChart/CMakeLists.txt
+--- src/KChart/CMakeLists.txt.orig
++++ src/KChart/CMakeLists.txt
+@@ -144,6 +144,7 @@ target_include_directories(KChart
+ target_link_libraries(KChart
+ PUBLIC
+     Qt5::Widgets
++    c
+ PRIVATE
+     Qt5::Svg
+ )

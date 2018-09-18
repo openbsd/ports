@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_tools_CMakeLists_txt,v 1.1.1.1 2018/09/18 10:22:03 rsadowski Exp $
+
+Index: examples/tools/CMakeLists.txt
+--- examples/tools/CMakeLists.txt.orig
++++ examples/tools/CMakeLists.txt
+@@ -7,5 +7,6 @@ add_library(testtools SHARED ${testtools_LIB_SRCS})
+ generate_export_header( testtools )
+ 
+ target_link_libraries(testtools LINK_PRIVATE
++    c
+     Qt5::Core
+ )
