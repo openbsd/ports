@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.5 2013/04/19 20:20:36 sthen Exp $
---- configure.orig	Fri Feb 14 00:42:38 2003
-+++ configure	Fri Apr 19 21:11:22 2013
-@@ -544,14 +544,11 @@ fi
+$OpenBSD: patch-configure,v 1.6 2018/09/18 08:18:01 solene Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -546,14 +546,11 @@ fi
  
  
  
@@ -16,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2013/04/19 20:20:36 sthen Exp $
  
  
  ac_aux_dir=
-@@ -2014,11 +2011,9 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
+@@ -2016,11 +2013,9 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
    GDBM_LIB="-lgdbm"
  else
    echo "$ac_t""no" 1>&6

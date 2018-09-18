@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_parse_c,v 1.4 2005/04/03 11:05:07 espie Exp $
---- src/parse.c.orig	Tue Jul  1 16:20:48 2003
-+++ src/parse.c	Sun Apr  3 12:58:45 2005
-@@ -57,7 +57,7 @@
+$OpenBSD: patch-src_parse_c,v 1.5 2018/09/18 08:18:01 solene Exp $
+
+Index: src/parse.c
+--- src/parse.c.orig
++++ src/parse.c
+@@ -61,7 +61,7 @@
  #include "../lcc/lcc_extras.h"
  #endif
  

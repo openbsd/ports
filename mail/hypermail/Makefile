@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2018/09/18 08:18:01 solene Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
-VERSION=		2.1.8
+VERSION=		2.3.0
 DISTNAME=		hypermail-${VERSION}
-REVISION =		1
 CATEGORIES=		mail www
 
 HOMEPAGE=		http://www.hypermail-project.org/
 
-MASTER_SITES=		http://www.linklevel.net/distfiles/
+MASTER_SITES=		${HOMEPAGE}
+WRKDIST=		${WRKDIR}/hypermail
 
 LIB_DEPENDS+=		devel/pcre
 
@@ -19,7 +19,8 @@ WANTLIB=		c m pcre
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/src/pcre
-CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail
+CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail \
+			--disable-i18n
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -DHAVE_VFSCANF" \
 			INCLUDES="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -40,7 +41,7 @@ CONFIGURE_ARGS +=--without-gdbm
 
 NO_TEST=		Yes
 
-DOCS=	*.html *.png attachments.txt 
+DOCS=	*.html *.png attachments.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin

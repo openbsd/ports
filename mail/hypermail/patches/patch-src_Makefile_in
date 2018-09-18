@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2003/11/02 19:37:57 margarida Exp $
---- src/Makefile.in.orig	2003-11-02 19:09:04.000000000 +0000
-+++ src/Makefile.in	2003-11-02 19:09:53.000000000 +0000
+$OpenBSD: patch-src_Makefile_in,v 1.6 2018/09/18 08:18:01 solene Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
 @@ -29,10 +29,10 @@ SPLINTFLAGS=-Ipcre 
  #WNOERROR=-Werror
  #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
@@ -22,4 +24,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2003/11/02 19:37:57 margarida Exp $
 +all:    @FNV_DEP@ hypermail$(SUFFIX) mail$(SUFFIX) lang$(SUFFIX)
  
  pcre/.libs/libpcre.a:
- 	@cd pcre; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)"
+ 	@cd pcre; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" ; rm -f .libs/lib*.so*

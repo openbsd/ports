@@ -1,17 +1,14 @@
-$OpenBSD: patch-docs_hypermail_1,v 1.4 2002/09/03 23:22:50 brad Exp $
---- docs/hypermail.1.orig	Sun Sep  1 22:53:56 2002
-+++ docs/hypermail.1	Sun Sep  1 22:55:12 2002
-@@ -163,7 +163,7 @@ sign, such as:
- Settings are read in this order: from the program's hard-wired internal defaults, from environment variables, from command-line options, from the configuration file.
+$OpenBSD: patch-docs_hypermail_1,v 1.5 2018/09/18 08:18:01 solene Exp $
+
+Index: docs/hypermail.1
+--- docs/hypermail.1.orig
++++ docs/hypermail.1
+@@ -235,7 +235,7 @@ sign, such as:
+ Settings are read in this order: from the program's hard-wired internal defaults, from environment variables, from the configuration file, from command-line options.
  .LP
  See 
 -.B hmrc.4
 +.B hmrc.5
  for more information on configuration file usage.
  .LP
- Below is a list of variables that Hypermail understands.  Boolean numbers can have the value of
-@@ -546,4 +546,3 @@ David Bau <davidbau@hotmail.com>
- Brian Kirkby <bkirkby@Concentrico.net>
- William King <William.King@dadaboom.com>
- .nr
--.TP
+ Below is a partial list of variables that Hypermail understands. A full list is available in the file hmrc.html, or you can also look in setup.c. Boolean numbers can have the value of

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:42 espie Exp $
-bin/hypermail
+@comment $OpenBSD: PLIST,v 1.6 2018/09/18 08:18:01 solene Exp $
+@bin bin/hypermail
 @man man/man1/hypermail.1
 @man man/man5/hmrc.5
 share/doc/hypermail/

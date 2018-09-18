@@ -1,5 +1,5 @@
 Hypermail is a program that takes a file of mail messages in UNIX mailbox
-format and generates a set of cross-referenced HTML documents. 
+format and generates a set of cross-referenced HTML documents.
 Each file that is created represents a separate message in the mail
 archive and contains links to other articles, so that the entire archive
 can be browsed in a number of ways by following links.
