@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2018/09/19 21:48:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2018/09/19 22:12:03 sthen Exp $
 
 SUBDIR =
 SUBDIR += 1
-#XXX Fatal: can't flavor a SUBDIR
-#  SUBDIR += 1,v6
+SUBDIR += 1,v6
 SUBDIR += 2
 
 .include <bsd.port.subdir.mk>
