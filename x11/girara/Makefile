@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2018/08/29 07:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/09/19 09:35:19 landry Exp $
 
 COMMENT =	user interface library from pwmt
-DISTNAME =	girara-0.2.9
+DISTNAME =	girara-0.3.0
 
 SHARED_LIBS +=	girara-gtk3 1.0 # 3.1
 EXTRACT_SUFX =	.tar.xz
