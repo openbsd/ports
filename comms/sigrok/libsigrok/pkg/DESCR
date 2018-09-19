@@ -1,0 +1,7 @@
+The sigrok project aims at creating a portable, cross-platform,
+Free/Libre/Open-Source logic analyzer software that supports various
+logic analyzer hardware products.
+
+libsigrok is a shared library written in C which provides the basic API
+for talking to logic analyzer hardware and reading/writing the acquired
+data into various input/output file formats.

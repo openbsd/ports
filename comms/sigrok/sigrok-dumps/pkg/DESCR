@@ -1,0 +1,3 @@
+sigrok-dumps is a collection of logic analyzer example data, covering various
+protocols (e.g. I2C, SPI, USART, etc). They can be useful for testing the
+sigrok command-line or graphical interfaces.

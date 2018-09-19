@@ -1,0 +1,3 @@
+PulseView is a cross-platform Qt-based GUI for the sigrok software suite for
+test and measurement equipment such as logic analyzers, oscilloscopes, MSOs,
+and more.

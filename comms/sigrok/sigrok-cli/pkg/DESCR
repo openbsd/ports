@@ -1,0 +1,11 @@
+sigrok-cli is a command-line tool written in C, which uses both libsigrok
+and libsigrokdecode to provide basic signal analysis functionality from the
+command-line.
+
+It cannot display graphical output, but is still sufficient to run through
+the whole process of hardware initialization, acquisition, protocol decoding
+and saving the session.
+
+It is useful for running on remote or embedded systems, netbooks, PDAs, and
+for various other use-cases. It can display samples on standard output or
+save them in various file formats.

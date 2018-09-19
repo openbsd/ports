@@ -1,0 +1,7 @@
+The sigrok project aims at creating a portable, cross-platform,
+Free/Libre/Open-Source logic analyzer software that supports various
+logic analyzer hardware products.
+
+libserialport is a minimal shared library written in C which is intended to
+take care of the OS-specific details when writing software that uses serial
+ports.

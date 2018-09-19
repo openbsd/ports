@@ -1,0 +1,17 @@
+$OpenBSD: patch-bindings_cxx_classes_cpp,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+
+Index: bindings/cxx/classes.cpp
+--- bindings/cxx/classes.cpp.orig
++++ bindings/cxx/classes.cpp
+@@ -17,11 +17,6 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-/* Needed for isascii(), as used in the GNU libstdc++ headers */
+-#ifndef _XOPEN_SOURCE
+-#define _XOPEN_SOURCE 600
+-#endif
+-
+ #include <config.h>
+ #include <libsigrokcxx/libsigrokcxx.hpp>
+ 

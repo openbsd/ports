@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@bin bin/pulseview
+@man man/man1/pulseview.1
+share/applications/org.sigrok.PulseView.desktop
+share/icons/hicolor/48x48/apps/pulseview.png
+share/icons/hicolor/scalable/apps/pulseview.svg
+share/metainfo/
+share/metainfo/org.sigrok.PulseView.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

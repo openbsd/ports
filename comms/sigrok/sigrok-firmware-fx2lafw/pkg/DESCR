@@ -1,0 +1,7 @@
+The sigrok project aims at creating a portable, cross-platform,
+Free/Libre/Open-Source signal analysis software suite that supports
+various device types (such as logic analyzers, oscilloscopes,
+multimeters, and more).
+
+fx2lafw is a Free/Libre/Open-source firmware for logic analyzers based
+on the Cypress EZ-USB FX2(LP) chip.
