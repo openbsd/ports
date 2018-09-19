@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1083 2018/09/17 09:56:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.1084 2018/09/19 08:39:03 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -24,7 +24,6 @@
      SUBDIR += bindgraph
      SUBDIR += bing
      SUBDIR += bird
-     SUBDIR += bird,v6
      SUBDIR += bitcoin
      SUBDIR += bitcoin,no_x11
      SUBDIR += bitlbee
