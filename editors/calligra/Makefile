@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/09/19 05:16:04 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	3
+REVISION =	4
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -73,6 +73,7 @@ BUILD_DEPENDS +=devel/boost \
 		devel/gettext-tools \
 		devel/kf5/kdoctools \
 		devel/kf5/threadweaver \
+		graphics/kdiagram \
 		devel/kf5/kross
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
@@ -80,6 +81,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
 		productivity/librcps \
+		graphics/kdiagram \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS +=	x11/qt5/qtwebkit \

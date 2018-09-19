@@ -1,63 +1,63 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/09/19 05:16:04 rsadowski Exp $
 @conflict koffice-*
-@pkgpath editors/calligra-l10n/bs
 @conflict calligra-l10n-bs-*
-@pkgpath editors/calligra-l10n/ca
 @conflict calligra-l10n-ca-*
-@pkgpath editors/calligra-l10n/ca@valencia
 @conflict calligra-l10n-ca@valencia-*
-@pkgpath editors/calligra-l10n/cs
 @conflict calligra-l10n-cs-*
-@pkgpath editors/calligra-l10n/da
 @conflict calligra-l10n-da-*
-@pkgpath editors/calligra-l10n/de
 @conflict calligra-l10n-de-*
-@pkgpath editors/calligra-l10n/el
 @conflict calligra-l10n-el-*
-@pkgpath editors/calligra-l10n/en_GB
 @conflict calligra-l10n-en_GB-*
-@pkgpath editors/calligra-l10n/es
 @conflict calligra-l10n-es-*
-@pkgpath editors/calligra-l10n/et
 @conflict calligra-l10n-et-*
-@pkgpath editors/calligra-l10n/fi
 @conflict calligra-l10n-fi-*
-@pkgpath editors/calligra-l10n/fr
 @conflict calligra-l10n-fr-*
-@pkgpath editors/calligra-l10n/gl
 @conflict calligra-l10n-gl-*
-@pkgpath editors/calligra-l10n/hu
 @conflict calligra-l10n-hu-*
-@pkgpath editors/calligra-l10n/it
 @conflict calligra-l10n-it-*
-@pkgpath editors/calligra-l10n/ja
 @conflict calligra-l10n-ja-*
-@pkgpath editors/calligra-l10n/kk
 @conflict calligra-l10n-kk-*
-@pkgpath editors/calligra-l10n/nb
 @conflict calligra-l10n-nb-*
-@pkgpath editors/calligra-l10n/nl
 @conflict calligra-l10n-nl-*
-@pkgpath editors/calligra-l10n/pl
 @conflict calligra-l10n-pl-*
-@pkgpath editors/calligra-l10n/pt
 @conflict calligra-l10n-pt-*
-@pkgpath editors/calligra-l10n/pt_BR
 @conflict calligra-l10n-pt_BR-*
-@pkgpath editors/calligra-l10n/ru
 @conflict calligra-l10n-ru-*
-@pkgpath editors/calligra-l10n/sk
 @conflict calligra-l10n-sk-*
-@pkgpath editors/calligra-l10n/sv
 @conflict calligra-l10n-sv-*
-@pkgpath editors/calligra-l10n/tr
 @conflict calligra-l10n-tr-*
-@pkgpath editors/calligra-l10n/uk
 @conflict calligra-l10n-uk-*
-@pkgpath editors/calligra-l10n/zh_CN
 @conflict calligra-l10n-zh_CN-*
-@pkgpath editors/calligra-l10n/zh_TW
 @conflict calligra-l10n-zh_TW-*
+@pkgpath editors/calligra-l10n/bs
+@pkgpath editors/calligra-l10n/ca
+@pkgpath editors/calligra-l10n/ca@valencia
+@pkgpath editors/calligra-l10n/cs
+@pkgpath editors/calligra-l10n/da
+@pkgpath editors/calligra-l10n/de
+@pkgpath editors/calligra-l10n/el
+@pkgpath editors/calligra-l10n/en_GB
+@pkgpath editors/calligra-l10n/es
+@pkgpath editors/calligra-l10n/et
+@pkgpath editors/calligra-l10n/fi
+@pkgpath editors/calligra-l10n/fr
+@pkgpath editors/calligra-l10n/gl
+@pkgpath editors/calligra-l10n/hu
+@pkgpath editors/calligra-l10n/it
+@pkgpath editors/calligra-l10n/ja
+@pkgpath editors/calligra-l10n/kk
+@pkgpath editors/calligra-l10n/nb
+@pkgpath editors/calligra-l10n/nl
+@pkgpath editors/calligra-l10n/pl
+@pkgpath editors/calligra-l10n/pt
+@pkgpath editors/calligra-l10n/pt_BR
+@pkgpath editors/calligra-l10n/ru
+@pkgpath editors/calligra-l10n/sk
+@pkgpath editors/calligra-l10n/sv
+@pkgpath editors/calligra-l10n/tr
+@pkgpath editors/calligra-l10n/uk
+@pkgpath editors/calligra-l10n/zh_CN
+@pkgpath editors/calligra-l10n/zh_TW
 @bin bin/calligra
 @bin bin/calligraconverter
 @bin bin/calligragemini
@@ -158,6 +158,7 @@ lib/qt5/plugins/calligra/shapefiltereffects/
 lib/qt5/plugins/calligra/shapefiltereffects/calligra_filtereffects.so
 lib/qt5/plugins/calligra/shapes/
 lib/qt5/plugins/calligra/shapes/calligra_shape_artistictext.so
+lib/qt5/plugins/calligra/shapes/calligra_shape_chart.so
 lib/qt5/plugins/calligra/shapes/calligra_shape_formula.so
 lib/qt5/plugins/calligra/shapes/calligra_shape_music.so
 lib/qt5/plugins/calligra/shapes/calligra_shape_paths.so
