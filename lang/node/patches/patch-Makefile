@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.6 2018/06/21 23:13:28 abieber Exp $
+$OpenBSD: patch-Makefile,v 1.7 2018/09/19 19:10:27 abieber Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -11,7 +11,7 @@ Index: Makefile
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  uninstall: ## Uninstalls node from $PREFIX (default=/usr/local).
-@@ -248,7 +248,6 @@ test-cov: all
+@@ -251,7 +251,6 @@ test-cov: all
  	$(PYTHON) tools/test.py --mode=release -J \
  		$(CI_JS_SUITES) \
  		$(CI_NATIVE_SUITES)
@@ -19,7 +19,7 @@ Index: Makefile
  
  test-parallel: all
  	$(PYTHON) tools/test.py --mode=release parallel -J
-@@ -327,6 +326,12 @@ test/addons/.buildstamp: config.gypi \
+@@ -331,6 +330,12 @@ test/addons/.buildstamp: config.gypi \
  # Just goes to show that recursive make really is harmful...
  # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: | $(NODE_EXE) test/addons/.buildstamp

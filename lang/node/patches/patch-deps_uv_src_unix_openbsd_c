@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.5 2018/06/21 23:13:28 abieber Exp $
+$OpenBSD: patch-deps_uv_src_unix_openbsd_c,v 1.6 2018/09/19 19:10:27 abieber Exp $
 
 Fix from Fabian Raetz <fabian.raetz@gmail.com>, currently set for 
 the next release of 1.x: https://github.com/libuv/libuv/pull/652
@@ -81,7 +81,7 @@ Index: deps/uv/src/unix/openbsd.c
  
 -  if (argsbuf[0] == NULL) {
 +  if (search(argsbuf[0], buffer, size)) {
-     err = -EINVAL;  /* FIXME(bnoordhuis) More appropriate error. */
+     err = UV_EINVAL;  /* FIXME(bnoordhuis) More appropriate error. */
      goto out;
    }
  
