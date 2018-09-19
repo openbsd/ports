@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/09/19 09:35:32 landry Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -18,7 +18,7 @@ share/applications/org.pwmt.zathura.desktop
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.pwmt.zathura.xml
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/hicolor/128x128/org.pwmt.zathura.png
+share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
 share/locale/ca/LC_MESSAGES/zathura.mo
 share/locale/cs/LC_MESSAGES/zathura.mo
 share/locale/de/LC_MESSAGES/zathura.mo
