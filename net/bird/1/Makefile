@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1 2018/09/18 19:21:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/19 21:49:24 sthen Exp $
 
 COMMENT-main=	${COMMENT}
 COMMENT-doc=	${COMMENT} (documentation)
 
 DISTNAME=	bird-1.6.4
-REVISION=	0
+REVISION=	1
 
 WANTLIB-main=	c curses pthread readline
 
 MULTI_PACKAGES=	-main -doc
 FULLPKGNAME-doc= ${DISTNAME:S/bird-/bird-doc-/}
-FULLPKGPATH-doc= net/bird,-doc
+FULLPKGPATH-doc= net/bird/1,-doc
 
 # IPv6 support must be built with separate flags, however the filenames
 # do not conflict, so the two packages may be installed together.
@@ -21,7 +21,7 @@ SUBST_VARS=	FLAVOR_COMMA SIX
 
 .if ${FLAVOR:Mv6}
 FULLPKGNAME-main= ${DISTNAME:S/bird-/bird-v6-/}
-FULLPKGPATH-main= net/bird,-main,v6
+FULLPKGPATH-main= net/bird/1,-main,v6
 SIX=		6
 .else
 PKGNAME-main=	${DISTNAME}
