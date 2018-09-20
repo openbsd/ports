@@ -1,1 +1,3 @@
-# $OpenBSD: simple-config,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+# $OpenBSD: simple-config,v 1.2 2018/09/20 13:34:27 naddy Exp $
+
+LINKCMD = $(CC)

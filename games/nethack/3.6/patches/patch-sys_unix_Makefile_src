@@ -1,10 +1,30 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2018/09/20 13:34:27 naddy Exp $
+* unhardcode g++
+* ensure linking qt flavor with C++
 * zap bogus shit that prevents parallelism
 * handle moc location
 
 Index: sys/unix/Makefile.src
 --- sys/unix/Makefile.src.orig
 +++ sys/unix/Makefile.src
+@@ -161,7 +161,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+ # the C++ libraries linked in.
+ CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
+-CXX=g++
++CXX=c++
+ #LINK=g++
+ #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
+ #CXX=arm-linux-g++
+@@ -413,7 +413,7 @@ $(GAME):	$(SYSTEM)
+ 
+ Sysunix:	$(HOBJ) Makefile
+ 	@echo "Loading ..."
+-	$(LINK) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
++	$(LINKCMD) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
+ 	@touch Sysunix
+ 
+ Sys3B2:	$(HOBJ) Makefile
 @@ -470,25 +470,22 @@ all:	$(GAME)
  #	Makefile is responsible for keeping up to date
  #

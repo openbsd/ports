@@ -1,4 +1,4 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.2 2018/09/20 13:34:27 naddy Exp $
 --- sys/unix/Makefile.src.orig	Mon Dec  8 00:39:13 2003
 +++ sys/unix/Makefile.src	Sat Mar  4 13:30:02 2017
 @@ -1,6 +1,7 @@
@@ -58,7 +58,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
  Sysunix:	$(HOBJ) Makefile
  	@echo "Loading ..."
 -	$(LINK) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
-+	@$(LINKCMD) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
++	$(LINKCMD) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
  	@touch Sysunix
  
  Sys3B2:	$(HOBJ) Makefile
