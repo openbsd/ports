@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/06 06:04:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/20 11:16:29 robert Exp $
 @bin bin/mate-desktop-item-edit
 @bin bin/mate-panel
 @bin bin/mate-panel-test-applets
@@ -382,9 +382,21 @@ share/locale/en_CA/LC_MESSAGES/mate-panel.mo
 share/locale/en_GB/LC_MESSAGES/mate-panel.mo
 share/locale/eo/LC_MESSAGES/mate-panel.mo
 share/locale/es/LC_MESSAGES/mate-panel.mo
+share/locale/es_AR/LC_MESSAGES/mate-panel.mo
+share/locale/es_CL/LC_MESSAGES/mate-panel.mo
 share/locale/es_CO/LC_MESSAGES/mate-panel.mo
+share/locale/es_CR/LC_MESSAGES/mate-panel.mo
+share/locale/es_DO/LC_MESSAGES/mate-panel.mo
+share/locale/es_EC/LC_MESSAGES/mate-panel.mo
+share/locale/es_ES/LC_MESSAGES/mate-panel.mo
 share/locale/es_MX/LC_MESSAGES/mate-panel.mo
+share/locale/es_NI/LC_MESSAGES/mate-panel.mo
+share/locale/es_PA/LC_MESSAGES/mate-panel.mo
+share/locale/es_PE/LC_MESSAGES/mate-panel.mo
 share/locale/es_PR/LC_MESSAGES/mate-panel.mo
+share/locale/es_SV/LC_MESSAGES/mate-panel.mo
+share/locale/es_UY/LC_MESSAGES/mate-panel.mo
+share/locale/es_VE/LC_MESSAGES/mate-panel.mo
 share/locale/et/LC_MESSAGES/mate-panel.mo
 share/locale/eu/LC_MESSAGES/mate-panel.mo
 share/locale/fa/LC_MESSAGES/mate-panel.mo
@@ -403,6 +415,7 @@ share/locale/hi/LC_MESSAGES/mate-panel.mo
 share/locale/hr/LC_MESSAGES/mate-panel.mo
 share/locale/hu/LC_MESSAGES/mate-panel.mo
 share/locale/hy/LC_MESSAGES/mate-panel.mo
+share/locale/ia/LC_MESSAGES/mate-panel.mo
 share/locale/id/LC_MESSAGES/mate-panel.mo
 share/locale/ig/LC_MESSAGES/mate-panel.mo
 share/locale/is/LC_MESSAGES/mate-panel.mo
@@ -411,8 +424,10 @@ share/locale/ja/LC_MESSAGES/mate-panel.mo
 share/locale/jv/LC_MESSAGES/mate-panel.mo
 share/locale/ka/LC_MESSAGES/mate-panel.mo
 share/locale/kk/LC_MESSAGES/mate-panel.mo
+share/locale/km/LC_MESSAGES/mate-panel.mo
 share/locale/kn/LC_MESSAGES/mate-panel.mo
 share/locale/ko/LC_MESSAGES/mate-panel.mo
+share/locale/ks/LC_MESSAGES/mate-panel.mo
 share/locale/ku/LC_MESSAGES/mate-panel.mo
 share/locale/ku_IQ/LC_MESSAGES/mate-panel.mo
 share/locale/ky/LC_MESSAGES/mate-panel.mo
@@ -445,6 +460,7 @@ share/locale/pt_BR/LC_MESSAGES/mate-panel.mo
 share/locale/ro/LC_MESSAGES/mate-panel.mo
 share/locale/ru/LC_MESSAGES/mate-panel.mo
 share/locale/rw/LC_MESSAGES/mate-panel.mo
+share/locale/sc/LC_MESSAGES/mate-panel.mo
 share/locale/si/LC_MESSAGES/mate-panel.mo
 share/locale/sk/LC_MESSAGES/mate-panel.mo
 share/locale/sl/LC_MESSAGES/mate-panel.mo
@@ -455,7 +471,9 @@ share/locale/sv/LC_MESSAGES/mate-panel.mo
 share/locale/ta/LC_MESSAGES/mate-panel.mo
 share/locale/te/LC_MESSAGES/mate-panel.mo
 share/locale/th/LC_MESSAGES/mate-panel.mo
+share/locale/tk/LC_MESSAGES/mate-panel.mo
 share/locale/tr/LC_MESSAGES/mate-panel.mo
+share/locale/tt/LC_MESSAGES/mate-panel.mo
 share/locale/ug/LC_MESSAGES/mate-panel.mo
 share/locale/uk/LC_MESSAGES/mate-panel.mo
 share/locale/ur/LC_MESSAGES/mate-panel.mo
@@ -475,6 +493,12 @@ share/mate-panel/applets/org.mate.panel.ClockApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.panel.FishApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.panel.NotificationAreaApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.panel.Wncklet.mate-panel-applet
+share/mate-panel/fish/
+share/mate-panel/fish/fishanim.png
+share/mate-panel/fish/footguy.png
+share/mate-panel/fish/monkey.png
+share/mate-panel/fish/oldwanda.png
+share/mate-panel/fish/wanda.png
 share/mate-panel/layouts/
 share/mate-panel/layouts/default.layout
 share/mate-panel/layouts/fedora.layout
@@ -482,38 +506,6 @@ share/mate-panel/layouts/linuxmint.layout
 share/mate-panel/layouts/mageia.layout
 share/mate-panel/layouts/opensuse.layout
 share/mate-panel/layouts/ubuntu.layout
-share/mate-panel/pixmaps/
-share/mate-panel/pixmaps/clock-calendar-icon.png
-share/mate-panel/pixmaps/clock-face-large.svg
-share/mate-panel/pixmaps/clock-face-small-day.svg
-share/mate-panel/pixmaps/clock-face-small-evening.svg
-share/mate-panel/pixmaps/clock-face-small-morning.svg
-share/mate-panel/pixmaps/clock-face-small-night.svg
-share/mate-panel/pixmaps/clock-face-small.svg
-share/mate-panel/pixmaps/clock-map-location-current.png
-share/mate-panel/pixmaps/clock-map-location-hilight.png
-share/mate-panel/pixmaps/clock-map-location-marker.png
-share/mate-panel/pixmaps/clock-map.png
-share/mate-panel/pixmaps/fishanim.png
-share/mate-panel/pixmaps/footguy.png
-share/mate-panel/pixmaps/monkey.png
-share/mate-panel/pixmaps/oldwanda.png
-share/mate-panel/pixmaps/wanda.png
-share/mate-panel/ui/
-share/mate-panel/ui/clock-menu.xml
-share/mate-panel/ui/clock.ui
-share/mate-panel/ui/fish-menu.xml
-share/mate-panel/ui/fish.ui
-share/mate-panel/ui/notification-area-menu.xml
-share/mate-panel/ui/panel-properties-dialog.ui
-share/mate-panel/ui/panel-run-dialog.ui
-share/mate-panel/ui/panel-test-applets.ui
-share/mate-panel/ui/showdesktop-menu.xml
-share/mate-panel/ui/window-list-menu.xml
-share/mate-panel/ui/window-list.ui
-share/mate-panel/ui/window-menu-menu.xml
-share/mate-panel/ui/workspace-switcher-menu.xml
-share/mate-panel/ui/workspace-switcher.ui
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
