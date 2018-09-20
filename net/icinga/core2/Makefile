@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2018/09/20 22:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2018/09/20 22:42:02 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -50,9 +50,6 @@ MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
 
-PSEUDO_FLAVORS =	test
-FLAVOR ?=
-
 BUILD_DEPENDS =		devel/bison
 
 MULTI_PACKAGES =	-main -mysql -pgsql
@@ -94,22 +91,6 @@ post-install:
 .endfor
 	sed -i "s,/usr/share/icinga2,${TRUEPREFIX}/share/icinga2,g" \
 		${PREFIX}/share/doc/icinga2/markdown/*.md
-
-.if ${FLAVOR:Mtest}
-pre-test:
-	@if pkg_info | grep libconfig- > /dev/null; then \
-	    printf "\n*** icinga2 tests do not work if libconfig is installed ***\n\n"; \
-	    exit 1; \
-	fi
-.else
-pre-configure:
-	@printf "\n*** Disabling tests to avoid conflict if libconfig is present at build time.\n*** Use \"FLAVOR=test make\" to avoid this.\n\n"
-	sed -i 's,add_subdirectory(test),#add_subdirectory(test),' ${WRKSRC}/CMakeLists.txt
-
-pre-test:
-	@printf "\n*** Tests were disabled to avoid potential build conflict.\n*** Re-build with \"FLAVOR=test make\" to avoid this.\n\n"
-	@exit 1
-.endif
 
 .include <bsd.port.arch.mk>
 .if !${ARCH:Mamd64}
