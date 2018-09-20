@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/19 21:49:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/20 13:20:00 sthen Exp $
 
 COMMENT-main=	${COMMENT}
 COMMENT-doc=	${COMMENT} (documentation)
 
+PORTROACH=	limit:^1\.
 DISTNAME=	bird-1.6.4
 REVISION=	1
 
