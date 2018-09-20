@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1441 2018/09/05 14:10:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1442 2018/09/20 10:27:27 robert Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -117,7 +117,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
-	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED COMPILER \
+	PORTROACH_COMMENT MAKEFILE_LIST USE_LLD USE_WXNEEDED COMPILER \
 	COMPILER_LANGS COMPILER_LINKS SUBST_VARS UPDATE_PLIST_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
@@ -392,7 +392,16 @@ BASELOCALSTATEDIR ?= ${VARBASE}
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
 RCDIR ?= /etc/rc.d
+USE_LLD ?= No
+.if ${USE_LLD:L} == "yes"
+_LD_PROGRAM = /usr/bin/ld.lld
+.else
+_LD_PROGRAM = /usr/bin/ld
+.endif
 USE_WXNEEDED ?= No
+.if ${USE_WXNEEDED:L} == "yes"
+_WXNEEDED_FLAGS = -z wxneeded
+.endif
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
 BUILD_DEPENDS += devel/gmake
@@ -2639,14 +2648,14 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 
 # Run as _pbuild
 _post-patch-finalize:
-.if ${USE_WXNEEDED:L} == "yes"
+.if ${USE_WXNEEDED:L} == "yes" || ${USE_LLD:L} == "yes"
 	@wrktmp=`df -P ${WRKOBJDIR_${PKGPATH}} | awk 'END { print $$6 }'`; \
 	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
 		echo "Fatal: ${WRKOBJDIR_${PKGPATH}} must be on a wxallowed filesystem" \
 			"(in ${PKGPATH})" >&2; \
 		false; \
 	fi
-	@printf '#!/bin/sh\nexec /usr/bin/ld -z wxneeded "$$@"\n' >${WRKDIR}/bin/ld
+	@printf '#!/bin/sh\nexec ${_LD_PROGRAM} ${_WXNEEDED_FLAGS} "$$@"\n' >${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
 .for _wrap _comp in ${COMPILER_LINKS}
