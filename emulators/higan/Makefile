@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/20 16:32:12 naddy Exp $
 
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
 DISTNAME =	higan_v$V-source
 PKGNAME =	higan-$V
-REVISION =	1
+REVISION =	2
 
 USE_WXNEEDED =	Yes
 
@@ -34,8 +34,8 @@ LIB_DEPENDS =	audio/openal \
 		devel/sdl \
 		x11/gtksourceview
 
-MAKE_FLAGS =	compiler="${CC}" \
-		cflags="${CFLAGS} -std=c11 -DLIBCO_MPROTECT" \
+MAKE_FLAGS =	compiler="${CXX}" \
+		cflags="${CFLAGS} -x c -std=c11 -DLIBCO_MPROTECT" \
 		cppflags="${CXXFLAGS} -x c++ -std=c++14 \
 			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		build=
