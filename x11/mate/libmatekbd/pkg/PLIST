@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/20 11:15:55 robert Exp $
 include/libmatekbd/
 include/libmatekbd/matekbd-desktop-config.h
 include/libmatekbd/matekbd-indicator-config.h
@@ -256,3 +256,4 @@ share/locale/zh_CN/LC_MESSAGES/libmatekbd.mo
 share/locale/zh_HK/LC_MESSAGES/libmatekbd.mo
 share/locale/zh_TW/LC_MESSAGES/libmatekbd.mo
 share/locale/zu/LC_MESSAGES/libmatekbd.mo
+@tag glib-compile-schemas
