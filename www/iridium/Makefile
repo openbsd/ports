@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2018/08/11 16:22:42 robert Exp $
+# $OpenBSD: Makefile,v 1.78 2018/09/20 16:56:46 robert Exp $
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
+USE_LLD=		Yes
 
 DPB_PROPERTIES=		parallel
 
@@ -13,7 +14,7 @@ V=			2018.5.67
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www
 
@@ -122,6 +123,7 @@ GN_ARGS=	enable_nacl=false \
 		use_cups=true \
 		use_gtk3=true \
 		use_system_libdrm=true \
+		use_jumbo_build=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
