@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2018/09/04 12:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2018/09/20 22:39:15 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -72,14 +72,14 @@ LIB_DEPENDS-pgsql =	${LIB_DEPENDS} \
 			databases/postgresql
 
 CONFIGURE_ARGS += \
-	-DCMAKE_INSTALL_MANDIR:String=${PREFIX}/man \
-	-DCMAKE_INSTALL_SYSCONFDIR:String=${PREFIX}/share/examples \
-	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String=${WRKINST}${SYSCONFDIR} \
-	-DCMAKE_INSTALL_LOCALSTATEDIR:String=${LOCALSTATEDIR} \
-	-DICINGA2_USER:String=_icinga \
-	-DICINGA2_GROUP:String=_icinga \
-	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \
-	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios \
+	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
+	-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples \
+	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${WRKINST}${SYSCONFDIR} \
+	-DCMAKE_INSTALL_LOCALSTATEDIR=${LOCALSTATEDIR} \
+	-DICINGA2_USER=_icinga \
+	-DICINGA2_GROUP=_icinga \
+	-DICINGA2_GIT_VERSION_INFO=OFF \
+	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
 	-DHAVE_LIBEXECINFO=OFF
 
 post-configure:
