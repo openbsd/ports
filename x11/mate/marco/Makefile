@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/06 06:04:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/20 11:16:07 robert Exp $
 
 COMMENT=		the MATE window manager
-REVISION=		1
 
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
-MATE_VERSION=		1.20.1
+MATE_VERSION=		1.20.2
 
 CATEGORIES=		x11
 
