@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.390 2018/09/20 08:43:54 robert Exp $
+# $OpenBSD: Makefile,v 1.391 2018/09/20 10:28:17 robert Exp $
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
+USE_LLD=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 
