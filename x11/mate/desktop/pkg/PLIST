@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/20 11:15:34 robert Exp $
 @bin bin/mate-about
 @bin bin/mate-color-select
 include/mate-desktop-2.0/
@@ -211,6 +211,7 @@ share/locale/te/LC_MESSAGES/mate-desktop.mo
 share/locale/th/LC_MESSAGES/mate-desktop.mo
 share/locale/tk/LC_MESSAGES/mate-desktop.mo
 share/locale/tr/LC_MESSAGES/mate-desktop.mo
+share/locale/tt/LC_MESSAGES/mate-desktop.mo
 share/locale/ug/LC_MESSAGES/mate-desktop.mo
 share/locale/uk/LC_MESSAGES/mate-desktop.mo
 share/locale/ur/LC_MESSAGES/mate-desktop.mo
@@ -218,6 +219,7 @@ share/locale/uz/LC_MESSAGES/mate-desktop.mo
 share/locale/vi/LC_MESSAGES/mate-desktop.mo
 share/locale/wa/LC_MESSAGES/mate-desktop.mo
 share/locale/xh/LC_MESSAGES/mate-desktop.mo
+share/locale/yi/LC_MESSAGES/mate-desktop.mo
 share/locale/yo/
 share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/mate-desktop.mo
