@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/09/20 09:22:03 ajacoutot Exp $
 
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-5.7.1.3
 CATEGORIES =	editors x11
-REVISION =	9
+REVISION =	10
 
 HOMEPAGE =	https://launchpad.net/tpad-project/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 enchant epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += gtkspell3-3 gucharmap_2_90 harfbuzz iconv intl lzma m magic
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant-2 epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 gtkspell3-3 gucharmap_2_90
+WANTLIB += harfbuzz iconv intl lzma m magic pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MASTER_SITES =	https://launchpad.net/tpad-project/4.0/4.0/+download/
 

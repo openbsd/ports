@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.74 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2018/09/20 09:22:03 ajacoutot Exp $
 
 COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
 GNOME_VERSION=		2.91.7
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		textproc devel
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject dbus-1 enchant epoxy expat
-WANTLIB += ffi fontconfig freetype gcrypt gda-5.0 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdl-3 gettextpo gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += gtkspell3-3 harfbuzz iconv intl json-glib-1.0 lzma xml2
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 z
-WANTLIB += peas-gtk-1.0 pixman-1 png secret-1 xcb xcb-render xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 enchant-2 epoxy expat
+WANTLIB += ffi fontconfig freetype fribidi gcrypt gda-5.0 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gdl-3 gettextpo gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 gtkspell3-3 harfbuzz
+WANTLIB += iconv intl json-glib-1.0 lzma m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += pthread secret-1 xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
 			lang/python \
