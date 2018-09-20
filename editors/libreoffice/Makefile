@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2018/09/07 07:15:50 robert Exp $
+# $OpenBSD: Makefile,v 1.191 2018/09/20 13:54:12 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -16,7 +16,7 @@ SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 REVISION-main=	0
 
 BV=		6.1
-VERSION=	${BV}.0.3
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
