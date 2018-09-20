@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/06 06:04:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/20 11:16:48 robert Exp $
 
 COMMENT=		MATE session manager
-REVISION=		2
 
 MATE_PROJECT=		mate-session-manager
+MATE_VERSION=		1.20.1
 
 CATEGORIES=		x11
 
@@ -18,6 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += fribidi
 
 MODULES=		devel/dconf \
 			x11/gnome
