@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2018/09/05 21:39:18 juanfra Exp $
+# $OpenBSD: Makefile,v 1.32 2018/09/20 21:41:40 juanfra Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
 V=		4.9.0
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
+REVISION=	0
 API_V=		${V:R:S/./0/}00${V:E}
 SUBST_VARS+=	API_V
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v${V:R}/source/
 EXTRACT_SUFX=	.tgz
 
-WANTLIB +=	c m util
+WANTLIB +=	c crypto m ssl util
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-cplusplus \
@@ -28,7 +29,10 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--docdir=${PREFIX}/share/doc/gambit/ \
 		--includedir=${PREFIX}/include/gambit/ \
 		--libdir=${PREFIX}/lib/gambit/ \
-		--enable-c-opt="${CFLAGS}"
+		--enable-c-opt="${CFLAGS}" \
+		--enable-openssl \
+		--enable-poll
+
 CONFIGURE_ENV=	CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 MAKE_FILE=	${WRKSRC}/makefile
