@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/04/04 12:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/09/20 09:21:52 ajacoutot Exp $
 include/gtkspell-3.0/
 include/gtkspell-3.0/gtkspell/
 include/gtkspell-3.0/gtkspell/gtkspell.h
@@ -13,7 +13,6 @@ share/gtk-doc/html/gtkspell3/annotation-glossary.html
 share/gtk-doc/html/gtkspell3/api-index-full.html
 share/gtk-doc/html/gtkspell3/ch02.html
 share/gtk-doc/html/gtkspell3/chapter-tutorial.html
-share/gtk-doc/html/gtkspell3/deprecated-api-index.html
 share/gtk-doc/html/gtkspell3/gtkspell3-gtkspell.html
 share/gtk-doc/html/gtkspell3/gtkspell3.devhelp2
 share/gtk-doc/html/gtkspell3/home.png
