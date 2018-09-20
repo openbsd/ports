@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/06 06:04:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/09/20 11:16:52 robert Exp $
 
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
-MATE_VERSION=		1.20.1
-REVISION=		2
+MATE_VERSION=		1.20.3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,6 +21,7 @@ WANTLIB += canberra dbus-1 dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz ltdl
 WANTLIB += mate-desktop-2 matekbd matekbdui matemixer notify ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 polkit-gobject-1 vorbis vorbisfile xklavier
 WANTLIB += X11-xcb startup-notification-1 xcb-util
+WANTLIB += Xxf86misc
 
 MODULES=		devel/dconf \
 			x11/gnome

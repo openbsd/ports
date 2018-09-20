@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/20 11:16:52 robert Exp $
 include/mate-settings-daemon/
 include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
@@ -170,14 +170,31 @@ share/locale/el/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_AU/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_GB/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/eo/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/es/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_AR/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_CL/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/es_CO/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_CR/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_DO/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_EC/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_ES/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_MX/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_NI/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_PA/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_PE/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_PR/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_SV/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_UY/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_VE/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/et/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/eu/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fa/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fi/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fr/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/frp/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/fur/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/fy/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ga/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/gl/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/gu/LC_MESSAGES/mate-settings-daemon.mo
@@ -217,6 +234,7 @@ share/locale/or/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pa/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pl/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pms/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ps/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pt/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pt_BR/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ro/LC_MESSAGES/mate-settings-daemon.mo
@@ -233,6 +251,7 @@ share/locale/ta/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/te/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/th/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ug/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/uk/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ur/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/uz/LC_MESSAGES/mate-settings-daemon.mo
@@ -262,3 +281,4 @@ share/mate-settings-daemon/msd-a11y-preferences-dialog.ui
 share/polkit-1/actions/org.mate.settingsdaemon.datetimemechanism.policy
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/mate
