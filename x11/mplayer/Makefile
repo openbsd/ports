@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.288 2018/09/04 12:46:28 espie Exp $
+# $OpenBSD: Makefile,v 1.289 2018/09/21 21:40:19 ajacoutot Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20161008
-FFMPEG_V=	20180721
+FFMPEG_V=	2.8.15
 DISTNAME=	mplayer-${V}
-REVISION=	13
+REVISION=	14
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -191,7 +191,7 @@ post-extract:
 	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
 
 pre-patch:
-	@ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
+	@ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-${FFMPEG_V} ${WRKSRC}/ffmpeg
 
 post-build:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} doc

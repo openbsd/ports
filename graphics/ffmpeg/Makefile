@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.171 2018/09/12 19:59:04 robert Exp $
+# $OpenBSD: Makefile,v 1.172 2018/09/21 21:40:19 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20180721
-DISTNAME=	ffmpeg-git-${V}
-PKGNAME=	ffmpeg-${V}
+V=		2.8.15
+DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	http://comstyle.com/source/
+MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+EPOCH=		0
 
 SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
@@ -20,7 +19,7 @@ SHARED_LIBS=	avcodec		22.2 \
 		swresample	1.2 \
 		swscale		6.1
 
-HOMEPAGE=	http://ffmpeg.org/
+HOMEPAGE=	https://ffmpeg.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
