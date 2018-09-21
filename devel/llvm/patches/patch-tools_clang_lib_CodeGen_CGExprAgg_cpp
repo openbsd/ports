@@ -1,0 +1,92 @@
+$OpenBSD: patch-tools_clang_lib_CodeGen_CGExprAgg_cpp,v 1.1 2018/09/21 08:56:06 ajacoutot Exp $
+
+[CodeGen] Initialize large arrays by copying from a global
+
+Currently, clang compiles explicit initializers for array
+elements into series of store instructions. For large arrays of
+built-in types this results in bloated output code and
+significant amount of time spent on the instruction selection
+phase. This patch fixes the issue by initializing such arrays
+with global constants that store the binary image of the
+initializer.
+
+Index: tools/clang/lib/CodeGen/CGExprAgg.cpp
+--- tools/clang/lib/CodeGen/CGExprAgg.cpp.orig
++++ tools/clang/lib/CodeGen/CGExprAgg.cpp
+@@ -14,6 +14,7 @@
+ #include "CodeGenFunction.h"
+ #include "CGObjCRuntime.h"
+ #include "CodeGenModule.h"
++#include "ConstantEmitter.h"
+ #include "clang/AST/ASTContext.h"
+ #include "clang/AST/DeclCXX.h"
+ #include "clang/AST/DeclTemplate.h"
+@@ -85,7 +86,7 @@ class AggExprEmitter : public StmtVisitor<AggExprEmitt
+   void EmitMoveFromReturnSlot(const Expr *E, RValue Src);
+ 
+   void EmitArrayInit(Address DestPtr, llvm::ArrayType *AType,
+-                     QualType elementType, InitListExpr *E);
++                     QualType ArrayQTy, InitListExpr *E);
+ 
+   AggValueSlot::NeedsGCBarriers_t needsGC(QualType T) {
+     if (CGF.getLangOpts().getGC() && TypeRequiresGCollection(T))
+@@ -392,12 +393,15 @@ static bool isTrivialFiller(Expr *E) {
+ 
+ /// \brief Emit initialization of an array from an initializer list.
+ void AggExprEmitter::EmitArrayInit(Address DestPtr, llvm::ArrayType *AType,
+-                                   QualType elementType, InitListExpr *E) {
++                                   QualType ArrayQTy, InitListExpr *E) {
+   uint64_t NumInitElements = E->getNumInits();
+ 
+   uint64_t NumArrayElements = AType->getNumElements();
+   assert(NumInitElements <= NumArrayElements);
+ 
++  QualType elementType =
++      CGF.getContext().getAsArrayType(ArrayQTy)->getElementType();
++
+   // DestPtr is an array*.  Construct an elementType* by drilling
+   // down a level.
+   llvm::Value *zero = llvm::ConstantInt::get(CGF.SizeTy, 0);
+@@ -409,6 +413,29 @@ void AggExprEmitter::EmitArrayInit(Address DestPtr, ll
+   CharUnits elementAlign =
+     DestPtr.getAlignment().alignmentOfArrayElement(elementSize);
+ 
++  // Consider initializing the array by copying from a global. For this to be
++  // more efficient than per-element initialization, the size of the elements
++  // with explicit initializers should be large enough.
++  if (NumInitElements * elementSize.getQuantity() > 16 &&
++      elementType.isTriviallyCopyableType(CGF.getContext())) {
++    CodeGen::CodeGenModule &CGM = CGF.CGM;
++    ConstantEmitter Emitter(CGM);
++    LangAS AS = ArrayQTy.getAddressSpace();
++    if (llvm::Constant *C = Emitter.tryEmitForInitializer(E, AS, ArrayQTy)) {
++      auto GV = new llvm::GlobalVariable(
++          CGM.getModule(), C->getType(),
++          CGM.isTypeConstant(ArrayQTy, /* ExcludeCtorDtor= */ true),
++          llvm::GlobalValue::PrivateLinkage, C, "constinit",
++          /* InsertBefore= */ nullptr, llvm::GlobalVariable::NotThreadLocal,
++          CGM.getContext().getTargetAddressSpace(AS));
++      Emitter.finalize(GV);
++      CharUnits Align = CGM.getContext().getTypeAlignInChars(ArrayQTy);
++      GV->setAlignment(Align.getQuantity());
++      EmitFinalDestCopy(ArrayQTy, CGF.MakeAddrLValue(GV, ArrayQTy, Align));
++      return;
++    }
++  }
++
+   // Exception safety requires us to destroy all the
+   // already-constructed members if an initializer throws.
+   // For that, we'll need an EH cleanup.
+@@ -1156,11 +1183,8 @@ void AggExprEmitter::VisitInitListExpr(InitListExpr *E
+ 
+   // Handle initialization of an array.
+   if (E->getType()->isArrayType()) {
+-    QualType elementType =
+-        CGF.getContext().getAsArrayType(E->getType())->getElementType();
+-
+     auto AType = cast<llvm::ArrayType>(Dest.getAddress().getElementType());
+-    EmitArrayInit(Dest.getAddress(), AType, elementType, E);
++    EmitArrayInit(Dest.getAddress(), AType, E->getType(), E);
+     return;
+   }
+ 

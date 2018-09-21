@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_CodeGen_BranchFolding_cpp,v 1.1 2018/09/21 08:56:06 ajacoutot Exp $
+
+Initialize LiveRegs once in BranchFolder::mergeCommonTails
+
+Index: lib/CodeGen/BranchFolding.cpp
+--- lib/CodeGen/BranchFolding.cpp.orig
++++ lib/CodeGen/BranchFolding.cpp
+@@ -884,11 +884,12 @@ void BranchFolder::mergeCommonTails(unsigned commonTai
+   if (UpdateLiveIns) {
+     LivePhysRegs NewLiveIns(*TRI);
+     computeLiveIns(NewLiveIns, *MBB);
++    LiveRegs.init(*TRI);
+ 
+     // The flag merging may lead to some register uses no longer using the
+     // <undef> flag, add IMPLICIT_DEFs in the predecessors as necessary.
+     for (MachineBasicBlock *Pred : MBB->predecessors()) {
+-      LiveRegs.init(*TRI);
++      LiveRegs.clear();
+       LiveRegs.addLiveOuts(*Pred);
+       MachineBasicBlock::iterator InsertBefore = Pred->getFirstTerminator();
+       for (unsigned Reg : NewLiveIns) {
