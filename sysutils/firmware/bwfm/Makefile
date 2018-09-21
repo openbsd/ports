@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/03 11:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/21 08:40:26 sthen Exp $
 
 FW_DRIVER=	bwfm
 FW_VER=		20171125
@@ -8,7 +8,6 @@ EXTRACT_SUFX=	.tar.xz
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/brcm
-MASTER_SITES=	http://firmware.openbsd.org/firmware-dist/
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/brcm/*bin ${PREFIX}/firmware/
