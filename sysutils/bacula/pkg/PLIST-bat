@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-bat,v 1.15 2018/06/27 21:04:03 espie Exp $
+@comment $OpenBSD: PLIST-bat,v 1.16 2018/09/21 00:08:02 sthen Exp $
 @man man/man1/bat.1
 @bin sbin/bat
-share/applications/
 share/applications/bat.desktop
 share/doc/bacula/clients.html
 share/doc/bacula/console.html
