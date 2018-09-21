@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/21 09:26:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/21 10:20:36 sthen Exp $
 
 FW_DRIVER=	urtwn
 # date of the newest files in rtlwifi dir
@@ -21,7 +21,7 @@ do-install:
 	rtlwifi/rtl8723bu_nic.bin	urtwn-rtl8723bu_nic	\
 	../urtwn-1.2/urtwn-rtl8192cfwT	urtwn-rtl8192cfwT	\
 	../urtwn-1.2/urtwn-rtl8192cfwU	urtwn-rtl8192cfwU	\
-	../urtwn-1.2/urtwn-rtl8723fw	urtwn-rtl8723fw		\
+	../urtwn-1.2/urtwn-rtl8723fw	urtwn-rtl8723fw	
 	${INSTALL_DATA} ${WRKSRC}/$s ${PREFIX}/firmware/$i
 .endfor
 
