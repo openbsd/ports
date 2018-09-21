@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 23:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/21 21:51:23 kn Exp $
 
 COMMENT =		count lines of codes in many languages
 
 V =			1.2
-REVISION =		0
+REVISION =		1
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://gitlab.com/esr/loccount
 
-MAINTAINER =		Klemens Nanni <kl3@posteo.org>
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,7 +32,7 @@ post-build:
 	ln -sf ${WRKBUILD}/loccount{-${V}-*,}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/loccount ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/loccount.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKBUILD}/loccount ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKBUILD}/loccount.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
