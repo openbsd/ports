@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2017/08/31 06:16:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/09/22 08:26:01 jasper Exp $
 %%python3%%
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}aggregating.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}aiding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}blending.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}byting.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}quaternioning
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}sixing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}timing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/${MODPY_PYCACHE}vectoring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aggregating.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/byting.py
@@ -61,6 +63,14 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/${MODPY_PYCACHE}test_qua
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/${MODPY_PYCACHE}test_sixing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/${MODPY_PYCACHE}test_timing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/${MODPY_PYCACHE}test_vectoring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/${MODPY_PYCACHE}testAggregating.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/${MODPY_PYCACHE}testBlending.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/testAggregating.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/pytest/testBlending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_aiding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_byting.py
