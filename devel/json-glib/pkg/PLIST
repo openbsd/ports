@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2017/10/29 09:16:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/09/22 06:11:11 jasper Exp $
 @bin bin/json-glib-format
 @bin bin/json-glib-validate
 include/json-glib-1.0/
@@ -42,6 +42,7 @@ share/locale/fur/LC_MESSAGES/json-glib-1.0.mo
 share/locale/gl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/he/LC_MESSAGES/json-glib-1.0.mo
 share/locale/hi/LC_MESSAGES/json-glib-1.0.mo
+share/locale/hr/LC_MESSAGES/json-glib-1.0.mo
 share/locale/hu/LC_MESSAGES/json-glib-1.0.mo
 share/locale/id/LC_MESSAGES/json-glib-1.0.mo
 share/locale/it/LC_MESSAGES/json-glib-1.0.mo
@@ -55,6 +56,7 @@ share/locale/lv/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ml/LC_MESSAGES/json-glib-1.0.mo
 share/locale/nb/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ne/LC_MESSAGES/json-glib-1.0.mo
+share/locale/nl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/oc/LC_MESSAGES/json-glib-1.0.mo
 share/locale/or/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pa/LC_MESSAGES/json-glib-1.0.mo
