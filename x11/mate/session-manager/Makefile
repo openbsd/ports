@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/20 11:16:48 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2018/09/22 06:04:52 robert Exp $
 
 COMMENT=		MATE session manager
 
@@ -24,6 +24,8 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+BUILD_DEPENDS=		textproc/xmlto
 
 LIB_DEPENDS=		devel/libexecinfo \
 			x11/dbus-glib \
