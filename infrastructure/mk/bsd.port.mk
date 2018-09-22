@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1442 2018/09/20 10:27:27 robert Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1443 2018/09/22 07:13:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1998,9 +1998,7 @@ ${_PACKAGE_COOKIE${_S}}:
 		${_check_lib_depends} $$tmp && \
 		${_register_plist${_S}} $$tmp && \
 		${_checksum_package} && \
-		${_PSUDO} mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
-		mode=${_pkgmode} && \
-		${_PSUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
+		${_PBUILD} mv $$tmp ${_PACKAGE_COOKIE${_S}}; then \
 		 	exit 0; \
 	else \
 		${_PBUILD} rm -f $$tmp; \
@@ -2469,14 +2467,6 @@ ${_BULK_COOKIE}:
 
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
-
-${WRKDIR}/.test-sudo:
-	@if [ x`SUDO_PORT_V1=ah ${SUDO} /bin/sh -c 'eval echo $${SUDO_PORT_V1}'` \
-		!= xah ]; then \
-			echo >&2 "Error: sudo does not let env variables through"; \
-			exit 1; \
-	fi
-	@${_PMAKE_COOKIE} $@
 
 ${_WRKDIR_COOKIE}:
 	@${_PBUILD} rm -rf ${WRKDIR}
