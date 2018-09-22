@@ -1,0 +1,12 @@
+You will need an IWAD for PrBoom to be fully functional.  An IWAD is
+the main data file containing the graphics and levels for Doom.  If
+you have a copy of one of the original Doom games, simply copy your
+Doom, Doom 2, Ultimate Doom, or Final Doom IWAD (doom.wad, doom2.wad,
+tnt.wad, and plutonia.wad respectively) to ${PREFIX}/share/prboom/.
+If you do not possess any of those, you can use the shareware IWAD
+which is available at:
+
+ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/idstuff/doom/doom-1.8.wad.gz
+SHA256 (doom-1.8.wad.gz) = WM9qVjtjGkdWFjCvpidthTwnB5NC95aewwBpZdqFV6E=
+
+Install it to ${PREFIX}/share/prboom as "doom.wad".

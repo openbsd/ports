@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/31 21:09:33 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/22 21:51:16 solene Exp $
 @bin bin/prboom
 @bin bin/prboom-game-server
 @man man/man5/boom.cfg.5
 @man man/man6/prboom-game-server.6
 @man man/man6/prboom.6
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/prboom/
 @comment share/doc/prboom/AUTHORS
 @comment share/doc/prboom/COPYING
