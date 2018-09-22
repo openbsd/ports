@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.24 2018/09/04 12:46:10 espie Exp $
+$OpenBSD: README-server,v 1.25 2018/09/22 00:51:49 danj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,21 +14,12 @@ initialized using the initdb command.
 
 If you are installing PostgreSQL for the first time, you have to create
 a default database first.  In the following example we install a database
-in /var/postgresql/data with a dba account 'postgres' and md5 authentication.
-We will be prompted for a password to protect the dba account:
+in /var/postgresql/data with a dba account 'postgres' and scram-sha-256
+authentication. We will be prompted for a password to protect the dba account:
 
        # su - _postgresql
        $ mkdir /var/postgresql/data
-       $ initdb -D /var/postgresql/data -U postgres -A md5 -W
-
-Please note that by default the cluster's encoding will be SQL_ASCII. If
-you want to have another default encoding, use the option -E with initdb:
-
-       $ initdb -D /var/postgresql/data -U postgres -E UTF8 -A md5 -W
-
-If your cluster is already created, you can specify another encoding when
-you create a new database with this command:
-	CREATE DATABASE xxx TEMPLATE template0 ENCODING 'xxx' ;
+       $ initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W
 
 It is strongly advised that you do not work with the postgres dba account
 other than creating more users and/or databases or for administrative tasks.
@@ -127,9 +118,10 @@ to the current version.
 4) Backup your old data directory:
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
-5) Create a new data directory (adding -E UTF8 to the initdb line if needed):
+5) Create a new data directory:
 # su _postgresql -c "mkdir /var/postgresql/data"
-# su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
+# su _postgresql -c \
+    "initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
 
 6) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
@@ -151,7 +143,7 @@ Option 2: pg_upgrade
 
 This will work for an upgrade from the previous major version of
 PostgreSQL supported by OpenBSD to the current version, and should be
-faster than a dump and reload, especially for large databases. 
+faster than a dump and reload, especially for large databases.
 
 1) Shutdown the server:
 # rcctl stop postgresql
@@ -162,9 +154,10 @@ faster than a dump and reload, especially for large databases.
 3) Backup your old data directory:
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
-4) Create a new data directory (adding -E UTF8 to the initdb line if needed):
+4) Create a new data directory:
 # su _postgresql -c "mkdir /var/postgresql/data"
-# su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
+# su _postgresql -c \
+    "initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
 
 5) Restore your old pg_hba.conf and (if used) SSL certificates
 # su _postgresql -c \
