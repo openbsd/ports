@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_socks_mosq_c,v 1.1 2018/09/22 08:19:25 jasper Exp $
+
+Index: lib/socks_mosq.c
+--- lib/socks_mosq.c.orig
++++ lib/socks_mosq.c
+@@ -19,6 +19,9 @@ Contributors:
+ #include <errno.h>
+ #include <string.h>
+ #include <limits.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "mosquitto_internal.h"
