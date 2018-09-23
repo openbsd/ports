@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/03/14 14:20:40 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/23 17:22:57 jsing Exp $
 @conflict go-websocket-*
 @pkgpath net/go-websocket
 go-pkg/
@@ -19,9 +19,11 @@ ${MODGO_PACKAGES}/golang.org/x/net/html.a
 ${MODGO_PACKAGES}/golang.org/x/net/html/atom.a
 ${MODGO_PACKAGES}/golang.org/x/net/html/charset.a
 ${MODGO_PACKAGES}/golang.org/x/net/http/
+${MODGO_PACKAGES}/golang.org/x/net/http/httpguts.a
 ${MODGO_PACKAGES}/golang.org/x/net/http/httpproxy.a
 ${MODGO_PACKAGES}/golang.org/x/net/http2/
 ${MODGO_PACKAGES}/golang.org/x/net/http2.a
+${MODGO_PACKAGES}/golang.org/x/net/http2/h2c.a
 ${MODGO_PACKAGES}/golang.org/x/net/http2/hpack.a
 ${MODGO_PACKAGES}/golang.org/x/net/icmp.a
 ${MODGO_PACKAGES}/golang.org/x/net/idna.a
@@ -29,11 +31,11 @@ ${MODGO_PACKAGES}/golang.org/x/net/internal/
 ${MODGO_PACKAGES}/golang.org/x/net/internal/iana.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/nettest.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/socket.a
+${MODGO_PACKAGES}/golang.org/x/net/internal/socks.a
+${MODGO_PACKAGES}/golang.org/x/net/internal/sockstest.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/timeseries.a
 ${MODGO_PACKAGES}/golang.org/x/net/ipv4.a
 ${MODGO_PACKAGES}/golang.org/x/net/ipv6.a
-${MODGO_PACKAGES}/golang.org/x/net/lex/
-${MODGO_PACKAGES}/golang.org/x/net/lex/httplex.a
 ${MODGO_PACKAGES}/golang.org/x/net/nettest.a
 ${MODGO_PACKAGES}/golang.org/x/net/netutil.a
 ${MODGO_PACKAGES}/golang.org/x/net/proxy.a
@@ -139,6 +141,8 @@ ${MODGO_SOURCES}/golang.org/x/net/html/parse_test.go
 ${MODGO_SOURCES}/golang.org/x/net/html/render.go
 ${MODGO_SOURCES}/golang.org/x/net/html/render_test.go
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/template.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/go1.html
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/README
@@ -154,11 +158,13 @@ ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/isindex.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/pending-spec-changes-plain-text-unsafe.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/pending-spec-changes.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/plain-text-unsafe.dat
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/ruby.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/scriptdata01.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/scripted/
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/scripted/adoption01.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/scripted/webkit01.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/tables01.dat
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/template.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/tests1.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/tests10.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/tests11.dat
@@ -191,6 +197,10 @@ ${MODGO_SOURCES}/golang.org/x/net/html/testdata/webkit/webkit02.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/token.go
 ${MODGO_SOURCES}/golang.org/x/net/html/token_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http/
+${MODGO_SOURCES}/golang.org/x/net/http/httpguts/
+${MODGO_SOURCES}/golang.org/x/net/http/httpguts/guts.go
+${MODGO_SOURCES}/golang.org/x/net/http/httpguts/httplex.go
+${MODGO_SOURCES}/golang.org/x/net/http/httpguts/httplex_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http/httpproxy/
 ${MODGO_SOURCES}/golang.org/x/net/http/httpproxy/export_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http/httpproxy/go19_test.go
@@ -213,6 +223,7 @@ ${MODGO_SOURCES}/golang.org/x/net/http2/flow.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/flow_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/frame.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/frame_test.go
+${MODGO_SOURCES}/golang.org/x/net/http2/go111.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/go16.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/go17.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/go17_not18.go
@@ -222,6 +233,9 @@ ${MODGO_SOURCES}/golang.org/x/net/http2/go19.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/go19_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/gotrack.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/gotrack_test.go
+${MODGO_SOURCES}/golang.org/x/net/http2/h2c/
+${MODGO_SOURCES}/golang.org/x/net/http2/h2c/h2c.go
+${MODGO_SOURCES}/golang.org/x/net/http2/h2c/h2c_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/.gitignore
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/Dockerfile
@@ -252,6 +266,7 @@ ${MODGO_SOURCES}/golang.org/x/net/http2/hpack/tables.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/hpack/tables_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/http2.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/http2_test.go
+${MODGO_SOURCES}/golang.org/x/net/http2/not_go111.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/not_go16.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/not_go17.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/not_go18.go
@@ -274,6 +289,7 @@ ${MODGO_SOURCES}/golang.org/x/net/http2/writesched_random_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/writesched_test.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/z_spec_test.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/
+${MODGO_SOURCES}/golang.org/x/net/icmp/diag_test.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/dstunreach.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/echo.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/endpoint.go
@@ -295,7 +311,6 @@ ${MODGO_SOURCES}/golang.org/x/net/icmp/multipart.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/multipart_test.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/packettoobig.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/paramprob.go
-${MODGO_SOURCES}/golang.org/x/net/icmp/ping_test.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/sys_freebsd.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/timeexceeded.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/
@@ -413,6 +428,13 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_arm.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_solaris_amd64.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socks/
+${MODGO_SOURCES}/golang.org/x/net/internal/socks/client.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socks/dial_test.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socks/socks.go
+${MODGO_SOURCES}/golang.org/x/net/internal/sockstest/
+${MODGO_SOURCES}/golang.org/x/net/internal/sockstest/server.go
+${MODGO_SOURCES}/golang.org/x/net/internal/sockstest/server_test.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/timeseries/
 ${MODGO_SOURCES}/golang.org/x/net/internal/timeseries/timeseries.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/timeseries/timeseries_test.go
@@ -587,10 +609,6 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_netbsd.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_openbsd.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_solaris.go
-${MODGO_SOURCES}/golang.org/x/net/lex/
-${MODGO_SOURCES}/golang.org/x/net/lex/httplex/
-${MODGO_SOURCES}/golang.org/x/net/lex/httplex/httplex.go
-${MODGO_SOURCES}/golang.org/x/net/lex/httplex/httplex_test.go
 ${MODGO_SOURCES}/golang.org/x/net/lif/
 ${MODGO_SOURCES}/golang.org/x/net/lif/address.go
 ${MODGO_SOURCES}/golang.org/x/net/lif/address_test.go

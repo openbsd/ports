@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/03/15 16:19:32 jsing Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/23 17:22:57 jsing Exp $
 
 COMMENT =	Go supplementary network libraries
-DISTNAME =	go-net-20180216
+DISTNAME =	go-net-20180825
 GH_ACCOUNT =	golang
 GH_PROJECT =	net
-GH_COMMIT =	2e7f24ace30034db6c258ddb329e5236a68c27fa
+GH_COMMIT =	faa378e6dbaed88bd8100f8bcf09939375c6e8fa
 CATEGORIES =	net www devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/net/
@@ -36,8 +36,10 @@ _SUBPKGS =	bpf \
 		html \
 		html/atom \
 		html/charset \
+		http/httpguts \
 		http/httpproxy \
 		http2 \
+		http2/h2c \
 		http2/h2i \
 		http2/hpack \
 		icmp \
@@ -45,10 +47,11 @@ _SUBPKGS =	bpf \
 		internal/iana \
 		internal/nettest \
 		internal/socket \
+		internal/socks \
+		internal/sockstest \
 		internal/timeseries \
 		ipv4 \
 		ipv6 \
-		lex/httplex \
 		nettest \
 		netutil \
 		proxy \
