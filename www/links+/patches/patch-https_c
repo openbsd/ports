@@ -1,8 +1,8 @@
-$OpenBSD: patch-https_c,v 1.6 2018/04/26 00:35:53 bcallah Exp $
+$OpenBSD: patch-https_c,v 1.7 2018/09/23 20:12:32 sthen Exp $
 Index: https.c
 --- https.c.orig
 +++ https.c
-@@ -261,6 +261,11 @@ links_ssl *getSSL(void)
+@@ -264,6 +264,11 @@ links_ssl *getSSL(void)
  					RAND_write_file(cast_const_char f_randfile);
  			}
  		}
