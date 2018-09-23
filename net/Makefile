@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1084 2018/09/19 08:39:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1085 2018/09/23 17:03:55 awolk Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -49,7 +49,6 @@
      SUBDIR += clive
      SUBDIR += cnupm
      SUBDIR += coccinella
-     SUBDIR += corebird
      SUBDIR += cppzmq
      SUBDIR += crawl
      SUBDIR += ctrace
