@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/14 14:15:40 jsing Exp $
+# $OpenBSD: Makefile,v 1.7 2018/09/23 17:20:21 jsing Exp $
 
 COMMENT =	Go text processing support
-DISTNAME =	go-text-20180216
+DISTNAME =	go-text-20180825
 GH_ACCOUNT =	golang
 GH_PROJECT =	text
-GH_COMMIT =	4e4a3210bb54bb31f6ab2cdca2edcc0b50c420c1
+GH_COMMIT =	6e3c4e7365ddcc329f090f96e4348398f6310088
 CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/text
@@ -51,6 +51,9 @@ _SUBPKGS =	cases \
 		internal/export/idna \
 		internal/format \
 		internal/gen \
+		internal/gen/bitfield \
+		internal/language \
+		internal/language/compact \
 		internal/number \
 		internal/stringset \
 		internal/tag \
