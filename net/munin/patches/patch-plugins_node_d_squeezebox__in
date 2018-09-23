@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_node_d_squeezebox__in,v 1.5 2018/07/26 19:17:44 kirby Exp $
+$OpenBSD: patch-plugins_node_d_squeezebox__in,v 1.6 2018/09/23 13:47:59 kirby Exp $
 
 seq -> jot (handily avoiding the need for bashisms)
 correct nc path
@@ -20,8 +20,8 @@ Index: plugins/node.d/squeezebox_.in
 -	(( no_of_years-- )) # We don't need that last entry in the array
  	if [ "$1" = "config" ]; then
                  echo "graph_title Number of years"
-                 echo "graph_category radio"
-@@ -152,7 +151,7 @@ if [ "$CMD" = "years" ]; then
+                 echo "graph_vlabel years"
+@@ -153,7 +152,7 @@ if [ "$CMD" = "years" ]; then
  		printf "graph_order y"
                  echo "${years_array// / y}"
  
@@ -30,7 +30,7 @@ Index: plugins/node.d/squeezebox_.in
                          year=${arr1[$i]}
                          if [ "$year" = 0 ]; then
                                  echo "y0.label No year"
-@@ -167,7 +166,7 @@ if [ "$CMD" = "years" ]; then
+@@ -168,7 +167,7 @@ if [ "$CMD" = "years" ]; then
                  done
                  exit 0
          fi
@@ -39,7 +39,7 @@ Index: plugins/node.d/squeezebox_.in
                  year=${arr1[$i]}
                  printf "y%s.value " "$year"
                  printf "%b" "albums 0 0 year:${year}\\nexit\\n" | "$NC" "$HOST" "$PORT" | sed 's/%3A/:/g' | cut -d ':' -f 3
-@@ -178,7 +177,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
+@@ -180,7 +179,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
              echo "graph_category radio"
              COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
              (( COUNT-- ))
@@ -48,7 +48,7 @@ Index: plugins/node.d/squeezebox_.in
                  MAC=$(printf "%b" "player id $ID ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%3A/:/g')
                  NAME=$(printf "%b" "player name $MAC ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%20/ /g')
                  MAC2=${MAC//:/}
-@@ -189,7 +188,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
+@@ -191,7 +190,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
          fi
          COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
          (( COUNT-- ))

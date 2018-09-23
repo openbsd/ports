@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_node_d_openbsd_if__in,v 1.5 2018/05/15 05:48:32 florian Exp $
+$OpenBSD: patch-plugins_node_d_openbsd_if__in,v 1.6 2018/09/23 13:47:59 kirby Exp $
 Index: plugins/node.d.openbsd/if_.in
 --- plugins/node.d.openbsd/if_.in.orig
 +++ plugins/node.d.openbsd/if_.in
@@ -12,7 +12,7 @@ Index: plugins/node.d.openbsd/if_.in
 -# ...will monitor eth0.
 +# ...will monitor em0.
  #
- # To aggregate all network interfaces on the system (except lo0), 
+ # To aggregate all network interfaces on the system (except lo0),
  # link if_aggregated to this file.
 @@ -37,7 +37,7 @@ if [ "$1" = "suggest" ]; then
  		ifconfig -l | sed -Ee 's/[[:<:]](pfsync|faith|pf(log|sync)|lo|plip|carp|enc|fwe)[^ ]*//g' | xargs -n 1 echo
@@ -37,12 +37,12 @@ Index: plugins/node.d.openbsd/if_.in
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
 -/<Link#[0-9]*>/ {
--	if (NF == 10) { 
+-	if (NF == 10) {
 -		rsum += $6; osum += $9;
-+/<Link>/ {
-+	if (NF == 5) { 
+++/<Link>/ {
++	if (NF == 5) {
 +		rsum += $4; osum += $5;
-+	} else if (NF == 6) { 
++	} else if (NF == 6) {
 +		rsum += $5; osum += $6;
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
@@ -57,18 +57,18 @@ Index: plugins/node.d.openbsd/if_.in
  }
  END {
 @@ -89,17 +91,20 @@ END {
-   
+ 
  else
  	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '
 -/<Link#[0-9]*>/ {
--	if (NF == 10) { 
+-	if (NF == 10) {
 -		print "rbytes.value", $6;
 -		print "obytes.value", $9;
 +/<Link>/ {
-+	if (NF == 5) { 
++	if (NF == 5) {
 +		print "rbytes.value", $4;
 +		print "obytes.value", $5;
-+	} else 	if (NF == 6) { 
++	} else  if (NF == 6) {
 +		print "rbytes.value", $5;
 +		print "obytes.value", $6;
  	} else if (NF == 11) {

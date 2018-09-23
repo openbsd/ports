@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_node_d_openbsd_if_packets__in,v 1.1 2018/04/01 08:21:01 kirby Exp $
+$OpenBSD: patch-plugins_node_d_openbsd_if_packets__in,v 1.2 2018/09/23 13:47:59 kirby Exp $
 
 Index: plugins/node.d.openbsd/if_packets_.in
 --- plugins/node.d.openbsd/if_packets_.in.orig
@@ -17,10 +17,10 @@ Index: plugins/node.d.openbsd/if_packets_.in
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
 -/<Link#[0-9]*>/ {
--	if (NF == 10) { 
+-	if (NF == 10) {
 -		rsum += $4; osum += $7;
 +/<Link*>/ {
-+	if (NF == 5) { 
++	if (NF == 5) {
 +		rsum += $4; osum += $5;
  	} else if (NF == 11) {
  		if ($4 ~ /:/) {
