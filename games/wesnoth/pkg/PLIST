@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/08/26 12:24:50 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.40 2018/09/23 16:05:03 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -30,6 +30,7 @@ man/fi/man6/
 @man man/fi/man6/wesnothd.6
 man/fr/
 man/fr/man6/
+@man man/fr/man6/wesnoth.6
 @man man/fr/man6/wesnothd.6
 man/gl/
 man/gl/man6/
@@ -2570,6 +2571,9 @@ share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/leader.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/sand-storm.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/attacks/twister.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/campaign_image.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/halo/
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/halo/eloh-halo-back.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/halo/eloh-halo-bottom.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/items/
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/items/burial2.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/items/kaleh-dead.png
@@ -8951,6 +8955,10 @@ share/wesnoth/data/core/images/terrain/water/waves-convex-A11.png
 share/wesnoth/data/core/images/terrain/water/waves-convex-A12.png
 share/wesnoth/data/core/images/terrain/water/waves-convex-A13.png
 share/wesnoth/data/core/images/themes/
+share/wesnoth/data/core/images/themes/battery-bw-lighting-bolt.png
+share/wesnoth/data/core/images/themes/battery-bw.png
+share/wesnoth/data/core/images/themes/battery-lighting-bolt.png
+share/wesnoth/data/core/images/themes/battery.png
 share/wesnoth/data/core/images/themes/classic/
 share/wesnoth/data/core/images/themes/classic/mapframe_corner.png
 share/wesnoth/data/core/images/themes/classic/mapframe_top.png
@@ -14986,6 +14994,7 @@ share/wesnoth/data/test/scenarios/ai/config/simple_aspect.cfg
 share/wesnoth/data/test/scenarios/ai/modify/
 share/wesnoth/data/test/scenarios/ai/modify/aspects.cfg
 share/wesnoth/data/test/scenarios/break_replay_with_lua_random.cfg
+share/wesnoth/data/test/scenarios/bytecode.bin
 share/wesnoth/data/test/scenarios/characterize_pathfinding.cfg
 share/wesnoth/data/test/scenarios/conditionals.cfg
 share/wesnoth/data/test/scenarios/empty_test.cfg
@@ -15004,10 +15013,13 @@ share/wesnoth/data/test/scenarios/readme.txt
 share/wesnoth/data/test/scenarios/recruit_facing.cfg
 share/wesnoth/data/test/scenarios/sighted_events.cfg
 share/wesnoth/data/test/scenarios/store_locations.cfg
+share/wesnoth/data/test/scenarios/swarm_disables_upgrades.cfg
 share/wesnoth/data/test/scenarios/test_assert.cfg
 share/wesnoth/data/test/scenarios/test_berzerk_firststrike.cfg
 share/wesnoth/data/test/scenarios/test_check_victory.cfg
 share/wesnoth/data/test/scenarios/test_clear.cfg
+share/wesnoth/data/test/scenarios/test_cve_2018_1999023.cfg
+share/wesnoth/data/test/scenarios/test_cve_2018_1999023_2.cfg
 share/wesnoth/data/test/scenarios/test_dofile.cfg
 share/wesnoth/data/test/scenarios/test_end_turn.cfg
 share/wesnoth/data/test/scenarios/test_event_names_and_order.cfg
@@ -15141,6 +15153,18 @@ share/wesnoth/data/tools/helptrailer.html
 share/wesnoth/data/tools/hexometer.py
 share/wesnoth/data/tools/imgcheck
 share/wesnoth/data/tools/journeylifter
+share/wesnoth/data/tools/pywmlx/
+share/wesnoth/data/tools/pywmlx/__init__.py
+share/wesnoth/data/tools/pywmlx/autof.py
+share/wesnoth/data/tools/pywmlx/nodemanip.py
+share/wesnoth/data/tools/pywmlx/postring.py
+share/wesnoth/data/tools/pywmlx/state/
+share/wesnoth/data/tools/pywmlx/state/__init__.py
+share/wesnoth/data/tools/pywmlx/state/lua_states.py
+share/wesnoth/data/tools/pywmlx/state/machine.py
+share/wesnoth/data/tools/pywmlx/state/state.py
+share/wesnoth/data/tools/pywmlx/state/wml_states.py
+share/wesnoth/data/tools/pywmlx/wmlerr.py
 share/wesnoth/data/tools/rmtrans/
 share/wesnoth/data/tools/rmtrans/README.md
 share/wesnoth/data/tools/rmtrans/rmtrans.py
@@ -15185,6 +15209,7 @@ share/wesnoth/data/tools/wmllint-1.4
 share/wesnoth/data/tools/wmlscope
 share/wesnoth/data/tools/wmlunits
 share/wesnoth/data/tools/wmlvalidator
+share/wesnoth/data/tools/wmlxgettext
 share/wesnoth/fonts/
 share/wesnoth/fonts/Andagii.ttf
 share/wesnoth/fonts/COPYING
