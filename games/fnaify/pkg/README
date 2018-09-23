@@ -1,0 +1,37 @@
+$OpenBSD: README,v 1.1.1.1 2018/09/23 18:39:34 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Obtaining FNA games for OpenBSD
+===============================
+
+Obtain the Linux version of the game and extract it, usually simply with the
+unzip package, even if there is no filename extension or the extension is .sh
+as with GOG.com or HumbleBundle games.
+
+Running FNA games
+=================
+
+Enter directory of the game where FNA.dll is located. Run:
+
+$ fnaify
+
+in that directory. If everything works as expected, it will tell you how to run
+the game at the end of the script; typically by invoking the launch script.
+
+Some games known to work
+========================
+
+- Chasm
+- Cryptark
+- Dust: An Elysian Tail
+- FEZ
+- Hacknet
+- Owlboy
+- Rogue Legacy
+- Skulls of the Shogun
+- Stardew Valley
+
+More up-to-date information can be found (soon) at https://www.PlayOnBSD.com/.
