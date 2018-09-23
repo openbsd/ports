@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/03/14 14:19:18 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/09/23 17:22:13 jsing Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
@@ -7,7 +7,10 @@ ${MODGO_PACKAGES}/golang.org/x/
 ${MODGO_PACKAGES}/golang.org/x/crypto/
 ${MODGO_PACKAGES}/golang.org/x/crypto/acme/
 ${MODGO_PACKAGES}/golang.org/x/crypto/acme.a
+${MODGO_PACKAGES}/golang.org/x/crypto/acme/autocert/
 ${MODGO_PACKAGES}/golang.org/x/crypto/acme/autocert.a
+${MODGO_PACKAGES}/golang.org/x/crypto/acme/autocert/internal/
+${MODGO_PACKAGES}/golang.org/x/crypto/acme/autocert/internal/acmetest.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/argon2.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/bcrypt.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/blake2b.a
@@ -27,11 +30,13 @@ ${MODGO_PACKAGES}/golang.org/x/crypto/ed25519/internal/edwards25519.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/hkdf.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/internal/
 ${MODGO_PACKAGES}/golang.org/x/crypto/internal/chacha20.a
+${MODGO_PACKAGES}/golang.org/x/crypto/internal/subtle.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/md4.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/auth.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/box.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/nacl/secretbox.a
+${MODGO_PACKAGES}/golang.org/x/crypto/nacl/sign.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/ocsp.a
 ${MODGO_PACKAGES}/golang.org/x/crypto/openpgp/
 ${MODGO_PACKAGES}/golang.org/x/crypto/openpgp.a
@@ -84,9 +89,14 @@ ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/autocert_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/cache_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/example_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/internal/
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/internal/acmetest/
+${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/internal/acmetest/ca.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/listener.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/renewal.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/autocert/renewal_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/http.go
+${MODGO_SOURCES}/golang.org/x/crypto/acme/http_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/jws.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/jws_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/acme/types.go
@@ -152,6 +162,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/chacha20poly1305_generic.g
 ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/chacha20poly1305_noasm.go
 ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/chacha20poly1305_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/chacha20poly1305_vectors_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/chacha20poly1305/xchacha20poly1305.go
 ${MODGO_SOURCES}/golang.org/x/crypto/codereview.cfg
 ${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/
 ${MODGO_SOURCES}/golang.org/x/crypto/cryptobyte/asn1/
@@ -190,7 +201,16 @@ ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/hkdf_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_generic.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_noasm.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_s390x.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_s390x.s
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/vectors_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/xor.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/subtle/
+${MODGO_SOURCES}/golang.org/x/crypto/internal/subtle/aliasing.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/subtle/aliasing_appengine.go
+${MODGO_SOURCES}/golang.org/x/crypto/internal/subtle/aliasing_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/md4/md4.go
@@ -209,6 +229,9 @@ ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/example_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/secretbox.go
 ${MODGO_SOURCES}/golang.org/x/crypto/nacl/secretbox/secretbox_test.go
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/sign/
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/sign/sign.go
+${MODGO_SOURCES}/golang.org/x/crypto/nacl/sign/sign_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ocsp/
 ${MODGO_SOURCES}/golang.org/x/crypto/ocsp/ocsp.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ocsp/ocsp_test.go
@@ -302,7 +325,12 @@ ${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_amd64.go
 ${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_arm.go
 ${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_arm.s
+${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_noasm.go
 ${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_ref.go
+${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_s390x.go
+${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_s390x.s
+${MODGO_SOURCES}/golang.org/x/crypto/poly1305/sum_vmsl_s390x.s
+${MODGO_SOURCES}/golang.org/x/crypto/poly1305/vectors_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ripemd160/
 ${MODGO_SOURCES}/golang.org/x/crypto/ripemd160/ripemd160.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ripemd160/ripemd160_test.go
@@ -324,13 +352,17 @@ ${MODGO_SOURCES}/golang.org/x/crypto/scrypt/scrypt_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/doc.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/hashes.go
+${MODGO_SOURCES}/golang.org/x/crypto/sha3/hashes_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/keccakf.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/keccakf_amd64.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/keccakf_amd64.s
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/register.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/sha3.go
+${MODGO_SOURCES}/golang.org/x/crypto/sha3/sha3_s390x.go
+${MODGO_SOURCES}/golang.org/x/crypto/sha3/sha3_s390x.s
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/sha3_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/shake.go
+${MODGO_SOURCES}/golang.org/x/crypto/sha3/shake_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/testdata/
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/testdata/keccakKats.json.deflate
 ${MODGO_SOURCES}/golang.org/x/crypto/sha3/xor.go
