@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2018/05/10 18:39:35 kn Exp $
+# $OpenBSD: Makefile,v 1.54 2018/09/23 17:19:10 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.10.1
+VERSION =		1.11
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME =		go${VERSION}
 PKGNAME =		go-${VERSION}
@@ -65,13 +65,15 @@ do-build:
 		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
 		    ./make.bash --no-banner
 
+# The regress framework leaks fd 3 and 4 into this execution,
+# which breaks Go's (now rather fragile) os/exec tests.
 do-test:
 	@cd ${WRKSRC} && \
 		ulimit -n 256 -d 2097152 && \
+		CC="${CC}" \
+		CXX="${CXX}" \
 		PATH=${WRKDIST}/bin:${PATH} \
-		GOROOT=${WRKDIST} \
-		GOCACHE=off \
-		    ./run.bash
+		    /bin/ksh -c "exec 3>&-; exec 4>&-; ./run.bash"
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
