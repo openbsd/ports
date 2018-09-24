@@ -1,4 +1,4 @@
-$OpenBSD: patch-ir_be_amd64_amd64_bearch_c,v 1.1 2018/06/15 01:04:54 bcallah Exp $
+$OpenBSD: patch-ir_be_amd64_amd64_bearch_c,v 1.2 2018/09/24 02:12:35 bcallah Exp $
 
 We hereby declare the amd64 backend no longer experimental.
 It compiles the vast majority of OpenBSD C code just fine.
@@ -6,7 +6,7 @@ It compiles the vast majority of OpenBSD C code just fine.
 Index: ir/be/amd64/amd64_bearch.c
 --- ir/be/amd64/amd64_bearch.c.orig
 +++ ir/be/amd64/amd64_bearch.c
-@@ -774,7 +774,6 @@ static void amd64_init(void)
+@@ -763,7 +763,6 @@ static void amd64_init(void)
  	amd64_cconv_init();
  	x86_set_be_asm_constraint_support(&amd64_asm_constraints);
  

@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/15 01:04:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/24 02:12:35 bcallah Exp $
 
 # Has backends for amd64, arm (32-bit), i386, mips (32-bit), sparc (32-bit)
 ONLY_FOR_ARCHS =	amd64 arm i386
 
 # Must keep version number in sync with lang/cparser
 COMMENT =	graph based intermediate representation and backend
-DISTNAME =	${GH_PROJECT}-1.22.1pl1
+DISTNAME =	${GH_PROJECT}-1.22.1pl2
 CATEGORIES =	devel
 
-SHARED_LIBS +=	firm                      1.0 # 1.0
+SHARED_LIBS +=	firm                      2.0 # 2.0
 
 # Upstream doesn't make real tarballs. Expects you to use tags/commits.
 GH_ACCOUNT =	libfirm
 GH_PROJECT =	libfirm
-GH_COMMIT =	eb9c7f9a2a6f28ce0ae94f449ceb9f30a25d939b
+GH_COMMIT =	b5269b56fc71ae323d344af3f6c28cf0a6a8ba4b
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

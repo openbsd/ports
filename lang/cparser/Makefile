@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/15 01:04:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/24 02:12:35 bcallah Exp $
 
 # Depends on devel/libfirm
 ONLY_FOR_ARCHS =	amd64 arm i386
 
 # Must keep version number in sync with devel/libfirm
 COMMENT =	C99 parser and frontend for libFirm
-DISTNAME =	${GH_PROJECT}-1.22.1pl1
+DISTNAME =	${GH_PROJECT}-1.22.1pl2
 CATEGORIES =	lang
 
 # Upstream expects you to use tags.
 GH_ACCOUNT =	libfirm
 GH_PROJECT =	cparser
-GH_COMMIT =	62acdfe4b7897b2107246376667e09fc30f84a76
+GH_COMMIT =	3e00440a231132c09af2927300bfdf57111e5564
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
