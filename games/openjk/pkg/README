@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
+$OpenBSD: README,v 1.3 2018/09/24 02:35:31 bcallah Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,7 +11,7 @@ Jedi Academy to work properly.  These can come from an original CD or
 from GOG.com.
 
 If using the GOG.com version, you must extract the files from
-setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331)_(g).exe
+setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331).exe
 using the innoextract package.
 
 The files will be in a directory named app. Inside the app directory,
@@ -21,7 +21,7 @@ a directory named base. This base directory must be moved to
 
 The easiest way to do this is to follow these steps:
 $ mkdir -p ~/.local/share/openjk
-$ innoextract setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331)_(g).exe
+$ innoextract setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331).exe
 $ cd app/GameData
 $ cp -R base ~/.local/share/openjk
 
