@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/02/23 19:17:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/24 20:54:30 sthen Exp $
 
 MULTI_PACKAGES=	-main -urlcheck
 COMMENT-main=	libclamav-based virus scanner for c-icap
 COMMENT-urlcheck= basic URL filtering service for c-icap
 
-V=		0.4.5
-REVISION=	1
+V=		0.5.2
 DISTNAME=	c_icap_modules-$V
 PKGNAME-main=	c-icap-clamav-$V
 PKGNAME-urlcheck= c-icap-urlcheck-$V
@@ -25,9 +24,9 @@ RUN_DEPENDS$i = www/c-icap/c-icap>=0.4.1
 cWANTLIB=	bz2 pthread z
 
 LIB_DEPENDS-main=	security/clamav
-WANTLIB-main=		${cWANTLIB}
-WANTLIB-main+=		clamav crypto iconv ltdl lzma m pcre2-8 pthread ssl \
-			xml2 z
+WANTLIB-main += ${cWANTLIB}
+WANTLIB-main += clamav clammspack crypto iconv json-c ltdl lzma m pcre2-8
+WANTLIB-main += ssl xml2
 
 LIB_DEPENDS-urlcheck=	archivers/bzip2 \
 			databases/db/v4 \
