@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:09 espie Exp $
+$OpenBSD: README,v 1.5 2018/09/24 21:44:47 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -19,15 +19,11 @@ OAuth token for Discogs; if updating from an older version and this no
 longer works, you may need to "rm ~/.config/beets/discogs_token.json"
 and login again.
 
-chroma: This plugin is for acoustic fingerprinting. Install py-acoustid
+chroma: This plugin is for acoustic fingerprinting. Install py3-acoustid
 and add 'chroma' to the plugins: line.
 
-replaygain: This plugin adds support for ReplayGain, a technique for
-normalizing audio playback levels. Install the mp3gain or aacgain packages
-and add 'replaygain' to the plugins: line.
-
 web: The web plugin lets your browse and listen to your library through
-an HTML5 compatible browser. Install the py-flask package and add 'web'
+an HTML5 compatible browser. Install the py3-flask package and add 'web'
 to the plugins: line.
 
-See http://beets.readthedocs.org/en/latest/plugins/ for a complete list.
+See https://beets.readthedocs.io/en/latest/plugins/ for a complete list.
