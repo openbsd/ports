@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2018/05/05 23:36:06 jturner Exp $
+# $OpenBSD: Makefile,v 1.67 2018/09/24 01:41:51 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-2.6
-PKGNAME =		fossil-2.6
+DISTNAME =		fossil-src-2.7
+PKGNAME =		fossil-2.7
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -22,6 +22,7 @@ FLAVOR?=
 WANTLIB =		c crypto fuse m ssl z
 
 MODULES =		lang/tcl
+MODTCL_VERSION =	8.6
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
