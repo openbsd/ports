@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_install_sh,v 1.1 2018/09/24 21:01:34 sthen Exp $
+
+Index: tests/test_install.sh
+--- tests/test_install.sh.orig
++++ tests/test_install.sh
+@@ -1,7 +1,7 @@
+ #/usr/bin/env sh
+ set -e
+ 
+-make="make -C $lz4_root"
++make="${MAKE_PROGRAM:=make} -C $lz4_root"
+ for cmd in install uninstall; do
+   for upper in DUMMY PREFIX EXEC_PREFIX LIBDIR INCLUDEDIR PKGCONFIGDIR BINDIR MANDIR MAN1DIR ; do
+     lower=$(echo $upper | tr '[:upper:]' '[:lower:]')
