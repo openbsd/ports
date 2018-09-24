@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/07/04 11:06:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2018/09/24 20:54:39 sthen Exp $
 @newgroup _c-icap:716
 @newuser _c-icap:716:_c-icap:daemon:c-icap user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/c-icap/*
+@rcscript ${RCDIR}/c_icap
 @bin bin/c-icap
 @bin bin/c-icap-client
 bin/c-icap-config
@@ -69,5 +70,3 @@ share/examples/c-icap/c-icap.magic
 @owner _c-icap
 @sample /var/log/c-icap/
 @comment share/examples/c-icap/c-icap.magic.default
-@owner
-@rcscript ${RCDIR}/c_icap

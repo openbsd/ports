@@ -1,52 +1,33 @@
-$OpenBSD: patch-c-icap_conf_in,v 1.8 2017/07/04 11:06:27 sthen Exp $
---- c-icap.conf.in.orig	Mon Mar 27 09:17:57 2017
-+++ c-icap.conf.in	Tue Mar 28 14:27:46 2017
-@@ -407,7 +407,7 @@ RemoteProxyUserHeaderEncoded on
- # Default:
- #	No value
- # Example:
--#	basic_simple_db.UsersDB hash:/usr/local/c-icap/etc/c-icap-users.txt
-+#	basic_simple_db.UsersDB hash:@sysconfdir@/c-icap-users.txt
- 
- # TAG: GroupSourceByGroup
- # Format: GroupSourceByGroup LookupTable
-@@ -419,7 +419,7 @@ RemoteProxyUserHeaderEncoded on
- # Default:
- #	No set
- # Example:
--#	GroupSourceByGroup hash:/usr/local/c-icap/etc/c-icap-groups.txt
-+#	GroupSourceByGroup hash:@sysconfdir@/c-icap-groups.txt
- 
- # TAG: GroupSourceByUser
- # Format: GroupSourceByUser LookupTable
-@@ -431,7 +431,7 @@ RemoteProxyUserHeaderEncoded on
- # Default:
- #	No set
- # Example:
--#	GroupSourceByUser hash:/usr/local/c-icap/etc/c-icap-user-groups.txt
-+#	GroupSourceByUser hash:@sysconfdir@/c-icap-user-groups.txt
- 
- # TAG: acl
- # Format: acl name type[{param}] value1 [value2] [...]
-@@ -599,7 +599,7 @@ RemoteProxyUserHeaderEncoded on
+$OpenBSD: patch-c-icap_conf_in,v 1.9 2018/09/24 20:54:39 sthen Exp $
+Index: c-icap.conf.in
+--- c-icap.conf.in.orig
++++ c-icap.conf.in
+@@ -602,8 +602,8 @@ RemoteProxyUserHeaderEncoded on
+ #	store debugging information, errors and other
  #	information about the c-icap server.
  # Default:
- #	ServerLog @prefix@/var/log/server.log
+-#	ServerLog @prefix@/var/log/server.log
 -ServerLog @prefix@/var/log/server.log
++#	ServerLog /var/log/server.log
 +ServerLog /var/log/c-icap/server.log
  
  # TAG: AccessLog
  # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
-@@ -614,7 +614,7 @@ ServerLog @prefix@/var/log/server.log
- #	AccessLog @prefix@/var/log/access.log
+@@ -615,10 +615,10 @@ ServerLog @prefix@/var/log/server.log
+ #	This directive can be used more than once to specify more than
+ #	one access log files
+ # Default:
+-#	AccessLog @prefix@/var/log/access.log
++#	AccessLog /var/log/access.log
  # Example:
- #	AccessLog @prefix@/var/log/access.log MyFormat all
+-#	AccessLog @prefix@/var/log/access.log MyFormat all
 -AccessLog @prefix@/var/log/access.log
++#	AccessLog /var/log/access.log MyFormat all
 +#AccessLog /var/log/c-icap/access.log
  
  # TAG: Logger
  # Format: Logger LoggerName
-@@ -623,8 +623,7 @@ AccessLog @prefix@/var/log/access.log
+@@ -627,8 +627,7 @@ AccessLog @prefix@/var/log/access.log
  #	uses files for access and server logging.
  # Default:
  #	Logger file_logger
@@ -56,7 +37,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.8 2017/07/04 11:06:27 sthen Exp $
  
  # TAG: Module
  # Format: Module Type ModuleFile [forceUnload=off]
-@@ -714,6 +713,7 @@ Service echo srv_echo.so
+@@ -718,6 +717,7 @@ Service echo srv_echo.so
  # Example:
  #	Module logger sys_logger.so
  #	Logger sys_logger
