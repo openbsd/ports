@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/09/24 06:44:32 landry Exp $
 @conflict xfce4-battery-plugin-*
 lib/xfce4/panel/plugins/libbattery.so
 share/icons/hicolor/16x16/apps/xfce4-battery-critical-charging.png
@@ -44,6 +44,7 @@ share/icons/hicolor/scalable/apps/xfce4-battery-ok.svg
 share/icons/hicolor/scalable/apps/xfce4-battery-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-battery-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-battery-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-battery-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-battery-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-battery-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-battery-plugin.mo
