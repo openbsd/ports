@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1767 2018/09/15 13:17:31 edd Exp $
+# $OpenBSD: Makefile,v 1.1768 2018/09/24 15:49:38 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -792,6 +792,7 @@
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-IO-AIO
      SUBDIR += p5-IO-All
+     SUBDIR += p5-IO-BufferedSelect
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-CaptureOutput
      SUBDIR += p5-IO-Digest
