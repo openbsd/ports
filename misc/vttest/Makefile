@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/08/12 20:53:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/09/24 19:26:07 naddy Exp $
 
 COMMENT=	test VT100-type terminal
 
-DISTNAME=	vttest-20180811
+DISTNAME=	vttest-20180911
 CATEGORIES=	misc
 HOMEPAGE=	http://invisible-island.net/vttest/vttest.html
 
@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 MAKE_FILE=	makefile
 
