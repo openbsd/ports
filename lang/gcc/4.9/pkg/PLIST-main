@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/07/23 10:05:35 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2018/09/25 20:59:14 daniel Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -234,7 +234,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/varasm.h
 lib/gcc/${CONFIG}/${V}/plugin/include/vec.h
 lib/gcc/${CONFIG}/${V}/plugin/include/version.h
 lib/libatomic.a
-@comment %%alpha%%
+%%alpha%%
 %%amd64%%
 %%arm%%
 %%hppa%%
