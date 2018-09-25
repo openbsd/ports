@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/06 20:27:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/09/25 08:48:59 bentley Exp $
 include/nsutils/
 include/nsutils/base64.h
+include/nsutils/endian.h
 include/nsutils/errors.h
 include/nsutils/time.h
 include/nsutils/unistd.h

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/07/18 10:46:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/25 08:48:59 bentley Exp $
 
 COMMENT =		W3C DOM implementation
 
 NETSURF_PROJECT =	libdom
-NETSURF_VERSION =	0.3.2
-REVISION =		0
+NETSURF_VERSION =	0.3.3
 
 SHARED_LIBS =		dom 1.0 #0.3.2
 

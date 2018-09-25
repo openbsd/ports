@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/18 10:46:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2018/09/25 08:48:58 bentley Exp $
 
 COMMENT =		makefiles for building NetSurf
 
 NETSURF_PROJECT =	buildsystem
-NETSURF_VERSION =	1.6
+NETSURF_VERSION =	1.7
 DISTNAME =		${NETSURF_PROJECT}-${NETSURF_VERSION}
 PKGNAME =		netsurf-${NETSURF_PROJECT}-${NETSURF_VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 

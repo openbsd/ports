@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/01 00:29:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/09/25 08:48:59 bentley Exp $
 @bin bin/netsurf-fb
 @man man/man1/netsurf-fb.1
 share/netsurf-fb/
-share/netsurf-fb/Messages
 share/netsurf-fb/adblock.css
 share/netsurf-fb/credits.html
 share/netsurf-fb/default.css

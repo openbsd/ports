@@ -1,7 +1,8 @@
-$OpenBSD: patch-makefiles_Makefile_top,v 1.4 2016/01/16 09:04:13 bentley Exp $
---- makefiles/Makefile.top.orig	Fri Dec 18 02:38:25 2015
-+++ makefiles/Makefile.top	Fri Jan 15 11:54:05 2016
-@@ -187,8 +187,8 @@ endif
+$OpenBSD: patch-makefiles_Makefile_top,v 1.5 2018/09/25 08:48:58 bentley Exp $
+Index: makefiles/Makefile.top
+--- makefiles/Makefile.top.orig
++++ makefiles/Makefile.top
+@@ -190,8 +190,8 @@ endif
  ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
    ifeq ($(findstring lib-shared,$(COMPONENT_TYPE)),lib-shared)
      SHAREDLIBNAME := lib$(COMPONENT)$(LIBEXT)
@@ -12,7 +13,7 @@ $OpenBSD: patch-makefiles_Makefile_top,v 1.4 2016/01/16 09:04:13 bentley Exp $
    else
      OUTPUT := $(BUILDDIR)/lib$(COMPONENT)$(LIBEXT)
    endif
-@@ -203,14 +203,6 @@ endif
+@@ -206,14 +206,6 @@ endif
  .PHONY: all test coverage profile docs clean distclean install uninstall \
  	__default __precov __partial_clean __postshared
  
@@ -27,7 +28,7 @@ $OpenBSD: patch-makefiles_Makefile_top,v 1.4 2016/01/16 09:04:13 bentley Exp $
  # Default target
  all: $(PRE_TARGETS) $(OUTPUT) $(POST_TARGETS)
  
-@@ -289,7 +281,7 @@ __libraries = $(if $(REQUIRED_LIBS),-l$(subst $(__spac
+@@ -295,7 +287,7 @@ __libraries = $(if $(REQUIRED_LIBS),-l$(subst $(__spac
  define install_pkgconfig
  	$(Q)$(ECHO) $(ECHOFLAGS) "sed -e... $1 >$(BUILDDIR)/$(1:.in=)"
  	$(Q)$(SED) \
@@ -36,7 +37,7 @@ $OpenBSD: patch-makefiles_Makefile_top,v 1.4 2016/01/16 09:04:13 bentley Exp $
  		-e 's#LIBDIR#$(LIBDIR)#' \
  		-e 's#MAJOR#$(major-version)#' \
  		-e 's#MINOR#$(minor-version)#' \
-@@ -307,8 +299,6 @@ endef
+@@ -313,8 +305,6 @@ endef
  # TODO: Is this scheme portable?
  define install_shared_lib
    $(INSTALL) $(INSTALLFLAGS) -m 755 $1 $2/$(notdir $1)
