@@ -1,0 +1,27 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2018/09/25 19:44:52 naddy Exp $
+
+COMMENT=	high-level API for encoding .opus files
+
+DISTNAME=	libopusenc-0.2
+SHARED_LIBS=	opusenc		0.0	# 4.2
+CATEGORIES=	audio
+
+HOMEPAGE=	https://opus-codec.org/
+
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	m opus
+
+MASTER_SITES=	https://archive.mozilla.org/pub/opus/
+
+LIB_DEPENDS=	audio/opus
+
+USE_GMAKE=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-maintainer-mode	# avoid autotools cascade
+CONFIGURE_ARGS+=--disable-doc			# requires doxygen
+
+.include <bsd.port.mk>

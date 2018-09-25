@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/25 19:44:52 naddy Exp $
+include/opus/opusenc.h
+lib/libopusenc.a
+lib/libopusenc.la
+@lib lib/libopusenc.so.${LIBopusenc_VERSION}
+lib/pkgconfig/libopusenc.pc
+share/doc/libopusenc/
+share/doc/libopusenc/AUTHORS
+share/doc/libopusenc/COPYING
+share/doc/libopusenc/README.md
