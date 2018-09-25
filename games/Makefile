@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.389 2018/09/23 18:44:17 thfr Exp $
+# $OpenBSD: Makefile,v 1.390 2018/09/25 08:53:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -55,6 +55,7 @@
      SUBDIR += clines
      SUBDIR += clonekeen
      SUBDIR += cmatrix
+     SUBDIR += colobot
      SUBDIR += connect4
      SUBDIR += corewars
      SUBDIR += corsixth
