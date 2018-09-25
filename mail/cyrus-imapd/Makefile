@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2018/08/13 13:10:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2018/09/25 02:50:19 bentley Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -6,6 +6,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.0.8
 DISTNAME=		cyrus-imapd-${V}
+REVISION=		0
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0
@@ -14,7 +15,7 @@ SHARED_LIBS +=	cyrus_sieve               0.0 # 0.0
 
 CATEGORIES=		mail
 
-HOMEPAGE=		http://www.cyrusimap.org/
+HOMEPAGE=		https://www.cyrusimap.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -25,7 +26,7 @@ WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
 WANTLIB += pthread sasl2 sqlite3 ssl ${COMPILER_LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
 
-MASTER_SITES=		http://cyrusimap.org/releases/ \
+MASTER_SITES=		https://www.cyrusimap.org/releases/ \
 			ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 			ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 

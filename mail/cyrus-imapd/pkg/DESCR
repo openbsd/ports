@@ -12,4 +12,4 @@ control lists on mailboxes and storage quotas on mailbox hierarchies.
 WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to map_refresh on
 every lock which will incure a performance penalty under high load. See this
 bugreport for details:
-    http://bugzilla.cyrusimap.org/show_bug.cgi?id=3370
+    https://github.com/cyrusimap/cyrus-imapd/issues/1280
