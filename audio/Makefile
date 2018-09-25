@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2018/08/29 21:20:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.404 2018/09/25 19:45:44 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -91,6 +91,7 @@
      SUBDIR += libnjb
      SUBDIR += libofa
      SUBDIR += libogg
+     SUBDIR += libopusenc
      SUBDIR += libsamplerate
      SUBDIR += libsidplay
      SUBDIR += libsndfile
