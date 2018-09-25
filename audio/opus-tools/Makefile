@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/30 19:45:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/25 19:52:24 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
-DISTNAME=	opus-tools-0.1.10
+DISTNAME=	opus-tools-0.2
 CATEGORIES=	audio
 
 HOMEPAGE=	https://opus-codec.org/
@@ -14,14 +14,18 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://archive.mozilla.org/pub/opus/
 
-LIB_DEPENDS=	audio/flac audio/libogg audio/opus
-WANTLIB=	FLAC c m ogg opus sndio
+LIB_DEPENDS=	audio/flac \
+		audio/libogg \
+		audio/libopusenc \
+		audio/opus \
+		audio/opusfile
+WANTLIB=	FLAC c crypto m ogg opus opusenc opusfile opusurl sndio ssl
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-maintainer-mode
 
-# OpenBSD uses PIE by default anyway on archs where it actually works
-CONFIGURE_ARGS+=--disable-pie
+# Don't interfere with OpenBSD defaults
+CONFIGURE_ARGS+=--disable-stack-protector --disable-pie
 
 .include <bsd.port.mk>
