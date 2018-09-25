@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_install_c,v 1.1 2018/09/25 19:04:32 jasper Exp $
+
+Index: src/install.c
+--- src/install.c.orig
++++ src/install.c
+@@ -839,6 +839,11 @@ main (int argc, char **argv)
+ 
+   setlocale (LC_ALL, "");
+ 
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++    g_printerr ("pledge\n");
++    return 1;
++  }
++
+   basename = g_path_get_basename (argv[0]);
+   if (g_strcmp0 (basename, "desktop-file-edit") == 0)
+     edit_mode = TRUE;
+@@ -853,6 +858,14 @@ main (int argc, char **argv)
+       group = g_option_group_new ("install", _("Installation options for desktop file"), _("Show desktop file installation options"), NULL, NULL);
+       g_option_group_add_entries (group, install_options);
+       g_option_context_add_group (context, group);
++    }
++  else
++    {
++      /* In edit mode we can drop the fattr pledge. */
++      if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++        g_printerr ("pledge in edit_mode\n");
++        return 1;
++      }
+     }
+ 
+   group = g_option_group_new ("edit", _("Edition options for desktop file"), _("Show desktop file edition options"), NULL, NULL);
