@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/06 11:51:33 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/25 21:16:37 sthen Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
 GH_TAGNAME =		v0.6.3
+REVISION =		0
 
 CATEGORIES =		devel
 
