@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2018/09/25 08:50:49 pvk Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
-V =			6.2.4
-DISTNAME =		elasticsearch-$V
+V =			6.4.1
+DISTNAME =		elasticsearch-oss-$V
+PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
-REVISION =		0
 
 HOMEPAGE =		https://www.elastic.co/products/elasticsearch
 
@@ -26,11 +26,13 @@ RUN_DEPENDS =		java/javaPathHelper \
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-SUBST_VARS +=		BASESYSCONFDIR V
+WRKDIST =		${WRKDIR}/elasticsearch-$V
+
+SUBST_VARS +=		BASESYSCONFDIR V VARBASE
 ES_HOME =		${PREFIX}/elasticsearch/
 
 do-install:
-	${SUBST_CMD} ${WRKSRC}/bin/elasticsearch-env
+	${SUBST_CMD} ${WRKSRC}/bin/elasticsearch-env ${WRKSRC}/config/{elasticsearch.yml,jvm.options}
 	rm ${WRKSRC}/bin/*.{bat,beforesubst,exe,orig} ${WRKSRC}/config/*.orig
 	sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' ${WRKSRC}/bin/*
 	${INSTALL_DATA_DIR} ${ES_HOME}/{bin,lib,modules,plugins}/ \

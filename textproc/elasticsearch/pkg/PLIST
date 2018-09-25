@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.30 2018/09/04 12:46:24 espie Exp $
-@ask-update elasticsearch-<2.0.0 Make sure your existing data is backed up
+@comment $OpenBSD: PLIST,v 1.31 2018/09/25 08:50:49 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/{elasticsearch.keystore,x-pack/}
 @extraunexec rm -rf ${PREFIX}/elasticsearch/{bin,plugins}/x-pack/
 @extraunexec rm -rf ${LOCALSTATEDIR}/elasticsearch/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/elasticsearch/*
+@rcscript ${RCDIR}/elasticsearch
 elasticsearch/
 @mode 0775
 @group _elasticsearch
@@ -13,6 +13,7 @@ elasticsearch/bin/
 @mode
 @group
 elasticsearch/bin/elasticsearch
+elasticsearch/bin/elasticsearch-cli
 elasticsearch/bin/elasticsearch-env
 elasticsearch/bin/elasticsearch-keystore
 elasticsearch/bin/elasticsearch-plugin
@@ -23,39 +24,40 @@ elasticsearch/lib/elasticsearch-${V}.jar
 elasticsearch/lib/elasticsearch-cli-${V}.jar
 elasticsearch/lib/elasticsearch-core-${V}.jar
 elasticsearch/lib/elasticsearch-launchers-${V}.jar
+elasticsearch/lib/elasticsearch-secure-sm-${V}.jar
+elasticsearch/lib/elasticsearch-x-content-${V}.jar
 elasticsearch/lib/hppc-0.7.1.jar
 elasticsearch/lib/jackson-core-2.8.10.jar
 elasticsearch/lib/jackson-dataformat-cbor-2.8.10.jar
 elasticsearch/lib/jackson-dataformat-smile-2.8.10.jar
 elasticsearch/lib/jackson-dataformat-yaml-2.8.10.jar
+elasticsearch/lib/java-version-checker-${V}.jar
 elasticsearch/lib/jna-4.5.1.jar
-elasticsearch/lib/joda-time-2.9.9.jar
+elasticsearch/lib/joda-time-2.10.jar
 elasticsearch/lib/jopt-simple-5.0.2.jar
-elasticsearch/lib/jts-1.13.jar
-elasticsearch/lib/log4j-1.2-api-2.9.1.jar
-elasticsearch/lib/log4j-api-2.9.1.jar
-elasticsearch/lib/log4j-core-2.9.1.jar
-elasticsearch/lib/lucene-analyzers-common-7.2.1.jar
-elasticsearch/lib/lucene-backward-codecs-7.2.1.jar
-elasticsearch/lib/lucene-core-7.2.1.jar
-elasticsearch/lib/lucene-grouping-7.2.1.jar
-elasticsearch/lib/lucene-highlighter-7.2.1.jar
-elasticsearch/lib/lucene-join-7.2.1.jar
-elasticsearch/lib/lucene-memory-7.2.1.jar
-elasticsearch/lib/lucene-misc-7.2.1.jar
-elasticsearch/lib/lucene-queries-7.2.1.jar
-elasticsearch/lib/lucene-queryparser-7.2.1.jar
-elasticsearch/lib/lucene-sandbox-7.2.1.jar
-elasticsearch/lib/lucene-spatial-7.2.1.jar
-elasticsearch/lib/lucene-spatial-extras-7.2.1.jar
-elasticsearch/lib/lucene-spatial3d-7.2.1.jar
-elasticsearch/lib/lucene-suggest-7.2.1.jar
+elasticsearch/lib/jts-core-1.15.0.jar
+elasticsearch/lib/log4j-1.2-api-2.11.1.jar
+elasticsearch/lib/log4j-api-2.11.1.jar
+elasticsearch/lib/log4j-core-2.11.1.jar
+elasticsearch/lib/lucene-analyzers-common-7.4.0.jar
+elasticsearch/lib/lucene-backward-codecs-7.4.0.jar
+elasticsearch/lib/lucene-core-7.4.0.jar
+elasticsearch/lib/lucene-grouping-7.4.0.jar
+elasticsearch/lib/lucene-highlighter-7.4.0.jar
+elasticsearch/lib/lucene-join-7.4.0.jar
+elasticsearch/lib/lucene-memory-7.4.0.jar
+elasticsearch/lib/lucene-misc-7.4.0.jar
+elasticsearch/lib/lucene-queries-7.4.0.jar
+elasticsearch/lib/lucene-queryparser-7.4.0.jar
+elasticsearch/lib/lucene-sandbox-7.4.0.jar
+elasticsearch/lib/lucene-spatial-7.4.0.jar
+elasticsearch/lib/lucene-spatial-extras-7.4.0.jar
+elasticsearch/lib/lucene-spatial3d-7.4.0.jar
+elasticsearch/lib/lucene-suggest-7.4.0.jar
 elasticsearch/lib/plugin-classloader-${V}.jar
-elasticsearch/lib/plugin-cli-${V}.jar
-elasticsearch/lib/securesm-1.2.jar
 elasticsearch/lib/snakeyaml-1.17.jar
-elasticsearch/lib/spatial4j-0.6.jar
-elasticsearch/lib/t-digest-3.0.jar
+elasticsearch/lib/spatial4j-0.7.jar
+elasticsearch/lib/t-digest-3.2.jar
 elasticsearch/modules/
 elasticsearch/modules/aggs-matrix-stats/
 elasticsearch/modules/aggs-matrix-stats/aggs-matrix-stats-${V}.jar
@@ -64,6 +66,7 @@ elasticsearch/modules/analysis-common/
 elasticsearch/modules/analysis-common/analysis-common-${V}.jar
 elasticsearch/modules/analysis-common/plugin-descriptor.properties
 elasticsearch/modules/ingest-common/
+elasticsearch/modules/ingest-common/elasticsearch-grok-${V}.jar
 elasticsearch/modules/ingest-common/ingest-common-${V}.jar
 elasticsearch/modules/ingest-common/jcodings-1.0.12.jar
 elasticsearch/modules/ingest-common/joni-2.1.6.jar
@@ -74,7 +77,7 @@ elasticsearch/modules/lang-expression/asm-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
 elasticsearch/modules/lang-expression/asm-tree-5.0.4.jar
 elasticsearch/modules/lang-expression/lang-expression-${V}.jar
-elasticsearch/modules/lang-expression/lucene-expressions-7.2.1.jar
+elasticsearch/modules/lang-expression/lucene-expressions-7.4.0.jar
 elasticsearch/modules/lang-expression/plugin-descriptor.properties
 elasticsearch/modules/lang-expression/plugin-security.policy
 elasticsearch/modules/lang-mustache/
@@ -163,7 +166,3 @@ share/examples/elasticsearch/log4j2.properties
 @group _elasticsearch
 @sample ${LOCALSTATEDIR}/elasticsearch/
 @sample ${LOCALSTATEDIR}/log/elasticsearch/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/elasticsearch

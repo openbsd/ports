@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_elasticsearch_yml,v 1.4 2018/05/17 10:22:58 pvk Exp $
+$OpenBSD: patch-config_elasticsearch_yml,v 1.5 2018/09/25 08:50:49 pvk Exp $
 Index: config/elasticsearch.yml
 --- config/elasticsearch.yml.orig
 +++ config/elasticsearch.yml
@@ -7,20 +7,12 @@ Index: config/elasticsearch.yml
  # Path to directory where to store the data (separate multiple locations by comma):
  #
 -#path.data: /path/to/data
-+path.data: /var/elasticsearch/
++path.data: ${VARBASE}/elasticsearch/
  #
  # Path to log files:
  #
 -#path.logs: /path/to/logs
-+path.logs: /var/log/elasticsearch/
++path.logs: ${VARBASE}/log/elasticsearch/
  #
  # ----------------------------------- Memory -----------------------------------
  #
-@@ -86,3 +86,7 @@
- # Require explicit names when deleting indices:
- #
- #action.destructive_requires_name: true
-+#
-+# X-Pack Machine Learning is not supported on OpenBSD;
-+# uncomment if running with X-Pack:
-+#xpack.ml.enabled: false

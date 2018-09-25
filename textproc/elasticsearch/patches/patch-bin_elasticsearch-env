@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_elasticsearch-env,v 1.1 2018/05/17 10:22:58 pvk Exp $
+$OpenBSD: patch-bin_elasticsearch-env,v 1.2 2018/09/25 08:50:49 pvk Exp $
 
 Index: bin/elasticsearch-env
 --- bin/elasticsearch-env.orig
@@ -21,7 +21,7 @@ Index: bin/elasticsearch-env
  
  if [ -z "$ES_PATH_CONF" ]; then
    echo "ES_PATH_CONF must be set to the configuration path"
-@@ -85,6 +85,6 @@ if [ -z "$ES_TMPDIR" ]; then
+@@ -88,6 +88,6 @@ if [ -z "$ES_TMPDIR" ]; then
    if [ $mktemp_coreutils -eq 0 ]; then
      ES_TMPDIR=`mktemp -d --tmpdir "elasticsearch.XXXXXXXX"`
    else

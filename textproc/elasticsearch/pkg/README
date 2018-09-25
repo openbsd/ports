@@ -1,8 +1,13 @@
-$OpenBSD: README,v 1.7 2018/09/04 12:46:24 espie Exp $
+$OpenBSD: README,v 1.8 2018/09/25 08:50:49 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
+
+OpenBSD-specific Limitations
+============================
+1. OpenBSD is not on the list of supported platforms:
+https://www.elastic.co/support/matrix
 
 Initial Node/Cluster Configuration
 ==================================
@@ -24,8 +29,8 @@ Resource Limits: File Descriptors
 The minimum number of openfiles required for production Elasticsearch node
 is 65536. Elasticsearch will not start if openfiles limit is lower than this.
 
-OpenBSD's defaults are very conservative in allocation of system resources,
-in order to run Elasticsearch, the following steps required:
+OpenBSD's defaults are very conservative in allocation of system resources.
+In order to run Elasticsearch, the following steps required:
 
 1. Adjust kern.maxfiles:
 
@@ -64,12 +69,6 @@ as root, use doas(1):
 
 	# doas -u _elasticsearch \
 		${TRUEPREFIX}/elasticsearch/bin/elasticsearch-plugin install <plugin>
-
-Elastic X-Pack is available as separate OpenBSD package:
-
-	# pkg_add x-pack
-
-See X-Pack package README for more information.
 
 Upgrading ElasticSearch
 =======================
