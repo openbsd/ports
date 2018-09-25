@@ -1,7 +1,8 @@
-$OpenBSD: patch-build_moz_configure_init_configure,v 1.1 2018/09/16 16:32:14 landry Exp $
+$OpenBSD: patch-build_moz_configure_init_configure,v 1.2 2018/09/25 14:26:36 landry Exp $
 
 Fix build with rust 1.29.
 https://hg.mozilla.org/mozilla-central/rev/36f4ba2fb6f5
+https://hg.mozilla.org/releases/mozilla-esr60/rev/381ae910e9b2712699fdc6a9bb9702c04bccb8f5
 
 Index: build/moz.configure/init.configure
 --- build/moz.configure/init.configure.orig
