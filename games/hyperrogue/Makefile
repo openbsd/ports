@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/01 23:15:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/25 16:56:22 bcallah Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
-GH_TAGNAME =	10.4t
+GH_TAGNAME =	10.4w
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -40,7 +40,7 @@ AUTOMAKE_VERSION =	1.15
 # Correct version number
 # autoreconf taken from games/manaplus
 pre-configure:
-	sed -i 's,10.4i,10.4t,g' ${WRKSRC}/configure.ac
+	sed -i 's,10.4i,${GH_TAGNAME},g' ${WRKSRC}/configure.ac
 	cd ${WRKSRC} && \
 		${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
