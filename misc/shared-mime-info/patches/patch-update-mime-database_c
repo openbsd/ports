@@ -1,19 +1,25 @@
-$OpenBSD: patch-update-mime-database_c,v 1.6 2018/06/29 14:09:44 ajacoutot Exp $
+$OpenBSD: patch-update-mime-database_c,v 1.7 2018/09/25 19:07:11 jasper Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=104368
+- unveil: unveil the provided mime_dir
+- pledge: https://bugs.freedesktop.org/show_bug.cgi?id=104368
 
 Index: update-mime-database.c
 --- update-mime-database.c.orig
 +++ update-mime-database.c
-@@ -3679,6 +3679,11 @@ int main(int argc, char **argv)
- 		return EXIT_FAILURE;
- 	}
+@@ -3683,6 +3683,16 @@ int main(int argc, char **argv)
  
+ 	mime_dir = argv[optind];
+ 
++	if (unveil(mime_dir, "rwc") == -1) {
++		g_warning(_("unveil"));
++		return EXIT_FAILURE;
++	}
++
 +	if (pledge("stdio rpath wpath cpath getpw", NULL) == -1) {
 +		g_warning(_("pledge"));
 +		return EXIT_FAILURE;
 +	}
 +
- 	LIBXML_TEST_VERSION;
- 
- 	mime_dir = argv[optind];
+ 	/* Strip trailing / characters */
+ 	{
+ 		int l = strlen(mime_dir);
