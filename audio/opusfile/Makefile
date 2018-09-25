@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/10 15:30:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/09/25 19:50:07 naddy Exp $
 
 COMMENT =		high-level decoding and seeking API for Opus files
-DISTNAME =		opusfile-0.9
-REVISION =		0
+DISTNAME =		opusfile-0.11
 CATEGORIES =		audio
 
-SHARED_LIBS +=		opusfile                  1.0 # 4.2
-SHARED_LIBS +=		opusurl                   1.0 # 4.2
+SHARED_LIBS +=		opusfile                  1.0 # 4.4
+SHARED_LIBS +=		opusurl                   1.0 # 4.4
 
 HOMEPAGE =		https://opus-codec.org/
-MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
