@@ -1,9 +1,16 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:46:22 espie Exp $
+$OpenBSD: README,v 1.4 2018/09/25 09:00:06 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+OpenBSD-specific Limitations
+============================
+OpenBSD is not on the list of supported platforms:
+https://www.elastic.co/support/matrix
+
+Running Logstash
+================
 Logstash should be started with it's own uid/gid _logstash, since this user
 has all necessary filesystem permissions. For example, if you want to check
 the configuration, use doas(1):
@@ -12,11 +19,7 @@ the configuration, use doas(1):
 
 Or if you want to manage plugins:
 
-    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/plugin install <plugin>
-
-Elastic X-Pack is available as separate OpenBSD package:
-
-	# pkg_add x-pack
+    # doas -u _logstash ${TRUEPREFIX}/logstash/bin/logstash-plugin install <plugin>
 
 Upgrading Logstash
 ==================

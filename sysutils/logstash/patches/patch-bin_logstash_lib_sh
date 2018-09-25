@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_logstash_lib_sh,v 1.3 2018/05/17 10:50:12 pvk Exp $
+$OpenBSD: patch-bin_logstash_lib_sh,v 1.4 2018/09/25 09:00:06 pvk Exp $
 
 Index: bin/logstash.lib.sh
 --- bin/logstash.lib.sh.orig
 +++ bin/logstash.lib.sh
-@@ -23,10 +23,11 @@ else
+@@ -41,10 +41,11 @@ else
    SOURCEPATH="$0"
  fi
  
@@ -13,7 +13,7 @@ Index: bin/logstash.lib.sh
  export LOGSTASH_HOME
  export LS_HOME="${LOGSTASH_HOME}"
 -SINCEDB_DIR="${LOGSTASH_HOME}"
-+SINCEDB_DIR="${LOCALSTATEDIR}/db/logstash"
++SINCEDB_DIR="${LOCALSTATEDIR}/logstash"
  export SINCEDB_DIR
+ LOGSTASH_JARS=${LOGSTASH_HOME}/logstash-core/lib/jars
  
- # iterate over the command line args and look for the argument
