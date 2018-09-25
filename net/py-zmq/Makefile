@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/10 14:21:15 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2018/09/25 14:49:12 bket Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	17.1.2
+MODPY_EGG_VERSION =	16.0.3
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+EPOCH =			0
 
 CATEGORIES =		net devel
 
@@ -21,6 +22,10 @@ MODULES =		lang/python
 
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/zeromq
+
+# ssh tunnelling
+RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \
+			devel/py-pexpect${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_DISTUTILS_BUILDARGS =	--zmq=${LOCALBASE}

@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/10 14:21:15 danj Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/09/25 14:49:12 bket Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}_future.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/_future.py
 lib/python${MODPY_VERSION}/site-packages/zmq/asyncio/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/asyncio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/asyncio/${MODPY_PYCACHE}/
@@ -98,11 +96,9 @@ lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}_deprecated.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}future.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}ioloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/${MODPY_PYCACHE}zmqstream.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/_deprecated.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/future.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/ioloop.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/minitornado/
@@ -198,7 +194,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_constant
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_device.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_draft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_etc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_future.${MODPY_PYC_MAGIC_TAG}pyc
@@ -236,7 +231,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_constants.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_context.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_decorators.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_device.py
-lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_draft.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_error.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_etc.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_future.py
@@ -283,7 +277,6 @@ lib/python${MODPY_VERSION}/site-packages/zmq/utils/interop.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/ipcmaxlen.h
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/jsonapi.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/monitor.py
-lib/python${MODPY_VERSION}/site-packages/zmq/utils/mutex.h
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/pyversion_compat.h
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/sixcerpt.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/strtypes.py
