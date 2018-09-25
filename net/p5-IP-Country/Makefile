@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/14 13:02:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/25 16:48:55 giovanni Exp $
 
 COMMENT= 	fast lookup of country codes by IP address
 
 MODULES=	cpan
 PKG_ARCH=	*
-D=		20180614
+D=		20180918
 DISTNAME=	IP-Country-2.28
 PKGNAME=	p5-${DISTNAME}.$D
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
