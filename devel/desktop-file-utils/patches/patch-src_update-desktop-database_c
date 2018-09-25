@@ -1,14 +1,22 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.13 2017/12/22 09:47:55 jasper Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.14 2018/09/25 19:23:47 jasper Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=104367
+- unveil the required directory with .desktop files and where the cache file needs
+  to be written out to.
+- pledge
+  https://bugs.freedesktop.org/show_bug.cgi?id=104367
 
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -450,6 +450,11 @@ main (int    argc,
+@@ -450,6 +450,16 @@ main (int    argc,
       { NULL }
     };
  
++  if (unveil("${PREFIX}/share/applications", "rwc") == -1) {
++    g_printerr ("unveil\n");
++    return 1;
++  }
++
 +  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
 +    g_printerr ("pledge\n");
 +    return 1;
