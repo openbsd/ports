@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/25 08:53:04 bentley Exp $
+@bin bin/colobot
+lib/colobot/
+lib/colobot/libCBot.so
+share/colobot/shaders/
+share/colobot/shaders/gl21/
+share/colobot/shaders/gl21/fs_interface.glsl
+share/colobot/shaders/gl21/fs_normal.glsl
+share/colobot/shaders/gl21/fs_shadow.glsl
+share/colobot/shaders/gl21/vs_interface.glsl
+share/colobot/shaders/gl21/vs_normal.glsl
+share/colobot/shaders/gl21/vs_shadow.glsl
+share/colobot/shaders/gl33/
+share/colobot/shaders/gl33/fs_interface.glsl
+share/colobot/shaders/gl33/fs_normal.glsl
+share/colobot/shaders/gl33/fs_shadow.glsl
+share/colobot/shaders/gl33/vs_interface.glsl
+share/colobot/shaders/gl33/vs_normal.glsl
+share/colobot/shaders/gl33/vs_shadow.glsl
+share/locale/cs/LC_MESSAGES/colobot.mo
+share/locale/de/LC_MESSAGES/colobot.mo
+share/locale/fr/LC_MESSAGES/colobot.mo
+share/locale/pl/LC_MESSAGES/colobot.mo
+share/locale/ru/LC_MESSAGES/colobot.mo

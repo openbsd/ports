@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/25 08:53:05 bentley Exp $
+share/colobot/
+share/colobot/music/
+share/colobot/music/Constructive.ogg
+share/colobot/music/Humanitarian.ogg
+share/colobot/music/Hv2.ogg
+share/colobot/music/Infinite.ogg
+share/colobot/music/Intro1.ogg
+share/colobot/music/Intro2.ogg
+share/colobot/music/Proton.ogg
+share/colobot/music/Prototype.ogg
+share/colobot/music/Quite.ogg
+share/colobot/music/music002.ogg
+share/colobot/music/music003.ogg
+share/colobot/music/music004.ogg
+share/colobot/music/music005.ogg
+share/colobot/music/music006.ogg
+share/colobot/music/music007.ogg
+share/colobot/music/music008.ogg
+share/colobot/music/music009.ogg
+share/colobot/music/music010.ogg
+share/colobot/music/music011.ogg
+share/colobot/music/music012.ogg
+share/colobot/music/music013.ogg
