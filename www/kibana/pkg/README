@@ -1,9 +1,16 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:25 espie Exp $
+$OpenBSD: README,v 1.5 2018/09/25 09:01:52 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+OpenBSD-specific Limitations
+============================
+OpenBSD is not on the list of supported platforms:
+https://www.elastic.co/support/matrix
+
+Running Kibana
+==============
 On OpenBSD Kibana is installed in ${TRUEPREFIX}/kibana and runs as dedicated
 user _kibana.
 
@@ -11,7 +18,7 @@ Kibana log file is located at /var/log/kibana. Kibana currently does not
 support log rotation, please consider using newsyslog(8) for this purpose.
 
 Kibana Plugins Management
-================================
+=========================
 Kibana plugins management tasks must be run as _kibana user, please use
 doas(1), sudo(1) or su(1), e.g.
 
@@ -19,7 +26,3 @@ doas(1), sudo(1) or su(1), e.g.
 	<plugin>
     $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana-plugin remove \
 	<plugin>
-
-Elastic X-Pack is available as separate OpenBSD package:
-
-	# pkg_add x-pack
