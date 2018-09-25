@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_csync_std_c_private_h,v 1.1 2017/12/27 20:55:47 kirby Exp $
+$OpenBSD: patch-src_csync_std_c_private_h,v 1.2 2018/09/25 07:31:24 kirby Exp $
 
 Disable Thread-Local-Storage
 
 Index: src/csync/std/c_private.h
 --- src/csync/std/c_private.h.orig
 +++ src/csync/std/c_private.h
-@@ -160,7 +160,7 @@ typedef char           mbchar_t;
+@@ -156,7 +156,7 @@ typedef char           mbchar_t;
  #endif
  
  /* FIXME: Implement TLS for OS X */

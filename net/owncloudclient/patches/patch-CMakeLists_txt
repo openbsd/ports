@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2017/12/27 20:55:47 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2018/09/25 07:31:24 kirby Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -244,8 +244,8 @@ if(BUILD_CLIENT)
+@@ -189,8 +189,8 @@ if(BUILD_CLIENT)
      add_subdirectory(src)
      if(NOT BUILD_LIBRARIES_ONLY)
          add_subdirectory(man)

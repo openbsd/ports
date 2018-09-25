@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/25 07:31:24 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -18,9 +18,8 @@ include/owncloudsync/mirall/progressdispatcher.h
 include/owncloudsync/mirall/syncengine.h
 include/owncloudsync/mirall/syncfileitem.h
 include/owncloudsync/mirall/syncresult.h
+@lib lib/libowncloud_csync.so.${LIBowncloud_csync_VERSION}
 @lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
-lib/owncloud/
-@lib lib/owncloud/libocsync.so.${LIBocsync_VERSION}
 share/applications/owncloud.desktop
 share/caja-python/
 share/caja-python/extensions/
@@ -97,6 +96,7 @@ share/icons/hicolor/72x72/apps/ownCloud_sync.png
 share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
 share/icons/hicolor/72x72/apps/ownCloud_warn.png
 share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
+share/mime/packages/owncloud.xml
 share/nautilus-python/
 share/nautilus-python/extensions/
 share/nautilus-python/extensions/syncstate-ownCloud.py
@@ -139,3 +139,4 @@ share/owncloud/i18n/client_zh_CN.qm
 share/owncloud/i18n/client_zh_TW.qm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
