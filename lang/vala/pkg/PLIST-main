@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2018/06/21 17:23:36 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2018/09/25 19:32:47 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -94,6 +94,7 @@ share/vala-${API_V}/vapi/enchant.vapi
 share/vala-${API_V}/vapi/fuse.deps
 share/vala-${API_V}/vapi/fuse.vapi
 share/vala-${API_V}/vapi/gconf-2.0.vapi
+share/vala-${API_V}/vapi/gdesktopenums-3.0.vapi
 share/vala-${API_V}/vapi/gdk-2.0.deps
 share/vala-${API_V}/vapi/gdk-2.0.vapi
 share/vala-${API_V}/vapi/gdk-3.0.deps
@@ -127,6 +128,8 @@ share/vala-${API_V}/vapi/gnet-2.0.deps
 share/vala-${API_V}/vapi/gnet-2.0.vapi
 share/vala-${API_V}/vapi/gnome-desktop-2.0.deps
 share/vala-${API_V}/vapi/gnome-desktop-2.0.vapi
+share/vala-${API_V}/vapi/gnome-desktop-3.0.deps
+share/vala-${API_V}/vapi/gnome-desktop-3.0.vapi
 share/vala-${API_V}/vapi/gnome-vfs-2.0.vapi
 share/vala-${API_V}/vapi/gnutls.vapi
 share/vala-${API_V}/vapi/gobject-2.0.vapi
