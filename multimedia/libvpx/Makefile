@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2018/02/16 14:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2018/09/26 07:14:28 ajacoutot Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
-# XXX newer version requires __atomic builtins
-DISTNAME=	libvpx-1.6.1
+VER=		1.7.0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://storage.googleapis.com/downloads.webmproject.org/releases/webm/
-EXTRACT_SUFX=	.tar.bz2
 EPOCH=		0
+GH_ACCOUNT=	webmproject
+GH_PROJECT=	libvpx
+GH_TAGNAME=	v${VER}
 
-SHARED_LIBS=	vpx	10.0
+SHARED_LIBS=	vpx	11.0
 
 HOMEPAGE=	https://www.webmproject.org/
 
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${LIBCXX}
 
-COMPILER =	base-clang base-gcc
+# XXX requires __atomic builtins
+COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm
