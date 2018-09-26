@@ -1,4 +1,4 @@
-$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.5 2018/07/04 22:00:28 bcallah Exp $
+$OpenBSD: patch-runtime_flang_CMakeLists_txt,v 1.6 2018/09/26 18:31:46 bcallah Exp $
 
 Replace -lrt with -laio_compat
 Appease lld
@@ -16,7 +16,7 @@ Index: runtime/flang/CMakeLists.txt
  
  # We are using Fortran driver to build this library with fresh compiler
  # components, so point its binary directory to the build directory to pick up
-@@ -420,7 +420,7 @@ set(I8_FILES_DIR I8_sources)
+@@ -419,7 +419,7 @@ set(I8_FILES_DIR I8_sources)
  # Fortran files with macros as module names need to be preprocessed. 
  add_custom_command(
    OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
@@ -25,7 +25,7 @@ Index: runtime/flang/CMakeLists.txt
    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8 
    > "${I8_FILES_DIR}/ieee_arithmetic.F95"
    COMMENT "Preprocessing ieee_arithmetic.F95"
-@@ -429,7 +429,7 @@ add_custom_command(
+@@ -428,7 +428,7 @@ add_custom_command(
  
  add_custom_command(
    OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
@@ -34,7 +34,7 @@ Index: runtime/flang/CMakeLists.txt
    "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8 
    > "${I8_FILES_DIR}/ieee_exceptions.F95"
    COMMENT "Preprocessing ieee_exceptions.F95"
-@@ -479,7 +479,7 @@ add_flang_library(flang_shared
+@@ -478,7 +478,7 @@ add_flang_library(flang_shared
  set_property(TARGET flang_shared PROPERTY OUTPUT_NAME flang)
  target_link_libraries(flang_shared ${CMAKE_BINARY_DIR}/${CMAKE_CFG_INTDIR}/lib/libflangrti.so)
  # Resolve symbols against libm and librt

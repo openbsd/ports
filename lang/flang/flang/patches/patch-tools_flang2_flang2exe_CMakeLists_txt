@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_flang2_flang2exe_CMakeLists_txt,v 1.1 2018/06/27 00:09:26 bcallah Exp $
+$OpenBSD: patch-tools_flang2_flang2exe_CMakeLists_txt,v 1.2 2018/09/26 18:31:46 bcallah Exp $
 
 Eliminate the need for a post-patch copy.
 
 Index: tools/flang2/flang2exe/CMakeLists.txt
 --- tools/flang2/flang2exe/CMakeLists.txt.orig
 +++ tools/flang2/flang2exe/CMakeLists.txt
-@@ -101,7 +101,7 @@ set(INCLUDE_DIRS
+@@ -97,7 +97,7 @@ set(INCLUDE_DIRS
    ${FLANG_SOURCE_DIR}/lib/scutil
    ${CMAKE_CURRENT_SOURCE_DIR}
    ${CMAKE_CURRENT_BINARY_DIR}

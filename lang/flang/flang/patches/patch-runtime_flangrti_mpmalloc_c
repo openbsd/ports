@@ -1,0 +1,16 @@
+$OpenBSD: patch-runtime_flangrti_mpmalloc_c,v 1.1 2018/09/26 18:31:46 bcallah Exp $
+
+We don't have this include.
+
+Index: runtime/flangrti/mpmalloc.c
+--- runtime/flangrti/mpmalloc.c.orig
++++ runtime/flangrti/mpmalloc.c
+@@ -17,7 +17,7 @@
+ 
+ /* mp-safe wrappers for malloc, etc. */
+ 
+-#ifdef TARGET_LINUX
++#if defined(TARGET_LINUX) && !defined(__OpenBSD__)
+ #include <features.h>
+ #endif
+ 
