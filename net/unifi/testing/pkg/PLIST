@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/11 20:23:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/26 20:03:46 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -39,8 +39,8 @@ share/unifi/lib/aws-iot-device-sdk-java-1.1.1.jar
 share/unifi/lib/aws-java-sdk-cloudwatch-1.11.333.jar
 share/unifi/lib/aws-java-sdk-core-1.11.333.jar
 share/unifi/lib/aws-java-sdk-s3-1.11.333.jar
-share/unifi/lib/bcpkix-jdk15on-1.59.jar
-share/unifi/lib/bcprov-jdk15on-1.59.jar
+share/unifi/lib/bcpkix-jdk15on-1.60.jar
+share/unifi/lib/bcprov-jdk15on-1.60.jar
 share/unifi/lib/coloring-1.0.jar
 share/unifi/lib/commons-beanutils-1.9.3.jar
 share/unifi/lib/commons-codec-1.11.jar
@@ -112,13 +112,13 @@ share/unifi/lib/spring-expression-5.0.8.RELEASE.jar
 share/unifi/lib/spring-test-5.0.8.RELEASE.jar
 share/unifi/lib/spring-web-5.0.8.RELEASE.jar
 share/unifi/lib/sshj-0.9.0.jar
-share/unifi/lib/tomcat-annotations-api-8.5.33.jar
-share/unifi/lib/tomcat-embed-core-8.5.33.jar
-share/unifi/lib/tomcat-embed-el-8.5.33.jar
-share/unifi/lib/tomcat-embed-jasper-8.5.33.jar
+share/unifi/lib/tomcat-annotations-api-8.5.34.jar
+share/unifi/lib/tomcat-embed-core-8.5.34.jar
+share/unifi/lib/tomcat-embed-el-8.5.34.jar
+share/unifi/lib/tomcat-embed-jasper-8.5.34.jar
 share/unifi/lib/tomcat-embed-logging-juli-8.5.2.jar
 share/unifi/lib/tomcat-embed-logging-log4j-8.5.2.jar
-share/unifi/lib/tomcat-embed-websocket-8.5.33.jar
+share/unifi/lib/tomcat-embed-websocket-8.5.34.jar
 share/unifi/lib/urlrewritefilter-4.0.4.jar
 @owner _unifi
 share/unifi/logs
@@ -1606,6 +1606,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/ca/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/ca/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/ca/logs.json
@@ -1656,6 +1657,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/cs/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/cs/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/cs/logs.json
@@ -1706,6 +1708,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/da/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/da/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/da/logs.json
@@ -1756,6 +1759,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/de_DE/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/de_DE/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/de_DE/logs.json
@@ -1807,6 +1811,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/el/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/el/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/el/logs.json
@@ -1857,6 +1862,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/en/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/en/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/en/logs.json
@@ -1907,6 +1913,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/es_ES/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/es_ES/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/es_ES/logs.json
@@ -1957,6 +1964,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/fr/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/fr/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/fr/logs.json
@@ -2007,6 +2015,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/nl/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/nl/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/nl/logs.json
@@ -2057,6 +2066,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/pl/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/pl/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/pl/logs.json
@@ -2107,6 +2117,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/pt_PT/logs.json
@@ -2157,6 +2168,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/ru/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/ru/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/ru/logs.json
@@ -2207,6 +2219,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/sv/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/sv/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/sv/logs.json
@@ -2257,6 +2270,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/tr/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/tr/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/tr/logs.json
@@ -2307,6 +2321,7 @@ share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/hotspot.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/hotspotAnalytics.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/insights.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/ips.json
+share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/isp.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/knownClients.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/languages.json
 share/unifi/webapps/ROOT/app-unifi/locales/zh_CN/logs.json
