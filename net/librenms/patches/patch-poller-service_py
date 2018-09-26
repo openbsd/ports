@@ -1,0 +1,14 @@
+$OpenBSD: patch-poller-service_py,v 1.1 2018/09/26 22:51:28 sthen Exp $
+
+Index: poller-service.py
+--- poller-service.py.orig
++++ poller-service.py
+@@ -98,7 +98,7 @@ class DB:
+ 
+ 
+ def get_config_data():
+-    config_cmd = ['/usr/bin/env', 'php', '%s/config_to_json.php' % install_dir]
++    config_cmd = ['${MODPHP_BIN}', '%s/config_to_json.php' % install_dir]
+     try:
+         proc = subprocess.Popen(config_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+     except:

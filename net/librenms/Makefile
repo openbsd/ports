@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2018/09/10 18:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2018/09/26 22:51:28 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -7,6 +7,7 @@ GH_PROJECT =	librenms
 GH_TAGNAME =	1.43
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	net www
 
@@ -69,7 +70,7 @@ post-extract:
 	    ${WRKSRC}/librenms.nonroot.cron
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/.env.example
+	${SUBST_CMD} ${WRKSRC}/.env.example ${WRKSRC}/poller-service.py
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
