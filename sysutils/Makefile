@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.500 2018/09/18 16:53:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.501 2018/09/26 14:38:11 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -22,6 +22,7 @@
      SUBDIR += bchunk
      SUBDIR += bdfresize
      SUBDIR += beats
+     SUBDIR += bfs
      SUBDIR += binwalk
      SUBDIR += bitrot
      SUBDIR += boar
