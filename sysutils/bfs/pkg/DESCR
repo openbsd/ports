@@ -1,0 +1,8 @@
+bfs is a variant of the UNIX find command that operates breadth-first
+rather than depth-first. It is otherwise intended to be compatible with
+many versions of find, including:
+
+* POSIX find
+* GNU find
+* {Free,Open,Net}BSD find
+* macOS find

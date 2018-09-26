@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/09/26 14:37:51 bcallah Exp $
+
+Install manual page to the correct directory.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -72,8 +72,8 @@ clean:
+ install:
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/bin
+ 	$(INSTALL) -m755 bfs $(DESTDIR)$(PREFIX)/bin/bfs
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/man/man1
+-	$(INSTALL) -m644 bfs.1 $(DESTDIR)$(PREFIX)/share/man/man1/bfs.1
++	$(MKDIR) $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) -m644 bfs.1 $(DESTDIR)$(PREFIX)/man/man1/bfs.1
+ 
+ uninstall:
+ 	$(RM) $(DESTDIR)$(PREFIX)/bin/bfs
