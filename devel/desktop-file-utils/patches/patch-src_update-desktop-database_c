@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.14 2018/09/25 19:23:47 jasper Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.15 2018/09/27 06:34:34 jasper Exp $
 
 - unveil the required directory with .desktop files and where the cache file needs
   to be written out to.
@@ -8,14 +8,16 @@ $OpenBSD: patch-src_update-desktop-database_c,v 1.14 2018/09/25 19:23:47 jasper 
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -450,6 +450,16 @@ main (int    argc,
+@@ -450,6 +450,18 @@ main (int    argc,
       { NULL }
     };
  
++#ifdef notyet
 +  if (unveil("${PREFIX}/share/applications", "rwc") == -1) {
 +    g_printerr ("unveil\n");
 +    return 1;
 +  }
++#endif
 +
 +  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
 +    g_printerr ("pledge\n");
