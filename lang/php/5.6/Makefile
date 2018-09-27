@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2018/09/27 16:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2018/09/27 22:50:53 sthen Exp $
 
 PV=		5.6
 V=		${PV}.38
@@ -10,7 +10,7 @@ FLAVORS=	no_suhosin
 FLAVOR?=
 
 SUHOSIN_V=	0.9.38
-PKGSTEM-main =	php-5.6
+PKGSTEM-main=	php-5.6
 
 SUPDISTFILES=	suhosin-${SUHOSIN_V}.tar.gz:0
 
