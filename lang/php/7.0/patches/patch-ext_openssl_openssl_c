@@ -1,54 +1,23 @@
-$OpenBSD: patch-ext_openssl_openssl_c,v 1.3 2018/03/01 10:15:02 sthen Exp $
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.4 2018/09/27 22:55:53 sthen Exp $
 
 Index: ext/openssl/openssl.c
 --- ext/openssl/openssl.c.orig
 +++ ext/openssl/openssl.c
-@@ -543,10 +543,12 @@ ZEND_GET_MODULE(openssl)
+@@ -542,7 +542,7 @@ ZEND_GET_MODULE(openssl)
+ #endif
  
  /* {{{ OpenSSL compatibility functions and macros */
- #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined (LIBRESSL_VERSION_NUMBER)
-+#define EVP_PKEY_get0_EC_KEY(_pkey) _pkey->pkey.ec
-+
-+#if !defined (LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x2070000fL
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined (LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
  #define EVP_PKEY_get0_RSA(_pkey) _pkey->pkey.rsa
  #define EVP_PKEY_get0_DH(_pkey) _pkey->pkey.dh
  #define EVP_PKEY_get0_DSA(_pkey) _pkey->pkey.dsa
--#define EVP_PKEY_get0_EC_KEY(_pkey) _pkey->pkey.ec
- 
- static int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d)
- {
-@@ -658,28 +660,28 @@ static const unsigned char *ASN1_STRING_get0_data(cons
- {
+@@ -659,7 +659,7 @@ static const unsigned char *ASN1_STRING_get0_data(cons
  	return M_ASN1_STRING_data(asn1);
  }
-+#endif
  
 -#if OPENSSL_VERSION_NUMBER < 0x10002000L || defined (LIBRESSL_VERSION_NUMBER)
--
-+#if OPENSSL_VERSION_NUMBER < 0x10002000L || \
-+	(defined (LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
++#if OPENSSL_VERSION_NUMBER < 0x10002000L
+ 
  static int X509_get_signature_nid(const X509 *x)
  {
- 	return OBJ_obj2nid(x->sig_alg->algorithm);
- }
-+#endif
- 
- #if OPENSSL_VERSION_NUMBER < 0x10000000L
--
- int EVP_PKEY_id(const EVP_PKEY *pkey)
- {
- 	return pkey->type;
- }
-+#endif
- 
-+#if OPENSSL_VERSION_NUMBER < 0x10000000L
- int EVP_PKEY_base_id(const EVP_PKEY *pkey)
- {
- 	return EVP_PKEY_type(pkey->type);
- }
--
--#endif
--
- #endif
- 
- #endif
