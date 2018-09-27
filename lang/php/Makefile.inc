@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.120 2018/09/06 14:05:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.121 2018/09/27 22:51:36 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -101,12 +101,14 @@ TEST_FLAGS=		NO_INTERACTION=1
 
 ZEND_EXTENSIONS+=	-opcache
 
-PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap -mcrypt \
+PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap \
 			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
 			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
 			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
 .if ${PV} == "5.6"
-PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql
+PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql -mcrypt
+.elif ${PV} == "7.0" || ${PV} == "7.1"
+PHP_EXTENSIONS+=	-mcrypt
 .endif
 
 SAPI+=			-main -apache -cgi -dbg
