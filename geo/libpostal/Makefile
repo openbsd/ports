@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/06 09:15:11 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/27 07:25:31 bentley Exp $
 
 COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
 GH_TAGNAME =	v1.0.0
+REVISION =	0
 
 SHARED_LIBS +=	postal	0.0	# 1.0
 
@@ -26,7 +27,14 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS = --datadir=${LOCALSTATEDIR}/db --disable-data-download
+CONFIGURE_ARGS +=	--datadir=${LOCALSTATEDIR}/db \
+			--disable-data-download
+
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS +=	--enable-sse2=yes
+.else
+CONFIGURE_ARGS +=	--enable-sse2=no
+.endif
 
 NO_TEST =	Yes
 
