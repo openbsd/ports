@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/08/10 20:55:26 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2018/09/27 09:13:02 fcambus Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.2
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -33,6 +34,7 @@ AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	--without-oss \
 			--without-pulse \
 			--with-sdlsound \
+			--disable-hardsid \
 			--disable-lame \
 			--disable-portaudio \
 			--enable-sdlui2
