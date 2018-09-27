@@ -1,0 +1,13 @@
+$OpenBSD: patch-quickphrase-editor_CMakeLists_txt,v 1.1.1.1 2018/09/27 03:29:11 kevlo Exp $
+
+Index: quickphrase-editor/CMakeLists.txt
+--- quickphrase-editor/CMakeLists.txt.orig
++++ quickphrase-editor/CMakeLists.txt
+@@ -24,7 +24,6 @@ add_library(fcitx-quickphrase-editor5
+   MODULE ${QUICKPHRASE_EDITOR_SRCS})
+ 
+ set_target_properties(fcitx-quickphrase-editor5 PROPERTIES
+-                      LINK_FLAGS "-Wl,--no-undefined"
+                       AUTOMOC TRUE
+ )
+ target_link_libraries(fcitx-quickphrase-editor5

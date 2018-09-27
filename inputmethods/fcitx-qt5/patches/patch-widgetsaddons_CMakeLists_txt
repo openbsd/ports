@@ -1,0 +1,13 @@
+$OpenBSD: patch-widgetsaddons_CMakeLists_txt,v 1.1.1.1 2018/09/27 03:29:11 kevlo Exp $
+
+Index: widgetsaddons/CMakeLists.txt
+--- widgetsaddons/CMakeLists.txt.orig
++++ widgetsaddons/CMakeLists.txt
+@@ -59,7 +59,6 @@ set_target_properties(FcitxQt5WidgetsAddons
+                       AUTOMOC TRUE
+                       SOVERSION 1
+                       COMPILE_FLAGS "-fvisibility=hidden"
+-                      LINK_FLAGS "-Wl,--no-undefined"
+                       EXPORT_NAME WidgetsAddons
+ )
+ 
