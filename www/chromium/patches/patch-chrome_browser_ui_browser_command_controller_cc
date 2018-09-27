@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.32 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.33 2018/09/27 06:36:18 robert Exp $
 
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
@@ -29,6 +29,15 @@ Index: chrome/browser/ui/browser_command_controller.cc
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
+       break;
+@@ -687,7 +687,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+       ShowPageInfoDialog(browser_->tab_strip_model()->GetActiveWebContents(),
+                          bubble_anchor_util::kAppMenuButton);
+       break;
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+     case IDC_TOGGLE_CONFIRM_TO_QUIT_OPTION:
+       ToggleConfirmToQuitOption(browser_);
        break;
 @@ -840,7 +840,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);

@@ -1,7 +1,16 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.45 2018/09/16 11:08:34 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.46 2018/09/27 06:36:18 robert Exp $
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
+@@ -406,7 +406,7 @@ const char kSearchSuggestEnabled[] = "search.suggest_e
+ const char kContextualSearchEnabled[] = "search.contextual_search_enabled";
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_MACOSX) || defined(OS_WIN) || \
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ // Boolean that indicates whether the browser should put up a confirmation
+ // window when the user is attempting to quit. Only on Mac, Windows, and Linux.
 @@ -918,7 +918,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
  // See the SafeSitesFilterBehavior policy for details.
  const char kSafeSitesFilterBehavior[] = "settings.safe_sites_filter_behavior";

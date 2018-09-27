@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.47 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.48 2018/09/27 06:36:18 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
@@ -84,3 +84,12 @@ Index: chrome/browser/chrome_content_browser_client.cc
    frame_interfaces_->AddInterface(base::Bind(&ShareServiceImpl::Create));
  #endif
  
+@@ -4609,7 +4609,7 @@ std::unique_ptr<content::OverlayWindow>
+ ChromeContentBrowserClient::CreateWindowForPictureInPicture(
+     content::PictureInPictureWindowController* controller) {
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Note: content::OverlayWindow::Create() is defined by platform-specific
+   // implementation in chrome/browser/ui/views. This layering hack, which goes
+   // through //content and ContentBrowserClient, allows us to work around the
