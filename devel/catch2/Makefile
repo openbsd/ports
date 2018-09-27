@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/09/13 05:08:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/09/27 13:16:04 ajacoutot Exp $
 
 COMMENT =	C++-native, header-only, test framework for unit-tests
 
@@ -21,9 +21,7 @@ COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
-TEST_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_2}
 
 pre-configure:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
