@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2018/09/04 12:46:14 espie Exp $
+$OpenBSD: README-main,v 1.7 2018/09/27 16:40:11 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -115,15 +115,18 @@ you can use these shell commands:
 After enabling or disabling extensions (or otherwise modifying php's
 configuration), use rcctl(8) to restart php${SV}_fpm or Apache.
 
-TLS Connections from PHP
-========================
-The chroot jail commonly used with PHP on OpenBSD restricts access to
-files outside of /var/www. If using PHP software which makes an outgoing
-TLS connection, you will need to copy in the relevant root certificates
-in order that server certificates can be verified:
+PHP's OpenSSL functions
+=======================
+The chroot jail commonly used with PHP on OpenBSD means that only files
+inside /var/www can be used. Functions for making TLS connections usually
+need access to CA certificates, and key generation functions may need
+access to configuration files.
+
+To use these, copy the relevant files into the /var/www jail:
 
     # mkdir -p ${CHROOT_DIR}/etc/ssl
-    # install -m 444 -o root -g bin /etc/ssl/cert.pem ${CHROOT_DIR}/etc/ssl/cert.pem
+    # install -m 444 -o root -g bin /etc/ssl/cert.pem /etc/ssl/openssl.cnf \
+          ${CHROOT_DIR}/etc/ssl/
 
-As this file is updated from time to time, you might like to add the
-"install" line to /etc/rc.local.
+As these files are updated from time to time, you might like to add
+the above "install" line to /etc/rc.local.
