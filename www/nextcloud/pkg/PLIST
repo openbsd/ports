@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/09/12 08:26:48 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/09/27 14:24:37 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -10112,6 +10112,7 @@ nextcloud/apps/nextcloud_announcements/lib/Settings/Admin.php
 nextcloud/apps/nextcloud_announcements/templates/
 nextcloud/apps/nextcloud_announcements/templates/admin.php
 nextcloud/apps/notifications/
+nextcloud/apps/notifications/.babelrc.js
 nextcloud/apps/notifications/.github/
 nextcloud/apps/notifications/.github/contributing.md
 nextcloud/apps/notifications/.github/issue_template.md
