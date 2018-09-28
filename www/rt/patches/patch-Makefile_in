@@ -1,5 +1,6 @@
---- Makefile.in.orig	Mon Jul 18 23:20:17 2016
-+++ Makefile.in	Mon Mar 20 10:06:19 2017
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -57,7 +57,13 @@ CC				=	@CC@
  
  RT_LAYOUT		=	@rt_layout_name@
@@ -15,7 +16,7 @@
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -285,13 +291,13 @@ fixperms:
+@@ -286,13 +292,13 @@ fixperms:
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
@@ -33,7 +34,7 @@
  
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
-@@ -304,7 +310,7 @@ fixperms:
+@@ -305,7 +311,7 @@ fixperms:
  
  	# Make upgrade scripts executable if they are in the source.
  	#
@@ -42,7 +43,7 @@
  		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
  	done
  
-@@ -359,7 +365,7 @@ clean-mason-cache:
+@@ -360,7 +366,7 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
@@ -51,7 +52,7 @@
  
  files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
-@@ -367,6 +373,7 @@ config-install:
+@@ -368,6 +374,7 @@ config-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
  @COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
  @COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
@@ -59,7 +60,7 @@
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -453,16 +460,16 @@ doc-install:
+@@ -454,16 +461,16 @@ doc-install:
  
  
  etc-install:

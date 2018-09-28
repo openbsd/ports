@@ -1,4 +1,96 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/09/28 09:03:49 pirofti Exp $
+@rcscript ${RCDIR}/rt
+@sample ${SYSCONFDIR}/rt3/
+@sample ${SYSCONFDIR}/rt3/local/
+@sample ${SYSCONFDIR}/rt3/upgrade/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.1.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.1.15/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.1.17/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.3.11/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.5.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.10/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.15/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.19/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.82/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.85/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.86/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.7.87/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.4/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.8.9/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.5/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.7/
+@sample ${SYSCONFDIR}/rt3/upgrade/3.9.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc2/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc4/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc7/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.12/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.18/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.9/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.10/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.11/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.12/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.13/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.14/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.15/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.16/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.17/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.18/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.19/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.20/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.21/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.22/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.23/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.4/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.5/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.7/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.1.9/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.10/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.11/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.4/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.7/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.2.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.0/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.11/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.5/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.3.9/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -129,6 +221,7 @@ libdata/perl5/site_perl/RT/Groups.pm
 libdata/perl5/site_perl/RT/Handle.pm
 libdata/perl5/site_perl/RT/I18N/
 libdata/perl5/site_perl/RT/I18N.pm
+libdata/perl5/site_perl/RT/I18N/Extract.pm
 libdata/perl5/site_perl/RT/I18N/cs.pm
 libdata/perl5/site_perl/RT/I18N/de.pm
 libdata/perl5/site_perl/RT/I18N/fr.pm
@@ -306,6 +399,7 @@ sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
 sbin/rt-importer
 sbin/rt-ldapimport
+sbin/rt-passwd
 sbin/rt-preferences-viewer
 sbin/rt-serializer
 sbin/rt-server
@@ -414,8 +508,6 @@ share/doc/rt3/web_deployment.pod
 share/doc/rt3/writing_extensions.pod
 share/doc/rt3/writing_portlets.pod
 share/examples/rt3/
-@sample ${SYSCONFDIR}/rt3/
-@sample ${SYSCONFDIR}/rt3/local/
 @mode 0444
 share/examples/rt3/RT_Config.pm
 @mode 0600
@@ -457,9 +549,7 @@ share/examples/rt3/schema.mysql
 @mode
 @sample ${SYSCONFDIR}/rt3/schema.mysql
 share/examples/rt3/upgrade/
-@sample ${SYSCONFDIR}/rt3/upgrade/
 share/examples/rt3/upgrade/3.1.0/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.1.0/
 share/examples/rt3/upgrade/3.1.0/acl.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.1.0/acl.Oracle
 share/examples/rt3/upgrade/3.1.0/acl.Pg
@@ -477,15 +567,12 @@ share/examples/rt3/upgrade/3.1.0/schema.SQLite
 share/examples/rt3/upgrade/3.1.0/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.1.0/schema.mysql
 share/examples/rt3/upgrade/3.1.15/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.1.15/
 share/examples/rt3/upgrade/3.1.15/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.1.15/content
 share/examples/rt3/upgrade/3.1.17/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.1.17/
 share/examples/rt3/upgrade/3.1.17/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.1.17/content
 share/examples/rt3/upgrade/3.3.0/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/
 share/examples/rt3/upgrade/3.3.0/acl.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/acl.Oracle
 share/examples/rt3/upgrade/3.3.0/acl.Pg
@@ -503,7 +590,6 @@ share/examples/rt3/upgrade/3.3.0/schema.Pg
 share/examples/rt3/upgrade/3.3.0/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.0/schema.mysql
 share/examples/rt3/upgrade/3.3.11/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.3.11/
 share/examples/rt3/upgrade/3.3.11/acl.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.11/acl.Oracle
 share/examples/rt3/upgrade/3.3.11/acl.Pg
@@ -521,27 +607,21 @@ share/examples/rt3/upgrade/3.3.11/schema.SQLite
 share/examples/rt3/upgrade/3.3.11/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.3.11/schema.mysql
 share/examples/rt3/upgrade/3.5.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.5.1/
 share/examples/rt3/upgrade/3.5.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.5.1/content
 share/examples/rt3/upgrade/3.7.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.1/
 share/examples/rt3/upgrade/3.7.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.1/content
 share/examples/rt3/upgrade/3.7.10/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.10/
 share/examples/rt3/upgrade/3.7.10/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.10/content
 share/examples/rt3/upgrade/3.7.15/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.15/
 share/examples/rt3/upgrade/3.7.15/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.15/content
 share/examples/rt3/upgrade/3.7.19/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.19/
 share/examples/rt3/upgrade/3.7.19/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.19/content
 share/examples/rt3/upgrade/3.7.3/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.3/
 share/examples/rt3/upgrade/3.7.3/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.3/schema.Oracle
 share/examples/rt3/upgrade/3.7.3/schema.Pg
@@ -549,72 +629,56 @@ share/examples/rt3/upgrade/3.7.3/schema.Pg
 share/examples/rt3/upgrade/3.7.3/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.3/schema.mysql
 share/examples/rt3/upgrade/3.7.81/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/
 share/examples/rt3/upgrade/3.7.81/indexes
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.81/indexes
 share/examples/rt3/upgrade/3.7.82/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.82/
 share/examples/rt3/upgrade/3.7.82/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.82/content
 share/examples/rt3/upgrade/3.7.85/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.85/
 share/examples/rt3/upgrade/3.7.85/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.85/content
 share/examples/rt3/upgrade/3.7.86/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.86/
 share/examples/rt3/upgrade/3.7.86/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.86/content
 share/examples/rt3/upgrade/3.7.87/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.7.87/
 share/examples/rt3/upgrade/3.7.87/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.7.87/content
 share/examples/rt3/upgrade/3.8-ical-extension
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8-ical-extension
 share/examples/rt3/upgrade/3.8-ical-extension.in
 share/examples/rt3/upgrade/3.8.0/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.0/
 share/examples/rt3/upgrade/3.8.0/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.0/content
 share/examples/rt3/upgrade/3.8.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.1/
 share/examples/rt3/upgrade/3.8.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.1/content
 share/examples/rt3/upgrade/3.8.2/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.2/
 share/examples/rt3/upgrade/3.8.2/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.2/content
 share/examples/rt3/upgrade/3.8.3/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/
 share/examples/rt3/upgrade/3.8.3/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/content
 share/examples/rt3/upgrade/3.8.3/indexes
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.3/indexes
 share/examples/rt3/upgrade/3.8.4/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.4/
 share/examples/rt3/upgrade/3.8.4/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.4/content
 share/examples/rt3/upgrade/3.8.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.6/
 share/examples/rt3/upgrade/3.8.6/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.6/content
 share/examples/rt3/upgrade/3.8.8/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.8/
 share/examples/rt3/upgrade/3.8.8/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.8/content
 share/examples/rt3/upgrade/3.8.9/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.8.9/
 share/examples/rt3/upgrade/3.8.9/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.8.9/content
 share/examples/rt3/upgrade/3.9.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.1/
 share/examples/rt3/upgrade/3.9.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.1/content
 share/examples/rt3/upgrade/3.9.2/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.2/
 share/examples/rt3/upgrade/3.9.2/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.2/content
 share/examples/rt3/upgrade/3.9.3/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.3/
 share/examples/rt3/upgrade/3.9.3/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.3/schema.Oracle
 share/examples/rt3/upgrade/3.9.3/schema.Pg
@@ -624,7 +688,6 @@ share/examples/rt3/upgrade/3.9.3/schema.SQLite
 share/examples/rt3/upgrade/3.9.3/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.3/schema.mysql
 share/examples/rt3/upgrade/3.9.5/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.5/
 share/examples/rt3/upgrade/3.9.5/backcompat
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.5/backcompat
 share/examples/rt3/upgrade/3.9.5/schema.Oracle
@@ -636,7 +699,6 @@ share/examples/rt3/upgrade/3.9.5/schema.SQLite
 share/examples/rt3/upgrade/3.9.5/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.5/schema.mysql
 share/examples/rt3/upgrade/3.9.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.6/
 share/examples/rt3/upgrade/3.9.6/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.6/schema.Oracle
 share/examples/rt3/upgrade/3.9.6/schema.Pg
@@ -646,7 +708,6 @@ share/examples/rt3/upgrade/3.9.6/schema.SQLite
 share/examples/rt3/upgrade/3.9.6/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.6/schema.mysql
 share/examples/rt3/upgrade/3.9.7/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.7/
 share/examples/rt3/upgrade/3.9.7/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.7/content
 share/examples/rt3/upgrade/3.9.7/schema.Oracle
@@ -658,7 +719,6 @@ share/examples/rt3/upgrade/3.9.7/schema.SQLite
 share/examples/rt3/upgrade/3.9.7/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.7/schema.mysql
 share/examples/rt3/upgrade/3.9.8/
-@sample ${SYSCONFDIR}/rt3/upgrade/3.9.8/
 share/examples/rt3/upgrade/3.9.8/content
 @sample ${SYSCONFDIR}/rt3/upgrade/3.9.8/content
 share/examples/rt3/upgrade/3.9.8/schema.Oracle
@@ -673,11 +733,9 @@ share/examples/rt3/upgrade/4.0-customfield-checkbox-extension
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0-customfield-checkbox-extension
 share/examples/rt3/upgrade/4.0-customfield-checkbox-extension.in
 share/examples/rt3/upgrade/4.0.0rc2/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc2/
 share/examples/rt3/upgrade/4.0.0rc2/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc2/schema.mysql
 share/examples/rt3/upgrade/4.0.0rc4/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc4/
 share/examples/rt3/upgrade/4.0.0rc4/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc4/schema.Oracle
 share/examples/rt3/upgrade/4.0.0rc4/schema.Pg
@@ -685,17 +743,14 @@ share/examples/rt3/upgrade/4.0.0rc4/schema.Pg
 share/examples/rt3/upgrade/4.0.0rc4/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc4/schema.mysql
 share/examples/rt3/upgrade/4.0.0rc7/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc7/
 share/examples/rt3/upgrade/4.0.0rc7/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc7/content
 share/examples/rt3/upgrade/4.0.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/
 share/examples/rt3/upgrade/4.0.1/acl.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/acl.Pg
 share/examples/rt3/upgrade/4.0.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/content
 share/examples/rt3/upgrade/4.0.12/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.12/
 share/examples/rt3/upgrade/4.0.12/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.12/schema.Oracle
 share/examples/rt3/upgrade/4.0.12/schema.Pg
@@ -703,7 +758,6 @@ share/examples/rt3/upgrade/4.0.12/schema.Pg
 share/examples/rt3/upgrade/4.0.12/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.12/schema.mysql
 share/examples/rt3/upgrade/4.0.13/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/
 share/examples/rt3/upgrade/4.0.13/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.Oracle
 share/examples/rt3/upgrade/4.0.13/schema.Pg
@@ -711,39 +765,31 @@ share/examples/rt3/upgrade/4.0.13/schema.Pg
 share/examples/rt3/upgrade/4.0.13/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.13/schema.mysql
 share/examples/rt3/upgrade/4.0.18/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.18/
 share/examples/rt3/upgrade/4.0.18/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.18/content
 share/examples/rt3/upgrade/4.0.19/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/
 share/examples/rt3/upgrade/4.0.19/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/content
 share/examples/rt3/upgrade/4.0.19/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.19/schema.mysql
 share/examples/rt3/upgrade/4.0.3/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/
 share/examples/rt3/upgrade/4.0.3/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/content
 share/examples/rt3/upgrade/4.0.4/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/
 share/examples/rt3/upgrade/4.0.4/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/content
 share/examples/rt3/upgrade/4.0.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/
 share/examples/rt3/upgrade/4.0.6/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/content
 share/examples/rt3/upgrade/4.0.6/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/schema.mysql
 share/examples/rt3/upgrade/4.0.9/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.0.9/
 share/examples/rt3/upgrade/4.0.9/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.9/content
 share/examples/rt3/upgrade/4.1.0/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.0/
 share/examples/rt3/upgrade/4.1.0/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.0/content
 share/examples/rt3/upgrade/4.1.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.1/
 share/examples/rt3/upgrade/4.1.1/acl.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.1/acl.Pg
 share/examples/rt3/upgrade/4.1.1/content
@@ -757,7 +803,6 @@ share/examples/rt3/upgrade/4.1.1/schema.SQLite
 share/examples/rt3/upgrade/4.1.1/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.1/schema.mysql
 share/examples/rt3/upgrade/4.1.10/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.10/
 share/examples/rt3/upgrade/4.1.10/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.10/schema.Oracle
 share/examples/rt3/upgrade/4.1.10/schema.Pg
@@ -765,7 +810,6 @@ share/examples/rt3/upgrade/4.1.10/schema.Pg
 share/examples/rt3/upgrade/4.1.10/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.10/schema.mysql
 share/examples/rt3/upgrade/4.1.11/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.11/
 share/examples/rt3/upgrade/4.1.11/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.11/schema.Oracle
 share/examples/rt3/upgrade/4.1.11/schema.Pg
@@ -773,11 +817,9 @@ share/examples/rt3/upgrade/4.1.11/schema.Pg
 share/examples/rt3/upgrade/4.1.11/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.11/schema.mysql
 share/examples/rt3/upgrade/4.1.12/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.12/
 share/examples/rt3/upgrade/4.1.12/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.12/content
 share/examples/rt3/upgrade/4.1.13/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.13/
 share/examples/rt3/upgrade/4.1.13/backcompat
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.13/backcompat
 share/examples/rt3/upgrade/4.1.13/schema.Oracle
@@ -789,7 +831,6 @@ share/examples/rt3/upgrade/4.1.13/schema.SQLite
 share/examples/rt3/upgrade/4.1.13/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.13/schema.mysql
 share/examples/rt3/upgrade/4.1.14/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.14/
 share/examples/rt3/upgrade/4.1.14/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.14/schema.Oracle
 share/examples/rt3/upgrade/4.1.14/schema.Pg
@@ -797,23 +838,18 @@ share/examples/rt3/upgrade/4.1.14/schema.Pg
 share/examples/rt3/upgrade/4.1.14/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.14/schema.mysql
 share/examples/rt3/upgrade/4.1.15/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.15/
 share/examples/rt3/upgrade/4.1.15/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.15/content
 share/examples/rt3/upgrade/4.1.16/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.16/
 share/examples/rt3/upgrade/4.1.16/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.16/content
 share/examples/rt3/upgrade/4.1.17/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.17/
 share/examples/rt3/upgrade/4.1.17/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.17/content
 share/examples/rt3/upgrade/4.1.18/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.18/
 share/examples/rt3/upgrade/4.1.18/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.18/content
 share/examples/rt3/upgrade/4.1.19/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.19/
 share/examples/rt3/upgrade/4.1.19/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.19/schema.Oracle
 share/examples/rt3/upgrade/4.1.19/schema.Pg
@@ -821,15 +857,12 @@ share/examples/rt3/upgrade/4.1.19/schema.Pg
 share/examples/rt3/upgrade/4.1.19/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.19/schema.mysql
 share/examples/rt3/upgrade/4.1.20/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.20/
 share/examples/rt3/upgrade/4.1.20/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.20/content
 share/examples/rt3/upgrade/4.1.21/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.21/
 share/examples/rt3/upgrade/4.1.21/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.21/content
 share/examples/rt3/upgrade/4.1.22/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.22/
 share/examples/rt3/upgrade/4.1.22/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.22/content
 share/examples/rt3/upgrade/4.1.22/schema.Oracle
@@ -841,11 +874,9 @@ share/examples/rt3/upgrade/4.1.22/schema.SQLite
 share/examples/rt3/upgrade/4.1.22/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.22/schema.mysql
 share/examples/rt3/upgrade/4.1.23/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.23/
 share/examples/rt3/upgrade/4.1.23/indexes
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.23/indexes
 share/examples/rt3/upgrade/4.1.4/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.4/
 share/examples/rt3/upgrade/4.1.4/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.4/content
 share/examples/rt3/upgrade/4.1.4/schema.Oracle
@@ -857,7 +888,6 @@ share/examples/rt3/upgrade/4.1.4/schema.SQLite
 share/examples/rt3/upgrade/4.1.4/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.4/schema.mysql
 share/examples/rt3/upgrade/4.1.5/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.5/
 share/examples/rt3/upgrade/4.1.5/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.5/content
 share/examples/rt3/upgrade/4.1.5/schema.Oracle
@@ -867,11 +897,9 @@ share/examples/rt3/upgrade/4.1.5/schema.Pg
 share/examples/rt3/upgrade/4.1.5/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.5/schema.mysql
 share/examples/rt3/upgrade/4.1.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.6/
 share/examples/rt3/upgrade/4.1.6/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.6/content
 share/examples/rt3/upgrade/4.1.7/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.7/
 share/examples/rt3/upgrade/4.1.7/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.7/schema.Oracle
 share/examples/rt3/upgrade/4.1.7/schema.Pg
@@ -881,7 +909,6 @@ share/examples/rt3/upgrade/4.1.7/schema.SQLite
 share/examples/rt3/upgrade/4.1.7/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.7/schema.mysql
 share/examples/rt3/upgrade/4.1.8/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.8/
 share/examples/rt3/upgrade/4.1.8/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.8/schema.Oracle
 share/examples/rt3/upgrade/4.1.8/schema.Pg
@@ -891,51 +918,40 @@ share/examples/rt3/upgrade/4.1.8/schema.SQLite
 share/examples/rt3/upgrade/4.1.8/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.8/schema.mysql
 share/examples/rt3/upgrade/4.1.9/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.1.9/
 share/examples/rt3/upgrade/4.1.9/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.1.9/content
 share/examples/rt3/upgrade/4.2.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.1/
 share/examples/rt3/upgrade/4.2.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.1/content
 share/examples/rt3/upgrade/4.2.10/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.10/
 share/examples/rt3/upgrade/4.2.10/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.10/content
 share/examples/rt3/upgrade/4.2.11/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.11/
 share/examples/rt3/upgrade/4.2.11/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.11/content
 share/examples/rt3/upgrade/4.2.2/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.2/
 share/examples/rt3/upgrade/4.2.2/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.2/content
 share/examples/rt3/upgrade/4.2.2/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.2/schema.mysql
 share/examples/rt3/upgrade/4.2.4/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.4/
 share/examples/rt3/upgrade/4.2.4/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.4/content
 share/examples/rt3/upgrade/4.2.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.6/
 share/examples/rt3/upgrade/4.2.6/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.6/content
 share/examples/rt3/upgrade/4.2.6/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.6/schema.mysql
 share/examples/rt3/upgrade/4.2.7/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.7/
 share/examples/rt3/upgrade/4.2.7/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.7/content
 share/examples/rt3/upgrade/4.2.8/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.2.8/
 share/examples/rt3/upgrade/4.2.8/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.2.8/content
 share/examples/rt3/upgrade/4.3.0/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.0/
 share/examples/rt3/upgrade/4.3.0/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.0/content
 share/examples/rt3/upgrade/4.3.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/
 share/examples/rt3/upgrade/4.3.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/content
 share/examples/rt3/upgrade/4.3.1/schema.Oracle
@@ -947,7 +963,6 @@ share/examples/rt3/upgrade/4.3.1/schema.SQLite
 share/examples/rt3/upgrade/4.3.1/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.1/schema.mysql
 share/examples/rt3/upgrade/4.3.10/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/
 share/examples/rt3/upgrade/4.3.10/acl.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/acl.Pg
 share/examples/rt3/upgrade/4.3.10/content
@@ -961,11 +976,9 @@ share/examples/rt3/upgrade/4.3.10/schema.SQLite
 share/examples/rt3/upgrade/4.3.10/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.10/schema.mysql
 share/examples/rt3/upgrade/4.3.11/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.11/
 share/examples/rt3/upgrade/4.3.11/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.11/content
 share/examples/rt3/upgrade/4.3.12/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/
 share/examples/rt3/upgrade/4.3.12/acl.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/acl.Pg
 share/examples/rt3/upgrade/4.3.12/schema.Oracle
@@ -977,7 +990,6 @@ share/examples/rt3/upgrade/4.3.12/schema.SQLite
 share/examples/rt3/upgrade/4.3.12/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.12/schema.mysql
 share/examples/rt3/upgrade/4.3.13/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/
 share/examples/rt3/upgrade/4.3.13/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.Oracle
 share/examples/rt3/upgrade/4.3.13/schema.Pg
@@ -987,7 +999,6 @@ share/examples/rt3/upgrade/4.3.13/schema.SQLite
 share/examples/rt3/upgrade/4.3.13/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.13/schema.mysql
 share/examples/rt3/upgrade/4.3.2/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/
 share/examples/rt3/upgrade/4.3.2/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/content
 share/examples/rt3/upgrade/4.3.2/schema.Oracle
@@ -999,7 +1010,6 @@ share/examples/rt3/upgrade/4.3.2/schema.SQLite
 share/examples/rt3/upgrade/4.3.2/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.2/schema.mysql
 share/examples/rt3/upgrade/4.3.3/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/
 share/examples/rt3/upgrade/4.3.3/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.Oracle
 share/examples/rt3/upgrade/4.3.3/schema.Pg
@@ -1009,15 +1019,12 @@ share/examples/rt3/upgrade/4.3.3/schema.SQLite
 share/examples/rt3/upgrade/4.3.3/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.3/schema.mysql
 share/examples/rt3/upgrade/4.3.5/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.5/
 share/examples/rt3/upgrade/4.3.5/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.5/content
 share/examples/rt3/upgrade/4.3.6/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.6/
 share/examples/rt3/upgrade/4.3.6/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.6/content
 share/examples/rt3/upgrade/4.3.7/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/
 share/examples/rt3/upgrade/4.3.7/schema.Oracle
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.Oracle
 share/examples/rt3/upgrade/4.3.7/schema.Pg
@@ -1027,7 +1034,6 @@ share/examples/rt3/upgrade/4.3.7/schema.SQLite
 share/examples/rt3/upgrade/4.3.7/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.7/schema.mysql
 share/examples/rt3/upgrade/4.3.8/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/
 share/examples/rt3/upgrade/4.3.8/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/content
 share/examples/rt3/upgrade/4.3.8/schema.Oracle
@@ -1039,15 +1045,12 @@ share/examples/rt3/upgrade/4.3.8/schema.SQLite
 share/examples/rt3/upgrade/4.3.8/schema.mysql
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.8/schema.mysql
 share/examples/rt3/upgrade/4.3.9/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.3.9/
 share/examples/rt3/upgrade/4.3.9/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.3.9/content
 share/examples/rt3/upgrade/4.4.1/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/
 share/examples/rt3/upgrade/4.4.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.4.1/content
 share/examples/rt3/upgrade/4.4.2/
-@sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/
 share/examples/rt3/upgrade/4.4.2/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.4.2/content
 share/examples/rt3/upgrade/4.4.2/indexes
@@ -1775,6 +1778,7 @@ share/rt3/html/SelfService/Helpers/Autocomplete/Users
 share/rt3/html/SelfService/Helpers/ShortcutHelp
 share/rt3/html/SelfService/Helpers/Upload/
 share/rt3/html/SelfService/Helpers/Upload/Add
+share/rt3/html/SelfService/Helpers/Upload/Delete
 share/rt3/html/SelfService/Prefs.html
 share/rt3/html/SelfService/Update.html
 share/rt3/html/SelfService/index.html
@@ -2414,7 +2418,6 @@ share/rt3/static/js/superfish.js
 share/rt3/static/js/supersubs.js
 share/rt3/static/js/titlebox-state.js
 share/rt3/static/js/util.js
-@rcscript ${RCDIR}/rt
 @mode 770
 @owner www
 @group www

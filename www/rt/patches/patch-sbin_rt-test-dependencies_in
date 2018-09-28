@@ -1,8 +1,8 @@
-$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.3 2017/11/23 20:00:05 pirofti Exp $
+$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.4 2018/09/28 09:03:49 pirofti Exp $
 Index: sbin/rt-test-dependencies.in
 --- sbin/rt-test-dependencies.in.orig
 +++ sbin/rt-test-dependencies.in
-@@ -138,7 +138,7 @@ Digest::MD5 2.27
+@@ -139,7 +139,7 @@ Digest::MD5 2.27
  Digest::SHA
  Email::Address 1.908
  Email::Address::List 0.02
@@ -11,7 +11,7 @@ Index: sbin/rt-test-dependencies.in
  Errno
  File::Glob
  File::ShareDir
-@@ -245,7 +245,7 @@ XML::Simple
+@@ -244,7 +244,7 @@ XML::Simple
  .
  
  $deps{'FASTCGI'} = [ text_to_hash( << '.') ];
