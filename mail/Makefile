@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2018/08/14 18:45:31 fcambus Exp $
+# $OpenBSD: Makefile,v 1.370 2018/09/28 22:24:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -174,6 +174,8 @@
      SUBDIR += pear-Mime-Type
      SUBDIR += pecl56-mailparse
      SUBDIR += pecl-mailparse,php70
+     SUBDIR += pecl-mailparse,php71
+     SUBDIR += pecl-mailparse,php72
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pine-pgp-filters
