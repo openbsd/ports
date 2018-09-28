@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/11 20:11:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/09/28 21:22:39 sthen Exp $
 @pkgpath security/pecl-libsodium,php70
-lib/php-7.0/modules/sodium.so
+lib/php-${MODPHP_VERSION}/modules/sodium.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
