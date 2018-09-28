@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-zip,v 1.1 2018/09/28 22:22:03 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-zip->=7.1,<7.2
+lib/php-${PV}/modules/zip.so
+share/examples/php-${PV}/zip.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/zip.ini
