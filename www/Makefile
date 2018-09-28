@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.877 2018/09/28 12:59:51 abieber Exp $
+# $OpenBSD: Makefile,v 1.878 2018/09/28 22:25:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -342,23 +342,39 @@
      SUBDIR += pear-SOAP
      SUBDIR += pecl-chroot,php56
      SUBDIR += pecl-chroot,php70
+     SUBDIR += pecl-chroot,php71
+     SUBDIR += pecl-chroot,php72
      SUBDIR += pecl-geoip,php56
      SUBDIR += pecl-geoip,php70
-     SUBDIR += pecl-pecl_http,php70
-     SUBDIR += pecl56-pecl_http
-     SUBDIR += pecl-memcache,php56
+     SUBDIR += pecl-geoip,php71
+     SUBDIR += pecl-geoip,php72
+     SUBDIR += pecl-memcache,php56		# 5.6-only
+     SUBDIR += pecl56-memcached			# separate V for 5.6
      SUBDIR += pecl-memcached,php70
-     SUBDIR += pecl56-memcached
+     SUBDIR += pecl-memcached,php71
+     SUBDIR += pecl-memcached,php72
+     SUBDIR += pecl56-pecl_http			# separate V for 5.6
+     SUBDIR += pecl-pecl_http,php70
+     SUBDIR += pecl-pecl_http,php71
+     SUBDIR += pecl-pecl_http,php72
      SUBDIR += pecl-proctitle,php56
      SUBDIR += pecl-proctitle,php70
-     SUBDIR += pecl56-propro
+     SUBDIR += pecl-proctitle,php71
+     SUBDIR += pecl-proctitle,php72
+     SUBDIR += pecl56-propro			# separate V for 5.6
      SUBDIR += pecl-propro,php70
+     SUBDIR += pecl-propro,php71
+     SUBDIR += pecl-propro,php72
+     SUBDIR += pecl56-raphf			# separate V for 5.6
      SUBDIR += pecl-raphf,php70
-     SUBDIR += pecl56-raphf
+     SUBDIR += pecl-raphf,php71
+     SUBDIR += pecl-raphf,php72
+     SUBDIR += pecl56-ssh2			# separate V for 5.6
      SUBDIR += pecl-ssh2,php70
-     SUBDIR += pecl56-ssh2
-     SUBDIR += pecl-swish,php56
-     SUBDIR += pecl-uploadprogress,php56
+     SUBDIR += pecl-ssh2,php71
+     SUBDIR += pecl-ssh2,php72
+     SUBDIR += pecl-swish,php56			# 5.6-only
+     SUBDIR += pecl-uploadprogress,php56	# 5.6-only
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += phantomjs
