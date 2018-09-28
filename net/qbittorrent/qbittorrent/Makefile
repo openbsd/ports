@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/28 13:25:04 rsadowski Exp $
 
 COMMENT =		BitTorrent client with Qt interface
 
@@ -12,7 +12,8 @@ LIB_DEPENDS +=		net/libtorrent-rasterbar \
 
 RUN_DEPENDS +=		net/GeoIP \
 			lang/python/2.7 \
-			x11/gtk+3,-guic
+			x11/gtk+3,-guic \
+			devel/desktop-file-utils
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/conf.pri
