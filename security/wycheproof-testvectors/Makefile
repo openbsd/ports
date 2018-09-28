@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/07 19:00:05 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2018/09/28 15:08:13 tb Exp $
 
 COMMENT =	test vectors from Project Wycheproof
 
 # No releases
-VERSION =	20180731
+VERSION =	20180921
 DISTNAME =	wycheproof-testvectors-${VERSION}
 
 GH_ACCOUNT =	google
 GH_PROJECT =	wycheproof
-GH_COMMIT =	f89f4c53a8845fcefcdb9f14ee9191dbe167e3e3
+GH_COMMIT =	c313761979d74b0417230eddd0f87d0cfab2b46b
 
 CATEGORIES =	security devel
 
