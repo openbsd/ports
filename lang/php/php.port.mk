@@ -1,4 +1,4 @@
-# $OpenBSD: php.port.mk,v 1.21 2018/06/02 20:58:14 sthen Exp $
+# $OpenBSD: php.port.mk,v 1.22 2018/09/28 21:27:25 sthen Exp $
 
 CATEGORIES+=		lang/php
 
@@ -6,10 +6,16 @@ MODPHP_VERSION?=	7.0
 
 .if ${MODPHP_VERSION} == 5.6
 MODPHP_FLAVOR = ,php56
-MODPHP_VSPEC = >=${MODPHP_VERSION},<5.7
+MODPHP_VSPEC = >=5.6,<5.7
 .elif ${MODPHP_VERSION} == 7.0
 MODPHP_FLAVOR = ,php70
-MODPHP_VSPEC = >=${MODPHP_VERSION},<7.1
+MODPHP_VSPEC = >=7.0,<7.1
+.elif ${MODPHP_VERSION} == 7.1
+MODPHP_FLAVOR = ,php71
+MODPHP_VSPEC = >=7.1,<7.2
+.elif ${MODPHP_VERSION} == 7.2
+MODPHP_FLAVOR = ,php72
+MODPHP_VSPEC = >=7.2,<7.3
 .endif
 MODPHPSPEC = php-${MODPHP_VSPEC}
 
