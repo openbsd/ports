@@ -1,0 +1,33 @@
+$OpenBSD: patch-nginx-auth-ldap_ngx_http_auth_ldap_module_c,v 1.1 2018/09/28 14:36:16 sthen Exp $
+
+conn->sockaddr is NULL in ngx_http_auth_ldap_ssl_handshake_handler(),
+remove support for bare IPs with certs to workaround.
+
+Index: nginx-auth-ldap/ngx_http_auth_ldap_module.c
+--- nginx-auth-ldap/ngx_http_auth_ldap_module.c.orig
++++ nginx-auth-ldap/ngx_http_auth_ldap_module.c
+@@ -1333,23 +1333,12 @@ ngx_http_auth_ldap_ssl_handshake_handler(ngx_connectio
+           char *hostname = c->server->ludpp->lud_host;
+           addr_verified = X509_check_host(cert, hostname, 0, 0, 0);
+ 
+-          if (!addr_verified) { // domain not in cert? try IP
+-            size_t len; // get IP length
+-            if (conn->sockaddr->sa_family == 4) len = 4;
+-            else if (conn->sockaddr->sa_family == 6) len = 16;
+-            else { // very unlikely indeed
+-              ngx_http_auth_ldap_close_connection(c);
+-              return;
+-            }
+-            addr_verified = X509_check_ip(cert, (const unsigned char*)conn->sockaddr->sa_data, len, 0);
+-          }
+-
+           // Find anything fishy?
+           if ( !(cert && addr_verified && chain_verified == X509_V_OK) ) {
+             if (!addr_verified) {
+               ngx_log_error(NGX_LOG_ERR, c->log, 0,
+                 "http_auth_ldap: Remote side presented invalid SSL certificate: "
+-                "does not match address (neither server's domain nor IP in certificate's CN or SAN)");
++                "does not match address");
+                 fprintf(stderr, "DEBUG: SSL cert domain mismatch\n"); fflush(stderr);
+             } else {
+               ngx_log_error(NGX_LOG_ERR, c->log, 0,

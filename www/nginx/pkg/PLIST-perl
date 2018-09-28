@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-perl,v 1.1 2016/11/04 22:13:43 jeremy Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/nginx.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/nginx.so
+@comment $OpenBSD: PLIST-perl,v 1.2 2018/09/28 14:36:17 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/nginx.pm
+${P5ARCH}/nginx.so
 @cwd /var/www/modules
 ngx_http_perl_module.so

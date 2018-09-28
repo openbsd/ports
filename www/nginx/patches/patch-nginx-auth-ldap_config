@@ -1,0 +1,15 @@
+$OpenBSD: patch-nginx-auth-ldap_config,v 1.1 2018/09/28 14:36:16 sthen Exp $
+
+Index: nginx-auth-ldap/config
+--- nginx-auth-ldap/config.orig
++++ nginx-auth-ldap/config
+@@ -3,6 +3,9 @@ ngx_addon_name=ngx_http_auth_ldap_module
+ LDAP_REQUIRED_LIBS="-lldap"
+ 
+ case "$NGX_PLATFORM" in
++    OpenBSD:*)
++        LDAP_REQUIRED_LIBS="-L${LOCALBASE}/lib $LDAP_REQUIRED_LIBS"
++    ;;
+     Darwin:*|FreeBSD:*|Linux:*|SunOS:*)
+         LDAP_REQUIRED_LIBS="$LDAP_REQUIRED_LIBS -llber"
+     ;;
