@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/06 15:45:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/09/28 14:14:03 sthen Exp $
 @bin bin/zxing
 include/zxing/
 include/zxing/BarcodeFormat.h
@@ -124,3 +124,8 @@ include/zxing/qrcode/detector/FinderPattern.h
 include/zxing/qrcode/detector/FinderPatternFinder.h
 include/zxing/qrcode/detector/FinderPatternInfo.h
 lib/libzxing.a
+lib/zxing/
+lib/zxing/cmake/
+lib/zxing/cmake/zxing-config.cmake
+lib/zxing/cmake/zxing-targets${MODCMAKE_BUILD_SUFFIX}
+lib/zxing/cmake/zxing-targets.cmake
