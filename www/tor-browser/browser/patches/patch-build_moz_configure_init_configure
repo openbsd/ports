@@ -1,0 +1,24 @@
+$OpenBSD: patch-build_moz_configure_init_configure,v 1.1 2018/09/28 14:54:26 sthen Exp $
+
+Fix build with rust 1.29.
+https://hg.mozilla.org/mozilla-central/rev/36f4ba2fb6f5
+https://hg.mozilla.org/releases/mozilla-esr60/rev/381ae910e9b2712699fdc6a9bb9702c04bccb8f5
+
+Index: build/moz.configure/init.configure
+--- build/moz.configure/init.configure.orig
++++ build/moz.configure/init.configure
+@@ -591,7 +591,13 @@ def split_triplet(triplet, allow_unknown=False):
+     # There is also a quartet form:
+     #   CPU_TYPE-MANUFACTURER-KERNEL-OPERATING_SYSTEM
+     # But we can consider the "KERNEL-OPERATING_SYSTEM" as one.
+-    cpu, manufacturer, os = triplet.split('-', 2)
++    parts = triplet.split('-', 2)
++    if len(parts) == 3:
++        cpu, _, os = parts
++    elif len(parts) == 2:
++        cpu, os = parts
++    else:
++        die("Unexpected triplet string: %s" % triplet)
+ 
+     # Autoconf uses config.sub to validate and canonicalize those triplets,
+     # but the granularity of its results has never been satisfying to our

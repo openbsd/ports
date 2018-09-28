@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/24 18:06:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/09/28 14:54:26 sthen Exp $
 
 ADDON_NAME =		https-everywhere
-V =			2018.3.13
+V =			2018.8.22
 COMMENT =		Tor Browser add-on: force https where possible
 HOMEPAGE =		https://www.eff.org/https-everywhere
 MASTER_SITES =		https://www.eff.org/files/
