@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pkcs11_Makefile_am,v 1.2 2017/08/16 14:39:07 dcoppa Exp $
+$OpenBSD: patch-src_pkcs11_Makefile_am,v 1.3 2018/09/29 11:19:16 kn Exp $
 Index: src/pkcs11/Makefile.am
 --- src/pkcs11/Makefile.am.orig
 +++ src/pkcs11/Makefile.am
@@ -8,7 +8,7 @@ Index: src/pkcs11/Makefile.am
 +override libdir = $(prefix)/lib/pkcs11
 +
  MAINTAINERCLEANFILES = $(srcdir)/Makefile.in $(srcdir)/versioninfo-pkcs11.rc $(srcdir)/versioninfo-pkcs11-spy.rc
--EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in opensc-pkcs11.pc.in
+-EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in opensc-pkcs11.pc.in opensc-pkcs11.dll.manifest onepin-opensc-pkcs11.dll.manifest
 +EXTRA_DIST = Makefile.mak versioninfo-pkcs11.rc.in versioninfo-pkcs11-spy.rc.in
  
  lib_LTLIBRARIES = opensc-pkcs11.la pkcs11-spy.la onepin-opensc-pkcs11.la

@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/08/16 14:39:07 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/09/29 11:19:16 kn Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
+@bin bin/egk-tool
 @bin bin/eidenv
 @bin bin/gids-tool
 @bin bin/iasecc-tool
 @bin bin/netkey-tool
 @bin bin/npa-tool
 @bin bin/openpgp-tool
+@bin bin/opensc-asn1
 @bin bin/opensc-explorer
+@bin bin/opensc-notify
 @bin bin/opensc-tool
 @bin bin/piv-tool
 @bin bin/pkcs11-tool
@@ -31,13 +34,16 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
 @man man/man1/dnie-tool.1
+@man man/man1/egk-tool.1
 @man man/man1/eidenv.1
 @man man/man1/gids-tool.1
 @man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
 @man man/man1/npa-tool.1
 @man man/man1/openpgp-tool.1
+@man man/man1/opensc-asn1.1
 @man man/man1/opensc-explorer.1
+@man man/man1/opensc-notify.1
 @man man/man1/opensc-tool.1
 @man man/man1/piv-tool.1
 @man man/man1/pkcs11-tool.1
@@ -46,9 +52,12 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/pkcs15-tool.1
 @man man/man1/sc-hsm-tool.1
 @man man/man1/westcos-tool.1
+@man man/man5/opensc.conf.5
 @man man/man5/pkcs15-profile.5
+share/applications/org.opensc.notify.desktop
 @comment share/doc/opensc/
 @comment share/doc/opensc/NEWS
+share/doc/opensc/opensc.conf
 share/examples/opensc/
 share/examples/opensc/opensc.conf
 @mode 644
@@ -86,3 +95,4 @@ share/opensc/sc-hsm.profile
 share/opensc/setcos.profile
 share/opensc/starcos.profile
 share/opensc/westcos.profile
+@tag update-desktop-database
