@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2018/09/21 08:09:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.62 2018/09/29 08:02:03 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1591,12 +1591,39 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/describe-dimension-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pi/get-resource-metrics.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-tag-to-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-source-identifier-to-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-instance-read-replica.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-security-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-option-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-event-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-account-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-log-files.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-event-categories.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-event-subscriptions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-events.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-orderable-db-instance-options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-reserved-db-instances-offerings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-reserved-db-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-source-regions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-valid-db-instance-modifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/download-db-log-file-portion.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/generate-auth-token.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-event-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/promote-read-replica.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reboot-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-source-identifier-from-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-from-db-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-from-s3.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-to-point-in-time.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/stop-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/authorize-cluster-security-group-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/redshift/authorize-snapshot-access.rst
@@ -1881,6 +1908,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-sql-injectio
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-web-acl.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-xss-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/abort-document-version-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/activate-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/add-resource-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/create-comment.rst
@@ -1907,6 +1935,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/get-document-v
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/get-document.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/get-folder-path.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/get-folder.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/initiate-document-version-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/remove-all-resource-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/remove-resource-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workdocs/update-document-version.rst
