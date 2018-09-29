@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/19 19:43:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2018/09/29 06:42:21 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.1.1
+VERSION =	4.1.3
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          1.0 # 16.0

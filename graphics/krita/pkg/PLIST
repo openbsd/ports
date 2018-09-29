@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/09/29 06:42:21 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -305,6 +305,7 @@ share/krita/actions/PathTool.action
 share/krita/actions/SvgTextTool.action
 share/krita/actions/krita.action
 share/krita/actions/kritamenu.action
+share/krita/actions/threshold.action
 share/krita/brushes/
 share/krita/brushes/triangle.svg
 share/krita/bundles/
