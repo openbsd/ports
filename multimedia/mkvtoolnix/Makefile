@@ -2,7 +2,7 @@
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-26.0.0
+DISTNAME=	mkvtoolnix-27.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -17,7 +17,8 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt
 WANTLIB += boost_regex-mt boost_system-mt c cmark ebml iconv intl
 WANTLIB += m magic matroska ogg vorbis z
 
-MASTER_SITES=	${HOMEPAGE}sources/
+MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
+
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/ruby
