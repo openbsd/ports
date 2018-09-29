@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2015/06/13 08:30:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2018/09/29 08:08:20 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -129,7 +129,7 @@ lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
 lib/girepository-1.0/GdaData-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
-@lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-5.0_VERSION}
+@lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-${GDA_MAJOR}_VERSION}
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/providers/
 lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
@@ -137,11 +137,11 @@ lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
 lib/libgda-${GDA_MAJOR}/providers/libgda-web.so
 lib/libgda-report-${GDA_MAJOR}.la
-@lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-5.0_VERSION}
+@lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-${GDA_MAJOR}_VERSION}
 lib/libgda-xslt-${GDA_MAJOR}.la
-@lib lib/libgda-xslt-${GDA_MAJOR}.so.${LIBgda-xslt-5.0_VERSION}
+@lib lib/libgda-xslt-${GDA_MAJOR}.so.${LIBgda-xslt-${GDA_MAJOR}_VERSION}
 lib/libgdadata-${GDA_MAJOR}.la
-@lib lib/libgdadata-${GDA_MAJOR}.so.${LIBgdadata-5.0_VERSION}
+@lib lib/libgdadata-${GDA_MAJOR}.so.${LIBgdadata-${GDA_MAJOR}_VERSION}
 lib/pkgconfig/libgda-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-bdb-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-report-${GDA_MAJOR}.pc
@@ -170,7 +170,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaConnectionEvent.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataAccessWrapper.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModel.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelArray.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelBdb.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelDir.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelImport.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelIter.html
@@ -357,7 +356,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-2-0.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/index.sgml
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index_main.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/information_schema.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/information_schema.png
@@ -373,6 +371,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Configuration.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Default-Data-handlers.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Gda-Value.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataComparator.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataModelBdb.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataPivot.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaMutex.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaRepetitiveStatement.html
@@ -589,9 +588,6 @@ share/locale/sk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sl/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sq/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sr@latin/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sv/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/tg/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
@@ -601,5 +597,3 @@ share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/vala/vapi/gdadata-${GDA_MAJOR}.vapi
-share/vala/vapi/libgda-${GDA_MAJOR}.vapi

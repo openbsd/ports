@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2018/08/05 19:04:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2018/09/29 08:08:19 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostgreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.2.4
+GNOME_VERSION=		5.2.5
 
 GDA_MAJOR=		5.0
 SUBST_VARS=		GDA_MAJOR
@@ -19,12 +19,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main=		11
-REVISION-ldap=		3
-REVISION-mysql=		3
-REVISION-pgsql=		3
-REVISION-ui=		11
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -95,7 +89,7 @@ MULTI_PACKAGES=		-main -ui -mysql -pgsql -ldap
 
 ### -main
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c gcrypt gpg-error ncurses sqlite3 gee-0.8
+WANTLIB-main += c curses gcrypt gpg-error sqlite3 gee-0.8
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
@@ -112,7 +106,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo atk-bridge-2.0
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += xcb xcb-render xcb-shm epoxy Xtst atspi harfbuzz dbus-1
+WANTLIB-ui += xcb xcb-render xcb-shm epoxy atspi harfbuzz dbus-1 fribidi
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \
 			x11/dbus \

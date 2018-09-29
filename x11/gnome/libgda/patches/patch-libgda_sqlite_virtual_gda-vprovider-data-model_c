@@ -1,0 +1,16 @@
+$OpenBSD: patch-libgda_sqlite_virtual_gda-vprovider-data-model_c,v 1.1 2018/09/29 08:08:19 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=723777
+
+Index: libgda/sqlite/virtual/gda-vprovider-data-model.c
+--- libgda/sqlite/virtual/gda-vprovider-data-model.c.orig
++++ libgda/sqlite/virtual/gda-vprovider-data-model.c
+@@ -280,7 +280,7 @@ virtual_filtered_data_free (VirtualFilteredData *data)
+ static VirtualFilteredData *
+ virtual_filtered_data_ref (VirtualFilteredData *data)
+ {
+-	g_return_if_fail (data != NULL);
++	g_return_val_if_fail (data != NULL, NULL);
+ 	data->refcount ++;
+ 	return data;
+ }
