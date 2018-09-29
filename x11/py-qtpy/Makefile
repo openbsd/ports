@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/29 21:19:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/09/29 08:38:04 rsadowski Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	1.5.1
 DISTNAME =		QtPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtpy-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
