@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/30 10:58:44 ajacoutot Exp $
 
 COMMENT=	client library for accessing NFS
 
-DISTNAME=	libnfs-1.9.8
+DISTNAME=	libnfs-2.0.0
 CATEGORIES=	devel net
 MASTER_SITES=	https://sites.google.com/site/libnfstarballs/li/
-REVISION=	0
 
-SHARED_LIBS=	nfs	0.0
+SHARED_LIBS=	nfs	1.0
 
 HOMEPAGE=	https://github.com/sahlberg/libnfs
 

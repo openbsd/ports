@@ -1,7 +1,8 @@
-$OpenBSD: patch-lib_socket_c,v 1.1.1.1 2015/08/25 06:40:04 ajacoutot Exp $
---- lib/socket.c.orig	Thu Aug 20 14:55:57 2015
-+++ lib/socket.c	Thu Aug 20 14:56:17 2015
-@@ -113,7 +113,7 @@ static int set_tcp_sockopt(int sockfd, int optname, in
+$OpenBSD: patch-lib_socket_c,v 1.2 2018/09/30 10:58:44 ajacoutot Exp $
+Index: lib/socket.c
+--- lib/socket.c.orig
++++ lib/socket.c
+@@ -140,7 +140,7 @@ static int set_tcp_sockopt(int sockfd, int optname, in
  {
  	int level;
  

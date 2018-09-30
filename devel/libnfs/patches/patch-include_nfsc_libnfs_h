@@ -1,13 +1,14 @@
-$OpenBSD: patch-include_nfsc_libnfs_h,v 1.1 2016/09/10 13:03:41 ajacoutot Exp $
---- include/nfsc/libnfs.h.orig	Sat Sep 10 10:44:50 2016
-+++ include/nfsc/libnfs.h	Sat Sep 10 10:45:59 2016
-@@ -31,6 +31,9 @@
- #if defined(__APPLE__) && defined(__MACH__)
- #include <sys/time.h>
+$OpenBSD: patch-include_nfsc_libnfs_h,v 1.2 2018/09/30 10:58:44 ajacoutot Exp $
+Index: include/nfsc/libnfs.h
+--- include/nfsc/libnfs.h.orig
++++ include/nfsc/libnfs.h
+@@ -32,6 +32,9 @@
+ #ifdef __cplusplus
+ extern "C" {
  #endif
 +#if defined(__OpenBSD__)
 +#include <sys/time.h> /* gettimeofday */
 +#endif
  
- #ifdef __cplusplus
- extern "C" {
+ #define LIBNFS_FEATURE_READAHEAD
+ #define LIBNFS_FEATURE_PAGECACHE
