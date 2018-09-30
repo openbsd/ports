@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.48 2018/09/16 16:46:57 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2018/09/30 11:46:22 landry Exp $
 
-V =	2.4.5
+V =	2.5.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
 
-SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.4 0.0 # 4.0
+SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.5 0.0 # 4.0
 
-HOMEPAGE=	http://www.postgis.org/
+HOMEPAGE=	http://www.postgis.net/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
@@ -15,7 +15,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
-WANTLIB += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png pq>=5.3
+WANTLIB += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png pq>=5.3 protobuf-c zstd
 WANTLIB += proj pthread qhull spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff webp xml2 z
 
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
@@ -25,19 +25,20 @@ MODULES =	databases/postgresql
 LIB_DEPENDS=	databases/sqlite3 \
 		geo/gdal \
 		devel/gettext \
+		devel/protobuf-c \
 		devel/json-c
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/docbook-xsl \
 		textproc/wdg-sgml-lib \
 		graphics/ImageMagick
+TEST_DEPENDS =	devel/cunit
 
 USE_GMAKE=	Yes
 USE_LIBTOOL =	Yes
 #for iconv.h
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ENV+=	ac_cv_header_CUnit_CUnit_h=no
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
