@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/17 00:44:08 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/30 13:05:17 schwarze Exp $
 
 COMMENT =		download and process dive computer data
 
-DISTNAME =		divecmd-0.1.1
+DISTNAME =		divecmd-0.1.3
 
 CATEGORIES =		misc
 
