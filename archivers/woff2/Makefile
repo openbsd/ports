@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/30 15:50:16 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2018/09/30 08:47:42 landry Exp $
 
 COMMENT=		Web Open Font Format 2.0 library
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc m
 
 # C++11
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc ports-clang
 MODULES=		devel/cmake
 
 LIB_DEPENDS=		archivers/brotli
