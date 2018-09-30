@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2018/09/30 14:32:59 schwarze Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
 
 COMMENT =	divelog program for recreational, tech, and free-divers
 
-VER =		4.8.1
+VER =		4.8.2
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
