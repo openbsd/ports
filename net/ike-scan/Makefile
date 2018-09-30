@@ -1,22 +1,28 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/20 15:33:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/09/30 19:54:55 sthen Exp $
+
+GH_ACCOUNT=	royhills
+GH_PROJECT=	ike-scan
+GH_COMMIT=	692163bd7e3de4bf5e802b1e30ade38134033c44
 
 COMMENT=	VPN scanner and identifier
-V=		1.9
-DISTNAME=	ike-scan-$V
-REVISION=	2
+DISTNAME=	ike-scan-1.9.4pl20170804
 CATEGORIES=	net
 
-HOMEPAGE=	https://github.com/royhills/ike-scan
-
-# GPLv2+ w/openssl exemption
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto
+WANTLIB=	c crypto
 
-MASTER_SITES=	https://github.com/royhills/ike-scan/releases/download/$V/
+CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+CONFIGURE_ARGS+=	--with-openssl
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-openssl
+BUILD_DEPENDS +=        ${MODGNU_AUTOMAKE_DEPENDS} \
+                        ${MODGNU_AUTOCONF_DEPENDS}
+
+post-patch:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf --install
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ike-scan

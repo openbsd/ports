@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/01/24 20:16:06 naddy Exp $
-bin/ike-scan
-bin/psk-crack
+@comment $OpenBSD: PLIST,v 1.6 2018/09/30 19:54:55 sthen Exp $
+@bin bin/ike-scan
+@bin bin/psk-crack
 @man man/man1/ike-scan.1
 @man man/man1/psk-crack.1
 share/doc/ike-scan/
