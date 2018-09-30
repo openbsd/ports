@@ -1,0 +1,22 @@
+$OpenBSD: patch-tools_lld_ELF_Relocations_cpp,v 1.1 2018/09/30 10:57:28 ajacoutot Exp $
+
+Allow preemption of functions with protected visibility.  Disallowing this
+makes no sense.  Yes it breaks function address equality and therefore
+the expectations of the standard C language.  However declaring symbols
+with protected visibility isn't standard C in the first place.
+
+Fixes linking non-PIC/PIE code with lld on amd64.
+
+Index: tools/lld/ELF/Relocations.cpp
+--- tools/lld/ELF/Relocations.cpp.orig
++++ tools/lld/ELF/Relocations.cpp
+@@ -630,7 +630,8 @@ static RelExpr adjustExpr(Symbol &Sym, RelExpr Expr, R
+   if (!Sym.isShared() || Config->Shared)
+     return Expr;
+ 
+-  if (Sym.getVisibility() != STV_DEFAULT) {
++  if (Sym.getVisibility() != STV_DEFAULT &&
++      (Sym.getVisibility() != STV_PROTECTED || !Sym.isFunc())) {
+     error("cannot preempt symbol: " + toString(Sym) +
+           getLocation(S, Sym, RelOff));
+     return Expr;
