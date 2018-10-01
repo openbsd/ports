@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/01 12:00:12 solene Exp $
 
-V =		3.1.4
+V =		3.2.2
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
@@ -8,7 +8,6 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
 GH_TAGNAME =	v${V}
-REVISION =	2
 
 HOMEPAGE =	http://www.baronygame.com/
 MAINTAINER =	David Carlier <devnexen@gmail.com>
@@ -17,7 +16,7 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
-WANTLIB += SDL2_ttf c execinfo m ogg openal png vorbisfile
+WANTLIB += SDL2_ttf c execinfo m ogg openal png vorbisfile physfs
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -27,6 +26,7 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	audio/libvorbis \
 		audio/openal \
 		devel/libexecinfo \
+		devel/physfs \
 		devel/sdl2 \
 		devel/sdl2-image \
 		devel/sdl2-net \

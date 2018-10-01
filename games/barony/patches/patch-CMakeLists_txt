@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/05/04 22:30:08 solene Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/10/01 12:00:12 solene Exp $
 
 Remove hardcoded -O3
 Rename binary to barony-bin because we are invoking the
@@ -26,7 +26,7 @@ Index: CMakeLists.txt
    endif()
    if (APPLE)
      set (Apple 1)
-@@ -253,7 +253,7 @@ message("${CMAKE_CXX_FLAGS_DEBUG}")
+@@ -255,7 +255,7 @@ message("${CMAKE_CXX_FLAGS_DEBUG}")
  message("Release flags: ")
  message("${CMAKE_C_FLAGS_RELEASE}")
  message("${CMAKE_CXX_FLAGS_RELEASE}")
@@ -35,7 +35,7 @@ Index: CMakeLists.txt
  message("***************************")
  
  
-@@ -290,7 +290,7 @@ SET_SOURCE_FILES_PROPERTIES(${MACOSX_BUNDLE_ICON_FILE}
+@@ -292,7 +292,7 @@ SET_SOURCE_FILES_PROPERTIES(${MACOSX_BUNDLE_ICON_FILE}
  set_source_files_properties(${GAME_SOURCES} PROPERTIES COMPILE_FLAGS "-x objective-c++")
  #set_source_files_properties(${GAME_SOURCES} PROPERTIES COMPILE_FLAGS "-stdlib=libc++")
  else()
@@ -44,7 +44,7 @@ Index: CMakeLists.txt
  endif()
  
  if(WIN32)
-@@ -307,9 +307,9 @@ if(WIN32)
+@@ -309,9 +309,9 @@ if(WIN32)
  else()
    if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
      # 64 bit
@@ -56,7 +56,7 @@ Index: CMakeLists.txt
    if (STEAMWORKS_ENABLED)
      target_link_libraries(barony ${STEAMWORKS_LIBRARY})
      #target_link_libraries(barony ${STEAMWORKS_CWRAPPER_LIBRARIES} -lstdc++)
-@@ -322,15 +322,15 @@ else()
+@@ -324,16 +324,16 @@ else()
      find_path(EXECINFO_INC NAMES execinfo.h)
      find_library(EXECINFO_LIB NAMES execinfo)
      include_directories(${EXECINFO_INC})
@@ -66,18 +66,20 @@ Index: CMakeLists.txt
  endif()
 -target_link_libraries(barony ${OPENGL_LIBRARIES})
 -target_link_libraries(barony ${THREADS_LIBRARIES})
--target_link_libraries(barony -lm)
+-target_link_libraries(barony -lm -lc)
 +target_link_libraries(barony-bin ${OPENGL_LIBRARIES})
 +target_link_libraries(barony-bin ${THREADS_LIBRARIES})
-+target_link_libraries(barony-bin -lm)
++target_link_libraries(barony-bin -lm -lc)
  if( NOT WIN32 AND NOT APPLE)
    #Remember, Windows and Mac aren't using find_package for FMOD and PNG.
 -  target_link_libraries(barony ${PNG_LIBRARY})
-+   target_link_libraries(barony-bin ${PNG_LIBRARY})
+-  target_link_libraries(barony ${PHYSFS_LIBRARY})
++  target_link_libraries(barony-bin ${PNG_LIBRARY})
++  target_link_libraries(barony-bin ${PHYSFS_LIBRARY})
    if (FMOD_FOUND)
      target_link_libraries(barony ${FMOD_LIBRARY})
    endif()
-@@ -345,14 +345,14 @@ if(APPLE)
+@@ -352,14 +352,14 @@ if(APPLE)
      target_link_libraries(barony -lfmodex) #Finally manually link fmod for mac.
    endif()
  endif()
@@ -96,7 +98,7 @@ Index: CMakeLists.txt
    endif()
  endif()
  
-@@ -365,7 +365,7 @@ if (NOT APPLE AND UNIX)
+@@ -372,7 +372,7 @@ if (NOT APPLE AND UNIX)
    endif()
    message(STATUS "Base data directory ${BASE_DATA_DIR}")
  
@@ -105,7 +107,7 @@ Index: CMakeLists.txt
  	 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     COMPONENT Runtime
    )
-@@ -445,7 +445,7 @@ if (NOT APPLE AND UNIX)
+@@ -457,7 +457,7 @@ if (NOT APPLE AND UNIX)
      RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime
    )
  
