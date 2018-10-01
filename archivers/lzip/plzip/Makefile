@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/02/14 16:44:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/01 21:33:47 juanfra Exp $
 
 COMMENT =		multi-threaded data compressor based on lzlib
 
 DISTNAME =		plzip-1.7
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://lzip.nongnu.org/plzip.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/plzip/}
