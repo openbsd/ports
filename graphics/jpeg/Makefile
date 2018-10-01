@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/10/01 07:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/10/01 14:16:55 ajacoutot Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
@@ -28,7 +28,6 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/yasm
 .endif
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_TURBOJPEG=False
 
