@@ -1,6 +1,7 @@
-$OpenBSD: patch-support_apachectl_in,v 1.4 2015/05/15 08:08:04 stsp Exp $
---- support/apachectl.in.orig	Wed Feb  1 04:47:28 2012
-+++ support/apachectl.in	Sat Jan 10 15:05:02 2015
+$OpenBSD: patch-support_apachectl_in,v 1.5 2018/10/01 15:21:24 sthen Exp $
+Index: support/apachectl.in
+--- support/apachectl.in.orig
++++ support/apachectl.in
 @@ -52,7 +52,7 @@ fi
  # a command that outputs a formatted text version of the HTML at the
  # url given on the command line.  Designed for lynx, however other
@@ -21,14 +22,12 @@ $OpenBSD: patch-support_apachectl_in,v 1.4 2015/05/15 08:08:04 stsp Exp $
  # Set the maximum number of file descriptors allowed per child process.
  if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
      $ULIMIT_MAX_FILES
-@@ -83,8 +87,8 @@ start|stop|restart|graceful|graceful-stop)
+@@ -83,7 +87,7 @@ start|stop|restart|graceful|graceful-stop)
      ;;
  startssl|sslstart|start-SSL)
      echo The startssl option is no longer supported.
 -    echo Please edit httpd.conf to include the SSL configuration settings
--    echo and then use "apachectl start".
 +    echo Please edit httpd2.conf to include the SSL configuration settings
-+    echo and then use "apachectl2 start".
+     echo and then use "apachectl start".
      ERROR=2
      ;;
- configtest)

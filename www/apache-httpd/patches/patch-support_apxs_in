@@ -1,7 +1,8 @@
-$OpenBSD: patch-support_apxs_in,v 1.3 2015/05/15 08:08:04 stsp Exp $
---- support/apxs.in.orig	Thu Dec 26 19:01:53 2013
-+++ support/apxs.in	Sat Jan 10 15:07:15 2015
-@@ -671,12 +671,12 @@ __DATA__
+$OpenBSD: patch-support_apxs_in,v 1.4 2018/10/01 15:21:24 sthen Exp $
+Index: support/apxs.in
+--- support/apxs.in.orig
++++ support/apxs.in
+@@ -671,8 +671,8 @@ __DATA__
  ##
  
  builddir=.
@@ -12,8 +13,3 @@ $OpenBSD: patch-support_apxs_in,v 1.3 2015/05/15 08:08:04 stsp Exp $
  include %INSTALLBUILDDIR%/special.mk
  
  #   the used tools
--APACHECTL=apachectl
-+APACHECTL=apachectl2
- 
- #   additional defines, includes and libraries
- #DEFS=-Dmy_define=my_value

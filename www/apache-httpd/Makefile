@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2018/03/29 19:30:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2018/10/01 15:21:24 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		/var/www files for Apache HTTPd
 
-V=			2.4.33
+V=			2.4.35
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -88,15 +88,10 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
 WANTLIB-main +=		lber-2.4 ldap-2.4 sasl2
 LIB_DEPENDS-main+=	databases/openldap
-LIB_DEPENDS-main+=	apr-util-*-ldap:devel/apr-util,ldap
+LIB_DEPENDS-main+=	apr-util->=1.6.1p0-ldap:devel/apr-util,ldap
 .else
-LIB_DEPENDS-main+=	apr-util-*-!ldap:devel/apr-util
+LIB_DEPENDS-main+=	apr-util->=1.6.1p0-!ldap:devel/apr-util
 .endif
-
-A2BIN=			apxs logresolve dbmmanage htdigest htpasswd
-A2SBIN=			apachectl rotatelogs suexec
-A2MAN1=			dbmmanage apxs htdigest htpasswd logresolve
-A2MAN8=			apachectl httpd rotatelogs suexec
 
 pre-configure:
 	sed -i 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
@@ -116,25 +111,18 @@ post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-common}/cgi-bin
 	mv ${PREFIX}/share/examples/apache2/cgi-bin/{printenv,test-cgi} \
 		${WRKINST}${PREFIX-common}/cgi-bin/
-	mv ${PREFIX}/share/examples/apache2/icons \
-		${WRKINST}${PREFIX-common}/
+	mv ${PREFIX}/share/examples/apache2/icons ${WRKINST}${PREFIX-common}/
 
-.for i in ${A2MAN1}
-	mv ${PREFIX}/man/man1/${i}.1 ${PREFIX}/man/man1/${i}2.1
-.endfor
+	# avoid conflicts with httpd in base
+	mv ${PREFIX}/man/man1/htpasswd.1 ${PREFIX}/man/man1/htpasswd2.1
+	mv ${PREFIX}/man/man8/httpd.8 ${PREFIX}/man/man8/httpd2.8
+	mv ${PREFIX}/bin/htpasswd ${PREFIX}/bin/htpasswd2
 
-.for i in ${A2MAN8}
-	mv ${PREFIX}/man/man8/${i}.8 ${PREFIX}/man/man8/${i}2.8
-.endfor
+	mv ${PREFIX}/bin/apxs ${PREFIX}/sbin # other ports expect it in sbin/
 
-.for i in ${A2BIN}
-	mv ${PREFIX}/bin/${i} ${PREFIX}/bin/${i}2
-.endfor
-	mv ${PREFIX}/bin/apxs2 ${PREFIX}/sbin # other ports expect it in sbin/
-
-.for i in ${A2SBIN}
-	mv ${PREFIX}/sbin/${i} ${PREFIX}/sbin/${i}2
-.endfor
+	# courtesy symlinks
+	for i in logresolve dbmmanage htdigest; do ln -s $${i} ${PREFIX}/bin/$${i}2; done
+	for i in apachectl apxs rotatelogs suexec; do ln -s $${i} ${PREFIX}/sbin/$${i}2; done
 
 .if ${FLAVOR:Mldap}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ap2-mod_auth_ldap

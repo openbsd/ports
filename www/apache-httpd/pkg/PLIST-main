@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2018/03/29 19:30:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/10/01 15:21:24 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @pkgpath www/apache-httpd-openbsd
+@rcscript ${RCDIR}/apache2
 @bin bin/ab
+bin/dbmmanage
 bin/dbmmanage2
 @bin bin/htdbm
-@bin bin/htdigest2
+@bin bin/htdigest
+bin/htdigest2
 @bin bin/htpasswd2
 @bin bin/httxt2dbm
-@bin bin/logresolve2
+@bin bin/logresolve
+bin/logresolve2
 include/apache2/
 include/apache2/ap_compat.h
 include/apache2/ap_config.h
@@ -164,6 +168,7 @@ lib/apache2/mod_rewrite.so
 lib/apache2/mod_sed.so
 lib/apache2/mod_session.so
 lib/apache2/mod_session_cookie.so
+lib/apache2/mod_session_crypto.so
 lib/apache2/mod_session_dbd.so
 lib/apache2/mod_setenvif.so
 lib/apache2/mod_slotmem_plain.so
@@ -185,20 +190,22 @@ lib/apache2/mod_vhost_alias.so
 lib/apache2/mod_watchdog.so
 lib/apache2/mod_xml2enc.so
 @man man/man1/ab.1
-@man man/man1/apxs2.1
-@man man/man1/dbmmanage2.1
+@man man/man1/apxs.1
+@man man/man1/dbmmanage.1
 @man man/man1/htdbm.1
-@man man/man1/htdigest2.1
+@man man/man1/htdigest.1
 @man man/man1/htpasswd2.1
 @man man/man1/httxt2dbm.1
-@man man/man1/logresolve2.1
-@man man/man8/apachectl2.8
+@man man/man1/logresolve.1
+@man man/man8/apachectl.8
 @man man/man8/fcgistarter.8
 @man man/man8/htcacheclean.8
 @man man/man8/httpd2.8
-@man man/man8/rotatelogs2.8
-@man man/man8/suexec2.8
+@man man/man8/rotatelogs.8
+@man man/man8/suexec.8
+sbin/apachectl
 sbin/apachectl2
+sbin/apxs
 sbin/apxs2
 @bin sbin/checkgid
 sbin/envvars
@@ -206,10 +213,12 @@ sbin/envvars-std
 @bin sbin/fcgistarter
 @bin sbin/htcacheclean
 @bin sbin/httpd2
-@bin sbin/rotatelogs2
+@bin sbin/rotatelogs
+sbin/rotatelogs2
 @mode 555
-@bin sbin/suexec2
+@bin sbin/suexec
 @mode
+sbin/suexec2
 share/apache2/
 share/apache2/build/
 share/apache2/build/config.nice
@@ -383,8 +392,10 @@ share/doc/apache2/howto/public_html.html.ko.euc-kr
 share/doc/apache2/howto/public_html.html.tr.utf8
 share/doc/apache2/howto/reverse_proxy.html
 share/doc/apache2/howto/reverse_proxy.html.en
+share/doc/apache2/howto/reverse_proxy.html.fr
 share/doc/apache2/howto/ssi.html
 share/doc/apache2/howto/ssi.html.en
+share/doc/apache2/howto/ssi.html.es
 share/doc/apache2/howto/ssi.html.fr
 share/doc/apache2/howto/ssi.html.ja.utf8
 share/doc/apache2/howto/ssi.html.ko.euc-kr
@@ -472,6 +483,7 @@ share/doc/apache2/logs.html.tr.utf8
 share/doc/apache2/misc/
 share/doc/apache2/misc/index.html
 share/doc/apache2/misc/index.html.en
+share/doc/apache2/misc/index.html.es
 share/doc/apache2/misc/index.html.fr
 share/doc/apache2/misc/index.html.ko.euc-kr
 share/doc/apache2/misc/index.html.tr.utf8
@@ -591,6 +603,7 @@ share/doc/apache2/mod/mod_authn_socache.html.en
 share/doc/apache2/mod/mod_authn_socache.html.fr
 share/doc/apache2/mod/mod_authnz_fcgi.html
 share/doc/apache2/mod/mod_authnz_fcgi.html.en
+share/doc/apache2/mod/mod_authnz_fcgi.html.fr
 share/doc/apache2/mod/mod_authnz_ldap.html
 share/doc/apache2/mod/mod_authnz_ldap.html.en
 share/doc/apache2/mod/mod_authnz_ldap.html.fr
@@ -630,6 +643,7 @@ share/doc/apache2/mod/mod_autoindex.html.ko.euc-kr
 share/doc/apache2/mod/mod_autoindex.html.tr.utf8
 share/doc/apache2/mod/mod_brotli.html
 share/doc/apache2/mod/mod_brotli.html.en
+share/doc/apache2/mod/mod_brotli.html.fr
 share/doc/apache2/mod/mod_buffer.html
 share/doc/apache2/mod/mod_buffer.html.en
 share/doc/apache2/mod/mod_buffer.html.fr
@@ -747,6 +761,7 @@ share/doc/apache2/mod/mod_heartmonitor.html.en
 share/doc/apache2/mod/mod_heartmonitor.html.fr
 share/doc/apache2/mod/mod_http2.html
 share/doc/apache2/mod/mod_http2.html.en
+share/doc/apache2/mod/mod_http2.html.fr
 share/doc/apache2/mod/mod_ident.html
 share/doc/apache2/mod/mod_ident.html.en
 share/doc/apache2/mod/mod_ident.html.fr
@@ -859,6 +874,7 @@ share/doc/apache2/mod/mod_proxy_ftp.html.en
 share/doc/apache2/mod/mod_proxy_ftp.html.fr
 share/doc/apache2/mod/mod_proxy_hcheck.html
 share/doc/apache2/mod/mod_proxy_hcheck.html.en
+share/doc/apache2/mod/mod_proxy_hcheck.html.fr
 share/doc/apache2/mod/mod_proxy_html.html
 share/doc/apache2/mod/mod_proxy_html.html.en
 share/doc/apache2/mod/mod_proxy_html.html.fr
@@ -867,6 +883,7 @@ share/doc/apache2/mod/mod_proxy_http.html.en
 share/doc/apache2/mod/mod_proxy_http.html.fr
 share/doc/apache2/mod/mod_proxy_http2.html
 share/doc/apache2/mod/mod_proxy_http2.html.en
+share/doc/apache2/mod/mod_proxy_http2.html.fr
 share/doc/apache2/mod/mod_proxy_scgi.html
 share/doc/apache2/mod/mod_proxy_scgi.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html.fr
@@ -874,6 +891,7 @@ share/doc/apache2/mod/mod_proxy_uwsgi.html
 share/doc/apache2/mod/mod_proxy_uwsgi.html.en
 share/doc/apache2/mod/mod_proxy_wstunnel.html
 share/doc/apache2/mod/mod_proxy_wstunnel.html.en
+share/doc/apache2/mod/mod_proxy_wstunnel.html.fr
 share/doc/apache2/mod/mod_ratelimit.html
 share/doc/apache2/mod/mod_ratelimit.html.en
 share/doc/apache2/mod/mod_ratelimit.html.fr
@@ -981,6 +999,7 @@ share/doc/apache2/mod/mod_usertrack.html.en
 share/doc/apache2/mod/mod_usertrack.html.fr
 share/doc/apache2/mod/mod_version.html
 share/doc/apache2/mod/mod_version.html.en
+share/doc/apache2/mod/mod_version.html.fr
 share/doc/apache2/mod/mod_version.html.ja.utf8
 share/doc/apache2/mod/mod_version.html.ko.euc-kr
 share/doc/apache2/mod/mod_vhost_alias.html
@@ -989,6 +1008,7 @@ share/doc/apache2/mod/mod_vhost_alias.html.fr
 share/doc/apache2/mod/mod_vhost_alias.html.tr.utf8
 share/doc/apache2/mod/mod_watchdog.html
 share/doc/apache2/mod/mod_watchdog.html.en
+share/doc/apache2/mod/mod_watchdog.html.fr
 share/doc/apache2/mod/mod_xml2enc.html
 share/doc/apache2/mod/mod_xml2enc.html.en
 share/doc/apache2/mod/mod_xml2enc.html.fr
@@ -1085,6 +1105,7 @@ share/doc/apache2/platform/perf-hp.html.fr
 share/doc/apache2/platform/perf-hp.html.ko.euc-kr
 share/doc/apache2/platform/rpm.html
 share/doc/apache2/platform/rpm.html.en
+share/doc/apache2/platform/rpm.html.fr
 share/doc/apache2/platform/win_compiling.html
 share/doc/apache2/platform/win_compiling.html.en
 share/doc/apache2/platform/win_compiling.html.fr
@@ -1160,6 +1181,7 @@ share/doc/apache2/programs/index.html.tr.utf8
 share/doc/apache2/programs/index.html.zh-cn.utf8
 share/doc/apache2/programs/log_server_status.html
 share/doc/apache2/programs/log_server_status.html.en
+share/doc/apache2/programs/log_server_status.html.fr
 share/doc/apache2/programs/logresolve.html
 share/doc/apache2/programs/logresolve.html.en
 share/doc/apache2/programs/logresolve.html.fr
@@ -1177,8 +1199,10 @@ share/doc/apache2/programs/rotatelogs.html.ko.euc-kr
 share/doc/apache2/programs/rotatelogs.html.tr.utf8
 share/doc/apache2/programs/split-logfile.html
 share/doc/apache2/programs/split-logfile.html.en
+share/doc/apache2/programs/split-logfile.html.fr
 share/doc/apache2/programs/suexec.html
 share/doc/apache2/programs/suexec.html.en
+share/doc/apache2/programs/suexec.html.fr
 share/doc/apache2/programs/suexec.html.ko.euc-kr
 share/doc/apache2/programs/suexec.html.tr.utf8
 share/doc/apache2/rewrite/
@@ -1462,4 +1486,3 @@ share/examples/apache2/htdocs/
 share/examples/apache2/htdocs/index.html
 @sample /var/www/htdocs/index.html
 %%ldap%%
-@rcscript ${RCDIR}/apache2
