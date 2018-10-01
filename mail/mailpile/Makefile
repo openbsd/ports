@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/01 11:57:26 solene Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/01 16:15:25 solene Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
 GH_ACCOUNT =	mailpile
 GH_PROJECT =	Mailpile
 GH_TAGNAME =	1.0.0rc3
+REVISION =	0
+
+HOMEPAGE =	https://www.mailpile.is/
 
 CATEGORIES =	mail
 
