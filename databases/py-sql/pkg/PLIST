@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/12/04 08:35:10 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/01 19:52:38 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_aggregat
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_as.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_cast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_collate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_column.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_combining_query.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_conditionals.${MODPY_PYC_MAGIC_TAG}pyc
@@ -46,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/test_aggregate.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_alias.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_as.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_cast.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_collate.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_column.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_combining_query.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_conditionals.py
