@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/01 12:06:54 solene Exp $
+@bin bin/pup
+share/doc/pup/
+share/doc/pup/README.md
