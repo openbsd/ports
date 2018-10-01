@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.582 2018/08/23 05:49:51 landry Exp $
+# $OpenBSD: Makefile,v 1.583 2018/10/01 12:07:33 solene Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -347,6 +347,7 @@
      SUBDIR += podofo
      SUBDIR += pplatex
      SUBDIR += pugixml
+     SUBDIR += pup
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
      SUBDIR += py-ICU
