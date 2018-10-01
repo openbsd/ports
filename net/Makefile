@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1085 2018/09/23 17:03:55 awolk Exp $
+# $OpenBSD: Makefile,v 1.1086 2018/10/01 22:00:56 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -138,7 +138,6 @@
      SUBDIR += icli
      SUBDIR += icli,nagios
      SUBDIR += icmpinfo
-     SUBDIR += ifmcstat
      SUBDIR += ifstat
      SUBDIR += ifstat,snmp
      SUBDIR += iftop
