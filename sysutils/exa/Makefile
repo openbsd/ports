@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/27 09:43:18 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/01 08:14:46 sthen Exp $
 
 COMMENT =		ls alternative written in Rust
 
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.8.0
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -35,7 +36,7 @@ MODCARGO_CRATES +=	idna-0.1.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	iso8601-0.1.1	# MIT
 MODCARGO_CRATES +=	kernel32-sys-0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static-0.2.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc-0.2.30	# MIT/Apache-2.0
+MODCARGO_CRATES +=	libc-0.2.43	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libgit2-sys-0.6.14	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libz-sys-1.0.16	# MIT/Apache-2.0
 MODCARGO_CRATES +=	locale-0.2.2	# MIT
@@ -78,6 +79,8 @@ MODCARGO_CRATES +=	vcpkg-0.2.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-0.2.8	# MIT
 MODCARGO_CRATES +=	winapi-build-0.1.1	# MIT
 MODCARGO_CRATES +=	zoneinfo_compiled-0.4.5	# MIT
+
+MODCARGO_CRATES_UPDATE +=	libc
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
