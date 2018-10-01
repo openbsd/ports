@@ -1,4 +1,4 @@
-$OpenBSD: patch-dhcp6s_conf_sample,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
+$OpenBSD: patch-dhcp6s_conf_sample,v 1.2 2018/10/01 19:52:41 naddy Exp $
 --- dhcp6s.conf.sample.orig	Thu Jul 17 22:07:54 2008
 +++ dhcp6s.conf.sample	Thu Jul 17 22:26:35 2008
 @@ -1,5 +1,5 @@
@@ -39,7 +39,7 @@ $OpenBSD: patch-dhcp6s_conf_sample,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
 +# The following is an example configuration which provides an IPv6 address
 +# from an address pool (2001:db8:1:2::1000-2000) with a lease time of 3600
 +# seconds to any client attached to the fxp0 interface. Note that you have
-+# to send router advertisements on fxp0, i.e. run rtadvd(8) on that interface.
++# to send router advertisements on fxp0, i.e. run rad(8) on that interface.
 +# Otherwise a client cannot know the prefix-length and the default router.
 +
  interface fxp0 {
@@ -53,7 +53,7 @@ $OpenBSD: patch-dhcp6s_conf_sample,v 1.1.1.1 2009/01/01 19:01:14 stsp Exp $
 +# The following is an example configuration which provides fixed IPv6
 +# addresses to two known clients. It also provides every client with a
 +# DNS server. Note that you have to send router advertisements on fxp0,
-+# i.e. run rtadvd(8) on the interface the clients are attached to.
++# i.e. run rad(8) on the interface the clients are attached to.
 +# Otherwise a client cannot know the prefix-length and the default router.
 +
 +option domain-name-servers 2001:db8::35;

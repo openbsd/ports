@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2018/09/04 12:46:16 espie Exp $
+$OpenBSD: README,v 1.7 2018/10/01 19:52:41 naddy Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -36,5 +36,15 @@ interface pppoe0
 	ia_pd 2 em0/1 vlan3/2 vlan5/3
 -- -- -- -- -- --
 
-In normal cases, you would use rtadvd(8) to advertise these prefixes to
-clients (e.g. "rcctl enable rtadvd; rcctl set rtadvd flags em0 vlan3 vlan5").
+In normal cases, you would use rad(8) to advertise these prefixes to
+clients. Put the following in /etc/rad.conf:
+
+-- -- -- -- -- --
+interface em0
+interface vlan3
+interface vlan5
+-- -- -- -- -- --
+
+And enable rad(8):
+
+    # rcctl enable rad
