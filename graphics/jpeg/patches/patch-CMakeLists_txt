@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/10/01 07:08:22 ajacoutot Exp $
+
+Symbol versioning triggers weird linking problems in dependent ports.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -451,10 +451,6 @@ message(STATUS "INLINE = ${INLINE} (FORCE_INLINE = ${F
+ 
+ if(UNIX AND NOT APPLE)
+   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/conftest.map "VERS_1 { global: *; };")
+-  set(CMAKE_REQUIRED_FLAGS
+-    "-Wl,--version-script,${CMAKE_CURRENT_BINARY_DIR}/conftest.map")
+-  check_c_source_compiles("int main(void) { return 0; }" HAVE_VERSION_SCRIPT)
+-  set(CMAKE_REQUIRED_FLAGS)
+   file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/conftest.map)
+   if(HAVE_VERSION_SCRIPT)
+     message(STATUS "Linker supports GNU-style version scripts")

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.58 2018/01/09 21:05:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2018/10/01 07:08:22 ajacoutot Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		1.5.3
+V=		2.0.0
 DISTNAME=	jpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
 EPOCH=		0
 
-SHARED_LIBS+=	jpeg		68.1	# 64.0
+SHARED_LIBS+=	jpeg		69.0	# 64.0
 
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
@@ -22,16 +22,15 @@ DISTFILES=	libjpeg-turbo-${V}.tar.gz
 
 WANTLIB=	c
 
+MODULES=	devel/cmake
+
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/yasm
 .endif
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE=gnu
-
-# Symbol versioning triggers weird linking problems in dependent ports.
-CONFIGURE_ARGS+=--disable-ld-version-script \
-		--without-turbojpeg
+CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+		-DWITH_TURBOJPEG=False
 
 WRKDIST=	${WRKDIR}/lib${DISTNAME}
 
@@ -40,6 +39,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libjpeg.txt ${WRKSRC}/wizard.txt \
 	    ${PREFIX}/share/doc/jpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jpeg
-	${INSTALL_DATA} ${WRKSRC}/example.c ${PREFIX}/share/examples/jpeg
+	${INSTALL_DATA} ${WRKSRC}/example.txt ${PREFIX}/share/examples/jpeg
+	# the turbojpeg wrapper library is disabled
+	rm ${PREFIX}/lib/pkgconfig/libturbojpeg.pc
 
 .include <bsd.port.mk>

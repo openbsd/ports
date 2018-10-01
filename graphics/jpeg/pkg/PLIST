@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2016/07/13 09:43:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/10/01 07:08:22 ajacoutot Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
@@ -9,7 +9,6 @@ include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 lib/libjpeg.a
-lib/libjpeg.la
 @lib lib/libjpeg.so.${LIBjpeg_VERSION}
 lib/pkgconfig/libjpeg.pc
 @man man/man1/cjpeg.1
@@ -24,10 +23,11 @@ share/doc/libjpeg-turbo/
 share/doc/libjpeg-turbo/LICENSE.md
 share/doc/libjpeg-turbo/README.ijg
 share/doc/libjpeg-turbo/README.md
-share/doc/libjpeg-turbo/example.c
+share/doc/libjpeg-turbo/example.txt
 share/doc/libjpeg-turbo/libjpeg.txt
 share/doc/libjpeg-turbo/structure.txt
+share/doc/libjpeg-turbo/tjexample.c
 share/doc/libjpeg-turbo/usage.txt
 share/doc/libjpeg-turbo/wizard.txt
 share/examples/jpeg/
-share/examples/jpeg/example.c
+share/examples/jpeg/example.txt

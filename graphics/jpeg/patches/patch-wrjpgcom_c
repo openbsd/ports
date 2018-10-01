@@ -1,18 +1,19 @@
-$OpenBSD: patch-wrjpgcom_c,v 1.4 2018/01/09 21:05:48 rsadowski Exp $
+$OpenBSD: patch-wrjpgcom_c,v 1.5 2018/10/01 07:08:22 ajacoutot Exp $
+
 Index: wrjpgcom.c
 --- wrjpgcom.c.orig
 +++ wrjpgcom.c
-@@ -452,7 +452,7 @@ main (int argc, char **argv)
-                   (unsigned int) MAX_COM_LENGTH);
+@@ -452,7 +452,7 @@ main(int argc, char **argv)
+                   (unsigned int)MAX_COM_LENGTH);
            exit(EXIT_FAILURE);
          }
--        strcpy(comment_arg, argv[argn]+1);
-+        strlcpy(comment_arg, argv[argn]+1, MAX_COM_LENGTH);
+-        strcpy(comment_arg, argv[argn] + 1);
++        strlcpy(comment_arg, argv[argn] + 1, MAX_COM_LENGTH);
          for (;;) {
-           comment_length = (unsigned int) strlen(comment_arg);
-           if (comment_length > 0 && comment_arg[comment_length-1] == '"') {
-@@ -467,8 +467,8 @@ main (int argc, char **argv)
-                     (unsigned int) MAX_COM_LENGTH);
+           comment_length = (unsigned int)strlen(comment_arg);
+           if (comment_length > 0 && comment_arg[comment_length - 1] == '"') {
+@@ -467,8 +467,8 @@ main(int argc, char **argv)
+                     (unsigned int)MAX_COM_LENGTH);
              exit(EXIT_FAILURE);
            }
 -          strcat(comment_arg, " ");
@@ -20,5 +21,5 @@ Index: wrjpgcom.c
 +          strlcat(comment_arg, " ", MAX_COM_LENGTH);
 +          strlcat(comment_arg, argv[argn], MAX_COM_LENGTH);
          }
-       } else if (strlen(argv[argn]) >= (size_t) MAX_COM_LENGTH) {
+       } else if (strlen(argv[argn]) >= (size_t)MAX_COM_LENGTH) {
          fprintf(stderr, "Comment text may not exceed %u bytes\n",
