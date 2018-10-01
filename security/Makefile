@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.518 2018/09/28 22:24:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.519 2018/10/01 11:41:19 denis Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -383,6 +383,7 @@
      SUBDIR += sslscan
      SUBDIR += sslscan,openssl
      SUBDIR += sslsplit
+     SUBDIR += ssss
      SUBDIR += stegdetect
      SUBDIR += steghide
      SUBDIR += strobe
