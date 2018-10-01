@@ -1,0 +1,3 @@
+ssss is an implementation of Shamir's Secret Sharing Scheme. The program suite
+does both: the generation of shares for a known secret, and the reconstruction
+of a secret using user-provided shares.
