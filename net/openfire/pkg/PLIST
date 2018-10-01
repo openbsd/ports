@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/10/01 20:08:53 sthen Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
 @extraunexec rm -rf %D/openfire/embedded-db
 @extraunexec rm -rf %D/openfire/logs/*
+@rcscript ${RCDIR}/openfire
 @mode 775
 @owner root
 @group _openfire
@@ -37,6 +38,8 @@ openfire/plugins/
 openfire/plugins/admin/
 openfire/plugins/admin/plugin.xml
 openfire/plugins/admin/webapp/
+openfire/plugins/admin/webapp/META-INF/
+openfire/plugins/admin/webapp/META-INF/admin.tld
 openfire/plugins/admin/webapp/WEB-INF/
 openfire/plugins/admin/webapp/WEB-INF/admin.tld
 openfire/plugins/admin/webapp/WEB-INF/classes/
@@ -51,10 +54,6 @@ openfire/plugins/admin/webapp/WEB-INF/lib/dwr.jar
 openfire/plugins/admin/webapp/WEB-INF/lib/readme.txt
 openfire/plugins/admin/webapp/WEB-INF/lib/versions.txt
 openfire/plugins/admin/webapp/WEB-INF/sitemesh.xml
-openfire/plugins/admin/webapp/WEB-INF/tags/
-openfire/plugins/admin/webapp/WEB-INF/tags/admin/
-openfire/plugins/admin/webapp/WEB-INF/tags/admin/contentBox.tagx
-openfire/plugins/admin/webapp/WEB-INF/tags/admin/infoBox.tagx
 openfire/plugins/admin/webapp/WEB-INF/web.xml
 openfire/plugins/admin/webapp/favicon.ico
 openfire/plugins/admin/webapp/images/
@@ -366,6 +365,14 @@ openfire/resources/database/upgrade/25/openfire_oracle.sql
 openfire/resources/database/upgrade/25/openfire_postgresql.sql
 openfire/resources/database/upgrade/25/openfire_sqlserver.sql
 openfire/resources/database/upgrade/25/openfire_sybase.sql
+openfire/resources/database/upgrade/26/
+openfire/resources/database/upgrade/26/openfire_db2.sql
+openfire/resources/database/upgrade/26/openfire_hsqldb.sql
+openfire/resources/database/upgrade/26/openfire_mysql.sql
+openfire/resources/database/upgrade/26/openfire_oracle.sql
+openfire/resources/database/upgrade/26/openfire_postgresql.sql
+openfire/resources/database/upgrade/26/openfire_sqlserver.sql
+openfire/resources/database/upgrade/26/openfire_sybase.sql
 openfire/resources/database/upgrade/4/
 openfire/resources/database/upgrade/4/openfire_db2.sql
 openfire/resources/database/upgrade/4/openfire_hsqldb.sql
@@ -426,6 +433,7 @@ share/doc/openfire/install-guide.html
 share/doc/openfire/ldap-guide.html
 share/doc/openfire/pluggable-roster-support-guide.html
 share/doc/openfire/plugin-dev-guide.html
+share/doc/openfire/separating-admin-users-guide.html
 share/doc/openfire/ssl-guide.html
 share/doc/openfire/translator-guide.html
 share/doc/openfire/upgrade-guide.html
@@ -483,7 +491,3 @@ share/examples/openfire/security/truststore
 @owner root
 @group _openfire
 @sample openfire/resources/security/truststore
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/openfire
