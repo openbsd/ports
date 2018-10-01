@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/06/29 22:16:10 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2018/10/01 20:45:07 sthen Exp $
 
 COMMENT=	small and lightweight IDE
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://download.geany.org/
 EXTRACT_SUFX=	.tar.bz2
 
+# C++11 
+COMPILER =	base-clang ports-gcc
 MODULES=	textproc/intltool
 
 USE_GMAKE=	Yes
