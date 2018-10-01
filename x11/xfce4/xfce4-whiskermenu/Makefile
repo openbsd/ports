@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2018/07/16 05:44:11 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/01 19:59:46 landry Exp $
 
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
-XFCE_VERSION =	2.2.1
+XFCE_VERSION =	2.3.0
 XFCE_PLUGIN =	whiskermenu
 
 # GPLv2
