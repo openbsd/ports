@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2018/07/29 08:17:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2018/10/02 07:36:58 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
 DISTNAME=	virt-viewer-7.0
+REVISION=	0
+
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -42,15 +44,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 MODULES=	textproc/intltool
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-gtk=3.0 \
-		--disable-update-mimedb
+CONFIGURE_ARGS=	--disable-update-mimedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-.for s in 16 22 24 32 48 256
-	cd ${WRKSRC}/icons/${s}x${s}/ && ${MAKE_ENV} ${MAKE_PROGRAM} install
-.endfor
-	rm -r ${PREFIX}/share/icons/hicolor/apps/
 
 .include <bsd.port.mk>
