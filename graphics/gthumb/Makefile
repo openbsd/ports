@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.107 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.108 2018/10/02 11:57:47 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.6.1
-REVISION=	2
+GNOME_VERSION=	3.6.2
 
 API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V
@@ -17,12 +16,12 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0
 WANTLIB += dbus-1 epoxy exiv2 expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3
+WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3 fribidi
 WANTLIB += harfbuzz jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread colord
 WANTLIB += rsvg-2 secret-1 soup-2.4 ${COMPILER_LIBCXX} tiff lcms2 raw

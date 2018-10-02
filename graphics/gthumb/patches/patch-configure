@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.5 2017/11/21 18:16:48 jasper Exp $
+$OpenBSD: patch-configure,v 1.6 2018/10/02 11:57:47 jasper Exp $
 
 Don't reset CFLAGS/LDFLAGS, which are needed to pass -L/usr/local/lib as
 otherwise -ljpeg/-ltiff cannot be found.
@@ -7,7 +7,7 @@ Effectively reverts patch from https://bugzilla.gnome.org/show_bug.cgi?id=747982
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20853,8 +20853,6 @@ fi
+@@ -20827,8 +20827,6 @@ fi
  if test "x$enable_jpeg" = "xyes"; then
  	SAVE_CFLAGS="$CFLAGS"
  	SAVE_LDFLAGS="$LDFLAGS"
@@ -16,7 +16,7 @@ Index: configure
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for jpeg_destroy_decompress in -ljpeg" >&5
  $as_echo_n "checking for jpeg_destroy_decompress in -ljpeg... " >&6; }
  if ${ac_cv_lib_jpeg_jpeg_destroy_decompress+:} false; then :
-@@ -21010,8 +21008,6 @@ fi
+@@ -20984,8 +20982,6 @@ fi
  if test x$enable_tiff = xyes ; then
  	SAVE_CFLAGS="$CFLAGS"
  	SAVE_LDFLAGS="$LDFLAGS"
