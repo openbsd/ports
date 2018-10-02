@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2018/09/29 11:19:16 kn Exp $
+# $OpenBSD: Makefile,v 1.48 2018/10/02 20:30:07 kn Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.19.0
+REVISION=	0
 DISTNAME=	opensc-${V}
 SUBST_VARS +=	V
 
@@ -30,6 +31,7 @@ BUILD_DEPENDS=	devel/libtool \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/ccid
+LIB_DEPENDS=	devel/glib2
 
 USE_GMAKE=	Yes
 
