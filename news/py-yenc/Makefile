@@ -1,27 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2014/10/01 09:07:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/02 15:11:31 bket Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
-DISTNAME=		yenc-0.3
+MODPY_EGG_VERSION=	0.4.0
+DISTNAME=		yenc-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		5
 CATEGORIES=		news
-
-HOMEPAGE=		http://www.hellanzb.com/
-MASTER_SITES=		${HOMEPAGE}hellanzb-content/
-
-MAINTAINER=		Mikko Tolmunen <oskari@sefirosu.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		lang/python
-
 WANTLIB=		pthread ${MODPY_WANTLIB}
 
-TEST_DEPENDS=		news/py-yenc
+MODULES=		lang/python
+MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
 
-CFLAGS+=		-g -O2
+TEST_DEPENDS=		news/py-yenc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-yenc
