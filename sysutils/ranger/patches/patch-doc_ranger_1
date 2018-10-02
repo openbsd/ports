@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_ranger_1,v 1.2 2018/02/22 16:51:50 kn Exp $
+$OpenBSD: patch-doc_ranger_1,v 1.3 2018/10/02 10:11:53 kn Exp $
 
 Index: doc/ranger.1
 --- doc/ranger.1.orig
 +++ doc/ranger.1
-@@ -1521,7 +1521,7 @@ docstrings.  Using this will disable the <F1> key on c
+@@ -1624,7 +1624,7 @@ docstrings.  Using this will disable the <F1> key on c
  .IP "W3MIMGDISPLAY_PATH" 8
  .IX Item "W3MIMGDISPLAY_PATH"
  By changing this variable, you can change the path of the executable file for

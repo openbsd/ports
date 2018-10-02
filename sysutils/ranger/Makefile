@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/22 16:51:50 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/02 10:11:53 kn Exp $
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION =	1.9.1
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils misc
@@ -14,20 +14,29 @@ MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	 Yes
 
-MASTER_SITES =	${HOMEPAGE}
+MASTER_SITES =	https://ranger.github.io/
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_ADJ_FILES =	tests/manpage_completion_test.py
 
 # libarchive (bsdtar) used as an alternative to atool
 RUN_DEPENDS =	archivers/libarchive \
+		devel/desktop-file-utils \
 		shells/bash \
 		textproc/py-chardet${MODPY_FLAVOR}
+# XXX: ranger/gui/widgets/console.py test depends on devel/py-astroid>=1.5.0:
+#   AttributeError: 'TreeRebuilder3k' object has no attribute 'visit_joinedstr'
 TEST_DEPENDS =	devel/flake8 \
-		devel/pylint${MODPY_FLAVOR} \
+		devel/pylint${MODPY_FLAVOR}<2.0.0 \
 		devel/py-test${MODPY_FLAVOR}
 
-TEST_ENV =	PYTHON=${MODPY_BIN}
+TEST_ENV =	HOME=${WRKDIR} \
+		PYTHON=${MODPY_BIN} \
+		TERM=${TERM}
+
+# tests
+USE_GMAKE =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{doc/ranger.1,ranger/ext/img_display.py}
@@ -37,9 +46,5 @@ pre-test:
 	ln -sf ${LOCALBASE}/bin/${_p}${MODPY_BIN_SUFFIX} \
 	    ${WRKDIR}/bin/${_p}
 .endfor
-
-post-install:
-	mv ${PREFIX}/{share/man/man1,man}
-	mv ${PREFIX}/share/{doc/ranger/examples,examples/ranger}
 
 .include <bsd.port.mk>

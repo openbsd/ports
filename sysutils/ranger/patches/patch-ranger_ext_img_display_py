@@ -1,9 +1,9 @@
-$OpenBSD: patch-ranger_ext_img_display_py,v 1.2 2018/02/22 16:51:50 kn Exp $
+$OpenBSD: patch-ranger_ext_img_display_py,v 1.3 2018/10/02 10:11:53 kn Exp $
 
 Index: ranger/ext/img_display.py
 --- ranger/ext/img_display.py.orig
 +++ ranger/ext/img_display.py
-@@ -28,11 +28,7 @@ from ranger.core.shared import FileManagerAware
+@@ -32,11 +32,7 @@ from ranger.core.shared import FileManagerAware
  W3MIMGDISPLAY_ENV = "W3MIMGDISPLAY_PATH"
  W3MIMGDISPLAY_OPTIONS = []
  W3MIMGDISPLAY_PATHS = [
@@ -15,4 +15,4 @@ Index: ranger/ext/img_display.py
 +    '${LOCALBASE}/libexec/w3m/w3mimgdisplay',
  ]
  
- 
+ # Helper functions shared between the previewers (make them static methods of the base class?)
