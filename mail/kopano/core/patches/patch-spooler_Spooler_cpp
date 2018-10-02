@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.9 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.10 2018/10/02 10:49:47 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp
-@@ -221,7 +221,7 @@ static HRESULT StartSpoolerThread(SendData &&sd, const
+@@ -219,7 +219,7 @@ static HRESULT StartSpoolerThread(SendData &&sd, const
  		return MAPI_E_CALL_FAILED;
  	}
  	th_arg.release();
@@ -12,7 +12,7 @@ Index: spooler/Spooler.cpp
  	return hrSuccess;
  }
  
-@@ -929,10 +929,10 @@ int main(int argc, char *argv[]) {
+@@ -906,10 +906,10 @@ int main(int argc, char **argv) try
  		{ "smtp_server","localhost", CONFIGSETTING_RELOADABLE },
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
@@ -26,7 +26,7 @@ Index: spooler/Spooler.cpp
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
  		{"log_file", ""},
-@@ -956,8 +956,8 @@ int main(int argc, char *argv[]) {
+@@ -933,8 +933,8 @@ int main(int argc, char **argv) try
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.9 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2018/10/02 10:49:47 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -43,7 +43,7 @@ Index: configure.ac
  		]
  	)
  	dnl We should be using ncurses.h - or is portability to non-ncurses
-@@ -396,7 +399,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0])
+@@ -391,7 +394,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0])
  #
  
  AC_CHECK_HEADERS([ldap.h],
@@ -52,7 +52,7 @@ Index: configure.ac
  	  CXXFLAGS="$CXXFLAGS -pthread"
  	  AC_MSG_CHECKING([for -lldap_r without LDAP_DEPRECATED])
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([#include <ldap.h>
-@@ -453,7 +456,7 @@ iconv_t i; i = iconv_open("", "");
+@@ -448,7 +451,7 @@ iconv_t i; i = iconv_open("", "");
  	[ AC_MSG_RESULT([yes]) ],
  	[ AC_MSG_RESULT([no])
  	  AC_MSG_CHECKING([for iconv in -liconv])
@@ -61,7 +61,7 @@ Index: configure.ac
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([
  #include <stdlib.h>
  #include <iconv.h>
-@@ -472,7 +475,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+@@ -467,7 +470,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
  ])
  LIBS="$LIBS_system"
  AC_SEARCH_LIBS([clock_gettime], [rt], [
@@ -70,7 +70,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -588,13 +591,22 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
+@@ -583,13 +586,22 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
  )
  AC_SUBST(GZ_LIBS)
  
@@ -95,7 +95,7 @@ Index: configure.ac
  # check epoll support
  AC_ARG_ENABLE([epoll], AS_HELP_STRING([--disable-epoll], [disable epoll and fallback to select]), [want_epoll=${enableval}], [want_epoll=yes])
  AM_CONDITIONAL(WITH_EPOLL, test "$want_epoll" = "yes")
-@@ -652,8 +664,10 @@ AS_IF([test "$have_icu" = 0], [
+@@ -647,8 +659,10 @@ AS_IF([test "$have_icu" = 0], [
  ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"
  
  # all libs for programs, because functions are in static common stuff

@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.9 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.10 2018/10/02 10:49:47 robert Exp $
 
 Index: spooler/DAgent.cpp
 --- spooler/DAgent.cpp.orig
 +++ spooler/DAgent.cpp
-@@ -60,6 +60,11 @@
+@@ -62,6 +62,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
  
@@ -15,9 +15,9 @@ Index: spooler/DAgent.cpp
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3368,8 +3373,8 @@ int main(int argc, char *argv[]) {
+@@ -3182,8 +3187,8 @@ int main(int argc, char **argv) try {
+ 	// Default settings
  	static const configsetting_t lpDefaults[] = {
- 		{"server_bind", "", CONFIGSETTING_OBSOLETE},
  		{ "server_bind_intf", "" },
 -		{ "run_as_user", "kopano" },
 -		{ "run_as_group", "kopano" },
@@ -25,8 +25,8 @@ Index: spooler/DAgent.cpp
 +		{ "run_as_group", "_kopano" },
  		{ "pid_file", "/var/run/kopano/dagent.pid" },
  		{"coredump_enabled", "systemdefault"},
- 		{"lmtp_listen", ""}, /* default in dagent_listen */
-@@ -3389,12 +3394,12 @@ int main(int argc, char *argv[]) {
+ 		{"socketspec", "", CONFIGSETTING_OBSOLETE},
+@@ -3203,12 +3208,12 @@ int main(int argc, char **argv) try {
  		{ "log_raw_message", "error", CONFIGSETTING_RELOADABLE },
  		{"log_raw_message_path", "/var/lib/kopano", CONFIGSETTING_RELOADABLE},
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },

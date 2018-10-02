@@ -1,9 +1,9 @@
-$OpenBSD: patch-gateway_Gateway_cpp,v 1.7 2018/10/02 10:49:47 robert Exp $
+$OpenBSD: patch-gateway_Gateway_cpp,v 1.1 2018/10/02 10:49:47 robert Exp $
 
 Index: gateway/Gateway.cpp
 --- gateway/Gateway.cpp.orig
 +++ gateway/Gateway.cpp
-@@ -47,6 +47,10 @@
+@@ -46,6 +46,10 @@
  #include <openssl/ssl.h>
  #include <kopano/hl.hpp>
  
@@ -14,10 +14,10 @@ Index: gateway/Gateway.cpp
  /**
   * @defgroup gateway Gateway for IMAP and POP3
   * @{
-@@ -304,10 +308,10 @@ int main(int argc, char *argv[]) {
- 	const char *szConfig = ECConfig::GetDefaultPath("gateway.cfg");
+@@ -305,10 +309,10 @@ int main(int argc, char *argv[]) {
  	bool exp_config = false;
  	static const configsetting_t lpDefaults[] = {
+ 		{ "server_bind", "" },
 -		{ "run_as_user", "kopano" },
 -		{ "run_as_group", "kopano" },
 +		{ "run_as_user", "_kopano" },
@@ -27,4 +27,4 @@ Index: gateway/Gateway.cpp
 +		{"running_path", "/var/empty", CONFIGSETTING_OBSOLETE},
  		{ "process_model", "thread" },
  		{"coredump_enabled", "systemdefault"},
- 		{"pop3_listen", "*:110"},
+ 		{"pop3_listen", ""}, /* default in gw_listen() */

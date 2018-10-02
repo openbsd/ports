@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2018/09/04 12:53:16 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2018/10/02 10:49:47 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -19,6 +19,7 @@
 @rcscript ${RCDIR}/kopano_spamd
 @rcscript ${RCDIR}/kopano_spooler
 @bin bin/kopano-fsck
+@bin bin/kopano-ibrule
 bin/kopano-migration-imap
 @bin bin/kopano-oof
 @bin bin/kopano-passwd
@@ -455,6 +456,7 @@ libexec/kopano/
 @bin libexec/kopano/kscriptrun
 @bin libexec/kopano/mapitime
 @man man/man1/kopano-fsck.1
+@man man/man1/kopano-ibrule.1
 @man man/man1/kopano-oof.1
 @man man/man1/kopano-passwd.1
 @man man/man1/kopano-set-oof.1
@@ -562,6 +564,8 @@ share/examples/kopano/
 @mode
 @group
 @sample ${SYSCONFDIR}/kopano/sslkeys/
+share/examples/kopano/admin.cfg
+@sample ${SYSCONFDIR}/kopano/admin.cfg
 share/examples/kopano/apparmor.d/
 share/examples/kopano/apparmor.d/kopano-client.aa
 share/examples/kopano/apparmor.d/kopano-coredump.aa
@@ -634,7 +638,6 @@ share/examples/kopano/spamd.cfg
 @sample ${SYSCONFDIR}/kopano/spamd.cfg
 share/examples/kopano/spooler.cfg
 @sample ${SYSCONFDIR}/kopano/spooler.cfg
-share/examples/kopano/sysconfig.txt
 share/examples/kopano/unix.cfg
 share/examples/kopano/userscripts/
 share/examples/kopano/userscripts/createcompany.d/

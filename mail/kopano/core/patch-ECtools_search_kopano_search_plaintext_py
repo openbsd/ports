@@ -1,12 +1,12 @@
-$OpenBSD: patch-ECtools_search_kopano_search_plaintext_py,v 1.3 2018/10/02 10:49:47 robert Exp $
+$OpenBSD: patch-ECtools_search_kopano_search_plaintext_py,v 1.1 2018/10/02 10:49:47 robert Exp $
 
 Index: ECtools/search/kopano_search/plaintext.py
 --- ECtools/search/kopano_search/plaintext.py.orig
 +++ ECtools/search/kopano_search/plaintext.py
-@@ -47,7 +47,7 @@ for (X, C) in DB:
- # python-coverage doesn't work for call-backs from thread created in C,
- # so skip coverage
- def setlimits(): # pragma: no cover
+@@ -45,7 +45,7 @@ for (X, C) in DB:
+         CMD[Y] = C
+ 
+ def setlimits():
 -    resource.setrlimit(resource.RLIMIT_AS, (MAX_MEMORY, MAX_MEMORY))
 +    resource.setrlimit(resource.RLIMIT_DATA, (MAX_MEMORY, MAX_MEMORY))
      resource.setrlimit(resource.RLIMIT_CPU, (MAX_TIME, MAX_TIME))

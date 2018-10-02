@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.12 2018/10/02 10:49:47 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1278,7 +1278,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
+@@ -1286,7 +1286,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
  	common/database.cpp common/include/kopano/database.hpp
  
  kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
@@ -12,7 +12,7 @@ Index: Makefile.in
  
  #
  # kopano-fsck
-@@ -1852,7 +1852,7 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
+@@ -1858,7 +1858,7 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
  tests_readflag_SOURCES = tests/readflag.cpp tests/tbi.hpp
  tests_readflag_LDADD = libmapi.la libkcutil.la
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
@@ -21,7 +21,7 @@ Index: Makefile.in
  
  #
  # soap generators
-@@ -4838,7 +4838,7 @@ default.sym provider/plugin.sym provider/provider.sym 
+@@ -4870,7 +4870,7 @@ default.sym provider/plugin.sym provider/provider.sym 
  
  .PHONY: source-moved-check
  source-moved-check:

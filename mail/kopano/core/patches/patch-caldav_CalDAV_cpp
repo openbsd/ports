@@ -1,9 +1,9 @@
-$OpenBSD: patch-caldav_CalDAV_cpp,v 1.8 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-caldav_CalDAV_cpp,v 1.9 2018/10/02 10:49:47 robert Exp $
 
 Index: caldav/CalDAV.cpp
 --- caldav/CalDAV.cpp.orig
 +++ caldav/CalDAV.cpp
-@@ -204,10 +204,10 @@ int main(int argc, char **argv) {
+@@ -205,10 +205,10 @@ int main(int argc, char **argv) {
  	const char *lpszCfg = ECConfig::GetDefaultPath("ical.cfg");
  	bool exp_config = false;
  	static const configsetting_t lpDefaults[] = {
@@ -15,5 +15,5 @@ Index: caldav/CalDAV.cpp
 -		{"running_path", "/var/lib/kopano/empty", CONFIGSETTING_OBSOLETE},
 +		{"running_path", "/var/empty", CONFIGSETTING_OBSOLETE},
  		{ "process_model", "thread" },
- 		{ "server_bind", "" },
  		{"coredump_enabled", "systemdefault"},
+ 		{"socketspec", "", CONFIGSETTING_OBSOLETE},
