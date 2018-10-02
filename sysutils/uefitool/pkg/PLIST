@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/18 15:08:19 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/02 07:26:52 kn Exp $
+@bin bin/UEFIPatch
+@bin bin/UEFIReplace
 @bin bin/UEFITool
