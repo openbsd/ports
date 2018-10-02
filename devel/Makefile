@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1768 2018/09/24 15:49:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1769 2018/10/02 10:49:01 robert Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -292,6 +292,7 @@
      SUBDIR += lazarus
      SUBDIR += leatherman
      SUBDIR += legit
+     SUBDIR += libHX
      SUBDIR += libIDL
      SUBDIR += libJudy
      SUBDIR += libaio_compat
