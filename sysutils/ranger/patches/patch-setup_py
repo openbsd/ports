@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.5 2018/10/02 10:32:01 kn Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -106,7 +106,7 @@ def main():
+             ('share/applications', [
+                 'doc/ranger.desktop',
+             ]),
+-            ('share/man/man1', [
++            ('man/man1', [
+                 'doc/ranger.1',
+                 'doc/rifle.1',
+             ]),
+@@ -118,7 +118,7 @@ def main():
+             ]),
+             ('share/doc/ranger/config', findall('doc/config')),
+             ('share/doc/ranger/config/colorschemes', findall('doc/config/colorschemes')),
+-            ('share/doc/ranger/examples', findall('examples')),
++            ('share/examples/ranger', findall('examples')),
+             ('share/doc/ranger/tools', findall('doc/tools')),
+         ],
+         package_data={

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/22 16:51:50 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/02 10:32:01 kn Exp $
 bin/ranger
 bin/rifle
 lib/python${MODPY_VERSION}/site-packages/ranger/
@@ -56,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}filter_stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}fm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}linemode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -65,6 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}runner.${MO
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}shared.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/${MODPY_PYCACHE}tab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/actions.py
+lib/python${MODPY_VERSION}/site-packages/ranger/core/filter_stack.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/fm.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/linemode.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/loader.py
@@ -191,7 +193,7 @@ share/doc/ranger/
 share/doc/ranger/CHANGELOG.md
 share/doc/ranger/HACKING.md
 share/doc/ranger/README.md
-share/doc/ranger/colorschemes.txt
+share/doc/ranger/colorschemes.md
 share/doc/ranger/config/
 share/doc/ranger/config/colorschemes/
 share/doc/ranger/config/colorschemes/default.py
@@ -210,6 +212,7 @@ share/examples/ranger/
 share/examples/ranger/README
 share/examples/ranger/bash_automatic_cd.sh
 share/examples/ranger/bash_subshell_notice.sh
+share/examples/ranger/plugin_avfs.py
 share/examples/ranger/plugin_chmod_keybindings.py
 share/examples/ranger/plugin_fasd_add.py
 share/examples/ranger/plugin_file_filter.py
@@ -219,7 +222,9 @@ share/examples/ranger/plugin_linemode.py
 share/examples/ranger/plugin_new_macro.py
 share/examples/ranger/plugin_new_sorting_method.py
 share/examples/ranger/plugin_pmount.py
+share/examples/ranger/plugin_pmount_dynamic.py
 share/examples/ranger/rc_emacs.conf
 share/examples/ranger/rifle_different_file_opener.conf
 share/examples/ranger/rifle_sxiv.sh
 share/examples/ranger/vim_file_chooser.vim
+@tag update-desktop-database
