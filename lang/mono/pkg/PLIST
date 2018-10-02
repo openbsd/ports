@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/05/23 12:40:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.32 2018/10/02 13:33:25 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -116,6 +116,7 @@ include/mono-2.0/mono/metadata/metadata.h
 include/mono-2.0/mono/metadata/mono-config.h
 include/mono-2.0/mono/metadata/mono-debug.h
 include/mono-2.0/mono/metadata/mono-gc.h
+include/mono-2.0/mono/metadata/object-forward.h
 include/mono-2.0/mono/metadata/object.h
 include/mono-2.0/mono/metadata/opcodes.h
 include/mono-2.0/mono/metadata/profiler-events.h
@@ -990,7 +991,6 @@ lib/mono/4.5/Facades/System.Diagnostics.Debug.dll
 lib/mono/4.5/Facades/System.Diagnostics.FileVersionInfo.dll
 lib/mono/4.5/Facades/System.Diagnostics.Process.dll
 lib/mono/4.5/Facades/System.Diagnostics.StackTrace.dll
-lib/mono/4.5/Facades/System.Diagnostics.StackTrace.pdb
 lib/mono/4.5/Facades/System.Diagnostics.TextWriterTraceListener.dll
 lib/mono/4.5/Facades/System.Diagnostics.Tools.dll
 lib/mono/4.5/Facades/System.Diagnostics.TraceEvent.dll
@@ -1000,7 +1000,6 @@ lib/mono/4.5/Facades/System.Drawing.Primitives.dll
 lib/mono/4.5/Facades/System.Dynamic.Runtime.dll
 lib/mono/4.5/Facades/System.Globalization.Calendars.dll
 lib/mono/4.5/Facades/System.Globalization.Extensions.dll
-lib/mono/4.5/Facades/System.Globalization.Extensions.pdb
 lib/mono/4.5/Facades/System.Globalization.dll
 lib/mono/4.5/Facades/System.IO.Compression.ZipFile.dll
 lib/mono/4.5/Facades/System.IO.FileSystem.AccessControl.dll
@@ -1059,12 +1058,10 @@ lib/mono/4.5/Facades/System.Runtime.Serialization.Formatters.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Json.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Primitives.dll
 lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.dll
-lib/mono/4.5/Facades/System.Runtime.Serialization.Xml.pdb
 lib/mono/4.5/Facades/System.Runtime.dll
 lib/mono/4.5/Facades/System.Security.AccessControl.dll
 lib/mono/4.5/Facades/System.Security.Claims.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.dll
-lib/mono/4.5/Facades/System.Security.Cryptography.Algorithms.pdb
 lib/mono/4.5/Facades/System.Security.Cryptography.Csp.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.DeriveBytes.dll
 lib/mono/4.5/Facades/System.Security.Cryptography.Encoding.dll
@@ -1082,7 +1079,6 @@ lib/mono/4.5/Facades/System.Security.Cryptography.X509Certificates.dll
 lib/mono/4.5/Facades/System.Security.Principal.Windows.dll
 lib/mono/4.5/Facades/System.Security.Principal.dll
 lib/mono/4.5/Facades/System.Security.SecureString.dll
-lib/mono/4.5/Facades/System.Security.SecureString.pdb
 lib/mono/4.5/Facades/System.ServiceModel.Duplex.dll
 lib/mono/4.5/Facades/System.ServiceModel.Http.dll
 lib/mono/4.5/Facades/System.ServiceModel.NetTcp.dll
@@ -1108,7 +1104,6 @@ lib/mono/4.5/Facades/System.ValueTuple.dll
 lib/mono/4.5/Facades/System.Xml.ReaderWriter.dll
 lib/mono/4.5/Facades/System.Xml.XDocument.dll
 lib/mono/4.5/Facades/System.Xml.XPath.XDocument.dll
-lib/mono/4.5/Facades/System.Xml.XPath.XDocument.pdb
 lib/mono/4.5/Facades/System.Xml.XPath.dll
 lib/mono/4.5/Facades/System.Xml.XmlDocument.dll
 lib/mono/4.5/Facades/System.Xml.XmlSerializer.dll
@@ -2540,9 +2535,9 @@ lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/Microsoft.CSharp.dll
 lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/Microsoft.CSharp.pdb
 lib/mono/gac/Microsoft.VisualC/
-lib/mono/gac/Microsoft.VisualC/0.0.0.0__b03f5f7f11d50a3a/
-lib/mono/gac/Microsoft.VisualC/0.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualC.dll
-lib/mono/gac/Microsoft.VisualC/0.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualC.pdb
+lib/mono/gac/Microsoft.VisualC/10.0.0.0__b03f5f7f11d50a3a/
+lib/mono/gac/Microsoft.VisualC/10.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualC.dll
+lib/mono/gac/Microsoft.VisualC/10.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualC.pdb
 lib/mono/gac/Microsoft.Web.Infrastructure/
 lib/mono/gac/Microsoft.Web.Infrastructure/1.0.0.0__31bf3856ad364e35/
 lib/mono/gac/Microsoft.Web.Infrastructure/1.0.0.0__31bf3856ad364e35/Microsoft.Web.Infrastructure.dll
@@ -3462,4 +3457,3 @@ share/mono-2.0/mono/cil/
 share/mono-2.0/mono/cil/cil-opcodes.xml
 share/mono-2.0/mono/profiler/
 share/mono-2.0/mono/profiler/mono-profiler-coverage.suppression
-share/mono-2.0/mono/profiler/mono-profiler-log.suppression
