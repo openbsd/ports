@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_dhcpcd_c,v 1.5 2018/10/02 07:58:02 sthen Exp $
+
+From d703ebf5bac2f9391aac70e407c9aa49279f55f2 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Wed, 26 Sep 2018 13:27:37 +0100
+Subject: OpenBSD: Allow dhcpcd to work alongside slaacd
+
+Not that you should be doing this, but it appears some people want
+two daemons handling the RA.
+
+Index: src/dhcpcd.c
+--- src/dhcpcd.c.orig
++++ src/dhcpcd.c
+@@ -448,6 +448,10 @@ configure_interface1(struct interface *ifp)
+ 		ifo->options &=
+ 		    ~(DHCPCD_IPV6RS | DHCPCD_DHCP6 | DHCPCD_WAITIP6);
+ 
++	if (!(ifo->options & DHCPCD_IPV6RS))
++		ifo->options &=
++		    ~(DHCPCD_IPV6RA_AUTOCONF | DHCPCD_IPV6RA_REQRDNSS);
++
+ 	/* We want to setup INET6 on the interface as soon as possible. */
+ 	if (ifp->active == IF_ACTIVE_USER &&
+ 	    ifo->options & DHCPCD_IPV6 &&

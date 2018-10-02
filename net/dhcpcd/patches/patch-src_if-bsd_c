@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_if-bsd_c,v 1.6 2018/10/02 07:58:02 sthen Exp $
+
+From d703ebf5bac2f9391aac70e407c9aa49279f55f2 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Wed, 26 Sep 2018 13:27:37 +0100
+Subject: OpenBSD: Allow dhcpcd to work alongside slaacd
+
+Not that you should be doing this, but it appears some people want
+two daemons handling the RA.
+
+Index: src/if-bsd.c
+--- src/if-bsd.c.orig
++++ src/if-bsd.c
+@@ -1393,8 +1393,20 @@ set_ifxflags(int s, const struct interface *ifp)
+ 	/*
+ 	 * If not doing autoconf, don't disable the kernel from doing it.
+ 	 * If we need to, we should have another option actively disable it.
++	 *
++	 * OpenBSD moved from kernel based SLAAC to userland via slaacd(8).
++	 * It has a similar featureset to dhcpcd such as stable private
++	 * addresses, but lacks the ability to handle DNS inside the RA
++	 * which is a serious shortfall in this day and age.
++	 * Appease their user base by working alongside slaacd(8) if
++	 * dhcpcd is instructed not to do auto configuration of addresses.
+ 	 */
+-	if (ifp->options->options & DHCPCD_IPV6RS)
++#if defined(ND6_IFF_ACCEPT_RTADV)
++#define	BSD_AUTOCONF	DHCPCD_IPV6RS
++#else
++#define	BSD_AUTOCONF	DHCPCD_IPV6RA_AUTOCONF
++#endif
++	if (ifp->options->options & BSD_AUTOCONF)
+ 		flags &= ~IFXF_AUTOCONF6;
+ 	if (ifr.ifr_flags == flags)
+ 		return 0;
