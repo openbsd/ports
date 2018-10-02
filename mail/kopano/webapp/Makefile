@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2018/09/04 12:53:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/02 11:43:12 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
-WAPP_VERSION=	3.4.22
+WAPP_VERSION=	3.4.23
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		desktopnotifications-2.0.1.5-16.1 \
+		desktopnotifications-2.0.1.6-17.1 \
 		filepreviewer-2.0.0.15-10.10 \
 		gmaps-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		intranet-0.1-32.10 \
@@ -18,10 +18,9 @@ PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		folderwidgets-${WAPP_VERSION}.${MINOR}-${RPMVER} \
 		quickitems-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
-MINOR=		1724
-RPMVER=		981.1
+MINOR=		1798
+RPMVER=		1023.1
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
-REVISION=	0
 
 EXTRACT_SUFX=	# empty
 
@@ -44,9 +43,9 @@ DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}.noarch.rpm \
 		kopano-webapp-plugin-spell-nl-2.0.0.1-21.3.noarch.rpm \
 		kopano-webapp-plugin-spell-pl-pl-2.0.0.0-25.3.noarch.rpm
 
-DISTFILES+=	kopano-webapp-plugin-files-2.1.3.249-164.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.74-51.1.noarch.rpm \
-		kopano-webapp-plugin-filesbackend-smb-2.1.1.38-35.1.noarch.rpm
+DISTFILES+=	kopano-webapp-plugin-files-2.1.5.296-195.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-owncloud-2.1.1.84-61.1.noarch.rpm \
+		kopano-webapp-plugin-filesbackend-smb-2.1.1.48-49.1.noarch.rpm
 
 DISTFILES+=	${EDISTFILES}
 

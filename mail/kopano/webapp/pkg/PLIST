@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:53:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/10/02 11:43:12 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -1600,7 +1600,6 @@ kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm-debug.js
 kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm.js
 kopano-webapp/plugins/files/js/files-debug.js
 kopano-webapp/plugins/files/js/files.js
-kopano-webapp/plugins/files/js/files.js.map
 kopano-webapp/plugins/files/language/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/LC_MESSAGES/
@@ -1634,6 +1633,9 @@ kopano-webapp/plugins/files/language/nl_NL.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/plugin_files.mo
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/plugin_files.mo
@@ -2683,6 +2685,9 @@ kopano-webapp/plugins/filesbackendOwncloud/language/nl_NL.UTF-8/LC_MESSAGES/plug
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files-owncloud-backend.mo
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
@@ -2766,6 +2771,9 @@ kopano-webapp/plugins/filesbackendSMB/language/nl_NL.UTF-8/LC_MESSAGES/plugin_fi
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files-smb-backend.mo
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
@@ -3144,6 +3152,7 @@ kopano-webapp/server/includes/core/class.filter.php
 kopano-webapp/server/includes/core/class.freebusy.php
 kopano-webapp/server/includes/core/class.jsonrequest.php
 kopano-webapp/server/includes/core/class.language.php
+kopano-webapp/server/includes/core/class.log.php
 kopano-webapp/server/includes/core/class.mapisession.php
 kopano-webapp/server/includes/core/class.operations.php
 kopano-webapp/server/includes/core/class.plugin.php
@@ -3173,6 +3182,9 @@ kopano-webapp/server/includes/exceptions/class.ZarafaException.php
 kopano-webapp/server/includes/gettext.php
 kopano-webapp/server/includes/load.php
 kopano-webapp/server/includes/loader.php
+kopano-webapp/server/includes/logger/
+kopano-webapp/server/includes/logger/class.baselogger.php
+kopano-webapp/server/includes/logger/class.filelog.php
 kopano-webapp/server/includes/mapi/
 kopano-webapp/server/includes/mapi/class.baseexception.php
 kopano-webapp/server/includes/mapi/class.baserecurrence.php
@@ -3231,6 +3243,7 @@ kopano-webapp/server/includes/notifiers/class.tasklistnotifier.php
 kopano-webapp/server/includes/templates/
 kopano-webapp/server/includes/templates/BadRequest.php
 kopano-webapp/server/includes/templates/login.php
+kopano-webapp/server/includes/templates/serverinfo.php
 kopano-webapp/server/includes/templates/webclient.php
 kopano-webapp/server/includes/templates/webclient_separatewindow.php
 kopano-webapp/server/includes/templates/welcome.php
