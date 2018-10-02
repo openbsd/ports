@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/19 06:04:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/02 06:38:17 rsadowski Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
-GH_COMMIT =	2258b24b27962615bc609c6139870be8769f578b
+GH_COMMIT =	d0807887cc12014501a6692412763c5ea03ae60d
 # commit date YYYYMMDD
-DISTNAME =	universal-ctags-0.20180817
+DISTNAME =	universal-ctags-0.20180928
 
 CATEGORIES =	devel
 
