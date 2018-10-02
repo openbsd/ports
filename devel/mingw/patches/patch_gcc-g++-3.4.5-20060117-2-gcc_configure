@@ -1,0 +1,14 @@
+--- gcc-3.4.5-20060117-2/gcc/configure.orig	Tue Oct  2 15:11:39 2018
++++ gcc-3.4.5-20060117-2/gcc/configure	Tue Oct  2 15:12:29 2018
+@@ -3900,11 +3900,6 @@ gcc_cv_cc_supports_ada=no
+ # Other compilers, like HP Tru64 UNIX cc, exit successfully when
+ # given a .adb file, but produce no object file.  So we must check
+ # if an object file was really produced to guard against this.
+-errors=`(${CC} -c conftest.adb) 2>&1 || echo failure`
+-if test x"$errors" = x && test -f conftest.$ac_objext; then
+-  gcc_cv_cc_supports_ada=yes
+-  break
+-fi
+ rm -f conftest.*
+ fi
+ echo "$as_me:$LINENO: result: $gcc_cv_cc_supports_ada" >&5
