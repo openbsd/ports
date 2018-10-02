@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/01 09:00:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/02 06:41:29 rsadowski Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
-DISTNAME =	hugo-0.47.1
+DISTNAME =	hugo-0.49
 
 CATEGORIES =	www
 
