@@ -1,0 +1,63 @@
+$OpenBSD: patch-tests_suites_host_test_function,v 1.1 2018/10/02 15:13:04 bket Exp $
+
+Can't take the address of stdout.
+
+Index: tests/suites/host_test.function
+--- tests/suites/host_test.function.orig
++++ tests/suites/host_test.function
+@@ -400,9 +400,6 @@ int execute_tests( int argc , const char ** argv )
+     /* Store for proccessed integer params. */
+     int int_params[50];
+     void *pointer;
+-#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+-    int stdout_fd = -1;
+-#endif /* __unix__ || __APPLE__ __MACH__ */
+ 
+ #if defined(MBEDTLS_MEMORY_BUFFER_ALLOC_C) && \
+     !defined(TEST_SUITE_MEMORY_BUFFER_ALLOC)
+@@ -547,20 +544,6 @@ int execute_tests( int argc , const char ** argv )
+             {
+                 test_info.failed = 0;
+ 
+-#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+-                /* Suppress all output from the library unless we're verbose
+-                 * mode
+-                 */
+-                if( !option_verbose )
+-                {
+-                    stdout_fd = redirect_output( &stdout, "/dev/null" );
+-                    if( stdout_fd == -1 )
+-                    {
+-                        /* Redirection has failed with no stdout so exit */
+-                        exit( 1 );
+-                    }
+-                }
+-#endif /* __unix__ || __APPLE__ __MACH__ */
+ 
+                 function_id = strtol( params[0], NULL, 10 );
+                 if ( (ret = check_test( function_id )) == DISPATCH_TEST_SUCCESS )
+@@ -572,13 +555,6 @@ int execute_tests( int argc , const char ** argv )
+                     }
+                 }
+ 
+-#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+-                if( !option_verbose && restore_output( &stdout, stdout_fd ) )
+-                {
+-                        /* Redirection has failed with no stdout so exit */
+-                        exit( 1 );
+-                }
+-#endif /* __unix__ || __APPLE__ __MACH__ */
+ 
+             }
+ 
+@@ -662,10 +638,6 @@ int execute_tests( int argc , const char ** argv )
+     mbedtls_memory_buffer_alloc_free();
+ #endif
+ 
+-#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+-    if( stdout_fd != -1 )
+-        close_output( stdout );
+-#endif /* __unix__ || __APPLE__ __MACH__ */
+ 
+     return( total_errors != 0 );
+ }
