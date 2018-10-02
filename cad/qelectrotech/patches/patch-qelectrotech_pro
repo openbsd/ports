@@ -1,0 +1,37 @@
+$OpenBSD: patch-qelectrotech_pro,v 1.1.1.1 2018/10/02 16:41:53 landry Exp $
+
+Index: qelectrotech.pro
+--- qelectrotech.pro.orig
++++ qelectrotech.pro
+@@ -12,10 +12,10 @@ unix {
+ 	QET_COMMON_TBT_PATH        = 'share/qelectrotech/titleblocks/'
+ 	QET_LANG_PATH              = 'share/qelectrotech/lang/'
+ 	QET_EXAMPLES_PATH          = 'share/qelectrotech/examples/'
+-	QET_LICENSE_PATH           = 'doc/qelectrotech/'
+-	QET_MIME_XML_PATH          = '../share/mime/application/'
+-	QET_MIME_DESKTOP_PATH      = '../share/mimelnk/application/'
+-	QET_MIME_PACKAGE_PATH      = '../share/mime/packages/'
++	QET_LICENSE_PATH           = 'share/doc/qelectrotech/'
++	QET_MIME_XML_PATH          = 'share/mime/application/'
++	QET_MIME_DESKTOP_PATH      = 'share/mimelnk/application/'
++	QET_MIME_PACKAGE_PATH      = 'share/mime/packages/'
+ 	QET_DESKTOP_PATH           = 'share/applications/'
+ 	QET_ICONS_PATH             = 'share/icons/hicolor/'
+ 	QET_MAN_PATH               = 'man/'
+@@ -139,7 +139,7 @@ UI_SOURCES_DIR = sources/ui/
+ UI_HEADERS_DIR = sources/ui/
+ 
+ # Configuration de la compilation
+-CONFIG += c++11 debug_and_release warn_on
++CONFIG += c++11 release warn_on
+ 
+ # Nom du binaire genere par la compilation
+ TARGET = qelectrotech
+@@ -194,7 +194,6 @@ icons.files        = ico/breeze-icons/16x16   \
+ 
+ man.path           = $$join(INSTALL_PREFIX,,,$${QET_MAN_PATH})
+ man.files          = man/files/*
+-man.extra          = sh man/compress_man_pages.sh
+ 
+ # L'installation comprend la copie du binaire, des elements, des fichiers de langue et du fichier LICENSE
+ INSTALLS += target elements tbt lang copyright
