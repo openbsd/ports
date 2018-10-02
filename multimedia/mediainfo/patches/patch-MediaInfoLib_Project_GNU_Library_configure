@@ -1,8 +1,8 @@
-$OpenBSD: patch-MediaInfoLib_Project_GNU_Library_configure,v 1.6 2018/04/24 15:42:41 naddy Exp $
+$OpenBSD: patch-MediaInfoLib_Project_GNU_Library_configure,v 1.7 2018/10/02 21:06:29 naddy Exp $
 Index: MediaInfoLib/Project/GNU/Library/configure
 --- MediaInfoLib/Project/GNU/Library/configure.orig
 +++ MediaInfoLib/Project/GNU/Library/configure
-@@ -18762,9 +18762,6 @@ if test "$GXX" = yes ; then
+@@ -18851,9 +18851,6 @@ if test "$GXX" = yes ; then
  	if test "$enable_debug" = "yes"; then
  		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
  		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"

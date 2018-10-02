@@ -1,7 +1,21 @@
-$OpenBSD: patch-ZenLib_Project_GNU_Library_configure,v 1.7 2016/11/19 15:04:12 naddy Exp $
---- ZenLib/Project/GNU/Library/configure.orig	Sun Oct 30 21:25:54 2016
-+++ ZenLib/Project/GNU/Library/configure	Sat Nov 19 15:54:35 2016
-@@ -15565,9 +15565,6 @@ if test "$GXX" = yes ; then
+$OpenBSD: patch-ZenLib_Project_GNU_Library_configure,v 1.8 2018/10/02 21:06:29 naddy Exp $
+Index: ZenLib/Project/GNU/Library/configure
+--- ZenLib/Project/GNU/Library/configure.orig
++++ ZenLib/Project/GNU/Library/configure
+@@ -15538,10 +15538,10 @@ fi
+ 
+ 
+ if test "$enable_shared" = "yes"; then
+-    ZenLib_LIBS="-L$(pwd)/.libs -lzen -lpthread -lstdc++ $ZenLib_LIBS"
++    ZenLib_LIBS="-L$(pwd)/.libs -lzen -lpthread $ZenLib_LIBS"
+ fi
+ if test "$enable_static" = "yes"; then
+-    ZenLib_LIBS_Static="$(pwd)/.libs/libzen.a -lpthread -lstdc++ $ZenLib_LIBS_Static"
++    ZenLib_LIBS_Static="$(pwd)/.libs/libzen.a -lpthread $ZenLib_LIBS_Static"
+ fi
+ 
+ 
+@@ -15646,9 +15646,6 @@ if test "$GXX" = yes ; then
  	if test "$enable_debug" = "yes"; then
  		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
  		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"
@@ -11,3 +25,12 @@ $OpenBSD: patch-ZenLib_Project_GNU_Library_configure,v 1.7 2016/11/19 15:04:12 n
  	fi
  	if test "$enable_gprof" = "yes"; then
  		CFLAGS="$CFLAGS -pg -g"
+@@ -15656,7 +15653,7 @@ if test "$GXX" = yes ; then
+ 	fi
+ fi
+ 
+-LDFLAGS="$LDFLAGS -lpthread -lstdc++"
++LDFLAGS="$LDFLAGS -lpthread"
+ 
+ 
+ 
