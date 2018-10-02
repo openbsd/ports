@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.632 2018/10/02 09:34:07 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.633 2018/10/02 14:08:30 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1328,6 +1328,8 @@ my $cve = {
 	'lang/php/7.2,-xmlrpc' => 'php-xmlrpc->7.2,<7.2.10',
 	'lang/php/7.2,-xsl' => 'php-xsl->7.2,<7.2.10',
 	'lang/php/7.2,-zip' => 'php-zip->7.2,<7.2.10',
+	'devel/mercurial,-main' => 'mercurial-<4.5.3p1',
+	'devel/mercurial,-x11' => 'mercurial-x11-<4.5.3p1',
 };
 
 # ->check_security($path)
