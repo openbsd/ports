@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2018/07/31 17:22:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/03 13:38:16 bcallah Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-1.43
+DISTNAME=	xfe-1.43.1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
