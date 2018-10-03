@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/05 14:22:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/03 13:36:20 sthen Exp $
 
 COMMENT=	pear class to talk to Sieve servers
 
-DISTNAME=	Net_Sieve-1.4.3
+DISTNAME=	Net_Sieve-1.4.4
 CATEGORIES=	net
 
 MODULES=	www/pear
