@@ -1,4 +1,4 @@
-$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.2 2017/07/26 20:50:39 sthen Exp $
+$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.3 2018/10/03 14:55:36 sthen Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=990196
 
@@ -13,12 +13,12 @@ Patch taken from www/firefox-esr
 Index: intl/icu/source/Makefile.in
 --- intl/icu/source/Makefile.in.orig
 +++ intl/icu/source/Makefile.in
-@@ -325,7 +325,7 @@ $(top_builddir)/config/pkgdataMakefile:
+@@ -331,7 +331,7 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
 -	$(INSTALL_SCRIPT) $(top_srcdir)/config/icu-config-top $@
 +	install -m 555 $(top_srcdir)/config/icu-config-top $@
  	chmod u+w $@
- 	@echo "# Following from @platform_make_fragment@" >> $@
- 	LC_ALL=C sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
+ 	@echo "# Following from icu/icu4c/source/config/Makefile.inc" >> $@
+ 	LC_ALL=C $(SED) -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@

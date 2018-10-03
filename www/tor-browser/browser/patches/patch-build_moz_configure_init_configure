@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_moz_configure_init_configure,v 1.1 2018/09/28 14:54:26 sthen Exp $
+$OpenBSD: patch-build_moz_configure_init_configure,v 1.2 2018/10/03 14:55:36 sthen Exp $
 
 Fix build with rust 1.29.
 https://hg.mozilla.org/mozilla-central/rev/36f4ba2fb6f5
@@ -7,7 +7,7 @@ https://hg.mozilla.org/releases/mozilla-esr60/rev/381ae910e9b2712699fdc6a9bb9702
 Index: build/moz.configure/init.configure
 --- build/moz.configure/init.configure.orig
 +++ build/moz.configure/init.configure
-@@ -591,7 +591,13 @@ def split_triplet(triplet, allow_unknown=False):
+@@ -577,7 +577,13 @@ def split_triplet(triplet, allow_unknown=False):
      # There is also a quartet form:
      #   CPU_TYPE-MANUFACTURER-KERNEL-OPERATING_SYSTEM
      # But we can consider the "KERNEL-OPERATING_SYSTEM" as one.

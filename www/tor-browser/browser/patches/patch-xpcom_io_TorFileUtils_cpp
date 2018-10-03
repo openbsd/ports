@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.2 2017/07/26 20:50:39 sthen Exp $
+$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.3 2018/10/03 14:55:36 sthen Exp $
 
 Autoconf is gone now so the old configure patch to add
 --enable-tor-browser-data-in-home-dir will never fly.  Hard-code it on
@@ -8,9 +8,9 @@ https://trac.torproject.org/projects/tor/ticket/20557
 Index: xpcom/io/TorFileUtils.cpp
 --- xpcom/io/TorFileUtils.cpp.orig
 +++ xpcom/io/TorFileUtils.cpp
-@@ -6,6 +6,10 @@
- 
- #include "TorFileUtils.h"
+@@ -11,6 +11,10 @@
+ #include "nsILocalFileMac.h"
+ #endif
  
 +#ifdef __OpenBSD__
 +# define TOR_BROWSER_DATA_IN_HOME_DIR 1
@@ -19,7 +19,7 @@ Index: xpcom/io/TorFileUtils.cpp
  static nsresult GetAppRootDir(nsIFile *aExeFile, nsIFile** aFile);
  
  //-----------------------------------------------------------------------------
-@@ -15,7 +19,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
+@@ -20,7 +24,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
    NS_ENSURE_ARG_POINTER(aFile);
    nsCOMPtr<nsIFile> tbDataDir;
  
