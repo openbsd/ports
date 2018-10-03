@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.390 2018/09/25 08:53:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.391 2018/10/03 11:45:54 kirby Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -109,6 +109,7 @@
      SUBDIR += freedoom
      SUBDIR += freedroid
      SUBDIR += freedroidrpg
+     SUBDIR += freeorion
      SUBDIR += freeserf
      SUBDIR += fretsonfire
      SUBDIR += frotz
