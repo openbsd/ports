@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_defaults_preferences_prefs_js,v 1.2 2017/07/26 20:50:39 sthen Exp $
+$OpenBSD: patch-src_defaults_preferences_prefs_js,v 1.3 2018/10/03 14:57:09 sthen Exp $
 
 Set all path-related prefs to minimize patching of tl-util.jsm/tl-process.js
 Index: src/defaults/preferences/prefs.js
@@ -23,5 +23,5 @@ Index: src/defaults/preferences/prefs.js
 +pref("extensions.torlauncher.torrc_path", "torrc");
 +pref("extensions.torlauncher.tordatadir_path", "tor_data");
  
- // Recommended default bridge type (can be set per localized bundle).
- // pref("extensions.torlauncher.default_bridge_recommended_type", "obfs3");
+ // BridgeDB-related preferences (used for Moat).
+ pref("extensions.torlauncher.bridgedb_front", "ajax.aspnetcdn.com");
