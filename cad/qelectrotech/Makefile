@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/02 16:41:53 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/03 15:02:32 landry Exp $
 
 COMMENT=	electric diagrams drawing tool
 
@@ -9,7 +9,7 @@ CATEGORIES =	cad graphics
 HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://download.tuxfamily.org/qet/tags/20180823/
 
-# GPLv2
+# GPLv2 / CC-BY 3.0 for the graphic elements
 PERMIT_PACKAGE_CDROM =	Yes
 
 COMPILER =	base-clang ports-gcc
