@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.271 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.272 2018/10/03 06:43:10 landry Exp $
 
+ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	52.9.1
+MOZILLA_VERSION =	60.2.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
-MOZILLA_CODENAME =	mail
+MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-5.4.9.1
+# version = (TB+2)/10
+PKGNAME-lightning =	lightning-6.2.2.1
 EPOCH-lightning =	0
-REVISION-main =		0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
-SO_VERSION =	32.0
+SO_VERSION =	33.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -41,11 +42,14 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 MOZILLA_USE_GTK3 = Yes
 # use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
 MOZILLA_USE_BUNDLED_SQLITE =	Yes
+# 56 requires 59.1
+MOZILLA_USE_BUNDLED_ICU =	Yes
+# 59 is broken with system cairo and the option is being dropped
+MOZILLA_USE_BUNDLED_CAIRO = Yes
+
+WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
 NO_TEST =	Yes
-
-WANTLIB-lightning =
-WANTLIB-main += ${WANTLIB} X11-xcb intl pixman-1 xcb xcb-shm
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
@@ -56,14 +60,14 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
+WANTLIB-lightning =
+WANTLIB-main += ${WANTLIB} X11-xcb Xcursor Xi intl xcb xcb-shm
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=       --disable-debug-symbols
-.endif
+# bug 1341234
+CONFIGURE_ARGS +=	--disable-stylo
 
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
@@ -75,38 +79,30 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
 #	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
-EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
-
-CONFIGURE_ENV+=MOZCONFIG=${WRKSRC}/mozilla/.mozconfig
-# MOZCONFIG is mandatory now even if empty ?
-post-patch:
-	touch ${WRKSRC}/mozilla/.mozconfig
+EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/extensions/
 
 post-install:
-.for xpi guid in ${GUIDS}
-	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
-.endfor
+#.for xpi guid in ${GUIDS}
+#	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
+#.endfor
 
-	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
+	mv ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi \
 		${EXTDIR}
-	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
+		${PREFIX}/lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
 	# install distribution.ini file
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution
 	echo "[Global]\nid=OpenBSD\nversion=${OSREV}\nabout=Packaged by ${MAINTAINER}\n" > \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/distribution.ini
+		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_DATA} ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default256.png \
+	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png \
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
-
-	# remove useless empty dirs ?
-	rm -Rf ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/modules/
 
 .include <bsd.port.mk>

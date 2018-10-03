@@ -1,58 +1,58 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/10/03 06:43:10 landry Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/application.ini
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/blocklist.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default22.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default24.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default256.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default32.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/mailViews.dat
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/distribution.ini
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/Bogofilter.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/DSPAM.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/POPFile.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamAssassin.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamPal.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/movemail.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/rss.rdf
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldap60.so.${LIBldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldif60.so.${LIBldif60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozgtk.so.${LIBmozgtk_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libprldap60.so.${LIBprldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/removed-files
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/run-mozilla.sh
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}/
+lib/${MOZILLA_PROJECT}/application.ini
+lib/${MOZILLA_PROJECT}/blocklist.xml
+lib/${MOZILLA_PROJECT}/chrome/
+lib/${MOZILLA_PROJECT}/chrome.manifest
+lib/${MOZILLA_PROJECT}/chrome/icons/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default22.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default24.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default256.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}/chrome/icons/default/default64.png
+lib/${MOZILLA_PROJECT}/defaults/
+lib/${MOZILLA_PROJECT}/defaults/messenger/
+lib/${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
+lib/${MOZILLA_PROJECT}/defaults/pref/
+lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
+lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}/dependentlibs.list
+lib/${MOZILLA_PROJECT}/dictionaries/
+lib/${MOZILLA_PROJECT}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}/distribution/
+lib/${MOZILLA_PROJECT}/distribution/distribution.ini
+lib/${MOZILLA_PROJECT}/extensions/
+lib/${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}/gtk2/
+@lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
+lib/${MOZILLA_PROJECT}/isp/
+lib/${MOZILLA_PROJECT}/isp/Bogofilter.sfd
+lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
+lib/${MOZILLA_PROJECT}/isp/POPFile.sfd
+lib/${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
+lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
+@lib lib/${MOZILLA_PROJECT}/libldap60.so.${LIBldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
+lib/${MOZILLA_PROJECT}/omni.ja
+@bin lib/${MOZILLA_PROJECT}/pingsender
+lib/${MOZILLA_PROJECT}/platform.ini
+@bin lib/${MOZILLA_PROJECT}/plugin-container
+lib/${MOZILLA_PROJECT}/removed-files
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/

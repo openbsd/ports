@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2016/04/27 14:22:53 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2018/10/03 06:43:10 landry Exp $
 
 SUBDIR = ar
 SUBDIR += ast
 SUBDIR += be
 SUBDIR += bg
-SUBDIR += bn-BD
 SUBDIR += br
 SUBDIR += ca
 SUBDIR += cs
@@ -39,7 +38,6 @@ SUBDIR += lt
 SUBDIR += nb-NO
 SUBDIR += nl
 SUBDIR += nn-NO
-SUBDIR += pa-IN
 SUBDIR += pl
 SUBDIR += pt-BR
 SUBDIR += pt-PT
@@ -52,7 +50,6 @@ SUBDIR += sl
 SUBDIR += sq
 SUBDIR += sr
 SUBDIR += sv-SE
-SUBDIR += ta-LK
 SUBDIR += tr
 SUBDIR += uk
 SUBDIR += vi

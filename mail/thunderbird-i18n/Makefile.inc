@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.77 2018/07/11 06:11:45 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.78 2018/10/03 06:43:10 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		52.9.1
+FV =		60.2.1
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
@@ -21,9 +21,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/ \
 		http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/
 
-LANGUAGES =	ar ast be bg bn-BD br ca cs cy da de dsb el en-GB en-US es-AR es-ES et eu \
+LANGUAGES =	ar ast be bg br ca cs cy da de dsb el en-GB en-US es-AR es-ES et eu \
 		fi fr fy-NL ga-IE gd gl he hr hsb hu hy-AM id is it ja ko lt nb-NO nl nn-NO \
-		pa-IN pl pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE ta-LK tr uk vi \
+		pl pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE tr uk vi \
 		zh-CN zh-TW
 
 BUILD_DEPENDS =	archivers/unzip
