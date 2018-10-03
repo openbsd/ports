@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/29 21:47:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/03 13:33:29 sthen Exp $
 @group daemon
-pear/doc/
 pear/doc/Net_SMTP/
 pear/doc/Net_SMTP/LICENSE
 pear/doc/Net_SMTP/docs/
