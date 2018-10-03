@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.63 2018/09/22 04:40:54 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.64 2018/10/03 04:39:57 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		60.2.1
+FV =		60.2.2
 V =		${FV:C/b.$//}
 NAME =		firefox-esr-i18n
 
