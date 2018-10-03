@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.52 2018/09/17 08:46:09 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.53 2018/10/03 08:19:22 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,7 +17,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.14.3
+V ?=			1.14.4
 API=			1.0
 SUBST_VARS +=		API
 

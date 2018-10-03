@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.49 2018/09/17 08:46:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/03 08:19:22 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
 
-SHARED_LIBS +=  gstreamer-1.0        4.0      # 1403.0
-SHARED_LIBS +=  gstbase-1.0          4.0      # 1403.0
-SHARED_LIBS +=  gstcontroller-1.0    4.0      # 1403.0
-SHARED_LIBS +=  gstnet-1.0           4.0      # 1403.0
-SHARED_LIBS +=  gstcheck-1.0         4.0      # 1403.0
+SHARED_LIBS +=  gstreamer-1.0        4.0      # 1404.0
+SHARED_LIBS +=  gstbase-1.0          4.0      # 1404.0
+SHARED_LIBS +=  gstcontroller-1.0    4.0      # 1404.0
+SHARED_LIBS +=  gstnet-1.0           4.0      # 1404.0
+SHARED_LIBS +=  gstcheck-1.0         4.0      # 1404.0
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl m pcre pthread z
