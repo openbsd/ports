@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/04/11 21:35:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/10/03 22:05:57 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
 @extraunexec rm -fr /var/spool/clamav/*
 @extraunexec rm -fr /var/clamav/quarantine/*
 @extraunexec rm -fr /var/clamav/tmp/*
+@rcscript ${RCDIR}/clamav_milter
+@rcscript ${RCDIR}/clamd
+@rcscript ${RCDIR}/freshclam
 bin/clamav-config
 @bin bin/clambc
 @bin bin/clamconf
@@ -67,6 +70,3 @@ share/examples/clamav/clamd.conf.sample
 share/examples/clamav/ex1.c
 share/examples/clamav/freshclam.conf.sample
 @sample ${SYSCONFDIR}/freshclam.conf
-@rcscript ${RCDIR}/clamav_milter
-@rcscript ${RCDIR}/clamd
-@rcscript ${RCDIR}/freshclam
