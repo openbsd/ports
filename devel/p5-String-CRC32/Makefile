@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/12 07:52:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/04 09:17:37 benoit Exp $
 
 COMMENT =	interface for cyclic redundancy check generation
 
 MODULES =	cpan
-DISTNAME =	String-CRC32-1.6
+DISTNAME =	String-CRC32-1.7
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
