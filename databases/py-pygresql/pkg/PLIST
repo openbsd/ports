@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/04 12:41:11 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/04 22:50:16 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -133,7 +133,7 @@ share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/download/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/download/index.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/genindex.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/index.html
-share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/${MODPY_PY_PREFIX}modindex.html
+share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/search.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/searchindex.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_static/
