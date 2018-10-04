@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.633 2018/10/02 14:08:30 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.634 2018/10/04 09:25:19 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1157,48 +1157,10 @@ my $cve = {
 	'databases/mariadb,-server' => 'mariadb-server-<10.0.36',
 	'databases/postgresql,-main' => 'postgresql-client-<10.5',
 	'databases/postgresql,-server' => 'postgresql-server-<10.5',
+	'devel/mercurial,-main' => 'mercurial-<4.5.3p1',
+	'devel/mercurial,-x11' => 'mercurial-x11-<4.5.3p1',
 	'devel/pcre' => 'pcre-<8.38',
 	'graphics/tiff' => 'tiff-<4.0.4beta',
-	'mail/exim' => 'exim-<4.83',
-	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
-	'mail/roundcubemail' => 'roundcubemail-<1.3.7',
-	'net/curl' => 'curl-<7.61.1',
-	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
-	'net/lldpd' => 'lldpd-<0.7.18p0',
-	'net/ntp' => 'ntp-<4.2.8pl7',
-	'net/samba,-main' => 'samba-<4.8.4',
-	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
-	'net/transmission,-main' => 'transmission-<2.84',
-	'net/transmission,-qt' => 'transmission-qt-<2.84',
-	'net/wireshark,-gtk' => 'wireshark-gtk-<2.6.3',
-	'net/wireshark,-main' => 'wireshark-<2.6.3',
-	'net/wireshark,-text' => 'tshark-<2.6.3',
-	'print/cups,-main' => 'cups-<1.7.4',
-	'shells/bash' => 'bash-<4.3.27',
-	'sysutils/mcollective' => 'mcollective-<2.5.3',
-	'www/apache-httpd,-main' => 'apache-httpd-<2.4.35',
-	'www/bozohttpd' => 'bozohttpd-<20130711p0',
-	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',	# also in $obsolete_reason
-	'www/chromium' => 'chromium-<69.0.3497.100',
-	'www/drupal6/views' => 'drupal6-views-<2.18',		# d6 ports removed
-	'www/drupal7/core7' => 'drupal->=7.0,<7.59',
-	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
-	'www/iridium' => 'iridium-<2018.5.67',
-	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
-	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
-	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
-	'x11/gnome/gdm' => 'gdm-<3.28.3',
-
-	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
-	'telephony/asterisk,-calendar' => 'asterisk-calendar-<13.23.1',
-	'telephony/asterisk,-http_post' => 'asterisk-http_post-<13.23.1',
-	'telephony/asterisk,-ldap' => 'asterisk-ldap-<13.23.1',
-	'telephony/asterisk,-odbc' => 'asterisk-odbc-<13.23.1',
-	'telephony/asterisk,-pgsql' => 'asterisk-pgsql-<13.23.1',
-	'telephony/asterisk,-snmp' => 'asterisk-snmp-<13.23.1',
-	'telephony/asterisk,-speex' => 'asterisk-speex-<13.23.1',
-	'telephony/asterisk,-tds' => 'asterisk-tds-<13.23.1',
-
 	'lang/php/5.6,-main' => 'php-<5.6.38',
 	'lang/php/5.6,-apache' => 'php-apache-<5.6.38',
 	'lang/php/5.6,-cgi' => 'php-cgi-<5.6.38',
@@ -1233,7 +1195,6 @@ my $cve = {
 	'lang/php/5.6,-sybase_ct' => 'php-sybase_ct-<5.6.38',
 	'lang/php/5.6,-mssql' => 'php-mssql-<5.6.38',
 	'lang/php/5.6,-mcrypt' => 'php-mcrypt-<5.6.38',
-
 	'lang/php/7.0,-main' => 'php->7.0,<7.0.32',
 	'lang/php/7.0,-apache' => 'php-apache->7.0,<7.0.32',
 	'lang/php/7.0,-cgi' => 'php-cgi->7.0,<7.0.32',
@@ -1265,7 +1226,6 @@ my $cve = {
 	'lang/php/7.0,-xsl' => 'php-xsl->7.0,<7.0.32',
 	'lang/php/7.0,-zip' => 'php-zip->7.0,<7.0.32',
 	'lang/php/7.0,-mcrypt' => 'php-mcrypt->7.0,<7.0.32',
-
 	'lang/php/7.1,-main' => 'php->7.1,<7.1.22',
 	'lang/php/7.1,-apache' => 'php-apache->7.1,<7.1.22',
 	'lang/php/7.1,-cgi' => 'php-cgi->7.1,<7.1.22',
@@ -1297,7 +1257,6 @@ my $cve = {
 	'lang/php/7.1,-xsl' => 'php-xsl->7.1,<7.1.22',
 	'lang/php/7.1,-zip' => 'php-zip->7.1,<7.1.22',
 	'lang/php/7.1,-mcrypt' => 'php-mcrypt->7.1,<7.1.22',
-
 	'lang/php/7.2,-main' => 'php-7.2->7.2,<7.2.10',
 	'lang/php/7.2,-apache' => 'php-apache->7.2,<7.2.10',
 	'lang/php/7.2,-cgi' => 'php-cgi->7.2,<7.2.10',
@@ -1328,9 +1287,46 @@ my $cve = {
 	'lang/php/7.2,-xmlrpc' => 'php-xmlrpc->7.2,<7.2.10',
 	'lang/php/7.2,-xsl' => 'php-xsl->7.2,<7.2.10',
 	'lang/php/7.2,-zip' => 'php-zip->7.2,<7.2.10',
-	'devel/mercurial,-main' => 'mercurial-<4.5.3p1',
-	'devel/mercurial,-x11' => 'mercurial-x11-<4.5.3p1',
+	'mail/exim' => 'exim-<4.83',
+	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
+	'mail/roundcubemail' => 'roundcubemail-<1.3.7',
+	'net/curl' => 'curl-<7.61.1',
+	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
+	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'net/ntp' => 'ntp-<4.2.8pl7',
+	'net/samba,-main' => 'samba-<4.8.4',
+	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
+	'net/transmission,-main' => 'transmission-<2.84',
+	'net/transmission,-qt' => 'transmission-qt-<2.84',
+	'net/wireshark,-gtk' => 'wireshark-gtk-<2.6.3',
+	'net/wireshark,-main' => 'wireshark-<2.6.3',
+	'net/wireshark,-text' => 'tshark-<2.6.3',
+	'print/cups,-main' => 'cups-<1.7.4',
+	'security/clamav' => 'clamav-<0.100.2',
+	'shells/bash' => 'bash-<4.3.27',
+	'sysutils/mcollective' => 'mcollective-<2.5.3',
+	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
+	'telephony/asterisk,-calendar' => 'asterisk-calendar-<13.23.1',
+	'telephony/asterisk,-http_post' => 'asterisk-http_post-<13.23.1',
+	'telephony/asterisk,-ldap' => 'asterisk-ldap-<13.23.1',
+	'telephony/asterisk,-odbc' => 'asterisk-odbc-<13.23.1',
+	'telephony/asterisk,-pgsql' => 'asterisk-pgsql-<13.23.1',
+	'telephony/asterisk,-snmp' => 'asterisk-snmp-<13.23.1',
+	'telephony/asterisk,-speex' => 'asterisk-speex-<13.23.1',
+	'telephony/asterisk,-tds' => 'asterisk-tds-<13.23.1',
+	'www/apache-httpd,-main' => 'apache-httpd-<2.4.35',
+	'www/bozohttpd' => 'bozohttpd-<20130711p0',
+	'www/chromium' => 'chromium-<69.0.3497.100',
+	'www/drupal7/core7' => 'drupal->=7.0,<7.59',
+	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
+	'www/iridium' => 'iridium-<2018.5.67',
+	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
+	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
+	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
+	'x11/gnome/gdm' => 'gdm-<3.28.3',
 };
+# please maintain sort order in above $cve list, future updates need to
+# replace existing entries
 
 # ->check_security($path)
 #	return an insecure specification for the matching path
