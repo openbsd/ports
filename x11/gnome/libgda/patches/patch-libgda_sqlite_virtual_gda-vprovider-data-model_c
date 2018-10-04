@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgda_sqlite_virtual_gda-vprovider-data-model_c,v 1.1 2018/09/29 08:08:19 ajacoutot Exp $
+$OpenBSD: patch-libgda_sqlite_virtual_gda-vprovider-data-model_c,v 1.2 2018/10/04 06:42:17 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=723777
+https://gitlab.gnome.org/GNOME/libgda/merge_requests/61/
 
 Index: libgda/sqlite/virtual/gda-vprovider-data-model.c
 --- libgda/sqlite/virtual/gda-vprovider-data-model.c.orig
