@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.15 2018/07/15 09:56:45 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.16 2018/10/04 09:02:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -221,7 +221,8 @@ sub find_copy
 	my $alternate = $self->{repo}{reverse}{$self->{sha}->stringize};
 	if (defined $alternate) {
 		my $full = $self->distdir($alternate);
-		if (($self->stat($full))[7] == $self->{sz}) {
+		if ($self->stat($full) && 
+		    ($self->stat($full))[7] == $self->{sz}) {
 			$self->unlink($name);
 			if ($self->link($full, $name)) {
 				$self->do_cache;
