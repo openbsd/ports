@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/04 23:38:20 danj Exp $
+lib/python${MODPY_VERSION}/site-packages/http_ece/
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/http_ece/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/http_ece/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/http_ece/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
