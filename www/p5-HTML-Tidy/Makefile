@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/29 08:35:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/04 09:28:33 benoit Exp $
 
 COMMENT =	(X)HTML validation in a Perl object
 
-DISTNAME =	HTML-Tidy-1.58
+DISTNAME =	HTML-Tidy-1.60
 CATEGORIES =	www
 MODULES =	cpan
 
