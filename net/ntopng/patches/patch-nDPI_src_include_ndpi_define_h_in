@@ -1,6 +1,8 @@
-$OpenBSD: patch-nDPI_src_include_ndpi_define_h,v 1.1.1.1 2016/04/26 20:56:01 sthen Exp $
---- nDPI/src/include/ndpi_define.h.orig	Sun Apr 24 22:43:22 2016
-+++ nDPI/src/include/ndpi_define.h	Mon Apr 25 19:49:20 2016
+$OpenBSD: patch-nDPI_src_include_ndpi_define_h_in,v 1.1 2018/10/04 22:28:03 sthen Exp $
+
+Index: nDPI/src/include/ndpi_define.h.in
+--- nDPI/src/include/ndpi_define.h.in.orig
++++ nDPI/src/include/ndpi_define.h.in
 @@ -33,12 +33,14 @@
  
  #ifdef __OpenBSD__

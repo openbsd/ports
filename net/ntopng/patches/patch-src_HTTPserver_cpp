@@ -1,20 +1,16 @@
-$OpenBSD: patch-src_HTTPserver_cpp,v 1.2 2017/10/17 10:39:12 sthen Exp $
-
-Not using SYSCONFDIR, /etc/ssl is a system dir. (Could use a separate
-dir e.g. SYSCONFDIR/ntopng but it doesn't seem worth it when the only
-thing it's used for is the cert; most config is stored in redis).
+$OpenBSD: patch-src_HTTPserver_cpp,v 1.3 2018/10/04 22:28:03 sthen Exp $
 
 Index: src/HTTPserver.cpp
 --- src/HTTPserver.cpp.orig
 +++ src/HTTPserver.cpp
-@@ -724,8 +724,8 @@ HTTPserver::HTTPserver(const char *_docs_dir, const ch
- 	     ntop->getPrefs()->get_http_port());
-   }
+@@ -932,8 +932,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
+   int stat_rc;
+   ssl_cert_path[0] = '\0';
  
--  snprintf(ssl_cert_path, sizeof(ssl_cert_path), "%s/ssl/%s",
+-  snprintf(ssl_cert_path, ssl_cert_path_len, "%s/ssl/%s",
 -	   docs_dir, CONST_HTTPS_CERT_NAME);
-+  snprintf(ssl_cert_path, sizeof(ssl_cert_path), "/etc/ssl/%s",
++  snprintf(ssl_cert_path, ssl_cert_path_len, "/etc/ssl/%s",
 +	   CONST_HTTPS_CERT_NAME);
  
-   stat_rc = stat(ssl_cert_path, &buf);
+   stat_rc = stat(ssl_cert_path, &statsBuf);
  

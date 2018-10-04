@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/04 22:28:03 sthen Exp $
+
+BROKEN=	too crashy, the packet dissectors trigger SIGSEGV within minutes
+
+# embedded luajit
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_TAGNAME=	3.0
-NDPI_V=		2.0
-# XXX I have a preliminary update to 3.2, but many crashes with SSDP
+GH_TAGNAME=	3.6.1
+NDPI_V=		2.4
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
-REVISION=	3
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.ntop.org/
+HOMEPAGE=	https://www.ntop.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -20,8 +23,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GeoIP c crypto curl hiredis json-c luajit-5.1 m mysqlclient
-WANTLIB += pcap rrd sodium sqlite3 ssl z zmq
+WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient
+WANTLIB += pcap rrd sodium sqlite3 ssl z zmq zstd
 
 MASTER_SITES0=	https://github.com/ntop/ndpi/archive/${NDPI_V}/
 
@@ -29,19 +32,20 @@ BUILD_DEPENDS=	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	databases/redis \
-		net/GeoIP,-db \
-		net/GeoIP,-city \
-		net/GeoIP,-asn
-LIB_DEPENDS=	databases/libhiredis \
+		net/libmaxminddb,-db \
+		net/libmaxminddb,-city \
+		net/libmaxminddb,-asn
+LIB_DEPENDS=	archivers/zstd \
+		databases/libhiredis \
 		databases/mariadb \
 		databases/sqlite3 \
 		devel/json-c \
-		lang/luajit \
-		net/GeoIP \
 		net/curl \
+		net/libmaxminddb \
 		net/rrdtool \
 		net/zeromq
 
+MAKE_FLAGS=	CC="${CC}" CXX="${CXX}"
 FAKE_FLAGS=	INSTALL_DIR=${WRKINST}${PREFIX} \
 		MAN_DIR=${WRKINST}${PREFIX}/man
 
@@ -59,7 +63,7 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI
 NO_TEST=	Yes
 
 post-extract:
-	cd ${WRKDIR}; mv nDPI-${NDPI_V} ${WRKSRC}/nDPI
+	cd ${WRKDIR}; mv nDPI-* ${WRKSRC}/nDPI
 
 post-patch:
 	cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
@@ -84,5 +88,12 @@ post-install:
 	rm -rf ${PREFIX}/share/ntopng/httpdocs/{geoip,ssl} \
 		${PREFIX}/share/doc/ntopng/README.*{pages,pdf}
 	ln -s ${LOCALSTATEDIR}/db/GeoIP ${PREFIX}/share/ntopng/httpdocs/geoip
+
+.include <bsd.port.arch.mk>
+
+# luajit needs unwind
+.if ${PROPERTIES:Mclang}
+MAKE_FLAGS += TARGET_LDFLAGS='-lc++abi -lpthread'
+.endif
 
 .include <bsd.port.mk>

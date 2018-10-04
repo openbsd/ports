@@ -1,0 +1,20 @@
+$OpenBSD: patch-third-party_LuaJIT-2_1_0-git_src_Makefile,v 1.1 2018/10/04 22:28:03 sthen Exp $
+
+Index: third-party/LuaJIT-2.1.0-git/src/Makefile
+--- third-party/LuaJIT-2.1.0-git/src/Makefile.orig
++++ third-party/LuaJIT-2.1.0-git/src/Makefile
+@@ -590,10 +590,10 @@ endif
+ endif
+ endif
+ 
+-Q= @
+-E= @echo
+-#Q=
+-#E= @:
++#Q= @
++#E= @echo
++Q=
++E= @:
+ 
+ ##############################################################################
+ # Make targets.

@@ -1,0 +1,14 @@
+$OpenBSD: patch-third-party_LuaJIT-2_1_0-git_src_lj_obj_h,v 1.1 2018/10/04 22:28:03 sthen Exp $
+
+Index: third-party/LuaJIT-2.1.0-git/src/lj_obj.h
+--- third-party/LuaJIT-2.1.0-git/src/lj_obj.h.orig
++++ third-party/LuaJIT-2.1.0-git/src/lj_obj.h
+@@ -479,7 +479,7 @@ typedef struct Node {
+ 
+ LJ_STATIC_ASSERT(offsetof(Node, val) == 0);
+ 
+-#if !defined(linux) && !defined(__FreeBSD__) /* ntop */
++#if !defined(linux) && !defined(__FreeBSD__) && !defined(__OpenBSD__) /* ntop */
+ #define int8_t char
+ #endif
+ 

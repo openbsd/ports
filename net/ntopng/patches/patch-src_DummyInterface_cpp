@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_DummyInterface_cpp,v 1.2 2017/10/17 10:39:12 sthen Exp $
+$OpenBSD: patch-src_DummyInterface_cpp,v 1.3 2018/10/04 22:28:03 sthen Exp $
+
 Index: src/DummyInterface.cpp
 --- src/DummyInterface.cpp.orig
 +++ src/DummyInterface.cpp
-@@ -61,11 +61,11 @@ void DummyInterface::forgeFlow(u_int iteration) {
+@@ -63,11 +63,11 @@ void DummyInterface::forgeFlow(u_int iteration) {
      u_int16_t sport = 1234+i, dport = 80;
  
      snprintf(payload, sizeof(payload), 

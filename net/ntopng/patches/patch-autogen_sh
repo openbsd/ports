@@ -1,9 +1,11 @@
-$OpenBSD: patch-autogen_sh,v 1.1 2016/05/01 13:27:56 sthen Exp $
---- autogen.sh.orig	Sun May  1 14:26:52 2016
-+++ autogen.sh	Sun May  1 14:27:05 2016
+$OpenBSD: patch-autogen_sh,v 1.2 2018/10/04 22:28:03 sthen Exp $
+
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
  
  TODAY=`date +%y%m%d`
- NOW=`date +%s`
+ MAJOR_RELEASE="3"
