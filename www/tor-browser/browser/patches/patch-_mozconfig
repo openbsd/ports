@@ -1,4 +1,4 @@
-$OpenBSD: patch-_mozconfig,v 1.3 2018/10/03 14:55:36 sthen Exp $
+$OpenBSD: patch-_mozconfig,v 1.4 2018/10/04 19:56:38 sthen Exp $
 
 Disable the updater and related stuff.  Does nothing under OpenBSD
 Index: .mozconfig
@@ -17,3 +17,10 @@ Index: .mozconfig
  
  ac_add_options --disable-strip
  ac_add_options --disable-install-strip
+@@ -27,3 +27,6 @@ ac_add_options --disable-webrtc
+ ac_add_options --disable-eme
+ #ac_add_options --disable-ctypes
+ ac_add_options --enable-proxy-bypass-protection
++
++# avoid 1.1GB libxul
++ac_add_options --disable-debug-symbols
