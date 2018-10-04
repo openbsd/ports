@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/04 19:20:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/04 20:43:02 sthen Exp $
 
 COMMENT=		full-text search engine based on Lucene
 
-V=			7.4.0
-REVISION=		0
+V=			7.5.0
 DISTNAME=		solr-$V
-EXTRACT_SUFX =		.tgz
+EXTRACT_SUFX=		.tgz
 
 PKG_ARCH=		*
 
-CATEGORIES=		textproc java
+CATEGORIES=		textproc
 
 HOMEPAGE=		https://lucene.apache.org/solr/
-MASTER_SITES=		${MASTER_SITE_APACHE:=lucene/solr/$V/}
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=		${MASTER_SITE_APACHE:=lucene/solr/$V/}
 
 MODULES=		java
 MODJAVA_VER=		1.8+
