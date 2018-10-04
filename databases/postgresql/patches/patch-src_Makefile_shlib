@@ -1,12 +1,22 @@
-$OpenBSD: patch-src_Makefile_shlib,v 1.10 2015/01/08 15:01:11 pea Exp $
---- src/Makefile.shlib.orig	Sun May 11 14:16:48 2014
-+++ src/Makefile.shlib	Thu May 15 21:52:50 2014
-@@ -140,7 +140,7 @@ ifeq ($(PORTNAME), openbsd)
+$OpenBSD: patch-src_Makefile_shlib,v 1.11 2018/10/04 14:48:15 jeremy Exp $
+
+Backport fix for using foreign tables with SCRAM authentication from
+upstream commit d6ff5322c23272b15af606d7da12f49eca4d4470.
+
+Index: src/Makefile.shlib
+--- src/Makefile.shlib.orig
++++ src/Makefile.shlib
+@@ -146,7 +146,12 @@ ifeq ($(PORTNAME), openbsd)
    ifdef ELF_SYSTEM
      LINK.shared		= $(COMPILER) -shared
      ifdef soname
 -      LINK.shared	+= -Wl,-x,-soname,$(soname)
 +      LINK.shared	+= -Wl,-x
++    endif
++    BUILD.exports	= ( echo '{ global:'; $(AWK) '/^[^\#]/ {printf "%s;\n",$$1}' $<; echo ' local: *; };' ) >$@
++    exports_file	= $(SHLIB_EXPORTS:%.txt=%.list)
++    ifneq (,$(exports_file))
++      LINK.shared	+= -Wl,--version-script=$(exports_file)
      endif
      SHLIB_LINK		+= -lc
    else
