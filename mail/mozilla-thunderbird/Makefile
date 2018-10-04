@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2018/10/03 06:43:10 landry Exp $
+# $OpenBSD: Makefile,v 1.273 2018/10/04 05:55:22 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -46,6 +46,8 @@ MOZILLA_USE_BUNDLED_SQLITE =	Yes
 MOZILLA_USE_BUNDLED_ICU =	Yes
 # 59 is broken with system cairo and the option is being dropped
 MOZILLA_USE_BUNDLED_CAIRO = Yes
+# 53 needs rust
+BUILD_DEPENDS +=	lang/rust
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
