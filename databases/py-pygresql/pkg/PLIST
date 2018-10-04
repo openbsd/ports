@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/03 14:28:44 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/04 12:41:11 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -59,12 +59,14 @@ share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/cloud.base.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/cloud.css
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/cloud.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/comment-bright.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/comment-close.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/doctools.js
+share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/documentation_options.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/down-pressed.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/down.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/favicon.ico
@@ -76,7 +78,7 @@ share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/icon-note.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/icon-seealso.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/icon-todo.png
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/icon-warning.png
-share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/jquery-3.1.0.js
+share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/jquery-3.2.1.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/jquery.cookie.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/_static/minus.png
@@ -131,7 +133,7 @@ share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/download/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/download/index.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/genindex.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/index.html
-share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/${MODPY_PY_PREFIX}modindex.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/search.html
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_build/html/searchindex.js
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/_static/
