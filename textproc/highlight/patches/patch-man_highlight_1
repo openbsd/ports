@@ -1,8 +1,8 @@
-$OpenBSD: patch-man_highlight_1,v 1.9 2018/05/04 20:00:34 benoit Exp $
+$OpenBSD: patch-man_highlight_1,v 1.10 2018/10/04 09:43:11 benoit Exp $
 Index: man/highlight.1
 --- man/highlight.1.orig
 +++ man/highlight.1
-@@ -211,13 +211,13 @@ Wrapping lines with -V or -W will cause faulty highlig
+@@ -216,13 +216,13 @@ Wrapping lines with -V or -W will cause faulty highlig
  Using line-range might interfere with multi line syntax elements. Use with caution.    
  .SH FILES
  The configuration files are stored in
