@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_librrd_pc_in,v 1.1 2018/10/05 11:02:51 sthen Exp $
+
+Index: src/librrd.pc.in
+--- src/librrd.pc.in.orig
++++ src/librrd.pc.in
+@@ -6,5 +6,5 @@ includedir=@includedir@
+ Name: librrd
+ Description: Library for the RRDtool
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lrrd
++Libs: -L${libdir} -lrrd -Wl,-rpath-link,${X11BASE}/lib
+ Cflags: -I${includedir}

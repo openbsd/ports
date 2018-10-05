@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.113 2018/10/05 11:02:51 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -13,7 +13,7 @@ PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-rrd-${VERSION}
 REVISION=	6
-REVISION-main=	7
+REVISION-main=	8
 
 SHARED_LIBS +=	rrd                  5.2      # 9.0
 
@@ -108,6 +108,9 @@ RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 TEST_TARGET=		check
 TEST_DEPENDS=		shells/bash \
 			sysutils/coreutils
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/librrd.pc.in
 
 pre-test:
 	find ${WRKSRC}/tests -type f -perm -0111 \
