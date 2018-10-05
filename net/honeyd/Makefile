@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/05 11:01:28 sthen Exp $
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
@@ -12,19 +12,24 @@ HOMEPAGE=	http://www.honeyd.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c edit event m ncurses pcap pthread util z
-WANTLIB += 	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1
+WANTLIB +=	c edit event m ncurses pcap pthread util z
+WANTLIB +=	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* align-*
 .endif
 
 MODULES=	lang/python
-LIB_DEPENDS=	net/libdnet \
-		${MODPY_LIB_DEPENDS} \
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		devel/libeventextra \
 		devel/pcre \
-		devel/libeventextra
+		net/libdnet
 RUN_DEPENDS=	net/rrdtool
+
+# only used for tests; if py-libdnet is installed but py-dpkt is not
+# installed, build will fail
+BUILD_DEPENDS=	net/libdnet,-python \
+		net/py-dpkt
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PATH_PYTHON=${MODPY_BIN} \
