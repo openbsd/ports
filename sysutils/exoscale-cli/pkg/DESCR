@@ -1,0 +1,3 @@
+exo is the official command-line tool to access Exoscale's services. It allows
+you to manage your infrastructure from an user friendly command-line with the
+benefits of a scriptable interface.
