@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.501 2018/09/26 14:38:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.502 2018/10/06 17:17:50 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -80,6 +80,7 @@
      SUBDIR += eventlog
      SUBDIR += exfat-fuse
      SUBDIR += exa
+     SUBDIR += exoscale-cli
      SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += facette
