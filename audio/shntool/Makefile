@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/06 17:15:55 sthen Exp $
 
 COMMENT =		multi-purpose wave data processing utility
 
 DISTNAME =		shntool-3.0.10
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
