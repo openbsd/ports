@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2017/01/08 01:59:49 bluhm Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2018/10/06 15:27:10 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/clang/
 lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
 lib/python${MODPY_VERSION}/site-packages/clang/__init__.pyc
@@ -6,3 +6,25 @@ lib/python${MODPY_VERSION}/site-packages/clang/cindex.py
 lib/python${MODPY_VERSION}/site-packages/clang/cindex.pyc
 lib/python${MODPY_VERSION}/site-packages/clang/enumerations.py
 lib/python${MODPY_VERSION}/site-packages/clang/enumerations.pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/
+lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
+lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/attrib_fromdict.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cache.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/libcxx.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/metrics.py
+lib/python${MODPY_VERSION}/site-packages/lldb/formatters/synth.py
+lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
+lib/python${MODPY_VERSION}/site-packages/lldb/runtime/
+lib/python${MODPY_VERSION}/site-packages/lldb/runtime/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lldb/utils/symbolication.py
+lib/python${MODPY_VERSION}/site-packages/six.py

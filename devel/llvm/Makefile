@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2018/09/30 10:57:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2018/10/06 15:27:10 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -19,15 +19,18 @@ PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	7
+REVISION-main =	8
+REVISION-python = 0
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
-		lld-${LLVM_V}.src${EXTRACT_SUFX}
+		lld-${LLVM_V}.src${EXTRACT_SUFX} \
+		lldb-${LLVM_V}.src${EXTRACT_SUFX}
 MASTER_SITES =	https://www.llvm.org/releases/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS =	clang		7.0 \
+		lldb		0.0 \
 		LTO		4.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
@@ -38,7 +41,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} c m pthread z
+WANTLIB =	${COMPILER_LIBCXX} c curses edit form m panel pthread \
+		${MODPY_WANTLIB} z
 
 MODULES =	devel/cmake \
 		lang/python
@@ -47,11 +51,13 @@ COMPILER =	base-clang ports-gcc
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
-BUILD_DEPENDS +=	textproc/py-sphinx
+BUILD_DEPENDS +=	devel/swig \
+			textproc/py-sphinx
 RUN_DEPENDS +=		devel/gtest
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
+LIB_DEPENDS-llvm =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
@@ -94,6 +100,7 @@ SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
+	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
