@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/05 11:01:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2018/10/07 00:58:40 sthen Exp $
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
@@ -29,7 +29,8 @@ RUN_DEPENDS=	net/rrdtool
 # only used for tests; if py-libdnet is installed but py-dpkt is not
 # installed, build will fail
 BUILD_DEPENDS=	net/libdnet,-python \
-		net/py-dpkt
+		net/py-dpkt \
+		net/py-libpcap
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PATH_PYTHON=${MODPY_BIN} \
