@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.17 2018/07/31 07:13:37 espie Exp $
+# $OpenBSD: update-patches,v 1.18 2018/10/08 15:20:28 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -192,7 +192,8 @@ sub create_patch
 	my ($src, $dst, $stem) = @_;
 	say "Processing $stem" if $verbose;
 	open(my $file, "-|", "diff", "-u", "-p", "-a", @diff_args, "-L",
-		"$stem.orig", "-L", $stem, "--", $src, $dst) or die;
+		"$stem.orig", "-L", $stem, "--", $src, $dst) or 
+	    die "can't start diff: $!";
 	my @lines = <$file>;
 	close $file;
 	my $comment = "!OpenBSD!\n";
@@ -206,7 +207,7 @@ sub create_patch
 sub parse_existing_patch
 {
 	my $filename = shift;
-	open (my $f, '<', $filename) or die;
+	open (my $f, '<', $filename) or die "can't read existing $filename: $!";
 	my (@comment, $src, @patch);
 	while (<$f>) {
 		if (m/^Index:\s+(\S.*)/) {
@@ -237,9 +238,11 @@ sub write_patch
 {
 	my $p = shift;
 	if (-f $p->{filename}) {
-		rename $p->{filename}, $p->{filename}.".orig" or die;
+		rename $p->{filename}, $p->{filename}.".orig" or 
+		    die "can't rename $p->{filename}: $!";
 	}
-	open(my $f, '>', $p->{filename}) or die;
+	open(my $f, '>', $p->{filename}) or 
+	    die "can't write to $p->{filename}: $!";
 	for my $l (@{$p->{comment}}) {
 		print $f $l;
 	}
