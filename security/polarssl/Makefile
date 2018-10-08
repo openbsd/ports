@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/02 15:13:04 bket Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/08 11:58:07 ajacoutot Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
@@ -21,7 +21,10 @@ WANTLIB += c pthread
 
 MASTER_SITES=	https://tls.mbed.org/download/
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake \
+		lang/python
+
+MODPY_RUNDEP=	No
 
 CONFIGURE_ARGS=		-DUSE_SHARED_MBEDTLS_LIBRARY=ON \
 			-DLINK_WITH_PTHREAD=ON
