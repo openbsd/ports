@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.121 2018/09/27 22:51:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.122 2018/10/08 10:38:46 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -441,6 +441,10 @@ PKGNAME-${i}=		php-${i}-${V}
 PKGSPEC-${i}=		php-${i}->=5.6,<5.7
 .elif ${V:M7.0*}
 PKGSPEC-${i}=		php-${i}->=7.0,<7.1
+.elif ${V:M7.1*}
+PKGSPEC-${i}=		php-${i}->=7.1,<7.2
+.elif ${V:M7.2*}
+PKGSPEC-${i}=		php-${i}->=7.2,<7.3
 .endif
 RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor
