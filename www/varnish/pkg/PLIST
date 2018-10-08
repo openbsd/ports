@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/03 09:40:27 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.13 2018/10/08 11:44:10 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
+@rcscript ${RCDIR}/varnishd
 @bin bin/varnishadm
 @bin bin/varnishhist
 @bin bin/varnishlog
@@ -33,6 +34,7 @@ include/varnish/tbl/h2_error.h
 include/varnish/tbl/h2_frames.h
 include/varnish/tbl/h2_settings.h
 include/varnish/tbl/h2_stream.h
+include/varnish/tbl/htc.h
 include/varnish/tbl/http_headers.h
 include/varnish/tbl/http_response.h
 include/varnish/tbl/locks.h
@@ -128,11 +130,6 @@ share/aclocal/varnish.m4
 share/doc/varnish/
 share/doc/varnish/builtin.vcl
 share/doc/varnish/example.vcl
-share/varnish/
-share/varnish/vcl/
-share/varnish/vcl/devicedetect.vcl
-share/varnish/vmodtool.py
-share/varnish/vsctool.py
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
 share/examples/varnish/builtin.vcl
@@ -141,4 +138,8 @@ share/examples/varnish/example.vcl
 @sample ${SYSCONFDIR}/varnish/example.vcl
 @exec-add mkdir -p /var/varnish
 @extraunexec rm -fr /var/varnish
-@rcscript ${RCDIR}/varnishd
+share/varnish/
+share/varnish/vcl/
+share/varnish/vcl/devicedetect.vcl
+share/varnish/vmodtool.py
+share/varnish/vsctool.py
