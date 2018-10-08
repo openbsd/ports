@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2018/09/28 06:57:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2018/10/08 15:28:05 landry Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -7,6 +7,7 @@ STABLE_VERSION=		2.44.6
 OLD_VERSION=		2.40.20
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX} \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}
+REVISION =	0
 
 .include <bsd.port.arch.mk>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2018/10/04 05:55:22 landry Exp $
+# $OpenBSD: Makefile,v 1.274 2018/10/08 15:28:05 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -11,6 +11,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
+REVISION =	0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}

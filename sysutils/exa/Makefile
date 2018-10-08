@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/01 08:14:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/08 15:28:05 landry Exp $
 
 COMMENT =		ls alternative written in Rust
 
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.8.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
