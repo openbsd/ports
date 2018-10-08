@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1444 2018/10/08 12:03:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1445 2018/10/08 13:28:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1958,6 +1958,31 @@ check-register-all:
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} check-register
 .endfor
 
+fix-permissions:
+.if ${PORTS_PRIVSEP:L} == "yes"
+	@if test `id -u` != 0; then \
+		echo 1>&2 "This must be run as root"; \
+		exit 1; \
+	fi
+	@f=`id -gn ${FETCH_USER}`; \
+	echo "give ${DISTDIR} to ${FETCH_USER}:$$f (but not build-stats)"; \
+	if test -d ${DISTDIR}; then \
+		cd ${DISTDIR} && \
+		find . -path ./build-stats -prune -exec chown ${FETCH_USER}:$$f {} +; \
+	else \
+		install -o ${FETCH_USER} -g $$f -d ${DISTDIR}; \
+	fi
+.  for d in ${LOCKDIR} ${PACKAGE_REPOSITORY} ${PLIST_REPOSITORY} ${WRKOBJDIR}
+	@b=`id -gn ${BUILD_USER}`; \
+	echo "give $d to ${BUILD_USER}:$$b"; \
+	if test -d $d; then \
+		cd $d && chown -R ${BUILD_USER}:$$b .; \
+	else \
+		install -o ${BUILD_USER} -g $$b -d $d; \
+	fi
+.  endfor
+.endif
+
 .for _S in ${MULTI_PACKAGES}
 
 # run under _pfetch
@@ -3512,7 +3537,7 @@ _all_phony = ${_recursive_depends_targets} \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
-	_post-install-modules
+	_post-install-modules fix-permissions
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
