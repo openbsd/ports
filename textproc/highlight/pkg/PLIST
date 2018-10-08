@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/10/04 09:43:11 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.35 2018/10/08 12:17:20 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
-share/doc/highlight/README
+share/doc/highlight/README.adoc
 share/examples/highlight/
 @sample ${SYSCONFDIR}/highlight/
 share/examples/highlight/filetypes.conf

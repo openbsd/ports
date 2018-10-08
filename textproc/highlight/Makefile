@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/04 09:43:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.58 2018/10/08 12:17:20 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.45
+DISTNAME =		highlight-3.46
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -47,7 +47,7 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/highlight ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/highlight
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/highlight
+	${INSTALL_DATA} ${WRKSRC}/README.adoc ${PREFIX}/share/doc/highlight
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/highlight
 	${INSTALL_DATA} ${WRKSRC}/filetypes.conf \
 		${PREFIX}/share/examples/highlight
