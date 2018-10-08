@@ -2,7 +2,7 @@
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	2.1
+MODPY_EGG_VERSION =	2.1.2
 REVISION =		0
 
 LNAME =			django
