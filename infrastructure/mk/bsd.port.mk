@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1443 2018/09/22 07:13:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1444 2018/10/08 12:03:16 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2970,6 +2970,9 @@ ${DISTDIR}/$p:
 		fi; \
 	done; \
 	if ${_MAKESUM}; then \
+		if test -z ${$m}; then \
+				${ECHO_MSG} ">> No master site in $m"; \
+		fi; \
 		exit 1; \
 	fi; \
 	for site in ${MASTER_SITE_BACKUP}; do \
