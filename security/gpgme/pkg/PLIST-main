@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2018/04/14 09:56:20 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/10/09 13:40:51 rsadowski Exp $
+@pkgpath security/gpgme
 bin/gpgme-config
 @bin bin/gpgme-tool
 include/gpgme.h

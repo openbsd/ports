@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2018/07/19 17:04:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2018/10/09 13:40:51 rsadowski Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
 VERSION =		1.10.0
-REVISION =		1
+REVISION =		2
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
