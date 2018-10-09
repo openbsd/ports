@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.636 2018/10/09 15:31:50 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.637 2018/10/09 20:34:40 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1176,6 +1176,7 @@ my $cve = {
 	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'net/ntp' => 'ntp-<4.2.8pl7',
 	'net/samba,-main' => 'samba-<4.8.4',
+	'net/tinc' => 'tinc-<1.0.35v0',
 	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
 	'net/transmission,-main' => 'transmission-<2.84',
 	'net/transmission,-qt' => 'transmission-qt-<2.84',
