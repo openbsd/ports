@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1445 2018/10/08 13:28:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1446 2018/10/09 09:47:28 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1968,7 +1968,7 @@ fix-permissions:
 	echo "give ${DISTDIR} to ${FETCH_USER}:$$f (but not build-stats)"; \
 	if test -d ${DISTDIR}; then \
 		cd ${DISTDIR} && \
-		find . -path ./build-stats -prune -exec chown ${FETCH_USER}:$$f {} +; \
+		find . -path ./build-stats -prune -o -exec chown ${FETCH_USER}:$$f {} +; \
 	else \
 		install -o ${FETCH_USER} -g $$f -d ${DISTDIR}; \
 	fi
