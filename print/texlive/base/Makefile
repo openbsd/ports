@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2018/10/09 23:36:19 sthen Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -7,12 +7,11 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		2
+REVISION =		3
 
 MULTI_PACKAGES = -main -mktexlsr
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
-REVISION-mktexlsr =	0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -85,6 +84,8 @@ USE_GMAKE =	Yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=	-fPIC
+# somehow base libtool misses -lpng while linking xetex
+USE_LIBTOOL =	gnu
 .endif
 
 # clisp limits which arches we can use xindy on
