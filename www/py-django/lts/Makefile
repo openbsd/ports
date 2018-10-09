@@ -4,7 +4,7 @@ PORTROACH =	limit:^1\.11
 
 COMMENT =	high-level Python web framework (LTS version)
 
-MODPY_EGG_VERSION =	1.11.15
+MODPY_EGG_VERSION =	1.11.16
 LNAME =			django-lts
 REVISION =		0
 
