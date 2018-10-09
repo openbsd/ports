@@ -1,8 +1,14 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2018/10/09 07:08:17 rsadowski Exp $
 @bin bin/bitcoin-qt
 @man man/man1/bitcoin-qt.1
-share/applications/bitcoin-qt.desktop
 share/pixmaps/
 share/pixmaps/bitcoin128.png
 share/pixmaps/bitcoin128.xpm
-@tag update-desktop-database
+share/pixmaps/bitcoin16.png
+share/pixmaps/bitcoin16.xpm
+share/pixmaps/bitcoin256.png
+share/pixmaps/bitcoin256.xpm
+share/pixmaps/bitcoin32.png
+share/pixmaps/bitcoin32.xpm
+share/pixmaps/bitcoin64.png
+share/pixmaps/bitcoin64.xpm

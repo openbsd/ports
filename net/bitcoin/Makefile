@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/20 16:21:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/09 07:08:17 rsadowski Exp $
 
 COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.16.3
+GH_TAGNAME =		v0.17.0
 
-SHARED_LIBS +=  bitcoinconsensus          0.0 # 0.0
+SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
 SHARED_LIBS +=  univalue                  0.0 # 100.3
 
@@ -69,8 +69,6 @@ WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
 WANTLIB += pcre pcre2-16 png protobuf qrencode xcb xcb-dri2 xcb-glx
 WANTLIB += z
 
-RUN_DEPENDS +=		devel/desktop-file-utils
-
 MODULES +=		x11/qt5
 
 LIB_DEPENDS +=		devel/protobuf \
@@ -83,8 +81,6 @@ CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
 SUBST_VARS +=		VARBASE
-
-BTCCONTRIBDIR =		${WRKDIST}/contrib/debian
 
 post-patch:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
@@ -99,7 +95,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/share/rpcauth/rpcauth.py \
 		${PREFIX}/share/bitcoin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bitcoin
-	${INSTALL_DATA} ${BTCCONTRIBDIR}/examples/bitcoin.conf \
+	${INSTALL_DATA} ${WRKDIST}/share/examples/bitcoin.conf \
 		${PREFIX}/share/examples/bitcoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/bitcoin
 	${INSTALL_DATA} ${WRKDIST}/contrib/*.bash-completion \
@@ -117,15 +113,13 @@ post-install:
 		${PREFIX}/share/doc/bitcoin
 
 .if ! ${FLAVOR:Mno_x11}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} -c \
-		${BTCCONTRIBDIR}/bitcoin-qt.desktop \
-		${PREFIX}/share/applications/bitcoin-qt.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin128.png \
-		${PREFIX}/share/pixmaps/bitcoin128.png
-	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin128.xpm \
-		${PREFIX}/share/pixmaps/bitcoin128.xpm
+.for s in 16 32 64 128 256
+	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin${s}.png \
+		${PREFIX}/share/pixmaps/bitcoin${s}.png
+	${INSTALL_DATA} ${WRKDIST}/share/pixmaps/bitcoin${s}.xpm \
+		${PREFIX}/share/pixmaps/bitcoin${s}.xpm
+.endfor
 .endif
 
 .include <bsd.port.mk>

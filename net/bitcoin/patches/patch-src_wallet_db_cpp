@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_wallet_db_cpp,v 1.1.1.1 2018/07/09 12:22:16 rsadowski Exp $
+$OpenBSD: patch-src_wallet_db_cpp,v 1.2 2018/10/09 07:08:17 rsadowski Exp $
 Index: src/wallet/db.cpp
 --- src/wallet/db.cpp.orig
 +++ src/wallet/db.cpp
@@ -12,7 +12,7 @@ Index: src/wallet/db.cpp
      dbenv->set_errfile(fsbridge::fopen(pathErrorFile, "a")); /// debug
      dbenv->set_flags(DB_AUTO_COMMIT, 1);
      dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
-+#if DB_VERSION_MINOR > 7
++#if ((DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR > 7))
      dbenv->log_set_config(DB_LOG_AUTO_REMOVE, 1);
 +#endif
      int ret = dbenv->open(strPath.c_str(),
@@ -22,7 +22,7 @@ Index: src/wallet/db.cpp
      dbenv->set_lk_max_locks(10000);
      dbenv->set_lk_max_objects(10000);
      dbenv->set_flags(DB_AUTO_COMMIT, 1);
-+#if DB_VERSION_MINOR > 7
++#if ((DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR > 7))
      dbenv->log_set_config(DB_LOG_IN_MEMORY, 1);
 +#endif
      int ret = dbenv->open(nullptr,
