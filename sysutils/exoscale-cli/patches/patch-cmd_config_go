@@ -1,0 +1,24 @@
+$OpenBSD: patch-cmd_config_go,v 1.1 2018/10/09 15:22:59 ajacoutot Exp $
+
+From fceccd0cc2c8e4245a5e96eedb32724ae73bad5f Mon Sep 17 00:00:00 2001
+From: Yoan Blanc <yoan@dosimple.ch>
+Date: Tue, 9 Oct 2018 12:26:20 +0200
+Subject: [PATCH] exo: exoscale.toml to be stored with 0600 (#347)
+
+Index: cmd/config.go
+--- cmd/config.go.orig
++++ cmd/config.go
+@@ -445,6 +445,13 @@ func createConfigFile(fileName string) (string, error)
+ 	if _, err := os.Stat(filepath); !os.IsNotExist(err) {
+ 		return "", fmt.Errorf("%q exists already", filepath)
+ 	}
++
++	fp, err := os.OpenFile(filepath, os.O_RDONLY|os.O_CREATE, 0600)
++	if err != nil {
++		return "", err
++	}
++	defer fp.Close() // nolint: errcheck
++
+ 	return filepath, nil
+ }
+ 
