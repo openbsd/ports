@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/07 07:48:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/16 14:35:42 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
@@ -15,6 +15,7 @@ include/qbs/api/project.h
 include/qbs/api/projectdata.h
 include/qbs/api/rulecommand.h
 include/qbs/api/runenvironment.h
+include/qbs/api/transformerdata.h
 include/qbs/buildgraph/
 include/qbs/buildgraph/forward_decls.h
 include/qbs/generators/
@@ -27,6 +28,7 @@ include/qbs/logging/ilogsink.h
 include/qbs/qbs.h
 include/qbs/qbs_version.pri
 include/qbs/qtenvironment.h
+include/qbs/qtmsvctools.h
 include/qbs/qtprofilesetup.h
 include/qbs/tools/
 include/qbs/tools/applecodesignutils.h
@@ -73,6 +75,7 @@ include/qbs/tools/set.h
 include/qbs/tools/settings.h
 include/qbs/tools/settingscreator.h
 include/qbs/tools/settingsmodel.h
+include/qbs/tools/settingsrepresentation.h
 include/qbs/tools/setupprojectparameters.h
 include/qbs/tools/shellutils.h
 include/qbs/tools/stlutils.h
@@ -92,6 +95,7 @@ lib/libqbsqtprofilesetup.prl
 lib/qbs/
 lib/qbs/plugins/
 lib/qbs/plugins/libclangcompilationdbgenerator.so
+lib/qbs/plugins/libmakefilegenerator.so
 lib/qbs/plugins/libqbs_cpp_scanner.so
 lib/qbs/plugins/libqbs_qt_scanner.so
 lib/qbs/plugins/libvisualstudiogenerator.so
@@ -299,6 +303,13 @@ share/qbs/modules/Android/ndk/utils.js
 share/qbs/modules/Android/sdk/
 share/qbs/modules/Android/sdk/sdk.qbs
 share/qbs/modules/Android/sdk/utils.js
+share/qbs/modules/Exporter/
+share/qbs/modules/Exporter/pkgconfig/
+share/qbs/modules/Exporter/pkgconfig/pkgconfig.js
+share/qbs/modules/Exporter/pkgconfig/pkgconfig.qbs
+share/qbs/modules/Exporter/qbs/
+share/qbs/modules/Exporter/qbs/qbsexporter.js
+share/qbs/modules/Exporter/qbs/qbsexporter.qbs
 share/qbs/modules/archiver/
 share/qbs/modules/archiver/archiver.qbs
 share/qbs/modules/bundle/
@@ -318,6 +329,7 @@ share/qbs/modules/cpp/GenericGCC.qbs
 share/qbs/modules/cpp/LinuxGCC.qbs
 share/qbs/modules/cpp/UnixGCC.qbs
 share/qbs/modules/cpp/android-gcc.qbs
+share/qbs/modules/cpp/cpp.js
 share/qbs/modules/cpp/darwin.js
 share/qbs/modules/cpp/freebsd-gcc.qbs
 share/qbs/modules/cpp/freebsd.js

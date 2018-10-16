@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_lib_corelib_tools_tools_pri,v 1.1 2018/04/07 07:48:12 rsadowski Exp $
+$OpenBSD: patch-src_lib_corelib_tools_tools_pri,v 1.2 2018/10/16 14:35:42 rsadowski Exp $
 
 Index: src/lib/corelib/tools/tools.pri
 --- src/lib/corelib/tools/tools.pri.orig
 +++ src/lib/corelib/tools/tools.pri
-@@ -107,6 +107,10 @@ osx {
+@@ -114,6 +114,10 @@ osx {
      LIBS += -framework Security
  }
  
