@@ -1,14 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.17 2018/08/21 17:11:08 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.18 2018/10/16 13:07:33 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
 
-forcibly disable lua < 5.3 (lua_strlen problem)
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -515,14 +515,14 @@ SET(POE_LOOP "Loop::IO_Poll")
+@@ -516,14 +516,14 @@ SET(POE_LOOP "Loop::IO_Poll")
  SET(TAR "tar")
  
  # Platform specific configuration
@@ -25,7 +23,7 @@ Index: CMakeLists.txt
  	# Find util library
  	ProcessPackage(LIBUTIL LIBRARY util INCLUDE libutil.h
  		ROOT ${LIBUTIL_ROOT_DIR} OPTIONAL)
-@@ -538,8 +538,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
+@@ -539,8 +539,14 @@ IF(CMAKE_SYSTEM_NAME MATCHES "^.*BSD$|DragonFly")
  	ENDIF()
  	SET(POE_LOOP "Loop::Kqueue")
  	SET(TAR "gtar")
@@ -41,27 +39,7 @@ Index: CMakeLists.txt
  IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_BSD_SOURCE -DDARWIN")
  	SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
-@@ -611,13 +617,13 @@ IF(ENABLE_LUAJIT MATCHES "ON")
- 		INCLUDE_DIRECTORIES("${LUA_INCLUDE_DIR}")
- 	ENDIF(NOT LUA_FOUND)
- ELSE(ENABLE_LUAJIT MATCHES "ON")
--	FindLua(VERSION_MAJOR "5" VERSION_MINOR "3" ROOT "${LUA_ROOT}")
--	IF(NOT LUA_FOUND)
--		FindLua(VERSION_MAJOR "5" VERSION_MINOR "2" ROOT "${LUA_ROOT}")
--		IF(NOT LUA_FOUND)
-+#	FindLua(VERSION_MAJOR "5" VERSION_MINOR "3" ROOT "${LUA_ROOT}")
-+#	IF(NOT LUA_FOUND)
-+#		FindLua(VERSION_MAJOR "5" VERSION_MINOR "2" ROOT "${LUA_ROOT}")
-+#		IF(NOT LUA_FOUND)
- 				FindLua(VERSION_MAJOR "5" VERSION_MINOR "1" ROOT "${LUA_ROOT}")
--		ENDIF(NOT LUA_FOUND)
--	ENDIF(NOT LUA_FOUND)
-+#		ENDIF(NOT LUA_FOUND)
-+#	ENDIF(NOT LUA_FOUND)
- 	IF(NOT LUA_FOUND)
- 			MESSAGE(FATAL_ERROR "Lua not found, lua support is required")
- 	ELSE(NOT LUA_FOUND)
-@@ -654,7 +660,7 @@ ELSE()
+@@ -655,7 +661,7 @@ ELSE()
  ENDIF()
  
  ProcessPackage(LIBEVENT LIBRARY event INCLUDE event.h INCLUDE_SUFFIXES include/event

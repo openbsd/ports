@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2018/08/21 17:11:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/10/16 13:07:33 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	1.7.9
-REVISION=	0
+GH_TAGNAME=	1.8.0
 
 CATEGORIES=	mail
 
@@ -49,11 +48,10 @@ LIB_DEPENDS+=	lang/luajit
 WANTLIB+=	luajit-5.1
 PKG_ARGS +=     -Dluajit=1
 .else
-# XXX patched to disable lua 5.3 preference in CMakeLists.txt;
-# for post-1.7.9 try removing that and MODLUA_VERSION=5.3
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
 		-DENABLE_TORCH=0
 MODULES+=	lang/lua
+MODLUA_VERSION=	5.3
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
 PKG_ARGS +=     -Dluajit=0

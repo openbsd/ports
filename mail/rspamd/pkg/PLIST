@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/08/21 17:11:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2018/10/16 13:07:33 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 %%luajit%%
@@ -162,6 +162,8 @@ share/examples/rspamd/scores.d/subject_group.conf
 @sample ${SYSCONFDIR}/rspamd/scores.d/subject_group.conf
 share/examples/rspamd/scores.d/surbl_group.conf
 @sample ${SYSCONFDIR}/rspamd/scores.d/surbl_group.conf
+share/examples/rspamd/settings.conf
+@sample ${SYSCONFDIR}/rspamd/settings.conf
 share/examples/rspamd/spf_dkim_whitelist.inc
 @sample ${SYSCONFDIR}/rspamd/spf_dkim_whitelist.inc
 share/examples/rspamd/statistic.conf
@@ -192,7 +194,6 @@ share/rspamd/languages/cs.json
 share/rspamd/languages/cy.json
 share/rspamd/languages/da.json
 share/rspamd/languages/de.json
-share/rspamd/languages/el.json
 share/rspamd/languages/en.json
 share/rspamd/languages/es.json
 share/rspamd/languages/et.json
@@ -201,22 +202,14 @@ share/rspamd/languages/fa.json
 share/rspamd/languages/fi.json
 share/rspamd/languages/fr.json
 share/rspamd/languages/ga.json
-share/rspamd/languages/gl.json
-share/rspamd/languages/gu.json
-share/rspamd/languages/he.json
 share/rspamd/languages/hi.json
 share/rspamd/languages/hr.json
 share/rspamd/languages/hu.json
 share/rspamd/languages/id.json
 share/rspamd/languages/is.json
 share/rspamd/languages/it.json
-share/rspamd/languages/ja.json
-share/rspamd/languages/km.json
-share/rspamd/languages/kn.json
-share/rspamd/languages/ko.json
 share/rspamd/languages/lt.json
 share/rspamd/languages/lv.json
-share/rspamd/languages/ml.json
 share/rspamd/languages/mr.json
 share/rspamd/languages/ms.json
 share/rspamd/languages/ne.json
@@ -231,17 +224,13 @@ share/rspamd/languages/sl.json
 share/rspamd/languages/so.json
 share/rspamd/languages/sq.json
 share/rspamd/languages/sr.json
+share/rspamd/languages/stop_words
 share/rspamd/languages/sv.json
 share/rspamd/languages/sw.json
-share/rspamd/languages/ta.json
-share/rspamd/languages/te.json
-share/rspamd/languages/th.json
 share/rspamd/languages/tr.json
 share/rspamd/languages/uk.json
 share/rspamd/languages/ur.json
 share/rspamd/languages/vi.json
-share/rspamd/languages/yi.json
-share/rspamd/languages/zh-CN.json
 share/rspamd/lib/
 share/rspamd/lib/ansicolors.lua
 share/rspamd/lib/argparse.lua
@@ -249,13 +238,16 @@ share/rspamd/lib/fun.lua
 share/rspamd/lib/global_functions.lua
 share/rspamd/lib/lua_auth_results.lua
 share/rspamd/lib/lua_cfg_transform.lua
+share/rspamd/lib/lua_clickhouse.lua
 share/rspamd/lib/lua_dkim_tools.lua
 share/rspamd/lib/lua_maps.lua
 share/rspamd/lib/lua_meta.lua
 share/rspamd/lib/lua_nn.lua
 share/rspamd/lib/lua_redis.lua
+share/rspamd/lib/lua_selectors.lua
 share/rspamd/lib/lua_squeeze_rules.lua
 share/rspamd/lib/lua_stat.lua
+share/rspamd/lib/lua_tcp_sync.lua
 share/rspamd/lib/lua_util.lua
 share/rspamd/lib/plugins_stats.lua
 share/rspamd/lib/rescore_utility.lua
@@ -270,6 +262,7 @@ share/rspamd/lib/rspamadm/keypair.lua
 share/rspamd/lib/rspamadm/mime.lua
 share/rspamd/lib/rspamadm/rescore.lua
 share/rspamd/lib/rspamadm/stat_convert.lua
+share/rspamd/lib/tableshape.lua
 share/rspamd/lua/
 share/rspamd/lua/antivirus.lua
 share/rspamd/lua/arc.lua
@@ -335,6 +328,7 @@ share/rspamd/www/css/
 share/rspamd/www/css/bootstrap.min.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/footable.bootstrap.min.css
+share/rspamd/www/css/nprogress.css
 share/rspamd/www/css/rspamd.css
 share/rspamd/www/favicon.ico
 share/rspamd/www/fonts/
@@ -364,6 +358,7 @@ share/rspamd/www/js/lib/domReady.js
 share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/humanize.min.js
 share/rspamd/www/js/lib/jquery-3.3.1.min.js
+share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/require.min.js
 share/rspamd/www/js/lib/visibility.min.js
 share/rspamd/www/js/main.js
