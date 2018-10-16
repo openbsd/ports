@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.97 2018/09/29 08:01:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.98 2018/10/16 11:41:20 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -588,6 +588,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalyt
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalytics/2015-07-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medialive/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medialive/2017-10-14/
