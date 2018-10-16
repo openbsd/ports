@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1446 2018/10/09 09:47:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1447 2018/10/16 13:59:14 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1989,7 +1989,7 @@ fix-permissions:
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -2002,7 +2002,7 @@ ${_CACHE_REPO}${_PKGFILE${_S}}:
 
 ${_PACKAGE_COOKIE${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
-.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
+.  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
@@ -2037,7 +2037,7 @@ ${_PACKAGE_COOKIE${_S}}:
 # The real install
 
 ${_INSTALL_COOKIE${_S}}:
-.  if ${FETCH_PACKAGES:L} == "yes"
+.  if ${FETCH_PACKAGES:L} != "no"
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} exec ${MAKE} subpackage
 .  else
 
