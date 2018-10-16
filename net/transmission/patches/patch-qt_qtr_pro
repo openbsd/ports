@@ -1,6 +1,10 @@
-$OpenBSD: patch-qt_qtr_pro,v 1.7 2016/03/08 16:14:16 naddy Exp $
---- qt/qtr.pro.orig	Mon Jan 25 17:10:14 2016
-+++ qt/qtr.pro	Fri Feb  5 22:07:58 2016
+$OpenBSD: patch-qt_qtr_pro,v 1.8 2018/10/16 14:48:15 bcallah Exp $
+
+Ensure -lintl is linked to appease lld.
+
+Index: qt/qtr.pro
+--- qt/qtr.pro.orig
++++ qt/qtr.pro
 @@ -8,7 +8,7 @@ target.path = /bin
  INSTALLS += target
  
@@ -15,7 +19,7 @@ $OpenBSD: patch-qt_qtr_pro,v 1.7 2016/03/08 16:14:16 naddy Exp $
  LIBS += $${LIBUPNP_LIBS}
  LIBS += $${LIBNATPMP_LIBS}
 -unix: LIBS += -L$${EVENT_TOP}/lib -lz -lrt
-+unix: LIBS += -L$${EVENT_TOP}/lib -lz -levent_core -levent_extra
++unix: LIBS += -L$${EVENT_TOP}/lib -lz -levent_core -levent_extra -lintl
  win32:LIBS += -levent-2.0 -lws2_32 -lintl
  win32:LIBS += -lidn -liconv -lwldap32 -liphlpapi
  
