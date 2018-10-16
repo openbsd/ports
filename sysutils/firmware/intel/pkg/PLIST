@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/08/08 04:57:41 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/10/16 12:36:26 sthen Exp $
 firmware/intel/
+firmware/intel-ucode-license
 firmware/intel/06-03-02
 firmware/intel/06-05-00
 firmware/intel/06-05-01
