@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2018/10/10 15:18:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2018/10/16 16:48:27 landry Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -83,7 +83,7 @@ MAKE_ENV =		${CONFIGURE_ENV}
 
 USE_GMAKE =	Yes
 
-.if ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "powerpc"
 CFLAGS +=	-fPIC
 # somehow base libtool misses -lpng while linking xetex
 USE_LIBTOOL =	gnu
