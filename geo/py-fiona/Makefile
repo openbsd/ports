@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/16 16:51:08 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/16 18:06:22 danj Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-test
+		devel/py-test${MODPY_FLAVOR}
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
 
