@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1 2018/10/16 14:55:02 bket Exp $
+@conflict dnscrypt-proxy-plugins-*
+@pkgpath net/dnscrypt-proxy,-main
+@pkgpath net/dnscrypt-proxy,-utils
+@newgroup _dnscrypt-proxy:688
+@newuser _dnscrypt-proxy:688:_dnscrypt-proxy:daemon:dnscrypt-proxy user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/dnscrypt_proxy
+@extraunexec rm -rf /var/dnscrypt-proxy/*
+@bin bin/dnscrypt-proxy
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/dnscrypt-proxy/
+share/examples/dnscrypt-proxy/example-blacklist.txt
+share/examples/dnscrypt-proxy/example-cloaking-rules.txt
+share/examples/dnscrypt-proxy/example-dnscrypt-proxy.toml
+@sample ${SYSCONFDIR}/dnscrypt-proxy.toml
+share/examples/dnscrypt-proxy/example-forwarding-rules.txt
+share/examples/dnscrypt-proxy/example-whitelist.txt
+@sample ${LOCALSTATEDIR}/dnscrypt-proxy/

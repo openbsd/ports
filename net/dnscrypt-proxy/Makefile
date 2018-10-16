@@ -1,76 +1,38 @@
-# $OpenBSD: Makefile,v 1.36 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/16 14:55:02 bket Exp $
 
-COMMENT-main=		secure communications between a DNS client and resolver
-COMMENT-plugins=	example plugins for dnscrypt-proxy
+COMMENT =	flexible DNS proxy, with support for encrypted DNS protocols
 
-# upstream has moved on to 2.x and old distfiles are no longer available;
-# using mirrored files for now but port needs updating to the golang-based
-# 2.0 version.
-V=			1.9.5
-REVISION=		3
-DISTNAME=		dnscrypt-proxy-${V}
-PKGNAME-main=		dnscrypt-proxy-${V}
-PKGNAME-plugins=	dnscrypt-proxy-plugins-${V}
-REVISION-main=		4
+GH_ACCOUNT =	jedisct1
+GH_PROJECT =	dnscrypt-proxy
+GH_TAGNAME =	2.0.17
 
-R=			20171030
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			dnscrypt-resolvers.$R.csv
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+CATEGORIES =	net
 
-CATEGORIES=		net
+HOMEPAGE =	https://dnscrypt.info/
 
-MASTER_SITES=		https://spacehopper.org/mirrors/
+MAINTAINER =	Frank Denis <dnscrypt@pureftpd.org>
 
-HOMEPAGE=		https://dnscrypt.info/
+# ISC
+PERMIT_PACKAGE_CDROM =	Yes
 
-MAINTAINER=		Frank Denis <dnscrypt@pureftpd.org>
+WANTLIB =	c pthread
 
-# BSD
-PERMIT_PACKAGE_CDROM=	Yes
+MODULES =	lang/go
+MODGO_TYPE =	bin
+MODGO_ENV =	PATH="${PORTPATH}" HOME="${PORTHOME}"
 
-MULTI_PACKAGES=		-main -plugins
+INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 
-commonWANTLIB=		execinfo kvm m sodium pthread
+post-patch:
+	${SUBST_CMD} ${WRKDIST}/dnscrypt-proxy/example-dnscrypt-proxy.toml
 
-WANTLIB-main=		${commonWANTLIB} c ltdl
-WANTLIB-plugins=	${commonWANTLIB} crypto ldns
+do-build:
+	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} build
 
-commonLIB_DEPENDS=	devel/libexecinfo \
-			security/libsodium
-
-LIB_DEPENDS-main=	${commonLIB_DEPENDS} \
-			devel/libtool,-ltdl
-LIB_DEPENDS-plugins=	${commonLIB_DEPENDS} \
-			net/ldns/libldns
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS=-L${LOCALBASE}/lib \
-			ac_cv_header_uuid_uuid_h=no
-
-CONFIGURE_ARGS+=	--enable-plugins \
-			--enable-plugins-root \
-			--enable-pie=no
-# Don't force PIE, it's broken on at least arm. OpenBSD enables it
-# by default on arch where it works anyway.
-
-# for tests
-USE_GMAKE=		yes
-
-DOCS=			README-PLUGINS.markdown \
-			README.markdown \
-			DNSCRYPT-V2-PROTOCOL.txt
-
-# there is also a config file in newer versions; it can be specified on
-# the command-line, but it's incompatible with specifying other options there,
-# so we can't force daemonizing, causing issues for the rc script.
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/dnscrypt-proxy
-	${INSTALL_DATA} ${FULLDISTDIR}/dnscrypt-resolvers.$R.csv \
-	    ${PREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv
-	rm -f ${PREFIX}/lib/dnscrypt-proxy/*.la
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dnscrypt-proxy/dnscrypt-proxy ${PREFIX}/bin/
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/dnscrypt-proxy/example-* ${INSTDIR}
+	rm -f ${INSTDIR}/example-dnscrypt-proxy.toml.{beforesubst,orig}
 
 .include <bsd.port.mk>

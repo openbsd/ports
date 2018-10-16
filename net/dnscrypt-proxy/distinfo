@@ -1,4 +1,2 @@
-SHA256 (dnscrypt-proxy-1.9.5.tar.gz) = ZAIfq7fVurC69oF5bZDs0glfuBOB5vsxelMgOQJak5k=
-SHA256 (dnscrypt-resolvers.20171030.csv) = n0tq1qaeNeafRJYAShytOEAWJwQMm+JJNXbWlmzsL9w=
-SIZE (dnscrypt-proxy-1.9.5.tar.gz) = 1663954
-SIZE (dnscrypt-resolvers.20171030.csv) = 27283
+SHA256 (dnscrypt-proxy-2.0.17.tar.gz) = fE/8x7iwdHRiLnKPHAGbeb0tNb4HTL7dz6Sc2DxxebA=
+SIZE (dnscrypt-proxy-2.0.17.tar.gz) = 3364933

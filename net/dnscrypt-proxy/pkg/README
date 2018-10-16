@@ -1,0 +1,27 @@
+$OpenBSD: README,v 1.1 2018/10/16 14:55:02 bket Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+dnscrypt-proxy listens for DNS queries on a local address and forwards
+them to a DNSCrypt resolver over an encrypted channel.
+
+To use this package, two things are required.
+
+Firstly, validate that ${SYSCONFDIR}/dnscrypt-proxy.toml fits your needs,
+and start the daemon:
+
+# rcctl enable dnscrypt_proxy
+# rcctl start dnscrypt_proxy
+
+Secondly, set /etc/resolv.conf to perform queries from dnscrypt-proxy:
+
+nameserver 127.0.0.1
+lookup file bind
+
+Note: If fetching your IP address dynamically, dhclient(8) will normally
+update resolv.conf with network-provided DNS servers. This can be avoided
+by using "ignore domain-name, domain-name-servers;" in /etc/dhclient.conf.
+
+For more information, see https://dnscrypt.info/

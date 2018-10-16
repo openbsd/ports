@@ -1,11 +1,15 @@
 #!/bin/ksh
 #
-# $OpenBSD: dnscrypt_proxy.rc,v 1.4 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: dnscrypt_proxy.rc,v 1.5 2018/10/16 14:55:02 bket Exp $
 
-daemon="${TRUEPREFIX}/sbin/dnscrypt-proxy -d --user=_dnscrypt-proxy"
+daemon="${TRUEPREFIX}/bin/dnscrypt-proxy"
+daemon_flags="-config ${SYSCONFDIR}/dnscrypt-proxy.toml"
 
 . /etc/rc.d/rc.subr
 
+pexp="${daemon}${daemon_flags:+ ${daemon_flags}}.*"
+
+rc_bg=YES
 rc_reload=NO
 
 rc_cmd $1
