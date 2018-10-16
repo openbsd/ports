@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1447 2018/10/16 13:59:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1448 2018/10/16 14:10:31 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2230,7 +2230,7 @@ ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 .for _m in BUILD RUN
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
-	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+	${_DEP${_m}LIB_COOKIES} ${_WRKDIR_COOKIE}
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@${_cache_fragment}; if found=`{ \
@@ -2258,6 +2258,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	fi
 .    endif
 	@${_PMAKE_COOKIE} $@
+${_DEP${_m}WANTLIB_COOKIE}: ${_DEPBUILD_COOKIES}
 .  endif
 
 .endfor
