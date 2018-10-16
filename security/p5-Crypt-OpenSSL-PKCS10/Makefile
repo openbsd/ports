@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/16 13:59:46 sthen Exp $
 
 COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
 MODULES =	cpan
 
-DISTNAME =	Crypt-OpenSSL-PKCS10-0.15
+DISTNAME =	Crypt-OpenSSL-PKCS10-0.16
 CATEGORIES =	security
 
 # Perl
