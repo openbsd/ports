@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/20 06:08:40 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/16 13:10:43 kirby Exp $
 
 COMMENT=	cartographic projection utilities
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://download.osgeo.org/proj/
 
+# c++11
+COMPILER=		base-clang ports-gcc
 CONFIGURE_STYLE=	gnu
 WANTLIB=		c m pthread
 CONFIGURE_ENV=		LDFLAGS='-pthread'
