@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: cupsd.rc,v 1.28 2018/01/14 14:42:18 rpe Exp $
+# $OpenBSD: cupsd.rc,v 1.29 2018/10/16 11:18:47 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -9,10 +9,6 @@ daemon="${TRUEPREFIX}/sbin/cupsd"
 pexp="${daemon} .*"
 
 rc_pre() {
-	# XXX remove for OPENBSD_6_3
-	rm -f /usr/bin/lp{q,r,rm}.pre-cups /usr/sbin/lp{c,d}.pre-cups \
-		/usr/share/man/man1/lp{q,r,rm}.1 /usr/share/man/man8/lp{c,d}.8
-
 	# XXX cups-driverd(8) can crash when setting up a printer driver
 	rm -f /var/cache/cups/*
 
