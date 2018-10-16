@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1448 2018/10/16 14:10:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1449 2018/10/16 14:16:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -622,6 +622,7 @@ DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
+_FETCH_RECURSE_HELPER ?= No
 _DEPENDENCY_STACK ?=
 
 .if ${MULTI_PACKAGES} == "-"
@@ -2007,7 +2008,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
 		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
@@ -2194,7 +2195,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				exit 1; \
 			fi; \
 			${ECHO_MSG} "===>  Verifying $$target for $$pkg in $$dir"; \
-			if (eval $$toset exec ${MAKE} $$target) && \
+			if (eval $$toset exec ${MAKE} _FETCH_RECURSE_HELPER=Yes $$target) && \
 				! test -e $${_ignore_cookie}; then \
 				if $$wantsub; then \
 					eval $$toset ${MAKE} show-prepare-results ${_PREDIR} $@; \
@@ -2258,7 +2259,9 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	fi
 .    endif
 	@${_PMAKE_COOKIE} $@
+.      if ${FETCH_PACKAGES:L} == "no" || ${_FETCH_RECURSE_HELPER:L} == "no"
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEPBUILD_COOKIES}
+.      endif
 .  endif
 
 .endfor
