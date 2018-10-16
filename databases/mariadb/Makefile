@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2018/10/16 14:41:14 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -14,7 +14,8 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
-REVISION-server=0
+REVISION-server=1
+REVISION-tests=	0
 
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
@@ -33,8 +34,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl ${COMPILER_LIBCXX} z
 WANTLIB-main=	curses readline ${WANTLIB}
-WANTLIB-server=	mysqlclient ${WANTLIB}
-WANTLIB-tests=	mysqlclient ${WANTLIB}
+WANTLIB-server=	mysqlclient pcre ${WANTLIB}
+WANTLIB-tests=	mysqlclient pcre pcreposix ${WANTLIB}
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
@@ -45,8 +46,10 @@ BUILD_DEPENDS=	devel/bison
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			databases/p5-DBD-mysql
-LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1
-LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1
+LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
+			devel/pcre
+LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
+			devel/pcre
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -66,10 +69,16 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
-		-DWITH_PCRE=bundled \
+		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
 		-DCONNECT_WITH_LIBXML2=Off
+
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 # The Mroonga and TokuDB storage engines do not build at the
 # moment on OpenBSD.

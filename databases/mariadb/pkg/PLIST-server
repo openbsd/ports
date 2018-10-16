@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.20 2018/09/04 12:46:10 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.21 2018/10/16 14:41:14 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -103,7 +103,6 @@ include/mysql/private/opt_subselect.h
 include/mysql/private/parse_file.h
 include/mysql/private/partition_element.h
 include/mysql/private/partition_info.h
-include/mysql/private/pcre.h
 include/mysql/private/procedure.h
 include/mysql/private/protocol.h
 include/mysql/private/records.h
