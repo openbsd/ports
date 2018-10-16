@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-utils,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+@comment $OpenBSD: PLIST-utils,v 1.2 2018/10/16 20:28:09 giovanni Exp $
+@rcscript ${RCDIR}/amavis_mc
 bin/amavisd-agent
 bin/amavisd-nanny
 bin/amavisd-snmp-subagent
@@ -6,7 +7,4 @@ bin/amavisd-snmp-subagent-zmq
 bin/amavisd-status
 sbin/amavis-mc
 sbin/amavis-services
-share/snmp/
-share/snmp/mibs/
 share/snmp/mibs/AMAVIS-MIB.txt
-@rcscript ${RCDIR}/amavis_mc

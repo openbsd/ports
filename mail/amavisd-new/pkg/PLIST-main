@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2017/12/16 18:01:47 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2018/10/16 20:28:09 giovanni Exp $
 @pkgpath mail/amavisd-new
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
 @extraunexec rm -fr /var/virusmails/*
+@rcscript ${RCDIR}/amavisd
 bin/amavisd-release
 bin/amavisd-signer
 bin/amavisd-submit
@@ -61,7 +62,3 @@ share/examples/amavisd-new/amavisd.conf-default
 @sample /var/amavisd/db/
 @sample /var/amavisd/var/
 @sample /var/virusmails/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/amavisd
