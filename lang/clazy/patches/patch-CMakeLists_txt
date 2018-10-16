@@ -1,13 +1,21 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/01/01 11:30:16 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/10/16 14:31:04 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -173,7 +173,6 @@ add_clang_plugin(ClangLazy ${CLAZY_PLUGIN_SRCS})
+@@ -164,7 +164,6 @@ if (NOT CLAZY_BUILD_WITH_CLANG)
+   add_clang_plugin(ClangLazy ${CLAZY_PLUGIN_SRCS})
+   set_target_properties(ClangLazy PROPERTIES
+     LINKER_LANGUAGE CXX
+-    PREFIX ""
+   )
  
- set_target_properties(ClangLazy PROPERTIES
-   LINKER_LANGUAGE CXX
--  PREFIX ""
- )
+   install(TARGETS ClangLazy
+@@ -200,7 +199,6 @@ if (NOT CLAZY_BUILD_WITH_CLANG)
+   install(FILES README.md COPYING-LGPL2.txt checks.json DESTINATION ${DOC_INSTALL_DIR})
  
- install(TARGETS ClangLazy
+   # Build docs
+-  set(MAN_INSTALL_DIR "${SHARE_INSTALL_DIR}/man/man1")
+   add_subdirectory(docs)
+ 
+   if(CLAZY_BUILD_UTILS_LIB)

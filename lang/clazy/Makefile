@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/01 20:28:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/16 14:31:04 rsadowski Exp $
 
 COMMENT =	static source code analyzer for Qt5-based C++
 
 GH_ACCOUNT =	KDE
 GH_PROJECT =	clazy
-GH_TAGNAME =	v1.3
-REVISION =	0
+GH_TAGNAME =	v1.4
 
 CATEGORIES =	lang devel
 
-SHARED_LIBS +=  clazylib                  0.0 # 0.1
+SHARED_LIBS +=  clazylib                  0.1 # 0.1
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -25,7 +24,8 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/llvm
 RUN_DEPENDS =		devel/llvm
 
-CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON
+CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON \
+			-DMAN_INSTALL_DIR="${PREFIX}/man/man1"
 
 NO_TEST =		Yes
 
