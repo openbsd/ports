@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/08 15:28:05 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/16 19:38:04 landry Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.6.3
-REVISION =		1
+GH_TAGNAME =		v0.6.4
 
 CATEGORIES =		devel
 
@@ -32,8 +31,9 @@ MODCARGO_CRATES +=      fuchsia-zircon-sys-0.3.3        # BSD-3-Clause
 MODCARGO_CRATES +=      itoa-0.4.1      # MIT/Apache-2.0
 MODCARGO_CRATES +=      libc-0.2.41     # MIT/Apache-2.0
 MODCARGO_CRATES +=      log-0.4.1       # MIT/Apache-2.0
+MODCARGO_CRATES +=      proc-macro2-0.3.8       # MIT/Apache-2.0
 MODCARGO_CRATES +=      proc-macro2-0.4.4       # MIT/Apache-2.0
-MODCARGO_CRATES +=      quote-0.3.15    # MIT/Apache-2.0
+MODCARGO_CRATES +=      quote-0.5.2     # MIT/Apache-2.0
 MODCARGO_CRATES +=      quote-0.6.3     # MIT/Apache-2.0
 MODCARGO_CRATES +=      rand-0.5.5      # MIT/Apache-2.0
 MODCARGO_CRATES +=      rand_core-0.2.1 # MIT/Apache-2.0
@@ -41,19 +41,16 @@ MODCARGO_CRATES +=      redox_syscall-0.1.40    # MIT
 MODCARGO_CRATES +=      redox_termios-0.1.1     # MIT
 MODCARGO_CRATES +=      remove_dir_all-0.5.1    # MIT/Apache-2.0
 MODCARGO_CRATES +=      serde-1.0.64    # MIT/Apache-2.0
-MODCARGO_CRATES +=      serde_derive-1.0.21     # MIT/Apache-2.0
-MODCARGO_CRATES +=      serde_derive_internals-0.17.0   # MIT/Apache-2.0
+MODCARGO_CRATES +=      serde_derive-1.0.58     # MIT/Apache-2.0
 MODCARGO_CRATES +=      serde_json-1.0.19       # MIT/Apache-2.0
 MODCARGO_CRATES +=      strsim-0.7.0    # MIT
-MODCARGO_CRATES +=      syn-0.11.11     # MIT/Apache-2.0
+MODCARGO_CRATES +=      syn-0.13.11     # MIT/Apache-2.0
 MODCARGO_CRATES +=      syn-0.14.1      # MIT/Apache-2.0
-MODCARGO_CRATES +=      synom-0.11.3    # MIT/Apache-2.0
 MODCARGO_CRATES +=      tempfile-3.0.3  # MIT/Apache-2.0
 MODCARGO_CRATES +=      termion-1.5.1   # MIT
 MODCARGO_CRATES +=      textwrap-0.9.0  # MIT
 MODCARGO_CRATES +=      toml-0.4.6      # MIT/Apache-2.0
 MODCARGO_CRATES +=      unicode-width-0.1.5     # MIT/Apache-2.0
-MODCARGO_CRATES +=      unicode-xid-0.0.4       # MIT/Apache-2.0
 MODCARGO_CRATES +=      unicode-xid-0.1.0       # MIT/Apache-2.0
 MODCARGO_CRATES +=      vec_map-0.8.1   # MIT/Apache-2.0
 MODCARGO_CRATES +=      winapi-0.3.4    # MIT/Apache-2.0
