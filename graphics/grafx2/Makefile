@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/16 19:11:01 fcambus Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
@@ -6,7 +6,7 @@ V =		2.5
 DISTNAME =	grafx2-${V}.1960-src
 PKGNAME =	grafx2-${V}
 EXTRACT_SUFX =	.tgz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -17,9 +17,12 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL SDL_image c iconv m png pthread z
+WANTLIB +=	SDL SDL_image c iconv m png pthread z ${MODLUA_WANTLIB}
 
 MASTER_SITES =	https://pulkomandy.tk/projects/GrafX2/downloads/
+
+MODULES =	lang/lua
+MODLUA_VERSION = 5.3
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -30,8 +33,7 @@ WRKDIST =	${WRKDIR}/grafx2/src
 
 USE_GMAKE =	Yes
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE" \
-		NOLUA=1 NOTTF=1 NORECOIL=1
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE" NOTTF=1 NORECOIL=1
 
 NO_TEST =	Yes
 
@@ -45,7 +47,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/grafx2/icons
 	mv ${PREFIX}/share/icons/grafx2.svg ${PREFIX}/share/grafx2/icons/
 	rmdir ${PREFIX}/share/icons
-	rm -rf ${PREFIX}/share/grafx2/scripts
 	rm ${PREFIX}/share/grafx2/fonts/Tuffy.ttf
 
 .include <bsd.port.mk>
