@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/10/16 14:39:04 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/libClangsupport.so.${LIBClangsupport_VERSION}
 @lib lib/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
-@lib lib/libFlameGraph.so.${LIBFlameGraph_VERSION}
 @lib lib/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/libModeling.so.${LIBModeling_VERSION}
@@ -14,14 +13,13 @@ bin/qtcreator.sh
 @lib lib/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/libQtcSsh.so.${LIBQtcSsh_VERSION}
 @lib lib/libSqlite.so.${LIBSqlite_VERSION}
-@lib lib/libTimeline.so.${LIBTimeline_VERSION}
+@lib lib/libTracing.so.${LIBTracing_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
 lib/qtcreator/
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/qtcreator/libClangsupport.so.${LIBClangsupport_VERSION}
 @lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
-@lib lib/qtcreator/libFlameGraph.so.${LIBFlameGraph_VERSION}
 @lib lib/qtcreator/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/qtcreator/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/qtcreator/libModeling.so.${LIBModeling_VERSION}
@@ -30,7 +28,7 @@ lib/qtcreator/
 @lib lib/qtcreator/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/qtcreator/libQtcSsh.so.${LIBQtcSsh_VERSION}
 @lib lib/qtcreator/libSqlite.so.${LIBSqlite_VERSION}
-@lib lib/qtcreator/libTimeline.so.${LIBTimeline_VERSION}
+@lib lib/qtcreator/libTracing.so.${LIBTracing_VERSION}
 @lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
 lib/qtcreator/plugins/
 lib/qtcreator/plugins/libAndroid.so
@@ -44,7 +42,9 @@ lib/qtcreator/plugins/libBookmarks.so
 lib/qtcreator/plugins/libCMakeProjectManager.so
 lib/qtcreator/plugins/libCVS.so
 lib/qtcreator/plugins/libClangCodeModel.so
-lib/qtcreator/plugins/libClangStaticAnalyzer.so
+lib/qtcreator/plugins/libClangPchManager.so
+lib/qtcreator/plugins/libClangRefactoring.so
+lib/qtcreator/plugins/libClangTools.so
 lib/qtcreator/plugins/libClassView.so
 lib/qtcreator/plugins/libClearCase.so
 lib/qtcreator/plugins/libCodePaster.so
@@ -83,6 +83,7 @@ lib/qtcreator/plugins/libQtSupport.so
 lib/qtcreator/plugins/libRemoteLinux.so
 lib/qtcreator/plugins/libResourceEditor.so
 lib/qtcreator/plugins/libScxmlEditor.so
+lib/qtcreator/plugins/libSerialTerminal.so
 lib/qtcreator/plugins/libSilverSearcher.so
 lib/qtcreator/plugins/libSubversion.so
 lib/qtcreator/plugins/libTaskList.so
@@ -99,6 +100,8 @@ lib/qtcreator/plugins/qmldesigner/libqtquickplugin.so
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/clangbackend
+@bin libexec/qtcreator/clangpchmanagerbackend
+@bin libexec/qtcreator/clangrefactoringbackend
 @bin libexec/qtcreator/cpaster
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtcreator_process_stub
@@ -114,6 +117,11 @@ share/icons/hicolor/512x512/apps/QtProject-qtcreator.png
 share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 share/qtcreator/
 share/qtcreator/cplusplus/
+share/qtcreator/cplusplus/examples/
+share/qtcreator/cplusplus/examples/clazy_example.cpp
+share/qtcreator/cplusplus/examples/examples.pro
+share/qtcreator/cplusplus/examples/tidy_example.cpp
+share/qtcreator/cplusplus/examples/tidy_example.h
 share/qtcreator/cplusplus/wrappedQtHeaders/
 share/qtcreator/cplusplus/wrappedQtHeaders/QtCore/
 share/qtcreator/cplusplus/wrappedQtHeaders/QtCore/qobjectdefs.h

@@ -1,29 +1,27 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/29 22:16:11 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/16 14:39:03 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.6.2
+V =			4.7.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
-SHARED_LIBS +=	CPlusPlus                 1.0 # 0.0
-SHARED_LIBS +=	ExtensionSystem           3.0 # 0.0
+SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
+SHARED_LIBS +=	ExtensionSystem           4.0 # 0.0
 SHARED_LIBS +=	GLSL                      0.0 # 0.0
 SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
-SHARED_LIBS +=	QmlDebug                  3.0 # 0.0
+SHARED_LIBS +=	QmlDebug                  4.0 # 0.0
 SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=	QmlJS                     4.0 # 0.0
+SHARED_LIBS +=	QmlJS                     5.0 # 0.0
 SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
-SHARED_LIBS +=	Utils                     4.0 # 0.0
-SHARED_LIBS +=	Sqlite                    3.0 # 1.0
-SHARED_LIBS +=	Timeline                  3.0 # 1.0
-SHARED_LIBS +=	Modeling                  3.0 # 1.0
-SHARED_LIBS +=	FlameGraph                0.0 # 4.2
-SHARED_LIBS +=	Clangsupport              0.0 # 4.5
+SHARED_LIBS +=	Utils                     5.0 # 0.0
+SHARED_LIBS +=	Sqlite                    4.0 # 1.0
+SHARED_LIBS +=	Modeling                  4.0 # 1.0
+SHARED_LIBS +=	Clangsupport              1.0 # 4.5
+SHARED_LIBS +=	Tracing                   0.0 # 4.7
 
 MAKE_FLAGS =	BUILD_TESTS=1
 .for _l _v in ${SHARED_LIBS}
@@ -41,8 +39,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5DesignerComponents Qt5Gui Qt5Help Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml botan-1.10 c clang m qbscore qbsqtprofilesetup
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5SerialPort
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml c clang m qbscore qbsqtprofilesetup
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
@@ -52,29 +50,26 @@ MODULES =	x11/qt5 \
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 
 MODQMAKE_ARGS =		USE_SYSTEM_BOTAN=1 \
+			QTC_ENABLE_CLANG_LIBTOOLING=Yes \
 			CONFIG+=qbs_enable_project_file_updates
 
-# qtcreator.sh is created with custom LINK?= in Makefile
-MODQT5_USE_CXX11 =	No
-COMPILER =	base-clang ports-gcc
-
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
+		lang/clazy \
 		devel/qbs
 
-RUN_DEPENDS =	devel/gdb \
-		devel/qbs \
+RUN_DEPENDS =	${MODGCC4_CPPDEP} \
+		${BUILD_DEPENDS} \
+		devel/gdb \
 		devel/gmake \
-		${MODGCC4_CPPDEP} \
 		x11/gtk+3,-guic \
-		x11/qt5/qtwebkit \
-		x11/qt5/qtquickcontrols
+		x11/qt5/qtwebkit
 
-LIB_DEPENDS =	x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg \
-		x11/qt5/qttools \
-		security/botan \
+LIB_DEPENDS =	devel/llvm \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtserialport \
 		x11/qt5/qtscript \
-		devel/llvm
+		x11/qt5/qtsvg \
+		x11/qt5/qttools
 
 PORTHOME =		${WRKDIR}
 
@@ -85,6 +80,8 @@ NO_TEST =		Yes
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
 CONFIGURE_ENV =		QBS_INSTALL_DIR=${LOCALBASE} \
+			USE_SYSTEM_BOTAN=1 \
+			QTC_ENABLE_CLANG_LIBTOOLING=Yes \
 			LLVM_INSTALL_DIR=${LOCALBASE}
 
 GDB_ADJ_FILES = \
