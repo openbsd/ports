@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/02 16:29:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/16 11:30:37 fcambus Exp $
 
 COMMENT =	name-indexed data processing tool
 
-V =		5.3.0
+V =		5.4.0
 DISTNAME =	mlr-$V
 PKGNAME =	miller-$V
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m
 
-MASTER_SITES =	https://github.com/johnkerl/miller/releases/download/v$V/
+MASTER_SITES =	https://github.com/johnkerl/miller/releases/download/$V/
 
 CONFIGURE_STYLE = gnu
 
