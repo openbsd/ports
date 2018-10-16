@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/20 07:18:15 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/16 16:51:08 landry Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 
-MODPY_EGG_VERSION =	1.7.11.post1
-GH_TAGNAME =	${MODPY_EGG_VERSION}
-GH_ACCOUNT =	Toblerity
-GH_PROJECT =	Fiona
-DISTNAME =	py-fiona-${MODPY_EGG_VERSION:S/post/pl/}
-REVISION =	1
+MODPY_EGG_VERSION =	1.7.13
+DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
+PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L}
 
 CATEGORIES =	geo
 
@@ -24,6 +21,7 @@ FLAVOR ?=
 COMPILER =	base-clang ports-gcc
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-numpy${MODPY_FLAVOR} \
@@ -37,7 +35,8 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 		devel/py-munch${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-test
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
+		devel/py-test
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
 
