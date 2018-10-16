@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/05 18:11:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/16 14:58:36 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 COMMENT =	actor-model, capabilities-secure, high performance language
-DISTNAME =	${GH_PROJECT}-0.24.4.1
+DISTNAME =	${GH_PROJECT}-0.25.0
 CATEGORIES =	lang
 
-# OpenBSD support officially comes out in 0.24.5
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	ponyc
-#GH_TAGNAME =	0.24.5
-GH_COMMIT =	b73b4c4c5b13530e39918fc11ef1643c5736b680
+GH_TAGNAME =	0.25.0
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -39,5 +37,7 @@ MAKE_ENV +=	bits=32
 .else
 MAKE_ENV +=	bits=64
 .endif
+
+SUBST_VARS +=	GH_TAGNAME
 
 .include <bsd.port.mk>
