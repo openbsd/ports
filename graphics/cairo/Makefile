@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.67 2018/07/09 08:46:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2018/10/16 14:23:38 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.15.12
+DISTNAME=		cairo-1.15.14
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  cairo                13.0     # 11514.0
-SHARED_LIBS +=  cairo-gobject        2.0      # 11514.0
-SHARED_LIBS +=  cairo-script-interpreter 2.0  # 11514.0
+SHARED_LIBS +=  cairo                13.0     # 11516.0
+SHARED_LIBS +=  cairo-gobject        2.0      # 11516.0
+SHARED_LIBS +=  cairo-script-interpreter 2.0  # 11516.0
 
 HOMEPAGE=		http://cairographics.org/
 
@@ -33,7 +33,8 @@ LIB_DEPENDS=		archivers/lzo2 \
 			graphics/png
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		LDFLAGS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--disable-valgrind
 
 # needed for firefox
