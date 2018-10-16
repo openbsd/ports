@@ -1,16 +1,40 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/04/11 13:31:53 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2018/10/16 14:14:28 sthen Exp $
 
-fix gmake'ism - this port needs to have no dependencies (for USE_CCACHE)
+fix $< gmake'ism - this port needs to have no dependencies (for USE_CCACHE)
+
+get rid of warning spam during build,
+:  $(if $(quiet),@echo "...")' expands to ''
+
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -98,7 +98,7 @@ ccache$(EXEEXT): $(ccache_objs) $(extra_libs)
- 	$(CC) $(all_cflags) -o $@ $(ccache_objs) $(LDFLAGS) $(extra_libs) $(LIBS)
+@@ -100,19 +100,15 @@ files_to_distclean = Makefile config.h config.log conf
+ all: ccache$(EXEEXT)
+ 
+ ccache$(EXEEXT): $(ccache_objs) $(extra_libs)
+-	$(if $(quiet),@echo "  LD       $@")
+ 	$(Q)$(CC) $(all_cflags) -o $@ $(ccache_objs) $(LDFLAGS) $(extra_libs) $(LIBS)
  
  ccache.1: doc/ccache.1
--	cp $< $@
-+	cp doc/ccache.1 ccache.1
+-	$(if $(quiet),@echo "  CP       $@")
+-	$(Q)cp $< $@
++	$(Q)cp doc/ccache.1 ccache.1
  
  .PHONY: install
- install: ccache$(EXEEXT) ccache.1
+ install: ccache$(EXEEXT) @disable_man@ccache.1
+-	$(if $(quiet),@echo "  INSTALL  ccache$(EXEEXT)")
+ 	$(Q)$(installcmd) -d $(DESTDIR)$(bindir)
+ 	$(Q)$(installcmd) -m 755 ccache$(EXEEXT) $(DESTDIR)$(bindir)
+-@disable_man@	$(if $(quiet),@echo "  INSTALL  ccache.1")
+ @disable_man@	$(Q)$(installcmd) -d $(DESTDIR)$(mandir)/man1
+ @disable_man@	$(Q)-$(installcmd) -m 644 ccache.1 $(DESTDIR)$(mandir)/man1/
+ 
+@@ -170,7 +166,6 @@ installcheck: ccache$(EXEEXT) unittest/run$(EXEEXT)
+ 	CCACHE=$(bindir)/ccache CC='$(CC)' $(BASH) $(srcdir)/test/run
+ 
+ .c.o:
+-	$(if $(quiet),@echo "  CC       $@")
+ 	$(Q)$(CC) $(all_cppflags) $(all_cflags) -c -o $@ $<
+ 
+ @include_dev_mk@
