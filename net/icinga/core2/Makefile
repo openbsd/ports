@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2018/09/27 09:35:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2018/10/16 13:45:59 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -6,7 +6,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.9.2
+V =		2.10.0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -68,20 +68,20 @@ LIB_DEPENDS-pgsql =	${LIB_DEPENDS} \
 			databases/postgresql
 
 CONFIGURE_ARGS += \
+	-DBASHCOMPLETION_DIR=${PREFIX}/share/examples/icinga2/bash_completion.d \
 	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
-	-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples \
-	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${WRKINST}${SYSCONFDIR} \
 	-DCMAKE_INSTALL_LOCALSTATEDIR=${LOCALSTATEDIR} \
+	-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples \
+	-DICINGA2_CONFIGDIR=${SYSCONFDIR}/icinga2 \
 	-DICINGA2_USER=_icinga \
 	-DICINGA2_GROUP=_icinga \
 	-DICINGA2_GIT_VERSION_INFO=OFF \
 	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
 	-DHAVE_LIBEXECINFO=OFF
 
-post-configure:
-	@sed -i 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h
-
 post-install:
+	mv ${WRKINST}${SYSCONFDIR}/icinga2/* ${PREFIX}/share/examples/icinga2/
+	rmdir ${WRKINST}${LOCALSTATEDIR}/run/icinga2{/cmd,}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nano
 	${INSTALL_DATA} ${WRKSRC}/tools/syntax/nano/*nanorc ${PREFIX}/share/nano
 .for i in ftdetect syntax

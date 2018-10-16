@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2018/09/27 09:35:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2018/10/16 13:45:59 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -6,6 +6,11 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
+@mode 750
+@group _icinga
+@sample ${SYSCONFDIR}/icinga2/
+@mode
+@group
 @rcscript ${RCDIR}/icinga2
 lib/icinga2/
 lib/icinga2/sbin/
@@ -90,14 +95,11 @@ share/doc/icinga2/markdown/images/getting-started/nano-syntax.png
 share/doc/icinga2/markdown/images/getting-started/postgr-import-ido.png
 share/doc/icinga2/markdown/images/getting-started/vim-syntax.png
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/bash_completion.d/
-share/examples/bash_completion.d/icinga2
 share/examples/icinga2/
-@mode 750
-@group _icinga
-@sample ${SYSCONFDIR}/icinga2/
-@mode
-@group
+share/examples/icinga2/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/icinga2/bash_completion.d/icinga2
+@sample ${SYSCONFDIR}/bash_completion.d/icinga2
 share/examples/icinga2/conf.d/
 @sample ${SYSCONFDIR}/icinga2/conf.d/
 share/examples/icinga2/conf.d/app.conf
@@ -195,6 +197,7 @@ share/icinga2/include/nscp
 share/icinga2/include/plugins
 share/icinga2/include/plugins-contrib
 share/icinga2/include/plugins-contrib.d/
+share/icinga2/include/plugins-contrib.d/big-data.conf
 share/icinga2/include/plugins-contrib.d/databases.conf
 share/icinga2/include/plugins-contrib.d/hardware.conf
 share/icinga2/include/plugins-contrib.d/icingacli.conf
@@ -238,8 +241,6 @@ share/vim/vimfiles/syntax/icinga2.vim
 @sample ${LOCALSTATEDIR}/log/icinga2/compat/
 @sample ${LOCALSTATEDIR}/log/icinga2/compat/archives/
 @sample ${LOCALSTATEDIR}/log/icinga2/crash/
-@sample ${LOCALSTATEDIR}/run/icinga2/
-@sample ${LOCALSTATEDIR}/run/icinga2/cmd/
 @sample ${LOCALSTATEDIR}/spool/icinga2/
 @sample ${LOCALSTATEDIR}/spool/icinga2/perfdata/
 @sample ${LOCALSTATEDIR}/spool/icinga2/tmp/
