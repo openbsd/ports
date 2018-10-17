@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2018/09/21 21:40:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2018/10/17 08:25:07 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -7,6 +7,7 @@ DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS=	avcodec		22.2 \
@@ -29,7 +30,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		gsm m mp3lame opus pthread sndio speex ssl v4l2 vorbis \
-		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
+		vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html
@@ -45,9 +46,9 @@ LIB_DEPENDS=	archivers/bzip2 \
 		devel/sdl \
 		multimedia/libass \
 		multimedia/libv4l \
-		multimedia/libvpx>=1.3.0 \
+		multimedia/libvpx \
 		multimedia/x264 \
-		multimedia/x265>=1.5 \
+		multimedia/x265 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
@@ -86,7 +87,6 @@ CONFIGURE_ARGS+= --enable-shared \
 		--disable-msa \
 		--disable-outdev=oss \
 		--disable-outdev=sdl \
-		--disable-vfp \
 		--enable-avresample \
 		--enable-fontconfig \
 		--enable-gpl \
