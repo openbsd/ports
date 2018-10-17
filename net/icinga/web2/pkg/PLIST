@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/10/17 13:36:48 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -267,7 +267,9 @@ icinga-web2/doc/res/GraphExample#8.png
 icinga-web2/doc/res/GraphExample#9.png
 icinga-web2/etc/
 icinga-web2/etc/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
 icinga-web2/etc/bash_completion.d/icingacli
+@sample ${SYSCONFDIR}/bash_completion.d/icingacli
 icinga-web2/etc/schema/
 icinga-web2/etc/schema/mysql-upgrades/
 icinga-web2/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
