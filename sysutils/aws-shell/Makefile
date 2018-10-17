@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/27 08:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/17 16:33:23 ajacoutot Exp $
 
 PORTROACH=		skipv:reinvent-demo
 
 COMMENT=		integrated shell for working with the AWS CLI
 
-MODPY_EGG_VERSION=	0.2.0
+MODPY_EGG_VERSION=	0.2.1
 GH_ACCOUNT=		awslabs
 GH_PROJECT=		aws-shell
 GH_TAGNAME=		${MODPY_EGG_VERSION}
