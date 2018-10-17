@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/01/30 07:13:08 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/10/17 08:18:24 rpointel Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -38,9 +38,6 @@ share/sqlmap/extra/icmpsh/icmpsh-s.c
 share/sqlmap/extra/icmpsh/icmpsh.exe_
 share/sqlmap/extra/icmpsh/icmpsh_m.py
 share/sqlmap/extra/icmpsh/icmpsh_m.pyc
-share/sqlmap/extra/mssqlsig/
-share/sqlmap/extra/mssqlsig/update.py
-share/sqlmap/extra/mssqlsig/update.pyc
 share/sqlmap/extra/runcmd/
 share/sqlmap/extra/runcmd/README.txt
 share/sqlmap/extra/runcmd/runcmd.exe_
@@ -69,9 +66,11 @@ share/sqlmap/extra/shutils/
 share/sqlmap/extra/shutils/blanks.sh
 share/sqlmap/extra/shutils/duplicates.py
 share/sqlmap/extra/shutils/duplicates.pyc
-share/sqlmap/extra/shutils/pep8.sh
+share/sqlmap/extra/shutils/newlines.py
+share/sqlmap/extra/shutils/newlines.pyc
 share/sqlmap/extra/shutils/postcommit-hook.sh
 share/sqlmap/extra/shutils/precommit-hook.sh
+share/sqlmap/extra/shutils/pycodestyle.sh
 share/sqlmap/extra/shutils/pydiatra.sh
 share/sqlmap/extra/shutils/pyflakes.sh
 share/sqlmap/extra/shutils/pylint.py
@@ -85,6 +84,11 @@ share/sqlmap/extra/sqlharvest/__init__.py
 share/sqlmap/extra/sqlharvest/__init__.pyc
 share/sqlmap/extra/sqlharvest/sqlharvest.py
 share/sqlmap/extra/sqlharvest/sqlharvest.pyc
+share/sqlmap/extra/wafdetectify/
+share/sqlmap/extra/wafdetectify/__init__.py
+share/sqlmap/extra/wafdetectify/__init__.pyc
+share/sqlmap/extra/wafdetectify/wafdetectify.py
+share/sqlmap/extra/wafdetectify/wafdetectify.pyc
 share/sqlmap/lib/
 share/sqlmap/lib/__init__.py
 share/sqlmap/lib/__init__.pyc
@@ -132,6 +136,8 @@ share/sqlmap/lib/core/option.py
 share/sqlmap/lib/core/option.pyc
 share/sqlmap/lib/core/optiondict.py
 share/sqlmap/lib/core/optiondict.pyc
+share/sqlmap/lib/core/patch.py
+share/sqlmap/lib/core/patch.pyc
 share/sqlmap/lib/core/profiling.py
 share/sqlmap/lib/core/profiling.pyc
 share/sqlmap/lib/core/readlineng.py
@@ -538,6 +544,8 @@ share/sqlmap/sqlmap.pyc
 share/sqlmap/sqlmapapi.py
 share/sqlmap/sqlmapapi.pyc
 share/sqlmap/tamper/
+share/sqlmap/tamper/0x2char.py
+share/sqlmap/tamper/0x2char.pyc
 share/sqlmap/tamper/__init__.py
 share/sqlmap/tamper/__init__.pyc
 share/sqlmap/tamper/apostrophemask.py
@@ -598,6 +606,8 @@ share/sqlmap/tamper/nonrecursivereplacement.py
 share/sqlmap/tamper/nonrecursivereplacement.pyc
 share/sqlmap/tamper/overlongutf8.py
 share/sqlmap/tamper/overlongutf8.pyc
+share/sqlmap/tamper/overlongutf8more.py
+share/sqlmap/tamper/overlongutf8more.pyc
 share/sqlmap/tamper/percentage.py
 share/sqlmap/tamper/percentage.pyc
 share/sqlmap/tamper/plus2concat.py
@@ -799,8 +809,8 @@ share/sqlmap/thirdparty/oset/__init__.py
 share/sqlmap/thirdparty/oset/__init__.pyc
 share/sqlmap/thirdparty/oset/_abc.py
 share/sqlmap/thirdparty/oset/_abc.pyc
-share/sqlmap/thirdparty/oset/${MODPY_PYOEXTENSION}set.py
-share/sqlmap/thirdparty/oset/${MODPY_PYOEXTENSION}set.pyc
+share/sqlmap/thirdparty/oset/pyoset.py
+share/sqlmap/thirdparty/oset/pyoset.pyc
 share/sqlmap/thirdparty/prettyprint/
 share/sqlmap/thirdparty/prettyprint/__init__.py
 share/sqlmap/thirdparty/prettyprint/__init__.pyc
@@ -905,6 +915,8 @@ share/sqlmap/waf/360.py
 share/sqlmap/waf/360.pyc
 share/sqlmap/waf/__init__.py
 share/sqlmap/waf/__init__.pyc
+share/sqlmap/waf/aesecure.py
+share/sqlmap/waf/aesecure.pyc
 share/sqlmap/waf/airlock.py
 share/sqlmap/waf/airlock.pyc
 share/sqlmap/waf/anquanbao.py
@@ -927,16 +939,22 @@ share/sqlmap/waf/blockdos.py
 share/sqlmap/waf/blockdos.pyc
 share/sqlmap/waf/ciscoacexml.py
 share/sqlmap/waf/ciscoacexml.pyc
+share/sqlmap/waf/cloudbric.py
+share/sqlmap/waf/cloudbric.pyc
 share/sqlmap/waf/cloudflare.py
 share/sqlmap/waf/cloudflare.pyc
 share/sqlmap/waf/cloudfront.py
 share/sqlmap/waf/cloudfront.pyc
 share/sqlmap/waf/comodo.py
 share/sqlmap/waf/comodo.pyc
+share/sqlmap/waf/crawlprotect.py
+share/sqlmap/waf/crawlprotect.pyc
 share/sqlmap/waf/datapower.py
 share/sqlmap/waf/datapower.pyc
 share/sqlmap/waf/denyall.py
 share/sqlmap/waf/denyall.pyc
+share/sqlmap/waf/distil.py
+share/sqlmap/waf/distil.pyc
 share/sqlmap/waf/dosarrest.py
 share/sqlmap/waf/dosarrest.pyc
 share/sqlmap/waf/dotdefender.py
@@ -981,6 +999,8 @@ share/sqlmap/waf/proventia.py
 share/sqlmap/waf/proventia.pyc
 share/sqlmap/waf/radware.py
 share/sqlmap/waf/radware.pyc
+share/sqlmap/waf/reblaze.py
+share/sqlmap/waf/reblaze.pyc
 share/sqlmap/waf/requestvalidationmode.py
 share/sqlmap/waf/requestvalidationmode.pyc
 share/sqlmap/waf/safe3.py
