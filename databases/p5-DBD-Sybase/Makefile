@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/17 14:43:32 sthen Exp $
 
 COMMENT=	Sybase database driver for the DBI module
 
-DISTNAME =	DBD-Sybase-1.15
+DISTNAME=	DBD-Sybase-1.16
 CATEGORIES=	databases
-REVISION =	0
 
-# GPL/Artistic License
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  c ct>=3 iconv intl m perl
+WANTLIB += c ct intl m perl
 
 MODULES=	cpan
 
-LIB_DEPENDS =	databases/freetds
-BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	databases/p5-DBI
+LIB_DEPENDS=	databases/freetds
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	databases/p5-DBI
 
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
 CONFIGURE_ARGS=	--chained=y --accept_test_defaults
