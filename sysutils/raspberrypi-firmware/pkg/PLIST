@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/08/11 12:52:33 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/10/17 22:30:37 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -26,6 +26,7 @@ share/raspberrypi-firmware/boot/overlays/ads1015.dtbo
 share/raspberrypi-firmware/boot/overlays/ads1115.dtbo
 share/raspberrypi-firmware/boot/overlays/ads7846.dtbo
 share/raspberrypi-firmware/boot/overlays/adv7282m.dtbo
+share/raspberrypi-firmware/boot/overlays/adv728x-m.dtbo
 share/raspberrypi-firmware/boot/overlays/akkordion-iqdacplus.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-boss-dac-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/allo-digione.dtbo
@@ -35,6 +36,7 @@ share/raspberrypi-firmware/boot/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/applepi-dac.dtbo
 share/raspberrypi-firmware/boot/overlays/at86rf233.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-addons.dtbo
+share/raspberrypi-firmware/boot/overlays/audioinjector-ultra.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-wm8731-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/audremap.dtbo
 share/raspberrypi-firmware/boot/overlays/balena-fin.dtbo
@@ -52,9 +54,11 @@ share/raspberrypi-firmware/boot/overlays/exc3000.dtbo
 share/raspberrypi-firmware/boot/overlays/fe-pi-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/goodix.dtbo
 share/raspberrypi-firmware/boot/overlays/googlevoicehat-soundcard.dtbo
+share/raspberrypi-firmware/boot/overlays/gpio-fan.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir-tx.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-ir.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-key.dtbo
+share/raspberrypi-firmware/boot/overlays/gpio-no-bank0-irq.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-no-irq.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-poweroff.dtbo
 share/raspberrypi-firmware/boot/overlays/gpio-shutdown.dtbo
