@@ -1,0 +1,30 @@
+$OpenBSD: patch-configs_rpi_2_defconfig,v 1.5 2018/10/17 22:21:29 jsg Exp $
+
+rpi: Use firmware provided device tree
+
+Currently the firmware generates a device tree for us that we could
+just use to adjust ourselves. We then on boot throw that away and
+use our own built-in device tree to configure device access.
+
+This is bad for a multitude of reasons. For starters, it breaks
+overlay support in config.txt, confusing users. Much worse however
+is that we are stuck with individual U-Boot builds per board.
+The firmware can easily give us the right DT depending on the
+target board and revision though.
+
+So let's use the firmware provided device tree instead. That way
+U-Boot as well as payloads loaded by it can automatically adapt
+to variants of RPi hardware.
+
+Index: configs/rpi_2_defconfig
+--- configs/rpi_2_defconfig.orig
++++ configs/rpi_2_defconfig
+@@ -13,7 +13,7 @@ CONFIG_SYS_PROMPT="U-Boot> "
+ CONFIG_CMD_GPIO=y
+ CONFIG_CMD_MMC=y
+ CONFIG_CMD_USB=y
+-CONFIG_OF_EMBED=y
++CONFIG_OF_BOARD=y
+ CONFIG_DEFAULT_DEVICE_TREE="bcm2836-rpi-2-b"
+ CONFIG_ENV_FAT_INTERFACE="mmc"
+ CONFIG_ENV_FAT_DEVICE_AND_PART="0:1"
