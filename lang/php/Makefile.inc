@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.122 2018/10/08 10:38:46 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.123 2018/10/17 07:14:46 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
 
 PKGNAME-main?=		php-${V}
+PKGSTEM-main=		php-${PV}
 
 DISTFILES+=		php-${V}.tar.bz2
 
@@ -12,7 +13,7 @@ DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
-HOMEPAGE=		http://www.php.net/
+HOMEPAGE=		https://www.php.net/
 
 MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
@@ -134,7 +135,7 @@ CONFIGURE_ARGS+=	--enable-cgi
 # apache
 COMMENT-apache=		php module for Apache httpd
 .if ${BUILD_PACKAGES:M-apache}
-CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
+CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs
 BUILD_DEPENDS+=		www/apache-httpd
 .endif
 
