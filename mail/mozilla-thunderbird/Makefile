@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2018/10/08 15:28:05 landry Exp $
+# $OpenBSD: Makefile,v 1.275 2018/10/17 15:07:20 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -81,6 +81,11 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
 #	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
+
+.if ${MACHINE_ARCH} == "i386"
+#CONFIGURE_ARGS +=	--disable-debug-symbols		#maybe also needed
+DPB_PROPERTIES +=	lonesome
+.endif
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/extensions/
 
