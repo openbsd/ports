@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1769 2018/10/02 10:49:01 robert Exp $
+# $OpenBSD: Makefile,v 1.1770 2018/10/17 08:41:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -308,6 +308,7 @@
      SUBDIR += libdisorder
      SUBDIR += libdockapp
      SUBDIR += libdshconfig
+     SUBDIR += libdsm
      SUBDIR += libdvdread
      SUBDIR += libdwarf
      SUBDIR += libee
