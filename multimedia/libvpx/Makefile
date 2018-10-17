@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2018/09/26 07:14:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/17 08:22:29 ajacoutot Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
 VER=		1.7.0
 CATEGORIES=	multimedia
+REVISION=	0
 EPOCH=		0
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx
@@ -18,7 +19,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread ${LIBCXX}
+WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
 # XXX requires __atomic builtins
 COMPILER =	base-clang ports-gcc
@@ -32,6 +33,8 @@ MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \
+		--enable-multi-res-encoding \
+		--enable-runtime-cpu-detect \
 		--prefix=${PREFIX} \
 		--disable-optimizations \
 		--disable-unit-tests
