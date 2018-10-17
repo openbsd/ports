@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/09/26 22:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2018/10/17 13:40:04 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -24,7 +24,12 @@ MODULES =	lang/php \
 		lang/python
 MODPY_BUILDDEP = No
 
-RUN_DEPENDS =	databases/py-mysql \
+# librenms-service.py (currently in beta) will want py3 and the following:
+#		databases/py-redis${MODPY_FLAVOR}	# optional
+#		sysutils/py-dotenv${MODPY_FLAVOR}	# not ported yet
+# but (at least as of 1.43), the *-wrapper.py scripts don't support py3 yet
+
+RUN_DEPENDS =	databases/py-mysql${MODPY_FLAVOR} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mcrypt \
