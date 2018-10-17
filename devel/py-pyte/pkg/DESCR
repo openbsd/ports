@@ -1,0 +1,5 @@
+pyte is an in memory VTXXX-compatible terminal emulator. XXX stands for
+a series of video terminals, developed by DEC between 1970 and 1995.
+
+The first, and probably the most famous one, was VT100 terminal, which
+is now a de-facto standard for all virtual terminal emulators.
