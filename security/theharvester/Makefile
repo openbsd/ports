@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/04 05:44:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/17 09:19:44 rpointel Exp $
 
 COMMENT =	information gathering suite
 
-VERSION =	2.7
-REVISION =	0
+VERSION =	3.0
 DISTNAME =	theharvester-${VERSION}
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
-GH_TAGNAME =	2.7
+GH_TAGNAME =	v${VERSION}
 
 CATEGORIES =	security
 
