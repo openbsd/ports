@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2018/09/28 22:22:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/10/17 12:44:02 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.1,<7.2
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}/php-${PV}.sample/*
+@extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
 @mode 1700
 @owner www
 @group www
@@ -27,6 +28,7 @@ lib/php-${PV}/modules/opcache.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/php-${PV}/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
+@sample ${SYSCONFDIR}/php-fpm.d/
 share/examples/php-${PV}/opcache.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/opcache.ini
 share/examples/php-${PV}/php-fpm.conf

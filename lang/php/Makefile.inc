@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.123 2018/10/17 07:14:46 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.124 2018/10/17 12:44:02 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -414,8 +414,10 @@ CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
 .endif
 
 # some variables to substitute
-SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV
+SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV MV
+UPDATE_PLIST_ARGS+= -i MV
 PHP_VERSION=	${V}
+MV=		${PV:R}
 SV=		${PV:S/.//}
 
 .for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
@@ -473,15 +475,12 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-.if ${PV} == "7.0"
+.if ${PV} != 5.6
 	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 .endif
-
-	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
-		${PREFIX}/share/examples/php-${PV}/php.conf
-	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g;s,!!MV!!,${PV:R},g" \
-		${PREFIX}/share/examples/php-${PV}/php.conf
+	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
+		${PREFIX}/share/examples/php-${PV}/modphp.conf
 
 .for m in ${PHP_EXTENSIONS:S/-//g}
 .if ${BUILD_PACKAGES:M-$m}
