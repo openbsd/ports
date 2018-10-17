@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2018/10/08 12:17:20 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.36 2018/10/17 14:43:35 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -362,6 +362,7 @@ share/highlight/themes/dante.theme
 share/highlight/themes/darkblue.theme
 share/highlight/themes/darkbone.theme
 share/highlight/themes/darkness.theme
+share/highlight/themes/darkplus.theme
 share/highlight/themes/darkslategray.theme
 share/highlight/themes/darkspectrum.theme
 share/highlight/themes/denim.theme
