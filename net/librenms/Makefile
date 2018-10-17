@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.75 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2018/10/17 20:24:38 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.43
+GH_TAGNAME =	1.44
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
-REVISION =	1
 
 CATEGORIES =	net www
 
@@ -85,9 +84,13 @@ do-install:
 	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
-	rm -rf ${INSTDIR}/tests \
-		${INSTDIR}/vendor/xjtuwangke/passwordhash/.git \
-		${INSTDIR}/vendor/wpb/string-blade-compiler/.git
+	rm -rf ${INSTDIR}/tests ${INSTDIR}/vendor/*/*/.git
+# XXX workaround pkg_add limitation ("exotest" in regress/usr.sbin/pkg_add)
+	${INSTALL_DATA_DIR} ${INSTDIR}/lib/jQuery-Mapael/js/
+	mv ${INSTDIR}/html/js/mapael-maps ${INSTDIR}/lib/
+	mv ${INSTDIR}/html/js/maps ${INSTDIR}/lib/jQuery-Mapael/js/
+	ln -s ../../lib/mapael-maps/ ${INSTDIR}/html/js/mapael-maps
+	ln -s ../../lib/jQuery-Mapael/js/maps/ ${INSTDIR}/html/js/maps
 
 # maintainer convenience target
 dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
@@ -97,6 +100,7 @@ dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz
 	tar xzf ${FULLDISTDIR}/${DISTNAME}.tar.gz; \
 	cd librenms-${GH_TAGNAME}; \
 	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php; \
+	sed -i 's,php artisan ,${MODPHP_BIN} artisan ,' composer.json; \
 	[ -r .env ] || cp .env.example .env; \
 	composer install --no-dev; \
 	tar cf - vendor | xz -T 0 > $$f; \

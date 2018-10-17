@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.35 2018/09/10 18:53:00 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.36 2018/10/17 20:24:38 sthen Exp $
 
 Some substitutions are done in the ports Makefile to reduce patch conflicts
 during updates.
@@ -6,7 +6,7 @@ during updates.
 Index: includes/defaults.inc.php
 --- includes/defaults.inc.php.orig
 +++ includes/defaults.inc.php
-@@ -41,14 +41,15 @@ $config['db_socket']             = null;
+@@ -43,14 +43,15 @@ $config['db_socket']             = null;
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
@@ -24,12 +24,13 @@ Index: includes/defaults.inc.php
  $config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
  $config['snmptranslate']             = '/usr/local/bin/snmptranslate';
  $config['whois']          = '/usr/bin/whois';
-@@ -515,11 +516,11 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -517,12 +518,12 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
 -// $config['rancid_configs'][]             = '/var/lib/rancid/network/configs/';
 +// $config['rancid_configs'][]             = '/var/rancid/network/configs/';
+ $config['rancid_repo_type'] = 'svn';
  $config['rancid_ignorecomments'] = 0;
  // Ignore lines starting with #
 -// $config['collectd_dir']                 = '/var/lib/collectd/rrd';
@@ -39,7 +40,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -527,7 +528,7 @@ $config['smokeping']['pings']             = 20;
+@@ -530,7 +531,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";
