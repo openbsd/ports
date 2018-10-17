@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/03 23:51:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/17 06:51:10 bentley Exp $
 @bin bin/hfst-affix-guessify
 @bin bin/hfst-calculate
 @bin bin/hfst-compare
@@ -10,6 +10,7 @@ bin/hfst-determinise
 @bin bin/hfst-determinize
 @bin bin/hfst-disjunct
 @bin bin/hfst-edit-metadata
+@bin bin/hfst-eliminate-flags
 bin/hfst-expand
 @bin bin/hfst-flookup
 @bin bin/hfst-format
@@ -35,7 +36,6 @@ bin/hfst-optimised-lookup
 @bin bin/hfst-pair-test
 @bin bin/hfst-pmatch
 @bin bin/hfst-pmatch2fst
-bin/hfst-proc
 bin/hfst-proc2
 @bin bin/hfst-project
 @bin bin/hfst-prune-alphabet

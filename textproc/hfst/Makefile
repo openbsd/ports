@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 23:51:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/17 06:51:10 bentley Exp $
 
 COMMENT =	Helsinki finite state transducer
 
-V =		3.13.0
+V =		3.15.0
 DISTNAME =	hfst-$V
 
-SHARED_LIBS +=  hfst                      0.0 # 50.0
+SHARED_LIBS +=  hfst                      1.0 # 50.0
 
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://www.ling.helsinki.fi/kieliteknologia/tutkimus/hfst/
+HOMEPAGE =	https://hfst.github.io/
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,6 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 MASTER_SITES =		https://github.com/hfst/hfst/releases/download/v$V/
 
+# C++11
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
