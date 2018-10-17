@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.462 2018/09/28 22:24:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.463 2018/10/17 16:16:15 fcambus Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -277,6 +277,7 @@
      SUBDIR += sketch
      SUBDIR += slop
      SUBDIR += sxiv
+     SUBDIR += termtosvg
      SUBDIR += tesseract
      SUBDIR += tgif
      SUBDIR += tiff
