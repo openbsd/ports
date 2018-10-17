@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/17 14:15:55 sthen Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
 DISTNAME =	pgfouine-1.2
 CATEGORIES =	databases
 
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	http://pgfouine.projects.postgresql.org/
 

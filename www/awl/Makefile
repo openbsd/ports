@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/29 06:03:18 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/17 14:15:56 sthen Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
@@ -7,6 +7,7 @@ PKGNAME =	php-awl-0.59
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	www
 PKG_ARCH =	*
+REVISION =	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/17 14:15:55 sthen Exp $
 
 COMMENT =	graphical report tool for PostgreSQL
 
 DISTNAME =	pg_stats_reporter-3.2.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases www
 
 HOMEPAGE =	http://pgstatsinfo.sourceforge.net/

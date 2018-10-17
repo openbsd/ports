@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/18 11:53:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/17 14:15:55 sthen Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
 GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-contextmenu
 GH_TAGNAME=	2.3
-REVISION=	1
+REVISION=	2
 
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
 

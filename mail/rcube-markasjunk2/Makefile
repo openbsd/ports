@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/18 11:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/17 14:15:55 sthen Exp $
 
 COMMENT=	roundcube plugin: add Spam/Ham-buttons
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-markasjunk2
 GH_TAGNAME=	1.11.2
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
+REVISION=	0
 
 CATEGORIES=	mail www
 

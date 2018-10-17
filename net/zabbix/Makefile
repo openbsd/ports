@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2018/09/05 09:24:31 espie Exp $
+# $OpenBSD: Makefile,v 1.154 2018/10/17 14:15:56 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -19,7 +19,7 @@ CATEGORIES =		net
 REVISION-main =		1
 REVISION-proxy =	1
 REVISION-server =	1
-REVISION-web =		1
+REVISION-web =		2
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 

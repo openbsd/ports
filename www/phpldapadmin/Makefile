@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/09/04 12:46:26 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2018/10/17 14:15:56 sthen Exp $
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
@@ -6,7 +6,7 @@ VERSION=	1.2.3
 DISTNAME=	phpldapadmin-${VERSION}
 CATEGORIES=	www
 HOMEPAGE=	http://phpldapadmin.sourceforge.net/
-REVISION=	5
+REVISION=	6
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
