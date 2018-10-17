@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2018/06/23 07:23:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/17 08:32:21 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-VER=		2.8
+VER=		2.9
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
 
-SHARED_LIBS=	x265	15.0
+SHARED_LIBS=	x265	16.0
 
 HOMEPAGE=	http://x265.org/
 
@@ -18,36 +18,32 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c m pthread ${LIBCXX}
+WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
 WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
 
-COMPILER =	base-clang base-gcc
+COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
-SEPARATE_BUILD=	Yes
-# Workaround for Clang 4.0
-#CONFIGURE_ARGS=	-DENABLE_TESTS=On
-NO_TEST=	Yes
-
-CONFIGURE_ARGS+= -DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2"
+CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
+		-DENABLE_TESTS=On
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
     ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" || \
     ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
     ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc" || \
     ${MACHINE_ARCH} == "sparc64"
-CONFIGURE_ARGS+= -DNO_ATOMICS=Off
+CONFIGURE_ARGS+=-DNO_ATOMICS=Off
 .else
-CONFIGURE_ARGS+= -DNO_ATOMICS=On
+CONFIGURE_ARGS+=-DNO_ATOMICS=On
 .endif
 
-#do-test:
-#	${WRKBUILD}/test/TestBench
+do-test:
+	${WRKBUILD}/test/TestBench
 
 .include <bsd.port.mk>
