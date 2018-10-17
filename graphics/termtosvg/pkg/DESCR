@@ -1,0 +1,2 @@
+termtosvg is a Unix terminal recorder written in Python that renders your
+command line sessions as standalone SVG animations.
