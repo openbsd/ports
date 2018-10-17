@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2018/10/06 15:27:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.189 2018/10/17 08:35:55 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,7 +20,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 REVISION-main =	8
-REVISION-python = 0
+REVISION-python = 1
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -58,7 +58,8 @@ RUN_DEPENDS +=		devel/gtest
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
 LIB_DEPENDS-llvm =	${BUILD_PKGPATH},-main
-RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
+			devel/py-six
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
 SEPARATE_BUILD =	Yes
