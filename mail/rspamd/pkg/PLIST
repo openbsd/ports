@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/10/16 13:07:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2018/10/17 20:38:34 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 %%luajit%%
@@ -162,6 +162,8 @@ share/examples/rspamd/scores.d/subject_group.conf
 @sample ${SYSCONFDIR}/rspamd/scores.d/subject_group.conf
 share/examples/rspamd/scores.d/surbl_group.conf
 @sample ${SYSCONFDIR}/rspamd/scores.d/surbl_group.conf
+share/examples/rspamd/scores.d/whitelist_group.conf
+@sample ${SYSCONFDIR}/rspamd/scores.d/whitelist_group.conf
 share/examples/rspamd/settings.conf
 @sample ${SYSCONFDIR}/rspamd/settings.conf
 share/examples/rspamd/spf_dkim_whitelist.inc
@@ -269,6 +271,7 @@ share/rspamd/lua/arc.lua
 share/rspamd/lua/asn.lua
 share/rspamd/lua/bayes_expiry.lua
 share/rspamd/lua/clickhouse.lua
+share/rspamd/lua/clustering.lua
 share/rspamd/lua/dcc.lua
 share/rspamd/lua/dkim_signing.lua
 share/rspamd/lua/dmarc.lua

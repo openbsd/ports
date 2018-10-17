@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.18 2018/10/16 13:07:33 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.19 2018/10/17 20:38:34 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
@@ -48,3 +48,16 @@ Index: CMakeLists.txt
  ProcessPackage(SQLITE3 LIBRARY sqlite3 INCLUDE sqlite3.h INCLUDE_SUFFIXES include/sqlite3 include/sqlite
  	ROOT ${SQLITE3_ROOT_DIR} MODULES sqlite3 sqlite)
  ProcessPackage(ICUDATA LIBRARY icudata INCLUDE unicode/ucnv.h
+@@ -1082,9 +1088,9 @@ CHECK_C_SOURCE_COMPILES ("#include <event.h>
+ 					#error Unsupported
+ 					#endif
+ 					int main() { return 0;}" HAVE_LIBEVENT2)
+-CHECK_C_SOURCE_COMPILES ("#include <event2/event.h>
+-					int main() { return EVENT_BASE_FLAG_NO_CACHE_TIME; }"
+-		HAVE_EVENT_NO_CACHE_TIME_FLAG)
++#CHECK_C_SOURCE_COMPILES ("#include <event2/event.h>
++#					int main() { return EVENT_BASE_FLAG_NO_CACHE_TIME; }"
++#		HAVE_EVENT_NO_CACHE_TIME_FLAG)
+ LIST(APPEND CMAKE_REQUIRED_LIBRARIES "event")
+ CHECK_SYMBOL_EXISTS(event_base_update_cache_time "sys/types.h;event.h"
+ 		HAVE_EVENT_NO_CACHE_TIME_FUNC)
