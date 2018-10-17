@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/06 09:16:27 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/17 06:58:07 bentley Exp $
 bin/apertium
 @bin bin/apertium-deshtml
 @bin bin/apertium-deslatex
@@ -143,7 +143,7 @@ include/apertium-${V}/apertium/utils.h
 include/apertium-${V}/apertium/wchar_t_exception.h
 include/apertium-${V}/apertium/wchar_t_exception_type.h
 include/apertium-${V}/apertium/xml_reader.h
-@lib lib/libapertium3-${V}.so.${LIBapertium3-3.5_VERSION}
+@lib lib/libapertium3-${V}.so.${LIBapertium3-${V}_VERSION}
 lib/libapertium3.a
 lib/libapertium3.la
 @lib lib/libapertium3.so.${LIBapertium3_VERSION}

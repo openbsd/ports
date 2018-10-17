@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/19 17:53:48 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/17 06:58:07 bentley Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.5
-VER =			3.5.1
+VER =			3.5.2
 DISTNAME =		apertium-${VER}
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
@@ -20,13 +20,12 @@ USE_GMAKE =		Yes
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv lttoolbox3-3.4 lzma m pcre pcrecpp pcreposix pthread
+WANTLIB += c iconv lttoolbox3-$V lzma m pcre pcrecpp pcreposix pthread
 WANTLIB += ${COMPILER_LIBCXX} xml2 z
 
-MASTER_SITES =		https://github.com/apertium/apertium/releases/download/v${VER}/ \
-			https://distfiles.ajb.soy/
+MASTER_SITES =		https://github.com/apertium/apertium/releases/download/v${VER}/
 
-# c++11
+# C++2a
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
