@@ -1,4 +1,4 @@
-$OpenBSD: patch-os_hpp,v 1.14 2018/08/02 10:43:01 naddy Exp $
+$OpenBSD: patch-os_hpp,v 1.15 2018/10/18 13:56:48 naddy Exp $
 Index: os.hpp
 --- os.hpp.orig
 +++ os.hpp
@@ -6,7 +6,7 @@ Index: os.hpp
  
  #define  NM  2048
  
-+#include <machine/endian.h>
++#include <endian.h>
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
