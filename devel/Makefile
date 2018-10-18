@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1771 2018/10/17 16:11:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1772 2018/10/18 14:20:56 bket Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1435,6 +1435,7 @@
      SUBDIR += py-jupyter_core
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kid
+     SUBDIR += py-kiwisolver
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
