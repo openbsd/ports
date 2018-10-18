@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.638 2018/10/18 10:28:37 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.639 2018/10/18 23:37:14 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1058,6 +1058,9 @@ my $obsolete_reason = {
 	'corebird' => 3,
 	'py-pcs' => 5,
 	'ifmcstat' => 5,
+# 6.5
+	'py-dtopt' => 5,
+	'py3-dtopt' => 5,
 };
 
 # reasons for obsolete packages
