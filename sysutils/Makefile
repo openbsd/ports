@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.502 2018/10/06 17:17:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.503 2018/10/18 06:52:27 fcambus Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -345,6 +345,7 @@
      SUBDIR += tree
      SUBDIR += truncate
      SUBDIR += ttyload
+     SUBDIR += ttyplot
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
      SUBDIR += u-boot-pinebook
