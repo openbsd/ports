@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/18 08:08:38 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl -python
 
@@ -8,7 +8,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V =		7.2.0
+V =		7.2.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -16,8 +16,6 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
 SHARED_LIBS +=	mapserver 3.0
-REVISION-php=	1
-REVISION-main=	0
 
 CATEGORIES=	geo www
 
@@ -31,7 +29,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 MODULES=	lang/php lang/python devel/cmake
 MODPHP_RUNDEP=	No
-#notyet, cf https://github.com/mapserver/mapserver/issues/5592
+#notyet, cf https://github.com/mapserver/mapserver/issues/5252
 #MODPHP_VERSION=	7.0
 MODPHP_VERSION=	5.6
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
