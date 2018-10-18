@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/16 14:39:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2018/10/18 09:29:21 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -45,7 +45,10 @@ WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml c clang m qbscore qbsqtprofilesetup
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt5 \
-		devel/qmake
+		devel/qmake \
+		lang/python
+
+MODPY_RUNDEP=	No
 
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 
