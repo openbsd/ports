@@ -1,0 +1,5 @@
+ttyplot is a realtime plotting utility for terminals. It takes data from
+stdin, and plots on a terminal or console.
+
+It supports rate calculation for counters, and up to two plots on a single
+display using reverse video for the second line.
