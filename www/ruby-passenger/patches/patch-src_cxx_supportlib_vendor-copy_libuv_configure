@@ -1,10 +1,19 @@
-$OpenBSD: patch-src_cxx_supportlib_vendor-copy_libuv_configure,v 1.1 2017/09/10 19:33:19 jeremy Exp $
+$OpenBSD: patch-src_cxx_supportlib_vendor-copy_libuv_configure,v 1.2 2018/10/18 16:30:31 jeremy Exp $
 
-For use of awk.
+For use of mkdir and awk.
 
 Index: src/cxx_supportlib/vendor-copy/libuv/configure
 --- src/cxx_supportlib/vendor-copy/libuv/configure.orig
 +++ src/cxx_supportlib/vendor-copy/libuv/configure
+@@ -2636,7 +2636,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-    for ac_prog in mkdir gmkdir; do
++    for ac_prog in mkdir; do
+ 	 for ac_exec_ext in '' $ac_executable_extensions; do
+ 	   as_fn_executable_p "$as_dir/$ac_prog$ac_exec_ext" || continue
+ 	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
 @@ -2667,7 +2667,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
  $as_echo "$MKDIR_P" >&6; }
