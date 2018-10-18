@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1772 2018/10/18 14:20:56 bket Exp $
+# $OpenBSD: Makefile,v 1.1773 2018/10/18 14:31:03 bket Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1567,6 +1567,7 @@
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-stdnum
      SUBDIR += py-stdnum,python3
+     SUBDIR += py-subprocess32
      SUBDIR += py-suds
      SUBDIR += py-symboltype
      SUBDIR += py-tabulate
