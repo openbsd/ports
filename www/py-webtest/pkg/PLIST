@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/23 13:43:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/18 23:19:56 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/webtest/
 lib/python${MODPY_VERSION}/site-packages/webtest/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}
+${MODPY_COMMENT}${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
