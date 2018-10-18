@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/18 10:28:36 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict drupal->=7,<8
@@ -107,8 +107,8 @@ ${DRUPAL_ROOT}/misc/collapse.js
 ${DRUPAL_ROOT}/misc/configure.png
 ${DRUPAL_ROOT}/misc/draggable.png
 ${DRUPAL_ROOT}/misc/drupal.conf
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/${DRUPAL}.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/${DRUPAL}.conf
 ${DRUPAL_ROOT}/misc/drupal.js
 ${DRUPAL_ROOT}/misc/druplicon.png
 ${DRUPAL_ROOT}/misc/farbtastic/
@@ -1140,15 +1140,15 @@ ${DRUPAL_THEMES}/
 ${DRUPAL_THEMES}README.txt
 ${DRUPAL_ROOT}/sites/default/
 ${DRUPAL_ROOT}/sites/default/default.settings.php
-@group www
-@owner www
 @mode g+w
+@owner www
+@group www
 @sample ${DRUPAL_ROOT}/sites/default/settings.php
 @mode g+wx
 ${DRUPAL_ROOT}/sites/default/files/
+@mode
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-@mode
 ${DRUPAL_ROOT}/sites/example.sites.php
 ${DRUPAL_ROOT}/themes/
 ${DRUPAL_ROOT}/themes/README.txt
