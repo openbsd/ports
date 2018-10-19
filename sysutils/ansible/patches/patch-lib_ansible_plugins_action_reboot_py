@@ -1,0 +1,84 @@
+$OpenBSD: patch-lib_ansible_plugins_action_reboot_py,v 1.1 2018/10/19 11:46:42 danj Exp $
+
+Backport until 2.7.1
+https://github.com/ansible/ansible/commit/26de4f97493adeb388c1c8fad7a266bb7652bac6
+https://github.com/ansible/ansible/commit/a0f38bdab5ae0e183cb960fe9e964bf1edf7c326
+
+Index: lib/ansible/plugins/action/reboot.py
+--- lib/ansible/plugins/action/reboot.py.orig
++++ lib/ansible/plugins/action/reboot.py
+@@ -28,7 +28,7 @@ class TimedOutException(Exception):
+ 
+ class ActionModule(ActionBase):
+     TRANSFERS_FILES = False
+-    _VALID_ARGS = frozenset(('connect_timeout', 'msg', 'post_reboot_delay', 'pre_reboot_delay', 'test_command'))
++    _VALID_ARGS = frozenset(('connect_timeout', 'msg', 'post_reboot_delay', 'pre_reboot_delay', 'test_command', 'reboot_timeout'))
+ 
+     DEFAULT_REBOOT_TIMEOUT = 600
+     DEFAULT_CONNECT_TIMEOUT = None
+@@ -42,18 +42,24 @@ class ActionModule(ActionBase):
+ 
+     DEPRECATED_ARGS = {}
+ 
++    BOOT_TIME_COMMANDS = {
++        'openbsd': "/sbin/sysctl kern.boottime",
++    }
++
+     SHUTDOWN_COMMANDS = {
+         'linux': DEFAULT_SHUTDOWN_COMMAND,
+         'freebsd': DEFAULT_SHUTDOWN_COMMAND,
+         'sunos': '/usr/sbin/shutdown',
+         'darwin': '/sbin/shutdown',
++        'openbsd': DEFAULT_SHUTDOWN_COMMAND,
+     }
+ 
+     SHUTDOWN_COMMAND_ARGS = {
+         'linux': '-r {delay_min} "{message}"',
+         'freebsd': '-r +{delay_sec}s "{message}"',
+         'sunos': '-y -g {delay_sec} -r "{message}"',
+-        'darwin': '-r +{delay_min_macos} "{message}"'
++        'darwin': '-r +{delay_min_macos} "{message}"',
++        'openbsd': '-r +{delay_min} "{message}"',
+     }
+ 
+     def __init__(self, *args, **kwargs):
+@@ -94,18 +100,37 @@ class ActionModule(ActionBase):
+         return reboot_command
+ 
+     def get_system_boot_time(self):
+-        command_result = self._low_level_execute_command(self.DEFAULT_BOOT_TIME_COMMAND, sudoable=self.DEFAULT_SUDOABLE)
++        stdout = u''
++        stderr = u''
+ 
++        # Determine the system distribution in order to use the correct shutdown command arguments
++        uname_result = self._low_level_execute_command('uname')
++        distribution = uname_result['stdout'].strip().lower()
++
++        boot_time_command = self.BOOT_TIME_COMMANDS.get(distribution, self.DEFAULT_BOOT_TIME_COMMAND)
++        command_result = self._low_level_execute_command(boot_time_command, sudoable=self.DEFAULT_SUDOABLE)
++
+         # For single board computers, e.g., Raspberry Pi, that lack a real time clock and are using fake-hwclock
+         # launched by systemd, the update of utmp/wtmp is not done correctly.
+         # Fall back to using uptime -s for those systems.
+         # https://github.com/systemd/systemd/issues/6057
+         if '1970-01-01 00:00' in command_result['stdout']:
++            stdout += command_result['stdout']
++            stderr += command_result['stderr']
+             command_result = self._low_level_execute_command('uptime -s', sudoable=self.DEFAULT_SUDOABLE)
+ 
++        # This is a last resort for bare Linux systems (e.g. OpenELEC) where 'who -b' or 'uptime -s' are not supported.
++        # Other options like parsing /proc/uptime or default uptime output are less reliable than this
+         if command_result['rc'] != 0:
++            stdout += command_result['stdout']
++            stderr += command_result['stderr']
++            command_result = self._low_level_execute_command('cat /proc/sys/kernel/random/boot_id', sudoable=self.DEFAULT_SUDOABLE)
++
++        if command_result['rc'] != 0:
++            stdout += command_result['stdout']
++            stderr += command_result['stderr']
+             raise AnsibleError("%s: failed to get host boot time info, rc: %d, stdout: %s, stderr: %s"
+-                               % (self._task.action, command_result.rc, to_native(command_result['stdout']), to_native(command_result['stderr'])))
++                               % (self._task.action, command_result['rc'], to_native(stdout), to_native(stderr)))
+ 
+         return command_result['stdout'].strip()
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.8 2018/09/07 20:22:57 jasper Exp $
+@comment $OpenBSD: PLIST-html,v 1.9 2018/10/19 11:46:42 danj Exp $
 share/doc/ansible/html/
 share/doc/ansible/html/_downloads/
 share/doc/ansible/html/_downloads/first_playbook.yml
@@ -82,7 +82,6 @@ share/doc/ansible/html/dev_guide/developing_python_3.html
 share/doc/ansible/html/dev_guide/developing_rebasing.html
 share/doc/ansible/html/dev_guide/index.html
 share/doc/ansible/html/dev_guide/overview_architecture.html
-share/doc/ansible/html/dev_guide/repomerge.html
 share/doc/ansible/html/dev_guide/style_guide/
 share/doc/ansible/html/dev_guide/style_guide/basic_rules.html
 share/doc/ansible/html/dev_guide/style_guide/grammar_punctuation.html
@@ -136,7 +135,6 @@ share/doc/ansible/html/dev_guide/testing/sanity/yamllint.html
 share/doc/ansible/html/dev_guide/testing_compile.html
 share/doc/ansible/html/dev_guide/testing_httptester.html
 share/doc/ansible/html/dev_guide/testing_integration.html
-share/doc/ansible/html/dev_guide/testing_integration_legacy.html
 share/doc/ansible/html/dev_guide/testing_pep8.html
 share/doc/ansible/html/dev_guide/testing_running_locally.html
 share/doc/ansible/html/dev_guide/testing_sanity.html
