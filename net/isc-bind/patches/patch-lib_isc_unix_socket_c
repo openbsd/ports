@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.8 2018/07/12 10:12:30 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.9 2018/10/19 14:04:45 sthen Exp $
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2883,7 +2883,7 @@ opensocket(isc__socketmgr_t *manager, isc__socket_t *s
+@@ -2885,7 +2885,7 @@ opensocket(isc__socketmgr_t *manager, isc__socket_t *s
  		}
  #endif
  	}
