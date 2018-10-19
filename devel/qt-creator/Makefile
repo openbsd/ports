@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/10/18 09:29:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/19 09:35:30 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -40,20 +40,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5DesignerComponents Qt5Gui Qt5Help Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5SerialPort
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml c clang m qbscore qbsqtprofilesetup
+WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml botan-2 c clang m qbscore
+WANTLIB += qbsqtprofilesetup
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt5 \
-		devel/qmake \
-		lang/python
-
-MODPY_RUNDEP=	No
+		devel/qmake
 
 MODQMAKE_INSTALL_ROOT =		${PREFIX}
 
-MODQMAKE_ARGS =		USE_SYSTEM_BOTAN=1 \
-			QTC_ENABLE_CLANG_LIBTOOLING=Yes \
+MODQMAKE_ARGS =		QTC_ENABLE_CLANG_LIBTOOLING=Yes \
 			CONFIG+=qbs_enable_project_file_updates
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
@@ -68,6 +65,7 @@ RUN_DEPENDS =	${MODGCC4_CPPDEP} \
 		x11/qt5/qtwebkit
 
 LIB_DEPENDS =	devel/llvm \
+		security/botan2 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtserialport \
 		x11/qt5/qtscript \
@@ -82,10 +80,9 @@ NO_TEST =		Yes
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
-CONFIGURE_ENV =		QBS_INSTALL_DIR=${LOCALBASE} \
-			USE_SYSTEM_BOTAN=1 \
-			QTC_ENABLE_CLANG_LIBTOOLING=Yes \
-			LLVM_INSTALL_DIR=${LOCALBASE}
+CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE} \
+			QBS_INSTALL_DIR=${LOCALBASE} \
+			QTC_ENABLE_CLANG_LIBTOOLING=Yes
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \
