@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2018/10/16 13:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2018/10/19 20:42:20 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -6,7 +6,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.10.0
+V =		2.10.1
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -35,7 +35,7 @@ SHARED_LIBS +=	pgsql_shim                0.0 # 2.9
 SHARED_LIBS +=	remote                    0.0 # 2.6
 SHARED_LIBS +=	socketpair                0.0 # 2.6
 
-HOMEPAGE =	https://www.icinga.org/icinga2/
+HOMEPAGE =	https://icinga.com/products/icinga-2/
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =	Yes
