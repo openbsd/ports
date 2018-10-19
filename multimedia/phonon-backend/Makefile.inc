@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2016/05/27 03:44:26 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2018/10/19 20:53:27 rsadowski Exp $
 
 CATEGORIES +=	multimedia
 
@@ -27,5 +27,3 @@ MODPHONON_PLUGIN_DEPS =	No
 SUBST_VARS =		BACKEND_DIR
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
-
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/phonon/${DISTNAME:C/-[0-9].*//}/${VERSION}/src/}

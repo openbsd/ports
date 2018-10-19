@@ -1,17 +1,17 @@
-$OpenBSD: patch-cmake_FindPhononInternal_cmake,v 1.4 2015/11/19 13:53:34 zhuk Exp $
+$OpenBSD: patch-cmake_FindPhononInternal_cmake,v 1.5 2018/10/19 20:53:27 rsadowski Exp $
 Allow paths to be overriden.
 Also, make sure that subdirectory paths do not expand to absolute ones automatically.
---- cmake/FindPhononInternal.cmake.orig	Thu Dec  4 12:30:26 2014
-+++ cmake/FindPhononInternal.cmake	Thu Nov 19 16:09:36 2015
-@@ -171,20 +171,20 @@ set(CMAKE_MODULE_PATH ${_phonon_cmake_module_path_back
+--- cmake/FindPhononInternal.cmake.orig	Sun Mar 26 23:03:05 2017
++++ cmake/FindPhononInternal.cmake	Sun Mar 26 23:05:34 2017
+@@ -64,20 +64,20 @@ include(${phonon_cmake_module_dir}/MacroEnsureVersion.
  
  include(GNUInstallDirs)
  
--set(SHARE_INSTALL_PREFIX        "share")  #              CACHE PATH "Base directory for files which go to share/")
+-set(SHARE_INSTALL_PREFIX        "${CMAKE_INSTALL_FULL_DATAROOTDIR}")  #              CACHE PATH "Base directory for files which go to share/")
 -set(INCLUDE_INSTALL_DIR         "include" ) #           CACHE PATH "The subdirectory to the header prefix")
 +set(BIN_INSTALL_DIR             "bin"              CACHE STRING "The install dir for executables (default ${EXEC_INSTALL_PREFIX}/bin)")
 +set(LIB_INSTALL_DIR             "${CMAKE_INSTALL_LIBDIR}"   CACHE STRING "The subdirectory relative to the install prefix where libraries will be installed")
-+set(SHARE_INSTALL_PREFIX        "share"            CACHE STRING "Base directory for files which go to share/")
++set(SHARE_INSTALL_PREFIX        "share"            CACHE STRING "Base directory for files which go to share/") 
  if (PHONON_BUILD_PHONON4QT5)
 -    set(INCLUDE_INSTALL_DIR         "include/${PHONON_LIB_SONAME}" ) #           CACHE PATH "The subdirectory to the header prefix")
 -endif (PHONON_BUILD_PHONON4QT5)
@@ -30,50 +30,8 @@ Also, make sure that subdirectory paths do not expand to absolute ones automatic
 +endif ()
  if(WIN32) # Imported from Phonon VLC
      set(BACKEND_INSTALL_DIR "bin/${PHONON_LIB_SONAME}_backend")
-+else()
++else ()
 +    set(BACKEND_INSTALL_DIR "${PLUGIN_INSTALL_DIR}/plugins/${PHONON_LIB_SONAME}_backend")
  endif()
  set(ICON_INSTALL_DIR            "${SHARE_INSTALL_PREFIX}/icons"             CACHE PATH "The icon install dir (default ${SHARE_INSTALL_PREFIX}/share/icons/)")
  set(SERVICES_INSTALL_DIR        "${SHARE_INSTALL_PREFIX}/kde4/services"     CACHE PATH "The install dir for service (desktop, protocol, ...) files")
-@@ -322,14 +322,14 @@ if (CMAKE_COMPILER_IS_GNUCXX)
- 
-    set (KDE4_ENABLE_EXCEPTIONS "-fexceptions -UQT_NO_EXCEPTIONS")
-    # Select flags.
--   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_CXX_FLAGS_RELEASE        "-O2 -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_CXX_FLAGS_DEBUG          "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
-+   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g -DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_CXX_FLAGS_RELEASE        "-DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_CXX_FLAGS_DEBUG          "-g -fno-reorder-blocks -fno-schedule-insns -fno-inline")
-    set(CMAKE_CXX_FLAGS_DEBUGFULL      "-g3 -fno-inline")
-    set(CMAKE_CXX_FLAGS_PROFILE        "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
--   set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-O2 -g -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_C_FLAGS_RELEASE          "-O2 -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_C_FLAGS_DEBUG            "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
-+   set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-g -DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_C_FLAGS_RELEASE          "-DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_C_FLAGS_DEBUG            "-g -fno-reorder-blocks -fno-schedule-insns -fno-inline")
-    set(CMAKE_C_FLAGS_DEBUGFULL        "-g3 -fno-inline")
-    set(CMAKE_C_FLAGS_PROFILE          "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
- 
-@@ -444,14 +444,14 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    set(KDE4_ENABLE_EXCEPTIONS "-fexceptions -UQT_NO_EXCEPTIONS")
- 
-    # Select flags.
--   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_CXX_FLAGS_RELEASE        "-O2 -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_CXX_FLAGS_DEBUG          "-g -O2 -fno-inline")
-+   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-g -DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_CXX_FLAGS_RELEASE        "-DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_CXX_FLAGS_DEBUG          "-g -fno-inline")
-    set(CMAKE_CXX_FLAGS_DEBUGFULL      "-g3 -fno-inline")
-    set(CMAKE_CXX_FLAGS_PROFILE        "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
--   set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-O2 -g -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_C_FLAGS_RELEASE          "-O2 -DNDEBUG -DQT_NO_DEBUG")
--   set(CMAKE_C_FLAGS_DEBUG            "-g -O2 -fno-inline")
-+   set(CMAKE_C_FLAGS_RELWITHDEBINFO   "-g -DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_C_FLAGS_RELEASE          "-DNDEBUG -DQT_NO_DEBUG")
-+   set(CMAKE_C_FLAGS_DEBUG            "-g -fno-inline")
-    set(CMAKE_C_FLAGS_DEBUGFULL        "-g3 -fno-inline")
-    set(CMAKE_C_FLAGS_PROFILE          "-g3 -fno-inline -ftest-coverage -fprofile-arcs")
- 
