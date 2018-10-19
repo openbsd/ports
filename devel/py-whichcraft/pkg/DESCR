@@ -1,0 +1,2 @@
+A small, cross platform, and cross Python, shim for `shutil.which` backported
+from the Python 3.x codebase.
