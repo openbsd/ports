@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.PIC-main,v 1.2 2011/11/20 10:32:30 pascal Exp $
-lib/fpic/libssp.a
-lib/fpic/libssp.la
-@comment @lib lib/fpic/libssp.so.${LIBssp_VERSION}
-lib/fpic/libssp_nonshared.a
-lib/fpic/libssp_nonshared.la
-lib/gcc/${CONFIG}/${V}/fpic/
-lib/gcc/${CONFIG}/${V}/fpic/libgcc.a
-lib/gcc/${CONFIG}/${V}/fpic/libgcov.a
