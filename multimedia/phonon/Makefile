@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/19 20:53:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/19 22:09:05 naddy Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} QtDBus QtGui m pulse pulse-mainloop-glib
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/}
 EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		audio/pulseaudio
