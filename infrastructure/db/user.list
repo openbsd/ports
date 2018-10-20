@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.324 2018/09/10 06:25:52 bentley Exp $
+$OpenBSD: user.list,v 1.325 2018/10/20 14:34:17 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -327,3 +327,4 @@ id  user		group		port options
 816 			_libpostal	geo/libpostal
 817 _netshot		_netshot	sysutils/netshot
 818 _vnu		_vnu		www/vnu
+819 _nomad		_nomad		sysutils/nomad
