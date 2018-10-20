@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.122 2018/10/20 17:02:01 espie Exp $
+# $OpenBSD: portcheck,v 1.123 2018/10/20 17:06:51 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -966,8 +966,6 @@ check_plist() {
 
 	local mimepkg_dep=false
 	local mimepkg_dep_needed=false
-	local mimepkg_exec_cnt=0
-	local mimepkg_unexec_cnt=0
 
 	local dconf_module
 	if [[ $modules_list == ?(* )devel/dconf?( *) ]]; then
@@ -1045,9 +1043,6 @@ check_plist() {
 		"@depend devel/desktop-file-utils"*)
 			mime_dep=true
 			;;
-		"@tag update-desktop-database")
-			((++mime_tag_cnt))
-			;;
 		@?(un)exec*" %D/bin/update-desktop-database"*)
 			err "${portref}obsolete update-desktop-database" \
 			    "invocation: ${l#@* }"
@@ -1058,14 +1053,8 @@ check_plist() {
 		"@depend misc/shared-mime-info"*)
 			mimepkg_dep=true
 			;;
-		"@exec %D/bin/update-mime-database %D/share/mime")
-			((++mimepkg_exec_cnt))
-			;;
-		"@unexec-delete %D/bin/update-mime-database %D/share/mime")
-			((++mimepkg_unexec_cnt))
-			;;
-		@?(un)exec?(-delete|-update)" %D/bin/update-mime-database"*)
-			err "${portref}incorrect update-mime-database" \
+		@?(un)exec*" %D/bin/update-mime-database"*)
+			err "${portref}obsolete update-mime-database" \
 			    "invocation: ${l#@* }"
 			;;
 
@@ -1198,35 +1187,11 @@ check_plist() {
 	$mime_dep_needed && ! $mime_dep &&
 	    [[ $fullpkgname != desktop-file-utils-* ]] &&
 		err "${portref}missing RDEP on devel/desktop-file-utils"
-	if $mime_dep_needed; then
-		((mime_tag_cnt--)) || true
-	fi
-	if ((mime_tag_cnt > 0)) &&
-	    [[ $fullpkgname != desktop-file-utils-* ]]; then
-		err "${portref}extra @tag update-desktop-database"
-	elif ((mime_tag_cnt < 0)); then
-		err "${portref}missing @tag update-desktop-database"
-	fi
 
 	# update-mime-database (same as previous)
 	$mimepkg_dep_needed && ! $mimepkg_dep &&
 	    [[ $fullpkgname != shared-mime-info-* ]] &&
 		err "${portref}missing RDEP on misc/shared-mime-info"
-	if $mimepkg_dep_needed; then
-		((mimepkg_exec_cnt--)) || true
-		((mimepkg_unexec_cnt--)) || true
-	fi
-	if ((mimepkg_exec_cnt > 0)) &&
-	    [[ $fullpkgname != shared-mime-info-* ]]; then
-		err "${portref}extra @exec of update-mime-database"
-	elif ((mimepkg_exec_cnt < 0)); then
-		err "${portref}missing @exec of update-mime-database"
-	fi
-	if ((mimepkg_unexec_cnt > 0)); then
-		err "${portref}extra @unexec-delete of update-mime-database"
-	elif ((mimepkg_unexec_cnt < 0)); then
-		err "${portref}missing @unexec-delete of update-mime-database"
-	fi
 
 	# glib-compile-schemas (almost same as previous)
 	#
