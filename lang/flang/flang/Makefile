@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/16 14:56:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/20 20:11:35 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
-DISTNAME =	flang-6.0.0.20180930
+DISTNAME =	flang-6.0.0.20181017
 
 SHARED_LIBS +=	flang                     1.4 # 6.0
 SHARED_LIBS +=	flangrti                  3.0 # 6.0
 SHARED_LIBS +=	ompstub                   0.0 # 6.0
 
 GH_PROJECT =	flang
-GH_COMMIT =	1dce76dcf579ef1c40d96447ddcb1d2248ce3a20
+GH_COMMIT =	0479dc0252ef30581027355f5bb3fddad4d1edcc
 
 WANTLIB += ${COMPILER_LIBCXX} aio_compat c execinfo m pgmath
 
