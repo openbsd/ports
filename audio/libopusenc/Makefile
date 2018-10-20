@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/25 19:44:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/20 14:12:15 naddy Exp $
 
 COMMENT=	high-level API for encoding .opus files
 
-DISTNAME=	libopusenc-0.2
+DISTNAME=	libopusenc-0.2.1
 SHARED_LIBS=	opusenc		0.0	# 4.2
 CATEGORIES=	audio
 
