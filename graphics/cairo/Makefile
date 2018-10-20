@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.68 2018/10/16 14:23:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2018/10/20 11:20:54 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.15.14
+DISTNAME=		cairo-1.16.0
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  cairo                13.0     # 11516.0
-SHARED_LIBS +=  cairo-gobject        2.0      # 11516.0
-SHARED_LIBS +=  cairo-script-interpreter 2.0  # 11516.0
+SHARED_LIBS +=  cairo                13.0     # 11602.0
+SHARED_LIBS +=  cairo-gobject        2.0      # 11602.0
+SHARED_LIBS +=  cairo-script-interpreter 2.0  # 11602.0
 
 HOMEPAGE=		http://cairographics.org/
 
