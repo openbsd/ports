@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.123 2018/10/20 17:06:51 espie Exp $
+# $OpenBSD: portcheck,v 1.124 2018/10/20 17:14:03 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -975,8 +975,6 @@ check_plist() {
 	fi
 	local dconf_dep=false
 	local dconf_dep_needed=false
-	local dconf_exec_cnt=0
-	local dconf_unexec_cnt=0
 
 	local dbus_suid_dep=false is_dbus_suid=false
 	local dbus_suid_dep_needed=false
@@ -1064,14 +1062,8 @@ check_plist() {
 		"@depend devel/dconf"*)
 			dconf_dep=true
 			;;
-		"@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
-			((++dconf_exec_cnt))
-			;;
-		"@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null")
-			((++dconf_unexec_cnt))
-			;;
-		@?(un)exec?(-delete|-update)" %D/bin/glib-compile-schemas"*)
-			err "${portref}incorrect glib-compile-schemas" \
+		@?(un)exec*" %D/bin/glib-compile-schemas"*)
+			err "${portref}obsolete glib-compile-schemas" \
 			    "invocation: ${l#@* }"
 			;;
 
@@ -1205,22 +1197,6 @@ check_plist() {
 			err "${portref}missing" \
 			    "RUN_DEPENDS${subpkg}+=\${MODDCONF_RUN_DEPENDS}"
 		fi
-	fi
-
-	if $dconf_dep_needed; then
-		((dconf_exec_cnt--)) || true
-		((dconf_unexec_cnt--)) || true
-	fi
-	if ((dconf_exec_cnt > 0)) &&
-	    [[ $fullpkgname != glib2-* ]]; then
-		err "${portref}extra @exec of glib-compile-schemas"
-	elif ((dconf_exec_cnt < 0)); then
-		err "${portref}missing @exec of glib-compile-schemas"
-	fi
-	if ((dconf_unexec_cnt > 0)); then
-		err "${portref}extra @unexec-delete of glib-compile-schemas"
-	elif ((dconf_unexec_cnt < 0)); then
-		err "${portref}missing @unexec-delete of glib-compile-schemas"
 	fi
 
 	# QML
