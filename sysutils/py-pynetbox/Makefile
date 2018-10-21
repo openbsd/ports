@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/31 19:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/21 12:11:25 jasper Exp $
 
 COMMENT =		NetBox API client library
 
-MODPY_EGG_VERSION =	3.4.6
+MODPY_EGG_VERSION =	3.4.7
 DISTNAME =		pynetbox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
