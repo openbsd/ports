@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.6 2017/07/13 11:46:14 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.7 2018/10/21 14:57:55 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,6 +58,7 @@ sub dump_dirs
 	} else {
 		if (defined $subdirs) {
 			$ENV{'SUBDIR'} = $self->subdirlist($subdirs);
+			delete $ENV{'SUBDIRLIST'};
 		}
 		$ENV{'NO_IGNORE'} = 'Yes';
 		delete $ENV{'SUBPACKAGE'};
