@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2018/10/21 12:07:30 jasper Exp $
+
+GNU libiconv provides libiconv_open() which is mapped to iconv_open()
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -86,7 +86,7 @@ case "$host" in
+ 	;;
+ esac
+ 
+-AC_SEARCH_LIBS([iconv_open], [iconv], , [AC_MSG_FAILURE([cannot find the required iconv_open() function despite trying to link with -liconv])])
++AC_SEARCH_LIBS([libiconv_open], [iconv], , [AC_MSG_FAILURE([cannot find the required iconv_open() function despite trying to link with -liconv])])
+ 
+ dnl Each prefix corresponds to a source tarball which users might have
+ dnl downloaded in a newer version and would like to overwrite.
