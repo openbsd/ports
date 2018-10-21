@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/10/21 16:13:57 espie Exp $
+Not sure if blas build is okay ? it should probably have gfortran built-in
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -270,14 +270,14 @@ else()
+       
+       if(BLAS_FOUND)
+         set(ARMA_USE_BLAS true)
+-        set(ARMA_LIBS ${ARMA_LIBS} ${BLAS_LIBRARIES})
++        set(ARMA_LIBS ${ARMA_LIBS} ${BLAS_LIBRARIES} "gfortran")
+       endif()
+       
+     endif()
+     
+     if(LAPACK_FOUND)
+       set(ARMA_USE_LAPACK true)
+-      set(ARMA_LIBS ${ARMA_LIBS} ${LAPACK_LIBRARIES})
++      set(ARMA_LIBS ${ARMA_LIBS} ${LAPACK_LIBRARIES} "gfortran")
+     endif()
+       
+   endif()

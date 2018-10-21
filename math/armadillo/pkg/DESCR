@@ -1,0 +1,4 @@
+Armadillo is a linear algebra library (matrix maths) for the C++ language,
+aiming towards a good balance between speed and ease of use.
+
+Provides high-level syntax and functionality deliberately similar to Matlab
