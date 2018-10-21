@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/05 15:06:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/21 12:09:04 jasper Exp $
 
 COMMENT =		GitHub Flavored Markdown extension
 
-MODPY_EGG_VERSION =	0.1.3
+MODPY_EGG_VERSION =	0.1.4
 DISTNAME =		py-gfm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
 
