@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/07/25 14:07:48 stu Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/21 13:29:47 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -18,12 +18,11 @@ COMMENT =		fast implementation of the Python language
 # You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
 # CPython to build PyPy instead. Note this is slower.
 
-V =			5.3.1
-BOOTSTRAP_V =		${V}-0
+V =			6.0.0
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
-REVISION =		0
 
 CATEGORIES =		lang
 
@@ -35,7 +34,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
-WANTLIB +=		ncurses panel pthread sqlite3 ssl ${MODTCL_LIB}
+WANTLIB +=		panel pthread sqlite3 ssl ${MODTCL_LIB}
 WANTLIB +=		${MODTK_LIB} util z
 
 LIB_DEPENDS +=		databases/sqlite3
