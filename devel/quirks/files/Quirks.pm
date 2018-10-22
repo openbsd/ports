@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.639 2018/10/18 23:37:14 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.640 2018/10/22 15:18:56 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1171,6 +1171,9 @@ my $cve = {
 	'lang/php/7.0,-main' => 'php->7.0,<7.0.32',
 	'lang/php/7.1,-main' => 'php->7.1,<7.1.22',
 	'lang/php/7.2,-main' => 'php-7.2->7.2,<7.2.10',
+	'lang/ruby/2.3,-main' => 'ruby-<2.3.8',
+	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5',
+	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.3',
 	'mail/exim' => 'exim-<4.83',
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
 	'mail/roundcubemail' => 'roundcubemail-<1.3.7',
