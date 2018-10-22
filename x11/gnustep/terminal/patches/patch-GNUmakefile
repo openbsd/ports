@@ -1,0 +1,16 @@
+$OpenBSD: patch-GNUmakefile,v 1.1 2018/10/22 20:16:22 naddy Exp $
+
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -68,6 +68,10 @@ ifeq ($(findstring freebsd, $(GNUSTEP_TARGET_OS)), fre
+  Terminal_TOOL_LIBS += -liconv 
+ endif
+ 
++ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
++ Terminal_TOOL_LIBS += -liconv 
++endif
++
+  Terminal_TOOL_LIBS += -lutil
+ endif
+ 
