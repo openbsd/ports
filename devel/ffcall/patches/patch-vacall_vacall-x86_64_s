@@ -1,0 +1,48 @@
+$OpenBSD: patch-vacall_vacall-x86_64_s,v 1.1 2018/10/22 19:22:08 kettenis Exp $
+
+Index: vacall/vacall-x86_64.s
+--- vacall/vacall-x86_64.s.orig
++++ vacall/vacall-x86_64.s
+@@ -203,42 +203,4 @@ __vacall:
+ .L53:
+ 	movsbq	40(%rsp),%rax
+ 	jmp	.L1
+-.LFE1:
+-.Lfe1:
+-	.size	__vacall,.Lfe1-__vacall
+-	.section	.eh_frame,"aw",@progbits
+-.Lframe1:
+-	.long	.LECIE1-.LSCIE1
+-.LSCIE1:
+-	.long	0x0
+-	.byte	0x1
+-	.string	""
+-	.uleb128 0x1
+-	.sleb128 -8
+-	.byte	0x10
+-	.byte	0xc
+-	.uleb128 0x7
+-	.uleb128 0x8
+-	.byte	0x90
+-	.uleb128 0x1
+-	.align 8
+-.LECIE1:
+-.LSFDE1:
+-	.long	.LEFDE1-.LASFDE1
+-.LASFDE1:
+-	.long	.LASFDE1-.Lframe1
+-	.quad	.LFB1
+-	.quad	.LFE1-.LFB1
+-	.byte	0x4
+-	.long	.LCFI0-.LFB1
+-	.byte	0xe
+-	.uleb128 0x10
+-	.byte	0x4
+-	.long	.LCFI1-.LCFI0
+-	.byte	0xe
+-	.uleb128 0xd0
+-	.byte	0x8c
+-	.uleb128 0x2
+-	.align 8
+-.LEFDE1:
+ 	.ident	"GCC: (GNU) 3.2.2 (SuSE Linux)"
