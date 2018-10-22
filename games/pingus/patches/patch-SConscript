@@ -1,6 +1,7 @@
-$OpenBSD: patch-SConscript,v 1.1 2013/09/14 14:18:45 pascal Exp $
---- SConscript.orig	Fri Sep 13 12:40:46 2013
-+++ SConscript	Fri Sep 13 12:41:05 2013
+$OpenBSD: patch-SConscript,v 1.2 2018/10/22 21:18:50 naddy Exp $
+Index: SConscript
+--- SConscript.orig
++++ SConscript
 @@ -97,7 +97,6 @@ class Project:
          self.opts.Add('CPPDEFINES', 'defined constants', [])
          self.opts.Add('LIBS',       'Additional libraries', [])
@@ -9,3 +10,12 @@ $OpenBSD: patch-SConscript,v 1.1 2013/09/14 14:18:45 pascal Exp $
          self.opts.Add('LINKFLAGS',  'Linker Compiler flags', [])
  
          self.opts.Add(BoolVariable('with_opengl',        'Build with OpenGL support', True))
+@@ -182,7 +181,7 @@ class Project:
+         else:
+             self.reports += "  * XInput support: yes\n"
+             self.conf.env.Append(CPPDEFINES = [('HAVE_XINPUT', 1)])
+-            self.conf.env.Append(LIBS = ['Xi'])
++            self.conf.env.Append(LIBS = ['Xi', 'X11'])
+             self.conf.env.Append(optional_sources = ['src/engine/input/xinput/xinput_driver.cpp',
+                                                      'src/engine/input/xinput/xinput_device.cpp'])
+             

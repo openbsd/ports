@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/22 21:18:50 naddy Exp $
 
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.6
-REVISION=2
+REVISION=	3
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
