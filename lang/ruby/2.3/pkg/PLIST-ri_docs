@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.9 2018/03/31 21:12:45 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.10 2018/10/22 14:44:57 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -4536,8 +4536,8 @@ share/ri/${REV}/system/IRB/IrbLoader/cdesc-IrbLoader.ri
 share/ri/${REV}/system/IRB/IrbLoader/irb_load-i.ri
 share/ri/${REV}/system/IRB/IrbLoader/load_file-i.ri
 share/ri/${REV}/system/IRB/IrbLoader/source_file-i.ri
-share/ri/${REV}/system/IRB/JobManager-c.ri
 share/ri/${REV}/system/IRB/JobManager/
+share/ri/${REV}/system/IRB/JobManager-c.ri
 share/ri/${REV}/system/IRB/JobManager/cdesc-JobManager.ri
 share/ri/${REV}/system/IRB/JobManager/current_job-i.ri
 share/ri/${REV}/system/IRB/JobManager/delete-i.ri
@@ -6504,9 +6504,9 @@ share/ri/${REV}/system/OpenSSL/Config/to_s-i.ri
 share/ri/${REV}/system/OpenSSL/Config/unescape_value-c.ri
 share/ri/${REV}/system/OpenSSL/ConfigError/
 share/ri/${REV}/system/OpenSSL/ConfigError/cdesc-ConfigError.ri
+share/ri/${REV}/system/OpenSSL/Digest/
 share/ri/${REV}/system/OpenSSL/Digest-c.ri
 share/ri/${REV}/system/OpenSSL/Digest-i.ri
-share/ri/${REV}/system/OpenSSL/Digest/
 share/ri/${REV}/system/OpenSSL/Digest/%3c%3c-i.ri
 share/ri/${REV}/system/OpenSSL/Digest/DigestError/
 share/ri/${REV}/system/OpenSSL/Digest/DigestError/cdesc-DigestError.ri

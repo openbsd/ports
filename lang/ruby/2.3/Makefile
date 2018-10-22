@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2018/03/31 21:12:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/22 14:44:57 jeremy Exp $
 
-VERSION =		2.3.7
+VERSION =		2.3.8
 NEXTVER =		2.4
 SHARED_LIBS =		ruby${BINREV}	2.0
 
