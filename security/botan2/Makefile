@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2018/07/06 00:18:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/22 21:28:52 bluhm Exp $
 
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.7.0
+VERSION =	2.8.0
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
 
-SHARED_LIBS =	botan-2		7.0
+SHARED_LIBS =	botan-2		8.0
 
 CATEGORIES =	security
 
