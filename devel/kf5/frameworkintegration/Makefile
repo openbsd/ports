@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/04 20:25:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:41 rsadowski Exp $
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
 
-SHARED_LIBS =	KF5Style		4.1
+SHARED_LIBS =	KF5Style		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
@@ -32,13 +32,5 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_AppStreamQt=Yes \
 
 PORTHOME =	${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
-
-# allow to use "semi-internal" Qt headers
-#pre-configure:
-#.for d in src/platformtheme autotests
-#	rm -f ${WRKSRC}/$d/qpa
-#	ln -s ${LOCALBASE}/include/X11/qt5/QtGui/5.*/QtGui/qpa \
-#	       ${WRKSRC}/$d/qpa
-#.endfor
 
 .include <bsd.port.mk>

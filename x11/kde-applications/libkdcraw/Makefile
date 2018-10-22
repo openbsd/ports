@@ -13,6 +13,4 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m raw
 
 LIB_DEPENDS =	graphics/libraw
 
-NO_TEST =	Yes
-
 .include <bsd.port.mk>

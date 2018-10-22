@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/07 17:03:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:42 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1084,6 +1084,9 @@ share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/pt_BR/kdebugdialog5/
 share/doc/HTML/pt_BR/kdebugdialog5/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog5/index.docbook
+share/doc/HTML/ru/kcontrol5/kcm_ssl/
+share/doc/HTML/ru/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/sr/kdebugdialog5/
 share/doc/HTML/sr/kdebugdialog5/index.cache.bz2
 share/doc/HTML/sr/kdebugdialog5/index.docbook
@@ -1102,15 +1105,26 @@ share/doc/HTML/uk/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/uk/kdebugdialog5/
 share/doc/HTML/uk/kdebugdialog5/index.cache.bz2
 share/doc/HTML/uk/kdebugdialog5/index.docbook
-share/examples/xdg/colors/
-share/examples/xdg/colors/40.colors
-share/examples/xdg/colors/Oxygen.colors
-share/examples/xdg/colors/Rainbow.colors
-share/examples/xdg/colors/Royal.colors
-share/examples/xdg/colors/Web.colors
-share/examples/xdg/kdebug.areas
-share/examples/xdg/kdebugrc
-share/examples/xdg/ksslcalist
+share/examples/kdelibs4support/
+share/examples/kdelibs4support/xdg/
+share/examples/kdelibs4support/xdg/colors/
+@sample ${SYSCONFDIR}/xdg/colors/
+share/examples/kdelibs4support/xdg/colors/40.colors
+@sample ${SYSCONFDIR}/xdg/colors/40.colors
+share/examples/kdelibs4support/xdg/colors/Oxygen.colors
+@sample ${SYSCONFDIR}/xdg/colors/Oxygen.colors
+share/examples/kdelibs4support/xdg/colors/Rainbow.colors
+@sample ${SYSCONFDIR}/xdg/colors/Rainbow.colors
+share/examples/kdelibs4support/xdg/colors/Royal.colors
+@sample ${SYSCONFDIR}/xdg/colors/Royal.colors
+share/examples/kdelibs4support/xdg/colors/Web.colors
+@sample ${SYSCONFDIR}/xdg/colors/Web.colors
+share/examples/kdelibs4support/xdg/kdebug.areas
+@sample ${SYSCONFDIR}/xdg/kdebug.areas
+share/examples/kdelibs4support/xdg/kdebugrc
+@sample ${SYSCONFDIR}/xdg/kdebugrc
+share/examples/kdelibs4support/xdg/ksslcalist
+@sample ${SYSCONFDIR}/xdg/ksslcalist
 share/kf5/kdoctools/customization/catalog4.xml
 share/kf5/kdoctools/customization/dtd/kdex.dtd
 share/kf5/kssl/

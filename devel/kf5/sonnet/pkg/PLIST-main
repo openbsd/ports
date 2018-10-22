@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2017/10/26 07:53:24 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2018/10/22 20:30:43 rsadowski Exp $
 @bin bin/gentrigrams
 @bin bin/parsetrigrams
 include/KF5/
@@ -38,8 +38,10 @@ lib/cmake/KF5Sonnet/KF5SonnetTargets.cmake
 @lib lib/libKF5SonnetUi.so.${LIBKF5SonnetUi_VERSION}
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/sonnet/
-share/examples/xdg/
-share/examples/xdg/sonnet.categories
+share/examples/sonnet/
+share/examples/sonnet/xdg/
+share/examples/sonnet/xdg/sonnet.categories
+@sample ${SYSCONFDIR}/xdg/sonnet.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_SonnetCore.pri

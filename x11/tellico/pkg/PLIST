@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/10/22 20:30:45 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -141,9 +141,14 @@ share/doc/HTML/uk/tellico/source-options.png
 share/doc/HTML/uk/tellico/sru-options.png
 share/doc/HTML/uk/tellico/template-options.png
 share/doc/HTML/uk/tellico/z3950-options.png
-share/examples/xdg/tellico-script.knsrc
-share/examples/xdg/tellico-template.knsrc
-share/examples/xdg/tellicorc
+share/examples/tellico/
+share/examples/tellico/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/tellico/xdg/tellico-script.knsrc
+@sample ${SYSCONFDIR}/xdg/tellico-script.knsrc
+share/examples/tellico/xdg/tellico-template.knsrc
+@sample ${SYSCONFDIR}/xdg/tellico-template.knsrc
+share/examples/tellico/xdg/tellicorc
 share/icons/hicolor/128x128/apps/tellico.png
 share/icons/hicolor/128x128/mimetypes/application-x-tellico.png
 share/icons/hicolor/16x16/apps/tellico.png
@@ -156,7 +161,6 @@ share/icons/hicolor/48x48/apps/tellico.png
 share/icons/hicolor/48x48/mimetypes/application-x-tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/application-x-tellico.png
-share/kconf_update/
 share/kconf_update/tellico-1-3-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/09/06 05:05:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Service		4.1
+SHARED_LIBS =		KF5Service		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n Qt5Core Qt5DBus Qt5Xml c m
@@ -23,14 +22,10 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kdbusaddons \
 			devel/kf5/ki18n
 
-CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0058=OLD
+CONFIGURE_ARGS =	-DAPPLICATIONS_MENU_NAME:STRING="kf5-applications.menu" \
+			-DCMAKE_POLICY_DEFAULT_CMP0058=OLD
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
-
-# avoid conflict with KDE4
-post-install:
-	cd ${WRKINST}/etc/xdg/menus; \
-	mv applications.menu applications-kde5.menu
 
 .include <bsd.port.mk>

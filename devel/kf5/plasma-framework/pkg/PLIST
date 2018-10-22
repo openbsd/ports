@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/04 20:25:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/10/22 20:30:43 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -100,12 +100,14 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/ItemDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Label.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Menu.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/MenuItem.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/PageIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Popup.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/ProgressBar.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioButton.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RadioIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/RangeSlider.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/RoundButton.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/ScrollBar.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/ScrollView.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/Slider.qml
@@ -517,6 +519,7 @@ share/plasma/desktoptheme/default/icons/media.svgz
 share/plasma/desktoptheme/default/icons/nepomuk.svgz
 share/plasma/desktoptheme/default/icons/network.svgz
 share/plasma/desktoptheme/default/icons/notification.svgz
+share/plasma/desktoptheme/default/icons/osd.svgz
 share/plasma/desktoptheme/default/icons/phone.svgz
 share/plasma/desktoptheme/default/icons/plasmavault.svgz
 share/plasma/desktoptheme/default/icons/plasmavault_error.svgz

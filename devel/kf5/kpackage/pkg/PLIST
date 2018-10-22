@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/12 19:35:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/10/22 20:30:42 rsadowski Exp $
 @bin bin/kpackagetool5
 include/KF5/KPackage/
 include/KF5/KPackage/KPackage/
@@ -21,7 +21,10 @@ lib/cmake/KF5Package/KF5PackageTargets.cmake
 lib/cmake/KF5Package/qrc.cmake
 @lib lib/libKF5Package.so.${LIBKF5Package_VERSION}
 @man man/man1/kpackagetool5.1
-share/examples/xdg/kpackage.categories
+share/examples/kpackage/
+share/examples/kpackage/xdg/
+share/examples/kpackage/xdg/kpackage.categories
+@sample ${SYSCONFDIR}/xdg/kpackage.categories
 share/kservicetypes5/
 share/kservicetypes5/kpackage-generic.desktop
 share/kservicetypes5/kpackage-genericqml.desktop

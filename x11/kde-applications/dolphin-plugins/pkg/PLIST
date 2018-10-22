@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/02 14:29:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 lib/qt5/plugins/fileviewbazaarplugin.so
 lib/qt5/plugins/fileviewdropboxplugin.so
 lib/qt5/plugins/fileviewgitplugin.so
 lib/qt5/plugins/fileviewhgplugin.so
 lib/qt5/plugins/fileviewsvnplugin.so
-share/config.kcfg/
 share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
-share/kservices5/
 share/kservices5/fileviewbazaarplugin.desktop
 share/kservices5/fileviewdropboxplugin.desktop
 share/kservices5/fileviewgitplugin.desktop
@@ -60,6 +58,8 @@ share/locale/et/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/et/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/et/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/et/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/eu/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/eu/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/fi/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/fi/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/fi/LC_MESSAGES/fileviewsvnplugin.mo
@@ -115,6 +115,9 @@ share/locale/nl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/nn/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/nn/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/nn/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pa/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/pa/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pa/LC_MESSAGES/fileviewsvnplugin.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/04 20:25:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/10/22 20:30:41 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -14,6 +14,7 @@ share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
+share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibGit2.cmake
@@ -94,6 +95,7 @@ share/doc/ECM/html/_sources/
 share/doc/ECM/html/_sources/find-module/
 share/doc/ECM/html/_sources/find-module/FindEGL.txt
 share/doc/ECM/html/_sources/find-module/FindGLIB2.txt
+share/doc/ECM/html/_sources/find-module/FindIcoTool.txt
 share/doc/ECM/html/_sources/find-module/FindKF5.txt
 share/doc/ECM/html/_sources/find-module/FindLibGit2.txt
 share/doc/ECM/html/_sources/find-module/FindOpenEXR.txt
@@ -171,6 +173,7 @@ share/doc/ECM/html/_static/websupport.js
 share/doc/ECM/html/find-module/
 share/doc/ECM/html/find-module/FindEGL.html
 share/doc/ECM/html/find-module/FindGLIB2.html
+share/doc/ECM/html/find-module/FindIcoTool.html
 share/doc/ECM/html/find-module/FindKF5.html
 share/doc/ECM/html/find-module/FindLibGit2.html
 share/doc/ECM/html/find-module/FindOpenEXR.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/09/19 05:16:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/10/22 20:30:43 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-l10n-bs-*
 @conflict calligra-l10n-ca-*
@@ -5105,11 +5105,18 @@ share/color/icc/calligra/sRGB-elle-V4-srgbtrc.icc
 share/color/icc/calligra/scRGB.icm
 share/config.kcfg/
 share/config.kcfg/calligrasheets.kcfg
-share/examples/xdg/calligra_stencils.knsrc
-share/examples/xdg/calligrasheetsrc
-share/examples/xdg/calligrastagerc
-share/examples/xdg/calligrawordsrc
-share/examples/xdg/karbonrc
+share/examples/calligra/
+share/examples/calligra/xdg/
+share/examples/calligra/xdg/calligra_stencils.knsrc
+@sample ${SYSCONFDIR}/xdg/calligra_stencils.knsrc
+share/examples/calligra/xdg/calligrasheetsrc
+@sample ${SYSCONFDIR}/xdg/calligrasheetsrc
+share/examples/calligra/xdg/calligrastagerc
+@sample ${SYSCONFDIR}/xdg/calligrastagerc
+share/examples/calligra/xdg/calligrawordsrc
+@sample ${SYSCONFDIR}/xdg/calligrawordsrc
+share/examples/calligra/xdg/karbonrc
+@sample ${SYSCONFDIR}/xdg/karbonrc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/calligragemini.png

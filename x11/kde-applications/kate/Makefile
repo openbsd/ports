@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/29 22:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	2
 
 HOMEPAGE =	https://kate-editor.org/
 
@@ -17,8 +16,8 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
 WANTLIB += KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql Qt5Widgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
 WANTLIB += Qt5Xml c m
 
 MODULES +=	lang/python

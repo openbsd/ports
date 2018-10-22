@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:17:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 include/KF5/KIMAP/
 include/KF5/KIMAP/KIMAP/
 include/KF5/KIMAP/KIMAP/Acl
@@ -127,13 +127,18 @@ include/KF5/kimaptest/
 include/KF5/kimaptest/fakeserver.h
 include/KF5/kimaptest/mockjob.h
 lib/cmake/KF5IMAP/
-lib/cmake/KF5IMAP/FindSasl2.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfig.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake
 lib/cmake/KF5IMAP/KF5IMAPTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5IMAP/KF5IMAPTargets.cmake
 @lib lib/libKF5IMAP.so.${LIBKF5IMAP_VERSION}
 lib/libkimaptest.a
+share/examples/kimap/
+share/examples/kimap/xdg/
+share/examples/kimap/xdg/kimap.categories
+@sample ${SYSCONFDIR}/xdg/kimap.categories
+share/examples/kimap/xdg/kimap.renamecategories
+@sample ${SYSCONFDIR}/xdg/kimap.renamecategories
 share/kf5/mkspecs/qt_KIMAP.pri
 share/locale/ast/LC_MESSAGES/libkimap5.mo
 share/locale/bs/LC_MESSAGES/libkimap5.mo

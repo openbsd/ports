@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/08/13 14:23:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/10/22 20:30:44 rsadowski Exp $
 @bin bin/krusader
 lib/qt5/plugins/kio_iso.so
 lib/qt5/plugins/kio_krarc.so
@@ -300,7 +300,11 @@ share/doc/HTML/uk/krusader/useraction-xml.docbook
 share/doc/HTML/uk/krusader/useractions.docbook
 share/doc/HTML/uk/krusader/vfs.docbook
 share/doc/HTML/uk/krusader/viewer-editor.docbook
-share/examples/xdg/kio_isorc
+share/examples/krusader/
+share/examples/krusader/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/krusader/xdg/kio_isorc
+@sample ${SYSCONFDIR}/xdg/kio_isorc
 share/icons/hicolor/128x128/apps/krusader_root.png
 share/icons/hicolor/128x128/apps/krusader_user.png
 share/icons/hicolor/16x16/apps/krusader_blue.png

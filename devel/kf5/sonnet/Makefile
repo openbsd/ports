@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
@@ -8,8 +8,8 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-aspell =	sonnet-aspell-${VERSION}
 PKGNAME-hunspell =	sonnet-hunspell-${VERSION}
 
-SHARED_LIBS =		KF5SonnetCore		3.1
-SHARED_LIBS +=		KF5SonnetUi		3.1
+SHARED_LIBS =		KF5SonnetCore		3.2
+SHARED_LIBS +=		KF5SonnetUi		3.2
 
 MULTI_PACKAGES =	-main -aspell -hunspell
 

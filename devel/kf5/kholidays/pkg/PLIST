@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/04 20:25:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:42 rsadowski Exp $
 include/KF5/
 include/KF5/KHolidays/
 include/KF5/KHolidays/KHolidays/
@@ -6,18 +6,15 @@ include/KF5/KHolidays/KHolidays/AstroSeasons
 include/KF5/KHolidays/KHolidays/Holiday
 include/KF5/KHolidays/KHolidays/HolidayRegion
 include/KF5/KHolidays/KHolidays/LunarPhase
+include/KF5/KHolidays/KHolidays/SunRiseSet
 include/KF5/KHolidays/KHolidays/Zodiac
 include/KF5/KHolidays/kholidays/
-include/KF5/KHolidays/kholidays/AstroSeasons
-include/KF5/KHolidays/kholidays/Holiday
-include/KF5/KHolidays/kholidays/HolidayRegion
-include/KF5/KHolidays/kholidays/LunarPhase
-include/KF5/KHolidays/kholidays/Zodiac
 include/KF5/KHolidays/kholidays/astroseasons.h
 include/KF5/KHolidays/kholidays/holiday.h
 include/KF5/KHolidays/kholidays/holidayregion.h
 include/KF5/KHolidays/kholidays/kholidays_export.h
 include/KF5/KHolidays/kholidays/lunarphase.h
+include/KF5/KHolidays/kholidays/sunriseset.h
 include/KF5/KHolidays/kholidays/zodiac.h
 include/KF5/kholidays_version.h
 lib/cmake/KF5Holidays/

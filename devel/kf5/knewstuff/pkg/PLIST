@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/04 20:25:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -23,6 +23,7 @@ include/KF5/KNewStuff3/KNSCore/Question
 include/KF5/KNewStuff3/KNSCore/QuestionListener
 include/KF5/KNewStuff3/KNSCore/QuestionManager
 include/KF5/KNewStuff3/KNSCore/Security
+include/KF5/KNewStuff3/KNSCore/TagsFilterChecker
 include/KF5/KNewStuff3/KNSCore/XmlLoader
 include/KF5/KNewStuff3/kns3/
 include/KF5/KNewStuff3/kns3/button.h
@@ -50,6 +51,7 @@ include/KF5/KNewStuff3/knscore/question.h
 include/KF5/KNewStuff3/knscore/questionlistener.h
 include/KF5/KNewStuff3/knscore/questionmanager.h
 include/KF5/KNewStuff3/knscore/security.h
+include/KF5/KNewStuff3/knscore/tagsfilterchecker.h
 include/KF5/KNewStuff3/knscore/xmlloader.h
 include/KF5/knewstuff_version.h
 include/KF5/knewstuffcore_version.h
@@ -75,7 +77,10 @@ lib/qt5/qml/org/kde/newstuff/qml/
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffItem.qml
 lib/qt5/qml/org/kde/newstuff/qml/NewStuffList.qml
 lib/qt5/qml/org/kde/newstuff/qmldir
-share/examples/xdg/knewstuff.categories
+share/examples/knewstuff/
+share/examples/knewstuff/xdg/
+share/examples/knewstuff/xdg/knewstuff.categories
+@sample ${SYSCONFDIR}/xdg/knewstuff.categories
 share/kf5/kmoretools/
 share/kf5/kmoretools/presets-kmoretools/
 share/kf5/kmoretools/presets-kmoretools/_README.md

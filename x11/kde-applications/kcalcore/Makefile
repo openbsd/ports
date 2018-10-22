@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/24 17:33:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =	The KDE calendar access library
 DISTNAME =	kcalcore-${VERSION}
@@ -8,7 +8,8 @@ KDE5 =		Yes
 
 SHARED_LIBS +=  KF5CalendarCore           0.0 # 5.7
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui ical icalss m
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui ical icalss icalvcal
+WANTLIB += m
 
 BUILD_DEPENDS +=	devel/bison
 

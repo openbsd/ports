@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/19 06:08:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	archivers
 
 KDE5 =		Yes
 
-SHARED_LIBS +=  kerfuffle                 0.0 # 17.08
+SHARED_LIBS +=  kerfuffle                 1.0 # 17.08
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

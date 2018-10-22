@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/10/20 14:44:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/10/22 20:30:43 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -259,7 +259,10 @@ share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
 share/color/icc/krita/sRGB-elle-V2-g10.icc
 share/color/icc/krita/sRGB-elle-V2-srgbtrc.icc
 share/color/icc/krita/scRGB.icm
-share/examples/xdg/kritarc
+share/examples/krita/
+share/examples/krita/xdg/
+share/examples/krita/xdg/kritarc
+@sample ${SYSCONFDIR}/xdg/kritarc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/calligrakrita.png

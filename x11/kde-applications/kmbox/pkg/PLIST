@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:19:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 include/KF5/KMbox/
 include/KF5/KMbox/KMbox/
 include/KF5/KMbox/KMbox/MBox
@@ -14,4 +14,10 @@ lib/cmake/KF5Mbox/KF5MboxConfigVersion.cmake
 lib/cmake/KF5Mbox/KF5MboxTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Mbox/KF5MboxTargets.cmake
 @lib lib/libKF5Mbox.so.${LIBKF5Mbox_VERSION}
+share/examples/kmbox/
+share/examples/kmbox/xdg/
+share/examples/kmbox/xdg/kmbox.categories
+@sample ${SYSCONFDIR}/xdg/kmbox.categories
+share/examples/kmbox/xdg/kmbox.renamecategories
+@sample ${SYSCONFDIR}/xdg/kmbox.renamecategories
 share/kf5/mkspecs/qt_Mbox.pri

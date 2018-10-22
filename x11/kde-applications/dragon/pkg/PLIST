@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/20 04:33:51 rsadowski Exp $
-@pkgpath x11/kde4/dragon
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
+@pkgpath x11/kde4/dragon
 @bin bin/dragon
 lib/qt5/plugins/dragonpart.so
 @man man/man1/dragon.1
@@ -32,6 +32,12 @@ share/doc/HTML/fr/dragonplayer/index.docbook
 share/doc/HTML/gl/dragonplayer/
 share/doc/HTML/gl/dragonplayer/index.cache.bz2
 share/doc/HTML/gl/dragonplayer/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/dragonplayer/
+share/doc/HTML/id/dragonplayer/index.cache.bz2
+share/doc/HTML/id/dragonplayer/index.docbook
+share/doc/HTML/id/dragonplayer/main.png
+share/doc/HTML/id/dragonplayer/playmedia.png
 share/doc/HTML/it/dragonplayer/
 share/doc/HTML/it/dragonplayer/index.cache.bz2
 share/doc/HTML/it/dragonplayer/index.docbook
@@ -67,7 +73,10 @@ share/doc/HTML/uk/dragonplayer/index.cache.bz2
 share/doc/HTML/uk/dragonplayer/index.docbook
 share/doc/HTML/uk/dragonplayer/main.png
 share/doc/HTML/uk/dragonplayer/playmedia.png
-share/examples/xdg/dragonplayerrc
+share/examples/dragon/
+share/examples/dragon/xdg/
+share/examples/dragon/xdg/dragonplayerrc
+@sample ${SYSCONFDIR}/xdg/dragonplayerrc
 share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/16x16/apps/dragonplayer.png
 share/icons/hicolor/22x22/apps/dragonplayer.png

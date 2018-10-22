@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/02/12 19:35:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:41 rsadowski Exp $
 include/KF5/KAuth/
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
@@ -30,13 +30,14 @@ lib/qt5/plugins/kauth/helper/
 lib/qt5/plugins/kauth/helper/kauth_helper_plugin.so
 libexec/kauth/
 @bin libexec/kauth/kauth-policy-gen
-share/examples/kde/
-share/examples/kde/dbus-1/
-share/examples/kde/dbus-1/system.d/
-share/examples/kde/dbus-1/system.d/org.kde.kf5auth.conf
+share/examples/kauth/
+share/examples/kauth/dbus-1/
+share/examples/kauth/dbus-1/system.d/
+share/examples/kauth/dbus-1/system.d/org.kde.kf5auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kf5auth.conf
-share/examples/xdg/
-share/examples/xdg/kauth.categories
+share/examples/kauth/xdg/
+share/examples/kauth/xdg/kauth.categories
+@sample ${SYSCONFDIR}/xdg/kauth.categories
 share/kf5/kauth/
 share/kf5/kauth/dbus_policy.stub
 share/kf5/kauth/dbus_service.stub

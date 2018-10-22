@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}
 
-SHARED_LIBS =		KF5MediaPlayer		4.1
+SHARED_LIBS =		KF5MediaPlayer		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

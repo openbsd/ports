@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
 @bin bin/kalgebramobile
-share/applications/kalgebramobile.desktop
+share/applications/org.kde.kalgebramobile.desktop
 share/doc/HTML/ca/kalgebra/
 share/doc/HTML/ca/kalgebra/commands.docbook
 share/doc/HTML/ca/kalgebra/index.cache.bz2
@@ -185,6 +185,6 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/metainfo/
-share/metainfo/org.kde.kalgebra.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.kde.kalgebramobile.appdata.xml

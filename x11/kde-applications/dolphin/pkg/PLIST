@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/02 14:27:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict dolphin-plugins-<=4.14.3
 @conflict kde-baseapps-*
@@ -172,7 +172,10 @@ share/doc/HTML/uk/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/uk/dolphin/toolbar-view-appearance.png
 share/doc/HTML/uk/dolphin/toolbar.png
 share/doc/HTML/uk/dolphin/viewproperties-dialog.png
-share/examples/xdg/servicemenu.knsrc
+share/examples/dolphin-kf5/
+share/examples/dolphin-kf5/xdg/
+share/examples/dolphin-kf5/xdg/servicemenu.knsrc
+@sample ${SYSCONFDIR}/xdg/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
 share/kservices5/kcmdolphingeneral.desktop
 share/kservices5/kcmdolphinnavigation.desktop

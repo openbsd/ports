@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT =	embedding of scripting into KDE applications
 DISTNAME =	kross-${VERSION}
 
-SHARED_LIBS =	KF5KrossCore		4.1 # 5.17
-SHARED_LIBS +=	KF5KrossUi		4.1 # 5.17
+SHARED_LIBS =	KF5KrossCore		4.2 # 5.17
+SHARED_LIBS +=	KF5KrossUi		4.2 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

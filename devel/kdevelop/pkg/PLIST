@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/08/10 08:17:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/10/22 20:30:41 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -578,8 +578,13 @@ share/doc/HTML/en/kdevelop/kdevelop-template-result.png
 share/doc/HTML/en/kdevelop/kdevelop-template-selection.png
 share/doc/HTML/en/kdevelop/kdevelop4_noworkingset.png
 share/doc/HTML/en/kdevelop/kdevelop4_sessionsprojectsworkingsets.png
-share/examples/xdg/kdevelop.categories
-share/examples/xdg/kdevplatform.categories
+share/examples/kdevelop/
+share/examples/kdevelop/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/kdevelop/xdg/kdevelop.categories
+@sample ${SYSCONFDIR}/xdg/kdevelop.categories
+share/examples/kdevelop/xdg/kdevplatform.categories
+@sample ${SYSCONFDIR}/xdg/kdevplatform.categories
 share/icons/hicolor/128x128/apps/bazaar.png
 share/icons/hicolor/128x128/apps/cmake.png
 share/icons/hicolor/128x128/apps/cppcheck.png

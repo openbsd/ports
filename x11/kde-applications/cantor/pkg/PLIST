@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
 @bin bin/cantor_python3server
 @bin bin/cantor_rserver
+@bin bin/cantor_scripteditor
 include/cantor/
 include/cantor/animationresult.h
 include/cantor/backend.h
@@ -59,24 +60,15 @@ lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
 lib/qt5/plugins/libcantorpart.so
 share/applications/org.kde.cantor.desktop
 share/cantor/
-share/cantor/cantor_advancedplot_assistant.rc
-share/cantor/cantor_create_matrix_assistant.rc
-share/cantor/cantor_differentiate_assistant.rc
-share/cantor/cantor_eigenvalues_assistant.rc
-share/cantor/cantor_eigenvectors_assistant.rc
-share/cantor/cantor_import_package_assistant.rc
-share/cantor/cantor_integrate_assistant.rc
-share/cantor/cantor_invert_matrix_assistant.rc
-share/cantor/cantor_plot2d_assistant.rc
-share/cantor/cantor_plot3d_assistant.rc
-share/cantor/cantor_qalculateplotassistant.rc
-share/cantor/cantor_runscript_assistant.rc
-share/cantor/cantor_solve_assistant.rc
+share/cantor/maximabackend/
+share/cantor/maximabackend/cantor-initmaxima.lisp
 share/cantor/octavebackend/
 share/cantor/octavebackend/cantor_eigenvectors.m
 share/cantor/octavebackend/cantor_plot2d.m
 share/cantor/octavebackend/cantor_plot3d.m
 share/cantor/octavebackend/cantor_print.m
+share/cantor/sagebackend/
+share/cantor/sagebackend/cantor-execsage
 share/cantor/xslt/
 share/cantor/xslt/latex.xsl
 share/config.kcfg/
@@ -161,17 +153,30 @@ share/doc/HTML/uk/cantor/plot2d-dlg.png
 share/doc/HTML/uk/cantor/plot3d-dlg.png
 share/doc/HTML/uk/cantor/screenshot.png
 share/doc/HTML/uk/cantor/solve-equations-dlg.png
-share/examples/xdg/cantor.knsrc
-share/examples/xdg/cantor_kalgebra.knsrc
-share/examples/xdg/cantor_lua.knsrc
-share/examples/xdg/cantor_maxima.knsrc
-share/examples/xdg/cantor_octave.knsrc
-share/examples/xdg/cantor_python2.knsrc
-share/examples/xdg/cantor_python3.knsrc
-share/examples/xdg/cantor_qalculate.knsrc
-share/examples/xdg/cantor_r.knsrc
-share/examples/xdg/cantor_sage.knsrc
-share/examples/xdg/cantor_scilab.knsrc
+share/examples/cantor/
+share/examples/cantor/xdg/
+share/examples/cantor/xdg/cantor.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor.knsrc
+share/examples/cantor/xdg/cantor_kalgebra.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_kalgebra.knsrc
+share/examples/cantor/xdg/cantor_lua.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_lua.knsrc
+share/examples/cantor/xdg/cantor_maxima.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_maxima.knsrc
+share/examples/cantor/xdg/cantor_octave.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_octave.knsrc
+share/examples/cantor/xdg/cantor_python2.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_python2.knsrc
+share/examples/cantor/xdg/cantor_python3.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_python3.knsrc
+share/examples/cantor/xdg/cantor_qalculate.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_qalculate.knsrc
+share/examples/cantor/xdg/cantor_r.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_r.knsrc
+share/examples/cantor/xdg/cantor_sage.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_sage.knsrc
+share/examples/cantor/xdg/cantor_scilab.knsrc
+@sample ${SYSCONFDIR}/xdg/cantor_scilab.knsrc
 share/icons/hicolor/128x128/apps/cantor.png
 share/icons/hicolor/16x16/apps/cantor.png
 share/icons/hicolor/22x22/apps/cantor.png
@@ -190,9 +195,22 @@ share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
 share/kxmlgui5/
 share/kxmlgui5/cantor/
+share/kxmlgui5/cantor/cantor_advancedplot_assistant.rc
+share/kxmlgui5/cantor/cantor_create_matrix_assistant.rc
+share/kxmlgui5/cantor/cantor_differentiate_assistant.rc
+share/kxmlgui5/cantor/cantor_eigenvalues_assistant.rc
+share/kxmlgui5/cantor/cantor_eigenvectors_assistant.rc
+share/kxmlgui5/cantor/cantor_import_package_assistant.rc
+share/kxmlgui5/cantor/cantor_integrate_assistant.rc
+share/kxmlgui5/cantor/cantor_invert_matrix_assistant.rc
 share/kxmlgui5/cantor/cantor_part.rc
+share/kxmlgui5/cantor/cantor_plot2d_assistant.rc
+share/kxmlgui5/cantor/cantor_plot3d_assistant.rc
+share/kxmlgui5/cantor/cantor_qalculateplotassistant.rc
+share/kxmlgui5/cantor/cantor_runscript_assistant.rc
 share/kxmlgui5/cantor/cantor_scripteditor.rc
 share/kxmlgui5/cantor/cantor_shell.rc
+share/kxmlgui5/cantor/cantor_solve_assistant.rc
 share/locale/ast/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo

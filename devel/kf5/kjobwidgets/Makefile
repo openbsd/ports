@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
 
-SHARED_LIBS =	KF5JobWidgets		3.1
+SHARED_LIBS =	KF5JobWidgets		3.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5WidgetsAddons Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras m

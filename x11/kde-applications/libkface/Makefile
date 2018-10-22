@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =		face detection library for KDE
 DISTNAME =		libkface-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		kface		0.1
 
 CATEGORIES =		graphics math
-HOMEPAGE =		https://projects.kde.org/projects/kde/kdegraphics/libs/libkface
 
 WANTLIB =  m pthread
 WANTLIB += ${COMPILER_LIBCXX}

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/06/04 20:25:32 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
 include/KF5/KFileMetaData/
 include/KF5/KFileMetaData/KFileMetaData/
+include/KF5/KFileMetaData/KFileMetaData/EmbeddedImageData
 include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
 include/KF5/KFileMetaData/KFileMetaData/Extractor
 include/KF5/KFileMetaData/KFileMetaData/ExtractorCollection
@@ -16,6 +17,7 @@ include/KF5/KFileMetaData/KFileMetaData/Writer
 include/KF5/KFileMetaData/KFileMetaData/WriterCollection
 include/KF5/KFileMetaData/KFileMetaData/WriterPlugin
 include/KF5/KFileMetaData/kfilemetadata/
+include/KF5/KFileMetaData/kfilemetadata/embeddedimagedata.h
 include/KF5/KFileMetaData/kfilemetadata/extractionresult.h
 include/KF5/KFileMetaData/kfilemetadata/extractor.h
 include/KF5/KFileMetaData/kfilemetadata/extractorcollection.h
@@ -50,7 +52,10 @@ lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
 lib/qt5/plugins/kf5/kfilemetadata/writers/
 lib/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so
-share/examples/xdg/kfilemetadata.categories
+share/examples/kfilemetadata/
+share/examples/kfilemetadata/xdg/
+share/examples/kfilemetadata/xdg/kfilemetadata.categories
+@sample ${SYSCONFDIR}/xdg/kfilemetadata.categories
 share/kf5/mkspecs/qt_KFileMetaData.pri
 share/locale/eu/LC_MESSAGES/kfilemetadata5.mo
 share/locale/id/LC_MESSAGES/kfilemetadata5.mo

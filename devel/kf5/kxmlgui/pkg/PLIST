@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:43 rsadowski Exp $
 include/KF5/KXmlGui/
 include/KF5/KXmlGui/KAboutApplicationDialog
 include/KF5/KXmlGui/KActionCategory
@@ -47,9 +47,11 @@ lib/cmake/KF5XmlGui/KF5XmlGuiTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5XmlGui/KF5XmlGuiTargets.cmake
 @lib lib/libKF5XmlGui.so.${LIBKF5XmlGui_VERSION}
 @bin libexec/kf5/ksendbugmail
-share/examples/xdg/ui/
+share/examples/kxmlgui/
+share/examples/kxmlgui/xdg/
+share/examples/kxmlgui/xdg/ui/
 @sample ${SYSCONFDIR}/xdg/ui/
-share/examples/xdg/ui/ui_standards.rc
+share/examples/kxmlgui/xdg/ui/ui_standards.rc
 @sample ${SYSCONFDIR}/xdg/ui/ui_standards.rc
 share/kf5/mkspecs/qt_KXmlGui.pri
 share/locale/af/LC_MESSAGES/kxmlgui5.mo

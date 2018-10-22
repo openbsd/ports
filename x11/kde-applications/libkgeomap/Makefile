@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =		library for mapping photos on maps for KDE
 DISTNAME =		libkgeomap-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		kgeomap		0.1
 
 CATEGORIES =		geo graphics net
-HOMEPAGE =		https://projects.kde.org/projects/kde/kdegraphics/libs/libkgeomap
 
 WANTLIB =  c iconv intl m pthread
 WANTLIB += ${COMPILER_LIBCXX}

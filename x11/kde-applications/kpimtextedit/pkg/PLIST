@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:24:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 include/KF5/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonTextEditAction
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertHtmlDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableDialog
@@ -41,7 +40,6 @@ include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/config-kpimtextedit.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticontexteditaction.h
-include/KF5/KPIMTextEdit/kpimtextedit/inserthtmldialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagedialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagewidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttabledialog.h
@@ -81,7 +79,10 @@ lib/cmake/KF5PimTextEdit/KF5PimTextEditTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PimTextEdit/KF5PimTextEditTargets.cmake
 @lib lib/libKF5PimTextEdit.so.${LIBKF5PimTextEdit_VERSION}
 lib/qt5/plugins/designer/kpimtexteditwidgets.so
-share/examples/xdg/kpimtextedit.categories
+share/examples/kpimtextedit/
+share/examples/kpimtextedit/xdg/
+share/examples/kpimtextedit/xdg/kpimtextedit.categories
+@sample ${SYSCONFDIR}/xdg/kpimtextedit.categories
 share/kf5/mkspecs/qt_KPIMTextEdit.pri
 share/locale/ar/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ast/LC_MESSAGES/libkpimtextedit.mo

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/20 04:52:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =	Hex Editor
+VERSION =	0.25.3
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
+
+EPOCH =		0
 
 KDE5 =		Yes
 
@@ -22,7 +25,10 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Script Qt5Widgets Qt5Xml c m qca-qt5
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5Script Qt5Widgets Qt5Xml
+WANTLIB += c m qca-qt5
+
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools
@@ -48,7 +54,8 @@ LIB_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		security/qca-qt5 \
-		x11/qt5/qtscript
+		x11/qt5/qtscript \
+		x11/qt5/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

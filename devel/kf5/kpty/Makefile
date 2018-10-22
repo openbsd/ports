@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT =		interfacing with pseudo terminal devices in KDE
 DISTNAME =		kpty-${VERSION}
 
-SHARED_LIBS =		KF5Pty		4.1
+SHARED_LIBS =		KF5Pty		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n Qt5Core m
 WANTLIB += util

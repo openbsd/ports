@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
 CATEGORIES =	education
-REVISION =	1
 
 KDE5 =		Yes
 
@@ -35,9 +34,5 @@ LIB_DEPENDS =	x11/qt5/qtxmlpatterns \
 		devel/kf5/kxmlgui \
 		devel/kf5/ki18n  \
 		devel/kf5/kitemviews
-
-NO_TEST =	Yes
-
-PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>

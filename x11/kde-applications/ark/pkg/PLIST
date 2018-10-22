@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/19 06:08:18 rsadowski Exp $
-@pkgpath x11/kde4/ark
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:43 rsadowski Exp $
 @conflict kde-l10n-*
+@pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
 lib/qt5/plugins/arkpart.so
@@ -83,7 +83,10 @@ share/doc/HTML/uk/ark/create-protected-archive.png
 share/doc/HTML/uk/ark/extract-dialog.png
 share/doc/HTML/uk/ark/index.cache.bz2
 share/doc/HTML/uk/ark/index.docbook
-share/examples/xdg/ark.categories
+share/examples/ark/
+share/examples/ark/xdg/
+share/examples/ark/xdg/ark.categories
+@sample ${SYSCONFDIR}/xdg/ark.categories
 share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
@@ -149,7 +152,6 @@ share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
-share/mime/packages/kerfuffle.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database

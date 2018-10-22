@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}
 
-SHARED_LIBS =		KF5ItemModels		4.1
+SHARED_LIBS =		KF5ItemModels		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
 

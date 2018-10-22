@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/29 15:10:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -107,10 +107,16 @@ share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Timeline-Clips.png
 share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
 share/doc/HTML/uk/kdenlive/index.cache.bz2
 share/doc/HTML/uk/kdenlive/index.docbook
-share/examples/xdg/kdenlive.categories
-share/examples/xdg/kdenlive_renderprofiles.knsrc
-share/examples/xdg/kdenlive_titles.knsrc
-share/examples/xdg/kdenlive_wipes.knsrc
+share/examples/kdenlive/
+share/examples/kdenlive/xdg/
+share/examples/kdenlive/xdg/kdenlive.categories
+@sample ${SYSCONFDIR}/xdg/kdenlive.categories
+share/examples/kdenlive/xdg/kdenlive_renderprofiles.knsrc
+@sample ${SYSCONFDIR}/xdg/kdenlive_renderprofiles.knsrc
+share/examples/kdenlive/xdg/kdenlive_titles.knsrc
+@sample ${SYSCONFDIR}/xdg/kdenlive_titles.knsrc
+share/examples/kdenlive/xdg/kdenlive_wipes.knsrc
+@sample ${SYSCONFDIR}/xdg/kdenlive_wipes.knsrc
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/apps/kdenlive.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
@@ -448,6 +454,7 @@ share/locale/gl/LC_MESSAGES/kdenlive.mo
 share/locale/he/LC_MESSAGES/kdenlive.mo
 share/locale/hr/LC_MESSAGES/kdenlive.mo
 share/locale/hu/LC_MESSAGES/kdenlive.mo
+share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo
 share/locale/lt/LC_MESSAGES/kdenlive.mo
@@ -470,7 +477,7 @@ share/locale/zh_CN/LC_MESSAGES/kdenlive.mo
 share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/metainfo/
 share/metainfo/org.kde.kdenlive.appdata.xml
-share/mime/packages/kdenlive.xml
+share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml
 @tag update-desktop-database
 @tag update-mime-database

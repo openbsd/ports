@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/09 21:10:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/22 20:30:43 rsadowski Exp $
 include/KF5/KRunner/
 include/KF5/KRunner/KRunner/
 include/KF5/KRunner/KRunner/AbstractRunner
@@ -24,7 +24,10 @@ lib/qt5/qml/org/kde/runnermodel/
 lib/qt5/qml/org/kde/runnermodel/librunnermodelplugin.so
 lib/qt5/qml/org/kde/runnermodel/qmldir
 share/dbus-1/interfaces/kf5_org.kde.krunner1.xml
-share/examples/xdg/krunner.categories
+share/examples/krunner/
+share/examples/krunner/xdg/
+share/examples/krunner/xdg/krunner.categories
+@sample ${SYSCONFDIR}/xdg/krunner.categories
 share/kdevappwizard/templates/runner.tar.bz2
 share/kf5/mkspecs/qt_KRunner.pri
 share/kservicetypes5/plasma-runner.desktop

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:41 rsadowski Exp $
 
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
 
-SHARED_LIBS =	KF5ConfigCore		4.1
-SHARED_LIBS +=	KF5ConfigGui		4.1
+SHARED_LIBS =	KF5ConfigCore		4.2
+SHARED_LIBS +=	KF5ConfigGui		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Xml c m
 

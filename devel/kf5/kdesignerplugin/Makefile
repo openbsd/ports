@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =		integrating KDE 5 widgets with Qt Designer
 DISTNAME =		kdesignerplugin-${VERSION}
@@ -11,8 +11,6 @@ WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5WebKit
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets Qt5Widgets
 WANTLIB += Qt5Xml c m
-
-MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/kdoctools

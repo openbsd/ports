@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
 
-SHARED_LIBS =		KF5Package		5.1
+SHARED_LIBS =		KF5Package		5.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CoreAddons KF5I18n
-WANTLIB += Qt5Core c m
+WANTLIB += Qt5Core Qt5DBus c m
 
 MODULES =		lang/python
 

@@ -6,10 +6,10 @@ CATEGORIES =	devel math
 
 KDE5 =		Yes
 
-SHARED_LIBS +=  Analitza                  0.0 # 8.0
-SHARED_LIBS +=  AnalitzaGui               0.0 # 8.0
-SHARED_LIBS +=  AnalitzaPlot              0.0 # 8.0
-SHARED_LIBS +=  AnalitzaWidgets           0.0 # 8.0
+SHARED_LIBS +=  Analitza                  0.1 # 8.0
+SHARED_LIBS +=  AnalitzaGui               0.1 # 8.0
+SHARED_LIBS +=  AnalitzaPlot              0.1 # 8.0
+SHARED_LIBS +=  AnalitzaWidgets           0.1 # 8.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5Widgets Qt5Xml m

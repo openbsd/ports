@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/18 18:24:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
@@ -44,5 +44,8 @@ LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/syntax-highlighting \
 		x11/grantlee-qt5 \
 		x11/qt5/qtspeech
+
+TEST_IS_INTERACTIVE =	X11
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

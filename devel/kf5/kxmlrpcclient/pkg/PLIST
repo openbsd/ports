@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/04 20:25:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/22 20:30:43 rsadowski Exp $
 include/KF5/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/Client
@@ -12,8 +12,12 @@ lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientConfigVersion.cmake
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientTargets.cmake
 @lib lib/libKF5XmlRpcClient.so.${LIBKF5XmlRpcClient_VERSION}
-share/examples/xdg/kxmlrpcclient.categories
-share/examples/xdg/kxmlrpcclient.renamecategories
+share/examples/kxmlrpcclient/
+share/examples/kxmlrpcclient/xdg/
+share/examples/kxmlrpcclient/xdg/kxmlrpcclient.categories
+@sample ${SYSCONFDIR}/xdg/kxmlrpcclient.categories
+share/examples/kxmlrpcclient/xdg/kxmlrpcclient.renamecategories
+@sample ${SYSCONFDIR}/xdg/kxmlrpcclient.renamecategories
 share/kf5/mkspecs/qt_KXmlRpcClient.pri
 share/locale/ar/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/ast/LC_MESSAGES/libkxmlrpcclient5.mo

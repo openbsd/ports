@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2018/09/19 05:16:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2018/10/22 20:30:43 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.1.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	4
+REVISION =	5
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
@@ -52,20 +52,20 @@ SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 SHARED_LIBS +=  gemini                    0.0 # 16.0
 
 WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
-WANTLIB += KF5Activities KF5Archive KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5UnitConversion KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11
-WANTLIB += Xext c fontconfig freetype gsl gslcblas iconv lcms2
-WANTLIB += m phonon4qt5experimental poppler poppler-qt5 qca-qt5
-WANTLIB += z
+WANTLIB += KChart KF5Activities KF5Archive KF5Auth KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JS
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KDELibs4Support KF5KHtml
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
+WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetCore
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5UnitConversion KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c fontconfig freetype
+WANTLIB += gsl gslcblas iconv lcms2 m phonon4qt5experimental poppler
+WANTLIB += poppler-qt5 qca-qt5 z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
@@ -73,18 +73,18 @@ BUILD_DEPENDS +=devel/boost \
 		devel/gettext-tools \
 		devel/kf5/kdoctools \
 		devel/kf5/threadweaver \
-		graphics/kdiagram \
-		devel/kf5/kross
+		devel/kf5/kross \
+		x11/qt5/qtwebkit
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/gettext \
 		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
 		productivity/librcps \
-		graphics/kdiagram \
+		x11/qt5/qtwebkit \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS +=	x11/qt5/qtwebkit \
+LIB_DEPENDS +=	x11/qt5/qtdeclarative \
 		converters/libiconv \
 		graphics/openexr \
 		devel/kf5/karchive \
@@ -112,11 +112,10 @@ LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kcmutils \
 		devel/kf5/khtml \
+		graphics/kdiagram \
 		devel/gsl \
-		graphics/jpeg \
-		graphics/openjpeg \
 		graphics/lcms2 \
-		print/poppler,,-qt5 \
+		print/poppler,-qt5 \
 		security/qca-qt5
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's

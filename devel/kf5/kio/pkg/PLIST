@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/10/22 20:30:42 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -763,6 +763,10 @@ share/doc/HTML/pt_BR/kioslave5/telnet/index.docbook
 share/doc/HTML/pt_BR/kioslave5/webdav/
 share/doc/HTML/pt_BR/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/webdav/index.docbook
+share/doc/HTML/ru/kcontrol5/
+share/doc/HTML/ru/kcontrol5/proxy/
+share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/proxy/index.docbook
 share/doc/HTML/ru/kioslave5/
 share/doc/HTML/ru/kioslave5/data/
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
@@ -992,8 +996,16 @@ share/doc/HTML/uk/kioslave5/telnet/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook
-share/examples/xdg/accept-languages.codes
-share/examples/xdg/kshorturifilterrc
+share/examples/kio/
+share/examples/kio/xdg/
+share/examples/kio/xdg/accept-languages.codes
+@sample ${SYSCONFDIR}/xdg/accept-languages.codes
+share/examples/kio/xdg/kio.categories
+@sample ${SYSCONFDIR}/xdg/kio.categories
+share/examples/kio/xdg/kshorturifilterrc
+@sample ${SYSCONFDIR}/xdg/kshorturifilterrc
+share/kconf_update/
+share/kconf_update/filepicker.upd
 share/kf5/kcookiejar/
 share/kf5/kcookiejar/domain_info
 share/kf5/mkspecs/qt_KIOCore.pri
@@ -1064,7 +1076,7 @@ share/kservices5/searchproviders/freecode.desktop
 share/kservices5/searchproviders/freedb.desktop
 share/kservices5/searchproviders/fsd.desktop
 share/kservices5/searchproviders/github.desktop
-share/kservices5/searchproviders/gitorious.desktop
+share/kservices5/searchproviders/gitlab.desktop
 share/kservices5/searchproviders/google.desktop
 share/kservices5/searchproviders/google_advanced.desktop
 share/kservices5/searchproviders/google_code.desktop
@@ -1090,7 +1102,6 @@ share/kservices5/searchproviders/kde.desktop
 share/kservices5/searchproviders/kde_apps.desktop
 share/kservices5/searchproviders/kde_forums.desktop
 share/kservices5/searchproviders/kde_look.desktop
-share/kservices5/searchproviders/kde_projects.desktop
 share/kservices5/searchproviders/kde_techbase.desktop
 share/kservices5/searchproviders/kde_userbase.desktop
 share/kservices5/searchproviders/leo.desktop

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:41 rsadowski Exp $
 
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
 
-SHARED_LIBS =	KF5ActivitiesStats	4.1
+SHARED_LIBS =	KF5ActivitiesStats	4.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore Qt5Core
 WANTLIB += Qt5DBus Qt5Sql m

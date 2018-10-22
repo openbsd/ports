@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:04:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kcalc
 @bin bin/kcalc
@@ -68,7 +68,6 @@ share/doc/HTML/uk/kcalc/index.cache.bz2
 share/doc/HTML/uk/kcalc/index.docbook
 share/kcalc/
 share/kcalc/scienceconstants.xml
-share/kconf_update/
 share/kconf_update/kcalcrc.upd
 share/kxmlgui5/
 share/kxmlgui5/kcalc/

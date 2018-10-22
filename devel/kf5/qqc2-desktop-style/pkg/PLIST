@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/04 20:25:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:43 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
@@ -29,7 +29,6 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Popup.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ProgressBar.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioDelegate.qml
-lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RadioIndicator.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RangeSlider.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/RoundButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ScrollBar.qml
@@ -48,6 +47,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ToolButton.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ToolTip.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/DefaultListItemBackground.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/FocusRect.qml
 lib/qt5/qml/org/kde/qqc2desktopstyle/
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so

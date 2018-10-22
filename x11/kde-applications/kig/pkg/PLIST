@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/30 13:43:30 rsadowski Exp $
-@pkgpath x11/kde4/kig
+@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
+@pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
 lib/qt5/plugins/kigpart.so
@@ -185,6 +185,7 @@ share/kig/icons/hicolor/22x22/actions/rbezierN.png
 share/kig/icons/hicolor/22x22/actions/rotation.png
 share/kig/icons/hicolor/22x22/actions/scale.png
 share/kig/icons/hicolor/22x22/actions/segment.png
+share/kig/icons/hicolor/22x22/actions/segment_golden_point.png
 share/kig/icons/hicolor/22x22/actions/segment_midpoint.png
 share/kig/icons/hicolor/22x22/actions/segmentaxis.png
 share/kig/icons/hicolor/22x22/actions/similitude.png
@@ -278,6 +279,7 @@ share/kig/icons/hicolor/32x32/actions/rbezierN.png
 share/kig/icons/hicolor/32x32/actions/rotation.png
 share/kig/icons/hicolor/32x32/actions/scale.png
 share/kig/icons/hicolor/32x32/actions/segment.png
+share/kig/icons/hicolor/32x32/actions/segment_golden_point.png
 share/kig/icons/hicolor/32x32/actions/segment_midpoint.png
 share/kig/icons/hicolor/32x32/actions/segmentaxis.png
 share/kig/icons/hicolor/32x32/actions/similitude.png
@@ -370,6 +372,7 @@ share/kig/icons/hicolor/scalable/actions/rbezierN.svgz
 share/kig/icons/hicolor/scalable/actions/rotation.svgz
 share/kig/icons/hicolor/scalable/actions/scale.svgz
 share/kig/icons/hicolor/scalable/actions/segment.svgz
+share/kig/icons/hicolor/scalable/actions/segment_golden_point.svgz
 share/kig/icons/hicolor/scalable/actions/segment_midpoint.svgz
 share/kig/icons/hicolor/scalable/actions/segmentaxis.svgz
 share/kig/icons/hicolor/scalable/actions/similitude.svgz

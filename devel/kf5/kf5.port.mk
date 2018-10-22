@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.9 2018/06/04 20:25:31 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.10 2018/10/22 20:30:41 rsadowski Exp $
 
-MODKF5_VERSION =	5.46.0
+MODKF5_VERSION =	5.51.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -41,13 +41,15 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration:Bool=Yes
 MODULES +=		x11/qt5
 
 # fix {/usr/local,}/etc/{dbus-1,xdg} and friends
-MODKF5_EXAMPLES_DIR =	${PREFIX}/share/examples/kde
+MODKF5_EXAMPLES_DIR =	${PREFIX}/share/examples/${PKGNAME:C/-[0-9].*//}/
 MODKF5_post-install += \
-	if [ -d ${PREFIX}/etc ]; then \
-		cd ${PREFIX}/etc; \
+	cd ${WRKINST}; \
+	find etc -type d -empty -delete; \
+	if [ -d ${WRKINST}/etc ]; then \
+		cd ${WRKINST}/etc; \
 		${INSTALL_DATA_DIR} ${MODKF5_EXAMPLES_DIR}; \
 		pax -rw * ${MODKF5_EXAMPLES_DIR}; \
-		rm -Rf ${PREFIX}/etc; \
+		rm -Rf ${WRKINST}/etc; \
 	fi; \
 	if [ -d ${WRKINST}/etc/dbus-1 ]; then \
 		cd ${WRKINST}/etc; \
@@ -57,7 +59,7 @@ MODKF5_post-install += \
 	fi; \
 	if [ -d ${WRKINST}/etc/xdg ]; then \
 		cd ${WRKINST}/etc; \
-		pax -rw xdg ${PREFIX}/share/examples; \
+		pax -rw xdg ${MODKF5_EXAMPLES_DIR}; \
 		rm -Rf ${WRKINST}/etc/xdg; \
 	fi;
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 20:25:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:42 rsadowski Exp $
 
 COMMENT =	Utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
 
-SHARED_LIBS =	KF5GuiAddons		4.1
+SHARED_LIBS =	KF5GuiAddons		4.2
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5X11Extras
 WANTLIB += SM X11 Xext m xcb
