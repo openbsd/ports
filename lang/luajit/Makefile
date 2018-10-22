@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/08/21 16:20:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/10/22 19:16:25 kettenis Exp $
 
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
@@ -11,7 +11,7 @@ SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
 COMMENT =	just-in-time compiler for Lua
 V =		2.0.5
-REVISION =	0
+REVISION =	1
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
