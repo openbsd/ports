@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/22 20:04:07 naddy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -8,7 +8,7 @@ DISTNAME=	warzone2100-3.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://wz2100.net/
 
@@ -52,6 +52,10 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 # XXX this is a horrible hack to make sure we get to our glm
 # which is 100% incompatible with ports glm
 MAKE_FLAGS += "DEFS=-DHAVE_CONFIG_H -I${WRKSRC}/includefirst"
+
+# libogg routines are called from the main program, so we need to
+# explicitly link against it.  Wedge it in.
+MAKE_FLAGS += VORBIS_LIBS="`pkg-config --libs vorbis` -logg"
 
 pre-configure:
 	mkdir -p ${WRKSRC}/includefirst
