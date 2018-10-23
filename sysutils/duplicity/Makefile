@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2018/09/03 01:16:06 danj Exp $
+# $OpenBSD: Makefile,v 1.49 2018/10/23 01:03:17 danj Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.18.1
+MODPY_EGG_VERSION = 0.7.18.2
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
