@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/13 07:09:06 steven Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/23 20:35:47 steven Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
 DISTNAME=	arpack96
 PKGNAME=	arpack-96
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	arpack 1.0
 CATEGORIES=	math
 
@@ -23,14 +23,15 @@ BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 
 LIB_DEPENDS =	math/lapack \
 		math/blas
-WANTLIB =	lapack>=1 blas>=1
+WANTLIB =	lapack>=1 blas>=1 m
 
 WRKDIST=	${WRKDIR}/ARPACK
 WRKSRC=		${WRKDIST}/SRC
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBarpack_VERSION:R} \
 		SHLIB_MINOR=${LIBarpack_VERSION:E} \
-		FC="${MODFORTRAN_COMPILER} -cpp"
+		FC="${MODFORTRAN_COMPILER} -cpp" \
+		CC=${MODFORTRAN_COMPILER}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 post-extract:

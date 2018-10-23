@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/13 06:57:36 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/23 20:35:47 steven Exp $
 
 COMMENT=	library of Fortran linear algebra subroutines
 
 VERSION=	3.7.1
 DISTNAME=	lapack-${VERSION}
+REVISION=	0
 
 SHARED_LIBS=	lapack 6.0
 
@@ -24,7 +25,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}
 
 LIB_DEPENDS =	math/blas
-WANTLIB =	blas>=1
+WANTLIB =	blas>=1 m
 
 MODULES=	fortran
 MODFORTRAN_COMPILER = gfortran
@@ -33,7 +34,8 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 MAKE_ENV=	SHLIB_MAJOR=${LIBlapack_VERSION:R} \
 		SHLIB_MINOR=${LIBlapack_VERSION:E} \
 		TIMER=EXT_ETIME \
-		FC="${MODFORTRAN_COMPILER} -cpp"
+		FC="${MODFORTRAN_COMPILER} -cpp" \
+		CC=${MODFORTRAN_COMPILER}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 USE_GROFF =	Yes
 
