@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/04 19:19:20 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/10/23 19:28:18 jasper Exp $
 include/libssh/
 include/libssh/callbacks.h
 include/libssh/legacy.h
@@ -11,9 +11,5 @@ lib/cmake/
 lib/cmake/libssh/
 lib/cmake/libssh/libssh-config-version.cmake
 lib/cmake/libssh/libssh-config.cmake
-lib/libssh.a
 @lib lib/libssh.so.${LIBssh_VERSION}
-lib/libssh_threads.a
-@lib lib/libssh_threads.so.${LIBssh_threads_VERSION}
 lib/pkgconfig/libssh.pc
-lib/pkgconfig/libssh_threads.pc
