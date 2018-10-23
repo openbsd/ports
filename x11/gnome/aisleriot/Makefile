@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2018/09/02 11:53:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2018/10/23 15:56:53 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.6
+GNOME_VERSION =		3.22.7
 
 CATEGORIES =		games
 
@@ -26,12 +26,9 @@ MODULES =		devel/dconf \
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
-# make it possible to build when both guile and guile2 are installed
-# (takes precedence over -I${LOCALBASE}/include)
-MODGNOME_CPPFLAGS =	-I${LOCALBASE}/include/guile/2.2
-
 MODGCONF2_SCHEMAS_DIR =	aisleriot
-CFLAGS += -Wno-strict-prototypes
+
+CFLAGS +=		-Wno-strict-prototypes
 
 # need to matche lang/guile2
 COMPILER =		base-clang ports-gcc
@@ -48,5 +45,13 @@ AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
 CONFIGURE_ENV =		CONFIG_SHELL="${LOCALBASE}/bin/bash"
+
+# make it possible to build when both guile and guile2 are installed
+# (takes precedence over -I${LOCALBASE}/include)
+MODGNOME_CPPFLAGS +=	-I${LOCALBASE}/include/guile/2.2
+CONFIGURE_ENV +=	ac_cv_path_GUILE=${LOCALBASE}/bin/guile2.2
+CONFIGURE_ENV +=	ac_cv_path_GUILD=${LOCALBASE}/bin/guild2.2
+CONFIGURE_ENV +=	ac_cv_path_GUILE_CONFIG=${LOCALBASE}/bin/guile-config2.2
+CONFIGURE_ENV +=	ac_cv_path_GUILE_TOOLS=${LOCALBASE}/bin/guile-tools2.2
 
 .include <bsd.port.mk>
