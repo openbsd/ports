@@ -1,7 +1,19 @@
-$OpenBSD: patch-x2goclient_pro,v 1.4 2018/09/10 15:47:23 sthen Exp $
+$OpenBSD: patch-x2goclient_pro,v 1.5 2018/10/23 19:28:47 jasper Exp $
+
+It's not required to link with libssh_threads anymore since libssh 0.8
+
 Index: x2goclient.pro
 --- x2goclient.pro.orig
 +++ x2goclient.pro
+@@ -132,7 +132,7 @@ SOURCES += src/sharewidget.cpp \
+            src/compat.cpp \
+            src/pulsemanager.cpp
+ 
+-LIBS += -lssh -lssh_threads
++LIBS += -lssh
+ win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
+ 
+ RC_FILE = res/x2goclient.rc
 @@ -168,7 +168,7 @@ else:message("No translation files in project")
  
  TEMPLATE = app
