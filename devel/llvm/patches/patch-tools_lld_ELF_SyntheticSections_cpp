@@ -1,13 +1,30 @@
-$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.7 2018/10/23 08:59:59 ajacoutot Exp $
 
-Work around a bug where discarding the .ARM.exidx section in the armv7 kernel
-linker script makes ld.lld(1) crash.  This has been fixed in a different
-(proper?) way upstream but backporting their fix is a bit too invasive.
+- When merging sections into the output, lld tries to adjust the alignment of
+  the section to be at least as large as the entry size of the section.
+  This causes a later check that validates the alignment to fail if the
+  entry size isn't a power of two.  This happens when building some of the
+  java support code in ports gcc.  Fix this by sticking to the original
+  alignment if the entry size isn't a power of two.
+- Work around a bug where discarding the .ARM.exidx section in the armv7 kernel
+  linker script makes ld.lld(1) crash.  This has been fixed in a different
+  (proper?) way upstream but backporting their fix is a bit too invasive.
 
 Index: tools/lld/ELF/SyntheticSections.cpp
 --- tools/lld/ELF/SyntheticSections.cpp.orig
 +++ tools/lld/ELF/SyntheticSections.cpp
-@@ -2571,6 +2571,9 @@ void ARMExidxSentinelSection::writeTo(uint8_t *Buf) {
+@@ -2512,7 +2512,9 @@ void elf::mergeSections() {
+       continue;
+ 
+     StringRef OutsecName = getOutputSectionName(MS);
+-    uint32_t Alignment = std::max<uint32_t>(MS->Alignment, MS->Entsize);
++    uint32_t Alignment = MS->Alignment;
++    if (isPowerOf2_32(MS->Entsize))
++        Alignment = std::max<uint32_t>(Alignment, MS->Entsize);
+ 
+     auto I = llvm::find_if(MergeSections, [=](MergeSyntheticSection *Sec) {
+       // While we could create a single synthetic section for two different
+@@ -2571,6 +2573,9 @@ void ARMExidxSentinelSection::writeTo(uint8_t *Buf) {
  // The sentinel has to be removed if there are no other .ARM.exidx entries.
  bool ARMExidxSentinelSection::empty() const {
    OutputSection *OS = getParent();
