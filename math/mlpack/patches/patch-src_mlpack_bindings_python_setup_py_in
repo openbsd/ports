@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_mlpack_bindings_python_setup_py_in,v 1.1.1.1 2018/10/23 10:44:04 espie Exp $
+* setup.py silliness
+
+Index: src/mlpack/bindings/python/setup.py.in
+--- src/mlpack/bindings/python/setup.py.in.orig
++++ src/mlpack/bindings/python/setup.py.in
+@@ -42,8 +42,8 @@ else:
+                   library_dirs=['${CMAKE_BINARY_DIR}/lib/'],
+                   # CMAKE_CXX_FLAGS seems to have an extra space.
+                   extra_compile_args=('-DBINDING_TYPE=BINDING_TYPE_PYX ' + \
+-                      '-std=c++11${CMAKE_CXX_FLAGS}').split(' '),
+-                  extra_link_args=['${OpenMP_CXX_FLAGS}'],
++                      '-std=c++11 ${CMAKE_CXX_FLAGS}').split(' '),
++                  #extra_link_args=['${OpenMP_CXX_FLAGS}'],
+                   undef_macros=[] if len("${DISABLE_CFLAGS}") == 0 \
+                       else '${DISABLE_CFLAGS}'.split(';')) \
+         for name in pyxs if name == module]
+@@ -61,8 +61,8 @@ else:
+                   library_dirs=['${CMAKE_BINARY_DIR}/lib/'],
+                   # CMAKE_CXX_FLAGS seems to have an extra space.
+                   extra_compile_args=('-DBINDING_TYPE=BINDING_TYPE_PYX ' + \
+-                      '-std=c++11${CMAKE_CXX_FLAGS}').split(' '),
+-                  extra_link_args=['${OpenMP_CXX_FLAGS}'],
++                      '-std=c++11 ${CMAKE_CXX_FLAGS}').split(' '),
++                  #extra_link_args=['${OpenMP_CXX_FLAGS}'],
+                   undef_macros=[] if len("${DISABLE_CFLAGS}") == 0 \
+                       else '${DISABLE_CFLAGS}'.split(';')) \
+         for name in pyxs]
