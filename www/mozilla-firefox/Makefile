@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.363 2018/10/08 15:28:05 landry Exp $
+# $OpenBSD: Makefile,v 1.364 2018/10/23 16:52:48 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	62.0.3
+MOZILLA_VERSION =	63.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	79.0
+SO_VERSION =	80.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -48,8 +47,12 @@ BUILD_DEPENDS +=	lang/rust
 BUILD_DEPENDS +=	devel/llvm
 # 61 requires both versions of python
 BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
+# 63 requires node because why not #1483595
+BUILD_DEPENDS +=	lang/node
+# 63 requires cbindgen #1478813
+BUILD_DEPENDS +=	devel/cbindgen
 
-WANTLIB += X11-xcb Xcursor Xi fribidi intl xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -71,7 +74,6 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 DPB_PROPERTIES =	lonesome
 .endif
-#CONFIGURE_ARGS +=	--enable-linker=lld
 CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
 
 SUBST_VARS +=	LOCALBASE X11BASE
