@@ -1,0 +1,5 @@
+This is an extremely simple prompting module, based on the extremely
+simple prompt offered by ExtUtils::MakeMaker.
+
+It doesn't do any validation, coloring, menus, timeouts etc., it
+just prompts with a default.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/24 19:41:09 bluhm Exp $
+${P5SITE}/IO/
+${P5SITE}/IO/Prompt/
+${P5SITE}/IO/Prompt/Tiny.pm
+@man man/man3p/IO::Prompt::Tiny.3p
