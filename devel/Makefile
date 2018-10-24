@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1776 2018/10/19 00:08:13 danj Exp $
+# $OpenBSD: Makefile,v 1.1777 2018/10/24 20:01:29 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -803,6 +803,8 @@
      SUBDIR += p5-IO-LockedFile
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-Pager
+     SUBDIR += p5-IO-Pipely
+     SUBDIR += p5-IO-Prompt-Tiny
      SUBDIR += p5-IO-SessionData
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tee
@@ -886,6 +888,7 @@
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
      SUBDIR += p5-MooseX-Getopt
      SUBDIR += p5-MooseX-Has-Sugar
+     SUBDIR += p5-MooseX-InsideOut
      SUBDIR += p5-MooseX-LazyRequire
      SUBDIR += p5-MooseX-Log-Log4perl
      SUBDIR += p5-MooseX-LogDispatch
