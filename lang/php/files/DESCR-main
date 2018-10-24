@@ -1,12 +1,19 @@
-At the most basic level, PHP can do anything any other CGI program can
-do, such as collect form data, generate dynamic page content, or send
-and receive cookies.
+PHP is a popular general-purpose scripting language. It can be embedded
+in HTML documents and is frequently used as a server-side language for
+web development but can also be used for command-line scripts.
 
-PHP also has support for talking to other services using protocols such
-as IMAP, SNMP, NNTP, POP3, or even HTTP. You can also open raw network
-sockets and interact using other protocols.
+It is cross-platform and has various front-ends ("SAPIs") that can be
+used in conjunction with many web servers.
 
-This package installs a stand-alone binary which can be used for
-command-line scripts, as well as an Apache module. It also contains the
-pdo_sqlite driver that implements the PHP Data Objects (PDO) interface
-to enable access to SQLite 3 databases.
+This main package includes the most common SAPIs: cli (the stand-alone
+binary which can be used for command-line scripts) and fpm (the "FastCGI
+process manager" which manages a pool of separate processes that accept
+web-server requests over the FastCGI protocol).
+
+Other SAPIs are packaged separately: php-cgi ("old style" CGI binary),
+php-dbg (debugger), php-apache (an Apache 2 module).
+
+Many language extensions are available - the most common are included
+directly in the main packages, but others (usually requiring additional
+dependencies) are packaged separately, notably those adding database
+connectivity.

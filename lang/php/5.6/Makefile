@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2018/10/17 12:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2018/10/24 10:19:36 sthen Exp $
 
 PV=		5.6
 V=		${PV}.38
 REVISION=	1
-REVISION-main=	2
+REVISION-main=	3
 REVISION-apache=2
 
 MASTER_SITES0=	https://download.suhosin.org/
