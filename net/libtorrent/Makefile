@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2018/07/19 14:04:57 tj Exp $
+# $OpenBSD: Makefile,v 1.56 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
 
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		https://rtorrent.net/downloads/
 
 WANTLIB=		crypto m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		devel/cppunit
 

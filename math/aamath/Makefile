@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/20 08:21:35 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3
-REVISION =		3
+REVISION =		4
 CATEGORIES=		math
 
 HOMEPAGE=		http://fuse.superglue.se/aamath/
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
 
 WANTLIB=		c m ${COMPILER_LIBCXX} termcap readline
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/aamath

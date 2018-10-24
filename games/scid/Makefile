@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	chess database software
 DISTNAME =	scid-4.6.4
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://scid.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -16,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m z
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scid/}
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	lang/python \
 		x11/tk

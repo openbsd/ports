@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2018/05/16 20:37:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.11.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio devel
 
@@ -15,6 +15,8 @@ HOMEPAGE= 	https://taglib.github.io/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} m z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://taglib.github.io/releases/
 

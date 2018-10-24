@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2018/06/27 21:04:05 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT =		fast and light graphical web browser
 
 DISTNAME =		dillo-3.0.5
 CATEGORIES =		www
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://www.dillo.org/
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c crypto
 WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://www.dillo.org/download/
 

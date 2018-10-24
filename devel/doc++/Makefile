@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/01 09:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION =	11
+REVISION =	12
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c intl m ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docpp/}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS=	print/ghostscript/gnu \
 		print/texlive/base

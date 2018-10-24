@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2018/07/29 15:15:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.126 2018/10/24 14:28:13 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -19,12 +19,12 @@ FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
-REVISION-mysql=		12
-REVISION-postgresql=	9
-REVISION-main=		15
-REVISION-html=		4
-REVISION-examples=	5
-REVISION-sqlite2=	9
+REVISION-mysql=		13
+REVISION-postgresql=	10
+REVISION-main=		16
+REVISION-html=		5
+REVISION-examples=	6
+REVISION-sqlite2=	10
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk
@@ -48,7 +48,6 @@ MASTER_SITES=	https://download.qt.io/archive/qt/3/
 # Old official site
 MASTER_SITES0=	ftp://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
 
-
 PATCHFILES=	qt-x11-immodule-unified-qt3.3.8-20070321-gentoo.diff.bz2:0
 PATCH_DIST_STRIP=	-p1
 
@@ -66,6 +65,8 @@ FLAVOR?=
 
 # GPL/QPL
 PERMIT_PACKAGE_CDROM=	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GROFF =	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \

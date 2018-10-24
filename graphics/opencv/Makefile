@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/04/17 05:58:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2018/10/24 14:28:06 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -15,8 +15,9 @@ GH_TAGNAME = 		${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-$V
-REVISION-java =		0
-REVISION-main =		0
+REVISION-java =		1
+REVISION-main =		1
+REVISION-docs =		0
 
 .for i in opencv_calib3d opencv_contrib opencv_core opencv_features2d \
   opencv_flann opencv_gpu opencv_highgui opencv_imgproc opencv_legacy \
@@ -55,6 +56,8 @@ WANTLIB-java += opencv_calib3d opencv_contrib opencv_core opencv_features2d
 WANTLIB-java += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
 WANTLIB-java += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
 WANTLIB-java += opencv_ocl opencv_photo opencv_video
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES =	-main -docs -java
 PSEUDO_FLAVORS =	no_docs no_java

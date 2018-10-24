@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
 DISTNAME =	dxpc-${VERSION}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	net x11
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -16,6 +16,8 @@ HOMEPAGE =		http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS =		archivers/lzo
 WANTLIB =		c m ${COMPILER_LIBCXX} lzo
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_X11 = 		Yes
 

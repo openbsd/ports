@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=	Equinox GTK+2 engine
 
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	6
+REVISION=	7
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}
@@ -24,6 +24,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 

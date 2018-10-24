@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =	ODBC bindings for Python
 
 MODPY_EGG_VERSION=3.0.10
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	databases
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += iodbc m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODPY_PI =	Yes
 

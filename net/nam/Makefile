@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2018/04/16 23:16:52 schwarze Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
 V=		1.15
 DISTNAME=	nam-src-$V
 PKGNAME=	nam-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -20,6 +20,8 @@ MODULES	+=		x11/tk
 WANTLIB +=		X11 Xext c m otcl ${COMPILER_LIBCXX} z
 WANTLIB +=		${MODTK_WANTLIB}
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/tclcl

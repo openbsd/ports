@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/20 11:16:33 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:13 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		powerful text editor for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -21,6 +22,8 @@ WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo dbus-1
 WANTLIB += enchant gdk-3 gdk_pixbuf-2.0 girepository-1.0 graphite2
 WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz lzma pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 peas-1.0 peas-gtk-1.0 png xml2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome

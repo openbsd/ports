@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/08 15:24:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	system for sequential logic synthesis and verification
 DISTNAME =	abc-1.01.20180722
 CATEGORIES =	cad
+REVISION =	0
 
 GH_ACCOUNT =	berkeley-abc
 GH_PROJECT =	abc
@@ -15,6 +16,8 @@ MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m readline
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 

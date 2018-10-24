@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	12
+REVISION=	13
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -24,6 +24,8 @@ WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate>=1
 WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
 WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
 WANTLIB += tag
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	archivers/zip \
 		devel/gettext-tools

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/27 21:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
@@ -7,8 +7,8 @@ V =			1.0.1
 DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
-REVISION-dvdcpy =	3
-REVISION-main =		7
+REVISION-dvdcpy =	4
+REVISION-main =		8
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -40,6 +40,8 @@ WANTLIB-main += ${COMPILER_LIBCXX} theora tiff xcb xcb-render xcb-shm xml2 z
 WANTLIB-main += harfbuzz graphite2 Xau Xdmcp lzma
 
 WANTLIB-dvdcpy += c dvdread
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/07/18 22:01:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -11,8 +11,9 @@ PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
-REVISION-python=	0
-REVISION-ruby=		0
+REVISION-python=	1
+REVISION-ruby=		1
+REVISION-main=	0
 
 MODULES=	lang/python \
 		lang/ruby
@@ -30,7 +31,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11
-COMPILER=       base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		databases/xapian-core
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	enhanced performance test of filesystem I/O
 
@@ -6,7 +6,7 @@ DISTNAME=	bonnie++-1.97.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.coker.com.au/bonnie++/
 
@@ -14,6 +14,8 @@ HOMEPAGE=	http://www.coker.com.au/bonnie++/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf dest

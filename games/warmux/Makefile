@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/27 21:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
 DISTNAME=		warmux-11.04.1
-REVISION=		8
+REVISION=		9
 WRKDIST=		${WRKDIR}/warmux-11.04
 CATEGORIES=		games
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} 
 WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf X11 c crypto
 WANTLIB += curl intl m nghttp2 png pthread ssl xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://download.gna.org/warmux/ \
 			http://download.gna.org/warmux/archive/

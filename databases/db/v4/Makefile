@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -12,11 +12,11 @@ PKGSPEC-tcl =   db-tcl->=4,<5|db-tcl->=4v0,<5v0
 PKGNAME-java=	db-java-${VERSION}
 PKGNAME-tcl=	db-tcl-${VERSION}
 EPOCH-main=	0
-REVISION-main = 5
+REVISION-main = 6
 EPOCH-java=	0
 EPOCH-tcl=	0
-REVISION-java =	6
-REVISION-tcl =	2
+REVISION-java =	7
+REVISION-tcl =	3
 DBLIBDIR=	lib/db4
 
 # XXX LIBdb_VERSION is used by x11/gnome/libgda
@@ -24,6 +24,8 @@ SHARED_LIBS +=	db                   5.0      # .0.0
 SHARED_LIBS +=	db_cxx               6.0      # .0.0
 SHARED_LIBS +=	db_java              5.0      # .0.0
 SHARED_LIBS +=	db_tcl               6.0      # .0.0
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES0=	${HOMEPAGE}db/update/${VERSION}/
 # patch 2 has converted DOS line-endings; no other change

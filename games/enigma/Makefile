@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.21
 DISTNAME=	enigma-${V}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	games x11
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer SDL_ttf
 WANTLIB += c curl enet intl m png xerces-c z zipios
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enigma-game/}
 

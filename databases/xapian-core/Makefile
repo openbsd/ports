@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/12/01 14:41:22 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	search engine library
 
 V=		1.4.5
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
+REVISION=	0
 
 SHARED_LIBS +=  xapian	4.0	# .28.2
 
@@ -21,7 +22,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11
-COMPILER=       base-clang ports-gcc ports-clang
+COMPILER=       base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 

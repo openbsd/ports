@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=	Bauer stereophonic-to-binaural DSP
-REVISION=	2
+REVISION=	3
 
 DISTNAME=	libbs2b-3.1.0
 
@@ -15,6 +15,8 @@ HOMEPAGE=	http://bs2b.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC c m ogg sndfile ${COMPILER_LIBCXX} vorbis vorbisenc
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bs2b/}
 

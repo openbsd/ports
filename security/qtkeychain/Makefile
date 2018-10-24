@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
 GH_TAGNAME =		v0.7.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		qtkeychain	1.0 # 0.4
 SHARED_LIBS +=		qt5keychain	1.0 # 0.4
@@ -18,6 +18,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 

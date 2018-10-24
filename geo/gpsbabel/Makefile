@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -11,9 +11,9 @@ PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
 CATEGORIES=		geo
 
-REVISION-main=		1
-REVISION-tk=		1
-REVISION-qt=		2
+REVISION-main=		2
+REVISION-tk=		2
+REVISION-qt=		3
 
 HOMEPAGE=		http://www.gpsbabel.org/
 
@@ -21,6 +21,8 @@ HOMEPAGE=		http://www.gpsbabel.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://www.linklevel.net/distfiles/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf qmake

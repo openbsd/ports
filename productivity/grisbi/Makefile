@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-1.0.4
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	productivity x11
 
@@ -24,6 +24,8 @@ WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m ofx
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
 WANTLIB += iconv intl fribidi
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	textproc/intltool
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/07/26 22:45:26 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:07 sthen Exp $ 
 
 BROKEN-powerpc=	fails to build
 BROKEN-hppa =	fails to configure
@@ -6,7 +6,7 @@ BROKEN-hppa =	fails to configure
 COMMENT=	library for machine-independent, array-oriented data access
 
 DISTNAME=	netcdf-3.6.2
-REVISION =	5
+REVISION =	6
 CATEGORIES=	math
 
 SHARED_LIBS=	netcdf		4.0 \
@@ -24,6 +24,8 @@ BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
 

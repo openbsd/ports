@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
 V=		0.112.0
 DISTNAME=	polkit-qt-1-${V}
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=  polkit-qt-agent-1         2.0 # 0.99
 SHARED_LIBS +=  polkit-qt-core-1          2.0 # 0.99
@@ -28,6 +28,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m polkit-agent-1 polkit-gobject-1
 WANTLIB += ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/apps/KDE4.x/admin/}
 

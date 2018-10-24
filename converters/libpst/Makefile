@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/08/13 10:54:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2018/10/24 14:27:59 sthen Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -11,6 +11,8 @@ SHARED_LIBS +=  pst                  3.0      # 5.14
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
+REVISION-main=		0
+REVISION-python=	0
 
 CATEGORIES=		converters mail
 
@@ -30,6 +32,8 @@ WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
 WANTLIB-python += ${cWANTLIB} iconv
 WANTLIB-python += pst boost_python
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${HOMEPAGE}/packages/ \
 			https://distfiles.nl/

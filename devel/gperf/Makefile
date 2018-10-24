@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2018/01/19 23:01:41 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =	perfect hash functions, to help write parsers
 
 DISTNAME =	gperf-3.1
 CATEGORIES =   	devel
+REVISION =	0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -13,6 +14,8 @@ HOMEPAGE =	https://www.gnu.org/software/gperf/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gperf/}
 

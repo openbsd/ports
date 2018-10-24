@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2018/10/24 14:28:08 sthen Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,10 +18,10 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		23
-REVISION-aalib=		11
-REVISION-dv=		11
-REVISION-caca=		11
+REVISION-main=		24
+REVISION-aalib=		12
+REVISION-dv=		12
+REVISION-caca=		12
 
 MULTI_PACKAGES=		-main -aalib -dv -caca
 

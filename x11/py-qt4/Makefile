@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
@@ -12,8 +12,8 @@ PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 EPOCH=		0
-REVISION-docs=	0
-REVISION-main=	1
+REVISION-docs=	1
+REVISION-main=	2
 
 CATEGORIES=	x11 devel
 
@@ -27,6 +27,8 @@ WANTLIB += QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest
 WANTLIB += QtWebKit QtXml QtXmlPatterns SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c dbus-1 fontconfig freetype m phonon pthread ${COMPILER_LIBCXX}
 WANTLIB += ${MODPY_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=	-main -docs
 

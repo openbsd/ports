@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jmmv/kyua
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODLUA_WANTLIB} atf-c atf-c++ c lutok m pthread sqlite3 ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes

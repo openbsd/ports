@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/28 11:23:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 DISTNAME =	quazip-0.7.3
-REVISION =	3
+REVISION =	4
 CATEGORIES =	archivers
 
 # keep those in sync
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB += ${COMPILER_LIBCXX} m z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=quazip/}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake devel/qmake
 # qmake.port.mk is used for tests only

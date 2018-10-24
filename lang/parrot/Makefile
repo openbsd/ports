@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		7.10.0
 DISTNAME=	parrot-$V
-REVISION=	3
+REVISION=	4
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	11.0
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU c glut gmp iconv icudata icuuc intl m ncurses pthread
 WANTLIB += readline ${COMPILER_LIBCXX} util z ffi
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		graphics/glew \
 			devel/pcre

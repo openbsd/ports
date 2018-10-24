@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
 DISTNAME =	therubyracer-0.12.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/cowboyd/therubyracer
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	pthread ${COMPILER_LIBCXX} v8
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/ruby-libv8,${MODRUBY_FLAVOR}>=3.16.14.15,<3.16.15 \

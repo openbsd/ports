@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/10/08 15:25:58 landry Exp $
+# $OpenBSD: Makefile,v 1.82 2018/10/24 14:28:07 sthen Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -24,6 +24,8 @@ BV =			${BV-${MACHINE_ARCH}}
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
+REVISION-doc =		0
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -doc
 
@@ -38,6 +40,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-doc =
+
+# XXX should this actually just be ports-clang?
+COMPILER =		base-clang
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/

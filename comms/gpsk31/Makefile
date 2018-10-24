@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/27 21:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
-REVISION=	17
-CATEGORIES=    	comms hamradio
+REVISION=	18
+CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
 
@@ -24,6 +24,7 @@ WANTLIB += xcb-shm
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
+COMPILER =		base-clang ports-gcc base-gcc
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf no-autoheader

@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/12 08:37:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =		hexagonal tile-based puzzle game
 DISTNAME =		hex-a-hop-1.1.0
 CATEGORIES =		games
 HOMEPAGE =		http://hexahop.sourceforge.net
-REVISION =		0
+REVISION =		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		SDL SDL_mixer SDL_ttf c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hexahop/}
 

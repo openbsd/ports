@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	python bindings for poppler
 
@@ -6,7 +6,7 @@ DISTNAME=	pypoppler-0.12.1
 PKGNAME=        ${DISTNAME:S/^py/py-/}
 CATEGORIES=	print
 
-REVISION=	11
+REVISION=	12
 
 MASTER_SITES=	${HOMEPAGE}/trunk/development/+download/
 HOMEPAGE=	http://launchpad.net/poppler-python/
@@ -22,6 +22,8 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jpeg lcms2 m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler-glib>=8
 WANTLIB += poppler>=10 pthread ${COMPILER_LIBCXX} tiff xcb xcb-render
 WANTLIB += xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		lang/python
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.2.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	GUI                  2.0      # .0.1
 
@@ -17,6 +17,8 @@ HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += SDL iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl

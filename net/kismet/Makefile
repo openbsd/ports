@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2018/10/24 14:28:08 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,8 +10,8 @@ NOT_FOR_ARCHS=	m88k
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-REVISION-main =	9
-REVISION-gpsmap= 10
+REVISION-main =	10
+REVISION-gpsmap= 11
 PKGNAME-main=	kismet-${V:S,-,,g}
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
@@ -23,6 +23,8 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # "old" is required for setting --sysconfdir
 CONFIGURE_STYLE=	gnu old

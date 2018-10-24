@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		9
+REVISION =		10
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -22,6 +22,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sndfile sndio speex ssl swresample vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xcb xcb-render xcb-shm
 WANTLIB += xvidcore z zip
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2

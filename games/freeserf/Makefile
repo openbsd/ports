@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	Settlers 1 (Serf City) clone
 DISTNAME =	freeserf-0.1.1.20180302
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 # Switch to GH_TAGNAME or a real tarball once 0.2 is released.
 GH_ACCOUNT =	freeserf
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m xmp
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 

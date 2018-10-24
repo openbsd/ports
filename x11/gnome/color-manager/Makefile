@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2018/06/29 22:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=		color profile manager for GNOME
 
 GNOME_PROJECT=		gnome-color-manager
 GNOME_VERSION=		3.28.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -15,6 +15,8 @@ WANTLIB += ${COMPILER_LIBCXX} c cairo canberra canberra-gtk3 colord
 WANTLIB += colord-gtk colordprivate exif exiv2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl lcms2 pango-1.0
 WANTLIB += tiff vte-2.91
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/meson \
 			x11/gnome

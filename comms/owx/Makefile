@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
 DISTNAME =	owx-20110917
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	comms
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB =	c m ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://distfiles.nl/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =	CXX="${CXX}" PORTS_CXXFLAGS="${CXXFLAGS}"
 

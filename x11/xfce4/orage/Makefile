@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2018/06/29 22:16:35 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
 XFCE_VERSION=	4.12.1
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://www.kolumbus.fi/~w408237/orage/
 # GPLv2
@@ -28,5 +28,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render \
 		xfce4util z xcb ical icalss icalvcal popt ffi \
 		xcb-shm xfce4panel-1.0 notify dbus-1 dbus-glib-1 graphite2 \
 		harfbuzz icui18n icuuc iconv intl ${COMPILER_LIBCXX} db icudata
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
-REVISION =	3
+REVISION =	4
 DISTNAME=	wv2-0.4.2
 SHARED_LIBS +=	wv2                  4.0      # .1.8
 CATEGORIES=	converters
@@ -13,6 +13,8 @@ HOMEPAGE=	http://wvware.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB += glib-2.0 gsf-1 iconv m ${COMPILER_LIBCXX} z
 

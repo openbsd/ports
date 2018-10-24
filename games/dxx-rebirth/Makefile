@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:02 sthen Exp $
 
 V =		0.60
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_v${V}-weekly-11-08-17-src
 PKGNAME =	dxx-rebirth-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.dxx-rebirth.com/
 MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
@@ -19,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_mixer c m physfs
 MASTER_SITES =	http://www.dxx-rebirth.com/download/dxx/user/afuturepilot/
 
 # C++14
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/scons
 MODSCONS_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

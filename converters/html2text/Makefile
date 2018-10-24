@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/15 11:05:43 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:27:59 sthen Exp $
 
 PORTROACH=		skipv:1.3.2
 
 COMMENT=		advanced HTML-to-text converter
 
 DISTNAME=		html2text-1.3.2a
-REVISION =		4
+REVISION =		5
 CATEGORIES=		converters textproc
 
 
@@ -18,6 +18,8 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 MASTER_SITES=		http://www.mbayer.de/html2text/downloads/ \
 			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CXX="${CXX}"

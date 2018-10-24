@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	scim input method module for chewing
 
 GH_ACCOUNT=	chewing
 GH_PROJECT=	scim-chewing
 GH_TAGNAME=	v0.5.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	inputmethods chinese
 
@@ -21,6 +21,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png scim-1.0 scim-gtkutils-1.0
 WANTLIB += scim-x11utils-1.0 sqlite3 xcb xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	textproc/intltool
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \

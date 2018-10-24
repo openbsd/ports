@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2017/07/26 22:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	gtk+2 chess board interface
 
 DISTNAME=	eboard-1.1.1
 CATEGORIES=	games x11
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
@@ -17,6 +17,8 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		gobject-2.0 gtk-x11-2.0 intl m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 png pthread \
 		sndio ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 

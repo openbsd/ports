@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =		overhead shooting game
 
 V = 			1.30
 DISTNAME =		orbital_eunuchs_sniper-${V}
 PKGNAME = 		snipe2d-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -17,6 +17,8 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		SDL c m pthread ${COMPILER_LIBCXX} SDL_image>=2 SDL_mixer>=3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://icculus.org/oes/
 

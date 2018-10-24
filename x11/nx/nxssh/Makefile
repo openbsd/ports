@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
 DASH_VER=	2
 DISTNAME=	nxssh-${MAJOR_VERSION}-${DASH_VER}
 PKGNAME=	nxssh-${MAJOR_VERSION}.${DASH_VER}
-REVISION =	9
+REVISION =	10
 
 CATEGORIES=	net
 
 WANTLIB += Xcomp c crypto jpeg m png ${COMPILER_LIBCXX} util z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://distfiles.nl/
 

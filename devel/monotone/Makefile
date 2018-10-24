@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	distributed version control system
 
 VERSION=	1.1
 DISTNAME=	monotone-${VERSION}
 CATEGORIES=	devel
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://monotone.ca/
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += botan-1.10 c iconv idn intl m pcre pthread sqlite3 z
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${HOMEPAGE}/downloads/${VERSION}/
 EXTRACT_SUFX=	.tar.bz2

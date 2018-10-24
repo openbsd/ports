@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/09/27 08:13:00 phessler Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.6p1
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION:S/p/pl/}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	net devel
 SHLIB_VERSION =	1.0
 
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto m pthread ssl ${COMPILER_LIBCXX} iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	databases/iodbc \
 		databases/mariadb \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/09/13 14:17:49 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.2.3
 XFCE_GOODIE=	tumbler
+REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -20,6 +21,8 @@ WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
 WANTLIB += ${COMPILER_LIBCXX} ass avfilter avresample fribidi
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
 WANTLIB += vpx x264 x265 xvidcore
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/xfce4
 MODXFCE_PURGE_LA =	lib/tumbler-1/plugins lib/tumbler-1/plugins/cache

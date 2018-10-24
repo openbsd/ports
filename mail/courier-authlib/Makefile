@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/01/12 16:09:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,8 +7,8 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.68.0
-REVISION=		2
-REVISION-main=		3
+REVISION=		3
+REVISION-main=		4
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -37,6 +37,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69

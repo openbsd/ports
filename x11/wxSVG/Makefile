@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/04/26 21:03:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -7,6 +7,7 @@ EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS+=		wxsvg	3.3
 
@@ -34,6 +35,8 @@ WANTLIB += x264 x265 xcb xcb-render xcb-shm xvidcore z
 .if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
 WANTLIB += $(LIBECXX)
 .endif
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		graphics/cairo \
 			graphics/ffmpeg \

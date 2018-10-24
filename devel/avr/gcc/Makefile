@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2018/09/13 11:13:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
 V=		5.4.0
-REVISION=	0
+REVISION=	1
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
@@ -11,7 +11,10 @@ SHARED_LIBS +=  cc1                       0.0 # 0.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c gmp mpfr ${COMPILER_LIBCXX} m mpc
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(V)/}
 EXTRACT_SUFX=	.tar.bz2

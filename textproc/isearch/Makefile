@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	text search engine by CNIDR
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	textproc databases
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c m ${COMPILER_LIBCXX} 
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/software/Isearch/
 

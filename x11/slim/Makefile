@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2018/09/04 12:46:28 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.6
-REVISION=	22
+REVISION=	23
 
 SHARED_LIBS=	slim	0.0 # 1.3
 
@@ -24,6 +24,8 @@ LIB_DEPENDS=	graphics/jpeg \
 
 WANTLIB += X11 Xft Xmu Xrandr Xrender c ck-connector dbus-1
 WANTLIB += fontconfig freetype jpeg m png pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_ARGS= -DUSE_CONSOLEKIT:Bool=Yes
 

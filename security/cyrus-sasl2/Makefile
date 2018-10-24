@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.102 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=		cyrus-sasl-2.1.26
-REVISION=		25
+REVISION=		26
 
 SHARED_LIBS +=  sasl2                3.0      # 3.0
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	yes
 MASTER_SITES=		ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 WANTLIB += c crypto
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 

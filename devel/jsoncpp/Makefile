@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2018/02/18 20:50:25 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =		JSON parsing C++ API
 
 GH_ACCOUNT =		open-source-parsers
 GH_PROJECT =		jsoncpp
 GH_TAGNAME =		1.8.4
-REVISION =		0
+REVISION =		1
 
 # no upstream revision
 SHARED_LIBS =		jsoncpp 4.0
@@ -20,6 +20,8 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/meson
 

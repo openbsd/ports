@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/21 14:38:14 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT =		messagepack (de)serializer
 
@@ -8,6 +8,7 @@ COMMENT =		messagepack (de)serializer
 MODPY_EGG_VERSION =	0.5.6
 DISTNAME =		msgpack-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net textproc
 
@@ -19,6 +20,8 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 MODPY_PI =		Yes

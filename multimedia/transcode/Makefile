@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	12
+REVISION=	13
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -24,6 +24,8 @@ WANTLIB += lzma ${COMPILER_LIBCXX} swresample x265
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.
 WANTLIB += xvidcore
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 FLAVORS=	lzo mjpegtools altivec
 FLAVOR?=

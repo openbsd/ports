@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:08 sthen Exp $
 COMMENT =		Qt/C++ library wrapper for the GPodder
 DISTNAME =		libmygpo-qt.1.0.7
 PKGNAME =		${DISTNAME:S/./-/}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS =		mygpo-qt	0.0
 
@@ -13,6 +13,8 @@ HOMEPAGE =		http://wiki.gpodder.org/wiki/Libmygpo-qt
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		lib/qt4/QtNetwork m qjson ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://stefan.derkits.at/files/libmygpo-qt/
 

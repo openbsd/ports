@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.124 2018/10/17 12:44:02 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.125 2018/10/24 14:28:07 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -40,6 +40,7 @@ INI_TEMPLATES?=		development production
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
+COMPILER=		base-clang ports-gcc base-gcc
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT-main=	ISO-C API and CLI for generating UUIDs
 COMMENT-perl=	UUID modules for Perl
@@ -12,8 +12,8 @@ CATEGORIES=		devel
 SHARED_LIBS +=	ossp-uuid            0.0      # 16.22
 SHARED_LIBS +=	ossp-uuid++          0.0      # 16.22
 
-REVISION-main =		5
-REVISION-perl=		7
+REVISION-main =		6
+REVISION-perl=		8
 
 # Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
 # If you are porting something which needs libuuid, you may need
@@ -31,6 +31,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MULTI_PACKAGES=		-main -perl
 
 WANTLIB-main=		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CATEGORIES-perl=	devel perl5
 WANTLIB-perl=		c perl ossp-uuid

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/04/10 19:07:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -30,6 +30,7 @@ SHARED_LIBS +=  ijg16                     0.0 # 3.6
 SHARED_LIBS +=  ijg8                      0.0 # 3.6
 SHARED_LIBS +=  oflog                     0.0 # 3.6
 SHARED_LIBS +=  ofstd                     0.0 # 3.6
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -43,6 +44,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto jpeg m png pthread ssl ${COMPILER_LIBCXX} tiff
 WANTLIB += xml2 z charset iconv
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		converters/libiconv \
 			graphics/jpeg \

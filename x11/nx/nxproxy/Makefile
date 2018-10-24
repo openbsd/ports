@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=		NX X proxy support tool
 
 DASHVERSION=		1
 DISTNAME=		nxproxy-${MAJOR_VERSION}-${DASHVERSION}
 PKGNAME=		nxproxy-${MAJOR_VERSION}.${DASHVERSION}
-REVISION =		3
+REVISION =		4
 
 MASTER_SITES=	${MASTER_SITES_NX:=nxproxy/}
 
 WANTLIB += c m ${COMPILER_LIBCXX} Xcomp
+
+COMPILER =		base-clang ports-gcc base-gcc
+
 LIB_DEPENDS=		x11/nx/nxcomp
 
 CONFIGURE_STYLE=        gnu

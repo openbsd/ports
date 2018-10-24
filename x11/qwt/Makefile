@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/28 18:47:00 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT-main =		Qt Widgets for Technical Applications
 COMMENT-common =	common files for the qwt packages
@@ -9,7 +9,7 @@ SHARED_LIBS =		qwt${QTLIBSUFFIX} 7.0
 PKGNAME-main =	qwt-${VERSION}
 FULLPKGNAME-common =	qwt-common-${VERSION}
 FULLPKGPATH-common =	x11/qwt,-common
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
@@ -29,6 +29,8 @@ USE_GMAKE =		Yes
 MULTI_PACKAGES=		-main -common
 FLAVORS =		qt5
 FLAVOR ?=
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .if ${FLAVOR:Mqt5}
 PKGSPEC-main =	qwt-*-qt5

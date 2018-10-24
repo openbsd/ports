@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/23 19:58:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	fuzzer for C compilers
 
 DISTNAME=	csmith-2.3.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 SHARED_LIBS +=  csmith                    0.0 # 0.0
 
 WANTLIB+=	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 HOMEPAGE=	https://embed.cs.utah.edu/csmith/
 MASTER_SITES=	https://embed.cs.utah.edu/csmith/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 V=		1.20
 DISTNAME=	tclcl-src-$V
 PKGNAME=	tclcl-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES +=	x11/tk
 WANTLIB=		c m ${COMPILER_LIBCXX} otcl>=1
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
 WRKDIST=	${WRKDIR}/tclcl-$V

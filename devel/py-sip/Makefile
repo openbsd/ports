@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2017/11/13 19:13:47 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -7,7 +7,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 
 DISTNAME=	sip-4.19.3
 PKGNAME=	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
@@ -16,6 +16,8 @@ HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	m c ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyqt/}
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/11 13:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:14 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
 GH_ACCOUNT=	derat
 GH_PROJECT=	xsettingsd
 GH_TAGNAME=	v1.0.0
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -12,6 +13,8 @@ CATEGORIES=	x11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp c m ${COMPILER_LIBCXX} xcb
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	devel/scons
 

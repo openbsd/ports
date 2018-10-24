@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		audit network device configuration
 
 V =			0.12.0
 DISTNAME =		nipper-cli-$V
 PKGNAME =		nipper-$V
-REVISION =		3
+REVISION =		4
 CATEGORIES =		security net
 
 HOMEPAGE =		http://nipper.sf.net/
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_FTP =	Yes
 EXTRACT_SUFX =		.tgz
 
 WANTLIB =		c m ${COMPILER_LIBCXX} nipper
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		security/libnipper
 

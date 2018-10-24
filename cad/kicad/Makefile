@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -10,8 +10,8 @@ PKGNAME=	kicad-${V:S/-//g}
 PKGNAME-main=	kicad-${V:S/-//g}
 PKGNAME-docs=	kicad-docs-${V:S/-//g}
 
-REVISION-main=	11
-REVISION-docs=	2
+REVISION-main=	12
+REVISION-docs=	3
 
 CATEGORIES=	cad
 
@@ -27,6 +27,8 @@ DOCDIST=	doc_components-${V}-${S}.tgz
 DISTFILES=	${DISTNAME}.zip ${DOCDIST}:0
 EXTRACT_ONLY=	${DISTNAME}.zip
 DIST_SUBDIR=	kicad
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=	-main -docs
 

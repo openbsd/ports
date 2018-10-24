@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT =	interface to the wxWidgets cross-platform GUI toolkit
 
@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Wx-0.9932
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =	MDOOTSON
-REVISION =	0
+REVISION =	1
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c m perl pthread ${COMPILER_LIBCXX} wx_base wx_base_net wx_base_xml
 WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_html wx_gtk2_media
 WANTLIB += wx_gtk2_richtext wx_gtk2_stc wx_gtk2_xrc
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =	devel/p5-Alien-wxWidgets \
 		devel/p5-ExtUtils-XSpp

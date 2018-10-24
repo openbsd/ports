@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2018/07/01 11:44:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =		library for reading RAW files
 
 DISTNAME =		LibRaw-0.18.13
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
 
@@ -21,13 +22,11 @@ WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 MASTER_SITES =		https://www.libraw.org/data/
 
 COMPILER =		base-clang ports-gcc base-gcc
-# for atomic builtins (__sync_fetch_and_add_4)
-MODGCC4_ARCHS =		hppa
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/lcms2
 
-SEPARATE_BUILD = 	Yes
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/15 13:16:01 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =	Z80 cross assembler
 DISTNAME =	pasmo-0.5.3
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://pasmo.speccy.org/
@@ -11,6 +12,8 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ${LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://pasmo.speccy.org/bin/
 EXTRACT_SUFX =		.tgz

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/09 15:07:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =	fast compression/decompression library
 
 GH_TAGNAME =	1.1.7
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
+REVISION =	0
 
 SHARED_LIBS =	snappy	0.0	# 4.1
 
@@ -16,6 +17,8 @@ HOMEPAGE =	http://google.github.io/snappy/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 

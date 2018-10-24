@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	visualize and manipulate mathematical models
 
 DISTNAME=	k3dsurf-0.6.2
-REVISION =	6
+REVISION =	7
 CATEGORIES=	graphics math
 
 HOMEPAGE=	http://k3dsurf.sourceforge.net/
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=k3dsurf/}
 
 WANTLIB=	GL GLU X11 Xext Xmu c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/qt3 devel/qmake
 NO_TEST=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
 
 V =		2.1
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
 CATEGORIES =	games
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://nongnu.org/eliot/
 
@@ -23,6 +23,8 @@ MASTER_SITES0 =	${MASTER_SITE_SAVANNAH:=eliot/dict/}
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	x11/qt4
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

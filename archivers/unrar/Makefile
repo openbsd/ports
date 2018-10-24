@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/10/18 13:56:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -13,6 +13,7 @@ PKGNAME=	unrar-5.61
 EPOCH=		1
 DISTNAME=	unrarsrc-5.6.8
 CATEGORIES=	archivers
+REVISION=	0
 
 HOMEPAGE=	http://www.rarlab.com/
 
@@ -22,6 +23,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${HOMEPAGE}rar/
 

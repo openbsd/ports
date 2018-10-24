@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/25 20:21:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:04 sthen Exp $
 
 BROKEN =		failure on startup
 
@@ -14,8 +14,8 @@ REV =			r6404
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME-main =		speeddreams-$V
 PKGNAME-data =		speeddreams-data-$V
-REVISION-data =		0
-REVISION-main =		0
+REVISION-data =		1
+REVISION-main =		1
 
 CATEGORIES =		games
 
@@ -31,6 +31,8 @@ WANTLIB-main += expat jpeg m ogg openal osg osgDB osgFX osgGA osgParticle
 WANTLIB-main += osgShadow osgUtil osgViewer png pthread ${COMPILER_LIBCXX} vorbis
 WANTLIB-main += vorbisfile z
 WANTLIB-data = #empty
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=speed-dreams/}
 EXTRACT_SUFX =		.tar.xz

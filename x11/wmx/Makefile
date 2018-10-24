@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	minimal window manager
 
 DISTNAME=	wmx-8
 CATEGORIES=	x11
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xdmcp Xext Xft Xpm Xrender c expat
 WANTLIB += fontconfig freetype m ${COMPILER_LIBCXX} xcb z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
 

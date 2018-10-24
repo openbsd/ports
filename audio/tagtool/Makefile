@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	25
+REVISION=	26
 CATEGORIES=	audio
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
@@ -20,6 +20,8 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 id3 intl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile xml2
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	textproc/intltool
 

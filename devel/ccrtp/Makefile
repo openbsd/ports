@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
 DISTNAME=	ccrtp-1.7.1
-REVISION =	5
+REVISION =	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ccrtp/}
 
@@ -15,6 +15,8 @@ HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_ccRTP
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto ssl ccgnu2>=1 m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	devel/commoncpp
 

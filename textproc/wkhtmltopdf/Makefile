@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/07/24 12:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:11 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -14,6 +14,7 @@ QT_COMMIT =		5db36ec76b29712eb2c5bd0625c2c77d7468b3fc
 MASTER_SITES0 =		https://github.com/wkhtmltopdf/qt/archive/
 DISTFILES =		${DISTNAME}.tar.gz \
 			wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz:0
+REVISION =		0
 
 SHARED_LIBS =		wkhtmltox 0.0 # 0.12
 
@@ -30,6 +31,8 @@ WANTLIB += X11 Xext Xrender c fontconfig freetype iconv jpeg m
 WANTLIB += png pthread ${COMPILER_LIBCXX} z
 
 WANTLIB += icui18n # dlopen()d via QLibrary
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		converters/libiconv \
 			graphics/png \

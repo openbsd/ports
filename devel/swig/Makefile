@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/11/01 16:41:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.69 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
@@ -7,6 +7,7 @@ VERSION =	3.0.12
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://www.swig.org/
 
@@ -14,6 +15,8 @@ HOMEPAGE =	http://www.swig.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c m pcre ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=swig/}
 

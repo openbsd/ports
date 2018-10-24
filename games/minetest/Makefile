@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/29 22:16:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =		infinite-world block sandbox game
 # minetest_game is still 0.4.17
@@ -7,7 +7,7 @@ GAME_V =		0.4.17
 V =			${GAME_V}.1
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =		http://www.minetest.net/
 
@@ -18,6 +18,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Irrlicht SM X11 Xext
 WANTLIB += Xxf86vm bz2 c curl curses form freetype gmp iconv intl
 WANTLIB += jpeg luajit-${MODLUA_VERSION} m ogg openal png pq
 WANTLIB += spatialindex sqlite3 vorbis vorbisfile z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/minetest/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2015.03-2
 DISTNAME =		openscad-${V:S/-/./}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		cad
 
@@ -19,6 +19,8 @@ WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c fontconfig freetype glib-2.0
 WANTLIB += gmp harfbuzz iconv intl m mpfr opencsg pthread qscintilla2_qt4
 WANTLIB += ${COMPILER_LIBCXX} z lib/qt4/QtGui lib/qt4/QtOpenGL
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://files.openscad.org/
 DISTFILES =		openscad-${V}.src.tar.gz

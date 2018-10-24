@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.125 2018/09/18 16:43:12 danj Exp $
+# $OpenBSD: Makefile.inc,v 1.126 2018/10/24 14:28:07 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -55,6 +55,8 @@ MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
 .if ${VERSION} == "2.7"
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .endif
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # All subpackages depend on the main python package.
 

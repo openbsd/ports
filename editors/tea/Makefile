@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	powerful and simple GTK editor
 
 DISTNAME=	teagtk-17.6.6
-REVISION=	10
+REVISION=	11
 CATEGORIES=	editors x11
 MASTER_SITES=	http://semiletov.org/tea/dloads/ \
 		${MASTER_SITE_SOURCEFORGE:=tea-editor/}
@@ -20,6 +20,8 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += gtksourceview-2.0 iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread ${COMPILER_LIBCXX} xcb xml2 z zzip>=13
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext-tools
 LIB_DEPENDS=	x11/gtk+2 \

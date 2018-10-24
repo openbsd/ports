@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/08 22:49:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			2.7.1
 DISTNAME =		fish-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		shells
 
@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 MASTER_SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
 
 # C++11
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 

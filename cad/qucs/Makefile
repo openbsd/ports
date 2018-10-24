@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:58 sthen Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -6,7 +6,7 @@ COMMENT=	graphical circuit design and simulation tool
 BROKEN-hppa =	OOM on hicumL2V2p23.core.o
 
 DISTNAME=	qucs-0.0.16
-REVISION=	2
+REVISION=	3
 CATEGORIES=	cad
 
 HOMEPAGE=	http://qucs.sourceforge.net/
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qucs/}
 
 WANTLIB += ICE SM X11 c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/qt3
 

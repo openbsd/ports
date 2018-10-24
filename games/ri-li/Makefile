@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.1
 CATEGORIES=	games
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://ri-li.sourceforge.net
 
@@ -12,6 +12,8 @@ HOMEPAGE=	http://ri-li.sourceforge.net
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL SDL_mixer c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ri-li/}
 EXTRACT_SUFX=	.tar.bz2

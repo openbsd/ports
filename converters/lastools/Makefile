@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20170108
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
 GH_TAGNAME =	f00fa125075ea984993057c5916d746cb605835c
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	converters textproc devel
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
+
 WANTLIB += c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =	COMPILER="${CXX}" \
 		LINKER="${CXX}"

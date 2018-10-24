@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 10:19:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:07 sthen Exp $
 
 PV=		7.1
 V=		${PV}.23
-REVISION=	0
-REVISION-main=	2
-REVISION-apache=1
+REVISION=	3
 
 BUILD_DEPENDS+=	devel/bison
 

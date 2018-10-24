@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/14 08:21:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	website access log visualization
 
 DISTNAME =	logstalgia-1.1.2
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	http://logstalgia.io/
+REVISION =	0
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -21,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
 # -std=gnu++0x
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =	graphics/glm \
 		devel/boost

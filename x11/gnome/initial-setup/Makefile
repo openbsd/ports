@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2018/05/15 13:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.28.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,6 +28,8 @@ WANTLIB += secret-1 soup-2.4 soup-gnome-2.4 sqlite3 tasn1 webkit2gtk-4.0
 WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-xfixes xml2 xslt z aspell
 WANTLIB += heimdal/lib/heimsqlite
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			security/heimdal \

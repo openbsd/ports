@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.102 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.5.1
-REVISION=	0
+REVISION=	1
 
 SO_VERSION=	34.1
 .for _lib in R Rblas Rlapack
@@ -21,6 +21,8 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl curses fribidi
 WANTLIB += glib-2.0 gobject-2.0 iconv icui18n icuuc intl jpeg lzma m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png readline ssl tiff z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2018/04/09 15:58:26 bket Exp $
+# $OpenBSD: Makefile,v 1.45 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 
 V=		16.02
-REVISION-main=	4
-REVISION-rar=	1
+REVISION-main=	5
+REVISION-rar=	2
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
@@ -26,6 +26,8 @@ PERMIT_PACKAGE_FTP=		Yes
 WANTLIB=	m pthread ${COMPILER_LIBCXX}
 WANTLIB-main=	${WANTLIB} c
 WANTLIB-rar=	${WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=p7zip/}
 EXTRACT_SUFX=	.tar.bz2

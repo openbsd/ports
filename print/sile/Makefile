@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	typesetting system and improved layout engine
 
 V =		0.9.4
 PKGNAME =	sile-$V
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  texpdf                    0.0 # 0.0
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} expat fontconfig freetype glib-2.0 graphite2
 WANTLIB += harfbuzz iconv icudata icui18n icuio icuuc intl m pcre
 WANTLIB += png pthread z ${MODLUA_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/simoncozens/sile/releases/download/v$V/
 MASTER_SITES0 =		http://sile-typesetter.org/images/

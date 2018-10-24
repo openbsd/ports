@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	Qt GUI to configure YubiKeys
 
 YK_PROJECT=	yubikey-personalization-gui
 DISTNAME=	yubikey-personalization-gui-3.1.25
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread ${COMPILER_LIBCXX} ykpers-1 yubikey
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	security/yubico/yubico-c \

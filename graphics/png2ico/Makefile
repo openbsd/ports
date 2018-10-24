@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	convert PNG images to Windows .ico files
 
 VERSION=	2002-12-09
 PKGNAME=	png2ico-${VERSION:S/-//g}
 DISTNAME=	png2ico-src-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	graphics www
 HOMEPAGE=	http://www.winterdrache.de/freeware/png2ico/
 MASTER_SITES=	${HOMEPAGE}data/
@@ -15,6 +15,8 @@ MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m ${COMPILER_LIBCXX} z png>=3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	graphics/png
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/20 16:32:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =	multi-system Nintendo emulator
 
 V =		106
 DISTNAME =	higan_v$V-source
 PKGNAME =	higan-$V
-REVISION =	2
+REVISION =	3
 
 USE_WXNEEDED =	Yes
 
@@ -40,7 +40,7 @@ MAKE_FLAGS =	compiler="${CXX}" \
 			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		build=
 
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 USE_GMAKE =	Yes
 

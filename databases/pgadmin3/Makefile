@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2018/04/16 15:07:09 tb Exp $
+# $OpenBSD: Makefile,v 1.39 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.pgadmin.org/
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c m pthread ${COMPILER_LIBCXX} crypto z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin/pgadmin3/v$V/src/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	x11/wxWidgets>=2.8.7 \
 		databases/postgresql \

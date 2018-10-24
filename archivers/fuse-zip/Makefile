@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/08 10:31:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
 DISTNAME =		fuse-zip-0.4.5
+REVISION =		0
 
 CATEGORIES =		archivers
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		${COMPILER_LIBCXX} bz2 c fuse m z zip
 
 MASTER_SITES =		https://bitbucket.org/agalanin/fuse-zip/downloads/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		archivers/libzip>=0.11.2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/18 08:08:38 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2018/10/24 14:28:04 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl -python
 
@@ -16,16 +16,24 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
 SHARED_LIBS +=	mapserver 3.0
+REVISION-main=	0
+REVISION-perl=	0
+REVISION-php=	0
+REVISION-python=0
+REVISION-utils=	0
 
 CATEGORIES=	geo www
 
 HOMEPAGE=	http://www.mapserver.org/
+
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
 MODPHP_RUNDEP=	No

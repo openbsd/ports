@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =	command line implementation of the PAR v2.0 specification
 
 V =		0.7.4
 DISTNAME =	par2cmdline-$V
+REVISION =	0
+
+MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 CATEGORIES =	archivers
 
@@ -15,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB =	c m ${COMPILER_LIBCXX}
 
-MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${HOMEPAGE}releases/download/v$V/
 

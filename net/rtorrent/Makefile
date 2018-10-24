@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.9.6
-REVISION=		4
+REVISION=		5
 EPOCH=			0
 CATEGORIES=		net
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto curl>=14 m ncursesw nghttp2 \
 			pthread ssl ${COMPILER_LIBCXX} torrent>=21 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://rtorrent.net/downloads/
 

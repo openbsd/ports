@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/08/10 10:20:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=		command line MPEG audio/video/system file toolbox
 
 DISTNAME=		mpgtx-1.3.1
-REVISION =		1
+REVISION =		2
 CATEGORIES=		multimedia sysutils
 
 HOMEPAGE=		http://mpgtx.sourceforge.net/
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpgtx/}
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
 

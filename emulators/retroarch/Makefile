@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =		generic multi-emulator frontend
 
 V =			1.7.2
-REVISION =		2
+REVISION =		3
 DISTNAME =		RetroArch-$V
 PKGNAME =		retroarch-$V
 
@@ -19,6 +19,8 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass
 WANTLIB += avcodec avformat avutil c drm freetype gbm m openal
 WANTLIB += pthread swresample swscale usb-1.0 xcb xkbcommon
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/libretro/RetroArch/releases/download/v$V/
 

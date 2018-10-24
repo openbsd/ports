@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/08/05 12:31:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
 V=		2.4.5
-REVISION=	2
+REVISION=	3
 DISTNAME=	pjproject-$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
@@ -44,6 +44,8 @@ WANTLIB-pjsua += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
 WANTLIB-pjsua += pjsip-ua pjsua resample
 
 WANTLIB-main = ${WANTLIB} ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=	-main -pjsua
 

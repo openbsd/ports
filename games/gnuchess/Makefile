@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/03 00:43:49 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT=	chess program
 
 DISTNAME=	gnuchess-6.2.5
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
+REVISION=	0
 
 CATEGORIES=	games
 HOMEPAGE=	http://www.gnu.org/software/chess/
@@ -13,6 +14,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c iconv intl m ncurses pthread readline ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	devel/gettext
 

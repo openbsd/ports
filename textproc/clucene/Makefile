@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/10 20:30:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-2.3.3.4
 
-REVISION =	2
+REVISION =	3
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=clucene/}
 
@@ -18,6 +18,8 @@ SHARED_LIBS +=  clucene-shared            0.0 # 2.3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	devel/cmake
 

@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.44 2018/06/24 19:18:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
 DISTNAME= 	cdrdao-1.2.1
 CATEGORIES=	audio misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://cdrdao.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

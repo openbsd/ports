@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-REVISION=		10
+REVISION=		11
 EPOCH=			1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.org/
@@ -11,6 +11,8 @@ HOMEPAGE=		http://jabberd2.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto ssl
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://www.linklevel.net/distfiles/
 

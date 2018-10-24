@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	hierarchical todos manager
 
 DISTNAME =	tudu-0.10.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	productivity
 
@@ -15,6 +15,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m ncursesw ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${HOMEPAGE}
 

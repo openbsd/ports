@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =	qt git repository viewer
 
 # XXX also change MASTER_SITES when updating
 DISTNAME =	qgit-2.5
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel x11
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	http://libre.tibirna.org/attachments/download/9/
 

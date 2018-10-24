@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/25 20:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=	test tool for slow HTTP reads/posts
 
 DISTNAME =	slowhttptest-1.6
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	www security
 
@@ -13,6 +13,8 @@ HOMEPAGE=	https://slowhttptest.googlecode.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto m ssl ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${HOMEPAGE}files/
 

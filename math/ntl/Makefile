@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
 DISTNAME =	ntl-9.11.0
-REVISION =	1
+REVISION =	2
 SHARED_LIBS =	ntl	9.2	# 0.0
 CATEGORIES =	math
 
@@ -15,6 +15,8 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		m gmp ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${HOMEPAGE}
 

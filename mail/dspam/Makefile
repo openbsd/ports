@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/09/10 09:04:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -6,9 +6,9 @@ COMMENT-mysql =	MySQL driver for dspam
 
 VERSION =	3.10.2
 DISTNAME =	dspam-${VERSION}
-REVISION-main =	8
-REVISION-mysql = 6
-REVISION-pgsql = 5
+REVISION-main =	9
+REVISION-mysql = 7
+REVISION-pgsql = 6
 
 PKGNAME-main =	${PKGNAME}
 .for p in pgsql mysql
@@ -34,6 +34,8 @@ MULTI_PACKAGES = -main -mysql -pgsql
 
 WANTLIB =	m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu

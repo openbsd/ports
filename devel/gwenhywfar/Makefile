@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	helper library for networking and security applications
 
 # update the "release=XX" in DISTFILES, not just DISTNAME
 DISTNAME=	gwenhywfar-4.13.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=01\&release=78\&file=01}
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS +=	gwenhywfar           1.3      # 73.1
 SHARED_LIBS +=	gwengui-gtk2         0.0      # unknown
@@ -30,6 +30,8 @@ WANTLIB += png ssl tasn1 unistring xcb xcb-render
 WANTLIB += xcb-shm z
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		x11/qt4
 BUILD_DEPENDS=		devel/gettext-tools

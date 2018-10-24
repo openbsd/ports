@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/06/29 22:16:25 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -19,18 +19,20 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-REVISION =	22
-WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
-	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
-	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \
-	gthread-2.0 idn jpeg kmedia2_idl kwalletclient lcms lib/kde3/DCOP \
-	lib/kde3/artskde lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint \
-	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kdnssd lib/kde3/kio \
-	lib/kde3/kparts m mad mcop mng ogg pcre png pthread \
-	qtmcop sndio soundserver_idl ${COMPILER_LIBCXX} util vorbis vorbisenc vorbisfile \
-	xcb z
-WANTLIB += avahi-client avahi-common dbus-1 dns_sd iconv intl
+REVISION =	23
+
+WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
+WANTLIB += artsflow_idl audiofile c drm expat fam fontconfig freetype glib-2.0
+WANTLIB += gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl kwalletclient lcms
+WANTLIB += lib/kde3/DCOP lib/kde3/artskde lib/kde3/kdecore>=6 lib/kde3/kdefx
+WANTLIB += lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kdnssd
+WANTLIB += lib/kde3/kio lib/kde3/kparts m mad mcop mng ogg pcre png pthread
+WANTLIB += qtmcop sndio soundserver_idl ${COMPILER_LIBCXX} util vorbis vorbisenc
+WANTLIB += vorbisfile xcb z avahi-client avahi-common dbus-1 dns_sd iconv intl
 WANTLIB += FLAC X11-xcb glapi xcb-dri2 xcb-glx
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common

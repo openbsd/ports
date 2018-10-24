@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -25,6 +25,8 @@ WANTLIB += png pthread ${COMPILER_LIBCXX} tiff z
 
 # don't remove unless you are sure:
 WANTLIB += lensfun
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext-tools
 

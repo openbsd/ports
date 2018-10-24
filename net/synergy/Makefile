@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/11 12:59:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
 VERSION=		1.7.6
 DISTNAME=		synergy-${VERSION}
 CATEGORIES=		net x11
+REVISION=		0
 
 GH_ACCOUNT=		symless
 GH_PROJECT=		synergy-core
@@ -17,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xi Xinerama Xrandr
 WANTLIB += Xtst c curl m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		net/curl
 

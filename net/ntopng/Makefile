@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/04 22:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:09 sthen Exp $
 
 BROKEN=	too crashy, the packet dissectors trigger SIGSEGV within minutes
 
@@ -12,6 +12,7 @@ GH_PROJECT=	ntopng
 GH_TAGNAME=	3.6.1
 NDPI_V=		2.4
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -25,6 +26,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient
 WANTLIB += pcap rrd sodium sqlite3 ssl z zmq zstd
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES0=	https://github.com/ntop/ndpi/archive/${NDPI_V}/
 

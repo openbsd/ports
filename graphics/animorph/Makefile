@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.3
 CATEGORIES=	graphics
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  animorph             1.0      # unknown
 
@@ -14,6 +14,8 @@ HOMEPAGE=	http://www.dedalo-3d.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 

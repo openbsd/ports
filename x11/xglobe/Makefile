@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/05/17 10:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2018/10/24 14:28:14 sthen Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -9,13 +9,15 @@ HOMEPAGE=	http://www.shaderwrangler.com/xglobe/
 MASTER_SITES=	https://distfiles.nl/
 DISTNAME=	xglobe-0.5p2
 PKGNAME=	xglobe-0.5
-REVISION=	42
+REVISION=	43
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL, included map is free
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		x11/qt3
 

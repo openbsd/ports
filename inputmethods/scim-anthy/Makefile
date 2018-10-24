@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	scim input method module for anthy
 
 DISTNAME =	scim-anthy-1.2.7
 
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	inputmethods japanese
 
@@ -21,6 +21,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_OSDN_JP:=scim-imengine/37309/}
 

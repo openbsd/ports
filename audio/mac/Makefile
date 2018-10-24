@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:27:58 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -6,7 +6,7 @@ COMMENT=	Monkey's audio lossless codec
 
 DISTNAME=	mac-3.99-u4-b5
 PKGNAME=	mac-3.99.4.5
-REVISION =	3
+REVISION =	4
 SHARED_LIBS +=  mac                  0.0      # .2.0
 CATEGORIES=	audio
 
@@ -19,6 +19,8 @@ MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://bsd.cenkes.org/myports/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.48.04-source
 EXTRACT_SUFX=		.zip
 PKGNAME=		${DISTNAME:S/-source//}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS=		espeak 1.2
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m portaudio pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=espeak/}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		audio/portaudio-svn
 

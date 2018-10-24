@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	OAuth support library for Qt-based applications
 V =		1.0.1
@@ -6,7 +6,7 @@ DISTNAME =	qoauth-${V}-src
 PKGNAME =	${DISTNAME:C/-src//}
 CATEGORIES =	security devel
 HOMEPAGE =	https://github.com/ayoy/qoauth
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	qoauth		0.0
 
@@ -14,6 +14,8 @@ SHARED_LIBS =	qoauth		0.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		lib/qt4/QtNetwork m pthread qca ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://files.ayoy.net/qoauth/$V/
 EXTRACT_SUFX =		.tar.bz2

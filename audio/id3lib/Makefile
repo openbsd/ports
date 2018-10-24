@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=		library for manipulating ID3v1 and ID3v2 tags
 
 VERSION=		3.8
 DISTNAME=		id3lib-${VERSION}.3
-REVISION =		6
+REVISION =		7
 CATEGORIES=     	audio
 SHARED_LIBS +=	id3                  4.0      # .3.8
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=id3lib/}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
 NO_TEST=		Yes

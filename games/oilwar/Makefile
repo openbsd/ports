@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2018/04/12 08:12:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	games x11
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer c m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=     Yes
 

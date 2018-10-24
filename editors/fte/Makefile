@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	powerful and intuitive editor for programmers
 
 DISTNAME=	fte-20090118
-REVISION =	1
+REVISION =	2
 CATEGORIES=	editors devel
 
 HOMEPAGE=	http://fte.sourceforge.net/
@@ -12,6 +12,8 @@ HOMEPAGE=	http://fte.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	X11 Xau Xdmcp Xpm c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	ftp://ftp.mrsserver.net/pub/distfiles/
 

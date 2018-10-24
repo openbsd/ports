@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
 DISTNAME=	crack-attack-1.1.14
-REVISION=	13
+REVISION=	14
 CATEGORIES=	games
 
 MAINTAINER=	Mattieu Baptiste <mattieu.b@free.fr>
@@ -19,6 +19,8 @@ WANTLIB = GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 	gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
 	pangoft2-1.0 pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render \
 	xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=crack-attack/}
 

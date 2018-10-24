@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-mapi=	0
+REVISION-mapi=	1
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -25,7 +26,7 @@ SHARED_LIBS +=  kcutil                    0.0 # 0.0
 MULTI_PACKAGES=	-main -mapi
 
 # C++11
-COMPILER=	base-clang ports-gcc ports-clang
+COMPILER=	base-clang ports-gcc base-gcc
 
 MODULES=	lang/python \
 		lang/php

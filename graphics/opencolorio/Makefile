@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =		color management library
 
 V =			20140911
 DISTNAME =		OpenColorIO-$V
 PKGNAME =		opencolorio-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
 
@@ -19,6 +19,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX} tinyxml yaml-cpp
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://deftly.net/
 

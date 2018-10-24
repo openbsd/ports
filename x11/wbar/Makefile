@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		6
+REVISION =		7
 
 CATEGORIES=		x11
 
@@ -14,6 +14,8 @@ HOMEPAGE=		https://code.google.com/p/wbar/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += Imlib2 X11 Xext c freetype intl m ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=wbar/}
 

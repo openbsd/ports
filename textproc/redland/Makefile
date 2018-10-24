@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/12 15:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:11 sthen Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -12,9 +12,9 @@ PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
 
-REVISION-main=		5
-REVISION-mysql=		6
-REVISION-pgsql=		6
+REVISION-main=		6
+REVISION-mysql=		7
+REVISION-pgsql=		7
 
 CATEGORIES=		textproc
 
@@ -29,6 +29,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto curl gcrypt gmp gpg-error iconv intl ltdl lzma m mpfr
 WANTLIB += nghttp2 pcre pthread raptor2 rasqal ssl uuid xml2 xslt yajl z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/raptor \

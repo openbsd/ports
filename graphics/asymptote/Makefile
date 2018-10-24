@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:05 sthen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -10,7 +10,7 @@ BROKEN-hppa=		ghostscript segfaults during build
 
 DISTNAME=		asymptote-2.41.src
 PKGNAME=		asymptote-2.41
-REVISION=		1
+REVISION=		2
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
@@ -25,6 +25,8 @@ MODULES=		lang/python
 
 WANTLIB += GL GLU OSMesa c fftw3 gc glut gsl gslcblas m ncurses pthread
 WANTLIB += readline sigsegv ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		print/texlive/base \
 			print/texinfo

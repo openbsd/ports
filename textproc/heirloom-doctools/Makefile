@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT =		modernized troff implementation
 
 V =			160308
 DISTNAME =		heirloom-doctools-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc print
 
@@ -16,6 +16,8 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/n-t-roff/heirloom-doctools/releases/download/$V/
 EXTRACT_SUFX =		.tar.bz2

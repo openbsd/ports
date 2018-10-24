@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/12 13:55:24 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
@@ -7,7 +7,7 @@ HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
@@ -19,6 +19,8 @@ WANTLIB += modplug
 WANTLIB += ncurses nghttp2 ogg opus pthread samplerate sndfile sndio
 WANTLIB += speex ssl ${COMPILER_LIBCXX} swresample tag tag_c vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xvidcore z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # libvpx -> libavcodec -> mocp
 # see multimedia/gstreamer1/plugins-good/Makefile for details

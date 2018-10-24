@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
 V=		0.9.2
-REVISION=	3
+REVISION=	4
 
 GH_ACCOUNT=	fritzing
 GH_PROJECT=	fritzing-app
@@ -25,6 +25,12 @@ MASTER_SITES0= https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 # Rest: CreativeCommons:BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
+WANTLIB += Xinerama Xrender c fontconfig freetype m pthread ${COMPILER_LIBCXX}
+WANTLIB += z lib/qt4/QtSerialPort
+
+COMPILER =		base-clang ports-gcc base-gcc
+
 MODULES=        devel/qmake x11/qt4
 NO_TEST=	Yes
 
@@ -40,10 +46,6 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
-
-WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
-WANTLIB += Xinerama Xrender c fontconfig freetype m pthread ${COMPILER_LIBCXX}
-WANTLIB += z lib/qt4/QtSerialPort
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream

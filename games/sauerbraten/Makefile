@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -14,7 +14,7 @@ MULTI_PACKAGES=	-main -data
 
 N=		sauerbraten
 V=		20130203
-REVISION=	2
+REVISION=	3
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
@@ -39,6 +39,8 @@ LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
 			net/enet
 WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_client ${PREFIX}/libexec

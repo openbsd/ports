@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.11
-REVISION =	6
+REVISION =	7
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl iconv intl jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ode png pthread sqlite3 ${COMPILER_LIBCXX} xdg-basedir lzma xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes

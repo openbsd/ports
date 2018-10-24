@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.16.1
 CATEGORIES =		games x11
 HOMEPAGE =		http://chromium-bsu.sourceforge.net/
-REVISION =		1
+REVISION =		2
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL2 SDL2_image alut c fontconfig freetype ftgl
 WANTLIB += iconv intl m openal pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chromium-bsu/}
 

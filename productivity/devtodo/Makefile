@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 22:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20
-REVISION =		3
+REVISION =		4
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/devtodo1.html
@@ -15,6 +15,8 @@ MASTER_SITES=		http://swapoff.org/files/devtodo/ \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ncurses readline ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
 

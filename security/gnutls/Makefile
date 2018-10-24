@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.146 2018/07/17 08:01:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.5.19
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -20,6 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gmp hogweed iconv idn2 intl m nettle p11-kit pthread
 WANTLIB += tasn1 unistring z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:R}/ \
 			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/

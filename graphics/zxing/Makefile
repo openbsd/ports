@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/28 14:14:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	barcode image processing library
 
@@ -7,6 +7,7 @@ GH_PROJECT =	zxing-cpp
 GH_COMMIT =	5aad4744a3763d814df98a18886979893e638274
 
 DISTNAME =	zxing-20180320
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -14,6 +15,8 @@ CATEGORIES =	graphics
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	converters/libiconv

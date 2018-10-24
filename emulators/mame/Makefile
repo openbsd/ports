@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/27 10:43:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:02 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -9,6 +9,7 @@ COMMENT =	Multiple Arcade Machine Emulator
 V =		202
 DISTNAME =	mame0${V}s
 PKGNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -23,6 +24,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xinerama
 WANTLIB += c expat fontconfig freetype jpeg lua5.3 m sqlite3 util z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mame/}
 

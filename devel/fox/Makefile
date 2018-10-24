@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 
 DISTNAME =	fox-1.6.50
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	FOX-1.6              2.1      # .0.50
 SHARED_LIBS +=	CHART-1.6            1.1      # .0.50
@@ -38,5 +38,7 @@ WANTLIB += GL GLU X11 X11-xcb Xcursor Xdamage Xext Xfixes Xft
 WANTLIB += Xrandr Xrender Xxf86vm bz2 c drm expat fontconfig freetype
 WANTLIB += glapi jpeg m png pthread ${COMPILER_LIBCXX} tiff
 WANTLIB += xcb xcb-dri2 xcb-glx z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/29 22:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-0.15
-REVISION=	8
+REVISION=	9
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi-im.org/
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
 WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0
 WANTLIB += gmodule-2.0 iconv intl m pthread qca ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		x11/qt4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:01 sthen Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,7 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	10
+REVISION=	11
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -34,6 +34,8 @@ WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 

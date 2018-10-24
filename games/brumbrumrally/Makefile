@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:02 sthen Exp $
 
 BROKEN-alpha =		OOM on src/hqx/hq4x.cpp
 
 COMMENT =		racing game with randomized tracks
 
 DISTNAME =		brumbrumrally-0.7
-REVISION =		2
+REVISION =		3
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =		games
@@ -17,6 +17,8 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL SDL_image SDL_net c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://dataapa.net/brumbrumrally/files/
 

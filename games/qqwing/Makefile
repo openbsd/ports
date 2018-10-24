@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/17 16:58:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	Sudoku generator and solver
 DISTNAME =	qqwing-1.3.4
 SHARED_LIBS +=  qqwing                    0.0 # 3.0
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -13,6 +14,8 @@ MAINTAINER =	Victor Kukshiev <andrey0bolkonsky@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://qqwing.com/
 

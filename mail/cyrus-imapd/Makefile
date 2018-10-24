@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/09/25 02:50:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.118 2018/10/24 14:28:07 sthen Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -6,7 +6,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.0.8
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0
@@ -25,6 +25,8 @@ PERMIT_PACKAGE_CDROM=	yes
 WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
 WANTLIB += pthread sasl2 sqlite3 ssl ${COMPILER_LIBCXX} uuid z
 WANTLIB += perl # uses perl ABI
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://www.cyrusimap.org/releases/ \
 			ftp://ftp.cyrusimap.org/cyrus-imapd/ \

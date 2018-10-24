@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/07/17 07:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
 GNOME_VERSION=		4.2.0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -20,6 +21,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-4 harfbuzz iconv intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png uchardet
 WANTLIB += xcb xcb-render xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		x11/gnome
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/27 09:13:02 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC SDL2 c curses gif jpeg m ogg
 WANTLIB += png readline vorbis vorbisenc vorbisfile z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 

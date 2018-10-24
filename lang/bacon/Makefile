@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/01 22:41:16 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-3.8
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -15,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
 WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://www.basic-converter.org/stable/ \
 			http://www.basic-converter.org/museum/

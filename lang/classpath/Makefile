@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2018/10/24 14:28:06 sthen Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -7,7 +7,7 @@ BROKEN-sparc64= gcj blows during build
 COMMENT=	essential libraries for Java
 
 DISTNAME=	classpath-0.98
-REVISION=	24
+REVISION=	25
 
 CATEGORIES=	lang java
 
@@ -33,6 +33,8 @@ WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m magic pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	gcc4
 MODGCC4_ARCHS=	*

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2018/09/04 12:46:28 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=		OSS replacement for the Nomachine nxclient
 
 DISTNAME=		opennx-0.16.0.729
 CATEGORIES=		sysutils
-REVISION=		11
+REVISION=		12
 
 HOMEPAGE=		http://opennx.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opennx/}
@@ -20,6 +20,8 @@ WANTLIB += pthread sndio ssl ${COMPILER_LIBCXX} tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_core wx_gtk2_html
 WANTLIB += wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render
 WANTLIB += xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		x11/wxWidgets \
 			net/curl

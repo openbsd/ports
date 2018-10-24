@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/10 01:51:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =		web viewer plugin for Orthanc
 
@@ -15,6 +15,7 @@ DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
+REVISION =		0
 
 MASTER_SITES1 =		http://www.orthanc-server.com/downloads/third-party/WebViewer/
 
@@ -23,6 +24,8 @@ WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt gdcmCommon
 WANTLIB += gdcmDICT gdcmDSED gdcmIOD gdcmMSFF gtest jsoncpp m
 WANTLIB += sqlite3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		graphics/orthanc/server
 RUN_DEPENDS =		graphics/orthanc/server

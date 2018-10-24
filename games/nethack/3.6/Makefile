@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/20 13:34:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.6.0
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \
 		http://www.nethack.de/download/
@@ -14,6 +14,8 @@ HOMEPAGE =	http://nethack.org/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 WANTLIB +=	c curses
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 FLAVORS = no_x11 qt
 FLAVOR ?=

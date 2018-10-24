@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4
-REVISION =		3
+REVISION =		4
 CATEGORIES =		games
 
 WRKDIST = 		${WRKDIR}/keen
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 LIB_DEPENDS = 		devel/sdl
 WANTLIB =		SDL c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=clonekeen/}
 

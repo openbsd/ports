@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -8,10 +8,10 @@ DISTNAME =		apcupsd-3.14.14
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION =		1
-REVISION-main =		4
-REVISION-x11 =		2
-REVISION-cgi =		2
+REVISION =		2
+REVISION-main =		5
+REVISION-x11 =		3
+REVISION-cgi =		3
 
 CATEGORIES =		sysutils
 
@@ -23,6 +23,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m pthread
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS-main = 	devel/libusb-compat
 WANTLIB-main =		${WANTLIB} usb

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=	Aurora GTK+2 engine
 
 V=		1.5.1
 DISTNAME=	56438-aurora-${V}
 PKGNAME=	gtk2-aurora-engine-${V}
-REVISION=	8
+REVISION=	9
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,6 +23,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 

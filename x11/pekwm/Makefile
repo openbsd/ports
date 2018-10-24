@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/12/20 17:22:37 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-0.1.17
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.org/
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c iconv jpeg m png z
 WANTLIB += ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${HOMEPAGE}/files/
 EXTRACT_SUFX=	.tar.bz2

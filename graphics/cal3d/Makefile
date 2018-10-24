@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/24 08:01:00 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =	skeletal based character animation library
 DISTNAME =	cal3d-0.11.0
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =	cal3d	1.0	# .12.0
 
@@ -16,6 +16,8 @@ MAINTAINER =	Laurent Fanis <laurent.fanis@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://mp3butcher.github.io/Cal3D/sources/
 

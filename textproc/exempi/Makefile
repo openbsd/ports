@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:11 sthen Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.2.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -17,6 +17,8 @@ HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c expat m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # configure checks for libiconv but it's unused
 BUILD_DEPENDS =		converters/libiconv

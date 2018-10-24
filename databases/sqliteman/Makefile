@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/29 22:16:10 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
 
 DISTNAME =	sqliteman-1.2.2
-REVISION =	5
+REVISION =	6
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/
@@ -16,6 +16,8 @@ WANTLIB += c lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtSql lib/qt4/QtXml m
 WANTLIB += pthread qscintilla2_qt4 ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	x11/qt4 \
 		editors/qscintilla

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/10/24 14:28:00 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -12,8 +12,8 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION-jre=	0
-REVISION-main=	0
+REVISION-jre=	1
+REVISION-main=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u172b11-bsd-port-20180529
@@ -47,6 +47,8 @@ APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
 SUPDISTFILES+=	openjdk8-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
 		openjdk8-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
 		${APACHE_ANT}:2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 

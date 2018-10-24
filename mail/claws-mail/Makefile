@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2018/09/11 17:52:22 danj Exp $
+# $OpenBSD: Makefile,v 1.117 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -13,6 +13,11 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+REVISION-bogofilter=	0
+REVISION-gdata=		0
+REVISION-main=		0
+REVISION-pdfviewer=	0
+REVISION-spamassassin=	0
 
 CATEGORIES=		mail news
 
@@ -25,6 +30,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://www.claws-mail.org/releases/
 
 DIST_SUBDIR=		claws
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer -gdata
 FLAVORS=		jpilot ldap

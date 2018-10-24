@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.180 2018/08/23 12:48:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.181 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.10
 DASHVER=		10
-REVISION=		1
+REVISION=		2
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
@@ -30,6 +30,8 @@ WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
 WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jasper
 WANTLIB += jbig jpeg lcms2 lzma m openjp2 perl png raw_r tiff webp
 WANTLIB += webpmux xcb xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \

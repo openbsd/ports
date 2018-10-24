@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/09/23 08:32:03 jsg Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:59 sthen Exp $
 
 BROKEN-powerpc=	libgcc/libgcc2.c:1999:1: internal compiler error: in create_edge, at cgraph.c:850
 
@@ -6,7 +6,7 @@ COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
 VERSION=	6.3-2017.02
 DISTNAME=	gcc-linaro-${VERSION}
-REVISION=	2
+REVISION=	3
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
 
@@ -26,6 +26,8 @@ SUBST_VARS+=	VERSION CONFIG GCC_VERSION
 
 WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc
 DIST_SUBDIR=	gcc
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_GXX=	No
 MAKE_FORTRAN=	No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/07/07 22:39:42 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2018/10/24 14:28:06 sthen Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -19,7 +19,7 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
-REVISION=		7
+REVISION=		8
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/uim-$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -33,6 +33,8 @@ SHARED_LIBS +=	uim-custom           0.0      # .2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 cWANTLIB += X11 Xext Xrender fontconfig freetype iconv intl m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=		-main -gtk -gtk3 -kde -qt -qt4
 

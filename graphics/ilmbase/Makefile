@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/12/03 13:04:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	ILM base libraries
 
 DISTNAME=	ilmbase-2.2.1
 CATEGORIES=	graphics
+REVISION=	0
 
 SHARED_LIBS +=	Half                 5.0      # 23.0
 SHARED_LIBS +=	Iex                  5.0      # 23.0
@@ -18,6 +19,8 @@ HOMEPAGE=	http://www.openexr.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=openexr/}
 

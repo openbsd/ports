@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/09 01:21:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:04 sthen Exp $
 
 V =		9
 COMMENT =	open source chess engine
@@ -6,6 +6,7 @@ DISTNAME =	stockfish-${V}-src
 PKGNAME =	stockfish-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://stockfishchess.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -18,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 MASTER_SITES =	https://stockfish.s3.amazonaws.com/
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}"

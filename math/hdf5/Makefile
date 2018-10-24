@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/07 06:13:45 feinerer Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
 V =			1.8.20
 DISTNAME =		hdf5-${V}
+REVISION =		0
 
 SHARED_LIBS +=	hdf5		1.1 # 13.1
 SHARED_LIBS +=	hdf5_cpp	4.1 # 15.0
@@ -20,6 +21,8 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://support.hdfgroup.org/ftp/HDF5/current18/src/ \
 			https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-${V}/src/

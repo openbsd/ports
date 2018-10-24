@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0
-REVISION=	5
+REVISION=	6
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
@@ -12,6 +12,8 @@ HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c iconv m pthread lzma ${COMPILER_LIBCXX} xml2>=6 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/07/13 02:57:07 jsg Exp $
+# $OpenBSD: Makefile,v 1.67 2018/10/24 14:28:11 sthen Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -9,7 +9,8 @@ VERSION=		58.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-REVISION-main=		6
+REVISION-main=		7
+REVISION-wwwdata=	0
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		13.0
@@ -29,6 +30,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 			${MASTER_SITE_SOURCEFORGE:=icu/}

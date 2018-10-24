@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.24 2018/04/20 11:48:37 schwarze Exp $
+#	$OpenBSD: Makefile,v 1.25 2018/10/24 14:28:02 sthen Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
@@ -6,7 +6,7 @@ COMMENT =		open source game engine based on Marathon 2: Durandal
 DATE =			20150620
 DISTNAME =		AlephOne-${DATE}
 PKGNAME =		alephone-1.2.1
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES =		games x11
@@ -24,6 +24,8 @@ WANTLIB +=		GL GLU c m pthread ${COMPILER_LIBCXX} z
 WANTLIB +=		SDL SDL_net SDL_image SDL_ttf mad png sndfile
 WANTLIB +=		smpeg speex speexdsp vorbisfile zzip
 WANTLIB += avcodec avformat avutil swscale boost_filesystem boost_system curl
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/automake/${AUTOMAKE_VER} \
 			devel/autoconf/${AUTOCONF_VER}

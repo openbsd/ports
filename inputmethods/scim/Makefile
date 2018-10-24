@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	23
+REVISION =	24
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -23,6 +23,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scim/}
 

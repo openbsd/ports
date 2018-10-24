@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/10 09:59:37 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	curses GDB interface
 
 DISTNAME=	cgdb-0.7.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -12,6 +13,8 @@ HOMEPAGE=	https://cgdb.github.io/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c curses ereadline m util
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://cgdb.me/files/
 

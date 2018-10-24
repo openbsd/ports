@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/10 21:15:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	LIVE555 streaming media library
 
 DISTNAME=	live.2012.02.04
 PKGNAME=	liveMedia-20120204
-REVISION =	3
+REVISION =	4
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -14,6 +14,8 @@ HOMEPAGE=	http://www.live555.com/liveMedia/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=genMakefiles

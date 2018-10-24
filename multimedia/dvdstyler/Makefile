@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=		DVD authoring application
 
@@ -7,7 +7,7 @@ PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		https://www.dvdstyler.org/
 
@@ -24,6 +24,8 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 popt swscale wx_base wx_base_net
 WANTLIB += wx_gtk2_adv wx_gtk2_core wx_gtk2_html wx_gtk2_media
 WANTLIB += wxsvg z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		archivers/zip \
 			multimedia/dvdauthor \

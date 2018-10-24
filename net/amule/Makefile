@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/06/27 21:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	8
+REVISION =	9
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -27,6 +27,8 @@ EXTRACT_SUFX =	.tar.xz
 LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # bison needed if .y files are patched
 BUILD_DEPENDS =		devel/bison \

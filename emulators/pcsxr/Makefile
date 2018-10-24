@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
-REVISION =	8
+REVISION =	9
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 
@@ -20,6 +20,8 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sndio ${COMPILER_LIBCXX} usbhid xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	http://www.elsasser.org/openbsd/distfiles/
 

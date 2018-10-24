@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.7.1
-REVISION =	5
+REVISION =	6
 
 LIB_DEPENDS +=	x11/wxWidgets \
 		databases/sqlite3 \
@@ -20,6 +20,8 @@ WANTLIB += sndio spatialite sqlite3 ${COMPILER_LIBCXX} tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # so that it finds all libs without rpath..
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.103 2018/07/18 05:46:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		3.2
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			gnucash-docs-${GNOME_VERSION}.tar.gz
@@ -32,6 +32,8 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-3 guile-2.2 gwenhywfar icudata icui18n icuuc intl
 WANTLIB += javascriptcoregtk-4.0 m ofx osp pango-1.0 pangocairo-1.0
 WANTLIB += secret-1 soup-2.4 webkit2gtk-4.0 xml2 xslt z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 

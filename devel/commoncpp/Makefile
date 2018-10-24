@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
 VER=		1.7.3
 DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 
@@ -18,6 +18,8 @@ HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_Common_C++
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	crypto ssl z m ${COMPILER_LIBCXX} pthread
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61

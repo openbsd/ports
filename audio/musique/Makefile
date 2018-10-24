@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
 CATEGORIES =	audio
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -15,6 +15,8 @@ MASTER_SITES =	http://flavio.tordini.org/files/musique/
 WANTLIB += ICE QtDBus QtGui QtNetwork QtSql QtXml SM
 WANTLIB += X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m phonon pthread ${COMPILER_LIBCXX} tag
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/qmake x11/qt4
 

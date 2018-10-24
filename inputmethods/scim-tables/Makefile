@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	inputmethods chinese japanese korean
 
@@ -20,6 +20,8 @@ WANTLIB+= gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread scim-1.0
 WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB+= xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2018/09/04 12:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS =	decoration	1.0
 
@@ -20,6 +20,8 @@ WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} wnck-1 xcb xcb-dri2 xcb-glx
 WANTLIB += xcb-render xcb-shm xcb-util xml2 xslt z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 

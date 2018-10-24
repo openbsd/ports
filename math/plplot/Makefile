@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/01/19 15:21:46 jca Exp $
+# $OpenBSD: Makefile,v 1.61 2018/10/24 14:28:07 sthen Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -18,6 +18,9 @@ SHARED_LIBS =	csirocsa	4.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
+REVISION-c++ =	0
+REVISION-fortran =	0
+REVISION-main =	0
 
 CATEGORIES =	math graphics
 
@@ -30,8 +33,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
+COMPILER =		base-clang ports-gcc base-gcc
 MODULES =	fortran
-
 MODFORTRAN_COMPILER = gfortran
 
 BUILD_DEPENDS =	print/ghostscript/gnu-fonts \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/15 23:44:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.0.11
 CATEGORIES =	graphics x11
+REVISION =	0
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,7 +18,7 @@ WANTLIB += gif m microhttpd miniupnpc sodium
 MASTER_SITES =	https://drawpile.net/files/src/
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		x11/qt5

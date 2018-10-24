@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/17 10:08:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
@@ -6,6 +6,7 @@ V=			0.4.10
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  gegl-0.4                  0.0 # 410.0
 
@@ -28,6 +29,8 @@ WANTLIB += gthread-2.0 harfbuzz iconv intl jasper jpeg json-glib-1.0
 WANTLIB += lcms2 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png raw rsvg-2 tiff webp xcb xcb-render
 WANTLIB += xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
 

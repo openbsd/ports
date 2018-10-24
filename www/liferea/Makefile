@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2018/08/06 19:47:15 bket Exp $
+# $OpenBSD: Makefile,v 1.107 2018/10/24 14:28:12 sthen Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -6,6 +6,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.4
 DISTNAME=		liferea-${V}
+REVISION=		0
 
 CATEGORIES=		www news x11
 
@@ -31,6 +32,8 @@ WANTLIB += pixman-1 png secret-1 soup-2.4 sqlite3 tasn1 webkit2gtk-4.0
 WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xml2 xshmfence xslt z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
 

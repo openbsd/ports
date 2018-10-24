@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.4.6
 CATEGORIES=	print
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += QtGui QtNetwork QtXml c cairo cups fontconfig freetype
 WANTLIB += hyphen jpeg lcms2 m podofo tiff xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 

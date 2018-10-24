@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/08/18 15:04:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT =		template and text document library for Qt4
 PKG_VERSION =		0.5.1
-REVISION =		3
+REVISION =		4
 PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11
@@ -18,6 +18,8 @@ SHARED_LIBS +=		grantlee_gui		1.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} lib/qt4/QtGui lib/qt4/QtScript c m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/

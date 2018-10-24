@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=	console based Jabber client
 
 DISTNAME=	freetalk-3.2
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	net
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c glib-2.0 gmp iconv idn intl ltdl m ncurses pthread \
 		readline ${COMPILER_LIBCXX} guile loudmouth-1>=3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=freetalk/}
 

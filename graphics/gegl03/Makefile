@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/08/30 17:27:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:05 sthen Exp $
 
 PORTROACH=		limit:^0\.3
 
@@ -8,7 +8,7 @@ V=			0.3.34
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gegl-0.3             0.6      # 332.0
 
@@ -31,6 +31,8 @@ WANTLIB += iconv intl jasper jpeg json-glib-1.0 lcms2 lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += raw rsvg-2 ${COMPILER_LIBCXX} tiff webp xcb xcb-render
 WANTLIB += xcb-shm xml2 z fribidi
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
 

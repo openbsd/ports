@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/02 13:28:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT =		open source message queue optimised for performance
 
 V =			4.2.5
 DISTNAME =		zeromq-${V}
+REVISION =		0
 
 SHARED_LIBS +=  zmq                  4.2      # 6.3
 
@@ -16,6 +17,8 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m pthread sodium ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/zeromq/libzmq/releases/download/v$V/
 

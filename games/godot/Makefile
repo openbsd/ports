@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/25 19:20:29 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -8,6 +8,7 @@ PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,6 +18,8 @@ WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender c crypto enet execinfo freetype intl m mpcdec
 WANTLIB += ogg opus opusfile png ssl theora theoradec vorbis vorbisfile
 WANTLIB += webp xcb z pcre2-32 vpx zstd
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
 EXTRACT_SUFX =	.tar.xz

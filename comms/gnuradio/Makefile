@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 DISTNAME =	gnuradio-3.7.13.4
+REVISION =	0
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -45,6 +46,8 @@ WANTLIB += gsl gslcblas gsm iconv jack log4cpp m orc-0.4 portaudio qwt
 WANTLIB += usb-1.0 zmq
 
 MASTER_SITES =	https://www.gnuradio.org/releases/gnuradio/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		lang/python

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=		convert pf(4) logs to XML
 
 DISTNAME=		pflogx_086
 PKGNAME=		pflogx-0.86
-REVISION =		5
+REVISION =		6
 CATEGORIES=		converters
 
 HOMEPAGE=		http://akldev.free.fr/pflogx/
@@ -13,6 +13,8 @@ HOMEPAGE=		http://akldev.free.fr/pflogx/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB= 		c expat m pcap ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${HOMEPAGE}/releases/ \
 			https://distfiles.nl/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/17 11:18:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:12 sthen Exp $
 
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
@@ -7,7 +7,7 @@ COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.0.5
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  tracker-extract           1.0 # 0.0
 
@@ -29,6 +29,8 @@ WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += tracker-miner-${TRACKER_API}                                         
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common                            
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			lang/python \

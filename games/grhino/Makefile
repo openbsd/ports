@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
 V =			0.16.1
-REVISION=		6
+REVISION=		7
 CATEGORIES =		games
 HOMEPAGE =		http://rhino.sourceforge.net/
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -20,6 +20,8 @@ WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 popt pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 

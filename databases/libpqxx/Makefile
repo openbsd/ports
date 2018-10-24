@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
 DISTNAME=	libpqxx-4.0.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	databases devel
 
 SHARED_LIBS =	pqxx                 2.0      # .0.0
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += crypto m pq ssl ${COMPILER_LIBCXX}
 
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	databases/postgresql
 

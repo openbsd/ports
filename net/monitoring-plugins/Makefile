@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/13 15:36:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.2
-REVISION-main=	4
+REVISION-main=	5
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -25,15 +25,15 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
-REVISION-dbi=	2
-REVISION-fping=	2
-REVISION-game=	2
-REVISION-ldap=	2
-REVISION-mysql=	2
-REVISION-pgsql=	2
-REVISION-radius=3
-REVISION-samba=	1
-REVISION-snmp=	2
+REVISION-dbi=	3
+REVISION-fping=	3
+REVISION-game=	3
+REVISION-ldap=	3
+REVISION-mysql=	3
+REVISION-pgsql=	3
+REVISION-radius=4
+REVISION-samba=	2
+REVISION-snmp=	3
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
 
@@ -44,6 +44,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c iconv intl pthread
 WANTLIB-main=	${WANTLIB} crypto m ssl
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://www.monitoring-plugins.org/download/
 

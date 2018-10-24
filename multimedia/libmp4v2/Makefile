@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/13 15:31:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
 DISTNAME =		mp4v2-1.9.1
 PKGNAME =		lib${DISTNAME}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		multimedia audio
 
 SHARED_LIBS =		mp4v2	4.0 #1.9
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Patents
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://distfiles.nl/
 EXTRACT_SUFX =		.tar.bz2

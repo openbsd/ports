@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/24 12:27:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT =		libsass command line driver
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		sassc
 GH_TAGNAME =		3.5.0
+REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -14,6 +15,8 @@ CATEGORIES =		www
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m sass
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

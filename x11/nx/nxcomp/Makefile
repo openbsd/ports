@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=		library to compress the standard X protocol
 
 DASHVERSION=		2
-REVISION=		3
+REVISION=		4
 DISTNAME=		nxcomp-${MAJOR_VERSION}-${DASHVERSION}
 PKGNAME=		nxcomp-${MAJOR_VERSION}.${DASHVERSION}
 SHARED_LIBS=		Xcomp	1.0
@@ -11,6 +11,8 @@ SHARED_LIBS=		Xcomp	1.0
 MASTER_SITES=		${MASTER_SITES_NX:=nxcomp/}
 
 WANTLIB += jpeg m png ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png

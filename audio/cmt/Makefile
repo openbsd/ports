@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
@@ -7,7 +7,7 @@ CATEGORIES=	audio devel
 DISTNAME=	cmt_src_1.15
 WRKDIST=	${WRKDIR}/cmt
 PKGNAME=	cmt-1.15
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE:=download/}
 
@@ -15,6 +15,8 @@ MASTER_SITES=	${HOMEPAGE:=download/}
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	audio/ladspa
 

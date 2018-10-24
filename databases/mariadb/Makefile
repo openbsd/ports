@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/10/16 14:41:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2018/10/24 14:27:59 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -14,8 +14,9 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
-REVISION-server=1
-REVISION-tests=	0
+REVISION-server=2
+REVISION-tests=	1
+REVISION-main=	0
 
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
@@ -37,6 +38,8 @@ WANTLIB-main=	curses readline ${WANTLIB}
 WANTLIB-server=	mysqlclient pcre ${WANTLIB}
 WANTLIB-tests=	mysqlclient pcre pcreposix ${WANTLIB}
 
+COMPILER =	base-clang ports-gcc base-gcc
+
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	SOCKET_DIR
@@ -50,6 +53,8 @@ LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			devel/pcre
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			devel/pcre
+
+COMPILER=	base-clang ports-gcc base-gcc
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \

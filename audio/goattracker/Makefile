@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/09/02 06:10:47 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
 V =		2.74
 DISTNAME =	GoatTracker_${V}
 PKGNAME =	goattracker-${V}
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -20,6 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	SDL c m pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=goattracker2/}GoatTracker%202/${V}/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	devel/sdl
 

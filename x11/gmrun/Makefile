@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=		X11 program launcher
 
 DISTNAME=		gmrun-0.9.2
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -19,6 +19,8 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += popt pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gmrun/}
 

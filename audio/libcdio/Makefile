@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/07/26 22:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	compact disk input and control library
 
 DISTNAME=	libcdio-0.80
-REVISION=	9
+REVISION=	10
 CATEGORIES=	audio devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
@@ -19,7 +19,10 @@ HOMEPAGE=	https://www.gnu.org/software/libcdio/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=	c cddb iconv m ncurses ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	audio/libcddb \
 		converters/libiconv

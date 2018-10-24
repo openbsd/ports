@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.23
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel textproc x11
 
@@ -22,6 +22,8 @@ RUN_DEPENDS=	devel/desktop-file-utils
 WANTLIB += m c ${COMPILER_LIBCXX} pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
 WANTLIB += wx_gtk2_html wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core
 WANTLIB += wx_base_net wx_gtk2_dbgrid wx_gtk2_aui wx_gtk2_richtext
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

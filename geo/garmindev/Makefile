@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	garmin gps device driver
 
-REVISION =	2
+REVISION =	3
 DISTNAME =	garmindev-0.3.4
 CATEGORIES =	geo x11
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	devel/cmake
 WANTLIB +=	m pthread ${COMPILER_LIBCXX} usb
+
+COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS +=	devel/libusb-compat
 
 # libgarmindev is only needed to compile the drivers, but not on runtime

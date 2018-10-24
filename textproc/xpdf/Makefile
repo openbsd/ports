@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2017/11/08 18:30:24 kili Exp $
+# $OpenBSD: Makefile,v 1.92 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	PDF viewer for X11
 
 DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
 EPOCH=		0
+REVISION=	0
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		http://mirror.ctan.org/support/xpdf/
@@ -29,6 +30,8 @@ RUN_DEPENDS=	print/ghostscript/gnu-fonts
 
 WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
 		c m png pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 09:42:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
-REVISION =	8
+REVISION =	9
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
@@ -20,6 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c iconv intl m
 WANTLIB += ogg openal png pthread ${COMPILER_LIBCXX} vorbis vorbisfile
 WANTLIB += z ${MODLUA_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		lang/lua

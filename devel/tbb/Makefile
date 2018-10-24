@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/05 09:14:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:01 sthen Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		threading building blocks
 
 PKGNAME =		tbb-${GH_TAGNAME:S/_U/./}
+REVISION =		0
 
 GH_ACCOUNT =		01org
 GH_PROJECT =		tbb
@@ -21,6 +22,8 @@ HOMEPAGE =		https://www.threadingbuildingblocks.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =		CONLY="${CC}" \
 			CPLUS="${CXX}" \

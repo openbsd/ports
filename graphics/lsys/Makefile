@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/25 16:25:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	intepreter for Lindenmayer-systems
 
 # CVS checkout on 04-30-2010
 DISTNAME=	lsys-0.8
 CATEGORIES=	graphics math
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://software.schmorp.de/pkg/lsys
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://crappydiffs.org/
 
 WANTLIB += GL GLU X11 Xext c m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

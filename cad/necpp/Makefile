@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/26 22:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT=	NEC2++ antenna simulator
 
 DISTNAME=	necpp-1.2.3
-REVISION =	5
+REVISION =	6
 CATEGORIES=    	cad hamradio
 
 HOMEPAGE=	http://elec.otago.ac.nz/w/index.php/Necpp
@@ -17,6 +17,8 @@ CONFIGURE_STYLE=gnu
 SHARED_LIBS=necpp 0.0
 
 WANTLIB=c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/necpp

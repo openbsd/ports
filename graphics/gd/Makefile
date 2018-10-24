@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/06/24 12:22:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2018/10/24 14:28:05 sthen Exp $
 
 PORTROACH=	skipv:gd-2.2.5
 
@@ -7,7 +7,7 @@ COMMENT=	library for dynamic creation of images
 V=		2.2.5
 DISTNAME=	libgd-$V
 PKGNAME=	gd-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gd                   22.0     # 3.0
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c expat fontconfig freetype iconv jpeg m png pthread
 WANTLIB += ${COMPILER_LIBCXX} tiff webp z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://github.com/libgd/libgd/releases/download/${PKGNAME}/
 

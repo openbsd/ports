@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.2.5
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
-REVISION=			0
+REVISION=			1
 
 MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 
@@ -113,6 +113,8 @@ snappy_AUTOCONF_VERSION = 2.65
 snappy_AUTOMAKE_VERSION = 1.11
 
 WANTLIB = c crypto m ncurses pthread ssl ${COMPILER_LIBCXX} util pam
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODERL_BUILD_DEPENDS=devel/rebar
 BUILD_DEPENDS+=	devel/autoconf/${snappy_AUTOCONF_VERSION} \

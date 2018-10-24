@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2018/07/11 19:45:58 jca Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -21,19 +21,21 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
+COMPILER =		base-clang ports-gcc base-gcc
+
 #SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
 		--without-guile \
 		--without-lzma \
-	 	--enable-target=all \
+		--enable-target=all \
 		--with-python=${MODPY_BIN}
 
 USE_GMAKE=	Yes
 
 MODULES +=	lang/python
-LIB_DEPENDS += 	${MODPY_LIB_DEPENDS}
+LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
 MODPY_BUILDDEP = No
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT =	window manager based on the original Blackbox code
 DISTNAME =	fluxbox-1.3.7
 CATEGORIES =	x11
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://fluxbox.org/
 
@@ -12,6 +12,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Imlib2 X11 Xext Xft Xinerama Xpm Xrandr Xrender c fontconfig
 WANTLIB += freetype fribidi iconv m ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fluxbox/}
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/23 14:25:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =		c++ commandline flags processing library
 
 GH_ACCOUNT =		gflags
 GH_PROJECT =		gflags
 GH_TAGNAME =		v2.2.1
+REVISION =		0
 
 SHARED_LIBS +=		gflags               1.0      # .0.0
 SHARED_LIBS +=		gflags_nothreads     1.0      # .0.0
@@ -17,6 +18,8 @@ HOMEPAGE =		https://gflags.github.io/gflags/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 

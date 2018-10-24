@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
 DISTNAME=	xxdiff-4.0.1
 CATEGORIES=	textproc x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://furius.ca/xxdiff/
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 EXTRACT_SUFX=	.tar.bz2

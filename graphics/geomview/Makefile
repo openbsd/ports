@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
 V =			1.9.4
 DISTNAME =		geomview-$V
-REVISION =		10
+REVISION =		11
 SHARED_LIBS =		geomview	0.0
 CATEGORIES =		graphics
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xrender Xt c expat fontconfig
 WANTLIB += freetype iconv jpeg m png ${COMPILER_LIBCXX} xcb z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=geomview/}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/10/20 23:05:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =	text editor inspired by Norton Commander
 DISTNAME =	le-1.16.5
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	http://lav.yar.ru/programs.html
 MAINTAINER =	Ivan Ivanov <rambiusparkisanius@gmail.com>
@@ -11,6 +12,8 @@ MAINTAINER =	Ivan Ivanov <rambiusparkisanius@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m ncursesw ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	http://lav.yar.ru/download/le/
 

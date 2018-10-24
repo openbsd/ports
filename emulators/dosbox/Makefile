@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2017/07/29 08:59:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:01 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
 DISTNAME=	dosbox-0.74
-REVISION=	10
+REVISION=	11
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -17,6 +17,8 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += GL SDL SDL_net SDL_sound ${COMPILER_LIBCXX} png X11 c m pthread sndio z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	devel/sdl-net \
 		devel/sdl-sound \

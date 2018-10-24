@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/20 11:16:56 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=		MATE system monitor
+REVISION=		0
 
 MATE_PROJECT=		mate-system-monitor
 MATE_VERSION=		1.20.1
@@ -22,6 +23,8 @@ WANTLIB += ${COMPILER_LIBCXX} X11-xcb XRes croco-0.6 fribidi kvm
 WANTLIB += lzma rsvg-2 xcb-util xml2
 WANTLIB += atkmm-1.6 gdkmm-3.0 cairomm-1.0 giomm-2.4 glibmm-2.4 gtkmm-3.0
 WANTLIB += pangomm-1.4 sigc-2.0 startup-notification-1 wnck-3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome

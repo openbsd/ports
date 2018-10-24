@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/06/27 21:03:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -6,7 +6,7 @@ DISTNAME=		geeqie-1.4
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://geeqie.org/
 
@@ -17,6 +17,8 @@ WANTLIB += atk-1.0 c cairo cairo-gobject exiv2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl
 WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pthread ${COMPILER_LIBCXX}
 WANTLIB += tiff
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://geeqie.org/
 

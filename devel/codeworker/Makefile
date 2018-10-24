@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/08/21 19:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4
 PKGNAME =		codeworker-${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -14,6 +14,8 @@ HOMEPAGE =		http://codeworker.free.fr/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/

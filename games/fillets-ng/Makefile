@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2018/05/15 11:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =		wonderful puzzle game
 V = 			1.0.1
 DISTNAME = 		fillets-ng-${V}
 CATEGORIES =		games
 HOMEPAGE =		http://fillets.sourceforge.net/
-REVISION =              1
+REVISION =              2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB = 		SDL SDL_image SDL_mixer SDL_ttf c fribidi \
 			${MODLUA_WANTLIB} m pthread smpeg ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fillets/}
 DISTFILES = 		fillets-ng-${V}.tar.gz \
 			fillets-ng-data-${V}.tar.gz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/09/01 11:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2018/10/24 14:28:08 sthen Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -9,6 +9,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
+REVISION=		0
 
 CATEGORIES=		net telephony
 
@@ -22,6 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto curl expat h323 kvm
 WANTLIB += lber ldap ldap_r lua5.2 m maxminddb netsnmp netsnmpagent
 WANTLIB += netsnmpmibs nghttp2 pt sasl2 ssh ssl z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		lang/lua
 

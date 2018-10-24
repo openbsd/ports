@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/04 21:48:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -11,10 +11,10 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	1
-REVISION-main=	1
-REVISION-mysql=	1
-REVISION-pgsql=	1
+REVISION-ldap=	2
+REVISION-main=	2
+REVISION-mysql=	2
+REVISION-pgsql=	2
 
 CATEGORIES=	mail
 
@@ -56,6 +56,8 @@ PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/24 13:40:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -10,8 +10,8 @@ SUBST_VARS=		GH_TAGNAME
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-webkit=		${GH_PROJECT}-webkit-${GH_TAGNAME}
-REVISION-main=		0
-REVISION-webkit=	0
+REVISION-main=		1
+REVISION-webkit=	1
 
 CATEGORIES=		net
 
@@ -27,6 +27,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 # order matters: cmake must come before python
 MODULES=		devel/cmake \
 			lang/python
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 

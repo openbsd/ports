@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/08/09 12:25:55 solene Exp $
+# $OpenBSD: Makefile,v 1.70 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -7,6 +7,7 @@ PATCHLEVEL =	4
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
+REVISION =	0
 
 HOMEPAGE =	http://www.gnuplot.info/
 
@@ -17,6 +18,8 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c cerf m ncurses ereadline ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS +=	devel/readline \
 		math/libcerf

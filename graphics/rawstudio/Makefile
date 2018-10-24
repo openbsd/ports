@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	19
+REVISION =	20
 
 CATEGORIES =	graphics
 
@@ -19,6 +19,8 @@ WANTLIB += exiv2 fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += intl jpeg lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += tiff xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \

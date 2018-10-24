@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/03 13:34:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =		viewers for OpenEXR
 V =			2.2.1
 DISTNAME =		openexr_viewers-$V
 PKGNAME =		${DISTNAME:S/_/-/}
 SUBST_VARS +=		V
+REVISION =		0
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.openexr.com/
@@ -18,6 +19,8 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xft Xinerama Xrender Xxf86vm
 WANTLIB += c drm expat fltk fltk_gl fontconfig freetype glapi
 WANTLIB += m pthread ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=openexr/}
 

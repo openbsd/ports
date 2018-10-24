@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=	generic game engine library
 
 VERSION =	0.1.6
 DISTNAME=	flatzebra-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	flatzebra-0.1 2.0	# .2.0
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += FLAC SDL SDL_image SDL_mixer iconv jpeg m mikmod ogg png
 WANTLIB += smpeg sndio ${COMPILER_LIBCXX} tiff usbhid vorbis vorbisfile z
 WANTLIB += pthread webp
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://sarrazip.com/dev/
 

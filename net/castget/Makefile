@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-1.0.1
-REVISION=		9
+REVISION=		10
 SHARED_LIBS +=	castget              0.0      # .0.0
 CATEGORIES=		net
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 pcre pthread ssl
 WANTLIB += ${COMPILER_LIBCXX} xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=            audio/id3lib \
 			devel/glib2 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2018/07/10 10:53:10 tb Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
 BROKEN-hppa =	needs atomic ops
 
 DISTNAME =	pokerth-1.1.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	games x11
 
@@ -24,7 +24,7 @@ WANTLIB += sqlite3 ssl tinyxml
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 CXXFLAGS +=	-std=gnu++11
 
 MODULES=	devel/qmake \

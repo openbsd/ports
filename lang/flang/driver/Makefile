@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/16 14:56:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:06 sthen Exp $
 
 # If you are updating to a new version
 # (e.g. 6.0->6.1 or 7.0), you need to sync
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
 DISTNAME =	flang-driver-6.0.0.20181012
+REVISION =	0
 
 GH_PROJECT =	flang-driver
 GH_COMMIT =	f90d905b99ef497cc654b4a8433f1ac35a870f11
@@ -12,7 +13,7 @@ GH_COMMIT =	f90d905b99ef497cc654b4a8433f1ac35a870f11
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:01 sthen Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
@@ -8,7 +8,7 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		8
+REVISION =		9
 
 HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 intl m
 WANTLIB += openal png pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 

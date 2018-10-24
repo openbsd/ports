@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	3.0	# 6.0
 DISTNAME = 	ode-0.14
 CATEGORIES =	devel
-REVISION =      0
+REVISION =      1
 
 HOMEPAGE =	http://www.ode.org/
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLU X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
 WANTLIB += c drm expat glapi m pthread ${COMPILER_LIBCXX} xcb xcb-dri2
 WANTLIB += xcb-glx
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

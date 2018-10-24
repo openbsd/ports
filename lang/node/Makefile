@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2018/09/19 19:10:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.74 2018/10/24 14:28:07 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -18,6 +18,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
+REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -35,6 +36,8 @@ MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 MODULES =		lang/python
 
 WANTLIB += c execinfo kvm m pthread util z ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		devel/libexecinfo
 

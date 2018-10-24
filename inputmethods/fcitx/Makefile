@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/07 22:39:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -9,7 +9,7 @@ DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
 PKGNAME-qt4 =	fcitx-qt4-$V
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
 SHARED_LIBS +=	fcitx-core	0.0 # 0.3
@@ -27,6 +27,8 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES =	-main -gtk3 -qt4
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB-common =	c iconv intl kvm xkbcommon
 

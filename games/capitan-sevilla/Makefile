@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -6,12 +6,14 @@ DISTNAME =		capitan-sevilla-${VERSION}
 CATEGORIES =		games
 HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
 
-REVISION =		3
+REVISION =		4
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB = 	alleg c freetype m ogg png pthread ${COMPILER_LIBCXX} vorbis vorbisfile z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://computeremuzone.com/pc/juegos/
 EXTRACT_SUFX = 		.tar.bz2

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/12/14 05:54:18 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=	web search application
 
 V=		1.4.5
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
+REVISION=	0
 
 CATEGORIES=	www textproc
 
@@ -19,7 +20,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # C++11
-COMPILER=       base-clang ports-gcc ports-clang
+COMPILER=       base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	databases/xapian-core>=${V} \
 		devel/pcre \

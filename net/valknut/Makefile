@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	graphical Direct-Connect client
 
 DISTNAME=	valknut-0.3.7
-REVISION=	7
+REVISION=	8
 CATEGORIES=	net
 
 HOMEPAGE=	http://wxdcgui.sourceforge.net/
@@ -16,6 +16,8 @@ WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm bz2 c crypto dc drm expat
 WANTLIB += fontconfig freetype iconv jpeg lcms m mng png pthread
 WANTLIB += ssl ${COMPILER_LIBCXX} xcb xml2 z
 WANTLIB += X11-xcb Xau Xdmcp glapi lzma xcb-dri2 xcb-glx
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/qt3
 LIB_DEPENDS=	net/dclib \

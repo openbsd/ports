@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.291 2018/09/24 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.292 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20180916
 FFMPEG_V=	2.8.15
 DISTNAME=	mplayer-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -25,7 +25,7 @@ WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		postproc pthread sndio ssl ${COMPILER_LIBCXX} swscale \
 		swresample util x264 xvidcore z
 
-COMPILER=	base-clang base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 COMPILER_LANGS=	c
 
 LIB_DEPENDS=	archivers/bzip2 \

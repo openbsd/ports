@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =		fractal image generator
 
@@ -8,7 +8,7 @@ DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
 GH_PROJECT =		gnofract4d
 GH_ACCOUNT =		edyoung
 GH_TAGNAME =		V_${MODPY_EGG_VERSION:S/./_/g}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		graphics
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += m png pthread z ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 

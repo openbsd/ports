@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	games
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	No commercial use allowed by SFI-SCLA
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	devel/sdl \
 		devel/boost

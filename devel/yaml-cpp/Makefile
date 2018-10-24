@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/26 22:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =		YAML parser and emitter in C++
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		jbeder
 GH_PROJECT=		yaml-cpp
 GH_TAGNAME=		release-$V
 DISTNAME =		yaml-cpp-$V
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		yaml-cpp	2.0 # 0.5
 
@@ -19,6 +19,8 @@ HOMEPAGE =		https://github.com/jbeder/yaml-cpp
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/boost
 RUN_DEPENDS =		devel/boost

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
 CATEGORIES =	productivity
-REVISION =	4
+REVISION =	5
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
 HOMEPAGE =	https://sourceforge.net/projects/entomologist/
@@ -20,6 +20,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 WANTLIB +=	QtGui QtNetwork QtSql QtXml c m pthread ${COMPILER_LIBCXX}
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS} -g"

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2017/09/22 20:52:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-7.08
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  openconnect               4.3 # 5.4
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl lz4 lzma m
 WANTLIB += nettle p11-kit pthread tasn1 unistring xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 

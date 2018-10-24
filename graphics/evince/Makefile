@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.162 2018/09/30 12:27:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.163 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.28.4
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -31,6 +32,8 @@ WANTLIB += ${COMPILER_LIBCXX} tiff xcb xcb-render xcb-shm xml2 z unistring
 WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl
 WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn2
 WANTLIB += fribidi
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome

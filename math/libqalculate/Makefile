@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:07 sthen Exp $
 
 BROKEN-macppc =	libqalculate/Calculator.cc:7030: internal compiler error
 COMMENT =	applied math library
 CATEGORIES =	math devel
 DISTNAME =	libqalculate-0.9.7
-REVISION =	3
+REVISION =	4
 HOMEPAGE =	http://qalculate.sourceforge.net/
 
 SHARED_LIBS =	qalculate		0.0	# 5.0
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB += c cln glib-2.0 gmp iconv intl lzma m ncurses pcre pthread readline
 WANTLIB += ${COMPILER_LIBCXX} xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qalculate/}
 

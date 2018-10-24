@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1
-REVISION=		3
+REVISION=		4
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	US patent, see README
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += c jpeg m pano13 png pthread ${COMPILER_LIBCXX} tiff xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 

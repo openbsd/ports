@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00
-REVISION =	3
+REVISION =	4
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	games
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c iconv intl \
 		m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
 

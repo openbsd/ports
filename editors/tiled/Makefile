@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =		tile map editor
 
 V =			0.9.1
 DISTNAME =		tiled-qt-${V}
 PKGNAME =		tiled-${V}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		tiled                     0.0 # 1.0
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL ICE QtGui QtOpenGL SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c fontconfig freetype m pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tiled/}
 

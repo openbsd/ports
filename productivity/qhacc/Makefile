@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	qt home accounting program
 
 DISTNAME=	qhacc-3.4
-REVISION=	7
+REVISION=	8
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://qhacc.sourceforge.net/
@@ -28,6 +28,8 @@ WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
 WANTLIB += fontconfig freetype glapi jpeg lcms m mng png pthread
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/qt3
 

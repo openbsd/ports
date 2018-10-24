@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/02 16:41:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:01 sthen Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,8 @@ V =			5.0.0.20180901
 DISTNAME =		dolphin-emu-${V}
 PKGNAME-main =		dolphin-${V}
 PKGNAME-nogui =		dolphin-nogui-${V}
+REVISION-main =		0
+REVISION-nogui =	0
 
 MULTI_PACKAGES =	-main -nogui
 
@@ -32,6 +34,8 @@ cWANTLIB =	GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec avformat avutil \
 
 WANTLIB-main =	${cWANTLIB} Qt5Core Qt5Gui Qt5Widgets
 WANTLIB-nogui =	${cWANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/gettext-tools

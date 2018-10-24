@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/01 15:44:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
 GH_ACCOUNT =		thewtex
 GH_PROJECT =		tmux-mem-cpu-load
 GH_TAGNAME =		v3.4.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		sysutils
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/cmake
 
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB +=		c m ${COMPILER_LIBCXX}
 

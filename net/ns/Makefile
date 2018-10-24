@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2018/04/25 19:44:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
 V=		2.35
 DISTNAME=	ns-src-$V
 PKGNAME=	ns-$V
-REVISION =	4
+REVISION =	5
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES +=	x11/tk
 WANTLIB +=	X11 Xext c m pcap ${COMPILER_LIBCXX} otcl
 WANTLIB +=	${MODTK_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nsnam/}
 WRKDIST=	${WRKDIR}/ns-$V

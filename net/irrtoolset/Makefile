@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=	toolset for internet routing registries
 
 V=		5.0.1
-REVISION =	2
+REVISION =	3
 DISTNAME=	irrtoolset-$V
 
 CATEGORIES=	net
@@ -16,6 +16,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m readline ${COMPILER_LIBCXX} termcap
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/ \
 		ftp://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/

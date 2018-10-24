@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2018/08/27 03:54:57 tb Exp $
+# $OpenBSD: Makefile,v 1.155 2018/10/24 14:28:13 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,14 +25,14 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		17
-REVISION-mysql =	4
-REVISION-postgresql =	4
-REVISION-sqlite2 =	4
-REVISION-tds =		4
+REVISION-main =		18
+REVISION-mysql =	5
+REVISION-postgresql =	5
+REVISION-sqlite2 =	5
+REVISION-tds =		5
 REVISION-debug =	2
-REVISION-examples =	5
-REVISION-html =		1
+REVISION-examples =	6
+REVISION-html =		2
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -81,6 +81,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # For qsettings to write its setup
 PORTHOME =	${WRKDIST}

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/10/05 09:51:10 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	universal charset detection library and tool
 
 DISTNAME=	uchardet-0.0.6
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=	uchardet                  0.0 # 0.0
 
@@ -15,6 +16,8 @@ HOMEPAGE=	https://www.freedesktop.org/wiki/Software/uchardet/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://www.freedesktop.org/software/uchardet/releases/
 

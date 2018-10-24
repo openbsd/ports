@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=		grip-3.8.1
 CATEGORIES=		audio
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://sourceforge.net/projects/grip/
 
@@ -23,6 +23,8 @@ WANTLIB += gpg-error graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv id3 intl ltdl lzma m nghttp2 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt ssl util vorbis
 WANTLIB += vorbisfile vte xcb xcb-render xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=grip/}
 

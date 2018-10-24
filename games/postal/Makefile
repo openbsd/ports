@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:03 sthen Exp $
 
 V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
 DISTNAME =	postal-1-open-source-${V}
 PKGNAME =	postal-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://runningwithscissors.com/
@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 c m
 MASTER_SITES =	https://devio.us/~bcallah/source/
 
 # base-gcc not good enough (tested on armv7)
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	devel/sdl2
 

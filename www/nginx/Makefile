@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2018/09/28 14:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2018/10/24 14:28:12 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -31,7 +31,7 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
-REVISION=		1
+REVISION=		2
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -60,6 +60,8 @@ MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua no_passenger
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 

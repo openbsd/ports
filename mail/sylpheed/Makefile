@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2018/06/27 21:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.122 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.7.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS += 	 	sylph-0                   4.1 # 4.0
 SHARED_LIBS += 		sylpheed-plugin-0         4.0 # 4.0
@@ -28,6 +28,8 @@ WANTLIB += gpg-error gpgme graphite2 gthread-2.0 gtk-x11-2.0 gtkspell
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread ssl ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.7/

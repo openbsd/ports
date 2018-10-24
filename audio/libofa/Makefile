@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2017/08/21 18:34:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
 DISTNAME =	libofa-0.9.3
-REVISION =	8
+REVISION =	9
 CATEGORIES =	audio devel
 SHARED_LIBS +=	ofa	0.0
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =	https://distfiles.nl/
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX} fftw3
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # needed to build the examples
 BUILD_DEPENDS =	net/curl \

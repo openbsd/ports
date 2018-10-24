@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/08/12 13:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	image processing tools with stable ABI
 
@@ -6,6 +6,7 @@ DISTNAME=	GraphicsMagick-1.3.30
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	GraphicsMagick		7.0 \
 		GraphicsMagick++	5.2 \
@@ -23,6 +24,8 @@ WANTLIB += freetype iconv jasper jbig jpeg lcms2 ltdl lzma m png16
 WANTLIB += tiff webp webpmux wmflite-0.2 xcb xml2 z
 
 WANTLIB += perl # uses perl ABI
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/xz \

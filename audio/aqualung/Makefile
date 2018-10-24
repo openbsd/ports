@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2018/06/27 21:03:34 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=	advanced music player
 
 VERSION=	1.0
 DISTNAME=	aqualung-${VERSION}
-REVISION=	4
+REVISION=	5
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -26,6 +26,8 @@ WANTLIB += avformat avutil wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
 
 MASTER_SITES=	https://github.com/jeremyevans/aqualung/releases/download/${VERSION}/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 

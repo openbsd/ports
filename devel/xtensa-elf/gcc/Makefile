@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 18:30:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	gcc for xtensa-elf cross-development
 
 VERSION=	6.3.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
+REVISION=	0
 
 SUBST_VARS+=	VERSION
 
@@ -12,6 +13,8 @@ WANTLIB=	${COMPILER_LIBCXX} c gmp m mpc mpfr
 DIST_SUBDIR=	gcc
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS+=	devel/bison \
 		devel/xtensa-elf/binutils

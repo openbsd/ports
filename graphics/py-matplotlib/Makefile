@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2018/09/25 06:11:24 daniel Exp $
+# $OpenBSD: Makefile,v 1.71 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		8
+REVISION =		9
 CATEGORIES =		graphics devel math
 
 HOMEPAGE =	https://matplotlib.org/
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB += freetype m png z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/python
 

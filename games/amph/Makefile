@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/11 12:16:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	jump'n'run game with unique video effects
 
@@ -6,7 +6,7 @@ VERSION=	0.8.10
 DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
 PKGNAME=	amph-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,6 +20,8 @@ MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL Xpm Xt c m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 DISTFILES=	amphetamine-data-${DVERSION}${EXTRACT_SUFX} \
 		${DISTNAME}${EXTRACT_SUFX}

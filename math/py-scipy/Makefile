@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/08/15 14:55:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.1.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math devel
 
@@ -15,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 WANTLIB += blas lapack m pthread ${COMPILER_LIBCXX} util
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 HOMEPAGE=		https://scipy.org/
 

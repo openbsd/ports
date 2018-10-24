@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	simple and small C++ XML parser
 
 V=		2.6.2
-REVISION =	2
+REVISION =	3
 DISTNAME=	tinyxml_${V:S/./_/g}
 PKGNAME=	tinyxml-${V}
 EXTRACT_SUFX=	.zip
@@ -18,6 +18,8 @@ HOMEPAGE=	http://www.grinninglizard.com/tinyxml/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyxml/}
 

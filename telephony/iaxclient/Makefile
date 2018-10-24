@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/04 21:48:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -8,7 +8,7 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION=	21
+REVISION=	22
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	x11/tk
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
 cWANTLIB	+= speexdsp sndio theora vidcap z

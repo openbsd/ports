@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.5.7.2
 CATEGORIES=		audio x11
-REVISION=		6
+REVISION=		7
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +20,8 @@ WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimmix.berlios/}
 EXTRACT_SUFX=		.tar.bz2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		textproc/intltool
 

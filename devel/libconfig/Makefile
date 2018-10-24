@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/17 09:55:16 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
 DISTNAME=		libconfig-1.7.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  config               11.0     # 11.2
 SHARED_LIBS +=  config++             11.0     # 11.2
@@ -16,6 +16,8 @@ HOMEPAGE=		https://hyperrealm.github.io/libconfig/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://hyperrealm.github.io/libconfig/dist/
 

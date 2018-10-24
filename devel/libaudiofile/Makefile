@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:00 sthen Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -10,7 +10,7 @@ SUBST_VARS=	V
 
 DISTNAME=	audiofile-${V}
 PKGNAME=	lib${DISTNAME}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  audiofile            1.0      # 1.0
 
@@ -24,6 +24,8 @@ HOMEPAGE=	http://www.68k.org/~michael/audiofile/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC c m ogg ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	audio/flac
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME=	cgicc-3.2.16
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
@@ -16,6 +16,8 @@ HOMEPAGE=	https://www.gnu.org/software/cgicc/cgicc.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-static

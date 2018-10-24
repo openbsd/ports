@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2017/10/23 17:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16
 DISTNAME =		gmpc-plugins-${VERSION}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		audio
 
@@ -24,6 +24,8 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl lzma m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sqlite3 ${COMPILER_LIBCXX}
 WANTLIB += tag tag_c xcb xcb-render xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		textproc/intltool
 

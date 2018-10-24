@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-4.3.0a
 SHARED_LIBS =	spatialite 1.1 # 8.0.1
-REVISION =	1
+REVISION =	2
 
 LIB_DEPENDS +=	converters/libiconv \
 		databases/sqlite3 \
@@ -14,6 +14,8 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/proj
 
 WANTLIB += freexl geos geos_c iconv m proj pthread sqlite3 ${COMPILER_LIBCXX} xml2 lzma z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # needed for check_extension test to succeed
 TEST_DEPENDS =	${BUILD_PKGPATH}

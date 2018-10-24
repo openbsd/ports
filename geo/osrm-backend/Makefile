@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/10 11:10:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =		high-performance road network routing engine
 
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_TAGNAME =		v5.18.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		geo
 
@@ -18,6 +18,8 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt bz2 c expat m tbb tbbmalloc z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/lua

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:59 sthen Exp $
 
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 BROKEN-powerpc=	undefined reference to __sync_fetch_and_add_8
@@ -9,7 +9,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=	straightforward implementation of DBM
 
 DISTNAME=	kyotocabinet-1.2.76
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	kyotocabinet 0.0 # 16.0
 
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES=	${HOMEPAGE}pkg/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 

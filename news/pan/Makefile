@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2018/09/20 09:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	powerful newsreader
 
 V=		0.140
 DISTNAME=	pan-${V}
 CATEGORIES=	news x11
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://pan.rebelbase.com/
 
@@ -19,6 +19,8 @@ WANTLIB += enchant-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 gtkspell3-3 iconv intl m notify pango-1.0 pangocairo-1.0
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE= 	Yes
 

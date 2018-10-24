@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -10,8 +10,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		6
-REVISION-gui =		4
+REVISION-main =		7
+REVISION-gui =		5
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -20,6 +20,8 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =		http://bugs.launchpad.net/rocrail/sunrise/2.0/+download/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES =	-main -gui
 WANTLIB +=		c pthread

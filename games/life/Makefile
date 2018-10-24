@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/26 22:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT=	SDL clone of the popular Game of Life
 
 DISTNAME=	life-1.0
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games
 
@@ -11,6 +11,8 @@ CATEGORIES=	games
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m pthread ${COMPILER_LIBCXX} SDL
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 

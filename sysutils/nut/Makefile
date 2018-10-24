@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.100 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -12,10 +12,10 @@ PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
-REVISION-main=		5
-REVISION-snmp=		1
-REVISION-xml=		2
-REVISION-cgi=		1
+REVISION-main=		6
+REVISION-snmp=		2
+REVISION-xml=		3
+REVISION-cgi=		2
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -28,6 +28,8 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+, some scripts (not packaged) are GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 COMMON +=	c crypto pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb usb-1.0

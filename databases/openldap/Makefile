@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2018/08/25 18:22:51 jca Exp $
+# $OpenBSD: Makefile,v 1.165 2018/10/24 14:27:59 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,11 +8,12 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.46
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION-server =	0
+REVISION-server =	1
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
 FULLPKGPATH-main =	databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
+REVISION-main =		0
 
 SHARED_LIBS +=	lber                 12.0     # 12.6
 SHARED_LIBS +=	lber-2.4             12.0
@@ -41,6 +42,8 @@ MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 # patches to enable writemap for MDB tests; fairly intrusive so keeping them out of patches/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 PATCHFILES =	openldap-2.4.45-mdb-tests.diff:0
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 EXTRACT_SUFX =		.tgz
 

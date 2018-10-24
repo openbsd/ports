@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2018/10/24 14:28:12 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -8,7 +8,7 @@ COMMENT=	Fast-Light Tool Kit
 VER=		1.3.3
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -25,6 +25,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama
 WANTLIB += c fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://fltk.org/pub/fltk/${VER}/
 

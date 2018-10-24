@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	minimalistic GIS on top of spatialite and rasterlite
 PROJECT =	spatialite_gis
 DISTNAME =	${PROJECT}-1.0.0c
-REVISION=	6
+REVISION=	7
 
 LIB_DEPENDS +=	print/libharu \
 		databases/sqlite3 \
@@ -23,6 +23,8 @@ WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
 WANTLIB += z lzma xml2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}

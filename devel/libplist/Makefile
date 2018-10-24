@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/07/26 22:45:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
@@ -8,8 +8,8 @@ SUBST_VARS +=		VERSION
 DISTNAME =		libplist-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-plist-${VERSION}
-REVISION-main =		0
-REVISION-python =	0
+REVISION-main =		1
+REVISION-python =	1
 
 SHARED_LIBS +=  plist                2.0      # 3.0
 SHARED_LIBS +=  plist++              2.0      # 3.0
@@ -38,6 +38,8 @@ LIB_DEPENDS =		converters/libiconv \
 WANTLIB +=		iconv lzma m pthread xml2 z
 WANTLIB-main += 	${WANTLIB} c ${COMPILER_LIBCXX}
 WANTLIB-python += 	${WANTLIB} plist util python${MODPY_VERSION}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"

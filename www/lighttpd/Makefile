@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2018/10/17 08:34:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
@@ -6,6 +6,7 @@ DISTNAME=	lighttpd-1.4.51
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.lighttpd.net/
 
@@ -15,6 +16,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pcre ssl z ${MODLUA_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes

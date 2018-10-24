@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/11 16:16:23 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT =	console-based OPL2 audio player
 
 V =		1.8
 DISTNAME =	adplay-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} SDL2 adplug binio c m samplerate
 WANTLIB +=	sndio usbhid
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://github.com/adplug/adplay-unix/releases/download/v${V}/
 

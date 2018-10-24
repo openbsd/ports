@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	web proxy with antivirus filter
 
@@ -6,7 +6,7 @@ DISTNAME=	havp-0.92a
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/download/
 
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.server-side.de/
 
@@ -16,6 +16,8 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m pthread ${COMPILER_LIBCXX} clamav
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		security/clamav
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/15 07:27:58 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
 DISTNAME =	piglit-20180108
+REVISION =	0
 
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
@@ -20,6 +21,8 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel
 WANTLIB += m xcb xcb-dri2 z
 WANTLIB += png waffle-1
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/python

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 # XXX check source files for UTF-8 BOM, they break build with base gcc
 DISTNAME=	lyx-2.2.3
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	print editors
 
@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.2.x/ \
 
 WANTLIB += ${COMPILER_LIBCXX} QtGui QtSvg aspell boost_regex-mt
 WANTLIB += boost_signals-mt c enchant iconv m magic z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

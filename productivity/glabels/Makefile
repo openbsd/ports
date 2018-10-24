@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		productivity graphics
 
@@ -30,6 +30,8 @@ WANTLIB += lzma m nghttp2 nspr4 nss3 nssutil3 oauth p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png qrencode rsvg-2 secret-1 smime3 soup-2.4 sqlite3
 WANTLIB += ssl ssl3 xcb xcb-render xcb-shm xml2 z zint
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/dconf \
 			x11/gnome

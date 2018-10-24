@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2018/06/01 15:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.3.8
-REVISION=	5
+REVISION=	6
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.icewm.org/
@@ -15,6 +15,8 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xrandr Xrender c fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 

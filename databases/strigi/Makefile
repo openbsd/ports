@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/16 21:25:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:27:59 sthen Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -7,7 +7,7 @@ HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 
 # hand-rolled from strigi* submodules at quickgit.kde.org
 DISTNAME =	strigi-0.7.7pl1
-REVISION =	2
+REVISION =	3
 
 MASTER_SITES =	https://spacehopper.org/mirrors/ \
 		ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
@@ -37,6 +37,8 @@ LIB_DEPENDS =	archivers/bzip2 \
 WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += bz2 c clucene-core clucene-shared dbus-1 exiv2 fam iconv m pthread
 WANTLIB += ${COMPILER_LIBCXX} xml2 z avcodec avformat avutil swscale
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			x11/qt4

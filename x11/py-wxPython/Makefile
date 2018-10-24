@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/26 22:45:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 V=		2.8.12.0
-REVISION=	4
+REVISION=	5
 DISTNAME=	wxPython-src-$V
 PKGNAME=	py-wxPython-$V
 CATEGORIES=	x11 devel
@@ -24,6 +24,8 @@ WANTLIB +=	wx_gtk2_aui wx_gtk2_richtext wx_gtk2_gizmos wx_gtk2_stc \
 		wx_base_xml wx_gtk2_qa wx_base_odbc wx_gtk2_html \
 		wx_gtk2_gl wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core \
 		wx_base_net wx_gtk2_dbgrid m pthread ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 WRKSRC=		${WRKDIST}/wxPython
 

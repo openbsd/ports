@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -6,7 +6,7 @@ COMMENT=	online banking interface and financial data framework
 DISTNAME=	aqbanking-5.5.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{download.php?package=03\&release=118\&file=01}
 WRKDIST=	${WRKDIR}/aqbanking-5.5.1
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=	aqbanking            2.0      # 39.2
 SHARED_LIBS +=	aqbankingpp          0.0      # unknown
@@ -26,6 +26,8 @@ WANTLIB += ${COMPILER_LIBCXX} c ffi gcrypt gmp gnutls gpg-error
 WANTLIB += gwenhywfar hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += tasn1 unistring xml2 xmlsec1 xmlsec1-gcrypt xmlsec1-gnutls
 WANTLIB += xslt z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 

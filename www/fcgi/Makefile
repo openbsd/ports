@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0
-REVISION =		14
+REVISION =		15
 CATEGORIES=		www
 SHARED_LIBS +=	fcgi                 0.0      # .0.0
 SHARED_LIBS +=	fcgi++               1.0      # .1.0
@@ -21,6 +21,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 WANTLIB += perl # uses perl ABI
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${HOMEPAGE}/dist/
 

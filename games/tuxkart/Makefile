@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	tuxkart is a simple Go-Kart racing game.
 
 DISTNAME =	tuxkart-0.4.0
-REVISION =	4
+REVISION =	5
 CATEGORIES =	games
 
 HOMEPAGE =	http://tuxkart.sourceforge.net/
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		GL ICE SM X11 Xext Xi Xmu c m pthread \
 			sndio ${COMPILER_LIBCXX} xcb
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/plib
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/30 16:19:59 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:59 sthen Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 COMMENT =		PostgreSQL V8 javascript procedural language
 
 VERSION =		1.4.2
-REVISION =		6
+REVISION =		7
 DISTNAME =		plv8-${VERSION}
 PKGNAME =		postgresql-${DISTNAME}
 
@@ -21,6 +21,8 @@ WANTLIB =		c m ${COMPILER_LIBCXX} pthread v8
 
 MASTER_SITES =		http://api.pgxn.org/dist/plv8/${VERSION}/
 EXTRACT_SUFX =		.zip
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		lang/libv8

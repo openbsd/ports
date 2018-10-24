@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2018/04/16 21:01:30 fcambus Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		9
+REVISION=		10
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
@@ -20,6 +20,8 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86dga Xxf86vm c atk-1.0 SDL
 WANTLIB += cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		devel/sdl \
 			x11/gtk+2

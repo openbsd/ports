@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2017/11/20 18:14:49 stu Exp $
+# $OpenBSD: Makefile,v 1.36 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
-REVISION =	6
+REVISION =	7
 CATEGORIES =	audio
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
@@ -10,6 +10,8 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_FREEBSD_LOCAL:=cy/}
 

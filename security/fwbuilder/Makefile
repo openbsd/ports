@@ -1,14 +1,20 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/29 22:16:20 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
 CATEGORIES =	net security
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://www.fwbuilder.org/
 
 # GPLv2+ mostly, some code under BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
+WANTLIB += lzma pthread ${COMPILER_LIBCXX} util xml2 xslt z
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 
@@ -51,10 +57,6 @@ TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_TARGET =	tests
 TEST_ENV +=		COPTS="${COPTS}"
 TEST_IS_INTERACTIVE =	X11
-
-WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
-WANTLIB += lzma pthread ${COMPILER_LIBCXX} util xml2 xslt z
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_FILE="${INSTALL_DATA}"

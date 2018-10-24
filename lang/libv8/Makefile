@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/08 18:06:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:07 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -6,7 +6,7 @@ COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.16.14.11
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
 
@@ -33,6 +33,8 @@ BUILD_DEPENDS=	devel/gyp
 LIB_DEPENDS=	devel/libexecinfo
 
 WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 

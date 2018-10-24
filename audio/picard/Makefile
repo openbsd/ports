@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	0.16
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		audio
 
@@ -20,6 +20,8 @@ WANTLIB += avcodec avformat m ofa pthread ${COMPILER_LIBCXX}
 
 MASTER_SITES =		http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 			ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 

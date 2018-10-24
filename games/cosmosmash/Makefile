@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	astrosmash clone for X
 
 DISTNAME =	cosmosmash-1.4.7
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	games
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${COMPILER_LIBCXX}
 WANTLIB += FLAC iconv jpeg mikmod ogg png smpeg sndio tiff usbhid
 WANTLIB += vorbis vorbisfile webp z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://sarrazip.com/dev/
 

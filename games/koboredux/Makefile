@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =	frenetic space shoot-em-up
 
 V =		0.7.5.1
 DISTNAME =	koboredux-$V
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	olofson
 GH_PROJECT =	koboredux
@@ -20,6 +20,8 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image audiality2 c m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 RUN_DEPENDS =		devel/desktop-file-utils

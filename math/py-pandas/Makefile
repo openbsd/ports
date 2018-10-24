@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 08:09:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	0.23.4
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -23,6 +24,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	math/py-numpy${MODPY_FLAVOR}>=1.9.0
 

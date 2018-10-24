@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.138 2018/07/01 21:10:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.139 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.9
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -32,7 +32,7 @@ WANTLIB += z
 XINEAPI_REV=	2.7
 SUBST_VARS+=	XINEAPI_REV
 
-COMPILER=	base-clang base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 COMPILER_LANGS=	c
 
 BUILD_DEPENDS=	textproc/xmlto

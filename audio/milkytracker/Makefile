@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
@@ -7,7 +7,7 @@ GH_PROJECT =	MilkyTracker
 GH_TAGNAME =	v1.02.00
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	audio
 
@@ -19,6 +19,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	SDL2 c m ${COMPILER_LIBCXX} z zzip
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 

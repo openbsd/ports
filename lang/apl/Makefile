@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/11 23:44:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.7
 CATEGORIES =	lang
+REVISION =	0
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
 SHARED_LIBS +=	_template_F0              0.0 # 0.0
@@ -18,6 +19,8 @@ MAINTAINER =	Giuseppe Cocomazzi <sbudella@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ncurses pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_GNU:=apl/}
 

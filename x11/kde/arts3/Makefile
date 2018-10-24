@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.86 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		12
+REVISION =		13
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION =	3.5.8
 
@@ -45,6 +45,8 @@ WANTLIB += freetype glib-2.0 gmodule-2.0 gthread-2.0 iconv intl jpeg lcms m
 WANTLIB += mad mng ogg pcre png pthread sndio ${COMPILER_LIBCXX} vorbis
 WANTLIB += vorbisenc vorbisfile xcb xcb-glx z FLAC X11-xcb Xau Xdmcp glapi
 WANTLIB += xcb-dri2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/28 10:16:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2018/10/24 14:27:59 sthen Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
 COMMENT =	library for efficient computations
 
 DISTNAME =	cln-1.3.4
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=  cln                  3.0      # .6.4
 CATEGORIES =	devel
 
@@ -20,6 +20,8 @@ MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB	+=		m ${COMPILER_LIBCXX} gmp
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		devel/gmp
 

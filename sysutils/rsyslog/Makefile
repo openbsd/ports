@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/09/13 21:38:05 remi Exp $
+# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:10 sthen Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -18,6 +18,11 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
+REVISION-elasticsearch =0
+REVISION-main =		0
+REVISION-mysql =	0
+REVISION-normalize =	0
+REVISION-pgsql =	0
 
 HOMEPAGE =		https://www.rsyslog.com/
 
@@ -25,6 +30,8 @@ MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB-main += 	c crypto curl estr fastjson ffi gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl nettle nghttp2

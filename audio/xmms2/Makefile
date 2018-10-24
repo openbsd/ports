@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/07/18 19:36:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2018/10/24 14:27:58 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		10
+REVISION =		11
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -31,6 +31,8 @@ WANTLIB += vpx x264 xml2 opus swresample x265 ${MODPY_WANTLIB}
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
 EXTRACT_SUFX =		.tar.bz2
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python \
 			perl

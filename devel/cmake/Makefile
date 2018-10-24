@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2018/07/13 03:00:16 jsg Exp $
+# $OpenBSD: Makefile,v 1.172 2018/10/24 14:27:59 sthen Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -6,7 +6,7 @@ COMMENT =	portable build system
 
 VER =		3.10.2
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} archive c curl curses expat form
 WANTLIB += jsoncpp m rhash uv z
 
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER =		base-clang ports-gcc base-gcc
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"

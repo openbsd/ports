@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:02 sthen Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
 V =		0.4.1
-REVISION =	4
+REVISION =	5
 COMMENT =	2D MMORPG focused on grinding
 DISTNAME =	choria-${V}-src
 PKGNAME =	choria-${V}
@@ -15,6 +15,8 @@ HOMEPAGE =	https://github.com/jazztickets/choria
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += Irrlicht c m pthread sqlite3 ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=choria/}
 

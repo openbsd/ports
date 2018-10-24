@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/11/12 06:37:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -7,7 +7,7 @@ PKGNAME =	abuse-0.8
 EPOCH =		0
 ABUSE_SFX =	abuse-free-sounds-20120309
 CATEGORIES =	games x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://abuse.zoy.org/
 
@@ -20,6 +20,8 @@ WANTLIB += Xxf86vm c drm iconv m mikmod ogg pthread smpeg
 WANTLIB += sndio ${COMPILER_LIBCXX} usbhid vorbis vorbisfile xcb
 WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx
 WANTLIB += expat
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
 MASTER_SITES0 =	http://www.linklevel.net/distfiles/

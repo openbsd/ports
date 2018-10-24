@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/11 19:27:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -12,7 +12,8 @@ V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
-REVISION-server =	0
+REVISION-server =	1
+REVISION-main =		0
 
 CATEGORIES =		games
 
@@ -31,6 +32,8 @@ WANTLIB-main += z
 WANTLIB-main += GL GLU glut
 
 WANTLIB-server += c iconv m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://www.hedgewars.org/download/releases/
 EXTRACT_SUFX =		.tar.bz2

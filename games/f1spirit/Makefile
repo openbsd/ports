@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/27 21:03:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1615
 PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
-REVISION =	5
+REVISION =	6
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_0.rc9-/-0.rc9./}
 
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+= GL GLU SDL SDL_image SDL_mixer SDL_net c crypto curl m nghttp2
 WANTLIB+= pthread ssl ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

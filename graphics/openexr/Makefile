@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/12/03 13:33:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -9,6 +9,9 @@ DISTNAME=	openexr-$V
 PKGNAME-main=	OpenEXR-$V
 PKGNAME-tools=  OpenEXR-tools-$V
 PKGNAME-doc=	OpenEXR-doc-$V
+REVISION-doc=	0
+REVISION-main=	0
+REVISION-tools= 0
 
 SHARED_LIBS +=	IlmImf               6.0      # 23.0
 SHARED_LIBS +=	IlmImfUtil           1.0      # 23.0
@@ -31,6 +34,8 @@ LIB_DEPENDS-main=	graphics/ilmbase
 WANTLIB-tools=		${WANTLIB-main} c m pthread ${COMPILER_LIBCXX} IlmImf>=4
 LIB_DEPENDS-tools=	${LIB_DEPENDS-main} graphics/openexr
 PKG_ARCH-doc=		*
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 # Test unhappy with separate build
 #SEPARATE_BUILD=	Yes

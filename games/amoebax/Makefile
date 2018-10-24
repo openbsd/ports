@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:02 sthen Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
 DISTNAME= 	amoebax-0.2.1
-REVISION=       2
+REVISION=       3
 
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
@@ -16,6 +16,8 @@ MASTER_SITES=	${HOMEPAGE}download/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image SDL_mixer
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer

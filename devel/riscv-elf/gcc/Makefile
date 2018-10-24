@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/08 14:24:31 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	8.1.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
+REVISION=	0
 
 SHARED_LIBS=	cc1		0.0 \
 		cc1plugin	0.0 \
@@ -14,6 +15,8 @@ SUBST_VARS+=	VERSION
 
 WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc pthread
 DIST_SUBDIR=	gcc
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_GXX=	No
 MAKE_FORTRAN=	No

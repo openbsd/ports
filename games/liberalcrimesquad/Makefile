@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/04 15:10:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:03 sthen Exp $
 
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-${V}{v${V}}
 PKGNAME =	liberalcrimesquad-${V}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://lcs.wikidot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses iconv m
 MASTER_SITES =	https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
 
 # C++11
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	converters/libiconv
 

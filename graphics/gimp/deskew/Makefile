@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
 GH_ACCOUNT =		prokoudine
 GH_PROJECT =		gimp-deskew-plugin
 GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics x11
 
@@ -23,6 +23,8 @@ WANTLIB += gimpconfig-2.0 gimpmath-2.0 gimpmodule-2.0 gimpui-2.0
 WANTLIB += gimpwidgets-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 ${COMPILER_LIBCXX}
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		textproc/intltool
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \

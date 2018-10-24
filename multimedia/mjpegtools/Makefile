@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2018/04/25 20:55:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2018/10/24 14:28:08 sthen Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		8
+REVISION=		9
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
@@ -27,6 +27,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += sndio usbhid xcb xcb-render xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX} 
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		devel/sdl \
 			devel/sdl-gfx \

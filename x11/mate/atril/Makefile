@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/20 11:15:18 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:13 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		document viewer for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -36,6 +37,8 @@ WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
 WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence zstd
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome

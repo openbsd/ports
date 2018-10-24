@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:08 sthen Exp $
 
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 CATEGORIES =	multimedia
@@ -8,12 +8,14 @@ V =		0.56
 DISTFILES =	ccextractor.${V:S/.//}-src.zip
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ccextractor/}
 DISTNAME =	ccextractor-$V
-REVISION =	1
+REVISION =	2
 WRKDIST =	${WRKDIR}/ccextractor.$V
 WRKSRC =	${WRKDIST}/src
 
 # GPL 2.0
 PERMIT_PACKAGE_CDROM =		Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 DOCDIR = 	${PREFIX}/share/doc/ccextractor
 NO_TEST =	Yes

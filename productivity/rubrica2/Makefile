@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:10 sthen Exp $
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	16
+REVISION=	17
 EPOCH=		0
 
 CATEGORIES=	productivity x11
@@ -23,6 +23,8 @@ WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl lzma m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2
 WANTLIB += z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rubrica.berlios/}
 

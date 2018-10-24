@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.164 2018/10/24 14:28:09 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -19,12 +19,12 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-REVISION-common=	1
-REVISION-gui=		1
-REVISION-hpaio=		0
-REVISION-hpcups=	0
-REVISION-hpijs=		0
-REVISION-main=		0
+REVISION-common=	2
+REVISION-gui=		2
+REVISION-hpaio=		1
+REVISION-hpcups=	1
+REVISION-hpijs=		1
+REVISION-main=		1
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -47,6 +47,8 @@ MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 MODULES=		lang/python
 
 MODPY_RUNDEP=		No
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 cWANTLIB += crypto m pthread
 

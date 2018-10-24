@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/29 22:16:15 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.3
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	geo x11
 
@@ -26,6 +26,8 @@ LIB_DEPENDS =	devel/proj \
 
 WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c iconv intl m proj pthread gdal
 WANTLIB += ${COMPILER_LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 #generate the .qm files from the .ts files before configure runs
 pre-configure:

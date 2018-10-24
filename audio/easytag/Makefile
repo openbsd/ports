@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2018/07/06 06:04:41 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2018/10/24 14:27:57 sthen Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.4.3
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		audio
 
@@ -20,6 +20,8 @@ WANTLIB += id3 id3tag intl m ogg opus opusfile pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += speex ${COMPILER_LIBCXX} tag vorbis vorbisfile wavpack xcb xcb-render
 WANTLIB += xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT=	OO toolkit for SGML parsing and entity management
 
 DISTNAME=	sp-1.3.4
-REVISION =	4
+REVISION =	5
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.jclark.com/sp/
 
@@ -11,7 +11,10 @@ MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c m ${COMPILER_LIBCXX} 
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 

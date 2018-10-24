@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT =		object-oriented input system
 
 V =			1.3
 DISTNAME =		ois-v${V:S/./-/g}
 PKGNAME =		ois-${V}
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		OIS	0.0
 
@@ -19,6 +19,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		X11 m ${COMPILER_LIBCXX} xcb
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wgois/}
 EXTRACT_SUFX =		.zip

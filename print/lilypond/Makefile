@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2017/11/13 15:38:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2018/10/24 14:28:09 sthen Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -9,8 +9,8 @@ DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		2
-REVISION-docs=		1
+REVISION-main=		3
+REVISION-docs=		2
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
@@ -23,6 +23,8 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_BASE=		http://download.linuxaudio.org/lilypond/
 MASTER_SITES=		${MASTER_BASE}sources/v${VERSION:C,\.[0-9]*$,,}/

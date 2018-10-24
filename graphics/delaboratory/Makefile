@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/21 20:03:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
 CATEGORIES =	graphics x11
-REVISION =	4
+REVISION =	5
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -11,6 +11,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} tiff wx_base wx_base_net wx_base_odbc
 WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	https://distfiles.nl/
 

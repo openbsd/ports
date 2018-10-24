@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/26 22:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:05 sthen Exp $
 
 COMMENT=	video capture library
 
 DISTNAME=	libvidcap-0.2.1
-REVISION =	2
+REVISION =	3
 SHARED_LIBS=	vidcap	0.0
 CATEGORIES=	graphics
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libvidcap/}
 
 WANTLIB=	pthread m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu

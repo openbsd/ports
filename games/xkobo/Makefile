@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
 
 DISTNAME =	xkobo-1.11
-REVISION =	8
+REVISION =	9
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_XCONTRIB:=games/}  \
@@ -23,6 +23,8 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 	
 WANTLIB =	X11 Xau Xdmcp Xext c m xcb ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE =	imake
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/26 22:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:12 sthen Exp $
 
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		8
+REVISION =		9
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui
@@ -12,6 +12,8 @@ SHARED_LIBS +=		$l	${API_VER}
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c dbus-1
 WANTLIB += fltk fltk_images fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/jam

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/23 11:59:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/24 14:27:59 sthen Exp $
 
 BROKEN =	has locally modified copied of MuPDF files; some of these have changed API in 1.12.0 causing breakage
 
@@ -9,7 +9,7 @@ DISTNAME =	k2pdfopt_v${V}_src
 PKGNAME =	k2pdfopt-${V}
 MASTER_SITES =	http://willus.com/k2pdfopt/src/
 EXTRACT_SUFX =	.zip
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	converters
 
@@ -23,6 +23,8 @@ MODULES =	devel/cmake
 
 WANTLIB +=	${COMPILER_LIBCXX} c freetype jbig2dec jpeg m png z \
 		djvulibre jasper lept mupdf openjpeg tesseract
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS +=	textproc/mupdf:patch \
 			graphics/leptonica:configure \

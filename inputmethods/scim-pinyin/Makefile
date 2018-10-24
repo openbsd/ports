@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:06 sthen Exp $
 
 COMMENT=	scim input method module for pinyin
 
 DISTNAME=	scim-pinyin-0.5.91
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	inputmethods chinese
 
@@ -20,6 +20,8 @@ WANTLIB+= graphite2 gthread-2.0 gtk-x11-2.0 gtk-x11-2.0 harfbuzz iconv intl m
 WANTLIB+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB+= pthread scim-1.0 scim-gtkutils-1.0
 WANTLIB+= scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render xcb-shm z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/26 22:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:11 sthen Exp $
 
 COMMENT =		simple, small and efficient C++ XML parser
 
-V =			4.0.1
-DISTNAME =		tinyxml2-$V
-REVISION =		1
+GH_ACCOUNT =		leethomason
+GH_PROJECT =		tinyxml2
+GH_TAGNAME =		4.0.1
+REVISION =		2
 
 SHARED_LIBS +=		tinyxml2	1.0 # 3.0
 
@@ -17,9 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m ${COMPILER_LIBCXX}
 
-GH_ACCOUNT =		leethomason
-GH_PROJECT =		tinyxml2
-GH_TAGNAME =		$V
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 

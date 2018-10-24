@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2018/09/20 13:54:12 robert Exp $
+# $OpenBSD: Makefile,v 1.192 2018/10/24 14:28:01 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-0.13                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
-REVISION-main=	0
+REVISION=	1
 
 BV=		6.1
 VERSION=	${BV}.1.2
@@ -179,6 +179,8 @@ BUILD_DEPENDS+=	archivers/zip \
 # configure checks for librsvg support; no LIB/RUN_DEPENDS because it is only
 # dlopen()ed if found
 BUILD_DEPENDS +=	x11/gnome/librsvg
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES+=	lang/python
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:04 sthen Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1
 DISTFILES=	${DISTNAME}.src.tar.gz
-REVISION =	5
+REVISION =	6
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}src/
 
@@ -14,6 +14,8 @@ HOMEPAGE=	http://xnc.jinr.ru/xwelltris/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 

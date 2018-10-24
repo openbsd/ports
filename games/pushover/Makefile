@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
 
 COMMENT =		puzzle game featuring dominoes
 
 DISTNAME =		pushover-0.0.5
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += FLAC SDL SDL_mixer SDL_ttf c freetype iconv intl m mikmod ogg
 WANTLIB += png pthread smpeg sndio ${COMPILER_LIBCXX} usbhid vorbis vorbisfile z
 WANTLIB += ${MODLUA_WANTLIB}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pushover/}
 

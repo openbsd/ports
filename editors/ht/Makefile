@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 20:43:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
 DISTNAME =		ht-2.1.0
 CATEGORIES =		editors
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://hte.sourceforge.net/
 
@@ -14,6 +14,8 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m ncurses ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hte/}
 

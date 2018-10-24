@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2017/11/14 20:10:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.36.0
-REVISION=	11
+REVISION=	12
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -55,6 +55,8 @@ WANTLIB += guile harfbuzz iconv intl jpeg lcms2 ltdl lzma m openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
 WANTLIB += poppler poppler-glib pthread rsvg-2 ${COMPILER_LIBCXX}
 WANTLIB += tiff tk85 webp xcb xcb-render xcb-shm xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	x11/tk \
 		perl

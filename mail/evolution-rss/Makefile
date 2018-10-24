@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.81 2018/09/20 09:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		23
+REVISION=		24
 
 CATEGORIES=		mail
 
@@ -53,6 +53,8 @@ WANTLIB += lib/evolution/evolution-shell
 WANTLIB += lib/evolution/evolution-smime
 WANTLIB += lib/evolution/evolution-util
 WANTLIB += lib/evolution/gnomecanvas
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		http://gnome.eu.org/
 

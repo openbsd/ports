@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/21 20:25:48 juanfra Exp $
+# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:00 sthen Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -7,7 +7,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp565
 PKGNAME = 	cryptopp-5.6.5
-REVISION =      2
+REVISION =      3
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
@@ -19,6 +19,8 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 PERMIT_PACKAGE_CDROM = 		Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 SHARED_LIBS = 	cryptopp	4.0
 

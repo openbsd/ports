@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
 
 BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
@@ -9,6 +9,7 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_TAGNAME =	0.4.1
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -22,6 +23,8 @@ WANTLIB += GL SDL2 SDL2_image SDL2_ttf boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt fifechan fifechan_opengl fifechan_sdl
 WANTLIB += m ogg openal png pthread ${MODPY_WANTLIB} tinyxml vorbis
 WANTLIB += vorbisfile z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/python

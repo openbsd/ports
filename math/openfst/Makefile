@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/26 22:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:07 sthen Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -6,7 +6,7 @@ COMMENT =		weighted finite-state transducers library
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME =		openfst-1.3.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		fst                       0.0 # 0.0
 SHARED_LIBS +=		fstscript                 0.0 # 0.0
@@ -19,6 +19,8 @@ HOMEPAGE =		http://www.openfst.org/twiki/bin/view/FST/WebHome
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB +=		c m ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		http://www.openfst.org/twiki/pub/FST/FstDownload/
 

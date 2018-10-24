@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2018/06/29 22:16:25 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2018/10/24 14:28:13 sthen Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		25
+REVISION =		26
 DISTNAME =		kdeaccessibility-${VERSION}
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
@@ -31,6 +31,8 @@ WANTLIB +=	lib/kde3/vcard m mad mcop mng ogg pcre png pthread
 WANTLIB +=	qtmcop sndio soundserver_idl ${COMPILER_LIBCXX} util
 WANTLIB +=	vorbis vorbisenc vorbisfile xcb z
 WANTLIB += 	X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common

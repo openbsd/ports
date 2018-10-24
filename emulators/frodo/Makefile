@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/15 21:29:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:01 sthen Exp $
 
 COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src
 PKGNAME=	frodo-4.1b
-REVISION=	9
+REVISION=	10
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
@@ -17,6 +17,8 @@ HOMEPAGE=	http://frodo.cebix.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		SDL c m pthread sndio ${COMPILER_LIBCXX}
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
 
