@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.12 2017/10/13 10:09:01 sthen Exp $
+$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.13 2018/10/24 19:43:23 sthen Exp $
 --- src/managesieve-login/Makefile.in.orig	Thu Oct 12 16:05:54 2017
 +++ src/managesieve-login/Makefile.in	Thu Oct 12 19:43:21 2017
-@@ -419,7 +419,7 @@ libmanagesieve_login_settings_la_CFLAGS = \
- libs = \
- 	$(top_builddir)/src/lib-managesieve/libmanagesieve.a
+@@ -427,7 +427,7 @@
  
+ managesieve_login_CPPFLAGS = $(AM_CPPFLAGS) $(BINARY_CFLAGS)
+ managesieve_login_LDFLAGS = $(BINARY_LDFLAGS)
 -managesieve_login_LDADD = $(libs) $(LIBDOVECOT_LOGIN) $(LIBDOVECOT)
 +managesieve_login_LDADD = $(libs) $(LIBDOVECOT_LOGIN) $(LIBDOVECOT) -Wl,-rpath,$(dovecot_pkglibdir)
  managesieve_login_DEPENDENCIES = $(libs) $(LIBDOVECOT_LOGIN_DEPS) $(LIBDOVECOT_DEPS)
