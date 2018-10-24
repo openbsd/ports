@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/16 14:56:34 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 04:58:20 bket Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
-V =			1.3.6
+V =			1.3.7
 DISTNAME =		zstd-${V}
 
 SHARED_LIBS =		zstd	1.2	# 1.3.6
