@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/10/24 21:25:45 afresh1 Exp $
 
 COMMENT =	expose the flag which marks global destruction
 
-DISTNAME =	Devel-GlobalDestruction-0.13
+DISTNAME =	Devel-GlobalDestruction-0.14
 CATEGORIES =	devel
 
-MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
 PERMIT_PACKAGE_CDROM =	Yes
