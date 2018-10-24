@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.368 2018/09/28 22:24:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.369 2018/10/24 20:31:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -126,12 +126,6 @@
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
-     SUBDIR += pear-DB
-     SUBDIR += pear-DB_DataObject
-     SUBDIR += pear-MDB2
-     SUBDIR += pear-MDB2-mysql
-     SUBDIR += pear-MDB2-mysqli
-     SUBDIR += pear-MDB2-pgsql
      SUBDIR += pecl-redis,php56
      SUBDIR += pecl-redis,php70
      SUBDIR += pecl-redis,php71

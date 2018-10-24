@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.879 2018/10/04 23:40:00 danj Exp $
+# $OpenBSD: Makefile,v 1.880 2018/10/24 20:31:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -379,7 +379,6 @@
      SUBDIR += perlbal
      SUBDIR += phantomjs
      SUBDIR += php-markdown
-     SUBDIR += php-openid
      SUBDIR += php-predis
      SUBDIR += phpldapadmin
      SUBDIR += phpmyadmin
