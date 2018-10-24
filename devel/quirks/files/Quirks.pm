@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.642 2018/10/23 18:58:56 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.643 2018/10/24 19:49:12 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1063,6 +1063,7 @@ my $obsolete_reason = {
 	'py3-dtopt' => 5,
 	'memtest86+' => 0,
 	'py-reat' => 5,
+	'dovecot-antispam' => 12,
 };
 
 # reasons for obsolete packages
@@ -1079,6 +1080,7 @@ my @msg = (
 	"256 colors only, suggest scrot or xwd", #9
 	"has been replaced by opendkim", #10
 	"no longer packageable", #11
+	"replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve", #12
 );
 
 # ->is_base_system($handle, $state):
