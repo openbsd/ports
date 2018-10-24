@@ -1,0 +1,4 @@
+MooseX::InsideOut provides metaroles for inside-out objects. It
+sets up attribute slot storage somewhere other than inside $self.
+This means that you can extend non-Moose classes, whose internals
+you either don't want to care about or aren't hash-based.
