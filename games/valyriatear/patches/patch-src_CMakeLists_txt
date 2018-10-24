@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2018/10/24 09:42:44 bentley Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -87,6 +87,7 @@ IF (NOT DISABLE_TRANSLATIONS)
+         FIND_PACKAGE(LibIntl REQUIRED)
+     ELSEIF (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+         FIND_PACKAGE(LibIntl REQUIRED)
++        SET(EXTRA_LIBRARIES iconv)
+     ELSEIF (CMAKE_SYSTEM_NAME STREQUAL SunOS)
+         # explicit linking to libintl is required on Solaris
+         SET(EXTRA_LIBRARIES intl)
