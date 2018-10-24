@@ -1,0 +1,6 @@
+IO::Pipely provides a couple functions to portably create one- and
+two-way pipes and pipe-like socket pairs. It acknowledges and works
+around known platform issues so you don't have to.
+
+IO::Pipely currently understands pipe(), UNIX-domain socketpair()
+and regular IPv4 localhost sockets.
