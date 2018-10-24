@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_crypto_crypto_openssl_c,v 1.2 2018/02/19 18:24:21 sthen Exp $
+$OpenBSD: patch-src_crypto_crypto_openssl_c,v 1.3 2018/10/24 17:16:19 jsing Exp $
 
 Compatibility fixes for LibreSSL
 
@@ -15,12 +15,23 @@ Index: src/crypto/crypto_openssl.c
  /* Compatibility wrappers for older versions. */
  
  static HMAC_CTX * HMAC_CTX_new(void)
-@@ -712,7 +713,7 @@ err:
+@@ -79,7 +80,8 @@ static void EVP_MD_CTX_free(EVP_MD_CTX *ctx)
+ 
+ static BIGNUM * get_group5_prime(void)
+ {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
++    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ 	return BN_get_rfc3526_prime_1536(NULL);
+ #elif !defined(OPENSSL_IS_BORINGSSL)
+ 	return get_rfc3526_prime_1536(NULL);
+@@ -712,7 +714,8 @@ err:
  
  void * dh5_init_fixed(const struct wpabuf *priv, const struct wpabuf *publ)
  {
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
  	DH *dh;
  
  	dh = DH_new();
