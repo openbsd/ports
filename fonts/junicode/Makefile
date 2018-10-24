@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/26 08:48:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/24 11:14:30 sthen Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		advanced Unicode font for medievalists
-DISTNAME =		junicode-1.001
+DISTNAME =		junicode-1.002
 EXTRACT_SUFX =		.zip
 CATEGORIES =		fonts
 
