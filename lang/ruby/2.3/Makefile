@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/22 14:44:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2018/10/24 17:07:31 jsing Exp $
 
 VERSION =		2.3.8
 NEXTVER =		2.4
 SHARED_LIBS =		ruby${BINREV}	2.0
+REVISION =		0
 
 COMMENT-tk =		tk interface for ruby
 PKGNAME-tk =		ruby${BINREV}-tk-${VERSION}
