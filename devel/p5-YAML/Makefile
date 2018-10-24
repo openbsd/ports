@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/11/23 00:47:06 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/24 21:56:24 afresh1 Exp $
 
 COMMENT =	YAML Ain't Markup Language
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	YAML-1.19
+DISTNAME =	YAML-1.26
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
@@ -13,11 +13,15 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+# really, you want the faster one
 RUN_DEPENDS =	devel/p5-YAML-XS
 
-TEST_DEPENDS =	devel/p5-Test-YAML>=1.05 \
-		devel/p5-Test-Pod
-MAKE_ENV +=	RELEASE_TESTING=1
+TEST_DEPENDS =	devel/p5-Test-Deep \
+		devel/p5-Test-YAML>=1.05
+
+# Additional depends to avoid skipping tests
+TEST_ENV +=	AUTHOR_TESTING=1
+TEST_DEPENDS +=	devel/p5-Test-Pod>=1.41
 
 .include <bsd.port.mk>
 
