@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/10/24 15:21:56 sthen Exp $
 include/gmp.h
-include/gmpxx.h
 @info info/gmp.info
 lib/libgmp.a
 lib/libgmp.la
 @lib lib/libgmp.so.${LIBgmp_VERSION}
-lib/libgmpxx.a
-lib/libgmpxx.la
-@lib lib/libgmpxx.so.${LIBgmpxx_VERSION}

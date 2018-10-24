@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2017/11/03 14:25:40 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2018/10/24 15:21:56 sthen Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
 DISTNAME=	gmp-6.1.2
-REVISION =	1
+REVISION =	2
 SHARED_LIBS +=  gmp                  10.0     # 13.2
-SHARED_LIBS +=  gmpxx                2.0      # 9.2
 CATEGORIES=	devel math
 
 HOMEPAGE=	https://gmplib.org/
@@ -16,14 +15,11 @@ EXTRACT_SUFX=	.tar.xz
 # LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	m ${COMPILER_LIBCXX}
-
 MASTER_SITES=	https://gmplib.org/download/gmp/ \
 		${MASTER_SITE_GNU:=gmp/}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
-CONFIGURE_ARGS=	--enable-cxx
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
 
