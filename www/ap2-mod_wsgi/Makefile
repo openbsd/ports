@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/24 13:13:32 sthen Exp $
 
 COMMENT=	Python WSGI compliant interface module for Apache2
 
 PKGNAME=	ap2-mod_wsgi-${GH_TAGNAME}
-REVISION=	0
 
 CATEGORIES=	www
 
 GH_ACCOUNT=	GrahamDumpleton
 GH_PROJECT=	mod_wsgi
-GH_TAGNAME=	4.6.4
+GH_TAGNAME=	4.6.5
+
+HOMEPAGE=	https://modwsgi.readthedocs.io/
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
