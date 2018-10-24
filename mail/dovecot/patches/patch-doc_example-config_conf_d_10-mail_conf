@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.8 2017/08/28 21:39:14 sthen Exp $
+$OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.9 2018/10/24 19:42:36 sthen Exp $
 Index: doc/example-config/conf.d/10-mail.conf
---- doc/example-config/conf.d/10-mail.conf.orig
-+++ doc/example-config/conf.d/10-mail.conf
+--- doc/example-config/conf.d/10-mail.conf.orig	Mon Jun 18 14:15:32 2018
++++ doc/example-config/conf.d/10-mail.conf	Sun Oct 21 15:56:45 2018
 @@ -147,8 +147,9 @@ namespace inbox {
  ##
  
@@ -14,7 +14,7 @@ Index: doc/example-config/conf.d/10-mail.conf
  
  # Rely on O_EXCL to work when creating dotlock files. NFS supports O_EXCL
  # since version 3, so this should be safe to use nowadays by default.
-@@ -172,7 +173,7 @@ namespace inbox {
+@@ -175,7 +176,7 @@ namespace inbox {
  # to make sure that users can't log in as daemons or other system users.
  # Note that denying root logins is hardcoded to dovecot binary and can't
  # be done even if first_valid_uid is set to 0.
@@ -23,7 +23,7 @@ Index: doc/example-config/conf.d/10-mail.conf
  #last_valid_uid = 0
  
  # Valid GID range for users, defaults to non-root/wheel. Users having
-@@ -205,10 +206,10 @@ namespace inbox {
+@@ -208,10 +209,10 @@ namespace inbox {
  
  # UNIX socket path to master authentication server to find users.
  # This is used by imap (for shared users) and lda.
@@ -36,7 +36,7 @@ Index: doc/example-config/conf.d/10-mail.conf
  
  # Space separated list of plugins to load for all services. Plugins specific to
  # IMAP, LDA, etc. are added to this list in their own .conf files.
-@@ -318,7 +319,7 @@ protocol !indexer-worker {
+@@ -321,7 +322,7 @@ protocol !indexer-worker {
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl

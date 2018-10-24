@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_example-config_conf_d_Makefile_in,v 1.17 2018/05/29 14:25:11 sthen Exp $
+$OpenBSD: patch-doc_example-config_conf_d_Makefile_in,v 1.18 2018/10/24 19:42:36 sthen Exp $
 Index: doc/example-config/conf.d/Makefile.in
---- doc/example-config/conf.d/Makefile.in.orig
-+++ doc/example-config/conf.d/Makefile.in
-@@ -347,7 +347,7 @@ top_build_prefix = @top_build_prefix@
+--- doc/example-config/conf.d/Makefile.in.orig	Mon Oct  1 06:40:13 2018
++++ doc/example-config/conf.d/Makefile.in	Sun Oct 21 15:56:45 2018
+@@ -408,7 +408,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  pkgsysconfdir = $(sysconfdir)/dovecot

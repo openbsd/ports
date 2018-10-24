@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.268 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.269 2018/10/24 19:42:36 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
 COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
-V_MAJOR=	2.2
-V_DOVECOT=	2.2.36
+V_MAJOR=	2.3
+V_DOVECOT=	2.3.3
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -17,17 +17,16 @@ PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
-REVISION-server=0
 
-SHARED_LIBS=	dovecot-compression 0.0 \
-		dovecot-dsync	0.0 \
-		dovecot-fts	0.0 \
-		dovecot-lda	2.0 \
-		dovecot-ldap    0.0 \
-		dovecot-login	2.0 \
-		dovecot-sql	2.0 \
-		dovecot-storage	2.0 \
-		dovecot		2.0
+SHARED_LIBS=	dovecot-compression 1.0 \
+		dovecot-dsync	1.0 \
+		dovecot-fts	1.0 \
+		dovecot-lda	3.0 \
+		dovecot-ldap    1.0 \
+		dovecot-login	3.0 \
+		dovecot-sql	3.0 \
+		dovecot-storage	3.0 \
+		dovecot		3.0
 
 HOMEPAGE=	https://dovecot.org/
 
@@ -36,7 +35,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sqlite3 ssl z
+WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sqlite3 ssl z sodium
 WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient pthread ssl z
 WANTLIB-postgresql= pq
@@ -45,7 +44,8 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		archivers/lz4 \
 		archivers/xz \
 		converters/libiconv \
-		databases/sqlite3
+		databases/sqlite3 \
+		security/libsodium
 LIB_DEPENDS-ldap= ${BASE_PKGPATH} \
 		databases/openldap
 LIB_DEPENDS-mysql= databases/mariadb

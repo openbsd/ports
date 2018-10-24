@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example-config_conf_d_auth-system_conf_ext,v 1.1 2011/05/23 22:54:38 sthen Exp $
---- doc/example-config/conf.d/auth-system.conf.ext.orig	Wed Mar 16 16:40:19 2011
-+++ doc/example-config/conf.d/auth-system.conf.ext	Wed Mar 16 16:40:39 2011
+$OpenBSD: patch-doc_example-config_conf_d_auth-system_conf_ext,v 1.2 2018/10/24 19:42:36 sthen Exp $
+--- doc/example-config/conf.d/auth-system.conf.ext.orig	Mon Jun 18 14:15:32 2018
++++ doc/example-config/conf.d/auth-system.conf.ext	Sun Oct 21 15:56:45 2018
 @@ -7,12 +7,12 @@
  # PAM is typically used with either userdb passwd or userdb static.
  # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
@@ -15,7 +15,7 @@ $OpenBSD: patch-doc_example-config_conf_d_auth-system_conf_ext,v 1.1 2011/05/23 
 -}
 +#}
  
- # System users (NSS, /etc/passwd, or similiar).
+ # System users (NSS, /etc/passwd, or similar).
  # In many systems nowadays this uses Name Service Switch, which is
 @@ -34,11 +34,11 @@ passdb {
  
