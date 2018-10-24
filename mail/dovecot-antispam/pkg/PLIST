@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/08 22:07:18 sthen Exp $
-lib/dovecot/lib90_antispam_plugin.so
-@man man/man7/dovecot-antispam.7

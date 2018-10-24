@@ -1,6 +1,0 @@
-The Dovecot antispam plugin works with an external anti-spam system to
-help automate training as spam/non-spam. It watches designated folders for
-messages being moved into or out of them, and feeds them to the anti-spam
-software for training. Specific support exists for dspam and crm114; other
-software is accommodated by piping to a command, forwarding the messages
-to specific email addresses for training, or writing to files.
