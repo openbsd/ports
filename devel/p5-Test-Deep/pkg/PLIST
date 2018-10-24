@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/10 16:35:46 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/24 21:27:03 afresh1 Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/Deep/
 ${P5SITE}/Test/Deep.pm
 ${P5SITE}/Test/Deep/All.pm
@@ -27,6 +28,7 @@ ${P5SITE}/Test/Deep/ListMethods.pm
 ${P5SITE}/Test/Deep/MM.pm
 ${P5SITE}/Test/Deep/Methods.pm
 ${P5SITE}/Test/Deep/NoTest.pm
+${P5SITE}/Test/Deep/None.pm
 ${P5SITE}/Test/Deep/Number.pm
 ${P5SITE}/Test/Deep/Obj.pm
 ${P5SITE}/Test/Deep/Ref.pm
