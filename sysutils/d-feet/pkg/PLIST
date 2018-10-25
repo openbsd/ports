@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/10/25 09:39:21 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -38,9 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/dfeet/settings.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/uiloader.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/window.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/wnck_utils.py
-share/appdata/
-share/appdata/d-feet.appdata.xml
-share/applications/d-feet.desktop
+share/applications/org.gnome.dfeet.desktop
 share/d-feet/
 share/d-feet/ui/
 share/d-feet/ui/addconnectiondialog.ui
@@ -49,7 +47,7 @@ share/d-feet/ui/bus.ui
 share/d-feet/ui/executedialog.ui
 share/d-feet/ui/introspection.ui
 share/d-feet/ui/mainwindow.ui
-share/glib-2.0/schemas/org.gnome.d-feet.gschema.xml
+share/glib-2.0/schemas/org.gnome.dfeet.gschema.xml
 share/help/
 share/help/C/
 share/help/C/d-feet/
@@ -87,6 +85,12 @@ share/help/pl/d-feet/basics.page
 share/help/pl/d-feet/figures/
 share/help/pl/d-feet/figures/icon.png
 share/help/pl/d-feet/index.page
+share/help/pt_BR/
+share/help/pt_BR/d-feet/
+share/help/pt_BR/d-feet/basics.page
+share/help/pt_BR/d-feet/figures/
+share/help/pt_BR/d-feet/figures/icon.png
+share/help/pt_BR/d-feet/index.page
 share/help/sv/
 share/help/sv/d-feet/
 share/help/sv/d-feet/basics.page
@@ -96,8 +100,7 @@ share/help/sv/d-feet/index.page
 share/icons/HighContrast/
 share/icons/HighContrast/scalable/
 share/icons/HighContrast/scalable/apps/
-share/icons/HighContrast/scalable/apps/d-feet.svg
-share/icons/hicolor/16x16/apps/d-feet.png
+share/icons/HighContrast/scalable/apps/org.gnome.dfeet.svg
 share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
 share/icons/hicolor/16x16/apps/dfeet-method-category.png
 share/icons/hicolor/16x16/apps/dfeet-method.png
@@ -106,11 +109,12 @@ share/icons/hicolor/16x16/apps/dfeet-property-category.png
 share/icons/hicolor/16x16/apps/dfeet-property.png
 share/icons/hicolor/16x16/apps/dfeet-signal-category.png
 share/icons/hicolor/16x16/apps/dfeet-signal.png
-share/icons/hicolor/24x24/apps/d-feet.png
-share/icons/hicolor/256x256/apps/d-feet.png
-share/icons/hicolor/32x32/apps/d-feet.png
-share/icons/hicolor/48x48/apps/d-feet.png
-share/icons/hicolor/scalable/apps/d-feet.svg
+share/icons/hicolor/16x16/apps/org.gnome.dfeet.png
+share/icons/hicolor/24x24/apps/org.gnome.dfeet.png
+share/icons/hicolor/256x256/apps/org.gnome.dfeet.png
+share/icons/hicolor/32x32/apps/org.gnome.dfeet.png
+share/icons/hicolor/48x48/apps/org.gnome.dfeet.png
+share/icons/hicolor/scalable/apps/org.gnome.dfeet.svg
 share/locale/bs/LC_MESSAGES/d-feet.mo
 share/locale/cs/LC_MESSAGES/d-feet.mo
 share/locale/da/LC_MESSAGES/d-feet.mo
@@ -136,6 +140,7 @@ share/locale/sr@latin/LC_MESSAGES/d-feet.mo
 share/locale/sv/LC_MESSAGES/d-feet.mo
 share/locale/tr/LC_MESSAGES/d-feet.mo
 share/locale/zh_CN/LC_MESSAGES/d-feet.mo
+share/metainfo/org.gnome.dfeet.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/HighContrast
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

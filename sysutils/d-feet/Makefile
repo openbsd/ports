@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2018/10/25 09:39:21 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-GNOME_VERSION=		0.3.13
+GNOME_VERSION=		0.3.14
 GNOME_PROJECT=		d-feet
 MODPY_EGG_VERSION=	${GNOME_VERSION}
-REVISION=		2
 
 CATEGORIES=		sysutils
 
@@ -39,7 +38,5 @@ MODPY_ADJ_FILES=	src/tests/tests.py
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=		PEP8=${LOCALBASE}/bin/pycodestyle${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
