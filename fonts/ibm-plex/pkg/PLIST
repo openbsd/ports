@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/28 12:22:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/10/25 10:01:24 bentley Exp $
 share/doc/ibm-plex/
 share/doc/ibm-plex/LICENSE.txt
 share/fonts/
@@ -99,6 +99,22 @@ share/fonts/ibm-plex/IBMPlexSansCondensed-Thin.otf
 share/fonts/ibm-plex/IBMPlexSansCondensed-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSansCondensed-ThinItalic.otf
 share/fonts/ibm-plex/IBMPlexSansCondensed-ThinItalic.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Bold.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Bold.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Light.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Light.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Medium.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Medium.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Regular.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Regular.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Text.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Text.ttf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.otf
+share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.otf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.ttf
 share/fonts/ibm-plex/IBMPlexSerif-BoldItalic.otf
@@ -131,3 +147,19 @@ share/fonts/ibm-plex/IBMPlexSerif-Thin.otf
 share/fonts/ibm-plex/IBMPlexSerif-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSerif-ThinItalic.otf
 share/fonts/ibm-plex/IBMPlexSerif-ThinItalic.ttf
+share/fonts/ibm-plex/IBMPlexThai-Bold.otf
+share/fonts/ibm-plex/IBMPlexThai-Bold.ttf
+share/fonts/ibm-plex/IBMPlexThai-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexThai-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexThai-Light.otf
+share/fonts/ibm-plex/IBMPlexThai-Light.ttf
+share/fonts/ibm-plex/IBMPlexThai-Medium.otf
+share/fonts/ibm-plex/IBMPlexThai-Medium.ttf
+share/fonts/ibm-plex/IBMPlexThai-Regular.otf
+share/fonts/ibm-plex/IBMPlexThai-Regular.ttf
+share/fonts/ibm-plex/IBMPlexThai-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexThai-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexThai-Text.otf
+share/fonts/ibm-plex/IBMPlexThai-Text.ttf
+share/fonts/ibm-plex/IBMPlexThai-Thin.otf
+share/fonts/ibm-plex/IBMPlexThai-Thin.ttf
