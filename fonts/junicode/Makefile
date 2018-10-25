@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 11:14:30 sthen Exp $
-
-PKG_ARCH =		*
+# $OpenBSD: Makefile,v 1.5 2018/10/25 09:54:10 bentley Exp $
 
 COMMENT =		advanced Unicode font for medievalists
 DISTNAME =		junicode-1.002
@@ -15,6 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=junicode/}
 
+MODULES =		font
+
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
@@ -24,6 +24,6 @@ DOCDIR =		${PREFIX}/share/doc/junicode
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/* ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/*.pdf ${DOCDIR}
 
 .include <bsd.port.mk>
