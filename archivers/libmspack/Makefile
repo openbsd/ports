@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/03 20:28:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/25 20:12:51 sthen Exp $
 
 COMMENT=	library for handling Microsoft compression formats
 
-DISTNAME=	libmspack-0.7.1alpha
+DISTNAME=	libmspack-0.8alpha
 EPOCH=		0
 SHARED_LIBS +=  mspack               3.0      # 1.0
 CATEGORIES=	archivers
