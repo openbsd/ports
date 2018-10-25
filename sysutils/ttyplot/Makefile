@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/18 06:51:41 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/25 07:40:51 fcambus Exp $
 
 COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7
 GH_PROJECT =	ttyplot
-GH_TAGNAME =	1.0
+GH_TAGNAME =	1.1
 
 CATEGORIES =	sysutils
 
@@ -15,10 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c curses
 
-NO_TEST =	Yes
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ttyplot.c -o ttyplot -lcurses
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttyplot ${PREFIX}/bin
