@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2018/10/25 13:26:48 sthen Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.3
 SUBST_VARS =		VERSION
 DISTNAME =		groff-${VERSION}
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# Groff does not use C++, but merely pre-1995 C with classes.
+COMPILER =		base-clang base-gcc
 
 MASTER_SITES =		${MASTER_SITE_GNU:=groff/}
 
