@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2018/10/25 13:21:58 sthen Exp $
 
 COMMENT=	GNU gettext runtime libraries and programs
 
 DISTNAME=	gettext-0.19.8.1
-REVISION =	2
+REVISION =	3
 SHARED_LIBS +=  intl                 6.0      # 9.5
 SHARED_LIBS +=  asprintf             1.1      # unknown
 
@@ -23,7 +23,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 LIB_DEPENDS=	converters/libiconv
 WANTLIB=	c m iconv ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# on critical path to lang/gcc.  XXX c++ used in libasprintf but seems
+# unused at present; may need to revisit if this changes
+COMPILER =		base-clang base-gcc
 
 WRKSRC=		${WRKDIST}/gettext-runtime
 CONFIGURE_STYLE=gnu
