@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/25 10:14:21 bentley Exp $
+share/doc/alkalami/
+share/doc/alkalami/FONTLOG.txt
+share/doc/alkalami/README.txt
+share/fonts/
+@fontdir share/fonts/alkalami/
+share/fonts/alkalami/Alkalami-Light.ttf
+share/fonts/alkalami/Alkalami-Light.woff
+share/fonts/alkalami/Alkalami-Regular.ttf
+share/fonts/alkalami/Alkalami-Regular.woff
