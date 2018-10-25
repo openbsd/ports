@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.52 2018/09/07 20:08:15 danj Exp $
+# $OpenBSD: Makefile,v 1.53 2018/10/25 19:15:02 juanfra Exp $
+
+# Remove for 7.1
+BROKEN-sparc64 =	contract violation on sysinfercgc
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
