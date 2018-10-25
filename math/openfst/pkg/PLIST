@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/10/25 02:37:27 bentley Exp $
 @bin bin/fstarcsort
 @bin bin/fstclosure
 @bin bin/fstcompile
@@ -8,6 +8,7 @@
 @bin bin/fstconvert
 @bin bin/fstdeterminize
 @bin bin/fstdifference
+@bin bin/fstdisambiguate
 @bin bin/fstdraw
 @bin bin/fstencode
 @bin bin/fstepsnormalize
@@ -16,6 +17,7 @@
 @bin bin/fstinfo
 @bin bin/fstintersect
 @bin bin/fstinvert
+@bin bin/fstisomorphic
 @bin bin/fstmap
 @bin bin/fstminimize
 @bin bin/fstprint
@@ -37,6 +39,7 @@
 include/fst/
 include/fst/accumulator.h
 include/fst/add-on.h
+include/fst/arc-arena.h
 include/fst/arc-map.h
 include/fst/arc.h
 include/fst/arcfilter.h
@@ -56,6 +59,7 @@ include/fst/const-fst.h
 include/fst/determinize.h
 include/fst/dfs-visit.h
 include/fst/difference.h
+include/fst/disambiguate.h
 include/fst/edit-fst.h
 include/fst/encode.h
 include/fst/epsnormalize.h
@@ -64,6 +68,7 @@ include/fst/equivalent.h
 include/fst/expanded-fst.h
 include/fst/expectation-weight.h
 include/fst/factor-weight.h
+include/fst/filter-state.h
 include/fst/flags.h
 include/fst/float-weight.h
 include/fst/fst-decl.h
@@ -75,6 +80,7 @@ include/fst/icu.h
 include/fst/intersect.h
 include/fst/interval-set.h
 include/fst/invert.h
+include/fst/isomorphic.h
 include/fst/label-reachable.h
 include/fst/lexicographic-weight.h
 include/fst/lock.h
@@ -82,8 +88,10 @@ include/fst/log.h
 include/fst/lookahead-filter.h
 include/fst/lookahead-matcher.h
 include/fst/map.h
+include/fst/mapped-file.h
 include/fst/matcher-fst.h
 include/fst/matcher.h
+include/fst/memory.h
 include/fst/minimize.h
 include/fst/mutable-fst.h
 include/fst/pair-weight.h
@@ -97,7 +105,6 @@ include/fst/push.h
 include/fst/queue.h
 include/fst/randequivalent.h
 include/fst/randgen.h
-include/fst/random-weight.h
 include/fst/rational.h
 include/fst/register.h
 include/fst/relabel.h
@@ -108,6 +115,8 @@ include/fst/reweight.h
 include/fst/rmepsilon.h
 include/fst/rmfinalepsilon.h
 include/fst/script/
+include/fst/script/arc-class.h
+include/fst/script/arciterator-class.h
 include/fst/script/arcsort.h
 include/fst/script/arg-packs.h
 include/fst/script/closure.h
@@ -120,19 +129,23 @@ include/fst/script/convert.h
 include/fst/script/decode.h
 include/fst/script/determinize.h
 include/fst/script/difference.h
+include/fst/script/disambiguate.h
 include/fst/script/draw-impl.h
 include/fst/script/draw.h
 include/fst/script/encode.h
+include/fst/script/encodemapper-class.h
 include/fst/script/epsnormalize.h
 include/fst/script/equal.h
 include/fst/script/equivalent.h
 include/fst/script/fst-class.h
 include/fst/script/fstscript-decl.h
 include/fst/script/fstscript.h
+include/fst/script/getters.h
 include/fst/script/info-impl.h
 include/fst/script/info.h
 include/fst/script/intersect.h
 include/fst/script/invert.h
+include/fst/script/isomorphic.h
 include/fst/script/map.h
 include/fst/script/minimize.h
 include/fst/script/print-impl.h
@@ -151,17 +164,17 @@ include/fst/script/rmepsilon.h
 include/fst/script/script-impl.h
 include/fst/script/shortest-distance.h
 include/fst/script/shortest-path.h
-include/fst/script/symbols.h
+include/fst/script/stateiterator-class.h
 include/fst/script/synchronize.h
 include/fst/script/text-io.h
 include/fst/script/topsort.h
 include/fst/script/union.h
 include/fst/script/verify.h
 include/fst/script/weight-class.h
+include/fst/set-weight.h
 include/fst/shortest-distance.h
 include/fst/shortest-path.h
 include/fst/signed-log-weight.h
-include/fst/slist.h
 include/fst/sparse-power-weight.h
 include/fst/sparse-tuple-weight.h
 include/fst/state-map.h
@@ -173,11 +186,17 @@ include/fst/string.h
 include/fst/symbol-table-ops.h
 include/fst/symbol-table.h
 include/fst/synchronize.h
+include/fst/test/
 include/fst/test-properties.h
+include/fst/test/algo_test.h
+include/fst/test/fst_test.h
+include/fst/test/rand-fst.h
+include/fst/test/weight-tester.h
 include/fst/topsort.h
 include/fst/tuple-weight.h
 include/fst/types.h
 include/fst/union-find.h
+include/fst/union-weight.h
 include/fst/union.h
 include/fst/util.h
 include/fst/vector-fst.h
