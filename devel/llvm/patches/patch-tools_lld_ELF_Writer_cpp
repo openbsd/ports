@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.7 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.8 2018/10/25 09:25:38 ajacoutot Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
@@ -18,7 +18,15 @@ Index: tools/lld/ELF/Writer.cpp
      StringRef Prefix = V.drop_back();
      if (S->Name.startswith(V) || S->Name == Prefix)
        return Prefix;
-@@ -487,7 +488,7 @@ template <class ELFT> void Writer<ELFT>::run() {
+@@ -219,6 +220,7 @@ void elf::addReservedSymbols() {
+   };
+ 
+   ElfSym::Bss = Add("__bss_start", 0);
++  ElfSym::Data = Add("__data_start", 0);
+   ElfSym::End1 = Add("end", -1);
+   ElfSym::End2 = Add("_end", -1);
+   ElfSym::Etext1 = Add("etext", -1);
+@@ -487,7 +489,7 @@ template <class ELFT> void Writer<ELFT>::run() {
  
  static bool shouldKeepInSymtab(SectionBase *Sec, StringRef SymName,
                                 const Symbol &B) {
@@ -27,7 +35,7 @@ Index: tools/lld/ELF/Writer.cpp
      return false;
  
    // If sym references a section in a discarded group, don't keep it.
-@@ -643,7 +644,11 @@ static bool isRelroSection(const OutputSection *Sec) {
+@@ -643,7 +645,11 @@ static bool isRelroSection(const OutputSection *Sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
    if (Sec == InX::GotPlt->getParent())
@@ -39,3 +47,13 @@ Index: tools/lld/ELF/Writer.cpp
  
    // .dynamic section contains data for the dynamic linker, and
    // there's no need to write to it at runtime, so it's better to put
+@@ -914,6 +920,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+ 
+   if (ElfSym::Bss)
+     ElfSym::Bss->Section = findSection(".bss");
++
++  if (ElfSym::Data)
++    ElfSym::Data->Section = findSection(".data");
+ 
+   // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
+   // be equal to the _gp symbol's value.

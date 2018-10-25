@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_lld_ELF_Symbols_cpp,v 1.1 2018/10/25 09:25:38 ajacoutot Exp $
+
+Generate __data_start symbol that marks the start of .data when __data_start
+is referenced from code being linked.
+
+Index: tools/lld/ELF/Symbols.cpp
+--- tools/lld/ELF/Symbols.cpp.orig
++++ tools/lld/ELF/Symbols.cpp
+@@ -29,6 +29,7 @@ using namespace lld;
+ using namespace lld::elf;
+ 
+ Defined *ElfSym::Bss;
++Defined *ElfSym::Data;
+ Defined *ElfSym::Etext1;
+ Defined *ElfSym::Etext2;
+ Defined *ElfSym::Edata1;

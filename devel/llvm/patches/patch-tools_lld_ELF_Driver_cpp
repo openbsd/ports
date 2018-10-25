@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.9 2018/09/16 06:09:16 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.10 2018/10/25 09:25:38 ajacoutot Exp $
 
 - Enable PIE by default.
+- Add support for -z initfirst.
 - Fix --exclude-libs option.
 
 Index: tools/lld/ELF/Driver.cpp
@@ -16,7 +17,15 @@ Index: tools/lld/ELF/Driver.cpp
    Config->PrintGcSections =
        Args.hasFlag(OPT_print_gc_sections, OPT_no_print_gc_sections, false);
    Config->Rpath = getRpath(Args);
-@@ -957,7 +958,7 @@ static void excludeLibs(opt::InputArgList &Args, Array
+@@ -668,6 +669,7 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+   Config->WarnCommon = Args.hasArg(OPT_warn_common);
+   Config->ZCombreloc = !hasZOption(Args, "nocombreloc");
+   Config->ZExecstack = hasZOption(Args, "execstack");
++  Config->ZInitfirst = hasZOption(Args, "initfirst");
+   Config->ZHazardplt = hasZOption(Args, "hazardplt");
+   Config->ZNocopyreloc = hasZOption(Args, "nocopyreloc");
+   Config->ZNodelete = hasZOption(Args, "nodelete");
+@@ -957,7 +959,7 @@ static void excludeLibs(opt::InputArgList &Args, Array
      if (Optional<StringRef> Archive = getArchiveName(File))
        if (All || Libs.count(path::filename(*Archive)))
          for (Symbol *Sym : File->getSymbols())

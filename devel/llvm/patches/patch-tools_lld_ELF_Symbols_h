@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_lld_ELF_Symbols_h,v 1.1 2018/10/25 09:25:38 ajacoutot Exp $
+
+Index: tools/lld/ELF/Symbols.h
+--- tools/lld/ELF/Symbols.h.orig
++++ tools/lld/ELF/Symbols.h
+@@ -313,6 +313,9 @@ struct ElfSym {
+   // __bss_start
+   static Defined *Bss;
+ 
++  // __data_start
++  static Defined *Data;
++
+   // etext and _etext
+   static Defined *Etext1;
+   static Defined *Etext2;

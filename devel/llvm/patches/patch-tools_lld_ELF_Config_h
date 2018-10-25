@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.4 2018/10/25 09:25:38 ajacoutot Exp $
+
+Add support for -z initfirst.
+
+Index: tools/lld/ELF/Config.h
+--- tools/lld/ELF/Config.h.orig
++++ tools/lld/ELF/Config.h
+@@ -151,6 +151,7 @@ struct Configuration {
+   bool WarnMissingEntry;
+   bool ZCombreloc;
+   bool ZExecstack;
++  bool ZInitfirst;
+   bool ZHazardplt;
+   bool ZNocopyreloc;
+   bool ZNodelete;

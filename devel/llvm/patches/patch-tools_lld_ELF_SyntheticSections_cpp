@@ -1,5 +1,6 @@
-$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.7 2018/10/23 08:59:59 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.8 2018/10/25 09:25:38 ajacoutot Exp $
 
+- Add support for -z initfirst.
 - When merging sections into the output, lld tries to adjust the alignment of
   the section to be at least as large as the entry size of the section.
   This causes a later check that validates the alignment to fail if the
@@ -13,7 +14,16 @@ $OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.7 2018/10/23 08:59:59 aj
 Index: tools/lld/ELF/SyntheticSections.cpp
 --- tools/lld/ELF/SyntheticSections.cpp.orig
 +++ tools/lld/ELF/SyntheticSections.cpp
-@@ -2512,7 +2512,9 @@ void elf::mergeSections() {
+@@ -1034,6 +1034,8 @@ template <class ELFT> void DynamicSection<ELFT>::final
+   uint32_t DtFlags1 = 0;
+   if (Config->Bsymbolic)
+     DtFlags |= DF_SYMBOLIC;
++  if (Config->ZInitfirst)
++    DtFlags1 |= DF_1_INITFIRST;
+   if (Config->ZNodelete)
+     DtFlags1 |= DF_1_NODELETE;
+   if (Config->ZNodlopen)
+@@ -2512,7 +2514,9 @@ void elf::mergeSections() {
        continue;
  
      StringRef OutsecName = getOutputSectionName(MS);
@@ -24,7 +34,7 @@ Index: tools/lld/ELF/SyntheticSections.cpp
  
      auto I = llvm::find_if(MergeSections, [=](MergeSyntheticSection *Sec) {
        // While we could create a single synthetic section for two different
-@@ -2571,6 +2573,9 @@ void ARMExidxSentinelSection::writeTo(uint8_t *Buf) {
+@@ -2571,6 +2575,9 @@ void ARMExidxSentinelSection::writeTo(uint8_t *Buf) {
  // The sentinel has to be removed if there are no other .ARM.exidx entries.
  bool ARMExidxSentinelSection::empty() const {
    OutputSection *OS = getParent();
