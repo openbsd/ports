@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_ssl_gadgets_cc,v 1.1 2018/10/25 16:15:38 jsing Exp $
+
+Index: src/ssl/gadgets.cc
+--- src/ssl/gadgets.cc.orig
++++ src/ssl/gadgets.cc
+@@ -321,12 +321,12 @@ mimicExtensions(Ssl::X509_Pointer & cert, Ssl::X509_Po
+                                                 &ext_der,
+                                                 (const ASN1_ITEM *)ASN1_ITEM_ptr(method->it));
+ 
+-                    ASN1_OCTET_STRING *ext_oct = M_ASN1_OCTET_STRING_new();
++                    ASN1_OCTET_STRING *ext_oct = ASN1_OCTET_STRING_new();
+                     ext_oct->data = ext_der;
+                     ext_oct->length = ext_len;
+                     X509_EXTENSION_set_data(ext, ext_oct);
+ 
+-                    M_ASN1_OCTET_STRING_free(ext_oct);
++                    ASN1_OCTET_STRING_free(ext_oct);
+                     ASN1_BIT_STRING_free(keyusage);
+                 }
+             }
