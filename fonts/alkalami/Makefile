@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/25 10:14:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/25 10:17:14 bentley Exp $
 
-COMMENT =		African Arabic Unicode script
+COMMENT =		Unicode font for African Arabic script
 V =			1.100
 DISTNAME =		Alkalami-${V}
 PKGNAME =		alkalami-${V}
 CATEGORIES =		fonts
+REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/alkalami/
 MAINTAINER =		George Rosamond <george@nycbug.org>
