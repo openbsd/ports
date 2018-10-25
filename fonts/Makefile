@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2018/09/19 07:31:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.48 2018/10/25 10:17:46 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
      SUBDIR += adobe-fonts
+     SUBDIR += alkalami
      SUBDIR += amigafonts
      SUBDIR += andika
      SUBDIR += annapurna
