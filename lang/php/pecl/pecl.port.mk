@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.10 2018/09/28 21:27:25 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.11 2018/10/26 21:22:02 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -8,20 +8,17 @@ MODULES +=	lang/php
 FLAVORS = php56
 FLAVOR = php56
 .  elif ${MODPECL_V} == 7
-FLAVORS = php70 php71 php72
-FLAVOR ?= php70
+FLAVORS = php71 php72
+FLAVOR ?= php71
 .  endif
 .else
-FLAVORS ?= php56 php70 php71 php72
-FLAVOR ?= php70
+FLAVORS ?= php56 php71 php72
+FLAVOR ?= php71
 .endif
 
 .if ${FLAVOR} == php56
 MODPHP_VERSION = 5.6
 MODPECL_56ONLY =
-.elif ${FLAVOR} == php70
-MODPHP_VERSION = 7.0
-MODPECL_56ONLY = "@comment "
 .elif ${FLAVOR} == php71
 MODPHP_VERSION = 7.1
 MODPECL_56ONLY = "@comment "

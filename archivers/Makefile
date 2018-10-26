@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2018/09/28 22:24:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2018/10/26 21:22:01 sthen Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -46,11 +46,9 @@
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
      SUBDIR += pecl-lzf,php56
-     SUBDIR += pecl-lzf,php70
      SUBDIR += pecl-lzf,php71
      SUBDIR += pecl-lzf,php72
      SUBDIR += pecl-rar,php56
-     SUBDIR += pecl-rar,php70
      SUBDIR += pecl-rar,php71
      SUBDIR += pecl-rar,php72
      SUBDIR += pigz

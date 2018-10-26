@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.125 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.126 2018/10/26 21:22:01 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -109,7 +109,7 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap \
 			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
 .if ${PV} == "5.6"
 PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql -mcrypt
-.elif ${PV} == "7.0" || ${PV} == "7.1"
+.elif ${PV} == "7.1"
 PHP_EXTENSIONS+=	-mcrypt
 .endif
 
@@ -443,8 +443,6 @@ DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
 .if ${V:M5.6*}
 PKGSPEC-${i}=		php-${i}->=5.6,<5.7
-.elif ${V:M7.0*}
-PKGSPEC-${i}=		php-${i}->=7.0,<7.1
 .elif ${V:M7.1*}
 PKGSPEC-${i}=		php-${i}->=7.1,<7.2
 .elif ${V:M7.2*}
