@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/26 13:57:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2018/10/26 17:06:19 ajacoutot Exp $
 
 COMMENT=	CUPS printer driver for some Brother laser printers
 
 GH_ACCOUNT=	pdewacht
 GH_PROJECT=	brlaser
 GH_TAGNAME=	v4
+REVISION=	0
 
 CATEGORIES=	print
 

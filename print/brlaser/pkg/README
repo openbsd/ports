@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1.1.1 2018/10/26 13:57:08 jcs Exp $
+$OpenBSD: README,v 1.2 2018/10/26 17:06:19 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
 
 After installation, configure a printer in the CUPS administration
 interface (http://localhost:631 by default).
