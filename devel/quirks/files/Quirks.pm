@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.643 2018/10/24 19:49:12 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.644 2018/10/26 20:58:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1159,6 +1159,8 @@ sub tweak_search
 # list of
 #   cat/path => badspec
 my $cve = {
+	'archivers/cabextract' => 'cabextract-<1.8',
+	'archivers/libmspack' => 'libmspack-<0.8alpha',
 	'audio/flac' => 'flac-<1.3.0p1',
 	'databases/mariadb,-main' => 'mariadb-client-<10.0.36',
 	'databases/mariadb,-server' => 'mariadb-server-<10.0.36',
@@ -1180,7 +1182,7 @@ my $cve = {
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.3',
 	'mail/exim' => 'exim-<4.83',
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
-	'mail/roundcubemail' => 'roundcubemail-<1.3.7',
+	'mail/roundcubemail' => 'roundcubemail-<1.3.8',
 	'net/curl' => 'curl-<7.61.1',
 	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
