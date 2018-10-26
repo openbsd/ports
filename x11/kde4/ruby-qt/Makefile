@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/30 13:55:11 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2018/10/26 16:13:50 jeremy Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel x11/kde4
 COMMENT =	Ruby bindings for Qt4
 DISTNAME =	qtruby-${MODKDE4_VERSION}
 PKGNAME =	qt4-${MODKDE4_VERSION}
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
 
@@ -29,9 +29,8 @@ WANTLIB += qscintilla2_qt4
 MODULES =	multimedia/phonon lang/ruby
 MODKDE4_USE =
 
-# Ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads.
 # Remember update @conflict markers in PLIST when changing FLAVORS.
-FLAVORS =		ruby21 ruby22 ruby23 ruby24
+FLAVORS =		ruby24 ruby25
 MODRUBY_HANDLE_FLAVORS=	Yes
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
 SUBST_VARS =		MODRUBY_FLAVOR
