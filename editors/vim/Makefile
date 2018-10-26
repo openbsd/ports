@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2018/09/29 22:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.177 2018/10/26 16:16:24 jeremy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -13,6 +13,7 @@ PKGNAME-main=	vim-$V
 PKGNAME-lang=	vim-lang-$V
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
+REVISION-main=	0
 
 HOMEPAGE=	https://www.vim.org/
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/28 12:08:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2018/10/26 16:16:24 jeremy Exp $
 
 COMMENT=		web scanner
 
 GH_TAGNAME =		v0.4.9
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
+
+REVISION =		0
 
 CATEGORIES=		net www
 

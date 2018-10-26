@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/01 10:12:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/26 16:16:24 jeremy Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
 DISTNAME =		vim-command-t-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel editors
 

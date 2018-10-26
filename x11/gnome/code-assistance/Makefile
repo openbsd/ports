@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2018/07/06 06:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2018/10/26 16:16:24 jeremy Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
 GNOME_VERSION=		3.16.1
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		devel
 

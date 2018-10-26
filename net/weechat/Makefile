@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/07/28 08:08:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2018/10/26 16:16:24 jeremy Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -14,6 +14,8 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
+
+REVISION-ruby=	0
 
 CATEGORIES=	net
 
