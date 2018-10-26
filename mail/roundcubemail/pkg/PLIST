@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.60 2018/10/26 20:57:55 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -3180,13 +3180,10 @@ roundcubemail/vendor/pear/net_smtp/composer.json
 roundcubemail/vendor/pear/net_smtp/package.xml
 roundcubemail/vendor/pear/net_smtp/phpdoc.sh
 roundcubemail/vendor/pear/net_socket/
-roundcubemail/vendor/pear/net_socket/LICENSE
 roundcubemail/vendor/pear/net_socket/Net/
 roundcubemail/vendor/pear/net_socket/Net/Socket.php
-roundcubemail/vendor/pear/net_socket/README.md
 roundcubemail/vendor/pear/net_socket/composer.json
 roundcubemail/vendor/pear/net_socket/package.xml
-roundcubemail/vendor/pear/net_socket/phpunit.xml.dist
 roundcubemail/vendor/pear/pear-core-minimal/
 roundcubemail/vendor/pear/pear-core-minimal/README.rst
 roundcubemail/vendor/pear/pear-core-minimal/composer.json
