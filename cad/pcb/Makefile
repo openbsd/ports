@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/26 04:01:51 bentley Exp $
 
 COMMENT=	printed circuit board layout tool
-DISTNAME=	pcb-20110918
+DISTNAME=	pcb-4.1.3
 CATEGORIES=	cad
-REVISION=	12
+EPOCH=		0
 
-HOMEPAGE=	http://pcb.gpleda.org/
+HOMEPAGE=	http://pcb.geda-project.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,9 +14,8 @@ WANTLIB =  GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo dbus-1
 WANTLIB += fontconfig freetype gd gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdkglext-x11-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 iconv intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 png pthread tiff webp
-WANTLIB += z
+WANTLIB += gtk-x11-2.0 gtkglext-x11-1.0 iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 
@@ -28,6 +27,7 @@ RUN_DEPENDS=	devel/m4 \
 		${MODTK_RUN_DEPENDS}
 
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
+		${TEST_DEPENDS} \
 		devel/m4 \
 		graphics/ImageMagick \
 		shells/bash
@@ -35,6 +35,9 @@ BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
 LIB_DEPENDS=	graphics/gd \
 		x11/dbus \
 		x11/gtkglext
+
+TEST_DEPENDS=	cad/gerbv \
+		graphics/ImageMagick
 
 MODULES=	textproc/intltool \
 		x11/tk

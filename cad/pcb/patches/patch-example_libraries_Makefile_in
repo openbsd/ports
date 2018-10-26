@@ -1,7 +1,8 @@
-$OpenBSD: patch-example_libraries_Makefile_in,v 1.6 2011/11/17 12:41:08 jasper Exp $
---- example/libraries/Makefile.in.orig	Sun Sep 18 22:06:20 2011
-+++ example/libraries/Makefile.in	Wed Nov 16 14:48:24 2011
-@@ -298,7 +298,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-example_libraries_Makefile_in,v 1.7 2018/10/26 04:01:51 bentley Exp $
+Index: example/libraries/Makefile.in
+--- example/libraries/Makefile.in.orig
++++ example/libraries/Makefile.in
+@@ -321,7 +321,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
