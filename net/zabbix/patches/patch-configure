@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.22 2018/04/08 10:47:23 robert Exp $
+$OpenBSD: patch-configure,v 1.23 2018/10/26 06:57:21 robert Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6461,6 +6461,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -6326,6 +6326,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -10,7 +10,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -9355,7 +9356,7 @@ $as_echo "yes" >&6; }
+@@ -9244,7 +9245,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -19,7 +19,7 @@ Index: configure
  
  fi
         else
-@@ -9365,7 +9366,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9254,7 +9255,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
@@ -28,3 +28,21 @@ Index: configure
  		       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                 else
+@@ -12500,12 +12501,12 @@ LIBS="$LIBS $ICONV_LIBS"
+ RANLIB="ranlib"
+ 
+ 
+-SERVER_CONFIG_FILE="${sysconfdir}/zabbix_server.conf"
+-PROXY_CONFIG_FILE="${sysconfdir}/zabbix_proxy.conf"
+-AGENT_CONFIG_FILE="${sysconfdir}/zabbix_agentd.conf"
++SERVER_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_server.conf"
++PROXY_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_proxy.conf"
++AGENT_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_agentd.conf"
+ 
+-EXTERNAL_SCRIPTS_PATH="${datadir}/zabbix/externalscripts"
+-ALERT_SCRIPTS_PATH="${datadir}/zabbix/alertscripts"
++EXTERNAL_SCRIPTS_PATH="${sysconfdir}/zabbix/externalscripts"
++ALERT_SCRIPTS_PATH="${sysconfdir}/zabbix/alertscripts"
+ 
+ CURL_SSL_CERT_LOCATION="${datadir}/zabbix/ssl/certs"
+ CURL_SSL_KEY_LOCATION="${datadir}/zabbix/ssl/keys"

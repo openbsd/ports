@@ -1,8 +1,9 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.8 2018/07/09 09:56:27 jasper Exp $
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.9 2018/10/26 06:57:21 robert Exp $
+
 Index: conf/zabbix_proxy.conf
 --- conf/zabbix_proxy.conf.orig
 +++ conf/zabbix_proxy.conf
-@@ -82,7 +82,7 @@ Hostname=Zabbix proxy
+@@ -88,7 +88,7 @@ Hostname=Zabbix proxy
  # Default:
  # LogFile=
  
@@ -11,23 +12,24 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
-@@ -131,6 +131,7 @@ LogFile=/tmp/zabbix_proxy.log
+@@ -136,7 +136,7 @@ LogFile=/tmp/zabbix_proxy.log
+ #
  # Mandatory: no
  # Default:
- # PidFile=/tmp/zabbix_proxy.pid
+-# PidFile=/tmp/zabbix_proxy.pid
 +PidFile=/var/run/zabbix/zabbix_proxy.pid
  
  ### Option: SocketDir
  #	IPC socket directory.
-@@ -189,6 +190,7 @@ DBUser=zabbix
+@@ -195,6 +195,7 @@ DBUser=zabbix
  # Mandatory: no
  # Default:
- # DBSocket=/tmp/mysql.sock
+ # DBSocket=
 +DBSocket=/var/www/var/run/mysql/mysql.sock
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -497,6 +499,7 @@ Timeout=4
+@@ -504,6 +505,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -35,7 +37,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -505,6 +508,7 @@ Timeout=4
+@@ -512,6 +514,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -43,7 +45,7 @@ Index: conf/zabbix_proxy.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -514,6 +518,7 @@ Timeout=4
+@@ -521,6 +524,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

@@ -1,4 +1,5 @@
-$OpenBSD: patch-conf_zabbix_server_conf,v 1.9 2018/07/09 09:56:27 jasper Exp $
+$OpenBSD: patch-conf_zabbix_server_conf,v 1.10 2018/10/26 06:57:21 robert Exp $
+
 Index: conf/zabbix_server.conf
 --- conf/zabbix_server.conf.orig
 +++ conf/zabbix_server.conf
@@ -14,28 +15,20 @@ Index: conf/zabbix_server.conf
 @@ -124,6 +124,7 @@ DBUser=zabbix
  # Mandatory: no
  # Default:
- # DBSocket=/tmp/mysql.sock
+ # DBSocket=
 +DBSocket=/var/www/var/run/mysql/mysql.sock
  
  ### Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -478,6 +479,7 @@ Timeout=4
+@@ -506,6 +507,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # AlertScriptsPath=${datadir}/zabbix/alertscripts
-+AlertScriptsPath=${SYSCONFDIR}/zabbix/scripts/
++AlertScriptsPath=${SYSCONFDIR}/zabbix/alertscripts/
  
  ### Option: ExternalScripts
  #	Full path to location of external scripts.
-@@ -486,6 +488,7 @@ Timeout=4
- # Mandatory: no
- # Default:
- # ExternalScripts=${datadir}/zabbix/externalscripts
-+AlertScriptsPath=${SYSCONFDIR}/zabbix/scripts/
- 
- ### Option: FpingLocation
- #	Location of fping.
-@@ -494,6 +497,7 @@ Timeout=4
+@@ -523,6 +525,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -43,7 +36,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -503,6 +507,7 @@ Timeout=4
+@@ -532,6 +535,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

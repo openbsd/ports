@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.154 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2018/10/26 06:57:21 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		3.4.11
+VERSION =		4.0.0
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -15,11 +15,6 @@ FULLPKGPATH-proxy =	net/zabbix,-proxy
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-
-REVISION-main =		1
-REVISION-proxy =	1
-REVISION-server =	1
-REVISION-web =		2
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -42,7 +37,7 @@ FLAVORS =		mysql pgsql sqlite3
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
-			curl nghttp2 pcre pcreposix
+			curl nghttp2 pcre
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
@@ -90,7 +85,7 @@ LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			net/net-snmp \
 			security/libssh2 \
 			textproc/libxml
-WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2
+WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2 pthread
 RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server
@@ -159,9 +154,6 @@ post-install:
 	# Database schemas
 	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql sqlite3 | \
 		tar -C ${PREFIX}/share/zabbix/schema -xf -
-	# Script to ease upgrading from previous major version
-	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
-		tar -C ${PREFIX}/share/zabbix -xf -
 
 	@find ${PREFIX}/share/zabbix/schema -name data.sql -exec \
 		perl -pi -e "s,/bin/ping,/sbin/ping,g;s,/usr/bin/traceroute,/usr/sbin/traceroute,g" {} \;
