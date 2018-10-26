@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2017/12/12 01:45:57 danj Exp $
+# $OpenBSD: Makefile,v 1.125 2018/10/26 14:03:53 jcs Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -6,6 +6,7 @@
     SUBDIR += apsfilter
     SUBDIR += apvlv
     SUBDIR += bibview
+    SUBDIR += brlaser
     SUBDIR += cups
     SUBDIR += cups-bjnp
     SUBDIR += cups-filters
