@@ -1,0 +1,15 @@
+$OpenBSD: patch-libtest_test_hpp,v 1.1 2018/10/26 15:47:30 sthen Exp $
+
+unbreak with gcc 4.9
+
+Index: libtest/test.hpp
+--- libtest/test.hpp.orig
++++ libtest/test.hpp
+@@ -59,6 +59,7 @@
+ 
+ #include <cstdio>
+ #include <cstdlib>
++#include <cstdarg>
+ #include <arpa/inet.h>
+ 
+ #include <libtest/visibility.h>
