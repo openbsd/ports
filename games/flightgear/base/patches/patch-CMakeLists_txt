@@ -1,0 +1,17 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/10/26 19:53:06 naddy Exp $
+
+Linking with the X11 libraries is required because various X11
+functions are called directly.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -149,6 +149,8 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR
+     if(HTS_ENGINE_FOUND)
+         set(SYSTEM_HTS_ENGINE_DEFAULT 1)
+     endif()
++elseif(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    find_package(X11 REQUIRED)
+ endif()
+ 
+ find_package(Git)
