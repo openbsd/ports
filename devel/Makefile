@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1777 2018/10/24 20:01:29 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1778 2018/10/26 15:00:22 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1217,6 +1217,7 @@
      SUBDIR += pkgconfig
      SUBDIR += plib
      SUBDIR += poedit
+     SUBDIR += pony-stable
      SUBDIR += popt
      SUBDIR += premake4
      SUBDIR += proj
