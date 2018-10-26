@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/26 16:13:00 jeremy Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -11,9 +11,9 @@ PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
-REVISION-python=	1
-REVISION-ruby=		1
-REVISION-main=	0
+REVISION-python=	2
+REVISION-ruby=		2
+REVISION-main=		1
 
 MODULES=	lang/python \
 		lang/ruby
@@ -40,7 +40,10 @@ BUILD_DEPENDS=		textproc/py-sphinx
 WANTLIB += ${COMPILER_LIBCXX} m uuid z xapian
 WANTLIB-main = ${WANTLIB} c perl
 
-RUN_DEPENDS-python =	textproc/py-sphinx
+MODRUBY_RUNDEP = 	No
+MODPY_RUNDEP = 		No
+
+RUN_DEPENDS-python =	textproc/py-sphinx ${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
 SUBST_VARS+=		MODRUBY_BINREV
 
