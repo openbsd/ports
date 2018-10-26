@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1.1.1 2018/10/26 13:57:08 jcs Exp $
+
+After installation, configure a printer in the CUPS administration
+interface (http://localhost:631 by default).
+
+Choose LPD for the printer type and enter the printer's IP address
+and a queue name (possibly "binary_p1") such as:
+
+	lpd://192.168.1.100/binary_p1
+
+After selecting Brother as the manufacturer, you should see
+supported printer models listed with "using brlaser".
