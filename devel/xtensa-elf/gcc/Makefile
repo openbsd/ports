@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/27 05:48:32 bentley Exp $
 
 COMMENT=	gcc for xtensa-elf cross-development
 
@@ -25,8 +25,6 @@ LIB_DEPENDS=	devel/mpfr \
 RUN_DEPENDS =	devel/xtensa-elf/binutils
 
 CONFIGURE_ARGS+=--enable-languages=c \
-		--enable-multilib \
-		--enable-interwork \
 		--with-newlib \
 		--with-gmp="${LOCALBASE}" \
 		--disable-libstdcxx-pch \
