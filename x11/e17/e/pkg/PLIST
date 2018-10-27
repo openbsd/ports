@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/10/27 14:03:23 ajacoutot Exp $
 @option is-branch
 @bin bin/enlightenment
 @bin bin/enlightenment_filemanager
@@ -700,14 +700,15 @@ share/enlightenment/doc/enlightenment.png
 share/enlightenment/doc/illume2.html
 share/enlightenment/doc/illume2.png
 share/examples/enlightenment/
-share/examples/enlightenment/sysactions.conf
-share/examples/firmware/
-share/examples/rc.d/
-share/examples/xdg/
-share/examples/xdg/menus/
+share/examples/enlightenment/enlightenment/
+@sample ${SYSCONFDIR}/enlightenment/
+share/examples/enlightenment/enlightenment/sysactions.conf
+@sample ${SYSCONFDIR}/enlightenment/sysactions.conf
+share/examples/enlightenment/xdg/
 @sample ${SYSCONFDIR}/xdg/
+share/examples/enlightenment/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
-share/examples/xdg/menus/enlightenment.menu
+share/examples/enlightenment/xdg/menus/enlightenment.menu
 @sample ${SYSCONFDIR}/xdg/menus/enlightenment.menu
 share/xsessions/
 share/xsessions/enlightenment.desktop

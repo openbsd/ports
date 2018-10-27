@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2018/08/11 04:58:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2018/10/27 14:03:23 ajacoutot Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
 EPOCH =			1
-REVISION =		14
+REVISION =		15
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -43,6 +43,7 @@ USE_GMAKE =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment
-	mv ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/
+	mv ${WRKINST}/${SYSCONFDIR}/{enlightenment,xdg} \
+		${PREFIX}/share/examples/enlightenment
 
 .include <bsd.port.mk>
