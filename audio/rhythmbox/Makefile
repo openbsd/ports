@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.169 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.170 2018/10/27 16:59:36 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.2
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -17,18 +17,18 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xtst archive assuan atk-1.0 atk-bridge-2.0
+WANTLIB += Xrandr Xrender archive assuan atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-3.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gpgme gpod graphite2
 WANTLIB += grilo-0.3 gstaudio-1.0 gstbase-1.0 gstcontroller-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn intl json-glib-1.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
 WANTLIB += lz4 lzma m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
 WANTLIB += png pthread soup-2.4 sqlite3 tdb totem-plparser xcb
-WANTLIB += xcb-render xcb-shm xml2 gcrypt z
+WANTLIB += xcb-render xcb-shm xml2 gcrypt z fribidi idn2 unistring zstd
 
 MODULES=		devel/dconf \
 			lang/python \
