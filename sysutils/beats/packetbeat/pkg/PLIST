@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/10/27 13:22:08 jasper Exp $
+@rcscript ${RCDIR}/packetbeat
 @bin bin/packetbeat
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/packetbeat/
@@ -8,4 +9,3 @@ share/examples/packetbeat/packetbeat.reference.yml
 share/examples/packetbeat/packetbeat.yml
 @sample ${SYSCONFDIR}/packetbeat/packetbeat.yml
 share/packetbeat/
-@rcscript ${RCDIR}/packetbeat

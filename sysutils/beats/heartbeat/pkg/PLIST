@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/18 07:18:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/27 13:22:07 jasper Exp $
+@rcscript ${RCDIR}/heartbeat
 @bin bin/heartbeat
 share/examples/heartbeat/
 @sample ${SYSCONFDIR}/heartbeat/
@@ -7,4 +8,3 @@ share/examples/heartbeat/heartbeat.reference.yml
 share/examples/heartbeat/heartbeat.yml
 @sample ${SYSCONFDIR}/heartbeat/heartbeat.yml
 share/heartbeat/
-@rcscript ${RCDIR}/heartbeat

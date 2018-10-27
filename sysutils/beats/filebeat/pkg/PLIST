@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/10/27 13:22:07 jasper Exp $
+@rcscript ${RCDIR}/filebeat
 @bin bin/filebeat
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/filebeat/
@@ -31,6 +32,38 @@ share/filebeat/module/auditd/log/ingest/
 share/filebeat/module/auditd/log/ingest/pipeline.json
 share/filebeat/module/auditd/log/manifest.yml
 share/filebeat/module/auditd/module.yml
+share/filebeat/module/elasticsearch/
+share/filebeat/module/elasticsearch/audit/
+share/filebeat/module/elasticsearch/audit/config/
+share/filebeat/module/elasticsearch/audit/config/audit.yml
+share/filebeat/module/elasticsearch/audit/ingest/
+share/filebeat/module/elasticsearch/audit/ingest/pipeline.json
+share/filebeat/module/elasticsearch/audit/manifest.yml
+share/filebeat/module/elasticsearch/deprecation/
+share/filebeat/module/elasticsearch/deprecation/config/
+share/filebeat/module/elasticsearch/deprecation/config/log.yml
+share/filebeat/module/elasticsearch/deprecation/ingest/
+share/filebeat/module/elasticsearch/deprecation/ingest/pipeline.json
+share/filebeat/module/elasticsearch/deprecation/manifest.yml
+share/filebeat/module/elasticsearch/gc/
+share/filebeat/module/elasticsearch/gc/config/
+share/filebeat/module/elasticsearch/gc/config/gc.yml
+share/filebeat/module/elasticsearch/gc/ingest/
+share/filebeat/module/elasticsearch/gc/ingest/pipeline.json
+share/filebeat/module/elasticsearch/gc/manifest.yml
+share/filebeat/module/elasticsearch/module.yml
+share/filebeat/module/elasticsearch/server/
+share/filebeat/module/elasticsearch/server/config/
+share/filebeat/module/elasticsearch/server/config/log.yml
+share/filebeat/module/elasticsearch/server/ingest/
+share/filebeat/module/elasticsearch/server/ingest/pipeline.json
+share/filebeat/module/elasticsearch/server/manifest.yml
+share/filebeat/module/elasticsearch/slowlog/
+share/filebeat/module/elasticsearch/slowlog/config/
+share/filebeat/module/elasticsearch/slowlog/config/slowlog.yml
+share/filebeat/module/elasticsearch/slowlog/ingest/
+share/filebeat/module/elasticsearch/slowlog/ingest/pipeline.json
+share/filebeat/module/elasticsearch/slowlog/manifest.yml
 share/filebeat/module/icinga/
 share/filebeat/module/icinga/debug/
 share/filebeat/module/icinga/debug/config/
@@ -51,6 +84,19 @@ share/filebeat/module/icinga/startup/config/startup.yml
 share/filebeat/module/icinga/startup/ingest/
 share/filebeat/module/icinga/startup/ingest/pipeline.json
 share/filebeat/module/icinga/startup/manifest.yml
+share/filebeat/module/iis/
+share/filebeat/module/iis/access/
+share/filebeat/module/iis/access/config/
+share/filebeat/module/iis/access/config/iis-access.yml
+share/filebeat/module/iis/access/ingest/
+share/filebeat/module/iis/access/ingest/default.json
+share/filebeat/module/iis/access/manifest.yml
+share/filebeat/module/iis/error/
+share/filebeat/module/iis/error/config/
+share/filebeat/module/iis/error/config/iis-error.yml
+share/filebeat/module/iis/error/ingest/
+share/filebeat/module/iis/error/ingest/default.json
+share/filebeat/module/iis/error/manifest.yml
 share/filebeat/module/kafka/
 share/filebeat/module/kafka/log/
 share/filebeat/module/kafka/log/config/
@@ -59,6 +105,14 @@ share/filebeat/module/kafka/log/ingest/
 share/filebeat/module/kafka/log/ingest/pipeline.json
 share/filebeat/module/kafka/log/manifest.yml
 share/filebeat/module/kafka/module.yml
+share/filebeat/module/kibana/
+share/filebeat/module/kibana/log/
+share/filebeat/module/kibana/log/config/
+share/filebeat/module/kibana/log/config/log.yml
+share/filebeat/module/kibana/log/ingest/
+share/filebeat/module/kibana/log/ingest/pipeline.json
+share/filebeat/module/kibana/log/manifest.yml
+share/filebeat/module/kibana/module.yml
 share/filebeat/module/logstash/
 share/filebeat/module/logstash/log/
 share/filebeat/module/logstash/log/config/
@@ -75,6 +129,14 @@ share/filebeat/module/logstash/slowlog/ingest/
 share/filebeat/module/logstash/slowlog/ingest/pipeline-json.json
 share/filebeat/module/logstash/slowlog/ingest/pipeline-plain.json
 share/filebeat/module/logstash/slowlog/manifest.yml
+share/filebeat/module/mongodb/
+share/filebeat/module/mongodb/log/
+share/filebeat/module/mongodb/log/config/
+share/filebeat/module/mongodb/log/config/log.yml
+share/filebeat/module/mongodb/log/ingest/
+share/filebeat/module/mongodb/log/ingest/pipeline.json
+share/filebeat/module/mongodb/log/manifest.yml
+share/filebeat/module/mongodb/module.yml
 share/filebeat/module/mysql/
 share/filebeat/module/mysql/error/
 share/filebeat/module/mysql/error/config/
@@ -177,4 +239,3 @@ share/filebeat/module/traefik/access/machine_learning/response_code.json
 share/filebeat/module/traefik/access/machine_learning/visitor_rate.json
 share/filebeat/module/traefik/access/manifest.yml
 share/filebeat/module/traefik/module.yml
-@rcscript ${RCDIR}/filebeat
