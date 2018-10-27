@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/10/27 07:22:47 bentley Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
-REVISION =	9
+REVISION =	10
+
+PKGNAME =	valyriatear-${GH_TAGNAME}
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear

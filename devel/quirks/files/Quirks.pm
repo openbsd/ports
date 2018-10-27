@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.644 2018/10/26 20:58:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.645 2018/10/27 07:22:47 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -282,6 +282,8 @@ my $stem_extensions = {
 	'sdlmame' => 'mame',
 	'sdlmame-tools' => 'mame',
 	'sdlmess' => 'mame',
+# 6.5
+	'ValyriaTear' => 'valyriatear',
 };
 
 my $obsolete_reason = {

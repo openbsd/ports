@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/27 07:22:47 bentley Exp $
+@conflict ValyriaTear-*
 @bin bin/valyriatear
 @man man/man6/valyriatear.6
 share/appdata/
