@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/12 04:58:49 daniel Exp $
+# $OpenBSD: Makefile,v 1.3 2018/10/27 01:16:42 daniel Exp $
 
 BROKEN=			An update of coq >= 8.6.1 is required to unbreak
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		high assurance C compiler
 
-V=			3.3
+V=			3.4
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
