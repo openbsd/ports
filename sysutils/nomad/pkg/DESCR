@@ -1,0 +1,4 @@
+Nomad is a flexible, enterprise-grade cluster scheduler designed to easily
+integrate into existing workflows. Nomad can run a diverse workload of
+micro-service, batch, containerized and non-containerized applications. Nomad is
+easy to operate and scale and integrates seamlessly with Consul and Vault.

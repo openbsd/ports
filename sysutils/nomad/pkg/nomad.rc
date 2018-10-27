@@ -1,0 +1,17 @@
+#!/bin/ksh
+#
+# $OpenBSD: nomad.rc,v 1.1.1.1 2018/10/27 16:44:55 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/nomad agent"
+daemon_flags="-config ${SYSCONFDIR}/nomad/nomad.hcl"
+daemon_user="_nomad"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_stop() {
+	pkill -INT -T "${daemon_rtable}" -xf "${pexp}"
+}
+
+rc_cmd $1

@@ -1,0 +1,34 @@
+$OpenBSD: patch-client_allocdir_fs_openbsd_go,v 1.1.1.1 2018/10/27 16:44:55 ajacoutot Exp $
+
+Copied from fs_freebsd.ogo (verbatim).
+
+Index: client/allocdir/fs_openbsd.go
+--- client/allocdir/fs_openbsd.go.orig
++++ client/allocdir/fs_openbsd.go
+@@ -0,0 +1,26 @@
++package allocdir
++
++import (
++	"os"
++	"syscall"
++)
++
++// linkDir hardlinks src to dst. The src and dst must be on the same filesystem.
++func linkDir(src, dst string) error {
++	return syscall.Link(src, dst)
++}
++
++// unlinkDir removes a directory link.
++func unlinkDir(dir string) error {
++	return syscall.Unlink(dir)
++}
++
++// createSecretDir creates the secrets dir folder at the given path
++func createSecretDir(dir string) error {
++	return os.MkdirAll(dir, 0777)
++}
++
++// removeSecretDir removes the secrets dir folder
++func removeSecretDir(dir string) error {
++	return os.RemoveAll(dir)
++}

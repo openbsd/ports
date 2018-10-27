@@ -1,0 +1,31 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2018/10/27 16:44:55 ajacoutot Exp $
+
+COMMENT=		cluster scheduler
+
+GH_TAGNAME=		v0.8.6
+GH_ACCOUNT=		hashicorp
+GH_PROJECT=		nomad
+
+MASTER_SITES0=		https://github.com/hashicorp/nomad/commit/
+PATCHFILES=		29364770669d8aa16e7aa1a8cef14f79665920ce.patch:0
+PATCH_DIST_STRIP=	-p1
+
+CATEGORIES=		sysutils
+
+HOMEPAGE=		https://www.nomadproject.io
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# MPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += c pthread
+
+MODULES=		lang/go
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nomad
+	${SUBST_CMD} -c -m 0640 ${FILESDIR}/nomad.hcl \
+		${PREFIX}/share/examples/nomad/nomad.hcl
+
+.include <bsd.port.mk>
