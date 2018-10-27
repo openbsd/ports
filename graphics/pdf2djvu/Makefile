@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2018/08/30 22:06:09 juanfra Exp $
+# $OpenBSD: Makefile,v 1.28 2018/10/27 16:00:02 juanfra Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
-V =			0.9.10
+V =			0.9.11
 DISTNAME =		pdf2djvu-${V}
 
 CATEGORIES =		graphics
