@@ -1,4 +1,4 @@
-$OpenBSD: patch-agent_ssm_service_go,v 1.7 2018/09/13 14:59:24 ajacoutot Exp $
+$OpenBSD: patch-agent_ssm_service_go,v 1.8 2018/10/27 16:16:11 ajacoutot Exp $
 
 Index: agent/ssm/service.go
 --- agent/ssm/service.go.orig
@@ -7,8 +7,8 @@ Index: agent/ssm/service.go
  	switch goOS {
  	case "windows":
  		params.PlatformType = aws.String(ssm.PlatformTypeWindows)
--	case "linux", "freebsd":
-+	case "linux", "freebsd", "openbsd":
+-	case "linux", "freebsd", "darwin":
++	case "linux", "freebsd", "darwin", "openbsd":
+ 		// darwin masquerades as Linux to bypass OS validation on
+ 		// the backend until official support can be added.
  		params.PlatformType = aws.String(ssm.PlatformTypeLinux)
- 	default:
- 		return nil, fmt.Errorf("Cannot report platform type of unrecognized OS. %v", goOS)
