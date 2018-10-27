@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_test-mime_c,v 1.1 2018/10/27 16:59:07 ajacoutot Exp $
+
+64bit time_t
+
+Index: tests/test-mime.c
+--- tests/test-mime.c.orig
++++ tests/test-mime.c
+@@ -377,7 +377,7 @@ test_date_parser (void)
+ 			tz_offset *= sign;
+ 			
+ 			if (time != dates[i].date)
+-				throw (exception_new ("time_t's do not match: %ld vs %ld", time, dates[i].date));
++				throw (exception_new ("time_t's do not match: %lld vs %lld", time, dates[i].date));
+ 			
+ 			if (tz_offset != dates[i].tzone)
+ 				throw (exception_new ("timezones do not match"));
