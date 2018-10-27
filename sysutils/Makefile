@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2018/10/22 20:27:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.505 2018/10/27 16:45:24 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -189,6 +189,7 @@
      SUBDIR += netshot
      SUBDIR += nnn
      SUBDIR += noice
+     SUBDIR += nomad
      SUBDIR += ntfs-3g
      SUBDIR += nut
      SUBDIR += od1000_firmware
