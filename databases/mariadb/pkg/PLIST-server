@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.21 2018/10/16 14:41:14 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.22 2018/10/27 09:27:56 ajacoutot Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -229,6 +229,7 @@ lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
 lib/mysql/plugin/ha_innodb.so
+lib/mysql/plugin/ha_mroonga.so
 lib/mysql/plugin/ha_sequence.so
 lib/mysql/plugin/ha_sphinx.so
 lib/mysql/plugin/ha_spider.so
@@ -356,6 +357,9 @@ share/mysql/japanese/
 share/mysql/japanese/errmsg.sys
 share/mysql/korean/
 share/mysql/korean/errmsg.sys
+share/mysql/mroonga/
+share/mysql/mroonga/install.sql
+share/mysql/mroonga/uninstall.sql
 share/mysql/mysql_performance_tables.sql
 share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql

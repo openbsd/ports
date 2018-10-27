@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2018/10/27 09:27:56 ajacoutot Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -14,9 +14,9 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
-REVISION-server=2
-REVISION-tests=	1
 REVISION-main=	0
+REVISION-server=3
+REVISION-tests=	2
 
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
@@ -35,10 +35,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl ${COMPILER_LIBCXX} z
 WANTLIB-main=	curses readline ${WANTLIB}
-WANTLIB-server=	mysqlclient pcre ${WANTLIB}
+WANTLIB-server=	lz4 mysqlclient pcre xml2 ${WANTLIB}
 WANTLIB-tests=	mysqlclient pcre pcreposix ${WANTLIB}
-
-COMPILER =	base-clang ports-gcc base-gcc
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
@@ -50,11 +48,13 @@ BUILD_DEPENDS=	devel/bison
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
-			devel/pcre
+			archivers/lz4 \
+			devel/pcre \
+			textproc/libxml
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			devel/pcre
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -77,20 +77,32 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
-		-DCONNECT_WITH_LIBXML2=Off
+		-DCONNECT_WITH_ODBC=Off \
+		-DGRN_WITH_MECAB=no \
+		-DGRN_WITH_KYTEA=no \
+		-DGRN_WITH_LIBSTEMMER=no \
+		-DGRN_WITH_ZEROMQ=no \
+		-DGRN_WITH_MESSAGE_PACK=no
+
+# force disabling the PAM auth plugin if OpenPAM is installed
+CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
+
+# force disabling libexecinfo if it is installed
+CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
+		-DHAVE_LIBEXECINFO=0
+
+# CMake test fails on OpenBSD
+CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
+
+# The TokuDB storage engine does not build at the moment on OpenBSD
+# One more or more issues to look into
+CONFIGURE_ARGS+=-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-
-# The Mroonga and TokuDB storage engines do not build at the
-# moment on OpenBSD.
-# It is still not enabled due to a linking issue with liblz4.
-CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1
-# One more or more issues to look into.
-CONFIGURE_ARGS+=-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
 MULTI_PACKAGES=	-main -server -tests
 
