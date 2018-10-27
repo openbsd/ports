@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/10/25 19:15:02 juanfra Exp $
-
-# Remove for 7.1
-BROKEN-sparc64 =	contract violation on sysinfercgc
+# $OpenBSD: Makefile,v 1.54 2018/10/27 15:58:32 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -10,8 +7,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.0
-REVISION =		3
+V =			7.1
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
