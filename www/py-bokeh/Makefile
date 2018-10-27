@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/21 11:33:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2018/10/27 16:26:05 ajacoutot Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	0.13.0
+MODPY_EGG_VERSION=	1.0.0
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
@@ -25,6 +25,7 @@ FLAVOR ?=
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
