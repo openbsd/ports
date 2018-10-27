@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/12 04:42:51 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/10/27 01:34:16 daniel Exp $
 %%native%%
 @bin bin/menhir
 lib/ocaml/menhirLib/
@@ -20,12 +20,17 @@ share/doc/ocaml-menhir/demos/calc-dune/
 share/doc/ocaml-menhir/demos/calc-dune/Makefile
 share/doc/ocaml-menhir/demos/calc-dune/README
 share/doc/ocaml-menhir/demos/calc-dune/calc.ml
-share/doc/ocaml-menhir/demos/calc-dune/dune
-share/doc/ocaml-menhir/demos/calc-dune/identity.ml
 share/doc/ocaml-menhir/demos/calc-dune/jbuild
 share/doc/ocaml-menhir/demos/calc-dune/lexer.mll
 share/doc/ocaml-menhir/demos/calc-dune/parser.mly
 share/doc/ocaml-menhir/demos/calc-incremental/
+share/doc/ocaml-menhir/demos/calc-incremental-dune/
+share/doc/ocaml-menhir/demos/calc-incremental-dune/Makefile
+share/doc/ocaml-menhir/demos/calc-incremental-dune/README
+share/doc/ocaml-menhir/demos/calc-incremental-dune/calc.ml
+share/doc/ocaml-menhir/demos/calc-incremental-dune/jbuild
+share/doc/ocaml-menhir/demos/calc-incremental-dune/lexer.mll
+share/doc/ocaml-menhir/demos/calc-incremental-dune/parser.mly
 share/doc/ocaml-menhir/demos/calc-incremental/.merlin
 share/doc/ocaml-menhir/demos/calc-incremental/Makefile
 share/doc/ocaml-menhir/demos/calc-incremental/README
@@ -33,6 +38,19 @@ share/doc/ocaml-menhir/demos/calc-incremental/calc.ml
 share/doc/ocaml-menhir/demos/calc-incremental/lexer.mll
 share/doc/ocaml-menhir/demos/calc-incremental/parser.mly
 share/doc/ocaml-menhir/demos/calc-inspection/
+share/doc/ocaml-menhir/demos/calc-inspection-dune/
+share/doc/ocaml-menhir/demos/calc-inspection-dune/CalcErrorReporting.ml
+share/doc/ocaml-menhir/demos/calc-inspection-dune/CalcErrorReporting.mli
+share/doc/ocaml-menhir/demos/calc-inspection-dune/CalcPrinters.ml
+share/doc/ocaml-menhir/demos/calc-inspection-dune/CalcPrinters.mli
+share/doc/ocaml-menhir/demos/calc-inspection-dune/ErrorReporting.ml
+share/doc/ocaml-menhir/demos/calc-inspection-dune/ErrorReporting.mli
+share/doc/ocaml-menhir/demos/calc-inspection-dune/Makefile
+share/doc/ocaml-menhir/demos/calc-inspection-dune/README
+share/doc/ocaml-menhir/demos/calc-inspection-dune/calc.ml
+share/doc/ocaml-menhir/demos/calc-inspection-dune/jbuild
+share/doc/ocaml-menhir/demos/calc-inspection-dune/lexer.mll
+share/doc/ocaml-menhir/demos/calc-inspection-dune/parser.mly
 share/doc/ocaml-menhir/demos/calc-inspection/.merlin
 share/doc/ocaml-menhir/demos/calc-inspection/CalcErrorReporting.ml
 share/doc/ocaml-menhir/demos/calc-inspection/CalcErrorReporting.mli
@@ -46,6 +64,14 @@ share/doc/ocaml-menhir/demos/calc-inspection/calc.ml
 share/doc/ocaml-menhir/demos/calc-inspection/lexer.mll
 share/doc/ocaml-menhir/demos/calc-inspection/parser.mly
 share/doc/ocaml-menhir/demos/calc-param/
+share/doc/ocaml-menhir/demos/calc-param-dune/
+share/doc/ocaml-menhir/demos/calc-param-dune/Makefile
+share/doc/ocaml-menhir/demos/calc-param-dune/README
+share/doc/ocaml-menhir/demos/calc-param-dune/calc.ml
+share/doc/ocaml-menhir/demos/calc-param-dune/jbuild
+share/doc/ocaml-menhir/demos/calc-param-dune/lexer.mll
+share/doc/ocaml-menhir/demos/calc-param-dune/parser.mly
+share/doc/ocaml-menhir/demos/calc-param-dune/tokens.mly
 share/doc/ocaml-menhir/demos/calc-param/.merlin
 share/doc/ocaml-menhir/demos/calc-param/Makefile
 share/doc/ocaml-menhir/demos/calc-param/README
@@ -58,6 +84,19 @@ share/doc/ocaml-menhir/demos/calc-param/parser.mlypack
 share/doc/ocaml-menhir/demos/calc-param/tokens.mly
 share/doc/ocaml-menhir/demos/calc-param/tokens.mlypack
 share/doc/ocaml-menhir/demos/calc-two/
+share/doc/ocaml-menhir/demos/calc-two-dune/
+share/doc/ocaml-menhir/demos/calc-two-dune/Makefile
+share/doc/ocaml-menhir/demos/calc-two-dune/README
+share/doc/ocaml-menhir/demos/calc-two-dune/algebraic.mly
+share/doc/ocaml-menhir/demos/calc-two-dune/algebraic.mlypack
+share/doc/ocaml-menhir/demos/calc-two-dune/calc.ml
+share/doc/ocaml-menhir/demos/calc-two-dune/common.mly
+share/doc/ocaml-menhir/demos/calc-two-dune/jbuild
+share/doc/ocaml-menhir/demos/calc-two-dune/lexer.mll
+share/doc/ocaml-menhir/demos/calc-two-dune/reverse.mly
+share/doc/ocaml-menhir/demos/calc-two-dune/reverse.mlypack
+share/doc/ocaml-menhir/demos/calc-two-dune/tokens.mly
+share/doc/ocaml-menhir/demos/calc-two-dune/tokens.mlypack
 share/doc/ocaml-menhir/demos/calc-two/.merlin
 share/doc/ocaml-menhir/demos/calc-two/Makefile
 share/doc/ocaml-menhir/demos/calc-two/README
@@ -80,6 +119,11 @@ share/doc/ocaml-menhir/demos/calc/lexer.mll
 share/doc/ocaml-menhir/demos/calc/parser.mly
 share/doc/ocaml-menhir/demos/find-menhir.sh
 share/doc/ocaml-menhir/demos/generate-printers/
+share/doc/ocaml-menhir/demos/generate-printers-dune/
+share/doc/ocaml-menhir/demos/generate-printers-dune/Makefile
+share/doc/ocaml-menhir/demos/generate-printers-dune/README.md
+share/doc/ocaml-menhir/demos/generate-printers-dune/generate.ml
+share/doc/ocaml-menhir/demos/generate-printers-dune/jbuild
 share/doc/ocaml-menhir/demos/generate-printers/.merlin
 share/doc/ocaml-menhir/demos/generate-printers/Makefile
 share/doc/ocaml-menhir/demos/generate-printers/README.md
