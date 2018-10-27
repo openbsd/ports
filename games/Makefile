@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2018/10/03 11:45:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.392 2018/10/27 07:15:11 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -210,6 +210,7 @@
      SUBDIR += pathological
      SUBDIR += pentobi
      SUBDIR += pingus
+     SUBDIR += pioneer
      SUBDIR += pioneers
      SUBDIR += pokerth
      SUBDIR += polymorphable
