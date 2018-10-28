@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/01/07 14:52:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/10/28 03:04:25 afresh1 Exp $
+${P5SITE}/POE/
+${P5SITE}/POE/Filter/
 ${P5SITE}/POE/Filter/XML/
 ${P5SITE}/POE/Filter/XML.pm
 ${P5SITE}/POE/Filter/XML/Handler.pm
 ${P5SITE}/POE/Filter/XML/NS.pm
 ${P5SITE}/POE/Filter/XML/Node.pm
-${P5SITE}/POE/Filter/XML/Utils.pm
 @man man/man3p/POE::Filter::XML.3p
+@man man/man3p/POE::Filter::XML::Handler.3p
 @man man/man3p/POE::Filter::XML::NS.3p
 @man man/man3p/POE::Filter::XML::Node.3p
-@man man/man3p/POE::Filter::XML::Utils.3p
