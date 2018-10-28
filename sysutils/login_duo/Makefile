@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/20 13:16:35 jturner Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/28 00:42:37 jturner Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
@@ -14,8 +14,6 @@ MASTER_SITES =		https://dl.duosecurity.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-
-MODULES =		lang/python
 
 WANTLIB =		c crypto ssl
 
