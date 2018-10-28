@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_id3_id3lib_strings_h,v 1.1 2018/10/28 07:59:57 bentley Exp $
+
+Index: include/id3/id3lib_strings.h
+--- include/id3/id3lib_strings.h.orig
++++ include/id3/id3lib_strings.h
+@@ -29,6 +29,7 @@
+ #ifndef _ID3LIB_STRINGS_H_
+ #define _ID3LIB_STRINGS_H_
+ 
++#include <cstring>
+ #include <string>
+ 
+ #if (defined(__GNUC__) && (__GNUC__ >= 3) || (defined(_MSC_VER) && _MSC_VER > 1000))
