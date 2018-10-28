@@ -1,0 +1,13 @@
+$OpenBSD: patch-trackdb_TempFileManager_cc,v 1.1 2018/10/28 07:42:40 bentley Exp $
+
+Index: trackdb/TempFileManager.cc
+--- trackdb/TempFileManager.cc.orig
++++ trackdb/TempFileManager.cc
+@@ -24,6 +24,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#include <string.h>
+ 
+ #define DEFAULT_TEMP_PATH "/tmp/"
+ 
