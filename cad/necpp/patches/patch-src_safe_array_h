@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_safe_array_h,v 1.1 2018/10/28 08:19:12 bentley Exp $
+
+Index: src/safe_array.h
+--- src/safe_array.h.orig
++++ src/safe_array.h
+@@ -19,6 +19,7 @@
+ #define __safe_array__
+ 
+ #include <iostream>
++#include <cstring>
+ #include <string>
+ #include <sstream>
+ 
