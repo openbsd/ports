@@ -1,24 +1,25 @@
-$OpenBSD: patch-options_cpp,v 1.2 2016/04/27 17:02:34 danj Exp $
+$OpenBSD: patch-options_cpp,v 1.3 2018/10/28 14:49:25 landry Exp $
 
 Set the default cache size to 100M
 
---- options.cpp.orig	Wed Mar  2 15:06:44 2016
-+++ options.cpp	Wed Apr 27 14:53:15 2016
+Index: options.cpp
+--- options.cpp.orig
++++ options.cpp
 @@ -98,7 +98,7 @@ namespace
          printf("\
-                         %s/default.style.\n", OSM2PGSQL_DATADIR);
+                         %s.\n", DEFAULT_STYLE);
          printf("%s", "\
 -       -C|--cache       Use up to this many MB for caching nodes (default: 800)\n\
 +       -C|--cache       Use up to this many MB for caching nodes (default: 100)\n\
-     \n\
-     Database options:\n\
-        -d|--database    The name of the PostgreSQL database to connect\n\
-@@ -261,7 +261,7 @@ std::string database_options_t::conninfo() const
- 
- options_t::options_t():
-     prefix("planet_osm"), scale(DEFAULT_SCALE), projection(reprojection::create_projection(PROJ_SPHERE_MERC)), append(false), slim(false),
--    cache(800), tblsmain_index(boost::none), tblsslim_index(boost::none), tblsmain_data(boost::none), tblsslim_data(boost::none), style(OSM2PGSQL_DATADIR "/default.style"),
-+    cache(100), tblsmain_index(boost::none), tblsslim_index(boost::none), tblsmain_data(boost::none), tblsslim_data(boost::none), style(OSM2PGSQL_DATADIR "/default.style"),
-     expire_tiles_zoom(-1), expire_tiles_zoom_min(-1), expire_tiles_filename("dirty_tiles"), hstore_mode(HSTORE_NONE), enable_hstore_index(false),
-     enable_multi(false), hstore_columns(), keep_coastlines(false), parallel_indexing(true),
-     #ifdef __amd64__
+        -F|--flat-nodes  Specifies the flat file to use to persistently store node \n\
+                         information in slim mode instead of in PostgreSQL.\n\
+                         This file is a single > 40Gb large file. Only recommended\n\
+@@ -267,7 +267,7 @@ std::string database_options_t::conninfo() const
+ options_t::options_t()
+ : prefix("planet_osm"),
+   projection(reprojection::create_projection(PROJ_SPHERE_MERC)), append(false),
+-  slim(false), cache(800), tblsmain_index(boost::none),
++  slim(false), cache(100), tblsmain_index(boost::none),
+   tblsslim_index(boost::none), tblsmain_data(boost::none),
+   tblsslim_data(boost::none), style(DEFAULT_STYLE),
+   expire_tiles_zoom(0), expire_tiles_zoom_min(0),
