@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/20 07:15:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2018/10/28 09:13:30 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.6
+DISTNAME =		uriparser-0.9.0
 WRKDIST =		${WRKDIR}/uriparser-${DISTNAME}
 
-SHARED_LIBS +=  uriparser                 1.0 # 1.21
+SHARED_LIBS +=  uriparser                 2.0 # 1.23
 
 CATEGORIES =		www
 
@@ -18,13 +18,12 @@ WANTLIB += c
 
 MASTER_SITES =		https://github.com/uriparser/uriparser/archive/
 
-# cpptest is only used during tests but configure requires it
-BUILD_DEPENDS =		devel/cpptest
-TEST_DEPENDS =		devel/cpptest
-
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+
+# requires Google test (gtest)
+CONFIGURE_ARGS +=	--disable-test
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
