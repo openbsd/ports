@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/28 08:07:36 bentley Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
 DISTNAME =	libofa-0.9.3
-REVISION =	9
+REVISION =	10
 CATEGORIES =	audio devel
 SHARED_LIBS +=	ofa	0.0
 
