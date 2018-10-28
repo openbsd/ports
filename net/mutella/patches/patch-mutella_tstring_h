@@ -1,0 +1,13 @@
+$OpenBSD: patch-mutella_tstring_h,v 1.1 2018/10/28 05:59:19 bentley Exp $
+
+Index: mutella/tstring.h
+--- mutella/tstring.h.orig
++++ mutella/tstring.h
+@@ -23,6 +23,7 @@
+ 
+ #include <stdarg.h>
+ #include <iostream>
++#include <cstring>
+ 
+ #ifdef TSTRING_DEBUG
+ 

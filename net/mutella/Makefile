@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/10/28 05:59:19 bentley Exp $
 
 COMMENT=		gnutella client with an easy to use interface
 
 DISTNAME=		mutella-0.4.5
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://mutella.sourceforge.net/
