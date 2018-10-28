@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/07 07:18:39 feinerer Exp $
+# $OpenBSD: Makefile,v 1.20 2018/10/28 10:46:02 kn Exp $
 
 COMMENT =		portable library for real-time communications
 
-V =			0.5.8
+V =			0.5.9
 DISTNAME =		re-${V}
 SHARED_LIBS =		re	5.1
 CATEGORIES +=		devel
