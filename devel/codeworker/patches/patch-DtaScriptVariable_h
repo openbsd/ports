@@ -1,0 +1,13 @@
+$OpenBSD: patch-DtaScriptVariable_h,v 1.1 2018/10/28 09:02:40 bentley Exp $
+
+Index: DtaScriptVariable.h
+--- DtaScriptVariable.h.orig
++++ DtaScriptVariable.h
+@@ -32,6 +32,7 @@ To contact the author: codeworker@free.fr
+ #	endif
+ #endif
+ 
++#include <cstring>
+ #include <string>
+ #include <list>
+ #include <vector>
