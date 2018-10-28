@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/20 12:15:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/10/28 10:06:27 ajacoutot Exp $
 
 COMMENT=		manage Exoscale infrastructure from the command-line
 
-GH_TAGNAME=		v1.0.1
+GH_TAGNAME=		v1.0.2
 GH_ACCOUNT=		exoscale
 GH_PROJECT=		cli
 DISTNAME=		${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME:C/^v//}
@@ -17,6 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
+
+# see ${WRKSRC}/Dockerfile
+MODGO_LDFLAGS +=	-X main.version=${GH_TAGNAME:C/^v//}
+MODGO_LDFLAGS +=	-X main.commit=
 
 post-install:
 	mv ${PREFIX}/bin/{cli,exo}
