@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/13 05:08:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/28 10:55:37 rsadowski Exp $
 include/catch2/
 include/catch2/catch.hpp
 include/catch2/catch_reporter_automake.hpp
@@ -31,6 +31,7 @@ share/doc/Catch2/list-of-examples.md
 share/doc/Catch2/logging.md
 share/doc/Catch2/matchers.md
 share/doc/Catch2/opensource-users.md
+share/doc/Catch2/other-macros.md
 share/doc/Catch2/own-main.md
 share/doc/Catch2/release-notes.md
 share/doc/Catch2/release-process.md
