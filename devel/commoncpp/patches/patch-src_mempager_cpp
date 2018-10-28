@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mempager_cpp,v 1.1 2018/10/28 08:59:08 bentley Exp $
+
+Index: src/mempager.cpp
+--- src/mempager.cpp.orig
++++ src/mempager.cpp
+@@ -36,6 +36,7 @@
+ // If you do not wish that, delete this exception notice.
+ //
+ 
++#include <cstdlib>
+ #include <cc++/config.h>
+ #include <cc++/export.h>
+ #include <cc++/slog.h>

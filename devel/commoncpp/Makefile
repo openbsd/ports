@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/10/28 08:59:07 bentley Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
 VER=		1.7.3
 DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
 
 SHARED_LIBS+=	ccext2		2.0
 SHARED_LIBS+=	ccgnu2		2.0
 
-HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_Common_C++
+HOMEPAGE=	https://www.gnu.org/software/commoncpp/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
