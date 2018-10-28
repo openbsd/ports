@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2018/10/28 08:30:03 bentley Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
 VERSION=	0.4.3.1
 DISTNAME=	Atlas-C++-${VERSION}
 PKGNAME=	${DISTNAME:S/C++-//:L}
-REVISION =	8
+REVISION =	9
 SHARED_LIBS +=	Atlas                2.0      # .1.1
 SHARED_LIBS +=	AtlasObjects         2.0      # .1.1
 SHARED_LIBS +=	AtlasObjectsEntity   2.0      # .1.1

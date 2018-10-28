@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Codecs_XML_cc,v 1.1 2018/10/28 08:30:03 bentley Exp $
+
+Index: src/Codecs/XML.cc
+--- src/Codecs/XML.cc.orig
++++ src/Codecs/XML.cc
+@@ -4,6 +4,8 @@
+ 
+ #include "XML.h"
+ 
++#include <cstdlib>
++
+ namespace Atlas { namespace Codecs {
+     
+ XML::XML(std::iostream& s, Atlas::Bridge* b)
