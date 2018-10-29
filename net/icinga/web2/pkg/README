@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README,v 1.5 2018/10/29 06:16:21 martijn Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -16,14 +16,6 @@ details, database schema, etc.
 The majority of Icinga Web 2 configuration is web-based and simple,
 but a few things will need to be setup FIRST, in particular to cope
 with the use of a chroot jail for OpenBSD webservers and PHP.
-
-- OpenBSD's PHP packages use the Suhosin extension. Add the following
-to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini:
-
-   suhosin.executor.include.whitelist = zend.view
-
-This is needed otherwise Suhosin will block "zend.view://" pseudo-URLs
-from being used with PHP's "include" function.
 
 - To cope with the chroot jail normally used with OpenBSD's PHP/web
 servers, create a symlink:
