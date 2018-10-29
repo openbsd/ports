@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.93 2018/09/16 16:47:59 landry Exp $
+# $OpenBSD: Makefile,v 1.94 2018/10/29 08:25:30 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-3.2.3
+DISTNAME =	qgis-3.4.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	24.0 \
-		qgis_app	9.1 \
-		qgis_gui	20.2 \
-		qgis_analysis	10.0 \
-		qgis_server	6.0 \
+SHARED_LIBS =	qgis_core	25.0 \
+		qgis_app	10.0 \
+		qgis_gui	21.0 \
+		qgis_analysis	11.0 \
+		qgis_server	7.0 \
 		qgispython	6.0 \
-		qgis_3d		1.0 \
-		qgis_native	0.0
+		qgis_3d		2.0 \
+		qgis_native	0.1
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -78,6 +78,7 @@ WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
 WANTLIB += spatialite sqlite3 util zip
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad
+WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
@@ -101,34 +102,7 @@ pre-configure:
 		rm -f ${WRKSRC}/cmake/FindIconv.cmake
 
 post-install:
-	# shoplifted from debian/rules
-	# Install menu pixmap
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications,mime/packages}
-	${INSTALL_DATA} ${WRKSRC}/images/icons/qgis_icon.svg ${PREFIX}/share/pixmaps/qgis.svg
-	ln -f ${PREFIX}/share/{qgis/images/icons/qgis-icon-512x512,pixmaps/qgis}.png
-	ln -f ${PREFIX}/share/{qgis/images/icons/qgis-mime-icon,pixmaps/qgis-mime}.png
-
-.for size in 8x8 16x16 22x22 24x24 32x32 36x36 42x42 48x48 64x64 72x72 80x80 96x96 128x128 192x192 256x256 512x512
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${size}/{mimetypes,apps}
-	# Install application icon
-	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-icon${size}.png \
-		${PREFIX}/share/icons/hicolor/${size}/apps/qgis.png
-	# Install QGIS file formats icons
-.for ftype in qgs qlr qml qpt
-	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-${ftype}${size}.png \
-		${PREFIX}/share/icons/hicolor/${size}/apps/qgis-${ftype}.png
-.endfor
-.endfor
-
-	# Install MIME type icon
-.for size in 8x8 16x16 22x22 24x24 32x32 36x36 42x42 48x48 64x64 72x72 80x80 96x96 128x128
-	${INSTALL_DATA} ${WRKSRC}/debian/icons/qgis-mime-icon${size}.png \
-		${PREFIX}/share/icons/hicolor/${size}/mimetypes/qgis-mime.png
-.endfor
-
-	${INSTALL_DATA} ${WRKSRC}/debian/qgis.desktop \
-		${PREFIX}/share/applications/qgis.desktop
-
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/debian/qgis.xml \
 		${PREFIX}/share/mime/packages/qgis.xml
 
