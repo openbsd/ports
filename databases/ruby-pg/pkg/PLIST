@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/01/16 01:43:10 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2018/10/29 14:44:44 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -19,6 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/basic_type_mapping.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/binary_decoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/coder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/constants.rb
@@ -26,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_decoder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/text_encoder.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/pg/tuple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg/type_map_by_column.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -36,7 +38,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/basic_type_mapping_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/connection_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/connection_sync_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/result_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/pg/tuple_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_class_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_column_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/pg/type_map_by_mri_type_spec.rb
