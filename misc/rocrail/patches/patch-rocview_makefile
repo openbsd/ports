@@ -1,17 +1,17 @@
-$OpenBSD: patch-rocview_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+$OpenBSD: patch-rocview_makefile,v 1.2 2018/10/29 19:22:25 naddy Exp $
 
 Index: rocview/makefile
 --- rocview/makefile.orig
 +++ rocview/makefile
-@@ -104,13 +104,13 @@ DEBUG=-g
+@@ -104,13 +104,12 @@ DEBUG=-g
  DESTDIR=$(FS)opt$(FS)rocrail
  BINDIR=..$(FS)rocs$(FS)bin
  
 -CPP=$(TOOLPREFIX)c++
 -CC=$(TOOLPREFIX)gcc
+-LNK=$(TOOLPREFIX)$(LINKTOOL)
 +CPP=$(TOOLPREFIX)$(CXX)
-+CC=$(TOOLPREFIX)$(CC)
- LNK=$(TOOLPREFIX)$(LINKTOOL)
++LNK=$(TOOLPREFIX)$(CXX)
  INCL_PATH=$(MOUNTPOINT)
 -CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)
 +CC_FLAGS=-c $(CC_EXTRA_FLAGS) $(CFLAGS) $(DEBUG) -I$(INCL_PATH) -I$(GENDIR)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/10/29 19:22:25 naddy Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -10,8 +10,8 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		7
-REVISION-gui =		5
+REVISION-main =		8
+REVISION-gui =		6
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -34,8 +34,9 @@ RUN_DEPENDS-gui +=	${PKGPATH},-main
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	none
+MAKE_ENV =		CC="${CC}" CXX="${CXX}"
 MAKE_FILE =		makefile
-MAKE_FLAGS =		PLATFORM=OPENBSD CC="${CC}" CPP="${CC}" LNK="${CC}"
+MAKE_FLAGS =		PLATFORM=OPENBSD
 ALL_TARGET =		fromtar
 WRKDIST =		${WRKDIR}/Rocrail
 
