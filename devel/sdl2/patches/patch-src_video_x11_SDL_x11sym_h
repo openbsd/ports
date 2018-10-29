@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_video_x11_SDL_x11sym_h,v 1.1 2018/10/29 05:39:49 thfr Exp $
+
+fix incorrect function signature that breaks macppc platform (likely any big
+endian platform)
+upstream changeset http://hg.libsdl.org/SDL/rev/9dd351b26dcb
+
+Index: src/video/x11/SDL_x11sym.h
+--- src/video/x11/SDL_x11sym.h.orig
++++ src/video/x11/SDL_x11sym.h
+@@ -180,7 +180,7 @@ SDL_X11_SYM(Status,XkbGetUpdatedMap,(Display* a,unsign
+ SDL_X11_SYM(XkbDescPtr,XkbGetMap,(Display* a,unsigned int b,unsigned int c),(a,b,c),return)
+ SDL_X11_SYM(void,XkbFreeClientMap,(XkbDescPtr a,unsigned int b, Bool c),(a,b,c),)
+ SDL_X11_SYM(void,XkbFreeKeyboard,(XkbDescPtr a,unsigned int b, Bool c),(a,b,c),)
+-SDL_X11_SYM(BOOL,XkbSetDetectableAutoRepeat,(Display* a, BOOL b, BOOL* c),(a,b,c),return)
++SDL_X11_SYM(Bool,XkbSetDetectableAutoRepeat,(Display* a, Bool b, Bool* c),(a,b,c),return)
+ #endif
+
+ #if NeedWidePrototypes

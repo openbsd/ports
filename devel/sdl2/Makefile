@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2018/10/29 05:39:49 thfr Exp $
 
 COMMENT=	cross-platform multimedia library
 BROKEN-hppa=	src/atomic/SDL_spinlock.c:101:2: error: \
@@ -9,13 +9,13 @@ DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	SDL2		0.5	# 0.8
 
 HOMEPAGE=	https://www.libsdl.org/
 
-MAINTAINER=	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE_CDROM=	Yes
