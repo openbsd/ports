@@ -1,12 +1,13 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.1 2017/09/01 06:40:28 ajacoutot Exp $
---- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig	Sun Apr  2 02:36:38 2017
-+++ tools/clang/lib/Driver/ToolChains/OpenBSD.h	Sun Apr  2 02:37:03 2017
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.2 2018/10/29 08:36:35 ajacoutot Exp $
+Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
+--- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
++++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
 @@ -59,6 +59,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    bool IsObjCNonFragileABIDefault() const override { return true; }
    bool isPIEDefault() const override { return true; }
  
 +  CXXStdlibType GetCXXStdlibType(const llvm::opt::ArgList &Args) const override;
-+  void AddClangCXXStdlibIncludeArgs(
++  void addLibStdCxxIncludePaths(
 +      const llvm::opt::ArgList &DriverArgs,
 +      llvm::opt::ArgStringList &CC1Args) const override;
 +  void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,

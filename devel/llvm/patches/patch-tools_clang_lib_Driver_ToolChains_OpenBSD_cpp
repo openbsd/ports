@@ -1,8 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.5 2018/07/16 07:26:18 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.6 2018/10/29 08:36:35 ajacoutot Exp $
 
-- Pass -nopie to the linker when -pg is specified to make the
-  profiler(gprof) work properly.
-- Link to -lcompiler_rt instead of -lgcc
+- Some improvements to the OpenBSD driver.
+- Pass the nopie flag to the linker when linking with -pg.
 
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -16,22 +15,68 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
  #include "clang/Driver/Options.h"
  #include "llvm/Option/ArgList.h"
  
-@@ -147,10 +149,11 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -97,6 +99,8 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+                                    const InputInfoList &Inputs,
+                                    const ArgList &Args,
+                                    const char *LinkingOutput) const {
++  const toolchains::OpenBSD &ToolChain =
++      static_cast<const toolchains::OpenBSD &>(getToolChain());
+   const Driver &D = getToolChain().getDriver();
+   ArgStringList CmdArgs;
+ 
+@@ -108,9 +112,9 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+   // handled somewhere else.
+   Args.ClaimAllArgs(options::OPT_w);
+ 
+-  if (getToolChain().getArch() == llvm::Triple::mips64)
++  if (ToolChain.getArch() == llvm::Triple::mips64)
+     CmdArgs.push_back("-EB");
+-  else if (getToolChain().getArch() == llvm::Triple::mips64el)
++  else if (ToolChain.getArch() == llvm::Triple::mips64el)
+     CmdArgs.push_back("-EL");
+ 
+   if (!Args.hasArg(options::OPT_nostdlib, options::OPT_shared)) {
+@@ -135,7 +139,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+ 
+   if (Args.hasArg(options::OPT_pie))
+     CmdArgs.push_back("-pie");
+-  if (Args.hasArg(options::OPT_nopie))
++  if (Args.hasArg(options::OPT_nopie) || Args.hasArg(options::OPT_pg))
+     CmdArgs.push_back("-nopie");
+ 
+   if (Output.isFilename()) {
+@@ -146,41 +150,48 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+   }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
++    const char *crt0 = nullptr;
++    const char *crtbegin = nullptr;
      if (!Args.hasArg(options::OPT_shared)) {
--      if (Args.hasArg(options::OPT_pg))
-+      if (Args.hasArg(options::OPT_pg)) {
-+        CmdArgs.push_back("-nopie");
-         CmdArgs.push_back(
-             Args.MakeArgString(getToolChain().GetFilePath("gcrt0.o")));
--      else if (Args.hasArg(options::OPT_static) &&
-+      } else if (Args.hasArg(options::OPT_static) &&
+       if (Args.hasArg(options::OPT_pg))
+-        CmdArgs.push_back(
+-            Args.MakeArgString(getToolChain().GetFilePath("gcrt0.o")));
++        crt0 = "gcrt0.o";
+       else if (Args.hasArg(options::OPT_static) &&
                 !Args.hasArg(options::OPT_nopie))
-         CmdArgs.push_back(
-             Args.MakeArgString(getToolChain().GetFilePath("rcrt0.o")));
-@@ -165,16 +168,22 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+-        CmdArgs.push_back(
+-            Args.MakeArgString(getToolChain().GetFilePath("rcrt0.o")));
++        crt0 = "rcrt0.o";
+       else
+-        CmdArgs.push_back(
+-            Args.MakeArgString(getToolChain().GetFilePath("crt0.o")));
+-      CmdArgs.push_back(
+-          Args.MakeArgString(getToolChain().GetFilePath("crtbegin.o")));
++        crt0 = "crt0.o";
++      crtbegin = "crtbegin.o";
+     } else {
+-      CmdArgs.push_back(
+-          Args.MakeArgString(getToolChain().GetFilePath("crtbeginS.o")));
++      crtbegin = "crtbeginS.o";
      }
++
++    if (crt0)
++      CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crt0)));
++    CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crtbegin)));
    }
  
 -  std::string Triple = getToolChain().getTripleString();
@@ -43,13 +88,14 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 -  Args.AddAllArgs(CmdArgs, {options::OPT_L, options::OPT_T_Group,
 -                            options::OPT_e, options::OPT_s, options::OPT_t,
 +  Args.AddAllArgs(CmdArgs, options::OPT_L);
-+  getToolChain().AddFilePathLibArgs(Args, CmdArgs);
++  ToolChain.AddFilePathLibArgs(Args, CmdArgs);
 +  Args.AddAllArgs(CmdArgs, {options::OPT_T_Group, options::OPT_e,
 +                            options::OPT_s, options::OPT_t,
                              options::OPT_Z_Flag, options::OPT_r});
  
-+  if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libstdcxx) {
-+    std::string Triple = getToolChain().getTripleString();
+-  AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs, JA);
++  if (ToolChain.GetCXXStdlibType(Args) == ToolChain::CST_Libstdcxx) {
++    std::string Triple = ToolChain.getTripleString();
 +    if (Triple.substr(0, 5) == "amd64")
 +      Triple.replace(0, 5, "x86_64");
 +    CmdArgs.push_back(
@@ -57,35 +103,61 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 +    CmdArgs.push_back(
 +        Args.MakeArgString("-L${LOCALBASE}/lib"));
 +  }
-+
-   AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs, JA);
  
++  AddLinkerInputs(ToolChain, Inputs, Args, CmdArgs, JA);
++
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nodefaultlibs)) {
-@@ -189,7 +198,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+     if (D.CCCIsCXX()) {
+-      if (getToolChain().ShouldLinkCXXStdlib(Args))
+-        getToolChain().AddCXXStdlibLibArgs(Args, CmdArgs);
++      if (ToolChain.ShouldLinkCXXStdlib(Args))
++        ToolChain.AddCXXStdlibLibArgs(Args, CmdArgs);
+       if (Args.hasArg(options::OPT_pg))
+         CmdArgs.push_back("-lm_p");
+       else
+@@ -189,7 +200,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  
      // FIXME: For some reason GCC passes -lgcc before adding
      // the default system libraries. Just mimic this for now.
 -    CmdArgs.push_back("-lgcc");
-+    if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++    if (ToolChain.GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
 +      CmdArgs.push_back("-lcompiler_rt");
 +    else
 +      CmdArgs.push_back("-lgcc");
  
      if (Args.hasArg(options::OPT_pthread)) {
        if (!Args.hasArg(options::OPT_shared) && Args.hasArg(options::OPT_pg))
-@@ -205,7 +217,10 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+@@ -205,19 +219,23 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
          CmdArgs.push_back("-lc");
      }
  
 -    CmdArgs.push_back("-lgcc");
-+    if (getToolChain().GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
++    if (ToolChain.GetCXXStdlibType(Args) == ToolChain::CST_Libcxx)
 +      CmdArgs.push_back("-lcompiler_rt");
 +    else
 +      CmdArgs.push_back("-lgcc");
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -226,8 +241,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
++    const char *crtend = nullptr;
+     if (!Args.hasArg(options::OPT_shared))
+-      CmdArgs.push_back(
+-          Args.MakeArgString(getToolChain().GetFilePath("crtend.o")));
++      crtend = "crtend.o";
+     else
+-      CmdArgs.push_back(
+-          Args.MakeArgString(getToolChain().GetFilePath("crtendS.o")));
++      crtend = "crtendS.o";
++
++    CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crtend)));
+   }
+ 
+-  const char *Exec = Args.MakeArgString(getToolChain().GetLinkerPath());
++  const char *Exec = Args.MakeArgString(ToolChain.GetLinkerPath());
+   C.addCommand(llvm::make_unique<Command>(JA, *this, Exec, CmdArgs, Inputs));
+ }
+ 
+@@ -226,8 +244,7 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
  OpenBSD::OpenBSD(const Driver &D, const llvm::Triple &Triple,
                   const ArgList &Args)
      : Generic_ELF(D, Triple, Args) {
@@ -95,7 +167,7 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
  }
  
  Tool *OpenBSD::buildAssembler() const {
-@@ -235,3 +249,63 @@ Tool *OpenBSD::buildAssembler() const {
+@@ -235,3 +252,56 @@ Tool *OpenBSD::buildAssembler() const {
  }
  
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
@@ -124,34 +196,27 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 +  }
 +}
 +
-+void OpenBSD::AddClangCXXStdlibIncludeArgs(const ArgList &DriverArgs,
-+                                          ArgStringList &CC1Args) const {
-+  if (DriverArgs.hasArg(options::OPT_nostdlibinc) ||
-+      DriverArgs.hasArg(options::OPT_nostdincxx))
-+    return;
-+
-+  switch (GetCXXStdlibType(DriverArgs)) {
-+  case ToolChain::CST_Libcxx:
-+    addSystemInclude(DriverArgs, CC1Args,
-+                     getDriver().SysRoot + "/usr/include/c++/v1");
-+    break;
-+  case ToolChain::CST_Libstdcxx:
-+    addSystemInclude(DriverArgs, CC1Args,
-+                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}");
-+    addSystemInclude(DriverArgs, CC1Args,
-+                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}");
-+    addSystemInclude(DriverArgs, CC1Args,
-+                     getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/backward");
-+    break;
-+  }
++void OpenBSD::addLibStdCxxIncludePaths(const llvm::opt::ArgList &DriverArgs,
++                                       llvm::opt::ArgStringList &CC1Args) const {
++  addLibStdCXXIncludePaths(getDriver().SysRoot,
++      "${LOCALBASE}/include/c++/${GCC_VER}",
++      "", "", "", "", DriverArgs, CC1Args);
++  addLibStdCXXIncludePaths(getDriver().SysRoot,
++      "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}",
++      "", "", "", "", DriverArgs, CC1Args);
++  addLibStdCXXIncludePaths(getDriver().SysRoot,
++      "${LOCALBASE}/include/c++/${GCC_VER}/backward",
++      "", "", "", "", DriverArgs, CC1Args);
 +}
 +
 +void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
-+                                 ArgStringList &CmdArgs) const {
-+ switch (GetCXXStdlibType(Args)) {
++                                  ArgStringList &CmdArgs) const {
++  bool Profiling = Args.hasArg(options::OPT_pg);
++
++  switch (GetCXXStdlibType(Args)) {
 +  case ToolChain::CST_Libcxx:
-+    CmdArgs.push_back("-lc++");
-+    CmdArgs.push_back("-lc++abi");
++    CmdArgs.push_back(Profiling ? "-lc++_p" : "-lc++");
++    CmdArgs.push_back(Profiling ? "-lc++abi_p" : "-lc++abi");
 +    CmdArgs.push_back("-lpthread");
 +    break;
 +  case ToolChain::CST_Libstdcxx:
