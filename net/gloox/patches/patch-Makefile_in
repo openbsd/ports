@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2017/08/08 08:57:45 bentley Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2018/10/29 06:29:36 bentley Exp $
 
-do not hardocde the make
+do not hardcode the make
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -916,15 +916,15 @@ apidox:
+@@ -929,15 +929,15 @@ apidox:
  check: test
  
  test:

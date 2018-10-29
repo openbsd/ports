@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_dns_cpp,v 1.1 2018/10/29 06:29:36 bentley Exp $
+
+Index: src/dns.cpp
+--- src/dns.cpp.orig
++++ src/dns.cpp
+@@ -22,6 +22,7 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <string.h>
+ 
+ #if ( !defined( _WIN32 ) && !defined( _WIN32_WCE ) ) || defined( __SYMBIAN32__ )
+ # include <netinet/in.h>

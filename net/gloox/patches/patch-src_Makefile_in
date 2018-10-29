@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2017/08/08 08:57:45 bentley Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.7 2018/10/29 06:29:36 bentley Exp $
 
 Do not use the hardcoded make
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -440,7 +440,7 @@ libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcp
+@@ -452,7 +452,7 @@ libgloox_la_SOURCES = jid.cpp parser.cpp connectiontcp
                          carbons.cpp jinglepluginfactory.cpp jingleiceudp.cpp jinglefiletransfer.cpp \
                          iodata.cpp
  
@@ -14,7 +14,7 @@ Index: src/Makefile.in
  libgloox_la_LIBADD = 
  libgloox_la_CFLAGS = $(CPPFLAGS)
  libglooxincludedir = $(includedir)/gloox
-@@ -1031,12 +1031,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
+@@ -1044,12 +1044,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
                #-Werror
  
  test:
