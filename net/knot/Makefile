@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/29 07:42:35 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2018/10/29 08:37:18 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -28,11 +28,6 @@ EXTRACT_SUFX =		.tar.xz
 # atomics
 COMPILER =		base-clang ports-gcc ports-clang
 COMPILER_LANGS =	c
-
-MODULES =		lang/python
-# XXX pykeymgr requires py-lmdb (python-lmdb)
-MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	src/utils/pykeymgr/pykeymgr.in
 
 BUILD_DEPENDS =		devel/bison
 LIB_DEPENDS =		devel/gettext \
