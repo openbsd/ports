@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.32 2018/10/29 14:45:14 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.8.1
-REVISION =		0
+DISTNAME=		nokogiri-1.8.5
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
@@ -19,10 +18,6 @@ LIB_DEPENDS=		textproc/libxslt
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
-
-# Work around default build forcing egcc when not necessary
-CONFIGURE_ENV=		CC=cc
-MAKE_ENV=		CC=cc
 
 CONFIGURE_ARGS=		--use-system-libraries \
 			--with-xml2-include=${LOCALBASE}/include/libxml2/
