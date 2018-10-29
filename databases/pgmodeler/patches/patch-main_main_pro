@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_main_pro,v 1.1 2018/10/29 21:04:14 naddy Exp $
+
+Index: main/main.pro
+--- main/main.pro.orig
++++ main/main.pro
+@@ -26,7 +26,8 @@ unix|windows: LIBS += -L$$OUT_PWD/../libpgmodeler_ui/ 
+                     -L$$OUT_PWD/../libpgconnector/ -lpgconnector \
+                     -L$$OUT_PWD/../libpgmodeler/ -lpgmodeler \
+                     -L$$OUT_PWD/../libparsers/ -lparsers \
+-                    -L$$OUT_PWD/../libutils/ -lutils
++                    -L$$OUT_PWD/../libutils/ -lutils \
++                    $$EXECINFO_LIB
+ 
+ INCLUDEPATH += $$PWD/../libpgmodeler_ui \
+                $$PWD/../libpgmodeler_ui/src \

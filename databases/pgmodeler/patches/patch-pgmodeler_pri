@@ -1,0 +1,13 @@
+$OpenBSD: patch-pgmodeler_pri,v 1.1 2018/10/29 21:04:14 naddy Exp $
+
+Index: pgmodeler.pri
+--- pgmodeler.pri.orig
++++ pgmodeler.pri
+@@ -143,6 +143,7 @@ unix:!macx {
+   PKGCONFIG = libpq libxml-2.0
+   PGSQL_LIB = -lpq
+   XML_LIB = -lxml2
++  EXECINFO_LIB = -L$$(LOCALBASE)/lib -lexecinfo
+ }
+ 
+ macx {
