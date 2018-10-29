@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2018/10/29 00:28:50 daniel Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	1.5.3
+MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+
 CATEGORIES =		graphics devel math
 
 HOMEPAGE =	https://matplotlib.org/
@@ -40,6 +40,9 @@ COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 LIB_DEPENDS=	graphics/png
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-nose${MODPY_FLAVOR}
+
 
 .if ${FLAVOR:Mpython3}
 COMMON_DEPENDS +=	devel/py-cairocffi${MODPY_FLAVOR} \
@@ -49,21 +52,23 @@ COMMON_DEPENDS +=	x11/gtk+3
 .else
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
-WANTLIB += fontconfig gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += fontconfig fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 xcb xcb-render xcb-shm
-COMMON_DEPENDS +=	x11/py-gtk2
-LIB_DEPENDS +=	x11/gtk+2
+COMMON_DEPENDS +=	x11/py-gtk2 \
+			devel/py-functools32 \
+			devel/py-subprocess32
+LIB_DEPENDS +=		x11/gtk+2
+TEST_DEPENDS +=		devel/py-mock${MODPY_FLAVOR}
 .endif
-
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR}
 
 MAKE_ENV+=	LDSHARED="${CC} -shared -fPIC"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}matplotlib
+
+post-patch:
+	cp ${WRKSRC}/setup.cfg{.template,}
 
 pre-configure:
 	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
@@ -74,9 +79,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLESDIR}
 
-# http://matplotlib.org/devel/testing.html
 do-test: fake
 	cd ${WRKSRC} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} -c 'import matplotlib ; matplotlib.test()'
+		${MODPY_BIN} tests.py --no-network --verbose
 
 .include <bsd.port.mk>

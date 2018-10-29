@@ -1,7 +1,8 @@
-$OpenBSD: patch-setupext_py,v 1.16 2016/11/14 18:55:50 shadchin Exp $
---- setupext.py.orig	Sat Sep 10 00:58:14 2016
-+++ setupext.py	Fri Oct  7 02:19:09 2016
-@@ -1313,6 +1313,7 @@ class BackendTkAgg(OptionalBackendPackage):
+$OpenBSD: patch-setupext_py,v 1.17 2018/10/29 00:28:50 daniel Exp $
+Index: setupext.py
+--- setupext.py.orig
++++ setupext.py
+@@ -1547,6 +1547,7 @@ class BackendTkAgg(OptionalBackendPackage):
              ]
  
          ext = make_extension('matplotlib.backends._tkagg', sources)

@@ -1,0 +1,31 @@
+$OpenBSD: patch-setup_cfg_template,v 1.1 2018/10/29 00:28:50 daniel Exp $
+
+Index: setup.cfg.template
+--- setup.cfg.template.orig
++++ setup.cfg.template
+@@ -13,7 +13,7 @@
+ # set this to True.  It will download and build a specific version of
+ # FreeType, and then use that to build the ft2font extension.  This
+ # ensures that test images are exactly reproducible.
+-#local_freetype = False
++local_freetype = False
+ 
+ [status]
+ # To suppress display of the dependencies and their versions
+@@ -25,12 +25,12 @@
+ # optional. All except tests are installed by default, but that can
+ # be changed here.
+ #
+-#tests = False
+-#sample_data = True
+-#toolkits = True
++tests = True
++sample_data = True
++toolkits = True
+ # Tests for the toolkits are only automatically installed
+ # if the tests and toolkits packages are also getting installed.
+-#toolkits_tests = auto
++toolkits_tests = auto
+ 
+ [gui_support]
+ # Matplotlib supports multiple GUI toolkits, including
