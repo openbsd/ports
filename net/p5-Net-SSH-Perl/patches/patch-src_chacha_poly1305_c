@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_chacha_poly1305_c,v 1.1 2018/10/30 15:41:17 naddy Exp $
+Sync with vanilla OpenSSH code (/usr/src/usr.bin/ssh/poly1305.c)
+Perl's U8TO32_LE macro fails to parenthesize its argument on sparc64 in
+hv_func.h, leading to a build failure.  This patch could be removed once we
+ship Perl>=5.28.
+Index: src/chacha/poly1305.c
+--- src/chacha/poly1305.c.orig
++++ src/chacha/poly1305.c
+@@ -11,13 +11,11 @@
+ 
+ #define mul32x32_64(a,b) ((uint64_t)(a) * (b))
+ 
+-#ifndef U8TO32_LE
+ #define U8TO32_LE(p) \
+ 	(((uint32_t)((p)[0])) | \
+ 	 ((uint32_t)((p)[1]) <<  8) | \
+ 	 ((uint32_t)((p)[2]) << 16) | \
+ 	 ((uint32_t)((p)[3]) << 24))
+-#endif
+ 
+ #define U32TO8_LE(p, v) \
+ 	do { \
