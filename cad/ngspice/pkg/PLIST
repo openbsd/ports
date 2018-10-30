@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/04 10:52:34 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/10/30 07:12:45 bentley Exp $
 @bin bin/ngspice
 include/ngspice/
 include/ngspice/1-f-code.h
@@ -37,6 +37,7 @@ include/ngspice/enh.h
 include/ngspice/enhtypes.h
 include/ngspice/evt.h
 include/ngspice/evtproto.h
+include/ngspice/evtshared.h
 include/ngspice/evttypes.h
 include/ngspice/evtudn.h
 include/ngspice/fftext.h
