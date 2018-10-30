@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_CMakeLists_txt,v 1.1 2018/10/30 06:35:23 bentley Exp $
+
+Index: ext/CMakeLists.txt
+--- ext/CMakeLists.txt.orig
++++ ext/CMakeLists.txt
+@@ -12,6 +12,3 @@ add_subdirectory(glslang)
+ add_subdirectory(snappy)
+ add_subdirectory(udis86)
+ add_subdirectory(SPIRV-Cross-build)
+-if(NOT IOS)
+-add_subdirectory(discord-rpc-build)
+-endif()
