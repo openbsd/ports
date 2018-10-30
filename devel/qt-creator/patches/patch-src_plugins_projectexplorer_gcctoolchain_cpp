@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_plugins_projectexplorer_gcctoolchain_cpp,v 1.6 2018/04/07 07:49:40 rsadowski Exp $
+$OpenBSD: patch-src_plugins_projectexplorer_gcctoolchain_cpp,v 1.7 2018/10/30 06:00:37 rsadowski Exp $
 
 Append eg++ before g++ so eg++ is used by default.
 
 Index: src/plugins/projectexplorer/gcctoolchain.cpp
 --- src/plugins/projectexplorer/gcctoolchain.cpp.orig
 +++ src/plugins/projectexplorer/gcctoolchain.cpp
-@@ -726,7 +726,7 @@ FileNameList GccToolChain::suggestedMkspecList() const
+@@ -731,7 +731,7 @@ FileNameList GccToolChain::suggestedMkspecList() const
  
  QString GccToolChain::makeCommand(const Environment &environment) const
  {
