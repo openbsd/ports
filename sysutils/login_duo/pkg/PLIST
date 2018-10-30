@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/10/30 17:57:42 jturner Exp $
 include/duo/
 include/duo/duo.h
 include/duo/shell.h
@@ -9,8 +9,9 @@ lib/pkgconfig/libduo.pc
 share/doc/login_duo/
 share/doc/login_duo/AUTHORS
 share/doc/login_duo/CHANGES
+share/doc/login_duo/CONTRIBUTING.md
 share/doc/login_duo/LICENSE
-share/doc/login_duo/README
+share/doc/login_duo/README.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login_duo/
 @mode 4555
