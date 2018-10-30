@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.7 2018/07/05 09:49:13 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.8 2018/10/30 08:08:40 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -4595,8 +4595,6 @@ share/doc/qt5/html/qml-qt3d-render-textureimage-members.html
 share/doc/qt5/html/qml-qt3d-render-textureimage.html
 share/doc/qt5/html/qml-qt3d-render-viewport-members.html
 share/doc/qt5/html/qml-qt3d-render-viewport.html
-share/doc/qt5/html/qml-qt3d-scene2d-scene2d-members.html
-share/doc/qt5/html/qml-qt3d-scene2d-scene2d.html
 share/doc/qt5/html/qml-qt3d-scene3d-scene3d-members.html
 share/doc/qt5/html/qml-qt3d-scene3d-scene3d.html
 share/doc/qt5/html/qml-qtaudioengine-attenuationmodelinverse-members.html
@@ -5555,6 +5553,8 @@ share/doc/qt5/html/qml-qtquick-scale-members.html
 share/doc/qt5/html/qml-qtquick-scale.html
 share/doc/qt5/html/qml-qtquick-scaleanimator-members.html
 share/doc/qt5/html/qml-qtquick-scaleanimator.html
+share/doc/qt5/html/qml-qtquick-scene2d-scene2d-members.html
+share/doc/qt5/html/qml-qtquick-scene2d-scene2d.html
 share/doc/qt5/html/qml-qtquick-scriptaction-members.html
 share/doc/qt5/html/qml-qtquick-scriptaction.html
 share/doc/qt5/html/qml-qtquick-sequentialanimation-members.html
@@ -6819,7 +6819,6 @@ share/doc/qt5/html/qt3d-scene2d-example.html
 share/doc/qt5/html/qt3d-scene2d-logocontrols-qml.html
 share/doc/qt5/html/qt3d-scene2d-main-cpp.html
 share/doc/qt5/html/qt3d-scene2d-main-qml.html
-share/doc/qt5/html/qt3d-scene2d-qmlmodule.html
 share/doc/qt5/html/qt3d-scene2d-scene2d-pro.html
 share/doc/qt5/html/qt3d-scene2d-scene2d-qrc.html
 share/doc/qt5/html/qt3d-scene3d-animatedentity-qml.html
@@ -11263,6 +11262,7 @@ share/doc/qt5/html/qtquick-righttoleft-righttoleft-qmlproject.html
 share/doc/qt5/html/qtquick-righttoleft-righttoleft-qrc.html
 share/doc/qt5/html/qtquick-righttoleft-textalignment-textalignment-qml.html
 share/doc/qt5/html/qtquick-righttoleft-textalignment-textalignment-qmlproject.html
+share/doc/qt5/html/qtquick-scene2d-qmlmodule.html
 share/doc/qt5/html/qtquick-scenegraph-customgeometry-beziercurve-cpp.html
 share/doc/qt5/html/qtquick-scenegraph-customgeometry-beziercurve-h.html
 share/doc/qt5/html/qtquick-scenegraph-customgeometry-customgeometry-pro.html
