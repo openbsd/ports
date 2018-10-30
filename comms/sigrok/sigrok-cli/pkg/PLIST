@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/10/30 08:25:43 bentley Exp $
 @bin bin/sigrok-cli
 @man man/man1/sigrok-cli.1
+share/applications/org.sigrok.sigrok-cli.desktop
+share/icons/hicolor/scalable/apps/sigrok-cli.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
