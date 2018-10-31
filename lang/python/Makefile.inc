@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.126 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.127 2018/10/31 23:48:19 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -63,7 +63,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS =
 
-LIB_DEPENDS-main =	archivers/bzip2 \
+LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
+			archivers/bzip2 \
 			databases/sqlite3 \
 			devel/libffi \
 			devel/gettext
