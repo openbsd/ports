@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/05/16 12:37:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/10/31 08:58:56 sebastia Exp $
+@newgroup _arpwatch:820
+@newuser _arpwatch:820:_arpwatch:daemon:arpwatch user:/nonexistent:/sbin/nologin
 @man man/man8/arpsnmp.8
 @man man/man8/arpwatch.8
 @bin sbin/arpsnmp
 @bin sbin/arpwatch
-@sample /var/arpwatch/
+@owner _arpwatch
+@sample ${VARBASE}/arpwatch/
+@owner
 share/examples/arpwatch/
 share/examples/arpwatch/arp.dat
 @mode 644
-@sample /var/arpwatch/arp.dat
+@owner _arpwatch
+@sample ${VARBASE}/arpwatch/arp.dat
 @mode
+@owner
 share/examples/arpwatch/arp2ethers
 share/examples/arpwatch/d.awk
 share/examples/arpwatch/duplicates.awk

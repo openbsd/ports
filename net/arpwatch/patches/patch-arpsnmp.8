@@ -1,4 +1,4 @@
-$OpenBSD: patch-arpsnmp.8,v 1.2 2018/05/11 08:13:26 jasper Exp $
+$OpenBSD: patch-arpsnmp.8,v 1.3 2018/10/31 08:58:56 sebastia Exp $
 
 Index: arpsnmp.8
 --- arpsnmp.8.orig
@@ -8,7 +8,7 @@ Index: arpsnmp.8
  .nh
  .nf
 -/usr/operator/arpwatch - default directory
-+/var/arpwatch - default directory
++${VARBASE}/arpwatch - default directory
  arp.dat - ethernet/ip address database
  ethercodes.dat - vendor ethernet block list
  .ad

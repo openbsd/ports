@@ -1,12 +1,85 @@
-$OpenBSD: patch-arpwatch_c,v 1.1 2018/05/15 19:10:24 jasper Exp $
+$OpenBSD: patch-arpwatch_c,v 1.2 2018/10/31 08:58:56 sebastia Exp $
 
 - Do not bail if the interface does not have an IP assigned.
 - time_t format string fixes
+- add -u flag, to drop privileges to that user
 
 Index: arpwatch.c
 --- arpwatch.c.orig
 +++ arpwatch.c
-@@ -223,9 +223,11 @@ main(int argc, char **argv)
+@@ -63,6 +63,9 @@ struct rtentry;
+ #include <syslog.h>
+ #include <unistd.h>
+ 
++#include <pwd.h>
++#include <grp.h>
++
+ #include <pcap.h>
+ 
+ #include "gnuc.h"
+@@ -141,6 +144,24 @@ int	sanity_ether(struct ether_header *, struct ether_a
+ int	sanity_fddi(struct fddi_header *, struct ether_arp *, int);
+ __dead	void usage(void) __attribute__((volatile));
+ 
++void dropprivileges(const char* user)
++{
++	struct passwd* pw;
++	pw = getpwnam( user );
++	if ( pw ) { 
++		if ( initgroups(pw->pw_name, pw->pw_gid) != 0 || setgid(pw->pw_gid) != 0 ||
++			setuid(pw->pw_uid) != 0 ) {
++			syslog(LOG_ERR, "Couldn't change to '%.32s' uid=%d gid=%d", user,pw->pw_uid, pw->pw_gid);
++			exit(1);
++		}   
++	}
++	else {
++		syslog(LOG_ERR, "Couldn't find user '%.32s' in /etc/passwd", user);
++		exit(1);
++	}
++	syslog(LOG_INFO, "Running as uid=%d gid=%d", getuid(), getgid());
++}
++
+ int
+ main(int argc, char **argv)
+ {
+@@ -153,6 +174,7 @@ main(int argc, char **argv)
+ 	register char *interface, *rfilename;
+ 	struct bpf_program code;
+ 	char errbuf[PCAP_ERRBUF_SIZE];
++	char* username = NULL;
+ 
+ 	if (argv[0] == NULL)
+ 		prog = "arpwatch";
+@@ -170,7 +192,7 @@ main(int argc, char **argv)
+ 	interface = NULL;
+ 	rfilename = NULL;
+ 	pd = NULL;
+-	while ((op = getopt(argc, argv, "df:i:n:Nr:")) != EOF)
++	while ((op = getopt(argc, argv, "df:i:n:Nr:u:")) != EOF)
+ 		switch (op) {
+ 
+ 		case 'd':
+@@ -202,6 +224,19 @@ main(int argc, char **argv)
+ 			rfilename = optarg;
+ 			break;
+ 
++		case 'u':
++			if ( optarg ) {
++				username = strdup(optarg);
++				if (username == NULL) {
++					fprintf(stderr, "strdup -u username failed");
++					exit(1);
++				}
++			} else {
++				fprintf(stderr, "%s: Need username after -u\n", prog);
++				usage();
++			}
++			break;
++
+ 		default:
+ 			usage();
+ 		}
+@@ -223,9 +258,11 @@ main(int argc, char **argv)
  
  		/* Determine network and netmask */
  		if (pcap_lookupnet(interface, &net, &netmask, errbuf) < 0) {
@@ -21,7 +94,26 @@ Index: arpwatch.c
  		}
  
  		/* Drop into the background if not debugging */
-@@ -401,7 +403,7 @@ process_ether(register u_char *u, register const struc
+@@ -279,12 +316,16 @@ main(int argc, char **argv)
+ #endif
+ 	}
+ 
++	if ( username ) {
++		dropprivileges( username );
++	} else {
+ 	/*
+ 	 * Revert to non-privileged user after opening sockets
+ 	 * (not needed on most systems).
+ 	 */
+-	setgid(getgid());
+-	setuid(getuid());
++		setgid(getgid());
++		setuid(getuid());
++	}
+ 
+ 	/* Must be ethernet or fddi */
+ 	linktype = pcap_datalink(pd);
+@@ -401,7 +442,7 @@ process_ether(register u_char *u, register const struc
  	t = h->ts.tv_sec;
  	can_checkpoint = 0;
  	if (!ent_add(sia, sea, t, NULL))
@@ -30,7 +122,7 @@ Index: arpwatch.c
  		    intoa(sia), e2str(sea), t);
  	can_checkpoint = 1;
  }
-@@ -550,7 +552,7 @@ process_fddi(register u_char *u, register const struct
+@@ -550,7 +591,7 @@ process_fddi(register u_char *u, register const struct
  	t = h->ts.tv_sec;
  	can_checkpoint = 0;
  	if (!ent_add(sia, sea, t, NULL))
@@ -38,4 +130,13 @@ Index: arpwatch.c
 +		syslog(LOG_ERR, "ent_add(%s, %s, %lld) failed",
  		    intoa(sia), e2str(sea), t);
  	can_checkpoint = 1;
+ }
+@@ -750,7 +791,7 @@ usage(void)
+ 	extern char version[];
+ 
+ 	(void)fprintf(stderr, "Version %s\n", version);
+-	(void)fprintf(stderr, "usage: %s [-dN] [-f datafile] [-i interface]"
++	(void)fprintf(stderr, "usage: %s [-dN] [-f datafile] [-i interface] [-u username]"
+ 	    " [-n net[/width]] [-r file]\n", prog);
+ 	exit(1);
  }
