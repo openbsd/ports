@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/31 11:19:08 solene Exp $
+bin/reed-alert
+share/doc/reed-alert/
+share/doc/reed-alert/README
+share/examples/reed-alert/
+share/examples/reed-alert/example-full.lisp
+share/examples/reed-alert/example-simple.lisp
+share/reed-alert/
+share/reed-alert/functions.lisp
+share/reed-alert/probes.lisp

@@ -1,0 +1,3 @@
+reed-alert is a small and simple monitoring tool for your
+server. reed-alert checks the status of various processes
+on a server and triggers user defined notifications.
