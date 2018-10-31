@@ -1,0 +1,18 @@
+$OpenBSD: patch-scan_sane_OrbliteScan_LinuxCommon_h,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: scan/sane/OrbliteScan/LinuxCommon.h
+--- scan/sane/OrbliteScan/LinuxCommon.h.orig
++++ scan/sane/OrbliteScan/LinuxCommon.h
+@@ -18,10 +18,12 @@ typedef u_int32_t			UInt32;
+ typedef int32_t				SInt32;
+ //typedef unsigned long			UInt32;
+ //typedef signed long			SInt32;
++#ifdef __linux__
+ typedef __S64_TYPE			SInt64;
+ typedef __U64_TYPE			UInt64;
+ typedef __S64_TYPE			int64_t;
+ typedef __U64_TYPE			uint64_t;
++#endif
+ 
+ //typedef unsigned long	ULONG;
+ //typedef void*			LPVOID;

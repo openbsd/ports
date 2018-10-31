@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.12 2018/06/27 21:04:01 espie Exp $
+@comment $OpenBSD: PLIST-gui,v 1.13 2018/10/31 14:14:30 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
 bin/hp-colorcal
@@ -19,12 +19,12 @@ bin/hp-sendfax
 bin/hp-systray
 bin/hp-testpage
 bin/hp-toolbox
+bin/hp-uiscan
 bin/hp-wificonfig
+share/applications/hp-uiscan.desktop
 share/applications/hplip.desktop
 share/examples/hplip/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/hplip/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/hplip/xdg/autostart/hplip-systray.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/hplip-systray.desktop
 share/hplip/data/images/
@@ -323,6 +323,7 @@ share/hplip/data/images/other/confidential_coverpage.png
 share/hplip/data/images/other/confidential_title.png
 share/hplip/data/images/other/fax.png
 share/hplip/data/images/other/fax2.png
+share/hplip/data/images/other/flat1.png
 share/hplip/data/images/other/generic_coverpage.png
 share/hplip/data/images/other/generic_title.png
 share/hplip/data/images/other/h-k-2.png
@@ -335,6 +336,7 @@ share/hplip/data/images/other/opensource-75x65.png
 share/hplip/data/images/other/panel_lcd.png
 share/hplip/data/images/other/pens.png
 share/hplip/data/images/other/powered_by_python.png
+share/hplip/data/images/other/resolution.png
 share/hplip/data/images/other/signal0.png
 share/hplip/data/images/other/signal1.png
 share/hplip/data/images/other/signal2.png
@@ -353,6 +355,7 @@ share/hplip/data/images/other/v-k-2.png
 share/hplip/data/images/other/v-k-3.png
 share/hplip/data/images/other/v-kc-2.png
 share/hplip/data/images/other/v-kc-3.png
+share/hplip/data/images/other/viewer.png
 share/hplip/data/images/other/zca.png
 share/hplip/ui4/
 share/hplip/ui4/__init__.py
@@ -460,6 +463,8 @@ share/hplip/ui4/queuesconf.py
 share/hplip/ui4/queuesconf.pyc
 share/hplip/ui4/readonlyradiobutton.py
 share/hplip/ui4/readonlyradiobutton.pyc
+share/hplip/ui4/scandialog.py
+share/hplip/ui4/scandialog.pyc
 share/hplip/ui4/sendfaxdialog.py
 share/hplip/ui4/sendfaxdialog.pyc
 share/hplip/ui4/sendfaxdialog_base.py
@@ -488,4 +493,6 @@ share/hplip/ui4/wifisetupdialog.py
 share/hplip/ui4/wifisetupdialog.pyc
 share/hplip/ui4/wifisetupdialog_base.py
 share/hplip/ui4/wifisetupdialog_base.pyc
+share/hplip/uiscan.py
+share/hplip/uiscan.pyc
 @tag update-desktop-database

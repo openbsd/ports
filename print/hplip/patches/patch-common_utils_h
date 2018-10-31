@@ -1,9 +1,11 @@
-$OpenBSD: patch-common_utils_h,v 1.3 2015/11/17 08:57:45 ajacoutot Exp $
---- common/utils.h.orig	Thu Nov 12 11:28:47 2015
-+++ common/utils.h	Tue Nov 17 09:23:50 2015
-@@ -24,7 +24,7 @@
- #define SCAN_PLUGIN_SOAPHT "bb_soapht.so"
+$OpenBSD: patch-common_utils_h,v 1.4 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: common/utils.h
+--- common/utils.h.orig
++++ common/utils.h
+@@ -25,7 +25,7 @@
  #define SCAN_PLUGIN_ESCL "bb_escl.so"
+ #define SCAN_PLUGIN_ORBLITE "bb_orblite.so"
  
 -#define HPLIP_PLUGIN_STATE  "/var/lib/hp/hplip.state"
 +#define HPLIP_PLUGIN_STATE  "/var/db/hp/hplip.state"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-scan_sane_orblite_c,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: scan/sane/orblite.c
+--- scan/sane/orblite.c.orig
++++ scan/sane/orblite.c
+@@ -14,6 +14,8 @@
+  extern "C" {
+ #endif
+ 
++#include <dlfcn.h> /* dlclose */
++
+ #include "sane.h"           /* SANE API */
+ #define DEBUG_NOT_STATIC
+ #undef NDEBUG

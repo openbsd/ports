@@ -1,4 +1,5 @@
-$OpenBSD: patch-installer_dcheck_py,v 1.9 2016/05/05 08:25:31 ajacoutot Exp $
+$OpenBSD: patch-installer_dcheck_py,v 1.10 2018/10/31 14:14:30 ajacoutot Exp $
+
 --- installer/dcheck.py.orig	Wed May  4 07:23:15 2016
 +++ installer/dcheck.py	Thu May  5 10:02:31 2016
 @@ -48,7 +48,7 @@ mod_output = ''

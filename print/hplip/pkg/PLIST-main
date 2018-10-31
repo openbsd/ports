@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2015/02/05 17:34:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2018/10/31 14:14:30 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
-@extraunexec rm -rf /usr/local/share/hplip/data/firmware
-@extraunexec rm -rf /usr/local/share/hplip/data/plugins
-@extraunexec rm -rf /usr/local/share/hplip/fax/plugins
-@extraunexec rm -rf /usr/local/share/hplip/prnt/plugins
-@extraunexec rm -rf /usr/local/share/hplip/scan/plugins
-@extraunexec rm -f /usr/local/share/hplip/plugin.spec
+@extraunexec rm -rf ${PREFIX}/share/hplip/data/firmware
+@extraunexec rm -rf ${PREFIX}/share/hplip/data/plugins
+@extraunexec rm -rf ${PREFIX}/share/hplip/fax/plugins
+@extraunexec rm -rf ${PREFIX}/share/hplip/prnt/plugins
+@extraunexec rm -rf ${PREFIX}/share/hplip/scan/plugins
+@extraunexec rm -f ${PREFIX}/share/hplip/plugin.spec
 bin/hp-check
 bin/hp-clean
 bin/hp-config_usb_printer
@@ -85,6 +85,8 @@ share/hplip/base/exif.py
 share/hplip/base/exif.pyc
 share/hplip/base/g.py
 share/hplip/base/g.pyc
+share/hplip/base/imageprocessing.py
+share/hplip/base/imageprocessing.pyc
 share/hplip/base/imagesize.py
 share/hplip/base/imagesize.pyc
 share/hplip/base/ldif.py
@@ -155,6 +157,7 @@ share/hplip/copier/__init__.py
 share/hplip/copier/__init__.pyc
 share/hplip/copier/copier.py
 share/hplip/copier/copier.pyc
+@bin share/hplip/dat2drv
 share/hplip/data/ldl/
 share/hplip/data/ldl/cb2pcal.ldl.gz
 share/hplip/data/ldl/cb2pcal_done.ldl.gz
@@ -250,6 +253,7 @@ share/hplip/levels.py
 share/hplip/levels.pyc
 share/hplip/linefeedcal.py
 share/hplip/linefeedcal.pyc
+@bin share/hplip/locatedriver
 share/hplip/logcapture.py
 share/hplip/logcapture.pyc
 share/hplip/makecopies.py

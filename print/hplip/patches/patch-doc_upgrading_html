@@ -1,4 +1,5 @@
-$OpenBSD: patch-doc_upgrading_html,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+$OpenBSD: patch-doc_upgrading_html,v 1.2 2018/10/31 14:14:30 ajacoutot Exp $
+
 --- doc/upgrading.html.orig	Thu Jul  2 17:27:36 2009
 +++ doc/upgrading.html	Thu Jul  2 17:27:51 2009
 @@ -17,7 +17,7 @@

@@ -1,4 +1,5 @@
-$OpenBSD: patch-scan_sane_soapht_c,v 1.1 2014/06/17 08:51:18 ajacoutot Exp $
+$OpenBSD: patch-scan_sane_soapht_c,v 1.2 2018/10/31 14:14:30 ajacoutot Exp $
+
 --- scan/sane/soapht.c.orig	Tue Jun 17 10:32:52 2014
 +++ scan/sane/soapht.c	Tue Jun 17 10:33:11 2014
 @@ -62,7 +62,7 @@ static int bb_load(struct soap_session *ps, const char

@@ -1,7 +1,9 @@
-$OpenBSD: patch-protocol_discovery_mdns_c,v 1.1 2016/09/10 13:03:43 ajacoutot Exp $
---- protocol/discovery/mdns.c.orig	Sat Sep 10 12:16:35 2016
-+++ protocol/discovery/mdns.c	Sat Sep 10 12:16:26 2016
-@@ -24,9 +24,11 @@
+$OpenBSD: patch-protocol_discovery_mdns_c,v 1.2 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: protocol/discovery/mdns.c
+--- protocol/discovery/mdns.c.orig
++++ protocol/discovery/mdns.c
+@@ -24,13 +24,17 @@
   Author: Sanjay Kumar
   \*****************************************************************************/
  
@@ -12,5 +14,11 @@ $OpenBSD: patch-protocol_discovery_mdns_c,v 1.1 2016/09/10 13:03:43 ajacoutot Ex
  #include <syslog.h>
 +#include <sys/select.h> /* fd_set */
  #include <sys/socket.h>
++#include <unistd.h> /* close */
  #include <netinet/in.h>
  #include <netdb.h>
+ #include <arpa/inet.h>
++#include <ctype.h> /* tolower */
+ #include "mdns.h"
+ 
+ /* Convert "www.google.com" to "3www6google3com". */

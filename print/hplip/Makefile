@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.165 2018/10/31 14:14:30 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.17.7
+V=			3.18.10
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -19,12 +19,6 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-REVISION-common=	2
-REVISION-gui=		2
-REVISION-hpaio=		1
-REVISION-hpcups=	1
-REVISION-hpijs=		1
-REVISION-main=		1
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -48,7 +42,14 @@ MODULES=		lang/python
 
 MODPY_RUNDEP=		No
 
+# createPPD.sh: make -f Makefile_dat2drv
+USE_GMAKE=		Yes
+SUBST_VARS +=		MAKE_PROGRAM
+
 COMPILER =		base-clang ports-gcc base-gcc
+
+# configure needs it
+BUILD_DEPENDS +=	lang/gawk
 
 cWANTLIB += crypto m pthread
 
@@ -57,6 +58,7 @@ WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
 WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
+WANTLIB-main += ${COMPILER_LIBCXX} c
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -151,6 +153,9 @@ CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 			--enable-foomatic-ppd-install \
 			--enable-foomatic-drv-install
 
+# XXX scan/sane/hpaio.c:422:8: error: void function 'sane_hpaio_close' should not return a value
+CFLAGS +=		-Wno-return-type
+
 pre-configure:
 	find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
@@ -189,7 +194,8 @@ pre-configure:
 		${WRKSRC}/ui4/nodevicesdialog.py \
 		${WRKSRC}/ui/devmgr4.py \
 		${WRKSRC}/ui/nodevicesform.py \
-		${WRKSRC}/logcapture.py
+		${WRKSRC}/logcapture.py \
+		${WRKSRC}/createPPD.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hplip/{db,sane.d/dll.d}

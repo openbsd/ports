@@ -1,0 +1,23 @@
+$OpenBSD: patch-createPPD_sh,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: createPPD.sh
+--- createPPD.sh.orig
++++ createPPD.sh
+@@ -19,7 +19,7 @@
+ # Author: 
+ #
+ #echo "HP Linux Imaging and Printing System createPPD file"
+-make -f Makefile_dat2drv
++${MAKE_PROGRAM} -f Makefile_dat2drv
+ rip="foomatic-rip-hplip"
+ for argument in $*;do
+ 
+@@ -113,7 +113,7 @@ UNAME='uname -m'
+ VER=`$UNAME`
+ 
+ cd prnt/hpcups
+-if [ "$VER" = "x86_64" ] 
++if [ "$VER" = "x86_64" -o "$VER" = "amd64" ] 
+ then
+ 	ln -sf libImageProcessor-x86_64.so libImageProcessor.so
+ else

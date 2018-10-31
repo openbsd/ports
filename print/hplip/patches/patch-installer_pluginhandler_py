@@ -1,13 +1,15 @@
-$OpenBSD: patch-installer_pluginhandler_py,v 1.5 2015/04/17 04:18:13 ajacoutot Exp $
---- installer/pluginhandler.py.orig	Tue Apr 14 11:53:21 2015
-+++ installer/pluginhandler.py	Fri Apr 17 05:53:22 2015
+$OpenBSD: patch-installer_pluginhandler_py,v 1.6 2018/10/31 14:14:30 ajacoutot Exp $
+
+Index: installer/pluginhandler.py
+--- installer/pluginhandler.py.orig
++++ installer/pluginhandler.py
 @@ -42,7 +42,7 @@ except ImportError:
          return sha.new(s).hexdigest()
  
  
 -PLUGIN_STATE_FILE = '/var/lib/hp/hplip.state'
 +PLUGIN_STATE_FILE = '/var/db/hp/hplip.state'
- PLUGIN_FALLBACK_LOCATION = 'http://hplipopensource.com/hplip-web/plugin/'
+ PLUGIN_FALLBACK_LOCATION = 'https://developers.hp.com/sites/default/files/'
  
  
 @@ -97,11 +97,11 @@ class PluginHandle(object):

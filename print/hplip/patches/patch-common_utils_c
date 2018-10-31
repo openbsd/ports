@@ -1,9 +1,10 @@
-$OpenBSD: patch-common_utils_c,v 1.4 2015/02/05 17:34:33 ajacoutot Exp $
+$OpenBSD: patch-common_utils_c,v 1.5 2018/10/31 14:14:30 ajacoutot Exp $
 
 implicit declaration of function 'mkstemp'
 
---- common/utils.c.orig	Thu Jan 29 13:20:21 2015
-+++ common/utils.c	Thu Feb  5 16:44:21 2015
+Index: common/utils.c
+--- common/utils.c.orig
++++ common/utils.c
 @@ -1,5 +1,6 @@
  #include "utils.h"
  #include "string.h"
@@ -11,7 +12,7 @@ implicit declaration of function 'mkstemp'
  #include <dlfcn.h>
  #include <sys/stat.h>
  #include <errno.h>
-@@ -116,7 +117,7 @@ enum UTILS_PLUGIN_STATUS validate_plugin_version()
+@@ -159,7 +160,7 @@ enum UTILS_PLUGIN_STATUS validate_plugin_version()
  
      if (get_key_value(HPLIP_PLUGIN_STATE,"[plugin]" , "version", plugin_version, sizeof(plugin_version)) != UTILS_CONF_OK )
      {
@@ -20,7 +21,7 @@ implicit declaration of function 'mkstemp'
          return UTILS_PLUGIN_STATUS_NOT_INSTALLED;
      }
  
-@@ -254,7 +255,7 @@ int getHPLogLevel()
+@@ -311,7 +312,7 @@ int getHPLogLevel()
      char    *p;
      int iLogLevel = 0;
  
