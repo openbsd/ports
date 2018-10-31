@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/16 23:56:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2018/10/31 01:19:41 abieber Exp $
 
 COMMENT =		web application source generator
 
-DISTNAME =		kwebapp-0.5.6
+DISTNAME =		kwebapp-0.6.4
 CATEGORIES =		www
 
 HOMEPAGE =		https://kristaps.bsd.lv/kwebapp/
@@ -19,11 +19,10 @@ MASTER_SITES =		https://kristaps.bsd.lv/kwebapp/snapshots/
 
 RUN_DEPENDS =		databases/ksql \
 			www/kcgi
-TEST_DEPENDS =		${RUN_DEPENDS}
-TEST_FLAGS =		CFLAGS+=-I${LOCALBASE}/include \
-			LDFLAGS+=-L${LOCALBASE}/lib
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		"PREFIX=${PREFIX}"
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
