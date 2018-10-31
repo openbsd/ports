@@ -1,0 +1,24 @@
+$OpenBSD: patch-deluge_ui_gtkui_preferences_py,v 1.1 2018/10/31 12:41:50 ajacoutot Exp $
+
+From 38d7b7cdfde3c50d6263602ffb03af92fcbfa52e Mon Sep 17 00:00:00 2001
+From: Calum Lind <calumlind+deluge@gmail.com>
+Date: Sat, 13 May 2017 00:05:48 +0100
+Subject: [GTKUI] Fix keyerror showing prefs
+
+Index: deluge/ui/gtkui/preferences.py
+--- deluge/ui/gtkui/preferences.py.orig
++++ deluge/ui/gtkui/preferences.py
+@@ -318,11 +318,8 @@ class Preferences(component.Component):
+             }
+             # Add proxy stuff
+ 
+-            # Display workaround for single proxy in libtorrent >v0.16
+-            try:
+-                lt_single_proxy = component.get("PreferencesManager").LT_SINGLE_PROXY
+-            except AttributeError:
+-                lt_single_proxy = False
++            # Display workaround for single proxy in libtorrent >= v0.16
++            lt_single_proxy = True
+ 
+             for t in ("peer", "web_seed", "tracker", "dht"):
+                 if lt_single_proxy and not t == "peer":
