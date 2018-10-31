@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/10/28 13:42:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/10/31 08:04:59 ajacoutot Exp $
 @conflict libsigc++-docs-*
 @pkgpath devel/libsigc++
 @pkgpath devel/libsigc++-2,-main
@@ -43,7 +43,7 @@ include/sigc++-${API_V}/sigc++/type_traits.h
 include/sigc++-${API_V}/sigc++/visit_each.h
 lib/libsigc-${API_V}.a
 lib/libsigc-${API_V}.la
-@lib lib/libsigc-${API_V}.so.${LIBsigc-2.0_VERSION}
+@lib lib/libsigc-${API_V}.so.${LIBsigc-${API_V}_VERSION}
 lib/pkgconfig/sigc++-${API_V}.pc
 lib/sigc++-${API_V}/
 lib/sigc++-${API_V}/include/
@@ -60,8 +60,6 @@ share/doc/libsigc++-${API_V}/index.html
 share/doc/libsigc++-${API_V}/reference/
 share/doc/libsigc++-${API_V}/reference/html/
 share/doc/libsigc++-${API_V}/reference/html/annotated.html
-share/doc/libsigc++-${API_V}/reference/html/arrowdown.png
-share/doc/libsigc++-${API_V}/reference/html/arrowright.png
 share/doc/libsigc++-${API_V}/reference/html/bc_s.png
 share/doc/libsigc++-${API_V}/reference/html/bdwn.png
 share/doc/libsigc++-${API_V}/reference/html/classes.html
@@ -429,12 +427,14 @@ share/doc/libsigc++-${API_V}/reference/html/dynsections.js
 share/doc/libsigc++-${API_V}/reference/html/folderclosed.png
 share/doc/libsigc++-${API_V}/reference/html/folderopen.png
 share/doc/libsigc++-${API_V}/reference/html/functions.html
+share/doc/libsigc++-${API_V}/reference/html/functions_0x7e.html
 share/doc/libsigc++-${API_V}/reference/html/functions_b.html
 share/doc/libsigc++-${API_V}/reference/html/functions_c.html
 share/doc/libsigc++-${API_V}/reference/html/functions_d.html
 share/doc/libsigc++-${API_V}/reference/html/functions_e.html
 share/doc/libsigc++-${API_V}/reference/html/functions_f.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func.html
+share/doc/libsigc++-${API_V}/reference/html/functions_func_0x7e.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_b.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_c.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_d.html
@@ -452,7 +452,6 @@ share/doc/libsigc++-${API_V}/reference/html/functions_func_s.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_t.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_u.html
 share/doc/libsigc++-${API_V}/reference/html/functions_func_v.html
-share/doc/libsigc++-${API_V}/reference/html/functions_func_~.html
 share/doc/libsigc++-${API_V}/reference/html/functions_g.html
 share/doc/libsigc++-${API_V}/reference/html/functions_h.html
 share/doc/libsigc++-${API_V}/reference/html/functions_i.html
@@ -479,7 +478,6 @@ share/doc/libsigc++-${API_V}/reference/html/functions_type_v.html
 share/doc/libsigc++-${API_V}/reference/html/functions_u.html
 share/doc/libsigc++-${API_V}/reference/html/functions_v.html
 share/doc/libsigc++-${API_V}/reference/html/functions_vars.html
-share/doc/libsigc++-${API_V}/reference/html/functions_~.html
 share/doc/libsigc++-${API_V}/reference/html/graph_legend.html
 share/doc/libsigc++-${API_V}/reference/html/graph_legend.png
 share/doc/libsigc++-${API_V}/reference/html/group__adaptors.html
@@ -548,6 +546,8 @@ share/doc/libsigc++-${API_V}/reference/html/inherit_graph_8.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_9.png
 share/doc/libsigc++-${API_V}/reference/html/inherits.html
 share/doc/libsigc++-${API_V}/reference/html/jquery.js
+share/doc/libsigc++-${API_V}/reference/html/menu.js
+share/doc/libsigc++-${API_V}/reference/html/menudata.js
 share/doc/libsigc++-${API_V}/reference/html/modules.html
 share/doc/libsigc++-${API_V}/reference/html/namespacemembers.html
 share/doc/libsigc++-${API_V}/reference/html/namespacemembers_c.html
