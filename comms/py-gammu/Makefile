@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/31 11:44:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2018/10/31 18:56:13 kirby Exp $
 
 COMMENT =		python bindings for Gammu
 
@@ -27,6 +27,6 @@ SEPARATE_BUILD = 	Yes
 
 MODPY_SETUPTOOLS = 	Yes
 
-TEST_IS_INTERCATIVE =	Yes
+TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>
