@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2018/10/17 20:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2018/10/31 21:48:04 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	1.8.1
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -44,8 +45,9 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRSPAMD_GROUP="_rspamd"
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-LIB_DEPENDS+=	lang/luajit
-WANTLIB+=	luajit-5.1
+LIB_DEPENDS+=	lang/luajit \
+		math/lapack
+WANTLIB+=	blas lapack luajit-5.1
 PKG_ARGS +=     -Dluajit=1
 .else
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
