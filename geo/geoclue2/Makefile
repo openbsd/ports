@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2018/08/19 18:18:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2018/10/31 07:43:31 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.4.12
+VERSION=		2.4.13
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
@@ -17,8 +17,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://freedesktop.org/software/geoclue/releases/${VERSION:R}/
-EXTRACT_SUFX=		.tar.xz
+MASTER_SITES=		https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 json-glib-1.0
 WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z iconv intl
@@ -57,5 +57,18 @@ FAKE_FLAGS=		DBUS_SYS_DIR=${PREFIX}/share/examples/geoclue/dbus-1/system.d \
 
 # don't install the demo agent .desktop file (agent requires MM)
 FAKE_FLAGS +=		apps_DATA=geoclue-where-am-i.desktop
+
+AUTOCONF_VERSION=	2.65
+AUTOMAKE_VERSION=	1.16
+
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
+			textproc/gtk-doc
+
+pre-configure:
+	cd ${WRKSRC} && gtkdocize && \
+		${SETENV} ${AUTOCONF_ENV} autoreconf -fi && \
+		intltoolize -f
 
 .include <bsd.port.mk>
