@@ -1,25 +1,27 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/23 17:27:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2018/10/31 12:38:38 bket Exp $
 
 COMMENT =		IPython kernel for Jupyter
 
-MODPY_EGG_VERSION =	4.6.1
+MODPY_EGG_VERSION =	4.9.0
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://ipython.org/
+HOMEPAGE =		https://ipython.org/
 
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
-RUN_DEPENDS +=		devel/py-jupyter_client${MODPY_FLAVOR}>=5.0.1 \
-			devel/py-traitlets${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-jupyter_client${MODPY_FLAVOR} \
+			devel/py-traitlets${MODPY_FLAVOR}>=4.1.0 \
+			www/py-tornado${MODPY_FLAVOR}>=4.0 \
+			devel/ipython${MODPY_FLAVOR}>=4.0.0
+
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-nose-warnings-filters${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/23 17:27:39 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/10/31 12:38:38 bket Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ipykernel_launcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/
 lib/python${MODPY_VERSION}/site-packages/ipykernel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}_eventloop_macos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}codeutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -26,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}parentpoller.
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}pickleutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}serialize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/${MODPY_PYCACHE}zmqshell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/_eventloop_macos.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/_version.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/codeutil.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/comm/
@@ -101,8 +103,10 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}_asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_embed_kernel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_eventloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_jsonutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_kernel.${MODPY_PYC_MAGIC_TAG}pyc
@@ -113,8 +117,10 @@ lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_se
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_start_kernel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}test_zmq_shell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/_asyncio.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_connect.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_embed_kernel.py
+lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_eventloop.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_jsonutil.py
 lib/python${MODPY_VERSION}/site-packages/ipykernel/tests/test_kernel.py
