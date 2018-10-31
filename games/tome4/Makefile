@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/10/31 09:48:18 solene Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
@@ -52,6 +52,7 @@ COMPILER_LANGS =	c
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 WANTLIB-main += c++abi
+PATCH_LIST =	patch-* lld-linking
 .endif
 
 NO_TEST =	Yes

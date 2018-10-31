@@ -1,0 +1,15 @@
+$OpenBSD: lld-linking,v 1.1 2018/10/31 09:48:18 solene Exp $
+
+link against libc++abi to access libunwind symbols needed by luajit
+
+Index: build/te4core.lua
+--- build/te4core.lua.orig
++++ build/te4core.lua
+@@ -50,6 +50,7 @@ project "TEngine"
+ 	if _OPTIONS.relpath == "64" then defines{"TE4_RELPATH64"} end
+ 
+ 	links { "m" }
++	links { "c++abi" }
+ 
+ 	if _OPTIONS.no_rwops_size then defines{"NO_RWOPS_SIZE"} end
+ 
