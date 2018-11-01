@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/07/10 23:19:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/11/01 04:22:15 bket Exp $
 bin/getmail
+bin/getmail-gmail-xoauth-tokens
 bin/getmail_fetch
 bin/getmail_maildir
 bin/getmail_mbox
