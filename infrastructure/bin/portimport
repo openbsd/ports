@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.5 2014/02/09 15:10:49 zhuk Exp $
+# $OpenBSD: portimport,v 1.6 2018/11/01 11:33:12 espie Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -46,9 +46,13 @@ shift $(($OPTIND - 1))
 
 error=false
 pkgpath=$(portcheck "${portcheck_args[@]}") || error=true
+if test -z $pkgpath; then
+	echo >&2 "Can't determine pkgpath"
+	exit 1
+fi
 if $error; then
 	read ans?'Do you want to continue after those errors? [y/N] '
-	[[ $ans == +(y|Y) ]] || exit
+	[[ $ans == +(y|Y) ]] || exit 1
 fi
 
 portsdir=${portsdir:-${PWD%"/$pkgpath"}}
