@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2017/06/07 23:34:02 brynet Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2018/11/01 22:09:30 sthen Exp $
 @option is-branch
 @bin bin/ecpp
 @bin bin/egcc
@@ -406,7 +406,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/xcoffout.h
 lib/gcc/${CONFIG}/${V}/plugin/libcc1plugin.la
 @lib lib/gcc/${CONFIG}/${V}/plugin/libcc1plugin.so.${LIBcc1plugin_VERSION}
 lib/libatomic.a
-@comment %%alpha%%
+%%alpha%%
 %%amd64%%
 %%arm%%
 %%hppa%%

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/13 23:20:49 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/01 22:09:30 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 6.4.0
-REVISION = 0
+REVISION = 1
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -127,7 +127,11 @@ MAKE_ENV += ${EXTRA_ENV}
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS = -O1 -g
+.else
 CFLAGS = -O2 -g
+.endif
 
 CONFIGURE_ARGS += \
 	--verbose \
@@ -245,6 +249,11 @@ post-extract:
 .if ${BUILD_PACKAGES:M-ada}
 	perl -pi -e 's,^#define (_GCOMPILER_LIBCXX_HAVE_GETS) .*,/* #undef $$1 */,' \
 		${WRKDIR}/bootstrap/include/c++/*/*/bits/c++config.h
+.endif
+
+post-configure:
+.if ${MACHINE_ARCH} == "alpha"
+	sed -i -e 's,-O2,-O1,g' ${WRKDIR}/build-alpha/Makefile
 .endif
 
 post-install:
