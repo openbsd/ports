@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.11 2016/10/17 07:51:00 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.12 2018/11/01 08:43:26 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -32,8 +32,11 @@ lavc/aacenc_utils: replace powf(x,y) by expf(logf(x), y)
 
 aacenc: use the decoder's lcg PRNG
 
---- libavcodec/aacenc_utils.h.orig	Sat Aug 27 22:51:19 2016
-+++ libavcodec/aacenc_utils.h	Sat Oct 15 18:51:24 2016
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aacenc_utils.h
+--- libavcodec/aacenc_utils.h.orig
++++ libavcodec/aacenc_utils.h
 @@ -28,9 +28,10 @@
  #ifndef AVCODEC_AACENC_UTILS_H
  #define AVCODEC_AACENC_UTILS_H
@@ -58,7 +61,12 @@ aacenc: use the decoder's lcg PRNG
  /**
   * Quantize one coefficient.
   * @return absolute value of the quantized coefficient
-@@ -61,13 +67,13 @@ static inline void quantize_bands(int *out, const floa
+@@ -57,17 +63,17 @@ static inline int quant(float coef, const float Q, con
+ }
+ 
+ static inline void quantize_bands(int *out, const float *in, const float *scaled,
+-                                  int size, float Q34, int is_signed, int maxval,
++                                  int size, int is_signed, int maxval, const float Q34,
                                    const float rounding)
  {
      int i;

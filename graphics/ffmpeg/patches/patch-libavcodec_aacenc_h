@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_h,v 1.10 2018/10/17 08:25:07 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_h,v 1.11 2018/11/01 08:43:26 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -25,6 +25,8 @@ aacenc: remove FAAC-like coder
 aacenc: use generational cache instead of resetting.
 
 aacenc: use the decoder's lcg PRNG
+
+aacenc: add SIMD optimizations for abs_pow34 and quantization
 
 aacenc: quit when the audio queue reaches 0 rather than keeping track of empty frames
 
@@ -377,7 +379,7 @@ Index: libavcodec/aacenc.h
   * AAC encoder context
   */
  typedef struct AACEncContext {
-@@ -84,30 +380,43 @@ typedef struct AACEncContext {
+@@ -84,30 +380,49 @@ typedef struct AACEncContext {
      FFTContext mdct1024;                         ///< long (1024 samples) frame transform context
      FFTContext mdct128;                          ///< short (128 samples) frame transform context
      AVFloatDSPContext *fdsp;
@@ -414,11 +416,17 @@ Index: libavcodec/aacenc.h
 +    uint16_t quantize_band_cost_cache_generation;
 +    AACQuantizeBandCostCacheEntry quantize_band_cost_cache[256][128]; ///< memoization area for quantize_band_cost
 +
++    void (*abs_pow34)(float *out, const float *in, const int size);
++    void (*quant_bands)(int *out, const float *in, const float *scaled,
++                        int size, int is_signed, int maxval, const float Q34,
++                        const float rounding);
++
      struct {
          float *samples;
      } buffer;
  } AACEncContext;
  
++void ff_aac_dsp_init_x86(AACEncContext *s);
  void ff_aac_coder_init_mips(AACEncContext *c);
 +void ff_quantize_band_cost_cache_init(struct AACEncContext *s);
 +

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_trellis_h,v 1.3 2015/12/06 08:51:46 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_trellis_h,v 1.4 2018/11/01 08:43:26 ajacoutot Exp $
 
 AAC encoder: refactor to resynchronize MIPS port
 
@@ -6,9 +6,12 @@ AAC encoder: Extensive improvements
 
 avcodec/aac_tablegen: get rid of hardcoded tables entirely
 
---- libavcodec/aaccoder_trellis.h.orig	Sun Nov 29 18:41:41 2015
-+++ libavcodec/aaccoder_trellis.h	Sun Nov 29 18:43:26 2015
-@@ -0,0 +1,193 @@
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aaccoder_trellis.h
+--- libavcodec/aaccoder_trellis.h.orig
++++ libavcodec/aaccoder_trellis.h
+@@ -0,0 +1,192 @@
 +/*
 + * AAC encoder trellis codebook selector
 + * Copyright (C) 2008-2009 Konstantin Shishkov
@@ -57,7 +60,6 @@ avcodec/aac_tablegen: get rid of hardcoded tables entirely
 +#include "aactab.h"
 +#include "aacenctab.h"
 +
-+
 +/**
 + * structure used in optimal codebook search
 + */
@@ -82,7 +84,7 @@ avcodec/aac_tablegen: get rid of hardcoded tables entirely
 +    float next_minbits = INFINITY;
 +    int next_mincb = 0;
 +
-+    abs_pow34_v(s->scoefs, sce->coeffs, 1024);
++    s->abs_pow34(s->scoefs, sce->coeffs, 1024);
 +    start = win*128;
 +    for (cb = 0; cb < CB_TOT_ALL; cb++) {
 +        path[0][cb].cost     = run_bits+4;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_is_c,v 1.5 2016/01/18 15:34:45 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_is_c,v 1.6 2018/11/01 08:43:26 ajacoutot Exp $
 
 aacenc_is: ignore PNS band types
 
@@ -18,9 +18,12 @@ avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
 
 AAC encoder: use signed coeffs when measuring IS energy
 
---- libavcodec/aacenc_is.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc_is.c	Sun Jan 17 21:03:19 2016
-@@ -45,11 +45,16 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aacenc_is.c
+--- libavcodec/aacenc_is.c.orig
++++ libavcodec/aacenc_is.c
+@@ -45,33 +45,38 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
      float dist1 = 0.0f, dist2 = 0.0f;
      struct AACISError is_error = {0};
  
@@ -39,7 +42,14 @@ AAC encoder: use signed coeffs when measuring IS energy
          float maxval, dist_spec_err = 0.0f;
          float minthr = FFMIN(band0->threshold, band1->threshold);
          for (i = 0; i < sce0->ics.swb_sizes[g]; i++)
-@@ -61,17 +66,17 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
+             IS[i] = (L[start+(w+w2)*128+i] + phase*R[start+(w+w2)*128+i])*sqrt(ener0/ener01);
+-        abs_pow34_v(L34, &L[start+(w+w2)*128], sce0->ics.swb_sizes[g]);
+-        abs_pow34_v(R34, &R[start+(w+w2)*128], sce0->ics.swb_sizes[g]);
+-        abs_pow34_v(I34, IS,                   sce0->ics.swb_sizes[g]);
++        s->abs_pow34(L34, &L[start+(w+w2)*128], sce0->ics.swb_sizes[g]);
++        s->abs_pow34(R34, &R[start+(w+w2)*128], sce0->ics.swb_sizes[g]);
++        s->abs_pow34(I34, IS,                   sce0->ics.swb_sizes[g]);
+         maxval = find_max_val(1, sce0->ics.swb_sizes[g], I34);
          is_band_type = find_min_book(maxval, is_sf_idx);
          dist1 += quantize_band_cost(s, &L[start + (w+w2)*128], L34,
                                      sce0->ics.swb_sizes[g],

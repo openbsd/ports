@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.4 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.5 2018/11/01 08:43:26 ajacoutot Exp $
 
 aacenc_pred: disable PNS SFBs and disable right predictors with IS
 
@@ -14,8 +14,11 @@ AAC encoder: fix assertion error with prediction
 
 AAC encoder: fix assertion error with prediction
 
---- libavcodec/aacenc_pred.c.orig	Fri Dec 25 03:00:18 2015
-+++ libavcodec/aacenc_pred.c	Sat Jan  2 22:31:50 2016
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aacenc_pred.c
+--- libavcodec/aacenc_pred.c.orig
++++ libavcodec/aacenc_pred.c
 @@ -21,7 +21,7 @@
  
  /**
@@ -34,7 +37,7 @@ AAC encoder: fix assertion error with prediction
  {
      int start, w, w2, g, i, count = 0;
      SingleChannelElement *sce0 = &cpe->ch[0];
-@@ -257,19 +257,23 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
+@@ -257,44 +257,48 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
      for (sfb = PRED_SFB_START; sfb < pmax; sfb++) {
          int cost1, cost2, cb_p;
          float dist1, dist2, dist_spec_err = 0.0f;
@@ -53,7 +56,8 @@ AAC encoder: fix assertion error with prediction
              continue;
  
          /* Normal coefficients */
-         abs_pow34_v(O34, &sce->coeffs[start_coef], num_coeffs);
+-        abs_pow34_v(O34, &sce->coeffs[start_coef], num_coeffs);
++        s->abs_pow34(O34, &sce->coeffs[start_coef], num_coeffs);
          dist1 = quantize_and_encode_band_cost(s, NULL, &sce->coeffs[start_coef], NULL,
                                                O34, num_coeffs, sce->sf_idx[sfb],
 -                                              cb_n, s->lambda / band->threshold, INFINITY, &cost1, 0);
@@ -61,9 +65,10 @@ AAC encoder: fix assertion error with prediction
          cost_coeffs += cost1;
  
          /* Encoded coefficients - needed for #bits, band type and quant. error */
-@@ -277,24 +281,24 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
+         for (i = 0; i < num_coeffs; i++)
              SENT[i] = sce->coeffs[start_coef + i] - sce->prcoeffs[start_coef + i];
-         abs_pow34_v(S34, SENT, num_coeffs);
+-        abs_pow34_v(S34, SENT, num_coeffs);
++        s->abs_pow34(S34, SENT, num_coeffs);
          if (cb_n < RESERVED_BT)
 -            cb_p = find_min_book(find_max_val(1, num_coeffs, S34), sce->sf_idx[sfb]);
 +            cb_p = av_clip(find_min_book(find_max_val(1, num_coeffs, S34), sce->sf_idx[sfb]), cb_min, cb_max);
@@ -77,7 +82,8 @@ AAC encoder: fix assertion error with prediction
          /* Reconstructed coefficients - needed for distortion measurements */
          for (i = 0; i < num_coeffs; i++)
              sce->prcoeffs[start_coef + i] += QERR[i] != 0.0f ? (sce->prcoeffs[start_coef + i] - QERR[i]) : 0.0f;
-         abs_pow34_v(P34, &sce->prcoeffs[start_coef], num_coeffs);
+-        abs_pow34_v(P34, &sce->prcoeffs[start_coef], num_coeffs);
++        s->abs_pow34(P34, &sce->prcoeffs[start_coef], num_coeffs);
          if (cb_n < RESERVED_BT)
 -            cb_p = find_min_book(find_max_val(1, num_coeffs, P34), sce->sf_idx[sfb]);
 +            cb_p = av_clip(find_min_book(find_max_val(1, num_coeffs, P34), sce->sf_idx[sfb]), cb_min, cb_max);

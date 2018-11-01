@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_twoloop_h,v 1.4 2016/04/07 06:01:19 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_twoloop_h,v 1.5 2018/11/01 08:43:26 ajacoutot Exp $
 
 AAC encoder: refactor to resynchronize MIPS port
 
@@ -18,8 +18,11 @@ AAC encoder: fix undefined behavior
 
 AAC encoder: fix initialization of minsf
 
---- libavcodec/aaccoder_twoloop.h.orig	Sun Apr  3 18:33:06 2016
-+++ libavcodec/aaccoder_twoloop.h	Sun Apr  3 18:33:32 2016
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aaccoder_twoloop.h
+--- libavcodec/aaccoder_twoloop.h.orig
++++ libavcodec/aaccoder_twoloop.h
 @@ -0,0 +1,763 @@
 +/*
 + * AAC encoder twoloop coder
@@ -94,7 +97,7 @@ AAC encoder: fix initialization of minsf
 +{
 +    int start = 0, i, w, w2, g, recomprd;
 +    int destbits = avctx->bit_rate * 1024.0 / avctx->sample_rate
-+        / ((avctx->flags & CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
++        / ((avctx->flags & AV_CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
 +        * (lambda / 120.f);
 +    int refbits = destbits;
 +    int toomanybits, toofewbits;
@@ -110,7 +113,7 @@ AAC encoder: fix initialization of minsf
 +     * will keep iterating until it fails to lower it or it reaches
 +     * ulimit * rdlambda. Keeping it low increases quality on difficult
 +     * signals, but lower it too much, and bits will be taken from weak
-+     * signals, creating "holes". A balance is necesary.
++     * signals, creating "holes". A balance is necessary.
 +     * rdmax and rdmin specify the relative deviation from rdlambda
 +     * allowed for tonality compensation
 +     */
@@ -159,7 +162,7 @@ AAC encoder: fix initialization of minsf
 +            * (lambda / (avctx->global_quality ? avctx->global_quality : 120));
 +    }
 +
-+    if (avctx->flags & CODEC_FLAG_QSCALE) {
++    if (avctx->flags & AV_CODEC_FLAG_QSCALE) {
 +        /**
 +         * Constant Q-scale doesn't compensate MS coding on its own
 +         * No need to be overly precise, this only controls RD
@@ -207,7 +210,7 @@ AAC encoder: fix initialization of minsf
 +         * AAC_CUTOFF_FROM_BITRATE is calibrated for effective bitrate.
 +         */
 +        float rate_bandwidth_multiplier = 1.5f;
-+        int frame_bit_rate = (avctx->flags & CODEC_FLAG_QSCALE)
++        int frame_bit_rate = (avctx->flags & AV_CODEC_FLAG_QSCALE)
 +            ? (refbits * rate_bandwidth_multiplier * avctx->sample_rate / 1024)
 +            : (avctx->bit_rate / avctx->channels);
 +
@@ -314,7 +317,7 @@ AAC encoder: fix initialization of minsf
 +
 +    if (!allz)
 +        return;
-+    abs_pow34_v(s->scoefs, sce->coeffs, 1024);
++    s->abs_pow34(s->scoefs, sce->coeffs, 1024);
 +    ff_quantize_band_cost_cache_init(s);
 +
 +    for (i = 0; i < sizeof(minsf) / sizeof(minsf[0]); ++i)
@@ -355,7 +358,7 @@ AAC encoder: fix initialization of minsf
 +                    sce->coeffs + start,
 +                    nzslope * cleanup_factor);
 +                energy2uplim *= de_psy_factor;
-+                if (!(avctx->flags & CODEC_FLAG_QSCALE)) {
++                if (!(avctx->flags & AV_CODEC_FLAG_QSCALE)) {
 +                    /** In ABR, we need to priorize less and let rate control do its thing */
 +                    energy2uplim = sqrtf(energy2uplim);
 +                }
@@ -369,7 +372,7 @@ AAC encoder: fix initialization of minsf
 +                    sce->coeffs + start,
 +                    2.0f);
 +                energy2uplim *= de_psy_factor;
-+                if (!(avctx->flags & CODEC_FLAG_QSCALE)) {
++                if (!(avctx->flags & AV_CODEC_FLAG_QSCALE)) {
 +                    /** In ABR, we need to priorize less and let rate control do its thing */
 +                    energy2uplim = sqrtf(energy2uplim);
 +                }

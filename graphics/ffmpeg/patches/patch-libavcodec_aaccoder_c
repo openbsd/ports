@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.12 2016/10/17 07:51:00 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.13 2018/11/01 08:43:26 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -50,8 +50,11 @@ aacenc: fix various typos and an error message
 
 aacenc: use the decoder's lcg PRNG
 
---- libavcodec/aaccoder.c.orig	Sat Aug 27 22:51:19 2016
-+++ libavcodec/aaccoder.c	Sat Oct 15 18:48:53 2016
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aaccoder.c
+--- libavcodec/aaccoder.c.orig
++++ libavcodec/aaccoder.c
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -97,6 +100,15 @@ aacenc: use the decoder's lcg PRNG
  /**
   * structure used in optimal codebook search
   */
+@@ -86,7 +88,7 @@ static void encode_window_bands_info(AACEncContext *s,
+     float next_minrd = INFINITY;
+     int next_mincb = 0;
+ 
+-    abs_pow34_v(s->scoefs, sce->coeffs, 1024);
++    s->abs_pow34(s->scoefs, sce->coeffs, 1024);
+     start = win*128;
+     for (cb = 0; cb < CB_TOT_ALL; cb++) {
+         path[0][cb].cost     = 0.0f;
 @@ -121,7 +123,7 @@ static void encode_window_bands_info(AACEncContext *s,
                      rd += quantize_band_cost(s, &sce->coeffs[start + w*128],
                                               &s->scoefs[start + w*128], size,
@@ -320,6 +332,15 @@ aacenc: use the decoder's lcg PRNG
  
      for (i = 0; i < TRELLIS_STATES; i++) {
          paths[0][i].cost    = 0.0f;
+@@ -420,7 +299,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
+         }
+     }
+     idx = 1;
+-    abs_pow34_v(s->scoefs, sce->coeffs, 1024);
++    s->abs_pow34(s->scoefs, sce->coeffs, 1024);
+     for (w = 0; w < sce->ics.num_windows; w += sce->ics.group_len[w]) {
+         start = w*128;
+         for (g = 0; g < sce->ics.num_swb; g++) {
 @@ -456,6 +335,10 @@ static void search_for_quantizers_anmr(AVCodecContext 
                  maxscale = coef2maxsf(qmax);
                  minscale = av_clip(minscale - q0, 0, TRELLIS_STATES - 1);
@@ -401,10 +422,12 @@ aacenc: use the decoder's lcg PRNG
              if (sce->zeroes[w*16+g]) {
                  sce->sf_idx[w*16+g] = SCALE_ONE_POS;
                  continue;
-@@ -565,10 +447,11 @@ static void search_for_quantizers_twoloop(AVCodecConte
+@@ -564,11 +446,12 @@ static void search_for_quantizers_twoloop(AVCodecConte
+ 
      if (!allz)
          return;
-     abs_pow34_v(s->scoefs, sce->coeffs, 1024);
+-    abs_pow34_v(s->scoefs, sce->coeffs, 1024);
++    s->abs_pow34(s->scoefs, sce->coeffs, 1024);
 +    ff_quantize_band_cost_cache_init(s);
  
      for (w = 0; w < sce->ics.num_windows; w += sce->ics.group_len[w]) {
@@ -450,7 +473,7 @@ aacenc: use the decoder's lcg PRNG
                          bits += b;
                      }
                      dists[w*16+g] = dist - bits;
-@@ -659,331 +540,378 @@ static void search_for_quantizers_twoloop(AVCodecConte
+@@ -659,331 +540,379 @@ static void search_for_quantizers_twoloop(AVCodecConte
      } while (fflag && its < 10);
  }
  
@@ -493,13 +516,13 @@ aacenc: use the decoder's lcg PRNG
 +    const float pns_transient_energy_r = FFMIN(0.7f, lambda / 140.f);
 +
 +    int refbits = avctx->bit_rate * 1024.0 / avctx->sample_rate
-+        / ((avctx->flags & CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
++        / ((avctx->flags & AV_CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
 +        * (lambda / 120.f);
 +
 +    /** Keep this in sync with twoloop's cutoff selection */
 +    float rate_bandwidth_multiplier = 1.5f;
 +    int prev = -1000, prev_sf = -1;
-+    int frame_bit_rate = (avctx->flags & CODEC_FLAG_QSCALE)
++    int frame_bit_rate = (avctx->flags & AV_CODEC_FLAG_QSCALE)
 +        ? (refbits * rate_bandwidth_multiplier * avctx->sample_rate / 1024)
 +        : (avctx->bit_rate / avctx->channels);
 +
@@ -697,8 +720,8 @@ aacenc: use the decoder's lcg PRNG
 +                s->fdsp->vector_fmul_scalar(PNS, PNS, scale, sce->ics.swb_sizes[g]);
 +                pns_senergy = s->fdsp->scalarproduct_float(PNS, PNS, sce->ics.swb_sizes[g]);
 +                pns_energy += pns_senergy;
-+                abs_pow34_v(NOR34, &sce->coeffs[start_c], sce->ics.swb_sizes[g]);
-+                abs_pow34_v(PNS34, PNS, sce->ics.swb_sizes[g]);
++                s->abs_pow34(NOR34, &sce->coeffs[start_c], sce->ics.swb_sizes[g]);
++                s->abs_pow34(PNS34, PNS, sce->ics.swb_sizes[g]);
 +                dist1 += quantize_band_cost(s, &sce->coeffs[start_c],
 +                                            NOR34,
 +                                            sce->ics.swb_sizes[g],
@@ -762,12 +785,12 @@ aacenc: use the decoder's lcg PRNG
  
 -    memset(sce->sf_idx, 0, sizeof(sce->sf_idx));
 +    int refbits = avctx->bit_rate * 1024.0 / avctx->sample_rate
-+        / ((avctx->flags & CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
++        / ((avctx->flags & AV_CODEC_FLAG_QSCALE) ? 2.0f : avctx->channels)
 +        * (lambda / 120.f);
 +
 +    /** Keep this in sync with twoloop's cutoff selection */
 +    float rate_bandwidth_multiplier = 1.5f;
-+    int frame_bit_rate = (avctx->flags & CODEC_FLAG_QSCALE)
++    int frame_bit_rate = (avctx->flags & AV_CODEC_FLAG_QSCALE)
 +        ? (refbits * rate_bandwidth_multiplier * avctx->sample_rate / 1024)
 +        : (avctx->bit_rate / avctx->channels);
 +
@@ -870,10 +893,13 @@ aacenc: use the decoder's lcg PRNG
  static void search_for_ms(AACEncContext *s, ChannelElement *cpe)
  {
 -    int start = 0, i, w, w2, g;
+-    float M[128], S[128];
+-    float *L34 = s->scoefs, *R34 = s->scoefs + 128, *M34 = s->scoefs + 128*2, *S34 = s->scoefs + 128*3;
 +    int start = 0, i, w, w2, g, sid_sf_boost, prev_mid, prev_side;
 +    uint8_t nextband0[128], nextband1[128];
-     float M[128], S[128];
-     float *L34 = s->scoefs, *R34 = s->scoefs + 128, *M34 = s->scoefs + 128*2, *S34 = s->scoefs + 128*3;
++    float *M   = s->scoefs + 128*0, *S   = s->scoefs + 128*1;
++    float *L34 = s->scoefs + 128*2, *R34 = s->scoefs + 128*3;
++    float *M34 = s->scoefs + 128*4, *S34 = s->scoefs + 128*5;
      const float lambda = s->lambda;
 +    const float mslambda = FFMIN(1.0f, lambda / 120.f);
      SingleChannelElement *sce0 = &cpe->ch[0];
@@ -939,8 +965,8 @@ aacenc: use the decoder's lcg PRNG
 -                                                sce1->sf_idx[(w+w2)*16+g],
 -                                                sce1->band_type[(w+w2)*16+g],
 -                                                lambda / minthr, INFINITY, NULL, 0);
-+                    abs_pow34_v(M34, M, sce0->ics.swb_sizes[g]);
-+                    abs_pow34_v(S34, S, sce0->ics.swb_sizes[g]);
++                    s->abs_pow34(M34, M, sce0->ics.swb_sizes[g]);
++                    s->abs_pow34(S34, S, sce0->ics.swb_sizes[g]);
 +                    for (i = 0; i < sce0->ics.swb_sizes[g]; i++ ) {
 +                        Mmax = FFMAX(Mmax, M34[i]);
 +                        Smax = FFMAX(Smax, S34[i]);
@@ -984,10 +1010,10 @@ aacenc: use the decoder's lcg PRNG
 +                                  - sce1->coeffs[start+(w+w2)*128+i];
 +                        }
 +
-+                        abs_pow34_v(L34, sce0->coeffs+start+(w+w2)*128, sce0->ics.swb_sizes[g]);
-+                        abs_pow34_v(R34, sce1->coeffs+start+(w+w2)*128, sce0->ics.swb_sizes[g]);
-+                        abs_pow34_v(M34, M,                         sce0->ics.swb_sizes[g]);
-+                        abs_pow34_v(S34, S,                         sce0->ics.swb_sizes[g]);
++                        s->abs_pow34(L34, sce0->coeffs+start+(w+w2)*128, sce0->ics.swb_sizes[g]);
++                        s->abs_pow34(R34, sce1->coeffs+start+(w+w2)*128, sce0->ics.swb_sizes[g]);
++                        s->abs_pow34(M34, M,                         sce0->ics.swb_sizes[g]);
++                        s->abs_pow34(S34, S,                         sce0->ics.swb_sizes[g]);
 +                        dist1 += quantize_band_cost(s, &sce0->coeffs[start + (w+w2)*128],
 +                                                    L34,
 +                                                    sce0->ics.swb_sizes[g],
@@ -1083,7 +1109,7 @@ aacenc: use the decoder's lcg PRNG
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -993,29 +921,41 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -993,29 +922,41 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          codebook_trellis_rate,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,

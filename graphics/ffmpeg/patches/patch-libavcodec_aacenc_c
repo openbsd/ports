@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.20 2018/10/17 08:25:07 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.21 2018/11/01 08:43:26 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -81,6 +81,8 @@ aacenc: unmark the fast coder as experimental
 aacenc: fix various typos and an error message
 
 aacenc: use the decoder's lcg PRNG
+
+aacenc: add SIMD optimizations for abs_pow34 and quantization
 
 aacenc: quit when the audio queue reaches 0 rather than keeping track of empty frames
 
@@ -437,7 +439,7 @@ Index: libavcodec/aacenc.c
 -        frame_bits = put_bits_count(&s->pb);
 -        if (frame_bits <= 6144 * s->channels - 3) {
 -            s->psy.bitres.bits = frame_bits / s->channels;
-+        if (avctx->flags & CODEC_FLAG_QSCALE) {
++        if (avctx->flags & AV_CODEC_FLAG_QSCALE) {
 +            /* When using a constant Q-scale, don't mess with lambda */
              break;
          }
@@ -547,7 +549,7 @@ Index: libavcodec/aacenc.c
  
      for(ch = 0; ch < s->channels; ch++)
          s->planar_samples[ch] = s->buffer.samples + 3 * 1024 * ch;
-@@ -800,76 +951,144 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -800,76 +951,150 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -716,6 +718,12 @@ Index: libavcodec/aacenc.c
      ff_lpc_init(&s->lpc, 2*avctx->frame_size, TNS_MAX_ORDER, FF_LPC_TYPE_LEVINSON);
 +    s->random_state = 0x1f2e3d4c;
  
++    s->abs_pow34   = abs_pow34_v;
++    s->quant_bands = quantize_bands;
++
++    if (ARCH_X86)
++        ff_aac_dsp_init_x86(s);
++
      if (HAVE_MIPSDSPR1)
          ff_aac_coder_init_mips(s);
  
@@ -727,7 +735,7 @@ Index: libavcodec/aacenc.c
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -880,27 +1099,17 @@ fail:
+@@ -880,27 +1105,17 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -766,7 +774,7 @@ Index: libavcodec/aacenc.c
      {NULL}
  };
  
-@@ -911,6 +1120,11 @@ static const AVClass aacenc_class = {
+@@ -911,6 +1126,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -778,7 +786,7 @@ Index: libavcodec/aacenc.c
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -920,9 +1134,9 @@ AVCodec ff_aac_encoder = {
+@@ -920,9 +1140,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,

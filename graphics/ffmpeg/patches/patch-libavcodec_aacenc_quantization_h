@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_quantization_h,v 1.2 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_quantization_h,v 1.3 2018/11/01 08:43:26 ajacoutot Exp $
 
 AAC encoder: refactor to resynchronize MIPS port
 
@@ -8,8 +8,11 @@ AAC encoder: memoize quantize_band_cost
 
 aacenc_quantization: fix header description
 
---- libavcodec/aacenc_quantization.h.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenc_quantization.h	Mon Oct 12 22:08:15 2015
+aacenc: add SIMD optimizations for abs_pow34 and quantization
+
+Index: libavcodec/aacenc_quantization.h
+--- libavcodec/aacenc_quantization.h.orig
++++ libavcodec/aacenc_quantization.h
 @@ -1,5 +1,5 @@
  /*
 - * AAC encoder intensity stereo
@@ -43,6 +46,19 @@ aacenc_quantization: fix header description
          if (out) {
              for (i = 0; i < size; i += dim)
                  for (j = 0; j < dim; j++)
+@@ -71,10 +74,10 @@ static av_always_inline float quantize_and_encode_band
+         return cost * lambda;
+     }
+     if (!scaled) {
+-        abs_pow34_v(s->scoefs, in, size);
++        s->abs_pow34(s->scoefs, in, size);
+         scaled = s->scoefs;
+     }
+-    quantize_bands(s->qcoefs, in, scaled, size, Q34, !BT_UNSIGNED, aac_cb_maxval[cb], ROUNDING);
++    s->quant_bands(s->qcoefs, in, scaled, size, !BT_UNSIGNED, aac_cb_maxval[cb], Q34, ROUNDING);
+     if (BT_UNSIGNED) {
+         off = 0;
+     } else {
 @@ -113,11 +116,13 @@ static av_always_inline float quantize_and_encode_band
                      out[i+j] = in[i+j] >= 0 ? quantized : -quantized;
                  if (vec[j] != 0.0f)
