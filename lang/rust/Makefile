@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2018/11/01 13:50:30 landry Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -11,21 +11,19 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.29.2
-CARGO_V =		0.30.0
+V =			1.30.0
+CARGO_V =		0.31.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.29.0-20180915
-BV-amd64 =		1.29.0-20180911
-BV-i386 =		1.29.0-20180911
+BV-aarch64 =		1.30.0-20181101
+BV-amd64 =		1.30.0-20181025
+BV-i386 =		1.30.0-20181025
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
-REVISION-doc =		0
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -doc
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_librustdoc_test_rs,v 1.18 2018/08/06 19:07:50 landry Exp $
+$OpenBSD: patch-src_librustdoc_test_rs,v 1.19 2018/11/01 13:50:30 landry Exp $
 fallback to LOCALBASE as default sysroot.
 Index: src/librustdoc/test.rs
 --- src/librustdoc/test.rs.orig
@@ -13,9 +13,9 @@ Index: src/librustdoc/test.rs
 +                None => panic!("can't determine value for sysroot"),
 +            }),
          search_paths: libs.clone(),
-         crate_types: vec![config::CrateTypeDylib],
+         crate_types: vec![config::CrateType::Dylib],
          cg: cg.clone(),
-@@ -213,7 +216,10 @@ fn run_test(test: &str, cratename: &str, filename: &Fi
+@@ -214,7 +217,10 @@ fn run_test(test: &str, cratename: &str, filename: &Fi
  
      let sessopts = config::Options {
          maybe_sysroot: maybe_sysroot.or_else(
@@ -25,5 +25,5 @@ Index: src/librustdoc/test.rs
 +                None => panic!("can't determine value for sysroot"),
 +            }),
          search_paths: libs,
-         crate_types: vec![config::CrateTypeExecutable],
+         crate_types: vec![config::CrateType::Executable],
          output_types: outputs,
