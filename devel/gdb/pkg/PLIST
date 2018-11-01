@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/10/09 11:39:20 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.19 2018/11/01 20:36:09 jca Exp $
 @conflict arm-none-eabi-gdb-*
 @conflict libbfd-*
 @bin bin/egdb
@@ -26,31 +26,54 @@ share/gdb/
 share/gdb/python/
 share/gdb/python/gdb/
 share/gdb/python/gdb/FrameDecorator.py
+share/gdb/python/gdb/FrameDecorator.pyc
 share/gdb/python/gdb/FrameIterator.py
+share/gdb/python/gdb/FrameIterator.pyc
 share/gdb/python/gdb/__init__.py
+share/gdb/python/gdb/__init__.pyc
 share/gdb/python/gdb/command/
 share/gdb/python/gdb/command/__init__.py
+share/gdb/python/gdb/command/__init__.pyc
 share/gdb/python/gdb/command/explore.py
+share/gdb/python/gdb/command/explore.pyc
 share/gdb/python/gdb/command/frame_filters.py
+share/gdb/python/gdb/command/frame_filters.pyc
 share/gdb/python/gdb/command/pretty_printers.py
+share/gdb/python/gdb/command/pretty_printers.pyc
 share/gdb/python/gdb/command/prompt.py
+share/gdb/python/gdb/command/prompt.pyc
 share/gdb/python/gdb/command/type_printers.py
+share/gdb/python/gdb/command/type_printers.pyc
 share/gdb/python/gdb/command/unwinders.py
+share/gdb/python/gdb/command/unwinders.pyc
 share/gdb/python/gdb/command/xmethods.py
+share/gdb/python/gdb/command/xmethods.pyc
 share/gdb/python/gdb/frames.py
+share/gdb/python/gdb/frames.pyc
 share/gdb/python/gdb/function/
 share/gdb/python/gdb/function/__init__.py
+share/gdb/python/gdb/function/__init__.pyc
 share/gdb/python/gdb/function/as_string.py
+share/gdb/python/gdb/function/as_string.pyc
 share/gdb/python/gdb/function/caller_is.py
+share/gdb/python/gdb/function/caller_is.pyc
 share/gdb/python/gdb/function/strfns.py
+share/gdb/python/gdb/function/strfns.pyc
 share/gdb/python/gdb/printer/
 share/gdb/python/gdb/printer/__init__.py
+share/gdb/python/gdb/printer/__init__.pyc
 share/gdb/python/gdb/printer/bound_registers.py
+share/gdb/python/gdb/printer/bound_registers.pyc
 share/gdb/python/gdb/printing.py
+share/gdb/python/gdb/printing.pyc
 share/gdb/python/gdb/prompt.py
+share/gdb/python/gdb/prompt.pyc
 share/gdb/python/gdb/types.py
+share/gdb/python/gdb/types.pyc
 share/gdb/python/gdb/unwinder.py
+share/gdb/python/gdb/unwinder.pyc
 share/gdb/python/gdb/xmethod.py
+share/gdb/python/gdb/xmethod.pyc
 share/gdb/syscalls/
 share/gdb/syscalls/aarch64-linux.xml
 share/gdb/syscalls/amd64-linux.xml

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2018/11/01 20:36:08 jca Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -38,5 +38,8 @@ MODULES +=	lang/python
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
 MODPY_BUILDDEP = No
+
+post-install:
+	${MODPY_BIN} -m compileall ${PREFIX}/share/gdb/python
 
 .include <bsd.port.mk>
