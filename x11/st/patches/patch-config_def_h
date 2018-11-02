@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_def_h,v 1.9 2018/03/17 13:28:39 kn Exp $
+$OpenBSD: patch-config_def_h,v 1.10 2018/11/02 07:32:13 mestre Exp $
 Index: config.def.h
 --- config.def.h.orig
 +++ config.def.h
@@ -11,3 +11,11 @@ Index: config.def.h
  
  	/* 8 bright colors */
  	"gray50",
+@@ -177,7 +177,6 @@ static Shortcut shortcuts[] = {
+ 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+ 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+ 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+-	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+ };
+ 
+ /*
