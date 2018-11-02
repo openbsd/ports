@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/12/28 12:11:43 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/11/02 10:10:06 feinerer Exp $
 include/libv4l-plugin.h
 include/libv4l1-videodev.h
 include/libv4l1.h
@@ -30,11 +30,22 @@ lib/pkgconfig/libv4lconvert.pc
 lib/v4l1compat.so
 lib/v4l2convert.so
 @comment share/locale/
+@comment share/locale/ca/
+@comment share/locale/ca/LC_MESSAGES/
+@comment share/locale/ca/LC_MESSAGES/libdvbv5.mo
+@comment share/locale/ca/LC_MESSAGES/v4l-utils.mo
 @comment share/locale/de/
 @comment share/locale/de/LC_MESSAGES/
 @comment share/locale/de/LC_MESSAGES/libdvbv5.mo
 @comment share/locale/de/LC_MESSAGES/v4l-utils.mo
+@comment share/locale/fr/
+@comment share/locale/fr/LC_MESSAGES/
+@comment share/locale/fr/LC_MESSAGES/v4l-utils.mo
 @comment share/locale/pt_BR/
 @comment share/locale/pt_BR/LC_MESSAGES/
 @comment share/locale/pt_BR/LC_MESSAGES/libdvbv5.mo
 @comment share/locale/pt_BR/LC_MESSAGES/v4l-utils.mo
+@comment share/locale/uk/
+@comment share/locale/uk/LC_MESSAGES/
+@comment share/locale/uk/LC_MESSAGES/libdvbv5.mo
+@comment share/locale/uk/LC_MESSAGES/v4l-utils.mo
