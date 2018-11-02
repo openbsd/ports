@@ -1,10 +1,10 @@
-$OpenBSD: patch-flent_build_info_py,v 1.2 2018/01/15 12:41:27 sthen Exp $
+$OpenBSD: patch-flent_build_info_py,v 1.3 2018/11/02 15:27:13 sthen Exp $
 Index: flent/build_info.py
 --- flent/build_info.py.orig
 +++ flent/build_info.py
 @@ -2,4 +2,4 @@
  
  import os
- VERSION='1.1.1'
+ VERSION='1.2.2'
 -DATA_DIR=os.path.dirname(__file__)
 +DATA_DIR='/usr/local/share/flent'

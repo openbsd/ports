@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/01/15 12:41:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2018/11/02 15:27:13 sthen Exp $
 bin/flent
 lib/python${MODPY_VERSION}/site-packages/flent/
 lib/python${MODPY_VERSION}/site-packages/flent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -133,13 +133,13 @@ lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_upload_1000.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/tcp_upload_prio.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/udp_flood.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/udp_flood_var_up.conf
+lib/python${MODPY_VERSION}/site-packages/flent/tests/udp_flood_var_up_stagger.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/voip-1up.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/voip-rrul.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/voip.conf
 lib/python${MODPY_VERSION}/site-packages/flent/tests/voip.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/voip_mixin.inc
 lib/python${MODPY_VERSION}/site-packages/flent/tests/wifi_stats.inc
-lib/python${MODPY_VERSION}/site-packages/flent/tests/wlan-retries.conf
 lib/python${MODPY_VERSION}/site-packages/flent/transformers.py
 lib/python${MODPY_VERSION}/site-packages/flent/ui/
 lib/python${MODPY_VERSION}/site-packages/flent/ui/aboutdialog.ui
@@ -167,3 +167,4 @@ share/doc/flent/misc/tcpdump-wrapper.py
 share/doc/flent/misc/test-exec.sh
 share/doc/flent/misc/testcontrol-web-service.py
 share/doc/flent/misc/wifistats_iterate.c
+share/doc/flent/misc/wifistats_iterate_nl.c

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/02 15:27:13 sthen Exp $
 
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 
-MODPY_EGG_VERSION= 1.1.1
+MODPY_EGG_VERSION= 1.2.2
 DISTNAME=	flent-${MODPY_EGG_VERSION}
 PKGNAME-main=	flent-${MODPY_EGG_VERSION}
 PKGNAME-gui=	flent-gui-${MODPY_EGG_VERSION}
-REVISION-gui=	1
 
 CATEGORIES=	benchmarks net
 
