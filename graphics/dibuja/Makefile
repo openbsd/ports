@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/01 20:55:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/02 19:23:13 bcallah Exp $
 
 V =		0.10.0
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}
+REVISION =	0
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://launchpad.net/dibuja
@@ -21,6 +22,8 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
 WANTLIB += z
 
 MASTER_SITES =	https://launchpad.net/dibuja/trunk/${V}/+download/
+
+MODULES =	textproc/intltool
 
 BUILD_DEPENDS =	devel/gettext-tools
 
