@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2018/10/27 09:27:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.23 2018/11/02 00:19:32 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -195,6 +195,7 @@ include/mysql/private/sql_test.h
 include/mysql/private/sql_time.h
 include/mysql/private/sql_trigger.h
 include/mysql/private/sql_truncate.h
+include/mysql/private/sql_type_int.h
 include/mysql/private/sql_udf.h
 include/mysql/private/sql_union.h
 include/mysql/private/sql_update.h
