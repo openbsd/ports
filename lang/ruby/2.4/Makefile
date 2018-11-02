@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/22 14:45:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/11/02 18:48:39 naddy Exp $
 
 VERSION =		2.4.5
 SHARED_LIBS =		ruby24	2.0
 NEXTVER =		2.5
+
+REVISION =		0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

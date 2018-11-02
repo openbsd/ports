@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2018/11/02 18:48:39 naddy Exp $
 
 PORTROACH+=	limit:^1
 
@@ -6,7 +6,7 @@ COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.8
 DISTNAME=	guile-${VERSION}
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \

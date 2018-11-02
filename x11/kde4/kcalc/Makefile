@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

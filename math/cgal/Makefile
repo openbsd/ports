@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/11/02 18:48:39 naddy Exp $
 
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 
@@ -10,7 +10,7 @@ COMMENT =		Computational Geometry Algorithms Library
 DISTNAME =		CGAL-4.6.3
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/35139/
 PKGNAME =		${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 EPOCH =			0
 
 SHARED_LIBS =		CGAL		1.0 \

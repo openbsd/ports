@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/01 11:39:44 denis Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT=	split secrets using Shamir's Secret Sharing Scheme
 
 DISTNAME=	ssss-0.5
+REVISION=	0
 
 CATEGORIES=	security
 

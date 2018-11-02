@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/23 08:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT = 	bootstrap compiler for the AVR32 toolchain
 V = 		4.4.7
@@ -7,7 +7,7 @@ PKGNAME = 	avr32-gcc-bootstrap-${V}
 
 # GPLv3
 PERMIT_PACKAGE_CDROM = 	Yes
-REVISION =		0
+REVISION =		1
 
 WANTLIB = 		c gmp mpfr
 DIST_SUBDIR = 		gcc

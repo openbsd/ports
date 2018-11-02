@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT=	C compiler for GMC-4
 
 DISTNAME=	gmc4cc-0.6.2
 CATEGORIES=	devel lang
 
-REVISION=	2
+REVISION=	3
 
 # Japanese, use this for the English version: http://goo.gl/LPtgg
 HOMEPAGE=	http://terus.jp/engineering/gmc4cc/

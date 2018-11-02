@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 07:39:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-2.2
+REVISION =	0
 
 SHARED_LIBS +=	cob	4.0	# 4.0
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
 DISTNAME=	glpk-4.55
+REVISION=	0
 SHARED_LIBS=	glpk		7.0	# 37.2
 
 CATEGORIES=	devel

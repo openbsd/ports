@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/17 09:40:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/02 18:48:39 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
 DISTNAME = 	avr32-gcc-${V}
-REVISION =	0
+REVISION =	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM = 	Yes
