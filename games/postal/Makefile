@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/02 00:56:29 bcallah Exp $
 
 V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c m
 
-MASTER_SITES =	https://devio.us/~bcallah/source/
+MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
 # base-gcc not good enough (tested on armv7)
 COMPILER =	base-clang ports-gcc base-gcc
