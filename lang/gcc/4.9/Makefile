@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2018/09/26 17:46:51 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2018/11/02 18:43:56 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
 V = 4.9.4
-REVISION = 12
+REVISION = 13
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -215,7 +215,7 @@ WANTLIB-main =		${WANTLIB}
 WANTLIB-ada =		${WANTLIB} pthread util
 WANTLIB-libs =		m pthread
 
-LIB_DEPENDS +=		devel/gmp>=6.1.1 \
+LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/mpfr \
 			devel/libmpc
 LIB_DEPENDS-libs =

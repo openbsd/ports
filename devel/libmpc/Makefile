@@ -1,11 +1,11 @@
-#	$OpenBSD: Makefile,v 1.8 2015/03/16 18:07:42 naddy Exp $
+#	$OpenBSD: Makefile,v 1.9 2018/11/02 18:43:56 naddy Exp $
 
 COMMENT=	complex numbers math library
 
 V=		0.9
 DISTNAME=	mpc-${V}
 PKGNAME=	libmpc-${V}
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	mpc	0.1	# 2.0
 
 CATEGORIES=	devel math
@@ -17,7 +17,7 @@ MASTER_SITES=	${HOMEPAGE}/mpc/download/
 PERMIT_PACKAGE_CDROM=	Yes
 
 LIB_DEPENDS=		devel/mpfr \
-			devel/gmp
+			devel/gmp,no_cxx,bootstrap
 WANTLIB=		mpfr>=1.0 gmp>=9.0 m
 
 CONFIGURE_STYLE=	gnu

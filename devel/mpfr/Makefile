@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2017/09/04 21:00:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/02 18:43:56 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
 DISTNAME=	mpfr-3.1.5
 PKGNAME=	${DISTNAME}.2
+REVISION=	0
 SHARED_LIBS=	mpfr		1.2	# 5.5
 CATEGORIES=	devel math
 HOMEPAGE=	http://www.mpfr.org/
@@ -21,7 +22,7 @@ PATCHFILES+=	patch$i
 PATCH_DIST_STRIP=-p1
 EXTRACT_SUFX=	.tar.xz
 
-LIB_DEPENDS=	devel/gmp
+LIB_DEPENDS=	devel/gmp,no_cxx,bootstrap
 WANTLIB=	gmp
 
 SEPARATE_BUILD=	Yes
