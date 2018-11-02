@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/17 13:48:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/02 16:41:29 sthen Exp $
 
 COMMENT =		lightweight and flexible command-line JSON processor
 
-V =			1.5
-REVISION =		2
+V =			1.6
 DISTNAME =		jq-$V
 
 SHARED_LIBS +=	jq                        1.0 # 1.4
@@ -16,10 +15,15 @@ HOMEPAGE =		http://stedolan.github.io/jq/
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB += c m
+WANTLIB += c m onig
+
+LIB_DEPENDS =		textproc/oniguruma
 
 MASTER_SITES =		https://github.com/stedolan/jq/releases/download/jq-$V/
 
+USE_GMAKE =		Yes
+
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-oniguruma=${LOCALBASE}
 
 .include <bsd.port.mk>
