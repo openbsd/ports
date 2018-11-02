@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.650 2018/11/01 16:59:18 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.651 2018/11/02 14:29:35 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1214,6 +1214,8 @@ my $cve = {
 	'www/iridium' => 'iridium-<2018.5.67',
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
+	'www/py-requests' => 'py-requests-<2.20.0',
+	'www/py-requests,python3' => 'py3-requests-<2.20.0',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 };
