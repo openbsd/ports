@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2018/11/02 12:56:52 jca Exp $
+@pkgpath editors/emacs21,-main
 share/applications/emacs.desktop
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
