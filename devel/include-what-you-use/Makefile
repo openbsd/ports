@@ -1,10 +1,9 @@
-#	$OpenBSD: Makefile,v 1.12 2018/05/22 07:34:09 jsg Exp $
+#	$OpenBSD: Makefile,v 1.13 2018/11/02 08:50:13 jsg Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.9.src
-PKGNAME=	include-what-you-use-0.9
-REVISION=	1
+DISTNAME=	include-what-you-use-0.10.src
+PKGNAME=	include-what-you-use-0.10
 
 HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
