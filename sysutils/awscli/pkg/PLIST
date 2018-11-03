@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2018/10/17 10:33:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.64 2018/11/03 08:35:54 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -259,6 +259,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/constants
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/db.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/db.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/filters.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/filters.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/list.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/list.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/history/show.py
