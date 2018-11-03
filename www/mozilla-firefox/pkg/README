@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.21 2018/09/05 16:19:02 landry Exp $
+$OpenBSD: README,v 1.22 2018/11/03 21:45:52 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -39,6 +39,10 @@ is missing from the two default sets configured in
 security.sandbox.pledge.main and security.sandbox.pledge.content
 about:config keys. MOZ_LOG=SandboxPledge:5 should help.
 Bug reports without enough information will be ignored.
+
+Note that if you're using NIS or your profile is located on a NFS share,
+you might need to add 'getpw' to security.sandbox.pledge.content in
+about:config.
 
 D-BUS
 =====
