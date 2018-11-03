@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2018/10/17 08:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2018/11/03 20:38:03 naddy Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
 VER=		2.9
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
 
@@ -26,11 +27,12 @@ MODULES=	devel/cmake
 
 COMPILER =	base-clang ports-gcc
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
 CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
+		-DENABLE_PIC=On \
 		-DENABLE_TESTS=On
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
@@ -41,6 +43,10 @@ CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
 CONFIGURE_ARGS+=-DNO_ATOMICS=Off
 .else
 CONFIGURE_ARGS+=-DNO_ATOMICS=On
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=-DENABLE_ASSEMBLY=Off
 .endif
 
 do-test:
