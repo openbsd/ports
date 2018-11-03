@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.5 2018/04/03 17:53:48 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.6 2018/11/03 18:56:32 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.6,<3.7
@@ -55,9 +55,6 @@ lib/python3.6/idlelib/__pycache__/browser.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/calltip_w.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/calltip_w.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/calltip_w.cpython-36.pyc
-lib/python3.6/idlelib/__pycache__/calltips.cpython-36.opt-1.pyc
-lib/python3.6/idlelib/__pycache__/calltips.cpython-36.opt-2.pyc
-lib/python3.6/idlelib/__pycache__/calltips.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/codecontext.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/codecontext.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/codecontext.cpython-36.pyc
@@ -199,9 +196,6 @@ lib/python3.6/idlelib/__pycache__/tree.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/undo.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/undo.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/undo.cpython-36.pyc
-lib/python3.6/idlelib/__pycache__/windows.cpython-36.opt-1.pyc
-lib/python3.6/idlelib/__pycache__/windows.cpython-36.opt-2.pyc
-lib/python3.6/idlelib/__pycache__/windows.cpython-36.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/__pycache__/zoomheight.cpython-36.pyc
@@ -214,7 +208,6 @@ lib/python3.6/idlelib/autocomplete_w.py
 lib/python3.6/idlelib/autoexpand.py
 lib/python3.6/idlelib/browser.py
 lib/python3.6/idlelib/calltip_w.py
-lib/python3.6/idlelib/calltips.py
 lib/python3.6/idlelib/codecontext.py
 lib/python3.6/idlelib/colorizer.py
 lib/python3.6/idlelib/config-extensions.def
@@ -267,9 +260,6 @@ lib/python3.6/idlelib/idle_test/__pycache__/test_autoexpand.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_browser.cpython-36.pyc
-lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.opt-1.pyc
-lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.opt-2.pyc
-lib/python3.6/idlelib/idle_test/__pycache__/test_calltips.cpython-36.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_colorizer.cpython-36.opt-1.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_colorizer.cpython-36.opt-2.pyc
 lib/python3.6/idlelib/idle_test/__pycache__/test_colorizer.cpython-36.pyc
@@ -381,7 +371,6 @@ lib/python3.6/idlelib/idle_test/mock_tk.py
 lib/python3.6/idlelib/idle_test/test_autocomplete.py
 lib/python3.6/idlelib/idle_test/test_autoexpand.py
 lib/python3.6/idlelib/idle_test/test_browser.py
-lib/python3.6/idlelib/idle_test/test_calltips.py
 lib/python3.6/idlelib/idle_test/test_colorizer.py
 lib/python3.6/idlelib/idle_test/test_config.py
 lib/python3.6/idlelib/idle_test/test_config_key.py
@@ -445,6 +434,5 @@ lib/python3.6/idlelib/textview.py
 lib/python3.6/idlelib/tooltip.py
 lib/python3.6/idlelib/tree.py
 lib/python3.6/idlelib/undo.py
-lib/python3.6/idlelib/windows.py
 lib/python3.6/idlelib/zoomheight.py
 lib/python3.6/idlelib/zzdummy.py
