@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_baudrate_cpp,v 1.1.1.1 2018/11/03 05:59:52 bentley Exp $
+
+Don't accidentally include the ftdi.h from libftdi (as opposed to libftdi1).
+
+Index: test/baudrate.cpp
+--- test/baudrate.cpp.orig
++++ test/baudrate.cpp
+@@ -12,7 +12,7 @@
+  *                                                                         *
+  ***************************************************************************/
+ 
+-#include <ftdi.h>
++#include "../src/ftdi.h"
+ 
+ #define BOOST_TEST_DYN_LINK
+ #include <boost/test/unit_test.hpp>
