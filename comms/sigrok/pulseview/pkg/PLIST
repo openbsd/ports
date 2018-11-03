@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/03 06:33:07 bentley Exp $
 @bin bin/pulseview
 @man man/man1/pulseview.1
 share/applications/org.sigrok.PulseView.desktop
+share/doc/pulseview/
 share/icons/hicolor/48x48/apps/pulseview.png
 share/icons/hicolor/scalable/apps/pulseview.svg
 share/metainfo/

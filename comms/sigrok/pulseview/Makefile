@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/03 06:33:07 bentley Exp $
 
 COMMENT =		command-line frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =	pulseview
-SIGROK_VERSION =	0.4.0
+SIGROK_VERSION =	0.4.1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Qt5Core Qt5Gui Qt5Svg Qt5Widgets boost_filesystem-mt
-WANTLIB += boost_serialization-mt boost_system-mt boost_unit_test_framework-mt
+WANTLIB += boost_serialization-mt boost_system-mt
 WANTLIB += c glib-2.0 glibmm-2.4 gobject-2.0 intl m sigc-2.0 sigrok
 WANTLIB += sigrokcxx sigrokdecode
 
@@ -27,5 +27,7 @@ CONFIGURE_ARGS =	-DQt5_DIR=${MODQT5_LIBDIR}/cmake/Qt5 \
 			-DDISABLE_WERROR=ON
 
 FIX_EXTRACT_PERMISSIONS =	Yes
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
