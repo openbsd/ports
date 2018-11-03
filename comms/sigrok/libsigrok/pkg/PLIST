@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/03 06:31:15 bentley Exp $
 include/libsigrok/
 include/libsigrok/libsigrok.h
 include/libsigrok/proto.h
@@ -16,7 +16,6 @@ lib/pkgconfig/libsigrok.pc
 lib/pkgconfig/libsigrokcxx.pc
 share/icons/hicolor/48x48/mimetypes/libsigrok.png
 share/icons/hicolor/scalable/mimetypes/libsigrok.svg
-share/mime/application/
-share/mime/application/vnd.sigrok.session.xml
+share/mime/packages/vnd.sigrok.session.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

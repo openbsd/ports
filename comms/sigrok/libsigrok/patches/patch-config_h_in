@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+$OpenBSD: patch-config_h_in,v 1.2 2018/11/03 06:31:15 bentley Exp $
 
 Index: config.h.in
 --- config.h.in.orig
 +++ config.h.in
-@@ -346,8 +346,3 @@
+@@ -376,8 +376,3 @@
  
  /* Define for large files, on AIX-style hosts. */
  #undef _LARGE_FILES
