@@ -1,10 +1,13 @@
-$OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
+$OpenBSD: patch-configure,v 1.17 2018/11/03 13:26:27 ajacoutot Exp $
 
 - last hunk: use ',' as separator, otherwise the paths in $pa_libs get
   interpreted as part of the regex.
 
---- configure.orig	Mon Aug 31 04:45:37 2009
-+++ configure	Fri Jul 17 16:07:12 2015
+- GTK_LIBS: fix linking with ld.lld
+
+Index: configure
+--- configure.orig
++++ configure
 @@ -822,7 +822,6 @@ JACK_CFLAGS
  JACK_LIBS'
  ac_subdirs_all='"lib-src/FileDialog"
@@ -75,7 +78,13 @@ $OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$SOUNDTOUCH_PKG_ERRORS" >&5
-@@ -9215,13 +9214,8 @@ _ACEOF
+@@ -9210,18 +9209,14 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+          CPPFLAGS="$CPPFLAGS $GTK_CFLAGS"
++         LIBS="$LIBS $GTK_LIBS"
+       fi
+    ;;
  esac
  
  
@@ -89,7 +98,7 @@ $OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
  case "${host_os}" in
     darwin* | rhapsody*)
        LIBS="-framework AudioUnit -framework AudioToolbox $LIBS"
-@@ -9371,9 +9365,7 @@ else
+@@ -9371,9 +9366,7 @@ else
  $as_echo "yes" >&6; }
  	have_jack=yes
  fi
@@ -100,7 +109,7 @@ $OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
        { $as_echo "$as_me:$LINENO: checking for HPI_SubSysCreate in -lhpi" >&5
  $as_echo_n "checking for HPI_SubSysCreate in -lhpi... " >&6; }
  if test "${ac_cv_lib_hpi_HPI_SubSysCreate+set}" = set; then
-@@ -9637,7 +9629,6 @@ _ACEOF
+@@ -9637,7 +9630,6 @@ _ACEOF
  
     subdirs="$subdirs lib-src/portmixer"
  
@@ -108,7 +117,7 @@ $OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
  fi
  
  { $as_echo "$as_me:$LINENO: checking for lrint" >&5
-@@ -11255,7 +11246,7 @@ $as_echo "$as_me: WARNING: no configuration informatio
+@@ -11255,7 +11247,7 @@ $as_echo "$as_me: WARNING: no configuration informatio
        { $as_echo "$as_me:$LINENO: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&5
  $as_echo "$as_me: running $SHELL $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
        # The eval makes quoting arguments work.
@@ -117,7 +126,7 @@ $OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
  	   --cache-file=\"\$ac_sub_cache_file\" --srcdir=\"\$ac_srcdir\"" ||
  	{ { $as_echo "$as_me:$LINENO: error: $ac_sub_configure failed for $ac_dir" >&5
  $as_echo "$as_me: error: $ac_sub_configure failed for $ac_dir" >&2;}
-@@ -11271,9 +11262,8 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
+@@ -11271,9 +11263,8 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
  fi
  
  

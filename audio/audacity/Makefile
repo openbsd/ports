@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2018/11/03 13:26:27 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	13
+REVISION=	14
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -17,13 +17,16 @@ HOMEPAGE=	http://audacity.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c expat glib-2.0 gobject-2.0 gtk-x11-2.0 m ogg pthread
-WANTLIB += sndfile sndio ${COMPILER_LIBCXX} wx_base_xml wx_base_odbc wx_gtk2_aui
-WANTLIB += wx_gtk2_html wx_gtk2_adv wx_gtk2_xrc wx_base_net wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate>=1
-WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
-WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
-WANTLIB += tag
+WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 c cairo expat fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += id3tag intl m mad ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += portaudio samplerate sndfile tag vamp-hostsdk vorbis
+WANTLIB += vorbisenc vorbisfile wx_base wx_base_net wx_base_odbc
+WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
+WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
