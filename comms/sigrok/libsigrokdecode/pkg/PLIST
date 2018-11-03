@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/03 06:32:05 bentley Exp $
 include/libsigrokdecode/
 include/libsigrokdecode/libsigrokdecode.h
 include/libsigrokdecode/version.h
@@ -33,6 +33,9 @@ share/libsigrokdecode/decoders/arm_itm/pd.py
 share/libsigrokdecode/decoders/arm_tpiu/
 share/libsigrokdecode/decoders/arm_tpiu/__init__.py
 share/libsigrokdecode/decoders/arm_tpiu/pd.py
+share/libsigrokdecode/decoders/atsha204a/
+share/libsigrokdecode/decoders/atsha204a/__init__.py
+share/libsigrokdecode/decoders/atsha204a/pd.py
 share/libsigrokdecode/decoders/aud/
 share/libsigrokdecode/decoders/aud/__init__.py
 share/libsigrokdecode/decoders/aud/pd.py
@@ -46,6 +49,13 @@ share/libsigrokdecode/decoders/avr_pdi/pd.py
 share/libsigrokdecode/decoders/can/
 share/libsigrokdecode/decoders/can/__init__.py
 share/libsigrokdecode/decoders/can/pd.py
+share/libsigrokdecode/decoders/cec/
+share/libsigrokdecode/decoders/cec/__init__.py
+share/libsigrokdecode/decoders/cec/pd.py
+share/libsigrokdecode/decoders/cec/protocoldata.py
+share/libsigrokdecode/decoders/cfp/
+share/libsigrokdecode/decoders/cfp/__init__.py
+share/libsigrokdecode/decoders/cfp/pd.py
 share/libsigrokdecode/decoders/common/
 share/libsigrokdecode/decoders/common/__init__.py
 share/libsigrokdecode/decoders/common/plugtrx/
@@ -136,6 +146,9 @@ share/libsigrokdecode/decoders/jitter/pd.py
 share/libsigrokdecode/decoders/jtag/
 share/libsigrokdecode/decoders/jtag/__init__.py
 share/libsigrokdecode/decoders/jtag/pd.py
+share/libsigrokdecode/decoders/jtag_ejtag/
+share/libsigrokdecode/decoders/jtag_ejtag/__init__.py
+share/libsigrokdecode/decoders/jtag_ejtag/pd.py
 share/libsigrokdecode/decoders/jtag_stm32/
 share/libsigrokdecode/decoders/jtag_stm32/__init__.py
 share/libsigrokdecode/decoders/jtag_stm32/pd.py
@@ -151,6 +164,9 @@ share/libsigrokdecode/decoders/maple_bus/pd.py
 share/libsigrokdecode/decoders/max7219/
 share/libsigrokdecode/decoders/max7219/__init__.py
 share/libsigrokdecode/decoders/max7219/pd.py
+share/libsigrokdecode/decoders/mcs48/
+share/libsigrokdecode/decoders/mcs48/__init__.py
+share/libsigrokdecode/decoders/mcs48/pd.py
 share/libsigrokdecode/decoders/mdio/
 share/libsigrokdecode/decoders/mdio/__init__.py
 share/libsigrokdecode/decoders/mdio/pd.py
@@ -161,6 +177,9 @@ share/libsigrokdecode/decoders/midi/
 share/libsigrokdecode/decoders/midi/__init__.py
 share/libsigrokdecode/decoders/midi/lists.py
 share/libsigrokdecode/decoders/midi/pd.py
+share/libsigrokdecode/decoders/miller/
+share/libsigrokdecode/decoders/miller/__init__.py
+share/libsigrokdecode/decoders/miller/pd.py
 share/libsigrokdecode/decoders/mlx90614/
 share/libsigrokdecode/decoders/mlx90614/__init__.py
 share/libsigrokdecode/decoders/mlx90614/pd.py
@@ -189,6 +208,16 @@ share/libsigrokdecode/decoders/onewire_link/pd.py
 share/libsigrokdecode/decoders/onewire_network/
 share/libsigrokdecode/decoders/onewire_network/__init__.py
 share/libsigrokdecode/decoders/onewire_network/pd.py
+share/libsigrokdecode/decoders/ook/
+share/libsigrokdecode/decoders/ook/__init__.py
+share/libsigrokdecode/decoders/ook/pd.py
+share/libsigrokdecode/decoders/ook_oregon/
+share/libsigrokdecode/decoders/ook_oregon/__init__.py
+share/libsigrokdecode/decoders/ook_oregon/lists.py
+share/libsigrokdecode/decoders/ook_oregon/pd.py
+share/libsigrokdecode/decoders/ook_vis/
+share/libsigrokdecode/decoders/ook_vis/__init__.py
+share/libsigrokdecode/decoders/ook_vis/pd.py
 share/libsigrokdecode/decoders/pan1321/
 share/libsigrokdecode/decoders/pan1321/__init__.py
 share/libsigrokdecode/decoders/pan1321/pd.py
@@ -241,12 +270,18 @@ share/libsigrokdecode/decoders/spiflash/pd.py
 share/libsigrokdecode/decoders/ssi32/
 share/libsigrokdecode/decoders/ssi32/__init__.py
 share/libsigrokdecode/decoders/ssi32/pd.py
+share/libsigrokdecode/decoders/st7735/
+share/libsigrokdecode/decoders/st7735/__init__.py
+share/libsigrokdecode/decoders/st7735/pd.py
 share/libsigrokdecode/decoders/stepper_motor/
 share/libsigrokdecode/decoders/stepper_motor/__init__.py
 share/libsigrokdecode/decoders/stepper_motor/pd.py
 share/libsigrokdecode/decoders/swd/
 share/libsigrokdecode/decoders/swd/__init__.py
 share/libsigrokdecode/decoders/swd/pd.py
+share/libsigrokdecode/decoders/swim/
+share/libsigrokdecode/decoders/swim/__init__.py
+share/libsigrokdecode/decoders/swim/pd.py
 share/libsigrokdecode/decoders/t55xx/
 share/libsigrokdecode/decoders/t55xx/__init__.py
 share/libsigrokdecode/decoders/t55xx/pd.py

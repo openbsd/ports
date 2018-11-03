@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/03 06:32:05 bentley Exp $
 
 COMMENT =		sigrok protocol decoding library
 
 SIGROK_PROJECT =	libsigrokdecode
-SIGROK_VERSION =	0.5.1
+SIGROK_VERSION =	0.5.2
 
 SHARED_LIBS +=  sigrokdecode              0.0 # 0.1
 
