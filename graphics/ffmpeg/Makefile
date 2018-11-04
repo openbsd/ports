@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2018/11/01 08:43:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.175 2018/11/04 17:57:06 naddy Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -62,6 +62,10 @@ LIBpostproc_EXTRALIBS=
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
 
+.if ${MACHINE_ARCH} == i386
+LDLIBFLAGS+=	-Wl,-znotext
+.endif
+
 OPTFLAGS=	${CFLAGS}
 
 # until the system headers are fixed properly.
@@ -106,6 +110,7 @@ CONFIGURE_ARGS+= --enable-shared \
 		--enable-nonfree \
 		--enable-openssl \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		--extra-ldlibflags="${LDLIBFLAGS}" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--mandir=${PREFIX}/man \
 		--optflags="${OPTFLAGS}"
