@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/09/23 17:19:10 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.29 2018/11/04 20:49:46 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -2151,6 +2151,7 @@ go/src/cmd/go/testdata/script/README
 go/src/cmd/go/testdata/script/binary_only.txt
 go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 go/src/cmd/go/testdata/script/build_cache_compile.txt
+go/src/cmd/go/testdata/script/build_cache_gomips.txt
 go/src/cmd/go/testdata/script/build_cache_link.txt
 go/src/cmd/go/testdata/script/build_cache_output.txt
 go/src/cmd/go/testdata/script/cover_atomic_pkgall.txt
@@ -2207,6 +2208,7 @@ go/src/cmd/go/testdata/script/mod_get_pseudo.txt
 go/src/cmd/go/testdata/script/mod_get_upgrade.txt
 go/src/cmd/go/testdata/script/mod_get_warning.txt
 go/src/cmd/go/testdata/script/mod_getmode_vendor.txt
+go/src/cmd/go/testdata/script/mod_git_export_subst.txt
 go/src/cmd/go/testdata/script/mod_go_version.txt
 go/src/cmd/go/testdata/script/mod_gobuild_import.txt
 go/src/cmd/go/testdata/script/mod_gofmt_invalid.txt
@@ -8867,6 +8869,13 @@ go/test/fixedbugs/issue26416.go
 go/test/fixedbugs/issue26426.go
 go/test/fixedbugs/issue26438.go
 go/test/fixedbugs/issue26495.go
+go/test/fixedbugs/issue27143.go
+go/test/fixedbugs/issue27278.go
+go/test/fixedbugs/issue27289.go
+go/test/fixedbugs/issue27356.go
+go/test/fixedbugs/issue27695.go
+go/test/fixedbugs/issue27695b.go
+go/test/fixedbugs/issue27961.go
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
