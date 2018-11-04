@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.33 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.34 2018/11/04 12:33:24 robert Exp $
 Index: chrome/app/chromium_strings.grd
 --- chrome/app/chromium_strings.grd.orig
 +++ chrome/app/chromium_strings.grd
@@ -7,7 +7,16 @@ Index: chrome/app/chromium_strings.grd
  
        <!-- ProcessSingleton -->
 -      <if expr="is_linux or is_macosx">
-+      <if expr="is_linux or is_macosx or is_posix">
++      <if expr="is_posix or is_macosx or is_posix">
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Chromium process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Chromium has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chromium.
+         </message>
+@@ -1059,7 +1059,7 @@ Please check your email at <ph name="ACCOUNT_EMAIL">$2
+       </message>
+ 
+       <!-- Plugin Placeholders -->
+-      <if expr="is_linux">
++      <if expr="is_posix">
+         <message name="IDS_PLUGIN_RESTART_REQUIRED" desc="The placeholder text for a plugin that can't be loaded until the browser is restarted.">
+           Restart Chromium to enable <ph name="PLUGIN_NAME">$1<ex>Flash</ex></ph>
          </message>

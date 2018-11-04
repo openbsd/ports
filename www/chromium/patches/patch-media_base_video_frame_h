@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.15 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.16 2018/11/04 12:33:24 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
 +++ media/base/video_frame.h
-@@ -69,7 +69,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -72,7 +72,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Pixels are backed by Shared Memory.
@@ -12,7 +12,7 @@ Index: media/base/video_frame.h
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
      // based on the idea of using this same enum value for both DMA
      // buffers on Linux and CVPixelBuffers on Mac (which currently use
-@@ -225,7 +225,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -238,7 +238,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        uint8_t* a_data,
        base::TimeDelta timestamp);
  
@@ -21,16 +21,16 @@ Index: media/base/video_frame.h
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -387,7 +387,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -416,7 +416,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // Return a vector containing the backing DmaBufs for this frame. The number
+   // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -606,7 +606,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -629,7 +629,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // memory.
    size_t shared_memory_offset_;
  

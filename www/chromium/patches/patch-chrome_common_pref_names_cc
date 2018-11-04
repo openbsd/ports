@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.46 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.47 2018/11/04 12:33:24 robert Exp $
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -406,7 +406,7 @@ const char kSearchSuggestEnabled[] = "search.suggest_e
- const char kContextualSearchEnabled[] = "search.contextual_search_enabled";
+@@ -408,7 +408,7 @@ const char kContextualSearchDisabledValue[] = "false";
+ const char kContextualSearchEnabledValue[] = "true";
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_MACOSX) || defined(OS_WIN) || \
@@ -11,16 +11,16 @@ Index: chrome/common/pref_names.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  // Boolean that indicates whether the browser should put up a confirmation
  // window when the user is attempting to quit. Only on Mac, Windows, and Linux.
-@@ -918,7 +918,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
- // See the SafeSitesFilterBehavior policy for details.
- const char kSafeSitesFilterBehavior[] = "settings.safe_sites_filter_behavior";
+@@ -936,7 +936,7 @@ const char kForceSessionSync[] = "settings.history_rec
+ // only using an account that belongs to one of the domains from this pref.
+ const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1001,7 +1001,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1024,7 +1024,7 @@ const char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -29,7 +29,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1363,7 +1363,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1413,7 +1413,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  

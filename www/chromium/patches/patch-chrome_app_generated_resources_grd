@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.29 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.30 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -12,16 +12,16 @@ Index: chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -5208,7 +5208,7 @@ the Bookmarks menu.">
+@@ -5265,7 +5265,7 @@ the Bookmarks menu.">
          </message>
        </if>
  
 -      <if expr="is_win or (is_linux and not chromeos)">
 +      <if expr="is_win or (is_posix and not chromeos)">
-         <!-- Confirm to quit panel -->
-         <message name="IDS_CONFIRM_TO_QUIT_DESCRIPTION" desc="Instructions for how the user should confirm quitting.">
-           Hold |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>|+|<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
-@@ -6064,7 +6064,7 @@ the Bookmarks menu.">
+         <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
+           Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+         </message>
+@@ -6117,7 +6117,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -30,7 +30,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -6895,7 +6895,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -6942,7 +6942,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

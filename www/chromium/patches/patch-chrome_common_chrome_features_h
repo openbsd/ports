@@ -1,32 +1,23 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.10 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.11 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -52,7 +52,7 @@ extern const base::Feature kAsyncDns;
+@@ -60,7 +60,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutomaticTabDiscarding;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX)
- 
-@@ -76,7 +76,7 @@ extern const base::Feature kDialogTouchBar;
+@@ -90,7 +90,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kTabStripKeyboardFocus;
  #endif  // defined(OS_MACOSX)
  
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kCertDualVerificationTrialFeature;
  #endif
- 
-@@ -201,7 +201,7 @@ extern const base::Feature kMacMaterialDesignDownloadS
- extern const base::Feature kAcknowledgeNtpOverrideOnDeactivate;
- #endif
- 
--#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
- extern const base::Feature kWarnBeforeQuitting;
- #endif
- 

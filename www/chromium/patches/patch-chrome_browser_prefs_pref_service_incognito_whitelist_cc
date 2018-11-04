@@ -1,36 +1,27 @@
-$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_whitelist_cc,v 1.1 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_whitelist_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/browser/prefs/pref_service_incognito_whitelist.cc
 --- chrome/browser/prefs/pref_service_incognito_whitelist.cc.orig
 +++ chrome/browser/prefs/pref_service_incognito_whitelist.cc
-@@ -270,7 +270,7 @@ const char* incognito_whitelist[] = {
- #if defined(OS_ANDROID)
-     prefs::kContextualSearchEnabled,
- #endif  // defined(OS_ANDROID)
--#if defined(OS_MACOSX) || defined(OS_WIN) || \
-+#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-     prefs::kConfirmToQuitEnabled,
- #endif
-@@ -348,7 +348,7 @@ const char* incognito_whitelist[] = {
-     prefs::kForceGoogleSafeSearch, prefs::kForceYouTubeRestrict,
-     prefs::kForceSessionSync, prefs::kAllowedDomainsForApps,
-     prefs::kSafeSitesFilterBehavior,
+@@ -228,7 +228,7 @@ const char* const kTemporaryIncognitoWhitelist[] = {
+     prefs::kScreenTimeMinutesUsed, prefs::kUsageTimeLimit,
+     prefs::kScreenTimeLastState, prefs::kEnableSyncConsent,
+ #endif  // defined(OS_CHROMEOS)
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
      prefs::kUsesSystemTheme,
  #endif
      prefs::kCurrentThemePackFilename, prefs::kCurrentThemeID,
-@@ -372,7 +372,7 @@ const char* incognito_whitelist[] = {
+@@ -249,7 +249,7 @@ const char* const kTemporaryIncognitoWhitelist[] = {
  #if defined(OS_MACOSX)
      prefs::kShowUpdatePromotionInfoBar,
  #endif
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
      prefs::kUseCustomChromeFrame,
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -491,7 +491,7 @@ const char* incognito_whitelist[] = {
+@@ -314,7 +314,7 @@ const char* const kTemporaryIncognitoWhitelist[] = {
  
      prefs::kDownloadDefaultDirectory, prefs::kDownloadExtensionsToOpen,
      prefs::kDownloadDirUpgraded,
@@ -38,4 +29,4 @@ Index: chrome/browser/prefs/pref_service_incognito_whitelist.cc
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      prefs::kOpenPdfDownloadInSystemReader,
  #endif
- #if defined(OS_ANDROID)
+ 

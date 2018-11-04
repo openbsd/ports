@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.11 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.12 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3411,7 +3411,7 @@ extern const char kEnableContinueReadingDescription[] 
+@@ -3599,7 +3599,7 @@ const char kZipArchiverUnpackerDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableInputImeApiName[] = "Enable Input IME API";
  const char kEnableInputImeApiDescription[] =
-@@ -3438,7 +3438,7 @@ const char kAutomaticTabDiscardingDescription[] =
+@@ -3618,7 +3618,7 @@ const char kAutomaticTabDiscardingDescription[] =
  
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

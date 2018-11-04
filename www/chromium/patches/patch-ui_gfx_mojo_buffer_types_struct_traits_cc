@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.7 2018/07/30 15:28:28 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.8 2018/11/04 12:33:24 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.cc
 --- ui/gfx/mojo/buffer_types_struct_traits.cc.orig
@@ -30,7 +30,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    return handle.native_pixmap_handle;
  #else
    static gfx::NativePixmapHandle pixmap_handle;
-@@ -154,7 +154,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -150,7 +150,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
      out->offset = data.offset();
      out->stride = data.stride();
    }

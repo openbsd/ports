@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.13 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.14 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1150,7 +1150,7 @@ void BrowserView::RotatePaneFocus(bool forwards) {
+@@ -1161,7 +1161,7 @@ void BrowserView::RotatePaneFocus(bool forwards) {
  }
  
  void BrowserView::DestroyBrowser() {
 -#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-   GetWidget()->GetNativeView()->RemovePreTargetHandler(
-       ConfirmQuitBubbleController::GetInstance());
- #endif
-@@ -2201,7 +2201,7 @@ void BrowserView::InitViews() {
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+   if (browser_->SupportsWindowFeature(Browser::FEATURE_TOOLBAR)) {
+     GetWidget()->GetNativeView()->RemovePreTargetHandler(
+         QuitInstructionBubbleController::GetInstance());
+@@ -2282,7 +2282,7 @@ void BrowserView::InitViews() {
    GetWidget()->SetNativeWindowProperty(Profile::kProfileKey,
                                         browser_->profile());
  
 -#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-   GetWidget()->GetNativeView()->AddPreTargetHandler(
-       ConfirmQuitBubbleController::GetInstance());
- #endif
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+   if (browser_->SupportsWindowFeature(Browser::FEATURE_TOOLBAR)) {
+     GetWidget()->GetNativeView()->AddPreTargetHandler(
+         QuitInstructionBubbleController::GetInstance());

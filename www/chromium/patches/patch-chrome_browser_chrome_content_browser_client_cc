@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.48 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.49 2018/11/04 12:33:24 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -334,7 +334,7 @@
+@@ -341,7 +341,7 @@
  #include "chromeos/services/secure_channel/secure_channel_service.h"
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
@@ -12,8 +12,8 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -373,7 +373,7 @@
- #include "chrome/common/importer/profile_import.mojom.h"
+@@ -384,7 +384,7 @@
+ #include "components/services/patch/public/interfaces/constants.mojom.h"
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_WIN)
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/webshare/share_service_impl.h"
  #endif
  
-@@ -387,7 +387,7 @@
+@@ -398,7 +398,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -696,7 +696,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
+@@ -715,7 +715,7 @@ bool IsAutoplayAllowedByPolicy(content::WebContents* c
  }
  #endif
  
@@ -39,16 +39,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1099,7 +1099,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
- #elif defined(OS_CHROMEOS)
+@@ -1090,7 +1090,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    main_parts = new chromeos::ChromeBrowserMainPartsChromeos(
-       parameters, std::move(service_manifest_data_pack_));
+       parameters, std::move(service_manifest_data_pack_),
+       chrome_feature_list_creator_);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    main_parts = new ChromeBrowserMainPartsLinux(
-       parameters, std::move(service_manifest_data_pack_));
- #elif defined(OS_ANDROID)
-@@ -1119,7 +1119,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+       parameters, std::move(service_manifest_data_pack_),
+       chrome_feature_list_creator_);
+@@ -1114,7 +1114,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -66,7 +66,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    if (breakpad::IsCrashReporterEnabled()) {
      std::string switch_value;
      std::unique_ptr<metrics::ClientInfo> client_info =
-@@ -3335,7 +3335,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3383,7 +3383,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -75,7 +75,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4097,7 +4097,7 @@ void ChromeContentBrowserClient::InitWebContextInterfa
+@@ -4212,7 +4212,7 @@ void ChromeContentBrowserClient::InitWebContextInterfa
  #if defined(OS_ANDROID)
    frame_interfaces_parameterized_->AddInterface(base::Bind(
        &ForwardToJavaWebContentsRegistry<blink::mojom::ShareService>));
@@ -84,7 +84,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    frame_interfaces_->AddInterface(base::Bind(&ShareServiceImpl::Create));
  #endif
  
-@@ -4609,7 +4609,7 @@ std::unique_ptr<content::OverlayWindow>
+@@ -4707,7 +4707,7 @@ std::unique_ptr<content::OverlayWindow>
  ChromeContentBrowserClient::CreateWindowForPictureInPicture(
      content::PictureInPictureWindowController* controller) {
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

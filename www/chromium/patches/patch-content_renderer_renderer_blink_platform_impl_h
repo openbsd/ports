@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.7 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.8 2018/11/04 12:33:24 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.h
 --- content/renderer/renderer_blink_platform_impl.h.orig
@@ -12,7 +12,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -301,7 +301,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -303,7 +303,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    blink::mojom::WebDatabaseHostPtrInfo web_database_host_info_;
    scoped_refptr<blink::mojom::ThreadSafeWebDatabaseHostPtr> web_database_host_;
  

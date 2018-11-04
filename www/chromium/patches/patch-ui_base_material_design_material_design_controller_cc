@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_material_design_material_design_controller_cc,v 1.1 2018/09/16 11:08:34 robert Exp $
+$OpenBSD: patch-ui_base_material_design_material_design_controller_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: ui/base/material_design/material_design_controller.cc
 --- ui/base/material_design/material_design_controller.cc.orig
@@ -21,7 +21,7 @@ Index: ui/base/material_design/material_design_controller.cc
    force_material_refresh =
        base::FeatureList::IsEnabled(features::kExperimentalUi);
  #endif
-@@ -204,7 +204,7 @@ MaterialDesignController::Mode MaterialDesignControlle
+@@ -203,7 +203,7 @@ MaterialDesignController::Mode MaterialDesignControlle
    return IsMaterialRefreshEnabled() ? MATERIAL_REFRESH : MATERIAL_NORMAL;
  #endif  // defined(OS_CHROMEOS)
  

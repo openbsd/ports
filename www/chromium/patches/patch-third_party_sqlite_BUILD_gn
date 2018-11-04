@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.6 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.7 2018/11/04 12:33:24 robert Exp $
 
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
 +++ third_party/sqlite/BUILD.gn
-@@ -155,7 +155,7 @@ config("sqlite_warnings") {
+@@ -199,7 +199,7 @@ config("sqlite_warnings") {
      # sqlite3Fts3InitTok).
      cflags += [ "-Wno-unused-function" ]
    }
@@ -12,12 +12,3 @@ Index: third_party/sqlite/BUILD.gn
      cflags += [
        # SQLite doesn"t believe in compiler warnings,
        # preferring testing.
-@@ -243,7 +243,7 @@ component("chromium_sqlite3") {
-     ":sqlite_warnings",
-   ]
- 
--  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
-     libs = [ "dl" ]
-   } else if (is_mac || is_ios) {
-     libs = [ "CoreFoundation.framework" ]

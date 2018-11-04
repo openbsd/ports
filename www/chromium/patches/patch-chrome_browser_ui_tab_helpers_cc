@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.16 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.17 2018/11/04 12:33:24 robert Exp $
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -116,7 +116,7 @@
+@@ -117,7 +117,7 @@
  #include "components/zoom/zoom_controller.h"
  #endif  // defined(OS_ANDROID)
  
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/tab_helpers.cc
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #endif
  
-@@ -306,7 +306,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -311,7 +311,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

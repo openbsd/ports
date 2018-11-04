@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.19 2018/01/30 07:57:25 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.20 2018/11/04 12:33:24 robert Exp $
 Index: chrome/common/chrome_paths.h
 --- chrome/common/chrome_paths.h.orig
 +++ chrome/common/chrome_paths.h
@@ -20,7 +20,7 @@ Index: chrome/common/chrome_paths.h
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -111,7 +111,7 @@ enum {
+@@ -110,7 +110,7 @@ enum {
    DIR_SUPERVISED_USER_INSTALLED_WHITELISTS,  // Directory where sanitized
                                               // supervised user whitelists are
                                               // installed.

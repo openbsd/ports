@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.5 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.6 2018/11/04 12:33:24 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
 +++ net/base/address_tracker_linux.cc
-@@ -21,96 +21,10 @@
+@@ -22,96 +22,10 @@
  namespace net {
  namespace internal {
  
@@ -102,7 +102,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -153,93 +67,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
+@@ -154,93 +68,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
  }
  
  void AddressTrackerLinux::Init() {
@@ -198,7 +198,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -250,25 +79,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+@@ -251,25 +80,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -224,7 +224,7 @@ Index: net/base/address_tracker_linux.cc
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -323,102 +133,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -328,102 +138,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -328,7 +328,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -455,34 +170,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -460,34 +175,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.6 2018/08/10 14:57:53 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.7 2018/11/04 12:33:24 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -68,8 +68,9 @@ inline bool UseLibV4L2() {
+@@ -77,8 +77,9 @@ inline bool UseLibV4L2() {
  #endif
  }
  
@@ -14,15 +14,26 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
      const service_manager::SandboxSeccompBPF::Options& options) {
-@@ -200,6 +201,7 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -245,8 +246,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuWhiteList(&permissions);
    return permissions;
  }
 +#endif
  
  void LoadArmGpuLibraries() {
++#if !defined(OS_BSD)
    // Preload the Mali library.
-@@ -260,6 +262,7 @@ bool LoadLibrariesForGpu(
+   if (UseChromecastSandboxWhitelist()) {
+     for (const char* path : kWhitelistedChromecastPaths) {
+@@ -261,6 +264,7 @@ void LoadArmGpuLibraries() {
+     // Preload the Tegra V4L2 (video decode acceleration) library.
+     dlopen("/usr/lib/libtegrav4l2.so", dlopen_flag);
+   }
++#endif
+ }
+ 
+ bool LoadAmdGpuLibraries() {
+@@ -316,6 +320,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -30,7 +41,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const service_manager::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -280,13 +283,18 @@ bool BrokerProcessPreSandboxHook(
+@@ -336,13 +341,18 @@ bool BrokerProcessPreSandboxHook(
    service_manager::SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

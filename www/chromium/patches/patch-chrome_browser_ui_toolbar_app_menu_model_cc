@@ -1,17 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.16 2018/09/27 06:36:18 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.17 2018/11/04 12:33:24 robert Exp $
+
 Index: chrome/browser/ui/toolbar/app_menu_model.cc
 --- chrome/browser/ui/toolbar/app_menu_model.cc.orig
 +++ chrome/browser/ui/toolbar/app_menu_model.cc
-@@ -634,7 +634,7 @@ bool AppMenuModel::IsCommandIdChecked(int command_id) 
-     return Profiling::BeingProfiled();
-   if (command_id == IDC_TOGGLE_REQUEST_TABLET_SITE)
-     return chrome::IsRequestingTabletSite(browser_);
--#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-   if (command_id == IDC_TOGGLE_CONFIRM_TO_QUIT_OPTION) {
-     return browser_->profile()->GetPrefs()->GetBoolean(
-         prefs::kConfirmToQuitEnabled);
-@@ -664,7 +664,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
+@@ -652,7 +652,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
      case IDC_UPGRADE_DIALOG:
        return browser_defaults::kShowUpgradeMenuItem &&
            UpgradeDetector::GetInstance()->notify_upgrade();
@@ -20,12 +12,3 @@ Index: chrome/browser/ui/toolbar/app_menu_model.cc
      case IDC_BOOKMARK_PAGE:
        return !chrome::ShouldRemoveBookmarkThisPageUI(browser_->profile());
      case IDC_BOOKMARK_ALL_TABS:
-@@ -807,7 +807,7 @@ void AppMenuModel::Build() {
- 
-   if (browser_defaults::kShowExitMenuItem) {
-     AddSeparator(ui::NORMAL_SEPARATOR);
--#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-     if (base::FeatureList::IsEnabled(features::kWarnBeforeQuitting)) {
-       AddCheckItem(IDC_TOGGLE_CONFIRM_TO_QUIT_OPTION,
-                    l10n_util::GetStringFUTF16(

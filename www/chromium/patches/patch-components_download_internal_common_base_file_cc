@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_download_internal_common_base_file_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+
+Index: components/download/internal/common/base_file.cc
+--- components/download/internal/common/base_file.cc.orig
++++ components/download/internal/common/base_file.cc
+@@ -446,7 +446,7 @@ DownloadInterruptReason BaseFile::LogInterruptReason(
+   return reason;
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ namespace {
+ 

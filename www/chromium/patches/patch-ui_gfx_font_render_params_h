@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.5 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.6 2018/11/04 12:33:24 robert Exp $
 
 Index: ui/gfx/font_render_params.h
 --- ui/gfx/font_render_params.h.orig
@@ -14,8 +14,8 @@ Index: ui/gfx/font_render_params.h
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
  #endif
  
--#if defined(OS_LINUX) || (defined(OS_ANDROID) && BUILDFLAG(ENABLE_VR))
-+#if defined(OS_LINUX) || defined(OS_BSD) || (defined(OS_ANDROID) && BUILDFLAG(ENABLE_VR))
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  // Gets the device scale factor to query the FontRenderParams.
  GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_create_video_capture_device_factory_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-media_capture_video_create_video_capture_device_factory_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: media/capture/video/create_video_capture_device_factory.cc
 --- media/capture/video/create_video_capture_device_factory.cc.orig
@@ -12,7 +12,7 @@ Index: media/capture/video/create_video_capture_device_factory.cc
  #include "media/capture/video/linux/video_capture_device_factory_linux.h"
  #elif defined(OS_CHROMEOS)
  #include "media/capture/video/chromeos/public/cros_features.h"
-@@ -31,7 +31,7 @@ namespace {
+@@ -33,7 +33,7 @@ namespace {
  std::unique_ptr<VideoCaptureDeviceFactory>
  CreatePlatformSpecificVideoCaptureDeviceFactory(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {

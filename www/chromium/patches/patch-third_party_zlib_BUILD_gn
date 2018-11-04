@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.9 2018/09/12 19:10:34 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.10 2018/11/04 12:33:24 robert Exp $
 
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
@@ -16,12 +16,12 @@ Index: third_party/zlib/BUILD.gn
    source_set("zlib_arm_crc32") {
      visibility = [ ":*" ]
  
--    if (!is_ios && !is_chromeos && !is_fuchsia) {
-+    if (!is_ios && !is_chromeos && !is_fuchsia && !is_openbsd) {
+-    if (is_clang && (!is_ios && !is_chromeos && !is_fuchsia)) {
++    if (is_clang && (!is_ios && !is_chromeos && !is_fuchsia && !is_openbsd)) {
        include_dirs = [ "." ]
  
        if (is_android) {
-@@ -327,7 +327,7 @@ static_library("minizip") {
+@@ -324,7 +324,7 @@ static_library("minizip") {
      ]
    }
  

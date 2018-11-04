@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.20 2018/11/04 12:33:24 robert Exp $
+
+Index: chrome/browser/browser_process_impl.h
+--- chrome/browser/browser_process_impl.h.orig
++++ chrome/browser/browser_process_impl.h
+@@ -341,7 +341,7 @@ class BrowserProcessImpl : public BrowserProcess,
+   std::unique_ptr<ChromeResourceDispatcherHostDelegate>
+       resource_dispatcher_host_delegate_;
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+   base::RepeatingTimer autoupdate_timer_;
+ 
+   // Gets called by autoupdate timer to see if browser needs restart and can be

@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_audio_BUILD_gn,v 1.17 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-media_audio_BUILD_gn,v 1.18 2018/11/04 12:33:24 robert Exp $
 
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -256,9 +256,19 @@ source_set("audio") {
+@@ -262,9 +262,19 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
@@ -24,7 +24,7 @@ Index: media/audio/BUILD.gn
  
    if (use_alsa) {
      libs += [ "asound" ]
-@@ -304,7 +314,6 @@ source_set("audio") {
+@@ -310,7 +320,6 @@ source_set("audio") {
      if (link_pulseaudio) {
        configs += [ ":libpulse" ]
      } else {

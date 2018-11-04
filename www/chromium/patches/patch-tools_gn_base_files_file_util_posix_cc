@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_gn_base_files_file_util_posix_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-tools_gn_base_files_file_util_posix_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: tools/gn/base/files/file_util_posix.cc
 --- tools/gn/base/files/file_util_posix.cc.orig
 +++ tools/gn/base/files/file_util_posix.cc
-@@ -122,7 +122,7 @@ std::string TempFileName() {
- #endif
+@@ -114,7 +114,7 @@ std::string TempFileName() {
+   return std::string(".org.chromium.Chromium.XXXXXX");
  }
  
 -#if defined(OS_LINUX) || defined(OS_AIX)
@@ -12,7 +12,7 @@ Index: tools/gn/base/files/file_util_posix.cc
  // Determine if /dev/shm files can be mapped and then mprotect'd PROT_EXEC.
  // This depends on the mount options used for /dev/shm, which vary among
  // different Linux distributions and possibly local configuration.  It also
-@@ -413,7 +413,7 @@ bool CopyDirectoryExcl(const FilePath& from_path,
+@@ -405,7 +405,7 @@ bool CopyDirectoryExcl(const FilePath& from_path,
  #endif  // !defined(OS_NACL_NONSFI)
  
  bool CreateLocalNonBlockingPipe(int fds[2]) {
@@ -21,7 +21,7 @@ Index: tools/gn/base/files/file_util_posix.cc
    return pipe2(fds, O_CLOEXEC | O_NONBLOCK) == 0;
  #else
    int raw_fds[2];
-@@ -915,7 +915,7 @@ int GetMaximumPathComponentLength(const FilePath& path
+@@ -904,7 +904,7 @@ int GetMaximumPathComponentLength(const FilePath& path
  }
  
  bool GetShmemTempDir(bool executable, FilePath* path) {

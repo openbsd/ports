@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_service_manager_service_manager_context_cc,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-content_browser_service_manager_service_manager_context_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: content/browser/service_manager/service_manager_context.cc
 --- content/browser/service_manager/service_manager_context.cc.orig
@@ -12,7 +12,7 @@ Index: content/browser/service_manager/service_manager_context.cc
  #include "components/services/font/font_service_app.h"
  #include "components/services/font/public/interfaces/constants.mojom.h"
  #endif
-@@ -600,7 +600,7 @@ ServiceManagerContext::ServiceManagerContext(
+@@ -607,7 +607,7 @@ ServiceManagerContext::ServiceManagerContext(
    out_of_process_services[data_decoder::mojom::kServiceName] =
        base::BindRepeating(&base::ASCIIToUTF16, "Data Decoder Service");
  

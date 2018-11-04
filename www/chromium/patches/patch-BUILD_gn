@@ -1,9 +1,9 @@
-$OpenBSD: patch-BUILD_gn,v 1.19 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.20 2018/11/04 12:33:24 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
 +++ BUILD.gn
-@@ -354,7 +354,7 @@ group("gn_all") {
+@@ -355,7 +355,7 @@ group("gn_all") {
          [ "//third_party/android_crazy_linker:android_crazy_linker_zip_fuzzer" ]
    }
  
@@ -12,7 +12,7 @@ Index: BUILD.gn
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -396,8 +396,6 @@ group("gn_all") {
+@@ -397,8 +397,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -21,7 +21,7 @@ Index: BUILD.gn
        "//testing:empty_main",
      ]
  
-@@ -454,10 +452,6 @@ group("gn_all") {
+@@ -455,10 +453,6 @@ group("gn_all") {
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
          "//components/sync:run_sync_testserver",
@@ -43,7 +43,7 @@ Index: BUILD.gn
      ]
  
      if (!is_android) {
-@@ -593,7 +583,7 @@ group("gn_all") {
+@@ -592,7 +582,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -52,7 +52,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -819,7 +809,6 @@ if (is_chromeos) {
+@@ -821,7 +811,6 @@ if (is_chromeos) {
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
        "//sandbox/linux:sandbox_linux_unittests",
@@ -60,7 +60,7 @@ Index: BUILD.gn
  
        # Blocked on https://github.com/catapult-project/catapult/issues/2297
        #"//third_party/catapult/telemetry:bitmaptools",
-@@ -942,7 +931,7 @@ if (!is_ios) {
+@@ -926,7 +915,7 @@ if (!is_ios) {
        ]
      }
  
@@ -69,7 +69,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -951,7 +940,7 @@ if (!is_ios) {
+@@ -935,7 +924,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1076,9 +1065,6 @@ group("chromium_builder_perf") {
+@@ -1060,9 +1049,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

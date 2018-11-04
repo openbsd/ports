@@ -1,13 +1,41 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.16 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.17 2018/11/04 12:33:24 robert Exp $
+
 Index: components/autofill/core/browser/autofill_experiments.cc
 --- components/autofill/core/browser/autofill_experiments.cc.orig
 +++ components/autofill/core/browser/autofill_experiments.cc
-@@ -109,7 +109,7 @@ bool IsAutofillCreditCardLocalCardMigrationExperimentE
+@@ -27,7 +27,7 @@
+ 
+ namespace autofill {
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ namespace {
+ // Returns the font weight corresponding to the value of param
+ // kAutofillForcedFontWeightParameterName, or kDefault if the param is not
+@@ -55,7 +55,7 @@ const char kAutofillDropdownLayoutParameterLeadingIcon
+ const char kAutofillDropdownLayoutParameterTrailingIcon[] = "trailing-icon";
+ #endif  // !defined(OS_ANDROID)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ const base::Feature kAutofillPrimaryInfoStyleExperiment{
+     "AutofillPrimaryInfoStyleExperiment", base::FEATURE_DISABLED_BY_DEFAULT};
+ const char kAutofillForcedFontWeightParameterName[] = "font_weight";
+@@ -150,7 +150,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
  }
  
  bool OfferStoreUnmaskedCards() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD)
    // The checkbox can be forced on with a flag, but by default we don't store
    // on Linux due to lack of system keychain integration. See crbug.com/162735
    return base::CommandLine::ForCurrentProcess()->HasSwitch(
+@@ -183,7 +183,7 @@ bool ShouldUseActiveSignedInAccount() {
+              features::kAutofillGetPaymentsIdentityFromSync);
+ }
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ ForcedFontWeight GetForcedFontWeight() {
+   if (!base::FeatureList::IsEnabled(kAutofillPrimaryInfoStyleExperiment))
+     return ForcedFontWeight::kDefault;

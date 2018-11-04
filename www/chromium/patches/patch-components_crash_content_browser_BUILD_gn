@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.6 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.7 2018/11/04 12:33:24 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
 +++ components/crash/content/browser/BUILD.gn
-@@ -26,10 +26,9 @@ source_set("browser") {
+@@ -28,10 +28,9 @@ source_set("browser") {
      "//components/crash/content/app",
      "//content/public/browser",
      "//content/public/common",
@@ -15,7 +15,7 @@ Index: components/crash/content/browser/BUILD.gn
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.
-@@ -45,7 +44,7 @@ source_set("browser") {
+@@ -47,7 +46,7 @@ source_set("browser") {
  
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.

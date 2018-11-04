@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_httpcommon_cc,v 1.5 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_httpcommon_cc,v 1.6 2018/11/04 12:33:24 robert Exp $
 
 Index: third_party/webrtc/rtc_base/httpcommon.cc
 --- third_party/webrtc/rtc_base/httpcommon.cc.orig
 +++ third_party/webrtc/rtc_base/httpcommon.cc
-@@ -459,7 +459,7 @@ bool HttpDateToSeconds(const std::string& date, time_t
+@@ -428,7 +428,7 @@ bool HttpDateToSeconds(const std::string& date, time_t
    }
  // TODO: Android should support timezone, see b/2441195
  #if defined(WEBRTC_MAC) && !defined(WEBRTC_IOS) || defined(WEBRTC_ANDROID) || \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_BUILD_gn,v 1.5 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-sandbox_BUILD_gn,v 1.6 2018/11/04 12:33:24 robert Exp $
 Index: sandbox/BUILD.gn
 --- sandbox/BUILD.gn.orig
 +++ sandbox/BUILD.gn
-@@ -32,7 +32,7 @@ group("sandbox") {
-       "//sandbox/mac:seatbelt_extension",
+@@ -33,7 +33,7 @@ group("sandbox") {
+       "//sandbox/mac:system_services",
        "//sandbox/mac/mojom",
      ]
 -  } else if (is_linux || is_android) {

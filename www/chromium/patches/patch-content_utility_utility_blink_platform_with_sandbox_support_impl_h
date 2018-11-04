@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.2 2018/11/04 12:33:24 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
-@@ -44,7 +44,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl
+@@ -43,7 +43,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
    class SandboxSupport;
    std::unique_ptr<SandboxSupport> sandbox_support_;
  #endif

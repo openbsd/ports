@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+
+Index: ui/message_center/views/message_popup_view.cc
+--- ui/message_center/views/message_popup_view.cc.orig
++++ ui/message_center/views/message_popup_view.cc
+@@ -112,7 +112,7 @@ void MessagePopupView::AutoCollapse() {
+ void MessagePopupView::Show() {
+   views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
+   params.keep_on_top = true;
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   params.opacity = views::Widget::InitParams::OPAQUE_WINDOW;
+ #else
+   params.opacity = views::Widget::InitParams::TRANSLUCENT_WINDOW;

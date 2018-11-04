@@ -1,9 +1,26 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.16 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.17 2018/11/04 12:33:24 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -209,7 +209,7 @@ component("gl") {
+@@ -138,8 +138,6 @@ component("gl") {
+   configs += [ "//build/config:precompiled_headers" ]
+   defines = [ "GL_IMPLEMENTATION" ]
+ 
+-  include_dirs = [ "//third_party/mesa_headers" ]
+-
+   all_dependent_configs = [ ":gl_config" ]
+ 
+   public_configs = [ "//third_party/khronos:khronos_headers" ]
+@@ -153,7 +151,6 @@ component("gl") {
+   ]
+   public_deps = [
+     "//base",
+-    "//third_party/mesa_headers",
+     "//ui/events/platform",
+     "//ui/gfx",
+     "//ui/gfx/geometry",
+@@ -201,7 +198,7 @@ component("gl") {
        }
      }
  
@@ -12,22 +29,22 @@ Index: ui/gl/BUILD.gn
        # Windows has USE_EGL but doesn't support base::FileDescriptor.
        # libsync isn't supported or needed on MacOSX.
        # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -306,7 +306,6 @@ component("gl") {
-     data_deps += [
-       "//third_party/angle:libEGL",
-       "//third_party/angle:libGLESv2",
--      "//third_party/mesa:osmesa",
-       "//third_party/swiftshader",
-     ]
-   }
-@@ -540,10 +539,6 @@ test("gl_unittests") {
+@@ -318,7 +315,6 @@ component("gl") {
+       data_deps += [
+         "//third_party/angle:libEGL",
+         "//third_party/angle:libGLESv2",
+-        "//third_party/mesa_headers",
+         "//third_party/swiftshader",
+       ]
+     }
+@@ -521,10 +517,6 @@ test("gl_unittests") {
      "//ui/gl/init",
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
 -  ]
 -
 -  data_deps = [
--    "//third_party/mesa:osmesa",
+-    "//third_party/mesa_headers",
    ]
  
    if (use_x11) {

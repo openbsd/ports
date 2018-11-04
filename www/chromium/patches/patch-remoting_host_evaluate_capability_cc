@@ -1,0 +1,14 @@
+$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+
+Index: remoting/host/evaluate_capability.cc
+--- remoting/host/evaluate_capability.cc.orig
++++ remoting/host/evaluate_capability.cc
+@@ -50,7 +50,7 @@ base::FilePath BuildHostBinaryPath() {
+   }
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   if (path.BaseName().value() ==
+       FILE_PATH_LITERAL("chrome-remote-desktop-host")) {
+     return path;
