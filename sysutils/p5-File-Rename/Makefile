@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 20:50:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/04 23:35:58 bluhm Exp $
 
 COMMENT =	renames multiple files
 
@@ -8,10 +8,11 @@ CATEGORIES =	sysutils
 MODULES =	cpan
 PKG_ARCH =	*
 
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-TEST_DEPENDS =	devel/p5-Test-Pod
+TEST_DEPENDS =	devel/p5-Test-Pod>=1.00 \
+		devel/p5-Test-Pod-Coverage>=1.00
 
 # Renaming 'rename' to 'prename' to avoid confusion and according to what is
 # usually found on other operating systems.
