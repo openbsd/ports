@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/11/01 22:09:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/05 11:52:55 sthen Exp $
 
-ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
+ONLY_FOR_ARCHS = alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 6.4.0
-REVISION = 1
+REVISION = 2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -216,7 +216,7 @@ WANTLIB-main =		${WANTLIB}
 WANTLIB-ada =		${WANTLIB} pthread util
 WANTLIB-libs =		m pthread
 
-LIB_DEPENDS +=		devel/gmp>=4.2 \
+LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/mpfr \
 			devel/libmpc
 LIB_DEPENDS-libs =

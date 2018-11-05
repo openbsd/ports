@@ -1,6 +1,6 @@
-# $OpenBSD: gcc4.port.mk,v 1.3 2017/11/05 09:14:28 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.4 2018/11/05 11:52:55 sthen Exp $
 
-MODGCC4_ARCHS ?=
+MODGCC4_ARCHS ?= ${GCC49_ARCHS}
 MODGCC4_LANGS ?=
 
 
@@ -19,20 +19,20 @@ ERRORS += "Fatal: unknown language ${_l}"
 
 _MODGCC4_ARCH_USES = No
 
-.if ${MODGCC4_ARCHS:L} != ""
-.  for _i in ${MODGCC4_ARCHS}
-.    if !empty(MACHINE_ARCH:M${_i})
+.for _i in ${MODGCC4_ARCHS}
+.  if !empty(MACHINE_ARCH:M${_i})
 _MODGCC4_ARCH_USES = Yes
-.    endif
-.  endfor
-.endif
+.  endif
+.endfor
 
 COMPILER_VERSION ?= gcc2
 
 _MODGCC4_LINKS =
 MODGCC4STDCPP = estdc++
 MODGCC4_CPPLIBDEP = lang/gcc/6,-libs>=6,<7
+MODGCC4_CPPDEP =    lang/gcc/6,-c++>=6,<7
 MODGCC4_CPPWANTLIB = estdc++>=18
+MODGCC4_ATOMICWANTLIB = atomic
 
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
@@ -40,12 +40,12 @@ MODGCC4_CPPWANTLIB = estdc++>=18
 BUILD_DEPENDS += lang/gcc/6>=6,<7
 # XXX ports-clang already defines this
 .    if !${COMPILER_LINKS:Mgcc}
-COMPILER_LINKS += cc ${LOCALBASE}/bin/egcc gcc ${LOCALBASE}/bin/egcc
+COMPILER_LINKS += gcc ${LOCALBASE}/bin/egcc cc ${LOCALBASE}/bin/egcc
 .    endif
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
-BUILD_DEPENDS += lang/gcc/6,-c++>=6,<7
+BUILD_DEPENDS += ${MODGCC4_CPPDEP}
 LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 WANTLIB += ${MODGCC4_CPPWANTLIB}
 # XXX ports-clang already defines this
