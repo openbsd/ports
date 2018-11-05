@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/07/17 10:09:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-glib \
 			--without-gtk
 .endif
 
-post-patch:
+do-gen:
 	printf '#!/bin/sh\necho -n ${GH_TAGNAME:S/v//}\n' \
 	    > ${WRKSRC}/build-aux/git-version-gen
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \

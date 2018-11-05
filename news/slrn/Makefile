@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/11/26 15:21:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=		SLang-based newsreader
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 # replace bundled m4 files with the newer (working ;) ones from gettext
-post-patch:
+do-gen:
 .for i in gettext lib-ld lib-prefix nls progtest iconv lib-link po
 	cp ${LOCALBASE}/share/aclocal/$i.m4 ${WRKSRC}/autoconf/include/
 .endfor

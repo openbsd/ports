@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/04/23 13:48:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -65,7 +65,7 @@ BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-post-patch:
+do-gen:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 

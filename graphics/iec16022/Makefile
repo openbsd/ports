@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/27 12:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
-post-patch:
+do-gen:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 

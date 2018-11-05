@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -45,7 +45,7 @@ CONFIGURE_ENV += TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg' \
 pre-patch:
 	perl -i -pe 's/\r$$//; s/\t*$$//;' ${WRKSRC}/libopenjpeg/opj_malloc.h
 
-post-patch:
+do-gen:
 	cd ${WRKSRC} && AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
 	    PATH=${PORTPATH} ./bootstrap.sh

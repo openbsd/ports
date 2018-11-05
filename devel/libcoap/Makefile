@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=		--disable-doxygen \
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
-post-patch:
+do-gen:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 

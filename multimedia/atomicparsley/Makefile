@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/05 17:23:41 sthen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 NO_TEST=	Yes
 SEPARATE_BUILD= Yes
 
-post-patch:
+do-gen:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 

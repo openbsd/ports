@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/29 07:30:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/05 17:23:41 sthen Exp $
 
 V=		4.1.1
 REVISION=	2
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 NO_TEST=		Yes
 
-post-patch:
+do-gen:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fiv
 
