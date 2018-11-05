@@ -1,0 +1,14 @@
+$OpenBSD: patch-pokerth_game_pro,v 1.5 2018/11/05 21:32:48 rsadowski Exp $
+
+Index: pokerth_game.pro
+--- pokerth_game.pro.orig
++++ pokerth_game.pro
+@@ -529,7 +529,7 @@ unix:!mac { 
+ 		LIBS += -lSDL \
+ 				-lSDL_mixer \
+ 			-lgsasl
+-		!isEmpty( BSD ):isEmpty( kFreeBSD ):LIBS += -lcrypto
++		!isEmpty( BSD ):isEmpty( kFreeBSD ):LIBS += -lcrypto -lssl
+ 		else:LIBS += -lgcrypt
+ 	}
+ 	android{
