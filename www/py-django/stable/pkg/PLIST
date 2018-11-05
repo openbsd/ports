@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/11/05 06:49:37 rpointel Exp $
 @conflict py3-django-lts-*
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
@@ -4276,6 +4276,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/az/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/az/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/az/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/az/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/be/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/be/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/be/LC_MESSAGES/${LNAME}.mo
@@ -6007,6 +6011,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/or
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}compiler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}creation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6017,6 +6022,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/base.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/client.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/compiler.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/creation.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/features.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/backends/oracle/functions.py
@@ -6462,6 +6468,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}encoding
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}feedgenerator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}functional.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}hashable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}inspect.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6502,6 +6509,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/encoding.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/feedgenerator.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/formats.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/functional.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/hashable.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/html.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/http.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/inspect.py
@@ -6584,17 +6592,12 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/views/templates/default_urlcon
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/views/templates/technical_404.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/views/templates/technical_500.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/views/templates/technical_500.txt
-man/ja_JP.EUC/cat3f/
-man/ja_JP.EUC/man3f/
-man/ja_JP.EUC/man3p/
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/Makefile
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/README
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/
-share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/cve_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/${LNAME}docs.py
-share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_ext/ticket_role.py
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_theme/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_theme/${LNAME}docs/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/_theme/${LNAME}docs-epub/
@@ -6898,6 +6901,8 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.12.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.14.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.15.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.16.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.17.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.4.txt
@@ -7018,6 +7023,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.8.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.4.txt
@@ -7025,8 +7031,12 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.5.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.6.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.7.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.8.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/index.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/security.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/spelling_wordlist
