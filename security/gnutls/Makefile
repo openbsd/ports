@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.147 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2018/11/05 14:57:09 naddy Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.5.19
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -20,22 +20,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gmp hogweed iconv idn2 intl m nettle p11-kit pthread
-WANTLIB += tasn1 unistring z
+WANTLIB += tasn1 unistring z ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:R}/ \
 			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang} || ${MACHINE_ARCH} != amd64
-WANTLIB += ${COMPILER_LIBCXX}
-.else
-# assembly instructions
-MODULES +=	lang/clang
-MODCLANG_ARCHS=	amd64
-MODCLANG_LANGS= c++
-.endif
 
 # needed for tests
 BUILD_DEPENDS=		devel/cmocka
