@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1450 2018/10/18 09:38:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1451 2018/11/05 15:59:17 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -349,7 +349,7 @@ TARGETS += ${_s}-${_t}
 .    endif
 .  endfor
 .endfor
-.for _t in post-extract post-patch pre-configure configure pre-fake post-install
+.for _t in post-extract post-patch gen pre-configure configure pre-fake post-install
 .  for _m in ${MODULES:T:U}
 .    if defined(MOD${_m}_${_t})
 TARGETS += MOD${_m}_${_t}
@@ -687,6 +687,7 @@ _EXTRACT_COOKIE =		${WRKDIR}/.extract_done
 _PATCH_COOKIE =			${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE =		${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE =		${WRKDIR}/.prepatch_done
+_GEN_COOKIE =			${WRKDIR}/.gen_done
 _BULK_COOKIE =			${BULK_COOKIES_DIR}/${FULLPKGNAME}
 _FAKE_COOKIE =			${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
@@ -718,7 +719,8 @@ _TEST_COOKIE =			${WRKDIR}/.test_done
 
 _TS_COOKIE = ${WRKDIR}/.check-wrkdir_stamp
 
-_ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
+_ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_GEN_COOKIE} \
+	${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_TEST_COOKIE} \
 	${_PACKAGE_COOKIES} ${_CACHE_PACKAGE_COOKIES} \
 	${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
@@ -2278,7 +2280,7 @@ _internal-fetch-all:
 .if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
-	_internal-install _internal-install-all \
+	_internal-install _internal-install-all _internal-gen \
 	_internal-package _internal-patch _internal-plist _internal-test \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install _internal-generate-readmes \
@@ -2395,6 +2397,7 @@ _internal-patch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_PATCH_COOKIE}
 _internal-distpatch: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DISTPATCH_COOKIE}
+_internal-gen: ${_GEN_COOKIE}
 _internal-configure: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_CONFIGURE_COOKIE}
 _internal-build _internal-all: ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
@@ -2439,7 +2442,7 @@ update-patches:
 # Top-level targets redirect to the real _internal-target, along with locking
 # if locking exists.
 
-.for _t in extract patch distpatch configure build all install fake \
+.for _t in extract patch distpatch gen configure build all install fake \
 	subupdate fetch fetch-all checksum test prepare install-depends \
 	test-depends clean plist update-plist generate-readmes \
 	update update-or-install update-or-install-all package install-all
@@ -2687,6 +2690,14 @@ _post-patch-finalize:
 	@${MOD${_m}_post-patch}
 .  endif
 .endfor
+
+# run as _pbuild
+_gen-finalize:
+.for _m in ${MODULES:T:U}
+.     if defined(MOD${_m}_gen)
+	@${MOD${_m}_gen}
+.     endif
+.endfor
 .if !empty(REORDER_DEPENDENCIES)
 	@sed -e '/^#/d' ${REORDER_DEPENDENCIES} | \
 	  tsort -r|while read f; do \
@@ -2704,7 +2715,18 @@ _post-patch-finalize:
 		esac; done
 .endif
 
+# The real gen stage
 
+${_GEN_COOKIE}: ${_PATCH_COOKIE}
+	@${ECHO_MSG} "===>  Generating configure for ${FULLPKGNAME}${_MASTER}"
+.if target(do-gen)
+	@${_PMAKE} do-gen
+.endif
+	@${_PMAKE} _gen-finalize
+	@${_PMAKE_COOKIE} $@
+
+ # The real configure
+ 
 # run as _pbuild
 _pre-configure-modules:
 .for _m in ${MODULES:T:U}
@@ -2728,7 +2750,7 @@ do-configure:
 
 # The real configure
 
-${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
+${_CONFIGURE_COOKIE}: ${_GEN_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 .if defined(_CONFIG_SITE)
 	@cd ${PORTSDIR}/infrastructure/db && cat ${CONFIG_SITE_LIST} ${_PREDIR} ${_CONFIG_SITE}
@@ -3476,6 +3498,10 @@ rebuild:
 	@${_PBUILD} rm -f ${_BUILD_COOKIE}
 	@${_MAKE} build
 
+regen:
+	@${_PBUILD} rm -f ${_GEN_COOKIE}
+	@${_MAKE} gen
+
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
 	@${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
@@ -3515,7 +3541,7 @@ _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
 	_build-dir-depends _hook-post-install \
 	_internal-all _internal-build _internal-build-depends \
-	_internal-checksum _internal-clean _internal-configure \
+	_internal-checksum _internal-clean _internal-gen _internal-configure \
 	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
 	_internal-fetch-all _internal-install-depends _internal-install-all \
 	_internal-package _internal-package-only _internal-plist _internal-prepare \
@@ -3528,20 +3554,20 @@ _all_phony = ${_recursive_depends_targets} \
 	_recurse-test-dir-depends _recurse-run-dir-depends \
 	build-depends-list checkpatch clean clean-depends \
 	delete-package distpatch do-build do-configure do-distpatch \
-	do-extract do-install do-test fetch-all \
+	do-gen do-extract do-install do-test fetch-all \
 	install-all lib-depends lib-depends-list \
 	peek-ftp port-lib-depends-check post-build post-configure \
 	post-distpatch post-extract post-install \
 	post-patch post-test pre-build pre-configure pre-extract pre-fake \
 	pre-install pre-patch pre-test prepare \
-	print-build-depends print-run-depends rebuild \
+	print-build-depends print-run-depends rebuild regen \
 	test-depends test-depends-list run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
-	_post-install-modules fix-permissions
+	_gen-finalize _post-install-modules fix-permissions
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}

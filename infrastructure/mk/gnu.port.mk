@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.57 2018/11/01 22:53:19 jca Exp $
+# $OpenBSD: gnu.port.mk,v 1.58 2018/11/05 15:59:17 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -111,7 +111,7 @@ CONFIGURE_ENV += ac_cv_path_GTKDOC_MKPDF=""
 TEST_TARGET ?= check
 
 # internal stuff to run on each directory.
-MODGNU_post-patch = for d in ${AUTOCONF_DIR}; do cd $$d; ${_MODGNU_loop} done;
+MODGNU_gen = for d in ${AUTOCONF_DIR}; do cd $$d; ${_MODGNU_loop} done;
 _MODGNU_loop =
 
 PATCH_CHECK_ONLY ?= No
