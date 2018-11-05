@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/10/10 12:20:17 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/11/05 21:55:41 edd Exp $
 @conflict radare-bindings2-*
-share/vala/vapi/
 share/vala/vapi/libr.deps
 share/vala/vapi/libr.vapi
 share/vala/vapi/r_anal.deps
