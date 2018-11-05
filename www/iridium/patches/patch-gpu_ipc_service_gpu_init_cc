@@ -1,27 +1,27 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.5 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.6 2018/11/05 22:04:39 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc
-@@ -70,7 +70,7 @@ bool CollectGraphicsInfo(GPUInfo* gpu_info) {
+@@ -79,7 +79,7 @@ bool CollectGraphicsInfo(GPUInfo* gpu_info,
+   return success;
  }
- #endif  // defined(OS_MACOSX)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST)
 +#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST) && !defined(OS_BSD)
  bool CanAccessNvidiaDeviceFile() {
    bool res = true;
    base::AssertBlockingAllowed();
-@@ -106,7 +106,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -116,7 +116,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    // crash during feature collection.
    gpu::SetKeysForCrashLogging(gpu_info_);
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
-       gpu_info_.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
+       gpu_info_.gpu.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -172,7 +172,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -200,7 +200,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    sandbox_helper_->PreSandboxStartup();
  
    bool attempted_startsandbox = false;

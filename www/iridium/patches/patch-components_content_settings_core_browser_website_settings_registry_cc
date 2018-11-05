@@ -1,8 +1,8 @@
-$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.5 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.6 2018/11/05 22:04:39 robert Exp $
 Index: components/content_settings/core/browser/website_settings_registry.cc
 --- components/content_settings/core/browser/website_settings_registry.cc.orig
 +++ components/content_settings/core/browser/website_settings_registry.cc
-@@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
+@@ -67,7 +67,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if defined(OS_WIN)
    if (!(platform & PLATFORM_WINDOWS))
      return nullptr;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_h,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: chrome/renderer/pepper/pepper_flash_font_file_host.h
+--- chrome/renderer/pepper/pepper_flash_font_file_host.h.orig
++++ chrome/renderer/pepper/pepper_flash_font_file_host.h
+@@ -50,7 +50,7 @@ class PepperFlashFontFileHost : public ppapi::host::Re
+                          uint32_t table);
+   bool GetFontData(uint32_t table, void* buffer, size_t* length);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   base::File font_file_;
+ #elif defined(OS_WIN)
+   sk_sp<SkTypeface> typeface_;

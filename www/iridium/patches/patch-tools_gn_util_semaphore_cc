@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_util_semaphore_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: tools/gn/util/semaphore.cc
+--- tools/gn/util/semaphore.cc.orig
++++ tools/gn/util/semaphore.cc
+@@ -36,7 +36,7 @@ void Semaphore::Wait() {
+   }
+ }
+ 
+-#elif defined(OS_LINUX) || defined(OS_AIX)
++#elif defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+ 
+ Semaphore::Semaphore(int count) {
+   DCHECK_GE(count, 0);

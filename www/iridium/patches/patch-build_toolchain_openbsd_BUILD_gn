@@ -1,7 +1,8 @@
-$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.4 2018/05/04 07:14:57 robert Exp $
---- build/toolchain/openbsd/BUILD.gn.orig.port	Wed Oct 19 13:16:59 2016
-+++ build/toolchain/openbsd/BUILD.gn	Wed Oct 19 14:23:37 2016
-@@ -0,0 +1,52 @@
+$OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.5 2018/11/05 22:04:39 robert Exp $
+Index: build/toolchain/openbsd/BUILD.gn
+--- build/toolchain/openbsd/BUILD.gn.orig
++++ build/toolchain/openbsd/BUILD.gn
+@@ -0,0 +1,66 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be
 +# found in the LICENSE file.
@@ -52,5 +53,19 @@ $OpenBSD: patch-build_toolchain_openbsd_BUILD_gn,v 1.4 2018/05/04 07:14:57 rober
 +    current_cpu = "x64"
 +    current_os = "openbsd"
 +    is_clang = false
++  }
++}
++
++clang_toolchain("clang_arm") {
++  toolchain_args = {
++    current_cpu = "arm64"
++    current_os = "openbsd"
++  }
++}
++
++clang_toolchain("clang_arm64") {
++  toolchain_args = {
++    current_cpu = "arm64"
++    current_os = "openbsd"
 +  }
 +}

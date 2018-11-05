@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_views_window_frame_background_cc,v 1.2 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-ui_views_window_frame_background_cc,v 1.3 2018/11/05 22:04:40 robert Exp $
 
 Index: ui/views/window/frame_background.cc
 --- ui/views/window/frame_background.cc.orig
 +++ ui/views/window/frame_background.cc
-@@ -173,7 +173,7 @@ void FrameBackground::PaintFrameColor(gfx::Canvas* can
- 
- void FrameBackground::PaintFrameTopArea(gfx::Canvas* canvas,
-                                         const View* view) const {
+@@ -122,7 +122,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
+                                      const View* view) const {
+ // Fill the top with the frame color first so we have a constant background
+ // for areas not covered by the theme image.
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    auto* native_theme = view->GetNativeTheme();

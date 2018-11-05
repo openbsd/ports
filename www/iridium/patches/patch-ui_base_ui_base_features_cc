@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: ui/base/ui_base_features.cc
+--- ui/base/ui_base_features.cc.orig
++++ ui/base/ui_base_features.cc
+@@ -115,7 +115,7 @@ const base::Feature kPrecisionTouchpadScrollPhase{
+     "PrecisionTouchpadScrollPhase", base::FEATURE_ENABLED_BY_DEFAULT};
+ #endif  // defined(OS_WIN)
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ // Enables stylus appearing as touch when in contact with digitizer.
+ const base::Feature kDirectManipulationStylus = {
+     "DirectManipulationStylus",

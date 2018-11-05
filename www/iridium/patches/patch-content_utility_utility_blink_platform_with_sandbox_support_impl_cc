@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig
++++ content/utility/utility_blink_platform_with_sandbox_support_impl.cc
+@@ -32,7 +32,7 @@ namespace content {
+ class UtilityBlinkPlatformWithSandboxSupportImpl::SandboxSupport
+     : public blink::WebSandboxSupport {
+  public:
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   explicit SandboxSupport(sk_sp<font_service::FontLoader> font_loader)
+       : font_loader_(std::move(font_loader)) {}
+ #endif
+@@ -68,7 +68,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl::Sand
+ UtilityBlinkPlatformWithSandboxSupportImpl::
+     UtilityBlinkPlatformWithSandboxSupportImpl(
+         service_manager::Connector* connector) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   font_loader_ = sk_make_sp<font_service::FontLoader>(connector);
+   SkFontConfigInterface::SetGlobal(font_loader_);
+   sandbox_support_ = std::make_unique<SandboxSupport>(font_loader_);

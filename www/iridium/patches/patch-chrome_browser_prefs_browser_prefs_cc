@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: chrome/browser/prefs/browser_prefs.cc
+--- chrome/browser/prefs/browser_prefs.cc.orig
++++ chrome/browser/prefs/browser_prefs.cc
+@@ -293,7 +293,7 @@
+ #include "chrome/browser/ui/cocoa/apps/quit_with_apps_controller_mac.h"
+ #endif
+ 
+-#if defined(OS_MACOSX) || defined(OS_WIN) || \
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ #include "chrome/browser/ui/confirm_quit.h"
+ #endif
+@@ -744,7 +744,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+   NotificationChannelsProviderAndroid::RegisterProfilePrefs(registry);
+ #endif
+ 
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   confirm_quit::RegisterLocalState(registry);
+ #endif
+ 

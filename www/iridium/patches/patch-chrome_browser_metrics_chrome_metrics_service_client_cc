@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: chrome/browser/metrics/chrome_metrics_service_client.cc
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig
++++ chrome/browser/metrics/chrome_metrics_service_client.cc
+@@ -900,7 +900,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+   }
+ #endif
+ #if defined(OS_WIN) || defined(OS_MACOSX) || \
+-    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++    ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+   // This creates the DesktopProfileSessionDurationsServices if it didn't exist
+   // already.
+   metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(

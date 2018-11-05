@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/09/23 12:49:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2018/11/05 22:04:39 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -11,12 +11,11 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			2018.5.67
+V=			2018.11.70
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		3
 
 CATEGORIES=		www
 
@@ -62,7 +61,13 @@ WANTLIB += GL expat
 WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0
 WANTLIB += Xcomposite Xdamage
-WANTLIB += util
+WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
+WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
+WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png util xcb-dri2 xcb-glx xcb-render xcb-shm
+WANTLIB += xml2 z
+WANTLIB += uuid
+WANTLIB += harfbuzz 
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -83,8 +88,10 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/ninja \
 		x11/gtk+3 \
 		${MODGCC4_CPPDEP}
-LIB_DEPENDS=	devel/libexecinfo \
+LIB_DEPENDS=	devel/harfbuzz \
+		devel/libexecinfo \
 		security/nss \
+		sysutils/e2fsprogs \
 		textproc/libxslt \
 		x11/gtk+3 \
 		print/cups,-libs \
@@ -117,13 +124,11 @@ GN_SYSTEM_LIBS=	libevent \
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
-		enable_webrtc=true \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
-		use_gtk3=true \
 		use_system_libdrm=true \
 		use_jumbo_build=true \
 		is_clang=true \
@@ -138,6 +143,12 @@ GN_ARGS=	enable_nacl=false \
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
+PKG_ARGS+=	-Dswiftshader=0
+.else
+PKG_ARGS+=	-Dswiftshader=1
 .endif
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -161,12 +172,9 @@ GN_ARGS+=	is_official_build=true \
 		is_component_build=false
 .endif
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py
-       
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.for _arch in x64 ia32
+.for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
@@ -190,6 +198,9 @@ do-configure:
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py
+
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
@@ -201,13 +212,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/iridium.1
 	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Iridium Web Browser,g" \
 		${PREFIX}/man/man1/iridium.1
-
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/iridium
 
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium
-	${INSTALL_DATA} ${BUILDDIR}/*.service ${PREFIX}/iridium
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
@@ -220,11 +229,13 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
 .endfor
 
+.if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/swiftshader
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/iridium/swiftshader
 .endfor
+.endif
 
 .if ${FLAVOR:Mcomponent}
 	cp -Rp ${BUILDDIR}/*.so ${PREFIX}/iridium/

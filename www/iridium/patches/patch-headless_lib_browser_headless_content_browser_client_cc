@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.4 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.5 2018/11/05 22:04:39 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.cc
 --- headless/lib/browser/headless_content_browser_client.cc.orig
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -220,7 +220,7 @@ void HeadlessContentBrowserClient::GetQuotaSettings(
+@@ -205,7 +205,7 @@ void HeadlessContentBrowserClient::GetQuotaSettings(
        partition->GetPath(), context->IsOffTheRecord(), std::move(callback));
  }
  

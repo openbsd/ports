@@ -1,0 +1,13 @@
+$OpenBSD: patch-services_network_BUILD_gn,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: services/network/BUILD.gn
+--- services/network/BUILD.gn.orig
++++ services/network/BUILD.gn
+@@ -189,7 +189,6 @@ component("network_service") {
+ 
+   if (is_linux) {
+     deps += [
+-      "//sandbox/linux:sandbox_services",
+       "//services/service_manager/sandbox:sandbox",
+     ]
+   }

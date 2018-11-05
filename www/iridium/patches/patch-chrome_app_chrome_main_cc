@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.10 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.11 2018/11/05 22:04:39 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
@@ -7,9 +7,9 @@ Index: chrome/app/chrome_main.cc
  #if !defined(CHROME_MULTIPLE_DLL_CHILD)
  static void trace_url_request(const std::string &caller, const GURL &url)
  {
-+        base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+        if (!command_line->HasSwitch(switches::kTrk))
-+                return;
++	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
 +
  	iridium::log_url_request(caller, url);
  	if (url.scheme() != url::kTraceScheme)

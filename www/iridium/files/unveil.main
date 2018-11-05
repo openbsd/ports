@@ -1,11 +1,14 @@
-# $OpenBSD: unveil.main,v 1.1 2018/08/11 16:22:42 robert Exp $
+# $OpenBSD: unveil.main,v 1.2 2018/11/05 22:04:39 robert Exp $
 
-# needed for iridium
+# needed for iridum
 /etc/chromium r
 /etc/iridium r
 
 # needed for fontconfig
 /etc/fonts r
+
+# needed for dbus
+/etc/machine-id r
 
 # needed for IPC communication, X.Org, etc.
 /tmp rwc

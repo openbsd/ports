@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.7 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.8 2018/11/05 22:04:39 robert Exp $
+
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -368,7 +368,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -341,7 +341,7 @@ class BrowserProcessImpl : public BrowserProcess,
+   std::unique_ptr<ChromeResourceDispatcherHostDelegate>
+       resource_dispatcher_host_delegate_;
  
-   std::unique_ptr<ChromeDeviceClient> device_client_;
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+   base::RepeatingTimer autoupdate_timer_;
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-   // Any change to this #ifdef must be reflected as well in
-   // chrome/browser/resource_coordinator/tab_manager_browsertest.cc
-   std::unique_ptr<resource_coordinator::TabManager> tab_manager_;
+   // Gets called by autoupdate timer to see if browser needs restart and can be

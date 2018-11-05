@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_catalog_store_cc,v 1.4 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-services_catalog_store_cc,v 1.5 2018/11/05 22:04:39 robert Exp $
 Index: services/catalog/store.cc
 --- services/catalog/store.cc.orig
 +++ services/catalog/store.cc
-@@ -35,6 +35,8 @@ const char Store::kRequiredFilesKey_PlatformValue_MacO
+@@ -37,6 +37,8 @@ const char Store::kRequiredFilesKey_PlatformValue_MacO
  // static
  const char Store::kRequiredFilesKey_PlatformValue_Android[] = "android";
  // static

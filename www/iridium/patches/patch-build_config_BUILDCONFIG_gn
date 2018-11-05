@@ -1,26 +1,22 @@
-$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.5 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-build_config_BUILDCONFIG_gn,v 1.6 2018/11/05 22:04:39 robert Exp $
 
 Index: build/config/BUILDCONFIG.gn
 --- build/config/BUILDCONFIG.gn.orig
 +++ build/config/BUILDCONFIG.gn
-@@ -131,14 +131,14 @@ declare_args() {
+@@ -131,10 +131,10 @@ declare_args() {
    is_official_build = false
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
 +  is_desktop_linux = current_os == "linux" || current_os == "openbsd"
  
-   # Set to true when compiling with the Clang compiler. Typically this is used
-   # to configure warnings.
-   is_clang =
-       current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
-       current_os == "fuchsia" || current_os == "android" ||
--      current_os == "win" ||
-+      current_os == "win" || current_os == "openbsd" ||
-       (current_os == "linux" && current_cpu != "s390x" &&
-        current_cpu != "s390" && current_cpu != "ppc64" &&
-        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
-@@ -214,6 +214,8 @@ if (host_toolchain == "") {
+   # Set to true when compiling with the Clang compiler.
+-  is_clang = current_os != "linux" ||
++  is_clang = current_os != "linux" || curent_os == "openbsd" ||
+              (current_cpu != "s390x" && current_cpu != "s390" &&
+               current_cpu != "ppc64" && current_cpu != "ppc" &&
+               current_cpu != "mips" && current_cpu != "mips64")
+@@ -216,6 +216,8 @@ if (host_toolchain == "") {
      }
    } else if (host_os == "aix") {
      host_toolchain = "//build/toolchain/aix:$host_cpu"
@@ -29,7 +25,7 @@ Index: build/config/BUILDCONFIG.gn
    } else {
      assert(false, "Unsupported host_os: $host_os")
    }
-@@ -258,6 +260,8 @@ if (target_os == "android") {
+@@ -260,6 +262,8 @@ if (target_os == "android") {
    _default_toolchain = "//build/toolchain/win:uwp_$target_cpu"
  } else if (target_os == "aix") {
    _default_toolchain = "//build/toolchain/aix:$target_cpu"
@@ -38,31 +34,31 @@ Index: build/config/BUILDCONFIG.gn
  } else {
    assert(false, "Unsupported target_os: $target_os")
  }
-@@ -298,6 +302,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -301,6 +305,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = false
    is_win = true
 +  is_openbsd = false
  } else if (current_os == "mac") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -308,6 +313,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -312,6 +317,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "android") {
+   is_aix = false
    is_android = true
-   is_chromeos = false
-@@ -318,6 +324,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -323,6 +329,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "chromeos") {
+   is_aix = false
    is_android = false
-   is_chromeos = true
-@@ -328,6 +335,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -334,6 +341,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
@@ -70,47 +66,48 @@ Index: build/config/BUILDCONFIG.gn
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
    # It is not set by default or on the command line. We treat is as a
-@@ -341,6 +349,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -348,6 +356,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = true
    is_posix = true
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "fuchsia") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -351,6 +360,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -359,6 +368,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = false
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "ios") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -361,6 +371,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -370,6 +380,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "linux") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -371,6 +382,7 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -381,6 +392,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_openbsd = false
  } else if (current_os == "aix") {
+   is_aix = true
    is_android = false
-   is_chromeos = false
-@@ -381,6 +393,18 @@ if (current_os == "win" || current_os == "winuwp") {
+@@ -392,6 +404,19 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_openbsd = false
 +} else if (current_os == "openbsd") {
-+  is_fuchsia = false
++  is_aix = false
 +  is_android = false
 +  is_chromeos = false
++  is_fuchsia = false
 +  is_ios = false
 +  is_linux = true
 +  is_mac = false

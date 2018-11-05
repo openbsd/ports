@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig
++++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
+@@ -43,7 +43,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
+   class SandboxSupport;
+   std::unique_ptr<SandboxSupport> sandbox_support_;
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   sk_sp<font_service::FontLoader> font_loader_;
+ #endif
+ 

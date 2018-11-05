@@ -1,8 +1,8 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.7 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.8 2018/11/05 22:04:39 robert Exp $
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
-@@ -85,7 +85,7 @@ net_configs = [
+@@ -95,7 +95,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -11,9 +11,9 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1978,6 +1978,16 @@ component("net") {
-         "dns/mdns_client_impl.cc",
-         "dns/mdns_client_impl.h",
+@@ -1997,6 +1997,16 @@ component("net") {
+         "url_request/url_request_file_job.cc",
+         "url_request/url_request_file_job.h",
        ]
 +    }
 +
@@ -27,4 +27,4 @@ Index: net/BUILD.gn
 +      sources += [ "base/network_interfaces_openbsd.cc" ]
      }
  
-     if (is_win) {
+     if (!disable_ftp_support) {

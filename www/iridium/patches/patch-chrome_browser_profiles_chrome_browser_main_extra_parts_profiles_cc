@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
++++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
+@@ -315,7 +315,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+ #if !defined(OS_ANDROID)
+   MediaGalleriesPreferencesFactory::GetInstance();
+ #endif
+-#if defined(OS_WIN) || defined(OS_MACOSX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
+ #endif

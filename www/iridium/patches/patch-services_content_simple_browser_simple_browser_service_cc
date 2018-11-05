@@ -1,0 +1,23 @@
+$OpenBSD: patch-services_content_simple_browser_simple_browser_service_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: services/content/simple_browser/simple_browser_service.cc
+--- services/content/simple_browser/simple_browser_service.cc.orig
++++ services/content/simple_browser/simple_browser_service.cc
+@@ -8,7 +8,7 @@
+ #include "services/content/simple_browser/window.h"
+ #include "services/service_manager/public/cpp/service_context.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "third_party/skia/include/ports/SkFontConfigInterface.h"  // nogncheck
+ #endif
+ 
+@@ -26,7 +26,7 @@ SimpleBrowserService::~SimpleBrowserService() = defaul
+ 
+ void SimpleBrowserService::OnStart() {
+   if (ui_initialization_mode_ == UIInitializationMode::kInitializeUI) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     font_loader_ = sk_make_sp<font_service::FontLoader>(context()->connector());
+     SkFontConfigInterface::SetGlobal(font_loader_);
+ #endif

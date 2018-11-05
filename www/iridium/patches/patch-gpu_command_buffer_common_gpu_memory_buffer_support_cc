@@ -1,0 +1,14 @@
+$OpenBSD: patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig
++++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
+@@ -169,7 +169,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
+ uint32_t GetPlatformSpecificTextureTarget() {
+ #if defined(OS_MACOSX)
+   return GL_TEXTURE_RECTANGLE_ARB;
+-#elif defined(OS_ANDROID) || defined(OS_LINUX)
++#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+   return GL_TEXTURE_EXTERNAL_OES;
+ #elif defined(OS_WIN)
+   return GL_TEXTURE_2D;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.8 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.9 2018/11/05 22:04:39 robert Exp $
 
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
@@ -25,15 +25,57 @@ Index: base/process/process_metrics_openbsd.cc
  
  #include "base/macros.h"
  #include "base/memory/ptr_util.h"
-@@ -53,7 +64,6 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
-   }
+@@ -25,48 +36,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+   return false;
+ }
  
-   int64_t time_delta = (time - last_cpu_time_).InMicroseconds();
--  DCHECK_NE(time_delta, 0);
+-static int GetProcessCPU(pid_t pid) {
+-  struct kinfo_proc info;
+-  size_t length;
+-  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
+-                sizeof(struct kinfo_proc), 0 };
+-
+-  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+-    return -1;
+-
+-  mib[5] = (length / sizeof(struct kinfo_proc));
+-
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
+-
+-  return info.p_pctcpu;
+-}
+-
+-double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-  TimeTicks time = TimeTicks::Now();
+-
+-  if (last_cpu_time_.is_zero()) {
+-    // First call, just set the last values.
+-    last_cpu_time_ = time;
+-    return 0;
+-  }
+-
+-  int cpu = GetProcessCPU(process_);
+-
+-  last_cpu_time_ = time;
+-  double percentage = static_cast<double>((cpu * 100.0) / FSCALE);
+-
+-  return percentage;
+-}
+-
+ TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+   NOTREACHED();
+   return TimeDelta();
+ }
  
-   if (time_delta == 0)
-     return 0;
-@@ -89,6 +99,70 @@ size_t GetSystemCommitCharge() {
+ ProcessMetrics::ProcessMetrics(ProcessHandle process)
+-    : process_(process),
+-      last_cpu_(0) {}
++    : process_(process) {}
+ 
+ size_t GetSystemCommitCharge() {
+   int mib[] = { CTL_VM, VM_METER };
+@@ -85,6 +61,70 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
@@ -69,7 +111,7 @@ Index: base/process/process_metrics_openbsd.cc
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
 +  struct kinfo_proc *info;
 +  size_t length;
-+  int total_count = 0; 
++  int total_count = 0;
 +
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
 +                sizeof(struct kinfo_proc), 0 };
@@ -82,7 +124,7 @@ Index: base/process/process_metrics_openbsd.cc
 +  mib[5] = (length / sizeof(struct kinfo_proc));
 +
 +  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
-+    total_count = -1;  
++    total_count = -1;
 +    goto out;
 +  }
 +  //total_count = info->p_fd->fd_openfd;
@@ -90,7 +132,7 @@ Index: base/process/process_metrics_openbsd.cc
 +
 +out:
 +  free(info);
-+  return total_count;  
++  return total_count;
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {

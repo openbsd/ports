@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_browser_commands_h,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: chrome/browser/ui/browser_commands.h
+--- chrome/browser/ui/browser_commands.h.orig
++++ chrome/browser/ui/browser_commands.h
+@@ -150,7 +150,7 @@ void CopyURL(Browser* browser);
+ // the tabbed Browser.
+ Browser* OpenInChrome(Browser* hosted_app_browser);
+ bool CanViewSource(const Browser* browser);
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_BSD) || defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ void ToggleConfirmToQuitOption(Browser* browser);
+ #endif
+ 

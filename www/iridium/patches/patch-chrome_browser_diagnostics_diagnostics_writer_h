@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_diagnostics_diagnostics_writer_h,v 1.1 2018/09/20 16:56:46 robert Exp $
+$OpenBSD: patch-chrome_browser_diagnostics_diagnostics_writer_h,v 1.2 2018/11/05 22:04:39 robert Exp $
 
 Index: chrome/browser/diagnostics/diagnostics_writer.h
 --- chrome/browser/diagnostics/diagnostics_writer.h.orig
 +++ chrome/browser/diagnostics/diagnostics_writer.h
-@@ -10,6 +10,8 @@
- #include "base/macros.h"
- #include "chrome/browser/diagnostics/diagnostics_model.h"
+@@ -15,6 +15,8 @@ namespace diagnostics {
+ // Console base class used internally.
+ class SimpleConsole;
  
 +#undef MACHINE
 +
- namespace diagnostics {
- 
- // Console base class used internally.
+ class DiagnosticsWriter : public DiagnosticsModel::Observer {
+  public:
+   // The type of formatting done by this writer.

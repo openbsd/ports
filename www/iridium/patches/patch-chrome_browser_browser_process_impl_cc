@@ -1,23 +1,14 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.7 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.8 2018/11/05 22:04:39 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -179,7 +179,7 @@
- #include "chrome/browser/media/webrtc/webrtc_log_uploader.h"
- #endif
+@@ -1459,7 +1459,7 @@ void BrowserProcessImpl::Unpin() {
+ }
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- #include "chrome/browser/resource_coordinator/tab_manager.h"
- #endif
+ // Mac is currently not supported.
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
  
-@@ -849,7 +849,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_driver() {
- 
- resource_coordinator::TabManager* BrowserProcessImpl::GetTabManager() {
-   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-   if (!tab_manager_) {
-     tab_manager_ = std::make_unique<resource_coordinator::TabManager>();
-     tab_lifecycle_unit_source_ =
+ bool BrowserProcessImpl::IsRunningInBackground() const {
+   // Check if browser is in the background.

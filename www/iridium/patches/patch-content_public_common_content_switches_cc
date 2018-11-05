@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.19 2018/08/11 16:22:42 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.20 2018/11/05 22:04:39 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -373,6 +373,8 @@ const char kEnableLowResTiling[] = "enable-low-res-til
+@@ -347,6 +347,8 @@ const char kEnableLowResTiling[] = "enable-low-res-til
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -11,7 +11,7 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -972,7 +974,9 @@ const char kDisableAudioSupportForDesktopShare[] =
+@@ -961,7 +963,9 @@ const char kDisableAudioSupportForDesktopShare[] =
  const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  

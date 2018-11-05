@@ -1,7 +1,8 @@
-$OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.7 2018/05/04 07:14:58 robert Exp $
---- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig.port	Thu Mar  9 21:05:27 2017
-+++ third_party/skia/src/gpu/GrAutoLocaleSetter.h	Fri Mar 10 07:46:25 2017
-@@ -25,7 +25,7 @@
+$OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.8 2018/11/05 22:04:39 robert Exp $
+Index: third_party/skia/src/gpu/GrAutoLocaleSetter.h
+--- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig
++++ third_party/skia/src/gpu/GrAutoLocaleSetter.h
+@@ -27,7 +27,7 @@
  #define HAVE_XLOCALE 0
  #endif
  

@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.9 2018/08/11 16:22:42 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.10 2018/11/05 22:04:39 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -24,6 +24,10 @@
- #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+@@ -29,6 +29,10 @@
+ #include "base/message_loop/message_pump_mac.h"
  #endif
  
 +#if defined(OS_OPENBSD)
@@ -14,7 +14,7 @@ Index: content/utility/utility_main.cc
  #if defined(OS_WIN)
  #include "base/rand_util.h"
  #include "sandbox/win/src/sandbox.h"
-@@ -46,12 +50,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -65,12 +69,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -27,9 +27,9 @@ Index: content/utility/utility_main.cc
        service_manager::SandboxTypeFromCommandLine(parameters.command_line);
 +#if !defined(OS_BSD)
    if (parameters.zygote_child ||
-       sandbox_type == service_manager::SANDBOX_TYPE_NETWORK) {
-     service_manager::SandboxLinux::PreSandboxHook pre_sandbox_hook;
-@@ -61,6 +66,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+       sandbox_type == service_manager::SANDBOX_TYPE_NETWORK ||
+       sandbox_type == service_manager::SANDBOX_TYPE_AUDIO) {
+@@ -84,6 +89,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          service_manager::SandboxLinux::Options());
    }

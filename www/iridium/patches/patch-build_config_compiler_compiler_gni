@@ -1,23 +1,23 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.5 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.6 2018/11/05 22:04:39 robert Exp $
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig
 +++ build/config/compiler/compiler.gni
-@@ -164,7 +164,7 @@ declare_args() {
-   # Linux or Fuchsia.
+@@ -166,7 +166,7 @@ declare_args() {
    # TODO(pcc): Enable lld on more architectures on Linux. E.g. we probably need
    # to fix some of crbug.com/742655 to enable it on ARM.
--  use_lld = is_clang &&
-+  use_lld = is_clang && !is_openbsd && 
-             ((is_win && host_os != "win") || is_fuchsia ||
-              (use_thin_lto && target_os != "chromeos") ||
-              (is_linux && current_cpu == "x64" && target_os != "chromeos") ||
-@@ -174,7 +174,7 @@ declare_args() {
+   use_lld =
+-      is_clang &&
++      is_clang && !is_openbsd &&
+       (is_win || is_fuchsia || (use_thin_lto && target_os != "chromeos") ||
+        (is_linux && current_cpu == "x64" && target_os != "chromeos") ||
+        (is_android && (current_cpu != "arm" || arm_version >= 7) &&
+@@ -175,7 +175,7 @@ declare_args() {
  
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.
--  use_gold =
-+  use_gold = !is_openbsd &&
-       (!use_lld && !(is_chromecast && is_linux &&
-                      (current_cpu == "arm" || current_cpu == "mipsel")) &&
-        (is_linux &&
+-  use_gold = !use_lld && !(is_chromecast && is_linux &&
++  use_gold = !is_openbsd && !use_lld && !(is_chromecast && is_linux &&
+                            (current_cpu == "arm" || current_cpu == "mipsel")) &&
+              ((is_linux && (current_cpu == "x64" || current_cpu == "x86" ||
+                             current_cpu == "arm" || current_cpu == "mipsel" ||

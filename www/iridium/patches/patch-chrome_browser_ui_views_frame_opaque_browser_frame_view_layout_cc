@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_layout_cc,v 1.9 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_layout_cc,v 1.10 2018/11/05 22:04:39 robert Exp $
+
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc
-@@ -20,7 +20,7 @@ namespace {
+@@ -21,7 +21,7 @@ namespace {
  
- const int kCaptionButtonHeight = 18;
+ constexpr int kCaptionButtonHeight = 18;
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- // Default extra space between the top of the frame and the top of the window
- // caption buttons.
- const int kExtraCaption = 2;
+ // Default spacing around window caption buttons.
+ constexpr int kCaptionButtonSpacing = 2;
+ #else

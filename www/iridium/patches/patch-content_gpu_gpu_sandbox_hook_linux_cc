@@ -1,23 +1,58 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.2 2018/08/11 16:22:42 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.3 2018/11/05 22:04:39 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -68,7 +68,7 @@ inline bool UseLibV4L2() {
+@@ -77,8 +77,9 @@ inline bool UseLibV4L2() {
  #endif
  }
  
 -constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
 +constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
  
++#if !defined(OS_BSD)
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
-@@ -284,9 +284,12 @@ bool BrokerProcessPreSandboxHook(
+     const service_manager::SandboxSeccompBPF::Options& options) {
+@@ -245,8 +246,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+   AddStandardGpuWhiteList(&permissions);
+   return permissions;
+ }
++#endif
+ 
+ void LoadArmGpuLibraries() {
++#if !defined(OS_BSD)
+   // Preload the Mali library.
+   if (UseChromecastSandboxWhitelist()) {
+     for (const char* path : kWhitelistedChromecastPaths) {
+@@ -261,6 +264,7 @@ void LoadArmGpuLibraries() {
+     // Preload the Tegra V4L2 (video decode acceleration) library.
+     dlopen("/usr/lib/libtegrav4l2.so", dlopen_flag);
+   }
++#endif
+ }
+ 
+ bool LoadAmdGpuLibraries() {
+@@ -316,6 +320,7 @@ bool LoadLibrariesForGpu(
+   return true;
+ }
+ 
++#if !defined(OS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
+     const service_manager::SandboxLinux::Options& options) {
+   sandbox::syscall_broker::BrokerCommandSet command_set;
+@@ -336,13 +341,18 @@ bool BrokerProcessPreSandboxHook(
+   service_manager::SetProcessTitleFromCommandLine(nullptr);
+   return true;
+ }
++#endif
+ 
++
  }  // namespace
  
  bool GpuProcessPreSandboxHook(service_manager::SandboxLinux::Options options) {
 +  NOTIMPLEMENTED();
-+#if 0
++#if !defined(OS_BSD)
    service_manager::SandboxLinux::GetInstance()->StartBrokerProcess(
        CommandSetForGPU(options), FilePermissionsForGpu(options),
        base::BindOnce(BrokerProcessPreSandboxHook), options);

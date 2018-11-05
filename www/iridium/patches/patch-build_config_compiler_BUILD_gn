@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.8 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.9 2018/11/05 22:04:39 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -51,7 +51,7 @@ declare_args() {
+@@ -52,7 +52,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,16 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -324,7 +324,7 @@ config("compiler") {
+@@ -273,7 +273,7 @@ config("compiler") {
+     # Linker warnings.
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
+         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-        current_os != "aix") {
++        current_os != "aix" && !is_openbsd) {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+       # crbug.com/485542
+@@ -337,7 +337,7 @@ config("compiler") {
        }
      }
  
@@ -21,8 +30,8 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -370,13 +370,12 @@ config("compiler") {
-     cflags += [ "-pipe" ]
+@@ -386,19 +386,11 @@ config("compiler") {
+     }
  
      ldflags += [
 +      "-Wl,-z,wxneeded",
@@ -30,56 +39,62 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
-     if (!using_sanitizer) {
--      ldflags += [ "-Wl,-z,defs" ]
 -
-       # Functions interposed by the sanitizers can make ld think
-       # that some libraries aren't needed when they actually are,
-       # http://crbug.com/234010. As workaround, disable --as-needed.
-@@ -467,7 +466,7 @@ config("compiler") {
-   # TODO(hans): Remove this once Clang generates better optimized debug info by
-   # default. https://crbug.com/765793
+-    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+-    # the executable they are loaded into, so they are unresolved at link-time.
+-    if (!using_sanitizer && !is_safestack) {
+-      ldflags += [
+-        "-Wl,-z,defs",
+-        "-Wl,--as-needed",
+-      ]
+-    }
+   }
+ 
+   # Linux-specific compiler flags setup.
+@@ -502,7 +494,7 @@ config("compiler") {
+   }
+ 
    if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
 -      target_os != "chromeos") {
 +      target_os != "chromeos" && !is_openbsd) {
      cflags += [
-       "-Xclang",
-       "-mllvm",
-@@ -1387,10 +1386,6 @@ config("default_warnings") {
- 
-         # TODO(hans): https://crbug.com/766891
-         "-Wno-null-pointer-arithmetic",
--
--        # Ignore warnings about MSVC optimization pragmas.
--        # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
--        "-Wno-ignored-pragma-optimize",
-       ]
-       if (llvm_force_head_revision) {
+       # TODO(hans): Remove this once Clang generates better optimized debug info
+       # by default. https://crbug.com/765793
+@@ -793,7 +785,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_openbsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1511,10 +1503,6 @@ config("default_warnings") {
          cflags += [
-@@ -1569,7 +1564,7 @@ config("no_rtti") {
- # 2. Remove the thin_archive config, so that the .a file actually contains all
- #    .o files, instead of just references to .o files in the build directoy
- config("thin_archive") {
--  if ((is_posix && !is_nacl) || is_fuchsia) {
-+  if ((is_posix && !is_nacl && !is_openbsd) || is_fuchsia) {
-     # TODO(thomasanderson): Enable on ChromeOS builds once
-     # https://crbug.com/829956 is fixed.
-     if (default_toolchain != "//build/toolchain/cros:target") {
-@@ -2096,7 +2091,7 @@ config("symbols") {
+           # TODO(thakis): https://crbug.com/753973
+           "-Wno-enum-compare-switch",
+-
+-          # Ignore warnings about MSVC optimization pragmas.
+-          # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
+-          "-Wno-ignored-pragma-optimize",
+         ]
+       }
+     }
+@@ -1701,7 +1689,7 @@ config("thin_archive") {
+   # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
+   # have a "thin archive" mode (it does accept -T, but it means truncating
+   # archive names to 16 characters, which is not what we want).
+-  if ((is_posix && !is_nacl && !is_mac && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_nacl && !is_mac && !is_ios && !is_openbsd) || is_fuchsia) {
+     arflags = [ "-T" ]
+   }
+ }
+@@ -2228,7 +2216,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
 -      cflags += [ "-g2" ]
 +      cflags += [ "-g0" ]
      }
-     if (use_debug_fission && !is_nacl) {
-       cflags += [ "-gsplit-dwarf" ]
-@@ -2207,7 +2202,7 @@ config("default_fatal_linker_warnings") {
-   if (!is_win && fatal_linker_warnings &&
-       !(is_chromeos && current_cpu == "arm") &&
-       !(is_android && use_order_profiling) && !is_mac && !is_ios &&
--      current_os != "aix") {
-+      current_os != "aix" && !is_openbsd) {
-     # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
-     # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
-     # crbug.com/485542
+     if (use_debug_fission && !is_nacl && !is_android) {
+       # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,

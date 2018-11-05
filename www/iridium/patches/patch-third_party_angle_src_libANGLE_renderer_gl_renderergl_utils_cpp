@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_gl_renderergl_utils_cpp,v 1.3 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_gl_renderergl_utils_cpp,v 1.4 2018/11/05 22:04:39 robert Exp $
 
 Index: third_party/angle/src/libANGLE/renderer/gl/renderergl_utils.cpp
 --- third_party/angle/src/libANGLE/renderer/gl/renderergl_utils.cpp.orig
 +++ third_party/angle/src/libANGLE/renderer/gl/renderergl_utils.cpp
-@@ -1106,7 +1106,7 @@ void GenerateWorkarounds(const FunctionsGL *functions,
+@@ -1138,7 +1138,7 @@ void GenerateWorkarounds(const FunctionsGL *functions,
      workarounds->doesSRGBClearsOnLinearFramebufferAttachments =
          functions->standard == STANDARD_GL_DESKTOP && (IsIntel(vendor) || IsAMD(vendor));
  

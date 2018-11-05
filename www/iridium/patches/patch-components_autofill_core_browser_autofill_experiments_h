@@ -1,0 +1,23 @@
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_h,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: components/autofill/core/browser/autofill_experiments.h
+--- components/autofill/core/browser/autofill_experiments.h.orig
++++ components/autofill/core/browser/autofill_experiments.h
+@@ -30,7 +30,7 @@ extern const char kAutofillDropdownLayoutParameterLead
+ extern const char kAutofillDropdownLayoutParameterTrailingIcon[];
+ #endif  // !defined(OS_ANDROID)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ extern const base::Feature kAutofillPrimaryInfoStyleExperiment;
+ extern const char kAutofillForcedFontWeightParameterName[];
+ extern const char kAutofillForcedFontWeightParameterMedium[];
+@@ -65,7 +65,7 @@ bool OfferStoreUnmaskedCards();
+ // Returns whether the account of the active signed-in user should be used.
+ bool ShouldUseActiveSignedInAccount();
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ enum class ForcedFontWeight {
+   kDefault,  // No change to the font weight.
+   kMedium,

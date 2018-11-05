@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_events_event_switches_cc,v 1.7 2018/05/04 07:14:58 robert Exp $
---- ui/events/event_switches.cc.orig.port	Thu Mar  9 21:04:49 2017
-+++ ui/events/event_switches.cc	Fri Mar 10 07:46:26 2017
-@@ -17,7 +17,7 @@ const char kEnableScrollPrediction[] = "enable-scroll-
+$OpenBSD: patch-ui_events_event_switches_cc,v 1.8 2018/11/05 22:04:39 robert Exp $
+Index: ui/events/event_switches.cc
+--- ui/events/event_switches.cc.orig
++++ ui/events/event_switches.cc
+@@ -14,7 +14,7 @@ namespace switches {
  const char kCompensateForUnstablePinchZoom[] =
      "compensate-for-unstable-pinch-zoom";
  

@@ -1,0 +1,32 @@
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.8 2018/11/05 22:04:39 robert Exp $
+
+Index: content/renderer/renderer_blink_platform_impl.cc
+--- content/renderer/renderer_blink_platform_impl.cc.orig
++++ content/renderer/renderer_blink_platform_impl.cc
+@@ -208,7 +208,7 @@ gpu::ContextType ToGpuContextType(blink::Platform::Con
+ class RendererBlinkPlatformImpl::SandboxSupport
+     : public blink::WebSandboxSupport {
+  public:
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   explicit SandboxSupport(sk_sp<font_service::FontLoader> font_loader)
+       : font_loader_(std::move(font_loader)) {}
+ #endif
+@@ -218,7 +218,7 @@ class RendererBlinkPlatformImpl::SandboxSupport
+   bool LoadFont(CTFontRef src_font,
+                 CGFontRef* container,
+                 uint32_t* font_id) override;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   void GetFallbackFontForCharacter(
+       blink::WebUChar32 character,
+       const char* preferred_locale,
+@@ -265,7 +265,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+                      ->Clone();
+     thread_safe_sender_ = RenderThreadImpl::current()->thread_safe_sender();
+     blob_registry_.reset(new WebBlobRegistryImpl(thread_safe_sender_.get()));
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     font_loader_ = sk_make_sp<font_service::FontLoader>(connector_.get());
+     SkFontConfigInterface::SetGlobal(font_loader_);
+ #endif

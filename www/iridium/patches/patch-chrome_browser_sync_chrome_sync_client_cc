@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.10 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.11 2018/11/05 22:04:39 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -636,7 +636,7 @@ void ChromeSyncClient::RegisterDesktopDataTypes(
-           BrowserThread::GetTaskRunnerForThread(BrowserThread::UI)));
+@@ -410,7 +410,7 @@ ChromeSyncClient::CreateDataTypeControllers(
+       BrowserThread::GetTaskRunnerForThread(BrowserThread::UI)));
  #endif  // BUILDFLAG(ENABLE_APP_LIST)
  
 -#if defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY)) {
-     sync_service->RegisterDataTypeController(
+     controllers.push_back(std::make_unique<AsyncDirectoryTypeController>(

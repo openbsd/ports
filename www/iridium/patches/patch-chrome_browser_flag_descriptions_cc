@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.4 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.5 2018/11/05 22:04:39 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -2964,7 +2964,7 @@ const char kEnableHomeLauncherDescription[] =
+@@ -3599,7 +3599,7 @@ const char kZipArchiverUnpackerDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -12,3 +12,12 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableInputImeApiName[] = "Enable Input IME API";
  const char kEnableInputImeApiDescription[] =
+@@ -3618,7 +3618,7 @@ const char kAutomaticTabDiscardingDescription[] =
+ 
+ #endif  // defined(OS_WIN) || defined(OS_MACOSX)
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
+ const char kDirectManipulationStylusDescription[] =

@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_browser_service_manager_service_manager_context_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+
+Index: content/browser/service_manager/service_manager_context.cc
+--- content/browser/service_manager/service_manager_context.cc.orig
++++ content/browser/service_manager/service_manager_context.cc
+@@ -95,7 +95,7 @@
+ #include "ui/aura/env.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "components/services/font/font_service_app.h"
+ #include "components/services/font/public/interfaces/constants.mojom.h"
+ #endif
+@@ -607,7 +607,7 @@ ServiceManagerContext::ServiceManagerContext(
+   out_of_process_services[data_decoder::mojom::kServiceName] =
+       base::BindRepeating(&base::ASCIIToUTF16, "Data Decoder Service");
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   {
+     service_manager::EmbeddedServiceInfo font_service_info;
+     font_service_info.factory =

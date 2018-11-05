@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_browser_webui_web_ui_data_source_impl_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_data_source_impl_cc,v 1.2 2018/11/05 22:04:39 robert Exp $
 
 revert https://chromium-review.googlesource.com/c/chromium/src/+/986504
 
 Index: content/browser/webui/web_ui_data_source_impl.cc
 --- content/browser/webui/web_ui_data_source_impl.cc.orig
 +++ content/browser/webui/web_ui_data_source_impl.cc
-@@ -112,24 +112,24 @@ WebUIDataSourceImpl::WebUIDataSourceImpl(const std::st
+@@ -123,24 +123,24 @@ WebUIDataSourceImpl::WebUIDataSourceImpl(const std::st
  WebUIDataSourceImpl::~WebUIDataSourceImpl() {
  }
  
@@ -36,7 +36,7 @@ Index: content/browser/webui/web_ui_data_source_impl.cc
  }
  
  void WebUIDataSourceImpl::AddLocalizedStrings(
-@@ -139,7 +139,7 @@ void WebUIDataSourceImpl::AddLocalizedStrings(
+@@ -150,7 +150,7 @@ void WebUIDataSourceImpl::AddLocalizedStrings(
                                                &replacements_);
  }
  
@@ -45,7 +45,7 @@ Index: content/browser/webui/web_ui_data_source_impl.cc
    localized_strings_.SetBoolean(name, value);
    // TODO(dschuyler): Change name of |localized_strings_| to |load_time_data_|
    // or similar. These values haven't been found as strings for
-@@ -148,21 +148,21 @@ void WebUIDataSourceImpl::AddBoolean(base::StringPiece
+@@ -159,21 +159,21 @@ void WebUIDataSourceImpl::AddBoolean(base::StringPiece
    // replacements.
  }
  
