@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/05 10:24:17 bentley Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
 GH_TAGNAME =		v3.1.1
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  ledger                    0.0 # 3.0
 
@@ -41,6 +41,9 @@ CONFIGURE_ARGS=		-DUTFCPP_PATH=${LOCALBASE}/include/utfcpp
 # installation bits are removed as the remaining .info files are
 # not generated...see post-install below.
 CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On
+
+# libedit support requires readline headers that aren't installed on OpenBSD
+CONFIGURE_ARGS +=	-DHAVE_EDIT:=Off
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt
