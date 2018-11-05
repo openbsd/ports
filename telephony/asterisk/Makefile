@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2018/09/20 22:19:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.286 2018/11/05 17:24:32 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -269,7 +269,7 @@ pre-patch:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
 
-post-patch:
+do-gen:
 	@#for clang#  sed -i.beforesubst -e 's, -ftrampolines,,' ${WRKSRC}/Makefile
 	cd ${WRKSRC}; \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
