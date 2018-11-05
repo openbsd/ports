@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2018/11/05 19:10:15 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.5.0
+VERSION =		1.5.3
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
-REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -43,7 +42,7 @@ do-install:
 .endfor
 
 post-install:
-	@find ${WRKINST} -type f -name '*.beforesubst' -exec rm {} \;
-	@find ${WRKINST} -type f -name '*.orig' -exec rm {} \;
+	@find ${WRKINST} -type f \
+		\( -name '*.beforesubst' -o -name '*.orig' \) -delete
 
 .include <bsd.port.mk>
