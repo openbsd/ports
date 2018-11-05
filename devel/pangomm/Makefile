@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2018/11/05 17:20:11 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.40.1
-REVISION =		1
+GNOME_VERSION =		2.42.0
 
 CATEGORIES =		devel x11
 
@@ -17,12 +16,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext Xrender cairo cairomm-1.0 expat ffi fontconfig
-WANTLIB += freetype glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += sigc-2.0 xcb xcb-render xcb-shm z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender cairo cairomm-1.0
+WANTLIB += expat ffi fontconfig freetype fribidi glib-2.0 glibmm-2.4
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png sigc-2.0 xcb xcb-render xcb-shm z
 
 MODULES =		x11/gnome
 

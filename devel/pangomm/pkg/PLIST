@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/08/20 11:57:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/11/05 17:20:11 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 include/pangomm-1.4/
 include/pangomm-1.4/pangomm/
@@ -78,8 +78,6 @@ share/doc/pangomm-1.4/images/top.gif
 share/doc/pangomm-1.4/reference/
 share/doc/pangomm-1.4/reference/html/
 share/doc/pangomm-1.4/reference/html/annotated.html
-share/doc/pangomm-1.4/reference/html/arrowdown.png
-share/doc/pangomm-1.4/reference/html/arrowright.png
 share/doc/pangomm-1.4/reference/html/bc_s.png
 share/doc/pangomm-1.4/reference/html/bdwn.png
 share/doc/pangomm-1.4/reference/html/classPango_1_1Analysis-members.html
@@ -179,12 +177,14 @@ share/doc/pangomm-1.4/reference/html/dynsections.js
 share/doc/pangomm-1.4/reference/html/folderclosed.png
 share/doc/pangomm-1.4/reference/html/folderopen.png
 share/doc/pangomm-1.4/reference/html/functions.html
+share/doc/pangomm-1.4/reference/html/functions_0x7e.html
 share/doc/pangomm-1.4/reference/html/functions_b.html
 share/doc/pangomm-1.4/reference/html/functions_c.html
 share/doc/pangomm-1.4/reference/html/functions_d.html
 share/doc/pangomm-1.4/reference/html/functions_e.html
 share/doc/pangomm-1.4/reference/html/functions_f.html
 share/doc/pangomm-1.4/reference/html/functions_func.html
+share/doc/pangomm-1.4/reference/html/functions_func_0x7e.html
 share/doc/pangomm-1.4/reference/html/functions_func_b.html
 share/doc/pangomm-1.4/reference/html/functions_func_c.html
 share/doc/pangomm-1.4/reference/html/functions_func_d.html
@@ -204,7 +204,6 @@ share/doc/pangomm-1.4/reference/html/functions_func_t.html
 share/doc/pangomm-1.4/reference/html/functions_func_u.html
 share/doc/pangomm-1.4/reference/html/functions_func_w.html
 share/doc/pangomm-1.4/reference/html/functions_func_x.html
-share/doc/pangomm-1.4/reference/html/functions_func_~.html
 share/doc/pangomm-1.4/reference/html/functions_g.html
 share/doc/pangomm-1.4/reference/html/functions_h.html
 share/doc/pangomm-1.4/reference/html/functions_i.html
@@ -221,7 +220,6 @@ share/doc/pangomm-1.4/reference/html/functions_u.html
 share/doc/pangomm-1.4/reference/html/functions_vars.html
 share/doc/pangomm-1.4/reference/html/functions_w.html
 share/doc/pangomm-1.4/reference/html/functions_x.html
-share/doc/pangomm-1.4/reference/html/functions_~.html
 share/doc/pangomm-1.4/reference/html/graph_legend.html
 share/doc/pangomm-1.4/reference/html/graph_legend.png
 share/doc/pangomm-1.4/reference/html/group__pangommEnums.html
@@ -251,7 +249,10 @@ share/doc/pangomm-1.4/reference/html/inherit_graph_8.png
 share/doc/pangomm-1.4/reference/html/inherit_graph_9.png
 share/doc/pangomm-1.4/reference/html/inherits.html
 share/doc/pangomm-1.4/reference/html/jquery.js
+share/doc/pangomm-1.4/reference/html/menu.js
+share/doc/pangomm-1.4/reference/html/menudata.js
 share/doc/pangomm-1.4/reference/html/modules.html
+share/doc/pangomm-1.4/reference/html/namespaceGlib.html
 share/doc/pangomm-1.4/reference/html/namespacePango.html
 share/doc/pangomm-1.4/reference/html/namespacemembers.html
 share/doc/pangomm-1.4/reference/html/namespacemembers_c.html
@@ -304,11 +305,13 @@ share/doc/pangomm-1.4/reference/html/since_1_32_4.html
 share/doc/pangomm-1.4/reference/html/since_1_38.html
 share/doc/pangomm-1.4/reference/html/since_1_4.html
 share/doc/pangomm-1.4/reference/html/since_1_40.html
+share/doc/pangomm-1.4/reference/html/since_1_42.html
 share/doc/pangomm-1.4/reference/html/since_1_6.html
 share/doc/pangomm-1.4/reference/html/since_1_8.html
 share/doc/pangomm-1.4/reference/html/since_2_14.html
 share/doc/pangomm-1.4/reference/html/since_2_16.html
 share/doc/pangomm-1.4/reference/html/since_2_28.html
+share/doc/pangomm-1.4/reference/html/since_2_42.html
 share/doc/pangomm-1.4/reference/html/splitbar.png
 share/doc/pangomm-1.4/reference/html/structPango_1_1AttributeTraits-members.html
 share/doc/pangomm-1.4/reference/html/structPango_1_1AttributeTraits.html
