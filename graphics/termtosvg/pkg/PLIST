@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/17 16:15:26 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/05 08:15:31 fcambus Exp $
 bin/termtosvg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -20,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg/asciicast.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/config.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/base16_default_dark.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/dracula.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/progress_bar.svg
