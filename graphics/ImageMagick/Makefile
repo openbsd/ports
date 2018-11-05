@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.182 2018/11/05 17:23:12 sthen Exp $
 
 COMMENT=		image processing tools
 
@@ -79,8 +79,5 @@ FAKE_FLAGS=		CONFIGURE_PATH=${PREFIX}/share/examples/ImageMagick
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} $$(find . -name '*.pc.in')
-
-xxpost-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ImageMagick
 
 .include <bsd.port.mk>
