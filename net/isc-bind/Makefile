@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.84 2018/10/19 14:04:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2018/11/06 13:48:40 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.11.5
+V=		9.12.3
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-# in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  3.5
-SHARED_LIBS +=  isccc                0.0
-SHARED_LIBS +=  dns                  6.2
-SHARED_LIBS +=  isccfg               1.1
+SHARED_LIBS +=  isc                  1.0
+SHARED_LIBS +=  isccc                1.0
+SHARED_LIBS +=  dns                  7.0
+SHARED_LIBS +=  ns                   0.0
+SHARED_LIBS +=  isccfg               2.0
 SHARED_LIBS +=  bind9                0.1
-SHARED_LIBS +=  lwres                0.1
-SHARED_LIBS +=  irs                  0.0
+SHARED_LIBS +=  irs                  1.0
 
 CATEGORIES=	net
 
