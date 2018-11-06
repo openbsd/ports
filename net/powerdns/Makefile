@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2018/09/09 17:47:28 florian Exp $
+# $OpenBSD: Makefile,v 1.65 2018/11/06 22:52:06 sthen Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 
-V=			4.1.4
+V=			4.1.5
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += boost_program_options-mt c crypto sodium sqlite3
+WANTLIB-main += boost_program_options-mt c crypto sodium sqlite3 z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 

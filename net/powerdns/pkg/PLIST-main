@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2018/05/09 09:39:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2018/11/06 22:52:06 sthen Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
@@ -6,6 +6,7 @@
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/
+@rcscript ${RCDIR}/pdns_server
 @bin bin/dnsbulktest
 @bin bin/dnsgram
 @bin bin/dnsreplay
@@ -56,4 +57,3 @@ share/doc/pdns/schema.sqlite3.sql
 share/examples/pdns/
 share/examples/pdns/pdns.conf
 @sample ${SYSCONFDIR}/pdns.conf
-@rcscript ${RCDIR}/pdns_server
