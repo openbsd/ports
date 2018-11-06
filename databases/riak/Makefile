@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2018/11/06 21:57:25 naddy Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.2.5
@@ -149,7 +149,7 @@ pre-configure:
 	cd ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}/ && ${SETENV} \
 	    AUTOCONF_VERSION=${snappy_AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${snappy_AUTOMAKE_VERSION} \
-	    ./autogen.sh
+	    autoreconf -fi
 	mkdir -p ${WRKSRC}/rel/riak/etc
 
 do-install:
