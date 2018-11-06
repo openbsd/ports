@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_app_app_cc,v 1.1 2018/11/06 10:19:31 landry Exp $
+$OpenBSD: patch-src_app_app_cc,v 1.2 2018/11/06 12:43:51 landry Exp $
 
 Fix build on !clang:
 app.cc:309:39: error: cannot convert 'const GdkRGBA {aka const _GdkRGBA} to 'gdouble {aka double}' in initialization
@@ -13,7 +13,7 @@ Index: src/app/app.cc
                          alpha = get_alpha();
  
 -                GdkRGBA color{bg_color};
-+                GdkRGBA color(bg_color);
++                GdkRGBA color = bg_color;
                  color.alpha = alpha;
                  return color;
          }
