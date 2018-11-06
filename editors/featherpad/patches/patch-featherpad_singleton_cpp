@@ -1,0 +1,23 @@
+$OpenBSD: patch-featherpad_singleton_cpp,v 1.1.1.1 2018/11/06 23:55:20 bcallah Exp $
+
+Index: featherpad/singleton.cpp
+--- featherpad/singleton.cpp.orig
++++ featherpad/singleton.cpp
+@@ -24,7 +24,7 @@
+ #include <QCryptographicHash>
+ 
+ #ifdef HAS_X11
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+ #include <QX11Info>
+ #endif
+ #endif
+@@ -41,7 +41,7 @@ FPsingleton::FPsingleton (int &argc, char **argv) : QA
+ {
+ #ifdef HAS_X11
+     // For now, the lack of x11 is seen as wayland.
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+ #if QT_VERSION < 0x050200
+     isX11_ = true;
+ #else

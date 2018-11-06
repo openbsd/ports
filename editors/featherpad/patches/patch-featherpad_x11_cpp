@@ -1,0 +1,50 @@
+$OpenBSD: patch-featherpad_x11_cpp,v 1.1.1.1 2018/11/06 23:55:20 bcallah Exp $
+
+Index: featherpad/x11.cpp
+--- featherpad/x11.cpp.orig
++++ featherpad/x11.cpp
+@@ -20,7 +20,7 @@
+ #include <QString>
+ #include "x11.h"
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+ #include <X11/Xatom.h>
+ #include <QX11Info>
+ #endif
+@@ -37,7 +37,7 @@ long fromDesktop()
+ {
+     long res = -1;
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+     Display  *disp = QX11Info::display();
+     if (!disp) return res;
+ 
+@@ -72,7 +72,7 @@ long onWhichDesktop (Window window)
+ {
+     long res = -1;
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+     Display *disp = QX11Info::display();
+     if (!disp) return res;
+ 
+@@ -107,7 +107,7 @@ long onWhichDesktop (Window window)
+ 
+ bool isWindowShaded (Window window)
+ {
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+     Display *disp = QX11Info::display();
+     if (!disp) return false;
+ 
+@@ -142,7 +142,7 @@ bool isWindowShaded (Window window)
+ /*************************/
+ void unshadeWindow (Window window)
+ {
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+     Display *disp = QX11Info::display();
+     if (!disp) return;
+ 

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/06 23:55:20 bcallah Exp $
+@bin bin/featherpad
+@bin bin/fpad
+share/applications/featherpad.desktop
+share/featherpad/
+share/featherpad/help
+share/featherpad/translations/
+share/featherpad/translations/featherpad_cy.qm
+share/featherpad/translations/featherpad_da.qm
+share/featherpad/translations/featherpad_de.qm
+share/featherpad/translations/featherpad_eo.qm
+share/featherpad/translations/featherpad_es.qm
+share/featherpad/translations/featherpad_fr.qm
+share/featherpad/translations/featherpad_lt.qm
+share/featherpad/translations/featherpad_pl.qm
+share/featherpad/translations/featherpad_ru.qm
+share/featherpad/translations/featherpad_tr.qm
+share/featherpad/translations/featherpad_zh_CN.qm
+share/icons/hicolor/scalable/apps/featherpad.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

@@ -1,0 +1,14 @@
+$OpenBSD: patch-featherpad_x11_h,v 1.1.1.1 2018/11/06 23:55:20 bcallah Exp $
+
+Index: featherpad/x11.h
+--- featherpad/x11.h.orig
++++ featherpad/x11.h
+@@ -20,7 +20,7 @@
+ #ifndef X11_H
+ #define X11_H
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_FREEBSD || defined Q_OS_OPENBSD
+ #include <X11/Xlib.h>
+ #endif
+ 
