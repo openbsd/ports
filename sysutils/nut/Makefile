@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2018/11/06 18:26:27 landry Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -85,7 +85,8 @@ CONFIGURE_ARGS+=	--without-neon
 MULTI_PACKAGES+=	-xml
 .endif
 
-LIB_DEPENDS-main=	devel/libtool,-ltdl \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			devel/libtool,-ltdl \
 			devel/libusb-compat
 RUN_DEPENDS-main=	# empty
 
