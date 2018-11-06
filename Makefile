@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/07/09 13:48:16 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2018/11/06 10:45:27 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -102,6 +102,15 @@ search:	${.CURDIR}/INDEX
 	@awk -F\| '$$1 ~ /${name}/ { printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10, $$11); }' ${.CURDIR}/INDEX
 .  endif
 .endif
+
+fix-permissions:
+	@{ echo "COMMENT=test"; \
+	echo "CATEGORIES=test"; \
+	echo "PKGPATH=test/a"; \
+	echo "DISTNAME=test"; \
+	echo "PERMIT_PACKAGE_CDROM=Yes"; \
+	echo "ECHO_MSG=:"; \
+	echo ".include <bsd.port.mk>"; }|${MAKE} -f - fix-permissions
 
 homepages.html:
 	@echo '<html><ul>' >$@
