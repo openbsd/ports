@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2018/10/26 16:16:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.61 2018/11/06 09:52:40 sebastia Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-VERSION =		3.12.0
+VERSION =		3.12.1
 DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.2 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
-
-REVISION =		0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
