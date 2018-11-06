@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.182 2018/11/05 17:23:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.183 2018/11/06 22:27:13 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.10
-DASHVER=		10
-REVISION=		2
+DASHVER=		14
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
@@ -79,5 +78,8 @@ FAKE_FLAGS=		CONFIGURE_PATH=${PREFIX}/share/examples/ImageMagick
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} $$(find . -name '*.pc.in')
+
+post-install:
+	rm ${PREFIX}/share/doc/ImageMagick/www/api/*php
 
 .include <bsd.port.mk>
