@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_src_inputmethods_imsw-none_qnoneinputcontextplugin_cpp,v 1.1 2018/11/06 20:09:35 naddy Exp $
+
+Index: plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp
+--- plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp.orig
++++ plugins/src/inputmethods/imsw-none/qnoneinputcontextplugin.cpp
+@@ -45,6 +45,7 @@
+ #include <qinputcontextfactory.h>
+ #include <qsettings.h>
+ 
++#include <stdlib.h>	// getenv()
+ 
+ QNoneInputContextPlugin::QNoneInputContextPlugin()
+ {
