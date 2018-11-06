@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2018/11/06 10:45:27 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2018/11/06 10:45:48 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -125,4 +125,4 @@ pkglocatedb:
 	    >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb
 
 .PHONY: index search distfiles-update-locatedb \
-	pkglocatedb print-licenses print-index
+	pkglocatedb print-licenses print-index fix-permissions
