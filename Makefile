@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2018/11/06 10:45:48 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2018/11/06 11:13:44 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
 .endif
 
 PKGPATH =
-MIRROR_MK ?= ${.CURDIR}/distfiles/Makefile
 DISTFILES_DB ?= ${.CURDIR}/infrastructure/db/locate.database
 
 .if defined(SUBDIR)
