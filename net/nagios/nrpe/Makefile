@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.32 2018/11/07 11:07:11 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
 DISTNAME=	nrpe-2.15
-REVISION=	8
+REVISION=	9
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+= --libexecdir=${LOCALBASE}/libexec/nagios \
 CONFIGURE_ARGS+= --disable-ssl
 .else
 WANTLIB+=	lib/eopenssl/crypto lib/eopenssl/ssl
-LIB_DEPENDS=	security/openssl
+LIB_DEPENDS=	security/openssl/1.0.2
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -nostdinc -I${LOCALBASE}/include/eopenssl -I/usr/include" \
 		LDFLAGS="-L${LOCALBASE}/lib/eopenssl -Wl,-rpath,${LOCALBASE}/lib/eopenssl"
 .endif

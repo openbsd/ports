@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/25 22:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/11/07 11:07:11 sthen Exp $
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
 
 V=		1.5
-REVISION-main=	2
+REVISION=	3
 DISTNAME=	nsca-ng-$V
 PKGNAME-main=	nsca-ng-$V
 PKGNAME-client=	nsca-ng-client-$V
@@ -23,7 +23,7 @@ WANTLIB-main=	${WANTLIB} confuse
 MASTER_SITES=		https://www.nsca-ng.org/download/
 
 LIB_DEPENDS=		devel/libev \
-			security/openssl
+			security/openssl/1.0.2
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libconfuse
 

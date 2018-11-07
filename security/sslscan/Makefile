@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/08/30 17:05:21 jsing Exp $
+# $OpenBSD: Makefile,v 1.18 2018/11/07 11:07:11 sthen Exp $
 
 COMMENT=	SSL port scanner
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	$V-rbsec
 DISTNAME=	sslscan-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security net
 
@@ -34,7 +34,7 @@ MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 SUBST_VARS=	SUFFIX
 
 .if ${FLAVOR:Mopenssl}
-BUILD_DEPENDS=	security/openssl:patch
+BUILD_DEPENDS=	security/openssl/1.0.2:patch
 SUFFIX=		-openssl
 FULLPKGNAME=	sslscan-openssl-$V
 ALL_TARGET=	static
@@ -44,7 +44,7 @@ CFLAGS+=	-nostdinc -I${WRKSRC}/openssl/include -I/usr/include
 WANTLIB +=	z
 
 post-extract:
-	ln -s ${WRKDIR}/security/openssl/openssl-* ${WRKSRC}/openssl
+	ln -s ${WRKDIR}/security/openssl/1.0.2/openssl-* ${WRKSRC}/openssl
 	-mkdir -p ${WRKSRC}/openssl/.git
 	rm -f ${WRKSRC}/openssl/Makefile
 .else
