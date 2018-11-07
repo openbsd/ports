@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2018/07/20 10:58:26 juanfra Exp $
+# $OpenBSD: Makefile,v 1.53 2018/11/07 13:39:46 espie Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.6.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-crypto \
 		--with-sqlite3=no \
+		--with-nss=no \
 		--with-pgsql=no \
 		--with-mysql=no \
 		--with-oracle=no \
