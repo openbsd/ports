@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.99 2018/11/02 12:26:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.100 2018/11/07 09:17:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}client.${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configprovider.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
@@ -48,6 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/client.py
 lib/python${MODPY_VERSION}/site-packages/botocore/compat.py
 lib/python${MODPY_VERSION}/site-packages/botocore/config.py
 lib/python${MODPY_VERSION}/site-packages/botocore/configloader.py
+lib/python${MODPY_VERSION}/site-packages/botocore/configprovider.py
 lib/python${MODPY_VERSION}/site-packages/botocore/credentials.py
 lib/python${MODPY_VERSION}/site-packages/botocore/data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/_retry.json
@@ -393,6 +395,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/service-2.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/paginators-1.json
@@ -662,6 +665,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint-email/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint-email/2018-07-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint-email/2018-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint-email/2018-07-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pinpoint/2016-12-01/service-2.json
