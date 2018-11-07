@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/07/15 13:10:46 jca Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/11/07 23:26:14 ajacoutot Exp $
 @bin bin/bison
 @info info/bison.info
 @comment lib/charset.alias
@@ -39,12 +39,21 @@ share/doc/bison/README
 share/doc/bison/THANKS
 share/doc/bison/TODO
 share/doc/bison/examples/
+share/doc/bison/examples/README
+share/doc/bison/examples/c++/
+share/doc/bison/examples/c++/Makefile
+share/doc/bison/examples/c++/README
+share/doc/bison/examples/c++/simple.yy
+share/doc/bison/examples/c++/variant-11.yy
+share/doc/bison/examples/c++/variant.yy
 share/doc/bison/examples/calc++/
-share/doc/bison/examples/calc++/calc++-driver.cc
-share/doc/bison/examples/calc++/calc++-driver.hh
-share/doc/bison/examples/calc++/calc++-parser.yy
-share/doc/bison/examples/calc++/calc++-scanner.ll
+share/doc/bison/examples/calc++/Makefile
+share/doc/bison/examples/calc++/README
 share/doc/bison/examples/calc++/calc++.cc
+share/doc/bison/examples/calc++/driver.cc
+share/doc/bison/examples/calc++/driver.hh
+share/doc/bison/examples/calc++/parser.yy
+share/doc/bison/examples/calc++/scanner.ll
 share/doc/bison/examples/mfcalc/
 share/doc/bison/examples/mfcalc/calc.h
 share/doc/bison/examples/mfcalc/mfcalc.y

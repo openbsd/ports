@@ -1,24 +1,32 @@
-# $OpenBSD: Makefile,v 1.55 2018/07/15 13:10:46 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2018/11/07 23:26:14 ajacoutot Exp $
 
 COMMENT=	GNU parser generator
 
-DISTNAME=	bison-3.0.5
+DISTNAME=	bison-3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gnu.org/software/bison/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c iconv intl
+WANTLIB=	c iconv intl m
+
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
 LIB_DEPENDS=	devel/gettext
-BUILD_DEPENDS=	devel/help2man \
+BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/help2man \
 		devel/m4
 RUN_DEPENDS=	devel/m4
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-yacc
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+
+do-gen:
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} automake -fi
 
 .include <bsd.port.mk>
