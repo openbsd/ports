@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/01 11:52:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/11/07 08:26:15 rsadowski Exp $
 
 PKG_ARCH =	*
 
@@ -16,7 +16,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM = Yes
 
 EXTRACT_SUFX =	.zip
-MASTER_SITES =	http://sizeofvoid.org/pub/OpenBSD/distfiles/
+MASTER_SITES =	https://sizeofvoid.org/pub/OpenBSD/distfiles/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
