@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/30 14:32:59 schwarze Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/07 19:57:55 naddy Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
@@ -53,6 +53,8 @@ LIB_DEPENDS =	archivers/libzip \
 		x11/qt5/qtbase \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebkit
+
+USE_GMAKE =	Yes
 
 CONFIGURE_ARGS +=	-DNO_DOCS:Bool=ON \
 			-DBTSUPPORT:Bool=OFF \
