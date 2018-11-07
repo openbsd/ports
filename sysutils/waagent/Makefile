@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/07 11:10:27 sthen Exp $
 
 COMMENT=		Microsoft Azure Linux Agent
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		Azure
 GH_PROJECT=		WALinuxAgent
 GH_TAGNAME=		v${V}
 PKGNAME=		waagent-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	bin/waagent
 
 # LibreSSL has removed CMS support
-RUN_DEPENDS=		security/openssl
+RUN_DEPENDS=		security/openssl/1.0.2
 
 NO_TEST=		Yes
 
