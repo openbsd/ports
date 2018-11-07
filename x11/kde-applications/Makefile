@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/04 05:31:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2018/11/07 07:40:41 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -13,7 +13,7 @@
      #SUBDIR += bovo
      #SUBDIR += calendarsupport
      SUBDIR += cantor
-     #SUBDIR += cervisia
+     SUBDIR += cervisia
      SUBDIR += dolphin
      SUBDIR += dolphin-plugins
      SUBDIR += dragon

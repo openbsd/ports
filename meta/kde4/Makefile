@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/09/11 04:32:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2018/11/07 07:40:41 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,7 +28,7 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	8
 REVISION-games = 0
-REVISION-sdk = 1
+REVISION-sdk = 2
 REVISION-edu = 1
 REVISION-multimedia = 0
 REVISION-extras = 8
@@ -177,7 +177,6 @@ RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/zeroconf-ioslave
 
 RUN_DEPENDS-sdk = \
-	${MODKDE4_DEP_DIR}/cervisia		\
 	${MODKDE4_DEP_DIR}/dev-scripts		\
 	${MODKDE4_DEP_DIR}/dev-utils		\
 	${MODKDE4_DEP_DIR}/dolphin-plugins	\
