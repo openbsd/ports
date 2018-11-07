@@ -1,4 +1,4 @@
-$OpenBSD: patch-Configure,v 1.8 2017/01/26 14:40:04 sthen Exp $
+$OpenBSD: patch-Configure,v 1.1 2018/11/07 11:00:30 sthen Exp $
 --- Configure.orig	Thu Jan 26 13:22:03 2017
 +++ Configure	Thu Jan 26 14:27:37 2017
 @@ -477,19 +477,19 @@ my %table=(

@@ -1,69 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2018/08/15 13:19:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2018/11/07 11:00:29 sthen Exp $
 
-COMMENT=	TLS/SSL library and tools
+SUBDIR =
+SUBDIR += 1.0.2
+SUBDIR += 1.1
 
-PORTROACH=	limit:^1\.0\.
-V=		1.0.2p
-DISTNAME=	openssl-$V
-PKGNAME=	openssl-$V
-
-SHLIBVER=	5.3
-SHARED_LIBS=	crypto ${SHLIBVER} \
-		ssl ${SHLIBVER}
-
-CATEGORIES=	security net
-
-HOMEPAGE=	http://www.openssl.org/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
-
-# OpenSSL
-PERMIT_PACKAGE_CDROM=	Yes
-
-WANTLIB += c
-
-MASTER_SITES=	https://www.openssl.org/source/ \
-		https://www.openssl.org/source/old/${V:C/.$//}/ \
-		ftp://ftp.openssl.org/source/
-
-FAKE_FLAGS=	MANDIR=${PREFIX}/lib/eopenssl/man
-
-CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	config
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--openssldir=${PREFIX}/share/eopenssl \
-	                --install_prefix=${WRKINST} \
-			no-threads no-krb5 \
-			no-rc5 no-ssl2 no-ssl3 \
-			shared
-
-# install to unusual directory name - this port is *not* intended to be
-# picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
-# common names like lib/openssl, openssl/lib, etc, *do* get picked up.
-MAKE_FLAGS+=	CC="${CC}" \
-		LIBDIR="lib/eopenssl" \
-		LIBRPATH="${TRUEPREFIX}/lib/eopenssl" \
-		PORTCFLAGS="${CFLAGS}" \
-		SHLIB_VERSION_NUMBER=${SHLIBVER} \
-		SHLIB_MAJOR=${SHLIBVER:R} \
-		SHLIB_MINOR=${SHLIBVER:E}
-MAKE_ENV+=	LIBRPATH="${TRUEPREFIX}/lib/eopenssl"
-
-post-configure:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-	    ${MAKE_FLAGS} -f ${MAKE_FILE} depend
-
-# include/openssl and pkgconfig files are moved here, doing that in
-# OpenSSL's build infrastructure needs a bunch more patching.
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/eopenssl
-.for i j in openssl eopenssl libssl libessl libcrypto libecrypto
-	mv ${PREFIX}/lib/eopenssl/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
-.endfor
-	rmdir ${PREFIX}/lib/eopenssl/pkgconfig/
-	mv ${PREFIX}/include/openssl ${PREFIX}/include/eopenssl/
-	mv ${PREFIX}/bin/openssl ${PREFIX}/bin/eopenssl
-	mv ${PREFIX}/bin/c_rehash ${PREFIX}/share/eopenssl/misc/
-	rm -f ${PREFIX}/lib/eopenssl/lib{crypto,ssl}.so
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

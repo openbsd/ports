@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/08/15 13:19:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.1 2018/11/07 11:00:30 sthen Exp $
+@pkgpath security/openssl
+@option no-default-conflict
+@option is-branch
+@conflict openssl-<1.1.0
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/

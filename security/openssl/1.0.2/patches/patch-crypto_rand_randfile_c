@@ -1,4 +1,4 @@
-$OpenBSD: patch-crypto_rand_randfile_c,v 1.1 2017/10/27 23:46:53 naddy Exp $
+$OpenBSD: patch-crypto_rand_randfile_c,v 1.1 2018/11/07 11:00:30 sthen Exp $
 
 Index: crypto/rand/randfile.c
 --- crypto/rand/randfile.c.orig

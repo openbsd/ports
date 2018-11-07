@@ -1,0 +1,8 @@
+OpenSSL is an open-source toolkit implementing the Secure Sockets
+Layer (SSL) and Transport Layer Security (TLS) protocols as well as a
+full-strength general purpose cryptography library.
+
+This package is not intended for general-purpose use in OpenBSD -
+it is present to provide support for applications which cannot be made
+compatible with LibReSSL (mostly due to use of removed APIs), and for
+test/comparison purposes.
