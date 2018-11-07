@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/16 23:57:34 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/07 13:48:22 abieber Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
-V =		0.9.2
+V =		0.9.3
 DISTNAME =	restic-${V}
 
 CATEGORIES =	sysutils
@@ -23,8 +23,10 @@ MODGO_TYPE =	bin
 
 NO_TEST =	Yes
 
+ALL_TARGET =	github.com/restic/restic
+
 do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} run -x build.go
+	cd ${WRKSRC} && ${MODGO_CMD} build ./cmd/restic/...
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/restic ${PREFIX}/bin
