@@ -1,21 +1,26 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/03 06:31:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/07 08:01:32 bentley Exp $
 
 COMMENT =		sigrok hardware driver library
 
 SIGROK_PROJECT =	libsigrok
 SIGROK_VERSION =	0.5.1
+MODPY_EGG_VERSION =	${SIGROK_VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  sigrok                    0.1 # 0.0
 SHARED_LIBS +=  sigrokcxx                 0.1 # 4.0
 
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += c ffi ftdi1 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pcre serialport sigc-2.0 usb-1.0 zip
 
 # C++11
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/doxygen
+MODULES =		lang/python
+BUILD_DEPENDS =		devel/doxygen \
+			devel/py-gobject3 \
+			math/py-numpy
 LIB_DEPENDS =		archivers/libzip \
 			comms/sigrok/libserialport \
 			devel/glib2mm \
