@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2018/07/11 16:00:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.51 2018/11/07 20:34:31 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -10,6 +10,7 @@ include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
+include/curl/urlapi.h
 lib/libcurl.a
 lib/libcurl.la
 @lib lib/libcurl.so.${LIBcurl_VERSION}
@@ -137,6 +138,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_DNS_SERVERS.3
 @man man/man3/CURLOPT_DNS_SHUFFLE_ADDRESSES.3
 @man man/man3/CURLOPT_DNS_USE_GLOBAL_CACHE.3
+@man man/man3/CURLOPT_DOH_URL.3
 @man man/man3/CURLOPT_EGDSOCKET.3
 @man man/man3/CURLOPT_ERRORBUFFER.3
 @man man/man3/CURLOPT_EXPECT_100_TIMEOUT_MS.3
@@ -340,7 +342,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_TRANSFER_ENCODING.3
 @man man/man3/CURLOPT_UNIX_SOCKET_PATH.3
 @man man/man3/CURLOPT_UNRESTRICTED_AUTH.3
+@man man/man3/CURLOPT_UPKEEP_INTERVAL_MS.3
 @man man/man3/CURLOPT_UPLOAD.3
+@man man/man3/CURLOPT_UPLOAD_BUFFERSIZE.3
 @man man/man3/CURLOPT_URL.3
 @man man/man3/CURLOPT_USERAGENT.3
 @man man/man3/CURLOPT_USERNAME.3
@@ -366,6 +370,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_easy_setopt.3
 @man man/man3/curl_easy_strerror.3
 @man man/man3/curl_easy_unescape.3
+@man man/man3/curl_easy_upkeep.3
 @man man/man3/curl_escape.3
 @man man/man3/curl_formadd.3
 @man man/man3/curl_formfree.3
@@ -414,6 +419,11 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_strequal.3
 @man man/man3/curl_strnequal.3
 @man man/man3/curl_unescape.3
+@man man/man3/curl_url.3
+@man man/man3/curl_url_cleanup.3
+@man man/man3/curl_url_dup.3
+@man man/man3/curl_url_get.3
+@man man/man3/curl_url_set.3
 @man man/man3/curl_version.3
 @man man/man3/curl_version_info.3
 @man man/man3/libcurl-easy.3
@@ -425,6 +435,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/libcurl-symbols.3
 @man man/man3/libcurl-thread.3
 @man man/man3/libcurl-tutorial.3
+@man man/man3/libcurl-url.3
 @man man/man3/libcurl.3
 share/aclocal/
 share/aclocal/libcurl.m4

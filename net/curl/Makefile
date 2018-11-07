@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.137 2018/09/07 08:41:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.138 2018/11/07 20:34:31 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.61.1
-SHARED_LIBS=	curl                 25.17    # 9.0
+DISTNAME=	curl-7.62.0
+SHARED_LIBS=	curl                 25.18    # 9.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -32,8 +32,7 @@ CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
 CONFIGURE_ENV+= \
     curl_cv_func_select_args="int,fd_set *,struct timeval *,int" \
     curl_cv_func_recv_args="int,void *,size_t,int,ssize_t" \
-    curl_cv_func_send_args="int,const void *,size_t,int,ssize_t" \
-    curl_cv_func_getnameinfo_args="const struct sockaddr *,socklen_t,size_t,int"
+    curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
 
 # Note:
 # use ulimit -p 256 for test
