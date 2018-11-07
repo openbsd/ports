@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/11/04 18:17:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/11/07 22:27:54 sthen Exp $
 
 PV=		7.2
-V=		${PV}.11
-REVISION=	4
-REVISION-main=	5
+V=		${PV}.12
 
-BUILD_DEPENDS+=	devel/bison
-
-CONFIGURE_ENV+=		YACC="${LOCALBASE}/bin/bison -y"
 CONFIGURE_ARGS+=	--with-pcre-jit=no
 
 .include <bsd.port.mk>
