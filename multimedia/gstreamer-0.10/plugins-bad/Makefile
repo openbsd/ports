@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2018/11/07 11:07:34 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -92,6 +92,7 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-faac \
 			--disable-faad \
 			--disable-fbdev \
+			--disable-flite \
 			--disable-gme \
 			--disable-kate \
 			--disable-lv2 \
