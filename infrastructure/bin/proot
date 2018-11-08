@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.61 2018/07/11 12:42:57 espie Exp $
+# $OpenBSD: proot,v 1.62 2018/11/08 09:46:00 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -725,7 +725,7 @@ sub get_snapshot
 		open my $f, '<', "$snapdir/SHA256.sig" 
 		    or $state->fatal("no SHA256.sig");
 		my $line = <$f>;
-		if ($line !~ m/openbsd\s+(\d+)\.(\d+)\s+base/) {
+		if ($line !~ m/openbsd\-(\d+)\.(\d+)\-base/) {
 			$state->fatal("Unrecognized snapshot");
 		}
 		my $v = "$1$2";
