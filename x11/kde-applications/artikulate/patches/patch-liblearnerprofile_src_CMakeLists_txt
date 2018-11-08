@@ -1,0 +1,14 @@
+$OpenBSD: patch-liblearnerprofile_src_CMakeLists_txt,v 1.1.1.1 2018/11/08 14:21:26 rsadowski Exp $
+
+Index: liblearnerprofile/src/CMakeLists.txt
+--- liblearnerprofile/src/CMakeLists.txt.orig
++++ liblearnerprofile/src/CMakeLists.txt
+@@ -51,7 +51,7 @@ set(GENERIC_LIB_SOVERSION "0")
+ set_target_properties(
+     artikulatelearnerprofile
+     PROPERTIES
+-        VERSION ${GENERIC_LIB_VERSION}
++        VERSION ${LIBartikulatelearnerprofile_VERSION}
+         SOVERSION ${GENERIC_LIB_SOVERSION}
+ )
+ 
