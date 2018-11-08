@@ -1,0 +1,33 @@
+$OpenBSD: patch-Common_mk,v 1.1.1.1 2018/11/08 01:04:36 jcs Exp $
+
+Index: Common.mk
+--- Common.mk.orig
++++ Common.mk
+@@ -14,7 +14,7 @@ runscript_if_exists =                                 
+ 
+ # For message printing: pad the right side of the first argument with spaces to
+ # the number of bytes indicated by the second argument.
+-space_pad_to = $(shell echo $(1) "                                                      " | head -c$(2))
++space_pad_to = $(shell echo $(1) "                                                      " | dd bs=1 count=$(2) status=none)
+ 
+ # Call with some text, and a prefix tag if desired (like [AUTODETECTED]),
+ show_config_info = $(call arduino_output,- $(call space_pad_to,$(2),20) $(1))
+@@ -41,6 +41,18 @@ else
+     endif
+     ifeq ($(UNAME_S),Darwin)
+         CURRENT_OS = MAC
++    endif
++    ifeq ($(UNAME_S),OpenBSD)
++        CURRENT_OS = OPENBSD
++	ifndef ARDUINO_DIR
++	    ARDUINO_DIR = ${LOCALBASE}/share/arduino
++	endif
++	ifndef ALTERNATE_CORE_PATH
++	    ALTERNATE_CORE_PATH = $(ARDUINO_DIR)
++	endif
++	ifndef MONITOR_PORT
++	    MONITOR_PORT = /dev/ttyU0
++	endif
+     endif
+ endif
+ $(call show_config_variable,CURRENT_OS,[AUTODETECTED])

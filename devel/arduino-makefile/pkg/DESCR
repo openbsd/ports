@@ -1,0 +1,10 @@
+This is a very simple Makefile which knows how to build Arduino
+sketches. It defines entire workflows for compiling code, flashing
+it to Arduino and even communicating through Serial monitor. You
+don't need to change anything in the Arduino sketches.
+
+To use, create a Makefile and add:
+
+	include ${PREFIX}/share/arduino-makefile/Arduino.mk
+
+Then compile with `gmake` and upload with `gmake upload`.
