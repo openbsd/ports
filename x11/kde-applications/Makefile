@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/07 07:40:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/08 06:35:36 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -6,7 +6,7 @@
      SUBDIR += analitza
      SUBDIR += ark
      #SUBDIR += artikulate
-     #SUBDIR += audiocd-kio
+     SUBDIR += audiocd-kio
      #SUBDIR += baloo
      #SUBDIR += blinken
      #SUBDIR += bomber
@@ -160,8 +160,8 @@
      #SUBDIR += kwalletmanager
      #SUBDIR += kwordquiz
      #SUBDIR += libgravatar
-     #SUBDIR += libkcddb
-     #SUBDIR += libkcompactdisc
+     SUBDIR += libkcddb
+     SUBDIR += libkcompactdisc
      SUBDIR += libkdcraw
      #SUBDIR += libkdegames
      #SUBDIR += libkdepim
