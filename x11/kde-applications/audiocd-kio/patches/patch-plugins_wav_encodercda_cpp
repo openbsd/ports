@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_wav_encodercda_cpp,v 1.1.1.1 2018/11/08 07:01:56 rsadowski Exp $
+
+fix conflict with /usr/include/sys/endian.h
+
+Index: plugins/wav/encodercda.cpp
+--- plugins/wav/encodercda.cpp.orig
++++ plugins/wav/encodercda.cpp
+@@ -48,11 +48,6 @@ extern "C"
+   #undef private
+ }
+ 
+-inline int16_t swap16 (int16_t i)
+-{
+-  return (((i >> 8) & 0xFF) | ((i << 8) & 0xFF00));
+-}
+-
+ long EncoderCda::read(int16_t * buf, int frames){ 
+   QByteArray output;
+   int16_t i16 = 1;
