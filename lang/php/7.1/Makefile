@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/07 22:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/08 21:15:33 sthen Exp $
 
 PV=		7.1
-V=		${PV}.23
-REVISION=	6
+V=		${PV}.24
 
 CONFIGURE_ARGS+=	--with-pcre-jit=no
 

@@ -1,7 +1,8 @@
-$OpenBSD: patch-scripts_Makefile_frag,v 1.1 2018/09/28 22:22:03 sthen Exp $
---- scripts/Makefile.frag.orig.port	Tue Jul 13 18:24:13 2010
-+++ scripts/Makefile.frag	Sat Jun 18 12:14:54 2011
-@@ -3,8 +3,8 @@
+$OpenBSD: patch-scripts_Makefile_frag,v 1.2 2018/11/08 21:15:33 sthen Exp $
+Index: scripts/Makefile.frag
+--- scripts/Makefile.frag.orig
++++ scripts/Makefile.frag
+@@ -2,8 +2,8 @@
  # Build environment install
  #
  
