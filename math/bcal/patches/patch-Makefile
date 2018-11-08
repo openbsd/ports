@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/11/08 04:23:43 bcallah Exp $
+
+Remove -Werror
+Link with -lcurses to appease lld
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,8 +5,8 @@ DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/bcal
+ STRIP ?= strip
+ 
+ CFLAGS ?= -O3
+-CFLAGS += -Wall -Wextra -Wno-unused-parameter -Werror
+-LDLIBS = -lreadline
++CFLAGS += -Wall -Wextra -Wno-unused-parameter
++LDLIBS = -lreadline -lcurses
+ 
+ SRC = $(wildcard src/*.c)
+ INCLUDE = -Iinc
