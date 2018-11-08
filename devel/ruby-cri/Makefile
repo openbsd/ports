@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/16 17:40:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/08 09:21:51 sebastia Exp $
 
 COMMENT =		command line interfaces with subcommands
 
-DISTNAME =		cri-2.6.1
+DISTNAME =		cri-2.15.2
 CATEGORIES =		devel
 HOMEPAGE =		http://stoneship.org/software/cri/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
