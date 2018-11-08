@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 04:23:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/08 04:35:48 bcallah Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
-ONLY_FOR_ARCHS =	LP64_ARCHS
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =	storage and general-purpose calculator (Byte CALculator)
 DISTNAME =	bcal-2.0
