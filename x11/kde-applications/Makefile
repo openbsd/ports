@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/08 06:35:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2018/11/08 08:00:56 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -88,7 +88,7 @@
      #SUBDIR += kigo
      #SUBDIR += killbots
      SUBDIR += kimap
-     #SUBDIR += kio-extras
+     SUBDIR += kio-extras
      #SUBDIR += kiriki
      #SUBDIR += kiten
      #SUBDIR += kjumpingcube
