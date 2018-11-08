@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.26 2018/09/05 09:16:19 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.27 2018/11/08 09:19:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -268,6 +268,10 @@ sub dump
 {
 	my ($self, $k, $fh) = @_;
 #	$self->{queue}->dump($k, $fh);
+}
+
+sub remove_stub
+{
 }
 
 package DPB::SubEngine::BuildBase;
