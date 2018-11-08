@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/11/08 14:22:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2018/11/08 17:43:33 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -18,7 +18,7 @@
      SUBDIR += dolphin-plugins
      SUBDIR += dragon
      #SUBDIR += eventviews
-     #SUBDIR += ffmpegthumbs
+     SUBDIR += ffmpegthumbs
      #SUBDIR += filelight
      #SUBDIR += granatier
      #SUBDIR += grantleetheme
