@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1786 2018/11/07 16:31:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1787 2018/11/08 01:12:13 jcs Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -14,7 +14,9 @@
      SUBDIR += apr
      SUBDIR += apr-util
      SUBDIR += apr-util,ldap
+     SUBDIR += arduboy2
      SUBDIR += arduino
+     SUBDIR += arduino-makefile
      SUBDIR += argp-standalone
      SUBDIR += argtable
      SUBDIR += arm-elf
