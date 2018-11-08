@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.5 2018/05/22 21:24:08 jca Exp $
+$OpenBSD: patch-src_main_c,v 1.6 2018/11/08 11:05:32 sthen Exp $
 
 Index: src/main.c
 --- src/main.c.orig
@@ -33,14 +33,14 @@ Index: src/main.c
 +		}
 +	} else {
 +		if (needs_proc_exec) {
-+			if (pledge("stdio rpath wpath cpath inet flock dns"
-+			    " getpw tty proc exec prot_exec", NULL) == -1) {
++			if (pledge("stdio rpath wpath cpath inet fattr flock"
++			    " dns getpw tty proc exec prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
 +				exit(1);
 +			}
 +		} else {
-+			if (pledge("stdio rpath wpath cpath inet flock dns"
-+			    " getpw tty prot_exec", NULL) == -1) {
++			if (pledge("stdio rpath wpath cpath inet fattr flock"
++			    " dns getpw tty prot_exec", NULL) == -1) {
 +				sys_error("pledge\n");
 +				exit(1);
 +			}
