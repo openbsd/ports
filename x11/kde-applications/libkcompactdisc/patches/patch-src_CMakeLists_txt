@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2018/11/08 06:59:26 rsadowski Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -19,6 +19,10 @@ if (HAVE_ALSA)
+     include_directories(${ALSA_INCLUDE_DIRS})
+ endif ()
+ 
++if (PHONON_INCLUDE_DIR)
++	include_directories(${PHONON_INCLUDE_DIR})
++endif ()
++
+ set(wmlib_audio_SRCS
+         wmlib/audio/audio.c
+         wmlib/audio/audio_arts.c
