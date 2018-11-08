@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1787 2018/11/08 01:12:13 jcs Exp $
+# $OpenBSD: Makefile,v 1.1788 2018/11/08 04:27:58 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1481,6 +1481,8 @@
      SUBDIR += py-olefile
      SUBDIR += py-olefile,python3
      SUBDIR += py-optik
+     SUBDIR += py-parallel
+     SUBDIR += py-parallel,python3
      SUBDIR += py-parsedatetime
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
