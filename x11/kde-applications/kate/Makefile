@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/08 17:50:28 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
@@ -32,6 +33,7 @@ RUN_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		devel/kf5/kactivities \
 		devel/kf5/syntax-highlighting \
+		x11/kde-applications/kio-extras \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
