@@ -1,0 +1,4 @@
+The Arduboy2 library is a fork of the Arduboy library, which
+provides a standard application programming interface (API) to the
+display, buttons and other hardware of the Arduino based Arduboy
+miniature game system.
