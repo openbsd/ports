@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/18 21:16:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/08 08:34:25 sebastia Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
-V=			3.4.4
+V=			3.4.5
 DISTNAME=		hiera-${V}
 PKGNAME=		hiera3-${V}
 
 CATEGORIES=		databases
 
-HOMEPAGE=		http://projects.puppetlabs.com/projects/hiera
+HOMEPAGE=		https://puppet.com/docs/hiera/
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
