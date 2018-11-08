@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 04:25:26 bcallah Exp $
+lib/python${MODPY_VERSION}/site-packages/parallel/
+lib/python${MODPY_VERSION}/site-packages/parallel/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}parallelppdev.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}parallelutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}parallelwin32.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/parallel/parallelppdev.py
+lib/python${MODPY_VERSION}/site-packages/parallel/parallelutil.py
+lib/python${MODPY_VERSION}/site-packages/parallel/parallelwin32.py
+lib/python${MODPY_VERSION}/site-packages/pyparallel-0.2.2-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyparallel-0.2.2-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyparallel-0.2.2-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyparallel-0.2.2-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyparallel-0.2.2-py${MODPY_VERSION}.egg-info/top_level.txt
