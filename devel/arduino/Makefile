@@ -1,60 +1,43 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/11/08 01:00:59 jcs Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
-V=		1.0.2
-PKGNAME=	arduino-${V}
-# Arduino uses the ARDUINO macro to control the renaming scheme they did
-# on 1.0.x, from WProgram.h to Arduino.h, this is defined in files/Makefile.
-# If updating the port, check whether this needs to be adjusted.
-DISTNAME=	arduino-${V}-src
+V=		1.8.7
+AVR_V=		1.6.23
 EPOCH=		0
-REVISION =	7
+GH_ACCOUNT=	arduino
+GH_PROJECT=	arduino
+GH_TAGNAME=	${V}
+
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
+		ArduinoCore-avr-${AVR_V}${EXTRACT_SUFX}:0
+
 CATEGORIES=	devel
 HOMEPAGE=	https://www.arduino.cc/
+
+MASTER_SITES0=	https://github.com/${GH_ACCOUNT}/ArduinoCore-avr/archive/${AVR_V}/
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
 PERMIT_PACKAGE_CDROM=   Yes
-
-MASTER_SITES=	https://downloads.arduino.cc/
 
 RUN_DEPENDS=	devel/avr/binutils \
 		devel/avr/gcc \
 		devel/avr/libc \
 		devel/avrdude
 
-BUILD_DEPENDS=	archivers/unzip
-
 NO_BUILD=       Yes
-NO_TEST=     Yes
+NO_TEST=	Yes
 PKG_ARCH=       *
-WRKDIST=	${WRKDIR}/arduino-${V}
+WRKDIST=	${WRKDIR}/Arduino-${V}
+AVR_WRKDIST=	${WRKDIR}/ArduinoCore-avr-${AVR_V}
 
 do-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
-	@${SUBST_CMD} -m ${BINMODE} -c ${FILESDIR}/arduinoboot \
-                ${PREFIX}/bin/arduinoboot
-	@${SUBST_CMD} -m ${BINMODE} -c ${FILESDIR}/arduinoproject \
-                ${PREFIX}/bin/arduinoproject
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
-	@chmod ${BINMODE} ${PREFIX}/bin/*
-	@${SUBST_CMD} -m 444 -c ${FILESDIR}/Makefile \
-                ${PREFIX}/share/examples/arduino/Makefile
-	@${SUBST_CMD} -m 444 -c ${FILESDIR}/template.ino \
-                ${PREFIX}/share/examples/arduino/template.ino
-	@chmod	a+r ${PREFIX}/share/examples/arduino/*
-	@cp -r	${WRKSRC}/build/shared/examples/* \
-		${PREFIX}/share/examples/arduino
-	@cp -r	${WRKSRC}/hardware/arduino/* \
-		${PREFIX}/share/arduino
-	@cp -r	${WRKSRC}/libraries \
-		${PREFIX}/share/arduino
-	@cp -r	${WRKSRC}/{license,readme,todo}.txt \
-		${PREFIX}/share/doc/arduino
-	@unzip	-qnd ${PREFIX}/share/doc/arduino \
-		${WRKSRC}/build/shared/reference.zip
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
-	@find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
+	cp -r ${WRKSRC}/build/shared/examples/* ${PREFIX}/share/examples/arduino
+	cp -r ${WRKSRC}/{license.txt,README.md} ${PREFIX}/share/doc/arduino
+	cp -r ${AVR_WRKDIST}/* ${PREFIX}/share/arduino
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
+	find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
 
 .include <bsd.port.mk>
