@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/09 16:03:39 anton Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/08 19:02:40 anton Exp $
 
 COMMENT =	yank terminal output to clipboard
 
-V =		1.0.0
+V =		1.1.0
 DISTNAME =	yank-${V}
 CATEGORIES =	sysutils
 
