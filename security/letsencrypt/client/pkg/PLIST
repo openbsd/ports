@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/08/10 19:54:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/11/08 18:00:20 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}auth_handler.${
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}cert_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}crypto_util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -44,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/auth_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/cert_manager.py
 lib/python${MODPY_VERSION}/site-packages/certbot/cli.py
 lib/python${MODPY_VERSION}/site-packages/certbot/client.py
+lib/python${MODPY_VERSION}/site-packages/certbot/compat.py
 lib/python${MODPY_VERSION}/site-packages/certbot/configuration.py
 lib/python${MODPY_VERSION}/site-packages/certbot/constants.py
 lib/python${MODPY_VERSION}/site-packages/certbot/crypto_util.py
@@ -142,6 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}auth_hand
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}cert_manager_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}cli_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}client_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}compat_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}configuration_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}crypto_util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/${MODPY_PYCACHE}eff_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -166,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/auth_handler_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/cert_manager_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/cli_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/client_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/configuration_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/

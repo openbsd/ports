@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2018/08/10 19:54:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/08 18:00:20 sthen Exp $
 
 COMMENT=	client for certificate authorities using ACME protocols
+
+HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	certbot-${MODPY_EGG_VERSION}
 
