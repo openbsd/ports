@@ -1,0 +1,5 @@
+A kioslave is a plugin designed to be intimately familiar with a certain
+protocol, so that a standardized interface can be used to get at data from any
+number of places. A few examples are the http and ftp kioslaves, which using
+nearly identical methods will retrieve data from an http or ftp server
+respectively.
