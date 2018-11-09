@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules__ssl_c,v 1.3 2018/08/09 17:39:27 danj Exp $
+$OpenBSD: patch-Modules__ssl_c,v 1.4 2018/11/09 19:55:39 danj Exp $
 
 XXX maybe the second hunk can go away now we have auto-init, I'm not sure
 exactly what python's lock protects
@@ -6,7 +6,7 @@ exactly what python's lock protects
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
 +++ Modules/_ssl.c
-@@ -104,7 +104,8 @@ struct py_ssl_library_code {
+@@ -105,7 +105,8 @@ struct py_ssl_library_code {
  /* Include generated data (error codes) */
  #include "_ssl_data.h"
  
@@ -16,7 +16,7 @@ Index: Modules/_ssl.c
  #  define OPENSSL_VERSION_1_1 1
  #  define PY_OPENSSL_1_1_API 1
  #endif
-@@ -165,6 +166,9 @@ struct py_ssl_library_code {
+@@ -166,6 +167,9 @@ struct py_ssl_library_code {
  
  #if defined(OPENSSL_VERSION_1_1) && !defined(OPENSSL_NO_SSL2)
  #define OPENSSL_NO_SSL2
