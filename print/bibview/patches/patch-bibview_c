@@ -1,6 +1,8 @@
-$OpenBSD: patch-bibview_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
---- bibview.c.orig	Fri Apr 21 18:49:15 1995
-+++ bibview.c	Tue Apr 17 14:30:50 2001
+$OpenBSD: patch-bibview_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: bibview.c
+--- bibview.c.orig
++++ bibview.c
 @@ -170,9 +170,9 @@ int max_bibtex_types;
  /* fallback resources */
  static char *fallback_resources[] = {

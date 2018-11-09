@@ -1,6 +1,8 @@
-$OpenBSD: patch-FileNom_c,v 1.1 2001/04/17 13:13:26 naddy Exp $
---- FileNom.c.orig	Thu May  4 18:15:11 1995
-+++ FileNom.c	Tue Apr 17 14:30:50 2001
+$OpenBSD: patch-FileNom_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: FileNom.c
+--- FileNom.c.orig
++++ FileNom.c
 @@ -822,20 +822,20 @@ FillWindow(fnw)
      Dimension height, internalHeight, rowSpacing;
      int num, newNum, idx;

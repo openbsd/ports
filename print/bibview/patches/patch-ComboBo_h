@@ -1,6 +1,8 @@
-$OpenBSD: patch-ComboBo_h,v 1.1 2001/04/17 13:13:26 naddy Exp $
---- ComboBo.h.orig	Thu Nov 25 14:11:05 1993
-+++ ComboBo.h	Tue Apr 17 14:30:50 2001
+$OpenBSD: patch-ComboBo_h,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: ComboBo.h
+--- ComboBo.h.orig
++++ ComboBo.h
 @@ -23,7 +23,9 @@
  
  #define XtNselectCallback "selectCallback"

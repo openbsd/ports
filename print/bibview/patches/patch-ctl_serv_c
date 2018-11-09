@@ -1,6 +1,8 @@
-$OpenBSD: patch-ctl_serv_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
---- ctl_serv.c.orig	Thu Nov 25 14:11:13 1993
-+++ ctl_serv.c	Tue Apr 17 14:30:50 2001
+$OpenBSD: patch-ctl_serv_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: ctl_serv.c
+--- ctl_serv.c.orig
++++ ctl_serv.c
 @@ -307,11 +307,11 @@ char *tempName;
        bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
        strcpy(bp->macrofile,tempName);

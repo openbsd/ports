@@ -1,6 +1,8 @@
-$OpenBSD: patch-bib_file_c,v 1.1 2001/04/17 13:13:30 naddy Exp $
---- bib_file.c.orig	Thu May  4 18:19:36 1995
-+++ bib_file.c	Tue Apr 17 14:30:51 2001
+$OpenBSD: patch-bib_file_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: bib_file.c
+--- bib_file.c.orig
++++ bib_file.c
 @@ -466,10 +466,10 @@ Errcode bifFileRead(BibPtr bp)
    bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
    strcpy(bp->macrofile,tempName);

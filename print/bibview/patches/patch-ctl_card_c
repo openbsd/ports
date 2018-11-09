@@ -1,6 +1,8 @@
-$OpenBSD: patch-ctl_card_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
---- ctl_card.c.orig	Mon May  8 18:25:53 1995
-+++ ctl_card.c	Tue Apr 17 14:30:50 2001
+$OpenBSD: patch-ctl_card_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+
+Index: ctl_card.c
+--- ctl_card.c.orig
++++ ctl_card.c
 @@ -659,15 +659,15 @@ String hlpstring;
        sprintf(aw->shellName, "%s: NEW", glbFldToName(nannote));
     else
