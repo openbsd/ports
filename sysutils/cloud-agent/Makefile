@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/16 11:58:32 reyk Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/09 10:08:20 sthen Exp $
+
+BROKEN=		needs to adapt to libressl changes
 
 COMMENT=	cloud provisioning for OpenBSD VMs
 
