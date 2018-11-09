@@ -1,0 +1,4 @@
+KBounce is a single player arcade game with the elements of puzzle.
+It is played on a field, surrounded by walls, with two or more balls
+that move about in the field bouncing off of walls. The player can
+build new walls, decreasing the size of the active field.
