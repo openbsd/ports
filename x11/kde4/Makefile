@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/11/08 14:23:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2018/11/09 07:09:20 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -134,7 +134,7 @@ SUBDIR += sweeper
 
 # former kdeedu
 #SUBDIR += artikulate		x11/kde-applications
-SUBDIR += blinken
+#SUBDIR += blinken		x11/kde-applications
 #SUBDIR += cantor		x11/kde-applications
 #SUBDIR += analitza		x11/kde-applications
 #SUBDIR += kalgebra		x11/kde-applications
@@ -161,15 +161,15 @@ SUBDIR += step
 # former kdegames
 SUBDIR += libkdegames
 SUBDIR += libkmahjongg
-SUBDIR += bomber
-SUBDIR += bovo
-SUBDIR += granatier
+#SUBDIR += bomber		x11/kde-applications
+#SUBDIR += bovo			x11/kde-applications
+#SUBDIR += granatier		x11/kde-applications
 SUBDIR += kajongg
-SUBDIR += kapman
-SUBDIR += katomic
-SUBDIR += kblackbox
-SUBDIR += kblocks
-SUBDIR += kbounce
+#SUBDIR += kapman		x11/kde-applications
+#SUBDIR += katomic		x11/kde-applications
+#SUBDIR += kblackbox		x11/kde-applications
+#SUBDIR += kblocks		x11/kde-applications
+#SUBDIR += kbounce		x11/kde-applications
 SUBDIR += kbreakout
 SUBDIR += kdiamond
 SUBDIR += kfourinline
@@ -180,7 +180,7 @@ SUBDIR += kiriki
 SUBDIR += kjumpingcube
 SUBDIR += klickety
 SUBDIR += klines
-SUBDIR += kmahjongg
+#SUBDIR += kmahjongg		x11/kde-applications
 SUBDIR += kmines
 SUBDIR += knavalbattle
 SUBDIR += knetwalk

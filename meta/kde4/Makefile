@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/11/07 07:40:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2018/11/09 07:09:20 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -27,7 +27,7 @@ PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	8
-REVISION-games = 0
+REVISION-games = 1
 REVISION-sdk = 2
 REVISION-edu = 1
 REVISION-multimedia = 0
@@ -79,7 +79,6 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/blinken	\
 	${MODKDE4_DEP_DIR}/kanagram	\
 	${MODKDE4_DEP_DIR}/kbruch	\
 	${MODKDE4_DEP_DIR}/kgeography	\
@@ -119,14 +118,6 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \
-	${MODKDE4_DEP_DIR}/bomber	\
-	${MODKDE4_DEP_DIR}/bovo		\
-	${MODKDE4_DEP_DIR}/granatier	\
-	${MODKDE4_DEP_DIR}/kapman	\
-	${MODKDE4_DEP_DIR}/katomic	\
-	${MODKDE4_DEP_DIR}/kblackbox	\
-	${MODKDE4_DEP_DIR}/kblocks	\
-	${MODKDE4_DEP_DIR}/kbounce	\
 	${MODKDE4_DEP_DIR}/kbreakout	\
 	${MODKDE4_DEP_DIR}/kdiamond	\
 	${MODKDE4_DEP_DIR}/kfourinline	\
@@ -137,7 +128,6 @@ RUN_DEPENDS-games = \
 	${MODKDE4_DEP_DIR}/kjumpingcube \
 	${MODKDE4_DEP_DIR}/klickety	\
 	${MODKDE4_DEP_DIR}/klines	\
-	${MODKDE4_DEP_DIR}/kmahjongg	\
 	${MODKDE4_DEP_DIR}/kmines	\
 	${MODKDE4_DEP_DIR}/knavalbattle	\
 	${MODKDE4_DEP_DIR}/knetwalk	\
