@@ -1,0 +1,13 @@
+$OpenBSD: patch-rc_file_c,v 1.1 2018/11/09 11:06:24 sthen Exp $
+
+Index: rc_file.c
+--- rc_file.c.orig
++++ rc_file.c
+@@ -19,6 +19,7 @@
+ /*                                                                   */
+ /*********************************************************************/
+ 
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <unistd.h>

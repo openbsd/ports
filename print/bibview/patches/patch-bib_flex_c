@@ -1,0 +1,13 @@
+$OpenBSD: patch-bib_flex_c,v 1.1 2018/11/09 11:06:24 sthen Exp $
+
+Index: bib_flex.c
+--- bib_flex.c.orig
++++ bib_flex.c
+@@ -1454,6 +1454,7 @@ static const yy_state_type yy_NUL_trans[40] =
+ char *yytext;
+ # line 1 "b.l"
+ # line 2 "b.l"
++#include <unistd.h>
+ #include "b.tab.h"
+ #include <X11/Intrinsic.h>
+ #include "bibview.h"

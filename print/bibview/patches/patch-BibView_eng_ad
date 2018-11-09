@@ -1,0 +1,16 @@
+$OpenBSD: patch-BibView_eng_ad,v 1.1 2018/11/09 11:06:24 sthen Exp $
+
+Remove trailing tab causing UI glitch
+
+Index: BibView.eng.ad
+--- BibView.eng.ad.orig
++++ BibView.eng.ad
+@@ -49,7 +49,7 @@ BibView*fileMenu*item6*label:		Quit
+ BibView*mainwin*services.label:      	Services
+ BibView*mainwin*services.menuName:	servicesMenu
+ BibView*servicesMenu.label:		Services Menu
+-BibView*servicesMenu*item1*label:	Consistency Check	
++BibView*servicesMenu*item1*label:	Consistency Check
+ BibView*servicesMenu*item2*label:	Unify
+ BibView*servicesMenu*item3*label:	Print
+ BibView*servicesMenu*item4*label:	Edit Macros

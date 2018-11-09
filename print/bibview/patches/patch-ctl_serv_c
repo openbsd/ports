@@ -1,9 +1,18 @@
-$OpenBSD: patch-ctl_serv_c,v 1.2 2018/11/09 11:03:25 sthen Exp $
+$OpenBSD: patch-ctl_serv_c,v 1.3 2018/11/09 11:06:24 sthen Exp $
 
 Index: ctl_serv.c
 --- ctl_serv.c.orig
 +++ ctl_serv.c
-@@ -307,11 +307,11 @@ char *tempName;
+@@ -20,6 +20,8 @@
+ /*                                                                   */
+ /*********************************************************************/
+ 
++#include <stdlib.h>
++#include <unistd.h>
+ #include <stdio.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/StringDefs.h>
+@@ -307,11 +309,11 @@ char *tempName;
        bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
        strcpy(bp->macrofile,tempName);
  #else
