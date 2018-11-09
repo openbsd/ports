@@ -1,7 +1,20 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2018/03/14 08:20:49 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2018/11/09 15:25:33 naddy Exp $
+
+DEPS: Fix parallel build.  gmake recognizes libxml2.la and ./libxml2.la
+as equivalent, ours does not.
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
+@@ -721,7 +721,7 @@ libxml2_la_SOURCES = SAX.c entities.c encoding.c error
+ 		xmlwriter.c legacy.c chvalid.c pattern.c xmlsave.c \
+ 		xmlmodule.c schematron.c xzlib.c
+ 
+-DEPS = $(top_builddir)/libxml2.la
++DEPS = libxml2.la
+ LDADDS = $(STATIC_BINARIES) $(top_builddir)/libxml2.la $(THREAD_LIBS) $(Z_LIBS) $(LZMA_LIBS) $(ICONV_LIBS) $(M_LIBS) $(WIN32_EXTRA_LIBADD)
+ man_MANS = xml2-config.1 libxml.3
+ m4datadir = $(datadir)/aclocal
 @@ -848,7 +848,7 @@ cmake_DATA = libxml2-config.cmake
  # Install the tests program sources as examples 
  #
