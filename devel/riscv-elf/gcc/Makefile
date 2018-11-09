@@ -1,28 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/09 15:29:12 naddy Exp $
 
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	8.1.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
-REVISION=	0
-
-SHARED_LIBS=	cc1		0.0 \
-		cc1plugin	0.0 \
-		cp1plugin	0.0
+REVISION=	1
 
 SUBST_VARS+=	VERSION
 
 WANTLIB=	c m ${COMPILER_LIBCXX} gmp mpfr mpc pthread
 DIST_SUBDIR=	gcc
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MAKE_GXX=	No
-MAKE_FORTRAN=	No
-MAKE_OBJC=	No
-MAKE_JAVA=	No
-MAKE_ADA=	No
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
@@ -40,6 +30,7 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--enable-interwork		\
 		--with-gmp=${LOCALBASE}		\
 		--with-newlib			\
+		--disable-libcc1		\
 		--disable-lto			\
 		--enable-cpp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

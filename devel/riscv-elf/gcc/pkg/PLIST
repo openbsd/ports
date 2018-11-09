@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/09 15:29:12 naddy Exp $
 @bin bin/riscv64-unknown-elf-c++
 @bin bin/riscv64-unknown-elf-cpp
 @bin bin/riscv64-unknown-elf-g++
@@ -458,10 +458,6 @@ lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/include/wide-int-print.h
 lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/include/wide-int.h
 lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/include/xcoff.h
 lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/include/xcoffout.h
-lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/libcc1plugin.la
-@lib lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/libcc1plugin.so.${LIBcc1plugin_VERSION}
-lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/libcp1plugin.la
-@lib lib/gcc/riscv64-unknown-elf/${VERSION}/plugin/libcp1plugin.so.${LIBcp1plugin_VERSION}
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv32i/
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv32i/ilp32/
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv32i/ilp32/crtbegin.o
@@ -518,8 +514,6 @@ lib/gcc/riscv64-unknown-elf/${VERSION}/rv64imafdc/lp64d/crti.o
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv64imafdc/lp64d/crtn.o
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv64imafdc/lp64d/libgcc.a
 lib/gcc/riscv64-unknown-elf/${VERSION}/rv64imafdc/lp64d/libgcov.a
-lib/libcc1.la
-@lib lib/libcc1.so.${LIBcc1_VERSION}
 libexec/gcc/
 libexec/gcc/riscv64-unknown-elf/
 libexec/gcc/riscv64-unknown-elf/${VERSION}/
