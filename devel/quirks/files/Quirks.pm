@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.654 2018/11/07 20:37:10 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.655 2018/11/09 21:22:17 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1220,6 +1220,8 @@ my $cve = {
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
+	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
+	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 };
