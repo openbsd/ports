@@ -1,0 +1,16 @@
+$OpenBSD: patch-match_S,v 1.1 2018/11/09 16:23:02 naddy Exp $
+
+Do not use i386 non-PIC assembly code.
+
+Index: match.S
+--- match.S.orig
++++ match.S
+@@ -18,6 +18,8 @@
+ /* This file is NOT used in conjunction with zlib. */
+ #ifndef USE_ZLIB
+ 
++#error "do not use assembly code"
++
+ /* Preprocess with -DNO_UNDERLINE if your C compiler does not prefix
+  * external symbols with an underline character '_'.
+  */
