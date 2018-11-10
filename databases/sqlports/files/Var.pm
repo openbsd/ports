@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.27 2018/11/10 16:41:03 espie Exp $
+# $OpenBSD: Var.pm,v 1.28 2018/11/10 17:12:24 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -645,8 +645,6 @@ package DescrVar;
 our @ISA = qw(FileVar);
 sub table() { 'Descr' }
 use File::Basename;
-
-my $portsdir = $ENV{PORTSDIR} || '/usr/ports';
 
 # README does not exist as an actual variable, but it's trivial
 # to add it as a subsidiary of DESCR when the file exists.
