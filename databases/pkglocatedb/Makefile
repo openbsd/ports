@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/05/15 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2018/11/10 11:11:03 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -35,5 +35,5 @@ NO_TEST =		Yes
 do-build: ${WRKBUILD}/pkglocatedb
 
 ${WRKBUILD}/pkglocatedb:
-	unset REPORT_PROBLEM; \
+	unset REPORT_PROBLEM MAKEFLAGS; \
 	SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
