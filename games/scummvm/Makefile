@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2018/07/10 16:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2018/11/10 23:45:28 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.0.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://www.scummvm.org/frs/scummvm/${V}/
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -16,10 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png ogg sndio
 WANTLIB += ${COMPILER_LIBCXX} theoradec vorbis vorbisfile z
-
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	devel/nasm
-.endif
 
 # GCC 4.2.1 miscompiles this on at least ppc, so play safe and
 # just use a newer compiler everywhere.
@@ -43,6 +39,7 @@ CONFIGURE_ARGS+= --disable-alsa \
 		--disable-mpeg2 \
 		--disable-sdlnet \
 		--disable-libcurl \
+		--disable-nasm \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
