@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1088 2018/10/28 03:00:53 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1089 2018/11/10 12:34:24 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -568,6 +568,7 @@
      SUBDIR += py-junos-eznc
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud
+     SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
