@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.20 2018/06/06 08:23:30 ajacoutot Exp $
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.21 2018/11/10 13:02:52 ajacoutot Exp $
 
 Index: test/run-stp-tests.sh
 --- test/run-stp-tests.sh.orig
@@ -12,12 +12,12 @@ Index: test/run-stp-tests.sh
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -600,7 +600,7 @@ fi
+@@ -578,7 +578,7 @@ else
+ 	LD_LIBRARY_PATH="$root/cups:$root/filter:$LD_LIBRARY_PATH"
+ fi
  
- export LD_LIBRARY_PATH
- 
--LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2:$root/cgi-bin/libcupscgi.so.1:$root/scheduler/libcupsmime.so.1:$root/ppdc/libcupsppdc.so.1"
-+LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}:$root/cgi-bin/libcupscgi.so.${LIBcupscgi_VERSION}:$root/scheduler/libcupsmime.so.${LIBcupsmime_VERSION}:$root/ppdc/libcupsppdc.so.${LIBcupsppdc_VERSION}"
+-LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2"
++LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}"
  if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
  	LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
  fi

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.241 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.242 2018/11/10 13:02:52 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		2.2.8
+VERSION=		2.2.9
 GH_ACCOUNT=		apple
 GH_PROJECT=		cups
 GH_TAGNAME=		v${VERSION}
@@ -11,17 +11,11 @@ GH_TAGNAME=		v${VERSION}
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
 
-REVISION-main=		3
-REVISION-libs=		1
-
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
-SHARED_LIBS+=  cupsimage       5.1 # so.2
-SHARED_LIBS+=  cups            6.4 # so.2
-SHARED_LIBS+=  cupscgi         1.1 # so.1
-SHARED_LIBS+=  cupsmime        1.2 # so.1
-SHARED_LIBS+=  cupsppdc        1.2 # so.1
+SHARED_LIBS+=  cupsimage       6.0 # so.2
+SHARED_LIBS+=  cups            7.0 # so.2
 
 HOMEPAGE=		http://www.cups.org/
 
@@ -32,10 +26,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WANTLIB += avahi-client avahi-common gnutls iconv m pthread ${COMPILER_LIBCXX} z
+WANTLIB += avahi-client avahi-common gnutls iconv m pthread z
 
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
+WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-main += c cups cupsimage dbus-1 usb-1.0
 
 MULTI_PACKAGES=		-main -libs
 
@@ -97,12 +91,10 @@ CONFIGURE_ARGS=		--enable-static \
 			--without-php \
 			--without-python
 
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION} aclocal -I config-scripts
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf -I config-scripts
-	${SUBST_CMD} ${WRKSRC}/{Makedefs.in,cups/Makefile}
+do-gen:
+	${SUBST_CMD} ${WRKSRC}/Makedefs.in
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} aclocal -I config-scripts
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoconf -I config-scripts
 
 post-configure:
 	cd ${WRKBUILD} && sed -i 's|\$${DESTDIR}||g' \
