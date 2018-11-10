@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/22 06:04:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2018/11/10 12:34:01 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	2.3.0
+MODPY_EGG_VERSION=	2.4.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
@@ -21,23 +21,27 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		devel/py-test-runner
+FLAVORS=		python3
+FLAVOR ?=
 
-RUN_DEPENDS=		sysutils/py-lockfile
+BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
+
+RUN_DEPENDS=		sysutils/py-lockfile${MODPY_FLAVOR}
 
 TEST_DEPENDS=		devel/flake8 \
-			devel/py-mock \
-			devel/py-test-runner \
-			sysutils/py-lockfile \
-			www/py-requests-mock
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test-runner${MODPY_FLAVOR} \
+			sysutils/py-lockfile${MODPY_FLAVOR} \
+			www/py-requests-mock${MODPY_FLAVOR}
 
 # python2
+.if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
 TEST_DEPENDS +=		devel/py-backports-ssl-match-hostname
+.endif
 
 post-install:
 	rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libcloud/test/
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/libcloud/.DS_Store
 
 pre-test:
 	cp ${WRKSRC}/libcloud/test/secrets.py-dist \
