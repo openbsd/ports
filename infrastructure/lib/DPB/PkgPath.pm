@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.52 2018/11/07 13:57:14 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.53 2018/11/10 13:32:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -160,8 +160,7 @@ sub unlock_conditions
 	}
 	my $sub = $engine->{buildable};
 	for my $w ($v->build_path_list) {
-		return 0 
-		    unless $sub->remove_stub($w) || $sub->{builder}->check($w);
+		return 0 unless $sub->{builder}->check($w);
 	}
 	return 1;
 }
