@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/20 21:35:11 pvk Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/10 20:52:35 pvk Exp $
 
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	18.7.0
+MODPY_EGG_VERSION =	18.9.0
 
 EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
