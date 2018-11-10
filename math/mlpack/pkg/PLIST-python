@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-python,v 1.1.1.1 2018/10/23 10:44:05 espie Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2018/11/10 12:58:44 espie Exp $
+@pkgpath math/mlpack,-python${FLAVOR_EXT}
 ${SITEDIR}/mlpack/
 ${EGGDIR}/
 ${EGGDIR}/PKG-INFO
