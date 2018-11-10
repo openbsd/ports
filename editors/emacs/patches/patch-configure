@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2018/06/08 22:19:20 jca Exp $
+$OpenBSD: patch-configure,v 1.14 2018/11/10 15:02:23 naddy Exp $
 Index: configure
 --- configure.orig
 +++ configure
@@ -9,7 +9,7 @@ Index: configure
 -   LD_SWITCH_SYSTEM="-Z"
 +   ## Enable only where necessary.
 +   case $host_cpu in
-+     x86_64|sparc64|arm|aarch64)
++     x86_64|i386|sparc64|arm|aarch64)
 +      ;;
 +     powerpc|mips64el|*)
 +      LD_SWITCH_SYSTEM="-Z"
