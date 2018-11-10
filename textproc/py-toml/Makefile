@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/12 16:22:35 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/10 16:51:23 danj Exp $
 
 COMMENT =		Python library for "Tom's Obvious Minimal Language" #'
 
-MODPY_EGG_VERSION =	0.9.6
+MODPY_EGG_VERSION =	0.10.0
 DISTNAME =		toml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
