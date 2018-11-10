@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/11/05 22:04:39 robert Exp $
+# $OpenBSD: Makefile,v 1.81 2018/11/10 12:50:21 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,6 +12,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Iridium browser
 
 V=			2018.11.70
+REVISION=		0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.9 2018/11/06 20:53:13 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.10 2018/11/10 12:50:21 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig
 +++ base/base_paths_posix.cc
-@@ -69,7 +69,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -69,10 +69,10 @@ bool PathProviderPosix(int key, FilePath* result) {
  #elif defined(OS_OPENBSD) || defined(OS_AIX)
        // There is currently no way to get the executable path on OpenBSD
        char* cpath;
@@ -11,4 +11,8 @@ Index: base/base_paths_posix.cc
 +      if ((cpath = getenv("IRIDIUM_EXE_PATH")) != NULL)
          *result = FilePath(cpath);
        else
-         *result = FilePath("/usr/local/chrome/chrome");
+-        *result = FilePath("/usr/local/chrome/chrome");
++        *result = FilePath("/usr/local/iridium/iridium");
+       return true;
+ #endif
+     }
