@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2018/11/05 17:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.287 2018/11/10 16:57:43 sthen Exp $
 
 BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
 
@@ -10,6 +10,7 @@ PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION-main=	0
 
 CATEGORIES=	telephony
 
