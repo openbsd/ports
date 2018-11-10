@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/30 06:35:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/10 17:55:30 bentley Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
 GH_ACCOUNT =	hrydgard
 GH_PROJECT =	ppsspp
-GH_TAGNAME =	v1.7
+GH_TAGNAME =	v1.7.1
 
 GLSLANG =	29619b2312f7bc862221749f3f4d37c3e6a0dee2
-PPSSPP_LANG =	cbad73fae5bbc18c6f5541852bbdfc4dd97a9c83
+PPSSPP_LANG =	f60be494a43a49fd7ff61603e132c1e24c160d88
 SPIRV_CROSS =	be7425ef70231ab82930331959ab487d605d0482
 ARMIPS =	9efe3367284d2d1eeb14fc302a2c12c36e3e255e
 
