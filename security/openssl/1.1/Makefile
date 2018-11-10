@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2018/11/07 11:00:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/10 20:38:07 tim Exp $
 
 PORTROACH=	limit:^1\.1\.
 V=		1.1.1
+REVISION=	0
 
 SHLIBVER=	11.0
 SHARED_LIBS=	crypto ${SHLIBVER} \

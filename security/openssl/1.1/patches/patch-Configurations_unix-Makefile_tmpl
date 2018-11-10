@@ -1,4 +1,4 @@
-$OpenBSD: patch-Configurations_unix-Makefile_tmpl,v 1.1 2018/11/07 11:00:30 sthen Exp $
+$OpenBSD: patch-Configurations_unix-Makefile_tmpl,v 1.2 2018/11/10 20:38:07 tim Exp $
 
 Index: Configurations/unix-Makefile.tmpl
 --- Configurations/unix-Makefile.tmpl.orig
@@ -8,7 +8,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl'; \
++	    echo 'includedir=$${prefix}/include/eopenssl11'; \
  	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libcrypto'; \
@@ -17,7 +17,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl'; \
++	    echo 'includedir=$${prefix}/include/eopenssl11'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libssl'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries'; \
@@ -32,7 +32,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl'; \
++	    echo 'includedir=$${prefix}/include/eopenssl11'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries and tools'; \
