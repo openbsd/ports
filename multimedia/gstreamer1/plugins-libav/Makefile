@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2018/09/17 08:46:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2018/11/10 08:26:52 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
+REVISION=		0
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -30,7 +31,6 @@ libav_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--enable-runtime-cpudetect \
 			--disable-altivec \
 			--disable-sdl2 \
-			--disable-vfp \
 			--disable-debug
 
 # don't pick up nasm(1)
