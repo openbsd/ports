@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2018/11/01 13:50:30 landry Exp $
+# $OpenBSD: Makefile,v 1.84 2018/11/10 11:12:25 landry Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -11,7 +11,7 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.30.0
+V =			1.30.1
 CARGO_V =		0.31.0
 DISTNAME =		rustc-${V}-src
 
