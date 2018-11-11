@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/11/11 18:35:20 bentley Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10
-REVISION =	9
+REVISION =	10
 CATEGORIES=	x11
 
 # MIT
@@ -13,7 +13,7 @@ WANTLIB += ICE SM X11 Xft c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://dl.suckless.org/misc/
+MASTER_SITES=	https://dl.suckless.org/misc/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
