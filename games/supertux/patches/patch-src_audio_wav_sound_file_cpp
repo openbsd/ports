@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_audio_wav_sound_file_cpp,v 1.1 2018/11/11 16:00:22 pascal Exp $
+
+Fix music on big-endian platforms
+https://github.com/SuperTux/supertux/commit/a154c70
+
+Index: src/audio/wav_sound_file.cpp
+--- src/audio/wav_sound_file.cpp.orig
++++ src/audio/wav_sound_file.cpp
+@@ -16,6 +16,8 @@
+ 
+ #include "audio/wav_sound_file.hpp"
+ 
++#include <config.h>
++
+ #include <string.h>
+ #include <stdint.h>
+ #include <assert.h>
