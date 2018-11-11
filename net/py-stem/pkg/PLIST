@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/12 20:04:12 danj Exp $
-!%%python3%%
+@comment $OpenBSD: PLIST,v 1.2 2018/11/11 16:59:22 pascal Exp $
 @conflict stem-*
+!%%python3%%
 bin/tor-prompt${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/stem/
 lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -9,15 +9,26 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}exit_policy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}manual.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}prereq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}socket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/stem/cached_tor_manual.sqlite
+lib/python${MODPY_VERSION}/site-packages/stem/cached_fallbacks.cfg
+lib/python${MODPY_VERSION}/site-packages/stem/cached_manual.sqlite
+lib/python${MODPY_VERSION}/site-packages/stem/client/
+lib/python${MODPY_VERSION}/site-packages/stem/client/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}cell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/client/${MODPY_PYCACHE}datatype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/client/cell.py
+lib/python${MODPY_VERSION}/site-packages/stem/client/datatype.py
 lib/python${MODPY_VERSION}/site-packages/stem/connection.py
 lib/python${MODPY_VERSION}/site-packages/stem/control.py
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,7 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}tordnse
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/certificate.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/export.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/extrainfo_descriptor.py
-lib/python${MODPY_VERSION}/site-packages/stem/descriptor/fallback_directories.cfg
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/hidden_service_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/microdescriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/networkstatus.py
@@ -44,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/descriptor/remote.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/router_status_entry.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/server_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/tordnsel.py
+lib/python${MODPY_VERSION}/site-packages/stem/directory.py
 lib/python${MODPY_VERSION}/site-packages/stem/exit_policy.py
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/
 lib/python${MODPY_VERSION}/site-packages/stem/interpreter/__init__.py
