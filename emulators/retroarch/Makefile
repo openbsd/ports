@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/11/11 00:48:36 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
-V =			1.7.2
-REVISION =		3
+V =			1.7.5
 DISTNAME =		RetroArch-$V
 PKGNAME =		retroarch-$V
 
@@ -15,10 +14,10 @@ HOMEPAGE =		https://www.libretro.com/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += EGL GL SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass
-WANTLIB += avcodec avformat avutil c drm freetype gbm m openal
-WANTLIB += pthread swresample swscale usb-1.0 xcb xkbcommon
-WANTLIB += z
+WANTLIB += EGL GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass avcodec
+WANTLIB += avformat avutil c crypto drm freetype gbm m openal
+WANTLIB += ssl swresample swscale usb-1.0 xcb xkbcommon z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -28,6 +27,7 @@ EXTRACT_SUFX =		.tar.xz
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
+MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal \
 			devel/libusb1 \
@@ -47,7 +47,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		MAN_DIR=${PREFIX}/man \
 			INCLUDE_DIRS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LIBRARY_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS +=	--disable-jack \
+CONFIGURE_ARGS =	--disable-discord \
+			--disable-jack \
 			--disable-pulse \
 			--disable-oss \
 			--disable-v4l2 \

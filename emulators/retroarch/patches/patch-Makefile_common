@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_common,v 1.1 2018/05/17 09:55:46 jasper Exp $
+$OpenBSD: patch-Makefile_common,v 1.2 2018/11/11 00:48:36 bentley Exp $
 
 Explicitly link with libusb-1.0 
 
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -952,11 +952,7 @@ ifeq ($(HAVE_THREADS), 1)
+@@ -921,11 +921,7 @@ ifeq ($(HAVE_THREADS), 1)
  ifeq ($(HAVE_HID), 1)
     DEFINES += -DHAVE_LIBUSB
     OBJ += input/drivers_hid/libusb_hid.o
