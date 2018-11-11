@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/11 19:47:48 bentley Exp $
 
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.3 # 2.5
-REVISION =		6
+REVISION =		7
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,6 +18,7 @@ LIB_DEPENDS =		devel/sdl2 \
 MUPEN64PLUS_MOD =	core
 
 MAKE_FLAGS +=		TARGET=libmupen64plus.so.${LIBmupen64plus_VERSION} \
-			SONAME=libmupen64plus.so
+			SONAME=libmupen64plus.so \
+			NO_ASM=1
 
 .include <bsd.port.mk>
