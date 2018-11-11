@@ -1,0 +1,14 @@
+$OpenBSD: patch-mpi_Makefile_in,v 1.4 2018/11/11 21:14:33 naddy Exp $
+
+Index: mpi/Makefile.in
+--- mpi/Makefile.in.orig
++++ mpi/Makefile.in
+@@ -713,7 +713,7 @@ uninstall-am:
+ # cancel the default rules used by libtool which do not really
+ # work and add one to cpp .S files
+ .S.o:
+-	 $(CPP) $(INCLUDES) $(DEFS) $< | grep -v '^#' > _$*.s
++	 $(CPP) $(INCLUDES) $(DEFS) -DPIC $< | grep -v '^#' > _$*.s
+ 	 $(COMPILE) $(AM_CCASFLAGS) -c _$*.s
+ 	 mv -f _$*.o $*.o
+ 
