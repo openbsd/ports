@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2018/10/28 00:28:03 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2018/11/11 16:24:38 bcallah Exp $
 
 Don't do this git stuff.
 Don't do the cpplint stuff. Elimintates python as a dependency.
@@ -6,7 +6,7 @@ Don't do the cpplint stuff. Elimintates python as a dependency.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -9,34 +9,10 @@ set(PROJECT_VERSION "0.2.0")
+@@ -10,34 +10,10 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
  
  list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
  
@@ -41,7 +41,7 @@ Index: CMakeLists.txt
  
  message(STATUS "FREESERF_VERSION = ${FREESERF_VERSION}")
  message(STATUS "PROJECT_VERSION = ${PROJECT_VERSION}")
-@@ -57,9 +33,6 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/version
+@@ -58,9 +34,6 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/version
                 @ONLY)
  
  add_definitions(-DPACKAGE_BUGREPORT="https://github.com/freeserf/freeserf/issues")

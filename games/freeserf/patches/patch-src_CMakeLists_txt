@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2018/10/28 00:28:03 bcallah Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.4 2018/11/11 16:24:38 bcallah Exp $
 
 Install to the correct location.
 Don't do the cpplint stuff.
@@ -6,31 +6,47 @@ Don't do the cpplint stuff.
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -36,7 +36,6 @@ set(TOOLS_HEADERS debug.h
+@@ -42,7 +42,6 @@ set(TOOLS_HEADERS debug.h
                    buffer.h)
  
  add_library(tools STATIC ${TOOLS_SOURCES} ${TOOLS_HEADERS})
 -target_check_style(tools)
  
- set(GAME_SOURCES building.cc
-                  flag.cc
-@@ -133,7 +132,6 @@ if(WIN32)
- endif()
+ # Game library
+ 
+@@ -76,7 +75,6 @@ set(GAME_HEADERS building.h
+                  game-manager.h)
  
  add_library(game STATIC ${GAME_SOURCES} ${GAME_HEADERS})
 -target_check_style(game)
  
- if(SDL2_FOUND)
-   include_directories(${INCLUDE_DIRECTORIES} ${SDL2_INCLUDE_DIR})
-@@ -168,7 +166,6 @@ endif()
+ # Platform library
+ 
+@@ -104,7 +102,6 @@ else()
+ endif()
+ 
+ add_library(platform STATIC ${PLATFORM_SOURCES} ${PLATFORM_HEADERS})
+-target_check_style(platform)
+ 
+ # Data library
+ 
+@@ -148,7 +145,6 @@ else()
+ endif()
+ 
+ add_library(data STATIC ${DATA_SOURCES} ${DATA_HEADERS})
+-target_check_style(data)
+ 
+ # FreeSerf executable
+ 
+@@ -188,7 +184,6 @@ set(OTHER_HEADERS pathfinder.h
  set(FREESERF_SOURCES freeserf.cc ${OTHER_SOURCES})
  set(FREESERF_HEADERS freeserf.h ${OTHER_HEADERS})
  add_executable(FreeSerf MACOSX_BUNDLE WIN32 ${FREESERF_SOURCES} ${FREESERF_HEADERS})
 -target_check_style(FreeSerf)
  
- target_link_libraries(FreeSerf game tools)
+ target_link_libraries(FreeSerf game platform data tools)
  if(SDL2_FOUND)
-@@ -184,7 +181,7 @@ endif()
+@@ -206,7 +201,7 @@ endif()
  if(XMP_FOUND)
    target_link_libraries(FreeSerf ${XMP_LIBRARY})
  endif()
@@ -39,7 +55,7 @@ Index: src/CMakeLists.txt
  
  if(WIN32)
    if(DEFINED _VCPKG_INSTALLED_DIR)
-@@ -245,5 +242,4 @@ set(PROFILER_HEADERS profiler.h
+@@ -267,5 +262,4 @@ set(PROFILER_HEADERS profiler.h
                       command_line.h)
  
  add_executable(profiler ${PROFILER_SOURCES} ${PROFILER_HEADERS})
