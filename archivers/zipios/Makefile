@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/28 07:48:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2018/11/11 17:30:58 naddy Exp $
 
 COMMENT=	java-like zip interface
 
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
 PKGNAME=	zipios++-0.1.5.9
-REVISION =	6
+REVISION =	7
 CATEGORIES=	devel archivers
 MASTER_SITES=	https://distfiles.nl/
 MASTER_SITES0=	${MASTER_SITE_GNU:=automake/}

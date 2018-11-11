@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_appendzip_cpp,v 1.1 2018/11/11 17:30:58 naddy Exp $
+
+Index: src/appendzip.cpp
+--- src/appendzip.cpp.orig
++++ src/appendzip.cpp
+@@ -5,6 +5,8 @@
+ #include "zipios++/ziphead.h"
+ #include "zipios++/zipheadio.h"
+ 
++#include <stdlib.h>
++
+ using namespace std ;
+ using namespace zipios ;
+ 
