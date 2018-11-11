@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.111 2018/09/25 19:32:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2018/11/11 09:39:26 ajacoutot Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.40.10
+GNOME_VERSION=		0.40.11
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
@@ -60,7 +60,7 @@ PATCH_LIST=		patch-* no_valadoc-*
 post-install:
 	rm ${PREFIX}/lib/vala-${API_V}/*.{a,la}
 .if ${BUILD_PACKAGES:M-valadoc}
-	rm ${PREFIX}/lib/valadoc/doclets/devhelp/*.{a,la}
+	rm ${PREFIX}/lib/valadoc/doclets/{devhelp,gtkdoc,html}/*.{a,la}
 .endif
 
 .include <bsd.port.mk>
