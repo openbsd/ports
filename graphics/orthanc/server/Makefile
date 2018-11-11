@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/19 17:52:59 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2018/11/11 18:49:21 ajacoutot Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.3.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://www.orthanc-server.com/
 
@@ -31,6 +31,8 @@ MODULES =		devel/cmake \
 			lang/python
 
 MODPY_RUNDEP =		No
+
+BUILD_DEPENDS =		devel/doxygen
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \

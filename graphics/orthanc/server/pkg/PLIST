@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/09 15:23:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/11/11 18:49:21 ajacoutot Exp $
 @newgroup _orthanc:791
 @newuser _orthanc:791:_orthanc:daemon:Orthanc user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/orthanc
 @bin bin/OrthancRecoverCompressedFile
 include/orthanc/
 include/orthanc/OrthancCDatabasePlugin.h
@@ -11,6 +12,75 @@ libexec/orthanc/plugins/
 libexec/orthanc/plugins/libModalityWorklists.so
 libexec/orthanc/plugins/libServeFolders.so
 @bin sbin/Orthanc
+share/doc/orthanc/
+share/doc/orthanc/OrthancPlugin/
+share/doc/orthanc/OrthancPlugin/OrthancCDatabasePlugin_8h_source.html
+share/doc/orthanc/OrthancPlugin/OrthancCPlugin_8h_source.html
+share/doc/orthanc/OrthancPlugin/OrthancCppDatabasePlugin_8h_source.html
+share/doc/orthanc/OrthancPlugin/OrthancLogoDocumentation.png
+share/doc/orthanc/OrthancPlugin/annotated.html
+share/doc/orthanc/OrthancPlugin/bc_s.png
+share/doc/orthanc/OrthancPlugin/bdwn.png
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseBackendAdapter-members.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseBackendAdapter.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseBackendOutput-members.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseBackendOutput.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseBackendOutput.png
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseException-members.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1DatabaseException.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1IDatabaseBackend-members.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1IDatabaseBackend.html
+share/doc/orthanc/OrthancPlugin/classOrthancPlugins_1_1IDatabaseBackend.png
+share/doc/orthanc/OrthancPlugin/classes.html
+share/doc/orthanc/OrthancPlugin/closed.png
+share/doc/orthanc/OrthancPlugin/deprecated.html
+share/doc/orthanc/OrthancPlugin/dir_027bf64fe5984d5a409df67e6d81a46a.html
+share/doc/orthanc/OrthancPlugin/dir_102fbb84850d98ff4d15205d078556ec.html
+share/doc/orthanc/OrthancPlugin/dir_23920acd21d87f5dd4f311023f778748.html
+share/doc/orthanc/OrthancPlugin/dir_95a3b2b95bd26d983cc8fdeed39fa98b.html
+share/doc/orthanc/OrthancPlugin/doc.png
+share/doc/orthanc/OrthancPlugin/doxygen.css
+share/doc/orthanc/OrthancPlugin/doxygen.png
+share/doc/orthanc/OrthancPlugin/dynsections.js
+share/doc/orthanc/OrthancPlugin/files.html
+share/doc/orthanc/OrthancPlugin/folderclosed.png
+share/doc/orthanc/OrthancPlugin/folderopen.png
+share/doc/orthanc/OrthancPlugin/functions.html
+share/doc/orthanc/OrthancPlugin/functions_func.html
+share/doc/orthanc/OrthancPlugin/functions_vars.html
+share/doc/orthanc/OrthancPlugin/group__Callbacks.html
+share/doc/orthanc/OrthancPlugin/group__DicomCallbaks.html
+share/doc/orthanc/OrthancPlugin/group__Images.html
+share/doc/orthanc/OrthancPlugin/group__Orthanc.html
+share/doc/orthanc/OrthancPlugin/group__REST.html
+share/doc/orthanc/OrthancPlugin/group__Toolbox.html
+share/doc/orthanc/OrthancPlugin/hierarchy.html
+share/doc/orthanc/OrthancPlugin/index.html
+share/doc/orthanc/OrthancPlugin/jquery.js
+share/doc/orthanc/OrthancPlugin/menu.js
+share/doc/orthanc/OrthancPlugin/menudata.js
+share/doc/orthanc/OrthancPlugin/modules.html
+share/doc/orthanc/OrthancPlugin/namespaceOrthancPlugins.html
+share/doc/orthanc/OrthancPlugin/namespaces.html
+share/doc/orthanc/OrthancPlugin/nav_f.png
+share/doc/orthanc/OrthancPlugin/nav_g.png
+share/doc/orthanc/OrthancPlugin/nav_h.png
+share/doc/orthanc/OrthancPlugin/open.png
+share/doc/orthanc/OrthancPlugin/pages.html
+share/doc/orthanc/OrthancPlugin/splitbar.png
+share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry-members.html
+share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry.html
+share/doc/orthanc/OrthancPlugin/structOrthancPluginHttpRequest-members.html
+share/doc/orthanc/OrthancPlugin/structOrthancPluginHttpRequest.html
+share/doc/orthanc/OrthancPlugin/structOrthancPluginMemoryBuffer-members.html
+share/doc/orthanc/OrthancPlugin/structOrthancPluginMemoryBuffer.html
+share/doc/orthanc/OrthancPlugin/sync_off.png
+share/doc/orthanc/OrthancPlugin/sync_on.png
+share/doc/orthanc/OrthancPlugin/tab_a.png
+share/doc/orthanc/OrthancPlugin/tab_b.png
+share/doc/orthanc/OrthancPlugin/tab_h.png
+share/doc/orthanc/OrthancPlugin/tab_s.png
+share/doc/orthanc/OrthancPlugin/tabs.css
 share/examples/orthanc/
 @sample ${SYSCONFDIR}/orthanc/
 share/examples/orthanc/Configuration.json
@@ -21,4 +91,3 @@ share/examples/orthanc/Configuration.json
 @sample /var/log/orthanc/
 @group
 @owner
-@rcscript ${RCDIR}/orthanc
