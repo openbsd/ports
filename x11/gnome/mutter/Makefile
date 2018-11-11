@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2018/07/25 18:39:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2018/11/11 10:21:18 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.28.3
+REVISION=		0
 
 API_SUFFIX=		-2
 SUBST_VARS=		API_SUFFIX
@@ -46,10 +47,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 			x11/gnome/zenity
 
-AUTOMAKE_VERSION=	1.15
-AUTOCONF_VERSION=	2.69
-AUTOCONF_DIR=		${WRKSRC} ${WRKSRC}/clutter
-CONFIGURE_STYLE=	autoconf automake
+CONFIGURE_STYLE=	gnu
 
 # Required by embedded cogl/clutter forks.
 CONFIGURE_ARGS +=	--with-x
@@ -66,13 +64,21 @@ CONFIGURE_ARGS +=	--enable-compile-warnings=yes
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-pre-configure:
+AUTOMAKE_VERSION=	1.15
+AUTOCONF_VERSION=	2.69
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/cogl ${WRKSRC}/clutter
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+do-gen:
 # XXX cc1: error: unrecognized command line option
 	sed -i -e 's,-Wempty-body,,' \
 		-e 's,-Wno-error=maybe-uninitialized,,' \
 		-e 's,-Werror=logical-op,,' \
-		${WRKSRC}/{,cogl,clutter}/configure{,.ac} \
-		${WRKSRC}/cogl/tests/conform/Makefile.in \
-		${WRKSRC}/cogl/test-fixtures/Makefile.in
+		${WRKSRC}/{,cogl,clutter}/configure.ac \
+		${WRKSRC}/cogl/tests/conform/Makefile.am \
+		${WRKSRC}/cogl/test-fixtures/Makefile.am
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
