@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.1 2018/11/12 15:27:35 espie Exp $
+# $OpenBSD: print-ports-index,v 1.2 2018/11/12 15:58:37 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -58,10 +58,9 @@ select fullpkgname,fullpkgpath,
     (case lower(PERMIT_PACKAGE_FTP) when "yes" then "y" else "n" end),
     (case lower(PERMIT_DISTFILES_FTP) when "yes" then "y" else "n" end)
     from ports
--- yep this has to be selects, can't be where, because left join!
-    	left join (select * from d2 where d2.t='L') as libd on libd.p=fullpkgpath
-    	left join (select * from d2 where d2.t='B') as buildd on buildd.p=fullpkgpath
-    	left join (select * from d2 where d2.t='R') as rund on rund.p=fullpkgpath
+    	left join d2 as libd on libd.p=fullpkgpath and libd.t='L'
+    	left join d2 as buildd on buildd.p=fullpkgpath and buildd.t='B'
+    	left join d2 as rund on rund.p=fullpkgpath and rund.t='R'
      	where fullpkgpath in (select distinct canonical from paths) 
 	order by fullpkgpath
 EOSQL
