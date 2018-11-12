@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/25 16:56:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/11/12 21:24:09 bcallah Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
-GH_TAGNAME =	10.4w
+GH_TAGNAME =	10.4z
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
