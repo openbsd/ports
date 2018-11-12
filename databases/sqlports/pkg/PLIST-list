@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-list,v 1.1 2013/11/01 14:52:47 espie Exp $
+@comment $OpenBSD: PLIST-list,v 1.2 2018/11/12 15:27:35 espie Exp $
 @option always-update
+share/ports-INDEX
 share/sqlports.list

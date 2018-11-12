@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.73 2018/11/10 16:41:03 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2018/11/12 15:27:35 espie Exp $
 
 CATEGORIES =		databases
-V =			6.9
+V =			6.10
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -31,6 +31,9 @@ do-build:
 	${LOCALBASE}/bin/sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
 
 do-install:
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
+	${SUBST_PROGRAM} ${FILESDIR}/scripts/print-ports-index ${PREFIX}/bin/print-ports-index
+	${PREFIX}/bin/print-ports-index ${DBNAME} >${PREFIX}/share/ports-INDEX
 	@for i in ${DBS}; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share; \
 	done

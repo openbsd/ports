@@ -1,0 +1,67 @@
+#! /bin/sh
+# $OpenBSD: print-ports-index,v 1.1 2018/11/12 15:27:35 espie Exp $
+#
+# Copyright (c) 2018 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# recreate index file, identical to /usr/ports/INDEX
+
+if [ $# -ge 1 ]
+then
+    file=$1
+else
+    file=${PREFIX}/share/sqlports
+fi
+cat <<'EOSQL' |sqlite3 $file
+-- in order for group_concat to sort, you must do it in two steps
+create temp view d1 (d, p, t) as 
+    select 
+    	distinct((case pkgspec when '' then '' else pkgspec||":" end)||dependspath) as fd,
+	fullpkgpath, type
+    from depends order by fd;
+
+-- and now the view that's going to be used 3 times in the main request
+create temp view d2 as
+    select group_concat(d, ' ') as dlist, p, t
+    from d1 group by p, t;
+
+
+select fullpkgname,fullpkgpath,
+    (case prefix when '/usr/local' THEN "" else prefix end),
+    comment,descr,maintainer,categories,
+    libd.dlist, buildd.dlist, rund.dlist,
+
+    (case 1 when fullpkgpath in 
+-- thankful for for 2ndary tables, because onlyforarch has a weird value
+-- when !defined, that cannot be tested for
+	(select fullpkgpath from onlyforarch) 
+	then only_for_archs 
+	else (case 1 when fullpkgpath in 
+	    (select fullpkgpath from notforarch) 
+	    then "!"||not_for_archs 
+	    else "any" 
+	end) 
+    end),
+
+    (case lower(PERMIT_PACKAGE_CDROM) when "yes" then "y" else "n" end),
+    (case lower(PERMIT_PACKAGE_FTP) when "yes" then "y" else "n" end),
+    (case lower(PERMIT_DISTFILES_FTP) when "yes" then "y" else "n" end)
+    from ports
+-- yep this has to be selects, can't be where, because left join!
+    	left join (select * from d2 where d2.t='L') as libd on libd.p=fullpkgpath
+    	left join (select * from d2 where d2.t='B') as buildd on buildd.p=fullpkgpath
+    	left join (select * from d2 where d2.t='R') as rund on rund.p=fullpkgpath
+     	where fullpkgpath in (select distinct canonical from paths) 
+	order by fullpkgpath
+EOSQL
