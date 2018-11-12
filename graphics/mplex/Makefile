@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/12 08:53:45 bentley Exp $
 
 COMMENT=	Multiplexes MPEG component streams into system layers
 
 DISTNAME=	mplex-1.1
 CATEGORIES=	graphics
-
-MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
+REVISION=	0
 
 # GNU
 PERMIT_PACKAGE_CDROM=	Yes

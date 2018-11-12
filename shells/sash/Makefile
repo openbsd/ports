@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2018/11/12 08:53:45 bentley Exp $
 
 COMMENT=		stand-alone shell with built-in commands
 
 DISTNAME =		sash-3.8
-REVISION =		0
+REVISION =		1
 CATEGORIES=		shells
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
 PERMIT_PACKAGE_CDROM=	Yes
-
-MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/
 

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/16 19:52:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.32 2018/11/12 08:53:45 bentley Exp $
 
 COMMENT=		music tracking tool for X11
 
 V=			0.6.8
 DISTNAME=		soundtracker_$V.gtk2_17092006_1613
 PKGNAME=		soundtracker-$V
-REVISION=		7
+REVISION=		8
 CATEGORIES=		audio
 HOMEPAGE=		http://www.shaltev.org/programming.html
-
-MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

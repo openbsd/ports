@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/08 10:42:18 schwarze Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/12 08:53:45 bentley Exp $
 
 COMMENT=	Safe/Fast I/O Library
 
 VERSION=	2002
 PKGNAME=	sfio-${VERSION}
-REVISION =	2
+REVISION =	3
 DISTNAME=	sfio_${VERSION}.src.unix_tar
 CATEGORIES=	devel
 
 MASTER_SITES=	http://mirror.csoft.org/sfio/
 EXTRACT_SUFX=	.tar
-
-MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
