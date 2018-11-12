@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_celengine_frametree_h,v 1.1 2018/11/12 16:08:02 naddy Exp $
+
+Index: src/celengine/frametree.h
+--- src/celengine/frametree.h.orig
++++ src/celengine/frametree.h
+@@ -13,6 +13,7 @@
+ #ifndef _CELENGINE_FRAMETREE_H_
+ #define _CELENGINE_FRAMETREE_H_
+ 
++#include <cstddef>
+ #include <vector>
+ 
+ class Star;

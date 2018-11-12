@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_celengine_texture_cpp,v 1.1 2018/11/12 16:08:02 naddy Exp $
+
+Index: src/celengine/texture.cpp
+--- src/celengine/texture.cpp.orig
++++ src/celengine/texture.cpp
+@@ -27,6 +27,7 @@
+ #include <fstream>
+ #include <cstdlib>
+ #include <cstdio>
++#include <cstring>
+ #include <cassert>
+ 
+ #ifndef _WIN32
