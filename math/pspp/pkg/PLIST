@@ -1,0 +1,141 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/12 21:30:29 bcallah Exp $
+@bin bin/pspp
+@bin bin/pspp-convert
+@bin bin/pspp-dump-sav
+@bin bin/psppire
+@info info/pspp-dev.info
+@info info/pspp.info
+lib/pspp/
+lib/pspp/libpspp-1.2.0.so
+lib/pspp/libpspp-core-1.2.0.so
+lib/pspp/libpspp-core.a
+lib/pspp/libpspp-core.la
+lib/pspp/libpspp-core.so
+lib/pspp/libpspp.a
+lib/pspp/libpspp.la
+lib/pspp/libpspp.so
+@man man/man1/pspp-convert.1
+@man man/man1/pspp-dump-sav.1
+@man man/man1/pspp.1
+@man man/man1/psppire.1
+share/appdata/
+share/appdata/pspp.appdata.xml
+share/applications/pspp.desktop
+share/doc/pspp/
+share/doc/pspp/pspp.xml
+share/icons/hicolor/16x16/apps/pspp.png
+share/icons/hicolor/16x16/mimetypes/application-x-spss-por.png
+share/icons/hicolor/16x16/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/16x16/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/16x16/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/22x22/apps/pspp.png
+share/icons/hicolor/22x22/mimetypes/application-x-spss-por.png
+share/icons/hicolor/22x22/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/22x22/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/22x22/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/24x24/apps/pspp.png
+share/icons/hicolor/24x24/mimetypes/application-x-spss-por.png
+share/icons/hicolor/24x24/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/24x24/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/24x24/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/256x256/apps/pspp.png
+share/icons/hicolor/256x256/mimetypes/application-x-spss-por.png
+share/icons/hicolor/256x256/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/256x256/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/256x256/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/32x32/apps/pspp.png
+share/icons/hicolor/32x32/mimetypes/application-x-spss-por.png
+share/icons/hicolor/32x32/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/32x32/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/32x32/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/48x48/apps/pspp.png
+share/icons/hicolor/48x48/mimetypes/application-x-spss-por.png
+share/icons/hicolor/48x48/mimetypes/application-x-spss-sav.png
+share/icons/hicolor/48x48/mimetypes/application-x-spss-sps.png
+share/icons/hicolor/48x48/mimetypes/application-x-spss-zsav.png
+share/icons/hicolor/scalable/apps/pspp.svg
+share/locale/ca/LC_MESSAGES/pspp.mo
+share/locale/cs/LC_MESSAGES/pspp.mo
+share/locale/de/LC_MESSAGES/pspp.mo
+share/locale/el/LC_MESSAGES/pspp.mo
+share/locale/en_GB/LC_MESSAGES/pspp.mo
+share/locale/es/LC_MESSAGES/pspp.mo
+share/locale/fr/LC_MESSAGES/pspp.mo
+share/locale/gl/LC_MESSAGES/pspp.mo
+share/locale/hu/LC_MESSAGES/pspp.mo
+share/locale/ja/LC_MESSAGES/pspp.mo
+share/locale/lt/LC_MESSAGES/pspp.mo
+share/locale/nl/LC_MESSAGES/pspp.mo
+share/locale/pl/LC_MESSAGES/pspp.mo
+share/locale/pt_BR/LC_MESSAGES/pspp.mo
+share/locale/ru/LC_MESSAGES/pspp.mo
+share/locale/sl/LC_MESSAGES/pspp.mo
+share/locale/tr/LC_MESSAGES/pspp.mo
+share/locale/uk/LC_MESSAGES/pspp.mo
+share/locale/zh_CN/LC_MESSAGES/pspp.mo
+share/pspp/
+share/pspp/actions/
+share/pspp/aggregate.ui
+share/pspp/autorecode.ui
+share/pspp/barchart.ui
+share/pspp/binomial.ui
+share/pspp/categories/
+share/pspp/chi-square.ui
+share/pspp/comments.ui
+share/pspp/compute.ui
+share/pspp/correlation.ui
+share/pspp/count.ui
+share/pspp/crosstabs.ui
+share/pspp/data-editor.ui
+share/pspp/descriptives.ui
+share/pspp/entry-dialog.ui
+share/pspp/examine.ui
+share/pspp/examples/
+share/pspp/examples/descript.sps
+share/pspp/examples/grid.sps
+share/pspp/examples/hotel.sav
+share/pspp/examples/physiology.sav
+share/pspp/examples/regress.sps
+share/pspp/examples/regress_categorical.sps
+share/pspp/examples/repairs.sav
+share/pspp/examples/t-test.sps
+share/pspp/factor.ui
+share/pspp/find.ui
+share/pspp/frequencies.ui
+share/pspp/goto-case.ui
+share/pspp/histogram.ui
+share/pspp/indep-samples.ui
+share/pspp/k-independent.ui
+share/pspp/k-means.ui
+share/pspp/k-related.ui
+share/pspp/ks-one-sample.ui
+share/pspp/logistic.ui
+share/pspp/means.ui
+share/pspp/missing-val-dialog.ui
+share/pspp/oneway.ui
+share/pspp/options.ui
+share/pspp/output-window.ui
+share/pspp/paired-samples.ui
+share/pspp/pspp.lang
+share/pspp/rank.ui
+share/pspp/recode.ui
+share/pspp/regression.ui
+share/pspp/reliability.ui
+share/pspp/roc.ui
+share/pspp/runs.ui
+share/pspp/scatterplot.ui
+share/pspp/select-cases.ui
+share/pspp/sort.ui
+share/pspp/splash.png
+share/pspp/split-file.ui
+share/pspp/syntax-editor.ui
+share/pspp/t-test.ui
+share/pspp/text-data-import.ui
+share/pspp/transpose.ui
+share/pspp/univariate.ui
+share/pspp/val-labs-dialog.ui
+share/pspp/var-type-dialog.ui
+share/pspp/variable-info.ui
+share/pspp/weight.ui
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
