@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/17 06:35:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/12 12:49:43 bentley Exp $
 
 L =	hbs-slv
 LANG =	Serbo-Croatian/Slovenian
 V =	0.5.0
-REVISION =	1
+REVISION =	2
 
 BUILD_DEPENDS +=	textproc/vislcg3 \
 			textproc/apertium-lex-tools

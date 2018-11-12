@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
 share/apertium/apertium-es-ast/
 share/apertium/apertium-es-ast/apertium-es-ast.ast-es.t1x
 share/apertium/apertium-es-ast/apertium-es-ast.es-ast.t1x
@@ -14,7 +14,7 @@ share/apertium/apertium-es-ast/es-ast.autogen.bin
 share/apertium/apertium-es-ast/es-ast.automorf.bin
 share/apertium/apertium-es-ast/es-ast.autopgen.bin
 share/apertium/apertium-es-ast/es-ast.autopgen2.bin
-share/apertium/apertium-es-ast/es-ast.mode
+@comment share/apertium/apertium-es-ast/es-ast.mode
 share/apertium/apertium-es-ast/es-ast.post.t1x.bin
 share/apertium/apertium-es-ast/es-ast.prob
 share/apertium/apertium-es-ast/es-ast.t1x.bin

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
 share/apertium/apertium-es-pt/
 share/apertium/apertium-es-pt/apertium-es-pt.es-pt.t1x
 share/apertium/apertium-es-pt/apertium-es-pt.pt-es.t1x
@@ -6,20 +6,20 @@ share/apertium/apertium-es-pt/es-pt.autobil.bin
 share/apertium/apertium-es-pt/es-pt.autogen.bin
 share/apertium/apertium-es-pt/es-pt.automorf.bin
 share/apertium/apertium-es-pt/es-pt.autopgen.bin
-share/apertium/apertium-es-pt/es-pt.mode
+@comment share/apertium/apertium-es-pt/es-pt.mode
 share/apertium/apertium-es-pt/es-pt.prob
 share/apertium/apertium-es-pt/es-pt.t1x
 share/apertium/apertium-es-pt/es-pt.t1x.bin
 share/apertium/apertium-es-pt/es-pt_BR.autobil.bin
 share/apertium/apertium-es-pt/es-pt_BR.autogen.bin
-share/apertium/apertium-es-pt/es-pt_BR.mode
+@comment share/apertium/apertium-es-pt/es-pt_BR.mode
 share/apertium/apertium-es-pt/es-pt_BR.t1x
 share/apertium/apertium-es-pt/es-pt_BR.t1x.bin
 share/apertium/apertium-es-pt/pt-es.autobil.bin
 share/apertium/apertium-es-pt/pt-es.autogen.bin
 share/apertium/apertium-es-pt/pt-es.automorf.bin
 share/apertium/apertium-es-pt/pt-es.autopgen.bin
-share/apertium/apertium-es-pt/pt-es.mode
+@comment share/apertium/apertium-es-pt/pt-es.mode
 share/apertium/apertium-es-pt/pt-es.prob
 share/apertium/apertium-es-pt/pt-es.t1x
 share/apertium/apertium-es-pt/pt-es.t1x.bin

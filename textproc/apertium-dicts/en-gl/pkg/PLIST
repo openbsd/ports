@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
 share/apertium/apertium-en-gl/
 share/apertium/apertium-en-gl/apertium-en-gl.en-gl.t1x
 share/apertium/apertium-en-gl/apertium-en-gl.en-gl.t2x
@@ -10,7 +10,7 @@ share/apertium/apertium-en-gl/en-gl.autobil.bin
 share/apertium/apertium-en-gl/en-gl.autogen.bin
 share/apertium/apertium-en-gl/en-gl.automorf.bin
 share/apertium/apertium-en-gl/en-gl.autopgen.bin
-share/apertium/apertium-en-gl/en-gl.mode
+@comment share/apertium/apertium-en-gl/en-gl.mode
 share/apertium/apertium-en-gl/en-gl.prob
 share/apertium/apertium-en-gl/en-gl.t1x.bin
 share/apertium/apertium-en-gl/en-gl.t2x.bin
@@ -19,7 +19,7 @@ share/apertium/apertium-en-gl/gl-en.autobil.bin
 share/apertium/apertium-en-gl/gl-en.autogen.bin
 share/apertium/apertium-en-gl/gl-en.automorf.bin
 share/apertium/apertium-en-gl/gl-en.autopgen.bin
-share/apertium/apertium-en-gl/gl-en.mode
+@comment share/apertium/apertium-en-gl/gl-en.mode
 share/apertium/apertium-en-gl/gl-en.prob
 share/apertium/apertium-en-gl/gl-en.t1x.bin
 share/apertium/apertium-en-gl/gl-en.t2x.bin

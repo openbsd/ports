@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
 share/apertium/apertium-eo-en/
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.antaux_t2x
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.genitive.t1x
@@ -15,7 +15,7 @@ share/apertium/apertium-eo-en/en-eo.autogen.bin
 share/apertium/apertium-eo-en/en-eo.automorf.bin
 share/apertium/apertium-eo-en/en-eo.autopgen.bin
 share/apertium/apertium-eo-en/en-eo.genitive.t1x.bin
-share/apertium/apertium-eo-en/en-eo.mode
+@comment share/apertium/apertium-eo-en/en-eo.mode
 share/apertium/apertium-eo-en/en-eo.prob
 share/apertium/apertium-eo-en/en-eo.t1x.bin
 share/apertium/apertium-eo-en/en-eo.t2x.bin
@@ -25,7 +25,7 @@ share/apertium/apertium-eo-en/eo-en.autobil.bin
 share/apertium/apertium-eo-en/eo-en.autogen.bin
 share/apertium/apertium-eo-en/eo-en.automorf.bin
 share/apertium/apertium-eo-en/eo-en.autopgen.bin
-share/apertium/apertium-eo-en/eo-en.mode
+@comment share/apertium/apertium-eo-en/eo-en.mode
 share/apertium/apertium-eo-en/eo-en.prob
 share/apertium/apertium-eo-en/eo-en.t1x.bin
 share/apertium/apertium-eo-en/eo-en.t2x.bin

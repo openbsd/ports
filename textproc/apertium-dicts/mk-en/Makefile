@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/12 12:49:44 bentley Exp $
 
 L =	mk-en
 LANG =	Macedonian/English
 V =	0.1.1
-REVISION =	0
+REVISION =	1
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:44 bentley Exp $
 share/apertium/apertium-mk-en/
 share/apertium/apertium-mk-en/apertium-mk-en.mk-en.t1x
 share/apertium/apertium-mk-en/apertium-mk-en.mk-en.t2x
@@ -11,7 +11,7 @@ share/apertium/apertium-mk-en/mk-en.autogen.bin
 share/apertium/apertium-mk-en/mk-en.automorf.bin
 share/apertium/apertium-mk-en/mk-en.autopgen.bin
 share/apertium/apertium-mk-en/mk-en.lex.bin
-share/apertium/apertium-mk-en/mk-en.mode
+@comment share/apertium/apertium-mk-en/mk-en.mode
 share/apertium/apertium-mk-en/mk-en.prob
 share/apertium/apertium-mk-en/mk-en.rlx.bin
 share/apertium/apertium-mk-en/mk-en.t1x.bin

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:44 bentley Exp $
 share/apertium/apertium-oc-ca/
 share/apertium/apertium-oc-ca/ca-oc.autobil.bin
 share/apertium/apertium-oc-ca/ca-oc.autogen.bin
 share/apertium/apertium-oc-ca/ca-oc.automorf.bin
 share/apertium/apertium-oc-ca/ca-oc.autopgen.bin
-share/apertium/apertium-oc-ca/ca-oc.mode
+@comment share/apertium/apertium-oc-ca/ca-oc.mode
 share/apertium/apertium-oc-ca/ca-oc.prob
 share/apertium/apertium-oc-ca/ca-oc.t1x
 share/apertium/apertium-oc-ca/ca-oc.t1x.bin
@@ -23,12 +23,12 @@ share/apertium/apertium-oc-ca/ca-oc@aran.t2x
 share/apertium/apertium-oc-ca/ca-oc@aran.t2x.bin
 share/apertium/apertium-oc-ca/ca-oc@aran.t3x
 share/apertium/apertium-oc-ca/ca-oc@aran.t3x.bin
-share/apertium/apertium-oc-ca/ca-oc_aran.mode
+@comment share/apertium/apertium-oc-ca/ca-oc_aran.mode
 share/apertium/apertium-oc-ca/oc-ca.autobil.bin
 share/apertium/apertium-oc-ca/oc-ca.autogen.bin
 share/apertium/apertium-oc-ca/oc-ca.automorf.bin
 share/apertium/apertium-oc-ca/oc-ca.autopgen.bin
-share/apertium/apertium-oc-ca/oc-ca.mode
+@comment share/apertium/apertium-oc-ca/oc-ca.mode
 share/apertium/apertium-oc-ca/oc-ca.prob
 share/apertium/apertium-oc-ca/oc-ca.t1x
 share/apertium/apertium-oc-ca/oc-ca.t1x.bin
@@ -47,7 +47,7 @@ share/apertium/apertium-oc-ca/oc@aran-ca.t2x
 share/apertium/apertium-oc-ca/oc@aran-ca.t2x.bin
 share/apertium/apertium-oc-ca/oc@aran-ca.t3x
 share/apertium/apertium-oc-ca/oc@aran-ca.t3x.bin
-share/apertium/apertium-oc-ca/oc_aran-ca.mode
+@comment share/apertium/apertium-oc-ca/oc_aran-ca.mode
 share/apertium/modes/ca-oc.mode
 share/apertium/modes/ca-oc_aran.mode
 share/apertium/modes/oc-ca.mode

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
 share/apertium/apertium-hbs-slv/
 share/apertium/apertium-hbs-slv/apertium-hbs-slv.hbs-slv.t1x
 share/apertium/apertium-hbs-slv/apertium-hbs-slv.hbs-slv.t2x
@@ -11,7 +11,7 @@ share/apertium/apertium-hbs-slv/hbs-slv.autogen.bin
 share/apertium/apertium-hbs-slv/hbs-slv.autolex.bin
 share/apertium/apertium-hbs-slv/hbs-slv.automorf.bin
 share/apertium/apertium-hbs-slv/hbs-slv.autopgen.bin
-share/apertium/apertium-hbs-slv/hbs-slv.mode
+@comment share/apertium/apertium-hbs-slv/hbs-slv.mode
 share/apertium/apertium-hbs-slv/hbs-slv.prob
 share/apertium/apertium-hbs-slv/hbs-slv.rlx.bin
 share/apertium/apertium-hbs-slv/hbs-slv.t1x.bin
@@ -27,13 +27,13 @@ share/apertium/apertium-hbs-slv/slv-hbs.t2x.bin
 share/apertium/apertium-hbs-slv/slv-hbs.t3x.bin
 share/apertium/apertium-hbs-slv/slv-hbs_BS.autogen.bin
 share/apertium/apertium-hbs-slv/slv-hbs_BS.autolex.bin
-share/apertium/apertium-hbs-slv/slv-hbs_BS.mode
+@comment share/apertium/apertium-hbs-slv/slv-hbs_BS.mode
 share/apertium/apertium-hbs-slv/slv-hbs_HR.autogen.bin
 share/apertium/apertium-hbs-slv/slv-hbs_HR.autolex.bin
-share/apertium/apertium-hbs-slv/slv-hbs_HR.mode
+@comment share/apertium/apertium-hbs-slv/slv-hbs_HR.mode
 share/apertium/apertium-hbs-slv/slv-hbs_SR.autogen.bin
 share/apertium/apertium-hbs-slv/slv-hbs_SR.autolex.bin
-share/apertium/apertium-hbs-slv/slv-hbs_SR.mode
+@comment share/apertium/apertium-hbs-slv/slv-hbs_SR.mode
 share/apertium/modes/hbs-slv.mode
 share/apertium/modes/slv-hbs_BS.mode
 share/apertium/modes/slv-hbs_HR.mode
