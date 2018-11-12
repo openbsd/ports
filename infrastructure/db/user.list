@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.327 2018/11/03 16:44:33 danj Exp $
+$OpenBSD: user.list,v 1.328 2018/11/12 14:04:27 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -329,3 +329,4 @@ id  user		group		port options
 818 _vnu		_vnu		www/vnu
 819 _nomad		_nomad		sysutils/nomad
 820 _arpwatch		_arpwatch	net/arpwatch
+821 _tenshi		_tenshi		sysutils/tenshi
