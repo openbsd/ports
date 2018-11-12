@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2018/11/08 04:27:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.153 2018/11/12 21:30:52 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -106,6 +106,7 @@
      SUBDIR += pari
      SUBDIR += plplot
      SUBDIR += prover9
+     SUBDIR += pspp
      SUBDIR += py-Numeric
      SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
@@ -131,6 +132,7 @@
      SUBDIR += qhull
      SUBDIR += qrupdate
      SUBDIR += sc
+     SUBDIR += spread-sheet-widget
      SUBDIR += suitesparse
      SUBDIR += udunits
      SUBDIR += veusz
