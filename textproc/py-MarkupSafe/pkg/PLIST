@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/05/23 17:46:31 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/11/12 12:14:29 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markupsafe/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.py
