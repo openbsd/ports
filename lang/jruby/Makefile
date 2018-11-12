@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.72 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2018/11/12 06:25:18 jeremy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		9.1.17.0
+V =		9.2.3.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
-REVISION =	0
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -49,7 +48,7 @@ ANT_CMD =	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
-JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.1-java.gem
+JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.5-java.gem
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 post-extract:
@@ -58,7 +57,6 @@ post-extract:
 	cd ${WRKSRC} && mkdir jruby-launcher \
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
 		&& rm -f ../../data.tar.gz
-	cp ${WRKSRC}/lib/ruby/gems/shared/gems/*/bin/* ${WRKSRC}/bin/
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/jruby-launcher/jrubyexe.cpp \
