@@ -1,10 +1,10 @@
-$OpenBSD: patch-ext_bin_puppetdb,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
+$OpenBSD: patch-ext_bin_puppetdb,v 1.2 2018/11/12 07:15:56 sebastia Exp $
 Index: ext/bin/puppetdb
 --- ext/bin/puppetdb.orig
 +++ ext/bin/puppetdb
-@@ -12,8 +12,8 @@ elif [ `uname` == "OpenBSD" ] ; then
-     JAVA_BIN=$(javaPathHelper -c puppetdb)
+@@ -13,8 +13,8 @@ elif [ `uname` == "OpenBSD" ] ; then
      JAVA_ARGS="-Xmx192m"
+     TK_ARGS=""
      USER="_puppetdb"
 -    INSTALL_DIR="/opt/puppetlabs/server/apps/puppetdb"
 -    CONFIG="/etc/puppetlabs/puppetdb/conf.d"
