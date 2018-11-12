@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.506 2018/10/31 11:23:52 solene Exp $
+# $OpenBSD: Makefile,v 1.507 2018/11/12 00:07:23 bluhm Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -332,6 +332,7 @@
      SUBDIR += tarsnap
      SUBDIR += tarsnap-gui
      SUBDIR += tarsnapper
+     SUBDIR += tenshi
      SUBDIR += tentakel
      SUBDIR += terraform
      SUBDIR += testdisk
