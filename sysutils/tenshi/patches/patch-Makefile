@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -3,11 +3,10 @@
+ 
+ VERSION = 0.17
+ 
+-bindir = /usr/sbin
+-sysconfdir = /etc
+-docdir = /usr/share/doc/tenshi-${VERSION}
+-mandir = /usr/share/man
+-libdir = /var/lib/tenshi
++bindir = ${TRUEPREFIX}/sbin
++sysconfdir = ${TRUEPREFIX}/share/examples
++docdir = ${TRUEPREFIX}/share/doc/tenshi
++mandir = ${TRUEPREFIX}/man
+ 
+ DOCS = README.md LICENSE Changelog
+ SAMPLES = tenshi.conf tenshi.debian-init tenshi.openrc-init
+@@ -41,4 +40,3 @@ install:
+ 	[ -d ${DESTDIR}${mandir}/man8 ] || \
+ 		install -d ${DESTDIR}${mandir}/man8
+ 	install -g root -m 0644 tenshi.8 ${DESTDIR}${mandir}/man8/
+-	install -g root -m 755 -d ${DESTDIR}${libdir}

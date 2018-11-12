@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: tenshi.rc,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+
+daemon="${TRUEPREFIX}/sbin/tenshi"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: tenshi"
+
+rc_cmd $1

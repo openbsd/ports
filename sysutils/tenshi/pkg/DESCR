@@ -1,0 +1,7 @@
+tenshi is a log monitoring program, designed to watch one or more
+log files for lines matching user defined regular expressions and
+report on the matches. The regular expressions are assigned to
+queues which have an alert interval and a list of mail recipients.
+
+Queues can be set to send a notification as soon as there is a log
+line assigned to it, or to send periodic reports.

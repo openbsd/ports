@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+@newgroup _tenshi:821
+@newuser _tenshi:821:_tenshi:daemon:tenshi user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/tenshi
+@man man/man8/tenshi.8
+sbin/tenshi
+share/doc/tenshi/
+share/doc/tenshi/Changelog
+share/doc/tenshi/LICENSE
+share/doc/tenshi/README.md
+share/examples/tenshi/
+@sample ${SYSCONFDIR}/tenshi/
+share/examples/tenshi/tenshi.conf
+@sample ${SYSCONFDIR}/tenshi/tenshi.conf

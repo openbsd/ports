@@ -1,0 +1,35 @@
+$OpenBSD: patch-tenshi,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+
+https://github.com/inversepath/tenshi/pull/10
+
+Index: tenshi
+--- tenshi.orig
++++ tenshi
+@@ -71,7 +71,7 @@ $debug      = (defined($opts{'d'}) && $opts{'d'} == 0)
+ $debug_smtp = ($debug > 1) ? 1 : 0;
+ 
+ my $tail_file = '/usr/bin/tail';
+-my $tail_args = '-q -F -n 0';
++my $tail_args = '-f -n 0';
+ my $tail_multiple = 'off';
+ my @tail_pids;
+ 
+@@ -107,8 +107,8 @@ $config_read = 1;
+ 
+ if ($opts{'C'}) { exit 0; }
+ 
+-if (not defined($uid)) { $uid = getpwnam('tenshi') or clean_up and die RED "[ERROR] no such user: tenshi\n"; }
+-if (not defined($gid)) { $gid = getgrnam('tenshi') or clean_up and die RED "[ERROR] no such group: tenshi\n"; }
++if (not defined($uid)) { $uid = getpwnam('_tenshi') or clean_up and die RED "[ERROR] no such user: _tenshi\n"; }
++if (not defined($gid)) { $gid = getgrnam('_tenshi') or clean_up and die RED "[ERROR] no such group: _tenshi\n"; }
+ 
+ if ($listen) {
+     $syslog_listen_socket = IO::Socket::INET->new(
+@@ -1007,6 +1007,7 @@ sub csv_out {
+ sub prepare_process {
+     $0 = 'tenshi';
+     chdir '/'                   or clean_up and die RED "[ERROR] can't chdir to /: $!\n";
++    undef $!;
+     if($> == 0) { # only works when root
+         $) = "$gid $gid"; (!$!) or clean_up and die RED "[ERROR] can't reset supplementary groups: $!\n";
+     }

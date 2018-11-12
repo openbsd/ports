@@ -1,0 +1,175 @@
+$OpenBSD: patch-tenshi_conf,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+
+Index: tenshi.conf
+--- tenshi.conf.orig
++++ tenshi.conf
+@@ -4,26 +4,12 @@
+ 
+ # general settings
+ 
+-set uid tenshi
+-set gid tenshi
+-
+-set pidfile /var/run/tenshi.pid
+ set logfile /var/log/messages
+-set logfile /var/log/mail.log
+ # set fifo   /var/log/tenshi.fifo
+ # set listen 127.0.0.1:514
+ 
+-## GNU coreutils
+-# set tail /usr/bin/tail -q --follow=name --retry -n 0
++set tail_multiple on
+ 
+-## FreeBSD / NetBSD
+-# set tail /usr/bin/tail -F -n 0
+-
+-## OpenBSD / HP-UX
+-# set tail /usr/bin/tail -f -n 0
+-
+-set tail_multiple off
+-
+ set sleep 5
+ set limit 800
+ set pager_limit 2
+@@ -35,9 +21,6 @@ set hidepid on
+ ## queues
+ # syntax: set queue <queue_name> <mail_from> [pager:]<mail_to> <cron_spec> [<subject>]
+ 
+-set queue mail     tenshi@localhost sysadmin@localhost [30 18 * * *]
+-set queue nf       tenshi@localhost sysadmin@localhost [*/30 * * * *]
+-set queue report   tenshi@localhost sysadmin@localhost [0 9-17/2 * * *]
+ set queue misc     tenshi@localhost sysadmin@localhost [0 9-17/2 * * *]
+ set queue critical tenshi@localhost sysadmin@localhost,noc@localhost [now] tenshi CRITICAL report
+ set queue root     tenshi@localhost sysadmin@localhost [now]
+@@ -56,131 +39,6 @@ set queue noprefix tenshi@localhost sysadmin@localhost
+ ## regexp definitions
+ # syntax: <queue_name>[,<queue_name>..] <regexp>
+ 
+-## note: If you are not using the hidepid option for some reason, the regexps
+-## below will need to be slightly different, for example:
+-#
+-# mail  ^sendmail: (.+): to=(.+),(.+)relay=(.+),(.+)stat=Sent(.+)
+-# would need to be:
+-# mail ^sendmail\[(.*)\]: to=(.+),(.+)relay=(.+),(.+)stat=Sent(.+)
+-# in order to match the sendmail line and mask the PID.
+-
+ repeat ^(?:last message repeated|above message repeats) (\\d+) time
+-
+-trash ^hub.c
+-trash ^usb.c
+-trash ^uhci.c
+-trash ^sda
+-
+-trash ^Initializing USB
+-trash ^scsi0 : SCSI emulation
+-trash ^Vendor:
+-trash ^Type:
+-trash ^Attached scsi removable
+-trash ^SCSI device sda
+-trash ^sda: Write
+-trash ^/dev/scsi
+-trash ^WARNING: USB
+-trash ^USB Mass Storage
+-trash ^/dev
+-trash ^ISO
+-trash ^floppy0
+-trash ^end_request
+-trash ^Directory
+-trash ^I/O error: dev 08:(.+), sector
+-
+-nf ^netfilter
+-
+-group ^sendmail:
+-mail  ^sendmail: (.+): to=(.+),(.+)relay=(.+),(.+)stat=Sent(.+)
+-mail  ^sendmail: (.+): to=(.+),(.+)relay=(.+),(.+)stat=Sent
+-mail  ^sendmail: (.+): from=(.+),(.+)relay=(.+)
+-mail  ^sendmail: STARTTLS=client(.+)
+-mail  ^sendmail
+-group_end
+-
+-group ^sm-mta:
+-mail  ^sm-mta: (.+): to=(.+),(.+)delay=(.+)
+-mail  ^sm-mta: (.+): to=(.+),(.+)relay=(.+),(.+)stat=Sent(.+)
+-mail  ^sm-mta: (.+): to=(.+),(.+)relay=(.+),(.+)stat=Sent
+-mail  ^sm-mta: (.+): to=(.+),(.+)relay=local(.+)stat=Sent(.+)
+-mail  ^sm-mta: (.+): to=(.+),(.+)relay=local(.+)stat=Sent
+-mail  ^sm-mta: (.+): to=(.+),(.+)stat=Sent(.+)
+-mail  ^sm-mta: (.+): to=(.+),(.+)stat=Sent
+-mail  ^sm-mta: (.+): from=(.+),(.+)relay=local(.+)
+-mail  ^sm-mta: (.+): from=(.+),(.+)relay=(.+)
+-mail  ^sm-mta: STARTTLS=server(.+)
+-mail  ^sm-mta: STARTTLS=client(.+)
+-trash ^sm-mta:.+User unknown
+-mail  ^sm-mta: ETRN
+-mail  ^sm-mta
+-group_end
+-
+-group ^ipop3d:
+-mail  ^ipop3d: Login user=(.+)
+-mail  ^ipop3d: Logout user=(.+)
+-mail  ^ipop3d: pop3s SSL service init from (.+)
+-mail  ^ipop3d: pop3 service init from (.+)
+-mail  ^ipop3d: Auth user=(.+)
+-mail  ^ipop3d: Command stream end of file, while reading
+-mail  ^ipop3d: Command stream end of file while reading
+-mail  ^ipop3d: AUTHENTICATE LOGIN failure host=(.+)
+-mail  ^ipop3d: AUTHENTICATE PLAIN failure host=(.+)
+-mail  ^ipop3d: Login failed
+-mail,critical ^ipop3d:
+-group_end
+-
+-group ^imapd:
+-mail  ^imapd: Login user=(.+)
+-mail  ^imapd: Logout user=(.+)
+-mail  ^imapd: port (.+) service init from (.+)
+-mail  ^imapd: imaps SSL service init from (.+)
+-mail  ^imapd: Command stream end of file, while reading
+-mail  ^imapd: Command stream end of file while reading
+-mail  ^imapd: Authenticated user=(.+)
+-mail  ^imapd: AUTHENTICATE LOGIN failure host=(.+)
+-mail  ^imapd: AUTHENTICATE PLAIN failure host=(.+)
+-mail  ^imapd: Autologout(.+)
+-mail  ^imapd: Login failed
+-mail,critical ^imapd:
+-group_end
+-
+-group ^sshd(?:\(pam_unix\))?:
+-report   ^sshd: fatal: Timeout before authentication for (.+)
+-critical ^sshd: Illegal user
+-report   ^sshd: Connection from (.+)
+-report   ^sshd: Connection closed (.+)
+-report   ^sshd: Closing connection (.+)
+-report   ^sshd: Found matching (.+) key: (.+)
+-report   ^sshd: Accepted publickey (.+)
+-report   ^sshd: Accepted rsa for (.+) from (.+) port (.+)
+-report   ^sshd: Accepted keyboard-interactive/pam for (.+) from (.+) port (.+)
+-root     ^sshd\(pam_unix\): session opened for user root by root\(uid=0\)
+-root     ^sshd\(pam_unix\): session opened for user root by \(uid=0\)
+-report   ^sshd\(pam_unix\): session closed for user (.+)
+-report   ^sshd\(pam_unix\): session opened for user (.+)
+-report   ^sshd\(pam_unix\): authentication failure; logname=
+-group_end
+-
+-group ^login\(pam_unix\):
+-critical ^login\(pam_unix\): session opened for user root by root\(uid=0\)
+-critical ^login\(pam_unix\): session opened for user root by \(uid=0\)
+-report   ^login\(pam_unix\): session closed for user (.+)
+-report   ^login\(pam_unix\): session opened for user (.+)
+-group_end
+-
+-report   ^passwd\(pam_unix\):
+-
+-group ^su\(pam_unix\):
+-root,report   ^su\(pam_unix\): session opened for user root
+-root,report   ^su\(pam_unix\): session closed for user root(.+)
+-report        ^su\(pam_unix\): session opened for user (.+)
+-report        ^su\(pam_unix\): session closed for user (.+)
+-group_end
+-
+-critical ^(?:/usr/bin)?sudo:
+-
+-critical,pager ^Oops
+-critical,pager ^Linux
+-critical ^init
+ 
+ misc .*
