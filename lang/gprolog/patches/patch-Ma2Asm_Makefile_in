@@ -1,10 +1,10 @@
-$OpenBSD: patch-Ma2Asm_Makefile_in,v 1.2 2017/06/08 15:25:57 espie Exp $
+$OpenBSD: patch-Ma2Asm_Makefile_in,v 1.3 2018/11/12 19:15:40 daniel Exp $
 Index: Ma2Asm/Makefile.in
 --- Ma2Asm/Makefile.in.orig
 +++ Ma2Asm/Makefile.in
 @@ -53,14 +53,14 @@ CHKMA_OBJS=chkma@OBJ_SUFFIX@ chkma_ma@OBJ_SUFFIX@ ../E
- 
- chkma@OBJ_SUFFIX@: chkma.c
+  
+ chkma@OBJ_SUFFIX@: chkma.c ../EnginePl/engine.c
  	if [ "$$FC" = "Y" ]; then FCFLAGS='-DFAST'; fi; \
 -	$(GPLC) --c-compiler "$(CC)" -C "$(CFLAGS) $$FCFLAGS" -c chkma.c
 +	export PL_PATH=$(PWD)/../ ; ../TopComp/$(GPLC) --c-compiler "$(CC)" -C "$(CFLAGS) $$FCFLAGS" -c chkma.c

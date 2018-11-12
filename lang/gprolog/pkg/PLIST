@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/06/08 15:25:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/11/12 19:15:40 daniel Exp $
 bin/fd2c
 bin/gplc
 bin/gprolog
@@ -34,6 +34,7 @@ libdata/gprolog/lib/libengine_fd.a
 libdata/gprolog/lib/libengine_pl.a
 libdata/gprolog/lib/liblinedit.a
 libdata/gprolog/lib/top_level.o
+libdata/gprolog/lib/top_level_main.o
 share/doc/gprolog/
 share/doc/gprolog/compil-scheme.eps
 share/doc/gprolog/compil-scheme.pdf
@@ -136,6 +137,7 @@ share/examples/gprolog/ExamplesC/examp_c.c
 share/examples/gprolog/ExamplesC/new_main.pl
 share/examples/gprolog/ExamplesC/new_main_c.c
 share/examples/gprolog/ExamplesFD/
+share/examples/gprolog/ExamplesFD/BUILD_HOUSE.pl
 share/examples/gprolog/ExamplesFD/Makefile
 share/examples/gprolog/ExamplesFD/alpha.pl
 share/examples/gprolog/ExamplesFD/array.pl

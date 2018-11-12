@@ -1,0 +1,20 @@
+$OpenBSD: patch-EnginePl_dl_malloc_c,v 1.1 2018/11/12 19:15:40 daniel Exp $
+
+Index: EnginePl/dl_malloc.c
+--- EnginePl/dl_malloc.c.orig
++++ EnginePl/dl_malloc.c
+@@ -572,6 +572,14 @@ MAX_RELEASE_CHECK_RATE   default: 4095 unless not HAVE
+ #endif  /* HAVE_MORECORE */
+ #endif  /* DARWIN */
+ 
++#if defined(__OpenBSD__)
++/* Avoid sbrk on OpenBSD; use mmap instead */
++#ifndef HAVE_MORECORE
++#define HAVE_MORECORE 0
++#define HAVE_MMAP 1
++#endif
++#endif
++
+ #ifndef LACKS_SYS_TYPES_H
+ #include <sys/types.h>  /* For size_t */
+ #endif  /* LACKS_SYS_TYPES_H */

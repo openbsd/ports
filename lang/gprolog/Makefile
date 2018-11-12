@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2018/08/19 23:45:00 daniel Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/12 19:15:40 daniel Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		Prolog compiler
 
-DISTNAME=		gprolog-1.4.4
+DISTNAME=		gprolog-1.4.5
 CATEGORIES=		lang
-REVISION =		1
 
 HOMEPAGE=		http://www.gprolog.org/
-
-MAINTAINER=		Nuno Morgadinho <nuno.morgadinho@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +20,7 @@ MASTER_SITES=		http://www.gprolog.org/ \
 
 COMPILER =		base-gcc ports-gcc
 COMPILER_LANGS =	c
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf dest no-autoheader
 
 
