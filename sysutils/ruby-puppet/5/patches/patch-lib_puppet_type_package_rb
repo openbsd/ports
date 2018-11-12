@@ -1,10 +1,11 @@
-$OpenBSD: patch-lib_puppet_type_package_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+$OpenBSD: patch-lib_puppet_type_package_rb,v 1.2 2018/11/12 07:17:36 sebastia Exp $
 
 add new feature flavorable, and switch handling the flavor
 as a property instead of a parameter
 
---- lib/puppet/type/package.rb.orig	Thu Apr 28 12:20:14 2016
-+++ lib/puppet/type/package.rb	Thu Apr 28 12:20:48 2016
+Index: lib/puppet/type/package.rb
+--- lib/puppet/type/package.rb.orig
++++ lib/puppet/type/package.rb
 @@ -65,6 +65,7 @@ module Puppet
        provider-specific.",
        :methods => [:package_settings_insync?, :package_settings, :package_settings=]
@@ -13,7 +14,7 @@ as a property instead of a parameter
  
      ensurable do
        desc <<-EOT
-@@ -442,7 +443,7 @@ module Puppet
+@@ -441,7 +442,7 @@ module Puppet
        newvalues(:true, :false)
      end
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.4 2018/09/18 21:09:46 sebastia Exp $
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.5 2018/11/12 07:17:36 sebastia Exp $
 Index: lib/puppet/defaults.rb
 --- lib/puppet/defaults.rb.orig
 +++ lib/puppet/defaults.rb
-@@ -1211,13 +1211,13 @@ EOT
+@@ -1209,13 +1209,13 @@ EOT
  
    define_settings(:master,
      :user => {
