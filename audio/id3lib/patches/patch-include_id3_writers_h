@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_id3_writers_h,v 1.1 2018/11/13 16:26:16 naddy Exp $
+
+Index: include/id3/writers.h
+--- include/id3/writers.h.orig
++++ include/id3/writers.h
+@@ -30,7 +30,7 @@
+ 
+ #include "id3/writer.h"
+ #include "id3/id3lib_streams.h"
+-//#include <string.h>
++#include <string.h>
+ 
+ class ID3_CPP_EXPORT ID3_OStreamWriter : public ID3_Writer
+ {
