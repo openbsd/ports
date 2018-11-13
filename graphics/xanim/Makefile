@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/09 20:09:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2018/11/13 21:32:22 naddy Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
@@ -31,6 +31,7 @@ xa2.0_iv32_linuxELF.o.Z:0
 .if (${MACHINE_ARCH} == i386)
 SUPFILES= ${SUP_i386}
 PATCH_LIST+=i386-patch
+LOCAL_LDFLAGS=-Wl,-znotext
 .endif
 
 SUPDISTFILES=${SUP_i386}
@@ -51,6 +52,7 @@ post-configure:
 
 CONFIGURE_STYLE=	imake
 DOCDIR=${PREFIX}/share/doc/xanim
+MAKE_FLAGS=	LOCAL_LDFLAGS="${LOCAL_LDFLAGS}"
 
 NO_TEST=	Yes
 
