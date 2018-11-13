@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/11/10 08:26:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2018/11/13 17:57:25 naddy Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -42,6 +42,10 @@ MAKE_ENV=		V=1
 
 # make sure bundled libav headers are chosen over the system FFmpeg ones
 CPPFLAGS +=		-I${WRKBUILD}/gst-libs/ext/libav
+
+.if ${MACHINE_ARCH} == "i386"
+LDFLAGS +=		-Wl,-znotext
+.endif
 
 pre-configure:
 	sed -i 's,-O3,,g' ${WRKSRC}/gst-libs/ext/libav/configure
