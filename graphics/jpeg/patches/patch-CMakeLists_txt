@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/10/01 07:08:22 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/11/13 14:30:43 sthen Exp $
 
 Symbol versioning triggers weird linking problems in dependent ports.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -451,10 +451,6 @@ message(STATUS "INLINE = ${INLINE} (FORCE_INLINE = ${F
+@@ -453,10 +453,6 @@ message(STATUS "INLINE = ${INLINE} (FORCE_INLINE = ${F
  
  if(UNIX AND NOT APPLE)
    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/conftest.map "VERS_1 { global: *; };")
