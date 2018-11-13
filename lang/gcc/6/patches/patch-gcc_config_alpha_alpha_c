@@ -1,7 +1,16 @@
-$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Exp $
---- gcc/config/alpha/alpha.c.orig	Mon Jan  4 15:30:50 2016
-+++ gcc/config/alpha/alpha.c	Tue Aug 23 15:48:16 2016
-@@ -583,11 +583,17 @@ alpha_option_override (void)
+$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.2 2018/11/13 11:49:33 sthen Exp $
+Index: gcc/config/alpha/alpha.c
+--- gcc/config/alpha/alpha.c.orig
++++ gcc/config/alpha/alpha.c
+@@ -43,6 +43,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include "varasm.h"
+ #include "output.h"
+ #include "insn-attr.h"
++#include "flags.h"
+ #include "explow.h"
+ #include "expr.h"
+ #include "reload.h"
+@@ -583,11 +584,17 @@ alpha_option_override (void)
    if (!global_options_set.x_g_switch_value)
      g_switch_value = 8;
  
@@ -19,7 +28,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Ex
  
    alpha_override_options_after_change ();
  
-@@ -7694,6 +7700,9 @@ alpha_expand_prologue (void)
+@@ -7694,6 +7701,9 @@ alpha_expand_prologue (void)
    sa_size = alpha_sa_size ();
    frame_size = compute_frame_size (get_frame_size (), sa_size);
  
@@ -29,7 +38,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Ex
    if (flag_stack_usage_info)
      current_function_static_stack_size = frame_size;
  
-@@ -7732,6 +7741,8 @@ alpha_expand_prologue (void)
+@@ -7732,6 +7742,8 @@ alpha_expand_prologue (void)
    if (flag_stack_check)
      probed_size += STACK_CHECK_PROTECT;
  
@@ -38,7 +47,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Ex
    if (probed_size <= 32768)
      {
        if (probed_size > 4096)
-@@ -7810,6 +7821,34 @@ alpha_expand_prologue (void)
+@@ -7810,6 +7822,34 @@ alpha_expand_prologue (void)
  		    gen_rtx_SET (stack_pointer_rtx,
  				 plus_constant (Pmode, stack_pointer_rtx,
  						-frame_size)));
@@ -66,7 +75,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2016/09/04 16:20:16 pascal Ex
 +	     note it looks at instead.  */
 +	  RTX_FRAME_RELATED_P (seq) = 1;
 +          add_reg_note (seq, REG_FRAME_RELATED_EXPR,
-+		    gen_rtx_SET (VOIDmode, stack_pointer_rtx,
++		    gen_rtx_SET (stack_pointer_rtx,
 +				 plus_constant (Pmode, stack_pointer_rtx,
 +						-frame_size)));
 +	}
