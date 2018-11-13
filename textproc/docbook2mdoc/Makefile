@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/22 20:34:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/13 08:55:42 bentley Exp $
 
 COMMENT =		convert DocBook refentry to mdoc
 
 DISTNAME =		docbook2mdoc-0.0.9
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://mandoc.bsd.lv/docbook2mdoc/
+HOMEPAGE =		https://mandoc.bsd.lv/docbook2mdoc/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c expat
 
-MASTER_SITES =		http://mandoc.bsd.lv/docbook2mdoc/snapshots/
+MASTER_SITES =		https://mandoc.bsd.lv/docbook2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
 MAKE_FLAGS =		CC="${CC}" \
