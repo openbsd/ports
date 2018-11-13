@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.124 2018/10/20 17:14:03 espie Exp $
+# $OpenBSD: portcheck,v 1.125 2018/11/13 15:03:43 jca Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -145,7 +145,7 @@ EOF
 	)
 	IFS=:
 	set -A portsdir_path -- \
-		$( (echo "$test_mf" | make -C / -f - show=PORTSDIR_PATH 2>/dev/null) || true)
+		$( (echo "$test_mf" | env FLAVOR= make -C / -f - show=PORTSDIR_PATH 2>/dev/null) || true)
 	unset IFS
 	if ((${#portsdir_path[@]} > 0)); then
 		for p in "${portsdir_path[@]}"; do
