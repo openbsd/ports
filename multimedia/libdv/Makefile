@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/13 19:40:51 naddy Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -26,5 +26,9 @@ CONFIGURE_ARGS=		--disable-sdl \
 			--with-x
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${MACHINE_ARCH} == "i386"
+MAKE_FLAGS+=		libdv_la_LIBADD=-Wl,-znotext
+.endif
 
 .include <bsd.port.mk>
