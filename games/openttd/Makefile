@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2018/11/13 04:05:34 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		1.8.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	games
 
@@ -32,7 +32,8 @@ LIB_DEPENDS=		archivers/lzo2 \
 			archivers/xz \
 			x11/libxdg-basedir
 
-RUN_DEPENDS=            devel/desktop-file-utils \
+RUN_DEPENDS =		audio/timidity \
+			devel/desktop-file-utils \
 			games/openttd-data/opengfx \
 			games/openttd-data/openmsx \
 			games/openttd-data/opensfx \
@@ -50,7 +51,6 @@ CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \
 			--with-zlib \
 			--without-allegro \
 			--without-libtimidity \
-			--with-midi=/usr/bin/midiplay \
 			--CFLAGS_BUILD="${CFLAGS}" \
 			--disable-strip
 
