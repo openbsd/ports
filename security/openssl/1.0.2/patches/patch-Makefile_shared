@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_shared,v 1.1 2018/11/13 14:36:08 naddy Exp $
+
+Also match lld's "compatible with GNU linkers".
+
+Index: Makefile.shared
+--- Makefile.shared.orig
++++ Makefile.shared
+@@ -144,7 +144,7 @@ LINK_SO_A_UNPACKED=	\
+   SHOBJECTS=$$UNPACKDIR/*.o; \
+   $(LINK_SO) && rm -rf $$UNPACKDIR
+ 
+-DETECT_GNU_LD=($(CC) -Wl,-V /dev/null 2>&1 | grep '^GNU ld' )>/dev/null
++DETECT_GNU_LD=($(CC) -Wl,-V /dev/null 2>&1 | grep 'GNU l' )>/dev/null
+ 
+ DO_GNU_SO=$(CALC_VERSIONS); \
+ 	SHLIB=lib$(LIBNAME).so; \
