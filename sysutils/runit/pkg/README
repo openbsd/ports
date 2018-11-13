@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:46:23 espie Exp $
+$OpenBSD: README,v 1.4 2018/11/13 16:54:08 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,11 +9,5 @@ You will need to add
     csh -cf '${PREFIX}/sbin/runsvdir-start &'
 
 to /etc/rc.local in order to have runit start at boot.
-
-The service directory has moved back from ${LOCALSTATEDIR}/service to
-/service.  To keep on using ${LOCALSTATEDIR}/service, a symlink is
-enough:
-
-  # ln -s /var/service /
 
 Read ${PREFIX}/share/doc/runit/upgrade.html on update.
