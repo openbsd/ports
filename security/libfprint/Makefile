@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/26 16:01:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2018/11/13 13:46:42 ajacoutot Exp $
 
 COMMENT=		library for fingerprint reader devices
 
 DISTNAME=		libfprint-0.6.0
+REVISION=		0
 
 CATEGORIES=    		security
 
 SHARED_LIBS +=  fprint               1.1      # 0.0
 
-HOMEPAGE=a		http://www.freedesktop.org/wiki/Software/fprint/libfprint
+HOMEPAGE=		http://www.freedesktop.org/wiki/Software/fprint/libfprint
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.xz
 
