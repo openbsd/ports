@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/26 18:21:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/13 22:31:03 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		0.25.1
+V =		0.26.1
 V_SHARDS =	0.8.1
 REVISION =	1
 COMMENT =	statically typed object oriented language
@@ -24,10 +24,10 @@ WANTLIB += m pcre yaml
 # 	--target amd64-unknown-openbsd`uname -r` src/compiler/crystal.cr \
 # 	-D i_know_what_im_doing
 MASTER_SITES =	https://github.com/crystal-lang/crystal/archive/
-MASTER_SITES0 =	https://jcs.org/distfiles/
+MASTER_SITES0 =	https://wmoxam.com/public/
 MASTER_SITES1 =	https://github.com/crystal-lang/shards/archive/
 DISTFILES =	crystal-${V}{${V}}.tar.gz \
-		crystal-${V}-OpenBSD6.3.tar.gz:0 \
+		crystal-${V}-OpenBSD6.4.tar.gz:0 \
 		shards-${V}{v${V_SHARDS}}.tar.gz:1
 
 # Build requires llvm-config which only exists in ports-clang
