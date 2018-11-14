@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/19 20:17:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/14 19:18:16 jasper Exp $
 
 COMMENT =		Suricata update tool
 
-MODPY_EGG_VERSION =	1.0.0rc2
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		suricata-update-${MODPY_EGG_VERSION}
 CATEGORIES =		security
 EPOCH =			0
