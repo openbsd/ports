@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.522 2018/11/14 19:11:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.523 2018/11/14 22:25:20 pvk Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -371,6 +371,7 @@
      SUBDIR += smurflog
      SUBDIR += snort2pf
      SUBDIR += softhsm
+     SUBDIR += softhsm2
      SUBDIR += spiped
      SUBDIR += sqlmap
      SUBDIR += ssdeep
