@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.6 2018/04/28 15:04:29 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.7 2018/11/14 09:07:41 ajacoutot Exp $
 
 - [Sparc] allow tls_add/tls_call syntax in assembler parser
+- [Sparc] Add membar assembler tags
 - [Sparc] Use synthetic instruction clr to zero register instead of sethi
 
   Using `clr reg`/`mov %g0, reg`/`or %g0, %g0, reg` to zero a register
@@ -9,7 +10,24 @@ $OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.6 2018/04/28 15:04:29 aja
 Index: lib/Target/Sparc/SparcInstrInfo.td
 --- lib/Target/Sparc/SparcInstrInfo.td.orig
 +++ lib/Target/Sparc/SparcInstrInfo.td
-@@ -1313,7 +1313,7 @@ let Defs = [FCC0], rd = 0, isCodeGenOnly = 1 in {
+@@ -121,6 +121,16 @@ def MEMri : Operand<iPTR> {
+ 
+ def TLSSym : Operand<iPTR>;
+ 
++def SparcMembarTagAsmOperand : AsmOperandClass {
++  let Name = "MembarTag";
++  let ParserMethod = "parseMembarTag";
++}
++
++def MembarTag : Operand<i32> {
++  let PrintMethod = "printMembarTag";
++  let ParserMatchClass = SparcMembarTagAsmOperand;
++}
++
+ // Branch targets have OtherVT type.
+ def brtarget : Operand<OtherVT> {
+   let EncoderMethod = "getBranchTargetOpValue";
+@@ -1313,7 +1323,7 @@ let Defs = [FCC0], rd = 0, isCodeGenOnly = 1 in {
  //===----------------------------------------------------------------------===//
  // Instructions for Thread Local Storage(TLS).
  //===----------------------------------------------------------------------===//
@@ -18,7 +36,18 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  def TLS_ADDrr : F3_1<2, 0b000000,
                      (outs IntRegs:$rd),
                      (ins IntRegs:$rs1, IntRegs:$rs2, TLSSym:$sym),
-@@ -1599,6 +1599,9 @@ let Predicates = [HasV9] in {
+@@ -1508,8 +1518,8 @@ def : Pat<(ctpop i32:$src),
+           (POPCrr (SRLri $src, 0))>;
+ 
+ let Predicates = [HasV9], hasSideEffects = 1, rd = 0, rs1 = 0b01111 in
+- def MEMBARi : F3_2<2, 0b101000, (outs), (ins simm13Op:$simm13),
+-                    "membar $simm13", []>;
++ def MEMBARi : F3_2<2, 0b101000, (outs), (ins MembarTag:$tag),
++                    "membar $tag", []>;
+ 
+ // The CAS instruction, unlike other instructions, only comes in a 
+ // form which requires an ASI be provided. The ASI value hardcoded 
+@@ -1599,6 +1609,9 @@ let Predicates = [HasV9] in {
  // Non-Instruction Patterns
  //===----------------------------------------------------------------------===//
  

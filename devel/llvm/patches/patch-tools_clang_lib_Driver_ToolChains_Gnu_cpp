@@ -1,11 +1,17 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.4 2018/07/08 10:32:45 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.5 2018/11/14 09:07:41 ajacoutot Exp $
 
 [mips][ias] Enable IAS by default for OpenBSD / FreeBSD mips64/mips64el.
 
 Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
 --- tools/clang/lib/Driver/ToolChains/Gnu.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Gnu.cpp
-@@ -2246,11 +2246,13 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+@@ -2243,14 +2243,19 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+   case llvm::Triple::systemz:
+   case llvm::Triple::mips:
+   case llvm::Triple::mipsel:
++  case llvm::Triple::sparc:
++  case llvm::Triple::sparcel:
++  case llvm::Triple::sparcv9:
      return true;
    case llvm::Triple::mips64:
    case llvm::Triple::mips64el:
