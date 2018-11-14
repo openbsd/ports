@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_utils_c,v 1.1.1.1 2018/11/14 19:10:38 jasper Exp $
+
+Fix format for strlen() return type (size_t)
+
+Index: src/utils.c
+--- src/utils.c.orig
++++ src/utils.c
+@@ -155,7 +155,7 @@ int location_cmp(char *A, char *B) {
+     if(ptr!=0) A=ptr+1;
+     }
+ 
+-  if(options.debuging>4) printf("[++++] location_cmp() A[%d]: '%s'\n", strlen(A), uri_decode(A));
++  if(options.debuging>4) printf("[++++] location_cmp() A[%lu]: '%s'\n", strlen(A), uri_decode(A));
+ 
+   if(strncmp(B, "http://", 7)==0 || strncmp(B, "https://", 8)==0) {
+     ptr=(char *)strchr(B, '/');
+@@ -166,11 +166,11 @@ int location_cmp(char *A, char *B) {
+     if(ptr!=0) B=ptr+1;
+     }
+ 
+-  if(options.debuging>4) printf("[++++] location_cmp() B[%d]: '%s'\n", strlen(B), uri_decode(B));
++  if(options.debuging>4) printf("[++++] location_cmp() B[%lu]: '%s'\n", strlen(B), uri_decode(B));
+ 
+   result=strncmp(uri_decode(A), uri_decode(B), strlen(A)>strlen(B) ? strlen(A) : strlen(B));
+ 
+-  if(options.debuging>4) printf("[++++] location_cmp() RESULT: %d (%d)\n", result, strlen(A)>strlen(B) ? strlen(A) : strlen(B));
++  if(options.debuging>4) printf("[++++] location_cmp() RESULT: %d (%lu)\n", result, strlen(A)>strlen(B) ? strlen(A) : strlen(B));
+ 
+   return result;
+ 
+@@ -421,4 +421,4 @@ int compare_str(char *A, char *B) {
+ 
+   return 0;
+ 
+-}
+\ No newline at end of file
++}

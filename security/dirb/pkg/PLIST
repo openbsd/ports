@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/14 19:10:38 jasper Exp $
+@bin bin/dirb
+@bin bin/dirb-gendict
+@bin bin/html2dic
+@man man/man1/dirb.1
+share/dirb/
+share/dirb/wordlists/
+share/dirb/wordlists/big.txt
+share/dirb/wordlists/catala.txt
+share/dirb/wordlists/common.txt
+share/dirb/wordlists/euskera.txt
+share/dirb/wordlists/extensions_common.txt
+share/dirb/wordlists/indexes.txt
+share/dirb/wordlists/mutations_common.txt
+share/dirb/wordlists/others/
+share/dirb/wordlists/others/best1050.txt
+share/dirb/wordlists/others/best110.txt
+share/dirb/wordlists/others/best15.txt
+share/dirb/wordlists/others/names.txt
+share/dirb/wordlists/small.txt
+share/dirb/wordlists/spanish.txt
+share/dirb/wordlists/stress/
+share/dirb/wordlists/stress/alphanum_case.txt
+share/dirb/wordlists/stress/alphanum_case_extra.txt
+share/dirb/wordlists/stress/char.txt
+share/dirb/wordlists/stress/doble_uri_hex.txt
+share/dirb/wordlists/stress/test_ext.txt
+share/dirb/wordlists/stress/unicode.txt
+share/dirb/wordlists/stress/uri_hex.txt
+share/dirb/wordlists/vulns/
+share/dirb/wordlists/vulns/apache.txt
+share/dirb/wordlists/vulns/axis.txt
+share/dirb/wordlists/vulns/cgis.txt
+share/dirb/wordlists/vulns/coldfusion.txt
+share/dirb/wordlists/vulns/domino.txt
+share/dirb/wordlists/vulns/fatwire.txt
+share/dirb/wordlists/vulns/fatwire_pagenames.txt
+share/dirb/wordlists/vulns/frontpage.txt
+share/dirb/wordlists/vulns/hpsmh.txt
+share/dirb/wordlists/vulns/hyperion.txt
+share/dirb/wordlists/vulns/iis.txt
+share/dirb/wordlists/vulns/iplanet.txt
+share/dirb/wordlists/vulns/jboss.txt
+share/dirb/wordlists/vulns/jersey.txt
+share/dirb/wordlists/vulns/jrun.txt
+share/dirb/wordlists/vulns/netware.txt
+share/dirb/wordlists/vulns/oracle.txt
+share/dirb/wordlists/vulns/ror.txt
+share/dirb/wordlists/vulns/sap.txt
+share/dirb/wordlists/vulns/sharepoint.txt
+share/dirb/wordlists/vulns/sunas.txt
+share/dirb/wordlists/vulns/tests.txt
+share/dirb/wordlists/vulns/tomcat.txt
+share/dirb/wordlists/vulns/vignette.txt
+share/dirb/wordlists/vulns/weblogic.txt
+share/dirb/wordlists/vulns/websphere.txt
