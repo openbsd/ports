@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2018/03/30 23:16:59 kili Exp $
+# $OpenBSD: Makefile,v 1.160 2018/11/14 15:08:49 naddy Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -100,7 +100,7 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
 .if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-fno-pie
+CFLAGS +=		-fno-pie -Wl,-znotext
 .endif
 
 CONFIGURE_STYLE =	gnu
