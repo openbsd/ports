@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/23 18:52:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2018/11/14 19:17:38 jasper Exp $
 
 COMMENT =	cli for minio
 
-V =		2018-10-18T00-40-05Z
+V =		2018-11-06T01-12-20Z
 GH_PROJECT =	mc
 GH_TAGNAME =	RELEASE.${V}
 PKGNAME =	minioc-0.${V:C/T.*//:S/-//g}
