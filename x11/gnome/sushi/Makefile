@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2018/05/15 13:27:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2018/11/14 20:48:22 sthen Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.28.3
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

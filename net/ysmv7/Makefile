@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/09 20:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2018/11/14 20:48:21 sthen Exp $
 
 COMMENT=		ICQ console client with encryption support
 
 DISTNAME=		ysmv7_2_9_9_1
 PKGNAME=		${DISTNAME:S/_/-/:S/_/./g}
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://ysmv7.sourceforge.net/
 

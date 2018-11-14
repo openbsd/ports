@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/25 14:08:18 stu Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/14 20:48:22 sthen Exp $
 
 COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
@@ -11,6 +11,9 @@ SHARED_LIBS +=	isoburn 0.0 # 106.0
 PKGNAME-main =		${PKGNAME}
 PKGNAME-xorriso =	xorriso-${V}
 PKGNAME-tcltk =		xorriso-tcltk-${V}
+REVISION-main =		0
+REVISION-tcltk =	0
+REVISION-xorriso =	0
 
 MULTI_PACKAGES =	-main -xorriso -tcltk
 

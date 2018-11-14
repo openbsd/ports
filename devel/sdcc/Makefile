@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/08/13 17:07:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2018/11/14 20:48:21 sthen Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
@@ -7,7 +7,7 @@ BROKEN-aarch64=	*** BFD does not support target aarch64-unknown-openbsd6.2.
 
 DISTNAME=	sdcc-src-3.7.0
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
 

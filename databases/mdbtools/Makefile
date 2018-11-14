@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2018/11/14 20:48:21 sthen Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -9,8 +9,8 @@ GH_TAGNAME =		0.7.1
 
 PKGNAME-main =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
-REVISION-main =		3
-REVISION-gmdb =		4
+REVISION-main =		4
+REVISION-gmdb =		5
 EPOCH =			0
 
 CATEGORIES =		databases converters

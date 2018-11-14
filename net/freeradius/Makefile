@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.77 2018/11/14 20:48:21 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -12,7 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
 V=		2.2.10
-REVISION=	0
+REVISION=	1
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -21,7 +21,7 @@ PKGNAME-iodbc=	freeradius-iodbc-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-ldap=	freeradius-ldap-$V
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	net security
 

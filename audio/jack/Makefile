@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2018/11/14 20:48:21 sthen Exp $
 
 COMMENT =		low latency sound server
 
@@ -6,7 +6,7 @@ V =			0.125.0
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		jack		2.0	# 0.28
 SHARED_LIBS +=		jackserver	2.0	# 0.28

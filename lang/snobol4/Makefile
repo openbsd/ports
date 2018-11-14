@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/06 08:14:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/14 20:48:21 sthen Exp $
 
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-2.0
 CATEGORIES =	lang
+REVISION =	0
 
 HOMEPAGE =	http://www.snobol4.org/csnobol4/curr/
 MAINTAINER =	STeve Andre <andres@msu.edu>
