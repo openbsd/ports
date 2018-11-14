@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/16 17:55:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/14 19:27:55 jasper Exp $
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
-GH_TAGNAME =		3.5.4
-REVISION =		0
+GH_TAGNAME =		3.5.5
 
 SHARED_LIBS +=  sass                      0.0 # 0.0
 
