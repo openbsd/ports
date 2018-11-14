@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.95 2018/10/19 11:46:42 danj Exp $
+# $OpenBSD: Makefile,v 1.96 2018/11/14 12:18:40 danj Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.7.0
+MODPY_EGG_VERSION =	2.7.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
@@ -56,8 +56,9 @@ post-build:
 	      ${WRKSRC}/docs/docsite/_build/html/_static/css/theme.min.css
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXDIR}
+	${INSTALL_DATA_DIR} ${EXDIR}/scripts ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/scripts/* ${EXDIR}/scripts/
+	${INSTALL_DATA} ${WRKSRC}/examples/{ansible.cfg,hosts} ${EXDIR}
 	${SUBST_CMD} ${EXDIR}/hosts
 	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${PREFIX}/man/man1
 	cp -R ${WRKBUILD}/docs/docsite/_build/html ${DOCDIR}

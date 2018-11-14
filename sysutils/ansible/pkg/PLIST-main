@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/10/19 11:46:42 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2018/11/14 12:18:40 danj Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -6729,6 +6729,7 @@ share/doc/ansible/html/dev_guide/developing_locally.html
 share/doc/ansible/html/dev_guide/developing_modules_general_aci.html
 share/doc/ansible/html/dev_guide/module_lifecycle.html
 share/doc/ansible/html/dev_guide/testing/sanity/changelog.html
+share/doc/ansible/html/dev_guide/testing/sanity/symlinks.html
 share/doc/ansible/html/dev_guide/testing_documentation.html
 share/doc/ansible/html/network/user_guide/platform_cnos.html
 share/doc/ansible/html/network/user_guide/platform_enos.html
@@ -6772,3 +6773,6 @@ share/examples/ansible/ansible.cfg
 @sample ${SYSCONFDIR}/ansible/ansible.cfg
 share/examples/ansible/hosts
 @sample ${SYSCONFDIR}/ansible/hosts
+share/examples/ansible/scripts/
+share/examples/ansible/scripts/ConfigureRemotingForAnsible.ps1
+share/examples/ansible/scripts/upgrade_to_ps3.ps1
