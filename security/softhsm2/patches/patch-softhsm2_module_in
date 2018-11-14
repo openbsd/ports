@@ -1,0 +1,11 @@
+$OpenBSD: patch-softhsm2_module_in,v 1.1.1.1 2018/11/14 22:23:07 pvk Exp $
+
+Index: softhsm2.module.in
+--- softhsm2.module.in.orig
++++ softhsm2.module.in
+@@ -1,4 +1,4 @@
+ # This file describes how to load the pk11 module
+-# See: http://p11-glue.freedesktop.org/doc/p11-kit/config.html
++# See: https://p11-glue.github.io/p11-glue/p11-kit/manual/pkcs11-conf.html
+ 
+ module: @default_softhsm2_lib@

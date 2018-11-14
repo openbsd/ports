@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2018/11/14 22:23:07 pvk Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -8495,7 +8495,7 @@ full_sysconfdir=`eval eval eval eval eval echo "${sysc
+ full_localstatedir=`eval eval eval eval eval echo "${localstatedir}" | sed "s#NONE#${prefix}#" | sed "s#NONE#${ac_default_prefix}#"`
+ full_libdir=`eval eval eval eval eval echo "${libdir}" | sed "s#NONE#${prefix}#" | sed "s#NONE#${ac_default_prefix}#"`
+ default_softhsm2_conf="`eval echo ${full_sysconfdir} | sed s,NONE,$ac_default_prefix,g`/softhsm2.conf"
+-softhsmtokendir=${full_localstatedir}/lib/softhsm/tokens/
++softhsmtokendir=${full_localstatedir}/db/softhsm/tokens/
+ 
+ # Install the library in a sub-directory
+ full_libdir="$full_libdir/softhsm"
