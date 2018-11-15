@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2018/11/15 08:39:57 landry Exp $
+# $OpenBSD: Makefile,v 1.278 2018/11/15 11:03:51 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -82,7 +82,7 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
 #	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
 .if ${MACHINE_ARCH} == "i386"
-#CONFIGURE_ARGS +=	--disable-debug-symbols		#maybe also needed
+CONFIGURE_ARGS +=	--disable-debug-symbols		#maybe also needed
 DPB_PROPERTIES +=	lonesome
 .endif
 
