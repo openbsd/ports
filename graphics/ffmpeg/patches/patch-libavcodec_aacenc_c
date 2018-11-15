@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.21 2018/11/01 08:43:26 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.22 2018/11/15 08:30:33 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -86,13 +86,7 @@ aacenc: add SIMD optimizations for abs_pow34 and quantization
 
 aacenc: quit when the audio queue reaches 0 rather than keeping track of empty frames
 
-aacenc: support extended channel layouts using PCEs
-
-aacenc: use the PCE comment field for encoder ID
-
 aacenc: use the fast coder as the default
-
-avcodec/aacenc: report channel layout by name
 
 Index: libavcodec/aacenc.c
 --- libavcodec/aacenc.c.orig
@@ -105,65 +99,13 @@ Index: libavcodec/aacenc.c
  #include "libavutil/float_dsp.h"
  #include "libavutil/opt.h"
  #include "avcodec.h"
-@@ -46,31 +47,88 @@
- 
- #include "psymodel.h"
- 
-+static void put_pce(PutBitContext *pb, AVCodecContext *avctx)
-+{
-+    int i, j;
-+    AACEncContext *s = avctx->priv_data;
-+    AACPCEInfo *pce = &s->pce;
-+    const int bitexact = avctx->flags & AV_CODEC_FLAG_BITEXACT;
-+    const char *aux_data = bitexact ? "Lavc" : LIBAVCODEC_IDENT;
-+
-+    put_bits(pb, 4, 0);
-+
-+    put_bits(pb, 2, avctx->profile);
-+    put_bits(pb, 4, s->samplerate_index);
-+
-+    put_bits(pb, 4, pce->num_ele[0]); /* Front */
-+    put_bits(pb, 4, pce->num_ele[1]); /* Side */
-+    put_bits(pb, 4, pce->num_ele[2]); /* Back */
-+    put_bits(pb, 2, pce->num_ele[3]); /* LFE */
-+    put_bits(pb, 3, 0); /* Assoc data */
-+    put_bits(pb, 4, 0); /* CCs */
-+
-+    put_bits(pb, 1, 0); /* Stereo mixdown */
-+    put_bits(pb, 1, 0); /* Mono mixdown */
-+    put_bits(pb, 1, 0); /* Something else */
-+
-+    for (i = 0; i < 4; i++) {
-+        for (j = 0; j < pce->num_ele[i]; j++) {
-+            if (i < 3)
-+                put_bits(pb, 1, pce->pairing[i][j]);
-+            put_bits(pb, 4, pce->index[i][j]);
-+        }
-+    }
-+
-+    avpriv_align_put_bits(pb);
-+    put_bits(pb, 8, strlen(aux_data));
-+    avpriv_put_string(pb, aux_data, 0);
-+}
-+
- /**
-  * Make AAC audio config object.
-  * @see 1.6.2.1 "Syntax - AudioSpecificConfig"
-  */
--static void put_audio_specific_config(AVCodecContext *avctx)
-+static int put_audio_specific_config(AVCodecContext *avctx)
+@@ -54,11 +55,12 @@ static void put_audio_specific_config(AVCodecContext *
  {
      PutBitContext pb;
      AACEncContext *s = avctx->priv_data;
-+    int channels = (!s->needs_pce)*(s->channels - (s->channels == 8 ? 1 : 0));
-+    const int max_size = 32;
++    int channels = s->channels - (s->channels == 8 ? 1 : 0);
  
--    init_put_bits(&pb, avctx->extradata, avctx->extradata_size);
-+    avctx->extradata = av_mallocz(max_size);
-+    if (!avctx->extradata)
-+        return AVERROR(ENOMEM);
-+
-+    init_put_bits(&pb, avctx->extradata, max_size);
+     init_put_bits(&pb, avctx->extradata, avctx->extradata_size);
      put_bits(&pb, 5, s->profile+1); //profile
      put_bits(&pb, 4, s->samplerate_index); //sample rate index
 -    put_bits(&pb, 4, s->channels);
@@ -171,18 +113,8 @@ Index: libavcodec/aacenc.c
      //GASpecificConfig
      put_bits(&pb, 1, 0); //frame length - 1024 samples
      put_bits(&pb, 1, 0); //does not depend on core coder
-     put_bits(&pb, 1, 0); //is not extension
-+    if (s->needs_pce)
-+        put_pce(&pb, avctx);
- 
-     //Explicitly Mark SBR absent
-     put_bits(&pb, 11, 0x2b7); //sync extension
-     put_bits(&pb, 5,  AOT_SBR);
-     put_bits(&pb, 1,  0);
+@@ -71,6 +73,15 @@ static void put_audio_specific_config(AVCodecContext *
      flush_put_bits(&pb);
-+    avctx->extradata_size = put_bits_count(&pb) >> 3;
-+
-+    return 0;
  }
  
 +void ff_quantize_band_cost_cache_init(struct AACEncContext *s)
@@ -197,7 +129,7 @@ Index: libavcodec/aacenc.c
  #define WINDOW_FUNC(type) \
  static void apply_ ##type ##_window(AVFloatDSPContext *fdsp, \
                                      SingleChannelElement *sce, \
-@@ -140,7 +198,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
+@@ -140,7 +151,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
                                    float *audio)
  {
      int i;
@@ -206,7 +138,7 @@ Index: libavcodec/aacenc.c
  
      apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, audio);
  
-@@ -258,6 +316,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
+@@ -258,6 +269,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
                      start += ics->swb_sizes[g];
                      continue;
                  }
@@ -215,7 +147,7 @@ Index: libavcodec/aacenc.c
                  for (i = 0; i < ics->swb_sizes[g]; i++) {
                      float sum = (cpe->ch[0].coeffs[start+i] + p*cpe->ch[1].coeffs[start+i])*scale;
                      cpe->ch[0].coeffs[start+i] = sum;
-@@ -279,7 +339,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
+@@ -279,7 +292,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
          for (w2 =  0; w2 < ics->group_len[w]; w2++) {
              int start = (w+w2) * 128;
              for (g = 0; g < ics->num_swb; g++) {
@@ -230,7 +162,7 @@ Index: libavcodec/aacenc.c
                      start += ics->swb_sizes[g];
                      continue;
                  }
-@@ -424,6 +490,8 @@ static int encode_individual_channel(AVCodecContext *a
+@@ -424,6 +443,8 @@ static int encode_individual_channel(AVCodecContext *a
          put_ics_info(s, &sce->ics);
          if (s->coder->encode_main_pred)
              s->coder->encode_main_pred(s, sce);
@@ -239,16 +171,7 @@ Index: libavcodec/aacenc.c
      }
      encode_band_info(s, sce);
      encode_scale_factors(avctx, s, sce);
-@@ -464,7 +532,7 @@ static void copy_input_samples(AACEncContext *s, const
- {
-     int ch;
-     int end = 2048 + (frame ? frame->nb_samples : 0);
--    const uint8_t *channel_map = aac_chan_maps[s->channels - 1];
-+    const uint8_t *channel_map = s->reorder_map;
- 
-     /* copy and remap input samples */
-     for (ch = 0; ch < s->channels; ch++) {
-@@ -489,19 +557,21 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -489,19 +510,21 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
      float **samples = s->planar_samples, *samples2, *la, *overlap;
      ChannelElement *cpe;
      SingleChannelElement *sce;
@@ -274,7 +197,7 @@ Index: libavcodec/aacenc.c
      }
  
      copy_input_samples(s, frame);
-@@ -518,19 +588,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -518,19 +541,22 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -301,7 +224,7 @@ Index: libavcodec/aacenc.c
  
                  /* Only the lowest 12 coefficients are used in a LFE channel.
                   * The expression below results in only the bottom 8 coefficients
-@@ -538,7 +611,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -538,7 +564,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -310,7 +233,7 @@ Index: libavcodec/aacenc.c
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -555,10 +628,23 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -555,10 +581,23 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              ics->tns_max_bands      = wi[ch].window_type[0] == EIGHT_SHORT_SEQUENCE ?
                                          ff_tns_max_bands_128 [s->samplerate_index]:
                                          ff_tns_max_bands_1024[s->samplerate_index];
@@ -335,7 +258,7 @@ Index: libavcodec/aacenc.c
                  if (wi[ch].clipping[w] > CLIP_AVOIDANCE_FACTOR) {
                      ics->window_clipping[w] = 1;
                      clip_avoidance_factor = FFMAX(clip_avoidance_factor, wi[ch].clipping[w]);
-@@ -610,15 +696,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -610,15 +649,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -365,7 +288,7 @@ Index: libavcodec/aacenc.c
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -636,14 +735,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -636,14 +688,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -382,7 +305,7 @@ Index: libavcodec/aacenc.c
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -660,8 +759,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -660,8 +712,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -393,7 +316,7 @@ Index: libavcodec/aacenc.c
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -670,22 +769,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -670,22 +722,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -432,7 +355,7 @@ Index: libavcodec/aacenc.c
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -697,38 +808,77 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -697,38 +761,77 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -532,7 +455,7 @@ Index: libavcodec/aacenc.c
  
      ff_af_queue_remove(&s->afq, avctx->frame_size, &avpkt->pts,
                         &avpkt->duration);
-@@ -742,6 +892,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -742,6 +845,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -541,54 +464,22 @@ Index: libavcodec/aacenc.c
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -782,7 +934,6 @@ static av_cold int alloc_buffers(AVCodecContext *avctx
-     int ch;
-     FF_ALLOCZ_ARRAY_OR_GOTO(avctx, s->buffer.samples, s->channels, 3 * 1024 * sizeof(s->buffer.samples[0]), alloc_fail);
-     FF_ALLOCZ_ARRAY_OR_GOTO(avctx, s->cpe, s->chan_map[0], sizeof(ChannelElement), alloc_fail);
--    FF_ALLOCZ_OR_GOTO(avctx, avctx->extradata, 5 + AV_INPUT_BUFFER_PADDING_SIZE, alloc_fail);
- 
-     for(ch = 0; ch < s->channels; ch++)
-         s->planar_samples[ch] = s->buffer.samples + 3 * 1024 * ch;
-@@ -800,76 +951,150 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -800,76 +905,129 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
 +    /* Constants */
 +    s->last_frame_pb_count = 0;
++    avctx->extradata_size = 5;
      avctx->frame_size = 1024;
 +    avctx->initial_padding = 1024;
 +    s->lambda = avctx->global_quality > 0 ? avctx->global_quality : 120;
  
--    for (i = 0; i < 16; i++)
--        if (avctx->sample_rate == avpriv_mpeg4audio_sample_rates[i])
 +    /* Channel map and unspecified bitrate guessing */
-+
-+    s->needs_pce = 1;
-+    for (i = 0; i < FF_ARRAY_ELEMS(aac_normal_chan_layouts); i++) {
-+        if (avctx->channel_layout == aac_normal_chan_layouts[i]) {
-+            s->needs_pce = s->options.pce;
-             break;
-+        }
-+    }
- 
--    s->channels = avctx->channels;
-+    if (s->needs_pce) {
-+        char buf[64];
-+        for (i = 0; i < FF_ARRAY_ELEMS(aac_pce_configs); i++)
-+            if (avctx->channel_layout == aac_pce_configs[i].layout)
-+                break;
-+        av_get_channel_layout_string(buf, sizeof(buf), -1, avctx->channel_layout);
-+        ERROR_IF(i == FF_ARRAY_ELEMS(aac_pce_configs), "Unsupported channel layout \"%s\"\n", buf);
-+        av_log(avctx, AV_LOG_INFO, "Using a PCE to encode channel layout \"%s\"\n", buf);
-+        s->pce = aac_pce_configs[i];
-+        s->reorder_map = s->pce.reorder_map;
-+        s->chan_map = s->pce.config_map;
-+    } else {
-+        s->reorder_map = aac_chan_maps[s->channels - 1];
-+        s->chan_map = aac_chan_configs[s->channels - 1];
-+    }
- 
--    ERROR_IF(i == 16 || i >= ff_aac_swb_size_1024_len || i >= ff_aac_swb_size_128_len,
++    s->channels = avctx->channels;
++    ERROR_IF(s->channels > AAC_MAX_CHANNELS || s->channels == 7,
++             "Unsupported number of channels: %d\n", s->channels);
++    s->chan_map = aac_chan_configs[s->channels-1];
 +    if (!avctx->bit_rate) {
 +        for (i = 1; i <= s->chan_map[0]; i++) {
 +            avctx->bit_rate += s->chan_map[i] == TYPE_CPE ? 128000 : /* Pair */
@@ -598,9 +489,13 @@ Index: libavcodec/aacenc.c
 +    }
 + 
 +    /* Samplerate */
-+    for (i = 0; i < 16; i++)
-+        if (avctx->sample_rate == avpriv_mpeg4audio_sample_rates[i])
-+            break;
+     for (i = 0; i < 16; i++)
+         if (avctx->sample_rate == avpriv_mpeg4audio_sample_rates[i])
+             break;
+-
+-    s->channels = avctx->channels;
+-
+-    ERROR_IF(i == 16 || i >= ff_aac_swb_size_1024_len || i >= ff_aac_swb_size_128_len,
 +    s->samplerate_index = i;
 +    ERROR_IF(s->samplerate_index == 16 ||
 +             s->samplerate_index >= ff_aac_swb_size_1024_len ||
@@ -696,9 +591,7 @@ Index: libavcodec/aacenc.c
          goto fail;
  
 -    avctx->extradata_size = 5;
--    put_audio_specific_config(avctx);
-+    if ((ret = put_audio_specific_config(avctx)))
-+        goto fail;
+     put_audio_specific_config(avctx);
  
 -    sizes[0]   = ff_aac_swb_size_1024[i];
 -    sizes[1]   = ff_aac_swb_size_128[i];
@@ -735,7 +628,7 @@ Index: libavcodec/aacenc.c
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -880,27 +1105,17 @@ fail:
+@@ -880,27 +1038,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -770,11 +663,10 @@ Index: libavcodec/aacenc.c
 +    {"aac_tns", "Temporal noise shaping", offsetof(AACEncContext, options.tns), AV_OPT_TYPE_BOOL, {.i64 = 1}, -1, 1, AACENC_FLAGS},
 +    {"aac_ltp", "Long term prediction", offsetof(AACEncContext, options.ltp), AV_OPT_TYPE_BOOL, {.i64 = 0}, -1, 1, AACENC_FLAGS},
 +    {"aac_pred", "AAC-Main prediction", offsetof(AACEncContext, options.pred), AV_OPT_TYPE_BOOL, {.i64 = 0}, -1, 1, AACENC_FLAGS},
-+    {"aac_pce", "Forces the use of PCEs", offsetof(AACEncContext, options.pce), AV_OPT_TYPE_BOOL, {.i64 = 0}, -1, 1, AACENC_FLAGS},
      {NULL}
  };
  
-@@ -911,6 +1126,11 @@ static const AVClass aacenc_class = {
+@@ -911,6 +1058,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -786,7 +678,7 @@ Index: libavcodec/aacenc.c
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -920,9 +1140,9 @@ AVCodec ff_aac_encoder = {
+@@ -920,9 +1072,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
