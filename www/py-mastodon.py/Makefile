@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/15 12:14:05 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/15 21:29:51 kili Exp $
 
 COMMENT =		python wrapper for the Mastodon API
 
@@ -21,6 +21,8 @@ MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
