@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2018/11/15 20:15:09 solene Exp $
 
 COMMENT =	full and incremental backups on filesystem
 DISTNAME =	faubackup-0.5.9
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://faubackup.sourceforge.net/
+HOMEPAGE =	http://freshmeat.sourceforge.net/projects/faubackup
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
