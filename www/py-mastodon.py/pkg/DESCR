@@ -1,0 +1,3 @@
+Mastodon.py is a simple python wrapper for the Mastodon API. Mastodon is an
+ActivityPub and OStatus based twitter-like federated social network node, and
+the API allows you to interact with its every aspect.
