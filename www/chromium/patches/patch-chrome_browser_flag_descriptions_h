@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.12 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.13 2018/11/15 15:28:43 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
 +++ chrome/browser/flag_descriptions.h
-@@ -2183,7 +2183,7 @@ extern const char kZipArchiverUnpackerDescription[];
+@@ -2186,7 +2186,7 @@ extern const char kZipArchiverUnpackerDescription[];
  
  // Random platform combinations -----------------------------------------------
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableInputImeApiName[];
  extern const char kEnableInputImeApiDescription[];
-@@ -2200,7 +2200,7 @@ extern const char kAutomaticTabDiscardingDescription[]
+@@ -2203,7 +2203,7 @@ extern const char kAutomaticTabDiscardingDescription[]
  
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

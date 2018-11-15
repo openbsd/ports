@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_build_gen_py,v 1.1 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.2 2018/11/15 15:28:43 robert Exp $
 
 Index: tools/gn/build/gen.py
 --- tools/gn/build/gen.py.orig
 +++ tools/gn/build/gen.py
-@@ -41,10 +41,12 @@ class Platform(object):
+@@ -39,10 +39,12 @@ class Platform(object):
        self._platform = 'aix'
      elif self._platform.startswith('fuchsia'):
        self._platform = 'fuchsia'
@@ -17,7 +17,7 @@ Index: tools/gn/build/gen.py
  
    def platform(self):
      return self._platform
-@@ -67,8 +69,11 @@ class Platform(object):
+@@ -65,8 +67,11 @@ class Platform(object):
    def is_aix(self):
      return self._platform == 'aix'
  
@@ -30,7 +30,7 @@ Index: tools/gn/build/gen.py
  
  
  def main(argv):
-@@ -220,6 +225,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -167,6 +172,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'msvc': 'build_win.ninja.template',
        'darwin': 'build_mac.ninja.template',
        'linux': 'build_linux.ninja.template',
@@ -38,12 +38,3 @@ Index: tools/gn/build/gen.py
        'aix': 'build_aix.ninja.template',
    }[platform.platform()])
  
-@@ -675,7 +681,7 @@ def WriteGNNinja(path, platform, host, options, linux_
-         'base/strings/string16.cc',
-     ])
- 
--  if platform.is_linux() or platform.is_aix():
-+  if platform.is_linux() or platform.is_aix() or platform.is_openbsd():
-     static_libraries['base']['sources'].extend([
-         'base/strings/sys_string_conversions_posix.cc',
-     ])

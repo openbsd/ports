@@ -1,0 +1,25 @@
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.19 2018/11/15 15:28:43 robert Exp $
+
+Index: tools/gn/bootstrap/bootstrap.py
+--- tools/gn/bootstrap/bootstrap.py.orig
++++ tools/gn/bootstrap/bootstrap.py
+@@ -46,10 +46,6 @@ def main(argv):
+       '--build-path',
+       help='The directory in which to build gn, '
+       'relative to the src directory. (eg. out/Release)')
+-  parser.add_option(
+-      '--with-sysroot',
+-      action='store_true',
+-      help='Download and build with the Debian sysroot.')
+   parser.add_option('-v', '--verbose', help='ignored')
+   options, args = parser.parse_args(argv)
+   if args:
+@@ -71,8 +67,6 @@ def main(argv):
+       '--no-last-commit-position',
+       '--out-path=' + gn_build_dir,
+   ]
+-  if not options.with_sysroot:
+-    cmd.append('--no-sysroot')
+   if options.debug:
+     cmd.append('--debug')
+   subprocess.check_call(cmd)
