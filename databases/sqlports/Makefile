@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.74 2018/11/12 15:27:35 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2018/11/15 19:41:55 espie Exp $
 
 CATEGORIES =		databases
-V =			6.10
+V =			6.11
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -20,7 +20,8 @@ DBNAME =		${WRKBUILD}/sqlports
 DBS =			${DBNAME}.list ${DBNAME} ${DBNAME}-compact
 BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 			databases/sqlite3
-RUN_DEPENDS =		databases/sqlite3
+RUN_DEPENDS-main =	databases/sqlite3
+RUN_DEPENDS-compact =	databases/sqlite3
 
 do-build:
 	@cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
