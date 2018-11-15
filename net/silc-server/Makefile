@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2017/09/26 14:25:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2018/11/15 13:04:38 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
 DISTNAME=	silc-server-1.1.19
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -19,7 +19,7 @@ WANTLIB=	c iconv pthread
 
 LIB_DEPENDS=	converters/libiconv
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/yasm
 .endif
 
@@ -36,7 +36,7 @@ SUBST_VARS=	CONFDIR
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ENV+=	ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif
 CONFIGURE_ARGS+= --docdir=${PREFIX}/share/doc/silcd \
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+= --docdir=${PREFIX}/share/doc/silcd \
 		 --with-silcd-pid-file=/var/run/silcd.pid \
 		 --enable-debug
 
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS+= --disable-asm
 .endif
 
