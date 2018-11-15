@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2018/11/15 21:12:45 bcallah Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
 DISTNAME=	aspell-0.60.6.1
-REVISION=	7
+REVISION=	8
 SHARED_LIBS +=  aspell               17.0     # .16.4
 SHARED_LIBS +=  pspell               17.0     # .16.4
 DIST_SUBDIR=	aspell

@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_cache-t_hpp,v 1.1 2018/11/15 21:12:45 bcallah Exp $
+
+Fix segfault when building dictionaries on macppc
+see https://github.com/GNUAspell/aspell/pull/532
+
+Index: common/cache-t.hpp
+--- common/cache-t.hpp.orig
++++ common/cache-t.hpp
+@@ -16,6 +16,7 @@ class GlobalCacheBase (public)
+   const char * name;
+   GlobalCacheBase * next;
+   GlobalCacheBase * * prev;
++  static Mutex global_cache_lock;
+ protected:
+   Cacheable * first;
+   void del(Cacheable * d);
