@@ -1,17 +1,16 @@
-$OpenBSD: patch-include_osl_endian_h,v 1.2 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-include_osl_endian_h,v 1.3 2018/11/15 22:19:09 naddy Exp $
 Index: include/osl/endian.h
 --- include/osl/endian.h.orig
 +++ include/osl/endian.h
-@@ -56,6 +56,14 @@ extern "C" {
+@@ -56,6 +56,13 @@ extern "C" {
  #   elif defined _BIG_ENDIAN
  #       define OSL_BIGENDIAN
  #   endif
 +#elif defined OPENBSD
-+#   include <sys/param.h>
-+#   include <machine/endian.h>
-+#   if defined _LITTLE_ENDIAN
++#   include <endian.h>
++#   if BYTE_ORDER == LITTLE_ENDIAN
 +#       define OSL_LITENDIAN
-+#   elif defined _BIG_ENDIAN
++#   elif BYTE_ORDER == BIG_ENDIAN
 +#       define OSL_BIGENDIAN
 +#   endif
  #elif defined AIX
