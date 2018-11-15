@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/11/06 08:11:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2018/11/15 19:22:00 landry Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -36,7 +36,7 @@ MULTI_PACKAGES=		-main -icu
 USE_GMAKE=		Yes
 
 # C++11
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc ports-clang
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
