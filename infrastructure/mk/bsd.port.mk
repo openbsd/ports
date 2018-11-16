@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1452 2018/11/16 09:12:57 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1453 2018/11/16 09:15:32 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3501,6 +3501,11 @@ regen:
 	@${_PBUILD} rm -f ${_GEN_COOKIE}
 	@${_MAKE} gen
 
+reprepare:
+	@${_PBUILD} rm -f ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} \
+		${_DEPBUILDWANTLIB_COOKIE}
+	@${_MAKE} prepare
+
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
 	@${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
@@ -3559,7 +3564,7 @@ _all_phony = ${_recursive_depends_targets} \
 	post-distpatch post-extract post-install \
 	post-patch post-test pre-build pre-configure pre-extract pre-fake \
 	pre-install pre-patch pre-test prepare \
-	print-build-depends print-run-depends rebuild regen \
+	print-build-depends print-run-depends rebuild regen reprepare \
 	test-depends test-depends-list run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
