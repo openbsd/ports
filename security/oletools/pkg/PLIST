@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/02/20 14:00:30 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/11/16 08:02:25 rpointel Exp $
 bin/ezhexviewer
 bin/mraptor
 @comment bin/mraptor3
@@ -20,12 +20,18 @@ lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/oletools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/oletools/README.html
 lib/python${MODPY_VERSION}/site-packages/oletools/README.rst
 lib/python${MODPY_VERSION}/site-packages/oletools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/oletools/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/common/
+lib/python${MODPY_VERSION}/site-packages/oletools/common/__init__.py
+lib/python${MODPY_VERSION}/site-packages/oletools/common/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/oletools/common/clsid.py
+lib/python${MODPY_VERSION}/site-packages/oletools/common/clsid.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/Changelog.md
 lib/python${MODPY_VERSION}/site-packages/oletools/doc/Contribute.html
@@ -162,13 +168,6 @@ lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/__init_
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/prettytable.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/prettytable/prettytable.pyc
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/LICENSE
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/README
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/__init__.py
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/pyparsing.py
-lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/pyparsing/pyparsing.pyc
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/tablestream/
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/tablestream/__init__.py
 lib/python${MODPY_VERSION}/site-packages/oletools/thirdparty/tablestream/__init__.pyc
