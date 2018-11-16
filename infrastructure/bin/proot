@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.63 2018/11/16 10:18:07 espie Exp $
+# $OpenBSD: proot,v 1.64 2018/11/16 10:20:19 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -517,6 +517,51 @@ sub read_locates
 		}
 		close($cmd);
 	    });
+}
+
+sub library_sanity_check
+{
+	my $state = shift;
+	# create a quick repo containing the best libs.
+	require OpenBSD::LibSpec;
+	my $repo = {};
+	for my $libbase (OpenBSD::Paths->library_dirs) {
+		my $libdir = "$libbase/lib";
+		opendir(my $dir, $libdir) or 
+		    $state->fatal_error("can't read libdir #1");
+		while (my $e = readdir $dir) {
+			next unless $e =~ m,^lib.*\.so\.\d+\.\d+$,;
+			my $path = "$libdir/$e";
+			my $lib = OpenBSD::LibSpec->from_string($path);
+			if (!$lib->is_valid) {
+				$state->fatal_error("Couldn parse #1", $e);
+			}
+			my $k = $lib->key;
+			my $current = $repo->{$k};
+			if (!defined $current || $current->compare($lib) < 0) {
+				$repo->{$k} = $lib;
+		    	}
+		}
+	}
+	for my $path (keys %{$state->{known}}) {
+		next unless $path =~ m,^/usr(?:/X11R6)?/lib/lib.*\.so\.\d+\.\d+$,;
+		my $lib = OpenBSD::LibSpec->from_string($path);
+		if (!$lib->is_valid) {
+			$state->fatal_error("Couldn parse #1", $path);
+		}
+		my $k = $lib->key;
+		my $current = $repo->{$k};
+		if (!defined $current) {
+			$state->fatal_error("can't find library #1", $path);
+		}
+		if ($current->compare($lib) != 0) {
+			$state->fatal_error("locate library too old #1 vs #2",
+			    $path, $current->to_string);
+		}
+	}
+	if ($state->{error}) {
+		exit(1);
+	}
 }
 
 # THIS IS THE WORK HORSE
@@ -1068,6 +1113,7 @@ if ($state->{actions}{unpopulate}) {
 }
 if ($state->{actions}{locate}) {
 	$state->read_locates;
+	$state->library_sanity_check;
 }
 
 if ($state->{actions}{snapshot}) {
