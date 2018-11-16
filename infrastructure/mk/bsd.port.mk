@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1453 2018/11/16 09:15:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1454 2018/11/16 09:47:26 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3117,60 +3117,6 @@ _internal-clean:
 .    endfor
 .  endfor
 .endif
-
-# This target generates an index entry suitable for aggregation into
-# a large index.  Format is:
-#
-# distribution-name|port-path|installation-prefix|comment| \
-#  description-file|maintainer|categories|lib-deps|build-deps|run-deps| \
-#  for-arch|package-cdrom|package-ftp|distfiles-ftp
-#
-describe:
-.for _S in ${MULTI_PACKAGES}
-	@echo -n "${FULLPKGNAME${_S}}|${FULLPKGPATH${_S}}|"
-.  if ${PREFIX${_S}} == ${LOCALBASE}
-	@echo -n "|"
-.  else
-	@echo -n "${PREFIX${_S}}|"
-.  endif
-	@echo -n ${_COMMENT${_S}:S/^"//:S/"$//:S/^'//:S/'$//:Q}"|"; \
-	if [ -f ${DESCR${_S}} ]; then \
-		echo -n `PORTSDIR_PATH=${PORTSDIR_PATH} ${_PERLSCRIPT}/port-getpkgpath-helper ${DESCR${_S}}`'|';  \
-	else \
-		echo -n "/dev/null|"; \
-	fi; \
-	echo -n "${MAINTAINER}|${CATEGORIES${_S}}|"
-.  for _d in LIB BUILD RUN
-	@echo -n '${_${_d}_DEP3${_S}:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
-	@echo -n '|'
-.  endfor
-.  if defined(ONLY_FOR_ARCHS${_S})
-	@echo -n "${ONLY_FOR_ARCHS${_S}}|"
-.  elif defined(NOT_FOR_ARCHS${_S})
-	@echo -n "!${NOT_FOR_ARCHS${_S}}|"
-.  else
-	@echo -n "any|"
-.  endif
-.  if defined(_BAD_LICENSING)
-	@echo "?|?|?|?"
-.  else
-.    if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
-	@echo -n "y|"
-.    else
-	@echo -n "n|"
-.    endif
-.    if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
-	@echo -n "y|"
-.    else
-	@echo -n "n|"
-.    endif
-.    if ${PERMIT_DISTFILES_FTP:L} == "yes"
-	@echo "y"
-.    else
-	@echo "n"
-.    endif
-.  endif
-.endfor
 
 print-build-depends:
 .if !empty(_BUILD_DEP)
