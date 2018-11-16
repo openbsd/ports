@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1454 2018/11/16 09:47:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1455 2018/11/16 10:02:57 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -58,6 +58,18 @@ ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 ERRORS += "Fatal: inclusion of bsd.port.mk from $f"
 .  endif
 .endfor
+
+# hook to allow scripts to query bsd.port.mk without having a valid port
+.if defined(DUMMY_PACKAGE)
+COMMENT ?= 				dummy
+CATEGORIES ?= 			dummy
+PKGPATH ?= 				dummy/a
+DISTNAME ?= 			dummy
+PERMIT_PACKAGE_CDROM ?= Yes
+IGNORE ?=				Yes
+_MAKEFILE_INC_DONE ?=	Yes
+ECHO_MSG ?=				:
+.endif
 
 # include guard so that other parts don't include this twice
 _BSD_PORT_MK = Done
