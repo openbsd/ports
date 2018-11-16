@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2017/01/17 16:09:15 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/16 20:46:23 kn Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
-DISTNAME=	swaks-20170101.0
-REVISION=	0
+DISTNAME=	swaks-20181104.0
 
 CATEGORIES=	mail
 
-HOMEPAGE=	http://jetmore.org/john/code/swaks/
-MASTER_SITES=	http://jetmore.org/john/code/swaks/
+HOMEPAGE=	https://jetmore.org/john/code/swaks/
+MASTER_SITES=	https://jetmore.org/john/code/swaks/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
@@ -31,5 +30,8 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/swaks ${PREFIX}/bin/swaks
 	${INSTALL_MAN} ${WRKSRC}/swaks.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/swak
+	${INSTALL_DATA} ${WRKSRC}/doc/{recipes,ref}.txt \
+	    ${PREFIX}/share/doc/swak
 
 .include <bsd.port.mk>
