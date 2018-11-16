@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2018/11/16 21:18:15 naddy Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -18,7 +18,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
+REVISION =		1
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -95,6 +95,13 @@ pre-configure:
 		${WRKDIST}/node.gyp \
 		${WRKDIST}/common.gypi \
 		${WRKDIST}/tools/test.py
+# generate PIC assembly code
+.if ${MACHINE_ARCH} == "i386"
+	find ${WRKDIST}/deps/openssl/asm/x86-elf-gas -name '*.s' -delete
+	find ${WRKDIST}/deps/openssl/asm -type f -exec touch {} +
+	cd ${WRKDIST}/deps/openssl/asm && \
+		${MAKE_PROGRAM} -j${MAKE_JOBS} CC="${CC}" ASM="${CC}" all
+.endif
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
@@ -113,7 +120,7 @@ do-test:
 	cd ${WRKSRC} && \
 	ulimit -n $$(ulimit -Hn) && \
 	ulimit -d $$(ulimit -Hd) && \
-	gmake test
+	${MAKE_PROGRAM} test
 
 
 .include <bsd.port.mk>
