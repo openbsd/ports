@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/11/16 06:26:12 rsadowski Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
+@conflict kf5-baloo-*
+@conflict dolphin-kf5-*
+@conflict dolphin-plugins-kf5-*
 @newgroup _kdesud:583
 @bin bin/dolphin
 @bin bin/fsview
