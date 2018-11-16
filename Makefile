@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/11/16 09:24:09 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2018/11/16 09:30:47 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -6,12 +6,11 @@
 
 PKGPATH =
 DISTFILES_DB ?= ${.CURDIR}/infrastructure/db/locate.database
-INDEX = ${.CURDIR}/INDEX
+INDEX = ${LOCALBASE}/share/ports-INDEX
 
 .if defined(SUBDIR)
 # nothing to do
-.elif defined(key) || defined(name) || defined(category) || defined(author)
-
+.elif !make(search) && (defined(key) || defined(name) || defined(category) || defined(author))
 # set up subdirs from the index, assume it's up-to-date
 _CMD = perl ${.CURDIR}/infrastructure/bin/port-search-helper index='${INDEX}'
 .  if defined(key)
@@ -75,14 +74,11 @@ SUBDIR += x11
 
 .include <bsd.port.subdir.mk>
 
-index:
-	@rm -f ${.CURDIR}/INDEX
-	@${_MAKE} USE_CCACHE=No ${.CURDIR}/INDEX
+${INDEX}:
+	@echo "Please install portslist"
+	@echo "${SUDO} pkg_add portslist"
+	@exit 1
 
-${.CURDIR}/INDEX:
-	@echo "Generating INDEX..."
-	@${_MAKE} describe MACHINE_ARCH=amd64 ARCH=amd64 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
-	@echo "Done."
 
 print-index:	${INDEX}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10); }' < ${INDEX}
