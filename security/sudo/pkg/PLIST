@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/01/16 13:24:06 millert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/11/16 13:19:23 millert Exp $
+@bin bin/cvtsudoers
 @mode 04555
 @bin bin/sudo
 @mode
@@ -16,6 +17,7 @@ libexec/sudo/sudoers.la
 libexec/sudo/sudoers.so
 libexec/sudo/system_group.la
 libexec/sudo/system_group.so
+@man man/man1/cvtsudoers.1
 @man man/man5/sudo.conf.5
 @man man/man5/sudoers.5
 @man man/man5/sudoers_timestamp.5
