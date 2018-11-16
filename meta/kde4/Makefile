@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/11/10 08:36:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2018/11/16 08:35:56 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -27,12 +27,12 @@ PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	8
-REVISION-games = 1
+REVISION-games = 2
 REVISION-sdk = 2
 REVISION-edu = 1
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		9
+REVISION-main =		10
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -118,26 +118,9 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \
-	${MODKDE4_DEP_DIR}/kbreakout	\
-	${MODKDE4_DEP_DIR}/kdiamond	\
-	${MODKDE4_DEP_DIR}/kfourinline	\
-	${MODKDE4_DEP_DIR}/kgoldrunner	\
-	${MODKDE4_DEP_DIR}/kigo		\
-	${MODKDE4_DEP_DIR}/killbots	\
-	${MODKDE4_DEP_DIR}/kiriki	\
-	${MODKDE4_DEP_DIR}/kjumpingcube \
-	${MODKDE4_DEP_DIR}/klickety	\
-	${MODKDE4_DEP_DIR}/klines	\
 	${MODKDE4_DEP_DIR}/kmines	\
-	${MODKDE4_DEP_DIR}/knavalbattle	\
-	${MODKDE4_DEP_DIR}/knetwalk	\
-	${MODKDE4_DEP_DIR}/kolf		\
-	${MODKDE4_DEP_DIR}/kollision	\
-	${MODKDE4_DEP_DIR}/konquest	\
 	${MODKDE4_DEP_DIR}/kpat		\
-	${MODKDE4_DEP_DIR}/kreversi	\
 	${MODKDE4_DEP_DIR}/kshisen	\
-	${MODKDE4_DEP_DIR}/ksirk	\
 	${MODKDE4_DEP_DIR}/ksnakeduel	\
 	${MODKDE4_DEP_DIR}/kspaceduel	\
 	${MODKDE4_DEP_DIR}/ksquares	\

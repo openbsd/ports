@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/11/09 07:09:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.58 2018/11/16 08:35:56 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -170,27 +170,27 @@ SUBDIR += kajongg
 #SUBDIR += kblackbox		x11/kde-applications
 #SUBDIR += kblocks		x11/kde-applications
 #SUBDIR += kbounce		x11/kde-applications
-SUBDIR += kbreakout
-SUBDIR += kdiamond
-SUBDIR += kfourinline
-SUBDIR += kgoldrunner
-SUBDIR += kigo
-SUBDIR += killbots
-SUBDIR += kiriki
-SUBDIR += kjumpingcube
-SUBDIR += klickety
-SUBDIR += klines
+#SUBDIR += kbreakout		x11/kde-applications
+#SUBDIR += kdiamond		x11/kde-applications
+#SUBDIR += kfourinline		x11/kde-applications
+#SUBDIR += kgoldrunner		x11/kde-applications
+#SUBDIR += kigo			x11/kde-applications
+#SUBDIR += killbots		x11/kde-applications
+#SUBDIR += kiriki		x11/kde-applications
+#SUBDIR += kjumpingcube		x11/kde-applications
+#SUBDIR += klickety		x11/kde-applications
+#SUBDIR += klines		x11/kde-applications
 #SUBDIR += kmahjongg		x11/kde-applications
-SUBDIR += kmines
-SUBDIR += knavalbattle
-SUBDIR += knetwalk
-SUBDIR += kolf
-SUBDIR += kollision
-SUBDIR += konquest
+#SUBDIR += kmines		x11/kde-applications
+#SUBDIR += knavalbattle		x11/kde-applications
+#SUBDIR += knetwalk		x11/kde-applications
+#SUBDIR += kolf			x11/kde-applications
+#SUBDIR += kollision		x11/kde-applications
+#SUBDIR += konquest		x11/kde-applications
 SUBDIR += kpat
-SUBDIR += kreversi
+#SUBDIR += kreversi		x11/kde-applications
 SUBDIR += kshisen
-SUBDIR += ksirk
+#SUBDIR += ksirk		x11/kde-applications
 SUBDIR += ksnakeduel
 SUBDIR += kspaceduel
 SUBDIR += ksquares
