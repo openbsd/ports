@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.125 2018/11/13 15:03:43 jca Exp $
+# $OpenBSD: portcheck,v 1.126 2018/11/16 10:08:38 espie Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,16 +131,8 @@ pkgpath=
 if [[ -z $portsdir ]]; then
 	# idea from DPB/Vars.pm
 	test_mf=$(cat <<EOF
-COMMENT = test
-CATEGORIES = test
-PKGPATH = test/a
-DISTNAME = test
-PERMIT_PACKAGE_CDROM=Yes
-IGNORE=Yes
-_MAKEFILE_INC_DONE=Yes
-ECHO_MSG=:
+DUMMY_PACKAGE = yes
 .include <bsd.port.mk>
-SIGNING_PARAMETERS ?=
 EOF
 	)
 	IFS=:
