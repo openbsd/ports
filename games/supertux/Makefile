@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/11/11 16:00:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2018/11/16 09:04:03 jca Exp $
 
 COMMENT =		jump 'n' run game
 
 V =			0.5.1
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games
 
