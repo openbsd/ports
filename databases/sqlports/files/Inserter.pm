@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.13 2015/04/19 12:08:02 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.14 2018/11/16 14:45:57 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,6 +89,18 @@ sub add_error
 {
 }
 
+sub table_name
+{
+	my ($class, $name) = @_;
+	return $name;
+}
+
+sub view_name
+{
+	my ($class, $name) = @_;
+	return $name;
+}
+
 sub write_log
 {
 }
@@ -110,8 +122,9 @@ sub create_tables
 	my ($self, $vars) = @_;
 
 	$self->create_path_table;
-	while (my ($name, $varclass) = each %$vars) {
-		$varclass->prepare_tables($self, $name);
+	# XXX sort it
+	for my $t (sort keys %$vars) {
+		$vars->{$t}->prepare_tables($self, $t);
 	}
 
 	$self->create_ports_table;
@@ -144,7 +157,7 @@ sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
 
-	return if defined $self->{tables_created}->{$class->table};
+	return if defined $self->{tables_created}{$class->table};
 
 	unshift(@columns, PathColumn->new);
 	for my $c (@columns) {
@@ -181,13 +194,14 @@ sub new_table
 {
 	my ($self, $name, @cols) = @_;
 
-	return if defined $self->{tables_created}->{$name};
+	my $t = $self->table_name($name);
+	return if defined $self->{tables_created}{$name};
 
-	$self->db->do("DROP TABLE IF EXISTS $name");
+	$self->db->do("DROP TABLE IF EXISTS $t");
 	my $request = "CREATE TABLE $name (".join(', ', @cols).")";
 	print "$request\n" if $self->{verbose};
 	$self->db->do($request);
-	$self->{tables_created}->{$name} = 1;
+	$self->{tables_created}{$name} = 1;
 }
 
 sub prepare
@@ -199,8 +213,9 @@ sub prepare
 sub prepare_inserter
 {
 	my ($ins, $table, @cols) = @_;
-	$ins->{insert}->{$table} = $ins->prepare(
-	    "INSERT OR REPLACE INTO $table (".
+	$ins->{insert}{$table} = $ins->prepare(
+	    "INSERT OR REPLACE INTO ".
+	    $ins->table_name($table)." (".
 	    join(', ', @cols).
 	    ") VALUES (".
 	    join(', ', map {'?'} @cols).")");
@@ -230,7 +245,7 @@ sub finish_port
 sub add_to_port
 {
 	my ($self, $var, $value) = @_;
-	$self->{vars}->{$var} = $value;
+	$self->{vars}{$var} = $value;
 }
 
 sub create_ports_table
@@ -252,7 +267,7 @@ sub insert
 {
 	my $self = shift;
 	my $table = shift;
-	$self->{insert}->{$table}->execute(@_);
+	$self->{insert}{$table}->execute(@_);
 	$self->insert_done;
 }
 
@@ -278,6 +293,18 @@ our $c = {
 	Test => 3
 };
 
+sub table_name
+{
+	my ($class, $name) = @_;
+	return $name;
+}
+
+sub view_name
+{
+	my ($class, $name) = @_;
+	return "_$name";
+}
+
 sub convert_depends
 {
 	my ($self, $value) = @_;
@@ -289,7 +316,8 @@ sub pathref
 {
 	my ($self, $name) = @_;
 	$name = "FULLPKGPATH" if !defined $name;
-	return "$name INTEGER NOT NULL REFERENCES Paths(ID)";
+	return "$name INTEGER NOT NULL REFERENCES ".
+	    $self->table_name("Paths")."(ID)";
 }
 
 sub value
@@ -297,7 +325,8 @@ sub value
 	my ($self, $k, $name) = @_;
 	$name = "VALUE" if !defined $name;
 	if (defined $k) {
-		return "$name INTEGER NOT NULL REFERENCES $k(KEYREF)";
+		return "$name INTEGER NOT NULL REFERENCES ".
+		    $self->table_name($k)."(KEYREF)";
 	} else {
 		return "$name TEXT NOT NULL";
 	}
@@ -308,7 +337,8 @@ sub optvalue
 	my ($self, $k, $name) = @_;
 	$name = "VALUE" if !defined $name;
 	if (defined $k) {
-		return "$name INTEGER REFERENCES $k(KEYREF)";
+		return "$name INTEGER REFERENCES ".
+		    $self->table_name($k)."(KEYREF)";
 	} else {
 		return "$name TEXT";
 	}
@@ -319,11 +349,11 @@ sub create_view
 	my ($self, $table, @columns) = @_;
 
 	unshift(@columns, PathColumn->new);
-	my $name = "_$table";
+	my $view = $self->view_name($table);
 	my @l = $self->map_columns('view', $table, @columns);
 	my @j = $self->map_columns('join', $table, @columns);
-	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.' '.join(' ', @j);
-	$self->db->do("DROP VIEW IF EXISTS $name");
+	my $v = "CREATE VIEW $view AS SELECT ".join(", ", @l). " FROM ".$self->table_name($table).' '.join(' ', @j);
+	$self->db->do("DROP VIEW IF EXISTS $view");
 	print "$v\n" if $self->{verbose};
 	$self->db->do($v);
 }
@@ -332,7 +362,7 @@ sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
 
-	return if defined $self->{tables_created}->{$class->table};
+	return if defined $self->{tables_created}{$class->table};
 
 	$self->SUPER::make_table($class, $constraint, @columns);
 	$self->create_view($class->table, @columns);
@@ -343,8 +373,9 @@ sub create_path_table
 	my $self = shift;
 	$self->new_table("Paths", "ID INTEGER PRIMARY KEY",
 	    "FULLPKGPATH TEXT NOT NULL UNIQUE",
-	    "PKGPATH INTEGER REFERENCES Paths(ID)", "CANONICAL INTEGER REFERENCES Paths(ID)");
-	$self->{adjust} = $self->db->prepare("UPDATE Paths set canonical=? where id=?");
+	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
+	$self->{adjust} = $self->db->prepare("UPDATE ".
+	    $self->table_name("Paths")." set canonical=? where id=?");
 }
 
 sub handle_column
@@ -408,10 +439,10 @@ sub set_newkey
 sub find_keyword_id
 {
 	my ($self, $key, $t) = @_;
-	$self->{$t}->{find_key1}->execute($key);
-	my $a = $self->{$t}->{find_key1}->fetchrow_arrayref;
+	$self->{$t}{find_key1}->execute($key);
+	my $a = $self->{$t}{find_key1}->fetchrow_arrayref;
 	if (!defined $a) {
-		$self->{$t}->{find_key2}->execute($key);
+		$self->{$t}{find_key2}->execute($key);
 		$self->insert_done;
 		return $self->last_id;
 	} else {
@@ -422,11 +453,12 @@ sub find_keyword_id
 sub create_keyword_table
 {
 	my ($self, $t) = @_;
+	my $name = $self->table_name($t);
 	$self->new_table($t,
 	    "KEYREF INTEGER PRIMARY KEY AUTOINCREMENT",
 	    "VALUE TEXT NOT NULL UNIQUE");
-	$self->{$t}->{find_key1} = $self->prepare("SELECT KEYREF FROM $t WHERE VALUE=?");
-	$self->{$t}->{find_key2} = $self->prepare("INSERT INTO $t (VALUE) VALUES (?)");
+	$self->{$t}{find_key1} = $self->prepare("SELECT KEYREF FROM $name WHERE VALUE=?");
+	$self->{$t}{find_key2} = $self->prepare("INSERT INTO $name (VALUE) VALUES (?)");
 }
 
 sub write_log
@@ -468,7 +500,7 @@ sub create_path_table
 {
 	my $self = shift;
 	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY",
-	    "PKGPATH TEXT NOT NULL", "CANONICAL TEXT NOT NULL");
+	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
 }
 
 sub pathref
