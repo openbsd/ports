@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/11/16 07:56:00 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -38,6 +38,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
+ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+ 
+ find_package(Phonon4Qt5 CONFIG REQUIRED)
++include_directories(BEFORE ${PHONON_INCLUDES})
+ find_package(Qca-qt5 2.1.0)
+ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
+                        URL "http://download.kde.org/stable/qca-qt5"
