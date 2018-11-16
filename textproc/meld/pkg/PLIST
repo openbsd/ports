@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2018/11/16 20:58:34 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/meld/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}actiongutter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}build_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}tree.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}undo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}vcview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/meld/${MODPY_PYCACHE}windowstate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/meld/actiongutter.py
 lib/python${MODPY_VERSION}/site-packages/meld/build_helpers.py
 lib/python${MODPY_VERSION}/site-packages/meld/conf.py
 lib/python${MODPY_VERSION}/site-packages/meld/const.py
@@ -162,10 +164,6 @@ share/icons/hicolor/22x22/apps/meld.png
 share/icons/hicolor/32x32/apps/meld.png
 share/icons/hicolor/48x48/apps/meld-version-control.png
 share/icons/hicolor/48x48/apps/meld.png
-share/icons/hicolor/scalable/apps/meld-figuring-linked.svg
-share/icons/hicolor/scalable/apps/meld-figuring.svg
-share/icons/hicolor/scalable/apps/meld-unlinking-plus-overlay.svg
-share/icons/hicolor/scalable/apps/meld-unlinking.svg
 share/icons/hicolor/scalable/apps/meld.svg
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
