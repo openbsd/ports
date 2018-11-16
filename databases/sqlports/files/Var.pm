@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.28 2018/11/10 17:12:24 espie Exp $
+# $OpenBSD: Var.pm,v 1.29 2018/11/16 18:14:08 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -328,6 +328,30 @@ sub create_tables
 	    TextColumn->new("TYPE"));
 	$inserter->prepare_normal_inserter($self->table,
 	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
+}
+
+package PkgPathsVar;
+our @ISA = qw(AnyVar);
+
+sub table() { 'PkgPaths' }
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	$inserter->make_table($self, undef,
+	    PathColumn->new("Value"));
+	$inserter->prepare_normal_inserter($self->table, "Value");
+}
+
+sub add
+{
+	my ($self, $ins) = @_;
+	$self->SUPER::add($ins);
+	for my $pkgpath ($self->words) {
+		my $p = PkgPath->new($pkgpath);
+		$p->{want} = 1;
+		$p->{parent} //= $ins->current_path;
+		$self->normal_insert($ins, $ins->find_pathkey($p->fullpkgpath));
+	}
 }
 
 package LibDependsVar;

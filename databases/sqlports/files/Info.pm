@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.26 2018/11/13 17:06:11 espie Exp $
+# $OpenBSD: Info.pm,v 1.27 2018/11/16 18:14:08 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -105,6 +105,7 @@ our $vars = {
     WANTLIB => 'WantlibVar',
     FIX_EXTRACT_PERMISSIONS => 'YesNoVar',
     USE_LLD => 'YesNoVar',
+    PKGPATHS => 'PkgPathsVar',
     # XXX those variables are part of the dump for dpb, but really should
     # not end up in sqlports. But make sure we know about them.
     BUILD_PACKAGES => 'IgnoredVar',
