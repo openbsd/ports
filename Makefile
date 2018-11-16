@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2018/11/16 09:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2018/11/16 09:56:37 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -108,17 +108,8 @@ fix-permissions:
 	echo "ECHO_MSG=:"; \
 	echo ".include <bsd.port.mk>"; }|${MAKE} -f - fix-permissions
 
-homepages.html:
-	@echo '<html><ul>' >$@
-	@${_MAKE} homepage-links ECHO_MSG='echo >&2' >>$@
-	@echo '</ul></html>' >>$@
-
 distfiles-update-locatedb:
 	@PORTSDIR=${.CURDIR} /bin/sh ${.CURDIR}/infrastructure/fetch/distfiles-update-locatedb ${DISTFILES_DB}
 
-pkglocatedb:
-	@pkg_mklocatedb -a -d ${.CURDIR}/packages/${MACHINE_ARCH}/all/ \
-	    >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb
-
 .PHONY: index search distfiles-update-locatedb \
-	pkglocatedb print-licenses print-index fix-permissions
+	print-licenses print-index fix-permissions
