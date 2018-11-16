@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1451 2018/11/05 15:59:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1452 2018/11/16 09:12:57 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -134,7 +134,6 @@ PORTROACH ?=
 
 # Global path locations.
 PORTSDIR ?= /usr/ports
-LOCALBASE ?= /usr/local
 X11BASE ?= /usr/X11R6
 VARBASE ?= /var
 DISTDIR ?= ${PORTSDIR}/distfiles
