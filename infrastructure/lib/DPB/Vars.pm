@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.51 2017/06/20 15:48:12 espie Exp $
+# $OpenBSD: Vars.pm,v 1.52 2018/11/16 10:11:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -56,17 +56,9 @@ sub get
 			print $wh "\t\@echo \${$n}\n";
 		}
 		print $wh <<EOT;
-COMMENT = test
-CATEGORIES = test
-PKGPATH = test/a
-DISTNAME = test
-PERMIT_PACKAGE_CDROM=Yes
-IGNORE=Yes
-_MAKEFILE_INC_DONE=Yes
-ECHO_MSG=:
+DUMMY_PACKAGE=Yes
 .PHONY: print-data
 .include <bsd.port.mk>
-SIGNING_PARAMETERS ?=
 EOT
 		close $wh;
 		exit 0;
