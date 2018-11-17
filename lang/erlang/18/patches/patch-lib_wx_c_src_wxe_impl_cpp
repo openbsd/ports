@@ -1,10 +1,11 @@
-$OpenBSD: patch-lib_wx_c_src_wxe_impl_cpp,v 1.1 2017/04/24 13:35:23 sthen Exp $
+$OpenBSD: patch-lib_wx_c_src_wxe_impl_cpp,v 1.2 2018/11/17 13:40:05 jasper Exp $
 
 clang: ordered comparison between pointer and zero ('void *' and 'long')
 
---- lib/wx/c_src/wxe_impl.cpp.orig	Wed Apr 19 11:19:36 2017
-+++ lib/wx/c_src/wxe_impl.cpp	Wed Apr 19 11:19:40 2017
-@@ -703,7 +703,7 @@ void * WxeApp::getPtr(char * bp, wxeMemEnv *memenv) {
+Index: lib/wx/c_src/wxe_impl.cpp
+--- lib/wx/c_src/wxe_impl.cpp.orig
++++ lib/wx/c_src/wxe_impl.cpp
+@@ -666,7 +666,7 @@ void * WxeApp::getPtr(char * bp, wxeMemEnv *memenv) {
      throw wxe_badarg(index);
    }
    void * temp = memenv->ref2ptr[index];
@@ -13,7 +14,7 @@ clang: ordered comparison between pointer and zero ('void *' and 'long')
      return temp;
    else {
      throw wxe_badarg(index);
-@@ -715,7 +715,7 @@ void WxeApp::registerPid(char * bp, ErlDrvTermData pid
+@@ -678,7 +678,7 @@ void WxeApp::registerPid(char * bp, ErlDrvTermData pid
    if(!memenv)
      throw wxe_badarg(index);
    void * temp = memenv->ref2ptr[index];

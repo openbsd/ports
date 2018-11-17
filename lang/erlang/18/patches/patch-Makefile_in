@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/03/19 20:57:20 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2018/11/17 13:40:05 jasper Exp $
 
 Create symlink so the build can handle versioned binaries
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -528,6 +528,7 @@ $(BOOTSTRAP_ROOT)/bootstrap/bin/erl: $(ERL_TOP)/erts/e
+@@ -529,6 +529,7 @@ $(BOOTSTRAP_ROOT)/bootstrap/bin/erl: $(ERL_TOP)/erts/e
  	        $(ERL_TOP)/erts/etc/unix/erl.src.src > \
  			$(BOOTSTRAP_ROOT)/bootstrap/bin/erl
  	@chmod 755 $(BOOTSTRAP_ROOT)/bootstrap/bin/erl

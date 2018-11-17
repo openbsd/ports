@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_dialyzer_src_dialyzer_plt_erl,v 1.1 2018/03/19 20:57:20 jasper Exp $
+$OpenBSD: patch-lib_dialyzer_src_dialyzer_plt_erl,v 1.2 2018/11/17 13:40:05 jasper Exp $
 
 Prevent collisions during static analysis when multiple versions of
 erlang are installed
@@ -6,7 +6,7 @@ erlang are installed
 Index: lib/dialyzer/src/dialyzer_plt.erl
 --- lib/dialyzer/src/dialyzer_plt.erl.orig
 +++ lib/dialyzer/src/dialyzer_plt.erl
-@@ -231,7 +231,7 @@ get_default_plt() ->
+@@ -230,7 +230,7 @@ get_default_plt() ->
  	false ->
  	  plt_error("The HOME environment variable needs to be set " ++
  		    "so that Dialyzer knows where to find the default PLT");

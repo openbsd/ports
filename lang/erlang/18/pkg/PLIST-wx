@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-wx,v 1.4 2016/06/29 16:14:41 espie Exp $
+@comment $OpenBSD: PLIST-wx,v 1.5 2018/11/17 13:40:05 jasper Exp $
 @option is-branch
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/
-lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/doc/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/ebin/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/ebin/cdv_atom_cb.beam
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/ebin/cdv_bin_cb.beam
@@ -106,7 +105,6 @@ lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/src/observer_wx.erl
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/src/ttb.erl
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/src/ttb_et.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/
-lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/gl.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/glu.beam
@@ -157,6 +155,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxControl.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxControlWithItems.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxCursor.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDC.beam
+lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDCOverlay.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDataObject.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDateEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxDatePickerCtrl.beam
@@ -254,6 +253,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxNavigationKeyEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxNotebook.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxNotebookEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxNotifyEvent.beam
+lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxOverlay.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxPageSetupDialog.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxPageSetupDialogData.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxPaintDC.beam
@@ -510,6 +510,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxControl.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxControlWithItems.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxCursor.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDC.erl
+lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDCOverlay.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDataObject.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDateEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxDatePickerCtrl.erl
@@ -607,6 +608,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxNavigationKeyEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxNotebook.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxNotebookEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxNotifyEvent.erl
+lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxOverlay.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxPageSetupDialog.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxPageSetupDialogData.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxPaintDC.erl
@@ -697,5 +699,6 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/wxe.hrl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/wxe_master.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/wxe_server.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/wxe_util.erl
+@man lib/erlang${SYSTEM_VSN}/man/man3/wxDCOverlay.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/observer.3
 @man lib/erlang${SYSTEM_VSN}/man/man6/observer.6
