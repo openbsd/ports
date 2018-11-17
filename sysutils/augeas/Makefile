@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2018/11/01 08:39:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2018/11/17 09:28:25 ajacoutot Exp $
 
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.10.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils devel
 
@@ -24,11 +24,9 @@ LIB_DEPENDS=		converters/libiconv \
 
 USE_GMAKE=		Yes
 
-AUTOCONF_VERSION=	2.69
-
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--enable-compile-warnings=yes
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--enable-compile-warnings=yes
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
