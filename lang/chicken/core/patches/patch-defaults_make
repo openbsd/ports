@@ -1,6 +1,7 @@
-$OpenBSD: patch-defaults_make,v 1.3 2015/08/27 22:40:33 juanfra Exp $
---- defaults.make.orig	Thu Aug 27 19:08:10 2015
-+++ defaults.make	Thu Aug 27 19:09:56 2015
+$OpenBSD: patch-defaults_make,v 1.4 2018/11/17 13:29:17 juanfra Exp $
+Index: defaults.make
+--- defaults.make.orig
++++ defaults.make
 @@ -42,9 +42,9 @@ LIBDIR ?= $(PREFIX)/lib
  SHAREDIR ?= $(PREFIX)/share
  DATADIR ?= $(SHAREDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
@@ -24,3 +25,14 @@ $OpenBSD: patch-defaults_make,v 1.3 2015/08/27 22:40:33 juanfra Exp $
  endif
  endif
  LIBCHICKEN_SO_LIBRARIES ?= $(LIBRARIES)
+@@ -277,8 +277,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
+ # targets
+ 
+ CHICKEN_PROGRAM = $(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
+-CSC_PROGRAM = $(PROGRAM_PREFIX)csc$(PROGRAM_SUFFIX)
+-CSI_PROGRAM = $(PROGRAM_PREFIX)csi$(PROGRAM_SUFFIX)
++CSC_PROGRAM = $(PROGRAM_PREFIX)chicken-csc$(PROGRAM_SUFFIX)
++CSI_PROGRAM = $(PROGRAM_PREFIX)chicken-csi$(PROGRAM_SUFFIX)
+ CHICKEN_PROFILE_PROGRAM = $(PROGRAM_PREFIX)chicken-profile$(PROGRAM_SUFFIX)
+ CHICKEN_INSTALL_PROGRAM = $(PROGRAM_PREFIX)chicken-install$(PROGRAM_SUFFIX)
+ CHICKEN_UNINSTALL_PROGRAM = $(PROGRAM_PREFIX)chicken-uninstall$(PROGRAM_SUFFIX)

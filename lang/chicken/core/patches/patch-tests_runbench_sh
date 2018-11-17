@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_runbench_sh,v 1.1 2018/11/17 13:29:18 juanfra Exp $
+
+Index: tests/runbench.sh
+--- tests/runbench.sh.orig
++++ tests/runbench.sh
+@@ -34,8 +34,8 @@ run()
+ echo "****************************************"
+ 
+ compiler_options="-C -Wa,-W"
+-compile="../csc -w -compiler $CHICKEN -I.. -L.. -include-path .. -o a.out $COMPILE_OPTIONS"
+-interpret="../csi -n -include-path .."
++compile="../chicken-csc -w -compiler $CHICKEN -I.. -L.. -include-path .. -o a.out $COMPILE_OPTIONS"
++interpret="../chicken-csi -n -include-path .."
+ 
+ echo "======================================== null ... "
+ $compile null.scm -O5

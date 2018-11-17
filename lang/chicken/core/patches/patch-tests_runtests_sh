@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_runtests_sh,v 1.1 2018/11/17 13:29:18 juanfra Exp $
+
+Index: tests/runtests.sh
+--- tests/runtests.sh.orig
++++ tests/runtests.sh
+@@ -44,10 +44,10 @@ export CHICKEN_INSTALL_REPOSITORY CHICKEN_REPOSITORY_P
+ TYPESDB=../types.db
+ COMPILE_OPTIONS="-v -compiler ${CHICKEN} -I${TEST_DIR}/.. -L${TEST_DIR}/.. -include-path ${TEST_DIR}/.. -libdir ${TEST_DIR}/.. -rpath ${TEST_DIR}/.."
+ 
+-compile="../${PROGRAM_PREFIX}csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS} -o a.out -types ${TYPESDB} -ignore-repository"
+-compile_r="../${PROGRAM_PREFIX}csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS}"
+-compile_s="../${PROGRAM_PREFIX}csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS} -s -types ${TYPESDB} -ignore-repository"
+-interpret="../${PROGRAM_PREFIX}csi${PROGRAM_SUFFIX} -n -include-path ${TEST_DIR}/.."
++compile="../${PROGRAM_PREFIX}chicken-csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS} -o a.out -types ${TYPESDB} -ignore-repository"
++compile_r="../${PROGRAM_PREFIX}chicken-csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS}"
++compile_s="../${PROGRAM_PREFIX}chicken-csc${PROGRAM_SUFFIX} ${COMPILE_OPTIONS} -s -types ${TYPESDB} -ignore-repository"
++interpret="../${PROGRAM_PREFIX}chicken-csi${PROGRAM_SUFFIX} -n -include-path ${TEST_DIR}/.."
+ time=time
+ 
+ # Check for a "time" command, since some systems don't ship with a

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_programs-path_scm,v 1.1 2018/11/17 13:29:18 juanfra Exp $
+
+Index: tests/programs-path.scm
+--- tests/programs-path.scm.orig
++++ tests/programs-path.scm
+@@ -5,5 +5,5 @@
+                  (or (get-environment-variable "PROGRAM_SUFFIX") "")))
+ 
+ (define chicken-path (executable-path "chicken"))
+-(define csc-path (executable-path "csc"))
+-(define csi-path (executable-path "csi"))
++(define csc-path (executable-path "chicken-csc"))
++(define csi-path (executable-path "chicken-csi"))
