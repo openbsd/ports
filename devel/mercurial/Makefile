@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2018/10/02 14:04:01 juanfra Exp $
+# $OpenBSD: Makefile,v 1.88 2018/11/17 21:33:11 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
 # Keep in sync with:
 #   devel/tortoisehg
-# Test also with:
-#   devel/py-hg-git
-MODPY_EGG_VERSION =	4.5.3
-REVISION =		1
+MODPY_EGG_VERSION =	4.8
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -34,7 +31,8 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/unzip \
 			devel/git \
 			devel/mercurial,-main \
-			devel/mercurial,-x11
+			devel/mercurial,-x11 \
+			sysutils/coreutils
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 
@@ -95,7 +93,15 @@ post-install:
 do-test:
 	@echo "Running the tests with ${MAKE_JOBS} jobs."
 	@rm -rf ${WRKSRC}/tmp-tests
-	@cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py \
-		-j${MAKE_JOBS} --with-hg=${LOCALBASE}/bin/hg 1>&2
+	@echo '#!/bin/sh\nexec gls ' "\"\$$@\"" > ${WRKDIR}/bin/ls
+	@echo '#!/bin/sh\nexec gcp ' "\"\$$@\"" > ${WRKDIR}/bin/cp
+	@chmod +x ${WRKDIR}/bin/ls ${WRKDIR}/bin/cp
+	@mkdir ${WRKSRC}/tests-openbsd-home
+	@echo '[ui]\nusername = OpenBSD Tests <openbsd@localhost>' \
+		> ${WRKSRC}/tests-openbsd-home/.hgrc
+	@cd ${WRKSRC}/tests && ${SETENV} ${ALL_TEST_ENV} \
+		HOME=${WRKSRC}/tests-openbsd-home \
+		${MODPY_BIN} run-tests.py -j${MAKE_JOBS} \
+		--shell=/bin/ksh --with-hg=${LOCALBASE}/bin/hg 1>&2
 
 .include <bsd.port.mk>
