@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.29 2018/11/16 18:14:08 espie Exp $
+# $OpenBSD: Var.pm,v 1.30 2018/11/17 10:39:40 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -295,6 +295,7 @@ sub add
 {
 	my ($self, $ins) = @_;
 	$self->SUPER::add($ins);
+	my $n = 0;
 	for my $depends ($self->words) {
 		$depends =~ s/^\:+//;
 		my ($pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
@@ -312,7 +313,8 @@ sub add
 		$self->normal_insert($ins, $depends,
 		    $ins->find_pathkey($p->fullpkgpath),
 		    $ins->convert_depends($self->depends_type),
-		    $pkgspec, $rest);
+		    $pkgspec, $rest, $n);
+		$n++;
 # XXX		    $ins->add_todo($pkgpath2);
 	}
 }
@@ -325,9 +327,10 @@ sub create_tables
 	    OptTextColumn->new("PKGSPEC"),
 	    OptTextColumn->new("REST"),
 	    PathColumn->new("DEPENDSPATH"),
-	    TextColumn->new("TYPE"));
+	    TextColumn->new("TYPE"),
+	    IntegerColumn->new("N"));
 	$inserter->prepare_normal_inserter($self->table,
-	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
+	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST", "N");
 }
 
 package PkgPathsVar;
@@ -338,19 +341,22 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$inserter->make_table($self, undef,
-	    PathColumn->new("Value"));
-	$inserter->prepare_normal_inserter($self->table, "Value");
+	    PathColumn->new("Value"), IntegerColumn->new("N"));
+	$inserter->prepare_normal_inserter($self->table, "Value", "N");
 }
 
 sub add
 {
 	my ($self, $ins) = @_;
 	$self->SUPER::add($ins);
+	my $n = 0;
 	for my $pkgpath ($self->words) {
 		my $p = PkgPath->new($pkgpath);
 		$p->{want} = 1;
 		$p->{parent} //= $ins->current_path;
-		$self->normal_insert($ins, $ins->find_pathkey($p->fullpkgpath));
+		$self->normal_insert($ins, 
+		    $ins->find_pathkey($p->fullpkgpath), $n);
+	    	$n++;
 	}
 }
 
@@ -377,14 +383,14 @@ sub keyword_table() { undef }
 
 sub add_value
 {
-	my ($self, $ins, $value) = @_;
-	$self->normal_insert($ins, $value);
+	my ($self, $ins, $value, @r) = @_;
+	$self->normal_insert($ins, $value, @r);
 }
 
 sub add_keyword
 {
-	my ($self, $ins, $value) = @_;
-	$self->add_value($ins, $self->keyword($ins, $value));
+	my ($self, $ins, $value, @r) = @_;
+	$self->add_value($ins, $self->keyword($ins, $value), @r);
 }
 
 sub create_tables
@@ -394,6 +400,17 @@ sub create_tables
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
 	    ValueColumn->new);
 	$inserter->prepare_normal_inserter($self->table, "VALUE");
+}
+
+package CountedSecondaryVar;
+our @ISA = qw(SecondaryVar);
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	$self->create_keyword_table($inserter);
+	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE, N)",
+	    ValueColumn->new, IntegerColumn->new("N"));
+	$inserter->prepare_normal_inserter($self->table, "VALUE", "N");
 }
 
 package MasterSitesVar;
@@ -424,28 +441,34 @@ sub create_tables
 
 # Generic handling for any blank-separated list
 package ListVar;
-our @ISA = qw(SecondaryVar);
+our @ISA = qw(CountedSecondaryVar);
 sub columntype() { 'OptTextColumn' }
 
 sub add
 {
 	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
+	my $n = 0;
 	for my $d ($self->words) {
-		$self->add_value($ins, $d) if $d ne '';
+		next if $d eq '';
+		$self->add_value($ins, $d, $n);
+		$n++;
 	}
 }
 
 package ListKeyVar;
-our @ISA = qw(SecondaryVar);
+our @ISA = qw(CountedSecondaryVar);
 sub keyword_table() { 'Keywords' }
 
 sub add
 {
 	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
+	my $n = 0;
 	for my $d ($self->words) {
-		$self->add_keyword($ins, $d) if $d ne '';
+		next if $d eq '';
+		$self->add_keyword($ins, $d, $n);
+		$n++;
 	}
 }
 
@@ -457,18 +480,35 @@ sub add
 	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
 	my @l = ($self->words);
+	my $n = 0;
 	while (my $v = shift @l) {
 		while ($v =~ m/^[^']*\'[^']*$/ || $v =~m/^[^"]*\"[^"]*$/) {
 			$v.=' '.shift @l;
 		}
+		my $quotetype = 0;
 		if ($v =~ m/^\"(.*)\"$/) {
 		    $v = $1;
+		    $quotetype = 1;
 		}
-		if ($v =~ m/^\'(.*)\'$/) {
+		elsif ($v =~ m/^\'(.*)\'$/) {
 		    $v = $1;
+		    $quotetype = 2;
 		}
-		$self->add_value($ins, $v) if $v ne '';
+		next if $v eq '';
+		$self->add_value($ins, $v, $n, $quotetype);
+		$n++;
 	}
+}
+
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	$self->create_keyword_table($inserter);
+	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE, N)",
+	    ValueColumn->new, IntegerColumn->new("N"), 
+	    IntegerColumn->new("QUOTETYPE"));
+	$inserter->prepare_normal_inserter($self->table, "VALUE", "N", 
+	    "QUOTETYPE");
 }
 
 package DefinedListKeyVar;

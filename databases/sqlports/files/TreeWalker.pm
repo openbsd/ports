@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.7 2018/10/21 14:57:55 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.8 2018/11/17 10:39:40 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -20,24 +20,6 @@ use warnings;
 
 package TreeWalker;
 use PkgPath;
-
-$SIG{__WARN__} = sub {
-	require Carp;
-
-	my $s = pop @_;
-	$s =~ s/(.*)( at .*? line .*?\n$)/$1/s;
-	push @_, $s;
-	warn &Carp::longmess;
-};
-
-$SIG{__DIE__} = sub {
-	require Carp;
-
-	my $s = pop @_;
-	$s =~ s/(.*)( at .*? line .*?\n$)/$1/s;
-	push @_, $_;
-	die &Carp::longmess;
-};
 
 sub subdirlist
 {
