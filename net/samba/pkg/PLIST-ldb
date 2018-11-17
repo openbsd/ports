@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ldb,v 1.4 2017/03/12 22:19:50 jca Exp $
+@comment $OpenBSD: PLIST-ldb,v 1.5 2018/11/17 00:20:50 jca Exp $
+@conflict samba-<4.8.6p0
 @bin bin/ldbadd
 @bin bin/ldbdel
 @bin bin/ldbedit
@@ -20,7 +21,15 @@ lib/python${MODPY_VERSION}/site-packages/_ldb_text.pyc
 lib/python${MODPY_VERSION}/site-packages/_ldb_text.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldb.so
 lib/samba/ldb/
-lib/samba/libldb-cmdline-samba4.so
+lib/samba/ldb/asq.so
+lib/samba/ldb/ldap.so
+lib/samba/ldb/paged_results.so
+lib/samba/ldb/paged_searches.so
+lib/samba/ldb/rdn_name.so
+lib/samba/ldb/sample.so
+lib/samba/ldb/server_sort.so
+lib/samba/ldb/skel.so
+lib/samba/ldb/tdb.so
 @man man/man1/ldbadd.1
 @man man/man1/ldbdel.1
 @man man/man1/ldbedit.1
