@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2018/07/17 07:38:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2018/11/17 11:55:01 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -12,6 +12,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		12.2
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                7.0      # .20.3
 SHARED_LIBS +=  pulse-simple         1.1      # .1.1
@@ -121,15 +122,9 @@ BUILD_DEPENDS +=	devel/libtool # needs libtoolize
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
 
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i --force && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		aclocal && \
-		intltoolize --force
+do-gen:
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -i --force && \
+		${SETENV} ${AUTOCONF_ENV} aclocal && intltoolize --force
 ### END SNDIO ###
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio

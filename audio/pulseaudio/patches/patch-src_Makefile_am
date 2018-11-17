@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_Makefile_am,v 1.15 2018/06/21 15:23:40 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.16 2018/11/17 11:55:01 ajacoutot Exp $
+
+libpulsecommon-12.2.so: undefined symbol 'libintl_bindtextdomain'
+
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
@@ -7,7 +10,7 @@ Index: src/Makefile.am
  libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS) $(LIBSNDFILE_CFLAGS)
  libpulsecommon_@PA_MAJORMINOR@_la_LDFLAGS = $(AM_LDFLAGS) $(AM_LIBLDFLAGS) -avoid-version
 -libpulsecommon_@PA_MAJORMINOR@_la_LIBADD = $(AM_LIBADD) $(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) $(LIBSNDFILE_LIBS)
-+libpulsecommon_@PA_MAJORMINOR@_la_LIBADD = $(AM_LIBADD) $(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) $(LIBSNDFILE_LIBS) -lexecinfo
++libpulsecommon_@PA_MAJORMINOR@_la_LIBADD = $(AM_LIBADD) $(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBINTL) $(LIBSNDFILE_LIBS) -lexecinfo
  
  if HAVE_MEMFD
  libpulsecommon_@PA_MAJORMINOR@_la_SOURCES += \
