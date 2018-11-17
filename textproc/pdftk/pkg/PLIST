@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/20 10:09:57 sthen Exp $
-@bin bin/pdftk
+@comment $OpenBSD: PLIST,v 1.2 2018/11/17 21:16:03 sthen Exp $
+bin/pdftk
 @man man/man1/pdftk.1
+share/pdftk/
+share/pdftk/bcprov.jar
+share/pdftk/commons-lang3.jar
+share/pdftk/pdftk.jar

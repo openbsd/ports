@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/27 10:05:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/11/17 21:16:03 sthen Exp $
 
-BROKEN-sparc64=	gcj blows during build
 COMMENT=	pdf swiss army knife
-VERSION=	2.02
-REVISION=	3
-DISTNAME=	pdftk-$(VERSION)
-EXTRACT_SUFX=	-src.zip
+GL_COMMIT=	61981721cab4dc6adfecaa4342479c6232cf59f3
+DISTNAME=	pdftk-3.0.1
+EXTRACT_ONLY=	pdftk-${GL_COMMIT}.tar.bz2 \
+		commons-lang3-3.8.1-bin.tar.gz
+
 CATEGORIES=	textproc
 
 MAINTAINER=	Christopher Zimmermann <chrisz@openbsd.org>
@@ -13,55 +13,34 @@ MAINTAINER=	Christopher Zimmermann <chrisz@openbsd.org>
 # GPLv2+ (main program), see ${WRKDIST}/license_gpl_pdftk/ for libraries
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODGCC4_GCJWANTLIB} c iconv m pthread z
+HOMEPAGE =	https://gitlab.com/pdftk-java/
 
-HOMEPAGE =	http://www.pdflabs.com/tools/pdftk-server/
+MASTER_SITES =	https://gitlab.com/pdftk-java/pdftk/-/archive/${GL_COMMIT}/
+MASTER_SITES0 =	${MASTER_SITE_APACHE:=commons/lang/binaries/}
+MASTER_SITES1 =	https://www.bouncycastle.org/download/
+WRKDIST =	${WRKDIR}/pdftk-${GL_COMMIT}
+DISTFILES =	pdftk-${GL_COMMIT}.tar.bz2 \
+		commons-lang3-3.8.1-bin.tar.gz:0 \
+		bcprov-jdk15on-160.jar:1
 
-MASTER_SITES =	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+MODULES =	java
+MODJAVA_VER =	1.7+
+MODJAVA_BUILD =	ant
 
-# one of the only remaining direct users of gcc4, because it requires
-# a C++ compiler that can talk to the gcj runtime, and pdftk itself is 
-# firmly tied to gcj.
-MODULES =	gcc4
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS=	java c++
+RUN_DEPENDS +=	java/javaPathHelper
 
-LIB_DEPENDS=	${MODGCC4_GCJLIBDEP} \
-		converters/libiconv
+post-extract:
+	mkdir ${WRKSRC}/lib
+	cp ${FULLDISTDIR}/bcprov-jdk15on-160.jar ${WRKSRC}/lib/bcprov.jar
+	cp ${WRKDIR}/commons-lang3-3.8.1/commons-lang3-3.8.1.jar ${WRKSRC}/lib/commons-lang3.jar
 
-WRKDIST=	${WRKDIR}/$(DISTNAME)-dist
-WRKSRC=		$(WRKDIST)/pdftk
-
-USE_GMAKE=	Yes
-MAKE_FILE=	Makefile.Base
-
-GCJ?=		gcj
-GCJH?=		gcjh
-GJAR?=		gjar
-
-CONFIG=		$(MACHINE_ARCH)-unknown-openbsd$(OSREV)
-GCJFLAGS?=	${CXXFLAGS}
-CPPFLAGS+=	-fdollars-in-identifiers \
-		-DPATH_DELIM=0x2f \
-		-DASK_ABOUT_WARNINGS=false \
-		-DUNBLOCK_SIGNALS
-CXXFLAGS+=	-L$(LOCALBASE)/lib
-LDLIBS+=	-lgcj -liconv -lz -pthread
-
-MAKE_ENV+=	CXX="$(CXX)" \
-		GCJ="$(GCJ)" \
-		GCJH="$(GCJH)" \
-		GJAR="$(GJAR)" \
-		AR="$(AR)" \
-		RM=rm \
-		GCJFLAGS="$(GCJFLAGS)" \
-		CPPFLAGS="$(CPPFLAGS)" \
-		CXXFLAGS="$(CXXFLAGS)" \
-		ARFLAGS="${ARFLAGS} rs" \
-		LDLIBS="$(LDLIBS)"
+do-build:
+	cd ${WRKSRC}; ant jar
 
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/pdftk $(PREFIX)/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pdftk
+	cd ${WRKSRC}; ${INSTALL_DATA} build/jar/pdftk.jar lib/bcprov.jar lib/commons-lang3.jar ${PREFIX}/share/pdftk
 	$(INSTALL_MAN) $(WRKDIST)/pdftk.1 $(PREFIX)/man/man1
+	$(SUBST_CMD) -m 755 -c $(FILESDIR)/pdftk $(PREFIX)/bin/pdftk
 
 .include <bsd.port.mk>

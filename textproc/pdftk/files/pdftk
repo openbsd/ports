@@ -1,0 +1,2 @@
+#!/bin/sh
+exec `javaPathHelper -c pdftk` -cp ${TRUEPREFIX}/share/pdftk/pdftk.jar:${TRUEPREFIX}/share/pdftk/bcprov.jar:${TRUEPREFIX}/share/pdftk/commons-lang3.jar com.gitlab.pdftk_java.pdftk $*
