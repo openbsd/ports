@@ -1,4 +1,0 @@
-The Hg-Git plugin for Mercurial adds the ability to work with a Git repository
-from Mercurial. This means you can collaborate on Git based projects from
-Mercurial, or use a Git server as a collaboration point for a team with
-developers using both Git and Mercurial.
