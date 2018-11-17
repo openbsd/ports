@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/10 12:20:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/17 09:36:57 ajacoutot Exp $
 
 COMMENT=		manage Exoscale infrastructure from the command-line
 
-GH_TAGNAME=		v1.0.3
+GH_TAGNAME=		v1.0.4
 GH_ACCOUNT=		exoscale
 GH_PROJECT=		cli
 DISTNAME=		${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME:C/^v//}
