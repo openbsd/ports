@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/03/07 13:37:10 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/11/17 21:33:39 juanfra Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -120,8 +120,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qdelete.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qdelete.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qfold.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qfold.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qrename.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qrename.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qsci.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qsci.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qscilib.py
@@ -198,6 +196,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/thgrepo.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/thgrepo.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/thgstrip.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/thgstrip.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/topics.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/topics.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/update.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/update.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/visdiff.py
@@ -424,6 +424,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-shelve.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-status.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-strip.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-tag.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-topics.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-transplant.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-unbundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-undo.svg
