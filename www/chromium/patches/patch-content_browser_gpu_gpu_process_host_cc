@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.4 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.5 2018/11/17 16:18:11 robert Exp $
 
 Index: content/browser/gpu/gpu_process_host.cc
 --- content/browser/gpu/gpu_process_host.cc.orig
@@ -7,7 +7,7 @@ Index: content/browser/gpu/gpu_process_host.cc
  #endif
      switches::kEnableGpuRasterization,
      switches::kEnableLogging,
-+    switches::kEnableUnveil,
++    switches::kDisableUnveil,
      switches::kEnableVizDevTools,
      switches::kHeadless,
      switches::kLoggingLevel,

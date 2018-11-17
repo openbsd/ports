@@ -96,7 +96,7 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  base::SysInfo::AmountOfPhysicalMemory();
 +  base::SysInfo::NumberOfProcessors();
 +     
-+  if (command_line->HasSwitch(switches::kEnableUnveil))
++  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type);
 +
 +  pre_initialized_ = true;

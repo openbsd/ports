@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.33 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.34 2018/11/17 16:18:11 robert Exp $
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
@@ -6,7 +6,7 @@ Index: content/public/common/content_switches.cc
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
-+const char kEnableUnveil[]                  = "enable-unveil";
++const char kDisableUnveil[]                 = "disable-unveil";
 +
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in

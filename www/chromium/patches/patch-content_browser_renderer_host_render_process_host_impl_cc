@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.19 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.20 2018/11/17 16:18:11 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.cc
 --- content/browser/renderer_host/render_process_host_impl.cc.orig
@@ -7,7 +7,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
      switches::kEnableMediaSuspend,
      switches::kEnableLCDText,
      switches::kEnableLogging,
-+    switches::kEnableUnveil,
++    switches::kDisableUnveil,
      switches::kEnableNetworkInformationDownlinkMax,
      switches::kEnableOopRasterization,
      switches::kEnablePluginPlaceholderTesting,

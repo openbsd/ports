@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_embedder_switches_cc,v 1.1 2018/07/25 06:53:36 robert Exp $
+$OpenBSD: patch-services_service_manager_embedder_switches_cc,v 1.2 2018/11/17 16:18:11 robert Exp $
 
 Index: services/service_manager/embedder/switches.cc
 --- services/service_manager/embedder/switches.cc.orig
@@ -7,7 +7,7 @@ Index: services/service_manager/embedder/switches.cc
  // it's routed.
  const char kEnableLogging[] = "enable-logging";
  
-+const char kEnableUnveil[] = "enable-unveil";
++const char kDisableUnveil[] = "disable-unveil";
 +
  // Indicates the type of process to run. This may be "service-manager",
  // "service-runner", or any other arbitrary value supported by the embedder.
