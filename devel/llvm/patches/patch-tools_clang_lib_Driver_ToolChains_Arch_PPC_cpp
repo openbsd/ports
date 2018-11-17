@@ -1,0 +1,29 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_PPC_cpp,v 1.1 2018/11/17 08:32:38 ajacoutot Exp $
+
+[PowerPC] Option for secure plt mode
+
+Index: tools/clang/lib/Driver/ToolChains/Arch/PPC.cpp
+--- tools/clang/lib/Driver/ToolChains/Arch/PPC.cpp.orig
++++ tools/clang/lib/Driver/ToolChains/Arch/PPC.cpp
+@@ -106,6 +106,21 @@ void ppc::getPPCTargetFeatures(const Driver &D, const 
+   ppc::FloatABI FloatABI = ppc::getPPCFloatABI(D, Args);
+   if (FloatABI == ppc::FloatABI::Soft)
+     Features.push_back("-hard-float");
++
++  ppc::ReadGOTPtrMode ReadGOT = ppc::getPPCReadGOTPtrMode(D, Triple, Args);
++  if (ReadGOT == ppc::ReadGOTPtrMode::SecurePlt)
++    Features.push_back("+secure-plt");
++}
++ 
++ppc::ReadGOTPtrMode ppc::getPPCReadGOTPtrMode(const Driver &D, const llvm::Triple &Triple,
++                                              const ArgList &Args) {
++  if (Args.getLastArg(options::OPT_msecure_plt))
++    return ppc::ReadGOTPtrMode::SecurePlt;
++
++  if (Triple.isOSOpenBSD())
++    return ppc::ReadGOTPtrMode::SecurePlt;
++  else
++    return ppc::ReadGOTPtrMode::Bss;
+ }
+ 
+ ppc::FloatABI ppc::getPPCFloatABI(const Driver &D, const ArgList &Args) {

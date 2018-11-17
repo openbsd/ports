@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.12 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.13 2018/11/17 08:32:38 ajacoutot Exp $
 
 - Add ret protctor options as no-ops.
+- [PowerPC] Option for secure plt mode.
 - Alias the command line parameter -p to -pg.
 
 Index: tools/clang/include/clang/Driver/Options.td
@@ -17,7 +18,15 @@ Index: tools/clang/include/clang/Driver/Options.td
  def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
    HelpText<"Emit full debug info for all types used by the program">;
  def fno_standalone_debug : Flag<["-"], "fno-standalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
-@@ -2170,7 +2174,7 @@ def pthreads : Flag<["-"], "pthreads">;
+@@ -1881,6 +1885,7 @@ def maltivec : Flag<["-"], "maltivec">, Group<m_ppc_Fe
+ def mno_altivec : Flag<["-"], "mno-altivec">, Group<m_ppc_Features_Group>;
+ def mvsx : Flag<["-"], "mvsx">, Group<m_ppc_Features_Group>;
+ def mno_vsx : Flag<["-"], "mno-vsx">, Group<m_ppc_Features_Group>;
++def msecure_plt : Flag<["-"], "msecure-plt">, Group<m_ppc_Features_Group>;
+ def mpower8_vector : Flag<["-"], "mpower8-vector">,
+     Group<m_ppc_Features_Group>;
+ def mno_power8_vector : Flag<["-"], "mno-power8-vector">,
+@@ -2170,7 +2175,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
  def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
