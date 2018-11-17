@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2018/11/15 13:04:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2018/11/17 01:06:24 naddy Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
 DISTNAME=	silc-server-1.1.19
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -19,10 +19,6 @@ WANTLIB=	c iconv pthread
 
 LIB_DEPENDS=	converters/libiconv
 
-.if ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS+=	devel/yasm
-.endif
-
 FLAVORS=	operops
 FLAVOR?=
 
@@ -36,19 +32,13 @@ SUBST_VARS=	CONFDIR
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ENV+=	ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
-.endif
-CONFIGURE_ARGS+= --docdir=${PREFIX}/share/doc/silcd \
+CONFIGURE_ARGS+= --disable-asm \
+		 --docdir=${PREFIX}/share/doc/silcd \
 		 --with-etcdir=${CONFDIR} \
 		 --with-logsdir=/var/log/silcd \
 		 --with-silcd-config-file=${CONFDIR}/silcd.conf \
 		 --with-silcd-pid-file=/var/run/silcd.pid \
 		 --enable-debug
-
-.if ${MACHINE_ARCH} != "amd64"
-CONFIGURE_ARGS+= --disable-asm
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/silcd

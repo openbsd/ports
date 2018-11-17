@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2018/11/15 13:04:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2018/11/17 01:06:24 naddy Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
 DISTNAME=	silc-client-1.1.11
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
@@ -20,10 +20,6 @@ WANTLIB+= pcre pthread ssl
 
 LIB_DEPENDS+=	devel/glib2
 
-.if ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS+= devel/yasm
-.endif
-
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
@@ -33,18 +29,12 @@ SUBST_VARS=	CONFDIR
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
-.endif
-CONFIGURE_ARGS+= --docdir=${PREFIX}/share/doc/silc \
+CONFIGURE_ARGS+= --disable-asm \
+		 --docdir=${PREFIX}/share/doc/silc \
 		 --sysconfdir=${CONFDIR} \
 		 --with-helpdir=${PREFIX}/share/silc/help \
 		 --with-iconv=${LOCALBASE} \
 		 --with-perl=no
-
-.if ${MACHINE_ARCH} != "amd64"
-CONFIGURE_ARGS+= --disable-asm
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/silc
