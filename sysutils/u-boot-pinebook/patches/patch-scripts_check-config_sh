@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_check-config_sh,v 1.1.1.1 2018/02/11 00:42:57 phessler Exp $
+$OpenBSD: patch-scripts_check-config_sh,v 1.2 2018/11/18 23:50:02 jsg Exp $
 
 Index: scripts/check-config.sh
 --- scripts/check-config.sh.orig
 +++ scripts/check-config.sh
-@@ -27,12 +27,12 @@ new_adhoc="${path}.adhoc"
+@@ -30,12 +30,12 @@ new_adhoc="${path}.adhoc"
  export LC_ALL=C
  export LC_COLLATE=C
  

@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2018/02/11 00:42:57 phessler Exp $
+#	$OpenBSD: Makefile,v 1.2 2018/11/18 23:50:02 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
 COMMENT=	U-Boot firmware for Pine64 Pinebook
-V=		0.0.20180206
+V=		0.0.20181109
 DISTNAME=	u-boot-pinebook-${V}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
@@ -11,14 +11,10 @@ HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-# from branch pinebook-wip-20180206
+# from branch pinebook-wip-20181109
 GH_ACCOUNT=	anarsoul
 GH_PROJECT=	u-boot-pine64
-GH_COMMIT=	603ea3339298bdef845a7108fb1203ce32f230c4
-
-PATCHFILES=		u-boot-pinebook-efi_status_t.patch:1
-MASTER_SITES1=		https://patchwork.ozlabs.org/patch/871561/mbox/?/
-PATCH_DIST_STRIP=	-p1
+GH_COMMIT=	54dd89fefcf4b6b70351d73bad291dc102b8317c
 
 PKG_ARCH=	*
 

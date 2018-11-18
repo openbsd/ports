@@ -1,4 +1,2 @@
-SHA256 (u-boot-pinebook-0.0.20180206-603ea333.tar.gz) = UCbFsIoUZOKjsVnxB1b1znbtT/X+yKoOF3w2OdwzkXo=
-SHA256 (u-boot-pinebook-efi_status_t.patch) = YbeO2n7JPPIW9xPwFO7x6UMTmJNxr8Ryuc9KTWN7oE4=
-SIZE (u-boot-pinebook-0.0.20180206-603ea333.tar.gz) = 15616896
-SIZE (u-boot-pinebook-efi_status_t.patch) = 6452
+SHA256 (u-boot-pinebook-0.0.20181109-54dd89fe.tar.gz) = cwwduJ+mmc7hxepuvcZL3SEc+JcBXzhDnukAGT3LyxQ=
+SIZE (u-boot-pinebook-0.0.20181109-54dd89fe.tar.gz) = 16611215

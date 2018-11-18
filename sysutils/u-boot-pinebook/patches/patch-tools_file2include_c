@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_file2include_c,v 1.1 2018/11/18 23:50:02 jsg Exp $
+
+Don't include obsolete malloc.h header.
+
+Index: tools/file2include.c
+--- tools/file2include.c.orig
++++ tools/file2include.c
+@@ -18,7 +18,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdint.h>
+-#include <malloc.h>
+ 
+ /* Size of the blocks written to the compressed file */
+ #define BLOCK_SIZE 8
