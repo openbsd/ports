@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2018/04/28 14:40:26 landry Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2018/11/18 19:39:29 landry Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -98,7 +98,7 @@ check_PROGRAMS = test_common$(EXEEXT) test_format_grap
+@@ -109,7 +109,7 @@ check_PROGRAMS = test_common$(EXEEXT) test_format_grap
  @BUILD_WITH_LIBSOCKET_TRUE@am__append_4 = -lsocket
  @BUILD_WITH_LIBKSTAT_TRUE@am__append_5 = -lkstat
  @BUILD_WITH_LIBDEVINFO_TRUE@am__append_6 = -ldevinfo
@@ -11,7 +11,7 @@ Index: Makefile.in
  
  # The daemon needs to call sg_init, so we need to link it against libstatgrab,
  # too. -octo
-@@ -3183,7 +3183,7 @@ AM_CPPFLAGS = \
+@@ -3210,7 +3210,7 @@ AM_CPPFLAGS = \
  	-DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
@@ -20,7 +20,7 @@ Index: Makefile.in
  	-DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  
-@@ -7720,16 +7720,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+@@ -7821,16 +7821,8 @@ uninstall-man: uninstall-man1 uninstall-man5
  @HAVE_GRPC_CPP_TRUE@@HAVE_PROTOC3_TRUE@	$(V_PROTOC)$(PROTOC) -I$(srcdir)/proto --cpp_out=$(builddir) $<
  
  install-exec-hook:

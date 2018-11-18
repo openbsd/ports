@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2018/11/18 19:39:29 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -15,10 +15,9 @@ COMMENT-redis =		collectd redis plugin
 COMMENT-prometheus =	collectd prometheus plugin
 COMMENT-ping =		collectd ping plugin
 
-V =			5.8.0
+V =			5.8.1
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
-REVISION-main =		2
 PKGNAME-mysql =		collectd-mysql-$V
 PKGNAME-pgsql =		collectd-pgsql-$V
 PKGNAME-rrdtool =	collectd-rrdtool-$V
@@ -48,7 +47,7 @@ MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -mqtt -nut -riemann -redis -prometheus -ping
 
-WANTLIB-mysql =		crypto m ssl z mysqlclient_r pthread
+WANTLIB-mysql =		crypto m ssl mysqlclient_r pthread
 LIB_DEPENDS-mysql =	databases/mariadb
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 

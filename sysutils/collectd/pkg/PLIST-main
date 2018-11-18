@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2018/11/18 19:39:29 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/collectd
 @bin bin/collectd-nagios
 @bin bin/collectd-tg
 @bin bin/collectdctl
@@ -108,6 +109,3 @@ share/examples/collectd.conf
 @mode
 @owner _collectd
 @sample /var/collectd/
-@group
-@owner
-@rcscript ${RCDIR}/collectd
