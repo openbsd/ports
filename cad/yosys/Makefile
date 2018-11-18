@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/10 19:40:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/18 20:43:23 naddy Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys
 GH_TAGNAME =	yosys-0.7
 DISTNAME =	${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	cad
 
@@ -44,8 +45,9 @@ USE_GMAKE =	Yes
 MAKE_FLAGS =	CXX="${CXX}" \
 		LD="${CXX} -L${LOCALBASE}/lib"
 
+# ports-gcc 4.9 requires explicit -std=c++11
 MAKE_ENV =	ABCEXTERNAL=${LOCALBASE}/bin/abc \
-		CXXFLAGS="${CXXFLAGS}" \
+		CXXFLAGS="${CXXFLAGS} -std=c++11" \
 		TCL_VERSION="${MODTCL_LIB}" \
 		TCL_INCLUDE="${MODTCL_INCDIR}"
 
