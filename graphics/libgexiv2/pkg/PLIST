@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/04/27 11:21:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/11/18 14:48:06 ajacoutot Exp $
 include/gexiv2/
 include/gexiv2/gexiv2-enums.h
 include/gexiv2/gexiv2-log.h
@@ -10,35 +10,12 @@ include/gexiv2/gexiv2-startup.h
 include/gexiv2/gexiv2-version.h
 include/gexiv2/gexiv2.h
 lib/girepository-1.0/GExiv2-0.10.typelib
-lib/libgexiv2.a
-lib/libgexiv2.la
 @lib lib/libgexiv2.so.${LIBgexiv2_VERSION}
 lib/pkgconfig/gexiv2.pc
 lib/python2.7/site-packages/gi/overrides/GExiv2.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
 share/gir-1.0/GExiv2-0.10.gir
-share/gtk-doc/html/gexiv2/
-share/gtk-doc/html/gexiv2/GExiv2Metadata.html
-share/gtk-doc/html/gexiv2/GExiv2PreviewImage.html
-share/gtk-doc/html/gexiv2/GExiv2PreviewProperties.html
-share/gtk-doc/html/gexiv2/annotation-glossary.html
-share/gtk-doc/html/gexiv2/api-index-0-10-6.html
-share/gtk-doc/html/gexiv2/api-index-full.html
-share/gtk-doc/html/gexiv2/ch01.html
-share/gtk-doc/html/gexiv2/deprecated-api-index.html
-share/gtk-doc/html/gexiv2/gexiv2-Library-initialisation.html
-share/gtk-doc/html/gexiv2/gexiv2-Logging-functionality.html
-share/gtk-doc/html/gexiv2/gexiv2-gexiv2-version.html
-share/gtk-doc/html/gexiv2/gexiv2.devhelp2
-share/gtk-doc/html/gexiv2/home.png
-share/gtk-doc/html/gexiv2/index.html
-share/gtk-doc/html/gexiv2/left-insensitive.png
-share/gtk-doc/html/gexiv2/left.png
-share/gtk-doc/html/gexiv2/right-insensitive.png
-share/gtk-doc/html/gexiv2/right.png
-share/gtk-doc/html/gexiv2/style.css
-share/gtk-doc/html/gexiv2/up-insensitive.png
-share/gtk-doc/html/gexiv2/up.png
 share/vala/
 share/vala/vapi/
+share/vala/vapi/gexiv2.deps
 share/vala/vapi/gexiv2.vapi

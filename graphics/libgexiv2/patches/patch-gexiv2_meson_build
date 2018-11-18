@@ -1,0 +1,16 @@
+$OpenBSD: patch-gexiv2_meson_build,v 1.1 2018/11/18 14:48:06 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gexiv2/issues/27
+
+Index: gexiv2/meson.build
+--- gexiv2/meson.build.orig
++++ gexiv2/meson.build
+@@ -35,7 +35,7 @@ install_headers(gexiv2_headers, subdir : 'gexiv2')
+ 
+ # Static map file
+ mapfile = 'gexiv2.map'
+-if host_machine.system() == 'darwin'
++if ['darwin', 'openbsd'].contains(host_machine.system())
+     vflag = ''
+ else
+     vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
