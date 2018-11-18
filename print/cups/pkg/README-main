@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.20 2018/09/04 12:46:20 espie Exp $
+$OpenBSD: README-main,v 1.21 2018/11/18 15:52:18 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -35,18 +35,18 @@ USB
 Since USB printing will be handled by libusb, you need to allow the
 _cups user access to the corresponding USB endpoint. To do so, find
 where your printer is attached to using:
-    # usbdevs -vd
+    $ usbdevs -v
 then change the ownerships accordingly.
 
 e.g.
-Controller /dev/usb3:
-addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086), rev 1.00
-  uhub3
- port 1 powered
- port 2 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
-   ugen0
+Controller /dev/usb0:
+<...>
+addr 05: 03f0:4812 HP, Officejet 7500 E910
+         high speed, self powered, config 1, rev 1.00, iSerialNumber MY2793100Q05JB
+         driver: umass0
+         driver: ugen1
 
-# chown _cups /dev/ugen0.* /dev/usb3
+# chown _cups /dev/ugen1.* /dev/usb0
 
 The reason we are changing the user and not the group is that it will
 allow for multi-function devices to work for both printing and scanning
@@ -54,7 +54,7 @@ allow for multi-function devices to work for both printing and scanning
 
 To preserve your changes after a system update, use rc.local(8).
 e.g. for a multi-function printer/scanner add the following lines:
-chown _cups:_saned /dev/ugen0.* /dev/usb1
+chown _cups:_saned /dev/ugen1.* /dev/usb0
 
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
 
