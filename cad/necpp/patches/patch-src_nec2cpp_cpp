@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_nec2cpp_cpp,v 1.1 2018/11/18 20:07:15 naddy Exp $
+
+Index: src/nec2cpp.cpp
+--- src/nec2cpp.cpp.orig
++++ src/nec2cpp.cpp
+@@ -51,6 +51,7 @@
+ #include "nec2cpp.h"
+ #include "nec_exception.h"
+ #include <signal.h>
++#include <stdlib.h>
+ #include <vector>
+ #include <string>
+ 

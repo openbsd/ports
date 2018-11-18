@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_c_geometry_cpp,v 1.1 2018/11/18 20:07:15 naddy Exp $
+
+Index: src/c_geometry.cpp
+--- src/c_geometry.cpp.orig
++++ src/c_geometry.cpp
+@@ -20,6 +20,7 @@
+ 
+ #include "nec_context.h"
+ #include "nec_exception.h"
++#include <stdlib.h>
+ 
+ c_geometry::c_geometry()
+ {
