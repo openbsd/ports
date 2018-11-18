@@ -1,0 +1,8 @@
+$OpenBSD: README,v 1.1 2018/11/18 16:02:07 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+See ${LOCALBASE}/share/doc/pkg-readme/libgphoto2 to allow unprivileged access to
+the camera device.

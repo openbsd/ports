@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/27 21:03:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/11/18 16:02:07 ajacoutot Exp $
 @bin bin/gtkam
 @man man/man1/gtkam.1
 share/applications/gtkam.desktop
@@ -9,6 +9,7 @@ share/doc/gtkam/COPYING
 share/doc/gtkam/NEWS
 share/doc/gtkam/README
 share/doc/gtkam/TODO
+share/doc/pkg-readmes/${PKGSTEM}
 share/gtkam/
 share/gtkam/pixmaps/
 share/gtkam/pixmaps/camera.xpm

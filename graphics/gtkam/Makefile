@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2018/11/18 16:02:07 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-1.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics
 
