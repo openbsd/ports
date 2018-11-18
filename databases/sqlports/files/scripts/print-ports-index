@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.2 2018/11/12 15:58:37 espie Exp $
+# $OpenBSD: print-ports-index,v 1.3 2018/11/18 16:25:23 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -25,18 +25,16 @@ else
 fi
 cat <<'EOSQL' |sqlite3 $file
 -- in order for group_concat to sort, you must do it in two steps
-create temp view d1 (d, p, t) as 
-    select 
-    	distinct((case pkgspec when '' then '' else pkgspec||":" end)||dependspath) as fd,
-	fullpkgpath, type
-    from depends order by fd;
-
--- and now the view that's going to be used 3 times in the main request
-create temp view d2 as
-    select group_concat(d, ' ') as dlist, p, t
-    from d1 group by p, t;
-
-
+with 
+    d1 (d, p, t) as 
+	(select 
+	    distinct((case pkgspec when '' then '' else pkgspec||":" end)||dependspath) as fd,
+	    fullpkgpath, type
+	from depends order by fd),
+-- and now the part that's going to be used 3 times in the main request
+    d2 as
+	(select group_concat(d, ' ') as dlist, p, t
+	from d1 group by p, t)
 select fullpkgname,fullpkgpath,
     (case prefix when '/usr/local' THEN "" else prefix end),
     comment,descr,maintainer,categories,
