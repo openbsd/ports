@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2018/11/18 21:09:47 naddy Exp $
 
 COMMENT =		extremely fast password cracker
 
@@ -27,6 +27,7 @@ TEST_TARGET =	check
 
 .if ${MACHINE_ARCH} == "i386"
 ALL_TARGET=		openbsd-x86-any
+LDFLAGS=		-Wl,-znotext
 .elif ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "alpha"

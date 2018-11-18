@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/24 18:10:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/18 21:09:47 naddy Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -54,6 +54,7 @@ MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 # times with various targets (openbsd-x86-sse2 openbsd-x86-mmx openbsd-x86-any);
 # see -DCPU_FALLBACK=1.
 ALL_TARGET=		openbsd-x86-any
+LDFLAGS+=		-Wl,-znotext
 .elif ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "alpha"
