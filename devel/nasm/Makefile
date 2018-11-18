@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2018/03/17 16:22:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2018/11/18 19:15:07 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
-VERSION=	2.13.03
+VERSION=	2.14
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
 MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
@@ -21,8 +21,8 @@ WANTLIB=	c
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-
-DESTDIRNAME=	INSTALLROOT
+CONFIGURE_ARGS+=--docdir=${PREFIX}/share/doc/nasm \
+		--htmldir=${PREFIX}/share/doc/nasm/html
 
 ALL_TARGET=	everything
 INSTALL_TARGET=	install_everything
