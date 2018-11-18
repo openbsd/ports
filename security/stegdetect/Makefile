@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/25 20:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/11/18 21:25:43 naddy Exp $
 
 COMMENT=	steganography detection tool
 DISTNAME=	stegdetect-0.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=	security graphics
 MASTER_SITES=	${HOMEPAGE}
 

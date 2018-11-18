@@ -1,10 +1,22 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/03/24 17:10:37 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.2 2018/11/18 21:25:43 naddy Exp $
+
+Don't build non-PIC i386 assembly code.
 
 Don't pickup gtk1.
 
---- configure.in.orig	Wed Mar 24 17:44:35 2010
-+++ configure.in	Wed Mar 24 17:44:54 2010
-@@ -30,7 +30,7 @@ i386-*-*)
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -21,16 +21,13 @@ dnl Checks for libraries.
+ AC_MSG_CHECKING(blowfish object)
+ AC_SUBST(BFOBJ)
+ case "$target" in
+-i386-*-*)
+- AC_MSG_RESULT(bf-586.o)
+- BFOBJ=bf-586.o ;;
+ *)
+  AC_MSG_RESULT(bf_enc.o)
+  BFOBJ=bf_enc.o;;
  esac
  
  dnl Checking for gtk
