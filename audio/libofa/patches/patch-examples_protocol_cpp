@@ -1,7 +1,13 @@
-$OpenBSD: patch-examples_protocol_cpp,v 1.1 2011/07/05 08:18:29 jasper Exp $
---- examples/protocol.cpp.orig	Tue Jul  5 09:15:33 2011
-+++ examples/protocol.cpp	Tue Jul  5 09:15:38 2011
-@@ -12,7 +12,6 @@
+$OpenBSD: patch-examples_protocol_cpp,v 1.2 2018/11/18 17:06:52 naddy Exp $
+Index: examples/protocol.cpp
+--- examples/protocol.cpp.orig
++++ examples/protocol.cpp
+@@ -8,11 +8,11 @@
+ -------------------------------------------------------------------*/
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <string>
  #include <map>
  #include <expat.h>
  #include <curl/curl.h>
