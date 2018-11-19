@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_solid_devices_managerbase_cpp,v 1.1 2018/11/19 21:24:32 rsadowski Exp $
+
+Index: src/solid/devices/managerbase.cpp
+--- src/solid/devices/managerbase.cpp.orig
++++ src/solid/devices/managerbase.cpp
+@@ -63,6 +63,9 @@ void Solid::ManagerBasePrivate::loadBackends()
+ #        if defined(Q_OS_MAC)
+         m_backends << new Solid::Backends::IOKit::IOKitManager(0);
+ 
++#        elif defined(Q_OS_OPENBSD)
++        m_backends << new Solid::Backends::UPower::UPowerManager(0);
++
+ #        elif defined(Q_OS_FREEBSD)
+         m_backends << new Solid::Backends::UPower::UPowerManager(0)
+ #               if EXPERIMENTAL_BSDISKS

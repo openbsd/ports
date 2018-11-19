@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/19 21:24:32 rsadowski Exp $
 
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
 
-SHARED_LIBS =	KF5Solid		5.2
+REVISION =	0
+
+SHARED_LIBS =	KF5Solid		5.3
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Widgets Qt5Xml c m
