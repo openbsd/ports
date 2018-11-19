@@ -1,6 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_PPC_h,v 1.1 2018/11/17 08:32:38 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_PPC_h,v 1.2 2018/11/19 08:51:03 ajacoutot Exp $
 
-[PowerPC] Option for secure plt mode
+- [PowerPC] Option for secure plt mode
+- [PowerPC] Set the default PLT mode on OpenBSD/powerpc to Secure PLT.
 
 Index: tools/clang/lib/Driver/ToolChains/Arch/PPC.h
 --- tools/clang/lib/Driver/ToolChains/Arch/PPC.h.orig

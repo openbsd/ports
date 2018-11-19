@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.197 2018/11/18 13:50:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.198 2018/11/19 08:51:03 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
-BROKEN-powerpc =	relocation truncated to fit: R_PPC_PLTREL24
 
 DPB_PROPERTIES = parallel
 
@@ -19,7 +18,7 @@ PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	16
+REVISION-main =	17
 REVISION-python = 2
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -73,14 +72,11 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DBacktrace_LIBRARY=''
 
 # Workaround relocation overflow
-#
-# Have the build disable PIE to workaround breakage that was
-# introduced when PIE was enabled
 .if ${MACHINE_ARCH} == "powerpc"
 CFLAGS +=		-mlongcall
 CXXFLAGS +=		-mlongcall
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-nopie"
-CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-nopie"
+# As a workaround for the size only build the PowerPC backend
+CONFIGURE_ARGS +=	-DLLVM_TARGETS_TO_BUILD="PowerPC"
 .elif ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-mlong-calls
 CXXFLAGS +=		-mlong-calls
