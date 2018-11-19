@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.30 2018/11/17 10:39:40 espie Exp $
+# $OpenBSD: Var.pm,v 1.31 2018/11/19 15:13:06 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -397,20 +397,39 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
-	    ValueColumn->new);
-	$inserter->prepare_normal_inserter($self->table, "VALUE");
+	$inserter->make_table($self, 
+	    "UNIQUE(".join(", ", "FULLPKGPATH", $self->unique_names).")",
+	    $self->columns);
+	$inserter->prepare_normal_inserter($self->table, $self->column_names);
+}
+
+sub column_names
+{
+	return ("VALUE");
+}
+
+sub unique_names
+{
+	my $self = shift;
+	return $self->column_names;
+}
+
+sub columns
+{
+	return (ValueColumn->new);
 }
 
 package CountedSecondaryVar;
 our @ISA = qw(SecondaryVar);
-sub create_tables
+
+sub column_names
 {
-	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE, N)",
-	    ValueColumn->new, IntegerColumn->new("N"));
-	$inserter->prepare_normal_inserter($self->table, "VALUE", "N");
+	return ("VALUE", "N");
+}
+
+sub columns
+{
+	return (ValueColumn->new, IntegerColumn->new("N"));
 }
 
 package MasterSitesVar;
@@ -500,15 +519,20 @@ sub add
 	}
 }
 
-sub create_tables
+sub column_names
 {
-	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE, N)",
-	    ValueColumn->new, IntegerColumn->new("N"), 
+	return ("VALUE", "N", "QUOTETYPE");
+}
+
+sub unique_names
+{
+	return ("VALUE", "N");
+}
+
+sub columns
+{
+	return (ValueColumn->new, IntegerColumn->new("N"), 
 	    IntegerColumn->new("QUOTETYPE"));
-	$inserter->prepare_normal_inserter($self->table, "VALUE", "N", 
-	    "QUOTETYPE");
 }
 
 package DefinedListKeyVar;
