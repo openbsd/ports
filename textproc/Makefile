@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.583 2018/10/01 12:07:33 solene Exp $
+# $OpenBSD: Makefile,v 1.584 2018/11/19 09:56:22 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -6,6 +6,7 @@
      SUBDIR += apertium
      SUBDIR += apertium-dicts
      SUBDIR += apertium-lex-tools
+     SUBDIR += apertium-separable
      SUBDIR += arabica
      SUBDIR += asciidoc
      SUBDIR += asciinema
