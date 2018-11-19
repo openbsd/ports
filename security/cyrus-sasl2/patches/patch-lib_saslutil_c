@@ -1,17 +1,18 @@
-$OpenBSD: patch-lib_saslutil_c,v 1.2 2016/06/17 09:43:35 ajacoutot Exp $
+$OpenBSD: patch-lib_saslutil_c,v 1.3 2018/11/19 08:24:23 ajacoutot Exp $
 
 64-bit time_t
 
---- lib/saslutil.c.orig	Fri Jun 17 11:34:42 2016
-+++ lib/saslutil.c	Fri Jun 17 11:37:28 2016
-@@ -288,9 +288,9 @@ int sasl_mkchal(sasl_conn_t *conn,
+Index: lib/saslutil.c
+--- lib/saslutil.c.orig
++++ lib/saslutil.c
+@@ -280,9 +280,9 @@ int sasl_mkchal(sasl_conn_t *conn,
    time(&now);
  
    if (hostflag && conn->serverFQDN)
--    snprintf(buf,maxlen, "<%lu.%lu@%s>", randnum, now, conn->serverFQDN);
-+    snprintf(buf,maxlen, "<%lu.%lld@%s>", randnum, now, conn->serverFQDN);
+-    snprintf(buf,maxlen, "<%lu.%lu@%s>", randnum, (unsigned long)now, conn->serverFQDN); /* don't care much about time 32bit overlap */
++    snprintf(buf,maxlen, "<%lu.%lld@%s>", randnum, now, conn->serverFQDN); /* don't care much about time 32bit overlap */
    else
--    snprintf(buf,maxlen, "<%lu.%lu>", randnum, now);
+-    snprintf(buf,maxlen, "<%lu.%lu>", randnum, (unsigned long)now);
 +    snprintf(buf,maxlen, "<%lu.%lld>", randnum, now);
  
    return (int) strlen(buf);

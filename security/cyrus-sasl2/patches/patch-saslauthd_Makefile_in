@@ -1,12 +1,13 @@
-$OpenBSD: patch-saslauthd_Makefile_in,v 1.14 2013/10/31 20:07:59 ajacoutot Exp $
+$OpenBSD: patch-saslauthd_Makefile_in,v 1.15 2018/11/19 08:24:23 ajacoutot Exp $
 
 Remove hand-rolled formatting, just install mdoc(7) source manual.
 
---- saslauthd/Makefile.in.orig	Tue Nov  6 20:21:45 2012
-+++ saslauthd/Makefile.in	Thu Oct 31 02:59:28 2013
-@@ -714,15 +714,9 @@ uninstall-am: uninstall-sbinPROGRAMS
- 	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
- 	uninstall-am uninstall-sbinPROGRAMS
+Index: saslauthd/Makefile.in
+--- saslauthd/Makefile.in.orig
++++ saslauthd/Makefile.in
+@@ -781,15 +781,9 @@ uninstall-am: uninstall-local uninstall-sbinPROGRAMS
+ 
+ .PRECIOUS: Makefile
  
 -
 -dist-hook: saslauthd.8
@@ -20,5 +21,5 @@ Remove hand-rolled formatting, just install mdoc(7) source manual.
 -	$(INSTALL_DATA) $(srcdir)/saslauthd.8 $(DESTDIR)$(mandir)/man8/saslauthd.8
 +	$(INSTALL_DATA) $(srcdir)/saslauthd.mdoc $(DESTDIR)$(mandir)/man8/saslauthd.8
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ uninstall-local:
+ 	-rm -rf $(DESTDIR)$(mandir)/man8/saslauthd.8

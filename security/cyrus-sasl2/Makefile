@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.103 2018/11/18 16:09:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2018/11/19 08:24:23 ajacoutot Exp $
 
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
-DISTNAME=		cyrus-sasl-2.1.26
-REVISION=		26
+DISTNAME=		cyrus-sasl-2.1.27
 
-SHARED_LIBS +=  sasl2                3.0      # 3.0
+SHARED_LIBS +=  sasl2                3.1      # 3.0
 
 CATEGORIES=		security
 
@@ -23,15 +22,17 @@ MASTER_SITES=		ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 WANTLIB += c crypto
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
+COMPILER=		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib"
+			LIBS="-L${LOCALBASE}/lib" \
+			ac_cv_prog_CC_FOR_BUILD="${CC}" \
+
 CONFIGURE_ARGS=		--enable-static \
 			--without-pam \
+			--without-sphinx-build \
 			--without-sqlite \
 			--with-saslauthd="/var/sasl2" \
 			--with-plugindir=${PREFIX}/lib/sasl2 \
@@ -41,6 +42,8 @@ CONFIGURE_ARGS=		--enable-static \
 			--disable-sample
 
 CFLAGS +=		-fPIC
+
+USE_GMAKE=		Yes
 
 FLAVORS=		db4 gssapi ldap mysql pgsql sqlite3
 FLAVOR?=
@@ -69,7 +72,7 @@ WANTLIB += heimdal/lib/heimsqlite
 LIB_DEPENDS +=		databases/openldap
 CONFIGURE_ARGS +=	--with-ldap=${LOCALBASE} \
 			--enable-ldapdb
-WANTLIB += lber lber-2.4 ldap ldap-2.4 ssl
+WANTLIB += lber ldap ssl
 .else
 CONFIGURE_ARGS +=	--without-ldap
 .endif
@@ -84,7 +87,7 @@ PKG_ARGS=		-Dsql=0
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS +=		databases/mariadb
-WANTLIB+= m pthread ssl ${COMPILER_LIBCXX} z lib/mysql/mysqlclient
+WANTLIB+= m pthread ssl z lib/mysql/mysqlclient
 .else
 CONFIGURE_ARGS +=	--without-mysql
 .endif
@@ -112,7 +115,6 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/sasl2/*.a
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-sasl
-	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/cyrus-sasl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyrus-sasl
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
 		${PREFIX}/share/examples/cyrus-sasl

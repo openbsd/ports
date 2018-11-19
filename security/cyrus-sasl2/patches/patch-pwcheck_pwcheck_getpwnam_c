@@ -1,8 +1,10 @@
-$OpenBSD: patch-pwcheck_pwcheck_getpwnam_c,v 1.1 2016/06/17 09:43:35 ajacoutot Exp $
---- pwcheck/pwcheck_getpwnam.c.orig	Fri Jun 17 11:18:35 2016
-+++ pwcheck/pwcheck_getpwnam.c	Fri Jun 17 11:18:52 2016
-@@ -34,7 +34,7 @@ char *password;
-     char* r;
+$OpenBSD: patch-pwcheck_pwcheck_getpwnam_c,v 1.2 2018/11/19 08:24:23 ajacoutot Exp $
+
+Index: pwcheck/pwcheck_getpwnam.c
+--- pwcheck/pwcheck_getpwnam.c.orig
++++ pwcheck/pwcheck_getpwnam.c
+@@ -53,7 +53,7 @@ char *password;
+     char* crpt_passwd;
      struct passwd *pwd;
  
 -    pwd = getpwnam(userid);

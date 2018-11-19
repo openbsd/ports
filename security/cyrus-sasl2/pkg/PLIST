@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.33 2016/10/10 12:25:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2018/11/19 08:24:23 ajacoutot Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
+@rcscript ${RCDIR}/saslauthd
 include/sasl/
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -84,50 +85,7 @@ lib/sasl2/libscram.so
 @bin sbin/sasldblistusers2
 @bin sbin/saslpasswd2
 @bin sbin/testsaslauthd
-share/doc/cyrus-sasl/
-share/doc/cyrus-sasl/advanced.html
-share/doc/cyrus-sasl/appconvert.html
-share/doc/cyrus-sasl/components.html
-share/doc/cyrus-sasl/draft-burdis-cat-srp-sasl-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-anon-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-crammd5-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-gssapi-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-plain-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-rfc2222bis-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-rfc2831bis-xx.txt
-share/doc/cyrus-sasl/draft-ietf-sasl-saslprep-xx.txt
-share/doc/cyrus-sasl/draft-murchison-sasl-login-xx.txt
-share/doc/cyrus-sasl/draft-newman-sasl-c-api-xx.txt
-share/doc/cyrus-sasl/draft-newman-sasl-passdss-xx.txt
-share/doc/cyrus-sasl/gssapi.html
-share/doc/cyrus-sasl/index.html
-share/doc/cyrus-sasl/install.html
-share/doc/cyrus-sasl/macosx.html
-share/doc/cyrus-sasl/mechanisms.html
-share/doc/cyrus-sasl/options.html
-share/doc/cyrus-sasl/plugprog.html
-share/doc/cyrus-sasl/programming.html
-share/doc/cyrus-sasl/readme.html
-share/doc/cyrus-sasl/rfc1321.txt
-share/doc/cyrus-sasl/rfc1939.txt
-share/doc/cyrus-sasl/rfc2104.txt
-share/doc/cyrus-sasl/rfc2195.txt
-share/doc/cyrus-sasl/rfc2222.txt
-share/doc/cyrus-sasl/rfc2243.txt
-share/doc/cyrus-sasl/rfc2245.txt
-share/doc/cyrus-sasl/rfc2289.txt
-share/doc/cyrus-sasl/rfc2444.txt
-share/doc/cyrus-sasl/rfc2595.txt
-share/doc/cyrus-sasl/rfc2831.txt
-share/doc/cyrus-sasl/rfc2945.txt
-share/doc/cyrus-sasl/rfc3174.txt
-share/doc/cyrus-sasl/sysadmin.html
-share/doc/cyrus-sasl/testing.txt
-share/doc/cyrus-sasl/upgrading.html
-share/doc/cyrus-sasl/windows.html
-share/examples/cyrus-sasl/
+@sample /var/sasl2/
 %%gssapi%%
 %%ldap%%
 %%sql%%
-@sample /var/sasl2/
-@rcscript ${RCDIR}/saslauthd

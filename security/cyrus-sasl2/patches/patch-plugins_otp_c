@@ -1,10 +1,11 @@
-$OpenBSD: patch-plugins_otp_c,v 1.3 2016/06/17 09:43:35 ajacoutot Exp $
+$OpenBSD: patch-plugins_otp_c,v 1.4 2018/11/19 08:24:23 ajacoutot Exp $
 
 64-bit time_t
 
---- plugins/otp.c.orig	Fri Jun 17 11:35:41 2016
-+++ plugins/otp.c	Fri Jun 17 11:36:05 2016
-@@ -615,7 +615,7 @@ static int make_secret(const sasl_utils_t *utils,
+Index: plugins/otp.c
+--- plugins/otp.c.orig
++++ plugins/otp.c
+@@ -645,7 +645,7 @@ static int make_secret(const sasl_utils_t *utils, cons
      bin2hex(otp, OTP_HASH_SIZE, buf);
      buf[2*OTP_HASH_SIZE] = '\0';
      
@@ -13,7 +14,7 @@ $OpenBSD: patch-plugins_otp_c,v 1.3 2016/06/17 09:43:35 ajacoutot Exp $
  	    alg, seq, seed, buf, timeout);
      
      return SASL_OK;
-@@ -676,7 +676,7 @@ static int parse_secret(const sasl_utils_t *utils,
+@@ -706,7 +706,7 @@ static int parse_secret(const sasl_utils_t *utils,
  	    return SASL_FAIL;
  	}
  	
