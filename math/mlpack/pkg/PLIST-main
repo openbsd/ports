@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2018/10/23 10:44:05 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/11/19 14:17:36 espie Exp $
 @bin bin/mlpack_adaboost
 @bin bin/mlpack_approx_kfn
 @bin bin/mlpack_cf
@@ -70,29 +70,6 @@ include/mlpack/bindings/cli/print_help.hpp
 include/mlpack/bindings/cli/set_param.hpp
 include/mlpack/bindings/cli/string_type_param.hpp
 include/mlpack/bindings/cli/string_type_param_impl.hpp
-include/mlpack/bindings/python/
-include/mlpack/bindings/python/get_arma_type.hpp
-include/mlpack/bindings/python/get_cython_type.hpp
-include/mlpack/bindings/python/get_numpy_type.hpp
-include/mlpack/bindings/python/get_numpy_type_char.hpp
-include/mlpack/bindings/python/get_param.hpp
-include/mlpack/bindings/python/get_printable_param.hpp
-include/mlpack/bindings/python/get_python_type.hpp
-include/mlpack/bindings/python/import_decl.hpp
-include/mlpack/bindings/python/mlpack/
-include/mlpack/bindings/python/mlpack/arma_util.hpp
-include/mlpack/bindings/python/mlpack/cli_util.hpp
-include/mlpack/bindings/python/mlpack/serialization.hpp
-include/mlpack/bindings/python/print_class_defn.hpp
-include/mlpack/bindings/python/print_defn.hpp
-include/mlpack/bindings/python/print_doc.hpp
-include/mlpack/bindings/python/print_doc_functions.hpp
-include/mlpack/bindings/python/print_doc_functions_impl.hpp
-include/mlpack/bindings/python/print_input_processing.hpp
-include/mlpack/bindings/python/print_output_processing.hpp
-include/mlpack/bindings/python/print_pyx.hpp
-include/mlpack/bindings/python/py_option.hpp
-include/mlpack/bindings/python/strip_type.hpp
 include/mlpack/bindings/tests/
 include/mlpack/bindings/tests/clean_memory.hpp
 include/mlpack/bindings/tests/delete_allocated_memory.hpp
@@ -704,6 +681,7 @@ include/mlpack/methods/ann/layer/vr_class_reward_impl.hpp
 include/mlpack/methods/ann/loss_functions/
 include/mlpack/methods/ann/loss_functions/cross_entropy_error.hpp
 include/mlpack/methods/ann/loss_functions/cross_entropy_error_impl.hpp
+include/mlpack/methods/ann/loss_functions/earth_mover_distance_impl.hpp
 include/mlpack/methods/ann/loss_functions/kl_divergence.hpp
 include/mlpack/methods/ann/loss_functions/kl_divergence_impl.hpp
 include/mlpack/methods/ann/loss_functions/mean_squared_error.hpp

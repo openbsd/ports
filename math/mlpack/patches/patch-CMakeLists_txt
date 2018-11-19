@@ -1,23 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/10/23 10:44:04 espie Exp $
-* fix dependencies tree for ninja
-* zap obsolete lib
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/11/19 14:17:36 espie Exp $
+* no -O3
+* fix man directory
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -150,11 +150,6 @@ if(BUILD_WITH_COVERAGE)
-   endif()
- endif()
- 
--# For clock_gettime().
--if (UNIX AND NOT APPLE AND NOT HAIKU)
--  set(MLPACK_LIBRARIES ${MLPACK_LIBRARIES} "rt")
--endif ()
--
- # Debugging CFLAGS.  Turn optimizations off; turn debugging symbols on.
- if(DEBUG)
-   if (NOT MSVC)
-@@ -182,8 +177,8 @@ if(DEBUG)
+@@ -169,8 +169,8 @@ if(DEBUG)
  else()
    add_definitions(-DARMA_NO_DEBUG)
    add_definitions(-DNDEBUG)
@@ -28,23 +16,7 @@ Index: CMakeLists.txt
  endif()
  
  # Profiling CFLAGS.  Turn profiling information on.
-@@ -433,13 +428,13 @@ add_subdirectory(src/mlpack)
- # If we need to keep gitversion.hpp up to date, then make sure the mlpack target
- # depends on it.
- if (USING_GIT STREQUAL "YES")
--  add_dependencies(mlpack mlpack_gitversion)
-+#  add_dependencies(mlpack_headers mlpack_gitversion)
- endif ()
- 
- # Make the mlpack_arma_config target depend on mlpack (we couldn't do this
- # before the add_subdirectory() call because the mlpack target didn't exist
- # before that).
--add_dependencies(mlpack mlpack_arma_config)
-+add_dependencies(mlpack_headers mlpack_arma_config)
- 
- # Make a target to generate the documentation.  If Doxygen isn't installed, then
- # I guess this option will just be unavailable.
-@@ -494,7 +489,7 @@ if (BUILD_CLI_EXECUTABLES AND UNIX)
+@@ -428,15 +428,15 @@ if (BUILD_CLI_EXECUTABLES AND UNIX)
      add_custom_target(man ALL
          ${CMAKE_CURRENT_SOURCE_DIR}/CMake/allexec2man.sh
              ${CMAKE_CURRENT_SOURCE_DIR}/CMake/exec2man.sh
@@ -52,21 +24,7 @@ Index: CMakeLists.txt
 +            ${CMAKE_BINARY_DIR}/man
          WORKING_DIRECTORY
            ${CMAKE_BINARY_DIR}/bin
-         DEPENDS
-@@ -531,7 +526,12 @@ if (BUILD_CLI_EXECUTABLES AND UNIX)
-           mlpack_nmf
-           mlpack_pca
-           mlpack_perceptron
-+	  mlpack_preprocess_binarize
-+	  mlpack_preprocess_describe
-+	  mlpack_preprocess_imputer
-+	  mlpack_preprocess_split
-           mlpack_radical
-+	  mlpack_random_forest
-           mlpack_range_search
-           mlpack_softmax_regression
-           mlpack_sparse_coding
-@@ -539,8 +539,8 @@ if (BUILD_CLI_EXECUTABLES AND UNIX)
+         COMMENT "Generating man pages from built executables."
      )
  
      # Set the rules to install the documentation.

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/10 12:58:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/19 14:17:36 espie Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
 
-V = 		3.0.3
+V = 		3.0.4
 DISTNAME = 	mlpack-$V
 SHARED_LIBS +=  mlpack                    0.0 # 3.0
 CATEGORIES = 	math
@@ -14,7 +14,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE_CDROM = Yes
 
 MASTER_SITES = https://mlpack.org/files/
-REVISION =	0
 
 MULTI_PACKAGES = 	-main -python
 
@@ -73,12 +72,6 @@ TEST_ENV = 	CTEST_OUTPUT_ON_FAILURE=1
 SITEDIR = 	lib/python${MODPY_VERSION}/site-packages
 EGGDIR = 	${SITEDIR}/mlpack-$V-py${MODPY_VERSION}.egg-info
 
-SUBST_VARS += 	EGGDIR SITEDIR MODPY_MAJOR_VERSION
-
-# MODPY_MAJOR_VERSION used for the CMakelist substitution only
-UPDATE_PLIST_ARGS =	-i MODPY_MAJOR_VERSION
-
-post-patch:
-	${SUBST_CMD} ${WRKDIST}/src/mlpack/bindings/python/CMakeLists.txt
+SUBST_VARS += 	EGGDIR SITEDIR
 
 .include <bsd.port.mk>
