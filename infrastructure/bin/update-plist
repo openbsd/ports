@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.170 2018/09/05 10:31:55 sthen Exp $
+# $OpenBSD: update-plist,v 1.171 2018/11/19 13:52:09 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -228,6 +228,9 @@ sub missing_fragments
 {
 }
 
+# XXX we should go to the tree for self, always. Don't grab bad data from
+# old packages or cache.  At the very least invalidate if the version number
+# changes!
 sub get_plist
 {
 	my ($self, $pkgpath, $portsdir) = @_;
