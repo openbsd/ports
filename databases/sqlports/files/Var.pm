@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.31 2018/11/19 15:13:06 espie Exp $
+# $OpenBSD: Var.pm,v 1.32 2018/11/19 16:43:39 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -432,6 +432,26 @@ sub columns
 	return (ValueColumn->new, IntegerColumn->new("N"));
 }
 
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	$self->SUPER::create_tables($inserter);
+	$inserter->make_ordered_view($self);
+}
+
+sub subselect_compact
+{
+	my $self = shift;
+	return $self->subselect;
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table;
+	return "select fullpkgpath, value from $t order by n";
+}
+
 package MasterSitesVar;
 our @ISA = qw(OptKeyVar);
 sub table() { 'MasterSites' }
@@ -491,6 +511,15 @@ sub add
 	}
 }
 
+sub subselect_compact
+{
+	my $self = shift;
+	my $t = $self->table;
+	my $k = $self->keyword_table;
+	return "select fullpkgpath, $k.value from $t join $k on $k.keyref=$t.value order by n";
+}
+
+
 package QuotedListVar;
 our @ISA = qw(ListVar);
 
@@ -533,6 +562,18 @@ sub columns
 {
 	return (ValueColumn->new, IntegerColumn->new("N"), 
 	    IntegerColumn->new("QUOTETYPE"));
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table;
+	return qq{
+    select fullpkgpath,
+	case quotetype 
+		when 0 then value 
+		when 1 then '"'||value||'"' 
+		when 2 then "'"||value||"'" end as value from $t order by n};
 }
 
 package DefinedListKeyVar;

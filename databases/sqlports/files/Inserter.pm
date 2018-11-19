@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.14 2018/11/16 14:45:57 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.15 2018/11/19 16:43:39 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -168,6 +168,31 @@ sub make_table
 	$self->new_table($class->table, @l);
 }
 
+sub subselect
+{
+	my ($self, $class) = @_;
+	return $class->subselect;
+}
+
+sub make_ordered_view
+{
+	my ($self, $class) = @_;
+
+	my $view = $self->view_name($class->table."_ordered");
+	my $subselect = $self->subselect($class);
+	return if defined $self->{view_created}{$view};
+	$self->{view_created}{$view} = 1;
+
+	my $v = qq{
+	    CREATE VIEW $view as 
+	    	with o as ($subselect)
+	    select fullpkgpath, group_concat(value, ' ') as value from o 
+	    group by fullpkgpath;};
+	print "$v\n" if $self->{verbose};
+	$self->db->do("DROP VIEW IF EXISTS $view");
+	$self->db->do($v);
+}
+
 sub set
 {
 	my ($self, $ref) = @_;
@@ -305,6 +330,12 @@ sub view_name
 	return "_$name";
 }
 
+sub subselect
+{
+	my ($self, $class) = @_;
+	return $class->subselect_compact;
+}
+
 sub convert_depends
 {
 	my ($self, $value) = @_;
@@ -350,11 +381,13 @@ sub create_view
 
 	unshift(@columns, PathColumn->new);
 	my $view = $self->view_name($table);
+	return if defined $self->{view_created}{$view};
+	$self->{view_created}{$view} = 1;
 	my @l = $self->map_columns('view', $table, @columns);
 	my @j = $self->map_columns('join', $table, @columns);
 	my $v = "CREATE VIEW $view AS SELECT ".join(", ", @l). " FROM ".$self->table_name($table).' '.join(' ', @j);
-	$self->db->do("DROP VIEW IF EXISTS $view");
 	print "$v\n" if $self->{verbose};
+	$self->db->do("DROP VIEW IF EXISTS $view");
 	$self->db->do($v);
 }
 
