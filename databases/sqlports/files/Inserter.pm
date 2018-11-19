@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.15 2018/11/19 16:43:39 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.16 2018/11/19 19:58:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,14 +180,17 @@ sub make_ordered_view
 
 	my $view = $self->view_name($class->table."_ordered");
 	my $subselect = $self->subselect($class);
+	my @group = $class->group_by;
+	unshift(@group, 'fullpkgpath');
+	my $groupby = join(', ', @group);
+	my $result = join(',', @group, 'group_concat(value, " ") as value');
 	return if defined $self->{view_created}{$view};
 	$self->{view_created}{$view} = 1;
 
 	my $v = qq{
 	    CREATE VIEW $view as 
 	    	with o as ($subselect)
-	    select fullpkgpath, group_concat(value, ' ') as value from o 
-	    group by fullpkgpath;};
+	    select $result from o group by $groupby;};
 	print "$v\n" if $self->{verbose};
 	$self->db->do("DROP VIEW IF EXISTS $view");
 	$self->db->do($v);

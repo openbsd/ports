@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.32 2018/11/19 16:43:39 espie Exp $
+# $OpenBSD: Var.pm,v 1.33 2018/11/19 19:58:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -111,6 +111,24 @@ sub normal_insert
 	my $self = shift;
 	my $ins = shift;
     	$ins->insert($self->table, $ins->ref, @_);
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table;
+	return "select fullpkgpath, value from $t order by n";
+}
+
+sub subselect_compact
+{
+	my $self = shift;
+	return $self->subselect;
+}
+
+sub group_by
+{
+	return ();
 }
 
 # for distinction later
@@ -331,6 +349,19 @@ sub create_tables
 	    IntegerColumn->new("N"));
 	$inserter->prepare_normal_inserter($self->table,
 	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST", "N");
+	$inserter->make_ordered_view($self);
+}
+
+sub group_by
+{
+	return ('type');
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table;
+	return "select fullpkgpath, fulldepends as value, type from $t order by n";
 }
 
 package PkgPathsVar;
@@ -343,6 +374,7 @@ sub create_tables
 	$inserter->make_table($self, undef,
 	    PathColumn->new("Value"), IntegerColumn->new("N"));
 	$inserter->prepare_normal_inserter($self->table, "Value", "N");
+	$inserter->make_ordered_view($self);
 }
 
 sub add
@@ -437,19 +469,6 @@ sub create_tables
 	my ($self, $inserter) = @_;
 	$self->SUPER::create_tables($inserter);
 	$inserter->make_ordered_view($self);
-}
-
-sub subselect_compact
-{
-	my $self = shift;
-	return $self->subselect;
-}
-
-sub subselect
-{
-	my $self = shift;
-	my $t = $self->table;
-	return "select fullpkgpath, value from $t order by n";
 }
 
 package MasterSitesVar;
