@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.10 2018/11/20 19:10:32 robert Exp $
 
 Index: components/autofill/core/browser/autofill_experiments.cc
 --- components/autofill/core/browser/autofill_experiments.cc.orig
@@ -12,16 +12,25 @@ Index: components/autofill/core/browser/autofill_experiments.cc
  namespace {
  // Returns the font weight corresponding to the value of param
  // kAutofillForcedFontWeightParameterName, or kDefault if the param is not
-@@ -55,7 +55,7 @@ const char kAutofillDropdownLayoutParameterLeadingIcon
- const char kAutofillDropdownLayoutParameterTrailingIcon[] = "trailing-icon";
- #endif  // !defined(OS_ANDROID)
+@@ -47,7 +47,7 @@ ForcedFontWeight GetFontWeightFromParam() {
+ }  // namespace
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ const base::Feature kAutofillDropdownLayoutExperiment{
+     "AutofillDropdownLayout", base::FEATURE_DISABLED_BY_DEFAULT};
+ const char kAutofillDropdownLayoutParameterName[] = "variant";
+@@ -57,7 +57,7 @@ const char kAutofillDropdownLayoutParameterTwoLinesLea
+     "two-lines-leading-icon";
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  const base::Feature kAutofillPrimaryInfoStyleExperiment{
      "AutofillPrimaryInfoStyleExperiment", base::FEATURE_DISABLED_BY_DEFAULT};
  const char kAutofillForcedFontWeightParameterName[] = "font_weight";
-@@ -150,7 +150,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
+@@ -152,7 +152,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
  }
  
  bool OfferStoreUnmaskedCards() {
@@ -30,7 +39,7 @@ Index: components/autofill/core/browser/autofill_experiments.cc
    // The checkbox can be forced on with a flag, but by default we don't store
    // on Linux due to lack of system keychain integration. See crbug.com/162735
    return base::CommandLine::ForCurrentProcess()->HasSwitch(
-@@ -183,7 +183,7 @@ bool ShouldUseActiveSignedInAccount() {
+@@ -185,7 +185,7 @@ bool ShouldUseActiveSignedInAccount() {
               features::kAutofillGetPaymentsIdentityFromSync);
  }
  
@@ -39,3 +48,12 @@ Index: components/autofill/core/browser/autofill_experiments.cc
  ForcedFontWeight GetForcedFontWeight() {
    if (!base::FeatureList::IsEnabled(kAutofillPrimaryInfoStyleExperiment))
      return ForcedFontWeight::kDefault;
+@@ -196,7 +196,7 @@ ForcedFontWeight GetForcedFontWeight() {
+ }
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ ForcedPopupLayoutState GetForcedPopupLayoutState() {
+   if (!base::FeatureList::IsEnabled(
+           autofill::kAutofillDropdownLayoutExperiment))

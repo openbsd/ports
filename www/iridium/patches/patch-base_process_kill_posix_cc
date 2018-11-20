@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_kill_posix_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-base_process_kill_posix_cc,v 1.2 2018/11/20 19:10:31 robert Exp $
 
 Index: base/process/kill_posix.cc
 --- base/process/kill_posix.cc.orig
 +++ base/process/kill_posix.cc
-@@ -167,7 +167,7 @@ void EnsureProcessTerminated(Process process) {
+@@ -168,7 +168,7 @@ void EnsureProcessTerminated(Process process) {
        0, new BackgroundReaper(std::move(process), TimeDelta::FromSeconds(2)));
  }
  

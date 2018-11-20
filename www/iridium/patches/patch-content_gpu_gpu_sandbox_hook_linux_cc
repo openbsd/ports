@@ -1,11 +1,11 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.3 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.4 2018/11/20 19:10:32 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -77,8 +77,9 @@ inline bool UseLibV4L2() {
+@@ -95,8 +95,9 @@ static const char kLibV4lEncPluginPath[] =
+     "/usr/lib/libv4l/plugins/libv4l-encplugin.so";
  #endif
- }
  
 -constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
 +constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
@@ -14,7 +14,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
      const service_manager::SandboxSeccompBPF::Options& options) {
-@@ -245,8 +246,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -265,8 +266,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuWhiteList(&permissions);
    return permissions;
  }
@@ -25,15 +25,15 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
    // Preload the Mali library.
    if (UseChromecastSandboxWhitelist()) {
      for (const char* path : kWhitelistedChromecastPaths) {
-@@ -261,6 +264,7 @@ void LoadArmGpuLibraries() {
+@@ -281,6 +284,7 @@ void LoadArmGpuLibraries() {
      // Preload the Tegra V4L2 (video decode acceleration) library.
-     dlopen("/usr/lib/libtegrav4l2.so", dlopen_flag);
+     dlopen(kLibTegraPath, dlopen_flag);
    }
 +#endif
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -316,6 +320,7 @@ bool LoadLibrariesForGpu(
+@@ -336,6 +340,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -41,7 +41,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const service_manager::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -336,13 +341,18 @@ bool BrokerProcessPreSandboxHook(
+@@ -356,13 +361,18 @@ bool BrokerProcessPreSandboxHook(
    service_manager::SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

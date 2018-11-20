@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.5 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.6 2018/11/20 19:10:32 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -86,7 +86,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
+@@ -91,7 +91,7 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  
@@ -12,7 +12,7 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -157,7 +157,7 @@ const base::Feature kThirdPartyModulesBlocking{
+@@ -152,7 +152,7 @@ const base::Feature kThirdPartyModulesBlocking{
      "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_features.cc
  // Enables the dual certificate verification trial feature.
  // https://crbug.com/649026
  const base::Feature kCertDualVerificationTrialFeature{
-@@ -210,7 +210,7 @@ const base::Feature kDesktopIOSPromotion{"DesktopIOSPr
+@@ -201,7 +201,7 @@ const base::Feature kDesktopIOSPromotion{"DesktopIOSPr
  // Enables or disables windowing related features for desktop PWAs.
  const base::Feature kDesktopPWAWindowing {
    "DesktopPWAWindowing",

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.2 2018/11/20 19:10:32 robert Exp $
 
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
 +++ content/renderer/render_process_impl.cc
-@@ -167,7 +167,7 @@ RenderProcessImpl::RenderProcessImpl(
+@@ -165,7 +165,7 @@ RenderProcessImpl::RenderProcessImpl(
  
    SetV8FlagIfNotFeature(features::kWebAssemblyTrapHandler,
                          "--no-wasm-trap-handler");

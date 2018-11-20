@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.10 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.11 2018/11/20 19:10:32 robert Exp $
 
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc
-@@ -20,7 +20,9 @@
+@@ -19,7 +19,9 @@
  #include "base/trace_event/memory_dump_request_args.h"
  #include "base/trace_event/process_memory_dump.h"
  #include "base/values.h"

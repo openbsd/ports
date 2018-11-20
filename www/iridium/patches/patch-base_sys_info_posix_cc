@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_sys_info_posix_cc,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-base_sys_info_posix_cc,v 1.10 2018/11/20 19:10:31 robert Exp $
 Index: base/sys_info_posix.cc
 --- base/sys_info_posix.cc.orig
 +++ base/sys_info_posix.cc
@@ -21,7 +21,7 @@ Index: base/sys_info_posix.cc
 +
 +// static
  int64_t SysInfo::AmountOfFreeDiskSpace(const FilePath& path) {
-   AssertBlockingAllowed();
+   base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
  
 @@ -226,6 +239,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";

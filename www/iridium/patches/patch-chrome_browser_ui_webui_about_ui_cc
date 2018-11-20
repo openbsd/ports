@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.16 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.17 2018/11/20 19:10:32 robert Exp $
 
 Index: chrome/browser/ui/webui/about_ui.cc
 --- chrome/browser/ui/webui/about_ui.cc.orig
 +++ chrome/browser/ui/webui/about_ui.cc
-@@ -393,7 +393,7 @@ std::string ChromeURLs() {
+@@ -551,7 +551,7 @@ std::string ChromeURLs() {
    return html;
  }
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -448,7 +448,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -606,7 +606,7 @@ void AboutUIHTMLSource::StartDataRequest(
                       .GetRawDataResource(idr)
                       .as_string();
      }

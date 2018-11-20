@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.3 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.4 2018/11/20 19:10:32 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig
@@ -260,7 +260,7 @@ Index: net/base/address_tracker_linux.cc
 -            msg->ifa_flags |= IFA_F_DEPRECATED;
 -          // Only indicate change if the address is new or ifaddrmsg info has
 -          // changed.
--          AddressMap::iterator it = address_map_.find(address);
+-          auto it = address_map_.find(address);
 -          if (it == address_map_.end()) {
 -            address_map_.insert(it, std::make_pair(address, *msg));
 -            *address_changed = true;
@@ -328,7 +328,7 @@ Index: net/base/address_tracker_linux.cc
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -460,34 +175,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -460,31 +175,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {
@@ -336,12 +336,9 @@ Index: net/base/address_tracker_linux.cc
 -  std::unordered_set<int> online_links = GetOnlineLinks();
 -
 -  // Strip out tunnel interfaces from online_links
--  for (std::unordered_set<int>::const_iterator it = online_links.begin();
--       it != online_links.end();) {
+-  for (auto it = online_links.cbegin(); it != online_links.cend();) {
 -    if (IsTunnelInterface(*it)) {
--      std::unordered_set<int>::const_iterator tunnel_it = it;
--      ++it;
--      online_links.erase(*tunnel_it);
+-      it = online_links.erase(it);
 -    } else {
 -      ++it;
 -    }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.6 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.7 2018/11/20 19:10:32 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.h
 --- content/renderer/renderer_blink_platform_impl.h.orig
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "third_party/blink/public/platform/modules/indexeddb/web_idb_factory.h"
  #include "third_party/blink/public/platform/modules/webdatabase/web_database.mojom.h"
  
@@ -12,9 +12,9 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -303,7 +303,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
-   blink::mojom::WebDatabaseHostPtrInfo web_database_host_info_;
-   scoped_refptr<blink::mojom::ThreadSafeWebDatabaseHostPtr> web_database_host_;
+@@ -302,7 +302,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+   blink::mojom::CodeCacheHostPtrInfo code_cache_host_info_;
+   scoped_refptr<blink::mojom::ThreadSafeCodeCacheHostPtr> code_cache_host_;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

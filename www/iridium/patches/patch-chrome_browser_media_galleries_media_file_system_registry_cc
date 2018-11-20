@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.15 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.16 2018/11/20 19:10:32 robert Exp $
 Index: chrome/browser/media_galleries/media_file_system_registry.cc
 --- chrome/browser/media_galleries/media_file_system_registry.cc.orig
 +++ chrome/browser/media_galleries/media_file_system_registry.cc
-@@ -739,7 +739,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
+@@ -734,7 +734,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
  // Constructor in 'private' section because depends on private class definition.
  MediaFileSystemRegistry::MediaFileSystemRegistry()
      : file_system_context_(new MediaFileSystemContextImpl) {

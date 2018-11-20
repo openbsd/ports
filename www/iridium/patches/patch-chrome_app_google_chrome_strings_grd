@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.18 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.19 2018/11/20 19:10:32 robert Exp $
 Index: chrome/app/google_chrome_strings.grd
 --- chrome/app/google_chrome_strings.grd.orig
 +++ chrome/app/google_chrome_strings.grd
-@@ -825,7 +825,7 @@ Signing in anyway will merge Chrome information like b
+@@ -828,7 +828,7 @@ Signing in anyway will merge Chrome information like b
        </message>
  
        <!-- ProcessSingleton -->
@@ -11,7 +11,7 @@ Index: chrome/app/google_chrome_strings.grd
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Google Chrome process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
          </message>
-@@ -1077,7 +1077,7 @@ Please check your email at <ph name="ACCOUNT_EMAIL">$2
+@@ -1080,7 +1080,7 @@ Please check your email at <ph name="ACCOUNT_EMAIL">$2
        </message>
  
        <!-- Plugin Placeholders -->

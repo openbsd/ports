@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.7 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.8 2018/11/20 19:10:32 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
 --- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig
@@ -21,7 +21,7 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
    SandboxSupport();
    void GetFallbackFontForCharacter(
        WebUChar32 character,
-@@ -129,7 +129,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::GetWebFon
+@@ -140,7 +140,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::
  #endif  // !defined(OS_ANDROID) && !defined(OS_WIN)
  
  PpapiBlinkPlatformImpl::PpapiBlinkPlatformImpl() {

@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.4 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.5 2018/11/20 19:10:32 robert Exp $
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -114,14 +114,14 @@ class CONTENT_EXPORT RenderMessageFilter
-       const url::Origin& cache_storage_origin,
-       const std::string& cache_storage_cache_name) override;
+@@ -92,14 +92,14 @@ class CONTENT_EXPORT RenderMessageFilter
+                               mojom::WidgetPtr widget,
+                               CreateFullscreenWidgetCallback callback) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

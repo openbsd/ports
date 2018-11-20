@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.6 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.7 2018/11/20 19:10:31 robert Exp $
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig
 +++ build/config/compiler/compiler.gni
-@@ -166,7 +166,7 @@ declare_args() {
+@@ -172,7 +172,7 @@ declare_args() {
    # TODO(pcc): Enable lld on more architectures on Linux. E.g. we probably need
    # to fix some of crbug.com/742655 to enable it on ARM.
    use_lld =
@@ -12,7 +12,7 @@ Index: build/config/compiler/compiler.gni
        (is_win || is_fuchsia || (use_thin_lto && target_os != "chromeos") ||
         (is_linux && current_cpu == "x64" && target_os != "chromeos") ||
         (is_android && (current_cpu != "arm" || arm_version >= 7) &&
-@@ -175,7 +175,7 @@ declare_args() {
+@@ -181,7 +181,7 @@ declare_args() {
  
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.

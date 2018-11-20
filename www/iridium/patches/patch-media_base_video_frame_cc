@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-media_base_video_frame_cc,v 1.10 2018/11/20 19:10:32 robert Exp $
 
 Index: media/base/video_frame.cc
 --- media/base/video_frame.cc.orig
@@ -29,8 +29,8 @@ Index: media/base/video_frame.cc
 +#if defined(OS_LINUX) || defined(OS_BSD)
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
-     VideoPixelFormat format,
-@@ -501,7 +501,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+     const VideoFrameLayout& layout,
+@@ -502,7 +502,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      wrapping_frame->data_[i] = frame->data(i);
    }
  
@@ -39,7 +39,7 @@ Index: media/base/video_frame.cc
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
      wrapping_frame->dmabuf_fds_ = DuplicateFDs(frame->dmabuf_fds_);
-@@ -854,7 +854,7 @@ size_t VideoFrame::shared_memory_offset() const {
+@@ -839,7 +839,7 @@ size_t VideoFrame::shared_memory_offset() const {
    return shared_memory_offset_;
  }
  

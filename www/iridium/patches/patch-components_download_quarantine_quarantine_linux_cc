@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_download_quarantine_quarantine_linux_cc,v 1.1 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-components_download_quarantine_quarantine_linux_cc,v 1.2 2018/11/20 19:10:32 robert Exp $
 
 Index: components/download/quarantine/quarantine_linux.cc
 --- components/download/quarantine/quarantine_linux.cc.orig
@@ -18,11 +18,11 @@ Index: components/download/quarantine/quarantine_linux.cc
 +#endif
  
  #include "base/files/file_path.h"
- #include "base/files/file_util.h"
-@@ -29,17 +33,20 @@ bool SetExtendedFileAttribute(const char* path,
+ #include "base/logging.h"
+@@ -24,12 +28,14 @@ bool SetExtendedFileAttribute(const char* path,
                                size_t value_size,
                                int flags) {
-   base::AssertBlockingAllowed();
+   base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
 +#if !defined(OS_BSD)
    int result = setxattr(path, name, value, value_size, flags);
    if (result) {
@@ -34,19 +34,3 @@ Index: components/download/quarantine/quarantine_linux.cc
    return true;
  }
  
- std::string GetExtendedFileAttribute(const char* path, const char* name) {
-   base::AssertBlockingAllowed();
-+#if !defined(OS_BSD)
-   ssize_t len = getxattr(path, name, nullptr, 0);
-   if (len <= 0)
-     return std::string();
-@@ -49,6 +56,9 @@ std::string GetExtendedFileAttribute(const char* path,
-   if (len < static_cast<ssize_t>(buffer.size()))
-     return std::string();
-   return std::string(buffer.begin(), buffer.end());
-+#else
-+  return std::string();
-+#endif
- }
- 
- }  // namespace

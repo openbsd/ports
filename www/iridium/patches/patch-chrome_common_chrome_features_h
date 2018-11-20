@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.5 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.6 2018/11/20 19:10:32 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -60,7 +60,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -65,7 +65,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutomaticTabDiscarding;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  

@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.8 2018/11/20 19:10:31 robert Exp $
 
 XXX pledge(2)
 
 Index: base/threading/platform_thread_posix.cc
 --- base/threading/platform_thread_posix.cc.orig
 +++ base/threading/platform_thread_posix.cc
-@@ -61,7 +61,7 @@ void* ThreadFunc(void* params) {
+@@ -65,7 +65,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::ThreadRestrictions::SetSingletonAllowed(false);
  

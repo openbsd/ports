@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.7 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.8 2018/11/20 19:10:32 robert Exp $
 Index: chrome/browser/after_startup_task_utils.cc
 --- chrome/browser/after_startup_task_utils.cc.orig
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -27,7 +27,7 @@
+@@ -29,7 +29,7 @@
  #include "content/public/browser/web_contents_observer.h"
  #include "third_party/blink/public/mojom/page/page_visibility_state.mojom.h"
  
@@ -11,7 +11,7 @@ Index: chrome/browser/after_startup_task_utils.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -105,7 +105,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
+@@ -107,7 +107,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
  
  void SetBrowserStartupIsComplete() {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
@@ -20,7 +20,7 @@ Index: chrome/browser/after_startup_task_utils.cc
    // CurrentProcessInfo::CreationTime() is not available on all platforms.
    const base::Time process_creation_time =
        base::CurrentProcessInfo::CreationTime();
-@@ -125,7 +125,7 @@ void SetBrowserStartupIsComplete() {
+@@ -127,7 +127,7 @@ void SetBrowserStartupIsComplete() {
    base::circular_deque<AfterStartupTask*>(g_after_startup_tasks.Get())
        .swap(g_after_startup_tasks.Get());
  

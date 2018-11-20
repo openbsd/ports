@@ -1,4 +1,4 @@
-$OpenBSD: patch-iridium_trknotify_cpp,v 1.6 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-iridium_trknotify_cpp,v 1.7 2018/11/20 19:10:32 robert Exp $
 
 Index: iridium/trknotify.cpp
 --- iridium/trknotify.cpp.orig
@@ -11,8 +11,8 @@ Index: iridium/trknotify.cpp
 +#ifdef __OpenBSD__
  #	include <unistd.h>
  #endif
- #include "chrome/browser/infobars/infobar_service.h"
-@@ -21,7 +21,7 @@ namespace iridium {
+ #include "base/task/post_task.h"
+@@ -24,7 +24,7 @@ namespace iridium {
  
  void log_url_request(const std::string &caller, const GURL &url)
  {

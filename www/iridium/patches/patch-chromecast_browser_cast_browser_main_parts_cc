@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.10 2018/11/20 19:10:32 robert Exp $
 
 Index: chromecast/browser/cast_browser_main_parts.cc
 --- chromecast/browser/cast_browser_main_parts.cc.orig
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -70,7 +70,7 @@
+@@ -73,7 +73,7 @@
  #include "ui/compositor/compositor_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -243,7 +243,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -246,7 +246,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // defined(OS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -21,7 +21,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -400,7 +400,7 @@ void CastBrowserMainParts::PostMainMessageLoopStart() 
+@@ -393,7 +393,7 @@ void CastBrowserMainParts::PostMainMessageLoopStart() 
  }
  
  void CastBrowserMainParts::ToolkitInitialized() {

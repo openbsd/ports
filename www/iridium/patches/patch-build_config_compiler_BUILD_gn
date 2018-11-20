@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.10 2018/11/20 19:10:31 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -52,7 +52,7 @@ declare_args() {
+@@ -53,7 +53,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -273,7 +273,7 @@ config("compiler") {
+@@ -274,7 +274,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -21,16 +21,16 @@ Index: build/config/compiler/BUILD.gn
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -337,7 +337,7 @@ config("compiler") {
+@@ -338,7 +338,7 @@ config("compiler") {
        }
      }
  
--    if (is_official_build) {
-+    if (is_official_build && !is_openbsd) {
+-    if (is_official_build || force_local_build_id) {
++    if ((is_official_build || force_local_build_id && !is_openbsd)) {
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -386,19 +386,11 @@ config("compiler") {
+@@ -387,19 +387,11 @@ config("compiler") {
      }
  
      ldflags += [
@@ -52,11 +52,11 @@ Index: build/config/compiler/BUILD.gn
  
    # Linux-specific compiler flags setup.
 @@ -502,7 +494,7 @@ config("compiler") {
+     }
    }
  
-   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
--      target_os != "chromeos") {
-+      target_os != "chromeos" && !is_openbsd) {
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
@@ -69,7 +69,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1511,10 +1503,6 @@ config("default_warnings") {
+@@ -1498,13 +1490,6 @@ config("default_warnings") {
          cflags += [
            # TODO(thakis): https://crbug.com/753973
            "-Wno-enum-compare-switch",
@@ -77,10 +77,13 @@ Index: build/config/compiler/BUILD.gn
 -          # Ignore warnings about MSVC optimization pragmas.
 -          # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
 -          "-Wno-ignored-pragma-optimize",
+-
+-          # TODO(hans): https://crbug.com/890307
+-          "-Wno-defaulted-function-deleted",
          ]
        }
      }
-@@ -1701,7 +1689,7 @@ config("thin_archive") {
+@@ -1691,7 +1676,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -89,7 +92,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    }
  }
-@@ -2228,7 +2216,7 @@ config("symbols") {
+@@ -2264,7 +2249,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }

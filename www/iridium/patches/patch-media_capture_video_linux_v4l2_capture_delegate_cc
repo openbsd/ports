@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.5 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.6 2018/11/20 19:10:32 robert Exp $
 Index: media/capture/video/linux/v4l2_capture_delegate.cc
 --- media/capture/video/linux/v4l2_capture_delegate.cc.orig
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
@@ -13,7 +13,7 @@ Index: media/capture/video/linux/v4l2_capture_delegate.cc
  #include <poll.h>
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
-@@ -23,10 +25,10 @@
+@@ -24,10 +26,10 @@
  
  using media::mojom::MeteringMode;
  

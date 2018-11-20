@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.6 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.7 2018/11/20 19:10:32 robert Exp $
 
 Index: content/browser/renderer_host/render_message_filter.cc
 --- content/browser/renderer_host/render_message_filter.cc.orig
 +++ content/browser/renderer_host/render_message_filter.cc
-@@ -79,7 +79,7 @@
+@@ -73,7 +73,7 @@
  #if defined(OS_MACOSX)
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/render_message_filter.cc
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -193,7 +193,7 @@ void RenderMessageFilter::CreateFullscreenWidget(
+@@ -157,7 +157,7 @@ void RenderMessageFilter::CreateFullscreenWidget(
    std::move(callback).Run(route_id);
  }
  
@@ -21,7 +21,7 @@ Index: content/browser/renderer_host/render_message_filter.cc
  void RenderMessageFilter::SetThreadPriorityOnFileThread(
      base::PlatformThreadId ns_tid,
      base::ThreadPriority priority) {
-@@ -214,7 +214,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+@@ -178,7 +178,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
  }
  #endif
  

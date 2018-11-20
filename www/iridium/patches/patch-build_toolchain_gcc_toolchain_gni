@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.9 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.10 2018/11/20 19:10:31 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
-@@ -25,6 +25,11 @@ analyzer_wrapper =
+@@ -43,6 +43,11 @@ analyzer_wrapper =
      rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
                  root_build_dir) + " --mode=clang"
  
@@ -14,7 +14,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -577,12 +582,12 @@ template("clang_toolchain") {
+@@ -595,12 +600,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

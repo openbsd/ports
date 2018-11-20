@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.2 2018/11/20 19:10:32 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig
@@ -12,7 +12,7 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
    explicit SandboxSupport(sk_sp<font_service::FontLoader> font_loader)
        : font_loader_(std::move(font_loader)) {}
  #endif
-@@ -68,7 +68,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl::Sand
+@@ -71,7 +71,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl::Sand
  UtilityBlinkPlatformWithSandboxSupportImpl::
      UtilityBlinkPlatformWithSandboxSupportImpl(
          service_manager::Connector* connector) {

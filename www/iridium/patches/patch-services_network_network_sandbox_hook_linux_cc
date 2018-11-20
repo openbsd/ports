@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_network_network_sandbox_hook_linux_cc,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-services_network_network_sandbox_hook_linux_cc,v 1.2 2018/11/20 19:10:32 robert Exp $
 
 Index: services/network/network_sandbox_hook_linux.cc
 --- services/network/network_sandbox_hook_linux.cc.orig
@@ -14,7 +14,7 @@ Index: services/network/network_sandbox_hook_linux.cc
 @@ -32,6 +33,7 @@ bool NetworkPreSandboxHook(service_manager::SandboxLin
        service_manager::SandboxLinux::PreSandboxHook(), options);
  
-   instance->EngageNamespaceSandbox(false /* from_zygote */);
+   instance->EngageNamespaceSandboxIfPossible();
 +#endif
    return true;
  }

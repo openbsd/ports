@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.11 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.12 2018/11/20 19:10:32 robert Exp $
 
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -436,7 +436,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -469,7 +469,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {

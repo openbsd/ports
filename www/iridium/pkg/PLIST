@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/11/05 22:04:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.23 2018/11/20 19:10:32 robert Exp $
 bin/iridium
 iridium/chrome_100_percent.pak
 iridium/chrome_200_percent.pak
@@ -122,6 +122,7 @@ iridium/protoc
 iridium/resources/
 iridium/resources.pak
 iridium/resources/inspector/
+iridium/resources/inspector/.htaccess
 iridium/resources/inspector/Images/
 iridium/resources/inspector/Images/accelerometer-back.png
 iridium/resources/inspector/Images/accelerometer-bottom.png

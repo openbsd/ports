@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_sync_base_get_session_name_cc,v 1.4 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-components_sync_base_get_session_name_cc,v 1.5 2018/11/20 19:10:32 robert Exp $
 Index: components/sync/base/get_session_name.cc
 --- components/sync/base/get_session_name.cc.orig
 +++ components/sync/base/get_session_name.cc
@@ -11,7 +11,7 @@ Index: components/sync/base/get_session_name.cc
  #include "components/sync/base/get_session_name_linux.h"
  #elif defined(OS_IOS)
  #include "components/sync/base/get_session_name_ios.h"
-@@ -54,7 +54,7 @@ std::string GetSessionNameSynchronously() {
+@@ -52,7 +52,7 @@ std::string GetSessionNameBlocking() {
        session_name = "Chromebook";
        break;
    }

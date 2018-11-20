@@ -1,8 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.10 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.11 2018/11/20 19:10:32 robert Exp $
+
 Index: chrome/browser/chrome_browser_main_linux.cc
 --- chrome/browser/chrome_browser_main_linux.cc.orig
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -91,12 +91,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+@@ -92,12 +92,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -15,9 +16,9 @@ Index: chrome/browser/chrome_browser_main_linux.cc
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopStart() {
 -#if !defined(OS_CHROMEOS)
 +#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
-   bluez::DBusThreadManagerLinux::Initialize();
-   bluez::BluezDBusManager::Initialize(
-       bluez::DBusThreadManagerLinux::Get()->GetSystemBus(), false);
+   bluez::BluezDBusThreadManager::Initialize();
+   bluez::BluezDBusManager::Initialize();
+ #endif
 @@ -106,7 +108,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
  }
  
@@ -25,5 +26,5 @@ Index: chrome/browser/chrome_browser_main_linux.cc
 -#if !defined(OS_CHROMEOS)
 +#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
    bluez::BluezDBusManager::Shutdown();
-   bluez::DBusThreadManagerLinux::Shutdown();
+   bluez::BluezDBusThreadManager::Shutdown();
  #endif

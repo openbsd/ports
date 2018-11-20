@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_views_delegate_cc,v 1.14 2018/11/05 22:04:40 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_cc,v 1.15 2018/11/20 19:10:32 robert Exp $
 Index: ui/views/views_delegate.cc
 --- ui/views/views_delegate.cc.orig
 +++ ui/views/views_delegate.cc
-@@ -87,7 +87,7 @@ HICON ViewsDelegate::GetSmallWindowIcon() const {
+@@ -85,7 +85,7 @@ HICON ViewsDelegate::GetSmallWindowIcon() const {
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }

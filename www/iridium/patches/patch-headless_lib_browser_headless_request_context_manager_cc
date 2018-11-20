@@ -1,0 +1,23 @@
+$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.1 2018/11/20 19:10:32 robert Exp $
+
+Index: headless/lib/browser/headless_request_context_manager.cc
+--- headless/lib/browser/headless_request_context_manager.cc.orig
++++ headless/lib/browser/headless_request_context_manager.cc
+@@ -35,7 +35,7 @@ namespace headless {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ static char kProductName[] = "HeadlessChrome";
+ #endif
+ 
+@@ -252,7 +252,7 @@ HeadlessRequestContextManager::CreateSystemContext(
+       command_line->GetSwitchValueASCII(switches::kAuthServerWhitelist);
+   network_service->ConfigureHttpAuthPrefs(std::move(auth_params));
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (manager->user_data_path_.empty()) {
+     ::network::mojom::CryptConfigPtr config =
+         ::network::mojom::CryptConfig::New();
