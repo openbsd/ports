@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/11/02 18:43:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2018/11/20 15:43:37 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
@@ -17,9 +17,9 @@ ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
 ADASTRAP_LIBC-hppa = 89.2
 ADASTRAP_LIBM-hppa = 10.0
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
-ADASTRAP_LIBC-i386 = 89.2
-ADASTRAP_LIBM-i386 = 10.0
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP_LIBC-i386 = 92.8
+ADASTRAP_LIBM-i386 = 10.1
+ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP_LIBC-mips64 = 89.2
 ADASTRAP_LIBM-mips64 = 10.0
 ADASTRAP-mips64 = adastrap-mips64-$V-1.tar.xz
@@ -69,7 +69,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.9.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-amd64}:2 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
-		${ADASTRAP-i386}:0 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
+		${ADASTRAP-i386}:2 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
 		${ADASTRAP-sparc64}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
