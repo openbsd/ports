@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/20 12:46:09 bentley Exp $
+@bin bin/hackrf_cpldjtag
+@bin bin/hackrf_debug
+@bin bin/hackrf_info
+@bin bin/hackrf_spiflash
+@bin bin/hackrf_sweep
+@bin bin/hackrf_transfer
+include/libhackrf/
+include/libhackrf/hackrf.h
+lib/libhackrf.a
+@lib lib/libhackrf.so.${LIBhackrf_VERSION}
+lib/pkgconfig/libhackrf.pc
