@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.882 2018/11/15 12:17:23 danj Exp $
+# $OpenBSD: Makefile,v 1.883 2018/11/20 10:29:51 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -353,6 +353,7 @@
      SUBDIR += pecl56-pecl_http			# separate V for 5.6
      SUBDIR += pecl-pecl_http,php71
      SUBDIR += pecl-pecl_http,php72
+     SUBDIR += pecl-pledge,php72		# 7.2+-only
      SUBDIR += pecl-proctitle,php56
      SUBDIR += pecl-proctitle,php71
      SUBDIR += pecl-proctitle,php72
