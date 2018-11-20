@@ -1,9 +1,9 @@
-$OpenBSD: patch-crypto_rand_randfile_c,v 1.1 2018/11/07 11:00:30 sthen Exp $
+$OpenBSD: patch-crypto_rand_randfile_c,v 1.2 2018/11/20 22:19:48 sthen Exp $
 
 Index: crypto/rand/randfile.c
 --- crypto/rand/randfile.c.orig
 +++ crypto/rand/randfile.c
-@@ -360,11 +360,11 @@ const char *RAND_file_name(char *buf, size_t size)
+@@ -359,11 +359,11 @@ const char *RAND_file_name(char *buf, size_t size)
       */
  
      if (!buf[0])

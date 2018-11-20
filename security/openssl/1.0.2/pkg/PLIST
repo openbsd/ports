@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/11/07 11:00:30 sthen Exp $
-@pkgpath security/openssl
+@comment $OpenBSD: PLIST,v 1.2 2018/11/20 22:19:48 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl-<1.1.0
+@pkgpath security/openssl
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/
@@ -1056,6 +1056,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/OBJ_txt2obj.3
 @man lib/eopenssl/man/man3/OPENSSL_Applink.3
 @man lib/eopenssl/man/man3/OPENSSL_VERSION_NUMBER.3
+@man lib/eopenssl/man/man3/OPENSSL_VERSION_TEXT.3
 @man lib/eopenssl/man/man3/OPENSSL_config.3
 @man lib/eopenssl/man/man3/OPENSSL_ia32cap.3
 @man lib/eopenssl/man/man3/OPENSSL_ia32cap_loc.3
