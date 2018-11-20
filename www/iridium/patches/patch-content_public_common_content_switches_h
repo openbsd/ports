@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.21 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.22 2018/11/20 19:12:31 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
@@ -6,7 +6,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableLowResTiling[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
-+CONTENT_EXPORT extern const char kEnableUnveil[];
++CONTENT_EXPORT extern const char kDisableUnveil[];
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
  CONTENT_EXPORT extern const char kEnablePinch[];
