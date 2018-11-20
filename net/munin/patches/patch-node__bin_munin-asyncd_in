@@ -1,8 +1,8 @@
-$OpenBSD: patch-node__bin_munin-asyncd_in,v 1.4 2018/09/23 13:47:59 kirby Exp $
+$OpenBSD: patch-node__bin_munin-asyncd_in,v 1.5 2018/11/20 09:13:37 kirby Exp $
 Index: node/_bin/munin-asyncd.in
 --- node/_bin/munin-asyncd.in.orig
 +++ node/_bin/munin-asyncd.in
-@@ -291,7 +291,7 @@ munin-asyncd [options]
+@@ -296,7 +296,7 @@ munin-asyncd [options]
  
   Options:
       --host <hostname:port>     Connect to this munin-node [localhost:4949]
