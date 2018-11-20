@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/09/19 05:51:42 bentley Exp $
+# $OpenBSD: Makefile,v 1.75 2018/11/20 12:46:51 bentley Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -19,6 +19,7 @@
      SUBDIR += gmfsk
      SUBDIR += gnuradio
      SUBDIR += gpsk31
+     SUBDIR += hackrf
      SUBDIR += hamlib
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
