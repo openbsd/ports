@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2018/11/20 20:30:03 naddy Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
@@ -35,13 +35,16 @@ BUILD_DEPENDS =		devel/sdl
 # optimisation for x86 using asm
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS +=        devel/nasm
+LDFLAGS +=		-Wl,-znotext
 .endif
 
 LIB_DEPENDS =		devel/sdl \
 			archivers/libarchive
 
+LDFLAGS +=		-L${LOCALBASE}/lib
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS +=	--without-doxygen
 
 # m68k debugger, at a slight performance cost
