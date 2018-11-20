@@ -1,0 +1,86 @@
+$OpenBSD: README,v 1.1.1.1 2018/11/20 10:28:52 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+This PHP extension adds support for OpenBSD's pledge and unveil system calls.
+
+The PHP userland functions pledge() and unveil() are wrappers around the OpenBSD
+system calls. These functions provide a powerful mechanism to defend the PHP
+runtime and userland against some common exploits.
+
+The theory
+==========
+
+The pledge(2) system call allows a program to restrict the types of operations
+the program can do after that point. Unlike other similar systems, pledge is
+specifically designed for programs that need to use a wide variety of operations
+on initialization, but a fewer number after initialization (when user input will
+be accepted).
+
+All pledge(2) promises are documented in the pledge(2) manual page.
+
+The unveil(2) system call restricts the filesytem view. The first call to
+unveil(2) restricts the view. Subsequent calls can open it more. To prevent
+further unveiling, call unveil with no parameters or drop the unveil pledge if
+the program is pledged.
+
+Web SAPI usage
+==============
+
+Be careful what to pledge/unveil! Using this module can cause a situation of
+self-denial-of-service.
+
+If PHP runs with mod_php, using pledge/unveil impacts an entire Apache child
+process. If pledge/unveil is used in php_fpm, it will impact the entire process
+for the whole lifetime of the process, not just one request.
+
+Architectural tips
+==================
+
+Make sure you don't load extensions that you don't need in the web SAPI. For
+example: PHAR, PCNTL, etc. can be useful for hackers, don't load them.
+
+For performance reasons it is a good idea to do as little work as possible in
+the web SAPI. Jobs can often be scheduled in a queue and run asynchronously from
+the CLI SAPI. For example processing and resizing uploaded images does not need
+to run in the web SAPI. Jobs that need to do calls to an external service can
+fail and should implement retry mechanisms. These can slow down the web SAPI.
+
+By using the asynchronous approach, the web SAPI loses functionality. Extensions
+like PHAR, PCNTL, GD, imagick, curl, ... can be unloaded. Less lines of code
+become accessible in the web facing part of the website and the attack surface
+gets smaller.
+
+The goal is gaining understanding of exactly what functionality is needed by
+each use-case, so each use-case can be isolated. Pledge/unveil can then be
+implemented specifically for each use-case.
+
+A php_fpm process can implement pledge/unveil in a safe manner when the
+pm.max_requests configuration flag is set to 1. This means the process will
+respawn after each request. The default, and recommended, value for this flag
+is 0 for endless request processing. Because pledge/unveil affects the process
+and not just the request, different fpm pools can be configured for each type of
+work. Especially with unveil the developer can make sure system binaries are
+unavailable, jobs that don't have to write the filesystem will not be able to do
+so, jobs that don't have to read user uploaded files will not be able to do so,
+...
+
+In the web SAPI, avoid getting killed in subsequent requests by checking if a
+certain file or directory is still available and only call unveil if it is. Eg:
+
+if (is_dir('/etc')) {
+    unveil(__DIR__, 'r');
+}
+
+Limiting network calls is not possible with pledge on a destination basis. But
+a workaround is to use pf to enforce rules on your fpm users, eg:
+
+block out proto {tcp udp} user your_fpm_user
+pass out proto tcp to $mysql_db port 3306 user your_fpm_user
+pass out proto tcp to $some_rest_api port 443 user your_fpm_user
+
+But again, in the example above network calls can be avoided in the web SAPI if
+mysql runs on a domain socket and work involving API's is scheduled and
+processed by a CLI job instead. You can use this technique for CLI jobs as well.

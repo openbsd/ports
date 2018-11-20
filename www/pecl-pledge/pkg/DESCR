@@ -1,0 +1,5 @@
+This PHP extension adds support for OpenBSD's pledge and unveil system calls.
+
+The PHP userland functions pledge() and unveil() are wrappers around the
+OpenBSD system calls. These functions provide a powerful mechanism to
+defend the PHP runtime and userland against some common exploits.
