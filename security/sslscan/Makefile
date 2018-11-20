@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/07 11:07:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/11/20 16:46:36 naddy Exp $
 
 COMMENT=	SSL port scanner
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	$V-rbsec
 DISTNAME=	sslscan-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security net
 
