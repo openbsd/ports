@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/15 10:03:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/20 22:19:57 sthen Exp $
 
-BROKEN-i386=	undefined reference to `__guard_local'
+BROKEN-i386=	undefined reference to __guard_local
 
 PORTROACH=	limit:^1\.1\.
-V=		1.1.1
-REVISION=	0
+V=		1.1.1a
 
-SHLIBVER=	11.0
+SHLIBVER=	11.1
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 

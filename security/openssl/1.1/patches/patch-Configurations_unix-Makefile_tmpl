@@ -1,9 +1,9 @@
-$OpenBSD: patch-Configurations_unix-Makefile_tmpl,v 1.2 2018/11/10 20:38:07 tim Exp $
+$OpenBSD: patch-Configurations_unix-Makefile_tmpl,v 1.3 2018/11/20 22:19:57 sthen Exp $
 
 Index: Configurations/unix-Makefile.tmpl
 --- Configurations/unix-Makefile.tmpl.orig
 +++ Configurations/unix-Makefile.tmpl
-@@ -877,7 +877,7 @@ libcrypto.pc:
+@@ -885,7 +885,7 @@ libcrypto.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -12,7 +12,7 @@ Index: Configurations/unix-Makefile.tmpl
  	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libcrypto'; \
-@@ -895,12 +895,12 @@ libssl.pc:
+@@ -903,12 +903,12 @@ libssl.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -27,7 +27,7 @@ Index: Configurations/unix-Makefile.tmpl
  	    echo 'Libs: -L$${libdir} -lssl'; \
  	    echo 'Cflags: -I$${includedir}' ) > libssl.pc
  
-@@ -912,12 +912,12 @@ openssl.pc:
+@@ -920,12 +920,12 @@ openssl.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -42,7 +42,7 @@ Index: Configurations/unix-Makefile.tmpl
  
  configdata.pm: $(SRCDIR)/Configure $(SRCDIR)/config {- join(" ", @{$config{build_file_templates}}, @{$config{build_infos}}, @{$config{conf_files}}) -}
  	@echo "Detected changed: $?"
-@@ -976,7 +976,7 @@ EOF
+@@ -984,7 +984,7 @@ EOF
            if ($args{generator}->[0] =~ /\.pl$/) {
                $generator = 'CC="$(CC)" $(PERL)'.$generator_incs.' '.$generator;
            } elsif ($args{generator}->[0] =~ /\.m4$/) {
