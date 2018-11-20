@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_io_data_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_io_data_cc,v 1.3 2018/11/20 19:09:41 robert Exp $
 
 Index: chrome/browser/profiles/profile_io_data.cc
 --- chrome/browser/profiles/profile_io_data.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/profiles/profile_io_data.cc
  #include "chrome/browser/net/trial_comparison_cert_verifier.h"
  #include "net/cert/cert_verify_proc_builtin.h"
  #endif
-@@ -1135,7 +1135,7 @@ void ProfileIOData::Init(
+@@ -1137,7 +1137,7 @@ void ProfileIOData::Init(
              std::make_unique<net::MultiThreadedCertVerifier>(
                  verify_proc.get()));
        }
