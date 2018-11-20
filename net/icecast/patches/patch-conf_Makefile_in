@@ -1,7 +1,8 @@
-$OpenBSD: patch-conf_Makefile_in,v 1.8 2017/02/07 01:39:59 gonzalo Exp $
---- conf/Makefile.in.orig	Mon Jan  4 18:07:07 2016
-+++ conf/Makefile.in	Tue Jan 31 09:32:55 2017
-@@ -278,7 +278,7 @@ build_vendor = @build_vendor@
+$OpenBSD: patch-conf_Makefile_in,v 1.9 2018/11/20 17:32:36 jca Exp $
+Index: conf/Makefile.in
+--- conf/Makefile.in.orig
++++ conf/Makefile.in
+@@ -281,7 +281,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -10,7 +11,7 @@ $OpenBSD: patch-conf_Makefile_in,v 1.8 2017/02/07 01:39:59 gonzalo Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -474,7 +474,6 @@ info-am:
+@@ -480,7 +480,6 @@ info-am:
  
  install-data-am: install-docDATA
  	@$(NORMAL_INSTALL)

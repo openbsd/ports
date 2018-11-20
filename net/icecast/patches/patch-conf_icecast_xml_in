@@ -1,8 +1,9 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.8 2015/01/19 09:14:32 dcoppa Exp $
---- conf/icecast.xml.in.orig	Tue Nov 18 00:48:48 2014
-+++ conf/icecast.xml.in	Sun Jan  4 17:06:40 2015
+$OpenBSD: patch-conf_icecast_xml_in,v 1.9 2018/11/20 17:32:36 jca Exp $
+Index: conf/icecast.xml.in
+--- conf/icecast.xml.in.orig
++++ conf/icecast.xml.in
 @@ -66,7 +66,7 @@
-     <!-- You may have multiple <listener> elements -->
+     <!-- You may have multiple <listen-socket> elements -->
      <listen-socket>
          <port>8000</port>
 -        <!-- <bind-address>127.0.0.1</bind-address> -->

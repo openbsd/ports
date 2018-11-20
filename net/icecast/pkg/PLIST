@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:53:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2018/11/20 17:32:36 jca Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/icecast
 @bin bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
@@ -96,4 +97,3 @@ share/examples/icecast/web/tunein.png
 @sample /var/icecast/etc/
 share/examples/icecast/web/xml2json.xslt
 @sample /var/icecast/web/xml2json.xslt
-@rcscript ${RCDIR}/icecast
