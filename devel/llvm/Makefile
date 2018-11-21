@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2018/11/19 08:51:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2018/11/21 08:03:05 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -18,7 +18,7 @@ PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	17
+REVISION-main =	18
 REVISION-python = 2
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -80,6 +80,12 @@ CONFIGURE_ARGS +=	-DLLVM_TARGETS_TO_BUILD="PowerPC"
 .elif ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-mlong-calls
 CXXFLAGS +=		-mlong-calls
+.endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+PKG_ARGS +=		-Dpowerpc=1
+.else
+PKG_ARGS +=		-Dpowerpc=0
 .endif
 
 TEST_TARGET =		check
