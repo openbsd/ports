@@ -1,4 +1,4 @@
-$OpenBSD: patch-sslh_pod,v 1.7 2018/01/28 16:31:48 sthen Exp $
+$OpenBSD: patch-sslh_pod,v 1.8 2018/11/21 13:12:37 bket Exp $
 Index: sslh.pod
 --- sslh.pod.orig
 +++ sslh.pod
@@ -27,7 +27,7 @@ Index: sslh.pod
  =head2 Configuration file
  
  A configuration file can be supplied to B<sslh>. Command
-@@ -210,24 +207,6 @@ Runs in background. This overrides B<foreground> if se
+@@ -214,24 +211,6 @@ Runs in background. This overrides B<foreground> if se
  the configuration file (or on the command line, but there is
  no point setting both on the command line unless you have a
  personality disorder).

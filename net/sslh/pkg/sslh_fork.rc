@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: sslh_fork.rc,v 1.5 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: sslh_fork.rc,v 1.6 2018/11/21 13:12:37 bket Exp $
 
 daemon="${TRUEPREFIX}/sbin/sslh-fork"
-daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --ssl 127.0.0.1:443"
+daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --tls 127.0.0.1:443"
 
 . /etc/rc.d/rc.subr
 
