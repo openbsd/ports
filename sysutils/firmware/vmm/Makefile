@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/11 09:09:46 reyk Exp $
+# $OpenBSD: Makefile,v 1.15 2018/11/21 00:26:05 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -43,8 +43,13 @@ EXTRAVERSION=	p${REVISION}-OpenBSD-vmm
 EXTRAVERSION=	-OpenBSD-vmm
 .endif
 
-MAKE_FLAGS=	PYTHON="${MODPY_BIN}" V=1 EXTRAVERSION="${EXTRAVERSION}" \
-		LD32BIT_FLAG=-melf_i386_obsd LD="${LD} -nopie -znorelro" 
+LD=		ld.bfd
+CFLAGS+=	-fuse-ld=bfd
+MAKE_FLAGS=	EXTRAVERSION="${EXTRAVERSION}" \
+		PYTHON="${MODPY_BIN}" \
+		V=1 \
+		LD32BIT_FLAG=-melf_i386_obsd \
+		LD="${LD} -nopie -znorelro"
 
 post-extract:
 	mv ${WRKDIR}/sgabios-* ${WRKDIR}/sgabios
@@ -53,7 +58,7 @@ post-extract:
 post-build:
 	sed -i 's,^#define BUILD_CL.*,#define BUILD_CL "${SB_VER}",' \
 	    ${WRKDIR}/sgabios/sgabios.S
-	cd ${WRKDIR}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} \
+	cd ${WRKDIR}/sgabios; env ${MAKE_ENV} ${MAKE_PROGRAM} LD=${LD} \
 	    BUILD_USER='\"_<vmm\"' BUILD_HOST='\"OpenBSD>\"'
 	dd if=/dev/zero of=${WRKDIR}/space bs=1 count=196608
 	cat ${WRKDIR}/sgabios/sgabios.bin ${WRKDIR}/space \
