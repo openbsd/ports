@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 13:26:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/21 22:18:31 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.15
+REVISION=	0
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
@@ -25,6 +26,7 @@ RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
 		databases/py-minidb \
 		devel/py-appdirs${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/lynx \
 		www/py-requests${MODPY_FLAVOR}
