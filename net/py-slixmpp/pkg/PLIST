@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/06 15:49:29 danj Exp $
-@pkgpath net/py3-slixmpp
+@comment $OpenBSD: PLIST,v 1.7 2018/11/21 03:04:56 danj Exp $
+@pkgpath net/${MODPY_PY_PREFIX}slixmpp
 lib/python${MODPY_VERSION}/site-packages/slixmpp/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
