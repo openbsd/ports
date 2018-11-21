@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/10/17 08:18:24 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/11/21 11:23:02 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -346,6 +346,21 @@ share/sqlmap/plugins/dbms/firebird/syntax.py
 share/sqlmap/plugins/dbms/firebird/syntax.pyc
 share/sqlmap/plugins/dbms/firebird/takeover.py
 share/sqlmap/plugins/dbms/firebird/takeover.pyc
+share/sqlmap/plugins/dbms/h2/
+share/sqlmap/plugins/dbms/h2/__init__.py
+share/sqlmap/plugins/dbms/h2/__init__.pyc
+share/sqlmap/plugins/dbms/h2/connector.py
+share/sqlmap/plugins/dbms/h2/connector.pyc
+share/sqlmap/plugins/dbms/h2/enumeration.py
+share/sqlmap/plugins/dbms/h2/enumeration.pyc
+share/sqlmap/plugins/dbms/h2/filesystem.py
+share/sqlmap/plugins/dbms/h2/filesystem.pyc
+share/sqlmap/plugins/dbms/h2/fingerprint.py
+share/sqlmap/plugins/dbms/h2/fingerprint.pyc
+share/sqlmap/plugins/dbms/h2/syntax.py
+share/sqlmap/plugins/dbms/h2/syntax.pyc
+share/sqlmap/plugins/dbms/h2/takeover.py
+share/sqlmap/plugins/dbms/h2/takeover.pyc
 share/sqlmap/plugins/dbms/hsqldb/
 share/sqlmap/plugins/dbms/hsqldb/__init__.py
 share/sqlmap/plugins/dbms/hsqldb/__init__.pyc
@@ -596,14 +611,14 @@ share/sqlmap/tamper/least.py
 share/sqlmap/tamper/least.pyc
 share/sqlmap/tamper/lowercase.py
 share/sqlmap/tamper/lowercase.pyc
+share/sqlmap/tamper/luanginx.py
+share/sqlmap/tamper/luanginx.pyc
 share/sqlmap/tamper/modsecurityversioned.py
 share/sqlmap/tamper/modsecurityversioned.pyc
 share/sqlmap/tamper/modsecurityzeroversioned.py
 share/sqlmap/tamper/modsecurityzeroversioned.pyc
 share/sqlmap/tamper/multiplespaces.py
 share/sqlmap/tamper/multiplespaces.pyc
-share/sqlmap/tamper/nonrecursivereplacement.py
-share/sqlmap/tamper/nonrecursivereplacement.pyc
 share/sqlmap/tamper/overlongutf8.py
 share/sqlmap/tamper/overlongutf8.pyc
 share/sqlmap/tamper/overlongutf8more.py
@@ -618,8 +633,6 @@ share/sqlmap/tamper/randomcase.py
 share/sqlmap/tamper/randomcase.pyc
 share/sqlmap/tamper/randomcomments.py
 share/sqlmap/tamper/randomcomments.pyc
-share/sqlmap/tamper/securesphere.py
-share/sqlmap/tamper/securesphere.pyc
 share/sqlmap/tamper/sp_password.py
 share/sqlmap/tamper/sp_password.pyc
 share/sqlmap/tamper/space2comment.py
@@ -937,6 +950,8 @@ share/sqlmap/waf/binarysec.py
 share/sqlmap/waf/binarysec.pyc
 share/sqlmap/waf/blockdos.py
 share/sqlmap/waf/blockdos.pyc
+share/sqlmap/waf/chinacache.py
+share/sqlmap/waf/chinacache.pyc
 share/sqlmap/waf/ciscoacexml.py
 share/sqlmap/waf/ciscoacexml.pyc
 share/sqlmap/waf/cloudbric.py
