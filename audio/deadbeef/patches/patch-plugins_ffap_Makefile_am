@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_ffap_Makefile_am,v 1.4 2018/11/21 19:54:15 naddy Exp $
+
+Index: plugins/ffap/Makefile.am
+--- plugins/ffap/Makefile.am.orig
++++ plugins/ffap/Makefile.am
+@@ -25,6 +25,9 @@ endif
+ endif
+ 
+ ffap_la_LDFLAGS = -module -avoid-version -lm
++if HAVE_YASM
++ffap_la_LDFLAGS += -Wl,-znotext
++endif
+ 
+ AM_CFLAGS = $(CFLAGS) -fPIC -std=c99
+ endif
