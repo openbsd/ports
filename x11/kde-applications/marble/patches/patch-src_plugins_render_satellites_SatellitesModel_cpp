@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_render_satellites_SatellitesModel_cpp,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+
+Index: src/plugins/render/satellites/SatellitesModel.cpp
+--- src/plugins/render/satellites/SatellitesModel.cpp.orig
++++ src/plugins/render/satellites/SatellitesModel.cpp
+@@ -242,8 +242,8 @@ void SatellitesModel::parseTLE( const QString &id,
+             mDebug() << "Invalid TLE data!";
+             return;
+         }
+-        qstrcpy( line1, tleLines.at( i++ ).constData() );
+-        qstrcpy( line2, tleLines.at( i++ ).constData() );
++        strcpy( line1, tleLines.at( i++ ).constData() );
++        strcpy( line2, tleLines.at( i++ ).constData() );
+         twoline2rv( line1, line2, 'c', 'd', 'i', wgs84,
+                     startmfe, stopmfe, deltamin, satrec );
+         if ( satrec.error != 0 ) {

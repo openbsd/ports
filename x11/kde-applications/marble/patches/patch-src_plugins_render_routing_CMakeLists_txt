@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_plugins_render_routing_CMakeLists_txt,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+
+Index: src/plugins/render/routing/CMakeLists.txt
+--- src/plugins/render/routing/CMakeLists.txt.orig
++++ src/plugins/render/routing/CMakeLists.txt
+@@ -11,6 +11,7 @@ marble_set_package_properties( Phonon4Qt5 PROPERTIES
+ INCLUDE_DIRECTORIES(
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_BINARY_DIR}
++ ${Phonon4Qt5_INCLUDE_DIR}
+ )
+ 
+ if(Phonon4Qt5_FOUND)

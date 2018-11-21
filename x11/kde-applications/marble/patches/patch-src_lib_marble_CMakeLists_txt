@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_lib_marble_CMakeLists_txt,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+
+Index: src/lib/marble/CMakeLists.txt
+--- src/lib/marble/CMakeLists.txt.orig
++++ src/lib/marble/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ PROJECT(marblewidget)
+ 
+-macro_optional_find_package(Phonon4Qt5 QUIET)
++macro_optional_find_package(Phonon4Qt5 )
+ marble_set_package_properties( Phonon4Qt5 PROPERTIES
+     DESCRIPTION "Qt-based audio library"
+     URL "https://phonon.kde.org/"
+@@ -9,6 +9,7 @@ marble_set_package_properties( Phonon4Qt5 PROPERTIES
+ )
+ if(Phonon4Qt5_FOUND)
+     set(HAVE_PHONON TRUE)
++    include_directories(${Phonon4Qt5_INCLUDE_DIR})
+ endif()
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config-phonon.h.cmake
+                ${CMAKE_CURRENT_BINARY_DIR}/config-phonon.h)
