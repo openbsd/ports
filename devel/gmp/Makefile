@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/11/02 18:43:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2018/11/21 16:49:04 sthen Exp $
 
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
@@ -9,6 +9,7 @@ MULTI_PACKAGES=	-main -cxx
 PKGNAME-main=	gmp-${VERSION}
 PKGNAME-cxx=	gmpxx-${VERSION}
 REVISION=	3
+REVISION-cxx=	4
 
 SHARED_LIBS +=  gmp                  10.0     # 13.2
 SHARED_LIBS +=  gmpxx                2.0      # 9.2
@@ -28,7 +29,8 @@ MASTER_SITES=	https://gmplib.org/download/gmp/ \
 WANTLIB-main=	# empty
 WANTLIB-cxx=	gmp m ${COMPILER_LIBCXX}
 
-LIB_DEPENDS-cxx=${BASE_PKGPATH},-main
+LIB_DEPENDS-cxx=${BASE_PKGPATH},-main \
+		${MODGCC4_CPPLIBDEP}
 
 PSEUDO_FLAVORS=	no_cxx bootstrap
 FLAVOR?=
