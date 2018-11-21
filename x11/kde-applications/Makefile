@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/11/16 21:43:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2018/11/21 06:50:51 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -179,7 +179,7 @@
      #SUBDIR += lskat
      #SUBDIR += mailcommon
      #SUBDIR += mailimporter
-     #SUBDIR += marble
+     SUBDIR += marble
      #SUBDIR += messagelib
      #SUBDIR += minuet
      SUBDIR += okteta
