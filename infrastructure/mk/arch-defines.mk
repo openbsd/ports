@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.55 2018/10/22 19:32:15 naddy Exp $
+# $OpenBSD: arch-defines.mk,v 1.56 2018/11/21 08:03:54 ajacoutot Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -34,7 +34,7 @@ LLD_ARCHS = aarch64 amd64 arm
 
 # arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
 # as well as available for PROPERTIES checks.
-LLVM_ARCHS = aarch64 amd64 arm i386 mips64 mips64el sparc64
+LLVM_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
 # arches where gcc4.9 exists.  To be used again for modules
 GCC49_ARCHS =alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
