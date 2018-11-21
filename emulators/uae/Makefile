@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2018/11/21 21:18:11 naddy Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
@@ -26,6 +26,9 @@ AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 			--with-sdl-sound
 CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV+=		LDFLAGS=-Wl,-znotext
+.endif
 
 NO_TEST=	Yes
 
