@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.16 2018/11/19 19:58:28 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.17 2018/11/21 16:00:49 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -417,6 +417,8 @@ sub create_path_table
 sub handle_column
 {
 	my ($self, $column) = @_;
+	# if there's an extra table, it doesn't end up in the default view
+	# (yet)
 	if (!defined($column->{vartype}->table)) {
 		$self->SUPER::handle_column($column);
 	}
