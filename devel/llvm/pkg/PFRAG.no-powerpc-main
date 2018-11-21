@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-powerpc-main,v 1.1 2018/11/21 08:03:05 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.no-powerpc-main,v 1.2 2018/11/21 12:46:00 ajacoutot Exp $
 lib/libLLVMAArch64AsmParser.a
 lib/libLLVMAArch64AsmPrinter.a
 lib/libLLVMAArch64CodeGen.a
@@ -26,11 +26,6 @@ lib/libLLVMBPFCodeGen.a
 lib/libLLVMBPFDesc.a
 lib/libLLVMBPFDisassembler.a
 lib/libLLVMBPFInfo.a
-lib/libLLVMHexagonAsmParser.a
-lib/libLLVMHexagonCodeGen.a
-lib/libLLVMHexagonDesc.a
-lib/libLLVMHexagonDisassembler.a
-lib/libLLVMHexagonInfo.a
 lib/libLLVMHexagonAsmParser.a
 lib/libLLVMHexagonCodeGen.a
 lib/libLLVMHexagonDesc.a
