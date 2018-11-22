@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2018/11/22 19:26:54 naddy Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -10,7 +10,7 @@ PKGNAME-main=	hamlib-${VERSION}
 PKGNAME-python=	hamlib-python-${VERSION}
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
 CATEGORIES=	comms hamradio
-REVISION-main=	5
+REVISION-main=	6
 REVISION-python=1
 REVISION-tcl=	2
 
@@ -39,7 +39,8 @@ WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 
 LIB_DEPENDS-main=	textproc/libxml \
 			devel/libusb-compat \
-			devel/libtool,-ltdl
+			devel/libtool,-ltdl \
+			${MODGCC4_CPPLIBDEP}
 LIB_DEPENDS-python=	${BUILD_PKGPATH} \
 			${MODPY_LIB_DEPENDS}
 LIB_DEPENDS-tcl=	${BUILD_PKGPATH} \
