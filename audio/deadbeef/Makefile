@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2018/11/22 14:58:40 ajacoutot Exp $
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
-REVISION =		10
+REVISION =		11
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -10,7 +10,7 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC Imlib2 X11 Xtst Xcomposite
+WANTLIB += ${COMPILER_LIBCXX} FLAC Imlib2 X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avformat avutil
 WANTLIB += bz2 c cairo cairo-gobject cddb cdio crypto curl dbus-1
@@ -21,7 +21,7 @@ WANTLIB += mad mms mp3lame mp4ff mpcdec nghttp2 ogg opus pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sndfile sndio speex ssl swresample vorbis vorbisenc
 WANTLIB += vorbisfile vpx wavpack x264 x265 xcb xcb-render xcb-shm
-WANTLIB += xvidcore z zip
+WANTLIB += xvidcore z zip fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -82,7 +82,8 @@ CONFIGURE_ARGS +=	--disable-static \
 			--disable-src \
 			--disable-supereq \
 			--disable-wildmidi \
-			--disable-wma
+			--disable-wma \
+			--disable-cdda-paranoia
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
 				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \
