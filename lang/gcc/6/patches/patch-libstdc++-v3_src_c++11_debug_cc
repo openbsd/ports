@@ -1,0 +1,65 @@
+$OpenBSD: patch-libstdc++-v3_src_c++11_debug_cc,v 1.1 2018/11/22 18:05:22 landry Exp $
+
+Silence this linker warning:
+/usr/local/lib/gcc/powerpc-unknown-openbsd6.4/6.4.0/../../../libestdc++.so.18.0:
+ warning: sprintf() is often misused, please use snprintf()
+
+Index: libstdc++-v3/src/c++11/debug.cc
+--- libstdc++-v3/src/c++11/debug.cc.orig
++++ libstdc++-v3/src/c++11/debug.cc
+@@ -660,7 +660,7 @@ namespace
+     else if (__builtin_strcmp(name, "address") == 0)
+       {
+ 	char buf[64];
+-	int ret = __builtin_sprintf(buf, "%p", inst._M_address);
++	int ret = __builtin_snprintf(buf, sizeof buf, "%p", inst._M_address);
+ 	print_word(ctx, buf, ret);
+       }
+     else
+@@ -712,7 +712,7 @@ namespace
+ 	else if (__builtin_strcmp(name, "sequence") == 0)
+ 	  {
+ 	    assert(iterator._M_sequence);
+-	    int written = __builtin_sprintf(buf, "%p", iterator._M_sequence);
++	    int written = __builtin_snprintf(buf, sizeof buf, "%p", iterator._M_sequence);
+ 	    print_word(ctx, buf, written);
+ 	  }
+ 	else if (__builtin_strcmp(name, "seq_type") == 0)
+@@ -797,7 +797,7 @@ namespace
+       }
+ 
+     int written
+-      = __builtin_sprintf(buf, "@ 0x%p {\n", inst._M_address);
++      = __builtin_snprintf(buf, sizeof buf, "@ 0x%p {\n", inst._M_address);
+     print_word(ctx, buf, written);
+ 
+     if (inst._M_type)
+@@ -853,7 +853,7 @@ namespace
+ 		}
+ 
+ 	      int written
+-		= __builtin_sprintf(buf, "@ 0x%p\n", ite._M_sequence);
++		= __builtin_snprintf(buf, sizeof buf, "@ 0x%p\n", ite._M_sequence);
+ 	      print_word(ctx, buf, written);
+ 	    }
+ 
+@@ -951,8 +951,8 @@ namespace
+ 	    if (param._M_kind == _Parameter::__integer)
+ 	      {
+ 		int written
+-		  = __builtin_sprintf(buf, "%ld",
+-				      param._M_variant._M_integer._M_value);
++		  = __builtin_snprintf(buf, sizeof buf, "%ld",
++			     param._M_variant._M_integer._M_value);
+ 		print_word(ctx, buf, written);
+ 	      }
+ 	    else if (param._M_kind == _Parameter::__string)
+@@ -1012,7 +1012,7 @@ namespace __gnu_debug
+     if (_M_line > 0)
+       {
+ 	char buf[64];
+-	int written = __builtin_sprintf(buf, "%u:", _M_line);
++	int written = __builtin_snprintf(buf, sizeof buf, "%u:", _M_line);
+ 	print_word(ctx, buf, written);
+ 	go_to_next_line = true;
+       }
