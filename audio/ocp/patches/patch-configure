@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2018/11/22 18:57:52 fcambus Exp $
+
+Support newer versions of GCC.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4590,6 +4590,7 @@ else
+ 			as_fn_error $? "not found" "$LINENO" 5;
+ 			;;
+ 		2.95.[2-9]|2.95.[2-9][-.]*|3.[0-9]|3.[0-9].[0-9]|3.[0-9]|3.[0-9].[0-9]-*|4.*)
++		2.95.[2-9]|2.95.[2-9][-.]*|3.[0-9]|3.[0-9].[0-9]|3.[0-9]|3.[0-9].[0-9]-*|4.*|5.*|6.*|7.*|8.*)
+ 			_cc_major=`echo $cc_version | cut -d '.' -f 1`
+ 			_cc_minor=`echo $cc_version | cut -d '.' -f 2`
+ 			_cc_mini=`echo $cc_version | cut -d '.' -f 3`
