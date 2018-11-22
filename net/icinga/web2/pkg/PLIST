@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/10/17 13:36:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/11/22 22:20:12 sthen Exp $
 @newgroup _icingaweb2:762
-@newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
+@newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
 icinga-web2/
@@ -64,6 +64,7 @@ icinga-web2/application/forms/
 icinga-web2/application/forms/Account/
 icinga-web2/application/forms/Account/ChangePasswordForm.php
 icinga-web2/application/forms/AcknowledgeApplicationStateMessageForm.php
+icinga-web2/application/forms/ActionForm.php
 icinga-web2/application/forms/Announcement/
 icinga-web2/application/forms/Announcement/AcknowledgeAnnouncementForm.php
 icinga-web2/application/forms/Announcement/AnnouncementForm.php
@@ -117,6 +118,7 @@ icinga-web2/application/forms/Security/RoleForm.php
 icinga-web2/application/layouts/
 icinga-web2/application/layouts/scripts/
 icinga-web2/application/layouts/scripts/body.phtml
+icinga-web2/application/layouts/scripts/external-logout.phtml
 icinga-web2/application/layouts/scripts/guest-error.phtml
 icinga-web2/application/layouts/scripts/inline.phtml
 icinga-web2/application/layouts/scripts/layout.phtml
@@ -261,7 +263,7 @@ icinga-web2/doc/res/GraphExample#3.png
 icinga-web2/doc/res/GraphExample#4.png
 icinga-web2/doc/res/GraphExample#5.png
 icinga-web2/doc/res/GraphExample#6.png
-icinga-web2/doc/res/GraphExample#7.1.png
+icinga-web2/doc/res/GraphExample#${MODPHP_VERSION}.png
 icinga-web2/doc/res/GraphExample#7.png
 icinga-web2/doc/res/GraphExample#8.png
 icinga-web2/doc/res/GraphExample#9.png
