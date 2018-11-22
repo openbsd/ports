@@ -1,0 +1,18 @@
+$OpenBSD: patch-libaudiofile_modules_SimpleModule_h,v 1.1 2018/11/22 20:28:25 naddy Exp $
+
+Fix undefined behavior in sign conversion. 
+https://github.com/mpruett/audiofile/commit/b62c902dd258125cac86cd2df21fc898035a43d3
+
+Index: libaudiofile/modules/SimpleModule.h
+--- libaudiofile/modules/SimpleModule.h.orig
++++ libaudiofile/modules/SimpleModule.h
+@@ -123,7 +123,8 @@ struct signConverter
+ 	typedef typename IntTypes<Format>::UnsignedType UnsignedType;
+ 
+ 	static const int kScaleBits = (Format + 1) * CHAR_BIT - 1;
+-	static const int kMinSignedValue = -1 << kScaleBits;
++	static const int kMaxSignedValue = (((1 << (kScaleBits - 1)) - 1) << 1) + 1;
++	static const int kMinSignedValue = -kMaxSignedValue - 1;
+ 
+ 	struct signedToUnsigned : public std::unary_function<SignedType, UnsignedType>
+ 	{

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2018/11/22 20:28:25 naddy Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -10,7 +10,7 @@ SUBST_VARS=	V
 
 DISTNAME=	audiofile-${V}
 PKGNAME=	lib${DISTNAME}
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  audiofile            1.0      # 1.0
 
