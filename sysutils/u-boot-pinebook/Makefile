@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 2018/11/18 23:50:02 jsg Exp $
+#	$OpenBSD: Makefile,v 1.3 2018/11/22 16:45:12 ajacoutot Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -18,7 +18,8 @@ GH_COMMIT=	54dd89fefcf4b6b70351d73bad291dc102b8317c
 
 PKG_ARCH=	*
 
-BUILD_DEPENDS=	devel/dtc \
+BUILD_DEPENDS=	devel/bison \
+		devel/dtc \
 		devel/swig \
 		textproc/gsed
 
