@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/22 15:39:43 naddy Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT =	UNIX port of Open Cubic Player
 
 DISTNAME =	ocp-0.1.21
-REVISION =	3
+REVISION =	4
 CATEGORIES =	audio
 
 HOMEPAGE =	http://stian.cubic.org/project-ocp.php
