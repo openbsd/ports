@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2018/11/10 11:12:25 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2018/11/22 12:40:21 espie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -75,6 +75,8 @@ PKG_ARGS +=		-Daarch64=0 -Damd64=1 -Di386=0
 .elif "${MACHINE_ARCH}" == "i386"
 TRIPLE_ARCH =		i686-unknown-openbsd
 PKG_ARGS +=		-Daarch64=0 -Damd64=0 -Di386=1
+.else
+PKG_ARGS +=		-Daarch64=0 -Damd64=0 -Di386=0
 .endif
 
 MODULES +=		lang/python \
