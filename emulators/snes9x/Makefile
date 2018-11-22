@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2018/11/22 21:01:10 fcambus Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
-DISTNAME =	snes9x-1.56.2
-REVISION =	1
+V =		1.57
+DISTNAME =	snes9x-$V
+EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	emulators games
 
@@ -19,11 +20,11 @@ PERMIT_PACKAGE_CDROM =	non-commercial
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 Xext Xrandr Xv atk-1.0
-WANTLIB += c cairo cairo-gobject epoxy fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl
-WANTLIB += m pango-1.0 pangocairo-1.0 png xml2 z
+WANTLIB += c cairo cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl m pango-1.0
+WANTLIB += pangocairo-1.0 png xml2 z
 
-MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
+MASTER_SITES =	https://github.com/snes9xgit/snes9x/releases/download/$V/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
