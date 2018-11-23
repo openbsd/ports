@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2018/11/23 19:03:29 afresh1 Exp $
 
 COMMENT =	module to declare real exception classes in perl
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Exception-Class-1.39
+DISTNAME =	Exception-Class-1.44
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
