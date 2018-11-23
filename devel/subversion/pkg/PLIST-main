@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2018/04/23 20:06:01 stsp Exp $
-@newgroup _svnserve:777
-@newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.20 2018/11/23 12:41:47 stsp Exp $
+@conflict subversion-*-gnome_keyring
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
-@conflict subversion-*-gnome_keyring
+@newgroup _svnserve:777
+@newuser _svnserve:777:_svnserve:daemon:SVN Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/svnserve
 @comment @bin bin/diff
 @comment @bin bin/diff3
 @comment @bin bin/diff4
@@ -21,6 +22,7 @@ bin/fsfs-stats
 @bin bin/svndumpfilter
 @bin bin/svnfsfs
 @bin bin/svnlook
+@bin bin/svnmover
 @bin bin/svnmucc
 @bin bin/svnraisetreeconflict
 @bin bin/svnrdump
@@ -237,4 +239,3 @@ share/pkgconfig/libsvn_ra_svn.pc
 share/pkgconfig/libsvn_repos.pc
 share/pkgconfig/libsvn_subr.pc
 share/pkgconfig/libsvn_wc.pc
-@rcscript ${RCDIR}/svnserve

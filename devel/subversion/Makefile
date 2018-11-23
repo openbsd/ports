@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2018/10/26 16:15:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.169 2018/11/23 12:41:47 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,7 +7,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.10.3
+VERSION=		1.11.0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -25,7 +25,7 @@ MODRUBY_REV ?=	2.5
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
 MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
 
-SO_VERSION=	3.0
+SO_VERSION=	4.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
