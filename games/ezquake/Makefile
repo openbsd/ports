@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/23 11:41:43 solene Exp $
+# $OpenBSD: Makefile,v 1.6 2018/11/23 14:15:03 solene Exp $
 
 V =		3.1
 COMMENT =	modern QuakeWorld client
 DISTNAME =	ezquake-source-${V}
 PKGNAME =	ezquake-${V}
 CATEGORIES =	games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://ezquake.github.io/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
