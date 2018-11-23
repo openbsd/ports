@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2018/11/23 21:15:07 rsadowski Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -164,9 +164,7 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples/kde \
 			xdg	share/examples
 
 TEST_IS_INTERACTIVE =	X11
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			x11/kde-applications/kate \
-			x11/kde-applications/konsole
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 post-extract:
 .for M in ${NEW_CMAKE_MODULES} ${REWR_CMAKE_MODULES}
