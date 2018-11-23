@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/11/23 06:54:11 jsg Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20171105
 RTAG =		6496
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
@@ -20,10 +20,6 @@ PERMIT_DISTFILES_FTP =  "BUILD engine license is not compatible with GPLv2."
 
 BUILD_DEPENDS = archivers/unzip \
 		graphics/gdk-pixbuf2
-
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS += devel/nasm
-.endif
 
 WANTLIB += c m ogg pthread vorbis vorbisfile vpx lz4
 WANTLIB += SDL2 SDL2_mixer FLAC execinfo ${COMPILER_LIBCXX}
@@ -92,18 +88,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/package/sdk/samples/* \
 		${PREFIX}/share/examples/eduke32/
 
-.if ${MACHINE_ARCH:Mi386}
-CFLAGS +=	-fno-pie
-MAKE_FLAGS +=	MISCLINKOPTS=-nopie
-.endif
-
 .include <bsd.port.mk>
-.if ${PROPERTIES:Mclang}
-.  if ${MACHINE_ARCH} == i386
-# disable LTO, ld.lld doesn't work here on i386
+
+.if !${PROPERTIES:Mlld}
 MAKE_FLAGS +=	LTO=0
-.  else
-# lto doesn't work with binutils, at all
-MAKE_FLAGS +=	LDFLAGS=-fuse-ld=/usr/bin/ld.lld
-.  endif
 .endif
