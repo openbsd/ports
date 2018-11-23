@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2018/11/23 16:00:16 bcallah Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
-DISTNAME =	the_silver_searcher-2.1.0
+DISTNAME =	the_silver_searcher-2.2.0
 CATEGORIES =	textproc
 
-HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
+HOMEPAGE =	https://geoff.greer.fm/ag/
 MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # Apache 2.0
@@ -18,7 +18,7 @@ WANTLIB += c lzma pcre pthread z
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MASTER_SITES =	http://geoff.greer.fm/ag/releases/
+MASTER_SITES =	https://geoff.greer.fm/ag/releases/
 
 LIB_DEPENDS =	archivers/xz \
 		devel/pcre
