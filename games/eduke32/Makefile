@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/23 06:54:11 jsg Exp $
+# $OpenBSD: Makefile,v 1.20 2018/11/23 16:02:35 naddy Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20171105
@@ -55,6 +55,12 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/eduke32_${RDATE}-${RTAG}
 
+.include <bsd.port.arch.mk>
+
+.if !${PROPERTIES:Mlld}
+MAKE_FLAGS +=	LTO=0
+.endif
+
 post-extract:
 	# check for data files in correct location
 	@sed -i "s,/usr/share/games/eduke32,${TRUEPREFIX}/share/duke3d," \
@@ -89,7 +95,3 @@ do-install:
 		${PREFIX}/share/examples/eduke32/
 
 .include <bsd.port.mk>
-
-.if !${PROPERTIES:Mlld}
-MAKE_FLAGS +=	LTO=0
-.endif
