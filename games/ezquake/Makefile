@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/15 18:54:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/23 11:41:43 solene Exp $
 
 V =		3.1
 COMMENT =	modern QuakeWorld client
 DISTNAME =	ezquake-source-${V}
 PKGNAME =	ezquake-${V}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://ezquake.github.io/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -32,7 +32,15 @@ WRKDIST =	${WRKDIR}
 
 NO_TEST =	Yes
 
+GAMEDIR =	${PREFIX}/share/ezquake
+SUBST_VARS +=	GAMEDIR
+
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/EX_browser_sources.c
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ezquake ${PREFIX}/bin
+	${INSTALL_PROGRAM}  ${WRKSRC}/ezquake ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${GAMEDIR}
+	@cp ${WRKSRC}/misc/sb/*.txt ${GAMEDIR}/
 
 .include <bsd.port.mk>
