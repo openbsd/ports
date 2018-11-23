@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2018/11/23 09:17:36 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2018/11/23 09:23:14 jca Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.4.5
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		lang
 
@@ -33,6 +33,12 @@ CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 	--with-html-dir='${PREFIX}/share/doc/gprolog/html' \
 	--with-doc-dir='${PREFIX}/share/doc/gprolog' \
 	--with-c-flags="${CFLAGS}"
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}"
+
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH:Mi386}
+LDFLAGS+=		-Wl,-znotext
+.endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
