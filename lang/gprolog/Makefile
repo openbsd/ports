@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/23 09:13:40 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2018/11/23 09:17:36 jca Exp $
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.4.5
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		lang
 

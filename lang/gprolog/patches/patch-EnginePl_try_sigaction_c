@@ -1,0 +1,49 @@
+$OpenBSD: patch-EnginePl_try_sigaction_c,v 1.1 2018/11/23 09:17:37 jca Exp $
+
+Relax siginfo_t si_addr check, sparc64 only provides page granularity.
+
+Index: EnginePl/try_sigaction.c
+--- EnginePl/try_sigaction.c.orig
++++ EnginePl/try_sigaction.c
+@@ -51,6 +51,7 @@
+  * si_addr is wrong for SIGBUS :-(
+  */
+ #define BAD_ADDR  ((int *) 0x2EA4F0)
++int *bad_addr;
+ 
+ void
+ SIGSEGV_Handler(int sig, siginfo_t * sip)
+@@ -59,7 +60,7 @@ SIGSEGV_Handler(int sig, siginfo_t * sip)
+ #if 0
+   printf("bad addr: %p\n", addr);
+ #endif
+-  _exit(addr != BAD_ADDR);
++  _exit(addr != bad_addr);
+ }
+ 
+ 
+@@ -68,6 +69,7 @@ int
+ main(int argc, char *argv[])
+ {
+   struct sigaction act;
++  long page_size;
+ 
+   act.sa_handler = NULL;
+   act.sa_sigaction = (void (*)()) SIGSEGV_Handler;
+@@ -79,7 +81,15 @@ main(int argc, char *argv[])
+   sigaction(SIGBUS, &act, NULL);
+ #endif
+ 
+-  *BAD_ADDR = 128;
++  bad_addr = BAD_ADDR;
++  /*
++   * some architectures can't provide more then page-level
++   * granularity.
++   */
++  if ((page_size = sysconf(_SC_PAGESIZE)) != -1L)
++    bad_addr = (int *)((long)BAD_ADDR & ~(page_size - 1));
++
++  *bad_addr = 128;
+ 
+   return 1;
+ }
