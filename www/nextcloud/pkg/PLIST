@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/10/23 08:26:21 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.20 2018/11/23 07:28:33 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -5251,6 +5251,7 @@ nextcloud/apps/cloud_federation_api/lib/Controller/
 nextcloud/apps/cloud_federation_api/lib/Controller/RequestHandlerController.php
 nextcloud/apps/comments/
 nextcloud/apps/comments/.bowerrc
+nextcloud/apps/comments/.l10nignore
 nextcloud/apps/comments/appinfo/
 nextcloud/apps/comments/appinfo/app.php
 nextcloud/apps/comments/appinfo/info.xml
@@ -5714,6 +5715,7 @@ nextcloud/apps/dav/lib/CalDAV/CalendarObject.php
 nextcloud/apps/dav/lib/CalDAV/CalendarRoot.php
 nextcloud/apps/dav/lib/CalDAV/InvitationResponse/
 nextcloud/apps/dav/lib/CalDAV/InvitationResponse/InvitationResponseServer.php
+nextcloud/apps/dav/lib/CalDAV/Outbox.php
 nextcloud/apps/dav/lib/CalDAV/Plugin.php
 nextcloud/apps/dav/lib/CalDAV/Principal/
 nextcloud/apps/dav/lib/CalDAV/Principal/Collection.php
@@ -6515,6 +6517,7 @@ nextcloud/apps/federation/lib/TrustedServers.php
 nextcloud/apps/federation/templates/
 nextcloud/apps/federation/templates/settings-admin.php
 nextcloud/apps/files/
+nextcloud/apps/files/.l10nignore
 nextcloud/apps/files/ajax/
 nextcloud/apps/files/ajax/download.php
 nextcloud/apps/files/ajax/list.php
@@ -8510,8 +8513,6 @@ nextcloud/apps/files_texteditor/l10n/
 nextcloud/apps/files_texteditor/l10n/.gitkeep
 nextcloud/apps/files_texteditor/l10n/ast.js
 nextcloud/apps/files_texteditor/l10n/ast.json
-nextcloud/apps/files_texteditor/l10n/az.js
-nextcloud/apps/files_texteditor/l10n/az.json
 nextcloud/apps/files_texteditor/l10n/bg.js
 nextcloud/apps/files_texteditor/l10n/bg.json
 nextcloud/apps/files_texteditor/l10n/ca.js
@@ -8908,6 +8909,7 @@ nextcloud/apps/files_trashbin/list.php
 nextcloud/apps/files_trashbin/templates/
 nextcloud/apps/files_trashbin/templates/index.php
 nextcloud/apps/files_versions/
+nextcloud/apps/files_versions/.l10nignore
 nextcloud/apps/files_versions/ajax/
 nextcloud/apps/files_versions/ajax/getVersions.php
 nextcloud/apps/files_versions/ajax/rollbackVersion.php
@@ -10073,6 +10075,7 @@ nextcloud/apps/nextcloud_announcements/templates/
 nextcloud/apps/nextcloud_announcements/templates/admin.php
 nextcloud/apps/notifications/
 nextcloud/apps/notifications/.babelrc.js
+nextcloud/apps/notifications/.l10nignore
 nextcloud/apps/notifications/COPYING
 nextcloud/apps/notifications/appinfo/
 nextcloud/apps/notifications/appinfo/app.php
@@ -10248,6 +10251,7 @@ nextcloud/apps/notifications/lib/Notifier/
 nextcloud/apps/notifications/lib/Notifier/AdminNotifications.php
 nextcloud/apps/notifications/lib/Push.php
 nextcloud/apps/oauth2/
+nextcloud/apps/oauth2/.l10nignore
 nextcloud/apps/oauth2/appinfo/
 nextcloud/apps/oauth2/appinfo/database.xml
 nextcloud/apps/oauth2/appinfo/info.xml
@@ -11009,7 +11013,7 @@ nextcloud/apps/support/lib/Settings/
 nextcloud/apps/support/lib/Settings/Admin.php
 nextcloud/apps/support/lib/Settings/Section.php
 nextcloud/apps/support/resources/
-nextcloud/apps/support/resources/Why the Nextcloud Subscription?.pdf
+nextcloud/apps/support/resources/Why the Nextcloud Subscription.pdf
 nextcloud/apps/support/templates/
 nextcloud/apps/support/templates/admin.php
 nextcloud/apps/survey_client/
@@ -11708,6 +11712,7 @@ nextcloud/apps/twofactor_backupcodes/templates/
 nextcloud/apps/twofactor_backupcodes/templates/challenge.php
 nextcloud/apps/twofactor_backupcodes/templates/personal.php
 nextcloud/apps/updatenotification/
+nextcloud/apps/updatenotification/.l10nignore
 nextcloud/apps/updatenotification/appinfo/
 nextcloud/apps/updatenotification/appinfo/app.php
 nextcloud/apps/updatenotification/appinfo/info.xml
@@ -12513,6 +12518,7 @@ nextcloud/config/config.sample.php
 @group
 nextcloud/console.php
 nextcloud/core/
+nextcloud/core/.l10nignore
 nextcloud/core/Application.php
 nextcloud/core/BackgroundJobs/
 nextcloud/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
@@ -12766,7 +12772,6 @@ nextcloud/core/doc/admin/_images/sharing-files-1.png
 nextcloud/core/doc/admin/_images/skeleton-files.png
 nextcloud/core/doc/admin/_images/skeleton-files1.png
 nextcloud/core/doc/admin/_images/smb.png
-nextcloud/core/doc/admin/_images/smtp-config-php-sendmail.png
 nextcloud/core/doc/admin/_images/smtp-config-smtp.png
 nextcloud/core/doc/admin/_images/smtp-config-wizard.png
 nextcloud/core/doc/admin/_images/theming.png
@@ -13629,6 +13634,8 @@ nextcloud/core/js/visitortimezone.js
 nextcloud/core/l10n/
 nextcloud/core/l10n/af.js
 nextcloud/core/l10n/af.json
+nextcloud/core/l10n/ar.js
+nextcloud/core/l10n/ar.json
 nextcloud/core/l10n/ast.js
 nextcloud/core/l10n/ast.json
 nextcloud/core/l10n/bg.js
@@ -13745,8 +13752,6 @@ nextcloud/core/l10n/tr.js
 nextcloud/core/l10n/tr.json
 nextcloud/core/l10n/uk.js
 nextcloud/core/l10n/uk.json
-nextcloud/core/l10n/uz.js
-nextcloud/core/l10n/uz.json
 nextcloud/core/l10n/vi.js
 nextcloud/core/l10n/vi.json
 nextcloud/core/l10n/zh_CN.js
@@ -15264,6 +15269,7 @@ nextcloud/resources/locales.json
 nextcloud/robots.txt
 nextcloud/settings/
 nextcloud/settings/.babelrc.js
+nextcloud/settings/.l10nignore
 nextcloud/settings/Activity/
 nextcloud/settings/Activity/Provider.php
 nextcloud/settings/Activity/SecurityFilter.php
