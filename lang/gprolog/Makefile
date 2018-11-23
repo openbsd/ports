@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/23 09:11:15 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/23 09:13:40 jca Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.4.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		lang
 
@@ -22,9 +22,7 @@ MASTER_SITES=		http://www.gprolog.org/ \
 
 COMPILER =		base-gcc ports-gcc
 COMPILER_LANGS =	c
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf dest no-autoheader
-
+CONFIGURE_STYLE=	gnu dest no-autoheader
 
 CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 	--without-links-dir \
