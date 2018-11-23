@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/11/10 15:02:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2018/11/23 15:31:22 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-sound
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -nopie" \
+			LDFLAGS="-L${LOCALBASE}/lib -nopie ${LDFLAGS}" \
 			ac_cv_header_execinfo_h=no
 CFLAGS+=		-fno-pie
 
