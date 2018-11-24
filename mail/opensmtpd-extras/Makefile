@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/11/24 11:27:49 giovanni Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -6,14 +6,14 @@ COMMENT-pgsql=		postgresql based smtpd table support
 COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 
-V=			201703132115
+V=			6.4.0
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
-REVISION=		2
+EPOCH=			0
 
 CATEGORIES=		mail
 
@@ -27,8 +27,8 @@ MULTI_PACKAGES=		-main -mysql -pgsql -python -redis
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto event m pthread ssl sqlite3
-WANTLIB-mysql=		c crypto event ssl m z pthread ${COMPILER_LIBCXX} mysqlclient
+WANTLIB=		c crypto event m pthread ssl sqlite3 z
+WANTLIB-mysql=		c crypto event ssl m pthread ${COMPILER_LIBCXX} mysqlclient
 WANTLIB-pgsql=		c crypto event ssl pq
 WANTLIB-python=		c crypto event ssl m util pthread ${MODPY_WANTLIB}
 WANTLIB-redis=		c crypto event ssl hiredis
@@ -53,10 +53,6 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-cppflags="${CFLAGS} -I${PREFIX}/include \
 			    -I${PREFIX}/include/postgresql" \
 			--with-python-type=python${MODPY_VERSION} \
-			--with-filter-monkey \
-			--with-filter-stub \
-			--with-filter-trace \
-			--with-filter-void \
 			--with-queue-null \
 			--with-queue-python \
 			--with-queue-ram \
@@ -72,16 +68,6 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-table-redis \
 			--with-table-socketmap \
 			--with-table-sqlite \
-			--with-table-stub \
-			--with-tool-stats
-
-NO_TEST=		Yes
-
-post-install:
-			${INSTALL_DATA_DIR} \
-			    ${PREFIX}/share/examples/opensmtpd-extras
-			cd ${WRKSRC} && ${INSTALL_DATA} \
-			    extras/filters/filter-*/filter-*.conf \
-			    ${PREFIX}/share/examples/opensmtpd-extras
+			--with-table-stub
 
 .include <bsd.port.mk>
