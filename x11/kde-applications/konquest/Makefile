@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/16 07:41:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/24 18:36:03 ajacoutot Exp $
 
 COMMENT =	galactic strategy game
 DISTNAME =	konquest-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/konquest
 
