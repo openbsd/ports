@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_lib-master_test-event-stats_c,v 1.1 2018/11/24 12:02:49 sthen Exp $
+
+test-event-stats.c:101:8: warning: implicit declaration of function 'kill' is invalid in C99 [-Wimplicit-function-declaration]
+        (void)kill(stats_pid, SIGKILL);
+              ^
+test-event-stats.c:101:24: error: use of undeclared identifier 'SIGKILL'
+        (void)kill(stats_pid, SIGKILL);
+                              ^
+
+Index: src/lib-master/test-event-stats.c
+--- src/lib-master/test-event-stats.c.orig
++++ src/lib-master/test-event-stats.c
+@@ -12,6 +12,7 @@
+ #include "stats-client.h"
+ #include "test-common.h"
+ #include <fcntl.h>
++#include <signal.h>
+ #include <unistd.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>

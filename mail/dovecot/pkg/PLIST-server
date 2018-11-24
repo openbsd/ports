@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.68 2018/10/24 19:42:36 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.69 2018/11/24 12:02:49 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -812,6 +812,7 @@ share/doc/dovecot/wiki/Design.Lua.txt
 share/doc/dovecot/wiki/Design.MailProcess.txt
 share/doc/dovecot/wiki/Design.Memory.txt
 share/doc/dovecot/wiki/Design.OutputStreams.txt
+share/doc/dovecot/wiki/Design.ParameterForwarding.txt
 share/doc/dovecot/wiki/Design.Plugins.txt
 share/doc/dovecot/wiki/Design.Processes.txt
 share/doc/dovecot/wiki/Design.Storage.ErrorHandling.txt
