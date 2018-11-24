@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/16 07:21:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
 
 COMMENT =	battle ship game
 DISTNAME =	knavalbattle-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/knavalbattle
 

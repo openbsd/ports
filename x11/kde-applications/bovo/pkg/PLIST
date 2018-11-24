@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 22:39:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/bovo
 @bin bin/bovo
 share/applications/org.kde.bovo.desktop
 share/bovo/

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 07:05:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/kgoldrunner
 @bin bin/kgoldrunner
 share/applications/org.kde.kgoldrunner.desktop
 share/doc/HTML/de/kgoldrunner/
@@ -54,6 +56,7 @@ share/doc/HTML/uk/kgoldrunner/tute008.png
 share/examples/kgoldrunner/
 share/examples/kgoldrunner/xdg/
 share/examples/kgoldrunner/xdg/kgoldrunner.knsrc
+@sample ${SYSCONFDIR}/xdg/kgoldrunner.knsrc
 share/icons/hicolor/128x128/apps/kgoldrunner.png
 share/icons/hicolor/16x16/apps/kgoldrunner.png
 share/icons/hicolor/22x22/apps/kgoldrunner.png

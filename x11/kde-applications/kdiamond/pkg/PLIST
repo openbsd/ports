@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 07:01:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/kdiamond
 @bin bin/kdiamond
 share/applications/org.kde.kdiamond.desktop
 share/doc/HTML/de/kdiamond/
@@ -45,6 +47,7 @@ share/doc/HTML/uk/kdiamond/index.docbook
 share/examples/kdiamond/
 share/examples/kdiamond/xdg/
 share/examples/kdiamond/xdg/kdiamond.knsrc
+@sample ${SYSCONFDIR}/xdg/kdiamond.knsrc
 share/icons/hicolor/128x128/apps/kdiamond.png
 share/icons/hicolor/16x16/apps/kdiamond.png
 share/icons/hicolor/22x22/apps/kdiamond.png

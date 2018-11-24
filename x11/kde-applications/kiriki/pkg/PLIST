@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 07:11:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/kiriki
 @bin bin/kiriki
 share/applications/org.kde.kiriki.desktop
 share/doc/HTML/de/kiriki/

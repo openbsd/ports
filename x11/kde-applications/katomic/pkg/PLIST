@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/09 06:27:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/katomic
 @bin bin/katomic
 share/applications/org.kde.katomic.desktop
 share/doc/HTML/ca/katomic/
@@ -45,6 +47,7 @@ share/doc/HTML/uk/katomic/mainscreen.png
 share/examples/katomic/
 share/examples/katomic/xdg/
 share/examples/katomic/xdg/katomic.knsrc
+@sample ${SYSCONFDIR}/xdg/katomic.knsrc
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/16x16/apps/katomic.png
 share/icons/hicolor/22x22/apps/katomic.png

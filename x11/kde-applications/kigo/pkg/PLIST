@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 07:08:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
 share/config.kcfg/
@@ -77,7 +79,9 @@ share/doc/HTML/uk/kigo/start-new-game.png
 share/examples/kigo/
 share/examples/kigo/xdg/
 share/examples/kigo/xdg/kigo-games.knsrc
+@sample ${SYSCONFDIR}/xdg/kigo-games.knsrc
 share/examples/kigo/xdg/kigo.knsrc
+@sample ${SYSCONFDIR}/xdg/kigo.knsrc
 share/icons/hicolor/128x128/apps/kigo.png
 share/icons/hicolor/16x16/apps/kigo.png
 share/icons/hicolor/22x22/apps/kigo.png

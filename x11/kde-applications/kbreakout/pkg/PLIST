@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 06:36:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/kbreakout
 @bin bin/kbreakout
 share/applications/org.kde.kbreakout.desktop
 share/doc/HTML/de/kbreakout/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/16 07:13:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
 
 COMMENT =	territory capture game
 DISTNAME =	kjumpingcube-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kjumpingcube
 

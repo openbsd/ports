@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 22:30:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
 
 COMMENT =	memory enhancement game
 DISTNAME =	blinken-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/blinken/
 

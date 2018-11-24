@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/16 07:42:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@conflict kde-l10n-*
+@pkgpath x11/kde4/kreversi
 @bin bin/kreversi
 share/applications/org.kde.kreversi.desktop
 share/doc/HTML/de/kreversi/
