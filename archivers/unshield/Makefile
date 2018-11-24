@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/01/21 23:46:01 jsg Exp $
+# $OpenBSD: Makefile,v 1.19 2018/11/24 08:00:26 jsg Exp $
 
 COMMENT=	extract files from InstallShield CAB archives
 
 GH_ACCOUNT=	twogood
 GH_PROJECT=	unshield
-GH_TAGNAME=	1.4.2
+GH_TAGNAME=	1.4.3
 
 CATEGORIES=	archivers
 
