@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mk_util_py,v 1.1 2018/09/15 13:27:29 rsadowski Exp $
+$OpenBSD: patch-scripts_mk_util_py,v 1.2 2018/11/24 00:57:15 naddy Exp $
 
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
@@ -12,7 +12,15 @@ Index: scripts/mk_util.py
  BUILD_DIR='build'
  REV_BUILD_DIR='..'
  SRC_DIR='src'
-@@ -2528,7 +2528,7 @@ def mk_config():
+@@ -2494,7 +2494,6 @@ def mk_config():
+             EXAMP_DEBUG_FLAG = '-g'
+             CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
+         else:
+-            CXXFLAGS     = '%s -O3' % CXXFLAGS
+             if GPROF:
+                 CXXFLAGS     += '-fomit-frame-pointer'
+             CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
+@@ -2528,7 +2527,7 @@ def mk_config():
          elif sysname == 'OpenBSD':
              CXXFLAGS       = '%s -D_OPENBSD_' % CXXFLAGS
              OS_DEFINES     = '-D_OPENBSD_'
@@ -21,3 +29,15 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
          elif sysname.startswith('CYGWIN'):
              CXXFLAGS       = '%s -D_CYGWIN' % CXXFLAGS
+@@ -2544,9 +2543,9 @@ def mk_config():
+             LIB_EXT        = '.lib'
+         else:
+             raise MKException('Unsupported platform: %s' % sysname)
++        if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
++            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
+         if is64():
+-            if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
+-                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
+             CPPFLAGS     = '%s -D_AMD64_' % CPPFLAGS
+             if sysname == 'Linux':
+                 CPPFLAGS = '%s -D_USE_THREAD_LOCAL' % CPPFLAGS
