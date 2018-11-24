@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_lib-sieve_sieve-common_h,v 1.1 2016/09/11 20:54:13 ajacoutot Exp $
---- src/lib-sieve/sieve-common.h.orig	Sun Sep 11 12:19:17 2016
-+++ src/lib-sieve/sieve-common.h	Sun Sep 11 12:19:09 2016
-@@ -9,6 +9,7 @@
+$OpenBSD: patch-src_lib-sieve_sieve-common_h,v 1.2 2018/11/24 12:03:11 sthen Exp $
+Index: src/lib-sieve/sieve-common.h
+--- src/lib-sieve/sieve-common.h.orig
++++ src/lib-sieve/sieve-common.h
+@@ -6,6 +6,7 @@
  #include "sieve-config.h"
  #include "sieve-types.h"
  

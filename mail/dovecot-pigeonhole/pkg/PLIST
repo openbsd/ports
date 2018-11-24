@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/10/24 19:43:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2018/11/24 12:03:11 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -100,6 +100,7 @@ share/doc/dovecot/sieve/locations/dict.txt
 share/doc/dovecot/sieve/locations/file.txt
 share/doc/dovecot/sieve/locations/ldap.txt
 share/doc/dovecot/sieve/plugins/
+share/doc/dovecot/sieve/plugins/imap_filter_sieve.txt
 share/doc/dovecot/sieve/plugins/imapsieve.txt
 share/doc/dovecot/sieve/plugins/sieve_extprograms.txt
 share/examples/dovecot/example-config/conf.d/20-managesieve.conf
