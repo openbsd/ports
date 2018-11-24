@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/11/21 06:50:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2018/11/24 09:37:15 rsadowski Exp $
 
      SUBDIR =
      #SUBDIR += kde-l10n
@@ -98,7 +98,7 @@
      SUBDIR += klickety
      SUBDIR += klines
      #SUBDIR += kmag
-     SUBDIR += kmahjongg
+     #SUBDIR += kmahjongg
      #SUBDIR += kmailtransport
      SUBDIR += kmbox
      SUBDIR += kmime
@@ -171,7 +171,7 @@
      SUBDIR += libkgeomap
      SUBDIR += libkipi
      #SUBDIR += libkleo
-     SUBDIR += libkmahjongg
+     #SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      #SUBDIR += libksane
      #SUBDIR += libksieve
