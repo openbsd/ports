@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/11/02 00:19:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2018/11/24 08:54:46 landry Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,6 +13,8 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
+REVISION-server=0
+REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -32,7 +34,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl ${COMPILER_LIBCXX} z
 WANTLIB-main=	curses readline ${WANTLIB}
-WANTLIB-server=	lz4 mysqlclient pcre xml2 ${WANTLIB}
+WANTLIB-server=	mysqlclient pcre xml2 ${WANTLIB}
 WANTLIB-tests=	mysqlclient pcre pcreposix ${WANTLIB}
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
@@ -45,7 +47,6 @@ BUILD_DEPENDS=	devel/bison
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
-			archivers/lz4 \
 			devel/pcre \
 			textproc/libxml
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
@@ -91,9 +92,11 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The TokuDB storage engine does not build at the moment on OpenBSD
-# One more or more issues to look into
-CONFIGURE_ARGS+=-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
+# The Mroonga and TokuDB storage engines are disabled.
+# Mroonga is only buildable on little endian archs.
+# TokuDB is only builable on 64-bit little endian archs.
+CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
+		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
