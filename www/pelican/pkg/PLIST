@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/02/19 23:28:43 danj Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/11/25 19:57:14 danj Exp $
 bin/pelican
 bin/pelican-import
 bin/pelican-quickstart
@@ -42,12 +42,22 @@ lib/python${MODPY_VERSION}/site-packages/pelican/themes/
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/
+@mode
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/fonts.css
 @mode 644
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/main.css
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/pygment.css
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/reset.css
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/typogrify.css
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/css/wide.css
+@mode
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/Yanone_Kaffeesatz_400.eot
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/Yanone_Kaffeesatz_400.svg
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/Yanone_Kaffeesatz_400.ttf
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/Yanone_Kaffeesatz_400.woff
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/Yanone_Kaffeesatz_400.woff2
+lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/fonts/font.css
 @mode 755
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/images/
 lib/python${MODPY_VERSION}/site-packages/pelican/themes/notmyidea/static/images/icons/
@@ -125,11 +135,10 @@ lib/python${MODPY_VERSION}/site-packages/pelican/tools/pelican_import.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/pelican_quickstart.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/pelican_themes.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/Makefile.in
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/develop_server.sh.in
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/fabfile.py.in
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/pelicanconf.py.in
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/publishconf.py.in
+lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/Makefile.jinja2
+lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/pelicanconf.py.jinja2
+lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/publishconf.py.jinja2
+lib/python${MODPY_VERSION}/site-packages/pelican/tools/templates/tasks.py.jinja2
 lib/python${MODPY_VERSION}/site-packages/pelican/urlwrappers.py
 lib/python${MODPY_VERSION}/site-packages/pelican/utils.py
 lib/python${MODPY_VERSION}/site-packages/pelican/writers.py
