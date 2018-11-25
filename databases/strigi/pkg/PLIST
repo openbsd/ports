@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/07 10:05:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/11/25 16:30:37 rsadowski Exp $
 @bin bin/deepfind
 @bin bin/deepgrep
 @bin bin/lucene2indexer
@@ -73,23 +73,27 @@ include/strigi/tarinputstream.h
 include/strigi/textutils.h
 include/strigi/variant.h
 include/strigi/zipinputstream.h
-lib/libsearchclient/
+lib/cmake/LibSearchClient/
+lib/cmake/LibSearchClient/LibSearchClientConfig.cmake
+lib/cmake/LibStreamAnalyzer/
+lib/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfig.cmake
+lib/cmake/LibStreamAnalyzer/LibStreamAnalyzerConfigVersion.cmake
+lib/cmake/LibStreams/
+lib/cmake/LibStreams/LibStreamsConfig.cmake
+lib/cmake/LibStreams/LibStreamsConfigVersion.cmake
+lib/cmake/LibStreams/LibStreamsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibStreams/LibStreamsTargets.cmake
+lib/cmake/Strigi/
+lib/cmake/Strigi/StrigiConfig.cmake
+lib/cmake/Strigi/StrigiConfigVersion.cmake
 @lib lib/libsearchclient.so.${LIBsearchclient_VERSION}
-lib/libsearchclient/LibSearchClientConfig.cmake
-lib/libstreamanalyzer/
 @lib lib/libstreamanalyzer.so.${LIBstreamanalyzer_VERSION}
-lib/libstreamanalyzer/LibStreamAnalyzerConfig.cmake
-lib/libstreams/
 @lib lib/libstreams.so.${LIBstreams_VERSION}
-lib/libstreams/LibStreamsConfig.cmake
-lib/libstreams/LibStreamsTargets${MODCMAKE_BUILD_SUFFIX}
-lib/libstreams/LibStreamsTargets.cmake
 @lib lib/libstrigihtmlgui.so.${LIBstrigihtmlgui_VERSION}
 @lib lib/libstrigiqtdbusclient.so.${LIBstrigiqtdbusclient_VERSION}
 lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
 lib/strigi/
-lib/strigi/StrigiConfig.cmake
 lib/strigi/strigiea_digest.so
 lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
