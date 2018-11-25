@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1456 2018/11/16 18:14:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1457 2018/11/25 11:51:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1937,18 +1937,20 @@ dump-vars:
 .  endfor
 .else
 .  for _S in ${MULTI_PACKAGES}
-.    for _v in ${_ALL_VARIABLES}
-.     if defined(${_v}) && !empty(${_v})
+.    if !${DPB:L:Mshorter} || "${_S}" == "${SUBPACKAGE}"
+.      for _v in ${_ALL_VARIABLES}
+.        if defined(${_v}) && !empty(${_v})
 	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}:Q}
-.     endif
-.    endfor
-.    for _v in ${_ALL_VARIABLES_PER_ARCH}
-.      for _a in ${ALL_ARCHS}
-.        if defined(${_v}-${_a}) && !empty(${_v}-${_a})
-	@echo ${FULLPKGPATH${_S}}.${_v}-${_a}=${${_v}-${_a}:Q}
 .        endif
 .      endfor
-.    endfor
+.      for _v in ${_ALL_VARIABLES_PER_ARCH}
+.        for _a in ${ALL_ARCHS}
+.          if defined(${_v}-${_a}) && !empty(${_v}-${_a})
+	@echo ${FULLPKGPATH${_S}}.${_v}-${_a}=${${_v}-${_a}:Q}
+.          endif
+.        endfor
+.      endfor
+.    endif
 .    for _v in ${_ALL_VARIABLES_INDEXED}
 .      if defined(${_v}${_S}) && !empty(${_v}${_S})
 	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}${_S}:Q}
