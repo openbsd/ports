@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.35 2018/11/25 16:28:32 espie Exp $
+# $OpenBSD: Var.pm,v 1.36 2018/11/25 17:08:48 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -356,6 +356,7 @@ sub create_tables
 	$inserter->prepare_normal_inserter($self->table,
 	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST", "N");
 	$inserter->make_ordered_view($self);
+	$inserter->create_canonical_depends($self);
 }
 
 sub group_by

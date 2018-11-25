@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.18 2018/11/25 15:04:10 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.19 2018/11/25 17:08:48 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -312,6 +312,24 @@ sub add_var
 	$v->add($self);
 }
 
+sub id
+{
+	return 'fullpkgpath';
+}
+
+sub create_canonical_depends
+{
+	my ($self, $class) = @_;
+	my $t = $class->table;
+	my $id = $self->id;
+	$self->new_object('VIEW', "canonical_depends",
+		qq{as select 
+		    p1.canonical as fullpkgpath, 
+		    p2.canonical as dependspath, $t.type from $t 
+		join paths p1 on p1.$id=$t.fullpkgpath
+		join paths p2 on p2.$id=$t.dependspath});
+}
+
 sub commit_to_db
 {
 	my $self = shift;
@@ -359,6 +377,11 @@ sub pathref
 	$name = "FULLPKGPATH" if !defined $name;
 	return "$name INTEGER NOT NULL REFERENCES ".
 	    $self->table_name("Paths")."(ID)";
+}
+
+sub id
+{
+	return 'Id';
 }
 
 sub value
