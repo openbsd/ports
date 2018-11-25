@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/11/08 22:10:31 danj Exp $
+# $OpenBSD: Makefile,v 1.30 2018/11/25 18:58:14 danj Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.20.0
+MODPY_EGG_VERSION=	2.20.1
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		www
 
