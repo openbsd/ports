@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/11/25 18:58:14 danj Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/11/25 19:03:11 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/requests/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/requests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/requests/__init__.py
-${MODPY_COMMENT}${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests/${MODPY_PYCACHE}_internal_utils.${MODPY_PYC_MAGIC_TAG}pyc
