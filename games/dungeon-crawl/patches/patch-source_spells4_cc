@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_spells4_cc,v 1.1 2018/11/25 21:06:38 naddy Exp $
+
+Index: source/spells4.cc
+--- source/spells4.cc.orig
++++ source/spells4.cc
+@@ -12,6 +12,7 @@
+ 
+ #include "AppHdr.h"
+ 
++#include <string.h>
+ #include <string>
+ #include <stdio.h>
+ 

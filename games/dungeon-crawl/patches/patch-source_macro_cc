@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_macro_cc,v 1.1 2018/11/25 21:06:38 naddy Exp $
+
+Index: source/macro.cc
+--- source/macro.cc.orig
++++ source/macro.cc
+@@ -39,6 +39,7 @@
+ #include <deque>
+ 
+ #include <stdio.h>      // for snprintf
++#include <string.h>     // for strlen
+ #include <ctype.h>      // for tolower
+ 
+ #include "externs.h"

@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_describe_cc,v 1.1 2018/11/25 21:06:38 naddy Exp $
+
+Index: source/describe.cc
+--- source/describe.cc.orig
++++ source/describe.cc
+@@ -21,6 +21,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <string>
+ 
+ #ifdef DOS

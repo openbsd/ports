@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_skills2_cc,v 1.1 2018/11/25 21:06:38 naddy Exp $
+
+Index: source/skills2.cc
+--- source/skills2.cc.orig
++++ source/skills2.cc
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ #ifdef DOS

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/25 21:06:38 naddy Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -9,7 +9,7 @@ DISTNAME=	dc400b26-src
 EXTRACT_SUFX=	.tbz2
 V=		4.0.0b26
 PKGNAME=	dungeon-crawl-$V
-REVISION =	3
+REVISION =	4
 
 BUILD_DEPENDS+=	archivers/bzip2
 
@@ -22,9 +22,9 @@ MAKE_FLAGS=EXTRA_FLAGS='${CXXFLAGS} -DSAVE_DIR_PATH=\"${TRUEPREFIX}/lib/dungeon-
 
 ALL_TARGET=debug
 
-WANTLIB=	c m ${COMPILER_LIBCXX} ncurses
+WANTLIB=	c curses m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 
 # Almost nethack... http://www.dungeoncrawl.org/?d.l
