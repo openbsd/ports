@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2018/11/25 20:16:46 naddy Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	13
+REVISION=	14
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -90,7 +90,8 @@ CONFIGURE_ARGS+=--enable-a52 \
 		--enable-theora \
 		--enable-vorbis \
 		--enable-xvid \
-		--enable-x264
+		--enable-x264 \
+		--disable-x86-textrels
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
