@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.3 2018/11/18 16:25:23 espie Exp $
+# $OpenBSD: print-ports-index,v 1.4 2018/11/25 11:40:20 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -21,7 +21,7 @@ if [ $# -ge 1 ]
 then
     file=$1
 else
-    file=${PREFIX}/share/sqlports
+    file=${TRUEPREFIX}/share/sqlports
 fi
 cat <<'EOSQL' |sqlite3 $file
 -- in order for group_concat to sort, you must do it in two steps
