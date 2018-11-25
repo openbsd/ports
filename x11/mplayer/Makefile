@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.293 2018/11/25 19:18:21 naddy Exp $
 
 COMMENT=	movie player supporting many formats
 
@@ -86,7 +86,7 @@ CONFIGURE_STYLE= simple
 # CONFIGURE_ARGS for misc stuff
 CONFIGURE_ARGS+=--confdir=${CONFDIR} \
 		--extra-cflags="-I${LOCALBASE}/include" \
-		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math" \
+		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math ${LDFLAGS}" \
 		--extra-libs-mplayer="-lrtunes -lcrypto" \
 		--mandir=${LOCALBASE}/man \
 		--target="${MPLAYER_ARCH}-openbsd"
@@ -145,6 +145,11 @@ CONFIGURE_ARGS+=--disable-caca \
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
+.endif
+
+# non-PIC assembly
+.if ${MACHINE_ARCH:Mi386}
+LDFLAGS+=	-Wl,-znotext
 .endif
 
 # binutils 2.15 assembler missing opcode support
