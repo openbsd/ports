@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.84 2018/11/25 17:08:48 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2018/11/25 17:45:57 espie Exp $
 
 CATEGORIES =		databases
-V =			6.19
+V =			6.20
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -23,6 +23,8 @@ BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 RUN_DEPENDS-main =	databases/sqlite3
 RUN_DEPENDS-compact =	databases/sqlite3
 
+SCRIPTS = print-ports-index show-reverse-deps
+
 do-build:
 	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
 	@if test -s ${WRKBUILD}/ouch; then \
@@ -33,7 +35,9 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
-	${SUBST_PROGRAM} ${FILESDIR}/scripts/print-ports-index ${PREFIX}/bin/print-ports-index
+.for s in ${SCRIPTS}
+	@${SUBST_PROGRAM} ${FILESDIR}/scripts/$s ${PREFIX}/bin/$s
+.endfor
 	${PREFIX}/bin/print-ports-index ${DBNAME}-compact >${PREFIX}/share/ports-INDEX
 	@for i in ${DBS}; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share; \

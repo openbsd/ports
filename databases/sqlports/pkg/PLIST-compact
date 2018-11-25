@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-compact,v 1.3 2018/11/25 16:28:32 espie Exp $
+@comment $OpenBSD: PLIST-compact,v 1.4 2018/11/25 17:45:57 espie Exp $
 @conflict sqlports-<6.18
 @option always-update
 bin/print-ports-index
+bin/show-reverse-deps
 share/sqlports-compact
