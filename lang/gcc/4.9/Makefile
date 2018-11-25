@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2018/11/20 15:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/11/25 18:44:20 daniel Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
 V = 4.9.4
-REVISION = 13
+REVISION = 14
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
