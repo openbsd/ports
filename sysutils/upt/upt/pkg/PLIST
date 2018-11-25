@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 16:33:27 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/25 20:55:41 danj Exp $
 bin/upt
 lib/python${MODPY_VERSION}/site-packages/upt/
 lib/python${MODPY_VERSION}/site-packages/upt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -12,12 +12,10 @@ lib/python${MODPY_VERSION}/site-packages/upt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}licenses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}upt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/upt/hash.py
 lib/python${MODPY_VERSION}/site-packages/upt/licenses.py
 lib/python${MODPY_VERSION}/site-packages/upt/log.py
 lib/python${MODPY_VERSION}/site-packages/upt/tests/
