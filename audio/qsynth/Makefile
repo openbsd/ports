@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/07/26 12:16:34 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/25 22:33:58 sebastia Exp $
 
 COMMENT =		Qt GUI Interface for FluidSynth
 
-DISTNAME =		qsynth-0.5.2
+DISTNAME =		qsynth-0.5.3
 
 CATEGORIES =		audio
 
@@ -29,5 +29,8 @@ RUN_DEPENDS +=		devel/desktop-file-utils \
 NO_TEST =		Yes
 
 BUILD_DEPENDS =		audio/fluidsynth
+
+post-build:
+	cp ${WRKSRC}/src/qsynth.desktop ${WRKBUILD}/src/
 
 .include <bsd.port.mk>
