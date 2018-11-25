@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2018/11/13 17:12:51 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2018/11/25 10:09:25 ajacoutot Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.22.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		multimedia x11
 
@@ -41,11 +41,11 @@ LIB_DEPENDS =		audio/libcdio \
 			converters/libiconv \
 			devel/libdvdread \
 			devel/sdl2 \
-			graphics/ffmpeg>=20151112 \
+			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/lcms2 \
 			multimedia/libass \
-			multimedia/libbluray>=0.8.0 \
+			multimedia/libbluray \
 			multimedia/libdvdnav \
 			multimedia/libv4l
 
@@ -102,23 +102,22 @@ WRKBUILD =		${WRKSRC}/${MACHINE_ARCH}
 CFLAGS +=		-march=i586
 .endif
 
+DO_WAF =		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} \
+				${WAF} ${MAKE_FLAGS}
+
 post-patch:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${WAF} \
-				${MAKE_FLAGS} configure ${CONFIGURE_ARGS}
+	${DO_WAF} configure ${CONFIGURE_ARGS}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${WAF} \
-				${MAKE_FLAGS} build -v
+	${DO_WAF} build -v
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${WAF} \
-				${MAKE_FLAGS} install
+	${DO_WAF} install
 	${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
-	                ${WRKDIST}/TOOLS/umpv \
-	                	${PREFIX}/share/examples/mpv
+		${WRKDIST}/TOOLS/umpv ${PREFIX}/share/examples/mpv
 	${MODPY_BIN_ADJ} ${PREFIX}/share/examples/mpv/umpv
 	sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,g' ${PREFIX}/man/man1/mpv.1
 
