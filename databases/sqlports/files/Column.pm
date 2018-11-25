@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.9 2010/10/02 10:26:17 espie Exp $
+# $OpenBSD: Column.pm,v 1.10 2018/11/25 15:04:10 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,6 +120,12 @@ sub realname
 {
 	my ($self, $t) = @_;
 	return $self->table.".FULLPKGPATH";
+}
+
+sub view_schema
+{
+	my ($self, $t) = @_;
+	return ($self->table."."."Id AS PathId", $self->SUPER::view_schema($t));
 }
 
 sub normal_schema

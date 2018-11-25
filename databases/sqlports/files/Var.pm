@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.33 2018/11/19 19:58:28 espie Exp $
+# $OpenBSD: Var.pm,v 1.34 2018/11/25 15:04:10 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -129,6 +129,12 @@ sub subselect_compact
 sub group_by
 {
 	return ();
+}
+
+sub want_in_ports_view
+{
+	my $self = shift;
+	return !defined $self->table;
 }
 
 # for distinction later

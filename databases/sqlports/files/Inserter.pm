@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.17 2018/11/21 16:00:49 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.18 2018/11/25 15:04:10 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -77,7 +77,8 @@ sub new
 		transaction => 0,
 		threshold => $i,
 		vars => {},
-		tables_created => {},
+		table_created => {},
+		view_created => {},
 		errors => [],
 		done => {},
 		todo => {},
@@ -157,8 +158,6 @@ sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
 
-	return if defined $self->{tables_created}{$class->table};
-
 	unshift(@columns, PathColumn->new);
 	for my $c (@columns) {
 		$c->set_vartype($class) unless defined $c->{vartype};
@@ -184,16 +183,10 @@ sub make_ordered_view
 	unshift(@group, 'fullpkgpath');
 	my $groupby = join(', ', @group);
 	my $result = join(',', @group, 'group_concat(value, " ") as value');
-	return if defined $self->{view_created}{$view};
-	$self->{view_created}{$view} = 1;
-
-	my $v = qq{
-	    CREATE VIEW $view as 
+	$self->new_object('VIEW', $class->table."_ordered",
+	    qq{as 
 	    	with o as ($subselect)
-	    select $result from o group by $groupby;};
-	print "$v\n" if $self->{verbose};
-	$self->db->do("DROP VIEW IF EXISTS $view");
-	$self->db->do($v);
+	    select $result from o group by $groupby;});
 }
 
 sub set
@@ -218,18 +211,32 @@ sub insert_done
 	$self->{transaction}++;
 }
 
+sub new_object
+{
+	my ($self, $type, $name, $request) = @_;
+	my $o;
+	if ($type eq 'VIEW') {
+		return if defined $self->{view_created}{$name};
+		$self->{view_created}{$name} = 1;
+		$o = $self->view_name($name);
+	} elsif ($type eq 'TABLE') {
+		return if defined $self->{table_created}{$name};
+		$self->{table_created}{$name} = 1;
+		$o = $self->table_name($name);
+	} else {
+		die "unknown object type";
+	}
+	$self->db->do("DROP $type IF EXISTS $o");
+	$request = "CREATE $type $o $request";
+	print "$request\n" if $self->{verbose};
+	$self->db->do($request);
+}
+
 sub new_table
 {
 	my ($self, $name, @cols) = @_;
 
-	my $t = $self->table_name($name);
-	return if defined $self->{tables_created}{$name};
-
-	$self->db->do("DROP TABLE IF EXISTS $t");
-	my $request = "CREATE TABLE $name (".join(', ', @cols).")";
-	print "$request\n" if $self->{verbose};
-	$self->db->do($request);
-	$self->{tables_created}{$name} = 1;
+	$self->new_object('TABLE', $name, "(".join(', ', @cols).")");
 }
 
 sub prepare
@@ -383,22 +390,16 @@ sub create_view
 	my ($self, $table, @columns) = @_;
 
 	unshift(@columns, PathColumn->new);
-	my $view = $self->view_name($table);
-	return if defined $self->{view_created}{$view};
-	$self->{view_created}{$view} = 1;
 	my @l = $self->map_columns('view', $table, @columns);
 	my @j = $self->map_columns('join', $table, @columns);
-	my $v = "CREATE VIEW $view AS SELECT ".join(", ", @l). " FROM ".$self->table_name($table).' '.join(' ', @j);
-	print "$v\n" if $self->{verbose};
-	$self->db->do("DROP VIEW IF EXISTS $view");
-	$self->db->do($v);
+	$self->new_object('VIEW', $table,
+	    "AS SELECT ".join(", ", @l). " FROM ".
+	    $self->table_name($table).' '.join(' ', @j));
 }
 
 sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
-
-	return if defined $self->{tables_created}{$class->table};
 
 	$self->SUPER::make_table($class, $constraint, @columns);
 	$self->create_view($class->table, @columns);
@@ -417,9 +418,7 @@ sub create_path_table
 sub handle_column
 {
 	my ($self, $column) = @_;
-	# if there's an extra table, it doesn't end up in the default view
-	# (yet)
-	if (!defined($column->{vartype}->table)) {
+	if ($column->{vartype}->want_in_ports_view) {
 		$self->SUPER::handle_column($column);
 	}
 }
