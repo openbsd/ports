@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.34 2018/11/25 15:04:10 espie Exp $
+# $OpenBSD: Var.pm,v 1.35 2018/11/25 16:28:32 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -787,7 +787,22 @@ sub add
 	$self->AnyVar::add($ins);
 	open my $file, '<', $self->value or return;
 	local $/ = undef;
-	$self->add_value($ins, <$file>);
+	$self->add_value($ins, <$file>, $self->value);
+}
+
+sub column_names
+{
+	return ("VALUE", "Filename");
+}
+
+sub unique_names
+{
+	return ("Filename");
+}
+
+sub columns
+{
+	return (ValueColumn->new, TextColumn->new("Filename"));
 }
 
 package ReadmeVar;

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.82 2018/11/25 15:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2018/11/25 16:28:32 espie Exp $
 
 CATEGORIES =		databases
-V =			6.17
+V =			6.18
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -34,7 +34,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 	${SUBST_PROGRAM} ${FILESDIR}/scripts/print-ports-index ${PREFIX}/bin/print-ports-index
-	${PREFIX}/bin/print-ports-index ${DBNAME} >${PREFIX}/share/ports-INDEX
+	${PREFIX}/bin/print-ports-index ${DBNAME}-compact >${PREFIX}/share/ports-INDEX
 	@for i in ${DBS}; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share; \
 	done
