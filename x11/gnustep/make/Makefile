@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2018/11/26 14:17:13 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 WANTLIB =	${COMPILER_LIBCXX}
 LIBRARY_COMBO =		"ng-gnu-gnu"
-CONFIGURE_ENV +=	GS_WITH_ARC=1 CXX=clang++ CC=clang AS=llvm-as CPP="clang -E"
+CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as
 .else
 WANTLIB =	${COMPILER_LIBCXX}
 LIBRARY_COMBO =		"gnu-gnu-gnu"

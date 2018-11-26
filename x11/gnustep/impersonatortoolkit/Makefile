@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/26 14:17:13 sebastia Exp $
 
 COMMENT =	web cookies sniffer and providing proxy
 
 ONLY_FOR_ARCHS =	${MODCLANG_ARCHS}
 
-REVISION =	5
+REVISION =	6
 DISTNAME =	ImpersonatorToolKit-0.3
 CATEGORIES =	net security
 

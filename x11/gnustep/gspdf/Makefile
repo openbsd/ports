@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/11/26 14:17:13 sebastia Exp $
 
 COMMENT=	PDF, PS and EPS viewer for GNUstep
 
-REVISION =	8
+REVISION =	9
 DISTNAME=	GSPdf-0.5
 
 HOMEPAGE=	http://gap.nongnu.org/gspdf/

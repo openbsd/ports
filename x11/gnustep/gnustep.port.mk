@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.30 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: gnustep.port.mk,v 1.31 2018/11/26 14:17:12 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -15,11 +15,13 @@ COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-CONFIGURE_ENV +=	CC="clang" CXX="clang++" CPP="clang -E"
+# Force using ld.bfd, there's a still unknown problem loading Bundles when
+# ld.lld is used
+CONFIGURE_ENV +=	LDFLAGS="-fuse-ld=bfd"
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
 # Not yet GS_WITH_ARC
 #MAKE_FLAGS +=		GS_WITH_ARC=1
-MAKE_FLAGS +=		CC="clang" CXX="clang++" CPP="clang -E"
+MAKE_FLAGS +=		LDFLAGS="-fuse-ld=bfd"
 MAKE_FLAGS +=		OPTFLAG="${CFLAGS}"
 .else
 MAKE_FLAGS +=  		CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"

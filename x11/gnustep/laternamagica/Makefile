@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/07 21:17:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2018/11/26 14:17:13 sebastia Exp $
 
 COMMENT=	view images and do slideshows
 
 DISTNAME =	LaternaMagica-0.5
+REVISION =	0
 
 HOMEPAGE=	http://gap.nongnu.org/laternamagica/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}

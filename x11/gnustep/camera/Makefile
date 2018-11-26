@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/26 14:17:12 sebastia Exp $
 
 COMMENT =	GNUstep frontent to libgphoto2
 
 DISTNAME =	Camera-0.8
-REVISION =	6
+REVISION =	7
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	graphics
 
