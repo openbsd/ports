@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2018/11/26 16:41:20 juanfra Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -65,7 +65,7 @@ PKGVERSION =	4.8.7
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
-MASTER_SITES =  https://download.qt.io/official_releases/qt/4.8/${VERSION}/
+MASTER_SITES =  https://download.qt.io/archive/qt/4.8/${VERSION}/
 
 HOMEPAGE =	http://www.qt.io/
 
