@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/23 16:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/26 21:33:55 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20171105
 RTAG =		6496
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
 
@@ -48,7 +48,8 @@ MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
 		CXX="${CXX}" \
 		STRIP=true \
 		PACKAGE_REPOSITORY=1 \
-		HAVE_XMP=0
+		HAVE_XMP=0 \
+		NOASM=1
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 NO_TEST =	Yes
