@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2018/11/12 21:30:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.154 2018/11/26 21:47:01 sthen Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -81,7 +81,6 @@
      SUBDIR += p5-Math-BaseCnv
      SUBDIR += p5-Math-Bezier
      SUBDIR += p5-Math-BigInt-GMP
-     SUBDIR += p5-Math-BigInt-Pari
      SUBDIR += p5-Math-Calc-Units
      SUBDIR += p5-Math-Derivative
      SUBDIR += p5-Math-FFT
@@ -91,7 +90,6 @@
      SUBDIR += p5-Math-Int128
      SUBDIR += p5-Math-Int64
      SUBDIR += p5-Math-MatrixReal
-     SUBDIR += p5-Math-Pari
      SUBDIR += p5-Math-Random-ISAAC
      SUBDIR += p5-Math-Round
      SUBDIR += p5-Math-Spline

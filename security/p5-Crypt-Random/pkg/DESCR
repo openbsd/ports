@@ -1,2 +1,0 @@
-Crypt::Random is an interface module to the /dev/random device found on most
-modern Unix systems.
