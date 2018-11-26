@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.47 2018/11/17 12:19:08 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.48 2018/11/26 22:53:41 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -75,9 +75,12 @@ sub create_missing_vars
 
 sub handle_path
 {
-	my ($self, $pkgpath) = @_;
+	my ($self, $pkgpath, $equivs) = @_;
 	$self->create_missing_vars($pkgpath);
 	my $key = $pkgpath->fullpkgpath;
+	while (defined $equivs->{$key}) {
+		$key = $equivs->{$key};
+	}
 	if ($pkgpath->{info}{done}) {
 		print "--- $key (already done)\n";
 		return;
@@ -125,18 +128,13 @@ if ($opt_p) {
 my $walker = MyTreeWalker->new($inserter);
 $walker->dump_all_dirs;
 
-print "Aliases\n";
-for my $v (PkgPath->seen) {
-	next unless defined $v->{needalias};
-	my $alias = $v->{info}{canonical};
-	if (defined $alias) {
-		print $v->fullpkgpath, "->", $alias->fullpkgpath, "\n";
-		$walker->inserter->add_path($v->fullpkgpath, $alias->fullpkgpath);
-	} else {
-		print "!!! Can't figure out alias for ", $v->fullpkgpath, "\n";
+for my $p (sort keys %{$walker->{equivs}}) {
+	my $a = $walker->{equivs}{$p};
+	while (defined $walker->{equivs}{$a}) {
+		$a = $walker->{equivs}{$a};
 	}
+	$walker->inserter->add_path($p, $a);
 }
-
 $walker->inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {

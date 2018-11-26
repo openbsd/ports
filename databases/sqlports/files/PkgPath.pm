@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.5 2015/04/19 12:08:02 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.6 2018/11/26 22:53:41 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -60,6 +60,8 @@ sub equates
 
 sub simplifies_to
 {
+	my ($self, $simpler, $walker) = @_;
+	$walker->{equivs}{$self->fullpkgpath} = $simpler->fullpkgpath;
 }
 
 sub change_multi

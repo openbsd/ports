@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.8 2018/11/17 10:39:40 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.9 2018/11/26 22:53:41 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -62,8 +62,8 @@ sub parse_dump
 	my $subdir;
 	my $reset = sub {
 		$h = PkgPath->handle_equivalences($self, $h, $subdirs);
-		for my $pkgpath (values %$h) {
-			$self->handle_path($pkgpath);
+		for my $pkgpath (sort values %$h) {
+			$self->handle_path($pkgpath, $self->{equivs});
 		}
 		$h = {};
 	};
