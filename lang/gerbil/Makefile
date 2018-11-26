@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/26 22:35:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2018/11/26 22:39:03 juanfra Exp $
 
-COMMENT=	dialect of Scheme designed for systems programming
+COMMENT =	dialect of Scheme designed for systems programming
 
 GH_ACCOUNT =	vyzo
 GH_PROJECT =	gerbil
 GH_TAGNAME =	v0.14
 
-CATEGORIES=	lang
+CATEGORIES =	lang
 
 HOMEPAGE =	https://cons.io/
 
@@ -35,7 +35,7 @@ NO_TEST =	Yes
 GERBIL_ROOT =	${PREFIX}/gerbil
 
 do-build:
-	cd ${WRKSRC}/src && env -i ${MAKE_ENV} ./build.sh
+	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ./build.sh
 
 do-install:
 	${INSTALL_DATA_DIR} ${GERBIL_ROOT}
