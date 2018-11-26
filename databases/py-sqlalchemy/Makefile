@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/06/27 05:15:45 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2018/11/26 20:33:48 danj Exp $
 
 COMMENT-main =		database toolkit for Python
 COMMENT-docs =		documentation and examples for sqlalchemy
@@ -9,8 +9,8 @@ FULLPKGNAME-main =	${MODPY_PY_PREFIX}sqlalchemy-${MODPY_EGG_VERSION}
 FULLPKGPATH-main =	databases/py-sqlalchemy${MODPY_FLAVOR},-main
 FULLPKGNAME-docs =	py-sqlalchemy-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs =	databases/py-sqlalchemy,-docs
-REVISION-main =		2
-REVISION-docs =		0
+REVISION-main =		3
+REVISION-docs =		1
 
 CATEGORIES =		databases
 
@@ -24,6 +24,8 @@ WANTLIB-main +=		${MODPY_WANTLIB} pthread
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
+
+SUBST_VARS+=		MODPY_FLAVOR
 
 RUN_DEPENDS +=		databases/py-sqlalchemy,-docs
 RUN_DEPENDS-docs =	#empty
