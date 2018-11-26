@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2017/02/19 06:16:25 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2018/11/26 18:57:27 naddy Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
 VERSION ?= 		2.5
@@ -14,6 +14,7 @@ USE_GMAKE ?=		Yes
 MAKE_FLAGS += 		CC=${CC} \
 			CXX=${CXX} \
 			DEBUG=1 \
+			PIC=1 \
 			V=1 \
 			OPTFLAGS=
 
