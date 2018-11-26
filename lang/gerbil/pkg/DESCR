@@ -1,0 +1,10 @@
+Gerbil is an opinionated dialect of Scheme designed for Systems
+Programming, with a state of the art macro and module system on top of
+the Gambit runtime.
+
+The macro system is based on quote-syntax, and provides the full
+meta-syntactic tower with a native implementation of syntax-case. It
+also provides a full-blown module system, similar to PLT Scheme's
+(sorry, Racket) modules. The main difference from Racket is that
+Gerbil modules are single instantiation, supporting high performance
+ahead of time compilation and compiled macros.

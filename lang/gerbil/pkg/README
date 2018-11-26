@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2018/11/26 22:35:30 juanfra Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuration
+=============
+
+Gerbil scheme expects that GERBIL_HOME environment variable is set and
+binaries exists in users PATH.  In order to do this, you need to set
+following in your shell profile after installing Gerbil:
+
+ GERBIL_HOME=${PREFIX}/gerbil
+ PATH=$PATH:$GERBIL_HOME/bin
+ export GERBIL_HOME PATH

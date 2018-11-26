@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_std_build-features_ss,v 1.1.1.1 2018/11/26 22:35:30 juanfra Exp $
+
+Index: src/std/build-features.ss
+--- src/std/build-features.ss.orig
++++ src/std/build-features.ss
+@@ -1,7 +1,7 @@
+ ;; This file is meant to be include'd by build-config.ss
+ 
+ ;; build std/xml libraries - requires libxml2
+-(enable libxml #f)
++(enable libxml #t)
+ 
+ ;; build std/text/yaml library - requires libyaml
+ (enable libyaml #f)
