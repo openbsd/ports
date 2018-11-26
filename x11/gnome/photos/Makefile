@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/09/04 14:59:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2018/11/26 14:36:01 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -8,6 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.28.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -26,7 +27,7 @@ WANTLIB += json-glib-1.0 kvm lzma m nghttp2 nspr4 nss3 nssutil3
 WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread rest-0.7 smime3
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 uuid xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z ${COMPILER_LIBCXX}
 WANTLIB += tracker-control-${TRACKER_API}
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data

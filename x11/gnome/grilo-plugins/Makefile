@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/09/27 16:57:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2018/11/26 14:36:01 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -8,6 +8,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.8
+REVISION=	0
 
 API=		0.3
 SUBST_VARS=	API
@@ -22,8 +23,6 @@ WANTLIB += gobject-2.0 grilo-0.3 grlnet-0.3 grlpls-0.3 gstreamer-1.0
 WANTLIB += intl json-glib-1.0 mediaart-2.0 oauth soup-2.4 sqlite3
 WANTLIB += totem-plparser xml2
 WANTLIB += tracker-sparql-${TRACKER_API}
-WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 MODULES=	devel/meson \
 		x11/gnome
