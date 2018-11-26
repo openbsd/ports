@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/11 18:23:25 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/26 16:50:51 juanfra Exp $
 @bin bin/fasm
 share/doc/fasm/
 share/doc/fasm/fasm.txt
+share/doc/fasm/libcdemo/
+share/doc/fasm/libcdemo/ccall.inc
+share/doc/fasm/libcdemo/libcdemo.asm
 share/doc/fasm/license.txt
 share/doc/fasm/readme.txt
 share/doc/fasm/whatsnew.txt

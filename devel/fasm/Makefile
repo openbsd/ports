@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/09 01:05:36 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2018/11/26 16:50:51 juanfra Exp $
 
 ONLY_FOR_ARCHS =	i386
 
 COMMENT =		flat assembler
-DISTNAME =		fasm-1.71.22
+DISTNAME =		fasm-1.73.04
 CATEGORIES =		devel lang
 HOMEPAGE =		http://flatassembler.net/
 MAINTAINER =		Dmitri Alenichev <mitya@rockers.su>
@@ -19,11 +19,18 @@ NO_TEST =		Yes
 WRKSRC =		${WRKDIR}/fasm
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} fasm.o -o fasm
+	cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -Wl,-znotext fasm.o -o fasm && \
+		rm fasm.o && ./fasm source/libc/fasm.asm fasm.o && rm fasm && \
+		${CC} ${CFLAGS} -Wl,-znotext fasm.o -o fasm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fasm ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fasm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fasm/libcdemo
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/doc/fasm
+	${INSTALL_DATA} ${WRKSRC}/examples/libcdemo/*.asm \
+		${WRKSRC}/examples/libcdemo/*.inc \
+		${PREFIX}/share/doc/fasm/libcdemo
 
 .include <bsd.port.mk>
