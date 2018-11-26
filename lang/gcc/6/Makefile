@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/11/05 11:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/11/26 22:21:31 sthen Exp $
 
-ONLY_FOR_ARCHS = alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
+USE_LLD=No
+
+ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
 V = 6.4.0
@@ -127,11 +129,7 @@ MAKE_ENV += ${EXTRA_ENV}
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS = -O1 -g
-.else
 CFLAGS = -O2 -g
-.endif
 
 CONFIGURE_ARGS += \
 	--verbose \
@@ -149,7 +147,8 @@ CONFIGURE_ARGS += \
 	--enable-languages=${LANGS} \
 	--disable-libstdcxx-pch \
 	--enable-default-ssp \
-	--enable-default-pie
+	--enable-default-pie \
+	--without-isl
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
@@ -186,7 +185,7 @@ PKG_ARGS += -DX86=0
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
 	${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sh" || \
-	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+	${MACHINE_ARCH} == "sparc64"
 PKG_ARGS += -DITM=1
 .else
 PKG_ARGS += -DITM=0
@@ -249,11 +248,6 @@ post-extract:
 .if ${BUILD_PACKAGES:M-ada}
 	perl -pi -e 's,^#define (_GCOMPILER_LIBCXX_HAVE_GETS) .*,/* #undef $$1 */,' \
 		${WRKDIR}/bootstrap/include/c++/*/*/bits/c++config.h
-.endif
-
-post-configure:
-.if ${MACHINE_ARCH} == "alpha"
-	sed -i -e 's,-O2,-O1,g' ${WRKDIR}/build-alpha/Makefile
 .endif
 
 post-install:
