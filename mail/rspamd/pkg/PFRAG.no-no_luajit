@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.luajit,v 1.1 2018/08/21 17:11:08 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_luajit,v 1.1 2018/11/26 22:14:06 sthen Exp $
 lib/rspamd/libTH.so
 lib/rspamd/libTHNN.so
 lib/rspamd/libdecisiontree.so

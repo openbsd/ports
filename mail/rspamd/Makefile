@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2018/10/31 21:48:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2018/11/26 22:14:06 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	1.8.1
-REVISION=	0
+GH_TAGNAME=	1.8.2
 
 CATEGORIES=	mail
 
@@ -19,7 +18,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c crypto event glib-2.0 gthread-2.0 icudata icui18n icuuc
 WANTLIB += intl m magic pcre pthread sqlite3 ssl z
 
+FLAVORS=	no_luajit
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+FLAVOR?=
+.else
+FLAVOR=		no_luajit
+.endif
+
 MODULES=	devel/cmake
+
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gettext \
 		devel/glib2 \
@@ -44,19 +51,18 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRSPAMD_USER="_rspamd" \
 		-DRSPAMD_GROUP="_rspamd"
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-LIB_DEPENDS+=	lang/luajit \
-		math/lapack
-WANTLIB+=	blas lapack luajit-5.1
-PKG_ARGS +=     -Dluajit=1
-.else
+.if ${FLAVOR:Mno_luajit}
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0 \
 		-DENABLE_TORCH=0
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.3
+MODLUA_SA=	Yes	# avoid overwriting FULLPKGNAME
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
-PKG_ARGS +=     -Dluajit=0
+.else
+LIB_DEPENDS+=	lang/luajit \
+		math/lapack
+WANTLIB+=	blas lapack luajit-5.1
 .endif
 
 # Make sure we pick up the base libevent, never the ports one!

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/10/17 20:38:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2018/11/26 22:14:06 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
-%%luajit%%
+!%%no_luajit%%
 @rcscript ${RCDIR}/rspamd
 @sample ${SYSCONFDIR}/rspamd/
 @bin bin/rspamadm
@@ -242,6 +242,7 @@ share/rspamd/lib/lua_auth_results.lua
 share/rspamd/lib/lua_cfg_transform.lua
 share/rspamd/lib/lua_clickhouse.lua
 share/rspamd/lib/lua_dkim_tools.lua
+share/rspamd/lib/lua_fuzzy.lua
 share/rspamd/lib/lua_maps.lua
 share/rspamd/lib/lua_meta.lua
 share/rspamd/lib/lua_nn.lua
@@ -256,6 +257,7 @@ share/rspamd/lib/rescore_utility.lua
 share/rspamd/lib/rspamadm/
 share/rspamd/lib/rspamadm/confighelp.lua
 share/rspamd/lib/rspamadm/configwizard.lua
+share/rspamd/lib/rspamadm/cookie.lua
 share/rspamd/lib/rspamadm/corpus_test.lua
 share/rspamd/lib/rspamadm/fuzzy_convert.lua
 share/rspamd/lib/rspamadm/fuzzy_stat.lua
