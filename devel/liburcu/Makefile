@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/27 07:04:17 jca Exp $
-
-BROKEN-hppa =		undefined reference to __sync atomic ops
+# $OpenBSD: Makefile,v 1.14 2018/11/27 07:06:36 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
@@ -30,7 +28,7 @@ WANTLIB =		pthread
 
 # For atomic builtins
 MODULES+=		gcc4
-MODGCC4_ARCHS=		alpha
+MODGCC4_ARCHS=		alpha hppa
 # Thread-local storage emulation from clang or lang/gcc doesn't work in
 # regress tests.
 CONFIGURE_ENV =		ac_cv_tls=none
