@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/11/23 15:31:22 jca Exp $
+# $OpenBSD: Makefile,v 1.82 2018/11/27 13:53:29 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -35,6 +35,15 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -nopie ${LDFLAGS}" \
 			ac_cv_header_execinfo_h=no
 CFLAGS+=		-fno-pie
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlld}
+# ld -Z not supported
+.elif ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "i386"
+# No need for ld -Z
+.else
+CONFIGURE_ENV+=		EMACS_LD_SWITCH_SYSTEM="-Z"
+.endif
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 			LOGNAME="${SHAREOWN}"
