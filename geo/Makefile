@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/08/06 09:17:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.62 2018/11/27 18:04:09 landry Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -64,6 +64,7 @@
      SUBDIR += py-proj
      SUBDIR += py-proj,python3
      SUBDIR += py-shapely
+     SUBDIR += py-shapely,python3
      SUBDIR += qgis
      SUBDIR += qlandkartegt
      SUBDIR += ruby-findmyiphone
