@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.663 2018/11/27 08:30:15 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.664 2018/11/27 13:54:15 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -286,6 +286,8 @@ my $stem_extensions = {
 	'ValyriaTear' => 'valyriatear',
 	'apertium-es-ast_NO-PN' => 'apertium-es-ast',
 	'py-pafy' => 'py3-pafy',
+	'py-libmagic' => 'py-magic',
+	'py3-libmagic' => 'py3-magic',
 };
 
 my $obsolete_reason = {
