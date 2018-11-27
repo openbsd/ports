@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/31 12:27:23 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/27 08:25:13 jca Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
@@ -35,10 +35,6 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 
 FLAVORS =		python3
 FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		net/py-czmq
-.endif
 
 do-test:
 	@${MODPY_TEST_TARGET}
