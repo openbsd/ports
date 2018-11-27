@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/25 14:23:42 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/file_magic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/magic.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
