@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/17 09:19:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2018/11/27 16:32:48 rpointel Exp $
 
 COMMENT =	information gathering suite
 
-VERSION =	3.0
+VERSION =	3.0.1
 DISTNAME =	theharvester-${VERSION}
 
 GH_ACCOUNT =	laramies
@@ -20,8 +20,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
 
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
 BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
-RUN_DEPENDS =	www/py-requests
+RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR}
 
 MODPY_ADJ_FILES =	theHarvester.py
 
