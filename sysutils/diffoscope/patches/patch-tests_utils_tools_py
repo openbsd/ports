@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_utils_tools_py,v 1.1.1.1 2018/11/27 20:35:18 bcallah Exp $
+
+Our file(1) does not have a -v flag.
+Lie and produce the version number diffoscope is looking for.
+
+Index: tests/utils/tools.py
+--- tests/utils/tools.py.orig
++++ tests/utils/tools.py
+@@ -29,7 +29,7 @@ from distutils.version import LooseVersion
+ 
+ def file_version():
+     return subprocess.check_output(
+-        ('file', '-v'),
++        ('echo', '5.33'),
+     ).decode('utf-8').splitlines()[0].split('-')[-1]
+ 
+ 
