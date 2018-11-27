@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.20 2018/11/27 08:28:34 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.21 2018/11/27 10:36:17 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -170,7 +170,7 @@ sub make_table
 sub subselect
 {
 	my ($self, $class) = @_;
-	return $class->subselect;
+	return $class->subselect($self);
 }
 
 sub make_ordered_view
@@ -322,12 +322,13 @@ sub create_canonical_depends
 	my ($self, $class) = @_;
 	my $t = $class->table;
 	my $id = $self->id;
+	my $p = $self->table_name("Paths");
 	$self->new_object('VIEW', "canonical_depends",
 		qq{as select 
 		    p1.canonical as fullpkgpath, 
 		    p2.canonical as dependspath, $t.type from $t 
-		join paths p1 on p1.$id=$t.fullpkgpath
-		join paths p2 on p2.$id=$t.dependspath});
+		join $p p1 on p1.$id=$t.fullpkgpath
+		join $p p2 on p2.$id=$t.dependspath});
 }
 
 sub commit_to_db
@@ -361,7 +362,7 @@ sub view_name
 sub subselect
 {
 	my ($self, $class) = @_;
-	return $class->subselect_compact;
+	return $class->subselect_compact($self);
 }
 
 sub convert_depends
@@ -413,11 +414,12 @@ sub create_view
 	my ($self, $table, @columns) = @_;
 
 	unshift(@columns, PathColumn->new);
-	my @l = $self->map_columns('view', \@columns, $table);
-	my @j = $self->map_columns('join', \@columns, $table);
+	my $t = $self->table_name($table);
+	my @l = $self->map_columns('view', \@columns, $t, $self);
+	my @j = $self->map_columns('join', \@columns, $t, $self);
 	$self->new_object('VIEW', $table,
 	    "AS SELECT ".join(", ", @l). " FROM ".
-	    $self->table_name($table).' '.join(' ', @j));
+	    $t.' '.join(' ', @j));
 }
 
 sub make_table

@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.36 2018/11/25 17:08:48 espie Exp $
+# $OpenBSD: Var.pm,v 1.37 2018/11/27 10:36:17 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -115,15 +115,15 @@ sub normal_insert
 
 sub subselect
 {
-	my $self = shift;
-	my $t = $self->table;
+	my ($self, $inserter) = @_;
+	my $t = $inserter->table_name($self->table);
 	return "select fullpkgpath, value from $t order by n";
 }
 
 sub subselect_compact
 {
-	my $self = shift;
-	return $self->subselect;
+	my ($self, $inserter) = @_;
+	return $self->subselect($inserter);
 }
 
 sub group_by
@@ -366,8 +366,8 @@ sub group_by
 
 sub subselect
 {
-	my $self = shift;
-	my $t = $self->table;
+	my ($self, $inserter) = @_;
+	my $t = $inserter->table_name($self->table);
 	return "select fullpkgpath, fulldepends as value, type from $t order by n";
 }
 
@@ -539,9 +539,9 @@ sub add
 
 sub subselect_compact
 {
-	my $self = shift;
-	my $t = $self->table;
-	my $k = $self->keyword_table;
+	my ($self, $inserter) = @_;
+	my $t = $inserter->table_name($self->table);
+	my $k = $inserter->table_name($self->keyword_table);
 	return "select fullpkgpath, $k.value from $t join $k on $k.keyref=$t.value order by n";
 }
 
@@ -592,8 +592,8 @@ sub columns
 
 sub subselect
 {
-	my $self = shift;
-	my $t = $self->table;
+	my ($self, $inserter) = @_;
+	my $t = $inserter->table_name($self->table);
 	return qq{
     select fullpkgpath,
 	case quotetype 

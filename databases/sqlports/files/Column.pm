@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.11 2018/11/27 08:28:34 espie Exp $
+# $OpenBSD: Column.pm,v 1.12 2018/11/27 10:36:17 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,7 +51,7 @@ sub normal_schema
 
 sub view_schema
 {
-	my ($self, $t) = @_;
+	my ($self, $t, $inserter) = @_;
 	return $self->realname($t)." AS ".$self->name;
 }
 
@@ -124,8 +124,9 @@ sub realname
 
 sub view_schema
 {
-	my ($self, $t) = @_;
-	return ($self->table."."."Id AS PathId", $self->SUPER::view_schema($t));
+	my ($self, $t, $inserter) = @_;
+	return ($self->table."."."Id AS PathId", 
+	    $self->SUPER::view_schema($t, $inserter));
 }
 
 sub normal_schema
@@ -136,8 +137,8 @@ sub normal_schema
 
 sub join_schema
 {
-	my ($self, $table) = @_;
-	return "JOIN Paths ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
+	my ($self, $table, $inserter) = @_;
+	return "JOIN ".$inserter->table_name("Paths")." ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
 }
 
 package ValueColumn;
@@ -172,9 +173,9 @@ sub realname
 
 sub join_schema
 {
-	my ($self, $table) = @_;
+	my ($self, $table, $inserter) = @_;
 	if (defined $self->k) {
-		return "JOIN ".$self->k." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
+		return "JOIN ".$inserter->table_name($self->k)." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
 	}
 }
 
@@ -189,8 +190,8 @@ sub normal_schema
 
 sub join_schema
 {
-	my ($self, $table) = @_;
-	return "LEFT ".$self->SUPER::join_schema($table);
+	my ($self, $table, $inserter) = @_;
+	return "LEFT ".$self->SUPER::join_schema($table, $inserter);
 }
 
 1;
