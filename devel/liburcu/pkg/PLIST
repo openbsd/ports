@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/12 15:02:32 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/27 07:40:21 jca Exp $
 include/urcu/
 include/urcu-bp.h
 include/urcu-call-rcu.h
@@ -19,6 +19,7 @@ include/urcu/lfstack.h
 include/urcu/list.h
 include/urcu/map/
 include/urcu/map/urcu-bp.h
+include/urcu/map/urcu-mp.h
 include/urcu/map/urcu-qsbr.h
 include/urcu/map/urcu.h
 include/urcu/rcuhlist.h
@@ -28,6 +29,7 @@ include/urcu/rculfstack.h
 include/urcu/rculist.h
 include/urcu/ref.h
 include/urcu/static/
+include/urcu/static/bkp-wfqueue.h
 include/urcu/static/lfstack.h
 include/urcu/static/rculfqueue.h
 include/urcu/static/rculfstack.h
