@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1790 2018/11/23 17:16:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.1791 2018/11/27 13:53:43 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1445,12 +1445,12 @@
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
-     SUBDIR += py-libmagic
-     SUBDIR += py-libmagic,python3
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common
      SUBDIR += py-logilab-common,python3
+     SUBDIR += py-magic
+     SUBDIR += py-magic,python3
      SUBDIR += py-mccabe
      SUBDIR += py-mccabe,python3
      SUBDIR += py-minimock
