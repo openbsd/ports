@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.19 2018/11/25 17:08:48 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.20 2018/11/27 08:28:34 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -149,9 +149,9 @@ sub create_view_info
 
 sub map_columns
 {
-	my ($self, $mapper, $o, @columns) = @_;
+	my ($self, $mapper, $colref, @p) = @_;
 	$mapper .= '_schema';
-	return grep {defined $_} (map {$_->$mapper($o)} @columns);
+	return grep {defined $_} (map {$_->$mapper(@p)} @$colref);
 }
 
 sub make_table
@@ -162,7 +162,7 @@ sub make_table
 	for my $c (@columns) {
 		$c->set_vartype($class) unless defined $c->{vartype};
 	}
-	my @l = $self->map_columns('normal', $self, @columns);
+	my @l = $self->map_columns('normal', \@columns, $self);
 	push(@l, $constraint) if defined $constraint;
 	$self->new_table($class->table, @l);
 }
@@ -289,7 +289,7 @@ sub create_ports_table
 
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	unshift(@columns, PathColumn->new);
-	my @l = $self->map_columns('normal', $self, @columns);
+	my @l = $self->map_columns('normal', \@columns, $self);
 	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
 }
 
@@ -413,8 +413,8 @@ sub create_view
 	my ($self, $table, @columns) = @_;
 
 	unshift(@columns, PathColumn->new);
-	my @l = $self->map_columns('view', $table, @columns);
-	my @j = $self->map_columns('join', $table, @columns);
+	my @l = $self->map_columns('view', \@columns, $table);
+	my @j = $self->map_columns('join', \@columns, $table);
 	$self->new_object('VIEW', $table,
 	    "AS SELECT ".join(", ", @l). " FROM ".
 	    $self->table_name($table).' '.join(' ', @j));

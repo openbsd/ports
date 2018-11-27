@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.10 2018/11/25 15:04:10 espie Exp $
+# $OpenBSD: Column.pm,v 1.11 2018/11/27 08:28:34 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -45,7 +45,7 @@ sub name
 
 sub normal_schema
 {
-	my ($self, $inserter, $class) = @_;
+	my ($self, $inserter) = @_;
 	return $self->name." ".$self->sqltype;
 }
 
@@ -130,7 +130,7 @@ sub view_schema
 
 sub normal_schema
 {
-	my ($self, $inserter, $class) = @_;
+	my ($self, $inserter) = @_;
 	return $inserter->pathref($self->name);
 }
 
@@ -191,24 +191,6 @@ sub join_schema
 {
 	my ($self, $table) = @_;
 	return "LEFT ".$self->SUPER::join_schema($table);
-}
-
-package OptCoalesceColumn;
-our @ISA = qw(OptValueColumn);
-
-sub realname
-{
-	my ($self, $t) = @_;
-	return "group_concat(".$self->SUPER::realname($t).", ' ')";
-}
-
-package CoalesceColumn;
-our @ISA = qw(ValueColumn);
-
-sub realname
-{
-	my ($self, $t) = @_;
-	return "group_concat(".$self->SUPER::realname($t).", ' ')";
 }
 
 1;
