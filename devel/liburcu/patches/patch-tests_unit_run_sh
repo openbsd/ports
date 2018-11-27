@@ -1,0 +1,32 @@
+$OpenBSD: patch-tests_unit_run_sh,v 1.1 2018/11/27 12:04:36 jca Exp $
+
+Drop dep on bash
+
+Index: tests/unit/run.sh
+--- tests/unit/run.sh.orig
++++ tests/unit/run.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Copyright (C) 2013 - Christian Babeux <christian.babeux@efficios.com>
+ #               2016 - Michael Jeanson <mjeanson@efficios.com>
+@@ -19,7 +19,7 @@
+ #
+ 
+ INPUT=$1
+-ARGS=()
++ARGS=
+ shift 1
+ 
+ if [ -z "${INPUT}" ]; then
+@@ -28,7 +28,7 @@ if [ -z "${INPUT}" ]; then
+ fi
+ 
+ if [ "x$V" == "x1" ]; then
+-    ARGS+=('-v')
++    ARGS='-v'
+ fi
+ 
+-prove "${@}" "${ARGS[@]}" --merge --exec '' - < "${INPUT}"
++prove "${@}" ${ARGS} --merge --exec '' - < "${INPUT}"

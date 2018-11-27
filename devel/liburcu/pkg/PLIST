@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/11/27 08:31:18 jca Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/11/27 12:04:36 jca Exp $
 include/urcu/
 include/urcu-bp.h
 include/urcu-call-rcu.h
@@ -13,6 +13,7 @@ include/urcu/arch/generic.h
 include/urcu/cds.h
 include/urcu/compiler.h
 include/urcu/config.h
+include/urcu/debug.h
 include/urcu/futex.h
 include/urcu/hlist.h
 include/urcu/lfstack.h
@@ -38,6 +39,7 @@ include/urcu/static/urcu.h
 include/urcu/static/wfcqueue.h
 include/urcu/static/wfqueue.h
 include/urcu/static/wfstack.h
+include/urcu/syscall-compat.h
 include/urcu/system.h
 include/urcu/tls-compat.h
 include/urcu/uatomic/
@@ -77,9 +79,9 @@ lib/pkgconfig/liburcu-qsbr.pc
 lib/pkgconfig/liburcu-signal.pc
 lib/pkgconfig/liburcu.pc
 share/doc/userspace-rcu/
-share/doc/userspace-rcu/ChangeLog
-share/doc/userspace-rcu/README
-share/doc/userspace-rcu/cds-api.txt
+share/doc/userspace-rcu/LICENSE
+share/doc/userspace-rcu/README.md
+share/doc/userspace-rcu/cds-api.md
 share/doc/userspace-rcu/examples/
 share/doc/userspace-rcu/examples/Makefile
 share/doc/userspace-rcu/examples/Makefile.examples.template
@@ -166,5 +168,6 @@ share/doc/userspace-rcu/examples/wfstack/Makefile.cds_wfs_push
 share/doc/userspace-rcu/examples/wfstack/cds_wfs_pop.c
 share/doc/userspace-rcu/examples/wfstack/cds_wfs_pop_all_blocking.c
 share/doc/userspace-rcu/examples/wfstack/cds_wfs_push.c
-share/doc/userspace-rcu/rcu-api.txt
-share/doc/userspace-rcu/uatomic-api.txt
+share/doc/userspace-rcu/rcu-api.md
+share/doc/userspace-rcu/solaris-build.md
+share/doc/userspace-rcu/uatomic-api.md

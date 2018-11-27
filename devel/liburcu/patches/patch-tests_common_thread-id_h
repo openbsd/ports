@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_common_thread-id_h,v 1.2 2018/11/27 08:31:18 jca Exp $
+$OpenBSD: patch-tests_common_thread-id_h,v 1.3 2018/11/27 12:04:36 jca Exp $
 
 XXX not portable, but used by tests only.
 
 Index: tests/common/thread-id.h
 --- tests/common/thread-id.h.orig
 +++ tests/common/thread-id.h
-@@ -63,6 +63,14 @@ unsigned long urcu_get_thread_id(void)
+@@ -69,6 +69,14 @@ unsigned long urcu_get_thread_id(void)
  	return pthread_getsequence_np(&thr);
  }
  
