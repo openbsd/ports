@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/20 14:03:39 jsg Exp $
+# $OpenBSD: Makefile,v 1.13 2018/11/27 07:04:17 jca Exp $
 
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
@@ -31,9 +31,6 @@ WANTLIB =		pthread
 # For atomic builtins
 MODULES+=		gcc4
 MODGCC4_ARCHS=		alpha
-.if ${MACHINE_ARCH} == "alpha"
-MODGCC4_VERSION=	4.6
-.endif
 # Thread-local storage emulation from clang or lang/gcc doesn't work in
 # regress tests.
 CONFIGURE_ENV =		ac_cv_tls=none
