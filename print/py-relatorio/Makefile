@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/12 01:45:10 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2018/11/27 13:56:12 danj Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
-MODPY_EGG_VERSION=	0.8.0
+MODPY_EGG_VERSION=	0.8.1
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		print textproc
 
 HOMEPAGE=		http://relatorio.tryton.org/
+
+MAINTAINER =		Sebastien Marie <semarie@online.fr>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +26,7 @@ FLAVORS=		python3
 
 RUN_DEPENDS=		www/py-genshi${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
-			devel/py-libmagic${MODPY_FLAVOR}
+			devel/py-magic${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS+=		graphics/pycha \
