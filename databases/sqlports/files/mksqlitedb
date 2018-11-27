@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.48 2018/11/26 22:53:41 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.49 2018/11/27 16:31:25 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,7 +92,6 @@ sub handle_path
 	}
 	$pkgpath->{info}->reclaim;
 	$pkgpath->{info}{done} = 1;
-	$pkgpath->{info}{canonical} = $pkgpath;
 	$pkgpath->{done} = 1;
 	$self->inserter->finish_port;
 }
@@ -128,13 +127,16 @@ if ($opt_p) {
 my $walker = MyTreeWalker->new($inserter);
 $walker->dump_all_dirs;
 
+# Create aliases, we have to sort the keys so that they are
+# created in the right pkgpath order
 for my $p (sort keys %{$walker->{equivs}}) {
-	my $a = $walker->{equivs}{$p};
+	my $a = $p;
 	while (defined $walker->{equivs}{$a}) {
 		$a = $walker->{equivs}{$a};
 	}
 	$walker->inserter->add_path($p, $a);
 }
+
 $walker->inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.9 2018/11/26 22:53:41 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.10 2018/11/27 16:31:25 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -121,9 +121,6 @@ sub dump_all_dirs
 				delete $v->{tried};
 				if (defined $v->{want}) {
 					delete $v->{want};
-					if (!defined $v->{done}) {
-						$v->{needalias} = 1;
-					}
 				}
 				next;
 			}
