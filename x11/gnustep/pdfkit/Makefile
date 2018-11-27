@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/27 11:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/27 21:46:25 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
@@ -19,6 +19,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	${MAKE_ENV}
 CONFIGURE_ARGS =	--with-freetype2-add-includes=${X11BASE}/include \
 			--with-freetype2-includes=${X11BASE}/include/freetype2
-MAKE_FLAGS =		PDFKit_INTERFACE_VERSION=${LIBPDFKit_VERSION}
+MAKE_FLAGS =		PDFKit_INTERFACE_VERSION=${LIBPDFKit_VERSION} \
+			LDFLAGS=-fuse-ld=bfd
 
 .include <bsd.port.mk>

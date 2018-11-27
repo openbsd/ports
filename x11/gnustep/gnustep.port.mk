@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.31 2018/11/26 14:17:12 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.32 2018/11/27 21:46:25 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -19,9 +19,10 @@ MODCLANG_ARCHS =	amd64 i386
 # ld.lld is used
 CONFIGURE_ENV +=	LDFLAGS="-fuse-ld=bfd"
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
+# Another MAKE_FLAGS -fuse-ld=bfd in pdfkit, doesn't pick up MAKE_ENV
+MAKE_ENV +=		LDFLAGS="-fuse-ld=bfd"
 # Not yet GS_WITH_ARC
 #MAKE_FLAGS +=		GS_WITH_ARC=1
-MAKE_FLAGS +=		LDFLAGS="-fuse-ld=bfd"
 MAKE_FLAGS +=		OPTFLAG="${CFLAGS}"
 .else
 MAKE_FLAGS +=  		CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
