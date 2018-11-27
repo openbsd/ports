@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.662 2018/11/25 20:35:18 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.663 2018/11/27 08:30:15 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1074,6 +1074,7 @@ my $obsolete_reason = {
 	'py-hgnested' => 5,
 	'py-keyczar' => 6,
 	'py-hg-git' => 5,
+	'py-czmq' => 3,
 };
 
 # reasons for obsolete packages
