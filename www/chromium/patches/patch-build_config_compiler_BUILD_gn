@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.22 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.23 2018/11/27 18:20:51 naddy Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -30,7 +30,7 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -386,19 +386,11 @@ config("compiler") {
+@@ -386,18 +386,14 @@ config("compiler") {
      }
  
      ldflags += [
@@ -39,7 +39,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
--
+ 
 -    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
 -    # the executable they are loaded into, so they are unresolved at link-time.
 -    if (!using_sanitizer && !is_safestack) {
@@ -47,11 +47,12 @@ Index: build/config/compiler/BUILD.gn
 -        "-Wl,-z,defs",
 -        "-Wl,--as-needed",
 -      ]
--    }
++    if (current_cpu == "x86" && is_openbsd) {
++      ldflags += [ "-Wl,-z,notext" ]
+     }
    }
  
-   # Linux-specific compiler flags setup.
-@@ -502,7 +494,7 @@ config("compiler") {
+@@ -502,7 +498,7 @@ config("compiler") {
    }
  
    if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
@@ -60,7 +61,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -793,7 +785,7 @@ config("compiler_cpu_abi") {
+@@ -793,7 +789,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -69,7 +70,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1511,10 +1503,6 @@ config("default_warnings") {
+@@ -1511,10 +1507,6 @@ config("default_warnings") {
          cflags += [
            # TODO(thakis): https://crbug.com/753973
            "-Wno-enum-compare-switch",
@@ -80,7 +81,7 @@ Index: build/config/compiler/BUILD.gn
          ]
        }
      }
-@@ -1701,7 +1689,7 @@ config("thin_archive") {
+@@ -1701,7 +1693,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -89,7 +90,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    }
  }
-@@ -2228,7 +2216,7 @@ config("symbols") {
+@@ -2228,7 +2220,7 @@ config("symbols") {
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
