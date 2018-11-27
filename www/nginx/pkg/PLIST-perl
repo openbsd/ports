@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-perl,v 1.2 2018/09/28 14:36:17 sthen Exp $
+@comment $OpenBSD: PLIST-perl,v 1.3 2018/11/27 14:55:07 landry Exp $
 ${P5ARCH}/
 ${P5ARCH}/auto/
+${P5ARCH}/auto/nginx/
+${P5ARCH}/auto/nginx/nginx.so
 ${P5ARCH}/nginx.pm
-${P5ARCH}/nginx.so
 @cwd /var/www/modules
 ngx_http_perl_module.so

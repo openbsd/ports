@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2018/11/10 08:43:34 landry Exp $
+# $OpenBSD: Makefile,v 1.128 2018/11/27 14:55:07 landry Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -31,6 +31,7 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+REVISION-perl=0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -199,10 +200,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/nginx/html/
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/modules/
 	${INSTALL_DATA} ${WRKSRC}/objs/*.so ${WRKINST}/var/www/modules/
-	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/auto/
+	${INSTALL_DATA_DIR} ${PREFIX}/${P5ARCH}/auto/nginx/
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
-		${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/
+		${PREFIX}/${P5ARCH}/
 	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
-		${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/
+		${PREFIX}/${P5ARCH}/auto/nginx/
 
 .include <bsd.port.mk>
