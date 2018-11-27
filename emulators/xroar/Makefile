@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/18 00:18:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/27 19:39:11 juanfra Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-0.35.1
+DISTNAME =		xroar-0.35.2
 
 CATEGORIES =		emulators
 
@@ -38,5 +38,12 @@ CONFIGURE_ENV =		GL_LIBS="-L${X11BASE}/lib" CC="${CC}" OBJC="${CC}" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =		Yes
+
+ALL_TARGET =		all html
+INSTALL_TARGET =	install install-html
+
+post-install:
+	${INSTALL_DATA} ${WRKDIST}/doc/*.png ${WRKDIST}/doc/*.pdf \
+		${PREFIX}/share/doc/xroar
 
 .include <bsd.port.mk>
