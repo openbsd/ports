@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/11/27 07:06:36 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2018/11/27 07:12:35 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		urcu
 GH_PROJECT =		userspace-rcu
 GH_TAGNAME =		v0.8.9
 DISTNAME =		liburcu-${GH_TAGNAME:S/^v//}
+REVISION =		0
 
 SHARED_LIBS +=  urcu-bp                   0.0 # 2.0
 SHARED_LIBS +=  urcu-cds                  0.0 # 2.0
@@ -17,7 +18,7 @@ SHARED_LIBS +=  urcu                      0.0 # 2.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://liburcu.org/
+HOMEPAGE =		https://liburcu.org/
 
 MAINTAINER = 		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
