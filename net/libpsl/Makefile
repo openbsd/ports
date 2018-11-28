@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/27 23:32:15 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2018/11/28 13:08:19 jca Exp $
 
 COMMENT =		public suffix list library
 
@@ -33,9 +33,9 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS +=	--enable-builtin=libidn2 \
 			--enable-runtime=libidn2
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 pre-configure:
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
