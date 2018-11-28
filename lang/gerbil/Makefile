@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/26 22:39:03 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2018/11/28 21:13:12 juanfra Exp $
 
 COMMENT =	dialect of Scheme designed for systems programming
 
@@ -28,7 +28,8 @@ RUN_DEPENDS =	devel/git \
 
 MAKE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
-		GERBIL_PATH=${LOCALBASE}/gerbil
+		GERBIL_PATH=${LOCALBASE}/gerbil \
+		GAMBCOMP_VERBOSE=1
 
 NO_TEST =	Yes
 
