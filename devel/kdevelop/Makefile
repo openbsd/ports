@@ -1,28 +1,27 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2018/11/28 19:29:04 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
-VERSION =	5.2.3
+VERSION =	5.3.0
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformDocumentation 0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformInterfaces    0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformLanguage      0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformOutputView    0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformProject       0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSerialization 0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformShell         0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSublime       0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformTests         0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformUtil          0.0 # 5.2
-SHARED_LIBS +=  KDevPlatformVcs           0.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDebugger      1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDocumentation 1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformInterfaces    1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformLanguage      1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformOutputView    1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformProject       1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSerialization 1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformShell         1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSublime       1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformTests         1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformUtil          1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformVcs           1.0 # 5.2
 
 CATEGORIES =	devel x11
 
@@ -53,6 +52,7 @@ MODULES =	devel/kf5 \
 		lang/python
 
 BUILD_DEPENDS =	archivers/gtar \
+		lang/clazy \
 		devel/boost \
 		devel/cppcheck \
 		devel/gettext-tools \
@@ -62,10 +62,12 @@ RUN_DEPENDS =	devel/cmake \
 		devel/cppcheck \
 		devel/desktop-file-utils \
 		devel/gmake \
+		lang/clazy \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic \
-		x11/kde-applications/konsole \
-		x11/kde-applications/kate
+		x11/kde-applications/kate \
+		x11/kde-applications/kio-extras \
+		x11/kde-applications/konsole
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/karchive \
@@ -99,6 +101,8 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/qt5/qtwebkit
 
 CONFIGURE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets:BOOL=true
+
+TEST_IS_INTERACTIVE =	X11
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
