@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.5 2013/11/11 15:00:51 espie Exp $
+# $OpenBSD: make-readmes,v 1.6 2018/11/28 14:57:45 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -45,89 +45,89 @@ my $template = Template->new(
 
 my $info_req = $db->prepare(
 	qq{select
-		paths.id,
-		paths.fullpkgpath,
-		ports.comment,
-		ports.homepage,
-		descr.value,
+		_paths.id,
+		_paths.fullpkgpath,
+		_ports.comment,
+		_ports.homepage,
+		_descr.value,
 		fullpkgname,
 		permit_cd.value,
 		permit_ftp.value
-	    from paths 
-		join Ports on paths.id=Ports.fullpkgpath 
-		left join Descr on paths.id=Descr.fullpkgpath
-		join keywords2 permit_cd 
-		    on ports.permit_package_cdrom=permit_cd.keyref
-		join keywords2 permit_ftp 
-		    on ports.permit_package_ftp=permit_ftp.keyref
-	    order by paths.fullpkgpath});
+	    from _paths 
+		join _Ports on _paths.id=_Ports.fullpkgpath 
+		left join _Descr on _paths.id=_Descr.fullpkgpath
+		join _keywords2 permit_cd 
+		    on _ports.permit_package_cdrom=permit_cd.keyref
+		join _keywords2 permit_ftp 
+		    on _ports.permit_package_ftp=permit_ftp.keyref
+	    order by _paths.fullpkgpath});
 my ($id, $path, $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp);
 $info_req->bind_columns(\($id, $path,  $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp));
 
 my $dep_req = $db->prepare(
 	q{select 
-		depends.type,
-		depends.fulldepends,
+		_depends.type,
+		_depends.fulldepends,
 		t2.fullpkgpath
-	from depends 
-		join paths on depends.dependspath=paths.id
-		join paths t2 on paths.canonical=t2.id
-	where depends.fullpkgpath=?
-		order by depends.fulldepends
+	from _depends 
+		join _paths on _depends.dependspath=_paths.id
+		join _paths t2 on _paths.canonical=t2.id
+	where _depends.fullpkgpath=?
+		order by _depends.fulldepends
 	});
 my ($type, $fulldepends, $dependspath);
 $dep_req->bind_columns(\($type, $fulldepends, $dependspath));
 my $multi_req = $db->prepare(
 	q{select
-		ports.fullpkgname,
+		_ports.fullpkgname,
 		t2.fullpkgpath
-	    from multi 
-	    	join paths on multi.subpkgpath=paths.id
-		join paths t2 on paths.canonical=t2.id
-		join ports on paths.canonical=ports.fullpkgpath
-	    where multi.fullpkgpath=?
+	    from _multi 
+	    	join _paths on _multi.subpkgpath=_paths.id
+		join _paths t2 on _paths.canonical=t2.id
+		join _ports on _paths.canonical=_ports.fullpkgpath
+	    where _multi.fullpkgpath=?
 	    });
 my ($multi, $subpath);
 $multi_req->bind_columns(\($multi, $subpath));
 my $only_for = $db->prepare(
 	q{select
-		Arch.value
-	    from OnlyForArch
-	    	join Arch on arch.keyref=OnlyForArch.value
-	    where OnlyForArch.fullpkgpath=?
-	    order by Arch.value
+		_Arch.value
+	    from _OnlyForArch
+	    	join _Arch on _arch.keyref=_OnlyForArch.value
+	    where _OnlyForArch.fullpkgpath=?
+	    order by _Arch.value
 	});
 my $arch;
 $only_for->bind_columns(\($arch));
 my $not_for = $db->prepare(
 	q{select
-		Arch.value
-	    from NotforArch
-	    	join Arch on arch.keyref=NotForArch.value
-	    where NotForArch.fullpkgpath=?
-	    order by Arch.value
+		_Arch.value
+	    from _NotforArch
+	    	join _Arch on _arch.keyref=_NotForArch.value
+	    where _NotForArch.fullpkgpath=?
+	    order by _Arch.value
 	});
 $not_for->bind_columns(\($arch));
 
 my $category;
 my $cat_req = $db->prepare(
 	q{select
-		categorykeys.value
-	    from categories
-	    	join categorykeys on categorykeys.keyref=categories.value
-	    where categories.fullpkgpath=?
-	    order by categorykeys.value
+		_categorykeys.value
+	    from _categories
+	    	join _categorykeys on _categorykeys.keyref=_categories.value
+	    where _categories.fullpkgpath=?
+	    order by _categorykeys.value
 	    });
 $cat_req->bind_columns(\($category));
 
 my $broken_req = $db->prepare(
 	q{select
-		arch.value,
-		broken.value
-	    from broken
-	    	left join arch on arch.keyref=broken.arch
+		_arch.value,
+		_broken.value
+	    from _broken
+	    	left join _arch on _arch.keyref=_broken.arch
 	    where fullpkgpath=?
-	    order by arch.value});
+	    order by _arch.value});
 	
 my $broken;
 $broken_req->bind_columns(\($arch, $broken));

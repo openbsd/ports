@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.21 2018/11/27 10:36:17 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.22 2018/11/28 14:57:45 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -350,13 +350,13 @@ our $c = {
 sub table_name
 {
 	my ($class, $name) = @_;
-	return $name;
+	return "_$name";
 }
 
 sub view_name
 {
 	my ($class, $name) = @_;
-	return "_$name";
+	return $name;
 }
 
 sub subselect

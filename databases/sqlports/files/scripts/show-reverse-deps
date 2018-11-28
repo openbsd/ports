@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.2 2018/11/25 17:51:04 espie Exp $
+# $OpenBSD: show-reverse-deps,v 1.3 2018/11/28 14:57:45 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -30,19 +30,17 @@ if [ $# -ge 2 ]
 then
     file=$2
 else
-    file=${TRUEPREFIX}/share/sqlports-compact
+    file=${TRUEPREFIX}/share/sqlports
 fi
 cat <<EOSQL |sqlite3 $file
 with recursive d (fullpkgpath, dependspath) as
 	(select root.fullpkgpath, root.dependspath 
-		from _canonical_depends root
-			join paths on root.dependspath=paths.canonical
-				and paths.fullpkgpath="$1"
+		from canonical_depends root
+			join _paths on root.dependspath=_paths.canonical
+				and _paths.fullpkgpath="$1"
 	    union
 	    select child.fullpkgpath, child.dependspath
-	    from d parent, _canonical_depends child  where parent.fullpkgpath=child.dependspath)
-select distinct(paths.fullpkgpath) from d join paths on paths.id=d.fullpkgpath
-order by paths.fullpkgpath;
+	    from d parent, canonical_depends child  where parent.fullpkgpath=child.dependspath)
+select distinct(_paths.fullpkgpath) from d join _paths on _paths.id=d.fullpkgpath
+order by _paths.fullpkgpath;
 EOSQL
-
-	    

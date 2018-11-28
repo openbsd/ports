@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/11 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/11/28 14:57:45 espie Exp $
 
 COMMENT =		readmes.html
 
@@ -10,7 +10,7 @@ CATEGORIES =		databases
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS =	databases/sqlports,-compact>=2.2 \
+BUILD_DEPENDS =	databases/sqlports>=7.0 \
 		databases/p5-DBD-SQLite \
 		textproc/p5-Template
 
@@ -21,7 +21,7 @@ STATIC_PLIST = No
 do-build:
 	TEMPLATESDIR=${FILESDIR} \
 	OUTPUTDIR=${WRKBUILD} \
-	DATABASE=${LOCALBASE}/share/sqlports-compact \
+	DATABASE=${LOCALBASE}/share/sqlports \
 	    perl ${FILESDIR}/make-readmes
 
 READMES_DIR = ${PREFIX}/share/ports-readme

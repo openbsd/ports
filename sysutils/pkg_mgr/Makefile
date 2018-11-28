@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/25 20:24:18 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2018/11/28 14:57:45 espie Exp $
 
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.2.3
 CATEGORIES=	sysutils
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://rhaalovely.net/pkg_mgr/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
@@ -21,7 +21,7 @@ NO_TEST=	yes
 
 RUN_DEPENDS=	devel/p5-Curses-UI \
 		databases/p5-DBD-SQLite \
-		databases/sqlports,-compact
+		databases/sqlports>=7.0
 
 PKG_ARCH=	*
 

@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.88 2018/11/27 10:36:17 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2018/11/28 14:57:45 espie Exp $
 
 CATEGORIES =		databases
-V =			6.21
+V =			7.0
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
-COMMENT-main =		${COMMENT}, user version
-COMMENT-compact =	${COMMENT}, program version
+COMMENT-main =		${COMMENT}
 COMMENT-list =		full list of pkgpaths in ports
 MAINTAINER =		Marc Espie <espie@openbsd.org>
-PKGNAME-compact =	sqlports-compact-$V
 PKGNAME-main =		sqlports-$V
 PKGNAME-list =		portslist-$V
 
 PERMIT_PACKAGE_CDROM =	Yes
-MULTI_PACKAGES =	-main -compact -list
+MULTI_PACKAGES =	-main -list
 
 DBNAME =		${WRKBUILD}/sqlports
-DBS =			${DBNAME}.list ${DBNAME} ${DBNAME}-compact
+DBS =			${DBNAME}.list ${DBNAME}
 BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 			databases/sqlite3
 RUN_DEPENDS-main =	databases/sqlite3
-RUN_DEPENDS-compact =	databases/sqlite3
 
 SCRIPTS = print-ports-index show-reverse-deps
 
@@ -31,14 +28,14 @@ do-build:
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
-	${LOCALBASE}/bin/sqlite3 ${DBNAME}-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >${DBNAME}.list
+	${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 .for s in ${SCRIPTS}
 	@${SUBST_PROGRAM} ${FILESDIR}/scripts/$s ${PREFIX}/bin/$s
 .endfor
-	${PREFIX}/bin/print-ports-index ${DBNAME}-compact >${PREFIX}/share/ports-INDEX
+	${PREFIX}/bin/print-ports-index ${DBNAME} >${PREFIX}/share/ports-INDEX
 	@for i in ${DBS}; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share; \
 	done

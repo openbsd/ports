@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.5 2018/11/25 16:28:32 espie Exp $
+# $OpenBSD: print-ports-index,v 1.6 2018/11/28 14:57:45 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -21,48 +21,48 @@ if [ $# -ge 1 ]
 then
     file=$1
 else
-    file=${TRUEPREFIX}/share/sqlports-compact
+    file=${TRUEPREFIX}/share/sqlports
 fi
 cat <<'EOSQL' |sqlite3 $file
 -- in order for group_concat to sort, you must do it in two steps
 with 
     d1 (d, p, t) as 
 	(select 
-	    distinct((case pkgspec when '' then '' else pkgspec||":" end)||paths.fullpkgpath) as fd,
-	    depends.fullpkgpath, type
-	from depends join paths on Paths.Id=depends.dependspath order by fd),
+	    distinct((case pkgspec when '' then '' else pkgspec||":" end)||_paths.fullpkgpath) as fd,
+	    _depends.fullpkgpath, type
+	from _depends join _paths on _Paths.Id=_depends.dependspath order by fd),
 -- and now the part that's going to be used 3 times in the main request
     d2 as
 	(select group_concat(d, ' ') as dlist, p, t
 	from d1 group by p, t)
-select fullpkgname,_ports.fullpkgpath,
+select fullpkgname,ports.fullpkgpath,
     (case prefix when '/usr/local' THEN "" else prefix end),
-      comment,descr.filename, maintainer,_categories_ordered.value,
+      comment,descr.filename, maintainer,categories_ordered.value,
     libd.dlist, buildd.dlist, rund.dlist,
 
 
-     (case 1 when _ports.pathid in 
+     (case 1 when ports.pathid in 
 -- thankful for for 2ndary tables, because onlyforarch has a weird value
 -- when !defined, that cannot be tested for
-	(select fullpkgpath from onlyforarch) 
-	then _onlyforarch_ordered.value
-	else (case 1 when _ports.pathid in 
-	    (select fullpkgpath from notforarch) 
-	    then "!"||_notforarch_ordered.value
+	(select fullpkgpath from _onlyforarch) 
+	then onlyforarch_ordered.value
+	else (case 1 when ports.pathid in 
+	    (select fullpkgpath from _notforarch) 
+	    then "!"||notforarch_ordered.value
 	    else "any" 
 	end) 
    end),
     (case lower(PERMIT_PACKAGE_CDROM) when "yes" then "y" else "n" end),
     (case lower(PERMIT_PACKAGE_FTP) when "yes" then "y" else "n" end),
     (case lower(PERMIT_DISTFILES_FTP) when "yes" then "y" else "n" end)
-    from _ports
-    	left join d2 as libd on libd.p=_ports.pathid and libd.t=0
-    	left join d2 as buildd on buildd.p=_ports.pathid and buildd.t=2
-    	left join d2 as rund on rund.p=_ports.pathid and rund.t=1
-	join descr on descr.fullpkgpath=_ports.pathid
-	join _categories_ordered on _categories_ordered.fullpkgpath=_ports.pathid
-	left join _onlyforarch_ordered on _onlyforarch_ordered.fullpkgpath=_ports.pathid
-	left join _notforarch_ordered on _notforarch_ordered.fullpkgpath=_ports.pathid
-     	where _ports.pathid in (select distinct canonical from paths) 
-	order by _ports.fullpkgpath;
+    from ports
+    	left join d2 as libd on libd.p=ports.pathid and libd.t=0
+    	left join d2 as buildd on buildd.p=ports.pathid and buildd.t=2
+    	left join d2 as rund on rund.p=ports.pathid and rund.t=1
+	join descr on descr.pathid=ports.pathid
+	join categories_ordered on categories_ordered.fullpkgpath=ports.pathid
+	left join onlyforarch_ordered on onlyforarch_ordered.fullpkgpath=ports.pathid
+	left join notforarch_ordered on notforarch_ordered.fullpkgpath=ports.pathid
+     	where ports.pathid in (select distinct canonical from _paths) 
+	order by ports.fullpkgpath;
 EOSQL

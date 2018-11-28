@@ -1,111 +1,154 @@
 SQLite database of every port in the system. This can be queried through
 e.g., sqlitebrowser, or any kind of programming interface.
 
-This is more suitable for human consumption, use sqlite-compact for
-more structured information.
+This schema is mostly optimized for tools, and cumbersome to query by
+hand.
+
+Human users are strongly advised to mostly use views on those tables.
 
 Database Schema:
-- Ports(FULLPKGPATH, ...)
-holds all the information retrieved through various variables, e.g.,:
+- _Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
+PKGPATH points to a PATHS entry corresponding to the stripped down version of 
+FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
+is already stripped.  Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
+in the database points to this table.
+The FULLPKGPATH is complete, including flavors and pseudo flavors markers. 
+For every port with MULTI_PACKAGES settings, one entry is written 
+for each SUBPACKAGE.
+CANONICAL points to the actual ID to use as an entry in other tables, for
+FULLPKGPATH which don't have their own entry.
+
+- _Ports(FULLPKGPATH, ...)
+holds all the information retrieved through various variables that is not
+stored in specialized tables, e.g.,:
     AUTOCONF_VERSION 
     AUTOMAKE_VERSION 
-    BROKEN 
-    *DEPENDS 
-    CATEGORIES
+    COMES_WITH
     COMMENT 
-    CONFIGURE_STYLE 
-    DESCR 
+    COMPILER
+    COMPILER_LANGS
     DISTFILES 
     DISTNAME 
     DIST_SUBDIR 
     EPOCH
     FIX_EXTRACT_PERMISSIONS
-    FLAVORS 
     FULLPKGNAME
     GH_*
     HOMEPAGE 
+    IGNORE
     IS_INTERACTIVE 
     MAINTAINER
-    MAKEFILE_LIST
-    MASTER_SITES*
-    MODULES 
-    MULTI_PACKAGES 
     NO_*
-    NOT_FOR_ARCHS
-    ONLY_FOR_ARCHS 
+    PATCHFILES
     PERMIT_*
     PKGNAME 
     PKGSPEC
+    PKGSTEM
     PKG_ARCH 
+    PORTROACH
+    PORTROACH_COMMENT
     PREFIX
     PSEUDO_FLAVOR
-    PSEUDO_FLAVORS 
-    TEST_IS_INTERACTIVE 
     REVISION
-    SEPARATE_BUILD 
-    SHARED_LIBS 
-    SUBPACKAGE 
-    SUPDISTFILES 
-    TARGETS
+    SEPARATE_BUILD
+    STATIC_PLIST
+    SUBPACKAGE
+    SUPDISTFILES
+    TEST_IS_INTERACTIVE 
+    UPDATE_PLIST_ARGS
     USE_*
-    WANTLIB 
-    README
-    COMPILER
-    COMPILER_LANGS
-    COMPILER_LINKS
 
-This information is mostly unchanged, except for replacing Yes/No variables
-with 1/0. Variables not present in a given port are left undefined.
-
-README corresponds to README files (full text value) and only exists when
-such files are present.
+Some of this information is stored as indexes in keyword tables.
+and Yes/No variables have been replaced with 1/0.
+Variables not present in a given port are left undefined.
 
 Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
 Note that USE_WXNEEDED is 3-valued: 2 is special, 1 is yes, undef is no.
 
-The FULLPKGPATH is complete, including flavor and pseudo-flavors markers.
-For every port with MULTI_PACKAGES settings, one entry is written for 
-each SUBPACKAGE.
+MULTI_PACKAGES ports hold several entries with corresponding FULLPKGPATH
 
-- Paths (FULLPKGPATH, PKGPATH, CANONICAL)
-PKGPATH is the stripped down version or FULLPKGPATH, without flavors 
-or subpackage markers.
-CANONICAL points to the reduced version.
-
-- Flavors(FULLPKGPATH, VALUE)
-- Categories(FULLPKGPATH, VALUE)
-- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
-- Makefiles(FULLPKGPATH, VALUE)
-- Modules(FULLPKGPATH, VALUE)
-- Configure(FULLPKGPATH, VALUE)
-- ConfigureArgs(FULLPKGPATH, VALUE)
-- NotForArch(FULLPKGPATH, VALUE)
-- OnlyForArch(FULLPKGPATH, VALUE)
-- Targets(FULLPKGPATH, VALUE)
+- _Flavors(FULLPKGPATH, VALUE, N)
+- _PseudoFlavors(FULLPKGPATH, VALUE, N)
+- _Categories(FULLPKGPATH, VALUE, N)
+- _Multi(FULLPKGPATH, VALUE, SUBPKGPATH, N)	('-' values are not stored)
+- _Modules(FULLPKGPATH, VALUE, N)
+- _Configure(FULLPKGPATH, VALUE, N) 	(corresponds to CONFIGURE_STYLE)
+- _ConfigureArgs(FULLPKGPATH, VALUE, N, QUOTETYPE)
+- _MasterSites(FULLPKGPATH, N, VALUE)
+- _Makefiles(FULLPKGPATH, VALUE, N)
+- _NotForArch(FULLPKGPATH, VALUE, N)
+- _OnlyForArch(FULLPKGPATH, VALUE, N)
 All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)
 
-Makefiles holds the stuff from MAKEFILE_LIST that's specific to a given port
-with all default entries stripped away.
+The Makefiles table contains only Makefiles from MAKEFILE_LIST that are not
+"default values" (always included makefiles).
 
-- Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
+Each keyword table follows the same scheme
+TABLENAME(KEYREF, VALUE)
+
+
+- _Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE, N)
 All depends are stored in a single table, including the type:
-R -> run
-L -> lib
-B -> build
-T -> test
+0 -> library
+1 -> run
+2 -> build
+3 -> test
 with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
 we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
 the rest.
-- Wantlib(FULLPKGPATH, VALUE)
-All the libraries the FULLPKGPATH depends upon, with and without version number,
+
+- _DPBProperties (FULLPKGPATH, VALUE, N)
+- _Wantlib(FULLPKGPATH, VALUE, EXTRA)
+All the libraries the FULLPKGPATH depends upon, with optional version 
+number specification stored in EXTRA
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
-- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
-with SUBPKGPATH the normalized pkgpath for that subpackage.
+- _Multi(FULLPKGPATH, VALUE, SUBPKGPATH, N)
+also contains the normalized pkgpath for the corresponding subpackage.
 
-- BROKEN(FULLPKGPATH, ARCH, VALUE)
-All the broken entries, which might be arch-dependent.
+- _PkgPaths(FULLPKGPATH, Value, N)
+all build_packages associated to a fullpkgpath.
 
-- Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
+- _Broken(FULLPKGPATH, ARCH, TEXT)
+
+- _Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
+
+- _SubstVars(FULLPKGPATH, VALUE, N)
+
+- _TARGETS(FULLPKGPATH, VALUE)
+
+Some information, both in the main table and in secondary tables 
+is stored as keyword references to other tables:
+AUTOCONF_VERSION, AUTOMAKE_VERSION -> _AUTOVERSION
+_DPBProperties.value -> _DPBKeys
+MAINTAINER -> _EMAIL
+CATEGORIES -> _CATEGORYKEYS
+CONFIGURE -> _CONFIGURE_KEYS
+MAKEFILES -> _FILENAMES
+MODULES -> _MODULEKEYS
+PREFIX -> _PREFIX
+_WANTLIB.VALUE, _SHARED_LIBS.LIBNAME -> _LIBRARY
+PERMIT_*, SEPARATE_BUILD -> _KEYWORDS2
+FLAVORS, PSEUDO_FLAVORS -> _KEYWORDS
+NOT_FOR_ARCHS, ONLY_FOR_ARCHS, PKG_ARCH -> _ARCH
+_SubstVars.value -> _substvarskey
+TARGETS -> _TARGETKEYS
+
+Views are still evolving. Useful views:
+* Ports: contains all info from _ports and from secondary tables with indices
+replaces.
+* Depends_ordered, Categories_ordered, CompilerLinks_Ordered,
+Configureargs_ordered, Configure_ordered, DPBProperties_ordered,
+Flavors_ordered, Makefiles_ordered, Modules_ordered, NotForArch_ordered,
+OnlyforArch_ordered, PkgPaths_ordered, PseudoFlavors_ordered,
+SubstVars_ordered, Targets_ordered: reconstituted lists of text values as
+a single string from the corresponding table.
+* each "keyword" list also has a corresponding view, e.g.,
+_BROKEN -> BROKEN (PathId, FULLPKGPATH, Arch, Value)
+with text fields, and PathId still the index entry for the fullpkgpath,
+suitable for further joins.
+
+* canonical_depends: fullpkgpath/dependspath/dependstype from _depends but
+normalized as canonical paths.

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.49 2018/11/27 16:31:25 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.50 2018/11/28 14:57:45 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -109,13 +109,8 @@ if (@ARGV > 0) {
 	$dbname = 'sqlports';
 }
 
-my $inserter = InserterList->new;
-
 my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
-my $db2 = DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '',
-    {AutoCommit => 0});
-my $normal = NormalInserter->new($db, 1000, $opt_v);
-$inserter->add($normal, CompactInserter->new($db2, 1000, $opt_v));
+my $inserter = CompactInserter->new($db, 1000, $opt_v);
 
 
 $inserter->create_tables($Info::vars);
