@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.46 2018/11/17 00:20:50 jca Exp $
-@conflict samba-<ldb-1.3.6p2
+@comment $OpenBSD: PLIST-main,v 1.47 2018/11/28 16:36:05 jca Exp $
+@conflict samba-<ldb-1.3.6p5
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -958,7 +958,6 @@ lib/samba/libiov-buf-samba4.so
 @lib lib/samba/libkdc-samba4.so.${LIBkdc-samba4_VERSION}
 @lib lib/samba/libkrb5-samba4.so.${LIBkrb5-samba4_VERSION}
 lib/samba/libkrb5samba-samba4.so
-lib/samba/libldb-cmdline-samba4.so
 lib/samba/libldbsamba-samba4.so
 lib/samba/liblibcli-lsa3-samba4.so
 lib/samba/liblibcli-netlogon3-samba4.so

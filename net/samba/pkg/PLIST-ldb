@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-ldb,v 1.5 2018/11/17 00:20:50 jca Exp $
-@conflict samba-<4.8.6p0
+@comment $OpenBSD: PLIST-ldb,v 1.6 2018/11/28 16:36:05 jca Exp $
+@conflict samba-<4.8.7p1
 @bin bin/ldbadd
 @bin bin/ldbdel
 @bin bin/ldbedit
@@ -30,6 +30,7 @@ lib/samba/ldb/sample.so
 lib/samba/ldb/server_sort.so
 lib/samba/ldb/skel.so
 lib/samba/ldb/tdb.so
+lib/samba/libldb-cmdline-samba4.so
 @man man/man1/ldbadd.1
 @man man/man1/ldbdel.1
 @man man/man1/ldbedit.1
