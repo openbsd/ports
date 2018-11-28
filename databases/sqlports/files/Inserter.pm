@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.22 2018/11/28 14:57:45 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.23 2018/11/28 17:34:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,55 +18,7 @@
 use strict;
 use warnings;
 
-package Composite;
-sub AUTOLOAD
-{
-	our $AUTOLOAD;
-	my $fullsub = $AUTOLOAD;
-	(my $sub = $fullsub) =~ s/.*:://o;
-	return if $sub eq 'DESTROY'; # special case
-	my $self = $_[0];
-	# verify it makes sense
-	if ($self->element_class->can($sub)) {
-		no strict "refs";
-		# create the sub to avoid regenerating further calls
-		*$fullsub = sub {
-			my $self = shift;
-			$self->visit($sub, @_);
-		};
-		# and jump to it
-		goto &$fullsub;
-	} else {
-		die "Can't call $sub on ".ref($self);
-	}
-}
-
-
-package InserterList;
-our @ISA = qw(Composite);
-sub element_class() { 'NormalInserter' }
-
-sub new
-{
-	my $class = shift;
-	bless [], $class;
-}
-
-sub add
-{
-	my $self = shift;
-	push(@$self, @_);
-}
-
-sub visit
-{
-	my ($self, $method, @r) = @_;
-	for my $i (@$self) {
-		$i->$method(@r);
-	}
-}
-
-package AbstractInserter;
+package Inserter;
 # this is the object to use to put stuff into the db...
 sub new
 {
@@ -90,32 +42,10 @@ sub add_error
 {
 }
 
-sub table_name
-{
-	my ($class, $name) = @_;
-	return $name;
-}
-
-sub view_name
-{
-	my ($class, $name) = @_;
-	return $name;
-}
-
-sub write_log
-{
-}
-
 sub current_path
 {
 	my $self = shift;
 	return $self->{current_path};
-}
-
-sub set_newkey
-{
-	my ($self, $key) = @_;
-	$self->{current_path} = $key;
 }
 
 sub create_tables
@@ -136,17 +66,6 @@ sub create_tables
 	print '-'x50, "\n" if $self->{verbose};
 }
 
-sub handle_column
-{
-	my ($self, $column) = @_;
-	push(@{$self->{varlist}}, $column->{name});
-	push(@{$self->{columnlist}}, $column);
-}
-
-sub create_view_info
-{
-}
-
 sub map_columns
 {
 	my ($self, $mapper, $colref, @p) = @_;
@@ -154,31 +73,12 @@ sub map_columns
 	return grep {defined $_} (map {$_->$mapper(@p)} @$colref);
 }
 
-sub make_table
-{
-	my ($self, $class, $constraint, @columns) = @_;
-
-	unshift(@columns, PathColumn->new);
-	for my $c (@columns) {
-		$c->set_vartype($class) unless defined $c->{vartype};
-	}
-	my @l = $self->map_columns('normal', \@columns, $self);
-	push(@l, $constraint) if defined $constraint;
-	$self->new_table($class->table, @l);
-}
-
-sub subselect
-{
-	my ($self, $class) = @_;
-	return $class->subselect($self);
-}
-
 sub make_ordered_view
 {
 	my ($self, $class) = @_;
 
 	my $view = $self->view_name($class->table."_ordered");
-	my $subselect = $self->subselect($class);
+	my $subselect = $class->subselect($self);
 	my @group = $class->group_by;
 	unshift(@group, 'fullpkgpath');
 	my $groupby = join(', ', @group);
@@ -312,11 +212,6 @@ sub add_var
 	$v->add($self);
 }
 
-sub id
-{
-	return 'fullpkgpath';
-}
-
 sub create_canonical_depends
 {
 	my ($self, $class) = @_;
@@ -337,9 +232,6 @@ sub commit_to_db
 	$self->db->commit;
 }
 
-package CompactInserter;
-our @ISA = qw(AbstractInserter);
-
 our $c = {
 	Library => 0,
 	Run => 1,
@@ -357,12 +249,6 @@ sub view_name
 {
 	my ($class, $name) = @_;
 	return $name;
-}
-
-sub subselect
-{
-	my ($self, $class) = @_;
-	return $class->subselect_compact($self);
 }
 
 sub convert_depends
@@ -426,7 +312,13 @@ sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
 
-	$self->SUPER::make_table($class, $constraint, @columns);
+	unshift(@columns, PathColumn->new);
+	for my $c (@columns) {
+		$c->set_vartype($class) unless defined $c->{vartype};
+	}
+	my @l = $self->map_columns('normal', \@columns, $self);
+	push(@l, $constraint) if defined $constraint;
+	$self->new_table($class->table, @l);
 	$self->create_view($class->table, @columns);
 }
 
@@ -444,7 +336,8 @@ sub handle_column
 {
 	my ($self, $column) = @_;
 	if ($column->{vartype}->want_in_ports_view) {
-		$self->SUPER::handle_column($column);
+		push(@{$self->{varlist}}, $column->{name});
+		push(@{$self->{columnlist}}, $column);
 	}
 }
 
@@ -495,7 +388,7 @@ sub set_newkey
 	my ($self, $key) = @_;
 
 	$self->set($self->find_pathkey($key));
-	$self->SUPER::set_newkey($key);
+	$self->{current_path} = $key;
 }
 
 sub find_keyword_id
@@ -524,112 +417,6 @@ sub create_keyword_table
 }
 
 sub write_log
-{
-}
-
-package NormalInserter;
-our @ISA = qw(AbstractInserter);
-
-our $c = {
-	Library => 'L',
-	Run => 'R',
-	Build => 'B',
-	Test => 'T'
-};
-
-sub add_error
-{
-	my ($self, $msg) = @_;
-	push(@{$self->{errors}}, $msg);
-}
-
-sub write_log
-{
-	my ($self, $log) = @_;
-
-	foreach my $error (@{$self->{errors}}) {
-		print $log $error."\n";
-	}
-}
-
-sub convert_depends
-{
-	my ($self, $value) = @_;
-	return $c->{$value};
-}
-
-sub create_path_table
-{
-	my $self = shift;
-	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY",
-	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
-}
-
-sub pathref
-{
-	my ($self, $name) = @_;
-	$name = "FULLPKGPATH" if !defined $name;
-	return "$name TEXT NOT NULL";
-}
-
-sub value
-{
-	my ($self, $k, $name) = @_;
-	$name = "VALUE" if !defined $name;
-	return "$name TEXT NOT NULL";
-}
-
-sub optvalue
-{
-	my ($self, $k, $name) = @_;
-	$name = "VALUE" if !defined $name;
-	return "$name TEXT";
-}
-
-sub key
-{
-	return "TEXT NOT NULL";
-}
-
-sub optkey
-{
-	return "TEXT";
-}
-
-sub set_newkey
-{
-	my ($self, $key) = @_;
-
-	$self->SUPER::set_newkey($key);
-	my $path = $key;
-	$path =~ s/\,.*//;
-	$self->insert('Paths', $key, $path, $key);
-	$self->set($key);
-}
-
-sub add_path
-{
-	my ($self, $key, $alias) = @_;
-	my $path = $key;
-	$path =~ s/\,.*//;
-	$self->insert('Paths', $key, $path, $alias);
-}
-
-sub find_pathkey
-{
-	my ($self, $key) = @_;
-
-	return $key;
-}
-
-# no keyword for this dude
-sub find_keyword_id
-{
-	my ($self, $key, $t) = @_;
-	return $key;
-}
-
-sub create_keyword_table
 {
 }
 

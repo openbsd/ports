@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.37 2018/11/27 10:36:17 espie Exp $
+# $OpenBSD: Var.pm,v 1.38 2018/11/28 17:34:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -118,12 +118,6 @@ sub subselect
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
 	return "select fullpkgpath, value from $t order by n";
-}
-
-sub subselect_compact
-{
-	my ($self, $inserter) = @_;
-	return $self->subselect($inserter);
 }
 
 sub group_by
@@ -537,7 +531,7 @@ sub add
 	}
 }
 
-sub subselect_compact
+sub subselect
 {
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
