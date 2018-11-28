@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/10 06:38:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2018/11/28 20:29:26 rsadowski Exp $
 
 COMMENT =		P2P payment system
 
@@ -92,7 +92,7 @@ post-install:
 	cd ${WRKBUILD}/src/univalue && \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bitcoin
-	${INSTALL_PROGRAM} ${WRKDIST}/share/rpcauth/rpcauth.py \
+	${INSTALL_SCRIPT} ${WRKDIST}/share/rpcauth/rpcauth.py \
 		${PREFIX}/share/bitcoin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bitcoin
 	${INSTALL_DATA} ${WRKDIST}/share/examples/bitcoin.conf \
