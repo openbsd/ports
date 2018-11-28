@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.11 2018/11/27 18:20:51 naddy Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.12 2018/11/28 15:15:52 sthen Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -26,7 +26,7 @@ Index: build/config/compiler/BUILD.gn
      }
  
 -    if (is_official_build || force_local_build_id) {
-+    if ((is_official_build || force_local_build_id && !is_openbsd)) {
++    if ((is_official_build || force_local_build_id) && !is_openbsd) {
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
