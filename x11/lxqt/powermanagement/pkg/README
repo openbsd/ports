@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1 2018/11/28 21:57:49 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Startup
+=======
+LXQt Power Management depends on KF5Solid and it needs a system-wide
+D-Bus daemon ("messagebus") to be running in order to work properly.
+
+To enable "messagebus" at boot:
+# rcctl enable messagebus
+
+And to start it if not already running:
+# rcctl start messagebus

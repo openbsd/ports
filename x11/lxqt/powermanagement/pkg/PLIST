@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/28 21:57:49 sthen Exp $
 @bin bin/lxqt-config-powermanagement
 @bin bin/lxqt-powermanagement
 share/applications/lxqt-config-powermanagement.desktop
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/lxqt-powermanagement/
 share/examples/lxqt-powermanagement/xdg/
 share/examples/lxqt-powermanagement/xdg/autostart/
