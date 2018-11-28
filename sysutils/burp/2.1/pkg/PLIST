@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/03/08 14:41:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/28 15:35:43 sthen Exp $
 @option is-branch
 @conflict burp-*
 @newgroup _burp:794
 @newuser _burp:794:794:daemon:BackUp and Recovery Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/burp
 @bin bin/vss_strip
 @man man/man8/bedup.8
 @man man/man8/bsigs.8
@@ -52,10 +53,6 @@ share/examples/burp/CA-client/
 @owner _burp
 @group _burp
 @sample ${SYSCONFDIR}/
-@sample ${LOCALSTATEDIR}/spool/burp/
-@sample ${SYSCONFDIR}/CA-client/
-@sample ${SYSCONFDIR}/clientconfdir/
-@sample ${SYSCONFDIR}/clientconfdir/incexc/
 @mode
 share/examples/burp/CA.cnf
 @sample ${SYSCONFDIR}/CA.cnf
@@ -73,6 +70,8 @@ share/examples/burp/clientconfdir/incexc/example
 @sample ${SYSCONFDIR}/clientconfdir/incexc/example
 share/examples/burp/clientconfdir/testclient
 @sample ${SYSCONFDIR}/clientconfdir/testclient
-@owner
-@group
-@rcscript ${RCDIR}/burp
+@mode 750
+@sample ${LOCALSTATEDIR}/spool/burp/
+@sample ${SYSCONFDIR}/CA-client/
+@sample ${SYSCONFDIR}/clientconfdir/
+@sample ${SYSCONFDIR}/clientconfdir/incexc/
