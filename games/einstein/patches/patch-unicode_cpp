@@ -1,0 +1,12 @@
+$OpenBSD: patch-unicode_cpp,v 1.1 2018/11/28 22:11:24 naddy Exp $
+
+Index: unicode.cpp
+--- unicode.cpp.orig
++++ unicode.cpp
+@@ -1,5 +1,6 @@
+ #include <wchar.h>
+ #include <stdlib.h>
++#include <string.h>
+ #ifdef WIN32
+ #include <windows.h>
+ #endif

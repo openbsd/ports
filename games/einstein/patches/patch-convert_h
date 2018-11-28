@@ -1,0 +1,13 @@
+$OpenBSD: patch-convert_h,v 1.1 2018/11/28 22:11:24 naddy Exp $
+
+Index: convert.h
+--- convert.h.orig
++++ convert.h
+@@ -5,6 +5,7 @@
+ #include <iostream>
+ #include <sstream>
+ #include <string>
++#include <typeinfo>
+ 
+ #include "exceptions.h"
+ #include "unicode.h"
