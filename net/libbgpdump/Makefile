@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/13 09:14:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/11/28 22:09:57 sthen Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
-PKGNAME=	libbgpdump-1.5.0.20180302
-DISTNAME=	ripencc-bgpdump-99da8741c8c8
+DISTNAME=	libbgpdump-1.6.0
+EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	bgpdump 1.0
 
@@ -15,17 +15,17 @@ HOMEPAGE=	https://bitbucket.org/ripencc/bgpdump/wiki/Home
 PERMIT_PACKAGE_CDROM=	without fee
 PERMIT_PACKAGE_FTP=	Yes
 
-# mirrored from https://bitbucket.org/ripencc/bgpdump/get/99da8741c8c8.tar.gz
-MASTER_SITES=	https://spacehopper.org/mirrors/
+MASTER_SITES=	http://ris.ripe.net/source/bgpdump/
 
 WANTLIB=	bz2 c z
 LIB_DEPENDS=	archivers/bzip2
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_FLAGS+=	LIBbgpdump_VERSION=${LIBbgpdump_VERSION}
+
+NO_TEST=	Yes	# only in repo
 
 pre-configure:
 	sed -i -e s,libbgpdump\.so,libbgpdump.so.${LIBbgpdump_VERSION},g \
