@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/11/29 13:35:23 sthen Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -44,15 +44,17 @@ RUN_DEPENDS =		textproc/mozilla-dicts/en-GB
 
 TEST_DEPENDS =	shells/bash
 
+do-gen:
+	cd ${WRKSRC} && env ${MAKE_ENV} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -vif
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/tests/test.sh \
 		${WRKSRC}/src/tools/hunspell.cxx \
 		${WRKSRC}/man/hu/hunspell.1 \
 		${WRKSRC}/man/hunspell.1
-	cd ${WRKSRC} && env ${MAKE_ENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -vif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/hunspell
