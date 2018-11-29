@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.12 2018/11/27 10:36:17 espie Exp $
+# $OpenBSD: Column.pm,v 1.13 2018/11/29 11:44:58 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -138,7 +138,7 @@ sub normal_schema
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
-	return "JOIN ".$inserter->table_name("Paths")." ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
+	return "JOIN ".$inserter->table_name("Paths")." ".$self->{table}." ON ".$self->table.".Canonical=$table.".$self->name;
 }
 
 package ValueColumn;

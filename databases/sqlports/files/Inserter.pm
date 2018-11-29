@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.23 2018/11/28 17:34:28 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.24 2018/11/29 11:44:58 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -328,6 +328,14 @@ sub create_path_table
 	$self->new_table("Paths", "ID INTEGER PRIMARY KEY",
 	    "FULLPKGPATH TEXT NOT NULL UNIQUE",
 	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
+	my $t = $self->table_name("Paths");
+    	$self->new_object('VIEW', "Paths", 
+		qq{as select 
+		    $t.id as pathid, $t.fullpkgpath as fullpkgpath, 
+		    p1.fullpkgpath as pkgpath, p2.fullpkgpath as canonical 
+		from $t
+		    join $t p1 on p1.id=$t.pkgpath 
+		    join $t p2 on p2.id=$t.canonical});
 	$self->{adjust} = $self->db->prepare("UPDATE ".
 	    $self->table_name("Paths")." set canonical=? where id=?");
 }
