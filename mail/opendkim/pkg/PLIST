@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/22 20:12:33 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/11/29 00:42:12 sthen Exp $
+@newgroup _opendkim:822
+@newuser _opendkim:822:_opendkim:daemon:opendkim Account:/nonexistent:/sbin/nologin
 include/opendkim/
 include/opendkim/dkim.h
 lib/libopendkim.a
@@ -158,3 +160,7 @@ share/doc/opendkim/opendkim.xml
 share/doc/opendkim/overview.html
 share/doc/opendkim/repute.py
 share/doc/opendkim/stats.lua
+share/examples/opendkim/
+share/examples/opendkim/opendkim.conf.sample
+@sample ${SYSCONFDIR}/opendkim.conf
+@rcscript ${RCDIR}/opendkim
