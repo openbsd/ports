@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2018/11/29 20:41:54 naddy Exp $
 
 COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.3
 CATEGORIES=	graphics
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  animorph             1.0      # unknown
 

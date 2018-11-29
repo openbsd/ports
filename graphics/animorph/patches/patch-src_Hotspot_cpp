@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_Hotspot_cpp,v 1.1 2018/11/29 20:41:54 naddy Exp $
+
+Index: src/Hotspot.cpp
+--- src/Hotspot.cpp.orig
++++ src/Hotspot.cpp
+@@ -1,3 +1,4 @@
++#include <string.h>
+ #include "../include/animorph/Hotspot.h"
+ 
+ using namespace std;

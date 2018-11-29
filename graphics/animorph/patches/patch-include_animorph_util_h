@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_animorph_util_h,v 1.1 2018/11/29 20:41:54 naddy Exp $
+
+Index: include/animorph/util.h
+--- include/animorph/util.h.orig
++++ include/animorph/util.h
+@@ -32,6 +32,7 @@
+   #include <config.h>
+ #endif
+ 
++#include <cstdlib>
+ #include <string>
+ #include <sstream>
+ #include <iomanip>

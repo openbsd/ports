@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_BodySettings_cpp,v 1.1 2018/11/29 20:41:54 naddy Exp $
+
+Index: src/BodySettings.cpp
+--- src/BodySettings.cpp.orig
++++ src/BodySettings.cpp
+@@ -1,3 +1,4 @@
++#include <string.h>
+ #include "../include/animorph/BodySettings.h"
+ 
+ using namespace std;
