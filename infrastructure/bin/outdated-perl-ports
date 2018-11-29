@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: outdated-perl-ports,v 1.2 2014/07/07 20:01:39 bluhm Exp $
+# $OpenBSD: outdated-perl-ports,v 1.3 2018/11/29 22:51:43 bluhm Exp $
 #
 # Copyright (c) 2003 Sam Smith <S@mSmith.net>
 #
@@ -51,7 +51,8 @@ my @dir; # pkg subdir
 		}
 	}
 
-	open (PORTS, "< ${PORTSDIR}/INDEX") || die "can't open ${PORTSDIR}/INDEX: $!";
+	open (PORTS, '<', "/usr/local/share/ports-INDEX") 
+	    or die "can't open /usr/local/share/ports-INDEX: $!";
 	while ($line=<PORTS>) {
 		@line= split /\|/, $line;
 		next unless ($line =~ /^(p5\-(.+?)\-([\d\.]+)(?:[pv]\d+)*)\|/);
