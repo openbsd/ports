@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.329 2018/11/20 10:52:25 bentley Exp $
+$OpenBSD: user.list,v 1.330 2018/11/29 00:38:14 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -331,3 +331,4 @@ id  user		group		port options
 820 _arpwatch		_arpwatch	net/arpwatch
 821 _tenshi		_tenshi		sysutils/tenshi
 822 _apertium-apy	_apertium-apy	www/apertium-apy
+823 _opendkim		_opendkim	mail/opendkim
