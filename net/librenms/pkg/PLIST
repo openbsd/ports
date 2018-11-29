@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2018/10/17 20:24:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.48 2018/11/29 23:49:03 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
 librenms/
@@ -66,6 +66,7 @@ librenms/LibreNMS/Alert/Transport/Smseagle.php
 librenms/LibreNMS/Alert/Transport/Smsfeedback.php
 librenms/LibreNMS/Alert/Transport/Syslog.php
 librenms/LibreNMS/Alert/Transport/Telegram.php
+librenms/LibreNMS/Alert/Transport/Twilio.php
 librenms/LibreNMS/Alert/Transport/Victorops.php
 librenms/LibreNMS/Alerting/
 librenms/LibreNMS/Alerting/QueryBuilderFilter.php
@@ -261,6 +262,8 @@ librenms/LibreNMS/Snmptrap/Handlers/BgpEstablished.php
 librenms/LibreNMS/Snmptrap/Handlers/Fallback.php
 librenms/LibreNMS/Snmptrap/Handlers/LinkDown.php
 librenms/LibreNMS/Snmptrap/Handlers/LinkUp.php
+librenms/LibreNMS/Snmptrap/Handlers/UpsmgUtilityFailure.php
+librenms/LibreNMS/Snmptrap/Handlers/UpsmgUtilityRestored.php
 librenms/LibreNMS/Snmptrap/Trap.php
 librenms/LibreNMS/Util/
 librenms/LibreNMS/Util/CliColorFormatter.php
@@ -1187,7 +1190,6 @@ librenms/html/includes/forms/alert-rules.inc.php
 librenms/html/includes/forms/alert-templates.inc.php
 librenms/html/includes/forms/alert-transports.inc.php
 librenms/html/includes/forms/application-update.inc.php
-librenms/html/includes/forms/attach-alert-template.inc.php
 librenms/html/includes/forms/callback-clear.inc.php
 librenms/html/includes/forms/callback-statistics.inc.php
 librenms/html/includes/forms/component.inc.php
@@ -1220,7 +1222,6 @@ librenms/html/includes/forms/parse-alert-template.inc.php
 librenms/html/includes/forms/parse-device-group.inc.php
 librenms/html/includes/forms/parse-poller-groups.inc.php
 librenms/html/includes/forms/parse-service.inc.php
-librenms/html/includes/forms/parse-template-rules.inc.php
 librenms/html/includes/forms/poller-group-remove.inc.php
 librenms/html/includes/forms/poller-groups.inc.php
 librenms/html/includes/forms/poller-module-update.inc.php
@@ -1590,6 +1591,7 @@ librenms/html/includes/graphs/device/asa_conns.inc.php
 librenms/html/includes/graphs/device/asyncos_conns.inc.php
 librenms/html/includes/graphs/device/auth.inc.php
 librenms/html/includes/graphs/device/ber.inc.php
+librenms/html/includes/graphs/device/bigip_apm_sessions.inc.php
 librenms/html/includes/graphs/device/bigip_gtm_allpool_dropped.inc.php
 librenms/html/includes/graphs/device/bigip_gtm_allpool_requests.inc.php
 librenms/html/includes/graphs/device/bigip_gtm_allwide_dropped.inc.php
@@ -1870,6 +1872,8 @@ librenms/html/includes/graphs/generic_v3_multiline_float.inc.php
 librenms/html/includes/graphs/global/
 librenms/html/includes/graphs/global/auth.inc.php
 librenms/html/includes/graphs/global/bits.inc.php
+librenms/html/includes/graphs/global/poller_modules_perf.inc.php
+librenms/html/includes/graphs/global/poller_perf.inc.php
 librenms/html/includes/graphs/global/processor_separate.inc.php
 librenms/html/includes/graphs/global/processor_stack.inc.php
 librenms/html/includes/graphs/graph.inc.php
@@ -2009,7 +2013,6 @@ librenms/html/includes/modal/alert_notes.inc.php
 librenms/html/includes/modal/alert_rule_collection.inc.php
 librenms/html/includes/modal/alert_schedule.inc.php
 librenms/html/includes/modal/alert_template.inc.php
-librenms/html/includes/modal/attach_alert_template.inc.php
 librenms/html/includes/modal/delete_alert_rule.inc.php
 librenms/html/includes/modal/delete_alert_template.inc.php
 librenms/html/includes/modal/delete_device_group.inc.php
@@ -2501,10 +2504,11 @@ librenms/html/pages/peering/ix-peers.inc.php
 librenms/html/pages/plugin/
 librenms/html/pages/plugin.inc.php
 librenms/html/pages/plugin/admin.inc.php
-librenms/html/pages/poll-log.inc.php
 librenms/html/pages/pollers/
 librenms/html/pages/pollers.inc.php
 librenms/html/pages/pollers/groups.inc.php
+librenms/html/pages/pollers/log.inc.php
+librenms/html/pages/pollers/performance.inc.php
 librenms/html/pages/pollers/pollers.inc.php
 librenms/html/pages/ports/
 librenms/html/pages/ports.inc.php
@@ -2592,7 +2596,6 @@ librenms/includes/definitions/allworx_voip.yaml
 librenms/includes/definitions/alteonos.yaml
 librenms/includes/definitions/aos-emu2.yaml
 librenms/includes/definitions/aos.yaml
-librenms/includes/definitions/apc-ats.yaml
 librenms/includes/definitions/apc-mgeups.yaml
 librenms/includes/definitions/apc.yaml
 librenms/includes/definitions/apex-lynx.yaml
@@ -2693,7 +2696,7 @@ librenms/includes/definitions/discovery/airos.yaml
 librenms/includes/definitions/discovery/akcp.yaml
 librenms/includes/definitions/discovery/alcoma-almp.yaml
 librenms/includes/definitions/discovery/alteonos.yaml
-librenms/includes/definitions/discovery/apc-ats.yaml
+librenms/includes/definitions/discovery/apc-mgeups.yaml
 librenms/includes/definitions/discovery/apc.yaml
 librenms/includes/definitions/discovery/apsoluteos.yaml
 librenms/includes/definitions/discovery/arris-c3.yaml
@@ -2726,6 +2729,7 @@ librenms/includes/definitions/discovery/dell-ups.yaml
 librenms/includes/definitions/discovery/dlink.yaml
 librenms/includes/definitions/discovery/drac.yaml
 librenms/includes/definitions/discovery/eaton-ats.yaml
+librenms/includes/definitions/discovery/eaton-mgeups.yaml
 librenms/includes/definitions/discovery/edgecos.yaml
 librenms/includes/definitions/discovery/edgeswitch.yaml
 librenms/includes/definitions/discovery/ees.yaml
@@ -2766,6 +2770,7 @@ librenms/includes/definitions/discovery/logmaster.yaml
 librenms/includes/definitions/discovery/luminato.yaml
 librenms/includes/definitions/discovery/mimosa.yaml
 librenms/includes/definitions/discovery/moxa-etherdevice.yaml
+librenms/includes/definitions/discovery/netagent2.yaml
 librenms/includes/definitions/discovery/netbotz.yaml
 librenms/includes/definitions/discovery/netguardian.yaml
 librenms/includes/definitions/discovery/netonix.yaml
@@ -3473,6 +3478,7 @@ librenms/includes/discovery/sensors/state/powervault.inc.php
 librenms/includes/discovery/sensors/state/procurve.inc.php
 librenms/includes/discovery/sensors/state/qnap.inc.php
 librenms/includes/discovery/sensors/state/quanta.inc.php
+librenms/includes/discovery/sensors/state/ray.inc.php
 librenms/includes/discovery/sensors/state/rfc1628.inc.php
 librenms/includes/discovery/sensors/state/serveriron.inc.php
 librenms/includes/discovery/sensors/state/serverscheck.inc.php
@@ -3615,6 +3621,7 @@ librenms/includes/discovery/sensors/voltage/unix.inc.php
 librenms/includes/discovery/services.inc.php
 librenms/includes/discovery/storage/
 librenms/includes/discovery/storage.inc.php
+librenms/includes/discovery/storage/datadomain.inc.php
 librenms/includes/discovery/storage/enterasys.inc.php
 librenms/includes/discovery/storage/eql-storage.inc.php
 librenms/includes/discovery/storage/gaia.inc.php
@@ -3840,7 +3847,6 @@ librenms/includes/polling/os/allworx_voip.inc.php
 librenms/includes/polling/os/alteonos.inc.php
 librenms/includes/polling/os/aos-emu2.inc.php
 librenms/includes/polling/os/aos.inc.php
-librenms/includes/polling/os/apc-ats.inc.php
 librenms/includes/polling/os/apc-mgeups.inc.php
 librenms/includes/polling/os/apc.inc.php
 librenms/includes/polling/os/apex-lynx.inc.php
@@ -4180,6 +4186,7 @@ librenms/includes/polling/sensors/voltage/
 librenms/includes/polling/sensors/voltage/hytera.inc.php
 librenms/includes/polling/storage/
 librenms/includes/polling/storage.inc.php
+librenms/includes/polling/storage/datadomain.inc.php
 librenms/includes/polling/storage/enterasys.inc.php
 librenms/includes/polling/storage/eql-storage.inc.php
 librenms/includes/polling/storage/gaia.inc.php
@@ -6784,6 +6791,7 @@ librenms/mibs/nokia/TIMETRA-CHASSIS-MIB
 librenms/mibs/nokia/TIMETRA-FILTER-MIB
 librenms/mibs/nokia/TIMETRA-GLOBAL-MIB
 librenms/mibs/nokia/TIMETRA-LDP-MIB
+librenms/mibs/nokia/TIMETRA-LLDP-MIB
 librenms/mibs/nokia/TIMETRA-LOG-MIB
 librenms/mibs/nokia/TIMETRA-MPLS-MIB
 librenms/mibs/nokia/TIMETRA-OAM-TEST-MIB
@@ -7403,11 +7411,15 @@ librenms/resources/views/auth/login-form.blade.php
 librenms/resources/views/auth/login.blade.php
 librenms/resources/views/auth/public-status.blade.php
 librenms/resources/views/errors/
+librenms/resources/views/errors/file_permissions.blade.php
 librenms/resources/views/errors/generic.blade.php
+librenms/resources/views/errors/static/
+librenms/resources/views/errors/static/file_permissions.html
 librenms/resources/views/home.blade.php
 librenms/resources/views/laravel.blade.php
 librenms/resources/views/layouts/
 librenms/resources/views/layouts/app.blade.php
+librenms/resources/views/layouts/error.blade.php
 librenms/resources/views/layouts/librenmsv1.blade.php
 librenms/resources/views/layouts/menu.blade.php
 librenms/resources/views/welcome.blade.php
@@ -7744,6 +7756,8 @@ librenms/sql-schema/265.sql
 librenms/sql-schema/266.sql
 librenms/sql-schema/267.sql
 librenms/sql-schema/268.sql
+librenms/sql-schema/269.sql
+librenms/sql-schema/270.sql
 @mode 775
 @owner _librenms
 @group www
