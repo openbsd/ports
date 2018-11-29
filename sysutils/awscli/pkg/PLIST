@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2018/11/03 08:35:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.65 2018/11/29 14:32:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -167,6 +167,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/secgroupsimpl
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ec2/secgroupsimplify.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecr.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/deploy.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/deploy.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/filehelpers.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/filehelpers.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.pyc
@@ -370,6 +379,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputar
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputarg.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/toplevelbool.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/toplevelbool.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/translate.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/translate.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/utils.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/waiters.py
