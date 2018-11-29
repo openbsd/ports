@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/10 16:28:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2018/11/29 20:15:25 naddy Exp $
 
 PORTROACH=	ignore:1
 
@@ -23,7 +23,8 @@ MASTER_SITES=	https://distfiles.nl/
 WANTLIB += X11 c m xcb
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= --without-java
+CONFIGURE_ARGS+= --without-java \
+		--without-pngdriver
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
