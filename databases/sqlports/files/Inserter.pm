@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.24 2018/11/29 11:44:58 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.25 2018/11/29 17:26:18 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -215,15 +215,21 @@ sub add_var
 sub create_canonical_depends
 {
 	my ($self, $class) = @_;
-	my $t = $class->table;
-	my $id = $self->id;
+	my $t = $self->table_name($class->table);
 	my $p = $self->table_name("Paths");
+	$self->new_object('VIEW', "_canonical_depends",
+		qq{as select 
+		    p1.id as fullpkgpath, 
+		    p2.canonical as dependspath, $t.type from $t 
+		join $p p1 on p1.canonical=$t.fullpkgpath
+		join $p p2 on p2.Id=$t.dependspath});
 	$self->new_object('VIEW', "canonical_depends",
 		qq{as select 
-		    p1.canonical as fullpkgpath, 
-		    p2.canonical as dependspath, $t.type from $t 
-		join $p p1 on p1.$id=$t.fullpkgpath
-		join $p p2 on p2.$id=$t.dependspath});
+		    p1.fullpkgpath as fullpkgpath, 
+		    p3.fullpkgpath as dependspath, $t.type from $t 
+		join $p p1 on p1.canonical=$t.fullpkgpath
+		join $p p2 on p2.Id=$t.dependspath
+		join $p p3 on p3.Id=p2.canonical});
 }
 
 sub commit_to_db
@@ -264,11 +270,6 @@ sub pathref
 	$name = "FULLPKGPATH" if !defined $name;
 	return "$name INTEGER NOT NULL REFERENCES ".
 	    $self->table_name("Paths")."(ID)";
-}
-
-sub id
-{
-	return 'Id';
 }
 
 sub value
