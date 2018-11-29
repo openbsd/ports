@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/29 23:12:59 schwarze Exp $
 
 COMMENT=		personal file manager
 
 DISTNAME=		pfm-1.92.2
+REVISION=		0
 CATEGORIES=		misc
 
 HOMEPAGE=		http://p-f-m.sourceforge.net/
@@ -13,7 +14,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=p-f-m/}
 PERMIT_PACKAGE_CDROM=   Yes
 
 NO_BUILD=		Yes
-USE_GROFF =		Yes
 PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
