@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/11/29 14:22:04 sthen Exp $
 @pkgpath print/lyx,qt
 @pkgpath print/lyx,xforms
 @bin bin/lyx
@@ -11,9 +11,7 @@ share/applications/lyx.desktop
 share/icons/hicolor/48x48/apps/lyx.png
 share/icons/hicolor/scalable/apps/lyx.svg
 share/locale/ar/LC_MESSAGES/lyx.mo
-share/locale/ca/LC_MESSAGES/lyx.mo
 share/locale/cs/LC_MESSAGES/lyx.mo
-share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/el/LC_MESSAGES/lyx.mo
 share/locale/en/LC_MESSAGES/lyx.mo
@@ -21,7 +19,6 @@ share/locale/es/LC_MESSAGES/lyx.mo
 share/locale/eu/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
-share/locale/gl/LC_MESSAGES/lyx.mo
 share/locale/he/LC_MESSAGES/lyx.mo
 share/locale/hu/LC_MESSAGES/lyx.mo
 share/locale/ia/LC_MESSAGES/lyx.mo
@@ -29,17 +26,14 @@ share/locale/id/LC_MESSAGES/lyx.mo
 share/locale/it/LC_MESSAGES/lyx.mo
 share/locale/ja/LC_MESSAGES/lyx.mo
 share/locale/nb/LC_MESSAGES/lyx.mo
-share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/nn/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
 share/locale/pt_BR/LC_MESSAGES/lyx.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/lyx.mo
-share/locale/ro/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/sk/LC_MESSAGES/lyx.mo
-share/locale/sr/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
 share/locale/uk/LC_MESSAGES/lyx.mo
@@ -67,9 +61,16 @@ share/lyx/bind/sciword.bind
 share/lyx/bind/site.bind
 share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
+share/lyx/citeengines/
+share/lyx/citeengines/basic.citeengine
+share/lyx/citeengines/biblatex-natbib.citeengine
+share/lyx/citeengines/biblatex.citeengine
+share/lyx/citeengines/jurabib.citeengine
+share/lyx/citeengines/natbib.citeengine
 share/lyx/commands/
 share/lyx/commands/default.def
 share/lyx/configure.py
+share/lyx/configure.pyc
 share/lyx/doc/
 share/lyx/doc/Additional.lyx
 share/lyx/doc/Customization.lyx
@@ -97,6 +98,8 @@ share/lyx/doc/biblio/alphadin.bst
 share/lyx/doc/ca/
 share/lyx/doc/ca/Intro.lyx
 share/lyx/doc/clipart/
+share/lyx/doc/clipart/2D-intensity-plot.pdf
+share/lyx/doc/clipart/3D-structure-distort.pdf
 share/lyx/doc/clipart/Abstract.pdf
 share/lyx/doc/clipart/BoxInsetDefault.png
 share/lyx/doc/clipart/ChangesToolbar.png
@@ -111,6 +114,7 @@ share/lyx/doc/clipart/MacroToolbar.png
 share/lyx/doc/clipart/SVG-Drawing.svg
 share/lyx/doc/clipart/SpaceMarker.png
 share/lyx/doc/clipart/StandardToolbar.png
+share/lyx/doc/clipart/Star-structure.pdf
 share/lyx/doc/clipart/ToolbarEnvBox.png
 share/lyx/doc/clipart/ViewToolbar.png
 share/lyx/doc/clipart/endnotes.pdf
@@ -125,6 +129,7 @@ share/lyx/doc/clipart/platypus.eps
 share/lyx/doc/clipart/reference.png
 share/lyx/doc/clipart/with_fntright.pdf
 share/lyx/doc/clipart/without_fntright.pdf
+share/lyx/doc/clipart/workaround.png
 share/lyx/doc/cs/
 share/lyx/doc/cs/Tutorial.lyx
 share/lyx/doc/da/
@@ -153,7 +158,6 @@ share/lyx/doc/de/clipart/LyXNotiz.png
 share/lyx/doc/de/clipart/Marke.png
 share/lyx/doc/de/clipart/Querverweis.png
 share/lyx/doc/de/clipart/StandardBox.png
-share/lyx/doc/de/clipart/Unterdokument.png
 share/lyx/doc/de/clipart/Zusammenfassung.pdf
 share/lyx/doc/el/
 share/lyx/doc/el/Intro.lyx
@@ -240,6 +244,7 @@ share/lyx/doc/ja/Additional.lyx
 share/lyx/doc/ja/Customization.lyx
 share/lyx/doc/ja/DummyDocument1.lyx
 share/lyx/doc/ja/DummyDocument2.lyx
+share/lyx/doc/ja/DummyTextDocument.txt
 share/lyx/doc/ja/EmbeddedObjects.lyx
 share/lyx/doc/ja/Formula-numbering.lyx
 share/lyx/doc/ja/Intro.lyx
@@ -280,6 +285,8 @@ share/lyx/doc/ro/Intro.lyx
 share/lyx/doc/ru/
 share/lyx/doc/ru/Intro.lyx
 share/lyx/doc/ru/Tutorial.lyx
+share/lyx/doc/ru/clipart/
+share/lyx/doc/ru/clipart/ToolbarEnvBox.png
 share/lyx/doc/sk/
 share/lyx/doc/sk/Intro.lyx
 share/lyx/doc/sk/Tutorial.lyx
@@ -293,7 +300,7 @@ share/lyx/doc/sv/Tutorial.lyx
 share/lyx/doc/uk/
 share/lyx/doc/uk/Intro.lyx
 share/lyx/doc/uk/clipart/
-share/lyx/doc/uk/clipart/Footnote.png
+share/lyx/doc/uk/clipart/footnote.png
 share/lyx/doc/zh_CN/
 share/lyx/doc/zh_CN/Intro.lyx
 share/lyx/doc/zh_CN/Tutorial.lyx
@@ -310,13 +317,14 @@ share/lyx/examples/Literate.lyx
 share/lyx/examples/MultilingualCaptions.lyx
 share/lyx/examples/PDF-comment.lyx
 share/lyx/examples/PDF-form.lyx
-share/lyx/examples/R-S-statements.lyx
 share/lyx/examples/aa_sample.lyx
 share/lyx/examples/aas_sample.lyx
 share/lyx/examples/achemso.lyx
 share/lyx/examples/addressExample.adr
 share/lyx/examples/amsart-test.lyx
 share/lyx/examples/amsbook-test.lyx
+share/lyx/examples/ar/
+share/lyx/examples/ar/splash.lyx
 share/lyx/examples/beamer-article.lyx
 share/lyx/examples/beamer-g4-mask.jpg
 share/lyx/examples/beamer-g4.jpg
@@ -335,7 +343,6 @@ share/lyx/examples/beamerposter.lyx
 share/lyx/examples/biblioExample.bib
 share/lyx/examples/ca/
 share/lyx/examples/ca/ItemizeBullets.lyx
-share/lyx/examples/ca/mathed.lyx
 share/lyx/examples/ca/splash.lyx
 share/lyx/examples/chess-article.lyx
 share/lyx/examples/chessgame.lyx
@@ -400,19 +407,22 @@ share/lyx/examples/fr/MultilingualCaptions.lyx
 share/lyx/examples/fr/PDF-comment.lyx
 share/lyx/examples/fr/beamer-article.lyx
 share/lyx/examples/fr/beamer.lyx
-share/lyx/examples/fr/exemple-powerdot.lyx
 share/lyx/examples/fr/exemple_brut.lyx
 share/lyx/examples/fr/exemple_lyxifie.lyx
 share/lyx/examples/fr/linguistics.lyx
+share/lyx/examples/fr/powerdot.lyx
 share/lyx/examples/fr/seminar.lyx
 share/lyx/examples/fr/simplecv.lyx
 share/lyx/examples/fr/splash.lyx
+share/lyx/examples/fr/xyfigure.lyx
 share/lyx/examples/fr/xyfigure.png
 share/lyx/examples/fr/xypic.lyx
 share/lyx/examples/gl/
 share/lyx/examples/gl/exemplo_bruto.lyx
 share/lyx/examples/gl/exemplo_lyxificado.lyx
 share/lyx/examples/gl/splash.lyx
+share/lyx/examples/gnuplot-example.gp
+share/lyx/examples/gnuplot.lyx
 share/lyx/examples/he/
 share/lyx/examples/he/example_lyxified.lyx
 share/lyx/examples/he/example_raw.lyx
@@ -434,7 +444,6 @@ share/lyx/examples/ja/
 share/lyx/examples/ja/Braille.lyx
 share/lyx/examples/ja/FeynmanDiagrams.lyx
 share/lyx/examples/ja/MultilingualCaptions.lyx
-share/lyx/examples/ja/R-S-statements.lyx
 share/lyx/examples/ja/beamer.lyx
 share/lyx/examples/ja/knitr.lyx
 share/lyx/examples/ja/lilypond.lyx
@@ -452,6 +461,8 @@ share/lyx/examples/linguistics.lyx
 share/lyx/examples/listerrors.lyx
 share/lyx/examples/localization_test.lyx
 share/lyx/examples/longsheet.gnumeric
+share/lyx/examples/minted-filelisting.lyx
+share/lyx/examples/minted-listings.lyx
 share/lyx/examples/modernCV.lyx
 share/lyx/examples/nb/
 share/lyx/examples/nb/eksempel_lyxet.lyx
@@ -466,7 +477,7 @@ share/lyx/examples/noweb2lyx.lyx
 share/lyx/examples/paralist.lyx
 share/lyx/examples/pl/
 share/lyx/examples/pl/splash.lyx
-share/lyx/examples/powerdot-example.lyx
+share/lyx/examples/powerdot.lyx
 share/lyx/examples/pt_BR/
 share/lyx/examples/pt_BR/splash.lyx
 share/lyx/examples/pt_PT/
@@ -475,6 +486,8 @@ share/lyx/examples/recipebook.lyx
 share/lyx/examples/ro/
 share/lyx/examples/ro/splash.lyx
 share/lyx/examples/ru/
+share/lyx/examples/ru/example_lyxified.lyx
+share/lyx/examples/ru/example_raw.lyx
 share/lyx/examples/ru/splash.lyx
 share/lyx/examples/script_form.lyx
 share/lyx/examples/seminar.lyx
@@ -541,7 +554,6 @@ share/lyx/examples/varwidth-floats-side-by-side.lyx
 share/lyx/examples/xyfigure.lyx
 share/lyx/examples/xyfigure.png
 share/lyx/examples/xypic.lyx
-share/lyx/external_templates
 share/lyx/fonts/
 share/lyx/fonts/BaKoMaFontLicense.txt
 share/lyx/fonts/ReadmeBaKoMa4LyX.txt
@@ -766,6 +778,7 @@ share/lyx/images/classic/textstyle-apply.png
 share/lyx/images/classic/thesaurus-entry.png
 share/lyx/images/classic/toolbar-toggle_math.png
 share/lyx/images/classic/toolbar-toggle_math_panels.png
+share/lyx/images/classic/toolbar-toggle_review.png
 share/lyx/images/classic/toolbar-toggle_table.png
 share/lyx/images/classic/undo.png
 share/lyx/images/classic/unknown.png
@@ -805,6 +818,7 @@ share/lyx/images/dialog-toggle_toc.svgz
 share/lyx/images/down.svgz
 share/lyx/images/editclear.svgz
 share/lyx/images/emblem-readonly.svgz
+share/lyx/images/emblem-shellescape.svgz
 share/lyx/images/ert-insert.svgz
 share/lyx/images/file-open.svgz
 share/lyx/images/float-insert_figure.svgz
@@ -1488,6 +1502,7 @@ share/lyx/images/math/mathbb_Q.svgz
 share/lyx/images/math/mathbb_R.svgz
 share/lyx/images/math/mathbb_Z.svgz
 share/lyx/images/math/mathbf.svgz
+share/lyx/images/math/mathbin.svgz
 share/lyx/images/math/mathcal.svgz
 share/lyx/images/math/mathcal_F.svgz
 share/lyx/images/math/mathcal_H.svgz
@@ -1499,7 +1514,10 @@ share/lyx/images/math/mathdollar.svgz
 share/lyx/images/math/mathfrak.svgz
 share/lyx/images/math/mathit.svgz
 share/lyx/images/math/mathllap.svgz
+share/lyx/images/math/mathop.svgz
+share/lyx/images/math/mathord.svgz
 share/lyx/images/math/mathparagraph.svgz
+share/lyx/images/math/mathrel.svgz
 share/lyx/images/math/mathring.svgz
 share/lyx/images/math/mathrlap.svgz
 share/lyx/images/math/mathrm.svgz
@@ -2092,6 +2110,7 @@ share/lyx/images/oxygen/textstyle-apply.svgz
 share/lyx/images/oxygen/thesaurus-entry.svgz
 share/lyx/images/oxygen/toolbar-toggle_math.svgz
 share/lyx/images/oxygen/toolbar-toggle_math_panels.svgz
+share/lyx/images/oxygen/toolbar-toggle_review.svgz
 share/lyx/images/oxygen/toolbar-toggle_table.svgz
 share/lyx/images/oxygen/undo.svgz
 share/lyx/images/oxygen/unknown.svgz
@@ -2160,6 +2179,7 @@ share/lyx/images/textstyle-apply.svgz
 share/lyx/images/thesaurus-entry.svgz
 share/lyx/images/toolbar-toggle_math.svgz
 share/lyx/images/toolbar-toggle_math_panels.svgz
+share/lyx/images/toolbar-toggle_review.svgz
 share/lyx/images/toolbar-toggle_table.svgz
 share/lyx/images/undo.svgz
 share/lyx/images/unknown.svgz
@@ -2236,6 +2256,7 @@ share/lyx/layouts/achemso.layout
 share/lyx/layouts/acm-sigs-alt.layout
 share/lyx/layouts/acm-sigs.inc
 share/lyx/layouts/acm-sigs.layout
+share/lyx/layouts/acmart.layout
 share/lyx/layouts/acmsiggraph-0-92.layout
 share/lyx/layouts/acmsiggraph.layout
 share/lyx/layouts/agu-dtd.layout
@@ -2256,13 +2277,16 @@ share/lyx/layouts/apa6.layout
 share/lyx/layouts/arab-article.layout
 share/lyx/layouts/article-beamer.layout
 share/lyx/layouts/article.layout
-share/lyx/layouts/basic.module
 share/lyx/layouts/beamer.layout
 share/lyx/layouts/beamerposter.layout
 share/lyx/layouts/bicaption.module
 share/lyx/layouts/book.layout
 share/lyx/layouts/braille.module
 share/lyx/layouts/broadway.layout
+share/lyx/layouts/bxjsarticle.layout
+share/lyx/layouts/bxjsbook.layout
+share/lyx/layouts/bxjsreport.layout
+share/lyx/layouts/bxjsslide.layout
 share/lyx/layouts/changebars.module
 share/lyx/layouts/chess.layout
 share/lyx/layouts/cl2emult.layout
@@ -2330,7 +2354,6 @@ share/lyx/layouts/jreport.layout
 share/lyx/layouts/jsarticle.layout
 share/lyx/layouts/jsbook.layout
 share/lyx/layouts/jss.layout
-share/lyx/layouts/jurabib.module
 share/lyx/layouts/kluwer.layout
 share/lyx/layouts/knitr.module
 share/lyx/layouts/latex8.layout
@@ -2350,7 +2373,6 @@ share/lyx/layouts/multicol.module
 share/lyx/layouts/mwart.layout
 share/lyx/layouts/mwbk.layout
 share/lyx/layouts/mwrep.layout
-share/lyx/layouts/natbib.module
 share/lyx/layouts/natbibapa.module
 share/lyx/layouts/noweb.module
 share/lyx/layouts/numarticle.inc
@@ -2390,6 +2412,7 @@ share/lyx/layouts/stdciteformats.inc
 share/lyx/layouts/stdclass.inc
 share/lyx/layouts/stdcounters.inc
 share/lyx/layouts/stdcustom.inc
+share/lyx/layouts/stdfloatnames.inc
 share/lyx/layouts/stdfloats.inc
 share/lyx/layouts/stdinsets.inc
 share/lyx/layouts/stdlayouts.inc
@@ -2401,6 +2424,7 @@ share/lyx/layouts/stdsections.inc
 share/lyx/layouts/stdstarsections.inc
 share/lyx/layouts/stdstruct.inc
 share/lyx/layouts/stdtitle.inc
+share/lyx/layouts/subequations.module
 share/lyx/layouts/svcommon.inc
 share/lyx/layouts/svglobal.layout
 share/lyx/layouts/svglobal3.layout
@@ -2514,6 +2538,9 @@ share/lyx/lyx2lyx/lyx_2_1.${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/lyx_2_2.py
 share/lyx/lyx2lyx/lyx_2_2.pyc
 share/lyx/lyx2lyx/lyx_2_2.${MODPY_PYOEXTENSION}
+share/lyx/lyx2lyx/lyx_2_3.py
+share/lyx/lyx2lyx/lyx_2_3.pyc
+share/lyx/lyx2lyx/lyx_2_3.${MODPY_PYOEXTENSION}
 share/lyx/lyx2lyx/parser_tools.py
 share/lyx/lyx2lyx/parser_tools.pyc
 share/lyx/lyx2lyx/parser_tools.${MODPY_PYOEXTENSION}
@@ -2538,8 +2565,6 @@ share/lyx/scripts/convert_pdf.py
 share/lyx/scripts/convert_pdf.pyc
 share/lyx/scripts/csv2lyx.py
 share/lyx/scripts/csv2lyx.pyc
-share/lyx/scripts/date.py
-share/lyx/scripts/date.pyc
 share/lyx/scripts/ext_copy.py
 share/lyx/scripts/ext_copy.pyc
 share/lyx/scripts/fen2ascii.py
@@ -2550,6 +2575,8 @@ share/lyx/scripts/fig2pstex.py
 share/lyx/scripts/fig2pstex.pyc
 share/lyx/scripts/fig_copy.py
 share/lyx/scripts/fig_copy.pyc
+share/lyx/scripts/gnuplot2pdf.py
+share/lyx/scripts/gnuplot2pdf.pyc
 share/lyx/scripts/html2latexwrapper.py
 share/lyx/scripts/html2latexwrapper.pyc
 share/lyx/scripts/include_bib.py
@@ -2568,22 +2595,23 @@ share/lyx/scripts/lyxpreview_tools.py
 share/lyx/scripts/lyxpreview_tools.pyc
 share/lyx/scripts/lyxstangle.R
 share/lyx/scripts/lyxsweave.R
+share/lyx/scripts/prefTest.pl.in
 share/lyx/scripts/prefs2prefs.py
 share/lyx/scripts/prefs2prefs.pyc
 share/lyx/scripts/prefs2prefs_lfuns.py
 share/lyx/scripts/prefs2prefs_lfuns.pyc
 share/lyx/scripts/prefs2prefs_prefs.py
 share/lyx/scripts/prefs2prefs_prefs.pyc
+share/lyx/scripts/svg2pdftex.py
+share/lyx/scripts/svg2pdftex.pyc
+share/lyx/scripts/svg2pstex.py
+share/lyx/scripts/svg2pstex.pyc
 share/lyx/scripts/tex_copy.py
 share/lyx/scripts/tex_copy.pyc
 share/lyx/symbols
 share/lyx/syntax.default
 share/lyx/templates/
-share/lyx/templates/ACM-SIGS.lyx
-share/lyx/templates/ACM-siggraph.lyx
-share/lyx/templates/ACM-sigplan.lyx
 share/lyx/templates/AEA.lyx
-share/lyx/templates/AGUTeX.lyx
 share/lyx/templates/APA.lyx
 share/lyx/templates/APA6.lyx
 share/lyx/templates/DocBook_article.lyx
@@ -2603,6 +2631,7 @@ share/lyx/templates/README.new_templates
 share/lyx/templates/RJournal.lyx
 share/lyx/templates/aa.lyx
 share/lyx/templates/aastex6.lyx
+share/lyx/templates/acmart.lyx
 share/lyx/templates/beamer-conference-ornate-20min.lyx
 share/lyx/templates/ctex.lyx
 share/lyx/templates/de_beamer-conference-ornate-20min.lyx
@@ -2612,8 +2641,6 @@ share/lyx/templates/elsarticle.lyx
 share/lyx/templates/es_beamer-conference-ornate-20min.lyx
 share/lyx/templates/fr_beamer-conference-ornate-20min.lyx
 share/lyx/templates/frletter.lyx
-share/lyx/templates/g-brief-de.lyx
-share/lyx/templates/g-brief-en.lyx
 share/lyx/templates/g-brief2.lyx
 share/lyx/templates/hollywood.lyx
 share/lyx/templates/ja_beamer-conference-ornate-20min.lyx
@@ -2621,6 +2648,13 @@ share/lyx/templates/kluwer.lyx
 share/lyx/templates/koma-letter2.lyx
 share/lyx/templates/letter.lyx
 share/lyx/templates/lettre.lyx
+share/lyx/templates/obsolete/
+share/lyx/templates/obsolete/ACM-SIGS.lyx
+share/lyx/templates/obsolete/ACM-siggraph.lyx
+share/lyx/templates/obsolete/ACM-sigplan.lyx
+share/lyx/templates/obsolete/AGUTeX.lyx
+share/lyx/templates/obsolete/g-brief-de.lyx
+share/lyx/templates/obsolete/g-brief-en.lyx
 share/lyx/templates/poster-a0poster-colored.lyx
 share/lyx/templates/poster-a0poster-simple.lyx
 share/lyx/templates/poster-beamerposter.lyx
@@ -2642,7 +2676,15 @@ share/lyx/ui/stdcontext.inc
 share/lyx/ui/stdmenus.inc
 share/lyx/ui/stdtoolbars.inc
 share/lyx/unicodesymbols
-share/pixmaps/
-share/pixmaps/lyx.png
+share/lyx/xtemplates/
+share/lyx/xtemplates/chess.xtemplate
+share/lyx/xtemplates/dia.xtemplate
+share/lyx/xtemplates/gnumeric.xtemplate
+share/lyx/xtemplates/inkscape.xtemplate
+share/lyx/xtemplates/lilypond.xtemplate
+share/lyx/xtemplates/pdfpages.xtemplate
+share/lyx/xtemplates/raster_image.xtemplate
+share/lyx/xtemplates/vector_graphics.xtemplate
+share/lyx/xtemplates/xfig.xtemplate
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
