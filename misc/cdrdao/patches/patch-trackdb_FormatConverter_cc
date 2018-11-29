@@ -1,0 +1,13 @@
+$OpenBSD: patch-trackdb_FormatConverter_cc,v 1.1 2018/11/29 21:52:20 naddy Exp $
+
+Index: trackdb/FormatConverter.cc
+--- trackdb/FormatConverter.cc.orig
++++ trackdb/FormatConverter.cc
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include <stdlib.h>
++#include <string.h>
+ #ifdef HAVE_AO
+ #include <ao/ao.h>
+ #endif
