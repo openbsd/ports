@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:53:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/11/29 14:10:10 rsadowski Exp $
 @option is-branch
 @conflict hudson-*
 @pkgpath devel/jenkins
@@ -10,7 +10,7 @@
 @sample ${HOMEDIR}/
 @owner
 @group
+@rcscript ${RCDIR}/jenkins
 share/doc/pkg-readmes/${PKGSTEM}
 share/jenkins/
 share/jenkins/jenkins.war
-@rcscript ${RCDIR}/jenkins
