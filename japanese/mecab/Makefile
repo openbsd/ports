@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2018/11/29 21:16:57 naddy Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -10,7 +10,7 @@ COMMENT-ipadic = IPA japanese dictionary for mecab
 DISTNAME =	mecab-0.996
 PKGNAME-main =	${DISTNAME}
 PKGNAME-ipadic = mecab-ipadic-2.7.0
-REVISION-main =	2
+REVISION-main =	3
 REVISION-ipadic = 4
 
 SHARED_LIBS =	mecab	0.0 # 2.0
@@ -34,7 +34,7 @@ MASTER_SITES =	https://distfiles.nl/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz
 
-LIB_DEPENDS-main = converters/libiconv
+LIB_DEPENDS-main = converters/libiconv ${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-main = mecab-ipadic-*:japanese/mecab,-ipadic
 RUN_DEPENDS-ipadic =
 
