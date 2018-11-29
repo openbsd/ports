@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/01 15:44:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2018/11/29 21:15:11 landry Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
-XFCE_VERSION=	1.2.1
+XFCE_VERSION=	1.2.2
 XFCE_PLUGIN=	systemload
-REVISION=	2
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +13,7 @@ CONFIGURE_ARGS=	--disable-upower
 MODXFCE_WANTLIB =	xfce4panel-2.0
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender fribidi
 WANTLIB += atk-1.0 cairo expat ffi fontconfig freetype
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 kvm m pango-1.0 pangocairo-1.0
