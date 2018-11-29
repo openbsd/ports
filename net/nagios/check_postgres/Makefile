@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/02 13:11:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/11/29 23:16:35 sthen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor PostgresQL
-DISTNAME=		check_postgres-2.23.0
+DISTNAME=		check_postgres-2.24.0
 CATEGORIES=		net databases
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
