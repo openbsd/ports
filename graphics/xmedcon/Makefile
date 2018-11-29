@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2018/11/29 15:22:31 schwarze Exp $
 
 COMMENT =	medical image conversion
 
 DISTNAME =	xmedcon-0.14.1
 SHARED_LIBS =	mdc	2.3	# .2.1
 CATEGORIES =	graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://xmedcon.sourceforge.net
 
@@ -25,8 +25,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xmedcon/}
 LIB_DEPENDS =	x11/gtk+2
 
 FAKE_FLAGS =	sysconfdir=${TRUEPREFIX}/share/examples/xmedcon
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += --enable-static \
