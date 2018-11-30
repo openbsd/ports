@@ -1,0 +1,13 @@
+$OpenBSD: patch-mplex_padstrm_cpp,v 1.1 2018/11/30 21:05:32 naddy Exp $
+
+Index: mplex/padstrm.cpp
+--- mplex/padstrm.cpp.orig
++++ mplex/padstrm.cpp
+@@ -23,6 +23,7 @@
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #endif
++#include <string.h>
+ 
+ #include "padstrm.hpp"
+ 
