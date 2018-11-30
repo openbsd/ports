@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.6 2018/11/28 14:57:45 espie Exp $
+# $OpenBSD: print-ports-index,v 1.7 2018/11/30 22:26:04 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -37,7 +37,7 @@ with
 	from d1 group by p, t)
 select fullpkgname,ports.fullpkgpath,
     (case prefix when '/usr/local' THEN "" else prefix end),
-      comment,descr.filename, maintainer,categories_ordered.value,
+      comment,descr.filename, maintainer,categories,
     libd.dlist, buildd.dlist, rund.dlist,
 
 
@@ -60,7 +60,6 @@ select fullpkgname,ports.fullpkgpath,
     	left join d2 as buildd on buildd.p=ports.pathid and buildd.t=2
     	left join d2 as rund on rund.p=ports.pathid and rund.t=1
 	join descr on descr.pathid=ports.pathid
-	join categories_ordered on categories_ordered.fullpkgpath=ports.pathid
 	left join onlyforarch_ordered on onlyforarch_ordered.fullpkgpath=ports.pathid
 	left join notforarch_ordered on notforarch_ordered.fullpkgpath=ports.pathid
      	where ports.pathid in (select distinct canonical from _paths) 

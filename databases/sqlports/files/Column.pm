@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.13 2018/11/29 11:44:58 espie Exp $
+# $OpenBSD: Column.pm,v 1.14 2018/11/30 22:26:04 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -188,6 +188,35 @@ sub normal_schema
 	return $inserter->optvalue($self->k, $self->name);
 }
 
+sub join_schema
+{
+	my ($self, $table, $inserter) = @_;
+	return "LEFT ".$self->SUPER::join_schema($table, $inserter);
+}
+
+package CoalesceColumn;
+our @ISA = qw(ValueColumn);
+
+sub normal_schema
+{
+	undef;
+}
+
+sub realname
+{
+	my ($self, $t) = @_;
+	return $self->table.".VALUE";
+}
+
+sub join_schema
+{
+	my ($self, $table, $inserter) = @_;
+	my $o = $self->{vartype}->table."_ordered";
+	return "JOIN $o ".$self->table." ON ".$self->table.".fullpkgpath=_ports.fullpkgpath";
+}
+
+package OptCoalesceColumn;
+our @ISA = qw(CoalesceColumn);
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;

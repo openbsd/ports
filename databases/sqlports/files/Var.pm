@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.39 2018/11/30 09:08:24 espie Exp $
+# $OpenBSD: Var.pm,v 1.40 2018/11/30 22:26:04 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -507,7 +507,8 @@ sub create_tables
 # Generic handling for any blank-separated list
 package ListVar;
 our @ISA = qw(CountedSecondaryVar);
-sub columntype() { 'OptTextColumn' }
+sub columntype() { 'OptCoalesceColumn' }
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -524,6 +525,8 @@ sub add
 package ListKeyVar;
 our @ISA = qw(CountedSecondaryVar);
 sub keyword_table() { 'Keywords' }
+sub columntype() { 'OptCoalesceColumn' }
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -691,6 +694,7 @@ sub keyword_table() { 'DPBKeys' }
 package MultiVar;
 our @ISA = qw(ListVar);
 sub table() { 'Multi' }
+sub want_in_ports_view { 0 }
 
 sub create_tables
 {
@@ -745,6 +749,7 @@ package WantlibVar;
 our @ISA = qw(ListVar);
 sub table() { 'Wantlib' }
 sub keyword_table() { 'Library' }
+sub want_in_ports_view { 0 }
 
 sub _add
 {
