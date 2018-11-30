@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/01 22:00:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/30 15:24:09 jeremy Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -17,7 +17,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		0
+REVISION-main =		1
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
