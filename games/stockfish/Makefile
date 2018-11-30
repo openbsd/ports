@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/11/30 19:54:29 bcallah Exp $
 
-V =		9
+V =		10
 COMMENT =	open source chess engine
 DISTNAME =	stockfish-${V}-src
 PKGNAME =	stockfish-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://stockfishchess.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
