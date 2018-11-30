@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 21:56:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.24 2018/11/30 00:44:12 bluhm Exp $
 
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-1.89
+DISTNAME =	WWW-Mechanize-1.90
 
 CATEGORIES =	www
 
@@ -14,13 +14,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		cpan
 RUN_DEPENDS =		www/p5-HTML-Form>=1.00 \
 			www/p5-HTML-Parser \
-			www/p5-HTML-Tree \
+			www/p5-HTML-Tree>=5 \
 			www/p5-HTTP-Cookies \
 			www/p5-HTTP-Message>=1.30 \
 			www/p5-LWP-Protocol-https>=6 \
 			www/p5-URI \
 			www/p5-libwww>=5.827
-TEST_DEPENDS =		devel/p5-Test-Deep \
+TEST_DEPENDS =		devel/p5-Perl-Critic \
+			devel/perltidy \
+			devel/p5-Test-Deep \
 			devel/p5-Test-Exception \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Memory-Cycle \
