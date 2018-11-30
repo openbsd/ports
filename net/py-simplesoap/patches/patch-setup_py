@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2018/11/30 07:50:18 semarie Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -35,7 +35,7 @@ setup(
+     packages=['pysimplesoap'],
+     license=__license__,
+     # console=['client.py'],
+-    cmdclass={"py2exe": build_installer},
++    #cmdclass={"py2exe": build_installer},
+     classifiers=[
+         "Development Status :: 3 - Alpha",
+         "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",

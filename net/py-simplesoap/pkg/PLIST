@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/30 07:50:18 semarie Exp $
+lib/python${MODPY_VERSION}/site-packages/PySimpleSOAP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}c14n.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}simplexml.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}wsse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/${MODPY_PYCACHE}xmlsec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/c14n.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/client.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/helpers.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/server.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/simplexml.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/transport.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/wsse.py
+lib/python${MODPY_VERSION}/site-packages/pysimplesoap/xmlsec.py
