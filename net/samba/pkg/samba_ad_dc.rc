@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: samba_ad_dc.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: samba_ad_dc.rc,v 1.4 2018/11/30 15:17:31 jca Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
@@ -8,6 +8,7 @@ daemon="${TRUEPREFIX}/sbin/samba -D"
 
 . /etc/rc.d/rc.subr
 
+pexp="^samba: root process"
 rc_usercheck=NO
 
 rc_check() {
