@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/28 15:35:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/11/30 11:40:33 sthen Exp $
 @option is-branch
 @conflict burp-*
 @pkgpath sysutils/burp
@@ -52,6 +52,8 @@ share/examples/burp/CA-client/
 @owner _burp
 @group _burp
 @sample ${SYSCONFDIR}/
+@sample ${SYSCONFDIR}/clientconfdir/
+@sample ${SYSCONFDIR}/clientconfdir/incexc/
 @mode
 share/examples/burp/CA.cnf
 @sample ${SYSCONFDIR}/CA.cnf
@@ -67,10 +69,8 @@ share/examples/burp/clientconfdir/incexc/example
 @owner _burp
 @group _burp
 @sample ${SYSCONFDIR}/clientconfdir/incexc/example
+@owner
+@group
 share/examples/burp/clientconfdir/testclient
-@sample ${SYSCONFDIR}/clientconfdir/testclient
-@mode 750
 @sample ${LOCALSTATEDIR}/spool/burp/
 @sample ${SYSCONFDIR}/CA-client/
-@sample ${SYSCONFDIR}/clientconfdir/
-@sample ${SYSCONFDIR}/clientconfdir/incexc/
