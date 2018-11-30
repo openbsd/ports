@@ -1,0 +1,15 @@
+$OpenBSD: patch-luma_plugins_browser_gui_BrowserDialogs_py,v 1.1 2018/11/30 13:00:07 sthen Exp $
+
+dsml is no longer a separate module in python-ldap 3.0+
+
+Index: luma/plugins/browser/gui/BrowserDialogs.py
+--- luma/plugins/browser/gui/BrowserDialogs.py.orig
++++ luma/plugins/browser/gui/BrowserDialogs.py
+@@ -202,7 +202,6 @@ class DeleteDialog(QtGui.QDialog, Ui_DeleteDialog):
+         QDialog.reject(self)
+ 
+ 
+-import dsml
+ import StringIO
+ 
+ 
