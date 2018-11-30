@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2016/04/02 19:59:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2018/11/30 01:04:10 bluhm Exp $
 
-COMMENT=	perl module to manage MIME types
+COMMENT =	perl module to manage MIME types
 
-DISTNAME =	MIME-Types-2.13
-CATEGORIES=	mail
+DISTNAME =	MIME-Types-2.17
+
+CATEGORIES =	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
-PKG_ARCH=		*
+MODULES =		cpan
 
 TEST_DEPENDS=		www/p5-Mojo
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
