@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-examples,v 1.10 2015/11/13 08:44:53 ajacoutot Exp $
-@pkgpath databases/py-ldap,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
+@comment $OpenBSD: PLIST-examples,v 1.11 2018/11/30 12:59:10 sthen Exp $
+${MODPY_2ONLY}@pkgpath databases/py-ldap,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
 share/examples/${MODPY_PY_PREFIX}ldap/
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/Lib/
@@ -14,6 +14,7 @@ share/examples/${MODPY_PY_PREFIX}ldap/Demo/Lib/ldif/
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/Lib/ldif/ldifcopy.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/initialize.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/ldapcontrols.py
+share/examples/${MODPY_PY_PREFIX}ldap/Demo/ldapurl_search.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/matchedvalues.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/ms_ad_bind.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/options.py
@@ -29,6 +30,7 @@ share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/ppolicy.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/psearch.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/readentrycontrol.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/sessiontrack.py
+share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/sss_highest_number.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/syncrepl.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/reconnect.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/rename.py
