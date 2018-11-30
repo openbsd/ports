@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.25 2018/11/29 17:26:18 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.26 2018/11/30 09:08:24 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -167,7 +167,7 @@ sub finish_port
 	my $self = shift;
 	my @values = ($self->ref);
 	for my $i (@{$self->{varlist}}) {
-		push(@values, $self->{vars}->{$i});
+		push(@values, $self->{vars}{$i});
 	}
 	$self->insert('Ports', @values);
 	$self->{vars} = {};
@@ -344,8 +344,10 @@ sub create_path_table
 sub handle_column
 {
 	my ($self, $column) = @_;
-	if ($column->{vartype}->want_in_ports_view) {
+	if ($column->{vartype}->need_in_ports_table) {
 		push(@{$self->{varlist}}, $column->{name});
+	}
+	if ($column->{vartype}->want_in_ports_view) {
 		push(@{$self->{columnlist}}, $column);
 	}
 }

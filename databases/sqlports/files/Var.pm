@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.38 2018/11/28 17:34:28 espie Exp $
+# $OpenBSD: Var.pm,v 1.39 2018/11/30 09:08:24 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -126,6 +126,12 @@ sub group_by
 }
 
 sub want_in_ports_view
+{
+	my $self = shift;
+	return !defined $self->table;
+}
+
+sub need_in_ports_table
 {
 	my $self = shift;
 	return !defined $self->table;
