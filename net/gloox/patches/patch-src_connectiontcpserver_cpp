@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_connectiontcpserver_cpp,v 1.1 2018/11/30 21:49:54 naddy Exp $
+
+Index: src/connectiontcpserver.cpp
+--- src/connectiontcpserver.cpp.orig
++++ src/connectiontcpserver.cpp
+@@ -51,6 +51,7 @@
+ #endif
+ 
+ #include <cstdlib>
++#include <cstring>
+ #include <string>
+ 
+ #ifndef _WIN32_WCE
