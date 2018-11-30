@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.78 2018/11/16 09:47:26 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.79 2018/11/30 10:13:38 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -60,7 +60,10 @@ _pflavor_fragment = \
 	toset="PKGPATH=$$dir ARCH=${ARCH}"; \
 	case X"$$multi" in \
 		X) unset SUBPACKAGE || true;; \
-		*) toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+		*) case "$$target" in \
+			 dump-vars) unset SUBPACKAGE || true;; \
+		     *) toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+		   esac;; \
 	esac; \
 	case $$dir in \
 	*/) broken "$$dir ends with /";; \
