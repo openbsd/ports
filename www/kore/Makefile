@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/18 17:54:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2018/11/30 21:26:04 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
-DISTNAME =	kore-3.1.0
+DISTNAME =	kore-3.2.0
 
 CATEGORIES =	www
 
