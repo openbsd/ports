@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.3 2018/11/17 16:18:11 robert Exp $
+# $OpenBSD: unveil.main,v 1.4 2018/11/30 17:22:35 robert Exp $
 
 # needed for chromium
 /etc/chromium r
@@ -11,6 +11,9 @@
 
 # needed for IPC communication, X.Org, etc.
 /tmp rwc
+
+# needed for printing with lpr(1)
+/usr/bin/lpr rx
 
 # needed for xdg tools
 /usr/local/bin/xdg-desktop-menu rx
