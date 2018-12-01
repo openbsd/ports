@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2018/12/01 21:11:32 landry Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
@@ -17,6 +17,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
 
+BUILD_DEPENDS=		devel/bison
 TEST_DEPENDS=		shells/bash
 
 CONFIGURE_STYLE=	gnu
