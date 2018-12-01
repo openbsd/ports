@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.371 2018/11/30 12:59:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.372 2018/12/01 12:59:20 martijn Exp $
 
      SUBDIR =
      SUBDIR += architect
      SUBDIR += barman
      SUBDIR += citus
      SUBDIR += db
-     SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
      SUBDIR += freetds
      SUBDIR += gdbm
