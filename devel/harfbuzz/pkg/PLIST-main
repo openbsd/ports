@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2018/11/17 09:36:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2018/12/01 19:40:49 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
 @bin bin/hb-subset
 @bin bin/hb-view
 include/harfbuzz/
+include/harfbuzz/hb-aat-layout.h
+include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
