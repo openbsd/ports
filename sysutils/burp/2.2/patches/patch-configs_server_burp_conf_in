@@ -1,0 +1,25 @@
+$OpenBSD: patch-configs_server_burp_conf_in,v 1.1.1.1 2018/12/01 09:13:08 florian Exp $
+
+Index: configs/server/burp.conf.in
+--- configs/server/burp.conf.in.orig
++++ configs/server/burp.conf.in
+@@ -18,7 +18,7 @@ max_children = 5
+ # max_status_children = 6
+ 
+ directory = @localstatedir@/spool/@name@
+-dedup_group = global
++dedup_group = _burp
+ clientconfdir = @sysconfdir@/clientconfdir
+ # Choose the protocol to use.
+ # 0 to decide automatically, 1 to force protocol1 mode (file level granularity
+@@ -71,8 +71,8 @@ keep = 7
+ # keep = 6
+ 
+ # Run as different user/group.
+-# user=graham
+-# group=nogroup
++user=_burp
++group=_burp
+ 
+ # CA options.
+ # If you want your server to be a certificate authority and generate its own

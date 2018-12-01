@@ -1,0 +1,79 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/01 09:13:08 florian Exp $
+@option is-branch
+@conflict burp-*
+@newgroup _burp:794
+@newuser _burp:794:794:daemon:BackUp and Recovery Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/burp
+@bin bin/vss_strip
+@man man/man8/bedup.8
+@man man/man8/bsigs.8
+@man man/man8/bsparse.8
+@man man/man8/burp.8
+@man man/man8/burp_ca.8
+@man man/man8/vss_strip.8
+sbin/bedup
+sbin/bsigs
+sbin/bsparse
+@bin sbin/burp
+sbin/burp_ca
+share/burp/
+share/burp/scripts/
+share/burp/scripts/backup_tool_script
+share/burp/scripts/notify_script
+share/burp/scripts/ssl_extra_checks_script
+share/burp/scripts/summary_script
+share/burp/scripts/timer_script
+share/doc/burp/
+share/doc/burp/CHANGELOG
+share/doc/burp/CONTRIBUTORS
+share/doc/burp/DONATIONS
+share/doc/burp/LICENSE
+share/doc/burp/README
+share/doc/burp/UPGRADING
+share/doc/burp/add-remove.txt
+share/doc/burp/autoupgrade.txt
+share/doc/burp/backup_phases.txt
+share/doc/burp/backup_tool_script.txt
+share/doc/burp/baremetal-windows2008.txt
+share/doc/burp/baremetal-windows7-hirens.txt
+share/doc/burp/baremetal-windows7.txt
+share/doc/burp/baremetal-windows7and8.txt
+share/doc/burp/burp_ca.txt
+share/doc/burp/debug.txt
+share/doc/burp/readwrite.txt
+share/doc/burp/retention.txt
+share/doc/burp/security-models.txt
+share/doc/burp/server-basics.txt
+share/doc/burp/shuffling.txt
+share/doc/burp/status-monitor.txt
+share/doc/burp/tests.txt
+share/doc/burp/timer_script.txt
+share/doc/burp/working_dir.txt
+share/examples/burp/
+share/examples/burp/CA-client/
+@mode 750
+@owner _burp
+@group _burp
+@sample ${SYSCONFDIR}/
+@sample ${SYSCONFDIR}/clientconfdir/
+@sample ${SYSCONFDIR}/clientconfdir/incexc/
+@mode
+share/examples/burp/CA.cnf
+@sample ${SYSCONFDIR}/CA.cnf
+share/examples/burp/burp-server.conf
+@sample ${SYSCONFDIR}/burp-server.conf
+share/examples/burp/burp.conf
+@sample ${SYSCONFDIR}/burp.conf
+@owner
+@group
+share/examples/burp/clientconfdir/
+share/examples/burp/clientconfdir/incexc/
+share/examples/burp/clientconfdir/incexc/example
+@owner _burp
+@group _burp
+@sample ${SYSCONFDIR}/clientconfdir/incexc/example
+@owner
+@group
+share/examples/burp/clientconfdir/testclient
+@sample ${LOCALSTATEDIR}/spool/burp/
+@sample ${SYSCONFDIR}/CA-client/
