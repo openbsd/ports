@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.26 2018/11/30 09:08:24 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.27 2018/12/01 20:36:19 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -148,12 +148,13 @@ sub prepare
 sub prepare_inserter
 {
 	my ($ins, $table, @cols) = @_;
-	$ins->{insert}{$table} = $ins->prepare(
-	    "INSERT OR REPLACE INTO ".
+	my $request = "INSERT OR REPLACE INTO ".
 	    $ins->table_name($table)." (".
 	    join(', ', @cols).
 	    ") VALUES (".
-	    join(', ', map {'?'} @cols).")");
+	    join(', ', map {'?'} @cols).")";
+	print "$request\n" if $ins->{verbose};
+	$ins->{insert}{$table} = $ins->prepare($request);
 }
 
 sub prepare_normal_inserter
