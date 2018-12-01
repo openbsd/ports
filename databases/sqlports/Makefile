@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2018/12/01 08:28:55 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2018/12/01 15:48:15 espie Exp $
 
 CATEGORIES =		databases
 V =			7.4
@@ -14,8 +14,8 @@ PKGNAME-list =		portslist-$V
 PERMIT_PACKAGE_CDROM =	Yes
 MULTI_PACKAGES =	-main -list
 
-DBNAME =		${WRKBUILD}/sqlports
-DBS =			${DBNAME}.list ${DBNAME}
+DBNAME =		sqlports
+DBS =			${DBNAME}.list ${DBNAME} ports-INDEX
 BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 			databases/sqlite3
 RUN_DEPENDS-main =	databases/sqlite3
@@ -23,21 +23,21 @@ RUN_DEPENDS-main =	databases/sqlite3
 SCRIPTS = print-ports-index show-reverse-deps
 
 do-build:
-	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${DBNAME} -p ${WRKBUILD}/ouch
+	@unset MAKEFLAGS; unset BUILD_ONCE; PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${WRKBUILD}/${DBNAME} -p ${WRKBUILD}/ouch
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
-	${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
+	cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
+	cd ${WRKBUILD} && sh ${FILESDIR}/scripts/print-ports-index ${DBNAME} >ports-INDEX
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 .for s in ${SCRIPTS}
 	@${SUBST_PROGRAM} ${FILESDIR}/scripts/$s ${PREFIX}/bin/$s
 .endfor
-	${PREFIX}/bin/print-ports-index ${DBNAME} >${PREFIX}/share/ports-INDEX
 	@for i in ${DBS}; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share; \
+		${INSTALL_DATA} ${WRKBUILD}/$$i ${PREFIX}/share; \
 	done
 
 NO_TEST =		Yes
