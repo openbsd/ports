@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.40 2018/11/30 22:26:04 espie Exp $
+# $OpenBSD: Var.pm,v 1.41 2018/12/01 08:28:55 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -373,6 +373,8 @@ sub subselect
 
 package PkgPathsVar;
 our @ISA = qw(AnyVar);
+sub columntype() { 'OptCoalesceColumn' }
+sub want_in_ports_view { 1 }
 
 sub table() { 'PkgPaths' }
 sub create_tables
@@ -607,7 +609,6 @@ sub subselect
 
 package DefinedListKeyVar;
 our @ISA = qw(ListKeyVar);
-sub columntype() { 'OptValueColumn' }
 
 sub add
 {
