@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.620 2018/09/14 15:24:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.621 2018/12/01 13:32:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -417,6 +417,7 @@
      SUBDIR += xzoom
      SUBDIR += yad
      SUBDIR += yakuake
+     SUBDIR += yaru
      SUBDIR += yeahconsole
      SUBDIR += yeahlaunch
 
