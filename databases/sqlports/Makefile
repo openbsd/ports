@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.94 2018/12/01 15:48:15 espie Exp $
+# $OpenBSD: Makefile,v 1.95 2018/12/01 20:37:57 espie Exp $
 
 CATEGORIES =		databases
-V =			7.4
+V =			7.5
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -23,7 +23,7 @@ RUN_DEPENDS-main =	databases/sqlite3
 SCRIPTS = print-ports-index show-reverse-deps
 
 do-build:
-	@unset MAKEFLAGS; unset BUILD_ONCE; PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${WRKBUILD}/${DBNAME} -p ${WRKBUILD}/ouch
+	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v ${WRKBUILD}/${DBNAME} -p ${WRKBUILD}/ouch
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.14 2018/11/30 22:26:04 espie Exp $
+# $OpenBSD: Column.pm,v 1.15 2018/12/01 20:37:57 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -221,6 +221,52 @@ sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
 	return "LEFT ".$self->SUPER::join_schema($table, $inserter);
+}
+
+package MasterSitesColumn;
+our @ISA = qw(ValueColumn);
+sub new
+{
+	my ($class, $name) = @_;
+	my $o = $class->SUPER::new($name);
+	if ($o->name =~ m/^MASTER_SITES(\d)$/) {
+		$o->{match} = '='.$1;
+	} else {
+		$o->{match} = " IS NULL";
+	}
+	return $o;
+}
+
+sub normal_schema
+{
+	undef;
+}
+
+sub realname
+{
+	my ($self, $t) = @_;
+	return $self->table.".VALUE";
+}
+
+sub join_schema
+{
+	my ($self, $table, $inserter) = @_;
+	my $o = $inserter->table_name($self->{vartype}->table);
+	my $t = $self->table;
+	return qq{
+	LEFT JOIN $o $t ON 
+	    $t.fullpkgpath=_ports.fullpkgpath AND $t.N$self->{match}};
+}
+
+package DependsColumn;
+our @ISA = qw(OptCoalesceColumn);
+
+sub join_schema
+{
+	my ($self, $table, $inserter) = @_;
+	my $t = $self->table;
+	return $self->SUPER::join_schema($table, $inserter).
+		" and $t.TYPE=".$self->{vartype}->match;
 }
 
 1;

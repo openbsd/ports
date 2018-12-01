@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.41 2018/12/01 08:28:55 espie Exp $
+# $OpenBSD: Var.pm,v 1.42 2018/12/01 20:37:57 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -314,6 +314,8 @@ sub add
 package DependsVar;
 our @ISA = qw(AnyVar);
 sub table() { 'Depends' }
+sub columntype() { 'DependsColumn' }
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -404,18 +406,22 @@ sub add
 package LibDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Library' }
+sub match() { 0 }
 
 package RunDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Run' }
+sub match() { 1 }
 
 package BuildDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Build' }
+sub match() { 2 }
 
 package TestDependsVar;
 our @ISA = qw(DependsVar);
 sub depends_type() { 'Test' }
+sub match() { 3 }
 
 # Stuff that gets stored in another table
 package SecondaryVar;
@@ -483,6 +489,8 @@ sub create_tables
 package MasterSitesVar;
 our @ISA = qw(OptKeyVar);
 sub table() { 'MasterSites' }
+sub columntype() { 'MasterSitesColumn' }
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -637,6 +645,7 @@ my $always = {
 		'${PORTSDIR}/infrastructure/mk/modules.port.mk',
 		'${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk',
 		'${PORTSDIR}/infrastructure/templates/network.conf.template',
+		'${PORTSDIR}/infrastructure/db/network.conf',
 		)
 };
 	
