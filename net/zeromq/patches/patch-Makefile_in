@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2018/12/01 00:01:51 naddy Exp $
+
+GCC (4.9, 6.4) does not accept -Wl without argument.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1855,7 +1855,6 @@ src_libzmq_la_SOURCES = src/address.cpp src/address.hp
+ @ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_FALSE@@ON_MINGW_FALSE@src_libzmq_la_LDFLAGS = \
+ @ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_FALSE@@ON_MINGW_FALSE@	-version-info @LTVER@ \
+ @ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_FALSE@@ON_MINGW_FALSE@	@LIBZMQ_EXTRA_LDFLAGS@ \
+-@ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_FALSE@@ON_MINGW_FALSE@	-Wl
+ 
+ @ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_TRUE@@ON_MINGW_FALSE@src_libzmq_la_LDFLAGS = \
+ @ON_ANDROID_FALSE@@ON_CYGWIN_FALSE@@ON_LINUX_TRUE@@ON_MINGW_FALSE@	-version-info @LTVER@ \
