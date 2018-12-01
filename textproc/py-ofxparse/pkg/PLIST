@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/23 05:49:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/01 09:10:26 semarie Exp $
 lib/python${MODPY_VERSION}/site-packages/ofxparse/
 lib/python${MODPY_VERSION}/site-packages/ofxparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ofxparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/ofxparse-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/ofxparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ofxparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/ofxparse/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ofxparse/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ofxparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ofxparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ofxparse/${MODPY_PYCACHE}mcc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ofxparse/${MODPY_PYCACHE}ofxparse.${MODPY_PYC_MAGIC_TAG}pyc
