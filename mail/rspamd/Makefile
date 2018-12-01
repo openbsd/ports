@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/11/26 22:14:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2018/12/01 11:59:38 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
@@ -19,7 +19,7 @@ WANTLIB += c crypto event glib-2.0 gthread-2.0 icudata icui18n icuuc
 WANTLIB += intl m magic pcre pthread sqlite3 ssl z
 
 FLAVORS=	no_luajit
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 FLAVOR?=
 .else
 FLAVOR=		no_luajit
