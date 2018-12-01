@@ -1,11 +1,10 @@
-# $OpenBSD: dconf.port.mk,v 1.6 2015/04/03 08:43:30 ajacoutot Exp $
+# $OpenBSD: dconf.port.mk,v 1.7 2018/12/01 13:04:40 ajacoutot Exp $
 
 # This module is used by ports installing gsettings schemas under
 #     PREFIX/share/glib-2.0/schemas/
 
-# It requires the following goo in PLIST:
-# @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-# @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+# It requires the following tag in PLIST:
+# @tag glib-compile-schemas
 
 MODDCONF_BUILD_DEPENDS=	devel/glib2
 MODDCONF_RUN_DEPENDS=	devel/glib2 \

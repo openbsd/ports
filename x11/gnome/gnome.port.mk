@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.114 2018/05/08 06:36:07 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.115 2018/12/01 13:04:41 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -67,14 +67,12 @@ MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 # * docbook: Build man pages with docbook.
 # * gobject-introspection: Build and enable GObject Introspection data.
 # * gtk-update-icon-cache: Enable if there are icon files under share/icons/.
-#                          Requires the following goo in PLIST (adapt
+#                          Requires the following tag in PLIST (adapt
 #                          $icon-theme accordingly):
-#                          @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
-#                          @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
+#                          @tag gtk-update-icon-cache %D/share/icons/$icon-theme
 # * shared-mime-info: Enable if there are .xml files under share/mime/.
-#                     Requires the following goo in PLIST:
-#                     @exec %D/bin/update-mime-database %D/share/mime
-#                     @unexec-delete %D/bin/update-mime-database %D/share/mime
+#                     Requires the following tag in PLIST:
+#                     @tag update-mime-database
 # * vala: Enable vala bindings and/or building from vala source files.
 # * yelp: Use this if there are any files under share/gnome/help/
 #         or "page" files under share/help/ in the PLIST that are opened
