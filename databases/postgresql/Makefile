@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2018/10/04 14:48:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.244 2018/12/01 17:48:03 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,7 +7,7 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	10.5
+VERSION=	10.6
 PREV_MAJOR=	9.6
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
@@ -16,11 +16,6 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
-REVISION-main=		1
-REVISION-server=	4
-REVISION-contrib=	0
-REVISION-plpython=	0
-REVISION-pg_upgrade=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.9 \
@@ -35,7 +30,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m readline ssl termcap z
+WANTLIB += c crypto curses m readline ssl z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
@@ -93,18 +88,19 @@ WANTLIB-main =	${WANTLIB} xml2
 
 LIB_DEPENDS-server= databases/postgresql=${VERSION} \
 		    ${LIB_DEPENDS-main}
-WANTLIB-server=	${WANTLIB-main} perl pq>=4
+WANTLIB-server=	${WANTLIB-main} perl
 
 RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
-WANTLIB-contrib=	${WANTLIB-main} pq>=4 perl
+WANTLIB-contrib=	${WANTLIB-main} perl
 
 RUN_DEPENDS-pg_upgrade=	databases/postgresql,-server=${VERSION} \
 			databases/postgresql-previous>=${PREV_MAJOR}
 LIB_DEPENDS-pg_upgrade= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
-WANTLIB-pg_upgrade=	${WANTLIB-main} pq>=4
+
+WANTLIB-pg_upgrade =	${WANTLIB-main}
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
 WANTLIB-plpython =	c m pthread util \
