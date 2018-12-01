@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_main_cc,v 1.1 2017/04/25 14:47:48 espie Exp $
---- src/main.cc.orig	Tue Apr 25 16:44:22 2017
-+++ src/main.cc	Tue Apr 25 16:44:30 2017
-@@ -35,6 +35,7 @@
+$OpenBSD: patch-src_main_cc,v 1.2 2018/12/01 22:41:39 naddy Exp $
+Index: src/main.cc
+--- src/main.cc.orig
++++ src/main.cc
+@@ -35,6 +35,8 @@
  #include "../version.h"
  
  #include <stdio.h>
 +#include <stdlib.h>
++#include <string.h>
  
  
  static void showHelp(int exitval) {

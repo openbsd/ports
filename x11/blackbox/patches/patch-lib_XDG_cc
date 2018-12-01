@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_XDG_cc,v 1.1 2018/12/01 22:41:39 naddy Exp $
+
+Index: lib/XDG.cc
+--- lib/XDG.cc.orig
++++ lib/XDG.cc
+@@ -25,6 +25,8 @@
+ #include "Util.hh"
+ #include "XDG.hh"
+ 
++#include <algorithm>
++
+ #include <stdlib.h>
+ 
+ 

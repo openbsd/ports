@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_BlackboxResource_cc,v 1.1 2018/12/01 22:41:39 naddy Exp $
+
+Index: src/BlackboxResource.cc
+--- src/BlackboxResource.cc.orig
++++ src/BlackboxResource.cc
+@@ -33,6 +33,8 @@
+ #include <X11/Xutil.h>
+ #include <X11/cursorfont.h>
+ 
++#include <string.h>
++
+ 
+ BlackboxResource::BlackboxResource(const std::string& rc): rc_file(rc) {
+   screen_resources = 0;

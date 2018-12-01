@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Image_cc,v 1.1 2018/12/01 22:41:39 naddy Exp $
+
+Index: lib/Image.cc
+--- lib/Image.cc.orig
++++ lib/Image.cc
+@@ -44,6 +44,7 @@
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ // #define COLORTABLE_DEBUG
+ // #define MITSHM_DEBUG

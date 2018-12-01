@@ -1,11 +1,13 @@
-$OpenBSD: patch-util_bsetroot_cc,v 1.1 2017/04/25 14:47:48 espie Exp $
---- util/bsetroot.cc.orig	Tue Apr 25 16:44:56 2017
-+++ util/bsetroot.cc	Tue Apr 25 16:45:04 2017
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-util_bsetroot_cc,v 1.2 2018/12/01 22:41:39 naddy Exp $
+Index: util/bsetroot.cc
+--- util/bsetroot.cc.orig
++++ util/bsetroot.cc
+@@ -31,6 +31,8 @@
  
  #include <X11/Xatom.h>
  #include <stdio.h>
 +#include <stdlib.h>
++#include <string.h>
  
  
  // ignore all X errors

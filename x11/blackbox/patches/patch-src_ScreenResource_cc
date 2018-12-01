@@ -1,10 +1,19 @@
-$OpenBSD: patch-src_ScreenResource_cc,v 1.1 2013/09/01 12:49:12 sthen Exp $
+$OpenBSD: patch-src_ScreenResource_cc,v 1.2 2018/12/01 22:41:39 naddy Exp $
 
 Fix for warning: deprecated conversion from string constant to 'char*'
 
---- src/ScreenResource.cc.orig	Tue Apr 12 22:54:08 2005
-+++ src/ScreenResource.cc	Fri Aug 30 14:12:43 2013
-@@ -61,7 +61,7 @@ static const unsigned char close_bits[] =
+Index: src/ScreenResource.cc
+--- src/ScreenResource.cc.orig
++++ src/ScreenResource.cc
+@@ -32,6 +32,7 @@
+ #include <Resource.hh>
+ 
+ #include <assert.h>
++#include <string.h>
+ 
+ 
+ static const int iconify_width  = 9;
+@@ -61,7 +62,7 @@ static const unsigned char close_bits[] =
  
  void ScreenResource::save(bt::Resource& res, BScreen* screen) {
    char rc_string[128];
