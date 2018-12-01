@@ -1,0 +1,13 @@
+$OpenBSD: patch-havp_sockethandler_cpp,v 1.1 2018/12/01 22:11:03 naddy Exp $
+
+Index: havp/sockethandler.cpp
+--- havp/sockethandler.cpp.orig
++++ havp/sockethandler.cpp
+@@ -24,6 +24,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <errno.h>
++#include <cstring>
+ 
+ #ifndef INADDR_NONE
+ #define INADDR_NONE ((unsigned long) -1)
