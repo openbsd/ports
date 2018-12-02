@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/12/02 09:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2018/12/02 13:26:42 ajacoutot Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	databases
 
@@ -21,8 +21,9 @@ MASTER_SITES=	https://github.com/downloads/markokr/skytools/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	databases/postgresql,-server \
-		databases/postgresql,-main
+BUILD_DEPENDS=	databases/postgresql,-server
+
+LIB_DEPENDS=	databases/postgresql,-main
 
 RUN_DEPENDS=    databases/py-psycopg2
 

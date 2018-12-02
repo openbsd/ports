@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/12/02 09:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2018/12/02 13:26:42 ajacoutot Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -24,8 +24,7 @@ EXTRACT_SUFX =		.zip
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			postgresql-client->=10,<11:databases/postgresql,-main
+BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		lang/libv8
 RUN_DEPENDS =		postgresql-server->=10,<11:databases/postgresql,-server
 
