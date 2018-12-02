@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_global_c,v 1.1 2018/12/02 11:24:15 robert Exp $
+
+Index: src/global.c
+--- src/global.c.orig
++++ src/global.c
+@@ -313,6 +313,9 @@ print_config (const char *what, gpgrt_stream_t fp)
+   if (!what || !strcmp (what, "rnd-mod"))
+     {
+       gpgrt_fprintf (fp, "rnd-mod:"
++#if USE_RNDARC4RANDOM
++                     "arc4random:"
++#endif
+ #if USE_RNDEGD
+                      "egd:"
+ #endif

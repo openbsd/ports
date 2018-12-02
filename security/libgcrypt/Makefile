@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2018/10/27 16:12:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2018/12/02 11:24:15 robert Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.8.4
 CATEGORIES=		security
+
+REVISION=		0
 
 SHARED_LIBS +=  gcrypt               19.5     # 22.4
 
@@ -20,7 +22,10 @@ MASTER_SITES=		${MASTER_SITE_GNUPG:=libgcrypt/}
 
 LIB_DEPENDS=		security/libgpg-error
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
 

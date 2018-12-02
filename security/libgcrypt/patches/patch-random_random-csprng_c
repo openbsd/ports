@@ -1,0 +1,17 @@
+$OpenBSD: patch-random_random-csprng_c,v 1.2 2018/12/02 11:24:15 robert Exp $
+
+Index: random/random-csprng.c
+--- random/random-csprng.c.orig
++++ random/random-csprng.c
+@@ -1132,6 +1132,11 @@ getfnc_gather_random (void))(void (*)(const void*, siz
+     }
+ #endif
+ 
++#if USE_RNDARC4RANDOM
++  fnc = _gcry_rndarc4random_gather_random;
++  return fnc;
++#endif
++
+ #if USE_RNDUNIX
+   fnc = _gcry_rndunix_gather_random;
+   return fnc;
