@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/09 13:38:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/02 01:07:45 kn Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
 MODPY_EGG_VERSION =	0.19.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
+
+HOMEPAGE =		https://github.com/ihabunek/toot
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
