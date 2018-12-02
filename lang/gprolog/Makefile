@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2018/11/23 09:23:14 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2018/12/02 11:42:25 sthen Exp $
+
+BROKEN-i386=		various errors from gplc during build (segv, "fatal error", etc at various different points)
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
