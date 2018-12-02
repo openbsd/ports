@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2018/12/01 17:48:03 pea Exp $
+# $OpenBSD: Makefile,v 1.245 2018/12/02 12:27:12 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -16,6 +16,10 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
+
+REVISION-server= 	0
+REVISION-contrib=	0
+REVISION-pg_upgrade=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.9 \
@@ -88,19 +92,19 @@ WANTLIB-main =	${WANTLIB} xml2
 
 LIB_DEPENDS-server= databases/postgresql=${VERSION} \
 		    ${LIB_DEPENDS-main}
-WANTLIB-server=	${WANTLIB-main} perl
+WANTLIB-server=	${WANTLIB-main} perl pq
 
 RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
-WANTLIB-contrib=	${WANTLIB-main} perl
+WANTLIB-contrib=	${WANTLIB-main} perl pq
 
 RUN_DEPENDS-pg_upgrade=	databases/postgresql,-server=${VERSION} \
 			databases/postgresql-previous>=${PREV_MAJOR}
 LIB_DEPENDS-pg_upgrade= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main}
 
-WANTLIB-pg_upgrade =	${WANTLIB-main}
+WANTLIB-pg_upgrade =	${WANTLIB-main} pq
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
 WANTLIB-plpython =	c m pthread util \
