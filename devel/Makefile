@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1791 2018/11/27 13:53:43 danj Exp $
+# $OpenBSD: Makefile,v 1.1792 2018/12/02 01:16:38 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -935,6 +935,7 @@
      SUBDIR += p5-POE-Component-Pluggable
      SUBDIR += p5-POE-Component-PubSub
      SUBDIR += p5-POE-Component-Supervisor
+     SUBDIR += p5-POE-Component-Syndicator
      SUBDIR += p5-POE-Loop-Event
      SUBDIR += p5-POE-Loop-Tk
      SUBDIR += p5-POE-Test-Loops
