@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_logger_cpp,v 1.1 2018/12/02 17:56:34 naddy Exp $
+
+Index: src/logger.cpp
+--- src/logger.cpp.orig
++++ src/logger.cpp
+@@ -5,6 +5,10 @@
+ 
+ #include <iostream>
+ 
++extern "C" {
++#include <stdlib.h>
++}
++
+ #include "logger.h"
+ #include "util.h"
+ 

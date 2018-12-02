@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_main_cpp,v 1.1 2018/12/02 17:56:34 naddy Exp $
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -10,6 +10,7 @@ extern "C" {
+ #include <assert.h>
+ #include <unistd.h> // getopt stuff
+ #include <stdlib.h> // getenv stuff
++#include <string.h> // strlen stuff
+ #include <X11/Xlib.h>
+ }
+ 
