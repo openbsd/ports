@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/02 00:57:01 jeremy Exp $
 
 COMMENT =		Lua procedural language support for PostgreSQL
 
@@ -21,7 +21,8 @@ WANTLIB =		c ${MODLUA_WANTLIB}
 MASTER_SITES =		http://pgfoundry.org/frs/download.php/3481/
 
 MODULES =		lang/lua
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			postgresql-client->=10,<11:databases/postgresql,-main
 RUN_DEPENDS =		postgresql-server->=10,<11:databases/postgresql,-server
 
 USE_GMAKE =		Yes
