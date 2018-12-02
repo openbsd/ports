@@ -1,8 +1,8 @@
-$OpenBSD: patch-bin_dig_host_c,v 1.6 2018/11/06 13:48:40 sthen Exp $
+$OpenBSD: patch-bin_dig_host_c,v 1.7 2018/12/02 13:25:44 sthen Exp $
 Index: bin/dig/host.c
 --- bin/dig/host.c.orig
 +++ bin/dig/host.c
-@@ -897,6 +897,11 @@ main(int argc, char **argv) {
+@@ -899,6 +899,11 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
@@ -14,7 +14,7 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -905,6 +910,13 @@ main(int argc, char **argv) {
+@@ -907,6 +912,13 @@ main(int argc, char **argv) {
  	setup_libs();
  	setup_system(ipv4only, ipv6only);
  	parse_args(false, argc, argv);

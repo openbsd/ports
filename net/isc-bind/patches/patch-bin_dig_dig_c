@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.8 2018/11/06 13:48:40 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.9 2018/12/02 13:25:44 sthen Exp $
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
 +++ bin/dig/dig.c
@@ -14,7 +14,7 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -2234,6 +2239,13 @@ void dig_query_setup(bool is_batchfile, bool config_on
+@@ -2237,6 +2242,13 @@ void dig_query_setup(bool is_batchfile, bool config_on
  	debug("dig_query_setup");
  
  	parse_args(is_batchfile, config_only, argc, argv);
