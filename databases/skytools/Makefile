@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/06/01 19:18:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2018/12/02 09:15:35 ajacoutot Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -21,7 +21,8 @@ MASTER_SITES=	https://github.com/downloads/markokr/skytools/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	databases/postgresql,-server
+BUILD_DEPENDS=	databases/postgresql,-server \
+		databases/postgresql,-main
 
 RUN_DEPENDS=    databases/py-psycopg2
 

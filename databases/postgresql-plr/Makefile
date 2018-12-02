@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/01 21:51:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/02 09:15:35 ajacoutot Exp $
 
 COMMENT =		R procedural language for PostgreSQL
 
@@ -17,7 +17,8 @@ WANTLIB =		c lib/R/lib/R
 
 MASTER_SITES =		http://www.joeconway.com/plr/doc/downloads/
 
-BUILD_DEPENDS =		databases/postgresql,-server
+BUILD_DEPENDS =		databases/postgresql,-server \
+			databases/postgresql,-main
 RUN_DEPENDS =		databases/postgresql,-server
 LIB_DEPENDS =		math/R
 
