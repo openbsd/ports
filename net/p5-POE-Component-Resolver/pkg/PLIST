@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.3 2018/12/02 01:22:26 afresh1 Exp $
+${P5SITE}/POE/
+${P5SITE}/POE/Component/
+${P5SITE}/POE/Component/Resolver/
+${P5SITE}/POE/Component/Resolver.pm
+${P5SITE}/POE/Component/Resolver/Sidecar.pm
+@man man/man3p/POE::Component::Resolver.3p
+@man man/man3p/POE::Component::Resolver::Sidecar.3p
