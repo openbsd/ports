@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/24 15:28:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/12/02 00:59:48 afresh1 Exp $
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/Component/
 ${P5SITE}/POE/Component.pm
@@ -37,15 +37,16 @@ ${P5SITE}/POE/Queue/Array.pm
 ${P5SITE}/POE/Resource/
 ${P5SITE}/POE/Resource.pm
 ${P5SITE}/POE/Resource/Aliases.pm
+${P5SITE}/POE/Resource/Clock.pm
 ${P5SITE}/POE/Resource/Events.pm
 ${P5SITE}/POE/Resource/Extrefs.pm
 ${P5SITE}/POE/Resource/FileHandles.pm
 ${P5SITE}/POE/Resource/SIDs.pm
 ${P5SITE}/POE/Resource/Sessions.pm
 ${P5SITE}/POE/Resource/Signals.pm
-${P5SITE}/POE/Resource/Statistics.pm
 ${P5SITE}/POE/Resources.pm
 ${P5SITE}/POE/Session.pm
+${P5SITE}/POE/Test/Sequence.pm
 ${P5SITE}/POE/Wheel/
 ${P5SITE}/POE/Wheel.pm
 ${P5SITE}/POE/Wheel/Curses.pm
@@ -84,15 +85,16 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Queue::Array.3p
 @man man/man3p/POE::Resource.3p
 @man man/man3p/POE::Resource::Aliases.3p
+@man man/man3p/POE::Resource::Clock.3p
 @man man/man3p/POE::Resource::Events.3p
 @man man/man3p/POE::Resource::Extrefs.3p
 @man man/man3p/POE::Resource::FileHandles.3p
 @man man/man3p/POE::Resource::SIDs.3p
 @man man/man3p/POE::Resource::Sessions.3p
 @man man/man3p/POE::Resource::Signals.3p
-@man man/man3p/POE::Resource::Statistics.3p
 @man man/man3p/POE::Resources.3p
 @man man/man3p/POE::Session.3p
+@man man/man3p/POE::Test::Sequence.3p
 @man man/man3p/POE::Wheel.3p
 @man man/man3p/POE::Wheel::Curses.3p
 @man man/man3p/POE::Wheel::FollowTail.3p
