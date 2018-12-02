@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1091 2018/11/30 07:58:28 semarie Exp $
+# $OpenBSD: Makefile,v 1.1092 2018/12/02 01:23:31 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -444,6 +444,7 @@
      SUBDIR += p5-POE-Component-IRC-Plugin-RSS-Headlines
      SUBDIR += p5-POE-Component-Jabber
      SUBDIR += p5-POE-Component-Pcap
+     SUBDIR += p5-POE-Component-Resolver
      SUBDIR += p5-POE-Component-Server-FTP
      SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
