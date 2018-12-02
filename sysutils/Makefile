@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2018/11/27 20:35:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.509 2018/12/02 20:33:27 pvk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -372,7 +372,6 @@
      SUBDIR += wmcube
      SUBDIR += wmmon
      SUBDIR += wmwlmon
-     SUBDIR += x-pack
      SUBDIR += xbatt
      SUBDIR += xbattbar
      SUBDIR += xbattmon
