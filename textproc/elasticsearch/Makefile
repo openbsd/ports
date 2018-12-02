@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2018/11/12 21:24:36 pvk Exp $
+# $OpenBSD: Makefile,v 1.59 2018/12/02 20:18:38 pvk Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
-V =			6.4.3
+V =			6.5.1
 DISTNAME =		elasticsearch-oss-$V
 PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
@@ -33,7 +33,7 @@ ES_HOME =		${PREFIX}/elasticsearch/
 
 do-install:
 	${SUBST_CMD} ${WRKSRC}/bin/elasticsearch-env ${WRKSRC}/config/{elasticsearch.yml,jvm.options}
-	rm ${WRKSRC}/bin/*.{bat,beforesubst,exe,orig} ${WRKSRC}/config/*.orig
+	rm ${WRKSRC}/bin/*.{bat,beforesubst,exe,orig} ${WRKSRC}/config/*.{beforesubst,orig}
 	sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' ${WRKSRC}/bin/*
 	${INSTALL_DATA_DIR} ${ES_HOME}/{bin,lib,modules,plugins}/ \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
