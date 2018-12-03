@@ -1,14 +1,18 @@
-$OpenBSD: patch-LibreNMS_Util_FileLock_php,v 1.1 2018/01/05 14:51:42 sthen Exp $
+$OpenBSD: patch-LibreNMS_Util_FileLock_php,v 1.2 2018/12/03 18:41:36 sthen Exp $
 
 Index: LibreNMS/Util/FileLock.php
 --- LibreNMS/Util/FileLock.php.orig
 +++ LibreNMS/Util/FileLock.php
-@@ -45,7 +45,7 @@ class FileLock implements Lock
-         global $config;
+@@ -43,10 +43,10 @@ class FileLock implements Lock
+ 
+     private function __construct($lock_name)
+     {
+-        $install_dir = Config::get('install_dir');
++        $log_dir = Config::get('log_dir');
  
          $this->name = $lock_name;
--        $this->file = "$config[install_dir]/.$lock_name.lock";
-+        $this->file = "$config[log_dir]/.$lock_name.lock";
+-        $this->file = "$install_dir/.$lock_name.lock";
++        $this->file = "$log_dir/.$lock_name.lock";
          $this->handle = fopen($this->file, "w+");
      }
  
