@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.330 2018/11/29 00:38:14 sthen Exp $
+$OpenBSD: user.list,v 1.331 2018/12/03 12:20:01 semarie Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -183,7 +183,7 @@ id  user		group		port options
 672 _radicale		_radicale	productivity/radicale
 673 _buildbot		_buildbot	devel/py-buildbot
 674 _buildslave		_buildslave	devel/py-buildslave
-#675 _tryton		_tryton		productivity/tryton/trytond
+675 _trytond		_trytond	productivity/tryton
 676 _gdm		_gdm		x11/gnome/gdm
 677 _scamper		_scamper	net/scamper
 678 _owampd		_owampd		net/owamp
