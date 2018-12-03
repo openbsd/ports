@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.667 2018/12/03 18:27:32 pvk Exp $
+# $OpenBSD: Quirks.pm,v 1.668 2018/12/03 20:32:50 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1187,8 +1187,8 @@ my $cve = {
 	'audio/flac' => 'flac-<1.3.0p1',
 	'databases/mariadb,-main' => 'mariadb-client-<10.0.36',
 	'databases/mariadb,-server' => 'mariadb-server-<10.0.36',
-	'databases/postgresql,-main' => 'postgresql-client-<10.5',
-	'databases/postgresql,-server' => 'postgresql-server-<10.5',
+	'databases/postgresql,-main' => 'postgresql-client-<10.6',
+	'databases/postgresql,-server' => 'postgresql-server-<10.6',
 	'devel/git,-main' => 'git-<2.19.1',
 	'devel/git,-svn' => 'git-svn-<2.19.1',
 	'devel/git,-x11' => 'git-x11-<2.19.1',
