@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2018/12/03 21:29:15 bluhm Exp $
 
 COMMENT=	event-driven IRC-client module
 
-DISTNAME=	POE-Component-IRC-6.52
-REVISION=	1
+DISTNAME=	POE-Component-IRC-6.90
 CATEGORIES=	net
 
 # perl
@@ -13,14 +12,18 @@ MODULES=		cpan
 PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 
-RUN_DEPENDS=	devel/p5-Object-Pluggable \
-		devel/p5-POE>=1.287 \
+RUN_DEPENDS=	archivers/p5-POE-Filter-Zlib>=1.96 \
+		devel/p5-POE>=1.311 \
+		devel/p5-POE-Component-Syndicator \
+		net/p5-IRC-Utils>=0.12 \
 		net/p5-POE-Component-Client-DNS>=0.99 \
 		net/p5-POE-Filter-IRCD>=2.42 \
-		archivers/p5-POE-Filter-Zlib
+		net/p5-Socket6
 
 # Not listed in PREREQ_PM, but needed for SSL connections.
 RUN_DEPENDS+=	security/p5-POE-Component-SSLify
+
+TEST_DEPENDS=	devel/p5-Test-Differences>=0.61
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-POE-Component-IRC
