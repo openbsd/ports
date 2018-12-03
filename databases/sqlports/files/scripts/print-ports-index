@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.8 2018/12/01 08:28:55 espie Exp $
+# $OpenBSD: print-ports-index,v 1.9 2018/12/03 14:01:03 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -35,7 +35,7 @@ with
     d2 as
 	(select group_concat(d, ' ') as dlist, p, t
 	from d1 group by p, t)
-select fullpkgname,ports.fullpkgpath,
+select fullpkgname, ports.fullpkgpath,
     (case prefix when '/usr/local' THEN "" else prefix end),
       comment,descr.filename, maintainer,categories,
     libd.dlist, buildd.dlist, rund.dlist,
@@ -59,5 +59,6 @@ select fullpkgname,ports.fullpkgpath,
     	left join d2 as rund on rund.p=ports.pathid and rund.t=1
 	join descr on descr.pathid=ports.pathid
      	where ports.pathid in (select distinct canonical from _paths) 
+	group by ports.fullpkgpath
 	order by ports.fullpkgpath;
 EOSQL

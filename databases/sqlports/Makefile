@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.95 2018/12/01 20:37:57 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2018/12/03 14:01:03 espie Exp $
 
 CATEGORIES =		databases
-V =			7.5
+V =			7.6
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -28,6 +28,8 @@ do-build:
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
+
+post-build:
 	cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
 	cd ${WRKBUILD} && sh ${FILESDIR}/scripts/print-ports-index ${DBNAME} >ports-INDEX
 
