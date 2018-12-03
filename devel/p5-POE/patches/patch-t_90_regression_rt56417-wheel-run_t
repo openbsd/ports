@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_90_regression_rt56417-wheel-run_t,v 1.1 2018/12/03 21:47:21 bluhm Exp $
+Fix child process leaking, solution given by upstream
+see https://code.activestate.com/lists/perl-poe/5008/
+Index: t/90_regression/rt56417-wheel-run.t
+--- t/90_regression/rt56417-wheel-run.t.orig
++++ t/90_regression/rt56417-wheel-run.t
+@@ -93,6 +93,8 @@ sub _wheel_child {
+ }
+ 
+ sub _stop {
++	use POSIX ":sys_wait_h";
++	1 while waitpid(WNOHANG, -1) > 0;
+ 	pass("we sanely died (" . $_[HEAP]->{type} . ")");
+ 	return;
+ }

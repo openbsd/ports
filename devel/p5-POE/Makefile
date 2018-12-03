@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2018/12/02 00:59:48 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/03 21:47:21 bluhm Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	POE-1.367
+REVISION=	0
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
@@ -15,12 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_ARGS=	--default
 
-RUN_DEPENDS=	devel/p5-Curses \
-		devel/p5-IO-Pipely \
-		devel/p5-IO-Tty \
+BUILD_DEPENDS=	devel/p5-POE-Test-Loops>=1.360
+RUN_DEPENDS=	devel/p5-Curses>=1.08 \
+		devel/p5-IO-Pipely>=0.005 \
+		devel/p5-IO-Tty>=1.08 \
 		devel/p5-POE-Test-Loops>=1.360 \
-		net/p5-Socket6 \
-		www/p5-libwww
+		net/p5-Socket6>=0.23 \
+		www/p5-URI>=1.74 \
+		www/p5-libwww>=5.79
 TEST_DEPENDS=	devel/p5-Term-Size \
 		devel/p5-YAML \
 		net/p5-Socket-GetAddrInfo
