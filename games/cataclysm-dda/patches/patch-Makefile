@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.6 2018/09/03 19:02:21 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.7 2018/12/03 08:43:56 kirby Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -40,6 +40,15 @@ Index: Makefile
  PKG_CONFIG = $(CROSS)pkg-config
  SDL2_CONFIG = $(CROSS)sdl2-config
  
+@@ -754,7 +747,7 @@ ifdef LTO
+   endif
+ endif
+ 
+-all: version $(CHECKS) $(TARGET) $(L10N) $(TESTS) validate-pr
++all: version $(CHECKS) $(TARGET) $(L10N) $(TESTS)
+ 	@
+ 
+ $(TARGET): $(OBJS)
 @@ -773,7 +766,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
  .PHONY: version json-verify
  version:
@@ -48,7 +57,7 @@ Index: Makefile
              [ -e "$(SRC_DIR)/version.h" ] && OLDVERSION=$$(grep VERSION $(SRC_DIR)/version.h|cut -d '"' -f2) ; \
              if [ "x$$VERSION_STRING" != "x$$OLDVERSION" ]; then echo "#define VERSION \"$$VERSION_STRING\"" | tee $(SRC_DIR)/version.h ; fi \
           )
-@@ -827,35 +819,35 @@ distclean:
+@@ -827,36 +819,36 @@ distclean:
  bindist: $(BINDIST)
  
  ifeq ($(TARGETSYSTEM), LINUX)
@@ -92,8 +101,10 @@ Index: Makefile
  ifdef LUA
  	mkdir -p $(DATA_PREFIX)/lua
 -	install --mode=644 lua/autoexec.lua $(DATA_PREFIX)/lua
+-	install --mode=644 lua/log.lua $(DATA_PREFIX)/lua
 -	install --mode=644 lua/class_definitions.lua $(DATA_PREFIX)/lua
 +	install -m 644 lua/autoexec.lua $(DATA_PREFIX)/lua
++	install -m 644 lua/log.lua $(DATA_PREFIX)/lua
 +	install -m 644 lua/class_definitions.lua $(DATA_PREFIX)/lua
  endif
 -	install --mode=644 data/changelog.txt data/cataicon.ico data/fontdata.json \
@@ -103,7 +114,7 @@ Index: Makefile
  	mkdir -p $(LOCALE_DIR)
  ifdef LANGUAGES
  	LOCALE_DIR=$(LOCALE_DIR) lang/compile_mo.sh $(LANGUAGES)
-@@ -1027,11 +1019,6 @@ astyle: $(ASTYLED_WHITELIST)
+@@ -1029,11 +1021,6 @@ astyle: $(ASTYLED_WHITELIST)
  astyle-all: $(SOURCES) $(HEADERS) $(TESTSRC) $(TESTHDR) $(TOOLSRC)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(SOURCES) $(HEADERS)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(TESTSRC) $(TESTHDR)

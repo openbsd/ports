@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/03 19:02:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/03 08:43:56 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-2018.09.02
+DISTNAME=		cataclysm-dda-2018.11.01
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_COMMIT=		47298ed1dea10582ae57a3decfe548640ac576de
+GH_COMMIT=		473c84e270095e8095d5e00d8af8ddba012d9286
 
 HOMEPAGE=		http://en.cataclysmdda.com
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
@@ -33,8 +33,8 @@ LIB_DEPENDS=		devel/gettext
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MAKE_FLAGS=		ASTYLE=0 RELEASE=1 USE_XDG_DIR=1 LOCALIZE=1 \
-			LANGUAGES=all LUA=1 LUA_BINARY=${MODLUA_BIN:T}
+MAKE_FLAGS=		ASTYLE=0 BSD=1 RELEASE=1 USE_XDG_DIR=1 LINTJSON=0 \
+			LOCALIZE=1 LANGUAGES=all LUA=1 LUA_BINARY=${MODLUA_BIN:T}
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		curses
@@ -53,6 +53,9 @@ MAN_TILES=		-tiles
 USE_GMAKE=		Yes
 
 NO_TEST=		Yes
+
+post-patch:
+	sed -i 's,/usr,${PREFIX},' ${WRKSRC}/lua/autoexec.lua
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cataclysm${MAN_TILES}.6 ${PREFIX}/man/man6/
