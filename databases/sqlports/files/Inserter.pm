@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.28 2018/12/03 15:28:40 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.29 2018/12/03 20:11:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -82,11 +82,15 @@ sub make_ordered_view
 	my @group = $class->group_by;
 	unshift(@group, 'fullpkgpath');
 	my $groupby = join(', ', @group);
-	my $result = join(',', @group, 'group_concat(value, " ") as value');
+	my $result = join(",\n\t", @group, 'group_concat(value, " ") AS value');
 	$self->new_object('VIEW', $class->table."_ordered",
-	    qq{as 
-	    	with o as ($subselect)
-	    select $result from o group by $groupby;});
+	    qq{AS 
+    WITH o AS
+    	($subselect)
+    SELECT
+    	$result 
+    FROM o 
+    GROUP by $groupby;});
 }
 
 sub set
@@ -219,18 +223,29 @@ sub create_canonical_depends
 	my $t = $self->table_name($class->table);
 	my $p = $self->table_name("Paths");
 	$self->new_object('VIEW', "_canonical_depends",
-		qq{as select 
-		    p1.id as fullpkgpath, 
-		    p2.canonical as dependspath, $t.type from $t 
-		join $p p1 on p1.canonical=$t.fullpkgpath
-		join $p p2 on p2.Id=$t.dependspath});
+		qq{AS 
+    SELECT 
+	p1.id AS fullpkgpath, 
+	p2.canonical AS dependspath, 
+	$t.type 
+    FROM $t 
+	JOIN $p p1 
+	    ON p1.canonical=$t.fullpkgpath
+	JOIN $p p2 
+	    ON p2.Id=$t.dependspath});
 	$self->new_object('VIEW', "canonical_depends",
-		qq{as select 
-		    p1.fullpkgpath as fullpkgpath, 
-		    p3.fullpkgpath as dependspath, $t.type from $t 
-		join $p p1 on p1.canonical=$t.fullpkgpath
-		join $p p2 on p2.Id=$t.dependspath
-		join $p p3 on p3.Id=p2.canonical});
+		qq{AS
+    SELECT 
+	p1.fullpkgpath AS fullpkgpath, 
+	p3.fullpkgpath AS dependspath, 
+	$t.type 
+    FROM $t 
+	JOIN $p p1 
+	    ON p1.canonical=$t.fullpkgpath
+	JOIN $p p2 
+	    ON p2.Id=$t.dependspath
+	JOIN $p p3 
+	    ON p3.Id=p2.canonical});
 }
 
 sub commit_to_db
@@ -332,12 +347,17 @@ sub create_path_table
 	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
 	my $t = $self->table_name("Paths");
     	$self->new_object('VIEW', "Paths", 
-		qq{as select 
-		    $t.id as pathid, $t.fullpkgpath as fullpkgpath, 
-		    p1.fullpkgpath as pkgpath, p2.fullpkgpath as canonical 
-		from $t
-		    join $t p1 on p1.id=$t.pkgpath 
-		    join $t p2 on p2.id=$t.canonical});
+		qq{AS 
+    SELECT 
+	$t.Id AS PathId, 
+	$t.fullpkgpath AS fullpkgpath, 
+	p1.fullpkgpath AS pkgpath, 
+	p2.fullpkgpath AS canonical 
+    FROM $t
+	JOIN $t p1 
+	    ON p1.id=$t.pkgpath 
+	JOIN $t p2 
+	    ON p2.id=$t.canonical});
 	$self->{adjust} = $self->db->prepare("UPDATE ".
 	    $self->table_name("Paths")." set canonical=? where id=?");
 }

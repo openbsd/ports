@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.42 2018/12/01 20:37:57 espie Exp $
+# $OpenBSD: Var.pm,v 1.43 2018/12/03 20:11:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -117,7 +117,7 @@ sub subselect
 {
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
-	return "select fullpkgpath, value from $t order by n";
+	return "SELECT fullpkgpath, value FROM $t ORDER BY n";
 }
 
 sub group_by
@@ -370,7 +370,7 @@ sub subselect
 {
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
-	return "select fullpkgpath, fulldepends as value, type from $t order by n";
+	return "SELECT fullpkgpath, fulldepends AS value, type\n\t FROM $t ORDER BY n";
 }
 
 package PkgPathsVar;
@@ -555,7 +555,7 @@ sub subselect
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
 	my $k = $inserter->table_name($self->keyword_table);
-	return "select fullpkgpath, $k.value from $t join $k on $k.keyref=$t.value order by n";
+	return "SELECT fullpkgpath, $k.value FROM $t\n\t JOIN $k ON $k.keyref=$t.value\n\t ORDER BY n";
 }
 
 
@@ -608,11 +608,12 @@ sub subselect
 	my ($self, $inserter) = @_;
 	my $t = $inserter->table_name($self->table);
 	return qq{
-    select fullpkgpath,
-	case quotetype 
-		when 0 then value 
-		when 1 then '"'||value||'"' 
-		when 2 then "'"||value||"'" end as value from $t order by n};
+SELECT fullpkgpath,
+	 CASE quotetype 
+	    WHEN 0 THEN value 
+	    WHEN 1 THEN '"'||value||'"' 
+	    WHEN 2 THEN "'"||value||"'" END AS value 
+    	 FROM $t ORDER BY n};
 }
 
 package DefinedListKeyVar;
