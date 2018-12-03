@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:21 semarie Exp $
+@option is-branch
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/${MODPY_PYCACHE}payment.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/payment.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/template/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/template/base-cfonb.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/template/pain.001.001.03-cfonb.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/template/pain.008.001.02-cfonb.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/${MODPY_PYCACHE}test_account_payment_sepa_cfonb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tests/test_account_payment_sepa_cfonb.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_sepa_cfonb/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_payment_sepa_cfonb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
