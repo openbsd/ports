@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.27 2018/12/01 20:36:19 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.28 2018/12/03 15:28:40 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -306,8 +306,8 @@ sub create_view
 	my @l = $self->map_columns('view', \@columns, $t, $self);
 	my @j = $self->map_columns('join', \@columns, $t, $self);
 	$self->new_object('VIEW', $table,
-	    "AS SELECT ".join(", ", @l). " FROM ".
-	    $t.' '.join(' ', @j));
+	    "AS\n    SELECT\n\t".join(",\n\t", @l). "\n    FROM ".
+	    $t."\n".join(' ', @j));
 }
 
 sub make_table

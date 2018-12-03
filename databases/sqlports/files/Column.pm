@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.15 2018/12/01 20:37:57 espie Exp $
+# $OpenBSD: Column.pm,v 1.16 2018/12/03 15:28:40 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,6 +64,14 @@ sub realname
 sub join_schema
 {
 	return undef;
+}
+
+sub pretty_join
+{
+	my ($self, $table, $inserter) = @_;
+	my $join = $self->join_part($table, $inserter);
+	my @on = $self->on_part($table, $inserter);
+	return "\t$join\n\t    ON ", join(" AND ", @on), "\n";
 }
 
 package TextColumn;
@@ -138,7 +146,19 @@ sub normal_schema
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
-	return "JOIN ".$inserter->table_name("Paths")." ".$self->{table}." ON ".$self->table.".Canonical=$table.".$self->name;
+	return $self->pretty_join($table, $inserter);
+}
+
+sub join_part
+{
+	my ($self, $table, $inserter) = @_;
+	return "JOIN ".$inserter->table_name("Paths")." ".$self->{table};
+}
+
+sub on_part
+{
+	my ($self, $table, $inserter) = @_;
+	return $self->table.".Canonical=$table.".$self->name;
 }
 
 package ValueColumn;
@@ -175,8 +195,22 @@ sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
 	if (defined $self->k) {
-		return "JOIN ".$inserter->table_name($self->k)." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
+		return $self->pretty_join($table, $inserter);
+	} else {
+		return undef;
 	}
+}
+
+sub join_part
+{
+	my ($self, $table, $inserter) = @_;
+	return "JOIN ".$inserter->table_name($self->k)." ".$self->table;
+}
+
+sub on_part
+{
+	my ($self, $table, $inserter) = @_;
+	return $self->table.".KEYREF=$table.".$self->name;
 }
 
 package OptValueColumn;
@@ -188,10 +222,10 @@ sub normal_schema
 	return $inserter->optvalue($self->k, $self->name);
 }
 
-sub join_schema
+sub join_part
 {
 	my ($self, $table, $inserter) = @_;
-	return "LEFT ".$self->SUPER::join_schema($table, $inserter);
+	return "LEFT ".$self->SUPER::join_part($table, $inserter);
 }
 
 package CoalesceColumn;
@@ -211,16 +245,28 @@ sub realname
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
+	return $self->pretty_join($table, $inserter);
+}
+
+sub join_part
+{
+	my ($self, $table, $inserter) = @_;
 	my $o = $self->{vartype}->table."_ordered";
-	return "JOIN $o ".$self->table." ON ".$self->table.".fullpkgpath=_ports.fullpkgpath";
+	return "JOIN $o ".$self->table;
+}
+
+sub on_part
+{
+	my ($self, $table, $inserter) = @_;
+	return $self->table.".fullpkgpath=_ports.fullpkgpath";
 }
 
 package OptCoalesceColumn;
 our @ISA = qw(CoalesceColumn);
-sub join_schema
+sub join_part
 {
 	my ($self, $table, $inserter) = @_;
-	return "LEFT ".$self->SUPER::join_schema($table, $inserter);
+	return "LEFT ".$self->SUPER::join_part($table, $inserter);
 }
 
 package MasterSitesColumn;
@@ -251,22 +297,32 @@ sub realname
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
+	return $self->pretty_join($table, $inserter);
+}
+
+sub join_part
+{
+	my ($self, $table, $inserter) = @_;
 	my $o = $inserter->table_name($self->{vartype}->table);
 	my $t = $self->table;
-	return qq{
-	LEFT JOIN $o $t ON 
-	    $t.fullpkgpath=_ports.fullpkgpath AND $t.N$self->{match}};
+	return "LEFT JOIN $o $t";
+}
+
+sub on_part
+{
+	my ($self, $table, $inserter) = @_;
+	my $t = $self->table;
+	return ("$t.fullpkgpath=_ports.fullpkgpath", "$t.N$self->{match}");
 }
 
 package DependsColumn;
 our @ISA = qw(OptCoalesceColumn);
 
-sub join_schema
+sub on_part
 {
 	my ($self, $table, $inserter) = @_;
 	my $t = $self->table;
-	return $self->SUPER::join_schema($table, $inserter).
-		" and $t.TYPE=".$self->{vartype}->match;
+	return ($self->SUPER::on_part($table, $inserter),
+		"$t.TYPE=".$self->{vartype}->match);
 }
-
 1;
