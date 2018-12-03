@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/12/02 10:25:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2018/12/03 07:49:09 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -17,7 +17,9 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	desktop-file-utils
 
-BUILD_DEPENDS=		devel/libgtop2
+BUILD_DEPENDS=		devel/libgtop2 \
+			devel/spidermonkey52 \
+			www/sassc
 
 RUN_DEPENDS=		devel/libgtop2 \
 			x11/gnome/shell
