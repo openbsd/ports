@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/06/27 21:04:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2018/12/03 18:40:07 sthen Exp $
 bin/mupdf
-@bin bin/mupdf-gl
+%%js%%
 @bin bin/mupdf-x11
 @bin bin/mupdf-x11-curl
 @bin bin/mutool
@@ -66,7 +66,6 @@ include/mupdf/pdf/
 include/mupdf/pdf-tools.h
 include/mupdf/pdf.h
 include/mupdf/pdf/annot.h
-include/mupdf/pdf/appearance.h
 include/mupdf/pdf/clean.h
 include/mupdf/pdf/cmap.h
 include/mupdf/pdf/crypt.h
@@ -85,7 +84,8 @@ include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
-@lib lib/libmupdf.so.${LIBmupdf_VERSION}
+lib/libmupdf-third.a
+lib/libmupdf.a
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
 share/applications/mupdf.desktop
@@ -99,17 +99,6 @@ share/doc/mupdf/building.html
 share/doc/mupdf/coding-overview.html
 share/doc/mupdf/coding-progressive.html
 share/doc/mupdf/coding-style.html
-share/doc/mupdf/examples/
-share/doc/mupdf/examples/create-thumbnail.js
-share/doc/mupdf/examples/draw-device.js
-share/doc/mupdf/examples/draw-document.js
-share/doc/mupdf/examples/example.c
-share/doc/mupdf/examples/jpx-to-pdf.js
-share/doc/mupdf/examples/multi-threaded.c
-share/doc/mupdf/examples/pdf-create-lowlevel.js
-share/doc/mupdf/examples/pdf-create.js
-share/doc/mupdf/examples/pdf-merge.js
-share/doc/mupdf/examples/trace-device.js
 share/doc/mupdf/index.html
 share/doc/mupdf/manual-mupdf-gl.html
 share/doc/mupdf/manual-mutool-clean.html
@@ -125,6 +114,9 @@ share/doc/mupdf/manual-mutool-trace.html
 share/doc/mupdf/style.css
 share/doc/mupdf/template.html
 share/doc/mupdf/thirdparty.html
+share/examples/mupdf/
+share/examples/mupdf/example.c
+share/examples/mupdf/multi-threaded.c
 share/pixmaps/
 share/pixmaps/mupdf.xpm
 @tag update-desktop-database

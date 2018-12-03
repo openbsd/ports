@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfextract_c,v 1.4 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-source_tools_pdfextract_c,v 1.5 2018/12/03 18:40:07 sthen Exp $
 
 add pledge(2) to "mutool extract"
 
@@ -14,7 +14,7 @@ Index: source/tools/pdfextract.c
  #include <stdlib.h>
  #include <stdio.h>
  
-@@ -262,6 +264,12 @@ int pdfextract_main(int argc, char **argv)
+@@ -257,6 +259,12 @@ int pdfextract_main(int argc, char **argv)
  		usage();
  
  	infile = argv[fz_optind++];

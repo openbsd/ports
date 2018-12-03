@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makethird,v 1.6 2018/12/03 18:40:07 sthen Exp $
+
+Index: Makethird
+--- Makethird.orig
++++ Makethird
+@@ -221,6 +221,7 @@ endif
+ 
+ # --- MuJS ---
+ 
++ifeq ($(ENABLE_MUJS),yes)
+ ifeq ($(USE_SYSTEM_MUJS),yes)
+   THIRD_CFLAGS += $(SYS_MUJS_CFLAGS)
+   THIRD_LIBS += $(SYS_MUJS_LIBS)
+@@ -233,6 +234,7 @@ $(OUT)/thirdparty/mujs/%.o: thirdparty/mujs/%.c
+ 	$(CC_CMD)
+ 
+ endif
++endif
+ 
+ # --- ZLIB ---
+ 
+@@ -381,7 +383,7 @@ endif
+ 
+ ifeq ($(USE_SYSTEM_CURL),yes)
+   CURL_CFLAGS := $(SYS_CURL_CFLAGS)
+-  CURL_LIBS := $(SYS_CURL_LIBS)
++  CURL_LIBS := $(SYS_CURL_LIBS) -lpthread
+ else
+ 
+ CURL_SRC += $(sort $(wildcard thirdparty/curl/lib/*.c))

@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_mudraw_c,v 1.5 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-source_tools_mudraw_c,v 1.6 2018/12/03 18:40:07 sthen Exp $
 
 add pledge(2) to "mutool draw":
   - wpath cpath : only if output is specified
@@ -15,7 +15,7 @@ Index: source/tools/mudraw.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -1555,6 +1557,23 @@ int mudraw_main(int argc, char **argv)
+@@ -1552,6 +1554,23 @@ int mudraw_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		usage();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_x11_main_c,v 1.4 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-platform_x11_x11_main_c,v 1.5 2018/12/03 18:40:07 sthen Exp $
 
 add pledge(2) to mupdf-x11 and mupdf-x11-curl:
   - inet dns : with HAVE_CURL only
@@ -33,7 +33,7 @@ Index: platform/x11/x11_main.c
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -927,6 +926,20 @@ int main(int argc, char **argv)
+@@ -937,6 +936,20 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;
