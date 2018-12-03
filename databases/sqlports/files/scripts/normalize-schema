@@ -1,0 +1,37 @@
+#! /usr/bin/perl
+
+# a small script that takes a sqlite3 schema and creates
+# a normalized version (zaps extraneous spaces, rewrites
+# everything as lowercase, sorts by table/view name)
+
+use strict;
+use warnings;
+use autodie;
+
+my ($object, $comment);
+
+my $stmt = '';
+while(<STDIN>) {
+	chomp;
+	$stmt .= " ".lc($_);
+	if (m/\;/) {
+		$stmt =~ s/\s+/ /g;
+		$stmt =~ s/^\s//;
+		if ($stmt =~ m/^create table (\S+)/) {
+			$object->{$1} = $stmt;
+		} elsif ($stmt =~ m/^create view (\S+)/) {
+			$object->{$1} = $stmt;
+		} else {
+			print $stmt, "\n";
+		}
+		$stmt = '';
+	}
+}
+
+for my $k (sort keys %$object) {
+	if ($object->{$k} =~ m,\s/\*,) {
+		print "$`\n/*$'\n\n";
+	} else {
+		print $object->{$k}, "\n\n";
+	}
+}
