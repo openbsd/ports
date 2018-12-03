@@ -1,2 +1,7 @@
-Native browser connector for integration with extensions.gnome.org (this works
-in conjunction with the GNOME Shell integration extension for Chrome).
+Native browser connector for integration with extensions.gnome.org.
+
+A browser extension is needed in order to use it properly:
+- Chromium: https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+- Firefox: https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+- Opera: https://addons.opera.com/en/extensions/details/gnome-shell-integration/
+- Epiphany: built-in

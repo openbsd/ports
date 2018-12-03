@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/12 13:58:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/03 10:00:22 ajacoutot Exp $
 
 COMMENT=		GNOME Shell integration for Chrome
 
 GNOME_PROJECT=		chrome-gnome-shell
 GNOME_VERSION=		10.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
