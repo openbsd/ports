@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/25 12:44:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/04 21:31:46 bcallah Exp $
 
 V =		5.3.1
 COMMENT =	enhanced port of Thompson shell from Sixth Edition Unix
 DISTNAME =	etsh-${V}
+REVISION =	0
 EPOCH =		0
 CATEGORIES =	shells
 
-HOMEPAGE =	https://etsh.io/
+HOMEPAGE =	https://etsh.nl/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://etsh.io/src/etsh_${V}/
+MASTER_SITES =	https://etsh.nl/src/etsh_${V}/
 
 CONFIGURE_STYLE =	simple
 
