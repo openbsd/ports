@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/23 11:49:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/04 08:05:43 ajacoutot Exp $
 @pkgpath lang/spidermonkey
 @bin bin/js${MOZILLA_VERSION}
 bin/js${MOZILLA_VERSION}-config
@@ -158,5 +158,5 @@ include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc_abort.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/mozalloc_oom.h
 include/mozjs-${MOZILLA_VERSION}/mozilla/utils.h
-@lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-52_VERSION}
+@lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-${MOZILLA_VERSION}_VERSION}
 lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc
