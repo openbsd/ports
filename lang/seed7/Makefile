@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2018/10/16 17:40:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.68 2018/12/04 19:42:40 bcallah Exp $
 
 BROKEN-hppa =	SIGILL during build
 
 COMMENT =	high-level, extensible programming language
 
-V =		20181014
+V =		20181125
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 
