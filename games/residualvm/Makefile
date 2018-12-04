@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/05 09:18:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/04 20:44:57 naddy Exp $
 
 COMMENT =		interpreter for some LucasArts 3D games
 
 V =			0.3.1
 DISTNAME =		residualvm-${V}-sources
 PKGNAME =		residualvm-${V}
+REVISION =		0
 
 CATEGORIES =		games
 

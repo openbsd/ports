@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2018/12/04 20:44:56 naddy Exp $
 
 COMMENT=	advanced music player
 
 VERSION=	1.0
 DISTNAME=	aqualung-${VERSION}
-REVISION=	5
+REVISION=	6
 EPOCH=		0
 CATEGORIES=	audio
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.30 2018/12/04 20:44:56 naddy Exp $
 
 COMMENT=		minimalistic console-based audio player
 
 DISTNAME=		herrie-2.2
-REVISION=		3
+REVISION=		4
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
