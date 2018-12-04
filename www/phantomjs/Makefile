@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/07/15 08:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2018/12/04 10:06:28 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -11,7 +11,7 @@ COMMENT =		headless WebKit scriptable with a JavaScript API
 
 MASTER_SITES=		${MASTER_SITE_FREEBSD}
 DISTNAME =		phantomjs-2.1.1
-REVISION =		5
+REVISION =		6
 DISTFILES =		ariya-${DISTNAME}_GH0.tar.gz \
 			Vitallium-phantomjs-3rdparty-win-19051aa_GH0.tar.gz \
 			Vitallium-qtbase-b5cc008_GH0.tar.gz \
@@ -101,7 +101,7 @@ post-patch:
 		${WRKSRC}/src/qt/qtbase/mkspecs/openbsd-g++/qmake.conf
 
 MAKE_ENV += OSTYPE=openbsd \
-	CC=cc CXX=c++ LINK_C=cc LINK=c++ \
+	CC=cc CXX=c++ LINK_C=cc LINK=c++ CXXFLAGS="${CXXFLAGS} -fno-ret-protector" \
 	PYTHON=${MODPY_BIN} RUBY=${RUBY} \
 	MAKE=make \
 	MAKEFLAGS="-j ${MAKE_JOBS} PYTHON=${MODPY_BIN} RUBY=${RUBY}" \
