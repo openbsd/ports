@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/03 18:40:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/04 19:11:23 sthen Exp $
 
 V =		0.3.4
 COMMENT =	mupdf pdf plugin for zathura
@@ -9,7 +9,8 @@ HOMEPAGE =	https://pwmt.org/projects/zathura-pdf-mupdf/
 MASTER_SITES =	https://pwmt.org/projects/zathura/plugins/download/ \
 		http://distfiles.gentoo.org/distfiles/
 
-BUILD_DEPENDS += textproc/mupdf
+BUILD_DEPENDS = textproc/mupdf \
+		textproc/zathura/core
 LIB_DEPENDS +=	graphics/jbig2dec \
 		graphics/jpeg \
 		graphics/openjp2
