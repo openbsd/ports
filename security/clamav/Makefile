@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.121 2018/10/03 22:05:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2018/12/04 12:33:40 sthen Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.100.2
+DISTNAME=	clamav-0.101.0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=	clamav               22.2     # 8.1
-SHARED_LIBS +=	clammspack           0.0      # 1.0
-SHARED_LIBS +=	clamunrar            3.0      # 8.1
-SHARED_LIBS +=	clamunrar_iface      3.0
+SHARED_LIBS +=	clamav               23.0     # 9.0
+SHARED_LIBS +=	clammspack           1.0      # 1.0
+SHARED_LIBS +=	clamunrar            4.0      # 9.0
+SHARED_LIBS +=	clamunrar_iface      4.0
 
 HOMEPAGE=	http://www.clamav.net/
 
@@ -17,8 +17,11 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += bz2 c crypto curl curses iconv json-c ltdl lzma m milter
 WANTLIB += nghttp2 pcre2-8 pthread ssl xml2 z
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
@@ -63,11 +66,11 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 CONFIGURE_ARGS+= --disable-llvm
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav \
-		${PREFIX}/share/examples/clamav
-	cd ${WRKSRC}/docs; ${INSTALL_DATA} *.pdf ${PREFIX}/share/doc/clamav
-	cd ${WRKSRC}/examples; ${INSTALL_DATA} ex1.c \
-		${PREFIX}/share/examples/clamav
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/clamav
+	cd ${WRKSRC}/docs; \
+	    cp -rp UserManual* html ${PREFIX}/share/doc/clamav/
+	cd ${WRKSRC}/examples; \
+	    ${INSTALL_DATA} ex1.c ${PREFIX}/share/examples/clamav
 
 pre-test:
 	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python

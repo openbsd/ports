@@ -1,11 +1,11 @@
-$OpenBSD: patch-libclamav_str_c,v 1.14 2018/07/26 19:52:55 jasper Exp $
+$OpenBSD: patch-libclamav_str_c,v 1.15 2018/12/04 12:33:40 sthen Exp $
 
 allow for machine arch where char is unsigned by default (e.g. arm, powerpc)
 
 Index: libclamav/str.c
 --- libclamav/str.c.orig
 +++ libclamav/str.c
-@@ -171,9 +171,9 @@ int cli_hex2str_to(const char *hex, char *ptr, size_t 
+@@ -172,9 +172,9 @@ int cli_hex2str_to(const char *hex, char *ptr, size_t 
  
      for(i = 0; i < len; i += 2) {
  	if((c = cli_hex2int(hex[i])) >= 0) {
