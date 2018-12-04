@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2018/11/26 21:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2018/12/04 22:02:50 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -102,6 +102,7 @@
      SUBDIR += p5-Statistics-Contingency
      SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari
+     SUBDIR += pcalc
      SUBDIR += plplot
      SUBDIR += prover9
      SUBDIR += pspp
