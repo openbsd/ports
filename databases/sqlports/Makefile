@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2018/12/03 20:11:15 espie Exp $
+# $OpenBSD: Makefile,v 1.99 2018/12/04 10:35:09 espie Exp $
 
 CATEGORIES =		databases
 V =			7.8
@@ -28,6 +28,9 @@ do-build:
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
+
+alter-tables:
+	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} ${SUDO} -u ${BUILD_USER} perl ${FILESDIR}/rebuild_schema -v ${WRKBUILD}/${DBNAME} -p ${WRKBUILD}/ouch
 
 post-build:
 	cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list

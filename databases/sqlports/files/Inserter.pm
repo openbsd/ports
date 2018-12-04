@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.29 2018/12/03 20:11:15 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.30 2018/12/04 10:35:09 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -22,7 +22,7 @@ package Inserter;
 # this is the object to use to put stuff into the db...
 sub new
 {
-	my ($class, $db, $i, $verbose) = @_;
+	my ($class, $db, $i, $verbose, $create) = @_;
 	$db->do("PRAGMA foreign_keys=ON");
 	bless {
 		db => $db,
@@ -31,6 +31,7 @@ sub new
 		vars => {},
 		table_created => {},
 		view_created => {},
+		create => $create,
 		errors => [],
 		done => {},
 		todo => {},
@@ -126,6 +127,7 @@ sub new_object
 	} elsif ($type eq 'TABLE') {
 		return if defined $self->{table_created}{$name};
 		$self->{table_created}{$name} = 1;
+		return unless $self->{create};
 		$o = $self->table_name($name);
 	} else {
 		die "unknown object type";
@@ -152,6 +154,7 @@ sub prepare
 sub prepare_inserter
 {
 	my ($ins, $table, @cols) = @_;
+	return unless $ins->{create};
 	my $request = "INSERT OR REPLACE INTO ".
 	    $ins->table_name($table)." (".
 	    join(', ', @cols).
