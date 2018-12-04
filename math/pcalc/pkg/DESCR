@@ -1,0 +1,10 @@
+pcalc is a programmer's calculator. It simplifies some operations
+(especially working with multiple bases) that are hard work without
+this or another programmer's calculator.  Main features:
+
+     o Full math parser, parentheses, add, sub, mult, div, exponential
+     o Automatic conversion between HEX DEC OCT BIN numbers
+     o Mixing different bases in one expression
+     o Definable variables
+     o Math constants (E PI ...)
+     o Built in math functions (sin/cos/sqrt ...)
