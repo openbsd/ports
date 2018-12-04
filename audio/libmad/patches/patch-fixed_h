@@ -1,0 +1,28 @@
+$OpenBSD: patch-fixed_h,v 1.1 2018/12/04 20:43:58 naddy Exp $
+
+Prevent multiple evaluation of macro argument.
+
+Index: fixed.h
+--- fixed.h.orig
++++ fixed.h
+@@ -358,15 +358,15 @@ mad_fixed_t mad_f_mul_inline(mad_fixed_t x, mad_fixed_
+  * significant bit depends on OPT_ACCURACY via mad_f_scale64().
+  */
+ #  define MAD_F_MLX(hi, lo, x, y)  \
+-    do {  \
++   ({ mad_fixed_t __x = (x);  \
++      mad_fixed_t __y = (y);  \
+       asm ("mullw %0,%1,%2"  \
+ 	   : "=r" (lo)  \
+-	   : "%r" (x), "r" (y));  \
++	   : "%r" (__x), "r" (__y));  \
+       asm ("mulhw %0,%1,%2"  \
+ 	   : "=r" (hi)  \
+-	   : "%r" (x), "r" (y));  \
+-    }  \
+-    while (0)
++	   : "%r" (__x), "r" (__y));  \
++   })
+ 
+ #  if defined(OPT_ACCURACY)
+ /*
