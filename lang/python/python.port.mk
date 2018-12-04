@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.99 2018/07/24 12:10:10 espie Exp $
+# $OpenBSD: python.port.mk,v 1.100 2018/12/04 05:57:31 martijn Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -136,11 +136,11 @@ MODPY_SETUP ?=		setup.py
 MODPY_DISTUTILS_BUILD ?=	build --build-base=${WRKBUILD}
 
 .if ${MODPY_SETUPUTILS:L} == "yes"
-MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
+MODPY_DISTUTILS_INSTALL ?=	install --prefix=${TRUEPREFIX} \
 				--root=${DESTDIR} \
 				--single-version-externally-managed
 .else
-MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
+MODPY_DISTUTILS_INSTALL ?=	install --prefix=${TRUEPREFIX} \
 				--root=${DESTDIR}
 .endif
 
