@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.122 2018/12/04 12:33:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2018/12/04 13:23:11 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.101.0
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -47,6 +48,7 @@ CONFIGURE_ARGS+=	--disable-clamav \
 			--with-group=_clamav \
                         --disable-cr \
 			--with-dbdir=/var/db/clamav \
+			--includedir=${TRUEPREFIX}/include/clamav \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib
 
@@ -66,6 +68,9 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 CONFIGURE_ARGS+= --disable-llvm
 
 post-install:
+	cd ${WRKSRC}; \
+	    ${INSTALL_DATA} clamav-config.h platform.h libclamav/cltypes.h \
+	    ${PREFIX}/include/clamav
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/clamav
 	cd ${WRKSRC}/docs; \
 	    cp -rp UserManual* html ${PREFIX}/share/doc/clamav/
