@@ -1,0 +1,25 @@
+$OpenBSD: patch-t_upgrade_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
+Change the test to a newer and supported protocol
+Index: t/upgrade.t
+--- t/upgrade.t.orig
++++ t/upgrade.t
+@@ -54,8 +54,8 @@ POE::Component::Server::TCP->new
+ 			$heap->{client}->flush; # make sure we sent the pong
+ 
+ 			# sslify it in-situ!
+-			eval { SSLify_Options('mylib/example.key', 'mylib/example.crt', 'sslv3') };
+-			eval { SSLify_Options('../mylib/example.key', '../mylib/example.crt', 'sslv3') } if ($@);
++			eval { SSLify_Options('mylib/example.key', 'mylib/example.crt', 'tlsv1_2') };
++			eval { SSLify_Options('../mylib/example.key', '../mylib/example.crt', 'tlsv1_2') } if ($@);
+ 			ok(!$@, "SERVER: SSLify_Options $@");
+ 			my $socket = eval { Server_SSLify($heap->{client}->get_output_handle) };
+ 			ok(!$@, "SERVER: Server_SSLify $@");
+@@ -124,7 +124,7 @@ POE::Component::Client::TCP->new
+ 			ok(1, "CLIENT: recv: $line");
+ 
+ 			# sslify it in-situ!
+-			my $ctx = eval { SSLify_ContextCreate(undef, undef, 'sslv3') };
++			my $ctx = eval { SSLify_ContextCreate(undef, undef, 'tlsv1_2') };
+ 			ok(!$@, "CLIENT: SSLify_ContextCreate $@");
+ 			my $socket = eval { Client_SSLify($heap->{server}->get_output_handle, undef, undef, $ctx) };
+ 			ok(!$@, "CLIENT: Client_SSLify $@");

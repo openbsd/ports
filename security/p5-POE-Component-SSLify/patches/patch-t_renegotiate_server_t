@@ -1,0 +1,25 @@
+$OpenBSD: patch-t_renegotiate_server_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
+Fix SSLv3 tests that we can't use with LibreSSL
+Index: t/renegotiate_server.t
+--- t/renegotiate_server.t.orig
++++ t/renegotiate_server.t
+@@ -50,8 +50,8 @@ POE::Component::Server::TCP->new
+ 	},
+ 	ClientPreConnect	=> sub
+ 	{
+-		eval { SSLify_Options('mylib/example.key', 'mylib/example.crt', 'sslv3') };
+-		eval { SSLify_Options('../mylib/example.key', '../mylib/example.crt', 'sslv3') } if ($@);
++		eval { SSLify_Options('mylib/example.key', 'mylib/example.crt', 'tlsv1_2') };
++		eval { SSLify_Options('../mylib/example.key', '../mylib/example.crt', 'tlsv1_2') } if ($@);
+ 		ok(!$@, "SERVER: SSLify_Options $@");
+ 
+ 		my $socket = eval { Server_SSLify($_[ARG0]) };
+@@ -113,7 +113,7 @@ POE::Component::Client::TCP->new
+ 	},
+ 	PreConnect	=> sub
+ 	{
+-		my $ctx = eval { SSLify_ContextCreate(undef, undef, 'sslv3') };
++		my $ctx = eval { SSLify_ContextCreate(undef, undef, 'tlsv1_2') };
+ 		ok(!$@, "CLIENT: SSLify_ContextCreate $@");
+ 		my $socket = eval { Client_SSLify($_[ARG0], undef, undef, $ctx) };
+ 		ok(!$@, "CLIENT: Client_SSLify $@");
