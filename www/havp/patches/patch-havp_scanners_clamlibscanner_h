@@ -1,0 +1,17 @@
+$OpenBSD: patch-havp_scanners_clamlibscanner_h,v 1.1 2018/12/04 13:47:03 sthen Exp $
+
+cope with API change described in
+https://marc.info/?l=clamav-users&m=154272633913939&w=2
+
+Index: havp/scanners/clamlibscanner.h
+--- havp/scanners/clamlibscanner.h.orig
++++ havp/scanners/clamlibscanner.h
+@@ -42,7 +42,7 @@ struct cl_limits limits;
+ struct cl_stat dbstat;
+ char dbdir[255];
+ 
+-int scanopts;
++struct cl_scan_options scanopts;
+ 
+ public:
+ 

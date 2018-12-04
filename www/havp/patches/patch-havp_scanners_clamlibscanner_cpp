@@ -1,0 +1,41 @@
+$OpenBSD: patch-havp_scanners_clamlibscanner_cpp,v 1.1 2018/12/04 13:47:03 sthen Exp $
+
+cope with API change described in
+https://marc.info/?l=clamav-users&m=154272633913939&w=2
+
+Index: havp/scanners/clamlibscanner.cpp
+--- havp/scanners/clamlibscanner.cpp.orig
++++ havp/scanners/clamlibscanner.cpp
+@@ -204,7 +204,7 @@ int ClamLibScanner::ReloadDatabase()
+ string ClamLibScanner::Scan( const char *FileName )
+ {
+ #ifdef CL_INIT_DEFAULT
+-    int ret = cl_scanfile(FileName, &virname, NULL, engine, scanopts);
++    int ret = cl_scanfile(FileName, &virname, NULL, engine, &scanopts);
+ #else
+     int ret = cl_scanfile(FileName, &virname, NULL, engine, &limits, scanopts);
+ #endif
+@@ -280,19 +280,19 @@ ClamLibScanner::ClamLibScanner()
+     }
+ 
+     //Set scanning options
+-    scanopts = CL_SCAN_STDOPT;
++    memset(&scanopts, 0, sizeof(struct cl_scan_options));
+ 
+     if ( Params::GetConfigBool("CLAMBLOCKMAX") )
+     {
+-        scanopts = scanopts | CL_SCAN_BLOCKMAX;
++        scanopts.heuristic = scanopts.heuristic | CL_SCAN_HEURISTIC_EXCEEDS_MAX;
+     }
+     if ( Params::GetConfigBool("CLAMBLOCKENCRYPTED") )
+     {
+-        scanopts = scanopts | CL_SCAN_BLOCKENCRYPTED;
++        scanopts.heuristic = scanopts.heuristic | CL_SCAN_HEURISTIC_ENCRYPTED_ARCHIVE | CL_SCAN_HEURISTIC_ENCRYPTED_DOC;
+     }
+     if ( Params::GetConfigBool("CLAMBLOCKBROKEN") )
+     {
+-        scanopts = scanopts | CL_SCAN_BLOCKBROKEN;
++        scanopts.heuristic = scanopts.heuristic | CL_SCAN_HEURISTIC_BROKEN;
+     }
+ 
+     //Set up archive limits
