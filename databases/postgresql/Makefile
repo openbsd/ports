@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2018/12/03 16:22:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.247 2018/12/05 12:12:51 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -78,6 +78,18 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa"
 CONFIGURE_ARGS+=--disable-spinlocks
 .endif
+
+# To avoid problems with missed floating point overflow checks.
+# pgsql 10.6+ refuses to build on i386 clang unless -msse2 is set.
+# If clang gains "-fexcess-precision=standard" support then this
+# should be removed.
+MODULES+=	gcc4
+MODGCC4_ARCHS=	i386
+MODGCC4_LANGS=	c
+# An alternative workaround:
+# .if ${MACHINE_ARCH} == "i386"
+# CFLAGS +=	-msse2
+# .endif
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
