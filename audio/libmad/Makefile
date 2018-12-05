@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/04 20:43:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2018/12/05 20:18:30 naddy Exp $
 
 COMMENT=	high-quality MPEG audio decoder
 
 DISTNAME=	libmad-0.15.1b
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio
 HOMEPAGE=	http://www.underbit.com/products/mad/
 SHARED_LIBS +=	mad                  2.1      # .2.1
@@ -18,6 +18,12 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
+
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mlp64}
+CONFIGURE_ARGS=	--enable-fpm=64bit
+.endif
 
 post-patch:
 	@cp ${FILESDIR}/mad.pc.in ${WRKSRC}
