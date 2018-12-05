@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/11/24 11:23:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.27 2018/12/05 20:35:25 naddy Exp $
 @bin bin/fax2ps
 @bin bin/fax2tiff
 @bin bin/pal2rgb
@@ -95,8 +95,7 @@ lib/pkgconfig/libtiff-4.pc
 share/doc/tiff/
 share/doc/tiff/COPYRIGHT
 share/doc/tiff/ChangeLog
-share/doc/tiff/README
-share/doc/tiff/README.vms
+share/doc/tiff/README.md
 share/doc/tiff/RELEASE-DATE
 share/doc/tiff/TIFFTechNote2.html
 share/doc/tiff/TODO
@@ -233,6 +232,7 @@ share/doc/tiff/v3.9.1.html
 share/doc/tiff/v3.9.2.html
 share/doc/tiff/v4.0.0.html
 share/doc/tiff/v4.0.1.html
+share/doc/tiff/v4.0.10.html
 share/doc/tiff/v4.0.2.html
 share/doc/tiff/v4.0.3.html
 share/doc/tiff/v4.0.4.html

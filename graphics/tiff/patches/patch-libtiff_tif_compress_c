@@ -1,7 +1,8 @@
-$OpenBSD: patch-libtiff_tif_compress_c,v 1.4 2012/04/14 15:09:55 naddy Exp $
---- libtiff/tif_compress.c.orig	Wed Apr 11 18:23:56 2012
-+++ libtiff/tif_compress.c	Wed Apr 11 18:25:07 2012
-@@ -201,14 +201,15 @@ TIFFFindCODEC(uint16 scheme)
+$OpenBSD: patch-libtiff_tif_compress_c,v 1.5 2018/12/05 20:35:25 naddy Exp $
+Index: libtiff/tif_compress.c
+--- libtiff/tif_compress.c.orig
++++ libtiff/tif_compress.c
+@@ -199,14 +199,15 @@ TIFFFindCODEC(uint16 scheme)
  TIFFCodec*
  TIFFRegisterCODEC(uint16 scheme, const char* name, TIFFInitMethod init)
  {

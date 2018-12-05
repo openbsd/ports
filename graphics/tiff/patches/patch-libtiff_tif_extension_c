@@ -1,7 +1,8 @@
-$OpenBSD: patch-libtiff_tif_extension_c,v 1.5 2016/11/29 20:00:35 naddy Exp $
---- libtiff/tif_extension.c.orig	Wed Apr 11 18:27:24 2012
-+++ libtiff/tif_extension.c	Wed Apr 11 18:28:53 2012
-@@ -81,6 +81,7 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
+$OpenBSD: patch-libtiff_tif_extension_c,v 1.6 2018/12/05 20:35:25 naddy Exp $
+Index: libtiff/tif_extension.c
+--- libtiff/tif_extension.c.orig
++++ libtiff/tif_extension.c
+@@ -79,6 +79,7 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
  
  {
      TIFFClientInfoLink *psLink = tif->tif_clientinfo;
@@ -9,7 +10,7 @@ $OpenBSD: patch-libtiff_tif_extension_c,v 1.5 2016/11/29 20:00:35 naddy Exp $
  
      /*
      ** Do we have an existing link with this name?  If so, just
-@@ -102,9 +103,9 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
+@@ -100,9 +101,9 @@ void TIFFSetClientInfo( TIFF *tif, void *data, const c
      psLink = (TIFFClientInfoLink *) _TIFFmalloc(sizeof(TIFFClientInfoLink));
      assert (psLink != NULL);
      psLink->next = tif->tif_clientinfo;
