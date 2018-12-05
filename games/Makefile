@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2018/10/27 07:15:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.393 2018/12/05 15:58:02 kn Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -345,6 +345,7 @@
      SUBDIR += xmris
      SUBDIR += xneko
      SUBDIR += xonix
+     SUBDIR += xonotic
      SUBDIR += xpat2
      SUBDIR += xpilot
      SUBDIR += xripple
