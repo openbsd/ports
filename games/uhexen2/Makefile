@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
@@ -8,7 +8,7 @@ PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 HOMEPAGE =		http://uhexen2.sourceforge.net/

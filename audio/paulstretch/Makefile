@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/04 20:44:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
-REVISION =	6
+REVISION =	7
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11

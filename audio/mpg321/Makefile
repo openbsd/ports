@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2018/12/04 20:44:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	free clone of mpg123, a command-line mp3 player
 
 VERSION=	0.3.2
 PKGNAME=	mpg321-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio
 HOMEPAGE=	http://mpg321.sourceforge.net/
 

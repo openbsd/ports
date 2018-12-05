@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/04 20:44:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	library to split mp3/ogg files without decoding
 
 DISTNAME=	libmp3splt-0.5.4
 
 SHARED_LIBS +=  mp3splt 	0.0   # .0.5
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	audio
 

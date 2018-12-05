@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2018/12/04 20:44:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	audio file volume normalizer
 
 DISTNAME=	normalize-0.7.7
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=normalize/}

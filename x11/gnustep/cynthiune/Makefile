@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT =	audio player for GNUstep
 
 DISTNAME =	Cynthiune-1.0.0
-REVISION =	11
+REVISION =	12
 CATEGORIES +=	audio
 
 HOMEPAGE =	http://gap.nongnu.org/cynthiune/

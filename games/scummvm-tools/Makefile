@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	collection of various tools for scummvm
 V=		2.0.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm-tools/${V}/

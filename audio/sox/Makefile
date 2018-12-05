@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2018/12/05 20:19:01 naddy Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.4.2
-REVISION=	4
+REVISION=	5
 SHARED_LIBS +=	sox 4.0 # 3.0
 
 CATEGORIES=	audio

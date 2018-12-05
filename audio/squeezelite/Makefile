@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	lightweight headless squeezebox emulator
 
 V=		1.8
-REVISION=	6
+REVISION=	7
 DISTNAME=	squeezelite-v$V
 PKGNAME=	squeezelite-$V
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2018/12/04 20:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/05 20:19:01 naddy Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
 DISTNAME=	streamripper-1.64.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 HOMEPAGE=	http://streamripper.sourceforge.net/
