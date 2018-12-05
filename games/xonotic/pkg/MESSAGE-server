@@ -1,0 +1,7 @@
+Example configuration files have been installed to:
+
+	${TRUEPREFIX}/share/examples/xonotic/
+
+To start a xonotic server, use:
+
+	xonotic-dedicated +serverconfig server.cfg

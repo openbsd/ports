@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
+@bin bin/Xonotic-dedicated
+share/examples/xonotic/
+share/examples/xonotic/help.cfg
+share/examples/xonotic/server.cfg
+share/xonotic/server/
+share/xonotic/server/rcon.pl
+share/xonotic/server/rcon2irc/
+share/xonotic/server/rcon2irc/bans.pl
+share/xonotic/server/rcon2irc/echo-rcon.pl
+share/xonotic/server/rcon2irc/fastest_lap.pl
+share/xonotic/server/rcon2irc/irc_nick_change.pl
+share/xonotic/server/rcon2irc/joinmessage.pl
+share/xonotic/server/rcon2irc/joinsparts.pl
+share/xonotic/server/rcon2irc/ping-pl.pl
+share/xonotic/server/rcon2irc/raw.pl
+share/xonotic/server/rcon2irc/rbiserver.pl
+share/xonotic/server/rcon2irc/rcon2irc-example.conf
+share/xonotic/server/rcon2irc/rcon2irc.pl
+share/xonotic/server/rcon2irc/rcon2irc.txt
+share/xonotic/server/rcon2irc/rename.pl
+share/xonotic/server/rcon2irc/showlogins.pl
+share/xonotic/server/rcon2irc/suggestmap.pl
+share/xonotic/server/rcon2irc/votestop.pl

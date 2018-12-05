@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-data,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
+share/xonotic/
+share/xonotic/data/
+share/xonotic/data/font-unifont-20170401.pk3
+share/xonotic/data/font-xolonium-20170401.pk3
+share/xonotic/data/xonotic-20170401-data.pk3
+share/xonotic/data/xonotic-20170401-maps.pk3
+share/xonotic/data/xonotic-20170401-music.pk3
+share/xonotic/data/xonotic-20170401-nexcompat.pk3

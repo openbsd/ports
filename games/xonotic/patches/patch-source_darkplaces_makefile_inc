@@ -1,0 +1,25 @@
+$OpenBSD: patch-source_darkplaces_makefile_inc,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
+Index: source/darkplaces/makefile.inc
+--- source/darkplaces/makefile.inc.orig
++++ source/darkplaces/makefile.inc
+@@ -193,7 +193,7 @@ OPTIM_DEBUG=$(CPUOPTIMIZATIONS)
+ #OPTIM_RELEASE=-O2 -fno-strict-aliasing -fno-math-errno -fno-trapping-math -ffinite-math-only -fno-signaling-nans -fcx-limited-range -funroll-loops $(CPUOPTIMIZATIONS)
+ #OPTIM_RELEASE=-O2 -fno-strict-aliasing -funroll-loops $(CPUOPTIMIZATIONS)
+ #OPTIM_RELEASE=-O2 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
+-OPTIM_RELEASE=-O3 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
++OPTIM_RELEASE=-fno-strict-aliasing $(CPUOPTIMIZATIONS)
+ # NOTE: *never* *ever* use the -ffast-math or -funsafe-math-optimizations flag
+ 
+ DO_CC=$(CC) $(CFLAGS) -c $< -o $@
+@@ -210,9 +210,9 @@ LDFLAGS_RELEASE=$(OPTIM_RELEASE) -DSVNREVISION=`{ test
+ OBJ_GLX= builddate.c sys_linux.o vid_glx.o thread_pthread.o keysym2ucs.o $(OBJ_MENU) $(OBJ_SOUND) $(OBJ_CD) $(OBJ_VIDEO_CAPTURE) $(OBJ_COMMON)
+ 
+ LDFLAGS_UNIXCOMMON=-lm $(LIB_ODE) $(LIB_Z) $(LIB_JPEG) $(LIB_CRYPTO) $(LIB_CRYPTO_RIJNDAEL)
+-LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -lX11 -lXpm -lXext -lXxf86vm -pthread $(LIB_SOUND)
++LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -L$(LOCALBASE)/lib -lX11 -lXpm -lXext -lXxf86vm -pthread $(LIB_SOUND)
+ LDFLAGS_UNIXCL_PRELOAD=-lz -ljpeg -lpng -logg -ltheora -lvorbis -lvorbisenc -lvorbisfile -lcurl
+-LDFLAGS_UNIXSV_PRELOAD=-lz -ljpeg -lpng -lcurl
++LDFLAGS_UNIXSV_PRELOAD=-L$(LOCALBASE)/lib -lz -ljpeg -lpng -lcurl
+ LDFLAGS_UNIXSDL_PRELOAD=-lz -ljpeg -lpng -logg -ltheora -lvorbis -lvorbisenc -lvorbisfile -lcurl
+ CFLAGS_UNIX_PRELOAD=-DPREFER_PRELOAD
+ 
