@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/05 17:23:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/05 00:08:19 bcallah Exp $
 
 COMMENT =	utility to mirror filesystems, directories, and files
-DISTNAME =	cpdup-5.2.1
+DISTNAME =	cpdup-5.4.0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://www.dragonflybsd.org/
