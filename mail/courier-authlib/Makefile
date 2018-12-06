@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2018/12/06 10:19:28 landry Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -87,7 +87,8 @@ FLAVOR?=
 
 WANTLIB-main=		c ltdl m pthread sqlite3 ${COMPILER_LIBCXX}
 
-LIB_DEPENDS-main=	databases/sqlite3 \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			databases/sqlite3 \
 			devel/libtool,-ltdl
 
 # statically linked
