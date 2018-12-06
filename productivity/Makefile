@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/10/01 10:40:34 remi Exp $
+# $OpenBSD: Makefile,v 1.82 2018/12/06 16:01:32 solene Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -42,6 +42,7 @@
      SUBDIR += taskd
      SUBDIR += taskwarrior
      SUBDIR += tdl
+     SUBDIR += teapot
      SUBDIR += thinkingrock
      SUBDIR += timewarrior
      SUBDIR += tudu
