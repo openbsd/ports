@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1092 2018/12/02 01:23:31 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1093 2018/12/06 08:53:34 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -191,7 +191,6 @@
      SUBDIR += libbind
      SUBDIR += libcares
      SUBDIR += libdnet
-     SUBDIR += libepc
      SUBDIR += libgadu
      SUBDIR += libircclient
      SUBDIR += libktorrent
