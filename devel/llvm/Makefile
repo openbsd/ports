@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2018/11/21 08:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2018/12/06 21:51:01 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -8,8 +8,9 @@ ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 DPB_PROPERTIES = parallel
 
-MULTI_PACKAGES =	-main -python
+MULTI_PACKAGES =	-main -python -lldb
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
+COMMENT-lldb =	LLDB debugger
 COMMENT-python =	Python bindings for Clang
 
 LLVM_V =	6.0.1
@@ -18,8 +19,9 @@ PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
-REVISION-main =	18
-REVISION-python = 2
+PKGNAME-lldb =	lldb-${LLVM_V}
+REVISION-main =	19
+REVISION-python = 3
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -43,6 +45,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	${COMPILER_LIBCXX} c curses edit form m panel pthread \
 		${MODPY_WANTLIB} z
 
+PSEUDO_FLAVORS = no_lldb
+FLAVOR ?=
+NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
+
 MODULES =	devel/cmake \
 		lang/python
 
@@ -56,10 +62,13 @@ RUN_DEPENDS +=		devel/gtest
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
-LIB_DEPENDS-llvm =	${BUILD_PKGPATH},-main
-RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
-			devel/py-six
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
+
+WANTLIB-lldb =		clang
+LIB_DEPENDS-lldb =	${BUILD_PKGPATH},-main
+RUN_DEPENDS-lldb =	${MODPY_RUN_DEPENDS} \
+			devel/py-six
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
@@ -100,6 +109,8 @@ GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
+.include <bsd.port.arch.mk>
+
 post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
@@ -108,6 +119,9 @@ post-extract:
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+.if !${BUILD_PACKAGES:M-lldb}
+	rm -r ${WRKSRC}/tools/lldb
+.endif
 
 post-build:
 	cd ${WRKSRC}/docs && make -f Makefile.sphinx man
