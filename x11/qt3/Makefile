@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2018/11/06 20:09:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.128 2018/12/06 13:32:46 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -21,7 +21,7 @@ PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
 REVISION-mysql=		13
 REVISION-postgresql=	10
-REVISION-main=		17
+REVISION-main=		18
 REVISION-html=		5
 REVISION-examples=	6
 REVISION-sqlite2=	10

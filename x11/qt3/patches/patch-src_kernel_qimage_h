@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_kernel_qimage_h,v 1.1 2018/12/06 13:32:47 naddy Exp $
+
+Index: src/kernel/qimage.h
+--- src/kernel/qimage.h.orig
++++ src/kernel/qimage.h
+@@ -55,7 +55,7 @@ class Q_EXPORT QImageTextKeyLang { (public)
+     QCString lang;
+ 
+     bool operator< (const QImageTextKeyLang& other) const
+-	{ return key < other.key || key==other.key && lang < other.lang; }
++	{ return key < other.key || (key==other.key && lang < other.lang); }
+     bool operator== (const QImageTextKeyLang& other) const
+ 	{ return key==other.key && lang==other.lang; }
+ };
