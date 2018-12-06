@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/12/06 16:00:34 solene Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/12/06 16:25:04 jca Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -105,7 +106,7 @@ if (ENABLE_HELP)
+@@ -105,7 +105,7 @@ if (ENABLE_HELP)
  endif ()
  
  install(FILES COPYING README DESTINATION share/doc/teapot)

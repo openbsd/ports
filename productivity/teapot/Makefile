@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/06 16:00:34 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/06 16:25:04 jca Exp $
 
 COMMENT =	three dimensional console spreadsheet
 V =		2.3.0
-PKGNAME =	teapot-${V}
+DISTNAME =	teapot-${V}
+REVISION =	0
 
 CATEGORIES =	productivity
 
@@ -17,7 +18,7 @@ WANTLIB += 	c curses m
 
 MASTER_SITES =	https://www.syntax-k.de/projekte/teapot/
 
-DISTFILES =	${PKGNAME}${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 # binary distribution to extract the documentation
 DISTFILES +=	Teapot-${V}-Linux-i386.tar.gz
 
@@ -27,8 +28,6 @@ MODULES =	devel/cmake
 CONFIGURE_ARGS +=	-DENABLE_HELP=no
 
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/${PKGNAME}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/teapot.1
