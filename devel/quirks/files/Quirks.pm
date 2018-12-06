@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.668 2018/12/03 20:32:50 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.669 2018/12/06 08:54:28 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1086,6 +1086,7 @@ my $obsolete_reason = {
 	'p5-Crypt-OpenPGP' => 13,
 	'directoryassistant' => 0,
 	'x-pack' => 3,
+	'libepc' => 5,
 };
 
 # reasons for obsolete packages
