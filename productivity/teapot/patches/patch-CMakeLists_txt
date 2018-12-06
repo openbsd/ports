@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/12/06 16:00:34 solene Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -105,7 +106,7 @@ if (ENABLE_HELP)
+ endif ()
+ 
+ install(FILES COPYING README DESTINATION share/doc/teapot)
+-install(FILES teapot.1 DESTINATION share/man/man1)
++install(FILES teapot.1 DESTINATION man/man1)
+ 
+ add_custom_target(dist
+ 	COMMAND ${CMAKE_COMMAND} -E remove_directory teapot-${Teapot_VERSION_MAJOR}.${Teapot_VERSION_MINOR}.${Teapot_VERSION_PATCH}

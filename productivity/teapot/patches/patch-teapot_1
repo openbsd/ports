@@ -1,0 +1,23 @@
+$OpenBSD: patch-teapot_1,v 1.1.1.1 2018/12/06 16:00:34 solene Exp $
+
+Index: teapot.1
+--- teapot.1.orig
++++ teapot.1
+@@ -27,7 +27,7 @@ file format.
+ .Pp
+ This document only describes command-line arguments. Please refer to the
+ complete manual that can be found under
+-.Pa /usr/share/doc/teapot
++.Pa ${PREFIX}/share/doc/teapot
+ in both html and pdf format.
+ The manual can also be viewed from within the graphical version, fteapot,
+ using the Help menu.
+@@ -55,7 +55,7 @@ Set default precision of displayed numbers.
+ .\"
+ .\"
+ .Sh SEE ALSO
+-.Pa /usr/share/doc/teapot/
++.Pa ${PREFIX}/share/doc/teapot/
+ .\"
+ .\"
+ .Sh LICENSE
