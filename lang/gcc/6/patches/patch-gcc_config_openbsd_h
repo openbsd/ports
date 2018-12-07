@@ -1,7 +1,19 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
---- gcc/config/openbsd.h.orig	Mon Aug 19 14:21:26 2013
-+++ gcc/config/openbsd.h	Mon Dec  2 12:20:02 2013
-@@ -108,9 +108,9 @@ while (0)
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2018/12/07 18:27:35 naddy Exp $
+Index: gcc/config/openbsd.h
+--- gcc/config/openbsd.h.orig
++++ gcc/config/openbsd.h
+@@ -40,6 +40,10 @@ along with GCC; see the file COPYING3.  If not see
+    intended as common ground for arch that don't provide 
+    anything suitable.  */
+ 
++/* Make sure that gcc will not look for .h files in /usr/local/include
++   unless user explicitly requests it.  */
++#undef LOCAL_INCLUDE_DIR
++
+ /* OPENBSD_NATIVE is defined only when gcc is configured as part of
+    the OpenBSD source tree, specifically through Makefile.bsd-wrapper.
+ 
+@@ -108,9 +112,9 @@ while (0)
     This two-stage defines makes it easy to pick that for targets that
     have subspecs.  */
  #ifdef CPP_CPU_SPEC
@@ -13,7 +25,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
  #endif
  
  #undef LIB_SPEC
-@@ -284,6 +284,16 @@ do {									 \
+@@ -284,6 +288,16 @@ do {									 \
  #endif
  
  /* Storage layout.  */
