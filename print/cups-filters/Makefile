@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.144 2018/11/24 15:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2018/12/07 14:15:24 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.21.4
+DISTNAME=	cups-filters-1.21.5
 
 CATEGORIES=	print
 
