@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.669 2018/12/06 08:54:28 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.670 2018/12/07 13:15:32 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1226,6 +1226,7 @@ my $cve = {
 	'net/wireshark,-text' => 'tshark-<2.6.3',
 	'print/cups,-main' => 'cups-<1.7.4',
 	'security/clamav' => 'clamav-<0.100.2',
+	'security/polarssl' => 'mbedtls-<2.14.1',
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
