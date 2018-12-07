@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_app_qgisapp_cpp,v 1.29 2018/11/05 10:51:47 landry Exp $
+$OpenBSD: patch-src_app_qgisapp_cpp,v 1.30 2018/12/07 23:17:35 landry Exp $
 
 Index: src/app/qgisapp.cpp
 --- src/app/qgisapp.cpp.orig
 +++ src/app/qgisapp.cpp
-@@ -10186,7 +10186,7 @@ class QgsPythonRunnerImpl : public QgsPythonRunner
+@@ -10195,7 +10195,7 @@ class QgsPythonRunnerImpl : public QgsPythonRunner
  void QgisApp::loadPythonSupport()
  {
    QString pythonlibName( QStringLiteral( "qgispython" ) );
