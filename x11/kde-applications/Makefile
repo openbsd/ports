@@ -1,146 +1,178 @@
-# $OpenBSD: Makefile,v 1.32 2018/11/24 09:37:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2018/12/07 14:22:33 rsadowski Exp $
 
      SUBDIR =
-     #SUBDIR += kde-l10n
-     #SUBDIR += akonadi
-     SUBDIR += analitza
-     SUBDIR += ark
-     SUBDIR += artikulate
-     SUBDIR += audiocd-kio
-     #SUBDIR += baloo
-     SUBDIR += blinken
-     SUBDIR += bomber
-     SUBDIR += bovo
-     #SUBDIR += calendarsupport
-     SUBDIR += cantor
-     SUBDIR += cervisia
+
+     # accessibility
+     #SUBDIR += kmag
+     #SUBDIR += kmousetool
+     #SUBDIR += kmouth
+
+     # admin
+     #SUBDIR += kcron
+     #SUBDIR += ksystemlog
+
+     # base
      SUBDIR += dolphin
      SUBDIR += dolphin-plugins
-     SUBDIR += dragon
-     #SUBDIR += eventviews
-     SUBDIR += ffmpegthumbs
-     #SUBDIR += filelight
-     SUBDIR += granatier
-     #SUBDIR += grantleetheme
-     #SUBDIR += gwenview
-     #SUBDIR += incidenceeditor
-     #SUBDIR += jovie
-     #SUBDIR += juk
-     #SUBDIR += kaccessible
-     #SUBDIR += kaccounts-integration
-     #SUBDIR += kaccounts-providers
-     #SUBDIR += kajongg
-     #SUBDIR += kalarmcal
+     SUBDIR += kate
+     #SUBDIR += kdialog
+     #SUBDIR += keditbookmarks
+     #SUBDIR += kfind
+     #SUBDIR += khelpcenter
+     #SUBDIR += konqueror
+     SUBDIR += konsole
+
+     # education
+     SUBDIR += analitza
+     SUBDIR += artikulate
+     SUBDIR += blinken
+     SUBDIR += cantor
      SUBDIR += kalgebra
      #SUBDIR += kalzium
-     #SUBDIR += kamera
      #SUBDIR += kanagram
+     #SUBDIR += kbruch
+     #SUBDIR += kgeography
+     #SUBDIR += khangman
+     SUBDIR += kig
+     #SUBDIR += kiten
+     #SUBDIR += klettres
+     #SUBDIR += kmplot
+     SUBDIR += ktouch
+     #SUBDIR += kturtle
+     #SUBDIR += kwordquiz
+     SUBDIR += marble
+     #SUBDIR += kwrite
+     #SUBDIR += minuet
+     #SUBDIR += parley
+     #SUBDIR += rocs
+     #SUBDIR += step
+
+     # games
+     SUBDIR += bomber
+     SUBDIR += bovo
+     SUBDIR += granatier
+     #SUBDIR += kajongg
      SUBDIR += kapman
-     #SUBDIR += kapptemplate
-     SUBDIR += kate
      SUBDIR += katomic
      SUBDIR += kblackbox
      SUBDIR += kblocks
-     #SUBDIR += kblog
      SUBDIR += kbounce
      SUBDIR += kbreakout
-     #SUBDIR += kbruch
-     #SUBDIR += kcachegrind
-     SUBDIR += kcalc
-     SUBDIR += kcalcore
-     #SUBDIR += kcalutils
-     #SUBDIR += kcharselect
-     #SUBDIR += kcolorchooser
-     #SUBDIR += kcontacts
-     #SUBDIR += kcron
-     #SUBDIR += kde-baseapps
-     #SUBDIR += kde-dev-scripts
-     #SUBDIR += kde-dev-utils
-     #SUBDIR += kde-runtime
-     #SUBDIR += kdebugsettings
-     #SUBDIR += kdeedu-data
-     SUBDIR += kdegraphics-mobipocket
-     #SUBDIR += kdegraphics-thumbnailers
-     #SUBDIR += kdelibs
-     #SUBDIR += kdenetwork-filesharing
-     SUBDIR += kdenlive
-     #SUBDIR += kdepim
-     #SUBDIR += kdepim-addons
-     #SUBDIR += kdepim-apps-libs
-     #SUBDIR += kdepim-runtime
-     #SUBDIR += kdesdk-kioslaves
-     #SUBDIR += kdesdk-thumbnailers
-     #SUBDIR += kdewebdev
-     #SUBDIR += kdf
-     #SUBDIR += kdgantt2
      SUBDIR += kdiamond
-     #SUBDIR += kfloppy
      SUBDIR += kfourinline
-     #SUBDIR += kgeography
-     #SUBDIR += kget
      SUBDIR += kgoldrunner
-     #SUBDIR += kgpg
-     #SUBDIR += khangman
-     #SUBDIR += khelpcenter
-     #SUBDIR += kholidays
-     #SUBDIR += kidentitymanagement
-     SUBDIR += kig
      SUBDIR += kigo
      SUBDIR += killbots
-     SUBDIR += kimap
-     SUBDIR += kio-extras
      SUBDIR += kiriki
-     #SUBDIR += kiten
      SUBDIR += kjumpingcube
-     #SUBDIR += kldap
-     #SUBDIR += kleopatra
-     #SUBDIR += klettres
      SUBDIR += klickety
      SUBDIR += klines
-     #SUBDIR += kmag
      #SUBDIR += kmahjongg
-     #SUBDIR += kmailtransport
-     SUBDIR += kmbox
-     SUBDIR += kmime
      #SUBDIR += kmines
-     #SUBDIR += kmix
-     #SUBDIR += kmousetool
-     #SUBDIR += kmouth
-     #SUBDIR += kmplot
      SUBDIR += knavalbattle
      SUBDIR += knetwalk
+     #SUBDIR += knights
      SUBDIR += kolf
      SUBDIR += kollision
-     #SUBDIR += kolourpaint
-     #SUBDIR += kompare
      SUBDIR += konquest
-     SUBDIR += konsole
-     #SUBDIR += kontactinterface
-     #SUBDIR += kopete
-     #SUBDIR += kpat
-     SUBDIR += kpimtextedit
-     #SUBDIR += kppp
-     SUBDIR += kqtquickcharts
-     #SUBDIR += krdc
-     #SUBDIR += kremotecontrol
+     #SUBDIR += kpatience
      SUBDIR += kreversi
-     #SUBDIR += krfb
-     #SUBDIR += kross-interpreters
-     #SUBDIR += kruler
-     #SUBDIR += ksaneplugin
-     #SUBDIR += kscd
      #SUBDIR += kshisen
      SUBDIR += ksirk
      #SUBDIR += ksnakeduel
      #SUBDIR += kspaceduel
      #SUBDIR += ksquares
-     #SUBDIR += kstars
      #SUBDIR += ksudoku
-     #SUBDIR += ksystemlog
+     #SUBDIR += ktuberling
+     #SUBDIR += kubrick
+     #SUBDIR += lskat
+     #SUBDIR += palapeli
+     #SUBDIR += picmi
+
+     # graphics
+     #SUBDIR += gwenview
+     #SUBDIR += kamera
+     #SUBDIR += kcolorchooser
+     SUBDIR += kdegraphics-mobipocket
+     #SUBDIR += kdegraphics-thumbnailers
+     #SUBDIR += kolourpaint
+     #SUBDIR += kruler
+     #SUBDIR += okular
+     #SUBDIR += spectacle
+     SUBDIR += svgpart
+
+     # multimedia
+     SUBDIR += audiocd-kio
+     SUBDIR += dragon
+     SUBDIR += ffmpegthumbs
+     #SUBDIR += juk
+     #SUBDIR += k3b
+     #SUBDIR += kamoso
+     SUBDIR += kdenlive
+     #SUBDIR += kmix
+     #SUBDIR += kwave
+
+     # internet / network
+     #SUBDIR += kdenetwork-filesharing
+     #SUBDIR += kget
+     SUBDIR += kio-extras
+     #SUBDIR += kmailtransport
+     #SUBDIR += kopete
+     #SUBDIR += krdc
+     #SUBDIR += krfb
+     #SUBDIR += zeroconf-ioslave
+
+     # pim
+     #SUBDIR += akregator
+     #SUBDIR += calendarsupport
+     #SUBDIR += eventviews
+     #SUBDIR += grantlee-editor
+     #SUBDIR += kaddressbook
+     #SUBDIR += kalarm
+     #SUBDIR += kdepim-addons
+     #SUBDIR += kdepim-apps-libs
+     #SUBDIR += kdepim-runtime
+     #SUBDIR += kleopatra
+     #SUBDIR += kmail
+     #SUBDIR += kmail-account-wizard
+     #SUBDIR += knotes
+     #SUBDIR += kontact
+     #SUBDIR += korganizer
+     SUBDIR += kpimtextedit
+
+     # kdesdk
+     SUBDIR += cervisia
+     #SUBDIR += kapptemplate
+     #SUBDIR += kcachegrind
+     #SUBDIR += kde-dev-scripts
+     #SUBDIR += kde-dev-utils
+     #SUBDIR += kdesdk-kioslaves
+     #SUBDIR += kdesdk-thumbnailers
+     #SUBDIR += kompare
+     #SUBDIR += lokalize
+     #SUBDIR += poxml
+     SUBDIR += umbrello
+
+     # utilities
+     SUBDIR += ark
+     #SUBDIR += filelight
+     #SUBDIR += kbackup
+     SUBDIR += kcalc
+     #SUBDIR += kcharselect
+     #SUBDIR += kdebugsettings
+     #SUBDIR += kdf
+     #SUBDIR += kfloppy
+     #SUBDIR += kgpg
      #SUBDIR += kteatime
      #SUBDIR += ktimer
-     #SUBDIR += ktnef
-     SUBDIR += ktouch
+     #SUBDIR += kwalletmanager
+     #SUBDIR += print-manager
+     #SUBDIR += sweeper
+
+     # webdev
+     #SUBDIR += kimagemapeditor
+
+     # KDE-Telepathy
      #SUBDIR += ktp-accounts-kcm
      #SUBDIR += ktp-approver
      #SUBDIR += ktp-auth-handler
@@ -153,12 +185,42 @@
      #SUBDIR += ktp-kded-module
      #SUBDIR += ktp-send-file
      #SUBDIR += ktp-text-ui
-     #SUBDIR += ktuberling
-     #SUBDIR += kturtle
-     #SUBDIR += kubrick
-     #SUBDIR += kuser
-     #SUBDIR += kwalletmanager
-     #SUBDIR += kwordquiz
+
+     # development environment
+     #SUBDIR += akonadi
+     #SUBDIR += akonadi-calendar
+     #SUBDIR += akonadi-calendar-tools
+     #SUBDIR += akonadi-contacts
+     #SUBDIR += akonadi-import-wizard
+     #SUBDIR += akonadi-mime
+     #SUBDIR += akonadi-notes
+     #SUBDIR += akonadi-search
+     #SUBDIR += akonadiconsole
+     #SUBDIR += baloo-widgets
+     #SUBDIR += grantleetheme
+     #SUBDIR += incidenceeditor
+     #SUBDIR += kaccounts-integration
+     #SUBDIR += kaccounts-providers
+     #SUBDIR += kalarmcal
+     #SUBDIR += kblog
+     SUBDIR += kcalcore
+     #SUBDIR += kcalutils
+     #SUBDIR += kcontacts
+     #SUBDIR += kdav
+     #SUBDIR += kdeedu-data
+     #SUBDIR += kidentitymanagement
+     SUBDIR += kimap
+     #SUBDIR += kitinerary
+     #SUBDIR += kldap
+     SUBDIR += kmbox
+     SUBDIR += kmime
+     #SUBDIR += kontactinterface
+     #SUBDIR += kpat
+     #SUBDIR += kpkpass
+     SUBDIR += kqtquickcharts
+     #SUBDIR += kross-interpreters
+     #SUBDIR += ksmtp
+     #SUBDIR += ktnef
      #SUBDIR += libgravatar
      SUBDIR += libkcddb
      SUBDIR += libkcompactdisc
@@ -167,7 +229,7 @@
      #SUBDIR += libkdepim
      #SUBDIR += libkeduvocdocument
      SUBDIR += libkexiv2
-     SUBDIR += libkface
+     #SUBDIR += libkgapi
      SUBDIR += libkgeomap
      SUBDIR += libkipi
      #SUBDIR += libkleo
@@ -175,29 +237,20 @@
      SUBDIR += libkomparediff2
      #SUBDIR += libksane
      #SUBDIR += libksieve
-     #SUBDIR += lokalize
-     #SUBDIR += lskat
      #SUBDIR += mailcommon
      #SUBDIR += mailimporter
-     SUBDIR += marble
+     #SUBDIR += mbox-importer
      #SUBDIR += messagelib
-     #SUBDIR += minuet
-     SUBDIR += okteta
-     #SUBDIR += okular
-     #SUBDIR += palapeli
-     #SUBDIR += parley
-     #SUBDIR += picmi
+     #SUBDIR += pim-data-exporter
+     #SUBDIR += pim-sieve-editor
      #SUBDIR += pimcommon
-     #SUBDIR += poxml
-     #SUBDIR += print-manager
-     #SUBDIR += rocs
      #SUBDIR += signon-kwallet-extension
-     #SUBDIR += spectacle
-     #SUBDIR += step
-     SUBDIR += svgpart
-     #SUBDIR += sweeper
      #SUBDIR += syndication
-     SUBDIR += umbrello
-     #SUBDIR += zeroconf-ioslave
+
+     # KDE4
+     SUBDIR += libkface
+
+     # Former projects under the hat of KDE Applications
+     SUBDIR += okteta
 
 .include <bsd.port.subdir.mk>
