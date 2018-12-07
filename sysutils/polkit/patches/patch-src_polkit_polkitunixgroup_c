@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_polkit_polkitunixgroup_c,v 1.1 2018/12/07 13:11:25 ajacoutot Exp $
+
+From 2cb40c4d5feeaa09325522bd7d97910f1b59e379 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Zbigniew=20J=C4=99drzejewski-Szmek?= <zbyszek@in.waw.pl>
+Date: Mon, 3 Dec 2018 10:28:58 +0100
+Subject: [PATCH] Allow negative uids/gids in PolkitUnixUser and Group objects
+
+Index: src/polkit/polkitunixgroup.c
+--- src/polkit/polkitunixgroup.c.orig
++++ src/polkit/polkitunixgroup.c
+@@ -71,6 +71,7 @@ G_DEFINE_TYPE_WITH_CODE (PolkitUnixGroup, polkit_unix_
+ static void
+ polkit_unix_group_init (PolkitUnixGroup *unix_group)
+ {
++  unix_group->gid = -1; /* (git_t) -1 is not a valid GID under Linux */
+ }
+ 
+ static void
+@@ -100,11 +101,14 @@ polkit_unix_group_set_property (GObject      *object,
+                                GParamSpec   *pspec)
+ {
+   PolkitUnixGroup *unix_group = POLKIT_UNIX_GROUP (object);
++  gint val;
+ 
+   switch (prop_id)
+     {
+     case PROP_GID:
+-      unix_group->gid = g_value_get_int (value);
++      val = g_value_get_int (value);
++      g_return_if_fail (val != -1);
++      unix_group->gid = val;
+       break;
+ 
+     default:
+@@ -131,9 +135,9 @@ polkit_unix_group_class_init (PolkitUnixGroupClass *kl
+                                    g_param_spec_int ("gid",
+                                                      "Group ID",
+                                                      "The UNIX group ID",
+-                                                     0,
++                                                     G_MININT,
+                                                      G_MAXINT,
+-                                                     0,
++                                                     -1,
+                                                      G_PARAM_CONSTRUCT |
+                                                      G_PARAM_READWRITE |
+                                                      G_PARAM_STATIC_NAME |
+@@ -166,9 +170,10 @@ polkit_unix_group_get_gid (PolkitUnixGroup *group)
+  */
+ void
+ polkit_unix_group_set_gid (PolkitUnixGroup *group,
+-                          gint gid)
++                           gint gid)
+ {
+   g_return_if_fail (POLKIT_IS_UNIX_GROUP (group));
++  g_return_if_fail (gid != -1);
+   group->gid = gid;
+ }
+ 
+@@ -183,6 +188,8 @@ polkit_unix_group_set_gid (PolkitUnixGroup *group,
+ PolkitIdentity *
+ polkit_unix_group_new (gint gid)
+ {
++  g_return_val_if_fail (gid != -1, NULL);
++
+   return POLKIT_IDENTITY (g_object_new (POLKIT_TYPE_UNIX_GROUP,
+                                        "gid", gid,
+                                        NULL));
