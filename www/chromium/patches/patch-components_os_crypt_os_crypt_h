@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.4 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.5 2018/12/07 11:07:35 robert Exp $
 
 Index: components/os_crypt/os_crypt.h
 --- components/os_crypt/os_crypt.h.orig
@@ -12,7 +12,7 @@ Index: components/os_crypt/os_crypt.h
  class KeyStorageLinux;
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -29,13 +29,13 @@ struct Config;
+@@ -34,13 +34,13 @@ struct Config;
  // true for Linux, if a password management tool is available.
  class OSCrypt {
   public:
@@ -28,7 +28,7 @@ Index: components/os_crypt/os_crypt.h
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using
-@@ -96,7 +96,7 @@ class OSCrypt {
+@@ -112,7 +112,7 @@ class OSCrypt {
    DISALLOW_IMPLICIT_CONSTRUCTORS(OSCrypt);
  };
  

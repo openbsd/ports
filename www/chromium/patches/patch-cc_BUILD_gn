@@ -1,9 +1,9 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.19 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-cc_BUILD_gn,v 1.20 2018/12/07 11:07:35 robert Exp $
 
 Index: cc/BUILD.gn
 --- cc/BUILD.gn.orig
 +++ cc/BUILD.gn
-@@ -551,7 +551,7 @@ cc_static_library("test_support") {
+@@ -542,7 +542,7 @@ cc_test_static_library("test_support") {
      "//ui/gl:test_support",
      "//ui/latency",
    ]
@@ -12,7 +12,7 @@ Index: cc/BUILD.gn
      data_deps = [
        "//third_party/mesa_headers",
      ]
-@@ -751,9 +751,6 @@ cc_test("cc_unittests") {
+@@ -741,9 +741,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",

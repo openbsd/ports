@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.14 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.15 2018/12/07 11:07:35 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 --- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -112,7 +112,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -109,7 +109,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
    }
  #endif
  

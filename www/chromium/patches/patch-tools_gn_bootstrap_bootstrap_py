@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.19 2018/11/15 15:28:43 robert Exp $
+$OpenBSD: patch-tools_gn_bootstrap_bootstrap_py,v 1.20 2018/12/07 11:07:35 robert Exp $
 
 Index: tools/gn/bootstrap/bootstrap.py
 --- tools/gn/bootstrap/bootstrap.py.orig
@@ -12,9 +12,9 @@ Index: tools/gn/bootstrap/bootstrap.py
 -      action='store_true',
 -      help='Download and build with the Debian sysroot.')
    parser.add_option('-v', '--verbose', help='ignored')
-   options, args = parser.parse_args(argv)
-   if args:
-@@ -71,8 +67,6 @@ def main(argv):
+   parser.add_option(
+       '--skip-generate-buildfiles',
+@@ -76,8 +72,6 @@ def main(argv):
        '--no-last-commit-position',
        '--out-path=' + gn_build_dir,
    ]

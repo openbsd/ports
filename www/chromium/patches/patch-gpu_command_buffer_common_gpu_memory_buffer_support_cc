@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc,v 1.2 2018/12/07 11:07:35 robert Exp $
 
 Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
 --- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
-@@ -169,7 +169,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
+@@ -137,7 +137,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
  uint32_t GetPlatformSpecificTextureTarget() {
  #if defined(OS_MACOSX)
    return GL_TEXTURE_RECTANGLE_ARB;

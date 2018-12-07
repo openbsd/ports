@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.32 2018/11/17 16:18:11 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.33 2018/12/07 11:07:35 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -116,6 +116,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+@@ -117,6 +117,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
  CONTENT_EXPORT extern const char kEnableLowResTiling[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];

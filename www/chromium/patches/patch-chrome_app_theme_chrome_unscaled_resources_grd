@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_theme_chrome_unscaled_resources_grd,v 1.4 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-chrome_app_theme_chrome_unscaled_resources_grd,v 1.5 2018/12/07 11:07:35 robert Exp $
 
 Index: chrome/app/theme/chrome_unscaled_resources.grd
 --- chrome/app/theme/chrome_unscaled_resources.grd.orig
 +++ chrome/app/theme/chrome_unscaled_resources.grd
-@@ -88,7 +88,7 @@
+@@ -100,7 +100,7 @@
          <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
          <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />
        </if>

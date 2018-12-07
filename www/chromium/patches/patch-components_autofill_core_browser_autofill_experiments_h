@@ -1,18 +1,27 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_h,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_h,v 1.2 2018/12/07 11:07:35 robert Exp $
 
 Index: components/autofill/core/browser/autofill_experiments.h
 --- components/autofill/core/browser/autofill_experiments.h.orig
 +++ components/autofill/core/browser/autofill_experiments.h
-@@ -30,7 +30,7 @@ extern const char kAutofillDropdownLayoutParameterLead
- extern const char kAutofillDropdownLayoutParameterTrailingIcon[];
- #endif  // !defined(OS_ANDROID)
+@@ -23,7 +23,7 @@ class SyncService;
+ namespace autofill {
+ 
+ // Parameterized Features (grouped with parameter name and options)
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ extern const base::Feature kAutofillDropdownLayoutExperiment;
+ extern const char kAutofillDropdownLayoutParameterName[];
+ extern const char kAutofillDropdownLayoutParameterLeadingIcon[];
+@@ -31,7 +31,7 @@ extern const char kAutofillDropdownLayoutParameterTrai
+ extern const char kAutofillDropdownLayoutParameterTwoLinesLeadingIcon[];
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  extern const base::Feature kAutofillPrimaryInfoStyleExperiment;
  extern const char kAutofillForcedFontWeightParameterName[];
  extern const char kAutofillForcedFontWeightParameterMedium[];
-@@ -65,7 +65,7 @@ bool OfferStoreUnmaskedCards();
+@@ -66,7 +66,7 @@ bool OfferStoreUnmaskedCards();
  // Returns whether the account of the active signed-in user should be used.
  bool ShouldUseActiveSignedInAccount();
  
@@ -21,3 +30,12 @@ Index: components/autofill/core/browser/autofill_experiments.h
  enum class ForcedFontWeight {
    kDefault,  // No change to the font weight.
    kMedium,
+@@ -80,7 +80,7 @@ enum class ForcedFontWeight {
+ ForcedFontWeight GetForcedFontWeight();
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ enum class ForcedPopupLayoutState {
+   kDefault,       // No popup layout forced by experiment.
+   kLeadingIcon,   // Experiment forces leading (left in LTR) icon layout.

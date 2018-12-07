@@ -1,12 +1,11 @@
-$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.26 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.27 2018/12/07 11:07:35 robert Exp $
 
 Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 --- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig
 +++ chrome/browser/resources/plugin_metadata/plugins_linux.json
-@@ -70,28 +70,6 @@
-     "displayurl": true,
-     "group_name_matcher": "Java*"
-   },
+@@ -1,27 +1,5 @@
+ {
+   "x-version": 36,
 -  "adobe-flash-player": {
 -    "mime_types": [
 -      "application/futuresplash",
@@ -17,9 +16,9 @@ Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 -    ],
 -    "versions": [
 -      {
--        "version": "31.0.0.122",
+-        "version": "31.0.0.153",
 -        "status": "up_to_date",
--        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb18-35.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb18-44.html"
 -      }
 -    ],
 -    "lang": "en-US",
@@ -29,6 +28,6 @@ Index: chrome/browser/resources/plugin_metadata/plugins_linux.json
 -    "displayurl": true,
 -    "group_name_matcher": "*Shockwave Flash*"
 -  },
-   "lightspark": {
+   "google-chrome-pdf": {
      "mime_types": [
-       "application/x-lightspark"
+     ],

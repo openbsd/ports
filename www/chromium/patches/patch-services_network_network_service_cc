@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_service_cc,v 1.2 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-services_network_network_service_cc,v 1.3 2018/12/07 11:07:35 robert Exp $
 
 Index: services/network/network_service.cc
 --- services/network/network_service.cc.orig
 +++ services/network/network_service.cc
-@@ -48,7 +48,7 @@
+@@ -53,7 +53,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: services/network/network_service.cc
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
  
-@@ -426,7 +426,7 @@ void NetworkService::UpdateCRLSet(base::span<const uin
+@@ -449,7 +449,7 @@ void NetworkService::UpdateCRLSet(base::span<const uin
    crl_set_distributor_->OnNewCRLSet(crl_set);
  }
  

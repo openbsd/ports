@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_boringssl_src_include_openssl_cpu_h,v 1.1 2018/09/12 19:10:34 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_include_openssl_cpu_h,v 1.2 2018/12/07 11:07:35 robert Exp $
 
 Index: third_party/boringssl/src/include/openssl/cpu.h
 --- third_party/boringssl/src/include/openssl/cpu.h.orig
 +++ third_party/boringssl/src/include/openssl/cpu.h
-@@ -105,7 +105,7 @@ static inline const uint32_t *OPENSSL_ia32cap_get(void
+@@ -105,7 +105,7 @@ OPENSSL_INLINE const uint32_t *OPENSSL_ia32cap_get(voi
  
  #if defined(OPENSSL_ARM) || defined(OPENSSL_AARCH64)
  

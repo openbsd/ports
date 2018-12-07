@@ -1,10 +1,10 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.25 2018/09/12 17:08:22 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.26 2018/12/07 11:07:35 robert Exp $
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
-@@ -217,7 +217,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
- #elif defined(OS_MACOSX)
-   return new NetworkChangeNotifierMac();
+@@ -222,7 +222,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+ #elif defined(OS_FUCHSIA)
+   return new NetworkChangeNotifierFuchsia();
  #else
 -  NOTIMPLEMENTED();
    return NULL;

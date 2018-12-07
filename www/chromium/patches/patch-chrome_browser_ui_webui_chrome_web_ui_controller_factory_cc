@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.29 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.30 2018/12/07 11:07:35 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -187,11 +187,11 @@
- #include "chrome/browser/ui/webui/welcome_win10_ui.h"
+ #include "chrome/browser/ui/webui/welcome/welcome_win10_ui.h"
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
@@ -26,7 +26,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if defined(OS_CHROMEOS)
-@@ -572,7 +572,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -573,7 +573,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -35,7 +35,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
  #endif
-@@ -631,12 +631,12 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -634,12 +634,12 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<CastUI>;
    }
  #endif

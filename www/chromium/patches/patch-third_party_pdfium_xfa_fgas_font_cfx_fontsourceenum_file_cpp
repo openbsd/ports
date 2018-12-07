@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfgas_fontmgr_cpp,v 1.7 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfx_fontsourceenum_file_cpp,v 1.1 2018/12/07 11:07:35 robert Exp $
 
-Index: third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
---- third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp.orig
-+++ third_party/pdfium/xfa/fgas/font/cfgas_fontmgr.cpp
-@@ -200,8 +200,8 @@ namespace {
+Index: third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
+--- third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp.orig
++++ third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
+@@ -14,8 +14,8 @@ constexpr char kFolderSeparator = '/';
  
  constexpr const char* g_FontFolders[] = {
  #if _FX_PLATFORM_ == _FX_PLATFORM_LINUX_

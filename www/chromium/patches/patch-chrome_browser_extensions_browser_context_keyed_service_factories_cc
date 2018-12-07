@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.12 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.13 2018/12/07 11:07:35 robert Exp $
 
 Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
-@@ -58,7 +58,7 @@
+@@ -56,7 +56,7 @@
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #include "chrome/browser/extensions/api/screenlock_private/screenlock_private_api.h"
@@ -12,7 +12,7 @@ Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #endif
  
-@@ -103,7 +103,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -98,7 +98,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
  #if defined(OS_CHROMEOS)
    extensions::InputImeAPI::GetFactoryInstance();
    extensions::InputMethodAPI::GetFactoryInstance();
