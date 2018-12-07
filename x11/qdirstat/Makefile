@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/07 07:49:29 rsadowski Exp $
 
 COMMENT =	Qt-based directory statistics
 
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
-GH_TAGNAME =	1.4
-REVISION =	1
+GH_TAGNAME =	1.5
 
 CATEGORIES =	x11
 
@@ -22,6 +21,8 @@ MODULES =	devel/qmake \
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+MODQMAKE_ARGS +=	INSTALL_PREFIX=${PREFIX}
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/qdirstat ${PREFIX}/bin/

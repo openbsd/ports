@@ -1,0 +1,15 @@
+$OpenBSD: patch-man_man_pro,v 1.1 2018/12/07 07:49:29 rsadowski Exp $
+
+Index: man/man.pro
+--- man/man.pro.orig
++++ man/man.pro
+@@ -13,8 +13,7 @@ MAN_TARGET  ~= s/.1$/.1.gz/g
+ # message(target: $$MAN_TARGET)
+ 
+ man.files    = $$MAN_TARGET
+-man.commands = gzip --keep --force $$MAN_SRC
+-man.path     = $$INSTALL_PREFIX/share/man/man1
++man.path     = $$INSTALL_PREFIX/man/man1
+ 
+ INSTALLS    += man
+ QMAKE_CLEAN += $$MAN_TARGET

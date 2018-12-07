@@ -1,26 +1,14 @@
-$OpenBSD: patch-src_src_pro,v 1.1.1.1 2017/10/26 12:54:07 rsadowski Exp $
+$OpenBSD: patch-src_src_pro,v 1.2 2018/12/07 07:49:29 rsadowski Exp $
 
 Index: src/src.pro
 --- src/src.pro.orig
 +++ src/src.pro
-@@ -23,7 +23,7 @@ major_is_less_5 = $$find(QT_MAJOR_VERSION, [234])
+@@ -174,7 +174,7 @@ desktop.files   = *.desktop
+ desktop.path    = $$INSTALL_PREFIX/share/applications
  
- TARGET		 = qdirstat
- TARGET.files	 = qdirstat
--TARGET.path	 = /usr/bin
-+TARGET.path	 = $$PREFIX/bin
- INSTALLS	+= TARGET desktop icons
+ icons.files     = icons/qdirstat.svg
+-icons.path      = $$INSTALL_PREFIX/share/icons/hicolor/scalable/apps
++icons.path      = $$INSTALL_PREFIX/share/icons/hicolor/32x32/apps
  
- SOURCES	  = main.cpp			\
-@@ -155,9 +155,9 @@ FORMS	  = main-window.ui		   \
- RESOURCES = icons.qrc
  
- desktop.files = *.desktop
--desktop.path  = /usr/share/applications
-+desktop.path  = $$PREFIX/share/applications
- 
- icons.files   = icons/qdirstat.png
--icons.path    = /usr/share/icons/hicolor/32x32/apps
-+icons.path    = $$PREFIX/share/icons/hicolor/32x32/apps
- 
- mac:ICON      = icons/qdirstat.icns
+ mac:ICON        = icons/qdirstat.icns
