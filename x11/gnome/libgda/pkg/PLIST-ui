@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.29 2018/09/29 08:08:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.30 2018/12/07 14:06:09 ajacoutot Exp $
 @conflict libgda-<5.1.2p4v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -31,7 +31,6 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
-lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-format-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-password.xml
@@ -46,7 +45,6 @@ share/appdata/
 share/appdata/gda-browser-${GDA_MAJOR}.appdata.xml
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
-share/gir-1.0/Gdaui-${GDA_MAJOR}.gir
 share/gtk-doc/html/gda-browser/
 share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html

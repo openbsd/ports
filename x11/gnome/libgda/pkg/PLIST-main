@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2018/09/29 08:08:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2018/12/07 14:06:09 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -21,8 +21,6 @@ include/libgda-${GDA_MAJOR}/libgda-report/gda-report-rml-document.h
 include/libgda-${GDA_MAJOR}/libgda-report/libgda-report.h
 include/libgda-${GDA_MAJOR}/libgda-xslt/
 include/libgda-${GDA_MAJOR}/libgda-xslt/libgda-xslt.h
-include/libgda-${GDA_MAJOR}/libgda/data/
-include/libgda-${GDA_MAJOR}/libgda/data/libgdadata.h
 include/libgda-${GDA_MAJOR}/libgda/gda-attributes-manager.h
 include/libgda-${GDA_MAJOR}/libgda/gda-batch.h
 include/libgda-${GDA_MAJOR}/libgda/gda-binreloc.h
@@ -126,7 +124,6 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
 lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
-lib/girepository-1.0/GdaData-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-${GDA_MAJOR}_VERSION}
@@ -140,8 +137,6 @@ lib/libgda-report-${GDA_MAJOR}.la
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-${GDA_MAJOR}_VERSION}
 lib/libgda-xslt-${GDA_MAJOR}.la
 @lib lib/libgda-xslt-${GDA_MAJOR}.so.${LIBgda-xslt-${GDA_MAJOR}_VERSION}
-lib/libgdadata-${GDA_MAJOR}.la
-@lib lib/libgdadata-${GDA_MAJOR}.so.${LIBgdadata-${GDA_MAJOR}_VERSION}
 lib/pkgconfig/libgda-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-bdb-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-report-${GDA_MAJOR}.pc
@@ -149,7 +144,6 @@ lib/pkgconfig/libgda-sqlcipher-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-sqlite-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-web-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-xslt-${GDA_MAJOR}.pc
-lib/pkgconfig/libgdadata-${GDA_MAJOR}.pc
 @man man/man1/gda-sql-${GDA_MAJOR}.1
 @man man/man1/gda-sql.1
 share/examples/libgda/
@@ -159,7 +153,6 @@ share/examples/libgda/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
 share/gir-1.0/Gda-${GDA_MAJOR}.gir
-share/gir-1.0/GdaData-${GDA_MAJOR}.gir
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html
@@ -597,3 +590,4 @@ share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/vala/vapi/libgda-${GDA_MAJOR}.vapi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2018/12/07 14:06:09 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostgreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.2.5
+GNOME_VERSION=		5.2.8
 
 GDA_MAJOR=		5.0
 SUBST_VARS=		GDA_MAJOR
@@ -19,11 +19,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-REVISION-ldap=		0
-REVISION-main=		0
-REVISION-mysql=		0
-REVISION-pgsql=		0
-REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -32,8 +27,7 @@ EPOCH-pgsql=		0
 
 CATEGORIES=		databases
 
-SHARED_LIBS +=  gda-5.0              1.0      # 5.1
-SHARED_LIBS +=  gdadata-5.0          0.0      # unknown
+SHARED_LIBS +=  gda-5.0              2.0      # 5.1
 SHARED_LIBS +=  gda-report-5.0       1.0      # 5.1
 SHARED_LIBS +=  gda-xslt-5.0         1.0      # 5.1
 SHARED_LIBS +=  gda-ui-5.0           1.0      # 5.1
@@ -57,6 +51,7 @@ MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_LDFLAGS=	-lm
+
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
@@ -68,12 +63,12 @@ MODPY_ADJ_FILES=	libgda-report/RML/trml2html/trml2html.py \
 LIBTOOL_FLAGS=		--tag=disable-static
 
 BUILD_DEPENDS=		databases/db/v4 \
-			devel/iso-codes
+			devel/iso-codes \
+			devel/libgee
 
 TEST_DEPENDS=		devel/check
 
-CONFIGURE_ARGS=		--enable-system-sqlite \
-			--enable-gdaui-gi \
+CONFIGURE_ARGS=		--enable-gdaui-gi \
 			--enable-gdaui-vala \
 			--enable-vala-extensions \
 			--with-bdb-includedir-name=include/db4 \
@@ -96,12 +91,11 @@ MULTI_PACKAGES=		-main -ui -mysql -pgsql -ldap
 
 ### -main
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c curses gcrypt gpg-error sqlite3 gee-0.8
+WANTLIB-main += c curses gcrypt gpg-error sqlite3
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main=	devel/libgee \
-			devel/libsoup \
+LIB_DEPENDS-main=	devel/libsoup \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2 \
 			x11/gnome/libsecret
@@ -146,75 +140,13 @@ RUN_DEPENDS-ldap=	# empty
 LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 
-### needed with newer glib-mkenums(1) ##########################################
-BUILD_DEPENDS +=	converters/recode
-
-# From b611c805b3a2248e2f4f85f993f96c13a05b4730 Mon Sep 17 00:00:00 2001
-# From: Emmanuele Bassi <ebassi@gnome.org>
-# Date: Mon, 17 Jul 2017 22:37:50 +0100
-# Subject: Convert files to Unicode
-RECODE +=		libgda/gda-connection.h \
-			libgda/sql-parser/gda-sql-statement.h \
-			libgda/sql-parser/gda-statement-struct-delete.h \
-			libgda/sql-parser/gda-statement-struct-unknown.h \
-			libgda/sql-parser/gda-statement-struct-util.h
-
-# From 12429af2c0a40bb199ced605b7f7fab5ecc77e86 Mon Sep 17 00:00:00 2001
-# From: Murray Cumming <murrayc@murrayc.com>
-# Date: Wed, 25 Oct 2017 22:20:49 +0200
-# Subject: Convert several headers from ISO-8559 to UTF-8.
-RECODE +=		libgda-report/engine/rt-parser.h \
-			libgda-report/gda-report-document-private.h \
-			libgda-report/gda-report-document.h \
-			libgda-report/libgda-report.h \
-			libgda-ui/gdaui-easy.h \
-			libgda-ui/libgda-ui.h \
-			libgda-xslt/libgda-xslt.h \
-			libgda/binreloc/gda-binreloc.h \
-			libgda/gda-column.h \
-			libgda/gda-connection-internal.h \
-			libgda/gda-connection-sqlite.h \
-			libgda/gda-data-model-extra.h \
-			libgda/gda-data-model-iter-extra.h \
-			libgda/gda-data-model.h \
-			libgda/gda-meta-store-extra.h \
-			libgda/gda-meta-struct-private.h \
-			libgda/gda-row.h \
-			libgda/gda-server-operation-private.h \
-			libgda/gda-server-provider-private.h \
-			libgda/gda-statement-extra.h \
-			libgda/gda-util.h \
-			libgda/libgda-global-variables.h \
-			libgda/providers-support/gda-data-select-priv.h \
-			libgda/sqlite/gda-sqlite-provider.h \
-			libgda/sqlite/gda-sqlite-recordset.h \
-			libgda/sqlite/gda-sqlite.h \
-			libgda/sqlite/virtual/gda-vconnection-data-model-private.h \
-			providers/firebird/gda-firebird.h \
-			providers/jdbc/gda-jdbc.h \
-			providers/ldap/gdaprov-data-model-ldap.h \
-			providers/mdb/gda-mdb-provider.h \
-			providers/mdb/gda-mdb.h \
-			providers/mysql/gda-mysql-provider.h \
-			providers/mysql/gda-mysql-recordset.h \
-			providers/mysql/gda-mysql.h \
-			providers/postgres/gda-postgres-recordset.h
-
-# Some more...
-RECODE +=		libgda/gda-batch.h \
-			libgda/gda-config.h \
-			libgda/gda-data-model-extra.h \
-			libgda/gda-mutex.h \
-			libgda/libgda-global-variables.h
-################################################################################
-
 # XXX sync with LIBdb_VERSION in databases/db/v4
 # (find a proper way to push upstream)
+LIBdb_VERSION=		5.0
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 post-patch:
-	sed -i 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
-	cd ${WRKSRC} && ${LOCALBASE}/bin/recode ISO-8859-1..utf8 ${RECODE}
+	sed -i 's,bdb_libext="\$$linklibext",bdb_libext=".so.${LIBdb_VERSION}",' ${WRKSRC}/m4/bdb.m4
 
 post-install:
 	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
