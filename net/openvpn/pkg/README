@@ -1,17 +1,8 @@
-$OpenBSD: README,v 1.6 2018/09/04 12:46:18 espie Exp $
+$OpenBSD: README,v 1.7 2018/12/07 18:31:33 danj Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
-
-Upgrading from OpenBSD 5.8 or earlier
--------------------------------------
-Note that in previous versions of OpenBSD, the tun(4) interface was
-used for both layer-3 (routed) connections, and also for layer-2
-(bridged, using the "link0" flag). This was changed in OpenBSD 5.8,
-layer-2 (bridged) connections should now use the tap(4) interface
-instead as on other OS. Consult the upgrade guide for 5.9 for more
-information.
 
 Using the openvpn rc script
 ---------------------------
