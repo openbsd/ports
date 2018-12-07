@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2018/12/06 21:51:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.201 2018/12/07 09:01:39 semarie Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -22,6 +22,7 @@ PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
 REVISION-main =	19
 REVISION-python = 3
+REVISION-lldb =	0
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -141,6 +142,10 @@ post-install:
 	# lit and FileCheck are not installed
 	@rm ${PREFIX}/man/man1/lit.1
 	@rm ${PREFIX}/man/man1/FileCheck.1
+.if ${BUILD_PACKAGES:M-lldb}
+	ln -fs ${TRUEPREFIX}/lib/liblldb.so.${LIBlldb_VERSION} \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
+.endif
 
 .include <bsd.port.mk>
 
