@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2018/09/14 09:11:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2018/12/08 22:39:20 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -607,6 +607,7 @@ share/vim/${P}/indent/prolog.vim
 share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
 share/vim/${P}/indent/r.vim
+share/vim/${P}/indent/raml.vim
 share/vim/${P}/indent/readline.vim
 share/vim/${P}/indent/rhelp.vim
 share/vim/${P}/indent/rmd.vim
@@ -1264,6 +1265,7 @@ share/vim/${P}/syntax/quake.vim
 share/vim/${P}/syntax/r.vim
 share/vim/${P}/syntax/racc.vim
 share/vim/${P}/syntax/radiance.vim
+share/vim/${P}/syntax/raml.vim
 share/vim/${P}/syntax/ratpoison.vim
 share/vim/${P}/syntax/rc.vim
 share/vim/${P}/syntax/rcs.vim
