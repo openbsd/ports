@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/08/17 11:28:00 dcoppa Exp $
+$OpenBSD: patch-Makefile,v 1.7 2018/12/08 22:11:40 ajacoutot Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
@@ -47,12 +47,3 @@ Index: Makefile
  
  $(JNIHEADERS): fr/free/miniupnp/libnatpmp/NatPmp.class
  	$(JAVAH) -jni fr.free.miniupnp.libnatpmp.NatPmp
-@@ -165,7 +164,7 @@ $(SHAREDLIB):	$(LIBOBJS)
- ifeq ($(OS), Darwin)
- 	$(CC) -dynamiclib -Wl,-install_name,$(SONAME) -o $@ $^
- else
--	$(CC) -shared -Wl,-soname,$(SONAME) -o $@ $^ $(EXTRA_LD)
-+	$(CC) -shared -o $@ $^ $(EXTRA_LD)
- endif
- 
- 
