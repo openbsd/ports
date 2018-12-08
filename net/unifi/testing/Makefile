@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/04 17:29:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/08 21:49:14 sthen Exp $
 
-V=		5.9.29
+V=		5.9.32
 SNAPPY_V=	1.1.4
 
 # for stable-candidate versions
-#BUILD_V=	-04b5d20997
+#BUILD_V=	-xxxxxxxxxx
 
-.if 0 && !defined(BUILD_V)
+.if !defined(BUILD_V)
 FETCH_MANUALLY+= ""
 FETCH_MANUALLY+= "If you have access to UniFi betas, open the beta blog post for $V"
 FETCH_MANUALLY+= "and note the suffix from the directory name of the download URLs."
