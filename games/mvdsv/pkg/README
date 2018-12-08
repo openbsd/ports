@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2018/12/08 09:40:53 solene Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To run the Quakeworld server you need the original Quake 1 data files
+(must be purchased with the game):
+
+1) Create a 'quake' directory somewhere
+2) Create a 'qw' directory underneath the quake directory
+3) Copy the following examples files into 'qw' directory:
+  - ${PREFIX}/share/examples/mvdsv/qwprogs.dat
+  - ${PREFIX}/share/examples/mvdsv/server.cfg
+4) Place pak0.pak and pak1.pak (from the Quake 1 data files)
+   in the qw directory.
+   If files are uppercase, they must be renamed to lowercase.
+5) Edit the server.cfg in the qw directory to suit your needs
+6) cd up to the parent directory ('quake')
+7) Run the server with: mvdsv -game qw +exec server.cfg
+
+(Note: qwprogs.dat is freely downloadable and under GPLv2 license)
