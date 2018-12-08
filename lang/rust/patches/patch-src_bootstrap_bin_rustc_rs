@@ -1,20 +1,16 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.5 2018/06/29 05:19:47 landry Exp $
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.6 2018/12/08 09:16:09 semarie Exp $
 try to reduce memory usage on aarch64:
- - small code size to optimize (more codegen-units)
- - optimization level to 1 (instead of 2) to reduce the work in memory
  - reduce memory use by retaining fewer names within compilation artifacts
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -187,6 +187,13 @@ fn main() {
+@@ -187,6 +187,11 @@ fn main() {
              cmd.arg("-C").arg(format!("codegen-units={}", s));
          }
  
 +        if target.contains("aarch64-unknown-openbsd")
 +            && crate_name == "rustc" {
-+            cmd.arg("-C").arg("codegen-units=16")
-+               .arg("-C").arg("opt-level=1")
-+               .arg("-Z").arg("fewer-names");
++            cmd.arg("-Z").arg("fewer-names");
 +        }
 +
          // Emit save-analysis info.

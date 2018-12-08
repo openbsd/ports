@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2018/11/22 12:40:21 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2018/12/08 09:16:09 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -11,14 +11,14 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.30.1
-CARGO_V =		0.31.0
+V =			1.31.0
+CARGO_V =		0.32.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.30.0-20181101
-BV-amd64 =		1.30.0-20181025
-BV-i386 =		1.30.0-20181025
+BV-aarch64 =		1.31.0-20181207
+BV-amd64 =		1.31.0-20181205
+BV-i386 =		1.31.0-20181205
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -218,27 +218,27 @@ do-test:
 # bootstrap target permits to regenerate the bootstrap archive
 BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
 bootstrap: build
-	rm -rf ${BOOTSTRAPDIR}
-	mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
+	${_PBUILD} rm -rf ${BOOTSTRAPDIR}
+	${_PBUILD} mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
 	${MAKE} clean=fake
 	${MAKE} fake \
 		PREFIX="${BOOTSTRAPDIR}" \
 		COMPONENTS="rustc-${V} rust-std-${V} cargo-${CARGO_V}" \
 		FAKE_SETUP=""
-	rm -rf ${BOOTSTRAPDIR}/{man,share} \
+	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb
-	strip ${BOOTSTRAPDIR}/lib/lib*.so \
+	${_PBUILD} strip ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
 .for _bin in rustc rustdoc cargo
-	mv ${BOOTSTRAPDIR}/bin/${_bin} \
+	${_PBUILD} mv ${BOOTSTRAPDIR}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}.bin
-	strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
-	cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
+	${_PBUILD} strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
+	${_PBUILD} cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
 	LD_PRELOAD="${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/codegen-backends/librustc_codegen_llvm-llvm.so" \
 		ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
-		| xargs -r -J % cp % ${BOOTSTRAPDIR}/lib || true
+		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
 .endfor
 .include <bsd.port.mk>
