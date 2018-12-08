@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1093 2018/12/06 08:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1094 2018/12/08 18:15:26 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -77,7 +77,6 @@
      SUBDIR += doc
      SUBDIR += dsocks
      SUBDIR += dxpc
-     SUBDIR += dysnomia
      SUBDIR += echoping
      SUBDIR += ejabberd
      SUBDIR += ekg

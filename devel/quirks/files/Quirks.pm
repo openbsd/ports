@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.670 2018/12/07 13:15:32 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.671 2018/12/08 18:15:26 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1087,6 +1087,7 @@ my $obsolete_reason = {
 	'directoryassistant' => 0,
 	'x-pack' => 3,
 	'libepc' => 5,
+	'dysnomia-en' => 0,
 };
 
 # reasons for obsolete packages
