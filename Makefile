@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2018/11/16 09:56:37 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2018/12/08 10:25:05 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -100,16 +100,15 @@ search:	${INDEX}
 .endif
 
 fix-permissions:
-	@{ echo "COMMENT=test"; \
-	echo "CATEGORIES=test"; \
-	echo "PKGPATH=test/a"; \
-	echo "DISTNAME=test"; \
-	echo "PERMIT_PACKAGE_CDROM=Yes"; \
-	echo "ECHO_MSG=:"; \
+	@{ echo "DUMMY_PACKAGE=Yes"; \
 	echo ".include <bsd.port.mk>"; }|${MAKE} -f - fix-permissions
 
 distfiles-update-locatedb:
 	@PORTSDIR=${.CURDIR} /bin/sh ${.CURDIR}/infrastructure/fetch/distfiles-update-locatedb ${DISTFILES_DB}
 
+create_DEPENDS_CACHE:
+	@${_mk_DEPENDS_CACHE}; echo $${_DEPENDS_CACHE}
+
 .PHONY: index search distfiles-update-locatedb \
-	print-licenses print-index fix-permissions
+	print-licenses print-index fix-permissions \
+	create_DEPENDS_CACHE

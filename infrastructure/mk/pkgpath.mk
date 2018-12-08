@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.79 2018/11/30 10:13:38 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.80 2018/12/08 10:25:05 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -103,6 +103,10 @@ _depfile_fragment = \
 
 GLOBAL_DEPENDS_CACHE ?=
 
+_mk_DEPENDS_CACHE = \
+	_DEPENDS_CACHE=$$(${_PBUILD} mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
+	${_MK_READABLE} $${_DEPENDS_CACHE}
+
 # XXX this is to speed up dpb builds beware of consequences !
 .if !empty(GLOBAL_DEPENDS_CACHE)
 _cache_fragment = \
@@ -115,9 +119,7 @@ _cache_fragment = \
 .else
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
-		X) _DEPENDS_CACHE=$$(${_PBUILD} mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
-		${_MK_READABLE} $${_DEPENDS_CACHE}; \
-		export _DEPENDS_CACHE; \
+		X) ${_mk_DEPENDS_CACHE}; export _DEPENDS_CACHE; \
 		trap "${_PBUILD} rm -rf 2>/dev/null $${_DEPENDS_CACHE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
