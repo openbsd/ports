@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/05/25 12:47:31 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2018/12/08 12:02:21 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-XFCE_VERSION =	0.6.1
-REVISION=	2
+XFCE_VERSION =	0.6.2
 
 PORTROACH=	limitw:1,even
 
@@ -23,7 +22,7 @@ LIB_DEPENDS =	x11/xfce4/libxfce4util \
 WANTLIB =	xfce4util gio-2.0 gmodule-2.0 glib-2.0 gobject-2.0 gthread-2.0 \
 		pcre pthread z ffi iconv intl
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo expat
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fribidi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png startup-notification-1 xcb
