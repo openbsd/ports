@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/10/16 14:39:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/12/08 15:08:58 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
@@ -6,6 +6,7 @@ bin/qtcreator.sh
 @lib lib/libClangsupport.so.${LIBClangsupport_VERSION}
 @lib lib/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/libGLSL.so.${LIBGLSL_VERSION}
+@lib lib/libLanguageServerProtocol.so.${LIBLanguageServerProtocol_VERSION}
 @lib lib/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/libModeling.so.${LIBModeling_VERSION}
 @lib lib/libQmlDebug.so.${LIBQmlDebug_VERSION}
@@ -21,6 +22,7 @@ lib/qtcreator/
 @lib lib/qtcreator/libClangsupport.so.${LIBClangsupport_VERSION}
 @lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/qtcreator/libGLSL.so.${LIBGLSL_VERSION}
+@lib lib/qtcreator/libLanguageServerProtocol.so.${LIBLanguageServerProtocol_VERSION}
 @lib lib/qtcreator/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/qtcreator/libModeling.so.${LIBModeling_VERSION}
 @lib lib/qtcreator/libQmlDebug.so.${LIBQmlDebug_VERSION}
@@ -42,15 +44,18 @@ lib/qtcreator/plugins/libBookmarks.so
 lib/qtcreator/plugins/libCMakeProjectManager.so
 lib/qtcreator/plugins/libCVS.so
 lib/qtcreator/plugins/libClangCodeModel.so
+lib/qtcreator/plugins/libClangFormat.so
 lib/qtcreator/plugins/libClangPchManager.so
 lib/qtcreator/plugins/libClangRefactoring.so
 lib/qtcreator/plugins/libClangTools.so
 lib/qtcreator/plugins/libClassView.so
 lib/qtcreator/plugins/libClearCase.so
 lib/qtcreator/plugins/libCodePaster.so
+lib/qtcreator/plugins/libCompilationDatabaseProjectManager.so
 lib/qtcreator/plugins/libCore.so
 lib/qtcreator/plugins/libCppEditor.so
 lib/qtcreator/plugins/libCppTools.so
+lib/qtcreator/plugins/libCppcheck.so
 lib/qtcreator/plugins/libDebugger.so
 lib/qtcreator/plugins/libDesigner.so
 lib/qtcreator/plugins/libDiffEditor.so
@@ -63,6 +68,7 @@ lib/qtcreator/plugins/libHelloWorld.so
 lib/qtcreator/plugins/libHelp.so
 lib/qtcreator/plugins/libImageViewer.so
 lib/qtcreator/plugins/libIos.so
+lib/qtcreator/plugins/libLanguageClient.so
 lib/qtcreator/plugins/libMacros.so
 lib/qtcreator/plugins/libMercurial.so
 lib/qtcreator/plugins/libModelEditor.so
@@ -338,6 +344,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmlstatenodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmlstatenodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmltransitionnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qmltransitionnodeinstance.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt3dpresentationnodeinstance.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt3dpresentationnodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5informationnodeinstanceserver.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5informationnodeinstanceserver.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/qt5nodeinstanceclientproxy.cpp
@@ -729,25 +737,12 @@ share/qtcreator/templates/wizards/projects/qtquickapplication/
 share/qtcreator/templates/wizards/projects/qtquickapplication/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/qtquickapplication/app.pro
 share/qtcreator/templates/wizards/projects/qtquickapplication/app.qbs
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/icon.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/icon@2x.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/main.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/plaincanvas3d/
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/plaincanvas3d/glcode.js
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/qml.qrc
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/threejs/
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/threejs/3rdparty/
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/threejs/3rdparty/three.js
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/threejs/glcode.js
-share/qtcreator/templates/wizards/projects/qtquickapplication/canvas3d/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/icon.png
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/icon@2x.png
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/main.qml.tpl
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/qml.qrc
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/wizard.json
-share/qtcreator/templates/wizards/projects/qtquickapplication/file.qbs
 share/qtcreator/templates/wizards/projects/qtquickapplication/main.cpp
 share/qtcreator/templates/wizards/projects/qtquickapplication/qtquickcontrols2.conf
 share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/
@@ -833,6 +828,7 @@ share/qtcreator/templates/wizards/qtquickstyleicons/universal-light@2x.png
 share/qtcreator/themes/
 share/qtcreator/themes/dark.creatortheme
 share/qtcreator/themes/default.creatortheme
+share/qtcreator/themes/design.creatortheme
 share/qtcreator/themes/flat-dark.creatortheme
 share/qtcreator/themes/flat-light.creatortheme
 share/qtcreator/themes/flat.creatortheme

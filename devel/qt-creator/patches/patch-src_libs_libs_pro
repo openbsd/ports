@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libs_libs_pro,v 1.1 2018/10/19 09:35:31 rsadowski Exp $
+$OpenBSD: patch-src_libs_libs_pro,v 1.2 2018/12/08 15:08:58 rsadowski Exp $
 
 use system botan2
 
@@ -14,7 +14,7 @@ Index: src/libs/libs.pro
  SUBDIRS   += \
      aggregation \
      extensionsystem \
-@@ -30,8 +28,6 @@ for(l, SUBDIRS) {
+@@ -31,8 +29,6 @@ for(l, SUBDIRS) {
      lv = $${l}.depends
      $$lv = $$QTC_LIB_DEPENDS
  }

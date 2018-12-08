@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2018/10/30 06:00:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2018/12/08 15:08:58 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.7.2
+V =			4.8.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -22,6 +22,7 @@ SHARED_LIBS +=	Sqlite                    4.0 # 1.0
 SHARED_LIBS +=	Modeling                  4.0 # 1.0
 SHARED_LIBS +=	Clangsupport              1.0 # 4.5
 SHARED_LIBS +=	Tracing                   0.0 # 4.7
+SHARED_LIBS +=  LanguageServerProtocol    0.0 # 4.8
 
 MAKE_FLAGS =	BUILD_TESTS=1
 .for _l _v in ${SHARED_LIBS}
@@ -62,6 +63,7 @@ RUN_DEPENDS =	${MODGCC4_CPPDEP} \
 		devel/gdb \
 		devel/gmake \
 		x11/gtk+3,-guic \
+		x11/qt5/qtquickcontrols \
 		x11/qt5/qtwebkit
 
 LIB_DEPENDS =	devel/llvm \
