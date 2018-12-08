@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/11/03 10:21:26 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2018/12/08 16:48:43 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
@@ -40,9 +40,11 @@
      SUBDIR += xfce4-pulseaudio
      SUBDIR += xfce4-session
      SUBDIR += xfce4-screenshooter
+     SUBDIR += xfce4-screensaver
      SUBDIR += xfce4-settings
      SUBDIR += xfce4-smartbookmark
      SUBDIR += xfce4-systemload
+     SUBDIR += xfce4-statusnotifier
      SUBDIR += xfce4-time-out
      SUBDIR += xfce4-taskmanager
      SUBDIR += xfce4-verve
