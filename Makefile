@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2018/12/08 10:25:05 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2018/12/08 10:29:12 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -109,6 +109,10 @@ distfiles-update-locatedb:
 create_DEPENDS_CACHE:
 	@${_mk_DEPENDS_CACHE}; echo $${_DEPENDS_CACHE}
 
+destroy_DEPENDS_CACHE:
+	@${_PBUILD} rm -rf 2>/dev/null $${_DEPENDS_CACHE}
+
+
 .PHONY: index search distfiles-update-locatedb \
 	print-licenses print-index fix-permissions \
-	create_DEPENDS_CACHE
+	create_DEPENDS_CACHE destroy_DEPENDS_CACHE
