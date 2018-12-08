@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.621 2018/12/01 13:32:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.622 2018/12/08 16:36:27 landry Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -150,6 +150,7 @@
      SUBDIR += krusader
      SUBDIR += lablgtk2
      SUBDIR += lemonbar
+     SUBDIR += libdbusmenu
      SUBDIR += libdnd
      SUBDIR += libfm
      SUBDIR += libgdiplus
