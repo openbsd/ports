@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/11/10 12:12:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2018/12/08 15:25:32 landry Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
@@ -25,6 +25,8 @@ WANTLIB += m pthread
 MASTER_SITES=		http://download.gimp.org/pub/babl/${V:R}/
 
 USE_GMAKE=		Yes
+
+COMPILER=		base-clang ports-gcc
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-pthread" \
