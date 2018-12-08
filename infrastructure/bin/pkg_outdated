@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.2 2018/07/11 12:42:57 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.3 2018/12/08 10:31:58 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -140,8 +140,8 @@ sub collect_port_signatures
 		}
 	}
 
-	my $TMPDIR = $ENV{'TMPDIR'} || "/tmp";
-	my $tempdir = File::Temp::tempdir("libcache.XXXXXXXXXX", DIR => $TMPDIR, CLEANUP => 1);
+	my $tempdir = `cd $portsdir && make create_DEPENDS_CACHE`;
+	chomp $tempdir;
 	$ENV{'_DEPENDS_CACHE'} = $tempdir;
 	my $cmd = "cd $portsdir && FULLPATH=Yes SUBDIR=\"".join(' ', @subdirs)
 	    ."\" REPORT_PROBLEM=true make print-package-signature";
@@ -163,6 +163,7 @@ sub collect_port_signatures
 		$port->{$subdir}->{signature} = $_;
 	}
 	$state->progress->next;
+	system("cd $portsdir && make destroy_DEPENDS_CACHE");
 }
 
 sub split_sig
