@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.671 2018/12/08 18:15:26 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.672 2018/12/08 19:16:22 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -830,8 +830,6 @@ my $obsolete_reason = {
 	'xgrab' => 9,
 	'quirc' => 3,
 	'xspread' => 3,
-	'tryton' => 1,
-	'trytond' => 1,
 	'sharity-light' => 6,
 	'py-axiom' => 5,
 	'py-epsilon' => 5,
