@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/11 20:16:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/08 21:26:54 sthen Exp $
 
-V=		5.8.30
+V=		5.9.29
 SNAPPY_V=	1.1.4
 
-# for beta/stable-candidate versions; beta URLs in UniFi-Beta-Blog if you have access
-#BUILD_V=	-ff003bb0ce
+# for stable-candidate versions
+#BUILD_V=	-04b5d20997
 
 .include <bsd.port.mk>
