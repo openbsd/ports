@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2018/12/03 12:33:47 semarie Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2018/12/08 19:08:01 semarie Exp $
 
 CATEGORIES ?=		productivity \
 			productivity/tryton
@@ -13,9 +13,7 @@ PERMIT_PACKAGE_CDROM ?=	Yes
 MASTER_SITES =		https://downloads.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 DIST_SUBDIR =		tryton
 
-.if defined(MODPY_EGG_VERSION)
 VERSION ?=		${MODPY_EGG_VERSION}
-.endif
 
 .if defined(TRYTON_MODULE)
 TRYTON_PY =		Yes
