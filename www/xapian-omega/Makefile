@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2018/12/08 22:48:39 bentley Exp $
 
 COMMENT=	web search application
 
 V=		1.4.5
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www textproc
 
-HOMEPAGE=	http://xapian.org/
+HOMEPAGE=	https://xapian.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m uuid ${COMPILER_LIBCXX} z xapian pcre magic
 
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # C++11

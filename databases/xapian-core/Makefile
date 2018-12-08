@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.31 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2018/12/08 22:48:39 bentley Exp $
 
 COMMENT=	search engine library
 
 V=		1.4.5
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  xapian	4.0	# .28.2
 
 CATEGORIES=	databases textproc
 
-HOMEPAGE=	http://xapian.org/
+HOMEPAGE=	https://xapian.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} z uuid
 
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11
