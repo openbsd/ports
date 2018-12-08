@@ -1,0 +1,7 @@
+xfce4-screensaver is a screen saver and locker that aims to have
+simple, sane, secure defaults and be well integrated with the desktop.
+
+ - Integration with the Xfce Desktop per-monitor wallpaper
+ - Locking down of configuration settings via Xfconf
+ - DBUS interface to limited screensaver interaction
+ - Support for XScreensaver screensavers

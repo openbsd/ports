@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/08 16:44:47 landry Exp $
+@bin bin/xfce4-screensaver
+@bin bin/xfce4-screensaver-command
+@bin bin/xfce4-screensaver-preferences
+lib/pkgconfig/xfce4-screensaver.pc
+libexec/xfce4-screensaver/
+@mode u+s
+@bin libexec/xfce4-screensaver-dialog
+@mode
+@bin libexec/xfce4-screensaver-gl-helper
+@bin libexec/xfce4-screensaver/floaters
+@bin libexec/xfce4-screensaver/popsquares
+@bin libexec/xfce4-screensaver/slideshow
+@man man/man1/xfce4-screensaver-command.1
+@man man/man1/xfce4-screensaver-preferences.1
+@man man/man1/xfce4-screensaver.1
+share/applications/screensavers/
+share/applications/screensavers/xfce-floaters.desktop
+share/applications/screensavers/xfce-personal-slideshow.desktop
+share/applications/screensavers/xfce-popsquares.desktop
+share/applications/xfce4-screensaver-preferences.desktop
+share/dbus-1/services/org.xfce.ScreenSaver.service
+share/desktop-directories/xfce4-screensaver.directory
+share/examples/xfce4-screensaver/
+share/examples/xfce4-screensaver/xdg/
+share/examples/xfce4-screensaver/xdg/autostart/
+share/examples/xfce4-screensaver/xdg/autostart/xfce4-screensaver.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xfce4-screensaver.desktop
+share/examples/xfce4-screensaver/xdg/menus/
+share/examples/xfce4-screensaver/xdg/menus/xfce4-screensavers.menu
+@sample ${SYSCONFDIR}/xdg/menus/xfce4-screensavers.menu
+share/locale/bg/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/ca/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/da/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/de/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/es/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/eu/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/fr/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/it/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/lt/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/ms/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/nl/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/pl/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/ru/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/sk/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/sq/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/sv/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/tr/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-screensaver.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-screensaver.mo
+share/pixmaps/
+share/pixmaps/xfce-logo-white.svg
+@tag update-desktop-database
