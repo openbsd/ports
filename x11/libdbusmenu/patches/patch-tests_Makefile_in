@@ -1,0 +1,183 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2018/12/08 16:35:53 landry Exp $
+
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -2375,7 +2375,7 @@ uninstall-am: uninstall-examplesDATA uninstall-jsonDAT
+ ######################
+ 
+ test-glib-layout: test-glib-layout-client test-glib-layout-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2387,7 +2387,7 @@ test-glib-layout: test-glib-layout-client test-glib-la
+ ######################
+ 
+ test-glib-events: test-glib-events-client test-glib-events-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2399,7 +2399,7 @@ test-glib-events: test-glib-events-client test-glib-ev
+ ################################
+ 
+ test-glib-events-nogroup: test-glib-events-nogroup-client test-glib-events-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2411,7 +2411,7 @@ test-glib-events-nogroup: test-glib-events-nogroup-cli
+ ######################
+ 
+ test-json: test-json-client test-json-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2425,7 +2425,7 @@ test-json: test-json-client test-json-server Makefile.
+ #########################
+ 
+ test-json-instruction: test-json-client test-json-server test-json-instruction-count Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2438,7 +2438,7 @@ test-json-instruction: test-json-client test-json-serv
+ ######################
+ 
+ test-glib-submenu: test-glib-submenu-client test-glib-submenu-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ # Removing the check for criticals here as there's one coming from GTK
+ # in the grabbing code on GTK3.  Since we can't add events to the stack
+@@ -2449,7 +2449,7 @@ test-glib-submenu: test-glib-submenu-client test-glib-
+ 	@chmod +x $@
+ 
+ test-glib-objects-test: test-glib-objects Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2461,7 +2461,7 @@ test-glib-objects-test: test-glib-objects Makefile.am
+ ######################
+ 
+ test-glib-properties: test-glib-properties-client test-glib-properties-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2473,7 +2473,7 @@ test-glib-properties: test-glib-properties-client test
+ ######################
+ 
+ test-glib-proxy: test-glib-proxy-client test-glib-proxy-server test-glib-proxy-proxy Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2486,7 +2486,7 @@ test-glib-proxy: test-glib-proxy-client test-glib-prox
+ 	@chmod +x $@
+ 
+ test-gtk-objects-test: test-gtk-objects Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2495,7 +2495,7 @@ test-gtk-objects-test: test-gtk-objects Makefile.am
+ 	@chmod +x $@
+ 
+ test-gtk-parser-test: test-gtk-parser Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2508,7 +2508,7 @@ test-gtk-parser-test: test-gtk-parser Makefile.am
+ #########################
+ 
+ test-gtk-label: test-gtk-label-client test-gtk-label-server test-gtk-label.json Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2521,7 +2521,7 @@ test-gtk-label: test-gtk-label-client test-gtk-label-s
+ #########################
+ 
+ test-gtk-shortcut: test-gtk-shortcut-client test-gtk-shortcut-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2534,7 +2534,7 @@ test-gtk-shortcut: test-gtk-shortcut-client test-gtk-s
+ #########################
+ 
+ test-gtk-shortcut-python: test-gtk-shortcut-server test-gtk-shortcut-client.py Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2547,7 +2547,7 @@ test-gtk-shortcut-python: test-gtk-shortcut-server tes
+ #########################
+ 
+ test-gtk-remove: test-gtk-remove-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2560,7 +2560,7 @@ test-gtk-remove: test-gtk-remove-server Makefile.am
+ #########################
+ 
+ test-gtk-reorder: test-gtk-label-client test-gtk-reorder-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2573,7 +2573,7 @@ test-gtk-reorder: test-gtk-label-client test-gtk-reord
+ #########################
+ 
+ test-gtk-submenu: test-gtk-submenu-client test-gtk-submenu-server Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2586,7 +2586,7 @@ test-gtk-submenu: test-gtk-submenu-client test-gtk-sub
+ #########################
+ 
+ test-mago: test-gtk-label-client test-gtk-label-server $(srcdir)/dbusmenu-gtk/mago_tests/dbusmenu.xml Makefile.am
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo export UBUNTU_MENUPROXY="" >> $@
+ 	@echo export G_DEBUG=fatal_criticals >> $@
+ 	@echo export G_MESSAGES_DEBUG=all >> $@
+@@ -2604,13 +2604,13 @@ test-mago: test-gtk-label-client test-gtk-label-server
+ #########################
+ 
+ test_libdbusmenu_glib_gtkdoc:
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo cd $(abs_top_builddir)/docs/libdbusmenu-glib/reference >> $@
+ 	@echo gtester --verbose -k $(GTKDOC_CHECK_PATH) >> $@
+ 	@chmod +x $@
+ 
+ test_libdbusmenu_gtk_gtkdoc:
+-	@echo "#!/bin/bash" > $@
++	@echo "#!/bin/sh" > $@
+ 	@echo cd $(abs_top_builddir)/docs/libdbusmenu-gtk/reference >> $@
+ 	@echo gtester --verbose -k $(GTKDOC_CHECK_PATH) >> $@
+ 	@chmod +x $@
