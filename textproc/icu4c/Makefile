@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.67 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2018/12/09 21:00:26 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		58.2
+VERSION=		63.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-REVISION-main=		7
-REVISION-wwwdata=	0
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		13.0
+SO_VERSION=		14.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -29,7 +27,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # ICU: http://source.icu-project.org/repos/icu/icu/trunk/license.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m pthread ${COMPILER_LIBCXX}
+WANTLIB-main=		c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -38,6 +36,7 @@ MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-renaming \

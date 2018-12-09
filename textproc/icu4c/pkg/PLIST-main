@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2017/08/24 09:44:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/12/09 21:00:26 ajacoutot Exp $
 @pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
@@ -21,6 +21,8 @@ include/unicode/bytestrie.h
 include/unicode/bytestriebuilder.h
 include/unicode/calendar.h
 include/unicode/caniter.h
+include/unicode/casemap.h
+include/unicode/char16ptr.h
 include/unicode/chariter.h
 include/unicode/choicfmt.h
 include/unicode/coleitr.h
@@ -40,6 +42,7 @@ include/unicode/dtitvfmt.h
 include/unicode/dtitvinf.h
 include/unicode/dtptngen.h
 include/unicode/dtrule.h
+include/unicode/edits.h
 include/unicode/enumset.h
 include/unicode/errorcode.h
 include/unicode/fieldpos.h
@@ -63,6 +66,9 @@ include/unicode/messagepattern.h
 include/unicode/msgfmt.h
 include/unicode/normalizer2.h
 include/unicode/normlzr.h
+include/unicode/nounit.h
+include/unicode/numberformatter.h
+include/unicode/numberrangeformatter.h
 include/unicode/numfmt.h
 include/unicode/numsys.h
 include/unicode/parseerr.h
@@ -90,6 +96,7 @@ include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
 include/unicode/std_string.h
 include/unicode/strenum.h
+include/unicode/stringoptions.h
 include/unicode/stringpiece.h
 include/unicode/stringtriebuilder.h
 include/unicode/stsearch.h
@@ -122,6 +129,8 @@ include/unicode/ucnvsel.h
 include/unicode/ucol.h
 include/unicode/ucoleitr.h
 include/unicode/uconfig.h
+include/unicode/ucpmap.h
+include/unicode/ucptrie.h
 include/unicode/ucsdet.h
 include/unicode/ucurr.h
 include/unicode/udat.h
@@ -142,6 +151,7 @@ include/unicode/ulocdata.h
 include/unicode/umachine.h
 include/unicode/umisc.h
 include/unicode/umsg.h
+include/unicode/umutablecptrie.h
 include/unicode/unifilt.h
 include/unicode/unifunct.h
 include/unicode/unimatch.h
@@ -151,6 +161,7 @@ include/unicode/unistr.h
 include/unicode/unorm.h
 include/unicode/unorm2.h
 include/unicode/unum.h
+include/unicode/unumberformatter.h
 include/unicode/unumsys.h
 include/unicode/uobject.h
 include/unicode/upluralrules.h
@@ -220,6 +231,7 @@ lib/pkgconfig/icu-uc.pc
 @man man/man8/gencmn.8
 @man man/man8/gensprep.8
 @man man/man8/icupkg.8
+@bin sbin/escapesrc
 @bin sbin/genccode
 @bin sbin/gencmn
 @bin sbin/gennorm2
@@ -227,9 +239,9 @@ lib/pkgconfig/icu-uc.pc
 @bin sbin/icupkg
 share/icu/
 share/icu/${VERSION}/
-share/icu/${VERSION}/${ENDIAN_DATA}.dat
 share/icu/${VERSION}/LICENSE
 share/icu/${VERSION}/config/
 share/icu/${VERSION}/config/mh-bsd-gcc
+share/icu/${VERSION}/${ENDIAN_DATA}.dat
 share/icu/${VERSION}/install-sh
 share/icu/${VERSION}/mkinstalldirs

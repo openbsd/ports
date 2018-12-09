@@ -1,7 +1,6 @@
-$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.7 2017/05/24 15:44:42 ajacoutot Exp $
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.8 2018/12/09 21:00:26 ajacoutot Exp $
 
 Sync with config/mh-linux.
-Don't pass -Wl,-soname.
 
 Index: source/config/mh-bsd-gcc
 --- source/config/mh-bsd-gcc.orig
@@ -17,11 +16,13 @@ Index: source/config/mh-bsd-gcc
  
  ## Flags for position independent code
  SHAREDLIBCFLAGS = -fPIC
-@@ -20,10 +20,16 @@ LIBCPPFLAGS =
+@@ -19,11 +19,17 @@ THREADSCPPFLAGS = -D_REENTRANT
+ LIBCPPFLAGS =
  
  ## Compiler switch to embed a runtime search path
- LD_RPATH=	
+-LD_RPATH=	
 -LD_RPATH_PRE=	-Wl,-rpath,
++LD_RPATH= -Wl,-zorigin,-rpath,'$$'ORIGIN 
 +LD_RPATH_PRE = -Wl,-rpath,
  
 +## These are the library specific LDFLAGS
@@ -30,7 +31,7 @@ Index: source/config/mh-bsd-gcc
  ## Compiler switch to embed a library name
 -LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
 +# The initial tab in the next line is to prevent icu-config from reading it.
-+	LD_SONAME =
++	LD_SONAME = -Wl,-soname -Wl,$(notdir $(FINAL_SO_TARGET))
 +#SH# # We can't depend on MIDDLE_SO_TARGET being set.
 +#SH# LD_SONAME=
  
