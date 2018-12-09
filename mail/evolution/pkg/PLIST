@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/12/09 09:10:19 robert Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -577,6 +577,7 @@ lib/evolution/modules/module-settings.so
 lib/evolution/modules/module-spamassassin.so
 lib/evolution/modules/module-startup-wizard.so
 lib/evolution/modules/module-text-highlight.so
+lib/evolution/modules/module-tnef-attachment.so
 lib/evolution/modules/module-vcard-inline.so
 lib/evolution/modules/module-webkit-editor.so
 lib/evolution/modules/module-webkit-inspector.so

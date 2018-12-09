@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.297 2018/09/20 09:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.298 2018/12/09 09:10:18 robert Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.28.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -31,7 +31,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gtk-3
 WANTLIB += gtkspell3-3 gweather-3 ical icalvcal intl ldap m notify
 WANTLIB += nspr4 nss3 pango-1.0 pangocairo-1.0 pst secret-1 smime3
-WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 xml2
+WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 xml2 ytnef
 
 MODULES=		devel/cmake \
 			devel/dconf \
@@ -41,6 +41,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			converters/libpst \
+			converters/libytnef \
 			databases/evolution-data-server \
 			devel/libnotify \
 			textproc/enchant \
@@ -65,9 +66,6 @@ CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
 			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
 			-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
-
-# needs libytnef
-CONFIGURE_ARGS +=	-DENABLE_YTNEF=OFF
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/evolution
