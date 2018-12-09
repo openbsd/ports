@@ -1,0 +1,29 @@
+KSystemLog is a system log viewer tool. This program is developed for beginner
+users, who don't know how to find information about their Linux system, and
+don't know where log files are.
+
+Features:
+
+ - Show all logs of your system, grouped by General (Default system log,
+   Authentication, Kernel, X.org...), and optional Services. (Apache, Cups,...)
+ - Colorize log lines depending on their severities
+ - Tabbed view to allow displaying several logs at the same time
+ - Auto display new lines logged
+ - Fast parsing and reading (more than 10000 lines each 5 seconds)
+ - Detailed informations for each log lines
+ - Quick filter
+ - Able to send a log message manually to the system.
+ - Save, copy to clipboard and printing are of course available.
+ - It can parse the following log files of your system:
+   - System logs
+   - X.org logs
+   - Kernel logs
+   - Authentication logs
+   - Acpid logs
+   - Cups logs
+   - Postfix logs
+   - Apache logs
+   - Samba logs
+   - Daemons logs
+   - Cron logs
+   - XSessions logs

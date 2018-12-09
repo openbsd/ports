@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modes_daemon_daemonConfiguration_h,v 1.1.1.1 2018/12/09 08:39:07 rsadowski Exp $
+
+Index: src/modes/daemon/daemonConfiguration.h
+--- src/modes/daemon/daemonConfiguration.h.orig
++++ src/modes/daemon/daemonConfiguration.h
+@@ -48,7 +48,11 @@ class DaemonConfiguration : public LogModeConfiguratio
+         configuration->setCurrentGroup(QStringLiteral("DaemonLogMode"));
+ 
+         QStringList defaultDaemonPaths;
++#if defined(__OpenBSD__)
++        defaultDaemonPaths << QStringLiteral("/var/log/daemon");
++#else
+         defaultDaemonPaths << QStringLiteral("/var/log/daemon.log");
++#endif
+         configuration->addItemStringList(QStringLiteral("LogFilesPaths"), d->daemonPaths, defaultDaemonPaths,
+                                          QStringLiteral("LogFilesPaths"));
+     }
