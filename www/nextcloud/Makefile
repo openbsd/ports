@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2018/11/23 07:28:33 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/09 11:07:35 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			14.0.4
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -63,8 +64,14 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -delete
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
+	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
+		-e 'close ARGV if eof;' ${INSTDIR}/occ
+	chmod +x ${INSTDIR}/occ
+
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/apache-nextcloud.conf.dist.in \
 		${PREFIX}/conf/modules.sample/apache-nextcloud.conf.dist
+	${INSTALL_DATA} ${FILESDIR}/config.php.dist.in \
+		${INSTDIR}/config/config.php.dist
 
 .include <bsd.port.mk>

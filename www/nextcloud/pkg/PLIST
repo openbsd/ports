@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/11/23 07:28:33 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.21 2018/12/09 11:07:35 ajacoutot Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -12508,10 +12508,12 @@ nextcloud/config/
 @mode
 @owner
 @group
-nextcloud/config/.htaccess
 @mode 0640
 @owner www
 @group www
+nextcloud/config/.htaccess
+nextcloud/config/config.php.dist
+@sample nextcloud/config/config.php
 nextcloud/config/config.sample.php
 @mode
 @owner
