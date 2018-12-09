@@ -1,2 +1,0 @@
-To completely deinstall ownCloud you need to remove the "backgroundjobs"
-cron(8) job if it exists.

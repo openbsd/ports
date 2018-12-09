@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.886 2018/12/09 13:34:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.887 2018/12/09 13:48:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -109,7 +109,6 @@
      SUBDIR += nginx
      SUBDIR += nostromo
      SUBDIR += otter-browser
-     SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
      SUBDIR += p5-Apache-DB
