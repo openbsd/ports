@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2016/08/01 18:35:40 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2018/12/09 17:47:45 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -30,6 +30,7 @@ include/poppler/GlobalParams.h
 include/poppler/Hints.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
+include/poppler/JPEG2000Stream.h
 include/poppler/Lexer.h
 include/poppler/Linearization.h
 include/poppler/Link.h
@@ -56,7 +57,6 @@ include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
 include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
-include/poppler/SignatureInfo.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
 include/poppler/StdinCachedFile.h
@@ -121,7 +121,6 @@ include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
 include/poppler/goo/ImgWriter.h
 include/poppler/goo/JpegWriter.h
-include/poppler/goo/NetPBMWriter.h
 include/poppler/goo/PNGWriter.h
 include/poppler/goo/TiffWriter.h
 include/poppler/goo/gfile.h
@@ -148,22 +147,13 @@ include/poppler/splash/SplashPath.h
 include/poppler/splash/SplashPattern.h
 include/poppler/splash/SplashScreen.h
 include/poppler/splash/SplashState.h
-include/poppler/splash/SplashT1Font.h
-include/poppler/splash/SplashT1FontEngine.h
-include/poppler/splash/SplashT1FontFile.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
 lib/girepository-1.0/
 lib/girepository-1.0/Poppler-0.18.typelib
-lib/libpoppler-cpp.a
-lib/libpoppler-cpp.la
 @lib lib/libpoppler-cpp.so.${LIBpoppler-cpp_VERSION}
-lib/libpoppler-glib.a
-lib/libpoppler-glib.la
 @lib lib/libpoppler-glib.so.${LIBpoppler-glib_VERSION}
-lib/libpoppler.a
-lib/libpoppler.la
 @lib lib/libpoppler.so.${LIBpoppler_VERSION}
 lib/pkgconfig/poppler-cairo.pc
 lib/pkgconfig/poppler-cpp.pc
@@ -172,41 +162,3 @@ lib/pkgconfig/poppler-splash.pc
 lib/pkgconfig/poppler.pc
 share/gir-1.0/
 share/gir-1.0/Poppler-0.18.gir
-share/gtk-doc/html/poppler/
-share/gtk-doc/html/poppler/PopplerAnnot.html
-share/gtk-doc/html/poppler/PopplerAttachment.html
-share/gtk-doc/html/poppler/PopplerDocument.html
-share/gtk-doc/html/poppler/PopplerFormField.html
-share/gtk-doc/html/poppler/PopplerLayer.html
-share/gtk-doc/html/poppler/PopplerMedia.html
-share/gtk-doc/html/poppler/PopplerMovie.html
-share/gtk-doc/html/poppler/PopplerPage.html
-share/gtk-doc/html/poppler/PopplerStructureElement.html
-share/gtk-doc/html/poppler/annotation-glossary.html
-share/gtk-doc/html/poppler/api-index-0-12.html
-share/gtk-doc/html/poppler/api-index-0-14.html
-share/gtk-doc/html/poppler/api-index-0-16.html
-share/gtk-doc/html/poppler/api-index-0-18.html
-share/gtk-doc/html/poppler/api-index-0-20.html
-share/gtk-doc/html/poppler/api-index-0-22.html
-share/gtk-doc/html/poppler/api-index-0-26.html
-share/gtk-doc/html/poppler/api-index-0-33.html
-share/gtk-doc/html/poppler/api-index-0-46.html
-share/gtk-doc/html/poppler/api-index-deprecated.html
-share/gtk-doc/html/poppler/api-index-full.html
-share/gtk-doc/html/poppler/ch01.html
-share/gtk-doc/html/poppler/home.png
-share/gtk-doc/html/poppler/index.html
-share/gtk-doc/html/poppler/left-insensitive.png
-share/gtk-doc/html/poppler/left.png
-share/gtk-doc/html/poppler/poppler-Error-handling.html
-share/gtk-doc/html/poppler/poppler-PDF-Utility-functions.html
-share/gtk-doc/html/poppler/poppler-PopplerAction.html
-share/gtk-doc/html/poppler/poppler-PopplerColor.html
-share/gtk-doc/html/poppler/poppler-Version-and-Features-Information.html
-share/gtk-doc/html/poppler/poppler.devhelp2
-share/gtk-doc/html/poppler/right-insensitive.png
-share/gtk-doc/html/poppler/right.png
-share/gtk-doc/html/poppler/style.css
-share/gtk-doc/html/poppler/up-insensitive.png
-share/gtk-doc/html/poppler/up.png

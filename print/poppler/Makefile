@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.131 2017/12/25 22:56:43 kili Exp $
+# $OpenBSD: Makefile,v 1.132 2018/12/09 17:47:45 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.59.0
+V=		0.61.1
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -15,13 +15,13 @@ PKGNAME-qt5=	poppler-qt5-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              45.0     # 70.0
-SHARED_LIBS +=	poppler-glib         17.0     # 17.0
-SHARED_LIBS +=	poppler-qt4          20.1     # 15.0
-SHARED_LIBS +=	poppler-qt5          4.1      # 11.0
-SHARED_LIBS +=	poppler-cpp          8.0      # 3.0
+SHARED_LIBS +=	poppler              46.0     # 72.0
+SHARED_LIBS +=	poppler-glib         18.0     # 8.9
+SHARED_LIBS +=	poppler-qt4          21.0     # 4.11
+SHARED_LIBS +=	poppler-qt5          5.0      # 1.11
+SHARED_LIBS +=	poppler-cpp          9.0      # 0.3
 
-HOMEPAGE=	http://poppler.freedesktop.org/
+HOMEPAGE=	https://poppler.freedesktop.org/
 
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
@@ -45,6 +45,8 @@ MULTI_PACKAGES=-main -qt4 -qt5 -utils
 COMPILER=	base-clang ports-gcc
 
 cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
+
+MODULES=	devel/cmake
 
 .if ${BUILD_PACKAGES:M-qt4}
 MODULES+=	x11/qt4
@@ -105,21 +107,9 @@ WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.69
-CONFIGURE_ARGS+=--enable-xpdf-headers \
-		--enable-poppler-cpp \
-		--enable-utils \
-		--enable-zlib \
-		--disable-gtk-test \
-		--disable-libnss \
-		POPPLER_QT5_CXXFLAGS="-std=c++11"
-
-CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBJPEG_CFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_prog_MOCQT4=${MODQT4_MOC}
-
-USE_GMAKE=	Yes
+CONFIGURE_ARGS+=-DENABLE_XPDF_HEADERS=True \
+		-DBUILD_GTK_TESTS=False \
+		-DENABLE_LIBCURL=False \
+		-DCMAKE_DISABLE_FIND_PACKAGE_NSS3=True
 
 .include <bsd.port.mk>

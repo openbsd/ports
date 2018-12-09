@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST-qt4,v 1.7 2016/12/17 01:20:10 kili Exp $
+@comment $OpenBSD: PLIST-qt4,v 1.8 2018/12/09 17:47:45 kili Exp $
 include/poppler/qt4/
 include/poppler/qt4/poppler-annotation.h
 include/poppler/qt4/poppler-export.h
 include/poppler/qt4/poppler-form.h
-include/poppler/qt4/poppler-link-private.h
 include/poppler/qt4/poppler-link.h
 include/poppler/qt4/poppler-media.h
 include/poppler/qt4/poppler-optcontent.h
 include/poppler/qt4/poppler-page-transition.h
 include/poppler/qt4/poppler-qt4.h
-lib/libpoppler-qt4.a
-lib/libpoppler-qt4.la
 @lib lib/libpoppler-qt4.so.${LIBpoppler-qt4_VERSION}
 lib/pkgconfig/poppler-qt4.pc
