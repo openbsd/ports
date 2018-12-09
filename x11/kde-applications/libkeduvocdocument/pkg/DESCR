@@ -1,0 +1,4 @@
+KEduVocDocument is a library for reading and writing vocabulary files used by
+Parley, Kanagram, KHangMan and KWordQuiz.At this date no binary compatibility
+is guaranteed. Please update this lib when updating the applications mentioned
+above.
