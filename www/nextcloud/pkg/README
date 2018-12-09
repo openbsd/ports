@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2018/12/09 11:07:35 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2018/12/09 14:06:26 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -100,6 +100,7 @@ ${SYSCONFDIR}/apache2/httpd2.conf:
 PHP
 ---
 Default PHP values for Apache are set under:
+    ${TINSTDIR}/.htaccess
     ${TINSTDIR}/config/.htaccess
 
 OpenBSD HTTP daemon users can match these .htaccess file values by editing
