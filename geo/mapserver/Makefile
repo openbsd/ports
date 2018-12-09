@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2018/12/09 09:28:19 landry Exp $
 
-MULTI_PACKAGES=	-utils -main -php -perl -python
+MULTI_PACKAGES=	-utils -main -perl -python
 
 COMMENT-main=	GIS CGI server
 COMMENT-utils=	mapserver utilities
@@ -35,11 +35,10 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES=	lang/php lang/python devel/cmake
+MODULES=	lang/python devel/cmake
 MODPHP_RUNDEP=	No
 #notyet, cf https://github.com/mapserver/mapserver/issues/5252
 #MODPHP_VERSION=	7.0
-MODPHP_VERSION=	5.6
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE=cmake
 
@@ -71,17 +70,17 @@ WANTLIB-php =	${WANTLIB} mapserver
 WANTLIB-perl =	${WANTLIB} c mapserver perl
 WANTLIB-python =	${WANTLIB} mapserver ${MODPY_WANTLIB}
 
-CONFIGURE_ARGS +=	-DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
-			-DPYTHON_EXECUTABLE=${MODPY_BIN} \
+CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_CLIENT_WFS=1 \
 			-DWITH_CLIENT_WMS=1 \
 			-DWITH_CURL=1 \
 			-DWITH_KML=1 \
 			-DWITH_SOS=1 \
-			-DWITH_PHP=1 \
 			-DWITH_PYTHON=1 \
 			-DWITH_PERL=1
 
+#CONFIGURE_ARGS += -DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
+#			-DWITH_PHP=1
 PREFIX-main=	${VARBASE}/www
 
 SUBST_VARS+=	PREFIX-main VARBASE
@@ -91,12 +90,12 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
 	${INSTALL_PROGRAM} ${PREFIX}/bin/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
 
-	echo "; Enable Mapscript extension module\nextension=php_mapscript.so" \
-		> ${PREFIX}/share/examples/php-${MODPHP_VERSION}/mapscript.ini
+#	echo "; Enable Mapscript extension module\nextension=php_mapscript.so" \
+#		> ${PREFIX}/share/examples/php-${MODPHP_VERSION}/mapscript.ini
 
 .for l in perl python
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/${l}
