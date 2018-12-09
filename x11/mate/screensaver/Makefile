@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/22 06:08:03 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/09 13:41:54 landry Exp $
 
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
 MATE_VERSION=		1.20.2
 
-REVISION=		0
+REVISION=		1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -46,5 +46,7 @@ FAKE_FLAGS=		menudir=${PREFIX}/share/examples/mate-screensaver/xdg/menus
 post-install:
 	@mv ${WRKINST}/etc/xdg/autostart \
 		${PREFIX}/share/examples/mate-screensaver/xdg/autostart
+	# prevent conflict with desktop file shipped with xscreensaver
+	@mv ${PREFIX}/share/applications/screensavers/{,mate-}popsquares.desktop
 
 .include <bsd.port.mk>

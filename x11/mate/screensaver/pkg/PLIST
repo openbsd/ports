@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/20 11:16:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/09 13:41:54 landry Exp $
 @bin bin/mate-screensaver
 @bin bin/mate-screensaver-command
 @bin bin/mate-screensaver-preferences
@@ -19,8 +19,8 @@ share/applications/screensavers/
 share/applications/screensavers/cosmos-slideshow.desktop
 share/applications/screensavers/footlogo-floaters.desktop
 share/applications/screensavers/gnomelogo-floaters.desktop
+share/applications/screensavers/mate-popsquares.desktop
 share/applications/screensavers/personal-slideshow.desktop
-share/applications/screensavers/popsquares.desktop
 share/backgrounds/
 share/backgrounds/cosmos/
 share/backgrounds/cosmos/background-1.xml
