@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.137 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2018/12/09 11:19:28 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			10.0.10
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
 HOMEPAGE=		https://owncloud.org/
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License)
 # jQuery: MIT / GPLv3

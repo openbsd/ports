@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.54 2018/09/04 12:46:25 espie Exp $
+$OpenBSD: README,v 1.55 2018/12/09 11:19:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,6 +14,21 @@ Post-installation instructions
 ==============================
 
 *** It is highly recommended to use SSL on the webserver (HTTPS).
+
+chroot(2)
+---------
+When running ownCloud under a chrooted environment, make sure to read the
+"PHP's OpenSSL functions" section of:
+    ${LOCALBASE}/share/doc/pkg-readmes/php-${MODPHP_VERSION}
+
+The HTTP server must be able to resolve hostnames:
+    # mkdir -p /var/www/etc
+    # cp /etc/resolv.conf /var/www/etc
+
+The configuration of an SQLite database path is set relatively to the chroot in
+ownCloud which will break background jobs run by cron(8) (see below).
+A symlink can be created to workaround this issue:
+    # ln -f ${TINSTDIR) /owncloud
 
 OpenBSD HTTP daemon
 -------------------
@@ -58,10 +73,6 @@ server "domain.tld" {
 		request strip 1
 		fastcgi socket "/run/php-fpm.sock"
 	}
-
-	location "/*.php*" {
-		fastcgi socket "/run/php-fpm.sock"
-	}
 }
 ---8<---------------------------------------------------------------------------
 
@@ -77,7 +88,7 @@ Apache configuration for ownCloud is stored under:
 
 It needs to be enabled by running the following command after the apache-httpd
 package is installed:
-# ln -s ../modules.sample/httpd-owncloud.conf /var/www/conf/modules
+# ln -s ../modules.sample/httpd-owncloud.conf ${PREFIX}/conf/modules
 # rcctl restart apache2
 
 The rewrite_module needs to be enabled by uncommenting the following line in
@@ -95,9 +106,16 @@ ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
 nginx users can match these .htaccess file values by configuring fastcgi_param
 with a PHP_VALUE in ${SYSCONFDIR}/nginx/nginx.conf.
 
-For enhanced performance, a PHP opcode cache can be used, either use "opcache"
-built-in to PHP 5.5+, enable "opcache.ini" to use it)
-or install xcache (PHP 5.x only).
+For enhanced performance, a PHP opcode cache can be used (built-in to PHP 5.5+,
+enable "opcache.ini" to use it).
+Recommended values for ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini:
+opcache.enable=1
+opcache.enable_cli=1
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.memory_consumption=128
+opcache.save_comments=1
+opcache.revalidate_freq=1
 
 Database configuration
 ----------------------
@@ -106,13 +124,7 @@ See the following URL for setting up a database for ownCloud:
 
 ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database. The
 corresponding package needs to be installed *before* setting up ownCloud:
-    php-pdo_sqlite, php-pgsql or php-pdo_mysql
-
-ownCloud can work with various database types. Ensure that the package(s) for
-PHP support is installed and enabled *before* setting up ownCloud:
-	For SQLite:	php-pdo_sqlite and php-sqlite3
-	For PostgreSQL:	php-pdo_pgsql
-	For MariaDB:	php-pdo_mysql
+    php-pdo_sqlite, php-pdo_pgsql or php-pdo_mysql
 
 Configuration file
 ------------------
@@ -120,7 +132,7 @@ Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
     ${TINSTDIR}/data
-When running chrooted, /var/www must be stripped from the paths.
+When running chrooted, ${PREFIX} must be stripped from the paths.
 
 Cron job
 --------
@@ -162,7 +174,7 @@ packages may be needed (e.g. php-ldap, php-imap).
 Finishing and validating the installation
 -----------------------------------------
 Make sure the web server can resolve its hostname (e.g. if chrooted, by creating
-/var/www/etc/hosts and/or /var/www/etc/resolv.conf).
+${PREFIX}/etc/hosts and/or ${PREFIX}/etc/resolv.conf).
 
 Accessing https://<hostname>/owncloud with a Web browser will finish the
 installation and create a new admin user.
@@ -181,11 +193,11 @@ share:
 
 Synchronization
 ===============
-The "owncloudclient" package (net/owncloudclient) is a graphical (QT)
+The "owncloudclient" package (net/owncloudclient) is a graphical (Qt)
 application to synchronize with an ownCloud server.
 
 Apps and dependencies
 =====================
 To keep dependencies to a minimum, not all dependencies for all installed apps
 are enforced. It is the job of the administrator to manually install required
-packages according to the non-default apps he wants to enable.
+packages according to the non-default apps (s)he wants to enable.
