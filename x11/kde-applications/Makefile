@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/12/09 10:52:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2018/12/09 11:07:05 rsadowski Exp $
 
      SUBDIR =
 
@@ -36,7 +36,7 @@
      SUBDIR += kig
      SUBDIR += kiten
      SUBDIR += klettres
-     #SUBDIR += kmplot
+     SUBDIR += kmplot
      SUBDIR += ktouch
      #SUBDIR += kturtle
      #SUBDIR += kwordquiz
