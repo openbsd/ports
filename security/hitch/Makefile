@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/02 09:51:33 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/09 12:05:25 ajacoutot Exp $
 
 COMMENT =		libev-based high performance TLS proxy
 
 DISTNAME =		hitch-1.4.8
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
