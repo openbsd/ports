@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2018/08/09 19:51:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2018/12/09 09:09:38 robert Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -16,6 +16,7 @@
     SUBDIR += libiconv
     SUBDIR += libpst
     SUBDIR += libunistring
+    SUBDIR += libytnef
     SUBDIR += lua-iconv
     SUBDIR += lua-iconv,lua52
     SUBDIR += lua-iconv,lua53
