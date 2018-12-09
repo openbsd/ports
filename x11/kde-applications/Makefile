@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/12/09 11:07:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2018/12/09 17:18:52 rsadowski Exp $
 
      SUBDIR =
 
@@ -98,7 +98,7 @@
      #SUBDIR += kolourpaint
      #SUBDIR += kruler
      #SUBDIR += okular
-     #SUBDIR += spectacle
+     SUBDIR += spectacle
      SUBDIR += svgpart
 
      # multimedia
