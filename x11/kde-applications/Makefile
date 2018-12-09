@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2018/12/07 14:22:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2018/12/09 08:28:24 rsadowski Exp $
 
      SUBDIR =
 
      # accessibility
-     #SUBDIR += kmag
+     SUBDIR += kmag
      #SUBDIR += kmousetool
      #SUBDIR += kmouth
 
