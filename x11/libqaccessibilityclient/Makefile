@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/12/09 08:27:04 rsadowski Exp $
 
-COMMENT =		Qt-based library for writing accessibility apps
-DISTNAME =		libqaccessibilityclient-0.1.1
-REVISION =	2
+COMMENT =	Qt-based library for writing accessibility apps
 
-SHARED_LIBS =		qaccessibilityclient	0.0
+DISTNAME =	libqaccessibilityclient-0.3.0
 
-CATEGORIES =		x11 devel
-HOMEPAGE =		https://projects.kde.org/projects/playground/accessibility/libkdeaccessibilityclient
-MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
+SHARED_LIBS +=	qaccessibilityclient-qt5  0.0 # 0.3
+
+CATEGORIES =	x11 devel
+
+MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtTest c m pthread
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Test Qt5Widgets
+WANTLIB += c m
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/libqaccessibilityclient/}
-EXTRACT_SUFX =		.tar.bz2
-DIST_SUBDIR =		kde
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/libqaccessibilityclient/}
 
-MODULES =		devel/cmake x11/qt4
-COMPILER =		base-clang ports-gcc
+EXTRACT_SUFX =	.tar.xz
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Qt5DBus=Yes
+MODULES =	devel/cmake \
+		x11/qt5
 
-NO_TEST =		Yes
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
