@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/03 12:28:14 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/09 13:38:58 semarie Exp $
 
 COMMENT =		tryton web client
 
@@ -13,7 +13,8 @@ MASTER_SITES0 =		http://kapouay.odns.fr/pub/tryton/
 DISTFILES +=		tryton-sao-${VERSION}.tgz \
 			sao-dependencies-${TRYTON_VERSION}-${DEPVERSION}.zip:0
 
-BUILD_DEPENDS +=	lang/node
+BUILD_DEPENDS +=	lang/node \
+			devel/git
 
 RUN_DEPENDS +=		productivity/tryton/${TRYTON_VERSION}/trytond
 
