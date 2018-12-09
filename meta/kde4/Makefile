@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/12/09 08:25:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2018/12/09 10:47:43 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -29,10 +29,10 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 REVISION-minimal =	9
 REVISION-games = 2
 REVISION-sdk = 2
-REVISION-edu = 1
+REVISION-edu = 2
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		11
+REVISION-main =		12
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -62,7 +62,6 @@ KDE4-accessibility = \
 
 RUN_DEPENDS-admin = \
 	${MODKDE4_DEP_DIR}/kcron	\
-	${MODKDE4_DEP_DIR}/ksystemlog	\
 	${MODKDE4_DEP_DIR}/kuser
 
 KDE4-bindings = \
@@ -78,12 +77,7 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/kanagram	\
-	${MODKDE4_DEP_DIR}/kbruch	\
 	${MODKDE4_DEP_DIR}/kgeography	\
-	${MODKDE4_DEP_DIR}/khangman	\
-	${MODKDE4_DEP_DIR}/kiten	\
-	${MODKDE4_DEP_DIR}/klettres	\
 	${MODKDE4_DEP_DIR}/kmplot	\
 	${MODKDE4_DEP_DIR}/kstars	\
 	${MODKDE4_DEP_DIR}/kturtle	\

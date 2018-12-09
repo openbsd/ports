@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/12/09 08:25:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2018/12/09 10:47:42 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -139,13 +139,13 @@ SUBDIR += sweeper
 #SUBDIR += analitza		x11/kde-applications
 #SUBDIR += kalgebra		x11/kde-applications
 #SUBDIR += kalzium	XXX not in ports
-SUBDIR += kanagram
-SUBDIR += kbruch
+#SUBDIR += kanagram		x11/kde-applications
+#SUBDIR += kbruch		x11/kde-applications
 SUBDIR += kgeography
-SUBDIR += khangman
+#SUBDIR += khangman		x11/kde-applications
 #SUBDIR += kig			x11/kde-applications
-SUBDIR += kiten
-SUBDIR += klettres
+#SUBDIR += kiten		x11/kde-applications
+#SUBDIR += klettres		x11/kde-applications
 SUBDIR += kmplot
 SUBDIR += kstars
 #SUBDIR += ktouch		x11/kde-applications
@@ -233,7 +233,7 @@ SUBDIR += mplayerthumbs
 
 # former kdeadmin
 SUBDIR += kcron
-SUBDIR += ksystemlog
+#SUBDIR += ksystemlog		x11/kde-applications
 SUBDIR += kuser
 
 # former kdenetwork
