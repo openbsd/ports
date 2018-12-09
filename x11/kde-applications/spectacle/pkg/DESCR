@@ -1,0 +1,21 @@
+Spectacle Spectacle is a simple application for capturing desktop screenshots.
+It can capture images of the entire desktop, a single monitor, the currently
+active window, the window currently under the mouse, or a rectangular region of
+the screen. The images can then be printed, sent to other applications for
+manipulation, or quickly be saved as-is.
+
+Features:
+
+ - Capture the entire desktop (default)
+ - Capture the current monitor
+ - Capture the active window
+ - Capture the window currently under the cursor, including parents of pop-up
+   menus
+ - Capture the window currently under the cursor, excluding parents of pop-up
+   menus
+ - Capture a rectangular region of the screen
+ - Start in GUI mode (default)
+ - Take a screenshot and exit without showing the GUI
+ - Start in DBus-Activation mode
+ - Save image to specified file in background mode
+ - Wait for a click before taking screenshot
