@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2018/12/09 21:01:03 ajacoutot Exp $
+
+# XXX fix build with icu >=5.9.1 (remove at next update?)
+CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
 
 COMMENT =		historical real-time strategy game
 

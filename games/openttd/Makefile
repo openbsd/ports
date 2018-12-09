@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.60 2018/11/13 04:05:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.61 2018/12/09 21:01:03 ajacoutot Exp $
+
+# XXX fix build with icu >=5.9.1 (remove at next update?)
+CXXFLAGS +=	-DU_USING_ICU_NAMESPACE=1
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 

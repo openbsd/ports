@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/17 06:52:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/09 21:01:03 ajacoutot Exp $
+
+# XXX fix build with icu >=5.9.1 (remove at next update?)
+CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
 
 # icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
 # undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'

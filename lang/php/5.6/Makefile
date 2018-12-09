@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.91 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2018/12/09 21:01:03 ajacoutot Exp $
+
+# XXX fix build with icu >=5.9.1 (remove at next update?)
+CXXFLAGS +=	-DU_USING_ICU_NAMESPACE=1
 
 PV=		5.6
 V=		${PV}.38
