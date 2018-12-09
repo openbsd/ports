@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/08 17:46:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/09 12:56:38 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  dolphinprivate            0.1 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.1 # 5.0
@@ -33,15 +33,17 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/kde-applications/ffmpegthumbs \
+		x11/kde-applications/konsole \
 		x11/kde-applications/kio-extras \
 		x11/gtk+3,-guic
 
 # XXX devel/kf5/baloo
 # kf5-baloo-5.46.0p0v0 conflicts with baloo-4.14.3 in a bulk build
-LIB_DEPENDS =	devel/kf5/kactivities \
-		devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
+		devel/kf5/kactivities \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
+		devel/kf5/kcmutils \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -49,24 +51,23 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
+		devel/kf5/kdelibs4support \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
+		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kcmutils \
-		devel/kf5/kdelibs4support \
-		devel/kf5/kio \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem
+		devel/kf5/kwindowsystem \
+		devel/kf5/solid \
+		devel/kf5/sonnet
 
 TEST_IS_INTERACTIVE =	X11
 
