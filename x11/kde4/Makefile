@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/11/16 08:35:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2018/12/09 08:25:35 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -114,7 +114,7 @@ SUBDIR += webdev
 SUBDIR += jovie
 SUBDIR += kaccessible
 SUBDIR += kmousetool
-SUBDIR += kmag
+#SUBDIR += kmag			x11/kde-applications
 SUBDIR += kmouth
 
 # former kdeutils
