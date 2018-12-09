@@ -1,0 +1,98 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:22:45 rsadowski Exp $
+@conflict kde-l10n-*
+@conflict kde-i18n-*
+@conflict kde-baseapps-*
+@bin bin/kbookmarkmerger
+@bin bin/keditbookmarks
+@lib lib/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
+@man man/man1/kbookmarkmerger.1
+share/applications/org.kde.keditbookmarks.desktop
+share/config.kcfg/
+share/config.kcfg/keditbookmarks.kcfg
+share/doc/HTML/ca/keditbookmarks/
+share/doc/HTML/ca/keditbookmarks/index.cache.bz2
+share/doc/HTML/ca/keditbookmarks/index.docbook
+share/doc/HTML/de/keditbookmarks/
+share/doc/HTML/de/keditbookmarks/index.cache.bz2
+share/doc/HTML/de/keditbookmarks/index.docbook
+share/doc/HTML/en/keditbookmarks/
+share/doc/HTML/en/keditbookmarks/index.cache.bz2
+share/doc/HTML/en/keditbookmarks/index.docbook
+share/doc/HTML/es/keditbookmarks/
+share/doc/HTML/es/keditbookmarks/index.cache.bz2
+share/doc/HTML/es/keditbookmarks/index.docbook
+share/doc/HTML/it/keditbookmarks/
+share/doc/HTML/it/keditbookmarks/index.cache.bz2
+share/doc/HTML/it/keditbookmarks/index.docbook
+share/doc/HTML/nl/keditbookmarks/
+share/doc/HTML/nl/keditbookmarks/index.cache.bz2
+share/doc/HTML/nl/keditbookmarks/index.docbook
+share/doc/HTML/pt/keditbookmarks/
+share/doc/HTML/pt/keditbookmarks/index.cache.bz2
+share/doc/HTML/pt/keditbookmarks/index.docbook
+share/doc/HTML/sv/keditbookmarks/
+share/doc/HTML/sv/keditbookmarks/index.cache.bz2
+share/doc/HTML/sv/keditbookmarks/index.docbook
+share/doc/HTML/uk/keditbookmarks/
+share/doc/HTML/uk/keditbookmarks/index.cache.bz2
+share/doc/HTML/uk/keditbookmarks/index.docbook
+share/kxmlgui5/
+share/kxmlgui5/keditbookmarks/
+share/kxmlgui5/keditbookmarks/keditbookmarks-genui.rc
+share/kxmlgui5/keditbookmarks/keditbookmarksui.rc
+share/locale/ar/LC_MESSAGES/keditbookmarks.mo
+share/locale/ast/LC_MESSAGES/keditbookmarks.mo
+share/locale/bg/LC_MESSAGES/keditbookmarks.mo
+share/locale/bs/LC_MESSAGES/keditbookmarks.mo
+share/locale/ca/LC_MESSAGES/keditbookmarks.mo
+share/locale/ca@valencia/LC_MESSAGES/keditbookmarks.mo
+share/locale/cs/LC_MESSAGES/keditbookmarks.mo
+share/locale/da/LC_MESSAGES/keditbookmarks.mo
+share/locale/de/LC_MESSAGES/keditbookmarks.mo
+share/locale/el/LC_MESSAGES/keditbookmarks.mo
+share/locale/en_GB/LC_MESSAGES/keditbookmarks.mo
+share/locale/eo/LC_MESSAGES/keditbookmarks.mo
+share/locale/es/LC_MESSAGES/keditbookmarks.mo
+share/locale/et/LC_MESSAGES/keditbookmarks.mo
+share/locale/eu/LC_MESSAGES/keditbookmarks.mo
+share/locale/fa/LC_MESSAGES/keditbookmarks.mo
+share/locale/fi/LC_MESSAGES/keditbookmarks.mo
+share/locale/fr/LC_MESSAGES/keditbookmarks.mo
+share/locale/ga/LC_MESSAGES/keditbookmarks.mo
+share/locale/gl/LC_MESSAGES/keditbookmarks.mo
+share/locale/he/LC_MESSAGES/keditbookmarks.mo
+share/locale/hi/LC_MESSAGES/keditbookmarks.mo
+share/locale/hr/LC_MESSAGES/keditbookmarks.mo
+share/locale/hu/LC_MESSAGES/keditbookmarks.mo
+share/locale/ia/LC_MESSAGES/keditbookmarks.mo
+share/locale/id/LC_MESSAGES/keditbookmarks.mo
+share/locale/is/LC_MESSAGES/keditbookmarks.mo
+share/locale/it/LC_MESSAGES/keditbookmarks.mo
+share/locale/ja/LC_MESSAGES/keditbookmarks.mo
+share/locale/kk/LC_MESSAGES/keditbookmarks.mo
+share/locale/km/LC_MESSAGES/keditbookmarks.mo
+share/locale/ko/LC_MESSAGES/keditbookmarks.mo
+share/locale/lt/LC_MESSAGES/keditbookmarks.mo
+share/locale/lv/LC_MESSAGES/keditbookmarks.mo
+share/locale/mr/LC_MESSAGES/keditbookmarks.mo
+share/locale/nb/LC_MESSAGES/keditbookmarks.mo
+share/locale/nds/LC_MESSAGES/keditbookmarks.mo
+share/locale/nl/LC_MESSAGES/keditbookmarks.mo
+share/locale/nn/LC_MESSAGES/keditbookmarks.mo
+share/locale/pa/LC_MESSAGES/keditbookmarks.mo
+share/locale/pl/LC_MESSAGES/keditbookmarks.mo
+share/locale/pt/LC_MESSAGES/keditbookmarks.mo
+share/locale/pt_BR/LC_MESSAGES/keditbookmarks.mo
+share/locale/ro/LC_MESSAGES/keditbookmarks.mo
+share/locale/ru/LC_MESSAGES/keditbookmarks.mo
+share/locale/sk/LC_MESSAGES/keditbookmarks.mo
+share/locale/sl/LC_MESSAGES/keditbookmarks.mo
+share/locale/sr/LC_MESSAGES/keditbookmarks.mo
+share/locale/sv/LC_MESSAGES/keditbookmarks.mo
+share/locale/tr/LC_MESSAGES/keditbookmarks.mo
+share/locale/ug/LC_MESSAGES/keditbookmarks.mo
+share/locale/uk/LC_MESSAGES/keditbookmarks.mo
+share/locale/wa/LC_MESSAGES/keditbookmarks.mo
+share/locale/zh_CN/LC_MESSAGES/keditbookmarks.mo
+share/locale/zh_TW/LC_MESSAGES/keditbookmarks.mo
+@tag update-desktop-database
