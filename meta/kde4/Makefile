@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/12/09 11:07:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.52 2018/12/09 15:34:43 ajacoutot Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -33,6 +33,7 @@ REVISION-edu = 3
 REVISION-multimedia = 0
 REVISION-extras = 8
 REVISION-main =		13
+REVISION-admin =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
