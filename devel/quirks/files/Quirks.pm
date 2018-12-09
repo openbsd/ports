@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.673 2018/12/09 13:36:19 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.674 2018/12/09 13:49:48 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1088,6 +1088,7 @@ my $obsolete_reason = {
 	'dysnomia-en' => 0,
 	'casperjs' => 3,
 	'phantomjs' => 3,
+	'owncloud' => 6,
 };
 
 # reasons for obsolete packages
