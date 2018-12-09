@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2018/08/13 18:53:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2018/12/09 13:43:03 landry Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 # XXX x11/kde4/artwork plist may need regen if an update adds a new hack.
 DISTNAME=		xscreensaver-5.40
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -57,5 +58,16 @@ post-install:
 .for i in deco circuit
 	mv ${PREFIX}/man/man6/$i.6 ${PREFIX}/man/man6/xscreensaver-$i.6
 .endfor
+# create dot.desktop files from xscreensaver xml files for use
+# by freedesktop compliant screensavers
+	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
+	cp ${FILESDIR}/xscreensaver-config.xsl ${WRKSRC}/hacks/config
+	cd ${WRKSRC}/hacks/config && \
+		for i in ${WRKSRC}/hacks/config/*.xml; do \
+			/bin/sh migrate-xscreensaver-config.sh $${i} ; done
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/screensavers/
+	${INSTALL_DATA} ${WRKSRC}/hacks/config/*.desktop \
+		${PREFIX}/share/applications/screensavers/
+
 
 .include <bsd.port.mk>
