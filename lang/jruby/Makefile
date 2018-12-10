@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2018/11/12 06:25:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.74 2018/12/10 15:23:21 jeremy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		9.2.3.0
+V =		9.2.5.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
