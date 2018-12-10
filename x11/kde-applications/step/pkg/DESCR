@@ -1,0 +1,28 @@
+Step is an interactive physical simulator. It allows you to explore the
+physical world through simulations.
+
+Features
+
+ - Classical mechanical simulation in two dimensions
+ - Particles, springs with damping, gravitational and coulomb forces
+ - Rigid bodies
+ - Collision detection (currently only discrete) and handling
+ - Soft (deformable) bodies simulated as user-editable particles-springs
+   systems, sound waves
+ - Molecular dynamics (currently using Lennard-Jones potential): gas and
+   liquid, condensation and evaporation, calculation of macroscopic quantities
+   and their variances
+ - Unit conversion and expression calculation: you can enter something like
+   (2 days + 3 hours) * 80 km/h and it will be accepted as distance value
+ - Error calculation and propagation: you can enter values like 1.3 +/- 0.2
+   for any property and errors for all dependent properties will be calculated
+   using statistical formulas
+ - Solver error estimation: errors introduced by the solver are calculated and
+   added to user-entered errors
+ - Several different solvers: up to 8th order, explicit and implicit, with or
+   without adaptive timestep
+ - Controller tool to easily change properties during the simulation, including
+   customizable keyboard shortcuts
+ - Tools to visualize results: graph, meter, tracer
+ - Context information for all objects, integrated wikipedia browser
+ - Collection of example experiments and integrated tutorials
