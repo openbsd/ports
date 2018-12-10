@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.56 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2018/12/10 10:55:27 landry Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.99.7
+DISTNAME =	upower-0.99.9
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          2.1      # 3.1
-REVISION =	0
 
 HOMEPAGE =	http://upower.freedesktop.org/
-MASTER_SITES =	${HOMEPAGE}/releases/
+MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/uploads/2282c7c0e53fb31816b824c9d1f547e8/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m pthread
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-introspection \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/04 12:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/12/10 10:55:27 landry Exp $
 @extraunexec rm -f /var/db/upower/history-*
 @bin bin/upower
 include/libupower-glib/
@@ -30,13 +30,11 @@ share/dbus-1/interfaces/org.freedesktop.UPower.xml
 share/dbus-1/system-services/org.freedesktop.UPower.service
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/upower/
-@sample /var/db/upower/
 share/examples/upower/UPower/
 @sample ${SYSCONFDIR}/UPower/
 share/examples/upower/UPower/UPower.conf
 @sample ${SYSCONFDIR}/UPower/UPower.conf
 share/examples/upower/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/
 share/examples/upower/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/upower/dbus-1/system.d/org.freedesktop.UPower.conf
@@ -47,3 +45,4 @@ share/locale/fr/LC_MESSAGES/upower.mo
 share/locale/it/LC_MESSAGES/upower.mo
 share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
+@sample /var/db/upower/
