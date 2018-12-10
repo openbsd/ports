@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/07 13:20:31 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2018/12/10 16:28:54 kn Exp $
 
 COMMENT =		navigate zip archives through FUSE
 
@@ -20,18 +20,17 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS =		archivers/libzip>=0.11.2
 
 MAKE_FLAGS =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="${LDFLAGS}" prefix="${PREFIX}"
+			LDFLAGS="${LDFLAGS}"
+FAKE_FLAGS =		prefix="${PREFIX}" mandir="${PREFIX}/man"
 
 USE_GMAKE =		Yes
 
 TEST_TARGET =		check
 
-do-configure:
-	ln -s ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
+pre-test:
+	ln -sf ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/fuse-zip ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fuse-zip.1 ${PREFIX}/man/man1
-	rm -Rf ${PREFIX}/share/man
+	gzip -d ${PREFIX}/man/man[0-9]/*.gz
 
 .include <bsd.port.mk>
