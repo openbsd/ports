@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/11/05 21:55:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/12/10 17:06:01 edd Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2pm
@@ -12,7 +12,6 @@ bin/r2pm
 @bin bin/rasm2
 @bin bin/rax2
 include/libr/
-include/libr/btree.h
 include/libr/r2naked.h
 include/libr/r_anal.h
 include/libr/r_anal_ex.h
@@ -26,7 +25,9 @@ include/libr/r_cmd.h
 include/libr/r_config.h
 include/libr/r_cons.h
 include/libr/r_core.h
+include/libr/r_crypto/
 include/libr/r_crypto.h
+include/libr/r_crypto/r_des.h
 include/libr/r_debug.h
 include/libr/r_diff.h
 include/libr/r_egg.h
@@ -44,14 +45,12 @@ include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_parse.h
 include/libr/r_pdb.h
-include/libr/r_print.h
 include/libr/r_qrcode.h
 include/libr/r_reg.h
 include/libr/r_regex.h
 include/libr/r_search.h
 include/libr/r_sign.h
 include/libr/r_skiplist.h
-include/libr/r_slist.h
 include/libr/r_socket.h
 include/libr/r_syscall.h
 include/libr/r_th.h
@@ -72,7 +71,7 @@ include/libr/r_util/r_cache.h
 include/libr/r_util/r_constr.h
 include/libr/r_util/r_ctypes.h
 include/libr/r_util/r_debruijn.h
-include/libr/r_util/r_des.h
+include/libr/r_util/r_event.h
 include/libr/r_util/r_file.h
 include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
@@ -81,12 +80,12 @@ include/libr/r_util/r_itv.h
 include/libr/r_util/r_json.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
-include/libr/r_util/r_mixed.h
 include/libr/r_util/r_name.h
 include/libr/r_util/r_num.h
 include/libr/r_util/r_panels.h
 include/libr/r_util/r_pkcs7.h
 include/libr/r_util/r_pool.h
+include/libr/r_util/r_print.h
 include/libr/r_util/r_punycode.h
 include/libr/r_util/r_queue.h
 include/libr/r_util/r_range.h
@@ -100,8 +99,8 @@ include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
 include/libr/r_util/r_sys.h
+include/libr/r_util/r_time.h
 include/libr/r_util/r_tree.h
-include/libr/r_util/r_trie.h
 include/libr/r_util/r_uleb128.h
 include/libr/r_util/r_utf16.h
 include/libr/r_util/r_utf32.h
@@ -116,7 +115,10 @@ include/libr/sdb/cdb.h
 include/libr/sdb/cdb_make.h
 include/libr/sdb/config.h
 include/libr/sdb/dict.h
-include/libr/sdb/ht.h
+include/libr/sdb/ht_inc.h
+include/libr/sdb/ht_pp.h
+include/libr/sdb/ht_up.h
+include/libr/sdb/ht_uu.h
 include/libr/sdb/ls.h
 include/libr/sdb/sdb.h
 include/libr/sdb/sdb_version.h
@@ -395,7 +397,7 @@ share/radare2/${V}/format/zip
 share/radare2/${V}/hud/
 share/radare2/${V}/hud/main
 share/radare2/${V}/magic/
-share/radare2/${V}/magic/OpenBSD
+share/radare2/${V}/magic/apple
 share/radare2/${V}/magic/archive
 share/radare2/${V}/magic/cafebabe
 share/radare2/${V}/magic/code
@@ -414,12 +416,12 @@ share/radare2/${V}/magic/java
 share/radare2/${V}/magic/jpeg
 share/radare2/${V}/magic/linux
 share/radare2/${V}/magic/mach
-share/radare2/${V}/magic/macintosh
 share/radare2/${V}/magic/mail.news
 share/radare2/${V}/magic/microsoft
 share/radare2/${V}/magic/mime
 share/radare2/${V}/magic/netbsd
 share/radare2/${V}/magic/network
+share/radare2/${V}/magic/openbsd
 share/radare2/${V}/magic/pdf
 share/radare2/${V}/magic/perl
 share/radare2/${V}/magic/python
