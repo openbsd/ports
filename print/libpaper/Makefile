@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/08/03 07:07:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2018/12/10 12:06:20 ajacoutot Exp $
 
 COMMENT=		library for handling paper characteristics
 
-MAJV=			1.1.24
-MINV=			5
-DISTNAME=		libpaper_${MAJV}+nmu${MINV}
-PKGNAME=		libpaper-${MAJV}.${MINV}
+DISTNAME=		libpaper_1.1.25
+PKGNAME=		${DISTNAME:S/_/-/}
 
 SHARED_LIBS +=  paper                0.0      # 2.2
 
@@ -22,7 +20,7 @@ WANTLIB += c
 
 MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/libp/libpaper/}
 
-WRKDIST=		${WRKDIR}/libpaper-${MAJV}+nmu${MINV}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 USE_GMAKE=		Yes
 
@@ -36,11 +34,7 @@ BUILD_DEPENDS +=		${MODGNU_AUTOCONF_DEPENDS} \
 
 pre-configure:
 	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		PATH=${PORTPATH} \
-		autoreconf -i
+	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libpaper
