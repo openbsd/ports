@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/12/09 17:18:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2018/12/10 16:06:54 rsadowski Exp $
 
      SUBDIR =
 
@@ -28,7 +28,7 @@
      SUBDIR += blinken
      SUBDIR += cantor
      SUBDIR += kalgebra
-     #SUBDIR += kalzium
+     SUBDIR += kalzium
      SUBDIR += kanagram
      SUBDIR += kbruch
      #SUBDIR += kgeography
@@ -45,7 +45,7 @@
      #SUBDIR += minuet
      #SUBDIR += parley
      #SUBDIR += rocs
-     #SUBDIR += step
+     SUBDIR += step
 
      # games
      SUBDIR += bomber
