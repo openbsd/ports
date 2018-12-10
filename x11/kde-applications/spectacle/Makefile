@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 17:17:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/10 07:33:12 rsadowski Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 
