@@ -1,0 +1,19 @@
+Kalzium is your digital replacement for the periodic table on paper. It is a
+program that visualizes the Periodic Table of Elements (PSE) and includes basic
+information about all common elements in the PSE. It has a gained much more
+functions over time.
+
+Features:
+
+ - versatile overview of all important data from the elements like melting
+   points, electron affinity, electronegativity, electron configuration, radii,
+   mass, ionisation energy
+ - tool to visualize the spectral lines of each element
+ - different colored views of the PSE: separation of the different blocks, Year
+   simulator, Temperature simulator
+ - Molecular weight calculator
+ - an Isotope table
+ - 3D molecule editor, with a load and save functionality
+ - an equation solver for stoichiometric problems
+ - filetype conversion for different types of chemical programs
+ - tool to produce a comprehensive list of all Risk_and_Safety_Statements
