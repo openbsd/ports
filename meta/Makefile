@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/14 15:24:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2018/12/10 15:31:52 robert Exp $
 
      SUBDIR =
      SUBDIR += avr
@@ -7,6 +7,7 @@
      SUBDIR += gnustep
      SUBDIR += kde4
      SUBDIR += lxqt
+     SUBDIR += mate
      SUBDIR += msp430
      SUBDIR += mupen64plus
      SUBDIR += qt5
