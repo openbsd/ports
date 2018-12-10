@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/12/09 11:07:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.62 2018/12/10 16:06:34 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -156,7 +156,7 @@ SUBDIR += marble
 SUBDIR += pairs
 SUBDIR += parley
 SUBDIR += rocs
-SUBDIR += step
+#SUBDIR += step			x11/kde-applications
 
 # former kdegames
 SUBDIR += libkdegames

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/12/09 15:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2018/12/10 16:06:34 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -29,10 +29,10 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 REVISION-minimal =	9
 REVISION-games = 2
 REVISION-sdk = 2
-REVISION-edu = 3
+REVISION-edu = 4
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		13
+REVISION-main =		14
 REVISION-admin =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -86,10 +86,7 @@ KDE4-edu = \
 	${MODKDE4_DEP_DIR}/marble	\
 	${MODKDE4_DEP_DIR}/pairs	\
 	${MODKDE4_DEP_DIR}/parley	\
-	${MODKDE4_DEP_DIR}/rocs		\
-	${MODKDE4_DEP_DIR}/step
-# XXX not in ports
-#	${MODKDE4_DEP_DIR}/kalzium
+	${MODKDE4_DEP_DIR}/rocs
 
 KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/graphics-mobipocket	\
