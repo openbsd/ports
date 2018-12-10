@@ -1,10 +1,12 @@
-$OpenBSD: patch-src_optionroms_c,v 1.2 2017/07/19 19:33:51 sthen Exp $
+$OpenBSD: patch-src_optionroms_c,v 1.3 2018/12/10 16:25:17 claudio Exp $
 
 Needed for SGABIOS option ROM for VMM. Normally these are setup based on
 the qemu fw_cfg interface (or coreboot CBFS on hardware).
+Turn of screen-and-debug to prevent double printing of chars.
 
---- src/optionroms.c.orig	Fri Mar 31 09:34:40 2017
-+++ src/optionroms.c	Fri Mar 31 09:35:35 2017
+Index: src/optionroms.c
+--- src/optionroms.c.orig
++++ src/optionroms.c
 @@ -361,7 +361,7 @@ optionrom_setup(void)
  
      // All option roms found and deployed - now build BEV/BCV vectors.
@@ -14,3 +16,12 @@ the qemu fw_cfg interface (or coreboot CBFS on hardware).
      while (pos < rom_get_last()) {
          struct rom_header *rom = (void*)pos;
          if (! is_valid_rom(rom)) {
+@@ -413,7 +413,7 @@ vgarom_setup(void)
+     EnforceChecksum = romfile_loadint("etc/optionroms-checksum", 1);
+     S3ResumeVga = romfile_loadint("etc/s3-resume-vga-init", CONFIG_QEMU);
+     RunPCIroms = romfile_loadint("etc/pci-optionrom-exec", 2);
+-    ScreenAndDebug = romfile_loadint("etc/screen-and-debug", 1);
++    ScreenAndDebug = romfile_loadint("etc/screen-and-debug", 0);
+ 
+     // Clear option rom memory
+     memset((void*)BUILD_ROM_START, 0, rom_get_max() - BUILD_ROM_START);

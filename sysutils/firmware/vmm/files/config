@@ -1,4 +1,4 @@
-# $OpenBSD: config,v 1.6 2018/07/11 09:09:46 reyk Exp $
+# $OpenBSD: config,v 1.7 2018/12/10 16:25:17 claudio Exp $
 #
 # Automatically generated file; DO NOT EDIT.
 # SeaBIOS Configuration
@@ -15,7 +15,7 @@ CONFIG_QEMU_HARDWARE=y
 # CONFIG_THREADS is not set
 # CONFIG_RELOCATE_INIT is not set
 # CONFIG_BOOTMENU is not set
-# CONFIG_BOOTORDER is not set
+CONFIG_BOOTORDER=y
 # CONFIG_ENTRY_EXTRASTACK is not set
 CONFIG_MALLOC_UPPERMEMORY=y
 CONFIG_ROM_SIZE=0

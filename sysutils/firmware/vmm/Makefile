@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/11/21 00:26:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/10 16:25:17 claudio Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -13,7 +13,7 @@ CC =		/usr/bin/gcc
 FW_DRIVER=	vmm
 FW_VER=		1.11.0
 SB_VER=		20100422
-REVISION=	0
+REVISION=	1
 DISTNAME=	seabios-${FW_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-20100422{23d474943dcd55d0550a3d20b3d30e9040a4f15b}.tar.gz:0

@@ -1,18 +1,27 @@
-$OpenBSD: patch-src_fw_paravirt_c,v 1.2 2018/04/26 12:23:32 sthen Exp $
+$OpenBSD: patch-src_fw_paravirt_c,v 1.3 2018/12/10 16:25:17 claudio Exp $
 
+Don't use 'rep insb' to read IO ports, vmm does not support that yet.
 Allow detection of >4GB RAM. Normally seabios only allows this with the
 qemu config device which VMM doesn't have.
 
 Index: src/fw/paravirt.c
 --- src/fw/paravirt.c.orig
 +++ src/fw/paravirt.c
-@@ -500,6 +500,18 @@ qemu_cfg_e820(void)
-     dprintf(1, "RamSizeOver4G: 0x%016llx [cmos]\n", RamSizeOver4G);
+@@ -257,7 +257,9 @@ qemu_cfg_read(void *buf, int len)
+     if (qemu_cfg_dma_enabled()) {
+         qemu_cfg_dma_transfer(buf, len, QEMU_CFG_DMA_CTL_READ);
+     } else {
+-        insb(PORT_QEMU_CFG_DATA, buf, len);
++	u8 *d = buf;
++	while (len-- > 0)
++		*d++ = inb(PORT_QEMU_CFG_DATA);
+     }
  }
  
-+void
-+vmm_check_high_mem(void)
-+{
+@@ -491,6 +493,18 @@ qemu_cfg_e820(void)
+         e820_add(0xfffbc000, 4*4096, E820_RESERVED);
+     }
+ 
 +    // Check for memory over 4Gig in cmos
 +    u64 high = ((rtc_read(CMOS_MEM_HIGHMEM_LOW) << 16)
 +                | ((u32)rtc_read(CMOS_MEM_HIGHMEM_MID) << 24)
@@ -22,6 +31,9 @@ Index: src/fw/paravirt.c
 +    dprintf(1, "RamSizeOver4G: 0x%016llx [cmos]\n", RamSizeOver4G);
 +}
 +
- // Populate romfile entries for legacy fw_cfg ports (that predate the
- // "file" interface).
- static void
++void
++vmm_check_high_mem(void)
++{
+     // Check for memory over 4Gig in cmos
+     u64 high = ((rtc_read(CMOS_MEM_HIGHMEM_LOW) << 16)
+                 | ((u32)rtc_read(CMOS_MEM_HIGHMEM_MID) << 24)
