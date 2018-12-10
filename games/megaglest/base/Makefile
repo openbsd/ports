@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/10 14:39:17 jca Exp $
 
 COMMENT =		3D real-time strategy game
 GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}
-REVISION =		1
+REVISION =		2
 
 WANTLIB += GL GLEW GLU ICE SDL2 SM X11 Xext c crypto curl fontconfig
 WANTLIB += freetype fribidi ftgl glib-2.0 intl ircclient jpeg m
@@ -29,7 +29,8 @@ LIB_DEPENDS =		audio/openal \
 
 CONFIGURE_ARGS = 	-DBUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS=0 \
 			-DFORCE_LUA_VERSION=${MODLUA_VERSION} \
-			-DMEGAGLEST_MANPAGE_INSTALL_PATH="${LOCALBASE}/man/man6"
+			-DMEGAGLEST_MANPAGE_INSTALL_PATH="${LOCALBASE}/man/man6" \
+			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/mk/cmake/Modules/FindLUA.cmake \
