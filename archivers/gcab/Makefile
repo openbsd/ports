@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/23 16:59:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/10 08:49:32 ajacoutot Exp $
 
 COMMENT=		cabinet file library and tool
 
 GNOME_PROJECT=		gcab
-GNOME_VERSION=		1.0
+GNOME_VERSION=		1.2
 
 SHARED_LIBS +=	gcab-1.0                  1.0 # 0.0.0
 
@@ -23,6 +23,8 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 LIB_DEPENDS=		devel/glib2
 
-BUILD_DEPENDS=		textproc/gtk-doc
+# XXX ERROR: 'gtkdoc-mkhtml' failed with status 245
+CONFIGURE_ARGS +=	-Ddocs=false
+#BUILD_DEPENDS=		textproc/gtk-doc
 
 .include <bsd.port.mk>

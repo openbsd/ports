@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/01/23 16:59:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/10 08:49:32 ajacoutot Exp $
 @bin bin/gcab
 include/libgcab-1.0/
 include/libgcab-1.0/libgcab/
@@ -14,24 +14,6 @@ lib/pkgconfig/libgcab-1.0.pc
 @man man/man1/gcab.1
 share/gir-1.0/
 share/gir-1.0/GCab-1.0.gir
-share/gtk-doc/html/gcab/
-share/gtk-doc/html/gcab/annotation-glossary.html
-share/gtk-doc/html/gcab/api-index-full.html
-share/gtk-doc/html/gcab/ch01.html
-share/gtk-doc/html/gcab/deprecated-api-index.html
-share/gtk-doc/html/gcab/gcab-GCabCabinet.html
-share/gtk-doc/html/gcab/gcab-GCabFile.html
-share/gtk-doc/html/gcab/gcab-GCabFolder.html
-share/gtk-doc/html/gcab/gcab.devhelp2
-share/gtk-doc/html/gcab/home.png
-share/gtk-doc/html/gcab/index.html
-share/gtk-doc/html/gcab/left-insensitive.png
-share/gtk-doc/html/gcab/left.png
-share/gtk-doc/html/gcab/right-insensitive.png
-share/gtk-doc/html/gcab/right.png
-share/gtk-doc/html/gcab/style.css
-share/gtk-doc/html/gcab/up-insensitive.png
-share/gtk-doc/html/gcab/up.png
 share/locale/bs/LC_MESSAGES/gcab.mo
 share/locale/cs/LC_MESSAGES/gcab.mo
 share/locale/da/LC_MESSAGES/gcab.mo
@@ -39,6 +21,7 @@ share/locale/de/LC_MESSAGES/gcab.mo
 share/locale/el/LC_MESSAGES/gcab.mo
 share/locale/es/LC_MESSAGES/gcab.mo
 share/locale/eu/LC_MESSAGES/gcab.mo
+share/locale/fi/LC_MESSAGES/gcab.mo
 share/locale/fr/LC_MESSAGES/gcab.mo
 share/locale/fur/LC_MESSAGES/gcab.mo
 share/locale/gl/LC_MESSAGES/gcab.mo
