@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/12/10 23:38:37 benno Exp $
 bin/zim
 lib/python${MODPY_VERSION}/site-packages/zim/
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -273,8 +273,6 @@ lib/python${MODPY_VERSION}/site-packages/zim/www.py
 lib/python${MODPY_VERSION}/site-packages/zim/www.pyc
 @man man/man1/zim.1
 man/zim.1
-share/appdata/
-share/appdata/zim.appdata.xml
 share/applications/zim.desktop
 share/icons/hicolor/16x16/apps/zim.png
 share/icons/hicolor/16x16/mimetypes/application-x-zim-notebook.png
@@ -336,6 +334,8 @@ share/locale/tr/LC_MESSAGES/zim.mo
 share/locale/uk/LC_MESSAGES/zim.mo
 share/locale/zh_CN/LC_MESSAGES/zim.mo
 share/locale/zh_TW/LC_MESSAGES/zim.mo
+share/metainfo/
+share/metainfo/org.zim_wiki.Zim.metainfo.xml
 share/mime/packages/zim.xml
 share/pixmaps/
 share/pixmaps/zim.png
