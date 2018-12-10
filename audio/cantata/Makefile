@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/02 08:22:25 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/10 07:28:41 landry Exp $
 
 COMMENT =	Qt-based MPD client
 
-V =			2.3.1
+V =			2.3.2
 DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
 
@@ -38,9 +38,5 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
 			-DENABLE_LIBVLC=OFF \
 			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
 			-DLCONVERT_EXECUTABLE:String=${LOCALBASE}/lib/qt5/bin/lconvert
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cantata/dbus-1/system.d/
-	mv ${WRKINST}/etc/dbus-1/system.d/*.conf ${PREFIX}/share/examples/cantata/dbus-1/system.d/
 
 .include <bsd.port.mk>
