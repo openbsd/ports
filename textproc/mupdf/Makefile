@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2018/12/03 18:40:07 sthen Exp $
-
-SHARED_LIBS +=	mupdf		8.0
-SHARED_LIBS +=	mupdf-third	0.0
+# $OpenBSD: Makefile,v 1.83 2018/12/10 17:52:58 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.14.0
+REVISION =	0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -48,16 +46,9 @@ ALL_TARGET =	all extra
 
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		XCFLAGS="${CFLAGS} -fPIC -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBmupdf_VERSION="${LIBmupdf_VERSION}" \
-		LIBmupdf-third_VERSION="${LIBmupdf-third_VERSION}" \
+		LDFLAGS="${LDFLAGS}" LLD_EMUL="${LLD_EMUL}" \
 		USE_SYSTEM_LIBS=yes \
 		build=release verbose=yes
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlld}
-MAKE_FLAGS +=	HAVE_OBJCOPY=no
-.endif
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
 
