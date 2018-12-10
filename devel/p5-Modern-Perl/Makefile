@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/03/24 15:56:38 tsg Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/10 09:46:26 jca Exp $
 
 COMMENT =		enable all of the features of Modern Perl with one import
 
 MODULES =		cpan
 PKG_ARCH =		*
 CPAN_AUTHOR =		CHROMATIC
-DISTNAME =		Modern-Perl-1.20170117
+DISTNAME =		Modern-Perl-1.20181021
 CATEGORIES =		devel
 
 MAINTAINER =		Edward <edward@rdtan.net>
