@@ -1,7 +1,0 @@
-pecl-libsodium is a wrapper for Libsodium, which is a modern library for
-encryption, decryption, signatures, password hashing and more. A user guide
-is available at https://paragonie.com/book/pecl-libsodium.
-
-The pecl-libsodium PHP extension provides a low-level interface; you may
-be interested in the Halite library (https://paragonie.com/project/halite)
-which builds on this to provide a higher-level interface.

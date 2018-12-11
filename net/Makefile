@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1094 2018/12/08 18:15:26 jca Exp $
+# $OpenBSD: Makefile,v 1.1095 2018/12/11 12:07:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -267,7 +267,6 @@
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
-     SUBDIR += nedi
      SUBDIR += nemesis
      SUBDIR += neon
      SUBDIR += nepim

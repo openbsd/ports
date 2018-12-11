@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.675 2018/12/10 13:23:12 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.676 2018/12/11 12:07:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1090,6 +1090,8 @@ my $obsolete_reason = {
 	'phantomjs' => 3,
 	'owncloud' => 6,
 	'php-librdf' => 13,
+	'nedi' => 13,
+	'xcache' => 13,
 };
 
 # reasons for obsolete packages
@@ -1261,8 +1263,6 @@ for my $sub (qw(apache cgi dbg bz2 curl dba gd gmp intl imap ldap mysqli
     odbc pcntl pdo_mysql pdo_odbc pdo_pgsql pdo_sqlite pgsql pspell
     shmop soap snmp sqlite3 pdo_dblib tidy xmlrpc xsl zip mysql
     sybase_ct mssql mcrypt)) {
-	$cve->{"lang/php/5.6,-$sub"} = "php-$sub-<5.6.38";
-	$cve->{"lang/php/7.0,-$sub"} = "php-$sub->7.0,<7.0.32";
 	$cve->{"lang/php/7.1,-$sub"} = "php-$sub->7.1,<7.1.22";
 	$cve->{"lang/php/7.2,-$sub"} = "php-$sub->7.2,<7.2.10";
 }
