@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/11 19:44:32 ajacoutot Exp $
 
 COMMENT=		free replacements of Intel UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
-GNOME_VERSION=		0.8.14
-REVISION=		1
+GNOME_VERSION=		0.8.15
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gssdp-1.0 gthread-2.0 gtk-3 gtksourceview-3.0
-WANTLIB += gupnp-1.0 gupnp-av-1.0 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += soup-2.4 sqlite3 xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+WANTLIB += c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gssdp-1.0 gtk-3 gtksourceview-4 gupnp-1.0 gupnp-av-1.0
+WANTLIB += intl soup-2.4 xml2
 
 LIB_DEPENDS=		net/gupnp/av \
 			net/gupnp/core \
-			x11/gtksourceview3
-RUN_DEPENDS=		devel/desktop-file-utils
+			x11/gtksourceview4
+
+# Makefile.inc overrides
+CONFIGURE_ENV=
+CONFIGURE_STYLE=	meson
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/27 21:03:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2018/12/11 19:44:32 ajacoutot Exp $
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
 @bin bin/gupnp-network-light
@@ -8,8 +8,6 @@ share/applications/gupnp-av-cp.desktop
 share/applications/gupnp-network-light.desktop
 share/applications/gupnp-universal-cp.desktop
 share/gupnp-tools/
-share/gupnp-tools/gupnp-network-light.ui
-share/gupnp-tools/gupnp-universal-cp.ui
 share/gupnp-tools/pixmaps/
 share/gupnp-tools/pixmaps/av-cp.png
 share/gupnp-tools/pixmaps/media-renderer.png
@@ -27,6 +25,9 @@ share/gupnp-tools/xml/
 share/gupnp-tools/xml/Dimming-scpd.xml
 share/gupnp-tools/xml/SwitchPower-scpd.xml
 share/gupnp-tools/xml/network-light-desc.xml
+share/icons/hicolor/256x256/av-cp.png
+share/icons/hicolor/256x256/network-light-256x256.png
+share/icons/hicolor/256x256/universal-cp.png
 share/locale/bs/LC_MESSAGES/gupnp-tools.mo
 share/locale/cs/LC_MESSAGES/gupnp-tools.mo
 share/locale/de/LC_MESSAGES/gupnp-tools.mo
@@ -47,3 +48,4 @@ share/locale/sv/LC_MESSAGES/gupnp-tools.mo
 share/locale/tr/LC_MESSAGES/gupnp-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gupnp-tools.mo
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
