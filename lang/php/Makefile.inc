@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.126 2018/10/26 21:22:01 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.127 2018/12/11 11:41:54 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -56,15 +56,16 @@ CONFIGURE_ENV+=		ac_cv_lib_pam_pam_start=no
 
 MAKE_ENV=		${CONFIGURE_ENV}
 
-CONFIGURE_ARGS+=	--enable-shared \
+CONFIGURE_ARGS+=	--disable-rpath \
 			--disable-static \
-			--disable-rpath \
-			--with-config-file-path=${SYSCONFDIR} \
 			--enable-inline-optimization \
-			--with-pic \
-			--with-pear=${LOCALBASE}/share/php-${PV} \
-			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
+			--enable-shared \
 			--program-suffix=-${PV} \
+			--with-config-file-path=${SYSCONFDIR} \
+			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
+			--with-pcre-jit=no \
+			--with-pear=${LOCALBASE}/share/php-${PV} \
+			--with-pic \
 			--with-readline
 
 # override mysqlnd default of /tmp/mysql.sock (if using libmysql this
@@ -80,6 +81,7 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-onig=${LOCALBASE} \
 			--with-openssl \
 			--with-pcre-regex \
+			--with-sodium=${LOCALBASE} \
 			--with-zlib \
 			--enable-bcmath \
 			--enable-calendar \
@@ -150,6 +152,10 @@ WANTLIB$i +=		pthread readline ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext \
 			textproc/libxml \
 			textproc/oniguruma
+.if ${PV} == "7.2"
+WANTLIB$i +=		sodium
+LIB_DEPENDS$i +=	security/libsodium
+.endif
 .endfor
 
 #
