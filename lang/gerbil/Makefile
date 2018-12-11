@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/28 21:13:12 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/11 18:33:23 juanfra Exp $
+
+# Gambit doesn't have thread-local storage support on GCC platforms
+ONLY_FOR_ARCHS = ${CLANG_ARCHS}
 
 COMMENT =	dialect of Scheme designed for systems programming
 
