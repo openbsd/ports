@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/12/11 12:33:26 sthen Exp $
 
 COMMENT=	PHP support for rar archives
 
 DISTNAME=	rar-4.0.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	archivers
 
 # PHP

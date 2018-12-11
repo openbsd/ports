@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/20 10:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/11 12:33:26 sthen Exp $
 
 COMMENT=		PHP wrapper for pledge(2) and unveil(2)
 
 DISTNAME=		pledge-2.0.2
+REVISION=		0
 
 CATEGORIES=		www
 

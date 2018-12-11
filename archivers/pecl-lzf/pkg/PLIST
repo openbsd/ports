@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/26 15:08:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/11 12:33:26 sthen Exp $
 @conflict pecl-lzf-*
-${MODPECL_56ONLY}@pkgpath archivers/pecl-lzf
+${MODPECL_DEFAULTV}@pkgpath archivers/pecl-lzf
+${MODPECL_DEFAULTV}@pkgpath archivers/pecl-lzf,php56
+${MODPECL_DEFAULTV}@pkgpath archivers/pecl-lzf,php70
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

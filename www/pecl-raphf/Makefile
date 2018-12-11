@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/26 15:08:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/11 12:33:26 sthen Exp $
 
 COMMENT=	persistent handle and resource factory API
 
 DISTNAME=	raphf-2.0.0
+REVISION=	0
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes

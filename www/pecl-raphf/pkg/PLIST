@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/04/26 15:08:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/12/11 12:33:26 sthen Exp $
 @conflict pecl-raphf-*
+${MODPECL_DEFAULTV}@pkgpath www/pecl56-raphf
+${MODPECL_DEFAULTV}@pkgpath www/pecl-raphf,php70
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
