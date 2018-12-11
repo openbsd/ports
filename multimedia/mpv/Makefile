@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.44 2018/11/25 10:09:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/12/11 20:21:20 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.22.0
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		multimedia x11
 
-HOMEPAGE =		http://mpv.io/
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+HOMEPAGE =		https://mpv.io/
 
 WAF =			${WRKSRC}/waf-1.8.19
-MASTER_SITES0 =		http://waf.io/
+MASTER_SITES0 =		https://waf.io/
 DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
@@ -53,6 +51,7 @@ MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
+SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
@@ -95,8 +94,6 @@ MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 NO_TEST =		Yes
-
-WRKBUILD =		${WRKSRC}/${MACHINE_ARCH}
 
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS +=		-march=i586
