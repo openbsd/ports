@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-pdo_dblib,v 1.1 2018/09/28 22:22:03 sthen Exp $
+@comment $OpenBSD: PLIST-pdo_dblib,v 1.2 2018/12/11 12:10:46 sthen Exp $
+@pkgpath lang/php/5.6,-pdo_dblib
+@pkgpath lang/php/7.0,-pdo_dblib
 @option no-default-conflict
 @option is-branch
 @conflict php-pdo_dblib->=7.1,<7.2

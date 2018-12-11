@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1 2018/09/28 22:22:03 sthen Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.2 2018/12/11 12:10:46 sthen Exp $
+@pkgpath lang/php/5.6,-ldap
+@pkgpath lang/php/7.0,-ldap
 @option no-default-conflict
 @option is-branch
 @conflict php-ldap->=7.1,<7.2

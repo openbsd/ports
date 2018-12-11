@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-pdo_odbc,v 1.1 2018/09/28 22:22:03 sthen Exp $
+@comment $OpenBSD: PLIST-pdo_odbc,v 1.2 2018/12/11 12:10:46 sthen Exp $
+@pkgpath lang/php/5.6,-pdo_odbc
+@pkgpath lang/php/7.0,-pdo_odbc
 @option no-default-conflict
 @option is-branch
 @conflict php-pdo_odbc->=7.1,<7.2
