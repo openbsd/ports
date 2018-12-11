@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.367 2018/12/01 09:19:27 landry Exp $
+# $OpenBSD: Makefile,v 1.368 2018/12/11 15:32:35 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	63.0.3
+MOZILLA_VERSION =	64.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION = 0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	80.0
+SO_VERSION =	81.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -62,11 +61,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
-# needed to find sqlite header, #1470961, remove in 63
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
-
-# bug 857628
-CONFIGURE_ARGS +=	--enable-pie
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 CONFIGURE_ARGS +=	--enable-webrender=build
