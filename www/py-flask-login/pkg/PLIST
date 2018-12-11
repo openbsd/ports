@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/02/29 14:36:36 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/11 20:54:45 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,5 +7,21 @@ lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/version_info.json
-lib/python${MODPY_VERSION}/site-packages/flask_login.py
-lib/python${MODPY_VERSION}/site-packages/flask_login.pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/
+lib/python${MODPY_VERSION}/site-packages/flask_login/__about__.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/__init__.py
+${MODPY_COMMENT}${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}login_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}mixins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_login/_compat.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/config.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/login_manager.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/mixins.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/signals.py
+lib/python${MODPY_VERSION}/site-packages/flask_login/utils.py

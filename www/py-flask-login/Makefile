@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/02/29 14:36:35 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/11 20:54:45 danj Exp $
 
 COMMENT =		user session management for flask
 
-MODPY_EGG_VERSION =	0.3.2
+MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		Flask-Login-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -19,10 +19,13 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS +=		www/py-flask
+RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
 
 NO_TEST =		Yes
+
+FLAVORS +=		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
