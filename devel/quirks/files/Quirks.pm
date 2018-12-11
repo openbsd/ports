@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.676 2018/12/11 12:07:48 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.677 2018/12/11 21:50:02 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1190,6 +1190,7 @@ sub tweak_search
 my $cve = {
 	'archivers/cabextract' => 'cabextract-<1.8',
 	'archivers/libmspack' => 'libmspack-<0.8alpha',
+	'archivers/p5-Archive-Zip' => 'p5-Archive-Zip-<1.64',
 	'audio/flac' => 'flac-<1.3.0p1',
 	'databases/mariadb,-main' => 'mariadb-client-<10.0.36',
 	'databases/mariadb,-server' => 'mariadb-server-<10.0.36',
