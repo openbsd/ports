@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.524 2018/11/26 21:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.525 2018/12/11 11:42:23 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -247,7 +247,6 @@
      SUBDIR += pear-Auth-SASL
      SUBDIR += pecl56-libsodium,php56
      SUBDIR += pecl-libsodium,php71
-     SUBDIR += pecl-libsodium,php72
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
