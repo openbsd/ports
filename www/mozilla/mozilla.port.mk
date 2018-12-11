@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.120 2018/12/01 09:19:27 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.121 2018/12/11 15:30:44 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -84,7 +84,7 @@ CONFIGURE_ARGS +=	--with-system-hunspell
 
 .if !defined(MOZILLA_USE_BUNDLED_SQLITE)
 MODMOZ_WANTLIB +=	sqlite3
-MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.24
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.25.3
 CONFIGURE_ARGS +=	--enable-system-sqlite
 # hack to build against systemwide sqlite3 (# 546162)
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
