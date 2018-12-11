@@ -1,30 +1,31 @@
-# $OpenBSD: pecl.port.mk,v 1.11 2018/10/26 21:22:02 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.12 2018/12/11 12:26:54 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
 .if defined(MODPECL_V)
 .  if ${MODPECL_V} == 5.6
-FLAVORS = php56
-FLAVOR = php56
+# XXX should not be reached; remove if no problems seen
+BROKEN = php 5.6 is no longer supported
 .  elif ${MODPECL_V} == 7
 FLAVORS = php71 php72
 FLAVOR ?= php71
 .  endif
 .else
-FLAVORS ?= php56 php71 php72
+FLAVORS ?= php71 php72
 FLAVOR ?= php71
 .endif
 
-.if ${FLAVOR} == php56
-MODPHP_VERSION = 5.6
-MODPECL_56ONLY =
-.elif ${FLAVOR} == php71
+# MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
+# applied for packages built against the "ports default" version of PHP,
+# this allows updates from old removed versions without additional per-
+# flavour PFRAG files.
+.if ${FLAVOR} == php71
 MODPHP_VERSION = 7.1
-MODPECL_56ONLY = "@comment "
+MODPECL_DEFAULTV = ""
 .elif ${FLAVOR} == php72
 MODPHP_VERSION = 7.2
-MODPECL_56ONLY = "@comment "
+MODPECL_DEFAULTV = "@comment "
 .endif
 
 CATEGORIES +=	www
@@ -34,7 +35,7 @@ PKGNAME ?=	${_PECL_PREFIX}-${DISTNAME:S/pecl-//:L}
 FULLPKGNAME ?=	${PKGNAME}
 _PECLMOD ?=	${DISTNAME:S/pecl-//:C/-[0-9].*//:L}
 
-SUBST_VARS +=	MODPECL_56ONLY
+SUBST_VARS +=	MODPECL_DEFAULTV
 
 .if !defined(MASTER_SITES)
 MASTER_SITES ?=	https://pecl.php.net/get/
