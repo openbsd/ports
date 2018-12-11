@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.96 2018/10/29 15:55:34 landry Exp $
+# $OpenBSD: Makefile,v 1.97 2018/12/11 09:41:28 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3250100
-PKGNAME=	sqlite3-3.25.1
+DISTNAME =	sqlite-autoconf-3250300
+PKGNAME=	sqlite3-3.25.3
 
 SHARED_LIBS +=  sqlite3                   37.4 # 8.6
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.sqlite.org/
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread readline z
+WANTLIB += c curses m pthread readline z
 
 MASTER_SITES =	${HOMEPAGE}2018/
 
