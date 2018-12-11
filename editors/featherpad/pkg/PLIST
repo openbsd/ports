@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/06 23:55:20 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/11 15:47:13 bcallah Exp $
 @bin bin/featherpad
 @bin bin/fpad
 share/applications/featherpad.desktop
@@ -12,7 +12,9 @@ share/featherpad/translations/featherpad_eo.qm
 share/featherpad/translations/featherpad_es.qm
 share/featherpad/translations/featherpad_fr.qm
 share/featherpad/translations/featherpad_lt.qm
+share/featherpad/translations/featherpad_nl.qm
 share/featherpad/translations/featherpad_pl.qm
+share/featherpad/translations/featherpad_pt_BR.qm
 share/featherpad/translations/featherpad_ru.qm
 share/featherpad/translations/featherpad_tr.qm
 share/featherpad/translations/featherpad_zh_CN.qm
