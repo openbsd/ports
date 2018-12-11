@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/09/25 06:51:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2018/12/11 08:05:16 ajacoutot Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}minstall.${M
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mintro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mlog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}msetup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}msubprojects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}mtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}optinterpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/${MODPY_PYCACHE}rewriter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,6 +91,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/base.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/boost.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/data/CMakeLists.txt
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/dev.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/misc.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/dependencies/platform.py
@@ -139,6 +143,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_icestorm.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/unstable_simd.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/modules/windows.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mparser.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/msetup.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/msubprojects.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/mtest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/optinterpreter.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/rewriter.py
