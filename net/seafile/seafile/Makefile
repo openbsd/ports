@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/08 21:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2018/12/11 07:12:53 kirby Exp $
 
 COMMENT =		seafile daemon
 
@@ -38,11 +38,10 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
-MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
-			tests/test-share.py tests/test-transfer.py \
-			tools/seafile-admin app/seaf-cli
+MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py integration-tests/*.py \
+			app/seaf-cli
 
-pre-configure:
+do-gen:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
