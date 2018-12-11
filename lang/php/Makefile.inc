@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.127 2018/12/11 11:41:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.128 2018/12/11 12:10:19 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -105,21 +105,20 @@ TEST_FLAGS=		NO_INTERACTION=1
 
 ZEND_EXTENSIONS+=	-opcache
 
+# new subpackages must be added to devel/quirks $cve tables
 PHP_EXTENSIONS+=	-bz2 -curl -dba -gd -gmp -intl -imap -ldap \
 			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
 			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
 			-sqlite3 -pdo_dblib -tidy -xmlrpc -xsl -zip
-.if ${PV} == "5.6"
-PHP_EXTENSIONS+=	-mysql -sybase_ct -mssql -mcrypt
-.elif ${PV} == "7.1"
+.if ${PV} == "7.1"
 PHP_EXTENSIONS+=	-mcrypt
 .endif
 
 SAPI+=			-main -apache -cgi -dbg
 MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 
-# setup for no_* build options to disable extensions with extra dep's;
-# can't be used for version-specific extensions in 5.6/Makefile
+# setup for no_* build options to allow disabling extensions with
+# larger dependencies;
 PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-/no_/g}
 PSEUDO_FLAVORS+=	no_apache
 
@@ -191,17 +190,12 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 COMMENT-gd=		image manipulation extensions for php
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
-.if ${PV} == "5.6"
-LIB_DEPENDS-gd+=	devel/t1lib
-WANTLIB-gd+=		t1
-.endif
 WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
 .if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
 			--with-zlib-dir=/usr \
-			--with-t1lib=${LOCALBASE} \
 			--with-freetype-dir=${X11BASE} \
 			--with-xpm-dir=${X11BASE}
 .endif
@@ -390,36 +384,6 @@ CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 LIB_DEPENDS-zip=	# empty
 WANTLIB-zip=		pthread z
 
-#   the following extensions are 5.6-only:
-
-.if ${PV} == "5.6"
-# mysql
-COMMENT-mysql=		mysql database access extensions for php5
-LIB_DEPENDS-mysql=	# using mysqlnd
-WANTLIB-mysql=		pthread
-.if ${BUILD_PACKAGES:M-mysql}
-CONFIGURE_ARGS+=	--with-mysql=shared
-.endif
-
-# sybase-ct
-COMMENT-sybase_ct=	sybase database access extensions for php5
-LIB_DEPENDS-sybase_ct=	databases/freetds
-WANTLIB-sybase_ct=	ct ffi gcrypt gmp gnutls gpg-error hogweed iconv \
-			idn2 intl nettle p11-kit pthread tasn1 unistring z
-.if ${BUILD_PACKAGES:M-sybase_ct}
-CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
-.endif
-
-# mssql
-COMMENT-mssql=		microsoft sql access extensions for php5
-LIB_DEPENDS-mssql=	databases/freetds
-WANTLIB-mssql=		ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
-			intl nettle p11-kit pthread sybdb tasn1 unistring z
-.if ${BUILD_PACKAGES:M-mssql}
-CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
-.endif
-.endif
-
 # some variables to substitute
 SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV MV
 UPDATE_PLIST_ARGS+= -i MV
@@ -447,9 +411,7 @@ pre-configure:
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 PKGNAME-${i}=		php-${i}-${V}
-.if ${V:M5.6*}
-PKGSPEC-${i}=		php-${i}->=5.6,<5.7
-.elif ${V:M7.1*}
+.if ${V:M7.1*}
 PKGSPEC-${i}=		php-${i}->=7.1,<7.2
 .elif ${V:M7.2*}
 PKGSPEC-${i}=		php-${i}->=7.2,<7.3
@@ -480,10 +442,8 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-.if ${PV} != 5.6
 	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-.endif
 	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/modphp.conf
 

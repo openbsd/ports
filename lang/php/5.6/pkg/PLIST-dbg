@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-dbg,v 1.1 2018/05/27 20:05:30 martijn Exp $
-@option no-default-conflict
-@option is-branch
-@conflict php-dbg->=5.6,<5.7
-@bin bin/phpdbg-${PV}
-@man man/man1/phpdbg-${PV}.1
