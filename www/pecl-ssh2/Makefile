@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/11 12:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/12/12 23:46:18 sthen Exp $
 
 COMMENT=		PHP bindings for the libssh2 library
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c crypto ssh2 ssl z
 
 MODULES=		lang/php/pecl
-MODPECL_V=		7
 CONFIGURE_STYLE=	gnu
 
 LIB_DEPENDS=		security/libssh2

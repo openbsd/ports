@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/11 12:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2018/12/12 23:46:18 sthen Exp $
 
 BROKEN= problems picking up libcurl
 
@@ -18,7 +18,6 @@ WANTLIB += icui18n icuuc idn intl m z
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php/pecl
-MODPECL_V=	7
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/11 12:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2018/12/12 23:46:18 sthen Exp $
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
@@ -17,7 +17,6 @@ AUTOCONF_VERSION =	2.52
 AUTOMAKE_VERSION =	1.4
 
 MODULES =	lang/php/pecl
-MODPECL_V =	7
 
 CONFIGURE_STYLE = gnu
 

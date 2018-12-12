@@ -1,20 +1,10 @@
-# $OpenBSD: pecl.port.mk,v 1.12 2018/12/11 12:26:54 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.13 2018/12/12 23:46:18 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
-.if defined(MODPECL_V)
-.  if ${MODPECL_V} == 5.6
-# XXX should not be reached; remove if no problems seen
-BROKEN = php 5.6 is no longer supported
-.  elif ${MODPECL_V} == 7
 FLAVORS = php71 php72
 FLAVOR ?= php71
-.  endif
-.else
-FLAVORS ?= php71 php72
-FLAVOR ?= php71
-.endif
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
 # applied for packages built against the "ports default" version of PHP,
