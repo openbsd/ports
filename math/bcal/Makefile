@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/08 04:35:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/12 16:56:12 bcallah Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
+V =		2.1
 COMMENT =	storage and general-purpose calculator (Byte CALculator)
-DISTNAME =	bcal-2.0
+DISTNAME =	bcal-v${V}
+PKGNAME =	bcal-${V}
 CATEGORIES =	math sysutils
 
-# Upstream will have real tarballs beginning next release.
-# See: https://github.com/jarun/bcal/issues/20
-GH_ACCOUNT =	jarun
-GH_PROJECT =	bcal
-GH_COMMIT =	435b5ebc3487af68a66c3037c986dbdf89a254db
-
-#HOMEPAGE =	https://github.com/jarun/bcal
+HOMEPAGE =	https://github.com/jarun/bcal
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
@@ -22,13 +18,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses readline
 
-#MASTER_SITES =	https://github.com/jarun/bcal/releases/download/v${V}/
+MASTER_SITES =	https://github.com/jarun/bcal/releases/download/v${V}/
 
 # Test script is a Python 3 script.
 # It is not worth invoking the python MODULE for this.
 TEST_DEPENDS =	devel/py-test,python3
 
 USE_GMAKE =	Yes
+
+WRKDIST =	${WRKDIR}/bcal
 
 # Better install routine
 do-install:

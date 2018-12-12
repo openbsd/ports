@@ -1,4 +1,4 @@
-$OpenBSD: patch-bcal_1,v 1.1.1.1 2018/11/08 04:23:43 bcallah Exp $
+$OpenBSD: patch-bcal_1,v 1.2 2018/12/12 16:56:12 bcallah Exp $
 
 We use our own bc(1)
 
@@ -12,5 +12,5 @@ Index: bcal.1
 -(Byte CALculator) is a command-line utility to help with numerical calculations and expressions involving data storage units, addressing, base conversion etc. It invokes GNU \fBbc\fR for non-storage expressions.
 +(Byte CALculator) is a command-line utility to help with numerical calculations and expressions involving data storage units, addressing, base conversion etc. It invokes \fBbc\fR for non-storage expressions.
  .PP
- .B Features
- .PP
+ \fBbcal\fR follows Ubuntu's standard unit conversion and notation policy:
+ .br

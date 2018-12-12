@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_bcal_c,v 1.1.1.1 2018/11/08 04:23:43 bcallah Exp $
+$OpenBSD: patch-src_bcal_c,v 1.2 2018/12/12 16:56:12 bcallah Exp $
 
 -q is a GNU bc flag to silence their very verbose startup message
 Rename last to prev because bc(1) already has a variable named last
@@ -6,7 +6,7 @@ Rename last to prev because bc(1) already has a variable named last
 Index: src/bcal.c
 --- src/bcal.c.orig
 +++ src/bcal.c
-@@ -204,7 +204,7 @@ static int try_bc(char *expr)
+@@ -205,7 +205,7 @@ static int try_bc(char *expr)
  		dup2(pipe_cp[1], STDOUT_FILENO); // Give stdout to parent
  		dup2(pipe_cp[1], STDERR_FILENO); // Give stderr to parent
  
@@ -15,16 +15,16 @@ Index: src/bcal.c
  		log(ERROR, "execlp() failed!\n");
  		exit(ret);
  	}
-@@ -213,7 +213,7 @@ static int try_bc(char *expr)
- 	char buffer[128] = "";
- 	ret = write(pipe_pc[1], "scale=10\n", 9);
+@@ -216,7 +216,7 @@ static int try_bc(char *expr)
+ 		exit(-1);
+ 	}
  
--	ret = write(pipe_pc[1], "last=", 5);
-+	ret = write(pipe_pc[1], "prev=", 5);
- 	if (lastres.p[0])
- 		ret = write(pipe_pc[1], lastres.p, strlen(lastres.p));
- 	else
-@@ -2084,7 +2084,7 @@ int main(int argc, char **argv)
+-	if (write(pipe_pc[1], "last=", 5) != 5) {
++	if (write(pipe_pc[1], "prev=", 5) != 5) {
+ 		log(ERROR, "write(2)! [%s]\n", strerror(errno));
+ 		exit(-1);
+ 	}
+@@ -2137,7 +2137,7 @@ int main(int argc, char **argv)
  				case 'b':
  					cfg.bcmode ^= 1;
  					if (cfg.bcmode) {
