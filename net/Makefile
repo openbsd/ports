@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1095 2018/12/11 12:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.1096 2018/12/12 22:51:58 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -603,7 +603,7 @@
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
      SUBDIR += py-stem
-     SUBDIR += py-stem
+     SUBDIR += py-stem,python3
      SUBDIR += py-tld
      SUBDIR += py-tld,python3
      SUBDIR += py-twitter
