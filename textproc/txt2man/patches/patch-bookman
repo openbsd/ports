@@ -1,9 +1,22 @@
-$OpenBSD: patch-bookman,v 1.1 2015/03/25 11:11:37 czarkoff Exp $
+$OpenBSD: patch-bookman,v 1.2 2018/12/12 22:58:57 sthen Exp $
 
 GNUism.
 
---- bookman.orig	Fri Feb 18 19:12:35 2011
-+++ bookman	Wed Mar 25 10:51:04 2015
+Index: bookman
+--- bookman.orig
++++ bookman
+@@ -83,9 +83,9 @@ done
+ shift $(($OPTIND - 1))
+ date=${date:-$(date +'%d %B %Y')}
+ 
+-[[ $1 ]] || set -- $(while read; do echo $REPLY; done)
++[[ -n $1 ]] || set -- $(while read; do echo $REPLY; done)
+ 
+-[[ $outfile ]] && post="$post >$outfile"
++[[ -n $outfile ]] && post="$post >$outfile"
+ 
+ {
+ 	# Compute table of content from postscript output.
 @@ -127,7 +127,7 @@ date=${date:-$(date +'%d %B %Y')}
  			name = $0
  		}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/11 11:04:22 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/12 22:58:57 sthen Exp $
 
 COMMENT =		convert ASCII text to man page
 DISTNAME =		txt2man-1.5.6
-REVISION =		1
+REVISION =		2
 CATEGORIES =		textproc
 HOMEPAGE =		http://mvertes.free.fr/
 
