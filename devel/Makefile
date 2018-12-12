@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1793 2018/12/04 22:53:58 kn Exp $
+# $OpenBSD: Makefile,v 1.1794 2018/12/12 23:05:35 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1571,6 +1571,7 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap
+     SUBDIR += py-smmap,python3
      SUBDIR += py-sortedcontainers
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser
