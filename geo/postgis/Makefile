@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/12/07 09:45:17 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2018/12/12 14:17:46 landry Exp $
 
 V =	2.5.1
 COMMENT=	geographic objects support for PostgreSQL
@@ -31,6 +31,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/json-c
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/cunit \
 		textproc/docbook-xsl \
 		textproc/wdg-sgml-lib \
 		graphics/ImageMagick
