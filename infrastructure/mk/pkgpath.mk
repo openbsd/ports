@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.80 2018/12/08 10:25:05 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.81 2018/12/12 12:04:56 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -161,6 +161,32 @@ REPORT_PROBLEM_LOGFILE ?=
 REPORT_PROBLEM ?= echo "$$subdir ($@)">>${REPORT_PROBLEM_LOGFILE}
 .else
 REPORT_PROBLEM ?= exit 1
+.endif
+
+# XXX if targets do recurse, they will define _LOCKS_HELD
+# so if it's defined, it means we're not a top-level make
+# basically: check that make clean='dist depends'   still works.
+#
+.if !defined(_LOCKS_HELD)
+# handle the default target choice
+.  for t in verbose-show show clean
+.    if defined($t)
+.      if defined(_overidden_default)
+ERRORS += "Fatal: ambiguous default target: $t or ${_overidden_default}"
+.      else
+.MAIN: $t
+_overidden_default = $t
+.      endif
+.    endif
+.  endfor
+
+.  if defined(_overidden_default)
+.    if !make(${_overidden_default})
+ERRORS += "Fatal: ${MAKE} ${.TARGETS} ${_overidden_default}=${${_overidden_default}} doesn't work"
+.    endif
+.  else
+.MAIN: all
+.  endif
 .endif
 
 _recursive_targets = \

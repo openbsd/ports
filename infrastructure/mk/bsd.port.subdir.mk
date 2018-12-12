@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.109 2012/10/10 10:55:33 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.110 2018/12/12 12:04:56 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -45,16 +45,6 @@ ERRORS += "Fatal: inclusion of bsd.port.subdir.mk from $f"
 .endfor
 
 _BSD_PORT_SUBDIR_MK = Done
-
-.if defined(verbose-show)
-.MAIN: verbose-show
-.elif defined(show)
-.MAIN: show
-.elif defined(clean)
-.MAIN: clean
-.else
-.MAIN: all
-.endif
 
 .if !defined(DEBUG_FLAGS)
 STRIP ?= -s
