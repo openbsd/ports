@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.3 2018/12/08 10:31:58 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.4 2018/12/12 16:32:59 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -88,7 +88,7 @@ sub collect_port_versions
 	}
 
 	my $cmd = "cd $portsdir && SUBDIR=\"".join(' ', @subdirs)
-	    ."\" FULLPATH=Yes REPORT_PROBLEM=true make ".'show=FULLPKGNAME\${SUBPACKAGE} '
+	    ."\" FULLPATH=Yes REPORT_PROBLEM=true make ".'show-indexed=FULLPKGNAME '
 	    ."2>&1";
 
 	my $port  = {};
