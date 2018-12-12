@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.287 2018/11/10 16:57:43 sthen Exp $
-
-BROKEN-aarch64=	linker problems with BlocksRuntime that only show up at runtime
+# $OpenBSD: Makefile,v 1.288 2018/12/12 10:52:13 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.23.1
-PJ_V=		2.7.2
+VER=		13.24.0
+PJ_V=		2.8
 PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION-main=	0
 
 CATEGORIES=	telephony
 
@@ -44,6 +41,8 @@ WANTLIB-main += vorbisenc vorbisfile xml2 xslt z
 #
 # - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
 # undefined symbols from the BlocksRuntime lib.
+#
+# So, as things stand, this requires building with gcc.
 #
 # If changing this, keep telephony/asterisk-g729 in sync.
 COMPILER=		base-gcc ports-gcc
