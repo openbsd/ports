@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/11/07 20:34:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.52 2018/12/12 20:41:04 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -125,6 +125,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_COPYPOSTFIELDS.3
 @man man/man3/CURLOPT_CRLF.3
 @man man/man3/CURLOPT_CRLFILE.3
+@man man/man3/CURLOPT_CURLU.3
 @man man/man3/CURLOPT_CUSTOMREQUEST.3
 @man man/man3/CURLOPT_DEBUGDATA.3
 @man man/man3/CURLOPT_DEBUGFUNCTION.3
