@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/08 16:35:53 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/12 21:42:02 sthen Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
@@ -22,6 +22,7 @@ CONFIGURE_ENV=CPPFLAGS=-Wno-error=gnu-designator
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/gobject-introspection \
+		textproc/intltool \
 		textproc/libxslt \
 		textproc/gtk-doc \
 		lang/vala
