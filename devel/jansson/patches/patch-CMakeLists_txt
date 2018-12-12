@@ -1,13 +1,42 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2018/09/07 11:10:30 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2018/12/12 15:09:14 sthen Exp $
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -640,7 +640,7 @@ file(RELATIVE_PATH 
- # so that the include dirs are given relative to where the 
- # config file is located.
- set(JANSSON__INCLUDE_DIRS 
--    "\${JANSSON_CMAKE_DIR}/${REL_INCLUDE_DIR}") 
-+    "${CMAKE_INSTALL_PREFIX}/include") 
- configure_file(${PROJECT_SOURCE_DIR}/cmake/JanssonConfig.cmake.in
-                 ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/JanssonConfig.cmake 
-                 @ONLY)
+@@ -358,19 +358,19 @@ if(JANSSON_BUILD_SHARED_LIBS)
+       ${JANSSON_HDR_PRIVATE}
+       ${JANSSON_HDR_PUBLIC}
+       src/jansson.def)
+-
+    set_target_properties(jansson PROPERTIES
+       VERSION ${JANSSON_VERSION}
+       SOVERSION ${JANSSON_SOVERSION})
+-else()
+-   add_library(jansson STATIC
+-      ${JANSSON_SRC}
+-      ${JANSSON_HDR_PRIVATE}
+-      ${JANSSON_HDR_PUBLIC})
+-   set_target_properties(jansson PROPERTIES
+-      POSITION_INDEPENDENT_CODE true)
+ endif()
+ 
++add_library(janssonstatic STATIC
++   ${JANSSON_SRC}
++   ${JANSSON_HDR_PRIVATE}
++   ${JANSSON_HDR_PUBLIC})
++set_target_properties(janssonstatic PROPERTIES
++   OUTPUT_NAME jansson
++   POSITION_INDEPENDENT_CODE true)
++
+ if (JANSSON_EXAMPLES)
+ 	add_executable(simple_parse "${CMAKE_CURRENT_SOURCE_DIR}/examples/simple_parse.c")
+ 	target_link_libraries(simple_parse jansson)
+@@ -652,7 +652,7 @@ configure_package_config_file(
+ #
+ option(JANSSON_INSTALL "Generate installation target" ON)
+ if (JANSSON_INSTALL)
+-  install(TARGETS jansson
++  install(TARGETS jansson janssonstatic
+           EXPORT janssonTargets
+           LIBRARY DESTINATION "lib"
+           ARCHIVE DESTINATION "lib"
