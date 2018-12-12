@@ -1,11 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: sabnzbd.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: sabnzbd.rc,v 1.4 2018/12/12 19:54:32 bket Exp $
 
 datadir="/var/sabnzbd"
 
 daemon="${MODPY_BIN} ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py -d"
 daemon_flags="-b 0 -f ${datadir} -p ${datadir}/sabnzbd.pid"
+daemon_timeout=120
 daemon_user="_sabnzbd"
 
 . /etc/rc.d/rc.subr

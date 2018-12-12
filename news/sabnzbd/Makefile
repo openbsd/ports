@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/28 12:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2018/12/12 19:54:32 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			1.2.1
-DISTNAME =			SABnzbd-${VERSION}-src
+VERSION =			2.3.5
+DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
-HOMEPAGE =			http://sabnzbd.org/
+HOMEPAGE =			https://sabnzbd.org/
 MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
-REVISION =			1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}/
+EXTRACT_SUFX =			-src.tar.gz
 
 MODULES =			lang/python
 
@@ -23,13 +23,12 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				devel/py-cheetah \
 				devel/py-notify \
 				news/py-yenc \
-				security/py-openssl
+				security/py-openssl \
+				textproc/py-lxml
 
 NO_BUILD =			Yes
 NO_TEST =			Yes
 PKG_ARCH =			*
-
-WRKSRC =			${WRKDIR}/SABnzbd-${VERSION}
 
 do-install:
 	${INSTALL_DATA_DIR} \
