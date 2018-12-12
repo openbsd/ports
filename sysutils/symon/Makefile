@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/06/01 15:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2018/12/12 13:34:31 sthen Exp $
 
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
@@ -8,8 +8,8 @@ DISTNAME=	symon-$V
 WRKDIST=	${WRKDIR}/symon
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-mux= symux-$V
-REVISION-main=	3
-REVISION-mux=	1
+REVISION-main=	4
+REVISION-mux=	2
 
 CATEGORIES=	sysutils net
 

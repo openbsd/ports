@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2018/10/27 14:03:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2018/12/12 13:34:31 sthen Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION =		0.17.6
 DISTNAME =		enlightenment-${VERSION}
 EPOCH =			1
-REVISION =		15
+REVISION =		16
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
