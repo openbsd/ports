@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-md,v 1.1 2018/12/13 19:52:46 sthen Exp $
+lib/libboost_context-mt.a
+@lib lib/libboost_context-mt.so.${LIBboost_context-mt_VERSION}
+lib/libboost_coroutine-mt.a
+@lib lib/libboost_coroutine-mt.so.${LIBboost_coroutine-mt_VERSION}
+lib/libboost_coroutine.a
+@lib lib/libboost_coroutine.so.${LIBboost_coroutine_VERSION}
+lib/libboost_fiber-mt.a
+@lib lib/libboost_fiber-mt.so.${LIBboost_fiber-mt_VERSION}
+lib/libboost_stacktrace_addr2line-mt.a
+@lib lib/libboost_stacktrace_addr2line-mt.so.${LIBboost_stacktrace_addr2line-mt_VERSION}
+lib/libboost_stacktrace_addr2line.a
+@lib lib/libboost_stacktrace_addr2line.so.${LIBboost_stacktrace_addr2line_VERSION}
+lib/libboost_stacktrace_basic-mt.a
+@lib lib/libboost_stacktrace_basic-mt.so.${LIBboost_stacktrace_basic-mt_VERSION}
+lib/libboost_stacktrace_basic.a
+@lib lib/libboost_stacktrace_basic.so.${LIBboost_stacktrace_basic_VERSION}
+lib/libboost_stacktrace_noop-mt.a
+@lib lib/libboost_stacktrace_noop-mt.so.${LIBboost_stacktrace_noop-mt_VERSION}
+lib/libboost_stacktrace_noop.a
+@lib lib/libboost_stacktrace_noop.so.${LIBboost_stacktrace_noop_VERSION}

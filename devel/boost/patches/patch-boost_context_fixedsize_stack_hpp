@@ -1,0 +1,34 @@
+$OpenBSD: patch-boost_context_fixedsize_stack_hpp,v 1.1 2018/12/13 19:52:46 sthen Exp $
+
+Index: boost/context/fixedsize_stack.hpp
+--- boost/context/fixedsize_stack.hpp.orig
++++ boost/context/fixedsize_stack.hpp
+@@ -26,6 +26,8 @@
+ #  include BOOST_ABI_PREFIX
+ #endif
+ 
++#include <sys/mman.h>
++
+ namespace boost {
+ namespace context {
+ 
+@@ -42,8 +44,8 @@ class basic_fixedsize_stack { (public)
+     }
+ 
+     stack_context allocate() {
+-        void * vp = std::malloc( size_);
+-        if ( ! vp) {
++        void * vp = mmap(NULL, size_, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
++        if ( vp == MAP_FAILED ) {
+             throw std::bad_alloc();
+         }
+         stack_context sctx;
+@@ -62,7 +64,7 @@ class basic_fixedsize_stack { (public)
+         VALGRIND_STACK_DEREGISTER( sctx.valgrind_stack_id);
+ #endif
+         void * vp = static_cast< char * >( sctx.sp) - sctx.size;
+-        std::free( vp);
++        munmap(vp, sctx.size);
+     }
+ };
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-boost_context_posix_protected_fixedsize_stack_hpp,v 1.1 2018/12/13 19:52:46 sthen Exp $
+
+Index: boost/context/posix/protected_fixedsize_stack.hpp
+--- boost/context/posix/protected_fixedsize_stack.hpp.orig
++++ boost/context/posix/protected_fixedsize_stack.hpp
+@@ -59,9 +59,9 @@ class basic_protected_fixedsize_stack { (public)
+ 
+         // conform to POSIX.4 (POSIX.1b-1993, _POSIX_C_SOURCE=199309L)
+ #if defined(MAP_ANON)
+-        void * vp = ::mmap( 0, size__, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
++        void * vp = ::mmap( 0, size__, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
+ #else
+-        void * vp = ::mmap( 0, size__, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
++        void * vp = ::mmap( 0, size__, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_STACK, -1, 0);
+ #endif
+         if ( MAP_FAILED == vp) throw std::bad_alloc();
+ 

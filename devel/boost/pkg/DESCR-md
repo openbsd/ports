@@ -1,0 +1,4 @@
+Boost provides free peer-reviewed portable C++ source libraries.
+
+This subpackage contains those libraries from Boost which are available
+on only a limited set of machine architectures.

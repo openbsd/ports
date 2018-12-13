@@ -1,0 +1,34 @@
+$OpenBSD: patch-boost_context_pooled_fixedsize_stack_hpp,v 1.1 2018/12/13 19:52:46 sthen Exp $
+
+Index: boost/context/pooled_fixedsize_stack.hpp
+--- boost/context/pooled_fixedsize_stack.hpp.orig
++++ boost/context/pooled_fixedsize_stack.hpp
+@@ -21,6 +21,8 @@
+ #include <boost/context/stack_context.hpp>
+ #include <boost/context/stack_traits.hpp>
+ 
++#include <sys/mman.h>
++
+ #if defined(BOOST_USE_VALGRIND)
+ #include <valgrind/valgrind.h>
+ #endif
+@@ -50,8 +52,8 @@ class basic_pooled_fixedsize_stack { (private)
+         }
+ 
+         stack_context allocate() {
+-            void * vp = storage_.malloc();
+-            if ( ! vp) {
++            void * vp = mmap(NULL, size_, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
++            if ( vp == MAP_FAILED ) {
+                 throw std::bad_alloc();
+             }
+             stack_context sctx;
+@@ -71,7 +73,7 @@ class basic_pooled_fixedsize_stack { (private)
+             VALGRIND_STACK_DEREGISTER( sctx.valgrind_stack_id);
+ #endif
+             void * vp = static_cast< char * >( sctx.sp) - sctx.size;
+-            storage_.free( vp);
++            munmap(vp, sctx.size);
+         }
+ 
+         friend void intrusive_ptr_add_ref( storage * s) noexcept {

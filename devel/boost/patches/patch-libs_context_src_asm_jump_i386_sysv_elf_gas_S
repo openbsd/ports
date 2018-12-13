@@ -1,0 +1,57 @@
+$OpenBSD: patch-libs_context_src_asm_jump_i386_sysv_elf_gas_S,v 1.1 2018/12/13 19:52:46 sthen Exp $
+
+Index: libs/context/src/asm/jump_i386_sysv_elf_gas.S
+--- libs/context/src/asm/jump_i386_sysv_elf_gas.S.orig
++++ libs/context/src/asm/jump_i386_sysv_elf_gas.S
+@@ -12,14 +12,14 @@
+  *  ----------------------------------------------------------------------------------  *
+  *  |   0x0   |   0x4   |   0x8   |   0xc   |   0x10   |   0x14  |   0x18  |   0x1c  |  *
+  *  ----------------------------------------------------------------------------------  *
+- *  | fc_mxcsr|fc_x87_cw|   EDI   |   ESI   |   EBX    |   EBP   |   EIP   |  hidden |  *
++ *  | fc_mxcsr|fc_x87_cw|   EDI   |   ESI   |   EBX    |   EBP   |   EIP   |    to   |  *
+  *  ----------------------------------------------------------------------------------  *
+  *  ----------------------------------------------------------------------------------  *
+  *  |    8    |    9    |    10   |    11   |    12    |    13   |    14   |    15   |  *
+  *  ----------------------------------------------------------------------------------  *
+- *  |   0x20  |   0x24  |                                                            |  *
++ *  |   0x20  |                                                                      |  *
+  *  ----------------------------------------------------------------------------------  *
+- *  |    to   |   data  |                                                            |  *
++ *  |   data  |                                                                      |  *
+  *  ----------------------------------------------------------------------------------  *
+  *                                                                                      *
+  ****************************************************************************************/
+@@ -45,20 +45,17 @@ jump_fcontext:
+     movl  %esp, %ecx
+ 
+     /* first arg of jump_fcontext() == fcontext to jump to */
+-    movl  0x20(%esp), %eax
++    movl  0x1c(%esp), %eax
+ 
+     /* second arg of jump_fcontext() == data to be transferred */
+-    movl  0x24(%esp), %edx
++    movl  0x20(%esp), %edx
+ 
+     /* restore ESP (pointing to context-data) from EAX */
+     movl  %eax, %esp
+ 
+-    /* address of returned transport_t */
+-    movl 0x1c(%esp), %eax
+     /* return parent fcontext_t */
+-    movl  %ecx, (%eax)
+-    /* return data */
+-    movl %edx, 0x4(%eax)
++    movl  %ecx, %eax
++    /* returned data is stored in EDX */
+ 
+     movl  0x18(%esp), %ecx  /* restore EIP */
+ 
+@@ -72,7 +69,7 @@ jump_fcontext:
+     movl  0x10(%esp), %ebx  /* restore EBX */
+     movl  0x14(%esp), %ebp  /* restore EBP */
+ 
+-    leal  0x20(%esp), %esp  /* prepare stack */
++    leal  0x1c(%esp), %esp  /* prepare stack */
+ 
+     /* jump to context */
+     jmp *%ecx

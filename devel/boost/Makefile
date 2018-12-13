@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.75 2018/09/11 19:26:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2018/12/13 19:52:46 sthen Exp $
 
-COMMENT=	free peer-reviewed portable C++ source libraries
+COMMENT-main=	free peer-reviewed portable C++ source libraries
+COMMENT-md=	machine-dependent libraries for boost
 
 # XXX if updating, try to remove -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
 # XXX in archivers/innoextract
 VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
-PKGNAME=	boost-${VERSION}
-REVISION=	0
+PKGNAME-main=	boost-${VERSION}
+PKGNAME-md=	boost-md-${VERSION}
+REVISION-main=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
@@ -45,7 +47,18 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_unit_test_framework-mt boost_unit_test_framework \
 		boost_wserialization-mt boost_wserialization \
 		boost_wave-mt \
-		boost_type_erasure-mt boost_type_erasure \
+		boost_type_erasure-mt boost_type_erasure
+
+# MD
+BOOST_LIBS+=	boost_context-mt \
+		boost_coroutine boost_coroutine-mt \
+		boost_fiber-mt \
+		boost_stacktrace_basic \
+		boost_stacktrace_basic-mt \
+		boost_stacktrace_addr2line \
+		boost_stacktrace_addr2line-mt \
+		boost_stacktrace_noop \
+		boost_stacktrace_noop-mt
 
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
@@ -63,6 +76,8 @@ WANTLIB += ${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
 
 COMPILER= base-clang ports-gcc
 
+MULTI_PACKAGES=	-main -md
+
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
@@ -74,6 +89,10 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c
 
 .include <bsd.port.arch.mk>
+.if !(${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "arm")
+BUILD_PACKAGES=	${MULTI_PACKAGES:N-md}
+.endif
+
 .if ${PROPERTIES:Mclang}
 TOOLSET=	clang
 .else
@@ -102,7 +121,9 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 # 'context' and 'coroutine' use MD bits and miss support for Alpha,
 # PA-RISC, SPARC and SuperH. The author does not care
 # about adding support for Alpha and PA-RISC.
+.if !${BUILD_PACKAGES:M-md}
 BOOTSTRAP+=	--without-libraries=context,coroutine,fiber,stacktrace
+.endif
 
 PY2_BOOTSTRAP=	--with-python=${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2} \
 		--with-python-version=${MODPY_DEFAULT_VERSION_2} \

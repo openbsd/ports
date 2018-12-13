@@ -12,3 +12,7 @@ Committee's Library Technical Report (TR1) and in the new C++11
 Standard. C++11 also includes several more Boost libraries in addition
 to those from TR1. More Boost libraries are proposed for standardization
 in C++17.
+
+This package contains the libraries which are widely available; see
+also the boost-md package containing libraries which are available
+on only a limited set of machine architectures.
