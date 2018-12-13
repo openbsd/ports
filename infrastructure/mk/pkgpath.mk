@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.81 2018/12/12 12:04:56 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.82 2018/12/13 15:49:59 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -169,7 +169,7 @@ REPORT_PROBLEM ?= exit 1
 #
 .if !defined(_LOCKS_HELD)
 # handle the default target choice
-.  for t in verbose-show show clean
+.  for t in verbose-show show clean show-indexed
 .    if defined($t)
 .      if defined(_overidden_default)
 ERRORS += "Fatal: ambiguous default target: $t or ${_overidden_default}"
@@ -199,7 +199,7 @@ _recursive_targets = \
 	update update-or-install update-or-install-all \
 	dump-vars print-plist print-plist-all \
 	print-plist-contents print-plist-libs \
-	show verbose-show show-size show-fake-size \
+	show verbose-show show-indexed show-size show-fake-size \
 	check-register check-register-all lock unlock show-prepare-test-results
 
 _dangerous_recursive_targets = \
