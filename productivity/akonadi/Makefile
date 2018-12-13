@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2018/12/13 19:53:24 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
 DISTNAME =	akonadi-1.13.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS = 	akonadiprotocolinternals 4.0	# 1.0
 

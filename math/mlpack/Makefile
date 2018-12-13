@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/19 14:17:36 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
@@ -21,6 +21,8 @@ FULLPKGNAME-main = 	mlpack-$V
 FULLPKGPATH-main = 	${PKGPATH},-main
 FULLPKGNAME-python = 	${MODPY_PY_PREFIX}mlpack-$V
 FULLPKGPATH-python = 	${PKGPATH},-python${FLAVOR_EXT:S/-/,/g}
+REVISION-main =         0
+REVISION-python =       0
 
 WANTLIB += 	${COMPILER_LIBCXX} m
 

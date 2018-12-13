@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/03 11:43:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/13 19:53:23 sthen Exp $
 
 V =		0.4.8
 COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_2018-08-23.26f16b0_Source
 PKGNAME =	freeorion-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.freeorion.org/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>

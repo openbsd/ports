@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		web viewer plugin for Orthanc
 
@@ -15,7 +15,7 @@ DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
-REVISION =		0
+REVISION =		1
 
 MASTER_SITES1 =		http://www.orthanc-server.com/downloads/third-party/WebViewer/
 

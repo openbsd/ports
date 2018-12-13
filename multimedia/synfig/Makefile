@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/08 13:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		2D animation software
 
 V=			1.2.1
 DISTNAME =		synfig-$V
 API_V =			1.0
+REVISION =		0
 
 SHARED_LIBS +=  synfig                    2.0 # 0.0
 

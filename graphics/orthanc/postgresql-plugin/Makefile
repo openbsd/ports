@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/19 17:52:59 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		2.0
 PLUGIN =		PostgreSQL
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/11/11 18:49:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.3.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://www.orthanc-server.com/
 

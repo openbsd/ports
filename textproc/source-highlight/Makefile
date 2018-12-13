@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT=	create a document with syntax highlighting
 
 DISTNAME=	source-highlight-3.1.8
 SHARED_LIBS +=	source-highlight     1.1      # 4.1
 CATEGORIES=	textproc
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.gnu.org/software/src-highlite/
 

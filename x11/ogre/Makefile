@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2018/12/13 19:53:24 sthen Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
@@ -11,8 +11,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		4
-REVISION-samples =	4
+REVISION-main =		5
+REVISION-samples =	5
 
 MULTI_PACKAGES =	-main -samples
 

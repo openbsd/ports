@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/13 19:53:23 sthen Exp $
 
 COMMENT =		flexible keyboardless emulator frontend
 
@@ -18,7 +18,7 @@ WANTLIB += m pthread ${COMPILER_LIBCXX}
 GH_ACCOUNT =		Aloshi
 GH_PROJECT =		EmulationStation
 GH_COMMIT =		646bede3d9ec0acf0ae378415edac136774a66c5
-REVISION =		0
+REVISION =		1
 
 MODULES =		devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/13 19:53:23 sthen Exp $
 
 BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
@@ -9,7 +9,7 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_TAGNAME =	0.4.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/02 11:21:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =	third-party client for Google Drive
 
 VERSION =	0.5.0
 DISTNAME =	grive2-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 

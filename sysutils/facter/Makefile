@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/11/06 09:52:40 sebastia Exp $
+# $OpenBSD: Makefile,v 1.62 2018/12/13 19:53:24 sthen Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -10,6 +10,7 @@ DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.2 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -7,7 +7,7 @@ GH_TAGNAME=		v1.0
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz:0
 CATEGORIES=		graphics math
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.oskusoft.com/osku/gfract/
 

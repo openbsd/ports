@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/05 10:24:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
 GH_TAGNAME =		v3.1.1
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  ledger                    0.0 # 3.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2018/12/13 19:53:24 sthen Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -11,7 +11,7 @@ COMMENT =	toolkit for developing mapping applications
 DISTNAME =	mapnik-v3.0.10
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	mapnik 3.0 #3.0
 CATEGORIES =	graphics geo

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		high-performance road network routing engine
 
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_TAGNAME =		v5.18.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		geo
 

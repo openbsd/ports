@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/01 07:31:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2018/12/13 19:53:24 sthen Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 V = 			1-11-1
 DISTNAME =		vigra-${V:S/-/./g}-src
 PKGNAME =		vigra-${V:S/-/./g}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
