@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:25:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/13 16:01:56 ajacoutot Exp $
+
+BROKEN =	fails to build: Could NOT find KF5
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
