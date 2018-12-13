@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/27 18:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/13 20:19:28 naddy Exp $
 
 COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.10.0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://openocd.sourceforge.net/
@@ -44,6 +44,10 @@ CONFIGURE_ARGS = --disable-werror \
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+
+# don't pick up libftdi1 over libftdi
+CONFIGURE_ENV += LIBFTDI_CFLAGS="`pkg-config --cflags libftdi`" \
+		LIBFTDI_LIBS="`pkg-config --libs libftdi`"
 
 LIB_DEPENDS =	comms/libhidapi \
 		devel/libftdi>=0.20 \
