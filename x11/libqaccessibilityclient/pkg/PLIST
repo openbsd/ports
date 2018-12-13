@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/09 08:27:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/13 17:48:53 rsadowski Exp $
 @bin bin/accessibleapps
 @bin bin/dumper
 include/qaccessibilityclient/
@@ -6,7 +6,6 @@ include/qaccessibilityclient/accessibleobject.h
 include/qaccessibilityclient/libqaccessibilityclient-version.h
 include/qaccessibilityclient/qaccessibilityclient_export.h
 include/qaccessibilityclient/registry.h
-lib/cmake/
 lib/cmake/QAccessibilityClient/
 lib/cmake/QAccessibilityClient/QAccessibilityClient${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QAccessibilityClient/QAccessibilityClient.cmake

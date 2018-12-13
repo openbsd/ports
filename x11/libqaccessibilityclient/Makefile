@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/09 08:27:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/13 17:48:53 rsadowski Exp $
 
 COMMENT =	Qt-based library for writing accessibility apps
 
 DISTNAME =	libqaccessibilityclient-0.3.0
+REVISION =	0
 
 SHARED_LIBS +=	qaccessibilityclient-qt5  0.0 # 0.3
 
@@ -20,8 +21,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/libqaccessibilityclient/}
 
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	devel/cmake \
-		x11/qt5
+MODULES =	devel/kf5
 
 TEST_IS_INTERACTIVE =	X11
 
