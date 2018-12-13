@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2018/12/04 22:02:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.156 2018/12/13 09:37:16 kn Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -58,6 +58,7 @@
      SUBDIR += mlpack,
      SUBDIR += moo
      SUBDIR += netcdf
+     SUBDIR += nlopt
      SUBDIR += nonogram
      SUBDIR += nonolib
      SUBDIR += ntl
