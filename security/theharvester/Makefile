@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/11/27 16:32:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/13 06:52:46 rpointel Exp $
 
 COMMENT =	information gathering suite
 
-VERSION =	3.0.1
+VERSION =	3.0.4
 DISTNAME =	theharvester-${VERSION}
 
 GH_ACCOUNT =	laramies
