@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/12 21:42:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/13 12:14:27 ajacoutot Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
@@ -20,9 +20,10 @@ USE_GMAKE= yes
 # allows tests to build, but they try to spawn dbus-test-runner and are broken
 CONFIGURE_ENV=CPPFLAGS=-Wno-error=gnu-designator
 
+MODULES =	textproc/intltool
+
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/gobject-introspection \
-		textproc/intltool \
 		textproc/libxslt \
 		textproc/gtk-doc \
 		lang/vala
