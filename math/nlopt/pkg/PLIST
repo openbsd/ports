@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/13 09:35:32 kn Exp $
+include/nlopt.f
+include/nlopt.h
+include/nlopt.hpp
+lib/cmake/
+lib/cmake/nlopt/
+lib/cmake/nlopt/NLoptConfig.cmake
+lib/cmake/nlopt/NLoptConfigVersion.cmake
+lib/cmake/nlopt/NLoptLibraryDepends${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/nlopt/NLoptLibraryDepends.cmake
+@lib lib/libnlopt.so.${LIBnlopt_VERSION}
+lib/pkgconfig/nlopt.pc
+@man man/man3/nlopt.3
+@man man/man3/nlopt_minimize.3
+@man man/man3/nlopt_minimize_constrained.3
