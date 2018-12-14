@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2018/11/14 20:48:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2018/12/14 21:22:38 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-6.1.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
