@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/14 17:58:03 bcallah Exp $
-
-USE_LLD=No
+# $OpenBSD: Makefile,v 1.16 2018/12/14 19:23:53 pascal Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
@@ -10,9 +8,9 @@ REVISION = 4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 89.5
-ADASTRAP_LIBM-amd64 = 10.0
-ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 93.0
+ADASTRAP_LIBM-amd64 = 10.1
+ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
