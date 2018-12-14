@@ -1,4 +1,4 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.6 2018/08/18 06:47:58 rsadowski Exp $
+$OpenBSD: patch-ac_qt5_m4,v 1.7 2018/12/14 10:00:57 rsadowski Exp $
 
 Workaround for OpenBSD's pkg-config.
 
@@ -30,7 +30,7 @@ Index: ac/qt5.m4
      if test $ok = 0; then
        AC_MSG_RESULT(no: not found by pkg-config)
      fi
-@@ -297,7 +295,7 @@ EOF
+@@ -302,7 +300,7 @@ EOF
      unset problem
    fi
  

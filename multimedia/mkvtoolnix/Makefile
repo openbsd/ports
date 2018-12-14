@@ -2,8 +2,7 @@
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-28.2.0
-REVISION=	0
+DISTNAME=	mkvtoolnix-29.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -68,7 +67,8 @@ FLAVOR?=
 CONFIGURE_ARGS+= --disable-gui
 .else
 MODULES+=	x11/qt5
-WANTLIB+=	Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5Multimedia
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Widgets
 LIB_DEPENDS +=	x11/qt5/qtmultimedia
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		misc/shared-mime-info \
