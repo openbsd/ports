@@ -1,9 +1,16 @@
-$OpenBSD: patch-lib_SqlPorts_pm,v 1.1 2018/12/08 09:01:54 espie Exp $
+$OpenBSD: patch-lib_SqlPorts_pm,v 1.2 2018/12/14 10:41:48 espie Exp $
 
 Index: lib/SqlPorts.pm
 --- lib/SqlPorts.pm.orig
 +++ lib/SqlPorts.pm
-@@ -23,21 +23,23 @@ my $db = DBI->connect("dbi:SQLite:dbname=".config->{da
+@@ -18,26 +18,29 @@ use Dancer ':syntax';
+ use strict;
+ use warnings;
+ 
+-my $db = DBI->connect("dbi:SQLite:dbname=".config->{database}, '', '', {});
++my $db = DBI->connect("dbi:SQLite:dbname=".config->{database}, '', '', 
++    {ReadOnly => 1});
+ 
  my $category;
  my $list_req = $db->prepare(
  	q{select
@@ -36,7 +43,7 @@ Index: lib/SqlPorts.pm
  		order by fullpkgname
  	    });
  my ($fullpkgpath, $fullpkgname);
-@@ -45,114 +47,114 @@ $list_cat_req->bind_columns(\($fullpkgpath, $fullpkgna
+@@ -45,114 +48,114 @@ $list_cat_req->bind_columns(\($fullpkgpath, $fullpkgna
  
  my $info_req = $db->prepare(
  	q{select
@@ -210,7 +217,7 @@ Index: lib/SqlPorts.pm
  	    where fullpkgpath=?});
  
  my $readme;
-@@ -160,9 +162,9 @@ $readme_req->bind_columns(\$readme);
+@@ -160,9 +163,9 @@ $readme_req->bind_columns(\$readme);
  
  my $canonical_req = $db->prepare(
  	q{select 
@@ -223,7 +230,7 @@ Index: lib/SqlPorts.pm
  	    where t2.fullpkgpath=?});
  
  my $canonical;
-@@ -311,29 +313,29 @@ sub search
+@@ -311,29 +314,29 @@ sub search
  				}
  			}
  			close $fh;
@@ -261,7 +268,7 @@ Index: lib/SqlPorts.pm
  	}
  	if ($search->{pkgname}) {
  		push(@params, "%$search->{pkgname}%");
-@@ -341,15 +343,15 @@ sub search
+@@ -341,15 +344,15 @@ sub search
  	}
  	if ($search->{path}) {
  		push(@params, "%$search->{path}%");
