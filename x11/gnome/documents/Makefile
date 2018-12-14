@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2018/08/17 09:07:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2018/12/14 19:00:20 landry Exp $
 
 COMMENT=		document and e-books manager for GNOME
 
@@ -22,7 +22,7 @@ MODGNOME_TOOLS += 	gtk-update-icon-cache yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 # sync with x11/gnome/gjs
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 # GData-0.0.gir, Gepub-0.6.gir Zpj-0.0.gir...
 BUILD_DEPENDS +=	devel/libgdata \

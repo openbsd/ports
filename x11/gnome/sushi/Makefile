@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/11/14 20:48:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2018/12/14 19:00:20 landry Exp $
 
 COMMENT=	quick previewer for Nautilus
 
@@ -32,7 +32,7 @@ WANTLIB += xcb-shm xcb-xfixes xml2 xslt z aspell
 MODULES=	x11/gnome
 
 # sync with x11/gnome/gjs
-COMPILER=	base-clang ports-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	audio/libmusicbrainz5 \
 		graphics/clutter/clutter-gst \

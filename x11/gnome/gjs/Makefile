@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2018/12/02 18:09:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2018/12/14 19:00:20 landry Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -30,7 +30,7 @@ MODULES=		x11/gnome
 
 # sync with devel/spidermonkey52 and SHARED_LIBS consumers:
 # x11/gnome/documents x11/gnome/shell x11/gnome/sushi
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No

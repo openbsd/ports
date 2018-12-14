@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/04 08:05:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/14 19:00:20 landry Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -43,7 +43,7 @@ MODPY_RUNDEP =		No
 
 # C++11
 # sync with SHARED_LIBS consumers: x11/gnome/gjs
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		yes
 
