@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/07 18:27:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/14 17:58:03 bcallah Exp $
 
 USE_LLD=No
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
 V = 6.4.0
-REVISION = 3
+REVISION = 4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
@@ -138,6 +138,7 @@ CONFIGURE_ARGS += \
 	--with-system-zlib \
 	--disable-libmudflap \
 	--disable-libgomp \
+	--disable-libssp \
 	--disable-tls \
 	--with-gnu-ld \
 	--with-gnu-as \

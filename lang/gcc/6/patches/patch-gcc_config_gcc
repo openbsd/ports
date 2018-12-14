@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.5 2018/11/01 22:09:30 sthen Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.6 2018/12/14 17:58:03 bcallah Exp $
 Index: gcc/config.gcc
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc
@@ -32,7 +32,7 @@ Index: gcc/config.gcc
  	;;
 +arm-*-openbsd*)
 +	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=1"
-+	tm_file="dbxelf.h elfos.h arm/elf.h arm/aout.h arm/openbsd1.h arm/arm.h openbsd.h openbsd-libpthread.h arm/openbsd.h"
++	tm_file="dbxelf.h elfos.h arm/elf.h arm/aout.h arm/openbsd1.h arm/arm.h openbsd.h openbsd-stdint.h openbsd-libpthread.h arm/openbsd.h"
 +	extra_options="${extra_options} openbsd.opt"
 +	tmake_file="${tmake_file} arm/t-arm arm/t-bpabi"
 +	set
@@ -70,13 +70,13 @@ Index: gcc/config.gcc
          ;;
 +mips64-*-openbsd*)
 +       set
-+       tm_file="dbxelf.h elfos.h openbsd.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
++       tm_file="dbxelf.h elfos.h openbsd.h openbsd-stdint.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
 +       tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 DEFAULT_FLAG_PIE=1"
 +       extra_options="${extra_options} openbsd.opt"
 +       ;;
 +mips64el-*-openbsd*)
 +       set
-+       tm_file="dbxelf.h elfos.h openbsd.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
++       tm_file="dbxelf.h elfos.h openbsd.h openbsd-stdint.h mips/mips.h mips/openbsd.h openbsd-libpthread.h"
 +       tm_defines="MIPS_ISA_DEFAULT=3 MIPS_ABI_DEFAULT=ABI_64 TARGET_ENDIAN_DEFAULT=0 DEFAULT_FLAG_PIE=1"
 +       extra_options="${extra_options} openbsd.opt"
 +       ;;
@@ -89,7 +89,7 @@ Index: gcc/config.gcc
  #	;;
 +powerpc-*-openbsd*)
 +	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=2"
-+	tm_file="rs6000/secureplt.h ${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tm_file="rs6000/secureplt.h ${tm_file} dbxelf.h elfos.h openbsd.h openbsd-stdint.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
 +	tmake_file="${tmake_file} rs6000/t-openbsd"
 +	extra_options="${extra_options} rs6000/sysv4.opt openbsd.opt"
 +	;;
