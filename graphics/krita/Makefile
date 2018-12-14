@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2018/12/14 10:29:16 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.1.5
+VERSION =	4.1.7
 DISTNAME =	krita-${VERSION}
-REVISION =	1
 
 SHARED_LIBS +=  kritabasicflakes          1.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -47,58 +46,60 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += KF5Archive KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5ItemViews
-WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += OpenColorIO Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
-WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas jpeg
-WANTLIB += lcms2 m png poppler poppler-qt5 raw tiff xcb xcb-util
-WANTLIB += z
+WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
+WANTLIB += gif gsl gslcblas jpeg lcms2 m png16 poppler poppler-qt5
+WANTLIB += raw tiff xcb xcb-util z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
 
-MODULES =	devel/kf5
+MODULES =	devel/kf5 \
+		lang/python
+
+MODPY_RUNDEP=	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		devel/gettext \
 		net/curl \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=		graphics/jpeg \
-			graphics/png \
-			graphics/tiff \
-			graphics/giflib \
-			graphics/exiv2 \
-			graphics/lcms2 \
-			graphics/opencolorio \
-			graphics/openexr \
-			graphics/libraw \
-			math/fftw3 \
-			print/poppler,,-qt5 \
-			devel/boost \
+LIB_DEPENDS +=		devel/boost \
+			devel/gsl \
 			devel/kf5/karchive \
-			devel/kf5/kconfig \
-			devel/kf5/kwidgetsaddons \
 			devel/kf5/kcompletion \
+			devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
+			devel/kf5/kcrash \
 			devel/kf5/kguiaddons\
 			devel/kf5/ki18n \
 			devel/kf5/kitemviews \
+			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
-			devel/kf5/kcrash \
-			devel/kf5/kio \
-			devel/kf5/kservice \
-			devel/gsl \
-			x11/qt5/qtsvg \
+			graphics/exiv2 \
+			graphics/giflib \
+			graphics/jpeg \
+			graphics/lcms2 \
+			graphics/libraw \
+			graphics/opencolorio \
+			graphics/openexr \
+			graphics/png \
+			graphics/tiff \
+			math/fftw3 \
+			print/poppler,,-qt5 \
+			x11/qt5/qtdeclarative \
 			x11/qt5/qtmultimedia \
-			x11/qt5/qtdeclarative
+			x11/qt5/qtsvg \
+			x11/qt5/qtx11extras
 
-BUILD_DEPENDS +=	math/eigen3 \
-			net/curl \
+BUILD_DEPENDS +=	devel/gettext-tools \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
-			devel/gettext-tools
+			math/eigen3 \
+			net/curl
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:Bool=Yes
