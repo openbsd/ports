@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.678 2018/12/12 23:44:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.679 2018/12/14 15:33:06 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1123,6 +1123,7 @@ my $obsolete_reason = {
 	'pecl56-swish' => 13,
 	'pecl-uploadprogress' => 13,
 	'pecl56-uploadprogress' => 13,
+	'news/sickbeard' => 3,
 };
 
 # reasons for obsolete packages
