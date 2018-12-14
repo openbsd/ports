@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2018/12/08 10:29:12 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2018/12/14 18:57:58 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -75,6 +75,10 @@ SUBDIR += x11
 .include <bsd.port.subdir.mk>
 
 ${INDEX}:
+	@if pkg_info -q -e 'portslist-<6.10'; then \
+		echo "Old portslist found"; \
+		echo "Don't mix -current and 6.4"; \
+	fi
 	@echo "Please install portslist"
 	@echo "${SUDO} pkg_add portslist"
 	@exit 1
