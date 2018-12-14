@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.6 2018/11/28 14:57:45 espie Exp $
+# $OpenBSD: make-readmes,v 1.7 2018/12/14 10:40:23 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -33,7 +33,8 @@ sub relative_url
 	return File::Spec->abs2rel($a, dirname($b));
 }
 
-my $db = DBI->connect("dbi:SQLite:dbname=$ENV{DATABASE}", '', '', {});
+my $db = DBI->connect("dbi:SQLite:dbname=$ENV{DATABASE}", '', '', 
+    {ReadOnly => 1});
 
 my $outputdir = $ENV{OUTPUTDIR};
 my $template = Template->new(
