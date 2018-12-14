@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.57 2018/10/31 14:14:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.58 2018/12/14 07:42:00 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -1168,3 +1168,4 @@ share/foomatic/db/source/PPD/HP/hp-psc_950vr.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950xi.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_350_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_wireless_450_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-tango.ppd.gz
