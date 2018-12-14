@@ -1,17 +1,18 @@
-$OpenBSD: patch-OpenBSD_PackageManager_DBIModel_pm,v 1.2 2018/11/28 14:57:45 espie Exp $
+$OpenBSD: patch-OpenBSD_PackageManager_DBIModel_pm,v 1.3 2018/12/14 10:37:22 espie Exp $
 Index: OpenBSD/PackageManager/DBIModel.pm
 --- OpenBSD/PackageManager/DBIModel.pm.orig
 +++ OpenBSD/PackageManager/DBIModel.pm
-@@ -50,7 +50,7 @@ sub init
+@@ -50,7 +50,8 @@ sub init
  	$self->{orphaned} = (); # list of orphaned ids
  	$self->{portslist} = undef; # key=category id, value=port id array
  	$self->{dbh}->disconnect if defined $self->{dbh};
 -	$self->{dbh} = DBI->connect("dbi:SQLite:/usr/local/share/sqlports-compact");
-+	$self->{dbh} = DBI->connect("dbi:SQLite:${LOCALBASE}/share/sqlports-compact");
++	$self->{dbh} = DBI->connect("dbi:SQLite:${LOCALBASE}/share/sqlports",
++	    undef, undef, {ReadOnly => 1});
  	$self->get_allports;
  	$self->update_installed;
  }
-@@ -71,7 +71,7 @@ sub get_category_name
+@@ -71,7 +72,7 @@ sub get_category_name
  sub update_categories
  {
  	my $self = shift;
@@ -20,7 +21,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	%{$self->{categories}} = map {$_->[0] => $_->[1]} @$rslt;
  	$self->{categories}{0} = "All";
  	$self->{categories}{-1} = "Installed";
-@@ -111,7 +111,7 @@ sub get_ports_for_category
+@@ -111,7 +112,7 @@ sub get_ports_for_category
  sub get_ports_matching_keyword
  {
  	my ($self, $req) = @_;
@@ -29,7 +30,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	$sth->bind_param(1, "%$req%");
  	$sth->bind_param(2, "%$req%");
  	return $self->{dbh}->selectcol_arrayref($sth);
-@@ -120,7 +120,7 @@ sub get_ports_matching_keyword
+@@ -120,7 +121,7 @@ sub get_ports_matching_keyword
  sub update_ports_for_category
  {
  	my ($self, $cat) = @_;
@@ -38,7 +39,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	$sth->bind_param(1, $cat);
  	$self->{portslist}{$cat} = $self->{dbh}->selectcol_arrayref($sth);
  }
-@@ -141,7 +141,7 @@ sub get_pkgname_for_port
+@@ -141,7 +142,7 @@ sub get_pkgname_for_port
  sub update_allports
  {
  	my $self = shift;
@@ -47,7 +48,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	%{$self->{allports}} = map {$_->[0], {
  		fullpkgname => $_->[1],
  		comment => defined $_->[2] ? $_->[2] : "no comment available",
-@@ -149,7 +149,7 @@ sub update_allports
+@@ -149,7 +150,7 @@ sub update_allports
  		maintainer => $_->[4],
  		}} @$rslt;
  	# get real fullpkgpath
@@ -56,7 +57,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	my %h = @$rslt;
  	$self->{allports}{$_}{fullpkgpath} = $h{$_} foreach (keys %h);
  }
-@@ -158,18 +158,18 @@ sub update_info_for_port
+@@ -158,18 +159,18 @@ sub update_info_for_port
  {
  	my ($self, $id) = @_;
  	my $t;
@@ -79,7 +80,7 @@ Index: OpenBSD/PackageManager/DBIModel.pm
  	$sth->bind_param(1, $id);
  	$t = $self->{dbh}->selectcol_arrayref($sth);
  	$self->{allports}{$id}{run_depends} = "@{$t}" if defined @{$t}[0];
-@@ -195,7 +195,7 @@ sub update_installed
+@@ -195,7 +196,7 @@ sub update_installed
  	undef $self->{orphaned};
  	undef $self->{installed};
  	# joined query is here to be sure it's a real port, not a previous path which became the basis for a multipackage
