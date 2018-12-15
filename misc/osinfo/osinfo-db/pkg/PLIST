@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/11/17 08:23:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/12/15 11:11:21 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -140,6 +140,8 @@ share/osinfo/os/altlinux.org/altlinux-4.1.xml
 share/osinfo/os/altlinux.org/altlinux-5.0.xml
 share/osinfo/os/altlinux.org/altlinux-6.0.xml
 share/osinfo/os/altlinux.org/altlinux-7.0.xml
+share/osinfo/os/android-x86.org/
+share/osinfo/os/android-x86.org/android-x86-8.1.xml
 share/osinfo/os/apple.com/
 share/osinfo/os/apple.com/macosx-10.0.xml
 share/osinfo/os/apple.com/macosx-10.1.xml
@@ -255,6 +257,7 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.0.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.0.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.2.xml
+share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 share/osinfo/os/endlessos.com/
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/fedoraproject.org/
