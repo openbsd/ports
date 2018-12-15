@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2018/12/15 20:16:21 naddy Exp $
 
 COMMENT =	e-donkey client
 
@@ -31,9 +31,16 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-gui=newgui2 \
 			--enable-upnp-natpmp
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include' \
-			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
+			LDFLAGS='${LDFLAGS}' \
 			ac_cv_prog_RPMBUILD="" \
 			ac_cv_prog_WGET=""
+
+LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+.if ${MACHINE_ARCH} == "i386"
+# Allow the text relocations contained in the OCaml runtime.
+# XXX Should OCaml automagically provide this?
+LDFLAGS +=		-Wl,-znotext
+.endif
 
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/config
 WRKCONF =			${WRKSRC}/config
