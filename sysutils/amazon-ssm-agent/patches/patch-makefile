@@ -1,24 +1,18 @@
-$OpenBSD: patch-makefile,v 1.11 2018/09/18 11:36:23 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.12 2018/12/15 11:19:48 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -42,12 +42,12 @@ export BRAZIL_BUILD
- 
- checkstyle::
- #   Run checkstyle script
--	$(BGO_SPACE)/Tools/src/checkstyle.sh
-+#	$(BGO_SPACE)/Tools/src/checkstyle.sh
- 
+@@ -47,7 +47,7 @@ checkstyle::
  coverage:: build-linux
  	$(BGO_SPACE)/Tools/src/coverage.sh github.com/aws/amazon-ssm-agent/agent/...
  
--build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386 build-arm build-darwin
-+build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386 build-arm build-darwin
+-build:: build-linux build-freebsd build-windows build-linux-386 build-windows-386 build-arm build-arm64 build-darwin
++build:: build-linux build-freebsd build-openbsd build-windows build-linux-386 build-windows-386 build-arm build-arm64 build-darwin
  
- prepack:: cpy-plugins prepack-linux prepack-linux-386 prepack-windows prepack-windows-386
+ prepack:: cpy-plugins prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -221,6 +221,22 @@ build-darwin-386: checkstyle copy-src pre-build
+@@ -223,6 +223,22 @@ build-darwin-386: checkstyle copy-src pre-build
  		$(BGO_SPACE)/agent/cli-main/cli-main.go
  	GOOS=darwin GOARCH=386 $(GO_BUILD) -ldflags "-s -w" -o $(BGO_SPACE)/bin/darwin_386/ssm-document-worker -v \
  								$(BGO_SPACE)/agent/framework/processor/executer/outofproc/worker/main.go
@@ -41,3 +35,10 @@ Index: makefile
  
  .PHONY: build-windows-386
  build-windows-386: checkstyle copy-src pre-build
+@@ -466,4 +482,4 @@ else
+ 	@echo "Start generating mocks in directory" $(MOCKERYDIR)
+ endif
+ 	mockery -name="[A-Z]*" -dir=$(MOCKERYDIR) -output=mocks
+-	mv mocks $(MOCKERYDIR)/mocks
+\ No newline at end of file
++	mv mocks $(MOCKERYDIR)/mocks

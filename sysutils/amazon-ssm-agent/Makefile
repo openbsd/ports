@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2018/11/23 10:20:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2018/12/15 11:19:48 ajacoutot Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		2.3.274.0
+GH_TAGNAME=		2.3.344.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
@@ -39,6 +39,11 @@ pre-configure:
 	mv ${WRKDIR}/${DISTNAME} ${WRKSRC}
 	${SUBST_CMD} ${WRKSRC}/agent/appconfig/constants_unix.go \
 		${WRKSRC}/agent/log/log_unix.go
+
+# XXX remove for next release?
+pre-build:
+	cd ${WRKBUILD}/agent/agentlogstocloudwatch/cloudwatchlogspublisher && \
+		gofmt -w cloudwatchlogs_publisher_test.go
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amazon-ssm-agent \
