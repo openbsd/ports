@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.24 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.25 2018/12/15 10:08:08 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -93,3 +93,12 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    }
  }
+@@ -2264,7 +2253,7 @@ config("symbols") {
+         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
+         cflags += [ "-gdwarf-3" ]
+       }
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
+     }
+     if (use_debug_fission && !is_nacl && !is_android) {
+       # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,
