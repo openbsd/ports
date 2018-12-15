@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2018/12/07 09:01:39 semarie Exp $
+# $OpenBSD: Makefile,v 1.202 2018/12/15 15:21:48 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,9 +20,9 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	19
-REVISION-python = 3
-REVISION-lldb =	0
+REVISION-main =	20
+REVISION-python = 4
+REVISION-lldb =	1
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -38,7 +38,7 @@ SHARED_LIBS =	clang		7.0 \
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com>
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
