@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/15 13:27:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/15 12:43:40 rpointel Exp $
 @bin bin/z3
 include/z3++.h
 include/z3.h
@@ -7,13 +7,13 @@ include/z3_api.h
 include/z3_ast_containers.h
 include/z3_fixedpoint.h
 include/z3_fpa.h
-include/z3_interp.h
 include/z3_macros.h
 include/z3_optimization.h
 include/z3_polynomial.h
 include/z3_rcf.h
 include/z3_spacer.h
 include/z3_v1.h
+include/z3_version.h
 @lib lib/libz3.so.${LIBz3_VERSION}
 lib/python${MODPY_VERSION}/site-packages/z3/
 lib/python${MODPY_VERSION}/site-packages/z3/__init__.py
