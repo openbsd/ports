@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/09/16 09:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/15 16:25:25 naddy Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -11,6 +11,7 @@ VERSION =		0.9
 DISTNAME =		cudf-${VERSION}
 PKGNAME-ocaml =		ocaml-cudf-${VERSION}
 PKGNAME-main =		libcudf-${VERSION}
+REVISION =		0
 
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/36602/
 
@@ -42,6 +43,10 @@ TEST_TARGET =		test
 
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET +=		opt c-lib-opt
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+MAKE_ENV +=		LDFLAGS="-Wl,-znotext"
 .endif
 
 TEST_TARGET +=		c-lib-test
