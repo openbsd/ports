@@ -1,7 +1,7 @@
-$OpenBSD: README,v 1.1.1.1 2018/12/03 12:28:13 semarie Exp $
+$OpenBSD: README,v 1.2 2018/12/16 16:52:39 danj Exp $
 
-PostgreSQL is the recommanded daemon for production usage. Trytond has support
-for SQLite too, but intented only for testing purpose.
+PostgreSQL is the recommended daemon for production usage. Trytond has support
+for SQLite too, but intended only for testing purpose.
 
 PostgreSQL configuration
 ========================
@@ -19,15 +19,15 @@ Creating a postgresql user for tryton
 -------------------------------------
 
 	# su _postgresql -c "createuser -U postgres -P tryton_user"
-	Enter password for new role: my-secret-tryton-password
+	Enter password for new role: tryton_user-password
 	Enter it again: ...
-	Password: my-secret-postgresql-password
+	Password: postgres-password
 
 When postgresql and trytond are on the same host, the config file of trytond
 should contains:
 
 	[database]
-	uri = postgresql://tryton_user:my-secret-tryton-password@/
+	uri = postgresql://tryton_user:tryton_user-password@/
 
 Note that if the password contains special characters, it should be urlencoded.
 
@@ -38,7 +38,7 @@ Creating a new tryton database on PostgreSQL
 The database should be created using createdb(1) tool from postgresql.
 
 	# su _postgresql -c "createdb -U postgres -O tryton_user -E UTF8 mydatabase1"
-	Password: my-secret-postgresql-password
+	Password: postgres-password
 
 And it should be initialized with trytond-admin(1) tool from trytond, after the
 configuration file has been configured.
@@ -68,7 +68,7 @@ By default, configuration file is at ${SYSCONFDIR}/trytond/server.conf and
 logging configuration at ${SYSCONFDIR}/trytond/logging.conf .
 
 Please note that `--database` is required for trytond_cron and trytond_worker,
-else the daemons will don't know which databases to monitor and they will do
+else the daemons won't know which databases to monitor and they will do
 nothing.
 
 	# rcctl set trytond flags $(rcctl getdef trytond flags) --database mydatabase1
@@ -119,8 +119,7 @@ Upgrade path is possible from N to N+1 version.
 
 Follow indications at https://discuss.tryton.org/c/migration .
 
-Please take care that possibly some actions are required to be done BEFORE
-updating.
+Please note some actions may require to be done BEFORE updating.
 
 
 Customization via trytond modules
@@ -129,7 +128,7 @@ Customization via trytond modules
 Customization on Tryton is expected to be done via installation of modules.
 
 To easy inclusion of local modules without installing them at system level, the
-recommanded way is to use the per-user site-packages directory (PEP-370). For
+recommended way is to use the per-user site-packages directory (PEP-370). For
 the default user used for running `trytond` daemon (`_trytond` user), the
 directory is at `${LOCALSTATEDIR}/trytond/.local/lib/python${MODPY_VERSION}/site-packages/`.
 
@@ -140,7 +139,7 @@ by `_trytond`). As root, you could do the following:
 	# chown user ${LOCALSTATEDIR}/trytond/.local/
 
 Next, when installing a new module as user, you could temporary change the
-`HOME` environement variable to run the install command.
+`HOME` environment variable to run the install command.
 
 Example of installing a module from local directory, using `setuptools`:
 

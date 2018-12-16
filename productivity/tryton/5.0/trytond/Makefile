@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/03 12:51:22 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/16 16:52:39 danj Exp $
 
 COMMENT =		3-tiers general purpose business application framework
 
 MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		trytond-${MODPY_EGG_VERSION}
+REVISION =		0
 
 TRYTON_PY =		Yes
 
@@ -19,11 +20,11 @@ RUN_DEPENDS +=		databases/py-psycopg2${MODPY_FLAVOR} \
 			www/py-werkzeug${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
-			converters/py-html2text${MODPY_FLAVOR}
+			converters/py-html2text${MODPY_FLAVOR} \
+			security/py-bcrypt${MODPY_FLAVOR}
 
 #RUN_DEPENDS +=		graphics/pydot	# optional, port is py2 only
 #RUN_DEPENDS +=		levenshtein	# optional, not ported
-#RUN_DEPENDS +=		bcrypt		# optional, not ported
 
 TEST_DEPENDS +=		${RUN_DEPENDS}
 
