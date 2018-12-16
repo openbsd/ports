@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/12/15 11:19:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2018/12/16 15:08:34 ajacoutot Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
@@ -39,11 +39,6 @@ pre-configure:
 	mv ${WRKDIR}/${DISTNAME} ${WRKSRC}
 	${SUBST_CMD} ${WRKSRC}/agent/appconfig/constants_unix.go \
 		${WRKSRC}/agent/log/log_unix.go
-
-# XXX remove for next release?
-pre-build:
-	cd ${WRKBUILD}/agent/agentlogstocloudwatch/cloudwatchlogspublisher && \
-		gofmt -w cloudwatchlogs_publisher_test.go
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amazon-ssm-agent \
