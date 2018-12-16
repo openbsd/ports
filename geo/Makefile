@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/11/27 18:04:09 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2018/12/16 15:10:24 landry Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -71,6 +71,7 @@
      SUBDIR += spatialindex
      SUBDIR += spatialite
      SUBDIR += tilecache
+     SUBDIR += traccar
      SUBDIR += viking
 
 .include <bsd.port.subdir.mk>
