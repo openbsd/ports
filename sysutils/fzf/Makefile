@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/12 00:10:00 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/16 01:05:53 abieber Exp $
 
 COMMENT =	command-line fuzzy finder
 
-DISTNAME =	fzf-0.17.3
+DISTNAME =	fzf-0.17.5
 
 CATEGORIES =	sysutils
 
@@ -23,11 +23,11 @@ MODGO_TYPE =	bin
 
 NO_TEST =	Yes
 
-do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} build -x
+ALL_TARGET = github.com/junegunn/fzf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/fzf* ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/* ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/*.1 ${PREFIX}/man/man1
 
