@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.85 2018/09/13 05:59:22 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.86 2018/12/16 13:53:22 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -80,6 +80,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
 @bin libexec/git/git-interpret-trailers
+libexec/git/git-legacy-rebase
 @bin libexec/git/git-log
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
@@ -101,6 +102,7 @@ libexec/git/git-mergetool
 libexec/git/git-mergetool--lib
 @bin libexec/git/git-mktag
 @bin libexec/git/git-mktree
+@bin libexec/git/git-multi-pack-index
 @bin libexec/git/git-mv
 @bin libexec/git/git-name-rev
 @bin libexec/git/git-notes
@@ -117,10 +119,10 @@ libexec/git/git-parse-remote
 libexec/git/git-quiltimport
 @bin libexec/git/git-range-diff
 @bin libexec/git/git-read-tree
-libexec/git/git-rebase
+@bin libexec/git/git-rebase
 libexec/git/git-rebase--am
-@bin libexec/git/git-rebase--helper
-libexec/git/git-rebase--interactive
+libexec/git/git-rebase--common
+@bin libexec/git/git-rebase--interactive
 libexec/git/git-rebase--merge
 libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-receive-pack
@@ -285,6 +287,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-mergetool.1
 @man man/man1/git-mktag.1
 @man man/man1/git-mktree.1
+@man man/man1/git-multi-pack-index.1
 @man man/man1/git-mv.1
 @man man/man1/git-name-rev.1
 @man man/man1/git-notes.1

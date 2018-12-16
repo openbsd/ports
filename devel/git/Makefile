@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.195 2018/11/25 12:41:35 kn Exp $
+# $OpenBSD: Makefile,v 1.196 2018/12/16 13:53:22 kn Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.19.2
+V =		2.20.1
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -39,13 +39,14 @@ BUILD_DEPENDS =		devel/gettext-tools \
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c crypto curl expat iconv intl pthread ssl z
+WANTLIB-main =		c crypto curl expat iconv intl nghttp2 pthread ssl z
 
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/p5-Error \
 			net/rsync
 LIB_DEPENDS-main =	devel/gettext \
-			net/curl
+			net/curl \
+			www/nghttp2
 
 RUN_DEPENDS-svn =	${BASE_PKGPATH} \
 			devel/subversion,-perl \
