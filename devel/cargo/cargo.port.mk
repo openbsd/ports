@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.7 2018/02/24 18:40:28 kn Exp $
+# $OpenBSD: cargo.port.mk,v 1.8 2018/12/16 08:50:11 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -44,8 +44,8 @@ MODCARGO_MASTER_SITESN ?= 9
 MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
 
 # Generated list of DISTFILES.
-.for _crate in ${MODCARGO_CRATES}
-DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:${MODCARGO_MASTER_SITESN}
+.for _cratename _cratever in ${MODCARGO_CRATES}
+DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz{${_cratename}/${_cratever}/download}:${MODCARGO_MASTER_SITESN}
 .endfor
 
 # post-extract target for preparing crates directory.
@@ -53,18 +53,18 @@ DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_c
 MODCARGO_post-extract = \
 	${ECHO_MSG} "[modcargo] moving crates to ${MODCARGO_VENDOR_DIR}" ; \
 	mkdir ${MODCARGO_VENDOR_DIR} ;
-.for _crate in ${MODCARGO_CRATES}
+.for _cratename _cratever in ${MODCARGO_CRATES}
 MODCARGO_post-extract += \
-	mv ${WRKDIR}/${_crate} ${MODCARGO_VENDOR_DIR}/${_crate} ;
+	mv ${WRKDIR}/${_cratename}-${_cratever} ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ;
 .endfor
 
 # post-patch target for generating metadata of crates.
-.for _crate in ${MODCARGO_CRATES}
+.for _cratename _cratever in ${MODCARGO_CRATES}
 MODCARGO_post-patch += \
-	${ECHO_MSG} "[modcargo] Generating metadata for ${_crate}" ; \
+	${ECHO_MSG} "[modcargo] Generating metadata for ${_cratename}-${_cratever}" ; \
 	${LOCALBASE}/bin/cargo-generate-vendor \
-		${FULLDISTDIR}/${_MODCARGO_DIST_SUBDIR}${_crate}.tar.gz \
-		${MODCARGO_VENDOR_DIR}/${_crate} ;
+		${FULLDISTDIR}/${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz \
+		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ;
 .endfor
 
 # configure hook. Place a config file for overriding crates-io index by
@@ -208,15 +208,12 @@ modcargo-metadata: patch
 
 # modcargo-gen-crates will output crates list from Cargo.lock file.
 modcargo-gen-crates: extract
-	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "-" $$3 }' \
+	@awk '/"checksum / { print "MODCARGO_CRATES +=	" $$2 "	" $$3 }' \
 		<${MODCARGO_CARGOTOML:toml=lock}
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
 modcargo-gen-crates-licenses: configure
-	@cd ${MODCARGO_VENDOR_DIR} && find . -maxdepth 2 -name Cargo.toml \
-		-exec grep -H '^[ 	]*license' {} + \
-		| sed \
-		-e 's|^\./|MODCARGO_CRATES +=	|' \
-		-e 's|/Cargo.toml:license.*= *"|	# |' \
-		-e 's|"$$||g'
-
+.for _cratename _cratever in ${MODCARGO_CRATES}
+	@echo -n "MODCARGO_CRATES +=	${_cratename}	${_cratever}	# "
+	@sed -ne 's/^license.*= *"\([^"]*\)".*/\1/p' "${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/Cargo.toml"
+.endfor

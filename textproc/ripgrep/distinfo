@@ -26,6 +26,7 @@ SHA256 (cargo/log-0.4.5.tar.gz) = 1PzOX6ScxpPDEgAdrx0TQRxKUoN5a6wQhCmeo+VnET8=
 SHA256 (cargo/memchr-2.0.2.tar.gz) = o7QUKrhzinjFGJb3BPg8Ed8Ef/G9qakqZhqmNhVS2T0=
 SHA256 (cargo/memmap-0.6.2.tar.gz) = 4v+iyYbeEanfeGIMAe6q8n2U0/8Cv4G/zKlTEC3Qxv8=
 SHA256 (cargo/memoffset-0.2.1.tar.gz) = D53CYeK2LXpiK/QW6jxSRc3V2af8xCjA0GgE384XdbM=
+SHA256 (cargo/mime_guess-2.0.0-alpha.6.tar.gz) = MN4uRhPvy6HsY9gTPzRAdpUgkMEimSqQM1m+Wk+Zw+0=
 SHA256 (cargo/nodrop-0.1.12.tar.gz) = miIo3KVxCAaaUmLy7YvS6CSW0uB0oG0czHzhaHtq4KI=
 SHA256 (cargo/num_cpus-1.8.0.tar.gz) = xRozIuS8qdISrZoVigKrxpNNAFSQwFSid433OnCqCjA=
 SHA256 (cargo/owning_ref-0.3.3.tar.gz) = zfhPQWOeA3tIT5NDOqOJeGO1Ye1lxuWccHPXxWFxDzc=
@@ -103,6 +104,7 @@ SIZE (cargo/log-0.4.5.tar.gz) = 22221
 SIZE (cargo/memchr-2.0.2.tar.gz) = 10092
 SIZE (cargo/memmap-0.6.2.tar.gz) = 15015
 SIZE (cargo/memoffset-0.2.1.tar.gz) = 4618
+SIZE (cargo/mime_guess-2.0.0-alpha.6.tar.gz) = 17579
 SIZE (cargo/nodrop-0.1.12.tar.gz) = 3033
 SIZE (cargo/num_cpus-1.8.0.tar.gz) = 10539
 SIZE (cargo/owning_ref-0.3.3.tar.gz) = 11710
