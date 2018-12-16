@@ -1,0 +1,44 @@
+$OpenBSD: patch-conf_default_xml,v 1.1.1.1 2018/12/16 15:09:58 landry Exp $
+
+Index: conf/default.xml
+--- conf/default.xml.orig
++++ conf/default.xml
+@@ -12,7 +12,7 @@
+ 
+     <entry key='web.enable'>true</entry>
+     <entry key='web.port'>8082</entry>
+-    <entry key='web.path'>./web</entry>
++    <entry key='web.path'>${LOCALBASE}/share/traccar/web</entry>
+     <entry key='web.cacheControl'>max-age=3600,public</entry>
+ 
+     <entry key='geocoder.enable'>false</entry>
+@@ -20,7 +20,7 @@
+ 
+     <entry key='logger.enable'>true</entry>
+     <entry key='logger.level'>info</entry>
+-    <entry key='logger.file'>./logs/tracker-server.log</entry>
++    <entry key='logger.file'>/var/log/traccar/tracker-server.log</entry>
+ 
+     <entry key='filter.enable'>true</entry>
+     <entry key='filter.future'>86400</entry>
+@@ -30,9 +30,10 @@
+     <entry key='processing.computedAttributes.enable'>true</entry>
+     <entry key='processing.engineHours.enable'>true</entry>
+ 
+-    <entry key='media.path'>./media</entry>
++    <entry key='media.path'>${LOCALBASE}/share/traccar/media</entry>
+ 
+     <entry key='notificator.types'>web,mail</entry>
++    <entry key='templates.rootPath'>${LOCALBASE}/share/traccar/templates</entry>
+
+     <entry key='server.statistics'>https://www.traccar.org/analytics/</entry>                                      
+
+@@ -40,7 +40,7 @@
+ 
+     <entry key='database.ignoreUnknown'>true</entry>
+     <entry key='database.generateQueries'>true</entry>
+-    <entry key='database.changelog'>./schema/changelog-master.xml</entry>
++    <entry key='database.changelog'>${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
+  
+     <entry key='database.loginUser'>
+         SELECT * FROM tc_users
