@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2018/12/08 09:16:09 semarie Exp $
+# $OpenBSD: Makefile,v 1.87 2018/12/16 09:19:57 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -10,10 +10,17 @@ DPB_PROPERTIES =	parallel
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
+COMMENT-gdb =		Rust debugger thought gdb
+COMMENT-clippy =	Rust linter
+COMMENT-rustfmt =	Rust code formatter
 
 V =			1.31.0
 CARGO_V =		0.32.0
+CLIPPY_V =		0.0.212
+RUSTFMT_V =		1.0.0
 DISTNAME =		rustc-${V}-src
+
+REVISION-main =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.31.0-20181207
@@ -24,8 +31,11 @@ BV =			${BV-${MACHINE_ARCH}}
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
+PKGNAME-gdb =		rust-gdb-${V}
+PKGNAME-clippy =	rust-clippy-${V}
+PKGNAME-rustfmt =	rust-rustfmt-${V}
 
-MULTI_PACKAGES =	-main -doc
+MULTI_PACKAGES =	-main -doc -gdb -clippy -rustfmt
 
 CATEGORIES =		lang
 
@@ -38,6 +48,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-doc =
+WANTLIB-gdb =
+WANTLIB-clippy =	c c++abi m pthread
+WANTLIB-rustfmt =	c c++abi m pthread
 
 # XXX should this actually just be ports-clang?
 COMPILER =		base-clang
@@ -53,7 +66,7 @@ DIST_SUBDIR =		rust
 EXTRACT_SUFX =		.tar.xz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if ${FLAVOR} == native_bootstrap
-BUILD_DEPENDS+=		lang/rust
+BUILD_DEPENDS +=	lang/rust
 .else
 DISTFILES +=		${BOOTSTRAP}
 .endif
@@ -89,9 +102,14 @@ BUILD_DEPENDS +=	devel/llvm>=6.0,<6.1
 BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
-LIB_DEPENDS +=		devel/libgit2/libgit2 \
+LIB_DEPENDS-main +=	devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
+
+RUN_DEPENDS-gdb +=	lang/rust,-main \
+			devel/gdb
+RUN_DEPENDS-clippy +=	lang/rust,-main
+RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
@@ -174,10 +192,11 @@ TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 
 do-build:
 	${BUILD_BIN} dist --jobs=${MAKE_JOBS} \
-		src/libstd src/librustc src/doc cargo
+		src/libstd src/librustc src/doc cargo clippy rustfmt
 	rm -rf -- ${WRKBUILD}/build/tmp/dist
 
-COMPONENTS ?=	rustc-${V} rust-std-${V} rust-docs-${V} cargo-${CARGO_V}
+COMPONENTS ?=	rustc-${V} rust-std-${V} rust-docs-${V} cargo-${CARGO_V} \
+		clippy-${CLIPPY_V} rustfmt-${RUSTFMT_V}
 do-install:
 	rm -rf ${WRKBUILD}/_extractdist
 .for _c in ${COMPONENTS}
