@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.10 2018/10/02 10:49:47 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.11 2018/12/17 15:19:40 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp
-@@ -219,7 +219,7 @@ static HRESULT StartSpoolerThread(SendData &&sd, const
+@@ -225,7 +225,7 @@ static HRESULT StartSpoolerThread(SendData &&sd, const
  		return MAPI_E_CALL_FAILED;
  	}
  	th_arg.release();
@@ -12,7 +12,7 @@ Index: spooler/Spooler.cpp
  	return hrSuccess;
  }
  
-@@ -906,10 +906,10 @@ int main(int argc, char **argv) try
+@@ -912,10 +912,10 @@ int main(int argc, char **argv) try
  		{ "smtp_server","localhost", CONFIGSETTING_RELOADABLE },
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
@@ -26,7 +26,7 @@ Index: spooler/Spooler.cpp
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
  		{"log_file", ""},
-@@ -933,8 +933,8 @@ int main(int argc, char **argv) try
+@@ -939,8 +939,8 @@ int main(int argc, char **argv) try
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },
@@ -34,6 +34,6 @@ Index: spooler/Spooler.cpp
 -        { "plugin_manager_path", "/usr/share/kopano-spooler/python" },
 +        { "plugin_path", "/var/db/kopano/spooler/plugins" },
 +        { "plugin_manager_path", "/usr/local/share/kopano-spooler/python" },
- 		{ "z_statsd_stats", "/var/run/kopano/statsd.sock" },
- 		{ "tmp_path", "/tmp" },
- 		{"log_raw_message_path", "/var/lib/kopano", CONFIGSETTING_RELOADABLE},
+ 		{"statsclient_url", "unix:/var/run/kopano/statsd.sock", CONFIGSETTING_RELOADABLE},
+ 		{"statsclient_interval", "0", CONFIGSETTING_RELOADABLE},
+ 		{"statsclient_ssl_verify", "yes", CONFIGSETTING_RELOADABLE},

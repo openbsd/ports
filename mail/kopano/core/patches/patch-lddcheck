@@ -1,4 +1,4 @@
-$OpenBSD: patch-lddcheck,v 1.1.1.1 2017/09/13 10:38:41 robert Exp $
+$OpenBSD: patch-lddcheck,v 1.2 2018/12/17 15:19:40 robert Exp $
 
 Index: lddcheck
 --- lddcheck.orig
@@ -9,18 +9,19 @@ Index: lddcheck
  
  if [ -z "$1" ]; then
  	exit 0
-@@ -14,12 +14,12 @@ case "$input" in #((
- 			exit 0
+@@ -15,13 +15,13 @@ case "$input" in #((
  		fi
  		real=$(dirname "$input")"/.libs/$dlname"
--		if ldd -r "$real" | c++filt | grep "undefined symbol"; then
-+		if nm -u "$real" | c++filt | grep "undefined symbol"; then
+ 		# ldd loads all dependencies, which nm would not do.
+-		if ldd -r "$real" 2>/dev/null | c++filt | grep "undefined symbol"; then
++		if nm -u "$real" 2>/dev/null | c++filt | grep "undefined symbol"; then
+ 			rm "$output"
  			exit 1
  		fi
  		;;
  	*)
--		if "${libtool}" --mode=execute ldd -r "$input" | c++filt | \
-+		if "${libtool}" --mode=execute nm -u "$input" | c++filt | \
+-		if "${libtool}" --mode=execute ldd -r "$input" 2>/dev/null | c++filt | \
++		if "${libtool}" --mode=execute nm -u "$input" 2>/dev/null | c++filt | \
  		   grep "undefined symbol"; then
+ 			rm "$output"
  			exit 1
- 		fi

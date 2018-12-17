@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_python-scripts_kopano-cachestat,v 1.2 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-tools_python-scripts_kopano-cachestat,v 1.3 2018/12/17 15:19:40 robert Exp $
 
 Index: tools/python-scripts/kopano-cachestat
 --- tools/python-scripts/kopano-cachestat.orig
 +++ tools/python-scripts/kopano-cachestat
 @@ -1,5 +1,5 @@
- #!/usr/bin/python -u
+ #!/usr/bin/python3 -u
 -# SPDX-License-Identifier: AGPL-3.0-only
 +#!/usr/local/bin/python2.7 -u
  

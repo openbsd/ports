@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_python_Makefile_in,v 1.7 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-spooler_python_Makefile_in,v 1.8 2018/12/17 15:19:40 robert Exp $
 
 Index: spooler/python/Makefile.in
 --- spooler/python/Makefile.in.orig
 +++ spooler/python/Makefile.in
-@@ -789,8 +789,6 @@ uninstall-am: uninstall-kopano_dagentDATA uninstall-ko
+@@ -792,8 +792,6 @@ uninstall-am: uninstall-kopano_dagentDATA uninstall-ko
  
  
  install-data-hook:

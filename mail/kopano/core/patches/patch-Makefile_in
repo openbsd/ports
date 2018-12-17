@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2018/10/02 10:49:47 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.13 2018/12/17 15:19:40 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1286,7 +1286,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
+@@ -1297,7 +1297,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
  	common/database.cpp common/include/kopano/database.hpp
  
  kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
@@ -12,7 +12,16 @@ Index: Makefile.in
  
  #
  # kopano-fsck
-@@ -1858,7 +1858,7 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
+@@ -1396,7 +1396,7 @@ kopano_server_SOURCES = \
+ 	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
+ 
+ kopano_server_LDADD = \
+-	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
++	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${INTL_LIBS} \
+ 	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
+ 	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
+ 
+@@ -1847,7 +1847,7 @@ tests_mapialloctime_LDADD = libmapi.la ${clock_LIBS}
  tests_readflag_SOURCES = tests/readflag.cpp tests/tbi.hpp
  tests_readflag_LDADD = libmapi.la libkcutil.la
  tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
@@ -21,7 +30,7 @@ Index: Makefile.in
  
  #
  # soap generators
-@@ -4870,7 +4870,7 @@ default.sym provider/plugin.sym provider/provider.sym 
+@@ -4801,7 +4801,7 @@ default.sym provider/plugin.sym provider/provider.sym 
  
  .PHONY: source-moved-check
  source-moved-check:

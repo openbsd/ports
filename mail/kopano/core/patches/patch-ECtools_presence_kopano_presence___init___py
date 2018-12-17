@@ -1,4 +1,4 @@
-$OpenBSD: patch-ECtools_presence_kopano_presence___init___py,v 1.3 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-ECtools_presence_kopano_presence___init___py,v 1.4 2018/12/17 15:19:40 robert Exp $
 
 Index: ECtools/presence/kopano_presence/__init__.py
 --- ECtools/presence/kopano_presence/__init__.py.orig
@@ -10,7 +10,7 @@ Index: ECtools/presence/kopano_presence/__init__.py
 -    'data_path': Config.string(default='/var/lib/kopano/presence/'),
 +    'data_path': Config.string(default='/var/db/kopano/presence/'),
      'data_save_interval': Config.integer(default=5),
-     'plugins': Config.string(multiple=True, default="spreed"),
+     'plugins': Config.string(multiple=True, default=['spreed']),
 -    'run_as_user': Config.string(default="kopano"),
 -    'run_as_group': Config.string(default="kopano"),
 +    'run_as_user': Config.string(default="_kopano"),

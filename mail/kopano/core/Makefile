@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2018/12/17 15:19:40 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-mapi=	1
-REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -31,6 +29,7 @@ COMPILER=	base-clang ports-gcc base-gcc
 MODULES=	lang/python \
 		lang/php
 
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
@@ -38,10 +37,11 @@ UNMESSAGE-main=	# empty
 BUILD_DEPENDS=	devel/gettext-tools \
 		devel/py-setuptools \
 		devel/swig \
-		textproc/xmlto \
-		sysutils/coreutils
+		shells/bash \
+		sysutils/coreutils \
+		textproc/xmlto
 
-WANTLIB += c m pthread z vmime execinfo iconv icudata icui18n icuuc intl
+WANTLIB += c m pthread z vmime iconv icudata icui18n icuuc intl
 WANTLIB += lzma crypto ssl
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
@@ -68,7 +68,6 @@ LIB_DEPENDS-main= databases/mariadb \
 		devel/gsoap>=2.8.50 \
 		devel/jsoncpp \
 		devel/libHX \
-		devel/libexecinfo \
 		devel/libvmime>=0.9.4 \
 		net/curl \
 		textproc/icu4c \
@@ -81,7 +80,7 @@ WANTLIB-mapi += xml2
 WANTLIB-mapi += ${LIBCXX}
 WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi
 WANTLIB-mapi += kcutil
-
+WANTLIB-mapi += HX curl jsoncpp nghttp2
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-mapi= ${MODPHP_RUN_DEPENDS}
