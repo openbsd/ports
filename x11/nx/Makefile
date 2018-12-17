@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2012/01/03 16:39:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/17 01:01:24 jca Exp $
 
      SUBDIR =
      SUBDIR += nxcomp
      SUBDIR += nxproxy
-     SUBDIR += nxssh
-     SUBDIR += opennx
-     
+
 .include <bsd.port.subdir.mk>
