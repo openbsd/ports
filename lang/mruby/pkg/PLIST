@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/01 22:36:21 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/17 20:28:28 jeremy Exp $
 @bin bin/mirb
 @bin bin/mrbc
 @bin bin/mrdb
@@ -26,6 +26,7 @@ include/mruby/khash.h
 include/mruby/numeric.h
 include/mruby/object.h
 include/mruby/opcode.h
+include/mruby/ops.h
 include/mruby/proc.h
 include/mruby/range.h
 include/mruby/re.h
@@ -211,6 +212,12 @@ lib/mruby/mrbgems/mruby-math/src/
 lib/mruby/mrbgems/mruby-math/src/math.c
 lib/mruby/mrbgems/mruby-math/test/
 lib/mruby/mrbgems/mruby-math/test/math.rb
+lib/mruby/mrbgems/mruby-metaprog/
+lib/mruby/mrbgems/mruby-metaprog/mrbgem.rake
+lib/mruby/mrbgems/mruby-metaprog/src/
+lib/mruby/mrbgems/mruby-metaprog/src/metaprog.c
+lib/mruby/mrbgems/mruby-metaprog/test/
+lib/mruby/mrbgems/mruby-metaprog/test/metaprog.rb
 lib/mruby/mrbgems/mruby-method/
 lib/mruby/mrbgems/mruby-method/README.md
 lib/mruby/mrbgems/mruby-method/mrbgem.rake
@@ -288,6 +295,19 @@ lib/mruby/mrbgems/mruby-range-ext/src/
 lib/mruby/mrbgems/mruby-range-ext/src/range.c
 lib/mruby/mrbgems/mruby-range-ext/test/
 lib/mruby/mrbgems/mruby-range-ext/test/range.rb
+lib/mruby/mrbgems/mruby-sleep/
+lib/mruby/mrbgems/mruby-sleep/.gitignore
+lib/mruby/mrbgems/mruby-sleep/.travis.yml
+lib/mruby/mrbgems/mruby-sleep/.travis_build_config.rb
+lib/mruby/mrbgems/mruby-sleep/README.md
+lib/mruby/mrbgems/mruby-sleep/Rakefile
+lib/mruby/mrbgems/mruby-sleep/example/
+lib/mruby/mrbgems/mruby-sleep/example/sleep.rb
+lib/mruby/mrbgems/mruby-sleep/mrbgem.rake
+lib/mruby/mrbgems/mruby-sleep/src/
+lib/mruby/mrbgems/mruby-sleep/src/mrb_sleep.c
+lib/mruby/mrbgems/mruby-sleep/test/
+lib/mruby/mrbgems/mruby-sleep/test/sleep_test.rb
 lib/mruby/mrbgems/mruby-socket/
 lib/mruby/mrbgems/mruby-socket/.travis.yml
 lib/mruby/mrbgems/mruby-socket/README.md
@@ -375,6 +395,7 @@ lib/mruby/mrblib/mrblib.rake
 lib/mruby/mrblib/numeric.rb
 lib/mruby/mrblib/range.rb
 lib/mruby/mrblib/string.rb
+lib/mruby/mrblib/symbol.rb
 share/doc/mruby/
 share/doc/mruby/compile.md
 share/doc/mruby/debugger.md

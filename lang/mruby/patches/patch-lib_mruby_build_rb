@@ -1,14 +1,14 @@
-$OpenBSD: patch-lib_mruby_build_rb,v 1.1 2018/05/01 22:36:21 jeremy Exp $
+$OpenBSD: patch-lib_mruby_build_rb,v 1.2 2018/12/17 20:28:27 jeremy Exp $
 
 Index: lib/mruby/build.rb
 --- lib/mruby/build.rb.orig
 +++ lib/mruby/build.rb
-@@ -304,7 +304,7 @@ EOS
+@@ -315,7 +315,7 @@ EOS
      def run_bintest
        targets = @gems.select { |v| File.directory? "#{v.dir}/bintest" }.map { |v| filename v.dir }
        targets << filename(".") if File.directory? "./bintest"
--      sh "ruby test/bintest.rb #{targets.join ' '}"
-+      sh "${RUBY} test/bintest.rb #{targets.join ' '}"
+-      sh "ruby test/bintest.rb#{verbose_flag} #{targets.join ' '}"
++      sh "${RUBY} test/bintest.rb#{verbose_flag} #{targets.join ' '}"
      end
  
      def print_build_summary
