@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.110 2018/12/12 12:04:56 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.111 2018/12/17 18:06:05 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -158,7 +158,7 @@ ${__target}:
 
 clean:
 .if defined(clean) && ${clean:L:Mdepends}
-	@{ target=all-dir-depends; echo_msg=:; \
+	@{ target=all-dir-depends; echo_msg=: export _LOCKS_HELD=; \
 	${_depfile_fragment}; ${_subdir_fragment}; }| tsort -r| \
 	while read subdir; do \
 		${_flavor_fragment}; \
