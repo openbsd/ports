@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/10/24 14:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2018/12/17 18:49:50 jca Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.shaderwrangler.com/xglobe/
 MASTER_SITES=	https://distfiles.nl/
 DISTNAME=	xglobe-0.5p2
 PKGNAME=	xglobe-0.5
-REVISION=	43
+REVISION=	44
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

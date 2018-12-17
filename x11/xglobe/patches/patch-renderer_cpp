@@ -1,7 +1,8 @@
-$OpenBSD: patch-renderer_cpp,v 1.5 2002/11/23 15:45:19 espie Exp $
---- renderer.cpp.orig	Sat Nov 23 16:34:35 2002
-+++ renderer.cpp	Sat Nov 23 16:34:49 2002
-@@ -91,6 +91,8 @@ Renderer::Renderer(const QSize &size, co
+$OpenBSD: patch-renderer_cpp,v 1.6 2018/12/17 18:49:50 jca Exp $
+Index: renderer.cpp
+--- renderer.cpp.orig
++++ renderer.cpp
+@@ -91,6 +91,8 @@ Renderer::Renderer(const QSize &size, const char *mapf
    mapcloud = NULL;
    track_clouds = NULL;
    
@@ -10,7 +11,7 @@ $OpenBSD: patch-renderer_cpp,v 1.5 2002/11/23 15:45:19 espie Exp $
    renderedImage = new QImage(size, 32);
    if(!renderedImage)
    {
-@@ -98,8 +100,6 @@ Renderer::Renderer(const QSize &size, co
+@@ -98,8 +100,6 @@ Renderer::Renderer(const QSize &size, const char *mapf
      ::exit(1);
    }
  

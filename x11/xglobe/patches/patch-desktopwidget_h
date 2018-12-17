@@ -1,0 +1,14 @@
+$OpenBSD: patch-desktopwidget_h,v 1.1 2018/12/17 18:49:50 jca Exp $
+Fix for ports-gcc-4.9:
+desktopwidget.cpp:34:5: error: '::exit' has not been declared
+Index: desktopwidget.h
+--- desktopwidget.h.orig
++++ desktopwidget.h
+@@ -26,6 +26,7 @@
+ #include <qwidget.h>
+ #include <qpixmap.h>
+ #include <qpainter.h>
++#include <cstdlib>
+ 
+ class DesktopWidget : public QWidget
+ {
