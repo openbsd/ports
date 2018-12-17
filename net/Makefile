@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1096 2018/12/12 22:51:58 danj Exp $
+# $OpenBSD: Makefile,v 1.1097 2018/12/17 09:59:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -212,6 +212,7 @@
      SUBDIR += libstrophe
      SUBDIR += libtorrent
      SUBDIR += libtorrent-rasterbar
+     SUBDIR += libunbound
      SUBDIR += libupnp
      SUBDIR += libvncserver
      SUBDIR += livemedia
