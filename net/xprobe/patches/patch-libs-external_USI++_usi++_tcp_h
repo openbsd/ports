@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs-external_USI++_usi++_tcp_h,v 1.1 2018/12/17 18:44:18 jca Exp $
+usi++/tcp.h:175:47: 'memset' was not declared in this scope with ports-gcc
+Index: libs-external/USI++/usi++/tcp.h
+--- libs-external/USI++/usi++/tcp.h.orig
++++ libs-external/USI++/usi++/tcp.h
+@@ -12,6 +12,7 @@
+ #ifndef _TCP_H_
+ #define _TCP_H_
+ 
++#include <string.h>
+ #include "usi-structs.h"
+ #include "datalink.h"
+ #include "ip.h"
