@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2018/11/10 10:55:16 feinerer Exp $
+# $OpenBSD: Makefile,v 1.17 2018/12/17 20:23:20 feinerer Exp $
 
 COMMENT =		libv4l userspace library
 
-VERSION =		1.16.2
+VERSION =		1.16.3
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
 
