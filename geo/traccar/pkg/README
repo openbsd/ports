@@ -1,0 +1,58 @@
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Web Interface
+=============
+
+The default configuration makes traccar UI listen on localhost only.
+The recommended way to access the service from the outside world is to use a
+reverse proxy with SSL enabled.
+
+The following is an example using nginx as an SSL reverse proxy:
+
+server {
+	add_header Cache-Control no-cache;
+	add_header x-frame-options SAMEORIGIN;
+	add_header X-Content-Type-Options nosniff;
+	add_header X-XSS-Protection "1; mode=block";
+
+	listen	443;
+	listen	[::]:443;
+
+	expires 31d;
+	ssl On;
+	ssl_certificate fullcert_nokey.pem;
+	ssl_certificate_key privkey.pem;
+
+	location / {
+		proxy_pass http://127.0.0.1:8082/;
+		proxy_set_header Host $host;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_buffering     off;
+		proxy_connect_timeout 1d;
+		proxy_send_timeout    1d;
+		proxy_read_timeout    1d;
+		proxy_redirect off;
+		proxy_set_header Proxy "";
+		proxy_cookie_path /api "/api; secure; HttpOnly";
+	}
+}
+
+Open Network Ports
+==================
+
+By default, traccar will listen on many network ports. Each tracker protocol
+requires its own open port. So you should really block those ports using pf and
+only allow the protocols you actually use. 
+
+You can also restrict the open ports by altering the default.xml file and remove
+all the protocols you don't use. However, the default.xml file will change on
+almost every revision, so if you do that you should do it on a copy of
+default.xml and reference that copy in traccar.xml configuration file. Also, you
+should ensure that at every upgrade, you track the changes in default.xml as
+the file contains important informations about SQL queries. This is definitely
+more complex than firewalling the unused ports.

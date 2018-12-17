@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/16 15:09:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/17 19:48:24 landry Exp $
 @newgroup _traccar:824
 @newuser _traccar:824:_traccar:daemon:Traccar user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/traccar
@@ -12,6 +12,7 @@
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${PKGSTEM}
 share/traccar/
 share/traccar/conf/
 share/traccar/conf/default.xml
