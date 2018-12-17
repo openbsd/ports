@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2018/12/17 18:21:01 jca Exp $
 
 COMMENT = 	enhanced version the PrBoom Doom engine
 DISTNAME =	prboom-plus-2.5.1.4
@@ -10,7 +10,12 @@ HOMEPAGE =	http://prboom-plus.sourceforge.net/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+# undefined reference to `__builtin_bswap32'
+# requires gcc >= 4.3 for gcc4 archs.
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =	archivers/unzip
 
