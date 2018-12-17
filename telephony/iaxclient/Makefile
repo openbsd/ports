@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2018/12/17 01:08:29 jca Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
-COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-PKGNAME-iaxcomm= iaxcomm-1.1.0
 REVISION=	22
 
 CATEGORIES=	telephony
@@ -21,7 +19,7 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MULTI_PACKAGES=	-main -tcl -iaxcomm
+MULTI_PACKAGES=	-main -tcl
 MODULES=	x11/tk
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -41,17 +39,6 @@ WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB-tcl	+= graphite2 harfbuzz vorbis
 WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB}
 
-WANTLIB-iaxcomm	+= ICE SDL SM X11 Xcomposite Xcursor Xdamage
-WANTLIB-iaxcomm	+= Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB-iaxcomm	+= c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iconv intl iodbc jpeg mspack
-WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB-iaxcomm	+= png ${COMPILER_LIBCXX} tiff usbhid wx_base wx_base_net
-WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
-WANTLIB-iaxcomm	+= wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
-WANTLIB-iaxcomm	+= graphite2 harfbuzz vorbis
-WANTLIB-iaxcomm	+= wx_gtk2_xrc xcb xcb-render xcb-shm ffi ${cWANTLIB}
 
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
 
@@ -68,14 +55,10 @@ LIB_DEPENDS-tcl=${LIB_DEPENDS} \
 
 RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
 
-RUN_DEPENDS-iaxcomm=
-LIB_DEPENDS-iaxcomm=${BASE_PKGPATH} \
-	x11/wxWidgets
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L/usr/lib -lossaudio" \
 		WISH=${MODTK_BIN}
-CONFIGURE_ARGS=--enable-clients="testcall tkphone iaxcomm"
+CONFIGURE_ARGS=--enable-clients="testcall tkphone"
 # iaxphone needs an ANSI (not unicode) build of wxWidgets
 # vtestcall pulls in SDL dependency, not doing this for now
 

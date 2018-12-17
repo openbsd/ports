@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.682 2018/12/17 01:01:24 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.683 2018/12/17 01:08:29 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1126,6 +1126,7 @@ my $obsolete_reason = {
 	'news/sickbeard' => 3,
 	'nxssh' => 2,
 	'opennx' => 3,
+	'iaxcomm' => 3,
 };
 
 # reasons for obsolete packages
