@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_todoterm_cc,v 1.1 2018/12/17 18:41:56 jca Exp $
+fix for ports-gcc-4.9
+todoterm.cc:18:38: error: 'getenv' was not declared in this scope
+Index: src/todoterm.cc
+--- src/todoterm.cc.orig
++++ src/todoterm.cc
+@@ -7,6 +7,7 @@
+ #include <stdexcept>
+ #include <curses.h>
+ #include <term.h>
++#include <stdlib.h>
+ 
+ static char info[2048];
+ static bool term_initialized;
