@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.683 2018/12/17 01:08:29 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.684 2018/12/17 01:10:00 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1123,7 +1123,7 @@ my $obsolete_reason = {
 	'pecl56-swish' => 13,
 	'pecl-uploadprogress' => 13,
 	'pecl56-uploadprogress' => 13,
-	'news/sickbeard' => 3,
+	'sickbeard' => 3,
 	'nxssh' => 2,
 	'opennx' => 3,
 	'iaxcomm' => 3,
