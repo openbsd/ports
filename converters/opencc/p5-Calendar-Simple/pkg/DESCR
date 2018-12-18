@@ -1,3 +1,0 @@
-simple calendar module, without any external dependencies.
-builds a data structure corresponding to a calendar month
-organized in weeks.

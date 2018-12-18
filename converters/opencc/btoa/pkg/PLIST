@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
-@bin bin/atob
-@bin bin/btoa
-@man man/man1/btoa.1

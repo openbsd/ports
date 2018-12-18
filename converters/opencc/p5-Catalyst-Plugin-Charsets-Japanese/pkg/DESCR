@@ -1,2 +1,0 @@
-Handle japanese character encodings automatically in Catalyst
-(euc, jis, sjis...)

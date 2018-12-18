@@ -1,4 +1,0 @@
-py-amf provides Action Message Format (AMF) support for Python that is
-compatible with the Adobe Flash Player. It includes integration with
-Python web frameworks like Django, Pylons, Twisted, SQLAlchemy, web2py
-and more.

@@ -1,4 +1,0 @@
-Enca is an Extremely Naive Charset Analyser. It detects character set
-and encoding of text files and can also convert them to other encodings
-using either a built-in converter or external libraries and tools like
-libiconv, librecode, etc.

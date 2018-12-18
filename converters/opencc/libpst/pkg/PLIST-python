@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-python,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
-lib/python${MODPY_VERSION}/site-packages/_libpst.so

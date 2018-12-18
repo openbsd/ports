@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
-lib/lua/${MODLUA_VERSION}/lua-utf8.so
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/README.md

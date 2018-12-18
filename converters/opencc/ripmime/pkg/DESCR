@@ -1,3 +1,0 @@
-ripMIME's primary pupose is to extract attachments out of MIME-encoded
-email packages. It includes options suitable for some types of automated
-use, including bounds on recursion.

@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
-bin/puudecode
-bin/puuencode
-${P5SITE}/Convert/
-${P5SITE}/Convert/UU.pm
-@man man/man1/puudecode.1
-@man man/man1/puuencode.1
-@man man/man3p/Convert::UU.3p
