@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2018/12/18 20:32:32 danj Exp $
 
 COMMENT =		audio fingerprint extraction library
 
 DISTNAME =		chromaprint-1.1
 CATEGORIES =		audio devel
-HOMEPAGE =		https://acoustid.org/chromaprint/
+HOMEPAGE =		https://acoustid.org/chromaprint
 MASTER_SITES =		https://bitbucket.org/acoustid/chromaprint/downloads/
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		chromaprint               1.0 # 0.1
 
