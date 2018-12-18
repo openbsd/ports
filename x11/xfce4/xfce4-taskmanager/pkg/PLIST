@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/12/18 20:10:44 landry Exp $
 @bin bin/xfce4-taskmanager
 share/applications/xfce4-taskmanager.desktop
-share/icons/hicolor/16x16/apps/xc_crosshair.png
+share/icons/hicolor/16x16/actions/xc_crosshair.png
 share/icons/hicolor/24x24/actions/xc_crosshair.png
 share/icons/hicolor/scalable/actions/xc_crosshair.svg
 share/locale/ar/LC_MESSAGES/xfce4-taskmanager.mo
@@ -61,4 +61,5 @@ share/locale/vi/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-taskmanager.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
