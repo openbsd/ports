@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:13 espie Exp $
+$OpenBSD: README,v 1.3 2018/12/18 10:59:20 bcallah Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,20 +9,18 @@ Postal
 Postal requires the original game files from Postal 1 to work properly.
 These can come from an original CD or from GOG.com.
 
-If using the GOG.com version, you must extract the files from
-setup_postal_1.0_-_28.11.2016_(9399).exe using the innoextract package.
-The files will be in a directory named app. You must keep this
-directory, though it can be renamed and moved to a location of your
-choosing, and you can delete everything else that is extracted from the
-exe, such as the tmp directory.
+If using the GOG.com version, you must extract the files from the Linux
+version of the game, named gog_postal_classic_and_uncut_2.1.0.3.sh or
+something similar, using the unzip package.
 
-After extracting and optionally renaming and moving the game files
-directory, you will need to cd into the game files directory. Using the
-dos2unix package, you must strip the MS-DOS newlines from the POSTAL.INI
-and res/levels/postal\ plus\ realms.ini files. You should do this before
-running the postal1 binary for the first time.
+The game data is in the data/noarch/game directory that is created.
 
-Your working directory must be the game files directory when launching
-the postal1 binary.
+The game will only run if the data/noarch/game directory is your
+current working directory.
+
+Quick setup:
+$ unzip gog_postal_classic_and_uncut_2.1.0.3.sh
+$ cd data/noarch/game
+$ postal1
 
 To go to the next level, press F1 after completing your objective.
