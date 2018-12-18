@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2018/12/18 02:11:32 danj Exp $
+
+Disable blackd as our aiohttp (which would be required) is old
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -57,5 +57,5 @@ setup(
+         "Topic :: Software Development :: Libraries :: Python Modules",
+         "Topic :: Software Development :: Quality Assurance",
+     ],
+-    entry_points={"console_scripts": ["black=black:main", "blackd=blackd:main [d]"]},
++    entry_points={"console_scripts": ["black=black:main"]},
+ )

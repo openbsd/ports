@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/07 15:17:15 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 02:11:32 danj Exp $
 bin/black
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}black.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}blackd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/black.py
+lib/python${MODPY_VERSION}/site-packages/blackd.py
 lib/python${MODPY_VERSION}/site-packages/blib2to3/
 lib/python${MODPY_VERSION}/site-packages/blib2to3/Grammar.txt
 lib/python${MODPY_VERSION}/site-packages/blib2to3/PatternGrammar.txt
