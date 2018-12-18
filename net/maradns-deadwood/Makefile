@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2018/02/08 22:26:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/18 15:35:42 bket Exp $
 
 COMMENT=	recursive DNS resolver
 
-DISTNAME=	deadwood-3.2.11
+DISTNAME=	deadwood-3.2.13
 PKGNAME=	${DISTNAME:S/^/maradns-/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
 
-HOMEPAGE=	http://maradns.samiam.org/deadwood
+HOMEPAGE=	https://maradns.samiam.org/deadwood
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://maradns.samiam.org/deadwood/stable/ \
-		http://maradns.samiam.org/deadwood/stable/old/
+MASTER_SITES=	${HOMEPAGE}/stable/ \
+		${HOMEPAGE}/stable/old/
 
 MAKE_FLAGS=	FLAGS="${CFLAGS} -DIPV6" CC="${CC}"
 WRKSRC=		${WRKDIST}/src
