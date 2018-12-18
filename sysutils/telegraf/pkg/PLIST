@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 19:31:28 landry Exp $
+@newgroup _telegraf:826
+@newuser _telegraf:826:_telegraf:daemon:telegraf user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/telegraf
+@bin bin/stress_test_write
+@bin bin/telegraf
+@bin bin/thrift_serialize
+share/examples/telegraf/
+@sample ${SYSCONFDIR}/telegraf/
+share/examples/telegraf/telegraf.conf
+@sample ${SYSCONFDIR}/telegraf/telegraf.conf

@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: telegraf.rc,v 1.1.1.1 2018/12/18 19:31:28 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/telegraf"
+daemon_user="_telegraf"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

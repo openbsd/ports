@@ -1,0 +1,9 @@
+Telegraf is an agent for collecting, processing, aggregating, and
+writing metrics. Plugin-driven, it has the concept of 4 distinct plugin
+types:
+* Input Plugins collect metrics from the system, services, or 3rd party
+  APIs
+* Processor Plugins transform, decorate, and/or filter metrics
+* Aggregator Plugins create aggregate metrics (e.g. mean, min, max,
+  quantiles, etc.)
+* Output Plugins write metrics to various destinations
