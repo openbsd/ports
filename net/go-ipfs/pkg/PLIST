@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 11:58:21 edd Exp $
+@newgroup _go-ipfs:825
+@newuser _go-ipfs:825:825:daemon:IPFS Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/go_ipfs
+@mode 750
+@owner _go-ipfs
+@group _go-ipfs
+@sample ${VARBASE}/go-ipfs/
+@mode
+@owner
+@group
+@bin bin/ipfs
+share/doc/pkg-readmes/${PKGSTEM}

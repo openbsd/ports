@@ -1,0 +1,19 @@
+#!/bin/ksh
+#
+# $OpenBSD: go_ipfs.rc,v 1.1.1.1 2018/12/18 11:58:21 edd Exp $
+
+daemon="${TRUEPREFIX}/bin/ipfs"
+daemon_user="_go-ipfs"
+daemon_flags="daemon"
+daemon_timeout=60
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "IPFS_PATH=\"${VARBASE}/go-ipfs\" ${daemon} ${daemon_flags}"
+}
+
+rc_cmd $1

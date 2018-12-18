@@ -1,0 +1,37 @@
+$OpenBSD: README,v 1.1.1.1 2018/12/18 11:58:21 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+First Run
+=========
+
+If you are running ${PKGSTEM} for the first time, you will have to initialize
+its database first.
+
+Run as root:
+
+	# su -l -s /bin/sh _go-ipfs -c \
+	    "IPFS_PATH=${VARBASE}/go-ipfs ${LOCALBASE}/bin/ipfs init"
+
+File Descriptors
+================
+
+${PKGSTEM} needs a lot of file descriptors. You will need an entry like this in
+your login.conf(5):
+
+	go_ipfs:\
+		:openfiles=2048:\
+		:tc=daemon:
+
+Don't forget to rebuild the login.conf.db file (if necessary):
+
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+Web Interface
+=============
+
+${PKGSTEM} serves up a web interface on:
+
+	 http://localhost:5001/webui/
