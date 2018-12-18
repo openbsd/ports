@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.332 2018/12/16 15:33:44 landry Exp $
+$OpenBSD: user.list,v 1.333 2018/12/18 11:23:03 edd Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -333,3 +333,4 @@ id  user		group		port options
 822 _apertium-apy	_apertium-apy	www/apertium-apy
 823 _opendkim		_opendkim	mail/opendkim
 824 _traccar		_traccar	geo/traccar
+825 _go-ipfs		_go-ipfs	net/go-ipfs
