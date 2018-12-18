@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile.inc,v 1.8 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2018/12/18 09:39:17 rsadowski Exp $
+
+DIST_SUBDIR =	kde-applications
 
 .if !defined(CATEGORIES)
 ERRORS +=		"Fatal: missing CATEGORIES"
 .endif
 CATEGORIES +=		x11/kde-applications
 
-MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
 # usual KDE rules:
-# LGPLv2.1+, GPLv2+
+# LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE_CDROM ?=	Yes
 
-KDE5 ?=			No
-.if ${KDE5:L} == "yes"
-MODULES :=		devel/kf5 ${MODULES}
-VERSION ?=		18.08.2
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
-.else
-MODULES :=		x11/kde4 ${MODULES}
-VERSION ?=		15.08.3
-MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/applications/${VERSION}/src/}
-.endif
+# Do not rely on devel/cmake here: additional modules that are
+# set up in ports may have, say, lang/python before devel/cmake,
+# thus making lang/python evaluating first. And when lang/python
+# sees empty CONFIGURE_STYLE, it forces that this is Python
+# module port, and breaks build.
+CONFIGURE_STYLE =	cmake

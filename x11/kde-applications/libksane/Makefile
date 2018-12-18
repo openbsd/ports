@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 10:21:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
@@ -13,14 +13,12 @@ WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += m sane
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/ki18n \
+LIB_DEPENDS +=	devel/kf5/ki18n \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \

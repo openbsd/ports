@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 08:46:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 include/libkeduvocdocument/
 include/libkeduvocdocument/KEduVocArticle
 include/libkeduvocdocument/KEduVocConjugation
@@ -41,7 +41,6 @@ lib/cmake/libkeduvocdocument/LibKEduVocDocumentTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/libkeduvocdocument/LibKEduVocDocumentTargets.cmake
 @lib lib/libKEduVocDocument.so.${LIBKEduVocDocument_VERSION}
 share/locale/ar/LC_MESSAGES/libkeduvocdocument.mo
-share/locale/ast/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/bg/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/bs/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/ca/LC_MESSAGES/libkeduvocdocument.mo

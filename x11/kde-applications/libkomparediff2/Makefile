@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
@@ -15,14 +15,11 @@ WANTLIB += m
 
 KDE5 =		Yes
 
-MODULES +=	lang/python
+MODKDE5_TRANSLATIONS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
 
-RUN_DEPENDS =	devel/kf5/kdoctools
-
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \

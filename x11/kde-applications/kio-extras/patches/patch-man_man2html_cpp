@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_man2html_cpp,v 1.1.1.1 2018/11/08 07:55:46 rsadowski Exp $
+$OpenBSD: patch-man_man2html_cpp,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 Index: man/man2html.cpp
 --- man/man2html.cpp.orig
 +++ man/man2html.cpp
-@@ -5966,7 +5966,7 @@ void scan_man_page(const char *man_page)
+@@ -6054,7 +6054,7 @@ void scan_man_page(const char *man_page)
    output_possible = false;
    int strLength = qstrlen(man_page);
    char *buf = new char[strLength + 2];

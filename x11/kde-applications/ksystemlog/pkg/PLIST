@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 08:39:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/ksystemlog
@@ -62,7 +62,6 @@ share/kxmlgui5/
 share/kxmlgui5/ksystemlog/
 share/kxmlgui5/ksystemlog/ksystemlogui.rc
 share/locale/ar/LC_MESSAGES/ksystemlog.mo
-share/locale/ast/LC_MESSAGES/ksystemlog.mo
 share/locale/bg/LC_MESSAGES/ksystemlog.mo
 share/locale/bs/LC_MESSAGES/ksystemlog.mo
 share/locale/ca/LC_MESSAGES/ksystemlog.mo

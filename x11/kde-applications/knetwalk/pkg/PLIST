@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/knetwalk
 @bin bin/knetwalk
@@ -74,7 +74,6 @@ share/knetwalk/themes/electronic.desktop
 share/knetwalk/themes/electronic.svgz
 share/knetwalk/themes/electronic_preview.png
 share/locale/ar/LC_MESSAGES/knetwalk.mo
-share/locale/ast/LC_MESSAGES/knetwalk.mo
 share/locale/bg/LC_MESSAGES/knetwalk.mo
 share/locale/bs/LC_MESSAGES/knetwalk.mo
 share/locale/ca/LC_MESSAGES/knetwalk.mo

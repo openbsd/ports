@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 06:57:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:17 rsadowski Exp $
 
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${VERSION}
@@ -14,17 +14,19 @@ WANTLIB += KF5SonnetUi KF5Su KF5TextWidgets KF5WidgetsAddons KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kinit \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit \
-		x11/gtk+3,-guic
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kauth \
+BUILD_DEPENDS +=devel/kf5/kinit \
+
+RUN_DEPENDS +=	misc/shared-mime-info \
+		devel/kf5/kinit \
+
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

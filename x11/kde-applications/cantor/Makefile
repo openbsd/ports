@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/18 09:39:17 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -19,11 +19,12 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml Qt5XmlPatterns c
 WANTLIB += cln m python2.7 python3.6m qalculate spectre
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
-WANTLIB += luajit-${MODLUA_DEFAULT_VERSION}
+WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} KF5SyntaxHighlighting
 
-MODULES =	lang/lua \
+MODULES +=	fortran \
+		lang/lua \
 		lang/python \
-		fortran
+		x11/kde-applications
 
 MODFORTRAN_COMPILER =	gfortran
 
@@ -31,39 +32,30 @@ COMPILER =	base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS+=	devel/kf5/kdoctools \
-		devel/kf5/kguiaddons \
-		devel/kf5/kitemmodels \
-		devel/kf5/kwindowsystem \
-		devel/kf5/threadweaver \
-		devel/gettext-tools
-
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/kf5/kguiaddons \
-		devel/kf5/kitemmodels \
-		devel/kf5/kwindowsystem \
-		devel/kf5/threadweaver \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
-
-LIB_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_2} \
-		lang/python/${MODPY_DEFAULT_VERSION_3} \
-		x11/kde-applications/analitza \
-		x11/qt5/qtxmlpatterns \
-		devel/kf5/kconfig \
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+# XXXX MOR# XXXX MOREE
+LIB_DEPENDS+=	devel/kf5/kconfig \
 		devel/kf5/kcrash \
 		devel/kf5/kiconthemes \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kparts \
+		devel/kf5/kpty \
 		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
 		devel/kf5/kxmlgui \
-		devel/kf5/kpty \
 		lang/luajit \
+		lang/python/${MODPY_DEFAULT_VERSION_2} \
+		lang/python/${MODPY_DEFAULT_VERSION_3} \
+		math/R \
 		math/libqalculate \
 		print/libspectre \
-		math/R
+		x11/kde-applications/analitza \
+		devel/kf5/syntax-highlighting \
+		x11/qt5/qtxmlpatterns
 
 TEST_IS_INTERACTIVE =	X11
 

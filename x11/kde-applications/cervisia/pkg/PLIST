@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 06:57:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
+@pkgpath x11/kde4/cervisia
 @bin bin/cervisia
 @bin bin/cvsaskpass
 @bin bin/cvsservice5
@@ -154,8 +155,6 @@ share/kxmlgui5/cervisiapart/
 share/kxmlgui5/cervisiapart/cervisiaui.rc
 share/locale/ar/LC_MESSAGES/cervisia.mo
 share/locale/ar/LC_MESSAGES/cvsservice.mo
-share/locale/ast/LC_MESSAGES/cervisia.mo
-share/locale/ast/LC_MESSAGES/cvsservice.mo
 share/locale/bs/LC_MESSAGES/cervisia.mo
 share/locale/bs/LC_MESSAGES/cvsservice.mo
 share/locale/ca/LC_MESSAGES/cervisia.mo

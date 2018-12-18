@@ -11,6 +11,8 @@ SHARED_LIBS +=  KF5KDcraw                 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m raw
 
-LIB_DEPENDS =	graphics/libraw
+MODULES +=	x11/kde-applications
+
+LIB_DEPENDS +=	graphics/libraw
 
 .include <bsd.port.mk>

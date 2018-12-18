@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict marble-<=4.14.3
-@bin bin/animation-video
 @bin bin/marble
 @bin bin/marble-qt
-@bin bin/tour-preview
 include/astro/
 include/astro/astr2lib.h
 include/astro/astrolib.h
@@ -112,10 +110,11 @@ include/marble/MarbleMap.h
 include/marble/MarbleMath.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
-include/marble/MarbleWebView.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MarbleWidgetPopupMenu.h
+include/marble/NullMarbleWebView.h
+include/marble/NullTinyWebBrowser.h
 include/marble/OsmcSymbol.h
 include/marble/ParseRunnerPlugin.h
 include/marble/ParsingRunner.h
@@ -160,7 +159,6 @@ include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
 include/marble/TileId.h
 include/marble/TileLevelRangeWidget.h
-include/marble/TinyWebBrowser.h
 include/marble/TourControlEditWidget.h
 include/marble/TourItemDelegate.h
 include/marble/TourPlayback.h
@@ -223,12 +221,10 @@ lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
 lib/marble/plugins/libNominatimSearchPlugin.so
 lib/marble/plugins/libNotesPlugin.so
 lib/marble/plugins/libOSRMPlugin.so
-lib/marble/plugins/libOpenDesktopPlugin.so
 lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
 lib/marble/plugins/libOpenRouteServicePlugin.so
 lib/marble/plugins/libOsmPlugin.so
 lib/marble/plugins/libOverviewMap.so
-lib/marble/plugins/libPhoto.so
 lib/marble/plugins/libPn2Plugin.so
 lib/marble/plugins/libPntPlugin.so
 lib/marble/plugins/libPositionMarker.so
@@ -242,8 +238,6 @@ lib/marble/plugins/libShpPlugin.so
 lib/marble/plugins/libSpeedometer.so
 lib/marble/plugins/libStarsPlugin.so
 lib/marble/plugins/libSunPlugin.so
-lib/marble/plugins/libWeather.so
-lib/marble/plugins/libWikipedia.so
 lib/marble/plugins/libYoursPlugin.so
 lib/plugins/
 lib/plugins/designer/
@@ -270,71 +264,6 @@ share/applications/marble_shp.desktop
 share/applications/marble_worldwind.desktop
 share/applications/org.kde.marble-qt.desktop
 share/applications/org.kde.marble.desktop
-share/apps/
-share/apps/marble/
-share/apps/marble/examples/
-share/apps/marble/examples/basic-routing/
-share/apps/marble/examples/basic-routing/CMakeLists.txt
-share/apps/marble/examples/basic-routing/Readme.txt
-@bin share/apps/marble/examples/basic-routing/basic-routing
-share/apps/marble/examples/basic-routing/main.cpp
-share/apps/marble/examples/custom-layers/
-share/apps/marble/examples/custom-layers/CMakeLists.txt
-share/apps/marble/examples/custom-layers/Readme.txt
-@bin share/apps/marble/examples/custom-layers/custom-layers
-share/apps/marble/examples/custom-layers/main.cpp
-share/apps/marble/examples/geopainter/
-share/apps/marble/examples/geopainter/CMakeLists.txt
-share/apps/marble/examples/geopainter/Readme.txt
-@bin share/apps/marble/examples/geopainter/geopainter
-share/apps/marble/examples/geopainter/main.cpp
-share/apps/marble/examples/hello-marble/
-share/apps/marble/examples/hello-marble/CMakeLists.txt
-share/apps/marble/examples/hello-marble/Readme.txt
-@bin share/apps/marble/examples/hello-marble/hello-marble
-share/apps/marble/examples/hello-marble/hello-marble.pro
-share/apps/marble/examples/hello-marble/main.cpp
-share/apps/marble/examples/kml-inspector/
-share/apps/marble/examples/kml-inspector/CMakeLists.txt
-share/apps/marble/examples/kml-inspector/Readme.txt
-@bin share/apps/marble/examples/kml-inspector/kml-inspector
-share/apps/marble/examples/kml-inspector/main.cpp
-share/apps/marble/examples/map-controls/
-share/apps/marble/examples/map-controls/CMakeLists.txt
-share/apps/marble/examples/map-controls/Readme.txt
-share/apps/marble/examples/map-controls/main.cpp
-@bin share/apps/marble/examples/map-controls/map-controls
-share/apps/marble/examples/map-properties/
-share/apps/marble/examples/map-properties/CMakeLists.txt
-share/apps/marble/examples/map-properties/Readme.txt
-share/apps/marble/examples/map-properties/main.cpp
-@bin share/apps/marble/examples/map-properties/map-properties
-share/apps/marble/examples/marble-game/
-share/apps/marble/examples/marble-game/MapTackRoundHeadGreen.png
-share/apps/marble/examples/marble-game/MapTackRoundHeadRed.png
-@bin share/apps/marble/examples/marble-game/marble-game
-share/apps/marble/examples/overlay-rendering/
-share/apps/marble/examples/overlay-rendering/CMakeLists.txt
-share/apps/marble/examples/overlay-rendering/Readme.txt
-share/apps/marble/examples/overlay-rendering/main.cpp
-@bin share/apps/marble/examples/overlay-rendering/overlay-rendering
-share/apps/marble/examples/reverse-geocoding/
-share/apps/marble/examples/reverse-geocoding/CMakeLists.txt
-share/apps/marble/examples/reverse-geocoding/Readme.txt
-share/apps/marble/examples/reverse-geocoding/main.cpp
-@bin share/apps/marble/examples/reverse-geocoding/reverse-geocoding
-share/apps/marble/examples/search/
-share/apps/marble/examples/search/CMakeLists.txt
-share/apps/marble/examples/search/Readme.txt
-share/apps/marble/examples/search/main.cpp
-@bin share/apps/marble/examples/search/search
-share/apps/marble/examples/squad-interpolation/
-@bin share/apps/marble/examples/squad-interpolation/squad-interpolation
-share/apps/marble/examples/vehicletracking/
-share/apps/marble/examples/vehicletracking/CMakeLists.txt
-@bin share/apps/marble/examples/vehicletracking/vehicletracking
-share/apps/marble/examples/vehicletracking/vehicletracking.cpp
-share/apps/marble/examples/vehicletracking/vehicletracking.h
 share/config.kcfg/
 share/config.kcfg/marble.kcfg
 share/doc/HTML/ca/marble/
@@ -395,7 +324,6 @@ share/doc/HTML/es/marble/configure-plugins.png
 share/doc/HTML/es/marble/configure-view.png
 share/doc/HTML/es/marble/index.cache.bz2
 share/doc/HTML/es/marble/index.docbook
-share/doc/HTML/es/marble/logo-1.png
 share/doc/HTML/es/marble/mapview-1.png
 share/doc/HTML/es/marble/measure-1.png
 share/doc/HTML/es/marble/quick-1.png
@@ -525,6 +453,7 @@ share/doc/HTML/uk/marble/search-2.png
 share/examples/marble-kf5/
 share/examples/marble-kf5/xdg/
 share/examples/marble-kf5/xdg/marble.knsrc
+@sample ${SYSCONFDIR}/xdg/marble.knsrc
 share/icons/hicolor/128x128/apps/marble.png
 share/icons/hicolor/16x16/apps/marble.png
 share/icons/hicolor/22x22/apps/marble.png
@@ -547,11 +476,6 @@ share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
 share/locale/ar/LC_MESSAGES/marble.mo
 share/locale/ar/LC_MESSAGES/marble_qt.qm
-share/locale/ast/LC_MESSAGES/marble.mo
-share/locale/ast/LC_MESSAGES/marble_qt.qm
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
-share/locale/ast/LC_MESSAGES/plasma_runner_marble.mo
-share/locale/ast/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/bg/LC_MESSAGES/marble.mo
 share/locale/bg/LC_MESSAGES/marble_qt.qm
 share/locale/bs/LC_MESSAGES/marble.mo

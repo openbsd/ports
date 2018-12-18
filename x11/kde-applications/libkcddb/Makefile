@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 07:00:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${VERSION}
@@ -16,16 +16,22 @@ WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
 WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml m musicbrainz5
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kconfig \
+LIB_DEPENDS +=	audio/libmusicbrainz5 \
+		devel/kf5/kauth \
 		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
+		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
-		devel/kf5/kwidgetsaddons \
-		audio/libmusicbrainz5
+		devel/kf5/kservice \
+		devel/kf5/kwidgetsaddons
+
 
 .include <bsd.port.mk>

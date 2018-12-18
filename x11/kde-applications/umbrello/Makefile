@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
@@ -19,19 +19,17 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets
 WANTLIB += Qt5Xml c m xml2 xslt
 
-MODULES =	lang/python
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/gettext-tools \
-		devel/kf5/kdoctools \
-		devel/kf5/kcrash
+MODULES +=	x11/kde-applications \
+		lang/python
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/kf5/kcrash \
-		x11/gtk+3,-guic \
-		devel/desktop-file-utils \
-		math/graphviz
+RUN_DEPENDS +=	math/graphviz
 
-LIB_DEPENDS =	devel/kf5/ki18n \
+LIB_DEPENDS +=	devel/kf5/ki18n \
 		devel/kf5/karchive \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -46,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/kdelibs4support \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtwebkit \
+		x11/qt5/qtsvg \
 		textproc/libxslt \
 		textproc/libxml
 

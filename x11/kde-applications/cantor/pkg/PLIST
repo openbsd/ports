@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/18 09:39:17 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
+@bin bin/cantor_python2server
 @bin bin/cantor_python3server
 @bin bin/cantor_rserver
 @bin bin/cantor_scripteditor
@@ -131,7 +132,6 @@ share/doc/HTML/pt/cantor/index.docbook
 share/doc/HTML/pt_BR/cantor/
 share/doc/HTML/pt_BR/cantor/index.cache.bz2
 share/doc/HTML/pt_BR/cantor/index.docbook
-share/doc/HTML/pt_BR/cantor/latex_formula.png
 share/doc/HTML/pt_BR/cantor/screenshot.png
 share/doc/HTML/ru/cantor/
 share/doc/HTML/ru/cantor/index.cache.bz2
@@ -211,7 +211,6 @@ share/kxmlgui5/cantor/cantor_runscript_assistant.rc
 share/kxmlgui5/cantor/cantor_scripteditor.rc
 share/kxmlgui5/cantor/cantor_shell.rc
 share/kxmlgui5/cantor/cantor_solve_assistant.rc
-share/locale/ast/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo

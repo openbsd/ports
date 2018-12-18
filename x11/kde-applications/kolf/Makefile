@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kolf
 
@@ -22,20 +21,18 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets
 WANTLIB += Qt5Xml c m
 
-MODULES =	multimedia/phonon
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtdeclarative
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
-		devel/desktop-file-utils \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtdeclarative
+BUILD_DEPENDS +=x11/qt5/qtquickcontrols
+RUN_DEPENDS +=	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kwindowsystem \
 		devel/kf5/knotifications \
@@ -51,6 +48,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kio \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		x11/qt5/qtdeclarative \
 		x11/kde-applications/libkdegames
 
 .include <bsd.port.mk>

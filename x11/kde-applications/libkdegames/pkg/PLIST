@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 22:27:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 include/KF5/KF5KDEGames/
 include/KF5/KF5KDEGames/KDE/
 include/KF5/KF5KDEGames/KDE/KExtHighscore
@@ -147,9 +147,12 @@ share/carddecks/svg-xskat-german/11.png
 share/carddecks/svg-xskat-german/COPYRIGHT
 share/carddecks/svg-xskat-german/german.svgz
 share/carddecks/svg-xskat-german/index.desktop
+share/examples/libkdegames-kf5/
+share/examples/libkdegames-kf5/xdg/
+share/examples/libkdegames-kf5/xdg/libkdegames.categories
+@sample ${SYSCONFDIR}/xdg/libkdegames.categories
 share/kconf_update/kgthemeprovider-migration.upd
 share/locale/ar/LC_MESSAGES/libkdegames5.mo
-share/locale/ast/LC_MESSAGES/libkdegames5.mo
 share/locale/bg/LC_MESSAGES/libkdegames5.mo
 share/locale/bs/LC_MESSAGES/libkdegames5.mo
 share/locale/ca/LC_MESSAGES/libkdegames5.mo

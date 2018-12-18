@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kollision
 @bin bin/kollision
@@ -83,7 +83,6 @@ share/kollision/sounds/ball_leaving.ogg
 share/kollision/sounds/hit_wall.ogg
 share/kollision/sounds/start.ogg
 share/kollision/sounds/you_lose.ogg
-share/locale/ast/LC_MESSAGES/kollision.mo
 share/locale/bs/LC_MESSAGES/kollision.mo
 share/locale/ca/LC_MESSAGES/kollision.mo
 share/locale/ca@valencia/LC_MESSAGES/kollision.mo
@@ -132,5 +131,5 @@ share/locale/zh_TW/LC_MESSAGES/kollision.mo
 share/metainfo/
 share/metainfo/org.kde.kollision.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/oxygen
+@tag update-desktop-database

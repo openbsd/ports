@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 lib/qt5/plugins/fileviewbazaarplugin.so
 lib/qt5/plugins/fileviewdropboxplugin.so
@@ -13,10 +13,6 @@ share/kservices5/fileviewdropboxplugin.desktop
 share/kservices5/fileviewgitplugin.desktop
 share/kservices5/fileviewhgplugin.desktop
 share/kservices5/fileviewsvnplugin.desktop
-share/locale/ast/LC_MESSAGES/fileviewbazaarplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewgitplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewhgplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewhgplugin.mo

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =		face detection library for KDE
 DISTNAME =		libkface-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		kface		0.1
 
@@ -16,6 +16,8 @@ WANTLIB += opencv_calib3d opencv_contrib opencv_core opencv_features2d
 WANTLIB += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
 WANTLIB += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
 WANTLIB += opencv_ocl opencv_photo opencv_video
+
+MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =		graphics/opencv
 

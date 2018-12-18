@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:22:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	KDE bookmarks editor
 DISTNAME =	keditbookmarks-${VERSION}
@@ -16,13 +16,13 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

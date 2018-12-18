@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 07:55:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
@@ -20,18 +20,18 @@ WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml m
 WANTLIB += mtp phonon4qt5experimental smbclient ssh tag util
 
-MODULES =	multimedia/phonon
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/gettext-tools \
-		devel/kf5/kdoctools \
-		devel/gperf \
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdoctools \
-		devel/gperf \
+BUILD_DEPENDS +=devel/gperf
+
+RUN_DEPENDS +=	devel/gperf \
 		misc/shared-mime-info
 
-LIB_DEPENDS =	audio/taglib \
+LIB_DEPENDS +=	audio/taglib \
 		devel/kf5/kactivities \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -60,8 +60,8 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/sonnet \
 		devel/libmtp \
 		graphics/openexr \
-		net/samba \
 		security/libssh \
+		net/samba \
 		x11/qt5/qtsvg
 
 TEST_IS_INTERACTIVE =	X11

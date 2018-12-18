@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 14:21:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:17 rsadowski Exp $
 @conflict kde-l10n-*
+@pkgpath x11/kde4/artikulate
 @bin bin/artikulate
 @bin bin/artikulate_editor
 @lib lib/libartikulatecore.so.${LIBartikulatecore_VERSION}
@@ -92,7 +93,6 @@ share/doc/HTML/uk/artikulate/index.cache.bz2
 share/doc/HTML/uk/artikulate/index.docbook
 share/examples/artikulate/
 share/examples/artikulate/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/artikulate/xdg/artikulate.knsrc
 @sample ${SYSCONFDIR}/xdg/artikulate.knsrc
 share/icons/hicolor/16x16/actions/artikulate-course.png
@@ -127,7 +127,6 @@ share/icons/hicolor/scalable/actions/artikulate-sentence.svgz
 share/icons/hicolor/scalable/actions/artikulate-word.svgz
 share/icons/hicolor/scalable/actions/language-artikulate.svg
 share/icons/hicolor/scalable/apps/artikulate.svg
-share/locale/ast/LC_MESSAGES/artikulate.mo
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo
 share/locale/ca@valencia/LC_MESSAGES/artikulate.mo

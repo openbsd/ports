@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
+@conflict kde-i18n-*
 @pkgpath x11/kde4/konquest
 @bin bin/konquest
 share/applications/org.kde.konquest.desktop
@@ -65,7 +66,6 @@ share/kxmlgui5/
 share/kxmlgui5/konquest/
 share/kxmlgui5/konquest/konquestui.rc
 share/locale/ar/LC_MESSAGES/konquest.mo
-share/locale/ast/LC_MESSAGES/konquest.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
 share/locale/bs/LC_MESSAGES/konquest.mo
 share/locale/ca/LC_MESSAGES/konquest.mo

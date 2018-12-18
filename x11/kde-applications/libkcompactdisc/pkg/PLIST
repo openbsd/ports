@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 06:59:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 include/KF5/KCompactDisc/
 include/KF5/KCompactDisc/KCompactDisc
@@ -13,7 +13,6 @@ lib/cmake/KF5CompactDisc/KF5CompactDiscTargets.cmake
 @lib lib/libKF5CompactDisc.so.${LIBKF5CompactDisc_VERSION}
 share/kf5/mkspecs/qt_KCompactDisc.pri
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
-share/locale/ast/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bs/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ca/LC_MESSAGES/libkcompactdisc.mo

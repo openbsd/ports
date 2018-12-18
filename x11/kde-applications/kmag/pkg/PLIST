@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 08:19:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kmag
@@ -60,7 +60,6 @@ share/kxmlgui5/
 share/kxmlgui5/kmag/
 share/kxmlgui5/kmag/kmagui.rc
 share/locale/ar/LC_MESSAGES/kmag.mo
-share/locale/ast/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/bs/LC_MESSAGES/kmag.mo
 share/locale/ca/LC_MESSAGES/kmag.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/11/24 18:53:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kblocks
 @bin bin/kblocks
@@ -48,6 +48,8 @@ share/doc/HTML/uk/kblocks/index.cache.bz2
 share/doc/HTML/uk/kblocks/index.docbook
 share/examples/kblocks/
 share/examples/kblocks/xdg/
+share/examples/kblocks/xdg/kblocks.categories
+@sample ${SYSCONFDIR}/xdg/kblocks.categories
 share/examples/kblocks/xdg/kblocks.knsrc
 @sample ${SYSCONFDIR}/xdg/kblocks.knsrc
 share/icons/hicolor/128x128/apps/kblocks.png
@@ -74,7 +76,6 @@ share/kxmlgui5/
 share/kxmlgui5/kblocks/
 share/kxmlgui5/kblocks/kblocksui.rc
 share/locale/ar/LC_MESSAGES/kblocks.mo
-share/locale/ast/LC_MESSAGES/kblocks.mo
 share/locale/bg/LC_MESSAGES/kblocks.mo
 share/locale/bs/LC_MESSAGES/kblocks.mo
 share/locale/ca/LC_MESSAGES/kblocks.mo

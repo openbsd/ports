@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/10 16:00:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/step
 @bin bin/step
@@ -68,6 +68,7 @@ share/doc/HTML/uk/step/tutorials.docbook
 share/examples/step/
 share/examples/step/xdg/
 share/examples/step/xdg/step.knsrc
+@sample ${SYSCONFDIR}/xdg/step.knsrc
 share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/16x16/apps/step.png
 share/icons/hicolor/22x22/actions/pointer.png
@@ -102,8 +103,6 @@ share/kxmlgui5/
 share/kxmlgui5/step/
 share/kxmlgui5/step/stepui.rc
 share/locale/ar/LC_MESSAGES/step.mo
-share/locale/ast/LC_MESSAGES/step.mo
-share/locale/ast/LC_MESSAGES/step_qt.qm
 share/locale/bg/LC_MESSAGES/step.mo
 share/locale/bg/LC_MESSAGES/step_qt.qm
 share/locale/bs/LC_MESSAGES/step.mo

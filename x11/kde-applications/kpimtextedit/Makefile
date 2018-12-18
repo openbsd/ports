@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
@@ -16,20 +16,19 @@ WANTLIB += KF5SyntaxHighlighting KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5TextToSpeech Qt5Widgets
 WANTLIB += Qt5Xml c m
 
-MODULES +=	lang/python
+MODKDE5_TRANSLATIONS = yes
 
-MODPY_RUNDEP =	No
+MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/ktextwidgets \
+BUILD_DEPENDS +=devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
 		x11/qt5/qttools
 
-RUN_DEPENDS =	devel/kf5/ktextwidgets \
+RUN_DEPENDS +=	devel/kf5/ktextwidgets \
 		devel/kf5/kdesignerplugin \
 		x11/qt5/qttools
 
-LIB_DEPENDS =	devel/kf5/kcodecs \
+LIB_DEPENDS +=	devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \

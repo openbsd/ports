@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 include/KF5/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonTextEditAction
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableWidget
@@ -37,10 +36,8 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextUtils
 include/KF5/KPIMTextEdit/kpimtextedit/
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
-include/KF5/KPIMTextEdit/kpimtextedit/config-kpimtextedit.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticontexteditaction.h
-include/KF5/KPIMTextEdit/kpimtextedit/insertimagedialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagewidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttabledialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttablewidget.h
@@ -85,7 +82,6 @@ share/examples/kpimtextedit/xdg/kpimtextedit.categories
 @sample ${SYSCONFDIR}/xdg/kpimtextedit.categories
 share/kf5/mkspecs/qt_KPIMTextEdit.pri
 share/locale/ar/LC_MESSAGES/libkpimtextedit.mo
-share/locale/ast/LC_MESSAGES/libkpimtextedit.mo
 share/locale/bs/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpimtextedit.mo

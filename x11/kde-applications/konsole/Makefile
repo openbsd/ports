@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
-CATEGORIES =	editors
+CATEGORIES =	editors x11
 
 SHARED_LIBS +=  konsoleprivate            0.0 # 17.08
 
@@ -18,16 +18,16 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit \
-		devel/gettext
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/attica \
+BUILD_DEPENDS +=devel/kf5/kinit
+RUN_DEPENDS +=	devel/kf5/kinit
+
+LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kglobalaccel \
 		devel/kf5/kcodecs \
 		devel/kf5/kbookmarks \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 14:21:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:17 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
@@ -17,17 +17,19 @@ WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Widgets
 WANTLIB += Qt5Xml Qt5XmlPatterns c m
 
-MODULES =	lang/python
+MODULES +=	x11/kde-applications \
+		lang/python
 
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+BUILD_DEPENDS +=x11/qt5/qtquickcontrols
+RUN_DEPENDS +=	x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =	devel/kf5/karchive \
+LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -39,6 +41,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		x11/qt5/qtdeclarative \
 		x11/qt5/qtxmlpatterns \
 		x11/qt5/qtmultimedia
 

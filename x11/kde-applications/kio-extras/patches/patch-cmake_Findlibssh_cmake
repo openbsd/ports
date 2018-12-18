@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_Findlibssh_cmake,v 1.1 2018/12/18 09:39:19 rsadowski Exp $
+
+Index: cmake/Findlibssh.cmake
+--- cmake/Findlibssh.cmake.orig
++++ cmake/Findlibssh.cmake
+@@ -37,10 +37,6 @@
+ # config by default and fall back to manual lookup iff the config was not found.
+ # https://bugs.kde.org/show_bug.cgi?id=400291
+ # https://bugs.launchpad.net/ubuntu/+source/libssh/+bug/1800135
+-find_package(libssh ${libssh_FIND_VERSION} NO_MODULE QUIET)
+-if(libssh_FOUND)
+-  return()
+-endif()
+ 
+ find_path(LIBSSH_INCLUDE_DIR
+   NAMES

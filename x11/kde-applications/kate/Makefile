@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/08 17:50:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/18 09:39:18 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
@@ -21,38 +20,54 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
 WANTLIB += Qt5Xml c m
 
-MODULES +=	lang/python
+MODULES +=	x11/kde-applications \
+		lang/python
 
-BUILD_DEPENDS =	devel/kf5/kdoctools \
-		devel/kf5/kinit \
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
+BUILD_DEPENDS +=devel/kf5/kinit \
+		devel/kf5/kactivities \
+		devel/kf5/syntax-highlighting
+
+RUN_DEPENDS +=	devel/kf5/kinit \
 		devel/kf5/kactivities \
 		devel/kf5/syntax-highlighting \
-		devel/gettext-tools
+		x11/kde-applications/kio-extras
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/kf5/kinit \
+LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kactivities \
-		devel/kf5/syntax-highlighting \
-		x11/kde-applications/kio-extras \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
-
-LIB_DEPENDS =	devel/kf5/kconfig \
+		devel/kf5/kauth \
+		devel/kf5/kbookmarks \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
+		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kguiaddons \
+		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
+		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
+		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
+		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
+		devel/kf5/ktextwidgets \
+		devel/kf5/kwallet \
 		devel/kf5/kwallet \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
+		devel/kf5/solid \
+		devel/kf5/sonnet \
 		devel/kf5/threadweaver
 
 TEST_IS_INTERACTIVE =	X11

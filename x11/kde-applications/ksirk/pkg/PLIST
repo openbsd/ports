@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/ksirk
 @bin bin/ksirk
@@ -140,6 +140,8 @@ share/doc/HTML/uk/ksirkskineditor/index.cache.bz2
 share/doc/HTML/uk/ksirkskineditor/index.docbook
 share/examples/ksirk/
 share/examples/ksirk/xdg/
+share/examples/ksirk/xdg/ksirk.categories
+@sample ${SYSCONFDIR}/xdg/ksirk.categories
 share/examples/ksirk/xdg/ksirk.knsrc
 @sample ${SYSCONFDIR}/xdg/ksirk.knsrc
 share/icons/hicolor/128x128/apps/ksirk.png
@@ -202,8 +204,6 @@ share/kxmlgui5/ksirk/ksirkui.rc
 share/kxmlgui5/ksirkskineditor/
 share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
-share/locale/ast/LC_MESSAGES/ksirk.mo
-share/locale/ast/LC_MESSAGES/ksirkskineditor.mo
 share/locale/bs/LC_MESSAGES/ksirk.mo
 share/locale/bs/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ca/LC_MESSAGES/ksirk.mo

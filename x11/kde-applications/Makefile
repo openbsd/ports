@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/12/10 16:06:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.39 2018/12/18 09:39:17 rsadowski Exp $
 
      SUBDIR =
 
@@ -67,7 +67,7 @@
      SUBDIR += kjumpingcube
      SUBDIR += klickety
      SUBDIR += klines
-     #SUBDIR += kmahjongg
+     SUBDIR += kmahjongg
      #SUBDIR += kmines
      SUBDIR += knavalbattle
      SUBDIR += knetwalk
@@ -230,10 +230,9 @@
      SUBDIR += libkeduvocdocument
      SUBDIR += libkexiv2
      #SUBDIR += libkgapi
-     SUBDIR += libkgeomap
      SUBDIR += libkipi
      #SUBDIR += libkleo
-     #SUBDIR += libkmahjongg
+     SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
      SUBDIR += libksane
      #SUBDIR += libksieve
@@ -249,6 +248,7 @@
 
      # KDE4
      SUBDIR += libkface
+     SUBDIR += libkgeomap
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta

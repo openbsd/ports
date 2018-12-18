@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
@@ -15,24 +15,30 @@ WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5Sql Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11 Xext c m
 WANTLIB += xcb xcb-xkb xkbfile
 
-MODULES =	lang/python
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools
+MODULES +=	x11/kde-applications
 
-RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=5 \
+BUILD_DEPENDS +=x11/qt5/qtquickcontrols
+
+RUN_DEPENDS +=	x11/kde-applications/kqtquickcharts>=5 \
 		x11/qt5/qtgraphicaleffects \
-		x11/qt5/qtquickcontrols2 \
-		devel/kf5/kdeclarative \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/qt5/qtquickcontrols \
+		x11/qt5/qtquickcontrols2
 
-LIB_DEPENDS =	x11/qt5/qtxmlpatterns \
-		devel/kf5/kcmutils \
+LIB_DEPENDS +=	devel/kf5/kcmutils \
+		devel/kf5/kdeclarative \
+		devel/kf5/ki18n  \
+		devel/kf5/kitemviews \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/ki18n  \
-		devel/kf5/kitemviews
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtxmlpatterns \
+		x11/qt5/qtx11extras
 
 .include <bsd.port.mk>

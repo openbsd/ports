@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 08:59:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kde-baseapps-*
@@ -57,11 +57,13 @@ share/examples/kfind/
 share/examples/kfind/xdg/
 share/examples/kfind/xdg/kfind.categories
 @sample ${SYSCONFDIR}/xdg/kfind.categories
+share/icons/hicolor/128x128/apps/kfind.png
 share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/22x22/apps/kfind.png
 share/icons/hicolor/32x32/apps/kfind.png
 share/icons/hicolor/48x48/apps/kfind.png
 share/icons/hicolor/64x64/apps/kfind.png
+share/icons/hicolor/scalable/apps/kfind.svgz
 share/locale/ar/LC_MESSAGES/kfind.mo
 share/locale/ast/LC_MESSAGES/kfind.mo
 share/locale/bg/LC_MESSAGES/kfind.mo

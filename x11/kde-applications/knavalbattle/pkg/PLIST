@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/knavalbattle
 @bin bin/knavalbattle
@@ -68,7 +68,6 @@ share/kxmlgui5/
 share/kxmlgui5/knavalbattle/
 share/kxmlgui5/knavalbattle/knavalbattleui.rc
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
-share/locale/ast/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo
 share/locale/bs/LC_MESSAGES/knavalbattle.mo
 share/locale/ca/LC_MESSAGES/knavalbattle.mo

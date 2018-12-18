@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/20 04:33:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
@@ -14,17 +14,17 @@ WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
 
-MODULES =	multimedia/phonon
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+RUN_DEPENDS +=	misc/shared-mime-info
 
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

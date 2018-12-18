@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 07:00:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kdebase-<4
 @conflict kde-l10n-*
 include/KF5/KCddb/
@@ -91,8 +91,6 @@ share/kf5/mkspecs/qt_KCddb.pri
 share/kservices5/libkcddb.desktop
 share/locale/ar/LC_MESSAGES/kcmcddb.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
-share/locale/ast/LC_MESSAGES/kcmcddb.mo
-share/locale/ast/LC_MESSAGES/libkcddb.mo
 share/locale/bg/LC_MESSAGES/kcmcddb.mo
 share/locale/bg/LC_MESSAGES/libkcddb.mo
 share/locale/bs/LC_MESSAGES/kcmcddb.mo

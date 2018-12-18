@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 10:05:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kanagram
@@ -133,7 +133,6 @@ share/kanagram/ui/sounds/right.wav
 share/kanagram/ui/sounds/wrong.ogg
 share/kanagram/ui/sounds/wrong.wav
 share/locale/ar/LC_MESSAGES/kanagram.mo
-share/locale/ast/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
 share/locale/bs/LC_MESSAGES/kanagram.mo
 share/locale/ca/LC_MESSAGES/kanagram.mo

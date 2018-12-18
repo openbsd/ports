@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:17:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/klettres
@@ -95,6 +95,8 @@ share/doc/HTML/uk/klettres/klettres5.png
 share/doc/HTML/uk/klettres/klettres6.png
 share/examples/klettres/
 share/examples/klettres/xdg/
+share/examples/klettres/xdg/klettres.categories
+@sample ${SYSCONFDIR}/xdg/klettres.categories
 share/examples/klettres/xdg/klettres.knsrc
 @sample ${SYSCONFDIR}/xdg/klettres.knsrc
 share/icons/hicolor/128x128/apps/klettres.png
@@ -1504,7 +1506,6 @@ share/kxmlgui5/
 share/kxmlgui5/klettres/
 share/kxmlgui5/klettres/klettresui.rc
 share/locale/ar/LC_MESSAGES/klettres.mo
-share/locale/ast/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
 share/locale/bs/LC_MESSAGES/klettres.mo
 share/locale/ca/LC_MESSAGES/klettres.mo

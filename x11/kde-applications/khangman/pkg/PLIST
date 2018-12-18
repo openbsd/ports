@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:33:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/khangman
@@ -171,7 +171,6 @@ share/khangman/themes/khangman_winter.svg
 share/khangman/themes/standardthemes.xml
 share/khangman/tr.txt
 share/locale/ar/LC_MESSAGES/khangman.mo
-share/locale/ast/LC_MESSAGES/khangman.mo
 share/locale/bg/LC_MESSAGES/khangman.mo
 share/locale/bs/LC_MESSAGES/khangman.mo
 share/locale/ca/LC_MESSAGES/khangman.mo

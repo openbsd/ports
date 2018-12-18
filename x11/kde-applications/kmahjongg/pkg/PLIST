@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
@@ -260,7 +260,6 @@ share/kxmlgui5/
 share/kxmlgui5/kmahjongg/
 share/kxmlgui5/kmahjongg/kmahjonggui.rc
 share/locale/ar/LC_MESSAGES/kmahjongg.mo
-share/locale/ast/LC_MESSAGES/kmahjongg.mo
 share/locale/bg/LC_MESSAGES/kmahjongg.mo
 share/locale/bs/LC_MESSAGES/kmahjongg.mo
 share/locale/ca/LC_MESSAGES/kmahjongg.mo

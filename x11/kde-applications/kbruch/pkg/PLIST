@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 09:42:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kbruch
@@ -144,7 +144,6 @@ share/kxmlgui5/kbruch/AppMenuWidgetui.rc
 share/kxmlgui5/kbruch/FractionRingWidgetui.rc
 share/kxmlgui5/kbruch/kbruchui.rc
 share/locale/ar/LC_MESSAGES/kbruch.mo
-share/locale/ast/LC_MESSAGES/kbruch.mo
 share/locale/bg/LC_MESSAGES/kbruch.mo
 share/locale/bs/LC_MESSAGES/kbruch.mo
 share/locale/ca/LC_MESSAGES/kbruch.mo

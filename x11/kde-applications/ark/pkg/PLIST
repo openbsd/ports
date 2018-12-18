@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:17 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/ark
 @bin bin/ark
@@ -97,7 +97,6 @@ share/kxmlgui5/
 share/kxmlgui5/ark/
 share/kxmlgui5/ark/ark_viewer.rc
 share/locale/ar/LC_MESSAGES/ark.mo
-share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo
 share/locale/bs/LC_MESSAGES/ark.mo
 share/locale/ca/LC_MESSAGES/ark.mo
@@ -152,6 +151,7 @@ share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
+share/mime/packages/kerfuffle.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database

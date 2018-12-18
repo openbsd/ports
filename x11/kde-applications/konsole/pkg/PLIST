@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kdebase-<4
 @conflict kde-l10n-*
 @pkgpath x11/kde4/konsole
@@ -44,6 +44,8 @@ share/doc/HTML/uk/konsole/index.cache.bz2
 share/doc/HTML/uk/konsole/index.docbook
 share/examples/konsole/
 share/examples/konsole/xdg/
+share/examples/konsole/xdg/konsole.categories
+@sample ${SYSCONFDIR}/xdg/konsole.categories
 share/examples/konsole/xdg/konsole.knsrc
 @sample ${SYSCONFDIR}/xdg/konsole.knsrc
 share/khotkeys/

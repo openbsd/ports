@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kdiamond
 @bin bin/kdiamond
@@ -71,7 +71,6 @@ share/kxmlgui5/
 share/kxmlgui5/kdiamond/
 share/kxmlgui5/kdiamond/kdiamondui.rc
 share/locale/ar/LC_MESSAGES/kdiamond.mo
-share/locale/ast/LC_MESSAGES/kdiamond.mo
 share/locale/bg/LC_MESSAGES/kdiamond.mo
 share/locale/bs/LC_MESSAGES/kdiamond.mo
 share/locale/ca/LC_MESSAGES/kdiamond.mo
@@ -119,6 +118,8 @@ share/locale/ug/LC_MESSAGES/kdiamond.mo
 share/locale/uk/LC_MESSAGES/kdiamond.mo
 share/locale/zh_CN/LC_MESSAGES/kdiamond.mo
 share/locale/zh_TW/LC_MESSAGES/kdiamond.mo
+share/metainfo/
+share/metainfo/org.kde.kdiamond.appdata.xml
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg
 share/sounds/KDiamond-Stone-Touch.ogg

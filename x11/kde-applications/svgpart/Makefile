@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/18 18:25:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
@@ -13,9 +13,11 @@ WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml m
 
-BUILD_DEPENDS +=devel/gettext-tools
+MODKDE5_TRANSLATIONS = yes
 
-LIB_DEPENDS =	devel/kf5/kauth \
+MODULES +=	x11/kde-applications
+
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \

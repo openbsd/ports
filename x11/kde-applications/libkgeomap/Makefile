@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =		library for mapping photos on maps for KDE
 DISTNAME =		libkgeomap-${VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		kgeomap		0.1
 
@@ -20,7 +20,9 @@ WANTLIB += soprano
 LIB_DEPENDS =		${MODKDE4_DEP_DIR}/libkexiv2 \
 			${MODKDE4_DEP_DIR}/marble
 
-MODULES =		multimedia/phonon
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
+
 MODKDE4_USE =		libs
 
 # neede by kgeomap_test_itemmarkertiler

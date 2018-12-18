@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 06:59:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	library for interfacing with CDs
 DISTNAME =	libkcompactdisc-${VERSION}
@@ -12,11 +12,10 @@ SHARED_LIBS +=  KF5CompactDisc            0.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5Solid Qt5Core
 WANTLIB += Qt5DBus m
 
-MODULES +=	multimedia/phonon
+MODKDE5_TRANSLATIONS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools
-
-RUN_DEPENDS +=	devel/gettext
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
 LIB_DEPENDS +=	devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \

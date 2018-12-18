@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
@@ -108,7 +108,6 @@ share/kxmlgui5/dragonplayer/
 share/kxmlgui5/dragonplayer/dragonlogo.png
 share/kxmlgui5/dragonplayer/dragonplayerui.rc
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
-share/locale/ast/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo
 share/locale/bs/LC_MESSAGES/dragonplayer.mo
 share/locale/ca/LC_MESSAGES/dragonplayer.mo

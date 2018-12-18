@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/18 09:39:21 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/umbrello
@@ -58,9 +58,6 @@ share/icons/hicolor/48x48/apps/umbrello.png
 share/icons/hicolor/64x64/apps/umbrello.png
 share/icons/hicolor/scalable/apps/umbrello.svgz
 share/locale/ar/LC_MESSAGES/umbrello.mo
-share/locale/ast/LC_MESSAGES/umbrello.mo
-share/locale/ast/LC_MESSAGES/umbrello_kdevphp.mo
-share/locale/ast/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/bg/LC_MESSAGES/umbrello.mo
 share/locale/bs/LC_MESSAGES/umbrello.mo
 share/locale/bs/LC_MESSAGES/umbrello_kdevphp5.mo

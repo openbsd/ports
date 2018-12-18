@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:33:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	KDE hangman game
 DISTNAME =	khangman-${VERSION}
@@ -13,12 +13,15 @@ WANTLIB += KF5NewStuffCore KF5Package KF5Service KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS +=x11/qt5/qtquickcontrols
+RUN_DEPENDS +=	x11/qt5/qtquickcontrols
 
 LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kauth \

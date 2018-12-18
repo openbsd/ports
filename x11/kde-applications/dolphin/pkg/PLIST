@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict dolphin-plugins-<=4.14.3
 @conflict kde-baseapps-*
@@ -25,7 +25,6 @@ lib/qt5/plugins/kcm_dolphinnavigation.so
 lib/qt5/plugins/kcm_dolphinservices.so
 lib/qt5/plugins/kcm_dolphinviewmodes.so
 share/applications/org.kde.dolphin.desktop
-share/config.kcfg/
 share/config.kcfg/dolphin_compactmodesettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
@@ -174,6 +173,8 @@ share/doc/HTML/uk/dolphin/toolbar.png
 share/doc/HTML/uk/dolphin/viewproperties-dialog.png
 share/examples/dolphin-kf5/
 share/examples/dolphin-kf5/xdg/
+share/examples/dolphin-kf5/xdg/dolphin.categories
+@sample ${SYSCONFDIR}/xdg/dolphin.categories
 share/examples/dolphin-kf5/xdg/servicemenu.knsrc
 @sample ${SYSCONFDIR}/xdg/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
@@ -239,6 +240,5 @@ share/locale/uk/LC_MESSAGES/dolphin.mo
 share/locale/wa/LC_MESSAGES/dolphin.mo
 share/locale/zh_CN/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
-share/metainfo/
 share/metainfo/org.kde.dolphin.appdata.xml
 @tag update-desktop-database

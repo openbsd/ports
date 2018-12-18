@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 10:20:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
@@ -10,22 +10,21 @@ SHARED_LIBS +=  KF5Ldap                   0.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service KF5WidgetsAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets lber ldap
-WANTLIB += m sasl2
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets lber-2.4
+WANTLIB += ldap-2.4 m sasl2
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		devel/kf5/kdoctools \
-		x11/gtk+3,-guic
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	databases/openldap \
+LIB_DEPENDS +=	databases/openldap \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
+		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
+		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		security/cyrus-sasl2
 

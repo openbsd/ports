@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/26 05:30:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:17 rsadowski Exp $
 @pkgpath x11/kde4/analitza
 include/Analitza5/
 include/Analitza5/analitza/
@@ -70,7 +70,6 @@ share/libanalitza/plots/basic_curves.plots
 share/libanalitza/plots/conics.plots
 share/libanalitza/plots/polar.plots
 share/locale/ar/LC_MESSAGES/analitza_qt.qm
-share/locale/ast/LC_MESSAGES/analitza_qt.qm
 share/locale/bs/LC_MESSAGES/analitza_qt.qm
 share/locale/ca/LC_MESSAGES/analitza_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/analitza_qt.qm

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:14:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 include/KF5/KMime/
 include/KF5/KMime/KMime/
 include/KF5/KMime/KMime/Codecs
@@ -34,7 +34,6 @@ lib/cmake/KF5Mime/KF5MimeTargets.cmake
 @lib lib/libKF5Mime.so.${LIBKF5Mime_VERSION}
 share/kf5/mkspecs/qt_KMime.pri
 share/locale/ar/LC_MESSAGES/libkmime5.mo
-share/locale/ast/LC_MESSAGES/libkmime5.mo
 share/locale/bg/LC_MESSAGES/libkmime5.mo
 share/locale/bs/LC_MESSAGES/libkmime5.mo
 share/locale/ca/LC_MESSAGES/libkmime5.mo

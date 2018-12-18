@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/28 18:52:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 
 COMMENT =	collection of plugins to handle mobipocket files
 DISTNAME =	kdegraphics-mobipocket-${VERSION}
@@ -13,7 +13,9 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += m
 
-LIB_DEPENDS =	devel/kf5/kio
+MODULES +=	x11/kde-applications
+
+LIB_DEPENDS +=	devel/kf5/kio
 
 NO_TEST =	Yes
 

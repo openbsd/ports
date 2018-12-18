@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 22:27:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
@@ -19,18 +19,22 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml
 WANTLIB += m openal sndfile
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdbusaddons \
+MODKDE5_TRANSLATIONS = yes
+
+MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS +=devel/kf5/kdbusaddons \
 		devel/kf5/kitemviews \
 		devel/kf5/kglobalaccel \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcrash \
 		devel/kf5/ktextwidgets
 
-RUN_DEPENDS =	devel/kf5/kbookmarks \
-		devel/kf5/kcrash
+RUN_DEPENDS +=	devel/kf5/kbookmarks \
+		devel/kf5/kcrash \
+		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =	devel/kf5/kconfig \
+LIB_DEPENDS +=	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

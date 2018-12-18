@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	Hex Editor
-VERSION =	0.25.3
+VERSION =	0.25.4
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 
@@ -30,16 +30,16 @@ WANTLIB += c m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
-		devel/gettext
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kbookmarks \
+RUN_DEPENDS +=	misc/shared-mime-info
+
+LIB_DEPENDS +=	devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfigwidgets \

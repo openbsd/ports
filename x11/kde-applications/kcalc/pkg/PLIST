@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kcalc
 @bin bin/kcalc
@@ -73,7 +73,6 @@ share/kxmlgui5/
 share/kxmlgui5/kcalc/
 share/kxmlgui5/kcalc/kcalcui.rc
 share/locale/ar/LC_MESSAGES/kcalc.mo
-share/locale/ast/LC_MESSAGES/kcalc.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo
 share/locale/bs/LC_MESSAGES/kcalc.mo
 share/locale/ca/LC_MESSAGES/kcalc.mo

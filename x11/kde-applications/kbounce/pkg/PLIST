@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kbounce
 @bin bin/kbounce
@@ -88,7 +88,6 @@ share/kxmlgui5/
 share/kxmlgui5/kbounce/
 share/kxmlgui5/kbounce/kbounceui.rc
 share/locale/ar/LC_MESSAGES/kbounce.mo
-share/locale/ast/LC_MESSAGES/kbounce.mo
 share/locale/bg/LC_MESSAGES/kbounce.mo
 share/locale/bs/LC_MESSAGES/kbounce.mo
 share/locale/ca/LC_MESSAGES/kbounce.mo
@@ -139,5 +138,7 @@ share/locale/ug/LC_MESSAGES/kbounce.mo
 share/locale/uk/LC_MESSAGES/kbounce.mo
 share/locale/zh_CN/LC_MESSAGES/kbounce.mo
 share/locale/zh_TW/LC_MESSAGES/kbounce.mo
+share/metainfo/
+share/metainfo/org.kde.kbounce.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

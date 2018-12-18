@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/10 15:56:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @bin bin/kalzium
@@ -743,13 +743,6 @@ share/libkdeedu/data/spectra.xml
 share/libkdeedu/data/symbols.csv
 share/libkdeedu/data/symbols2.csv
 share/locale/ar/LC_MESSAGES/kalzium.mo
-share/locale/ast/LC_MESSAGES/kalzium.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_gasCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_kalzium.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/bg/LC_MESSAGES/kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_kalzium.mo

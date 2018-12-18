@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 10:05:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -18,14 +18,16 @@ WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5TextToSpeech Qt5Widgets Qt5Xml c
 WANTLIB += m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kio \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kio
+MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS +=devel/kf5/kio
+
+RUN_DEPENDS +=	devel/kf5/kio
 
 LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kauth \

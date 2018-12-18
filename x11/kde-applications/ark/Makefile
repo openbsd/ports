@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:17 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
@@ -17,24 +17,29 @@ WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml archive c m z zip
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		archivers/bzip2 \
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
+MODULES +=	x11/kde-applications
+
+BUILD_DEPENDS +=archivers/bzip2 \
+		archivers/lzo2 \
+		archivers/p7zip \
+		archivers/rzip \
+		archivers/unrar \
+		archivers/zstd
+
+RUN_DEPENDS +=	archivers/bzip2 \
 		archivers/unrar \
 		archivers/p7zip \
 		archivers/lzo2 \
-		archivers/rzip
+		archivers/rzip \
+		archivers/zstd \
+		misc/shared-mime-info
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		x11/gtk+3,-guic \
-		devel/gettext \
-		archivers/bzip2 \
-		archivers/unrar \
-		archivers/p7zip \
-		archivers/lzo2 \
-		archivers/rzip
-
-LIB_DEPENDS =	archivers/libarchive \
+LIB_DEPENDS +=	archivers/libarchive \
 		archivers/libzip \
 		devel/kf5/karchive \
 		devel/kf5/kauth \

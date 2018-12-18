@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kreversi
 @bin bin/kreversi
@@ -84,7 +84,6 @@ share/kreversi/sounds/
 share/kreversi/sounds/reversi-click.wav
 share/kreversi/sounds/reversi-won.wav
 share/locale/ar/LC_MESSAGES/kreversi.mo
-share/locale/ast/LC_MESSAGES/kreversi.mo
 share/locale/bg/LC_MESSAGES/kreversi.mo
 share/locale/bs/LC_MESSAGES/kreversi.mo
 share/locale/ca/LC_MESSAGES/kreversi.mo

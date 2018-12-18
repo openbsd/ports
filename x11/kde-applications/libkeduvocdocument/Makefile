@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 08:46:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	library for reading and writing vocabulary
 DISTNAME =	libkeduvocdocument-${VERSION}
@@ -12,12 +12,11 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service Qt5Concurrent Qt5Core
 WANTLIB += Qt5DBus Qt5Network Qt5Xml m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_TRANSLATIONS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/karchive \
+LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kservice \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/09 17:17:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 @bin bin/spectacle
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
@@ -48,6 +48,10 @@ share/doc/HTML/uk/spectacle/MainWindow.png
 share/doc/HTML/uk/spectacle/SaveOptions.png
 share/doc/HTML/uk/spectacle/index.cache.bz2
 share/doc/HTML/uk/spectacle/index.docbook
+share/examples/spectacle/
+share/examples/spectacle/xdg/
+share/examples/spectacle/xdg/spectacle.categories
+@sample ${SYSCONFDIR}/xdg/spectacle.categories
 share/icons/hicolor/16x16/apps/spectacle.png
 share/icons/hicolor/22x22/apps/spectacle.png
 share/icons/hicolor/32x32/apps/spectacle.png
@@ -57,7 +61,6 @@ share/khotkeys/
 share/khotkeys/spectacle.khotkeys
 share/knotifications5/spectacle.notifyrc
 share/locale/ar/LC_MESSAGES/spectacle.mo
-share/locale/ast/LC_MESSAGES/spectacle.mo
 share/locale/bg/LC_MESSAGES/spectacle.mo
 share/locale/ca/LC_MESSAGES/spectacle.mo
 share/locale/ca@valencia/LC_MESSAGES/spectacle.mo

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/24 09:15:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kollision
 
@@ -15,18 +14,17 @@ WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtdeclarative
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
-		devel/desktop-file-utils \
-		x11/qt5/qtquickcontrols \
-		x11/qt5/qtdeclarative
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kauth \
+BUILD_DEPENDS +=x11/qt5/qtquickcontrols
+RUN_DEPENDS +=	x11/qt5/qtquickcontrols
+
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/ki18n \
 		devel/kf5/kcrash \
@@ -36,7 +34,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kwidgetsaddons \
+		x11/qt5/qtdeclarative \
 		x11/kde-applications/libkdegames
-
 
 .include <bsd.port.mk>

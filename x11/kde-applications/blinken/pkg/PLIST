@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:17 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/blinken
 @bin bin/blinken
@@ -91,7 +91,6 @@ share/icons/hicolor/48x48/apps/blinken.png
 share/icons/hicolor/64x64/apps/blinken.png
 share/icons/hicolor/scalable/apps/blinken.svgz
 share/locale/ar/LC_MESSAGES/blinken.mo
-share/locale/ast/LC_MESSAGES/blinken.mo
 share/locale/bg/LC_MESSAGES/blinken.mo
 share/locale/bs/LC_MESSAGES/blinken.mo
 share/locale/ca/LC_MESSAGES/blinken.mo

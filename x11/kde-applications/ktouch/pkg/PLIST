@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/18 09:39:20 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/ktouch
 @bin bin/ktouch
@@ -278,7 +278,6 @@ share/ktouch/schemata/course.xsd
 share/ktouch/schemata/data.xsd
 share/ktouch/schemata/keyboardlayout.xsd
 share/locale/ar/LC_MESSAGES/ktouch.mo
-share/locale/ast/LC_MESSAGES/ktouch.mo
 share/locale/bg/LC_MESSAGES/ktouch.mo
 share/locale/bs/LC_MESSAGES/ktouch.mo
 share/locale/ca/LC_MESSAGES/ktouch.mo

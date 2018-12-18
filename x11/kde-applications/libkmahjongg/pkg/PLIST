@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/18 18:27:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 include/KF5/KF5KMahjongg/
 include/KF5/KF5KMahjongg/kmahjonggbackground.h
 include/KF5/KF5KMahjongg/kmahjonggconfigdialog.h
@@ -11,6 +11,10 @@ lib/cmake/KF5KMahjongglib/KF5KMahjonggLibraryDepends.cmake
 lib/cmake/KF5KMahjongglib/KF5KMahjongglibConfig.cmake
 lib/cmake/KF5KMahjongglib/KF5KMahjongglibConfigVersion.cmake
 @lib lib/libKF5KMahjongglib.so.${LIBKF5KMahjongglib_VERSION}
+share/examples/libkmahjongg/
+share/examples/libkmahjongg/xdg/
+share/examples/libkmahjongg/xdg/libkmahjongg.categories
+@sample ${SYSCONFDIR}/xdg/libkmahjongg.categories
 share/kmahjongglib/
 share/kmahjongglib/backgrounds/
 share/kmahjongglib/backgrounds/chinese_landscape.copyright
@@ -49,7 +53,6 @@ share/kmahjongglib/tilesets/traditional.copyright
 share/kmahjongglib/tilesets/traditional.desktop
 share/kmahjongglib/tilesets/traditional.svgz
 share/locale/ar/LC_MESSAGES/libkmahjongg5.mo
-share/locale/ast/LC_MESSAGES/libkmahjongg5.mo
 share/locale/bs/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmahjongg5.mo

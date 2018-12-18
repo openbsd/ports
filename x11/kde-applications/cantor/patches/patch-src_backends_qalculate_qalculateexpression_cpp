@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_backends_qalculate_qalculateexpression_cpp,v 1.1 2018/12/18 09:39:17 rsadowski Exp $
+
+Index: src/backends/qalculate/qalculateexpression.cpp
+--- src/backends/qalculate/qalculateexpression.cpp.orig
++++ src/backends/qalculate/qalculateexpression.cpp
+@@ -750,7 +750,7 @@ ParseOptions QalculateExpression::parseOptions()
+     }
+ 
+     po.base = QalculateSettings::base();
+-    po.comma_as_separator = false;
++    po.dot_as_separator = false;
+ 
+     return po;
+ }

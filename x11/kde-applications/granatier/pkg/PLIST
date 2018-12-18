@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/granatier
 @bin bin/granatier
@@ -77,6 +77,10 @@ share/doc/HTML/uk/granatier/config_theme.png
 share/doc/HTML/uk/granatier/granatier.png
 share/doc/HTML/uk/granatier/index.cache.bz2
 share/doc/HTML/uk/granatier/index.docbook
+share/examples/granatier/
+share/examples/granatier/xdg/
+share/examples/granatier/xdg/granatier.categories
+@sample ${SYSCONFDIR}/xdg/granatier.categories
 share/granatier/
 share/granatier/arenas/
 share/granatier/arenas/clanbomber_Arena.desktop
@@ -198,7 +202,6 @@ share/kxmlgui5/
 share/kxmlgui5/granatier/
 share/kxmlgui5/granatier/granatierui.rc
 share/locale/ar/LC_MESSAGES/granatier.mo
-share/locale/ast/LC_MESSAGES/granatier.mo
 share/locale/bg/LC_MESSAGES/granatier.mo
 share/locale/bs/LC_MESSAGES/granatier.mo
 share/locale/ca/LC_MESSAGES/granatier.mo

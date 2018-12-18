@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:17:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
@@ -12,14 +12,12 @@ WANTLIB += KF5Crash KF5I18n KF5NewStuff KF5NewStuffCore KF5Service
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
 
-MODULES =	multimedia/phonon
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
-
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
 LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kauth \

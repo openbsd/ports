@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kjumpingcube
 @bin bin/kjumpingcube
@@ -57,7 +57,6 @@ share/kjumpingcube/pics/
 share/kjumpingcube/pics/default.desktop
 share/kjumpingcube/pics/default.svg
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
-share/locale/ast/LC_MESSAGES/kjumpingcube.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
 share/locale/bs/LC_MESSAGES/kjumpingcube.mo
 share/locale/ca/LC_MESSAGES/kjumpingcube.mo

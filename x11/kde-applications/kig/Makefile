@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
-CATEGORIES =	editors geo
-REVISION =	0
+CATEGORIES =	education geo
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -16,18 +15,15 @@ WANTLIB += m ${MODPY_WANTLIB}
 
 KDE5 =		Yes
 
-MODULES =	lang/python
+MODULES +=	x11/kde-applications \
+		lang/python
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kdoctools
-
-LIB_DEPENDS =	devel/boost \
-		x11/qt5/qtsvg \
-		x11/qt5/qtxmlpatterns \
+LIB_DEPENDS +=	devel/boost \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -38,14 +34,16 @@ LIB_DEPENDS =	devel/boost \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
-		devel/kf5/kjobwidgets \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/sonnet \
 		devel/kf5/ktexteditor \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		devel/kf5/sonnet \
+		x11/qt5/qtsvg \
+		x11/qt5/qtxmlpatterns
 
 .include <bsd.port.mk>

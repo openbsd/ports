@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/09 12:56:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/18 09:39:18 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	1
 
 SHARED_LIBS +=  dolphinprivate            0.1 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.1 # 5.0
@@ -14,32 +13,32 @@ KDE5 =		Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KDELibs4Support KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Notifications KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml c m
 
-MODULES =	multimedia/phonon
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kfilemetadata \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications \
+		multimedia/phonon
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kfilemetadata \
+BUILD_DEPENDS +=devel/kf5/kfilemetadata
+
+RUN_DEPENDS +=	devel/kf5/kfilemetadata \
 		misc/shared-mime-info \
-		devel/kf5/kdoctools \
 		x11/kde-applications/ffmpegthumbs \
 		x11/kde-applications/konsole \
-		x11/kde-applications/kio-extras \
-		x11/gtk+3,-guic
+		x11/kde-applications/kio-extras
 
 # XXX devel/kf5/baloo
 # kf5-baloo-5.46.0p0v0 conflicts with baloo-4.14.3 in a bulk build
-LIB_DEPENDS =	devel/kf5/attica \
+LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kactivities \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -51,8 +50,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kdelibs4support \
-		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
@@ -63,9 +60,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
 		devel/kf5/sonnet
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/klickety
 @bin bin/klickety
@@ -91,7 +91,6 @@ share/klickety/themes/ksame_preview.png
 share/kxmlgui5/
 share/kxmlgui5/klickety/
 share/kxmlgui5/klickety/klicketyui.rc
-share/locale/ast/LC_MESSAGES/klickety.mo
 share/locale/bs/LC_MESSAGES/klickety.mo
 share/locale/ca/LC_MESSAGES/klickety.mo
 share/locale/ca@valencia/LC_MESSAGES/klickety.mo

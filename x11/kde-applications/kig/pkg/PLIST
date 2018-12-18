@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kig
@@ -20,7 +20,6 @@ share/doc/HTML/de/kig/index.cache.bz2
 share/doc/HTML/de/kig/index.docbook
 share/doc/HTML/de/kig/macro_wizard.png
 share/doc/HTML/de/kig/macros_at_work.png
-share/doc/HTML/de/kig/mainwindow.png
 share/doc/HTML/de/kig/script_wizard.png
 share/doc/HTML/de/kig/script_wizard_entering_code.png
 share/doc/HTML/de/kig/selecting_objects.png
@@ -402,9 +401,6 @@ share/kxmlgui5/kig/kigui.rc
 share/locale/ar/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ar/LC_MESSAGES/kfile_kig.mo
 share/locale/ar/LC_MESSAGES/kig.mo
-share/locale/ast/LC_MESSAGES/kfile_drgeo.mo
-share/locale/ast/LC_MESSAGES/kfile_kig.mo
-share/locale/ast/LC_MESSAGES/kig.mo
 share/locale/bg/LC_MESSAGES/kfile_drgeo.mo
 share/locale/bg/LC_MESSAGES/kfile_kig.mo
 share/locale/bg/LC_MESSAGES/kig.mo

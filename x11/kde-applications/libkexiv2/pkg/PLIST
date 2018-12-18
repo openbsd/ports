@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/28 18:50:56 rsadowski Exp $
-include/KF5/
+@comment $OpenBSD: PLIST,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
 include/KF5/KExiv2/
 include/KF5/KExiv2/KExiv2/
 include/KF5/KExiv2/KExiv2/KExiv2

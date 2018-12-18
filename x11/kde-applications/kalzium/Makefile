@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/10 15:56:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
@@ -21,21 +21,24 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Script Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml c m openbabel
 
-MODULES +=	lang/python \
-		lang/ocaml
-
 MODPY_RUNDEP=	No
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools \
-		devel/kf5/karchive \
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
+MODULES +=	x11/kde-applications \
+		lang/python \
+		lang/ocaml
+
+BUILD_DEPENDS +=devel/kf5/karchive \
 		math/eigen3
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		devel/kf5/karchive
+RUN_DEPENDS +=	devel/kf5/karchive
 
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/10 07:33:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:21 rsadowski Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 
@@ -20,13 +19,14 @@ WANTLIB += Qt5Qml Qt5Quick Qt5Widgets Qt5X11Extras Qt5Xml c m
 WANTLIB += xcb xcb-cursor xcb-image xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-util xcb-xfixes
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kdoctools \
-		x11/qt5/qtquickcontrols
+MODULES +=	x11/kde-applications
+
+RUN_DEPENDS +=	x11/qt5/qtquickcontrols
 
 LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kauth \

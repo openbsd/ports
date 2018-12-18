@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:15:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
 
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${VERSION}
@@ -11,16 +11,17 @@ SHARED_LIBS +=  kiten                     0.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5I18n KF5JS KF5JobWidgets KF5KHtml KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
+WANTLIB += KF5KIOWidgets KF5Notifications KF5Parts KF5Service
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml c m
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic \
-		devel/kf5/kdoctools
+MODULES +=	x11/kde-applications
 
 LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -35,6 +36,7 @@ LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/knotifications \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet
 

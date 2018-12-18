@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 08:19:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:20 rsadowski Exp $
 
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
@@ -14,13 +14,13 @@ WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5Xml c m qaccessibilityclient-qt5
 
-BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	devel/kf5/kdoctools \
-		x11/gtk+3,-guic \
+MODULES +=	x11/kde-applications
 
-LIB_DEPENDS =	devel/kf5/kauth \
+LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kservice \

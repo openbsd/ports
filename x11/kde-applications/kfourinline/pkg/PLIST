@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/24 09:15:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
 @conflict kde-l10n-*
 @pkgpath x11/kde4/kfourinline
 @bin bin/kfourinline
@@ -46,6 +46,10 @@ share/doc/HTML/uk/kfourinline/gameboard.png
 share/doc/HTML/uk/kfourinline/index.cache.bz2
 share/doc/HTML/uk/kfourinline/index.docbook
 share/doc/HTML/uk/kfourinline/settings.png
+share/examples/kfourinline/
+share/examples/kfourinline/xdg/
+share/examples/kfourinline/xdg/kfourinline.categories
+@sample ${SYSCONFDIR}/xdg/kfourinline.categories
 share/icons/hicolor/128x128/apps/kfourinline.png
 share/icons/hicolor/16x16/apps/kfourinline.png
 share/icons/hicolor/22x22/apps/kfourinline.png
@@ -66,7 +70,6 @@ share/kfourinline/grafix/yellow.svg
 share/kfourinline/grafix/yellow_reflection.desktop
 share/kfourinline/grafix/yellow_reflection.rc
 share/locale/ar/LC_MESSAGES/kfourinline.mo
-share/locale/ast/LC_MESSAGES/kfourinline.mo
 share/locale/bg/LC_MESSAGES/kfourinline.mo
 share/locale/bs/LC_MESSAGES/kfourinline.mo
 share/locale/ca/LC_MESSAGES/kfourinline.mo
@@ -116,5 +119,7 @@ share/locale/ug/LC_MESSAGES/kfourinline.mo
 share/locale/uk/LC_MESSAGES/kfourinline.mo
 share/locale/zh_CN/LC_MESSAGES/kfourinline.mo
 share/locale/zh_TW/LC_MESSAGES/kfourinline.mo
+share/metainfo/
+share/metainfo/org.kde.kfourinline.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
