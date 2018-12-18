@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_CMakeLists_txt,v 1.1 2018/12/18 09:32:23 bentley Exp $
+
+Index: data/CMakeLists.txt
+--- data/CMakeLists.txt.orig
++++ data/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ set(OPENCC_DICT_BIN opencc_dict)
+-set(DICT_MERGE_BIN python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/merge.py)
+-set(DICT_REVERSE_BIN python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/reverse.py)
++set(DICT_MERGE_BIN ${OPENCC_PYTHON} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/merge.py)
++set(DICT_REVERSE_BIN ${OPENCC_PYTHON} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/reverse.py)
+ set(DICT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dictionary)
+ set(DICT_GENERATED_DIR ${CMAKE_CURRENT_BINARY_DIR})
+ 

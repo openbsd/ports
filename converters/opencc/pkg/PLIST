@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1 2018/12/18 09:32:23 bentley Exp $
+@bin bin/opencc
+@bin bin/opencc_dict
+@bin bin/opencc_phrase_extract
+include/opencc/
+include/opencc/BinaryDict.hpp
+include/opencc/Common.hpp
+include/opencc/Config.hpp
+include/opencc/Conversion.hpp
+include/opencc/ConversionChain.hpp
+include/opencc/Converter.hpp
+include/opencc/DartsDict.hpp
+include/opencc/Dict.hpp
+include/opencc/DictConverter.hpp
+include/opencc/DictEntry.hpp
+include/opencc/DictGroup.hpp
+include/opencc/Exception.hpp
+include/opencc/Export.hpp
+include/opencc/Lexicon.hpp
+include/opencc/MaxMatchSegmentation.hpp
+include/opencc/Optional.hpp
+include/opencc/PhraseExtract.hpp
+include/opencc/Segmentation.hpp
+include/opencc/Segments.hpp
+include/opencc/SerializableDict.hpp
+include/opencc/SimpleConverter.hpp
+include/opencc/TextDict.hpp
+include/opencc/UTF8StringSlice.hpp
+include/opencc/UTF8Util.hpp
+include/opencc/opencc.h
+@lib lib/libopencc.so.${LIBopencc_VERSION}
+lib/pkgconfig/opencc.pc
+share/opencc/
+share/opencc/HKVariants.ocd
+share/opencc/HKVariantsPhrases.ocd
+share/opencc/HKVariantsRev.ocd
+share/opencc/HKVariantsRevPhrases.ocd
+share/opencc/JPVariants.ocd
+share/opencc/STCharacters.ocd
+share/opencc/STPhrases.ocd
+share/opencc/TSCharacters.ocd
+share/opencc/TSPhrases.ocd
+share/opencc/TWPhrases.ocd
+share/opencc/TWPhrasesRev.ocd
+share/opencc/TWVariants.ocd
+share/opencc/TWVariantsRev.ocd
+share/opencc/TWVariantsRevPhrases.ocd
+share/opencc/hk2s.json
+share/opencc/s2hk.json
+share/opencc/s2t.json
+share/opencc/s2tw.json
+share/opencc/s2twp.json
+share/opencc/t2hk.json
+share/opencc/t2s.json
+share/opencc/t2tw.json
+share/opencc/tw2s.json
+share/opencc/tw2sp.json
