@@ -1,0 +1,14 @@
+$OpenBSD: patch-wvText_in,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+--- wvText.in.orig	Thu May  8 14:00:18 2008
++++ wvText.in	Thu May  8 14:04:21 2008
+@@ -3,7 +3,9 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ datadir=@datadir@
+-tmpdir=${TMPDIR:-/tmp}
++tmpdir=`mktemp -d /tmp/wvText.XXXXXXXXXX`
++
++trap "rm -rf ${tmpdir}" 0 1 2 3 15
+ 
+ # argument checking
+ if [ ${#} -ne "2" ]; then

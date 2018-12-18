@@ -1,0 +1,3 @@
+Date::Manip is a very versatile conversion module, which can handle
+to and from any text representation of dates, including ranges and
+periodic dates.

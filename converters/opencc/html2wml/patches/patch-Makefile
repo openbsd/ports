@@ -1,0 +1,31 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+--- Makefile.orig	Mon Apr 25 14:31:07 2011
++++ Makefile	Mon Apr 25 14:33:17 2011
+@@ -1,6 +1,6 @@
+ # =========================================================================== #
+ # Configuration 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ CGIDIR=/home/httpd/cgi-bin
+ 
+ # =========================================================================== #
+@@ -12,7 +12,7 @@ VERSION=0.4.11
+ # Standard subdirectories locations
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man
+-DOCDIR=$(PREFIX)/doc/html2wml
++DOCDIR=$(PREFIX)/share/doc/html2wml
+ 
+ MAN1DIR=$(MANDIR)/man1
+ 
+@@ -34,8 +34,8 @@ install: check-config directories
+ 	install -m 555 html2wml.cgi $(BINDIR)/html2wml
+ 	install -m 444 doc/html2wml.man $(MAN1DIR)/html2wml.1 
+ 	install -m 444 COPYING INSTALL NEWS NOTES README TODO ChangeLog $(DOCDIR) 
+-	make -C t/ install DOCDIR=$(DOCDIR) 
+-	make -C doc/ install DOCDIR=$(DOCDIR)
++	$(MAKE_PROGRAM) -C t/ install DOCDIR=$(DOCDIR) 
++	$(MAKE_PROGRAM) -C doc/ install DOCDIR=$(DOCDIR)
+ 
+ installcgi: check-config
+ 	install -m 555 html2wml.cgi $(CGIDIR)

@@ -1,0 +1,23 @@
+$OpenBSD: patch-oledecod_c,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+
+Don't use malloc.h header on OpenBSD.
+
+--- oledecod.c.orig	Wed Oct 27 11:49:16 1999
++++ oledecod.c	Mon Nov  3 23:04:07 2014
+@@ -39,7 +39,6 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <assert.h>
+@@ -137,7 +136,7 @@ __OLEdecode (char *OLEfilename, pps_entry ** stream_li
+   verbose ("fast testing type of file");
+   test_exitf ((c = getc (input)) != EOF, 5, ends ());
+   test_exitf (ungetc (c, input) != EOF, 5, ends ());
+-  test_exitf (!isprint (c), 8, ends ());
++  /*  test_exitf (!isprint (c), 8, ends ()); */
+   test_exitf (c == 0xd0, 9, ends ());
+ 
+   /* read header block */

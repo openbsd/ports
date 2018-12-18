@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+${P5SITE}/Date/
+${P5SITE}/Date/Tolkien/
+${P5SITE}/Date/Tolkien/Shire/
+${P5SITE}/Date/Tolkien/Shire/Data.pm
+@man man/man3p/Date::Tolkien::Shire::Data.3p

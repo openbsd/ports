@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+${P5SITE}/Convert/
+${P5SITE}/Convert/BER.pm
+${P5SITE}/Convert/BER.pod
+@man man/man3p/Convert::BER.3p

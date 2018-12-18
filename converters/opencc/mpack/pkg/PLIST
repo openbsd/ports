@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+@bin bin/mpack
+@bin bin/munpack
+@man man/man1/mpack.1
+@man man/man1/munpack.1

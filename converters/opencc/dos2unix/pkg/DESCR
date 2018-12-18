@@ -1,0 +1,8 @@
+Convert text files with DOS or Mac line breaks to Unix line breaks and
+vice versa. Features:
+
+* Automatically skips binary and non-regular files.
+* In-place, paired, or stdio mode conversion.
+* Keep original file dates option.
+* 7-bit and iso conversion modes like SunOS dos2unix.
+* Conversion of Windows UTF-16 files to Unix UTF-8.

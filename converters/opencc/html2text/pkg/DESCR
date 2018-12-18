@@ -1,0 +1,8 @@
+html2text is a command line utility, written in C++, that converts HTML
+documents into plain text.
+
+Each HTML document is loaded from a location indicated by a URI or read
+from standard input, and formatted into a stream of plain text
+characters that is written to standard output or into an output-file.
+The input-URI may specify a remote site, from that the documents are
+loaded via the Hypertext Transfer Protocol (HTTP).

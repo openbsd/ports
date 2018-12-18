@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+bin/html2wml
+@man man/man1/html2wml.1
+share/doc/html2wml/
+share/doc/html2wml/COPYING
+share/doc/html2wml/ChangeLog
+share/doc/html2wml/INSTALL
+share/doc/html2wml/NEWS
+share/doc/html2wml/NOTES
+share/doc/html2wml/README
+share/doc/html2wml/TODO
+share/doc/html2wml/readme.html
+share/doc/html2wml/readme.pdf
+share/doc/html2wml/readme.pod
+share/doc/html2wml/t/
+share/doc/html2wml/t/form.html
+share/doc/html2wml/t/samples/
+share/doc/html2wml/t/samples/inc_para.wml
+share/doc/html2wml/t/samples/inc_prev.wml
+share/doc/html2wml/t/samples/mix1.html
+share/doc/html2wml/t/samples/mix2.html
+share/doc/html2wml/t/samples/struct.html
+share/doc/html2wml/t/samples/t-a.html
+share/doc/html2wml/t/samples/t-anchor.html
+share/doc/html2wml/t/samples/t-bad-entities.html
+share/doc/html2wml/t/samples/t-br.html
+share/doc/html2wml/t/samples/t-double-tags.html
+share/doc/html2wml/t/samples/t-extcharset.html
+share/doc/html2wml/t/samples/t-fake-tags.html
+share/doc/html2wml/t/samples/t-frames.html
+share/doc/html2wml/t/samples/t-img.html
+share/doc/html2wml/t/samples/t-include.html
+share/doc/html2wml/t/samples/t-nest.html
+share/doc/html2wml/t/samples/t-no-tag.html
+share/doc/html2wml/t/samples/t-special-chars.html
+share/doc/html2wml/t/samples/t-urls.html

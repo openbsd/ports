@@ -1,0 +1,14 @@
+$OpenBSD: patch-mediatyp_cpp,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+
+Index: mediatyp.cpp
+--- mediatyp.cpp.orig
++++ mediatyp.cpp
+@@ -29,7 +29,7 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <mimepp/string.h>
+ #include <mimepp/param.h>
+ #include <mimepp/mediatyp.h>

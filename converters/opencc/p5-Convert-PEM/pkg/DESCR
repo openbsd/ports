@@ -1,0 +1,3 @@
+Convert::PEM reads and writes PEM files containing ASN.1-encoded
+objects. The files can optionally be encrypted using a symmetric
+cipher algorithm, such as 3DES.

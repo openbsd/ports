@@ -1,0 +1,12 @@
+$OpenBSD: patch-libjsonevt_int_defs_h,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+--- libjsonevt/int_defs.h.orig	Thu Mar 18 04:24:34 2010
++++ libjsonevt/int_defs.h	Sun Jan 25 13:35:49 2015
+@@ -9,6 +9,8 @@
+ 
+ #include <jsonevt_config.h>
+ 
++#include <sys/types.h>
++
+ #ifdef JSONEVT_DEF_HAVE_INTTYPES_H
+ #include <inttypes.h>
+ #endif

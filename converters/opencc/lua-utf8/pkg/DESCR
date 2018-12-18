@@ -1,0 +1,6 @@
+UTF-8 support module for Lua and LuaJIT which is mainly compatible with Lua's
+own string module.
+
+It also adds some useful routines against UTF-8 features, such as interfaces
+to escape Unicode sequences in strings and translate Unicode offsets and byte
+offsets.

@@ -1,0 +1,24 @@
+$OpenBSD: patch-libcharset_lib_localcharset_c,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+--- libcharset/lib/localcharset.c.orig	Thu Sep  1 18:15:01 2011
++++ libcharset/lib/localcharset.c	Thu Sep  1 18:17:12 2011
+@@ -232,8 +232,9 @@ get_charset_aliases (void)
+                           free (old_res_ptr);
+                           break;
+                         }
+-                      strcpy (res_ptr + res_size - (l2 + 1) - (l1 + 1), buf1);
+-                      strcpy (res_ptr + res_size - (l2 + 1), buf2);
++                      strlcpy (res_ptr + res_size - (l2 + 1) - (l1 + 1), buf1,
++                        l1 + 1 + l2 + 1 + 1);
++                      strlcpy (res_ptr + res_size - (l2 + 1), buf2, l2 + 1 + 1);
+                     }
+                   fclose (fp);
+                   if (res_size == 0)
+@@ -352,6 +353,8 @@ get_charset_aliases (void)
+    If the canonical name cannot be determined, the result is a non-canonical
+    name.  */
+ 
++const char *
++locale_charset (void) __attribute__((visibility ("default")));
+ #ifdef STATIC
+ STATIC
+ #endif

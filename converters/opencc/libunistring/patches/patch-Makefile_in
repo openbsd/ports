@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+--- Makefile.in.orig	Fri Dec  2 17:43:05 2016
++++ Makefile.in	Thu Dec 29 17:04:14 2016
+@@ -1374,7 +1374,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
+ ACLOCAL_AMFLAGS = -I m4 -I gnulib-m4
+-SUBDIRS = doc gnulib-local lib tests
++SUBDIRS = gnulib-local lib tests
+ 
+ # Allow users to use "gnulib-tool --update".
+ 

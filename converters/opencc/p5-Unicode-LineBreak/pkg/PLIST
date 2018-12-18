@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+${P5ARCH}/
+${P5ARCH}/POD2/
+${P5ARCH}/POD2/JA/
+${P5ARCH}/POD2/JA/Text/
+${P5ARCH}/POD2/JA/Text/LineFold.pod
+${P5ARCH}/POD2/JA/Unicode/
+${P5ARCH}/POD2/JA/Unicode/GCString.pod
+${P5ARCH}/POD2/JA/Unicode/LineBreak.pod
+${P5ARCH}/Text/
+${P5ARCH}/Text/LineFold.pm
+${P5ARCH}/Unicode/
+${P5ARCH}/Unicode/GCString.pm
+${P5ARCH}/Unicode/GCString.pod
+${P5ARCH}/Unicode/LineBreak/
+${P5ARCH}/Unicode/LineBreak.pm
+${P5ARCH}/Unicode/LineBreak.pod
+${P5ARCH}/Unicode/LineBreak/Constants.pm
+${P5ARCH}/Unicode/LineBreak/Defaults.pm.sample
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unicode/
+${P5ARCH}/auto/Unicode/LineBreak/
+${P5ARCH}/auto/Unicode/LineBreak/LineBreak.so
+${P5ARCH}/auto/sombok/
+${P5ARCH}/auto/sombok/extralibs.ld
+@man man/man3p/POD2::JA::Text::LineFold.3p
+@man man/man3p/POD2::JA::Unicode::GCString.3p
+@man man/man3p/POD2::JA::Unicode::LineBreak.3p
+@man man/man3p/Text::LineFold.3p
+@man man/man3p/Unicode::GCString.3p
+@man man/man3p/Unicode::LineBreak.3p

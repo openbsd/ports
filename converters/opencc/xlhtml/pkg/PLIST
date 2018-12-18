@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+bin/nsopen
+bin/nspptview
+bin/nsxlview
+@bin bin/pptHtml
+@bin bin/xlHtml
+include/cole/
+include/cole/cole.h
+lib/libcole.a
+lib/libcole.la
+@lib lib/libcole.so.${LIBcole_VERSION}
+@man man/man1/pptHtml.1
+@man man/man1/xlHtml.1
+share/aclocal/
+share/aclocal/cole.m4

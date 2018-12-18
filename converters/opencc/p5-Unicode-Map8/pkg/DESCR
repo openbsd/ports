@@ -1,0 +1,6 @@
+The Unicode::Map8 class implement efficient mapping tables between
+8-bit character sets and 16 bit character sets like Unicode.  About
+170 different mapping tables between various known character sets and
+Unicode is distributed with this package.  The source of these tables
+is the vendor mapping tables provided by Unicode, Inc. and the code
+tables in RFC 1345.

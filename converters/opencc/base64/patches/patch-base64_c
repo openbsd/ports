@@ -1,0 +1,16 @@
+$OpenBSD: patch-base64_c,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+
+Index: base64.c
+--- base64.c.orig
++++ base64.c
+@@ -352,6 +352,10 @@ fo= stdout;
+ 
+ /*18:*/
+ #line 457 "base64.w"
++if (pledge("stdio", NULL) == -1) {
++	fprintf(stderr, "pledge\n");
++	return 1;
++}
+ 
+ while((opt= getopt(argc,argv,"denu-:"))!=-1){
+ switch(opt){

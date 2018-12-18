@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/18 09:20:20 bentley Exp $
+@conflict converters/p5-IDNA-Punycode-*
+@pkgpath converters/p5-IDNA-Punycode
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/IDN/
+${P5ARCH}/Net/IDN/Encode.pm
+${P5ARCH}/Net/IDN/Overview.pod
+${P5ARCH}/Net/IDN/Punycode/
+${P5ARCH}/Net/IDN/Punycode.pm
+${P5ARCH}/Net/IDN/Punycode/PP.pm
+${P5ARCH}/Net/IDN/Standards.pod
+${P5ARCH}/Net/IDN/UTS46/
+${P5ARCH}/Net/IDN/UTS46.pm
+${P5ARCH}/Net/IDN/UTS46/_Mapping.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/IDN/
+${P5ARCH}/auto/Net/IDN/Punycode/
+${P5ARCH}/auto/Net/IDN/Punycode/Punycode.bs
+${P5ARCH}/auto/Net/IDN/Punycode/Punycode.so
+@man man/man3p/Net::IDN::Encode.3p
+@man man/man3p/Net::IDN::Overview.3p
+@man man/man3p/Net::IDN::Punycode.3p
+@man man/man3p/Net::IDN::Punycode::PP.3p
+@man man/man3p/Net::IDN::Standards.3p
+@man man/man3p/Net::IDN::UTS46.3p
+@man man/man3p/Net::IDN::UTS46::_Mapping.3p

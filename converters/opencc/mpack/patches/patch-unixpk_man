@@ -1,0 +1,12 @@
+$OpenBSD: patch-unixpk_man,v 1.1.1.1 2018/12/18 09:20:19 bentley Exp $
+--- unixpk.man.orig	Thu Feb 16 21:39:50 1995
++++ unixpk.man	Sun Jan  8 00:00:40 2012
+@@ -136,7 +136,7 @@ Mail the generated messages to the specified addresses
+ .SH ENVIRONMENT
+ .TP
+ .B TMPDIR
+-Directory to store temporary files.  Default is /usr/tmp.
++Directory to store temporary files.  Default is /var/tmp.
+ .TP
+ .B SPLITSIZE
+ Default value of the -m switch.

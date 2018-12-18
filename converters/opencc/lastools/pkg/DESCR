@@ -1,0 +1,10 @@
+LAStools: award-winning software for efficient LiDAR processing (with LASzip)
+
+* laszip compresses the LAS files in a completely lossless manner
+* lasinfo prints out a quick overview of the contents of a LAS file
+* lasindex creates a spatial index LAX file for fast spatial queries
+* las2las extracts last returns, clips, subsamples, translates, etc ...
+* lasmerge merges several LAS or LAZ files into a single LAS or LAZ file
+* txt2las converts LIDAR data from ASCII text to binary LAS format
+* las2txt turns LAS into human-readable and easy-to-parse ASCII
+* lasprecision analyses the actual precision of the LIDAR points

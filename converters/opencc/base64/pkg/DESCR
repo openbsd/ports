@@ -1,0 +1,2 @@
+BASE64 is a simple command-line filter which encodes and decodes
+binary files in Base64 encoding as defined in RFC 1341.
