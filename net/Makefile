@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1097 2018/12/17 09:59:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.1098 2018/12/18 12:01:04 edd Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -110,6 +110,7 @@
      SUBDIR += gmudix
      SUBDIR += gnaughty
      SUBDIR += gnugk
+     SUBDIR += go-ipfs
      SUBDIR += go-net
      SUBDIR += gopher
      SUBDIR += gophernicus
