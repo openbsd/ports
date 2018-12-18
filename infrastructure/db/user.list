@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.333 2018/12/18 11:23:03 edd Exp $
+$OpenBSD: user.list,v 1.334 2018/12/18 19:28:52 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -334,3 +334,4 @@ id  user		group		port options
 823 _opendkim		_opendkim	mail/opendkim
 824 _traccar		_traccar	geo/traccar
 825 _go-ipfs		_go-ipfs	net/go-ipfs
+826 _telegraf		_telegraf	sysutils/telegraf
