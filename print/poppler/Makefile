@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2018/12/09 17:47:45 kili Exp $
+# $OpenBSD: Makefile,v 1.133 2018/12/18 00:12:14 sthen Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
@@ -38,6 +38,16 @@ NOT_FOR_ARCHS-qt4 = arm
 NOT_FOR_ARCHS-qt5 = arm
 
 MULTI_PACKAGES=-main -qt4 -qt5 -utils
+
+# XXX build fails with ld.bfd: undefined references to X libs e.g.
+#
+# /usr/bin/ld: warning: libfreetype.so.29.0, needed by ./libpoppler-glib.so.18.0, not found (try using -rpath or -rpath-link)
+# /usr/bin/ld: warning: libfontconfig.so.12.0, needed by /usr/obj/ports/poppler-0.61.1-no_qt4-no_qt5-bootstrap/build-i386-no_qt4-no_qt5-bootstrap/libpoppler.so.46.0, not found (try using -rpath or -rpath-link)
+# /usr/bin/ld: warning: libpixman-1.so.32.6, needed by /usr/local/lib/libcairo.so.13.0, not found (try using -rpath or -rpath-link)
+
+.if ${MACHINE_ARCH} == i386
+USE_LLD=	Yes
+.endif
 
 .include <bsd.port.arch.mk>
 
