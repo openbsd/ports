@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.95 2018/08/13 09:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2018/12/19 10:41:25 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.44
+GNOME_VERSION=		1.14.45
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  gsf-1                114.12   # 114.44
+SHARED_LIBS +=  gsf-1                114.12   # 114.45
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
