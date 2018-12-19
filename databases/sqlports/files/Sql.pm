@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.1 2018/12/18 19:09:26 espie Exp $
+# $OpenBSD: Sql.pm,v 1.2 2018/12/19 15:34:14 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -153,22 +153,24 @@ sub contents
 	my @parts = ();
 	# compute the joins
 	my $joins = {};
+	my @joins = ();
 	
-	for my $c (@{$self->{columns}}) {
-		$joins->{$c->{join}} = $c->{join};
-
-	}
-
 	# figure out used tables
 	my $tables = {};
-	$tables->{$self->origin}++;
 
-	for my $j (values %$joins) {
-		$tables->{$j->name}++;
+	for my $c (@{$self->{columns}}) {
+		my $j = $c->{join};
+		if (!defined $joins->{$j}) {
+			push(@joins, $j);
+			$joins->{$j} = $j;
+			$tables->{$j->name}++;
+		}
 	}
 
+	$tables->{$self->origin}++;
+
 	my $alias = "T0001";
-	for my $j (values %$joins) {
+	for my $j (@joins) {
 		if ($tables->{$j->name} == 1) {
 			delete $j->{alias};
 		} else {
@@ -182,7 +184,7 @@ sub contents
 
 	}
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
-	for my $j  (values %$joins) {
+	for my $j  (@joins) {
 		push(@parts, $self->indent($j->join_part, 4));
 		my @p = $j->on_part($self);
 		if (@p > 0) {
