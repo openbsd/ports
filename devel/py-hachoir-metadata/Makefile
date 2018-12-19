@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/23 12:25:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/19 13:51:02 danj Exp $
 
 COMMENT =	extract metadata using Hachoir library
 
 MODPY_EGG_VERSION = 1.3.3
 DISTNAME =	hachoir-metadata-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
-
-HOMEPAGE =	https://bitbucket.org/haypo/hachoir/wiki/hachoir-metadata
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
