@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.622 2018/12/08 16:36:27 landry Exp $
+# $OpenBSD: Makefile,v 1.623 2018/12/19 12:44:12 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -217,7 +217,6 @@
      SUBDIR += pidgin-guifications
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
-     SUBDIR += pinot
      SUBDIR += podbrowser
      SUBDIR += polkit-qt
      SUBDIR += polkit-qt,qt5
