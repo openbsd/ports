@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2018/11/06 22:27:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.184 2018/12/19 13:34:14 ajacoutot Exp $
 
 COMMENT=		image processing tools
 
@@ -68,6 +68,7 @@ CONFIGURE_ARGS+=	--without-gcc-arch \
 			--without-raqm \
 			--without-rsvg \
 			--without-wmf \
+			--without-zstd \
 			--disable-openmp
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
