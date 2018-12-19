@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/08/10 16:41:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/12/19 09:59:45 lum Exp $
 @conflict linkchecker->=7.1,<7.1p1
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
@@ -57,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/name.py
 lib/python${MODPY_VERSION}/site-packages/dns/namedict.py
 lib/python${MODPY_VERSION}/site-packages/dns/node.py
 lib/python${MODPY_VERSION}/site-packages/dns/opcode.py
+lib/python${MODPY_VERSION}/site-packages/dns/py.typed
 lib/python${MODPY_VERSION}/site-packages/dns/query.py
 lib/python${MODPY_VERSION}/site-packages/dns/rcode.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdata.py
@@ -89,6 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NS.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3PARAM.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/OPENPGPKEY.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/PTR.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RP.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RRSIG.py
@@ -126,6 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}NS.${MO
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}NSEC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}NSEC3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}NSEC3PARAM.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}OPENPGPKEY.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}PTR.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RP.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RRSIG.${MODPY_PYC_MAGIC_TAG}pyc
@@ -198,12 +201,15 @@ lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}dnspython/
 share/examples/${MODPY_PY_PREFIX}dnspython/ddns.py
 share/examples/${MODPY_PY_PREFIX}dnspython/e164.py
 share/examples/${MODPY_PY_PREFIX}dnspython/mx.py
 share/examples/${MODPY_PY_PREFIX}dnspython/name.py
+share/examples/${MODPY_PY_PREFIX}dnspython/query_specific.py
+share/examples/${MODPY_PY_PREFIX}dnspython/receive_notify.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse_name.py
 share/examples/${MODPY_PY_PREFIX}dnspython/xfr.py
