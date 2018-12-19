@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2018/10/17 14:43:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.60 2018/12/19 07:30:24 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.47
+DISTNAME =		highlight-3.48
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -21,7 +21,7 @@ USE_GMAKE =		Yes
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes
-MODLUA_VERSION =	5.2
+MODLUA_VERSION =	5.3
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
