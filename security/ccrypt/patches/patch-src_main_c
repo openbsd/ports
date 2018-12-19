@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_c,v 1.1 2018/12/19 18:18:43 jca Exp $
+Allows the use our getopt instead of the bundled one.
+From Peter Selinger (upstream author)
+Can be removed for ccrypt>=1.12
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -180,7 +180,7 @@ static struct option longopts[] = {
+   {0, 0, 0, 0}
+ };
+ 
+-static const char *shortopts = "edcxuhVLvqDfmE:K:k:F:H:S:sP:Q:tby:rRlT-";
++static const char *shortopts = "edcxuhVLvqDfmE:K:k:F:H:S:sP:Q:tby:rRlT";
+ 
+ static cmdline read_commandline(int ac, char *av[]) {
+   cmdline cmd;
