@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/19 20:20:35 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2018/12/19 20:22:45 jca Exp $
 
 COMMENT=	c++ unit testing framework
 
@@ -9,6 +9,8 @@ SHARED_LIBS +=	cppunit              3.0      # .1.0
 
 CATEGORIES=	devel
 
+# XXX dead.  Switch to newer releases at
+# https://freedesktop.org/wiki/Software/cppunit/ ?
 HOMEPAGE=	http://cppunit.sourceforge.net/
 
 # LGPLv2.1
