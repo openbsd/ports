@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.36 2018/05/04 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2018/12/19 21:24:50 sthen Exp $
 
-SHARED_LIBS +=  scamperfile               1.1 # 0.0
+SHARED_LIBS +=  scamperfile               2.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20180504
+V =		20181219
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
 
 CATEGORIES =	net benchmarks
 
-HOMEPAGE =	http://www.caida.org/tools/measurement/scamper/
+HOMEPAGE =	https://www.caida.org/tools/measurement/scamper/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += c crypto m ssl pthread
 
-MASTER_SITES =	http://www.caida.org/tools/measurement/scamper/code/
+MASTER_SITES =	https://www.caida.org/tools/measurement/scamper/code/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
