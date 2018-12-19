@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/12 09:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2018/12/19 03:00:28 danj Exp $
 
 COMMENT=		extract attachments from OLE2 data files
 
 DISTNAME=		ripole-0.2.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		archivers
 
-HOMEPAGE=		http://www.pldaniels.com/ripole/
+HOMEPAGE=		https://pldaniels.com/ripole/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
