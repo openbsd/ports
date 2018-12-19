@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ci_string_h,v 1.1 2018/12/19 09:30:15 jca Exp $
+
+Index: src/ci_string.h
+--- src/ci_string.h.orig
++++ src/ci_string.h
+@@ -6,7 +6,7 @@
+ #ifndef __CI_STRING_H__
+ #define __CI_STRING_H__
+ 
+-#include <string>
++#include <string.h>
+ #include <ctype.h>
+ 
+ struct ci_char_traits : public std::char_traits<char>
