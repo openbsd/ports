@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.194 2018/12/19 20:43:17 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,10 +13,8 @@ SHARED_LIBS +=  orcus-0.13                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
-REVISION=	2
-
 BV=		6.1
-VERSION=	${BV}.1.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
