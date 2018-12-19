@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.2 2018/12/19 15:34:14 espie Exp $
+# $OpenBSD: Sql.pm,v 1.3 2018/12/19 16:05:14 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -158,8 +158,21 @@ sub contents
 	# figure out used tables
 	my $tables = {};
 
+	for my $w (@{$self->{with}}) {
+		push(@parts, $self->indent("WITH ".$w->name." AS", 0));
+		my @c = $w->contents;
+		my $one = shift @c;
+		my $last = pop @c;
+		push(@parts, $self->indent("($one", 4));
+		for my $c (@c) {
+			push(@parts, $self->indent($c, 5));
+		}
+		push(@parts, $self->indent("$last)", 5));
+	}
+
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
+		next if !defined $j;
 		if (!defined $joins->{$j}) {
 			push(@joins, $j);
 			$joins->{$j} = $j;
@@ -193,11 +206,11 @@ sub contents
 	}
 	if (defined $self->{group}) {
 		push(@parts, $self->indent("GROUP BY ".
-		    join(", ", @{$self->{group}}), 4));
+		    join(", ", map {$_->name} @{$self->{group}}), 4));
 	}
 	if (defined $self->{order}) {
 		push(@parts, $self->indent("ORDER BY ".
-		    join(", ", @{$self->{order}}), 4));
+		    join(", ", map {$_->name} @{$self->{order}}), 4));
 	}
 	return @parts;
 }
@@ -206,6 +219,13 @@ sub origin
 {
 	my $self = shift;
 	return $self->{origin}[0]->name;
+}
+
+package Sql::With;
+our @ISA = qw(Sql::Select);
+sub category
+{
+	"with"
 }
 
 package Sql::Origin;
@@ -302,7 +322,11 @@ sub stringize
 {
 	my $self = shift;
 
-	return $self->{join}->alias.".".$self->name." AS ".$self->name;
+	if (defined $self->{join}) {
+		return $self->{join}->alias.".".$self->name." AS ".$self->name;
+	} else {
+		return $self->name;
+	}
 }
 
 sub join
