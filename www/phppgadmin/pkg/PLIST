@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/12/19 13:26:25 solene Exp $
 phpPgAdmin/
 phpPgAdmin/CREDITS
 phpPgAdmin/DEVELOPERS
@@ -25,6 +25,8 @@ phpPgAdmin/classes/database/
 phpPgAdmin/classes/database/ADODB_base.php
 phpPgAdmin/classes/database/Connection.php
 phpPgAdmin/classes/database/Postgres.php
+phpPgAdmin/classes/database/Postgres10.php
+phpPgAdmin/classes/database/Postgres11.php
 phpPgAdmin/classes/database/Postgres74.php
 phpPgAdmin/classes/database/Postgres80.php
 phpPgAdmin/classes/database/Postgres81.php
@@ -33,10 +35,16 @@ phpPgAdmin/classes/database/Postgres83.php
 phpPgAdmin/classes/database/Postgres84.php
 phpPgAdmin/classes/database/Postgres90.php
 phpPgAdmin/classes/database/Postgres91.php
+phpPgAdmin/classes/database/Postgres92.php
+phpPgAdmin/classes/database/Postgres93.php
+phpPgAdmin/classes/database/Postgres94.php
+phpPgAdmin/classes/database/Postgres95.php
+phpPgAdmin/classes/database/Postgres96.php
 phpPgAdmin/colproperties.php
+phpPgAdmin/composer.json
 phpPgAdmin/conf/
-phpPgAdmin/conf/config.inc.php
 phpPgAdmin/conf/config.inc.php-dist
+@sample phpPgAdmin/conf/config.inc.php
 phpPgAdmin/constraints.php
 phpPgAdmin/conversions.php
 phpPgAdmin/database.php
@@ -51,6 +59,9 @@ phpPgAdmin/functions.php
 phpPgAdmin/groups.php
 phpPgAdmin/help/
 phpPgAdmin/help.php
+phpPgAdmin/help/PostgresDoc10.php
+phpPgAdmin/help/PostgresDoc11.php
+phpPgAdmin/help/PostgresDoc12.php
 phpPgAdmin/help/PostgresDoc74.php
 phpPgAdmin/help/PostgresDoc80.php
 phpPgAdmin/help/PostgresDoc81.php
@@ -60,9 +71,17 @@ phpPgAdmin/help/PostgresDoc84.php
 phpPgAdmin/help/PostgresDoc90.php
 phpPgAdmin/help/PostgresDoc91.php
 phpPgAdmin/help/PostgresDoc92.php
+phpPgAdmin/help/PostgresDoc93.php
+phpPgAdmin/help/PostgresDoc94.php
+phpPgAdmin/help/PostgresDoc95.php
+phpPgAdmin/help/PostgresDoc96.php
 phpPgAdmin/history.php
 phpPgAdmin/images/
 phpPgAdmin/images/themes/
+phpPgAdmin/images/themes/bootstrap/
+phpPgAdmin/images/themes/bootstrap/Favicon.ico
+phpPgAdmin/images/themes/bootstrap/Introduction.png
+phpPgAdmin/images/themes/bootstrap/title.png
 phpPgAdmin/images/themes/cappuccino/
 phpPgAdmin/images/themes/cappuccino/Lminus.png
 phpPgAdmin/images/themes/cappuccino/Lplus.png
@@ -373,6 +392,9 @@ phpPgAdmin/tables.php
 phpPgAdmin/tablespaces.php
 phpPgAdmin/tblproperties.php
 phpPgAdmin/themes/
+phpPgAdmin/themes/bootstrap/
+phpPgAdmin/themes/bootstrap/global.css
+phpPgAdmin/themes/bootstrap/title.png
 phpPgAdmin/themes/cappuccino/
 phpPgAdmin/themes/cappuccino/global.css
 phpPgAdmin/themes/default/
