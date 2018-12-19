@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.158 2018/10/24 05:44:27 ori Exp $
+# $OpenBSD: OpenBSD,v 1.159 2018/12/19 23:51:57 mariani Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -6,6 +6,7 @@
 -37.7374	145.0084	"brett"		# Brett Mahar
 -37.457132	144.580589	"djm"		# Damien Miller
 -34.709197	-58.395080	"gonzalo"	# Gonzalo L. Rodriguez
+-34.66		-58.66		"mariani"	# Elias M. Mariani
 -33.867		151.192		"dtucker"	# Darren Tucker
 -30.035984	-51.220206	"renato"	# Renato Westphal
 -30.018701	-51.167282	"haesbaert"	# Christiano F. Haesbaert
