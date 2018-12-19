@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/08 19:08:01 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/19 08:28:57 semarie Exp $
 
 SUBDIR =
 
@@ -46,22 +46,55 @@ SUBDIR +=	analytic_account
 SUBDIR +=	analytic_invoice
 SUBDIR +=	analytic_purchase
 SUBDIR +=	analytic_sale
+SUBDIR +=	authentication_sms
 SUBDIR +=	bank
+SUBDIR +=	carrier
+SUBDIR +=	carrier_percentage
+SUBDIR +=	carrier_weight
+SUBDIR +=	commission
+SUBDIR +=	commission_waiting
 SUBDIR +=	company
+SUBDIR +=	company_work_time
+SUBDIR +=	customs
 SUBDIR +=	country
 SUBDIR +=	currency
+SUBDIR +=	dashboard
+SUBDIR +=	edocument_uncefact
+SUBDIR +=	edocument_unece
+SUBDIR +=	google_maps
+#SUBDIR +=	ldap_authentication		# TODO ldap3
+SUBDIR +=	notification_email
 SUBDIR +=	party
+SUBDIR +=	party_relationship
 SUBDIR +=	party_siret
 SUBDIR +=	product
+SUBDIR +=	product_attribute
+SUBDIR +=	product_classification
+SUBDIR +=	product_classification_taxonomic
+SUBDIR +=	product_cost_fifo
+SUBDIR +=	product_cost_history
 SUBDIR +=	product_measurements
+SUBDIR +=	product_price_list
+SUBDIR +=	product_price_list_dates
+SUBDIR +=	product_price_list_parent
+SUBDIR +=	production
+SUBDIR +=	production_outsourcing
+SUBDIR +=	production_routing
+SUBDIR +=	production_split
+SUBDIR +=	production_work
+SUBDIR +=	production_work_timesheet
 SUBDIR +=	purchase
 SUBDIR +=	purchase_request
+SUBDIR +=	purchase_shipment_cost
 SUBDIR +=	sale				# TODO optional pygal
+SUBDIR +=	sale_shipment_cost
 SUBDIR +=	sale_supply
 SUBDIR +=	sale_supply_drop_shipment
 SUBDIR +=	stock
 SUBDIR +=	stock_package
 SUBDIR +=	stock_shipment_measurements
 SUBDIR +=	stock_supply
+SUBDIR +=	timesheet
+SUBDIR +=	web_user
 
 .include <bsd.port.subdir.mk>
