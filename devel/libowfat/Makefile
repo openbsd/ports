@@ -1,33 +1,39 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/17 09:53:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/19 17:55:13 sthen Exp $
 
 COMMENT =	library of general purpose APIs
 BROKEN-hppa =	missing atomic ops
 
-SO_VERSION =	0.0
-SHARED_LIBS +=	owfat ${SO_VERSION}
-
 DISTNAME =	libowfat-0.31
-REVISION =	1
-CATEGORIES =	devel
-
-MAINTAINER =	Jan Klemkow <j.klemkow@wemelug.de>
-
-HOMEPAGE =	http://www.fefe.de/libowfat/
-MASTER_SITES =	http://www.fefe.de/libowfat/
 EXTRACT_SUFX =	.tar.xz
-USE_GMAKE =	Yes
-MAKE_FILE =	GNUmakefile
+REVISION =	2
 
-MAKE_FLAGS =	CC="${CC}" COPTFLAGS="-fpic ${CFLAGS}" \
-		SO_VERSION="${SO_VERSION}"
-FAKE_FLAGS =	prefix=${PREFIX} \
-		INCLUDEDIR=${PREFIX}/include/lowfat \
-		MAN3DIR=${PREFIX}/share/lowfat/man/man3
+SHARED_LIBS=	owfat 0.0
+
+CATEGORIES=	devel
+
+HOMEPAGE=	https://www.fefe.de/libowfat/
+
+MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c pthread
+
+MASTER_SITES =	https://www.fefe.de/libowfat/
+
+MAKE_FLAGS =	CC="${CC}" \
+		OPT_REG="${CFLAGS}" OPT_PLUS="${CFLAGS}" \
+		SO_VERSION="${LIBowfat_VERSION}"
+FAKE_FLAGS =	prefix=${PREFIX} \
+		INCLUDEDIR=${PREFIX}/include/lowfat \
+		MAN3DIR=${PREFIX}/share/lowfat/man/man3
+
+USE_GMAKE =	Yes
+
 NO_TEST =	Yes
+
+CFLAGS +=	-fpic
+MAKE_FILE=	GNUmakefile
 
 .include <bsd.port.mk>
