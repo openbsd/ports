@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/19 17:55:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/19 17:59:09 sthen Exp $
 
 COMMENT =	library of general purpose APIs
 BROKEN-hppa =	missing atomic ops
 
-DISTNAME =	libowfat-0.31
+DISTNAME =	libowfat-0.32
 EXTRACT_SUFX =	.tar.xz
-REVISION =	2
 
-SHARED_LIBS=	owfat 0.0
+SHARED_LIBS=	owfat 0.1
 
 CATEGORIES=	devel
 
@@ -26,8 +25,8 @@ MAKE_FLAGS =	CC="${CC}" \
 		OPT_REG="${CFLAGS}" OPT_PLUS="${CFLAGS}" \
 		SO_VERSION="${LIBowfat_VERSION}"
 FAKE_FLAGS =	prefix=${PREFIX} \
-		INCLUDEDIR=${PREFIX}/include/lowfat \
-		MAN3DIR=${PREFIX}/share/lowfat/man/man3
+		INCLUDEDIR=${PREFIX}/include \
+		MAN3DIR=${PREFIX}/share/libowfat/man/man3
 
 USE_GMAKE =	Yes
 

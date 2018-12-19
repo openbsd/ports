@@ -1,0 +1,14 @@
+$OpenBSD: patch-io_iom_init_c,v 1.1 2018/12/19 17:59:09 sthen Exp $
+
+Index: io/iom_init.c
+--- io/iom_init.c.orig
++++ io/iom_init.c
+@@ -6,6 +6,8 @@
+ #include <sys/types.h>
+ #include <sys/event.h>
+ #include <sys/time.h>
++#include <fcntl.h>
++#include <unistd.h>
+ #endif
+ 
+ int iom_init(iomux_t* c) {

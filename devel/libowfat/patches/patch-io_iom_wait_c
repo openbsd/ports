@@ -1,0 +1,38 @@
+$OpenBSD: patch-io_iom_wait_c,v 1.1 2018/12/19 17:59:09 sthen Exp $
+
+Index: io/iom_wait.c
+--- io/iom_wait.c.orig
++++ io/iom_wait.c
+@@ -29,13 +29,13 @@ int iom_wait(iomux_t* c,int64* s,unsigned int* revents
+     /* The queue was empty. If someone else is already calling
+     * epoll_wait/kevent, then use the semaphore */
+     if (__sync_bool_compare_and_swap(&c->working,0,1)) {
++      int i;
+       /* we have the job to fill the struct. */
+       int freeslots = (c->h - c->l);
+       if (!freeslots) freeslots=SLOTS;
+ 
+ #ifdef HAVE_EPOLL
+       struct epoll_event ee[SLOTS];
+-      int i;
+       r=epoll_wait(c->ctx, ee, freeslots, timeout);
+       if (r<=0) {
+ 	/* we ran into a timeout, so let someone else take over */
+@@ -65,7 +65,7 @@ int iom_wait(iomux_t* c,int64* s,unsigned int* revents
+ #elif defined(HAVE_KQUEUE)
+       struct kevent kev[SLOTS];
+       struct timespec ts = { .tv_sec=timeout/1000, .tv_nsec=(timeout%1000)*1000000 };
+-      int r=kevent(c->ctx, 0, 0, &kev, freeslots, &ts);
++      int r=kevent(c->ctx, 0, 0, kev, freeslots, &ts);
+       if (r<=0) {
+ 	/* we ran into a timeout, so let someone else take over */
+ 	if (__sync_val_compare_and_swap(&c->working,1,0)==-2) return -2;
+@@ -82,7 +82,7 @@ int iom_wait(iomux_t* c,int64* s,unsigned int* revents
+ 	        (kev[i].filter == EVFILT_WRITE ? IOM_WRITE : 0);
+ 	if (i+1==r) {
+ 	  /* return last event instead of enqueueing it */
+-	  *s=kev.ident;
++	  *s=kev[i].ident;
+ 	  *revents=e;
+ 	} else {
+ 	  c->q[c->h].fd=kev[i].ident;
