@@ -1,0 +1,3 @@
+VF-1 is a command line gopher client. It is built around an interactive command
+prompt, and has a very "REPL" feeling. You only need a small number of commands
+to get around, and most of them can be abbreviated to one or two chars
