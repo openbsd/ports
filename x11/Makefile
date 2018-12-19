@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.623 2018/12/19 12:44:12 solene Exp $
+# $OpenBSD: Makefile,v 1.624 2018/12/19 15:19:04 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -73,7 +73,6 @@
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
-     SUBDIR += gaia
      SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
