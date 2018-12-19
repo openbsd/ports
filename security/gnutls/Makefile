@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.150 2018/12/15 09:00:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2018/12/19 08:35:54 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.6.5
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 
 SHARED_LIBS +=  gnutls               45.0     # 53.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
+SHARED_LIBS +=  gnutls-dane          0.0      # 4.1
 
 HOMEPAGE=		http://www.gnutls.org/
 
@@ -18,8 +20,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp hogweed iconv idn2 intl m nettle p11-kit pthread
-WANTLIB += tasn1 unistring ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c crypto event ffi gmp hogweed iconv
+WANTLIB += idn2 intl m nettle p11-kit ssl tasn1 unbound unistring
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -31,6 +33,7 @@ BUILD_DEPENDS=		devel/cmocka
 
 LIB_DEPENDS=		converters/libunistring \
 			devel/libidn2 \
+			net/libunbound \
 			security/libtasn1 \
 			security/libnettle \
 			security/p11-kit
@@ -46,9 +49,6 @@ CONFIGURE_ARGS=		--disable-guile \
 			--disable-valgrind-tests \
 			--with-default-trust-store-file=/etc/ssl/cert.pem \
 			--with-unbound-root-key-file=/var/unbound/db/root.key
-
-# OpenBSD's unbound does not provide libdane
-CONFIGURE_ARGS +=	--disable-libdane
 
 # requires security/trousers: not committed (aja@), needs kernel support
 # for tpm(4): http://bsssd.sourceforge.net/

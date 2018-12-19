@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.45 2018/12/15 09:00:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2018/12/19 08:35:54 ajacoutot Exp $
 @bin bin/certtool
+@bin bin/danetool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
 @bin bin/gnutls-serv
@@ -11,6 +12,7 @@ include/gnutls/
 include/gnutls/abstract.h
 include/gnutls/compat.h
 include/gnutls/crypto.h
+include/gnutls/dane.h
 include/gnutls/dtls.h
 include/gnutls/gnutls.h
 include/gnutls/gnutlsxx.h
@@ -37,14 +39,19 @@ info/gnutls-modauth.png
 info/gnutls-x509.png
 @info info/gnutls.info
 info/pkcs11-vision.png
+lib/libgnutls-dane.a
+lib/libgnutls-dane.la
+@lib lib/libgnutls-dane.so.${LIBgnutls-dane_VERSION}
 lib/libgnutls.a
 lib/libgnutls.la
 @lib lib/libgnutls.so.${LIBgnutls_VERSION}
 lib/libgnutlsxx.a
 lib/libgnutlsxx.la
 @lib lib/libgnutlsxx.so.${LIBgnutlsxx_VERSION}
+lib/pkgconfig/gnutls-dane.pc
 lib/pkgconfig/gnutls.pc
 @man man/man1/certtool.1
+@man man/man1/danetool.1
 @man man/man1/gnutls-cli-debug.1
 @man man/man1/gnutls-cli.1
 @man man/man1/gnutls-serv.1
