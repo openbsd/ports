@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/07 14:58:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2018/12/19 19:45:26 jca Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
 DISTNAME=		wmnetload-1.3
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net x11 x11/windowmaker
 
 HOMEPAGE=		http://freshmeat.net/projects/wmnetload
