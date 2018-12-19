@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2018/12/17 15:19:40 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2018/12/19 08:39:17 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -35,7 +37,7 @@ MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
 BUILD_DEPENDS=	devel/gettext-tools \
-		devel/py-setuptools \
+		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/swig \
 		shells/bash \
 		sysutils/coreutils \
@@ -57,11 +59,11 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
 		devel/libmagic \
-		devel/py-dateutil \
+		devel/py-dateutil${MODPY_FLAVOR} \
 		lang/python/2.7,-bsddb \
 		mail/p5-Mail-SpamAssassin \
 		textproc/catdoc \
-		www/py-jwt
+		www/py-jwt${MODPY_FLAVOR}
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
 		devel/gettext \
