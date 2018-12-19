@@ -1,12 +1,11 @@
-$OpenBSD: patch-configure,v 1.58 2018/09/05 07:01:50 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.59 2018/12/19 17:57:06 sthen Exp $
 
-- Fix curses test to work on OpenBSD
-- More appropriate CFLAGS handling
+Fix curses test to work on OpenBSD
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3371,6 +3371,7 @@ if test "$curses" != "no" ; then
+@@ -3370,6 +3370,7 @@ if test "$curses" != "no" ; then
    fi
    curses_found=no
    cat > $TMPC << EOF
@@ -14,7 +13,7 @@ Index: configure
  #include <locale.h>
  #include <curses.h>
  #include <wchar.h>
-@@ -5554,10 +5555,6 @@ write_c_skeleton
+@@ -5631,10 +5632,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
