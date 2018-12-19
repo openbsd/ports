@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1098 2018/12/18 12:01:04 edd Exp $
+# $OpenBSD: Makefile,v 1.1099 2018/12/19 09:45:07 edd Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -733,6 +733,7 @@
      SUBDIR += uucpd
      SUBDIR += validns
      SUBDIR += valknut
+     SUBDIR += vf1
      SUBDIR += vicq
      SUBDIR += vncsnapshot
      SUBDIR += vnstat
