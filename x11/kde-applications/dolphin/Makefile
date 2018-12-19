@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/18 09:39:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/19 17:59:13 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 SHARED_LIBS +=  dolphinprivate            0.1 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.1 # 5.0
@@ -28,7 +29,8 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-BUILD_DEPENDS +=devel/kf5/kfilemetadata
+BUILD_DEPENDS +=	devel/kf5/kfilemetadata \
+			devel/kf5/kinit
 
 RUN_DEPENDS +=	devel/kf5/kfilemetadata \
 		misc/shared-mime-info \
