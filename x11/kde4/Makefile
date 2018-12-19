@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/12/10 16:06:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2018/12/19 08:51:13 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -159,12 +159,12 @@ SUBDIR += rocs
 #SUBDIR += step			x11/kde-applications
 
 # former kdegames
-SUBDIR += libkdegames
-SUBDIR += libkmahjongg
+#SUBDIR += libkdegames
+#SUBDIR += libkmahjongg
 #SUBDIR += bomber		x11/kde-applications
 #SUBDIR += bovo			x11/kde-applications
 #SUBDIR += granatier		x11/kde-applications
-SUBDIR += kajongg
+#SUBDIR += kajongg		x11/kde-applications
 #SUBDIR += kapman		x11/kde-applications
 #SUBDIR += katomic		x11/kde-applications
 #SUBDIR += kblackbox		x11/kde-applications
@@ -189,16 +189,16 @@ SUBDIR += kajongg
 #SUBDIR += konquest		x11/kde-applications
 SUBDIR += kpat
 #SUBDIR += kreversi		x11/kde-applications
-SUBDIR += kshisen
+#SUBDIR += kshisen		x11/kde-applications
 #SUBDIR += ksirk		x11/kde-applications
-SUBDIR += ksnakeduel
-SUBDIR += kspaceduel
-SUBDIR += ksquares
-SUBDIR += ksudoku
-SUBDIR += ktuberling
-SUBDIR += kubrick
-SUBDIR += lskat
-SUBDIR += palapeli
+#SUBDIR += ksnakeduel		x11/kde-applications
+#SUBDIR += kspaceduel		x11/kde-applications
+#SUBDIR += ksquares		x11/kde-applications
+#SUBDIR += ksudoku		x11/kde-applications
+#SUBDIR += ktuberling		x11/kde-applications
+#SUBDIR += kubrick		x11/kde-applications
+#SUBDIR += lskat		x11/kde-applications
+#SUBDIR += palapeli		x11/kde-applications
 SUBDIR += picmi
 
 # former kdegraphics

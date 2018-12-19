@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/12/18 09:39:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2018/12/19 08:51:13 rsadowski Exp $
 
      SUBDIR =
 
@@ -51,7 +51,7 @@
      SUBDIR += bomber
      SUBDIR += bovo
      SUBDIR += granatier
-     #SUBDIR += kajongg
+     SUBDIR += kajongg
      SUBDIR += kapman
      SUBDIR += katomic
      SUBDIR += kblackbox
@@ -68,7 +68,7 @@
      SUBDIR += klickety
      SUBDIR += klines
      SUBDIR += kmahjongg
-     #SUBDIR += kmines
+     SUBDIR += kmines
      SUBDIR += knavalbattle
      SUBDIR += knetwalk
      #SUBDIR += knights
@@ -77,16 +77,16 @@
      SUBDIR += konquest
      #SUBDIR += kpatience
      SUBDIR += kreversi
-     #SUBDIR += kshisen
+     SUBDIR += kshisen
      SUBDIR += ksirk
-     #SUBDIR += ksnakeduel
-     #SUBDIR += kspaceduel
-     #SUBDIR += ksquares
-     #SUBDIR += ksudoku
-     #SUBDIR += ktuberling
-     #SUBDIR += kubrick
-     #SUBDIR += lskat
-     #SUBDIR += palapeli
+     SUBDIR += ksnakeduel
+     SUBDIR += kspaceduel
+     SUBDIR += ksquares
+     SUBDIR += ksudoku
+     SUBDIR += ktuberling
+     SUBDIR += kubrick
+     SUBDIR += lskat
+     SUBDIR += palapeli
      #SUBDIR += picmi
 
      # graphics

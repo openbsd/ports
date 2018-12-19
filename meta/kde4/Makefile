@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/12/10 16:06:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2018/12/19 08:51:13 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -27,12 +27,12 @@ PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	9
-REVISION-games = 2
+REVISION-games = 3
 REVISION-sdk = 2
 REVISION-edu = 4
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		14
+REVISION-main =		15
 REVISION-admin =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -108,17 +108,7 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \
-	${MODKDE4_DEP_DIR}/kmines	\
 	${MODKDE4_DEP_DIR}/kpat		\
-	${MODKDE4_DEP_DIR}/kshisen	\
-	${MODKDE4_DEP_DIR}/ksnakeduel	\
-	${MODKDE4_DEP_DIR}/kspaceduel	\
-	${MODKDE4_DEP_DIR}/ksquares	\
-	${MODKDE4_DEP_DIR}/ksudoku	\
-	${MODKDE4_DEP_DIR}/ktuberling	\
-	${MODKDE4_DEP_DIR}/kubrick	\
-	${MODKDE4_DEP_DIR}/libkmahjongg	\
-	${MODKDE4_DEP_DIR}/lskat	\
 	${MODKDE4_DEP_DIR}/picmi
 
 KDE4-multimedia = \
