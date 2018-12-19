@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2018/12/19 16:08:08 bcallah Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -85,6 +85,15 @@ CONFIGURE_ARGS+=--disable-a52dec \
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_header_execinfo_h=no
+
+.if ${MACHINE_ARCH:Maarch64}
+# The configure script runs `cc -print-prog-name=as'
+# if an AS env var isn't set, then tries to find that program.
+# Since there is no /usr/bin/as on arm64, this causes configure
+# to bail out and nothing gets built.
+# Let's just lie if we're on arm64.
+CONFIGURE_ENV+=	AS="${CC}"
+.endif
 
 NO_TEST=	Yes
 
