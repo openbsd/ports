@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/12/19 08:39:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2018/12/19 20:51:31 sthen Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
@@ -37,6 +37,7 @@ MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
 BUILD_DEPENDS=	devel/gettext-tools \
+		devel/libexecinfo \
 		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/swig \
 		shells/bash \
