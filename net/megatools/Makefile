@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/27 07:32:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2018/12/19 08:21:44 rsadowski Exp $
 
 PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.10.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -31,6 +31,8 @@ CONFIGURE_STYLE =	gnu
 MAKE_FLAGS =		VERBOSE=1
 
 CONFIGURE_ARGS =	--disable-introspection
+
+CFLAGS +=		-std=c99
 
 SEPARATE_BUILD =	Yes
 
