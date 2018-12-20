@@ -1,8 +1,8 @@
-$OpenBSD: patch-cmn_utils_cpp,v 1.4 2017/05/02 23:26:32 espie Exp $
+$OpenBSD: patch-cmn_utils_cpp,v 1.5 2018/12/20 23:20:07 naddy Exp $
 Index: cmn/utils.cpp
 --- cmn/utils.cpp.orig
 +++ cmn/utils.cpp
-@@ -30,18 +30,21 @@
+@@ -30,18 +30,22 @@
  
  // Include Files
  #include "stdafx.h"
@@ -27,10 +27,11 @@ Index: cmn/utils.cpp
  
 +using namespace std;
 +
++#include <stdint.h>
  #ifdef WIN32
  // For file manipulation routines.
  #include <direct.h>
-@@ -605,7 +608,7 @@ void PtrList::write(OutStreamP out) const{
+@@ -605,7 +609,7 @@ void PtrList::write(OutStreamP out) const{
    // Not tested.
    out->write_int(len);
    for (int n = 0; n < len; n++) {
@@ -39,7 +40,7 @@ Index: cmn/utils.cpp
    }
  }
  
-@@ -761,7 +764,7 @@ class HashTable: public IDictionary { (public)
+@@ -761,7 +765,7 @@ class HashTable: public IDictionary { (public)
  
  
  private:
@@ -48,7 +49,7 @@ Index: cmn/utils.cpp
    /* MODIFIES: index */
    /* EFFECTS: Internal helper function.  Return the Bucket containing key
       or NULL if not found.  Set index to the bucket list for key whether
-@@ -944,7 +947,7 @@ Bucket* HashTable::_get(int &index,void* key) {  
+@@ -944,7 +948,7 @@ Bucket* HashTable::_get(int &index,void* key) {  
  // Pretty crappy hash function, I know.
  // Careful if bucketsNum is a power of 2.
  int HashTable::defaultHash(void* key,int bucketsNum) {
