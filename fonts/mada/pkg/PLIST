@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/20 08:28:24 bentley Exp $
+share/doc/mada/
+share/doc/mada/README.txt
+share/fonts/
+@fontdir share/fonts/mada/
+share/fonts/mada/Mada-Black.otf
+share/fonts/mada/Mada-Bold.otf
+share/fonts/mada/Mada-ExtraLight.otf
+share/fonts/mada/Mada-Light.otf
+share/fonts/mada/Mada-Medium.otf
+share/fonts/mada/Mada-Regular.otf
+share/fonts/mada/Mada-SemiBold.otf
