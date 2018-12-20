@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.5 2018/12/20 15:10:13 espie Exp $
+# $OpenBSD: Sql.pm,v 1.6 2018/12/20 15:57:16 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -190,7 +190,9 @@ sub contents
 		push(@parts, $self->indent("$last)", 5));
 	}
 
-	$tables->{$self->origin}++;
+	my $n = $self->origin;
+	$n =~ tr/A-Z/a-z/;
+	$tables->{$n}++;
 
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
@@ -198,8 +200,9 @@ sub contents
 		if (!defined $joins->{$j}) {
 			push(@joins, $j);
 			$joins->{$j} = $j;
-			$tables->{$j->name}++;
-			if ($tables->{$j->name} == 1) {
+			$n = $j->name;
+			$n =~ tr/A-Z/a-z/;
+			if (++$tables->{$n} == 1) {
 				delete $j->{alias};
 			} else {
 				$j->{alias} = $alias++;
@@ -210,7 +213,7 @@ sub contents
 
 	push(@parts, $self->indent("SELECT", 0));
 	for my $c (@{$self->{columns}}) {
-		push(@parts, $self->indent($c->stringize, 4));
+		push(@parts, $self->indent($c->stringize($self), 4));
 
 	}
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
@@ -337,12 +340,12 @@ our @ISA = qw(Sql::Column);
 
 sub stringize
 {
-	my $self = shift;
+	my ($self, $container) = @_;
 
 	if (defined $self->{join}) {
-		return $self->{join}->alias.".".$self->name." AS ".$self->name;
+		return $self->{join}->alias.".".$self->{original}." AS ".$self->name;
 	} else {
-		return $self->name;
+		return $container->origin.".".$self->{original}." AS ".$self->name;
 	}
 }
 
@@ -353,6 +356,12 @@ sub join
 	return $self;
 }
 
+sub new
+{
+    my ($class, $name, $original) = @_;
+    $original //= $name;
+    bless {name => $name, original => $original}, $class;
+}
 
 package Sql::Column::Text;
 our @ISA = qw(Sql::Column);
@@ -363,9 +372,29 @@ sub type
 
 package Sql::Column::Key;
 our @ISA = qw(Sql::Column::Integer);
+sub new
+{
+	my $class = shift;
+	my $o = $class->SUPER::new(@_);
+	$o->{autoincrement} = 1;
+	return $o;
+}
+
+sub noautoincrement
+{
+	my $self = shift;
+	$self->{autoincrement} = 0;
+	return $self;
+}
+
 sub type
 {
-	"INTEGER PRIMARY KEY AUTOINCREMENT"
+	my $self = shift;
+	if ($self->{autoincrement}) {
+		return "INTEGER PRIMARY KEY AUTOINCREMENT";
+	} else {
+		return "INTEGER PRIMARY KEY";
+	}
 }
 
 package Sql::Constraint;
