@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.30 2018/12/04 10:35:09 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.31 2018/12/20 15:10:13 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,8 +29,7 @@ sub new
 		transaction => 0,
 		threshold => $i,
 		vars => {},
-		table_created => {},
-		view_created => {},
+		created => {},
 		create => $create,
 		errors => [],
 		done => {},
@@ -121,19 +120,32 @@ sub new_object
 	my ($self, $type, $name, $request) = @_;
 	my $o;
 	if ($type eq 'VIEW') {
-		return if defined $self->{view_created}{$name};
-		$self->{view_created}{$name} = 1;
 		$o = $self->view_name($name);
 	} elsif ($type eq 'TABLE') {
-		return if defined $self->{table_created}{$name};
-		$self->{table_created}{$name} = 1;
 		return unless $self->{create};
 		$o = $self->table_name($name);
 	} else {
 		die "unknown object type";
 	}
+	return if defined $self->{created}{$o};
+	$self->{created}{$o} = 1;
 	$self->db->do("DROP $type IF EXISTS $o");
 	$request = "CREATE $type $o $request";
+	print "$request\n" if $self->{verbose};
+	$self->db->do($request);
+}
+
+sub new_sql
+{
+	my ($self, $sql) = @_;
+	my $n = $sql->name;
+	if ($sql->is_table && !defined $self->{create}) {
+		return;
+	}
+	return if defined $self->{created}{$n};
+	$self->{created}{$n} = 1;
+	$self->db->do($sql->drop);
+	my $request = $sql->stringize;
 	print "$request\n" if $self->{verbose};
 	$self->db->do($request);
 }

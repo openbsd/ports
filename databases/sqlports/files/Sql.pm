@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.4 2018/12/20 12:13:01 espie Exp $
+# $OpenBSD: Sql.pm,v 1.5 2018/12/20 15:10:13 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -70,6 +70,11 @@ sub prepend
 	return $self;
 }
 
+sub is_table
+{
+	0
+}
+
 package Sql::Create;
 our @ISA = qw(Sql::Object);
 
@@ -94,6 +99,11 @@ our @ISA = qw(Sql::Create);
 sub type
 {
 	"TABLE"
+}
+
+sub is_table
+{
+	1
 }
 
 sub contents
