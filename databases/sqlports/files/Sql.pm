@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.7 2018/12/20 20:39:24 espie Exp $
+# $OpenBSD: Sql.pm,v 1.8 2018/12/20 21:02:09 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -203,6 +203,7 @@ sub contents
 	my $n = $self->origin;
 	$n =~ tr/A-Z/a-z/;
 	$tables->{$n}++;
+	$self->{tables} = 1;
 
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
@@ -212,6 +213,7 @@ sub contents
 			$joins->{$j} = $j;
 			$n = $j->name;
 			$n =~ tr/A-Z/a-z/;
+			$self->{tables}++;
 			if (++$tables->{$n} == 1) {
 				delete $j->{alias};
 			} else {
@@ -222,10 +224,13 @@ sub contents
 	}
 
 	push(@parts, $self->indent("SELECT", 0));
-	for my $c (@{$self->{columns}}) {
-		push(@parts, $self->indent($c->stringize($self), 4));
-
+	my @c = @{$self->{columns}};
+	while (@c != 0) {
+		my $c = shift @c;
+		my $sep = @c == 0 ? '' : ',';
+		push(@parts, $self->indent($c->stringize($self), 4).$sep);
 	}
+
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
 	for my $j  (@joins) {
 		push(@parts, $self->indent($j->join_part, 4));
@@ -333,7 +338,14 @@ sub stringize
 {
 	my ($self, $container) = @_;
 
-	if (defined $self->{join}) {
+	if ($container->{tables} == 1) {
+		if ($self->origin eq $self->name) {
+			return $self->name;
+		} else {
+			return $self->origin." AS ".$self->name;
+		}
+	}
+	elsif (defined $self->{join}) {
 		return $self->{join}->alias.".".$self->origin." AS ".$self->name;
 	} else {
 		return $container->origin.".".$self->origin." AS ".$self->name;
@@ -355,6 +367,23 @@ sub new
     return $o;
 }
 
+package Sql::Column::View::Concat;
+our @ISA = qw(Sql::Column::View);
+
+sub new
+{
+    my $class = shift;
+    my $o = $class->SUPER::new(@_);
+    $o->{separator} //= ' ';
+    return $o;
+}
+
+sub origin
+{
+	my $self = shift;
+	return "group_concat(".$self->SUPER::origin.", '".
+		$self->{separator}."')";
+}
 package Sql::Column::Text;
 our @ISA = qw(Sql::Column);
 sub type
