@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/20 17:31:21 lum Exp $
 
 COMMENT=	bcrypt blowfish password hashing for Python
 
-MODPY_EGG_VERSION= 3.1.4
+MODPY_EGG_VERSION= 3.1.5
 DISTNAME=	bcrypt-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 REVISION=	0
@@ -27,9 +27,7 @@ RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# there's some test scaffolding in setup.py (using py-test), but I don't
-# see any actual tests anywhere. trying to use it gives "collected 0 items".
-# security/py-passlib has a decent test suite that includes tests of this.
-NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-test${MODPY_FLAVOR} \
+		devel/py-six${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
