@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.11 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.12 2018/12/20 10:01:18 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -70,7 +70,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -588,13 +591,22 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
+@@ -588,12 +591,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
  )
  AC_SUBST(GZ_LIBS)
  
@@ -85,17 +85,9 @@ Index: configure.ac
  AC_SUBST(INTL_LIBS)
 +LIBS=$LIBS_system
  
-+LIBS="$LIBS -L/usr/local/lib"
-+AC_CHECK_LIB([execinfo], [backtrace], EXECINFO_LIBS="-L/usr/local/lib -lexecinfo", dnl in -lexecinfo
-+  AC_MSG_ERROR([required library libexecinfo missing or unusable])
-+)
-+AC_SUBST(EXECINFO_LIBS)
-+LIBS=$LIBS_system
-+
  # check epoll support
  AC_ARG_ENABLE([epoll], AS_HELP_STRING([--disable-epoll], [disable epoll and fallback to select]), [want_epoll=${enableval}], [want_epoll=yes])
- AM_CONDITIONAL(WITH_EPOLL, test "$want_epoll" = "yes")
-@@ -650,6 +662,8 @@ AS_IF([test "$have_icu" = 0], [
+@@ -650,6 +655,8 @@ AS_IF([test "$have_icu" = 0], [
  	AC_MSG_ERROR([ICU is required but not found])
  ])
  ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"

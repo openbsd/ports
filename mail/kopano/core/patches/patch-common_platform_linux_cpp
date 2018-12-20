@@ -1,8 +1,17 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.4 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-common_platform_linux_cpp,v 1.5 2018/12/20 10:01:18 robert Exp $
 
 Index: common/platform.linux.cpp
 --- common/platform.linux.cpp.orig
 +++ common/platform.linux.cpp
+@@ -29,7 +29,7 @@
+ #else
+ #	include <uuid.h>
+ #endif
+-#if defined(__GLIBC__) || defined(OPENBSD)
++#if defined(__GLIBC__)
+ #	include <execinfo.h>
+ #	define WITH_BACKTRACE 1
+ #endif
 @@ -84,6 +84,12 @@ void Sleep(unsigned int msec) {
  
  namespace KC {
