@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.3 2018/12/19 16:05:14 espie Exp $
+# $OpenBSD: Sql.pm,v 1.4 2018/12/20 12:13:01 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -57,6 +57,15 @@ sub add
 	my $self = shift;
 	for my $o (@_) {
 		push(@{$self->{$o->category}}, $o);
+	}
+	return $self;
+}
+
+sub prepend
+{
+	my $self = shift;
+	for my $o (@_) {
+		unshift(@{$self->{$o->category}}, $o);
 	}
 	return $self;
 }
@@ -145,6 +154,7 @@ sub sort
 package Sql::Select;
 our @ISA = qw(Sql::Create);
 
+my $alias = "T0001";
 
 sub contents
 {
@@ -170,6 +180,8 @@ sub contents
 		push(@parts, $self->indent("$last)", 5));
 	}
 
+	$tables->{$self->origin}++;
+
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
 		next if !defined $j;
@@ -177,17 +189,12 @@ sub contents
 			push(@joins, $j);
 			$joins->{$j} = $j;
 			$tables->{$j->name}++;
-		}
-	}
-
-	$tables->{$self->origin}++;
-
-	my $alias = "T0001";
-	for my $j (@joins) {
-		if ($tables->{$j->name} == 1) {
-			delete $j->{alias};
-		} else {
-			$j->{alias} = $alias++;
+			if ($tables->{$j->name} == 1) {
+				delete $j->{alias};
+			} else {
+				$j->{alias} = $alias++;
+			}
+				
 		}
 	}
 
