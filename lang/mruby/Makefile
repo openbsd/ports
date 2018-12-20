@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/17 20:28:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/20 18:41:45 jeremy Exp $
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
 VERSION =		2.0.0
 DISTNAME =		mruby-${VERSION}
+REVISION =		0
 CATEGORIES =		lang
 HOMEPAGE =		https://github.com/mruby/mruby
 
