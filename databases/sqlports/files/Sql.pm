@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.6 2018/12/20 15:57:16 espie Exp $
+# $OpenBSD: Sql.pm,v 1.7 2018/12/20 20:39:24 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -23,8 +23,10 @@ use warnings;
 package Sql::Object;
 sub new
 {
-	my ($class, $name) = @_;
-	bless {name => $name}, $class;
+	my ($class, $name, %rest) = @_;
+	my $o = \%rest;
+	$o->{name} = $name;
+	bless $o, $class;
 }
 
 sub indent
@@ -73,6 +75,12 @@ sub prepend
 sub is_table
 {
 	0
+}
+
+sub origin
+{
+	my $self = shift;
+	return $self->{origin};
 }
 
 package Sql::Create;
@@ -132,8 +140,10 @@ sub type
 
 sub new
 {
-	my ($class, $name) = @_;
-	bless {name => $name, select => Sql::Select->new}, $class;
+	my $class = shift;
+	my $o = $class->SUPER::new(@_);
+	$o->{select} = Sql::Select->new(@_);
+	return $o;
 }
 
 
@@ -235,24 +245,11 @@ sub contents
 	return @parts;
 }
 
-sub origin
-{
-	my $self = shift;
-	return $self->{origin}[0]->name;
-}
-
 package Sql::With;
 our @ISA = qw(Sql::Select);
 sub category
 {
 	"with"
-}
-
-package Sql::Origin;
-our @ISA = qw(Sql::Object);
-sub category
-{
-	"origin"
 }
 
 package Sql::Order;
@@ -274,12 +271,6 @@ our @ISA = qw(Sql::Object);
 sub category
 {
 	"columns"
-}
-
-sub new
-{
-	my ($class, $name) = @_;
-	bless {name => $name}, $class;
 }
 
 sub notnull
@@ -343,9 +334,9 @@ sub stringize
 	my ($self, $container) = @_;
 
 	if (defined $self->{join}) {
-		return $self->{join}->alias.".".$self->{original}." AS ".$self->name;
+		return $self->{join}->alias.".".$self->origin." AS ".$self->name;
 	} else {
-		return $container->origin.".".$self->{original}." AS ".$self->name;
+		return $container->origin.".".$self->origin." AS ".$self->name;
 	}
 }
 
@@ -358,9 +349,10 @@ sub join
 
 sub new
 {
-    my ($class, $name, $original) = @_;
-    $original //= $name;
-    bless {name => $name, original => $original}, $class;
+    my $class = shift;
+    my $o = $class->SUPER::new(@_);
+    $o->{origin} //= $o->{name};
+    return $o;
 }
 
 package Sql::Column::Text;
