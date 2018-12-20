@@ -1,0 +1,67 @@
+$OpenBSD: patch-apps_app_voicemail_c,v 1.2 2018/12/20 17:02:24 sthen Exp $
+
+From e137086163b00ce4947aa9335aae7f45956bbe75 Mon Sep 17 00:00:00 2001
+From: George Joseph <gjoseph@digium.com>
+Date: Tue, 18 Dec 2018 09:33:50 -0700
+Subject: [PATCH] app_voicemail:  Don't delete mailbox state unless mailbox is
+ deleted
+
+The free_user function was automatically deleting the stasis mailbox
+state but this only makes sense when the mailbox is actually
+deleted, not just the structure freed.  This was causing issues
+where leave_voicemail would publish the mwi message to stasis and
+delete the state before the message could be processed by
+res_pjsip_mwi.
+
+* Removed the delete of state from free_user().
+
+* Created a new free_user_final() function that both frees the data
+  structure and deletes the state.  This function is only called
+  during module load/unload where it's appropriate to delete the
+  state.
+
+ASTERISK-28215
+
+Index: apps/app_voicemail.c
+--- apps/app_voicemail.c.orig
++++ apps/app_voicemail.c
+@@ -2026,10 +2026,6 @@ static void free_user(struct ast_vm_user *vmu)
+ 		return;
+ 	}
+ 
+-	if (!ast_strlen_zero(vmu->mailbox)) {
+-		ast_delete_mwi_state_full(vmu->mailbox, vmu->context, NULL);
+-	}
+-
+ 	ast_free(vmu->email);
+ 	vmu->email = NULL;
+ 	ast_free(vmu->emailbody);
+@@ -2042,6 +2038,19 @@ static void free_user(struct ast_vm_user *vmu)
+ 	}
+ }
+ 
++static void free_user_final(struct ast_vm_user *vmu)
++{
++	if (!vmu) {
++		return;
++	}
++
++	if (!ast_strlen_zero(vmu->mailbox)) {
++		ast_delete_mwi_state_full(vmu->mailbox, vmu->context, NULL);
++	}
++
++	free_user(vmu);
++}
++
+ static int vm_allocate_dh(struct vm_state *vms, struct ast_vm_user *vmu, int count_msg) {
+ 
+ 	int arraysize = (vmu->maxmsg > count_msg ? vmu->maxmsg : count_msg);
+@@ -13491,7 +13500,7 @@ static void free_vm_users(void)
+ 	AST_LIST_LOCK(&users);
+ 	while ((current = AST_LIST_REMOVE_HEAD(&users, list))) {
+ 		ast_set_flag(current, VM_ALLOCED);
+-		free_user(current);
++		free_user_final(current);
+ 	}
+ 	AST_LIST_UNLOCK(&users);
+ }
