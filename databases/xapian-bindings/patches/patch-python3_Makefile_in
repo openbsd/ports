@@ -1,0 +1,14 @@
+$OpenBSD: patch-python3_Makefile_in,v 1.1 2018/12/20 09:59:26 robert Exp $
+
+Index: python3/Makefile.in
+--- python3/Makefile.in.orig
++++ python3/Makefile.in
+@@ -1295,7 +1295,7 @@ xapian/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@: 
+ 
+ xapian/_xapian$(PYTHON3_SO): _xapian.la
+ 	$(MKDIR_P) xapian
+-	$(LIBTOOL) --config > libtoolconfig.tmp
++	$(LIBTOOL) --config | grep -v pic > libtoolconfig.tmp
+ 	. ./libtoolconfig.tmp; cp $$objdir/_xapian$(PYTHON3_SO) xapian
+ 	rm -f libtoolconfig.tmp
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/08 22:48:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2018/12/20 09:59:26 robert Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -11,12 +11,14 @@ PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
-REVISION-python=	3
+REVISION-python=	4
 REVISION-ruby=		3
 REVISION-main=		2
 
 MODULES=	lang/python \
 		lang/ruby
+
+MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 
 MULTI_PACKAGES=	-main -python -ruby
 
@@ -50,9 +52,8 @@ SUBST_VARS+=		MODRUBY_BINREV
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		RUBY="${RUBY}" RDOC="${RUBY:S/ruby/rdoc/}"
 CONFIGURE_ARGS=		--with-perl \
-			--with-python \
+			--with-python3 \
 			--with-ruby \
-			--without-python3 \
 			--without-php \
 			--without-tcl \
 			--without-csharp \
