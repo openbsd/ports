@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/22 11:23:28 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/21 12:13:49 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
 DISTNAME =	atari800-4.0.0
+REVISION =	0
 
 CATEGORIES =	emulators
 
