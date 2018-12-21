@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.10 2018/12/21 11:49:05 espie Exp $
+# $OpenBSD: Sql.pm,v 1.11 2018/12/21 17:06:07 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -116,6 +116,18 @@ sub sort
 	return $self;
 }
 
+sub all_tables
+{
+	my $class = shift;
+	return grep {$_->is_table} (values %$register);
+}
+
+sub all_views
+{
+	my $class = shift;
+	return grep {!$_->is_table} (values %$register);
+}
+
 sub dump_all
 {
 	my $class = shift;
@@ -191,6 +203,7 @@ sub inserter
 	my $self = shift;
 	my (@names, @i);
 	for my $c (@{$self->{columns}}) {
+		next if $c->is_key;
 		push(@names, $c->name);
 		push(@i, '?');
 	}
@@ -395,6 +408,11 @@ sub stringize
 	return join(" ", @c);
 }
 
+sub is_key
+{
+	0
+}
+
 package Sql::Column::Integer;
 our @ISA = qw(Sql::Column);
 
@@ -486,6 +504,12 @@ sub new
 	my $o = $class->SUPER::new(@_);
 	$o->{autoincrement} = 1;
 	return $o;
+}
+
+sub is_key
+{
+	my $self = shift;
+	return $self->{autoincrement};
 }
 
 sub noautoincrement
