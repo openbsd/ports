@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.9 2018/12/21 11:11:06 espie Exp $
+# $OpenBSD: Sql.pm,v 1.10 2018/12/21 11:49:05 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -83,6 +83,12 @@ sub origin
 	return $self->{origin};
 }
 
+sub origin_name
+{
+	my $self = shift;
+	return $self->origin;
+}
+
 sub normalize
 {
 	my ($self, $v) = @_;
@@ -123,6 +129,31 @@ sub register
 	my $self = shift;
 	$register->{$self->normalize($self->name)} = $self;
 	return $self;
+}
+
+sub add_column_names
+{
+	my ($self, $name) = @_;
+	my $o = $register->{$self->normalize($name)};
+	if (!defined $o) {
+		print STDERR $name, "\n";
+		return;
+	}
+	$self->add_column_names_from($o);
+}
+
+sub add_column_names_from
+{
+	my ($self, $o) = @_;
+	for my $c ($o->columns) {
+		$self->{column_names}{$self->normalize($c->name)}++;
+	}
+}
+
+sub columns
+{
+	my $self = shift;
+	return @{$self->{columns}};
 }
 
 package Sql::Create::Table;
@@ -199,6 +230,12 @@ sub contents
 	return ("AS", $self->{select}->contents);
 }
 
+sub columns
+{
+	my $self = shift;
+	return @{$self->{select}{columns}};
+}
+
 sub add
 {
 	my $self = shift;
@@ -229,8 +266,12 @@ sub contents
 	
 	# figure out used tables
 	my $tables = {};
+	
+	# and column names
+	$self->{column_names} = {};
 
 	for my $w (@{$self->{with}}) {
+		$self->add_column_names_from($w);
 		push(@parts, $self->indent("WITH ".$w->name." AS", 0));
 		my @c = $w->contents;
 		my $one = shift @c;
@@ -242,16 +283,17 @@ sub contents
 		push(@parts, $self->indent("$last)", 5));
 	}
 
+	$self->add_column_names($self->origin);
+
 	$tables->{$self->normalize($self->origin)}++;
-	$self->{tables} = 1;
 
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
 		next if !defined $j;
 		if (!defined $joins->{$j}) {
+			$self->add_column_names($j->name);
 			push(@joins, $j);
 			$joins->{$j} = $j;
-			$self->{tables}++;
 			if (++$tables->{$self->normalize($j->name)} == 1) {
 				delete $j->{alias};
 			} else {
@@ -376,14 +418,14 @@ sub stringize
 {
 	my ($self, $container) = @_;
 
-	if ($container->{tables} == 1) {
+	my $unique = $container->{column_names}{$self->normalize($self->origin_name)} == 1;
+	if ($unique) {
 		if ($self->origin eq $self->name) {
 			return $self->name;
 		} else {
 			return $self->origin." AS ".$self->name;
 		}
-	}
-	elsif (defined $self->{join}) {
+	} elsif (defined $self->{join}) {
 		return $self->{join}->alias.".".$self->origin." AS ".$self->name;
 	} else {
 		return $container->origin.".".$self->origin." AS ".$self->name;
@@ -422,6 +464,13 @@ sub origin
 	return "group_concat(".$self->SUPER::origin.", '".
 		$self->{separator}."')";
 }
+
+sub origin_name
+{
+	my $self = shift;
+	return $self->SUPER::origin;
+}
+
 package Sql::Column::Text;
 our @ISA = qw(Sql::Column);
 sub type
