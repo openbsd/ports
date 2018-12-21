@@ -1,6 +1,7 @@
-$OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
---- term.c.orig	Sat Jul 23 01:15:32 2005
-+++ term.c	Fri Dec  6 03:30:13 2013
+$OpenBSD: patch-term_c,v 1.3 2018/12/21 15:00:42 sthen Exp $
+Index: term.c
+--- term.c.orig
++++ term.c
 @@ -19,6 +19,9 @@
   *
   */
@@ -19,9 +20,9 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
 +#include <termios.h>
 +#else
  #ifdef HAVE_TERMIO_H
- #include <termio.h>
- #else
-@@ -37,6 +43,7 @@
+ #ifdef HAVE_WX
+ #include <termios.h>
+@@ -41,6 +47,7 @@
  #include <sgtty.h>
  #endif
  #endif
@@ -29,7 +30,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
  
  #undef TRUE
  #undef FALSE
-@@ -71,6 +78,9 @@ char cm_arr[40];
+@@ -78,6 +85,9 @@ char cm_arr[40];
  char so_arr[40];
  char se_arr[40];
  
@@ -39,7 +40,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
  #ifdef HAVE_TERMIO_H
  struct termio tty_cooked, tty_cbreak;
  #else
-@@ -78,6 +88,7 @@ struct termio tty_cooked, tty_cbreak;
+@@ -85,6 +95,7 @@ struct termio tty_cooked, tty_cbreak;
  struct sgttyb tty_cooked, tty_cbreak;
  #endif
  #endif
@@ -47,7 +48,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
  
  int interactive, tty_charmode;
  
-@@ -85,7 +96,7 @@ extern char **environ, *tgoto(), *tgetstr();
+@@ -92,7 +103,7 @@ extern char **environ, *tgoto(), *tgetstr();
  
  char *termcap_ptr;
  
@@ -56,7 +57,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
      *termcap_ptr++ = ch;
      return 0;
  }
-@@ -125,6 +136,13 @@ void term_init(void) {
+@@ -132,6 +143,13 @@ void term_init(void) {
  #endif /* WIN32 */
  #else
      if (interactive) {
@@ -70,7 +71,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
  #ifdef HAVE_TERMIO_H
  	ioctl(0,TCGETA,(char *)(&tty_cooked));
  	tty_cbreak = tty_cooked;
-@@ -137,6 +155,7 @@ void term_init(void) {
+@@ -144,6 +162,7 @@ void term_init(void) {
  	tty_cbreak.sg_flags |= CBREAK;
  	tty_cbreak.sg_flags &= ~ECHO;
  #endif
@@ -78,7 +79,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
      }
      tty_charmode = 0;
      tgetent(bp, getenv("TERM"));
-@@ -181,11 +200,15 @@ void term_init(void) {
+@@ -188,11 +207,15 @@ void term_init(void) {
  void charmode_on() {
  #ifdef unix
      if ((readstream == stdin) && interactive && !tty_charmode) {
@@ -94,7 +95,7 @@ $OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
  	tty_charmode++;
      }
  #endif /* unix */
-@@ -197,11 +220,15 @@ void charmode_on() {
+@@ -204,11 +227,15 @@ void charmode_on() {
  void charmode_off() {
  #ifdef unix
      if (tty_charmode) {

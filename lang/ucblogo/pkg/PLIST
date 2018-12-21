@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
-bin/logo
+@comment $OpenBSD: PLIST,v 1.2 2018/12/21 15:00:42 sthen Exp $
+@bin bin/logo
 share/ucblogo/
 share/ucblogo/helpfiles/
 share/ucblogo/helpfiles/ALL_NAMES
@@ -39,6 +39,7 @@ share/ucblogo/helpfiles/butfirst
 share/ucblogo/helpfiles/butfirsts
 share/ucblogo/helpfiles/butlast
 share/ucblogo/helpfiles/button
+share/ucblogo/helpfiles/buttonact
 share/ucblogo/helpfiles/buttonp
 share/ucblogo/helpfiles/bye
 share/ucblogo/helpfiles/cascade
@@ -49,10 +50,12 @@ share/ucblogo/helpfiles/char
 share/ucblogo/helpfiles/clean
 share/ucblogo/helpfiles/clearscreen
 share/ucblogo/helpfiles/cleartext
+share/ucblogo/helpfiles/clickpos
 share/ucblogo/helpfiles/close
 share/ucblogo/helpfiles/closeall
 share/ucblogo/helpfiles/co
 share/ucblogo/helpfiles/combine
+share/ucblogo/helpfiles/commandline
 share/ucblogo/helpfiles/cond
 share/ucblogo/helpfiles/contents
 share/ucblogo/helpfiles/continue
@@ -65,6 +68,7 @@ share/ucblogo/helpfiles/cslsload
 share/ucblogo/helpfiles/ct
 share/ucblogo/helpfiles/cursor
 share/ucblogo/helpfiles/ddefmacro
+share/ucblogo/helpfiles/decreasefont
 share/ucblogo/helpfiles/define
 share/ucblogo/helpfiles/definedp
 share/ucblogo/helpfiles/deq
@@ -109,10 +113,12 @@ share/ucblogo/helpfiles/fd
 share/ucblogo/helpfiles/fence
 share/ucblogo/helpfiles/filep
 share/ucblogo/helpfiles/fill
+share/ucblogo/helpfiles/filled
 share/ucblogo/helpfiles/filter
 share/ucblogo/helpfiles/find
 share/ucblogo/helpfiles/first
 share/ucblogo/helpfiles/firsts
+share/ucblogo/helpfiles/font
 share/ucblogo/helpfiles/for
 share/ucblogo/helpfiles/foreach
 share/ucblogo/helpfiles/forever
@@ -142,12 +148,15 @@ share/ucblogo/helpfiles/iffalse
 share/ucblogo/helpfiles/ift
 share/ucblogo/helpfiles/iftrue
 share/ucblogo/helpfiles/ignore
+share/ucblogo/helpfiles/increasefont
 share/ucblogo/helpfiles/int
 share/ucblogo/helpfiles/invoke
 share/ucblogo/helpfiles/iseq
 share/ucblogo/helpfiles/item
+share/ucblogo/helpfiles/keyact
 share/ucblogo/helpfiles/keyp
 share/ucblogo/helpfiles/label
+share/ucblogo/helpfiles/labelsize
 share/ucblogo/helpfiles/last
 share/ucblogo/helpfiles/left
 share/ucblogo/helpfiles/lessequalp
@@ -297,10 +306,12 @@ share/ucblogo/helpfiles/setbg
 share/ucblogo/helpfiles/setcslsloc
 share/ucblogo/helpfiles/setcursor
 share/ucblogo/helpfiles/seteditor
+share/ucblogo/helpfiles/setfont
 share/ucblogo/helpfiles/seth
 share/ucblogo/helpfiles/setheading
 share/ucblogo/helpfiles/sethelploc
 share/ucblogo/helpfiles/setitem
+share/ucblogo/helpfiles/setlabelheight
 share/ucblogo/helpfiles/setlibloc
 share/ucblogo/helpfiles/setmargins
 share/ucblogo/helpfiles/setpalette
@@ -317,6 +328,8 @@ share/ucblogo/helpfiles/setscrunch
 share/ucblogo/helpfiles/settc
 share/ucblogo/helpfiles/settemploc
 share/ucblogo/helpfiles/settextcolor
+share/ucblogo/helpfiles/settextfont
+share/ucblogo/helpfiles/settextsize
 share/ucblogo/helpfiles/setwrite
 share/ucblogo/helpfiles/setwritepos
 share/ucblogo/helpfiles/setx
@@ -343,6 +356,7 @@ share/ucblogo/helpfiles/tag
 share/ucblogo/helpfiles/test
 share/ucblogo/helpfiles/text
 share/ucblogo/helpfiles/textscreen
+share/ucblogo/helpfiles/textsize
 share/ucblogo/helpfiles/thing
 share/ucblogo/helpfiles/throw
 share/ucblogo/helpfiles/to
@@ -363,6 +377,7 @@ share/ucblogo/helpfiles/until
 share/ucblogo/helpfiles/untrace
 share/ucblogo/helpfiles/uppercase
 share/ucblogo/helpfiles/usealternatenames
+share/ucblogo/helpfiles/vbarredp
 share/ucblogo/helpfiles/wait
 share/ucblogo/helpfiles/while
 share/ucblogo/helpfiles/window

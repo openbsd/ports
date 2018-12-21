@@ -1,18 +1,19 @@
-$OpenBSD: patch-init_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
---- init.c.orig	Mon May  8 15:39:40 2006
-+++ init.c	Mon May  8 15:38:59 2006
-@@ -484,8 +484,8 @@ void init(void) {
-     i = 0;
- #endif
- 
--    logolib = getenv("LOGOLIB");
--    helpfiles = getenv("LOGOHELP");
-+    logolib = "@logopath@";
-+    helpfiles = "@logohelp@";
-     csls = getenv("CSLS");
+$OpenBSD: patch-init_c,v 1.2 2018/12/21 15:00:42 sthen Exp $
+Index: init.c
+--- init.c.orig
++++ init.c
+@@ -541,8 +541,8 @@ void init(void) {
+ 	csls = sugarcsls;
+     } else {
+ nosugar:
+-	logolib = getenv("LOGOLIB");
+-	helpfiles = getenv("LOGOHELP");
++	logolib = "${PREFIX}/share/ucblogo";
++	helpfiles = "${PREFIX}/share/ucblogo/helpfiles";
+ 	csls = getenv("CSLS");
+     }
      editor = getenv("EDITOR");
- #ifdef WIN32
-@@ -669,8 +669,8 @@ void init(void) {
+@@ -756,8 +756,8 @@ nosugar:
      the_generation = cons(NIL, NIL);
      Not_Enough_Node = cons(NIL, NIL);
  
@@ -22,4 +23,4 @@ $OpenBSD: patch-init_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
 +    fp = fopen("messages", "r");
      if (fp == NULL)
  	fp = fopen(linebuf, "r");
-     if (fp == NULL) {
+     if (fp == NULL)

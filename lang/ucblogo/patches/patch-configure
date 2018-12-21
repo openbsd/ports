@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.1 2013/12/06 16:06:50 jca Exp $
---- configure.orig	Thu Dec  5 23:13:36 2013
-+++ configure	Thu Dec  5 23:13:51 2013
-@@ -1582,7 +1582,7 @@ EOF
+$OpenBSD: patch-configure,v 1.2 2018/12/21 15:00:42 sthen Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -1673,7 +1673,7 @@ EOF
  
  fi
  
