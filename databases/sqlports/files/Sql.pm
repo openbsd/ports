@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.8 2018/12/20 21:02:09 espie Exp $
+# $OpenBSD: Sql.pm,v 1.9 2018/12/21 11:11:06 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -83,8 +83,17 @@ sub origin
 	return $self->{origin};
 }
 
+sub normalize
+{
+	my ($self, $v) = @_;
+	$v =~ tr/A-Z/a-z/;
+	return $v;
+}
+
 package Sql::Create;
 our @ISA = qw(Sql::Object);
+
+my $register;
 
 sub stringize
 {
@@ -98,6 +107,21 @@ sub sort
 	my $self = shift;
 
 	$self->{columns} = [ sort {$a->name cmp $b->name} @{$self->{columns}}];
+	return $self;
+}
+
+sub dump_all
+{
+	my $class = shift;
+	for my $v (values %$register) {
+		$v->dump;
+	}
+}
+
+sub register
+{
+	my $self = shift;
+	$register->{$self->normalize($self->name)} = $self;
 	return $self;
 }
 
@@ -131,6 +155,24 @@ sub contents
 	return "(". join(', ', @c).")";
 }
 
+sub inserter
+{
+	my $self = shift;
+	my (@names, @i);
+	for my $c (@{$self->{columns}}) {
+		push(@names, $c->name);
+		push(@i, '?');
+	}
+	return "INSERT OR REPLACE INTO ".$self->name." (".
+	    join(', ', @names).") VALUES (".join(', ', @i).")";
+}
+
+sub new
+{
+	my $class = shift;
+	$class->SUPER::new(@_)->register;
+}
+
 package Sql::Create::View;
 our @ISA = qw(Sql::Create);
 sub type
@@ -143,7 +185,7 @@ sub new
 	my $class = shift;
 	my $o = $class->SUPER::new(@_);
 	$o->{select} = Sql::Select->new(@_);
-	return $o;
+	$o->register;
 }
 
 
@@ -200,9 +242,7 @@ sub contents
 		push(@parts, $self->indent("$last)", 5));
 	}
 
-	my $n = $self->origin;
-	$n =~ tr/A-Z/a-z/;
-	$tables->{$n}++;
+	$tables->{$self->normalize($self->origin)}++;
 	$self->{tables} = 1;
 
 	for my $c (@{$self->{columns}}) {
@@ -211,10 +251,8 @@ sub contents
 		if (!defined $joins->{$j}) {
 			push(@joins, $j);
 			$joins->{$j} = $j;
-			$n = $j->name;
-			$n =~ tr/A-Z/a-z/;
 			$self->{tables}++;
-			if (++$tables->{$n} == 1) {
+			if (++$tables->{$self->normalize($j->name)} == 1) {
 				delete $j->{alias};
 			} else {
 				$j->{alias} = $alias++;

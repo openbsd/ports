@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.16 2018/12/03 15:28:40 espie Exp $
+# $OpenBSD: Column.pm,v 1.17 2018/12/21 11:11:06 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -35,6 +35,17 @@ sub set_vartype
 
 	$self->{vartype} = $vartype;
 	return $self;
+}
+
+# sometimes a list of columns actually relies on the SAME join.
+sub join
+{
+	my ($self, @join) = @_;
+	for my $c (@join) {
+		$c->{joined} = $self;
+	}
+	# and we want to have the full list of columns to integrate
+	return @_;
 }
 
 sub name
@@ -113,7 +124,11 @@ sub table
 {
 	my $self = shift;
 	$self->{table} //= $table++;
-	return $self->{table};
+	if (defined $self->{joined}) {
+		return $self->{joined}->table;
+	} else {
+		return $self->{table};
+	}
 }
 
 package PathColumn;
@@ -146,6 +161,7 @@ sub normal_schema
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
+	return undef if defined $self->{joined};
 	return $self->pretty_join($table, $inserter);
 }
 
@@ -194,7 +210,7 @@ sub realname
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
-	if (defined $self->k) {
+	if (defined $self->k || defined $self->{joined}) {
 		return $self->pretty_join($table, $inserter);
 	} else {
 		return undef;
@@ -245,6 +261,7 @@ sub realname
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
+	return undef if defined $self->{joined};
 	return $self->pretty_join($table, $inserter);
 }
 
@@ -297,6 +314,7 @@ sub realname
 sub join_schema
 {
 	my ($self, $table, $inserter) = @_;
+	return undef if defined $self->{joined};
 	return $self->pretty_join($table, $inserter);
 }
 

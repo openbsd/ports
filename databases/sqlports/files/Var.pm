@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.43 2018/12/03 20:11:15 espie Exp $
+# $OpenBSD: Var.pm,v 1.44 2018/12/21 11:11:06 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -221,8 +221,7 @@ sub create_tables
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, ARCH, VALUE)',
-	    OptValueColumn->new("ARCH"),
-	    TextColumn->new("VALUE"));
+	    OptValueColumn->new("ARCH")->join(TextColumn->new("VALUE")));
 	$inserter->prepare_normal_inserter($self->table,
 	    "ARCH", "VALUE");
 }
@@ -383,7 +382,7 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$inserter->make_table($self, undef,
-	    PathColumn->new("Value"), IntegerColumn->new("N"));
+	    PathColumn->new("Value")->join(IntegerColumn->new("N")));
 	$inserter->prepare_normal_inserter($self->table, "Value", "N");
 	$inserter->make_ordered_view($self);
 }
@@ -509,8 +508,7 @@ sub create_tables
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, N, VALUE)",
-	    OptIntegerColumn->new("N"),
-	    ValueColumn->new);
+	    ValueColumn->new->join(OptIntegerColumn->new("N")));
 	$inserter->prepare_normal_inserter($self->table, "N", "VALUE");
 }
 
