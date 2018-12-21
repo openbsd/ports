@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2018/12/21 14:42:39 ajacoutot Exp $
 
 COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
-REVISION =	5
+REVISION =	6
 CATEGORIES =	games
 
 HOMEPAGE =	http://zaz.sourceforge.net/
@@ -12,9 +12,8 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	GL SDL SDL_image c freetype ftgl iconv intl m ogg pthread \
-		${COMPILER_LIBCXX} theoradec theoraenc \
-		vorbis vorbisenc vorbisfile z
+WANTLIB += ${COMPILER_LIBCXX} GL SDL SDL_image c ftgl iconv intl
+WANTLIB += m ogg theoradec theoraenc vorbis vorbisenc vorbisfile
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -22,10 +21,8 @@ EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=zaz/}
 
 LIB_DEPENDS =	audio/libvorbis \
+		devel/gettext \
 		devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-net \
-		devel/sdl-ttf \
 		graphics/ftgl \
 		multimedia/libtheora
 
