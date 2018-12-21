@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/12/20 23:20:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2018/12/21 15:21:01 naddy Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -32,16 +32,10 @@ MAKE_FILE=	makefile
 ALL_TARGET=	openbsd
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" HOSTTYPE=openbsd
 
-NO_TEST=	Yes
-
-.include <bsd.port.arch.mk>
-
 # WAY too many warnings from xpm files otherwise!!!
-.if ${PROPERTIES:Mclang}
-CXXFLAGS +=	-Wno-c++11-compat-deprecated-writable-strings
-.elif ${MODGCC4_LANGS:Mc++}
 CXXFLAGS +=	-Wno-write-strings
-.endif
+
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xevil/html
