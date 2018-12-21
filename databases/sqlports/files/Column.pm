@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.17 2018/12/21 11:11:06 espie Exp $
+# $OpenBSD: Column.pm,v 1.18 2018/12/21 17:06:21 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -82,7 +82,7 @@ sub pretty_join
 	my ($self, $table, $inserter) = @_;
 	my $join = $self->join_part($table, $inserter);
 	my @on = $self->on_part($table, $inserter);
-	return "\t$join\n\t    ON ", join(" AND ", @on), "\n";
+	return "\t$join\n\t    ON ", CORE::join(" AND ", @on), "\n";
 }
 
 package TextColumn;
