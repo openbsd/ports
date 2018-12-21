@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/12 08:53:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2018/12/21 07:38:35 bentley Exp $
 
 COMMENT=	portable lossless data compression library
 
 DISTNAME=	ucl-1.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	archivers devel
 SHARED_LIBS +=	ucl                  1.0      # .1.0
 
-HOMEPAGE=	http://www.oberhumer.com/opensource/ucl
+HOMEPAGE=	https://www.oberhumer.com/opensource/ucl/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+MASTER_SITES=	https://www.oberhumer.com/opensource/ucl/download/
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
