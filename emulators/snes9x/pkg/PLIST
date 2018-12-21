@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/12/21 11:12:11 fcambus Exp $
 @bin bin/snes9x-gtk
 share/applications/snes9x.desktop
 share/doc/snes9x/
+share/doc/snes9x/LICENSE
 share/doc/snes9x/control-inputs.txt
 share/doc/snes9x/controls.txt
 share/doc/snes9x/snapshots.txt
-share/doc/snes9x/snes9x-license.txt
 share/examples/snes9x/
 share/examples/snes9x/snes9x.conf.default
 share/icons/hicolor/128x128/apps/snes9x.png

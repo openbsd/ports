@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2018/11/22 21:01:10 fcambus Exp $
+# $OpenBSD: Makefile,v 1.45 2018/12/21 11:12:11 fcambus Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 
-V =		1.57
+V =		1.58
 DISTNAME =	snes9x-$V
 EXTRACT_SUFX =	.tar.bz2
 
@@ -19,10 +19,10 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	non-commercial
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 Xext Xrandr Xv atk-1.0
+WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xext Xrandr Xv atk-1.0
 WANTLIB += c cairo cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 intl m pango-1.0
-WANTLIB += pangocairo-1.0 png xml2 z
+WANTLIB += pangocairo-1.0 png z
 
 MASTER_SITES =	https://github.com/snes9xgit/snes9x/releases/download/$V/
 
@@ -31,7 +31,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	devel/sdl2 \
 		graphics/png \
-		textproc/libxml \
 		x11/gtk+3
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
@@ -71,10 +70,10 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snes9x
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snes9x
-	cd ${WRKDIST}/docs && ${INSTALL_DATA} \
-	    control-inputs.txt controls.txt snapshots.txt snes9x-license.txt \
-	    ${PREFIX}/share/doc/snes9x
-	cd ${WRKDIST}/docs && ${INSTALL_DATA} snes9x.conf.default \
+	${INSTALL_DATA} ${WRKDIST}/LICENSE ${PREFIX}/share/doc/snes9x 
+	cd ${WRKDIST}/docs && ${INSTALL_DATA} control-inputs.txt controls.txt \
+	    snapshots.txt ${PREFIX}/share/doc/snes9x
+	cd ${WRKDIST}/unix && ${INSTALL_DATA} snes9x.conf.default \
 	    ${PREFIX}/share/examples/snes9x
 
 .include <bsd.port.mk>
