@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/11/11 09:39:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2018/12/21 13:34:37 ajacoutot Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -372,6 +372,7 @@ share/vala-${API_V}/vapi/webkit2gtk-4.0.vapi
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-4.0.deps
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-4.0.vapi
 share/vala-${API_V}/vapi/x11.vapi
+share/vala-${API_V}/vapi/xcb-icccm.deps
 share/vala-${API_V}/vapi/xcb-icccm.vapi
 share/vala-${API_V}/vapi/xcb.vapi
 share/vala-${API_V}/vapi/xtst.deps
