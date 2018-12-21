@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/22 21:28:52 bluhm Exp $
+# $OpenBSD: Makefile,v 1.20 2018/12/21 21:22:53 naddy Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -27,6 +27,7 @@ EXTRACT_SUFX =		.tgz
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
+# C++11
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		textproc/py-docutils
 LIB_DEPENDS =		archivers/bzip2 \
@@ -39,6 +40,8 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--prefix=${PREFIX} \
 			--distribution-info="`uname -sr`" \
 			--mandir=${PREFIX}/man \
+			--with-external-includedir=${LOCALBASE}/include \
+			--with-external-libdir=${LOCALBASE}/lib \
 			--with-bzip2 \
 			--with-lzma \
 			--with-openssl \
@@ -77,13 +80,10 @@ post-install:
 	    -type f -exec ${INSTALL_DATA} {} ${PREFIX}/share/botan-2/{} \;
 
 .include <bsd.port.mk>
-# clang does not have ${LOCALBASE} in its path, but more importantly,
-# if we don't explicitly configure for it, it passes as a good enough gcc,
+# If we don't explicitly configure for clang, it passes as a good enough gcc,
 # and then we get lots of warnings for unknown warning options...
-.if ${PROPERTIES:Mclang}
-CONFIGURE_ARGS +=	--with-external-includedir=${LOCALBASE}/include \
-			--with-external-libdir=${LOCALBASE}/lib \
-			--cc=clang
+.if ${CHOSEN_COMPILER} == "base-clang"
+CONFIGURE_ARGS +=	--cc=clang
 .else
 CONFIGURE_ARGS +=	--cc=gcc
 .endif
