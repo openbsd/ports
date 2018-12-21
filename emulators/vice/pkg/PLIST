@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/08/10 20:55:26 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2018/12/21 11:52:05 fcambus Exp $
 @bin bin/c1541
 @bin bin/cartconv
 @bin bin/petcat
@@ -27,7 +27,9 @@ lib/vice/C128/chargch
 lib/vice/C128/chargde
 lib/vice/C128/chargen
 lib/vice/C128/chargfr
+lib/vice/C128/chargno
 lib/vice/C128/chargse
+lib/vice/C128/cjam.vpl
 lib/vice/C128/colodore.vpl
 lib/vice/C128/community-colors.vpl
 lib/vice/C128/deekay.vpl
@@ -62,6 +64,7 @@ lib/vice/C64/c64mem.sym
 lib/vice/C64/c64s.vpl
 lib/vice/C64/ccs64.vpl
 lib/vice/C64/chargen
+lib/vice/C64/cjam.vpl
 lib/vice/C64/colodore.vpl
 lib/vice/C64/community-colors.vpl
 lib/vice/C64/deekay.vpl
@@ -95,6 +98,7 @@ lib/vice/C64/sdl_pos_fi.vkm
 lib/vice/C64/sdl_pos_no.vkm
 lib/vice/C64/sdl_sym.vkm
 lib/vice/C64/sdl_sym_de.vkm
+lib/vice/C64/sdl_sym_nl.vkm
 lib/vice/C64/sxkernal
 lib/vice/C64/vice.vpl
 lib/vice/C64DTV/
@@ -117,6 +121,7 @@ lib/vice/C64DTV/sdl_pos_fi.vkm
 lib/vice/C64DTV/sdl_pos_no.vkm
 lib/vice/C64DTV/sdl_sym.vkm
 lib/vice/C64DTV/sdl_sym_de.vkm
+lib/vice/C64DTV/sdl_sym_nl.vkm
 lib/vice/C64DTV/spiff.vpl
 lib/vice/CBM-II/
 lib/vice/CBM-II/amber.vpl
@@ -129,6 +134,7 @@ lib/vice/CBM-II/ccs64.vpl
 lib/vice/CBM-II/chargen.500
 lib/vice/CBM-II/chargen.600
 lib/vice/CBM-II/chargen.700
+lib/vice/CBM-II/cjam.vpl
 lib/vice/CBM-II/colodore.vpl
 lib/vice/CBM-II/community-colors.vpl
 lib/vice/CBM-II/deekay.vpl
@@ -234,6 +240,7 @@ lib/vice/SCPU64/c64hq.vpl
 lib/vice/SCPU64/c64s.vpl
 lib/vice/SCPU64/ccs64.vpl
 lib/vice/SCPU64/chargen
+lib/vice/SCPU64/cjam.vpl
 lib/vice/SCPU64/colodore.vpl
 lib/vice/SCPU64/community-colors.vpl
 lib/vice/SCPU64/deekay.vpl
@@ -263,6 +270,7 @@ lib/vice/SCPU64/sdl_pos_fi.vkm
 lib/vice/SCPU64/sdl_pos_no.vkm
 lib/vice/SCPU64/sdl_sym.vkm
 lib/vice/SCPU64/sdl_sym_de.vkm
+lib/vice/SCPU64/sdl_sym_nl.vkm
 lib/vice/SCPU64/vice.vpl
 lib/vice/VIC20/
 lib/vice/VIC20/basic
@@ -283,7 +291,8 @@ lib/vice/doc/CIPS2008.png
 lib/vice/doc/COPYING
 lib/vice/doc/Documentation-Howto.txt
 lib/vice/doc/Doxygen-Howto.txt
-lib/vice/doc/GTK3-Howto.txt
+lib/vice/doc/FreeBSD-GTK3-Howto.txt
+lib/vice/doc/GTK3-macOS.txt
 lib/vice/doc/Lato-Bold.eot
 lib/vice/doc/Lato-Bold.ttf
 lib/vice/doc/Lato-Bold.woff
@@ -300,31 +309,17 @@ lib/vice/doc/Lato-Regular.eot
 lib/vice/doc/Lato-Regular.ttf
 lib/vice/doc/Lato-Regular.woff
 lib/vice/doc/Lato-Regular.woff2
-lib/vice/doc/Linux-Mingw32-Howto.txt
-lib/vice/doc/Linux-Native-Howto.txt
-lib/vice/doc/MSDOS-Ethernet-Howto.txt
-lib/vice/doc/MSDOS-Howto.txt
-lib/vice/doc/MacOSX-Cocoa-Howto.txt
-lib/vice/doc/MacOSX-Howto.txt
-lib/vice/doc/MacOSX-ResourceTree.txt
-lib/vice/doc/Minix-Howto.txt
+lib/vice/doc/Linux-GTK3-Howto.txt
 lib/vice/doc/NEWS
-lib/vice/doc/NLS-Howto.txt
+lib/vice/doc/NetBSD-howto.txt
 lib/vice/doc/OFL.txt
-lib/vice/doc/OpenVMS-Howto.txt
-lib/vice/doc/Readme-Amiga.txt
-lib/vice/doc/Readme-BeOS.txt
-lib/vice/doc/Readme-DOS.txt
 lib/vice/doc/Readme-GTK3.txt
-lib/vice/doc/Readme-MacOSX.txt
 lib/vice/doc/Readme-SDL.txt
 lib/vice/doc/Readme-SDL2.txt
-lib/vice/doc/Readme-Unix.txt
+lib/vice/doc/Release-Howto.txt
 lib/vice/doc/SDL-Howto.txt
 lib/vice/doc/SDL-support.txt
-lib/vice/doc/Win32-Cygwin-Howto.txt
-lib/vice/doc/Win32-Mingw32-Howto.txt
-lib/vice/doc/WinNT-Unicode.txt
+lib/vice/doc/Windows-MinGW-GTK3-Howto.txt
 lib/vice/doc/amigaos.html
 lib/vice/doc/android.html
 lib/vice/doc/beos.html
@@ -337,7 +332,6 @@ lib/vice/doc/index.html
 lib/vice/doc/macosx.html
 lib/vice/doc/new.gif
 lib/vice/doc/nsosrh.html
-lib/vice/doc/ports-status.txt
 lib/vice/doc/qnx.html
 lib/vice/doc/robots.txt
 lib/vice/doc/sco.html
@@ -345,6 +339,7 @@ lib/vice/doc/sitemap.xml
 lib/vice/doc/solaris.html
 lib/vice/doc/sortix.html
 lib/vice/doc/unix.html
+lib/vice/doc/vice-logo-black.svg
 lib/vice/doc/vice-logo.svg
 lib/vice/doc/vice.chm
 lib/vice/doc/vice.css
