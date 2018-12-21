@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2018/12/21 19:51:46 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.1.3
-REVISION =	0
+DISTNAME =	tellico-3.1.4
 
 CATEGORIES =	x11
 
@@ -20,53 +19,62 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5FileMetaData
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
 WANTLIB += KF5JS KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c cdio exempi exslt iconv iso9660
-WANTLIB += m poppler poppler-qt5 tag xml2 xslt yaz
+WANTLIB += KF5Parts KF5Sane KF5Service KF5Solid KF5SonnetCore
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c cdio exempi exslt
+WANTLIB += iconv iso9660 m poppler poppler-qt5 tag xml2 xslt yaz
 
 MASTER_SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/kf5 \
+MODULES +=		devel/kf5 \
 			lang/python
 
 BUILD_DEPENDS +=devel/gettext-tools \
 		devel/kf5/kdoctools
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS +=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		devel/kf5/kdoctools \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	audio/taglib \
-		audio/libcdio \
+LIB_DEPENDS +=	audio/libcdio \
+		audio/taglib \
 		devel/kf5/attica \
 		devel/kf5/karchive \
-		devel/kf5/kfilemetadata \
+		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
+		devel/kf5/kfilemetadata \
 		devel/kf5/kguiaddons \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemmodels \
+		devel/kf5/khtml \
 		devel/kf5/ki18n \
-		devel/kf5/kjobwidgets \
+		devel/kf5/kiconthemes \
 		devel/kf5/kio \
-		devel/kf5/solid \
+		devel/kf5/kitemmodels \
+		devel/kf5/kitemviews \
+		devel/kf5/kjobwidgets \
+		devel/kf5/kjs \
+		devel/kf5/knewstuff \
+		devel/kf5/kparts \
+		devel/kf5/kservice \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/knewstuff \
 		devel/kf5/kxmlgui \
-		devel/kf5/khtml \
-		print/poppler,,-qt5 \
+		devel/kf5/solid \
+		devel/kf5/sonnet \
 		net/yaz \
-		textproc/libxml \
+		print/poppler,,-qt5 \
 		textproc/exempi \
-		textproc/libxslt
+		textproc/libxml \
+		textproc/libxslt \
+		x11/kde-applications/libksane
 
 TEST_IS_INTERACTIVE =	X11
 

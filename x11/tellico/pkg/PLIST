@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/10/22 20:30:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2018/12/21 19:51:46 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -92,6 +92,17 @@ share/doc/HTML/en/tellico/source-options.png
 share/doc/HTML/en/tellico/sru-options.png
 share/doc/HTML/en/tellico/template-options.png
 share/doc/HTML/en/tellico/z3950-options.png
+share/doc/HTML/es/tellico/
+share/doc/HTML/es/tellico/advanced.docbook
+share/doc/HTML/es/tellico/configuration.docbook
+share/doc/HTML/es/tellico/details.docbook
+share/doc/HTML/es/tellico/faqs.docbook
+share/doc/HTML/es/tellico/fundamentals.docbook
+share/doc/HTML/es/tellico/hacking.docbook
+share/doc/HTML/es/tellico/importing-exporting.docbook
+share/doc/HTML/es/tellico/index.cache.bz2
+share/doc/HTML/es/tellico/index.docbook
+share/doc/HTML/es/tellico/menus.docbook
 share/doc/HTML/nl/tellico/
 share/doc/HTML/nl/tellico/advanced.docbook
 share/doc/HTML/nl/tellico/configuration.docbook
@@ -143,7 +154,6 @@ share/doc/HTML/uk/tellico/template-options.png
 share/doc/HTML/uk/tellico/z3950-options.png
 share/examples/tellico/
 share/examples/tellico/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/tellico/xdg/tellico-script.knsrc
 @sample ${SYSCONFDIR}/xdg/tellico-script.knsrc
 share/examples/tellico/xdg/tellico-template.knsrc
