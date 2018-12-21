@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.687 2018/12/20 08:19:31 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.688 2018/12/21 06:58:38 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1130,6 +1130,7 @@ my $obsolete_reason = {
 	'pinot' => 0,
 	'gaia' => 0,
 	'openafs' => 0,
+	'emerillon' => 3,
 };
 
 # reasons for obsolete packages

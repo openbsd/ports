@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.63 2018/12/16 15:10:24 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2018/12/21 06:58:38 solene Exp $
 
      SUBDIR =
-     SUBDIR += emerillon
      SUBDIR += foxtrotgps
      SUBDIR += garmindev
      SUBDIR += gdal
