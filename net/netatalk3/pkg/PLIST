@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/29 16:14:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/21 14:07:08 ajacoutot Exp $
 @option is-branch
 @conflict jday-*
+@rcscript ${RCDIR}/netatalk
 @bin bin/ad
 @bin bin/afpldaptest
 @mode 4755
@@ -75,7 +76,6 @@ share/aclocal/netatalk.m4
 share/examples/netatalk/
 share/examples/netatalk/dbus-1/
 share/examples/netatalk/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/netatalk/dbus-1/system.d/netatalk-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/netatalk-dbus.conf
 share/examples/netatalk/netatalk/
@@ -95,4 +95,3 @@ share/examples/netatalk/var/netatalk/CNID/README
 @sample ${LOCALSTATEDIR}/netatalk/CNID/README
 share/examples/netatalk/var/netatalk/README
 @sample ${LOCALSTATEDIR}/netatalk/README
-@rcscript ${RCDIR}/netatalk
