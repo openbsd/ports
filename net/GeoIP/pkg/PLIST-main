@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2016/03/01 00:06:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2018/12/21 23:45:10 ajacoutot Exp $
 @pkgpath net/GeoIP
-@extraunexec rm /var/db/GeoIP/*
+@extraunexec rm -f /var/db/GeoIP/*
 @bin bin/geoiplookup
 @bin bin/geoiplookup6
 include/GeoIP.h
