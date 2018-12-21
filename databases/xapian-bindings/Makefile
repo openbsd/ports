@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/20 12:01:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2018/12/21 13:19:24 ajacoutot Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -12,7 +12,7 @@ PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
 
 REVISION-python=	5
-REVISION-ruby=		3
+REVISION-ruby=		4
 REVISION-main=		2
 
 MODULES=	lang/python \
