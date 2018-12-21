@@ -1,0 +1,291 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/21 22:01:57 pirofti Exp $
+@newgroup _ossec:827
+@newuser _ossec:827:_ossec:daemon:OSSEC Account:/nonexistent:/sbin/nologin
+@newuser _ossecm:828:_ossec:daemon:OSSEC Mail Account:/nonexistent:/sbin/nologin
+@newuser _ossecr:829:_ossec:daemon:OSSEC Rem Account:/nonexistent:/sbin/nologin
+ossec-hids/bin/
+@bin ossec-hids/bin/agent_control
+@bin ossec-hids/bin/clear_stats
+@bin ossec-hids/bin/list_agents
+@bin ossec-hids/bin/manage_agents
+@bin ossec-hids/bin/ossec-agentlessd
+@bin ossec-hids/bin/ossec-analysisd
+@bin ossec-hids/bin/ossec-authd
+ossec-hids/ossec-agent/bin/
+@bin ossec-hids/ossec-agent/bin/agent-auth
+@bin ossec-hids/ossec-agent/bin/manage_agents
+@bin ossec-hids/ossec-agent/bin/ossec-agentd
+@bin ossec-hids/ossec-agent/bin/ossec-execd
+ossec-hids/lua/
+ossec-hids/lua/compiled/
+ossec-hids/lua/native/
+ossec-hids/ossec-agent/lua/
+ossec-hids/ossec-agent/lua/compiled/
+ossec-hids/ossec-agent/lua/native/
+ossec-hids/ossec-agent/
+ossec-hids/tmp/
+ossec-hids/ossec-agent/tmp/
+@group _ossec
+ossec-hids/queue/
+ossec-hids/ossec-agent/queue/
+ossec-hids/etc/
+ossec-hids/etc/client.keys
+ossec-hids/etc/decoder.xml
+ossec-hids/etc/internal_options.conf
+ossec-hids/etc/local_internal_options.conf
+ossec-hids/etc/localtime
+ossec-hids/etc/ossec.conf
+@mode 770
+ossec-hids/etc/shared/
+ossec-hids/ossec-agent/etc/shared/
+@mode
+ossec-hids/etc/shared/cis_apache2224_rcl.txt
+ossec-hids/etc/shared/cis_debian_linux_rcl.txt
+ossec-hids/etc/shared/cis_mysql5-6_community_rcl.txt
+ossec-hids/etc/shared/cis_mysql5-6_enterprise_rcl.txt
+ossec-hids/etc/shared/cis_rhel5_linux_rcl.txt
+ossec-hids/etc/shared/cis_rhel6_linux_rcl.txt
+ossec-hids/etc/shared/cis_rhel7_linux_rcl.txt
+ossec-hids/etc/shared/cis_rhel_linux_rcl.txt
+ossec-hids/etc/shared/cis_sles11_linux_rcl.txt
+ossec-hids/etc/shared/cis_sles12_linux_rcl.txt
+ossec-hids/etc/shared/cis_win2012r2_domainL1_rcl.txt
+ossec-hids/etc/shared/cis_win2012r2_domainL2_rcl.txt
+ossec-hids/etc/shared/cis_win2012r2_memberL1_rcl.txt
+ossec-hids/etc/shared/cis_win2012r2_memberL2_rcl.txt
+ossec-hids/etc/shared/rootkit_files.txt
+ossec-hids/etc/shared/rootkit_trojans.txt
+ossec-hids/etc/shared/system_audit_rcl.txt
+ossec-hids/etc/shared/system_audit_ssh.txt
+ossec-hids/etc/shared/win_applications_rcl.txt
+ossec-hids/etc/shared/win_audit_rcl.txt
+ossec-hids/etc/shared/win_malware_rcl.txt
+ossec-hids/ossec-agent/etc/
+ossec-hids/ossec-agent/etc/client.keys
+ossec-hids/ossec-agent/etc/internal_options.conf
+ossec-hids/ossec-agent/etc/local_internal_options.conf
+ossec-hids/ossec-agent/etc/localtime
+ossec-hids/ossec-agent/etc/ossec-init.conf
+ossec-hids/ossec-agent/etc/ossec.conf
+ossec-hids/ossec-agent/etc/shared/cis_apache2224_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_debian_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_mysql5-6_community_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_mysql5-6_enterprise_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_rhel5_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_rhel6_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_rhel7_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_rhel_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_sles11_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_sles12_linux_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_win2012r2_domainL1_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_win2012r2_domainL2_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_win2012r2_memberL1_rcl.txt
+ossec-hids/ossec-agent/etc/shared/cis_win2012r2_memberL2_rcl.txt
+ossec-hids/ossec-agent/etc/shared/rootkit_files.txt
+ossec-hids/ossec-agent/etc/shared/rootkit_trojans.txt
+ossec-hids/ossec-agent/etc/shared/system_audit_rcl.txt
+ossec-hids/ossec-agent/etc/shared/system_audit_ssh.txt
+ossec-hids/ossec-agent/etc/shared/win_applications_rcl.txt
+ossec-hids/ossec-agent/etc/shared/win_audit_rcl.txt
+ossec-hids/ossec-agent/etc/shared/win_malware_rcl.txt
+ossec-hids/bin/ossec-control
+ossec-hids/ossec-agent/bin/ossec-control
+ossec-hids/.ssh/
+ossec-hids/ossec-agent/.ssh/
+ossec-hids/active-response/
+ossec-hids/active-response/bin/
+ossec-hids/active-response/bin/disable-account.sh
+ossec-hids/active-response/bin/firewall-drop.sh
+ossec-hids/active-response/bin/firewalld-drop.sh
+ossec-hids/active-response/bin/host-deny.sh
+ossec-hids/active-response/bin/ip-customblock.sh
+ossec-hids/active-response/bin/ipfw.sh
+ossec-hids/active-response/bin/ipfw_mac.sh
+ossec-hids/active-response/bin/npf.sh
+ossec-hids/active-response/bin/ossec-pagerduty.sh
+ossec-hids/active-response/bin/ossec-slack.sh
+ossec-hids/active-response/bin/ossec-tweeter.sh
+ossec-hids/active-response/bin/pf.sh
+ossec-hids/active-response/bin/restart-ossec.sh
+ossec-hids/active-response/bin/route-null.sh
+ossec-hids/ossec-agent/active-response/
+ossec-hids/ossec-agent/active-response/bin/
+ossec-hids/ossec-agent/active-response/bin/disable-account.sh
+ossec-hids/ossec-agent/active-response/bin/firewall-drop.sh
+ossec-hids/ossec-agent/active-response/bin/firewalld-drop.sh
+ossec-hids/ossec-agent/active-response/bin/host-deny.sh
+ossec-hids/ossec-agent/active-response/bin/ip-customblock.sh
+ossec-hids/ossec-agent/active-response/bin/ipfw.sh
+ossec-hids/ossec-agent/active-response/bin/ipfw_mac.sh
+ossec-hids/ossec-agent/active-response/bin/npf.sh
+ossec-hids/ossec-agent/active-response/bin/ossec-pagerduty.sh
+ossec-hids/ossec-agent/active-response/bin/ossec-slack.sh
+ossec-hids/ossec-agent/active-response/bin/ossec-tweeter.sh
+ossec-hids/ossec-agent/active-response/bin/pf.sh
+ossec-hids/ossec-agent/active-response/bin/restart-ossec.sh
+ossec-hids/ossec-agent/active-response/bin/route-null.sh
+ossec-hids/agentless/
+ossec-hids/agentless/main.exp
+ossec-hids/agentless/register_host.sh
+ossec-hids/agentless/ssh.exp
+ossec-hids/agentless/ssh_asa-fwsmconfig_diff
+ossec-hids/agentless/ssh_foundry_diff
+ossec-hids/agentless/ssh_generic_diff
+ossec-hids/agentless/ssh_integrity_check_bsd
+ossec-hids/agentless/ssh_integrity_check_linux
+ossec-hids/agentless/ssh_nopass.exp
+ossec-hids/agentless/ssh_pixconfig_diff
+ossec-hids/agentless/sshlogin.exp
+ossec-hids/agentless/su.exp
+ossec-hids/ossec-agent/agentless/
+ossec-hids/ossec-agent/agentless/main.exp
+ossec-hids/ossec-agent/agentless/register_host.sh
+ossec-hids/ossec-agent/agentless/ssh.exp
+ossec-hids/ossec-agent/agentless/ssh_asa-fwsmconfig_diff
+ossec-hids/ossec-agent/agentless/ssh_foundry_diff
+ossec-hids/ossec-agent/agentless/ssh_generic_diff
+ossec-hids/ossec-agent/agentless/ssh_integrity_check_bsd
+ossec-hids/ossec-agent/agentless/ssh_integrity_check_linux
+ossec-hids/ossec-agent/agentless/ssh_nopass.exp
+ossec-hids/ossec-agent/agentless/ssh_pixconfig_diff
+ossec-hids/ossec-agent/agentless/sshlogin.exp
+ossec-hids/ossec-agent/agentless/su.exp
+ossec-hids/rules/apache_rules.xml
+ossec-hids/rules/apparmor_rules.xml
+ossec-hids/rules/arpwatch_rules.xml
+ossec-hids/rules/asterisk_rules.xml
+ossec-hids/rules/attack_rules.xml
+ossec-hids/rules/cimserver_rules.xml
+ossec-hids/rules/cisco-ios_rules.xml
+ossec-hids/rules/clam_av_rules.xml
+ossec-hids/rules/courier_rules.xml
+ossec-hids/rules/dovecot_rules.xml
+ossec-hids/rules/dropbear_rules.xml
+ossec-hids/rules/exim_rules.xml
+ossec-hids/rules/firewall_rules.xml
+ossec-hids/rules/firewalld_rules.xml
+ossec-hids/rules/ftpd_rules.xml
+ossec-hids/rules/hordeimp_rules.xml
+ossec-hids/rules/ids_rules.xml
+ossec-hids/rules/imapd_rules.xml
+ossec-hids/rules/local_rules.xml
+ossec-hids/rules/mailscanner_rules.xml
+ossec-hids/rules/mcafee_av_rules.xml
+ossec-hids/rules/ms-exchange_rules.xml
+ossec-hids/rules/ms-se_rules.xml
+ossec-hids/rules/ms_dhcp_rules.xml
+ossec-hids/rules/ms_ftpd_rules.xml
+ossec-hids/rules/msauth_rules.xml
+ossec-hids/rules/mysql_rules.xml
+ossec-hids/rules/named_rules.xml
+ossec-hids/rules/netscreenfw_rules.xml
+ossec-hids/rules/nginx_rules.xml
+ossec-hids/rules/nsd_rules.xml
+ossec-hids/rules/openbsd-dhcpd_rules.xml
+ossec-hids/rules/openbsd_rules.xml
+ossec-hids/rules/opensmtpd_rules.xml
+ossec-hids/rules/ossec_rules.xml
+ossec-hids/rules/owncloud_rules.xml
+ossec-hids/rules/pam_rules.xml
+ossec-hids/rules/php_rules.xml
+ossec-hids/rules/pix_rules.xml
+ossec-hids/rules/policy_rules.xml
+ossec-hids/rules/postfix_rules.xml
+ossec-hids/rules/postgresql_rules.xml
+ossec-hids/rules/proftpd_rules.xml
+ossec-hids/rules/proxmox-ve_rules.xml
+ossec-hids/rules/psad_rules.xml
+ossec-hids/rules/pure-ftpd_rules.xml
+ossec-hids/rules/racoon_rules.xml
+ossec-hids/rules/roundcube_rules.xml
+ossec-hids/rules/rules_config.xml
+ossec-hids/rules/sendmail_rules.xml
+ossec-hids/rules/smbd_rules.xml
+ossec-hids/rules/solaris_bsm_rules.xml
+ossec-hids/rules/sonicwall_rules.xml
+ossec-hids/rules/spamd_rules.xml
+ossec-hids/rules/squid_rules.xml
+ossec-hids/rules/sshd_rules.xml
+ossec-hids/rules/symantec-av_rules.xml
+ossec-hids/rules/symantec-ws_rules.xml
+ossec-hids/rules/syslog_rules.xml
+ossec-hids/rules/sysmon_rules.xml
+ossec-hids/rules/systemd_rules.xml
+ossec-hids/rules/telnetd_rules.xml
+ossec-hids/rules/trend-osce_rules.xml
+ossec-hids/rules/unbound_rules.xml
+ossec-hids/rules/vmpop3d_rules.xml
+ossec-hids/rules/vmware_rules.xml
+ossec-hids/rules/vpn_concentrator_rules.xml
+ossec-hids/rules/vpopmail_rules.xml
+ossec-hids/rules/vsftpd_rules.xml
+ossec-hids/rules/web_appsec_rules.xml
+ossec-hids/rules/web_rules.xml
+ossec-hids/rules/wordpress_rules.xml
+ossec-hids/rules/zeus_rules.xml
+@owner _ossec
+@group _ossec
+@bin ossec-hids/bin/ossec-csyslogd
+@bin ossec-hids/bin/ossec-dbd
+@bin ossec-hids/bin/ossec-execd
+@bin ossec-hids/bin/ossec-logcollector
+@bin ossec-hids/bin/ossec-logtest
+@bin ossec-hids/bin/ossec-lua
+@bin ossec-hids/bin/ossec-luac
+@bin ossec-hids/bin/ossec-maild
+@bin ossec-hids/bin/ossec-makelists
+@bin ossec-hids/bin/ossec-monitord
+@bin ossec-hids/bin/ossec-regex
+@bin ossec-hids/bin/ossec-remoted
+@bin ossec-hids/bin/ossec-reportd
+@bin ossec-hids/bin/ossec-syscheckd
+@bin ossec-hids/bin/rootcheck_control
+@bin ossec-hids/bin/syscheck_control
+@bin ossec-hids/bin/syscheck_update
+@bin ossec-hids/bin/util.sh
+@bin ossec-hids/bin/verify-agent-conf
+ossec-hids/stats/
+ossec-hids/queue/agentless/
+@mode 770
+ossec-hids/queue/alerts/
+ossec-hids/ossec-agent/queue/alerts/
+@mode
+ossec-hids/queue/diff/
+ossec-hids/queue/fts/
+ossec-hids/queue/ossec/
+ossec-hids/queue/rootcheck/
+ossec-hids/queue/syscheck/
+ossec-hids/ossec-agent/queue/diff/
+ossec-hids/ossec-agent/queue/ossec/
+ossec-hids/ossec-agent/queue/syscheck/
+ossec-hids/logs/
+ossec-hids/logs/alerts/
+ossec-hids/logs/archives/
+ossec-hids/logs/firewall/
+@mode 660
+ossec-hids/logs/active-responses.log
+ossec-hids/logs/ossec.log
+ossec-hids/ossec-agent/logs/ossec.log
+@mode
+ossec-hids/ossec-agent/logs/
+ossec-hids/var/
+@mode 770
+ossec-hids/var/run/
+ossec-hids/var/start-script-lock/
+ossec-hids/ossec-agent/var/run/
+ossec-hids/ossec-agent/var/start-script-lock/
+@mode
+ossec-hids/ossec-agent/var/
+@bin ossec-hids/ossec-agent/bin/ossec-lua
+@bin ossec-hids/ossec-agent/bin/ossec-luac
+@bin ossec-hids/ossec-agent/bin/ossec-syscheckd
+ossec-hids/ossec-agent/bin/util.sh
+@owner _ossecr
+@group _ossec
+ossec-hids/queue/agent-info/
+ossec-hids/queue/rids/
+ossec-hids/ossec-agent/queue/rids/
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/ossec_hids

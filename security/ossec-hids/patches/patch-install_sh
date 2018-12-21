@@ -1,0 +1,131 @@
+$OpenBSD: patch-install_sh,v 1.1.1.1 2018/12/21 22:01:56 pirofti Exp $
+
+Index: install.sh
+--- install.sh.orig
++++ install.sh
+@@ -102,7 +102,7 @@ Install()
+     if [ "X${USER_BINARYINSTALL}" = "X" ]; then
+         # Add DATABASE=pgsql or DATABASE=mysql to add support for database
+         # alert entry
+-        ${MAKEBIN} PREFIX=${INSTALLDIR} TARGET=${INSTYPE} build
++        ${MAKEBIN} PREFIX=${INSTALLDIR} TARGET=${INSTYPE} TRUEPREFIX=${TRUEPREFIX} LOCALBASE=${LOCALBASE} build
+         if [ $? != 0 ]; then
+             cd ../
+             catError "0x5-build"
+@@ -114,22 +114,23 @@ Install()
+         UpdateStopOSSEC
+     fi
+ 
+-    ${MAKEBIN} PREFIX=${INSTALLDIR} TARGET=${INSTYPE} install
++    ${MAKEBIN} PREFIX=${INSTALLDIR} TARGET=${INSTYPE} TRUEPREFIX=${TRUEPREFIX} LOCALBASE=${LOCALBASE} install
+ 
+     cd ../
+ 
+ 
+     # Generate the /etc/ossec-init.conf
++    OSSEC_INIT=${INSTALLDIR}/etc/ossec-init.conf
+     VERSION_FILE="./src/VERSION"
+     VERSION=`cat ${VERSION_FILE}`
+     chmod 700 ${OSSEC_INIT} > /dev/null 2>&1
+-    echo "DIRECTORY=\"${INSTALLDIR}\"" > ${OSSEC_INIT}
++    echo "DIRECTORY=\"${TRUEINSTALLDIR}\"" > ${OSSEC_INIT}
+     echo "VERSION=\"${VERSION}\"" >> ${OSSEC_INIT}
+     echo "DATE=\"`date`\"" >> ${OSSEC_INIT}
+     echo "TYPE=\"${INSTYPE}\"" >> ${OSSEC_INIT}
+     chmod 600 ${OSSEC_INIT}
+-    cp -pr ${OSSEC_INIT} ${INSTALLDIR}${OSSEC_INIT}
+-    chmod 640 ${INSTALLDIR}${OSSEC_INIT}
++    #cp -pr ${OSSEC_INIT} ${INSTALLDIR}/share/ossec/examples/${OSSEC_INIT}
++    chmod 640 ${OSSEC_INIT}
+ 
+ 
+     # If update_rules is set, we need to tweak
+@@ -144,12 +145,12 @@ Install()
+     fi
+ 
+     # Calling the init script  to start ossec hids during boot
+-    if [ "X${update_only}" = "X" ]; then
+-        runInit
+-        if [ $? = 1 ]; then
+-            notmodified="yes"
+-        fi
+-    fi
++    #if [ "X${update_only}" = "X" ]; then
++    #    runInit
++    #    if [ $? = 1 ]; then
++    #        notmodified="yes"
++    #    fi
++    #fi
+ 
+ }
+ 
+@@ -222,12 +223,8 @@ UseRootcheck()
+     if [ "X$ROOTCHECK" = "Xyes" ]; then
+         echo "" >> $NEWCONFIG
+         echo "  <rootcheck>" >> $NEWCONFIG
+-        echo "    <rootkit_files>$INSTALLDIR/etc/shared/rootkit_files.txt</rootkit_files>" >> $NEWCONFIG
+-        echo "    <rootkit_trojans>$INSTALLDIR/etc/shared/rootkit_trojans.txt</rootkit_trojans>" >> $NEWCONFIG
+-        echo "    <system_audit>$INSTALLDIR/etc/shared/system_audit_rcl.txt</system_audit>" >> $NEWCONFIG
+-        echo "    <system_audit>$INSTALLDIR/etc/shared/cis_debian_linux_rcl.txt</system_audit>" >> $NEWCONFIG
+-        echo "    <system_audit>$INSTALLDIR/etc/shared/cis_rhel_linux_rcl.txt</system_audit>" >> $NEWCONFIG
+-        echo "    <system_audit>$INSTALLDIR/etc/shared/cis_rhel5_linux_rcl.txt</system_audit>" >> $NEWCONFIG
++        echo "    <rootkit_files>$TRUEINSTALLDIR/etc/shared/rootkit_files.txt</rootkit_files>" >> $NEWCONFIG
++        echo "    <rootkit_trojans>$TRUEINSTALLDIR/etc/shared/rootkit_trojans.txt</rootkit_trojans>" >> $NEWCONFIG
+         echo "  </rootcheck>" >> $NEWCONFIG
+ 	# Patch for systems that use s-nail instead of GNU Mailutils (such as Arch Linux).
+ 	if strings /usr/bin/mail | grep "x-shsh bash" 1> /dev/null; then
+@@ -547,7 +544,7 @@ ConfigureServer()
+         echo "    <email_notification>yes</email_notification>" >> $NEWCONFIG
+         echo "    <email_to>$EMAIL</email_to>" >> $NEWCONFIG
+         echo "    <smtp_server>$SMTP</smtp_server>" >> $NEWCONFIG
+-        echo "    <email_from>ossecm@${HOST}</email_from>" >> $NEWCONFIG
++        echo "    <email_from>ossecm@localhost</email_from>" >> $NEWCONFIG
+     else
+         echo "    <email_notification>no</email_notification>" >> $NEWCONFIG
+     fi
+@@ -625,7 +622,7 @@ ConfigureServer()
+                 echo "    <white_list>${ip}</white_list>" >>$NEWCONFIG
+             fi
+             done
+-            AddWhite
++            #AddWhite
+ 
+             # If Openbsd or Freebsd with pf enable, ask about
+             # automatically setting it up.
+@@ -761,6 +758,7 @@ setEnv()
+         done
+     else
+         INSTALLDIR=${USER_DIR}
++	TRUEINSTALLDIR=${TRUEPREFIX}/ossec-hids
+     fi
+ 
+ 
+@@ -961,11 +959,6 @@ main()
+         catError "0x1-location";
+     fi
+ 
+-    # Must be root
+-    if [ ! "X$ME" = "Xroot" ]; then
+-        catError "0x2-beroot";
+-    fi
+-
+     # Checking dependencies
+     checkDependencies
+ 
+@@ -1123,6 +1116,7 @@ main()
+ 
+     else
+         INSTYPE=${USER_INSTALL_TYPE}
++        HYBID=${USER_HYBID}
+     fi
+ 
+ 
+@@ -1250,6 +1244,8 @@ if [ "x$HYBID" = "xgo" ]; then
+     echo 'USER_UPDATE_RULES="n"' >> ./etc/preloaded-vars.conf
+     echo "" >> ./etc/preloaded-vars.conf
+     echo 'USER_CLEANINSTALL="y"' >> ./etc/preloaded-vars.conf
++    echo "" >> ./etc/preloaded-vars.conf
++    echo 'USER_HYBID=""' >> ./etc/preloaded-vars.conf
+     echo "" >> ./etc/preloaded-vars.conf
+ 
+    cd src && ${MAKEBIN} clean && cd ..

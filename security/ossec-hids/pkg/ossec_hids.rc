@@ -1,0 +1,25 @@
+#!/bin/ksh
+#
+# $OpenBSD: ossec_hids.rc,v 1.1.1.1 2018/12/21 22:01:57 pirofti Exp $
+
+daemon="${TRUEPREFIX}/ossec-hids/bin/ossec-control"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} start"
+}
+
+rc_check() {
+	${rcexec} "${daemon} ${daemon_flags} status"
+}
+
+rc_reload() {
+	${rcexec} "${daemon} ${daemon_flags} reload"
+}
+
+rc_stop() {
+	${rcexec} "${daemon} ${daemon_flags} stop"
+}
+
+rc_cmd $1

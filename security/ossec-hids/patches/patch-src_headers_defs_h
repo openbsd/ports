@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_headers_defs_h,v 1.1.1.1 2018/12/21 22:01:57 pirofti Exp $
+
+Index: src/headers/defs.h
+--- src/headers/defs.h.orig
++++ src/headers/defs.h
+@@ -71,23 +71,23 @@ http://www.ossec.net/main/license/\n"
+ 
+ /* User Configuration */
+ #ifndef MAILUSER
+-#define MAILUSER        "ossecm"
++#define MAILUSER        "_ossecm"
+ #endif
+ 
+ #ifndef USER
+-#define USER            "ossec"
++#define USER            "_ossec"
+ #endif
+ 
+ #ifndef REMUSER
+-#define REMUSER         "ossecr"
++#define REMUSER         "_ossecr"
+ #endif
+ 
+ #ifndef GROUPGLOBAL
+-#define GROUPGLOBAL     "ossec"
++#define GROUPGLOBAL     "_ossec"
+ #endif
+ 
+ #ifndef DEFAULTDIR
+-#define DEFAULTDIR      "/var/ossec"
++#define DEFAULTDIR      "${TRUEPREFIX}/ossec-hids"
+ #endif
+ 
+ /* Default queue */

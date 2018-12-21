@@ -1,0 +1,239 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2018/12/21 22:01:57 pirofti Exp $
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -15,15 +15,15 @@ PREFIX?=/var/ossec
+ PG_CONFIG?=pg_config
+ MY_CONFIG?=mysql_config
+ PRELUDE_CONFIG?=libprelude-config
+-OSSEC_GROUP?=ossec
+-OSSEC_USER?=ossec
+-OSSEC_USER_MAIL?=ossecm
+-OSSEC_USER_REM?=ossecr
++OSSEC_GROUP?=_ossec
++OSSEC_USER?=_ossec
++OSSEC_USER_MAIL?=_ossecm
++OSSEC_USER_REM?=_ossecr
+ 
+ USE_PRELUDE?=no
+ USE_ZEROMQ?=no
+ USE_GEOIP?=no
+-USE_INOTIFY=no
++USE_INOTIFY=yes
+ 
+ ifneq (${TARGET},winagent)
+ 	USE_OPENSSL?=auto
+@@ -38,7 +38,7 @@ export MYLDFLAGS= "${LDFLAGS}"
+ export MYCFLAGS= "${CFLAGS}"
+ 
+ DEFINES=-DMAX_AGENTS=${MAXAGENTS} -DOSSECHIDS
+-DEFINES+=-DDEFAULTDIR=\"${PREFIX}\"
++DEFINES+=-DDEFAULTDIR=\"${TRUEPREFIX}/ossec-hids\"
+ DEFINES+=-DUSER=\"${OSSEC_USER}\"
+ DEFINES+=-DREMUSER=\"${OSSEC_USER_REM}\"
+ DEFINES+=-DGROUPGLOBAL=\"${OSSEC_GROUP}\"
+@@ -90,9 +90,11 @@ else
+ ifeq (${uname_S},OpenBSD)
+ #		DEFINES+=-DOpenBSD
+ 		DEFINES+=-pthread
++		DEFINES+=-DUSE_MAGIC
+ 		LUA_PLAT=posix
+-		CFLAGS+=-I/usr/local/include
+-		OSSEC_LDFLAGS+=-L/usr/local/lib
++		CFLAGS+=-I${LOCALBASE}/include
++		OSSEC_LDFLAGS+=-L${LOCALBASE}/lib
++		OSSEC_LDFLAGS+=-lmagic
+ else
+ ifeq (${uname_S},HP-UX)
+ 		DEFINES+=-DHPUX
+@@ -121,7 +123,7 @@ OSSEC_CFLAGS=${CFLAGS}
+ ifdef DEBUG
+ 	OSSEC_CFLAGS+=-g
+ else
+-	OSSEC_CFLAGS+=-O2
++	#OSSEC_CFLAGS+=-O2
+ endif #DEBUG
+ 
+ ifneq (,$(filter ${CLEANFULL},yes y Y 1))
+@@ -189,6 +191,10 @@ ifneq (,$(filter ${USE_INOTIFY},auto yes y Y 1))
+ 		OSSEC_LDFLAGS+=-linotify -L/usr/local/lib -I/usr/local/include
+ 		OSSEC_CFLAGS+=-I/usr/local/include
+ 	endif
++	ifeq (${uname_S},OpenBSD)
++		OSSEC_LDFLAGS+=-Wl,-rpath=${LOCALBASE}/lib/inotify -linotify -L${LOCALBASE}/lib/inotify -I${LOCALBASE}/include/inotify
++		OSSEC_CFLAGS+=-I${LOCALBASE}/include/inotify
++	endif
+ endif
+ 
+ ifneq (,$(filter ${USE_PRELUDE},auto yes y Y 1))
+@@ -360,7 +366,7 @@ install-agent: install-common
+ 	install -m 0550 -o root -g 0 ossec-agentd ${PREFIX}/bin
+ 	install -m 0550 -o root -g 0 agent-auth ${PREFIX}/bin
+ 
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/rids
++	install -d -m 0750 ${PREFIX}/queue/rids
+ 
+ install-local: install-server-generic
+ 
+@@ -369,12 +375,11 @@ install-hybrid: install-server-generic
+ install-server: install-server-generic
+ 
+ install-common: build
+-	./init/adduser.sh ${OSSEC_USER} ${OSSEC_USER_MAIL} ${OSSEC_USER_REM} ${OSSEC_GROUP} ${PREFIX}
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/logs
+-	install -m 0660 -o ${OSSEC_USER} -g ${OSSEC_GROUP} /dev/null ${PREFIX}/logs/ossec.log
++	install -d -m 0750 ${PREFIX}/
++	install -d -m 0750 ${PREFIX}/logs
++	install -m 0660 /dev/null ${PREFIX}/logs/ossec.log
+ 
+-	install -d -m 0550 -o root -g 0 ${PREFIX}/bin
++	install -d -m 0750 -o root -g 0 ${PREFIX}/bin
+ 	install -m 0550 -o root -g 0 ossec-logcollector ${PREFIX}/bin
+ 	install -m 0550 -o root -g 0 ossec-syscheckd ${PREFIX}/bin
+ 	install -m 0550 -o root -g 0 ossec-execd ${PREFIX}/bin
+@@ -383,72 +388,73 @@ install-common: build
+ 	install -m 0550 -o root -g 0 ${OSSEC_CONTROL_SRC} ${PREFIX}/bin/ossec-control
+ 
+ ifeq (${LUA_ENABLE},yes)
+-	install -d -m 0550 -o root -g 0 ${PREFIX}/lua
++	install -d -m 0750 -o root -g 0 ${PREFIX}/lua
+ 	install -d -m 0550 -o root -g 0 ${PREFIX}/lua/native
+ 	install -d -m 0550 -o root -g 0 ${PREFIX}/lua/compiled
+ 	install -m 0550 -o root -g 0 external/lua/src/ossec-lua ${PREFIX}/bin/
+ 	install -m 0550 -o root -g 0 external/lua/src/ossec-luac ${PREFIX}/bin/
+ endif
+ 
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/queue
+-	install -d -m 0770 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/alerts
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/ossec
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/syscheck
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/diff
++	install -d -m 0750 ${PREFIX}/queue
++	install -d -m 0770 ${PREFIX}/queue/alerts
++	install -d -m 0750 ${PREFIX}/queue/ossec
++	install -d -m 0750 ${PREFIX}/queue/syscheck
++	install -d -m 0750 ${PREFIX}/queue/diff
+ 
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/etc
+-	install -m 0440 -o root -g ${OSSEC_GROUP} /etc/localtime ${PREFIX}/etc
++	install -d -m 0750 ${PREFIX}/etc
++	install -m 0440 /etc/localtime ${PREFIX}/etc
+ 
+-	install -d -m 1550 -o root -g ${OSSEC_GROUP} ${PREFIX}/tmp
++	install -d -m 1550 ${PREFIX}/tmp
+ 
+ ifneq (,$(wildcard /etc/TIMEZONE))
+-	install -m 440 -o root -g ${OSSEC_GROUP} /etc/TIMEZONE ${PREFIX}/etc/
++	install -m 440 /etc/TIMEZONE ${PREFIX}/etc/
+ endif
+ # Solaris Needs some extra files
+ ifeq (${uname_S},SunOS)
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/usr/share/lib/zoneinfo/
++	install -d -m 0550 ${PREFIX}/usr/share/lib/zoneinfo/
+ 	cp -r /usr/share/lib/zoneinfo/* ${PREFIX}/usr/share/lib/zoneinfo/
+ endif
+-	install -m 0640 -o root -g ${OSSEC_GROUP} -b ../etc/internal_options.conf ${PREFIX}/etc/
++	install -m 0640 -b ../etc/internal_options.conf ${PREFIX}/etc/
+ ifeq (,$(wildcard ${PREFIX}/etc/local_internal_options.conf))
+-	install -m 0640 -o root -g ${OSSEC_GROUP} ../etc/local_internal_options.conf ${PREFIX}/etc/local_internal_options.conf
++	install -m 0640 ../etc/local_internal_options.conf ${PREFIX}/etc/local_internal_options.conf
+ endif
+ ifeq (,$(wildcard ${PREFIX}/etc/client.keys))
+-	install -m 0640 -o root -g ${OSSEC_GROUP} /dev/null ${PREFIX}/etc/client.keys
++	install -m 0640 /dev/null ${PREFIX}/etc/client.keys
+ endif
+ ifeq (,$(wildcard ${PREFIX}/etc/ossec.conf))
+ ifneq (,$(wildcard ../etc/ossec.mc))
+-	install -m 0640 -o root -g ${OSSEC_GROUP} ../etc/ossec.mc ${PREFIX}/etc/ossec.conf
++	install -m 0640 ../etc/ossec.mc ${PREFIX}/etc/ossec.conf
+ else
+-	install -m 0640 -o root -g ${OSSEC_GROUP} ${OSSEC_CONF_SRC} ${PREFIX}/etc/ossec.conf
++	install -m 0640 ${OSSEC_CONF_SRC} ${PREFIX}/etc/ossec.conf
+ endif
+ endif
+ 
+-	install -d -m 0770 -o root -g ${OSSEC_GROUP} ${PREFIX}/etc/shared
+-	install -m 0640 -o ossec -g ${OSSEC_GROUP} rootcheck/db/*.txt ${PREFIX}/etc/shared/
++	install -d -m 0770 ${PREFIX}/etc/shared
++	install -m 0640 rootcheck/db/*.txt ${PREFIX}/etc/shared/
+ 
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/active-response
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/active-response/bin
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/agentless
+-	install -m 0550 -o root -g ${OSSEC_GROUP} agentlessd/scripts/* ${PREFIX}/agentless/
++	install -d -m 0750 ${PREFIX}/active-response
++	install -d -m 0750 ${PREFIX}/active-response/bin
++	install -d -m 0750 ${PREFIX}/agentless
++	install -m 0550 agentlessd/scripts/* ${PREFIX}/agentless/
+ 
+-	install -d -m 0700 -o root -g ${OSSEC_GROUP} ${PREFIX}/.ssh
++	install -d -m 0700 ${PREFIX}/.ssh
+ 
+-	install -m 0550 -o root -g ${OSSEC_GROUP} ../active-response/*.sh ${PREFIX}/active-response/bin/
+-	install -m 0550 -o root -g ${OSSEC_GROUP} ../active-response/firewalls/*.sh ${PREFIX}/active-response/bin/
++	install -m 0550 ../active-response/*.sh ${PREFIX}/active-response/bin/
++	install -m 0550 ../active-response/firewalls/*.sh ${PREFIX}/active-response/bin/
+ 
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/var
+-	install -d -m 0770 -o root -g ${OSSEC_GROUP} ${PREFIX}/var/run
++	install -d -m 0750 ${PREFIX}/var
++	install -d -m 0770 ${PREFIX}/var/run
++	install -d -m 0770 ${PREFIX}/var/start-script-lock
+ 
+ 	./init/fw-check.sh execute
+ 
+ 
+ 
+ install-server-generic: install-common
+-	install -m 0660 -o ${OSSEC_USER} -g ${OSSEC_GROUP} /dev/null ${PREFIX}/logs/active-responses.log
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/logs/archives
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/logs/alerts
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/logs/firewall
++	install -m 0660 /dev/null ${PREFIX}/logs/active-responses.log
++	install -d -m 0750 ${PREFIX}/logs/archives
++	install -d -m 0750 ${PREFIX}/logs/alerts
++	install -d -m 0750 ${PREFIX}/logs/firewall
+ 
+ 	install -m 0550 -o root -g 0 ossec-agentlessd ${PREFIX}/bin
+ 	install -m 0550 -o root -g 0 ossec-analysisd ${PREFIX}/bin
+@@ -470,27 +476,27 @@ install-server-generic: install-common
+ 	install -m 0550 -o root -g 0 syscheck_control ${PREFIX}/bin/
+ 	install -m 0550 -o root -g 0 rootcheck_control ${PREFIX}/bin/
+ 
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/stats
+-	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/rules
++	install -d -m 0750 ${PREFIX}/stats
++	install -d -m 0750 ${PREFIX}/rules
+ ifneq (,$(wildcard ${PREFIX}/rules/local_rules.xml))
+ 	cp ${PREFIX}/rules/local_rules.xml ${PREFIX}/rules/local_rules.xml.installbackup
+-	install -m 0640 -o root -g ${OSSEC_GROUP} -b ../etc/rules/*.xml ${PREFIX}/rules
+-	install -m 0640 -o root -g ${OSSEC_GROUP} ${PREFIX}/rules/local_rules.xml.installbackup ${PREFIX}/rules/local_rules.xml
++	install -m 0640 -b ../etc/rules/*.xml ${PREFIX}/rules
++	install -m 0640 ${PREFIX}/rules/local_rules.xml.installbackup ${PREFIX}/rules/local_rules.xml
+ 	rm ${PREFIX}/rules/local_rules.xml.installbackup
+ else
+-	install -m 0640 -o root -g ${OSSEC_GROUP} -b ../etc/rules/*.xml ${PREFIX}/rules
++	install -m 0640 -b ../etc/rules/*.xml ${PREFIX}/rules
+ endif
+ 
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/fts
++	install -d -m 0750 ${PREFIX}/queue/fts
+ 
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/rootcheck
++	install -d -m 0750 ${PREFIX}/queue/rootcheck
+ 
+-	install -d -m 0750 -o ${OSSEC_USER_REM} -g ${OSSEC_GROUP} ${PREFIX}/queue/agent-info
+-	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/agentless
++	install -d -m 0750 ${PREFIX}/queue/agent-info
++	install -d -m 0750 ${PREFIX}/queue/agentless
+ 
+-	install -d -m 0750 -o ${OSSEC_USER_REM} -g ${OSSEC_GROUP} ${PREFIX}/queue/rids
++	install -d -m 0750 ${PREFIX}/queue/rids
+ 
+-	install -m 0640 -o root -g ${OSSEC_GROUP} ../etc/decoder.xml ${PREFIX}/etc/
++	install -m 0640 ../etc/decoder.xml ${PREFIX}/etc/
+ 
+ 	rm -f ${PREFIX}/etc/shared/merged.mg
+ 
