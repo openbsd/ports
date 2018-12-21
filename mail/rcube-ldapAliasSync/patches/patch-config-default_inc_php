@@ -1,0 +1,14 @@
+$OpenBSD: patch-config-default_inc_php,v 1.1 2018/12/21 12:59:22 sthen Exp $
+
+Index: config-default.inc.php
+--- config-default.inc.php.orig
++++ config-default.inc.php
+@@ -4,7 +4,7 @@
+  * Copy this file in config.inc.php, and override the values you need.
+ */
+ 
+-$rcmail_config['ldapAliasSync'] = array(
++$config['ldapAliasSync'] = array(
+ 	// Mail parameters
+ 	'mail' => array(
+ 		# Domain to use for LDAP searches (required, if 'replace_domain' is true)
