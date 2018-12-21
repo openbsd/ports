@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.5 2018/04/22 08:51:56 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2018/12/21 13:31:05 ajacoutot Exp $
 
-V=			1.3.0
+V=			1.3.1
 DISTNAME=		libfm-${V}
 EXTRACT_SUFX=		.tar.xz
 
 # quantum entanglement between core and extra
-SHARED_LIBS +=  fm                   1.1      # 4.5
-SHARED_LIBS +=  fm-gtk               1.1      # 4.5
-SHARED_LIBS +=  fm-extra             1.1      # 4.5
+SHARED_LIBS +=  fm                   1.1      # 5.2
+SHARED_LIBS +=  fm-gtk               1.1      # 5.2
+SHARED_LIBS +=  fm-extra             1.1      # 5.2
 
 CATEGORIES +=		x11 devel
 
