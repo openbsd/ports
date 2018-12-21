@@ -1,0 +1,14 @@
+$OpenBSD: patch-program_lib_Roundcube_rcube_ldap_generic_php,v 1.1 2018/12/21 13:18:26 sthen Exp $
+
+Index: program/lib/Roundcube/rcube_ldap_generic.php
+--- program/lib/Roundcube/rcube_ldap_generic.php.orig
++++ program/lib/Roundcube/rcube_ldap_generic.php
+@@ -83,7 +83,7 @@ class rcube_ldap_generic extends Net_LDAP3
+             }
+             break;
+ 
+-        case LOG_EMERGE:
++        case LOG_EMERG:
+         case LOG_ALERT:
+         case LOG_CRIT:
+             rcube::raise_error($msg, true, true);
