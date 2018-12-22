@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2018/12/17 15:19:40 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2018/12/22 12:17:49 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -187,6 +187,7 @@ lib/mapi.d/
 lib/mapi.d/kopano.inf
 lib/mapi.d/zcontacts.inf
 lib/php-7.1/
+lib/php-7.1/modules/
 lib/pkgconfig/kopano.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
 lib/python${MODPY_VERSION}/site-packages/MAPI-8.7.80-py${MODPY_VERSION}.egg-info/
@@ -222,7 +223,6 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/version.py
 lib/python${MODPY_VERSION}/site-packages/MAPICore.py
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.a
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}MAPICore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}icalmapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}inetmapi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -687,6 +687,7 @@ share/examples/kopano/migration-pst.cfg
 @sample ${SYSCONFDIR}/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
+share/examples/kopano/msr.cfg
 share/examples/kopano/presence.cfg
 @sample ${SYSCONFDIR}/kopano/presence.cfg
 share/examples/kopano/quotamail/
@@ -746,7 +747,7 @@ share/gdb/auto-load/usr/local/lib/libmapi.so.1.0.0-gdb.py
 share/kopano/
 share/kopano-dagent/
 share/kopano-dagent/python/
-share/kopano-dagent/python/${MODPY_PYCACHE}
+share/kopano-dagent/python/${MODPY_PYCACHE}/
 share/kopano-dagent/python/${MODPY_PYCACHE}mapiplugin.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/${MODPY_PYCACHE}pluginmanager.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/${MODPY_PYCACHE}plugintemplates.${MODPY_PYC_MAGIC_TAG}pyc
@@ -758,7 +759,7 @@ share/kopano-dagent/python/mapiplugin.py
 share/kopano-dagent/python/pluginmanager.py
 share/kopano-dagent/python/plugins/
 share/kopano-dagent/python/plugins/BMP2PNG.py
-share/kopano-dagent/python/plugins/${MODPY_PYCACHE}
+share/kopano-dagent/python/plugins/${MODPY_PYCACHE}/
 share/kopano-dagent/python/plugins/${MODPY_PYCACHE}BMP2PNG.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/plugins/${MODPY_PYCACHE}examplerules.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/plugins/${MODPY_PYCACHE}movetopublic.${MODPY_PYC_MAGIC_TAG}pyc
@@ -773,7 +774,7 @@ share/kopano-dagent/python/zinterval.py
 share/kopano-dagent/python/zunit.py
 share/kopano-spooler/
 share/kopano-spooler/python/
-share/kopano-spooler/python/${MODPY_PYCACHE}
+share/kopano-spooler/python/${MODPY_PYCACHE}/
 share/kopano-spooler/python/${MODPY_PYCACHE}mapiplugin.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/${MODPY_PYCACHE}pluginmanager.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/${MODPY_PYCACHE}plugintemplates.${MODPY_PYC_MAGIC_TAG}pyc
@@ -784,7 +785,7 @@ share/kopano-spooler/python/${MODPY_PYCACHE}zunit.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/mapiplugin.py
 share/kopano-spooler/python/pluginmanager.py
 share/kopano-spooler/python/plugins/
-share/kopano-spooler/python/plugins/${MODPY_PYCACHE}
+share/kopano-spooler/python/plugins/${MODPY_PYCACHE}/
 share/kopano-spooler/python/plugins/${MODPY_PYCACHE}disclaimer.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/plugins/disclaimer.py
 share/kopano-spooler/python/plugintemplates.py
