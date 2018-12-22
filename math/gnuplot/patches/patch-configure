@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2017/11/04 17:21:41 pirofti Exp $
+$OpenBSD: patch-configure,v 1.2 2018/12/22 09:35:30 pirofti Exp $
 
 readline -> ereadline
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -10127,7 +10127,7 @@ fi
+@@ -10168,7 +10168,7 @@ fi
        if test -d $with_readline/lib; then
          LDFLAGS="$LDFLAGS -L$with_readline/lib"
        fi
@@ -14,7 +14,7 @@ Index: configure
          if test -d $with_readline/include/editline; then
            { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: $with_readline contains libedit, not readline!" >&5
  $as_echo "$as_me: WARNING: $with_readline contains libedit, not readline!" >&2;}
-@@ -10220,7 +10220,7 @@ if ${ac_cv_lib_readline_remove_history+:} false; then 
+@@ -10261,7 +10261,7 @@ if ${ac_cv_lib_readline_remove_history+:} false; then 
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -23,7 +23,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -10251,7 +10251,7 @@ fi
+@@ -10292,7 +10292,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_remove_history" >&5
  $as_echo "$ac_cv_lib_readline_remove_history" >&6; }
  if test "x$ac_cv_lib_readline_remove_history" = xyes; then :
@@ -32,7 +32,7 @@ Index: configure
  fi
  
      if test "$ac_cv_lib_readline_remove_history" = no; then
-@@ -10292,7 +10292,7 @@ fi
+@@ -10333,7 +10333,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_history_remove_history" >&5
  $as_echo "$ac_cv_lib_history_remove_history" >&6; }
  if test "x$ac_cv_lib_history_remove_history" = xyes; then :

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_command_c,v 1.1 2017/11/04 17:21:41 pirofti Exp $
+$OpenBSD: patch-src_command_c,v 1.2 2018/12/22 09:35:30 pirofti Exp $
 
 command.o: In function `report_error':
 command.c:(.text+0x5842): undefined reference to `WEXITSTATUS'
@@ -6,7 +6,7 @@ command.c:(.text+0x5842): undefined reference to `WEXITSTATUS'
 Index: src/command.c
 --- src/command.c.orig
 +++ src/command.c
-@@ -119,6 +119,7 @@ int thread_rl_RetCode = -1; /* return code from readli
+@@ -115,6 +115,7 @@ int thread_rl_RetCode = -1; /* return code from readli
  
  #ifndef _Windows
  # include "help.h"
