@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2018/09/30 16:21:24 landry Exp $
+# $OpenBSD: Makefile,v 1.71 2018/12/23 08:43:02 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.3.2
+V =		2.3.3
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -26,7 +26,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	http://download.osgeo.org/gdal/${V:S/beta1//}/
+MASTER_SITES =	http://download.osgeo.org/gdal/${V}/
 
 MODULES =	perl lang/python
 FLAVORS =	python3
