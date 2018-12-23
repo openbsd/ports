@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/12 19:54:32 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/23 05:03:07 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			2.3.5
+VERSION =			2.3.6
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
 HOMEPAGE =			https://sabnzbd.org/
-MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
+MAINTAINER =			Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
@@ -23,8 +23,8 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				devel/py-cheetah \
 				devel/py-notify \
 				news/py-yenc \
-				security/py-openssl \
-				textproc/py-lxml
+				security/py-cryptography \
+				security/py-openssl
 
 NO_BUILD =			Yes
 NO_TEST =			Yes
