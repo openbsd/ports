@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2018/08/17 07:34:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2018/12/23 09:30:43 ajacoutot Exp $
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.18.2
+GH_TAGNAME=		v0.18.3
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		x11/qt5/qtmultimedia \
 # used to download more stars definitions
 RUN_DEPENDS=		net/curl \
 			devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
 CONFIGURE_ENV=		HOME=${WRKDIR}
