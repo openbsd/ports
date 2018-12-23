@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/09 13:41:54 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2018/12/23 11:44:51 robert Exp $
 
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
-MATE_VERSION=		1.20.2
-
-REVISION=		1
+MATE_VERSION=		1.20.3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
