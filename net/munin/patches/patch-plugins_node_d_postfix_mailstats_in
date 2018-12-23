@@ -1,9 +1,10 @@
-$OpenBSD: patch-plugins_node_d_postfix_mailstats_in,v 1.1 2010/10/23 15:52:23 sthen Exp $
---- plugins/node.d/postfix_mailstats.in.orig	Thu Oct 14 23:59:37 2010
-+++ plugins/node.d/postfix_mailstats.in	Thu Oct 14 23:59:57 2010
-@@ -56,7 +56,7 @@ my $pos;
+$OpenBSD: patch-plugins_node_d_postfix_mailstats_in,v 1.2 2018/12/23 15:05:07 kirby Exp $
+Index: plugins/node.d/postfix_mailstats.in
+--- plugins/node.d/postfix_mailstats.in.orig
++++ plugins/node.d/postfix_mailstats.in
+@@ -60,7 +60,7 @@ my $pos;
  my $delivered = 0;
- my $rejects = {};
+ my %rejects = ();
  my $LOGDIR  = $ENV{'logdir'}  || '/var/log';
 -my $LOGFILE = $ENV{'logfile'} || 'mail.log';
 +my $LOGFILE = $ENV{'logfile'} || 'maillog';
