@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/12/13 19:52:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2018/12/24 23:27:51 jca Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -105,6 +105,7 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-sBZIP2_INCLUDE=${LOCALBASE}/include \
 		-sBZIP2_LIBPATH=${LOCALBASE}/lib \
 		-q \
+		-d+2 \
 		-j${MAKE_JOBS} \
 		--layout=tagged \
 		pch=off \
