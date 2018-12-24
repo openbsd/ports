@@ -4,7 +4,7 @@ SHA256 (gcc/adastrap-hppa-6.4.0-1.tar.xz) = rbkOmmwatIkFTlwYHi/5W9gFEmSdbF1PkDMm
 SHA256 (gcc/adastrap-i386-6.4.0-1.tar.xz) = vm0saO5Y3D0NMik1yDe3CzKEsnXbM7TgbuCVh72VKwM=
 SHA256 (gcc/adastrap-mips64-6.4.0-1.tar.xz) = /eXo/CGtz3AO6mku6gaMDgbh7jW3C4n03HzLY+2F89A=
 SHA256 (gcc/adastrap-powerpc-6.4.0-1.tar.xz) = cuqovMkkFp0gM9b3XDRXbr4K5pXEZc0xYrEaSe/9FPI=
-SHA256 (gcc/adastrap-sparc64-6.4.0-0.tar.xz) = KNX6oKebjwRMeN/nf6jaVhMda4lBuCy94gkBLxR9Tf8=
+SHA256 (gcc/adastrap-sparc64-6.4.0-1.tar.xz) = OGEbZP9QzaHievQSUeC0A2ZpMe2yQRmebFhHxTbFKk8=
 SHA256 (gcc/ecj-4.5.jar) = mP0Sjx03TZ5C/Z1INr3SScbVEevGwN8X+8G535bD14E=
 SHA256 (gcc/gcc-6.4.0.tar.xz) = hQvyHq/f5c1faCcUgYTAjEoIUqN8zzbOaYVTNNLJFNQ=
 SIZE (gcc/adastrap-amd64-6.4.0-1.tar.xz) = 49548748
@@ -13,6 +13,6 @@ SIZE (gcc/adastrap-hppa-6.4.0-1.tar.xz) = 41438744
 SIZE (gcc/adastrap-i386-6.4.0-1.tar.xz) = 51055804
 SIZE (gcc/adastrap-mips64-6.4.0-1.tar.xz) = 41133092
 SIZE (gcc/adastrap-powerpc-6.4.0-1.tar.xz) = 42745248
-SIZE (gcc/adastrap-sparc64-6.4.0-0.tar.xz) = 38497820
+SIZE (gcc/adastrap-sparc64-6.4.0-1.tar.xz) = 39399284
 SIZE (gcc/ecj-4.5.jar) = 1470676
 SIZE (gcc/gcc-6.4.0.tar.xz) = 76156220
