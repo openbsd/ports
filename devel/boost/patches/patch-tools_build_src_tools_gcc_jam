@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.5 2018/01/31 21:54:49 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.6 2018/12/24 23:35:41 jca Exp $
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig
 +++ tools/build/src/tools/gcc.jam
@@ -41,3 +41,12 @@ Index: tools/build/src/tools/gcc.jam
  }
  
  ###
+@@ -1354,7 +1355,7 @@ cpu-flags gcc OPTIONS : x86 : c3-2 : -march=c3-2 ;
+ ##
+ cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
+ # Sparc
+-cpu-flags gcc OPTIONS : sparc : v7 : -mcpu=v7 : default ;
++cpu-flags gcc OPTIONS : sparc : v7 : -mcpu=v7 ;
+ cpu-flags gcc OPTIONS : sparc : cypress : -mcpu=cypress ;
+ cpu-flags gcc OPTIONS : sparc : v8 : -mcpu=v8 ;
+ cpu-flags gcc OPTIONS : sparc : supersparc : -mcpu=supersparc ;
