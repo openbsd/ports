@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/12/24 23:27:51 jca Exp $
+# $OpenBSD: Makefile,v 1.78 2018/12/24 23:31:02 jca Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -158,6 +158,7 @@ do-configure:
 # b2 doesn't seem to respect python parameter, we need to run twice with
 # separate python environments
 do-build:
+	export ${MAKE_ENV}; \
 	cd ${WRKSRC} && chmod -R a+x ./ && \
 	/bin/sh ./bootstrap.sh ${BOOTSTRAP} ${PY2_BOOTSTRAP} && \
 	./b2 ${BJAM_CONFIG} python=${MODPY_DEFAULT_VERSION_2} && \
