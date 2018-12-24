@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.11 2018/12/21 17:06:07 espie Exp $
+# $OpenBSD: Sql.pm,v 1.12 2018/12/24 10:49:47 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -207,8 +207,16 @@ sub inserter
 		push(@names, $c->name);
 		push(@i, '?');
 	}
-	return "INSERT OR REPLACE INTO ".$self->name." (".
+	my $replace = $self->{noreplace} ? "" : " OR REPLACE";
+	return "INSERT$replace INTO ".$self->name." (".
 	    join(', ', @names).") VALUES (".join(', ', @i).")";
+}
+
+sub noreplace
+{
+	my $self = shift;
+	$self->{noreplace} = 1;
+	return $self;
 }
 
 sub new
@@ -240,7 +248,7 @@ sub contents
 
 	$self->{select}{level} = ($self->{level}//0)+4;
 
-	return ("AS", $self->{select}->contents);
+	return $self->{select}->contents;
 }
 
 sub columns
@@ -272,7 +280,7 @@ sub contents
 {
 	my $self = shift;
 
-	my @parts = ();
+	my @parts = ("AS");
 	# compute the joins
 	my $joins = {};
 	my @joins = ();
