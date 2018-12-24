@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2018/06/29 22:16:15 espie Exp $
-
-ONLY_FOR_ARCHS=	i386 amd64
-
-# speculative, feel free to kill if it fails!
-ONLY_FOR_ARCHS+= aarch64
+# $OpenBSD: Makefile,v 1.87 2018/12/24 22:57:34 sthen Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		2.4.4
+V=		2.6.0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	graphics x11
 
@@ -38,8 +32,8 @@ MODULES=	devel/cmake \
 		textproc/intltool
 MODLUA_VERSION=	5.3
 
-# TLS, modern C++
-COMPILER =	base-clang ports-gcc
+# TLS, modern C++, upstream requires gcc-5.0+/clang-3.9+ so no ports-gcc
+COMPILER =	base-clang
 
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -67,6 +61,7 @@ SEPARATE_BUILD=	Yes
 
 CONFIGURE_ARGS=	-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1 \
+		-DUSE_OPENMP=OFF \
 		-DTESTBUILD_OPENCL_PROGRAMS=OFF
 # OpenCL picks up LLVM at build time.
 
