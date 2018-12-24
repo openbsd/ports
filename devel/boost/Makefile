@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2018/12/24 23:31:02 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2018/12/24 23:34:27 jca Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -97,6 +97,7 @@ BUILD_PACKAGES=	${MULTI_PACKAGES:N-md}
 TOOLSET=	clang
 .else
 TOOLSET=	gcc
+CXXFLAGS+=	-std=gnu++11
 .endif
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
