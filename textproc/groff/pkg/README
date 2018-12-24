@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:24 espie Exp $
+$OpenBSD: README,v 1.5 2018/12/24 10:42:00 schwarze Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,14 +29,6 @@ documents can adjust text to the right margin:
 .ad l
 .de ad
 ..
-
-In case you dislike the default string "OpenBSD ports" in mdoc(7)
-manual footers, you can add the the line
-
-.ds default-operating-system my fancy system
-
-to the file ${TRUEPREFIX}/share/groff/site-tmac/mdoc.local.
-But don't do that on a machine you intend to build ports(7) on.
 
 
 To suit the taste of OpenBSD developers, two mdoc(7) formatting

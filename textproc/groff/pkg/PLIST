@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/12/24 10:42:00 schwarze Exp $
 @conflict groff-mdoc-*
 @pkgpath textproc/groff.mdoc
 @bin bin/addftinfo
@@ -66,7 +66,6 @@ lib/groff/groffer/subs.pl
 lib/groff/groffer/version.sh
 lib/groff/grog/
 lib/groff/grog/subs.pl
-lib/groff/refer/
 lib/groff/site-tmac/
 @man man/man1/addftinfo.1
 @man man/man1/afmtodit.1
@@ -113,6 +112,7 @@ lib/groff/site-tmac/
 @man man/man1/tbl.1
 @man man/man1/tfmtodit.1
 @man man/man1/troff.1
+@man man/man5/groff_filenames.5
 @man man/man5/groff_font.5
 @man man/man5/groff_out.5
 @man man/man5/groff_tmac.5
@@ -121,7 +121,6 @@ lib/groff/site-tmac/
 @man man/man7/groff.7
 @man man/man7/groff_char.7
 @man man/man7/groff_diff.7
-@man man/man7/groff_filenames.7
 @man man/man7/groff_hdtbl.7
 @man man/man7/groff_man.7
 @man man/man7/groff_mdoc.7
@@ -255,16 +254,21 @@ share/examples/groff/hdtbl/rainbow.ps
 share/examples/groff/hdtbl/rainbow.roff
 share/examples/groff/hdtbl/short_reference.ps
 share/examples/groff/hdtbl/short_reference.roff
+share/examples/groff/mm/
+share/examples/groff/mm/letter.mm
 share/examples/groff/mom/
+share/examples/groff/mom/README-fr.txt
 share/examples/groff/mom/README.txt
 share/examples/groff/mom/elvis_syntax
 share/examples/groff/mom/elvis_syntax.new
 share/examples/groff/mom/letter.mom
 share/examples/groff/mom/mom-pdf.mom
 share/examples/groff/mom/mom.vim
+share/examples/groff/mom/mon_premier_doc.mom
 share/examples/groff/mom/penguin.pdf
 share/examples/groff/mom/penguin.ps
 share/examples/groff/mom/sample_docs.mom
+share/examples/groff/mom/slide-demo.mom
 share/examples/groff/mom/typesetting.mom
 share/examples/groff/webpage.ms
 share/examples/groff/webpage.ps
@@ -278,6 +282,12 @@ share/groff/${VERSION}/font/devascii/BI
 share/groff/${VERSION}/font/devascii/DESC
 share/groff/${VERSION}/font/devascii/I
 share/groff/${VERSION}/font/devascii/R
+share/groff/${VERSION}/font/devcp1047/
+share/groff/${VERSION}/font/devcp1047/B
+share/groff/${VERSION}/font/devcp1047/BI
+share/groff/${VERSION}/font/devcp1047/DESC
+share/groff/${VERSION}/font/devcp1047/I
+share/groff/${VERSION}/font/devcp1047/R
 share/groff/${VERSION}/font/devdvi/
 share/groff/${VERSION}/font/devdvi/CW
 share/groff/${VERSION}/font/devdvi/CWEC
@@ -449,8 +459,6 @@ share/groff/${VERSION}/font/devpdf/map/dingbats.map
 share/groff/${VERSION}/font/devpdf/map/symbolchars
 share/groff/${VERSION}/font/devpdf/map/symbolmap
 share/groff/${VERSION}/font/devpdf/map/textmap
-share/groff/${VERSION}/font/devpdf/util/
-share/groff/${VERSION}/font/devpdf/util/BuildFoundries
 share/groff/${VERSION}/font/devps/
 share/groff/${VERSION}/font/devps/AB
 share/groff/${VERSION}/font/devps/ABI
@@ -583,7 +591,6 @@ share/groff/${VERSION}/tmac/hyphen.fr
 share/groff/${VERSION}/tmac/hyphen.sv
 share/groff/${VERSION}/tmac/hyphen.us
 share/groff/${VERSION}/tmac/hyphenex.cs
-share/groff/${VERSION}/tmac/hyphenex.det
 share/groff/${VERSION}/tmac/hyphenex.us
 share/groff/${VERSION}/tmac/ja.tmac
 share/groff/${VERSION}/tmac/latin1.tmac
@@ -619,6 +626,7 @@ share/groff/${VERSION}/tmac/om.tmac
 share/groff/${VERSION}/tmac/papersize.tmac
 share/groff/${VERSION}/tmac/pdf.tmac
 share/groff/${VERSION}/tmac/pdfmark.tmac
+share/groff/${VERSION}/tmac/pdfpic.tmac
 share/groff/${VERSION}/tmac/pic.tmac
 share/groff/${VERSION}/tmac/ps.tmac
 share/groff/${VERSION}/tmac/psatk.tmac
@@ -640,6 +648,7 @@ share/groff/${VERSION}/tmac/tty-char.tmac
 share/groff/${VERSION}/tmac/tty.tmac
 share/groff/${VERSION}/tmac/unicode.tmac
 share/groff/${VERSION}/tmac/www.tmac
+share/groff/${VERSION}/tmac/zh.tmac
 share/groff/current
 share/groff/site-font/
 share/groff/site-tmac/

@@ -1,9 +1,10 @@
-$OpenBSD: patch-tmac_troffrc,v 1.4 2014/11/06 22:15:23 schwarze Exp $
+$OpenBSD: patch-tmac_troffrc,v 1.5 2018/12/24 10:42:00 schwarze Exp $
 Disable hyphenation and adjustment (local change).
---- tmac/troffrc.orig	Sun Oct 12 23:00:09 2014
-+++ tmac/troffrc	Sun Oct 12 23:27:06 2014
-@@ -43,10 +43,16 @@ troffrc!X100 troffrc!X100-12 troffrc!lj4 troff!lbp tro
- .\" Set the hyphenation language to `us'.
+Index: tmac/troffrc
+--- tmac/troffrc.orig
++++ tmac/troffrc
+@@ -41,10 +41,16 @@ troffrc!X100 troffrc!X100-12 troffrc!lj4 troff!lbp tro
+ .\" Set the hyphenation language to 'us'.
  .do hla us
  .
 -.\" Load hyphenation patterns and exceptions.

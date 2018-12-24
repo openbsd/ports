@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/25 13:26:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2018/12/24 10:42:00 schwarze Exp $
 
 COMMENT =		GNU troff typesetter
-VERSION =		1.22.3
+VERSION =		1.22.4
 SUBST_VARS =		VERSION
 DISTNAME =		groff-${VERSION}
-REVISION =		12
 
 CATEGORIES =		textproc
 DPB_PROPERTIES =	parallel
@@ -28,12 +27,16 @@ MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
 
 MODULES =		perl
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x \
-			--with-awk=awk \
+CONFIGURE_ARGS +=	--with-awk=awk --without-gs \
+			--without-libiconv-prefix --without-uchardet \
+			--without-urw-fonts-dir --without-x \
 			pnmcrop=missing pnmcut=missing pnmtopng=missing \
 			pnmtops=missing psselect=missing
-
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
+CONFIGURE_ENV +=	ac_cv_prog_PDFFONTS= \
+			ac_cv_prog_PDFIMAGES= \
+			ac_cv_prog_PDFINFO= \
+			ac_cv_prog_XPMTOPPM=
+TEST_TARGET =		check
 
 pre-configure:
 	find ${WRKBUILD} -name \*.pl -type f -print0 | \
