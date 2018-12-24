@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/12/24 14:59:12 pascal Exp $
 @bin bin/etr
+share/appdata/
+share/appdata/etr.appdata.xml
 share/applications/etr.desktop
 share/doc/etr/
 share/doc/etr/TODO
