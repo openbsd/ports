@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/24 23:40:28 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/24 23:50:44 jca Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc
 
+BUILD_DEPENDS =		devel/cppunit
 LIB_DEPENDS =		converters/libiconv \
 			security/libnettle
 
