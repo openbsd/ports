@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/24 19:50:06 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -19,8 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.4.1
-REVISION =		1
+GH_TAGNAME =		1.5.0
 
 MODULES =		devel/cmake
 
