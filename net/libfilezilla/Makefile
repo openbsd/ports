@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/24 23:50:44 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/25 00:17:50 jca Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -25,6 +25,7 @@ LIB_DEPENDS =		converters/libiconv \
 			security/libnettle
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-doxygen-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
