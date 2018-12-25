@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,317 @@
+@@ -0,0 +1,328 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -53,6 +53,10 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +#include <sanitizer/common_interface_defs.h>
 +#endif
 +
++#if defined(USE_NSS_CERTS)
++#include "crypto/nss_util.h"
++#endif
++
 +#define MAXTOKENS        3
 +#define _UNVEIL_MAIN     "/etc/chromium/unveil.main";
 +#define _UNVEIL_RENDERER "/etc/chromium/unveil.renderer";
@@ -95,7 +99,14 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +
 +  base::SysInfo::AmountOfPhysicalMemory();
 +  base::SysInfo::NumberOfProcessors();
-+     
++
++#if defined(USE_NSS_CERTS)
++  // The main process has to initialize the ~/.pki dir which won't work
++  // after unveil(2).
++  if (process_type.empty())
++    crypto::EnsureNSSInit();
++#endif
++
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type);
 +
