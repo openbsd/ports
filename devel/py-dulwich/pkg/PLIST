@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/09/08 09:52:58 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/12/25 12:00:08 millert Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
 bin/dulwich
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.pyc
@@ -57,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/log_utils.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/log_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/lru_cache.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/lru_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/mailmap.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/mailmap.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/object_store.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/object_store.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/objects.py
@@ -79,6 +82,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/repo.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/repo.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/server.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/server.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/stash.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/stash.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/stdint.h
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/__init__.py
@@ -290,6 +295,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_index.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_index.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_lru_cache.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_lru_cache.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_mailmap.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_mailmap.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_missing_obj_finder.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_missing_obj_finder.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_object_store.py
@@ -314,6 +321,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_repository.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_repository.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_server.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_server.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_stash.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_stash.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_walk.py
