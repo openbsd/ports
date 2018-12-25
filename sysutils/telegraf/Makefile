@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/18 19:31:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/25 22:40:11 sthen Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
+
+BROKEN-i386 =	build fails, no error message
 
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
