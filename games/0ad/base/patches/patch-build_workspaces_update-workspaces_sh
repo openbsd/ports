@@ -1,8 +1,9 @@
-$OpenBSD: patch-build_workspaces_update-workspaces_sh,v 1.5 2016/11/17 11:16:43 pascal Exp $
+$OpenBSD: patch-build_workspaces_update-workspaces_sh,v 1.6 2018/12/25 00:32:56 bentley Exp $
 Don't build bundled libraries during configure.
---- build/workspaces/update-workspaces.sh.orig.port	Fri Sep  2 18:18:57 2016
-+++ build/workspaces/update-workspaces.sh	Wed Nov  9 11:16:38 2016
-@@ -81,7 +81,7 @@ if [ "`uname -s`" != "Darwin" ]; then
+Index: build/workspaces/update-workspaces.sh
+--- build/workspaces/update-workspaces.sh.orig
++++ build/workspaces/update-workspaces.sh
+@@ -85,7 +85,7 @@ if [ "`uname -s`" != "Darwin" ]; then
    echo
  
    # Build/update bundled external libraries

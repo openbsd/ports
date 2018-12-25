@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/12/25 00:32:56 bentley Exp $
 bin/0ad
 @bin bin/pyrogenesis
 lib/libCollada.so
@@ -20,6 +20,7 @@ lib/libtinygettext.a
 share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
+share/0ad/l10n/ast.engine.po
 share/0ad/l10n/bg.engine.po
 share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
@@ -36,6 +37,7 @@ share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
 share/0ad/l10n/messages.json
+share/0ad/l10n/ms.engine.po
 share/0ad/l10n/nb.engine.po
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pl.engine.po
@@ -151,13 +153,11 @@ share/0ad/mods/_test.sim/simulation/templates/inherit_d.xml
 share/0ad/mods/_test.sim/simulation/templates/invalid.xml
 share/0ad/mods/_test.sim/simulation/templates/special/
 share/0ad/mods/_test.sim/simulation/templates/special/actor.xml
-share/0ad/mods/_test.sim/simulation/templates/special_filter/
-share/0ad/mods/_test.sim/simulation/templates/special_filter/foundation.xml
+share/0ad/mods/_test.sim/simulation/templates/special/filter/
+share/0ad/mods/_test.sim/simulation/templates/special/filter/foundation.xml
 share/0ad/mods/_test.sim/simulation/templates/template-serialize.xml
 share/0ad/mods/_test.sim/simulation/templates/test1-inherit.xml
 share/0ad/mods/_test.sim/simulation/templates/test1.xml
-share/0ad/mods/_test.sim/simulation/templates/unit.xml
-share/0ad/mods/_test.sim/simulation/templates/unitobstruct.xml
 share/0ad/mods/_test.tex/
 share/0ad/mods/_test.tex/art/
 share/0ad/mods/_test.tex/art/textures/

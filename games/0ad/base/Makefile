@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2018/12/25 00:32:55 bentley Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -7,7 +7,6 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		1
 
 USE_WXNEEDED =		Yes
 
@@ -17,7 +16,7 @@ SHARED_LIBS +=  mozjs38-ps-release        ${SO_VERSION}
 WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
 WANTLIB += enet execinfo gloox iconv icui18n icuuc m miniupnpc
 WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
-WANTLIB += xml2 z ${COMPILER_LIBCXX}
+WANTLIB += sodium xml2 z ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
@@ -33,6 +32,7 @@ LIB_DEPENDS =		audio/libvorbis \
 			net/enet \
 			net/gloox>=1.0.20 \
 			net/miniupnp/miniupnpc \
+			security/libsodium \
 			textproc/icu4c \
 			textproc/libxml
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -56,6 +56,7 @@ USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--without-nvtt \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib \
+			--premake4 \
 			--minimal-flags
 
 # XXX atlas (the level editor) requires threaded libxml
