@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/11 16:24:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2018/12/25 15:18:20 bcallah Exp $
 
 COMMENT =	Settlers 1 (Serf City) clone
-DISTNAME =	freeserf-0.1.1.20181102
+DISTNAME =	freeserf-0.1.1.20181223
 CATEGORIES =	games x11
 
-# Switch to GH_TAGNAME or a real tarball once 0.2 is released.
+# Switch to GH_TAGNAME or a real tarball once 0.3 is released.
 GH_ACCOUNT =	freeserf
 GH_PROJECT =	freeserf
-GH_COMMIT =	1158e1a7a9b232ccdcb0136e36fd0983b5777054
+GH_COMMIT =	4d9545242ca6ce8d41e372e80a4305541a5e8cbf
 
 HOMEPAGE =	http://jonls.dk/freeserf/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
