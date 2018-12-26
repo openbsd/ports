@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.126 2018/12/26 09:37:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.127 2018/12/26 10:05:37 bentley Exp $
 
     SUBDIR =
     SUBDIR += a2ps
     SUBDIR += afm
     SUBDIR += apsfilter
     SUBDIR += apvlv
+    SUBDIR += bg5pdf
+    SUBDIR += bg5ps
     SUBDIR += bibview
     SUBDIR += brlaser
     SUBDIR += cups

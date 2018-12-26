@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.689 2018/12/24 23:14:06 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.690 2018/12/26 10:05:37 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -313,6 +313,8 @@ my $stem_extensions = {
 	'pecl70-rar' => 'pecl71-rar',
 	'pecl70-redis' => 'pecl71-redis',
 	'pecl70-ssh2' => 'pecl71-ssh2',
+	'zh-bg5ps' => 'bg5ps',
+	'zh-bg5pdf' => 'bg5pdf',
 };
 
 my $obsolete_reason = {
