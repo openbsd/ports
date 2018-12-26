@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.10 2018/12/26 00:49:22 schwarze Exp $
+
+To process the hdtbl example files, eqn(1) is used, so build it first.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -11545,7 +11545,7 @@ $(hdtblexample_DATA): $(HDTBLSTRIPFILES)
+ 	&& sed -e "s|[@]fontdir[@]|$(fontdir)|" \
+ 	       -e "s|[@]EGREP[@]|$(EGREP)|" $< >$@
+ 
+-$(HDTBLPROCESSEDEXAMPLEFILES): gnu.eps groff troff pic tbl \
++$(HDTBLPROCESSEDEXAMPLEFILES): gnu.eps groff troff eqn pic tbl \
+   contrib/hdtbl/examples/common.roff
+ 
+ $(HDTBLSTRIPFILES): $(top_srcdir)/tmac/strip.sed
