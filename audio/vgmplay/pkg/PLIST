@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/29 03:56:14 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/26 15:41:00 bcallah Exp $
+@bin bin/vgm2pcm
+@bin bin/vgm2wav
 @bin bin/vgmplay
 @man man/man1/vgmplay.1
 share/vgmplay/
