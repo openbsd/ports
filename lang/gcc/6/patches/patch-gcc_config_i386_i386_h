@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_i386_i386_h,v 1.1 2018/12/26 17:10:00 pascal Exp $
+
+Index: gcc/config/i386/i386.h
+--- gcc/config/i386/i386.h.orig
++++ gcc/config/i386/i386.h
+@@ -2470,6 +2470,8 @@ struct GTY(()) ix86_frame
+   HOST_WIDE_INT reg_save_offset;
+   HOST_WIDE_INT sse_reg_save_offset;
+ 
++  HOST_WIDE_INT local_size;
++
+   /* When save_regs_using_mov is set, emit prologue using
+      move instead of push instructions.  */
+   bool save_regs_using_mov;

@@ -1,6 +1,7 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2016/09/04 16:20:17 pascal Exp $
---- gcc/config/rs6000/sysv4.h.orig	Mon May 16 15:47:47 2016
-+++ gcc/config/rs6000/sysv4.h	Tue Aug 23 15:48:18 2016
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.2 2018/12/26 17:10:00 pascal Exp $
+Index: gcc/config/rs6000/sysv4.h
+--- gcc/config/rs6000/sysv4.h.orig
++++ gcc/config/rs6000/sysv4.h
 @@ -381,6 +381,7 @@ do {									\
    asm_fprintf (FILE, "%L%s", PREFIX)
  
@@ -9,7 +10,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2016/09/04 16:20:17 pascal E
  #define GLOBAL_ASM_OP "\t.globl "
  
  /* This says how to output assembler code to declare an
-@@ -835,13 +836,14 @@ ncrtn.o%s"
+@@ -845,13 +846,14 @@ ncrtn.o%s"
  
  /* OpenBSD support.  */
  #ifndef	LIB_OPENBSD_SPEC
@@ -27,7 +28,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2016/09/04 16:20:17 pascal E
  #endif
  
  #ifndef	ENDFILE_OPENBSD_SPEC
-@@ -858,7 +860,7 @@ ncrtn.o%s"
+@@ -868,7 +870,7 @@ ncrtn.o%s"
  #endif
  
  #ifndef CPP_OS_OPENBSD_SPEC

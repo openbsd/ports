@@ -1,34 +1,33 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/24 09:17:36 pascal Exp $
+# $OpenBSD: Makefile,v 1.22 2018/12/26 17:09:59 pascal Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
 
-V = 6.4.0
-REVISION = 4
+V = 6.5.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
 ADASTRAP_LIBC-amd64 = 93.0
 ADASTRAP_LIBM-amd64 = 10.1
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP_LIBC-hppa = 93.0
 ADASTRAP_LIBM-hppa = 10.1
-ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
+ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP_LIBC-i386 = 93.0
 ADASTRAP_LIBM-i386 = 10.1
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
 ADASTRAP_LIBC-mips64 = 93.0
 ADASTRAP_LIBM-mips64 = 10.1
-ADASTRAP-mips64 = adastrap-mips64-$V-1.tar.xz
+ADASTRAP-mips64 = adastrap-mips64-6.4.0-1.tar.xz
 ADASTRAP_LIBC-powerpc = 93.0
 ADASTRAP_LIBM-powerpc = 10.1
-ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
 ADASTRAP_LIBC-sparc64 = 93.0
 ADASTRAP_LIBM-sparc64 = 10.1
-ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}

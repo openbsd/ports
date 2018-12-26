@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.6 2018/12/14 17:58:03 bcallah Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.7 2018/12/26 17:09:59 pascal Exp $
 Index: gcc/config.gcc
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc
@@ -26,7 +26,7 @@ Index: gcc/config.gcc
  	tm_file="elfos.h alpha/alpha.h alpha/elf.h openbsd.h openbsd-stdint.h alpha/openbsd.h openbsd-libpthread.h"
  	extra_options="${extra_options} openbsd.opt alpha/elf.opt"
  	# default x-alpha is only appropriate for dec-osf.
-@@ -1080,6 +1088,13 @@ arm*-*-netbsdelf*)
+@@ -1084,6 +1092,13 @@ arm*-*-netbsdelf*)
  	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
  	tmake_file="${tmake_file} arm/t-arm"
  	;;
@@ -40,7 +40,7 @@ Index: gcc/config.gcc
  arm*-*-linux-*)			# ARM GNU/Linux with ELF
  	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h arm/elf.h arm/linux-gas.h arm/linux-elf.h"
  	extra_options="${extra_options} linux-android.opt"
-@@ -1290,6 +1305,7 @@ hppa*-*-linux*)
+@@ -1294,6 +1309,7 @@ hppa*-*-linux*)
  	;;
  hppa*-*-openbsd*)
  	target_cpu_default="MASK_PA_11"
@@ -48,7 +48,7 @@ Index: gcc/config.gcc
  	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-stdint.h openbsd-libpthread.h \
  		 pa/pa-openbsd.h pa/pa32-regs.h pa/pa32-openbsd.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -1477,6 +1493,7 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+@@ -1481,6 +1497,7 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	use_collect2=yes
  	;;
  i[34567]86-*-openbsd*)
@@ -56,7 +56,7 @@ Index: gcc/config.gcc
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/openbsdelf.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -1484,6 +1501,7 @@ i[34567]86-*-openbsd*)
+@@ -1488,6 +1505,7 @@ i[34567]86-*-openbsd*)
  	gnu_ld=yes
  	;;
  x86_64-*-openbsd*)
@@ -64,7 +64,7 @@ Index: gcc/config.gcc
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -2044,6 +2062,18 @@ microblaze*-*-elf)
+@@ -2048,6 +2066,18 @@ microblaze*-*-elf)
  	cxx_target_objs="${cxx_target_objs} microblaze-c.o"
  	tmake_file="${tmake_file} microblaze/t-microblaze"
          ;;
@@ -83,7 +83,7 @@ Index: gcc/config.gcc
  mips*-*-netbsd*)			# NetBSD/mips, either endian.
  	target_cpu_default="MASK_ABICALLS"
  	tm_file="elfos.h ${tm_file} mips/elf.h netbsd.h netbsd-elf.h mips/netbsd.h"
-@@ -2316,6 +2346,12 @@ pdp11-*-*)
+@@ -2320,6 +2350,12 @@ pdp11-*-*)
  #	tmake_file="${tmake_file} rs6000/t-fprules"
  #	extra_headers=
  #	;;
@@ -96,7 +96,7 @@ Index: gcc/config.gcc
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	case ${target} in
-@@ -2910,11 +2946,19 @@ sparc64-*-netbsd*)
+@@ -2914,11 +2950,19 @@ sparc64-*-netbsd*)
  	extra_options="${extra_options} sparc/long-double-switch.opt"
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
@@ -117,7 +117,7 @@ Index: gcc/config.gcc
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
  	tmake_file="${tmake_file} sparc/t-sparc"
-@@ -3118,6 +3162,12 @@ case ${target} in
+@@ -3122,6 +3166,12 @@ case ${target} in
      else
        arch=i386
      fi

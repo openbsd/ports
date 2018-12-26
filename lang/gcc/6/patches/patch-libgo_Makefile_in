@@ -1,7 +1,8 @@
-$OpenBSD: patch-libgo_Makefile_in,v 1.1.1.1 2016/09/04 16:20:15 pascal Exp $
---- libgo/Makefile.in.orig	Wed Feb  3 22:58:02 2016
-+++ libgo/Makefile.in	Tue Aug 23 16:24:50 2016
-@@ -2350,7 +2350,8 @@ GOCOMPILE = $(GOC) $(DEFAULT_INCLUDES) $(INCLUDES) $(A
+$OpenBSD: patch-libgo_Makefile_in,v 1.2 2018/12/26 17:10:00 pascal Exp $
+Index: libgo/Makefile.in
+--- libgo/Makefile.in.orig
++++ libgo/Makefile.in
+@@ -2345,7 +2345,8 @@ GOCOMPILE = $(GOC) $(DEFAULT_INCLUDES) $(INCLUDES) $(A
  LTGOCOMPILE = $(LIBTOOL) --tag GO --mode=compile $(GOC) $(INCLUDES) \
  	$(AM_GOCFLAGS) $(GOCFLAGS)
  
