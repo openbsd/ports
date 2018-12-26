@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2018/12/26 21:20:21 kili Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -67,7 +67,7 @@ LIB_DEPENDS-main=	devel/gettext \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
-BUILD_DEPENDS= 		fonts/mftrace \
+BUILD_DEPENDS= 		print/mftrace \
 			devel/bison \
 			devel/gettext-tools \
 			archivers/bzip2 \
