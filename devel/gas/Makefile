@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/26 19:47:27 pascal Exp $
 
 COMMENT =		GNU assembler
 
-V =			2.28
+V =			2.31.1
 DISTNAME =		binutils-$V
 PKGNAME =		gas-$V
 

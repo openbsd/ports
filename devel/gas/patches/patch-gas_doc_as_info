@@ -1,9 +1,9 @@
-$OpenBSD: patch-gas_doc_as_info,v 1.1.1.1 2017/07/26 21:45:23 pascal Exp $
+$OpenBSD: patch-gas_doc_as_info,v 1.2 2018/12/26 19:47:27 pascal Exp $
 
 Index: gas/doc/as.info
 --- gas/doc/as.info.orig
 +++ gas/doc/as.info
-@@ -2,8 +2,8 @@ This is as.info, produced by makeinfo version 4.8 from
+@@ -13,8 +13,8 @@ Free Documentation License".
  
  INFO-DIR-SECTION Software development
  START-INFO-DIR-ENTRY
@@ -12,5 +12,3 @@ Index: gas/doc/as.info
 +* As: (gas).                     The GNU assembler.
 +* Gas: (gas).                    The GNU assembler.
  END-INFO-DIR-ENTRY
- 
-    This file documents the GNU Assembler "as".
