@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.31 2018/12/20 15:10:13 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.32 2018/12/26 13:20:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -331,7 +331,6 @@ sub create_view
 {
 	my ($self, $table, @columns) = @_;
 
-	unshift(@columns, PathColumn->new);
 	my $t = $self->table_name($table);
 	my @l = $self->map_columns('view', \@columns, $t, $self);
 	my @j = $self->map_columns('join', \@columns, $t, $self);
@@ -392,6 +391,7 @@ sub create_view_info
 {
 	my $self = shift;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
+	unshift(@columns, PathColumn->new);
 	$self->create_view("Ports", @columns);
 }
 
