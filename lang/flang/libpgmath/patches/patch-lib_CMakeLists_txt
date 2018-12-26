@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.5 2018/07/31 03:34:42 bcallah Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.6 2018/12/26 17:37:14 bcallah Exp $
 
 Some ugly hacks here.
 
@@ -37,7 +37,7 @@ Index: lib/CMakeLists.txt
        TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
        PG_PIC)
 -    set(FLAGS_L2 "-m64 -O3 -mtune=core-avx2 -march=core-avx2 ")
-+    set(FLAGS_L2 "-m64 -mtune=knl -march=knl ")
++    set(FLAGS_L2 "-m64 -mtune=core-avx2 -march=core-avx2 ")
  
      # common
      # Definitions and compiler flags for level 1 directories
@@ -61,13 +61,13 @@ Index: lib/CMakeLists.txt
      TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
      TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
 -  set(FLAGS_L1 "-O3 -ffp-contract=fast ")
-+  set(FLAGS_L1 "-ffp-contract=fast ")
++  set(FLAGS_L1 " ")
  
    set(DEFINITIONS_L2 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
      TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
      TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
 -  set(FLAGS_L2 "-O3 -ffp-contract=fast ")
-+  set(FLAGS_L2 "-ffp-contract=fast ")
++  set(FLAGS_L2 " ")
  
    # common
    # Definitions and compiler flags for level 1 directories

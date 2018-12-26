@@ -1,17 +1,17 @@
-$OpenBSD: patch-lib_common_dispatch_c,v 1.3 2018/07/25 21:08:47 bcallah Exp $
+$OpenBSD: patch-lib_common_dispatch_c,v 1.4 2018/12/26 17:37:14 bcallah Exp $
 
 Index: lib/common/dispatch.c
 --- lib/common/dispatch.c.orig
 +++ lib/common/dispatch.c
-@@ -62,11 +62,7 @@
- #include <time.h>
- #include <unistd.h>
- #include <inttypes.h>
--#ifdef TARGET_LINUX_X8664
+@@ -76,11 +76,7 @@
+   extern  FILE    *__io_stderr(void);
+ #endif      // #ifndef _WIN64
+ 
+-#if defined(TARGET_LINUX_X8664) || defined(TARGET_LINUX_POWER) || defined(TARGET_WIN_X8664)
 -#include <malloc.h>
 -#else
  #include <sched.h>
 -#endif
+ 
+ 
  #include "mth_tbldefs.h"
- #if defined(TARGET_LINUX_X8664) || defined(TARGET_OSX_X8664)
- #include "cpuid8664.h"
