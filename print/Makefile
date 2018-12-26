@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2018/10/26 14:03:53 jcs Exp $
+# $OpenBSD: Makefile,v 1.126 2018/12/26 09:37:06 bentley Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -41,6 +41,7 @@
     SUBDIR += lout
     SUBDIR += lss
     SUBDIR += lyx
+    SUBDIR += mftrace
     SUBDIR += mpage
     SUBDIR += muttprint
     SUBDIR += openclipart

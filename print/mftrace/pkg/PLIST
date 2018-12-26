@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:08 jasper Exp $
-@pkgpath print/mftrace
+@comment $OpenBSD: PLIST,v 1.4 2018/12/26 09:37:06 bentley Exp $
+@pkgpath fonts/mftrace
 @bin bin/gf2pbm
 bin/mftrace
 lib/python${MODPY_VERSION}/site-packages/afm.py
