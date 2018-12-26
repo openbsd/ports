@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.12 2018/12/24 10:49:47 espie Exp $
+# $OpenBSD: Sql.pm,v 1.13 2018/12/26 14:01:29 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -58,6 +58,7 @@ sub add
 {
 	my $self = shift;
 	for my $o (@_) {
+		$o->{parent} = $self;
 		push(@{$self->{$o->category}}, $o);
 	}
 	return $self;
@@ -104,8 +105,8 @@ my $register;
 sub stringize
 {
 	my $self = shift;
-	return "CREATE ".$self->type." ".$self->name." ".
-	    join("\n", $self->contents);
+	return "CREATE ".($self->{temp} ? "TEMP ": "").$self->type.
+	    " ".$self->name." ".join("\n", $self->contents);
 }
 
 sub sort
@@ -148,7 +149,7 @@ sub add_column_names
 	my ($self, $name) = @_;
 	my $o = $register->{$self->normalize($name)};
 	if (!defined $o) {
-		print STDERR $name, "\n";
+	#	print STDERR $name, "\n";
 		return;
 	}
 	$self->add_column_names_from($o);
@@ -166,6 +167,13 @@ sub columns
 {
 	my $self = shift;
 	return @{$self->{columns}};
+}
+
+sub temp
+{
+	my $self = shift;
+	$self->{temp} = 1;
+	return $self;
 }
 
 package Sql::Create::Table;
@@ -207,8 +215,9 @@ sub inserter
 		push(@names, $c->name);
 		push(@i, '?');
 	}
-	my $replace = $self->{noreplace} ? "" : " OR REPLACE";
-	return "INSERT$replace INTO ".$self->name." (".
+	my $alt = $self->{ignore} ? " OR IGNORE" :
+	    ($self->{noreplace} ? "" : " OR REPLACE");
+	return "INSERT$alt INTO ".$self->name." (".
 	    join(', ', @names).") VALUES (".join(', ', @i).")";
 }
 
@@ -216,6 +225,13 @@ sub noreplace
 {
 	my $self = shift;
 	$self->{noreplace} = 1;
+	return $self;
+}
+
+sub ignore
+{
+	my $self = shift;
+	$self->{ignore} = 1;
 	return $self;
 }
 
@@ -244,11 +260,11 @@ sub new
 sub contents
 {
 	my $self = shift;
-	my @parts = ("AS");
+	my @parts = ();
 
 	$self->{select}{level} = ($self->{level}//0)+4;
 
-	return $self->{select}->contents;
+	return ("AS", $self->{select}->contents);
 }
 
 sub columns
@@ -280,7 +296,7 @@ sub contents
 {
 	my $self = shift;
 
-	my @parts = ("AS");
+	my @parts = ();
 	# compute the joins
 	my $joins = {};
 	my @joins = ();
@@ -444,7 +460,7 @@ sub stringize
 {
 	my ($self, $container) = @_;
 
-	my $unique = $container->{column_names}{$self->normalize($self->origin_name)} == 1;
+	my $unique = ($container->{column_names}{$self->normalize($self->origin_name)}//1) == 1;
 	if ($unique) {
 		if ($self->origin eq $self->name) {
 			return $self->name;
@@ -495,6 +511,20 @@ sub origin_name
 {
 	my $self = shift;
 	return $self->SUPER::origin;
+}
+
+package Sql::Column::View::Expr;
+our @ISA = qw(Sql::Column::View);
+sub origin_name
+{
+	my $self = shift;
+	return $self->SUPER::origin;
+}
+
+sub origin
+{
+	my $self = shift;
+	return $self->{expr};
 }
 
 package Sql::Column::Text;
