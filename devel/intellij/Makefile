@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2018/09/29 09:49:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2018/12/27 11:31:22 rsadowski Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2018.2.4
+V=			2018.3.2
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -26,7 +26,7 @@ NO_TEST=		Yes
 
 SUBST_VARS+=		JAVA_HOME
 
-WRKDIST=		${WRKDIR}/idea-IC-182.4505.22
+WRKDIST=		${WRKDIR}/idea-IC-183.4886.37
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -37,6 +37,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${IJ}
+	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/jre
 	@rm -rf ${IJ}/jre64
 	@rm -rf ${IJ}/plugins/android
