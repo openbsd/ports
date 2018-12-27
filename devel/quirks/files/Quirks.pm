@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.690 2018/12/26 10:05:37 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.691 2018/12/27 21:31:16 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1258,7 +1258,7 @@ my $cve = {
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
 	'mail/roundcubemail' => 'roundcubemail-<1.3.8',
 	'net/curl' => 'curl-<7.62.0',
-	'net/haproxy' => 'haproxy-<1.8.15',
+	'net/haproxy' => 'haproxy-<1.8.16',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
