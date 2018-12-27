@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2018/12/27 10:40:33 landry Exp $
 @conflict py-buildbot-*
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
@@ -705,6 +705,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_stop_trigger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_trigger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_try_client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_try_client_e2e.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_upgrade.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_usePty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_virtual_builder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -750,6 +751,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_notifier
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_stop_trigger.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_trigger.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_try_client.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_try_client_e2e.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_upgrade.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_usePty.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_virtual_builder.py
@@ -914,6 +916,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_checkconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_cleanupdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_create_master.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_logwatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_processwwwindex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_restart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_scripts_runner.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1170,6 +1173,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_checkconfig.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_cleanupdb.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_create_master.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_logwatcher.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_processwwwindex.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_restart.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_scripts_runner.py
