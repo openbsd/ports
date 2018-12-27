@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/12/26 17:09:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2018/12/27 15:49:44 pascal Exp $
 
 ONLY_FOR_ARCHS = ${GCC49_ARCHS}
 DPB_PROPERTIES = parallel
@@ -6,6 +6,7 @@ DPB_PROPERTIES = parallel
 V = 6.5.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
+REVISION = 0
 
 ADASTRAP_LIBC-amd64 = 93.0
 ADASTRAP_LIBM-amd64 = 10.1
