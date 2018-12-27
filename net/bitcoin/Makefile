@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2018/12/27 10:32:06 rsadowski Exp $
 
 COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.17.0.1
-REVISION =		0
+GH_TAGNAME =		v0.17.1
 
 SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -21,9 +20,9 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_filesystem
-WANTLIB += boost_program_options-mt boost_system boost_system-mt
-WANTLIB += boost_thread-mt c crypto db_cxx event_core event_extra
-WANTLIB += event_pthreads m sodium ssl zmq
+WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
+WANTLIB += db_cxx event_core event_extra event_pthreads m sodium
+WANTLIB += ssl zmq
 
 BUILD_DEPENDS =		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
@@ -67,7 +66,8 @@ WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
 WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm dbus-1 drm execinfo
 WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
-WANTLIB += pcre pcre2-16 png protobuf qrencode xcb xcb-dri2 xcb-glx
+WANTLIB += pcre pcre2-16 png16 protobuf qrencode xcb xcb-dri2
+WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB += z
 
 MODULES +=		x11/qt5
