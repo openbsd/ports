@@ -1,23 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/11/16 06:26:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2018/12/27 20:30:55 rsadowski Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
-@conflict kf5-baloo-*
-@conflict dolphin-kf5-*
-@conflict dolphin-plugins-kf5-*
 @newgroup _kdesud:583
-@bin bin/dolphin
 @bin bin/fsview
-@bin bin/kbookmarkmerger
 @bin bin/kdepasswd
-@bin bin/kdialog
-@bin bin/keditbookmarks
-@bin bin/kfind
 @bin bin/kfmclient
 @bin bin/konqueror
 @bin bin/nspluginscan
 @bin bin/nspluginviewer
-bin/servicemenudeinstallation
-bin/servicemenuinstallation
 include/kde4/knewmenu.h
 include/kde4/konq_dndpopupmenuplugin.h
 include/kde4/konq_events.h
@@ -39,13 +29,8 @@ lib/kde4/akregatorkonqfeedicon.so
 lib/kde4/autorefresh.so
 lib/kde4/babelfishplugin.so
 lib/kde4/dirfilterplugin.so
-lib/kde4/dolphinpart.so
 lib/kde4/domtreeviewerplugin.so
 lib/kde4/fsviewpart.so
-lib/kde4/kcm_dolphingeneral.so
-lib/kde4/kcm_dolphinnavigation.so
-lib/kde4/kcm_dolphinservices.so
-lib/kde4/kcm_dolphinviewmodes.so
 lib/kde4/kcm_history.so
 lib/kde4/kcm_kio.so
 lib/kde4/kcm_konq.so
@@ -58,7 +43,6 @@ lib/kde4/kded_konqy_preloader.so
 lib/kde4/khtmlkttsdplugin.so
 lib/kde4/khtmlsettingsplugin.so
 lib/kde4/kimgallery.so
-lib/kde4/kio_filenamesearch.so
 lib/kde4/konq_aboutpage.so
 lib/kde4/konq_shellcmdplugin.so
 lib/kde4/konq_sidebar.so
@@ -71,8 +55,6 @@ lib/kde4/konqsidebar_tree.so
 lib/kde4/konqsidebar_web.so
 lib/kde4/libkcminit_nsplugins.so
 lib/kde4/libnsplugin.so
-@lib ${KDE4LIB}/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
-@lib ${KDE4LIB}/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
 @lib ${KDE4LIB}/libkonq.so.${LIBkonq_VERSION}
 @lib ${KDE4LIB}/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib ${KDE4LIB}/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
@@ -84,10 +66,6 @@ lib/kde4/uachangerplugin.so
 lib/kde4/validatorsplugin.so
 lib/kde4/webarchiverplugin.so
 lib/kde4/webarchivethumbnail.so
-@lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
-@lib lib/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
-lib/libkdeinit4_dolphin.so
-lib/libkdeinit4_keditbookmarks.so
 lib/libkdeinit4_kfmclient.so
 lib/libkdeinit4_konqueror.so
 @lib lib/libkonq.so.${LIBkonq_VERSION}
@@ -95,13 +73,8 @@ lib/libkdeinit4_konqueror.so
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 @man man/man1/kbookmarkmerger.1
 @man man/man1/kfind.1
-share/appdata/
-share/appdata/dolphin.appdata.xml
 share/applications/kde4/Home.desktop
-share/applications/kde4/dolphin.desktop
 share/applications/kde4/kdepasswd.desktop
-share/applications/kde4/keditbookmarks.desktop
-share/applications/kde4/kfind.desktop
 share/applications/kde4/kfmclient.desktop
 share/applications/kde4/kfmclient_dir.desktop
 share/applications/kde4/kfmclient_html.desktop
@@ -111,10 +84,7 @@ share/applications/kde4/konquerorsu.desktop
 share/apps/akregator/
 share/apps/akregator/pics/
 share/apps/akregator/pics/feed.png
-share/apps/dolphin/
-share/apps/dolphin/dolphinui.rc
 share/apps/dolphinpart/
-share/apps/dolphinpart/dolphinpart.rc
 share/apps/dolphinpart/kpartplugins/
 share/apps/dolphinpart/kpartplugins/dirfilterplugin.desktop
 share/apps/dolphinpart/kpartplugins/dirfilterplugin.rc
@@ -144,9 +114,6 @@ share/apps/kdm/pics/users/Listening.png
 share/apps/kdm/pics/users/Notme.png
 share/apps/kdm/pics/users/TV.png
 share/apps/kdm/pics/users/bomb.png
-share/apps/keditbookmarks/
-share/apps/keditbookmarks/keditbookmarks-genui.rc
-share/apps/keditbookmarks/keditbookmarksui.rc
 share/apps/khtml/kpartplugins/
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
@@ -271,24 +238,15 @@ share/apps/kwebkitpart/kpartplugins/uachangerplugin.rc
 share/apps/nsplugin/
 share/apps/nsplugin/nspluginpart.rc
 share/autostart/konqy_preload.desktop
-share/config.kcfg/dolphin_compactmodesettings.kcfg
-share/config.kcfg/dolphin_detailsmodesettings.kcfg
-share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
-share/config.kcfg/dolphin_generalsettings.kcfg
-share/config.kcfg/dolphin_iconsmodesettings.kcfg
-share/config.kcfg/dolphin_versioncontrolsettings.kcfg
 share/config.kcfg/kcm_useraccount.kcfg
 share/config.kcfg/kcm_useraccount_pass.kcfg
-share/config.kcfg/keditbookmarks.kcfg
 share/config.kcfg/konqueror.kcfg
 share/config.kcfg/validators.kcfg
 share/config/konqsidebartngrc
-share/config/servicemenu.knsrc
 share/config/translaterc
 share/dbus-1/interfaces/org.kde.FavIcon.xml
 share/dbus-1/interfaces/org.kde.Konqueror.Main.xml
 share/dbus-1/interfaces/org.kde.Konqueror.MainWindow.xml
-share/dbus-1/interfaces/org.kde.kdialog.ProgressDialog.xml
 share/dbus-1/interfaces/org.kde.konqueror.Preloader.xml
 share/dbus-1/interfaces/org.kde.nsplugins.CallBack.xml
 share/dbus-1/interfaces/org.kde.nsplugins.class.xml
@@ -348,56 +306,57 @@ share/doc/HTML/en/konqueror/shortcut2.png
 share/doc/HTML/en/konqueror/thumbnails.png
 share/doc/HTML/en/konqueror/viewproperties-dialog.png
 share/icons/hicolor/128x128/apps/konqueror.png
-share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/16x16/apps/konqueror.png
 share/icons/hicolor/22x22/apps/fsview.png
-share/icons/hicolor/22x22/apps/kfind.png
 share/icons/hicolor/22x22/apps/konqueror.png
 share/icons/hicolor/32x32/apps/fsview.png
-share/icons/hicolor/32x32/apps/kfind.png
 share/icons/hicolor/32x32/apps/konqueror.png
-share/icons/hicolor/48x48/apps/kfind.png
 share/icons/hicolor/48x48/apps/konqueror.png
-share/icons/hicolor/64x64/apps/kfind.png
 share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/scalable/apps/konqueror.svgz
+share/icons/oxygen/16x16/
+share/icons/oxygen/16x16/actions/
 share/icons/oxygen/16x16/actions/babelfish.png
 share/icons/oxygen/16x16/actions/cssvalidator.png
 share/icons/oxygen/16x16/actions/htmlvalidator.png
 share/icons/oxygen/16x16/actions/imagegallery.png
 share/icons/oxygen/16x16/actions/validators.png
 share/icons/oxygen/16x16/actions/webarchiver.png
+share/icons/oxygen/22x22/
+share/icons/oxygen/22x22/actions/
 share/icons/oxygen/22x22/actions/babelfish.png
 share/icons/oxygen/22x22/actions/cssvalidator.png
 share/icons/oxygen/22x22/actions/htmlvalidator.png
 share/icons/oxygen/22x22/actions/imagegallery.png
 share/icons/oxygen/22x22/actions/validators.png
 share/icons/oxygen/22x22/actions/webarchiver.png
+share/icons/oxygen/32x32/
+share/icons/oxygen/32x32/actions/
 share/icons/oxygen/32x32/actions/htmlvalidator.png
 share/icons/oxygen/32x32/actions/validators.png
+share/icons/oxygen/48x48/
+share/icons/oxygen/48x48/actions/
 share/icons/oxygen/48x48/actions/htmlvalidator.png
 share/icons/oxygen/48x48/actions/validators.png
+share/icons/oxygen/64x64/
+share/icons/oxygen/64x64/actions/
 share/icons/oxygen/64x64/actions/htmlvalidator.png
 share/icons/oxygen/64x64/actions/validators.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/htmlvalidator.svgz
 share/icons/oxygen/scalable/actions/validators.svgz
+share/kde4/
+share/kde4/services/
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/imageconverter.desktop
 share/kde4/services/bookmarks.desktop
 share/kde4/services/cache.desktop
 share/kde4/services/cookies.desktop
-share/kde4/services/dolphinpart.desktop
 share/kde4/services/ebrowsing.desktop
 share/kde4/services/filebehavior.desktop
-share/kde4/services/filenamesearch.protocol
 share/kde4/services/fsview_part.desktop
 share/kde4/services/kcm_useraccount.desktop
-share/kde4/services/kcmdolphingeneral.desktop
-share/kde4/services/kcmdolphinnavigation.desktop
-share/kde4/services/kcmdolphinservices.desktop
-share/kde4/services/kcmdolphinviewmodes.desktop
 share/kde4/services/kcmhistory.desktop
 share/kde4/services/kcmkonqyperformance.desktop
 share/kde4/services/kcmperformance.desktop
@@ -459,7 +418,6 @@ share/kde4/services/useragentstrings/safari60.desktop
 share/kde4/services/useragentstrings/w3moncurrent.desktop
 share/kde4/services/useragentstrings/wgetoncurrent.desktop
 share/kde4/services/webarchivethumbnail.desktop
-share/kde4/servicetypes/fileviewversioncontrolplugin.desktop
 share/kde4/servicetypes/konqaboutpage.desktop
 share/kde4/servicetypes/konqdndpopupmenuplugin.desktop
 share/kde4/servicetypes/konqpopupmenuplugin.desktop
