@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.104 2018/11/30 09:10:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.105 2018/12/27 10:47:21 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}config.${MODPY
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configprovider.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}eventstream.${MODPY_PYC_MAGIC_TAG}pyc
@@ -28,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}hooks.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}httpsession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}monitoring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}paginate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/acm-pca/2017-08-22/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
@@ -76,6 +79,14 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/apigateway/2015-07-09/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewaymanagementapi/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewaymanagementapi/2018-11-29/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewaymanagementapi/2018-11-29/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewaymanagementapi/2018-11-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewayv2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewayv2/2018-11-29/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewayv2/2018-11-29/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apigatewayv2/2018-11-29/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-autoscaling/2016-02-06/examples-1.json
@@ -940,6 +951,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/xray/2016-04-12/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/discovery.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/docs/${MODPY_PYCACHE}/
@@ -990,6 +1002,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/hooks.py
 lib/python${MODPY_VERSION}/site-packages/botocore/httpsession.py
 lib/python${MODPY_VERSION}/site-packages/botocore/loaders.py
 lib/python${MODPY_VERSION}/site-packages/botocore/model.py
+lib/python${MODPY_VERSION}/site-packages/botocore/monitoring.py
 lib/python${MODPY_VERSION}/site-packages/botocore/paginate.py
 lib/python${MODPY_VERSION}/site-packages/botocore/parsers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/regions.py
