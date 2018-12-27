@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.13 2018/12/26 14:01:29 espie Exp $
+# $OpenBSD: Sql.pm,v 1.14 2018/12/27 10:38:21 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -193,14 +193,14 @@ sub contents
 {
 	my $self = shift;
 	my @c;
+	my @d;
 	for my $col (@{$self->{columns}}) {
 		push(@c, $col->stringize);
-	}
-	if (defined $self->{constraints}) {
-		my @d = ();
-		for my $cons (@{$self->{constraints}}) {
-			push(@d, $cons->name);
+		if ($col->{is_constraint}) {
+			push(@d, $col->name);
 		}
+	}
+	if (@d > 0) {
 		push(@c, "UNIQUE(".join(", ", @d). ")");
 	}
 	return "(". join(', ', @c).")";
@@ -345,7 +345,7 @@ sub contents
 	while (@c != 0) {
 		my $c = shift @c;
 		my $sep = @c == 0 ? '' : ',';
-		push(@parts, $self->indent($c->stringize($self), 4).$sep);
+		push(@parts, $self->indent($c->stringize, 4).$sep);
 	}
 
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
@@ -437,6 +437,12 @@ sub is_key
 	0
 }
 
+sub constraint
+{
+	my $self = shift;
+	$self->{isconstraint} = 1;
+	return $self;
+}
 package Sql::Column::Integer;
 our @ISA = qw(Sql::Column);
 
@@ -445,12 +451,18 @@ sub type
 	"INTEGER"
 }
 
-sub references
+sub may_reference
 {
 	my ($self, $table, $field) = @_;
 	$self->{references}{table} = $table;
 	$self->{references}{field} = $field;
-	return $self->notnull;
+	return $self;
+}
+
+sub references
+{
+	my ($self, $table, $field) = @_;
+	return $self->may_reference($table, $field)->notnull;
 }
 
 package Sql::Column::View;
@@ -458,7 +470,8 @@ our @ISA = qw(Sql::Column);
 
 sub stringize
 {
-	my ($self, $container) = @_;
+	my $self = shift;
+	my $container = $self->{parent};
 
 	my $unique = ($container->{column_names}{$self->normalize($self->origin_name)}//1) == 1;
 	if ($unique) {
@@ -565,14 +578,6 @@ sub type
 	} else {
 		return "INTEGER PRIMARY KEY";
 	}
-}
-
-package Sql::Constraint;
-our @ISA = qw(Sql::Object);
-
-sub category
-{
-	"constraints"
 }
 
 package Sql::Join;
