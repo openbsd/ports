@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/11 21:17:14 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2018/12/27 17:39:35 rsadowski Exp $
 @bin bin/hugo
-@man man/man1/hugo-benchmark.1
 @man man/man1/hugo-config.1
 @man man/man1/hugo-convert-toJSON.1
 @man man/man1/hugo-convert-toTOML.1
