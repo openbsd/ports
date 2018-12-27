@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.14 2018/12/27 10:38:21 espie Exp $
+# $OpenBSD: Sql.pm,v 1.15 2018/12/27 12:37:33 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -58,19 +58,32 @@ sub add
 {
 	my $self = shift;
 	for my $o (@_) {
-		$o->{parent} = $self;
-		push(@{$self->{$o->category}}, $o);
+		$o->add_to($self);
 	}
 	return $self;
+}
+
+sub add_to
+{
+	my ($o, $c) = @_;
+	$o->{parent} = $c;
+	push(@{$c->{$o->category}}, $o);
 }
 
 sub prepend
 {
 	my $self = shift;
 	for my $o (@_) {
-		unshift(@{$self->{$o->category}}, $o);
+		$o->prepend_to($self);
 	}
 	return $self;
+}
+
+sub prepend_to
+{
+	my ($o, $c) = @_;
+	$o->{parent} = $c;
+	unshift(@{$c->{$o->category}}, $o);
 }
 
 sub is_table
@@ -127,6 +140,12 @@ sub all_views
 {
 	my $class = shift;
 	return grep {!$_->is_table} (values %$register);
+}
+
+sub key
+{
+	my ($class, $name) = @_;
+	return $register->{$class->normalize($name)}{key};
 }
 
 sub dump_all
@@ -427,7 +446,8 @@ sub stringize
 		push(@c, "UNIQUE");
 	}
 	if ($self->{references}) {
-		push(@c, "REFERENCES $self->{references}{table}($self->{references}{field})");
+		push(@c, "REFERENCES $self->{references}{table}(".
+			$self->reference_field.")");
 	}
 	return join(" ", @c);
 }
@@ -451,6 +471,21 @@ sub type
 	"INTEGER"
 }
 
+sub reference_field
+{
+	my $self = shift;
+	if (defined $self->{references}{field}) {
+		return $self->{references}{field};
+	} else {
+		my $table = $self->{references}{table};
+		my $k = Sql::Create::Table->key($table);
+		if (defined $k) {
+			return $k->name;
+		} else {
+			die "Can't reference $table";
+		}
+	}
+}
 sub may_reference
 {
 	my ($self, $table, $field) = @_;
@@ -561,6 +596,21 @@ sub is_key
 {
 	my $self = shift;
 	return $self->{autoincrement};
+}
+
+sub add_to
+{
+	my ($self, $c) = @_;
+	$c->{key} = $self;
+	$self->SUPER::add_to($c);
+}
+
+
+sub prepend_to
+{
+	my ($self, $c) = @_;
+	$c->{key} = $self;
+	$self->SUPER::prepend_to($c);
 }
 
 sub noautoincrement
