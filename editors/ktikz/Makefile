@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2018/12/28 19:02:40 landry Exp $
 
 COMMENT =		editor for the TikZ language
 
-V =			0.10
-DISTNAME =		ktikz_${V}
-PKGNAME =		KtikZ-${V}
-
-REVISION =		4
+GH_ACCOUNT =		fhackenberger
+GH_PROJECT =		ktikz
+GH_TAGNAME =		0.12
+PKGNAME =		KtikZ-${GH_TAGNAME}
 
 CATEGORIES =		editors
 HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
@@ -15,37 +14,30 @@ MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://www.hackenberger.at/ktikz/
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets c m poppler-qt5
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += ICE QtGui QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m pthread poppler-qt4
+MODULES =		x11/qt5 \
+			devel/qmake
 
-MODULES =		devel/qmake \
-			x11/qt4
-MODQMAKE_ARGS=          DESKTOPDIR=${LOCALBASE}/share/applications \
-                        ICONDIR=${LOCALBASE}/share/pixmaps \
-			MIMEDIR=${LOCALBASE}/share/mime/packages \
-			MANDIR=${LOCALBASE}/man \
-			LRELEASECOMMAND=${LOCALBASE}/bin/lrelease4 \
-			QCOLLECTIONGENERATORCOMMAND=${LOCALBASE}/lib/qt4/bin/qcollectiongenerator
+MODQMAKE_ARGS=		DESKTOP_INSTALL_DIR=${LOCALBASE}/share/applications \
+			MIME_INSTALL_DIR=${LOCALBASE}/share/mime/packages \
+			MAN_INSTALL_DIR=${LOCALBASE}/man \
+			LRELEASECOMMAND=${LOCALBASE}/bin/lrelease-qt5 \
+			QCOLLECTIONGENERATORCOMMAND=${LOCALBASE}/lib/qt5/bin/qcollectiongenerator
 
 # c++-11 reqwuired for poppler
 COMPILER=		base-clang ports-gcc
 
 MAKE_ENV =		MAKEOBJDIR=.
-WRKDIST =		${WRKDIR}/ktikz
 
-MODQMAKE_PROJECTS =	qtikz.pro \
-			app/app.pro
+MODQMAKE_PROJECTS =	qtikz.pro
 
 RUN_DEPENDS =		print/texlive/base \
 			print/poppler,-utils \
 			misc/shared-mime-info \
 			devel/desktop-file-utils
 
-# XXX: pkg_add poppler-qt4 because otherwise it pulls qt5 as well
-LIB_DEPENDS =		print/poppler,,-qt4
+LIB_DEPENDS =		print/poppler,,-qt5
 
 NO_TEST =		Yes
 
