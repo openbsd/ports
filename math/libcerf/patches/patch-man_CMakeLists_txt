@@ -1,0 +1,17 @@
+$OpenBSD: patch-man_CMakeLists_txt,v 1.1 2018/12/28 16:28:44 pirofti Exp $
+
+Manual pages should go under ${PREFIX}/man/ rather than under
+${PREFIX}/share/man/.
+
+Index: man/CMakeLists.txt
+--- man/CMakeLists.txt.orig
++++ man/CMakeLists.txt
+@@ -15,7 +15,7 @@ function(one_page pname section srcname)
+         )
+     install(
+         FILES ${CMAKE_CURRENT_BINARY_DIR}/${pname}.${section}
+-        DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man${section}"
++        DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man${section}"
+         )
+     install(
+         FILES ${CMAKE_CURRENT_BINARY_DIR}/${pname}.html
