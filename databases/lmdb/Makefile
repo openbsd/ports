@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/16 21:00:15 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/28 17:26:09 jca Exp $
 
 COMMENT =	Symas Lightning Memory-Mapped Database
 
 VERSION =	0.9.22
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	LMDB
 GH_PROJECT =	lmdb
