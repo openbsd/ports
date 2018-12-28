@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2018/10/29 08:25:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.45 2018/12/28 09:01:53 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -2065,6 +2065,7 @@ share/qgis/python/plugins/processing/algs/saga/SagaAlgorithmBase.py
 share/qgis/python/plugins/processing/algs/saga/SagaAlgorithmProvider.py
 share/qgis/python/plugins/processing/algs/saga/SagaDescriptionCreator.py
 share/qgis/python/plugins/processing/algs/saga/SagaNameDecorator.py
+share/qgis/python/plugins/processing/algs/saga/SagaParameters.py
 share/qgis/python/plugins/processing/algs/saga/SagaUtils.py
 share/qgis/python/plugins/processing/algs/saga/SplitRGBBands.py
 share/qgis/python/plugins/processing/algs/saga/__init__.py
@@ -2154,7 +2155,6 @@ share/qgis/python/plugins/processing/algs/saga/description/DiffusiveHillslopeEvo
 share/qgis/python/plugins/processing/algs/saga/description/DirectionalAverage.txt
 share/qgis/python/plugins/processing/algs/saga/description/DirectionalStatisticsforSingleGrid.txt
 share/qgis/python/plugins/processing/algs/saga/description/Distance(ViGrA).txt
-share/qgis/python/plugins/processing/algs/saga/description/DistanceMatrix.txt
 share/qgis/python/plugins/processing/algs/saga/description/DiurnalAnisotropicHeating.txt
 share/qgis/python/plugins/processing/algs/saga/description/DiversityOfCategories.txt
 share/qgis/python/plugins/processing/algs/saga/description/DownslopeDistanceGradient.txt
