@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/25 10:01:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2018/12/28 04:37:53 bentley Exp $
 
 COMMENT =		IBM's corporate type family
 
 CATEGORIES =		fonts
-V =			1.2.1
+V =			1.2.3
 PKGNAME =		ibm-plex-$V
 
 # SIL OFL 1.1
@@ -30,10 +30,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/OpenType/*/*.otf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/TrueType/*/*.ttf ${FONTDIR}
-	tr -d '\r' < ${WRKDIST}/OpenType/LICENSE.txt > ${WRKDIST}/LICENSE.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/LICENSE.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans/license.txt ${DOCDIR}
 
 .include <bsd.port.mk>

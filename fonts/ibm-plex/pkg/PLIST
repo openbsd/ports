@@ -1,8 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/25 10:01:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/28 04:37:53 bentley Exp $
 share/doc/ibm-plex/
-share/doc/ibm-plex/LICENSE.txt
+share/doc/ibm-plex/license.txt
 share/fonts/
 @fontdir share/fonts/ibm-plex/
+share/fonts/ibm-plex/IBMPlexDevanagari-Bold.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Bold.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-Light.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Light.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-Medium.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Medium.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-Regular.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Regular.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-Text.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Text.ttf
+share/fonts/ibm-plex/IBMPlexDevanagari-Thin.otf
+share/fonts/ibm-plex/IBMPlexDevanagari-Thin.ttf
 share/fonts/ibm-plex/IBMPlexMono-Bold.otf
 share/fonts/ibm-plex/IBMPlexMono-Bold.ttf
 share/fonts/ibm-plex/IBMPlexMono-BoldItalic.otf
