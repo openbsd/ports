@@ -1,11 +1,11 @@
-$OpenBSD: patch-mdb_c,v 1.3 2018/12/28 17:28:00 jca Exp $
+$OpenBSD: patch-mdb_c,v 1.4 2018/12/28 17:32:36 jca Exp $
 
 UBC (no Unified Buffer Cache).
 
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -4937,6 +4937,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+@@ -4968,6 +4968,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
  		/* silently ignore WRITEMAP when we're only getting read access */
  		flags &= ~MDB_WRITEMAP;
  	} else {
