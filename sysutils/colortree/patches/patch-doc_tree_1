@@ -1,18 +1,19 @@
-$OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
---- doc/tree.1.orig	Wed Apr 23 21:39:12 2014
-+++ doc/tree.1	Sun Jul 19 19:41:39 2015
+$OpenBSD: patch-doc_tree_1,v 1.2 2018/12/28 06:44:54 rsadowski Exp $
+Index: doc/tree.1
+--- doc/tree.1.orig
++++ doc/tree.1
 @@ -17,22 +17,22 @@
  .\" Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  .\"
  ...
--.TH TREE 1 "" "Tree 1.7.0"
-+.TH COLORTREE 1 "" "Colortree 1.7.0"
+-.TH TREE 1 "" "Tree 1.8.0"
++.TH COLORTREE 1 "" "Colortree 1.8.0"
  .SH NAME
 -tree \- list contents of directories in a tree-like format.
 +colortree \- list contents of directories in a tree-like format.
  .SH SYNOPSIS
--\fBtree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--\fP] [\fIdirectory\fP ...]
-+\fBcolortree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--\fP] [\fIdirectory\fP ...]
+-\fBtree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--fromfile\fP] [\fB--\fP] [\fIdirectory\fP ...]
++\fBcolortree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--fromfile\fP] [\fB--\fP] [\fIdirectory\fP ...]
  
  .br
  .SH DESCRIPTION
@@ -28,8 +29,8 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
 +arguments, \fIcolortree\fP lists the files in the current directory.  When
 +directory arguments are given, \fIcolortree\fP lists all the files and/or
 +directories found in the given directories each in turn.  Upon completion of
-+listing all files/directories found, \fIcolortree\fP returns the total number of
-+files and/or directories listed.
++listing all files/directories found, \fIcolortree\fP returns the total number
++of files and/or directories listed.
  
  By default, when a symbolic link is encountered, the path that the symbolic
  link refers to is printed after the name of the link in the format:
@@ -64,7 +65,7 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
 -option), and at each of them execute \fBtree\fP again adding `-o 00Tree.html'
 -as a new option.
 +option), and at each of them execute \fBcolortree\fP again adding
-+`-o 00Colortree.html' as a new option.
++`-o 00Tree.html' as a new option.
  .PP
  .TP
  .B -P \fIpattern\fP
@@ -86,7 +87,7 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
  \fBBUGS AND NOTES\fP below.  Implies \fB-s\fP.
  .PP
  .TP
-@@ -247,7 +247,7 @@ Sort the output by name (as per ls): name (default), c
+@@ -249,7 +249,7 @@ Sort the output by \fItype\fR instead of name. Possibl
  
  .TP
  .B -i
@@ -95,7 +96,7 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
  with the \fB-f\fP option.  Also removes as much whitespace as possible when used
  with the \fB-J\fP or \fB-x\fP options.
  .PP
-@@ -308,7 +308,7 @@ Outputs a verbose usage listing.
+@@ -319,7 +319,7 @@ Outputs a verbose usage listing.
  .PP
  .TP
  .B --version
@@ -104,16 +105,16 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
  .PP
  .TP
  .B --
-@@ -327,7 +327,7 @@ Option processing terminator.  No further options will
+@@ -338,7 +338,7 @@ Option processing terminator.  No further options will
  .br
  \fBTREE_COLORS\fP	Uses this for color information over LS_COLORS if it is set.
  .br
 -\fBTREE_CHARSET\fP	Character set for tree to use in HTML mode.
 +\fBTREE_CHARSET\fP	Character set for colortree to use in HTML mode.
  .br
- \fBLC_CTYPE\fP		Locale for filename output.
+ \fBCLICOLOR\fP		Enables colorization even if TREE_COLORS or LS_COLORS is not set.
  .br
-@@ -343,8 +343,8 @@ HTML output hacked by Francesc Rocher (rocher@econ.udg
+@@ -358,8 +358,8 @@ HTML output hacked by Francesc Rocher (rocher@econ.udg
  Charsets and OS/2 support by Kyosuke Tokoro (NBG01720@nifty.ne.jp)
  
  .SH BUGS AND NOTES
@@ -124,7 +125,7 @@ $OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
  
  The -h and --si options round to the nearest whole number unlike the ls
  implementations which rounds up always.
-@@ -352,9 +352,9 @@ implementations which rounds up always.
+@@ -367,9 +367,9 @@ implementations which rounds up always.
  Pruning files and directories with the -I, -P and --filelimit options will
  lead to incorrect file/directory count reports.
  

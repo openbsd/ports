@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/23 14:08:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/28 06:44:54 rsadowski Exp $
 
 COMMENT =	print a tree of the directory structure
 
-V =		1.7.0
+V =		1.8.0
 DISTNAME =	tree-$V
 PKGNAME=	colortree-$V
 CATEGORIES =	sysutils
-REVISION =	1
 
 HOMEPAGE =	http://mama.indstate.edu/users/ice/tree/
 
