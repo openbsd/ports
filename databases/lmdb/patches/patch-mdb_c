@@ -1,20 +1,15 @@
-$OpenBSD: patch-mdb_c,v 1.2 2018/12/28 17:26:09 jca Exp $
+$OpenBSD: patch-mdb_c,v 1.3 2018/12/28 17:28:00 jca Exp $
 
 UBC (no Unified Buffer Cache).
 
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -4929,6 +4929,12 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
- 
- 	flags |= env->me_flags;
- 
-+	/*
-+	 * Always force MDB_WRITEMAP, the code does the right thing if
-+	 * asking for a read-only handle.
-+	 */
-+	flags |= MDB_WRITEMAP;
-+
- 	rc = mdb_fname_init(path, flags, &fname);
- 	if (rc)
- 		return rc;
+@@ -4937,6 +4937,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+ 		/* silently ignore WRITEMAP when we're only getting read access */
+ 		flags &= ~MDB_WRITEMAP;
+ 	} else {
++		flags |= MDB_WRITEMAP;
+ 		if (!((env->me_free_pgs = mdb_midl_alloc(MDB_IDL_UM_MAX)) &&
+ 			  (env->me_dirty_list = calloc(MDB_IDL_UM_SIZE, sizeof(MDB_ID2)))))
+ 			rc = ENOMEM;
