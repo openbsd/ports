@@ -1,41 +1,14 @@
-$OpenBSD: patch-gr-lida_pro,v 1.2 2017/11/05 10:58:17 espie Exp $
+$OpenBSD: patch-gr-lida_pro,v 1.3 2018/12/28 22:04:59 juanfra Exp $
+
 Index: gr-lida.pro
 --- gr-lida.pro.orig
 +++ gr-lida.pro
-@@ -22,7 +22,7 @@ OBJECTS_DIR += build
+@@ -21,7 +21,7 @@ RCC_DIR += build
+ OBJECTS_DIR += build
  
  # ###### Compiler, tools and options
- # To use external zlib add: use_zlib
 -CONFIG += qt warn_on thread release
 +CONFIG += qt warn_on thread release use_zlib
  
  # Examples:
- #CONFIG += qt warn_on thread release use_zlib
-@@ -177,13 +177,15 @@ use_zlib {
- 
- # ###### Install
- !win32 {
-+    isEmpty(PREFIX):PREFIX = /usr/local
-+    DATADIR = $$PREFIX/share
-     target.files = bin/gr-lida
--    target.path = /usr/bin
-+    target.path = $$PREFIX/bin
-     pixmaps.files = gr-lida.svg \
-         gr-lida.png
--    pixmaps.path = /usr/share/pixmaps
-+    pixmaps.path = $$DATADIR/pixmaps
-     desktop.files = res/gr-lida.desktop
--    desktop.path = /usr/share/applications
-+    desktop.path = $$DATADIR/applications
-     docs.files = doc/AUTHORS.txt \
-         doc/COPYING.txt \
-         doc/INSTALL.txt \
-@@ -192,7 +194,7 @@ use_zlib {
-         doc/NEWS.txt \
-         doc/THANKS.txt \
-         doc/TODO.txt
--    docs.path = /usr/share/doc/gr-lida
-+    docs.path = $$DATADIR/doc/gr-lida
-     INSTALLS += target \
-         pixmaps \
-         desktop \
+ #CONFIG += qt warn_on thread release

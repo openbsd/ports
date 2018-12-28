@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_funciones_cpp,v 1.1.1.1 2017/07/08 20:17:29 juanfra Exp $
---- src/funciones.cpp.orig	Sun Aug 18 16:37:11 2013
-+++ src/funciones.cpp	Sat Sep 27 23:24:18 2014
-@@ -867,7 +867,7 @@ stGrlCfg Funciones::cargarGRLConfig(QString iniFileNam
+$OpenBSD: patch-src_funciones_cpp,v 1.2 2018/12/28 22:04:59 juanfra Exp $
+
+Index: src/funciones.cpp
+--- src/funciones.cpp.orig
++++ src/funciones.cpp
+@@ -895,7 +895,7 @@ stGrlCfg Funciones::cargarGRLConfig(QString iniFileNam
  	#else
  		config.VDMSoundDisp = false;
  	#endif

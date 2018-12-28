@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/28 22:04:59 juanfra Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
 GH_ACCOUNT =		Monthy
 GH_PROJECT =		gr-lida
-GH_TAGNAME =		v0.11.0
-REVISION =		1
+DISTNAME =		gr-lida-0.11.1pre20180927
+GH_COMMIT =		30c338b352096d94a92006d572d3b7f0062cafe1
 
 CATEGORIES =		emulators
 
@@ -16,15 +16,16 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE QtDBus QtGui QtNetwork QtScript
-WANTLIB += QtSql QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB += freetype m phonon poppler-qt4 z
+WANTLIB += ${COMPILER_LIBCXX} c GL glib-2.0 intl m poppler-qt5 pulse
+WANTLIB += pulse-mainloop-glib Qt5Core Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5PrintSupport Qt5Sql Qt5Widgets Qt5Multimedia Qt5MultimediaWidgets
+WANTLIB += Qt5Script z
 
-# c++11 (poppler-qt4)
-COMPILER =		base-clang ports-gcc
-
-MODULES =		x11/qt4
-LIB_DEPENDS =		print/poppler,,-qt4
+MODULES =		x11/qt5
+LIB_DEPENDS =		audio/pulseaudio \
+			print/poppler,,-qt5 \
+			x11/qt5/qtmultimedia \
+			x11/qt5/qtscript
 RUN_DEPENDS =		devel/desktop-file-utils
 
 FAKE_FLAGS +=		INSTALL_ROOT="${WRKINST}"
@@ -39,6 +40,6 @@ QMAKE_ARGS =		QMAKE_CC=${CC} \
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/qmake4 gr-lida.pro ${QMAKE_ARGS}
+		${LOCALBASE}/bin/qmake-qt5 gr-lida.pro ${QMAKE_ARGS}
 
 .include <bsd.port.mk>
