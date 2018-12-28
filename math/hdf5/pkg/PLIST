@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/12/07 06:13:45 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2018/12/28 18:39:49 feinerer Exp $
 @bin bin/gif2h5
 @bin bin/h52gif
 bin/h5c++
@@ -19,6 +19,7 @@ bin/h5redeploy
 @bin bin/h5unjam
 include/H5ACpublic.h
 include/H5AbstractDs.h
+include/H5AcreatProp.h
 include/H5Apublic.h
 include/H5ArrayType.h
 include/H5AtomType.h
@@ -65,6 +66,7 @@ include/H5IntType.h
 include/H5Ipublic.h
 include/H5LTpublic.h
 include/H5LaccProp.h
+include/H5LcreatProp.h
 include/H5Library.h
 include/H5Location.h
 include/H5Lpublic.h
@@ -82,6 +84,7 @@ include/H5PropList.h
 include/H5Rpublic.h
 include/H5Spublic.h
 include/H5StrType.h
+include/H5StrcreatProp.h
 include/H5TBpublic.h
 include/H5Tpublic.h
 include/H5VarLenType.h
