@@ -1,0 +1,24 @@
+$OpenBSD: patch-pdf-backend_hh,v 1.1 2018/12/28 19:59:50 kili Exp $
+
+Fix with newer poppler.
+
+From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be.
+
+Index: pdf-backend.hh
+--- pdf-backend.hh.orig
++++ pdf-backend.hh
+@@ -433,6 +433,14 @@ namespace pdf
+ 
+   double get_path_area(pdf::splash::Path &path);
+ 
++  const char * get_c_string(const pdf::String &str);
++
++  inline const char * get_c_string(const pdf::String *str)
++  {
++    return get_c_string(*str);
++  }
++
++
+ }
+ 
+ #endif

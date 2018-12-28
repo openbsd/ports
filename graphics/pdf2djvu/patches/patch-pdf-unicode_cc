@@ -1,0 +1,18 @@
+$OpenBSD: patch-pdf-unicode_cc,v 1.1 2018/12/28 19:59:50 kili Exp $
+
+Fix with newer poppler.
+
+From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be.
+
+Index: pdf-unicode.cc
+--- pdf-unicode.cc.orig
++++ pdf-unicode.cc
+@@ -53,7 +53,7 @@ std::string pdf::string_as_utf8(const pdf::String *str
+      * for description of both UTF-16 and UTF-8.
+      */
+     const static uint32_t replacement_character = 0xFFFD;
+-    const char *cstring = string->getCString();
++    const char *cstring = pdf::get_c_string(string);
+ #if POPPLER_VERSION < 3500
+     size_t clength = const_cast<pdf::String *>(string)->getLength();
+ #else
