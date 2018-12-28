@@ -1,4 +1,4 @@
-$OpenBSD: patch-swig_python_GNUmakefile,v 1.6 2018/05/13 06:26:35 landry Exp $
+$OpenBSD: patch-swig_python_GNUmakefile,v 1.7 2018/12/28 08:53:59 landry Exp $
 
 cf https://github.com/OSGeo/gdal/commit/8cae2eb06969b85725acd7094e9481e32ab23b5b &
 https://github.com/OSGeo/gdal/commit/975c95853a5630dbd82bf6ea5b0b4083792cee5d
@@ -7,7 +7,7 @@ fix python prefix install, otherwise ends up adding fake twice
 Index: swig/python/GNUmakefile
 --- swig/python/GNUmakefile.orig
 +++ swig/python/GNUmakefile
-@@ -83,7 +83,7 @@ ifdef DESTDIR
+@@ -86,7 +86,7 @@ ifdef DESTDIR
  endif
  
  ifdef PREFIX

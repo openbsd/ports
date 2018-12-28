@@ -1,0 +1,16 @@
+$OpenBSD: patch-port_cpl_vsisimple_cpp,v 1.1 2018/12/28 08:53:59 landry Exp $
+
+https://github.com/OSGeo/gdal/issues/1163
+
+Index: port/cpl_vsisimple.cpp
+--- port/cpl_vsisimple.cpp.orig
++++ port/cpl_vsisimple.cpp
+@@ -1466,7 +1466,7 @@ GIntBig CPLGetUsablePhysicalRAM( void )
+ #endif
+ #if HAVE_GETRLIMIT
+     struct rlimit sLimit;
+-    if( getrlimit( RLIMIT_AS, &sLimit) == 0 &&
++    if( getrlimit( RLIMIT_DATA, &sLimit) == 0 &&
+         sLimit.rlim_cur != RLIM_INFINITY &&
+         static_cast<GIntBig>(sLimit.rlim_cur) < nRAM )
+     {

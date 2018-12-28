@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2018/12/23 08:43:02 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2018/12/28 08:53:59 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.3.3
+V =		2.4.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
 
-SHARED_LIBS =	gdal 33.0 #24.2
+SHARED_LIBS =	gdal 34.0 #25.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -80,7 +80,8 @@ WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
-TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
+TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR} \
+			${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
@@ -106,8 +107,6 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--without-idb \
 		--without-sde \
 		--without-libgrass \
-		--without-php \
-		--without-ruby \
 		--with-pg=${LOCALBASE}/bin/pg_config \
 		--with-python=${MODPY_BIN} \
 		--with-perl \
@@ -144,6 +143,6 @@ post-install:
 .endfor
 
 do-test:
-	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} run_all.py
+	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
