@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.15 2018/12/27 12:37:33 espie Exp $
+# $OpenBSD: Sql.pm,v 1.16 2018/12/28 10:48:57 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -364,7 +364,9 @@ sub contents
 	while (@c != 0) {
 		my $c = shift @c;
 		my $sep = @c == 0 ? '' : ',';
-		push(@parts, $self->indent($c->stringize, 4).$sep);
+		for my $l (split /\n/, $c->stringize) {
+			push(@parts, $self->indent($l, 4).$sep);
+		}
 	}
 
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
@@ -522,6 +524,13 @@ sub stringize
 	}
 }
 
+sub group_by
+{
+	my $self = shift;
+	$self->{group_by} = 1;
+	return $self;
+}
+
 sub join
 {
 	my ($self, $j) = @_;
@@ -535,6 +544,24 @@ sub new
     my $o = $class->SUPER::new(@_);
     $o->{origin} //= $o->{name};
     return $o;
+}
+
+sub add_to
+{
+	my ($self, $container) = @_;
+	$self->SUPER::add_to($container);
+	if ($self->{group_by}) {
+		push(@{$container->{group}}, $self);
+	}
+}
+
+sub prepend_to
+{
+	my ($self, $container) = @_;
+	$self->SUPER::prepend_to($container);
+	if ($self->{group_by}) {
+		unshift(@{$container->{group}}, $self);
+	}
 }
 
 package Sql::Column::View::Concat;
