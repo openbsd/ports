@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.624 2018/12/19 15:19:04 solene Exp $
+# $OpenBSD: Makefile,v 1.625 2018/12/29 13:52:27 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -90,7 +90,6 @@
      SUBDIR += golem
      SUBDIR += grantlee
      SUBDIR += grantlee-qt5
-     SUBDIR += gromit
      SUBDIR += gtk+2
      SUBDIR += gtk+3
      SUBDIR += gtk+4
