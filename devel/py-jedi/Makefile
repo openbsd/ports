@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/07 08:16:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2018/12/29 11:45:58 mariani Exp $
 
 COMMENT =		autocompletion tool for Python
 
-MODPY_EGG_VERSION =	0.13.1
+MODPY_EGG_VERSION =	0.13.2
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
