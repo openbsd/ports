@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1101 2018/12/24 23:41:37 jca Exp $
+# $OpenBSD: Makefile,v 1.1102 2018/12/29 14:29:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -507,6 +507,7 @@
      SUBDIR += pop3gwd
      SUBDIR += poptop
      SUBDIR += powerdns
+     SUBDIR += powerdns_recursor
      SUBDIR += profanity
      SUBDIR += prosody
      SUBDIR += proxy-suite
