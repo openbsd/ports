@@ -1,24 +1,187 @@
-$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.5 2016/05/17 08:29:27 dcoppa Exp $
+$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.6 2018/12/29 09:22:55 phessler Exp $
 
-Fix includes
+Fix includes and react to NWID changes and suspend/resume.
 
---- src/drivers/driver_openbsd.c.orig	Sun Sep 27 21:02:05 2015
-+++ src/drivers/driver_openbsd.c	Mon Sep 28 09:51:53 2015
-@@ -9,13 +9,14 @@
+Index: src/drivers/driver_openbsd.c
+--- src/drivers/driver_openbsd.c.orig
++++ src/drivers/driver_openbsd.c
+@@ -9,19 +9,34 @@
  #include "includes.h"
  #include <sys/ioctl.h>
  
 +#include "common.h"
 +#include "driver.h"
++#include "eloop.h"
 +
++#include <sys/socket.h>
  #include <net/if.h>
 +#include <net/if_var.h>
++#include <net/route.h>
  #include <net80211/ieee80211.h>
  #include <net80211/ieee80211_crypto.h>
  #include <net80211/ieee80211_ioctl.h>
--
+ 
 -#include "common.h"
 -#include "driver.h"
++#define RTM_BUFSZ 2048
  
  struct openbsd_driver_data {
- 	char ifname[IFNAMSIZ + 1];
+-	char ifname[IFNAMSIZ + 1];
+ 	void *ctx;
+ 
+-	int sock;			/* open socket for 802.11 ioctls */
++	char ifname[IFNAMSIZ + 1];
++	int ifindex;  /* Ifindex of the configured interface */
++
++	int sock;     /* open socket for 802.11 ioctls */
++	int rtsock;   /* routing socket for interface state messages */
++
++	/* These fields are used to track the last seen (and associated) access
++           point to determine whether we should kick off an association event */
++	int nwid_len; /* Length of last seen SSID (as per routing message) */
++	char nwid[IEEE80211_NWID_LEN]; /* Last seen SSID (per routing msg) */
++	char addr[IEEE80211_ADDR_LEN]; /* Last seen BSSID (per routing msg) */
+ };
+ 
+ 
+@@ -90,10 +105,99 @@ wpa_driver_openbsd_set_key(const char *ifname, void *p
+ 	return 0;
+ }
+ 
+-static void *
+-wpa_driver_openbsd_init(void *ctx, const char *ifname)
++static void
++wpa_driver_openbsd_rtmsg_80211(struct if_ieee80211_data *ifie,
++	    struct openbsd_driver_data *drv) {
++	if ((ifie->ifie_nwid_len != drv->nwid_len) ||
++	    (os_memcmp(drv->nwid, ifie->ifie_nwid, ifie->ifie_nwid_len)) ||
++	    (os_memcmp(drv->addr, ifie->ifie_addr, IEEE80211_ADDR_LEN))) {
++		wpa_printf(MSG_INFO, "SSID changed");
++		os_memcpy(drv->addr, ifie->ifie_addr, IEEE80211_ADDR_LEN);
++
++		os_memcpy(drv->nwid, ifie->ifie_nwid, ifie->ifie_nwid_len);
++		drv->nwid_len = ifie->ifie_nwid_len;
++
++		wpa_supplicant_event(drv->ctx, EVENT_ASSOC, NULL);
++	}
++}
++
++static void
++wpa_driver_openbsd_rtmsg_ifinfo(struct rt_msghdr *rtm,
++	    struct openbsd_driver_data *drv) {
++	/* This is here so we can react to suspend/resume.
++
++	   This is a bit rough, sometimes there are two or more IFINFOs
++	   notifying us that the device just got "up" again. It doesn't
++	   seem to hurt to issue multiple EVENT_ASSOC in those cases
++	   though.
++	*/
++
++	if (rtm->rtm_flags & RTF_UP)
++		wpa_supplicant_event(drv->ctx, EVENT_ASSOC, NULL);
++}
++
++static void
++wpa_driver_openbsd_event_receive(int sock, void *global, void *sock_ctx)
+ {
++	struct openbsd_driver_data *drv = sock_ctx;
++	struct rt_msghdr *rtm;
++	struct if_ieee80211_data *ifie;
++	char *rtmmsg;
++	ssize_t n;
++	off_t offset;
++
++	rtmmsg = os_zalloc(RTM_BUFSZ);
++	if (rtmmsg == NULL) {
++		wpa_printf(MSG_ERROR, "Can't allocate space for routing msgs");
++		return;
++	}
++
++	do {
++		n = read(sock, rtmmsg, RTM_BUFSZ);
++	} while (n == -1 && errno == EINTR);
++
++	if (n == -1) {
++		wpa_printf(MSG_ERROR, "Failed to read from routing socket: %s",
++		           strerror(errno));
++		goto done;
++	}
++
++	for (offset = 0; offset < n;) {
++		rtm = (struct rt_msghdr *)(rtmmsg + offset);
++
++		if ((size_t)(n - offset) < sizeof(rtm->rtm_msglen) ||
++		    (n - offset) < rtm->rtm_msglen ||
++		    rtm->rtm_version != RTM_VERSION)
++			goto done;
++		offset += rtm->rtm_msglen;
++
++		if (rtm->rtm_index != drv->ifindex)
++			continue;
++
++		switch (rtm->rtm_type) {
++		case RTM_80211INFO:
++			ifie = &((struct if_ieee80211_msghdr *)rtm)->ifim_ifie;
++			wpa_driver_openbsd_rtmsg_80211(ifie, drv);
++			break;
++		case RTM_IFINFO:
++			wpa_driver_openbsd_rtmsg_ifinfo(rtm, drv);
++			break;
++		default:
++			wpa_printf(MSG_ERROR, "Unexpected route message of type"
++			           " %d received", rtm->rtm_type);
++			break;
++		}
++	}
++
++done:
++	os_free(rtmmsg);
++}
++
++static void *
++wpa_driver_openbsd_init(void *ctx, const char *ifname) {
+ 	struct openbsd_driver_data *drv;
++	unsigned int rtfilter = ROUTE_FILTER(RTM_80211INFO) | \
++				ROUTE_FILTER(RTM_IFINFO);
+ 
+ 	drv = os_zalloc(sizeof(*drv));
+ 	if (drv == NULL)
+@@ -103,9 +207,26 @@ wpa_driver_openbsd_init(void *ctx, const char *ifname)
+ 	if (drv->sock < 0)
+ 		goto fail;
+ 
++
++	drv->rtsock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC);
++	if (drv->rtsock < 0)
++		goto fail;
++	if (setsockopt(drv->rtsock, PF_ROUTE, ROUTE_MSGFILTER,
++	               &rtfilter, sizeof(rtfilter)) == -1)
++		goto fail;
++
+ 	drv->ctx = ctx;
+ 	os_strlcpy(drv->ifname, ifname, sizeof(drv->ifname));
+ 
++	drv->ifindex = if_nametoindex(drv->ifname);
++	if (drv->ifindex == 0) /* No interface with that name */
++		goto fail;
++
++	drv->nwid_len = wpa_driver_openbsd_get_ssid(drv, drv->nwid);
++	wpa_driver_openbsd_get_bssid(drv, drv->addr);
++
++	eloop_register_read_sock(drv->rtsock, wpa_driver_openbsd_event_receive,
++	                         NULL, drv);
+ 	return drv;
+ 
+ fail:
+@@ -119,7 +240,11 @@ wpa_driver_openbsd_deinit(void *priv)
+ {
+ 	struct openbsd_driver_data *drv = priv;
+ 
++	eloop_unregister_read_sock(drv->rtsock);
++
+ 	close(drv->sock);
++	close(drv->rtsock);
++
+ 	os_free(drv);
+ }
+ 
