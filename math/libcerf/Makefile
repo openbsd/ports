@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/28 16:28:44 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/29 07:48:36 pirofti Exp $
 
 COMMENT =	implementation of complex error functions
 
-V =		1.10
+V =		1.11
 DISTNAME =	libcerf-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	math
 MASTER_SITES =	http://apps.jcns.fz-juelich.de/src/libcerf/
 
-SHARED_LIBS +=  cerf	1.0 # 1.10
+SHARED_LIBS +=  cerf	2.0 # 1.10
 
 HOMEPAGE =	http://apps.jcns.fz-juelich.de/doku/sc/libcerf
 
