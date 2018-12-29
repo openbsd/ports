@@ -1,7 +1,8 @@
-$OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.1 2016/12/13 14:46:43 shadchin Exp $
---- jupyter_core/tests/test_command.py.orig	Tue Sep 13 18:22:49 2016
-+++ jupyter_core/tests/test_command.py	Fri Oct  7 21:46:24 2016
-@@ -78,16 +78,20 @@ def test_subcommand_not_found():
+$OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.2 2018/12/29 11:50:35 mariani Exp $
+Index: jupyter_core/tests/test_command.py
+--- jupyter_core/tests/test_command.py.orig
++++ jupyter_core/tests/test_command.py
+@@ -98,16 +98,20 @@ def test_subcommand_not_found():
  
  @patch.object(sys, 'argv', [__file__] + sys.argv[1:])
  def test_subcommand_list(tmpdir):
@@ -24,7 +25,7 @@ $OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.1 2016/12/13 14:46:43 sha
      
      path = os.pathsep.join(map(str, [a, b]))
      
-@@ -101,6 +105,10 @@ def test_subcommand_list(tmpdir):
+@@ -121,13 +125,17 @@ def test_subcommand_list(tmpdir):
          ]
  
  def test_not_on_path(tmpdir):
@@ -35,16 +36,15 @@ $OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.1 2016/12/13 14:46:43 sha
      a = tmpdir.mkdir("a")
      jupyter = a.join('jupyter')
      jupyter.write(
-@@ -110,7 +118,7 @@ def test_not_on_path(tmpdir):
-     witness_cmd = 'jupyter-witness'
-     if sys.platform == 'win32':
-         witness_cmd += '.py'
--    witness = a.join(witness_cmd)
-+    witness = a.join(witness_cmd + cmd_sufx)
-     witness.write('#!%s\n%s\n' % (sys.executable, 'print("WITNESS ME")'))
-     witness.chmod(0o700)
-     out = check_output([sys.executable, str(jupyter), 'witness'], env={'PATH': ''})
-@@ -118,6 +126,10 @@ def test_not_on_path(tmpdir):
+         'from jupyter_core import command; command.main()'
+     )
+     jupyter.chmod(0o700)
+-    witness = a.join('jupyter-witness')
++    witness = a.join('jupyter-witness' + cmd_sufx)
+     witness_src = '#!%s\n%s\n' % (sys.executable, 'print("WITNESS ME")')
+     write_executable(witness, witness_src)
+ 
+@@ -142,18 +150,22 @@ def test_not_on_path(tmpdir):
  
  
  def test_path_priority(tmpdir):
@@ -55,18 +55,17 @@ $OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.1 2016/12/13 14:46:43 sha
      a = tmpdir.mkdir("a")
      jupyter = a.join('jupyter')
      jupyter.write(
-@@ -127,12 +139,12 @@ def test_path_priority(tmpdir):
-     witness_cmd = 'jupyter-witness'
-     if sys.platform == 'win32':
-         witness_cmd += '.py'
--    witness_a = a.join(witness_cmd)
-+    witness_a = a.join(witness_cmd + cmd_sufx)
-     witness_a.write('#!%s\n%s\n' % (sys.executable, 'print("WITNESS A")'))
-     witness_a.chmod(0o700)
+         'from jupyter_core import command; command.main()'
+     )
+     jupyter.chmod(0o700)
+-    witness_a = a.join('jupyter-witness')
++    witness_a = a.join('jupyter-witness' + cmd_sufx)
+     witness_a_src = '#!%s\n%s\n' % (sys.executable, 'print("WITNESS A")')
+     write_executable(witness_a, witness_a_src)
  
      b = tmpdir.mkdir("b")
--    witness_b = b.join(witness_cmd)
-+    witness_b = b.join(witness_cmd + cmd_sufx)
-     witness_b.write('#!%s\n%s\n' % (sys.executable, 'print("WITNESS B")'))
-     witness_b.chmod(0o700)
+-    witness_b = b.join('jupyter-witness')
++    witness_b = b.join('jupyter-witness' + cmd_sufx)
+     witness_b_src = '#!%s\n%s\n' % (sys.executable, 'print("WITNESS B")')
+     write_executable(witness_b, witness_b_src)
  

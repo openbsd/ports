@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/18 13:37:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2018/12/29 11:50:34 mariani Exp $
 
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.3.0
+MODPY_EGG_VERSION =	4.4.0
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://jupyter.org/
+HOMEPAGE =		https://jupyter.org/
 
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
