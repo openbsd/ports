@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2018/12/29 14:29:08 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Some rec_control(1) commands (e.g. dump-cache) need to write files inside
+the chroot jail (by default, /var/pdns_recursor). If you would like to use
+these, create a directory with suitable permissions, for example:
+
+# mkdir /var/pdns_recursor/tmp
+# chown _pdns_recursor:wheel /var/pdns_recursor/tmp
+# chmod 770 /var/pdns_recursor/tmp
+
+Then commands like the following can be used (the path given is relative
+to the chroot directory):
+
+# rec_control dump-cache /tmp/cache.txt

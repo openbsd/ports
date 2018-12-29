@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/29 14:29:08 sthen Exp $
+@newgroup _pdns_recursor:830
+@newuser _pdns_recursor:830:_pdns_recursor:daemon:PowerDNS Recursor:/nonexistent:/sbin/nologin
+@sample ${SYSCONFDIR}/
+@rcscript ${RCDIR}/pdns_recursor
+@bin bin/rec_control
+@man man/man1/pdns_recursor.1
+@man man/man1/rec_control.1
+@bin sbin/pdns_recursor
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/pdns/
+share/examples/pdns/recursor.conf
+@sample ${SYSCONFDIR}/recursor.conf
+@sample /var/pdns_recursor/
