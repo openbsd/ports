@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/06/24 09:52:46 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/29 11:53:38 mariani Exp $
+bin/jupyter-kernel${MODPY_BIN_SUFFIX}
 bin/jupyter-kernelspec${MODPY_BIN_SUFFIX}
 bin/jupyter-run${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/
@@ -21,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}clientab
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}consoleapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}jsonutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}kernelapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}kernelspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}kernelspecapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/${MODPY_PYCACHE}launcher.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/${MODPY_PYCACHE}r
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/manager.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/ioloop/restarter.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/jsonutil.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/kernelapp.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/kernelspec.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/kernelspecapp.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/launcher.py
@@ -77,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_jsonutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_kernelapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_kernelmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_kernelspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/${MODPY_PYCACHE}test_localinterfaces.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_adapter.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_client.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_connect.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_jsonutil.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_kernelapp.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_kernelmanager.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_kernelspec.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_client/tests/test_localinterfaces.py

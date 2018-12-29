@@ -1,0 +1,22 @@
+$OpenBSD: patch-jupyter_client_connect_py,v 1.1 2018/12/29 11:53:38 mariani Exp $
+
+Index: jupyter_client/connect.py
+--- jupyter_client/connect.py.orig
++++ jupyter_client/connect.py
+@@ -18,6 +18,7 @@ import socket
+ import stat
+ import tempfile
+ import warnings
++import sys
+ from getpass import getpass
+ 
+ import zmq
+@@ -137,7 +138,7 @@ def write_connection_file(fname=None, shell_port=0, io
+     with open(fname, 'w') as f:
+         f.write(json.dumps(cfg, indent=2))
+ 
+-    if hasattr(stat, 'S_ISVTX'):
++    if hasattr(stat, 'S_ISVTX') and not sys.platform.startswith('openbsd'):
+         # set the sticky bit on the file and its parent directory
+         # to avoid periodic cleanup
+         paths = [fname]
