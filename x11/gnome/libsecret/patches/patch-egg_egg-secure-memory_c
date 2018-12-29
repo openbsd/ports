@@ -1,4 +1,4 @@
-OpenBSD$
+$OpenBSD: patch-egg_egg-secure-memory_c,v 1.4 2018/12/29 09:33:10 ajacoutot Exp $
 
 Index: egg/egg-secure-memory.c
 --- egg/egg-secure-memory.c.orig
