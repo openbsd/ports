@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/14 06:52:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2018/12/29 16:35:00 lum Exp $
 
 COMMENT=		C parser in pure Python
 
-MODPY_EGG_VERSION=	2.18
+MODPY_EGG_VERSION=	2.19
 DISTNAME=		pycparser-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/py/py-/}
 CATEGORIES=		devel textproc
