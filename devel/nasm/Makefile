@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2018/11/18 19:15:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2018/12/30 19:26:53 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
-VERSION=	2.14
+VERSION=	2.14.02
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
 MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
