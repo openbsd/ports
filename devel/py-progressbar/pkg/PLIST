@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/24 05:28:55 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/30 07:15:28 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/progressbar/
 lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,8 +6,11 @@ lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/progressbar/__init__.py
-lib/python${MODPY_VERSION}/site-packages/progressbar/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/progressbar/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/progressbar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/${MODPY_PYCACHE}progressbar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/progressbar/compat.py
-lib/python${MODPY_VERSION}/site-packages/progressbar/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/progressbar.py
 lib/python${MODPY_VERSION}/site-packages/progressbar/widgets.py
-lib/python${MODPY_VERSION}/site-packages/progressbar/widgets.pyc
