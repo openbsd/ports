@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/12/30 12:11:56 edd Exp $
+
+Fix manual path, find the right version of Lua.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -327,7 +327,7 @@ ENDIF ()
+ # -------------------------------
+ 
+ IF ( WITH_LUA )
+-  FIND_PACKAGE(Lua)
++  FIND_PACKAGE(Lua "${MODLUA_VERSION}" EXACT REQUIRED)
+ ENDIF()
+ 
+ IF ( WITH_PYTHON )

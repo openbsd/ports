@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2018/12/30 12:11:56 edd Exp $
+
+Fix undefined symbols for plugins.
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -159,6 +159,8 @@ ADD_EXECUTABLE( ${EXE_NAME} ${GUI_TYPE}
+ # Specify libraries to be linked to TeXworks.
+ TARGET_LINK_LIBRARIES( ${EXE_NAME} ${MODULE_LIBS} ${TeXworks_LIBS} )
+ 
++SET_TARGET_PROPERTIES(${EXE_NAME} PROPERTIES LINK_FLAGS -rdynamic)
++
+ # For OS X, generate `Info.plist` and add it to the `.app` bundle.
+ IF (APPLE)
+   SET(VER ${TeXworks_VERSION})
