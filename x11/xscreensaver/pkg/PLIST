@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2018/12/09 13:43:03 landry Exp $
+@comment $OpenBSD: PLIST,v 1.47 2018/12/30 21:58:26 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -119,6 +119,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/greynetic
 @bin libexec/xscreensaver/halftone
 @bin libexec/xscreensaver/halo
+@bin libexec/xscreensaver/handsy
 @bin libexec/xscreensaver/helix
 @bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hexstrut
@@ -357,6 +358,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/greynetic.6
 @man man/man6/halftone.6
 @man man/man6/halo.6
+@man man/man6/handsy.6
 @man man/man6/helix.6
 @man man/man6/hexadrop.6
 @man man/man6/hexstrut.6
@@ -598,6 +600,7 @@ share/applications/screensavers/grav.desktop
 share/applications/screensavers/greynetic.desktop
 share/applications/screensavers/halftone.desktop
 share/applications/screensavers/halo.desktop
+share/applications/screensavers/handsy.desktop
 share/applications/screensavers/helix.desktop
 share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hexstrut.desktop
@@ -875,6 +878,7 @@ share/xscreensaver/config/grav.xml
 share/xscreensaver/config/greynetic.xml
 share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
+share/xscreensaver/config/handsy.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hexstrut.xml

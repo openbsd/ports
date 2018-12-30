@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2018/12/09 13:43:03 landry Exp $
+# $OpenBSD: Makefile,v 1.100 2018/12/30 21:58:26 sthen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 # XXX x11/kde4/artwork plist may need regen if an update adds a new hack.
-DISTNAME=		xscreensaver-5.40
-REVISION=		0
+DISTNAME=		xscreensaver-5.41
 
 CATEGORIES=		x11
 
