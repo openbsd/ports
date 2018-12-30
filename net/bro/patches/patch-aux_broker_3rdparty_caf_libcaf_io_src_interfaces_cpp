@@ -1,0 +1,16 @@
+$OpenBSD: patch-aux_broker_3rdparty_caf_libcaf_io_src_interfaces_cpp,v 1.1 2018/12/30 14:14:14 ajacoutot Exp $
+
+Index: aux/broker/3rdparty/caf/libcaf_io/src/interfaces.cpp
+--- aux/broker/3rdparty/caf/libcaf_io/src/interfaces.cpp.orig
++++ aux/broker/3rdparty/caf/libcaf_io/src/interfaces.cpp
+@@ -51,6 +51,10 @@
+ #include "caf/io/network/ip_endpoint.hpp"
+ #include "caf/raise_error.hpp"
+ 
++#ifndef AI_V4MAPPED
++# define AI_V4MAPPED 0
++#endif
++
+ namespace caf {
+ namespace io {
+ namespace network {

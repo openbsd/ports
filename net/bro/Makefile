@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.47 2018/09/04 12:53:16 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2018/12/30 14:14:14 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME=		bro-2.5.5
-REVISION=		0
+DISTNAME=		bro-2.6.1
 
-SHARED_LIBS +=  broccoli                  5.1 # 5.1
+SHARED_LIBS +=  broccoli                  6.0 # 5.1
+SHARED_LIBS +=  broker                    0.0 # XXX see patch-aux_broker_CMakeLists_txt
+SHARED_LIBS +=  caf_core                  0.0 # 0.16
+SHARED_LIBS +=  caf_io                    0.0 # 0.16
+SHARED_LIBS +=  caf_openssl               0.0 # 0.16
 
 CATEGORIES=		net security
 
@@ -16,8 +19,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += GeoIP c crypto m pcap pthread ssl z
-WANTLIB += ${MODPY_WANTLIB} lib/libbind/bind ${COMPILER_LIBCXX}
+WANTLIB += c crypto m maxminddb pcap pthread ssl z
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} lib/libbind/bind
 
 MASTER_SITES=		https://www.bro.org/downloads/
 
@@ -36,11 +39,12 @@ BUILD_DEPENDS=		devel/bison \
 			devel/swig
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			net/GeoIP \
-			net/libbind
+			net/libbind \
+			net/libmaxminddb
 
-RUN_DEPENDS=		net/GeoIP,-asn \
-			net/GeoIP,-city
+RUN_DEPENDS=		net/libmaxminddb,-asn \
+			net/libmaxminddb,-city \
+			net/libmaxminddb,-db
 
 # XXX the bundled sqlite seems to pick up ICU4C if present and will error out if
 # it gets junked during the build; I could not find a proper way to disable it
@@ -73,7 +77,9 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 SUBST_VARS=		MODPY_SITEPKG
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/aux/broctl/BroControl/options.py
+	${SUBST_CMD} ${WRKSRC}/aux/broctl/BroControl/options.py \
+		${WRKSRC}/aux/broker/CMakeLists.txt \
+		${WRKSRC}/aux/broker/3rdparty/caf/libcaf_{core,io,openssl}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

@@ -1,8 +1,9 @@
-$OpenBSD: patch-aux_broctl_BroControl_options_py,v 1.4 2017/06/28 09:56:09 ajacoutot Exp $
+$OpenBSD: patch-aux_broctl_BroControl_options_py,v 1.5 2018/12/30 14:14:14 ajacoutot Exp $
+
 Index: aux/broctl/BroControl/options.py
 --- aux/broctl/BroControl/options.py.orig
 +++ aux/broctl/BroControl/options.py
-@@ -187,7 +187,7 @@ options = [
+@@ -170,7 +170,7 @@ options = [
  
      Option("LibDir", "${BroBase}/lib", "string", Option.AUTOMATIC, False,
             "Directory for library files."),

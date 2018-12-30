@@ -1,0 +1,19 @@
+$OpenBSD: patch-aux_broker_CMakeLists_txt,v 1.1 2018/12/30 14:14:14 ajacoutot Exp $
+
+XXX BROKER_VERSION_MAJOR and BROKER_VERSION_MINOR are undefined
+(build ends up creating libbroker.so..)
+
+Index: aux/broker/CMakeLists.txt
+--- aux/broker/CMakeLists.txt.orig
++++ aux/broker/CMakeLists.txt
+@@ -383,8 +383,8 @@ endif ()
+ if (ENABLE_SHARED)
+   add_library(broker SHARED ${BROKER_SRC})
+   set_target_properties(broker PROPERTIES
+-                        SOVERSION ${BROKER_SOVERSION}
+-                        VERSION ${BROKER_VERSION_MAJOR}.${BROKER_VERSION_MINOR}
++                        SOVERSION ${LIBbroker_VERSION}
++                        VERSION ${LIBbroker_VERSION}
+                         MACOSX_RPATH true
+                         OUTPUT_NAME broker)
+   target_link_libraries(broker ${LINK_LIBS})

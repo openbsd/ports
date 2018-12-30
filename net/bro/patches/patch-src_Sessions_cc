@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Sessions_cc,v 1.3 2018/12/30 14:14:14 ajacoutot Exp $
+
+warning: '__inet_makeaddr' has C-linkage specified, but returns incomplete type 'struct in_addr' which could be incompatible with C
+
+Index: src/Sessions.cc
+--- src/Sessions.cc.orig
++++ src/Sessions.cc
+@@ -3,6 +3,7 @@
+ 
+ #include "bro-config.h"
+ 
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include <stdlib.h>

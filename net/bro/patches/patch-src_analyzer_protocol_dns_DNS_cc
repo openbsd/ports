@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_analyzer_protocol_dns_DNS_cc,v 1.1 2018/12/30 14:14:14 ajacoutot Exp $
+
+warning: '__inet_makeaddr' has C-linkage specified, but returns incomplete type 'struct in_addr' which could be incompatible with C
+
+Index: src/analyzer/protocol/dns/DNS.cc
+--- src/analyzer/protocol/dns/DNS.cc.orig
++++ src/analyzer/protocol/dns/DNS.cc
+@@ -5,6 +5,7 @@
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "NetVar.h"
