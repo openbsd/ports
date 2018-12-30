@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README,v 1.3 2018/12/30 14:46:26 jasper Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,9 +8,9 @@ Fetching access/secret
 ======================
 
 By default minio server runs as _minio user, and creates its configuration file
-at first startup in ${VARBASE}/minio/.minio/config.json. This file contains the
-randomly generated accessKey and secretKey tokens that should be used by
-minioc/S3-compatible clients to authenticate to the server.
+at first startup in ${VARBASE}/minio/export/.minio.sys/config/config.json. This
+file contains the randomly generated accessKey and secretKey tokens that should
+be used by minioc/S3-compatible clients to authenticate to the server.
 
 Its API/web interface is accessible by default on port 9000, listening on all
 network interfaces.
