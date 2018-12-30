@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-atomic,v 1.5 2018/05/17 09:41:24 espie Exp $
+@comment $OpenBSD: PLIST-atomic,v 1.6 2018/12/30 17:08:09 pascal Exp $
 include/atomic_ops/
 include/atomic_ops.h
 include/atomic_ops/ao_version.h
@@ -29,9 +29,11 @@ include/atomic_ops/sysdeps/gcc/ia64.h
 include/atomic_ops/sysdeps/gcc/m68k.h
 include/atomic_ops/sysdeps/gcc/mips.h
 include/atomic_ops/sysdeps/gcc/powerpc.h
+include/atomic_ops/sysdeps/gcc/riscv.h
 include/atomic_ops/sysdeps/gcc/s390.h
 include/atomic_ops/sysdeps/gcc/sh.h
 include/atomic_ops/sysdeps/gcc/sparc.h
+include/atomic_ops/sysdeps/gcc/tile.h
 include/atomic_ops/sysdeps/gcc/x86.h
 include/atomic_ops/sysdeps/generic_pthread.h
 include/atomic_ops/sysdeps/hpc/
@@ -80,11 +82,11 @@ lib/libatomic_ops_gpl.a
 lib/libatomic_ops_gpl.la
 @lib lib/libatomic_ops_gpl.so.${LIBatomic_ops_gpl_VERSION}
 lib/pkgconfig/atomic_ops.pc
-share/libatomic_ops/
-share/libatomic_ops/COPYING
-share/libatomic_ops/LICENSING.txt
-share/libatomic_ops/README.md
-share/libatomic_ops/README.txt
-share/libatomic_ops/README_malloc.txt
-share/libatomic_ops/README_stack.txt
-share/libatomic_ops/README_win32.txt
+share/doc/libatomic_ops/
+share/doc/libatomic_ops/COPYING
+share/doc/libatomic_ops/LICENSING.txt
+share/doc/libatomic_ops/README.md
+share/doc/libatomic_ops/README_details.txt
+share/doc/libatomic_ops/README_malloc.txt
+share/doc/libatomic_ops/README_stack.txt
+share/doc/libatomic_ops/README_win32.txt
