@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2018/11/15 08:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2018/12/30 12:10:04 rsadowski Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -7,7 +7,7 @@ DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 
 SHARED_LIBS=	avcodec		22.2 \
@@ -33,7 +33,8 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 		vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm xcb-xfixes \
 		xvidcore z
 
-BUILD_DEPENDS=	textproc/texi2html
+BUILD_DEPENDS=	textproc/texi2html \
+		multimedia/frei0r-plugins
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm
 .endif
@@ -93,6 +94,7 @@ CONFIGURE_ARGS+= --enable-shared \
 		--disable-outdev=sdl \
 		--enable-avresample \
 		--enable-fontconfig \
+		--enable-frei0r \
 		--enable-gpl \
 		--enable-libass \
 		--enable-libfreetype \
