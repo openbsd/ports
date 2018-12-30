@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/12/30 12:11:56 edd Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/12/30 12:17:20 edd Exp $
 
-Fix manual path, find the right version of Lua.
+Find the right version of Lua.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
