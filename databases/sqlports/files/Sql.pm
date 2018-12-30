@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.16 2018/12/28 10:48:57 espie Exp $
+# $OpenBSD: Sql.pm,v 1.17 2018/12/30 19:08:25 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -462,7 +462,7 @@ sub is_key
 sub constraint
 {
 	my $self = shift;
-	$self->{isconstraint} = 1;
+	$self->{is_constraint} = 1;
 	return $self;
 }
 package Sql::Column::Integer;
