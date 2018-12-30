@@ -17,6 +17,8 @@ while(<STDIN>) {
 	if (m/\;/) {
 		$stmt =~ s/\s+/ /g;
 		$stmt =~ s/^\s//;
+		$stmt =~ s/\s?\(\s?/\(/g;
+		$stmt =~ s/\s?\)\s?/\)/g;
 		if ($stmt =~ m/^create table (\S+)/) {
 			$object->{$1} = $stmt;
 		} elsif ($stmt =~ m/^create view (\S+)/) {
