@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/07/09 07:10:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2018/12/30 14:41:06 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/graphviz/
 lib/python${MODPY_VERSION}/site-packages/graphviz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/graphviz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,15 +9,15 @@ lib/python${MODPY_VERSION}/site-packages/graphviz-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/graphviz/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/_compat.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/backend.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/dot.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}dot.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/files.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}files.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/lang.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}lang.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/graphviz/tools.py
 lib/python${MODPY_VERSION}/site-packages/graphviz/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/graphviz/_compat.py
+lib/python${MODPY_VERSION}/site-packages/graphviz/backend.py
+lib/python${MODPY_VERSION}/site-packages/graphviz/dot.py
+lib/python${MODPY_VERSION}/site-packages/graphviz/files.py
+lib/python${MODPY_VERSION}/site-packages/graphviz/lang.py
+lib/python${MODPY_VERSION}/site-packages/graphviz/tools.py
