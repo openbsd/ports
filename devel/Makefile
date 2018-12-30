@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1797 2018/12/27 21:37:50 danj Exp $
+# $OpenBSD: Makefile,v 1.1798 2018/12/30 07:16:44 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1522,6 +1522,7 @@
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progress
      SUBDIR += py-progressbar
+     SUBDIR += py-progressbar,python3
      SUBDIR += py-prompt_toolkit
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf
