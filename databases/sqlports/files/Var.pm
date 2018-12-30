@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.44 2018/12/21 11:11:06 espie Exp $
+# $OpenBSD: Var.pm,v 1.45 2018/12/30 10:40:32 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -336,9 +336,10 @@ sub add
 		$p->{want} = 1;
 		$p->{parent} //= $ins->current_path;
 		$self->normal_insert($ins, $depends,
+		    $pkgspec, $rest, 
 		    $ins->find_pathkey($p->fullpkgpath),
 		    $ins->convert_depends($self->depends_type),
-		    $pkgspec, $rest, $n);
+		    $n);
 		$n++;
 # XXX		    $ins->add_todo($pkgpath2);
 	}
@@ -355,7 +356,7 @@ sub create_tables
 	    TextColumn->new("TYPE"),
 	    IntegerColumn->new("N"));
 	$inserter->prepare_normal_inserter($self->table,
-	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST", "N");
+	    "FULLDEPENDS", "PKGSPEC", "REST", "DEPENDSPATH", "TYPE", "N");
 	$inserter->make_ordered_view($self);
 	$inserter->create_canonical_depends($self);
 }
