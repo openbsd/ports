@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2018/12/31 17:50:21 bluhm Exp $
 
 COMMENT =		various utility functions
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Data-Munge-0.095
+DISTNAME =		Data-Munge-0.097
 CATEGORIES =		devel
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
