@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/26 16:16:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2018/12/31 10:48:56 jasper Exp $
 
 COMMENT =		create and manage complex tmux sessions easily
 
-DISTNAME =		tmuxinator-0.12.0
+DISTNAME =		tmuxinator-0.15.0
 FULLPKGNAME =		${DISTNAME}
 CATEGORIES =		sysutils
-
-REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

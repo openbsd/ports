@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/09 12:16:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2018/12/31 10:48:56 jasper Exp $
 @pkgpath sysutils/tmuxinator,ruby20
 @pkgpath sysutils/tmuxinator,ruby21
 @pkgpath sysutils/tmuxinator,ruby22
@@ -30,6 +30,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/hooks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/hooks/project.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/pane.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/project.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/tmux_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tmuxinator/wemux_support.rb
@@ -58,9 +59,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_emoji_as_name.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_literals_as_window_name.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_number_as_name.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_wemux.yml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/sample_with_project_config.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/xdg-tmuxinator/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/xdg-tmuxinator/both.yml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/xdg-tmuxinator/xdg.yml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/yaml.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/tmuxinator/cli_spec.rb
