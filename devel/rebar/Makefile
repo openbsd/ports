@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/02/04 08:50:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2018/12/31 10:13:13 jasper Exp $
 
 COMMENT=		Erlang build tool
 
@@ -6,7 +6,7 @@ GH_TAGNAME=		2.6.2
 GH_ACCOUNT=		rebar
 GH_PROJECT=		rebar
 FULLPKGNAME =		rebar${ERL_VERSION}-${GH_TAGNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel lang/erlang
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # This port cannot use the erlang module for the module depends on this port.
 # Keep in sync with erlang.port.mk
-FLAVORS =		erlang16 erlang17 erlang18 erlang19
+FLAVORS =		erlang16 erlang17 erlang18 erlang19 erlang21
 FLAVOR ?=		erlang16
 
 .if ${FLAVOR:Merlang16} || ${FLAVOR:Merlang17} || ${FLAVOR:Merlang18} \
-  || ${FLAVOR:Merlang19}
+    || ${FLAVOR:Merlang19 || ${FLAVOR:Merlang21}} 
 _EV =			${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
 RUN_DEPENDS =		lang/erlang/${_EV}
 ERL_VERSION =		${_EV}
