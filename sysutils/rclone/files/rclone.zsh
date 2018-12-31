@@ -8,7 +8,7 @@ case $state in
   level1)
     case $words[1] in
       rclone)
-        _arguments '1: :(about authorize cachestats cat check cleanup config copy copyto cryptcheck cryptdecode dbhashsum dedupe delete deletefile genautocomplete gendocs hashsum help info link listremotes ls lsd lsf lsjson lsl md5sum memtest mkdir move moveto ncdu obscure purge rc rcat rmdir rmdirs serve sha1sum size sync touch tree version)'
+        _arguments '1: :(about authorize cachestats cat check cleanup config copy copyto copyurl cryptcheck cryptdecode dbhashsum dedupe delete deletefile genautocomplete gendocs hashsum help info link listremotes ls lsd lsf lsjson lsl md5sum memtest mkdir move moveto ncdu obscure purge rc rcat rcd reveal rmdir rmdirs serve settier sha1sum size sync touch tree version)'
       ;;
       *)
         _arguments '*: :_files'
@@ -17,14 +17,17 @@ case $state in
   ;;
   level2)
     case $words[2] in
+      serve)
+        _arguments '2: :(ftp http restic webdav)'
+      ;;
       config)
         _arguments '2: :(create delete dump edit file password providers show update)'
       ;;
       genautocomplete)
         _arguments '2: :(bash zsh)'
       ;;
-      serve)
-        _arguments '2: :(http restic webdav)'
+      help)
+        _arguments '2: :(backend backends flags)'
       ;;
       *)
         _arguments '*: :_files'
