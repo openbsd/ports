@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/04/02 08:43:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2018/12/31 10:27:16 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
 bin/rofi-theme-selector
@@ -6,6 +6,7 @@ include/rofi/
 include/rofi/helper.h
 include/rofi/mode-private.h
 include/rofi/mode.h
+include/rofi/rofi-icon-fetcher.h
 include/rofi/rofi-types.h
 lib/pkgconfig/rofi.pc
 @man man/man1/rofi-sensible-terminal.1
@@ -13,7 +14,10 @@ lib/pkgconfig/rofi.pc
 @man man/man1/rofi.1
 @man man/man5/rofi-theme.5
 share/examples/rofi/
+share/examples/rofi/i3_empty_workspace.sh
 share/examples/rofi/i3_switch_workspaces.sh
+share/examples/rofi/rofi-file-browser.sh
+share/examples/rofi/test_script_mode.sh
 share/rofi/
 share/rofi/themes/
 share/rofi/themes/Adapta-Nokto.rasi

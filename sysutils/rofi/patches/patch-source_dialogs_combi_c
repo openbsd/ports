@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_dialogs_combi_c,v 1.2 2018/06/02 12:08:24 jasper Exp $
+$OpenBSD: patch-source_dialogs_combi_c,v 1.3 2018/12/31 10:27:16 jasper Exp $
 
 Use strcspn(3) instead of non-portable strchrnul(3).
 
 Index: source/dialogs/combi.c
 --- source/dialogs/combi.c.orig
 +++ source/dialogs/combi.c
-@@ -155,7 +155,7 @@ static ModeMode combi_mode_result ( Mode *sw, int mret
+@@ -156,7 +156,7 @@ static ModeMode combi_mode_result ( Mode *sw, int mret
  
      if ( input[0][0] == '!' ) {
          int     switcher = -1;
@@ -14,7 +14,7 @@ Index: source/dialogs/combi.c
          ssize_t bang_len = g_utf8_pointer_to_offset ( input[0], eob ) - 1;
          if ( bang_len > 0 ) {
              for ( unsigned i = 0; switcher == -1 && i < pd->num_switchers; i++ ) {
-@@ -276,7 +276,7 @@ static char * combi_preprocess_input ( Mode *sw, const
+@@ -277,7 +277,7 @@ static char * combi_preprocess_input ( Mode *sw, const
          pd->switchers[i].disable = FALSE;
      }
      if ( input != NULL && input[0] == '!' ) {
