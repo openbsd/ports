@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2018/12/31 08:35:13 ajacoutot Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION=	2.0
+MODPY_EGG_VERSION=	3.2
 DISTNAME=		Nagstamon-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/Nagstamon
-REVISION=		2
 
 CATEGORIES=		x11 net
 
@@ -17,7 +16,7 @@ MAINTAINER=		Nicolas P. M. Legrand <nlegrand@ethelred.fr>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagstamon/}
+MASTER_SITES=		https://nagstamon.ifw-dresden.de/files/stable/
 
 PKG_ARCH=		*
 
@@ -26,9 +25,10 @@ MODULES=		lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		x11/py-qt5${MODPY_FLAVOR}
+BUILD_DEPENDS=		security/py-keyring${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
+			security/py-keyring${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \

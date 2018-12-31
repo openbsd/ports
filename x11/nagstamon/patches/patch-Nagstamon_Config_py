@@ -1,24 +1,28 @@
-$OpenBSD: patch-Nagstamon_Config_py,v 1.7 2016/08/31 13:10:14 ajacoutot Exp $
---- Nagstamon/Config.py.orig	Tue Aug 30 07:44:58 2016
-+++ Nagstamon/Config.py	Wed Aug 31 14:45:36 2016
-@@ -672,15 +672,15 @@ class Config(object):
+$OpenBSD: patch-Nagstamon_Config_py,v 1.8 2018/12/31 08:35:13 ajacoutot Exp $
+
+Index: Nagstamon/Config.py
+--- Nagstamon/Config.py.orig
++++ Nagstamon/Config.py
+@@ -733,17 +733,17 @@ class Config(object):
          else:
              # the Linux settings
-             defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",
--                                    type="command", string="/usr/bin/rdesktop -g 1024x768 $ADDRESS$"),
-+                                    type="command", string="${LOCALBASE}/bin/rdesktop -g 1024x768 $ADDRESS$"),
-                                "VNC": Action(name="VNC", description="Connect via VNC.",
--                                    type="command", string="/usr/bin/vncviewer $ADDRESS$"),
-+                                    type="command", string="${LOCALBASE}/bin/vncviewer $ADDRESS$"),
-                                "SSH": Action(name="SSH", description="Connect via SSH.",
--                                    type="command", string="/usr/bin/gnome-terminal -x ssh root@$ADDRESS$"),
-+                                    type="command", string="${X11BASE}/bin/xterm -e ssh root@$ADDRESS$"),
-                                "Telnet": Action(name="Telnet", description="Connect via Telnet.",
--                                    type="command", string="/usr/bin/gnome-terminal -x telnet root@$ADDRESS$"),
-+                                    type="command", string="${X11BASE}/bin/xterm -e telnet root@$ADDRESS$"),
-                                "Update-Linux": Action(name="Update-Linux", description="Run remote update script.",
--                                    type="command", string="/usr/bin/terminator -x ssh root@$HOST$ update.sh",
-+                                    type="command", string="${LOCALBASE}/bin/terminator -x ssh root@$HOST$ update.sh",
-                                     enabled=False)
-                                }
-         # OS agnostic actions as examples
+             defaultactions = {"RDP": Action(name="RDP", description="Connect via RDP.",
+-                                            type="command", string="/usr/bin/rdesktop -g 1024x768 $ADDRESS$"),
++                                            type="command", string="${LOCALBASE}/bin/rdesktop -g 1024x768 $ADDRESS$"),
+                               "VNC": Action(name="VNC", description="Connect via VNC.",
+-                                            type="command", string="/usr/bin/vncviewer $ADDRESS$"),
++                                            type="command", string="${LOCALBASE}/bin/vncviewer $ADDRESS$"),
+                               "SSH": Action(name="SSH", description="Connect via SSH.",
+-                                            type="command", string="/usr/bin/gnome-terminal -x ssh root@$ADDRESS$"),
++                                            type="command", string="${LOCALBASE}/bin/gnome-terminal -x ssh root@$ADDRESS$"),
+                               "Telnet": Action(name="Telnet", description="Connect via Telnet.",
+                                                type="command",
+-                                               string="/usr/bin/gnome-terminal -x telnet root@$ADDRESS$"),
++                                               string="${LOCALBASE}/bin/gnome-terminal -x telnet root@$ADDRESS$"),
+                               "Update-Linux": Action(name="Update-Linux", description="Run remote update script.",
+                                                      type="command",
+-                                                     string="/usr/bin/terminator -x ssh root@$HOST$ update.sh",
++                                                     string="${LOCALBASE}/bin/terminator -x ssh root@$HOST$ update.sh",
+                                                      enabled=False)}
+             # OS agnostic actions as examples
+         defaultactions["Nagios-1-Click-Acknowledge-Host"] = Action(name="Nagios-1-Click-Acknowledge-Host", type="url",
