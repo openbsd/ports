@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2018/12/31 16:04:25 bluhm Exp $
 
 COMMENT=		extract the structure of a quoted mail message
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Text-Quoted-2.09
+DISTNAME =		Text-Quoted-2.10
 CATEGORIES=		textproc
 
 # perl
