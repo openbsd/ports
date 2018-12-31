@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/13 06:52:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2018/12/31 09:35:40 rpointel Exp $
 
 COMMENT =	information gathering suite
 
-VERSION =	3.0.4
+VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
-GH_TAGNAME =	v${VERSION}
+GH_TAGNAME =	${VERSION}
 
 CATEGORIES =	security
 
@@ -23,7 +23,8 @@ MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
+		www/py-beautifulsoup4${MODPY_FLAVOR}
 
 MODPY_ADJ_FILES =	theHarvester.py
 

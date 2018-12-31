@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/13 06:52:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2018/12/31 09:35:40 rpointel Exp $
 bin/theHarvester
 share/theharvester/
 share/theharvester/COPYING
@@ -7,11 +7,13 @@ share/theharvester/LICENSES
 share/theharvester/README.md
 share/theharvester/${MODPY_PYCACHE}/
 share/theharvester/${MODPY_PYCACHE}censysparser.${MODPY_PYC_MAGIC_TAG}pyc
+share/theharvester/${MODPY_PYCACHE}cymonparser.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/${MODPY_PYCACHE}myparser.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/${MODPY_PYCACHE}stash.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/${MODPY_PYCACHE}theHarvester.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/censysparser.py
 share/theharvester/changelog.txt
+share/theharvester/cymonparser.py
 share/theharvester/discovery/
 share/theharvester/discovery/DNS/
 share/theharvester/discovery/DNS/Base.py
@@ -42,7 +44,9 @@ share/theharvester/discovery/${MODPY_PYCACHE}asksearch.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}baidusearch.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}bingsearch.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}censys.${MODPY_PYC_MAGIC_TAG}pyc
+share/theharvester/discovery/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}crtsh.${MODPY_PYC_MAGIC_TAG}pyc
+share/theharvester/discovery/${MODPY_PYCACHE}cymon.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}dnssearch.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}dogpilesearch.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/discovery/${MODPY_PYCACHE}exaleadsearch.${MODPY_PYC_MAGIC_TAG}pyc
@@ -71,7 +75,9 @@ share/theharvester/discovery/asksearch.py
 share/theharvester/discovery/baidusearch.py
 share/theharvester/discovery/bingsearch.py
 share/theharvester/discovery/censys.py
+share/theharvester/discovery/constants.py
 share/theharvester/discovery/crtsh.py
+share/theharvester/discovery/cymon.py
 share/theharvester/discovery/dnssearch.py
 share/theharvester/discovery/dogpilesearch.py
 share/theharvester/discovery/exaleadsearch.py
@@ -149,13 +155,17 @@ share/theharvester/lib/${MODPY_PYCACHE}hostchecker.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/lib/${MODPY_PYCACHE}htmlExport.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/lib/${MODPY_PYCACHE}markup.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/lib/${MODPY_PYCACHE}port_scanner.${MODPY_PYC_MAGIC_TAG}pyc
+share/theharvester/lib/${MODPY_PYCACHE}reportgraph.${MODPY_PYC_MAGIC_TAG}pyc
+share/theharvester/lib/${MODPY_PYCACHE}statichtmlgenerator.${MODPY_PYC_MAGIC_TAG}pyc
 share/theharvester/lib/graphs.py
 share/theharvester/lib/hostchecker.py
 share/theharvester/lib/htmlExport.py
 share/theharvester/lib/ip-ranges.json
 share/theharvester/lib/markup.py
 share/theharvester/lib/port_scanner.py
+share/theharvester/lib/reportgraph.py
 share/theharvester/lib/resolvers.txt
+share/theharvester/lib/statichtmlgenerator.py
 share/theharvester/myparser.py
 share/theharvester/requirements.txt
 share/theharvester/stash.py
