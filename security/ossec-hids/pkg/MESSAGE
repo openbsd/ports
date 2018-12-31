@@ -1,6 +1,6 @@
 For hybrid setups (server and agent on the same machine),
 remember to first execute
 
-${TRUEPREFIX}/ossec-hids/bin/manage_agents
+${PREFIX}/ossec-hids/bin/manage_agents
 
 to add a local agent and then start the daemons through rcctl(1).

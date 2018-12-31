@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/21 22:01:56 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2018/12/31 07:02:07 ajacoutot Exp $
 
 COMMENT =	host-based intrusion detection system
 
 GH_ACCOUNT =	ossec
 GH_PROJECT =	ossec-hids
 GH_TAGNAME =	3.0.0
+REVISION =	0
 
 CATEGORIES =	security
 
