@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/01/01 16:57:29 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -360,6 +360,7 @@ share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
 share/icons/hicolor/16x16/apps/baobab.png
 share/icons/hicolor/22x22/apps/baobab.png
+share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/256x256/apps/baobab.png
 share/icons/hicolor/32x32/apps/baobab.png
 share/icons/hicolor/48x48/apps/baobab.png
