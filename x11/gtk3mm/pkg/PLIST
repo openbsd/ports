@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/10/28 13:42:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/01/01 11:38:44 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -12,6 +12,8 @@ include/gdkmm-3.0/gdkmm/displaymanager.h
 include/gdkmm-3.0/gdkmm/dragcontext.h
 include/gdkmm-3.0/gdkmm/drawingcontext.h
 include/gdkmm-3.0/gdkmm/event.h
+include/gdkmm-3.0/gdkmm/frameclock.h
+include/gdkmm-3.0/gdkmm/frametimings.h
 include/gdkmm-3.0/gdkmm/general.h
 include/gdkmm-3.0/gdkmm/glcontext.h
 include/gdkmm-3.0/gdkmm/monitor.h
@@ -31,6 +33,8 @@ include/gdkmm-3.0/gdkmm/private/displaymanager_p.h
 include/gdkmm-3.0/gdkmm/private/dragcontext_p.h
 include/gdkmm-3.0/gdkmm/private/drawingcontext_p.h
 include/gdkmm-3.0/gdkmm/private/event_p.h
+include/gdkmm-3.0/gdkmm/private/frameclock_p.h
+include/gdkmm-3.0/gdkmm/private/frametimings_p.h
 include/gdkmm-3.0/gdkmm/private/glcontext_p.h
 include/gdkmm-3.0/gdkmm/private/monitor_p.h
 include/gdkmm-3.0/gdkmm/private/pixbuf_p.h
@@ -131,6 +135,7 @@ include/gtkmm-3.0/gtkmm/expander.h
 include/gtkmm-3.0/gtkmm/filechooser.h
 include/gtkmm-3.0/gtkmm/filechooserbutton.h
 include/gtkmm-3.0/gtkmm/filechooserdialog.h
+include/gtkmm-3.0/gtkmm/filechoosernative.h
 include/gtkmm-3.0/gtkmm/filechooserwidget.h
 include/gtkmm-3.0/gtkmm/filefilter.h
 include/gtkmm-3.0/gtkmm/fixed.h
@@ -190,6 +195,7 @@ include/gtkmm-3.0/gtkmm/menutoolbutton.h
 include/gtkmm-3.0/gtkmm/messagedialog.h
 include/gtkmm-3.0/gtkmm/misc.h
 include/gtkmm-3.0/gtkmm/modelbutton.h
+include/gtkmm-3.0/gtkmm/nativedialog.h
 include/gtkmm-3.0/gtkmm/notebook.h
 include/gtkmm-3.0/gtkmm/numerableicon.h
 include/gtkmm-3.0/gtkmm/object.h
@@ -279,6 +285,7 @@ include/gtkmm-3.0/gtkmm/private/expander_p.h
 include/gtkmm-3.0/gtkmm/private/filechooser_p.h
 include/gtkmm-3.0/gtkmm/private/filechooserbutton_p.h
 include/gtkmm-3.0/gtkmm/private/filechooserdialog_p.h
+include/gtkmm-3.0/gtkmm/private/filechoosernative_p.h
 include/gtkmm-3.0/gtkmm/private/filechooserwidget_p.h
 include/gtkmm-3.0/gtkmm/private/filefilter_p.h
 include/gtkmm-3.0/gtkmm/private/fixed_p.h
@@ -337,6 +344,7 @@ include/gtkmm-3.0/gtkmm/private/menutoolbutton_p.h
 include/gtkmm-3.0/gtkmm/private/messagedialog_p.h
 include/gtkmm-3.0/gtkmm/private/misc_p.h
 include/gtkmm-3.0/gtkmm/private/modelbutton_p.h
+include/gtkmm-3.0/gtkmm/private/nativedialog_p.h
 include/gtkmm-3.0/gtkmm/private/notebook_p.h
 include/gtkmm-3.0/gtkmm/private/numerableicon_p.h
 include/gtkmm-3.0/gtkmm/private/object_p.h
