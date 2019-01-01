@@ -1,0 +1,19 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/01/01 11:33:39 ajacoutot Exp $
+
+XXX we sometimes end up with:
+cc: error: no such file or directory: 'tests/resources.c'
+because of meson(1) non-deterministic build.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -396,7 +396,9 @@ endif
+ # i18n
+ subdir('po')
+ 
++if get_option('installed_tests')
+ subdir('tests')
++endif
+ subdir('thumbnailer')
+ 
+ # Documentation

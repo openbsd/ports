@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2017/07/18 20:46:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/01/01 11:33:39 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -43,11 +43,8 @@ lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
 lib/girepository-1.0/
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
-lib/libgdk_pixbuf-2.0.a
-lib/libgdk_pixbuf-2.0.la
+lib/girepository-1.0/GdkPixdata-2.0.typelib
 @lib lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}
-lib/libgdk_pixbuf_xlib-2.0.a
-lib/libgdk_pixbuf_xlib-2.0.la
 @lib lib/libgdk_pixbuf_xlib-2.0.so.${LIBgdk_pixbuf_xlib-2.0_VERSION}
 lib/pkgconfig/gdk-pixbuf-2.0.pc
 lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
@@ -55,43 +52,7 @@ lib/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 @man man/man1/gdk-pixbuf-query-loaders.1
 share/gir-1.0/
 share/gir-1.0/GdkPixbuf-2.0.gir
-share/gtk-doc/html/gdk-pixbuf/
-share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
-share/gtk-doc/html/gdk-pixbuf/annotation-glossary.html
-share/gtk-doc/html/gdk-pixbuf/api-index-full.html
-share/gtk-doc/html/gdk-pixbuf/composite.png
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Animations.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-File-Loading.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-File-saving.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Image-Data-in-Memory.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Inline-data.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Module-Interface.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Reference-Counting-and-Memory-Mangement.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Scaling.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Utilities.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Versioning.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-X-Drawables-to-Pixbufs.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Xlib-Rendering.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-XlibRGB.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-csource.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-Xlib-initialization.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-from-drawables.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-rendering.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-query-loaders.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp2
-share/gtk-doc/html/gdk-pixbuf/home.png
-share/gtk-doc/html/gdk-pixbuf/index.html
-share/gtk-doc/html/gdk-pixbuf/left-insensitive.png
-share/gtk-doc/html/gdk-pixbuf/left.png
-share/gtk-doc/html/gdk-pixbuf/license.html
-share/gtk-doc/html/gdk-pixbuf/right-insensitive.png
-share/gtk-doc/html/gdk-pixbuf/right.png
-share/gtk-doc/html/gdk-pixbuf/rn01.html
-share/gtk-doc/html/gdk-pixbuf/rn02.html
-share/gtk-doc/html/gdk-pixbuf/style.css
-share/gtk-doc/html/gdk-pixbuf/up-insensitive.png
-share/gtk-doc/html/gdk-pixbuf/up.png
+share/gir-1.0/GdkPixdata-2.0.gir
 share/locale/af/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ang/
 share/locale/ang/LC_MESSAGES/
