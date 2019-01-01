@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2018/04/24 15:29:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/01/01 11:40:21 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -83,6 +83,7 @@ share/help/C/gnome-help/disk.page
 share/help/C/gnome-help/display-blank.page
 share/help/C/gnome-help/display-brightness.page
 share/help/C/gnome-help/display-dual-monitors.page
+share/help/C/gnome-help/display-night-light.page
 share/help/C/gnome-help/figures/
 share/help/C/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/C/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -112,7 +113,9 @@ share/help/C/gnome-help/figures/color-space.png
 share/help/C/gnome-help/figures/display-dual-monitors.webm
 share/help/C/gnome-help/figures/emblem-system-symbolic.svg
 share/help/C/gnome-help/figures/emblem-system.png
+share/help/C/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/C/gnome-help/figures/gnome.png
+share/help/C/gnome-help/figures/go-down-symbolic.svg
 share/help/C/gnome-help/figures/go-down.png
 share/help/C/gnome-help/figures/input-keyboard-symbolic.png
 share/help/C/gnome-help/figures/input-methods-switcher.png
@@ -533,6 +536,7 @@ share/help/as/gnome-help/disk.page
 share/help/as/gnome-help/display-blank.page
 share/help/as/gnome-help/display-brightness.page
 share/help/as/gnome-help/display-dual-monitors.page
+share/help/as/gnome-help/display-night-light.page
 share/help/as/gnome-help/figures/
 share/help/as/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/as/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -562,7 +566,9 @@ share/help/as/gnome-help/figures/color-space.png
 share/help/as/gnome-help/figures/display-dual-monitors.webm
 share/help/as/gnome-help/figures/emblem-system-symbolic.svg
 share/help/as/gnome-help/figures/emblem-system.png
+share/help/as/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/as/gnome-help/figures/gnome.png
+share/help/as/gnome-help/figures/go-down-symbolic.svg
 share/help/as/gnome-help/figures/go-down.png
 share/help/as/gnome-help/figures/input-keyboard-symbolic.png
 share/help/as/gnome-help/figures/input-methods-switcher.png
@@ -930,6 +936,7 @@ share/help/ca/gnome-help/disk.page
 share/help/ca/gnome-help/display-blank.page
 share/help/ca/gnome-help/display-brightness.page
 share/help/ca/gnome-help/display-dual-monitors.page
+share/help/ca/gnome-help/display-night-light.page
 share/help/ca/gnome-help/figures/
 share/help/ca/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ca/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -959,7 +966,9 @@ share/help/ca/gnome-help/figures/color-space.png
 share/help/ca/gnome-help/figures/display-dual-monitors.webm
 share/help/ca/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ca/gnome-help/figures/emblem-system.png
+share/help/ca/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ca/gnome-help/figures/gnome.png
+share/help/ca/gnome-help/figures/go-down-symbolic.svg
 share/help/ca/gnome-help/figures/go-down.png
 share/help/ca/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ca/gnome-help/figures/input-methods-switcher.png
@@ -1327,6 +1336,7 @@ share/help/cs/gnome-help/disk.page
 share/help/cs/gnome-help/display-blank.page
 share/help/cs/gnome-help/display-brightness.page
 share/help/cs/gnome-help/display-dual-monitors.page
+share/help/cs/gnome-help/display-night-light.page
 share/help/cs/gnome-help/figures/
 share/help/cs/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/cs/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1356,7 +1366,9 @@ share/help/cs/gnome-help/figures/color-space.png
 share/help/cs/gnome-help/figures/display-dual-monitors.webm
 share/help/cs/gnome-help/figures/emblem-system-symbolic.svg
 share/help/cs/gnome-help/figures/emblem-system.png
+share/help/cs/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/cs/gnome-help/figures/gnome.png
+share/help/cs/gnome-help/figures/go-down-symbolic.svg
 share/help/cs/gnome-help/figures/go-down.png
 share/help/cs/gnome-help/figures/input-keyboard-symbolic.png
 share/help/cs/gnome-help/figures/input-methods-switcher.png
@@ -1777,6 +1789,7 @@ share/help/da/gnome-help/disk.page
 share/help/da/gnome-help/display-blank.page
 share/help/da/gnome-help/display-brightness.page
 share/help/da/gnome-help/display-dual-monitors.page
+share/help/da/gnome-help/display-night-light.page
 share/help/da/gnome-help/figures/
 share/help/da/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/da/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1806,7 +1819,9 @@ share/help/da/gnome-help/figures/color-space.png
 share/help/da/gnome-help/figures/display-dual-monitors.webm
 share/help/da/gnome-help/figures/emblem-system-symbolic.svg
 share/help/da/gnome-help/figures/emblem-system.png
+share/help/da/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/da/gnome-help/figures/gnome.png
+share/help/da/gnome-help/figures/go-down-symbolic.svg
 share/help/da/gnome-help/figures/go-down.png
 share/help/da/gnome-help/figures/input-keyboard-symbolic.png
 share/help/da/gnome-help/figures/input-methods-switcher.png
@@ -2174,6 +2189,7 @@ share/help/de/gnome-help/disk.page
 share/help/de/gnome-help/display-blank.page
 share/help/de/gnome-help/display-brightness.page
 share/help/de/gnome-help/display-dual-monitors.page
+share/help/de/gnome-help/display-night-light.page
 share/help/de/gnome-help/figures/
 share/help/de/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/de/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2203,7 +2219,9 @@ share/help/de/gnome-help/figures/color-space.png
 share/help/de/gnome-help/figures/display-dual-monitors.webm
 share/help/de/gnome-help/figures/emblem-system-symbolic.svg
 share/help/de/gnome-help/figures/emblem-system.png
+share/help/de/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/de/gnome-help/figures/gnome.png
+share/help/de/gnome-help/figures/go-down-symbolic.svg
 share/help/de/gnome-help/figures/go-down.png
 share/help/de/gnome-help/figures/input-keyboard-symbolic.png
 share/help/de/gnome-help/figures/input-methods-switcher.png
@@ -2624,6 +2642,7 @@ share/help/el/gnome-help/disk.page
 share/help/el/gnome-help/display-blank.page
 share/help/el/gnome-help/display-brightness.page
 share/help/el/gnome-help/display-dual-monitors.page
+share/help/el/gnome-help/display-night-light.page
 share/help/el/gnome-help/figures/
 share/help/el/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/el/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2653,7 +2672,9 @@ share/help/el/gnome-help/figures/color-space.png
 share/help/el/gnome-help/figures/display-dual-monitors.webm
 share/help/el/gnome-help/figures/emblem-system-symbolic.svg
 share/help/el/gnome-help/figures/emblem-system.png
+share/help/el/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/el/gnome-help/figures/gnome.png
+share/help/el/gnome-help/figures/go-down-symbolic.svg
 share/help/el/gnome-help/figures/go-down.png
 share/help/el/gnome-help/figures/input-keyboard-symbolic.png
 share/help/el/gnome-help/figures/input-methods-switcher.png
@@ -3021,6 +3042,7 @@ share/help/es/gnome-help/disk.page
 share/help/es/gnome-help/display-blank.page
 share/help/es/gnome-help/display-brightness.page
 share/help/es/gnome-help/display-dual-monitors.page
+share/help/es/gnome-help/display-night-light.page
 share/help/es/gnome-help/figures/
 share/help/es/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/es/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3050,7 +3072,9 @@ share/help/es/gnome-help/figures/color-space.png
 share/help/es/gnome-help/figures/display-dual-monitors.webm
 share/help/es/gnome-help/figures/emblem-system-symbolic.svg
 share/help/es/gnome-help/figures/emblem-system.png
+share/help/es/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/es/gnome-help/figures/gnome.png
+share/help/es/gnome-help/figures/go-down-symbolic.svg
 share/help/es/gnome-help/figures/go-down.png
 share/help/es/gnome-help/figures/input-keyboard-symbolic.png
 share/help/es/gnome-help/figures/input-methods-switcher.png
@@ -3471,6 +3495,7 @@ share/help/fi/gnome-help/disk.page
 share/help/fi/gnome-help/display-blank.page
 share/help/fi/gnome-help/display-brightness.page
 share/help/fi/gnome-help/display-dual-monitors.page
+share/help/fi/gnome-help/display-night-light.page
 share/help/fi/gnome-help/figures/
 share/help/fi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3500,7 +3525,9 @@ share/help/fi/gnome-help/figures/color-space.png
 share/help/fi/gnome-help/figures/display-dual-monitors.webm
 share/help/fi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/fi/gnome-help/figures/emblem-system.png
+share/help/fi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/fi/gnome-help/figures/gnome.png
+share/help/fi/gnome-help/figures/go-down-symbolic.svg
 share/help/fi/gnome-help/figures/go-down.png
 share/help/fi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fi/gnome-help/figures/input-methods-switcher.png
@@ -3868,6 +3895,7 @@ share/help/fr/gnome-help/disk.page
 share/help/fr/gnome-help/display-blank.page
 share/help/fr/gnome-help/display-brightness.page
 share/help/fr/gnome-help/display-dual-monitors.page
+share/help/fr/gnome-help/display-night-light.page
 share/help/fr/gnome-help/figures/
 share/help/fr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3897,7 +3925,9 @@ share/help/fr/gnome-help/figures/color-space.png
 share/help/fr/gnome-help/figures/display-dual-monitors.webm
 share/help/fr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/fr/gnome-help/figures/emblem-system.png
+share/help/fr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/fr/gnome-help/figures/gnome.png
+share/help/fr/gnome-help/figures/go-down-symbolic.svg
 share/help/fr/gnome-help/figures/go-down.png
 share/help/fr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fr/gnome-help/figures/input-methods-switcher.png
@@ -4265,6 +4295,7 @@ share/help/gl/gnome-help/disk.page
 share/help/gl/gnome-help/display-blank.page
 share/help/gl/gnome-help/display-brightness.page
 share/help/gl/gnome-help/display-dual-monitors.page
+share/help/gl/gnome-help/display-night-light.page
 share/help/gl/gnome-help/figures/
 share/help/gl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/gl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4294,7 +4325,9 @@ share/help/gl/gnome-help/figures/color-space.png
 share/help/gl/gnome-help/figures/display-dual-monitors.webm
 share/help/gl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/gl/gnome-help/figures/emblem-system.png
+share/help/gl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/gl/gnome-help/figures/gnome.png
+share/help/gl/gnome-help/figures/go-down-symbolic.svg
 share/help/gl/gnome-help/figures/go-down.png
 share/help/gl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gl/gnome-help/figures/input-methods-switcher.png
@@ -4715,6 +4748,7 @@ share/help/gu/gnome-help/disk.page
 share/help/gu/gnome-help/display-blank.page
 share/help/gu/gnome-help/display-brightness.page
 share/help/gu/gnome-help/display-dual-monitors.page
+share/help/gu/gnome-help/display-night-light.page
 share/help/gu/gnome-help/figures/
 share/help/gu/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/gu/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4744,7 +4778,9 @@ share/help/gu/gnome-help/figures/color-space.png
 share/help/gu/gnome-help/figures/display-dual-monitors.webm
 share/help/gu/gnome-help/figures/emblem-system-symbolic.svg
 share/help/gu/gnome-help/figures/emblem-system.png
+share/help/gu/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/gu/gnome-help/figures/gnome.png
+share/help/gu/gnome-help/figures/go-down-symbolic.svg
 share/help/gu/gnome-help/figures/go-down.png
 share/help/gu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gu/gnome-help/figures/input-methods-switcher.png
@@ -5112,6 +5148,7 @@ share/help/he/gnome-help/disk.page
 share/help/he/gnome-help/display-blank.page
 share/help/he/gnome-help/display-brightness.page
 share/help/he/gnome-help/display-dual-monitors.page
+share/help/he/gnome-help/display-night-light.page
 share/help/he/gnome-help/figures/
 share/help/he/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/he/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5141,7 +5178,9 @@ share/help/he/gnome-help/figures/color-space.png
 share/help/he/gnome-help/figures/display-dual-monitors.webm
 share/help/he/gnome-help/figures/emblem-system-symbolic.svg
 share/help/he/gnome-help/figures/emblem-system.png
+share/help/he/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/he/gnome-help/figures/gnome.png
+share/help/he/gnome-help/figures/go-down-symbolic.svg
 share/help/he/gnome-help/figures/go-down.png
 share/help/he/gnome-help/figures/input-keyboard-symbolic.png
 share/help/he/gnome-help/figures/input-methods-switcher.png
@@ -5509,6 +5548,7 @@ share/help/hi/gnome-help/disk.page
 share/help/hi/gnome-help/display-blank.page
 share/help/hi/gnome-help/display-brightness.page
 share/help/hi/gnome-help/display-dual-monitors.page
+share/help/hi/gnome-help/display-night-light.page
 share/help/hi/gnome-help/figures/
 share/help/hi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5538,7 +5578,9 @@ share/help/hi/gnome-help/figures/color-space.png
 share/help/hi/gnome-help/figures/display-dual-monitors.webm
 share/help/hi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hi/gnome-help/figures/emblem-system.png
+share/help/hi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hi/gnome-help/figures/gnome.png
+share/help/hi/gnome-help/figures/go-down-symbolic.svg
 share/help/hi/gnome-help/figures/go-down.png
 share/help/hi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hi/gnome-help/figures/input-methods-switcher.png
@@ -5906,6 +5948,7 @@ share/help/hr/gnome-help/disk.page
 share/help/hr/gnome-help/display-blank.page
 share/help/hr/gnome-help/display-brightness.page
 share/help/hr/gnome-help/display-dual-monitors.page
+share/help/hr/gnome-help/display-night-light.page
 share/help/hr/gnome-help/figures/
 share/help/hr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5935,7 +5978,9 @@ share/help/hr/gnome-help/figures/color-space.png
 share/help/hr/gnome-help/figures/display-dual-monitors.webm
 share/help/hr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hr/gnome-help/figures/emblem-system.png
+share/help/hr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hr/gnome-help/figures/gnome.png
+share/help/hr/gnome-help/figures/go-down-symbolic.svg
 share/help/hr/gnome-help/figures/go-down.png
 share/help/hr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hr/gnome-help/figures/input-methods-switcher.png
@@ -6303,6 +6348,7 @@ share/help/hu/gnome-help/disk.page
 share/help/hu/gnome-help/display-blank.page
 share/help/hu/gnome-help/display-brightness.page
 share/help/hu/gnome-help/display-dual-monitors.page
+share/help/hu/gnome-help/display-night-light.page
 share/help/hu/gnome-help/figures/
 share/help/hu/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hu/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6332,7 +6378,9 @@ share/help/hu/gnome-help/figures/color-space.png
 share/help/hu/gnome-help/figures/display-dual-monitors.webm
 share/help/hu/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hu/gnome-help/figures/emblem-system.png
+share/help/hu/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hu/gnome-help/figures/gnome.png
+share/help/hu/gnome-help/figures/go-down-symbolic.svg
 share/help/hu/gnome-help/figures/go-down.png
 share/help/hu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hu/gnome-help/figures/input-methods-switcher.png
@@ -6753,6 +6801,7 @@ share/help/id/gnome-help/disk.page
 share/help/id/gnome-help/display-blank.page
 share/help/id/gnome-help/display-brightness.page
 share/help/id/gnome-help/display-dual-monitors.page
+share/help/id/gnome-help/display-night-light.page
 share/help/id/gnome-help/figures/
 share/help/id/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/id/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6782,7 +6831,9 @@ share/help/id/gnome-help/figures/color-space.png
 share/help/id/gnome-help/figures/display-dual-monitors.webm
 share/help/id/gnome-help/figures/emblem-system-symbolic.svg
 share/help/id/gnome-help/figures/emblem-system.png
+share/help/id/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/id/gnome-help/figures/gnome.png
+share/help/id/gnome-help/figures/go-down-symbolic.svg
 share/help/id/gnome-help/figures/go-down.png
 share/help/id/gnome-help/figures/input-keyboard-symbolic.png
 share/help/id/gnome-help/figures/input-methods-switcher.png
@@ -7150,6 +7201,7 @@ share/help/it/gnome-help/disk.page
 share/help/it/gnome-help/display-blank.page
 share/help/it/gnome-help/display-brightness.page
 share/help/it/gnome-help/display-dual-monitors.page
+share/help/it/gnome-help/display-night-light.page
 share/help/it/gnome-help/figures/
 share/help/it/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/it/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7179,7 +7231,9 @@ share/help/it/gnome-help/figures/color-space.png
 share/help/it/gnome-help/figures/display-dual-monitors.webm
 share/help/it/gnome-help/figures/emblem-system-symbolic.svg
 share/help/it/gnome-help/figures/emblem-system.png
+share/help/it/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/it/gnome-help/figures/gnome.png
+share/help/it/gnome-help/figures/go-down-symbolic.svg
 share/help/it/gnome-help/figures/go-down.png
 share/help/it/gnome-help/figures/input-keyboard-symbolic.png
 share/help/it/gnome-help/figures/input-methods-switcher.png
@@ -7547,6 +7601,7 @@ share/help/ja/gnome-help/disk.page
 share/help/ja/gnome-help/display-blank.page
 share/help/ja/gnome-help/display-brightness.page
 share/help/ja/gnome-help/display-dual-monitors.page
+share/help/ja/gnome-help/display-night-light.page
 share/help/ja/gnome-help/figures/
 share/help/ja/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ja/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7576,7 +7631,9 @@ share/help/ja/gnome-help/figures/color-space.png
 share/help/ja/gnome-help/figures/display-dual-monitors.webm
 share/help/ja/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ja/gnome-help/figures/emblem-system.png
+share/help/ja/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ja/gnome-help/figures/gnome.png
+share/help/ja/gnome-help/figures/go-down-symbolic.svg
 share/help/ja/gnome-help/figures/go-down.png
 share/help/ja/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ja/gnome-help/figures/input-methods-switcher.png
@@ -7944,6 +8001,7 @@ share/help/kn/gnome-help/disk.page
 share/help/kn/gnome-help/display-blank.page
 share/help/kn/gnome-help/display-brightness.page
 share/help/kn/gnome-help/display-dual-monitors.page
+share/help/kn/gnome-help/display-night-light.page
 share/help/kn/gnome-help/figures/
 share/help/kn/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/kn/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7973,7 +8031,9 @@ share/help/kn/gnome-help/figures/color-space.png
 share/help/kn/gnome-help/figures/display-dual-monitors.webm
 share/help/kn/gnome-help/figures/emblem-system-symbolic.svg
 share/help/kn/gnome-help/figures/emblem-system.png
+share/help/kn/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/kn/gnome-help/figures/gnome.png
+share/help/kn/gnome-help/figures/go-down-symbolic.svg
 share/help/kn/gnome-help/figures/go-down.png
 share/help/kn/gnome-help/figures/input-keyboard-symbolic.png
 share/help/kn/gnome-help/figures/input-methods-switcher.png
@@ -8395,6 +8455,7 @@ share/help/lv/gnome-help/disk.page
 share/help/lv/gnome-help/display-blank.page
 share/help/lv/gnome-help/display-brightness.page
 share/help/lv/gnome-help/display-dual-monitors.page
+share/help/lv/gnome-help/display-night-light.page
 share/help/lv/gnome-help/figures/
 share/help/lv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/lv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8424,7 +8485,9 @@ share/help/lv/gnome-help/figures/color-space.png
 share/help/lv/gnome-help/figures/display-dual-monitors.webm
 share/help/lv/gnome-help/figures/emblem-system-symbolic.svg
 share/help/lv/gnome-help/figures/emblem-system.png
+share/help/lv/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/lv/gnome-help/figures/gnome.png
+share/help/lv/gnome-help/figures/go-down-symbolic.svg
 share/help/lv/gnome-help/figures/go-down.png
 share/help/lv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/lv/gnome-help/figures/input-methods-switcher.png
@@ -8792,6 +8855,7 @@ share/help/mr/gnome-help/disk.page
 share/help/mr/gnome-help/display-blank.page
 share/help/mr/gnome-help/display-brightness.page
 share/help/mr/gnome-help/display-dual-monitors.page
+share/help/mr/gnome-help/display-night-light.page
 share/help/mr/gnome-help/figures/
 share/help/mr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/mr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8821,7 +8885,9 @@ share/help/mr/gnome-help/figures/color-space.png
 share/help/mr/gnome-help/figures/display-dual-monitors.webm
 share/help/mr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/mr/gnome-help/figures/emblem-system.png
+share/help/mr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/mr/gnome-help/figures/gnome.png
+share/help/mr/gnome-help/figures/go-down-symbolic.svg
 share/help/mr/gnome-help/figures/go-down.png
 share/help/mr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/mr/gnome-help/figures/input-methods-switcher.png
@@ -9189,6 +9255,7 @@ share/help/nl/gnome-help/disk.page
 share/help/nl/gnome-help/display-blank.page
 share/help/nl/gnome-help/display-brightness.page
 share/help/nl/gnome-help/display-dual-monitors.page
+share/help/nl/gnome-help/display-night-light.page
 share/help/nl/gnome-help/figures/
 share/help/nl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/nl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9218,7 +9285,9 @@ share/help/nl/gnome-help/figures/color-space.png
 share/help/nl/gnome-help/figures/display-dual-monitors.webm
 share/help/nl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/nl/gnome-help/figures/emblem-system.png
+share/help/nl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/nl/gnome-help/figures/gnome.png
+share/help/nl/gnome-help/figures/go-down-symbolic.svg
 share/help/nl/gnome-help/figures/go-down.png
 share/help/nl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/nl/gnome-help/figures/input-methods-switcher.png
@@ -9586,6 +9655,7 @@ share/help/pa/gnome-help/disk.page
 share/help/pa/gnome-help/display-blank.page
 share/help/pa/gnome-help/display-brightness.page
 share/help/pa/gnome-help/display-dual-monitors.page
+share/help/pa/gnome-help/display-night-light.page
 share/help/pa/gnome-help/figures/
 share/help/pa/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pa/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9615,7 +9685,9 @@ share/help/pa/gnome-help/figures/color-space.png
 share/help/pa/gnome-help/figures/display-dual-monitors.webm
 share/help/pa/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pa/gnome-help/figures/emblem-system.png
+share/help/pa/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pa/gnome-help/figures/gnome.png
+share/help/pa/gnome-help/figures/go-down-symbolic.svg
 share/help/pa/gnome-help/figures/go-down.png
 share/help/pa/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pa/gnome-help/figures/input-methods-switcher.png
@@ -9983,6 +10055,7 @@ share/help/pl/gnome-help/disk.page
 share/help/pl/gnome-help/display-blank.page
 share/help/pl/gnome-help/display-brightness.page
 share/help/pl/gnome-help/display-dual-monitors.page
+share/help/pl/gnome-help/display-night-light.page
 share/help/pl/gnome-help/figures/
 share/help/pl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -10012,7 +10085,9 @@ share/help/pl/gnome-help/figures/color-space.png
 share/help/pl/gnome-help/figures/display-dual-monitors.webm
 share/help/pl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pl/gnome-help/figures/emblem-system.png
+share/help/pl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pl/gnome-help/figures/gnome.png
+share/help/pl/gnome-help/figures/go-down-symbolic.svg
 share/help/pl/gnome-help/figures/go-down.png
 share/help/pl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pl/gnome-help/figures/input-methods-switcher.png
@@ -10380,6 +10455,7 @@ share/help/pt/gnome-help/disk.page
 share/help/pt/gnome-help/display-blank.page
 share/help/pt/gnome-help/display-brightness.page
 share/help/pt/gnome-help/display-dual-monitors.page
+share/help/pt/gnome-help/display-night-light.page
 share/help/pt/gnome-help/figures/
 share/help/pt/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pt/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -10409,7 +10485,9 @@ share/help/pt/gnome-help/figures/color-space.png
 share/help/pt/gnome-help/figures/display-dual-monitors.webm
 share/help/pt/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pt/gnome-help/figures/emblem-system.png
+share/help/pt/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pt/gnome-help/figures/gnome.png
+share/help/pt/gnome-help/figures/go-down-symbolic.svg
 share/help/pt/gnome-help/figures/go-down.png
 share/help/pt/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pt/gnome-help/figures/input-methods-switcher.png
@@ -10777,6 +10855,7 @@ share/help/pt_BR/gnome-help/disk.page
 share/help/pt_BR/gnome-help/display-blank.page
 share/help/pt_BR/gnome-help/display-brightness.page
 share/help/pt_BR/gnome-help/display-dual-monitors.page
+share/help/pt_BR/gnome-help/display-night-light.page
 share/help/pt_BR/gnome-help/figures/
 share/help/pt_BR/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pt_BR/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -10806,7 +10885,9 @@ share/help/pt_BR/gnome-help/figures/color-space.png
 share/help/pt_BR/gnome-help/figures/display-dual-monitors.webm
 share/help/pt_BR/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pt_BR/gnome-help/figures/emblem-system.png
+share/help/pt_BR/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pt_BR/gnome-help/figures/gnome.png
+share/help/pt_BR/gnome-help/figures/go-down-symbolic.svg
 share/help/pt_BR/gnome-help/figures/go-down.png
 share/help/pt_BR/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pt_BR/gnome-help/figures/input-methods-switcher.png
@@ -11227,6 +11308,7 @@ share/help/ro/gnome-help/disk.page
 share/help/ro/gnome-help/display-blank.page
 share/help/ro/gnome-help/display-brightness.page
 share/help/ro/gnome-help/display-dual-monitors.page
+share/help/ro/gnome-help/display-night-light.page
 share/help/ro/gnome-help/figures/
 share/help/ro/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ro/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -11256,7 +11338,9 @@ share/help/ro/gnome-help/figures/color-space.png
 share/help/ro/gnome-help/figures/display-dual-monitors.webm
 share/help/ro/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ro/gnome-help/figures/emblem-system.png
+share/help/ro/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ro/gnome-help/figures/gnome.png
+share/help/ro/gnome-help/figures/go-down-symbolic.svg
 share/help/ro/gnome-help/figures/go-down.png
 share/help/ro/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ro/gnome-help/figures/input-methods-switcher.png
@@ -11624,6 +11708,7 @@ share/help/ru/gnome-help/disk.page
 share/help/ru/gnome-help/display-blank.page
 share/help/ru/gnome-help/display-brightness.page
 share/help/ru/gnome-help/display-dual-monitors.page
+share/help/ru/gnome-help/display-night-light.page
 share/help/ru/gnome-help/figures/
 share/help/ru/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ru/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -11653,7 +11738,9 @@ share/help/ru/gnome-help/figures/color-space.png
 share/help/ru/gnome-help/figures/display-dual-monitors.webm
 share/help/ru/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ru/gnome-help/figures/emblem-system.png
+share/help/ru/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ru/gnome-help/figures/gnome.png
+share/help/ru/gnome-help/figures/go-down-symbolic.svg
 share/help/ru/gnome-help/figures/go-down.png
 share/help/ru/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ru/gnome-help/figures/input-methods-switcher.png
@@ -12021,6 +12108,7 @@ share/help/sl/gnome-help/disk.page
 share/help/sl/gnome-help/display-blank.page
 share/help/sl/gnome-help/display-brightness.page
 share/help/sl/gnome-help/display-dual-monitors.page
+share/help/sl/gnome-help/display-night-light.page
 share/help/sl/gnome-help/figures/
 share/help/sl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -12050,7 +12138,9 @@ share/help/sl/gnome-help/figures/color-space.png
 share/help/sl/gnome-help/figures/display-dual-monitors.webm
 share/help/sl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sl/gnome-help/figures/emblem-system.png
+share/help/sl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sl/gnome-help/figures/gnome.png
+share/help/sl/gnome-help/figures/go-down-symbolic.svg
 share/help/sl/gnome-help/figures/go-down.png
 share/help/sl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sl/gnome-help/figures/input-methods-switcher.png
@@ -12418,6 +12508,7 @@ share/help/sr/gnome-help/disk.page
 share/help/sr/gnome-help/display-blank.page
 share/help/sr/gnome-help/display-brightness.page
 share/help/sr/gnome-help/display-dual-monitors.page
+share/help/sr/gnome-help/display-night-light.page
 share/help/sr/gnome-help/figures/
 share/help/sr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -12447,7 +12538,9 @@ share/help/sr/gnome-help/figures/color-space.png
 share/help/sr/gnome-help/figures/display-dual-monitors.webm
 share/help/sr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sr/gnome-help/figures/emblem-system.png
+share/help/sr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sr/gnome-help/figures/gnome.png
+share/help/sr/gnome-help/figures/go-down-symbolic.svg
 share/help/sr/gnome-help/figures/go-down.png
 share/help/sr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr/gnome-help/figures/input-methods-switcher.png
@@ -12815,6 +12908,7 @@ share/help/sr@latin/gnome-help/disk.page
 share/help/sr@latin/gnome-help/display-blank.page
 share/help/sr@latin/gnome-help/display-brightness.page
 share/help/sr@latin/gnome-help/display-dual-monitors.page
+share/help/sr@latin/gnome-help/display-night-light.page
 share/help/sr@latin/gnome-help/figures/
 share/help/sr@latin/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr@latin/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -12844,7 +12938,9 @@ share/help/sr@latin/gnome-help/figures/color-space.png
 share/help/sr@latin/gnome-help/figures/display-dual-monitors.webm
 share/help/sr@latin/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sr@latin/gnome-help/figures/emblem-system.png
+share/help/sr@latin/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sr@latin/gnome-help/figures/gnome.png
+share/help/sr@latin/gnome-help/figures/go-down-symbolic.svg
 share/help/sr@latin/gnome-help/figures/go-down.png
 share/help/sr@latin/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr@latin/gnome-help/figures/input-methods-switcher.png
@@ -13212,6 +13308,7 @@ share/help/sv/gnome-help/disk.page
 share/help/sv/gnome-help/display-blank.page
 share/help/sv/gnome-help/display-brightness.page
 share/help/sv/gnome-help/display-dual-monitors.page
+share/help/sv/gnome-help/display-night-light.page
 share/help/sv/gnome-help/figures/
 share/help/sv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -13241,7 +13338,9 @@ share/help/sv/gnome-help/figures/color-space.png
 share/help/sv/gnome-help/figures/display-dual-monitors.webm
 share/help/sv/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sv/gnome-help/figures/emblem-system.png
+share/help/sv/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sv/gnome-help/figures/gnome.png
+share/help/sv/gnome-help/figures/go-down-symbolic.svg
 share/help/sv/gnome-help/figures/go-down.png
 share/help/sv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sv/gnome-help/figures/input-methods-switcher.png
@@ -13662,6 +13761,7 @@ share/help/ta/gnome-help/disk.page
 share/help/ta/gnome-help/display-blank.page
 share/help/ta/gnome-help/display-brightness.page
 share/help/ta/gnome-help/display-dual-monitors.page
+share/help/ta/gnome-help/display-night-light.page
 share/help/ta/gnome-help/figures/
 share/help/ta/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ta/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -13691,7 +13791,9 @@ share/help/ta/gnome-help/figures/color-space.png
 share/help/ta/gnome-help/figures/display-dual-monitors.webm
 share/help/ta/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ta/gnome-help/figures/emblem-system.png
+share/help/ta/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ta/gnome-help/figures/gnome.png
+share/help/ta/gnome-help/figures/go-down-symbolic.svg
 share/help/ta/gnome-help/figures/go-down.png
 share/help/ta/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ta/gnome-help/figures/input-methods-switcher.png
@@ -14059,6 +14161,7 @@ share/help/te/gnome-help/disk.page
 share/help/te/gnome-help/display-blank.page
 share/help/te/gnome-help/display-brightness.page
 share/help/te/gnome-help/display-dual-monitors.page
+share/help/te/gnome-help/display-night-light.page
 share/help/te/gnome-help/figures/
 share/help/te/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/te/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -14088,7 +14191,9 @@ share/help/te/gnome-help/figures/color-space.png
 share/help/te/gnome-help/figures/display-dual-monitors.webm
 share/help/te/gnome-help/figures/emblem-system-symbolic.svg
 share/help/te/gnome-help/figures/emblem-system.png
+share/help/te/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/te/gnome-help/figures/gnome.png
+share/help/te/gnome-help/figures/go-down-symbolic.svg
 share/help/te/gnome-help/figures/go-down.png
 share/help/te/gnome-help/figures/input-keyboard-symbolic.png
 share/help/te/gnome-help/figures/input-methods-switcher.png
@@ -14456,6 +14561,7 @@ share/help/vi/gnome-help/disk.page
 share/help/vi/gnome-help/display-blank.page
 share/help/vi/gnome-help/display-brightness.page
 share/help/vi/gnome-help/display-dual-monitors.page
+share/help/vi/gnome-help/display-night-light.page
 share/help/vi/gnome-help/figures/
 share/help/vi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/vi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -14485,7 +14591,9 @@ share/help/vi/gnome-help/figures/color-space.png
 share/help/vi/gnome-help/figures/display-dual-monitors.webm
 share/help/vi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/vi/gnome-help/figures/emblem-system.png
+share/help/vi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/vi/gnome-help/figures/gnome.png
+share/help/vi/gnome-help/figures/go-down-symbolic.svg
 share/help/vi/gnome-help/figures/go-down.png
 share/help/vi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/vi/gnome-help/figures/input-methods-switcher.png
@@ -14853,6 +14961,7 @@ share/help/zh_CN/gnome-help/disk.page
 share/help/zh_CN/gnome-help/display-blank.page
 share/help/zh_CN/gnome-help/display-brightness.page
 share/help/zh_CN/gnome-help/display-dual-monitors.page
+share/help/zh_CN/gnome-help/display-night-light.page
 share/help/zh_CN/gnome-help/figures/
 share/help/zh_CN/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/zh_CN/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -14882,7 +14991,9 @@ share/help/zh_CN/gnome-help/figures/color-space.png
 share/help/zh_CN/gnome-help/figures/display-dual-monitors.webm
 share/help/zh_CN/gnome-help/figures/emblem-system-symbolic.svg
 share/help/zh_CN/gnome-help/figures/emblem-system.png
+share/help/zh_CN/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/zh_CN/gnome-help/figures/gnome.png
+share/help/zh_CN/gnome-help/figures/go-down-symbolic.svg
 share/help/zh_CN/gnome-help/figures/go-down.png
 share/help/zh_CN/gnome-help/figures/input-keyboard-symbolic.png
 share/help/zh_CN/gnome-help/figures/input-methods-switcher.png
