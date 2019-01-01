@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2019/01/01 18:01:20 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -6,18 +6,13 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.17.1
+V=			3.17.3
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-bogofilter=	0
-REVISION-gdata=		0
-REVISION-main=		0
-REVISION-pdfviewer=	0
-REVISION-spamassassin=	0
 
 CATEGORIES=		mail news
 
@@ -59,7 +54,7 @@ WANTLIB-main += croco-0.6 db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
 WANTLIB-main += gpgme hogweed ical icalss icalvcal icudata icui18n icuuc idn2
 WANTLIB-main += ltdl lz4 lzma nettle notify ogg p11-kit perl rsvg-2
 WANTLIB-main += startup-notification-1 ${COMPILER_LIBCXX} tasn1 unistring vorbis
-WANTLIB-main += vorbisfile xcb-util xml2
+WANTLIB-main += vorbisfile xcb-util xml2 zstd
 
 WANTLIB-gdata = ${WANTLIB}
 WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error json-glib-1.0
@@ -67,7 +62,8 @@ WANTLIB-gdata += lzma nspr4 nss3 oauth p11-kit plc4 plds4 smime3 nssutil3
 WANTLIB-gdata += soup-2.4 sqlite3 ssl3 xml2
 
 WANTLIB-pdfviewer =  ${WANTLIB}
-WANTLIB-pdfviewer += jpeg lcms2 openjp2 poppler poppler-glib tiff
+WANTLIB-pdfviewer += jpeg lcms2 openjp2 png16 poppler poppler-glib tiff
+WANTLIB-pdfviewer += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=		devel/libexecinfo \
 			mail/libetpan \
@@ -81,6 +77,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
 			archivers/xz \
+			archivers/zstd \
 			audio/libcanberra,-gtk \
 			devel/libnotify \
 			devel/startup-notification \
@@ -95,7 +92,8 @@ LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
 
 LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
-			devel/libgdata
+			devel/libgdata \
+			security/nss
 
 #geolocation looks for champlain <= 0.10
 #python tries to dlopen libpython2.7.so
