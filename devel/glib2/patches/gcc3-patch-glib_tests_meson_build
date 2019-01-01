@@ -1,0 +1,16 @@
+$OpenBSD: gcc3-patch-glib_tests_meson_build,v 1.1 2019/01/01 11:32:15 ajacoutot Exp $
+
+-Wstrict-aliasing is not supported by GCC3.
+
+Index: glib/tests/meson.build
+--- glib/tests/meson.build.orig
++++ glib/tests/meson.build
+@@ -2,7 +2,7 @@ glib_tests = {
+   'array-test' : {},
+   'asyncqueue' : {},
+   'atomic' : {
+-    'c_args' : cc.get_id() == 'gcc' ? ['-Wstrict-aliasing=2'] : [],
++    'c_args' : [],
+   },
+   'autoptr' : {
+     'skip' : cc.get_id() == 'msvc',

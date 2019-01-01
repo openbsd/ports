@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2018/12/19 10:36:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.287 2019/01/01 11:32:15 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -7,7 +7,7 @@ INSTALL_STRIP=		# empty
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.56.4
+GNOME_VERSION=		2.58.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -20,11 +20,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4201.0   # 5600.4
-SHARED_LIBS +=  gmodule-2.0          4200.7   # 5600.4
-SHARED_LIBS +=  gthread-2.0          4200.7   # 5600.4
-SHARED_LIBS +=  gobject-2.0          4200.7   # 5600.4
-SHARED_LIBS +=  gio-2.0              4200.7   # 5600.4
+SHARED_LIBS +=  glib-2.0             4201.1   # 0.5800.2
+SHARED_LIBS +=  gmodule-2.0          4200.8   # 0.5800.2
+SHARED_LIBS +=  gthread-2.0          4200.8   # 0.5800.2
+SHARED_LIBS +=  gobject-2.0          4200.8   # 0.5800.2
+SHARED_LIBS +=  gio-2.0              4200.8   # 0.5800.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,10 +32,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB += c elf ffi iconv intl pcre pthread z
 
-MODULES=		lang/python \
+MODULES=		devel/meson \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS=		devel/gettext \
 			devel/pcre \
@@ -49,16 +51,11 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-static \
-			--with-pcre=system \
-			--disable-fam
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+CONFIGURE_ARGS=		-Diconv=gnu \
+			-Dselinux=false \
+			-Dxattr=false \
+			-Dlibmount=false \
+			-Dman=true
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc3}
@@ -75,8 +72,10 @@ pre-configure:
 	sed -i "s,/usr/share/applications,${LOCALBASE}/share/applications,g" \
 		${WRKSRC}/gio/tests/desktop-app-info.c
 	sed -i "s,/usr/share,${PREFIX}/share,g" \
-		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.xml
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
+
+# own this directory
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/gio/modules
 
 .include <bsd.port.mk>
