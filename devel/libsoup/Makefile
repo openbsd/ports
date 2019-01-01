@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.115 2018/08/13 09:51:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2019/01/01 11:39:57 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.62.3
+GNOME_VERSION =		2.64.2
 
-SHARED_LIBS +=  soup-2.4             10.1     # 9.0
-SHARED_LIBS +=  soup-gnome-2.4       8.0      # 9.0
+SHARED_LIBS +=  soup-2.4             10.2     # 1.8.0
+SHARED_LIBS +=  soup-gnome-2.4       8.0      # 1.8.0
 
 API_VERSION =		2.4
 SUBST_VARS =		API_VERSION
@@ -19,42 +19,26 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB += intl lzma m pcre pthread sqlite3 xml2 z
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl psl sqlite3 xml2
 
-MODULES =		lang/python \
+MODULES =		devel/meson \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS =	gobject-introspection vala
 MODPY_RUNDEP =		No
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		net/glib2-networking
 RUN_DEPENDS =		net/glib2-networking
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/glib2 \
+			net/libpsl \
 			textproc/libxml
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-ntlm-auth=${LOCALBASE}/bin/ntlm_auth
-
-PSEUDO_FLAVORS =	tests
-FLAVOR ?=
-
-.if ${FLAVOR:Mtests}
-MODULES +=		lang/php
-BUILD_DEPENDS +=	lang/php/${MODPHP_VERSION} \
-			lang/php/${MODPHP_VERSION},-xmlrpc \
-			net/curl \
-			www/apache-httpd
-CONFIGURE_ENV +=	ac_cv_prog_PHP=${MODPHP_BIN}
-CONFIGURE_ARGS +=	--with-apache-httpd=${LOCALBASE}/sbin/httpd2 \
-			--with-apache-module-dir="${LOCALBASE}/lib/apache2 ${MODPHP_LIBDIR}"
-.else
-CONFIGURE_ENV +=	ac_cv_prog_PHP= \
-			ac_cv_path_APACHE_HTTPD= \
-			ac_cv_path_CURL=
-.endif
+CONFIGURE_ARGS =	-Dgssapi=false \
+			-Dtests=false \
+			-Dtls_check=false \
+			-Dvapi=true
 
 .include <bsd.port.mk>
