@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.82 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2019/01/01 18:53:37 jasper Exp $
+
+BROKEN =	needs an update to v7 to unbreak with recent vala
 
 COMMENT =	lightweight web browser
 
