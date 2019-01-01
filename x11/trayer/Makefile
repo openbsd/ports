@@ -1,32 +1,37 @@
-# $OpenBSD: Makefile,v 1.15 2016/08/27 17:35:19 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/01 10:06:18 ajacoutot Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
-DISTNAME=		trayer-1.0
-REVISION=		8
+V=			1.1.8
+GH_TAGNAME=		trayer-${V}
+GH_PROJECT=		trayer-srg
+GH_ACCOUNT=		sargon
+DISTNAME=		trayer-${V}
+
 CATEGORIES=		x11
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 intl pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
-
-MASTER_SITES=		http://download.gna.org/fvwm-crystal/trayer/1.0/
+WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += z
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		devel/gettext \
-			x11/gtk+2
+LIB_DEPENDS=		x11/gtk+2
 
-MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DG_DISABLE_DEPRECATED"
+CONFIGURE_STYLE=	simple
+CONFIGURE_ARGS=		--prefix=${TRUEPREFIX}
+
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_TEST=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trayer ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/trayer.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
