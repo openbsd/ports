@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/01/01 11:36:09 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -16,7 +16,9 @@ lib/gio/modules/libdconfsettings.so
 @lib lib/libdconf.so.${LIBdconf_VERSION}
 lib/pkgconfig/dconf.pc
 @bin libexec/dconf-service
-share/bash-completion/completions/dconf
+@man man/man1/dconf-service.1
+@man man/man1/dconf.1
+@man man/man7/dconf.7
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/ca.desrt.dconf.service
