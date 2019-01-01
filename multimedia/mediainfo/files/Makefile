@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/06/13 20:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/01 21:12:24 naddy Exp $
 
 all install:
 	@for d in ${SUBDIRS}; do \
-		(cd $$d; ${MAKE} $@) || exit; \
+		${MAKE} -C $$d $@ || exit; \
 	done
