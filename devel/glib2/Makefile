@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2019/01/01 11:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2019/01/01 12:48:06 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -38,6 +38,9 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		docbook
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+# meson: have_bash, needed to install bash-completion snippets
+BUILD_DEPENDS +=	shells/bash
 
 LIB_DEPENDS=		devel/gettext \
 			devel/pcre \
