@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/13 21:46:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/01 15:37:48 fcambus Exp $
 
 COMMENT =	tool for resizing BDF format fonts
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
+MASTER_SITES =	https://www.distfiles.pl/
 
 CONFIGURE_STYLE = gnu
 
