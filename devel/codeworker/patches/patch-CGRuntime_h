@@ -1,0 +1,14 @@
+$OpenBSD: patch-CGRuntime_h,v 1.1 2019/01/01 18:01:34 landry Exp $
+Fix a lot of include errors with ports-gcc
+Index: CGRuntime.h
+--- CGRuntime.h.orig
++++ CGRuntime.h
+@@ -24,6 +24,8 @@ To contact the author: codeworker@free.fr
+ 
+ #include <string>
+ #include <list>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #include "UtlException.h"
+ #include "CppParsingTree.h"

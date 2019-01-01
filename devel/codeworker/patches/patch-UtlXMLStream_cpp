@@ -1,0 +1,13 @@
+$OpenBSD: patch-UtlXMLStream_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+fix several include errors with ports-gcc
+Index: UtlXMLStream.cpp
+--- UtlXMLStream.cpp.orig
++++ UtlXMLStream.cpp
+@@ -28,6 +28,7 @@ To contact the author: codeworker@free.fr
+ #include "UtlException.h"
+ #include "ScpStream.h"
+ #include "UtlXMLStream.h"
++#include <string.h> 
+ 
+ namespace CodeWorker {
+ 	UtlXMLStream::UtlXMLStream(const std::string& sFileName, const bool bModeRead) : _bOwnerOfFileStream(true), _pInputStream(NULL), _pOutputStream(NULL) {

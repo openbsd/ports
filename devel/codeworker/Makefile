@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/28 09:02:40 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/01 18:01:34 landry Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4
 PKGNAME =		codeworker-${V}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 

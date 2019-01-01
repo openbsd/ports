@@ -1,0 +1,13 @@
+$OpenBSD: patch-UtlTrace_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+fix several include errors with ports-gcc
+Index: UtlTrace.cpp
+--- UtlTrace.cpp.orig
++++ UtlTrace.cpp
+@@ -24,6 +24,7 @@ To contact the author: codeworker@free.fr
+ #endif
+ 
+ #include <stdarg.h>
++#include <string.h>
+ #include "ScpStream.h"
+ #include "UtlTrace.h"
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-UtlDate_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+Fix several include errors with ports-gcc
+Index: UtlDate.cpp
+--- UtlDate.cpp.orig
++++ UtlDate.cpp
+@@ -26,6 +26,8 @@ To contact the author: codeworker@free.fr
+ #include <stdio.h>
+ #include <math.h>
+ #include <time.h>
++#include <string.h>
++#include <stdlib.h>
+ 
+ #ifdef WIN32
+ #	include <windows.h>

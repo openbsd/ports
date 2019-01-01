@@ -1,0 +1,14 @@
+$OpenBSD: patch-UtlDirectory_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+fix various include errors with ports-gcc
+Index: UtlDirectory.cpp
+--- UtlDirectory.cpp.orig
++++ UtlDirectory.cpp
+@@ -30,6 +30,8 @@ To contact the author: codeworker@free.fr
+ #	include <sys/stat.h>
+ #	include <unistd.h>
+ #	include <glob.h>
++#	include <stdlib.h>
++#	include <string.h>
+ #endif
+ 
+ #include "UtlException.h"

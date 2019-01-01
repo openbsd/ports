@@ -1,0 +1,14 @@
+$OpenBSD: patch-ScpStream_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+Fix numerous include errors with ports-gcc
+Index: ScpStream.cpp
+--- ScpStream.cpp.orig
++++ ScpStream.cpp
+@@ -28,6 +28,8 @@ To contact the author: codeworker@free.fr
+ #	include <sys/stat.h>
+ 	// functions 'ntohl()' and 'htonl()'
+ #	include <netinet/in.h>
++#	include <string.h>
++#	include <stdlib.h>
+ #endif
+ 
+ #include "UtlException.h"

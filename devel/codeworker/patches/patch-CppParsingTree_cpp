@@ -1,0 +1,13 @@
+$OpenBSD: patch-CppParsingTree_cpp,v 1.1 2019/01/01 18:01:34 landry Exp $
+CppParsingTree.cpp:113:22: error: 'atoi' was not declared in this scope
+Index: CppParsingTree.cpp
+--- CppParsingTree.cpp.orig
++++ CppParsingTree.cpp
+@@ -25,6 +25,7 @@ To contact the author: codeworker@free.fr
+ 
+ #ifndef WIN32
+ #	include <cstdio> // for Debian/gcc 2.95.4
++#	include <stdlib.h>
+ #endif
+ 
+ #include "ScpStream.h"
