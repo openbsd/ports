@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/06 06:04:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/01/01 16:56:11 ajacoutot Exp $
 
 COMMENT=		system resources status
 
 GNOME_PROJECT=		gnome-usage
-GNOME_VERSION=		3.28.0
-REVISION=		2
+GNOME_VERSION=		3.30.0
 
 CATEGORIES=		sysutils
 

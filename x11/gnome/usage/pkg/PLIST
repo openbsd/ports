@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/01 16:56:11 ajacoutot Exp $
 @bin bin/gnome-usage
 share/applications/org.gnome.Usage.desktop
 share/glib-2.0/schemas/org.gnome.Usage.gschema.xml
@@ -11,6 +11,7 @@ share/icons/hicolor/512x512/apps/org.gnome.Usage.png
 share/locale/ca/LC_MESSAGES/gnome-usage.mo
 share/locale/cs/LC_MESSAGES/gnome-usage.mo
 share/locale/de/LC_MESSAGES/gnome-usage.mo
+share/locale/en_GB/LC_MESSAGES/gnome-usage.mo
 share/locale/es/LC_MESSAGES/gnome-usage.mo
 share/locale/fi/LC_MESSAGES/gnome-usage.mo
 share/locale/fr/LC_MESSAGES/gnome-usage.mo
@@ -30,6 +31,7 @@ share/locale/sr/LC_MESSAGES/gnome-usage.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-usage.mo
 share/locale/sv/LC_MESSAGES/gnome-usage.mo
 share/locale/tr/LC_MESSAGES/gnome-usage.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-usage.mo
 share/metainfo/
 share/metainfo/org.gnome.Usage.appdata.xml
 @tag update-desktop-database
