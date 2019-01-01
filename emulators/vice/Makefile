@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/21 11:52:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/01 21:46:15 fcambus Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.3
+REVISION =		0
 
 CATEGORIES =		emulators
 

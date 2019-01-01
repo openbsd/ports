@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.4 2018/12/21 11:52:05 fcambus Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2019/01/01 21:46:15 fcambus Exp $
 
 Don't build a redundant copy of the documentation.
 Don't run fc-cache on install.
+Avoid picking up net/libnet.
 
 Index: configure.ac
 --- configure.ac.orig
@@ -20,7 +21,16 @@ Index: configure.ac
  
  AC_CHECK_PROGS(DOS2UNIX, dos2unix, dos2unix)
  
-@@ -3012,12 +3007,7 @@ if test x"$enable_lame" != "xno" ; then
+@@ -2370,8 +2365,6 @@ if test x"$is_unix_x11" = "xyes" -o x"$is_unix_macosx"
+                                          LIBS="-lsocket $LIBS"],,)
+     AC_CHECK_LIB(bsd, gethostbyname,[ NETPLAY_LIBS="-lbsd $NETPLAY_LIBS";
+                                       LIBS="-lbsd $LIBS"],,)
+-    AC_CHECK_LIB(net, gethostbyname,[ NETPLAY_LIBS="-lnet $NETPLAY_LIBS";
+-                                      LIBS="-lnet $LIBS"],,)
+     AC_CHECK_LIB(inet, gethostbyname,[ NETPLAY_LIBS="-linet $NETPLAY_LIBS";
+                                        LIBS="-linet $LIBS"],,)
+ 
+@@ -3012,12 +3005,7 @@ if test x"$enable_lame" != "xno" ; then
    fi
  fi
  
