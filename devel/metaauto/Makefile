@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/30 16:06:27 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/01 10:48:43 ajacoutot Exp $
 
 COMMENT =	wrapper for gnu auto*
 
 PKG_ARCH =	*
 VERSION =	1.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	metaauto-${VERSION}
 CATEGORIES =	devel
 DISTFILES =	pkg-config-0.27.1.tar.gz
