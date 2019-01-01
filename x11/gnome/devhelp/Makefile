@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2018/07/17 07:03:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2019/01/01 11:56:12 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -6,7 +6,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		3.30.0
+GNOME_VERSION=		3.30.1
 
 SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 
