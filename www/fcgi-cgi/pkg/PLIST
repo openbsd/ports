@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.3 2019/01/01 16:30:55 ajacoutot Exp $
+@pkgpath www/fcgi-cgi,-main
+@pkgpath www/fcgi-cgi,-static
+@rcscript ${RCDIR}/fcgi_cgi
+@bin bin/fcgi-cgi
+@man man/man1/fcgi-cgi.1

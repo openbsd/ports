@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-static,v 1.1 2012/04/10 19:34:52 sthen Exp $
-bin/
-@bin bin/fcgi-cgi
