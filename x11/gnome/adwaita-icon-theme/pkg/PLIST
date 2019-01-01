@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/09 15:09:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/01/01 11:39:28 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 share/icons/Adwaita/
 share/icons/Adwaita/16x16/
@@ -2367,6 +2367,7 @@ share/icons/Adwaita/scalable/actions/go-down-symbolic.svg
 share/icons/Adwaita/scalable/actions/go-first-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/go-first-symbolic.svg
 share/icons/Adwaita/scalable/actions/go-home-symbolic.svg
+share/icons/Adwaita/scalable/actions/go-jump-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/go-jump-symbolic.svg
 share/icons/Adwaita/scalable/actions/go-last-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/go-last-symbolic.svg
@@ -2385,6 +2386,8 @@ share/icons/Adwaita/scalable/actions/list-add-symbolic.svg
 share/icons/Adwaita/scalable/actions/list-remove-all-symbolic.svg
 share/icons/Adwaita/scalable/actions/list-remove-symbolic.svg
 share/icons/Adwaita/scalable/actions/mail-mark-important-symbolic.svg
+share/icons/Adwaita/scalable/actions/mail-mark-junk-symbolic.svg
+share/icons/Adwaita/scalable/actions/mail-mark-notjunk-symbolic.svg
 share/icons/Adwaita/scalable/actions/mail-send-receive-symbolic.svg
 share/icons/Adwaita/scalable/actions/mail-send-symbolic.svg
 share/icons/Adwaita/scalable/actions/mark-location-symbolic.svg
@@ -2422,6 +2425,8 @@ share/icons/Adwaita/scalable/actions/selection-start-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/selection-start-symbolic.svg
 share/icons/Adwaita/scalable/actions/send-to-symbolic.svg
 share/icons/Adwaita/scalable/actions/star-new-symbolic.svg
+share/icons/Adwaita/scalable/actions/system-log-out-symbolic.svg
+share/icons/Adwaita/scalable/actions/system-reboot-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-run-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-search-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-shutdown-symbolic.svg
@@ -2499,6 +2504,16 @@ share/icons/Adwaita/scalable/categories/applications-multimedia-symbolic.svg
 share/icons/Adwaita/scalable/categories/applications-science-symbolic.svg
 share/icons/Adwaita/scalable/categories/applications-system-symbolic.svg
 share/icons/Adwaita/scalable/categories/applications-utilities-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-activities-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-body-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-flags-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-food-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-nature-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-objects-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-people-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-recent-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-symbols-symbolic.svg
+share/icons/Adwaita/scalable/categories/emoji-travel-symbolic.svg
 share/icons/Adwaita/scalable/categories/preferences-other-symbolic.svg
 share/icons/Adwaita/scalable/categories/preferences-system-symbolic.svg
 share/icons/Adwaita/scalable/categories/system-help-symbolic.svg
@@ -2509,11 +2524,9 @@ share/icons/Adwaita/scalable/devices/audio-headphones-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-headset-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-input-microphone-symbolic.svg
 share/icons/Adwaita/scalable/devices/audio-speakers-symbolic.svg
-share/icons/Adwaita/scalable/devices/audio-volume-high-symbolic.svg
-share/icons/Adwaita/scalable/devices/audio-volume-low-symbolic.svg
-share/icons/Adwaita/scalable/devices/audio-volume-medium-symbolic.svg
-share/icons/Adwaita/scalable/devices/audio-volume-muted-symbolic.svg
-share/icons/Adwaita/scalable/devices/audio-volume-overamplified-symbolic.svg
+share/icons/Adwaita/scalable/devices/auth-fingerprint-symbolic.svg
+share/icons/Adwaita/scalable/devices/auth-sim-symbolic.svg
+share/icons/Adwaita/scalable/devices/auth-smartcard-symbolic.svg
 share/icons/Adwaita/scalable/devices/battery-symbolic.svg
 share/icons/Adwaita/scalable/devices/camera-photo-symbolic.svg
 share/icons/Adwaita/scalable/devices/camera-video-symbolic.svg
@@ -2644,6 +2657,13 @@ share/icons/Adwaita/scalable/status/airplane-mode-symbolic.svg
 share/icons/Adwaita/scalable/status/alarm-symbolic.svg
 share/icons/Adwaita/scalable/status/appointment-missed-symbolic.svg
 share/icons/Adwaita/scalable/status/appointment-soon-symbolic.svg
+share/icons/Adwaita/scalable/status/audio-volume-high-symbolic.svg
+share/icons/Adwaita/scalable/status/audio-volume-low-symbolic.svg
+share/icons/Adwaita/scalable/status/audio-volume-medium-symbolic.svg
+share/icons/Adwaita/scalable/status/audio-volume-muted-symbolic.svg
+share/icons/Adwaita/scalable/status/audio-volume-overamplified-symbolic.svg
+share/icons/Adwaita/scalable/status/auth-sim-locked-symbolic.svg
+share/icons/Adwaita/scalable/status/auth-sim-missing-symbolic.svg
 share/icons/Adwaita/scalable/status/avatar-default-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-caution-charging-symbolic.svg
 share/icons/Adwaita/scalable/status/battery-caution-symbolic.svg
@@ -2751,6 +2771,7 @@ share/icons/Adwaita/scalable/status/radio-mixed-symbolic.svg
 share/icons/Adwaita/scalable/status/radio-symbolic.svg
 share/icons/Adwaita/scalable/status/rotation-allowed-symbolic.svg
 share/icons/Adwaita/scalable/status/rotation-locked-symbolic.svg
+share/icons/Adwaita/scalable/status/screen-shared-symbolic.svg
 share/icons/Adwaita/scalable/status/security-high-symbolic.svg
 share/icons/Adwaita/scalable/status/security-low-symbolic.svg
 share/icons/Adwaita/scalable/status/security-medium-symbolic.svg
