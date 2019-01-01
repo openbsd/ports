@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2018/11/08 12:47:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/01/01 18:00:54 danj Exp $
 
 COMMENT=	mail purpose library
 
 GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
-GH_TAGNAME=	1.9.1
+GH_TAGNAME=	1.9.2
 CATEGORIES=	mail devel
-REVISION=	1
 
-SHARED_LIBS +=  etpan                18.0     # 22.0
+SHARED_LIBS +=  etpan                18.1     # 23.0
 
 HOMEPAGE=	http://www.etpan.org/libetpan.html
 
