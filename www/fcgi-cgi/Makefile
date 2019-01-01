@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/07 07:54:29 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/01 11:44:12 ajacoutot Exp $
+
+BROKEN=		-static does not build with newer GLib
 
 COMMENT-main=	wrapper to run CGI applications via FastCGI
 COMMENT-static=	static-linked fcgi-cgi wrapper for chroot use
