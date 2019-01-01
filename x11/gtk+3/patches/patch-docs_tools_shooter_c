@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs_tools_shooter_c,v 1.1 2019/01/01 11:35:01 ajacoutot Exp $
+
+Index: docs/tools/shooter.c
+--- docs/tools/shooter.c.orig
++++ docs/tools/shooter.c
+@@ -170,7 +170,7 @@ take_window_shot (Window         child,
+       y_orig = 0;
+     }
+ 
+-  if (x_orig + width > gdk_screen_get_width (gdk_screen_get_dfeault ()))
++  if (x_orig + width > gdk_screen_get_width (gdk_screen_get_default ()))
+     width = gdk_screen_width () - x_orig;
+ 
+   if (y_orig + height > gdk_screen_get_height (gdk_screen_get_default ()))
