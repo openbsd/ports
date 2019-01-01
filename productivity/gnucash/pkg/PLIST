@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/07/11 12:09:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/01/01 17:04:04 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -300,11 +300,9 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/aging.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/balsheet-eg.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/business-reports.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/customer-summary.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/easy-invoice.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/eguile-gnc.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/eguile-html-utilities.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/eguile-utilities.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/fancy-invoice.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/hello-world.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/invoice.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/job-report.go
@@ -321,10 +319,8 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/report-system.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/collectors.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/report-collectors.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/
-lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/test-collectors.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/test-extras.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/test-load-report-system-module.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/test-report-utilities.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/report-system/test/test-test-extras.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports.go
@@ -354,10 +350,6 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/register.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/sx-summary.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-cash-flow.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-cashflow-barchart.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-standard-category-report.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-standard-net-barchart.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-standard-net-linechart.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/transaction.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/trial-balance.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-easy.go
@@ -422,7 +414,6 @@ lib/gnucash/scm/ccache/2.2/test-account.go
 lib/gnucash/scm/ccache/2.2/test-c-interface.go
 lib/gnucash/scm/ccache/2.2/test-create-account.go
 lib/gnucash/scm/ccache/2.2/test-split.go
-lib/gnucash/scm/ccache/2.2/test-test-extras.go
 lib/gnucash/scm/ccache/2.2/txf-de_DE.go
 lib/gnucash/scm/ccache/2.2/txf-help-de_DE.go
 lib/gnucash/scm/ccache/2.2/txf-help.go
@@ -436,8 +427,6 @@ lib/libgwengui-gtk3.so
 @man man/man1/gnc-fq-dump.1
 @man man/man1/gnc-fq-helper.1
 @man man/man1/gnucash.1
-share/appdata/
-share/appdata/gnucash.appdata.xml
 share/applications/gnucash.desktop
 share/doc/gnucash/
 share/doc/gnucash/AUTHORS
@@ -774,6 +763,7 @@ share/gnucash/accounts/de_AT/acctchrt_autoloan.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_business.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_common.gnucash-xea
+share/gnucash/accounts/de_AT/acctchrt_ekr2017.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_houseown.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_investment.gnucash-xea
 share/gnucash/accounts/de_AT/acctchrt_kids.gnucash-xea
@@ -1207,6 +1197,7 @@ share/gnucash/gtkbuilder/window-reconcile.glade
 share/gnucash/icons/
 share/gnucash/icons/hicolor/
 share/gnucash/icons/hicolor/128x128/
+share/gnucash/icons/hicolor/128x128/apps/
 share/gnucash/icons/hicolor/16x16/
 share/gnucash/icons/hicolor/16x16/actions/
 share/gnucash/icons/hicolor/16x16/actions/gnc-account-delete.png
@@ -1227,7 +1218,9 @@ share/gnucash/icons/hicolor/16x16/actions/gnc-jumpto.png
 share/gnucash/icons/hicolor/16x16/actions/gnc-split-trans.png
 share/gnucash/icons/hicolor/16x16/actions/gnc-sx-new.png
 share/gnucash/icons/hicolor/16x16/actions/gnc-transfer.png
+share/gnucash/icons/hicolor/16x16/apps/
 share/gnucash/icons/hicolor/22x22/
+share/gnucash/icons/hicolor/22x22/apps/
 share/gnucash/icons/hicolor/24x24/
 share/gnucash/icons/hicolor/24x24/actions/
 share/gnucash/icons/hicolor/24x24/actions/gnc-account-delete.png
@@ -1248,12 +1241,19 @@ share/gnucash/icons/hicolor/24x24/actions/gnc-jumpto.png
 share/gnucash/icons/hicolor/24x24/actions/gnc-split-trans.png
 share/gnucash/icons/hicolor/24x24/actions/gnc-sx-new.png
 share/gnucash/icons/hicolor/24x24/actions/gnc-transfer.png
+share/gnucash/icons/hicolor/24x24/apps/
 share/gnucash/icons/hicolor/256x256/
+share/gnucash/icons/hicolor/256x256/apps/
 share/gnucash/icons/hicolor/32x32/
+share/gnucash/icons/hicolor/32x32/apps/
 share/gnucash/icons/hicolor/48x48/
+share/gnucash/icons/hicolor/48x48/apps/
 share/gnucash/icons/hicolor/64x64/
+share/gnucash/icons/hicolor/64x64/apps/
 share/gnucash/icons/hicolor/96x96/
+share/gnucash/icons/hicolor/96x96/apps/
 share/gnucash/icons/hicolor/scalable/
+share/gnucash/icons/hicolor/scalable/apps/
 share/gnucash/jqplot/
 share/gnucash/jqplot/jqplot.BezierCurveRenderer.js
 share/gnucash/jqplot/jqplot.barRenderer.js
@@ -1336,11 +1336,9 @@ share/gnucash/scm/gnucash/report/balsheet-eg.eguile.scm
 share/gnucash/scm/gnucash/report/balsheet-eg.scm
 share/gnucash/scm/gnucash/report/business-reports.scm
 share/gnucash/scm/gnucash/report/customer-summary.scm
-share/gnucash/scm/gnucash/report/easy-invoice.scm
 share/gnucash/scm/gnucash/report/eguile-gnc.scm
 share/gnucash/scm/gnucash/report/eguile-html-utilities.scm
 share/gnucash/scm/gnucash/report/eguile-utilities.scm
-share/gnucash/scm/gnucash/report/fancy-invoice.scm
 share/gnucash/scm/gnucash/report/hello-world.scm
 share/gnucash/scm/gnucash/report/invoice.scm
 share/gnucash/scm/gnucash/report/job-report.scm
@@ -1359,10 +1357,8 @@ share/gnucash/scm/gnucash/report/report-system.scm
 share/gnucash/scm/gnucash/report/report-system/collectors.scm
 share/gnucash/scm/gnucash/report/report-system/report-collectors.scm
 share/gnucash/scm/gnucash/report/report-system/test/
-share/gnucash/scm/gnucash/report/report-system/test/test-collectors.scm
 share/gnucash/scm/gnucash/report/report-system/test/test-extras.scm
 share/gnucash/scm/gnucash/report/report-system/test/test-load-report-system-module.scm
-share/gnucash/scm/gnucash/report/report-system/test/test-report-utilities.scm
 share/gnucash/scm/gnucash/report/report-system/test/test-test-extras.scm
 share/gnucash/scm/gnucash/report/standard-reports/
 share/gnucash/scm/gnucash/report/standard-reports.scm
@@ -1392,10 +1388,6 @@ share/gnucash/scm/gnucash/report/standard-reports/register.scm
 share/gnucash/scm/gnucash/report/standard-reports/sx-summary.scm
 share/gnucash/scm/gnucash/report/standard-reports/test/
 share/gnucash/scm/gnucash/report/standard-reports/test/test-cash-flow.scm
-share/gnucash/scm/gnucash/report/standard-reports/test/test-cashflow-barchart.scm
-share/gnucash/scm/gnucash/report/standard-reports/test/test-standard-category-report.scm
-share/gnucash/scm/gnucash/report/standard-reports/test/test-standard-net-barchart.scm
-share/gnucash/scm/gnucash/report/standard-reports/test/test-standard-net-linechart.scm
 share/gnucash/scm/gnucash/report/standard-reports/transaction.scm
 share/gnucash/scm/gnucash/report/standard-reports/trial-balance.scm
 share/gnucash/scm/gnucash/report/stylesheet-easy.scm
@@ -1462,7 +1454,6 @@ share/gnucash/scm/test-account.scm
 share/gnucash/scm/test-c-interface.scm
 share/gnucash/scm/test-create-account.scm
 share/gnucash/scm/test-split.scm
-share/gnucash/scm/test-test-extras.scm
 share/gnucash/scm/txf-de_DE.scm
 share/gnucash/scm/txf-help-de_DE.scm
 share/gnucash/scm/txf-help.scm
@@ -1582,6 +1573,7 @@ share/locale/ur/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
+share/metainfo/gnucash.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
