@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.17 2018/12/30 19:08:25 espie Exp $
+# $OpenBSD: Sql.pm,v 1.18 2019/01/01 16:23:10 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -188,6 +188,17 @@ sub columns
 	return @{$self->{columns}};
 }
 
+sub column_names
+{
+	my $self = shift;
+	my @names;
+	for my $c ($self->columns) {
+		next if $c->is_key;
+		push(@names, $c->name);
+	}
+	return @names;
+}
+
 sub temp
 {
 	my $self = shift;
@@ -228,16 +239,11 @@ sub contents
 sub inserter
 {
 	my $self = shift;
-	my (@names, @i);
-	for my $c (@{$self->{columns}}) {
-		next if $c->is_key;
-		push(@names, $c->name);
-		push(@i, '?');
-	}
+	my @names = $self->column_names;
 	my $alt = $self->{ignore} ? " OR IGNORE" :
 	    ($self->{noreplace} ? "" : " OR REPLACE");
 	return "INSERT$alt INTO ".$self->name." (".
-	    join(', ', @names).") VALUES (".join(', ', @i).")";
+	    join(', ', @names).") VALUES (".join(', ', map {('?')} @names).")";
 }
 
 sub noreplace
@@ -484,7 +490,12 @@ sub reference_field
 		if (defined $k) {
 			return $k->name;
 		} else {
-			die "Can't reference $table";
+			my $parent = "???";
+			if (defined $self->{parent}) {
+				$parent = $self->{parent}->name;
+			}
+			die "Can't reference $table from field ".$self->name.
+			    " in $parent";
 		}
 	}
 }
