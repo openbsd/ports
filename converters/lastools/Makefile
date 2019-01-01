@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/01 18:00:01 landry Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20170108
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
 GH_TAGNAME =	f00fa125075ea984993057c5916d746cb605835c
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	converters textproc devel
 
@@ -14,10 +14,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
+#c++11
 COMPILER =		base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =	COMPILER="${CXX}" \
 		LINKER="${CXX}"
+# building with ports-gcc generates the following error: 
+# warning.h:32:2: error: #error This file requires compiler
+# and library support for the ISO C++ 2011 standard.
+CXXFLAGS +=	-std=c++11
 
 post-patch:
 	find ${WRKSRC} -name Makefile | xargs sed -i 's/-O3/${CXXFLAGS}/'
