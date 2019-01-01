@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/01 17:59:05 landry Exp $
 
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
-REVISION=	4
+REVISION=	5
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=late/}

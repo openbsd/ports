@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ball_h,v 1.1 2019/01/01 17:59:05 landry Exp $
+ball.h:113:19: error: 'NULL' was not declared in this scope
+Index: src/ball.h
+--- src/ball.h.orig
++++ src/ball.h
+@@ -25,6 +25,7 @@
+ class ball;
+ 
+ #include "square.h"
++#include <cstddef>
+ 
+ class ball_base
+ {
