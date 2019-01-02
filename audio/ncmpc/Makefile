@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2018/07/04 09:02:58 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2019/01/02 21:30:48 landry Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.30
+VER=			0.33
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
@@ -14,7 +14,7 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c glib-2.0 intl mpdclient>=1 ${COMPILER_LIBCXX} curses
+WANTLIB=		c intl mpdclient>=1 ${COMPILER_LIBCXX} curses pcre
 
 MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
 
@@ -28,17 +28,18 @@ BUILD_DEPENDS=		devel/gettext-tools \
 			textproc/py-sphinx
 
 LIB_DEPENDS=		devel/gettext \
-			devel/glib2 \
+			devel/pcre \
 			audio/libmpdclient>=2.4
 
-CONFIGURE_ARGS=		-Dlirc=false \
-			-Dlocale=true \
-			-Dmouse=true
+CONFIGURE_ARGS=		-Dlirc=disabled \
+			-Dhtml_manual=false \
+			-Dlocale=enabled \
+			-Dmouse=enabled
 CONFIGURE_ENV=		CPP=${CPP} \
 			CPPFLAGS="-D_GNU_SOURCE \
 				  -D_DEFAULT_SOURCE \
 				  -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ncmpc

@@ -1,32 +1,17 @@
-$OpenBSD: patch-doc_meson_build,v 1.1 2018/07/04 09:02:58 landry Exp $
+$OpenBSD: patch-doc_meson_build,v 1.2 2019/01/02 21:30:48 landry Exp $
 
 Index: doc/meson.build
 --- doc/meson.build.orig
 +++ doc/meson.build
-@@ -1,23 +1,13 @@
- sphinx = find_program('sphinx-build', required:false)
- if sphinx.found()
+@@ -30,9 +30,9 @@ endif
+ if get_option('manual')
    custom_target(
--    'HTML documentation',
--    output: 'html',
--    input: ['index.rst', 'conf.py'],
--    command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
--    build_by_default: true,
--    install: true,
--    install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
--  )
--
--  custom_target(
      'Manpage documentation',
 -    output: 'man',
 +    output: 'man1',
      input: ['index.rst', 'conf.py'],
--    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
-+    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
+-    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
++    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@'],
      build_by_default: true,
      install: true,
--    install_dir: get_option('datadir'),
-+    install_dir: get_option('mandir'),
-   )
- endif
- 
+     install_dir: get_option('mandir'),

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_screen_cxx,v 1.1 2018/07/04 09:02:58 landry Exp $
+$OpenBSD: patch-src_screen_cxx,v 1.2 2019/01/02 21:30:48 landry Exp $
 
 Because c++14 zomg woot woot
 
 Index: src/screen.cxx
 --- src/screen.cxx.orig
 +++ src/screen.cxx
-@@ -56,8 +56,8 @@ ScreenManager::MakePage(const struct screen_functions 
+@@ -48,8 +48,8 @@ ScreenManager::MakePage(const PageMeta &sf)
  		return i;
  
  	auto j = pages.emplace(&sf,

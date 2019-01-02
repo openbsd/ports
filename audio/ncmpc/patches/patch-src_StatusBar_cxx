@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_StatusBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+
+Index: src/StatusBar.cxx
+--- src/StatusBar.cxx.orig
++++ src/StatusBar.cxx
+@@ -44,7 +44,7 @@ StatusBar::StatusBar(boost::asio::io_service &io_servi
+ 
+ #ifdef ENABLE_COLORS
+ 	if (options.enable_colors)
+-		wbkgd(window.w, COLOR_PAIR(Style::STATUS));
++		wbkgd(window.w, COLOR_PAIR((int)Style::STATUS));
+ #endif
+ }
+ 

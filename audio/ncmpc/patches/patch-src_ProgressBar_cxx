@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ProgressBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+
+Index: src/ProgressBar.cxx
+--- src/ProgressBar.cxx.orig
++++ src/ProgressBar.cxx
+@@ -29,7 +29,7 @@ ProgressBar::ProgressBar(Point p, unsigned _width)
+ 	leaveok(window.w, true);
+ #ifdef ENABLE_COLORS
+ 	if (options.enable_colors)
+-		wbkgd(window.w, COLOR_PAIR(Style::PROGRESSBAR));
++		wbkgd(window.w, COLOR_PAIR((int)Style::PROGRESSBAR));
+ #endif
+ }
+ 

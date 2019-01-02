@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_TitleBar_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+
+Index: src/TitleBar.cxx
+--- src/TitleBar.cxx.orig
++++ src/TitleBar.cxx
+@@ -38,7 +38,7 @@ TitleBar::TitleBar(Point p, unsigned width)
+ 
+ #ifdef ENABLE_COLORS
+ 	if (options.enable_colors)
+-		wbkgd(window.w, COLOR_PAIR(Style::TITLE));
++		wbkgd(window.w, COLOR_PAIR((int)Style::TITLE));
+ #endif
+ }
+ 

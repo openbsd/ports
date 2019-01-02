@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/09/26 09:55:07 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/01/02 21:30:48 landry Exp $
 @bin bin/ncmpc
 @man man/man1/ncmpc.1
 share/doc/ncmpc/

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_screen_init_cxx,v 1.1 2019/01/02 21:30:48 landry Exp $
+
+Index: src/screen_init.cxx
+--- src/screen_init.cxx.orig
++++ src/screen_init.cxx
+@@ -54,8 +54,8 @@ ScreenManager::ScreenManager(boost::asio::io_service &
+ #ifdef ENABLE_COLORS
+ 	if (options.enable_colors) {
+ 		/* set background attributes */
+-		wbkgd(stdscr, COLOR_PAIR(Style::LIST));
+-		wbkgd(main_window.w, COLOR_PAIR(Style::LIST));
++		wbkgd(stdscr, COLOR_PAIR((int)Style::LIST));
++		wbkgd(main_window.w, COLOR_PAIR((int)Style::LIST));
+ 	}
+ #endif
+ }
