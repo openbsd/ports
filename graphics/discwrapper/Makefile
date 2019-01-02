@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:53 jca Exp $
+
+# lots of wxWidgets-related errors
+BROKEN=		./Database.h:60:9: error: unknown type name 'wxFontData'
 
 COMMENT=	disc cover designer
 

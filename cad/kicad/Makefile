@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/01/02 12:44:53 jca Exp $
+
+BROKEN=		/usr/local/include/wx-3.0/wx/strvararg.h:354:71: error: no member named 'value' in 'wxFormatStringSpecifierNonPodType<false>'
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components

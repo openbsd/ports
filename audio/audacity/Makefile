@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2018/12/05 20:19:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2019/01/02 12:44:53 jca Exp $
+
+BROKEN=		requires old wxWidgets: http://trac.wxwidgets.org/ticket/16300
 
 COMMENT=	free audio editor
 
