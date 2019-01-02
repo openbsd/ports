@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/07/29 15:05:35 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2019/01/02 14:14:05 rsadowski Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
@@ -63,6 +63,7 @@ lib/mlt/
 lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
+lib/mlt/libmltfrei0r.so
 lib/mlt/libmltgtk2.so
 lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
@@ -74,6 +75,7 @@ lib/mlt/libmltvmfx.so
 lib/mlt/libmltxml.so
 lib/pkgconfig/mlt++.pc
 lib/pkgconfig/mlt-framework.pc
+@man man/man1/melt.1
 share/mlt/
 share/mlt/avformat/
 share/mlt/avformat/blacklist.txt
@@ -131,6 +133,10 @@ share/mlt/feeds/PAL/data_fx.properties
 share/mlt/feeds/PAL/etv.properties
 share/mlt/feeds/PAL/example.properties
 share/mlt/feeds/PAL/obscure.properties
+share/mlt/frei0r/
+share/mlt/frei0r/blacklist.txt
+share/mlt/frei0r/not_thread_safe.txt
+share/mlt/frei0r/param_name_map.yaml
 share/mlt/gtk2/
 share/mlt/gtk2/consumer_gtk2_preview.yml
 share/mlt/gtk2/filter_rescale.yml
@@ -229,6 +235,9 @@ share/mlt/plus/filter_loudness_meter.yml
 share/mlt/plus/filter_lumakey.yml
 share/mlt/plus/filter_rgblut.yml
 share/mlt/plus/filter_sepia.yml
+share/mlt/plus/filter_spot_remover.yml
+share/mlt/plus/filter_text.yml
+share/mlt/plus/filter_timer.yml
 share/mlt/plus/producer_blipflash.yml
 share/mlt/plus/producer_count.yml
 share/mlt/plus/transition_affine.yml
@@ -250,6 +259,11 @@ share/mlt/presets/consumer/avformat/WMA
 share/mlt/presets/consumer/avformat/WMV
 share/mlt/presets/consumer/avformat/XDCAM-HD422
 share/mlt/presets/consumer/avformat/YouTube
+share/mlt/presets/consumer/avformat/alpha/
+share/mlt/presets/consumer/avformat/alpha/Quicktime Animation
+share/mlt/presets/consumer/avformat/alpha/Ut Video
+share/mlt/presets/consumer/avformat/alpha/vp8
+share/mlt/presets/consumer/avformat/alpha/vp9
 share/mlt/presets/consumer/avformat/atsc_1080i_50/
 share/mlt/presets/consumer/avformat/atsc_1080i_50/DNxHD
 share/mlt/presets/consumer/avformat/atsc_1080i_5994/
@@ -324,6 +338,7 @@ share/mlt/presets/consumer/avformat/lossless/
 share/mlt/presets/consumer/avformat/lossless/FFV1
 share/mlt/presets/consumer/avformat/lossless/H.264
 share/mlt/presets/consumer/avformat/lossless/HuffYUV
+share/mlt/presets/consumer/avformat/lossless/Ut Video
 share/mlt/presets/consumer/avformat/stills/
 share/mlt/presets/consumer/avformat/stills/BMP
 share/mlt/presets/consumer/avformat/stills/DPX
@@ -411,6 +426,8 @@ share/mlt/profiles/quarter_pal
 share/mlt/profiles/quarter_pal_wide
 share/mlt/profiles/sdi_486i_5994
 share/mlt/profiles/sdi_486p_2398
+share/mlt/profiles/square_1080p_30
+share/mlt/profiles/square_1080p_60
 share/mlt/profiles/square_ntsc
 share/mlt/profiles/square_ntsc_wide
 share/mlt/profiles/square_pal
