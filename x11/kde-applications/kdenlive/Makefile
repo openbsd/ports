@@ -6,6 +6,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU KF5Archive KF5Attica KF5Auth
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -33,6 +34,7 @@ RUN_DEPENDS +=	devel/kf5/breeze-icons \
 		graphics/ffmpeg \
 		misc/shared-mime-info \
 		multimedia/dvdauthor \
+		multimedia/frei0r-plugins \
 		multimedia/mlt,-gpl2 \
 		sysutils/cdrtools \
 		x11/qt5/qtquickcontrols
