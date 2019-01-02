@@ -1,11 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2019/01/02 16:03:54 bket Exp $
 
 Put our CFLAGS, CXXFLAGS, CPPFLAGS and LDFLAGS at the end so that we can
 override optimisations...
 
---- configure.orig	Thu May 24 13:31:45 2012
-+++ configure	Wed Aug 29 08:56:20 2012
-@@ -3352,10 +3352,10 @@ $as_echo "$as_me: WARNING: another compiler except for
+Index: configure
+--- configure.orig
++++ configure
+@@ -3381,10 +3381,10 @@ $as_echo "$as_me: WARNING: another compiler except for
    MYCFLAGS=""
    MYCXXFLAGS=""
  fi
@@ -20,7 +21,7 @@ override optimisations...
  
  # Byte order
  
-@@ -4554,9 +4554,7 @@ then
+@@ -4583,9 +4583,7 @@ then
      MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.dylib"
      MYLDLIBPATHENV="DYLD_LIBRARY_PATH"
    else
