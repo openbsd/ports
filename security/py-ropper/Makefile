@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/04 05:31:15 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/02 06:33:17 rpointel Exp $
 
 COMMENT =	rop gadget finder and binary information tool
 
-MODPY_EGG_VERSION =	1.11.6
+MODPY_EGG_VERSION =	1.11.10
 DISTNAME =	ropper-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -25,5 +25,9 @@ RUN_DEPENDS =	devel/py-filebytes${MODPY_FLAVOR} \
 
 FLAVORS =	python3
 FLAVOR ?=
+
+# permit installing py- and py3- on same machine
+post-install:
+	mv ${PREFIX}/bin/ropper ${PREFIX}/bin/ropper${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
