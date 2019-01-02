@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/08/11 08:57:16 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/01/02 21:29:30 landry Exp $
 include/mpd/
 include/mpd/async.h
 include/mpd/audio_format.h
@@ -14,6 +14,7 @@ include/mpd/idle.h
 include/mpd/list.h
 include/mpd/message.h
 include/mpd/mixer.h
+include/mpd/mount.h
 include/mpd/output.h
 include/mpd/pair.h
 include/mpd/parser.h

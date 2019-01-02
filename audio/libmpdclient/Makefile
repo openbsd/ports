@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2018/04/23 16:49:48 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/02 21:29:30 landry Exp $
 
 COMMENT=		library for interfacing MPD
 
-VER=			2.14
+VER=			2.16
 DISTNAME=		libmpdclient-${VER}
-SHARED_LIBS=		mpdclient 3.0	# 2.13
+SHARED_LIBS=		mpdclient 3.1	# 2.13
 CATEGORIES=		audio
 HOMEPAGE=		https://www.musicpd.org/libs/libmpdclient/
 
