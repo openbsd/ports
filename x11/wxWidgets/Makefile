@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/01/02 12:41:48 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2019/01/02 13:09:21 jca Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -7,6 +7,7 @@ V =		3.0.4
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
+REVISION-main =	0
 
 CATEGORIES =	x11
 MASTER_SITES =	https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
@@ -98,7 +99,7 @@ CONFIGURE_ARGS += --enable-debug
 
 pre-configure:
 	perl -pi -e 's/\r$$//' ${WRKSRC}/src/stc/gen_iface.py
-	${SUBST_CMD} ${WRKSRC}/Makefile.in
+	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/wx-config.in
 	${MODPYTHON_pre-configure}
 
 post-install:

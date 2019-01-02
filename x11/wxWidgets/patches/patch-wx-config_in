@@ -1,15 +1,14 @@
-$OpenBSD: patch-wx-config_in,v 1.5 2019/01/02 12:41:48 jca Exp $
+$OpenBSD: patch-wx-config_in,v 1.6 2019/01/02 13:09:21 jca Exp $
 
 Index: wx-config.in
 --- wx-config.in.orig
 +++ wx-config.in
-@@ -1146,7 +1146,8 @@ lib_flags_for()
+@@ -1146,7 +1146,7 @@ lib_flags_for()
          decho "             alllibs = $_all_libs"
      fi
  
 -    echo $_all_ldflags $_wxlibs $_all_libs
-+    # XXX kludge, don't commit
-+    echo $_all_ldflags -L/usr/X11R6/lib $_wxlibs $_all_libs
++    echo $_all_ldflags -L${X11BASE}/lib $_wxlibs $_all_libs
  }
  
  # this is the strict subset of the above function which returns only the
