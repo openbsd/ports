@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.19 2019/01/02 15:37:51 espie Exp $
+# $OpenBSD: Sql.pm,v 1.20 2019/01/02 22:49:42 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -73,7 +73,7 @@ sub add_to
 sub prepend
 {
 	my $self = shift;
-	for my $o (@_) {
+	for my $o (reverse @_) {
 		$o->prepend_to($self);
 	}
 	return $self;
@@ -744,4 +744,12 @@ sub equation
 	return $join->alias.".".$self->{a}."=".$self->{b};
 }
 
+package Sql::IsNull;
+our @ISA = qw(Sql::Equal);
+sub equation
+{
+	my ($self, $join, $view) = @_;
+
+	return $join->alias.".".$self->{a}." IS NULL";
+}
 1;
