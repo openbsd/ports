@@ -1,9 +1,9 @@
-$OpenBSD: patch-auto_def,v 1.4 2018/05/12 12:50:25 sthen Exp $
+$OpenBSD: patch-auto_def,v 1.5 2019/01/02 21:57:31 sthen Exp $
 
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -386,12 +386,14 @@ if {[get-define want-smime]} {
+@@ -386,6 +386,7 @@ if {[get-define want-smime]} {
  # SASL
  if {[get-define want-sasl]} {
    foreach sasl_lib {sasl2 sasl} {
@@ -11,10 +11,25 @@ Index: auto.def
      if {[check-inc-and-lib sasl [opt-val with-sasl $prefix] \
                             sasl/sasl.h sasl_encode64 $sasl_lib]} {
        # RHEL6 doesn't have this function yet
-       cc-check-functions sasl_client_done
+@@ -393,6 +394,7 @@ if {[get-define want-sasl]} {
        define USE_SASL
        break
-+    }
      }
++    }
    }
    if {![get-define USE_SASL]} {
+     user-error "Unable to find SASL"
+@@ -898,13 +900,6 @@ set bare_rep {
+ }
+ set str_rep {
+   PACKAGE_VERSION
+-}
+-
+-###############################################################################
+-# Use ccache - don't do it earlier than here
+-if {[get-define CCACHE] ne {none}} {
+-  define CC "[get-define CCACHE] [get-define CC]"
+-  define CC_FOR_BUILD "[get-define CCACHE] [get-define CC_FOR_BUILD]"
+ }
+ 
+ ###############################################################################
