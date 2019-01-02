@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2019/01/02 12:44:07 jca Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15543,7 +15543,7 @@ if test x$WX_CONFIG == xnot_found; then
+ fi
+ CXXFLAGS="$(wx-config --cxxflags)"
+ AM_CXXFLAGS="$(wx-config --cxxflags)"
+-WX_LIBS="$(wx-config --libs)"
++WX_LIBS="$(wx-config --libs std,aui)"
+ 
+ 
+ # Checks for header files.

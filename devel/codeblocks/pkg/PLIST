@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/01/02 12:44:06 jca Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks
@@ -207,10 +207,6 @@ include/codeblocks/wxContribItems/wxMathPlot/
 include/codeblocks/wxContribItems/wxMathPlot/mathplot.h
 include/codeblocks/wxContribItems/wxSpeedButton/
 include/codeblocks/wxContribItems/wxSpeedButton/wxSpeedButton.h
-include/codeblocks/wxContribItems/wxTreeList/
-include/codeblocks/wxContribItems/wxTreeList/include/
-include/codeblocks/wxContribItems/wxTreeList/include/wx/
-include/codeblocks/wxContribItems/wxTreeList/include/wx/treelistctrl.h
 include/codeblocks/wxContribItems/wxchart/
 include/codeblocks/wxContribItems/wxchart/include/
 include/codeblocks/wxContribItems/wxchart/include/wx/
@@ -267,20 +263,6 @@ include/codeblocks/wxContribItems/wxthings/include/wx/
 include/codeblocks/wxContribItems/wxthings/include/wx/things/
 include/codeblocks/wxContribItems/wxthings/include/wx/things/thingdef.h
 include/codeblocks/wxContribItems/wxthings/include/wx/things/toggle.h
-include/codeblocks/wxpropgrid/
-include/codeblocks/wxpropgrid/include/
-include/codeblocks/wxpropgrid/include/wx/
-include/codeblocks/wxpropgrid/include/wx/propgrid/
-include/codeblocks/wxpropgrid/include/wx/propgrid/advprops.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/editors.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/extras.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/manager.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/odcombo.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/pg_dox_mainpage.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/propdev.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/propgrid.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/props.h
-include/codeblocks/wxpropgrid/include/wx/propgrid/xh_propgrid.h
 include/codeblocks/wxscintilla/
 include/codeblocks/wxscintilla/include/
 include/codeblocks/wxscintilla/include/wx/
@@ -465,9 +447,6 @@ lib/codeblocks/wxContribItems/libwxmathplot.la
 lib/codeblocks/wxContribItems/libwxspeedbutton.a
 lib/codeblocks/wxContribItems/libwxspeedbutton.la
 @lib lib/codeblocks/wxContribItems/libwxspeedbutton.so.${LIBwxspeedbutton_VERSION}
-lib/codeblocks/wxContribItems/libwxtreelist.a
-lib/codeblocks/wxContribItems/libwxtreelist.la
-@lib lib/codeblocks/wxContribItems/libwxtreelist.so.${LIBwxtreelist_VERSION}
 lib/libcodeblocks.a
 lib/libcodeblocks.la
 @lib lib/libcodeblocks.so.${LIBcodeblocks_VERSION}
@@ -483,7 +462,6 @@ lib/pkgconfig/cb_wximagepanel.pc
 lib/pkgconfig/cb_wxled.pc
 lib/pkgconfig/cb_wxmathplot.pc
 lib/pkgconfig/cb_wxspeedbutton.pc
-lib/pkgconfig/cb_wxtreelist.pc
 lib/pkgconfig/codeblocks.pc
 lib/pkgconfig/wxsmith-contrib.pc
 lib/pkgconfig/wxsmith.pc

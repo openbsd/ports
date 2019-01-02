@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/02 12:44:07 jca Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/01/02 12:44:07 jca Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2016.2.0
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -30,15 +30,15 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half Iex IlmImf IlmThread
+WANTLIB += Imath X11 boost_filesystem-mt boost_system-mt c exiv2
+WANTLIB += fftw3 jpeg lcms2 m pano13 png16 python2.7 sqlite3 tiff
+WANTLIB += vigraimpex wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += z
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
-WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread X11
-WANTLIB += boost_filesystem-mt boost_system-mt c exiv2 fftw3
-WANTLIB += jpeg lcms2  lensfun m pano13>=3.0
-WANTLIB += png pthread sqlite3 tiff vigraimpex wx_base>=3
-WANTLIB += wx_base_net>=3 wx_base_xml>=3 wx_gtk2_adv>=3
-WANTLIB += wx_gtk2_aui>=3 wx_gtk2_core>=3 wx_gtk2_gl>=3
-WANTLIB += wx_gtk2_qa wx_gtk2_html>=3 wx_gtk2_xrc>=3 z ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += lensfun
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
@@ -59,7 +59,7 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
 			graphics/vigra \
-			x11/wxWidgets>=2.8.12p7
+			x11/wxWidgets>=3.0.4
 
 MODULES =		devel/cmake lang/python
 COMPILER =		base-clang ports-gcc

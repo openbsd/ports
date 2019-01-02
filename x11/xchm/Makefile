@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/02 12:44:07 jca Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.23
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel textproc x11
 
@@ -15,13 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
 
 LIB_DEPENDS=	devel/chmlib \
-		x11/wxWidgets>=2.6.3
+		x11/wxWidgets>=3.0.4
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-WANTLIB += m c ${COMPILER_LIBCXX} pthread chm wx_base_xml wx_gtk2_qa wx_base_odbc
-WANTLIB += wx_gtk2_html wx_base wx_gtk2_adv wx_gtk2_xrc wx_gtk2_core
-WANTLIB += wx_base_net wx_gtk2_dbgrid wx_gtk2_aui wx_gtk2_richtext
+WANTLIB += ${COMPILER_LIBCXX} c chm m wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
+WANTLIB += wx_gtk3u_xrc-3.0
 
 COMPILER =		base-clang ports-gcc base-gcc
 

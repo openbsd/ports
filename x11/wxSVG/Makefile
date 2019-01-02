@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/01/02 12:44:07 jca Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -7,28 +7,28 @@ EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
-SHARED_LIBS+=		wxsvg	3.3
+SHARED_LIBS+=		wxsvg	4.0
 
 HOMEPAGE=		http://wxsvg.sourceforge.net/
 
 # Modified LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SDL SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 avcodec avformat avutil bz2 c cairo crypto
-WANTLIB += exif expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gsm gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl iodbc
-WANTLIB += jpeg m mp3lame mspack ogg opus pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread fribidi
+WANTLIB += ICE SDL2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += atspi avcodec avformat avutil bz2 c cairo cairo-gobject
+WANTLIB += crypto dbus-1 epoxy exif expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gsm gthread-2.0 gtk-3 harfbuzz
+WANTLIB += iconv intl jpeg m mp3lame mspack notify ogg opus pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 samplerate
 WANTLIB += sndio speex ssl swresample swscale tiff usbhid vorbis
-WANTLIB += vorbisenc vpx wx_base wx_base_net wx_base_odbc wx_base_xml
-WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-WANTLIB += x264 x265 xcb xcb-render xcb-shm xvidcore z
+WANTLIB += vorbisenc vpx wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
+WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 x264 x265 xcb xcb-render
+WANTLIB += xcb-shm xvidcore z
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
@@ -41,7 +41,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS=		graphics/cairo \
 			graphics/ffmpeg \
 			graphics/libexif \
-			x11/wxWidgets
+			x11/wxWidgets>=3.0.4
 
 CONFIGURE_STYLE=	gnu
 

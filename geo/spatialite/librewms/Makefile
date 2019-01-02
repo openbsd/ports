@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/02 12:44:07 jca Exp $
 
 COMMENT =	WMS viewer built on top of spatialite and rasterlite2
 DISTNAME =	librewms-1.0.0
-REVISION =	7
+REVISION =	8
 
 # Licence: GPLv3
 
@@ -11,18 +11,21 @@ LIB_DEPENDS +=	x11/wxWidgets \
 		geo/spatialite/libspatialite \
 		geo/spatialite/librasterlite2
 RUN_DEPENDS +=	devel/desktop-file-utils
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo crypto curl
-WANTLIB += expat ffi fontconfig freetype freexl gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 geos geos_c geotiff gif gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz iconv intl iodbc jpeg lzma m mspack nghttp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png proj pthread
-WANTLIB += rasterlite2 sndio spatialite sqlite3 ssl ${COMPILER_LIBCXX}
-WANTLIB += tiff usbhid webp wx_base wx_base_net wx_base_odbc wx_base_xml
-WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += crypto curl dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += freexl fribidi gdk-3 gdk_pixbuf-2.0 geos geos_c geotiff
+WANTLIB += gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl jpeg lzma m mspack
+WANTLIB += nghttp2 notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png16 proj rasterlite2 samplerate sndio
+WANTLIB += spatialite sqlite3 ssl tiff usbhid webp wx_baseu-3.0
+WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
+WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

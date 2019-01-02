@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/29 19:22:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/02 12:44:07 jca Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -11,7 +11,7 @@ PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
 REVISION-main =		8
-REVISION-gui =		6
+REVISION-gui =		7
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -25,11 +25,12 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES =	-main -gui
 WANTLIB +=		c pthread
-WANTLIB-gui += 		${WANTLIB} m ${COMPILER_LIBCXX}
-WANTLIB-gui += 		wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv
-WANTLIB-gui += 		wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html
-WANTLIB-gui += 		wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-LIB_DEPENDS-gui +=	x11/wxWidgets
+WANTLIB-gui +=		${WANTLIB} m ${COMPILER_LIBCXX}
+WANTLIB-gui +=		wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB-gui +=		wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
+WANTLIB-gui +=		wx_gtk3u_xrc-3.0
+
+LIB_DEPENDS-gui +=	x11/wxWidgets>=3.0.4
 RUN_DEPENDS-gui +=	${PKGPATH},-main
 
 USE_GMAKE =		Yes

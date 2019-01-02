@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2019/01/02 12:44:07 jca Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -15380,7 +15380,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ CXXFLAGS="$(wx-config --cxxflags)"
+ AM_CXXFLAGS="$(wx-config --cxxflags)"
+-WX_LIBS="$(wx-config --libs)"
++WX_LIBS="$(wx-config --libs std,aui)"
+ 
+ 
+ # Checks for header files.

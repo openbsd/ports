@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:06 jca Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-44-src
 PKGNAME =		${DISTNAME:L:S/-src//}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games x11
 
@@ -13,11 +13,11 @@ HOMEPAGE =		http://www.scorched3d.co.uk/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		GL GLEW GLU c expat freetype m pthread ${COMPILER_LIBCXX} z
-WANTLIB +=		SDL SDL_net alut fftw3f jpeg openal png ogg vorbisfile
-WANTLIB +=		wx_base wx_base_net wx_base_odbc wx_base_xml vorbis
-WANTLIB +=		wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB +=		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL SDL_net alut c expat
+WANTLIB += fftw3f freetype jpeg m ogg openal png16 vorbis vorbisfile
+WANTLIB += wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
+WANTLIB += wx_gtk3u_xrc-3.0 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -31,7 +31,7 @@ LIB_DEPENDS =		audio/openal \
 			devel/sdl-net \
 			graphics/glew \
 			math/fftw3,float \
-			x11/wxWidgets
+			x11/wxWidgets>=3.0.4
 RUN_DEPENDS =		devel/xdg-utils
 
 CONFIGURE_STYLE =	gnu

@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/02 12:44:07 jca Exp $
 
 COMMENT =	minimalistic GIS on top of spatialite and rasterlite
 PROJECT =	spatialite_gis
 DISTNAME =	${PROJECT}-1.0.0c
-REVISION=	7
+REVISION=	8
 
 LIB_DEPENDS +=	print/libharu \
 		databases/sqlite3 \
-		x11/wxWidgets \
+		x11/wxWidgets>=3.0.4 \
 		geo/spatialite/libspatialite \
 		geo/spatialite/librasterlite
 RUN_DEPENDS +=	devel/desktop-file-utils
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += expat ffi fontconfig freetype freexl gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += geos geos_c geotiff gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 hpdf graphite2 harfbuzz iconv intl
-WANTLIB += iodbc jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png proj pthread rasterlite
-WANTLIB += sndio spatialite sqlite3 ${COMPILER_LIBCXX} tiff usbhid wx_base
-WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
-WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
-WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
-WANTLIB += z lzma xml2
+
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype freexl fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geos geos_c geotiff gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz hpdf iconv intl jpeg lzma m mspack notify
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png16 proj rasterlite samplerate sndio spatialite sqlite3
+WANTLIB += tiff usbhid wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

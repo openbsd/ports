@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/01/02 12:44:07 jca Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	10
+REVISION =	11
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -34,7 +34,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 BUILD_DEPENDS =		devel/bison \
 			devel/gettext-tools
 
-commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
+commonLIB_DEPENDS =	x11/wxWidgets>=3.0.4 \
 			net/libupnp>=1.6.6
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
@@ -53,14 +53,16 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 commonWANTLIB =		c ixml m pthread ${COMPILER_LIBCXX} threadutil upnp \
-			wx_base wx_base_net z
+			z wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
 			GeoIP X11 cryptopp fontconfig tiff webp \
-			freetype gd iconv jpeg png wx_gtk2_adv wx_gtk2_core
+			freetype gd iconv jpeg png16 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
-			cryptopp readline termcap
+			cryptopp readline
+
 WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
-			iconv intl png readline termcap
+			iconv intl png16 readline
 
 USE_GMAKE =		Yes
 

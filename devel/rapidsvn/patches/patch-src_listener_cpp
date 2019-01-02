@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_listener_cpp,v 1.3 2019/01/02 12:44:06 jca Exp $
+
+wxwidgets: wxOPEN was deprecated, use wxFD_OPEN
+
+Index: src/listener.cpp
+--- src/listener.cpp.orig
++++ src/listener.cpp
+@@ -167,7 +167,7 @@ struct Listener::Data (public)
+     wxMutexLocker lock(mutex);
+     wxString localCertFile = wxFileSelector(
+                                _("Select Certificate File"), wxT(""), wxT(""), wxT(""),
+-                               wxT("*.*"), wxOPEN | wxFILE_MUST_EXIST, parent);
++                               wxT("*.*"), wxFD_OPEN | wxFD_FILE_MUST_EXIST, parent);
+     LocalToUtf8(localCertFile, certFile);
+ 
+     dataReceived = !localCertFile.empty();

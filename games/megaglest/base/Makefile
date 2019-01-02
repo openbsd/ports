@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2018/12/10 14:39:17 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/02 12:44:06 jca Exp $
 
 COMMENT =		3D real-time strategy game
 GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}
-REVISION =		2
+REVISION =		3
 
 WANTLIB += GL GLEW GLU ICE SDL2 SM X11 Xext c crypto curl fontconfig
-WANTLIB += freetype fribidi ftgl glib-2.0 intl ircclient jpeg m
-WANTLIB += miniupnpc nghttp2 openal png pthread ssl vlc vlccore
-WANTLIB += vorbisfile wx_base wx_gtk2_core wx_gtk2_gl z
+WANTLIB += freetype fribidi ftgl glib-2.0 intl ircclient jpeg
+WANTLIB += m miniupnpc nghttp2 openal png16 ssl vlc vlccore vorbisfile
+WANTLIB += wx_baseu-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0 z
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -25,7 +25,7 @@ LIB_DEPENDS =		audio/openal \
 			net/libircclient \
 			net/miniupnp/miniupnpc \
 			x11/vlc,-main \
-			x11/wxWidgets
+			x11/wxWidgets>=3.0.4
 
 CONFIGURE_ARGS = 	-DBUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS=0 \
 			-DFORCE_LUA_VERSION=${MODLUA_VERSION} \

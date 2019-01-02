@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/01/02 12:44:06 jca Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -6,7 +6,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	11
+REVISION=	12
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -19,21 +19,21 @@ MASTER_SITES=	${HOMEPAGE}download/release/${VERSION}/
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm apr-1 aprutil-1
-WANTLIB += atk-1.0 c cairo db expat ffi fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl iodbc jpeg
-WANTLIB += m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread sasl2 serf-1 sndio
-WANTLIB += sqlite3 ${COMPILER_LIBCXX} svn_client-1 svn_delta-1 svn_diff-1
-WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1
-WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
-WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_base
-WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
-WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
-WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += apr-1 aprutil-1 atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject db dbus-1 epoxy expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv intl jpeg lz4 m mspack notify pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 samplerate
+WANTLIB += sasl2 serf-1 sndio sqlite3 svn_client-1 svn_delta-1
+WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
+WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_baseu-3.0
+WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
+WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -41,7 +41,7 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	devel/gettext-tools
 
-LIB_DEPENDS=	x11/wxWidgets \
+LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		devel/subversion \
 		databases/sqlite3
 CONFIGURE_STYLE=gnu

@@ -1,22 +1,19 @@
-$OpenBSD: patch-src_client_client_SecureID_cpp,v 1.3 2017/11/05 08:51:46 kirby Exp $
+$OpenBSD: patch-src_client_client_SecureID_cpp,v 1.4 2019/01/02 12:44:07 jca Exp $
 
 the comment portion is evil
 
 Index: src/client/client/SecureID.cpp
 --- src/client/client/SecureID.cpp.orig
 +++ src/client/client/SecureID.cpp
-@@ -75,7 +75,10 @@ std::string SecureID::GetPrivateKey(void)
- 
+@@ -76,6 +76,7 @@ std::string SecureID::GetPrivateKey(void)
  #include <unistd.h>
  #include <sys/ioctl.h>
-+#include <sys/types.h>
-+#include <sys/socket.h>
  #include <net/if.h>
 +#include <unistd.h>
  
  std::string SecureID::GetPrivateKey(void)
  {
-@@ -110,6 +113,7 @@ std::string SecureID::GetPrivateKey(void)
+@@ -110,6 +111,7 @@ std::string SecureID::GetPrivateKey(void)
  
  	if_freenameindex(NameList); //free the memory
  
@@ -24,7 +21,7 @@ Index: src/client/client/SecureID.cpp
  	strcpy (dev.ifr_name, InterfaceName.c_str()); //select from the name
  	if (ioctl(sock, SIOCGIFHWADDR, &dev) < 0) //get the interface data
  	{
-@@ -123,6 +127,7 @@ std::string SecureID::GetPrivateKey(void)
+@@ -123,6 +125,7 @@ std::string SecureID::GetPrivateKey(void)
          if (i != 5) Key += ':';
      }
  	close(sock);

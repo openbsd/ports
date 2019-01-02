@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/17 13:40:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/02 12:44:07 jca Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
@@ -12,6 +12,7 @@ DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
+REVISION-wx=	0
 
 VERSION_SPEC=	>=18v0,<19v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -30,11 +31,12 @@ MULTI_PACKAGES = -main -wx
 WANTLIB =	m pthread
 WANTLIB-main =	${WANTLIB} c crypto kvm curses util
 
-WANTLIB-wx += ${WANTLIB} GL GLU ${COMPILER_LIBCXX} wx_base wx_base_xml wx_gtk2_adv
-WANTLIB-wx += wx_gtk2_aui wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_stc
-WANTLIB-wx += wx_gtk2_xrc
+WANTLIB-wx += ${WANTLIB} ${COMPILER_LIBCXX} GL GLU
+WANTLIB-wx += wx_baseu-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
+WANTLIB-wx += wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0
+WANTLIB-wx += wx_gtk3u_stc-3.0 wx_gtk3u_xrc-3.0
 
-LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
+LIB_DEPENDS-wx +=x11/wxWidgets>=3.0.4
 RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}
 
 DOC_DIR=	${PREFIX}/lib/erlang${MAJ_V}/

@@ -1,0 +1,82 @@
+$OpenBSD: patch-src_launcher_wxdialogs_SettingsDialog_cpp,v 1.1 2019/01/02 12:44:07 jca Exp $
+
+Patch from Debian:
+  From: Markus Koschany <apo@debian.org>
+  Date: Fri, 15 Jul 2016 18:01:36 +0200
+  Subject: wx3.0 compat
+
+  Make Scorched3D compatible with wxWidgets 3.0
+
+  Thanks to Olly Betts for the patch.
+  ---
+   src/launcher/wxdialogs/Display.cpp        | 10 +++++-----
+   src/launcher/wxdialogs/DisplayDialog.cpp  | 10 +++++-----
+   src/launcher/wxdialogs/SettingsDialog.cpp | 14 +++++++-------
+   3 files changed, 17 insertions(+), 17 deletions(-)
+
+Index: src/launcher/wxdialogs/SettingsDialog.cpp
+--- src/launcher/wxdialogs/SettingsDialog.cpp.orig
++++ src/launcher/wxdialogs/SettingsDialog.cpp
+@@ -105,7 +105,7 @@ void SettingsFrame::createMainPanel(bool server)
+ 	mainPanel_ = new wxPanel(book_, -1);
+ 	book_->AddPage(mainPanel_, wxT("Main"));
+ 	wxSizer *mainPanelSizer = new wxBoxSizer(wxVERTICAL);
+-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
++	wxSizer *sizer = new wxFlexGridSizer(0, 2, 2, 0);
+ 	mainPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	setters_.push_back(
+@@ -166,7 +166,7 @@ void SettingsFrame::createMoneyPanel()
+ {
+ 	moneyPanel_ = new wxPanel(book_, -1);
+ 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
+-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
++	wxSizer *sizer = new wxFlexGridSizer(0, 2, 2, 0);
+ 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	setters_.push_back(
+@@ -215,7 +215,7 @@ void SettingsFrame::createScorePanel()
+ {
+ 	scorePanel_ = new wxPanel(book_, -1);
+ 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
+-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
++	wxSizer *sizer = new wxFlexGridSizer(0, 2, 2, 0);
+ 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	setters_.push_back(
+@@ -249,7 +249,7 @@ void SettingsFrame::createWeaponsPanel()
+ {
+ 	weaponsPanel_ = new wxPanel(book_, -1);
+ 	wxSizer *ecoPanelSizer = new wxBoxSizer(wxVERTICAL);
+-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
++	wxSizer *sizer = new wxFlexGridSizer(0, 2, 2, 0);
+ 	ecoPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	setters_.push_back(
+@@ -286,7 +286,7 @@ void SettingsFrame::createEnvPanel()
+ {
+ 	envPanel_ = new wxPanel(book_, -1);
+ 	wxSizer *envPanelSizer = new wxBoxSizer(wxVERTICAL);
+-	wxSizer *sizer = new wxFlexGridSizer(2, 2);
++	wxSizer *sizer = new wxFlexGridSizer(0, 2, 2, 0);
+ 	envPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	setters_.push_back(
+@@ -337,7 +337,7 @@ void SettingsFrame::createLandPanel()
+ 	wxScrolledWindow *scrolledWindow = new wxScrolledWindow(landPanel_, -1, 
+ 		wxDefaultPosition, wxSize(225, 200));
+ 
+-	wxSizer *sizer = new wxFlexGridSizer(3, 3);
++	wxSizer *sizer = new wxFlexGridSizer(0, 3, 3, 0);
+ 	int i = 0;
+ 	std::list<LandscapeDefinitionsEntry> &defns =
+ 		landscapeDefinitions.getAllLandscapes();
+@@ -438,7 +438,7 @@ void SettingsFrame::createPlayersPanel()
+ 		wxT("Players are persistent for game"));
+ 	playersPanelSizer->Add(IDC_SERVER_RESIDUAL_CTRL, 0, wxALIGN_CENTER | wxTOP, 10);
+ 		
+-	wxSizer *sizer = new wxGridSizer(3, 3);
++	wxSizer *sizer = new wxGridSizer(0, 3, 3, 0);
+ 	playersPanelSizer->Add(sizer, 0, wxALL | wxALIGN_CENTER, 10);
+ 
+ 	for (int i=0; i<24; i++)

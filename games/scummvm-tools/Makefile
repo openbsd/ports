@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/01/02 12:44:07 jca Exp $
 
 COMMENT=	collection of various tools for scummvm
 V=		2.0.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm-tools/${V}/
@@ -14,12 +14,10 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c freetype iconv m ogg ${COMPILER_LIBCXX} z FLAC mad png pthread vorbis \
-			vorbisenc vorbisfile \
-			wx_base_net wx_base wx_base_odbc wx_base_xml \
-			wx_gtk2_adv wx_gtk2_aui wx_gtk2_core \
-			wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa \
-			wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += ${COMPILER_LIBCXX} FLAC c freetype iconv m mad ogg
+WANTLIB += png16 vorbis vorbisenc vorbisfile wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

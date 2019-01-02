@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/02 14:03:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/01/02 12:44:07 jca Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
@@ -13,8 +13,8 @@ PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
-REVISION-main=	11
-REVISION-wx=	3
+REVISION-main=	12
+REVISION-wx=	4
 
 VERSION_SPEC=	>=17v0,<18v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -31,13 +31,14 @@ CONFIGURE_ARGS+=--without-jinterface	\
 MULTI_PACKAGES = -main -wx
 
 WANTLIB =	m pthread
-WANTLIB-main =	${WANTLIB} c crypto ncurses util
+WANTLIB-main =	${WANTLIB} c crypto curses util
 
-WANTLIB-wx += ${WANTLIB} GL GLU ${COMPILER_LIBCXX} wx_base wx_base_xml wx_gtk2_adv
-WANTLIB-wx += wx_gtk2_aui wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_stc
-WANTLIB-wx += wx_gtk2_xrc
+WANTLIB-wx += ${WANTLIB} GL GLU ${COMPILER_LIBCXX}
+WANTLIB-wx += wx_baseu-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB-wx += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
+WANTLIB-wx += wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0 wx_gtk3u_xrc-3.0
 
-LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
+LIB_DEPENDS-wx +=x11/wxWidgets>=3.0.4
 RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}
 
 DOC_DIR=	${PREFIX}/lib/erlang${MAJ_V}/

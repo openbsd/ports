@@ -1,16 +1,30 @@
-$OpenBSD: patch-inc_My_Build_Any_wx_config_Bakefile_pm,v 1.3 2013/03/21 01:34:47 sthen Exp $
-use glob() to find all matching $lib.so.*, and take the last value
---- inc/My/Build/Any_wx_config_Bakefile.pm.orig	Mon Dec 28 19:10:47 2009
-+++ inc/My/Build/Any_wx_config_Bakefile.pm	Thu Mar 21 01:30:26 2013
-@@ -3,7 +3,6 @@ package My::Build::Any_wx_config_Bakefile;
- use strict;
- our @ISA = qw(My::Build::Any_wx_config::Base);
- use Config;
--
- sub awx_wx_config_data {
-     my $self = shift;
-     return $self->{awx_data} if $self->{awx_data};
-@@ -44,8 +43,13 @@ sub awx_wx_config_data {
+$OpenBSD: patch-inc_My_Build_Any_wx_config_Bakefile_pm,v 1.4 2019/01/02 12:44:06 jca Exp $
+
+Stop hardcoding shared libs names and versions from the OpenBSD port.
+Use the same naming scheme as elsewhere.
+Use glob() to find all matching $lib.so.*, and take the last value.
+
+Index: inc/My/Build/Any_wx_config_Bakefile.pm
+--- inc/My/Build/Any_wx_config_Bakefile.pm.orig
++++ inc/My/Build/Any_wx_config_Bakefile.pm
+@@ -25,15 +25,8 @@ sub awx_wx_config_data {
+                              @mono_libs :
+                              @My::Build::Any_wx_config::LIBRARIES );
+     my $libraries = $self->_call_wx_config( $arg );
++    my $libname_re = '-l(.*_(\w+)-.*)';
+ 
+-    my( $libname_re, $libsuffix );
+-    if( $^O eq 'openbsd' ) {
+-        $libname_re = '-l(.*_(\w+))';
+-        $libsuffix = '.1.0';
+-    } else {
+-        $libname_re = '-l(.*_(\w+)-.*)';
+-        $libsuffix = '';
+-    }
+     foreach my $lib ( grep { m/\-lwx/ } split ' ', $libraries ) {
+         $lib =~ m/$libname_re/ or die $lib;
+         my( $key, $name ) = ( $2, $1 );
+@@ -44,8 +37,13 @@ sub awx_wx_config_data {
          $key = 'core' if $key =~ m/^gtk2?[ud]{0,2}/
                                && $self->awx_is_monolithic
                                && $lib =~ m/(?:gtk2?|mac)[ud]{0,2}-/;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_filelist_ctrl_hpp,v 1.1 2019/01/02 12:44:06 jca Exp $
+
+Index: src/filelist_ctrl.hpp
+--- src/filelist_ctrl.hpp.orig
++++ src/filelist_ctrl.hpp
+@@ -118,7 +118,7 @@ class FileListCtrl : public wxListView (public)
+    * @param col column number
+    * @param width
+    */
+-  void
++  bool
+   SetColumnWidth(const int col, const int width);
+ 
+   /**

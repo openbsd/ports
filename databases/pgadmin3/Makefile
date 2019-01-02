@@ -1,40 +1,40 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/25 07:32:43 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2019/01/02 12:44:06 jca Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://www.pgadmin.org/
+HOMEPAGE=	https://www.pgadmin.org/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread ${COMPILER_LIBCXX} crypto z
+WANTLIB += ${COMPILER_LIBCXX} c crypto m pq wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0
+WANTLIB += wx_gtk3u_xrc-3.0 xml2 xslt z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin/pgadmin3/v$V/src/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-LIB_DEPENDS=	x11/wxWidgets>=2.8.7 \
+LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		databases/postgresql \
 		textproc/libxml>=2.4.8 \
 		textproc/libxslt
-WANTLIB +=      wx_base_xml wx_gtk2_html \
-		wx_gtk2_stc wx_gtk2_adv wx_gtk2_aui wx_gtk2_xrc \
-		wx_base_net wx_base wx_gtk2_core \
-		pq>=4 xml2>=6 xslt>=3
 
 BUILD_DEPENDS +=	databases/postgresql,-server \
 			textproc/py-sphinx
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} 
+CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} \
+		--with-wx-version=3.0
 
 USE_GMAKE=	Yes
 

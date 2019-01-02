@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/01/02 12:44:06 jca Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
 V=		17.12
-REVISION=	4
+REVISION=	5
 DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -32,17 +32,19 @@ HOMEPAGE=	http://www.codeblocks.org/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SDL SM X11 Xcomposite Xcursor
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 boost_system bz2 c cairo expat ffi fontconfig
-WANTLIB += freetype gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz hunspell-1.6 iconv intl iodbc
-WANTLIB += jpeg m mspack pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png sndio tiff usbhid wx_base wx_base_net
-WANTLIB += wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
-WANTLIB += wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
-WANTLIB += wx_gtk2_xrc xcb xcb-render xcb-shm z
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi boost_system bz2 c cairo
+WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz hunspell-1.6 iconv intl jpeg m mspack notify
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png16 samplerate sndio tiff usbhid wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_propgrid-3.0
+WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
@@ -52,7 +54,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		devel/boost \
 		sysutils/gamin \
 		textproc/hunspell \
-		x11/wxWidgets
+		x11/wxWidgets>=3.0.4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
