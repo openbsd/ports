@@ -1,15 +1,15 @@
-$OpenBSD: patch-wxPython_setup_py,v 1.4 2014/01/24 14:58:56 dcoppa Exp $
+$OpenBSD: patch-wxPython_setup_py,v 1.5 2019/01/02 12:43:19 jca Exp $
 
 Drop the building of the media extension to avoid the dependency
 on wxWidgets-media
 
---- wxPython/setup.py.orig	Wed Apr 13 23:06:34 2011
-+++ wxPython/setup.py	Fri Jan 24 15:00:06 2014
-@@ -411,24 +411,6 @@ ext = Extension('_html', swig_sources,
-                 )
+Index: wxPython/setup.py
+--- wxPython/setup.py.orig
++++ wxPython/setup.py
+@@ -424,21 +424,6 @@ ext = Extension('_html', swig_sources,
  wxpExtensions.append(ext)
  
--
+ 
 -mediaLibs = libs[:]
 -if not MONOLITHIC and findLib('media', libdirs):
 -    mediaLibs += makeLibName('media')
@@ -25,13 +25,11 @@ on wxWidgets-media
 -                **depends
 -                )
 -wxpExtensions.append(ext)
--
--
+ 
+ 
  swig_sources = run_swig(['webkit.i'], 'src', GENDIR, PKGDIR,
-                         USE_SWIG, swig_force, swig_args, swig_deps)
- ext = Extension('_webkit', swig_sources,
-@@ -1053,7 +1035,7 @@ if __name__ == "__main__":
-               )
+@@ -1011,7 +996,7 @@ if __name__ == "__main__":
+     if not PREP_ONLY:
  
          if not EGGing:
 -            if INSTALL_MULTIVERSION:

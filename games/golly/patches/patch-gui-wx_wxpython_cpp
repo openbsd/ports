@@ -1,7 +1,8 @@
-$OpenBSD: patch-gui-wx_wxpython_cpp,v 1.1 2013/09/09 15:43:25 landry Exp $
---- gui-wx/wxpython.cpp.orig	Wed Jun 12 21:23:56 2013
-+++ gui-wx/wxpython.cpp	Sun Aug 25 11:15:51 2013
-@@ -258,6 +258,8 @@ static void GetPythonExceptions()
+$OpenBSD: patch-gui-wx_wxpython_cpp,v 1.2 2019/01/02 12:43:19 jca Exp $
+Index: gui-wx/wxpython.cpp
+--- gui-wx/wxpython.cpp.orig
++++ gui-wx/wxpython.cpp
+@@ -237,6 +237,8 @@ static void GetPythonExceptions()
      Py_XDECREF(exmod);
  }
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-gui-wx_wxpython_cpp,v 1.1 2013/09/09 15:43:25 landry Exp $
  // handle for Python lib
  static wxDllType pythondll = NULL;
  
-@@ -267,15 +269,37 @@ static void FreePythonLib()
+@@ -246,15 +248,37 @@ static void FreePythonLib()
          wxDynamicLibrary::Unload(pythondll);
          pythondll = NULL;
      }

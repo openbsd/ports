@@ -1,7 +1,8 @@
-$OpenBSD: patch-wxPython_config_py,v 1.3 2011/05/22 08:21:34 dcoppa Exp $
---- wxPython/config.py.orig	Wed Oct  3 11:20:46 2007
-+++ wxPython/config.py	Wed Oct  3 11:21:52 2007
-@@ -132,7 +132,7 @@ UNDEF_NDEBUG = 1   # Python 2.2 on Unix/Linux by defau
+$OpenBSD: patch-wxPython_config_py,v 1.4 2019/01/02 12:43:19 jca Exp $
+Index: wxPython/config.py
+--- wxPython/config.py.orig
++++ wxPython/config.py
+@@ -131,7 +131,7 @@ UNDEF_NDEBUG = 1   # Python 2.2 on Unix/Linux by defau
  NO_SCRIPTS = 0     # Don't install the tool scripts
  NO_HEADERS = 0     # Don't install the wxPython *.h and *.i files
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-wxPython_config_py,v 1.3 2011/05/22 08:21:34 dcoppa Exp $
                     # can co-exist.  When turned on the wx and wxPython
                     # pacakges will be installed in a versioned subdir
                     # of site-packages, and a *.pth file will be
-@@ -145,7 +145,7 @@ INSTALL_MULTIVERSION = 1 # Install the packages such t
+@@ -144,7 +144,7 @@ INSTALL_MULTIVERSION = 1 # Install the packages such t
  FLAVOUR = ""       # Optional flavour string to be appended to VERSION
                     # in MULTIVERSION installs
  
@@ -19,7 +20,16 @@ $OpenBSD: patch-wxPython_config_py,v 1.3 2011/05/22 08:21:34 dcoppa Exp $
                     # ansi/unicode settings can optionally be added to the
                     # subdir path used in site-packages
  
-@@ -520,7 +520,7 @@ class wx_install_headers(distutils.command.install_hea
+@@ -171,7 +171,7 @@ SYS_WX_CONFIG = None # When installing an in tree buil
+                      # build_options.py, if it is different to that.  The default
+                      # is to use the value of WX_CONFIG.
+ 
+-WXPORT = 'gtk2'    # On Linux/Unix there are several ports of wxWidgets available.
++WXPORT = 'gtk3'    # On Linux/Unix there are several ports of wxWidgets available.
+                    # Setting this value lets you select which will be used for
+                    # the wxPython build.  Possibilities are 'gtk', 'gtk2',
+                    # 'gtk3', and 'x11'.  Currently only gtk2, and gtk3 work.
+@@ -512,7 +512,7 @@ class wx_install_headers(distutils.command.install_hea
          if not headers:
              return
  
@@ -28,30 +38,12 @@ $OpenBSD: patch-wxPython_config_py,v 1.3 2011/05/22 08:21:34 dcoppa Exp $
          #print "WXPREFIX is %s, root is %s" % (WXPREFIX, root)
          # hack for universal builds, which append i386/ppc
          # to the root
-@@ -529,7 +529,7 @@ class wx_install_headers(distutils.command.install_hea
-         for header, location in headers:
-             install_dir = os.path.normpath(root +
-                                            WXPREFIX +
--                                           '/include/wx-%d.%d/wx' % (VER_MAJOR, VER_MINOR) +
-+                                           '/include/wx' +
-                                            location)
-             self.mkpath(install_dir)
-             (out, _) = self.copy_file(header, install_dir)
-@@ -594,7 +594,7 @@ def find_data_files(srcdir, *wildcards, **kw):
- 
- def makeLibName(name):
-     if os.name == 'posix' or COMPILER == 'mingw32':
--        libname = '%s_%s-%s' % (WXBASENAME, name, WXRELEASE)
-+        libname = '%s_%s' % (WXBASENAME, name)
-     elif name:
-         libname = 'wxmsw%s%s_%s' % (WXDLLVER, libFlag(), name)
-     else:
-@@ -1013,8 +1013,6 @@ elif os.name == 'posix' or COMPILER == 'mingw32':
+@@ -1036,8 +1036,6 @@ elif os.name == 'posix' or COMPILER == 'mingw32':
      if debug:
-         cflags.append('-g')
+         cflags.append('-ggdb')
          cflags.append('-O0')
 -    else:
 -        cflags.append('-O3')
  
-     lflags = os.popen(WX_CONFIG + ' --libs', 'r').read()[:-1]
+     lflags = getWxConfigValue('--libs')
      MONOLITHIC = (lflags.find("_xrc") == -1)

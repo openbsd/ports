@@ -1,44 +1,48 @@
-# $OpenBSD: Makefile,v 1.56 2018/06/29 22:16:19 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2019/01/02 12:43:19 jca Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
-V=		3.8.1
+V=		3.39.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	11
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	net
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=filezilla/}
-HOMEPAGE=	http://www.filezilla-project.org/
+MASTER_SITES=	https://download.filezilla-project.org/client/
+HOMEPAGE=	https://www.filezilla-project.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += dbus-1 expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz hogweed
-WANTLIB += iconv idn idn2 intl jpeg m mspack nettle p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += sndio sqlite3 ${LIBCXX} tasn1 tiff unistring usbhid wx_base
-WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
-WANTLIB += wx_gtk2_html wx_gtk2_xrc xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += dbus-1 epoxy expat ffi filezilla fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gmp gnutls gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz hogweed iconv idn idn2 intl jpeg m mspack
+WANTLIB += nettle notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png16 pugixml samplerate sndio sqlite3
+WANTLIB += tasn1 tiff unistring usbhid wx_baseu-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
+WANTLIB += z
 
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
+		net/libfilezilla \
 		security/gnutls \
+		textproc/pugixml \
 		x11/dbus \
-		x11/wxWidgets>=2.8.6
+		x11/wxWidgets>=3.0.4
 
 BUILD_DEPENDS=	devel/cppunit \
 		devel/gettext-tools \

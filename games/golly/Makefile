@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/02 12:43:19 jca Exp $
 
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-2.7
-REVISION =	4
+PKGNAME =	golly-3.2
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
@@ -17,21 +16,22 @@ HOMEPAGE =	http://golly.sourceforge.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-LIB_DEPENDS =		x11/wxWidgets
+LIB_DEPENDS =		x11/wxWidgets>=3.0.4
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += ${COMPILER_LIBCXX} c m wx_base wx_base_net wx_base_odbc
-WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc z
-
-COMPILER =		base-clang ports-gcc base-gcc
-
+WANTLIB += ${COMPILER_LIBCXX} GL c m wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
+WANTLIB += wx_gtk3u_html-3.0 z
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.
 WANTLIB += perl util ${MODPY_WANTLIB}
 
+COMPILER =		base-clang ports-gcc base-gcc
+
 CONFIGURE_STYLE =		gnu
 CONFIGURE_ARGS =		--enable-unicode
+CONFIGURE_ENV =			CPPFLAGS="-I${X11BASE}/include" \
+				LDFLAGS="-L${X11BASE}/lib -R${X11BASE}/lib ${LDFLAGS}"
 SEPARATE_BUILD =		Yes
 
 FAKE_FLAGS =		dist_doc_DATA="" \
