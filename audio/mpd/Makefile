@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.117 2018/07/04 09:01:59 landry Exp $
+# $OpenBSD: Makefile,v 1.118 2019/01/02 21:32:32 landry Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.20.20
+VER =			0.20.23
 DISTNAME =		mpd-${VER}
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Main_cxx,v 1.5 2018/07/04 09:01:59 landry Exp $
+$OpenBSD: patch-src_Main_cxx,v 1.6 2019/01/02 21:32:32 landry Exp $
 
 Fix logic
 
 Index: src/Main.cxx
 --- src/Main.cxx.orig
 +++ src/Main.cxx
-@@ -115,7 +115,7 @@ static constexpr size_t MEGABYTE = 1024 * KILOBYTE;
+@@ -116,7 +116,7 @@ static constexpr size_t MEGABYTE = 1024 * KILOBYTE;
  static constexpr size_t DEFAULT_BUFFER_SIZE = 4 * MEGABYTE;
  
  static
