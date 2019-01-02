@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_qsynthOptions_cpp,v 1.2 2018/11/27 13:37:30 sebastia Exp $
+$OpenBSD: patch-src_qsynthOptions_cpp,v 1.3 2019/01/02 21:56:15 sebastia Exp $
 
 Some defaults for midi/audio to sndiod
 
 Index: src/qsynthOptions.cpp
 --- src/qsynthOptions.cpp.orig
 +++ src/qsynthOptions.cpp
-@@ -501,8 +501,9 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+@@ -487,8 +487,9 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
  	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
  	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
  #else
@@ -17,7 +17,7 @@ Index: src/qsynthOptions.cpp
  	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 64).toInt();
  	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 2).toInt();
  #endif
-@@ -510,7 +511,6 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+@@ -496,7 +497,6 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
  	pSetup->sJackName        = m_settings.value("/JackName", "qsynth").toString();
  	pSetup->bJackAutoConnect = m_settings.value("/JackAutoConnect", true).toBool();
  	pSetup->bJackMulti       = m_settings.value("/JackMulti", false).toBool();
