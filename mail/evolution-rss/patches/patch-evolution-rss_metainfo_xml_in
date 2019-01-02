@@ -1,0 +1,22 @@
+$OpenBSD: patch-evolution-rss_metainfo_xml_in,v 1.1 2019/01/02 13:07:49 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/evolution-rss/merge_requests/4
+
+Index: evolution-rss.metainfo.xml.in
+--- evolution-rss.metainfo.xml.in.orig
++++ evolution-rss.metainfo.xml.in
+@@ -1,12 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2014 Igor Gnatenko <i.gnatenko.brain@gmail.com> -->
+ <component type="addon">
+-<id>evolution-rss</id>
++<id>org.gnome.evolution-rss</id>
+ <extends>evolution.desktop</extends>
+ <_name>RSS Reader</_name>
+ <_summary>Read RSS feeds</_summary>
+ <url type="homepage">http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin</url>
+ <metadata_license>CC0-1.0</metadata_license>
+ <project_license>GPL-2.0 and GPL-2.0+</project_license>
+-<updatecontact>i.gnatenko.brain@gmail.com</updatecontact>
++<update_contact>i.gnatenko.brain@gmail.com</update_contact>
+ </component>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2019/01/02 13:07:49 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/evolution-rss/merge_requests/3
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -474,7 +474,7 @@ desktop_in_files = evolution-rss.desktop.in
+ desktopdir = $(datadir)/applications
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ appdata_in_files = evolution-rss.metainfo.xml.in
+-appdatadir = $(datadir)/appdata
++appdatadir = $(datadir)/metainfo
+ appdata_files = $(appdata_in_files:.xml.in=.xml)
+ dist_appdata_DATA = $(appdata_files)
+ INTLTOOL = \
