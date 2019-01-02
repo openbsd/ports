@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.527 2018/12/21 22:04:03 pirofti Exp $
+# $OpenBSD: Makefile,v 1.528 2019/01/02 20:31:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -114,7 +114,6 @@
      SUBDIR += libgpg-error
      SUBDIR += libgringotts
      SUBDIR += libgsasl
-     SUBDIR += libhttpseverywhere
      SUBDIR += libident
      SUBDIR += libksba
      SUBDIR += libmcrypt
