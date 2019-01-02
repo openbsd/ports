@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/05 21:49:09 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/02 12:23:27 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_EXTENSIONS_DIR}/gpgme_n.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/edit.rb
