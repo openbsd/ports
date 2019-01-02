@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/11/08 09:22:34 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/01/02 12:38:46 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -36,14 +36,16 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/updating-your-puppetfile.mkd
 ${GEM_LIB}/gems/${DISTNAME}/docker/
 ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/docker/ci/
-${GEM_LIB}/gems/${DISTNAME}/docker/ci/build
 ${GEM_LIB}/gems/${DISTNAME}/docker/ci/build.ps1
 ${GEM_LIB}/gems/${DISTNAME}/docker/distelli-manifest.yml
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/dockerfile_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
