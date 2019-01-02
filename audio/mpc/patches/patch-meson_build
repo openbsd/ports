@@ -1,20 +1,20 @@
-$OpenBSD: patch-meson_build,v 1.1 2018/04/23 16:51:50 landry Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/01/02 21:29:01 landry Exp $
 
 workaround broken iconv detection
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -12,16 +12,7 @@ conf = configuration_data()
- conf.set_quoted('PACKAGE', meson.project_name())
- conf.set_quoted('VERSION', meson.project_version())
+@@ -15,16 +15,7 @@ conf.set_quoted('VERSION', meson.project_version())
+ 
+ conf.set('HAVE_STRNDUP', cc.has_function('strndup', prefix: '#define _GNU_SOURCE\n#include <string.h>'))
  
 -iconv = get_option('iconv')
--if iconv == 'false'
+-if iconv.disabled()
 -  iconv = false
 -elif cc.has_function('iconv')
 -  iconv = true
--elif iconv == 'auto'
+-elif iconv.auto()
 -  iconv = false
 -else
 -  error('iconv() not available')
