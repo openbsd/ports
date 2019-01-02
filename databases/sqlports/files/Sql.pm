@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.18 2019/01/01 16:23:10 espie Exp $
+# $OpenBSD: Sql.pm,v 1.19 2019/01/02 15:37:51 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -305,6 +305,12 @@ sub add
 	return $self;
 }
 
+sub prepend
+{
+	my $self = shift;
+	$self->{select}->prepend(@_);
+	return $self;
+}
 sub sort
 {
 	my $self = shift;
@@ -380,7 +386,7 @@ sub contents
 		push(@parts, $self->indent($j->join_part, 4));
 		my @p = $j->on_part($self);
 		if (@p > 0) {
-			push(@parts, $self->indent("ON ".join(" AND", @p), 8));
+			push(@parts, $self->indent("ON ".join(" AND ", @p), 8));
 		}
 	}
 	if (defined $self->{group}) {
@@ -727,6 +733,15 @@ sub equation
 	my ($self, $join, $view) = @_;
 
 	return $join->alias.".".$self->{a}."=".$view->origin.".".$self->{b};
+}
+
+package Sql::Constant;
+our @ISA = qw(Sql::Equal);
+sub equation
+{
+	my ($self, $join, $view) = @_;
+
+	return $join->alias.".".$self->{a}."=".$self->{b};
 }
 
 1;
