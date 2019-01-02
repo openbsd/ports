@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2018/12/02 12:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/01/02 22:09:24 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -31,7 +31,6 @@ FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE=  gnu
-SEPARATE_BUILD=	  yes
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
