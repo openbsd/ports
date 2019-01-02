@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-media,v 1.4 2016/01/02 22:19:06 jasper Exp $
+@comment $OpenBSD: PLIST-media,v 1.5 2019/01/02 12:41:48 jca Exp $
 @conflict wxWidgets-gtk2-<2.8.12p11
-include/wx/mediactrl.h
-@lib lib/libwx_gtk2_media.so.${LIBwx_gtk2_media_VERSION}
+include/wx-3.0/wx/mediactrl.h
+@lib lib/libwx_gtk3u_media-3.0.so.${LIBwx_gtk3u_media-3.0_VERSION}

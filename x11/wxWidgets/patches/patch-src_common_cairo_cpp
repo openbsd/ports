@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_common_cairo_cpp,v 1.1 2019/01/02 12:41:48 jca Exp $
+
+Don't hardcode shared lib versions.
+
+Index: src/common/cairo.cpp
+--- src/common/cairo.cpp.orig
++++ src/common/cairo.cpp
+@@ -310,7 +310,7 @@ wxCairo::wxCairo()
+ #ifdef __WXMSW__
+     wxString cairoDllStr("libcairo-2.dll");
+ #else
+-    wxString cairoDllStr("libcairo.so.2");
++    wxString cairoDllStr("libcairo.so");
+ #endif
+     m_libCairo.Load(cairoDllStr);
+     m_ok = m_libCairo.IsLoaded();
+@@ -318,7 +318,7 @@ wxCairo::wxCairo()
+         return;
+ 
+ #if wxUSE_PANGO
+-    m_libPangoCairo.Load("libpangocairo-1.0.so.0");
++    m_libPangoCairo.Load("libpangocairo-1.0.so");
+     m_ok = m_libPangoCairo.IsLoaded();
+     if ( !m_ok )
+     {

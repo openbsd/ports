@@ -5,7 +5,7 @@ for your platform (Windows/Unix/Mac, others coming shortly) and compiler
 look and feel appropriate to that platform. On top of great GUI
 functionality, wxWidgets gives you: online help, network programming,
 streams, clipboard and drag and drop, multithreading, image loading and
-saving in a variety of popular formats, database support, HTML viewing
-and printing, and much much more.
+saving in a variety of popular formats, HTML viewing and printing, and
+much much more.
 
-This package contains the GTK2 version of the library.
+This package contains the GTK3 version of the library.

@@ -1,47 +1,15 @@
-$OpenBSD: patch-wx-config_in,v 1.4 2010/11/02 13:10:52 dcoppa Exp $
---- wx-config.in.orig	Thu Apr 15 11:02:51 2010
-+++ wx-config.in	Wed Oct 27 12:35:47 2010
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#!/bin/ksh
- #
- # Name:        wx-config{.in,}
- # Purpose:     wx configuration search and query tool {template,}
-@@ -610,8 +610,8 @@ find_best_delegate()
- get_legacy_mask()
- {
-     [ $# -gt 0 ] || set m
--    eval [ "x\${$1_chartype}" != "xunicode" ] || _unicode_flag=u
--    eval [ "x\${$1_debugtype}" != "xdebug" ] || _debug_flag=d
-+    eval [ "x\${$1_chartype}" != "xunicode" ] || _unicode_flag=
-+    eval [ "x\${$1_debugtype}" != "xdebug" ] || _debug_flag=
-     eval echo "wx\${$1_toolkit}${_unicode_flag}${_debug_flag}-\${$1_version}\${$1_host}-config"
+$OpenBSD: patch-wx-config_in,v 1.5 2019/01/02 12:41:48 jca Exp $
+
+Index: wx-config.in
+--- wx-config.in.orig
++++ wx-config.in
+@@ -1146,7 +1146,8 @@ lib_flags_for()
+         decho "             alllibs = $_all_libs"
+     fi
+ 
+-    echo $_all_ldflags $_wxlibs $_all_libs
++    # XXX kludge, don't commit
++    echo $_all_ldflags -L/usr/X11R6/lib $_wxlibs $_all_libs
  }
  
-@@ -1043,7 +1043,7 @@ lib_flags_for()
-             _libname="@WX_LIBRARY_BASENAME_GUI@"
-         fi
-         [ $lib = base ] || _libname="${_libname}_$lib"
--        _libname="${_libname}-@WX_RELEASE@$_target"
-+        _libname="${_libname}$_target"
- 
-         if is_static; then
-             _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
-@@ -1102,7 +1102,7 @@ link_deps_for()
-             _libname="@WX_LIBRARY_BASENAME_GUI@"
-         fi
-         [ $lib = base ] || _libname="${_libname}_$lib"
--        _libname="${_libname}-@WX_RELEASE@$_target"
-+        _libname="${_libname}$_target"
- 
-         _wxlibs="$_wxlibs ${libdir}/lib${_libname}.a"
-     done
-@@ -1183,7 +1183,7 @@ fi
- [ "$using_gui" = "yes" ] || _gui_cppflags="-DwxUSE_GUI=0"
- 
- if is_installed; then
--    _include_cppflags="-I${includedir}/wx-@WX_RELEASE@@WX_FLAVOUR@"
-+    _include_cppflags="-I${includedir}"
- else
-     _include_cppflags="-I${includedir} -I${prefix}/contrib/include"
- fi
+ # this is the strict subset of the above function which returns only the
