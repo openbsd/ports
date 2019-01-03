@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/24 09:04:48 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/03 18:00:17 giovanni Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Mbox/
 ${P5SITE}/Mail/Mbox/MessageParser/
@@ -10,6 +10,7 @@ ${P5SITE}/Mail/Mbox/MessageParser/MetaInfo.pm
 ${P5SITE}/Mail/Mbox/MessageParser/Perl.pm
 @man man/man3p/Mail::Mbox::MessageParser.3p
 @man man/man3p/Mail::Mbox::MessageParser::Cache.3p
+@man man/man3p/Mail::Mbox::MessageParser::Config.3p
 @man man/man3p/Mail::Mbox::MessageParser::Grep.3p
 @man man/man3p/Mail::Mbox::MessageParser::MetaInfo.3p
 @man man/man3p/Mail::Mbox::MessageParser::Perl.3p

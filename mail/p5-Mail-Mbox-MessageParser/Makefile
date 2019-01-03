@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/03 18:00:17 giovanni Exp $
 
 COMMENT=	fast and simple mbox folder reader
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Mail-Mbox-MessageParser-1.5105
+DISTNAME=	Mail-Mbox-MessageParser-1.5111
 CATEGORIES=	mail
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	devel/p5-Benchmark-Timer \
 RUN_DEPENDS=	devel/p5-FileHandle-Unget \
 		archivers/bzip2
 
-TEST_DEPENDS=	textproc/p5-Text-Diff
+TEST_DEPENDS=	archivers/lzip/lzip \
+		textproc/p5-Text-Diff
 
 CONFIGURE_ARGS=	BZIP2=${LOCALBASE}/bin/bzip2
 
