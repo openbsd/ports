@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.164 2018/10/27 13:28:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.165 2019/01/03 15:45:17 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.28.5
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -19,18 +20,16 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += avahi-common c cairo cairo-gobject dbus-1 expat ffi
-WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma m openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png poppler poppler-glib pthread secret-1 spectre
-WANTLIB += ${COMPILER_LIBCXX} tiff xcb xcb-render xcb-shm xml2 z unistring
-WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy iconv intl
-WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 idn2
-WANTLIB += fribidi
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstbase-1.0
+WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += iconv intl jpeg lcms2 lzma m openjp2 orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 poppler
+WANTLIB += poppler-glib secret-1 tiff xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -43,7 +42,6 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
-			print/libspectre \
 			print/poppler \
 			x11/gnome/libsecret \
 			x11/gtk+3
@@ -81,9 +79,12 @@ CONFIGURE_ARGS +=	--disable-dbus \
 MODGNOME_TOOLS +=	yelp
 LIB_DEPENDS +=		graphics/djvulibre \
 			graphics/libgxps \
+			print/libspectre \
 			print/texlive/base,-mktexlsr \
 			x11/gnome/nautilus
-WANTLIB += archive bz2 djvulibre gnome-desktop-3 gxps kpathsea
+WANTLIB += ICE SM avahi-common dbus-1 gmp gs hogweed idn2 nettle
+WANTLIB += p11-kit spectre tasn1 unistring zstd
+WANTLIB += archive bz2 djvulibre gxps kpathsea
 WANTLIB += nautilus-extension crypto lz4
 
 # XXX not sure that's needed automatic conversion
