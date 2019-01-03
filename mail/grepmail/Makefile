@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/11 23:49:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/03 18:10:59 giovanni Exp $
 
 COMMENT=	search mailboxes for a particular email
 
-DISTNAME=	grepmail-5.3033
+DISTNAME=	grepmail-5.3111
+PKGNAME=	${DISTNAME}
 CATEGORIES=	mail perl5
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-HOMEPAGE=	http://grepmail.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grepmail/}
+MODULES=	cpan
+CPAN_AUTHOR=	DCOPPIT
 
 RUN_DEPENDS=	devel/p5-Time-TimeDate \
 		converters/p5-DateManip \
