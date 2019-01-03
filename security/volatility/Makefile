@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/04 00:56:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/03 08:02:25 rpointel Exp $
 
 COMMENT =		memory artifact extraction utility framework
 
-MODPY_EGG_VERSION =	2.6
+MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
-REVISION =		1
+
+GH_ACCOUNT =		volatilityfoundation
+GH_PROJECT =		volatility
+GH_COMMIT =		c67017651e3cc774b944203677d15411adb7c6e4
 
 EXTRACT_SUFX =		.zip
 
@@ -17,8 +20,6 @@ MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =		http://downloads.volatilityfoundation.org/releases/${MODPY_EGG_VERSION}/
-
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
 
@@ -26,8 +27,6 @@ RUN_DEPENDS =	security/distorm3 \
 		security/yara/python \
 		graphics/py-Pillow \
 		security/py-cryptodome
-
-WRKDIST = 	${WRKDIR}/volatility-master
 
 NO_TEST =		Yes
 
