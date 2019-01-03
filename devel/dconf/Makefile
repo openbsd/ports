@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/01/01 17:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2019/01/03 07:19:13 ajacoutot Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -25,6 +25,8 @@ MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook vala
+
+BUILD_DEPENDS=		x11/dbus
 
 LIB_DEPENDS=		devel/glib2
 
