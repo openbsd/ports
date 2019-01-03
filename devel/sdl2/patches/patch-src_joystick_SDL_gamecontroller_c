@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.2 2018/03/11 22:40:20 sthen Exp $
+$OpenBSD: patch-src_joystick_SDL_gamecontroller_c,v 1.3 2019/01/03 17:55:08 thfr Exp $
 
 enable GameController API the Linux fallback way (by posing as Xbox360
 controller)
@@ -9,10 +9,10 @@ map to SDL_GAMECONTROLLERCONFIG envvar if available
 Index: src/joystick/SDL_gamecontroller.c
 --- src/joystick/SDL_gamecontroller.c.orig
 +++ src/joystick/SDL_gamecontroller.c
-@@ -884,15 +884,21 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
- #else
-     (void) s_pEmscriptenMapping;  /* pacify ARMCC */
- #endif
+@@ -1008,17 +1008,23 @@ static ControllerMapping_t *SDL_PrivateGetControllerMa
+     ControllerMapping_t *mapping;
+ 
+     mapping = SDL_PrivateGetControllerMappingForGUID(&guid, SDL_FALSE);
 -#ifdef __LINUX__
 +#if defined(__LINUX__) || defined(__OpenBSD__)
      if (!mapping && name) {
@@ -33,5 +33,8 @@ Index: src/joystick/SDL_gamecontroller.c
 +	    }
 +        //}
      }
- #endif /* __LINUX__ */
+-#endif /* __LINUX__ */
++#endif /* __LINUX__ || __OpenBSD__ */
  
+     if (!mapping && name) {
+         if (SDL_strstr(name, "Xbox") || SDL_strstr(name, "X-Box") || SDL_strstr(name, "XBOX")) {

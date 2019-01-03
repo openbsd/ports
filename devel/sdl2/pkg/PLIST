@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/04 12:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/01/03 17:55:08 thfr Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -46,6 +46,7 @@ include/SDL2/SDL_render.h
 include/SDL2/SDL_revision.h
 include/SDL2/SDL_rwops.h
 include/SDL2/SDL_scancode.h
+include/SDL2/SDL_sensor.h
 include/SDL2/SDL_shape.h
 include/SDL2/SDL_stdinc.h
 include/SDL2/SDL_surface.h
