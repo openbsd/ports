@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/14 17:49:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/03 10:14:09 fcambus Exp $
 
 COMMENT =	C macros to add, find and delete items from a hash
 
 GH_ACCOUNT =	troydhanson
 GH_PROJECT =	uthash
-GH_TAGNAME =	v2.0.2
+GH_TAGNAME =	v2.1.0
 
 CATEGORIES =	devel
 

@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_Makefile,v 1.9 2017/05/14 17:49:27 fcambus Exp $
+$OpenBSD: patch-tests_Makefile,v 1.10 2019/01/03 10:14:09 fcambus Exp $
 
 - Remove GNU make crap that never applied to us anyway.
 
 Index: tests/Makefile
 --- tests/Makefile.orig
 +++ tests/Makefile
-@@ -25,48 +25,10 @@ CFLAGS += -Wall 
+@@ -23,42 +23,11 @@ CFLAGS += -Wall
  #CFLAGS += -std=c89
  CFLAGS += ${EXTRA_CFLAGS}
  
@@ -20,13 +20,8 @@ Index: tests/Makefile
  TEST_TARGET=run_tests
  TESTS=./do_tests
  
+ # These flags are required in order to build with -DHASH_FUNCTION=HASH_MUR.
  MUR_CFLAGS = -DHASH_USING_NO_STRICT_ALIASING -fno-strict-aliasing
--# On GNU we use -fno-strict-aliasing when using the Murmurhash
--ifneq ($(strip $(shell $(CC) -v 2>&1 |egrep "gcc")),)
--ifeq ($(HASH_FUNCTION),"HASH_MUR")
--  CFLAGS += $(MUR_CFLAGS)
--endif
--endif
 -
 -# detect Cygwin
 -ifneq ($(strip $(shell $(CC) -v 2>&1 |grep "cygwin")),)
@@ -50,7 +45,6 @@ Index: tests/Makefile
 -    PLAT_UTILS = hashscan sleep_test
 -  endif
 -endif
--
  
- all: $(PROGS) $(UTILS) $(PLAT_UTILS) $(FUNCS) $(SPECIAL_FUNCS) $(TEST_TARGET) 
+ all: $(PROGS) $(UTILS) $(PLAT_UTILS) keystat $(TEST_TARGET)
  

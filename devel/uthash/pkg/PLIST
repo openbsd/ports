@@ -1,16 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/03/13 15:38:24 fcambus Exp $
-include/libut.h
-include/ringbuf.h
+@comment $OpenBSD: PLIST,v 1.6 2019/01/03 10:14:09 fcambus Exp $
 include/utarray.h
 include/uthash.h
 include/utlist.h
-include/utmm.h
 include/utringbuffer.h
+include/utstack.h
 include/utstring.h
-include/utvector.h
 share/doc/uthash/
 share/doc/uthash/userguide.txt
 share/doc/uthash/utarray.txt
 share/doc/uthash/utlist.txt
 share/doc/uthash/utringbuffer.txt
+share/doc/uthash/utstack.txt
 share/doc/uthash/utstring.txt
