@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.62 2019/01/03 14:39:47 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 include/nautilus/
@@ -104,6 +104,8 @@ share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/ku/LC_MESSAGES/nautilus.mo
 share/locale/ky/LC_MESSAGES/nautilus.mo
 share/locale/li/LC_MESSAGES/nautilus.mo
+share/locale/ln/
+share/locale/ln/LC_MESSAGES/
 share/locale/ln/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
