@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.696 2019/01/02 20:32:12 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.697 2019/01/03 14:14:01 ian Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1246,6 +1246,8 @@ my $cve = {
 	'devel/git,-main' => 'git-<2.19.1',
 	'devel/git,-svn' => 'git-svn-<2.19.1',
 	'devel/git,-x11' => 'git-x11-<2.19.1',
+	'devel/jenkins/devel' => 'jenkins-<2.154',
+	'devel/jenkins/stable' => 'jenkins-<2.138.4',
 	'devel/libgit2/libgit2' => 'libgit2-<0.27.7',
 	'devel/mercurial,-main' => 'mercurial-<4.5.3p1',
 	'devel/mercurial,-x11' => 'mercurial-x11-<4.5.3p1',
