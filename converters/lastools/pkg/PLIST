@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/13 19:15:20 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/03 11:59:16 landry Exp $
 @bin bin/las2las
 @bin bin/las2txt
 @bin bin/lasdiff
@@ -8,6 +8,8 @@
 @bin bin/lasprecision
 @bin bin/laszip
 @bin bin/txt2las
+include/bytestreamin_array.hpp
+include/bytestreamout_array.hpp
 include/lasattributer.hpp
 include/lasdefinitions.hpp
 include/lasfilter.hpp
@@ -19,12 +21,14 @@ include/lasreader_bil.hpp
 include/lasreader_bin.hpp
 include/lasreader_dtm.hpp
 include/lasreader_las.hpp
+include/lasreader_ply.hpp
 include/lasreader_qfit.hpp
 include/lasreader_shp.hpp
 include/lasreader_txt.hpp
 include/lasreaderbuffered.hpp
 include/lasreadermerged.hpp
 include/lasreaderpipeon.hpp
+include/lasreaderstored.hpp
 include/lastransform.hpp
 include/lasutility.hpp
 include/laswaveform13reader.hpp
@@ -37,6 +41,7 @@ include/laswriter_txt.hpp
 include/laswriter_wrl.hpp
 include/laswritercompatible.hpp
 include/laszip.hpp
+include/laszip_decompress_selective_v3.hpp
 include/mydefs.hpp
 lib/liblas.a
 share/doc/lastools/

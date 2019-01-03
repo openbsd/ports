@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/01 18:00:01 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/03 11:59:16 landry Exp $
 
 COMMENT =	tools for LiDAR processing
-DISTNAME =	lastools-0.20170108
+DISTNAME =	lastools-0.20181229
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
-GH_TAGNAME =	f00fa125075ea984993057c5916d746cb605835c
-REVISION =	3
+GH_TAGNAME =	384056a5ba27edba629da1328cc7ac5020c3d9d4
 
 CATEGORIES =	converters textproc devel
 
@@ -32,12 +31,15 @@ PROGS =	laszip lasinfo lasprecision las2txt txt2las las2las lasdiff lasmerge las
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LASlib/src/liblas.a ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/LASlib/inc/*.hpp ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/LASzip/src/{mydefs,laspoint,laszip,lasquantizer,lasattributer}.hpp \
+	${INSTALL_DATA} ${WRKSRC}/LASzip/src/{mydefs,laspoint,laszip,lasquantizer,lasattributer,laszip_decompress_selective_v3,bytestream{in,out}_array}.hpp \
 		${PREFIX}/include/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lastools/
 .for f in ${PROGS}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/${f}_README.txt ${PREFIX}/share/doc/lastools/
 .endfor
+
+do-test:
+	${WRKSRC}/bin/lasinfo ${WRKSRC}/data/test.laz
 
 .include <bsd.port.mk>
