@@ -1,8 +1,6 @@
-$OpenBSD: patch-meson_build,v 1.1 2019/01/01 11:33:39 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/01/03 08:29:34 ajacoutot Exp $
 
-XXX we sometimes end up with:
-cc: error: no such file or directory: 'tests/resources.c'
-because of meson(1) non-deterministic build.
+https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues/106
 
 Index: meson.build
 --- meson.build.orig
