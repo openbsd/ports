@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.75 2019/01/03 13:35:50 ajacoutot Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -29,7 +29,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		${RUN_DEPENDS} \
+BUILD_DEPENDS =		audio/audacious>=${V} \
 			devel/gettext-tools
 
 RUN_DEPENDS =		audio/audacious>=${V}
