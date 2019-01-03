@@ -1,70 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/01/03 18:37:22 landry Exp $
 @bin bin/midori
+lib/girepository-1.0/Midori-0.6.typelib
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
 lib/midori/
-lib/midori/libabout.so
+lib/midori/adblock.plugin
+lib/midori/bookmarks.plugin
+lib/midori/colorful-tabs.plugin
+lib/midori/libactivatable.so
 lib/midori/libadblock.so
-lib/midori/libapps.so
+lib/midori/libbookmarks.so
 lib/midori/libcolorful-tabs.so
-lib/midori/libcookie-manager.so
-lib/midori/libcopy-tabs.so
-lib/midori/libdelayed-load.so
 @comment lib/midori/libdevpet.so
-lib/midori/libdomain-keys.so
-lib/midori/libfeed-panel.so
-lib/midori/libflummi.so
-lib/midori/libhistory-list.so
-lib/midori/libmouse-gestures.so
-lib/midori/libnotes.so
-lib/midori/libopen-with.so
-lib/midori/libshortcuts.so
+lib/midori/libsession.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
-lib/midori/libtab-panel.so
-lib/midori/libtabby.so
-lib/midori/libtabs-minimized.so
-lib/midori/libtoolbar-editor.so
-lib/midori/libtransfers.so
-lib/midori/libwebmedia-now-playing.so
+lib/midori/session.plugin
+lib/midori/status-clock.plugin
+lib/midori/statusbar-features.plugin
 share/appdata/
 share/appdata/midori.appdata.xml
-share/applications/midori-private.desktop
-share/applications/midori.desktop
+share/applications/org.midori_browser.Midori.desktop
 share/doc/midori/
-share/doc/midori/AUTHORS
 share/doc/midori/COPYING
-share/doc/midori/ChangeLog
-share/doc/midori/EXPAT
-share/doc/midori/README
-share/doc/midori/faq.css
-share/doc/midori/faq.html
-share/examples/midori/
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/midori/
-share/examples/midori/extensions/
-@sample ${SYSCONFDIR}/xdg/midori/extensions/
-share/examples/midori/extensions/adblock/
-@sample ${SYSCONFDIR}/xdg/midori/extensions/adblock/
-share/examples/midori/extensions/adblock/config
-@sample ${SYSCONFDIR}/xdg/midori/extensions/adblock/config
-share/examples/midori/search
-@sample ${SYSCONFDIR}/xdg/midori/search
+share/doc/midori/README.md
+share/gir-1.0/Midori-0.6.gir
 share/icons/hicolor/16x16/apps/midori.png
-share/icons/hicolor/16x16/categories/extension.png
-share/icons/hicolor/16x16/status/internet-news-reader.png
 share/icons/hicolor/22x22/apps/midori.png
-share/icons/hicolor/22x22/categories/extension.png
-share/icons/hicolor/22x22/status/internet-news-reader.png
-share/icons/hicolor/24x24/status/adblock-blocked.svg
-share/icons/hicolor/24x24/status/adblock-disabled.svg
-share/icons/hicolor/24x24/status/adblock-enabled.svg
 share/icons/hicolor/scalable/apps/midori.svg
-share/icons/hicolor/scalable/categories/extension.svg
-share/icons/hicolor/scalable/status/internet-news-reader.svg
 share/locale/af/LC_MESSAGES/midori.mo
 share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
+share/locale/az/LC_MESSAGES/midori.mo
 share/locale/be/LC_MESSAGES/midori.mo
 share/locale/bg/LC_MESSAGES/midori.mo
 share/locale/bn/LC_MESSAGES/midori.mo
@@ -130,9 +97,13 @@ share/locale/sq/LC_MESSAGES/midori.mo
 share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
+share/locale/szl/
+share/locale/szl/LC_MESSAGES/
+share/locale/szl/LC_MESSAGES/midori.mo
 share/locale/ta/LC_MESSAGES/midori.mo
 share/locale/te/LC_MESSAGES/midori.mo
 share/locale/th/LC_MESSAGES/midori.mo
+share/locale/tl/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
 share/locale/ug/LC_MESSAGES/midori.mo
 share/locale/uk/LC_MESSAGES/midori.mo
@@ -142,36 +113,5 @@ share/locale/vi/LC_MESSAGES/midori.mo
 share/locale/zh_CN/LC_MESSAGES/midori.mo
 share/locale/zh_HK/LC_MESSAGES/midori.mo
 share/locale/zh_TW/LC_MESSAGES/midori.mo
-share/midori/
-share/midori/res/
-share/midori/res/about.css
-share/midori/res/adblock/
-share/midori/res/adblock.list
-share/midori/res/adblock/element_hider.js
-share/midori/res/autosuggestcontrol.css
-share/midori/res/autosuggestcontrol.js
-share/midori/res/bookmarks/
-share/midori/res/bookmarks/Create.sql
-share/midori/res/bookmarks/Import_old_db_bookmarks.sql
-share/midori/res/error.html
-share/midori/res/flummi/
-share/midori/res/flummi/Create.sql
-share/midori/res/forms/
-share/midori/res/forms/Create.sql
-share/midori/res/gtk3.css
-share/midori/res/history/
-share/midori/res/history/Create.sql
-share/midori/res/history/Day.sql
-share/midori/res/logo-shade.png
-share/midori/res/nojs/
-share/midori/res/nojs/nojs-statusicon-allowed.png
-share/midori/res/nojs/nojs-statusicon-denied.png
-share/midori/res/nojs/nojs-statusicon-mixed.png
-share/midori/res/notes/
-share/midori/res/notes/Create.sql
-share/midori/res/speeddial-head.html
-share/midori/res/tabby/
-share/midori/res/tabby/Create.sql
-share/midori/res/tabby/Update1.sql
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
