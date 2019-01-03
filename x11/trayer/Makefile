@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/01 10:06:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/03 07:02:22 ajacoutot Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
@@ -20,6 +20,8 @@ WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += z
 
 USE_GMAKE=		Yes
+
+BUILD_DEPENDS=		shells/bash
 
 LIB_DEPENDS=		x11/gtk+2
 
