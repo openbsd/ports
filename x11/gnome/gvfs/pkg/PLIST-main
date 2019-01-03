@@ -1,23 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2018/07/07 22:39:42 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2019/01/03 13:36:23 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
-bin/gvfs-cat
-bin/gvfs-copy
-bin/gvfs-info
-bin/gvfs-less
-bin/gvfs-ls
-bin/gvfs-mime
-bin/gvfs-mkdir
-bin/gvfs-monitor-dir
-bin/gvfs-monitor-file
-bin/gvfs-mount
-bin/gvfs-move
-bin/gvfs-open
-bin/gvfs-rename
-bin/gvfs-rm
-bin/gvfs-save
-bin/gvfs-set-attribute
-bin/gvfs-trash
-bin/gvfs-tree
 include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
@@ -43,24 +25,6 @@ lib/gvfs/libgvfsdaemon.so
 @bin libexec/gvfsd-recent
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
-@man man/man1/gvfs-cat.1
-@man man/man1/gvfs-copy.1
-@man man/man1/gvfs-info.1
-@man man/man1/gvfs-less.1
-@man man/man1/gvfs-ls.1
-@man man/man1/gvfs-mime.1
-@man man/man1/gvfs-mkdir.1
-@man man/man1/gvfs-monitor-dir.1
-@man man/man1/gvfs-monitor-file.1
-@man man/man1/gvfs-mount.1
-@man man/man1/gvfs-move.1
-@man man/man1/gvfs-open.1
-@man man/man1/gvfs-rename.1
-@man man/man1/gvfs-rm.1
-@man man/man1/gvfs-save.1
-@man man/man1/gvfs-set-attribute.1
-@man man/man1/gvfs-trash.1
-@man man/man1/gvfs-tree.1
 @man man/man1/gvfsd-fuse.1
 @man man/man1/gvfsd-metadata.1
 @man man/man1/gvfsd.1
@@ -81,6 +45,7 @@ share/gvfs/mounts/dav+sd.mount
 share/gvfs/mounts/dav.mount
 share/gvfs/mounts/dns-sd.mount
 share/gvfs/mounts/ftp.mount
+share/gvfs/mounts/ftpis.mount
 share/gvfs/mounts/ftps.mount
 share/gvfs/mounts/http.mount
 share/gvfs/mounts/localtest.mount

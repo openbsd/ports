@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2018/07/07 22:39:42 espie Exp $
+# $OpenBSD: Makefile,v 1.183 2019/01/03 13:36:23 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,15 +7,13 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.36.2
+GNOME_VERSION=		1.38.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
-REVISION-main=		1
-REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -70,7 +68,6 @@ CONFIGURE_ARGS=		-Ddeprecated_programs=true \
 # most of these need gudev and/or systemd
 CONFIGURE_ARGS +=	-Dafc=false \
 			-Dcdda=false \
-			-Dgdu=false \
 			-Dgphoto2=false \
 			-Dmtp=false \
 			-Dlibusb=false \
