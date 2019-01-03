@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_client_client_SecureID_cpp,v 1.4 2019/01/02 12:44:07 jca Exp $
+$OpenBSD: patch-src_client_client_SecureID_cpp,v 1.5 2019/01/03 20:42:39 jca Exp $
 
 the comment portion is evil
 

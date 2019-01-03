@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/03 20:42:39 jca Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
@@ -44,6 +44,11 @@ FAKE_FLAGS+=		docdir="${PREFIX}/share/doc/scorched3d/"
 
 CFLAGS +=		`pkg-config --cflags libpng`
 WRKDIST =		${WRKDIR}/scorched
+
+# dos line-endings in source files
+post-extract:
+	find ${WRKSRC} -type f '(' -name '*.h' -o -name '*.cpp' ')' \
+	    -exec perl -i -pe 's/\r$$//' {} +
 
 pre-configure:
 	cd ${WRKSRC}; \
