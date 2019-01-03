@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.52 2019/01/03 07:12:08 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -169,6 +169,7 @@ include/evolution-data-server/libebook/e-book-client-view.h
 include/evolution-data-server/libebook/e-book-client.h
 include/evolution-data-server/libebook/e-book-enumtypes.h
 include/evolution-data-server/libebook/e-book-types.h
+include/evolution-data-server/libebook/e-book-utils.h
 include/evolution-data-server/libebook/e-book-view.h
 include/evolution-data-server/libebook/e-book.h
 include/evolution-data-server/libebook/e-destination.h
@@ -186,6 +187,7 @@ include/evolution-data-server/libecal/e-cal-types.h
 include/evolution-data-server/libecal/e-cal-util.h
 include/evolution-data-server/libecal/e-cal-view.h
 include/evolution-data-server/libecal/e-cal.h
+include/evolution-data-server/libecal/e-reminder-watcher.h
 include/evolution-data-server/libecal/e-timezone-cache.h
 include/evolution-data-server/libecal/libecal.h
 include/evolution-data-server/libedata-book/
@@ -207,6 +209,7 @@ include/evolution-data-server/libedata-book/e-data-book-factory.h
 include/evolution-data-server/libedata-book/e-data-book-view.h
 include/evolution-data-server/libedata-book/e-data-book.h
 include/evolution-data-server/libedata-book/e-subprocess-book-factory.h
+include/evolution-data-server/libedata-book/e-system-locale-watcher.h
 include/evolution-data-server/libedata-book/libedata-book.h
 include/evolution-data-server/libedata-cal/
 include/evolution-data-server/libedata-cal/e-cal-backend-cache.h
@@ -316,15 +319,16 @@ include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-oauth
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-password.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter.h
+include/evolution-data-server/libedataserverui/e-reminders-widget.h
 include/evolution-data-server/libedataserverui/e-trust-prompt.h
 include/evolution-data-server/libedataserverui/e-webdav-discover-widget.h
 include/evolution-data-server/libedataserverui/libedataserverui.h
 lib/evolution-data-server/
 lib/evolution-data-server/addressbook-backends/
+lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
 lib/evolution-data-server/addressbook-backends/libebookbackendgoogle.so
 lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
-lib/evolution-data-server/addressbook-backends/libebookbackendwebdav.so
 lib/evolution-data-server/calendar-backends/
 lib/evolution-data-server/calendar-backends/libecalbackendcaldav.so
 lib/evolution-data-server/calendar-backends/libecalbackendcontacts.so
@@ -398,11 +402,13 @@ lib/systemd/user/evolution-user-prompter.service
 libexec/evolution-data-server/
 @bin libexec/evolution-data-server/addressbook-export
 libexec/evolution-data-server/csv2vcard
+@bin libexec/evolution-data-server/evolution-alarm-notify
 @bin libexec/evolution-data-server/list-sources
 @bin libexec/evolution-scan-gconf-tree-xml
 @bin libexec/evolution-source-registry
 @bin libexec/evolution-user-prompter
 share/GConf/gsettings/evolution-data-server.convert
+share/applications/org.gnome.Evolution-alarm-notify.desktop
 share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Sources.service
@@ -539,3 +545,4 @@ share/vala/vapi/libedataserver-1.2.vapi
 share/vala/vapi/libedataserverui-1.2.deps
 share/vala/vapi/libedataserverui-1.2.vapi
 @tag glib-compile-schemas
+@tag update-desktop-database
