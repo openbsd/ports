@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_build_src_engine_Jambase,v 1.1 2019/01/03 07:29:58 rsadowski Exp $
+
+Index: tools/build/src/engine/Jambase
+--- tools/build/src/engine/Jambase.orig
++++ tools/build/src/engine/Jambase
+@@ -51,7 +51,7 @@ BOOST_BUILD_PATH.user-value = $(BOOST_BUILD_PATH) ;
+ # Policy.
+ if ! $(BOOST_BUILD_PATH) && $(UNIX)
+ {
+-    BOOST_BUILD_PATH = /usr/share/boost-build ;
++    BOOST_BUILD_PATH = ${PREFIX}/share/boost-build ;
+ }
+ 
+ 

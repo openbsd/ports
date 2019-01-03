@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2018/12/24 23:34:27 jca Exp $
+# $OpenBSD: Makefile,v 1.80 2019/01/03 07:29:58 rsadowski Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -9,7 +9,7 @@ VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
@@ -145,6 +145,9 @@ NO_TEST=	Yes
 
 SUBST_VARS+=	SO_VERSION
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/build/src/engine/Jambase
+
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/user-config.jam
 	@${SUBST_CMD} ${WRKSRC}/Jamroot
@@ -167,12 +170,23 @@ do-build:
 	./b2 ${BJAM_CONFIG} python=${MODPY_DEFAULT_VERSION_3}\
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/bin.*/{b2,bjam} \
-		${PREFIX}/bin
+	# Libs and includes:
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 	@cd ${WRKSRC} && \
 		find boost -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \;
 	@cd ${WRKSRC} && \
 		find boost ! -name \*.orig -type f -exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
+	# boost-build:
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/bin.*/{b2,bjam} \
+		${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/boost-build
+	@cd ${WRKSRC}/tools/build/src && \
+		pax -r -w -p pm -s ':^./engine.*$$::' \
+		-s ':^.*\.orig$$::' . ${PREFIX}/share/boost-build
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/boost-build
+	${INSTALL_DATA} ${WRKSRC}/tools/build/example/site-config.jam \
+		${PREFIX}/share/examples/boost-build
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/boost-build/
 
 .include <bsd.port.mk>
