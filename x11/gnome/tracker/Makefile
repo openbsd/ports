@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.234 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.235 2019/01/03 14:22:38 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		2.0.4
+GNOME_VERSION=		2.1.6
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
-REVISION=		1
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/grilo-plugins
@@ -19,18 +18,19 @@ REVISION=		1
 TRACKER_API=		2.0
 SUBST_VARS=		TRACKER_API
 
-SHARED_LIBS +=  tracker-control-2.0       0.0 # 2.0
-SHARED_LIBS +=  tracker-miner-2.0         0.0 # 2.0
-SHARED_LIBS +=  tracker-sparql-2.0        0.0 # 2.0
-SHARED_LIBS +=  tracker-common            4.0 # 4.0
-SHARED_LIBS +=  tracker-data              4.0 # 4.0
+SHARED_LIBS +=  tracker-common       4.0      # unknown
+SHARED_LIBS +=  tracker-data         4.0      # unknown
+SHARED_LIBS +=  tracker-sparql-2.0   0.0      # 106.0
+SHARED_LIBS +=  tracker-miner-2.0    0.0      # 106.0
+SHARED_LIBS +=  tracker-control-2.0  0.0      # 106.0
 
 # GPLv2+ - LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv icudata icui18n icuuc intl json-glib-1.0
-WANTLIB += kvm lzma m pcre soup-2.4 sqlite3 uuid xml2 z
+WANTLIB += gobject-2.0 iconv icudata icui18n icuuc idn2 intl json-glib-1.0
+WANTLIB += kvm lzma m pcre psl soup-2.4 sqlite3 unistring uuid
+WANTLIB += xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
