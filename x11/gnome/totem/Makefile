@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.159 2018/07/25 10:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/01/03 15:11:51 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.26.2
+GNOME_VERSION=		3.30.0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -46,6 +46,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/libpeas \
 			graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk \
+			x11/gnome/desktop \
 			x11/gnome/grilo \
 			x11/gnome/nautilus
 
