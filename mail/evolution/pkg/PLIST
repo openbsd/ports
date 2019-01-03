@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2018/12/09 09:10:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.53 2019/01/03 07:12:30 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -482,6 +482,8 @@ include/evolution/mail/e-mail-request.h
 include/evolution/mail/e-mail-send-account-override.h
 include/evolution/mail/e-mail-sidebar.h
 include/evolution/mail/e-mail-tag-editor.h
+include/evolution/mail/e-mail-templates-store.h
+include/evolution/mail/e-mail-templates.h
 include/evolution/mail/e-mail-ui-session.h
 include/evolution/mail/e-mail-view.h
 include/evolution/mail/e-mail.h
@@ -524,6 +526,8 @@ include/evolution/shell/e-shell-window-actions.h
 include/evolution/shell/e-shell-window.h
 include/evolution/shell/e-shell.h
 lib/evolution/
+lib/evolution-data-server/ui-modules/
+lib/evolution-data-server/ui-modules/module-evolution-alarm-notify.so
 @lib lib/evolution/libeabutil.so.${LIBeabutil_VERSION}
 lib/evolution/libeabwidgets.so
 @lib lib/evolution/libecontacteditor.so.${LIBecontacteditor_VERSION}
@@ -548,10 +552,10 @@ lib/evolution/modules/module-accounts-window.so
 lib/evolution/modules/module-addressbook.so
 lib/evolution/modules/module-backup-restore.so
 lib/evolution/modules/module-bogofilter.so
+lib/evolution/modules/module-book-config-carddav.so
 lib/evolution/modules/module-book-config-google.so
 lib/evolution/modules/module-book-config-ldap.so
 lib/evolution/modules/module-book-config-local.so
-lib/evolution/modules/module-book-config-webdav.so
 lib/evolution/modules/module-cal-config-caldav.so
 lib/evolution/modules/module-cal-config-contacts.so
 lib/evolution/modules/module-cal-config-google.so
@@ -620,7 +624,6 @@ lib/pkgconfig/evolution-mail-3.0.pc
 lib/pkgconfig/evolution-shell-3.0.pc
 lib/pkgconfig/libemail-engine.pc
 libexec/evolution/
-@bin libexec/evolution/evolution-alarm-notify
 @bin libexec/evolution/evolution-backup
 @bin libexec/evolution/killev
 share/GConf/gsettings/evolution.convert
@@ -748,34 +751,6 @@ share/evolution/etspec/e-memo-table.etspec
 share/evolution/etspec/e-task-table.etspec
 share/evolution/etspec/message-list.etspec
 share/evolution/filtertypes.xml
-share/evolution/help/
-share/evolution/help/quickref/
-share/evolution/help/quickref/C/
-share/evolution/help/quickref/C/quickref.pdf
-share/evolution/help/quickref/ca/
-share/evolution/help/quickref/ca/quickref.pdf
-share/evolution/help/quickref/cs/
-share/evolution/help/quickref/cs/quickref.pdf
-share/evolution/help/quickref/de/
-share/evolution/help/quickref/de/quickref.pdf
-share/evolution/help/quickref/es/
-share/evolution/help/quickref/es/quickref.pdf
-share/evolution/help/quickref/fr/
-share/evolution/help/quickref/fr/quickref.pdf
-share/evolution/help/quickref/hu/
-share/evolution/help/quickref/hu/quickref.pdf
-share/evolution/help/quickref/it/
-share/evolution/help/quickref/it/quickref.pdf
-share/evolution/help/quickref/oc/
-share/evolution/help/quickref/oc/quickref.pdf
-share/evolution/help/quickref/pl/
-share/evolution/help/quickref/pl/quickref.pdf
-share/evolution/help/quickref/pt/
-share/evolution/help/quickref/pt/quickref.pdf
-share/evolution/help/quickref/sq/
-share/evolution/help/quickref/sq/quickref.pdf
-share/evolution/help/quickref/sv/
-share/evolution/help/quickref/sv/quickref.pdf
 share/evolution/icons/
 share/evolution/icons/hicolor/
 share/evolution/icons/hicolor/16x16/
@@ -984,7 +959,6 @@ share/evolution/theme/
 share/evolution/theme/webview-print.css
 share/evolution/theme/webview.css
 share/evolution/ui/
-share/evolution/ui/alarm-notify.ui
 share/evolution/ui/contact-editor.ui
 share/evolution/ui/contact-list-editor.ui
 share/evolution/ui/e-calendar-preferences.ui
@@ -1036,11 +1010,6 @@ share/evolution/views/tasks/Tasks.galview
 share/evolution/views/tasks/With_DueDate.galview
 share/evolution/views/tasks/With_Status.galview
 share/evolution/views/tasks/galview.xml
-share/examples/evolution/
-share/examples/evolution/xdg/
-share/examples/evolution/xdg/autostart/
-share/examples/evolution/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 share/glib-2.0/schemas/org.gnome.evolution.addressbook.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.bogofilter.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.calendar.gschema.xml
