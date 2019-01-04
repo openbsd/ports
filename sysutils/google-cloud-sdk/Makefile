@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.104 2018/09/29 07:27:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2019/01/04 10:37:01 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 #'
 
-V=			218.0.0
+V=			228.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
 
 CATEGORIES=		sysutils
 
-HOMEPAGE=		https://developers.google.com/cloud/sdk
+HOMEPAGE=		https://cloud.google.com/sdk/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://dl.google.com/dl/cloudsdk/release/downloads/
+MASTER_SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 
 MODULES=		lang/python
 
