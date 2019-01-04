@@ -1,0 +1,19 @@
+upplay is a desktop UPnP audio Control Point for Linux/Unix and MS
+Windows.
+
+upplay does not play music, it controls a Media Renderer which may
+be running on the same host or anywhere else.
+
+Features:
+* Plays gapless using either the UPnP SetNextTransportURI action
+  or the OpenHome Playlist service, depending on the device capabilities.
+  OpenHome is chosen by default if available.
+* In AVT mode, remembers the last playlist.
+* Can move your current playlist to another renderer.
+* Lets you browse any UPnP Content Directory on the local network and
+  add music from there (click titles, or use the right-click menu for
+  directory adds).
+* Supports multiple browsing tabs
+* Lets you search the server, and the local listing.
+* Can control the connections between multiple Linn Songcast Senders and
+  Receivers (multiroom synchronized playing).
