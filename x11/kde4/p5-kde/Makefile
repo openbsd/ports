@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/02 20:03:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/04 14:56:08 rsadowski Exp $
 
 COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
 PKGNAME =	p5-kde-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m perl pthread util
 WANTLIB += ${COMPILER_LIBCXX}
@@ -15,7 +15,7 @@ WANTLIB += ${KDE4LIB}/smokekfile ${KDE4LIB}/smokekhtml ${KDE4LIB}/smokekio
 WANTLIB += ${KDE4LIB}/smokeknewstuff2 ${KDE4LIB}/smokeknewstuff3
 WANTLIB += ${KDE4LIB}/smokekparts ${KDE4LIB}/smokektexteditor
 WANTLIB += ${KDE4LIB}/smokekutils ${KDE4LIB}/smokenepomuk
-WANTLIB += ${KDE4LIB}/smokenepomukquery ${KDE4LIB}/smokeokular
+WANTLIB += ${KDE4LIB}/smokenepomukquery
 WANTLIB += ${KDE4LIB}/smokeplasma ${KDE4LIB}/smokeqtcore
 WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqtnetwork
 WANTLIB += ${KDE4LIB}/smokesolid ${KDE4LIB}/smokesoprano
@@ -25,8 +25,7 @@ WANTLIB += ${KDE4LIB}/smokeakonadi ${KDE4LIB}/smokeattica
 MODULES =	perl
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION} \
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/12/19 08:51:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2019/01/04 14:56:07 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -217,7 +217,7 @@ SUBDIR += libkdcraw
 SUBDIR += libkexiv2
 SUBDIR += libkipi
 SUBDIR += libksane
-SUBDIR += okular
+#SUBDIR += okular		x11/kde-applications
 SUBDIR += svgpart
 
 # former kdemultimedia

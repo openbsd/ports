@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/04 07:50:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/04 14:56:08 rsadowski Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	smokeakonadi		52.0 # 3.0
 SHARED_LIBS +=	smokeattica		51.0 # 3.0
@@ -19,7 +19,6 @@ SHARED_LIBS +=	smokektexteditor	52.0 # 3.0
 SHARED_LIBS +=	smokekutils		52.0 # 3.0
 SHARED_LIBS +=	smokenepomuk		52.0 # 3.0
 SHARED_LIBS +=	smokenepomukquery	52.0 # 3.0
-SHARED_LIBS +=	smokeokular		52.0 # 3.0
 SHARED_LIBS +=	smokeplasma		52.0 # 3.0
 SHARED_LIBS +=	smokesolid		52.0 # 3.0
 SHARED_LIBS +=	smokesoprano		52.0 # 3.0
@@ -38,7 +37,7 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knewstuff2
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukquery ${KDE4LIB}/nepomukutils
-WANTLIB += ${KDE4LIB}/okularcore ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokeqtcore ${KDE4LIB}/smokeqtdbus
 WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqtnetwork
 WANTLIB += ${KDE4LIB}/smokeqtsvg ${KDE4LIB}/smokeqtxml ${KDE4LIB}/solid
@@ -51,7 +50,6 @@ WANTLIB += attica soprano sopranoclient sopranoserver
 MODKDE4_USE =	pim libs
 
 LIB_DEPENDS =	databases/soprano \
-		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
 

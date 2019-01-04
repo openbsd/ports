@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/02 20:03:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/01/04 14:56:08 rsadowski Exp $
 lib/kde4/kperlpluginfactory.so
 ${P5ARCH}/Akonadi.pm
 ${P5ARCH}/Attica.pm
@@ -14,7 +14,6 @@ ${P5ARCH}/KTextEditor.pm
 ${P5ARCH}/KUtils.pm
 ${P5ARCH}/Nepomuk.pm
 ${P5ARCH}/NepomukQuery.pm
-${P5ARCH}/Okular.pm
 ${P5ARCH}/Plasma4.pm
 ${P5ARCH}/Solid.pm
 ${P5ARCH}/Soprano.pm
@@ -48,8 +47,6 @@ ${P5ARCH}/auto/Nepomuk/
 ${P5ARCH}/auto/Nepomuk/Nepomuk.so
 ${P5ARCH}/auto/NepomukQuery/
 ${P5ARCH}/auto/NepomukQuery/NepomukQuery.so
-${P5ARCH}/auto/Okular/
-${P5ARCH}/auto/Okular/Okular.so
 ${P5ARCH}/auto/Plasma4/
 ${P5ARCH}/auto/Plasma4/Plasma4.so
 ${P5ARCH}/auto/Solid/

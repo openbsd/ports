@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/26 16:16:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/01/04 14:56:08 rsadowski Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
-REVISION =	9
+REVISION =	10
 
 WANTLIB =  ${MODRUBY_WANTLIB}
 WANTLIB += ${COMPILER_LIBCXX}
@@ -13,7 +13,7 @@ WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/knewstuff2
 WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/okularcore ${KDE4LIB}/solid
+WANTLIB += ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/smokeakonadi
 WANTLIB += ${KDE4LIB}/smokebase
 WANTLIB += ${KDE4LIB}/smokekdecore ${KDE4LIB}/smokekdeui
@@ -21,7 +21,7 @@ WANTLIB += ${KDE4LIB}/smokekfile ${KDE4LIB}/smokekhtml ${KDE4LIB}/smokekio
 WANTLIB += ${KDE4LIB}/smokeknewstuff2 ${KDE4LIB}/smokeknewstuff3
 WANTLIB += ${KDE4LIB}/smokekparts ${KDE4LIB}/smokektexteditor
 WANTLIB += ${KDE4LIB}/smokekutils ${KDE4LIB}/smokenepomuk
-WANTLIB += ${KDE4LIB}/smokeokular ${KDE4LIB}/smokeplasma
+WANTLIB += ${KDE4LIB}/smokeplasma
 WANTLIB += ${KDE4LIB}/smokeqtcore ${KDE4LIB}/smokeqtdbus
 WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqtnetwork
 WANTLIB += ${KDE4LIB}/smokeqtopengl ${KDE4LIB}/smokeqtsql

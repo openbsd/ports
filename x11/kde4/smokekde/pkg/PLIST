@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/02 17:49:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/04 14:56:08 rsadowski Exp $
 include/smoke/akonadi_smoke.h
 include/smoke/attica_smoke.h
 include/smoke/kdecore_smoke.h
@@ -13,7 +13,6 @@ include/smoke/ktexteditor_smoke.h
 include/smoke/kutils_smoke.h
 include/smoke/nepomuk_smoke.h
 include/smoke/nepomukquery_smoke.h
-include/smoke/okular_smoke.h
 include/smoke/plasma_smoke.h
 include/smoke/solid_smoke.h
 include/smoke/soprano_smoke.h
@@ -33,7 +32,6 @@ include/smoke/sopranoserver_smoke.h
 @lib ${KDE4LIB}/libsmokekutils.so.${LIBsmokekutils_VERSION}
 @lib ${KDE4LIB}/libsmokenepomuk.so.${LIBsmokenepomuk_VERSION}
 @lib ${KDE4LIB}/libsmokenepomukquery.so.${LIBsmokenepomukquery_VERSION}
-@lib ${KDE4LIB}/libsmokeokular.so.${LIBsmokeokular_VERSION}
 @lib ${KDE4LIB}/libsmokeplasma.so.${LIBsmokeplasma_VERSION}
 @lib ${KDE4LIB}/libsmokesolid.so.${LIBsmokesolid_VERSION}
 @lib ${KDE4LIB}/libsmokesoprano.so.${LIBsmokesoprano_VERSION}
@@ -53,7 +51,6 @@ include/smoke/sopranoserver_smoke.h
 @lib lib/libsmokekutils.so.${LIBsmokekutils_VERSION}
 @lib lib/libsmokenepomuk.so.${LIBsmokenepomuk_VERSION}
 @lib lib/libsmokenepomukquery.so.${LIBsmokenepomukquery_VERSION}
-@lib lib/libsmokeokular.so.${LIBsmokeokular_VERSION}
 @lib lib/libsmokeplasma.so.${LIBsmokeplasma_VERSION}
 @lib lib/libsmokesolid.so.${LIBsmokesolid_VERSION}
 @lib lib/libsmokesoprano.so.${LIBsmokesoprano_VERSION}
