@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:50:17 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/04 21:03:08 kili Exp $
 include/kde4/kfilemetadata/
 include/kde4/kfilemetadata/extractionresult.h
 include/kde4/kfilemetadata/extractorplugin.h
@@ -19,10 +19,11 @@ lib/kde4/kfilemetadata_odfextractor.so
 lib/kde4/kfilemetadata_office2007extractor.so
 lib/kde4/kfilemetadata_officeextractor.so
 lib/kde4/kfilemetadata_plaintextextractor.so
-lib/kde4/kfilemetadata_popplerextractor.so
 lib/kde4/kfilemetadata_taglibextractor.so
 @lib ${KDE4LIB}/libkfilemetadata.so.${LIBkfilemetadata_VERSION}
 @lib lib/libkfilemetadata.so.${LIBkfilemetadata_VERSION}
+share/kde4/
+share/kde4/services/
 share/kde4/services/kfilemetadata_epubextractor.desktop
 share/kde4/services/kfilemetadata_exiv2extractor.desktop
 share/kde4/services/kfilemetadata_ffmpegextractor.desktop
@@ -30,6 +31,5 @@ share/kde4/services/kfilemetadata_odfextractor.desktop
 share/kde4/services/kfilemetadata_office2007extractor.desktop
 share/kde4/services/kfilemetadata_officeextractor.desktop
 share/kde4/services/kfilemetadata_plaintextextractor.desktop
-share/kde4/services/kfilemetadata_popplerextractor.desktop
 share/kde4/services/kfilemetadata_taglibextractor.desktop
 share/kde4/servicetypes/kfilemetadataextractor.desktop
