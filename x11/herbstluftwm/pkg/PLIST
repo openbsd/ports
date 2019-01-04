@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:12 espie Exp $
-@bin bin/dmenu_run_hlwm
+@comment $OpenBSD: PLIST,v 1.5 2019/01/04 00:25:47 jca Exp $
+bin/dmenu_run_hlwm
 @bin bin/herbstclient
 @bin bin/herbstluftwm
 @man man/man1/herbstclient.1
@@ -24,6 +24,7 @@ share/examples/herbstluftwm/dmenu.sh
 share/examples/herbstluftwm/dumpbeautify.sh
 share/examples/herbstluftwm/exec_on_tag.sh
 share/examples/herbstluftwm/execwith.sh
+share/examples/herbstluftwm/float-maximize.sh
 share/examples/herbstluftwm/floatmon.sh
 share/examples/herbstluftwm/herbstcommander.sh
 share/examples/herbstluftwm/keychain.sh
