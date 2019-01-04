@@ -1,0 +1,44 @@
+$OpenBSD: patch-shell_shell_cpp,v 1.1.1.1 2019/01/04 14:49:18 rsadowski Exp $
+
+Clangs RTTI support don't work here, use qobject_cast<> to avoid runtime
+crashes.
+
+Index: shell/shell.cpp
+--- shell/shell.cpp.orig
++++ shell/shell.cpp
+@@ -53,6 +53,8 @@
+ #include <KActivities/ResourceInstance>
+ #endif
+ 
++#include <QObject>
++
+ // local includes
+ #include "kdocumentviewer.h"
+ #include "../interfaces/viewerinterface.h"
+@@ -211,7 +213,7 @@ bool Shell::openDocument( const QUrl& url, const QStri
+     KParts::ReadWritePart* const part = m_tabs[0].part;
+ 
+     // Return false if we can't open new tabs and the only part is occupied
+-    if ( !dynamic_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs()
++    if ( !qobject_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs()
+          && !part->url().isEmpty()
+          && !ShellUtils::unique(serializedOptions))
+     {
+@@ -234,7 +236,7 @@ bool Shell::canOpenDocs( int numDocs, int desktop )
+       return false;
+ 
+    KParts::ReadWritePart* const part = m_tabs[0].part;
+-   const bool allowTabs = dynamic_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs();
++   const bool allowTabs = qobject_cast<Okular::ViewerInterface*>(part)->openNewFilesInTabs();
+ 
+    if( !allowTabs && (numDocs > 1 || !part->url().isEmpty()) )
+       return false;
+@@ -261,7 +263,7 @@ void Shell::openUrl( const QUrl & url, const QString &
+             }
+             else
+             {
+-                if( dynamic_cast<Okular::ViewerInterface *>(activePart)->openNewFilesInTabs() )
++                if( qobject_cast<Okular::ViewerInterface *>(activePart)->openNewFilesInTabs() )
+                 {
+                     openNewTab( url, serializedOptions );
+                 }

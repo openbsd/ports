@@ -1,0 +1,13 @@
+$OpenBSD: patch-core_synctex_synctex_parser_c,v 1.1.1.1 2019/01/04 14:49:18 rsadowski Exp $
+
+Index: core/synctex/synctex_parser.c
+--- core/synctex/synctex_parser.c.orig
++++ core/synctex/synctex_parser.c
+@@ -100,6 +100,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <limits.h>
++#include <stdarg.h>
+ 
+ #if defined(HAVE_LOCALE_H)
+ #include <locale.h>
