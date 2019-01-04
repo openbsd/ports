@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/06/29 22:16:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/01/04 13:39:09 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -417,3 +417,4 @@ share/sounds/gnome/default/alerts/glass.ogg
 share/sounds/gnome/default/alerts/sonar.ogg
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag glib-compile-schemas

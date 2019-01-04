@@ -1,17 +1,17 @@
-$OpenBSD: patch-shell_meson_build,v 1.1 2018/04/24 20:46:46 ajacoutot Exp $
+$OpenBSD: patch-shell_meson_build,v 1.2 2019/01/04 13:39:09 ajacoutot Exp $
 
 Find libkrb5.so
 
 Index: shell/meson.build
 --- shell/meson.build.orig
 +++ shell/meson.build
-@@ -97,7 +97,8 @@ executable(
-   dependencies: shell_deps,
-   c_args: cflags,
-   link_with: panels_libs + [libshell],
--  install: true
-+  install: true,
-+  install_rpath : '${LOCALBASE}/heimdal/lib'
+@@ -103,7 +103,8 @@ executable(
+          dependencies : shell_deps,
+                c_args : cflags,
+             link_with : panels_libs + [libshell],
+-              install : true
++              install : true,
++              install_rpath : '${LOCALBASE}/heimdal/lib'
  )
  
  # Because it is confusing and somewhat problematic to directly add and compile

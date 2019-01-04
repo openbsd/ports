@@ -1,4 +1,4 @@
-$OpenBSD: patch-shell_cc-panel-loader_c,v 1.3 2018/04/23 20:17:05 ajacoutot Exp $
+$OpenBSD: patch-shell_cc-panel-loader_c,v 1.4 2019/01/04 13:39:09 ajacoutot Exp $
 
 http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
 https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
@@ -8,7 +8,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
 Index: shell/cc-panel-loader.c
 --- shell/cc-panel-loader.c.orig
 +++ shell/cc-panel-loader.c
-@@ -52,7 +52,9 @@ extern GType cc_printers_panel_get_type (void);
+@@ -53,7 +53,9 @@ extern GType cc_printers_panel_get_type (void);
  extern GType cc_privacy_panel_get_type (void);
  extern GType cc_region_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
@@ -16,15 +16,15 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sharing_panel_get_type (void);
 +#endif
  extern GType cc_sound_panel_get_type (void);
- extern GType cc_ua_panel_get_type (void);
- extern GType cc_user_panel_get_type (void);
-@@ -97,7 +99,9 @@ static struct {
-   PANEL_TYPE("privacy",          cc_privacy_panel_get_type      ),
-   PANEL_TYPE("region",           cc_region_panel_get_type       ),
-   PANEL_TYPE("search",           cc_search_panel_get_type       ),
+ #ifdef BUILD_THUNDERBOLT
+ extern GType cc_bolt_panel_get_type (void);
+@@ -110,7 +112,9 @@ static struct {
+   PANEL_TYPE("privacy",          cc_privacy_panel_get_type,              NULL),
+   PANEL_TYPE("region",           cc_region_panel_get_type,               NULL),
+   PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),
 +#ifdef BUILD_SHARING
-   PANEL_TYPE("sharing",          cc_sharing_panel_get_type      ),
+   PANEL_TYPE("sharing",          cc_sharing_panel_get_type,              NULL),
 +#endif
-   PANEL_TYPE("sound",            cc_sound_panel_get_type        ),
-   PANEL_TYPE("universal-access", cc_ua_panel_get_type           ),
-   PANEL_TYPE("user-accounts",    cc_user_panel_get_type         ),
+   PANEL_TYPE("sound",            cc_sound_panel_get_type,                NULL),
+ #ifdef BUILD_THUNDERBOLT
+   PANEL_TYPE("thunderbolt",      cc_bolt_panel_get_type,                 NULL),
