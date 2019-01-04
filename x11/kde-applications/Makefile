@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/12/19 08:52:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2019/01/04 14:57:02 rsadowski Exp $
 
      SUBDIR =
 
@@ -97,7 +97,7 @@
      #SUBDIR += kdegraphics-thumbnailers
      #SUBDIR += kolourpaint
      #SUBDIR += kruler
-     #SUBDIR += okular
+     SUBDIR += okular
      SUBDIR += spectacle
      SUBDIR += svgpart
 
