@@ -1,0 +1,16 @@
+Libupnpp is a C++ wrapper for libupnp, a.k.a Portable UPnP, which
+is a direct descendant of the Open Source SDK released by Intel in
+support of UPnP development.
+
+Libupnpp can be used to implement UPnP devices and services, or
+Control Points.
+
+The Control Point side of libupnpp, which is documented here, allows
+a C++ program to discover UPnP devices, and exchange commands and
+status with them.
+
+The library has a number of predefined modules for controlling
+specific AVTransport or OpenHome audio services, and it is relatively
+easy to add modules for other services externally (the internal
+modules have no more access to library internals than an external
+module would).

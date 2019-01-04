@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2019/01/04 14:30:12 pascal Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -2488,6 +2488,7 @@ build_mac=no
+ # Detect the target system
+ case "${host_os}" in
+     linux*) build_linux=yes;;
++    openbsd*) ;;
+     darwin*) build_mac=yes;;
+     *) as_fn_error $? "\"OS $host_os is not supported\"" "$LINENO" 5;;
+ esac
