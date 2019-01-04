@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2018/09/09 14:00:00 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.26 2019/01/04 16:21:43 bket Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
 V=			3.2.0
+REVISION=		0
 GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
 GH_ACCOUNT=		conformal
 GH_PROJECT=		spectrwm
@@ -17,10 +18,9 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-util xcb-icccm
-WANTLIB += xcb-keysyms xcb-randr xcb-xtest
-
-NO_TEST=	Yes
+# uses pledge()
+WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-icccm xcb-keysyms
+WANTLIB += xcb-randr xcb-util xcb-xtest
 
 RUN_DEPENDS=	x11/dmenu>=4.5
 
@@ -28,6 +28,8 @@ MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/man" \
 		SHLIB_MAJOR=${LIBswmhack_VERSION:R} \
 		SHLIB_MINOR=${LIBswmhack_VERSION:E}
+
+NO_TEST=	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/spectrwm.c
