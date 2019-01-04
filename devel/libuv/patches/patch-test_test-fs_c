@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_test-fs_c,v 1.2 2018/02/11 18:31:35 pascal Exp $
+$OpenBSD: patch-test_test-fs_c,v 1.3 2019/01/04 08:53:54 pascal Exp $
 
 Workaround for a minor bug:
 https://github.com/libuv/libuv/issues/1216
@@ -6,7 +6,7 @@ https://github.com/libuv/libuv/issues/1216
 Index: test/test-fs.c
 --- test/test-fs.c.orig
 +++ test/test-fs.c
-@@ -1649,7 +1649,7 @@ TEST_IMPL(fs_realpath) {
+@@ -1768,7 +1768,7 @@ TEST_IMPL(fs_realpath) {
    uv_fs_t req;
  
    loop = uv_default_loop();
@@ -15,7 +15,7 @@ Index: test/test-fs.c
    ASSERT(0 == uv_run(loop, UV_RUN_DEFAULT));
    ASSERT(dummy_cb_count == 1);
    ASSERT(req.ptr == NULL);
-@@ -1665,7 +1665,7 @@ TEST_IMPL(fs_realpath) {
+@@ -1784,7 +1784,7 @@ TEST_IMPL(fs_realpath) {
    ASSERT(req.result == UV_ENOENT);
    uv_fs_req_cleanup(&req);
  
