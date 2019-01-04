@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2018/07/06 06:04:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.51 2019/01/04 13:38:51 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
@@ -28,9 +28,7 @@ share/examples/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
 share/examples/gnome-settings-daemon/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/gnome-settings-daemon/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Clipboard.desktop

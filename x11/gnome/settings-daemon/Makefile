@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.176 2018/07/06 06:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.177 2019/01/04 13:38:51 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		3.28.1
-REVISION=		0
+GNOME_VERSION=		3.30.1.2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xi Xtst c cairo canberra canberra-gtk3 colord
-WANTLIB += colordprivate cups fontconfig gdk-3 gdk_pixbuf-2.0
-WANTLIB += geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gtk-3 gweather-3 intl lcms2 m notify nspr4
-WANTLIB += nss3 polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
+WANTLIB += X11 Xext Xi c cairo canberra canberra-gtk3 colord colordprivate
+WANTLIB += cups fontconfig gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib
+WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3
+WANTLIB += gweather-3 intl lcms2 m notify nspr4 nss3 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib upower-glib
 
 MODULES=		devel/dconf \
 			devel/meson \
