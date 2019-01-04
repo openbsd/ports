@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/04 17:03:01 sthen Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
+
+# runtime failure
+USE_LLD=	No
 
 # tarball built from the following plus submodules:
 #GH_ACCOUNT=	obgm
@@ -8,6 +11,7 @@ COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 #GH_COMMIT=	26d5cf784a2174c4cde90cf71d88848d606d54e8
 
 V=		20180531
+REVISION=	0
 DISTNAME=	libcoap-$V
 PKGNAME=	libcoap-0.$V
 EXTRACT_SUFX=	.tar.xz
