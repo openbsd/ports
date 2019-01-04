@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_core_Compiler_pm6,v 1.1 2019/01/04 09:27:55 pascal Exp $
+
+Index: src/core/Compiler.pm6
+--- src/core/Compiler.pm6.orig
++++ src/core/Compiler.pm6
+@@ -3,10 +3,7 @@ class Compiler does Systemic {
+     has Str $.release;
+     has Str $!build-date;
+     has Str $.codename;
+-    BEGIN my $id = nqp::sha1(
+-        $*W.handle.Str
+-        ~ nqp::atkey(nqp::getcurhllsym('$COMPILER_CONFIG'), 'source-digest')
+-    );
++    BEGIN my $id = 'OpenBSD';
+ 
+     submethod BUILD (
+       :$!name      = 'rakudo',

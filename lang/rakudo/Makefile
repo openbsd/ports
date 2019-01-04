@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/25 21:50:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.33 2019/01/04 09:27:55 pascal Exp $
+
+BROKEN-powerpc =	Cannot declare pseudo-package GLOBAL
 
 COMMENT =		Rakudo Perl 6 compiler
 
-V =			2017.10
+V =			2018.12
 DISTNAME =		rakudo-$V
 
-NQP_VERSION =		2017.10
+NQP_VERSION =		2018.12
 
 CATEGORIES =		lang perl6
 
@@ -16,7 +18,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # Artistic 2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += atomic_ops ffi kvm m moar pthread
+WANTLIB += atomic_ops ffi kvm m moar pthread uv
 
 GH_ACCOUNT =		rakudo
 GH_PROJECT =		rakudo
@@ -31,5 +33,9 @@ RUN_DEPENDS =	lang/nqp>=${NQP_VERSION}
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
 CONFIGURE_ARGS +=	--prefix="${PREFIX}"
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/install-dist.p6 \
+		${PREFIX}/bin/perl6-install-dist
 
 .include <bsd.port.mk>
