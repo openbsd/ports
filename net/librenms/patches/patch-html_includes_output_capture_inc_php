@@ -1,4 +1,4 @@
-$OpenBSD: patch-html_includes_output_capture_inc_php,v 1.2 2018/05/09 20:24:21 sthen Exp $
+$OpenBSD: patch-html_includes_output_capture_inc_php,v 1.3 2019/01/04 13:43:35 sthen Exp $
 
 Index: html/includes/output/capture.inc.php
 --- html/includes/output/capture.inc.php.orig
@@ -7,17 +7,17 @@ Index: html/includes/output/capture.inc.php
  
  switch ($type) {
      case 'poller':
--        $cmd = "php ${config['install_dir']}/poller.php -h $hostname -r -f -d";
-+        $cmd = "%PHP% ${config['install_dir']}/poller.php -h $hostname -r -f -d";
+-        $cmd = ['php', $config['install_dir'] . '/poller.php', '-h', $hostname, '-r', '-f', '-d'];
++        $cmd = ['%PHP%', $config['install_dir'] . '/poller.php', '-h', $hostname, '-r', '-f', '-d'];
          $filename = "poller-$hostname.txt";
          break;
      case 'snmpwalk':
-@@ -50,7 +50,7 @@ switch ($type) {
+@@ -46,7 +46,7 @@ switch ($type) {
          $filename = $device['os'] . '-' . $device['hostname'] . '.snmpwalk';
          break;
      case 'discovery':
--        $cmd = "php ${config['install_dir']}/discovery.php -h $hostname -d";
-+        $cmd = "%PHP% ${config['install_dir']}/discovery.php -h $hostname -d";
+-        $cmd = ['php', $config['install_dir'] . '/discovery.php', '-h', $hostname, '-d'];
++        $cmd = ['%PHP%', $config['install_dir'] . '/discovery.php', '-h', $hostname, '-d'];
          $filename = "discovery-$hostname.txt";
          break;
      default:
