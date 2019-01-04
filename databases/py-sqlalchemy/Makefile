@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/11/26 20:33:48 danj Exp $
+# $OpenBSD: Makefile,v 1.40 2019/01/04 13:27:13 jca Exp $
 
 COMMENT-main =		database toolkit for Python
 COMMENT-docs =		documentation and examples for sqlalchemy
@@ -40,7 +40,7 @@ MAKE_ENV +=		PYTHONPATH=.
 TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 # On python3, sqlite3 is used.
-.if empty(FLAVOR)
+.if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		databases/py-sqlite2${MODPY_FLAVOR}>=2.8.3
 .endif
 

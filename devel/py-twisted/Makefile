@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/10 20:52:35 pvk Exp $
+# $OpenBSD: Makefile,v 1.11 2019/01/04 13:27:13 jca Exp $
 
 COMMENT =		asynchronous networking Python framework
 
@@ -41,7 +41,7 @@ RUN_DEPENDS =		devel/py-hamcrest${MODPY_FLAVOR}	\
 FLAVORS =		python3
 FLAVOR ?=
 
-.if empty(FLAVOR)
+.if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-SOAPpy
 .endif
 
