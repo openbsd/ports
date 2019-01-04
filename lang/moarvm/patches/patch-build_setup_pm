@@ -1,7 +1,8 @@
-$OpenBSD: patch-build_setup_pm,v 1.4 2017/11/25 21:50:50 afresh1 Exp $
---- build/setup.pm.orig	Mon Sep 25 14:41:05 2017
-+++ build/setup.pm	Fri Nov 10 09:47:24 2017
-@@ -267,7 +267,7 @@ our %COMPILERS = (
+$OpenBSD: patch-build_setup_pm,v 1.5 2019/01/04 09:27:09 pascal Exp $
+Index: build/setup.pm
+--- build/setup.pm.orig
++++ build/setup.pm
+@@ -279,7 +279,7 @@ our %COMPILERS = (
  
          ccmiscflags  => '-Werror=declaration-after-statement -Werror=pointer-arith',
          ccwarnflags  => '',
@@ -9,8 +10,8 @@ $OpenBSD: patch-build_setup_pm,v 1.4 2017/11/25 21:50:50 afresh1 Exp $
 +        ccoptiflags  => '-DNDEBUG',
          ccdebugflags => '-g%s',
          ccinstflags  => '-pg',
- 
-@@ -289,7 +289,7 @@ our %COMPILERS = (
+         ccjitflags   => '',
+@@ -334,7 +334,7 @@ our %COMPILERS = (
  
          ccmiscflags  =>  '-fno-omit-frame-pointer -fno-optimize-sibling-calls',
          ccwarnflags  => '-Wno-logical-op-parentheses',

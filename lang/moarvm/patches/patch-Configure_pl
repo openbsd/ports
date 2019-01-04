@@ -1,8 +1,9 @@
-$OpenBSD: patch-Configure_pl,v 1.8 2017/11/25 21:50:50 afresh1 Exp $
---- Configure.pl.orig	Tue Oct  3 13:51:01 2017
-+++ Configure.pl	Fri Nov 10 09:48:34 2017
-@@ -74,11 +74,6 @@ if (-d '.git') {
-     else { softfail("git error: $msg") }
+$OpenBSD: patch-Configure_pl,v 1.9 2019/01/04 09:27:09 pascal Exp $
+Index: Configure.pl
+--- Configure.pl.orig
++++ Configure.pl
+@@ -87,11 +87,6 @@ if (-d '.git') {
+     }
  }
  
 -# fiddle with flags
@@ -11,9 +12,9 @@ $OpenBSD: patch-Configure_pl,v 1.8 2017/11/25 21:50:50 afresh1 Exp $
 -
 -
  for (qw(coverage instrument static big-endian has-libtommath has-sha has-libuv
-         has-libatomic_ops asan ubsan valgrind)) {
+         has-libatomic_ops asan ubsan valgrind show-vec)) {
      $args{$_} = 0 unless defined $args{$_};
-@@ -331,16 +326,13 @@ $config{ldlibs} = ' -lubsan ' . $config{ldlibs} if $ar
+@@ -328,16 +323,13 @@ $config{ldlibs} = ' -lubsan ' . $config{ldlibs} if $ar
  # macro defs
  $config{ccdefflags} = join ' ', map { $config{ccdef} . $_ } @{$config{defs}};
  
@@ -30,7 +31,7 @@ $OpenBSD: patch-Configure_pl,v 1.8 2017/11/25 21:50:50 afresh1 Exp $
  push @cflags, $config{ccdebugflags} if $args{debug};
  push @cflags, $config{ccinstflags}  if $args{instrument};
  push @cflags, $config{ld_covflags}  if $args{coverage};
-@@ -360,7 +352,6 @@ $config{cflags} = join ' ', @cflags;
+@@ -375,7 +367,6 @@ $config{cflags} = join ' ', uniq(@cflags);
  
  # generate LDFLAGS
  my @ldflags = ($config{ldmiscflags});
@@ -38,7 +39,7 @@ $OpenBSD: patch-Configure_pl,v 1.8 2017/11/25 21:50:50 afresh1 Exp $
  push @ldflags, $config{lddebugflags} if $args{debug};
  push @ldflags, $config{ldinstflags}       if $args{instrument};
  push @ldflags, $config{ld_covflags}  if $args{coverage};
-@@ -372,6 +363,10 @@ $config{ldflags} = join ' ', @ldflags;
+@@ -387,6 +378,10 @@ $config{ldflags} = join ' ', @ldflags;
  # setup library names
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;

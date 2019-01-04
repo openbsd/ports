@@ -1,7 +1,8 @@
-$OpenBSD: patch-build_Makefile_in,v 1.4 2017/11/25 21:50:50 afresh1 Exp $
---- build/Makefile.in.orig	Tue Oct 24 15:21:19 2017
-+++ build/Makefile.in	Fri Nov 10 09:49:19 2017
-@@ -37,7 +37,7 @@ MASTDIR   = @mastdir@
+$OpenBSD: patch-build_Makefile_in,v 1.5 2019/01/04 09:27:09 pascal Exp $
+Index: build/Makefile.in
+--- build/Makefile.in.orig
++++ build/Makefile.in
+@@ -38,7 +38,7 @@ MASTDIR   = @mastdir@
  
  PKGCONFIGDIR = @prefix@/share/pkgconfig
  
