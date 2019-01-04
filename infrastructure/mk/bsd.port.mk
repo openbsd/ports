@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1459 2018/12/12 16:17:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1460 2019/01/04 16:58:42 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -393,12 +393,6 @@ BASELOCALSTATEDIR ?= ${VARBASE}
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
 RCDIR ?= /etc/rc.d
-USE_LLD ?= No
-.if ${USE_LLD:L} == "yes"
-_LD_PROGRAM = /usr/bin/ld.lld
-.else
-_LD_PROGRAM = /usr/bin/ld
-.endif
 USE_WXNEEDED ?= No
 .if ${USE_WXNEEDED:L} == "yes"
 _WXNEEDED_FLAGS = -z wxneeded
@@ -797,6 +791,25 @@ _EXTRA_ENV= \
 CONFIGURE_ENV += ${_EXTRA_ENV}
 MAKE_ENV += ${_EXTRA_ENV}
 .endif
+
+.if ${PROPERTIES:Mlld}
+USE_LLD ?= Yes
+.else
+USE_LLD ?= No
+.endif
+
+.if ${USE_LLD:L} == "yes"
+_LD_PROGRAM = /usr/bin/ld.lld
+.  if ! ${PROPERTIES:Mlld}
+_NONDEFAULT_LD = Yes
+.  endif
+.else
+_LD_PROGRAM = /usr/bin/ld.bfd
+.  if ${PROPERTIES:Mlld}
+_NONDEFAULT_LD = Yes
+.  endif
+.endif
+_NONDEFAULT_LD ?= No
 
 # setup locations of compilers from the base system or environment variables.
 # MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,
@@ -2673,13 +2686,15 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 
 # Run as _pbuild
 _post-patch-finalize:
-.if ${USE_WXNEEDED:L} == "yes" || ${USE_LLD:L} == "yes"
+.if ${USE_WXNEEDED:L} == "yes"
 	@wrktmp=`df -P ${WRKOBJDIR_${PKGPATH}} | awk 'END { print $$6 }'`; \
 	if ! mount | grep -q " $${wrktmp} .*wxallowed"; then \
 		echo "Fatal: ${WRKOBJDIR_${PKGPATH}} must be on a wxallowed filesystem" \
 			"(in ${PKGPATH})" >&2; \
 		false; \
 	fi
+.endif
+.if ${USE_WXNEEDED:L} == "yes" || ${_NONDEFAULT_LD:L} == "yes"
 	@printf '#!/bin/sh\nexec ${_LD_PROGRAM} ${_WXNEEDED_FLAGS} "$$@"\n' >${WRKDIR}/bin/ld
 	@chmod 555 ${WRKDIR}/bin/ld
 .endif
