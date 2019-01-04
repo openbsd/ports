@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2018/10/16 14:14:28 sthen Exp $
+$OpenBSD: patch-configure,v 1.5 2019/01/04 16:26:55 sthen Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4731,10 +4731,11 @@ else
+@@ -4738,10 +4738,11 @@ else
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <stdlib.h>

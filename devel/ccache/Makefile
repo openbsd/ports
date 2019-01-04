@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2018/10/16 14:14:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/01/04 16:26:55 sthen Exp $
 
 COMMENT =	compiler cache
 
-DISTNAME =	ccache-3.5
+DISTNAME =	ccache-3.5.1a
+WRKDIST =	${WRKDIR}/ccache-3.5.1
 CATEGORIES =	devel
 
-HOMEPAGE =	http://ccache.samba.org/
+HOMEPAGE =	https://ccache.samba.org/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += c m z
 
-MASTER_SITES =	http://samba.org/ftp/ccache/
+MASTER_SITES =	https://www.samba.org/ftp/ccache/
 
 CONFIGURE_STYLE =	gnu
 
