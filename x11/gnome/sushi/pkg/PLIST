@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/04/24 09:23:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/01/04 14:14:44 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
 lib/sushi/girepository-1.0/Sushi-1.0.typelib
 lib/sushi/libsushi-1.0.so
 @bin libexec/sushi-start
-share/dbus-1/services/org.gnome.Sushi.service
+share/dbus-1/services/org.gnome.NautilusPreviewer.service
 share/locale/af/LC_MESSAGES/sushi.mo
 share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo
