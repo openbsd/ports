@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/01 11:34:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2019/01/04 13:24:10 sthen Exp $
 
 COMMENT=		atk-bridge for at-spi2
 
@@ -19,6 +19,9 @@ MODULES=		devel/meson \
 
 LIB_DEPENDS=		devel/atk \
 			x11/gnome/at-spi2-core>=${GNOME_VERSION}
+
+# not needed in the package, but build fails in tests/ without this
+BUILD_DEPENDS=		textproc/libxml
 
 # DBus
 TEST_IS_INTERACTIVE=	x11
