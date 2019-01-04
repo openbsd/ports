@@ -1,0 +1,39 @@
+$OpenBSD: patch-rocview_impl_guiframe_cpp,v 1.1 2019/01/04 11:07:58 jca Exp $
+
+Initialize m_LNCVPanel earlier to prevent a crash with recent wxWidgets.
+
+Index: rocview/impl/guiframe.cpp
+--- rocview/impl/guiframe.cpp.orig
++++ rocview/impl/guiframe.cpp
+@@ -1759,16 +1759,6 @@ void RocGuiFrame::create() {
+ 
+   m_StatNotebook->AddPage(m_ActiveLocsPanel, wxGetApp().getMsg("activelocs") );
+ 
+-
+-  TraceOp.trc( "frame", TRCLEVEL_INFO, __LINE__, 9999, "Creating PT Panel..." );
+-  m_CVPanel = new wxScrolledWindow( m_StatNotebook, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER||wxHSCROLL|wxVSCROLL );
+-  m_CVPanel->SetScrollbars(1, 1, 0, 0);
+-  m_CV = NULL;
+-  m_CV = new CV( m_CVPanel, wGui.getcvconf( m_Ini ), this );
+-
+-  m_StatNotebook->AddPage(m_CVPanel, wxGetApp().getMsg("programming") );
+-
+-
+   TraceOp.trc( "frame", TRCLEVEL_INFO, __LINE__, 9999, "Creating LNCV Panel..." );
+   m_LNCVPanel = new wxScrolledWindow( m_StatNotebook, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER||wxHSCROLL|wxVSCROLL );
+   m_LNCVPanel->SetScrollbars(1, 1, 0, 0);
+@@ -1779,6 +1769,14 @@ void RocGuiFrame::create() {
+   if( wGui.islncvtab(m_Ini) ) {
+     m_StatNotebook->AddPage(m_LNCVPanel, wxGetApp().getMsg("lncvprogramming") );
+   }
++
++  TraceOp.trc( "frame", TRCLEVEL_INFO, __LINE__, 9999, "Creating PT Panel..." );
++  m_CVPanel = new wxScrolledWindow( m_StatNotebook, -1, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER||wxHSCROLL|wxVSCROLL );
++  m_CVPanel->SetScrollbars(1, 1, 0, 0);
++  m_CV = NULL;
++  m_CV = new CV( m_CVPanel, wGui.getcvconf( m_Ini ), this );
++
++  m_StatNotebook->AddPage(m_CVPanel, wxGetApp().getMsg("programming") );
+ 
+   TraceOp.trc( "frame", TRCLEVEL_INFO, __LINE__, 9999, "Creating PlanNotebook..." );
+   m_PlanNotebook = new wxNotebook( m_PlanSplitter, -1, wxDefaultPosition, wxDefaultSize, wxNB_TOP );
