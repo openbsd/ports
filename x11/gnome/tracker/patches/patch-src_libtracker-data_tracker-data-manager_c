@@ -1,0 +1,218 @@
+$OpenBSD: patch-src_libtracker-data_tracker-data-manager_c,v 1.1 2019/01/04 08:56:44 ajacoutot Exp $
+
+From fedb4d58557a5d34ab3fdd7869a05bd87aff7193 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Thu, 8 Nov 2018 12:40:36 +0100
+Subject: [PATCH] libtracker-data: Drop FTS table/view before ontology updates
+
+Index: src/libtracker-data/tracker-data-manager.c
+--- src/libtracker-data/tracker-data-manager.c.orig
++++ src/libtracker-data/tracker-data-manager.c
+@@ -135,6 +135,12 @@ enum {
+ 	N_PROPS
+ };
+ 
++#if HAVE_TRACKER_FTS
++static gboolean tracker_data_manager_fts_changed (TrackerDataManager *manager);
++static void tracker_data_manager_update_fts (TrackerDataManager *manager,
++                                             TrackerDBInterface *iface);
++#endif
++
+ static void tracker_data_manager_initable_iface_init (GInitableIface *iface);
+ 
+ G_DEFINE_TYPE_WITH_CODE (TrackerDataManager, tracker_data_manager, G_TYPE_OBJECT,
+@@ -3681,6 +3687,9 @@ tracker_data_ontology_import_into_db (TrackerDataManag
+ 	TrackerProperty **properties;
+ 	guint i, n_props, n_classes;
+ 	gboolean base_tables_altered = FALSE;
++#if HAVE_TRACKER_FTS
++	gboolean update_fts = FALSE;
++#endif
+ 
+ 	iface = tracker_db_manager_get_writable_db_interface (manager->db_manager);
+ 
+@@ -3691,6 +3700,15 @@ tracker_data_ontology_import_into_db (TrackerDataManag
+ 		return;
+ 	}
+ 
++#if HAVE_TRACKER_FTS
++	if (in_update) {
++		update_fts = tracker_data_manager_fts_changed (manager);
++
++		if (update_fts)
++			tracker_db_interface_sqlite_fts_delete_table (iface);
++	}
++#endif
++
+ 	/* create tables */
+ 	for (i = 0; i < n_classes; i++) {
+ 		GError *internal_error = NULL;
+@@ -3740,6 +3758,14 @@ tracker_data_ontology_import_into_db (TrackerDataManag
+ 			}
+ 		}
+ 	}
++
++#if HAVE_TRACKER_FTS
++	if (update_fts) {
++		tracker_data_manager_update_fts (manager, iface);
++	} else {
++		tracker_data_manager_init_fts (iface, !in_update);
++	}
++#endif
+ }
+ 
+ static gint
+@@ -3942,13 +3968,44 @@ load_ontologies_gvdb (TrackerDataManager  *manager,
+ 
+ #if HAVE_TRACKER_FTS
+ static gboolean
++tracker_data_manager_fts_changed (TrackerDataManager *manager)
++{
++	TrackerProperty **properties;
++	gboolean has_changed = FALSE;
++	guint i, len;
++
++	properties = tracker_ontologies_get_properties (manager->ontologies, &len);
++
++	for (i = 0; i < len; i++) {
++		TrackerClass *class;
++
++		if (tracker_property_get_fulltext_indexed (properties[i]) !=
++		    tracker_property_get_orig_fulltext_indexed (properties[i])) {
++			has_changed |= TRUE;
++		}
++
++		if (!tracker_property_get_fulltext_indexed (properties[i])) {
++			continue;
++		}
++
++		has_changed |= tracker_property_get_is_new (properties[i]);
++
++		/* We must also regenerate FTS if any table in the view
++		 * updated its schema.
++		 */
++		class = tracker_property_get_domain (properties[i]);
++		has_changed |= tracker_class_get_db_schema_changed (class);
++	}
++
++	return has_changed;
++}
++
++static void
+ ontology_get_fts_properties (TrackerDataManager  *manager,
+-                             gboolean             only_new,
+                              GHashTable         **fts_properties,
+                              GHashTable         **multivalued)
+ {
+ 	TrackerProperty **properties;
+-	gboolean has_changed = FALSE;
+ 	guint i, len;
+ 
+ 	properties = tracker_ontologies_get_properties (manager->ontologies, &len);
+@@ -3960,16 +4017,10 @@ ontology_get_fts_properties (TrackerDataManager  *mana
+ 		const gchar *name, *table_name;
+ 		GList *list;
+ 
+-		if (tracker_property_get_fulltext_indexed (properties[i]) !=
+-		    tracker_property_get_orig_fulltext_indexed (properties[i])) {
+-			has_changed |= TRUE;
+-		}
+-
+ 		if (!tracker_property_get_fulltext_indexed (properties[i])) {
+ 			continue;
+ 		}
+ 
+-		has_changed |= tracker_property_get_is_new (properties[i]);
+ 		table_name = tracker_property_get_table_name (properties[i]);
+ 		name = tracker_property_get_name (properties[i]);
+ 		list = g_hash_table_lookup (*fts_properties, table_name);
+@@ -3986,8 +4037,6 @@ ontology_get_fts_properties (TrackerDataManager  *mana
+ 			list = g_list_append (list, (gpointer) name);
+ 		}
+ 	}
+-
+-	return has_changed;
+ }
+ 
+ static void
+@@ -4001,29 +4050,36 @@ rebuild_fts_tokens (TrackerDataManager *manager,
+ 	/* Update the stamp file */
+ 	tracker_db_manager_tokenizer_update (manager->db_manager);
+ }
+-#endif
+ 
+ gboolean
+ tracker_data_manager_init_fts (TrackerDBInterface *iface,
+                                gboolean            create)
+ {
+-#if HAVE_TRACKER_FTS
+ 	GHashTable *fts_props, *multivalued;
+ 	TrackerDataManager *manager;
+ 
+ 	manager = tracker_db_interface_get_user_data (iface);
+-	ontology_get_fts_properties (manager, FALSE, &fts_props, &multivalued);
++	ontology_get_fts_properties (manager, &fts_props, &multivalued);
+ 	tracker_db_interface_sqlite_fts_init (iface, fts_props,
+ 	                                      multivalued, create);
+ 	g_hash_table_unref (fts_props);
+ 	g_hash_table_unref (multivalued);
+ 	return TRUE;
+-#else
+-	g_info ("FTS support is disabled");
+-	return FALSE;
+-#endif
+ }
+ 
++static void
++tracker_data_manager_update_fts (TrackerDataManager *manager,
++                                 TrackerDBInterface *iface)
++{
++	GHashTable *fts_properties, *multivalued;
++
++	ontology_get_fts_properties (manager, &fts_properties, &multivalued);
++	tracker_db_interface_sqlite_fts_alter_table (iface, fts_properties, multivalued);
++	g_hash_table_unref (fts_properties);
++	g_hash_table_unref (multivalued);
++}
++#endif
++
+ GFile *
+ tracker_data_manager_get_cache_location (TrackerDataManager *manager)
+ {
+@@ -4279,8 +4335,6 @@ tracker_data_manager_initable_init (GInitable     *ini
+ 		tracker_data_ontology_import_into_db (manager, FALSE,
+ 		                                      &internal_error);
+ 
+-		tracker_data_manager_init_fts (iface, TRUE);
+-
+ 		if (internal_error) {
+ 			g_propagate_error (error, internal_error);
+ 			return FALSE;
+@@ -4371,7 +4425,9 @@ tracker_data_manager_initable_init (GInitable     *ini
+ 			}
+ 		}
+ 
++#if HAVE_TRACKER_FTS
+ 		tracker_data_manager_init_fts (iface, FALSE);
++#endif
+ 	}
+ 
+ 	if (!read_only) {
+@@ -4630,17 +4686,6 @@ tracker_data_manager_initable_init (GInitable     *ini
+ 			}
+ 
+ 			if (update_nao) {
+-#if HAVE_TRACKER_FTS
+-				GHashTable *fts_properties, *multivalued;
+-
+-				if (ontology_get_fts_properties (manager, TRUE, &fts_properties, &multivalued)) {
+-					tracker_db_interface_sqlite_fts_alter_table (iface, fts_properties, multivalued);
+-				}
+-
+-				g_hash_table_unref (fts_properties);
+-				g_hash_table_unref (multivalued);
+-#endif
+-
+ 				update_ontology_last_modified (manager, iface, ontology, &n_error);
+ 
+ 				if (n_error) {

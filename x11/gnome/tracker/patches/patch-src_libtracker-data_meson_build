@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libtracker-data_meson_build,v 1.1 2019/01/04 08:56:44 ajacoutot Exp $
+
+From 3cbfaa5b374e615098e60eb4430f108b642ebe76 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Tue, 6 Nov 2018 11:36:52 +0100
+Subject: [PATCH] build: Fix build order with libtracker-sparql generated headers
+
+Index: src/libtracker-data/meson.build
+--- src/libtracker-data/meson.build.orig
++++ src/libtracker-data/meson.build
+@@ -73,7 +73,7 @@ libtracker_data = library('tracker-data',
+     # symbols from libtracker-sparql, but does not mean it should
+     # be linked to it.
+     override_options: ['b_lundef=false'],
+-    dependencies: tracker_data_dependencies + [unicode_library],
++    dependencies: tracker_data_dependencies + [unicode_library, tracker_sparql_intermediate_dep],
+     include_directories: [commoninc, configinc, srcinc],
+ )
+ 

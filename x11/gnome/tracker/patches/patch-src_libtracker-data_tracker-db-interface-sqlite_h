@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libtracker-data_tracker-db-interface-sqlite_h,v 1.1 2019/01/04 08:56:44 ajacoutot Exp $
+
+From fedb4d58557a5d34ab3fdd7869a05bd87aff7193 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Thu, 8 Nov 2018 12:40:36 +0100
+Subject: [PATCH] libtracker-data: Drop FTS table/view before ontology updates
+
+Index: src/libtracker-data/tracker-db-interface-sqlite.h
+--- src/libtracker-data/tracker-db-interface-sqlite.h.orig
++++ src/libtracker-data/tracker-db-interface-sqlite.h
+@@ -59,6 +59,8 @@ gboolean            tracker_db_interface_sqlite_wal_ch
+ 
+ 
+ #if HAVE_TRACKER_FTS
++void                tracker_db_interface_sqlite_fts_delete_table       (TrackerDBInterface       *interface);
++
+ void                tracker_db_interface_sqlite_fts_alter_table        (TrackerDBInterface       *interface,
+                                                                         GHashTable               *properties,
+                                                                         GHashTable               *multivalued);
