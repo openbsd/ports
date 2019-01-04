@@ -171,10 +171,10 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.h
 +                       PreSandboxHook hook,
 +                       const Options& options);
 +
-+  // Limit the address space of the current process (and its children).
-+  // to make some vulnerabilities harder to exploit.
-+  bool LimitAddressSpace(const std::string& process_type,
-+                         const Options& options);
++  // Limit the address space of the current process (and its children) to make
++  // some vulnerabilities harder to exploit. Writes the errno due to setrlimit
++  // (including 0 if no error) into |error|.
++  bool LimitAddressSpace(int* error);
 +
 +  // Returns a file descriptor to proc. The file descriptor is no longer valid
 +  // after the sandbox has been sealed.
