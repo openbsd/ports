@@ -1,0 +1,14 @@
+Xschem is a schematic capture program, it allows creation of
+hierarchical representation of circuits with a top down approach. By
+focusing on interfaces, hierarchy and instance properties a complex
+system can be described in terms of simpler building blocks.
+
+A VHDL or Verilog or Spice netlist can be generated from the drawn
+schematic, allowing the simulation of the circuit. Key feature of the
+program is its drawing engine written in C and using directly the Xlib
+drawing primitives; this gives very good speed performance, even on
+very big circuits. The user interface is built with the Tcl-Tk
+toolkit, tcl is also the extension language used.
+
+Netlist can be exported in tEDAx format which can then be used by
+pcb-rnd to design a printed circuit board.

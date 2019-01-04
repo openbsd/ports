@@ -1,0 +1,22 @@
+$OpenBSD: patch-xschem_library_Makefile,v 1.1.1.1 2019/01/04 20:35:47 kn Exp $
+
+Remove GNUism from cp.
+
+Index: xschem_library/Makefile
+--- xschem_library/Makefile.orig
++++ xschem_library/Makefile
+@@ -4,10 +4,10 @@ include ../Makefile.conf
+ 
+ install: FORCE
+ 	mkdir -p $(XSHAREDIR)/xschem_library
+-	cp -ru mylib $(XSHAREDIR)/xschem_library
+-	cp -ru devices $(XSHAREDIR)/xschem_library
+-	cp -ru examples $(XSHAREDIR)/xschem_library
+-	cp -ru pcb $(XSHAREDIR)/xschem_library
++	cp -R mylib $(XSHAREDIR)/xschem_library
++	cp -R devices $(XSHAREDIR)/xschem_library
++	cp -R examples $(XSHAREDIR)/xschem_library
++	cp -R pcb $(XSHAREDIR)/xschem_library
+ 
+ uninstall: FORCE
+ 	rm -rf $(XDOCDIR)/doc
