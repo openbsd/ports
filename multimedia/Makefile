@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2018/12/30 12:10:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.110 2019/01/04 14:44:59 pascal Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -80,6 +80,7 @@
      SUBDIR += synfigstudio
      SUBDIR += transcode
      SUBDIR += transcode,lzo,mjpegtools
+     SUBDIR += upplay
      SUBDIR += vitunes
      SUBDIR += x264
      SUBDIR += x265
