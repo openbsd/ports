@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.10 2017/11/05 09:11:32 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.11 2019/01/04 17:29:53 pascal Exp $
 
 MODGCC4_ARCHS ?= ${GCC49_ARCHS}
 MODGCC4_LANGS ?=
@@ -34,6 +34,14 @@ MODGCC4_CPPDEP =    lang/gcc/4.9,-c++>=4.9,<4.10
 MODGCC4_CPPWANTLIB = estdc++>=17
 MODGCC4_ATOMICWANTLIB = atomic
 
+MODGCC4_FORTRANLIBDEP = lang/gcc/4.9,-libs>=4.9,<4.10
+MODGCC4_FORTRANDEP =    lang/gcc/4.9,-f95>=4.9,<4.10
+MODGCC4_FORTRANWANTLIB = gfortran>=3
+# XXX sync with Makefile
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+MODGCC4_FORTRANWANTLIB += quadmath
+.endif
+
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
 .  if ${MODGCC4_LANGS:L:Mc}
@@ -55,13 +63,9 @@ COMPILER_LINKS += c++ ${LOCALBASE}/bin/eg++ g++ ${LOCALBASE}/bin/eg++
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
-BUILD_DEPENDS += lang/gcc/4.9,-f95>=4.9,<4.10
-WANTLIB += gfortran>=3
-# XXX sync with Makefile
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-WANTLIB += quadmath
-.endif
-LIB_DEPENDS += lang/gcc/4.9,-libs>=4.9,<4.10
+BUILD_DEPENDS += ${MODGCC4_FORTRANDEP}
+WANTLIB += ${MODGCC4_FORTRANWANTLIB}
+LIB_DEPENDS += ${MODGCC4_FORTRANLIBDEP}
 COMPILER_LINKS += gfortran ${LOCALBASE}/bin/egfortran
 .  endif
 
