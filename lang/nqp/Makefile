@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/19 15:19:34 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/01/04 09:27:27 pascal Exp $
 
-BROKEN-powerpc =	Unhandled exception: Bytecode validation error at offset 150, instruction 24:\
-			out of range SC index 56283
+BROKEN-arm =		Bus error
+BROKEN-mips64 =		Bus error
 
 COMMENT =		Not Quite Perl
 
-V =			2017.10
+V =			2018.12
 DISTNAME =		nqp-$V
 
-MOAR_VERSION =		2017.10
+MOAR_VERSION =		2018.12
 
 PATCHORIG =		.orig.port
 
