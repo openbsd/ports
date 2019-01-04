@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.3 2018/12/07 07:34:15 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/01/04 22:20:49 mariani Exp $
 
-VER =		4.1.4
+VER =		4.1.5
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent

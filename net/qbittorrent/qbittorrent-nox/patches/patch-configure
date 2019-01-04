@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+$OpenBSD: patch-configure,v 1.2 2019/01/04 22:20:49 mariani Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5413,12 +5413,12 @@ if test -n "$zlib_CFLAGS"; then
+@@ -5405,12 +5405,12 @@ if test -n "$zlib_CFLAGS"; then
      pkg_cv_zlib_CFLAGS="$zlib_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -19,7 +19,7 @@ Index: configure
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -5430,12 +5430,12 @@ if test -n "$zlib_LIBS"; then
+@@ -5422,12 +5422,12 @@ if test -n "$zlib_LIBS"; then
      pkg_cv_zlib_LIBS="$zlib_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -35,7 +35,7 @@ Index: configure
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -5456,14 +5456,14 @@ else
+@@ -5448,14 +5448,14 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
@@ -53,21 +53,3 @@ Index: configure
  
  $zlib_PKG_ERRORS
  
-@@ -6492,7 +6492,7 @@ cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
- _ACAWK
- cat >>"\$ac_tmp/subs1.awk" <<_ACAWK &&
-   for (key in S) S_is_set[key] = 1
--  FS = ""
-+  FS = " "
- 
- }
- {
-@@ -7808,7 +7808,7 @@ cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
- _ACAWK
- cat >>"\$ac_tmp/subs1.awk" <<_ACAWK &&
-   for (key in S) S_is_set[key] = 1
--  FS = ""
-+  FS = " "
- 
- }
- {

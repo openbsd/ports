@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_pri_in,v 1.1.1.1 2018/09/17 09:56:29 bentley Exp $
+$OpenBSD: patch-conf_pri_in,v 1.2 2019/01/04 22:20:49 mariani Exp $
 
 Index: conf.pri.in
 --- conf.pri.in.orig
@@ -15,5 +15,5 @@ Index: conf.pri.in
 +DATADIR = ${PREFIX}/share
 +MANPREFIX = ${PREFIX}/man
  
- QMAKE_CXXFLAGS += @QBT_CONF_EXTRA_CFLAGS@
- 
+ QMAKE_CC = @QBT_CC@
+ QMAKE_CXX = @QBT_CXX@
