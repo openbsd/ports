@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2018/12/15 15:21:48 jca Exp $
+# $OpenBSD: Makefile,v 1.203 2019/01/04 00:14:57 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,7 +20,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	20
+REVISION-main =	21
 REVISION-python = 4
 REVISION-lldb =	1
 CATEGORIES =	devel
@@ -83,8 +83,6 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 
 # Workaround relocation overflow
 .if ${MACHINE_ARCH} == "powerpc"
-CFLAGS +=		-mlongcall
-CXXFLAGS +=		-mlongcall
 # As a workaround for the size only build the PowerPC backend
 CONFIGURE_ARGS +=	-DLLVM_TARGETS_TO_BUILD="PowerPC"
 .elif ${MACHINE_ARCH} == "arm"
