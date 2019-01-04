@@ -1,0 +1,242 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+Index: gcc/ada/gcc-interface/Makefile.in
+--- gcc/ada/gcc-interface/Makefile.in.orig
++++ gcc/ada/gcc-interface/Makefile.in
+@@ -414,6 +414,10 @@ ATOMICS_TARGET_PAIRS = \
+   a-szunau.adb<libgnat/a-szunau__shared.adb \
+   a-szuzti.adb<libgnat/a-szuzti__shared.adb
+ 
++# Disable shared strings because of overlapping memcpy issue
++# See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=64057
++ATOMICS_TARGET_PAIRS =
++
+ ATOMICS_BUILTINS_TARGET_PAIRS = \
+   s-atocou.adb<libgnat/s-atocou__builtin.adb
+ 
+@@ -1202,6 +1206,217 @@ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) 
+   MISCLIB = -lutil
+ endif
+ 
++ifeq ($(strip $(filter-out arm openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-arm.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out %86 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-x86.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out %86_64 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_64_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-x86_64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out sparc64 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-sparcv9.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out powerpc openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-ppc.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out mips64 openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-mips64.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out mips64el openbsd%,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-mips64el.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
++ifeq ($(strip $(filter-out hppa openbsd%,$(target_cpu) $(target_os))),)
++  ATOMICS_BUILTINS_TARGET_PAIRS = \
++  s-atocou.adb<libgnat/s-atocou.adb
++
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<libgnarl/a-intnam__freebsd.ads \
++  s-inmaop.adb<libgnarl/s-inmaop__posix.adb \
++  s-intman.adb<libgnarl/s-intman__posix.adb \
++  s-osinte.ads<libgnarl/s-osinte__openbsd.ads \
++  s-osinte.adb<libgnarl/s-osinte__openbsd.adb \
++  s-osprim.adb<libgnat/s-osprim__posix.adb \
++  s-taprop.adb<libgnarl/s-taprop__posix.adb \
++  s-taspri.ads<libgnarl/s-taspri__posix.ads \
++  s-tpopsp.adb<libgnarl/s-tpopsp__posix.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(ATOMICS_BUILTINS_TARGET_PAIRS) \
++  system.ads<libgnat/system-openbsd-hppa.ads
++
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
++  GNATLIB_SHARED = gnatlib-shared-dual
++
++  EH_MECHANISM=-gcc
++  THREADSLIB= -lpthread
++  GMEM_LIB = gmemlib
++  LIBRARY_VERSION := $(LIB_VERSION)
++  MISCLIB = -lutil
++endif
++
+ # x86-64 FreeBSD
+ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+@@ -2065,7 +2280,7 @@ LIBGNAT_OBJS = adadecode.o adaint.o argv.o aux-io.o 		
+ #  from ADA_INCLUDE_SRCS.
+ 
+ LIBGNAT_SRCS = $(patsubst %.o,%.c,$(LIBGNAT_OBJS))			\
+-  adadecode.h adaint.h env.h gsocket.h raise.h standard.ads.h		\
++  adadecode.h adaint.h env.h gsocket.h raise.h \
+   tb-gcc.c libgnarl/thread.c $(EXTRA_LIBGNAT_SRCS)
+ 
+ # GNATRTL_NONTASKING_OBJS and GNATRTL_TASKING_OBJS can be found in

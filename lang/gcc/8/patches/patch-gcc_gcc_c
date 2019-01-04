@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_gcc_c,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+Index: gcc/gcc.c
+--- gcc/gcc.c.orig
++++ gcc/gcc.c
+@@ -928,7 +928,7 @@ proper position among the other output files.  */
+ #else
+ #define LD_PIE_SPEC ""
+ #endif
+-#define LINK_PIE_SPEC "%{static|shared|r:;" PIE_SPEC ":" LD_PIE_SPEC "} "
++#define LINK_PIE_SPEC "%{pie:-pie} %{p|pg|nopie:-nopie} "
+ #endif
+ 
+ #ifndef LINK_BUILDID_SPEC

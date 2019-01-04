@@ -1,0 +1,157 @@
+$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/config/alpha/alpha.c
+--- gcc/config/alpha/alpha.c.orig
++++ gcc/config/alpha/alpha.c
+@@ -49,6 +49,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include "varasm.h"
+ #include "output.h"
+ #include "insn-attr.h"
++#include "flags.h"
+ #include "explow.h"
+ #include "expr.h"
+ #include "reload.h"
+@@ -577,11 +578,17 @@ alpha_option_override (void)
+   if (!global_options_set.x_g_switch_value)
+     g_switch_value = 8;
+ 
++#ifdef OPENBSD_NATIVE
++  /* Make -fpic behave as -fPIC unless -msmall-data is specified. */
++  if (flag_pic == 2 && TARGET_SMALL_DATA)
++    warning (0, "-fPIC used with -msmall-data");
++#else
+   /* Infer TARGET_SMALL_DATA from -fpic/-fPIC.  */
+   if (flag_pic == 1)
+     target_flags |= MASK_SMALL_DATA;
+   else if (flag_pic == 2)
+     target_flags &= ~MASK_SMALL_DATA;
++#endif
+ 
+   alpha_override_options_after_change ();
+ 
+@@ -4069,11 +4076,11 @@ alpha_expand_block_clear (rtx operands[])
+       if (a > align)
+ 	{
+           if (a >= 64)
+-	    align = a, alignofs = 8 - c % 8;
++	    align = a, alignofs = 8 - (c & 7);
+           else if (a >= 32)
+-	    align = a, alignofs = 4 - c % 4;
++	    align = a, alignofs = 4 - (c & 3);
+           else if (a >= 16)
+-	    align = a, alignofs = 2 - c % 2;
++	    align = a, alignofs = 2 - (c & 1);
+ 	}
+     }
+ 
+@@ -7384,8 +7391,6 @@ alpha_initial_elimination_offset (unsigned int from,
+   switch (from)
+     {
+     case FRAME_POINTER_REGNUM:
+-      break;
+-
+     case ARG_POINTER_REGNUM:
+       ret += (ALPHA_ROUND (get_frame_size ()
+ 			   + crtl->args.pretend_args_size)
+@@ -7726,6 +7731,9 @@ alpha_expand_prologue (void)
+   sa_size = alpha_sa_size ();
+   frame_size = compute_frame_size (get_frame_size (), sa_size);
+ 
++  if (warn_stack_larger_than && frame_size > stack_larger_than_size)
++    warning (OPT_Wstack_larger_than_, "stack usage is %ld bytes", frame_size);
++
+   if (flag_stack_usage_info)
+     current_function_static_stack_size = frame_size;
+ 
+@@ -7764,6 +7772,8 @@ alpha_expand_prologue (void)
+   if (flag_stack_check || flag_stack_clash_protection)
+     probed_size += get_stack_check_protect ();
+ 
++if (flag_stack_check || STACK_CHECK_BUILTIN)
++  {
+   if (probed_size <= 32768)
+     {
+       if (probed_size > 4096)
+@@ -7844,6 +7854,34 @@ alpha_expand_prologue (void)
+ 				 plus_constant (Pmode, stack_pointer_rtx,
+ 						-frame_size)));
+     }
++    }
++  else
++    {
++      if (frame_size <= 32768)
++	{
++	  if (frame_size != 0)
++	    FRP (emit_insn (gen_adddi3 (stack_pointer_rtx, stack_pointer_rtx,
++					GEN_INT (-frame_size))));
++	}
++      else
++	{
++	  rtx count = gen_rtx_REG (DImode, 23);
++	  rtx seq;
++ 
++	  emit_move_insn (count, GEN_INT (-frame_size));
++	  seq = emit_insn (gen_adddi3 (stack_pointer_rtx, stack_pointer_rtx,
++				       count));
++ 
++	  /* This alternative is special, because the DWARF code cannot
++	     possibly intuit through the loop above.  So we invent this
++	     note it looks at instead.  */
++	  RTX_FRAME_RELATED_P (seq) = 1;
++          add_reg_note (seq, REG_FRAME_RELATED_EXPR,
++		    gen_rtx_SET (stack_pointer_rtx,
++				 plus_constant (Pmode, stack_pointer_rtx,
++						-frame_size)));
++	}
++    }
+ 
+   /* Cope with very large offsets to the register save area.  */
+   sa_bias = 0;
+@@ -8692,11 +8730,15 @@ summarize_insn (rtx x, struct shadow_summary *sum, int
+    result of an instruction that might generate an UNPREDICTABLE
+    result.
+ 
+-   (c) Within the trap shadow, no register may be used more than once
++   (c) Within the trap shadow, the destination register of the potentially
++   trapping instruction may not be used as an input, for its value would be
++   UNPREDICTABLE.
++
++   (d) Within the trap shadow, no register may be used more than once
+    as a destination register.  (This is to make life easier for the
+    trap-handler.)
+ 
+-   (d) The trap shadow may not include any branch instructions.  */
++   (e) The trap shadow may not include any branch instructions.  */
+ 
+ static void
+ alpha_handle_trap_shadows (void)
+@@ -8768,7 +8810,7 @@ alpha_handle_trap_shadows (void)
+ 		      if ((sum.defd.i & shadow.defd.i)
+ 			  || (sum.defd.fp & shadow.defd.fp))
+ 			{
+-			  /* (c) would be violated */
++			  /* (d) would be violated */
+ 			  goto close_shadow;
+ 			}
+ 
+@@ -8791,6 +8833,13 @@ alpha_handle_trap_shadows (void)
+ 
+ 			  goto close_shadow;
+ 			}
++
++		      if ((sum.used.i & shadow.defd.i)
++			  || (sum.used.fp & shadow.defd.fp))
++			{
++			  /* (c) would be violated */
++			  goto close_shadow;
++			}
+ 		      break;
+ 
+ 		    case BARRIER:
+@@ -8801,6 +8850,7 @@ alpha_handle_trap_shadows (void)
+ 		    case JUMP_INSN:
+ 		    case CALL_INSN:
+ 		    case CODE_LABEL:
++		      /* (e) would be violated */
+ 		      goto close_shadow;
+ 
+ 		    default:

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_ada_libgnat_a-calend_adb,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+
+Index: gcc/ada/libgnat/a-calend.adb
+--- gcc/ada/libgnat/a-calend.adb.orig
++++ gcc/ada/libgnat/a-calend.adb
+@@ -686,9 +686,7 @@ is
+       type int_Pointer  is access all Interfaces.C.int;
+       type long_Pointer is access all Interfaces.C.long;
+ 
+-      type time_t is
+-        range -(2 ** (Standard'Address_Size - Integer'(1))) ..
+-              +(2 ** (Standard'Address_Size - Integer'(1)) - 1);
++      type time_t is new Long_Long_Integer;
+       type time_t_Pointer is access all time_t;
+ 
+       procedure localtime_tzoff

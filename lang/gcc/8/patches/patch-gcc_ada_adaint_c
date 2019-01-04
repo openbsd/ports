@@ -1,0 +1,25 @@
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/ada/adaint.c
+--- gcc/ada/adaint.c.orig
++++ gcc/ada/adaint.c
+@@ -1434,8 +1434,9 @@ __gnat_file_time_fd (int fd)
+ /* Set the file time stamp.  */
+ 
+ void
+-__gnat_set_file_time_name (char *name, time_t time_stamp)
++__gnat_set_file_time_name (char *name, OS_Time ts)
+ {
++  time_t time_stamp = (time_t) ts;
+ #if defined (__vxworks)
+ 
+ /* Code to implement __gnat_set_file_time_name for these systems.  */
+@@ -3494,3 +3495,9 @@ void __gnat_killprocesstree (int pid, int sig_num)
+ #ifdef __cplusplus
+ }
+ #endif
++
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}

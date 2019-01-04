@@ -1,0 +1,65 @@
+$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/builtins.c
+--- gcc/builtins.c.orig
++++ gcc/builtins.c
+@@ -130,10 +130,12 @@ static rtx expand_builtin_memmove (tree, rtx);
+ static rtx expand_builtin_mempcpy (tree, rtx);
+ static rtx expand_builtin_mempcpy_with_bounds (tree, rtx);
+ static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx, tree, int);
++#ifndef NO_UNSAFE_BUILTINS
+ static rtx expand_builtin_strcat (tree, rtx);
+ static rtx expand_builtin_strcpy (tree, rtx);
+ static rtx expand_builtin_strcpy_args (tree, tree, rtx);
+ static rtx expand_builtin_stpcpy (tree, rtx, machine_mode);
++#endif
+ static rtx expand_builtin_stpncpy (tree, rtx);
+ static rtx expand_builtin_strncat (tree, rtx);
+ static rtx expand_builtin_strncpy (tree, rtx);
+@@ -3686,6 +3688,7 @@ expand_builtin_mempcpy_args (tree dest, tree src, tree
+ 					  endp);
+ }
+ 
++#ifndef NO_UNSAFE_BUILTINS
+ /* Expand into a movstr instruction, if one is available.  Return NULL_RTX if
+    we failed, the caller should emit a normal call, otherwise try to
+    get the result in TARGET, if convenient.  If ENDP is 0 return the
+@@ -3878,6 +3881,7 @@ expand_builtin_stpcpy (tree exp, rtx target, machine_m
+       return expand_movstr (dst, src, target, /*endp=*/2);
+     }
+ }
++#endif
+ 
+ /* Check a call EXP to the stpncpy built-in for validity.
+    Return NULL_RTX on both success and failure.  */
+@@ -6969,15 +6973,19 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+       break;
+ 
+     case BUILT_IN_STRCAT:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcat (exp, target);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STRCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcpy (exp, target);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STRNCAT:
+@@ -6993,9 +7001,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+       break;
+ 
+     case BUILT_IN_STPCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_stpcpy (exp, target, mode);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STPNCPY:

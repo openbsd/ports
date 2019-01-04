@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_defaults_h,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/defaults.h
+--- gcc/defaults.h.orig
++++ gcc/defaults.h
+@@ -1445,6 +1445,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+ #define TARGET_VTABLE_USES_DESCRIPTORS 0
+ #endif
+ 
++#ifndef PIE_DEFAULT
++#define PIE_DEFAULT 0
++#endif
++
+ #endif /* GCC_INSN_FLAGS_H  */
+ 
+ #ifndef DWARF_GNAT_ENCODINGS_DEFAULT

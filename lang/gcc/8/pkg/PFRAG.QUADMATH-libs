@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.QUADMATH-libs,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+lib/libquadmath.la
+@lib lib/libquadmath.so.${LIBquadmath_VERSION}

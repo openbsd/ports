@@ -1,0 +1,33 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+Index: gcc/ada/gcc-interface/Make-lang.in
+--- gcc/ada/gcc-interface/Make-lang.in.orig
++++ gcc/ada/gcc-interface/Make-lang.in
+@@ -816,7 +816,7 @@ ada.install-common:
+ 	-if [ -f gnat1$(exeext) ] ; \
+ 	then \
+ 	  for tool in $(ADA_TOOLS) ; do \
+-	    install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	    install_name=$$tool$(exeext); \
+ 	    $(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	    if [ -f $$tool-cross$(exeext) ] ; \
+ 	    then \
+@@ -853,7 +853,7 @@ ada.install-plugin:
+ 
+ ada.uninstall:
+ 	for tool in $(ADA_TOOLS) ; do \
+-	  install_name=`echo $$tool|sed '$(program_transform_name)'`$(exeext); \
++	  install_name=$$tool$(exeext); \
+ 	  -$(RM) $(DESTDIR)$(bindir)/$$install_name; \
+ 	done
+ 	-$(RM) $(DESTDIR)$(tooldir)/bin/gnatdll$(exeext)
+@@ -925,8 +925,8 @@ lang_checks_parallelized += check-gnat
+ # For description see the check_$lang_parallelize comment in gcc/Makefile.in.
+ check_gnat_parallelize = 1000
+ 
+-check-ada: check-acats check-gnat
+-check-ada-subtargets: check-acats-subtargets check-gnat-subtargets
++check-ada: check-gnat
++check-ada-subtargets: check-gnat-subtargets
+ 
+ ACATSDIR = $(TESTSUITEDIR)/ada/acats
+ ACATSCMD = run_acats.sh

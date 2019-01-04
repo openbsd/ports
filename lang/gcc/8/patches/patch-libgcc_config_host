@@ -1,0 +1,51 @@
+$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: libgcc/config.host
+--- libgcc/config.host.orig
++++ libgcc/config.host
+@@ -346,6 +346,11 @@ aarch64*-*-freebsd*)
+ 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
+ 	md_unwind_header=aarch64/freebsd-unwind.h
+ 	;;
++aarch64-*-openbsd*)
++	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
++	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
++	md_unwind_header=aarch64/aarch64-unwind.h
++	;;
+ aarch64*-*-fuchsia*)
+ 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+ 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp"
+@@ -421,6 +426,11 @@ arm*-*-fuchsia*)
+ arm*-*-netbsdelf*)
+ 	tmake_file="$tmake_file arm/t-arm arm/t-netbsd t-slibgcc-gld-nover"
+ 	;;
++arm-*-openbsd*)
++	tmake_file="$tmake_file arm/t-arm arm/t-elf arm/t-bpabi"
++	tmake_file="$tmake_file t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
++	unwind_header=config/arm/unwind-arm.h
++	;;
+ arm*-*-linux*)			# ARM GNU/Linux with ELF
+ 	tmake_file="${tmake_file} arm/t-arm t-fixedpoint-gnu-prefix t-crtfm"
+ 	tmake_file="${tmake_file} arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
+@@ -882,6 +892,12 @@ microblaze*-*-rtems*)
+ 	;;
+ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	;;
++mips64-*-openbsd*)
++       set
++       ;;
++mips64el-*-openbsd*)
++       set
++       ;;
+ mips*-*-linux*)				# Linux MIPS, either endian.
+ 	extra_parts="$extra_parts crtfastmath.o"
+ 	tmake_file="${tmake_file} t-crtfm"
+@@ -1037,6 +1053,9 @@ powerpc*-*-freebsd*)
+ 	;;
+ powerpc-*-netbsd*)
+ 	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
++	;;
++powerpc-*-openbsd*)
++	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff"
+ 	;;
+ powerpc-*-eabispe*)
+ 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"

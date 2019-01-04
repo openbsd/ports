@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_c-family_c_opt,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/c-family/c.opt
+--- gcc/c-family/c.opt.orig
++++ gcc/c-family/c.opt
+@@ -929,7 +929,7 @@ C ObjC C++ ObjC++ Var(warn_pointer_arith) Warning Lang
+ Warn about function pointer arithmetic.
+ 
+ Wpointer-sign
+-C ObjC Var(warn_pointer_sign) Warning LangEnabledBy(C ObjC,Wall || Wpedantic)
++C ObjC Var(warn_pointer_sign) Warning LangEnabledBy(C ObjC,Wpedantic)
+ Warn when a pointer differs in signedness in an assignment.
+ 
+ Wpointer-compare

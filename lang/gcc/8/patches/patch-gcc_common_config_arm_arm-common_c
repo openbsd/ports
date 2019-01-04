@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_common_config_arm_arm-common_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: gcc/common/config/arm/arm-common.c
+--- gcc/common/config/arm/arm-common.c.orig
++++ gcc/common/config/arm/arm-common.c
+@@ -37,7 +37,6 @@
+ static const struct default_options arm_option_optimization_table[] =
+   {
+     /* Enable section anchors by default at -O1 or higher.  */
+-    { OPT_LEVELS_1_PLUS, OPT_fsection_anchors, NULL, 1 },
+     { OPT_LEVELS_1_PLUS, OPT_fsched_pressure, NULL, 1 },
+     { OPT_LEVELS_NONE, 0, NULL, 0 }
+   };

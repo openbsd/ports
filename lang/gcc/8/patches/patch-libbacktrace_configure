@@ -1,0 +1,22 @@
+$OpenBSD: patch-libbacktrace_configure,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+Index: libbacktrace/configure
+--- libbacktrace/configure.orig
++++ libbacktrace/configure
+@@ -6058,7 +6058,7 @@ darwin* | rhapsody*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+-freebsd* | dragonfly*)
++freebsd* | dragonfly* | openbsd*)
+   if echo __ELF__ | $CC -E - | $GREP __ELF__ > /dev/null; then
+     case $host_cpu in
+     i*86 )
+@@ -9391,7 +9391,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:
+       ;;
+ 
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-    freebsd* | dragonfly*)
++    freebsd* | dragonfly* | openbsd*)
+       archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes

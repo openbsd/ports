@@ -1,0 +1,22 @@
+$OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+Index: libstdc++-v3/libsupc++/Makefile.in
+--- libstdc++-v3/libsupc++/Makefile.in.orig
++++ libstdc++-v3/libsupc++/Makefile.in
+@@ -392,7 +392,7 @@ AM_CPPFLAGS = $(GLIBCXX_INCLUDES) $(CPPFLAGS)
+ # Need this library to both be part of libstdc++.a, and installed
+ # separately too.
+ # 1) separate libsupc++.la
+-toolexeclib_LTLIBRARIES = libsupc++.la
++toolexeclib_LTLIBRARIES = libesupc++.la
+ 
+ # 2) integrated libsupc++convenience.la that is to be a part of libstdc++.a
+ noinst_LTLIBRARIES = libsupc++convenience.la
+@@ -639,7 +639,7 @@ clean-toolexeclibLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libsupc++.la: $(libsupc___la_OBJECTS) $(libsupc___la_DEPENDENCIES) $(EXTRA_libsupc___la_DEPENDENCIES) 
++libesupc++.la: $(libsupc___la_OBJECTS) $(libsupc___la_DEPENDENCIES) $(EXTRA_libsupc___la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(toolexeclibdir) $(libsupc___la_OBJECTS) $(libsupc___la_LIBADD) $(LIBS)
+ libsupc++convenience.la: $(libsupc__convenience_la_OBJECTS) $(libsupc__convenience_la_DEPENDENCIES) $(EXTRA_libsupc__convenience_la_DEPENDENCIES) 
+ 	$(CXXLINK)  $(libsupc__convenience_la_OBJECTS) $(libsupc__convenience_la_LIBADD) $(LIBS)

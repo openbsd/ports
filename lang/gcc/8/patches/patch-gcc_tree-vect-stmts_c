@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_tree-vect-stmts_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+
+Index: gcc/tree-vect-stmts.c
+--- gcc/tree-vect-stmts.c.orig
++++ gcc/tree-vect-stmts.c
+@@ -3745,7 +3745,7 @@ vectorizable_simd_clone_call (gimple *stmt, gimple_stm
+ 	dump_printf_loc (MSG_MISSED_OPTIMIZATION, vect_location,
+ 			 "not considering SIMD clones; not yet supported"
+ 			 " for variable-width vectors.\n");
+-      return NULL;
++      return false;
+     }
+ 
+   unsigned int badness = 0;
