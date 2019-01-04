@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:04:19 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/04 21:01:52 kili Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	nepomukcore		53.0 # 4.9
-#SHARED_LIBS +=	nepomuksync		0.0 # 4.9
 SHARED_LIBS +=	nepomukcommon		53.0 # 4.10
 SHARED_LIBS +=	kdeinit4_nepomukserver	53.0 # 4.10
 SHARED_LIBS +=	nepomukextractor	53.0
@@ -19,7 +18,7 @@ WANTLIB += ${KDE4LIB}/baloocore ${KDE4LIB}/baloofiles ${KDE4LIB}/baloopim
 WANTLIB += ${KDE4LIB}/balooqueryparser
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/solid
-WANTLIB += avcodec avformat avutil epub exiv2 poppler-qt4 soprano
+WANTLIB += avcodec avformat avutil epub exiv2 soprano
 WANTLIB += sopranoserver tag
 
 MODKDE4_USE =	libs
@@ -33,11 +32,11 @@ LIB_DEPENDS =	audio/taglib \
 		databases/soprano>=2.9.3 \
 		graphics/exiv2 \
 		graphics/ffmpeg \
-		print/poppler,,-qt4 \
 		textproc/ebook-tools \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QMobipocket=True \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=True \
+			-DCMAKE_DISABLE_FIND_PACKAGE_PopplerQt4=True
 
 .include <bsd.port.mk>
