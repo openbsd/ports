@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2019/01/04 00:14:57 jca Exp $
+# $OpenBSD: Makefile,v 1.204 2019/01/05 11:38:49 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,7 +20,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	21
+REVISION-main =	22
 REVISION-python = 4
 REVISION-lldb =	1
 CATEGORIES =	devel
@@ -60,6 +60,13 @@ TEST_DEPENDS =		devel/dejagnu \
 BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx
 RUN_DEPENDS +=		devel/gtest
+
+.include <bsd.port.arch.mk>
+
+.if !${PROPERTIES:Mclang}
+TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
+.endif
 
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
@@ -108,8 +115,6 @@ GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
-.include <bsd.port.arch.mk>
-
 post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
@@ -146,8 +151,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
-RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
-.endif
