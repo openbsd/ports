@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_url_c,v 1.1 2019/01/05 23:06:38 uaa Exp $
+Index: src/url.c
+--- src/url.c.orig
++++ src/url.c
+@@ -266,7 +266,7 @@ void url_unescape_string(char *dst,char *src)
+ /*
+  * return true if 'c' is valid url character
+  */
+-inline int is_url_valid_char(int c)
++int is_url_valid_char(int c)
+ {
+     return (isalpha(c) ||
+ 	    isdigit(c) ||
