@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/01/03 18:10:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.22 2019/01/05 18:04:57 ajacoutot Exp $
 
 COMMENT=	search mailboxes for a particular email
 
 DISTNAME=	grepmail-5.3111
 PKGNAME=	${DISTNAME}
 CATEGORIES=	mail perl5
+REVISION=	0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	cpan
 CPAN_AUTHOR=	DCOPPIT
 
-RUN_DEPENDS=	devel/p5-Time-TimeDate \
+RUN_DEPENDS=	devel/p5-File-HomeDir \
+		devel/p5-Time-TimeDate \
 		converters/p5-DateManip \
 		mail/p5-Mail-Mbox-MessageParser
 BUILD_DEPENDS=	${RUN_DEPENDS} \
