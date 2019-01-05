@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2018/03/31 14:21:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	date cck and api for drupal
+REVISION =	0
 
 MODDRUPAL_PROJECT = date
 MODDRUPAL_VERSION = 2.10

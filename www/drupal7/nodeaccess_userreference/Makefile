@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/31 16:09:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	multi-author documents
 
@@ -7,6 +7,6 @@ MODDRUPAL_VERSION = 3.10
 MODDRUPAL_PKGNAME = node-access-user-reference
 RUN_DEPENDS =	www/drupal7/references
 
-REVISION =	1
+REVISION =	2
 
 .include <bsd.port.mk>

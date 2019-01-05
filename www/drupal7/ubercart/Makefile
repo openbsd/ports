@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/03/31 16:12:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	e-commerce suite for Drupal
 
 MODDRUPAL_PROJECT = ubercart
 MODDRUPAL_VERSION = 3.1
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.ubercart.org/
 

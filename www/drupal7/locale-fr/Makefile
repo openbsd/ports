@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/27 10:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/01/05 22:56:20 danj Exp $
 
 DRUPAL_LANG =		fr
 EXTRACT_ONLY =
@@ -33,5 +33,6 @@ LANGFILES +=	ubercart 3.1
 LANGFILES +=	user_readonly 1.5
 LANGFILES += 	views 3.18
 LANGFILES +=	webform 4.16
+REVISION =	0
 
 .include <bsd.port.mk>

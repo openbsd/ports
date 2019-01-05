@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/31 15:44:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	forbid users from changing some drupal profile fields
+REVISION =	0
 
 MODDRUPAL_PROJECT = user_readonly
 MODDRUPAL_VERSION = 1.5

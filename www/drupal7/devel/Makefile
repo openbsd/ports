@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/31 14:34:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	development helps
+REVISION =	0
 
 MODDRUPAL_PROJECT = devel
 MODDRUPAL_VERSION = 1.5

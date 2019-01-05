@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/31 12:38:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	chaos tool suite
+REVISION =	0
 
 MODDRUPAL_PROJECT = ctools
 MODDRUPAL_VERSION = 1.14

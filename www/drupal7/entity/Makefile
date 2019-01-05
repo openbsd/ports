@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2018/03/31 14:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/05 22:56:20 danj Exp $
 
 COMMENT =	unified entity api
+REVISION =	0
 
 MODDRUPAL_PROJECT = entity
 MODDRUPAL_VERSION = 1.9
