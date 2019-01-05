@@ -1,0 +1,46 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/01/05 22:00:20 sthen Exp $
+
+The old autoconf build has the following additional check after
+determining a valid type for gsize:
+
+dnl If int/long are the same size, we see which one produces
+dnl warnings when used in the location as size_t. (This matters
+dnl on AIX with xlc)
+dnl
+AS_IF([test $ac_cv_sizeof_size_t = $ac_cv_sizeof_int &&
+       test $ac_cv_sizeof_size_t = $ac_cv_sizeof_long], 
+
+It matters on OpenBSD too. Since sthen's meson-fu is lacking, this
+simply reorders the if statement to put the one we need earlier.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -1267,13 +1267,6 @@ if sizet_size == short_size
+   glibconfig_conf.set_quoted('gsize_format', 'hu')
+   glibconfig_conf.set_quoted('gssize_format', 'hi')
+   glibconfig_conf.set('glib_msize_type', 'SHRT')
+-elif sizet_size == int_size
+-  glibconfig_conf.set('glib_size_type_define', 'int')
+-  glibconfig_conf.set_quoted('gsize_modifier', '')
+-  glibconfig_conf.set_quoted('gssize_modifier', '')
+-  glibconfig_conf.set_quoted('gsize_format', 'u')
+-  glibconfig_conf.set_quoted('gssize_format', 'i')
+-  glibconfig_conf.set('glib_msize_type', 'INT')
+ elif sizet_size == long_size
+   glibconfig_conf.set('glib_size_type_define', 'long')
+   glibconfig_conf.set_quoted('gsize_modifier', 'l')
+@@ -1281,6 +1274,13 @@ elif sizet_size == long_size
+   glibconfig_conf.set_quoted('gsize_format', 'lu')
+   glibconfig_conf.set_quoted('gssize_format', 'li')
+   glibconfig_conf.set('glib_msize_type', 'LONG')
++elif sizet_size == int_size
++  glibconfig_conf.set('glib_size_type_define', 'int')
++  glibconfig_conf.set_quoted('gsize_modifier', '')
++  glibconfig_conf.set_quoted('gssize_modifier', '')
++  glibconfig_conf.set_quoted('gsize_format', 'u')
++  glibconfig_conf.set_quoted('gssize_format', 'i')
++  glibconfig_conf.set('glib_msize_type', 'INT')
+ elif sizet_size == long_long_size
+   glibconfig_conf.set('glib_size_type_define', 'long long')
+   glibconfig_conf.set_quoted('gsize_modifier', int64_m)
