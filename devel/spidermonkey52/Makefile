@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/14 19:00:20 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/05 14:17:12 pascal Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -8,7 +8,7 @@ USE_WXNEEDED =		Yes
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
 # jsapi-tests crashes in js::Bindings::switchToScriptStorage() on sparc64 & mips64 (SIGBUS in jsutil.h:33)
 # but let's keep them to build more packages
-ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
+ONLY_FOR_ARCHS =	aarch64 alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
 
 COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
 
