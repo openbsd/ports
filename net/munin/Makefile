@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/01/04 22:00:40 sthen Exp $
-
-BROKEN-i386 =	recurrent segfault in gmake
+# $OpenBSD: Makefile,v 1.80 2019/01/05 22:20:18 naddy Exp $
 
 PORTROACH = 	limitw:1,even
 
