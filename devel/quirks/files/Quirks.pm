@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.698 2019/01/04 21:26:55 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.699 2019/01/05 14:04:07 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1271,6 +1271,7 @@ my $cve = {
 	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
 	'net/ntp' => 'ntp-<4.2.8pl7',
+	'net/openconnect' => 'openconnect-<8.01',
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
 	'net/powerdns,-mysql' => 'powerdns-mysql-<4.1.5',
 	'net/powerdns,-pgsql' => 'powerdns-pgsql-<4.1.5',
