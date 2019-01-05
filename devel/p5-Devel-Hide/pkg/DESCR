@@ -1,0 +1,6 @@
+This module makes require and use statements fail (no matter the
+specified files/modules are installed or not), given a list of Perl
+modules or filenames.
+
+The original intent of this module is to allow Perl developers to
+test for alternative behavior when some modules are not available.
