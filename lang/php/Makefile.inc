@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.128 2018/12/11 12:10:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.129 2019/01/05 23:19:26 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -13,7 +13,7 @@ DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
-HOMEPAGE=		https://www.php.net/
+HOMEPAGE=		https://secure.php.net/
 
 MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \

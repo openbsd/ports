@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/12 08:38:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/05 23:19:26 sthen Exp $
 
 PV=		7.2
 V=		${PV}.13
-REVISION-main=	1
-REVISION-cgi=	0
-REVISION-dbg=	0
-REVISION-apache=	0
+REVISION=	2
 
 .include <bsd.port.mk>
