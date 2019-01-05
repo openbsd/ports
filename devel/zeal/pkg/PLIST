@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/05 10:10:32 awolk Exp $
 @bin bin/zeal
-share/applications/zeal.desktop
+share/applications/org.zealdocs.Zeal.desktop
 share/icons/hicolor/128x128/apps/zeal.png
 share/icons/hicolor/16x16/apps/zeal.png
 share/icons/hicolor/24x24/apps/zeal.png
@@ -8,3 +8,5 @@ share/icons/hicolor/32x32/apps/zeal.png
 share/icons/hicolor/64x64/apps/zeal.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/org.zealdocs.Zeal.appdata.xml
