@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/01/05 10:08:33 steven Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
-DISTNAME=	pstoedit-3.71
+DISTNAME=	pstoedit-3.73
 SHARED_LIBS=	pstoedit 3.0
 CATEGORIES=	graphics
-REVISION=	0
 
 HOMEPAGE=	http://www.pstoedit.net/
 
@@ -19,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pstoedit/}
 RUN_DEPENDS=	print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-libplot	\
 		--without-emf	 	\
