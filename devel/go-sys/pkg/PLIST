@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/23 17:21:29 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/05 13:07:47 jsing Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
@@ -26,6 +26,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_arm64.go
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_gc_x86.go
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_gccgo.c
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_gccgo.go
+${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_mips64x.go
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_mipsx.go
 ${MODGO_SOURCES}/golang.org/x/sys/cpu/cpu_ppc64x.go
@@ -63,6 +64,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/.gitignore
 ${MODGO_SOURCES}/golang.org/x/sys/unix/README.md
 ${MODGO_SOURCES}/golang.org/x/sys/unix/affinity_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/aliases.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/asm_aix_ppc64.s
 ${MODGO_SOURCES}/golang.org/x/sys/unix/asm_darwin_386.s
 ${MODGO_SOURCES}/golang.org/x/sys/unix/asm_darwin_amd64.s
 ${MODGO_SOURCES}/golang.org/x/sys/unix/asm_darwin_arm.s
@@ -90,6 +92,8 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/bluetooth_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/cap_freebsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/constants.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/creds_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/dev_aix_ppc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/dev_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_darwin.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/dev_freebsd.go
@@ -104,7 +108,8 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/env_unix.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/errors_freebsd_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/errors_freebsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/errors_freebsd_arm.go
-${MODGO_SOURCES}/golang.org/x/sys/unix/example_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/example_exec_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/example_flock_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/export_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/fcntl.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/fcntl_linux_32bit.go
@@ -115,12 +120,14 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/ioctl.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/linux/
 ${MODGO_SOURCES}/golang.org/x/sys/unix/linux/Dockerfile
 ${MODGO_SOURCES}/golang.org/x/sys/unix/linux/mkall.go
-${MODGO_SOURCES}/golang.org/x/sys/unix/linux/mksysnum.pl
+${MODGO_SOURCES}/golang.org/x/sys/unix/linux/mksysnum.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/linux/types.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mkall.sh
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mkerrors.sh
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mkpost.go
-${MODGO_SOURCES}/golang.org/x/sys/unix/mksyscall.pl
+${MODGO_SOURCES}/golang.org/x/sys/unix/mksyscall.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/mksyscall_aix_ppc.pl
+${MODGO_SOURCES}/golang.org/x/sys/unix/mksyscall_aix_ppc64.pl
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mksyscall_solaris.pl
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mksysctl_openbsd.pl
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mksysnum_darwin.pl
@@ -131,6 +138,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/mksysnum_openbsd.pl
 ${MODGO_SOURCES}/golang.org/x/sys/unix/mmap_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/openbsd_pledge.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/openbsd_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/openbsd_unveil.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/pagesize_unix.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/race.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/race0.go
@@ -138,6 +146,10 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/sockcmsg_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/sockcmsg_unix.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/str.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_aix.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_aix_ppc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_aix_ppc64.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_aix_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_bsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_bsd_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_darwin.go
@@ -166,6 +178,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_gccgo_arm.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_mips64x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_mipsx.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_ppc64x.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_sparc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_linux_test.go
@@ -178,15 +191,18 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_openbsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_openbsd_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_openbsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_openbsd_arm.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_openbsd_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_solaris.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_solaris_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_solaris_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_unix.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_unix_gc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_unix_gc_ppc64x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/syscall_unix_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/timestruct.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/timestruct_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/types_aix.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/types_darwin.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/types_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/types_freebsd.go
@@ -195,6 +211,8 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/types_openbsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/types_solaris.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/xattr_bsd.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/xattr_test.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_aix_ppc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_darwin_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_darwin_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_darwin_arm.go
@@ -213,6 +231,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_linux_sparc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zerrors_netbsd_386.go
@@ -226,6 +245,10 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/zptrace386_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zptracearm_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zptracemips_linux.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zptracemipsle_linux.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_aix_ppc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_aix_ppc64.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_aix_ppc64_gc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_aix_ppc64_gccgo.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_darwin_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_darwin_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_darwin_arm.go
@@ -244,6 +267,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_linux_sparc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsyscall_netbsd_386.go
@@ -274,6 +298,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_linux_sparc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_netbsd_386.go
@@ -282,6 +307,8 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_netbsd_arm.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_openbsd_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_openbsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/zsysnum_openbsd_arm.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_aix_ppc.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_darwin_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_darwin_amd64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_darwin_arm.go
@@ -300,6 +327,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_linux_sparc64.go
 ${MODGO_SOURCES}/golang.org/x/sys/unix/ztypes_netbsd_386.go
@@ -313,6 +341,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/windows/
 ${MODGO_SOURCES}/golang.org/x/sys/windows/aliases.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/asm_windows_386.s
 ${MODGO_SOURCES}/golang.org/x/sys/windows/asm_windows_amd64.s
+${MODGO_SOURCES}/golang.org/x/sys/windows/asm_windows_arm.s
 ${MODGO_SOURCES}/golang.org/x/sys/windows/dll_windows.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/env_windows.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/eventlog.go
@@ -361,6 +390,7 @@ ${MODGO_SOURCES}/golang.org/x/sys/windows/svc/service.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/svc/svc_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/svc/sys_386.s
 ${MODGO_SOURCES}/golang.org/x/sys/windows/svc/sys_amd64.s
+${MODGO_SOURCES}/golang.org/x/sys/windows/svc/sys_arm.s
 ${MODGO_SOURCES}/golang.org/x/sys/windows/syscall.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/syscall_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/syscall_windows.go
@@ -368,4 +398,5 @@ ${MODGO_SOURCES}/golang.org/x/sys/windows/syscall_windows_test.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/types_windows.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/types_windows_386.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/types_windows_amd64.go
+${MODGO_SOURCES}/golang.org/x/sys/windows/types_windows_arm.go
 ${MODGO_SOURCES}/golang.org/x/sys/windows/zsyscall_windows.go
