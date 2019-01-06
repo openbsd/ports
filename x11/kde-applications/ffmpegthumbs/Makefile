@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/06 14:16:29 rsadowski Exp $
 
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 DISTNAME =	ffmpegthumbs-${VERSION}
 PKGNAME =	ffmpegthumbs-kf5-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 KDE5 =		Yes
 
@@ -14,6 +15,9 @@ WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml avcodec avfilter
 WANTLIB += avformat avutil m swscale
 
 MODULES +=	x11/kde-applications
+
+# build depends but there are no translations
+MODKDE5_TRANSLATIONS = yes
 
 LIB_DEPENDS +=	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
