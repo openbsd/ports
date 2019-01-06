@@ -1,0 +1,26 @@
+$OpenBSD: patch-upnpevents_c,v 1.1 2019/01/06 10:09:04 ajacoutot Exp $
+
+Add kqueue(2) support, from FreeBSD.
+
+Index: upnpevents.c
+--- upnpevents.c.orig
++++ upnpevents.c
+@@ -47,6 +47,7 @@
+  */
+ #include "config.h"
+ 
++#define FD_SETSIZE 8192
+ #include <stdio.h>
+ #include <string.h>
+ #include <errno.h>
+@@ -424,6 +425,10 @@ void upnpevents_selectfds(fd_set *readset, fd_set *wri
+ {
+ 	struct upnp_event_notify * obj;
+ 	for(obj = notifylist.lh_first; obj != NULL; obj = obj->entries.le_next) {
++		if (obj->s > FD_SETSIZE)
++			DPRINTF(E_FATAL, L_HTTP,
++			    "upnpevents_selectfds: file descriptor %d too big for select, limit is %d\n", 
++			    obj->s, FD_SETSIZE);
+ 		DPRINTF(E_DEBUG, L_HTTP, "upnpevents_selectfds: %p %d %d\n",
+ 		       obj, obj->state, obj->s);
+ 		if(obj->s >= 0) {

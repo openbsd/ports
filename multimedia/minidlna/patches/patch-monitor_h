@@ -1,0 +1,15 @@
+$OpenBSD: patch-monitor_h,v 1.1 2019/01/06 10:09:04 ajacoutot Exp $
+
+Add kqueue(2) support, from FreeBSD.
+
+Index: monitor.h
+--- monitor.h.orig
++++ monitor.h
+@@ -5,4 +5,7 @@ int monitor_remove_directory(int fd, const char * path
+ #ifdef HAVE_INOTIFY
+ void *
+ start_inotify();
++#elif defined(HAVE_SYS_EVENT_H)
++void *
++start_kqueue();
+ #endif

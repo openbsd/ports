@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/01/06 10:09:04 ajacoutot Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
 V=		1.2.1
 DISTNAME=	minidlna-$V
 PKGNAME=	minidlna-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	multimedia
 
@@ -21,7 +21,9 @@ WANTLIB += pthread sqlite3 vorbis
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
+
 CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
 		--with-db-path=/var/db/minidlna \
 		--with-os-url=http://www.openbsd.org/
