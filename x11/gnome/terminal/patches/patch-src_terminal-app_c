@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_terminal-app_c,v 1.4 2019/01/06 12:18:29 jasper Exp $
+
+Use correct modified for num (int) and drop undefined %I
+
+Index: src/terminal-app.c
+--- src/terminal-app.c.orig
++++ src/terminal-app.c
+@@ -388,7 +388,7 @@ menu_append_numbered (GMenu *menu,
+   str = g_string_sized_new (strlen (label) + 4 + 1 + 8);
+ 
+   if (num < 10)
+-    g_string_append_printf (str, "_%Id. ", num);
++    g_string_append_printf (str, "_%d. ", num);
+   else if (num < 36)
+     g_string_append_printf (str, "_%c. ",  (char)('A' + num - 10));
+ 
