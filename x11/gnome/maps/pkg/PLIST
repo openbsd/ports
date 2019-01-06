@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/01/06 12:59:03 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
 lib/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
-lib/gnome-maps/libgnome-maps.a
-lib/gnome-maps/libgnome-maps.la
 @lib lib/gnome-maps/libgnome-maps.so.${LIBgnome-maps_VERSION}
 share/applications/org.gnome.Maps.desktop
 share/dbus-1/services/org.gnome.Maps.service
-share/gir-1.0/GnomeMaps-1.0.gir
 share/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 share/gnome-maps/
+share/gnome-maps/gir-1.0/
+share/gnome-maps/gir-1.0/GnomeMaps-1.0.gir
 share/gnome-maps/icons/
 share/gnome-maps/icons/hicolor/
 share/gnome-maps/icons/hicolor/16x16/
