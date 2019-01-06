@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/07/06 06:04:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/01/06 13:19:57 ajacoutot Exp $
 @bin bin/gnome-photos
 @bin libexec/gnome-photos-thumbnailer
 share/applications/org.gnome.Photos.desktop
@@ -7,7 +7,6 @@ share/doc/gnome-photos/
 share/doc/gnome-photos/ARTISTS
 share/doc/gnome-photos/AUTHORS
 share/doc/gnome-photos/COPYING
-share/doc/gnome-photos/ChangeLog
 share/doc/gnome-photos/NEWS
 share/doc/gnome-photos/README
 share/glib-2.0/schemas/org.gnome.photos.gschema.xml
@@ -37,7 +36,6 @@ share/help/ca/gnome-photos/view-album.page
 share/help/ca/gnome-photos/view-favorites.page
 share/help/ca/gnome-photos/view-photos.page
 share/help/ca/gnome-photos/view.page
-share/help/cs/
 share/help/cs/gnome-photos/
 share/help/cs/gnome-photos/favorites-set.page
 share/help/cs/gnome-photos/favorites.page
@@ -61,7 +59,6 @@ share/help/da/gnome-photos/view-album.page
 share/help/da/gnome-photos/view-favorites.page
 share/help/da/gnome-photos/view-photos.page
 share/help/da/gnome-photos/view.page
-share/help/de/
 share/help/de/gnome-photos/
 share/help/de/gnome-photos/favorites-set.page
 share/help/de/gnome-photos/favorites.page
@@ -85,7 +82,6 @@ share/help/el/gnome-photos/view-album.page
 share/help/el/gnome-photos/view-favorites.page
 share/help/el/gnome-photos/view-photos.page
 share/help/el/gnome-photos/view.page
-share/help/es/
 share/help/es/gnome-photos/
 share/help/es/gnome-photos/favorites-set.page
 share/help/es/gnome-photos/favorites.page
@@ -157,7 +153,6 @@ share/help/ko/gnome-photos/view-album.page
 share/help/ko/gnome-photos/view-favorites.page
 share/help/ko/gnome-photos/view-photos.page
 share/help/ko/gnome-photos/view.page
-share/help/pl/
 share/help/pl/gnome-photos/
 share/help/pl/gnome-photos/favorites-set.page
 share/help/pl/gnome-photos/favorites.page
@@ -169,7 +164,6 @@ share/help/pl/gnome-photos/view-album.page
 share/help/pl/gnome-photos/view-favorites.page
 share/help/pl/gnome-photos/view-photos.page
 share/help/pl/gnome-photos/view.page
-share/help/pt_BR/
 share/help/pt_BR/gnome-photos/
 share/help/pt_BR/gnome-photos/favorites-set.page
 share/help/pt_BR/gnome-photos/favorites.page
@@ -193,7 +187,6 @@ share/help/ro/gnome-photos/view-album.page
 share/help/ro/gnome-photos/view-favorites.page
 share/help/ro/gnome-photos/view-photos.page
 share/help/ro/gnome-photos/view.page
-share/help/sv/
 share/help/sv/gnome-photos/
 share/help/sv/gnome-photos/favorites-set.page
 share/help/sv/gnome-photos/favorites.page
