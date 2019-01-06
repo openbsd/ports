@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/01/06 14:12:03 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.bijiben.desktop
@@ -275,7 +275,6 @@ share/icons/hicolor/256x256/apps/org.gnome.bijiben.png
 share/icons/hicolor/32x32/apps/org.gnome.bijiben.png
 share/icons/hicolor/48x48/apps/org.gnome.bijiben.png
 share/icons/hicolor/scalable/apps/org.gnome.bijiben-symbolic.svg
-share/locale/af/LC_MESSAGES/bijiben.mo
 share/locale/ar/LC_MESSAGES/bijiben.mo
 share/locale/as/LC_MESSAGES/bijiben.mo
 share/locale/be/LC_MESSAGES/bijiben.mo
