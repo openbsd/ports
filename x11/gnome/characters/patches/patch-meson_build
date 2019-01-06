@@ -1,0 +1,25 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/01/06 14:31:59 jasper Exp $
+
+Remove libunistring check for it doesn't honor the environment (specifically CPPFLAGS)
+and incorrectly "detects" libunistring as not present.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -32,16 +32,6 @@ if dbus_service_dir == ''
+   dbus_service_dir = join_paths(characters_datadir, 'dbus-1', 'services')
+ endif
+ 
+-libunistring_src = '''
+-  #include <uniconv.h>
+-  int main() {
+-      u8_strconv_from_locale((char*)0);
+-  };
+-'''
+-
+-# FIXME: libunistring doesn't have pkgconfig support
+-assert(cc.links(libunistring_src, name: 'libunistring support', args: '-lunistring'), 'libunistring is required but not found')
+-
+ # Just check that gjs-1.0 is present and recent enough
+ dependency('gjs-1.0', version: '>= 1.43.3')
+ 

@@ -1,24 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2018/07/06 06:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/01/06 14:31:59 jasper Exp $
 
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
-GNOME_VERSION =		3.28.2
-REVISION =		2
+GNOME_VERSION =		3.30.0
 
 # BSD3/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread unistring xcb xcb-render
-WANTLIB += xcb-shm z iconv intl fribidi
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 pango-1.0 unistring 
 
 MODULES =		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 LIB_DEPENDS =		converters/libunistring \
@@ -27,8 +20,6 @@ BUILD_DEPENDS =		x11/gnome/gjs
 RUN_DEPENDS =		x11/gnome/gjs
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
-
-CONFIGURE_STYLE =	gnu
 
 # Requires unported 'dogtail'
 NO_TEST =		Yes
