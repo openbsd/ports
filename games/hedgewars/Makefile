@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/24 17:03:03 pascal Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/06 20:27:58 pascal Exp $
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
@@ -68,7 +68,9 @@ LIB_DEPENDS-server =	converters/libiconv
 
 CONFIGURE_ARGS +=	-DNOVIDEOREC=ON
 
-CONFIGURE_ENV +=	HOME="${WRKBUILD}"
+CONFIGURE_ENV +=	HOME="${WRKBUILD}" \
+			CFLAGS="${CFLAGS} -I${X11BASE}/include" \
+			CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include"
 
 MODGHC_BUILD =		nort
 
