@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.165 2019/01/03 15:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2019/01/06 13:54:15 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.28.5
-REVISION=		0
+GNOME_VERSION=		3.30.2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -29,7 +28,7 @@ WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lcms2 lzma m openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 poppler
 WANTLIB += poppler-glib secret-1 tiff xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z aspell enchant-2 gspell-1
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -43,6 +42,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			print/poppler \
+			textproc/gspell \
 			x11/gnome/libsecret \
 			x11/gtk+3
 
@@ -81,11 +81,12 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			graphics/libgxps \
 			print/libspectre \
 			print/texlive/base,-mktexlsr \
+			x11/gnome/desktop \
 			x11/gnome/nautilus
 WANTLIB += ICE SM avahi-common dbus-1 gmp gs hogweed idn2 nettle
 WANTLIB += p11-kit spectre tasn1 unistring zstd
 WANTLIB += archive bz2 djvulibre gxps kpathsea
-WANTLIB += nautilus-extension crypto lz4
+WANTLIB += nautilus-extension crypto lz4 gnome-desktop-3
 
 # XXX not sure that's needed automatic conversion
 RUN_DEPENDS +=	print/texlive/base,-main
