@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2019/01/06 13:54:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/01/06 14:58:56 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -96,6 +98,7 @@ RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			sysutils/deja-dup \
 			www/epiphany \
 			x11/gnome/baobab \
+			x11/gnome/characters \
 			x11/gnome/system-monitor \
 			x11/gnome/totem \
 			x11/gnome/vinagre
