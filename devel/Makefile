@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1800 2019/01/05 10:51:20 steven Exp $
+# $OpenBSD: Makefile,v 1.1801 2019/01/06 16:05:06 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -728,6 +728,7 @@
      SUBDIR += p5-ExtUtils-Helpers
      SUBDIR += p5-ExtUtils-InstallPaths
      SUBDIR += p5-ExtUtils-PkgConfig
+     SUBDIR += p5-ExtUtils-Typemaps-Default
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-ExtUtils-XSpp
      SUBDIR += p5-File-Attributes
