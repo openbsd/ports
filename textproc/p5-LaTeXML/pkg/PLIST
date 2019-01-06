@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/01 09:02:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/06 20:51:33 pirofti Exp $
 bin/latexml
 bin/latexmlc
 bin/latexmlfind
@@ -21,6 +21,7 @@ ${P5SITE}/LaTeXML/Common/Error.pm
 ${P5SITE}/LaTeXML/Common/Float.pm
 ${P5SITE}/LaTeXML/Common/Font.pm
 ${P5SITE}/LaTeXML/Common/Glue.pm
+${P5SITE}/LaTeXML/Common/Locator.pm
 ${P5SITE}/LaTeXML/Common/Model/
 ${P5SITE}/LaTeXML/Common/Model.pm
 ${P5SITE}/LaTeXML/Common/Model/DTD.pm
@@ -53,6 +54,7 @@ ${P5SITE}/LaTeXML/Core/Definition/Primitive.pm
 ${P5SITE}/LaTeXML/Core/Definition/Register.pm
 ${P5SITE}/LaTeXML/Core/Document.pm
 ${P5SITE}/LaTeXML/Core/Gullet.pm
+${P5SITE}/LaTeXML/Core/KeyVal.pm
 ${P5SITE}/LaTeXML/Core/KeyVals.pm
 ${P5SITE}/LaTeXML/Core/List.pm
 ${P5SITE}/LaTeXML/Core/Mouth/
@@ -81,6 +83,7 @@ ${P5SITE}/LaTeXML/Package/
 ${P5SITE}/LaTeXML/Package.pm
 ${P5SITE}/LaTeXML/Package/AmSTeX.pool.ltxml
 ${P5SITE}/LaTeXML/Package/BibTeX.pool.ltxml
+${P5SITE}/LaTeXML/Package/IEEEtran.cls.ltxml
 ${P5SITE}/LaTeXML/Package/JHEP.cls.ltxml
 ${P5SITE}/LaTeXML/Package/JHEP2.cls.ltxml
 ${P5SITE}/LaTeXML/Package/JHEP3.cls.ltxml
@@ -99,13 +102,19 @@ ${P5SITE}/LaTeXML/Package/aasms.sty.ltxml
 ${P5SITE}/LaTeXML/Package/aaspp.sty.ltxml
 ${P5SITE}/LaTeXML/Package/aastex.cls.ltxml
 ${P5SITE}/LaTeXML/Package/aastex.sty.ltxml
+${P5SITE}/LaTeXML/Package/aastex6.cls.ltxml
+${P5SITE}/LaTeXML/Package/aastex61.cls.ltxml
+${P5SITE}/LaTeXML/Package/accents.sty.ltxml
+${P5SITE}/LaTeXML/Package/acmart.cls.ltxml
 ${P5SITE}/LaTeXML/Package/acronym.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ae.sty.ltxml
+${P5SITE}/LaTeXML/Package/aecompl.sty.ltxml
 ${P5SITE}/LaTeXML/Package/afterpage.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algcompatible.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algmatlab.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algorithm.sty.ltxml
+${P5SITE}/LaTeXML/Package/algorithm2e.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algorithmic.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algorithmicx.sty.ltxml
 ${P5SITE}/LaTeXML/Package/algpascal.sty.ltxml
@@ -133,6 +142,7 @@ ${P5SITE}/LaTeXML/Package/amstext.sty.ltxml
 ${P5SITE}/LaTeXML/Package/amsthm.sty.ltxml
 ${P5SITE}/LaTeXML/Package/amsxtra.sty.ltxml
 ${P5SITE}/LaTeXML/Package/apjfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/appendix.sty.ltxml
 ${P5SITE}/LaTeXML/Package/applemac.def.ltxml
 ${P5SITE}/LaTeXML/Package/array.sty.ltxml
 ${P5SITE}/LaTeXML/Package/article.cls.ltxml
@@ -154,12 +164,14 @@ ${P5SITE}/LaTeXML/Package/breakurl.sty.ltxml
 ${P5SITE}/LaTeXML/Package/calc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/cancel.sty.ltxml
 ${P5SITE}/LaTeXML/Package/caption.sty.ltxml
+${P5SITE}/LaTeXML/Package/cases.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ccfonts.sty.ltxml
 ${P5SITE}/LaTeXML/Package/chancery.sty.ltxml
 ${P5SITE}/LaTeXML/Package/charter.sty.ltxml
 ${P5SITE}/LaTeXML/Package/circuitikz.sty.ltxml
 ${P5SITE}/LaTeXML/Package/cite.sty.ltxml
 ${P5SITE}/LaTeXML/Package/citesort.sty.ltxml
+${P5SITE}/LaTeXML/Package/cleveref.sty.ltxml
 ${P5SITE}/LaTeXML/Package/cmbright.sty.ltxml
 ${P5SITE}/LaTeXML/Package/color.sty.ltxml
 ${P5SITE}/LaTeXML/Package/colordvi.sty.ltxml
@@ -170,6 +182,8 @@ ${P5SITE}/LaTeXML/Package/courier.sty.ltxml
 ${P5SITE}/LaTeXML/Package/cp852.def.ltxml
 ${P5SITE}/LaTeXML/Package/crop.sty.ltxml
 ${P5SITE}/LaTeXML/Package/cropmark.sty.ltxml
+${P5SITE}/LaTeXML/Package/csquotes.def.ltxml
+${P5SITE}/LaTeXML/Package/csquotes.sty.ltxml
 ${P5SITE}/LaTeXML/Package/dcolumn.sty.ltxml
 ${P5SITE}/LaTeXML/Package/deluxetable.sty.ltxml
 ${P5SITE}/LaTeXML/Package/doublespace.sty.ltxml
@@ -180,16 +194,21 @@ ${P5SITE}/LaTeXML/Package/elsart.cls.ltxml
 ${P5SITE}/LaTeXML/Package/elsart.sty.ltxml
 ${P5SITE}/LaTeXML/Package/elsart_support.sty.ltxml
 ${P5SITE}/LaTeXML/Package/elsarticle.cls.ltxml
+${P5SITE}/LaTeXML/Package/empheq.sty.ltxml
 ${P5SITE}/LaTeXML/Package/emulateapj.cls.ltxml
 ${P5SITE}/LaTeXML/Package/emulateapj.sty.ltxml
 ${P5SITE}/LaTeXML/Package/emulateapj5.sty.ltxml
+${P5SITE}/LaTeXML/Package/endnotes.sty.ltxml
 ${P5SITE}/LaTeXML/Package/enumerate.sty.ltxml
+${P5SITE}/LaTeXML/Package/enumitem.sty.ltxml
 ${P5SITE}/LaTeXML/Package/epigraph.sty.ltxml
 ${P5SITE}/LaTeXML/Package/epsf.sty.ltxml
 ${P5SITE}/LaTeXML/Package/epsf.tex.ltxml
 ${P5SITE}/LaTeXML/Package/epsfig.sty.ltxml
 ${P5SITE}/LaTeXML/Package/epstopdf.sty.ltxml
 ${P5SITE}/LaTeXML/Package/esint.sty.ltxml
+${P5SITE}/LaTeXML/Package/etex.sty.ltxml
+${P5SITE}/LaTeXML/Package/etoolbox.sty.ltxml
 ${P5SITE}/LaTeXML/Package/eucal.sty.ltxml
 ${P5SITE}/LaTeXML/Package/eufrak.sty.ltxml
 ${P5SITE}/LaTeXML/Package/euler.sty.ltxml
@@ -206,16 +225,20 @@ ${P5SITE}/LaTeXML/Package/float.sty.ltxml
 ${P5SITE}/LaTeXML/Package/floatfig.sty.ltxml
 ${P5SITE}/LaTeXML/Package/floatflt.sty.ltxml
 ${P5SITE}/LaTeXML/Package/floatpag.sty.ltxml
+${P5SITE}/LaTeXML/Package/flowchart.sty.ltxml
+${P5SITE}/LaTeXML/Package/flushend.sty.ltxml
 ${P5SITE}/LaTeXML/Package/fontenc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/fontspec.sty.ltxml
 ${P5SITE}/LaTeXML/Package/footmisc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/fourier.sty.ltxml
 ${P5SITE}/LaTeXML/Package/framed.sty.ltxml
+${P5SITE}/LaTeXML/Package/french.ldf.ltxml
 ${P5SITE}/LaTeXML/Package/frenchb.ldf.ltxml
 ${P5SITE}/LaTeXML/Package/fullpage.sty.ltxml
 ${P5SITE}/LaTeXML/Package/gen-j-l.cls.ltxml
 ${P5SITE}/LaTeXML/Package/gen-m-l.cls.ltxml
 ${P5SITE}/LaTeXML/Package/gen-p-l.cls.ltxml
+${P5SITE}/LaTeXML/Package/gensymb.sty.ltxml
 ${P5SITE}/LaTeXML/Package/geometry.sty.ltxml
 ${P5SITE}/LaTeXML/Package/german.sty.ltxml
 ${P5SITE}/LaTeXML/Package/graphics.sty.ltxml
@@ -227,6 +250,11 @@ ${P5SITE}/LaTeXML/Package/hhline.sty.ltxml
 ${P5SITE}/LaTeXML/Package/html.sty.ltxml
 ${P5SITE}/LaTeXML/Package/hyperref.sty.ltxml
 ${P5SITE}/LaTeXML/Package/hyperxmp.sty.ltxml
+${P5SITE}/LaTeXML/Package/icml2016.sty.ltxml
+${P5SITE}/LaTeXML/Package/icml2017.sty.ltxml
+${P5SITE}/LaTeXML/Package/icml2018.sty.ltxml
+${P5SITE}/LaTeXML/Package/icml_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/ieeeconf.cls.ltxml
 ${P5SITE}/LaTeXML/Package/ifluatex.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ifpdf.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ifthen.sty.ltxml
@@ -239,14 +267,18 @@ ${P5SITE}/LaTeXML/Package/inst_support.sty.ltxml
 ${P5SITE}/LaTeXML/Package/iopams.sty.ltxml
 ${P5SITE}/LaTeXML/Package/iopart.cls.ltxml
 ${P5SITE}/LaTeXML/Package/iopart_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/jheppub.sty.ltxml
 ${P5SITE}/LaTeXML/Package/keyval.sty.ltxml
+${P5SITE}/LaTeXML/Package/lastpage.sty.ltxml
 ${P5SITE}/LaTeXML/Package/latexml.sty.ltxml
 ${P5SITE}/LaTeXML/Package/latexsym.sty.ltxml
 ${P5SITE}/LaTeXML/Package/latin10.def.ltxml
 ${P5SITE}/LaTeXML/Package/lgr.fontmap.ltxml
 ${P5SITE}/LaTeXML/Package/lineno.sty.ltxml
+${P5SITE}/LaTeXML/Package/lipsum.sty.ltxml
 ${P5SITE}/LaTeXML/Package/listings.sty.ltxml
 ${P5SITE}/LaTeXML/Package/listingsutf8.sty.ltxml
+${P5SITE}/LaTeXML/Package/llamapun.sty.ltxml
 ${P5SITE}/LaTeXML/Package/llncs.cls.ltxml
 ${P5SITE}/LaTeXML/Package/lmodern.sty.ltxml
 ${P5SITE}/LaTeXML/Package/longtable.sty.ltxml
@@ -254,6 +286,7 @@ ${P5SITE}/LaTeXML/Package/lscape.sty.ltxml
 ${P5SITE}/LaTeXML/Package/luximono.sty.ltxml
 ${P5SITE}/LaTeXML/Package/lxRDFa.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ly1.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/makecell.sty.ltxml
 ${P5SITE}/LaTeXML/Package/makeidx.sty.ltxml
 ${P5SITE}/LaTeXML/Package/marvosym.sty.ltxml
 ${P5SITE}/LaTeXML/Package/mathbbol.sty.ltxml
@@ -263,16 +296,23 @@ ${P5SITE}/LaTeXML/Package/mathptm.sty.ltxml
 ${P5SITE}/LaTeXML/Package/mathptmx.sty.ltxml
 ${P5SITE}/LaTeXML/Package/mathrsfs.sty.ltxml
 ${P5SITE}/LaTeXML/Package/mathtools.sty.ltxml
+${P5SITE}/LaTeXML/Package/microtype.sty.ltxml
+${P5SITE}/LaTeXML/Package/mleftright.sty.ltxml
 ${P5SITE}/LaTeXML/Package/mn.cls.ltxml
 ${P5SITE}/LaTeXML/Package/mn2e.cls.ltxml
 ${P5SITE}/LaTeXML/Package/mn2e_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/mnras.cls.ltxml
+${P5SITE}/LaTeXML/Package/moderncv.cls.ltxml
 ${P5SITE}/LaTeXML/Package/multicol.sty.ltxml
 ${P5SITE}/LaTeXML/Package/multido.sty.ltxml
 ${P5SITE}/LaTeXML/Package/multirow.sty.ltxml
 ${P5SITE}/LaTeXML/Package/nameref.sty.ltxml
 ${P5SITE}/LaTeXML/Package/natbib.sty.ltxml
 ${P5SITE}/LaTeXML/Package/newcent.sty.ltxml
+${P5SITE}/LaTeXML/Package/newfloat.sty.ltxml
 ${P5SITE}/LaTeXML/Package/newlfont.sty.ltxml
+${P5SITE}/LaTeXML/Package/newtxmath.sty.ltxml
+${P5SITE}/LaTeXML/Package/newtxtext.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ngerman.sty.ltxml
 ${P5SITE}/LaTeXML/Package/nicefrac.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ntheorem.sty.ltxml
@@ -283,9 +323,11 @@ ${P5SITE}/LaTeXML/Package/paralist.sty.ltxml
 ${P5SITE}/LaTeXML/Package/parskip.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pdfTeX.pool.ltxml
 ${P5SITE}/LaTeXML/Package/pdflscape.sty.ltxml
+${P5SITE}/LaTeXML/Package/pdfpages.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pdfsync.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pgf.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pgfkeys.code.tex.ltxml
+${P5SITE}/LaTeXML/Package/pgfmath.code.tex.ltxml
 ${P5SITE}/LaTeXML/Package/pgfplots.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pgfsys-latexml.def.ltxml
 ${P5SITE}/LaTeXML/Package/pifont.sty.ltxml
@@ -299,12 +341,15 @@ ${P5SITE}/LaTeXML/Package/pst-grad.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pst-node.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pstricks.sty.ltxml
 ${P5SITE}/LaTeXML/Package/pxfonts.sty.ltxml
+${P5SITE}/LaTeXML/Package/pzd.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/ragged2e.sty.ltxml
 ${P5SITE}/LaTeXML/Package/relsize.sty.ltxml
 ${P5SITE}/LaTeXML/Package/report.cls.ltxml
 ${P5SITE}/LaTeXML/Package/revsymb.sty.ltxml
 ${P5SITE}/LaTeXML/Package/revtex.cls.ltxml
 ${P5SITE}/LaTeXML/Package/revtex.sty.ltxml
 ${P5SITE}/LaTeXML/Package/revtex3_support.sty.ltxml
+${P5SITE}/LaTeXML/Package/revtex4-1.cls.ltxml
 ${P5SITE}/LaTeXML/Package/revtex4.cls.ltxml
 ${P5SITE}/LaTeXML/Package/revtex4.sty.ltxml
 ${P5SITE}/LaTeXML/Package/revtex4_support.sty.ltxml
@@ -312,13 +357,17 @@ ${P5SITE}/LaTeXML/Package/rotate.sty.ltxml
 ${P5SITE}/LaTeXML/Package/rotating.sty.ltxml
 ${P5SITE}/LaTeXML/Package/rsfs.sty.ltxml
 ${P5SITE}/LaTeXML/Package/scalefnt.sty.ltxml
+${P5SITE}/LaTeXML/Package/sectsty.sty.ltxml
 ${P5SITE}/LaTeXML/Package/setspace.sty.ltxml
 ${P5SITE}/LaTeXML/Package/showkeys.sty.ltxml
+${P5SITE}/LaTeXML/Package/siunitx.sty.ltxml
 ${P5SITE}/LaTeXML/Package/slashed.sty.ltxml
 ${P5SITE}/LaTeXML/Package/slides.cls.ltxml
 ${P5SITE}/LaTeXML/Package/soul.sty.ltxml
 ${P5SITE}/LaTeXML/Package/srcltx.sty.ltxml
+${P5SITE}/LaTeXML/Package/stfloats.sty.ltxml
 ${P5SITE}/LaTeXML/Package/stmaryrd.sty.ltxml
+${P5SITE}/LaTeXML/Package/subcaption.sty.ltxml
 ${P5SITE}/LaTeXML/Package/subfig.sty.ltxml
 ${P5SITE}/LaTeXML/Package/subfigure.sty.ltxml
 ${P5SITE}/LaTeXML/Package/subfloat.sty.ltxml
@@ -326,6 +375,7 @@ ${P5SITE}/LaTeXML/Package/supertabular.sty.ltxml
 ${P5SITE}/LaTeXML/Package/sv_support.sty.ltxml
 ${P5SITE}/LaTeXML/Package/svg.sty.ltxml
 ${P5SITE}/LaTeXML/Package/svjour.cls.ltxml
+${P5SITE}/LaTeXML/Package/svjour3.cls.ltxml
 ${P5SITE}/LaTeXML/Package/svmult.cls.ltxml
 ${P5SITE}/LaTeXML/Package/t1.fontmap.ltxml
 ${P5SITE}/LaTeXML/Package/t1enc.def.ltxml
@@ -333,18 +383,26 @@ ${P5SITE}/LaTeXML/Package/t1enc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/t2a.fontmap.ltxml
 ${P5SITE}/LaTeXML/Package/t2b.fontmap.ltxml
 ${P5SITE}/LaTeXML/Package/t2c.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/tablefootnote.sty.ltxml
 ${P5SITE}/LaTeXML/Package/tabularx.sty.ltxml
 ${P5SITE}/LaTeXML/Package/tabulary.sty.ltxml
+${P5SITE}/LaTeXML/Package/textcase.sty.ltxml
 ${P5SITE}/LaTeXML/Package/textcomp.sty.ltxml
 ${P5SITE}/LaTeXML/Package/texvc.sty.ltxml
 ${P5SITE}/LaTeXML/Package/theorem.sty.ltxml
+${P5SITE}/LaTeXML/Package/thmtools.sty.ltxml
 ${P5SITE}/LaTeXML/Package/threeparttable.sty.ltxml
 ${P5SITE}/LaTeXML/Package/tikz-3dplot.sty.ltxml
 ${P5SITE}/LaTeXML/Package/tikz.sty.ltxml
 ${P5SITE}/LaTeXML/Package/times.sty.ltxml
+${P5SITE}/LaTeXML/Package/titlesec.sty.ltxml
+${P5SITE}/LaTeXML/Package/titling.sty.ltxml
 ${P5SITE}/LaTeXML/Package/tocbibind.sty.ltxml
+${P5SITE}/LaTeXML/Package/todonotes.sty.ltxml
+${P5SITE}/LaTeXML/Package/tracefnt.sty.ltxml
 ${P5SITE}/LaTeXML/Package/transparent.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ts1.fontmap.ltxml
+${P5SITE}/LaTeXML/Package/turing.sty.ltxml
 ${P5SITE}/LaTeXML/Package/txfonts.sty.ltxml
 ${P5SITE}/LaTeXML/Package/type1cm.sty.ltxml
 ${P5SITE}/LaTeXML/Package/ulem.sty.ltxml
@@ -353,12 +411,16 @@ ${P5SITE}/LaTeXML/Package/upgreek.sty.ltxml
 ${P5SITE}/LaTeXML/Package/upref.sty.ltxml
 ${P5SITE}/LaTeXML/Package/url.sty.ltxml
 ${P5SITE}/LaTeXML/Package/utf8.def.ltxml
+${P5SITE}/LaTeXML/Package/utf8x.def.ltxml
 ${P5SITE}/LaTeXML/Package/utopia.sty.ltxml
 ${P5SITE}/LaTeXML/Package/verbatim.sty.ltxml
 ${P5SITE}/LaTeXML/Package/wasysym.sty.ltxml
+${P5SITE}/LaTeXML/Package/wiki.sty.ltxml
 ${P5SITE}/LaTeXML/Package/wrapfig.sty.ltxml
 ${P5SITE}/LaTeXML/Package/xargs.sty.ltxml
 ${P5SITE}/LaTeXML/Package/xcolor.sty.ltxml
+${P5SITE}/LaTeXML/Package/xkeyval.sty.ltxml
+${P5SITE}/LaTeXML/Package/xkvview.sty.ltxml
 ${P5SITE}/LaTeXML/Package/xspace.sty.ltxml
 ${P5SITE}/LaTeXML/Package/xunicode.sty.ltxml
 ${P5SITE}/LaTeXML/Package/yfonts.sty.ltxml
@@ -368,6 +430,7 @@ ${P5SITE}/LaTeXML/Post/Collector.pm
 ${P5SITE}/LaTeXML/Post/CrossRef.pm
 ${P5SITE}/LaTeXML/Post/Graphics.pm
 ${P5SITE}/LaTeXML/Post/LaTeXImages.pm
+${P5SITE}/LaTeXML/Post/LexMath.pm
 ${P5SITE}/LaTeXML/Post/MakeBibliography.pm
 ${P5SITE}/LaTeXML/Post/MakeIndex.pm
 ${P5SITE}/LaTeXML/Post/Manifest/
@@ -416,12 +479,11 @@ ${P5SITE}/LaTeXML/resources/CSS/ltx-amsart.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-apj.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-article.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-book.css
+${P5SITE}/LaTeXML/resources/CSS/ltx-cv.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-listings.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-report.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-svjour.css
 ${P5SITE}/LaTeXML/resources/CSS/ltx-ulem.css
-${P5SITE}/LaTeXML/resources/DTD/
-${P5SITE}/LaTeXML/resources/DTD/LaTeXML.dtd
 ${P5SITE}/LaTeXML/resources/Profiles/
 ${P5SITE}/LaTeXML/resources/Profiles/fragment-html.opt
 ${P5SITE}/LaTeXML/resources/Profiles/fragment-xhtml.opt
@@ -557,6 +619,7 @@ ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-para-xhtml.xsl
 ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-picture-xhtml.xsl
 ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-structure-xhtml.xsl
 ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-tabular-xhtml.xsl
+${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-tei.xsl
 ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-webpage-xhtml.xsl
 ${P5SITE}/LaTeXML/resources/XSLT/LaTeXML-xhtml.xsl
 ${P5SITE}/LaTeXML/resources/javascript/
@@ -583,6 +646,7 @@ ${P5SITE}/LaTeXML/texmf/lxRDFa.sty
 @man man/man3p/LaTeXML::Common::Float.3p
 @man man/man3p/LaTeXML::Common::Font.3p
 @man man/man3p/LaTeXML::Common::Glue.3p
+@man man/man3p/LaTeXML::Common::Locator.3p
 @man man/man3p/LaTeXML::Common::Model.3p
 @man man/man3p/LaTeXML::Common::Model::DTD.3p
 @man man/man3p/LaTeXML::Common::Model::RelaxNG.3p
@@ -602,6 +666,7 @@ ${P5SITE}/LaTeXML/texmf/lxRDFa.sty
 @man man/man3p/LaTeXML::Core::Definition::Register.3p
 @man man/man3p/LaTeXML::Core::Document.3p
 @man man/man3p/LaTeXML::Core::Gullet.3p
+@man man/man3p/LaTeXML::Core::KeyVal.3p
 @man man/man3p/LaTeXML::Core::KeyVals.3p
 @man man/man3p/LaTeXML::Core::List.3p
 @man man/man3p/LaTeXML::Core::Mouth.3p
