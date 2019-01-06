@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/14 14:01:47 ian Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/06 12:57:57 ian Exp $
 
 COMMENT=	Sun's official Java Language Specification
 
@@ -6,16 +6,17 @@ MAJOR=		8
 PKGNAME=	JLS-${MAJOR}.0
 DISTNAME=	jls${MAJOR}
 DISTFILES=	${DISTNAME}.pdf
+REVISION=	0
 
 CATEGORIES=	books
 
 SUBST_VARS=	DISTFILES
 
-HOMEPAGE=	https://docs.oracle.com/javase/specs/jls/
+HOMEPAGE=	https://docs.oracle.com/javase/specs/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-# http://java.sun.com/docs/books/jls/third_edition/html/jcopyright.html
+# No redistribution.
 PERMIT_PACKAGE_CDROM=	Copyright
 PERMIT_PACKAGE_FTP=	Copyright
 PERMIT_DISTFILES_FTP=	Copyright
