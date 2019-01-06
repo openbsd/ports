@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.58 2019/01/06 13:58:42 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.14/
@@ -63,6 +63,7 @@ lib/gedit/plugins/filebrowser.plugin
 lib/gedit/plugins/libdocinfo.so
 lib/gedit/plugins/libfilebrowser.so
 lib/gedit/plugins/libmodelines.so
+lib/gedit/plugins/libquickhighlight.so
 lib/gedit/plugins/libsort.so
 lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
@@ -79,6 +80,7 @@ lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${
 lib/gedit/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/pythonconsole/config.py
 lib/gedit/plugins/pythonconsole/console.py
+lib/gedit/plugins/quickhighlight.plugin
 lib/gedit/plugins/quickopen/
 lib/gedit/plugins/quickopen.plugin
 lib/gedit/plugins/quickopen/__init__.py

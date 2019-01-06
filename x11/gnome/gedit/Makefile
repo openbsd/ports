@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.157 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.158 2019/01/06 13:58:42 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.28.1
-REVISION=		2
+GNOME_VERSION=		3.30.2
 
 CATEGORIES=		editors
 
@@ -12,13 +11,13 @@ CATEGORIES=		editors
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 enchant-2 epoxy expat
+WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject enchant-2 epoxy expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png16
 WANTLIB += pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
