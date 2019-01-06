@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.136 2019/01/06 13:10:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.137 2019/01/06 13:34:22 ajacoutot Exp $
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.30.1
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -19,7 +20,9 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	archivers/gcpio
-RUN_DEPENDS=	archivers/gtar \
+
+RUN_DEPENDS=	archivers/gcpio \
+		archivers/gtar \
 		archivers/p7zip \
 		archivers/unzip \
 		archivers/xz \
@@ -34,6 +37,6 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 		devel/libnotify \
 		x11/gnome/nautilus
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 
 .include <bsd.port.mk>
