@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/06 21:26:03 thfr Exp $
 
 V =		0.60
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_v${V}-weekly-11-08-17-src
 PKGNAME =	dxx-rebirth-${V}
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.dxx-rebirth.com/
-MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3 with special exception for Parallax license
 PERMIT_PACKAGE_CDROM =	selling explicitly prohibited

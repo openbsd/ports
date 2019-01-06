@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/08 16:49:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/06 21:26:03 thfr Exp $
 
 COMMENT =	cross-platform port of Arx Fatalis, a first-person RPG
 CATEGORIES =	games
 
-MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
 GH_TAGNAME =	1.1.2-r1
 PKGNAME =	arx-libertatis-${GH_TAGNAME:S/-r/pl/}
-REVISION =	2
+REVISION =	3
 
 # GPLv3+, fonts are SIL OFL 1.1 license
 PERMIT_PACKAGE_CDROM =	Yes

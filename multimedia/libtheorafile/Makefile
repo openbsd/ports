@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/09 21:41:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/06 21:26:03 thfr Exp $
 
 COMMENT =	Ogg Theora Video Decoder Library
 
@@ -8,12 +8,13 @@ V =	20180401
 FNA =	18.04
 DISTNAME =	libtheorafile-${V}{FNA-${FNA:S/.//}}
 PKGNAME =	libtheorafile-${V}
+REVISION =	0
 
 SHARED_LIBS =	theorafile	1.0	# from FNA 18.04
 
 CATEGORIES =	multimedia
 HOMEPAGE =	https://github.com/FNA-XNA/Theorafile
-MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes

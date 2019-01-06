@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/01/06 21:26:03 thfr Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
 V =		3.8.0
 DISTNAME =	fs2_open_${V:S/./_/g}-source-Unix
 PKGNAME =	fs2open-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/scp-fs2open/fs2open.github.com
 
-MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # Volition custom license (non-commercial, not really a license)
 PERMIT_PACKAGE_CDROM =	selling explicitly prohibited

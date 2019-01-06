@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/14 22:04:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/06 21:26:03 thfr Exp $
 
 COMMENT =	simple SDL joystick test application
 DISTNAME =	sdl-jstest-20180114
+REVISION =	0
 CATEGORIES =	games
 
 GH_ACCOUNT =	Grumbel
 GH_PROJECT =	sdl-jstest
 GH_COMMIT =	34042f66c598957c1c05135e2619a44a5622a56e
 
-MAINTAINER =	Thomas Frohwein <frohwein@ymail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/06 21:26:02 thfr Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -10,8 +10,8 @@ V =			5.0.0.20180901
 DISTNAME =		dolphin-emu-${V}
 PKGNAME-main =		dolphin-${V}
 PKGNAME-nogui =		dolphin-nogui-${V}
-REVISION-main =		0
-REVISION-nogui =	0
+REVISION-main =		1
+REVISION-nogui =	1
 
 MULTI_PACKAGES =	-main -nogui
 
@@ -22,7 +22,7 @@ GH_PROJECT =		dolphin
 GH_COMMIT =		5f0d825f40b8aabe13eaef32d44ab667ff8e8c28
 
 CATEGORIES =		emulators
-MAINTAINER =		Thomas Frohwein <tfrohwein@fastmail.com>
+MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

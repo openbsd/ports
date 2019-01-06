@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/06 21:26:02 thfr Exp $
 
 BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
 
@@ -9,11 +9,11 @@ COMMENT =	nintendo 3DS emulator
 V =		729
 DISTNAME =	citra-nightly-${V}
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators
 
-MAINTAINER =	Thomas Frohwein <tfrohwein@fastmail.com>
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2, BSD-2-clause (fmt), LGPL (getopt), MIT (httplib, json, lurlparser),
 # "New BSD license" (inih), unlicense/public domain (microprofile),
