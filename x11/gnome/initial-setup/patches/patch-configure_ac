@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.7 2017/11/02 15:27:16 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2019/01/06 13:41:56 ajacoutot Exp $
 
 Disable NetworkManager.
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -42,8 +42,6 @@ GEOCLUE_REQUIRED_VERSION=2.3.1
+@@ -40,8 +40,6 @@ GEOCLUE_REQUIRED_VERSION=2.3.1
  PACKAGEKIT_REQUIRED_VERSION=1.1.4
  
  PKG_CHECK_MODULES(INITIAL_SETUP,

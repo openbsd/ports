@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnome-initial-setup_pages_Makefile_in,v 1.10 2017/11/02 15:27:16 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_pages_Makefile_in,v 1.11 2019/01/06 13:41:56 ajacoutot Exp $
 
 Disable NetworkManager.
 
 Index: gnome-initial-setup/pages/Makefile.in
 --- gnome-initial-setup/pages/Makefile.in.orig
 +++ gnome-initial-setup/pages/Makefile.in
-@@ -355,7 +355,6 @@ SUBDIRS = \
+@@ -345,7 +345,6 @@ SUBDIRS = \
  	region \
  	keyboard \
  	eulas \
