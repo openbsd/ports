@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_make_lib_mak,v 1.3 2018/12/08 22:11:40 ajacoutot Exp $
+$OpenBSD: patch-src_make_lib_mak,v 1.4 2019/01/06 10:36:55 ajacoutot Exp $
 
 Make sure LIB_SONAME is versioned (.so.X.Y versus .so).
 
@@ -15,12 +15,3 @@ Make sure LIB_SONAME is versioned (.so.X.Y versus .so).
  LIB_SONAME	= $(LIBNAME_PAT)
  
  ifneq ($(P_SHAREDLIB),1)
-@@ -93,7 +97,7 @@ ifeq ($(P_SHAREDLIB),1)
-   # directly and passing it the equivalent arguments...jpd@louisiana.edu
-   ifeq ($(OSTYPE),solaris)
-      LDSOOPTS = -Bdynamic -G -h $(LIB_SONAME)
--  else
-+  else ifneq ($(OSTYPE),OpenBSD)
-     ifeq ($(OSTYPE),mingw)
-       LDSOOPTS += -Wl,--kill-at
-     else
