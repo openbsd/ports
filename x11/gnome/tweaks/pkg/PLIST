@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/06 12:45:14 ajacoutot Exp $
 @conflict gnome-tweak-tool-*
 @pkgpath x11/gnome/tweak-tool
 bin/gnome-tweaks
@@ -30,12 +30,12 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_appearance.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_desktop.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_font.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_general.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_keymouse.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_power.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_shell_extensions.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_sound.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_startup.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_test.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_title_bar.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_top_bar.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_windows.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_workspaces.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
@@ -44,12 +44,12 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_wac
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_appearance.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_desktop.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_font.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_general.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_keymouse.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_power.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_shell_extensions.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_sound.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_startup.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_test.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_title_bar.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_top_bar.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_windows.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_workspaces.py
@@ -73,6 +73,7 @@ share/icons/hicolor/scalable/apps/org.gnome.tweaks-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-tweaks.mo
 share/locale/ar/LC_MESSAGES/gnome-tweaks.mo
 share/locale/as/LC_MESSAGES/gnome-tweaks.mo
+share/locale/be/LC_MESSAGES/gnome-tweaks.mo
 share/locale/bg/LC_MESSAGES/gnome-tweaks.mo
 share/locale/bs/LC_MESSAGES/gnome-tweaks.mo
 share/locale/ca/LC_MESSAGES/gnome-tweaks.mo
