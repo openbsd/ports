@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/05/15 10:51:24 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2019/01/06 14:50:49 danj Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -6,10 +6,10 @@ DISTNAME=	iso-codes-3.77
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://alioth.debian.org/projects/pkg-isocodes/
+HOMEPAGE=	https://salsa.debian.org/iso-codes-team/iso-codes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-REVISION =	0
+REVISION =	1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

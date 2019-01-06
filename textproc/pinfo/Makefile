@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/15 08:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/06 14:50:49 danj Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
 
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
-MASTER_SITES=		https://alioth.debian.org/frs/download.php/latestfile/434/ \
+MASTER_SITES=		https://alioth-archive.debian.org/releases/pinfo/pinfo/pinfo-0.6.9/ \
 			${MASTER_SITE_FREEBSD}
 
 # GPLv2

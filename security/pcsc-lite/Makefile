@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.42 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.43 2019/01/06 14:50:49 danj Exp $
 
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.22
 DISTNAME=	pcsc-lite-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
 SHARED_LIBS+=	pcscspy		0.0 # 0.0.0
 
-HOMEPAGE=	http://pcsclite.alioth.debian.org/pcsclite.html
+HOMEPAGE=	https://salsa.debian.org/debian/pcsc-lite
 
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
+MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/pcsclite/1.8.22/
 
 EXTRACT_SUFX=	.tar.bz2
 

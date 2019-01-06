@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2018/11/18 15:52:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2019/01/06 14:50:49 danj Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c execinfo jpeg m png pthread tiff usb-1.0 v4l1 v4l2
 WANTLIB += v4lconvert z
 
-MASTER_SITES=		https://alioth.debian.org/frs/download.php/file/4224/ \
+MASTER_SITES=		https://alioth-archive.debian.org/releases/sane/sane-backends/1.0.27/ \
 			https://distfiles.bsdfrog.org/
 
 BUILD_DEPENDS=		devel/gettext-tools

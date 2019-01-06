@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/09 10:49:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/06 14:50:49 danj Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
 DISTNAME =	libhid-0.2.16
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	hid	0.0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://libhid.alioth.debian.org/
+HOMEPAGE =	https://directory.fsf.org/wiki/Libhid
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += 	c usb pthread usb-1.0
 
-MASTER_SITES=	https://www.alioth.debian.org/frs/download.php/latestfile/336/
+MASTER_SITES=	https://alioth-archive.debian.org/releases/libhid/libhid/0.2.16/
 
 LIB_DEPENDS = 	devel/libusb-compat
 

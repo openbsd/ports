@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2018/03/04 10:34:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2019/01/06 14:50:49 danj Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
 DISTNAME =	surfraw-2.3.0
 CATEGORIES =	www
+REVISION =	0
 
-HOMEPAGE =	http://surfraw.alioth.debian.org/
+HOMEPAGE =	https://gitlab.com/surfraw/Surfraw
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

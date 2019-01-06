@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/06/06 14:58:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2019/01/06 14:50:49 danj Exp $
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
@@ -6,9 +6,11 @@ DISTNAME =	ccid-1.4.27
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://pcsclite.alioth.debian.org/ccid.html
+REVISION =	0
 
-MASTER_SITES =	https://alioth.debian.org/frs/download.php/latestfile/112/
+HOMEPAGE =	https://pcsclite.apdu.fr/
+
+MASTER_SITES =	https://alioth-archive.debian.org/releases/pcsclite/ccid/
 
 EXTRACT_SUFX =	.tar.bz2
 

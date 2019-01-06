@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/06 14:50:49 danj Exp $
 
 COMMENT=	Debian package repository producer
 
@@ -11,7 +11,7 @@ WRKDIST=	${WRKDIR}/reprepro-${V}
 CATEGORIES=	misc databases sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/r/reprepro/}
 
-HOMEPAGE=	https://mirrorer.alioth.debian.org/
+HOMEPAGE=	https://salsa.debian.org/brlink/reprepro
 
 MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
