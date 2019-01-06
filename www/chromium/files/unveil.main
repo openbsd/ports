@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.5 2018/12/25 17:32:43 robert Exp $
+# $OpenBSD: unveil.main,v 1.6 2019/01/06 19:49:53 robert Exp $
 
 # needed for chromium
 /etc/chromium r
@@ -60,7 +60,7 @@
 ~/.config/mimeapps.list r
 ~/.config/user-dirs.dirs r
 
-~/.local/share/applications r
+~/.local/share/applications rwc
 ~/.local/share/applnk r
 ~/.local/share/fonts r
 ~/.local/share/glib-2.0 r

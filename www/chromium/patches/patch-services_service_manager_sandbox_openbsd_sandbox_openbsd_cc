@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,292 @@
+@@ -0,0 +1,313 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -28,10 +28,13 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +#include "base/command_line.h"
 +#include "base/debug/stack_trace.h"
 +#include "base/feature_list.h"
++#include "base/files/file_path.h"
++#include "base/files/file_util.h"
 +#include "base/files/scoped_file.h"
 +#include "base/logging.h"
 +#include "base/macros.h"
 +#include "base/memory/singleton.h"
++#include "base/path_service.h"
 +#include "base/posix/eintr_wrapper.h"
 +#include "base/strings/string_number_conversions.h"
 +#include "base/sys_info.h"
@@ -107,6 +110,24 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  if (process_type.empty())
 +    crypto::EnsureNSSInit();
 +#endif
++
++  if (process_type.empty()) {
++    base::FilePath cache_directory, local_directory;
++
++    base::PathService::Get(base::DIR_CACHE, &cache_directory);
++    base::PathService::Get(base::DIR_HOME, &local_directory);   
++
++    cache_directory = cache_directory.AppendASCII("chromium");
++    local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
++
++    if (!base::CreateDirectory(cache_directory)) {
++      LOG(ERROR) << "Failed to create " << cache_directory.value() << " directory.";
++    }
++
++    if (!base::CreateDirectory(local_directory)) {
++      LOG(ERROR) << "Failed to create " << local_directory.value() << " directory.";
++    }
++  }
 +
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type);
