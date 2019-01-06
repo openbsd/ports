@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/07/06 06:04:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/01/06 14:15:00 jasper Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill
@@ -387,6 +387,13 @@ share/help/sv/gnome-system-monitor/process-status.page
 share/help/sv/gnome-system-monitor/process-update-speed.page
 share/help/sv/gnome-system-monitor/solaris-mode.page
 share/help/sv/gnome-system-monitor/units.page
+share/icons/hicolor/16x16/apps/gnome-system-monitor.png
+share/icons/hicolor/22x22/apps/gnome-system-monitor.png
+share/icons/hicolor/24x24/apps/gnome-system-monitor.png
+share/icons/hicolor/32x32/apps/gnome-system-monitor.png
+share/icons/hicolor/48x48/apps/gnome-system-monitor.png
+share/icons/hicolor/512x512/apps/gnome-system-monitor.png
+share/icons/hicolor/symbolic/apps/gnome-system-monitor-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/an/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
@@ -484,3 +491,4 @@ share/metainfo/gnome-system-monitor.appdata.xml
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @tag update-desktop-database
 @tag glib-compile-schemas
+@tag gtk-update-icon-cache %D/share/icons/hicolor
