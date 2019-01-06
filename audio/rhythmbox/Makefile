@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.170 2018/10/27 16:59:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2019/01/06 10:45:08 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.4.2
-REVISION=		9
+GNOME_VERSION=		3.4.3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -18,17 +17,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender archive assuan atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto dbus-1 epoxy
-WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-3.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme gpod graphite2
-WANTLIB += grilo-0.3 gstaudio-1.0 gstbase-1.0 gstcontroller-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl json-glib-1.0
-WANTLIB += lz4 lzma m notify orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
-WANTLIB += png pthread soup-2.4 sqlite3 tdb totem-plparser xcb
-WANTLIB += xcb-render xcb-shm xml2 gcrypt z fribidi idn2 unistring zstd
+WANTLIB += bz2 c cairo cairo-gobject crypto epoxy expat ffi fontconfig
+WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += girepository-1.0 glib-2.0 gmime-3.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error gpgme graphite2 grilo-0.3 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstcontroller-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv idn2
+WANTLIB += intl json-glib-1.0 lz4 lzma m notify orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
+WANTLIB += pixman-1 png16 psl pthread soup-2.4 sqlite3 tdb totem-plparser
+WANTLIB += unistring xcb xcb-render xcb-shm xml2 z zstd
 
 MODULES=		devel/dconf \
 			lang/python \
@@ -40,8 +38,7 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 # needed for the tests
 BUILD_DEPENDS +=	devel/check
 
-LIB_DEPENDS=		audio/libgpod \
-			databases/tdb \
+LIB_DEPENDS=		databases/tdb \
 			devel/json-glib \
 			devel/libnotify \
 			devel/libpeas \
@@ -72,6 +69,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--without-brasero \
 			--without-hal \
 			--without-gudev \
+			--without-ipod \
 			--disable-fm-radio \
 			--disable-lirc
 
