@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/01/03 19:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2019/01/06 20:15:51 landry Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -6,6 +6,7 @@ VER=			0.33
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 
@@ -14,7 +15,7 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c intl mpdclient>=1 ${COMPILER_LIBCXX} curses pcre
+WANTLIB=		c intl m mpdclient>=1 ${COMPILER_LIBCXX} curses pcre
 
 MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
 
@@ -35,7 +36,8 @@ LIB_DEPENDS=		devel/gettext \
 CONFIGURE_ARGS=		-Dlirc=disabled \
 			-Dhtml_manual=false \
 			-Dlocale=enabled \
-			-Dmouse=enabled
+			-Dmouse=enabled \
+			-Db_asneeded=false
 CONFIGURE_ENV=		CPP=${CPP} \
 			CPPFLAGS="-D_GNU_SOURCE \
 				  -D_DEFAULT_SOURCE \
