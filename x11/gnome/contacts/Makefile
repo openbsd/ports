@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/01/06 14:12:57 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.28.2
-REVISION=		2
+GNOME_VERSION=		3.30.2
 
 CATEGORIES=		productivity
 
@@ -28,7 +27,7 @@ LIB_DEPENDS=		net/telepathy/folks \
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection vala
 
-CONFIGURE_ARGS +=	-Dwith-cheese=no \
+CONFIGURE_ARGS +=	-Dcheese=false \
 			-Dtelepathy=false
 
 .include <bsd.port.mk>
