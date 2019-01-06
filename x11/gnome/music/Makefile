@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2019/01/06 13:10:18 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		3.28.2.1
-REVISION=		2
+GNOME_VERSION=		3.30.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,6 +37,6 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/tracker
 
 # sndio(7) support
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-base
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
 
 .include <bsd.port.mk>
