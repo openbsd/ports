@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2016/11/25 23:43:22 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/06 19:49:01 afresh1 Exp $
 
 COMMENT =		retrieve names of code references
-DISTNAME =		Sub-Identify-0.12
+DISTNAME =		Sub-Identify-0.14
 CATEGORIES =		devel
 
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
