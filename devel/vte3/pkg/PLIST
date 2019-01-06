@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2018/05/22 17:26:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/01/06 12:15:50 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -30,6 +30,7 @@ share/gtk-doc/html/vte-${API_V}/api-index-0-46.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-48.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-50.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-52.html
+share/gtk-doc/html/vte-${API_V}/api-index-0-54.html
 share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
 share/gtk-doc/html/vte-${API_V}/api-index-full.html
 share/gtk-doc/html/vte-${API_V}/ch01.html
