@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/01/06 10:36:38 ajacoutot Exp $
 
 COMMENT=	portable tools library
 
@@ -6,7 +6,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS=	pt	7.0
 
@@ -19,10 +19,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL 1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sasl2
-WANTLIB += sndio ssl ${COMPILER_LIBCXX} v4l2
+WANTLIB += ${COMPILER_LIBCXX} SDL c crypto expat lber-2.4 ldap-2.4
+WANTLIB += ldap_r-2.4 m sasl2 sndio ssl v4l2
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 

@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2016/01/01 17:30:33 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2019/01/06 10:36:38 ajacoutot Exp $
 
 Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
 
---- configure.orig	Mon Feb 17 03:14:21 2014
-+++ configure	Fri Jan  1 17:33:02 2016
+Index: configure
+--- configure.orig
++++ configure
 @@ -640,6 +640,7 @@ HAS_V4L
  HAS_AUDIOSHM
  HAS_SUNAUDIO
@@ -28,17 +29,15 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
    --disable-pulse         disable Pulse audio support
    --disable-sunaudio      disable Sun audio support
    --disable-shmaudio      disable shm audio support
-@@ -5225,7 +5228,8 @@ case "$target_os" in
+@@ -5225,7 +5228,6 @@ case "$target_os" in
  
     OpenBSD )
        OS_TAG="P_OPENBSD"
 -      ENDLDLIBS="-lossaudio"
-+      ENDLDLIBS=""
-+      LDSOFLAGS="-shared"
        need_pragma=yes
     ;;
  
-@@ -8079,6 +8083,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -8079,6 +8081,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  $as_echo_n "checking if <sasl/sasl.h> works... " >&6; }
              cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -46,7 +45,7 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
   #include <sasl/sasl.h>
  int
  main ()
-@@ -12185,7 +12190,7 @@ $as_echo "no" >&6; }
+@@ -12185,7 +12188,7 @@ $as_echo "no" >&6; }
                { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
                case "$target_os" in
@@ -55,7 +54,7 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
                    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -lc" >&5
  $as_echo_n "checking for dlopen in -lc... " >&6; }
  if ${ac_cv_lib_c_dlopen+:} false; then :
-@@ -12479,6 +12484,32 @@ fi
+@@ -12479,6 +12482,32 @@ fi
        fi
  
  
@@ -88,7 +87,7 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
        # Check whether --enable-pulse was given.
  if test "${enable_pulse+set}" = set; then :
    enableval=$enable_pulse;
-@@ -12590,7 +12621,7 @@ $as_echo "$as_me: V4L2 video disabled by user" >&6;}
+@@ -12590,7 +12619,7 @@ $as_echo "$as_me: V4L2 video disabled by user" >&6;}
        else
           case "$target_os" in
              solaris* | sunos* ) V4L2_HEADER="sys/videodev2.h"   ; ;;
@@ -97,7 +96,7 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
              * )	        V4L2_HEADER="linux/videodev2.h" ; ;;
           esac
  
-@@ -14345,6 +14376,7 @@ echo "                            Audio :  ${PTLIB_AUD
+@@ -14345,6 +14374,7 @@ echo "                            Audio :  ${PTLIB_AUD
  echo "                             ALSA :  ${PTLIB_ALSA}"
  echo "                              ESD :  ${PTLIB_ESD}"
  echo "                              OSS :  ${PTLIB_OSS}"
