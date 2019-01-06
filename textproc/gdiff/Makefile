@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2017/07/23 14:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/06 20:26:58 sthen Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
-VERSION=	3.6
+VERSION=	3.7
 EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
