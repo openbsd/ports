@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1104 2019/01/05 23:09:44 uaa Exp $
+# $OpenBSD: Makefile,v 1.1105 2019/01/06 10:32:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -730,7 +730,6 @@
      SUBDIR += unifi
      SUBDIR += unison
      SUBDIR += unworkable
-     SUBDIR += ushare
      SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += uucpd

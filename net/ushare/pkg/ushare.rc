@@ -1,9 +1,0 @@
-#!/bin/ksh
-#
-# $OpenBSD: ushare.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
-
-daemon="${TRUEPREFIX}/bin/ushare -D"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1
