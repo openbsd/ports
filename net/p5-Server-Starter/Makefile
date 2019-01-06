@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/01/06 22:27:44 afresh1 Exp $
 
 COMMENT =		superdaemon for hot-deploying server programs
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Server-Starter-0.32
+DISTNAME =		Server-Starter-0.34
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
