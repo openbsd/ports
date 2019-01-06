@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.176 2018/09/22 06:10:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.177 2019/01/06 12:59:36 jasper Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.28.5
+GNOME_VERSION=	3.30.2
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -15,11 +15,11 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cairo gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmp gobject-2.0 gtk-3 hogweed
-WANTLIB += icuuc intl javascriptcoregtk-4.0 json-glib-1.0 m nettle
-WANTLIB += notify pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
-WANTLIB += xml2 $(LIBECXX)
+WANTLIB += c cairo dazzle-1.0 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3 hogweed icuuc
+WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 m nettle notify
+WANTLIB += pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
+WANTLIB += xml2 ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
@@ -29,7 +29,8 @@ RUN_DEPENDS=	devel/iso-codes \
 
 LIB_DEPENDS=	devel/libnotify \
 		www/webkitgtk4 \
-		x11/gnome/gcr
+		x11/gnome/gcr \
+		x11/gnome/libdazzle
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
@@ -46,8 +47,7 @@ MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_ARGS=		-Ddistributor_name="OpenBSD ports"
 
-# error: 'for' loop initial declarations are only allowed in C99 or C11 mode
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include -std=c99
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
