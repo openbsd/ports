@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.111 2019/01/02 19:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2019/01/06 13:25:25 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.30.0
+REVISION=	0
 
 SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
@@ -11,25 +12,23 @@ SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += drm enchant-2 epoxy $(LIBECXX) expat ffi fontconfig freetype
-WANTLIB += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz harfbuzz-icu hyphen iconv icudata icui18n
-WANTLIB += icuuc intl javascriptcoregtk-4.0 jpeg json-glib-1.0
-WANTLIB += lzma m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 pthread rest-0.7 secret-1
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ${COMPILER_LIBCXX} 
-WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-xfixes xml2 xslt z tasn1 aspell
-WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0 fribidi
-WANTLIB += brotlicommon brotlidec webpdemux woff2common woff2dec
-WANTLIB += idn2 png16 psl unistring xcb-dri3 xcb-present xcb-sync
-WANTLIB += xshmfence
+WANTLIB += EGL GL GLESv2 ICE SM X11 X11-xcb Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += aspell atk-1.0 atk-bridge-2.0 brotlicommon brotlidec
+WANTLIB += c cairo cairo-gobject drm enchant-2 epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gstallocators-1.0 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += harfbuzz-icu hyphen iconv icudata icui18n icuuc idn2
+WANTLIB += intl javascriptcoregtk-4.0 jpeg json-glib-1.0 lzma
+WANTLIB += m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png16 psl rest-0.7 secret-1 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 tasn1 unistring webkit2gtk-4.0
+WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xml2 xshmfence xslt z ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
