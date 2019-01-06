@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/05 22:08:11 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/06 14:36:47 pascal Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -11,6 +11,7 @@ DPB_PROPERTIES = parallel
 V = 8.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
+REVISION = 0
 
 ADASTRAP_LIBC-amd64 = 93.0
 ADASTRAP_LIBM-amd64 = 10.1
@@ -75,6 +76,7 @@ BUILD_DEPENDS +=	devel/bison \
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "arm"
 BUILD_DEPENDS +=	devel/gas
 RUN_DEPENDS +=		devel/gas
+RUN_DEPENDS-main +=	devel/gas
 TEST_DEPENDS +=		devel/gas
 CONFIGURE_ARGS +=	--with-as="${LOCALBASE}/bin/gas"
 .endif
@@ -191,10 +193,10 @@ PKG_ARGS += -DQUADMATH=1
 PKG_ARGS += -DQUADMATH=0
 .endif
 
-RUN_DEPENDS =		${BUILD_PKGPATH},-main
+RUN_DEPENDS +=		${BUILD_PKGPATH},-main
 WANTLIB =		c gmp m mpc mpfr z
 
-RUN_DEPENDS-main =	${BUILD_PKGPATH},-libs
+RUN_DEPENDS-main +=	${BUILD_PKGPATH},-libs
 RUN_DEPENDS-libs =
 
 WANTLIB-main =		${WANTLIB}
