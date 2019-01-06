@@ -1,6 +1,6 @@
-$OpenBSD: patch-minidlna_conf,v 1.6 2017/05/21 14:52:54 sthen Exp $
+$OpenBSD: patch-minidlna_conf,v 1.7 2019/01/06 10:25:57 ajacoutot Exp $
 
-default directories, plus we don't use inotify
+default directories
 
 Index: minidlna.conf
 --- minidlna.conf.orig
@@ -29,7 +29,7 @@ Index: minidlna.conf
  
  # set this to merge all media_dir base contents into the root container
  # note: the default is no
-@@ -25,23 +26,19 @@ media_dir=/opt
+@@ -25,20 +26,20 @@ media_dir=/opt
  #friendly_name=My DLNA Server
  
  # set this if you would like to specify the directory where you want MiniDLNA to store its database and album art cache
@@ -50,13 +50,11 @@ Index: minidlna.conf
  album_art_names=Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg
  
 -# set this to no to disable inotify monitoring to automatically discover new files
--# note: the default is yes
--inotify=yes
--
- # set this to yes to enable support for streaming .jpg and .mp3 files to a TiVo supporting HMO
- enable_tivo=no
++# set this to no to disable kqueue monitoring to automatically discover new files
+ # note: the default is yes
+ inotify=yes
  
-@@ -64,6 +61,10 @@ notify_interval=900
+@@ -64,6 +65,10 @@ notify_interval=900
  # in its XML description
  serial=12345678
  model_number=1
