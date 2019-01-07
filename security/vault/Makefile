@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/15 11:42:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/07 10:49:50 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
-GH_TAGNAME=		v1.0.0
+GH_TAGNAME=		v1.0.1
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
 
