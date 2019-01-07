@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/02 17:50:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/01/07 19:03:30 jasper Exp $
 @bin bin/pdfpc
 @man man/man1/pdfpc.1
 @man man/man5/pdfpcrc.5
@@ -7,13 +7,17 @@ share/examples/pdfpc/pdfpcrc
 share/pixmaps/
 share/pixmaps/pdfpc/
 share/pixmaps/pdfpc/blank.svg
+share/pixmaps/pdfpc/empty.svg
 share/pixmaps/pdfpc/eraser.svg
 share/pixmaps/pdfpc/hidden.svg
 share/pixmaps/pdfpc/highlight.svg
+share/pixmaps/pdfpc/linewidth.svg
 share/pixmaps/pdfpc/loaded.svg
 share/pixmaps/pdfpc/locked.svg
+share/pixmaps/pdfpc/move.svg
 share/pixmaps/pdfpc/pause.svg
 share/pixmaps/pdfpc/pdfpc.css
 share/pixmaps/pdfpc/pen.svg
 share/pixmaps/pdfpc/saved.svg
+share/pixmaps/pdfpc/settings.svg
 share/pixmaps/pdfpc/snow.svg
