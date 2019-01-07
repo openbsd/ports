@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/01/06 20:15:51 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2019/01/07 13:54:01 ajacoutot Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -6,7 +6,7 @@ VER=			0.33
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 
@@ -36,8 +36,15 @@ LIB_DEPENDS=		devel/gettext \
 CONFIGURE_ARGS=		-Dlirc=disabled \
 			-Dhtml_manual=false \
 			-Dlocale=enabled \
-			-Dmouse=enabled \
-			-Db_asneeded=false
+			-Dmouse=enabled
+
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
+
 CONFIGURE_ENV=		CPP=${CPP} \
 			CPPFLAGS="-D_GNU_SOURCE \
 				  -D_DEFAULT_SOURCE \
