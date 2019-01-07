@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/07 01:57:01 afresh1 Exp $
 
 COMMENT=	validate method/function parameters
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Class-Container-0.12
-REVISION=	1
+DISTNAME=	Class-Container-0.13
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,5 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Params-Validate>=0.23
+TEST_DEPENDS=	devel/p5-Test-Perl-Critic
+
+MAKE_ENV +=	AUTHOR_TESTING=Yes
 
 .include <bsd.port.mk>
