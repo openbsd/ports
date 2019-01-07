@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2019/01/04 21:05:34 kili Exp $
+# $OpenBSD: Makefile,v 1.135 2019/01/07 23:40:38 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
@@ -40,6 +40,9 @@ MULTI_PACKAGES=-main -qt5 -utils
 # /usr/bin/ld: warning: libfreetype.so.29.0, needed by ./libpoppler-glib.so.18.0, not found (try using -rpath or -rpath-link)
 # /usr/bin/ld: warning: libfontconfig.so.12.0, needed by /usr/obj/ports/poppler-0.61.1-no_qt4-no_qt5-bootstrap/build-i386-no_qt4-no_qt5-bootstrap/libpoppler.so.46.0, not found (try using -rpath or -rpath-link)
 # /usr/bin/ld: warning: libpixman-1.so.32.6, needed by /usr/local/lib/libcairo.so.13.0, not found (try using -rpath or -rpath-link)
+#
+# Probably just a missing -L/usr/X11R6/lib passed to the link phase of
+# g-ir-scanner, as pointed out by kettenis@ in an internal mail.
 
 .if ${MACHINE_ARCH} == i386
 USE_LLD=	Yes
