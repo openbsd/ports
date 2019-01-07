@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/07 16:38:19 sthen Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
 GH_TAGNAME=	3.05.02
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  tesseract            3.2      # 3.5
 
