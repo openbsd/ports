@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/01/03 18:37:22 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2019/01/07 10:18:33 sthen Exp $
 
 COMMENT =	lightweight web browser
 
@@ -13,7 +13,8 @@ SHARED_LIBS +=	midori-core 1.0 # 0.0
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake \
+		textproc/intltool
 MASTER_SITES =	https://github.com/midori-browser/core/releases/download/v7/
 
 LIB_DEPENDS =	www/webkitgtk4 \
