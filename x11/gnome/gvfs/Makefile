@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2019/01/07 13:54:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2019/01/07 15:04:47 sthen Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -84,13 +84,6 @@ CONFIGURE_ARGS +=	-Dafc=false \
 			-Dsystemduserunitdir=no \
 			-Dtmpfilesdir=no
 
-# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
-# build failures due to undefined references are often seen.
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mlld}
-CONFIGURE_ARGS +=	-Db_asneeded=false
-.endif
-			
 # needs libcap
 CONFIGURE_ARGS +=	-Dadmin=false
 
@@ -103,6 +96,12 @@ PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google bootstrap
 FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
 
 .include <bsd.port.arch.mk>
+
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
 
 .if !${BUILD_PACKAGES:M-smb}
 CONFIGURE_ARGS +=	-Dsmb=false
