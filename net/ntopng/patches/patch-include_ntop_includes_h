@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_ntop_includes_h,v 1.1 2018/10/04 22:28:03 sthen Exp $
+$OpenBSD: patch-include_ntop_includes_h,v 1.2 2019/01/07 18:37:22 sthen Exp $
 
 Index: include/ntop_includes.h
 --- include/ntop_includes.h.orig
 +++ include/ntop_includes.h
-@@ -104,7 +104,7 @@
+@@ -105,7 +105,7 @@
  extern "C" {
  #include "pcap.h"
  

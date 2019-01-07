@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.4 2019/01/07 18:37:22 sthen Exp $
+
+Index: src/NetworkInterface.cpp
+--- src/NetworkInterface.cpp.orig
++++ src/NetworkInterface.cpp
+@@ -1507,7 +1507,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+ 	       rawsize, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
+       return(pass_verdict);
+     }
+-  } else if(l4_proto == IPPROTO_SCTP) {
++  }
++#ifdef IPPROTO_SCTP
++    else if(l4_proto == IPPROTO_SCTP) {
+     if(l4_packet_len >= sizeof(struct sctphdr)) {
+       /* SCTP */
+       sctph = (struct sctphdr *)l4;
+@@ -1522,7 +1524,9 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+ 	       rawsize, 1, 24 /* 8 Preamble + 4 CRC + 12 IFG */);
+       return(pass_verdict);
+     }
+-  } else {
++  }
++#endif
++  else {
+     /* non TCP/UDP protocols */
+   }
+ 

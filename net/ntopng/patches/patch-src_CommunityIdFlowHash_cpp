@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_CommunityIdFlowHash_cpp,v 1.1 2019/01/07 18:37:22 sthen Exp $
+
+Index: src/CommunityIdFlowHash.cpp
+--- src/CommunityIdFlowHash.cpp.orig
++++ src/CommunityIdFlowHash.cpp
+@@ -194,7 +194,9 @@ char * CommunityIdFlowHash::get_community_id_flow_hash
+     cli_port = icmp_type, srv_port = icmp_type_to_code_v6(icmp_type, icmp_code, &icmp_one_way);
+     break;
+ 
++#ifdef IPPROTO_SCTP
+   case IPPROTO_SCTP:
++#endif
+   case IPPROTO_UDP:
+   case IPPROTO_TCP:
+     cli_port = f->get_cli_port(), srv_port = f->get_srv_port();
+@@ -231,7 +233,9 @@ char * CommunityIdFlowHash::get_community_id_flow_hash
+   switch(l4_proto) {
+   case IPPROTO_ICMP:
+   case IPPROTO_ICMPV6:
++#ifdef IPPROTO_SCTP
+   case IPPROTO_SCTP:
++#endif
+   case IPPROTO_UDP:
+   case IPPROTO_TCP:
+     cli_port = htons(cli_port), srv_port = htons(srv_port);

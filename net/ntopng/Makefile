@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/07 18:37:22 sthen Exp $
 
-BROKEN=	too crashy, the packet dissectors trigger SIGSEGV within minutes
-
-# embedded luajit
-ONLY_FOR_ARCHS=	i386 amd64
+# built but not actually installed at present; patches are needed for the
+# build so it seems easier to keep the SHARED_LIBS infrastructure here.
+SHARED_LIBS=	ndpi 0.0
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_TAGNAME=	3.6.1
-NDPI_V=		2.4
+GH_TAGNAME=	3.8
+NDPI_V=		2.6
 DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -25,9 +23,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient
-WANTLIB += pcap rrd sodium sqlite3 ssl z zmq zstd
+WANTLIB += pcap radcli rrd sodium sqlite3 ssl z zmq zstd
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES0=	https://github.com/ntop/ndpi/archive/${NDPI_V}/
 
@@ -45,17 +43,19 @@ LIB_DEPENDS=	archivers/zstd \
 		devel/json-c \
 		net/curl \
 		net/libmaxminddb \
+		net/radcli \
 		net/rrdtool \
 		net/zeromq
 
 MAKE_FLAGS=	CC="${CC}" CXX="${CXX}"
+MAKE_ENV=	LIBndpi_VERSION="${LIBndpi_VERSION}"
 FAKE_FLAGS=	INSTALL_DIR=${WRKINST}${PREFIX} \
 		MAN_DIR=${WRKINST}${PREFIX}/man
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_lib_ldap_ldap_initialize=no
 
 AUTOCONF_VERSION=	2.69
@@ -68,7 +68,7 @@ NO_TEST=	Yes
 post-extract:
 	cd ${WRKDIR}; mv nDPI-* ${WRKSRC}/nDPI
 
-post-patch:
+do-gen:
 	cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh -c \
 		"./autogen.sh; cd nDPI; ./autogen.sh"
@@ -91,12 +91,5 @@ post-install:
 	rm -rf ${PREFIX}/share/ntopng/httpdocs/{geoip,ssl} \
 		${PREFIX}/share/doc/ntopng/README.*{pages,pdf}
 	ln -s ${LOCALSTATEDIR}/db/GeoIP ${PREFIX}/share/ntopng/httpdocs/geoip
-
-.include <bsd.port.arch.mk>
-
-# luajit needs unwind
-.if ${PROPERTIES:Mclang}
-MAKE_FLAGS += TARGET_LDFLAGS='-lc++abi -lpthread'
-.endif
 
 .include <bsd.port.mk>

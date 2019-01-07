@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_ntop_defines_h,v 1.4 2018/10/04 22:28:03 sthen Exp $
+$OpenBSD: patch-include_ntop_defines_h,v 1.5 2019/01/07 18:37:22 sthen Exp $
 
 Index: include/ntop_defines.h
 --- include/ntop_defines.h.orig
 +++ include/ntop_defines.h
-@@ -166,7 +166,7 @@
+@@ -176,7 +176,7 @@
  #define MAX_NUM_QUEUED_ADDRS    500 /* Maximum number of queued address for resolution */
  #define MAX_NUM_QUEUED_CONTACTS 25000
  #define NTOP_COPYRIGHT          "(C) 1998-18 ntop.org"
@@ -12,28 +12,20 @@ Index: include/ntop_defines.h
  #define DOMAIN_CATEGORY         "ntopng.domain.category"
  #define DOMAIN_TO_CATEGORIZE    "ntopng.domain.tocategorize"
  #define DOMAIN_WHITELIST_CAT    "ntopng.domain.whitelist"
-@@ -360,7 +360,7 @@
- 
+@@ -416,7 +416,7 @@
  #define NTOPNG_NDPI_OS_PROTO_ID      (NDPI_LAST_IMPLEMENTED_PROTOCOL+NDPI_MAX_NUM_CUSTOM_PROTOCOLS-2)
  #define CONST_DEFAULT_HOME_NET       "192.168.1.0/24"
--#define CONST_DEFAULT_DATA_DIR       "/var/tmp/ntopng"
+ #define CONST_OLD_DEFAULT_DATA_DIR   "/var/tmp/ntopng"
+-#define CONST_DEFAULT_DATA_DIR       "/var/lib/ntopng"
 +#define CONST_DEFAULT_DATA_DIR       "/var/db/ntopng"
  #define CONST_DEFAULT_MAX_UI_STRLEN  24
  #define CONST_DEFAULT_IS_AUTOLOGOUT_ENABLED               1
  #define CONST_DEFAULT_IS_IDLE_LOCAL_HOSTS_CACHE_ENABLED   1
-@@ -378,14 +378,14 @@
- #define CONST_DEFAULT_SCRIPTS_DIR    "scripts"
- #define CONST_DEFAULT_CALLBACKS_DIR  "scripts/callbacks"
- #define CONST_DEFAULT_USERS_FILE     "ntopng-users.conf"
--#define CONST_DEFAULT_WRITABLE_DIR   "/var/tmp"
-+#define CONST_DEFAULT_WRITABLE_DIR   "/var/db"
- #define CONST_DEFAULT_INSTALL_DIR    (DATA_DIR "/ntopng")
- #define CONST_ALT_INSTALL_DIR        "/usr/share/ntopng"
- #define CONST_ALT2_INSTALL_DIR       "/usr/local/share/ntopng"
- #define CONST_HTTP_PREFIX_STRING     "@HTTP_PREFIX@"
+@@ -445,7 +445,7 @@
  #define CONST_NTOP_STARTUP_EPOCH     "@NTOP_STARTUP_EPOCH@"
  #define CONST_NTOP_PRODUCT_NAME      "@NTOP_PRODUCT_NAME@"
--#define CONST_DEFAULT_NTOP_USER      "nobody"
+ #define CONST_OLD_DEFAULT_NTOP_USER  "nobody"
+-#define CONST_DEFAULT_NTOP_USER      "ntopng"
 +#define CONST_DEFAULT_NTOP_USER      "_ntopng"
  #define CONST_TOO_EARLY              "(Too Early)"
  

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_TimeseriesExporter_cpp,v 1.1 2019/01/07 18:37:22 sthen Exp $
+
+Index: src/TimeseriesExporter.cpp
+--- src/TimeseriesExporter.cpp.orig
++++ src/TimeseriesExporter.cpp
+@@ -64,7 +64,7 @@ void TimeseriesExporter::createDump() {
+   cursize = 0;
+ 
+   /* Use the flushTime as the fname */
+-  snprintf(fname, sizeof(fname), "%s%u_%lu", fbase, num_exports, flushTime);
++  snprintf(fname, sizeof(fname), "%s%u_%llu", fbase, num_exports, (long long)flushTime);
+ 
+ #ifdef WIN32
+   fd = open(fname, O_RDWR | O_CREAT | O_EXCL, _S_IREAD | _S_IWRITE);
+@@ -124,7 +124,7 @@ void TimeseriesExporter::flush() {
+     close(fd);
+     fd = -1;
+     char buf[32];
+-    snprintf(buf, sizeof(buf), "%d|%lu|%u", iface->get_id(), flushTime, num_exports);
++    snprintf(buf, sizeof(buf), "%d|%llu|%u", iface->get_id(), (long long)flushTime, num_exports);
+     cursize = 0;
+     num_exports++;
+ 
