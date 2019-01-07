@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.20 2019/01/02 22:49:42 espie Exp $
+# $OpenBSD: Sql.pm,v 1.21 2019/01/07 06:09:40 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -133,13 +133,13 @@ sub sort
 sub all_tables
 {
 	my $class = shift;
-	return grep {$_->is_table} (values %$register);
+	return grep {$_->is_table} (sort {$a->name cmp $b->name} values %$register);
 }
 
 sub all_views
 {
 	my $class = shift;
-	return grep {!$_->is_table} (values %$register);
+	return grep {!$_->is_table} (sort {$a->name cmp $b->name} values %$register);
 }
 
 sub key
@@ -277,6 +277,8 @@ sub new
 {
 	my $class = shift;
 	my $o = $class->SUPER::new(@_);
+	my $a = "T0001";
+	$o->{alias} = \$a;
 	$o->{select} = Sql::Select->new(@_);
 	$o->register;
 }
@@ -288,6 +290,7 @@ sub contents
 	my @parts = ();
 
 	$self->{select}{level} = ($self->{level}//0)+4;
+	$self->{select}{alias} = $self->{alias};
 
 	return ("AS", $self->{select}->contents);
 }
@@ -321,7 +324,6 @@ sub sort
 package Sql::Select;
 our @ISA = qw(Sql::Create);
 
-my $alias = "T0001";
 
 sub contents
 {
@@ -335,10 +337,14 @@ sub contents
 	# figure out used tables
 	my $tables = {};
 	
+	if (!defined $self->{origin}) {
+		die "Error no origin for select in ".$self->name;
+	}
 	# and column names
 	$self->{column_names} = {};
 
 	for my $w (@{$self->{with}}) {
+		$w->{alias} = $self->{alias};
 		$self->add_column_names_from($w);
 		push(@parts, $self->indent("WITH ".$w->name." AS", 0));
 		my @c = $w->contents;
@@ -365,7 +371,7 @@ sub contents
 			if (++$tables->{$self->normalize($j->name)} == 1) {
 				delete $j->{alias};
 			} else {
-				$j->{alias} = $alias++;
+				$j->{alias} = ${$self->{alias}}++;
 			}
 				
 		}
@@ -398,6 +404,12 @@ sub contents
 		    join(", ", map {$_->name} @{$self->{order}}), 4));
 	}
 	return @parts;
+}
+
+sub is_unique_name
+{
+	my ($self, $name) = @_;
+	return ($self->{column_names}{$self->normalize($name)}//1) == 1;
 }
 
 package Sql::With;
@@ -527,8 +539,7 @@ sub stringize
 	my $self = shift;
 	my $container = $self->{parent};
 
-	my $unique = ($container->{column_names}{$self->normalize($self->origin_name)}//1) == 1;
-	if ($unique) {
+	if ($container->is_unique_name($self->origin_name)) {
 		if ($self->origin eq $self->name) {
 			return $self->name;
 		} else {
@@ -552,6 +563,15 @@ sub join
 {
 	my ($self, $j) = @_;
 	$self->{join} = $j;
+	return $self;
+}
+
+sub left
+{
+	my $self = shift;
+	if (defined $self->{join}) {
+		$self->{join}->left;
+	}
 	return $self;
 }
 
@@ -732,7 +752,15 @@ sub equation
 {
 	my ($self, $join, $view) = @_;
 
-	return $join->alias.".".$self->{a}."=".$view->origin.".".$self->{b};
+	my $a = $self->{a};
+	my $b = $self->{b};
+	if (!$view->is_unique_name($a)) {
+		$a = $join->alias.".".$a;
+	}
+	if (!$view->is_unique_name($b)) {
+		$b = $view->origin.".".$b;
+	}
+	return "$a=$b";
 }
 
 package Sql::Constant;
@@ -741,7 +769,13 @@ sub equation
 {
 	my ($self, $join, $view) = @_;
 
-	return $join->alias.".".$self->{a}."=".$self->{b};
+	my $a = $self->{a};
+	my $b = $self->{b};
+	if (!$view->is_unique_name($a)) {
+		$a = $join->alias.".".$a;
+	}
+
+	return "$a=$b";
 }
 
 package Sql::IsNull;
@@ -749,7 +783,11 @@ our @ISA = qw(Sql::Equal);
 sub equation
 {
 	my ($self, $join, $view) = @_;
+	my $a = $self->{a};
+	if (!$view->is_unique_name($a)) {
+		$a = $join->alias.".".$a;
+	}
 
-	return $join->alias.".".$self->{a}." IS NULL";
+	return "$a IS NULL";
 }
 1;
