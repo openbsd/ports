@@ -1,8 +1,8 @@
-$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.4 2017/08/06 10:50:05 sthen Exp $
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.5 2019/01/07 23:10:13 sthen Exp $
 Index: servers/slapd/back-mdb/init.c
 --- servers/slapd/back-mdb/init.c.orig
 +++ servers/slapd/back-mdb/init.c
-@@ -166,6 +166,33 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+@@ -166,6 +166,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
  
  	flags = mdb->mi_dbenv_flags;
  
@@ -24,12 +24,11 @@ Index: servers/slapd/back-mdb/init.c
 +	 */
 +
 +	if ( !(flags & MDB_WRITEMAP) ) {
-+		rc = MDB_INCOMPATIBLE;
++		flags |= MDB_WRITEMAP;
 +		Debug( LDAP_DEBUG_ANY,
-+			LDAP_XSTRING(mdb_db_open) ": database \"%s\" does not have writemap. "
++			LDAP_XSTRING(mdb_db_open) ": forcing writemap for database \"%s\". "
 +			"This is required on systems without unified buffer cache.\n",
 +			be->be_suffix[0].bv_val, rc, 0 );
-+		goto fail;
 +	}
 +#endif
 +

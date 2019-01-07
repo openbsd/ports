@@ -1,4 +1,4 @@
-$OpenBSD: patch-servers_slapd_slapd_conf,v 1.2 2016/09/01 16:50:35 landry Exp $
+$OpenBSD: patch-servers_slapd_slapd_conf,v 1.3 2019/01/07 23:10:13 sthen Exp $
 --- servers/slapd/slapd.conf.orig	Sat Feb  6 00:57:45 2016
 +++ servers/slapd/slapd.conf	Thu Sep  1 18:40:16 2016
 @@ -10,8 +10,8 @@ include		%SYSCONFDIR%/schema/core.schema
@@ -12,17 +12,3 @@ $OpenBSD: patch-servers_slapd_slapd_conf,v 1.2 2016/09/01 16:50:35 landry Exp $
  
  # Load dynamic backend modules:
  # modulepath	%MODULEDIR%
-@@ -46,11 +46,10 @@ argsfile	%LOCALSTATEDIR%/run/slapd.args
- # rootdn can always read and write EVERYTHING!
- 
- #######################################################################
--# MDB database definitions
-+# BDB database definitions
- #######################################################################
- 
--database	mdb
--maxsize		1073741824
-+database	bdb
- suffix		"dc=my-domain,dc=com"
- rootdn		"cn=Manager,dc=my-domain,dc=com"
- # Cleartext passwords, especially for the rootdn, should

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.24 2018/08/25 18:22:51 jca Exp $
+@comment $OpenBSD: PLIST-server,v 1.25 2019/01/07 23:10:13 sthen Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
@@ -7,6 +7,7 @@
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
 @extraunexec rm -Rf ${SYSCONFDIR}/openldap/slapd.d/*
 @extraunexec rm -Rf /var/openldap-data/*
+@rcscript ${RCDIR}/slapd
 @bin libexec/slapd
 @man man/man5/slapd-bdb.5
 @man man/man5/slapd-config.5
@@ -70,11 +71,12 @@ sbin/slapindex
 sbin/slappasswd
 sbin/slapschema
 sbin/slaptest
+share/examples/openldap/DB_CONFIG
 @mode 700
 @owner _openldap
 @sample /var/openldap-data/
+@mode 600
 @group _openldap
-share/examples/openldap/DB_CONFIG
 @sample /var/openldap-data/DB_CONFIG
 @mode
 @owner
@@ -111,6 +113,3 @@ share/examples/openldap/slapd.conf
 @mode 0750
 @group _openldap
 @sample ${SYSCONFDIR}/openldap/slapd.d/
-@mode
-@group
-@rcscript ${RCDIR}/slapd
