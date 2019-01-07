@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/29 12:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/07 10:56:38 ajacoutot Exp $
 
 PROVIDER=		cloudstack
-GH_TAGNAME=		v0.1.5
+GH_TAGNAME=		v0.2.0
 
 .include <bsd.port.mk>
