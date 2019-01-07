@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.7 2018/11/03 18:56:32 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.8 2019/01/07 06:43:00 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
@@ -1917,10 +1917,6 @@ lib/python3.6/test/test_asyncio/__pycache__/test_windows_utils.cpython-36.pyc
 lib/python3.6/test/test_asyncio/echo.py
 lib/python3.6/test/test_asyncio/echo2.py
 lib/python3.6/test/test_asyncio/echo3.py
-lib/python3.6/test/test_asyncio/keycert3.pem
-lib/python3.6/test/test_asyncio/pycacert.pem
-lib/python3.6/test/test_asyncio/ssl_cert.pem
-lib/python3.6/test/test_asyncio/ssl_key.pem
 lib/python3.6/test/test_asyncio/test_base_events.py
 lib/python3.6/test/test_asyncio/test_events.py
 lib/python3.6/test/test_asyncio/test_futures.py
