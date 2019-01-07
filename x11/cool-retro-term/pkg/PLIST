@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/07 13:58:44 sthen Exp $
 @bin bin/cool-retro-term
 lib/qt5/qml/QMLTermWidget/
 lib/qt5/qml/QMLTermWidget/QMLTermScrollbar.qml
@@ -6,11 +6,15 @@ lib/qt5/qml/QMLTermWidget/color-schemes/
 lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnLightYellow.schema
 lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnRandomLight.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnWhite.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/BreezeModified.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/DarkPastels.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/GreenOnBlack.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/Linux.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/Solarized.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/SolarizedLight.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/Tango.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/Ubuntu.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/WhiteOnBlack.schema
-lib/qt5/qml/QMLTermWidget/color-schemes/color-schemes.qrc
 lib/qt5/qml/QMLTermWidget/color-schemes/cool-retro-term.schema
 lib/qt5/qml/QMLTermWidget/color-schemes/historic/
 lib/qt5/qml/QMLTermWidget/color-schemes/historic/BlackOnLightColor.schema
@@ -36,7 +40,6 @@ lib/qt5/qml/QMLTermWidget/kb-layouts/default.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/historic/
 lib/qt5/qml/QMLTermWidget/kb-layouts/historic/vt100.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/historic/x11r5.keytab
-lib/qt5/qml/QMLTermWidget/kb-layouts/kb-layouts.qrc
 lib/qt5/qml/QMLTermWidget/kb-layouts/linux.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/macbook.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/solaris.keytab
