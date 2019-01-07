@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/11/21 11:23:02 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/01/07 16:29:26 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -558,6 +558,7 @@ share/sqlmap/sqlmap.py
 share/sqlmap/sqlmap.pyc
 share/sqlmap/sqlmapapi.py
 share/sqlmap/sqlmapapi.pyc
+share/sqlmap/swagger.yaml
 share/sqlmap/tamper/
 share/sqlmap/tamper/0x2char.py
 share/sqlmap/tamper/0x2char.pyc
@@ -934,6 +935,8 @@ share/sqlmap/waf/airlock.py
 share/sqlmap/waf/airlock.pyc
 share/sqlmap/waf/anquanbao.py
 share/sqlmap/waf/anquanbao.pyc
+share/sqlmap/waf/approach.py
+share/sqlmap/waf/approach.pyc
 share/sqlmap/waf/armor.py
 share/sqlmap/waf/armor.pyc
 share/sqlmap/waf/asm.py
@@ -950,6 +953,8 @@ share/sqlmap/waf/binarysec.py
 share/sqlmap/waf/binarysec.pyc
 share/sqlmap/waf/blockdos.py
 share/sqlmap/waf/blockdos.pyc
+share/sqlmap/waf/bluedon.py
+share/sqlmap/waf/bluedon.pyc
 share/sqlmap/waf/chinacache.py
 share/sqlmap/waf/chinacache.pyc
 share/sqlmap/waf/ciscoacexml.py
