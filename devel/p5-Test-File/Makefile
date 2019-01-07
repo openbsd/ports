@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/07 00:31:52 afresh1 Exp $
 
 COMMENT=		test file attributes
 
-DISTNAME=		Test-File-1.34
+DISTNAME=		Test-File-1.443
 CATEGORIES=		devel
 
 # perl
@@ -12,5 +12,8 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/p5-Test-Manifest
+TEST_DEPENDS=		devel/p5-Test-utf8
+
+MAKE_ENV +=		TEST_POD=Yes
 
 .include <bsd.port.mk>
