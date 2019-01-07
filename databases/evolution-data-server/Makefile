@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.247 2019/01/03 07:12:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.248 2019/01/07 14:51:46 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.30.3
+GNOME_VERSION=		3.30.4
 
 CATEGORIES=		databases productivity
 
@@ -71,5 +71,10 @@ CONFIGURE_ARGS +=	-DENABLE_UOA=OFF
 pre-configure:
 	sed -i 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
 		${WRKSRC}/src/camel/providers/imapx/camel-imapx-settings.c
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
+	mv ${WRKINST}${SYSCONFDIR}/xdg \
+		${PREFIX}/share/examples/evolution-data-server
 
 .include <bsd.port.mk>
