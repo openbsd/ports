@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/03/16 20:42:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/01/07 17:50:55 jasper Exp $
 @info info/autoconf-archive.info
 share/aclocal/
 share/aclocal/ax_absolute_header.m4
@@ -573,8 +573,8 @@ share/aclocal/ax_xsdcxx.m4
 share/aclocal/ax_xtra_classpath.m4
 share/aclocal/ax_zmq.m4
 share/aclocal/ax_zoneinfo.m4
-share/autoconf-archive/
-share/autoconf-archive/AUTHORS
-share/autoconf-archive/COPYING
-share/autoconf-archive/COPYING.EXCEPTION
-share/autoconf-archive/README
+share/doc/autoconf-archive/
+share/doc/autoconf-archive/AUTHORS
+share/doc/autoconf-archive/COPYING
+share/doc/autoconf-archive/COPYING.EXCEPTION
+share/doc/autoconf-archive/README
