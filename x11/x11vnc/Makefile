@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2018/08/09 15:04:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/01/07 14:29:42 sthen Exp $
 
 COMMENT =		VNC server for real X displays
 
 GH_ACCOUNT =		LibVNC
 GH_PROJECT =		x11vnc
-GH_TAGNAME =		0.9.15
+GH_TAGNAME =		0.9.16
 
 CATEGORIES =		x11
 
