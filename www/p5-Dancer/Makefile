@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/07 01:05:15 afresh1 Exp $
 
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Dancer-1.3202
+DISTNAME =	Dancer-1.3500
 CATEGORIES =	www
 
 # perl
@@ -19,11 +19,22 @@ RUN_DEPENDS = 	devel/p5-Hash-Merge-Simple \
 
 TEST_DEPENDS +=	converters/p5-JSON \
 	 	devel/p5-Clone \
+		devel/p5-Data-Dump \
+		devel/p5-Devel-Hide \
+		devel/p5-Test-CPAN-Meta \
 		devel/p5-Test-Output \
 		devel/p5-Test-NoWarnings \
 		devel/p5-YAML \
 		net/p5-Test-TCP \
 		textproc/p5-Template \
+		textproc/p5-Template-Provider-Encoding \
+		www/p5-HTTP-CookieJar \
 	 	www/p5-Plack
+
+MAKE_ENV += 	TEST_POD=Yes AUTHOR_TESTING=Yes RELEASE_TESTING=Yes
+
+# XXX Upstream has left a .swo file hanging
+post-extract:
+	@rm ${WRKSRC}/lib/Dancer/.Test.pm.swo
 
 .include <bsd.port.mk>

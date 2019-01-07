@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/28 22:05:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/01/07 01:05:15 afresh1 Exp $
 bin/dancer
 ${P5SITE}/Dancer/
 ${P5SITE}/Dancer.pm
@@ -96,6 +96,8 @@ ${P5SITE}/Dancer/Template/TemplateToolkit.pm
 ${P5SITE}/Dancer/Test.pm
 ${P5SITE}/Dancer/Timer.pm
 ${P5SITE}/Dancer/Tutorial.pod
+${P5SITE}/HTTP/Tiny/
+${P5SITE}/HTTP/Tiny/NoProxy.pm
 @man man/man1/dancer.1
 @man man/man3p/Dancer.3p
 @man man/man3p/Dancer::App.3p
@@ -175,3 +177,4 @@ ${P5SITE}/Dancer/Tutorial.pod
 @man man/man3p/Dancer::Test.3p
 @man man/man3p/Dancer::Timer.3p
 @man man/man3p/Dancer::Tutorial.3p
+@man man/man3p/HTTP::Tiny::NoProxy.3p
