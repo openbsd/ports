@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/12/06 09:34:51 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/01/07 08:46:56 rpointel Exp $
 @conflict py3-django->=2.1,<2.2
 @comment bin/django-admin
 bin/${LNAME}-admin.py
@@ -6827,6 +6827,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.14.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.15.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.16.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.17.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
