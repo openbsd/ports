@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/07 03:58:59 afresh1 Exp $
+- Prevent the installation of README.Pod in an inappropriate place.
+- Don't install Data::Readme.3p, the content is similar to 
+  Data::FormValidator.3p.
+Taken from:
+https://metacpan.org/source/BDFOY/Test-File-1.43//Makefile.PL
+Upstream bug report:
+https://rt.cpan.org/Public/Bug/Display.html?id=128187
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -37,3 +37,18 @@ WriteMakefile(
+    : ()
+   ),
+ );
++
++
++BEGIN {
++  use ExtUtils::MM_Unix;
++  package ExtUtils::MM_Unix;
++
++  my $original = \&ExtUtils::MM_Unix::init_dirscan;
++  no warnings 'redefine';
++
++  *init_dirscan = sub {
++          &$original;
++          delete $_[0]{PM}{'README.pod'};
++          $_[0];
++          };
++}
