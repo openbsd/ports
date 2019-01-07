@@ -1,18 +1,18 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2018/09/22 08:19:25 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2019/01/07 18:36:44 jasper Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -130,6 +130,8 @@ endif (HAVE_GETADDRINFO_A)
+@@ -129,6 +129,8 @@ endif (HAVE_GETADDRINFO_A)
  if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
-+	elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
-+		set (MOSQ_LIBS ${MOSQ_LIBS} m)
- 	else (APPLE)
- 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
- 		find_library(LIBRT rt)
-@@ -155,14 +157,22 @@ if (${WITH_WEBSOCKETS} STREQUAL ON)
++    elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++	    set (MOSQ_LIBS ${MOSQ_LIBS} m)
+     elseif(QNX)
+         set(MOSQ_LIBS ${MOSQ_LIBS} m socket)
+     else(APPLE)
+@@ -156,14 +158,22 @@ if (${WITH_WEBSOCKETS} STREQUAL ON)
  	endif (${STATIC_WEBSOCKETS} STREQUAL ON)
  endif (${WITH_WEBSOCKETS} STREQUAL ON)
  
@@ -40,7 +40,7 @@ Index: src/CMakeLists.txt
  
  add_executable(mosquitto ${MOSQ_SRCS})
  target_link_libraries(mosquitto ${MOSQ_LIBS})
-@@ -184,8 +194,8 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -185,8 +195,8 @@ if (${WITH_TLS} STREQUAL ON)
  	install(TARGETS mosquitto_passwd RUNTIME DESTINATION "${BINDIR}" LIBRARY DESTINATION "${LIBDIR}")
  endif (${WITH_TLS} STREQUAL ON)
  
