@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/11/14 12:18:40 danj Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/01/08 19:03:42 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -90,6 +90,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/executor/play_iterator.py
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/play_iterator.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/playbook_executor.py
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/playbook_executor.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/executor/powershell/
+lib/python${MODPY_VERSION}/site-packages/ansible/executor/powershell/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/executor/powershell/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/executor/powershell/bootstrap_wrapper.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/process/
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/process/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/executor/process/__init__.pyc
@@ -6723,7 +6727,10 @@ share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.rst
 share/doc/ansible/html/_static/opensearch.xml
+share/doc/ansible/html/api/
+share/doc/ansible/html/api/index.html
 share/doc/ansible/html/community/contributor_license_agreement.html
+share/doc/ansible/html/community/documentation_contributions.html
 share/doc/ansible/html/dev_guide/debugging.html
 share/doc/ansible/html/dev_guide/developing_locally.html
 share/doc/ansible/html/dev_guide/developing_modules_general_aci.html
@@ -6742,10 +6749,12 @@ share/doc/ansible/html/network/user_guide/platform_slxos.html
 share/doc/ansible/html/network/user_guide/platform_voss.html
 share/doc/ansible/html/porting_guides/porting_guide_2.6.html
 share/doc/ansible/html/porting_guides/porting_guide_${MODPY_VERSION}.html
+share/doc/ansible/html/${MODPY_PY_PREFIX}modindex.html
 share/doc/ansible/html/reference_appendices/module_utils.html
 share/doc/ansible/html/reference_appendices/special_variables.html
 share/doc/ansible/html/roadmap/ROADMAP_2_6.html
 share/doc/ansible/html/roadmap/ROADMAP_2_7.html
+share/doc/ansible/html/scenario_guides/guide_infoblox.html
 share/doc/ansible/html/scenario_guides/guide_meraki.html
 share/doc/ansible/html/scenario_guides/guide_vultr.html
 share/doc/ansible/html/user_guide/module_defaults_config.html
@@ -6757,6 +6766,7 @@ share/doc/ansible/html/vmware/scenario_clone_template.html
 share/doc/ansible/html/vmware/scenario_find_vm_folder.html
 share/doc/ansible/html/vmware/scenario_remove_vm.html
 share/doc/ansible/html/vmware/scenario_rename_vm.html
+share/doc/ansible/html/vmware/scenario_vmware_http.html
 share/doc/ansible/html/vmware/vmware_concepts.html
 share/doc/ansible/html/vmware/vmware_external_doc_links.html
 share/doc/ansible/html/vmware/vmware_getting_started.html
