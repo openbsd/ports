@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/08 19:03:21 landry Exp $
 
 COMMENT =		mpd client to scrobble track info to last.fm
 
 V =			0.22
 DISTNAME =		mpdscribble-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://mpd.wikia.com/wiki/Client:Mpdscribble
+HOMEPAGE =		https://www.musicpd.org/clients/mpdscribble/
 
 MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
