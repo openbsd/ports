@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2018/12/21 23:36:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.133 2019/01/08 00:12:12 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -10,9 +10,8 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			9.2.2
+V=			9.4.1
 DISTNAME=		bacula-$V
-REVISION=		0
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
 PKGNAME-bat=		bacula-bat-$V
@@ -120,7 +119,7 @@ WANTLIB-pgsql += pq crypto m ssl ${COMPILER_LIBCXX}
 LIB_DEPENDS-pgsql +=	${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
-WANTLIB-mysql += mysqlclient_r crypto m pthread ssl ${COMPILER_LIBCXX} z
+WANTLIB-mysql += mysqlclient_r crypto m pthread ssl ${COMPILER_LIBCXX}
 LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
@@ -131,7 +130,7 @@ LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
 WANTLIB-bat += ${WANTLIB}
 WANTLIB-bat += ICE QtCore QtGui SM X11 Xext Xi Xinerama Xrender bac
 WANTLIB-bat += baccfg bacfind expat fontconfig freetype xcb
-WANTLIB-bat += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre png
+WANTLIB-bat += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre png16
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \
