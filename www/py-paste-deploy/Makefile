@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/08 19:26:11 danj Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		PasteDeploy-${MODPY_EGG_VERSION}
 PKGNAME =		py-paste-deploy-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
-
-HOMEPAGE =		http://pythonpaste.org/deploy/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

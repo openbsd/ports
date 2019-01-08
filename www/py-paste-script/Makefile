@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/08 19:26:11 danj Exp $
 
 COMMENT=		pluggable command-line frontend
 
 MODPY_EGG_VERSION=	1.7.5
 DISTNAME=		PasteScript-${MODPY_EGG_VERSION}
 PKGNAME=		py-paste-script-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
-
-HOMEPAGE=		http://pythonpaste.org/script/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
