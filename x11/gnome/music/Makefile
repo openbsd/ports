@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2019/01/07 15:03:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2019/01/08 13:38:09 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		3.30.2
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS=		x11/gtk+3
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			x11/gnome/grilo \
+			x11/gnome/grilo-plugins \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
@@ -35,7 +35,7 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
-			x11/gnome/grilo \
+			x11/gnome/grilo-plugins \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
