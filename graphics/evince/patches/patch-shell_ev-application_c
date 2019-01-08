@@ -1,6 +1,9 @@
-$OpenBSD: patch-shell_ev-application_c,v 1.1 2019/01/06 13:54:15 jasper Exp $
+$OpenBSD: patch-shell_ev-application_c,v 1.2 2019/01/08 18:46:01 jasper Exp $
 
-https://gitlab.gnome.org/GNOME/evince/issues/1055
+From 674ab1de72145485f8ea2a715a6ff67a5c99548b Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 6 Jan 2019 14:49:13 +0100
+Subject: [PATCH] unbreak build when compiled without dbus
 
 Index: shell/ev-application.c
 --- shell/ev-application.c.orig
