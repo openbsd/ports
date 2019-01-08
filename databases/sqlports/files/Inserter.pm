@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.33 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.34 2019/01/08 23:28:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -198,7 +198,7 @@ sub finish_port
 	for my $i (@{$self->{varlist}}) {
 		push(@values, $self->{vars}{$i});
 	}
-	$self->insert('Ports', @values);
+	$self->insert('_Ports', @values);
 	$self->{vars} = {};
 	if ($self->{transaction} >= $self->{threshold}) {
 		$self->commit_to_db;
@@ -221,9 +221,6 @@ sub insert
 {
 	my $self = shift;
 	my $table = shift;
-	if (!defined $self->{insert}{$table}) {
-		$table = $self->table_name($table);
-	}
 	$self->{insert}{$table}->execute(@_);
 	$self->insert_done;
 }
@@ -366,11 +363,10 @@ sub set_newkey
 sub find_keyword_id
 {
 	my ($self, $key, $t) = @_;
-	my $n = $self->table_name($t);
-	$self->{$n}{find_key1}->execute($key);
-	my $a = $self->{$n}{find_key1}->fetchrow_arrayref;
+	$self->{$t}{find_key1}->execute($key);
+	my $a = $self->{$t}{find_key1}->fetchrow_arrayref;
 	if (!defined $a) {
-		$self->insert($n, $key);
+		$self->insert($t, $key);
 		return $self->last_id;
 	} else {
 		return $a->[0];
@@ -380,12 +376,11 @@ sub find_keyword_id
 sub create_keyword_table
 {
 	my ($self, $t) = @_;
-	my $n = $self->table_name($t);
-	Sql::Create::Table->new($n)->noreplace->add(
+	Sql::Create::Table->new($t)->noreplace->add(
 		Sql::Column::Key->new("KeyRef"),
 		Sql::Column::Text->new("Value")->notnull->unique);
 	$self->register_prepare(sub {
-	    $self->{$n}{find_key1} = $self->prepare("SELECT KeyRef FROM $n WHERE Value=?");
+	    $self->{$t}{find_key1} = $self->prepare("SELECT KeyRef FROM $t WHERE Value=?");
    	});
 }
 

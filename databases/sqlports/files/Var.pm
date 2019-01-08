@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.46 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: Var.pm,v 1.47 2019/01/08 23:28:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -119,7 +119,7 @@ sub normal_insert
 {
 	my $self = shift;
 	my $ins = shift;
-    	$ins->insert($self->table, $ins->ref, @_);
+    	$ins->insert($self->table_name($self->table), $ins->ref, @_);
 }
 
 sub subselect
@@ -195,14 +195,14 @@ sub ports_table_column
 {
 	my ($self, $name) = @_;
 	return Sql::Column::Integer->new($name)
-	    ->references($self->table_name($self->keyword_table));
+	    ->references($self->keyword_table);
 }
 
 sub compute_join
 {
 	my ($self, $name) = @_;
 	if (defined $self->keyword_table) {
-		return Sql::Join->new($self->table_name($self->keyword_table))
+		return Sql::Join->new($self->keyword_table)
 		    ->add(Sql::Equal->new("KeyRef", $name));
 	} else {
 		return Sql::Join->new($self->table_name($self->table))
@@ -226,16 +226,16 @@ sub add
 
 package ArchKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { 'Arch' }
+sub keyword_table() { '_Arch' }
 
 package PrefixKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { 'Prefix' }
+sub keyword_table() { '_Prefix' }
 
 package SubstVar;
 our @ISA = qw(ListKeyVar);
 sub table() { 'SubstVars' }
-sub keyword_table() { 'SubstVarsKey' }
+sub keyword_table() { '_SubstVarsKey' }
 
 package OptKeyVar;
 our @ISA = qw(KeyVar);
@@ -261,7 +261,7 @@ sub add
 
 package ArchDependentVar;
 our @ISA = qw(AnyVar);
-sub keyword_table() { 'Arch' }
+sub keyword_table() { '_Arch' }
 
 sub new
 {
@@ -291,7 +291,7 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
-	my $k = $self->table_name($self->keyword_table);
+	my $k = $self->keyword_table;
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Arch")->may_reference($k)->constraint,
@@ -564,11 +564,8 @@ sub add_keyword
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	my $k;
+	my $k = $self->keyword_table;
 	
-	if (defined $self->keyword_table) {
-		$k = $self->table_name($self->keyword_table);
-	}
 	$self->create_keyword_table($inserter);
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -703,7 +700,7 @@ sub add
 
 package ListKeyVar;
 our @ISA = qw(CountedSecondaryVar);
-sub keyword_table() { 'Keywords' }
+sub keyword_table() { '_Keywords' }
 sub want_in_ports_view { 1 }
 
 sub add
@@ -721,8 +718,7 @@ sub add
 sub subselect
 {
 	my $self = shift;
-	my $t = $self->table_name($self->table);
-	my $k = $self->table_name($self->keyword_table);
+	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View->new('Value')
 	    	->join(Sql::Join->new($k)
@@ -803,7 +799,7 @@ our @ISA = qw(DefinedListKeyVar);
 
 my $portsdir = $ENV{PORTSDIR} || '/usr/ports';
 sub table() { 'Makefiles' }
-sub keyword_table() { 'Filename' }
+sub keyword_table() { '_Filename' }
 
 my $always = {
 	map {($_, 1)} (
@@ -844,12 +840,12 @@ sub table() { 'PseudoFlavors' }
 
 package ArchListVar;
 our @ISA = qw(DefinedListKeyVar);
-sub keyword_table() { 'Arch' }
+sub keyword_table() { '_Arch' }
 
 package CompilerLinksVar;
 our @ISA = qw(DefinedListKeyVar);
 sub table() { 'CompilerLinks' }
-sub keyword_table() { 'Compiler' }
+sub keyword_table() { '_Compiler' }
 
 package OnlyForArchListVar;
 our @ISA = qw(ArchListVar);
@@ -862,17 +858,17 @@ sub table() { 'NotForArch' }
 package CategoriesVar;
 our @ISA = qw(ListKeyVar);
 sub table() { 'Categories' }
-sub keyword_table() { 'CategoryKeys' }
+sub keyword_table() { '_CategoryKeys' }
 
 package TargetsVar;
 our @ISA = qw(ListKeyVar);
 sub table() { 'Targets' }
-sub keyword_table() { 'TargetKeys' }
+sub keyword_table() { '_TargetKeys' }
 
 package DPBPropertiesVar;
 our @ISA = qw(DefinedListKeyVar);
 sub table() { 'DPBProperties' }
-sub keyword_table() { 'DPBKeys' }
+sub keyword_table() { '_DPBKeys' }
 
 package MultiVar;
 our @ISA = qw(ListVar);
@@ -922,12 +918,12 @@ sub add
 package ModulesVar;
 our @ISA = qw(DefinedListKeyVar);
 sub table() { 'Modules' }
-sub keyword_table() { 'ModuleKeys' }
+sub keyword_table() { '_ModuleKeys' }
 
 package ConfigureVar;
 our @ISA = qw(DefinedListKeyVar);
 sub table() { 'Configure' }
-sub keyword_table() { 'ConfigureKeys' }
+sub keyword_table() { '_ConfigureKeys' }
 
 package ConfigureArgsVar;
 our @ISA = qw(QuotedListVar);
@@ -936,7 +932,7 @@ sub table() { 'ConfigureArgs' }
 package WantlibVar;
 our @ISA = qw(ListVar);
 sub table() { 'Wantlib' }
-sub keyword_table() { 'Library' }
+sub keyword_table() { '_Library' }
 sub want_in_ports_view { 0 }
 
 sub _add
@@ -961,7 +957,7 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	my $t = $self->table_name($self->table);
-	my $k = $self->table_name($self->keyword_table);
+	my $k = $self->keyword_table;
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Value")->references($k)->constraint,
@@ -977,7 +973,7 @@ sub create_tables
 package OnlyForArchVar;
 our @ISA = qw(DefinedListKeyVar);
 sub table() { 'OnlyForArch' }
-sub keyword_table() { 'Arches' }
+sub keyword_table() { '_Arches' }
 
 package FileVar;
 our @ISA = qw(SecondaryVar);
@@ -1039,7 +1035,7 @@ sub new
 package SharedLibsVar;
 our @ISA = qw(KeyVar);
 sub table() { 'Shared_Libs' }
-sub keyword_table() { 'Library' }
+sub keyword_table() { '_Library' }
 
 sub add
 {
@@ -1054,7 +1050,7 @@ sub add
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	my $k = $self->table_name($self->keyword_table);
+	my $k = $self->keyword_table;
 	$self->create_keyword_table($inserter);
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -1069,14 +1065,14 @@ sub create_tables
 
 package EmailVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { 'Email' }
+sub keyword_table() { '_Email' }
 
 package YesKeyVar;
 our @ISA = qw(KeyVar);
-sub keyword_table() { 'Keywords2' }
+sub keyword_table() { '_Keywords2' }
 
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
-sub keyword_table() { 'AutoVersion' }
+sub keyword_table() { '_AutoVersion' }
 
 1;
