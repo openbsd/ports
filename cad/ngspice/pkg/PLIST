@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/10/30 07:12:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/01/08 07:34:37 bentley Exp $
 @bin bin/ngspice
 include/ngspice/
 include/ngspice/1-f-code.h
@@ -125,12 +125,6 @@ include/ngspice/typedefs.h
 include/ngspice/wallace.h
 include/ngspice/wordlist.h
 include/ngspice/wstdio.h
-@man man/man1/cmpp.1
-@man man/man1/ngmakeidx.1
-@man man/man1/ngmultidec.1
-@man man/man1/ngnutmeg.1
-@man man/man1/ngproc2mod.1
-@man man/man1/ngsconvert.1
 @man man/man1/ngspice.1
 share/ngspice/
 share/ngspice/scripts/
