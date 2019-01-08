@@ -1,7 +1,8 @@
-$OpenBSD: patch-gui_src_main_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
---- gui/src/main.cpp.orig	Fri Jan  1 21:17:50 2010
-+++ gui/src/main.cpp	Fri Jan  1 21:22:45 2010
-@@ -219,6 +219,9 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-gui_src_main_cpp,v 1.2 2019/01/08 21:24:29 sebastia Exp $
+Index: gui/src/main.cpp
+--- gui/src/main.cpp.orig
++++ gui/src/main.cpp
+@@ -265,6 +265,9 @@ int main(int argc, char *argv[])
  		if (sSelectedDriver == "auto") {
  			pPref->m_sAudioDriver = "Auto";
  		}
@@ -11,12 +12,12 @@ $OpenBSD: patch-gui_src_main_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
  		else if (sSelectedDriver == "jack") {
  			pPref->m_sAudioDriver = "Jack";
  		}
-@@ -380,7 +383,7 @@ void showInfo()
+@@ -441,7 +444,7 @@ void showInfo()
  void showUsage()
  {
  	std::cout << "Usage: hydrogen [-v] [-h] -s file" << std::endl;
 -	std::cout << "   -d, --driver AUDIODRIVER - Use the selected audio driver (jack, alsa, oss)" << std::endl;
 +	std::cout << "   -d, --driver AUDIODRIVER - Use the selected audio driver (jack, alsa, oss, sndio)" << std::endl;
  	std::cout << "   -s, --song FILE - Load a song (*.h2song) at startup" << std::endl;
- #ifdef LASH_SUPPORT
- 	std::cout << "   --lash-no-start-server - If LASH server not running, don't start" << endl
+ 	std::cout << "   -p, --playlist FILE - Load a playlist (*.h2playlist) at startup" << std::endl;
+ 	std::cout << "   -k, --kit drumkit_name - Load a drumkit at startup" << std::endl;

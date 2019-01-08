@@ -1,0 +1,22 @@
+$OpenBSD: patch-gui_src_MainForm_cpp,v 1.1 2019/01/08 21:24:29 sebastia Exp $
+
+Index: gui/src/MainForm.cpp
+--- gui/src/MainForm.cpp.orig
++++ gui/src/MainForm.cpp
+@@ -21,6 +21,7 @@
+  */
+ #include "version.h"
+ 
++#include "unistd.h"
+ 
+ #include <hydrogen/hydrogen.h>
+ #include <hydrogen/playlist.h>
+@@ -1392,7 +1393,7 @@ bool MainForm::eventFilter( QObject *o, QEvent *e )
+ 			float pan_L = 1.0;
+ 			float pan_R = 1.0;
+ 
+-			engine->addRealtimeNote (row, velocity, pan_L, pan_R, NULL, NULL, NULL , row + 36);
++			engine->addRealtimeNote (row, velocity, pan_L, pan_R, 0.0, NULL, NULL , row + 36);
+ 
+ 			return TRUE; // eat event
+ 		}

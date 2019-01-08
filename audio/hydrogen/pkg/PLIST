@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/08 21:24:29 sebastia Exp $
 @bin bin/hydrogen
 share/applications/hydrogen.desktop
 share/hydrogen/
@@ -19,17 +19,33 @@ share/hydrogen/data/doc/README.DOCUMENTATION.txt
 share/hydrogen/data/doc/img/
 share/hydrogen/data/doc/img/AudioEngineInfoDialog.png
 share/hydrogen/data/doc/img/CreateNewPattern.png
+share/hydrogen/data/doc/img/Director.png
+share/hydrogen/data/doc/img/Downloading_SoundLibrary.png
 share/hydrogen/data/doc/img/DrumkitExport.png
 share/hydrogen/data/doc/img/DrumkitImport.png
 share/hydrogen/data/doc/img/DrumkitLoad.png
 share/hydrogen/data/doc/img/DrumkitSave.png
+share/hydrogen/data/doc/img/FX_send_knobs.png
+share/hydrogen/data/doc/img/GUI_Sections.svg
+share/hydrogen/data/doc/img/GUI_Sections_0.9.5.png
 share/hydrogen/data/doc/img/HearNewNotes.png
+share/hydrogen/data/doc/img/Hydrogen_0.9.5_gui.png
+share/hydrogen/data/doc/img/InstrumentMapping.png
+share/hydrogen/data/doc/img/Instrument_General.png
+share/hydrogen/data/doc/img/Instrument_Layers.png
+share/hydrogen/data/doc/img/JackTrans_Master.png
+share/hydrogen/data/doc/img/LADSPA_FX_Properties.png
+share/hydrogen/data/doc/img/MainControls_Rubberband_btn.png
 share/hydrogen/data/doc/img/MainModePattern.png
 share/hydrogen/data/doc/img/MainModeSong.png
 share/hydrogen/data/doc/img/MainPlay.png
 share/hydrogen/data/doc/img/MainRecord.png
 share/hydrogen/data/doc/img/MainStop.png
 share/hydrogen/data/doc/img/MainToolbar.png
+share/hydrogen/data/doc/img/MainToolbar_V2.png
+share/hydrogen/data/doc/img/MeasureSettings.png
+share/hydrogen/data/doc/img/MidiIN_CPU.png
+share/hydrogen/data/doc/img/Midi_Actions.png
 share/hydrogen/data/doc/img/Mixer.png
 share/hydrogen/data/doc/img/MixerDelay.png
 share/hydrogen/data/doc/img/MixerFX.png
@@ -46,18 +62,30 @@ share/hydrogen/data/doc/img/MixerPlayTest.png
 share/hydrogen/data/doc/img/MixerSolo.png
 share/hydrogen/data/doc/img/MovePatternDown.png
 share/hydrogen/data/doc/img/MovePatternUp.png
+share/hydrogen/data/doc/img/NoteKey.png
+share/hydrogen/data/doc/img/NoteOff_NoteLength.png
 share/hydrogen/data/doc/img/PatternEditor.png
 share/hydrogen/data/doc/img/PatternEditorButtons.png
+share/hydrogen/data/doc/img/PatternEditorControls.png
 share/hydrogen/data/doc/img/PatternEditorDownUp.png
 share/hydrogen/data/doc/img/PatternEditorInstr.png
+share/hydrogen/data/doc/img/PatternEditorInstr_V2.png
 share/hydrogen/data/doc/img/PatternEditorPattern.png
 share/hydrogen/data/doc/img/PatternEditorRecording.png
 share/hydrogen/data/doc/img/PatternEditorSizeRes.png
+share/hydrogen/data/doc/img/PatternEditor_DrumMode.png
+share/hydrogen/data/doc/img/PatternEditor_PianoMode.png
 share/hydrogen/data/doc/img/PreferencesAppearance.png
 share/hydrogen/data/doc/img/PreferencesAudioSystem.png
+share/hydrogen/data/doc/img/PreferencesAudioSystem_V2.png
 share/hydrogen/data/doc/img/PreferencesGeneral.png
+share/hydrogen/data/doc/img/PreferencesGeneral_V2.png
 share/hydrogen/data/doc/img/PreferencesMidiSystem.png
+share/hydrogen/data/doc/img/PreferencesMidiSystem_V2.png
+share/hydrogen/data/doc/img/Rec_button.png
 share/hydrogen/data/doc/img/Res.png
+share/hydrogen/data/doc/img/SampleEditor.png
+share/hydrogen/data/doc/img/SampleEditor_V5.png
 share/hydrogen/data/doc/img/SongEditor.png
 share/hydrogen/data/doc/img/SongEditorAddLayer.png
 share/hydrogen/data/doc/img/SongEditorButtons.png
@@ -68,11 +96,20 @@ share/hydrogen/data/doc/img/SongEditorSelectInsertMode.png
 share/hydrogen/data/doc/img/SongEditorSelectMode.png
 share/hydrogen/data/doc/img/SongLoop.png
 share/hydrogen/data/doc/img/SongOperations.png
+share/hydrogen/data/doc/img/SoundLibrary.png
+share/hydrogen/data/doc/img/Sound_Library_import.png
+share/hydrogen/data/doc/img/SoundlibraryHierarchy.svg
+share/hydrogen/data/doc/img/SoundlibraryHierarchy_V3.png
+share/hydrogen/data/doc/img/SoundlibraryHierarchy_V4.png
 share/hydrogen/data/doc/img/Tutorial2.h2song
 share/hydrogen/data/doc/img/TutorialEnd.png
 share/hydrogen/data/doc/img/TutorialStart.png
+share/hydrogen/data/doc/img/Virtual_patterns_menu.png
+share/hydrogen/data/doc/img/add_tag.png
+share/hydrogen/data/doc/img/add_tempo_change.png
 share/hydrogen/data/doc/img/background_BPM.png
 share/hydrogen/data/doc/img/background_Control.png
+share/hydrogen/data/doc/img/background_Control_V2.png
 share/hydrogen/data/doc/img/background_Load.png
 share/hydrogen/data/doc/img/background_Mode.png
 share/hydrogen/data/doc/img/bg_topPanel.png
@@ -80,6 +117,7 @@ share/hydrogen/data/doc/img/bpm.png
 share/hydrogen/data/doc/img/btn_clear_off.png
 share/hydrogen/data/doc/img/btn_draw.png
 share/hydrogen/data/doc/img/btn_edit_on.png
+share/hydrogen/data/doc/img/btn_hear.png
 share/hydrogen/data/doc/img/btn_hear_on.png
 share/hydrogen/data/doc/img/btn_live_on.png
 share/hydrogen/data/doc/img/btn_loop_on.png
@@ -104,14 +142,17 @@ share/hydrogen/data/doc/img/btn_updown.png
 share/hydrogen/data/doc/img/bypass_on.png
 share/hydrogen/data/doc/img/bypass_over.png
 share/hydrogen/data/doc/img/cpuload.png
+share/hydrogen/data/doc/img/director.png
 share/hydrogen/data/doc/img/downBtn_on.png
 share/hydrogen/data/doc/img/edit_off.png
+share/hydrogen/data/doc/img/fill_clear_pattern.png
 share/hydrogen/data/doc/img/hearBtn_on.png
 share/hydrogen/data/doc/img/instr_ed0.png
 share/hydrogen/data/doc/img/instr_ed1.png
 share/hydrogen/data/doc/img/item_selected.png
 share/hydrogen/data/doc/img/jack_transport.png
 share/hydrogen/data/doc/img/midi_in.png
+share/hydrogen/data/doc/img/mixer-instrrack_btn.png
 share/hydrogen/data/doc/img/newPatternBtn_on.png
 share/hydrogen/data/doc/img/nl/
 share/hydrogen/data/doc/img/nl/DrumkitExport.png
@@ -132,13 +173,17 @@ share/hydrogen/data/doc/img/nl/SongEditor.png
 share/hydrogen/data/doc/img/nl/SongEditorInsertMode.png
 share/hydrogen/data/doc/img/nl/SongEditorSelectMode.png
 share/hydrogen/data/doc/img/nl/SongEditorSelectModeCopy.png
+share/hydrogen/data/doc/img/pattern_properties.png
 share/hydrogen/data/doc/img/quantBtn_off.png
 share/hydrogen/data/doc/img/quantBtn_on.png
 share/hydrogen/data/doc/img/recBtn_on.png
+share/hydrogen/data/doc/img/screenshot-director.png
 share/hydrogen/data/doc/img/showFX_on.png
 share/hydrogen/data/doc/img/showPeaks_on.png
 share/hydrogen/data/doc/img/songFuncBtn_on.png
+share/hydrogen/data/doc/img/tag_bar.png
 share/hydrogen/data/doc/img/tastiera.png
+share/hydrogen/data/doc/img/tempo_bar.png
 share/hydrogen/data/doc/img/upBtn_on.png
 share/hydrogen/data/doc/img_tutorial/
 share/hydrogen/data/doc/img_tutorial/Bridge1_4th.png
@@ -224,7 +269,10 @@ share/hydrogen/data/emptySample.wav
 share/hydrogen/data/hydrogen.default.conf
 @comment share/hydrogen/data/hydrogen.default.conf.orig
 share/hydrogen/data/i18n/
+share/hydrogen/data/i18n/hydrogen.ca.qm
 share/hydrogen/data/i18n/hydrogen.ca.ts
+share/hydrogen/data/i18n/hydrogen.cs.qm
+share/hydrogen/data/i18n/hydrogen.cs.ts
 share/hydrogen/data/i18n/hydrogen.de.qm
 share/hydrogen/data/i18n/hydrogen.de.ts
 share/hydrogen/data/i18n/hydrogen.es.qm
@@ -288,11 +336,15 @@ share/hydrogen/data/img/gray/instrumentEditor/bypass_over.png
 share/hydrogen/data/img/gray/instrumentEditor/deleteLayer_off.png
 share/hydrogen/data/img/gray/instrumentEditor/deleteLayer_on.png
 share/hydrogen/data/img/gray/instrumentEditor/deleteLayer_over.png
+share/hydrogen/data/img/gray/instrumentEditor/editLayer_off.png
+share/hydrogen/data/img/gray/instrumentEditor/editLayer_on.png
+share/hydrogen/data/img/gray/instrumentEditor/editLayer_over.png
 share/hydrogen/data/img/gray/instrumentEditor/instrumentTab.png
 share/hydrogen/data/img/gray/instrumentEditor/instrumentTab_top.png
 share/hydrogen/data/img/gray/instrumentEditor/instrument_show_off.png
 share/hydrogen/data/img/gray/instrumentEditor/instrument_show_on.png
 share/hydrogen/data/img/gray/instrumentEditor/layerTab.png
+share/hydrogen/data/img/gray/instrumentEditor/layerTabnew.png
 share/hydrogen/data/img/gray/instrumentEditor/library_show_off.png
 share/hydrogen/data/img/gray/instrumentEditor/library_show_on.png
 share/hydrogen/data/img/gray/instrumentEditor/loadLayer_off.png
@@ -425,6 +477,12 @@ share/hydrogen/data/img/gray/playerControlPanel/btn_mode_over.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_play_off.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_play_on.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_play_over.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_rec_off.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_rec_on.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_rec_over.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_recdel_off.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_recdel_on.png
+share/hydrogen/data/img/gray/playerControlPanel/btn_recdel_over.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_rwd_off.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_rwd_on.png
 share/hydrogen/data/img/gray/playerControlPanel/btn_rwd_over.png
@@ -468,6 +526,8 @@ share/hydrogen/data/img/gray/playerControlPanel/midiActivity_back.png
 share/hydrogen/data/img/gray/playerControlPanel/midiActivity_on.png
 share/hydrogen/data/img/gray/playerControlPanel/onoff.png
 share/hydrogen/data/img/gray/playerControlPanel/playlist_background_Control.png
+share/hydrogen/data/img/gray/playerControlPanel/rubber_off.png
+share/hydrogen/data/img/gray/playerControlPanel/rubber_on.png
 share/hydrogen/data/img/gray/playerControlPanel/statusLED_off.png
 share/hydrogen/data/img/gray/playerControlPanel/statusLED_on.png
 share/hydrogen/data/img/gray/preferencesDialog/
@@ -477,6 +537,9 @@ share/hydrogen/data/img/gray/skin_btn_on.png
 share/hydrogen/data/img/gray/skin_btn_over.png
 share/hydrogen/data/img/gray/songEditor/
 share/hydrogen/data/img/gray/songEditor/bg_topPanel.png
+share/hydrogen/data/img/gray/songEditor/btn_bpm_off.png
+share/hydrogen/data/img/gray/songEditor/btn_bpm_on.png
+share/hydrogen/data/img/gray/songEditor/btn_bpm_over.png
 share/hydrogen/data/img/gray/songEditor/btn_clear_off.png
 share/hydrogen/data/img/gray/songEditor/btn_clear_on.png
 share/hydrogen/data/img/gray/songEditor/btn_clear_over.png
@@ -514,6 +577,9 @@ share/hydrogen/data/img/gray/splash/splash.png
 share/hydrogen/data/img/gray/waveDisplay/
 share/hydrogen/data/img/gray/waveDisplay/background.png
 share/hydrogen/data/img/gray/waveDisplay/bgsamplewavedisplay.png
+share/hydrogen/data/img/gray/waveDisplay/detailsamplewavedisplay.png
+share/hydrogen/data/img/gray/waveDisplay/mainsamplewavedisplay.png
+share/hydrogen/data/img/gray/waveDisplay/targetsamplewavedisplay.png
 @comment share/hydrogen/data/new_tutorial/
 @comment share/hydrogen/data/new_tutorial/img_tutorial/
 @comment share/hydrogen/data/new_tutorial/img_tutorial/Bridge1_4th.png

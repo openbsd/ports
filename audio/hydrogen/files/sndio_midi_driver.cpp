@@ -34,7 +34,7 @@ void* SndioMidiDriver_thread( void* param )
 	MidiMessage msg;
 	struct pollfd pfd;
 	nfds_t nfds;
-	char buf[1], sysex_data[256], status = 0;
+	unsigned char buf[1], sysex_data[256], status = 0;
 	int i, msglen, count = 0, sysex_len = 0;
 
 	_INFOLOG("SndioMidiDriver_thread starting");
@@ -181,7 +181,7 @@ void* SndioMidiDriver_thread( void* param )
 }
 
 SndioMidiDriver::SndioMidiDriver()
-		: MidiInput("SndioMidiDriver")
+		: MidiInput("SndioMidiDriver"), Object( "SndioMidiDriver" )
 		, m_bRunning(false)
 {
 	hdl = NULL;
@@ -205,7 +205,7 @@ void SndioMidiDriver::open()
 	if (strncmp(midiDevice, "", 1) == 0 ||
 	    strncmp(midiDevice, "None", 5) == 0 ||
 	    strncmp(midiDevice, "default", 8) == 0)
-		hdl = mio_open(NULL, MIO_IN, 0);
+		hdl = mio_open(MIO_PORTANY, MIO_IN, 0);
 	else
 		hdl = mio_open(midiDevice, MIO_IN, 0);
 
@@ -240,15 +240,15 @@ std::vector<QString> SndioMidiDriver::getOutputPortList()
 	QString name;
 	int i;
 
-	/* midithru:* */
+	/* midithru/* */
 	for (i = 0; i < 4; i++) {
-		name = "midithru:" + QString::number(i);
+		name = "midithru/" + QString::number(i);
 		portList.push_back(name);
 	}
 
-	/* rmidi:* */
+	/* rmidi/* */
 	for (i = 0; i < 8; i++) {
-		name = "rmidi:" + QString::number(i);
+		name = "rmidi/" + QString::number(i);
 		QFileInfo di("/dev/rmidi" + QString::number(i));
 		if (di.exists())
 			portList.push_back(name);

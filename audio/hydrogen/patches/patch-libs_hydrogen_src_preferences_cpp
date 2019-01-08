@@ -1,7 +1,8 @@
-$OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
---- libs/hydrogen/src/preferences.cpp.orig	Wed Aug 26 05:12:27 2009
-+++ libs/hydrogen/src/preferences.cpp	Sat Jan  2 03:22:38 2010
-@@ -143,7 +143,7 @@ Preferences::Preferences()
+$OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.2 2019/01/08 21:24:29 sebastia Exp $
+Index: libs/hydrogen/src/preferences.cpp
+--- libs/hydrogen/src/preferences.cpp.orig
++++ libs/hydrogen/src/preferences.cpp
+@@ -183,7 +183,7 @@ Preferences::Preferences()
  	m_patternCategories.push_back( QString("not_categorized") );
  
  	//___ audio engine properties ___
@@ -10,7 +11,7 @@ $OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jake
  	m_bUseMetronome = false;
  	m_fMetronomeVolume = 0.5;
  	m_nMaxNotes = 256;
-@@ -153,8 +153,11 @@ Preferences::Preferences()
+@@ -193,8 +193,11 @@ Preferences::Preferences()
  	//___ oss driver properties ___
  	m_sOSSDevice = QString("/dev/dsp");
  
@@ -23,13 +24,13 @@ $OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jake
  	m_sMidiPortName = QString("None");
  	m_nMidiChannelFilter = -1;
  	m_bMidiNoteOffIgnore = false;
-@@ -423,6 +426,15 @@ void Preferences::loadPreferences( bool bGlobal )
+@@ -484,6 +487,15 @@ void Preferences::loadPreferences( bool bGlobal )
  					m_sOSSDevice = LocalFileMng::readXmlString( ossDriverNode, "ossDevice", m_sOSSDevice );
  				}
  
 +				//// SNDIO AUDIO DRIVER ////
-+				TiXmlNode* sndioAudioDriverNode;
-+				if ( !( sndioAudioDriverNode = audioEngineNode->FirstChild( "sndio_driver" ) ) ) {
++				QDomNode sndioAudioDriverNode = audioEngineNode.firstChildElement( "sndio_driver" );
++				if ( sndioAudioDriverNode.isNull() ) {
 +					WARNINGLOG( "sndio_driver node not found" );
 +					recreate = true;
 +				} else {
@@ -37,9 +38,9 @@ $OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jake
 +				}
 +
  				//// JACK DRIVER ////
- 				TiXmlNode* jackDriverNode;
- 				if ( !( jackDriverNode = audioEngineNode->FirstChild( "jack_driver" ) ) ) {
-@@ -469,7 +481,7 @@ void Preferences::loadPreferences( bool bGlobal )
+ 				QDomNode jackDriverNode = audioEngineNode.firstChildElement( "jack_driver" );
+ 				if ( jackDriverNode.isNull() ) {
+@@ -530,7 +542,7 @@ void Preferences::loadPreferences( bool bGlobal )
  					WARNINGLOG( "midi_driver node not found" );
  					recreate = true;
  				} else {
@@ -48,17 +49,17 @@ $OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jake
  					m_sMidiPortName = LocalFileMng::readXmlString( midiDriverNode, "port_name", "None" );
  					m_nMidiChannelFilter = LocalFileMng::readXmlInt( midiDriverNode, "channel_filter", -1 );
  					m_bMidiNoteOffIgnore = LocalFileMng::readXmlBool( midiDriverNode, "ignore_note_off", true );
-@@ -750,6 +762,13 @@ void Preferences::savePreferences()
- 			LocalFileMng::writeXmlString( &ossDriverNode, "ossDevice", m_sOSSDevice );
+@@ -830,6 +842,13 @@ void Preferences::savePreferences()
+ 			LocalFileMng::writeXmlString( ossDriverNode, "ossDevice", m_sOSSDevice );
  		}
- 		audioEngineNode.InsertEndChild( ossDriverNode );
+ 		audioEngineNode.appendChild( ossDriverNode );
 +
 +		//// SNDIO DRIVER ////
-+		TiXmlElement sndioAudioDriverNode( "sndio_driver" );
++		QDomNode sndioAudioDriverNode = doc.createElement( "sndio_driver" );
 +		{
-+			LocalFileMng::writeXmlString( &sndioAudioDriverNode, "sndioDevice", m_sSndioDevice );
++			 LocalFileMng::writeXmlString( sndioAudioDriverNode, "sndioDevice", m_sSndioDevice );
 +		}
-+		audioEngineNode.InsertEndChild( sndioAudioDriverNode );
++		audioEngineNode.appendChild( sndioAudioDriverNode );
  
  		//// JACK DRIVER ////
- 		TiXmlElement jackDriverNode( "jack_driver" );
+ 		QDomNode jackDriverNode = doc.createElement( "jack_driver" );
