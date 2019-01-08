@@ -1,0 +1,14 @@
+$OpenBSD: patch-moz_configure,v 1.1.1.1 2019/01/08 19:01:19 jasper Exp $
+
+Index: moz.configure
+--- moz.configure.orig
++++ moz.configure
+@@ -305,7 +305,7 @@ add_old_configure_assignment('CLANG_PLUGIN', clang_plu
+ 
+ # Awk detection
+ # ==============================================================
+-awk = check_prog('AWK', ('gawk', 'mawk', 'nawk', 'awk'))
++awk = check_prog('AWK', ('awk',))
+ 
+ # Until the AWK variable is not necessary in old-configure
+ @depends(awk)
