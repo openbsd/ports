@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2019/01/08 19:10:27 landry Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	geo x11
 
-HOMEPAGE =	http://blog.sarine.nl/gpx-viewer/
+HOMEPAGE =	https://launchpad.net/gpx-viewer
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
