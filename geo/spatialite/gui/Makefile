@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/08 19:13:56 landry Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.7.1
-REVISION =	7
+PROJECT =	spatialite_gui
+REVISION =	8
 
 LIB_DEPENDS +=	x11/wxWidgets>=3.0.4 \
 		databases/sqlite3 \
