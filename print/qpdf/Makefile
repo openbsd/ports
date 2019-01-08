@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/01/08 12:14:44 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-8.2.1
-REVISION=	0
+DISTNAME=	qpdf-8.3.0
 
-SHARED_LIBS +=  qpdf                 6.1      # 23.1
+SHARED_LIBS +=  qpdf                 6.2      # 24.0
 
 CATEGORIES=	print graphics
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c jpeg m ${COMPILER_LIBCXX} z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qpdf/}
 
