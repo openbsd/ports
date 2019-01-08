@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/04 08:05:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/01/08 09:53:33 ajacoutot Exp $
+@option no-default-conflict
+@conflict spidermonkey->=52.0,<60.0
 @pkgpath lang/spidermonkey
 @bin bin/js${MOZILLA_VERSION}
 bin/js${MOZILLA_VERSION}-config
