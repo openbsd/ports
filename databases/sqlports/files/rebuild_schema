@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: rebuild_schema,v 1.1 2018/12/04 10:35:09 espie Exp $
+# $OpenBSD: rebuild_schema,v 1.2 2019/01/08 19:42:45 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,6 @@ use warnings;
 use FindBin;
 use lib $FindBin::Bin;
 use Getopt::Std;
-use Column;
 use Var;
 use Inserter;
 use DBI;

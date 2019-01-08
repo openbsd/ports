@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.45 2018/12/30 10:40:32 espie Exp $
+# $OpenBSD: Var.pm,v 1.46 2019/01/08 19:42:45 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,9 +24,26 @@ use warnings;
 # to store them in secondary tables (because of one/many associations).
 
 package AnyVar;
-sub columntype() { 'OptTextColumn' }
+sub ports_table_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::Text->new($name);
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name);
+}
+
 sub table() { undef }
 sub keyword_table() { undef }
+
+sub table_name
+{
+	my ($class, $name) = @_;
+	return "_$name";
+}
 
 sub new
 {
@@ -66,16 +83,15 @@ sub add_value
 	$ins->add_to_port($self->var, $value);
 }
 
-sub column
-{
-	my ($self, $name) = @_;
-	return $self->columntype->new($name)->set_vartype($self);
-}
-
 sub prepare_tables
 {
 	my ($self, $inserter, $name) = @_;
-	$inserter->handle_column($self->column($name));
+	if ($self->need_in_ports_table) {
+		$inserter->add_to_ports_table($self->ports_table_column($name));
+	}
+	if ($self->want_in_ports_view) {
+		$inserter->add_to_ports_view($self->ports_view_column($name));
+	}
 	$self->create_tables($inserter);
 }
 
@@ -99,13 +115,6 @@ sub create_tables
 	$self->create_keyword_table($inserter);
 }
 
-sub insert
-{
-	my $self = shift;
-	my $ins = shift;
-	$ins->insert($self->table, @_);
-}
-
 sub normal_insert
 {
 	my $self = shift;
@@ -116,11 +125,12 @@ sub normal_insert
 sub subselect
 {
 	my ($self, $inserter) = @_;
-	my $t = $inserter->table_name($self->table);
-	return "SELECT fullpkgpath, value FROM $t ORDER BY n";
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View->new('Value'),
+	    Sql::Order->new('N'));
 }
 
-sub group_by
+sub select
 {
 	return ();
 }
@@ -135,6 +145,33 @@ sub need_in_ports_table
 {
 	my $self = shift;
 	return !defined $self->table;
+}
+
+sub fullpkgpath
+{
+	return Sql::Column::Integer->new("FullPkgPath")->references("_Paths")
+	    ->constraint;
+}
+
+sub pathref
+{
+	my $j = Sql::Join->new('_Paths')->add(
+	    Sql::Equal->new('Canonical', 'FullPkgPath'));
+	return (Sql::Column::View->new("PathId", origin => "Id")->join($j),
+	    Sql::Column::View->new('FullPkgPath')->join($j));
+}
+
+sub create_table
+{
+	my ($self, @c) = @_;
+	Sql::Create::Table->new($self->table_name($self->table))->add(@c);
+}
+
+sub create_view
+{
+	my ($self, @c) = @_;
+	Sql::Create::View->new($self->table,
+	    origin => $self->table_name($self->table))->add(@c);
 }
 
 # for distinction later
@@ -154,7 +191,31 @@ sub prepare_tables
 
 package KeyVar;
 our @ISA = qw(AnyVar);
-sub columntype() { 'ValueColumn' }
+sub ports_table_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::Integer->new($name)
+	    ->references($self->table_name($self->keyword_table));
+}
+
+sub compute_join
+{
+	my ($self, $name) = @_;
+	if (defined $self->keyword_table) {
+		return Sql::Join->new($self->table_name($self->keyword_table))
+		    ->add(Sql::Equal->new("KeyRef", $name));
+	} else {
+		return Sql::Join->new($self->table_name($self->table))
+		    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
+	}
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+		$self->compute_join($name));
+}
 
 sub add
 {
@@ -178,7 +239,17 @@ sub keyword_table() { 'SubstVarsKey' }
 
 package OptKeyVar;
 our @ISA = qw(KeyVar);
-sub columntype() { 'OptValueColumn' }
+sub ports_table_column
+{
+	my ($self, $name) = @_;
+	return $self->SUPER::ports_table_column($name)->null;
+}
+
+sub compute_join
+{
+	my ($self, $name) = @_;
+	return $self->SUPER::compute_join($name)->left;
+}
 
 sub add
 {
@@ -220,10 +291,17 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, ARCH, VALUE)',
-	    OptValueColumn->new("ARCH")->join(TextColumn->new("VALUE")));
-	$inserter->prepare_normal_inserter($self->table,
-	    "ARCH", "VALUE");
+	my $k = $self->table_name($self->keyword_table);
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("Arch")->may_reference($k)->constraint,
+	    Sql::Column::Text->new("Value")->notnull->constraint);
+	$self->create_view(
+		$self->pathref,
+		Sql::Column::View->new('Arch', origin => 'Value')->join(
+		    Sql::Join->new($k)
+			->add(Sql::Equal->new("KeyRef", 'Arch'))->left),
+		Sql::Column::View->new("Value"));
 }
 
 package BrokenVar;
@@ -232,7 +310,11 @@ sub table() { 'Broken' }
 
 package ValuedVar;
 our @ISA = qw(AnyVar);
-sub columntype() { 'OptIntegerColumn' }
+sub ports_table_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::Integer->new($name);
+}
 
 sub find_value
 {
@@ -313,8 +395,16 @@ sub add
 package DependsVar;
 our @ISA = qw(AnyVar);
 sub table() { 'Depends' }
-sub columntype() { 'DependsColumn' }
 sub want_in_ports_view { 1 }
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
+		    Sql::Equal->new("Type", $self->match)));
+}
 
 sub add
 {
@@ -348,43 +438,74 @@ sub add
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$inserter->make_table($self, undef,
-	    TextColumn->new("FULLDEPENDS"),
-	    OptTextColumn->new("PKGSPEC"),
-	    OptTextColumn->new("REST"),
-	    PathColumn->new("DEPENDSPATH"),
-	    TextColumn->new("TYPE"),
-	    IntegerColumn->new("N"));
-	$inserter->prepare_normal_inserter($self->table,
-	    "FULLDEPENDS", "PKGSPEC", "REST", "DEPENDSPATH", "TYPE", "N");
+
+	my $t = $self->table_name($self->table);
+
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Text->new("FullDepends")->notnull,
+	    Sql::Column::Text->new("PkgSpec"),
+	    Sql::Column::Text->new("Rest"),
+	    Sql::Column::Integer->new("DependsPath")->references("_Paths"),
+	    Sql::Column::Text->new("Type")->notnull->constraint,
+	    Sql::Column::Integer->new("N")->notnull->constraint);
+	my $j = Sql::Join->new('_Paths')->add(
+	    Sql::Equal->new('Canonical', 'FullPkgPath'));
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("FullDepends"),
+	    Sql::Column::View->new("PkgSpec"),
+	    Sql::Column::View->new("Rest"),
+	    Sql::Column::View->new('DependsPath', origin => 'FullPkgpath')
+	    	->join(Sql::Join->new('_Paths')->add(
+		    Sql::Equal->new('Canonical', 'DependsPath'))),
+	    Sql::Column::View->new("Type"),
+	    Sql::Column::View->new("N"));
 	$inserter->make_ordered_view($self);
 	$inserter->create_canonical_depends($self);
 }
 
-sub group_by
+sub select
 {
-	return ('type');
+	return (Sql::Column::View->new('Type')->group_by);
 }
 
 sub subselect
 {
-	my ($self, $inserter) = @_;
-	my $t = $inserter->table_name($self->table);
-	return "SELECT fullpkgpath, fulldepends AS value, type\n\t FROM $t ORDER BY n";
+	my $self = shift;
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View->new('Value', origin => 'FullDepends'),
+	    Sql::Column::View->new('Type'),
+	    Sql::Order->new('N'));
 }
 
 package PkgPathsVar;
 our @ISA = qw(AnyVar);
-sub columntype() { 'OptCoalesceColumn' }
 sub want_in_ports_view { 1 }
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
+
+}
 
 sub table() { 'PkgPaths' }
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$inserter->make_table($self, undef,
-	    PathColumn->new("Value")->join(IntegerColumn->new("N")));
-	$inserter->prepare_normal_inserter($self->table, "Value", "N");
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("Value")->references("_Paths"),
+	    Sql::Column::Integer->new("N")->notnull->constraint);
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new('Value', origin => 'FullPkgPath')->join(
+	    	Sql::Join->new('_Paths')
+		    ->add(Sql::Equal->new('Id', 'Value'))),
+	    Sql::Column::View->new('N'));
 	$inserter->make_ordered_view($self);
 }
 
@@ -443,40 +564,65 @@ sub add_keyword
 sub create_tables
 {
 	my ($self, $inserter) = @_;
+	my $k;
+	
+	if (defined $self->keyword_table) {
+		$k = $self->table_name($self->keyword_table);
+	}
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, 
-	    "UNIQUE(".join(", ", "FULLPKGPATH", $self->unique_names).")",
-	    $self->columns);
-	$inserter->prepare_normal_inserter($self->table, $self->column_names);
+	$self->create_table(
+	    $self->fullpkgpath,
+	    $self->table_columns($k));
+	$self->create_view(
+	    $self->pathref, $self->view_columns($k));
 }
 
-sub column_names
+sub view_columns
 {
-	return ("VALUE");
+	my ($self, $k) = @_;
+	my $c = Sql::Column::View->new("Value");
+	if (defined $k) {
+		$c->join(Sql::Join->new($k)
+		    ->add(Sql::Equal->new("KeyRef", "Value")));
+	}
+	return $c;
 }
 
-sub unique_names
+sub table_columns
 {
-	my $self = shift;
-	return $self->column_names;
-}
-
-sub columns
-{
-	return (ValueColumn->new);
+	my ($self, $k) = @_;
+	if (defined $k) {
+		return Sql::Column::Integer->new("Value")->references($k)
+		    ->constraint;
+	} else {
+		return Sql::Column::Text->new("Value")->notnull->constraint;
+	}
 }
 
 package CountedSecondaryVar;
 our @ISA = qw(SecondaryVar);
 
-sub column_names
+sub view_columns
 {
-	return ("VALUE", "N");
+	my ($self, $k) = @_;
+	return ($self->SUPER::view_columns($k),
+		Sql::Column::View->new("N"));
 }
 
-sub columns
+sub table_columns
 {
-	return (ValueColumn->new, IntegerColumn->new("N"));
+	my ($self, $k) = @_;
+	return ($self->SUPER::table_columns($k),
+	    Sql::Column::Integer->new("N")->notnull->constraint);
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
+
 }
 
 sub create_tables
@@ -489,8 +635,27 @@ sub create_tables
 package MasterSitesVar;
 our @ISA = qw(OptKeyVar);
 sub table() { 'MasterSites' }
-sub columntype() { 'MasterSitesColumn' }
 sub want_in_ports_view { 1 }
+
+sub compute_join
+{
+	my ($self, $name) = @_;
+	my $j = Sql::Join->new($self->table_name($self->table))->left
+	    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
+	if ($name =~ m/^MASTER_SITES(\d)$/) {
+		$j->add(Sql::Equal->new("N", $1));
+	} else {
+		$j->add(Sql::IsNull->new("N"));
+	}
+	return $j;
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+		$self->compute_join($name));
+}
 
 sub add
 {
@@ -508,15 +673,20 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, N, VALUE)",
-	    ValueColumn->new->join(OptIntegerColumn->new("N")));
-	$inserter->prepare_normal_inserter($self->table, "N", "VALUE");
+	my $t = $self->table_name($self->table);
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("N")->constraint,
+	    Sql::Column::Text->new("Value")->notnull->constraint);
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("N"),
+	    Sql::Column::View->new("Value"));
 }
 
 # Generic handling for any blank-separated list
 package ListVar;
 our @ISA = qw(CountedSecondaryVar);
-sub columntype() { 'OptCoalesceColumn' }
 sub want_in_ports_view { 1 }
 
 sub add
@@ -534,7 +704,6 @@ sub add
 package ListKeyVar;
 our @ISA = qw(CountedSecondaryVar);
 sub keyword_table() { 'Keywords' }
-sub columntype() { 'OptCoalesceColumn' }
 sub want_in_ports_view { 1 }
 
 sub add
@@ -551,10 +720,14 @@ sub add
 
 sub subselect
 {
-	my ($self, $inserter) = @_;
-	my $t = $inserter->table_name($self->table);
-	my $k = $inserter->table_name($self->keyword_table);
-	return "SELECT fullpkgpath, $k.value FROM $t\n\t JOIN $k ON $k.keyref=$t.value\n\t ORDER BY n";
+	my $self = shift;
+	my $t = $self->table_name($self->table);
+	my $k = $self->table_name($self->keyword_table);
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View->new('Value')
+	    	->join(Sql::Join->new($k)
+		    ->add(Sql::Equal->new('KeyRef', 'Value'))),
+	    Sql::Order->new('N'));
 }
 
 
@@ -586,33 +759,33 @@ sub add
 	}
 }
 
-sub column_names
+sub view_columns
 {
-	return ("VALUE", "N", "QUOTETYPE");
+	my ($self, $k) = @_;
+	return ($self->SUPER::view_columns($k),
+	    Sql::Column::View->new("QuoteType"));
 }
 
-sub unique_names
+sub table_columns
 {
-	return ("VALUE", "N");
-}
-
-sub columns
-{
-	return (ValueColumn->new, IntegerColumn->new("N"), 
-	    IntegerColumn->new("QUOTETYPE"));
+	my ($self, $k) = @_;
+	return ($self->SUPER::table_columns($k), 
+	    Sql::Column::Integer->new("QuoteType")->notnull);
 }
 
 sub subselect
 {
-	my ($self, $inserter) = @_;
-	my $t = $inserter->table_name($self->table);
-	return qq{
-SELECT fullpkgpath,
-	 CASE quotetype 
-	    WHEN 0 THEN value 
-	    WHEN 1 THEN '"'||value||'"' 
-	    WHEN 2 THEN "'"||value||"'" END AS value 
-    	 FROM $t ORDER BY n};
+	my $self = shift;
+	my $t = $self->table_name($self->table);
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View::Expr->new('Value',
+	    expr =>
+qq{CASE Quotetype
+  WHEN 0 THEN Value
+  WHEN 1 THEN '"'||Value||'"'
+  WHEN 2 THEN "'"||Value||"'"
+END}),
+	    Sql::Order->new('N'));
 }
 
 package DefinedListKeyVar;
@@ -709,11 +882,16 @@ sub want_in_ports_view { 0 }
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, VALUE)',
-	    TextColumn->new("VALUE"),
-	    PathColumn->new("SUBPKGPATH"));
-    	$inserter->prepare_normal_inserter($self->table,
-	    "VALUE", "SUBPKGPATH");
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Text->new("Value")->notnull->constraint,
+	    Sql::Column::Integer->new("SubPkgPath")->references("_Paths"));
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new('Value'),
+	    Sql::Column::View->new('SubPkgPath', origin => 'FullPkgPath')->join(
+	    	Sql::Join->new('_Paths')
+		    ->add(Sql::Equal->new('Id', 'SubPkgPath'))));
 }
 
 sub new
@@ -782,11 +960,18 @@ sub add_value
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
-	    ValueColumn->new,
-	    OptTextColumn->new("EXTRA"));
-	$inserter->prepare_normal_inserter($self->table, "VALUE", "EXTRA");
+	my $t = $self->table_name($self->table);
+	my $k = $self->table_name($self->keyword_table);
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("Value")->references($k)->constraint,
+	    Sql::Column::Text->new("Extra")->constraint);
+
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("Value")->join(
+	    	Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Extra"));
 }
 
 package OnlyForArchVar;
@@ -806,25 +991,23 @@ sub add
 	$self->add_value($ins, <$file>, $self->value);
 }
 
-sub column_names
+sub view_columns
 {
-	return ("VALUE", "Filename");
+	my ($self, $k) = @_;
+	return ($self->SUPER::view_columns($k),
+	    Sql::Column::View->new("Filename"));
 }
 
-sub unique_names
+sub table_columns
 {
-	return ("Filename");
-}
-
-sub columns
-{
-	return (ValueColumn->new, TextColumn->new("Filename"));
+	my ($self, $k) = @_;
+	return (Sql::Column::Text->new("Value")->notnull,
+	    Sql::Column::Text->new("Filename")->notnull);
 }
 
 package ReadmeVar;
 our @ISA = qw(FileVar);
 sub table() { 'ReadMe' }
-sub columntype() { 'OptTextColumn' }
 
 package DescrVar;
 our @ISA = qw(FileVar);
@@ -871,11 +1054,17 @@ sub add
 sub create_tables
 {
 	my ($self, $inserter) = @_;
+	my $k = $self->table_name($self->keyword_table);
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE (FULLPKGPATH, LIBNAME)",
-	    ValueColumn->new("LIBNAME"),
-	    TextColumn->new("VERSION"));
-	$inserter->prepare_normal_inserter($self->table, "LIBNAME", "VERSION");
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("LibName")->references($k)->constraint,
+	    Sql::Column::Text->new("Version")->notnull);
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View->new("LibName", origin => 'Value')->join(
+	    	Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "LibName"))),
+	    Sql::Column::View->new("Version"));
 }
 
 package EmailVar;

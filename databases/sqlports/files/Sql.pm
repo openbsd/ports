@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.21 2019/01/07 06:09:40 espie Exp $
+# $OpenBSD: Sql.pm,v 1.22 2019/01/08 19:42:45 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -363,17 +363,18 @@ sub contents
 
 	for my $c (@{$self->{columns}}) {
 		my $j = $c->{join};
-		next if !defined $j;
-		if (!defined $joins->{$j}) {
-			$self->add_column_names($j->name);
-			push(@joins, $j);
-			$joins->{$j} = $j;
-			if (++$tables->{$self->normalize($j->name)} == 1) {
-				delete $j->{alias};
-			} else {
-				$j->{alias} = ${$self->{alias}}++;
+		while (defined $j) {
+			if (!defined $joins->{$j}) {
+				$self->add_column_names($j->name);
+				push(@joins, $j);
+				$joins->{$j} = $j;
+				if (++$tables->{$self->normalize($j->name)} == 1) {
+					delete $j->{alias};
+				} else {
+					$j->{alias} = ${$self->{alias}}++;
+				}
 			}
-				
+			$j = $j->{join};
 		}
 	}
 
@@ -563,6 +564,7 @@ sub join
 {
 	my ($self, $j) = @_;
 	$self->{join} = $j;
+	$j->{parent} = $self;
 	return $self;
 }
 
@@ -758,23 +760,8 @@ sub equation
 		$a = $join->alias.".".$a;
 	}
 	if (!$view->is_unique_name($b)) {
-		$b = $view->origin.".".$b;
+		$b = $join->{parent}{parent}->origin.".".$b;
 	}
-	return "$a=$b";
-}
-
-package Sql::Constant;
-our @ISA = qw(Sql::Equal);
-sub equation
-{
-	my ($self, $join, $view) = @_;
-
-	my $a = $self->{a};
-	my $b = $self->{b};
-	if (!$view->is_unique_name($a)) {
-		$a = $join->alias.".".$a;
-	}
-
 	return "$a=$b";
 }
 

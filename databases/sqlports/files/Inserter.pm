@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.32 2018/12/26 13:20:15 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.33 2019/01/08 19:42:45 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -17,6 +17,7 @@
 
 use strict;
 use warnings;
+use Sql;
 
 package Inserter;
 # this is the object to use to put stuff into the db...
@@ -52,25 +53,35 @@ sub create_tables
 {
 	my ($self, $vars) = @_;
 
+	my $t = $self->{ports_table} = Sql::Create::Table->new("_Ports");
+	my $v = $self->{ports_view} = Sql::Create::View->new("Ports", 
+	    origin => '_Ports');
 	$self->create_path_table;
 	# XXX sort it
-	for my $t (sort keys %$vars) {
-		$vars->{$t}->prepare_tables($self, $t);
+	for my $i (sort keys %$vars) {
+		$vars->{$i}->prepare_tables($self, $i);
 	}
 
-	$self->create_ports_table;
-	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
-	$self->prepare_normal_inserter('Paths', 'PKGPATH', 'CANONICAL');
-	$self->create_view_info;
-	$self->commit_to_db;
+	$t->sort;
+	$self->{varlist} = [$t->column_names];
+	$t->prepend(AnyVar->fullpkgpath);
+
+	$v->sort;
+	$v->prepend(AnyVar->pathref);
+	$self->create_schema;
 	print '-'x50, "\n" if $self->{verbose};
 }
 
-sub map_columns
+sub add_to_ports_table
 {
-	my ($self, $mapper, $colref, @p) = @_;
-	$mapper .= '_schema';
-	return grep {defined $_} (map {$_->$mapper(@p)} @$colref);
+	my ($self, @column) = @_;
+	$self->{ports_table}->add(@column);
+}
+
+sub add_to_ports_view
+{
+	my ($self, @o) = @_;
+	$self->{ports_view}->add(@o);
 }
 
 sub make_ordered_view
@@ -78,19 +89,13 @@ sub make_ordered_view
 	my ($self, $class) = @_;
 
 	my $view = $self->view_name($class->table."_ordered");
-	my $subselect = $class->subselect($self);
-	my @group = $class->group_by;
-	unshift(@group, 'fullpkgpath');
-	my $groupby = join(', ', @group);
-	my $result = join(",\n\t", @group, 'group_concat(value, " ") AS value');
-	$self->new_object('VIEW', $class->table."_ordered",
-	    qq{AS 
-    WITH o AS
-    	($subselect)
-    SELECT
-    	$result 
-    FROM o 
-    GROUP by $groupby;});
+	my @subselect = $class->subselect;
+	my @select = (Sql::Column::View->new('FullPkgPath')->group_by,
+	    Sql::Column::View::Concat->new("Value"), $class->select);
+	Sql::Create::View->new($view, origin => 'o')->add(
+	    Sql::With->new('o', origin => $self->table_name($class->table))
+	    	->add(@subselect),
+	    @select);
 }
 
 sub set
@@ -139,15 +144,38 @@ sub new_sql
 {
 	my ($self, $sql) = @_;
 	my $n = $sql->name;
-	if ($sql->is_table && !defined $self->{create}) {
-		return;
-	}
 	return if defined $self->{created}{$n};
 	$self->{created}{$n} = 1;
 	$self->db->do($sql->drop);
 	my $request = $sql->stringize;
 	print "$request\n" if $self->{verbose};
 	$self->db->do($request);
+}
+
+sub create_schema
+{
+	my $self = shift;
+	if ($self->{create}) {
+		for my $t (Sql::Create->all_tables) {
+			$self->new_sql($t);
+			my $i = $t->inserter;
+			print $i, "\n";
+			$self->{insert}{$t->name} = $self->prepare($i);
+		}
+	}
+	for my $v (Sql::Create->all_views) {
+		$self->new_sql($v);
+	}
+	for my $v (@{$self->{prepare_list}}) {
+		&$v;
+	}
+	$self->commit_to_db;
+}
+
+sub register_prepare
+{
+	my ($self, $code) = @_;
+	push (@{$self->{prepare_list}}, $code);
 }
 
 sub new_table
@@ -161,25 +189,6 @@ sub prepare
 {
 	my ($self, $s) = @_;
 	return $self->db->prepare($s);
-}
-
-sub prepare_inserter
-{
-	my ($ins, $table, @cols) = @_;
-	return unless $ins->{create};
-	my $request = "INSERT OR REPLACE INTO ".
-	    $ins->table_name($table)." (".
-	    join(', ', @cols).
-	    ") VALUES (".
-	    join(', ', map {'?'} @cols).")";
-	print "$request\n" if $ins->{verbose};
-	$ins->{insert}{$table} = $ins->prepare($request);
-}
-
-sub prepare_normal_inserter
-{
-	my ($ins, $table, @cols) = @_;
-	$ins->prepare_inserter($table, "FULLPKGPATH", @cols);
 }
 
 sub finish_port
@@ -203,16 +212,6 @@ sub add_to_port
 	$self->{vars}{$var} = $value;
 }
 
-sub create_ports_table
-{
-	my $self = shift;
-
-	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
-	unshift(@columns, PathColumn->new);
-	my @l = $self->map_columns('normal', \@columns, $self);
-	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
-}
-
 sub ref
 {
 	return shift->{ref};
@@ -222,6 +221,9 @@ sub insert
 {
 	my $self = shift;
 	my $table = shift;
+	if (!defined $self->{insert}{$table}) {
+		$table = $self->table_name($table);
+	}
 	$self->{insert}{$table}->execute(@_);
 	$self->insert_done;
 }
@@ -237,30 +239,27 @@ sub create_canonical_depends
 	my ($self, $class) = @_;
 	my $t = $self->table_name($class->table);
 	my $p = $self->table_name("Paths");
-	$self->new_object('VIEW', "_canonical_depends",
-		qq{AS 
-    SELECT 
-	p1.id AS fullpkgpath, 
-	p2.canonical AS dependspath, 
-	$t.type 
-    FROM $t 
-	JOIN $p p1 
-	    ON p1.canonical=$t.fullpkgpath
-	JOIN $p p2 
-	    ON p2.Id=$t.dependspath});
+	Sql::Create::View->new("_canonical_depends", origin=>"_Paths")->add(
+	    Sql::Column::View->new("FullPkgPath", origin=>"Id")
+		->join(Sql::Join->new("_Paths")
+		    ->add(Sql::Equal->new("Canonical", "FullPkgPath"))),
+	    Sql::Column::View->new("DependsPath", origin=>"Canonical")
+		->join(Sql::Join->new("_Paths")
+		    ->add(Sql::Equal->new("Id", "DependsPath"))),
+	    Sql::Column::View->new("Type"));
 	$self->new_object('VIEW', "canonical_depends",
 		qq{AS
     SELECT 
 	p1.fullpkgpath AS fullpkgpath, 
-	p3.fullpkgpath AS dependspath, 
+	p2.fullpkgpath AS dependspath, 
 	$t.type 
     FROM $t 
 	JOIN $p p1 
 	    ON p1.canonical=$t.fullpkgpath
 	JOIN $p p2 
-	    ON p2.Id=$t.dependspath
+	    ON p2.Id=p3.canonical
 	JOIN $p p3 
-	    ON p3.Id=p2.canonical});
+	    ON p3.Id=$t.dependspath});
 }
 
 sub commit_to_db
@@ -295,104 +294,30 @@ sub convert_depends
 }
 
 
-sub pathref
-{
-	my ($self, $name) = @_;
-	$name = "FULLPKGPATH" if !defined $name;
-	return "$name INTEGER NOT NULL REFERENCES ".
-	    $self->table_name("Paths")."(ID)";
-}
-
-sub value
-{
-	my ($self, $k, $name) = @_;
-	$name = "VALUE" if !defined $name;
-	if (defined $k) {
-		return "$name INTEGER NOT NULL REFERENCES ".
-		    $self->table_name($k)."(KEYREF)";
-	} else {
-		return "$name TEXT NOT NULL";
-	}
-}
-
-sub optvalue
-{
-	my ($self, $k, $name) = @_;
-	$name = "VALUE" if !defined $name;
-	if (defined $k) {
-		return "$name INTEGER REFERENCES ".
-		    $self->table_name($k)."(KEYREF)";
-	} else {
-		return "$name TEXT";
-	}
-}
-
-sub create_view
-{
-	my ($self, $table, @columns) = @_;
-
-	my $t = $self->table_name($table);
-	my @l = $self->map_columns('view', \@columns, $t, $self);
-	my @j = $self->map_columns('join', \@columns, $t, $self);
-	$self->new_object('VIEW', $table,
-	    "AS\n    SELECT\n\t".join(",\n\t", @l). "\n    FROM ".
-	    $t."\n".join(' ', @j));
-}
-
-sub make_table
-{
-	my ($self, $class, $constraint, @columns) = @_;
-
-	unshift(@columns, PathColumn->new);
-	for my $c (@columns) {
-		$c->set_vartype($class) unless defined $c->{vartype};
-	}
-	my @l = $self->map_columns('normal', \@columns, $self);
-	push(@l, $constraint) if defined $constraint;
-	$self->new_table($class->table, @l);
-	$self->create_view($class->table, @columns);
-}
-
 sub create_path_table
 {
 	my $self = shift;
-	$self->new_table("Paths", "ID INTEGER PRIMARY KEY",
-	    "FULLPKGPATH TEXT NOT NULL UNIQUE",
-	    $self->pathref("PKGPATH"), $self->pathref("CANONICAL"));
-	my $t = $self->table_name("Paths");
-    	$self->new_object('VIEW', "Paths", 
-		qq{AS 
-    SELECT 
-	$t.Id AS PathId, 
-	$t.fullpkgpath AS fullpkgpath, 
-	p1.fullpkgpath AS pkgpath, 
-	p2.fullpkgpath AS canonical 
-    FROM $t
-	JOIN $t p1 
-	    ON p1.id=$t.pkgpath 
-	JOIN $t p2 
-	    ON p2.id=$t.canonical});
-	$self->{adjust} = $self->db->prepare("UPDATE ".
-	    $self->table_name("Paths")." set canonical=? where id=?");
-}
+	my $t = "_Paths";
+	my $v = "Paths";
+	Sql::Create::Table->new($t)->add(
+	    Sql::Column::Key->new("Id")->noautoincrement, 
+	    Sql::Column::Text->new("FullPkgPath")->notnull->unique,
+	    Sql::Column::Integer->new("PkgPath")->references($t),
+	    Sql::Column::Integer->new("Canonical")->references($t));
 
-sub handle_column
-{
-	my ($self, $column) = @_;
-	if ($column->{vartype}->need_in_ports_table) {
-		push(@{$self->{varlist}}, $column->{name});
-	}
-	if ($column->{vartype}->want_in_ports_view) {
-		push(@{$self->{columnlist}}, $column);
-	}
-}
-
-sub create_view_info
-{
-	my $self = shift;
-	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
-	unshift(@columns, PathColumn->new);
-	$self->create_view("Ports", @columns);
+	Sql::Create::View->new($v, origin => $t)->add(
+	    Sql::Column::View->new("PathId", origin => "Id"),
+	    Sql::Column::View->new("FullPkgPath"),
+	    Sql::Column::View->new("PkgPath", origin => "FullPkgPath")
+		->join(Sql::Join->new($t)->add(
+		    Sql::Equal->new("Id", "PkgPath"))),
+	    Sql::Column::View->new("Canonical", origin => "FullPkgPath")
+		->join(Sql::Join->new($t)->add(
+		    Sql::Equal->new("Id", "Canonical")))
+	    );
+	$self->register_prepare(sub {
+	    $self->{adjust} = $self->db->prepare("UPDATE $t set Canonical=? where Id=?");
+	});
 }
 
 my $path_cache = {};
@@ -417,7 +342,7 @@ sub find_pathkey
 	} else {
 		$path = $newid;
 	}
-	$self->insert('Paths', $key, $path, $newid);
+	$self->insert('_Paths', $newid, $key, $path, $newid);
 	my $r = $self->last_id;
 	$path_cache->{$key} = $r;
 	$newid++;
@@ -441,11 +366,11 @@ sub set_newkey
 sub find_keyword_id
 {
 	my ($self, $key, $t) = @_;
-	$self->{$t}{find_key1}->execute($key);
-	my $a = $self->{$t}{find_key1}->fetchrow_arrayref;
+	my $n = $self->table_name($t);
+	$self->{$n}{find_key1}->execute($key);
+	my $a = $self->{$n}{find_key1}->fetchrow_arrayref;
 	if (!defined $a) {
-		$self->{$t}{find_key2}->execute($key);
-		$self->insert_done;
+		$self->insert($n, $key);
 		return $self->last_id;
 	} else {
 		return $a->[0];
@@ -455,12 +380,13 @@ sub find_keyword_id
 sub create_keyword_table
 {
 	my ($self, $t) = @_;
-	my $name = $self->table_name($t);
-	$self->new_table($t,
-	    "KEYREF INTEGER PRIMARY KEY AUTOINCREMENT",
-	    "VALUE TEXT NOT NULL UNIQUE");
-	$self->{$t}{find_key1} = $self->prepare("SELECT KEYREF FROM $name WHERE VALUE=?");
-	$self->{$t}{find_key2} = $self->prepare("INSERT INTO $name (VALUE) VALUES (?)");
+	my $n = $self->table_name($t);
+	Sql::Create::Table->new($n)->noreplace->add(
+		Sql::Column::Key->new("KeyRef"),
+		Sql::Column::Text->new("Value")->notnull->unique);
+	$self->register_prepare(sub {
+	    $self->{$n}{find_key1} = $self->prepare("SELECT KeyRef FROM $n WHERE Value=?");
+   	});
 }
 
 sub write_log
