@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/07 08:41:27 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/08 19:07:18 landry Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 
 MODPY_EGG_VERSION =	1.8.1
 DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L}
+REVISION = 0
 
 CATEGORIES =	geo
 
-HOMEPAGE =	http://toblerity.org/fiona/
+HOMEPAGE =	https://fiona.readthedocs.io
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
