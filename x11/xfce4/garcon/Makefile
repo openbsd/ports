@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2018/12/08 12:02:21 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2019/01/08 19:21:52 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
 XFCE_VERSION =	0.6.2
+REVISION =	0
 
 PORTROACH=	limitw:1,even
 
@@ -11,7 +12,7 @@ SHARED_LIBS +=	garcon-1	0.0
 SHARED_LIBS +=	garcon-gtk2-1	0.0 # 0.0
 SHARED_LIBS +=	garcon-gtk3-1   0.0 # 0.0
 
-HOMEPAGE=	http://www.xfce.org/projects/libraries/
+HOMEPAGE=	http://www.xfce.org/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
