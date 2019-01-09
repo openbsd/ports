@@ -1,10 +1,13 @@
-$OpenBSD: patch-plugins-root_check_dhcp_c,v 1.1 2017/07/19 12:14:29 zhuk Exp $
+$OpenBSD: patch-plugins-root_check_dhcp_c,v 1.2 2019/01/09 16:51:01 martijn Exp $
 Fix stack smashing.
 
 Upstream merge request:
 https://github.com/monitoring-plugins/monitoring-plugins/pull/1500
---- plugins-root/check_dhcp.c.orig	Wed Jul 19 12:53:55 2017
-+++ plugins-root/check_dhcp.c	Wed Jul 19 13:46:40 2017
+
+MSG_PEEK causes the packet to be counted multiple times.
+Index: plugins-root/check_dhcp.c
+--- plugins-root/check_dhcp.c.orig
++++ plugins-root/check_dhcp.c
 @@ -323,7 +323,8 @@ int get_hardware_address(int sock,char *interface_name
  #elif defined(__bsd__)
  						/* King 2004	see ACKNOWLEDGEMENTS */
@@ -15,3 +18,12 @@ https://github.com/monitoring-plugins/monitoring-plugins/pull/1500
          char                    *buf;
          unsigned char           *ptr;
          struct if_msghdr        *ifm;
+@@ -693,7 +694,7 @@ int receive_dhcp_packet(void *buffer, int buffer_size,
+         else{
+ 		bzero(&source_address,sizeof(source_address));
+ 		address_size=sizeof(source_address);
+-                recv_result=recvfrom(sock,(char *)buffer,buffer_size,MSG_PEEK,(struct sockaddr *)&source_address,&address_size);
++                recv_result=recvfrom(sock,(char *)buffer,buffer_size,0,(struct sockaddr *)&source_address,&address_size);
+ 		if(verbose)
+ 			printf("recv_result: %d\n",recv_result);
+ 
