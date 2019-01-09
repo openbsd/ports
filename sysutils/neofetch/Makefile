@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 20:41:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/09 16:46:08 cwen Exp $
 
 COMMENT =	system information tool written in bash
 CATEGORIES =	sysutils misc
-REVISION =	1
 
 GH_ACCOUNT =	dylanaraps
 GH_PROJECT =	neofetch
-GH_TAGNAME =	5.0.0
+GH_TAGNAME =	6.0.0
 
-MAINTAINER =	Charlene Wendling <julianaito@posteo.jp>
+MAINTAINER =	Charlene Wendling <cwen@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
