@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.102 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2019/01/09 12:59:44 espie Exp $
 
 CATEGORIES =		databases
-V =			7.11
+V =			7.12
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports

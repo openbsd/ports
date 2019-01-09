@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.47 2019/01/08 23:28:15 espie Exp $
+# $OpenBSD: Var.pm,v 1.48 2019/01/09 12:59:44 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -403,7 +403,7 @@ sub ports_view_column
 	return Sql::Column::View->new($name, origin => 'Value')->join(
 	    Sql::Join->new($self->table."_ordered")->left
 	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
-		    Sql::Equal->new("Type", $self->match)));
+		    Sql::EqualConstant->new("Type", $self->match)));
 }
 
 sub add
@@ -640,7 +640,7 @@ sub compute_join
 	my $j = Sql::Join->new($self->table_name($self->table))->left
 	    ->add(Sql::Equal->new("FullPkgPath", "FullPkgPath"));
 	if ($name =~ m/^MASTER_SITES(\d)$/) {
-		$j->add(Sql::Equal->new("N", $1));
+		$j->add(Sql::EqualConstant->new("N", $1));
 	} else {
 		$j->add(Sql::IsNull->new("N"));
 	}

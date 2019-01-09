@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.34 2019/01/08 23:28:15 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.35 2019/01/09 12:59:44 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -236,12 +236,12 @@ sub create_canonical_depends
 	my ($self, $class) = @_;
 	my $t = $self->table_name($class->table);
 	my $p = $self->table_name("Paths");
-	Sql::Create::View->new("_canonical_depends", origin=>"_Paths")->add(
+	Sql::Create::View->new("_canonical_depends", origin=>$t)->add(
 	    Sql::Column::View->new("FullPkgPath", origin=>"Id")
-		->join(Sql::Join->new("_Paths")
+		->join(Sql::Join->new($p)
 		    ->add(Sql::Equal->new("Canonical", "FullPkgPath"))),
 	    Sql::Column::View->new("DependsPath", origin=>"Canonical")
-		->join(Sql::Join->new("_Paths")
+		->join(Sql::Join->new($p)
 		    ->add(Sql::Equal->new("Id", "DependsPath"))),
 	    Sql::Column::View->new("Type"));
 	$self->new_object('VIEW', "canonical_depends",

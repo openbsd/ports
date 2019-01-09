@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.22 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: Sql.pm,v 1.23 2019/01/09 12:59:44 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -410,7 +410,11 @@ sub contents
 sub is_unique_name
 {
 	my ($self, $name) = @_;
-	return ($self->{column_names}{$self->normalize($name)}//1) == 1;
+	my $c = $self->{column_names}{$self->normalize($name)};
+	if (!defined $c) {
+		die "$name not registered in ", $self->name;
+	}
+	return $c == 1;
 }
 
 package Sql::With;
@@ -763,6 +767,20 @@ sub equation
 		$b = $join->{parent}{parent}->origin.".".$b;
 	}
 	return "$a=$b";
+}
+
+
+package Sql::EqualConstant;
+our @ISA = qw(Sql::Equal);
+sub equation
+{
+	my ($self, $join, $view) = @_;
+	my $a = $self->{a};
+	if (!$view->is_unique_name($a)) {
+		$a = $join->alias.".".$a;
+	}
+
+	return "$a=$self->{b}";
 }
 
 package Sql::IsNull;
