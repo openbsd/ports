@@ -1,22 +1,33 @@
-$OpenBSD: patch-gexiv2_meson_build,v 1.2 2018/12/06 22:47:28 naddy Exp $
+$OpenBSD: patch-gexiv2_meson_build,v 1.3 2019/01/09 10:55:53 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/gexiv2/issues/27
-
-Replace empty string with empty array in order to pass no argument
-rather than an empty one; clang ignores empty arguments, but gcc
-errors out.
+From 3351daca7eb6c6ad7b40fd711094d102aeaf108b Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Wed, 9 Jan 2019 11:22:17 +0100
+Subject: [PATCH] Revert "Add version script to limit exported functions"
 
 Index: gexiv2/meson.build
 --- gexiv2/meson.build.orig
 +++ gexiv2/meson.build
-@@ -35,8 +35,8 @@ install_headers(gexiv2_headers, subdir : 'gexiv2')
+@@ -33,14 +33,6 @@ enum_sources = gnome.mkenums('gexiv2-enums',
  
- # Static map file
- mapfile = 'gexiv2.map'
+ install_headers(gexiv2_headers, subdir : 'gexiv2')
+ 
+-# Static map file
+-mapfile = 'gexiv2.map'
 -if host_machine.system() == 'darwin'
 -    vflag = ''
-+if ['darwin', 'openbsd'].contains(host_machine.system())
-+    vflag = []
- else
-     vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
- endif
+-else
+-    vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
+-endif
+-
+ gexiv2 = library('gexiv2',
+                  ['gexiv2-metadata.cpp',
+                   'gexiv2-metadata-exif.cpp',
+@@ -60,7 +52,6 @@ gexiv2 = library('gexiv2',
+                  gexiv2_headers +
+                  [version_header] +
+                  enum_sources,
+-                 link_args : vflag,
+                  include_directories : include_directories('..'),
+                  version: '2.0.0',
+                  dependencies : [gobject, exiv2],
