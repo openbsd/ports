@@ -1,7 +1,8 @@
-$OpenBSD: patch-tools_Rules_in,v 1.1 2018/09/18 19:21:05 sthen Exp $
---- tools/Rules.in.orig	Fri Apr 29 10:13:23 2016
-+++ tools/Rules.in	Sun May  1 14:20:53 2016
-@@ -68,14 +68,12 @@ subdir: all.o
+$OpenBSD: patch-tools_Rules_in,v 1.2 2019/01/09 15:04:50 sthen Exp $
+Index: tools/Rules.in
+--- tools/Rules.in.orig
++++ tools/Rules.in
+@@ -69,14 +69,12 @@ subdir: all.o
  all.o: $(objs)
  #       $(LD) -r -o $@ $^
  #	Changed to $(CC) because $(LD) has problems with crosscompiling

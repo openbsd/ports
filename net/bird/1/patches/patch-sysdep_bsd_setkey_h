@@ -1,11 +1,12 @@
-$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.1 2018/09/18 19:21:05 sthen Exp $
+$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.2 2019/01/09 15:04:50 sthen Exp $
 
 - the local address must be configured in config file
-- uses hardcoded SPI (same for each direction); see comments
+- uses hardcoded SPI (same for each direction); see comments for
+correct way to do this, but this is less complex and seems ok in practice.
 
-
---- sysdep/bsd/setkey.h.orig	Thu Dec 22 22:53:39 2016
-+++ sysdep/bsd/setkey.h	Fri Mar  3 00:03:24 2017
+Index: sysdep/bsd/setkey.h
+--- sysdep/bsd/setkey.h.orig
++++ sysdep/bsd/setkey.h
 @@ -8,12 +8,24 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -122,23 +123,3 @@ $OpenBSD: patch-sysdep_bsd_setkey_h,v 1.1 2018/09/18 19:21:05 sthen Exp $
    memcpy(pos + sizeof(struct sadb_address), &dst->sa, dst->sa.sa_len);
    pos += len;
  
-@@ -160,11 +199,19 @@ sk_set_md5_in_sasp_db(sock *s, ip_addr local, ip_addr 
- 
-     if (setkey_md5(&src, &dst, passwd, SADB_ADD) < 0)
-       ERR_MSG("Cannot add TCP-MD5 password into the IPsec SA/SP database");
-+#ifdef __OpenBSD__
-+    if (setkey_md5(&dst, &src, passwd, SADB_ADD) < 0)
-+      ERR_MSG("Cannot add TCP-MD5 password into the IPsec SA/SP database #2");
-+#endif
-   }
-   else
-   {
-     if (setkey_md5(&src, &dst, NULL, SADB_DELETE) < 0)
-       ERR_MSG("Cannot delete TCP-MD5 password from the IPsec SA/SP database");
-+#ifdef __OpenBSD__
-+    if (setkey_md5(&dst, &src, NULL, SADB_DELETE) < 0)
-+      ERR_MSG("Cannot delete TCP-MD5 password from the IPsec SA/SP database #2");
-+#endif
-   }
-   return 0;
- }

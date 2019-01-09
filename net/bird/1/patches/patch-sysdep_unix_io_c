@@ -1,8 +1,8 @@
-$OpenBSD: patch-sysdep_unix_io_c,v 1.1 2018/09/18 19:21:05 sthen Exp $
+$OpenBSD: patch-sysdep_unix_io_c,v 1.2 2019/01/09 15:04:50 sthen Exp $
 Index: sysdep/unix/io.c
 --- sysdep/unix/io.c.orig
 +++ sysdep/unix/io.c
-@@ -264,7 +264,7 @@ tm_start(timer *t, unsigned after)
+@@ -278,7 +278,7 @@ tm_start(timer *t, unsigned after)
    bird_clock_t when;
  
    if (t->randomize)
@@ -11,7 +11,7 @@ Index: sysdep/unix/io.c
    when = now + after;
    if (t->expires == when)
      return;
-@@ -2074,7 +2074,6 @@ io_init(void)
+@@ -2110,7 +2110,6 @@ io_init(void)
    init_times();
    update_times();
    boot_time = now;
