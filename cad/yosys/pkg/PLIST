@@ -1,17 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/10 19:40:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/09 04:27:10 bentley Exp $
 @bin bin/yosys
 bin/yosys-config
 @bin bin/yosys-filterlib
 bin/yosys-smtbmc
 share/yosys/
+share/yosys/achronix/
+share/yosys/achronix/speedster22i/
+share/yosys/achronix/speedster22i/cells_map.v
+share/yosys/achronix/speedster22i/cells_sim.v
 share/yosys/adff2dff.v
 share/yosys/cells.lib
+share/yosys/coolrunner2/
+share/yosys/coolrunner2/cells_latch.v
+share/yosys/coolrunner2/cells_sim.v
+share/yosys/coolrunner2/tff_extract.v
+share/yosys/coolrunner2/xc2_dff.lib
+share/yosys/dff2ff.v
+share/yosys/ecp5/
+share/yosys/ecp5/arith_map.v
+share/yosys/ecp5/cells_map.v
+share/yosys/ecp5/cells_sim.v
+share/yosys/ecp5/dram.txt
+share/yosys/ecp5/drams_map.v
 share/yosys/gowin/
 share/yosys/gowin/cells_map.v
 share/yosys/gowin/cells_sim.v
 share/yosys/greenpak4/
+share/yosys/greenpak4/cells_blackbox.v
+share/yosys/greenpak4/cells_latch.v
 share/yosys/greenpak4/cells_map.v
 share/yosys/greenpak4/cells_sim.v
+share/yosys/greenpak4/cells_sim_ams.v
+share/yosys/greenpak4/cells_sim_digital.v
+share/yosys/greenpak4/cells_sim_wip.v
 share/yosys/greenpak4/gp_dff.lib
 share/yosys/ice40/
 share/yosys/ice40/arith_map.v
@@ -53,6 +74,30 @@ share/yosys/include/libs/sha1/sha1.h
 share/yosys/include/passes/
 share/yosys/include/passes/fsm/
 share/yosys/include/passes/fsm/fsmdata.h
+share/yosys/intel/
+share/yosys/intel/a10gx/
+share/yosys/intel/a10gx/cells_map.v
+share/yosys/intel/a10gx/cells_sim.v
+share/yosys/intel/common/
+share/yosys/intel/common/altpll_bb.v
+share/yosys/intel/common/brams.txt
+share/yosys/intel/common/brams_map.v
+share/yosys/intel/common/m9k_bb.v
+share/yosys/intel/cyclone10/
+share/yosys/intel/cyclone10/cells_map.v
+share/yosys/intel/cyclone10/cells_sim.v
+share/yosys/intel/cycloneiv/
+share/yosys/intel/cycloneiv/cells_map.v
+share/yosys/intel/cycloneiv/cells_sim.v
+share/yosys/intel/cycloneive/
+share/yosys/intel/cycloneive/cells_map.v
+share/yosys/intel/cycloneive/cells_sim.v
+share/yosys/intel/cyclonev/
+share/yosys/intel/cyclonev/cells_map.v
+share/yosys/intel/cyclonev/cells_sim.v
+share/yosys/intel/max10/
+share/yosys/intel/max10/cells_map.v
+share/yosys/intel/max10/cells_sim.v
 share/yosys/pmux2mux.v
 share/yosys/python3/
 share/yosys/python3/${MODPY_PYCACHE}/
@@ -74,5 +119,5 @@ share/yosys/xilinx/cells_map.v
 share/yosys/xilinx/cells_sim.v
 share/yosys/xilinx/cells_xtra.v
 share/yosys/xilinx/drams.txt
-share/yosys/xilinx/drams_bb.v
 share/yosys/xilinx/drams_map.v
+share/yosys/xilinx/lut2lut.v

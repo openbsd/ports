@@ -1,10 +1,10 @@
-$OpenBSD: patch-kernel_yosys_cc,v 1.1.1.1 2018/08/10 19:40:02 sthen Exp $
+$OpenBSD: patch-kernel_yosys_cc,v 1.2 2019/01/09 04:27:10 bentley Exp $
 
 Index: kernel/yosys.cc
 --- kernel/yosys.cc.orig
 +++ kernel/yosys.cc
-@@ -46,6 +46,10 @@
- #  include <glob.h>
+@@ -55,6 +55,10 @@
+ #  include <sys/sysctl.h>
  #endif
  
 +#ifdef __OpenBSD__
@@ -14,7 +14,7 @@ Index: kernel/yosys.cc
  #include <limits.h>
  #include <errno.h>
  
-@@ -693,6 +697,11 @@ std::string proc_self_dirname()
+@@ -726,6 +730,11 @@ std::string proc_self_dirname()
  	for (i = 0; shortpath[i]; i++)
  		path += char(shortpath[i]);
  	return path;
