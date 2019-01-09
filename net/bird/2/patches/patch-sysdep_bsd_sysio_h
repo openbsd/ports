@@ -1,8 +1,8 @@
-$OpenBSD: patch-sysdep_bsd_sysio_h,v 1.1 2018/09/18 19:21:05 sthen Exp $
+$OpenBSD: patch-sysdep_bsd_sysio_h,v 1.2 2019/01/09 15:04:41 sthen Exp $
 Index: sysdep/bsd/sysio.h
 --- sysdep/bsd/sysio.h.orig
 +++ sysdep/bsd/sysio.h
-@@ -199,7 +199,7 @@ sk_prepare_ip_header(sock *s, void *hdr, int dlen)
+@@ -204,7 +204,7 @@ sk_prepare_ip_header(sock *s, void *hdr, int dlen)
  #define TCP_SIG_SPI 0x1000
  #endif
  
