@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/01/09 06:37:20 ajacoutot Exp $
 
 COMMENT =		PostgreSQL backend for Orthanc
 
@@ -14,6 +14,11 @@ WANTLIB += m pq
 # __int128, zero-sized arrays (hard failure with base gcc)
 COMPILER =		base-clang ports-clang ports-gcc
 
+MODULES =		lang/python
+MODPY_RUNDEP =		No
+# prevent overrides from the python module
+CONFIGURE_STYLE =	cmake
+	
 BUILD_DEPENDS =		databases/postgresql,-server \
 			graphics/orthanc/server
 RUN_DEPENDS =		graphics/orthanc/server
