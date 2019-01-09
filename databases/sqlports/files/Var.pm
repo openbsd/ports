@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.48 2019/01/09 12:59:44 espie Exp $
+# $OpenBSD: Var.pm,v 1.49 2019/01/09 15:46:20 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -859,6 +859,14 @@ package CategoriesVar;
 our @ISA = qw(ListKeyVar);
 sub table() { 'Categories' }
 sub keyword_table() { '_CategoryKeys' }
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
+
+}
 
 package TargetsVar;
 our @ISA = qw(ListKeyVar);
@@ -965,9 +973,28 @@ sub create_tables
 
 	$self->create_view(
 	    $self->pathref,
-	    Sql::Column::View->new("Value")->join(
-	    	Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "Value"))),
 	    Sql::Column::View->new("Extra"));
+# XXX not yet
+#	$inserter->make_ordered_view($self);
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table_name($self->table);
+	my $k = $self->keyword_table;
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View->new("Value")->join(
+		Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Group->new("$k.Value"),
+	    Sql::Order->new("$k.Value"));
+}
+
+sub select
+{
+	return ();
 }
 
 package OnlyForArchVar;
@@ -977,6 +1004,7 @@ sub keyword_table() { '_Arches' }
 
 package FileVar;
 our @ISA = qw(SecondaryVar);
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -1001,9 +1029,24 @@ sub table_columns
 	    Sql::Column::Text->new("Filename")->notnull);
 }
 
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	my $j = $self->compute_join($name);
+	return (Sql::Column::View->new($name, origin => 'Filename')->join($j),
+	    Sql::Column::View->new($name."_CONTENTS", origin => 'Value')
+	    	->join($j));
+}
+
 package ReadmeVar;
 our @ISA = qw(FileVar);
 sub table() { 'ReadMe' }
+
+sub compute_join
+{
+	my ($self, $name) = @_;
+	return $self->SUPER::compute_join($name)->left;
+}
 
 package DescrVar;
 our @ISA = qw(FileVar);

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.103 2019/01/09 12:59:44 espie Exp $
+# $OpenBSD: Makefile,v 1.104 2019/01/09 15:46:20 espie Exp $
 
 CATEGORIES =		databases
-V =			7.12
+V =			7.13
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -31,6 +31,7 @@ do-build:
 
 alter-tables:
 	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} ${SUDO} -u ${BUILD_USER} perl ${FILESDIR}/rebuild_schema -v ${WRKBUILD}/${DBNAME} -p ${WRKBUILD}/ouch
+	@${SUDO} -u ${BUILD_USER} ${MAKE} post-build
 
 post-build:
 	cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
