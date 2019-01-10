@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.701 2019/01/10 17:23:12 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.702 2019/01/10 17:54:14 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1140,7 +1140,6 @@ my $obsolete_reason = {
 	'libhttpseverywhere' => 6,
 	'poppler-qt4' => 3,
 	'ushare' => 3,
-	'classpath' => 3,
 };
 
 # reasons for obsolete packages
