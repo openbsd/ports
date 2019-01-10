@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.159 2018/12/19 23:51:57 mariani Exp $
+# $OpenBSD: OpenBSD,v 1.160 2019/01/10 15:37:34 cwen Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -80,6 +80,7 @@
 45.69296	3.25642		"landry"	# Landry Breuil
 45.79259	3.11090		"miod"		# Miod Vallat
 45.79793	3.08237		"denis"		# Denis Fondras
+47.21725	-1.55336	"cwen"		# Charlene Wendling
 47.22164	-1.55717	"jca"		# Jeremie Courreges-Anglas
 47.2230677	-1.5538359	"gilles"	# Gilles Chehade
 47.29		19.3		"robert"	# Robert Nagy
