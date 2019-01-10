@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2018/05/04 09:54:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2019/01/10 19:43:11 landry Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	5.1.0
+MODPY_EGG_VERSION=	5.4.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -18,7 +18,7 @@ FLAVOR?=
 
 MODPY_PI =		Yes
 
-WANTLIB=		freetype jpeg lcms2 pthread tiff webp z \
+WANTLIB=		freetype openjp2 jpeg lcms2 pthread tiff webp z \
 			webpdemux webpmux \
 			${MODPY_WANTLIB}
 
@@ -29,14 +29,13 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 RUN_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS=		graphics/lcms2 \
+			graphics/openjp2 \
 			graphics/libwebp
 
 MODPY_SETUPTOOLS=	Yes
 
 SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
-
-MODPY_DISTUTILS_BUILD=	build_ext --disable-jpeg2000
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
