@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2019/01/05 22:00:20 sthen Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/01/10 13:36:26 jca Exp $
 
 The old autoconf build has the following additional check after
 determining a valid type for gsize:
@@ -12,6 +12,9 @@ AS_IF([test $ac_cv_sizeof_size_t = $ac_cv_sizeof_int &&
 
 It matters on OpenBSD too. Since sthen's meson-fu is lacking, this
 simply reorders the if statement to put the one we need earlier.
+
+Last hunk: __GCC_HAVE_SYNC_* macros were introduced after gcc 4.2.1,
+make the workaround more generic.
 
 Index: meson.build
 --- meson.build.orig
@@ -44,3 +47,15 @@ Index: meson.build
  elif sizet_size == long_long_size
    glibconfig_conf.set('glib_size_type_define', 'long long')
    glibconfig_conf.set_quoted('gsize_modifier', int64_m)
+@@ -1571,9 +1571,8 @@ atomicdefine = '''
+ # We know that we can always use real ("lock free") atomic operations with MSVC
+ if cc.get_id() == 'msvc' or cc.links(atomictest, name : 'atomic ops')
+   have_atomic_lock_free = true
+-  if (host_system == 'android' or host_system == 'linux') and not cc.compiles(atomicdefine, name : 'atomic ops define')
+-    # When building for armv5 on Linux, gcc provides
+-    # __sync_bool_compare_and_swap but doesn't define
++  if cc.get_id() == 'gcc' and not cc.compiles(atomicdefine, name : 'atomic ops define')
++    # Old gcc release may provide __sync_bool_compare_and_swap but don't define
+     # __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4
+     glib_conf.set('__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4', true)
+   endif
