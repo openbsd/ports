@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2019/01/04 14:44:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.111 2019/01/10 20:34:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -7,6 +7,7 @@
      SUBDIR += avidemux
      SUBDIR += avinfo
      SUBDIR += ccextractor
+     SUBDIR += dav1d
      SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
