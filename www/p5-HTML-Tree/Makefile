@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/01 19:54:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2019/01/10 15:15:23 cwen Exp $
 
 COMMENT=	perl parser that builds an HTML tree
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	HTML-Tree-5.06
+DISTNAME =	HTML-Tree-5.07
 CATEGORIES=	www
 
 # Perl
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 
 CONFIGURE_STYLE =	modbuild
 
-TEST_DEPENDS=		devel/p5-Test-Pod \
-			devel/p5-Test-LeakTrace \
-			devel/p5-Try-Tiny
+TEST_DEPENDS=	devel/p5-Test-LeakTrace \
+		devel/p5-Try-Tiny
+
+MAKE_ENV +=	TEST_POD=Yes
 
 .include <bsd.port.mk>
