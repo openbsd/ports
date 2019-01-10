@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.23 2019/01/09 12:59:44 espie Exp $
+# $OpenBSD: Sql.pm,v 1.24 2019/01/10 13:44:22 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -345,6 +345,7 @@ sub contents
 
 	for my $w (@{$self->{with}}) {
 		$w->{alias} = $self->{alias};
+		# this stuff should use double dispatch
 		$self->add_column_names_from($w);
 		push(@parts, $self->indent("WITH ".$w->name." AS", 0));
 		my @c = $w->contents;
@@ -357,6 +358,7 @@ sub contents
 		push(@parts, $self->indent("$last)", 5));
 	}
 
+	# this stuff should use double dispatch
 	$self->add_column_names($self->origin);
 
 	$tables->{$self->normalize($self->origin)}++;
@@ -365,6 +367,7 @@ sub contents
 		my $j = $c->{join};
 		while (defined $j) {
 			if (!defined $joins->{$j}) {
+				# this stuff should use double dispatch
 				$self->add_column_names($j->name);
 				push(@joins, $j);
 				$joins->{$j} = $j;
@@ -539,6 +542,8 @@ sub references
 package Sql::Column::View;
 our @ISA = qw(Sql::Column);
 
+# this is the code I need to rewrite to provide column names based on the
+# container or the join
 sub stringize
 {
 	my $self = shift;
