@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_picture_h,v 1.1.1.1 2019/01/10 20:34:32 sthen Exp $
+
+[PATCH] pass the sequence header corresponding to the picture being allocated
+
+Index: src/picture.h
+--- src/picture.h.orig
++++ src/picture.h
+@@ -55,7 +55,7 @@ typedef struct Dav1dThreadPicture {
+  * Allocate a picture with custom border size.
+  */
+ int dav1d_thread_picture_alloc(Dav1dThreadPicture *p, int w, int h,
+-                               enum Dav1dPixelLayout layout, int bpc,
++                               Dav1dSequenceHeader *seq_hdr, int bpc,
+                                struct thread_data *t, int visible,
+                                Dav1dPicAllocator *);
+ 

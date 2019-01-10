@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_picture_c,v 1.1.1.1 2019/01/10 20:34:32 sthen Exp $
+
+[PATCH] pass the sequence header corresponding to the picture being allocated
+
+Index: src/picture.c
+--- src/picture.c.orig
++++ src/picture.c
+@@ -99,7 +99,7 @@ static void free_buffer(const uint8_t *const data, voi
+ 
+ static int picture_alloc_with_edges(Dav1dPicture *const p,
+                                     const int w, const int h,
+-                                    const enum Dav1dPixelLayout layout,
++                                    Dav1dSequenceHeader *seq_hdr,
+                                     const int bpc,
+                                     Dav1dPicAllocator *const p_allocator,
+                                     const size_t extra, void **const extra_ptr)
+@@ -120,7 +120,8 @@ static int picture_alloc_with_edges(Dav1dPicture *cons
+     p->m.timestamp = INT64_MIN;
+     p->m.duration = 0;
+     p->m.offset = -1;
+-    p->p.layout = layout;
++    p->seq_hdr = seq_hdr;
++    p->p.layout = seq_hdr->layout;
+     p->p.bpc = bpc;
+     int res = p_allocator->alloc_picture_callback(p, p_allocator->cookie);
+     if (res < 0) {
+@@ -146,14 +147,14 @@ static int picture_alloc_with_edges(Dav1dPicture *cons
+ 
+ int dav1d_thread_picture_alloc(Dav1dThreadPicture *const p,
+                                const int w, const int h,
+-                               const enum Dav1dPixelLayout layout, const int bpc,
++                               Dav1dSequenceHeader *seq_hdr, const int bpc,
+                                struct thread_data *const t, const int visible,
+                                Dav1dPicAllocator *const p_allocator)
+ {
+     p->t = t;
+ 
+     const int res =
+-        picture_alloc_with_edges(&p->p, w, h, layout, bpc, p_allocator,
++        picture_alloc_with_edges(&p->p, w, h, seq_hdr, bpc, p_allocator,
+                                  t != NULL ? sizeof(atomic_int) * 2 : 0,
+                                  (void **) &p->progress);
+     if (res) return res;
+@@ -170,7 +171,7 @@ int dav1d_picture_alloc_copy(Dav1dPicture *const dst, 
+                              const Dav1dPicture *const src)
+ {
+     struct pic_ctx_context *const pic_ctx = src->ref->user_data;
+-    const int res = picture_alloc_with_edges(dst, w, src->p.h, src->p.layout,
++    const int res = picture_alloc_with_edges(dst, w, src->p.h, src->seq_hdr,
+                                              src->p.bpc, &pic_ctx->allocator,
+                                              0, NULL);
+ 
