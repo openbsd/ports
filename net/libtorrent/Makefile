@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2019/01/11 18:04:21 jca Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
 
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=		--enable-static \
 			--with-kqueue \
 			--without-epoll \
 			--disable-instrumentation \
+			--disable-mincore \
 			--disable-debug
 
 .include <bsd.port.arch.mk>
