@@ -1,16 +1,27 @@
-$OpenBSD: patch-pdf-backend_hh,v 1.1 2018/12/28 19:59:50 kili Exp $
+$OpenBSD: patch-pdf-backend_hh,v 1.2 2019/01/11 21:34:20 kili Exp $
 
 Fix with newer poppler.
 
-From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be.
+From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be,
+gtypes/gfile replacement local to our tree.
 
 Index: pdf-backend.hh
 --- pdf-backend.hh.orig
 +++ pdf-backend.hh
-@@ -433,6 +433,14 @@ namespace pdf
+@@ -40,7 +40,7 @@
+ #include <SplashOutputDev.h>
+ #include <Stream.h>
+ #include <goo/GooString.h>
+-#include <goo/gtypes.h>
++#include <goo/gfile.h>
+ #include <splash/Splash.h>
+ #include <splash/SplashBitmap.h>
+ #include <splash/SplashClip.h>
+@@ -432,6 +432,14 @@ namespace pdf
+  */
  
    double get_path_area(pdf::splash::Path &path);
- 
++
 +  const char * get_c_string(const pdf::String &str);
 +
 +  inline const char * get_c_string(const pdf::String *str)
@@ -18,7 +29,6 @@ Index: pdf-backend.hh
 +    return get_c_string(*str);
 +  }
 +
-+
+ 
  }
  
- #endif

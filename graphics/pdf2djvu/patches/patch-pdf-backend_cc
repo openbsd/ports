@@ -1,12 +1,22 @@
-$OpenBSD: patch-pdf-backend_cc,v 1.1 2018/12/28 19:59:50 kili Exp $
+$OpenBSD: patch-pdf-backend_cc,v 1.2 2019/01/11 21:34:20 kili Exp $
 
 Fix with newer poppler.
 
-From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be.
+From upstream commit 82699eee6b071c1f80682987d6842f4b61d024be,
+gtypes/gfile replacement local to our tree.
 
 Index: pdf-backend.cc
 --- pdf-backend.cc.orig
 +++ pdf-backend.cc
+@@ -32,7 +32,7 @@
+ #include <GlobalParams.h>
+ #include <PDFDoc.h>
+ #include <goo/GooString.h>
+-#include <goo/gtypes.h>
++#include <goo/gfile.h>
+ #include <splash/SplashClip.h>
+ #include <splash/SplashTypes.h>
+ 
 @@ -226,7 +226,7 @@ const std::string pdf::Document::get_xmp()
    mstring.reset(this->readMetadata());
    if (mstring.get() == nullptr)
