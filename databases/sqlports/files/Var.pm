@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.50 2019/01/11 10:26:51 espie Exp $
+# $OpenBSD: Var.pm,v 1.51 2019/01/11 17:17:13 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -390,8 +390,7 @@ sub add
 }
 
 
-# all the dependencies are converted into list. Stuff like LIB_DEPENDS will
-# end up being treated as WANTLIB as well.
+# all the dependencies are converted into lists. 
 package DependsVar;
 our @ISA = qw(AnyVar);
 sub table() { 'Depends' }
@@ -945,6 +944,22 @@ package ConfigureArgsVar;
 our @ISA = qw(QuotedListVar);
 sub table() { 'ConfigureArgs' }
 
+package Sql::Column::View::WithExtra;
+our @ISA = qw(Sql::Column::View::Expr);
+
+sub expr
+{
+	my $self = shift;
+	my $c = $self->column;
+	my $extra = $self->column("Extra");
+	return
+qq{CASE $extra
+  WHEN NULL THEN $c
+  ELSE $c||$extra
+END
+};
+}
+
 package WantlibVar;
 our @ISA = qw(ListVar);
 sub table() { 'Wantlib' }
@@ -960,9 +975,9 @@ sub _add
 sub add_value
 {
 	my ($self, $ins, $value) = @_;
-	if ($value =~ m/^(.*)(\.\>?\=\d+\.\d+)$/) {
+	if ($value =~ m/^(.*?)(\>?\=\d+\.\d+)$/) {
 		$self->_add($ins, $1, $2);
-	} elsif ($value =~ m/^(.*)(\.\>?\=\d+)$/) {
+	} elsif ($value =~ m/^(.*?)(\>?\=\d+)$/) {
 		$self->_add($ins, $1, $2);
 	} else {
 		$self->_add($ins, $value, undef);
@@ -981,9 +996,8 @@ sub create_tables
 
 	$self->create_view(
 	    $self->pathref,
-	    Sql::Column::View->new("Value")->join(Sql::Join->new($k)
-		->add(Sql::Equal->new("KeyRef", "Value"))),
-	    Sql::Column::View->new("Extra"));
+	    Sql::Column::View::WithExtra->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "Value"))));
 # XXX not yet
 #	$inserter->make_ordered_view($self);
 }
