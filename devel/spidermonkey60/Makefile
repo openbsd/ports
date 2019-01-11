@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/08 19:01:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/11 18:43:39 jasper Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -51,8 +51,7 @@ LIB_DEPENDS =		devel/nspr \
 			textproc/icu4c
 
 AUTOCONF_VERSION=	2.13
-BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
-			lang/rust
+BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION}
 
 WRKDIST =		${WRKDIR}/firefox-${V}
 WRKSRC =		${WRKDIST}/js/src
