@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.51 2019/01/11 17:17:13 espie Exp $
+# $OpenBSD: Var.pm,v 1.52 2019/01/11 19:52:14 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -953,8 +953,8 @@ sub expr
 	my $c = $self->column;
 	my $extra = $self->column("Extra");
 	return
-qq{CASE $extra
-  WHEN NULL THEN $c
+qq{CASE 1
+  WHEN $extra IS NULL THEN $c
   ELSE $c||$extra
 END
 };
@@ -964,7 +964,7 @@ package WantlibVar;
 our @ISA = qw(ListVar);
 sub table() { 'Wantlib' }
 sub keyword_table() { '_Library' }
-sub want_in_ports_view { 0 }
+sub want_in_ports_view { 1 }
 
 sub _add
 {
@@ -999,7 +999,7 @@ sub create_tables
 	    Sql::Column::View::WithExtra->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))));
 # XXX not yet
-#	$inserter->make_ordered_view($self);
+	$inserter->make_ordered_view($self);
 }
 
 sub subselect
@@ -1008,15 +1008,22 @@ sub subselect
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
-	    Sql::Column::View->new("Value")->join(
-		Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "Value"))),
-	    Sql::Group->new("$k.Value"),
-	    Sql::Order->new("$k.Value"));
+	    Sql::Column::View::WithExtra->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Order->new("Value"));
 }
 
 sub select
 {
 	return ();
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
 }
 
 package OnlyForArchVar;
