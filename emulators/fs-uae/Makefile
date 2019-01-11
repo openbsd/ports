@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/01/11 11:13:10 solene Exp $
 
-BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
 COMMENT =		modern Amiga emulator
