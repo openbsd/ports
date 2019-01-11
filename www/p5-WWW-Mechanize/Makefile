@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/30 00:44:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.25 2019/01/11 11:15:45 bluhm Exp $
 
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-1.90
+DISTNAME =	WWW-Mechanize-1.91
 
 CATEGORIES =	www
 
@@ -20,9 +20,7 @@ RUN_DEPENDS =		www/p5-HTML-Form>=1.00 \
 			www/p5-LWP-Protocol-https>=6 \
 			www/p5-URI \
 			www/p5-libwww>=5.827
-TEST_DEPENDS =		devel/p5-Perl-Critic \
-			devel/perltidy \
-			devel/p5-Test-Deep \
+TEST_DEPENDS =		devel/p5-Test-Deep \
 			devel/p5-Test-Exception \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Memory-Cycle \
