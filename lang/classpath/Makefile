@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/01/10 17:54:14 jca Exp $
+# $OpenBSD: Makefile,v 1.55 2019/01/11 18:16:58 jca Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
@@ -7,7 +7,7 @@ BROKEN-sparc64= gcj blows during build
 COMMENT=	essential libraries for Java
 
 DISTNAME=	classpath-0.98
-REVISION=	26
+REVISION=	27
 
 CATEGORIES=	lang java
 
@@ -60,7 +60,8 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		JAVA=egij
+		JAVA=egij \
+		ac_cv_func_mincore=no
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-glibj=zip \
