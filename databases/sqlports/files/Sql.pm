@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.25 2019/01/11 10:26:51 espie Exp $
+# $OpenBSD: Sql.pm,v 1.26 2019/01/11 15:44:59 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -173,6 +173,29 @@ sub add_column_names_from
 	my ($self, $o) = @_;
 	for my $c ($o->columns) {
 		$self->{column_names}{$self->normalize($c->name)}++;
+	}
+}
+
+sub known_column
+{
+	my ($self, $name) = @_;
+	$name = $self->normalize($name);
+	for my $c ($self->columns) {
+		if ($self->normalize($c->name) eq $name) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub is_table_column
+{
+	my ($self, $table, $name) = @_;
+	my $t = $register->{$self->normalize($table)};
+	if (defined $t) {
+		return $t->known_column($name);
+	} else {
+		return 0;
 	}
 }
 
@@ -575,9 +598,8 @@ sub column
 	if ($self->{parent}->is_unique_name($name)) {
 		return $name;
 	}
-	if (defined $self->{join}) {
-		# XXX even with a join we have column names
-		# we should be able to determine if it comes from the join
+	if (defined $self->{join} && 
+	    Sql::Create->is_table_column($self->{join}->name, $name)) {
 		return $self->{join}->alias.".".$name;
 	} else {
 		return $self->{parent}->origin.".".$name;
@@ -612,7 +634,7 @@ sub new
 {
     my $class = shift;
     my $o = $class->SUPER::new(@_);
-    $o->{origin} //= $o->{name};
+    $o->{origin} //= $o->name;
     return $o;
 }
 
@@ -738,7 +760,7 @@ sub join_part
 sub alias
 {
 	my $self = shift;
-	return $self->{alias} // $self->{name};
+	return $self->{alias} // $self->name;
 }
 
 sub on_part
