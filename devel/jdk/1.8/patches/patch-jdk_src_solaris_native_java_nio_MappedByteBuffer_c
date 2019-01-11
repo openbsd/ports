@@ -1,0 +1,23 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_nio_MappedByteBuffer_c,v 1.1 2019/01/11 22:08:11 sthen Exp $
+
+Index: jdk/src/solaris/native/java/nio/MappedByteBuffer.c
+--- jdk/src/solaris/native/java/nio/MappedByteBuffer.c.orig
++++ jdk/src/solaris/native/java/nio/MappedByteBuffer.c
+@@ -36,6 +36,9 @@ JNIEXPORT jboolean JNICALL
+ Java_java_nio_MappedByteBuffer_isLoaded0(JNIEnv *env, jobject obj, jlong address,
+                                          jlong len, jint numPages)
+ {
++#ifdef __OpenBSD__
++    return JNI_FALSE;
++#else
+     jboolean loaded = JNI_TRUE;
+     int result = 0;
+     int i = 0;
+@@ -66,6 +69,7 @@ Java_java_nio_MappedByteBuffer_isLoaded0(JNIEnv *env, 
+     }
+     free(vec);
+     return loaded;
++#endif
+ }
+ 
+ 
