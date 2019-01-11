@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.135 2019/01/07 23:40:38 kili Exp $
+# $OpenBSD: Makefile,v 1.136 2019/01/11 21:31:52 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.72.0
+V=		0.73.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,10 +13,10 @@ PKGNAME-qt5=	poppler-qt5-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              47.0     # 83.0
-SHARED_LIBS +=	poppler-glib         19.0     # 8.11
-SHARED_LIBS +=	poppler-qt5          6.0      # 1.17
-SHARED_LIBS +=	poppler-cpp          10.0     # 0.5
+SHARED_LIBS +=	poppler              48.0     # 84.0
+SHARED_LIBS +=	poppler-glib         19.1     # 8.12
+SHARED_LIBS +=	poppler-qt5          7.0      # 1.18
+SHARED_LIBS +=	poppler-cpp          10.1     # 0.6
 
 HOMEPAGE=	https://poppler.freedesktop.org/
 
@@ -34,19 +34,6 @@ FLAVOR?=no_qt5 bootstrap
 NOT_FOR_ARCHS-qt5 = arm
 
 MULTI_PACKAGES=-main -qt5 -utils
-
-# XXX build fails with ld.bfd: undefined references to X libs e.g.
-#
-# /usr/bin/ld: warning: libfreetype.so.29.0, needed by ./libpoppler-glib.so.18.0, not found (try using -rpath or -rpath-link)
-# /usr/bin/ld: warning: libfontconfig.so.12.0, needed by /usr/obj/ports/poppler-0.61.1-no_qt4-no_qt5-bootstrap/build-i386-no_qt4-no_qt5-bootstrap/libpoppler.so.46.0, not found (try using -rpath or -rpath-link)
-# /usr/bin/ld: warning: libpixman-1.so.32.6, needed by /usr/local/lib/libcairo.so.13.0, not found (try using -rpath or -rpath-link)
-#
-# Probably just a missing -L/usr/X11R6/lib passed to the link phase of
-# g-ir-scanner, as pointed out by kettenis@ in an internal mail.
-
-.if ${MACHINE_ARCH} == i386
-USE_LLD=	Yes
-.endif
 
 .include <bsd.port.arch.mk>
 
@@ -101,10 +88,11 @@ WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
-CONFIGURE_ARGS+=-DENABLE_XPDF_HEADERS=True \
+CONFIGURE_ARGS+=-DENABLE_UNSTABLE_API_ABI_HEADERS=True \
 		-DBUILD_GTK_TESTS=False \
 		-DENABLE_LIBCURL=False \
 		-DCMAKE_DISABLE_FIND_PACKAGE_NSS3=True \
-		-DOpenJPEG_DIR=${LOCALBASE}/lib/openjp2
+		-DOpenJPEG_DIR=${LOCALBASE}/lib/openjp2 \
+		-DX11BASE=${X11BASE}
 
 .include <bsd.port.mk>
