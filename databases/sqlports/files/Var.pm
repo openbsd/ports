@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.49 2019/01/09 15:46:20 espie Exp $
+# $OpenBSD: Var.pm,v 1.50 2019/01/11 10:26:51 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -726,6 +726,20 @@ sub subselect
 	    Sql::Order->new('N'));
 }
 
+package Sql::Column::View::QuoteExpr;
+our @ISA = qw(Sql::Column::View::Expr);
+sub expr
+{
+	my $self = shift;
+	my $q = $self->column("QuoteType");
+	my $v = $self->column;
+	return
+qq{CASE $q
+  WHEN 0 THEN $v
+  WHEN 1 THEN '"'||$v||'"'
+  WHEN 2 THEN "'"||$v||"'"
+END};
+}
 
 package QuotedListVar;
 our @ISA = qw(ListVar);
@@ -774,13 +788,7 @@ sub subselect
 	my $self = shift;
 	my $t = $self->table_name($self->table);
 	return (Sql::Column::View->new('FullPkgPath'),
-	    Sql::Column::View::Expr->new('Value',
-	    expr =>
-qq{CASE Quotetype
-  WHEN 0 THEN Value
-  WHEN 1 THEN '"'||Value||'"'
-  WHEN 2 THEN "'"||Value||"'"
-END}),
+	    Sql::Column::View::QuoteExpr->new('Value'),
 	    Sql::Order->new('N'));
 }
 

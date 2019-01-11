@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.24 2019/01/10 13:44:22 espie Exp $
+# $OpenBSD: Sql.pm,v 1.25 2019/01/11 10:26:51 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -95,12 +95,6 @@ sub origin
 {
 	my $self = shift;
 	return $self->{origin};
-}
-
-sub origin_name
-{
-	my $self = shift;
-	return $self->origin;
 }
 
 sub normalize
@@ -547,18 +541,46 @@ our @ISA = qw(Sql::Column);
 sub stringize
 {
 	my $self = shift;
-	my $container = $self->{parent};
 
-	if ($container->is_unique_name($self->origin_name)) {
+	if ($self->{parent}->is_unique_name($self->origin)) {
 		if ($self->origin eq $self->name) {
 			return $self->name;
 		} else {
 			return $self->origin." AS ".$self->name;
 		}
-	} elsif (defined $self->{join}) {
-		return $self->{join}->alias.".".$self->origin." AS ".$self->name;
 	} else {
-		return $container->origin.".".$self->origin." AS ".$self->name;
+		return $self->stringize_with_alias;
+	}
+}
+
+sub stringize_with_alias
+{
+	my $self = shift;
+	return $self->expr." AS ".$self->name;
+}
+
+sub expr
+{
+	my $self = shift;
+	return $self->column(@_);
+}
+
+
+sub column
+{
+	my ($self, $name) = @_;
+
+	$name //= $self->origin;
+
+	if ($self->{parent}->is_unique_name($name)) {
+		return $name;
+	}
+	if (defined $self->{join}) {
+		# XXX even with a join we have column names
+		# we should be able to determine if it comes from the join
+		return $self->{join}->alias.".".$name;
+	} else {
+		return $self->{parent}->origin.".".$name;
 	}
 }
 
@@ -612,8 +634,17 @@ sub prepend_to
 	}
 }
 
-package Sql::Column::View::Concat;
+package Sql::Column::View::Expr;
 our @ISA = qw(Sql::Column::View);
+
+sub stringize
+{
+	my $self = shift;
+	return $self->stringize_with_alias;
+}
+
+package Sql::Column::View::Concat;
+our @ISA = qw(Sql::Column::View::Expr);
 
 sub new
 {
@@ -623,31 +654,10 @@ sub new
     return $o;
 }
 
-sub origin
+sub expr
 {
 	my $self = shift;
-	return "group_concat(".$self->SUPER::origin.", '".
-		$self->{separator}."')";
-}
-
-sub origin_name
-{
-	my $self = shift;
-	return $self->SUPER::origin;
-}
-
-package Sql::Column::View::Expr;
-our @ISA = qw(Sql::Column::View);
-sub origin_name
-{
-	my $self = shift;
-	return $self->SUPER::origin;
-}
-
-sub origin
-{
-	my $self = shift;
-	return $self->{expr};
+	return "group_concat(".$self->column.", '".$self->{separator}."')";
 }
 
 package Sql::Column::Text;
