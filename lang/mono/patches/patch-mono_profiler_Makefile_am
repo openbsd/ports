@@ -1,9 +1,9 @@
-$OpenBSD: patch-mono_profiler_Makefile_am,v 1.1 2018/03/29 19:33:18 robert Exp $
+$OpenBSD: patch-mono_profiler_Makefile_am,v 1.2 2019/01/11 17:21:38 sthen Exp $
 
 Index: mono/profiler/Makefile.am
 --- mono/profiler/Makefile.am.orig
 +++ mono/profiler/Makefile.am
-@@ -33,7 +33,7 @@ suppression_DATA = \
+@@ -31,7 +31,7 @@ suppression_DATA = mono-profiler-coverage.suppression
  # sampling infrastructure depends on signals being available.
  #
  # See: https://bugzilla.xamarin.com/show_bug.cgi?id=57011

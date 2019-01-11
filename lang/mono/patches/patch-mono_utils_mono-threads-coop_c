@@ -1,11 +1,11 @@
-$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.1 2018/03/29 19:33:18 robert Exp $
+$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.2 2019/01/11 17:21:38 sthen Exp $
 
 Index: mono/utils/mono-threads-coop.c
 --- mono/utils/mono-threads-coop.c.orig
 +++ mono/utils/mono-threads-coop.c
 @@ -428,12 +428,12 @@ mono_threads_assert_gc_unsafe_region (void)
  gboolean
- mono_threads_is_coop_enabled (void)
+ mono_threads_are_safepoints_enabled (void)
  {
 -#if defined(USE_COOP_GC)
 +#if defined(HAVE_COOP_GC)
@@ -18,7 +18,7 @@ Index: mono/utils/mono-threads-coop.c
  	return is_coop_enabled == 1;
  #endif
  }
-@@ -441,12 +441,12 @@ mono_threads_is_coop_enabled (void)
+@@ -441,12 +441,12 @@ mono_threads_are_safepoints_enabled (void)
  gboolean
  mono_threads_is_blocking_transition_enabled (void)
  {

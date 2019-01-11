@@ -1,7 +1,8 @@
-$OpenBSD: patch-jdk_src_share_native_java_lang_System_c,v 1.1 2017/03/10 02:21:22 kurt Exp $
---- jdk/src/share/native/java/lang/System.c.orig	Wed Feb  1 16:16:31 2017
-+++ jdk/src/share/native/java/lang/System.c	Thu Feb 23 11:54:01 2017
-@@ -300,6 +300,10 @@ Java_java_lang_System_initProperties(JNIEnv *env, jcla
+$OpenBSD: patch-jdk_src_share_native_java_lang_System_c,v 1.2 2019/01/11 17:21:38 sthen Exp $
+Index: jdk/src/share/native/java/lang/System.c
+--- jdk/src/share/native/java/lang/System.c.orig
++++ jdk/src/share/native/java/lang/System.c
+@@ -320,6 +320,10 @@ Java_java_lang_System_initProperties(JNIEnv *env, jcla
      }
  #endif
  

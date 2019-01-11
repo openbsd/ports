@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure_ac,v 1.6 2018/05/23 12:40:53 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2019/01/11 17:21:38 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1066,7 +1066,6 @@ with_unreal_default=no
+@@ -1089,7 +1089,6 @@ with_unreal_default=no
  with_wasm_default=no
  
  with_bitcode_default=no
 -with_cooperative_gc_default=no
  
- INVARIANT_AOT_OPTIONS=nimt-trampolines=2000,ntrampolines=9000,nrgctx-fetch-trampolines=256,ngsharedvt-trampolines=4000
+ INVARIANT_AOT_OPTIONS=nimt-trampolines=2000,ntrampolines=10000,nrgctx-fetch-trampolines=256,ngsharedvt-trampolines=4000
  
-@@ -4450,17 +4449,13 @@ AC_ARG_WITH(lazy_gc_thread_creation, [  --with-lazy-gc
+@@ -4510,17 +4509,13 @@ AC_ARG_WITH(lazy_gc_thread_creation, [  --with-lazy-gc
  	fi
  ], [with_lazy_gc_thread_creation=no])
  
@@ -30,5 +30,5 @@ Index: configure.ac
 -AM_CONDITIONAL([ENABLE_COOP], [test x$with_cooperative_gc != xno])
 +AM_CONDITIONAL([DISABLE_COOP], [test x$with_cooperative_gc == xno])
  
- AC_ARG_ENABLE(checked_build, [  --enable-checked-build=LIST      To enable checked build (expensive asserts), configure with a comma-separated LIST of checked build modules and then include that same list in the environment variable MONO_CHECK_MODE at runtime. Recognized checked build modules: all, gc, metadata, thread],[
+ AC_ARG_ENABLE(checked_build, [  --enable-checked-build=LIST      To enable checked build (expensive asserts), configure with a comma-separated LIST of checked build modules and then include that same list in the environment variable MONO_CHECK_MODE at runtime. Recognized checked build modules: all, gc, metadata, thread, private_types],[
  
