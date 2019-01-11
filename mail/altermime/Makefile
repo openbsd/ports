@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/11 01:51:34 danj Exp $
 
 COMMENT=	utility for altering mime-encoded mailpacks
 
 DISTNAME=	altermime-0.3.10
+REVISION=	0
 
 CATEGORIES=	mail
 
-HOMEPAGE=	http://www.pldaniels.com/altermime/
+HOMEPAGE=	https://pldaniels.com/altermime/
 
 # alterMIME LICENSE
 # (see share/doc/altermime/LICENCE)
