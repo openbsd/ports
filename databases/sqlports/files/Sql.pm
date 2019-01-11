@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.27 2019/01/11 19:51:39 espie Exp $
+# $OpenBSD: Sql.pm,v 1.28 2019/01/11 21:22:26 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -403,9 +403,11 @@ sub contents
 	while (@c != 0) {
 		my $c = shift @c;
 		my $sep = @c == 0 ? '' : ',';
-		for my $l (split /\n/, $c->stringize) {
-			push(@parts, $self->indent($l, 4).$sep);
+		my @lines = split /\n/, $c->stringize;
+		while (@lines > 1) {
+			push(@parts, $self->indent(shift @lines, 4));
 		}
+		push(@parts, $self->indent(shift @lines, 4).$sep);
 	}
 
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
