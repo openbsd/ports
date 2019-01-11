@@ -99,6 +99,13 @@ with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
 we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
 the rest.
 
+- _Distfiles(FULLPKGPATH, VALUE, N, Type)
+All distfiles/supdistfiles are stored in a single table, with Type
+0 -> distfiles
+1 -> supdistfiles
+2 -> patchfiles
+N is :N from mastersites
+
 - _DPBProperties (FULLPKGPATH, VALUE, N)
 - _Wantlib(FULLPKGPATH, VALUE, EXTRA)
 All the libraries the FULLPKGPATH depends upon, with optional version 
@@ -135,6 +142,7 @@ FLAVORS, PSEUDO_FLAVORS -> _KEYWORDS
 NOT_FOR_ARCHS, ONLY_FOR_ARCHS, PKG_ARCH -> _ARCH
 _SubstVars.value -> _substvarskey
 TARGETS -> _TARGETKEYS
+_Distfiles.value = _Fetchfiles
 
 Views are still evolving. Useful views:
 * Ports: contains all info from _ports and from secondary tables with indices
@@ -143,7 +151,8 @@ replaces.
 Configureargs_ordered, Configure_ordered, DPBProperties_ordered,
 Flavors_ordered, Makefiles_ordered, Modules_ordered, NotForArch_ordered,
 OnlyforArch_ordered, PkgPaths_ordered, PseudoFlavors_ordered,
-SubstVars_ordered, Targets_ordered: reconstituted lists of text values as
+SubstVars_ordered, Targets_ordered, distfiles_ordered, wantlib_ordered: 
+reconstituted lists of text values as
 a single string from the corresponding table.
 * each "keyword" list also has a corresponding view, e.g.,
 _BROKEN -> BROKEN (PathId, FULLPKGPATH, Arch, Value)

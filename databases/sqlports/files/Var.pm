@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.52 2019/01/11 19:52:14 espie Exp $
+# $OpenBSD: Var.pm,v 1.53 2019/01/11 21:52:25 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -427,7 +427,7 @@ sub add
 		$self->normal_insert($ins, $depends,
 		    $pkgspec, $rest, 
 		    $ins->find_pathkey($p->fullpkgpath),
-		    $ins->convert_depends($self->depends_type),
+		    $self->match,
 		    $n);
 		$n++;
 # XXX		    $ins->add_todo($pkgpath2);
@@ -525,22 +525,18 @@ sub add
 
 package LibDependsVar;
 our @ISA = qw(DependsVar);
-sub depends_type() { 'Library' }
 sub match() { 0 }
 
 package RunDependsVar;
 our @ISA = qw(DependsVar);
-sub depends_type() { 'Run' }
 sub match() { 1 }
 
 package BuildDependsVar;
 our @ISA = qw(DependsVar);
-sub depends_type() { 'Build' }
 sub match() { 2 }
 
 package TestDependsVar;
 our @ISA = qw(DependsVar);
-sub depends_type() { 'Test' }
 sub match() { 3 }
 
 # Stuff that gets stored in another table
@@ -943,6 +939,100 @@ sub keyword_table() { '_ConfigureKeys' }
 package ConfigureArgsVar;
 our @ISA = qw(QuotedListVar);
 sub table() { 'ConfigureArgs' }
+
+package Sql::Column::View::WithSite;
+our @ISA = qw(Sql::Column::View::Expr);
+
+sub expr
+{
+	my $self = shift;
+	my $c = $self->column;
+	my $n = $self->column("N");
+	return
+qq{CASE 1
+  WHEN $n IS NULL THEN $c
+  ELSE $c||':'||$n
+END
+};
+}
+
+package DistfilesVar;
+our @ISA = qw(ListVar);
+sub keyword_table() { '_fetchfiles' }
+sub table() { 'Distfiles' }
+sub match() { 0 }
+sub want_in_ports_view { 1 }
+
+sub _add
+{
+	my ($self, $ins, $value, $num) = @_;
+	$self->normal_insert($ins, $self->keyword($ins, $value), $num, 
+	    $self->match);
+}
+
+sub add_value
+{
+	my ($self, $ins, $value) = @_;
+	if ($value =~ m/^(.*?)\:(\d)$/) {
+		$self->_add($ins, $1, $2);
+	} else {
+		$self->_add($ins, $value, undef);
+	}
+}
+
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	my $t = $self->table_name($self->table);
+	my $k = $self->keyword_table;
+	$self->create_keyword_table($inserter);
+	$self->create_table(
+	    $self->fullpkgpath,
+	    Sql::Column::Integer->new("Value")->references($k)->constraint,
+	    Sql::Column::Integer->new("N")->constraint,
+	    Sql::Column::Integer->new("Type")->constraint->notnull);
+
+	$self->create_view(
+	    $self->pathref,
+	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Type"));
+	$inserter->make_ordered_view($self);
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table_name($self->table);
+	my $k = $self->keyword_table;
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "Value"))),
+	    Sql::Column::View->new("Type"),
+	    Sql::Order->new("Value"));
+}
+
+sub select
+{
+	return (Sql::Column::View->new("Type")->group_by);
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath"),
+		    Sql::EqualConstant->new("Type", $self->match)));
+}
+
+package SupdistfilesVar;
+our @ISA = qw(DistfilesVar);
+sub match() { 1 }
+
+package PatchfilesVar;
+our @ISA = qw(DistfilesVar);
+sub match() { 2 }
 
 package Sql::Column::View::WithExtra;
 our @ISA = qw(Sql::Column::View::Expr);

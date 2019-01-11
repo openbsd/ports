@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.35 2019/01/09 12:59:44 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.36 2019/01/11 21:52:25 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -265,13 +265,6 @@ sub commit_to_db
 	$self->db->commit;
 }
 
-our $c = {
-	Library => 0,
-	Run => 1,
-	Build => 2,
-	Test => 3
-};
-
 sub table_name
 {
 	my ($class, $name) = @_;
@@ -283,13 +276,6 @@ sub view_name
 	my ($class, $name) = @_;
 	return $name;
 }
-
-sub convert_depends
-{
-	my ($self, $value) = @_;
-	return $c->{$value};
-}
-
 
 sub create_path_table
 {

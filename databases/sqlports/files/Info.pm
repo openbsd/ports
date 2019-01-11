@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.27 2018/11/16 18:14:08 espie Exp $
+# $OpenBSD: Info.pm,v 1.28 2019/01/11 21:52:25 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -36,9 +36,9 @@ our $vars = {
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'DescrVar',
-    DISTFILES => 'AnyVar',
+    DISTFILES => 'SupdistfilesVar',
     DPB_PROPERTIES => 'DPBPropertiesVar',
-    PATCHFILES => 'AnyVar',
+    PATCHFILES => 'PatchfilesVar',
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
     EPOCH => 'AnyVar',
@@ -93,7 +93,7 @@ our $vars = {
     STATIC_PLIST => 'StaticPlistVar',
     SUBPACKAGE => 'DefinedVar',
     SUBST_VARS => 'SubstVar',
-    SUPDISTFILES => 'AnyVar',
+    SUPDISTFILES => 'SupdistfilesVar',
     TARGETS => 'TargetsVar',
     UPDATE_PLIST_ARGS => 'DefinedVar',
     USE_GMAKE => 'YesNoVar',
