@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/16 14:58:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/11 22:49:01 bcallah Exp $
 
-ONLY_FOR_ARCHS =	${LLVM_ARCHS}
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
 COMMENT =	actor-model, capabilities-secure, high performance language
 DISTNAME =	${GH_PROJECT}-0.25.0
