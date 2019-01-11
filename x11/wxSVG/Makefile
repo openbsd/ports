@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.46 2019/01/11 20:24:33 jca Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.5.13
+DISTNAME=		wxsvg-1.5.15
 EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
 
 SHARED_LIBS+=		wxsvg	4.0
 
@@ -18,8 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SDL2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0
-WANTLIB += atspi avcodec avformat avutil bz2 c cairo cairo-gobject
-WANTLIB += crypto dbus-1 epoxy exif expat ffi fontconfig freetype
+WANTLIB += avcodec avformat avutil bz2 c cairo cairo-gobject
+WANTLIB += crypto epoxy exif expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gsm gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg m mp3lame mspack notify ogg opus pango-1.0
