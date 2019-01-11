@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.26 2019/01/11 15:44:59 espie Exp $
+# $OpenBSD: Sql.pm,v 1.27 2019/01/11 19:51:39 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -438,10 +438,44 @@ sub is_unique_name
 }
 
 package Sql::With;
-our @ISA = qw(Sql::Select);
+our @ISA = qw(Sql::Object);
 sub category
 {
 	"with"
+}
+
+sub new
+{
+	my $class = shift;
+	my $o = $class->SUPER::new(@_);
+	$o->{select} = Sql::Select->new(@_);
+	return $o;
+}
+
+sub contents
+{
+	my $self = shift;
+	return $self->{select}->contents;
+}
+
+sub add
+{
+	my $self = shift;
+	$self->{select}->add(@_);
+	return $self;
+}
+
+sub prepend
+{
+	my $self = shift;
+	$self->{select}->prepend(@_);
+	return $self;
+}
+
+sub columns
+{
+	my $self = shift;
+	return $self->{select}->columns;
 }
 
 package Sql::Order;
