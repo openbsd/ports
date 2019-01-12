@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/01/07 13:54:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/01/12 07:56:51 ajacoutot Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -15,6 +15,7 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+# make sure to regen WANTLIB on ld.lld arches (-Wl,--as-needed)
 WANTLIB=		c intl m mpdclient>=1 ${COMPILER_LIBCXX} curses pcre
 
 MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/

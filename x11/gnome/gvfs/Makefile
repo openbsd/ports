@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2019/01/07 15:04:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.186 2019/01/12 07:56:51 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -28,6 +28,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
+# make sure to regen WANTLIB on ld.lld arches (-Wl,--as-needed)
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
