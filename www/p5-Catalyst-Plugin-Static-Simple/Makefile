@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/12 20:40:24 cwen Exp $
 
 COMMENT= 	serving static pages with catalyst
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Plugin-Static-Simple-0.29
-REVISION=	1
+DISTNAME=	Catalyst-Plugin-Static-Simple-0.36
 CATEGORIES=	www
 
 # Perl
@@ -15,9 +14,9 @@ RUN_DEPENDS=	devel/p5-Moose \
 		devel/p5-MooseX-Types \
 		devel/p5-namespace-autoclean \
 		www/p5-Catalyst-Runtime>=5.80008 \
-		mail/p5-MIME-Types>=1.25
+		mail/p5-MIME-Types>=2.03
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=www/p5-Catalyst-Plugin-SubRequest>=0.15
+TEST_DEPENDS=	www/p5-Catalyst-Plugin-SubRequest>=0.15
 
 MAKE_ENV=	TEST_POD=Yes
 
