@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/09/13 04:56:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/12 20:29:34 uaa Exp $
 
 COMMENT=		portable cross-platform audio API
 
@@ -7,6 +7,7 @@ PKGNAME =		portaudio-svn-1919
 CATEGORIES=		audio
 MASTER_SITES =		http://www.portaudio.com/archives/
 EXTRACT_SUFX =		.tgz
+REVISION =		0
 
 SHARED_LIBS =		portaudio	1.1
 
