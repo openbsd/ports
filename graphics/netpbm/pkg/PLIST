@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/09/08 14:04:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/01/12 22:27:40 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
@@ -43,6 +43,7 @@ bin/manweb
 @bin bin/neotoppm
 @bin bin/palmtopnm
 @bin bin/pamaddnoise
+@bin bin/pamaltsat
 @bin bin/pamarith
 @bin bin/pambackground
 @bin bin/pambayer
@@ -70,6 +71,7 @@ bin/pamfixtrunc
 @bin bin/pamlookup
 @bin bin/pammasksharpen
 @bin bin/pammixinterlace
+@bin bin/pammixmulti
 @bin bin/pammosaicknit
 @bin bin/pamoil
 @bin bin/pampaintspill
@@ -117,6 +119,7 @@ bin/pamstretch-gen
 @bin bin/pamtouil
 @bin bin/pamtowinicon
 @bin bin/pamtoxvmini
+@bin bin/pamtris
 @bin bin/pamundice
 @bin bin/pamunlookup
 @bin bin/pamvalidate
@@ -172,6 +175,7 @@ bin/pbmtox10bm
 @bin bin/pbmtozinc
 @bin bin/pbmupc
 @bin bin/pc1toppm
+bin/pcdindex
 bin/pcdovtoppm
 @bin bin/pcxtoppm
 @bin bin/pdbimgtopam
@@ -376,6 +380,7 @@ include/netpbm/pamdraw.h
 include/netpbm/pammap.h
 include/netpbm/pbm.h
 include/netpbm/pbmfont.h
+include/netpbm/pbmfontdata.h
 include/netpbm/pgm.h
 include/netpbm/pm.h
 include/netpbm/pm_config.h

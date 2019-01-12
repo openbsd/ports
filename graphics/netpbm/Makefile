@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.83 2018/09/09 09:24:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2019/01/12 22:27:40 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.83.02
-SHARED_LIBS=	netpbm	4.0
+DISTNAME=	netpbm-10.85.01
+SHARED_LIBS=	netpbm	5.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 c iconv jasper jbig jpeg lzma m png tiff xml2 z
+WANTLIB=	X11 c iconv jasper jbig jpeg lzma m png16 tiff xml2 z
 
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
 EXTRACT_SUFX=	.tar.xz
