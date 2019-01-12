@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.53 2019/01/11 21:52:25 espie Exp $
+# $OpenBSD: Var.pm,v 1.54 2019/01/12 11:10:00 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1088,7 +1088,6 @@ sub create_tables
 	    $self->pathref,
 	    Sql::Column::View::WithExtra->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))));
-# XXX not yet
 	$inserter->make_ordered_view($self);
 }
 
@@ -1193,11 +1192,21 @@ sub new
 	return $class->SUPER::new($var, $value, $arch, $path);
 }
 
+package Sql::Column::View::AddVersion;
+our @ISA = qw(Sql::Column::View::Expr);
+sub expr
+{
+	my $self = shift;
+	my $c = $self->column;
+	my $extra = $self->column("Version");
+	return "$c || ' '||$extra";
+}
 
 package SharedLibsVar;
 our @ISA = qw(KeyVar);
 sub table() { 'Shared_Libs' }
 sub keyword_table() { '_Library' }
+sub want_in_ports_view { 1 }
 
 sub add
 {
@@ -1223,6 +1232,31 @@ sub create_tables
 	    Sql::Column::View->new("LibName", origin => 'Value')->join(
 	    	Sql::Join->new($k)->add(Sql::Equal->new("KeyRef", "LibName"))),
 	    Sql::Column::View->new("Version"));
+	$inserter->make_ordered_view($self);
+}
+
+sub subselect
+{
+	my $self = shift;
+	my $t = $self->table_name($self->table);
+	my $k = $self->keyword_table;
+	return (Sql::Column::View->new('FullPkgPath'),
+	    Sql::Column::View::AddVersion->new("Value")->join(Sql::Join->new($k)
+		->add(Sql::Equal->new("KeyRef", "LibName"))),
+	    Sql::Order->new("Value"));
+}
+
+sub select
+{
+	return ();
+}
+
+sub ports_view_column
+{
+	my ($self, $name) = @_;
+	return Sql::Column::View->new($name, origin => 'Value')->join(
+	    Sql::Join->new($self->table."_ordered")->left
+	    	->add(Sql::Equal->new("FullPkgpath", "FullPkgpath")));
 }
 
 package EmailVar;
