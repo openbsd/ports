@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2018/04/11 12:59:00 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2019/01/12 15:12:29 naddy Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -20,24 +20,7 @@ Index: CMakeLists.txt
  	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
  	check_include_files(sys/time.h HAVE_SYS_TIME_H)
  	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
-@@ -114,7 +114,6 @@ if (UNIX)
- 	check_function_exists(gmtime_r HAVE_GMTIME_R)
- 	check_function_exists(nanosleep HAVE_NANOSLEEP)
- 	check_function_exists(poll HAVE_POLL)
--	check_function_exists(sigwait HAVE_POSIX_SIGWAIT)
- 	check_function_exists(strftime HAVE_STRFTIME)
- 	check_function_exists(vsnprintf HAVE_VSNPRINTF)
- 	check_function_exists(inet_aton HAVE_INET_ATON)
-@@ -157,6 +156,8 @@ if (UNIX)
- 		message(FATAL_ERROR "Missing library: pthread")
- 	endif()
- 
-+	check_library_exists("pthread" sigwait "" HAVE_POSIX_SIGWAIT)
-+
- 	# curl is used on both Linux and Mac
- 	find_package(CURL)
- 	if (CURL_FOUND)
-@@ -201,77 +202,59 @@ if (UNIX)
+@@ -201,77 +201,59 @@ if (UNIX)
  
  	else() # not-apple
  
