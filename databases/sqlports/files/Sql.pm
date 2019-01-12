@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.28 2019/01/11 21:22:26 espie Exp $
+# $OpenBSD: Sql.pm,v 1.29 2019/01/12 13:57:41 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -139,7 +139,13 @@ sub all_views
 sub key
 {
 	my ($class, $name) = @_;
-	return $register->{$class->normalize($name)}{key};
+	return $class->find($name)->{key};
+}
+
+sub find
+{
+	my ($class, $name) = @_;
+	return $register->{$class->normalize($name)};
 }
 
 sub dump_all
@@ -160,7 +166,7 @@ sub register
 sub add_column_names
 {
 	my ($self, $name) = @_;
-	my $o = $register->{$self->normalize($name)};
+	my $o = $self->find($name);
 	if (!defined $o) {
 	#	print STDERR $name, "\n";
 		return;
@@ -191,7 +197,7 @@ sub known_column
 sub is_table_column
 {
 	my ($self, $table, $name) = @_;
-	my $t = $register->{$self->normalize($table)};
+	my $t = $self->find($table);
 	if (defined $t) {
 		return $t->known_column($name);
 	} else {
@@ -256,11 +262,16 @@ sub contents
 sub inserter
 {
 	my $self = shift;
-	my @names = $self->column_names;
+	my (@names, @placeholders);
 	my $alt = $self->{ignore} ? " OR IGNORE" :
 	    ($self->{noreplace} ? "" : " OR REPLACE");
+	for my $c ($self->columns) {
+		next if $c->is_key;
+		push @names, $c->name;
+		push @placeholders, $c->placeholder;
+	}
 	return "INSERT$alt INTO ".$self->name." (".
-	    join(', ', @names).") VALUES (".join(', ', map {('?')} @names).")";
+	    join(', ', @names).") VALUES (".join(', ', @placeholders).")";
 }
 
 sub noreplace
@@ -539,6 +550,11 @@ sub stringize
 	return join(" ", @c);
 }
 
+sub placeholder
+{
+	'?';
+}
+
 sub is_key
 {
 	0
@@ -578,11 +594,12 @@ sub reference_field
 		}
 	}
 }
+
 sub may_reference
 {
 	my ($self, $table, $field) = @_;
 	$self->{references}{table} = $table;
-	$self->{references}{field} = $field;
+	$self->{references}{field} = $field if defined $field;
 	return $self;
 }
 
@@ -591,6 +608,32 @@ sub references
 	my ($self, $table, $field) = @_;
 	return $self->may_reference($table, $field)->notnull;
 }
+
+sub placeholder
+{
+	my $self = shift;
+	if (!defined $self->{references}) {
+		return '?';
+	}
+	my $table = $self->{references}{table};
+
+	my ($key, $value);
+	for my $c (Sql::Create->find($table)->columns) {
+		if ($c->is_key) {
+			$key = $c->name;
+		} elsif (defined $value) {
+			return '?';	# can't match multiple fields
+		} else {
+			$value = $c->name;
+		}
+	}
+	if (defined $key && defined $value) {
+		return "(SELECT $key FROM $table WHERE $value=?)";
+	} else {
+		return '?';
+	}
+}
+
 
 package Sql::Column::View;
 our @ISA = qw(Sql::Column);

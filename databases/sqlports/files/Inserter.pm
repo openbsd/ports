@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.36 2019/01/11 21:52:25 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.37 2019/01/12 13:57:41 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -158,6 +158,8 @@ sub create_schema
 	if ($self->{create}) {
 		for my $t (Sql::Create->all_tables) {
 			$self->new_sql($t);
+		}
+		for my $t (Sql::Create->all_tables) {
 			my $i = $t->inserter;
 			print $i, "\n";
 			$self->{insert}{$t->name} = $self->prepare($i);
@@ -176,13 +178,6 @@ sub register_prepare
 {
 	my ($self, $code) = @_;
 	push (@{$self->{prepare_list}}, $code);
-}
-
-sub new_table
-{
-	my ($self, $name, @cols) = @_;
-
-	$self->new_object('TABLE', $name, "(".join(', ', @cols).")");
 }
 
 sub prepare
@@ -344,30 +339,6 @@ sub set_newkey
 
 	$self->set($self->find_pathkey($key));
 	$self->{current_path} = $key;
-}
-
-sub find_keyword_id
-{
-	my ($self, $key, $t) = @_;
-	$self->{$t}{find_key1}->execute($key);
-	my $a = $self->{$t}{find_key1}->fetchrow_arrayref;
-	if (!defined $a) {
-		$self->insert($t, $key);
-		return $self->last_id;
-	} else {
-		return $a->[0];
-	}
-}
-
-sub create_keyword_table
-{
-	my ($self, $t) = @_;
-	Sql::Create::Table->new($t)->noreplace->add(
-		Sql::Column::Key->new("KeyRef"),
-		Sql::Column::Text->new("Value")->notnull->unique);
-	$self->register_prepare(sub {
-	    $self->{$t}{find_key1} = $self->prepare("SELECT KeyRef FROM $t WHERE Value=?");
-   	});
 }
 
 sub write_log

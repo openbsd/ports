@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.54 2019/01/12 11:10:00 espie Exp $
+# $OpenBSD: Var.pm,v 1.55 2019/01/12 13:57:41 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -98,21 +98,24 @@ sub prepare_tables
 sub keyword
 {
 	my ($self, $ins, $value) = @_;
-	return $ins->find_keyword_id($value, $self->keyword_table);
+	$ins->insert($self->keyword_table, $value);
+	return $value;
 }
 
 sub create_keyword_table
 {
-	my ($self, $inserter) = @_;
+	my $self = shift;
 	if (defined $self->keyword_table) {
-		$inserter->create_keyword_table($self->keyword_table);
+		Sql::Create::Table->new($self->keyword_table)->ignore->add(
+			Sql::Column::Key->new("KeyRef"),
+			Sql::Column::Text->new("Value")->notnull->unique);
 	}
 }
 
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
+	$self->create_keyword_table;
 }
 
 sub normal_insert
@@ -165,6 +168,7 @@ sub create_table
 {
 	my ($self, @c) = @_;
 	Sql::Create::Table->new($self->table_name($self->table))->add(@c);
+	$self->create_keyword_table;
 }
 
 sub create_view
@@ -290,7 +294,6 @@ sub add
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
 	my $k = $self->keyword_table;
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -561,7 +564,6 @@ sub create_tables
 	my ($self, $inserter) = @_;
 	my $k = $self->keyword_table;
 	
-	$self->create_keyword_table($inserter);
 	$self->create_table(
 	    $self->fullpkgpath,
 	    $self->table_columns($k));
@@ -664,7 +666,6 @@ sub add
 sub create_tables
 {
 	my ($self, $inserter) = @_;
-	$self->create_keyword_table($inserter);
 	my $t = $self->table_name($self->table);
 	$self->create_table(
 	    $self->fullpkgpath,
@@ -985,7 +986,6 @@ sub create_tables
 	my ($self, $inserter) = @_;
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
-	$self->create_keyword_table($inserter);
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Value")->references($k)->constraint,
@@ -1222,7 +1222,6 @@ sub create_tables
 {
 	my ($self, $inserter) = @_;
 	my $k = $self->keyword_table;
-	$self->create_keyword_table($inserter);
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("LibName")->references($k)->constraint,
