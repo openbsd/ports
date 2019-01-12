@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.703 2019/01/11 01:09:50 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.704 2019/01/12 20:44:38 cwen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1300,6 +1300,7 @@ my $cve = {
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
 	'www/nginx' => 'nginx-<1.4.1',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
+	'www/p5-Catalyst-Plugin-Static-Simple' => 'p5-Catalyst-Plugin-Static-Simple-<0.36',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
