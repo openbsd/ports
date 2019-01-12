@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2018/05/14 19:50:44 bket Exp $
+# $OpenBSD: Makefile,v 1.35 2019/01/12 14:12:34 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.12.1
+DISTNAME=	ocserv-0.12.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -68,8 +68,11 @@ post-install:
 	    ${PREFIX}/share/examples/ocserv/sample.config
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${PREFIX}/man/man8/
 
+# XXX server-cert-ed25519, and server-cert-rsa-pss are known to fail. These
+# tests use socket_wrapper, which is not in ports.
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
+	sed -i 's#\/bin\/true#\/usr\/bin\/true#g' ${WRKSRC}/tests/test-*
 
 post-test:
 	@[ `id -u` == 0 ] || printf \

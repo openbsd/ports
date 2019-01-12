@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/14 19:50:44 bket Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/12 14:12:34 bket Exp $
 @newgroup _ocserv:749
 @newuser _ocserv:749:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/ocserv
 @bin bin/occtl
 @bin bin/ocpasswd
 @man man/man8/occtl.8
@@ -24,7 +25,3 @@ share/examples/ocserv/sample.passwd
 @owner root
 @group _ocserv
 @sample ${SYSCONFDIR}/ocserv/ocpasswd
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/ocserv
