@@ -1,9 +1,11 @@
-$OpenBSD: patch-tmac_doc_tmac-u,v 1.1 2018/12/24 10:42:00 schwarze Exp $
+$OpenBSD: patch-tmac_doc_tmac-u,v 1.2 2019/01/12 17:01:35 schwarze Exp $
 
-Always format .Pa the same way, as requested by jmc@ (local change).
+chunk 1: Always format .Pa the same way, as requested by jmc@ (local change).
+chunks 2-3: Do not misinterpret .Lk args as macros (committed upstream, too).
 
---- tmac/doc.tmac-u.orig	Wed Oct  5 15:47:31 2016
-+++ tmac/doc.tmac-u	Wed Oct  5 16:23:42 2016
+Index: tmac/doc.tmac-u
+--- tmac/doc.tmac-u.orig
++++ tmac/doc.tmac-u
 @@ -3761,8 +3761,6 @@
  .
  .        if \n[doc-in-files-section] \{\
@@ -13,3 +15,26 @@ Always format .Pa the same way, as requested by jmc@ (local change).
  .        \}
  .
  .        ie (\n[doc-type1] == 1) \
+@@ -6485,10 +6483,11 @@
+ .  if (\n[doc-arg-ptr] <= \n[doc-lasttext-Lk]) \{\
+ .    nop \*[doc-Em-font]\c
+ .    while (\n[doc-arg-ptr] < \n[doc-lasttext-Lk]) \{\
+-.      nop \*[doc-arg\n[doc-arg-ptr]]
++.      nop \&\*[doc-arg\n[doc-arg-ptr]]
+ .      nr doc-arg-ptr +1
+ .    \}
+-.    nop \*[doc-arg\n[doc-arg-ptr]]\f[\n[doc-curr-font]]\s[\n[doc-curr-size]u]:
++.    nop \&\*[doc-arg\n[doc-arg-ptr]]\c
++.    nop \f[\n[doc-curr-font]]\s[\n[doc-curr-size]u]:
+ .    nr doc-arg-ptr +1
+ .  \}
+ .
+@@ -6498,7 +6497,7 @@
+ .
+ .  \" Print the delimiters, if any.
+ .  while (\n[doc-arg-ptr] <= \n[doc-arg-limit]) \{\
+-.    nop \*[doc-arg\n[doc-arg-ptr]]\c
++.    nop \&\*[doc-arg\n[doc-arg-ptr]]\c
+ .    nr doc-arg-ptr +1
+ .  \}
+ .  nop \&
