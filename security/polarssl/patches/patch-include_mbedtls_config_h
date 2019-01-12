@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_mbedtls_config_h,v 1.7 2018/11/26 15:18:28 bket Exp $
+$OpenBSD: patch-include_mbedtls_config_h,v 1.8 2019/01/12 06:24:56 bket Exp $
 
 MBEDTLS_THREADING_PTHREAD and MBEDTLS_THREADING_C are required by
 www/hiawatha.
@@ -6,7 +6,7 @@ www/hiawatha.
 Index: include/mbedtls/config.h
 --- include/mbedtls/config.h.orig
 +++ include/mbedtls/config.h
-@@ -1582,7 +1582,7 @@
+@@ -1624,7 +1624,7 @@
   *
   * Uncomment this to enable pthread mutexes.
   */
@@ -15,7 +15,7 @@ Index: include/mbedtls/config.h
  
  /**
   * \def MBEDTLS_VERSION_FEATURES
-@@ -2774,7 +2774,7 @@
+@@ -2816,7 +2816,7 @@
   *
   * Enable this layer to allow use of mutexes within mbed TLS
   */
