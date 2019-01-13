@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:03:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/01/13 22:43:59 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -703,7 +703,6 @@ include/octave-${VERSION}/octave/sparse-util.h
 include/octave-${VERSION}/octave/sparse-xdiv.h
 include/octave-${VERSION}/octave/sparse-xpow.h
 include/octave-${VERSION}/octave/str-vec.h
-include/octave-${VERSION}/octave/sun-utils.h
 include/octave-${VERSION}/octave/svd.h
 include/octave-${VERSION}/octave/symrec.h
 include/octave-${VERSION}/octave/symscope.h
@@ -944,9 +943,6 @@ share/octave/${VERSION}/etc/tests/fixed/bug-44940/
 share/octave/${VERSION}/etc/tests/fixed/bug-44940/bug-44940.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-44940/class_bug44940.m
 share/octave/${VERSION}/etc/tests/fixed/bug-46330.tst
-share/octave/${VERSION}/etc/tests/fixed/bug-46497/
-share/octave/${VERSION}/etc/tests/fixed/bug-46497/bug-46497.tst
-share/octave/${VERSION}/etc/tests/fixed/bug-46497/class_bug46497.m
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/bug-46660.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/class_bug46660.m
@@ -1457,6 +1453,7 @@ share/octave/${VERSION}/m/deprecated/octave_config_info.m
 share/octave/${VERSION}/m/deprecated/onenormest.m
 share/octave/${VERSION}/m/deprecated/paren.m
 share/octave/${VERSION}/m/deprecated/semicolon.m
+share/octave/${VERSION}/m/deprecated/setstr.m
 share/octave/${VERSION}/m/deprecated/sleep.m
 share/octave/${VERSION}/m/deprecated/tmpnam.m
 share/octave/${VERSION}/m/deprecated/toascii.m
@@ -2398,3 +2395,4 @@ share/octave/site/m/
 share/octave/site/m/startup/
 share/octave/site/m/startup/octaverc
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
