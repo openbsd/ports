@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/02/06 10:15:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/01/13 14:00:56 rsadowski Exp $
 @bin bin/gitsh
 @man man/man1/gitsh.1
+@man man/man5/gitsh_completions.5
 share/gitsh/
 share/gitsh/ruby/
 share/gitsh/ruby/gitsh.rb
@@ -23,12 +24,11 @@ share/gitsh/ruby/lib/gitsh/commands/internal_command.rb
 share/gitsh/ruby/lib/gitsh/commands/noop.rb
 share/gitsh/ruby/lib/gitsh/commands/shell_command.rb
 share/gitsh/ruby/lib/gitsh/commands/tree.rb
-share/gitsh/ruby/lib/gitsh/completer.rb
-share/gitsh/ruby/lib/gitsh/completion_escaper.rb
 share/gitsh/ruby/lib/gitsh/environment.rb
 share/gitsh/ruby/lib/gitsh/error.rb
 share/gitsh/ruby/lib/gitsh/exit_statuses.rb
 share/gitsh/ruby/lib/gitsh/file_runner.rb
+share/gitsh/ruby/lib/gitsh/git_command_list.rb
 share/gitsh/ruby/lib/gitsh/git_repository/
 share/gitsh/ruby/lib/gitsh/git_repository.rb
 share/gitsh/ruby/lib/gitsh/git_repository/status.rb
@@ -51,6 +51,39 @@ share/gitsh/ruby/lib/gitsh/prompt_color.rb
 share/gitsh/ruby/lib/gitsh/prompter.rb
 share/gitsh/ruby/lib/gitsh/quote_detector.rb
 share/gitsh/ruby/lib/gitsh/shell_command_runner.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/
+share/gitsh/ruby/lib/gitsh/tab_completion/automaton.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/automaton_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/command_completer.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/context.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/choice_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/concatenation_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/lexer.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/maybe_operation_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/null_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/option_transition_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/parser.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/plus_operation_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/rule_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/rule_set_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/star_operation_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/text_transition_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/dsl/variable_transition_factory.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/escaper.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/facade.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/anything_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/base_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/command_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/path_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/remote_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/revision_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/text_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/matchers/unknown_option_matcher.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/variable_completer.rb
+share/gitsh/ruby/lib/gitsh/tab_completion/visualization.rb
 share/gitsh/ruby/lib/gitsh/terminal.rb
 share/gitsh/ruby/lib/gitsh/version.rb
 share/gitsh/vendor/
@@ -135,7 +168,7 @@ share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/configure
 share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/configure.ac
 share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/configure.host
 share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/depcomp
-share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/doc/
+@info share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/doc/
 @info share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/doc/libffi.info
 share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/doc/libffi.texi
 share/gitsh/vendor/gems/ffi-1.9.17/ext/ffi_c/libffi/doc/stamp-vti
@@ -494,8 +527,6 @@ share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-linux/
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-linux/types.conf
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-netbsd/
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-netbsd/types.conf
-share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-openbsd/
-share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-openbsd/types.conf
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-solaris/
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-solaris/types.conf
 share/gitsh/vendor/gems/ffi-1.9.17/lib/ffi/platform/x86_64-windows/
