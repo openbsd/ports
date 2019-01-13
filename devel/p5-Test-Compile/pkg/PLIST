@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/13 14:50:03 cwen Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Compile/
+${P5SITE}/Test/Compile.pm
+${P5SITE}/Test/Compile/Internal.pm
+@man man/man3p/Test::Compile.3p
+@man man/man3p/Test::Compile::Internal.3p
