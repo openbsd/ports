@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_extract_c,v 1.7 2019/01/13 15:34:55 naddy Exp $
+
+Remove erroneous abort() call
+https://git.savannah.gnu.org/cgit/tar.git/diff/?id=85c005ee1345c342f707f3c55317daf6cb050603
+
+Index: src/extract.c
+--- src/extract.c.orig
++++ src/extract.c
+@@ -787,7 +787,7 @@ maybe_recoverable (char *file_name, bool regular, bool
+ 	case UNLINK_FIRST_OLD_FILES:
+ 	  break;
+ 	}
+-      abort (); /* notreached */
++      FALLTHROUGH;
+ 
+     case ENOENT:
+       /* Attempt creating missing intermediate directories.  */

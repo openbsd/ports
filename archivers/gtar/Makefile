@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2018/05/06 15:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2019/01/13 15:34:55 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.30
+DISTNAME=	tar-1.31
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -28,10 +27,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
-
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=no
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 FLAVORS=	static
 FLAVOR?=
@@ -55,7 +54,6 @@ TEST_ENV+=	M4=${LOCALBASE}/bin/gm4
 
 # do not rebuild tar.info
 post-patch:
-	cd ${WRKSRC}/doc && touch -r stamp-vti version.texi *.info*
 	touch -r ${WRKSRC}/doc/stamp-vti ${WRKSRC}/configure
 
 # numeric.at needs a working chown

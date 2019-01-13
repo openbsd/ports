@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_dirrem02_at,v 1.1 2019/01/13 15:34:55 naddy Exp $
+
+Re-add sleep to fix race condition.
+
+Index: tests/dirrem02.at
+--- tests/dirrem02.at.orig
++++ tests/dirrem02.at
+@@ -44,7 +44,7 @@ gnu)   CPT=3;;
+ esac
+ 
+ genfile --run --checkpoint=$CPT --unlink dir/sub/file2 --unlink dir/sub -- \
+-       tar --blocking-factor=1 -c -f archive.tar \
++       tar --blocking-factor=1 --checkpoint-action='sleep=1' -c -f archive.tar \
+        --listed-incremental db -v dir dir/sub >/dev/null
+ ],
+ [2],
