@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/11 07:12:53 kirby Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/13 06:59:42 kirby Exp $
 
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 PKGNAME = 		${GH_PROJECT}-daemon-${V}
-REVISION =		0
 
 SHARED_LIBS =		seafile 3.0
 
@@ -35,8 +34,8 @@ CONFIGURE_ARGS +=	--disable-fuse \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
 
-AUTOCONF_VERSION =	2.61
-AUTOMAKE_VERSION =	1.9
+AUTOCONF_VERSION =	2.62
+AUTOMAKE_VERSION =	1.11
 
 MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py integration-tests/*.py \
 			app/seaf-cli

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/15 20:27:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/13 06:59:42 kirby Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -30,7 +30,7 @@ AUTOMAKE_VERSION =	1.9
 
 MODPY_ADJ_FILES = 	lib/searpc-codegen.py pysearpc/pygencode.py
 
-pre-configure:
+do-gen:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 

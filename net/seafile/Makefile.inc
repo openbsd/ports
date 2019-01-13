@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.32 2018/09/18 08:04:06 kirby Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2019/01/13 06:59:42 kirby Exp $
 
-GH_TAGNAME ?= 		v6.2.5
+GH_TAGNAME ?= 		v6.2.9
 V = 			${GH_TAGNAME:S/v//:S/-server//:S/-testing//:S/-latest//}
 DISTNAME = 		${GH_PROJECT}-${V}
 
