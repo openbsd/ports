@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/13 14:16:40 cwen Exp $
 
-COMMENT=	module for tracing memory leaks
+COMMENT =		module for tracing memory leaks
 
-DISTNAME =	Test-LeakTrace-0.15
-REVISION =	0
+DISTNAME =		Test-LeakTrace-0.16
 
-CATEGORIES=	devel
+CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c perl
 
-MODULES=	cpan
+MODULES =		cpan
 
 .include <bsd.port.mk>
