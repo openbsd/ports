@@ -1,6 +1,14 @@
-$OpenBSD: patch-vendor_github_com_shirou_gopsutil_cpu_cpu_openbsd_go,v 1.1 2019/01/02 16:13:21 ajacoutot Exp $
+$OpenBSD: patch-vendor_github_com_shirou_gopsutil_cpu_cpu_openbsd_go,v 1.2 2019/01/13 08:18:36 ajacoutot Exp $
 
-https://github.com/shirou/gopsutil/pull/624
+From 7276e963eb08a0f0b4bddbea38b4a13a442d4218 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 2 Jan 2019 17:06:46 +0100
+Subject: [PATCH] cpu: implement Mhz and Cores
+
+From 67297c879129bb84bc55717282641750a5f979f2 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 2 Jan 2019 17:10:02 +0100
+Subject: [PATCH] cpu: prefer cpuonline on OpenBSD
 
 Index: vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go
 --- vendor/github.com/shirou/gopsutil/cpu/cpu_openbsd.go.orig
