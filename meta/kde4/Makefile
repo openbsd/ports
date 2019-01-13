@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2019/01/04 22:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.57 2019/01/13 19:10:26 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,8 +31,8 @@ REVISION-games = 3
 REVISION-sdk = 2
 REVISION-edu = 4
 REVISION-multimedia = 0
-REVISION-extras = 8
-REVISION-main =		17
+REVISION-extras = 9
+REVISION-main =		18
 REVISION-admin =	0
 REVISION-graphics =	1
 
@@ -186,7 +186,6 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-extras = \
-	editors/kile-kde4		\
 	graphics/digikam-kde4,-main	\
 	graphics/digikam-kde4,-kipi	\
 	productivity/kmymoney

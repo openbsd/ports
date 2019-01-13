@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2018/11/06 23:55:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.132 2019/01/13 19:10:26 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -32,7 +32,7 @@
      SUBDIR += jed,no_x11
      SUBDIR += joe
      SUBDIR += jove
-     SUBDIR += kile-kde4
+     SUBDIR += kile
      SUBDIR += ktikz
      SUBDIR += ldapvi
      SUBDIR += le
