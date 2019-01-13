@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/06 14:36:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/13 11:59:18 pascal Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -85,7 +85,7 @@ CONFIGURE_ARGS +=	--with-as="${LOCALBASE}/bin/gas"
 BUILD_DEPENDS +=	textproc/gsed
 .endif
 
-TEST_DEPENDS = 	devel/dejagnu \
+TEST_DEPENDS += devel/dejagnu \
 		devel/autogen \
 		${BUILD_PKGPATH},-libs>=8,<9
 
