@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2018/06/30 11:41:36 landry Exp $
+# $OpenBSD: Makefile,v 1.176 2019/01/13 06:07:32 semarie Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -10,7 +10,7 @@ PKGNAME-python=		py-libxml-${VERSION}
 SHARED_LIBS +=	xml2                 16.1     # 11.8
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://xmlsoft.org/libxml/
-REVISION-main=		0
+REVISION-main=		1
 
 HOMEPAGE=		http://xmlsoft.org/
 
@@ -28,8 +28,8 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-html-dir="${PREFIX}/share/doc" \
 			--with-html-subdir="libxml2/html" \
 			--with-iconv="${LOCALBASE}" \
-			--with-lzma="${LOCALBASE}" \
-			--without-threads
+			--with-lzma="${LOCALBASE}"
+
 # only used to fetch data during regression test
 CONFIGURE_ENV=		WGET=/usr/bin/ftp
 
