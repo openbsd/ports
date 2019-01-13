@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_mongo_util_processinfo_openbsd_cpp,v 1.1 2017/06/08 16:16:43 sthen Exp $
+$OpenBSD: patch-src_mongo_util_processinfo_openbsd_cpp,v 1.2 2019/01/13 23:18:42 jca Exp $
+
+- avoid use after free
+- mincore(2) has been removed
 
 Index: src/mongo/util/processinfo_openbsd.cpp
 --- src/mongo/util/processinfo_openbsd.cpp.orig
@@ -27,3 +30,35 @@ Index: src/mongo/util/processinfo_openbsd.cpp
  }
  
  double ProcessInfo::getSystemMemoryPressurePercentage() {
+@@ -182,28 +184,14 @@ bool ProcessInfo::supported() {
+ }
+ 
+ bool ProcessInfo::blockCheckSupported() {
+-    return true;
++    return false;
+ }
+ 
+ bool ProcessInfo::blockInMemory(const void* start) {
+-    char x = 0;
+-    if (mincore((void*)alignToStartOfPage(start), getPageSize(), &x)) {
+-        log() << "mincore failed: " << errnoWithDescription() << endl;
+-        return 1;
+-    }
+-    return x & 0x1;
++    return false;
+ }
+ 
+ bool ProcessInfo::pagesInMemory(const void* start, size_t numPages, vector<char>* out) {
+-    out->resize(numPages);
+-    // int mincore(const void *addr, size_t len, char *vec);
+-    if (mincore((void*)alignToStartOfPage(start), numPages * getPageSize(), &(out->front()))) {
+-        log() << "mincore failed: " << errnoWithDescription() << endl;
+-        return false;
+-    }
+-    for (size_t i = 0; i < numPages; ++i) {
+-        (*out)[i] = 0x1;
+-    }
+-    return true;
++    return false;
+ }
+ }
