@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/13 14:28:11 cwen Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		PPI-1.220
+DISTNAME=		PPI-1.236
 CATEGORIES=		textproc
 
 # perl
@@ -19,7 +19,7 @@ TEST_DEPENDS=	devel/p5-Class-Inspector \
 			devel/p5-File-Remove \
 			devel/p5-Hook-LexWrap \
 			devel/p5-Task-Weaken \
-			devel/p5-Test-NoWarnings \
+			devel/p5-Test-Deep \
 			devel/p5-Test-Object \
 			devel/p5-Test-SubCalls
 

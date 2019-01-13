@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/30 16:50:02 jim Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/13 14:28:11 cwen Exp $
 ${P5SITE}/PPI/
 ${P5SITE}/PPI.pm
 ${P5SITE}/PPI/Cache.pm
@@ -12,7 +12,6 @@ ${P5SITE}/PPI/Element.pm
 ${P5SITE}/PPI/Exception/
 ${P5SITE}/PPI/Exception.pm
 ${P5SITE}/PPI/Exception/ParserRejection.pm
-${P5SITE}/PPI/Exception/ParserTimeout.pm
 ${P5SITE}/PPI/Find.pm
 ${P5SITE}/PPI/Lexer.pm
 ${P5SITE}/PPI/Node.pm
@@ -115,6 +114,7 @@ ${P5SITE}/PPI/XSAccessor.pm
 @man man/man3p/PPI::Document::Normalized.3p
 @man man/man3p/PPI::Dumper.3p
 @man man/man3p/PPI::Element.3p
+@man man/man3p/PPI::Exception.3p
 @man man/man3p/PPI::Find.3p
 @man man/man3p/PPI::Lexer.3p
 @man man/man3p/PPI::Node.3p
