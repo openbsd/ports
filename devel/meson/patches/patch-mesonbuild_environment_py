@@ -1,0 +1,16 @@
+$OpenBSD: patch-mesonbuild_environment_py,v 1.1 2019/01/13 10:20:18 ajacoutot Exp $
+
+https://github.com/mesonbuild/meson/pull/4766
+
+Index: mesonbuild/environment.py
+--- mesonbuild/environment.py.orig
++++ mesonbuild/environment.py
+@@ -237,6 +237,8 @@ def detect_cpu_family(compilers):
+         trial = 'arm'
+     elif trial.startswith('ppc64'):
+         trial = 'ppc64'
++    elif trial == 'macppc':
++        trial = 'ppc'
+     elif trial == 'powerpc':
+         trial = 'ppc'
+         # FreeBSD calls both ppc and ppc64 "powerpc".
