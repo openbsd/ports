@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_resource_cxx,v 1.1 2019/01/13 15:19:52 cwen Exp $
+Fix missing header for ports-gcc
+Index: src/resource.cxx
+--- src/resource.cxx.orig
++++ src/resource.cxx
+@@ -19,6 +19,7 @@
+ // (See the included file COPYING / GPL-2.0)
+ //
+ 
++#include <string.h>
+ #include "resource.h"
+ #include "blackboxstyle.h"
+ 

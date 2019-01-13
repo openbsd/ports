@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Baseresource_cxx,v 1.1 2019/01/13 15:19:52 cwen Exp $
+Fix missing header for ports-gcc
+Index: src/Baseresource.cxx
+--- src/Baseresource.cxx.orig
++++ src/Baseresource.cxx
+@@ -22,6 +22,7 @@
+ #include <string>
+ #include "Baseresource.h"
+ #include <stdio.h>
++#include <string.h>
+ #include "Menu.hh"
+ 
+ BaseResource::BaseResource(bt::Application &_app, unsigned int _screen, const std::string &blackbox_rc_filename, const std::string &filename) : 
