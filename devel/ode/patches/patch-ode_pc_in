@@ -1,0 +1,12 @@
+$OpenBSD: patch-ode_pc_in,v 1.1 2019/01/13 15:08:01 pascal Exp $
+
+Index: ode.pc.in
+--- ode.pc.in.orig
++++ ode.pc.in
+@@ -8,5 +8,5 @@ Name: ode
+ Description: Open Dynamics Engine
+ Version: @ODE_VERSION@
+ Libs: -L${libdir} -lode
+-Libs.private: -lstdc++ -lm
++Libs.private: -lm
+ Cflags: -I${includedir}
