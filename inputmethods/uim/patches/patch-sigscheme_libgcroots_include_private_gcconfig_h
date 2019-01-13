@@ -1,0 +1,118 @@
+$OpenBSD: patch-sigscheme_libgcroots_include_private_gcconfig_h,v 1.4 2019/01/13 15:05:33 pascal Exp $
+
+Index: sigscheme/libgcroots/include/private/gcconfig.h
+--- sigscheme/libgcroots/include/private/gcconfig.h.orig
++++ sigscheme/libgcroots/include/private/gcconfig.h
+@@ -62,6 +62,14 @@
+ # endif
+ 
+ /* Determine the machine type: */
++# if defined(__aarch64__)
++#    define AARCH64
++#    if !defined(LINUX) && !defined(DARWIN) && !defined(FREEBSD) \
++        && !defined(OPENBSD)
++#      define NOSYS
++#      define mach_type_known
++#    endif
++# endif
+ # if defined(__arm__) || defined(__thumb__)
+ #    define ARM32
+ #    if !defined(LINUX) && !defined(NETBSD)
+@@ -75,6 +83,10 @@
+ # if defined(hp9000s300)
+ #    error M68K based HP machines no longer supported.
+ # endif
++# if defined(OPENBSD) && defined(__aarch64__)
++#    define AARCH64
++#    define mach_type_known
++# endif
+ # if defined(OPENBSD) && defined(m68k)
+ #    define M68K
+ #    define mach_type_known
+@@ -1721,6 +1733,86 @@
+ #   define DATAEND (_end)
+ #   define CACHE_LINE_SIZE 256
+ #   define GETPAGESIZE() 4096
++#   endif
++# endif
++
++# ifdef AARCH64
++#   define MACH_TYPE "AARCH64"
++#   ifdef __ILP32__
++#     define CPP_WORDSZ 32
++#     define ALIGNMENT 4
++#   else
++#     define CPP_WORDSZ 64
++#     define ALIGNMENT 8
++#   endif
++#   ifndef HBLKSIZE
++#     define HBLKSIZE 4096
++#   endif
++#   ifdef LINUX
++#     define OS_TYPE "LINUX"
++#     define LINUX_STACKBOTTOM
++#     define DYNAMIC_LOADING
++      extern int __data_start[];
++      extern int _end[];
++#     define DATASTART ((ptr_t)__data_start)
++#     define DATAEND ((ptr_t)(&_end))
++#   endif
++#   ifdef DARWIN
++      /* iOS */
++#     define OS_TYPE "DARWIN"
++#     define DARWIN_DONT_PARSE_STACK
++#     ifndef GC_DONT_REGISTER_MAIN_STATIC_DATA
++#       define DYNAMIC_LOADING
++#     endif
++#     define DATASTART ((ptr_t)get_etext())
++#     define DATAEND   ((ptr_t)get_end())
++#     define STACKBOTTOM ((ptr_t)0x16fdfffff)
++#     ifndef USE_MMAP
++#       define USE_MMAP
++#     endif
++#     define USE_MMAP_ANON
++#     define MPROTECT_VDB
++#     include <unistd.h>
++#     define GETPAGESIZE() (unsigned)getpagesize()
++      /* FIXME: There seems to be some issues with trylock hanging on   */
++      /* darwin. This should be looked into some more.                  */
++#     define NO_PTHREAD_TRYLOCK
++#     if TARGET_OS_IPHONE && !defined(NO_DYLD_BIND_FULLY_IMAGE)
++#       define NO_DYLD_BIND_FULLY_IMAGE
++#     endif
++#   endif
++#   ifdef FREEBSD
++#     define OS_TYPE "FREEBSD"
++#     ifndef GC_FREEBSD_THREADS
++#       define MPROTECT_VDB
++#     endif
++#     define FREEBSD_STACKBOTTOM
++#     ifdef __ELF__
++#       define DYNAMIC_LOADING
++#     endif
++      extern char etext[];
++#     define DATASTART GC_FreeBSDGetDataStart(0x1000, (ptr_t)etext)
++#     define DATASTART_USES_BSDGETDATASTART
++#   endif
++#   ifdef OPENBSD
++#     define OS_TYPE "OPENBSD"
++#     ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM ((ptr_t)USRSTACK)
++#     endif
++      extern int __data_start[];
++#     define DATASTART ((ptr_t)__data_start)
++      extern int _end[];
++#     define DATAEND ((ptr_t)(&_end))
++#     define DYNAMIC_LOADING
++#   endif
++#   ifdef NOSYS
++      /* __data_start is usually defined in the target linker script.   */
++      extern int __data_start[];
++#     define DATASTART ((ptr_t)__data_start)
++      extern void *__stack_base__;
++#     define STACKBOTTOM ((ptr_t)__stack_base__)
+ #   endif
+ # endif
+ 
