@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/13 14:23:12 cwen Exp $
 
 COMMENT=		track the number of times subs are called
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Test-SubCalls-1.09
-REVISION=		0
+DISTNAME=		Test-SubCalls-1.10
 CATEGORIES=		devel
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
