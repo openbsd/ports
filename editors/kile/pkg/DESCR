@@ -1,0 +1,13 @@
+Kile is a user-friendly TeX/LaTeX editor for KDE. The main features are:
+
+  * Auto-completion of (La)TeX commands.
+  * Templates and wizards make starting a new document very little work.
+  * Easy insertion of many standard tags and symbols and the option to
+    define (an arbitrary number of) user defined tags.
+  * Easy finding chapter or sections.
+  * Collecting documents that belong together into a project.
+  * Easy insertion of citations and references when using projects.
+  * Flexible and smart build system to compile your LaTeX documents.
+  * QuickPreview, preview a selected part of your document.
+  * Easy access to various help sources.
+  * Advanced editing commands.
