@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/05 15:37:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/13 14:33:42 cwen Exp $
 ${P5SITE}/PPIx/
 ${P5SITE}/PPIx/Regexp/
 ${P5SITE}/PPIx/Regexp.pm
@@ -14,6 +14,7 @@ ${P5SITE}/PPIx/Regexp/StringTokenizer.pm
 ${P5SITE}/PPIx/Regexp/Structure/
 ${P5SITE}/PPIx/Regexp/Structure.pm
 ${P5SITE}/PPIx/Regexp/Structure/Assertion.pm
+${P5SITE}/PPIx/Regexp/Structure/Atomic_Script_Run.pm
 ${P5SITE}/PPIx/Regexp/Structure/BranchReset.pm
 ${P5SITE}/PPIx/Regexp/Structure/Capture.pm
 ${P5SITE}/PPIx/Regexp/Structure/CharClass.pm
@@ -25,6 +26,7 @@ ${P5SITE}/PPIx/Regexp/Structure/Quantifier.pm
 ${P5SITE}/PPIx/Regexp/Structure/RegexSet.pm
 ${P5SITE}/PPIx/Regexp/Structure/Regexp.pm
 ${P5SITE}/PPIx/Regexp/Structure/Replacement.pm
+${P5SITE}/PPIx/Regexp/Structure/Script_Run.pm
 ${P5SITE}/PPIx/Regexp/Structure/Subexpression.pm
 ${P5SITE}/PPIx/Regexp/Structure/Switch.pm
 ${P5SITE}/PPIx/Regexp/Structure/Unknown.pm
@@ -49,10 +51,12 @@ ${P5SITE}/PPIx/Regexp/Token/Greediness.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/
 ${P5SITE}/PPIx/Regexp/Token/GroupType.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/Assertion.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Atomic_Script_Run.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/BranchReset.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/Code.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/Modifier.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/NamedCapture.pm
+${P5SITE}/PPIx/Regexp/Token/GroupType/Script_Run.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/Subexpression.pm
 ${P5SITE}/PPIx/Regexp/Token/GroupType/Switch.pm
 ${P5SITE}/PPIx/Regexp/Token/Interpolation.pm
@@ -80,6 +84,7 @@ ${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp::StringTokenizer.3p
 @man man/man3p/PPIx::Regexp::Structure.3p
 @man man/man3p/PPIx::Regexp::Structure::Assertion.3p
+@man man/man3p/PPIx::Regexp::Structure::Atomic_Script_Run.3p
 @man man/man3p/PPIx::Regexp::Structure::BranchReset.3p
 @man man/man3p/PPIx::Regexp::Structure::Capture.3p
 @man man/man3p/PPIx::Regexp::Structure::CharClass.3p
@@ -91,6 +96,7 @@ ${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp::Structure::RegexSet.3p
 @man man/man3p/PPIx::Regexp::Structure::Regexp.3p
 @man man/man3p/PPIx::Regexp::Structure::Replacement.3p
+@man man/man3p/PPIx::Regexp::Structure::Script_Run.3p
 @man man/man3p/PPIx::Regexp::Structure::Subexpression.3p
 @man man/man3p/PPIx::Regexp::Structure::Switch.3p
 @man man/man3p/PPIx::Regexp::Structure::Unknown.3p
@@ -111,10 +117,12 @@ ${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp::Token::Greediness.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::Assertion.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Atomic_Script_Run.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::BranchReset.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::Code.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::Modifier.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::NamedCapture.3p
+@man man/man3p/PPIx::Regexp::Token::GroupType::Script_Run.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::Subexpression.3p
 @man man/man3p/PPIx::Regexp::Token::GroupType::Switch.3p
 @man man/man3p/PPIx::Regexp::Token::Interpolation.3p
