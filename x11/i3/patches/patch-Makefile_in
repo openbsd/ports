@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2018/03/29 21:05:32 kn Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2019/01/13 12:48:10 rsadowski Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -752,10 +752,7 @@ i3include_HEADERS = \
+@@ -754,10 +754,7 @@ i3include_HEADERS = \
  dist_bin_SCRIPTS = \
  	i3-dmenu-desktop \
  	i3-migrate-config-to-v4 \
@@ -14,7 +14,7 @@ Index: Makefile.in
  
  i3confdir = $(sysconfdir)/i3
  dist_i3conf_DATA = \
-@@ -911,9 +908,6 @@ docs_poddir = ${docdir}
+@@ -913,9 +910,6 @@ docs_poddir = ${docdir}
  @BUILD_MANS_TRUE@	man/i3-nagbar.1 \
  @BUILD_MANS_TRUE@	man/i3-config-wizard.1 \
  @BUILD_MANS_TRUE@	man/i3-migrate-config-to-v4.1 \
@@ -24,7 +24,7 @@ Index: Makefile.in
  @BUILD_MANS_TRUE@	man/i3-dump-log.1
  
  @BUILD_MANS_TRUE@pod_MANS = \
-@@ -3174,7 +3168,7 @@ distclean-tags:
+@@ -3217,7 +3211,7 @@ distclean-tags:
  
  # Leading 'am--fnord' is there to ensure the list of targets does not
  # expand to empty, as could happen e.g. with make check TESTS=''.
@@ -33,7 +33,7 @@ Index: Makefile.in
  am--force-recheck:
  	@:
  
-@@ -3740,7 +3734,7 @@ i3-config-parser.stamp: parser/$(dirstamp) generate-co
+@@ -3783,7 +3777,7 @@ i3-config-parser.stamp: parser/$(dirstamp) generate-co
  ################################################################################
  
  anyevent-i3.stamp: AnyEvent-I3/lib/AnyEvent/I3.pm

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_manage_c,v 1.21 2018/03/29 21:05:32 kn Exp $
+$OpenBSD: patch-src_manage_c,v 1.22 2019/01/13 12:48:10 rsadowski Exp $
 
 Fix size hints for ssh-askpass
 
 Index: src/manage.c
 --- src/manage.c.orig
 +++ src/manage.c
-@@ -501,10 +501,16 @@ void manage_window(xcb_window_t window, xcb_get_window
+@@ -499,10 +499,16 @@ void manage_window(xcb_window_t window, xcb_get_window
      if (cwindow->dock)
          want_floating = false;
  

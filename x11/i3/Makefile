@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.113 2018/06/27 21:04:12 espie Exp $
+# $OpenBSD: Makefile,v 1.114 2019/01/13 12:48:10 rsadowski Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.15
-REVISION =	0
+DISTNAME =	i3-4.16
 
 CATEGORIES =	x11
 
@@ -36,7 +35,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dmenu \
 		x11/i3status \
 		x11/p5-AnyEvent-I3
-TEST_DEPENDS =	x11/p5-AnyEvent-I3
+
+# Tests now use the X11::XCB Perl module, not yet in ports.
+NO_TEST =	Yes
+#TEST_DEPENDS =	x11/p5-AnyEvent-I3
 
 FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
 
