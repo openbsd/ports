@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/01/11 01:09:50 danj Exp $
+# $OpenBSD: Makefile,v 1.54 2019/01/14 18:17:50 jca Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -31,6 +31,8 @@ MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
 .if ${MACHINE_ARCH:Mhppa}
 MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
 .endif
+
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	devel/pcre
 
