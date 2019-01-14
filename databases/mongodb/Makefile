@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/01/13 23:18:42 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/01/14 11:46:56 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -41,7 +41,8 @@ MODSCONS_ENV =	CC="${CC}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}" \
 		CPPPATH="${LOCALBASE}/include" \
-		LIBPATH="${LOCALBASE}/lib"
+		LIBPATH="${LOCALBASE}/lib" \
+		VERBOSE=true
 MODSCONS_FLAGS += --prefix="${PREFIX}" \
 		  --opt=on \
 		  --ssl=SSL \
