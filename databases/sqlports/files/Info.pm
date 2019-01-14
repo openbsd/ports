@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.28 2019/01/11 21:52:25 espie Exp $
+# $OpenBSD: Info.pm,v 1.29 2019/01/14 18:37:15 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -115,7 +115,19 @@ our $vars = {
     MISSING_FILES => 'IgnoredVar',
 };
 
+my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE
+    COMMENT PKGNAME ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PKGSTEM PREFIX
+    PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR
+    EPOCH REVISION STATIC_PLIST PKG_ARCH);
+
+my $indexed = {map {($_, 1)} @indexed};
 our $unknown = {};
+
+sub is_indexed
+{
+	my ($class, $name) = @_;
+	return $indexed->{$name};
+}
 
 sub new
 {
