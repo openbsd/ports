@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_gen-qt-projectfile,v 1.4 2018/04/25 19:11:03 bcallah Exp $
+$OpenBSD: patch-build_gen-qt-projectfile,v 1.5 2019/01/14 08:51:03 sebastia Exp $
 Index: build/gen-qt-projectfile
 --- build/gen-qt-projectfile.orig
 +++ build/gen-qt-projectfile
-@@ -13,14 +13,14 @@ for a in $uis; do
+@@ -8,14 +8,14 @@ for a in $uis; do
  echo
  
  echo "FORMS = \\"

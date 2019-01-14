@@ -1,90 +1,110 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2018/04/25 19:11:03 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2019/01/14 08:51:03 sebastia Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -170,7 +170,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
- endif ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
+@@ -208,7 +208,7 @@ endif (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
  
- set(CMAKE_CXX_FLAGS_DEBUG   "-g")
--set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -DQT_NO_DEBUG")
-+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -DQT_NO_DEBUG")
+ if (NOT MSVC)
+    set(CMAKE_CXX_FLAGS_DEBUG   "-g")
+-   set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -DQT_NO_DEBUG")
++   set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -DQT_NO_DEBUG")
+ endif (NOT MSVC)
  
  if (APPLE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC -stdlib=libc++ -Wno-inconsistent-missing-override")
-@@ -328,13 +328,13 @@ endif (BUILD_ALSA)
+@@ -384,13 +384,13 @@ endif (BUILD_ALSA)
  ## MIDI
  ##
  
--if (APPLE OR MINGW)
-+if (APPLE OR MINGW OR UNIX)
+-if (APPLE OR MINGW OR MSVC)
++if (APPLE OR MINGW OR MSVC OR UNIX)
        set (HAS_MIDI 1)
--else (APPLE OR MINGW)
-+else (APPLE OR MINGW OR UNIX)
+-else (APPLE OR MINGW OR MSVC)
++else (APPLE OR MINGW OR MSVC OR UNIX)
        if (USE_ALSA)
              set (HAS_MIDI 1)
        endif (USE_ALSA)
--endif (APPLE OR MINGW)
-+endif (APPLE OR MINGW OR UNIX)
+-endif (APPLE OR MINGW OR MSVC)
++endif (APPLE OR MINGW OR MSVC OR UNIX)
  
  ##
- ## pulseaudio
-@@ -342,8 +342,8 @@ endif (APPLE OR MINGW)
+ ## PulseAudio
+@@ -398,8 +398,8 @@ endif (APPLE OR MINGW OR MSVC)
  
  if (BUILD_PULSEAUDIO)
        if (PULSEAUDIO_FOUND)
 -            set(USE_PULSEAUDIO 1)
--            message("Pulseaudio found. Pulseaudio support enabled.")
+-            message("PulseAudio found. PulseAudio support enabled.")
 +            set(USE_PULSEAUDIO 0)
-+            message("Pulseaudio support disabled.")
++            message("PulseAudio support disabled.")
        else (PULSEAUDIO_FOUND)
-             message(SEND_ERROR "Error: Pulseaudio support requested (BUILD_PULSEAUDIO=${BUILD_PULSEAUDIO}), but Pulseaudio was not found.")
+             message(SEND_ERROR "Error: PulseAudio support requested (BUILD_PULSEAUDIO=${BUILD_PULSEAUDIO}), but PulseAudio was not found.")
        endif (PULSEAUDIO_FOUND)
-@@ -604,7 +604,7 @@ if (NOT MINGW AND NOT APPLE)
+@@ -689,7 +689,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
              )
      endif (GZIP_EXECUTABLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-     # install man pages in either compressed or uncompressed form
+     # Install man pages in either compressed or uncompressed form
 -    install( FILES ${MAN_BUILD} DESTINATION share/man/man1 COMPONENT doc)
 +    install( FILES ${MAN_BUILD} DESTINATION man/man1 COMPONENT doc)
-     # create symlink alias for man pages so `man musescore` = `man mscore`
+     # Create symlink alias for man pages so `man musescore` = `man mscore`
      find_program( LN_EXECUTABLE ln DOC "A tool for creating symbolic link aliases (optional)." )
      if (LN_EXECUTABLE)
-@@ -615,7 +615,7 @@ if (NOT MINGW AND NOT APPLE)
+@@ -700,7 +700,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
              COMMAND ${LN_EXECUTABLE} -sf "${MAN_FULL_NAME}" "${MAN_FULL_ALIAS}"
              COMMAND echo 'Symlink alias: ${MAN_FULL_ALIAS} -> ${MAN_FULL_NAME}'
              )
 -        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION share/man/man1 COMPONENT doc)
 +        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION man/man1 COMPONENT doc)
       else (LN_EXECUTABLE)
-          message(STATUS "ln not found (it is optional). No symlink aliases will be created.")
+          message(STATUS "'ln' not found (it is optional). No symlink aliases will be created.")
       endif (LN_EXECUTABLE)
-@@ -635,7 +635,7 @@ execute_process(
-     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-     )
- if (NOT MINGW)
--  set(BUILD_PCH true)
-+  set(BUILD_PCH false)
- endif(NOT MINGW)
+@@ -726,10 +726,13 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
  
- precompiled_header(QT_INCLUDES all ${BUILD_PCH})
-@@ -721,16 +721,16 @@ include(Packaging)
- ##  custom target for translation generation
+ # MSVC does not require these targets, as all.h is not copied and the
+ #   PCH generation is done per-project
+-if (NOT MSVC)
++if (NOT MSVC AND NOT UNIX)
+    ADD_CUSTOM_TARGET(mops1 DEPENDS ${PROJECT_BINARY_DIR}/all.h)
+    ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
+-endif (NOT MSVC)
++else  (NOT MSVC AND NOT UNIX)
++   ADD_CUSTOM_TARGET(mops1)
++   ADD_CUSTOM_TARGET(mops2)
++endif (NOT MSVC AND NOT UNIX)
+ 
  ##
+ ## Add subdirs
+@@ -826,13 +829,13 @@ include(Packaging)
+ 
+ ## lupdate is used to generate the translation text files based off of the source code
  
 -add_custom_target(lupdate
 +add_custom_target(lupdate-qt5
     COMMAND ${PROJECT_SOURCE_DIR}/build/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro
--   COMMAND ${QT_LUPDATE_EXECUTABLE} ${PROJECT_BINARY_DIR}/mscore.pro
+-   COMMAND Qt5::lupdate ${PROJECT_BINARY_DIR}/mscore.pro
 +   COMMAND lupdate-qt5 ${PROJECT_BINARY_DIR}/mscore.pro
     COMMAND ${PROJECT_SOURCE_DIR}/build/gen-instruments-projectfile ${PROJECT_SOURCE_DIR}/share/instruments > instruments.pro
--   COMMAND ${QT_LUPDATE_EXECUTABLE} ${PROJECT_BINARY_DIR}/instruments.pro
+-   COMMAND Qt5::lupdate ${PROJECT_BINARY_DIR}/instruments.pro
 +   COMMAND lupdate-qt5 ${PROJECT_BINARY_DIR}/instruments.pro
+    COMMAND ${PROJECT_SOURCE_DIR}/build/gen-tours-projectfile ${PROJECT_SOURCE_DIR}/share/tours > tours.pro
+-   COMMAND Qt5::lupdate ${PROJECT_BINARY_DIR}/tours.pro
++   COMMAND lupdate-qt5 ${PROJECT_BINARY_DIR}/tours.pro
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
     )
  
+@@ -851,11 +854,11 @@ file(GLOB QT_TS_FILES
+    "share/locale/qt*.ts"
+ )
+ 
 -add_custom_target(lrelease
--   COMMAND ${QT_LRELEASE_EXECUTABLE} ${PROJECT_SOURCE_DIR}/share/locale/*.ts
+-   COMMAND Qt5::lrelease ${INSTRUMENTS_TS_FILES}
+-   COMMAND Qt5::lrelease ${MSCORE_TS_FILES}
+-   COMMAND Qt5::lrelease ${TOURS_TS_FILES}
+-   COMMAND Qt5::lrelease ${QT_TS_FILES}
 +add_custom_target(lrelease-qt5
-+   COMMAND lrelease-qt5 ${PROJECT_SOURCE_DIR}/share/locale/*.ts
++   COMMAND lrelease-qt5 ${INSTRUMENTS_TS_FILES}
++   COMMAND lrelease-qt5 ${MSCORE_TS_FILES}
++   COMMAND lrelease-qt5 ${TOURS_TS_FILES}
++   COMMAND lrelease-qt5 ${QT_TS_FILES}
     WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-    )
+ )
  
