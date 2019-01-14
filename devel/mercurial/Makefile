@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/01/08 23:08:07 juanfra Exp $
+# $OpenBSD: Makefile,v 1.91 2019/01/14 23:06:35 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -19,7 +19,9 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/release/
+MASTER_SITES =		https://www.mercurial-scm.org/release/ \
+			https://download.tuxfamily.org/jod/devel/mercurial/ \
+			ftp://download.tuxfamily.org/jod/devel/mercurial/
 
 MODULES =		lang/python x11/tk
 USE_GMAKE =		Yes
