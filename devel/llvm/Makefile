@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2019/01/05 11:38:49 jca Exp $
+# $OpenBSD: Makefile,v 1.205 2019/01/14 16:08:44 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,9 +20,9 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	22
-REVISION-python = 4
-REVISION-lldb =	1
+REVISION-main =	23
+REVISION-python = 5
+REVISION-lldb =	2
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -87,6 +87,15 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
 			-DBacktrace_LIBRARY=''
+
+# Disable some protections in the compiler to regain performance
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "i386"
+CXXFLAGS +=	-fno-ret-protector
+.endif
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CXXFLAGS +=	-mno-retpoline
+.endif
 
 # Workaround relocation overflow
 .if ${MACHINE_ARCH} == "powerpc"
