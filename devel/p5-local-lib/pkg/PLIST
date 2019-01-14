@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/14 21:25:44 kn Exp $
+${P5SITE}/POD2/
+${P5SITE}/POD2/DE/
+${P5SITE}/POD2/DE/local/
+${P5SITE}/POD2/DE/local/lib.pod
+${P5SITE}/POD2/PT_BR/
+${P5SITE}/POD2/PT_BR/local/
+${P5SITE}/POD2/PT_BR/local/lib.pod
+${P5SITE}/lib/
+${P5SITE}/lib/core/
+${P5SITE}/lib/core/only.pm
+${P5SITE}/local/
+${P5SITE}/local/lib.pm
+@man man/man3p/POD2::DE::local::lib.3p
+@man man/man3p/POD2::PT_BR::local::lib.3p
+@man man/man3p/lib::core::only.3p
+@man man/man3p/local::lib.3p
