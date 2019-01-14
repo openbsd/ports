@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/15 20:15:09 solene Exp $
+# $OpenBSD: Makefile,v 1.10 2019/01/14 18:05:43 solene Exp $
 
 COMMENT =	full and incremental backups on filesystem
-DISTNAME =	faubackup-0.5.9
-REVISION =	1
+V =		v0.6.0
+DISTNAME =	faubackup-${V}
+PKGNAME =       ${DISTNAME:S/-v/-/}
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://freshmeat.sourceforge.net/projects/faubackup
+MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
-# GPLv2
+HOMEPAGE =	https://framagit.org/soleneBSD/faubackup/
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c popt>=0.3
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=faubackup/}
+MASTER_SITES =		https://framagit.org/soleneBSD/faubackup/-/archive/${V}/
 
 LIB_DEPENDS =		devel/popt
 TEST_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS}
