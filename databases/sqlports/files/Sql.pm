@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.29 2019/01/12 13:57:41 espie Exp $
+# $OpenBSD: Sql.pm,v 1.30 2019/01/14 18:38:04 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -326,6 +326,9 @@ sub contents
 sub columns
 {
 	my $self = shift;
+	if (!defined $self->{select}{columns}) {
+		die "View ", $self->name, " has no columns";
+	}
 	return @{$self->{select}{columns}};
 }
 
