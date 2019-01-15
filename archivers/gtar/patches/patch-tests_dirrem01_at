@@ -1,16 +1,25 @@
-$OpenBSD: patch-tests_dirrem01_at,v 1.1 2019/01/13 15:34:55 naddy Exp $
+$OpenBSD: patch-tests_dirrem01_at,v 1.2 2019/01/15 15:23:51 naddy Exp $
 
-Re-add sleep to fix race condition.
+Fix expected output in dirrem tests.
+https://git.savannah.gnu.org/cgit/tar.git/commit/?id=f86722c34c92f265bc9a20cb171d2fcfeab7d341
 
 Index: tests/dirrem01.at
 --- tests/dirrem01.at.orig
 +++ tests/dirrem01.at
-@@ -47,7 +47,7 @@ gnu)   CPT=3;;
- esac
+@@ -48,13 +48,14 @@ esac
  
  genfile --run --checkpoint=$CPT --unlink dir/sub/file2 --unlink dir/sub -- \
--       tar --blocking-factor=1 -c -f archive.tar \
-+       tar --blocking-factor=1 --checkpoint-action='sleep=1' -c -f archive.tar \
-        --listed-incremental db -v dir >/dev/null
+        tar --blocking-factor=1 -c -f archive.tar \
+-       --listed-incremental db -v dir >/dev/null
++       --listed-incremental db \
++       --warning=no-file-changed \
++       -v dir >/dev/null
  ],
  [1],
+ [ignore],
+ [tar: dir: Directory is new
+ tar: dir/sub: Directory is new
+-tar: dir/sub: file changed as we read it
+ tar: dir/sub: File removed before we read it
+ ],[],[],[gnu,posix])
+ 
