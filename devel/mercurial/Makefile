@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/01/14 23:06:35 juanfra Exp $
+# $OpenBSD: Makefile,v 1.92 2019/01/15 23:21:47 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -52,6 +52,9 @@ SCRIPTS =		hg-ssh hgk \
 WANTLIB-main +=		${MODPY_WANTLIB} c pthread
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
+
+# This is needed for the development versions
+WRKDIST =		${WRKDIR}/${DISTNAME:C/pre20.*$//}
 
 MODPY_ADJ_FILES =	hgweb.cgi \
 			contrib/dumprevlog \
