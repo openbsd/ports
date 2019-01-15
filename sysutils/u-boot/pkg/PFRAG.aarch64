@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.7 2018/03/15 02:25:58 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.8 2019/01/15 05:44:18 jsg Exp $
 share/u-boot/
 share/u-boot/a64-olinuxino/
 share/u-boot/a64-olinuxino/sunxi-spl.bin
@@ -55,6 +55,13 @@ share/u-boot/orangepi_win/u-boot-sunxi-with-spl.bin
 share/u-boot/orangepi_win/u-boot.bin
 share/u-boot/orangepi_win/u-boot.img
 share/u-boot/orangepi_win/u-boot.itb
+share/u-boot/pine64-lts/
+share/u-boot/pine64-lts/sunxi-spl.bin
+share/u-boot/pine64-lts/u-boot
+share/u-boot/pine64-lts/u-boot-sunxi-with-spl.bin
+share/u-boot/pine64-lts/u-boot.bin
+share/u-boot/pine64-lts/u-boot.img
+share/u-boot/pine64-lts/u-boot.itb
 share/u-boot/pine64_plus/
 share/u-boot/pine64_plus/sunxi-spl.bin
 share/u-boot/pine64_plus/u-boot
@@ -62,6 +69,13 @@ share/u-boot/pine64_plus/u-boot-sunxi-with-spl.bin
 share/u-boot/pine64_plus/u-boot.bin
 share/u-boot/pine64_plus/u-boot.img
 share/u-boot/pine64_plus/u-boot.itb
+share/u-boot/pinebook/
+share/u-boot/pinebook/sunxi-spl.bin
+share/u-boot/pinebook/u-boot
+share/u-boot/pinebook/u-boot-sunxi-with-spl.bin
+share/u-boot/pinebook/u-boot.bin
+share/u-boot/pinebook/u-boot.img
+share/u-boot/pinebook/u-boot.itb
 share/u-boot/qemu_arm64/
 share/u-boot/qemu_arm64/u-boot
 share/u-boot/qemu_arm64/u-boot.bin

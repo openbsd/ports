@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_rpi_3_32b_defconfig,v 1.5 2018/10/17 22:21:29 jsg Exp $
+$OpenBSD: patch-configs_rpi_3_32b_defconfig,v 1.6 2019/01/15 05:44:18 jsg Exp $
 
 rpi: Use firmware provided device tree
 
@@ -19,10 +19,10 @@ to variants of RPi hardware.
 Index: configs/rpi_3_32b_defconfig
 --- configs/rpi_3_32b_defconfig.orig
 +++ configs/rpi_3_32b_defconfig
-@@ -14,7 +14,7 @@ CONFIG_SYS_PROMPT="U-Boot> "
- CONFIG_CMD_GPIO=y
+@@ -15,7 +15,7 @@ CONFIG_CMD_GPIO=y
  CONFIG_CMD_MMC=y
  CONFIG_CMD_USB=y
+ CONFIG_CMD_FS_UUID=y
 -CONFIG_OF_EMBED=y
 +CONFIG_OF_BOARD=y
  CONFIG_DEFAULT_DEVICE_TREE="bcm2837-rpi-3-b"

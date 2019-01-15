@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.44 2018/11/18 01:49:46 jsg Exp $
+#	$OpenBSD: Makefile,v 1.45 2019/01/15 05:44:18 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,8 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2018.11
-REVISION=	0
+VERSION=	2019.01
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -55,7 +54,9 @@ SUNXI64=\
 	orangepi_pc2 \
 	orangepi_prime \
 	orangepi_win \
+	pine64-lts \
 	pine64_plus \
+	pinebook \
 	sopine_baseboard
 BOARDS=\
 	mvebu_espressobin-88f3720 \
@@ -65,8 +66,7 @@ BOARDS=\
 .elif "${FLAVOR}" == "arm"
 OMAP=\
 	omap4_panda \
-	am335x_boneblack \
-	am57xx_evm
+	am335x_boneblack
 SUNXI64=
 SUNXI=\
 	A10-OLinuXino-Lime \
@@ -118,8 +118,7 @@ BOARDS=\
 	rpi_3_32b \
 	tinker-rk3288 \
 	turris_omnia \
-	vexpress_ca15_tc2 \
-	vexpress_ca9x4
+	vexpress_ca15_tc2
 .endif
 
 FILES=\
