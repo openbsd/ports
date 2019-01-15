@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.45 2019/01/15 05:44:18 jsg Exp $
+#	$OpenBSD: Makefile,v 1.46 2019/01/15 14:20:09 kirby Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.01
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -77,6 +78,7 @@ SUNXI=\
 	A20-OLinuXino_MICRO \
 	Bananapi \
 	Bananapi_m2m \
+	bananapi_m2_zero \
 	Bananapro \
 	CHIP \
 	Cubieboard \
