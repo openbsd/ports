@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/02 12:43:19 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/16 14:53:53 sthen Exp $
 
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2
+REVISION =	0
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
