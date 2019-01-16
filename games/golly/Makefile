@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/16 14:53:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/16 19:47:58 ajacoutot Exp $
 
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
@@ -21,8 +21,9 @@ LIB_DEPENDS =		x11/wxWidgets>=3.0.4
 RUN_DEPENDS =		devel/desktop-file-utils
 
 WANTLIB += ${COMPILER_LIBCXX} GL c m wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0
-WANTLIB += wx_gtk3u_html-3.0 z
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
+WANTLIB += z
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.
 WANTLIB += perl util ${MODPY_WANTLIB}
