@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/01/10 19:43:11 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2019/01/16 22:30:29 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
@@ -29,7 +29,7 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 RUN_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS=		graphics/lcms2 \
-			graphics/openjp2 \
+			graphics/openjp2>=2.3.0p0 \
 			graphics/libwebp
 
 MODPY_SETUPTOOLS=	Yes
