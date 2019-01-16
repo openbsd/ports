@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2019/01/13 09:43:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2019/01/16 19:55:18 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -14,19 +14,17 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.2
+GNOME_VERSION=		3.24.3
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2201.0   # 2402.0
-SHARED_LIBS +=  gtk-3                2201.0   # 2402.0
+SHARED_LIBS +=  gdk-3                2201.0   # 2403.0
+SHARED_LIBS +=  gtk-3                2201.0   # 2403.0
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -83,7 +81,7 @@ LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cloudprint=
 
-WANTLIB-cloudprint += ${WANTLIB} epoxy fribidi
+WANTLIB-cloudprint += ${WANTLIB} epoxy fribidi idn2 psl unistring
 WANTLIB-cloudprint += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
