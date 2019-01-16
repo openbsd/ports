@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.6 2018/07/06 00:18:39 bluhm Exp $
+$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.7 2019/01/16 12:53:23 bluhm Exp $
 
 Index: src/build-data/os/openbsd.txt
 --- src/build-data/os/openbsd.txt.orig
@@ -11,5 +11,5 @@ Index: src/build-data/os/openbsd.txt
 +soname_pattern_abi   "lib{libname}.so.${LIBbotan-2_VERSION}"
 +soname_pattern_patch "lib{libname}.so.${LIBbotan-2_VERSION}"
  
- <target_features>
- posix1
+ shared_lib_symlinks no
+ 

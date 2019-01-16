@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/10/22 21:28:52 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/01/16 12:53:23 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -20,6 +20,7 @@ include/botan-2/botan/atomic.h
 include/botan-2/botan/auto_rng.h
 include/botan-2/botan/b64_filt.h
 include/botan-2/botan/base32.h
+include/botan-2/botan/base58.h
 include/botan-2/botan/base64.h
 include/botan-2/botan/basefilt.h
 include/botan-2/botan/bcrypt.h
@@ -339,6 +340,8 @@ share/botan-2/data/asn1_print/output5.txt
 share/botan-2/data/asn1_print/output6.txt
 share/botan-2/data/asn1_time.vec
 share/botan-2/data/base32.vec
+share/botan-2/data/base58.vec
+share/botan-2/data/base58c.vec
 share/botan-2/data/base64.vec
 share/botan-2/data/block/
 share/botan-2/data/block/aes.vec
@@ -466,6 +469,7 @@ share/botan-2/data/pubkey/ecc.vec
 share/botan-2/data/pubkey/ecc_invalid.vec
 share/botan-2/data/pubkey/ecdh.vec
 share/botan-2/data/pubkey/ecdsa_invalid.vec
+share/botan-2/data/pubkey/ecdsa_key_recovery.vec
 share/botan-2/data/pubkey/ecdsa_prob.vec
 share/botan-2/data/pubkey/ecdsa_rfc6979.vec
 share/botan-2/data/pubkey/ecdsa_verify.vec
@@ -540,6 +544,9 @@ share/botan-2/data/tls/new_session_ticket.vec
 share/botan-2/data/tls/server_hello.vec
 share/botan-2/data/tls_cbc.vec
 share/botan-2/data/tls_cbc_padding.vec
+share/botan-2/data/tss/
+share/botan-2/data/tss/generation.vec
+share/botan-2/data/tss/recovery.vec
 share/botan-2/data/util.vec
 share/botan-2/data/utils/
 share/botan-2/data/utils/read_kv.vec
@@ -1940,6 +1947,7 @@ share/doc/botan-2/manual/stream_ciphers.rst
 share/doc/botan-2/manual/support.rst
 share/doc/botan-2/manual/tls.rst
 share/doc/botan-2/manual/tpm.rst
+share/doc/botan-2/manual/tss.rst
 share/doc/botan-2/manual/versions.rst
 share/doc/botan-2/manual/x509.rst
 share/doc/botan-2/news.txt
