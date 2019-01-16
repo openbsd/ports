@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.95 2018/10/26 16:12:24 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.96 2019/01/16 17:11:57 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=	ruby24 ruby25
+FLAVORS=	ruby24 ruby25 ruby26
 .      if !${CONFIGURE_STYLE:L:Mext}
 FLAVORS+=	jruby
 .      endif
@@ -52,11 +52,12 @@ FLAVOR =		ruby25
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby24 ruby25 jruby
+.    for i in ruby24 ruby25 ruby26 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby24} || \ 
             ${FLAVOR:N$i:Mruby25} || \ 
+            ${FLAVOR:N$i:Mruby26} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
@@ -86,9 +87,9 @@ MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
 MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
 MODRUBY_FLAVOR =	jruby
 MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
-MODRUBY_LIBREV =	2.3.0
+MODRUBY_LIBREV =	2.5
 MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
-MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
+MODRUBY_SITEDIR =	jruby/lib/ruby/${MODRUBY_LIBREV}/site_ruby
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
 RUBY=			${LOCALBASE}/jruby/bin/jruby
