@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2018/12/11 09:41:28 landry Exp $
+# $OpenBSD: Makefile,v 1.98 2019/01/16 20:09:12 landry Exp $
 
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3250300
-PKGNAME=	sqlite3-3.25.3
+DISTNAME =	sqlite-autoconf-3260000
+PKGNAME=	sqlite3-3.26.0
 
 SHARED_LIBS +=  sqlite3                   37.4 # 8.6
 
