@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2018/12/07 13:11:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2019/01/16 22:35:18 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -38,6 +38,10 @@ LIB_DEPENDS=		devel/glib2 \
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=		x11/dbus,-suid
+
+# org.freedesktop.ConsoleKit
+# XXX cyclic dependency: consolekit -> polkit -> consolekit
+#RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
