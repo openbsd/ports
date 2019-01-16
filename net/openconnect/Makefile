@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2019/01/16 14:43:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/01/16 14:47:22 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.02
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.4 # 5.5
 
@@ -42,8 +43,7 @@ LIB_DEPENDS=	archivers/lz4 \
 # further work
 TEST_DEPENDS=	net/ocserv
 
-FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect \
-		libexecdir=${PREFIX}/share/examples
+FAKE_FLAGS=	pkgdatadir=${PREFIX}/share/doc/openconnect
 
 CONFIGURE_STYLE=	gnu
 
@@ -65,7 +65,7 @@ LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 .endif
 
 post-install:
-	rm -rf ${PREFIX}/libexec/openconnect
+	rm -r ${PREFIX}/libexec/openconnect
 
 pre-test:
 	perl -pi -e s,/usr/sbin/ocserv,${LOCALBASE}/sbin/ocserv,g \
