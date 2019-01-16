@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.94 2019/01/10 08:39:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.95 2019/01/16 20:37:38 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -756,6 +756,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/run/condition.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/condition.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/configuration.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/configuration.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/run/domain_mapping.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/run/domain_mapping.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/gke.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/gke.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/k8s_object.py
@@ -902,6 +904,8 @@ google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree_markdown.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/cli_tree_markdown.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.pyc
+google-cloud-sdk/lib/googlecloudsdk/calliope/command_release_tracks.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/command_release_tracks.pyc
 google-cloud-sdk/lib/googlecloudsdk/calliope/concepts/
 google-cloud-sdk/lib/googlecloudsdk/calliope/concepts/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/calliope/concepts/__init__.pyc
@@ -2747,6 +2751,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/categorymanager_v1alpha2.js
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/cloudasset_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/__init__.pyc
@@ -2756,6 +2769,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/cloudass
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/cloudasset_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudasset_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/__init__.py
@@ -5057,8 +5071,7 @@ google-cloud-sdk/lib/surface/compute/instances/resume.py
 google-cloud-sdk/lib/surface/compute/instances/resume.pyc
 google-cloud-sdk/lib/surface/compute/instances/set_disk_auto_delete.py
 google-cloud-sdk/lib/surface/compute/instances/set_disk_auto_delete.pyc
-google-cloud-sdk/lib/surface/compute/instances/set_iam_policy.py
-google-cloud-sdk/lib/surface/compute/instances/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/compute/instances/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/compute/instances/set_machine_type.py
 google-cloud-sdk/lib/surface/compute/instances/set_machine_type.pyc
 google-cloud-sdk/lib/surface/compute/instances/set_min_cpu_platform.py
@@ -7491,6 +7504,11 @@ google-cloud-sdk/lib/surface/run/configurations/update.py
 google-cloud-sdk/lib/surface/run/configurations/update.pyc
 google-cloud-sdk/lib/surface/run/deploy.py
 google-cloud-sdk/lib/surface/run/deploy.pyc
+google-cloud-sdk/lib/surface/run/domain_mappings/
+google-cloud-sdk/lib/surface/run/domain_mappings/__init__.py
+google-cloud-sdk/lib/surface/run/domain_mappings/__init__.pyc
+google-cloud-sdk/lib/surface/run/domain_mappings/list.py
+google-cloud-sdk/lib/surface/run/domain_mappings/list.pyc
 google-cloud-sdk/lib/surface/run/revisions/
 google-cloud-sdk/lib/surface/run/revisions/__init__.py
 google-cloud-sdk/lib/surface/run/revisions/__init__.pyc
@@ -7920,6 +7938,8 @@ google-cloud-sdk/lib/surface/storage/delete.py
 google-cloud-sdk/lib/surface/storage/delete.pyc
 google-cloud-sdk/lib/surface/storage/list.py
 google-cloud-sdk/lib/surface/storage/list.pyc
+google-cloud-sdk/lib/surface/survey.py
+google-cloud-sdk/lib/surface/survey.pyc
 google-cloud-sdk/lib/surface/tasks/
 google-cloud-sdk/lib/surface/tasks/__init__.py
 google-cloud-sdk/lib/surface/tasks/__init__.pyc
