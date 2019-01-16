@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/03/19 11:41:41 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/16 20:12:19 steven Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-V=		4.09
-DISTNAME=	App-ClusterSSH-$V
+V=		4.13.2
+DISTNAME=	App-ClusterSSH-v$V
 PKGNAME=	clusterssh-${V:S/_/./}
 
 CATEGORIES=	security
