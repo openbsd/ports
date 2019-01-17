@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/07/25 18:39:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/01/17 16:13:15 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -246,7 +246,6 @@ include/mutter/meta/common.h
 include/mutter/meta/compositor-mutter.h
 include/mutter/meta/compositor.h
 include/mutter/meta/display.h
-include/mutter/meta/errors.h
 include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
@@ -263,6 +262,7 @@ include/mutter/meta/meta-idle-monitor.h
 include/mutter/meta/meta-inhibit-shortcuts-dialog.h
 include/mutter/meta/meta-monitor-manager.h
 include/mutter/meta/meta-plugin.h
+include/mutter/meta/meta-remote-access-controller.h
 include/mutter/meta/meta-settings.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
@@ -271,8 +271,10 @@ include/mutter/meta/meta-version.h
 include/mutter/meta/meta-window-actor.h
 include/mutter/meta/meta-window-group.h
 include/mutter/meta/meta-window-shape.h
+include/mutter/meta/meta-workspace-manager.h
+include/mutter/meta/meta-x11-display.h
+include/mutter/meta/meta-x11-errors.h
 include/mutter/meta/prefs.h
-include/mutter/meta/screen.h
 include/mutter/meta/theme.h
 include/mutter/meta/types.h
 include/mutter/meta/util.h
