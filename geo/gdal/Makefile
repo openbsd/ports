@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2018/12/28 08:53:59 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2019/01/17 07:57:54 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -98,6 +98,7 @@ INSTALL_TARGET =	install install-man
 
 CONFIGURE_ARGS =--without-hdf5 \
 		--without-cfitsio \
+		--without-cryptopp \
 		--without-netcdf \
 		--without-xerces \
 		--without-mysql \
