@@ -1,4 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2018/07/06 06:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.131 2019/01/17 20:22:35 ajacoutot Exp $
+
+# XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
+# would create dependency loops:                                                
+# libsecret -> gnome-keyring -> pinentry -> libsecret                           
+# libsecret -> gnome-keyring -> gcr -> gnupg2 -> pinentry -> gcr                
+# org.freedesktop.secrets                                                       
+# (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)  
 
 COMMENT=		password agent for the GNOME project
 
