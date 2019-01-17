@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.1 2019/01/17 20:41:47 kettenis Exp $
+
+Index: configs/firefly-rk3399_defconfig
+--- configs/firefly-rk3399_defconfig.orig
++++ configs/firefly-rk3399_defconfig
+@@ -58,7 +58,7 @@ CONFIG_REGULATOR_RK8XX=y
+ CONFIG_PWM_ROCKCHIP=y
+ CONFIG_RAM=y
+ CONFIG_SPL_RAM=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y

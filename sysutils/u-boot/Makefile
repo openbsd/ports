@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.46 2019/01/15 14:20:09 kirby Exp $
+#	$OpenBSD: Makefile,v 1.47 2019/01/17 20:41:47 kettenis Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,7 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.01
-REVISION=	0
+REVISION=	1
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -35,8 +35,11 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
+		devel/py-elftools \
+		sysutils/arm-trusted-firmware \
 		sysutils/atf-allwinner
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
+RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
 SUNXI_BL31=	"${LOCALBASE}/share/atf-allwinner/bl31.bin"
 .elif "${FLAVOR}" == "arm"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro
@@ -60,6 +63,7 @@ SUNXI64=\
 	pinebook \
 	sopine_baseboard
 BOARDS=\
+	firefly-rk3399 \
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
@@ -134,7 +138,8 @@ FILES=\
 	u-boot-spl.kwb \
 	u-boot-with-spl.bin \
 	u-boot.itb \
-	spl/sunxi-spl.bin
+	idbspl.img \
+	spl/sunxi-spl.bin \
 
 pre-build:
 .for f in ${MODPY_ADJ_FILES}
@@ -154,8 +159,16 @@ do-build:
 .if "${BOARD}" == "tinker-rk3288"
 	cd ${WRKSRC}/build/${BOARD} && \
 	    tools/mkimage -n rk3288 -T rksd -d spl/u-boot-spl-dtb.bin \
-	    u-boot-with-spl.bin && \
+	        u-boot-with-spl.bin && \
 	    cat u-boot-dtb.bin >> u-boot-with-spl.bin
+.endif
+.if "${BOARD}" == "firefly-rk3399"
+	cd ${WRKSRC}/build/${BOARD} && \
+	    ln -s ${RK3399_BL31} bl31.elf && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	        O="build/${BOARD}" \
+	        -f ${MAKE_FILE} u-boot.itb && \
+	    tools/mkimage -n rk3399 -T rksd -d spl/u-boot-spl.bin idbspl.img
 .endif
 .endfor
 .for BOARD in ${SUNXI64}

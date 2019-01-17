@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.8 2019/01/15 05:44:18 jsg Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.9 2019/01/17 20:41:47 kettenis Exp $
 share/u-boot/
 share/u-boot/a64-olinuxino/
 share/u-boot/a64-olinuxino/sunxi-spl.bin
@@ -14,6 +14,12 @@ share/u-boot/bananapi_m64/u-boot-sunxi-with-spl.bin
 share/u-boot/bananapi_m64/u-boot.bin
 share/u-boot/bananapi_m64/u-boot.img
 share/u-boot/bananapi_m64/u-boot.itb
+share/u-boot/firefly-rk3399/
+share/u-boot/firefly-rk3399/idbspl.img
+share/u-boot/firefly-rk3399/u-boot
+share/u-boot/firefly-rk3399/u-boot.bin
+share/u-boot/firefly-rk3399/u-boot.img
+share/u-boot/firefly-rk3399/u-boot.itb
 share/u-boot/mvebu_espressobin-88f3720/
 share/u-boot/mvebu_espressobin-88f3720/u-boot
 share/u-boot/mvebu_espressobin-88f3720/u-boot.bin
