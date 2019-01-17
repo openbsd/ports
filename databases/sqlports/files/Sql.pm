@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.30 2019/01/14 18:38:04 espie Exp $
+# $OpenBSD: Sql.pm,v 1.31 2019/01/17 17:39:00 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -102,6 +102,19 @@ sub normalize
 	my ($self, $v) = @_;
 	$v =~ tr/A-Z/a-z/;
 	return $v;
+}
+
+sub identify
+{
+	my $self = shift;
+	my $string = "object ".ref($self)." named ".$self->name;
+	if (exists $self->{origin}) {
+		$string .= " (from $self->{origin})";
+	}
+	if (defined $self->{parent}) {
+		$string .= "(parent ".$self->{parent}->identify.")";
+	}
+	return $string;
 }
 
 package Sql::Create;
@@ -327,7 +340,7 @@ sub columns
 {
 	my $self = shift;
 	if (!defined $self->{select}{columns}) {
-		die "View ", $self->name, " has no columns";
+		die $self->identify, " has no columns";
 	}
 	return @{$self->{select}{columns}};
 }
@@ -369,7 +382,7 @@ sub contents
 	my $tables = {};
 	
 	if (!defined $self->{origin}) {
-		die "Error no origin for select in ".$self->name;
+		die "Missing origin in ", $self->identify;
 	}
 	# and column names
 	$self->{column_names} = {};
@@ -448,7 +461,7 @@ sub is_unique_name
 	my ($self, $name) = @_;
 	my $c = $self->{column_names}{$self->normalize($name)};
 	if (!defined $c) {
-		die "$name not registered in ", $self->name;
+		die "$name not registed in ", $self->identify;
 	}
 	return $c == 1;
 }
@@ -592,7 +605,7 @@ sub reference_field
 			if (defined $self->{parent}) {
 				$parent = $self->{parent}->name;
 			}
-			die "Can't reference $table from field ".$self->name.
+			die "Can't reference $table from field ",$self->name,
 			    " in $parent";
 		}
 	}
