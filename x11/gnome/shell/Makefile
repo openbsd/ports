@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.166 2018/07/25 18:39:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2019/01/17 19:00:46 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.28.3
+GNOME_VERSION=		3.30.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +14,7 @@ WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo canberra
 WANTLIB += canberra-gtk3 croco-0.6 ecal-1.2 edataserver-1.2 gcr-base-3
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 gjs glib-2.0
 WANTLIB += gobject-2.0 gstbase-1.0 gstreamer-1.0 gtk-3 ical intl
-WANTLIB += json-glib-1.0 m mutter-2 pango-1.0 pangocairo-1.0 polkit-agent-1
+WANTLIB += json-glib-1.0 m mutter-3 pango-1.0 pangocairo-1.0 polkit-agent-1
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib startup-notification-1
 
 MODULES=		devel/dconf \
@@ -91,11 +91,18 @@ MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 # /gnome-shell-3.18.4_writes_to_HOME
 PORTHOME=		${WRKDIR}
 
+post-extract:
+	cp ${FILESDIR}/*.xml ${WRKSRC}/data/dbus-interfaces/
+
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=789937
 # Generate this file upfront as it may not be created in time
 # due to ninja's randomization.
 pre-build:
 	exec ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v src/st/st-scroll-view-fade-generated.c
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-shell
+	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/gnome-shell
 
 .include <bsd.port.mk>

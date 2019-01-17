@@ -1,63 +1,22 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.5 2018/04/23 22:02:30 jasper Exp $
-
-REVERT:
-From ddea54a5398c123a4711243e55811c8ba26f8b85 Mon Sep 17 00:00:00 2001
-From: Victor Toso <victortoso@redhat.com>
-Date: Thu, 12 May 2016 09:25:49 +0200
-Subject: ScreenShield: set LockedHint property from systemd
-
-REVERT:
-From a244c1e987502e359c45c0a9bc0012b5bc635553 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
-Date: Thu, 24 Apr 2014 17:55:56 +0200
-Subject: loginManager: Kill ConsoleKit support
+$OpenBSD: patch-js_misc_loginManager_js,v 1.6 2019/01/17 19:00:46 ajacoutot Exp $
 
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js
-@@ -40,15 +40,38 @@ const SystemdLoginSessionIface = '<node> \
- <signal name="Lock" /> \
- <signal name="Unlock" /> \
- <property name="Active" type="b" access="read" /> \
--<method name="SetLockedHint"> \
--    <arg type="b" direction="in"/> \
--</method> \
- </interface> \
- </node>';
- 
- const SystemdLoginManager = Gio.DBusProxy.makeProxyWrapper(SystemdLoginManagerIface);
+@@ -17,6 +17,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
+ const SystemdLoginUser = Gio.DBusProxy.makeProxyWrapper(SystemdLoginUserIface);
  
-+const ConsoleKitManagerIface = '<node> \
-+<interface name="org.freedesktop.ConsoleKit.Manager"> \
-+<method name="CanRestart"> \
-+    <arg type="b" direction="out"/> \
-+</method> \
-+<method name="CanStop"> \
-+    <arg type="b" direction="out"/> \
-+</method> \
-+<method name="Restart" /> \
-+<method name="Stop" /> \
-+<method name="GetCurrentSession"> \
-+    <arg type="o" direction="out" /> \
-+</method> \
-+</interface> \
-+</node>';
++const ConsoleKitManagerIface = loadInterfaceXML('org.freedesktop.ConsoleKit.Manager');
++const ConsoleKitSessionIface = loadInterfaceXML('org.freedesktop.ConsoleKit.Session');
 +
-+const ConsoleKitSessionIface = '<node> \
-+<interface name="org.freedesktop.ConsoleKit.Session"> \
-+<signal name="Lock" /> \
-+<signal name="Unlock" /> \
-+</interface> \
-+</node>';
-+
-+const ConsoleKitSession = Gio.DBusProxy.makeProxyWrapper(ConsoleKitSessionIface);
 +const ConsoleKitManager = Gio.DBusProxy.makeProxyWrapper(ConsoleKitManagerIface);
++const ConsoleKitSession = Gio.DBusProxy.makeProxyWrapper(ConsoleKitSessionIface);
 +
  function haveSystemd() {
      return GLib.access("/run/systemd/seats", 0) >= 0;
  }
-@@ -78,7 +101,7 @@ function canLock() {
+@@ -46,7 +52,7 @@ function canLock() {
                                                 -1, null);
  
          let version = result.deep_unpack()[0].deep_unpack();
@@ -66,7 +25,7 @@ Index: js/misc/loginManager.js
      } catch(e) {
          return false;
      }
-@@ -96,7 +119,7 @@ function getLoginManager() {
+@@ -64,7 +70,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -75,19 +34,20 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -188,13 +211,37 @@ var LoginManagerSystemd = new Lang.Class({
+@@ -181,6 +187,84 @@ var LoginManagerSystemd = new Lang.Class({
+     }
  });
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
- 
--var LoginManagerDummy = new Lang.Class({
--    Name: 'LoginManagerDummy',
-+const LoginManagerConsoleKit = new Lang.Class({
++
++var LoginManagerConsoleKit = new Lang.Class({
 +    Name: 'LoginManagerConsoleKit',
- 
++
 +    _init: function() {
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
 +                                            'org.freedesktop.ConsoleKit',
 +                                            '/org/freedesktop/ConsoleKit/Manager');
++        this._proxy.connectSignal('PrepareForSleep',
++                                  this._prepareForSleep.bind(this));
 +    },
 +
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
@@ -95,32 +55,67 @@ Index: js/misc/loginManager.js
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
 +
 +
-     getCurrentSessionProxy(callback) {
--        // we could return a DummySession object that fakes whatever callers
--        // expect (at the time of writing: connect() and connectSignal()
--        // methods), but just never calling the callback should be safer
++    getCurrentSessionProxy(callback) {
 +        if (this._currentSession) {
 +            callback (this._currentSession);
 +            return;
 +        }
 +
-+        this._proxy.GetCurrentSessionRemote(Lang.bind(this,
-+            function(result, error) {
-+                if (error) {
-+                    logError(error, 'Could not get a proxy for the current session');
-+                } else {
-+                    this._currentSession = new ConsoleKitSession(Gio.DBus.system,
-+                                                                 'org.freedesktop.ConsoleKit',
-+                                                                 result[0]);
-+                    callback(this._currentSession);
++        this._proxy.GetCurrentSessionRemote((result, error) => {
++            if (error) {
++                logError(error, 'Could not get a proxy for the current session');
++            } else {
++                this._currentSession = new ConsoleKitSession(Gio.DBus.system,
++                                                             'org.freedesktop.ConsoleKit',
++                                                             result[0]);
++                callback(this._currentSession);
++            }
++        });
++    },
++
++    canSuspend(asyncCallback) {
++        this._proxy.CanSuspendRemote((result, error) => {
++            if (error) {
++                asyncCallback(false, false);
++            } else {
++                asyncCallback(result[0], false);
++            }
++        });
++    },
++
++    listSessions(asyncCallback) {
++        asyncCallback([]);
++    },
++
++    suspend() {
++        this._proxy.SuspendRemote(true);
++    },
++
++    inhibit(reason, callback) {
++        let inVariant = GLib.Variant.new('(ssss)',
++                                         ['sleep',
++                                          'GNOME Shell',
++                                          reason,
++                                          'delay']);
++        this._proxy.call_with_unix_fd_list('Inhibit', inVariant, 0, -1, null, null,
++            (proxy, result) => {
++                let fd = -1;
++                try {
++                    let [outVariant, fdList] = proxy.call_with_unix_fd_list_finish(result);
++                    fd = fdList.steal_fds()[0];
++                    callback(new Gio.UnixInputStream({ fd: fd }));
++                } catch(e) {
++                    logError(e, "Error getting ConsoleKit inhibitor");
++                    callback(null);
 +                }
-+            }));
-     },
- 
-     canSuspend(asyncCallback) {
-@@ -214,4 +261,4 @@ var LoginManagerDummy = new Lang.Class({
-         callback(null);
-     }
- });
--Signals.addSignalMethods(LoginManagerDummy.prototype);
++            });
++    },
++
++    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
++        this.emit('prepare-for-sleep', aboutToSuspend);
++    }
++})
 +Signals.addSignalMethods(LoginManagerConsoleKit.prototype);
+ 
+ var LoginManagerDummy = new Lang.Class({
+     Name: 'LoginManagerDummy',

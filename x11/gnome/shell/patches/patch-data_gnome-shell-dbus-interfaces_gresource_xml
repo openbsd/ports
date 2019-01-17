@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_gnome-shell-dbus-interfaces_gresource_xml,v 1.1 2019/01/17 19:00:46 ajacoutot Exp $
+
+Index: data/gnome-shell-dbus-interfaces.gresource.xml
+--- data/gnome-shell-dbus-interfaces.gresource.xml.orig
++++ data/gnome-shell-dbus-interfaces.gresource.xml
+@@ -6,6 +6,8 @@
+     <file preprocess="xml-stripblanks">org.freedesktop.Application.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Device.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Manager.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Manager.xml</file>
++    <file preprocess="xml-stripblanks">org.freedesktop.ConsoleKit.Session.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.DBus.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.GeoClue2.Agent.xml</file>
+     <file preprocess="xml-stripblanks">org.freedesktop.GeoClue2.Manager.xml</file>
