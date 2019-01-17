@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/17 23:30:34 ajacoutot Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -7,11 +7,9 @@ GH_ACCOUNT=		phatina
 GH_PROJECT=		simple-mtpfs
 GH_TAGNAME=		simple-mtpfs-${V}
 DISTNAME=		${GH_PROJECT}-0.3.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
