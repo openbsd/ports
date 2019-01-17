@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/12/26 10:05:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.53 2019/01/17 22:07:09 jsg Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -73,6 +73,7 @@
      SUBDIR += sunscreen
      SUBDIR += symbola-ttf
      SUBDIR += tagmukay
+     SUBDIR += tamsyn-font
      SUBDIR += terminus-font
      SUBDIR += terminus-font,symquotes
      SUBDIR += terminus-font,symquotes,centered_tilde
