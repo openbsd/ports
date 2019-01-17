@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v$
+share/doc/tamsyn/
+share/doc/tamsyn/LICENSE
+share/doc/tamsyn/README
+share/fonts/
+@fontdir share/fonts/tamsyn/
+share/fonts/tamsyn/Tamsyn10x20b.pcf.gz
+share/fonts/tamsyn/Tamsyn10x20r.pcf.gz
+share/fonts/tamsyn/Tamsyn5x9b.pcf.gz
+share/fonts/tamsyn/Tamsyn5x9r.pcf.gz
+share/fonts/tamsyn/Tamsyn6x12b.pcf.gz
+share/fonts/tamsyn/Tamsyn6x12r.pcf.gz
+share/fonts/tamsyn/Tamsyn7x13b.pcf.gz
+share/fonts/tamsyn/Tamsyn7x13r.pcf.gz
+share/fonts/tamsyn/Tamsyn7x14b.pcf.gz
+share/fonts/tamsyn/Tamsyn7x14r.pcf.gz
+share/fonts/tamsyn/Tamsyn8x15b.pcf.gz
+share/fonts/tamsyn/Tamsyn8x15r.pcf.gz
+share/fonts/tamsyn/Tamsyn8x16b.pcf.gz
+share/fonts/tamsyn/Tamsyn8x16r.pcf.gz
+share/fonts/tamsyn/fonts.alias-tamsyn
