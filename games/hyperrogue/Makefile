@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/11/21 01:58:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/17 00:14:58 cwen Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
@@ -17,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL SDL_gfx SDL_mixer SDL_ttf
 WANTLIB += c m png
 
 # C++11
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
