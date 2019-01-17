@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/01 20:26:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/01/17 10:13:40 bentley Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 V=		0.69
 DISTNAME=	putty-$V
-REVISION=	0
+REVISION=	1
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
 CATEGORIES=	net security
 
-HOMEPAGE=	http://www.chiark.greenend.org.uk/~sgtatham/putty/
-MASTER_SITES=	http://the.earth.li/~sgtatham/putty/$V/ \
+HOMEPAGE=	https://www.chiark.greenend.org.uk/~sgtatham/putty/
+MASTER_SITES=	https://the.earth.li/~sgtatham/putty/$V/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-$V/
 
 # BSD
