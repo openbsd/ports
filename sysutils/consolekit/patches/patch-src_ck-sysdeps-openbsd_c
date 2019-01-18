@@ -1,0 +1,82 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.25 2019/01/18 02:27:35 ajacoutot Exp $
+
+https://github.com/ConsoleKit2/ConsoleKit2/pull/117
+
+Index: src/ck-sysdeps-openbsd.c
+--- src/ck-sysdeps-openbsd.c.orig
++++ src/ck-sysdeps-openbsd.c
+@@ -200,7 +200,7 @@ stat2proc (pid_t        pid,
+ 
+         if (p.p_tdev == NODEV) {
+ 		/* XXX how do we associate X with its tty? */
+-#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__) || defined(__aarch64__)
+                 memcpy (P->tty_text, "/dev/ttyC4", sizeof (P->tty_text));
+ #else
+                 memcpy (P->tty_text, "/dev/ttyC0", sizeof (P->tty_text));
+@@ -397,8 +397,7 @@ ck_get_console_device_for_num (guint num)
+ {
+         char *device;
+ 
+-/* VT are only available on i386, amd64 and macppc */
+-#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__) || defined(__aarch64__)
+         /* The device number is always one less than the VT number. */
+         num--;
+ #endif
+@@ -423,8 +422,7 @@ ck_get_console_num_from_device (const char *device,
+         }
+ 
+         if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
+-/* VT are only available on i386, amd64 and macppc */
+-#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__) || defined(__aarch64__)
+                 /* The VT number is always one more than the device number. */
+                 n++;
+ #endif
+@@ -451,8 +449,7 @@ ck_get_active_console_num (int    console_fd,
+         active = 0;
+         ret = FALSE;
+ 
+-/* VT are only available on i386, amd64 and macppc */
+-#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__) || defined(__aarch64__)
+         res = ioctl (console_fd, VT_GETACTIVE, &active);
+         if (res == ERROR) {
+                 perror ("ioctl VT_GETACTIVE");
+@@ -477,13 +474,33 @@ ck_get_active_console_num (int    console_fd,
+ gboolean
+ ck_system_can_suspend (void)
+ {
+-        return TRUE;
++/* needs acpi(4) */
++#if defined(__i386__) || defined(__amd64__) || defined(__aarch64__)
++	const char *apmdev = "/var/run/apmdev";
++	struct stat st;
++
++	if (stat(apmdev, &st) < 0) {
++		return FALSE;
++	}
++
++	if (!S_ISSOCK(st.st_mode)) {
++		return FALSE;
++	}
++
++	if (access(apmdev, W_OK) == -1) {
++		return FALSE;
++	}
++
++	return TRUE;
++#else
++	return FALSE;
++#endif
+ }
+ 
+ gboolean
+ ck_system_can_hibernate (void)
+ {
+-        return TRUE;
++        return ck_system_can_suspend();
+ }
+ 
+ gboolean
