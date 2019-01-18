@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.625 2018/12/29 13:52:27 solene Exp $
+# $OpenBSD: Makefile,v 1.626 2019/01/18 11:42:30 fcambus Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -31,6 +31,7 @@
      SUBDIR += byzi
      SUBDIR += cegui
      SUBDIR += chbg
+     SUBDIR += coma
      SUBDIR += compiz
      SUBDIR += compton
      SUBDIR += cool-retro-term
