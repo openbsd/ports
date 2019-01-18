@@ -1,0 +1,10 @@
+Coma is a minimalistic X11 Window Manager.
+
+It has 2 framing modes: default, large. Only one can be active at a given
+time and is specified at startup time:
+
+- Default means it will split up your screen into columns just large enough
+to fit 80 column xterms.
+
+- Large means it will calculate the frames based on 161 column xterms (so
+one can use tmux and split it to get 80 columns in each pane).
