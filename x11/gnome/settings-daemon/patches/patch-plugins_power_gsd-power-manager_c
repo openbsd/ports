@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_power_gsd-power-manager_c,v 1.1 2019/01/18 06:37:02 ajacoutot Exp $
+
+Index: plugins/power/gsd-power-manager.c
+--- plugins/power/gsd-power-manager.c.orig
++++ plugins/power/gsd-power-manager.c
+@@ -69,9 +69,9 @@
+ #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_SHORT          10 * 1000 /* ms */
+ #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_LONG           30 * 1000 /* ms */
+ 
+-#define SYSTEMD_DBUS_NAME                       "org.freedesktop.login1"
+-#define SYSTEMD_DBUS_PATH                       "/org/freedesktop/login1"
+-#define SYSTEMD_DBUS_INTERFACE                  "org.freedesktop.login1.Manager"
++#define SYSTEMD_DBUS_NAME                       "org.freedesktop.ConsoleKit"
++#define SYSTEMD_DBUS_PATH                       "/org/freedesktop/ConsoleKit/Manager"
++#define SYSTEMD_DBUS_INTERFACE                  "org.freedesktop.ConsoleKit.Manager"
+ 
+ /* Time between notifying the user about a critical action and the action itself in UPower. */
+ #define GSD_ACTION_DELAY 20
