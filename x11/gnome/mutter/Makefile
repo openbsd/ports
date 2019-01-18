@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2019/01/17 16:13:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2019/01/18 01:24:19 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.30.2
+REVISION=		0
 
 API_SUFFIX=		-3
 SUBST_VARS=		API_SUFFIX
@@ -54,28 +55,12 @@ CONFIGURE_ARGS +=       --with-gl-libname=libGL.so \
                         --with-gles2-libname=libGLESv2 \
                         --enable-kms-egl-platform=yes \
                         --enable-xlib-egl-platform=yes \
-			--disable-wayland-egl-server
-
-# disable -Werror which breaks at least hppa/mips64/sparc64
-CONFIGURE_ARGS +=	--enable-compile-warnings=yes
+			--disable-wayland-egl-server \
+			--enable-compile-warnings=yes \
+			--disable-Werror
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-AUTOMAKE_VERSION=	1.15
-AUTOCONF_VERSION=	2.69
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/cogl ${WRKSRC}/clutter
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-do-gen:
-# XXX cc1: error: unrecognized command line option
-	sed -i -e 's,-Wempty-body,,' \
-		-e 's,-Wno-error=maybe-uninitialized,,' \
-		-e 's,-Werror=logical-op,,' \
-		${WRKSRC}/{,cogl,clutter}/configure.ac \
-		${WRKSRC}/cogl/tests/conform/Makefile.am \
-		${WRKSRC}/cogl/test-fixtures/Makefile.am
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
