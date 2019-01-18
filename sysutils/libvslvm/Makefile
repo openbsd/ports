@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/18 19:45:56 ajacoutot Exp $
 
 COMMENT =	library to access the LVM volume system format
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS +=	--enable-python
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS +=	devel/libbfio
 
