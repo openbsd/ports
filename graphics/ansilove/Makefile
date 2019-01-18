@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/19 17:30:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/18 11:38:35 fcambus Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
-V =		3.0.9
+V =		4.0.0
 DISTNAME =	ansilove-$V
 
 CATEGORIES =	graphics
@@ -15,11 +15,11 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB =	c m gd
+WANTLIB +=	ansilove c m
 
 MASTER_SITES =	https://github.com/ansilove/ansilove/releases/download/$V/
 
-LIB_DEPENDS =	graphics/gd
+LIB_DEPENDS =	graphics/libansilove
 
 MODULES =	devel/cmake
 NO_TEST =	Yes
