@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/18 14:41:05 cwen Exp $
 
 COMMENT =		WWII German submarine simulator
 
 PKGNAME =		dangerdeep-0.3.99.3327
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		games
 

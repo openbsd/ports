@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_matrix3_h,v 1.1 2019/01/18 14:41:05 cwen Exp $
+Fix missing header for ports-gcc
+Index: src/matrix3.h
+--- src/matrix3.h.orig
++++ src/matrix3.h
+@@ -24,6 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+ #ifndef MATRIX3_H
+ #define MATRIX3_H
+ 
++#include <string.h>
+ #include "matrix.h"
+ 
+ /// a 3x3 matrix, reimplemented for 3x3 case for speed issues
