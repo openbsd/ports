@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2019/01/02 12:58:11 jca Exp $
+# $OpenBSD: Makefile,v 1.469 2019/01/18 11:37:12 fcambus Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -126,6 +126,7 @@
      SUBDIR += lcms2
      SUBDIR += lensfun
      SUBDIR += leptonica
+     SUBDIR += libansilove
      SUBDIR += libart
      SUBDIR += libcaca
      SUBDIR += libdmtx
