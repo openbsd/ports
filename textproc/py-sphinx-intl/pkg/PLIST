@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1 2014/10/13 00:47:30 yasuoka Exp $
-bin/sphinx-intl
+@comment $OpenBSD: PLIST,v 1.2 2019/01/18 20:30:23 danj Exp $
+bin/sphinx-intl${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,8 +11,19 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sphinx_intl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/__main__.py
-lib/python${MODPY_VERSION}/site-packages/sphinx_intl/__main__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}catalog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}sphinx_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/${MODPY_PYCACHE}transifex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/basic.py
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/catalog.py
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/commands.py
-lib/python${MODPY_VERSION}/site-packages/sphinx_intl/commands.pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/pycompat.py
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/sphinx_util.py
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl/transifex.py
