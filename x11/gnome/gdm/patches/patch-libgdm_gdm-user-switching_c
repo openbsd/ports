@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.1 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.2 2019/01/18 05:51:51 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
@@ -12,8 +12,9 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 13:48:52 -0400
 Subject: require logind support
 
---- libgdm/gdm-user-switching.c.orig	Sun Oct 18 14:26:22 2015
-+++ libgdm/gdm-user-switching.c	Sun Oct 18 14:24:34 2015
+Index: libgdm/gdm-user-switching.c
+--- libgdm/gdm-user-switching.c.orig
++++ libgdm/gdm-user-switching.c
 @@ -31,12 +31,25 @@
  #include <glib-object.h>
  #include <gio/gio.h>
@@ -129,7 +130,7 @@ Subject: require logind support
 +        return seat_id;
 +}
 +
-+static gboolean
++gboolean
 +activate_session_id_for_ck (GDBusConnection *connection,
 +                            GCancellable    *cancellable,
 +                            const char      *seat_id,
@@ -341,7 +342,7 @@ Subject: require logind support
 +
 +#ifdef WITH_SYSTEMD
 +
-+static gboolean
++gboolean
 +activate_session_id_for_systemd (GDBusConnection  *connection,
 +                                 GCancellable     *cancellable,
 +                                 const char       *seat_id,

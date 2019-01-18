@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.274 2018/08/27 07:29:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.275 2019/01/18 05:51:51 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.28.4
+GNOME_VERSION=		3.30.2
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender accountsservice atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
-WANTLIB += canberra-gtk3 dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += intl ltdl m ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread util vorbis vorbisfile xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += atk-bridge-2.0 c cairo cairo-gobject canberra canberra-gtk3
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl ltdl m ogg pam
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png16 pthread util vorbis vorbisfile xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=		x11/gnome \
 			devel/dconf
@@ -100,7 +100,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
 		${PREFIX}/share/pixmaps/
-	rm -rf ${WRKINST}/var/run/gdm ${PREFIX}/lib/udev
+	rm -r ${WRKINST}/var/run/gdm ${WRKINST}/rules.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d

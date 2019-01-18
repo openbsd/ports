@@ -1,20 +1,11 @@
-$OpenBSD: patch-daemon_gdm-display_c,v 1.5 2018/04/24 08:37:00 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-display_c,v 1.6 2019/01/18 05:51:51 ajacoutot Exp $
 
 XXX fix+push upstream
 
 Index: daemon/gdm-display.c
 --- daemon/gdm-display.c.orig
 +++ daemon/gdm-display.c
-@@ -49,7 +49,7 @@
- #include "gdm-launch-environment.h"
- #include "gdm-dbus-util.h"
- 
--#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
-+#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
- #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
- 
- #define GDM_DISPLAY_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GDM_TYPE_DISPLAY, GdmDisplayPrivate))
-@@ -301,8 +301,8 @@ setup_xhost_auth (XHostAddress              *host_entr
+@@ -229,8 +229,8 @@ setup_xhost_auth (XHostAddress              *host_entr
          host_entries[1].address   = "localuser\0" GDM_USERNAME;
          host_entries[1].length    = sizeof ("localuser\0" GDM_USERNAME);
          host_entries[2].family    = FamilyServerInterpreted;
@@ -25,3 +16,12 @@ Index: daemon/gdm-display.c
  }
  
  gboolean
+@@ -1589,8 +1589,6 @@ gdm_display_start_greeter_session (GdmDisplay *self)
+ void
+ gdm_display_stop_greeter_session (GdmDisplay *self)
+ {
+-        GError *error = NULL;
+-
+         if (self->priv->launch_environment != NULL) {
+ 
+                 g_signal_handlers_disconnect_by_func (self->priv->launch_environment,

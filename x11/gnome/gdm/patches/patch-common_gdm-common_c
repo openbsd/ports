@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_gdm-common_c,v 1.5 2018/04/24 08:37:00 ajacoutot Exp $
+$OpenBSD: patch-common_gdm-common_c,v 1.6 2019/01/18 05:51:51 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -15,9 +15,9 @@ Subject: drop consolekit support
 Index: common/gdm-common.c
 --- common/gdm-common.c.orig
 +++ common/gdm-common.c
-@@ -40,12 +40,25 @@
- #include "mkdtemp.h"
- #endif
+@@ -36,12 +36,25 @@
+ 
+ #include "gdm-common.h"
  
 +#ifdef WITH_SYSTEMD
  #include <systemd/sd-login.h>
@@ -40,24 +40,21 @@ Index: common/gdm-common.c
 +
  G_DEFINE_QUARK (gdm-common-error, gdm_common_error);
  
- const char *
-@@ -362,15 +375,306 @@ create_transient_display (GDBusConnection *connection,
+ gboolean
+@@ -352,8 +365,87 @@ create_transient_display (GDBusConnection *connection,
          return TRUE;
  }
  
 +#ifdef WITH_CONSOLE_KIT
-+
- static gboolean
--activate_session_id (GDBusConnection *connection,
--                     const char      *seat_id,
--                     const char      *session_id)
+ gboolean
+-gdm_activate_session_by_id (GDBusConnection *connection,
 +get_current_session_id (GDBusConnection  *connection,
 +                        char            **session_id)
- {
-         GError *local_error = NULL;
-         GVariant *reply;
- 
-         reply = g_dbus_connection_call_sync (connection,
++{
++        GError *local_error = NULL;
++        GVariant *reply;
++
++        reply = g_dbus_connection_call_sync (connection,
 +                                             CK_NAME,
 +                                             CK_MANAGER_PATH,
 +                                             CK_MANAGER_INTERFACE,
@@ -128,15 +125,15 @@ Index: common/gdm-common.c
 +        return seat_id;
 +}
 +
-+static gboolean
++gboolean
 +activate_session_id_for_ck (GDBusConnection *connection,
-+                            const char      *seat_id,
-+                            const char      *session_id)
-+{
-+        GError *local_error = NULL;
-+        GVariant *reply;
-+
-+        reply = g_dbus_connection_call_sync (connection,
+                             const char      *seat_id,
+                             const char      *session_id)
+ {
+@@ -361,6 +453,217 @@ gdm_activate_session_by_id (GDBusConnection *connectio
+         GVariant *reply;
+ 
+         reply = g_dbus_connection_call_sync (connection,
 +                                             CK_NAME,
 +                                             seat_id,
 +                                             CK_SEAT_INTERFACE,
@@ -260,7 +257,7 @@ Index: common/gdm-common.c
 +                                    const char       *seat_id,
 +                                    char            **session_id)
 +{
-+        gboolean     can_activate_sessions;
++       gboolean     can_activate_sessions;
 +        const char **sessions;
 +        int          i;
 +
@@ -339,7 +336,7 @@ Index: common/gdm-common.c
 +
 +#ifdef WITH_SYSTEMD
 +
-+static gboolean
++gboolean
 +activate_session_id_for_systemd (GDBusConnection *connection,
 +                                 const char      *seat_id,
 +                                 const char      *session_id)
@@ -351,18 +348,18 @@ Index: common/gdm-common.c
                                               "org.freedesktop.login1",
                                               "/org/freedesktop/login1",
                                               "org.freedesktop.login1.Manager",
-@@ -392,8 +696,8 @@ activate_session_id (GDBusConnection *connection,
+@@ -382,8 +685,8 @@ gdm_activate_session_by_id (GDBusConnection *connectio
  }
  
- static gboolean
--get_login_window_session_id (const char  *seat_id,
--                             char       **session_id)
+ gboolean
+-gdm_get_login_window_session_id (const char  *seat_id,
+-                                 char       **session_id)
 +get_login_window_session_id_for_systemd (const char  *seat_id,
 +                                         char       **session_id)
  {
          gboolean   ret;
          int        res, i;
-@@ -461,8 +765,8 @@ out:
+@@ -476,8 +779,8 @@ out:
  }
  
  static gboolean
@@ -373,19 +370,19 @@ Index: common/gdm-common.c
  {
          gboolean        ret;
          int             res;
-@@ -516,9 +820,9 @@ goto_login_session (GDBusConnection  *connection,
+@@ -531,9 +834,9 @@ goto_login_session (GDBusConnection  *connection,
                  return FALSE;
          }
  
--        res = get_login_window_session_id (seat_id, &session_id);
+-        res = gdm_get_login_window_session_id (seat_id, &session_id);
 +        res = get_login_window_session_id_for_systemd (seat_id, &session_id);
          if (res && session_id != NULL) {
--                res = activate_session_id (connection, seat_id, session_id);
+-                res = gdm_activate_session_by_id (connection, seat_id, session_id);
 +                res = activate_session_id_for_systemd (connection, seat_id, session_id);
  
                  if (res) {
                          ret = TRUE;
-@@ -537,6 +841,7 @@ goto_login_session (GDBusConnection  *connection,
+@@ -552,6 +855,7 @@ goto_login_session (GDBusConnection  *connection,
  
          return ret;
  }
@@ -393,7 +390,7 @@ Index: common/gdm-common.c
  
  gboolean
  gdm_goto_login_session (GError **error)
-@@ -552,7 +857,17 @@ gdm_goto_login_session (GError **error)
+@@ -567,7 +871,17 @@ gdm_goto_login_session (GError **error)
                  return FALSE;
          }
  
