@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/06 20:27:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/18 20:13:15 sthen Exp $
+
+BROKEN-i386 =		Could NOT find GLEW (missing: GLEW_LIBRARY GLEW_INCLUDE_DIR)
 
 COMMENT-main =		Worms-like strategy game
 COMMENT-server =	Worms-like strategy game, server
