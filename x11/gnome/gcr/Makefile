@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2018/07/06 06:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2019/01/18 20:29:34 ajacoutot Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
-GNOME_VERSION=		3.28.0
-REVISION=		3
+GNOME_VERSION=		3.28.1
 
 SHARED_LIBS +=  gck-1                2.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           3.0      # 1.0
@@ -14,13 +13,13 @@ SHARED_LIBS +=  gcr-ui-3             3.0      # 1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv intl m p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += intl m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png16 pthread xcb xcb-render xcb-shm
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			x11/gnome
