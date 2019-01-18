@@ -1,0 +1,8 @@
+Library for converting ANSI, ASCII, and other formats to PNG, allowing
+to render ANSI and artscene-related file formats into PNG images, and
+supporting ANSI (.ANS), PCBoard (.PCB), Binary (.BIN), Artworx (.ADF),
+iCE Draw (.IDF), Tundra (.TND) and XBin (.XB) formats.
+
+It creates size optimized 4-bit PNG files and supports SAUCE (Standard
+Architecture for Universal Comment Extentions), 80x25 and 80x50 PC fonts
+(including all the 14 MS-DOS charsets), Amiga fonts, and iCE colors.

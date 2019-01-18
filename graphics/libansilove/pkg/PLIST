@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/18 11:36:25 fcambus Exp $
+include/ansilove.h
+@lib lib/libansilove.so.${LIBansilove_VERSION}
+@man man/man3/libansilove.3
