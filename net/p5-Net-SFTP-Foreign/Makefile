@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/02/13 08:44:55 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/18 07:36:53 benoit Exp $
 
 COMMENT =	SSH File Transfer Protocol client
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Net-SFTP-Foreign-1.87
+DISTNAME =	Net-SFTP-Foreign-1.89
 CATEGORIES =	net security
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
